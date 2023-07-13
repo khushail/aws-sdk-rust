@@ -3,7 +3,7 @@
 /// <p>No traffic policy exists with the specified ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoSuchTrafficPolicy {
+pub struct NoSuchTrafficPolicy  {
     /// <p></p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,13 @@ pub struct NoSuchTrafficPolicy {
 }
 impl NoSuchTrafficPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for NoSuchTrafficPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "NoSuchTrafficPolicy")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -34,9 +32,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::NoSuchTrafficPol
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchTrafficPolicy {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl NoSuchTrafficPolicy {
     /// Creates a new builder-style object to manufacture [`NoSuchTrafficPolicy`](crate::types::error::NoSuchTrafficPolicy).
@@ -47,9 +43,7 @@ impl NoSuchTrafficPolicy {
 
 /// A builder for [`NoSuchTrafficPolicy`](crate::types::error::NoSuchTrafficPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoSuchTrafficPolicyBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -62,28 +56,30 @@ impl NoSuchTrafficPolicyBuilder {
     }
     /// <p></p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p></p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`NoSuchTrafficPolicy`](crate::types::error::NoSuchTrafficPolicy).
     pub fn build(self) -> crate::types::error::NoSuchTrafficPolicy {
         crate::types::error::NoSuchTrafficPolicy {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -3,8 +3,8 @@
 /// <p>Specifies an Amazon S3 bucket for logging audio conversations</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3BucketLogDestination {
-    /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
+pub struct S3BucketLogDestination  {
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
     #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
@@ -15,16 +15,16 @@ pub struct S3BucketLogDestination {
     pub log_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketLogDestination {
-    /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
-    pub fn s3_bucket_arn(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>The S3 prefix to assign to audio log files.</p>
-    pub fn log_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn log_prefix(&self) -> ::std::option::Option<& str> {
         self.log_prefix.as_deref()
     }
 }
@@ -37,40 +37,38 @@ impl S3BucketLogDestination {
 
 /// A builder for [`S3BucketLogDestination`](crate::types::S3BucketLogDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketLogDestinationBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketLogDestinationBuilder {
-    /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
-    pub fn s3_bucket_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
-    pub fn set_s3_bucket_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.s3_bucket_arn = input;
-        self
+    pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_bucket_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
+    pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_arn
     }
     /// <p>The S3 prefix to assign to audio log files.</p>
     pub fn log_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl S3BucketLogDestinationBuilder {
     }
     /// <p>The S3 prefix to assign to audio log files.</p>
     pub fn set_log_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_prefix = input;
-        self
+        self.log_prefix = input; self
+    }
+    /// <p>The S3 prefix to assign to audio log files.</p>
+    pub fn get_log_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_prefix
     }
     /// Consumes the builder and constructs a [`S3BucketLogDestination`](crate::types::S3BucketLogDestination).
     pub fn build(self) -> crate::types::S3BucketLogDestination {
         crate::types::S3BucketLogDestination {
-            kms_key_arn: self.kms_key_arn,
-            s3_bucket_arn: self.s3_bucket_arn,
-            log_prefix: self.log_prefix,
+            kms_key_arn: self.kms_key_arn
+            ,
+            s3_bucket_arn: self.s3_bucket_arn
+            ,
+            log_prefix: self.log_prefix
+            ,
         }
     }
 }
+

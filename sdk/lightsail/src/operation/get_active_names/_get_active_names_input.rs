@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetActiveNamesInput {
-    /// <p>The token to advance to the next page of results from your request.</p>
+pub struct GetActiveNamesInput  {
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetActiveNamesInput {
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -24,34 +24,35 @@ impl GetActiveNamesInput {
 
 /// A builder for [`GetActiveNamesInput`](crate::operation::get_active_names::GetActiveNamesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetActiveNamesInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetActiveNamesInputBuilder {
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`GetActiveNamesInput`](crate::operation::get_active_names::GetActiveNamesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_active_names::GetActiveNamesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_active_names::GetActiveNamesInput {
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_active_names::GetActiveNamesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_active_names::GetActiveNamesInput {
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

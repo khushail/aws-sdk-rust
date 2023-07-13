@@ -3,8 +3,8 @@
 /// <p>Provides information for updating the user on the progress of fulfilling an intent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FulfillmentUpdatesSpecification {
-    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
+pub struct FulfillmentUpdatesSpecification  {
+    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p> 
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
     #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
@@ -13,28 +13,23 @@ pub struct FulfillmentUpdatesSpecification {
     pub start_response: ::std::option::Option<crate::types::FulfillmentStartResponseSpecification>,
     /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
     #[doc(hidden)]
-    pub update_response:
-        ::std::option::Option<crate::types::FulfillmentUpdateResponseSpecification>,
+    pub update_response: ::std::option::Option<crate::types::FulfillmentUpdateResponseSpecification>,
     /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
     #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl FulfillmentUpdatesSpecification {
-    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
+    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p> 
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
     pub fn active(&self) -> ::std::option::Option<bool> {
         self.active
     }
     /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
-    pub fn start_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FulfillmentStartResponseSpecification> {
+    pub fn start_response(&self) -> ::std::option::Option<& crate::types::FulfillmentStartResponseSpecification> {
         self.start_response.as_ref()
     }
     /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
-    pub fn update_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FulfillmentUpdateResponseSpecification> {
+    pub fn update_response(&self) -> ::std::option::Option<& crate::types::FulfillmentUpdateResponseSpecification> {
         self.update_response.as_ref()
     }
     /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
@@ -51,61 +46,55 @@ impl FulfillmentUpdatesSpecification {
 
 /// A builder for [`FulfillmentUpdatesSpecification`](crate::types::FulfillmentUpdatesSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FulfillmentUpdatesSpecificationBuilder {
     pub(crate) active: ::std::option::Option<bool>,
-    pub(crate) start_response:
-        ::std::option::Option<crate::types::FulfillmentStartResponseSpecification>,
-    pub(crate) update_response:
-        ::std::option::Option<crate::types::FulfillmentUpdateResponseSpecification>,
+    pub(crate) start_response: ::std::option::Option<crate::types::FulfillmentStartResponseSpecification>,
+    pub(crate) update_response: ::std::option::Option<crate::types::FulfillmentUpdateResponseSpecification>,
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl FulfillmentUpdatesSpecificationBuilder {
-    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
+    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p> 
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
+    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p> 
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
+    }
+    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p> 
+    /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
-    pub fn start_response(
-        mut self,
-        input: crate::types::FulfillmentStartResponseSpecification,
-    ) -> Self {
+    pub fn start_response(mut self, input: crate::types::FulfillmentStartResponseSpecification) -> Self {
         self.start_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
-    pub fn set_start_response(
-        mut self,
-        input: ::std::option::Option<crate::types::FulfillmentStartResponseSpecification>,
-    ) -> Self {
-        self.start_response = input;
-        self
+    pub fn set_start_response(mut self, input: ::std::option::Option<crate::types::FulfillmentStartResponseSpecification>) -> Self {
+        self.start_response = input; self
+    }
+    /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
+    pub fn get_start_response(&self) -> &::std::option::Option<crate::types::FulfillmentStartResponseSpecification> {
+        &self.start_response
     }
     /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
-    pub fn update_response(
-        mut self,
-        input: crate::types::FulfillmentUpdateResponseSpecification,
-    ) -> Self {
+    pub fn update_response(mut self, input: crate::types::FulfillmentUpdateResponseSpecification) -> Self {
         self.update_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
-    pub fn set_update_response(
-        mut self,
-        input: ::std::option::Option<crate::types::FulfillmentUpdateResponseSpecification>,
-    ) -> Self {
-        self.update_response = input;
-        self
+    pub fn set_update_response(mut self, input: ::std::option::Option<crate::types::FulfillmentUpdateResponseSpecification>) -> Self {
+        self.update_response = input; self
+    }
+    /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
+    pub fn get_update_response(&self) -> &::std::option::Option<crate::types::FulfillmentUpdateResponseSpecification> {
+        &self.update_response
     }
     /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
@@ -114,16 +103,24 @@ impl FulfillmentUpdatesSpecificationBuilder {
     }
     /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_seconds = input;
-        self
+        self.timeout_in_seconds = input; self
+    }
+    /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_seconds
     }
     /// Consumes the builder and constructs a [`FulfillmentUpdatesSpecification`](crate::types::FulfillmentUpdatesSpecification).
     pub fn build(self) -> crate::types::FulfillmentUpdatesSpecification {
         crate::types::FulfillmentUpdatesSpecification {
-            active: self.active,
-            start_response: self.start_response,
-            update_response: self.update_response,
-            timeout_in_seconds: self.timeout_in_seconds,
+            active: self.active
+            ,
+            start_response: self.start_response
+            ,
+            update_response: self.update_response
+            ,
+            timeout_in_seconds: self.timeout_in_seconds
+            ,
         }
     }
 }
+

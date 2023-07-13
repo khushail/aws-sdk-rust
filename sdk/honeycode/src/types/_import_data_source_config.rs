@@ -3,18 +3,18 @@
 /// <p> An object that contains the configuration parameters for the data source of an import request. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ImportDataSourceConfig {
+pub struct ImportDataSourceConfig  {
     /// <p> The URL from which source data will be downloaded for the import request. </p>
     #[doc(hidden)]
     pub data_source_url: ::std::option::Option<::std::string::String>,
 }
 impl ImportDataSourceConfig {
     /// <p> The URL from which source data will be downloaded for the import request. </p>
-    pub fn data_source_url(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_url(&self) -> ::std::option::Option<& str> {
         self.data_source_url.as_deref()
     }
 }
-impl ::std::fmt::Debug for ImportDataSourceConfig {
+impl  ::std::fmt::Debug for ImportDataSourceConfig  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImportDataSourceConfig");
         formatter.field("data_source_url", &"*** Sensitive Data Redacted ***");
@@ -36,25 +36,23 @@ pub struct ImportDataSourceConfigBuilder {
 }
 impl ImportDataSourceConfigBuilder {
     /// <p> The URL from which source data will be downloaded for the import request. </p>
-    pub fn data_source_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The URL from which source data will be downloaded for the import request. </p>
-    pub fn set_data_source_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_source_url = input;
-        self
+    pub fn set_data_source_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_url = input; self
+    }
+    /// <p> The URL from which source data will be downloaded for the import request. </p>
+    pub fn get_data_source_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_url
     }
     /// Consumes the builder and constructs a [`ImportDataSourceConfig`](crate::types::ImportDataSourceConfig).
     pub fn build(self) -> crate::types::ImportDataSourceConfig {
         crate::types::ImportDataSourceConfig {
-            data_source_url: self.data_source_url,
+            data_source_url: self.data_source_url
+            ,
         }
     }
 }
@@ -65,3 +63,4 @@ impl ::std::fmt::Debug for ImportDataSourceConfigBuilder {
         formatter.finish()
     }
 }
+

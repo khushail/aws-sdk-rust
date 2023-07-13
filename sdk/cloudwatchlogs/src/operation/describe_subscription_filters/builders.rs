@@ -3,139 +3,120 @@ pub use crate::operation::describe_subscription_filters::_describe_subscription_
 
 pub use crate::operation::describe_subscription_filters::_describe_subscription_filters_input::DescribeSubscriptionFiltersInputBuilder;
 
+impl DescribeSubscriptionFiltersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_subscription_filters();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeSubscriptionFilters`.
-///
+/// 
 /// <p>Lists the subscription filters for the specified log group. You can list all the subscription filters or filter the results by prefix. The results are ASCII-sorted by filter name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSubscriptionFiltersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder,
 }
-impl DescribeSubscriptionFiltersFluentBuilder {
+impl DescribeSubscriptionFiltersFluentBuilder  {
     /// Creates a new `DescribeSubscriptionFilters`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFilters,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeSubscriptionFilters as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_subscription_filters::DescribeSubscriptionFilters, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFilters,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_subscription_filters::DescribeSubscriptionFilters, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator{
-        crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator {
+                                crate::operation::describe_subscription_filters::paginator::DescribeSubscriptionFiltersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
+    }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn filter_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_name_prefix(input.into());
         self
     }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn set_filter_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_name_prefix(input);
         self
+    }
+    /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
+    pub fn get_filter_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_name_prefix()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +128,10 @@ impl DescribeSubscriptionFiltersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -157,4 +142,9 @@ impl DescribeSubscriptionFiltersFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
 }
+

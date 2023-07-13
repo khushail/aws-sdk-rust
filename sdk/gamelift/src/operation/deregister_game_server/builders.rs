@@ -3,136 +3,118 @@ pub use crate::operation::deregister_game_server::_deregister_game_server_output
 
 pub use crate::operation::deregister_game_server::_deregister_game_server_input::DeregisterGameServerInputBuilder;
 
+impl DeregisterGameServerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::deregister_game_server::DeregisterGameServerOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::deregister_game_server::DeregisterGameServerError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.deregister_game_server();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DeregisterGameServer`.
-///
-/// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>
-/// <p>Removes the game server from a game server group. As a result of this operation, the deregistered game server can no longer be claimed and will not be returned in a list of active game servers. </p>
-/// <p>To deregister a game server, specify the game server group and game server ID. If successful, this operation emits a CloudWatch event with termination timestamp and reason.</p>
-/// <p> <b>Learn more</b> </p>
+/// 
+/// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p> 
+/// <p>Removes the game server from a game server group. As a result of this operation, the deregistered game server can no longer be claimed and will not be returned in a list of active game servers. </p> 
+/// <p>To deregister a game server, specify the game server group and game server ID. If successful, this operation emits a CloudWatch event with termination timestamp and reason.</p> 
+/// <p> <b>Learn more</b> </p> 
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterGameServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::deregister_game_server::builders::DeregisterGameServerInputBuilder,
+                    inner: crate::operation::deregister_game_server::builders::DeregisterGameServerInputBuilder,
 }
-impl DeregisterGameServerFluentBuilder {
+impl DeregisterGameServerFluentBuilder  {
     /// Creates a new `DeregisterGameServer`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::deregister_game_server::DeregisterGameServer,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_game_server::DeregisterGameServerError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DeregisterGameServer as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_game_server::builders::DeregisterGameServerInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_game_server::DeregisterGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_game_server::DeregisterGameServerError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::deregister_game_server::DeregisterGameServer, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::deregister_game_server::DeregisterGameServerError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::deregister_game_server::DeregisterGameServerOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_game_server::DeregisterGameServerError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_game_server::DeregisterGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_game_server::DeregisterGameServerError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::deregister_game_server::DeregisterGameServer,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_game_server::DeregisterGameServerError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::deregister_game_server::DeregisterGameServerOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_game_server::DeregisterGameServerError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::deregister_game_server::DeregisterGameServer, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::deregister_game_server::DeregisterGameServerError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
+    /// <p>A unique identifier for the game server group where the game server is running.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_group_name()
+    }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
-    pub fn game_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_id(input.into());
         self
     }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
-    pub fn set_game_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_id(input);
         self
     }
+    /// <p>A custom string that uniquely identifies the game server to deregister.</p>
+    pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_id()
+    }
 }
+

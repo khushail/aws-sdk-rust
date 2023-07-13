@@ -3,133 +3,114 @@ pub use crate::operation::update_service_settings::_update_service_settings_outp
 
 pub use crate::operation::update_service_settings::_update_service_settings_input::UpdateServiceSettingsInputBuilder;
 
+impl UpdateServiceSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_service_settings::UpdateServiceSettingsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_service_settings::UpdateServiceSettingsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_service_settings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateServiceSettings`.
-///
+/// 
 /// <p>Updates the service settings for Linux subscriptions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder,
+                    inner: crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder,
 }
-impl UpdateServiceSettingsFluentBuilder {
+impl UpdateServiceSettingsFluentBuilder  {
     /// Creates a new `UpdateServiceSettings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_service_settings::UpdateServiceSettings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateServiceSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_service_settings::UpdateServiceSettings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_service_settings::UpdateServiceSettings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_service_settings::UpdateServiceSettings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    pub fn linux_subscriptions_discovery(
-        mut self,
-        input: crate::types::LinuxSubscriptionsDiscovery,
-    ) -> Self {
+    pub fn linux_subscriptions_discovery(mut self, input: crate::types::LinuxSubscriptionsDiscovery) -> Self {
         self.inner = self.inner.linux_subscriptions_discovery(input);
         self
     }
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    pub fn set_linux_subscriptions_discovery(
-        mut self,
-        input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>,
-    ) -> Self {
+    pub fn set_linux_subscriptions_discovery(mut self, input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>) -> Self {
         self.inner = self.inner.set_linux_subscriptions_discovery(input);
         self
     }
+    /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
+    pub fn get_linux_subscriptions_discovery(&self) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscovery> {
+        self.inner.get_linux_subscriptions_discovery()
+    }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    pub fn linux_subscriptions_discovery_settings(
-        mut self,
-        input: crate::types::LinuxSubscriptionsDiscoverySettings,
-    ) -> Self {
+    pub fn linux_subscriptions_discovery_settings(mut self, input: crate::types::LinuxSubscriptionsDiscoverySettings) -> Self {
         self.inner = self.inner.linux_subscriptions_discovery_settings(input);
         self
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    pub fn set_linux_subscriptions_discovery_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>,
-    ) -> Self {
+    pub fn set_linux_subscriptions_discovery_settings(mut self, input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>) -> Self {
         self.inner = self.inner.set_linux_subscriptions_discovery_settings(input);
         self
+    }
+    /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
+    pub fn get_linux_subscriptions_discovery_settings(&self) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings> {
+        self.inner.get_linux_subscriptions_discovery_settings()
     }
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
     pub fn allow_update(mut self, input: bool) -> Self {
@@ -141,4 +122,9 @@ impl UpdateServiceSettingsFluentBuilder {
         self.inner = self.inner.set_allow_update(input);
         self
     }
+    /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
+    pub fn get_allow_update(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_update()
+    }
 }
+

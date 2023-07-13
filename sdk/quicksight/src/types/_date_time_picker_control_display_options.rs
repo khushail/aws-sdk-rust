@@ -3,7 +3,7 @@
 /// <p>The display options of a control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateTimePickerControlDisplayOptions {
+pub struct DateTimePickerControlDisplayOptions  {
     /// <p>The options to configure the title visibility, name, and font size.</p>
     #[doc(hidden)]
     pub title_options: ::std::option::Option<crate::types::LabelOptions>,
@@ -13,11 +13,11 @@ pub struct DateTimePickerControlDisplayOptions {
 }
 impl DateTimePickerControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn title_options(&self) -> ::std::option::Option<&crate::types::LabelOptions> {
+    pub fn title_options(&self) -> ::std::option::Option<& crate::types::LabelOptions> {
         self.title_options.as_ref()
     }
     /// <p>Customize how dates are formatted in controls.</p>
-    pub fn date_time_format(&self) -> ::std::option::Option<&str> {
+    pub fn date_time_format(&self) -> ::std::option::Option<& str> {
         self.date_time_format.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DateTimePickerControlDisplayOptions {
 
 /// A builder for [`DateTimePickerControlDisplayOptions`](crate::types::DateTimePickerControlDisplayOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateTimePickerControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
     pub(crate) date_time_format: ::std::option::Option<::std::string::String>,
@@ -44,34 +42,34 @@ impl DateTimePickerControlDisplayOptionsBuilder {
         self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn set_title_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelOptions>,
-    ) -> Self {
-        self.title_options = input;
-        self
+    pub fn set_title_options(mut self, input: ::std::option::Option<crate::types::LabelOptions>) -> Self {
+        self.title_options = input; self
+    }
+    /// <p>The options to configure the title visibility, name, and font size.</p>
+    pub fn get_title_options(&self) -> &::std::option::Option<crate::types::LabelOptions> {
+        &self.title_options
     }
     /// <p>Customize how dates are formatted in controls.</p>
-    pub fn date_time_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn date_time_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_time_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Customize how dates are formatted in controls.</p>
-    pub fn set_date_time_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.date_time_format = input;
-        self
+    pub fn set_date_time_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.date_time_format = input; self
+    }
+    /// <p>Customize how dates are formatted in controls.</p>
+    pub fn get_date_time_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_time_format
     }
     /// Consumes the builder and constructs a [`DateTimePickerControlDisplayOptions`](crate::types::DateTimePickerControlDisplayOptions).
     pub fn build(self) -> crate::types::DateTimePickerControlDisplayOptions {
         crate::types::DateTimePickerControlDisplayOptions {
-            title_options: self.title_options,
-            date_time_format: self.date_time_format,
+            title_options: self.title_options
+            ,
+            date_time_format: self.date_time_format
+            ,
         }
     }
 }
+

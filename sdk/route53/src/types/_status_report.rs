@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatusReport {
+pub struct StatusReport  {
     /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct StatusReport {
 }
 impl StatusReport {
     /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn checked_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn checked_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.checked_time.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl StatusReport {
 
 /// A builder for [`StatusReport`](crate::types::StatusReport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatusReportBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) checked_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,8 +43,11 @@ impl StatusReportBuilder {
     }
     /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
     pub fn checked_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -54,18 +55,21 @@ impl StatusReportBuilder {
         self
     }
     /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn set_checked_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.checked_time = input;
-        self
+    pub fn set_checked_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.checked_time = input; self
+    }
+    /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
+    pub fn get_checked_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.checked_time
     }
     /// Consumes the builder and constructs a [`StatusReport`](crate::types::StatusReport).
     pub fn build(self) -> crate::types::StatusReport {
         crate::types::StatusReport {
-            status: self.status,
-            checked_time: self.checked_time,
+            status: self.status
+            ,
+            checked_time: self.checked_time
+            ,
         }
     }
 }
+

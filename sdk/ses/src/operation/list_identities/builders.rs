@@ -3,118 +3,107 @@ pub use crate::operation::list_identities::_list_identities_output::ListIdentiti
 
 pub use crate::operation::list_identities::_list_identities_input::ListIdentitiesInputBuilder;
 
+impl ListIdentitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_identities::ListIdentitiesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_identities::ListIdentitiesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_identities();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListIdentities`.
-///
-/// <p>Returns a list containing all of the identities (email addresses and domains) for your AWS account in the current AWS Region, regardless of verification status.</p>
+/// 
+/// <p>Returns a list containing all of the identities (email addresses and domains) for your AWS account in the current AWS Region, regardless of verification status.</p> 
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIdentitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_identities::builders::ListIdentitiesInputBuilder,
+                    inner: crate::operation::list_identities::builders::ListIdentitiesInputBuilder,
 }
-impl ListIdentitiesFluentBuilder {
+impl ListIdentitiesFluentBuilder  {
     /// Creates a new `ListIdentities`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_identities::ListIdentities,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_identities::ListIdentitiesError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListIdentities as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_identities::builders::ListIdentitiesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_identities::ListIdentitiesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_identities::ListIdentitiesError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_identities::ListIdentities, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_identities::ListIdentitiesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_identities::ListIdentitiesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_identities::ListIdentitiesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_identities::ListIdentitiesError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_identities::ListIdentities,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_identities::ListIdentitiesError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_identities::ListIdentitiesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_identities::ListIdentities, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_identities::ListIdentitiesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_identities::paginator::ListIdentitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_identities::paginator::ListIdentitiesPaginator {
-        crate::operation::list_identities::paginator::ListIdentitiesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_identities::paginator::ListIdentitiesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_identities::paginator::ListIdentitiesPaginator {
+                                crate::operation::list_identities::paginator::ListIdentitiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.inner = self.inner.identity_type(input);
         self
     }
     /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
+    }
+    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        self.inner.get_identity_type()
     }
     /// <p>The token to use for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +115,10 @@ impl ListIdentitiesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -136,4 +129,9 @@ impl ListIdentitiesFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
 }
+

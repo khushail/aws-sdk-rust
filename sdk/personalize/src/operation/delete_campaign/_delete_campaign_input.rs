@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCampaignInput {
+pub struct DeleteCampaignInput  {
     /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
     #[doc(hidden)]
     pub campaign_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCampaignInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
-    pub fn campaign_arn(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_arn(&self) -> ::std::option::Option<& str> {
         self.campaign_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteCampaignInput {
 
 /// A builder for [`DeleteCampaignInput`](crate::operation::delete_campaign::DeleteCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCampaignInputBuilder {
     pub(crate) campaign_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteCampaignInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
     pub fn set_campaign_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_arn = input;
-        self
+        self.campaign_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
+    pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_arn
     }
     /// Consumes the builder and constructs a [`DeleteCampaignInput`](crate::operation::delete_campaign::DeleteCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_campaign::DeleteCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_campaign::DeleteCampaignInput {
-            campaign_arn: self.campaign_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_campaign::DeleteCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_campaign::DeleteCampaignInput {
+                campaign_arn: self.campaign_arn
+                ,
+            }
+        )
     }
 }
+

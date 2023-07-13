@@ -3,7 +3,7 @@
 /// <p> The label detection settings you want to use in your stream processor. This includes the labels you want the stream processor to detect and the minimum confidence level allowed to label objects. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectedHomeSettingsForUpdate {
+pub struct ConnectedHomeSettingsForUpdate  {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
     #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,7 +13,7 @@ pub struct ConnectedHomeSettingsForUpdate {
 }
 impl ConnectedHomeSettingsForUpdate {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn labels(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.labels.as_deref()
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
@@ -30,9 +30,7 @@ impl ConnectedHomeSettingsForUpdate {
 
 /// A builder for [`ConnectedHomeSettingsForUpdate`](crate::types::ConnectedHomeSettingsForUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectedHomeSettingsForUpdateBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) min_confidence: ::std::option::Option<f32>,
@@ -45,17 +43,17 @@ impl ConnectedHomeSettingsForUpdateBuilder {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.labels = input; self
+    }
+    /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
     pub fn min_confidence(mut self, input: f32) -> Self {
@@ -64,14 +62,20 @@ impl ConnectedHomeSettingsForUpdateBuilder {
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_confidence = input;
-        self
+        self.min_confidence = input; self
+    }
+    /// <p> The minimum confidence required to label an object in the video. </p>
+    pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
+        &self.min_confidence
     }
     /// Consumes the builder and constructs a [`ConnectedHomeSettingsForUpdate`](crate::types::ConnectedHomeSettingsForUpdate).
     pub fn build(self) -> crate::types::ConnectedHomeSettingsForUpdate {
         crate::types::ConnectedHomeSettingsForUpdate {
-            labels: self.labels,
-            min_confidence: self.min_confidence,
+            labels: self.labels
+            ,
+            min_confidence: self.min_confidence
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Reserved for internal use.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationMetadataItem {
+pub struct RegistrationMetadataItem  {
     /// <p>Reserved for internal use.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct RegistrationMetadataItem {
 }
 impl RegistrationMetadataItem {
     /// <p>Reserved for internal use.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Reserved for internal use.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl RegistrationMetadataItem {
 
 /// A builder for [`RegistrationMetadataItem`](crate::types::RegistrationMetadataItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistrationMetadataItemBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl RegistrationMetadataItemBuilder {
     }
     /// <p>Reserved for internal use.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>Reserved for internal use.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl RegistrationMetadataItemBuilder {
     }
     /// <p>Reserved for internal use.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`RegistrationMetadataItem`](crate::types::RegistrationMetadataItem).
     pub fn build(self) -> crate::types::RegistrationMetadataItem {
         crate::types::RegistrationMetadataItem {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

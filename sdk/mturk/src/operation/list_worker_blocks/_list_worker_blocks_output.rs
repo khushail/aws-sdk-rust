@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkerBlocksOutput {
+pub struct ListWorkerBlocksOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListWorkerBlocksOutput {
 }
 impl ListWorkerBlocksOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
@@ -24,28 +24,25 @@ impl ListWorkerBlocksOutput {
         self.num_results
     }
     /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
-    pub fn worker_blocks(&self) -> ::std::option::Option<&[crate::types::WorkerBlock]> {
+    pub fn worker_blocks(&self) -> ::std::option::Option<& [crate::types::WorkerBlock]> {
         self.worker_blocks.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkerBlocksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListWorkerBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkerBlocksOutput`](crate::operation::list_worker_blocks::ListWorkerBlocksOutput).
-    pub fn builder() -> crate::operation::list_worker_blocks::builders::ListWorkerBlocksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_worker_blocks::builders::ListWorkerBlocksOutputBuilder {
         crate::operation::list_worker_blocks::builders::ListWorkerBlocksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkerBlocksOutput`](crate::operation::list_worker_blocks::ListWorkerBlocksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkerBlocksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) num_results: ::std::option::Option<i32>,
@@ -60,8 +57,11 @@ impl ListWorkerBlocksOutputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     pub fn num_results(mut self, input: i32) -> Self {
@@ -70,8 +70,11 @@ impl ListWorkerBlocksOutputBuilder {
     }
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     pub fn set_num_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_results = input;
-        self
+        self.num_results = input; self
+    }
+    /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
+    pub fn get_num_results(&self) -> &::std::option::Option<i32> {
+        &self.num_results
     }
     /// Appends an item to `worker_blocks`.
     ///
@@ -80,34 +83,38 @@ impl ListWorkerBlocksOutputBuilder {
     /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
     pub fn worker_blocks(mut self, input: crate::types::WorkerBlock) -> Self {
         let mut v = self.worker_blocks.unwrap_or_default();
-        v.push(input);
-        self.worker_blocks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.worker_blocks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
-    pub fn set_worker_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkerBlock>>,
-    ) -> Self {
-        self.worker_blocks = input;
-        self
+    pub fn set_worker_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkerBlock>>) -> Self {
+        self.worker_blocks = input; self
+    }
+    /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
+    pub fn get_worker_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerBlock>> {
+        &self.worker_blocks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListWorkerBlocksOutput`](crate::operation::list_worker_blocks::ListWorkerBlocksOutput).
     pub fn build(self) -> crate::operation::list_worker_blocks::ListWorkerBlocksOutput {
         crate::operation::list_worker_blocks::ListWorkerBlocksOutput {
-            next_token: self.next_token,
-            num_results: self.num_results,
-            worker_blocks: self.worker_blocks,
+            next_token: self.next_token
+            ,
+            num_results: self.num_results
+            ,
+            worker_blocks: self.worker_blocks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

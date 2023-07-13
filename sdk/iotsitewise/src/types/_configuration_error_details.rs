@@ -3,7 +3,7 @@
 /// <p>Contains the details of an IoT SiteWise configuration error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationErrorDetails {
+pub struct ConfigurationErrorDetails  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ErrorCode>,
@@ -13,11 +13,11 @@ pub struct ConfigurationErrorDetails {
 }
 impl ConfigurationErrorDetails {
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ConfigurationErrorDetails {
 
 /// A builder for [`ConfigurationErrorDetails`](crate::types::ConfigurationErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationErrorDetailsBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ConfigurationErrorDetailsBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>The error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.code
     }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ConfigurationErrorDetailsBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ConfigurationErrorDetails`](crate::types::ConfigurationErrorDetails).
     pub fn build(self) -> crate::types::ConfigurationErrorDetails {
         crate::types::ConfigurationErrorDetails {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The configuration for connecting a messaging stream to Amazon Kinesis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamingConfiguration {
+pub struct StreamingConfiguration  {
     /// <p>The data type of the configuration.</p>
     #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::MessagingDataType>,
@@ -13,11 +13,11 @@ pub struct StreamingConfiguration {
 }
 impl StreamingConfiguration {
     /// <p>The data type of the configuration.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::MessagingDataType> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::MessagingDataType> {
         self.data_type.as_ref()
     }
     /// <p>The ARN of the resource in the configuration. </p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl StreamingConfiguration {
 
 /// A builder for [`StreamingConfiguration`](crate::types::StreamingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamingConfigurationBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::MessagingDataType>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl StreamingConfigurationBuilder {
         self
     }
     /// <p>The data type of the configuration.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessagingDataType>,
-    ) -> Self {
-        self.data_type = input;
-        self
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::MessagingDataType>) -> Self {
+        self.data_type = input; self
+    }
+    /// <p>The data type of the configuration.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::MessagingDataType> {
+        &self.data_type
     }
     /// <p>The ARN of the resource in the configuration. </p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl StreamingConfigurationBuilder {
     }
     /// <p>The ARN of the resource in the configuration. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The ARN of the resource in the configuration. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`StreamingConfiguration`](crate::types::StreamingConfiguration).
     pub fn build(self) -> crate::types::StreamingConfiguration {
         crate::types::StreamingConfiguration {
-            data_type: self.data_type,
-            resource_arn: self.resource_arn,
+            data_type: self.data_type
+            ,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

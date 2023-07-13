@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationOutput {
+pub struct UpdateApplicationOutput  {
     /// <p>The new version of the application.</p>
     #[doc(hidden)]
     pub application_version: ::std::option::Option<i32>,
@@ -15,23 +15,20 @@ impl UpdateApplicationOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_application::builders::UpdateApplicationOutputBuilder {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationOutputBuilder {
         crate::operation::update_application::builders::UpdateApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutputBuilder {
     pub(crate) application_version: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -44,23 +41,28 @@ impl UpdateApplicationOutputBuilder {
     }
     /// <p>The new version of the application.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
+    }
+    /// <p>The new version of the application.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<i32> {
+        &self.application_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput).
     pub fn build(self) -> crate::operation::update_application::UpdateApplicationOutput {
         crate::operation::update_application::UpdateApplicationOutput {
-            application_version: self.application_version,
+            application_version: self.application_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

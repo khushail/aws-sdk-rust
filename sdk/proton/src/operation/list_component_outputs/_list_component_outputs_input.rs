@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComponentOutputsInput {
+pub struct ListComponentOutputsInput  {
     /// <p>The name of the component whose outputs you want.</p>
     #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct ListComponentOutputsInput {
 }
 impl ListComponentOutputsInput {
     /// <p>The name of the component whose outputs you want.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListComponentOutputsInput {
     /// Creates a new builder-style object to manufacture [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
-    pub fn builder(
-    ) -> crate::operation::list_component_outputs::builders::ListComponentOutputsInputBuilder {
+    pub fn builder() -> crate::operation::list_component_outputs::builders::ListComponentOutputsInputBuilder {
         crate::operation::list_component_outputs::builders::ListComponentOutputsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentOutputsInputBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentOutputsInputBuilder {
     /// <p>The name of the component whose outputs you want.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component whose outputs you want.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.component_name = input;
-        self
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_name = input; self
+    }
+    /// <p>The name of the component whose outputs you want.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,21 +55,22 @@ impl ListComponentOutputsInputBuilder {
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_component_outputs::ListComponentOutputsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_component_outputs::ListComponentOutputsInput {
-                component_name: self.component_name,
-                next_token: self.next_token,
-            },
+                component_name: self.component_name
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

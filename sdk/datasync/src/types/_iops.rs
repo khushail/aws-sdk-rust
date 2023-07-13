@@ -3,7 +3,7 @@
 /// <p>The IOPS peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Iops {
+pub struct Iops  {
     /// <p>Peak IOPS related to read operations.</p>
     #[doc(hidden)]
     pub read: ::std::option::Option<f64>,
@@ -44,9 +44,7 @@ impl Iops {
 
 /// A builder for [`Iops`](crate::types::Iops).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IopsBuilder {
     pub(crate) read: ::std::option::Option<f64>,
     pub(crate) write: ::std::option::Option<f64>,
@@ -61,8 +59,11 @@ impl IopsBuilder {
     }
     /// <p>Peak IOPS related to read operations.</p>
     pub fn set_read(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.read = input;
-        self
+        self.read = input; self
+    }
+    /// <p>Peak IOPS related to read operations.</p>
+    pub fn get_read(&self) -> &::std::option::Option<f64> {
+        &self.read
     }
     /// <p>Peak IOPS related to write operations.</p>
     pub fn write(mut self, input: f64) -> Self {
@@ -71,8 +72,11 @@ impl IopsBuilder {
     }
     /// <p>Peak IOPS related to write operations.</p>
     pub fn set_write(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.write = input;
-        self
+        self.write = input; self
+    }
+    /// <p>Peak IOPS related to write operations.</p>
+    pub fn get_write(&self) -> &::std::option::Option<f64> {
+        &self.write
     }
     /// <p>Peak IOPS unrelated to read and write operations.</p>
     pub fn other(mut self, input: f64) -> Self {
@@ -81,8 +85,11 @@ impl IopsBuilder {
     }
     /// <p>Peak IOPS unrelated to read and write operations.</p>
     pub fn set_other(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.other = input;
-        self
+        self.other = input; self
+    }
+    /// <p>Peak IOPS unrelated to read and write operations.</p>
+    pub fn get_other(&self) -> &::std::option::Option<f64> {
+        &self.other
     }
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
     pub fn total(mut self, input: f64) -> Self {
@@ -91,16 +98,24 @@ impl IopsBuilder {
     }
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
     pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
+    }
+    /// <p>Peak total IOPS on your on-premises storage system resource.</p>
+    pub fn get_total(&self) -> &::std::option::Option<f64> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`Iops`](crate::types::Iops).
     pub fn build(self) -> crate::types::Iops {
         crate::types::Iops {
-            read: self.read,
-            write: self.write,
-            other: self.other,
-            total: self.total,
+            read: self.read
+            ,
+            write: self.write
+            ,
+            other: self.other
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

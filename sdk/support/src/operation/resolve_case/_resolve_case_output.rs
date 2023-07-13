@@ -3,7 +3,7 @@
 /// <p>The status of the case returned by the <code>ResolveCase</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolveCaseOutput {
+pub struct ResolveCaseOutput  {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
     #[doc(hidden)]
     pub initial_case_status: ::std::option::Option<::std::string::String>,
@@ -14,19 +14,19 @@ pub struct ResolveCaseOutput {
 }
 impl ResolveCaseOutput {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
-    pub fn initial_case_status(&self) -> ::std::option::Option<&str> {
+    pub fn initial_case_status(&self) -> ::std::option::Option<& str> {
         self.initial_case_status.as_deref()
     }
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
-    pub fn final_case_status(&self) -> ::std::option::Option<&str> {
+    pub fn final_case_status(&self) -> ::std::option::Option<& str> {
         self.final_case_status.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ResolveCaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ResolveCaseOutput {
     /// Creates a new builder-style object to manufacture [`ResolveCaseOutput`](crate::operation::resolve_case::ResolveCaseOutput).
     pub fn builder() -> crate::operation::resolve_case::builders::ResolveCaseOutputBuilder {
@@ -36,9 +36,7 @@ impl ResolveCaseOutput {
 
 /// A builder for [`ResolveCaseOutput`](crate::operation::resolve_case::ResolveCaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveCaseOutputBuilder {
     pub(crate) initial_case_status: ::std::option::Option<::std::string::String>,
     pub(crate) final_case_status: ::std::option::Option<::std::string::String>,
@@ -46,52 +44,49 @@ pub struct ResolveCaseOutputBuilder {
 }
 impl ResolveCaseOutputBuilder {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
-    pub fn initial_case_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_case_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_case_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
-    pub fn set_initial_case_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.initial_case_status = input;
-        self
+    pub fn set_initial_case_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.initial_case_status = input; self
+    }
+    /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
+    pub fn get_initial_case_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_case_status
     }
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
-    pub fn final_case_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_case_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_case_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
-    pub fn set_final_case_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.final_case_status = input;
-        self
+    pub fn set_final_case_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.final_case_status = input; self
+    }
+    /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
+    pub fn get_final_case_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.final_case_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ResolveCaseOutput`](crate::operation::resolve_case::ResolveCaseOutput).
     pub fn build(self) -> crate::operation::resolve_case::ResolveCaseOutput {
         crate::operation::resolve_case::ResolveCaseOutput {
-            initial_case_status: self.initial_case_status,
-            final_case_status: self.final_case_status,
+            initial_case_status: self.initial_case_status
+            ,
+            final_case_status: self.final_case_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

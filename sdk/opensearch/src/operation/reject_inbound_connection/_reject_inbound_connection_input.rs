@@ -3,62 +3,52 @@
 /// <p>Container for the request parameters to the <code>RejectInboundConnection</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectInboundConnectionInput {
+pub struct RejectInboundConnectionInput  {
     /// <p>The unique identifier of the inbound connection to reject.</p>
     #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
 impl RejectInboundConnectionInput {
     /// <p>The unique identifier of the inbound connection to reject.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
 }
 impl RejectInboundConnectionInput {
     /// Creates a new builder-style object to manufacture [`RejectInboundConnectionInput`](crate::operation::reject_inbound_connection::RejectInboundConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::reject_inbound_connection::builders::RejectInboundConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::reject_inbound_connection::builders::RejectInboundConnectionInputBuilder {
         crate::operation::reject_inbound_connection::builders::RejectInboundConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`RejectInboundConnectionInput`](crate::operation::reject_inbound_connection::RejectInboundConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectInboundConnectionInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }
 impl RejectInboundConnectionInputBuilder {
     /// <p>The unique identifier of the inbound connection to reject.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the inbound connection to reject.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_id = input;
-        self
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_id = input; self
+    }
+    /// <p>The unique identifier of the inbound connection to reject.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// Consumes the builder and constructs a [`RejectInboundConnectionInput`](crate::operation::reject_inbound_connection::RejectInboundConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_inbound_connection::RejectInboundConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_inbound_connection::RejectInboundConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::reject_inbound_connection::RejectInboundConnectionInput {
-                connection_id: self.connection_id,
-            },
+                connection_id: self.connection_id
+                ,
+            }
         )
     }
 }
+

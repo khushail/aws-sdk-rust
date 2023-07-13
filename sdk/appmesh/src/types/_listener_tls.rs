@@ -3,12 +3,12 @@
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListenerTls {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+pub struct ListenerTls  {
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ListenerTlsMode>,
@@ -20,21 +20,21 @@ pub struct ListenerTls {
     pub validation: ::std::option::Option<crate::types::ListenerTlsValidationContext>,
 }
 impl ListenerTls {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::ListenerTlsMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::ListenerTlsMode> {
         self.mode.as_ref()
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&crate::types::ListenerTlsCertificate> {
+    pub fn certificate(&self) -> ::std::option::Option<& crate::types::ListenerTlsCertificate> {
         self.certificate.as_ref()
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn validation(&self) -> ::std::option::Option<&crate::types::ListenerTlsValidationContext> {
+    pub fn validation(&self) -> ::std::option::Option<& crate::types::ListenerTlsValidationContext> {
         self.validation.as_ref()
     }
 }
@@ -47,34 +47,40 @@ impl ListenerTls {
 
 /// A builder for [`ListenerTls`](crate::types::ListenerTls).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListenerTlsBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::ListenerTlsMode>,
     pub(crate) certificate: ::std::option::Option<crate::types::ListenerTlsCertificate>,
     pub(crate) validation: ::std::option::Option<crate::types::ListenerTlsValidationContext>,
 }
 impl ListenerTlsBuilder {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
     pub fn mode(mut self, input: crate::types::ListenerTlsMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ListenerTlsMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
+    }
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
+    /// </ul>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ListenerTlsMode> {
+        &self.mode
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
     pub fn certificate(mut self, input: crate::types::ListenerTlsCertificate) -> Self {
@@ -82,12 +88,12 @@ impl ListenerTlsBuilder {
         self
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::ListenerTlsCertificate>,
-    ) -> Self {
-        self.certificate = input;
-        self
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::ListenerTlsCertificate>) -> Self {
+        self.certificate = input; self
+    }
+    /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<crate::types::ListenerTlsCertificate> {
+        &self.certificate
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
     pub fn validation(mut self, input: crate::types::ListenerTlsValidationContext) -> Self {
@@ -95,19 +101,23 @@ impl ListenerTlsBuilder {
         self
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn set_validation(
-        mut self,
-        input: ::std::option::Option<crate::types::ListenerTlsValidationContext>,
-    ) -> Self {
-        self.validation = input;
-        self
+    pub fn set_validation(mut self, input: ::std::option::Option<crate::types::ListenerTlsValidationContext>) -> Self {
+        self.validation = input; self
+    }
+    /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
+    pub fn get_validation(&self) -> &::std::option::Option<crate::types::ListenerTlsValidationContext> {
+        &self.validation
     }
     /// Consumes the builder and constructs a [`ListenerTls`](crate::types::ListenerTls).
     pub fn build(self) -> crate::types::ListenerTls {
         crate::types::ListenerTls {
-            mode: self.mode,
-            certificate: self.certificate,
-            validation: self.validation,
+            mode: self.mode
+            ,
+            certificate: self.certificate
+            ,
+            validation: self.validation
+            ,
         }
     }
 }
+

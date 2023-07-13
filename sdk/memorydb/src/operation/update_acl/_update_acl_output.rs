@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAclOutput {
+pub struct UpdateAclOutput  {
     /// <p>The updated Access Control List</p>
     #[doc(hidden)]
     pub acl: ::std::option::Option<crate::types::Acl>,
@@ -10,15 +10,15 @@ pub struct UpdateAclOutput {
 }
 impl UpdateAclOutput {
     /// <p>The updated Access Control List</p>
-    pub fn acl(&self) -> ::std::option::Option<&crate::types::Acl> {
+    pub fn acl(&self) -> ::std::option::Option<& crate::types::Acl> {
         self.acl.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateAclOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAclOutput`](crate::operation::update_acl::UpdateAclOutput).
     pub fn builder() -> crate::operation::update_acl::builders::UpdateAclOutputBuilder {
@@ -28,9 +28,7 @@ impl UpdateAclOutput {
 
 /// A builder for [`UpdateAclOutput`](crate::operation::update_acl::UpdateAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAclOutputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::Acl>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl UpdateAclOutputBuilder {
     }
     /// <p>The updated Access Control List</p>
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::Acl>) -> Self {
-        self.acl = input;
-        self
+        self.acl = input; self
+    }
+    /// <p>The updated Access Control List</p>
+    pub fn get_acl(&self) -> &::std::option::Option<crate::types::Acl> {
+        &self.acl
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateAclOutput`](crate::operation::update_acl::UpdateAclOutput).
     pub fn build(self) -> crate::operation::update_acl::UpdateAclOutput {
         crate::operation::update_acl::UpdateAclOutput {
-            acl: self.acl,
+            acl: self.acl
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

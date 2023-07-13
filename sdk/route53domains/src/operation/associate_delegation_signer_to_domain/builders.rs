@@ -3,77 +3,88 @@ pub use crate::operation::associate_delegation_signer_to_domain::_associate_dele
 
 pub use crate::operation::associate_delegation_signer_to_domain::_associate_delegation_signer_to_domain_input::AssociateDelegationSignerToDomainInputBuilder;
 
+impl AssociateDelegationSignerToDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.associate_delegation_signer_to_domain();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `AssociateDelegationSignerToDomain`.
-///
-/// <p> Creates a delegation signer (DS) record in the registry zone for this domain name.</p>
+/// 
+/// <p> Creates a delegation signer (DS) record in the registry zone for this domain name.</p> 
 /// <p>Note that creating DS record at the registry impacts DNSSEC validation of your DNS records. This action may render your domain name unavailable on the internet if the steps are completed in the wrong order, or with incorrect timing. For more information about DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring DNSSEC signing</a> in the <i>Route&nbsp;53 developer guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDelegationSignerToDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainInputBuilder,
 }
-impl AssociateDelegationSignerToDomainFluentBuilder {
+impl AssociateDelegationSignerToDomainFluentBuilder  {
     /// Creates a new `AssociateDelegationSignerToDomain`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDelegationSignerToDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomain, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomain, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomain, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -84,17 +95,23 @@ impl AssociateDelegationSignerToDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
     pub fn signing_attributes(mut self, input: crate::types::DnssecSigningAttributes) -> Self {
         self.inner = self.inner.signing_attributes(input);
         self
     }
     /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
-    pub fn set_signing_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::DnssecSigningAttributes>,
-    ) -> Self {
+    pub fn set_signing_attributes(mut self, input: ::std::option::Option<crate::types::DnssecSigningAttributes>) -> Self {
         self.inner = self.inner.set_signing_attributes(input);
         self
     }
+    /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+    pub fn get_signing_attributes(&self) -> &::std::option::Option<crate::types::DnssecSigningAttributes> {
+        self.inner.get_signing_attributes()
+    }
 }
+

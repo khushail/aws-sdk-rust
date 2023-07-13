@@ -3,102 +3,87 @@ pub use crate::operation::sample_channel_data::_sample_channel_data_output::Samp
 
 pub use crate::operation::sample_channel_data::_sample_channel_data_input::SampleChannelDataInputBuilder;
 
+impl SampleChannelDataInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::sample_channel_data::SampleChannelDataOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::sample_channel_data::SampleChannelDataError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.sample_channel_data();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SampleChannelData`.
-///
+/// 
 /// <p>Retrieves a sample of messages from the specified channel ingested during the specified timeframe. Up to 10 messages can be retrieved.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SampleChannelDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::sample_channel_data::builders::SampleChannelDataInputBuilder,
+                    inner: crate::operation::sample_channel_data::builders::SampleChannelDataInputBuilder,
 }
-impl SampleChannelDataFluentBuilder {
+impl SampleChannelDataFluentBuilder  {
     /// Creates a new `SampleChannelData`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::sample_channel_data::SampleChannelData,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sample_channel_data::SampleChannelDataError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SampleChannelData as a reference.
+    pub fn as_input(&self) -> &crate::operation::sample_channel_data::builders::SampleChannelDataInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::sample_channel_data::SampleChannelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sample_channel_data::SampleChannelDataError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::sample_channel_data::SampleChannelData, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::sample_channel_data::SampleChannelDataError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::sample_channel_data::SampleChannelDataOutput, ::aws_smithy_http::result::SdkError<crate::operation::sample_channel_data::SampleChannelDataError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::sample_channel_data::SampleChannelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sample_channel_data::SampleChannelDataError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::sample_channel_data::SampleChannelData,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sample_channel_data::SampleChannelDataError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::sample_channel_data::SampleChannelDataOutput, ::aws_smithy_http::result::SdkError<crate::operation::sample_channel_data::SampleChannelDataError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::sample_channel_data::SampleChannelData, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::sample_channel_data::SampleChannelDataError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the channel whose message samples are retrieved.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
@@ -108,6 +93,10 @@ impl SampleChannelDataFluentBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_name(input);
         self
+    }
+    /// <p>The name of the channel whose message samples are retrieved.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
     }
     /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
     pub fn max_messages(mut self, input: i32) -> Self {
@@ -119,18 +108,23 @@ impl SampleChannelDataFluentBuilder {
         self.inner = self.inner.set_max_messages(input);
         self
     }
+    /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
+    pub fn get_max_messages(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_messages()
+    }
     /// <p>The start of the time window from which sample messages are retrieved.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The start of the time window from which sample messages are retrieved.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The start of the time window from which sample messages are retrieved.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The end of the time window from which sample messages are retrieved.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,11 +132,13 @@ impl SampleChannelDataFluentBuilder {
         self
     }
     /// <p>The end of the time window from which sample messages are retrieved.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end of the time window from which sample messages are retrieved.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
 }
+

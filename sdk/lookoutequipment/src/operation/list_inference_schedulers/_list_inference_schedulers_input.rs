@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInferenceSchedulersInput {
+pub struct ListInferenceSchedulersInput  {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ pub struct ListInferenceSchedulersInput {
 }
 impl ListInferenceSchedulersInput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Specifies the maximum number of inference schedulers to list. </p>
@@ -29,32 +29,28 @@ impl ListInferenceSchedulersInput {
         self.max_results
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn inference_scheduler_name_begins_with(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_name_begins_with(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_name_begins_with.as_deref()
     }
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>Specifies the current status of the inference schedulers to list.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InferenceSchedulerStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InferenceSchedulerStatus> {
         self.status.as_ref()
     }
 }
 impl ListInferenceSchedulersInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceSchedulersInput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersInput).
-    pub fn builder(
-    ) -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder {
         crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceSchedulersInput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceSchedulersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,8 +66,11 @@ impl ListInferenceSchedulersInputBuilder {
     }
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> Specifies the maximum number of inference schedulers to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -80,24 +79,24 @@ impl ListInferenceSchedulersInputBuilder {
     }
     /// <p> Specifies the maximum number of inference schedulers to list. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> Specifies the maximum number of inference schedulers to list. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn inference_scheduler_name_begins_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name_begins_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn set_inference_scheduler_name_begins_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inference_scheduler_name_begins_with = input;
-        self
+    pub fn set_inference_scheduler_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inference_scheduler_name_begins_with = input; self
+    }
+    /// <p>The beginning of the name of the inference schedulers to be listed. </p>
+    pub fn get_inference_scheduler_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name_begins_with
     }
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +105,11 @@ impl ListInferenceSchedulersInputBuilder {
     }
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
+    }
+    /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p>Specifies the current status of the inference schedulers to list.</p>
     pub fn status(mut self, input: crate::types::InferenceSchedulerStatus) -> Self {
@@ -115,28 +117,29 @@ impl ListInferenceSchedulersInputBuilder {
         self
     }
     /// <p>Specifies the current status of the inference schedulers to list.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceSchedulerStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>Specifies the current status of the inference schedulers to list.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceSchedulerStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListInferenceSchedulersInput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_inference_schedulers::ListInferenceSchedulersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_inference_schedulers::ListInferenceSchedulersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_inference_schedulers::ListInferenceSchedulersInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                inference_scheduler_name_begins_with: self.inference_scheduler_name_begins_with,
-                model_name: self.model_name,
-                status: self.status,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                inference_scheduler_name_begins_with: self.inference_scheduler_name_begins_with
+                ,
+                model_name: self.model_name
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UngroupResourcesInput {
+pub struct UngroupResourcesInput  {
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
     #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct UngroupResourcesInput {
 }
 impl UngroupResourcesInput {
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
-    pub fn group(&self) -> ::std::option::Option<&str> {
+    pub fn group(&self) -> ::std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>The ARNs of the resources to be removed from the group.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn resource_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.resource_arns.as_deref()
     }
 }
 impl UngroupResourcesInput {
     /// Creates a new builder-style object to manufacture [`UngroupResourcesInput`](crate::operation::ungroup_resources::UngroupResourcesInput).
-    pub fn builder() -> crate::operation::ungroup_resources::builders::UngroupResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::ungroup_resources::builders::UngroupResourcesInputBuilder {
         crate::operation::ungroup_resources::builders::UngroupResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`UngroupResourcesInput`](crate::operation::ungroup_resources::UngroupResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UngroupResourcesInputBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,41 +42,41 @@ impl UngroupResourcesInputBuilder {
     }
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
+    }
+    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group
     }
     /// Appends an item to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>The ARNs of the resources to be removed from the group.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of the resources to be removed from the group.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.resource_arns = input; self
+    }
+    /// <p>The ARNs of the resources to be removed from the group.</p>
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
     }
     /// Consumes the builder and constructs a [`UngroupResourcesInput`](crate::operation::ungroup_resources::UngroupResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::ungroup_resources::UngroupResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::ungroup_resources::UngroupResourcesInput {
-            group: self.group,
-            resource_arns: self.resource_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::ungroup_resources::UngroupResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::ungroup_resources::UngroupResourcesInput {
+                group: self.group
+                ,
+                resource_arns: self.resource_arns
+                ,
+            }
+        )
     }
 }
+

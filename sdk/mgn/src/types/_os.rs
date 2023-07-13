@@ -3,14 +3,14 @@
 /// <p>Operating System.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Os {
+pub struct Os  {
     /// <p>OS full string.</p>
     #[doc(hidden)]
     pub full_string: ::std::option::Option<::std::string::String>,
 }
 impl Os {
     /// <p>OS full string.</p>
-    pub fn full_string(&self) -> ::std::option::Option<&str> {
+    pub fn full_string(&self) -> ::std::option::Option<& str> {
         self.full_string.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Os {
 
 /// A builder for [`Os`](crate::types::Os).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OsBuilder {
     pub(crate) full_string: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl OsBuilder {
     }
     /// <p>OS full string.</p>
     pub fn set_full_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.full_string = input;
-        self
+        self.full_string = input; self
+    }
+    /// <p>OS full string.</p>
+    pub fn get_full_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.full_string
     }
     /// Consumes the builder and constructs a [`Os`](crate::types::Os).
     pub fn build(self) -> crate::types::Os {
         crate::types::Os {
-            full_string: self.full_string,
+            full_string: self.full_string
+            ,
         }
     }
 }
+

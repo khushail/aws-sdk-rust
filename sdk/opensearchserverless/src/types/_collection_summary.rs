@@ -3,7 +3,7 @@
 /// <p>Details about each OpenSearch Serverless collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CollectionSummary {
+pub struct CollectionSummary  {
     /// <p>The unique identifier of the collection.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct CollectionSummary {
 }
 impl CollectionSummary {
     /// <p>The unique identifier of the collection.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CollectionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CollectionStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl CollectionSummary {
 
 /// A builder for [`CollectionSummary`](crate::types::CollectionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollectionSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl CollectionSummaryBuilder {
     }
     /// <p>The unique identifier of the collection.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier of the collection.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the collection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl CollectionSummaryBuilder {
     }
     /// <p>The name of the collection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the collection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The current status of the collection.</p>
     pub fn status(mut self, input: crate::types::CollectionStatus) -> Self {
@@ -80,12 +84,12 @@ impl CollectionSummaryBuilder {
         self
     }
     /// <p>The current status of the collection.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CollectionStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The current status of the collection.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CollectionStatus> {
+        &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,16 +98,24 @@ impl CollectionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the collection.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`CollectionSummary`](crate::types::CollectionSummary).
     pub fn build(self) -> crate::types::CollectionSummary {
         crate::types::CollectionSummary {
-            id: self.id,
-            name: self.name,
-            status: self.status,
-            arn: self.arn,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

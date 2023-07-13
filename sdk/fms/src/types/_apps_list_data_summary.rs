@@ -3,7 +3,7 @@
 /// <p>Details of the Firewall Manager applications list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppsListDataSummary {
+pub struct AppsListDataSummary  {
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
     #[doc(hidden)]
     pub list_arn: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct AppsListDataSummary {
 }
 impl AppsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
-    pub fn list_arn(&self) -> ::std::option::Option<&str> {
+    pub fn list_arn(&self) -> ::std::option::Option<& str> {
         self.list_arn.as_deref()
     }
     /// <p>The ID of the applications list.</p>
-    pub fn list_id(&self) -> ::std::option::Option<&str> {
+    pub fn list_id(&self) -> ::std::option::Option<& str> {
         self.list_id.as_deref()
     }
     /// <p>The name of the applications list.</p>
-    pub fn list_name(&self) -> ::std::option::Option<&str> {
+    pub fn list_name(&self) -> ::std::option::Option<& str> {
         self.list_name.as_deref()
     }
     /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
-    pub fn apps_list(&self) -> ::std::option::Option<&[crate::types::App]> {
+    pub fn apps_list(&self) -> ::std::option::Option<& [crate::types::App]> {
         self.apps_list.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl AppsListDataSummary {
 
 /// A builder for [`AppsListDataSummary`](crate::types::AppsListDataSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppsListDataSummaryBuilder {
     pub(crate) list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl AppsListDataSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
     pub fn set_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_arn = input;
-        self
+        self.list_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    pub fn get_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_arn
     }
     /// <p>The ID of the applications list.</p>
     pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl AppsListDataSummaryBuilder {
     }
     /// <p>The ID of the applications list.</p>
     pub fn set_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_id = input;
-        self
+        self.list_id = input; self
+    }
+    /// <p>The ID of the applications list.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_id
     }
     /// <p>The name of the applications list.</p>
     pub fn list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl AppsListDataSummaryBuilder {
     }
     /// <p>The name of the applications list.</p>
     pub fn set_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_name = input;
-        self
+        self.list_name = input; self
+    }
+    /// <p>The name of the applications list.</p>
+    pub fn get_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_name
     }
     /// Appends an item to `apps_list`.
     ///
@@ -91,25 +98,30 @@ impl AppsListDataSummaryBuilder {
     /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
     pub fn apps_list(mut self, input: crate::types::App) -> Self {
         let mut v = self.apps_list.unwrap_or_default();
-        v.push(input);
-        self.apps_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.apps_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
-    pub fn set_apps_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
-    ) -> Self {
-        self.apps_list = input;
-        self
+    pub fn set_apps_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::App>>) -> Self {
+        self.apps_list = input; self
+    }
+    /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
+    pub fn get_apps_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::App>> {
+        &self.apps_list
     }
     /// Consumes the builder and constructs a [`AppsListDataSummary`](crate::types::AppsListDataSummary).
     pub fn build(self) -> crate::types::AppsListDataSummary {
         crate::types::AppsListDataSummary {
-            list_arn: self.list_arn,
-            list_id: self.list_id,
-            list_name: self.list_name,
-            apps_list: self.apps_list,
+            list_arn: self.list_arn
+            ,
+            list_id: self.list_id
+            ,
+            list_name: self.list_name
+            ,
+            apps_list: self.apps_list
+            ,
         }
     }
 }
+

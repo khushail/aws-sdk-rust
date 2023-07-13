@@ -3,26 +3,21 @@
 /// <p>The configuration of a code signing operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SigningConfiguration {
+pub struct SigningConfiguration  {
     /// <p>The encryption algorithm options that are available for a code signing job.</p>
     #[doc(hidden)]
-    pub encryption_algorithm_options:
-        ::std::option::Option<crate::types::EncryptionAlgorithmOptions>,
+    pub encryption_algorithm_options: ::std::option::Option<crate::types::EncryptionAlgorithmOptions>,
     /// <p>The hash algorithm options that are available for a code signing job.</p>
     #[doc(hidden)]
     pub hash_algorithm_options: ::std::option::Option<crate::types::HashAlgorithmOptions>,
 }
 impl SigningConfiguration {
     /// <p>The encryption algorithm options that are available for a code signing job.</p>
-    pub fn encryption_algorithm_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionAlgorithmOptions> {
+    pub fn encryption_algorithm_options(&self) -> ::std::option::Option<& crate::types::EncryptionAlgorithmOptions> {
         self.encryption_algorithm_options.as_ref()
     }
     /// <p>The hash algorithm options that are available for a code signing job.</p>
-    pub fn hash_algorithm_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HashAlgorithmOptions> {
+    pub fn hash_algorithm_options(&self) -> ::std::option::Option<& crate::types::HashAlgorithmOptions> {
         self.hash_algorithm_options.as_ref()
     }
 }
@@ -35,30 +30,24 @@ impl SigningConfiguration {
 
 /// A builder for [`SigningConfiguration`](crate::types::SigningConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigningConfigurationBuilder {
-    pub(crate) encryption_algorithm_options:
-        ::std::option::Option<crate::types::EncryptionAlgorithmOptions>,
+    pub(crate) encryption_algorithm_options: ::std::option::Option<crate::types::EncryptionAlgorithmOptions>,
     pub(crate) hash_algorithm_options: ::std::option::Option<crate::types::HashAlgorithmOptions>,
 }
 impl SigningConfigurationBuilder {
     /// <p>The encryption algorithm options that are available for a code signing job.</p>
-    pub fn encryption_algorithm_options(
-        mut self,
-        input: crate::types::EncryptionAlgorithmOptions,
-    ) -> Self {
+    pub fn encryption_algorithm_options(mut self, input: crate::types::EncryptionAlgorithmOptions) -> Self {
         self.encryption_algorithm_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption algorithm options that are available for a code signing job.</p>
-    pub fn set_encryption_algorithm_options(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionAlgorithmOptions>,
-    ) -> Self {
-        self.encryption_algorithm_options = input;
-        self
+    pub fn set_encryption_algorithm_options(mut self, input: ::std::option::Option<crate::types::EncryptionAlgorithmOptions>) -> Self {
+        self.encryption_algorithm_options = input; self
+    }
+    /// <p>The encryption algorithm options that are available for a code signing job.</p>
+    pub fn get_encryption_algorithm_options(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmOptions> {
+        &self.encryption_algorithm_options
     }
     /// <p>The hash algorithm options that are available for a code signing job.</p>
     pub fn hash_algorithm_options(mut self, input: crate::types::HashAlgorithmOptions) -> Self {
@@ -66,18 +55,21 @@ impl SigningConfigurationBuilder {
         self
     }
     /// <p>The hash algorithm options that are available for a code signing job.</p>
-    pub fn set_hash_algorithm_options(
-        mut self,
-        input: ::std::option::Option<crate::types::HashAlgorithmOptions>,
-    ) -> Self {
-        self.hash_algorithm_options = input;
-        self
+    pub fn set_hash_algorithm_options(mut self, input: ::std::option::Option<crate::types::HashAlgorithmOptions>) -> Self {
+        self.hash_algorithm_options = input; self
+    }
+    /// <p>The hash algorithm options that are available for a code signing job.</p>
+    pub fn get_hash_algorithm_options(&self) -> &::std::option::Option<crate::types::HashAlgorithmOptions> {
+        &self.hash_algorithm_options
     }
     /// Consumes the builder and constructs a [`SigningConfiguration`](crate::types::SigningConfiguration).
     pub fn build(self) -> crate::types::SigningConfiguration {
         crate::types::SigningConfiguration {
-            encryption_algorithm_options: self.encryption_algorithm_options,
-            hash_algorithm_options: self.hash_algorithm_options,
+            encryption_algorithm_options: self.encryption_algorithm_options
+            ,
+            hash_algorithm_options: self.hash_algorithm_options
+            ,
         }
     }
 }
+

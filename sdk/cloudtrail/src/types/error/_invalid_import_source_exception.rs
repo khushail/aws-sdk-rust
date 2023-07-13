@@ -3,7 +3,7 @@
 /// <p> This exception is thrown when the provided source S3 bucket is not valid for import. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidImportSourceException {
+pub struct InvalidImportSourceException  {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,13 @@ pub struct InvalidImportSourceException {
 }
 impl InvalidImportSourceException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidImportSourceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidImportSourceException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -34,9 +32,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::InvalidImportSou
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidImportSourceException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidImportSourceException {
     /// Creates a new builder-style object to manufacture [`InvalidImportSourceException`](crate::types::error::InvalidImportSourceException).
@@ -47,9 +43,7 @@ impl InvalidImportSourceException {
 
 /// A builder for [`InvalidImportSourceException`](crate::types::error::InvalidImportSourceException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidImportSourceExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -62,28 +56,30 @@ impl InvalidImportSourceExceptionBuilder {
     }
     /// <p>Brief description of the exception returned by the request.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidImportSourceException`](crate::types::error::InvalidImportSourceException).
     pub fn build(self) -> crate::types::error::InvalidImportSourceException {
         crate::types::error::InvalidImportSourceException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Contains information about the domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainDetails {
+pub struct DomainDetails  {
     /// <p>The domain information for the Amazon Web Services API call.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl DomainDetails {
     /// <p>The domain information for the Amazon Web Services API call.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DomainDetails {
 
 /// A builder for [`DomainDetails`](crate::types::DomainDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainDetailsBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl DomainDetailsBuilder {
     }
     /// <p>The domain information for the Amazon Web Services API call.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The domain information for the Amazon Web Services API call.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`DomainDetails`](crate::types::DomainDetails).
     pub fn build(self) -> crate::types::DomainDetails {
         crate::types::DomainDetails {
-            domain: self.domain,
+            domain: self.domain
+            ,
         }
     }
 }
+

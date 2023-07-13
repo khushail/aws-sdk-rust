@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceProfileDetectionsInput {
+pub struct ListResourceProfileDetectionsInput  {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -19,26 +19,24 @@ impl ListResourceProfileDetectionsInput {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl ListResourceProfileDetectionsInput {
     /// Creates a new builder-style object to manufacture [`ListResourceProfileDetectionsInput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput).
-    pub fn builder() -> crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder{
+    pub fn builder() -> crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder {
         crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceProfileDetectionsInput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceProfileDetectionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl ListResourceProfileDetectionsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl ListResourceProfileDetectionsInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,16 +76,14 @@ impl ListResourceProfileDetectionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`ListResourceProfileDetectionsInput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput {
                 max_results: self.max_results
@@ -94,3 +96,4 @@ impl ListResourceProfileDetectionsInputBuilder {
         )
     }
 }
+

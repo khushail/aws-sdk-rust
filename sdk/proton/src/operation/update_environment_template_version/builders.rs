@@ -3,123 +3,128 @@ pub use crate::operation::update_environment_template_version::_update_environme
 
 pub use crate::operation::update_environment_template_version::_update_environment_template_version_input::UpdateEnvironmentTemplateVersionInputBuilder;
 
+impl UpdateEnvironmentTemplateVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_environment_template_version();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateEnvironmentTemplateVersion`.
-///
+/// 
 /// <p>Update a major or minor version of an environment template.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionInputBuilder,
 }
-impl UpdateEnvironmentTemplateVersionFluentBuilder {
+impl UpdateEnvironmentTemplateVersionFluentBuilder  {
     /// Creates a new `UpdateEnvironmentTemplateVersion`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEnvironmentTemplateVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the environment template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the environment template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_version(input.into());
         self
     }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
     }
+    /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_major_version()
+    }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.minor_version(input.into());
         self
     }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
+    }
+    /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_minor_version()
     }
     /// <p>A description of environment template version to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,17 +136,23 @@ impl UpdateEnvironmentTemplateVersionFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of environment template version to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The status of the environment template minor version to update.</p>
     pub fn status(mut self, input: crate::types::TemplateVersionStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
     /// <p>The status of the environment template minor version to update.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateVersionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of the environment template minor version to update.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateVersionStatus> {
+        self.inner.get_status()
+    }
 }
+

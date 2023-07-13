@@ -3,7 +3,7 @@
 /// <p>Describes a key noun phrase.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyPhrase {
+pub struct KeyPhrase  {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
@@ -23,7 +23,7 @@ impl KeyPhrase {
         self.score
     }
     /// <p>The text of a key noun phrase.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
@@ -44,9 +44,7 @@ impl KeyPhrase {
 
 /// A builder for [`KeyPhrase`](crate::types::KeyPhrase).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyPhraseBuilder {
     pub(crate) score: ::std::option::Option<f32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl KeyPhraseBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// <p>The text of a key noun phrase.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl KeyPhraseBuilder {
     }
     /// <p>The text of a key noun phrase.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p>The text of a key noun phrase.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -81,8 +85,11 @@ impl KeyPhraseBuilder {
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
+    }
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
@@ -91,16 +98,24 @@ impl KeyPhraseBuilder {
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
+    }
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// Consumes the builder and constructs a [`KeyPhrase`](crate::types::KeyPhrase).
     pub fn build(self) -> crate::types::KeyPhrase {
         crate::types::KeyPhrase {
-            score: self.score,
-            text: self.text,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
+            score: self.score
+            ,
+            text: self.text
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
         }
     }
 }
+

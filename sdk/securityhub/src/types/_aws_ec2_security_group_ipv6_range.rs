@@ -3,14 +3,14 @@
 /// <p>A range of IPv6 addresses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2SecurityGroupIpv6Range {
+pub struct AwsEc2SecurityGroupIpv6Range  {
     /// <p>The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv6 address, use the /128 prefix length.</p>
     #[doc(hidden)]
     pub cidr_ipv6: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2SecurityGroupIpv6Range {
     /// <p>The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv6 address, use the /128 prefix length.</p>
-    pub fn cidr_ipv6(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_ipv6(&self) -> ::std::option::Option<& str> {
         self.cidr_ipv6.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl AwsEc2SecurityGroupIpv6Range {
 
 /// A builder for [`AwsEc2SecurityGroupIpv6Range`](crate::types::AwsEc2SecurityGroupIpv6Range).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2SecurityGroupIpv6RangeBuilder {
     pub(crate) cidr_ipv6: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl AwsEc2SecurityGroupIpv6RangeBuilder {
     }
     /// <p>The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv6 address, use the /128 prefix length.</p>
     pub fn set_cidr_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_ipv6 = input;
-        self
+        self.cidr_ipv6 = input; self
+    }
+    /// <p>The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv6 address, use the /128 prefix length.</p>
+    pub fn get_cidr_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ipv6
     }
     /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpv6Range`](crate::types::AwsEc2SecurityGroupIpv6Range).
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupIpv6Range {
         crate::types::AwsEc2SecurityGroupIpv6Range {
-            cidr_ipv6: self.cidr_ipv6,
+            cidr_ipv6: self.cidr_ipv6
+            ,
         }
     }
 }
+

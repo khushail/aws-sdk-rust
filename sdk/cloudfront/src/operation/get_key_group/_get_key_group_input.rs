@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyGroupInput {
+pub struct GetKeyGroupInput  {
     /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetKeyGroupInput {
     /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetKeyGroupInput {
 
 /// A builder for [`GetKeyGroupInput`](crate::operation::get_key_group::GetKeyGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,20 @@ impl GetKeyGroupInputBuilder {
     }
     /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetKeyGroupInput`](crate::operation::get_key_group::GetKeyGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_key_group::GetKeyGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_key_group::GetKeyGroupInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_group::GetKeyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_key_group::GetKeyGroupInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

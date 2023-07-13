@@ -3,109 +3,100 @@ pub use crate::operation::start_object::_start_object_output::StartObjectOutputB
 
 pub use crate::operation::start_object::_start_object_input::StartObjectInputBuilder;
 
+impl StartObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::start_object::StartObjectOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::start_object::StartObjectError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.start_object();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `StartObject`.
-///
+/// 
 /// Start upload containing one or many chunks.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartObjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_object::builders::StartObjectInputBuilder,
+                    inner: crate::operation::start_object::builders::StartObjectInputBuilder,
 }
-impl StartObjectFluentBuilder {
+impl StartObjectFluentBuilder  {
     /// Creates a new `StartObject`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_object::StartObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the StartObject as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_object::builders::StartObjectInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_object::StartObjectOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::start_object::StartObject, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_object::StartObjectOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_object::StartObjectOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_object::StartObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_object::StartObjectOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::start_object::StartObject, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Backup job Id for the in-progress backup
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_job_id(input.into());
         self
     }
     /// Backup job Id for the in-progress backup
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_job_id(input);
         self
+    }
+    /// Backup job Id for the in-progress backup
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_job_id()
     }
     /// Name for the object.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +108,10 @@ impl StartObjectFluentBuilder {
         self.inner = self.inner.set_object_name(input);
         self
     }
+    /// Name for the object.
+    pub fn get_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_name()
+    }
     /// Throw an exception if Object name is already exist.
     pub fn throw_on_duplicate(mut self, input: bool) -> Self {
         self.inner = self.inner.throw_on_duplicate(input);
@@ -127,4 +122,9 @@ impl StartObjectFluentBuilder {
         self.inner = self.inner.set_throw_on_duplicate(input);
         self
     }
+    /// Throw an exception if Object name is already exist.
+    pub fn get_throw_on_duplicate(&self) -> &::std::option::Option<bool> {
+        self.inner.get_throw_on_duplicate()
+    }
 }
+

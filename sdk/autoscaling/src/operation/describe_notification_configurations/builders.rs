@@ -3,101 +3,110 @@ pub use crate::operation::describe_notification_configurations::_describe_notifi
 
 pub use crate::operation::describe_notification_configurations::_describe_notification_configurations_input::DescribeNotificationConfigurationsInputBuilder;
 
+impl DescribeNotificationConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_notification_configurations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeNotificationConfigurations`.
-///
+/// 
 /// <p>Gets information about the Amazon SNS notifications that are configured for one or more Auto Scaling groups.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsInputBuilder,
 }
-impl DescribeNotificationConfigurationsFluentBuilder {
+impl DescribeNotificationConfigurationsFluentBuilder  {
     /// Creates a new `DescribeNotificationConfigurations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeNotificationConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_notification_configurations::DescribeNotificationConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::describe_notification_configurations::DescribeNotificationConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_notification_configurations::DescribeNotificationConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator{
-        crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator {
+                                crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `AutoScalingGroupNames`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_group_names`](Self::set_auto_scaling_group_names).
     ///
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_names(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_names(input);
         self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_auto_scaling_group_names()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +118,10 @@ impl DescribeNotificationConfigurationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -119,4 +132,9 @@ impl DescribeNotificationConfigurationsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
 }
+

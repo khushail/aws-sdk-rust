@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sftpauthenticationmethods = unimplemented!();
 /// match sftpauthenticationmethods {
@@ -32,22 +32,14 @@
 /// Specifically, when `sftpauthenticationmethods` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SftpAuthenticationMethods::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SftpAuthenticationMethods {
     #[allow(missing_docs)] // documentation missing in model
     Password,
@@ -58,51 +50,45 @@ pub enum SftpAuthenticationMethods {
     #[allow(missing_docs)] // documentation missing in model
     PublicKeyOrPassword,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SftpAuthenticationMethods {
-    fn from(s: &str) -> Self {
-        match s {
-            "PASSWORD" => SftpAuthenticationMethods::Password,
-            "PUBLIC_KEY" => SftpAuthenticationMethods::PublicKey,
-            "PUBLIC_KEY_AND_PASSWORD" => SftpAuthenticationMethods::PublicKeyAndPassword,
-            "PUBLIC_KEY_OR_PASSWORD" => SftpAuthenticationMethods::PublicKeyOrPassword,
-            other => SftpAuthenticationMethods::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PASSWORD" => SftpAuthenticationMethods::Password,
+"PUBLIC_KEY" => SftpAuthenticationMethods::PublicKey,
+"PUBLIC_KEY_AND_PASSWORD" => SftpAuthenticationMethods::PublicKeyAndPassword,
+"PUBLIC_KEY_OR_PASSWORD" => SftpAuthenticationMethods::PublicKeyOrPassword,
+other => SftpAuthenticationMethods::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl ::std::str::FromStr for SftpAuthenticationMethods {
-    type Err = ::std::convert::Infallible;
+                type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SftpAuthenticationMethods::from(s))
-    }
-}
+                fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                    ::std::result::Result::Ok(SftpAuthenticationMethods::from(s))
+                }
+            }
 impl SftpAuthenticationMethods {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SftpAuthenticationMethods::Password => "PASSWORD",
-            SftpAuthenticationMethods::PublicKey => "PUBLIC_KEY",
-            SftpAuthenticationMethods::PublicKeyAndPassword => "PUBLIC_KEY_AND_PASSWORD",
-            SftpAuthenticationMethods::PublicKeyOrPassword => "PUBLIC_KEY_OR_PASSWORD",
-            SftpAuthenticationMethods::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PASSWORD",
-            "PUBLIC_KEY",
-            "PUBLIC_KEY_AND_PASSWORD",
-            "PUBLIC_KEY_OR_PASSWORD",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SftpAuthenticationMethods::Password => "PASSWORD",
+    SftpAuthenticationMethods::PublicKey => "PUBLIC_KEY",
+    SftpAuthenticationMethods::PublicKeyAndPassword => "PUBLIC_KEY_AND_PASSWORD",
+    SftpAuthenticationMethods::PublicKeyOrPassword => "PUBLIC_KEY_OR_PASSWORD",
+    SftpAuthenticationMethods::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PASSWORD", "PUBLIC_KEY", "PUBLIC_KEY_AND_PASSWORD", "PUBLIC_KEY_OR_PASSWORD"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SftpAuthenticationMethods {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

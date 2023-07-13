@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAuthPolicyInput {
+pub struct PutAuthPolicyInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
     #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct PutAuthPolicyInput {
 }
 impl PutAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -29,29 +29,24 @@ impl PutAuthPolicyInput {
 
 /// A builder for [`PutAuthPolicyInput`](crate::operation::put_auth_policy::PutAuthPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAuthPolicyInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PutAuthPolicyInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_identifier = input;
-        self
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_identifier = input; self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
     }
     /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,19 +55,22 @@ impl PutAuthPolicyInputBuilder {
     }
     /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
+    }
+    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutAuthPolicyInput`](crate::operation::put_auth_policy::PutAuthPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_auth_policy::PutAuthPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_auth_policy::PutAuthPolicyInput {
-            resource_identifier: self.resource_identifier,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_auth_policy::PutAuthPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_auth_policy::PutAuthPolicyInput {
+                resource_identifier: self.resource_identifier
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GitHubDocumentCrawlProperties {
+pub struct GitHubDocumentCrawlProperties  {
     /// <p> <code>TRUE</code> to index all files with a repository.</p>
     #[doc(hidden)]
     pub crawl_repository_documents: bool,
@@ -65,9 +65,7 @@ impl GitHubDocumentCrawlProperties {
 
 /// A builder for [`GitHubDocumentCrawlProperties`](crate::types::GitHubDocumentCrawlProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GitHubDocumentCrawlPropertiesBuilder {
     pub(crate) crawl_repository_documents: ::std::option::Option<bool>,
     pub(crate) crawl_issue: ::std::option::Option<bool>,
@@ -85,8 +83,11 @@ impl GitHubDocumentCrawlPropertiesBuilder {
     }
     /// <p> <code>TRUE</code> to index all files with a repository.</p>
     pub fn set_crawl_repository_documents(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.crawl_repository_documents = input;
-        self
+        self.crawl_repository_documents = input; self
+    }
+    /// <p> <code>TRUE</code> to index all files with a repository.</p>
+    pub fn get_crawl_repository_documents(&self) -> &::std::option::Option<bool> {
+        &self.crawl_repository_documents
     }
     /// <p> <code>TRUE</code> to index all issues within a repository.</p>
     pub fn crawl_issue(mut self, input: bool) -> Self {
@@ -95,8 +96,11 @@ impl GitHubDocumentCrawlPropertiesBuilder {
     }
     /// <p> <code>TRUE</code> to index all issues within a repository.</p>
     pub fn set_crawl_issue(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.crawl_issue = input;
-        self
+        self.crawl_issue = input; self
+    }
+    /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+    pub fn get_crawl_issue(&self) -> &::std::option::Option<bool> {
+        &self.crawl_issue
     }
     /// <p> <code>TRUE</code> to index all comments on issues.</p>
     pub fn crawl_issue_comment(mut self, input: bool) -> Self {
@@ -105,8 +109,11 @@ impl GitHubDocumentCrawlPropertiesBuilder {
     }
     /// <p> <code>TRUE</code> to index all comments on issues.</p>
     pub fn set_crawl_issue_comment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.crawl_issue_comment = input;
-        self
+        self.crawl_issue_comment = input; self
+    }
+    /// <p> <code>TRUE</code> to index all comments on issues.</p>
+    pub fn get_crawl_issue_comment(&self) -> &::std::option::Option<bool> {
+        &self.crawl_issue_comment
     }
     /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
     pub fn crawl_issue_comment_attachment(mut self, input: bool) -> Self {
@@ -114,12 +121,12 @@ impl GitHubDocumentCrawlPropertiesBuilder {
         self
     }
     /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
-    pub fn set_crawl_issue_comment_attachment(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.crawl_issue_comment_attachment = input;
-        self
+    pub fn set_crawl_issue_comment_attachment(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.crawl_issue_comment_attachment = input; self
+    }
+    /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+    pub fn get_crawl_issue_comment_attachment(&self) -> &::std::option::Option<bool> {
+        &self.crawl_issue_comment_attachment
     }
     /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
     pub fn crawl_pull_request(mut self, input: bool) -> Self {
@@ -128,8 +135,11 @@ impl GitHubDocumentCrawlPropertiesBuilder {
     }
     /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
     pub fn set_crawl_pull_request(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.crawl_pull_request = input;
-        self
+        self.crawl_pull_request = input; self
+    }
+    /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+    pub fn get_crawl_pull_request(&self) -> &::std::option::Option<bool> {
+        &self.crawl_pull_request
     }
     /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
     pub fn crawl_pull_request_comment(mut self, input: bool) -> Self {
@@ -138,8 +148,11 @@ impl GitHubDocumentCrawlPropertiesBuilder {
     }
     /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
     pub fn set_crawl_pull_request_comment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.crawl_pull_request_comment = input;
-        self
+        self.crawl_pull_request_comment = input; self
+    }
+    /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+    pub fn get_crawl_pull_request_comment(&self) -> &::std::option::Option<bool> {
+        &self.crawl_pull_request_comment
     }
     /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
     pub fn crawl_pull_request_comment_attachment(mut self, input: bool) -> Self {
@@ -147,25 +160,38 @@ impl GitHubDocumentCrawlPropertiesBuilder {
         self
     }
     /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
-    pub fn set_crawl_pull_request_comment_attachment(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.crawl_pull_request_comment_attachment = input;
-        self
+    pub fn set_crawl_pull_request_comment_attachment(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.crawl_pull_request_comment_attachment = input; self
+    }
+    /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+    pub fn get_crawl_pull_request_comment_attachment(&self) -> &::std::option::Option<bool> {
+        &self.crawl_pull_request_comment_attachment
     }
     /// Consumes the builder and constructs a [`GitHubDocumentCrawlProperties`](crate::types::GitHubDocumentCrawlProperties).
     pub fn build(self) -> crate::types::GitHubDocumentCrawlProperties {
         crate::types::GitHubDocumentCrawlProperties {
-            crawl_repository_documents: self.crawl_repository_documents.unwrap_or_default(),
-            crawl_issue: self.crawl_issue.unwrap_or_default(),
-            crawl_issue_comment: self.crawl_issue_comment.unwrap_or_default(),
-            crawl_issue_comment_attachment: self.crawl_issue_comment_attachment.unwrap_or_default(),
-            crawl_pull_request: self.crawl_pull_request.unwrap_or_default(),
-            crawl_pull_request_comment: self.crawl_pull_request_comment.unwrap_or_default(),
-            crawl_pull_request_comment_attachment: self
-                .crawl_pull_request_comment_attachment
-                .unwrap_or_default(),
+            crawl_repository_documents: self.crawl_repository_documents
+                .unwrap_or_default()
+            ,
+            crawl_issue: self.crawl_issue
+                .unwrap_or_default()
+            ,
+            crawl_issue_comment: self.crawl_issue_comment
+                .unwrap_or_default()
+            ,
+            crawl_issue_comment_attachment: self.crawl_issue_comment_attachment
+                .unwrap_or_default()
+            ,
+            crawl_pull_request: self.crawl_pull_request
+                .unwrap_or_default()
+            ,
+            crawl_pull_request_comment: self.crawl_pull_request_comment
+                .unwrap_or_default()
+            ,
+            crawl_pull_request_comment_attachment: self.crawl_pull_request_comment_attachment
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

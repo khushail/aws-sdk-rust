@@ -3,7 +3,7 @@
 /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Address {
+pub struct Address  {
     /// <p>The unique ID for an address.</p>
     #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
@@ -49,55 +49,55 @@ pub struct Address {
 }
 impl Address {
     /// <p>The unique ID for an address.</p>
-    pub fn address_id(&self) -> ::std::option::Option<&str> {
+    pub fn address_id(&self) -> ::std::option::Option<& str> {
         self.address_id.as_deref()
     }
     /// <p>The name of a person to receive a Snow device at an address.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the company to receive a Snow device at an address.</p>
-    pub fn company(&self) -> ::std::option::Option<&str> {
+    pub fn company(&self) -> ::std::option::Option<& str> {
         self.company.as_deref()
     }
     /// <p>The first line in a street address that a Snow device is to be delivered to.</p>
-    pub fn street1(&self) -> ::std::option::Option<&str> {
+    pub fn street1(&self) -> ::std::option::Option<& str> {
         self.street1.as_deref()
     }
     /// <p>The second line in a street address that a Snow device is to be delivered to.</p>
-    pub fn street2(&self) -> ::std::option::Option<&str> {
+    pub fn street2(&self) -> ::std::option::Option<& str> {
         self.street2.as_deref()
     }
     /// <p>The third line in a street address that a Snow device is to be delivered to.</p>
-    pub fn street3(&self) -> ::std::option::Option<&str> {
+    pub fn street3(&self) -> ::std::option::Option<& str> {
         self.street3.as_deref()
     }
     /// <p>The city in an address that a Snow device is to be delivered to.</p>
-    pub fn city(&self) -> ::std::option::Option<&str> {
+    pub fn city(&self) -> ::std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
-    pub fn state_or_province(&self) -> ::std::option::Option<&str> {
+    pub fn state_or_province(&self) -> ::std::option::Option<& str> {
         self.state_or_province.as_deref()
     }
     /// <p>This field is no longer used and the value is ignored.</p>
-    pub fn prefecture_or_district(&self) -> ::std::option::Option<&str> {
+    pub fn prefecture_or_district(&self) -> ::std::option::Option<& str> {
         self.prefecture_or_district.as_deref()
     }
     /// <p>This field is no longer used and the value is ignored.</p>
-    pub fn landmark(&self) -> ::std::option::Option<&str> {
+    pub fn landmark(&self) -> ::std::option::Option<& str> {
         self.landmark.as_deref()
     }
     /// <p>The country in an address that a Snow device is to be delivered to.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
-    pub fn postal_code(&self) -> ::std::option::Option<&str> {
+    pub fn postal_code(&self) -> ::std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     /// <p>The phone number associated with an address that a Snow device is to be delivered to.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
@@ -114,9 +114,7 @@ impl Address {
 
 /// A builder for [`Address`](crate::types::Address).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddressBuilder {
     pub(crate) address_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -141,8 +139,11 @@ impl AddressBuilder {
     }
     /// <p>The unique ID for an address.</p>
     pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_id = input;
-        self
+        self.address_id = input; self
+    }
+    /// <p>The unique ID for an address.</p>
+    pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_id
     }
     /// <p>The name of a person to receive a Snow device at an address.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,8 +152,11 @@ impl AddressBuilder {
     }
     /// <p>The name of a person to receive a Snow device at an address.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of a person to receive a Snow device at an address.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the company to receive a Snow device at an address.</p>
     pub fn company(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,8 +165,11 @@ impl AddressBuilder {
     }
     /// <p>The name of the company to receive a Snow device at an address.</p>
     pub fn set_company(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.company = input;
-        self
+        self.company = input; self
+    }
+    /// <p>The name of the company to receive a Snow device at an address.</p>
+    pub fn get_company(&self) -> &::std::option::Option<::std::string::String> {
+        &self.company
     }
     /// <p>The first line in a street address that a Snow device is to be delivered to.</p>
     pub fn street1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,8 +178,11 @@ impl AddressBuilder {
     }
     /// <p>The first line in a street address that a Snow device is to be delivered to.</p>
     pub fn set_street1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street1 = input;
-        self
+        self.street1 = input; self
+    }
+    /// <p>The first line in a street address that a Snow device is to be delivered to.</p>
+    pub fn get_street1(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street1
     }
     /// <p>The second line in a street address that a Snow device is to be delivered to.</p>
     pub fn street2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,8 +191,11 @@ impl AddressBuilder {
     }
     /// <p>The second line in a street address that a Snow device is to be delivered to.</p>
     pub fn set_street2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street2 = input;
-        self
+        self.street2 = input; self
+    }
+    /// <p>The second line in a street address that a Snow device is to be delivered to.</p>
+    pub fn get_street2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street2
     }
     /// <p>The third line in a street address that a Snow device is to be delivered to.</p>
     pub fn street3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -191,8 +204,11 @@ impl AddressBuilder {
     }
     /// <p>The third line in a street address that a Snow device is to be delivered to.</p>
     pub fn set_street3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street3 = input;
-        self
+        self.street3 = input; self
+    }
+    /// <p>The third line in a street address that a Snow device is to be delivered to.</p>
+    pub fn get_street3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street3
     }
     /// <p>The city in an address that a Snow device is to be delivered to.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,40 +217,37 @@ impl AddressBuilder {
     }
     /// <p>The city in an address that a Snow device is to be delivered to.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
+    }
+    /// <p>The city in an address that a Snow device is to be delivered to.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
     }
     /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
-    pub fn state_or_province(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_or_province(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_or_province = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
-    pub fn set_state_or_province(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.state_or_province = input;
-        self
+    pub fn set_state_or_province(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_or_province = input; self
+    }
+    /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
+    pub fn get_state_or_province(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_or_province
     }
     /// <p>This field is no longer used and the value is ignored.</p>
-    pub fn prefecture_or_district(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefecture_or_district(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefecture_or_district = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field is no longer used and the value is ignored.</p>
-    pub fn set_prefecture_or_district(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.prefecture_or_district = input;
-        self
+    pub fn set_prefecture_or_district(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.prefecture_or_district = input; self
+    }
+    /// <p>This field is no longer used and the value is ignored.</p>
+    pub fn get_prefecture_or_district(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefecture_or_district
     }
     /// <p>This field is no longer used and the value is ignored.</p>
     pub fn landmark(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -243,8 +256,11 @@ impl AddressBuilder {
     }
     /// <p>This field is no longer used and the value is ignored.</p>
     pub fn set_landmark(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.landmark = input;
-        self
+        self.landmark = input; self
+    }
+    /// <p>This field is no longer used and the value is ignored.</p>
+    pub fn get_landmark(&self) -> &::std::option::Option<::std::string::String> {
+        &self.landmark
     }
     /// <p>The country in an address that a Snow device is to be delivered to.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -253,8 +269,11 @@ impl AddressBuilder {
     }
     /// <p>The country in an address that a Snow device is to be delivered to.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
+    }
+    /// <p>The country in an address that a Snow device is to be delivered to.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -263,8 +282,11 @@ impl AddressBuilder {
     }
     /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.postal_code = input;
-        self
+        self.postal_code = input; self
+    }
+    /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
+    pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.postal_code
     }
     /// <p>The phone number associated with an address that a Snow device is to be delivered to.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -273,8 +295,11 @@ impl AddressBuilder {
     }
     /// <p>The phone number associated with an address that a Snow device is to be delivered to.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
+    }
+    /// <p>The phone number associated with an address that a Snow device is to be delivered to.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
     pub fn is_restricted(mut self, input: bool) -> Self {
@@ -283,26 +308,45 @@ impl AddressBuilder {
     }
     /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
     pub fn set_is_restricted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_restricted = input;
-        self
+        self.is_restricted = input; self
+    }
+    /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
+    pub fn get_is_restricted(&self) -> &::std::option::Option<bool> {
+        &self.is_restricted
     }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {
         crate::types::Address {
-            address_id: self.address_id,
-            name: self.name,
-            company: self.company,
-            street1: self.street1,
-            street2: self.street2,
-            street3: self.street3,
-            city: self.city,
-            state_or_province: self.state_or_province,
-            prefecture_or_district: self.prefecture_or_district,
-            landmark: self.landmark,
-            country: self.country,
-            postal_code: self.postal_code,
-            phone_number: self.phone_number,
-            is_restricted: self.is_restricted.unwrap_or_default(),
+            address_id: self.address_id
+            ,
+            name: self.name
+            ,
+            company: self.company
+            ,
+            street1: self.street1
+            ,
+            street2: self.street2
+            ,
+            street3: self.street3
+            ,
+            city: self.city
+            ,
+            state_or_province: self.state_or_province
+            ,
+            prefecture_or_district: self.prefecture_or_district
+            ,
+            landmark: self.landmark
+            ,
+            country: self.country
+            ,
+            postal_code: self.postal_code
+            ,
+            phone_number: self.phone_number
+            ,
+            is_restricted: self.is_restricted
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

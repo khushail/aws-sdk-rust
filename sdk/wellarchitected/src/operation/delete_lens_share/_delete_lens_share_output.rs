@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLensShareOutput {
+pub struct DeleteLensShareOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteLensShareOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteLensShareOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLensShareOutput`](crate::operation::delete_lens_share::DeleteLensShareOutput).
-    pub fn builder() -> crate::operation::delete_lens_share::builders::DeleteLensShareOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_lens_share::builders::DeleteLensShareOutputBuilder {
         crate::operation::delete_lens_share::builders::DeleteLensShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLensShareOutput`](crate::operation::delete_lens_share::DeleteLensShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLensShareOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteLensShareOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteLensShareOutput`](crate::operation::delete_lens_share::DeleteLensShareOutput).
     pub fn build(self) -> crate::operation::delete_lens_share::DeleteLensShareOutput {
         crate::operation::delete_lens_share::DeleteLensShareOutput {
@@ -43,3 +40,4 @@ impl DeleteLensShareOutputBuilder {
         }
     }
 }
+

@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNetworkInsightsAnalysesInput {
+pub struct DescribeNetworkInsightsAnalysesInput  {
     /// <p>The ID of the network insights analyses. You must specify either analysis IDs or a path ID.</p>
     #[doc(hidden)]
-    pub network_insights_analysis_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub network_insights_analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the path. You must specify either a path ID or analysis IDs.</p>
     #[doc(hidden)]
     pub network_insights_path_id: ::std::option::Option<::std::string::String>,
@@ -16,10 +15,10 @@ pub struct DescribeNetworkInsightsAnalysesInput {
     /// <p>The time when the network insights analyses ended.</p>
     #[doc(hidden)]
     pub analysis_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The filters. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
-    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// <p>The filters. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li> 
+    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -35,27 +34,27 @@ pub struct DescribeNetworkInsightsAnalysesInput {
 }
 impl DescribeNetworkInsightsAnalysesInput {
     /// <p>The ID of the network insights analyses. You must specify either analysis IDs or a path ID.</p>
-    pub fn network_insights_analysis_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn network_insights_analysis_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.network_insights_analysis_ids.as_deref()
     }
     /// <p>The ID of the path. You must specify either a path ID or analysis IDs.</p>
-    pub fn network_insights_path_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_path_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_path_id.as_deref()
     }
     /// <p>The time when the network insights analyses started.</p>
-    pub fn analysis_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn analysis_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.analysis_start_time.as_ref()
     }
     /// <p>The time when the network insights analyses ended.</p>
-    pub fn analysis_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn analysis_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.analysis_end_time.as_ref()
     }
-    /// <p>The filters. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
-    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// <p>The filters. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li> 
+    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -67,25 +66,22 @@ impl DescribeNetworkInsightsAnalysesInput {
         self.dry_run
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeNetworkInsightsAnalysesInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAnalysesInput`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesInput).
-    pub fn builder() -> crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesInputBuilder{
+    pub fn builder() -> crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesInputBuilder {
         crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInsightsAnalysesInput`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAnalysesInputBuilder {
-    pub(crate) network_insights_analysis_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_insights_analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) network_insights_path_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) analysis_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -100,38 +96,32 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
     /// To override the contents of this collection use [`set_network_insights_analysis_ids`](Self::set_network_insights_analysis_ids).
     ///
     /// <p>The ID of the network insights analyses. You must specify either analysis IDs or a path ID.</p>
-    pub fn network_insights_analysis_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_analysis_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_insights_analysis_ids.unwrap_or_default();
-        v.push(input.into());
-        self.network_insights_analysis_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.network_insights_analysis_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the network insights analyses. You must specify either analysis IDs or a path ID.</p>
-    pub fn set_network_insights_analysis_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.network_insights_analysis_ids = input;
-        self
+    pub fn set_network_insights_analysis_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.network_insights_analysis_ids = input; self
+    }
+    /// <p>The ID of the network insights analyses. You must specify either analysis IDs or a path ID.</p>
+    pub fn get_network_insights_analysis_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_insights_analysis_ids
     }
     /// <p>The ID of the path. You must specify either a path ID or analysis IDs.</p>
-    pub fn network_insights_path_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_path_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the path. You must specify either a path ID or analysis IDs.</p>
-    pub fn set_network_insights_path_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_insights_path_id = input;
-        self
+    pub fn set_network_insights_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_insights_path_id = input; self
+    }
+    /// <p>The ID of the path. You must specify either a path ID or analysis IDs.</p>
+    pub fn get_network_insights_path_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_path_id
     }
     /// <p>The time when the network insights analyses started.</p>
     pub fn analysis_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -139,12 +129,12 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
         self
     }
     /// <p>The time when the network insights analyses started.</p>
-    pub fn set_analysis_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.analysis_start_time = input;
-        self
+    pub fn set_analysis_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.analysis_start_time = input; self
+    }
+    /// <p>The time when the network insights analyses started.</p>
+    pub fn get_analysis_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.analysis_start_time
     }
     /// <p>The time when the network insights analyses ended.</p>
     pub fn analysis_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,39 +142,43 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
         self
     }
     /// <p>The time when the network insights analyses ended.</p>
-    pub fn set_analysis_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.analysis_end_time = input;
-        self
+    pub fn set_analysis_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.analysis_end_time = input; self
+    }
+    /// <p>The time when the network insights analyses ended.</p>
+    pub fn get_analysis_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.analysis_end_time
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
-    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// <p>The filters. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li> 
+    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The filters. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
-    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
+    /// <p>The filters. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li> 
+    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>The filters. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li> 
+    /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li> 
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -193,8 +187,11 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -203,8 +200,11 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,16 +213,14 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInsightsAnalysesInput`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesInput {
                 network_insights_analysis_ids: self.network_insights_analysis_ids
@@ -245,3 +243,4 @@ impl DescribeNetworkInsightsAnalysesInputBuilder {
         )
     }
 }
+

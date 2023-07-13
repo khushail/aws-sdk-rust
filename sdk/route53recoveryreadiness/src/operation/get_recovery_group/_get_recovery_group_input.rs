@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecoveryGroupInput {
+pub struct GetRecoveryGroupInput  {
     /// <p>The name of a recovery group.</p>
     #[doc(hidden)]
     pub recovery_group_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRecoveryGroupInput {
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> ::std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
 }
 impl GetRecoveryGroupInput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryGroupInput`](crate::operation::get_recovery_group::GetRecoveryGroupInput).
-    pub fn builder() -> crate::operation::get_recovery_group::builders::GetRecoveryGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_recovery_group::builders::GetRecoveryGroupInputBuilder {
         crate::operation::get_recovery_group::builders::GetRecoveryGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecoveryGroupInput`](crate::operation::get_recovery_group::GetRecoveryGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecoveryGroupInputBuilder {
     pub(crate) recovery_group_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRecoveryGroupInputBuilder {
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a recovery group.</p>
-    pub fn set_recovery_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.recovery_group_name = input;
-        self
+    pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recovery_group_name = input; self
+    }
+    /// <p>The name of a recovery group.</p>
+    pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_group_name
     }
     /// Consumes the builder and constructs a [`GetRecoveryGroupInput`](crate::operation::get_recovery_group::GetRecoveryGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recovery_group::GetRecoveryGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recovery_group::GetRecoveryGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_recovery_group::GetRecoveryGroupInput {
-                recovery_group_name: self.recovery_group_name,
-            },
+                recovery_group_name: self.recovery_group_name
+                ,
+            }
         )
     }
 }
+

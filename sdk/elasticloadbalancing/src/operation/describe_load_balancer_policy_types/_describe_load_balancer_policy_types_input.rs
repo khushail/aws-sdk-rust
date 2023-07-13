@@ -3,29 +3,27 @@
 /// <p>Contains the parameters for DescribeLoadBalancerPolicyTypes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoadBalancerPolicyTypesInput {
+pub struct DescribeLoadBalancerPolicyTypesInput  {
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
     #[doc(hidden)]
     pub policy_type_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeLoadBalancerPolicyTypesInput {
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-    pub fn policy_type_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn policy_type_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.policy_type_names.as_deref()
     }
 }
 impl DescribeLoadBalancerPolicyTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPolicyTypesInput`](crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesInput).
-    pub fn builder() -> crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesInputBuilder{
+    pub fn builder() -> crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesInputBuilder {
         crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBalancerPolicyTypesInput`](crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerPolicyTypesInputBuilder {
     pub(crate) policy_type_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,30 +33,22 @@ impl DescribeLoadBalancerPolicyTypesInputBuilder {
     /// To override the contents of this collection use [`set_policy_type_names`](Self::set_policy_type_names).
     ///
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-    pub fn policy_type_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_type_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_type_names.unwrap_or_default();
-        v.push(input.into());
-        self.policy_type_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_type_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-    pub fn set_policy_type_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.policy_type_names = input;
-        self
+    pub fn set_policy_type_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.policy_type_names = input; self
+    }
+    /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
+    pub fn get_policy_type_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_type_names
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerPolicyTypesInput`](crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesInput {
                 policy_type_names: self.policy_type_names
@@ -67,3 +57,4 @@ impl DescribeLoadBalancerPolicyTypesInputBuilder {
         )
     }
 }
+

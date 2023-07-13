@@ -3,114 +3,94 @@ pub use crate::operation::list_catalog_items::_list_catalog_items_output::ListCa
 
 pub use crate::operation::list_catalog_items::_list_catalog_items_input::ListCatalogItemsInputBuilder;
 
+impl ListCatalogItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_catalog_items::ListCatalogItemsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_catalog_items::ListCatalogItemsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_catalog_items();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListCatalogItems`.
-///
-/// <p>Lists the items in the catalog.</p>
+/// 
+/// <p>Lists the items in the catalog.</p> 
 /// <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCatalogItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_catalog_items::builders::ListCatalogItemsInputBuilder,
+                    inner: crate::operation::list_catalog_items::builders::ListCatalogItemsInputBuilder,
 }
-impl ListCatalogItemsFluentBuilder {
+impl ListCatalogItemsFluentBuilder  {
     /// Creates a new `ListCatalogItems`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_catalog_items::ListCatalogItems,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListCatalogItems as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_catalog_items::builders::ListCatalogItemsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_catalog_items::ListCatalogItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_catalog_items::ListCatalogItems, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_catalog_items::ListCatalogItemsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_catalog_items::ListCatalogItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_catalog_items::ListCatalogItems,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_catalog_items::ListCatalogItemsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_catalog_items::ListCatalogItems, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator {
-        crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator {
+                                crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -120,6 +100,10 @@ impl ListCatalogItemsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -131,6 +115,10 @@ impl ListCatalogItemsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum page size.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// Appends an item to `ItemClassFilter`.
     ///
     /// To override the contents of this collection use [`set_item_class_filter`](Self::set_item_class_filter).
@@ -141,12 +129,13 @@ impl ListCatalogItemsFluentBuilder {
         self
     }
     /// <p>Filters the results by item class.</p>
-    pub fn set_item_class_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>>,
-    ) -> Self {
+    pub fn set_item_class_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>>) -> Self {
         self.inner = self.inner.set_item_class_filter(input);
         self
+    }
+    /// <p>Filters the results by item class.</p>
+    pub fn get_item_class_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>> {
+        self.inner.get_item_class_filter()
     }
     /// Appends an item to `SupportedStorageFilter`.
     ///
@@ -158,31 +147,31 @@ impl ListCatalogItemsFluentBuilder {
         self
     }
     /// <p>Filters the results by storage option.</p>
-    pub fn set_supported_storage_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
-    ) -> Self {
+    pub fn set_supported_storage_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>) -> Self {
         self.inner = self.inner.set_supported_storage_filter(input);
         self
+    }
+    /// <p>Filters the results by storage option.</p>
+    pub fn get_supported_storage_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
+        self.inner.get_supported_storage_filter()
     }
     /// Appends an item to `EC2FamilyFilter`.
     ///
     /// To override the contents of this collection use [`set_ec2_family_filter`](Self::set_ec2_family_filter).
     ///
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub fn ec2_family_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_family_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_family_filter(input.into());
         self
     }
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub fn set_ec2_family_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ec2_family_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ec2_family_filter(input);
         self
     }
+    /// <p>Filters the results by EC2 family (for example, M5).</p>
+    pub fn get_ec2_family_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ec2_family_filter()
+    }
 }
+

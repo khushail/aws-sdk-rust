@@ -3,7 +3,7 @@
 /// <p>Information about the socket address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SocketAddress {
+pub struct SocketAddress  {
     /// <p>Name of a socket address.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct SocketAddress {
 }
 impl SocketAddress {
     /// <p>Name of a socket address.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Port of a socket address.</p>
@@ -30,9 +30,7 @@ impl SocketAddress {
 
 /// A builder for [`SocketAddress`](crate::types::SocketAddress).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SocketAddressBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl SocketAddressBuilder {
     }
     /// <p>Name of a socket address.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Name of a socket address.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Port of a socket address.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl SocketAddressBuilder {
     }
     /// <p>Port of a socket address.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
+    }
+    /// <p>Port of a socket address.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`SocketAddress`](crate::types::SocketAddress).
     pub fn build(self) -> crate::types::SocketAddress {
         crate::types::SocketAddress {
-            name: self.name,
-            port: self.port,
+            name: self.name
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

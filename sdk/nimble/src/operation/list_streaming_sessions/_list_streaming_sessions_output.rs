@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamingSessionsOutput {
+pub struct ListStreamingSessionsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,33 +13,29 @@ pub struct ListStreamingSessionsOutput {
 }
 impl ListStreamingSessionsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A collection of streaming sessions.</p>
-    pub fn sessions(&self) -> ::std::option::Option<&[crate::types::StreamingSession]> {
+    pub fn sessions(&self) -> ::std::option::Option<& [crate::types::StreamingSession]> {
         self.sessions.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListStreamingSessionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListStreamingSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamingSessionsOutput`](crate::operation::list_streaming_sessions::ListStreamingSessionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsOutputBuilder {
         crate::operation::list_streaming_sessions::builders::ListStreamingSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamingSessionsOutput`](crate::operation::list_streaming_sessions::ListStreamingSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingSessionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sessions: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSession>>,
@@ -53,8 +49,11 @@ impl ListStreamingSessionsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `sessions`.
     ///
@@ -63,33 +62,36 @@ impl ListStreamingSessionsOutputBuilder {
     /// <p>A collection of streaming sessions.</p>
     pub fn sessions(mut self, input: crate::types::StreamingSession) -> Self {
         let mut v = self.sessions.unwrap_or_default();
-        v.push(input);
-        self.sessions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sessions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of streaming sessions.</p>
-    pub fn set_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSession>>,
-    ) -> Self {
-        self.sessions = input;
-        self
+    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSession>>) -> Self {
+        self.sessions = input; self
+    }
+    /// <p>A collection of streaming sessions.</p>
+    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingSession>> {
+        &self.sessions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListStreamingSessionsOutput`](crate::operation::list_streaming_sessions::ListStreamingSessionsOutput).
     pub fn build(self) -> crate::operation::list_streaming_sessions::ListStreamingSessionsOutput {
         crate::operation::list_streaming_sessions::ListStreamingSessionsOutput {
-            next_token: self.next_token,
-            sessions: self.sessions,
+            next_token: self.next_token
+            ,
+            sessions: self.sessions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

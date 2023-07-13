@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information for users or groups in your IAM Identity Center identity source to grant access your Amazon Kendra experience.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityConfiguration {
+pub struct EntityConfiguration  {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct EntityConfiguration {
 }
 impl EntityConfiguration {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&crate::types::EntityType> {
+    pub fn entity_type(&self) -> ::std::option::Option<& crate::types::EntityType> {
         self.entity_type.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl EntityConfiguration {
 
 /// A builder for [`EntityConfiguration`](crate::types::EntityConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityConfigurationBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<crate::types::EntityType>,
@@ -45,8 +43,11 @@ impl EntityConfigurationBuilder {
     }
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
+    }
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
@@ -54,18 +55,21 @@ impl EntityConfigurationBuilder {
         self
     }
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
-    pub fn set_entity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityType>,
-    ) -> Self {
-        self.entity_type = input;
-        self
+    pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
+        self.entity_type = input; self
+    }
+    /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
+        &self.entity_type
     }
     /// Consumes the builder and constructs a [`EntityConfiguration`](crate::types::EntityConfiguration).
     pub fn build(self) -> crate::types::EntityConfiguration {
         crate::types::EntityConfiguration {
-            entity_id: self.entity_id,
-            entity_type: self.entity_type,
+            entity_id: self.entity_id
+            ,
+            entity_type: self.entity_type
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> Name of the parameter from the Review policy. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyParameter {
+pub struct PolicyParameter  {
     /// <p> Name of the parameter from the list of Review Polices. </p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct PolicyParameter {
 }
 impl PolicyParameter {
     /// <p> Name of the parameter from the list of Review Polices. </p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p> The list of values of the Parameter</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
     /// <p> List of ParameterMapEntry objects. </p>
-    pub fn map_entries(&self) -> ::std::option::Option<&[crate::types::ParameterMapEntry]> {
+    pub fn map_entries(&self) -> ::std::option::Option<& [crate::types::ParameterMapEntry]> {
         self.map_entries.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl PolicyParameter {
 
 /// A builder for [`PolicyParameter`](crate::types::PolicyParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,8 +51,11 @@ impl PolicyParameterBuilder {
     }
     /// <p> Name of the parameter from the list of Review Polices. </p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p> Name of the parameter from the list of Review Polices. </p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -63,17 +64,17 @@ impl PolicyParameterBuilder {
     /// <p> The list of values of the Parameter</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The list of values of the Parameter</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p> The list of values of the Parameter</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Appends an item to `map_entries`.
     ///
@@ -82,24 +83,28 @@ impl PolicyParameterBuilder {
     /// <p> List of ParameterMapEntry objects. </p>
     pub fn map_entries(mut self, input: crate::types::ParameterMapEntry) -> Self {
         let mut v = self.map_entries.unwrap_or_default();
-        v.push(input);
-        self.map_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.map_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> List of ParameterMapEntry objects. </p>
-    pub fn set_map_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapEntry>>,
-    ) -> Self {
-        self.map_entries = input;
-        self
+    pub fn set_map_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapEntry>>) -> Self {
+        self.map_entries = input; self
+    }
+    /// <p> List of ParameterMapEntry objects. </p>
+    pub fn get_map_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterMapEntry>> {
+        &self.map_entries
     }
     /// Consumes the builder and constructs a [`PolicyParameter`](crate::types::PolicyParameter).
     pub fn build(self) -> crate::types::PolicyParameter {
         crate::types::PolicyParameter {
-            key: self.key,
-            values: self.values,
-            map_entries: self.map_entries,
+            key: self.key
+            ,
+            values: self.values
+            ,
+            map_entries: self.map_entries
+            ,
         }
     }
 }
+

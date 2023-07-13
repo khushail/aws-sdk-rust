@@ -3,7 +3,7 @@
 /// <p>Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Policy {
+pub struct Policy  {
     /// <p>A structure that contains additional details about the policy.</p>
     #[doc(hidden)]
     pub policy_summary: ::std::option::Option<crate::types::PolicySummary>,
@@ -13,11 +13,11 @@ pub struct Policy {
 }
 impl Policy {
     /// <p>A structure that contains additional details about the policy.</p>
-    pub fn policy_summary(&self) -> ::std::option::Option<&crate::types::PolicySummary> {
+    pub fn policy_summary(&self) -> ::std::option::Option<& crate::types::PolicySummary> {
         self.policy_summary.as_ref()
     }
     /// <p>The text content of the policy.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Policy {
 
 /// A builder for [`Policy`](crate::types::Policy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyBuilder {
     pub(crate) policy_summary: ::std::option::Option<crate::types::PolicySummary>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl PolicyBuilder {
         self
     }
     /// <p>A structure that contains additional details about the policy.</p>
-    pub fn set_policy_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicySummary>,
-    ) -> Self {
-        self.policy_summary = input;
-        self
+    pub fn set_policy_summary(mut self, input: ::std::option::Option<crate::types::PolicySummary>) -> Self {
+        self.policy_summary = input; self
+    }
+    /// <p>A structure that contains additional details about the policy.</p>
+    pub fn get_policy_summary(&self) -> &::std::option::Option<crate::types::PolicySummary> {
+        &self.policy_summary
     }
     /// <p>The text content of the policy.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl PolicyBuilder {
     }
     /// <p>The text content of the policy.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
+    }
+    /// <p>The text content of the policy.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`Policy`](crate::types::Policy).
     pub fn build(self) -> crate::types::Policy {
         crate::types::Policy {
-            policy_summary: self.policy_summary,
-            content: self.content,
+            policy_summary: self.policy_summary
+            ,
+            content: self.content
+            ,
         }
     }
 }
+

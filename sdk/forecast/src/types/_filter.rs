@@ -3,7 +3,7 @@
 /// <p>Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the parameter to filter on.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of the parameter to filter on.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value to match.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::FilterConditionString> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::FilterConditionString> {
         self.condition.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl FilterBuilder {
     }
     /// <p>The name of the parameter to filter on.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The name of the parameter to filter on.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The value to match.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl FilterBuilder {
     }
     /// <p>The value to match.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value to match.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
     pub fn condition(mut self, input: crate::types::FilterConditionString) -> Self {
@@ -72,19 +76,23 @@ impl FilterBuilder {
         self
     }
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterConditionString>,
-    ) -> Self {
-        self.condition = input;
-        self
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterConditionString>) -> Self {
+        self.condition = input; self
+    }
+    /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::FilterConditionString> {
+        &self.condition
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            key: self.key,
-            value: self.value,
-            condition: self.condition,
+            key: self.key
+            ,
+            value: self.value
+            ,
+            condition: self.condition
+            ,
         }
     }
 }
+

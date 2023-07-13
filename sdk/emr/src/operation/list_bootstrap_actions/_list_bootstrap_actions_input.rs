@@ -3,7 +3,7 @@
 /// <p>This input determines which bootstrap actions to retrieve.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBootstrapActionsInput {
+pub struct ListBootstrapActionsInput  {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
     #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
@@ -13,27 +13,24 @@ pub struct ListBootstrapActionsInput {
 }
 impl ListBootstrapActionsInput {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ListBootstrapActionsInput {
     /// Creates a new builder-style object to manufacture [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder {
+    pub fn builder() -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder {
         crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBootstrapActionsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -46,8 +43,11 @@ impl ListBootstrapActionsInputBuilder {
     }
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
+    }
+    /// <p>The cluster identifier for the bootstrap actions to list.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +56,22 @@ impl ListBootstrapActionsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bootstrap_actions::ListBootstrapActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bootstrap_actions::ListBootstrapActionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_bootstrap_actions::ListBootstrapActionsInput {
-                cluster_id: self.cluster_id,
-                marker: self.marker,
-            },
+                cluster_id: self.cluster_id
+                ,
+                marker: self.marker
+                ,
+            }
         )
     }
 }
+

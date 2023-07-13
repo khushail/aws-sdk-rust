@@ -3,7 +3,7 @@
 /// <p> The memory size configurations of a container. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemorySizeConfiguration {
+pub struct MemorySizeConfiguration  {
     /// <p> The amount of memory in the container. </p>
     #[doc(hidden)]
     pub memory: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl MemorySizeConfiguration {
 
 /// A builder for [`MemorySizeConfiguration`](crate::types::MemorySizeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemorySizeConfigurationBuilder {
     pub(crate) memory: ::std::option::Option<i32>,
     pub(crate) memory_reservation: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl MemorySizeConfigurationBuilder {
     }
     /// <p> The amount of memory in the container. </p>
     pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
+    }
+    /// <p> The amount of memory in the container. </p>
+    pub fn get_memory(&self) -> &::std::option::Option<i32> {
+        &self.memory
     }
     /// <p> The limit of memory reserve for the container. </p>
     pub fn memory_reservation(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl MemorySizeConfigurationBuilder {
     }
     /// <p> The limit of memory reserve for the container. </p>
     pub fn set_memory_reservation(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_reservation = input;
-        self
+        self.memory_reservation = input; self
+    }
+    /// <p> The limit of memory reserve for the container. </p>
+    pub fn get_memory_reservation(&self) -> &::std::option::Option<i32> {
+        &self.memory_reservation
     }
     /// Consumes the builder and constructs a [`MemorySizeConfiguration`](crate::types::MemorySizeConfiguration).
     pub fn build(self) -> crate::types::MemorySizeConfiguration {
         crate::types::MemorySizeConfiguration {
-            memory: self.memory,
-            memory_reservation: self.memory_reservation,
+            memory: self.memory
+            ,
+            memory_reservation: self.memory_reservation
+            ,
         }
     }
 }
+

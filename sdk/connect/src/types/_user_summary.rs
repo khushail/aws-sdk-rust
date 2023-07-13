@@ -3,7 +3,7 @@
 /// <p>Contains summary information about a user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserSummary {
+pub struct UserSummary  {
     /// <p>The identifier of the user account.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct UserSummary {
 }
 impl UserSummary {
     /// <p>The identifier of the user account.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Connect user name of the user account.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl UserSummary {
 
 /// A builder for [`UserSummary`](crate::types::UserSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl UserSummaryBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the user account.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl UserSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user account.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Amazon Connect user name of the user account.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl UserSummaryBuilder {
     }
     /// <p>The Amazon Connect user name of the user account.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// <p>The Amazon Connect user name of the user account.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`UserSummary`](crate::types::UserSummary).
     pub fn build(self) -> crate::types::UserSummary {
         crate::types::UserSummary {
-            id: self.id,
-            arn: self.arn,
-            username: self.username,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            username: self.username
+            ,
         }
     }
 }
+

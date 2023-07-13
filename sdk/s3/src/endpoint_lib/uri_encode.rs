@@ -46,3 +46,4 @@ pub(crate) fn uri_encode<'a>(
 ) -> std::borrow::Cow<'a, str> {
     utf8_percent_encode(s, BASE_SET).into()
 }
+

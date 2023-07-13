@@ -3,7 +3,7 @@
 /// <p> An error associated with a statement in a PartiQL batch that was run. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchStatementError {
+pub struct BatchStatementError  {
     /// <p> The error code associated with the failed PartiQL batch statement. </p>
     #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::BatchStatementErrorCodeEnum>,
@@ -13,11 +13,11 @@ pub struct BatchStatementError {
 }
 impl BatchStatementError {
     /// <p> The error code associated with the failed PartiQL batch statement. </p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::BatchStatementErrorCodeEnum> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::BatchStatementErrorCodeEnum> {
         self.code.as_ref()
     }
     /// <p> The error message associated with the PartiQL batch response. </p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl BatchStatementError {
 
 /// A builder for [`BatchStatementError`](crate::types::BatchStatementError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStatementErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::BatchStatementErrorCodeEnum>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl BatchStatementErrorBuilder {
         self
     }
     /// <p> The error code associated with the failed PartiQL batch statement. </p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchStatementErrorCodeEnum>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::BatchStatementErrorCodeEnum>) -> Self {
+        self.code = input; self
+    }
+    /// <p> The error code associated with the failed PartiQL batch statement. </p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::BatchStatementErrorCodeEnum> {
+        &self.code
     }
     /// <p> The error message associated with the PartiQL batch response. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl BatchStatementErrorBuilder {
     }
     /// <p> The error message associated with the PartiQL batch response. </p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p> The error message associated with the PartiQL batch response. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BatchStatementError`](crate::types::BatchStatementError).
     pub fn build(self) -> crate::types::BatchStatementError {
         crate::types::BatchStatementError {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An error or warning for the operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DashboardValidationMessage {
+pub struct DashboardValidationMessage  {
     /// <p>The data path related to the message.</p>
     #[doc(hidden)]
     pub data_path: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DashboardValidationMessage {
 }
 impl DashboardValidationMessage {
     /// <p>The data path related to the message.</p>
-    pub fn data_path(&self) -> ::std::option::Option<&str> {
+    pub fn data_path(&self) -> ::std::option::Option<& str> {
         self.data_path.as_deref()
     }
     /// <p>A message describing the error or warning.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DashboardValidationMessage {
 
 /// A builder for [`DashboardValidationMessage`](crate::types::DashboardValidationMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashboardValidationMessageBuilder {
     pub(crate) data_path: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DashboardValidationMessageBuilder {
     }
     /// <p>The data path related to the message.</p>
     pub fn set_data_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_path = input;
-        self
+        self.data_path = input; self
+    }
+    /// <p>The data path related to the message.</p>
+    pub fn get_data_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_path
     }
     /// <p>A message describing the error or warning.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl DashboardValidationMessageBuilder {
     }
     /// <p>A message describing the error or warning.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A message describing the error or warning.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`DashboardValidationMessage`](crate::types::DashboardValidationMessage).
     pub fn build(self) -> crate::types::DashboardValidationMessage {
         crate::types::DashboardValidationMessage {
-            data_path: self.data_path,
-            message: self.message,
+            data_path: self.data_path
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

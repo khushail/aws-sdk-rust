@@ -3,7 +3,7 @@
 /// <p>Returns details of a specific query. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StoredQueryMetadata {
+pub struct StoredQueryMetadata  {
     /// <p>The ID of the query. </p>
     #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct StoredQueryMetadata {
 }
 impl StoredQueryMetadata {
     /// <p>The ID of the query. </p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
-    pub fn query_arn(&self) -> ::std::option::Option<&str> {
+    pub fn query_arn(&self) -> ::std::option::Option<& str> {
         self.query_arn.as_deref()
     }
     /// <p>The name of the query.</p>
-    pub fn query_name(&self) -> ::std::option::Option<&str> {
+    pub fn query_name(&self) -> ::std::option::Option<& str> {
         self.query_name.as_deref()
     }
     /// <p>A unique description for the query.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl StoredQueryMetadata {
 
 /// A builder for [`StoredQueryMetadata`](crate::types::StoredQueryMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StoredQueryMetadataBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_arn: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl StoredQueryMetadataBuilder {
     }
     /// <p>The ID of the query. </p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
+    }
+    /// <p>The ID of the query. </p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
     }
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub fn query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl StoredQueryMetadataBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub fn set_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_arn = input;
-        self
+        self.query_arn = input; self
+    }
+    /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    pub fn get_query_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_arn
     }
     /// <p>The name of the query.</p>
     pub fn query_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl StoredQueryMetadataBuilder {
     }
     /// <p>The name of the query.</p>
     pub fn set_query_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_name = input;
-        self
+        self.query_name = input; self
+    }
+    /// <p>The name of the query.</p>
+    pub fn get_query_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_name
     }
     /// <p>A unique description for the query.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl StoredQueryMetadataBuilder {
     }
     /// <p>A unique description for the query.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A unique description for the query.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`StoredQueryMetadata`](crate::types::StoredQueryMetadata).
     pub fn build(self) -> crate::types::StoredQueryMetadata {
         crate::types::StoredQueryMetadata {
-            query_id: self.query_id,
-            query_arn: self.query_arn,
-            query_name: self.query_name,
-            description: self.description,
+            query_id: self.query_id
+            ,
+            query_arn: self.query_arn
+            ,
+            query_name: self.query_name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

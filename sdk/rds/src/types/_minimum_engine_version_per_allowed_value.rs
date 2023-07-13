@@ -3,7 +3,7 @@
 /// <p>The minimum DB engine version required for each corresponding allowed value for an option setting.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MinimumEngineVersionPerAllowedValue {
+pub struct MinimumEngineVersionPerAllowedValue  {
     /// <p>The allowed value for an option setting.</p>
     #[doc(hidden)]
     pub allowed_value: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct MinimumEngineVersionPerAllowedValue {
 }
 impl MinimumEngineVersionPerAllowedValue {
     /// <p>The allowed value for an option setting.</p>
-    pub fn allowed_value(&self) -> ::std::option::Option<&str> {
+    pub fn allowed_value(&self) -> ::std::option::Option<& str> {
         self.allowed_value.as_deref()
     }
     /// <p>The minimum DB engine version required for the allowed value.</p>
-    pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> ::std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl MinimumEngineVersionPerAllowedValue {
 
 /// A builder for [`MinimumEngineVersionPerAllowedValue`](crate::types::MinimumEngineVersionPerAllowedValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MinimumEngineVersionPerAllowedValueBuilder {
     pub(crate) allowed_value: ::std::option::Option<::std::string::String>,
     pub(crate) minimum_engine_version: ::std::option::Option<::std::string::String>,
 }
 impl MinimumEngineVersionPerAllowedValueBuilder {
     /// <p>The allowed value for an option setting.</p>
-    pub fn allowed_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allowed value for an option setting.</p>
-    pub fn set_allowed_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.allowed_value = input;
-        self
+    pub fn set_allowed_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.allowed_value = input; self
+    }
+    /// <p>The allowed value for an option setting.</p>
+    pub fn get_allowed_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_value
     }
     /// <p>The minimum DB engine version required for the allowed value.</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum DB engine version required for the allowed value.</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.minimum_engine_version = input;
-        self
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.minimum_engine_version = input; self
+    }
+    /// <p>The minimum DB engine version required for the allowed value.</p>
+    pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_engine_version
     }
     /// Consumes the builder and constructs a [`MinimumEngineVersionPerAllowedValue`](crate::types::MinimumEngineVersionPerAllowedValue).
     pub fn build(self) -> crate::types::MinimumEngineVersionPerAllowedValue {
         crate::types::MinimumEngineVersionPerAllowedValue {
-            allowed_value: self.allowed_value,
-            minimum_engine_version: self.minimum_engine_version,
+            allowed_value: self.allowed_value
+            ,
+            minimum_engine_version: self.minimum_engine_version
+            ,
         }
     }
 }
+

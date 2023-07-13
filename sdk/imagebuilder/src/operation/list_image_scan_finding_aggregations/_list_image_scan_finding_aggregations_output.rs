@@ -2,25 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImageScanFindingAggregationsOutput {
+pub struct ListImageScanFindingAggregationsOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
-    /// <p class="title"> <b>Aggregation types</b> </p>
-    /// <ul>
-    /// <li> <p>accountId</p> </li>
-    /// <li> <p>imageBuildVersionArn</p> </li>
-    /// <li> <p>imagePipelineArn</p> </li>
-    /// <li> <p>vulnerabilityId</p> </li>
-    /// </ul>
+    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p> 
+    /// <p class="title"> <b>Aggregation types</b> </p> 
+    /// <ul> 
+    /// <li> <p>accountId</p> </li> 
+    /// <li> <p>imageBuildVersionArn</p> </li> 
+    /// <li> <p>imagePipelineArn</p> </li> 
+    /// <li> <p>vulnerabilityId</p> </li> 
+    /// </ul> 
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
     #[doc(hidden)]
     pub aggregation_type: ::std::option::Option<::std::string::String>,
     /// <p>An array of image scan finding aggregations that match the filter criteria.</p>
     #[doc(hidden)]
-    pub responses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>>,
+    pub responses: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -28,52 +27,49 @@ pub struct ListImageScanFindingAggregationsOutput {
 }
 impl ListImageScanFindingAggregationsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
-    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
-    /// <p class="title"> <b>Aggregation types</b> </p>
-    /// <ul>
-    /// <li> <p>accountId</p> </li>
-    /// <li> <p>imageBuildVersionArn</p> </li>
-    /// <li> <p>imagePipelineArn</p> </li>
-    /// <li> <p>vulnerabilityId</p> </li>
-    /// </ul>
+    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p> 
+    /// <p class="title"> <b>Aggregation types</b> </p> 
+    /// <ul> 
+    /// <li> <p>accountId</p> </li> 
+    /// <li> <p>imageBuildVersionArn</p> </li> 
+    /// <li> <p>imagePipelineArn</p> </li> 
+    /// <li> <p>vulnerabilityId</p> </li> 
+    /// </ul> 
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
-    pub fn aggregation_type(&self) -> ::std::option::Option<&str> {
+    pub fn aggregation_type(&self) -> ::std::option::Option<& str> {
         self.aggregation_type.as_deref()
     }
     /// <p>An array of image scan finding aggregations that match the filter criteria.</p>
-    pub fn responses(&self) -> ::std::option::Option<&[crate::types::ImageScanFindingAggregation]> {
+    pub fn responses(&self) -> ::std::option::Option<& [crate::types::ImageScanFindingAggregation]> {
         self.responses.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListImageScanFindingAggregationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListImageScanFindingAggregationsOutput {
     /// Creates a new builder-style object to manufacture [`ListImageScanFindingAggregationsOutput`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput).
-    pub fn builder() -> crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsOutputBuilder {
         crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageScanFindingAggregationsOutput`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageScanFindingAggregationsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation_type: ::std::option::Option<::std::string::String>,
-    pub(crate) responses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>>,
+    pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -85,40 +81,48 @@ impl ListImageScanFindingAggregationsOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
-    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
-    /// <p class="title"> <b>Aggregation types</b> </p>
-    /// <ul>
-    /// <li> <p>accountId</p> </li>
-    /// <li> <p>imageBuildVersionArn</p> </li>
-    /// <li> <p>imagePipelineArn</p> </li>
-    /// <li> <p>vulnerabilityId</p> </li>
-    /// </ul>
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
+    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p> 
+    /// <p class="title"> <b>Aggregation types</b> </p> 
+    /// <ul> 
+    /// <li> <p>accountId</p> </li> 
+    /// <li> <p>imageBuildVersionArn</p> </li> 
+    /// <li> <p>imagePipelineArn</p> </li> 
+    /// <li> <p>vulnerabilityId</p> </li> 
+    /// </ul> 
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
-    pub fn aggregation_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
-    /// <p class="title"> <b>Aggregation types</b> </p>
-    /// <ul>
-    /// <li> <p>accountId</p> </li>
-    /// <li> <p>imageBuildVersionArn</p> </li>
-    /// <li> <p>imagePipelineArn</p> </li>
-    /// <li> <p>vulnerabilityId</p> </li>
-    /// </ul>
+    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p> 
+    /// <p class="title"> <b>Aggregation types</b> </p> 
+    /// <ul> 
+    /// <li> <p>accountId</p> </li> 
+    /// <li> <p>imageBuildVersionArn</p> </li> 
+    /// <li> <p>imagePipelineArn</p> </li> 
+    /// <li> <p>vulnerabilityId</p> </li> 
+    /// </ul> 
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
-    pub fn set_aggregation_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aggregation_type = input;
-        self
+    pub fn set_aggregation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aggregation_type = input; self
+    }
+    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p> 
+    /// <p class="title"> <b>Aggregation types</b> </p> 
+    /// <ul> 
+    /// <li> <p>accountId</p> </li> 
+    /// <li> <p>imageBuildVersionArn</p> </li> 
+    /// <li> <p>imagePipelineArn</p> </li> 
+    /// <li> <p>vulnerabilityId</p> </li> 
+    /// </ul> 
+    /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
+    pub fn get_aggregation_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aggregation_type
     }
     /// Appends an item to `responses`.
     ///
@@ -127,17 +131,17 @@ impl ListImageScanFindingAggregationsOutputBuilder {
     /// <p>An array of image scan finding aggregations that match the filter criteria.</p>
     pub fn responses(mut self, input: crate::types::ImageScanFindingAggregation) -> Self {
         let mut v = self.responses.unwrap_or_default();
-        v.push(input);
-        self.responses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.responses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of image scan finding aggregations that match the filter criteria.</p>
-    pub fn set_responses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>>,
-    ) -> Self {
-        self.responses = input;
-        self
+    pub fn set_responses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>>) -> Self {
+        self.responses = input; self
+    }
+    /// <p>An array of image scan finding aggregations that match the filter criteria.</p>
+    pub fn get_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>> {
+        &self.responses
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,20 +150,23 @@ impl ListImageScanFindingAggregationsOutputBuilder {
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListImageScanFindingAggregationsOutput`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput).
-    pub fn build(self) -> crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput{
+    pub fn build(self) -> crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput {
         crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput {
             request_id: self.request_id
             ,
@@ -173,3 +180,4 @@ impl ListImageScanFindingAggregationsOutputBuilder {
         }
     }
 }
+

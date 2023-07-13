@@ -3,7 +3,7 @@
 /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafv2WebAclDetails {
+pub struct AwsWafv2WebAclDetails  {
     /// <p> The name of the web ACL. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -37,11 +37,11 @@ pub struct AwsWafv2WebAclDetails {
 }
 impl AwsWafv2WebAclDetails {
     /// <p> The name of the web ACL. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> Indicates whether this web ACL is managed by Firewall Manager. </p>
@@ -49,7 +49,7 @@ impl AwsWafv2WebAclDetails {
         self.managedby_firewall_manager
     }
     /// <p> A unique identifier for the web ACL. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
@@ -57,29 +57,23 @@ impl AwsWafv2WebAclDetails {
         self.capacity
     }
     /// <p> Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. </p>
-    pub fn captcha_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafv2WebAclCaptchaConfigDetails> {
+    pub fn captcha_config(&self) -> ::std::option::Option<& crate::types::AwsWafv2WebAclCaptchaConfigDetails> {
         self.captcha_config.as_ref()
     }
     /// <p> The action to perform if none of the Rules contained in the web ACL match. </p>
-    pub fn default_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafv2WebAclActionDetails> {
+    pub fn default_action(&self) -> ::std::option::Option<& crate::types::AwsWafv2WebAclActionDetails> {
         self.default_action.as_ref()
     }
     /// <p> A description of the web ACL that helps with identification. </p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AwsWafv2RulesDetails]> {
+    pub fn rules(&self) -> ::std::option::Option<& [crate::types::AwsWafv2RulesDetails]> {
         self.rules.as_deref()
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn visibility_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafv2VisibilityConfigDetails> {
+    pub fn visibility_config(&self) -> ::std::option::Option<& crate::types::AwsWafv2VisibilityConfigDetails> {
         self.visibility_config.as_ref()
     }
 }
@@ -92,22 +86,18 @@ impl AwsWafv2WebAclDetails {
 
 /// A builder for [`AwsWafv2WebAclDetails`](crate::types::AwsWafv2WebAclDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) managedby_firewall_manager: ::std::option::Option<bool>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) capacity: ::std::option::Option<i64>,
-    pub(crate) captcha_config:
-        ::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigDetails>,
+    pub(crate) captcha_config: ::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigDetails>,
     pub(crate) default_action: ::std::option::Option<crate::types::AwsWafv2WebAclActionDetails>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>,
-    pub(crate) visibility_config:
-        ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
+    pub(crate) visibility_config: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
 impl AwsWafv2WebAclDetailsBuilder {
     /// <p> The name of the web ACL. </p>
@@ -117,8 +107,11 @@ impl AwsWafv2WebAclDetailsBuilder {
     }
     /// <p> The name of the web ACL. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p> The name of the web ACL. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,8 +120,11 @@ impl AwsWafv2WebAclDetailsBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p> Indicates whether this web ACL is managed by Firewall Manager. </p>
     pub fn managedby_firewall_manager(mut self, input: bool) -> Self {
@@ -137,8 +133,11 @@ impl AwsWafv2WebAclDetailsBuilder {
     }
     /// <p> Indicates whether this web ACL is managed by Firewall Manager. </p>
     pub fn set_managedby_firewall_manager(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.managedby_firewall_manager = input;
-        self
+        self.managedby_firewall_manager = input; self
+    }
+    /// <p> Indicates whether this web ACL is managed by Firewall Manager. </p>
+    pub fn get_managedby_firewall_manager(&self) -> &::std::option::Option<bool> {
+        &self.managedby_firewall_manager
     }
     /// <p> A unique identifier for the web ACL. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,8 +146,11 @@ impl AwsWafv2WebAclDetailsBuilder {
     }
     /// <p> A unique identifier for the web ACL. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p> A unique identifier for the web ACL. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p> The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
     pub fn capacity(mut self, input: i64) -> Self {
@@ -157,24 +159,24 @@ impl AwsWafv2WebAclDetailsBuilder {
     }
     /// <p> The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
     pub fn set_capacity(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
+    }
+    /// <p> The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
+    pub fn get_capacity(&self) -> &::std::option::Option<i64> {
+        &self.capacity
     }
     /// <p> Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. </p>
-    pub fn captcha_config(
-        mut self,
-        input: crate::types::AwsWafv2WebAclCaptchaConfigDetails,
-    ) -> Self {
+    pub fn captcha_config(mut self, input: crate::types::AwsWafv2WebAclCaptchaConfigDetails) -> Self {
         self.captcha_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. </p>
-    pub fn set_captcha_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigDetails>,
-    ) -> Self {
-        self.captcha_config = input;
-        self
+    pub fn set_captcha_config(mut self, input: ::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigDetails>) -> Self {
+        self.captcha_config = input; self
+    }
+    /// <p> Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. </p>
+    pub fn get_captcha_config(&self) -> &::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigDetails> {
+        &self.captcha_config
     }
     /// <p> The action to perform if none of the Rules contained in the web ACL match. </p>
     pub fn default_action(mut self, input: crate::types::AwsWafv2WebAclActionDetails) -> Self {
@@ -182,12 +184,12 @@ impl AwsWafv2WebAclDetailsBuilder {
         self
     }
     /// <p> The action to perform if none of the Rules contained in the web ACL match. </p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2WebAclActionDetails>,
-    ) -> Self {
-        self.default_action = input;
-        self
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::AwsWafv2WebAclActionDetails>) -> Self {
+        self.default_action = input; self
+    }
+    /// <p> The action to perform if none of the Rules contained in the web ACL match. </p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::AwsWafv2WebAclActionDetails> {
+        &self.default_action
     }
     /// <p> A description of the web ACL that helps with identification. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -196,8 +198,11 @@ impl AwsWafv2WebAclDetailsBuilder {
     }
     /// <p> A description of the web ACL that helps with identification. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p> A description of the web ACL that helps with identification. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `rules`.
     ///
@@ -206,47 +211,57 @@ impl AwsWafv2WebAclDetailsBuilder {
     /// <p> The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
     pub fn rules(mut self, input: crate::types::AwsWafv2RulesDetails) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>) -> Self {
+        self.rules = input; self
+    }
+    /// <p> The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>> {
+        &self.rules
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn visibility_config(
-        mut self,
-        input: crate::types::AwsWafv2VisibilityConfigDetails,
-    ) -> Self {
+    pub fn visibility_config(mut self, input: crate::types::AwsWafv2VisibilityConfigDetails) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn set_visibility_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
-    ) -> Self {
-        self.visibility_config = input;
-        self
+    pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>) -> Self {
+        self.visibility_config = input; self
+    }
+    /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails> {
+        &self.visibility_config
     }
     /// Consumes the builder and constructs a [`AwsWafv2WebAclDetails`](crate::types::AwsWafv2WebAclDetails).
     pub fn build(self) -> crate::types::AwsWafv2WebAclDetails {
         crate::types::AwsWafv2WebAclDetails {
-            name: self.name,
-            arn: self.arn,
-            managedby_firewall_manager: self.managedby_firewall_manager.unwrap_or_default(),
-            id: self.id,
-            capacity: self.capacity.unwrap_or_default(),
-            captcha_config: self.captcha_config,
-            default_action: self.default_action,
-            description: self.description,
-            rules: self.rules,
-            visibility_config: self.visibility_config,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            managedby_firewall_manager: self.managedby_firewall_manager
+                .unwrap_or_default()
+            ,
+            id: self.id
+            ,
+            capacity: self.capacity
+                .unwrap_or_default()
+            ,
+            captcha_config: self.captcha_config
+            ,
+            default_action: self.default_action
+            ,
+            description: self.description
+            ,
+            rules: self.rules
+            ,
+            visibility_config: self.visibility_config
+            ,
         }
     }
 }
+

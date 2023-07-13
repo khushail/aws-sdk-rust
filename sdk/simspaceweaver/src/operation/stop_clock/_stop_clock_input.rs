@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopClockInput {
+pub struct StopClockInput  {
     /// <p>The name of the simulation.</p>
     #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
 }
 impl StopClockInput {
     /// <p>The name of the simulation.</p>
-    pub fn simulation(&self) -> ::std::option::Option<&str> {
+    pub fn simulation(&self) -> ::std::option::Option<& str> {
         self.simulation.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl StopClockInput {
 
 /// A builder for [`StopClockInput`](crate::operation::stop_clock::StopClockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopClockInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl StopClockInputBuilder {
     }
     /// <p>The name of the simulation.</p>
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.simulation = input;
-        self
+        self.simulation = input; self
+    }
+    /// <p>The name of the simulation.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
     }
     /// Consumes the builder and constructs a [`StopClockInput`](crate::operation::stop_clock::StopClockInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_clock::StopClockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_clock::StopClockInput {
-            simulation: self.simulation,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_clock::StopClockInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_clock::StopClockInput {
+                simulation: self.simulation
+                ,
+            }
+        )
     }
 }
+

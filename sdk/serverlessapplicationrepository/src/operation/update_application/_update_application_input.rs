@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -34,54 +34,51 @@ pub struct UpdateApplicationInput {
 }
 impl UpdateApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    pub fn author(&self) -> ::std::option::Option<&str> {
+    pub fn author(&self) -> ::std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(&self) -> ::std::option::Option<&str> {
+    pub fn home_page_url(&self) -> ::std::option::Option<& str> {
         self.home_page_url.as_deref()
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn labels(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn readme_body(&self) -> ::std::option::Option<&str> {
+    pub fn readme_body(&self) -> ::std::option::Option<& str> {
         self.readme_body.as_deref()
     }
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn readme_url(&self) -> ::std::option::Option<&str> {
+    pub fn readme_url(&self) -> ::std::option::Option<& str> {
         self.readme_url.as_deref()
     }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         crate::operation::update_application::builders::UpdateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) author: ::std::option::Option<::std::string::String>,
@@ -93,20 +90,17 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
@@ -119,8 +113,13 @@ impl UpdateApplicationInputBuilder {
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author = input;
-        self
+        self.author = input; self
+    }
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
@@ -131,24 +130,25 @@ impl UpdateApplicationInputBuilder {
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_page_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_page_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn set_home_page_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.home_page_url = input;
-        self
+    pub fn set_home_page_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.home_page_url = input; self
+    }
+    /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    pub fn get_home_page_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_page_url
     }
     /// Appends an item to `labels`.
     ///
@@ -159,19 +159,21 @@ impl UpdateApplicationInputBuilder {
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.labels = input; self
+    }
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
@@ -182,8 +184,12 @@ impl UpdateApplicationInputBuilder {
     /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
     pub fn set_readme_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.readme_body = input;
-        self
+        self.readme_body = input; self
+    }
+    /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
+    pub fn get_readme_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme_body
     }
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
@@ -194,26 +200,33 @@ impl UpdateApplicationInputBuilder {
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
     pub fn set_readme_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.readme_url = input;
-        self
+        self.readme_url = input; self
+    }
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
+    pub fn get_readme_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme_url
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application::UpdateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_application::UpdateApplicationInput {
-                application_id: self.application_id,
-                author: self.author,
-                description: self.description,
-                home_page_url: self.home_page_url,
-                labels: self.labels,
-                readme_body: self.readme_body,
-                readme_url: self.readme_url,
-            },
+                application_id: self.application_id
+                ,
+                author: self.author
+                ,
+                description: self.description
+                ,
+                home_page_url: self.home_page_url
+                ,
+                labels: self.labels
+                ,
+                readme_body: self.readme_body
+                ,
+                readme_url: self.readme_url
+                ,
+            }
         )
     }
 }
+

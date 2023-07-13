@@ -3,7 +3,7 @@
 /// <p>Describes a DHCP configuration option.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NewDhcpConfiguration {
+pub struct NewDhcpConfiguration  {
     /// <p>The name of a DHCP option.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct NewDhcpConfiguration {
 }
 impl NewDhcpConfiguration {
     /// <p>The name of a DHCP option.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>One or more values for the DHCP option.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl NewDhcpConfiguration {
 
 /// A builder for [`NewDhcpConfiguration`](crate::types::NewDhcpConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NewDhcpConfigurationBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl NewDhcpConfigurationBuilder {
     }
     /// <p>The name of a DHCP option.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The name of a DHCP option.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -55,23 +56,26 @@ impl NewDhcpConfigurationBuilder {
     /// <p>One or more values for the DHCP option.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more values for the DHCP option.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>One or more values for the DHCP option.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`NewDhcpConfiguration`](crate::types::NewDhcpConfiguration).
     pub fn build(self) -> crate::types::NewDhcpConfiguration {
         crate::types::NewDhcpConfiguration {
-            key: self.key,
-            values: self.values,
+            key: self.key
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

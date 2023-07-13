@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAliasInput {
+pub struct DeleteAliasInput  {
     /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
     #[doc(hidden)]
     pub alias_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAliasInput {
     /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteAliasInput {
 
 /// A builder for [`DeleteAliasInput`](crate::operation::delete_alias::DeleteAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteAliasInputBuilder {
     }
     /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
+    }
+    /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
     }
     /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::operation::delete_alias::DeleteAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_alias::DeleteAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_alias::DeleteAliasInput {
-            alias_id: self.alias_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alias::DeleteAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_alias::DeleteAliasInput {
+                alias_id: self.alias_id
+                ,
+            }
+        )
     }
 }
+

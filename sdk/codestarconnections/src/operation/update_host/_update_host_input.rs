@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateHostInput {
+pub struct UpdateHostInput  {
     /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
     #[doc(hidden)]
     pub host_arn: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateHostInput {
 }
 impl UpdateHostInput {
     /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
-    pub fn host_arn(&self) -> ::std::option::Option<&str> {
+    pub fn host_arn(&self) -> ::std::option::Option<& str> {
         self.host_arn.as_deref()
     }
     /// <p>The URL or endpoint of the host to be updated.</p>
-    pub fn provider_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn provider_endpoint(&self) -> ::std::option::Option<& str> {
         self.provider_endpoint.as_deref()
     }
     /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
@@ -36,9 +36,7 @@ impl UpdateHostInput {
 
 /// A builder for [`UpdateHostInput`](crate::operation::update_host::UpdateHostInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHostInputBuilder {
     pub(crate) host_arn: ::std::option::Option<::std::string::String>,
     pub(crate) provider_endpoint: ::std::option::Option<::std::string::String>,
@@ -52,24 +50,24 @@ impl UpdateHostInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_arn = input;
-        self
+        self.host_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_arn
     }
     /// <p>The URL or endpoint of the host to be updated.</p>
-    pub fn provider_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL or endpoint of the host to be updated.</p>
-    pub fn set_provider_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.provider_endpoint = input;
-        self
+    pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_endpoint = input; self
+    }
+    /// <p>The URL or endpoint of the host to be updated.</p>
+    pub fn get_provider_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_endpoint
     }
     /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
@@ -77,24 +75,25 @@ impl UpdateHostInputBuilder {
         self
     }
     /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
-        self.vpc_configuration = input;
-        self
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
+        self.vpc_configuration = input; self
+    }
+    /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`UpdateHostInput`](crate::operation::update_host::UpdateHostInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_host::UpdateHostInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_host::UpdateHostInput {
-            host_arn: self.host_arn,
-            provider_endpoint: self.provider_endpoint,
-            vpc_configuration: self.vpc_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_host::UpdateHostInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_host::UpdateHostInput {
+                host_arn: self.host_arn
+                ,
+                provider_endpoint: self.provider_endpoint
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+            }
+        )
     }
 }
+

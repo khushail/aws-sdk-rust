@@ -3,14 +3,14 @@
 /// <p>Describes a CIDR block for an address pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PoolCidrBlock {
+pub struct PoolCidrBlock  {
     /// <p>The CIDR block.</p>
     #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl PoolCidrBlock {
     /// <p>The CIDR block.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl PoolCidrBlock {
 
 /// A builder for [`PoolCidrBlock`](crate::types::PoolCidrBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PoolCidrBlockBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl PoolCidrBlockBuilder {
     }
     /// <p>The CIDR block.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
+    }
+    /// <p>The CIDR block.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// Consumes the builder and constructs a [`PoolCidrBlock`](crate::types::PoolCidrBlock).
     pub fn build(self) -> crate::types::PoolCidrBlock {
-        crate::types::PoolCidrBlock { cidr: self.cidr }
+        crate::types::PoolCidrBlock {
+            cidr: self.cidr
+            ,
+        }
     }
 }
+

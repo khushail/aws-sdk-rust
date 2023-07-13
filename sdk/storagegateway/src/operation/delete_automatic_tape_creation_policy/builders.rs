@@ -3,76 +3,87 @@ pub use crate::operation::delete_automatic_tape_creation_policy::_delete_automat
 
 pub use crate::operation::delete_automatic_tape_creation_policy::_delete_automatic_tape_creation_policy_input::DeleteAutomaticTapeCreationPolicyInputBuilder;
 
+impl DeleteAutomaticTapeCreationPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.delete_automatic_tape_creation_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DeleteAutomaticTapeCreationPolicy`.
-///
+/// 
 /// <p>Deletes the automatic tape creation policy of a gateway. If you delete this policy, new virtual tapes must be created manually. Use the Amazon Resource Name (ARN) of the gateway in your request to remove the policy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAutomaticTapeCreationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyInputBuilder,
 }
-impl DeleteAutomaticTapeCreationPolicyFluentBuilder {
+impl DeleteAutomaticTapeCreationPolicyFluentBuilder  {
     /// Creates a new `DeleteAutomaticTapeCreationPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAutomaticTapeCreationPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -83,4 +94,9 @@ impl DeleteAutomaticTapeCreationPolicyFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
 }
+

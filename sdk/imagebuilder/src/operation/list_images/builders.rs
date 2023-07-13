@@ -3,100 +3,93 @@ pub use crate::operation::list_images::_list_images_output::ListImagesOutputBuil
 
 pub use crate::operation::list_images::_list_images_input::ListImagesInputBuilder;
 
+impl ListImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_images::ListImagesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_images::ListImagesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_images();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListImages`.
-///
+/// 
 /// <p>Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in the ListImages API Results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_images::builders::ListImagesInputBuilder,
+                    inner: crate::operation::list_images::builders::ListImagesInputBuilder,
 }
-impl ListImagesFluentBuilder {
+impl ListImagesFluentBuilder  {
     /// Creates a new `ListImages`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_images::ListImages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListImages as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_images::builders::ListImagesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_images::ListImagesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_images::ListImages, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_images::ListImagesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_images::ListImagesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_images::ListImages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_images::ListImagesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_images::ListImages, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_images::paginator::ListImagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_images::paginator::ListImagesPaginator {
-        crate::operation::list_images::paginator::ListImagesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_images::paginator::ListImagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_images::paginator::ListImagesPaginator {
+                                crate::operation::list_images::paginator::ListImagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
         self.inner = self.inner.owner(input);
@@ -107,36 +100,48 @@ impl ListImagesFluentBuilder {
         self.inner = self.inner.set_owner(input);
         self
     }
+    /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
+        self.inner.get_owner()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>osVersion</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>osVersion</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <li> <p> <code>type</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>osVersion</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>osVersion</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <li> <p> <code>type</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>Use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>name</code> </p> </li> 
+    /// <li> <p> <code>osVersion</code> </p> </li> 
+    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <li> <p> <code>type</code> </p> </li> 
+    /// <li> <p> <code>version</code> </p> </li> 
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
     /// <p>Requests a list of images with a specific recipe name.</p>
     pub fn by_name(mut self, input: bool) -> Self {
@@ -148,6 +153,10 @@ impl ListImagesFluentBuilder {
         self.inner = self.inner.set_by_name(input);
         self
     }
+    /// <p>Requests a list of images with a specific recipe name.</p>
+    pub fn get_by_name(&self) -> &::std::option::Option<bool> {
+        self.inner.get_by_name()
+    }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -157,6 +166,10 @@ impl ListImagesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +181,10 @@ impl ListImagesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Includes deprecated images in the response list.</p>
     pub fn include_deprecated(mut self, input: bool) -> Self {
         self.inner = self.inner.include_deprecated(input);
@@ -178,4 +195,9 @@ impl ListImagesFluentBuilder {
         self.inner = self.inner.set_include_deprecated(input);
         self
     }
+    /// <p>Includes deprecated images in the response list.</p>
+    pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_deprecated()
+    }
 }
+

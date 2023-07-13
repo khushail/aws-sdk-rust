@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVoiceProfileInput {
+pub struct UpdateVoiceProfileInput  {
     /// <p>The profile ID.</p>
     #[doc(hidden)]
     pub voice_profile_id: ::std::option::Option<::std::string::String>,
@@ -12,76 +12,65 @@ pub struct UpdateVoiceProfileInput {
 }
 impl UpdateVoiceProfileInput {
     /// <p>The profile ID.</p>
-    pub fn voice_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_profile_id(&self) -> ::std::option::Option<& str> {
         self.voice_profile_id.as_deref()
     }
     /// <p>The ID of the speaker search task.</p>
-    pub fn speaker_search_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn speaker_search_task_id(&self) -> ::std::option::Option<& str> {
         self.speaker_search_task_id.as_deref()
     }
 }
 impl UpdateVoiceProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceProfileInput`](crate::operation::update_voice_profile::UpdateVoiceProfileInput).
-    pub fn builder(
-    ) -> crate::operation::update_voice_profile::builders::UpdateVoiceProfileInputBuilder {
+    pub fn builder() -> crate::operation::update_voice_profile::builders::UpdateVoiceProfileInputBuilder {
         crate::operation::update_voice_profile::builders::UpdateVoiceProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVoiceProfileInput`](crate::operation::update_voice_profile::UpdateVoiceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVoiceProfileInputBuilder {
     pub(crate) voice_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) speaker_search_task_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVoiceProfileInputBuilder {
     /// <p>The profile ID.</p>
-    pub fn voice_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The profile ID.</p>
-    pub fn set_voice_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voice_profile_id = input;
-        self
+    pub fn set_voice_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voice_profile_id = input; self
+    }
+    /// <p>The profile ID.</p>
+    pub fn get_voice_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_id
     }
     /// <p>The ID of the speaker search task.</p>
-    pub fn speaker_search_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn speaker_search_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker_search_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the speaker search task.</p>
-    pub fn set_speaker_search_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.speaker_search_task_id = input;
-        self
+    pub fn set_speaker_search_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.speaker_search_task_id = input; self
+    }
+    /// <p>The ID of the speaker search task.</p>
+    pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.speaker_search_task_id
     }
     /// Consumes the builder and constructs a [`UpdateVoiceProfileInput`](crate::operation::update_voice_profile::UpdateVoiceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_voice_profile::UpdateVoiceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_voice_profile::UpdateVoiceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_voice_profile::UpdateVoiceProfileInput {
-                voice_profile_id: self.voice_profile_id,
-                speaker_search_task_id: self.speaker_search_task_id,
-            },
+                voice_profile_id: self.voice_profile_id
+                ,
+                speaker_search_task_id: self.speaker_search_task_id
+                ,
+            }
         )
     }
 }
+

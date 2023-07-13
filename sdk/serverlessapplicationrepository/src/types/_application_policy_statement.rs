@@ -3,7 +3,7 @@
 /// <p>Policy statement applied to the application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationPolicyStatement {
+pub struct ApplicationPolicyStatement  {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
     #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,19 +19,19 @@ pub struct ApplicationPolicyStatement {
 }
 impl ApplicationPolicyStatement {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn actions(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.actions.as_deref()
     }
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    pub fn principal_org_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn principal_org_i_ds(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.principal_org_i_ds.as_deref()
     }
     /// <p>An array of AWS account IDs, or * to make the application public.</p>
-    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn principals(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.principals.as_deref()
     }
     /// <p>A unique ID for the statement.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<& str> {
         self.statement_id.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl ApplicationPolicyStatement {
 
 /// A builder for [`ApplicationPolicyStatement`](crate::types::ApplicationPolicyStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationPolicyStatementBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) principal_org_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -61,39 +59,36 @@ impl ApplicationPolicyStatementBuilder {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
     pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input.into());
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.actions = input; self
+    }
+    /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.actions
     }
     /// Appends an item to `principal_org_i_ds`.
     ///
     /// To override the contents of this collection use [`set_principal_org_i_ds`](Self::set_principal_org_i_ds).
     ///
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    pub fn principal_org_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_org_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principal_org_i_ds.unwrap_or_default();
-        v.push(input.into());
-        self.principal_org_i_ds = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.principal_org_i_ds = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    pub fn set_principal_org_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.principal_org_i_ds = input;
-        self
+    pub fn set_principal_org_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.principal_org_i_ds = input; self
+    }
+    /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
+    pub fn get_principal_org_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principal_org_i_ds
     }
     /// Appends an item to `principals`.
     ///
@@ -102,17 +97,17 @@ impl ApplicationPolicyStatementBuilder {
     /// <p>An array of AWS account IDs, or * to make the application public.</p>
     pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
-        v.push(input.into());
-        self.principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of AWS account IDs, or * to make the application public.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.principals = input;
-        self
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.principals = input; self
+    }
+    /// <p>An array of AWS account IDs, or * to make the application public.</p>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principals
     }
     /// <p>A unique ID for the statement.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,16 +116,24 @@ impl ApplicationPolicyStatementBuilder {
     }
     /// <p>A unique ID for the statement.</p>
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_id = input;
-        self
+        self.statement_id = input; self
+    }
+    /// <p>A unique ID for the statement.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
     }
     /// Consumes the builder and constructs a [`ApplicationPolicyStatement`](crate::types::ApplicationPolicyStatement).
     pub fn build(self) -> crate::types::ApplicationPolicyStatement {
         crate::types::ApplicationPolicyStatement {
-            actions: self.actions,
-            principal_org_i_ds: self.principal_org_i_ds,
-            principals: self.principals,
-            statement_id: self.statement_id,
+            actions: self.actions
+            ,
+            principal_org_i_ds: self.principal_org_i_ds
+            ,
+            principals: self.principals
+            ,
+            statement_id: self.statement_id
+            ,
         }
     }
 }
+

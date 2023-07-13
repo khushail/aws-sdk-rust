@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFiltersInput {
+pub struct ListFiltersInput  {
     /// <p>The Amazon resource number (ARN) of the filter.</p>
     #[doc(hidden)]
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -18,15 +18,15 @@ pub struct ListFiltersInput {
 }
 impl ListFiltersInput {
     /// <p>The Amazon resource number (ARN) of the filter.</p>
-    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.arns.as_deref()
     }
     /// <p>The action the filter applies to matched findings.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::FilterAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::FilterAction> {
         self.action.as_ref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -43,9 +43,7 @@ impl ListFiltersInput {
 
 /// A builder for [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFiltersInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) action: ::std::option::Option<crate::types::FilterAction>,
@@ -60,17 +58,17 @@ impl ListFiltersInputBuilder {
     /// <p>The Amazon resource number (ARN) of the filter.</p>
     pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon resource number (ARN) of the filter.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.arns = input; self
+    }
+    /// <p>The Amazon resource number (ARN) of the filter.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
     }
     /// <p>The action the filter applies to matched findings.</p>
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
@@ -79,8 +77,11 @@ impl ListFiltersInputBuilder {
     }
     /// <p>The action the filter applies to matched findings.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::FilterAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
+    }
+    /// <p>The action the filter applies to matched findings.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
+        &self.action
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +90,11 @@ impl ListFiltersInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -99,21 +103,26 @@ impl ListFiltersInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_filters::ListFiltersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_filters::ListFiltersInput {
-            arns: self.arns,
-            action: self.action,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_filters::ListFiltersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_filters::ListFiltersInput {
+                arns: self.arns
+                ,
+                action: self.action
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

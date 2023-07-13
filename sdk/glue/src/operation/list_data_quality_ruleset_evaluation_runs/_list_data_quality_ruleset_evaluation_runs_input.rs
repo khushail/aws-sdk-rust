@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataQualityRulesetEvaluationRunsInput {
+pub struct ListDataQualityRulesetEvaluationRunsInput  {
     /// <p>The filter criteria.</p>
     #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::DataQualityRulesetEvaluationRunFilter>,
@@ -15,13 +15,11 @@ pub struct ListDataQualityRulesetEvaluationRunsInput {
 }
 impl ListDataQualityRulesetEvaluationRunsInput {
     /// <p>The filter criteria.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataQualityRulesetEvaluationRunFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::DataQualityRulesetEvaluationRunFilter> {
         self.filter.as_ref()
     }
     /// <p>A paginated token to offset the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -31,16 +29,14 @@ impl ListDataQualityRulesetEvaluationRunsInput {
 }
 impl ListDataQualityRulesetEvaluationRunsInput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetEvaluationRunsInput`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsInput).
-    pub fn builder() -> crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsInputBuilder{
+    pub fn builder() -> crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsInputBuilder {
         crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataQualityRulesetEvaluationRunsInput`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataQualityRulesetEvaluationRunsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DataQualityRulesetEvaluationRunFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,12 +49,12 @@ impl ListDataQualityRulesetEvaluationRunsInputBuilder {
         self
     }
     /// <p>The filter criteria.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityRulesetEvaluationRunFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DataQualityRulesetEvaluationRunFilter>) -> Self {
+        self.filter = input; self
+    }
+    /// <p>The filter criteria.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::DataQualityRulesetEvaluationRunFilter> {
+        &self.filter
     }
     /// <p>A paginated token to offset the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,8 +63,11 @@ impl ListDataQualityRulesetEvaluationRunsInputBuilder {
     }
     /// <p>A paginated token to offset the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A paginated token to offset the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -77,11 +76,14 @@ impl ListDataQualityRulesetEvaluationRunsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDataQualityRulesetEvaluationRunsInput`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsInput {
                 filter: self.filter
@@ -94,3 +96,4 @@ impl ListDataQualityRulesetEvaluationRunsInputBuilder {
         )
     }
 }
+

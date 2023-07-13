@@ -3,20 +3,20 @@
 /// <p>A descriptor for a partition index in a table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartitionIndexDescriptor {
+pub struct PartitionIndexDescriptor  {
     /// <p>The name of the partition index.</p>
     #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
     #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
-    /// <p>The status of the partition index. </p>
-    /// <p>The possible statuses are:</p>
-    /// <ul>
-    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
-    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
-    /// <li> <p>FAILED: The index creation fails. </p> </li>
-    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// <p>The status of the partition index. </p> 
+    /// <p>The possible statuses are:</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li> 
+    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li> 
+    /// <li> <p>FAILED: The index creation fails. </p> </li> 
+    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub index_status: ::std::option::Option<crate::types::PartitionIndexStatus>,
@@ -26,26 +26,26 @@ pub struct PartitionIndexDescriptor {
 }
 impl PartitionIndexDescriptor {
     /// <p>The name of the partition index.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
+    pub fn keys(&self) -> ::std::option::Option<& [crate::types::KeySchemaElement]> {
         self.keys.as_deref()
     }
-    /// <p>The status of the partition index. </p>
-    /// <p>The possible statuses are:</p>
-    /// <ul>
-    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
-    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
-    /// <li> <p>FAILED: The index creation fails. </p> </li>
-    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// <p>The status of the partition index. </p> 
+    /// <p>The possible statuses are:</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li> 
+    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li> 
+    /// <li> <p>FAILED: The index creation fails. </p> </li> 
+    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li> 
     /// </ul>
-    pub fn index_status(&self) -> ::std::option::Option<&crate::types::PartitionIndexStatus> {
+    pub fn index_status(&self) -> ::std::option::Option<& crate::types::PartitionIndexStatus> {
         self.index_status.as_ref()
     }
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
-    pub fn backfill_errors(&self) -> ::std::option::Option<&[crate::types::BackfillError]> {
+    pub fn backfill_errors(&self) -> ::std::option::Option<& [crate::types::BackfillError]> {
         self.backfill_errors.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl PartitionIndexDescriptor {
 
 /// A builder for [`PartitionIndexDescriptor`](crate::types::PartitionIndexDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionIndexDescriptorBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
@@ -75,8 +73,11 @@ impl PartitionIndexDescriptorBuilder {
     }
     /// <p>The name of the partition index.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
+    }
+    /// <p>The name of the partition index.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// Appends an item to `keys`.
     ///
@@ -85,44 +86,51 @@ impl PartitionIndexDescriptorBuilder {
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
     pub fn keys(mut self, input: crate::types::KeySchemaElement) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input);
-        self.keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
-    ) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>) -> Self {
+        self.keys = input; self
     }
-    /// <p>The status of the partition index. </p>
-    /// <p>The possible statuses are:</p>
-    /// <ul>
-    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
-    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
-    /// <li> <p>FAILED: The index creation fails. </p> </li>
-    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
+        &self.keys
+    }
+    /// <p>The status of the partition index. </p> 
+    /// <p>The possible statuses are:</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li> 
+    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li> 
+    /// <li> <p>FAILED: The index creation fails. </p> </li> 
+    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li> 
     /// </ul>
     pub fn index_status(mut self, input: crate::types::PartitionIndexStatus) -> Self {
         self.index_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the partition index. </p>
-    /// <p>The possible statuses are:</p>
-    /// <ul>
-    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
-    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
-    /// <li> <p>FAILED: The index creation fails. </p> </li>
-    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// <p>The status of the partition index. </p> 
+    /// <p>The possible statuses are:</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li> 
+    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li> 
+    /// <li> <p>FAILED: The index creation fails. </p> </li> 
+    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li> 
     /// </ul>
-    pub fn set_index_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionIndexStatus>,
-    ) -> Self {
-        self.index_status = input;
-        self
+    pub fn set_index_status(mut self, input: ::std::option::Option<crate::types::PartitionIndexStatus>) -> Self {
+        self.index_status = input; self
+    }
+    /// <p>The status of the partition index. </p> 
+    /// <p>The possible statuses are:</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li> 
+    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li> 
+    /// <li> <p>FAILED: The index creation fails. </p> </li> 
+    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li> 
+    /// </ul>
+    pub fn get_index_status(&self) -> &::std::option::Option<crate::types::PartitionIndexStatus> {
+        &self.index_status
     }
     /// Appends an item to `backfill_errors`.
     ///
@@ -131,25 +139,30 @@ impl PartitionIndexDescriptorBuilder {
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
     pub fn backfill_errors(mut self, input: crate::types::BackfillError) -> Self {
         let mut v = self.backfill_errors.unwrap_or_default();
-        v.push(input);
-        self.backfill_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.backfill_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
-    pub fn set_backfill_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackfillError>>,
-    ) -> Self {
-        self.backfill_errors = input;
-        self
+    pub fn set_backfill_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackfillError>>) -> Self {
+        self.backfill_errors = input; self
+    }
+    /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
+    pub fn get_backfill_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackfillError>> {
+        &self.backfill_errors
     }
     /// Consumes the builder and constructs a [`PartitionIndexDescriptor`](crate::types::PartitionIndexDescriptor).
     pub fn build(self) -> crate::types::PartitionIndexDescriptor {
         crate::types::PartitionIndexDescriptor {
-            index_name: self.index_name,
-            keys: self.keys,
-            index_status: self.index_status,
-            backfill_errors: self.backfill_errors,
+            index_name: self.index_name
+            ,
+            keys: self.keys
+            ,
+            index_status: self.index_status
+            ,
+            backfill_errors: self.backfill_errors
+            ,
         }
     }
 }
+

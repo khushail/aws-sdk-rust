@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelMlTaskRunInput {
+pub struct CancelMlTaskRunInput  {
     /// <p>The unique identifier of the machine learning transform.</p>
     #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct CancelMlTaskRunInput {
 }
 impl CancelMlTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> ::std::option::Option<&str> {
+    pub fn transform_id(&self) -> ::std::option::Option<& str> {
         self.transform_id.as_deref()
     }
     /// <p>A unique identifier for the task run.</p>
-    pub fn task_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_run_id(&self) -> ::std::option::Option<& str> {
         self.task_run_id.as_deref()
     }
 }
 impl CancelMlTaskRunInput {
     /// Creates a new builder-style object to manufacture [`CancelMlTaskRunInput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunInput).
-    pub fn builder() -> crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunInputBuilder {
         crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelMlTaskRunInput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelMlTaskRunInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl CancelMlTaskRunInputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
+    }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
     }
     /// <p>A unique identifier for the task run.</p>
     pub fn task_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,19 +55,22 @@ impl CancelMlTaskRunInputBuilder {
     }
     /// <p>A unique identifier for the task run.</p>
     pub fn set_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_run_id = input;
-        self
+        self.task_run_id = input; self
+    }
+    /// <p>A unique identifier for the task run.</p>
+    pub fn get_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_run_id
     }
     /// Consumes the builder and constructs a [`CancelMlTaskRunInput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_ml_task_run::CancelMlTaskRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_ml_task_run::CancelMlTaskRunInput {
-            transform_id: self.transform_id,
-            task_run_id: self.task_run_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_ml_task_run::CancelMlTaskRunInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_ml_task_run::CancelMlTaskRunInput {
+                transform_id: self.transform_id
+                ,
+                task_run_id: self.task_run_id
+                ,
+            }
+        )
     }
 }
+

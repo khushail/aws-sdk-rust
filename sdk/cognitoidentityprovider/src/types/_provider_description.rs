@@ -3,7 +3,7 @@
 /// <p>A container for IdP details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProviderDescription {
+pub struct ProviderDescription  {
     /// <p>The IdP name.</p>
     #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct ProviderDescription {
 }
 impl ProviderDescription {
     /// <p>The IdP name.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>The IdP type.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderTypeType> {
+    pub fn provider_type(&self) -> ::std::option::Option<& crate::types::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
     /// <p>The date the provider was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the provider was added to the user pool.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl ProviderDescription {
 
 /// A builder for [`ProviderDescription`](crate::types::ProviderDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProviderDescriptionBuilder {
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) provider_type: ::std::option::Option<crate::types::IdentityProviderTypeType>,
@@ -55,20 +53,17 @@ pub struct ProviderDescriptionBuilder {
 }
 impl ProviderDescriptionBuilder {
     /// <p>The IdP name.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IdP name.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.provider_name = input;
-        self
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_name = input; self
+    }
+    /// <p>The IdP name.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
     }
     /// <p>The IdP type.</p>
     pub fn provider_type(mut self, input: crate::types::IdentityProviderTypeType) -> Self {
@@ -76,12 +71,12 @@ impl ProviderDescriptionBuilder {
         self
     }
     /// <p>The IdP type.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderTypeType>,
-    ) -> Self {
-        self.provider_type = input;
-        self
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderTypeType>) -> Self {
+        self.provider_type = input; self
+    }
+    /// <p>The IdP type.</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
+        &self.provider_type
     }
     /// <p>The date the provider was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -89,12 +84,12 @@ impl ProviderDescriptionBuilder {
         self
     }
     /// <p>The date the provider was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_date = input; self
+    }
+    /// <p>The date the provider was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>The date the provider was added to the user pool.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,20 +97,25 @@ impl ProviderDescriptionBuilder {
         self
     }
     /// <p>The date the provider was added to the user pool.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>The date the provider was added to the user pool.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`ProviderDescription`](crate::types::ProviderDescription).
     pub fn build(self) -> crate::types::ProviderDescription {
         crate::types::ProviderDescription {
-            provider_name: self.provider_name,
-            provider_type: self.provider_type,
-            last_modified_date: self.last_modified_date,
-            creation_date: self.creation_date,
+            provider_name: self.provider_name
+            ,
+            provider_type: self.provider_type
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            creation_date: self.creation_date
+            ,
         }
     }
 }
+

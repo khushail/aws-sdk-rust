@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCurrentUserOutput {
+pub struct GetCurrentUserOutput  {
     /// <p>Metadata of the user.</p>
     #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::User>,
@@ -10,15 +10,15 @@ pub struct GetCurrentUserOutput {
 }
 impl GetCurrentUserOutput {
     /// <p>Metadata of the user.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::User> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::User> {
         self.user.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCurrentUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCurrentUserOutput {
     /// Creates a new builder-style object to manufacture [`GetCurrentUserOutput`](crate::operation::get_current_user::GetCurrentUserOutput).
     pub fn builder() -> crate::operation::get_current_user::builders::GetCurrentUserOutputBuilder {
@@ -28,9 +28,7 @@ impl GetCurrentUserOutput {
 
 /// A builder for [`GetCurrentUserOutput`](crate::operation::get_current_user::GetCurrentUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCurrentUserOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl GetCurrentUserOutputBuilder {
     }
     /// <p>Metadata of the user.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
+    }
+    /// <p>Metadata of the user.</p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::User> {
+        &self.user
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCurrentUserOutput`](crate::operation::get_current_user::GetCurrentUserOutput).
     pub fn build(self) -> crate::operation::get_current_user::GetCurrentUserOutput {
         crate::operation::get_current_user::GetCurrentUserOutput {
-            user: self.user,
+            user: self.user
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

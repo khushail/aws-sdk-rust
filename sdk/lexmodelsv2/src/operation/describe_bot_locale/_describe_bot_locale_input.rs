@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBotLocaleInput {
+pub struct DescribeBotLocaleInput  {
     /// <p>The identifier of the bot associated with the locale.</p>
     #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the version of the bot associated with the locale.</p>
+    /// <p>The version of the bot associated with the locale.</p>
     #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
@@ -15,31 +15,28 @@ pub struct DescribeBotLocaleInput {
 }
 impl DescribeBotLocaleInput {
     /// <p>The identifier of the bot associated with the locale.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
-    /// <p>The identifier of the version of the bot associated with the locale.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    /// <p>The version of the bot associated with the locale.</p>
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 impl DescribeBotLocaleInput {
     /// Creates a new builder-style object to manufacture [`DescribeBotLocaleInput`](crate::operation::describe_bot_locale::DescribeBotLocaleInput).
-    pub fn builder(
-    ) -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleInputBuilder {
+    pub fn builder() -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleInputBuilder {
         crate::operation::describe_bot_locale::builders::DescribeBotLocaleInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBotLocaleInput`](crate::operation::describe_bot_locale::DescribeBotLocaleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBotLocaleInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,24 @@ impl DescribeBotLocaleInputBuilder {
     }
     /// <p>The identifier of the bot associated with the locale.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
-    /// <p>The identifier of the version of the bot associated with the locale.</p>
+    /// <p>The identifier of the bot associated with the locale.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
+    /// <p>The version of the bot associated with the locale.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the version of the bot associated with the locale.</p>
+    /// <p>The version of the bot associated with the locale.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
+    }
+    /// <p>The version of the bot associated with the locale.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,22 +76,24 @@ impl DescribeBotLocaleInputBuilder {
     }
     /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
+    }
+    /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// Consumes the builder and constructs a [`DescribeBotLocaleInput`](crate::operation::describe_bot_locale::DescribeBotLocaleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bot_locale::DescribeBotLocaleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bot_locale::DescribeBotLocaleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_bot_locale::DescribeBotLocaleInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-            },
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+            }
         )
     }
 }
+

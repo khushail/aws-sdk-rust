@@ -3,7 +3,7 @@
 /// <p>For an application output, describes the AWS Lambda function configured as its destination. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaOutputDescription {
+pub struct LambdaOutputDescription  {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct LambdaOutputDescription {
 }
 impl LambdaOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl LambdaOutputDescription {
 
 /// A builder for [`LambdaOutputDescription`](crate::types::LambdaOutputDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaOutputDescriptionBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl LambdaOutputDescriptionBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl LambdaOutputDescriptionBuilder {
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`LambdaOutputDescription`](crate::types::LambdaOutputDescription).
     pub fn build(self) -> crate::types::LambdaOutputDescription {
         crate::types::LambdaOutputDescription {
-            resource_arn: self.resource_arn,
-            role_arn: self.role_arn,
+            resource_arn: self.resource_arn
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

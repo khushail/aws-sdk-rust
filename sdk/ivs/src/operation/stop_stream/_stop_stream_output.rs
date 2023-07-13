@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopStreamOutput {
+pub struct StopStreamOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for StopStreamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopStreamOutput {
     /// Creates a new builder-style object to manufacture [`StopStreamOutput`](crate::operation::stop_stream::StopStreamOutput).
     pub fn builder() -> crate::operation::stop_stream::builders::StopStreamOutputBuilder {
@@ -19,22 +19,20 @@ impl StopStreamOutput {
 
 /// A builder for [`StopStreamOutput`](crate::operation::stop_stream::StopStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopStreamOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopStreamOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopStreamOutput`](crate::operation::stop_stream::StopStreamOutput).
     pub fn build(self) -> crate::operation::stop_stream::StopStreamOutput {
         crate::operation::stop_stream::StopStreamOutput {
@@ -42,3 +40,4 @@ impl StopStreamOutputBuilder {
         }
     }
 }
+

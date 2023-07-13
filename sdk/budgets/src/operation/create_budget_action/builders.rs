@@ -3,102 +3,87 @@ pub use crate::operation::create_budget_action::_create_budget_action_output::Cr
 
 pub use crate::operation::create_budget_action::_create_budget_action_input::CreateBudgetActionInputBuilder;
 
+impl CreateBudgetActionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_budget_action::CreateBudgetActionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_budget_action::CreateBudgetActionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_budget_action();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateBudgetAction`.
-///
+/// 
 /// <p> Creates a budget action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBudgetActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder,
+                    inner: crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder,
 }
-impl CreateBudgetActionFluentBuilder {
+impl CreateBudgetActionFluentBuilder  {
     /// Creates a new `CreateBudgetAction`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_budget_action::CreateBudgetAction,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_budget_action::CreateBudgetActionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateBudgetAction as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_budget_action::CreateBudgetActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_budget_action::CreateBudgetActionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_budget_action::CreateBudgetAction, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_budget_action::CreateBudgetActionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_budget_action::CreateBudgetActionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_budget_action::CreateBudgetActionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_budget_action::CreateBudgetActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_budget_action::CreateBudgetActionError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_budget_action::CreateBudgetAction,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_budget_action::CreateBudgetActionError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_budget_action::CreateBudgetActionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_budget_action::CreateBudgetActionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_budget_action::CreateBudgetAction, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_budget_action::CreateBudgetActionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -108,6 +93,10 @@ impl CreateBudgetActionFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,18 +108,23 @@ impl CreateBudgetActionFluentBuilder {
         self.inner = self.inner.set_budget_name(input);
         self
     }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_budget_name()
+    }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.inner = self.inner.notification_type(input);
         self
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    pub fn set_notification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationType>,
-    ) -> Self {
+    pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.inner = self.inner.set_notification_type(input);
         self
+    }
+    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
+        self.inner.get_notification_type()
     }
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
@@ -138,12 +132,13 @@ impl CreateBudgetActionFluentBuilder {
         self
     }
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
+    }
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        self.inner.get_action_type()
     }
     /// <p>The trigger threshold of the action. </p>
     pub fn action_threshold(mut self, input: crate::types::ActionThreshold) -> Self {
@@ -151,12 +146,13 @@ impl CreateBudgetActionFluentBuilder {
         self
     }
     /// <p>The trigger threshold of the action. </p>
-    pub fn set_action_threshold(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionThreshold>,
-    ) -> Self {
+    pub fn set_action_threshold(mut self, input: ::std::option::Option<crate::types::ActionThreshold>) -> Self {
         self.inner = self.inner.set_action_threshold(input);
         self
+    }
+    /// <p>The trigger threshold of the action. </p>
+    pub fn get_action_threshold(&self) -> &::std::option::Option<crate::types::ActionThreshold> {
+        self.inner.get_action_threshold()
     }
     /// <p>Specifies all of the type-specific parameters. </p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
@@ -164,28 +160,27 @@ impl CreateBudgetActionFluentBuilder {
         self
     }
     /// <p>Specifies all of the type-specific parameters. </p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::Definition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::Definition>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
+    /// <p>Specifies all of the type-specific parameters. </p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
+        self.inner.get_definition()
+    }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
+    }
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_arn()
     }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(mut self, input: crate::types::ApprovalModel) -> Self {
@@ -193,12 +188,13 @@ impl CreateBudgetActionFluentBuilder {
         self
     }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
-    pub fn set_approval_model(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalModel>,
-    ) -> Self {
+    pub fn set_approval_model(mut self, input: ::std::option::Option<crate::types::ApprovalModel>) -> Self {
         self.inner = self.inner.set_approval_model(input);
         self
+    }
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
+    pub fn get_approval_model(&self) -> &::std::option::Option<crate::types::ApprovalModel> {
+        self.inner.get_approval_model()
     }
     /// Appends an item to `Subscribers`.
     ///
@@ -210,11 +206,13 @@ impl CreateBudgetActionFluentBuilder {
         self
     }
     /// <p> A list of subscribers.</p>
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.inner = self.inner.set_subscribers(input);
         self
     }
+    /// <p> A list of subscribers.</p>
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+        self.inner.get_subscribers()
+    }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A block that contains information about the configuration manager (Chef) and the versions of the configuration manager that are supported for an operating system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OperatingSystemConfigurationManager {
+pub struct OperatingSystemConfigurationManager  {
     /// <p>The name of the configuration manager, which is Chef.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct OperatingSystemConfigurationManager {
 }
 impl OperatingSystemConfigurationManager {
     /// <p>The name of the configuration manager, which is Chef.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The versions of the configuration manager that are supported by an operating system.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl OperatingSystemConfigurationManager {
 
 /// A builder for [`OperatingSystemConfigurationManager`](crate::types::OperatingSystemConfigurationManager).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperatingSystemConfigurationManagerBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl OperatingSystemConfigurationManagerBuilder {
     }
     /// <p>The name of the configuration manager, which is Chef.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the configuration manager, which is Chef.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The versions of the configuration manager that are supported by an operating system.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl OperatingSystemConfigurationManagerBuilder {
     }
     /// <p>The versions of the configuration manager that are supported by an operating system.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The versions of the configuration manager that are supported by an operating system.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`OperatingSystemConfigurationManager`](crate::types::OperatingSystemConfigurationManager).
     pub fn build(self) -> crate::types::OperatingSystemConfigurationManager {
         crate::types::OperatingSystemConfigurationManager {
-            name: self.name,
-            version: self.version,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

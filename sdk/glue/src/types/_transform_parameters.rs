@@ -3,8 +3,8 @@
 /// <p>The algorithm-specific parameters that are associated with the machine learning transform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransformParameters {
-    /// <p>The type of machine learning transform.</p>
+pub struct TransformParameters  {
+    /// <p>The type of machine learning transform.</p> 
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
     #[doc(hidden)]
     pub transform_type: ::std::option::Option<crate::types::TransformType>,
@@ -13,15 +13,13 @@ pub struct TransformParameters {
     pub find_matches_parameters: ::std::option::Option<crate::types::FindMatchesParameters>,
 }
 impl TransformParameters {
-    /// <p>The type of machine learning transform.</p>
+    /// <p>The type of machine learning transform.</p> 
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
-    pub fn transform_type(&self) -> ::std::option::Option<&crate::types::TransformType> {
+    pub fn transform_type(&self) -> ::std::option::Option<& crate::types::TransformType> {
         self.transform_type.as_ref()
     }
     /// <p>The parameters for the find matches algorithm.</p>
-    pub fn find_matches_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindMatchesParameters> {
+    pub fn find_matches_parameters(&self) -> ::std::option::Option<& crate::types::FindMatchesParameters> {
         self.find_matches_parameters.as_ref()
     }
 }
@@ -34,28 +32,27 @@ impl TransformParameters {
 
 /// A builder for [`TransformParameters`](crate::types::TransformParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformParametersBuilder {
     pub(crate) transform_type: ::std::option::Option<crate::types::TransformType>,
     pub(crate) find_matches_parameters: ::std::option::Option<crate::types::FindMatchesParameters>,
 }
 impl TransformParametersBuilder {
-    /// <p>The type of machine learning transform.</p>
+    /// <p>The type of machine learning transform.</p> 
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
     pub fn transform_type(mut self, input: crate::types::TransformType) -> Self {
         self.transform_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of machine learning transform.</p>
+    /// <p>The type of machine learning transform.</p> 
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
-    pub fn set_transform_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformType>,
-    ) -> Self {
-        self.transform_type = input;
-        self
+    pub fn set_transform_type(mut self, input: ::std::option::Option<crate::types::TransformType>) -> Self {
+        self.transform_type = input; self
+    }
+    /// <p>The type of machine learning transform.</p> 
+    /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
+    pub fn get_transform_type(&self) -> &::std::option::Option<crate::types::TransformType> {
+        &self.transform_type
     }
     /// <p>The parameters for the find matches algorithm.</p>
     pub fn find_matches_parameters(mut self, input: crate::types::FindMatchesParameters) -> Self {
@@ -63,18 +60,21 @@ impl TransformParametersBuilder {
         self
     }
     /// <p>The parameters for the find matches algorithm.</p>
-    pub fn set_find_matches_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::FindMatchesParameters>,
-    ) -> Self {
-        self.find_matches_parameters = input;
-        self
+    pub fn set_find_matches_parameters(mut self, input: ::std::option::Option<crate::types::FindMatchesParameters>) -> Self {
+        self.find_matches_parameters = input; self
+    }
+    /// <p>The parameters for the find matches algorithm.</p>
+    pub fn get_find_matches_parameters(&self) -> &::std::option::Option<crate::types::FindMatchesParameters> {
+        &self.find_matches_parameters
     }
     /// Consumes the builder and constructs a [`TransformParameters`](crate::types::TransformParameters).
     pub fn build(self) -> crate::types::TransformParameters {
         crate::types::TransformParameters {
-            transform_type: self.transform_type,
-            find_matches_parameters: self.find_matches_parameters,
+            transform_type: self.transform_type
+            ,
+            find_matches_parameters: self.find_matches_parameters
+            ,
         }
     }
 }
+

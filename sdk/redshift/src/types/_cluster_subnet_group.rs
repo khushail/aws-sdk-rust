@@ -3,7 +3,7 @@
 /// <p>Describes a subnet group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterSubnetGroup {
+pub struct ClusterSubnetGroup  {
     /// <p>The name of the cluster subnet group.</p>
     #[doc(hidden)]
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct ClusterSubnetGroup {
 }
 impl ClusterSubnetGroup {
     /// <p>The name of the cluster subnet group.</p>
-    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cluster_subnet_group_name.as_deref()
     }
     /// <p>The description of the cluster subnet group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The VPC ID of the cluster subnet group.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
-    pub fn subnet_group_status(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_group_status(&self) -> ::std::option::Option<& str> {
         self.subnet_group_status.as_deref()
     }
     /// <p>A list of the VPC <code>Subnet</code> elements. </p>
-    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::Subnet]> {
+    pub fn subnets(&self) -> ::std::option::Option<& [crate::types::Subnet]> {
         self.subnets.as_deref()
     }
     /// <p>The list of tags for the cluster subnet group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl ClusterSubnetGroup {
 
 /// A builder for [`ClusterSubnetGroup`](crate::types::ClusterSubnetGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterSubnetGroupBuilder {
     pub(crate) cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -71,20 +69,17 @@ pub struct ClusterSubnetGroupBuilder {
 }
 impl ClusterSubnetGroupBuilder {
     /// <p>The name of the cluster subnet group.</p>
-    pub fn cluster_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster subnet group.</p>
-    pub fn set_cluster_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.cluster_subnet_group_name = input;
-        self
+    pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster_subnet_group_name = input; self
+    }
+    /// <p>The name of the cluster subnet group.</p>
+    pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_subnet_group_name
     }
     /// <p>The description of the cluster subnet group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +88,11 @@ impl ClusterSubnetGroupBuilder {
     }
     /// <p>The description of the cluster subnet group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the cluster subnet group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The VPC ID of the cluster subnet group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,24 +101,24 @@ impl ClusterSubnetGroupBuilder {
     }
     /// <p>The VPC ID of the cluster subnet group.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The VPC ID of the cluster subnet group.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
-    pub fn subnet_group_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
-    pub fn set_subnet_group_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.subnet_group_status = input;
-        self
+    pub fn set_subnet_group_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_group_status = input; self
+    }
+    /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
+    pub fn get_subnet_group_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_group_status
     }
     /// Appends an item to `subnets`.
     ///
@@ -129,17 +127,17 @@ impl ClusterSubnetGroupBuilder {
     /// <p>A list of the VPC <code>Subnet</code> elements. </p>
     pub fn subnets(mut self, input: crate::types::Subnet) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input);
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the VPC <code>Subnet</code> elements. </p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
-    ) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>) -> Self {
+        self.subnets = input; self
+    }
+    /// <p>A list of the VPC <code>Subnet</code> elements. </p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subnet>> {
+        &self.subnets
     }
     /// Appends an item to `tags`.
     ///
@@ -148,27 +146,34 @@ impl ClusterSubnetGroupBuilder {
     /// <p>The list of tags for the cluster subnet group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags for the cluster subnet group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The list of tags for the cluster subnet group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ClusterSubnetGroup`](crate::types::ClusterSubnetGroup).
     pub fn build(self) -> crate::types::ClusterSubnetGroup {
         crate::types::ClusterSubnetGroup {
-            cluster_subnet_group_name: self.cluster_subnet_group_name,
-            description: self.description,
-            vpc_id: self.vpc_id,
-            subnet_group_status: self.subnet_group_status,
-            subnets: self.subnets,
-            tags: self.tags,
+            cluster_subnet_group_name: self.cluster_subnet_group_name
+            ,
+            description: self.description
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnet_group_status: self.subnet_group_status
+            ,
+            subnets: self.subnets
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCampaignVersionsInput {
+pub struct GetCampaignVersionsInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct GetCampaignVersionsInput {
 }
 impl GetCampaignVersionsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the campaign.</p>
-    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    pub fn page_size(&self) -> ::std::option::Option<&str> {
+    pub fn page_size(&self) -> ::std::option::Option<& str> {
         self.page_size.as_deref()
     }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<& str> {
         self.token.as_deref()
     }
 }
 impl GetCampaignVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetCampaignVersionsInput`](crate::operation::get_campaign_versions::GetCampaignVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_campaign_versions::builders::GetCampaignVersionsInputBuilder {
-        crate::operation::get_campaign_versions::builders::GetCampaignVersionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_campaign_versions::builders::GetCampaignVersionsInputBuilder {
+        crate::operation::get_campaign_versions::builders::GetCampaignVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignVersionsInput`](crate::operation::get_campaign_versions::GetCampaignVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignVersionsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
@@ -56,20 +52,17 @@ pub struct GetCampaignVersionsInputBuilder {
 }
 impl GetCampaignVersionsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,8 +71,11 @@ impl GetCampaignVersionsInputBuilder {
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_id = input;
-        self
+        self.campaign_id = input; self
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_id
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn page_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +84,11 @@ impl GetCampaignVersionsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_size
     }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,23 +97,26 @@ impl GetCampaignVersionsInputBuilder {
     }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// Consumes the builder and constructs a [`GetCampaignVersionsInput`](crate::operation::get_campaign_versions::GetCampaignVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_campaign_versions::GetCampaignVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_campaign_versions::GetCampaignVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_campaign_versions::GetCampaignVersionsInput {
-                application_id: self.application_id,
-                campaign_id: self.campaign_id,
-                page_size: self.page_size,
-                token: self.token,
-            },
+                application_id: self.application_id
+                ,
+                campaign_id: self.campaign_id
+                ,
+                page_size: self.page_size
+                ,
+                token: self.token
+                ,
+            }
         )
     }
 }
+

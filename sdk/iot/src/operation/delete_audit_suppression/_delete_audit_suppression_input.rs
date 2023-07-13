@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAuditSuppressionInput {
+pub struct DeleteAuditSuppressionInput  {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     #[doc(hidden)]
     pub check_name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DeleteAuditSuppressionInput {
 }
 impl DeleteAuditSuppressionInput {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn check_name(&self) -> ::std::option::Option<&str> {
+    pub fn check_name(&self) -> ::std::option::Option<& str> {
         self.check_name.as_deref()
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&crate::types::ResourceIdentifier> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& crate::types::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
 }
 impl DeleteAuditSuppressionInput {
     /// Creates a new builder-style object to manufacture [`DeleteAuditSuppressionInput`](crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionInputBuilder {
         crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAuditSuppressionInput`](crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAuditSuppressionInputBuilder {
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
@@ -46,8 +42,11 @@ impl DeleteAuditSuppressionInputBuilder {
     }
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn set_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_name = input;
-        self
+        self.check_name = input; self
+    }
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_name
     }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
@@ -55,25 +54,23 @@ impl DeleteAuditSuppressionInputBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
-        self.resource_identifier = input;
-        self
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
+        self.resource_identifier = input; self
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`DeleteAuditSuppressionInput`](crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput {
-                check_name: self.check_name,
-                resource_identifier: self.resource_identifier,
-            },
+                check_name: self.check_name
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+            }
         )
     }
 }
+

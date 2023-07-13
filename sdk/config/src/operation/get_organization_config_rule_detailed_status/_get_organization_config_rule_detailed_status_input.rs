@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOrganizationConfigRuleDetailedStatusInput {
+pub struct GetOrganizationConfigRuleDetailedStatusInput  {
     /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
     #[doc(hidden)]
     pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct GetOrganizationConfigRuleDetailedStatusInput {
 }
 impl GetOrganizationConfigRuleDetailedStatusInput {
     /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
-    pub fn organization_config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn organization_config_rule_name(&self) -> ::std::option::Option<& str> {
         self.organization_config_rule_name.as_deref()
     }
     /// <p>A <code>StatusDetailFilters</code> object.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::StatusDetailFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::StatusDetailFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
@@ -30,22 +30,20 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetOrganizationConfigRuleDetailedStatusInput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationConfigRuleDetailedStatusInput`](crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusInput).
-    pub fn builder() -> crate::operation::get_organization_config_rule_detailed_status::builders::GetOrganizationConfigRuleDetailedStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_organization_config_rule_detailed_status::builders::GetOrganizationConfigRuleDetailedStatusInputBuilder {
         crate::operation::get_organization_config_rule_detailed_status::builders::GetOrganizationConfigRuleDetailedStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetOrganizationConfigRuleDetailedStatusInput`](crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOrganizationConfigRuleDetailedStatusInputBuilder {
     pub(crate) organization_config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::StatusDetailFilters>,
@@ -54,20 +52,17 @@ pub struct GetOrganizationConfigRuleDetailedStatusInputBuilder {
 }
 impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
     /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
-    pub fn organization_config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
-    pub fn set_organization_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_config_rule_name = input;
-        self
+    pub fn set_organization_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_config_rule_name = input; self
+    }
+    /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
+    pub fn get_organization_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_config_rule_name
     }
     /// <p>A <code>StatusDetailFilters</code> object.</p>
     pub fn filters(mut self, input: crate::types::StatusDetailFilters) -> Self {
@@ -75,12 +70,12 @@ impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
         self
     }
     /// <p>A <code>StatusDetailFilters</code> object.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusDetailFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::StatusDetailFilters>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>A <code>StatusDetailFilters</code> object.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::StatusDetailFilters> {
+        &self.filters
     }
     /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -89,8 +84,11 @@ impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
     }
     /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,11 +97,14 @@ impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetOrganizationConfigRuleDetailedStatusInput`](crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusInput {
                 organization_config_rule_name: self.organization_config_rule_name
@@ -118,3 +119,4 @@ impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
         )
     }
 }
+

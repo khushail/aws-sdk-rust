@@ -3,7 +3,7 @@
 /// <p>Represents a limit imposed on number of Amazon S3 files that should be selected for a dataset from a connected Amazon S3 path.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilesLimit {
+pub struct FilesLimit  {
     /// <p>The number of Amazon S3 files to select.</p>
     #[doc(hidden)]
     pub max_files: i32,
@@ -20,11 +20,11 @@ impl FilesLimit {
         self.max_files
     }
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
-    pub fn ordered_by(&self) -> ::std::option::Option<&crate::types::OrderedBy> {
+    pub fn ordered_by(&self) -> ::std::option::Option<& crate::types::OrderedBy> {
         self.ordered_by.as_ref()
     }
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::Order> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::Order> {
         self.order.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl FilesLimit {
 
 /// A builder for [`FilesLimit`](crate::types::FilesLimit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilesLimitBuilder {
     pub(crate) max_files: ::std::option::Option<i32>,
     pub(crate) ordered_by: ::std::option::Option<crate::types::OrderedBy>,
@@ -53,8 +51,11 @@ impl FilesLimitBuilder {
     }
     /// <p>The number of Amazon S3 files to select.</p>
     pub fn set_max_files(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_files = input;
-        self
+        self.max_files = input; self
+    }
+    /// <p>The number of Amazon S3 files to select.</p>
+    pub fn get_max_files(&self) -> &::std::option::Option<i32> {
+        &self.max_files
     }
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
     pub fn ordered_by(mut self, input: crate::types::OrderedBy) -> Self {
@@ -63,8 +64,11 @@ impl FilesLimitBuilder {
     }
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
     pub fn set_ordered_by(mut self, input: ::std::option::Option<crate::types::OrderedBy>) -> Self {
-        self.ordered_by = input;
-        self
+        self.ordered_by = input; self
+    }
+    /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
+    pub fn get_ordered_by(&self) -> &::std::option::Option<crate::types::OrderedBy> {
+        &self.ordered_by
     }
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
     pub fn order(mut self, input: crate::types::Order) -> Self {
@@ -73,15 +77,23 @@ impl FilesLimitBuilder {
     }
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
+    }
+    /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`FilesLimit`](crate::types::FilesLimit).
     pub fn build(self) -> crate::types::FilesLimit {
         crate::types::FilesLimit {
-            max_files: self.max_files.unwrap_or_default(),
-            ordered_by: self.ordered_by,
-            order: self.order,
+            max_files: self.max_files
+                .unwrap_or_default()
+            ,
+            ordered_by: self.ordered_by
+            ,
+            order: self.order
+            ,
         }
     }
 }
+

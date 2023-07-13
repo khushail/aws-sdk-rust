@@ -2,60 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelEnvironmentDeploymentInput {
+pub struct CancelEnvironmentDeploymentInput  {
     /// <p>The name of the environment with the deployment to cancel.</p>
     #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
 impl CancelEnvironmentDeploymentInput {
     /// <p>The name of the environment with the deployment to cancel.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
 }
 impl CancelEnvironmentDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CancelEnvironmentDeploymentInput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput).
-    pub fn builder() -> crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentInputBuilder{
+    pub fn builder() -> crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentInputBuilder {
         crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelEnvironmentDeploymentInput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelEnvironmentDeploymentInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
 }
 impl CancelEnvironmentDeploymentInputBuilder {
     /// <p>The name of the environment with the deployment to cancel.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment with the deployment to cancel.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_name = input;
-        self
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_name = input; self
+    }
+    /// <p>The name of the environment with the deployment to cancel.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Consumes the builder and constructs a [`CancelEnvironmentDeploymentInput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput {
-                environment_name: self.environment_name,
-            },
+                environment_name: self.environment_name
+                ,
+            }
         )
     }
 }
+

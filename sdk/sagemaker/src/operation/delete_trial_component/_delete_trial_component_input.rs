@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTrialComponentInput {
+pub struct DeleteTrialComponentInput  {
     /// <p>The name of the component to delete.</p>
     #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrialComponentInput {
     /// <p>The name of the component to delete.</p>
-    pub fn trial_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_component_name(&self) -> ::std::option::Option<& str> {
         self.trial_component_name.as_deref()
     }
 }
 impl DeleteTrialComponentInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
-    pub fn builder(
-    ) -> crate::operation::delete_trial_component::builders::DeleteTrialComponentInputBuilder {
+    pub fn builder() -> crate::operation::delete_trial_component::builders::DeleteTrialComponentInputBuilder {
         crate::operation::delete_trial_component::builders::DeleteTrialComponentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrialComponentInputBuilder {
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrialComponentInputBuilder {
     /// <p>The name of the component to delete.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component to delete.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.trial_component_name = input;
-        self
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trial_component_name = input; self
+    }
+    /// <p>The name of the component to delete.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
     }
     /// Consumes the builder and constructs a [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_trial_component::DeleteTrialComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trial_component::DeleteTrialComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_trial_component::DeleteTrialComponentInput {
-                trial_component_name: self.trial_component_name,
-            },
+                trial_component_name: self.trial_component_name
+                ,
+            }
         )
     }
 }
+

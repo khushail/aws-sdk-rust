@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMessagingSessionEndpointInput {}
+pub struct GetMessagingSessionEndpointInput  {
+}
 impl GetMessagingSessionEndpointInput {
     /// Creates a new builder-style object to manufacture [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
-    pub fn builder() -> crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder{
+    pub fn builder() -> crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder {
         crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct GetMessagingSessionEndpointInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct GetMessagingSessionEndpointInputBuilder {
+}
 impl GetMessagingSessionEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput {},
+            crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput {
+            }
         )
     }
 }
+

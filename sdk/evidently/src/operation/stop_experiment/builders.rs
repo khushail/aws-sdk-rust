@@ -3,94 +3,87 @@ pub use crate::operation::stop_experiment::_stop_experiment_output::StopExperime
 
 pub use crate::operation::stop_experiment::_stop_experiment_input::StopExperimentInputBuilder;
 
+impl StopExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::stop_experiment::StopExperimentOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::stop_experiment::StopExperimentError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.stop_experiment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `StopExperiment`.
-///
+/// 
 /// <p>Stops an experiment that is currently running. If you stop an experiment, you can't resume it or restart it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::stop_experiment::builders::StopExperimentInputBuilder,
+                    inner: crate::operation::stop_experiment::builders::StopExperimentInputBuilder,
 }
-impl StopExperimentFluentBuilder {
+impl StopExperimentFluentBuilder  {
     /// Creates a new `StopExperiment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_experiment::StopExperiment,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_experiment::StopExperimentError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the StopExperiment as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_experiment::builders::StopExperimentInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_experiment::StopExperimentOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_experiment::StopExperimentError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::stop_experiment::StopExperiment, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::stop_experiment::StopExperimentError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::stop_experiment::StopExperimentOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_experiment::StopExperimentError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_experiment::StopExperimentOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_experiment::StopExperimentError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_experiment::StopExperiment,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_experiment::StopExperimentError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::stop_experiment::StopExperimentOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_experiment::StopExperimentError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::stop_experiment::StopExperiment, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::stop_experiment::StopExperimentError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name or ARN of the project that contains the experiment to stop.</p>
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
@@ -100,6 +93,10 @@ impl StopExperimentFluentBuilder {
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project(input);
         self
+    }
+    /// <p>The name or ARN of the project that contains the experiment to stop.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
     }
     /// <p>The name of the experiment to stop.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,18 +108,23 @@ impl StopExperimentFluentBuilder {
         self.inner = self.inner.set_experiment(input);
         self
     }
+    /// <p>The name of the experiment to stop.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment()
+    }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn desired_state(mut self, input: crate::types::ExperimentStopDesiredState) -> Self {
         self.inner = self.inner.desired_state(input);
         self
     }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentStopDesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::ExperimentStopDesiredState>) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
+    }
+    /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::ExperimentStopDesiredState> {
+        self.inner.get_desired_state()
     }
     /// <p>A string that describes why you are stopping the experiment.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,4 +136,9 @@ impl StopExperimentFluentBuilder {
         self.inner = self.inner.set_reason(input);
         self
     }
+    /// <p>A string that describes why you are stopping the experiment.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
+    }
 }
+

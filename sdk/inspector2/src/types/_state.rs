@@ -3,7 +3,7 @@
 /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct State {
+pub struct State  {
     /// <p>The status of Amazon Inspector for the account.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
@@ -16,15 +16,15 @@ pub struct State {
 }
 impl State {
     /// <p>The status of Amazon Inspector for the account.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl State {
 
 /// A builder for [`State`](crate::types::State).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
@@ -53,8 +51,11 @@ impl StateBuilder {
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of Amazon Inspector for the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
@@ -63,31 +64,35 @@ impl StateBuilder {
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
+    }
+    /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`State`](crate::types::State).
     pub fn build(self) -> crate::types::State {
         crate::types::State {
-            status: self.status,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            status: self.status
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

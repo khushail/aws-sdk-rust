@@ -3,7 +3,7 @@
 /// <p>The Amazon CloudWatch Logs log group where the text and metadata logs are delivered. The log group must exist before you enable logging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLogGroupLogDestination {
+pub struct CloudWatchLogGroupLogDestination  {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
     #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct CloudWatchLogGroupLogDestination {
 }
 impl CloudWatchLogGroupLogDestination {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>The prefix of the log stream name within the log group that you specified </p>
-    pub fn log_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn log_prefix(&self) -> ::std::option::Option<& str> {
         self.log_prefix.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl CloudWatchLogGroupLogDestination {
 
 /// A builder for [`CloudWatchLogGroupLogDestination`](crate::types::CloudWatchLogGroupLogDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogGroupLogDestinationBuilder {
     pub(crate) cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogGroupLogDestinationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.cloud_watch_log_group_arn = input;
-        self
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_watch_log_group_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_arn
     }
     /// <p>The prefix of the log stream name within the log group that you specified </p>
     pub fn log_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl CloudWatchLogGroupLogDestinationBuilder {
     }
     /// <p>The prefix of the log stream name within the log group that you specified </p>
     pub fn set_log_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_prefix = input;
-        self
+        self.log_prefix = input; self
+    }
+    /// <p>The prefix of the log stream name within the log group that you specified </p>
+    pub fn get_log_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_prefix
     }
     /// Consumes the builder and constructs a [`CloudWatchLogGroupLogDestination`](crate::types::CloudWatchLogGroupLogDestination).
     pub fn build(self) -> crate::types::CloudWatchLogGroupLogDestination {
         crate::types::CloudWatchLogGroupLogDestination {
-            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-            log_prefix: self.log_prefix,
+            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+            ,
+            log_prefix: self.log_prefix
+            ,
         }
     }
 }
+

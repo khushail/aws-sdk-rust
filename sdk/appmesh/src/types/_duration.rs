@@ -3,7 +3,7 @@
 /// <p>An object that represents a duration of time.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Duration {
+pub struct Duration  {
     /// <p>A number of time units.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl Duration {
         self.value
     }
     /// <p>A unit of time.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::DurationUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::DurationUnit> {
         self.unit.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Duration {
 
 /// A builder for [`Duration`](crate::types::Duration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DurationBuilder {
     pub(crate) value: ::std::option::Option<i64>,
     pub(crate) unit: ::std::option::Option<crate::types::DurationUnit>,
@@ -45,8 +43,11 @@ impl DurationBuilder {
     }
     /// <p>A number of time units.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>A number of time units.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i64> {
+        &self.value
     }
     /// <p>A unit of time.</p>
     pub fn unit(mut self, input: crate::types::DurationUnit) -> Self {
@@ -55,14 +56,20 @@ impl DurationBuilder {
     }
     /// <p>A unit of time.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::DurationUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
+    }
+    /// <p>A unit of time.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::DurationUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`Duration`](crate::types::Duration).
     pub fn build(self) -> crate::types::Duration {
         crate::types::Duration {
-            value: self.value,
-            unit: self.unit,
+            value: self.value
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

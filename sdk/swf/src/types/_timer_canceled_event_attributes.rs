@@ -3,7 +3,7 @@
 /// <p> Provides the details of the <code>TimerCanceled</code> event. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimerCanceledEventAttributes {
+pub struct TimerCanceledEventAttributes  {
     /// <p>The unique ID of the timer that was canceled.</p>
     #[doc(hidden)]
     pub timer_id: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct TimerCanceledEventAttributes {
 }
 impl TimerCanceledEventAttributes {
     /// <p>The unique ID of the timer that was canceled.</p>
-    pub fn timer_id(&self) -> ::std::option::Option<&str> {
+    pub fn timer_id(&self) -> ::std::option::Option<& str> {
         self.timer_id.as_deref()
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -37,9 +37,7 @@ impl TimerCanceledEventAttributes {
 
 /// A builder for [`TimerCanceledEventAttributes`](crate::types::TimerCanceledEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimerCanceledEventAttributesBuilder {
     pub(crate) timer_id: ::std::option::Option<::std::string::String>,
     pub(crate) started_event_id: ::std::option::Option<i64>,
@@ -53,8 +51,11 @@ impl TimerCanceledEventAttributesBuilder {
     }
     /// <p>The unique ID of the timer that was canceled.</p>
     pub fn set_timer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timer_id = input;
-        self
+        self.timer_id = input; self
+    }
+    /// <p>The unique ID of the timer that was canceled.</p>
+    pub fn get_timer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timer_id
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
@@ -63,8 +64,11 @@ impl TimerCanceledEventAttributesBuilder {
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
+    }
+    /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
@@ -72,21 +76,25 @@ impl TimerCanceledEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
-        self.decision_task_completed_event_id = input;
-        self
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.decision_task_completed_event_id = input; self
+    }
+    /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
     }
     /// Consumes the builder and constructs a [`TimerCanceledEventAttributes`](crate::types::TimerCanceledEventAttributes).
     pub fn build(self) -> crate::types::TimerCanceledEventAttributes {
         crate::types::TimerCanceledEventAttributes {
-            timer_id: self.timer_id,
-            started_event_id: self.started_event_id.unwrap_or_default(),
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            timer_id: self.timer_id
+            ,
+            started_event_id: self.started_event_id
+                .unwrap_or_default()
+            ,
+            decision_task_completed_event_id: self.decision_task_completed_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

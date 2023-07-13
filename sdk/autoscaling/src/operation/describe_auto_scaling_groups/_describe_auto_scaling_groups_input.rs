@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAutoScalingGroupsInput {
-    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
+pub struct DescribeAutoScalingGroupsInput  {
+    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p> 
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
     #[doc(hidden)]
     pub auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -18,13 +18,13 @@ pub struct DescribeAutoScalingGroupsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeAutoScalingGroupsInput {
-    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
+    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p> 
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
-    pub fn auto_scaling_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn auto_scaling_group_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.auto_scaling_group_names.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
@@ -32,25 +32,22 @@ impl DescribeAutoScalingGroupsInput {
         self.max_records
     }
     /// <p>One or more filters to limit the results based on specific tags. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
 }
 impl DescribeAutoScalingGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingGroupsInput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput).
-    pub fn builder() -> crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder {
         crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoScalingGroupsInput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingGroupsInputBuilder {
-    pub(crate) auto_scaling_group_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -60,25 +57,23 @@ impl DescribeAutoScalingGroupsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_auto_scaling_group_names`](Self::set_auto_scaling_group_names).
     ///
-    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
+    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p> 
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
-    pub fn auto_scaling_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_scaling_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.auto_scaling_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.auto_scaling_group_names = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
+    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p> 
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
-    pub fn set_auto_scaling_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.auto_scaling_group_names = input;
-        self
+    pub fn set_auto_scaling_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.auto_scaling_group_names = input; self
+    }
+    /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p> 
+    /// <p>If you omit this property, all Auto Scaling groups are described.</p>
+    pub fn get_auto_scaling_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.auto_scaling_group_names
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +82,11 @@ impl DescribeAutoScalingGroupsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -97,8 +95,11 @@ impl DescribeAutoScalingGroupsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
+    }
+    /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// Appends an item to `filters`.
     ///
@@ -107,32 +108,32 @@ impl DescribeAutoScalingGroupsInputBuilder {
     /// <p>One or more filters to limit the results based on specific tags. </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters to limit the results based on specific tags. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>One or more filters to limit the results based on specific tags. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeAutoScalingGroupsInput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput {
-                auto_scaling_group_names: self.auto_scaling_group_names,
-                next_token: self.next_token,
-                max_records: self.max_records,
-                filters: self.filters,
-            },
+                auto_scaling_group_names: self.auto_scaling_group_names
+                ,
+                next_token: self.next_token
+                ,
+                max_records: self.max_records
+                ,
+                filters: self.filters
+                ,
+            }
         )
     }
 }
+

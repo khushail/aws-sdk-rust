@@ -3,7 +3,7 @@
 /// <p>The event risk type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventRiskType {
+pub struct EventRiskType  {
     /// <p>The risk decision.</p>
     #[doc(hidden)]
     pub risk_decision: ::std::option::Option<crate::types::RiskDecisionType>,
@@ -16,11 +16,11 @@ pub struct EventRiskType {
 }
 impl EventRiskType {
     /// <p>The risk decision.</p>
-    pub fn risk_decision(&self) -> ::std::option::Option<&crate::types::RiskDecisionType> {
+    pub fn risk_decision(&self) -> ::std::option::Option<& crate::types::RiskDecisionType> {
         self.risk_decision.as_ref()
     }
     /// <p>The risk level.</p>
-    pub fn risk_level(&self) -> ::std::option::Option<&crate::types::RiskLevelType> {
+    pub fn risk_level(&self) -> ::std::option::Option<& crate::types::RiskLevelType> {
         self.risk_level.as_ref()
     }
     /// <p>Indicates whether compromised credentials were detected during an authentication event.</p>
@@ -37,9 +37,7 @@ impl EventRiskType {
 
 /// A builder for [`EventRiskType`](crate::types::EventRiskType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventRiskTypeBuilder {
     pub(crate) risk_decision: ::std::option::Option<crate::types::RiskDecisionType>,
     pub(crate) risk_level: ::std::option::Option<crate::types::RiskLevelType>,
@@ -52,12 +50,12 @@ impl EventRiskTypeBuilder {
         self
     }
     /// <p>The risk decision.</p>
-    pub fn set_risk_decision(
-        mut self,
-        input: ::std::option::Option<crate::types::RiskDecisionType>,
-    ) -> Self {
-        self.risk_decision = input;
-        self
+    pub fn set_risk_decision(mut self, input: ::std::option::Option<crate::types::RiskDecisionType>) -> Self {
+        self.risk_decision = input; self
+    }
+    /// <p>The risk decision.</p>
+    pub fn get_risk_decision(&self) -> &::std::option::Option<crate::types::RiskDecisionType> {
+        &self.risk_decision
     }
     /// <p>The risk level.</p>
     pub fn risk_level(mut self, input: crate::types::RiskLevelType) -> Self {
@@ -65,12 +63,12 @@ impl EventRiskTypeBuilder {
         self
     }
     /// <p>The risk level.</p>
-    pub fn set_risk_level(
-        mut self,
-        input: ::std::option::Option<crate::types::RiskLevelType>,
-    ) -> Self {
-        self.risk_level = input;
-        self
+    pub fn set_risk_level(mut self, input: ::std::option::Option<crate::types::RiskLevelType>) -> Self {
+        self.risk_level = input; self
+    }
+    /// <p>The risk level.</p>
+    pub fn get_risk_level(&self) -> &::std::option::Option<crate::types::RiskLevelType> {
+        &self.risk_level
     }
     /// <p>Indicates whether compromised credentials were detected during an authentication event.</p>
     pub fn compromised_credentials_detected(mut self, input: bool) -> Self {
@@ -78,19 +76,23 @@ impl EventRiskTypeBuilder {
         self
     }
     /// <p>Indicates whether compromised credentials were detected during an authentication event.</p>
-    pub fn set_compromised_credentials_detected(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.compromised_credentials_detected = input;
-        self
+    pub fn set_compromised_credentials_detected(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.compromised_credentials_detected = input; self
+    }
+    /// <p>Indicates whether compromised credentials were detected during an authentication event.</p>
+    pub fn get_compromised_credentials_detected(&self) -> &::std::option::Option<bool> {
+        &self.compromised_credentials_detected
     }
     /// Consumes the builder and constructs a [`EventRiskType`](crate::types::EventRiskType).
     pub fn build(self) -> crate::types::EventRiskType {
         crate::types::EventRiskType {
-            risk_decision: self.risk_decision,
-            risk_level: self.risk_level,
-            compromised_credentials_detected: self.compromised_credentials_detected,
+            risk_decision: self.risk_decision
+            ,
+            risk_level: self.risk_level
+            ,
+            compromised_credentials_detected: self.compromised_credentials_detected
+            ,
         }
     }
 }
+

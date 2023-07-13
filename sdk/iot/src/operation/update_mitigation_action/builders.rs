@@ -3,103 +3,88 @@ pub use crate::operation::update_mitigation_action::_update_mitigation_action_ou
 
 pub use crate::operation::update_mitigation_action::_update_mitigation_action_input::UpdateMitigationActionInputBuilder;
 
+impl UpdateMitigationActionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_mitigation_action::UpdateMitigationActionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_mitigation_action::UpdateMitigationActionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_mitigation_action();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateMitigationAction`.
-///
-/// <p>Updates the definition for the specified mitigation action.</p>
+/// 
+/// <p>Updates the definition for the specified mitigation action.</p> 
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateMitigationAction</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMitigationActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_mitigation_action::builders::UpdateMitigationActionInputBuilder,
+                    inner: crate::operation::update_mitigation_action::builders::UpdateMitigationActionInputBuilder,
 }
-impl UpdateMitigationActionFluentBuilder {
+impl UpdateMitigationActionFluentBuilder  {
     /// Creates a new `UpdateMitigationAction`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_mitigation_action::UpdateMitigationAction,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mitigation_action::UpdateMitigationActionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateMitigationAction as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_mitigation_action::builders::UpdateMitigationActionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_mitigation_action::UpdateMitigationActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mitigation_action::UpdateMitigationActionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_mitigation_action::UpdateMitigationAction, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_mitigation_action::UpdateMitigationActionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_mitigation_action::UpdateMitigationActionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_mitigation_action::UpdateMitigationActionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_mitigation_action::UpdateMitigationActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mitigation_action::UpdateMitigationActionError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_mitigation_action::UpdateMitigationAction,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mitigation_action::UpdateMitigationActionError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_mitigation_action::UpdateMitigationActionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_mitigation_action::UpdateMitigationActionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_mitigation_action::UpdateMitigationAction, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_mitigation_action::UpdateMitigationActionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_name(input.into());
@@ -109,6 +94,10 @@ impl UpdateMitigationActionFluentBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_name(input);
         self
+    }
+    /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_name()
     }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,17 +109,23 @@ impl UpdateMitigationActionFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub fn action_params(mut self, input: crate::types::MitigationActionParams) -> Self {
         self.inner = self.inner.action_params(input);
         self
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
-    pub fn set_action_params(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionParams>,
-    ) -> Self {
+    pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
         self.inner = self.inner.set_action_params(input);
         self
     }
+    /// <p>Defines the type of action and the parameters for that action.</p>
+    pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
+        self.inner.get_action_params()
+    }
 }
+

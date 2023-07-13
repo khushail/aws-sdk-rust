@@ -3,14 +3,14 @@
 /// <p> The health details of an Elastic Inference Accelerator. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticInferenceAcceleratorHealth {
+pub struct ElasticInferenceAcceleratorHealth  {
     /// <p> The health status of the Elastic Inference Accelerator. </p>
     #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl ElasticInferenceAcceleratorHealth {
     /// <p> The health status of the Elastic Inference Accelerator. </p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ElasticInferenceAcceleratorHealth {
 
 /// A builder for [`ElasticInferenceAcceleratorHealth`](crate::types::ElasticInferenceAcceleratorHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticInferenceAcceleratorHealthBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ElasticInferenceAcceleratorHealthBuilder {
     }
     /// <p> The health status of the Elastic Inference Accelerator. </p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p> The health status of the Elastic Inference Accelerator. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ElasticInferenceAcceleratorHealth`](crate::types::ElasticInferenceAcceleratorHealth).
     pub fn build(self) -> crate::types::ElasticInferenceAcceleratorHealth {
         crate::types::ElasticInferenceAcceleratorHealth {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

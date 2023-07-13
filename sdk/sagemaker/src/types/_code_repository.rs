@@ -3,14 +3,14 @@
 /// <p>A Git repository that SageMaker automatically displays to users for cloning in the JupyterServer application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeRepository {
+pub struct CodeRepository  {
     /// <p>The URL of the Git repository.</p>
     #[doc(hidden)]
     pub repository_url: ::std::option::Option<::std::string::String>,
 }
 impl CodeRepository {
     /// <p>The URL of the Git repository.</p>
-    pub fn repository_url(&self) -> ::std::option::Option<&str> {
+    pub fn repository_url(&self) -> ::std::option::Option<& str> {
         self.repository_url.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl CodeRepository {
 
 /// A builder for [`CodeRepository`](crate::types::CodeRepository).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeRepositoryBuilder {
     pub(crate) repository_url: ::std::option::Option<::std::string::String>,
 }
 impl CodeRepositoryBuilder {
     /// <p>The URL of the Git repository.</p>
-    pub fn repository_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Git repository.</p>
-    pub fn set_repository_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.repository_url = input;
-        self
+    pub fn set_repository_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.repository_url = input; self
+    }
+    /// <p>The URL of the Git repository.</p>
+    pub fn get_repository_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_url
     }
     /// Consumes the builder and constructs a [`CodeRepository`](crate::types::CodeRepository).
     pub fn build(self) -> crate::types::CodeRepository {
         crate::types::CodeRepository {
-            repository_url: self.repository_url,
+            repository_url: self.repository_url
+            ,
         }
     }
 }
+

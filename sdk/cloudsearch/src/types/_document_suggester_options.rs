@@ -3,7 +3,7 @@
 /// <p>Options for a search suggester.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentSuggesterOptions {
+pub struct DocumentSuggesterOptions  {
     /// <p>The name of the index field you want to use for suggestions. </p>
     #[doc(hidden)]
     pub source_field: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct DocumentSuggesterOptions {
 }
 impl DocumentSuggesterOptions {
     /// <p>The name of the index field you want to use for suggestions. </p>
-    pub fn source_field(&self) -> ::std::option::Option<&str> {
+    pub fn source_field(&self) -> ::std::option::Option<& str> {
         self.source_field.as_deref()
     }
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
-    pub fn fuzzy_matching(&self) -> ::std::option::Option<&crate::types::SuggesterFuzzyMatching> {
+    pub fn fuzzy_matching(&self) -> ::std::option::Option<& crate::types::SuggesterFuzzyMatching> {
         self.fuzzy_matching.as_ref()
     }
     /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
-    pub fn sort_expression(&self) -> ::std::option::Option<&str> {
+    pub fn sort_expression(&self) -> ::std::option::Option<& str> {
         self.sort_expression.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl DocumentSuggesterOptions {
 
 /// A builder for [`DocumentSuggesterOptions`](crate::types::DocumentSuggesterOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentSuggesterOptionsBuilder {
     pub(crate) source_field: ::std::option::Option<::std::string::String>,
     pub(crate) fuzzy_matching: ::std::option::Option<crate::types::SuggesterFuzzyMatching>,
@@ -53,8 +51,11 @@ impl DocumentSuggesterOptionsBuilder {
     }
     /// <p>The name of the index field you want to use for suggestions. </p>
     pub fn set_source_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_field = input;
-        self
+        self.source_field = input; self
+    }
+    /// <p>The name of the index field you want to use for suggestions. </p>
+    pub fn get_source_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_field
     }
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
     pub fn fuzzy_matching(mut self, input: crate::types::SuggesterFuzzyMatching) -> Self {
@@ -62,35 +63,36 @@ impl DocumentSuggesterOptionsBuilder {
         self
     }
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
-    pub fn set_fuzzy_matching(
-        mut self,
-        input: ::std::option::Option<crate::types::SuggesterFuzzyMatching>,
-    ) -> Self {
-        self.fuzzy_matching = input;
-        self
+    pub fn set_fuzzy_matching(mut self, input: ::std::option::Option<crate::types::SuggesterFuzzyMatching>) -> Self {
+        self.fuzzy_matching = input; self
+    }
+    /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
+    pub fn get_fuzzy_matching(&self) -> &::std::option::Option<crate::types::SuggesterFuzzyMatching> {
+        &self.fuzzy_matching
     }
     /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
-    pub fn sort_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sort_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sort_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
-    pub fn set_sort_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sort_expression = input;
-        self
+    pub fn set_sort_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sort_expression = input; self
+    }
+    /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
+    pub fn get_sort_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sort_expression
     }
     /// Consumes the builder and constructs a [`DocumentSuggesterOptions`](crate::types::DocumentSuggesterOptions).
     pub fn build(self) -> crate::types::DocumentSuggesterOptions {
         crate::types::DocumentSuggesterOptions {
-            source_field: self.source_field,
-            fuzzy_matching: self.fuzzy_matching,
-            sort_expression: self.sort_expression,
+            source_field: self.source_field
+            ,
+            fuzzy_matching: self.fuzzy_matching
+            ,
+            sort_expression: self.sort_expression
+            ,
         }
     }
 }
+

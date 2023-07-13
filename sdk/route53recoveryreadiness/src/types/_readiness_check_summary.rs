@@ -3,7 +3,7 @@
 /// <p>Summary of all readiness check statuses in a recovery group, paginated in GetRecoveryGroupReadinessSummary and GetCellReadinessSummary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReadinessCheckSummary {
+pub struct ReadinessCheckSummary  {
     /// <p>The readiness status of this readiness check.</p>
     #[doc(hidden)]
     pub readiness: ::std::option::Option<crate::types::Readiness>,
@@ -13,11 +13,11 @@ pub struct ReadinessCheckSummary {
 }
 impl ReadinessCheckSummary {
     /// <p>The readiness status of this readiness check.</p>
-    pub fn readiness(&self) -> ::std::option::Option<&crate::types::Readiness> {
+    pub fn readiness(&self) -> ::std::option::Option<& crate::types::Readiness> {
         self.readiness.as_ref()
     }
     /// <p>The name of a readiness check.</p>
-    pub fn readiness_check_name(&self) -> ::std::option::Option<&str> {
+    pub fn readiness_check_name(&self) -> ::std::option::Option<& str> {
         self.readiness_check_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ReadinessCheckSummary {
 
 /// A builder for [`ReadinessCheckSummary`](crate::types::ReadinessCheckSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadinessCheckSummaryBuilder {
     pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
     pub(crate) readiness_check_name: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ReadinessCheckSummaryBuilder {
     }
     /// <p>The readiness status of this readiness check.</p>
     pub fn set_readiness(mut self, input: ::std::option::Option<crate::types::Readiness>) -> Self {
-        self.readiness = input;
-        self
+        self.readiness = input; self
+    }
+    /// <p>The readiness status of this readiness check.</p>
+    pub fn get_readiness(&self) -> &::std::option::Option<crate::types::Readiness> {
+        &self.readiness
     }
     /// <p>The name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.readiness_check_name = input;
-        self
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.readiness_check_name = input; self
+    }
+    /// <p>The name of a readiness check.</p>
+    pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readiness_check_name
     }
     /// Consumes the builder and constructs a [`ReadinessCheckSummary`](crate::types::ReadinessCheckSummary).
     pub fn build(self) -> crate::types::ReadinessCheckSummary {
         crate::types::ReadinessCheckSummary {
-            readiness: self.readiness,
-            readiness_check_name: self.readiness_check_name,
+            readiness: self.readiness
+            ,
+            readiness_check_name: self.readiness_check_name
+            ,
         }
     }
 }
+

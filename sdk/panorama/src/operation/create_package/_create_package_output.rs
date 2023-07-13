@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePackageOutput {
+pub struct CreatePackageOutput  {
     /// <p>The package's ID.</p>
     #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
@@ -16,23 +16,23 @@ pub struct CreatePackageOutput {
 }
 impl CreatePackageOutput {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>The package's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The package's storage location.</p>
-    pub fn storage_location(&self) -> ::std::option::Option<&crate::types::StorageLocation> {
+    pub fn storage_location(&self) -> ::std::option::Option<& crate::types::StorageLocation> {
         self.storage_location.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreatePackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreatePackageOutput {
     /// Creates a new builder-style object to manufacture [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
     pub fn builder() -> crate::operation::create_package::builders::CreatePackageOutputBuilder {
@@ -42,9 +42,7 @@ impl CreatePackageOutput {
 
 /// A builder for [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePackageOutputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -59,8 +57,11 @@ impl CreatePackageOutputBuilder {
     }
     /// <p>The package's ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
+    }
+    /// <p>The package's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
     }
     /// <p>The package's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +70,11 @@ impl CreatePackageOutputBuilder {
     }
     /// <p>The package's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The package's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The package's storage location.</p>
     pub fn storage_location(mut self, input: crate::types::StorageLocation) -> Self {
@@ -78,29 +82,33 @@ impl CreatePackageOutputBuilder {
         self
     }
     /// <p>The package's storage location.</p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLocation>,
-    ) -> Self {
-        self.storage_location = input;
-        self
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::StorageLocation>) -> Self {
+        self.storage_location = input; self
+    }
+    /// <p>The package's storage location.</p>
+    pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::StorageLocation> {
+        &self.storage_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
     pub fn build(self) -> crate::operation::create_package::CreatePackageOutput {
         crate::operation::create_package::CreatePackageOutput {
-            package_id: self.package_id,
-            arn: self.arn,
-            storage_location: self.storage_location,
+            package_id: self.package_id
+            ,
+            arn: self.arn
+            ,
+            storage_location: self.storage_location
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

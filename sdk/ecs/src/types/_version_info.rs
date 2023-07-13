@@ -3,7 +3,7 @@
 /// <p>The Docker and Amazon ECS container agent version information about a container instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersionInfo {
+pub struct VersionInfo  {
     /// <p>The version number of the Amazon ECS container agent.</p>
     #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct VersionInfo {
 }
 impl VersionInfo {
     /// <p>The version number of the Amazon ECS container agent.</p>
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
-    pub fn agent_hash(&self) -> ::std::option::Option<&str> {
+    pub fn agent_hash(&self) -> ::std::option::Option<& str> {
         self.agent_hash.as_deref()
     }
     /// <p>The Docker version that's running on the container instance.</p>
-    pub fn docker_version(&self) -> ::std::option::Option<&str> {
+    pub fn docker_version(&self) -> ::std::option::Option<& str> {
         self.docker_version.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl VersionInfo {
 
 /// A builder for [`VersionInfo`](crate::types::VersionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VersionInfoBuilder {
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) agent_hash: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct VersionInfoBuilder {
 }
 impl VersionInfoBuilder {
     /// <p>The version number of the Amazon ECS container agent.</p>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the Amazon ECS container agent.</p>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.agent_version = input;
-        self
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_version = input; self
+    }
+    /// <p>The version number of the Amazon ECS container agent.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
     }
     /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
     pub fn agent_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,31 +64,35 @@ impl VersionInfoBuilder {
     }
     /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
     pub fn set_agent_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_hash = input;
-        self
+        self.agent_hash = input; self
+    }
+    /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
+    pub fn get_agent_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_hash
     }
     /// <p>The Docker version that's running on the container instance.</p>
-    pub fn docker_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn docker_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.docker_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Docker version that's running on the container instance.</p>
-    pub fn set_docker_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.docker_version = input;
-        self
+    pub fn set_docker_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.docker_version = input; self
+    }
+    /// <p>The Docker version that's running on the container instance.</p>
+    pub fn get_docker_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.docker_version
     }
     /// Consumes the builder and constructs a [`VersionInfo`](crate::types::VersionInfo).
     pub fn build(self) -> crate::types::VersionInfo {
         crate::types::VersionInfo {
-            agent_version: self.agent_version,
-            agent_hash: self.agent_hash,
-            docker_version: self.docker_version,
+            agent_version: self.agent_version
+            ,
+            agent_hash: self.agent_hash
+            ,
+            docker_version: self.docker_version
+            ,
         }
     }
 }
+

@@ -3,94 +3,87 @@ pub use crate::operation::create_hit_type::_create_hit_type_output::CreateHitTyp
 
 pub use crate::operation::create_hit_type::_create_hit_type_input::CreateHitTypeInputBuilder;
 
+impl CreateHitTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_hit_type::CreateHitTypeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_hit_type::CreateHITTypeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_hit_type();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateHITType`.
-///
+/// 
 /// <p> The <code>CreateHITType</code> operation creates a new HIT type. This operation allows you to define a standard set of HIT properties to use when creating HITs. If you register a HIT type with values that match an existing HIT type, the HIT type ID of the existing type will be returned. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHITTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_hit_type::builders::CreateHitTypeInputBuilder,
+                    inner: crate::operation::create_hit_type::builders::CreateHitTypeInputBuilder,
 }
-impl CreateHITTypeFluentBuilder {
+impl CreateHITTypeFluentBuilder  {
     /// Creates a new `CreateHITType`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_hit_type::CreateHITType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateHITType as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_hit_type::builders::CreateHitTypeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hit_type::CreateHitTypeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_hit_type::CreateHITType, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_hit_type::CreateHitTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hit_type::CreateHitTypeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_hit_type::CreateHITType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_hit_type::CreateHitTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_hit_type::CreateHITType, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
     pub fn auto_approval_delay_in_seconds(mut self, input: i64) -> Self {
         self.inner = self.inner.auto_approval_delay_in_seconds(input);
@@ -100,6 +93,10 @@ impl CreateHITTypeFluentBuilder {
     pub fn set_auto_approval_delay_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_auto_approval_delay_in_seconds(input);
         self
+    }
+    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    pub fn get_auto_approval_delay_in_seconds(&self) -> &::std::option::Option<i64> {
+        self.inner.get_auto_approval_delay_in_seconds()
     }
     /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
     pub fn assignment_duration_in_seconds(mut self, input: i64) -> Self {
@@ -111,6 +108,10 @@ impl CreateHITTypeFluentBuilder {
         self.inner = self.inner.set_assignment_duration_in_seconds(input);
         self
     }
+    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    pub fn get_assignment_duration_in_seconds(&self) -> &::std::option::Option<i64> {
+        self.inner.get_assignment_duration_in_seconds()
+    }
     /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
     pub fn reward(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reward(input.into());
@@ -120,6 +121,10 @@ impl CreateHITTypeFluentBuilder {
     pub fn set_reward(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reward(input);
         self
+    }
+    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    pub fn get_reward(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reward()
     }
     /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +136,10 @@ impl CreateHITTypeFluentBuilder {
         self.inner = self.inner.set_title(input);
         self
     }
+    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_title()
+    }
     /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
     pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keywords(input.into());
@@ -140,6 +149,10 @@ impl CreateHITTypeFluentBuilder {
     pub fn set_keywords(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_keywords(input);
         self
+    }
+    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keywords()
     }
     /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,24 +164,27 @@ impl CreateHITTypeFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `QualificationRequirements`.
     ///
     /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
     ///
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(
-        mut self,
-        input: crate::types::QualificationRequirement,
-    ) -> Self {
+    pub fn qualification_requirements(mut self, input: crate::types::QualificationRequirement) -> Self {
         self.inner = self.inner.qualification_requirements(input);
         self
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn set_qualification_requirements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
-    ) -> Self {
+    pub fn set_qualification_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>) -> Self {
         self.inner = self.inner.set_qualification_requirements(input);
         self
     }
+    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    pub fn get_qualification_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
+        self.inner.get_qualification_requirements()
+    }
 }
+

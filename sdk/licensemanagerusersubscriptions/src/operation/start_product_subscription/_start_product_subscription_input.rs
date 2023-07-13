@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartProductSubscriptionInput {
+pub struct StartProductSubscriptionInput  {
     /// <p>The user name from the identity provider of the user.</p>
     #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct StartProductSubscriptionInput {
 }
 impl StartProductSubscriptionInput {
     /// <p>The user name from the identity provider of the user.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<& crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> ::std::option::Option<&str> {
+    pub fn product(&self) -> ::std::option::Option<& str> {
         self.product.as_deref()
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
 impl StartProductSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`StartProductSubscriptionInput`](crate::operation::start_product_subscription::StartProductSubscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder {
         crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartProductSubscriptionInput`](crate::operation::start_product_subscription::StartProductSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartProductSubscriptionInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
@@ -62,8 +58,11 @@ impl StartProductSubscriptionInputBuilder {
     }
     /// <p>The user name from the identity provider of the user.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// <p>The user name from the identity provider of the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
@@ -71,12 +70,12 @@ impl StartProductSubscriptionInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
-        self.identity_provider = input;
-        self
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
+        self.identity_provider = input; self
+    }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,8 +84,11 @@ impl StartProductSubscriptionInputBuilder {
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
+    }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
     }
     /// <p>The domain name of the user.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,23 +97,26 @@ impl StartProductSubscriptionInputBuilder {
     }
     /// <p>The domain name of the user.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The domain name of the user.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`StartProductSubscriptionInput`](crate::operation::start_product_subscription::StartProductSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_product_subscription::StartProductSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_product_subscription::StartProductSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_product_subscription::StartProductSubscriptionInput {
-                username: self.username,
-                identity_provider: self.identity_provider,
-                product: self.product,
-                domain: self.domain,
-            },
+                username: self.username
+                ,
+                identity_provider: self.identity_provider
+                ,
+                product: self.product
+                ,
+                domain: self.domain
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Provided if <code>CallerType</code> is <code>domain</code>. It provides information about the DNS domain that issued the API call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsApiCallActionDomainDetails {
+pub struct AwsApiCallActionDomainDetails  {
     /// <p>The name of the DNS domain that issued the API call.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiCallActionDomainDetails {
     /// <p>The name of the DNS domain that issued the API call.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl AwsApiCallActionDomainDetails {
 
 /// A builder for [`AwsApiCallActionDomainDetails`](crate::types::AwsApiCallActionDomainDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiCallActionDomainDetailsBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl AwsApiCallActionDomainDetailsBuilder {
     }
     /// <p>The name of the DNS domain that issued the API call.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The name of the DNS domain that issued the API call.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`AwsApiCallActionDomainDetails`](crate::types::AwsApiCallActionDomainDetails).
     pub fn build(self) -> crate::types::AwsApiCallActionDomainDetails {
         crate::types::AwsApiCallActionDomainDetails {
-            domain: self.domain,
+            domain: self.domain
+            ,
         }
     }
 }
+

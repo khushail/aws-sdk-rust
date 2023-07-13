@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLogs {
+pub struct CloudWatchLogs  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
@@ -16,7 +16,7 @@ impl CloudWatchLogs {
         self.enabled
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn log_group(&self) -> ::std::option::Option<&str> {
+    pub fn log_group(&self) -> ::std::option::Option<& str> {
         self.log_group.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl CloudWatchLogs {
 
 /// A builder for [`CloudWatchLogs`](crate::types::CloudWatchLogs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_group: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl CloudWatchLogsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,14 +55,20 @@ impl CloudWatchLogsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group = input;
-        self
+        self.log_group = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
     }
     /// Consumes the builder and constructs a [`CloudWatchLogs`](crate::types::CloudWatchLogs).
     pub fn build(self) -> crate::types::CloudWatchLogs {
         crate::types::CloudWatchLogs {
-            enabled: self.enabled,
-            log_group: self.log_group,
+            enabled: self.enabled
+            ,
+            log_group: self.log_group
+            ,
         }
     }
 }
+

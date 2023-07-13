@@ -3,7 +3,7 @@
 /// <p>Provides a list of status information for an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbInstanceStatusInfo {
+pub struct DbInstanceStatusInfo  {
     /// <p>This value is currently "<code>read replication</code>."</p>
     #[doc(hidden)]
     pub status_type: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct DbInstanceStatusInfo {
 }
 impl DbInstanceStatusInfo {
     /// <p>This value is currently "<code>read replication</code>."</p>
-    pub fn status_type(&self) -> ::std::option::Option<&str> {
+    pub fn status_type(&self) -> ::std::option::Option<& str> {
         self.status_type.as_deref()
     }
     /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or <code>false</code> if the instance is in an error state.</p>
@@ -27,11 +27,11 @@ impl DbInstanceStatusInfo {
         self.normal
     }
     /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl DbInstanceStatusInfo {
 
 /// A builder for [`DbInstanceStatusInfo`](crate::types::DbInstanceStatusInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbInstanceStatusInfoBuilder {
     pub(crate) status_type: ::std::option::Option<::std::string::String>,
     pub(crate) normal: ::std::option::Option<bool>,
@@ -61,8 +59,11 @@ impl DbInstanceStatusInfoBuilder {
     }
     /// <p>This value is currently "<code>read replication</code>."</p>
     pub fn set_status_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_type = input;
-        self
+        self.status_type = input; self
+    }
+    /// <p>This value is currently "<code>read replication</code>."</p>
+    pub fn get_status_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_type
     }
     /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or <code>false</code> if the instance is in an error state.</p>
     pub fn normal(mut self, input: bool) -> Self {
@@ -71,8 +72,11 @@ impl DbInstanceStatusInfoBuilder {
     }
     /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or <code>false</code> if the instance is in an error state.</p>
     pub fn set_normal(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.normal = input;
-        self
+        self.normal = input; self
+    }
+    /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or <code>false</code> if the instance is in an error state.</p>
+    pub fn get_normal(&self) -> &::std::option::Option<bool> {
+        &self.normal
     }
     /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl DbInstanceStatusInfoBuilder {
     }
     /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,25 @@ impl DbInstanceStatusInfoBuilder {
     }
     /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`DbInstanceStatusInfo`](crate::types::DbInstanceStatusInfo).
     pub fn build(self) -> crate::types::DbInstanceStatusInfo {
         crate::types::DbInstanceStatusInfo {
-            status_type: self.status_type,
-            normal: self.normal.unwrap_or_default(),
-            status: self.status,
-            message: self.message,
+            status_type: self.status_type
+            ,
+            normal: self.normal
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

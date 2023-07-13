@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBatchJobExecutionsInput {
+pub struct ListBatchJobExecutionsInput  {
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ pub struct ListBatchJobExecutionsInput {
 }
 impl ListBatchJobExecutionsInput {
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of batch job executions to return.</p>
@@ -38,44 +38,40 @@ impl ListBatchJobExecutionsInput {
         self.max_results
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn execution_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn execution_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.execution_ids.as_deref()
     }
     /// <p>The name of each batch job execution.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The status of the batch job executions.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BatchJobExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::BatchJobExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The time after which the batch job executions started.</p>
-    pub fn started_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_after.as_ref()
     }
     /// <p>The time before the batch job executions started.</p>
-    pub fn started_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_before.as_ref()
     }
 }
 impl ListBatchJobExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListBatchJobExecutionsInput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder {
         crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBatchJobExecutionsInput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchJobExecutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -94,8 +90,11 @@ impl ListBatchJobExecutionsInputBuilder {
     }
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of batch job executions to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -104,46 +103,43 @@ impl ListBatchJobExecutionsInputBuilder {
     }
     /// <p>The maximum number of batch job executions to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of batch job executions to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// Appends an item to `execution_ids`.
     ///
     /// To override the contents of this collection use [`set_execution_ids`](Self::set_execution_ids).
     ///
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn execution_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.execution_ids.unwrap_or_default();
-        v.push(input.into());
-        self.execution_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.execution_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn set_execution_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.execution_ids = input;
-        self
+    pub fn set_execution_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.execution_ids = input; self
+    }
+    /// <p>The unique identifier of each batch job execution.</p>
+    pub fn get_execution_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.execution_ids
     }
     /// <p>The name of each batch job execution.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,8 +148,11 @@ impl ListBatchJobExecutionsInputBuilder {
     }
     /// <p>The name of each batch job execution.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The name of each batch job execution.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The status of the batch job executions.</p>
     pub fn status(mut self, input: crate::types::BatchJobExecutionStatus) -> Self {
@@ -161,12 +160,12 @@ impl ListBatchJobExecutionsInputBuilder {
         self
     }
     /// <p>The status of the batch job executions.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobExecutionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BatchJobExecutionStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the batch job executions.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BatchJobExecutionStatus> {
+        &self.status
     }
     /// <p>The time after which the batch job executions started.</p>
     pub fn started_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -174,12 +173,12 @@ impl ListBatchJobExecutionsInputBuilder {
         self
     }
     /// <p>The time after which the batch job executions started.</p>
-    pub fn set_started_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_after = input;
-        self
+    pub fn set_started_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.started_after = input; self
+    }
+    /// <p>The time after which the batch job executions started.</p>
+    pub fn get_started_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_after
     }
     /// <p>The time before the batch job executions started.</p>
     pub fn started_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -187,31 +186,35 @@ impl ListBatchJobExecutionsInputBuilder {
         self
     }
     /// <p>The time before the batch job executions started.</p>
-    pub fn set_started_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_before = input;
-        self
+    pub fn set_started_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.started_before = input; self
+    }
+    /// <p>The time before the batch job executions started.</p>
+    pub fn get_started_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_before
     }
     /// Consumes the builder and constructs a [`ListBatchJobExecutionsInput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                application_id: self.application_id,
-                execution_ids: self.execution_ids,
-                job_name: self.job_name,
-                status: self.status,
-                started_after: self.started_after,
-                started_before: self.started_before,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                application_id: self.application_id
+                ,
+                execution_ids: self.execution_ids
+                ,
+                job_name: self.job_name
+                ,
+                status: self.status
+                ,
+                started_after: self.started_after
+                ,
+                started_before: self.started_before
+                ,
+            }
         )
     }
 }
+

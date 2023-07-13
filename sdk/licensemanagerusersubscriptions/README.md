@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-licensemanagerusersubscriptions = "0.12.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-licensemanagerusersubscriptions = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -28,8 +28,8 @@ use aws_sdk_licensemanagerusersubscriptions as licensemanagerusersubscriptions;
 
 #[::tokio::main]
 async fn main() -> Result<(), licensemanagerusersubscriptions::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = licensemanagerusersubscriptions::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_licensemanagerusersubscriptions::Client::new(&config);
 
     // ... make some calls with the client
 

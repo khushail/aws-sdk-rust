@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReadSetMetadataOutput {
+pub struct GetReadSetMetadataOutput  {
     /// <p>The read set's ID.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -49,83 +49,77 @@ pub struct GetReadSetMetadataOutput {
 }
 impl GetReadSetMetadataOutput {
     /// <p>The read set's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The read set's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The read set's subject ID.</p>
-    pub fn subject_id(&self) -> ::std::option::Option<&str> {
+    pub fn subject_id(&self) -> ::std::option::Option<& str> {
         self.subject_id.as_deref()
     }
     /// <p>The read set's sample ID.</p>
-    pub fn sample_id(&self) -> ::std::option::Option<&str> {
+    pub fn sample_id(&self) -> ::std::option::Option<& str> {
         self.sample_id.as_deref()
     }
     /// <p>The read set's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReadSetStatus> {
         self.status.as_ref()
     }
     /// <p>The read set's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The read set's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The read set's file type.</p>
-    pub fn file_type(&self) -> ::std::option::Option<&crate::types::FileType> {
+    pub fn file_type(&self) -> ::std::option::Option<& crate::types::FileType> {
         self.file_type.as_ref()
     }
     /// <p>When the read set was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The read set's sequence information.</p>
-    pub fn sequence_information(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SequenceInformation> {
+    pub fn sequence_information(&self) -> ::std::option::Option<& crate::types::SequenceInformation> {
         self.sequence_information.as_ref()
     }
     /// <p>The read set's genome reference ARN.</p>
-    pub fn reference_arn(&self) -> ::std::option::Option<&str> {
+    pub fn reference_arn(&self) -> ::std::option::Option<& str> {
         self.reference_arn.as_deref()
     }
     /// <p>The read set's files.</p>
-    pub fn files(&self) -> ::std::option::Option<&crate::types::ReadSetFiles> {
+    pub fn files(&self) -> ::std::option::Option<& crate::types::ReadSetFiles> {
         self.files.as_ref()
     }
     /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetReadSetMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetReadSetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetMetadataOutput`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder {
-        crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder {
+        crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadSetMetadataOutput`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadSetMetadataOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -151,8 +145,11 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The read set's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The read set's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,24 +158,24 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The read set's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sequence_store_id = input;
-        self
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sequence_store_id = input; self
+    }
+    /// <p>The read set's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
     }
     /// <p>The read set's subject ID.</p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,8 +184,11 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's subject ID.</p>
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_id = input;
-        self
+        self.subject_id = input; self
+    }
+    /// <p>The read set's subject ID.</p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_id
     }
     /// <p>The read set's sample ID.</p>
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -197,8 +197,11 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's sample ID.</p>
     pub fn set_sample_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_id = input;
-        self
+        self.sample_id = input; self
+    }
+    /// <p>The read set's sample ID.</p>
+    pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_id
     }
     /// <p>The read set's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetStatus) -> Self {
@@ -207,8 +210,11 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The read set's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetStatus> {
+        &self.status
     }
     /// <p>The read set's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -217,8 +223,11 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The read set's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The read set's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -227,8 +236,11 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The read set's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The read set's file type.</p>
     pub fn file_type(mut self, input: crate::types::FileType) -> Self {
@@ -237,8 +249,11 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's file type.</p>
     pub fn set_file_type(mut self, input: ::std::option::Option<crate::types::FileType>) -> Self {
-        self.file_type = input;
-        self
+        self.file_type = input; self
+    }
+    /// <p>The read set's file type.</p>
+    pub fn get_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
+        &self.file_type
     }
     /// <p>When the read set was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -246,12 +261,12 @@ impl GetReadSetMetadataOutputBuilder {
         self
     }
     /// <p>When the read set was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>When the read set was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The read set's sequence information.</p>
     pub fn sequence_information(mut self, input: crate::types::SequenceInformation) -> Self {
@@ -259,28 +274,25 @@ impl GetReadSetMetadataOutputBuilder {
         self
     }
     /// <p>The read set's sequence information.</p>
-    pub fn set_sequence_information(
-        mut self,
-        input: ::std::option::Option<crate::types::SequenceInformation>,
-    ) -> Self {
-        self.sequence_information = input;
-        self
+    pub fn set_sequence_information(mut self, input: ::std::option::Option<crate::types::SequenceInformation>) -> Self {
+        self.sequence_information = input; self
+    }
+    /// <p>The read set's sequence information.</p>
+    pub fn get_sequence_information(&self) -> &::std::option::Option<crate::types::SequenceInformation> {
+        &self.sequence_information
     }
     /// <p>The read set's genome reference ARN.</p>
-    pub fn reference_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's genome reference ARN.</p>
-    pub fn set_reference_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reference_arn = input;
-        self
+    pub fn set_reference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reference_arn = input; self
+    }
+    /// <p>The read set's genome reference ARN.</p>
+    pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_arn
     }
     /// <p>The read set's files.</p>
     pub fn files(mut self, input: crate::types::ReadSetFiles) -> Self {
@@ -289,52 +301,67 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's files.</p>
     pub fn set_files(mut self, input: ::std::option::Option<crate::types::ReadSetFiles>) -> Self {
-        self.files = input;
-        self
+        self.files = input; self
+    }
+    /// <p>The read set's files.</p>
+    pub fn get_files(&self) -> &::std::option::Option<crate::types::ReadSetFiles> {
+        &self.files
     }
     /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetReadSetMetadataOutput`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput).
     pub fn build(self) -> crate::operation::get_read_set_metadata::GetReadSetMetadataOutput {
         crate::operation::get_read_set_metadata::GetReadSetMetadataOutput {
-            id: self.id,
-            arn: self.arn,
-            sequence_store_id: self.sequence_store_id,
-            subject_id: self.subject_id,
-            sample_id: self.sample_id,
-            status: self.status,
-            name: self.name,
-            description: self.description,
-            file_type: self.file_type,
-            creation_time: self.creation_time,
-            sequence_information: self.sequence_information,
-            reference_arn: self.reference_arn,
-            files: self.files,
-            status_message: self.status_message,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            sequence_store_id: self.sequence_store_id
+            ,
+            subject_id: self.subject_id
+            ,
+            sample_id: self.sample_id
+            ,
+            status: self.status
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            file_type: self.file_type
+            ,
+            creation_time: self.creation_time
+            ,
+            sequence_information: self.sequence_information
+            ,
+            reference_arn: self.reference_arn
+            ,
+            files: self.files
+            ,
+            status_message: self.status_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

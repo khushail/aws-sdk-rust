@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHitInput {
+pub struct GetHitInput  {
     /// <p>The ID of the HIT to be retrieved.</p>
     #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHitInput {
     /// <p>The ID of the HIT to be retrieved.</p>
-    pub fn hit_id(&self) -> ::std::option::Option<&str> {
+    pub fn hit_id(&self) -> ::std::option::Option<& str> {
         self.hit_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetHitInput {
 
 /// A builder for [`GetHitInput`](crate::operation::get_hit::GetHitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetHitInputBuilder {
     }
     /// <p>The ID of the HIT to be retrieved.</p>
     pub fn set_hit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hit_id = input;
-        self
+        self.hit_id = input; self
+    }
+    /// <p>The ID of the HIT to be retrieved.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
     }
     /// Consumes the builder and constructs a [`GetHitInput`](crate::operation::get_hit::GetHitInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_hit::GetHitInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_hit::GetHitInput {
-            hit_id: self.hit_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_hit::GetHitInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_hit::GetHitInput {
+                hit_id: self.hit_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details for IAM access control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Iam {
+pub struct Iam  {
     /// <p>Indicates whether IAM access control is enabled.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl Iam {
 
 /// A builder for [`Iam`](crate::types::Iam).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -37,13 +35,18 @@ impl IamBuilder {
     }
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Indicates whether IAM access control is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`Iam`](crate::types::Iam).
     pub fn build(self) -> crate::types::Iam {
         crate::types::Iam {
-            enabled: self.enabled,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

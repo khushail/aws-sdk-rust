@@ -3,7 +3,7 @@
 /// <p>Specifies an attribute and value that filter the events returned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LookupAttribute {
+pub struct LookupAttribute  {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
     #[doc(hidden)]
     pub attribute_key: ::std::option::Option<crate::types::LookupAttributeKey>,
@@ -13,11 +13,11 @@ pub struct LookupAttribute {
 }
 impl LookupAttribute {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
-    pub fn attribute_key(&self) -> ::std::option::Option<&crate::types::LookupAttributeKey> {
+    pub fn attribute_key(&self) -> ::std::option::Option<& crate::types::LookupAttributeKey> {
         self.attribute_key.as_ref()
     }
     /// <p>Specifies a value for the specified AttributeKey.</p>
-    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_value(&self) -> ::std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl LookupAttribute {
 
 /// A builder for [`LookupAttribute`](crate::types::LookupAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LookupAttributeBuilder {
     pub(crate) attribute_key: ::std::option::Option<crate::types::LookupAttributeKey>,
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,
@@ -44,34 +42,34 @@ impl LookupAttributeBuilder {
         self
     }
     /// <p>Specifies an attribute on which to filter the events returned.</p>
-    pub fn set_attribute_key(
-        mut self,
-        input: ::std::option::Option<crate::types::LookupAttributeKey>,
-    ) -> Self {
-        self.attribute_key = input;
-        self
+    pub fn set_attribute_key(mut self, input: ::std::option::Option<crate::types::LookupAttributeKey>) -> Self {
+        self.attribute_key = input; self
+    }
+    /// <p>Specifies an attribute on which to filter the events returned.</p>
+    pub fn get_attribute_key(&self) -> &::std::option::Option<crate::types::LookupAttributeKey> {
+        &self.attribute_key
     }
     /// <p>Specifies a value for the specified AttributeKey.</p>
-    pub fn attribute_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a value for the specified AttributeKey.</p>
-    pub fn set_attribute_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.attribute_value = input;
-        self
+    pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attribute_value = input; self
+    }
+    /// <p>Specifies a value for the specified AttributeKey.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
     }
     /// Consumes the builder and constructs a [`LookupAttribute`](crate::types::LookupAttribute).
     pub fn build(self) -> crate::types::LookupAttribute {
         crate::types::LookupAttribute {
-            attribute_key: self.attribute_key,
-            attribute_value: self.attribute_value,
+            attribute_key: self.attribute_key
+            ,
+            attribute_value: self.attribute_value
+            ,
         }
     }
 }
+

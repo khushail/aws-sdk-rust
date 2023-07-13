@@ -3,7 +3,7 @@
 /// <p> The time period for when the predictions were generated. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictionTimeRange {
+pub struct PredictionTimeRange  {
     /// <p> The start time of the time period for when the predictions were generated. </p>
     #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct PredictionTimeRange {
 }
 impl PredictionTimeRange {
     /// <p> The start time of the time period for when the predictions were generated. </p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p> The end time of the time period for when the predictions were generated. </p>
-    pub fn end_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<& str> {
         self.end_time.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl PredictionTimeRange {
 
 /// A builder for [`PredictionTimeRange`](crate::types::PredictionTimeRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictionTimeRangeBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl PredictionTimeRangeBuilder {
     }
     /// <p> The start time of the time period for when the predictions were generated. </p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
+    }
+    /// <p> The start time of the time period for when the predictions were generated. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
     }
     /// <p> The end time of the time period for when the predictions were generated. </p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl PredictionTimeRangeBuilder {
     }
     /// <p> The end time of the time period for when the predictions were generated. </p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
+    }
+    /// <p> The end time of the time period for when the predictions were generated. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`PredictionTimeRange`](crate::types::PredictionTimeRange).
     pub fn build(self) -> crate::types::PredictionTimeRange {
         crate::types::PredictionTimeRange {
-            start_time: self.start_time,
-            end_time: self.end_time,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

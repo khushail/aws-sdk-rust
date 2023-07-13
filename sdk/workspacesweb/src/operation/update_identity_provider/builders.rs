@@ -3,133 +3,114 @@ pub use crate::operation::update_identity_provider::_update_identity_provider_ou
 
 pub use crate::operation::update_identity_provider::_update_identity_provider_input::UpdateIdentityProviderInputBuilder;
 
+impl UpdateIdentityProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_identity_provider::UpdateIdentityProviderError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_identity_provider();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateIdentityProvider`.
-///
+/// 
 /// <p>Updates the identity provider. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder,
+                    inner: crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder,
 }
-impl UpdateIdentityProviderFluentBuilder {
+impl UpdateIdentityProviderFluentBuilder  {
     /// Creates a new `UpdateIdentityProvider`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_identity_provider::UpdateIdentityProvider,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateIdentityProvider as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_identity_provider::UpdateIdentityProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider::UpdateIdentityProviderError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_identity_provider::UpdateIdentityProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider::UpdateIdentityProviderError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_identity_provider::UpdateIdentityProvider,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_identity_provider::UpdateIdentityProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider::UpdateIdentityProviderError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_identity_provider::UpdateIdentityProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider::UpdateIdentityProviderError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_provider_arn(input.into());
         self
     }
     /// <p>The ARN of the identity provider.</p>
-    pub fn set_identity_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_provider_arn(input);
         self
     }
+    /// <p>The ARN of the identity provider.</p>
+    pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_arn()
+    }
     /// <p>The name of the identity provider.</p>
-    pub fn identity_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_provider_name(input.into());
         self
     }
     /// <p>The name of the identity provider.</p>
-    pub fn set_identity_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_provider_name(input);
         self
+    }
+    /// <p>The name of the identity provider.</p>
+    pub fn get_identity_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_provider_name()
     }
     /// <p>The type of the identity provider.</p>
     pub fn identity_provider_type(mut self, input: crate::types::IdentityProviderType) -> Self {
@@ -137,126 +118,168 @@ impl UpdateIdentityProviderFluentBuilder {
         self
     }
     /// <p>The type of the identity provider.</p>
-    pub fn set_identity_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderType>,
-    ) -> Self {
+    pub fn set_identity_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
         self.inner = self.inner.set_identity_provider_type(input);
         self
+    }
+    /// <p>The type of the identity provider.</p>
+    pub fn get_identity_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        self.inner.get_identity_provider_type()
     }
     /// Adds a key-value pair to `identityProviderDetails`.
     ///
     /// To override the contents of this collection use [`set_identity_provider_details`](Self::set_identity_provider_details).
     ///
-    /// <p>The details of the identity provider. The following list describes the provider detail keys for each identity provider type. </p>
-    /// <ul>
-    /// <li> <p>For Google and Login with Amazon:</p>
-    /// <ul>
-    /// <li> <p> <code>client_id</code> </p> </li>
-    /// <li> <p> <code>client_secret</code> </p> </li>
-    /// <li> <p> <code>authorize_scopes</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Facebook:</p>
-    /// <ul>
-    /// <li> <p> <code>client_id</code> </p> </li>
-    /// <li> <p> <code>client_secret</code> </p> </li>
-    /// <li> <p> <code>authorize_scopes</code> </p> </li>
-    /// <li> <p> <code>api_version</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Sign in with Apple:</p>
-    /// <ul>
-    /// <li> <p> <code>client_id</code> </p> </li>
-    /// <li> <p> <code>team_id</code> </p> </li>
-    /// <li> <p> <code>key_id</code> </p> </li>
-    /// <li> <p> <code>private_key</code> </p> </li>
-    /// <li> <p> <code>authorize_scopes</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>For OIDC providers:</p>
-    /// <ul>
-    /// <li> <p> <code>client_id</code> </p> </li>
-    /// <li> <p> <code>client_secret</code> </p> </li>
-    /// <li> <p> <code>attributes_request_method</code> </p> </li>
-    /// <li> <p> <code>oidc_issuer</code> </p> </li>
-    /// <li> <p> <code>authorize_scopes</code> </p> </li>
-    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
-    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
-    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
-    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>For SAML providers:</p>
-    /// <ul>
-    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
-    /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>
-    /// </ul> </li>
+    /// <p>The details of the identity provider. The following list describes the provider detail keys for each identity provider type. </p> 
+    /// <ul> 
+    /// <li> <p>For Google and Login with Amazon:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>client_secret</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Facebook:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>client_secret</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// <li> <p> <code>api_version</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Sign in with Apple:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>team_id</code> </p> </li> 
+    /// <li> <p> <code>key_id</code> </p> </li> 
+    /// <li> <p> <code>private_key</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For OIDC providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>client_secret</code> </p> </li> 
+    /// <li> <p> <code>attributes_request_method</code> </p> </li> 
+    /// <li> <p> <code>oidc_issuer</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For SAML providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> 
+    /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn identity_provider_details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_provider_details(k.into(), v.into());
         self
     }
-    /// <p>The details of the identity provider. The following list describes the provider detail keys for each identity provider type. </p>
-    /// <ul>
-    /// <li> <p>For Google and Login with Amazon:</p>
-    /// <ul>
-    /// <li> <p> <code>client_id</code> </p> </li>
-    /// <li> <p> <code>client_secret</code> </p> </li>
-    /// <li> <p> <code>authorize_scopes</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Facebook:</p>
-    /// <ul>
-    /// <li> <p> <code>client_id</code> </p> </li>
-    /// <li> <p> <code>client_secret</code> </p> </li>
-    /// <li> <p> <code>authorize_scopes</code> </p> </li>
-    /// <li> <p> <code>api_version</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Sign in with Apple:</p>
-    /// <ul>
-    /// <li> <p> <code>client_id</code> </p> </li>
-    /// <li> <p> <code>team_id</code> </p> </li>
-    /// <li> <p> <code>key_id</code> </p> </li>
-    /// <li> <p> <code>private_key</code> </p> </li>
-    /// <li> <p> <code>authorize_scopes</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>For OIDC providers:</p>
-    /// <ul>
-    /// <li> <p> <code>client_id</code> </p> </li>
-    /// <li> <p> <code>client_secret</code> </p> </li>
-    /// <li> <p> <code>attributes_request_method</code> </p> </li>
-    /// <li> <p> <code>oidc_issuer</code> </p> </li>
-    /// <li> <p> <code>authorize_scopes</code> </p> </li>
-    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
-    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
-    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
-    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>For SAML providers:</p>
-    /// <ul>
-    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
-    /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>
-    /// </ul> </li>
+    /// <p>The details of the identity provider. The following list describes the provider detail keys for each identity provider type. </p> 
+    /// <ul> 
+    /// <li> <p>For Google and Login with Amazon:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>client_secret</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Facebook:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>client_secret</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// <li> <p> <code>api_version</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Sign in with Apple:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>team_id</code> </p> </li> 
+    /// <li> <p> <code>key_id</code> </p> </li> 
+    /// <li> <p> <code>private_key</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For OIDC providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>client_secret</code> </p> </li> 
+    /// <li> <p> <code>attributes_request_method</code> </p> </li> 
+    /// <li> <p> <code>oidc_issuer</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For SAML providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> 
+    /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn set_identity_provider_details(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_identity_provider_details(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_identity_provider_details(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>The details of the identity provider. The following list describes the provider detail keys for each identity provider type. </p> 
+    /// <ul> 
+    /// <li> <p>For Google and Login with Amazon:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>client_secret</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Facebook:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>client_secret</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// <li> <p> <code>api_version</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Sign in with Apple:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>team_id</code> </p> </li> 
+    /// <li> <p> <code>key_id</code> </p> </li> 
+    /// <li> <p> <code>private_key</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For OIDC providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>client_id</code> </p> </li> 
+    /// <li> <p> <code>client_secret</code> </p> </li> 
+    /// <li> <p> <code>attributes_request_method</code> </p> </li> 
+    /// <li> <p> <code>oidc_issuer</code> </p> </li> 
+    /// <li> <p> <code>authorize_scopes</code> </p> </li> 
+    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For SAML providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> 
+    /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> 
+    /// </ul> </li> 
+    /// </ul>
+    pub fn get_identity_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_identity_provider_details()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> 
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> 
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> 
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
 }
+

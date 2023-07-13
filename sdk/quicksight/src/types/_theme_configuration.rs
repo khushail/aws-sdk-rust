@@ -3,7 +3,7 @@
 /// <p>The theme configuration. This configuration contains all of the display properties for a theme.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThemeConfiguration {
+pub struct ThemeConfiguration  {
     /// <p>Color properties that apply to chart data colors.</p>
     #[doc(hidden)]
     pub data_color_palette: ::std::option::Option<crate::types::DataColorPalette>,
@@ -19,19 +19,19 @@ pub struct ThemeConfiguration {
 }
 impl ThemeConfiguration {
     /// <p>Color properties that apply to chart data colors.</p>
-    pub fn data_color_palette(&self) -> ::std::option::Option<&crate::types::DataColorPalette> {
+    pub fn data_color_palette(&self) -> ::std::option::Option<& crate::types::DataColorPalette> {
         self.data_color_palette.as_ref()
     }
     /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
-    pub fn ui_color_palette(&self) -> ::std::option::Option<&crate::types::UiColorPalette> {
+    pub fn ui_color_palette(&self) -> ::std::option::Option<& crate::types::UiColorPalette> {
         self.ui_color_palette.as_ref()
     }
     /// <p>Display options related to sheets.</p>
-    pub fn sheet(&self) -> ::std::option::Option<&crate::types::SheetStyle> {
+    pub fn sheet(&self) -> ::std::option::Option<& crate::types::SheetStyle> {
         self.sheet.as_ref()
     }
     /// <p>Determines the typography options.</p>
-    pub fn typography(&self) -> ::std::option::Option<&crate::types::Typography> {
+    pub fn typography(&self) -> ::std::option::Option<& crate::types::Typography> {
         self.typography.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl ThemeConfiguration {
 
 /// A builder for [`ThemeConfiguration`](crate::types::ThemeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThemeConfigurationBuilder {
     pub(crate) data_color_palette: ::std::option::Option<crate::types::DataColorPalette>,
     pub(crate) ui_color_palette: ::std::option::Option<crate::types::UiColorPalette>,
@@ -60,12 +58,12 @@ impl ThemeConfigurationBuilder {
         self
     }
     /// <p>Color properties that apply to chart data colors.</p>
-    pub fn set_data_color_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::DataColorPalette>,
-    ) -> Self {
-        self.data_color_palette = input;
-        self
+    pub fn set_data_color_palette(mut self, input: ::std::option::Option<crate::types::DataColorPalette>) -> Self {
+        self.data_color_palette = input; self
+    }
+    /// <p>Color properties that apply to chart data colors.</p>
+    pub fn get_data_color_palette(&self) -> &::std::option::Option<crate::types::DataColorPalette> {
+        &self.data_color_palette
     }
     /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
     pub fn ui_color_palette(mut self, input: crate::types::UiColorPalette) -> Self {
@@ -73,12 +71,12 @@ impl ThemeConfigurationBuilder {
         self
     }
     /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
-    pub fn set_ui_color_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::UiColorPalette>,
-    ) -> Self {
-        self.ui_color_palette = input;
-        self
+    pub fn set_ui_color_palette(mut self, input: ::std::option::Option<crate::types::UiColorPalette>) -> Self {
+        self.ui_color_palette = input; self
+    }
+    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
+    pub fn get_ui_color_palette(&self) -> &::std::option::Option<crate::types::UiColorPalette> {
+        &self.ui_color_palette
     }
     /// <p>Display options related to sheets.</p>
     pub fn sheet(mut self, input: crate::types::SheetStyle) -> Self {
@@ -87,8 +85,11 @@ impl ThemeConfigurationBuilder {
     }
     /// <p>Display options related to sheets.</p>
     pub fn set_sheet(mut self, input: ::std::option::Option<crate::types::SheetStyle>) -> Self {
-        self.sheet = input;
-        self
+        self.sheet = input; self
+    }
+    /// <p>Display options related to sheets.</p>
+    pub fn get_sheet(&self) -> &::std::option::Option<crate::types::SheetStyle> {
+        &self.sheet
     }
     /// <p>Determines the typography options.</p>
     pub fn typography(mut self, input: crate::types::Typography) -> Self {
@@ -96,20 +97,25 @@ impl ThemeConfigurationBuilder {
         self
     }
     /// <p>Determines the typography options.</p>
-    pub fn set_typography(
-        mut self,
-        input: ::std::option::Option<crate::types::Typography>,
-    ) -> Self {
-        self.typography = input;
-        self
+    pub fn set_typography(mut self, input: ::std::option::Option<crate::types::Typography>) -> Self {
+        self.typography = input; self
+    }
+    /// <p>Determines the typography options.</p>
+    pub fn get_typography(&self) -> &::std::option::Option<crate::types::Typography> {
+        &self.typography
     }
     /// Consumes the builder and constructs a [`ThemeConfiguration`](crate::types::ThemeConfiguration).
     pub fn build(self) -> crate::types::ThemeConfiguration {
         crate::types::ThemeConfiguration {
-            data_color_palette: self.data_color_palette,
-            ui_color_palette: self.ui_color_palette,
-            sheet: self.sheet,
-            typography: self.typography,
+            data_color_palette: self.data_color_palette
+            ,
+            ui_color_palette: self.ui_color_palette
+            ,
+            sheet: self.sheet
+            ,
+            typography: self.typography
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about an image scan finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageScanFinding {
+pub struct ImageScanFinding  {
     /// <p>The name associated with the finding, usually a CVE number.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct ImageScanFinding {
 }
 impl ImageScanFinding {
     /// <p>The name associated with the finding, usually a CVE number.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the finding.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A link containing additional details about the security vulnerability.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The finding severity.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::FindingSeverity> {
+    pub fn severity(&self) -> ::std::option::Option<& crate::types::FindingSeverity> {
         self.severity.as_ref()
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<& [crate::types::Attribute]> {
         self.attributes.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl ImageScanFinding {
 
 /// A builder for [`ImageScanFinding`](crate::types::ImageScanFinding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageScanFindingBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl ImageScanFindingBuilder {
     }
     /// <p>The name associated with the finding, usually a CVE number.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name associated with the finding, usually a CVE number.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the finding.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl ImageScanFindingBuilder {
     }
     /// <p>The description of the finding.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the finding.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A link containing additional details about the security vulnerability.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl ImageScanFindingBuilder {
     }
     /// <p>A link containing additional details about the security vulnerability.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
+    }
+    /// <p>A link containing additional details about the security vulnerability.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// <p>The finding severity.</p>
     pub fn severity(mut self, input: crate::types::FindingSeverity) -> Self {
@@ -98,12 +105,12 @@ impl ImageScanFindingBuilder {
         self
     }
     /// <p>The finding severity.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingSeverity>,
-    ) -> Self {
-        self.severity = input;
-        self
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::FindingSeverity>) -> Self {
+        self.severity = input; self
+    }
+    /// <p>The finding severity.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::FindingSeverity> {
+        &self.severity
     }
     /// Appends an item to `attributes`.
     ///
@@ -112,26 +119,32 @@ impl ImageScanFindingBuilder {
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>A collection of attributes of the host from which the finding is generated.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`ImageScanFinding`](crate::types::ImageScanFinding).
     pub fn build(self) -> crate::types::ImageScanFinding {
         crate::types::ImageScanFinding {
-            name: self.name,
-            description: self.description,
-            uri: self.uri,
-            severity: self.severity,
-            attributes: self.attributes,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            uri: self.uri
+            ,
+            severity: self.severity
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

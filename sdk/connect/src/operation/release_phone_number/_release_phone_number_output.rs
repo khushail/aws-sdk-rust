@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReleasePhoneNumberOutput {
+pub struct ReleasePhoneNumberOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for ReleasePhoneNumberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ReleasePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`ReleasePhoneNumberOutput`](crate::operation::release_phone_number::ReleasePhoneNumberOutput).
-    pub fn builder(
-    ) -> crate::operation::release_phone_number::builders::ReleasePhoneNumberOutputBuilder {
+    pub fn builder() -> crate::operation::release_phone_number::builders::ReleasePhoneNumberOutputBuilder {
         crate::operation::release_phone_number::builders::ReleasePhoneNumberOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReleasePhoneNumberOutput`](crate::operation::release_phone_number::ReleasePhoneNumberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleasePhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }
 impl ReleasePhoneNumberOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ReleasePhoneNumberOutput`](crate::operation::release_phone_number::ReleasePhoneNumberOutput).
     pub fn build(self) -> crate::operation::release_phone_number::ReleasePhoneNumberOutput {
         crate::operation::release_phone_number::ReleasePhoneNumberOutput {
@@ -43,3 +40,4 @@ impl ReleasePhoneNumberOutputBuilder {
         }
     }
 }
+

@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachGroupPolicyOutput {
+pub struct AttachGroupPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for AttachGroupPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AttachGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachGroupPolicyOutput`](crate::operation::attach_group_policy::AttachGroupPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::attach_group_policy::builders::AttachGroupPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::attach_group_policy::builders::AttachGroupPolicyOutputBuilder {
         crate::operation::attach_group_policy::builders::AttachGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachGroupPolicyOutput`](crate::operation::attach_group_policy::AttachGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachGroupPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl AttachGroupPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AttachGroupPolicyOutput`](crate::operation::attach_group_policy::AttachGroupPolicyOutput).
     pub fn build(self) -> crate::operation::attach_group_policy::AttachGroupPolicyOutput {
         crate::operation::attach_group_policy::AttachGroupPolicyOutput {
@@ -43,3 +40,4 @@ impl AttachGroupPolicyOutputBuilder {
         }
     }
 }
+

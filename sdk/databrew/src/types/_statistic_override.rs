@@ -3,27 +3,21 @@
 /// <p>Override of a particular evaluation for a profile job. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatisticOverride {
+pub struct StatisticOverride  {
     /// <p>The name of an evaluation</p>
     #[doc(hidden)]
     pub statistic: ::std::option::Option<::std::string::String>,
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StatisticOverride {
     /// <p>The name of an evaluation</p>
-    pub fn statistic(&self) -> ::std::option::Option<&str> {
+    pub fn statistic(&self) -> ::std::option::Option<& str> {
         self.statistic.as_deref()
     }
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl StatisticOverride {
 
 /// A builder for [`StatisticOverride`](crate::types::StatisticOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatisticOverrideBuilder {
     pub(crate) statistic: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StatisticOverrideBuilder {
     /// <p>The name of an evaluation</p>
@@ -53,39 +43,39 @@ impl StatisticOverrideBuilder {
     }
     /// <p>The name of an evaluation</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
+    }
+    /// <p>The name of an evaluation</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statistic
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
+    }
+    /// <p>A map that includes overrides of an evaluation’s parameters.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`StatisticOverride`](crate::types::StatisticOverride).
     pub fn build(self) -> crate::types::StatisticOverride {
         crate::types::StatisticOverride {
-            statistic: self.statistic,
-            parameters: self.parameters,
+            statistic: self.statistic
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

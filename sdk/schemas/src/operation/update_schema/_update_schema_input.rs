@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSchemaInput {
+pub struct UpdateSchemaInput  {
     /// <p>The ID of the client token.</p>
     #[doc(hidden)]
     pub client_token_id: ::std::option::Option<::std::string::String>,
@@ -24,27 +24,27 @@ pub struct UpdateSchemaInput {
 }
 impl UpdateSchemaInput {
     /// <p>The ID of the client token.</p>
-    pub fn client_token_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_token_id(&self) -> ::std::option::Option<& str> {
         self.client_token_id.as_deref()
     }
     /// <p>The source of the schema definition.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The description of the schema.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The schema type for the events schema.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -57,9 +57,7 @@ impl UpdateSchemaInput {
 
 /// A builder for [`UpdateSchemaInput`](crate::operation::update_schema::UpdateSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSchemaInputBuilder {
     pub(crate) client_token_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -70,20 +68,17 @@ pub struct UpdateSchemaInputBuilder {
 }
 impl UpdateSchemaInputBuilder {
     /// <p>The ID of the client token.</p>
-    pub fn client_token_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the client token.</p>
-    pub fn set_client_token_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_token_id = input;
-        self
+    pub fn set_client_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token_id = input; self
+    }
+    /// <p>The ID of the client token.</p>
+    pub fn get_client_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token_id
     }
     /// <p>The source of the schema definition.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,8 +87,11 @@ impl UpdateSchemaInputBuilder {
     }
     /// <p>The source of the schema definition.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
+    }
+    /// <p>The source of the schema definition.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The description of the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,24 +100,24 @@ impl UpdateSchemaInputBuilder {
     }
     /// <p>The description of the schema.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.registry_name = input;
-        self
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.registry_name = input; self
+    }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,8 +126,11 @@ impl UpdateSchemaInputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>The schema type for the events schema.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
@@ -138,23 +139,30 @@ impl UpdateSchemaInputBuilder {
     }
     /// <p>The schema type for the events schema.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The schema type for the events schema.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`UpdateSchemaInput`](crate::operation::update_schema::UpdateSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_schema::UpdateSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_schema::UpdateSchemaInput {
-            client_token_id: self.client_token_id,
-            content: self.content,
-            description: self.description,
-            registry_name: self.registry_name,
-            schema_name: self.schema_name,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_schema::UpdateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_schema::UpdateSchemaInput {
+                client_token_id: self.client_token_id
+                ,
+                content: self.content
+                ,
+                description: self.description
+                ,
+                registry_name: self.registry_name
+                ,
+                schema_name: self.schema_name
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

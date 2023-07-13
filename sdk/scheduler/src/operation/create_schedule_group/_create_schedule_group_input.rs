@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateScheduleGroupInput {
+pub struct CreateScheduleGroupInput  {
     /// <p>The name of the schedule group that you are creating.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct CreateScheduleGroupInput {
 }
 impl CreateScheduleGroupInput {
     /// <p>The name of the schedule group that you are creating.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The list of tags to associate with the schedule group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl CreateScheduleGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateScheduleGroupInput`](crate::operation::create_schedule_group::CreateScheduleGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder {
-        crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder {
+        crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateScheduleGroupInput`](crate::operation::create_schedule_group::CreateScheduleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScheduleGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -54,8 +50,11 @@ impl CreateScheduleGroupInputBuilder {
     }
     /// <p>The name of the schedule group that you are creating.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the schedule group that you are creating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `tags`.
     ///
@@ -64,17 +63,17 @@ impl CreateScheduleGroupInputBuilder {
     /// <p>The list of tags to associate with the schedule group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags to associate with the schedule group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The list of tags to associate with the schedule group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,22 +82,24 @@ impl CreateScheduleGroupInputBuilder {
     }
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateScheduleGroupInput`](crate::operation::create_schedule_group::CreateScheduleGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_schedule_group::CreateScheduleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_schedule_group::CreateScheduleGroupInput {
-                name: self.name,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

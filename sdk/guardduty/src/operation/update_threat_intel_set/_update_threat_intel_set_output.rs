@@ -2,41 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateThreatIntelSetOutput {
+pub struct UpdateThreatIntelSetOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UpdateThreatIntelSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateThreatIntelSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThreatIntelSetOutput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetOutputBuilder {
         crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateThreatIntelSetOutput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThreatIntelSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateThreatIntelSetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateThreatIntelSetOutput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetOutput).
     pub fn build(self) -> crate::operation::update_threat_intel_set::UpdateThreatIntelSetOutput {
         crate::operation::update_threat_intel_set::UpdateThreatIntelSetOutput {
@@ -44,3 +40,4 @@ impl UpdateThreatIntelSetOutputBuilder {
         }
     }
 }
+

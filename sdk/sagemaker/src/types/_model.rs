@@ -3,7 +3,7 @@
 /// <p>The properties of a model as returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Model {
+pub struct Model  {
     /// <p>The name of the model.</p>
     #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
@@ -34,40 +34,41 @@ pub struct Model {
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    #[doc(hidden)]
+    pub deployment_recommendation: ::std::option::Option<crate::types::DeploymentRecommendation>,
 }
 impl Model {
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>Describes the container, as part of model definition.</p>
-    pub fn primary_container(&self) -> ::std::option::Option<&crate::types::ContainerDefinition> {
+    pub fn primary_container(&self) -> ::std::option::Option<& crate::types::ContainerDefinition> {
         self.primary_container.as_ref()
     }
     /// <p>The containers in the inference pipeline.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::ContainerDefinition]> {
+    pub fn containers(&self) -> ::std::option::Option<& [crate::types::ContainerDefinition]> {
         self.containers.as_deref()
     }
     /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
-    pub fn inference_execution_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceExecutionConfig> {
+    pub fn inference_execution_config(&self) -> ::std::option::Option<& crate::types::InferenceExecutionConfig> {
         self.inference_execution_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>A timestamp that indicates when the model was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
@@ -75,8 +76,12 @@ impl Model {
         self.enable_network_isolation
     }
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn deployment_recommendation(&self) -> ::std::option::Option<& crate::types::DeploymentRecommendation> {
+        self.deployment_recommendation.as_ref()
     }
 }
 impl Model {
@@ -88,22 +93,19 @@ impl Model {
 
 /// A builder for [`Model`](crate::types::Model).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) primary_container: ::std::option::Option<crate::types::ContainerDefinition>,
-    pub(crate) containers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
-    pub(crate) inference_execution_config:
-        ::std::option::Option<crate::types::InferenceExecutionConfig>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
+    pub(crate) inference_execution_config: ::std::option::Option<crate::types::InferenceExecutionConfig>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) deployment_recommendation: ::std::option::Option<crate::types::DeploymentRecommendation>,
 }
 impl ModelBuilder {
     /// <p>The name of the model.</p>
@@ -113,8 +115,11 @@ impl ModelBuilder {
     }
     /// <p>The name of the model.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
+    }
+    /// <p>The name of the model.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p>Describes the container, as part of model definition.</p>
     pub fn primary_container(mut self, input: crate::types::ContainerDefinition) -> Self {
@@ -122,12 +127,12 @@ impl ModelBuilder {
         self
     }
     /// <p>Describes the container, as part of model definition.</p>
-    pub fn set_primary_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerDefinition>,
-    ) -> Self {
-        self.primary_container = input;
-        self
+    pub fn set_primary_container(mut self, input: ::std::option::Option<crate::types::ContainerDefinition>) -> Self {
+        self.primary_container = input; self
+    }
+    /// <p>Describes the container, as part of model definition.</p>
+    pub fn get_primary_container(&self) -> &::std::option::Option<crate::types::ContainerDefinition> {
+        &self.primary_container
     }
     /// Appends an item to `containers`.
     ///
@@ -136,49 +141,43 @@ impl ModelBuilder {
     /// <p>The containers in the inference pipeline.</p>
     pub fn containers(mut self, input: crate::types::ContainerDefinition) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.containers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The containers in the inference pipeline.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
-    ) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>) -> Self {
+        self.containers = input; self
+    }
+    /// <p>The containers in the inference pipeline.</p>
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
+        &self.containers
     }
     /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
-    pub fn inference_execution_config(
-        mut self,
-        input: crate::types::InferenceExecutionConfig,
-    ) -> Self {
+    pub fn inference_execution_config(mut self, input: crate::types::InferenceExecutionConfig) -> Self {
         self.inference_execution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
-    pub fn set_inference_execution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExecutionConfig>,
-    ) -> Self {
-        self.inference_execution_config = input;
-        self
+    pub fn set_inference_execution_config(mut self, input: ::std::option::Option<crate::types::InferenceExecutionConfig>) -> Self {
+        self.inference_execution_config = input; self
+    }
+    /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
+    pub fn get_inference_execution_config(&self) -> &::std::option::Option<crate::types::InferenceExecutionConfig> {
+        &self.inference_execution_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
@@ -187,8 +186,11 @@ impl ModelBuilder {
     }
     /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
+    }
+    /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// <p>A timestamp that indicates when the model was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -196,12 +198,12 @@ impl ModelBuilder {
         self
     }
     /// <p>A timestamp that indicates when the model was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>A timestamp that indicates when the model was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -210,8 +212,11 @@ impl ModelBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
     }
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
     pub fn enable_network_isolation(mut self, input: bool) -> Self {
@@ -220,8 +225,11 @@ impl ModelBuilder {
     }
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
     pub fn set_enable_network_isolation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_network_isolation = input;
-        self
+        self.enable_network_isolation = input; self
+    }
+    /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
+    pub fn get_enable_network_isolation(&self) -> &::std::option::Option<bool> {
+        &self.enable_network_isolation
     }
     /// Appends an item to `tags`.
     ///
@@ -230,31 +238,58 @@ impl ModelBuilder {
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn deployment_recommendation(mut self, input: crate::types::DeploymentRecommendation) -> Self {
+        self.deployment_recommendation = ::std::option::Option::Some(input);
         self
+    }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn set_deployment_recommendation(mut self, input: ::std::option::Option<crate::types::DeploymentRecommendation>) -> Self {
+        self.deployment_recommendation = input; self
+    }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn get_deployment_recommendation(&self) -> &::std::option::Option<crate::types::DeploymentRecommendation> {
+        &self.deployment_recommendation
     }
     /// Consumes the builder and constructs a [`Model`](crate::types::Model).
     pub fn build(self) -> crate::types::Model {
         crate::types::Model {
-            model_name: self.model_name,
-            primary_container: self.primary_container,
-            containers: self.containers,
-            inference_execution_config: self.inference_execution_config,
-            execution_role_arn: self.execution_role_arn,
-            vpc_config: self.vpc_config,
-            creation_time: self.creation_time,
-            model_arn: self.model_arn,
-            enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
-            tags: self.tags,
+            model_name: self.model_name
+            ,
+            primary_container: self.primary_container
+            ,
+            containers: self.containers
+            ,
+            inference_execution_config: self.inference_execution_config
+            ,
+            execution_role_arn: self.execution_role_arn
+            ,
+            vpc_config: self.vpc_config
+            ,
+            creation_time: self.creation_time
+            ,
+            model_arn: self.model_arn
+            ,
+            enable_network_isolation: self.enable_network_isolation
+                .unwrap_or_default()
+            ,
+            tags: self.tags
+            ,
+            deployment_recommendation: self.deployment_recommendation
+            ,
         }
     }
 }
+

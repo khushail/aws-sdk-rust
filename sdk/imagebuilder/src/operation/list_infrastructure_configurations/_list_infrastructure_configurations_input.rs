@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInfrastructureConfigurationsInput {
+pub struct ListInfrastructureConfigurationsInput  {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -15,7 +15,7 @@ pub struct ListInfrastructureConfigurationsInput {
 }
 impl ListInfrastructureConfigurationsInput {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -23,22 +23,20 @@ impl ListInfrastructureConfigurationsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListInfrastructureConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListInfrastructureConfigurationsInput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput).
-    pub fn builder() -> crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsInputBuilder {
         crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInfrastructureConfigurationsInput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInfrastructureConfigurationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,17 +50,17 @@ impl ListInfrastructureConfigurationsInputBuilder {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>You can filter on <code>name</code> to streamline results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>You can filter on <code>name</code> to streamline results.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -71,8 +69,11 @@ impl ListInfrastructureConfigurationsInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,16 +82,14 @@ impl ListInfrastructureConfigurationsInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListInfrastructureConfigurationsInput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput {
                 filters: self.filters
@@ -103,3 +102,4 @@ impl ListInfrastructureConfigurationsInputBuilder {
         )
     }
 }
+

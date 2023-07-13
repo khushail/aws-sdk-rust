@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSecurityGroupReferencesInput {
+pub struct DescribeSecurityGroupReferencesInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -16,22 +16,20 @@ impl DescribeSecurityGroupReferencesInput {
         self.dry_run
     }
     /// <p>The IDs of the security groups in your account.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn group_id(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.group_id.as_deref()
     }
 }
 impl DescribeSecurityGroupReferencesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupReferencesInput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput).
-    pub fn builder() -> crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesInputBuilder{
+    pub fn builder() -> crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesInputBuilder {
         crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityGroupReferencesInput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupReferencesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_id: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,8 +42,11 @@ impl DescribeSecurityGroupReferencesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `group_id`.
     ///
@@ -54,25 +55,20 @@ impl DescribeSecurityGroupReferencesInputBuilder {
     /// <p>The IDs of the security groups in your account.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_id.unwrap_or_default();
-        v.push(input.into());
-        self.group_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups in your account.</p>
-    pub fn set_group_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.group_id = input;
-        self
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.group_id = input; self
+    }
+    /// <p>The IDs of the security groups in your account.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_id
     }
     /// Consumes the builder and constructs a [`DescribeSecurityGroupReferencesInput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput {
                 dry_run: self.dry_run
@@ -83,3 +79,4 @@ impl DescribeSecurityGroupReferencesInputBuilder {
         )
     }
 }
+

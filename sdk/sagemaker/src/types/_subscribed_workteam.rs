@@ -3,7 +3,7 @@
 /// <p>Describes a work team of a vendor that does the a labelling job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubscribedWorkteam {
+pub struct SubscribedWorkteam  {
     /// <p>The Amazon Resource Name (ARN) of the vendor that you have subscribed.</p>
     #[doc(hidden)]
     pub workteam_arn: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct SubscribedWorkteam {
 }
 impl SubscribedWorkteam {
     /// <p>The Amazon Resource Name (ARN) of the vendor that you have subscribed.</p>
-    pub fn workteam_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workteam_arn(&self) -> ::std::option::Option<& str> {
         self.workteam_arn.as_deref()
     }
     /// <p>The title of the service provided by the vendor in the Amazon Marketplace.</p>
-    pub fn marketplace_title(&self) -> ::std::option::Option<&str> {
+    pub fn marketplace_title(&self) -> ::std::option::Option<& str> {
         self.marketplace_title.as_deref()
     }
     /// <p>The name of the vendor in the Amazon Marketplace.</p>
-    pub fn seller_name(&self) -> ::std::option::Option<&str> {
+    pub fn seller_name(&self) -> ::std::option::Option<& str> {
         self.seller_name.as_deref()
     }
     /// <p>The description of the vendor from the Amazon Marketplace.</p>
-    pub fn marketplace_description(&self) -> ::std::option::Option<&str> {
+    pub fn marketplace_description(&self) -> ::std::option::Option<& str> {
         self.marketplace_description.as_deref()
     }
     /// <p>Marketplace product listing ID.</p>
-    pub fn listing_id(&self) -> ::std::option::Option<&str> {
+    pub fn listing_id(&self) -> ::std::option::Option<& str> {
         self.listing_id.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl SubscribedWorkteam {
 
 /// A builder for [`SubscribedWorkteam`](crate::types::SubscribedWorkteam).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscribedWorkteamBuilder {
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marketplace_title: ::std::option::Option<::std::string::String>,
@@ -69,24 +67,24 @@ impl SubscribedWorkteamBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the vendor that you have subscribed.</p>
     pub fn set_workteam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workteam_arn = input;
-        self
+        self.workteam_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vendor that you have subscribed.</p>
+    pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workteam_arn
     }
     /// <p>The title of the service provided by the vendor in the Amazon Marketplace.</p>
-    pub fn marketplace_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn marketplace_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marketplace_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the service provided by the vendor in the Amazon Marketplace.</p>
-    pub fn set_marketplace_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.marketplace_title = input;
-        self
+    pub fn set_marketplace_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marketplace_title = input; self
+    }
+    /// <p>The title of the service provided by the vendor in the Amazon Marketplace.</p>
+    pub fn get_marketplace_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_title
     }
     /// <p>The name of the vendor in the Amazon Marketplace.</p>
     pub fn seller_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,24 +93,24 @@ impl SubscribedWorkteamBuilder {
     }
     /// <p>The name of the vendor in the Amazon Marketplace.</p>
     pub fn set_seller_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.seller_name = input;
-        self
+        self.seller_name = input; self
+    }
+    /// <p>The name of the vendor in the Amazon Marketplace.</p>
+    pub fn get_seller_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.seller_name
     }
     /// <p>The description of the vendor from the Amazon Marketplace.</p>
-    pub fn marketplace_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn marketplace_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marketplace_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the vendor from the Amazon Marketplace.</p>
-    pub fn set_marketplace_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.marketplace_description = input;
-        self
+    pub fn set_marketplace_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marketplace_description = input; self
+    }
+    /// <p>The description of the vendor from the Amazon Marketplace.</p>
+    pub fn get_marketplace_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_description
     }
     /// <p>Marketplace product listing ID.</p>
     pub fn listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,17 +119,26 @@ impl SubscribedWorkteamBuilder {
     }
     /// <p>Marketplace product listing ID.</p>
     pub fn set_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_id = input;
-        self
+        self.listing_id = input; self
+    }
+    /// <p>Marketplace product listing ID.</p>
+    pub fn get_listing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listing_id
     }
     /// Consumes the builder and constructs a [`SubscribedWorkteam`](crate::types::SubscribedWorkteam).
     pub fn build(self) -> crate::types::SubscribedWorkteam {
         crate::types::SubscribedWorkteam {
-            workteam_arn: self.workteam_arn,
-            marketplace_title: self.marketplace_title,
-            seller_name: self.seller_name,
-            marketplace_description: self.marketplace_description,
-            listing_id: self.listing_id,
+            workteam_arn: self.workteam_arn
+            ,
+            marketplace_title: self.marketplace_title
+            ,
+            seller_name: self.seller_name
+            ,
+            marketplace_description: self.marketplace_description
+            ,
+            listing_id: self.listing_id
+            ,
         }
     }
 }
+

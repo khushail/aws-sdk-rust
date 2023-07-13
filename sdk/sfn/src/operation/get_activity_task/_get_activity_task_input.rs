@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetActivityTaskInput {
+pub struct GetActivityTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
     #[doc(hidden)]
     pub activity_arn: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetActivityTaskInput {
 }
 impl GetActivityTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
-    pub fn activity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn activity_arn(&self) -> ::std::option::Option<& str> {
         self.activity_arn.as_deref()
     }
     /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
-    pub fn worker_name(&self) -> ::std::option::Option<&str> {
+    pub fn worker_name(&self) -> ::std::option::Option<& str> {
         self.worker_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl GetActivityTaskInput {
 
 /// A builder for [`GetActivityTaskInput`](crate::operation::get_activity_task::GetActivityTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetActivityTaskInputBuilder {
     pub(crate) activity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) worker_name: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetActivityTaskInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
     pub fn set_activity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activity_arn = input;
-        self
+        self.activity_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
+    pub fn get_activity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_arn
     }
     /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
     pub fn worker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl GetActivityTaskInputBuilder {
     }
     /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
     pub fn set_worker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_name = input;
-        self
+        self.worker_name = input; self
+    }
+    /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
+    pub fn get_worker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_name
     }
     /// Consumes the builder and constructs a [`GetActivityTaskInput`](crate::operation::get_activity_task::GetActivityTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_activity_task::GetActivityTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_activity_task::GetActivityTaskInput {
-            activity_arn: self.activity_arn,
-            worker_name: self.worker_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_activity_task::GetActivityTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_activity_task::GetActivityTaskInput {
+                activity_arn: self.activity_arn
+                ,
+                worker_name: self.worker_name
+                ,
+            }
+        )
     }
 }
+

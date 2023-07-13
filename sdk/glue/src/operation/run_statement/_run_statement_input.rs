@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunStatementInput {
+pub struct RunStatementInput  {
     /// <p>The Session Id of the statement to be run.</p>
     #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct RunStatementInput {
 }
 impl RunStatementInput {
     /// <p>The Session Id of the statement to be run.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The statement code to be run.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The origin of the request.</p>
-    pub fn request_origin(&self) -> ::std::option::Option<&str> {
+    pub fn request_origin(&self) -> ::std::option::Option<& str> {
         self.request_origin.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl RunStatementInput {
 
 /// A builder for [`RunStatementInput`](crate::operation::run_statement::RunStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunStatementInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl RunStatementInputBuilder {
     }
     /// <p>The Session Id of the statement to be run.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
+    }
+    /// <p>The Session Id of the statement to be run.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The statement code to be run.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,36 +63,37 @@ impl RunStatementInputBuilder {
     }
     /// <p>The statement code to be run.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>The statement code to be run.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>The origin of the request.</p>
-    pub fn request_origin(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origin of the request.</p>
-    pub fn set_request_origin(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.request_origin = input;
-        self
+    pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_origin = input; self
+    }
+    /// <p>The origin of the request.</p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_origin
     }
     /// Consumes the builder and constructs a [`RunStatementInput`](crate::operation::run_statement::RunStatementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::run_statement::RunStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::run_statement::RunStatementInput {
-            session_id: self.session_id,
-            code: self.code,
-            request_origin: self.request_origin,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::run_statement::RunStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::run_statement::RunStatementInput {
+                session_id: self.session_id
+                ,
+                code: self.code
+                ,
+                request_origin: self.request_origin
+                ,
+            }
+        )
     }
 }
+

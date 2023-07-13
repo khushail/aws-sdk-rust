@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDataSourceSyncJobInput {
+pub struct StopDataSourceSyncJobInput  {
     /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct StopDataSourceSyncJobInput {
 }
 impl StopDataSourceSyncJobInput {
     /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index used with the data source connector.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
 impl StopDataSourceSyncJobInput {
     /// Creates a new builder-style object to manufacture [`StopDataSourceSyncJobInput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobInputBuilder {
         crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDataSourceSyncJobInput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDataSourceSyncJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl StopDataSourceSyncJobInputBuilder {
     }
     /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl StopDataSourceSyncJobInputBuilder {
     }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
+    }
+    /// <p>The identifier of the index used with the data source connector.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// Consumes the builder and constructs a [`StopDataSourceSyncJobInput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput {
-                id: self.id,
-                index_id: self.index_id,
-            },
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+            }
         )
     }
 }
+

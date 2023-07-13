@@ -3,7 +3,7 @@
 /// <p>OTAA device object for v1.0.x</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OtaaV10X {
+pub struct OtaaV10X  {
     /// <p>The AppKey value.</p>
     #[doc(hidden)]
     pub app_key: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct OtaaV10X {
 }
 impl OtaaV10X {
     /// <p>The AppKey value.</p>
-    pub fn app_key(&self) -> ::std::option::Option<&str> {
+    pub fn app_key(&self) -> ::std::option::Option<& str> {
         self.app_key.as_deref()
     }
     /// <p>The AppEUI value.</p>
-    pub fn app_eui(&self) -> ::std::option::Option<&str> {
+    pub fn app_eui(&self) -> ::std::option::Option<& str> {
         self.app_eui.as_deref()
     }
     /// <p>The GenAppKey value.</p>
-    pub fn gen_app_key(&self) -> ::std::option::Option<&str> {
+    pub fn gen_app_key(&self) -> ::std::option::Option<& str> {
         self.gen_app_key.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl OtaaV10X {
 
 /// A builder for [`OtaaV10X`](crate::types::OtaaV10X).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OtaaV10XBuilder {
     pub(crate) app_key: ::std::option::Option<::std::string::String>,
     pub(crate) app_eui: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl OtaaV10XBuilder {
     }
     /// <p>The AppKey value.</p>
     pub fn set_app_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_key = input;
-        self
+        self.app_key = input; self
+    }
+    /// <p>The AppKey value.</p>
+    pub fn get_app_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_key
     }
     /// <p>The AppEUI value.</p>
     pub fn app_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl OtaaV10XBuilder {
     }
     /// <p>The AppEUI value.</p>
     pub fn set_app_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_eui = input;
-        self
+        self.app_eui = input; self
+    }
+    /// <p>The AppEUI value.</p>
+    pub fn get_app_eui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_eui
     }
     /// <p>The GenAppKey value.</p>
     pub fn gen_app_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl OtaaV10XBuilder {
     }
     /// <p>The GenAppKey value.</p>
     pub fn set_gen_app_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gen_app_key = input;
-        self
+        self.gen_app_key = input; self
+    }
+    /// <p>The GenAppKey value.</p>
+    pub fn get_gen_app_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gen_app_key
     }
     /// Consumes the builder and constructs a [`OtaaV10X`](crate::types::OtaaV10X).
     pub fn build(self) -> crate::types::OtaaV10X {
         crate::types::OtaaV10X {
-            app_key: self.app_key,
-            app_eui: self.app_eui,
-            gen_app_key: self.gen_app_key,
+            app_key: self.app_key
+            ,
+            app_eui: self.app_eui
+            ,
+            gen_app_key: self.gen_app_key
+            ,
         }
     }
 }
+

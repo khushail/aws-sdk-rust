@@ -3,7 +3,7 @@
 /// An HTTP Live Streaming (HLS) packaging configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HlsPackage {
+pub struct HlsPackage  {
     /// An HTTP Live Streaming (HLS) encryption configuration.
     #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::HlsEncryption>,
@@ -22,11 +22,11 @@ pub struct HlsPackage {
 }
 impl HlsPackage {
     /// An HTTP Live Streaming (HLS) encryption configuration.
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::HlsEncryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::HlsEncryption> {
         self.encryption.as_ref()
     }
     /// A list of HLS manifest configurations.
-    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::HlsManifest]> {
+    pub fn hls_manifests(&self) -> ::std::option::Option<& [crate::types::HlsManifest]> {
         self.hls_manifests.as_deref()
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
@@ -51,9 +51,7 @@ impl HlsPackage {
 
 /// A builder for [`HlsPackage`](crate::types::HlsPackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsPackageBuilder {
     pub(crate) encryption: ::std::option::Option<crate::types::HlsEncryption>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
@@ -68,12 +66,12 @@ impl HlsPackageBuilder {
         self
     }
     /// An HTTP Live Streaming (HLS) encryption configuration.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsEncryption>,
-    ) -> Self {
-        self.encryption = input;
-        self
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::HlsEncryption>) -> Self {
+        self.encryption = input; self
+    }
+    /// An HTTP Live Streaming (HLS) encryption configuration.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::HlsEncryption> {
+        &self.encryption
     }
     /// Appends an item to `hls_manifests`.
     ///
@@ -82,17 +80,17 @@ impl HlsPackageBuilder {
     /// A list of HLS manifest configurations.
     pub fn hls_manifests(mut self, input: crate::types::HlsManifest) -> Self {
         let mut v = self.hls_manifests.unwrap_or_default();
-        v.push(input);
-        self.hls_manifests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hls_manifests = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of HLS manifest configurations.
-    pub fn set_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
-    ) -> Self {
-        self.hls_manifests = input;
-        self
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>) -> Self {
+        self.hls_manifests = input; self
+    }
+    /// A list of HLS manifest configurations.
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>> {
+        &self.hls_manifests
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
     pub fn include_dvb_subtitles(mut self, input: bool) -> Self {
@@ -101,8 +99,11 @@ impl HlsPackageBuilder {
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
     pub fn set_include_dvb_subtitles(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_dvb_subtitles = input;
-        self
+        self.include_dvb_subtitles = input; self
+    }
+    /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+    pub fn get_include_dvb_subtitles(&self) -> &::std::option::Option<bool> {
+        &self.include_dvb_subtitles
     }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
@@ -111,8 +112,11 @@ impl HlsPackageBuilder {
     }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub fn set_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segment_duration_seconds = input;
-        self
+        self.segment_duration_seconds = input; self
+    }
+    /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
+    pub fn get_segment_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.segment_duration_seconds
     }
     /// When enabled, audio streams will be placed in rendition groups in the output.
     pub fn use_audio_rendition_group(mut self, input: bool) -> Self {
@@ -121,17 +125,26 @@ impl HlsPackageBuilder {
     }
     /// When enabled, audio streams will be placed in rendition groups in the output.
     pub fn set_use_audio_rendition_group(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_audio_rendition_group = input;
-        self
+        self.use_audio_rendition_group = input; self
+    }
+    /// When enabled, audio streams will be placed in rendition groups in the output.
+    pub fn get_use_audio_rendition_group(&self) -> &::std::option::Option<bool> {
+        &self.use_audio_rendition_group
     }
     /// Consumes the builder and constructs a [`HlsPackage`](crate::types::HlsPackage).
     pub fn build(self) -> crate::types::HlsPackage {
         crate::types::HlsPackage {
-            encryption: self.encryption,
-            hls_manifests: self.hls_manifests,
-            include_dvb_subtitles: self.include_dvb_subtitles,
-            segment_duration_seconds: self.segment_duration_seconds,
-            use_audio_rendition_group: self.use_audio_rendition_group,
+            encryption: self.encryption
+            ,
+            hls_manifests: self.hls_manifests
+            ,
+            include_dvb_subtitles: self.include_dvb_subtitles
+            ,
+            segment_duration_seconds: self.segment_duration_seconds
+            ,
+            use_audio_rendition_group: self.use_audio_rendition_group
+            ,
         }
     }
 }
+

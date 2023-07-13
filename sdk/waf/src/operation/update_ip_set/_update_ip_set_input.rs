@@ -2,38 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIpSetInput {
+pub struct UpdateIpSetInput  {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     #[doc(hidden)]
     pub ip_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
-    /// <ul>
-    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
-    /// </ul>
+    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li> 
+    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li> 
+    /// </ul> 
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>,
 }
 impl UpdateIpSetInput {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    pub fn ip_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn ip_set_id(&self) -> ::std::option::Option<& str> {
         self.ip_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
-    /// <ul>
-    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
-    /// </ul>
+    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li> 
+    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li> 
+    /// </ul> 
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::IpSetUpdate]> {
+    pub fn updates(&self) -> ::std::option::Option<& [crate::types::IpSetUpdate]> {
         self.updates.as_deref()
     }
 }
@@ -46,9 +46,7 @@ impl UpdateIpSetInput {
 
 /// A builder for [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIpSetInputBuilder {
     pub(crate) ip_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -62,8 +60,11 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub fn set_ip_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_set_id = input;
-        self
+        self.ip_set_id = input; self
+    }
+    /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    pub fn get_ip_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,49 +73,58 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Appends an item to `updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).
     ///
-    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
-    /// <ul>
-    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
-    /// </ul>
+    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li> 
+    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li> 
+    /// </ul> 
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     pub fn updates(mut self, input: crate::types::IpSetUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
-        v.push(input);
-        self.updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.updates = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
-    /// <ul>
-    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
-    /// </ul>
+    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li> 
+    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li> 
+    /// </ul> 
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>,
-    ) -> Self {
-        self.updates = input;
-        self
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>) -> Self {
+        self.updates = input; self
+    }
+    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li> 
+    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li> 
+    /// </ul> 
+    /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>> {
+        &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ip_set::UpdateIpSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_ip_set::UpdateIpSetInput {
-            ip_set_id: self.ip_set_id,
-            change_token: self.change_token,
-            updates: self.updates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_ip_set::UpdateIpSetInput {
+                ip_set_id: self.ip_set_id
+                ,
+                change_token: self.change_token
+                ,
+                updates: self.updates
+                ,
+            }
+        )
     }
 }
+

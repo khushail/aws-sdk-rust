@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the response to the <code>GetReusableDelegationSet</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReusableDelegationSetOutput {
+pub struct GetReusableDelegationSetOutput  {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
     #[doc(hidden)]
     pub delegation_set: ::std::option::Option<crate::types::DelegationSet>,
@@ -11,27 +11,25 @@ pub struct GetReusableDelegationSetOutput {
 }
 impl GetReusableDelegationSetOutput {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
-    pub fn delegation_set(&self) -> ::std::option::Option<&crate::types::DelegationSet> {
+    pub fn delegation_set(&self) -> ::std::option::Option<& crate::types::DelegationSet> {
         self.delegation_set.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetReusableDelegationSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetReusableDelegationSetOutput {
     /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetOutput`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput).
-    pub fn builder() -> crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder{
+    pub fn builder() -> crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder {
         crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReusableDelegationSetOutput`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReusableDelegationSetOutputBuilder {
     pub(crate) delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     _request_id: Option<String>,
@@ -43,29 +41,29 @@ impl GetReusableDelegationSetOutputBuilder {
         self
     }
     /// <p>A complex type that contains information about the reusable delegation set.</p>
-    pub fn set_delegation_set(
-        mut self,
-        input: ::std::option::Option<crate::types::DelegationSet>,
-    ) -> Self {
-        self.delegation_set = input;
-        self
+    pub fn set_delegation_set(mut self, input: ::std::option::Option<crate::types::DelegationSet>) -> Self {
+        self.delegation_set = input; self
+    }
+    /// <p>A complex type that contains information about the reusable delegation set.</p>
+    pub fn get_delegation_set(&self) -> &::std::option::Option<crate::types::DelegationSet> {
+        &self.delegation_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetReusableDelegationSetOutput`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput {
+    pub fn build(self) -> crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput {
         crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput {
-            delegation_set: self.delegation_set,
+            delegation_set: self.delegation_set
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>This is a structure that expresses the Region for a given account, consisting of a name and opt-in status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Region {
+pub struct Region  {
     /// <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
     #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Region {
 }
 impl Region {
     /// <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
-    pub fn region_opt_status(&self) -> ::std::option::Option<&crate::types::RegionOptStatus> {
+    pub fn region_opt_status(&self) -> ::std::option::Option<& crate::types::RegionOptStatus> {
         self.region_opt_status.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Region {
 
 /// A builder for [`Region`](crate::types::Region).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) region_opt_status: ::std::option::Option<crate::types::RegionOptStatus>,
@@ -45,8 +43,11 @@ impl RegionBuilder {
     }
     /// <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
+    }
+    /// <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
     }
     /// <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
     pub fn region_opt_status(mut self, input: crate::types::RegionOptStatus) -> Self {
@@ -54,18 +55,21 @@ impl RegionBuilder {
         self
     }
     /// <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
-    pub fn set_region_opt_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionOptStatus>,
-    ) -> Self {
-        self.region_opt_status = input;
-        self
+    pub fn set_region_opt_status(mut self, input: ::std::option::Option<crate::types::RegionOptStatus>) -> Self {
+        self.region_opt_status = input; self
+    }
+    /// <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
+    pub fn get_region_opt_status(&self) -> &::std::option::Option<crate::types::RegionOptStatus> {
+        &self.region_opt_status
     }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
     pub fn build(self) -> crate::types::Region {
         crate::types::Region {
-            region_name: self.region_name,
-            region_opt_status: self.region_opt_status,
+            region_name: self.region_name
+            ,
+            region_opt_status: self.region_opt_status
+            ,
         }
     }
 }
+

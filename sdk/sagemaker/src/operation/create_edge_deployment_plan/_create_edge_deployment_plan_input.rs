@@ -2,14 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEdgeDeploymentPlanInput {
+pub struct CreateEdgeDeploymentPlanInput  {
     /// <p>The name of the edge deployment plan.</p>
     #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>List of models associated with the edge deployment plan.</p>
     #[doc(hidden)]
-    pub model_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
+    pub model_configs: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
     /// <p>The device fleet used for this edge deployment plan.</p>
     #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
@@ -22,66 +21,56 @@ pub struct CreateEdgeDeploymentPlanInput {
 }
 impl CreateEdgeDeploymentPlanInput {
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<& str> {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>List of models associated with the edge deployment plan.</p>
-    pub fn model_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EdgeDeploymentModelConfig]> {
+    pub fn model_configs(&self) -> ::std::option::Option<& [crate::types::EdgeDeploymentModelConfig]> {
         self.model_configs.as_deref()
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
-    pub fn stages(&self) -> ::std::option::Option<&[crate::types::DeploymentStage]> {
+    pub fn stages(&self) -> ::std::option::Option<& [crate::types::DeploymentStage]> {
         self.stages.as_deref()
     }
     /// <p>List of tags with which to tag the edge deployment plan.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateEdgeDeploymentPlanInput {
     /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentPlanInput`](crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanInput).
-    pub fn builder(
-    ) -> crate::operation::create_edge_deployment_plan::builders::CreateEdgeDeploymentPlanInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_edge_deployment_plan::builders::CreateEdgeDeploymentPlanInputBuilder {
         crate::operation::create_edge_deployment_plan::builders::CreateEdgeDeploymentPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEdgeDeploymentPlanInput`](crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEdgeDeploymentPlanInputBuilder {
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
-    pub(crate) model_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
+    pub(crate) model_configs: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEdgeDeploymentPlanInputBuilder {
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.edge_deployment_plan_name = input;
-        self
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.edge_deployment_plan_name = input; self
+    }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_deployment_plan_name
     }
     /// Appends an item to `model_configs`.
     ///
@@ -90,33 +79,30 @@ impl CreateEdgeDeploymentPlanInputBuilder {
     /// <p>List of models associated with the edge deployment plan.</p>
     pub fn model_configs(mut self, input: crate::types::EdgeDeploymentModelConfig) -> Self {
         let mut v = self.model_configs.unwrap_or_default();
-        v.push(input);
-        self.model_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.model_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of models associated with the edge deployment plan.</p>
-    pub fn set_model_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
-    ) -> Self {
-        self.model_configs = input;
-        self
+    pub fn set_model_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>) -> Self {
+        self.model_configs = input; self
+    }
+    /// <p>List of models associated with the edge deployment plan.</p>
+    pub fn get_model_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>> {
+        &self.model_configs
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.device_fleet_name = input;
-        self
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.device_fleet_name = input; self
+    }
+    /// <p>The device fleet used for this edge deployment plan.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
     }
     /// Appends an item to `stages`.
     ///
@@ -125,17 +111,17 @@ impl CreateEdgeDeploymentPlanInputBuilder {
     /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
     pub fn stages(mut self, input: crate::types::DeploymentStage) -> Self {
         let mut v = self.stages.unwrap_or_default();
-        v.push(input);
-        self.stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
-    pub fn set_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>,
-    ) -> Self {
-        self.stages = input;
-        self
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>) -> Self {
+        self.stages = input; self
+    }
+    /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>> {
+        &self.stages
     }
     /// Appends an item to `tags`.
     ///
@@ -144,33 +130,34 @@ impl CreateEdgeDeploymentPlanInputBuilder {
     /// <p>List of tags with which to tag the edge deployment plan.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of tags with which to tag the edge deployment plan.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>List of tags with which to tag the edge deployment plan.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEdgeDeploymentPlanInput`](crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanInput {
-                edge_deployment_plan_name: self.edge_deployment_plan_name,
-                model_configs: self.model_configs,
-                device_fleet_name: self.device_fleet_name,
-                stages: self.stages,
-                tags: self.tags,
-            },
+                edge_deployment_plan_name: self.edge_deployment_plan_name
+                ,
+                model_configs: self.model_configs
+                ,
+                device_fleet_name: self.device_fleet_name
+                ,
+                stages: self.stages
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

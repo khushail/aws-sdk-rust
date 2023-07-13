@@ -3,14 +3,14 @@
 /// <p>Information about an invalid parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidParameterDetail {
+pub struct InvalidParameterDetail  {
     /// <p>The reason the parameter is invalid.</p>
     #[doc(hidden)]
     pub problem: ::std::option::Option<crate::types::InvalidParameterProblem>,
 }
 impl InvalidParameterDetail {
     /// <p>The reason the parameter is invalid.</p>
-    pub fn problem(&self) -> ::std::option::Option<&crate::types::InvalidParameterProblem> {
+    pub fn problem(&self) -> ::std::option::Option<& crate::types::InvalidParameterProblem> {
         self.problem.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl InvalidParameterDetail {
 
 /// A builder for [`InvalidParameterDetail`](crate::types::InvalidParameterDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidParameterDetailBuilder {
     pub(crate) problem: ::std::option::Option<crate::types::InvalidParameterProblem>,
 }
@@ -36,17 +34,19 @@ impl InvalidParameterDetailBuilder {
         self
     }
     /// <p>The reason the parameter is invalid.</p>
-    pub fn set_problem(
-        mut self,
-        input: ::std::option::Option<crate::types::InvalidParameterProblem>,
-    ) -> Self {
-        self.problem = input;
-        self
+    pub fn set_problem(mut self, input: ::std::option::Option<crate::types::InvalidParameterProblem>) -> Self {
+        self.problem = input; self
+    }
+    /// <p>The reason the parameter is invalid.</p>
+    pub fn get_problem(&self) -> &::std::option::Option<crate::types::InvalidParameterProblem> {
+        &self.problem
     }
     /// Consumes the builder and constructs a [`InvalidParameterDetail`](crate::types::InvalidParameterDetail).
     pub fn build(self) -> crate::types::InvalidParameterDetail {
         crate::types::InvalidParameterDetail {
-            problem: self.problem,
+            problem: self.problem
+            ,
         }
     }
 }
+

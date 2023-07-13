@@ -3,7 +3,7 @@
 /// <p>The contact that Incident Manager is engaging during an incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactTargetInfo {
+pub struct ContactTargetInfo  {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ContactTargetInfo {
 }
 impl ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
@@ -30,9 +30,7 @@ impl ContactTargetInfo {
 
 /// A builder for [`ContactTargetInfo`](crate::types::ContactTargetInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactTargetInfoBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_essential: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl ContactTargetInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn is_essential(mut self, input: bool) -> Self {
@@ -55,14 +56,20 @@ impl ContactTargetInfoBuilder {
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn set_is_essential(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_essential = input;
-        self
+        self.is_essential = input; self
+    }
+    /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
+    pub fn get_is_essential(&self) -> &::std::option::Option<bool> {
+        &self.is_essential
     }
     /// Consumes the builder and constructs a [`ContactTargetInfo`](crate::types::ContactTargetInfo).
     pub fn build(self) -> crate::types::ContactTargetInfo {
         crate::types::ContactTargetInfo {
-            contact_id: self.contact_id,
-            is_essential: self.is_essential,
+            contact_id: self.contact_id
+            ,
+            is_essential: self.is_essential
+            ,
         }
     }
 }
+

@@ -3,102 +3,87 @@ pub use crate::operation::create_identity_provider::_create_identity_provider_ou
 
 pub use crate::operation::create_identity_provider::_create_identity_provider_input::CreateIdentityProviderInputBuilder;
 
+impl CreateIdentityProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_identity_provider::CreateIdentityProviderOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_identity_provider::CreateIdentityProviderError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_identity_provider();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateIdentityProvider`.
-///
+/// 
 /// <p>Creates an IdP for a user pool.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIdentityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder,
+                    inner: crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder,
 }
-impl CreateIdentityProviderFluentBuilder {
+impl CreateIdentityProviderFluentBuilder  {
     /// Creates a new `CreateIdentityProvider`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_identity_provider::CreateIdentityProvider,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateIdentityProvider as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_identity_provider::CreateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_identity_provider::CreateIdentityProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_identity_provider::CreateIdentityProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_identity_provider::CreateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_identity_provider::CreateIdentityProvider,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_identity_provider::CreateIdentityProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_identity_provider::CreateIdentityProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -109,21 +94,23 @@ impl CreateIdentityProviderFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The IdP name.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The IdP name.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
+    }
+    /// <p>The IdP name.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_name()
     }
     /// <p>The IdP type.</p>
     pub fn provider_type(mut self, input: crate::types::IdentityProviderTypeType) -> Self {
@@ -131,171 +118,208 @@ impl CreateIdentityProviderFluentBuilder {
         self
     }
     /// <p>The IdP type.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderTypeType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderTypeType>) -> Self {
         self.inner = self.inner.set_provider_type(input);
         self
+    }
+    /// <p>The IdP type.</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
+        self.inner.get_provider_type()
     }
     /// Adds a key-value pair to `ProviderDetails`.
     ///
     /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
     ///
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
-    /// <ul>
-    /// <li> <p>For Google and Login with Amazon:</p>
-    /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Facebook:</p>
-    /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>api_version</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Sign in with Apple:</p>
-    /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>team_id</p> </li>
-    /// <li> <p>key_id</p> </li>
-    /// <li> <p>private_key</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For OpenID Connect (OIDC) providers:</p>
-    /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>attributes_request_method</p> </li>
-    /// <li> <p>oidc_issuer</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
-    /// <ul>
-    /// <li> <p>authorize_url </p> </li>
-    /// <li> <p>token_url </p> </li>
-    /// <li> <p>attributes_url </p> </li>
-    /// <li> <p>jwks_uri </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
-    /// <ul>
-    /// <li> <p>attributes_url_add_attributes </p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>For SAML providers:</p>
-    /// <ul>
-    /// <li> <p>MetadataFile or MetadataURL</p> </li>
-    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
-    /// </ul> </li>
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p> 
+    /// <ul> 
+    /// <li> <p>For Google and Login with Amazon:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>client_secret</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Facebook:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>client_secret</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// <li> <p>api_version</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Sign in with Apple:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>team_id</p> </li> 
+    /// <li> <p>key_id</p> </li> 
+    /// <li> <p>private_key</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For OpenID Connect (OIDC) providers:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>client_secret</p> </li> 
+    /// <li> <p>attributes_request_method</p> </li> 
+    /// <li> <p>oidc_issuer</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p> 
+    /// <ul> 
+    /// <li> <p>authorize_url </p> </li> 
+    /// <li> <p>token_url </p> </li> 
+    /// <li> <p>attributes_url </p> </li> 
+    /// <li> <p>jwks_uri </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p> 
+    /// <ul> 
+    /// <li> <p>attributes_url_add_attributes </p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For SAML providers:</p> 
+    /// <ul> 
+    /// <li> <p>MetadataFile or MetadataURL</p> </li> 
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn provider_details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_details(k.into(), v.into());
         self
     }
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
-    /// <ul>
-    /// <li> <p>For Google and Login with Amazon:</p>
-    /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Facebook:</p>
-    /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>api_version</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For Sign in with Apple:</p>
-    /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>team_id</p> </li>
-    /// <li> <p>key_id</p> </li>
-    /// <li> <p>private_key</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// </ul> </li>
-    /// <li> <p>For OpenID Connect (OIDC) providers:</p>
-    /// <ul>
-    /// <li> <p>client_id</p> </li>
-    /// <li> <p>client_secret</p> </li>
-    /// <li> <p>attributes_request_method</p> </li>
-    /// <li> <p>oidc_issuer</p> </li>
-    /// <li> <p>authorize_scopes</p> </li>
-    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
-    /// <ul>
-    /// <li> <p>authorize_url </p> </li>
-    /// <li> <p>token_url </p> </li>
-    /// <li> <p>attributes_url </p> </li>
-    /// <li> <p>jwks_uri </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
-    /// <ul>
-    /// <li> <p>attributes_url_add_attributes </p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>For SAML providers:</p>
-    /// <ul>
-    /// <li> <p>MetadataFile or MetadataURL</p> </li>
-    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
-    /// </ul> </li>
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p> 
+    /// <ul> 
+    /// <li> <p>For Google and Login with Amazon:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>client_secret</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Facebook:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>client_secret</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// <li> <p>api_version</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Sign in with Apple:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>team_id</p> </li> 
+    /// <li> <p>key_id</p> </li> 
+    /// <li> <p>private_key</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For OpenID Connect (OIDC) providers:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>client_secret</p> </li> 
+    /// <li> <p>attributes_request_method</p> </li> 
+    /// <li> <p>oidc_issuer</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p> 
+    /// <ul> 
+    /// <li> <p>authorize_url </p> </li> 
+    /// <li> <p>token_url </p> </li> 
+    /// <li> <p>attributes_url </p> </li> 
+    /// <li> <p>jwks_uri </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p> 
+    /// <ul> 
+    /// <li> <p>attributes_url_add_attributes </p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For SAML providers:</p> 
+    /// <ul> 
+    /// <li> <p>MetadataFile or MetadataURL</p> </li> 
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn set_provider_details(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_provider_details(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_provider_details(input);
         self
+    }
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p> 
+    /// <ul> 
+    /// <li> <p>For Google and Login with Amazon:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>client_secret</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Facebook:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>client_secret</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// <li> <p>api_version</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For Sign in with Apple:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>team_id</p> </li> 
+    /// <li> <p>key_id</p> </li> 
+    /// <li> <p>private_key</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For OpenID Connect (OIDC) providers:</p> 
+    /// <ul> 
+    /// <li> <p>client_id</p> </li> 
+    /// <li> <p>client_secret</p> </li> 
+    /// <li> <p>attributes_request_method</p> </li> 
+    /// <li> <p>oidc_issuer</p> </li> 
+    /// <li> <p>authorize_scopes</p> </li> 
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p> 
+    /// <ul> 
+    /// <li> <p>authorize_url </p> </li> 
+    /// <li> <p>token_url </p> </li> 
+    /// <li> <p>attributes_url </p> </li> 
+    /// <li> <p>jwks_uri </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p> 
+    /// <ul> 
+    /// <li> <p>attributes_url_add_attributes </p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>For SAML providers:</p> 
+    /// <ul> 
+    /// <li> <p>MetadataFile or MetadataURL</p> </li> 
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li> 
+    /// </ul> </li> 
+    /// </ul>
+    pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_provider_details()
     }
     /// Adds a key-value pair to `AttributeMapping`.
     ///
     /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
     ///
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn attribute_mapping(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_mapping(k.into(), v.into());
         self
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn set_attribute_mapping(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attribute_mapping(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attribute_mapping(input);
         self
+    }
+    /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
+    pub fn get_attribute_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_attribute_mapping()
     }
     /// Appends an item to `IdpIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
     ///
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idp_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idp_identifiers(input.into());
         self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn set_idp_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_idp_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_idp_identifiers(input);
         self
     }
+    /// <p>A list of IdP identifiers.</p>
+    pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_idp_identifiers()
+    }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <code>RespondDecisionTaskCompleted</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleLambdaFunctionDecisionAttributes {
+pub struct ScheduleLambdaFunctionDecisionAttributes  {
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,31 +16,31 @@ pub struct ScheduleLambdaFunctionDecisionAttributes {
     /// <p>The optional input data to be supplied to the Lambda function.</p>
     #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
-    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p> 
     /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
     #[doc(hidden)]
     pub start_to_close_timeout: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleLambdaFunctionDecisionAttributes {
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name, or ARN, of the Lambda function to schedule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
-    pub fn control(&self) -> ::std::option::Option<&str> {
+    pub fn control(&self) -> ::std::option::Option<& str> {
         self.control.as_deref()
     }
     /// <p>The optional input data to be supplied to the Lambda function.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
-    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p> 
     /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
-    pub fn start_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn start_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.start_to_close_timeout.as_deref()
     }
 }
@@ -53,9 +53,7 @@ impl ScheduleLambdaFunctionDecisionAttributes {
 
 /// A builder for [`ScheduleLambdaFunctionDecisionAttributes`](crate::types::ScheduleLambdaFunctionDecisionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionDecisionAttributesBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -71,8 +69,11 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
     }
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>A string that identifies the Lambda function execution in the event history.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name, or ARN, of the Lambda function to schedule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +82,11 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
     }
     /// <p>The name, or ARN, of the Lambda function to schedule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name, or ARN, of the Lambda function to schedule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,8 +95,11 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
     }
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control = input;
-        self
+        self.control = input; self
+    }
+    /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
     }
     /// <p>The optional input data to be supplied to the Lambda function.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,35 +108,42 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
     }
     /// <p>The optional input data to be supplied to the Lambda function.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
-    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
+    /// <p>The optional input data to be supplied to the Lambda function.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
+    }
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p> 
     /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
-    pub fn start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p> 
     /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
-    pub fn set_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.start_to_close_timeout = input;
-        self
+    pub fn set_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.start_to_close_timeout = input; self
+    }
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p> 
+    /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
+    pub fn get_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_to_close_timeout
     }
     /// Consumes the builder and constructs a [`ScheduleLambdaFunctionDecisionAttributes`](crate::types::ScheduleLambdaFunctionDecisionAttributes).
     pub fn build(self) -> crate::types::ScheduleLambdaFunctionDecisionAttributes {
         crate::types::ScheduleLambdaFunctionDecisionAttributes {
-            id: self.id,
-            name: self.name,
-            control: self.control,
-            input: self.input,
-            start_to_close_timeout: self.start_to_close_timeout,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            control: self.control
+            ,
+            input: self.input
+            ,
+            start_to_close_timeout: self.start_to_close_timeout
+            ,
         }
     }
 }
+

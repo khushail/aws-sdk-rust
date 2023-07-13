@@ -3,11 +3,11 @@
 /// <p>An answer summary of a lens review in a workload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnswerSummary {
+pub struct AnswerSummary  {
     /// <p>The ID of the question.</p>
     #[doc(hidden)]
     pub question_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> 
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     #[doc(hidden)]
     pub pillar_id: ::std::option::Option<::std::string::String>,
@@ -17,14 +17,13 @@ pub struct AnswerSummary {
     /// <p>List of choices available for a question.</p>
     #[doc(hidden)]
     pub choices: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
-    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>List of selected choice IDs in a question answer.</p> 
     /// <p>The values entered replace the previously selected choices.</p>
     #[doc(hidden)]
     pub selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of selected choices to a question in your workload.</p>
     #[doc(hidden)]
-    pub choice_answer_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
+    pub choice_answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
     #[doc(hidden)]
     pub is_applicable: bool,
@@ -34,34 +33,35 @@ pub struct AnswerSummary {
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::AnswerReason>,
+    /// <p>The type of the question.</p>
+    #[doc(hidden)]
+    pub question_type: ::std::option::Option<crate::types::QuestionType>,
 }
 impl AnswerSummary {
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> ::std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<& str> {
         self.question_id.as_deref()
     }
-    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> 
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<& str> {
         self.pillar_id.as_deref()
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(&self) -> ::std::option::Option<&str> {
+    pub fn question_title(&self) -> ::std::option::Option<& str> {
         self.question_title.as_deref()
     }
     /// <p>List of choices available for a question.</p>
-    pub fn choices(&self) -> ::std::option::Option<&[crate::types::Choice]> {
+    pub fn choices(&self) -> ::std::option::Option<& [crate::types::Choice]> {
         self.choices.as_deref()
     }
-    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>List of selected choice IDs in a question answer.</p> 
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn selected_choices(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.selected_choices.as_deref()
     }
     /// <p>A list of selected choices to a question in your workload.</p>
-    pub fn choice_answer_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChoiceAnswerSummary]> {
+    pub fn choice_answer_summaries(&self) -> ::std::option::Option<& [crate::types::ChoiceAnswerSummary]> {
         self.choice_answer_summaries.as_deref()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
@@ -69,12 +69,16 @@ impl AnswerSummary {
         self.is_applicable
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
-    pub fn risk(&self) -> ::std::option::Option<&crate::types::Risk> {
+    pub fn risk(&self) -> ::std::option::Option<& crate::types::Risk> {
         self.risk.as_ref()
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::AnswerReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::AnswerReason> {
         self.reason.as_ref()
+    }
+    /// <p>The type of the question.</p>
+    pub fn question_type(&self) -> ::std::option::Option<& crate::types::QuestionType> {
+        self.question_type.as_ref()
     }
 }
 impl AnswerSummary {
@@ -86,20 +90,18 @@ impl AnswerSummary {
 
 /// A builder for [`AnswerSummary`](crate::types::AnswerSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnswerSummaryBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
     pub(crate) question_title: ::std::option::Option<::std::string::String>,
     pub(crate) choices: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
     pub(crate) selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) choice_answer_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
+    pub(crate) choice_answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
     pub(crate) is_applicable: ::std::option::Option<bool>,
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
     pub(crate) reason: ::std::option::Option<crate::types::AnswerReason>,
+    pub(crate) question_type: ::std::option::Option<crate::types::QuestionType>,
 }
 impl AnswerSummaryBuilder {
     /// <p>The ID of the question.</p>
@@ -109,36 +111,40 @@ impl AnswerSummaryBuilder {
     }
     /// <p>The ID of the question.</p>
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_id = input;
-        self
+        self.question_id = input; self
     }
-    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_id
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> 
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pillar_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> 
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pillar_id = input;
-        self
+        self.pillar_id = input; self
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> 
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_id
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the question.</p>
-    pub fn set_question_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.question_title = input;
-        self
+    pub fn set_question_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.question_title = input; self
+    }
+    /// <p>The title of the question.</p>
+    pub fn get_question_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_title
     }
     /// Appends an item to `choices`.
     ///
@@ -147,41 +153,39 @@ impl AnswerSummaryBuilder {
     /// <p>List of choices available for a question.</p>
     pub fn choices(mut self, input: crate::types::Choice) -> Self {
         let mut v = self.choices.unwrap_or_default();
-        v.push(input);
-        self.choices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.choices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of choices available for a question.</p>
-    pub fn set_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
-    ) -> Self {
-        self.choices = input;
-        self
+    pub fn set_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>) -> Self {
+        self.choices = input; self
+    }
+    /// <p>List of choices available for a question.</p>
+    pub fn get_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Choice>> {
+        &self.choices
     }
     /// Appends an item to `selected_choices`.
     ///
     /// To override the contents of this collection use [`set_selected_choices`](Self::set_selected_choices).
     ///
-    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>List of selected choice IDs in a question answer.</p> 
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_choices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_choices.unwrap_or_default();
-        v.push(input.into());
-        self.selected_choices = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.selected_choices = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>List of selected choice IDs in a question answer.</p> 
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn set_selected_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.selected_choices = input;
-        self
+    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.selected_choices = input; self
+    }
+    /// <p>List of selected choice IDs in a question answer.</p> 
+    /// <p>The values entered replace the previously selected choices.</p>
+    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.selected_choices
     }
     /// Appends an item to `choice_answer_summaries`.
     ///
@@ -190,17 +194,17 @@ impl AnswerSummaryBuilder {
     /// <p>A list of selected choices to a question in your workload.</p>
     pub fn choice_answer_summaries(mut self, input: crate::types::ChoiceAnswerSummary) -> Self {
         let mut v = self.choice_answer_summaries.unwrap_or_default();
-        v.push(input);
-        self.choice_answer_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.choice_answer_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of selected choices to a question in your workload.</p>
-    pub fn set_choice_answer_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
-    ) -> Self {
-        self.choice_answer_summaries = input;
-        self
+    pub fn set_choice_answer_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>) -> Self {
+        self.choice_answer_summaries = input; self
+    }
+    /// <p>A list of selected choices to a question in your workload.</p>
+    pub fn get_choice_answer_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>> {
+        &self.choice_answer_summaries
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn is_applicable(mut self, input: bool) -> Self {
@@ -209,8 +213,11 @@ impl AnswerSummaryBuilder {
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn set_is_applicable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_applicable = input;
-        self
+        self.is_applicable = input; self
+    }
+    /// <p>Defines whether this question is applicable to a lens review.</p>
+    pub fn get_is_applicable(&self) -> &::std::option::Option<bool> {
+        &self.is_applicable
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn risk(mut self, input: crate::types::Risk) -> Self {
@@ -219,8 +226,11 @@ impl AnswerSummaryBuilder {
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn set_risk(mut self, input: ::std::option::Option<crate::types::Risk>) -> Self {
-        self.risk = input;
-        self
+        self.risk = input; self
+    }
+    /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    pub fn get_risk(&self) -> &::std::option::Option<crate::types::Risk> {
+        &self.risk
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn reason(mut self, input: crate::types::AnswerReason) -> Self {
@@ -229,21 +239,50 @@ impl AnswerSummaryBuilder {
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AnswerReason>) -> Self {
-        self.reason = input;
+        self.reason = input; self
+    }
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::AnswerReason> {
+        &self.reason
+    }
+    /// <p>The type of the question.</p>
+    pub fn question_type(mut self, input: crate::types::QuestionType) -> Self {
+        self.question_type = ::std::option::Option::Some(input);
         self
+    }
+    /// <p>The type of the question.</p>
+    pub fn set_question_type(mut self, input: ::std::option::Option<crate::types::QuestionType>) -> Self {
+        self.question_type = input; self
+    }
+    /// <p>The type of the question.</p>
+    pub fn get_question_type(&self) -> &::std::option::Option<crate::types::QuestionType> {
+        &self.question_type
     }
     /// Consumes the builder and constructs a [`AnswerSummary`](crate::types::AnswerSummary).
     pub fn build(self) -> crate::types::AnswerSummary {
         crate::types::AnswerSummary {
-            question_id: self.question_id,
-            pillar_id: self.pillar_id,
-            question_title: self.question_title,
-            choices: self.choices,
-            selected_choices: self.selected_choices,
-            choice_answer_summaries: self.choice_answer_summaries,
-            is_applicable: self.is_applicable.unwrap_or_default(),
-            risk: self.risk,
-            reason: self.reason,
+            question_id: self.question_id
+            ,
+            pillar_id: self.pillar_id
+            ,
+            question_title: self.question_title
+            ,
+            choices: self.choices
+            ,
+            selected_choices: self.selected_choices
+            ,
+            choice_answer_summaries: self.choice_answer_summaries
+            ,
+            is_applicable: self.is_applicable
+                .unwrap_or_default()
+            ,
+            risk: self.risk
+            ,
+            reason: self.reason
+            ,
+            question_type: self.question_type
+            ,
         }
     }
 }
+

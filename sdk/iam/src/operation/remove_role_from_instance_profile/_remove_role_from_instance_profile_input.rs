@@ -2,82 +2,77 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveRoleFromInstanceProfileInput {
-    /// <p>The name of the instance profile to update.</p>
+pub struct RemoveRoleFromInstanceProfileInput  {
+    /// <p>The name of the instance profile to update.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the role to remove.</p>
+    /// <p>The name of the role to remove.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoveRoleFromInstanceProfileInput {
-    /// <p>The name of the instance profile to update.</p>
+    /// <p>The name of the instance profile to update.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> ::std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
-    /// <p>The name of the role to remove.</p>
+    /// <p>The name of the role to remove.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
 }
 impl RemoveRoleFromInstanceProfileInput {
     /// Creates a new builder-style object to manufacture [`RemoveRoleFromInstanceProfileInput`](crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileInput).
-    pub fn builder() -> crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileInputBuilder{
+    pub fn builder() -> crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileInputBuilder {
         crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveRoleFromInstanceProfileInput`](crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveRoleFromInstanceProfileInputBuilder {
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoveRoleFromInstanceProfileInputBuilder {
-    /// <p>The name of the instance profile to update.</p>
+    /// <p>The name of the instance profile to update.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the instance profile to update.</p>
+    /// <p>The name of the instance profile to update.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.instance_profile_name = input;
-        self
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_profile_name = input; self
     }
-    /// <p>The name of the role to remove.</p>
+    /// <p>The name of the instance profile to update.</p> 
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_profile_name
+    }
+    /// <p>The name of the role to remove.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the role to remove.</p>
+    /// <p>The name of the role to remove.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
+    }
+    /// <p>The name of the role to remove.</p> 
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// Consumes the builder and constructs a [`RemoveRoleFromInstanceProfileInput`](crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileInput {
                 instance_profile_name: self.instance_profile_name
@@ -88,3 +83,4 @@ impl RemoveRoleFromInstanceProfileInputBuilder {
         )
     }
 }
+

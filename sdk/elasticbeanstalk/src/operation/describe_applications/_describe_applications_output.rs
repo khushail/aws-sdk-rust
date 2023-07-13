@@ -3,7 +3,7 @@
 /// <p>Result message containing a list of application descriptions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationsOutput {
+pub struct DescribeApplicationsOutput  {
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
     #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
@@ -11,31 +11,27 @@ pub struct DescribeApplicationsOutput {
 }
 impl DescribeApplicationsOutput {
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::ApplicationDescription]> {
+    pub fn applications(&self) -> ::std::option::Option<& [crate::types::ApplicationDescription]> {
         self.applications.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeApplicationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder {
         crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationsOutputBuilder {
-    pub(crate) applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationsOutputBuilder {
@@ -46,32 +42,34 @@ impl DescribeApplicationsOutputBuilder {
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
     pub fn applications(mut self, input: crate::types::ApplicationDescription) -> Self {
         let mut v = self.applications.unwrap_or_default();
-        v.push(input);
-        self.applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
-    ) -> Self {
-        self.applications = input;
-        self
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>) -> Self {
+        self.applications = input; self
+    }
+    /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>> {
+        &self.applications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
     pub fn build(self) -> crate::operation::describe_applications::DescribeApplicationsOutput {
         crate::operation::describe_applications::DescribeApplicationsOutput {
-            applications: self.applications,
+            applications: self.applications
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

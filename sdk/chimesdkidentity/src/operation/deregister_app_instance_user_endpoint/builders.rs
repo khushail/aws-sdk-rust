@@ -3,91 +3,100 @@ pub use crate::operation::deregister_app_instance_user_endpoint::_deregister_app
 
 pub use crate::operation::deregister_app_instance_user_endpoint::_deregister_app_instance_user_endpoint_input::DeregisterAppInstanceUserEndpointInputBuilder;
 
+impl DeregisterAppInstanceUserEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.deregister_app_instance_user_endpoint();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DeregisterAppInstanceUserEndpoint`.
-///
+/// 
 /// <p>Deregisters an <code>AppInstanceUserEndpoint</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterAppInstanceUserEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointInputBuilder,
 }
-impl DeregisterAppInstanceUserEndpointFluentBuilder {
+impl DeregisterAppInstanceUserEndpointFluentBuilder  {
     /// Creates a new `DeregisterAppInstanceUserEndpoint`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterAppInstanceUserEndpoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_user_arn()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,4 +108,9 @@ impl DeregisterAppInstanceUserEndpointFluentBuilder {
         self.inner = self.inner.set_endpoint_id(input);
         self
     }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
+    }
 }
+

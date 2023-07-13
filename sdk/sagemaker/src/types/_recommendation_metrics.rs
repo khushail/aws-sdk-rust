@@ -3,7 +3,7 @@
 /// <p>The metrics of recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationMetrics {
+pub struct RecommendationMetrics  {
     /// <p>Defines the cost per hour for the instance. </p>
     #[doc(hidden)]
     pub cost_per_hour: f32,
@@ -16,11 +16,11 @@ pub struct RecommendationMetrics {
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
     #[doc(hidden)]
     pub model_latency: i32,
-    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p> 
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     #[doc(hidden)]
     pub cpu_utilization: ::std::option::Option<f32>,
-    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p> 
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     #[doc(hidden)]
     pub memory_utilization: ::std::option::Option<f32>,
@@ -42,12 +42,12 @@ impl RecommendationMetrics {
     pub fn model_latency(&self) -> i32 {
         self.model_latency
     }
-    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p> 
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn cpu_utilization(&self) -> ::std::option::Option<f32> {
         self.cpu_utilization
     }
-    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p> 
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn memory_utilization(&self) -> ::std::option::Option<f32> {
         self.memory_utilization
@@ -62,9 +62,7 @@ impl RecommendationMetrics {
 
 /// A builder for [`RecommendationMetrics`](crate::types::RecommendationMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationMetricsBuilder {
     pub(crate) cost_per_hour: ::std::option::Option<f32>,
     pub(crate) cost_per_inference: ::std::option::Option<f32>,
@@ -81,8 +79,11 @@ impl RecommendationMetricsBuilder {
     }
     /// <p>Defines the cost per hour for the instance. </p>
     pub fn set_cost_per_hour(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.cost_per_hour = input;
-        self
+        self.cost_per_hour = input; self
+    }
+    /// <p>Defines the cost per hour for the instance. </p>
+    pub fn get_cost_per_hour(&self) -> &::std::option::Option<f32> {
+        &self.cost_per_hour
     }
     /// <p>Defines the cost per inference for the instance .</p>
     pub fn cost_per_inference(mut self, input: f32) -> Self {
@@ -91,8 +92,11 @@ impl RecommendationMetricsBuilder {
     }
     /// <p>Defines the cost per inference for the instance .</p>
     pub fn set_cost_per_inference(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.cost_per_inference = input;
-        self
+        self.cost_per_inference = input; self
+    }
+    /// <p>Defines the cost per inference for the instance .</p>
+    pub fn get_cost_per_inference(&self) -> &::std::option::Option<f32> {
+        &self.cost_per_inference
     }
     /// <p>The expected maximum number of requests per minute for the instance.</p>
     pub fn max_invocations(mut self, input: i32) -> Self {
@@ -101,8 +105,11 @@ impl RecommendationMetricsBuilder {
     }
     /// <p>The expected maximum number of requests per minute for the instance.</p>
     pub fn set_max_invocations(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_invocations = input;
-        self
+        self.max_invocations = input; self
+    }
+    /// <p>The expected maximum number of requests per minute for the instance.</p>
+    pub fn get_max_invocations(&self) -> &::std::option::Option<i32> {
+        &self.max_invocations
     }
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
     pub fn model_latency(mut self, input: i32) -> Self {
@@ -111,42 +118,64 @@ impl RecommendationMetricsBuilder {
     }
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
     pub fn set_model_latency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.model_latency = input;
-        self
+        self.model_latency = input; self
     }
-    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
+    /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
+    pub fn get_model_latency(&self) -> &::std::option::Option<i32> {
+        &self.model_latency
+    }
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p> 
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn cpu_utilization(mut self, input: f32) -> Self {
         self.cpu_utilization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p> 
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn set_cpu_utilization(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.cpu_utilization = input;
-        self
+        self.cpu_utilization = input; self
     }
-    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
+    /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p> 
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn get_cpu_utilization(&self) -> &::std::option::Option<f32> {
+        &self.cpu_utilization
+    }
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p> 
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn memory_utilization(mut self, input: f32) -> Self {
         self.memory_utilization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p> 
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn set_memory_utilization(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.memory_utilization = input;
-        self
+        self.memory_utilization = input; self
+    }
+    /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p> 
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn get_memory_utilization(&self) -> &::std::option::Option<f32> {
+        &self.memory_utilization
     }
     /// Consumes the builder and constructs a [`RecommendationMetrics`](crate::types::RecommendationMetrics).
     pub fn build(self) -> crate::types::RecommendationMetrics {
         crate::types::RecommendationMetrics {
-            cost_per_hour: self.cost_per_hour.unwrap_or_default(),
-            cost_per_inference: self.cost_per_inference.unwrap_or_default(),
-            max_invocations: self.max_invocations.unwrap_or_default(),
-            model_latency: self.model_latency.unwrap_or_default(),
-            cpu_utilization: self.cpu_utilization,
-            memory_utilization: self.memory_utilization,
+            cost_per_hour: self.cost_per_hour
+                .unwrap_or_default()
+            ,
+            cost_per_inference: self.cost_per_inference
+                .unwrap_or_default()
+            ,
+            max_invocations: self.max_invocations
+                .unwrap_or_default()
+            ,
+            model_latency: self.model_latency
+                .unwrap_or_default()
+            ,
+            cpu_utilization: self.cpu_utilization
+            ,
+            memory_utilization: self.memory_utilization
+            ,
         }
     }
 }
+

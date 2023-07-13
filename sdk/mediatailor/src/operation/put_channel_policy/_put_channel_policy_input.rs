@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutChannelPolicyInput {
+pub struct PutChannelPolicyInput  {
     /// <p>The channel name associated with this Channel Policy.</p>
     #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct PutChannelPolicyInput {
 }
 impl PutChannelPolicyInput {
     /// <p>The channel name associated with this Channel Policy.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl PutChannelPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
-    pub fn builder() -> crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder {
         crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutChannelPolicyInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl PutChannelPolicyInputBuilder {
     }
     /// <p>The channel name associated with this Channel Policy.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
+    }
+    /// <p>The channel name associated with this Channel Policy.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl PutChannelPolicyInputBuilder {
     }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
+    }
+    /// <p>Adds an IAM role that determines the permissions of your channel.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_channel_policy::PutChannelPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_channel_policy::PutChannelPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_channel_policy::PutChannelPolicyInput {
-                channel_name: self.channel_name,
-                policy: self.policy,
-            },
+                channel_name: self.channel_name
+                ,
+                policy: self.policy
+                ,
+            }
         )
     }
 }
+

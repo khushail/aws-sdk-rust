@@ -2,78 +2,72 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SwitchoverReadReplicaInput {
-    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+pub struct SwitchoverReadReplicaInput  {
+    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl SwitchoverReadReplicaInput {
-    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li> 
     /// </ul>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
 }
 impl SwitchoverReadReplicaInput {
     /// Creates a new builder-style object to manufacture [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
-    pub fn builder(
-    ) -> crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder
-    {
+    pub fn builder() -> crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder {
         crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder::default()
     }
 }
 
 /// A builder for [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SwitchoverReadReplicaInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl SwitchoverReadReplicaInputBuilder {
-    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li> 
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li> 
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.db_instance_identifier = input;
-        self
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_instance_identifier = input; self
+    }
+    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li> 
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
     }
     /// Consumes the builder and constructs a [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::switchover_read_replica::SwitchoverReadReplicaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::switchover_read_replica::SwitchoverReadReplicaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::switchover_read_replica::SwitchoverReadReplicaInput {
-                db_instance_identifier: self.db_instance_identifier,
-            },
+                db_instance_identifier: self.db_instance_identifier
+                ,
+            }
         )
     }
 }
+

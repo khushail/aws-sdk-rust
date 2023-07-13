@@ -3,14 +3,14 @@
 /// <p>Name of the availability zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvailabilityZone {
+pub struct AvailabilityZone  {
     /// <p>Id for the availability zone.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AvailabilityZone {
     /// <p>Id for the availability zone.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl AvailabilityZone {
 
 /// A builder for [`AvailabilityZone`](crate::types::AvailabilityZone).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailabilityZoneBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>Id for the availability zone.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Id for the availability zone.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {
-        crate::types::AvailabilityZone { name: self.name }
+        crate::types::AvailabilityZone {
+            name: self.name
+            ,
+        }
     }
 }
+

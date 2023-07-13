@@ -3,78 +3,89 @@ pub use crate::operation::get_identity_notification_attributes::_get_identity_no
 
 pub use crate::operation::get_identity_notification_attributes::_get_identity_notification_attributes_input::GetIdentityNotificationAttributesInputBuilder;
 
+impl GetIdentityNotificationAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_identity_notification_attributes();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetIdentityNotificationAttributes`.
-///
-/// <p>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes.</p>
-/// <p>This operation is throttled at one request per second and can only get notification attributes for up to 100 identities at a time.</p>
+/// 
+/// <p>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes.</p> 
+/// <p>This operation is throttled at one request per second and can only get notification attributes for up to 100 identities at a time.</p> 
 /// <p>For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesInputBuilder,
 }
-impl GetIdentityNotificationAttributesFluentBuilder {
+impl GetIdentityNotificationAttributesFluentBuilder  {
     /// Creates a new `GetIdentityNotificationAttributes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIdentityNotificationAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Appends an item to `Identities`.
     ///
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
@@ -85,11 +96,13 @@ impl GetIdentityNotificationAttributesFluentBuilder {
         self
     }
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    pub fn set_identities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_identities(input);
         self
     }
+    /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_identities()
+    }
 }
+

@@ -3,14 +3,14 @@
 /// StartCampaignRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCampaignInput {
+pub struct StartCampaignInput  {
     /// Identifier representing a Campaign
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl StartCampaignInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl StartCampaignInput {
 
 /// A builder for [`StartCampaignInput`](crate::operation::start_campaign::StartCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCampaignInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +35,20 @@ impl StartCampaignInputBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`StartCampaignInput`](crate::operation::start_campaign::StartCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_campaign::StartCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_campaign::StartCampaignInput {
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_campaign::StartCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_campaign::StartCampaignInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

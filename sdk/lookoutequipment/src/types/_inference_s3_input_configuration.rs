@@ -3,7 +3,7 @@
 /// <p> Specifies configuration information for the input data for the inference, including input data S3 location. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceS3InputConfiguration {
+pub struct InferenceS3InputConfiguration  {
     /// <p>The bucket containing the input dataset for the inference. </p>
     #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct InferenceS3InputConfiguration {
 }
 impl InferenceS3InputConfiguration {
     /// <p>The bucket containing the input dataset for the inference. </p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl InferenceS3InputConfiguration {
 
 /// A builder for [`InferenceS3InputConfiguration`](crate::types::InferenceS3InputConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceS3InputConfigurationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl InferenceS3InputConfigurationBuilder {
     }
     /// <p>The bucket containing the input dataset for the inference. </p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
+    }
+    /// <p>The bucket containing the input dataset for the inference. </p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl InferenceS3InputConfigurationBuilder {
     }
     /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
+    }
+    /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`InferenceS3InputConfiguration`](crate::types::InferenceS3InputConfiguration).
     pub fn build(self) -> crate::types::InferenceS3InputConfiguration {
         crate::types::InferenceS3InputConfiguration {
-            bucket: self.bucket,
-            prefix: self.prefix,
+            bucket: self.bucket
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

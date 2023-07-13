@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEventActionOutput {
+pub struct GetEventActionOutput  {
     /// <p>What occurs after a certain event.</p>
     #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
@@ -25,35 +25,35 @@ pub struct GetEventActionOutput {
 }
 impl GetEventActionOutput {
     /// <p>What occurs after a certain event.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>The ARN for the event action.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>What occurs to start an action.</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::Event> {
+    pub fn event(&self) -> ::std::option::Option<& crate::types::Event> {
         self.event.as_ref()
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEventActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetEventActionOutput {
     /// Creates a new builder-style object to manufacture [`GetEventActionOutput`](crate::operation::get_event_action::GetEventActionOutput).
     pub fn builder() -> crate::operation::get_event_action::builders::GetEventActionOutputBuilder {
@@ -63,9 +63,7 @@ impl GetEventActionOutput {
 
 /// A builder for [`GetEventActionOutput`](crate::operation::get_event_action::GetEventActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventActionOutputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -83,8 +81,11 @@ impl GetEventActionOutputBuilder {
     }
     /// <p>What occurs after a certain event.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
+    }
+    /// <p>What occurs after a certain event.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
     }
     /// <p>The ARN for the event action.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +94,11 @@ impl GetEventActionOutputBuilder {
     }
     /// <p>The ARN for the event action.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN for the event action.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,12 +106,12 @@ impl GetEventActionOutputBuilder {
         self
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>What occurs to start an action.</p>
     pub fn event(mut self, input: crate::types::Event) -> Self {
@@ -116,8 +120,11 @@ impl GetEventActionOutputBuilder {
     }
     /// <p>What occurs to start an action.</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::Event>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
+    }
+    /// <p>What occurs to start an action.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::Event> {
+        &self.event
     }
     /// <p>The unique identifier for the event action.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,8 +133,11 @@ impl GetEventActionOutputBuilder {
     }
     /// <p>The unique identifier for the event action.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,32 +145,39 @@ impl GetEventActionOutputBuilder {
         self
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
+    }
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetEventActionOutput`](crate::operation::get_event_action::GetEventActionOutput).
     pub fn build(self) -> crate::operation::get_event_action::GetEventActionOutput {
         crate::operation::get_event_action::GetEventActionOutput {
-            action: self.action,
-            arn: self.arn,
-            created_at: self.created_at,
-            event: self.event,
-            id: self.id,
-            updated_at: self.updated_at,
+            action: self.action
+            ,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            event: self.event
+            ,
+            id: self.id
+            ,
+            updated_at: self.updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

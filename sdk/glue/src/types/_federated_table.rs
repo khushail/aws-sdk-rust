@@ -3,7 +3,7 @@
 /// <p>A table that points to an entity outside the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FederatedTable {
+pub struct FederatedTable  {
     /// <p>A unique identifier for the federated table.</p>
     #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct FederatedTable {
 }
 impl FederatedTable {
     /// <p>A unique identifier for the federated table.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>A unique identifier for the federated database.</p>
-    pub fn database_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn database_identifier(&self) -> ::std::option::Option<& str> {
         self.database_identifier.as_deref()
     }
     /// <p>The name of the connection to the external metastore.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl FederatedTable {
 
 /// A builder for [`FederatedTable`](crate::types::FederatedTable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FederatedTableBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) database_identifier: ::std::option::Option<::std::string::String>,
@@ -53,47 +51,48 @@ impl FederatedTableBuilder {
     }
     /// <p>A unique identifier for the federated table.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
+    }
+    /// <p>A unique identifier for the federated table.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>A unique identifier for the federated database.</p>
-    pub fn database_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the federated database.</p>
-    pub fn set_database_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_identifier = input;
-        self
+    pub fn set_database_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_identifier = input; self
+    }
+    /// <p>A unique identifier for the federated database.</p>
+    pub fn get_database_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_identifier
     }
     /// <p>The name of the connection to the external metastore.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection to the external metastore.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_name = input;
-        self
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_name = input; self
+    }
+    /// <p>The name of the connection to the external metastore.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// Consumes the builder and constructs a [`FederatedTable`](crate::types::FederatedTable).
     pub fn build(self) -> crate::types::FederatedTable {
         crate::types::FederatedTable {
-            identifier: self.identifier,
-            database_identifier: self.database_identifier,
-            connection_name: self.connection_name,
+            identifier: self.identifier
+            ,
+            database_identifier: self.database_identifier
+            ,
+            connection_name: self.connection_name
+            ,
         }
     }
 }
+

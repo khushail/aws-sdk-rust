@@ -3,14 +3,14 @@
 /// <p>The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutItemInput {
+pub struct PutItemInput  {
     /// <p>The table where the message data will be written.</p>
     #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl PutItemInput {
     /// <p>The table where the message data will be written.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl PutItemInput {
 
 /// A builder for [`PutItemInput`](crate::types::PutItemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutItemInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl PutItemInputBuilder {
     }
     /// <p>The table where the message data will be written.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
+    }
+    /// <p>The table where the message data will be written.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Consumes the builder and constructs a [`PutItemInput`](crate::types::PutItemInput).
     pub fn build(self) -> crate::types::PutItemInput {
         crate::types::PutItemInput {
-            table_name: self.table_name,
+            table_name: self.table_name
+            ,
         }
     }
 }
+

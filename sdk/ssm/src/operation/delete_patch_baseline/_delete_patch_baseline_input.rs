@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePatchBaselineInput {
+pub struct DeletePatchBaselineInput  {
     /// <p>The ID of the patch baseline to delete.</p>
     #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePatchBaselineInput {
     /// <p>The ID of the patch baseline to delete.</p>
-    pub fn baseline_id(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_id(&self) -> ::std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
 impl DeletePatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`DeletePatchBaselineInput`](crate::operation::delete_patch_baseline::DeletePatchBaselineInput).
-    pub fn builder(
-    ) -> crate::operation::delete_patch_baseline::builders::DeletePatchBaselineInputBuilder {
-        crate::operation::delete_patch_baseline::builders::DeletePatchBaselineInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_patch_baseline::builders::DeletePatchBaselineInputBuilder {
+        crate::operation::delete_patch_baseline::builders::DeletePatchBaselineInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePatchBaselineInput`](crate::operation::delete_patch_baseline::DeletePatchBaselineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePatchBaselineInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DeletePatchBaselineInputBuilder {
     }
     /// <p>The ID of the patch baseline to delete.</p>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
+    }
+    /// <p>The ID of the patch baseline to delete.</p>
+    pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_id
     }
     /// Consumes the builder and constructs a [`DeletePatchBaselineInput`](crate::operation::delete_patch_baseline::DeletePatchBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_patch_baseline::DeletePatchBaselineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_patch_baseline::DeletePatchBaselineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_patch_baseline::DeletePatchBaselineInput {
-                baseline_id: self.baseline_id,
-            },
+                baseline_id: self.baseline_id
+                ,
+            }
         )
     }
 }
+

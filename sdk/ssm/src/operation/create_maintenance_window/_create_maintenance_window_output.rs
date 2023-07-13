@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMaintenanceWindowOutput {
+pub struct CreateMaintenanceWindowOutput  {
     /// <p>The ID of the created maintenance window.</p>
     #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
@@ -10,29 +10,25 @@ pub struct CreateMaintenanceWindowOutput {
 }
 impl CreateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
-    pub fn window_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_id(&self) -> ::std::option::Option<& str> {
         self.window_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateMaintenanceWindowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`CreateMaintenanceWindowOutput`](crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput).
-    pub fn builder(
-    ) -> crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowOutputBuilder {
         crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMaintenanceWindowOutput`](crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMaintenanceWindowOutputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -45,25 +41,28 @@ impl CreateMaintenanceWindowOutputBuilder {
     }
     /// <p>The ID of the created maintenance window.</p>
     pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
+    }
+    /// <p>The ID of the created maintenance window.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateMaintenanceWindowOutput`](crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput {
+    pub fn build(self) -> crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput {
         crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput {
-            window_id: self.window_id,
+            window_id: self.window_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNodegroupVersionOutput {
+pub struct UpdateNodegroupVersionOutput  {
     /// <p>An object representing an asynchronous update.</p>
     #[doc(hidden)]
     pub update: ::std::option::Option<crate::types::Update>,
@@ -10,29 +10,25 @@ pub struct UpdateNodegroupVersionOutput {
 }
 impl UpdateNodegroupVersionOutput {
     /// <p>An object representing an asynchronous update.</p>
-    pub fn update(&self) -> ::std::option::Option<&crate::types::Update> {
+    pub fn update(&self) -> ::std::option::Option<& crate::types::Update> {
         self.update.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateNodegroupVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateNodegroupVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNodegroupVersionOutput`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionOutputBuilder {
         crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNodegroupVersionOutput`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNodegroupVersionOutputBuilder {
     pub(crate) update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,
@@ -45,23 +41,28 @@ impl UpdateNodegroupVersionOutputBuilder {
     }
     /// <p>An object representing an asynchronous update.</p>
     pub fn set_update(mut self, input: ::std::option::Option<crate::types::Update>) -> Self {
-        self.update = input;
-        self
+        self.update = input; self
+    }
+    /// <p>An object representing an asynchronous update.</p>
+    pub fn get_update(&self) -> &::std::option::Option<crate::types::Update> {
+        &self.update
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateNodegroupVersionOutput`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput).
     pub fn build(self) -> crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput {
         crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput {
-            update: self.update,
+            update: self.update
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

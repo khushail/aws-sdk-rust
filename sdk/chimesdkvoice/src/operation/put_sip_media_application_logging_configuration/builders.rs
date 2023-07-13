@@ -3,110 +3,114 @@ pub use crate::operation::put_sip_media_application_logging_configuration::_put_
 
 pub use crate::operation::put_sip_media_application_logging_configuration::_put_sip_media_application_logging_configuration_input::PutSipMediaApplicationLoggingConfigurationInputBuilder;
 
+impl PutSipMediaApplicationLoggingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_sip_media_application_logging_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutSipMediaApplicationLoggingConfiguration`.
-///
+/// 
 /// <p>Updates the logging configuration for the specified SIP media application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSipMediaApplicationLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationInputBuilder,
 }
-impl PutSipMediaApplicationLoggingConfigurationFluentBuilder {
+impl PutSipMediaApplicationLoggingConfigurationFluentBuilder  {
     /// Creates a new `PutSipMediaApplicationLoggingConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSipMediaApplicationLoggingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sip_media_application_id()
+    }
     /// <p>The logging configuration for the specified SIP media application.</p>
-    pub fn sip_media_application_logging_configuration(
-        mut self,
-        input: crate::types::SipMediaApplicationLoggingConfiguration,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .sip_media_application_logging_configuration(input);
+    pub fn sip_media_application_logging_configuration(mut self, input: crate::types::SipMediaApplicationLoggingConfiguration) -> Self {
+        self.inner = self.inner.sip_media_application_logging_configuration(input);
         self
     }
     /// <p>The logging configuration for the specified SIP media application.</p>
-    pub fn set_sip_media_application_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_sip_media_application_logging_configuration(input);
+    pub fn set_sip_media_application_logging_configuration(mut self, input: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>) -> Self {
+        self.inner = self.inner.set_sip_media_application_logging_configuration(input);
         self
+    }
+    /// <p>The logging configuration for the specified SIP media application.</p>
+    pub fn get_sip_media_application_logging_configuration(&self) -> &::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration> {
+        self.inner.get_sip_media_application_logging_configuration()
     }
 }
+

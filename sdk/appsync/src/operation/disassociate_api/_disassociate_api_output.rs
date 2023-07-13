@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateApiOutput {
+pub struct DisassociateApiOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DisassociateApiOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateApiOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateApiOutput`](crate::operation::disassociate_api::DisassociateApiOutput).
     pub fn builder() -> crate::operation::disassociate_api::builders::DisassociateApiOutputBuilder {
@@ -19,22 +19,20 @@ impl DisassociateApiOutput {
 
 /// A builder for [`DisassociateApiOutput`](crate::operation::disassociate_api::DisassociateApiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateApiOutputBuilder {
     _request_id: Option<String>,
 }
 impl DisassociateApiOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateApiOutput`](crate::operation::disassociate_api::DisassociateApiOutput).
     pub fn build(self) -> crate::operation::disassociate_api::DisassociateApiOutput {
         crate::operation::disassociate_api::DisassociateApiOutput {
@@ -42,3 +40,4 @@ impl DisassociateApiOutputBuilder {
         }
     }
 }
+

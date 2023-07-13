@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for RemoveTags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTagsInput {
+pub struct RemoveTagsInput  {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct RemoveTagsInput {
 }
 impl RemoveTagsInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The keys of the tags to remove.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn tag_keys(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl RemoveTagsInput {
 
 /// A builder for [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl RemoveTagsInputBuilder {
     }
     /// <p>The ID of the pipeline.</p>
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
+    }
+    /// <p>The ID of the pipeline.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -55,28 +56,28 @@ impl RemoveTagsInputBuilder {
     /// <p>The keys of the tags to remove.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The keys of the tags to remove.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
+    }
+    /// <p>The keys of the tags to remove.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_tags::RemoveTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_tags::RemoveTagsInput {
-            pipeline_id: self.pipeline_id,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_tags::RemoveTagsInput {
+                pipeline_id: self.pipeline_id
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

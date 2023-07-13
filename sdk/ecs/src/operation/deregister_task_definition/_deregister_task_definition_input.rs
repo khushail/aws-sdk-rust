@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterTaskDefinitionInput {
+pub struct DeregisterTaskDefinitionInput  {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
     #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterTaskDefinitionInput {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
-    pub fn task_definition(&self) -> ::std::option::Option<&str> {
+    pub fn task_definition(&self) -> ::std::option::Option<& str> {
         self.task_definition.as_deref()
     }
 }
 impl DeregisterTaskDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeregisterTaskDefinitionInput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionInputBuilder {
         crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterTaskDefinitionInput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTaskDefinitionInputBuilder {
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterTaskDefinitionInputBuilder {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
-    pub fn task_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.task_definition = input;
-        self
+    pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.task_definition = input; self
+    }
+    /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_definition
     }
     /// Consumes the builder and constructs a [`DeregisterTaskDefinitionInput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput {
-                task_definition: self.task_definition,
-            },
+                task_definition: self.task_definition
+                ,
+            }
         )
     }
 }
+

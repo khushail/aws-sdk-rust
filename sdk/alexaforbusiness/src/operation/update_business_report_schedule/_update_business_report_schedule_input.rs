@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBusinessReportScheduleInput {
+pub struct UpdateBusinessReportScheduleInput  {
     /// <p>The ARN of the business report schedule.</p>
     #[doc(hidden)]
     pub schedule_arn: ::std::option::Option<::std::string::String>,
@@ -24,42 +24,40 @@ pub struct UpdateBusinessReportScheduleInput {
 }
 impl UpdateBusinessReportScheduleInput {
     /// <p>The ARN of the business report schedule.</p>
-    pub fn schedule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_arn(&self) -> ::std::option::Option<& str> {
         self.schedule_arn.as_deref()
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The S3 key where the report is delivered.</p>
-    pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::BusinessReportFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::BusinessReportFormat> {
         self.format.as_ref()
     }
     /// <p>The name identifier of the schedule.</p>
-    pub fn schedule_name(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_name(&self) -> ::std::option::Option<& str> {
         self.schedule_name.as_deref()
     }
     /// <p>The recurrence of the reports.</p>
-    pub fn recurrence(&self) -> ::std::option::Option<&crate::types::BusinessReportRecurrence> {
+    pub fn recurrence(&self) -> ::std::option::Option<& crate::types::BusinessReportRecurrence> {
         self.recurrence.as_ref()
     }
 }
 impl UpdateBusinessReportScheduleInput {
     /// Creates a new builder-style object to manufacture [`UpdateBusinessReportScheduleInput`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleInput).
-    pub fn builder() -> crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleInputBuilder{
+    pub fn builder() -> crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleInputBuilder {
         crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBusinessReportScheduleInput`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBusinessReportScheduleInputBuilder {
     pub(crate) schedule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -76,40 +74,37 @@ impl UpdateBusinessReportScheduleInputBuilder {
     }
     /// <p>The ARN of the business report schedule.</p>
     pub fn set_schedule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_arn = input;
-        self
+        self.schedule_arn = input; self
+    }
+    /// <p>The ARN of the business report schedule.</p>
+    pub fn get_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_arn
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.s3_bucket_name = input;
-        self
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_bucket_name = input; self
+    }
+    /// <p>The S3 location of the output reports.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
     }
     /// <p>The S3 key where the report is delivered.</p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 key where the report is delivered.</p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.s3_key_prefix = input;
-        self
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_key_prefix = input; self
+    }
+    /// <p>The S3 key where the report is delivered.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(mut self, input: crate::types::BusinessReportFormat) -> Self {
@@ -117,28 +112,25 @@ impl UpdateBusinessReportScheduleInputBuilder {
         self
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessReportFormat>,
-    ) -> Self {
-        self.format = input;
-        self
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::BusinessReportFormat>) -> Self {
+        self.format = input; self
+    }
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::BusinessReportFormat> {
+        &self.format
     }
     /// <p>The name identifier of the schedule.</p>
-    pub fn schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name identifier of the schedule.</p>
-    pub fn set_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.schedule_name = input;
-        self
+    pub fn set_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schedule_name = input; self
+    }
+    /// <p>The name identifier of the schedule.</p>
+    pub fn get_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_name
     }
     /// <p>The recurrence of the reports.</p>
     pub fn recurrence(mut self, input: crate::types::BusinessReportRecurrence) -> Self {
@@ -146,29 +138,31 @@ impl UpdateBusinessReportScheduleInputBuilder {
         self
     }
     /// <p>The recurrence of the reports.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessReportRecurrence>,
-    ) -> Self {
-        self.recurrence = input;
-        self
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::BusinessReportRecurrence>) -> Self {
+        self.recurrence = input; self
+    }
+    /// <p>The recurrence of the reports.</p>
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::BusinessReportRecurrence> {
+        &self.recurrence
     }
     /// Consumes the builder and constructs a [`UpdateBusinessReportScheduleInput`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleInput {
-                schedule_arn: self.schedule_arn,
-                s3_bucket_name: self.s3_bucket_name,
-                s3_key_prefix: self.s3_key_prefix,
-                format: self.format,
-                schedule_name: self.schedule_name,
-                recurrence: self.recurrence,
-            },
+                schedule_arn: self.schedule_arn
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                s3_key_prefix: self.s3_key_prefix
+                ,
+                format: self.format
+                ,
+                schedule_name: self.schedule_name
+                ,
+                recurrence: self.recurrence
+                ,
+            }
         )
     }
 }
+

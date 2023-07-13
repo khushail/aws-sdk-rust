@@ -3,7 +3,7 @@
 /// <p>An access point with an attached Lambda function used to access transformed data from an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ObjectLambdaAccessPoint {
+pub struct ObjectLambdaAccessPoint  {
     /// <p>The name of the Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ObjectLambdaAccessPoint {
 }
 impl ObjectLambdaAccessPoint {
     /// <p>The name of the Object Lambda Access Point.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn object_lambda_access_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn object_lambda_access_point_arn(&self) -> ::std::option::Option<& str> {
         self.object_lambda_access_point_arn.as_deref()
     }
     /// <p>The alias of the Object Lambda Access Point.</p>
-    pub fn alias(&self) -> ::std::option::Option<&crate::types::ObjectLambdaAccessPointAlias> {
+    pub fn alias(&self) -> ::std::option::Option<& crate::types::ObjectLambdaAccessPointAlias> {
         self.alias.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl ObjectLambdaAccessPoint {
 
 /// A builder for [`ObjectLambdaAccessPoint`](crate::types::ObjectLambdaAccessPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectLambdaAccessPointBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) object_lambda_access_point_arn: ::std::option::Option<::std::string::String>,
@@ -53,24 +51,24 @@ impl ObjectLambdaAccessPointBuilder {
     }
     /// <p>The name of the Object Lambda Access Point.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn object_lambda_access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_lambda_access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_lambda_access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn set_object_lambda_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.object_lambda_access_point_arn = input;
-        self
+    pub fn set_object_lambda_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.object_lambda_access_point_arn = input; self
+    }
+    /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
+    pub fn get_object_lambda_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_lambda_access_point_arn
     }
     /// <p>The alias of the Object Lambda Access Point.</p>
     pub fn alias(mut self, input: crate::types::ObjectLambdaAccessPointAlias) -> Self {
@@ -78,19 +76,23 @@ impl ObjectLambdaAccessPointBuilder {
         self
     }
     /// <p>The alias of the Object Lambda Access Point.</p>
-    pub fn set_alias(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
-    ) -> Self {
-        self.alias = input;
-        self
+    pub fn set_alias(mut self, input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>) -> Self {
+        self.alias = input; self
+    }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<crate::types::ObjectLambdaAccessPointAlias> {
+        &self.alias
     }
     /// Consumes the builder and constructs a [`ObjectLambdaAccessPoint`](crate::types::ObjectLambdaAccessPoint).
     pub fn build(self) -> crate::types::ObjectLambdaAccessPoint {
         crate::types::ObjectLambdaAccessPoint {
-            name: self.name,
-            object_lambda_access_point_arn: self.object_lambda_access_point_arn,
-            alias: self.alias,
+            name: self.name
+            ,
+            object_lambda_access_point_arn: self.object_lambda_access_point_arn
+            ,
+            alias: self.alias
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Indicates whether an instance is configured for hibernation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateHibernationOptions {
+pub struct LaunchTemplateHibernationOptions  {
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
     #[doc(hidden)]
     pub configured: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl LaunchTemplateHibernationOptions {
 
 /// A builder for [`LaunchTemplateHibernationOptions`](crate::types::LaunchTemplateHibernationOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateHibernationOptionsBuilder {
     pub(crate) configured: ::std::option::Option<bool>,
 }
@@ -37,13 +35,18 @@ impl LaunchTemplateHibernationOptionsBuilder {
     }
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
     pub fn set_configured(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.configured = input;
-        self
+        self.configured = input; self
+    }
+    /// <p>If this parameter is set to <code>true</code>, the instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
+    pub fn get_configured(&self) -> &::std::option::Option<bool> {
+        &self.configured
     }
     /// Consumes the builder and constructs a [`LaunchTemplateHibernationOptions`](crate::types::LaunchTemplateHibernationOptions).
     pub fn build(self) -> crate::types::LaunchTemplateHibernationOptions {
         crate::types::LaunchTemplateHibernationOptions {
-            configured: self.configured,
+            configured: self.configured
+            ,
         }
     }
 }
+

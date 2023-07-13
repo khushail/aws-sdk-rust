@@ -3,7 +3,7 @@
 /// <p>This structure describes the filtering of columns in a table based on a filter condition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterCondition {
+pub struct FilterCondition  {
     /// <p>The field to filter in the filter condition.</p>
     #[doc(hidden)]
     pub field: ::std::option::Option<crate::types::FieldNameString>,
@@ -16,15 +16,15 @@ pub struct FilterCondition {
 }
 impl FilterCondition {
     /// <p>The field to filter in the filter condition.</p>
-    pub fn field(&self) -> ::std::option::Option<&crate::types::FieldNameString> {
+    pub fn field(&self) -> ::std::option::Option<& crate::types::FieldNameString> {
         self.field.as_ref()
     }
     /// <p>The comparison operator used in the filter condition.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>A string with values used in evaluating the filter condition.</p>
-    pub fn string_value_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn string_value_list(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.string_value_list.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl FilterCondition {
 
 /// A builder for [`FilterCondition`](crate::types::FilterCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterConditionBuilder {
     pub(crate) field: ::std::option::Option<crate::types::FieldNameString>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
@@ -52,12 +50,12 @@ impl FilterConditionBuilder {
         self
     }
     /// <p>The field to filter in the filter condition.</p>
-    pub fn set_field(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldNameString>,
-    ) -> Self {
-        self.field = input;
-        self
+    pub fn set_field(mut self, input: ::std::option::Option<crate::types::FieldNameString>) -> Self {
+        self.field = input; self
+    }
+    /// <p>The field to filter in the filter condition.</p>
+    pub fn get_field(&self) -> &::std::option::Option<crate::types::FieldNameString> {
+        &self.field
     }
     /// <p>The comparison operator used in the filter condition.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
@@ -65,41 +63,42 @@ impl FilterConditionBuilder {
         self
     }
     /// <p>The comparison operator used in the filter condition.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
-        self.comparison_operator = input;
-        self
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
+        self.comparison_operator = input; self
+    }
+    /// <p>The comparison operator used in the filter condition.</p>
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
     }
     /// Appends an item to `string_value_list`.
     ///
     /// To override the contents of this collection use [`set_string_value_list`](Self::set_string_value_list).
     ///
     /// <p>A string with values used in evaluating the filter condition.</p>
-    pub fn string_value_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn string_value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.string_value_list.unwrap_or_default();
-        v.push(input.into());
-        self.string_value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.string_value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A string with values used in evaluating the filter condition.</p>
-    pub fn set_string_value_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.string_value_list = input;
-        self
+    pub fn set_string_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.string_value_list = input; self
+    }
+    /// <p>A string with values used in evaluating the filter condition.</p>
+    pub fn get_string_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_value_list
     }
     /// Consumes the builder and constructs a [`FilterCondition`](crate::types::FilterCondition).
     pub fn build(self) -> crate::types::FilterCondition {
         crate::types::FilterCondition {
-            field: self.field,
-            comparison_operator: self.comparison_operator,
-            string_value_list: self.string_value_list,
+            field: self.field
+            ,
+            comparison_operator: self.comparison_operator
+            ,
+            string_value_list: self.string_value_list
+            ,
         }
     }
 }
+

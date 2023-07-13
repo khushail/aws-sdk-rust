@@ -3,7 +3,7 @@
 /// <p>Contains information about the pages of a document, defined by logical boundary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SplitDocument {
+pub struct SplitDocument  {
     /// <p>The index for a given document in a DocumentGroup of a specific Type.</p>
     #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl SplitDocument {
         self.index
     }
     /// <p>An array of page numbers for a for a given document, ordered by logical boundary.</p>
-    pub fn pages(&self) -> ::std::option::Option<&[i32]> {
+    pub fn pages(&self) -> ::std::option::Option<& [i32]> {
         self.pages.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl SplitDocument {
 
 /// A builder for [`SplitDocument`](crate::types::SplitDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SplitDocumentBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) pages: ::std::option::Option<::std::vec::Vec<i32>>,
@@ -45,8 +43,11 @@ impl SplitDocumentBuilder {
     }
     /// <p>The index for a given document in a DocumentGroup of a specific Type.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
+    }
+    /// <p>The index for a given document in a DocumentGroup of a specific Type.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
     }
     /// Appends an item to `pages`.
     ///
@@ -55,20 +56,26 @@ impl SplitDocumentBuilder {
     /// <p>An array of page numbers for a for a given document, ordered by logical boundary.</p>
     pub fn pages(mut self, input: i32) -> Self {
         let mut v = self.pages.unwrap_or_default();
-        v.push(input);
-        self.pages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of page numbers for a for a given document, ordered by logical boundary.</p>
     pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.pages = input;
-        self
+        self.pages = input; self
+    }
+    /// <p>An array of page numbers for a for a given document, ordered by logical boundary.</p>
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.pages
     }
     /// Consumes the builder and constructs a [`SplitDocument`](crate::types::SplitDocument).
     pub fn build(self) -> crate::types::SplitDocument {
         crate::types::SplitDocument {
-            index: self.index,
-            pages: self.pages,
+            index: self.index
+            ,
+            pages: self.pages
+            ,
         }
     }
 }
+

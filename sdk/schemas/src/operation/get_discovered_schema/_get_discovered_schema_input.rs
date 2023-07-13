@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDiscoveredSchemaInput {
+pub struct GetDiscoveredSchemaInput  {
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
     #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,28 +12,24 @@ pub struct GetDiscoveredSchemaInput {
 }
 impl GetDiscoveredSchemaInput {
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-    pub fn events(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn events(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.events.as_deref()
     }
     /// <p>The type of event.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
 }
 impl GetDiscoveredSchemaInput {
     /// Creates a new builder-style object to manufacture [`GetDiscoveredSchemaInput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaInput).
-    pub fn builder(
-    ) -> crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder {
-        crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder {
+        crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDiscoveredSchemaInput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDiscoveredSchemaInputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
@@ -46,17 +42,17 @@ impl GetDiscoveredSchemaInputBuilder {
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
     pub fn events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input.into());
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.events = input; self
+    }
+    /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.events
     }
     /// <p>The type of event.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
@@ -65,21 +61,22 @@ impl GetDiscoveredSchemaInputBuilder {
     }
     /// <p>The type of event.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of event.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`GetDiscoveredSchemaInput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_discovered_schema::GetDiscoveredSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_discovered_schema::GetDiscoveredSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_discovered_schema::GetDiscoveredSchemaInput {
-                events: self.events,
-                r#type: self.r#type,
-            },
+                events: self.events
+                ,
+                r#type: self.r#type
+                ,
+            }
         )
     }
 }
+

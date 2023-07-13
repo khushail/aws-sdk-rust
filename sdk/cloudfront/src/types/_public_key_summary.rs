@@ -3,7 +3,7 @@
 /// <p>Contains information about a public key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicKeySummary {
+pub struct PublicKeySummary  {
     /// <p>The identifier of the public key.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct PublicKeySummary {
 }
 impl PublicKeySummary {
     /// <p>The identifier of the public key.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A name to help identify the public key.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time when the public key was uploaded.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The public key.</p>
-    pub fn encoded_key(&self) -> ::std::option::Option<&str> {
+    pub fn encoded_key(&self) -> ::std::option::Option<& str> {
         self.encoded_key.as_deref()
     }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl PublicKeySummary {
 
 /// A builder for [`PublicKeySummary`](crate::types::PublicKeySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicKeySummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl PublicKeySummaryBuilder {
     }
     /// <p>The identifier of the public key.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the public key.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A name to help identify the public key.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl PublicKeySummaryBuilder {
     }
     /// <p>A name to help identify the public key.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A name to help identify the public key.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The date and time when the public key was uploaded.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -88,12 +92,12 @@ impl PublicKeySummaryBuilder {
         self
     }
     /// <p>The date and time when the public key was uploaded.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
+    }
+    /// <p>The date and time when the public key was uploaded.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The public key.</p>
     pub fn encoded_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,8 +106,11 @@ impl PublicKeySummaryBuilder {
     }
     /// <p>The public key.</p>
     pub fn set_encoded_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encoded_key = input;
-        self
+        self.encoded_key = input; self
+    }
+    /// <p>The public key.</p>
+    pub fn get_encoded_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoded_key
     }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,17 +119,26 @@ impl PublicKeySummaryBuilder {
     }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
+    }
+    /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`PublicKeySummary`](crate::types::PublicKeySummary).
     pub fn build(self) -> crate::types::PublicKeySummary {
         crate::types::PublicKeySummary {
-            id: self.id,
-            name: self.name,
-            created_time: self.created_time,
-            encoded_key: self.encoded_key,
-            comment: self.comment,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            created_time: self.created_time
+            ,
+            encoded_key: self.encoded_key
+            ,
+            comment: self.comment
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The information about the container provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerProvider {
+pub struct ContainerProvider  {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ContainerProviderType>,
@@ -16,15 +16,15 @@ pub struct ContainerProvider {
 }
 impl ContainerProvider {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContainerProviderType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ContainerProviderType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of the container cluster.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The information about the container cluster.</p>
-    pub fn info(&self) -> ::std::option::Option<&crate::types::ContainerInfo> {
+    pub fn info(&self) -> ::std::option::Option<& crate::types::ContainerInfo> {
         self.info.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl ContainerProvider {
 
 /// A builder for [`ContainerProvider`](crate::types::ContainerProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerProviderBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ContainerProviderType>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl ContainerProviderBuilder {
         self
     }
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerProviderType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContainerProviderType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ContainerProviderType> {
+        &self.r#type
     }
     /// <p>The ID of the container cluster.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +64,11 @@ impl ContainerProviderBuilder {
     }
     /// <p>The ID of the container cluster.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the container cluster.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The information about the container cluster.</p>
     pub fn info(mut self, input: crate::types::ContainerInfo) -> Self {
@@ -76,15 +77,22 @@ impl ContainerProviderBuilder {
     }
     /// <p>The information about the container cluster.</p>
     pub fn set_info(mut self, input: ::std::option::Option<crate::types::ContainerInfo>) -> Self {
-        self.info = input;
-        self
+        self.info = input; self
+    }
+    /// <p>The information about the container cluster.</p>
+    pub fn get_info(&self) -> &::std::option::Option<crate::types::ContainerInfo> {
+        &self.info
     }
     /// Consumes the builder and constructs a [`ContainerProvider`](crate::types::ContainerProvider).
     pub fn build(self) -> crate::types::ContainerProvider {
         crate::types::ContainerProvider {
-            r#type: self.r#type,
-            id: self.id,
-            info: self.info,
+            r#type: self.r#type
+            ,
+            id: self.id
+            ,
+            info: self.info
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The data repository task could not be canceled because the task has already ended.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataRepositoryTaskEnded {
+pub struct DataRepositoryTaskEnded  {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,13 @@ pub struct DataRepositoryTaskEnded {
 }
 impl DataRepositoryTaskEnded {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for DataRepositoryTaskEnded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "DataRepositoryTaskEnded")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -34,9 +32,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::DataRepositoryTa
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DataRepositoryTaskEnded {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl DataRepositoryTaskEnded {
     /// Creates a new builder-style object to manufacture [`DataRepositoryTaskEnded`](crate::types::error::DataRepositoryTaskEnded).
@@ -47,9 +43,7 @@ impl DataRepositoryTaskEnded {
 
 /// A builder for [`DataRepositoryTaskEnded`](crate::types::error::DataRepositoryTaskEnded).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataRepositoryTaskEndedBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -62,28 +56,30 @@ impl DataRepositoryTaskEndedBuilder {
     }
     /// <p>A detailed error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A detailed error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`DataRepositoryTaskEnded`](crate::types::error::DataRepositoryTaskEnded).
     pub fn build(self) -> crate::types::error::DataRepositoryTaskEnded {
         crate::types::error::DataRepositoryTaskEnded {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

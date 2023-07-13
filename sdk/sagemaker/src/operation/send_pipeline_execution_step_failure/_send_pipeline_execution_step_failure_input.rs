@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendPipelineExecutionStepFailureInput {
+pub struct SendPipelineExecutionStepFailureInput  {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
     #[doc(hidden)]
     pub callback_token: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct SendPipelineExecutionStepFailureInput {
 }
 impl SendPipelineExecutionStepFailureInput {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn callback_token(&self) -> ::std::option::Option<&str> {
+    pub fn callback_token(&self) -> ::std::option::Option<& str> {
         self.callback_token.as_deref()
     }
     /// <p>A message describing why the step failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
 impl SendPipelineExecutionStepFailureInput {
     /// Creates a new builder-style object to manufacture [`SendPipelineExecutionStepFailureInput`](crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureInput).
-    pub fn builder() -> crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder{
+    pub fn builder() -> crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder {
         crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder::default()
     }
 }
 
 /// A builder for [`SendPipelineExecutionStepFailureInput`](crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendPipelineExecutionStepFailureInputBuilder {
     pub(crate) callback_token: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -46,55 +44,46 @@ pub struct SendPipelineExecutionStepFailureInputBuilder {
 }
 impl SendPipelineExecutionStepFailureInputBuilder {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn callback_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn callback_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.callback_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn set_callback_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.callback_token = input;
-        self
+    pub fn set_callback_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.callback_token = input; self
+    }
+    /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    pub fn get_callback_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_token
     }
     /// <p>A message describing why the step failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message describing why the step failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input; self
+    }
+    /// <p>A message describing why the step failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SendPipelineExecutionStepFailureInput`](crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureInput {
                 callback_token: self.callback_token
@@ -107,3 +96,4 @@ impl SendPipelineExecutionStepFailureInputBuilder {
         )
     }
 }
+

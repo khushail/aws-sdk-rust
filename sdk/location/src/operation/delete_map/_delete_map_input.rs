@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMapInput {
+pub struct DeleteMapInput  {
     /// <p>The name of the map resource to be deleted.</p>
     #[doc(hidden)]
     pub map_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMapInput {
     /// <p>The name of the map resource to be deleted.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
+    pub fn map_name(&self) -> ::std::option::Option<& str> {
         self.map_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteMapInput {
 
 /// A builder for [`DeleteMapInput`](crate::operation::delete_map::DeleteMapInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMapInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteMapInputBuilder {
     }
     /// <p>The name of the map resource to be deleted.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
+    }
+    /// <p>The name of the map resource to be deleted.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_name
     }
     /// Consumes the builder and constructs a [`DeleteMapInput`](crate::operation::delete_map::DeleteMapInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_map::DeleteMapInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_map::DeleteMapInput {
-            map_name: self.map_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_map::DeleteMapInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_map::DeleteMapInput {
+                map_name: self.map_name
+                ,
+            }
+        )
     }
 }
+

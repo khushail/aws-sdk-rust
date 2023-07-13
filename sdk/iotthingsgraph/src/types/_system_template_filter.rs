@@ -3,7 +3,7 @@
 /// <p>An object that filters a system search.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SystemTemplateFilter {
+pub struct SystemTemplateFilter  {
     /// <p>The name of the system search filter field.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SystemTemplateFilterName>,
@@ -13,11 +13,11 @@ pub struct SystemTemplateFilter {
 }
 impl SystemTemplateFilter {
     /// <p>The name of the system search filter field.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SystemTemplateFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::SystemTemplateFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn value(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl SystemTemplateFilter {
 
 /// A builder for [`SystemTemplateFilter`](crate::types::SystemTemplateFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SystemTemplateFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SystemTemplateFilterName>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,12 +42,12 @@ impl SystemTemplateFilterBuilder {
         self
     }
     /// <p>The name of the system search filter field.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemTemplateFilterName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SystemTemplateFilterName>) -> Self {
+        self.name = input; self
+    }
+    /// <p>The name of the system search filter field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SystemTemplateFilterName> {
+        &self.name
     }
     /// Appends an item to `value`.
     ///
@@ -58,23 +56,26 @@ impl SystemTemplateFilterBuilder {
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
-        v.push(input.into());
-        self.value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.value = input; self
+    }
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`SystemTemplateFilter`](crate::types::SystemTemplateFilter).
     pub fn build(self) -> crate::types::SystemTemplateFilter {
         crate::types::SystemTemplateFilter {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DirectSourceAdditionalOptions {
+pub struct S3DirectSourceAdditionalOptions  {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
     #[doc(hidden)]
     pub bounded_size: ::std::option::Option<i64>,
@@ -31,7 +31,7 @@ impl S3DirectSourceAdditionalOptions {
         self.enable_sample_path
     }
     /// <p>If enabled, specifies the sample path.</p>
-    pub fn sample_path(&self) -> ::std::option::Option<&str> {
+    pub fn sample_path(&self) -> ::std::option::Option<& str> {
         self.sample_path.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl S3DirectSourceAdditionalOptions {
 
 /// A builder for [`S3DirectSourceAdditionalOptions`](crate::types::S3DirectSourceAdditionalOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DirectSourceAdditionalOptionsBuilder {
     pub(crate) bounded_size: ::std::option::Option<i64>,
     pub(crate) bounded_files: ::std::option::Option<i64>,
@@ -61,8 +59,11 @@ impl S3DirectSourceAdditionalOptionsBuilder {
     }
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
     pub fn set_bounded_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bounded_size = input;
-        self
+        self.bounded_size = input; self
+    }
+    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    pub fn get_bounded_size(&self) -> &::std::option::Option<i64> {
+        &self.bounded_size
     }
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
     pub fn bounded_files(mut self, input: i64) -> Self {
@@ -71,8 +72,11 @@ impl S3DirectSourceAdditionalOptionsBuilder {
     }
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
     pub fn set_bounded_files(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bounded_files = input;
-        self
+        self.bounded_files = input; self
+    }
+    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    pub fn get_bounded_files(&self) -> &::std::option::Option<i64> {
+        &self.bounded_files
     }
     /// <p>Sets option to enable a sample path.</p>
     pub fn enable_sample_path(mut self, input: bool) -> Self {
@@ -81,8 +85,11 @@ impl S3DirectSourceAdditionalOptionsBuilder {
     }
     /// <p>Sets option to enable a sample path.</p>
     pub fn set_enable_sample_path(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_sample_path = input;
-        self
+        self.enable_sample_path = input; self
+    }
+    /// <p>Sets option to enable a sample path.</p>
+    pub fn get_enable_sample_path(&self) -> &::std::option::Option<bool> {
+        &self.enable_sample_path
     }
     /// <p>If enabled, specifies the sample path.</p>
     pub fn sample_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl S3DirectSourceAdditionalOptionsBuilder {
     }
     /// <p>If enabled, specifies the sample path.</p>
     pub fn set_sample_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_path = input;
-        self
+        self.sample_path = input; self
+    }
+    /// <p>If enabled, specifies the sample path.</p>
+    pub fn get_sample_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_path
     }
     /// Consumes the builder and constructs a [`S3DirectSourceAdditionalOptions`](crate::types::S3DirectSourceAdditionalOptions).
     pub fn build(self) -> crate::types::S3DirectSourceAdditionalOptions {
         crate::types::S3DirectSourceAdditionalOptions {
-            bounded_size: self.bounded_size,
-            bounded_files: self.bounded_files,
-            enable_sample_path: self.enable_sample_path,
-            sample_path: self.sample_path,
+            bounded_size: self.bounded_size
+            ,
+            bounded_files: self.bounded_files
+            ,
+            enable_sample_path: self.enable_sample_path
+            ,
+            sample_path: self.sample_path
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRelatedItemOutput {
+pub struct CreateRelatedItemOutput  {
     /// <p>The unique identifier of the related item.</p>
     #[doc(hidden)]
     pub related_item_id: ::std::option::Option<::std::string::String>,
@@ -13,32 +13,29 @@ pub struct CreateRelatedItemOutput {
 }
 impl CreateRelatedItemOutput {
     /// <p>The unique identifier of the related item.</p>
-    pub fn related_item_id(&self) -> ::std::option::Option<&str> {
+    pub fn related_item_id(&self) -> ::std::option::Option<& str> {
         self.related_item_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
-    pub fn related_item_arn(&self) -> ::std::option::Option<&str> {
+    pub fn related_item_arn(&self) -> ::std::option::Option<& str> {
         self.related_item_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateRelatedItemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateRelatedItemOutput {
     /// Creates a new builder-style object to manufacture [`CreateRelatedItemOutput`](crate::operation::create_related_item::CreateRelatedItemOutput).
-    pub fn builder(
-    ) -> crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder {
+    pub fn builder() -> crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder {
         crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRelatedItemOutput`](crate::operation::create_related_item::CreateRelatedItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRelatedItemOutputBuilder {
     pub(crate) related_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) related_item_arn: ::std::option::Option<::std::string::String>,
@@ -46,52 +43,49 @@ pub struct CreateRelatedItemOutputBuilder {
 }
 impl CreateRelatedItemOutputBuilder {
     /// <p>The unique identifier of the related item.</p>
-    pub fn related_item_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the related item.</p>
-    pub fn set_related_item_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.related_item_id = input;
-        self
+    pub fn set_related_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.related_item_id = input; self
+    }
+    /// <p>The unique identifier of the related item.</p>
+    pub fn get_related_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_item_id
     }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
-    pub fn related_item_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_item_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_item_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
-    pub fn set_related_item_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.related_item_arn = input;
-        self
+    pub fn set_related_item_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.related_item_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the related item.</p>
+    pub fn get_related_item_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_item_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateRelatedItemOutput`](crate::operation::create_related_item::CreateRelatedItemOutput).
     pub fn build(self) -> crate::operation::create_related_item::CreateRelatedItemOutput {
         crate::operation::create_related_item::CreateRelatedItemOutput {
-            related_item_id: self.related_item_id,
-            related_item_arn: self.related_item_arn,
+            related_item_id: self.related_item_id
+            ,
+            related_item_arn: self.related_item_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

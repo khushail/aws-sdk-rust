@@ -2,60 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHostedConnectionsInput {
+pub struct DescribeHostedConnectionsInput  {
     /// <p>The ID of the interconnect or LAG.</p>
     #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHostedConnectionsInput {
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
 }
 impl DescribeHostedConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsInput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput).
-    pub fn builder() -> crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder {
         crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHostedConnectionsInput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostedConnectionsInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHostedConnectionsInputBuilder {
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_id = input;
-        self
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_id = input; self
+    }
+    /// <p>The ID of the interconnect or LAG.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// Consumes the builder and constructs a [`DescribeHostedConnectionsInput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput {
-                connection_id: self.connection_id,
-            },
+                connection_id: self.connection_id
+                ,
+            }
         )
     }
 }
+

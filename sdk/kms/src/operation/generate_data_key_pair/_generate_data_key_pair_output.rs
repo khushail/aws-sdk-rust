@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GenerateDataKeyPairOutput {
+pub struct GenerateDataKeyPairOutput  {
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     #[doc(hidden)]
     pub private_key_ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p> 
     /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code> field is null or empty.</p>
     #[doc(hidden)]
     pub private_key_plaintext: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -19,7 +19,7 @@ pub struct GenerateDataKeyPairOutput {
     /// <p>The type of data key pair that was generated.</p>
     #[doc(hidden)]
     pub key_pair_spec: ::std::option::Option<crate::types::DataKeyPairSpec>,
-    /// <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p>
+    /// <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p> 
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub ciphertext_for_recipient: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -27,39 +27,36 @@ pub struct GenerateDataKeyPairOutput {
 }
 impl GenerateDataKeyPairOutput {
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn private_key_ciphertext_blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn private_key_ciphertext_blob(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.private_key_ciphertext_blob.as_ref()
     }
-    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p> 
     /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code> field is null or empty.</p>
-    pub fn private_key_plaintext(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn private_key_plaintext(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.private_key_plaintext.as_ref()
     }
     /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn public_key(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn public_key(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.public_key.as_ref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The type of data key pair that was generated.</p>
-    pub fn key_pair_spec(&self) -> ::std::option::Option<&crate::types::DataKeyPairSpec> {
+    pub fn key_pair_spec(&self) -> ::std::option::Option<& crate::types::DataKeyPairSpec> {
         self.key_pair_spec.as_ref()
     }
-    /// <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p>
+    /// <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p> 
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn ciphertext_for_recipient(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn ciphertext_for_recipient(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.ciphertext_for_recipient.as_ref()
     }
 }
-impl ::std::fmt::Debug for GenerateDataKeyPairOutput {
+impl  ::std::fmt::Debug for GenerateDataKeyPairOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateDataKeyPairOutput");
-        formatter.field(
-            "private_key_ciphertext_blob",
-            &self.private_key_ciphertext_blob,
-        );
+        formatter.field("private_key_ciphertext_blob", &self.private_key_ciphertext_blob);
         formatter.field("private_key_plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("public_key", &self.public_key);
         formatter.field("key_id", &self.key_id);
@@ -70,14 +67,13 @@ impl ::std::fmt::Debug for GenerateDataKeyPairOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for GenerateDataKeyPairOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GenerateDataKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyPairOutput`](crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput).
-    pub fn builder(
-    ) -> crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairOutputBuilder {
+    pub fn builder() -> crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairOutputBuilder {
         crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairOutputBuilder::default()
     }
 }
@@ -101,27 +97,28 @@ impl GenerateDataKeyPairOutputBuilder {
         self
     }
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn set_private_key_ciphertext_blob(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
-        self.private_key_ciphertext_blob = input;
-        self
+    pub fn set_private_key_ciphertext_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.private_key_ciphertext_blob = input; self
     }
-    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn get_private_key_ciphertext_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.private_key_ciphertext_blob
+    }
+    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p> 
     /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code> field is null or empty.</p>
     pub fn private_key_plaintext(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.private_key_plaintext = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p> 
     /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code> field is null or empty.</p>
-    pub fn set_private_key_plaintext(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
-        self.private_key_plaintext = input;
-        self
+    pub fn set_private_key_plaintext(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.private_key_plaintext = input; self
+    }
+    /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p> 
+    /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code> field is null or empty.</p>
+    pub fn get_private_key_plaintext(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.private_key_plaintext
     }
     /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn public_key(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -129,12 +126,12 @@ impl GenerateDataKeyPairOutputBuilder {
         self
     }
     /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn set_public_key(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
-        self.public_key = input;
-        self
+    pub fn set_public_key(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.public_key = input; self
+    }
+    /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    pub fn get_public_key(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.public_key
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,8 +140,11 @@ impl GenerateDataKeyPairOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>The type of data key pair that was generated.</p>
     pub fn key_pair_spec(mut self, input: crate::types::DataKeyPairSpec) -> Self {
@@ -152,46 +152,53 @@ impl GenerateDataKeyPairOutputBuilder {
         self
     }
     /// <p>The type of data key pair that was generated.</p>
-    pub fn set_key_pair_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::DataKeyPairSpec>,
-    ) -> Self {
-        self.key_pair_spec = input;
-        self
+    pub fn set_key_pair_spec(mut self, input: ::std::option::Option<crate::types::DataKeyPairSpec>) -> Self {
+        self.key_pair_spec = input; self
     }
-    /// <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p>
+    /// <p>The type of data key pair that was generated.</p>
+    pub fn get_key_pair_spec(&self) -> &::std::option::Option<crate::types::DataKeyPairSpec> {
+        &self.key_pair_spec
+    }
+    /// <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p> 
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn ciphertext_for_recipient(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.ciphertext_for_recipient = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p>
+    /// <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p> 
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn set_ciphertext_for_recipient(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
-        self.ciphertext_for_recipient = input;
-        self
+    pub fn set_ciphertext_for_recipient(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.ciphertext_for_recipient = input; self
+    }
+    /// <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p> 
+    /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_ciphertext_for_recipient(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.ciphertext_for_recipient
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GenerateDataKeyPairOutput`](crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput).
     pub fn build(self) -> crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput {
         crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput {
-            private_key_ciphertext_blob: self.private_key_ciphertext_blob,
-            private_key_plaintext: self.private_key_plaintext,
-            public_key: self.public_key,
-            key_id: self.key_id,
-            key_pair_spec: self.key_pair_spec,
-            ciphertext_for_recipient: self.ciphertext_for_recipient,
+            private_key_ciphertext_blob: self.private_key_ciphertext_blob
+            ,
+            private_key_plaintext: self.private_key_plaintext
+            ,
+            public_key: self.public_key
+            ,
+            key_id: self.key_id
+            ,
+            key_pair_spec: self.key_pair_spec
+            ,
+            ciphertext_for_recipient: self.ciphertext_for_recipient
+            ,
             _request_id: self._request_id,
         }
     }
@@ -199,10 +206,7 @@ impl GenerateDataKeyPairOutputBuilder {
 impl ::std::fmt::Debug for GenerateDataKeyPairOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateDataKeyPairOutputBuilder");
-        formatter.field(
-            "private_key_ciphertext_blob",
-            &self.private_key_ciphertext_blob,
-        );
+        formatter.field("private_key_ciphertext_blob", &self.private_key_ciphertext_blob);
         formatter.field("private_key_plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("public_key", &self.public_key);
         formatter.field("key_id", &self.key_id);
@@ -212,3 +216,4 @@ impl ::std::fmt::Debug for GenerateDataKeyPairOutputBuilder {
         formatter.finish()
     }
 }
+

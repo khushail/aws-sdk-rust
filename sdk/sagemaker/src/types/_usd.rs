@@ -3,7 +3,7 @@
 /// <p>Represents an amount of money in United States dollars.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Usd {
+pub struct Usd  {
     /// <p>The whole number of dollars in the amount.</p>
     #[doc(hidden)]
     pub dollars: i32,
@@ -37,9 +37,7 @@ impl Usd {
 
 /// A builder for [`Usd`](crate::types::Usd).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsdBuilder {
     pub(crate) dollars: ::std::option::Option<i32>,
     pub(crate) cents: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl UsdBuilder {
     }
     /// <p>The whole number of dollars in the amount.</p>
     pub fn set_dollars(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dollars = input;
-        self
+        self.dollars = input; self
+    }
+    /// <p>The whole number of dollars in the amount.</p>
+    pub fn get_dollars(&self) -> &::std::option::Option<i32> {
+        &self.dollars
     }
     /// <p>The fractional portion, in cents, of the amount. </p>
     pub fn cents(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl UsdBuilder {
     }
     /// <p>The fractional portion, in cents, of the amount. </p>
     pub fn set_cents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cents = input;
-        self
+        self.cents = input; self
+    }
+    /// <p>The fractional portion, in cents, of the amount. </p>
+    pub fn get_cents(&self) -> &::std::option::Option<i32> {
+        &self.cents
     }
     /// <p>Fractions of a cent, in tenths.</p>
     pub fn tenth_fractions_of_a_cent(mut self, input: i32) -> Self {
@@ -73,15 +77,25 @@ impl UsdBuilder {
     }
     /// <p>Fractions of a cent, in tenths.</p>
     pub fn set_tenth_fractions_of_a_cent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.tenth_fractions_of_a_cent = input;
-        self
+        self.tenth_fractions_of_a_cent = input; self
+    }
+    /// <p>Fractions of a cent, in tenths.</p>
+    pub fn get_tenth_fractions_of_a_cent(&self) -> &::std::option::Option<i32> {
+        &self.tenth_fractions_of_a_cent
     }
     /// Consumes the builder and constructs a [`Usd`](crate::types::Usd).
     pub fn build(self) -> crate::types::Usd {
         crate::types::Usd {
-            dollars: self.dollars.unwrap_or_default(),
-            cents: self.cents.unwrap_or_default(),
-            tenth_fractions_of_a_cent: self.tenth_fractions_of_a_cent.unwrap_or_default(),
+            dollars: self.dollars
+                .unwrap_or_default()
+            ,
+            cents: self.cents
+                .unwrap_or_default()
+            ,
+            tenth_fractions_of_a_cent: self.tenth_fractions_of_a_cent
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

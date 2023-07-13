@@ -3,104 +3,88 @@ pub use crate::operation::update_instance_attribute::_update_instance_attribute_
 
 pub use crate::operation::update_instance_attribute::_update_instance_attribute_input::UpdateInstanceAttributeInputBuilder;
 
+impl UpdateInstanceAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_instance_attribute::UpdateInstanceAttributeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_instance_attribute();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateInstanceAttribute`.
-///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// 
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p> 
 /// <p>Updates the value for the specified attribute type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInstanceAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeInputBuilder,
+                    inner: crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeInputBuilder,
 }
-impl UpdateInstanceAttributeFluentBuilder {
+impl UpdateInstanceAttributeFluentBuilder  {
     /// Creates a new `UpdateInstanceAttribute`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_instance_attribute::UpdateInstanceAttribute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_instance_attribute::UpdateInstanceAttributeError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateInstanceAttribute as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_instance_attribute::UpdateInstanceAttributeError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_instance_attribute::UpdateInstanceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_instance_attribute::UpdateInstanceAttributeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_instance_attribute::UpdateInstanceAttributeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_instance_attribute::UpdateInstanceAttributeError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_instance_attribute::UpdateInstanceAttribute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_instance_attribute::UpdateInstanceAttributeError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_instance_attribute::UpdateInstanceAttributeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_instance_attribute::UpdateInstanceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_instance_attribute::UpdateInstanceAttributeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -111,22 +95,29 @@ impl UpdateInstanceAttributeFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The type of attribute.</p> <note>
-    /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
+    /// <p>The type of attribute.</p> <note> 
+    /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p> 
     /// </note>
     pub fn attribute_type(mut self, input: crate::types::InstanceAttributeType) -> Self {
         self.inner = self.inner.attribute_type(input);
         self
     }
-    /// <p>The type of attribute.</p> <note>
-    /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
+    /// <p>The type of attribute.</p> <note> 
+    /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p> 
     /// </note>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAttributeType>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
         self.inner = self.inner.set_attribute_type(input);
         self
+    }
+    /// <p>The type of attribute.</p> <note> 
+    /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p> 
+    /// </note>
+    pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
+        self.inner.get_attribute_type()
     }
     /// <p>The value for the attribute. Maximum character limit is 100. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,4 +129,9 @@ impl UpdateInstanceAttributeFluentBuilder {
         self.inner = self.inner.set_value(input);
         self
     }
+    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_value()
+    }
 }
+

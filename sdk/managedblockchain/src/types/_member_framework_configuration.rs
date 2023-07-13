@@ -3,14 +3,14 @@
 /// <p>Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemberFrameworkConfiguration {
+pub struct MemberFrameworkConfiguration  {
     /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub fabric: ::std::option::Option<crate::types::MemberFabricConfiguration>,
 }
 impl MemberFrameworkConfiguration {
     /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn fabric(&self) -> ::std::option::Option<&crate::types::MemberFabricConfiguration> {
+    pub fn fabric(&self) -> ::std::option::Option<& crate::types::MemberFabricConfiguration> {
         self.fabric.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl MemberFrameworkConfiguration {
 
 /// A builder for [`MemberFrameworkConfiguration`](crate::types::MemberFrameworkConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberFrameworkConfigurationBuilder {
     pub(crate) fabric: ::std::option::Option<crate::types::MemberFabricConfiguration>,
 }
@@ -36,17 +34,19 @@ impl MemberFrameworkConfigurationBuilder {
         self
     }
     /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn set_fabric(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberFabricConfiguration>,
-    ) -> Self {
-        self.fabric = input;
-        self
+    pub fn set_fabric(mut self, input: ::std::option::Option<crate::types::MemberFabricConfiguration>) -> Self {
+        self.fabric = input; self
+    }
+    /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
+    pub fn get_fabric(&self) -> &::std::option::Option<crate::types::MemberFabricConfiguration> {
+        &self.fabric
     }
     /// Consumes the builder and constructs a [`MemberFrameworkConfiguration`](crate::types::MemberFrameworkConfiguration).
     pub fn build(self) -> crate::types::MemberFrameworkConfiguration {
         crate::types::MemberFrameworkConfiguration {
-            fabric: self.fabric,
+            fabric: self.fabric
+            ,
         }
     }
 }
+

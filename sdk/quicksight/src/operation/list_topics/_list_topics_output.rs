@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTopicsOutput {
+pub struct ListTopicsOutput  {
     /// <p>A list of topic summaries.</p>
     #[doc(hidden)]
     pub topics_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>>,
@@ -19,15 +19,15 @@ pub struct ListTopicsOutput {
 }
 impl ListTopicsOutput {
     /// <p>A list of topic summaries.</p>
-    pub fn topics_summaries(&self) -> ::std::option::Option<&[crate::types::TopicSummary]> {
+    pub fn topics_summaries(&self) -> ::std::option::Option<& [crate::types::TopicSummary]> {
         self.topics_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -36,10 +36,10 @@ impl ListTopicsOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for ListTopicsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListTopicsOutput {
     /// Creates a new builder-style object to manufacture [`ListTopicsOutput`](crate::operation::list_topics::ListTopicsOutput).
     pub fn builder() -> crate::operation::list_topics::builders::ListTopicsOutputBuilder {
@@ -49,9 +49,7 @@ impl ListTopicsOutput {
 
 /// A builder for [`ListTopicsOutput`](crate::operation::list_topics::ListTopicsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicsOutputBuilder {
     pub(crate) topics_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -67,17 +65,17 @@ impl ListTopicsOutputBuilder {
     /// <p>A list of topic summaries.</p>
     pub fn topics_summaries(mut self, input: crate::types::TopicSummary) -> Self {
         let mut v = self.topics_summaries.unwrap_or_default();
-        v.push(input);
-        self.topics_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.topics_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of topic summaries.</p>
-    pub fn set_topics_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>>,
-    ) -> Self {
-        self.topics_summaries = input;
-        self
+    pub fn set_topics_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>>) -> Self {
+        self.topics_summaries = input; self
+    }
+    /// <p>A list of topic summaries.</p>
+    pub fn get_topics_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>> {
+        &self.topics_summaries
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +84,11 @@ impl ListTopicsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,8 +97,11 @@ impl ListTopicsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -106,26 +110,35 @@ impl ListTopicsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListTopicsOutput`](crate::operation::list_topics::ListTopicsOutput).
     pub fn build(self) -> crate::operation::list_topics::ListTopicsOutput {
         crate::operation::list_topics::ListTopicsOutput {
-            topics_summaries: self.topics_summaries,
-            next_token: self.next_token,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            topics_summaries: self.topics_summaries
+            ,
+            next_token: self.next_token
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

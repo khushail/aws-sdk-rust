@@ -3,7 +3,7 @@
 /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupMember {
+pub struct GroupMember  {
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct GroupMember {
 }
 impl GroupMember {
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the group member (user).</p>
-    pub fn member_name(&self) -> ::std::option::Option<&str> {
+    pub fn member_name(&self) -> ::std::option::Option<& str> {
         self.member_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl GroupMember {
 
 /// A builder for [`GroupMember`](crate::types::GroupMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupMemberBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl GroupMemberBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the group member (user).</p>
     pub fn member_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl GroupMemberBuilder {
     }
     /// <p>The name of the group member (user).</p>
     pub fn set_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_name = input;
-        self
+        self.member_name = input; self
+    }
+    /// <p>The name of the group member (user).</p>
+    pub fn get_member_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_name
     }
     /// Consumes the builder and constructs a [`GroupMember`](crate::types::GroupMember).
     pub fn build(self) -> crate::types::GroupMember {
         crate::types::GroupMember {
-            arn: self.arn,
-            member_name: self.member_name,
+            arn: self.arn
+            ,
+            member_name: self.member_name
+            ,
         }
     }
 }
+

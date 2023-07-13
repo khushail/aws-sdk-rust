@@ -3,7 +3,7 @@
 /// <p>Provided if <code>ActionType</code> is <code>PORT_PROBE</code>. It provides details about the attempted port probe that was detected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortProbeAction {
+pub struct PortProbeAction  {
     /// <p>Information about the ports affected by the port probe.</p>
     #[doc(hidden)]
     pub port_probe_details: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
@@ -13,7 +13,7 @@ pub struct PortProbeAction {
 }
 impl PortProbeAction {
     /// <p>Information about the ports affected by the port probe.</p>
-    pub fn port_probe_details(&self) -> ::std::option::Option<&[crate::types::PortProbeDetail]> {
+    pub fn port_probe_details(&self) -> ::std::option::Option<& [crate::types::PortProbeDetail]> {
         self.port_probe_details.as_deref()
     }
     /// <p>Indicates whether the port probe was blocked.</p>
@@ -30,12 +30,9 @@ impl PortProbeAction {
 
 /// A builder for [`PortProbeAction`](crate::types::PortProbeAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortProbeActionBuilder {
-    pub(crate) port_probe_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
+    pub(crate) port_probe_details: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
     pub(crate) blocked: ::std::option::Option<bool>,
 }
 impl PortProbeActionBuilder {
@@ -46,17 +43,17 @@ impl PortProbeActionBuilder {
     /// <p>Information about the ports affected by the port probe.</p>
     pub fn port_probe_details(mut self, input: crate::types::PortProbeDetail) -> Self {
         let mut v = self.port_probe_details.unwrap_or_default();
-        v.push(input);
-        self.port_probe_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.port_probe_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the ports affected by the port probe.</p>
-    pub fn set_port_probe_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
-    ) -> Self {
-        self.port_probe_details = input;
-        self
+    pub fn set_port_probe_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>) -> Self {
+        self.port_probe_details = input; self
+    }
+    /// <p>Information about the ports affected by the port probe.</p>
+    pub fn get_port_probe_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>> {
+        &self.port_probe_details
     }
     /// <p>Indicates whether the port probe was blocked.</p>
     pub fn blocked(mut self, input: bool) -> Self {
@@ -65,14 +62,21 @@ impl PortProbeActionBuilder {
     }
     /// <p>Indicates whether the port probe was blocked.</p>
     pub fn set_blocked(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.blocked = input;
-        self
+        self.blocked = input; self
+    }
+    /// <p>Indicates whether the port probe was blocked.</p>
+    pub fn get_blocked(&self) -> &::std::option::Option<bool> {
+        &self.blocked
     }
     /// Consumes the builder and constructs a [`PortProbeAction`](crate::types::PortProbeAction).
     pub fn build(self) -> crate::types::PortProbeAction {
         crate::types::PortProbeAction {
-            port_probe_details: self.port_probe_details,
-            blocked: self.blocked.unwrap_or_default(),
+            port_probe_details: self.port_probe_details
+            ,
+            blocked: self.blocked
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

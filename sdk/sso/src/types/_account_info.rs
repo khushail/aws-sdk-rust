@@ -3,7 +3,7 @@
 /// <p>Provides information about your AWS account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountInfo {
+pub struct AccountInfo  {
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct AccountInfo {
 }
 impl AccountInfo {
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The display name of the AWS account that is assigned to the user.</p>
-    pub fn account_name(&self) -> ::std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>The email address of the AWS account that is assigned to the user.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl AccountInfo {
 
 /// A builder for [`AccountInfo`](crate::types::AccountInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountInfoBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_name: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl AccountInfoBuilder {
     }
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The identifier of the AWS account that is assigned to the user.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The display name of the AWS account that is assigned to the user.</p>
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,31 +64,35 @@ impl AccountInfoBuilder {
     }
     /// <p>The display name of the AWS account that is assigned to the user.</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_name = input;
-        self
+        self.account_name = input; self
+    }
+    /// <p>The display name of the AWS account that is assigned to the user.</p>
+    pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_name
     }
     /// <p>The email address of the AWS account that is assigned to the user.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the AWS account that is assigned to the user.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.email_address = input;
-        self
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.email_address = input; self
+    }
+    /// <p>The email address of the AWS account that is assigned to the user.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// Consumes the builder and constructs a [`AccountInfo`](crate::types::AccountInfo).
     pub fn build(self) -> crate::types::AccountInfo {
         crate::types::AccountInfo {
-            account_id: self.account_id,
-            account_name: self.account_name,
-            email_address: self.email_address,
+            account_id: self.account_id
+            ,
+            account_name: self.account_name
+            ,
+            email_address: self.email_address
+            ,
         }
     }
 }
+

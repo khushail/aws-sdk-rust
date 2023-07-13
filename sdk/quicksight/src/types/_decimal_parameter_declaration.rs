@@ -3,7 +3,7 @@
 /// <p>A parameter declaration for the <code>Decimal</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DecimalParameterDeclaration {
+pub struct DecimalParameterDeclaration  {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
     #[doc(hidden)]
     pub parameter_value_type: ::std::option::Option<crate::types::ParameterValueType>,
@@ -18,32 +18,27 @@ pub struct DecimalParameterDeclaration {
     pub value_when_unset: ::std::option::Option<crate::types::DecimalValueWhenUnsetConfiguration>,
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
     #[doc(hidden)]
-    pub mapped_data_set_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    pub mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl DecimalParameterDeclaration {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub fn parameter_value_type(&self) -> ::std::option::Option<&crate::types::ParameterValueType> {
+    pub fn parameter_value_type(&self) -> ::std::option::Option<& crate::types::ParameterValueType> {
         self.parameter_value_type.as_ref()
     }
     /// <p>The name of the parameter that is being declared.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn default_values(&self) -> ::std::option::Option<&crate::types::DecimalDefaultValues> {
+    pub fn default_values(&self) -> ::std::option::Option<& crate::types::DecimalDefaultValues> {
         self.default_values.as_ref()
     }
     /// <p>The configuration that defines the default value of a <code>Decimal</code> parameter when a value has not been set.</p>
-    pub fn value_when_unset(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DecimalValueWhenUnsetConfiguration> {
+    pub fn value_when_unset(&self) -> ::std::option::Option<& crate::types::DecimalValueWhenUnsetConfiguration> {
         self.value_when_unset.as_ref()
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn mapped_data_set_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MappedDataSetParameter]> {
+    pub fn mapped_data_set_parameters(&self) -> ::std::option::Option<& [crate::types::MappedDataSetParameter]> {
         self.mapped_data_set_parameters.as_deref()
     }
 }
@@ -56,17 +51,13 @@ impl DecimalParameterDeclaration {
 
 /// A builder for [`DecimalParameterDeclaration`](crate::types::DecimalParameterDeclaration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecimalParameterDeclarationBuilder {
     pub(crate) parameter_value_type: ::std::option::Option<crate::types::ParameterValueType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_values: ::std::option::Option<crate::types::DecimalDefaultValues>,
-    pub(crate) value_when_unset:
-        ::std::option::Option<crate::types::DecimalValueWhenUnsetConfiguration>,
-    pub(crate) mapped_data_set_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    pub(crate) value_when_unset: ::std::option::Option<crate::types::DecimalValueWhenUnsetConfiguration>,
+    pub(crate) mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl DecimalParameterDeclarationBuilder {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
@@ -75,12 +66,12 @@ impl DecimalParameterDeclarationBuilder {
         self
     }
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub fn set_parameter_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterValueType>,
-    ) -> Self {
-        self.parameter_value_type = input;
-        self
+    pub fn set_parameter_value_type(mut self, input: ::std::option::Option<crate::types::ParameterValueType>) -> Self {
+        self.parameter_value_type = input; self
+    }
+    /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
+    pub fn get_parameter_value_type(&self) -> &::std::option::Option<crate::types::ParameterValueType> {
+        &self.parameter_value_type
     }
     /// <p>The name of the parameter that is being declared.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +80,11 @@ impl DecimalParameterDeclarationBuilder {
     }
     /// <p>The name of the parameter that is being declared.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the parameter that is being declared.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub fn default_values(mut self, input: crate::types::DecimalDefaultValues) -> Self {
@@ -98,59 +92,59 @@ impl DecimalParameterDeclarationBuilder {
         self
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn set_default_values(
-        mut self,
-        input: ::std::option::Option<crate::types::DecimalDefaultValues>,
-    ) -> Self {
-        self.default_values = input;
-        self
+    pub fn set_default_values(mut self, input: ::std::option::Option<crate::types::DecimalDefaultValues>) -> Self {
+        self.default_values = input; self
+    }
+    /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
+    pub fn get_default_values(&self) -> &::std::option::Option<crate::types::DecimalDefaultValues> {
+        &self.default_values
     }
     /// <p>The configuration that defines the default value of a <code>Decimal</code> parameter when a value has not been set.</p>
-    pub fn value_when_unset(
-        mut self,
-        input: crate::types::DecimalValueWhenUnsetConfiguration,
-    ) -> Self {
+    pub fn value_when_unset(mut self, input: crate::types::DecimalValueWhenUnsetConfiguration) -> Self {
         self.value_when_unset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that defines the default value of a <code>Decimal</code> parameter when a value has not been set.</p>
-    pub fn set_value_when_unset(
-        mut self,
-        input: ::std::option::Option<crate::types::DecimalValueWhenUnsetConfiguration>,
-    ) -> Self {
-        self.value_when_unset = input;
-        self
+    pub fn set_value_when_unset(mut self, input: ::std::option::Option<crate::types::DecimalValueWhenUnsetConfiguration>) -> Self {
+        self.value_when_unset = input; self
+    }
+    /// <p>The configuration that defines the default value of a <code>Decimal</code> parameter when a value has not been set.</p>
+    pub fn get_value_when_unset(&self) -> &::std::option::Option<crate::types::DecimalValueWhenUnsetConfiguration> {
+        &self.value_when_unset
     }
     /// Appends an item to `mapped_data_set_parameters`.
     ///
     /// To override the contents of this collection use [`set_mapped_data_set_parameters`](Self::set_mapped_data_set_parameters).
     ///
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn mapped_data_set_parameters(
-        mut self,
-        input: crate::types::MappedDataSetParameter,
-    ) -> Self {
+    pub fn mapped_data_set_parameters(mut self, input: crate::types::MappedDataSetParameter) -> Self {
         let mut v = self.mapped_data_set_parameters.unwrap_or_default();
-        v.push(input);
-        self.mapped_data_set_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mapped_data_set_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn set_mapped_data_set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
-    ) -> Self {
-        self.mapped_data_set_parameters = input;
-        self
+    pub fn set_mapped_data_set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>) -> Self {
+        self.mapped_data_set_parameters = input; self
+    }
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    pub fn get_mapped_data_set_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>> {
+        &self.mapped_data_set_parameters
     }
     /// Consumes the builder and constructs a [`DecimalParameterDeclaration`](crate::types::DecimalParameterDeclaration).
     pub fn build(self) -> crate::types::DecimalParameterDeclaration {
         crate::types::DecimalParameterDeclaration {
-            parameter_value_type: self.parameter_value_type,
-            name: self.name,
-            default_values: self.default_values,
-            value_when_unset: self.value_when_unset,
-            mapped_data_set_parameters: self.mapped_data_set_parameters,
+            parameter_value_type: self.parameter_value_type
+            ,
+            name: self.name
+            ,
+            default_values: self.default_values
+            ,
+            value_when_unset: self.value_when_unset
+            ,
+            mapped_data_set_parameters: self.mapped_data_set_parameters
+            ,
         }
     }
 }
+

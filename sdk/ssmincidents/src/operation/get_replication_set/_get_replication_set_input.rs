@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReplicationSetInput {
+pub struct GetReplicationSetInput  {
     /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl GetReplicationSetInput {
     /// Creates a new builder-style object to manufacture [`GetReplicationSetInput`](crate::operation::get_replication_set::GetReplicationSetInput).
-    pub fn builder(
-    ) -> crate::operation::get_replication_set::builders::GetReplicationSetInputBuilder {
+    pub fn builder() -> crate::operation::get_replication_set::builders::GetReplicationSetInputBuilder {
         crate::operation::get_replication_set::builders::GetReplicationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReplicationSetInput`](crate::operation::get_replication_set::GetReplicationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReplicationSetInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl GetReplicationSetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`GetReplicationSetInput`](crate::operation::get_replication_set::GetReplicationSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_replication_set::GetReplicationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_replication_set::GetReplicationSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_replication_set::GetReplicationSetInput { arn: self.arn },
+            crate::operation::get_replication_set::GetReplicationSetInput {
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

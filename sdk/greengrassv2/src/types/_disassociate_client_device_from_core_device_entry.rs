@@ -3,14 +3,14 @@
 /// <p>Contains a request to disassociate a client device from a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceWithCoreDevice.html">BatchDisassociateClientDeviceWithCoreDevice</a> operation consumes a list of these requests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateClientDeviceFromCoreDeviceEntry {
+pub struct DisassociateClientDeviceFromCoreDeviceEntry  {
     /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
     #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateClientDeviceFromCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DisassociateClientDeviceFromCoreDeviceEntry {
 
 /// A builder for [`DisassociateClientDeviceFromCoreDeviceEntry`](crate::types::DisassociateClientDeviceFromCoreDeviceEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateClientDeviceFromCoreDeviceEntryBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl DisassociateClientDeviceFromCoreDeviceEntryBuilder {
     }
     /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
+    }
+    /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// Consumes the builder and constructs a [`DisassociateClientDeviceFromCoreDeviceEntry`](crate::types::DisassociateClientDeviceFromCoreDeviceEntry).
     pub fn build(self) -> crate::types::DisassociateClientDeviceFromCoreDeviceEntry {
         crate::types::DisassociateClientDeviceFromCoreDeviceEntry {
-            thing_name: self.thing_name,
+            thing_name: self.thing_name
+            ,
         }
     }
 }
+

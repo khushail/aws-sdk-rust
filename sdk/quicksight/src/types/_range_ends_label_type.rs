@@ -3,14 +3,14 @@
 /// <p>The range ends label type of a data path label.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RangeEndsLabelType {
+pub struct RangeEndsLabelType  {
     /// <p>The visibility of the range ends label.</p>
     #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl RangeEndsLabelType {
     /// <p>The visibility of the range ends label.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl RangeEndsLabelType {
 
 /// A builder for [`RangeEndsLabelType`](crate::types::RangeEndsLabelType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RangeEndsLabelTypeBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
@@ -36,17 +34,19 @@ impl RangeEndsLabelTypeBuilder {
         self
     }
     /// <p>The visibility of the range ends label.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.visibility = input;
-        self
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.visibility = input; self
+    }
+    /// <p>The visibility of the range ends label.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`RangeEndsLabelType`](crate::types::RangeEndsLabelType).
     pub fn build(self) -> crate::types::RangeEndsLabelType {
         crate::types::RangeEndsLabelType {
-            visibility: self.visibility,
+            visibility: self.visibility
+            ,
         }
     }
 }
+

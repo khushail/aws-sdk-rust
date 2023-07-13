@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetGraphMemberDatasourcesInput {
+pub struct BatchGetGraphMemberDatasourcesInput  {
     /// <p>The ARN of the behavior graph.</p>
     #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct BatchGetGraphMemberDatasourcesInput {
 }
 impl BatchGetGraphMemberDatasourcesInput {
     /// <p>The ARN of the behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn account_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.account_ids.as_deref()
     }
 }
 impl BatchGetGraphMemberDatasourcesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetGraphMemberDatasourcesInput`](crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput).
-    pub fn builder() -> crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesInputBuilder {
         crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetGraphMemberDatasourcesInput`](crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetGraphMemberDatasourcesInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,8 +42,11 @@ impl BatchGetGraphMemberDatasourcesInputBuilder {
     }
     /// <p>The ARN of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
+    }
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
     }
     /// Appends an item to `account_ids`.
     ///
@@ -54,25 +55,20 @@ impl BatchGetGraphMemberDatasourcesInputBuilder {
     /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_ids = input; self
+    }
+    /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`BatchGetGraphMemberDatasourcesInput`](crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput {
                 graph_arn: self.graph_arn
@@ -83,3 +79,4 @@ impl BatchGetGraphMemberDatasourcesInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartHumanLoopInput {
+pub struct StartHumanLoopInput  {
     /// <p>The name of the human loop.</p>
     #[doc(hidden)]
     pub human_loop_name: ::std::option::Option<::std::string::String>,
@@ -18,19 +18,19 @@ pub struct StartHumanLoopInput {
 }
 impl StartHumanLoopInput {
     /// <p>The name of the human loop.</p>
-    pub fn human_loop_name(&self) -> ::std::option::Option<&str> {
+    pub fn human_loop_name(&self) -> ::std::option::Option<& str> {
         self.human_loop_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
-    pub fn flow_definition_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_definition_arn(&self) -> ::std::option::Option<& str> {
         self.flow_definition_arn.as_deref()
     }
     /// <p>An object that contains information about the human loop.</p>
-    pub fn human_loop_input(&self) -> ::std::option::Option<&crate::types::HumanLoopInput> {
+    pub fn human_loop_input(&self) -> ::std::option::Option<& crate::types::HumanLoopInput> {
         self.human_loop_input.as_ref()
     }
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
-    pub fn data_attributes(&self) -> ::std::option::Option<&crate::types::HumanLoopDataAttributes> {
+    pub fn data_attributes(&self) -> ::std::option::Option<& crate::types::HumanLoopDataAttributes> {
         self.data_attributes.as_ref()
     }
 }
@@ -43,9 +43,7 @@ impl StartHumanLoopInput {
 
 /// A builder for [`StartHumanLoopInput`](crate::operation::start_human_loop::StartHumanLoopInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartHumanLoopInputBuilder {
     pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
     pub(crate) flow_definition_arn: ::std::option::Option<::std::string::String>,
@@ -54,36 +52,30 @@ pub struct StartHumanLoopInputBuilder {
 }
 impl StartHumanLoopInputBuilder {
     /// <p>The name of the human loop.</p>
-    pub fn human_loop_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the human loop.</p>
-    pub fn set_human_loop_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.human_loop_name = input;
-        self
+    pub fn set_human_loop_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.human_loop_name = input; self
+    }
+    /// <p>The name of the human loop.</p>
+    pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_name
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
-    pub fn flow_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
-    pub fn set_flow_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.flow_definition_arn = input;
-        self
+    pub fn set_flow_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.flow_definition_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
+    pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_arn
     }
     /// <p>An object that contains information about the human loop.</p>
     pub fn human_loop_input(mut self, input: crate::types::HumanLoopInput) -> Self {
@@ -91,12 +83,12 @@ impl StartHumanLoopInputBuilder {
         self
     }
     /// <p>An object that contains information about the human loop.</p>
-    pub fn set_human_loop_input(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopInput>,
-    ) -> Self {
-        self.human_loop_input = input;
-        self
+    pub fn set_human_loop_input(mut self, input: ::std::option::Option<crate::types::HumanLoopInput>) -> Self {
+        self.human_loop_input = input; self
+    }
+    /// <p>An object that contains information about the human loop.</p>
+    pub fn get_human_loop_input(&self) -> &::std::option::Option<crate::types::HumanLoopInput> {
+        &self.human_loop_input
     }
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
     pub fn data_attributes(mut self, input: crate::types::HumanLoopDataAttributes) -> Self {
@@ -104,25 +96,27 @@ impl StartHumanLoopInputBuilder {
         self
     }
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
-    pub fn set_data_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
-    ) -> Self {
-        self.data_attributes = input;
-        self
+    pub fn set_data_attributes(mut self, input: ::std::option::Option<crate::types::HumanLoopDataAttributes>) -> Self {
+        self.data_attributes = input; self
+    }
+    /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
+    pub fn get_data_attributes(&self) -> &::std::option::Option<crate::types::HumanLoopDataAttributes> {
+        &self.data_attributes
     }
     /// Consumes the builder and constructs a [`StartHumanLoopInput`](crate::operation::start_human_loop::StartHumanLoopInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_human_loop::StartHumanLoopInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_human_loop::StartHumanLoopInput {
-            human_loop_name: self.human_loop_name,
-            flow_definition_arn: self.flow_definition_arn,
-            human_loop_input: self.human_loop_input,
-            data_attributes: self.data_attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_human_loop::StartHumanLoopInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_human_loop::StartHumanLoopInput {
+                human_loop_name: self.human_loop_name
+                ,
+                flow_definition_arn: self.flow_definition_arn
+                ,
+                human_loop_input: self.human_loop_input
+                ,
+                data_attributes: self.data_attributes
+                ,
+            }
+        )
     }
 }
+

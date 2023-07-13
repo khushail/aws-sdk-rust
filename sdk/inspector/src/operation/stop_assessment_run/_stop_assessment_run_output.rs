@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopAssessmentRunOutput {
+pub struct StopAssessmentRunOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for StopAssessmentRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopAssessmentRunOutput {
     /// Creates a new builder-style object to manufacture [`StopAssessmentRunOutput`](crate::operation::stop_assessment_run::StopAssessmentRunOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_assessment_run::builders::StopAssessmentRunOutputBuilder {
+    pub fn builder() -> crate::operation::stop_assessment_run::builders::StopAssessmentRunOutputBuilder {
         crate::operation::stop_assessment_run::builders::StopAssessmentRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopAssessmentRunOutput`](crate::operation::stop_assessment_run::StopAssessmentRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAssessmentRunOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopAssessmentRunOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopAssessmentRunOutput`](crate::operation::stop_assessment_run::StopAssessmentRunOutput).
     pub fn build(self) -> crate::operation::stop_assessment_run::StopAssessmentRunOutput {
         crate::operation::stop_assessment_run::StopAssessmentRunOutput {
@@ -43,3 +40,4 @@ impl StopAssessmentRunOutputBuilder {
         }
     }
 }
+

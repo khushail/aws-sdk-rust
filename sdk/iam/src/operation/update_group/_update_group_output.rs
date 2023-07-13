@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupOutput {
+pub struct UpdateGroupOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UpdateGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput).
     pub fn builder() -> crate::operation::update_group::builders::UpdateGroupOutputBuilder {
@@ -19,22 +19,20 @@ impl UpdateGroupOutput {
 
 /// A builder for [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput).
     pub fn build(self) -> crate::operation::update_group::UpdateGroupOutput {
         crate::operation::update_group::UpdateGroupOutput {
@@ -42,3 +40,4 @@ impl UpdateGroupOutputBuilder {
         }
     }
 }
+

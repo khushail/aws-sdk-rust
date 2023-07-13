@@ -3,7 +3,7 @@
 /// <p>An object that contains inbox placement data for email sent from one of your email domains to a specific email provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainIspPlacement {
+pub struct DomainIspPlacement  {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
     #[doc(hidden)]
     pub isp_name: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct DomainIspPlacement {
 }
 impl DomainIspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
-    pub fn isp_name(&self) -> ::std::option::Option<&str> {
+    pub fn isp_name(&self) -> ::std::option::Option<& str> {
         self.isp_name.as_deref()
     }
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
@@ -51,9 +51,7 @@ impl DomainIspPlacement {
 
 /// A builder for [`DomainIspPlacement`](crate::types::DomainIspPlacement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainIspPlacementBuilder {
     pub(crate) isp_name: ::std::option::Option<::std::string::String>,
     pub(crate) inbox_raw_count: ::std::option::Option<i64>,
@@ -69,8 +67,11 @@ impl DomainIspPlacementBuilder {
     }
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
     pub fn set_isp_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.isp_name = input;
-        self
+        self.isp_name = input; self
+    }
+    /// <p>The name of the email provider that the inbox placement data applies to.</p>
+    pub fn get_isp_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.isp_name
     }
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
     pub fn inbox_raw_count(mut self, input: i64) -> Self {
@@ -79,8 +80,11 @@ impl DomainIspPlacementBuilder {
     }
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
     pub fn set_inbox_raw_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.inbox_raw_count = input;
-        self
+        self.inbox_raw_count = input; self
+    }
+    /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
+    pub fn get_inbox_raw_count(&self) -> &::std::option::Option<i64> {
+        &self.inbox_raw_count
     }
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
     pub fn spam_raw_count(mut self, input: i64) -> Self {
@@ -89,8 +93,11 @@ impl DomainIspPlacementBuilder {
     }
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
     pub fn set_spam_raw_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.spam_raw_count = input;
-        self
+        self.spam_raw_count = input; self
+    }
+    /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
+    pub fn get_spam_raw_count(&self) -> &::std::option::Option<i64> {
+        &self.spam_raw_count
     }
     /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
     pub fn inbox_percentage(mut self, input: f64) -> Self {
@@ -99,8 +106,11 @@ impl DomainIspPlacementBuilder {
     }
     /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
     pub fn set_inbox_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.inbox_percentage = input;
-        self
+        self.inbox_percentage = input; self
+    }
+    /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
+    pub fn get_inbox_percentage(&self) -> &::std::option::Option<f64> {
+        &self.inbox_percentage
     }
     /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
     pub fn spam_percentage(mut self, input: f64) -> Self {
@@ -109,17 +119,26 @@ impl DomainIspPlacementBuilder {
     }
     /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
     pub fn set_spam_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.spam_percentage = input;
-        self
+        self.spam_percentage = input; self
+    }
+    /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
+    pub fn get_spam_percentage(&self) -> &::std::option::Option<f64> {
+        &self.spam_percentage
     }
     /// Consumes the builder and constructs a [`DomainIspPlacement`](crate::types::DomainIspPlacement).
     pub fn build(self) -> crate::types::DomainIspPlacement {
         crate::types::DomainIspPlacement {
-            isp_name: self.isp_name,
-            inbox_raw_count: self.inbox_raw_count,
-            spam_raw_count: self.spam_raw_count,
-            inbox_percentage: self.inbox_percentage,
-            spam_percentage: self.spam_percentage,
+            isp_name: self.isp_name
+            ,
+            inbox_raw_count: self.inbox_raw_count
+            ,
+            spam_raw_count: self.spam_raw_count
+            ,
+            inbox_percentage: self.inbox_percentage
+            ,
+            spam_percentage: self.spam_percentage
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The configuration object of a video concatenation pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoConcatenationConfiguration {
+pub struct VideoConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
 impl VideoConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ArtifactsConcatenationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ArtifactsConcatenationState> {
         self.state.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl VideoConcatenationConfiguration {
 
 /// A builder for [`VideoConcatenationConfiguration`](crate::types::VideoConcatenationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
@@ -36,15 +34,19 @@ impl VideoConcatenationConfigurationBuilder {
         self
     }
     /// <p>Enables or disables the configuration object.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>Enables or disables the configuration object.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsConcatenationState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`VideoConcatenationConfiguration`](crate::types::VideoConcatenationConfiguration).
     pub fn build(self) -> crate::types::VideoConcatenationConfiguration {
-        crate::types::VideoConcatenationConfiguration { state: self.state }
+        crate::types::VideoConcatenationConfiguration {
+            state: self.state
+            ,
+        }
     }
 }
+

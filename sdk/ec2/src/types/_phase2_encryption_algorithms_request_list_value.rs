@@ -3,14 +3,14 @@
 /// <p>Specifies the encryption algorithm for the VPN tunnel for phase 2 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Phase2EncryptionAlgorithmsRequestListValue {
+pub struct Phase2EncryptionAlgorithmsRequestListValue  {
     /// <p>The encryption algorithm.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Phase2EncryptionAlgorithmsRequestListValue {
     /// <p>The encryption algorithm.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Phase2EncryptionAlgorithmsRequestListValue {
 
 /// A builder for [`Phase2EncryptionAlgorithmsRequestListValue`](crate::types::Phase2EncryptionAlgorithmsRequestListValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Phase2EncryptionAlgorithmsRequestListValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl Phase2EncryptionAlgorithmsRequestListValueBuilder {
     }
     /// <p>The encryption algorithm.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The encryption algorithm.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Phase2EncryptionAlgorithmsRequestListValue`](crate::types::Phase2EncryptionAlgorithmsRequestListValue).
     pub fn build(self) -> crate::types::Phase2EncryptionAlgorithmsRequestListValue {
-        crate::types::Phase2EncryptionAlgorithmsRequestListValue { value: self.value }
+        crate::types::Phase2EncryptionAlgorithmsRequestListValue {
+            value: self.value
+            ,
+        }
     }
 }
+

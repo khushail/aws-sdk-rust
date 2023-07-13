@@ -3,7 +3,7 @@
 /// <p>Filters responses returned by the <code>ListAggregatedUtterances</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregatedUtterancesFilter {
+pub struct AggregatedUtterancesFilter  {
     /// <p>The name of the field to filter the utterance list.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>,
@@ -16,17 +16,15 @@ pub struct AggregatedUtterancesFilter {
 }
 impl AggregatedUtterancesFilter {
     /// <p>The name of the field to filter the utterance list.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AggregatedUtterancesFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AggregatedUtterancesFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    pub fn operator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregatedUtterancesFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<& crate::types::AggregatedUtterancesFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl AggregatedUtterancesFilter {
 
 /// A builder for [`AggregatedUtterancesFilter`](crate::types::AggregatedUtterancesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedUtterancesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,12 +50,12 @@ impl AggregatedUtterancesFilterBuilder {
         self
     }
     /// <p>The name of the field to filter the utterance list.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>) -> Self {
+        self.name = input; self
+    }
+    /// <p>The name of the field to filter the utterance list.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesFilterName> {
+        &self.name
     }
     /// Appends an item to `values`.
     ///
@@ -68,17 +64,17 @@ impl AggregatedUtterancesFilterBuilder {
     /// <p>The value to use for filtering the list of bots.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>The value to use for filtering the list of bots.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
     pub fn operator(mut self, input: crate::types::AggregatedUtterancesFilterOperator) -> Self {
@@ -86,19 +82,23 @@ impl AggregatedUtterancesFilterBuilder {
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregatedUtterancesFilterOperator>,
-    ) -> Self {
-        self.operator = input;
-        self
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::AggregatedUtterancesFilterOperator>) -> Self {
+        self.operator = input; self
+    }
+    /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesFilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`AggregatedUtterancesFilter`](crate::types::AggregatedUtterancesFilter).
     pub fn build(self) -> crate::types::AggregatedUtterancesFilter {
         crate::types::AggregatedUtterancesFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
+            name: self.name
+            ,
+            values: self.values
+            ,
+            operator: self.operator
+            ,
         }
     }
 }
+

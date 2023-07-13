@@ -3,7 +3,7 @@
 /// <p>Defines a point that a job can resume processing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobBookmarkEntry {
+pub struct JobBookmarkEntry  {
     /// <p>The name of the job in question.</p>
     #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct JobBookmarkEntry {
 }
 impl JobBookmarkEntry {
     /// <p>The name of the job in question.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The version of the job.</p>
@@ -44,15 +44,15 @@ impl JobBookmarkEntry {
         self.attempt
     }
     /// <p>The unique run identifier associated with the previous job run.</p>
-    pub fn previous_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn previous_run_id(&self) -> ::std::option::Option<& str> {
         self.previous_run_id.as_deref()
     }
     /// <p>The run ID number.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The bookmark itself.</p>
-    pub fn job_bookmark(&self) -> ::std::option::Option<&str> {
+    pub fn job_bookmark(&self) -> ::std::option::Option<& str> {
         self.job_bookmark.as_deref()
     }
 }
@@ -65,9 +65,7 @@ impl JobBookmarkEntry {
 
 /// A builder for [`JobBookmarkEntry`](crate::types::JobBookmarkEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobBookmarkEntryBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
@@ -85,8 +83,11 @@ impl JobBookmarkEntryBuilder {
     }
     /// <p>The name of the job in question.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The name of the job in question.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The version of the job.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -95,8 +96,11 @@ impl JobBookmarkEntryBuilder {
     }
     /// <p>The version of the job.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version of the job.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// <p>The run ID number.</p>
     pub fn run(mut self, input: i32) -> Self {
@@ -105,8 +109,11 @@ impl JobBookmarkEntryBuilder {
     }
     /// <p>The run ID number.</p>
     pub fn set_run(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.run = input;
-        self
+        self.run = input; self
+    }
+    /// <p>The run ID number.</p>
+    pub fn get_run(&self) -> &::std::option::Option<i32> {
+        &self.run
     }
     /// <p>The attempt ID number.</p>
     pub fn attempt(mut self, input: i32) -> Self {
@@ -115,24 +122,24 @@ impl JobBookmarkEntryBuilder {
     }
     /// <p>The attempt ID number.</p>
     pub fn set_attempt(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.attempt = input;
-        self
+        self.attempt = input; self
+    }
+    /// <p>The attempt ID number.</p>
+    pub fn get_attempt(&self) -> &::std::option::Option<i32> {
+        &self.attempt
     }
     /// <p>The unique run identifier associated with the previous job run.</p>
-    pub fn previous_run_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn previous_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique run identifier associated with the previous job run.</p>
-    pub fn set_previous_run_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.previous_run_id = input;
-        self
+    pub fn set_previous_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.previous_run_id = input; self
+    }
+    /// <p>The unique run identifier associated with the previous job run.</p>
+    pub fn get_previous_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_run_id
     }
     /// <p>The run ID number.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,8 +148,11 @@ impl JobBookmarkEntryBuilder {
     }
     /// <p>The run ID number.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
+    }
+    /// <p>The run ID number.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// <p>The bookmark itself.</p>
     pub fn job_bookmark(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,19 +161,33 @@ impl JobBookmarkEntryBuilder {
     }
     /// <p>The bookmark itself.</p>
     pub fn set_job_bookmark(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_bookmark = input;
-        self
+        self.job_bookmark = input; self
+    }
+    /// <p>The bookmark itself.</p>
+    pub fn get_job_bookmark(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_bookmark
     }
     /// Consumes the builder and constructs a [`JobBookmarkEntry`](crate::types::JobBookmarkEntry).
     pub fn build(self) -> crate::types::JobBookmarkEntry {
         crate::types::JobBookmarkEntry {
-            job_name: self.job_name,
-            version: self.version.unwrap_or_default(),
-            run: self.run.unwrap_or_default(),
-            attempt: self.attempt.unwrap_or_default(),
-            previous_run_id: self.previous_run_id,
-            run_id: self.run_id,
-            job_bookmark: self.job_bookmark,
+            job_name: self.job_name
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
+            run: self.run
+                .unwrap_or_default()
+            ,
+            attempt: self.attempt
+                .unwrap_or_default()
+            ,
+            previous_run_id: self.previous_run_id
+            ,
+            run_id: self.run_id
+            ,
+            job_bookmark: self.job_bookmark
+            ,
         }
     }
 }
+

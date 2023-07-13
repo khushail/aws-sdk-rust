@@ -3,7 +3,7 @@
 /// <p>A function is a reusable entity. You can use multiple functions to compose the resolver logic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionConfiguration {
+pub struct FunctionConfiguration  {
     /// <p>A unique ID representing the <code>Function</code> object.</p>
     #[doc(hidden)]
     pub function_id: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct FunctionConfiguration {
     /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
     #[doc(hidden)]
     pub function_version: ::std::option::Option<::std::string::String>,
-    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Describes a Sync configuration for a resolver.</p> 
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     #[doc(hidden)]
     pub sync_config: ::std::option::Option<crate::types::SyncConfig>,
@@ -44,40 +44,40 @@ pub struct FunctionConfiguration {
 }
 impl FunctionConfiguration {
     /// <p>A unique ID representing the <code>Function</code> object.</p>
-    pub fn function_id(&self) -> ::std::option::Option<&str> {
+    pub fn function_id(&self) -> ::std::option::Option<& str> {
         self.function_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn function_arn(&self) -> ::std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The name of the <code>Function</code> object.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The <code>Function</code> description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the <code>DataSource</code>.</p>
-    pub fn data_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_name(&self) -> ::std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    pub fn request_mapping_template(&self) -> ::std::option::Option<&str> {
+    pub fn request_mapping_template(&self) -> ::std::option::Option<& str> {
         self.request_mapping_template.as_deref()
     }
     /// <p>The <code>Function</code> response mapping template.</p>
-    pub fn response_mapping_template(&self) -> ::std::option::Option<&str> {
+    pub fn response_mapping_template(&self) -> ::std::option::Option<& str> {
         self.response_mapping_template.as_deref()
     }
     /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
-    pub fn function_version(&self) -> ::std::option::Option<&str> {
+    pub fn function_version(&self) -> ::std::option::Option<& str> {
         self.function_version.as_deref()
     }
-    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Describes a Sync configuration for a resolver.</p> 
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
-    pub fn sync_config(&self) -> ::std::option::Option<&crate::types::SyncConfig> {
+    pub fn sync_config(&self) -> ::std::option::Option<& crate::types::SyncConfig> {
         self.sync_config.as_ref()
     }
     /// <p>The maximum batching size for a resolver.</p>
@@ -85,11 +85,11 @@ impl FunctionConfiguration {
         self.max_batch_size
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    pub fn runtime(&self) -> ::std::option::Option<&crate::types::AppSyncRuntime> {
+    pub fn runtime(&self) -> ::std::option::Option<& crate::types::AppSyncRuntime> {
         self.runtime.as_ref()
     }
     /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
 }
@@ -102,9 +102,7 @@ impl FunctionConfiguration {
 
 /// A builder for [`FunctionConfiguration`](crate::types::FunctionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionConfigurationBuilder {
     pub(crate) function_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
@@ -127,8 +125,11 @@ impl FunctionConfigurationBuilder {
     }
     /// <p>A unique ID representing the <code>Function</code> object.</p>
     pub fn set_function_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_id = input;
-        self
+        self.function_id = input; self
+    }
+    /// <p>A unique ID representing the <code>Function</code> object.</p>
+    pub fn get_function_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_id
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,8 +138,11 @@ impl FunctionConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
     }
     /// <p>The name of the <code>Function</code> object.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,8 +151,11 @@ impl FunctionConfigurationBuilder {
     }
     /// <p>The name of the <code>Function</code> object.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the <code>Function</code> object.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The <code>Function</code> description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,87 +164,79 @@ impl FunctionConfigurationBuilder {
     }
     /// <p>The <code>Function</code> description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The <code>Function</code> description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the <code>DataSource</code>.</p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>DataSource</code>.</p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_source_name = input;
-        self
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_name = input; self
+    }
+    /// <p>The name of the <code>DataSource</code>.</p>
+    pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_name
     }
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    pub fn request_mapping_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_mapping_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    pub fn set_request_mapping_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.request_mapping_template = input;
-        self
+    pub fn set_request_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_mapping_template = input; self
+    }
+    /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
+    pub fn get_request_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_mapping_template
     }
     /// <p>The <code>Function</code> response mapping template.</p>
-    pub fn response_mapping_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_mapping_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>Function</code> response mapping template.</p>
-    pub fn set_response_mapping_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.response_mapping_template = input;
-        self
+    pub fn set_response_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.response_mapping_template = input; self
+    }
+    /// <p>The <code>Function</code> response mapping template.</p>
+    pub fn get_response_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_mapping_template
     }
     /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
-    pub fn function_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
-    pub fn set_function_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.function_version = input;
-        self
+    pub fn set_function_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.function_version = input; self
     }
-    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
+    pub fn get_function_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_version
+    }
+    /// <p>Describes a Sync configuration for a resolver.</p> 
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     pub fn sync_config(mut self, input: crate::types::SyncConfig) -> Self {
         self.sync_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Describes a Sync configuration for a resolver.</p> 
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
-    pub fn set_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncConfig>,
-    ) -> Self {
-        self.sync_config = input;
-        self
+    pub fn set_sync_config(mut self, input: ::std::option::Option<crate::types::SyncConfig>) -> Self {
+        self.sync_config = input; self
+    }
+    /// <p>Describes a Sync configuration for a resolver.</p> 
+    /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
+    pub fn get_sync_config(&self) -> &::std::option::Option<crate::types::SyncConfig> {
+        &self.sync_config
     }
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
@@ -246,8 +245,11 @@ impl FunctionConfigurationBuilder {
     }
     /// <p>The maximum batching size for a resolver.</p>
     pub fn set_max_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_batch_size = input;
-        self
+        self.max_batch_size = input; self
+    }
+    /// <p>The maximum batching size for a resolver.</p>
+    pub fn get_max_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.max_batch_size
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
     pub fn runtime(mut self, input: crate::types::AppSyncRuntime) -> Self {
@@ -255,12 +257,12 @@ impl FunctionConfigurationBuilder {
         self
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    pub fn set_runtime(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSyncRuntime>,
-    ) -> Self {
-        self.runtime = input;
-        self
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::AppSyncRuntime>) -> Self {
+        self.runtime = input; self
+    }
+    /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::AppSyncRuntime> {
+        &self.runtime
     }
     /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -269,24 +271,41 @@ impl FunctionConfigurationBuilder {
     }
     /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::types::FunctionConfiguration).
     pub fn build(self) -> crate::types::FunctionConfiguration {
         crate::types::FunctionConfiguration {
-            function_id: self.function_id,
-            function_arn: self.function_arn,
-            name: self.name,
-            description: self.description,
-            data_source_name: self.data_source_name,
-            request_mapping_template: self.request_mapping_template,
-            response_mapping_template: self.response_mapping_template,
-            function_version: self.function_version,
-            sync_config: self.sync_config,
-            max_batch_size: self.max_batch_size.unwrap_or_default(),
-            runtime: self.runtime,
-            code: self.code,
+            function_id: self.function_id
+            ,
+            function_arn: self.function_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            data_source_name: self.data_source_name
+            ,
+            request_mapping_template: self.request_mapping_template
+            ,
+            response_mapping_template: self.response_mapping_template
+            ,
+            function_version: self.function_version
+            ,
+            sync_config: self.sync_config
+            ,
+            max_batch_size: self.max_batch_size
+                .unwrap_or_default()
+            ,
+            runtime: self.runtime
+            ,
+            code: self.code
+            ,
         }
     }
 }
+

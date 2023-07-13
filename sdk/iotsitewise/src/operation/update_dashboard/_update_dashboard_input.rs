@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDashboardInput {
+pub struct UpdateDashboardInput  {
     /// <p>The ID of the dashboard to update.</p>
     #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
@@ -21,23 +21,23 @@ pub struct UpdateDashboardInput {
 }
 impl UpdateDashboardInput {
     /// <p>The ID of the dashboard to update.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>A new friendly name for the dashboard.</p>
-    pub fn dashboard_name(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_name(&self) -> ::std::option::Option<& str> {
         self.dashboard_name.as_deref()
     }
     /// <p>A new description for the dashboard.</p>
-    pub fn dashboard_description(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_description(&self) -> ::std::option::Option<& str> {
         self.dashboard_description.as_deref()
     }
     /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn dashboard_definition(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_definition(&self) -> ::std::option::Option<& str> {
         self.dashboard_definition.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -50,9 +50,7 @@ impl UpdateDashboardInput {
 
 /// A builder for [`UpdateDashboardInput`](crate::operation::update_dashboard::UpdateDashboardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDashboardInputBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_name: ::std::option::Option<::std::string::String>,
@@ -68,56 +66,50 @@ impl UpdateDashboardInputBuilder {
     }
     /// <p>The ID of the dashboard to update.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
+    }
+    /// <p>The ID of the dashboard to update.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
     }
     /// <p>A new friendly name for the dashboard.</p>
-    pub fn dashboard_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A new friendly name for the dashboard.</p>
-    pub fn set_dashboard_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dashboard_name = input;
-        self
+    pub fn set_dashboard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dashboard_name = input; self
+    }
+    /// <p>A new friendly name for the dashboard.</p>
+    pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_name
     }
     /// <p>A new description for the dashboard.</p>
-    pub fn dashboard_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A new description for the dashboard.</p>
-    pub fn set_dashboard_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dashboard_description = input;
-        self
+    pub fn set_dashboard_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dashboard_description = input; self
+    }
+    /// <p>A new description for the dashboard.</p>
+    pub fn get_dashboard_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_description
     }
     /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn dashboard_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_dashboard_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dashboard_definition = input;
-        self
+    pub fn set_dashboard_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dashboard_definition = input; self
+    }
+    /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_dashboard_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_definition
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,22 +118,28 @@ impl UpdateDashboardInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateDashboardInput`](crate::operation::update_dashboard::UpdateDashboardInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dashboard::UpdateDashboardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_dashboard::UpdateDashboardInput {
-            dashboard_id: self.dashboard_id,
-            dashboard_name: self.dashboard_name,
-            dashboard_description: self.dashboard_description,
-            dashboard_definition: self.dashboard_definition,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_dashboard::UpdateDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_dashboard::UpdateDashboardInput {
+                dashboard_id: self.dashboard_id
+                ,
+                dashboard_name: self.dashboard_name
+                ,
+                dashboard_description: self.dashboard_description
+                ,
+                dashboard_definition: self.dashboard_definition
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

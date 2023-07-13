@@ -3,27 +3,21 @@
 /// <p>Specifies the validation and image scan statuses of the model package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelPackageStatusDetails {
+pub struct ModelPackageStatusDetails  {
     /// <p>The validation status of the model package.</p>
     #[doc(hidden)]
-    pub validation_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
+    pub validation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
     /// <p>The status of the scan of the Docker image container for the model package.</p>
     #[doc(hidden)]
-    pub image_scan_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
+    pub image_scan_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
 }
 impl ModelPackageStatusDetails {
     /// <p>The validation status of the model package.</p>
-    pub fn validation_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelPackageStatusItem]> {
+    pub fn validation_statuses(&self) -> ::std::option::Option<& [crate::types::ModelPackageStatusItem]> {
         self.validation_statuses.as_deref()
     }
     /// <p>The status of the scan of the Docker image container for the model package.</p>
-    pub fn image_scan_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelPackageStatusItem]> {
+    pub fn image_scan_statuses(&self) -> ::std::option::Option<& [crate::types::ModelPackageStatusItem]> {
         self.image_scan_statuses.as_deref()
     }
 }
@@ -36,14 +30,10 @@ impl ModelPackageStatusDetails {
 
 /// A builder for [`ModelPackageStatusDetails`](crate::types::ModelPackageStatusDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelPackageStatusDetailsBuilder {
-    pub(crate) validation_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
-    pub(crate) image_scan_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
+    pub(crate) validation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
+    pub(crate) image_scan_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
 }
 impl ModelPackageStatusDetailsBuilder {
     /// Appends an item to `validation_statuses`.
@@ -53,17 +43,17 @@ impl ModelPackageStatusDetailsBuilder {
     /// <p>The validation status of the model package.</p>
     pub fn validation_statuses(mut self, input: crate::types::ModelPackageStatusItem) -> Self {
         let mut v = self.validation_statuses.unwrap_or_default();
-        v.push(input);
-        self.validation_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The validation status of the model package.</p>
-    pub fn set_validation_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
-    ) -> Self {
-        self.validation_statuses = input;
-        self
+    pub fn set_validation_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>) -> Self {
+        self.validation_statuses = input; self
+    }
+    /// <p>The validation status of the model package.</p>
+    pub fn get_validation_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>> {
+        &self.validation_statuses
     }
     /// Appends an item to `image_scan_statuses`.
     ///
@@ -72,23 +62,26 @@ impl ModelPackageStatusDetailsBuilder {
     /// <p>The status of the scan of the Docker image container for the model package.</p>
     pub fn image_scan_statuses(mut self, input: crate::types::ModelPackageStatusItem) -> Self {
         let mut v = self.image_scan_statuses.unwrap_or_default();
-        v.push(input);
-        self.image_scan_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.image_scan_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status of the scan of the Docker image container for the model package.</p>
-    pub fn set_image_scan_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
-    ) -> Self {
-        self.image_scan_statuses = input;
-        self
+    pub fn set_image_scan_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>) -> Self {
+        self.image_scan_statuses = input; self
+    }
+    /// <p>The status of the scan of the Docker image container for the model package.</p>
+    pub fn get_image_scan_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>> {
+        &self.image_scan_statuses
     }
     /// Consumes the builder and constructs a [`ModelPackageStatusDetails`](crate::types::ModelPackageStatusDetails).
     pub fn build(self) -> crate::types::ModelPackageStatusDetails {
         crate::types::ModelPackageStatusDetails {
-            validation_statuses: self.validation_statuses,
-            image_scan_statuses: self.image_scan_statuses,
+            validation_statuses: self.validation_statuses
+            ,
+            image_scan_statuses: self.image_scan_statuses
+            ,
         }
     }
 }
+

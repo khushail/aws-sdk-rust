@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSlackWorkspaceConfigurationInput {
+pub struct DeleteSlackWorkspaceConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSlackWorkspaceConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<& str> {
         self.team_id.as_deref()
     }
 }
 impl DeleteSlackWorkspaceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSlackWorkspaceConfigurationInput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput).
-    pub fn builder() -> crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationInputBuilder {
         crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSlackWorkspaceConfigurationInput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfigurationInputBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,11 +34,14 @@ impl DeleteSlackWorkspaceConfigurationInputBuilder {
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
+    }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
     }
     /// Consumes the builder and constructs a [`DeleteSlackWorkspaceConfigurationInput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput {
                 team_id: self.team_id
@@ -49,3 +50,4 @@ impl DeleteSlackWorkspaceConfigurationInputBuilder {
         )
     }
 }
+

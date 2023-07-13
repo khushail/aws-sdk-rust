@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMulticastGroupInput {
+pub struct DeleteMulticastGroupInput  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteMulticastGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupInput`](crate::operation::delete_multicast_group::DeleteMulticastGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_multicast_group::builders::DeleteMulticastGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_multicast_group::builders::DeleteMulticastGroupInputBuilder {
         crate::operation::delete_multicast_group::builders::DeleteMulticastGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMulticastGroupInput`](crate::operation::delete_multicast_group::DeleteMulticastGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMulticastGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DeleteMulticastGroupInputBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeleteMulticastGroupInput`](crate::operation::delete_multicast_group::DeleteMulticastGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_multicast_group::DeleteMulticastGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_multicast_group::DeleteMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_multicast_group::DeleteMulticastGroupInput { id: self.id },
+            crate::operation::delete_multicast_group::DeleteMulticastGroupInput {
+                id: self.id
+                ,
+            }
         )
     }
 }
+

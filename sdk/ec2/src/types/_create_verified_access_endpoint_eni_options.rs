@@ -3,7 +3,7 @@
 /// <p>Describes the network interface options when creating an Amazon Web Services Verified Access endpoint using the <code>network-interface</code> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVerifiedAccessEndpointEniOptions {
+pub struct CreateVerifiedAccessEndpointEniOptions  {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct CreateVerifiedAccessEndpointEniOptions {
 }
 impl CreateVerifiedAccessEndpointEniOptions {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The IP protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::VerifiedAccessEndpointProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The IP port number.</p>
@@ -37,9 +37,7 @@ impl CreateVerifiedAccessEndpointEniOptions {
 
 /// A builder for [`CreateVerifiedAccessEndpointEniOptions`](crate::types::CreateVerifiedAccessEndpointEniOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessEndpointEniOptionsBuilder {
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
@@ -47,20 +45,17 @@ pub struct CreateVerifiedAccessEndpointEniOptionsBuilder {
 }
 impl CreateVerifiedAccessEndpointEniOptionsBuilder {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_interface_id = input; self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// <p>The IP protocol.</p>
     pub fn protocol(mut self, input: crate::types::VerifiedAccessEndpointProtocol) -> Self {
@@ -68,12 +63,12 @@ impl CreateVerifiedAccessEndpointEniOptionsBuilder {
         self
     }
     /// <p>The IP protocol.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
-    ) -> Self {
-        self.protocol = input;
-        self
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>) -> Self {
+        self.protocol = input; self
+    }
+    /// <p>The IP protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
+        &self.protocol
     }
     /// <p>The IP port number.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -82,15 +77,22 @@ impl CreateVerifiedAccessEndpointEniOptionsBuilder {
     }
     /// <p>The IP port number.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
+    }
+    /// <p>The IP port number.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessEndpointEniOptions`](crate::types::CreateVerifiedAccessEndpointEniOptions).
     pub fn build(self) -> crate::types::CreateVerifiedAccessEndpointEniOptions {
         crate::types::CreateVerifiedAccessEndpointEniOptions {
-            network_interface_id: self.network_interface_id,
-            protocol: self.protocol,
-            port: self.port,
+            network_interface_id: self.network_interface_id
+            ,
+            protocol: self.protocol
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

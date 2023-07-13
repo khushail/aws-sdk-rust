@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainInformation {
+pub struct DomainInformation  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct DomainInformation {
 }
 impl DomainInformation {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl DomainInformation {
 
 /// A builder for [`DomainInformation`](crate::types::DomainInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainInformationBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl DomainInformationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl DomainInformationBuilder {
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,15 +76,22 @@ impl DomainInformationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`DomainInformation`](crate::types::DomainInformation).
     pub fn build(self) -> crate::types::DomainInformation {
         crate::types::DomainInformation {
-            owner_id: self.owner_id,
-            domain_name: self.domain_name,
-            region: self.region,
+            owner_id: self.owner_id
+            ,
+            domain_name: self.domain_name
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

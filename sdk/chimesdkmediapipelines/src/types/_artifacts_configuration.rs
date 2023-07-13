@@ -3,7 +3,7 @@
 /// <p>The configuration for the artifacts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArtifactsConfiguration {
+pub struct ArtifactsConfiguration  {
     /// <p>The configuration for the audio artifacts.</p>
     #[doc(hidden)]
     pub audio: ::std::option::Option<crate::types::AudioArtifactsConfiguration>,
@@ -15,26 +15,23 @@ pub struct ArtifactsConfiguration {
     pub content: ::std::option::Option<crate::types::ContentArtifactsConfiguration>,
     /// <p>Enables video compositing.</p>
     #[doc(hidden)]
-    pub composited_video:
-        ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
+    pub composited_video: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
 }
 impl ArtifactsConfiguration {
     /// <p>The configuration for the audio artifacts.</p>
-    pub fn audio(&self) -> ::std::option::Option<&crate::types::AudioArtifactsConfiguration> {
+    pub fn audio(&self) -> ::std::option::Option<& crate::types::AudioArtifactsConfiguration> {
         self.audio.as_ref()
     }
     /// <p>The configuration for the video artifacts.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::VideoArtifactsConfiguration> {
+    pub fn video(&self) -> ::std::option::Option<& crate::types::VideoArtifactsConfiguration> {
         self.video.as_ref()
     }
     /// <p>The configuration for the content artifacts.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::ContentArtifactsConfiguration> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::ContentArtifactsConfiguration> {
         self.content.as_ref()
     }
     /// <p>Enables video compositing.</p>
-    pub fn composited_video(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CompositedVideoArtifactsConfiguration> {
+    pub fn composited_video(&self) -> ::std::option::Option<& crate::types::CompositedVideoArtifactsConfiguration> {
         self.composited_video.as_ref()
     }
 }
@@ -47,15 +44,12 @@ impl ArtifactsConfiguration {
 
 /// A builder for [`ArtifactsConfiguration`](crate::types::ArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactsConfigurationBuilder {
     pub(crate) audio: ::std::option::Option<crate::types::AudioArtifactsConfiguration>,
     pub(crate) video: ::std::option::Option<crate::types::VideoArtifactsConfiguration>,
     pub(crate) content: ::std::option::Option<crate::types::ContentArtifactsConfiguration>,
-    pub(crate) composited_video:
-        ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
+    pub(crate) composited_video: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
 }
 impl ArtifactsConfigurationBuilder {
     /// <p>The configuration for the audio artifacts.</p>
@@ -64,12 +58,12 @@ impl ArtifactsConfigurationBuilder {
         self
     }
     /// <p>The configuration for the audio artifacts.</p>
-    pub fn set_audio(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioArtifactsConfiguration>,
-    ) -> Self {
-        self.audio = input;
-        self
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioArtifactsConfiguration>) -> Self {
+        self.audio = input; self
+    }
+    /// <p>The configuration for the audio artifacts.</p>
+    pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioArtifactsConfiguration> {
+        &self.audio
     }
     /// <p>The configuration for the video artifacts.</p>
     pub fn video(mut self, input: crate::types::VideoArtifactsConfiguration) -> Self {
@@ -77,12 +71,12 @@ impl ArtifactsConfigurationBuilder {
         self
     }
     /// <p>The configuration for the video artifacts.</p>
-    pub fn set_video(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoArtifactsConfiguration>,
-    ) -> Self {
-        self.video = input;
-        self
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoArtifactsConfiguration>) -> Self {
+        self.video = input; self
+    }
+    /// <p>The configuration for the video artifacts.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoArtifactsConfiguration> {
+        &self.video
     }
     /// <p>The configuration for the content artifacts.</p>
     pub fn content(mut self, input: crate::types::ContentArtifactsConfiguration) -> Self {
@@ -90,36 +84,38 @@ impl ArtifactsConfigurationBuilder {
         self
     }
     /// <p>The configuration for the content artifacts.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentArtifactsConfiguration>,
-    ) -> Self {
-        self.content = input;
-        self
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::ContentArtifactsConfiguration>) -> Self {
+        self.content = input; self
+    }
+    /// <p>The configuration for the content artifacts.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::ContentArtifactsConfiguration> {
+        &self.content
     }
     /// <p>Enables video compositing.</p>
-    pub fn composited_video(
-        mut self,
-        input: crate::types::CompositedVideoArtifactsConfiguration,
-    ) -> Self {
+    pub fn composited_video(mut self, input: crate::types::CompositedVideoArtifactsConfiguration) -> Self {
         self.composited_video = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables video compositing.</p>
-    pub fn set_composited_video(
-        mut self,
-        input: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
-    ) -> Self {
-        self.composited_video = input;
-        self
+    pub fn set_composited_video(mut self, input: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>) -> Self {
+        self.composited_video = input; self
+    }
+    /// <p>Enables video compositing.</p>
+    pub fn get_composited_video(&self) -> &::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration> {
+        &self.composited_video
     }
     /// Consumes the builder and constructs a [`ArtifactsConfiguration`](crate::types::ArtifactsConfiguration).
     pub fn build(self) -> crate::types::ArtifactsConfiguration {
         crate::types::ArtifactsConfiguration {
-            audio: self.audio,
-            video: self.video,
-            content: self.content,
-            composited_video: self.composited_video,
+            audio: self.audio
+            ,
+            video: self.video
+            ,
+            content: self.content
+            ,
+            composited_video: self.composited_video
+            ,
         }
     }
 }
+

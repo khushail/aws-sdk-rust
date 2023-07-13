@@ -3,109 +3,93 @@ pub use crate::operation::associate_targets_with_job::_associate_targets_with_jo
 
 pub use crate::operation::associate_targets_with_job::_associate_targets_with_job_input::AssociateTargetsWithJobInputBuilder;
 
+impl AssociateTargetsWithJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::associate_targets_with_job::AssociateTargetsWithJobError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.associate_targets_with_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `AssociateTargetsWithJob`.
-///
-/// <p>Associates a group with a continuous job. The following criteria must be met: </p>
-/// <ul>
-/// <li> <p>The job must have been created with the <code>targetSelection</code> field set to "CONTINUOUS".</p> </li>
-/// <li> <p>The job status must currently be "IN_PROGRESS".</p> </li>
-/// <li> <p>The total number of targets associated with a job must not exceed 100.</p> </li>
-/// </ul>
+/// 
+/// <p>Associates a group with a continuous job. The following criteria must be met: </p> 
+/// <ul> 
+/// <li> <p>The job must have been created with the <code>targetSelection</code> field set to "CONTINUOUS".</p> </li> 
+/// <li> <p>The job status must currently be "IN_PROGRESS".</p> </li> 
+/// <li> <p>The total number of targets associated with a job must not exceed 100.</p> </li> 
+/// </ul> 
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateTargetsWithJob</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateTargetsWithJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder,
+                    inner: crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder,
 }
-impl AssociateTargetsWithJobFluentBuilder {
+impl AssociateTargetsWithJobFluentBuilder  {
     /// Creates a new `AssociateTargetsWithJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJobError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the AssociateTargetsWithJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJobError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::associate_targets_with_job::AssociateTargetsWithJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::associate_targets_with_job::AssociateTargetsWithJobError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_targets_with_job::AssociateTargetsWithJobError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJobError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJobError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_targets_with_job::AssociateTargetsWithJobError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::associate_targets_with_job::AssociateTargetsWithJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::associate_targets_with_job::AssociateTargetsWithJobError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -116,12 +100,13 @@ impl AssociateTargetsWithJobFluentBuilder {
         self
     }
     /// <p>A list of thing group ARNs that define the targets of the job.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
+    }
+    /// <p>A list of thing group ARNs that define the targets of the job.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_targets()
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +118,10 @@ impl AssociateTargetsWithJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>An optional comment string describing why the job was associated with the targets.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -143,22 +132,35 @@ impl AssociateTargetsWithJobFluentBuilder {
         self.inner = self.inner.set_comment(input);
         self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>An optional comment string describing why the job was associated with the targets.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_id(input.into());
         self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_id(input);
         self
     }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
+    /// </note>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_id()
+    }
 }
+

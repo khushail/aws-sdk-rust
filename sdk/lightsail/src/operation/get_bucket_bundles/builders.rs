@@ -3,104 +3,89 @@ pub use crate::operation::get_bucket_bundles::_get_bucket_bundles_output::GetBuc
 
 pub use crate::operation::get_bucket_bundles::_get_bucket_bundles_input::GetBucketBundlesInputBuilder;
 
+impl GetBucketBundlesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_bucket_bundles::GetBucketBundlesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_bucket_bundles::GetBucketBundlesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_bucket_bundles();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetBucketBundles`.
-///
-/// <p>Returns the bundles that you can apply to a Amazon Lightsail bucket.</p>
-/// <p>The bucket bundle specifies the monthly cost, storage quota, and data transfer quota for a bucket.</p>
+/// 
+/// <p>Returns the bundles that you can apply to a Amazon Lightsail bucket.</p> 
+/// <p>The bucket bundle specifies the monthly cost, storage quota, and data transfer quota for a bucket.</p> 
 /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to update the bundle for a bucket.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBucketBundlesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder,
+                    inner: crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder,
 }
-impl GetBucketBundlesFluentBuilder {
+impl GetBucketBundlesFluentBuilder  {
     /// Creates a new `GetBucketBundles`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_bucket_bundles::GetBucketBundles,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_bundles::GetBucketBundlesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetBucketBundles as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_bundles::GetBucketBundlesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_bundles::GetBucketBundlesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_bucket_bundles::GetBucketBundles, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_bundles::GetBucketBundlesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_bucket_bundles::GetBucketBundlesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_bundles::GetBucketBundlesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_bundles::GetBucketBundlesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_bundles::GetBucketBundlesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_bucket_bundles::GetBucketBundles,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_bundles::GetBucketBundlesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_bucket_bundles::GetBucketBundlesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_bundles::GetBucketBundlesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_bucket_bundles::GetBucketBundles, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_bundles::GetBucketBundlesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub fn include_inactive(mut self, input: bool) -> Self {
         self.inner = self.inner.include_inactive(input);
@@ -111,4 +96,9 @@ impl GetBucketBundlesFluentBuilder {
         self.inner = self.inner.set_include_inactive(input);
         self
     }
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+    pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_inactive()
+    }
 }
+

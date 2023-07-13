@@ -2,83 +2,85 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGeofenceCollectionsInput {
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
+pub struct ListGeofenceCollectionsInput  {
+    /// <p>An optional limit for the number of resources returned in a single call. </p> 
     /// <p>Default value: <code>100</code> </p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> 
     /// <p>Default value: <code>null</code> </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListGeofenceCollectionsInput {
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>An optional limit for the number of resources returned in a single call. </p> 
     /// <p>Default value: <code>100</code> </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> 
     /// <p>Default value: <code>null</code> </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListGeofenceCollectionsInput {
     /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsInput`](crate::operation::list_geofence_collections::ListGeofenceCollectionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder {
         crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGeofenceCollectionsInput`](crate::operation::list_geofence_collections::ListGeofenceCollectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGeofenceCollectionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListGeofenceCollectionsInputBuilder {
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>An optional limit for the number of resources returned in a single call. </p> 
     /// <p>Default value: <code>100</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>An optional limit for the number of resources returned in a single call. </p> 
     /// <p>Default value: <code>100</code> </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>An optional limit for the number of resources returned in a single call. </p> 
+    /// <p>Default value: <code>100</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> 
     /// <p>Default value: <code>null</code> </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> 
     /// <p>Default value: <code>null</code> </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> 
+    /// <p>Default value: <code>null</code> </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListGeofenceCollectionsInput`](crate::operation::list_geofence_collections::ListGeofenceCollectionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_geofence_collections::ListGeofenceCollectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_geofence_collections::ListGeofenceCollectionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_geofence_collections::ListGeofenceCollectionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

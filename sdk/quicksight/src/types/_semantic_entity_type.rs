@@ -3,7 +3,7 @@
 /// <p>A structure that represents a semantic entity type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SemanticEntityType {
+pub struct SemanticEntityType  {
     /// <p>The semantic entity type name.</p>
     #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
@@ -12,25 +12,19 @@ pub struct SemanticEntityType {
     pub sub_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic entity type parameters.</p>
     #[doc(hidden)]
-    pub type_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SemanticEntityType {
     /// <p>The semantic entity type name.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The semantic entity sub type name.</p>
-    pub fn sub_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn sub_type_name(&self) -> ::std::option::Option<& str> {
         self.sub_type_name.as_deref()
     }
     /// <p>The semantic entity type parameters.</p>
-    pub fn type_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn type_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.type_parameters.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl SemanticEntityType {
 
 /// A builder for [`SemanticEntityType`](crate::types::SemanticEntityType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SemanticEntityTypeBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) sub_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) type_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SemanticEntityTypeBuilder {
     /// <p>The semantic entity type name.</p>
@@ -61,56 +51,54 @@ impl SemanticEntityTypeBuilder {
     }
     /// <p>The semantic entity type name.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
+    }
+    /// <p>The semantic entity type name.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// <p>The semantic entity sub type name.</p>
-    pub fn sub_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic entity sub type name.</p>
-    pub fn set_sub_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sub_type_name = input;
-        self
+    pub fn set_sub_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sub_type_name = input; self
+    }
+    /// <p>The semantic entity sub type name.</p>
+    pub fn get_sub_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_type_name
     }
     /// Adds a key-value pair to `type_parameters`.
     ///
     /// To override the contents of this collection use [`set_type_parameters`](Self::set_type_parameters).
     ///
     /// <p>The semantic entity type parameters.</p>
-    pub fn type_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.type_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.type_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.type_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The semantic entity type parameters.</p>
-    pub fn set_type_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.type_parameters = input;
-        self
+    pub fn set_type_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.type_parameters = input; self
+    }
+    /// <p>The semantic entity type parameters.</p>
+    pub fn get_type_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.type_parameters
     }
     /// Consumes the builder and constructs a [`SemanticEntityType`](crate::types::SemanticEntityType).
     pub fn build(self) -> crate::types::SemanticEntityType {
         crate::types::SemanticEntityType {
-            type_name: self.type_name,
-            sub_type_name: self.sub_type_name,
-            type_parameters: self.type_parameters,
+            type_name: self.type_name
+            ,
+            sub_type_name: self.sub_type_name
+            ,
+            type_parameters: self.type_parameters
+            ,
         }
     }
 }
+

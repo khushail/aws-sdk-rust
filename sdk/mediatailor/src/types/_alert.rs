@@ -3,7 +3,7 @@
 /// <p>Alert configuration parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Alert {
+pub struct Alert  {
     /// <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
     #[doc(hidden)]
     pub alert_code: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct Alert {
 }
 impl Alert {
     /// <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
-    pub fn alert_code(&self) -> ::std::option::Option<&str> {
+    pub fn alert_code(&self) -> ::std::option::Option<& str> {
         self.alert_code.as_deref()
     }
     /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
-    pub fn alert_message(&self) -> ::std::option::Option<&str> {
+    pub fn alert_message(&self) -> ::std::option::Option<& str> {
         self.alert_message.as_deref()
     }
     /// <p>The timestamp when the alert was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
-    pub fn related_resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn related_resource_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.related_resource_arns.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl Alert {
 
 /// A builder for [`Alert`](crate::types::Alert).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlertBuilder {
     pub(crate) alert_code: ::std::option::Option<::std::string::String>,
     pub(crate) alert_message: ::std::option::Option<::std::string::String>,
@@ -69,24 +67,24 @@ impl AlertBuilder {
     }
     /// <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
     pub fn set_alert_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alert_code = input;
-        self
+        self.alert_code = input; self
+    }
+    /// <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
+    pub fn get_alert_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_code
     }
     /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
-    pub fn alert_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alert_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
-    pub fn set_alert_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.alert_message = input;
-        self
+    pub fn set_alert_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alert_message = input; self
+    }
+    /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
+    pub fn get_alert_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_message
     }
     /// <p>The timestamp when the alert was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -94,34 +92,31 @@ impl AlertBuilder {
         self
     }
     /// <p>The timestamp when the alert was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
+    }
+    /// <p>The timestamp when the alert was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Appends an item to `related_resource_arns`.
     ///
     /// To override the contents of this collection use [`set_related_resource_arns`](Self::set_related_resource_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
-    pub fn related_resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.related_resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.related_resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.related_resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
-    pub fn set_related_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.related_resource_arns = input;
-        self
+    pub fn set_related_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.related_resource_arns = input; self
+    }
+    /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
+    pub fn get_related_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.related_resource_arns
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,17 +125,26 @@ impl AlertBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`Alert`](crate::types::Alert).
     pub fn build(self) -> crate::types::Alert {
         crate::types::Alert {
-            alert_code: self.alert_code,
-            alert_message: self.alert_message,
-            last_modified_time: self.last_modified_time,
-            related_resource_arns: self.related_resource_arns,
-            resource_arn: self.resource_arn,
+            alert_code: self.alert_code
+            ,
+            alert_message: self.alert_message
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            related_resource_arns: self.related_resource_arns
+            ,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

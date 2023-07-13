@@ -3,7 +3,7 @@
 /// <p>A structure that describes a request field with a validation error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the request field that had a validation error.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the request field that had a validation error.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The validation error caused by the request field.</p>
-    pub fn validation_issue(&self) -> ::std::option::Option<&str> {
+    pub fn validation_issue(&self) -> ::std::option::Option<& str> {
         self.validation_issue.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ValidationExceptionField {
 
 /// A builder for [`ValidationExceptionField`](crate::types::ValidationExceptionField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationExceptionFieldBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) validation_issue: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>The name of the request field that had a validation error.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the request field that had a validation error.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The validation error caused by the request field.</p>
-    pub fn validation_issue(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_issue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_issue = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The validation error caused by the request field.</p>
-    pub fn set_validation_issue(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.validation_issue = input;
-        self
+    pub fn set_validation_issue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.validation_issue = input; self
+    }
+    /// <p>The validation error caused by the request field.</p>
+    pub fn get_validation_issue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_issue
     }
     /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::types::ValidationExceptionField).
     pub fn build(self) -> crate::types::ValidationExceptionField {
         crate::types::ValidationExceptionField {
-            name: self.name,
-            validation_issue: self.validation_issue,
+            name: self.name
+            ,
+            validation_issue: self.validation_issue
+            ,
         }
     }
 }
+

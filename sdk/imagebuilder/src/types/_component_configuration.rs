@@ -3,7 +3,7 @@
 /// <p>Configuration details of the component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentConfiguration {
+pub struct ComponentConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
     pub component_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ComponentConfiguration {
 }
 impl ComponentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_arn(&self) -> ::std::option::Option<&str> {
+    pub fn component_arn(&self) -> ::std::option::Option<& str> {
         self.component_arn.as_deref()
     }
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::ComponentParameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<& [crate::types::ComponentParameter]> {
         self.parameters.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl ComponentConfiguration {
 
 /// A builder for [`ComponentConfiguration`](crate::types::ComponentConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentConfigurationBuilder {
     pub(crate) component_arn: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>>,
 }
 impl ComponentConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn set_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.component_arn = input;
-        self
+    pub fn set_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_arn
     }
     /// Appends an item to `parameters`.
     ///
@@ -61,23 +56,26 @@ impl ComponentConfigurationBuilder {
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
     pub fn parameters(mut self, input: crate::types::ComponentParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>>) -> Self {
+        self.parameters = input; self
+    }
+    /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ComponentConfiguration`](crate::types::ComponentConfiguration).
     pub fn build(self) -> crate::types::ComponentConfiguration {
         crate::types::ComponentConfiguration {
-            component_arn: self.component_arn,
-            parameters: self.parameters,
+            component_arn: self.component_arn
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

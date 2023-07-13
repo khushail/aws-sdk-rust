@@ -3,7 +3,7 @@
 /// <p> Specifies the end result of the flow run. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionResult {
+pub struct ExecutionResult  {
     /// <p> Provides any error message information related to the flow run. </p>
     #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
@@ -19,7 +19,7 @@ pub struct ExecutionResult {
 }
 impl ExecutionResult {
     /// <p> Provides any error message information related to the flow run. </p>
-    pub fn error_info(&self) -> ::std::option::Option<&crate::types::ErrorInfo> {
+    pub fn error_info(&self) -> ::std::option::Option<& crate::types::ErrorInfo> {
         self.error_info.as_ref()
     }
     /// <p> The total number of bytes processed by the flow run. </p>
@@ -44,9 +44,7 @@ impl ExecutionResult {
 
 /// A builder for [`ExecutionResult`](crate::types::ExecutionResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionResultBuilder {
     pub(crate) error_info: ::std::option::Option<crate::types::ErrorInfo>,
     pub(crate) bytes_processed: ::std::option::Option<i64>,
@@ -61,8 +59,11 @@ impl ExecutionResultBuilder {
     }
     /// <p> Provides any error message information related to the flow run. </p>
     pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
-        self.error_info = input;
-        self
+        self.error_info = input; self
+    }
+    /// <p> Provides any error message information related to the flow run. </p>
+    pub fn get_error_info(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
+        &self.error_info
     }
     /// <p> The total number of bytes processed by the flow run. </p>
     pub fn bytes_processed(mut self, input: i64) -> Self {
@@ -71,8 +72,11 @@ impl ExecutionResultBuilder {
     }
     /// <p> The total number of bytes processed by the flow run. </p>
     pub fn set_bytes_processed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_processed = input;
-        self
+        self.bytes_processed = input; self
+    }
+    /// <p> The total number of bytes processed by the flow run. </p>
+    pub fn get_bytes_processed(&self) -> &::std::option::Option<i64> {
+        &self.bytes_processed
     }
     /// <p> The total number of bytes written as a result of the flow run. </p>
     pub fn bytes_written(mut self, input: i64) -> Self {
@@ -81,8 +85,11 @@ impl ExecutionResultBuilder {
     }
     /// <p> The total number of bytes written as a result of the flow run. </p>
     pub fn set_bytes_written(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_written = input;
-        self
+        self.bytes_written = input; self
+    }
+    /// <p> The total number of bytes written as a result of the flow run. </p>
+    pub fn get_bytes_written(&self) -> &::std::option::Option<i64> {
+        &self.bytes_written
     }
     /// <p> The number of records processed in the flow run. </p>
     pub fn records_processed(mut self, input: i64) -> Self {
@@ -91,16 +98,24 @@ impl ExecutionResultBuilder {
     }
     /// <p> The number of records processed in the flow run. </p>
     pub fn set_records_processed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.records_processed = input;
-        self
+        self.records_processed = input; self
+    }
+    /// <p> The number of records processed in the flow run. </p>
+    pub fn get_records_processed(&self) -> &::std::option::Option<i64> {
+        &self.records_processed
     }
     /// Consumes the builder and constructs a [`ExecutionResult`](crate::types::ExecutionResult).
     pub fn build(self) -> crate::types::ExecutionResult {
         crate::types::ExecutionResult {
-            error_info: self.error_info,
-            bytes_processed: self.bytes_processed,
-            bytes_written: self.bytes_written,
-            records_processed: self.records_processed,
+            error_info: self.error_info
+            ,
+            bytes_processed: self.bytes_processed
+            ,
+            bytes_written: self.bytes_written
+            ,
+            records_processed: self.records_processed
+            ,
         }
     }
 }
+

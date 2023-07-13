@@ -3,7 +3,7 @@
 /// <p>A security group associated with the network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2NetworkInterfaceSecurityGroup {
+pub struct AwsEc2NetworkInterfaceSecurityGroup  {
     /// <p>The name of the security group.</p>
     #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsEc2NetworkInterfaceSecurityGroup {
 }
 impl AwsEc2NetworkInterfaceSecurityGroup {
     /// <p>The name of the security group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The ID of the security group.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AwsEc2NetworkInterfaceSecurityGroup {
 
 /// A builder for [`AwsEc2NetworkInterfaceSecurityGroup`](crate::types::AwsEc2NetworkInterfaceSecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceSecurityGroupBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AwsEc2NetworkInterfaceSecurityGroupBuilder {
     }
     /// <p>The name of the security group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
+    }
+    /// <p>The name of the security group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl AwsEc2NetworkInterfaceSecurityGroupBuilder {
     }
     /// <p>The ID of the security group.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
+    }
+    /// <p>The ID of the security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceSecurityGroup`](crate::types::AwsEc2NetworkInterfaceSecurityGroup).
     pub fn build(self) -> crate::types::AwsEc2NetworkInterfaceSecurityGroup {
         crate::types::AwsEc2NetworkInterfaceSecurityGroup {
-            group_name: self.group_name,
-            group_id: self.group_id,
+            group_name: self.group_name
+            ,
+            group_id: self.group_id
+            ,
         }
     }
 }
+

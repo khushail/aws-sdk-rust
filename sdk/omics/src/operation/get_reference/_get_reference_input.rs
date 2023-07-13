@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReferenceInput {
+pub struct GetReferenceInput  {
     /// <p>The reference's ID.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -21,15 +21,15 @@ pub struct GetReferenceInput {
 }
 impl GetReferenceInput {
     /// <p>The reference's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The reference's store ID.</p>
-    pub fn reference_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn reference_store_id(&self) -> ::std::option::Option<& str> {
         self.reference_store_id.as_deref()
     }
     /// <p>The range to retrieve.</p>
-    pub fn range(&self) -> ::std::option::Option<&str> {
+    pub fn range(&self) -> ::std::option::Option<& str> {
         self.range.as_deref()
     }
     /// <p>The part number to retrieve.</p>
@@ -37,7 +37,7 @@ impl GetReferenceInput {
         self.part_number
     }
     /// <p>The file to retrieve.</p>
-    pub fn file(&self) -> ::std::option::Option<&crate::types::ReferenceFile> {
+    pub fn file(&self) -> ::std::option::Option<& crate::types::ReferenceFile> {
         self.file.as_ref()
     }
 }
@@ -50,9 +50,7 @@ impl GetReferenceInput {
 
 /// A builder for [`GetReferenceInput`](crate::operation::get_reference::GetReferenceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReferenceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,
@@ -68,24 +66,24 @@ impl GetReferenceInputBuilder {
     }
     /// <p>The reference's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The reference's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The reference's store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference's store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reference_store_id = input;
-        self
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reference_store_id = input; self
+    }
+    /// <p>The reference's store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_store_id
     }
     /// <p>The range to retrieve.</p>
     pub fn range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,8 +92,11 @@ impl GetReferenceInputBuilder {
     }
     /// <p>The range to retrieve.</p>
     pub fn set_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.range = input;
-        self
+        self.range = input; self
+    }
+    /// <p>The range to retrieve.</p>
+    pub fn get_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.range
     }
     /// <p>The part number to retrieve.</p>
     pub fn part_number(mut self, input: i32) -> Self {
@@ -104,8 +105,11 @@ impl GetReferenceInputBuilder {
     }
     /// <p>The part number to retrieve.</p>
     pub fn set_part_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.part_number = input;
-        self
+        self.part_number = input; self
+    }
+    /// <p>The part number to retrieve.</p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        &self.part_number
     }
     /// <p>The file to retrieve.</p>
     pub fn file(mut self, input: crate::types::ReferenceFile) -> Self {
@@ -114,22 +118,28 @@ impl GetReferenceInputBuilder {
     }
     /// <p>The file to retrieve.</p>
     pub fn set_file(mut self, input: ::std::option::Option<crate::types::ReferenceFile>) -> Self {
-        self.file = input;
-        self
+        self.file = input; self
+    }
+    /// <p>The file to retrieve.</p>
+    pub fn get_file(&self) -> &::std::option::Option<crate::types::ReferenceFile> {
+        &self.file
     }
     /// Consumes the builder and constructs a [`GetReferenceInput`](crate::operation::get_reference::GetReferenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reference::GetReferenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_reference::GetReferenceInput {
-            id: self.id,
-            reference_store_id: self.reference_store_id,
-            range: self.range,
-            part_number: self.part_number,
-            file: self.file,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reference::GetReferenceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_reference::GetReferenceInput {
+                id: self.id
+                ,
+                reference_store_id: self.reference_store_id
+                ,
+                range: self.range
+                ,
+                part_number: self.part_number
+                ,
+                file: self.file
+                ,
+            }
+        )
     }
 }
+

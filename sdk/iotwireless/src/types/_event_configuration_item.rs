@@ -3,7 +3,7 @@
 /// <p>Event configuration object for a single resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventConfigurationItem {
+pub struct EventConfigurationItem  {
     /// <p>Resource identifier opted in for event messaging.</p>
     #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
@@ -19,23 +19,19 @@ pub struct EventConfigurationItem {
 }
 impl EventConfigurationItem {
     /// <p>Resource identifier opted in for event messaging.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    pub fn identifier_type(&self) -> ::std::option::Option<&crate::types::IdentifierType> {
+    pub fn identifier_type(&self) -> ::std::option::Option<& crate::types::IdentifierType> {
         self.identifier_type.as_ref()
     }
     /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
-    pub fn partner_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventNotificationPartnerType> {
+    pub fn partner_type(&self) -> ::std::option::Option<& crate::types::EventNotificationPartnerType> {
         self.partner_type.as_ref()
     }
     /// <p>Object of all event configurations and the status of the event topics.</p>
-    pub fn events(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventNotificationItemConfigurations> {
+    pub fn events(&self) -> ::std::option::Option<& crate::types::EventNotificationItemConfigurations> {
         self.events.as_ref()
     }
 }
@@ -48,9 +44,7 @@ impl EventConfigurationItem {
 
 /// A builder for [`EventConfigurationItem`](crate::types::EventConfigurationItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventConfigurationItemBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier_type: ::std::option::Option<crate::types::IdentifierType>,
@@ -65,8 +59,11 @@ impl EventConfigurationItemBuilder {
     }
     /// <p>Resource identifier opted in for event messaging.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
+    }
+    /// <p>Resource identifier opted in for event messaging.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
     pub fn identifier_type(mut self, input: crate::types::IdentifierType) -> Self {
@@ -74,12 +71,12 @@ impl EventConfigurationItemBuilder {
         self
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    pub fn set_identifier_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentifierType>,
-    ) -> Self {
-        self.identifier_type = input;
-        self
+    pub fn set_identifier_type(mut self, input: ::std::option::Option<crate::types::IdentifierType>) -> Self {
+        self.identifier_type = input; self
+    }
+    /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    pub fn get_identifier_type(&self) -> &::std::option::Option<crate::types::IdentifierType> {
+        &self.identifier_type
     }
     /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
     pub fn partner_type(mut self, input: crate::types::EventNotificationPartnerType) -> Self {
@@ -87,12 +84,12 @@ impl EventConfigurationItemBuilder {
         self
     }
     /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
-    pub fn set_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventNotificationPartnerType>,
-    ) -> Self {
-        self.partner_type = input;
-        self
+    pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::EventNotificationPartnerType>) -> Self {
+        self.partner_type = input; self
+    }
+    /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+    pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
+        &self.partner_type
     }
     /// <p>Object of all event configurations and the status of the event topics.</p>
     pub fn events(mut self, input: crate::types::EventNotificationItemConfigurations) -> Self {
@@ -100,20 +97,25 @@ impl EventConfigurationItemBuilder {
         self
     }
     /// <p>Object of all event configurations and the status of the event topics.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<crate::types::EventNotificationItemConfigurations>,
-    ) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<crate::types::EventNotificationItemConfigurations>) -> Self {
+        self.events = input; self
+    }
+    /// <p>Object of all event configurations and the status of the event topics.</p>
+    pub fn get_events(&self) -> &::std::option::Option<crate::types::EventNotificationItemConfigurations> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`EventConfigurationItem`](crate::types::EventConfigurationItem).
     pub fn build(self) -> crate::types::EventConfigurationItem {
         crate::types::EventConfigurationItem {
-            identifier: self.identifier,
-            identifier_type: self.identifier_type,
-            partner_type: self.partner_type,
-            events: self.events,
+            identifier: self.identifier
+            ,
+            identifier_type: self.identifier_type
+            ,
+            partner_type: self.partner_type
+            ,
+            events: self.events
+            ,
         }
     }
 }
+

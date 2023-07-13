@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDistributionConfigurationOutput {
+pub struct UpdateDistributionConfigurationOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -16,35 +16,33 @@ pub struct UpdateDistributionConfigurationOutput {
 }
 impl UpdateDistributionConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
-    pub fn distribution_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateDistributionConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateDistributionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionConfigurationOutput`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput).
-    pub fn builder() -> crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationOutputBuilder {
         crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDistributionConfigurationOutput`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDistributionConfigurationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -59,8 +57,11 @@ impl UpdateDistributionConfigurationOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
+    }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,44 +70,45 @@ impl UpdateDistributionConfigurationOutputBuilder {
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.distribution_configuration_arn = input;
-        self
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.distribution_configuration_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_configuration_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateDistributionConfigurationOutput`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput {
         crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput {
-            request_id: self.request_id,
-            client_token: self.client_token,
-            distribution_configuration_arn: self.distribution_configuration_arn,
+            request_id: self.request_id
+            ,
+            client_token: self.client_token
+            ,
+            distribution_configuration_arn: self.distribution_configuration_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

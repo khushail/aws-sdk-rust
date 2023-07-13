@@ -3,7 +3,7 @@
 /// <p>A general service exception.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceException {
+pub struct ServiceException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
@@ -20,29 +20,27 @@ pub struct ServiceException {
 }
 impl ServiceException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn docs(&self) -> ::std::option::Option<&str> {
+    pub fn docs(&self) -> ::std::option::Option<& str> {
         self.docs.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn tip(&self) -> ::std::option::Option<&str> {
+    pub fn tip(&self) -> ::std::option::Option<& str> {
         self.tip.as_deref()
     }
 }
 impl ServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -57,9 +55,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::ServiceException
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ServiceException {
     /// Creates a new builder-style object to manufacture [`ServiceException`](crate::types::error::ServiceException).
@@ -70,9 +66,7 @@ impl ServiceException {
 
 /// A builder for [`ServiceException`](crate::types::error::ServiceException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceExceptionBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) docs: ::std::option::Option<::std::string::String>,
@@ -88,8 +82,11 @@ impl ServiceExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn docs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,8 +95,11 @@ impl ServiceExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_docs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.docs = input;
-        self
+        self.docs = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_docs(&self) -> &::std::option::Option<::std::string::String> {
+        &self.docs
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,8 +108,11 @@ impl ServiceExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn tip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,31 +121,36 @@ impl ServiceExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_tip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tip = input;
-        self
+        self.tip = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_tip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tip
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ServiceException`](crate::types::error::ServiceException).
     pub fn build(self) -> crate::types::error::ServiceException {
         crate::types::error::ServiceException {
-            code: self.code,
-            docs: self.docs,
-            message: self.message,
-            tip: self.tip,
+            code: self.code
+            ,
+            docs: self.docs
+            ,
+            message: self.message
+            ,
+            tip: self.tip
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The collection of computing resources from which an endpoint is created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Workgroup {
+pub struct Workgroup  {
     /// <p>The unique identifier of the workgroup.</p>
     #[doc(hidden)]
     pub workgroup_id: ::std::option::Option<::std::string::String>,
@@ -49,19 +49,19 @@ pub struct Workgroup {
 }
 impl Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
-    pub fn workgroup_id(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_id(&self) -> ::std::option::Option<& str> {
         self.workgroup_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
-    pub fn workgroup_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_arn(&self) -> ::std::option::Option<& str> {
         self.workgroup_arn.as_deref()
     }
     /// <p>The name of the workgroup.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The namespace the workgroup is associated with.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
@@ -73,23 +73,23 @@ impl Workgroup {
         self.enhanced_vpc_routing
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn config_parameters(&self) -> ::std::option::Option<&[crate::types::ConfigParameter]> {
+    pub fn config_parameters(&self) -> ::std::option::Option<& [crate::types::ConfigParameter]> {
         self.config_parameters.as_deref()
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn security_group_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>An array of subnet IDs the workgroup is associated with.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The status of the workgroup.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkgroupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkgroupStatus> {
         self.status.as_ref()
     }
     /// <p>The endpoint that is created from the workgroup.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
+    pub fn endpoint(&self) -> ::std::option::Option<& crate::types::Endpoint> {
         self.endpoint.as_ref()
     }
     /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
@@ -97,7 +97,7 @@ impl Workgroup {
         self.publicly_accessible
     }
     /// <p>The creation date of the workgroup.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
@@ -114,9 +114,7 @@ impl Workgroup {
 
 /// A builder for [`Workgroup`](crate::types::Workgroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkgroupBuilder {
     pub(crate) workgroup_id: ::std::option::Option<::std::string::String>,
     pub(crate) workgroup_arn: ::std::option::Option<::std::string::String>,
@@ -124,8 +122,7 @@ pub struct WorkgroupBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) base_capacity: ::std::option::Option<i32>,
     pub(crate) enhanced_vpc_routing: ::std::option::Option<bool>,
-    pub(crate) config_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
+    pub(crate) config_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::WorkgroupStatus>,
@@ -142,56 +139,50 @@ impl WorkgroupBuilder {
     }
     /// <p>The unique identifier of the workgroup.</p>
     pub fn set_workgroup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_id = input;
-        self
+        self.workgroup_id = input; self
+    }
+    /// <p>The unique identifier of the workgroup.</p>
+    pub fn get_workgroup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_id
     }
     /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
-    pub fn workgroup_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
-    pub fn set_workgroup_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.workgroup_arn = input;
-        self
+    pub fn set_workgroup_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workgroup_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
+    pub fn get_workgroup_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_arn
     }
     /// <p>The name of the workgroup.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.workgroup_name = input;
-        self
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workgroup_name = input; self
+    }
+    /// <p>The name of the workgroup.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
     }
     /// <p>The namespace the workgroup is associated with.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace the workgroup is associated with.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.namespace_name = input;
-        self
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_name = input; self
+    }
+    /// <p>The namespace the workgroup is associated with.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
     }
     /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
     pub fn base_capacity(mut self, input: i32) -> Self {
@@ -200,8 +191,11 @@ impl WorkgroupBuilder {
     }
     /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
     pub fn set_base_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.base_capacity = input;
-        self
+        self.base_capacity = input; self
+    }
+    /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
+    pub fn get_base_capacity(&self) -> &::std::option::Option<i32> {
+        &self.base_capacity
     }
     /// <p>The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
@@ -210,8 +204,11 @@ impl WorkgroupBuilder {
     }
     /// <p>The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enhanced_vpc_routing = input;
-        self
+        self.enhanced_vpc_routing = input; self
+    }
+    /// <p>The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
+    pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
+        &self.enhanced_vpc_routing
     }
     /// Appends an item to `config_parameters`.
     ///
@@ -220,39 +217,36 @@ impl WorkgroupBuilder {
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     pub fn config_parameters(mut self, input: crate::types::ConfigParameter) -> Self {
         let mut v = self.config_parameters.unwrap_or_default();
-        v.push(input);
-        self.config_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.config_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn set_config_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
-    ) -> Self {
-        self.config_parameters = input;
-        self
+    pub fn set_config_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>) -> Self {
+        self.config_parameters = input; self
+    }
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    pub fn get_config_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
+        &self.config_parameters
     }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
+    }
+    /// <p>An array of security group IDs to associate with the workgroup.</p>
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -261,17 +255,17 @@ impl WorkgroupBuilder {
     /// <p>An array of subnet IDs the workgroup is associated with.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of subnet IDs the workgroup is associated with.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
+    }
+    /// <p>An array of subnet IDs the workgroup is associated with.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// <p>The status of the workgroup.</p>
     pub fn status(mut self, input: crate::types::WorkgroupStatus) -> Self {
@@ -279,12 +273,12 @@ impl WorkgroupBuilder {
         self
     }
     /// <p>The status of the workgroup.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkgroupStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkgroupStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the workgroup.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkgroupStatus> {
+        &self.status
     }
     /// <p>The endpoint that is created from the workgroup.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
@@ -293,8 +287,11 @@ impl WorkgroupBuilder {
     }
     /// <p>The endpoint that is created from the workgroup.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
+    }
+    /// <p>The endpoint that is created from the workgroup.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.endpoint
     }
     /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -303,8 +300,11 @@ impl WorkgroupBuilder {
     }
     /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
+    }
+    /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// <p>The creation date of the workgroup.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -312,12 +312,12 @@ impl WorkgroupBuilder {
         self
     }
     /// <p>The creation date of the workgroup.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>The creation date of the workgroup.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -326,26 +326,44 @@ impl WorkgroupBuilder {
     }
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
+    }
+    /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`Workgroup`](crate::types::Workgroup).
     pub fn build(self) -> crate::types::Workgroup {
         crate::types::Workgroup {
-            workgroup_id: self.workgroup_id,
-            workgroup_arn: self.workgroup_arn,
-            workgroup_name: self.workgroup_name,
-            namespace_name: self.namespace_name,
-            base_capacity: self.base_capacity,
-            enhanced_vpc_routing: self.enhanced_vpc_routing,
-            config_parameters: self.config_parameters,
-            security_group_ids: self.security_group_ids,
-            subnet_ids: self.subnet_ids,
-            status: self.status,
-            endpoint: self.endpoint,
-            publicly_accessible: self.publicly_accessible,
-            creation_date: self.creation_date,
-            port: self.port,
+            workgroup_id: self.workgroup_id
+            ,
+            workgroup_arn: self.workgroup_arn
+            ,
+            workgroup_name: self.workgroup_name
+            ,
+            namespace_name: self.namespace_name
+            ,
+            base_capacity: self.base_capacity
+            ,
+            enhanced_vpc_routing: self.enhanced_vpc_routing
+            ,
+            config_parameters: self.config_parameters
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            status: self.status
+            ,
+            endpoint: self.endpoint
+            ,
+            publicly_accessible: self.publicly_accessible
+            ,
+            creation_date: self.creation_date
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

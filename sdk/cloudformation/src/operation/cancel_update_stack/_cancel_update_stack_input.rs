@@ -3,7 +3,12 @@
 /// <p>The input for the <code>CancelUpdateStack</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelUpdateStackInput {
+pub struct CancelUpdateStackInput  {
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</code> </p> 
+    /// </note> 
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
     #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
@@ -12,71 +17,86 @@ pub struct CancelUpdateStackInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CancelUpdateStackInput {
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</code> </p> 
+    /// </note> 
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
 impl CancelUpdateStackInput {
     /// Creates a new builder-style object to manufacture [`CancelUpdateStackInput`](crate::operation::cancel_update_stack::CancelUpdateStackInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder {
+    pub fn builder() -> crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder {
         crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelUpdateStackInput`](crate::operation::cancel_update_stack::CancelUpdateStackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelUpdateStackInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CancelUpdateStackInputBuilder {
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</code> </p> 
+    /// </note> 
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
     }
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</code> </p> 
+    /// </note> 
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
+    }
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</code> </p> 
+    /// </note> 
+    /// <p>The name or the unique stack ID that's associated with the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CancelUpdateStackInput`](crate::operation::cancel_update_stack::CancelUpdateStackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_update_stack::CancelUpdateStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_update_stack::CancelUpdateStackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_update_stack::CancelUpdateStackInput {
-                stack_name: self.stack_name,
-                client_request_token: self.client_request_token,
-            },
+                stack_name: self.stack_name
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFolderMembershipInput {
+pub struct DeleteFolderMembershipInput  {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct DeleteFolderMembershipInput {
 }
 impl DeleteFolderMembershipInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Folder ID.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
-    pub fn member_type(&self) -> ::std::option::Option<&crate::types::MemberType> {
+    pub fn member_type(&self) -> ::std::option::Option<& crate::types::MemberType> {
         self.member_type.as_ref()
     }
 }
 impl DeleteFolderMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteFolderMembershipInput`](crate::operation::delete_folder_membership::DeleteFolderMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::delete_folder_membership::builders::DeleteFolderMembershipInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_folder_membership::builders::DeleteFolderMembershipInputBuilder {
         crate::operation::delete_folder_membership::builders::DeleteFolderMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFolderMembershipInput`](crate::operation::delete_folder_membership::DeleteFolderMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFolderMembershipInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,
@@ -56,20 +52,17 @@ pub struct DeleteFolderMembershipInputBuilder {
 }
 impl DeleteFolderMembershipInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The Folder ID.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,8 +71,11 @@ impl DeleteFolderMembershipInputBuilder {
     }
     /// <p>The Folder ID.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
+    }
+    /// <p>The Folder ID.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
     }
     /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +84,11 @@ impl DeleteFolderMembershipInputBuilder {
     }
     /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
+    }
+    /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
@@ -97,27 +96,27 @@ impl DeleteFolderMembershipInputBuilder {
         self
     }
     /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
-    pub fn set_member_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberType>,
-    ) -> Self {
-        self.member_type = input;
-        self
+    pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
+        self.member_type = input; self
+    }
+    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+    pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MemberType> {
+        &self.member_type
     }
     /// Consumes the builder and constructs a [`DeleteFolderMembershipInput`](crate::operation::delete_folder_membership::DeleteFolderMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_folder_membership::DeleteFolderMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_folder_membership::DeleteFolderMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_folder_membership::DeleteFolderMembershipInput {
-                aws_account_id: self.aws_account_id,
-                folder_id: self.folder_id,
-                member_id: self.member_id,
-                member_type: self.member_type,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                folder_id: self.folder_id
+                ,
+                member_id: self.member_id
+                ,
+                member_type: self.member_type
+                ,
+            }
         )
     }
 }
+

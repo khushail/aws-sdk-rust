@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSubjectInput {
+pub struct GetSubjectInput  {
     /// <p>The unique identifier of the subject. </p>
     #[doc(hidden)]
     pub subject_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSubjectInput {
     /// <p>The unique identifier of the subject. </p>
-    pub fn subject_id(&self) -> ::std::option::Option<&str> {
+    pub fn subject_id(&self) -> ::std::option::Option<& str> {
         self.subject_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetSubjectInput {
 
 /// A builder for [`GetSubjectInput`](crate::operation::get_subject::GetSubjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubjectInputBuilder {
     pub(crate) subject_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetSubjectInputBuilder {
     }
     /// <p>The unique identifier of the subject. </p>
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_id = input;
-        self
+        self.subject_id = input; self
+    }
+    /// <p>The unique identifier of the subject. </p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_id
     }
     /// Consumes the builder and constructs a [`GetSubjectInput`](crate::operation::get_subject::GetSubjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_subject::GetSubjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_subject::GetSubjectInput {
-            subject_id: self.subject_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_subject::GetSubjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_subject::GetSubjectInput {
+                subject_id: self.subject_id
+                ,
+            }
+        )
     }
 }
+

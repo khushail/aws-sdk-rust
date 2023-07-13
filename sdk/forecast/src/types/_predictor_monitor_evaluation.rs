@@ -3,7 +3,7 @@
 /// <p>Describes the results of a monitor evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictorMonitorEvaluation {
+pub struct PredictorMonitorEvaluation  {
     /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -40,39 +40,39 @@ pub struct PredictorMonitorEvaluation {
 }
 impl PredictorMonitorEvaluation {
     /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> ::std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
-    pub fn evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn evaluation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.evaluation_time.as_ref()
     }
     /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
-    pub fn evaluation_state(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_state(&self) -> ::std::option::Option<& str> {
         self.evaluation_state.as_deref()
     }
     /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
-    pub fn window_start_datetime(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn window_start_datetime(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.window_start_datetime.as_ref()
     }
     /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
-    pub fn window_end_datetime(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn window_end_datetime(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.window_end_datetime.as_ref()
     }
     /// <p>Provides details about a predictor event, such as a retraining.</p>
-    pub fn predictor_event(&self) -> ::std::option::Option<&crate::types::PredictorEvent> {
+    pub fn predictor_event(&self) -> ::std::option::Option<& crate::types::PredictorEvent> {
         self.predictor_event.as_ref()
     }
     /// <p>The source of the data the monitor resource used during the evaluation.</p>
-    pub fn monitor_data_source(&self) -> ::std::option::Option<&crate::types::MonitorDataSource> {
+    pub fn monitor_data_source(&self) -> ::std::option::Option<& crate::types::MonitorDataSource> {
         self.monitor_data_source.as_ref()
     }
     /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
-    pub fn metric_results(&self) -> ::std::option::Option<&[crate::types::MetricResult]> {
+    pub fn metric_results(&self) -> ::std::option::Option<& [crate::types::MetricResult]> {
         self.metric_results.as_deref()
     }
     /// <p>The number of items considered during the evaluation.</p>
@@ -80,7 +80,7 @@ impl PredictorMonitorEvaluation {
         self.num_items_evaluated
     }
     /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -93,9 +93,7 @@ impl PredictorMonitorEvaluation {
 
 /// A builder for [`PredictorMonitorEvaluation`](crate::types::PredictorMonitorEvaluation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictorMonitorEvaluationBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
@@ -117,8 +115,11 @@ impl PredictorMonitorEvaluationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,8 +128,11 @@ impl PredictorMonitorEvaluationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
     }
     /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
     pub fn evaluation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,28 +140,25 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
-    pub fn set_evaluation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.evaluation_time = input;
-        self
+    pub fn set_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.evaluation_time = input; self
+    }
+    /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
+    pub fn get_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.evaluation_time
     }
     /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
-    pub fn evaluation_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
-    pub fn set_evaluation_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.evaluation_state = input;
-        self
+    pub fn set_evaluation_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_state = input; self
+    }
+    /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
+    pub fn get_evaluation_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_state
     }
     /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
     pub fn window_start_datetime(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,12 +166,12 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
-    pub fn set_window_start_datetime(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.window_start_datetime = input;
-        self
+    pub fn set_window_start_datetime(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.window_start_datetime = input; self
+    }
+    /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
+    pub fn get_window_start_datetime(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.window_start_datetime
     }
     /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
     pub fn window_end_datetime(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -178,12 +179,12 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
-    pub fn set_window_end_datetime(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.window_end_datetime = input;
-        self
+    pub fn set_window_end_datetime(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.window_end_datetime = input; self
+    }
+    /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
+    pub fn get_window_end_datetime(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.window_end_datetime
     }
     /// <p>Provides details about a predictor event, such as a retraining.</p>
     pub fn predictor_event(mut self, input: crate::types::PredictorEvent) -> Self {
@@ -191,12 +192,12 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>Provides details about a predictor event, such as a retraining.</p>
-    pub fn set_predictor_event(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictorEvent>,
-    ) -> Self {
-        self.predictor_event = input;
-        self
+    pub fn set_predictor_event(mut self, input: ::std::option::Option<crate::types::PredictorEvent>) -> Self {
+        self.predictor_event = input; self
+    }
+    /// <p>Provides details about a predictor event, such as a retraining.</p>
+    pub fn get_predictor_event(&self) -> &::std::option::Option<crate::types::PredictorEvent> {
+        &self.predictor_event
     }
     /// <p>The source of the data the monitor resource used during the evaluation.</p>
     pub fn monitor_data_source(mut self, input: crate::types::MonitorDataSource) -> Self {
@@ -204,12 +205,12 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>The source of the data the monitor resource used during the evaluation.</p>
-    pub fn set_monitor_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorDataSource>,
-    ) -> Self {
-        self.monitor_data_source = input;
-        self
+    pub fn set_monitor_data_source(mut self, input: ::std::option::Option<crate::types::MonitorDataSource>) -> Self {
+        self.monitor_data_source = input; self
+    }
+    /// <p>The source of the data the monitor resource used during the evaluation.</p>
+    pub fn get_monitor_data_source(&self) -> &::std::option::Option<crate::types::MonitorDataSource> {
+        &self.monitor_data_source
     }
     /// Appends an item to `metric_results`.
     ///
@@ -218,17 +219,17 @@ impl PredictorMonitorEvaluationBuilder {
     /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
     pub fn metric_results(mut self, input: crate::types::MetricResult) -> Self {
         let mut v = self.metric_results.unwrap_or_default();
-        v.push(input);
-        self.metric_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
-    pub fn set_metric_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricResult>>,
-    ) -> Self {
-        self.metric_results = input;
-        self
+    pub fn set_metric_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricResult>>) -> Self {
+        self.metric_results = input; self
+    }
+    /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
+    pub fn get_metric_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricResult>> {
+        &self.metric_results
     }
     /// <p>The number of items considered during the evaluation.</p>
     pub fn num_items_evaluated(mut self, input: i64) -> Self {
@@ -237,8 +238,11 @@ impl PredictorMonitorEvaluationBuilder {
     }
     /// <p>The number of items considered during the evaluation.</p>
     pub fn set_num_items_evaluated(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_items_evaluated = input;
-        self
+        self.num_items_evaluated = input; self
+    }
+    /// <p>The number of items considered during the evaluation.</p>
+    pub fn get_num_items_evaluated(&self) -> &::std::option::Option<i64> {
+        &self.num_items_evaluated
     }
     /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -247,23 +251,38 @@ impl PredictorMonitorEvaluationBuilder {
     }
     /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`PredictorMonitorEvaluation`](crate::types::PredictorMonitorEvaluation).
     pub fn build(self) -> crate::types::PredictorMonitorEvaluation {
         crate::types::PredictorMonitorEvaluation {
-            resource_arn: self.resource_arn,
-            monitor_arn: self.monitor_arn,
-            evaluation_time: self.evaluation_time,
-            evaluation_state: self.evaluation_state,
-            window_start_datetime: self.window_start_datetime,
-            window_end_datetime: self.window_end_datetime,
-            predictor_event: self.predictor_event,
-            monitor_data_source: self.monitor_data_source,
-            metric_results: self.metric_results,
-            num_items_evaluated: self.num_items_evaluated,
-            message: self.message,
+            resource_arn: self.resource_arn
+            ,
+            monitor_arn: self.monitor_arn
+            ,
+            evaluation_time: self.evaluation_time
+            ,
+            evaluation_state: self.evaluation_state
+            ,
+            window_start_datetime: self.window_start_datetime
+            ,
+            window_end_datetime: self.window_end_datetime
+            ,
+            predictor_event: self.predictor_event
+            ,
+            monitor_data_source: self.monitor_data_source
+            ,
+            metric_results: self.metric_results
+            ,
+            num_items_evaluated: self.num_items_evaluated
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

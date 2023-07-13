@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMetricSetInput {
+pub struct UpdateMetricSetInput  {
     /// <p>The ARN of the dataset to update.</p>
     #[doc(hidden)]
     pub metric_set_arn: ::std::option::Option<::std::string::String>,
@@ -29,20 +29,19 @@ pub struct UpdateMetricSetInput {
     pub metric_source: ::std::option::Option<crate::types::MetricSource>,
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
     #[doc(hidden)]
-    pub dimension_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
+    pub dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
 }
 impl UpdateMetricSetInput {
     /// <p>The ARN of the dataset to update.</p>
-    pub fn metric_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn metric_set_arn(&self) -> ::std::option::Option<& str> {
         self.metric_set_arn.as_deref()
     }
     /// <p>The dataset's description.</p>
-    pub fn metric_set_description(&self) -> ::std::option::Option<&str> {
+    pub fn metric_set_description(&self) -> ::std::option::Option<& str> {
         self.metric_set_description.as_deref()
     }
     /// <p>The metric list.</p>
-    pub fn metric_list(&self) -> ::std::option::Option<&[crate::types::Metric]> {
+    pub fn metric_list(&self) -> ::std::option::Option<& [crate::types::Metric]> {
         self.metric_list.as_deref()
     }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
@@ -50,25 +49,23 @@ impl UpdateMetricSetInput {
         self.offset
     }
     /// <p>The timestamp column.</p>
-    pub fn timestamp_column(&self) -> ::std::option::Option<&crate::types::TimestampColumn> {
+    pub fn timestamp_column(&self) -> ::std::option::Option<& crate::types::TimestampColumn> {
         self.timestamp_column.as_ref()
     }
     /// <p>The dimension list.</p>
-    pub fn dimension_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn dimension_list(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.dimension_list.as_deref()
     }
     /// <p>The dataset's interval.</p>
-    pub fn metric_set_frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
+    pub fn metric_set_frequency(&self) -> ::std::option::Option<& crate::types::Frequency> {
         self.metric_set_frequency.as_ref()
     }
     /// <p>Contains information about source data used to generate metrics.</p>
-    pub fn metric_source(&self) -> ::std::option::Option<&crate::types::MetricSource> {
+    pub fn metric_source(&self) -> ::std::option::Option<& crate::types::MetricSource> {
         self.metric_source.as_ref()
     }
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    pub fn dimension_filter_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricSetDimensionFilter]> {
+    pub fn dimension_filter_list(&self) -> ::std::option::Option<& [crate::types::MetricSetDimensionFilter]> {
         self.dimension_filter_list.as_deref()
     }
 }
@@ -81,9 +78,7 @@ impl UpdateMetricSetInput {
 
 /// A builder for [`UpdateMetricSetInput`](crate::operation::update_metric_set::UpdateMetricSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMetricSetInputBuilder {
     pub(crate) metric_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metric_set_description: ::std::option::Option<::std::string::String>,
@@ -93,41 +88,34 @@ pub struct UpdateMetricSetInputBuilder {
     pub(crate) dimension_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) metric_set_frequency: ::std::option::Option<crate::types::Frequency>,
     pub(crate) metric_source: ::std::option::Option<crate::types::MetricSource>,
-    pub(crate) dimension_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
+    pub(crate) dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
 }
 impl UpdateMetricSetInputBuilder {
     /// <p>The ARN of the dataset to update.</p>
-    pub fn metric_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset to update.</p>
-    pub fn set_metric_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metric_set_arn = input;
-        self
+    pub fn set_metric_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metric_set_arn = input; self
+    }
+    /// <p>The ARN of the dataset to update.</p>
+    pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_arn
     }
     /// <p>The dataset's description.</p>
-    pub fn metric_set_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dataset's description.</p>
-    pub fn set_metric_set_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metric_set_description = input;
-        self
+    pub fn set_metric_set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metric_set_description = input; self
+    }
+    /// <p>The dataset's description.</p>
+    pub fn get_metric_set_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_description
     }
     /// Appends an item to `metric_list`.
     ///
@@ -136,17 +124,17 @@ impl UpdateMetricSetInputBuilder {
     /// <p>The metric list.</p>
     pub fn metric_list(mut self, input: crate::types::Metric) -> Self {
         let mut v = self.metric_list.unwrap_or_default();
-        v.push(input);
-        self.metric_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metric list.</p>
-    pub fn set_metric_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
-    ) -> Self {
-        self.metric_list = input;
-        self
+    pub fn set_metric_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
+        self.metric_list = input; self
+    }
+    /// <p>The metric list.</p>
+    pub fn get_metric_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+        &self.metric_list
     }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(mut self, input: i32) -> Self {
@@ -155,8 +143,11 @@ impl UpdateMetricSetInputBuilder {
     }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
+    }
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<i32> {
+        &self.offset
     }
     /// <p>The timestamp column.</p>
     pub fn timestamp_column(mut self, input: crate::types::TimestampColumn) -> Self {
@@ -164,34 +155,31 @@ impl UpdateMetricSetInputBuilder {
         self
     }
     /// <p>The timestamp column.</p>
-    pub fn set_timestamp_column(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestampColumn>,
-    ) -> Self {
-        self.timestamp_column = input;
-        self
+    pub fn set_timestamp_column(mut self, input: ::std::option::Option<crate::types::TimestampColumn>) -> Self {
+        self.timestamp_column = input; self
+    }
+    /// <p>The timestamp column.</p>
+    pub fn get_timestamp_column(&self) -> &::std::option::Option<crate::types::TimestampColumn> {
+        &self.timestamp_column
     }
     /// Appends an item to `dimension_list`.
     ///
     /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
     ///
     /// <p>The dimension list.</p>
-    pub fn dimension_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dimension_list.unwrap_or_default();
-        v.push(input.into());
-        self.dimension_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dimension_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The dimension list.</p>
-    pub fn set_dimension_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.dimension_list = input;
-        self
+    pub fn set_dimension_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.dimension_list = input; self
+    }
+    /// <p>The dimension list.</p>
+    pub fn get_dimension_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dimension_list
     }
     /// <p>The dataset's interval.</p>
     pub fn metric_set_frequency(mut self, input: crate::types::Frequency) -> Self {
@@ -199,12 +187,12 @@ impl UpdateMetricSetInputBuilder {
         self
     }
     /// <p>The dataset's interval.</p>
-    pub fn set_metric_set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::Frequency>,
-    ) -> Self {
-        self.metric_set_frequency = input;
-        self
+    pub fn set_metric_set_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
+        self.metric_set_frequency = input; self
+    }
+    /// <p>The dataset's interval.</p>
+    pub fn get_metric_set_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
+        &self.metric_set_frequency
     }
     /// <p>Contains information about source data used to generate metrics.</p>
     pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
@@ -212,12 +200,12 @@ impl UpdateMetricSetInputBuilder {
         self
     }
     /// <p>Contains information about source data used to generate metrics.</p>
-    pub fn set_metric_source(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricSource>,
-    ) -> Self {
-        self.metric_source = input;
-        self
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::MetricSource>) -> Self {
+        self.metric_source = input; self
+    }
+    /// <p>Contains information about source data used to generate metrics.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
+        &self.metric_source
     }
     /// Appends an item to `dimension_filter_list`.
     ///
@@ -226,35 +214,42 @@ impl UpdateMetricSetInputBuilder {
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
     pub fn dimension_filter_list(mut self, input: crate::types::MetricSetDimensionFilter) -> Self {
         let mut v = self.dimension_filter_list.unwrap_or_default();
-        v.push(input);
-        self.dimension_filter_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimension_filter_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    pub fn set_dimension_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
-    ) -> Self {
-        self.dimension_filter_list = input;
-        self
+    pub fn set_dimension_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>) -> Self {
+        self.dimension_filter_list = input; self
+    }
+    /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
+    pub fn get_dimension_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
+        &self.dimension_filter_list
     }
     /// Consumes the builder and constructs a [`UpdateMetricSetInput`](crate::operation::update_metric_set::UpdateMetricSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_metric_set::UpdateMetricSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_metric_set::UpdateMetricSetInput {
-            metric_set_arn: self.metric_set_arn,
-            metric_set_description: self.metric_set_description,
-            metric_list: self.metric_list,
-            offset: self.offset,
-            timestamp_column: self.timestamp_column,
-            dimension_list: self.dimension_list,
-            metric_set_frequency: self.metric_set_frequency,
-            metric_source: self.metric_source,
-            dimension_filter_list: self.dimension_filter_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_metric_set::UpdateMetricSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_metric_set::UpdateMetricSetInput {
+                metric_set_arn: self.metric_set_arn
+                ,
+                metric_set_description: self.metric_set_description
+                ,
+                metric_list: self.metric_list
+                ,
+                offset: self.offset
+                ,
+                timestamp_column: self.timestamp_column
+                ,
+                dimension_list: self.dimension_list
+                ,
+                metric_set_frequency: self.metric_set_frequency
+                ,
+                metric_source: self.metric_source
+                ,
+                dimension_filter_list: self.dimension_filter_list
+                ,
+            }
+        )
     }
 }
+

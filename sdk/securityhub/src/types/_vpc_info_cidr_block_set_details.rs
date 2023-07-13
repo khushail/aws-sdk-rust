@@ -3,14 +3,14 @@
 /// <p>Provides details about the IPv4 CIDR blocks for the VPC. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcInfoCidrBlockSetDetails {
+pub struct VpcInfoCidrBlockSetDetails  {
     /// <p>The IPv4 CIDR block for the VPC. </p>
     #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
 }
 impl VpcInfoCidrBlockSetDetails {
     /// <p>The IPv4 CIDR block for the VPC. </p>
-    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_block(&self) -> ::std::option::Option<& str> {
         self.cidr_block.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl VpcInfoCidrBlockSetDetails {
 
 /// A builder for [`VpcInfoCidrBlockSetDetails`](crate::types::VpcInfoCidrBlockSetDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcInfoCidrBlockSetDetailsBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl VpcInfoCidrBlockSetDetailsBuilder {
     }
     /// <p>The IPv4 CIDR block for the VPC. </p>
     pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_block = input;
-        self
+        self.cidr_block = input; self
+    }
+    /// <p>The IPv4 CIDR block for the VPC. </p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
     }
     /// Consumes the builder and constructs a [`VpcInfoCidrBlockSetDetails`](crate::types::VpcInfoCidrBlockSetDetails).
     pub fn build(self) -> crate::types::VpcInfoCidrBlockSetDetails {
         crate::types::VpcInfoCidrBlockSetDetails {
-            cidr_block: self.cidr_block,
+            cidr_block: self.cidr_block
+            ,
         }
     }
 }
+

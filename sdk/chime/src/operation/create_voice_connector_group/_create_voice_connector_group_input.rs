@@ -2,43 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVoiceConnectorGroupInput {
+pub struct CreateVoiceConnectorGroupInput  {
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
     #[doc(hidden)]
-    pub voice_connector_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    pub voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
 }
 impl CreateVoiceConnectorGroupInput {
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
-    pub fn voice_connector_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VoiceConnectorItem]> {
+    pub fn voice_connector_items(&self) -> ::std::option::Option<& [crate::types::VoiceConnectorItem]> {
         self.voice_connector_items.as_deref()
     }
 }
 impl CreateVoiceConnectorGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceConnectorGroupInput`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput).
-    pub fn builder() -> crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder{
+    pub fn builder() -> crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder {
         crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVoiceConnectorGroupInput`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) voice_connector_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    pub(crate) voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
 }
 impl CreateVoiceConnectorGroupInputBuilder {
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
@@ -48,8 +42,11 @@ impl CreateVoiceConnectorGroupInputBuilder {
     }
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `voice_connector_items`.
     ///
@@ -58,30 +55,28 @@ impl CreateVoiceConnectorGroupInputBuilder {
     /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
     pub fn voice_connector_items(mut self, input: crate::types::VoiceConnectorItem) -> Self {
         let mut v = self.voice_connector_items.unwrap_or_default();
-        v.push(input);
-        self.voice_connector_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.voice_connector_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
-    pub fn set_voice_connector_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
-    ) -> Self {
-        self.voice_connector_items = input;
-        self
+    pub fn set_voice_connector_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>) -> Self {
+        self.voice_connector_items = input; self
+    }
+    /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
+    pub fn get_voice_connector_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+        &self.voice_connector_items
     }
     /// Consumes the builder and constructs a [`CreateVoiceConnectorGroupInput`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput {
-                name: self.name,
-                voice_connector_items: self.voice_connector_items,
-            },
+                name: self.name
+                ,
+                voice_connector_items: self.voice_connector_items
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>For characters that were detected as issues, where they occur in the transcript.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CharacterOffsets {
+pub struct CharacterOffsets  {
     /// <p>The beginning of the issue.</p>
     #[doc(hidden)]
     pub begin_offset_char: i32,
@@ -30,9 +30,7 @@ impl CharacterOffsets {
 
 /// A builder for [`CharacterOffsets`](crate::types::CharacterOffsets).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CharacterOffsetsBuilder {
     pub(crate) begin_offset_char: ::std::option::Option<i32>,
     pub(crate) end_offset_char: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl CharacterOffsetsBuilder {
     }
     /// <p>The beginning of the issue.</p>
     pub fn set_begin_offset_char(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset_char = input;
-        self
+        self.begin_offset_char = input; self
+    }
+    /// <p>The beginning of the issue.</p>
+    pub fn get_begin_offset_char(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset_char
     }
     /// <p>The end of the issue.</p>
     pub fn end_offset_char(mut self, input: i32) -> Self {
@@ -55,14 +56,22 @@ impl CharacterOffsetsBuilder {
     }
     /// <p>The end of the issue.</p>
     pub fn set_end_offset_char(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset_char = input;
-        self
+        self.end_offset_char = input; self
+    }
+    /// <p>The end of the issue.</p>
+    pub fn get_end_offset_char(&self) -> &::std::option::Option<i32> {
+        &self.end_offset_char
     }
     /// Consumes the builder and constructs a [`CharacterOffsets`](crate::types::CharacterOffsets).
     pub fn build(self) -> crate::types::CharacterOffsets {
         crate::types::CharacterOffsets {
-            begin_offset_char: self.begin_offset_char.unwrap_or_default(),
-            end_offset_char: self.end_offset_char.unwrap_or_default(),
+            begin_offset_char: self.begin_offset_char
+                .unwrap_or_default()
+            ,
+            end_offset_char: self.end_offset_char
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

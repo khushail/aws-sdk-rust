@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFrameworkOutput {
+pub struct CreateFrameworkOutput  {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
     pub framework_name: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct CreateFrameworkOutput {
 }
 impl CreateFrameworkOutput {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(&self) -> ::std::option::Option<&str> {
+    pub fn framework_name(&self) -> ::std::option::Option<& str> {
         self.framework_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn framework_arn(&self) -> ::std::option::Option<&str> {
+    pub fn framework_arn(&self) -> ::std::option::Option<& str> {
         self.framework_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateFrameworkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateFrameworkOutput {
     /// Creates a new builder-style object to manufacture [`CreateFrameworkOutput`](crate::operation::create_framework::CreateFrameworkOutput).
     pub fn builder() -> crate::operation::create_framework::builders::CreateFrameworkOutputBuilder {
@@ -35,9 +35,7 @@ impl CreateFrameworkOutput {
 
 /// A builder for [`CreateFrameworkOutput`](crate::operation::create_framework::CreateFrameworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFrameworkOutputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_arn: ::std::option::Option<::std::string::String>,
@@ -45,52 +43,49 @@ pub struct CreateFrameworkOutputBuilder {
 }
 impl CreateFrameworkOutputBuilder {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_framework_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.framework_name = input;
-        self
+    pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.framework_name = input; self
+    }
+    /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn framework_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn set_framework_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.framework_arn = input;
-        self
+    pub fn set_framework_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.framework_arn = input; self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    pub fn get_framework_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateFrameworkOutput`](crate::operation::create_framework::CreateFrameworkOutput).
     pub fn build(self) -> crate::operation::create_framework::CreateFrameworkOutput {
         crate::operation::create_framework::CreateFrameworkOutput {
-            framework_name: self.framework_name,
-            framework_arn: self.framework_arn,
+            framework_name: self.framework_name
+            ,
+            framework_arn: self.framework_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

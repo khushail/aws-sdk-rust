@@ -3,7 +3,7 @@
 /// A request to update a channel.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateChannelInput {
+pub struct UpdateChannelInput  {
     /// Specification of CDI inputs for this channel
     #[doc(hidden)]
     pub cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,
@@ -37,45 +37,43 @@ pub struct UpdateChannelInput {
 }
 impl UpdateChannelInput {
     /// Specification of CDI inputs for this channel
-    pub fn cdi_input_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CdiInputSpecification> {
+    pub fn cdi_input_specification(&self) -> ::std::option::Option<& crate::types::CdiInputSpecification> {
         self.cdi_input_specification.as_ref()
     }
     /// channel ID
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// A list of output destinations for this channel.
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::OutputDestination]> {
+    pub fn destinations(&self) -> ::std::option::Option<& [crate::types::OutputDestination]> {
         self.destinations.as_deref()
     }
     /// The encoder settings for this channel.
-    pub fn encoder_settings(&self) -> ::std::option::Option<&crate::types::EncoderSettings> {
+    pub fn encoder_settings(&self) -> ::std::option::Option<& crate::types::EncoderSettings> {
         self.encoder_settings.as_ref()
     }
     /// Placeholder documentation for __listOfInputAttachment
-    pub fn input_attachments(&self) -> ::std::option::Option<&[crate::types::InputAttachment]> {
+    pub fn input_attachments(&self) -> ::std::option::Option<& [crate::types::InputAttachment]> {
         self.input_attachments.as_deref()
     }
     /// Specification of network and file inputs for this channel
-    pub fn input_specification(&self) -> ::std::option::Option<&crate::types::InputSpecification> {
+    pub fn input_specification(&self) -> ::std::option::Option<& crate::types::InputSpecification> {
         self.input_specification.as_ref()
     }
     /// The log level to write to CloudWatch Logs.
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
     /// Maintenance settings for this channel.
-    pub fn maintenance(&self) -> ::std::option::Option<&crate::types::MaintenanceUpdateSettings> {
+    pub fn maintenance(&self) -> ::std::option::Option<& crate::types::MaintenanceUpdateSettings> {
         self.maintenance.as_ref()
     }
     /// The name of the channel.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -88,17 +86,13 @@ impl UpdateChannelInput {
 
 /// A builder for [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelInputBuilder {
     pub(crate) cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
     pub(crate) encoder_settings: ::std::option::Option<crate::types::EncoderSettings>,
-    pub(crate) input_attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
+    pub(crate) input_attachments: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
     pub(crate) input_specification: ::std::option::Option<crate::types::InputSpecification>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) maintenance: ::std::option::Option<crate::types::MaintenanceUpdateSettings>,
@@ -112,12 +106,12 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// Specification of CDI inputs for this channel
-    pub fn set_cdi_input_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CdiInputSpecification>,
-    ) -> Self {
-        self.cdi_input_specification = input;
-        self
+    pub fn set_cdi_input_specification(mut self, input: ::std::option::Option<crate::types::CdiInputSpecification>) -> Self {
+        self.cdi_input_specification = input; self
+    }
+    /// Specification of CDI inputs for this channel
+    pub fn get_cdi_input_specification(&self) -> &::std::option::Option<crate::types::CdiInputSpecification> {
+        &self.cdi_input_specification
     }
     /// channel ID
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,8 +120,11 @@ impl UpdateChannelInputBuilder {
     }
     /// channel ID
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
+    }
+    /// channel ID
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
     }
     /// Appends an item to `destinations`.
     ///
@@ -136,17 +133,17 @@ impl UpdateChannelInputBuilder {
     /// A list of output destinations for this channel.
     pub fn destinations(mut self, input: crate::types::OutputDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of output destinations for this channel.
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
-    ) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>) -> Self {
+        self.destinations = input; self
+    }
+    /// A list of output destinations for this channel.
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
+        &self.destinations
     }
     /// The encoder settings for this channel.
     pub fn encoder_settings(mut self, input: crate::types::EncoderSettings) -> Self {
@@ -154,12 +151,12 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// The encoder settings for this channel.
-    pub fn set_encoder_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::EncoderSettings>,
-    ) -> Self {
-        self.encoder_settings = input;
-        self
+    pub fn set_encoder_settings(mut self, input: ::std::option::Option<crate::types::EncoderSettings>) -> Self {
+        self.encoder_settings = input; self
+    }
+    /// The encoder settings for this channel.
+    pub fn get_encoder_settings(&self) -> &::std::option::Option<crate::types::EncoderSettings> {
+        &self.encoder_settings
     }
     /// Appends an item to `input_attachments`.
     ///
@@ -168,17 +165,17 @@ impl UpdateChannelInputBuilder {
     /// Placeholder documentation for __listOfInputAttachment
     pub fn input_attachments(mut self, input: crate::types::InputAttachment) -> Self {
         let mut v = self.input_attachments.unwrap_or_default();
-        v.push(input);
-        self.input_attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// Placeholder documentation for __listOfInputAttachment
-    pub fn set_input_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
-    ) -> Self {
-        self.input_attachments = input;
-        self
+    pub fn set_input_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>) -> Self {
+        self.input_attachments = input; self
+    }
+    /// Placeholder documentation for __listOfInputAttachment
+    pub fn get_input_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>> {
+        &self.input_attachments
     }
     /// Specification of network and file inputs for this channel
     pub fn input_specification(mut self, input: crate::types::InputSpecification) -> Self {
@@ -186,12 +183,12 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// Specification of network and file inputs for this channel
-    pub fn set_input_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSpecification>,
-    ) -> Self {
-        self.input_specification = input;
-        self
+    pub fn set_input_specification(mut self, input: ::std::option::Option<crate::types::InputSpecification>) -> Self {
+        self.input_specification = input; self
+    }
+    /// Specification of network and file inputs for this channel
+    pub fn get_input_specification(&self) -> &::std::option::Option<crate::types::InputSpecification> {
+        &self.input_specification
     }
     /// The log level to write to CloudWatch Logs.
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
@@ -200,8 +197,11 @@ impl UpdateChannelInputBuilder {
     }
     /// The log level to write to CloudWatch Logs.
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
+    }
+    /// The log level to write to CloudWatch Logs.
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
     }
     /// Maintenance settings for this channel.
     pub fn maintenance(mut self, input: crate::types::MaintenanceUpdateSettings) -> Self {
@@ -209,12 +209,12 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// Maintenance settings for this channel.
-    pub fn set_maintenance(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceUpdateSettings>,
-    ) -> Self {
-        self.maintenance = input;
-        self
+    pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::MaintenanceUpdateSettings>) -> Self {
+        self.maintenance = input; self
+    }
+    /// Maintenance settings for this channel.
+    pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::MaintenanceUpdateSettings> {
+        &self.maintenance
     }
     /// The name of the channel.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -223,8 +223,11 @@ impl UpdateChannelInputBuilder {
     }
     /// The name of the channel.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// The name of the channel.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -233,27 +236,38 @@ impl UpdateChannelInputBuilder {
     }
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel::UpdateChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
-            cdi_input_specification: self.cdi_input_specification,
-            channel_id: self.channel_id,
-            destinations: self.destinations,
-            encoder_settings: self.encoder_settings,
-            input_attachments: self.input_attachments,
-            input_specification: self.input_specification,
-            log_level: self.log_level,
-            maintenance: self.maintenance,
-            name: self.name,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_channel::UpdateChannelInput {
+                cdi_input_specification: self.cdi_input_specification
+                ,
+                channel_id: self.channel_id
+                ,
+                destinations: self.destinations
+                ,
+                encoder_settings: self.encoder_settings
+                ,
+                input_attachments: self.input_attachments
+                ,
+                input_specification: self.input_specification
+                ,
+                log_level: self.log_level
+                ,
+                maintenance: self.maintenance
+                ,
+                name: self.name
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

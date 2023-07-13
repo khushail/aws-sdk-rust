@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceSyncConfigInput {
+pub struct UpdateServiceSyncConfigInput  {
     /// <p>The name of the service the Proton Ops file is for.</p>
     #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
@@ -21,40 +21,36 @@ pub struct UpdateServiceSyncConfigInput {
 }
 impl UpdateServiceSyncConfigInput {
     /// <p>The name of the service the Proton Ops file is for.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
-    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> ::std::option::Option<& crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the code repository branch where the Proton Ops file is found.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>The path to the Proton Ops file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
 }
 impl UpdateServiceSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSyncConfigInput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder {
         crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceSyncConfigInput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncConfigInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
@@ -70,8 +66,11 @@ impl UpdateServiceSyncConfigInputBuilder {
     }
     /// <p>The name of the service the Proton Ops file is for.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
+    }
+    /// <p>The name of the service the Proton Ops file is for.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
@@ -79,28 +78,25 @@ impl UpdateServiceSyncConfigInputBuilder {
         self
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
-        self.repository_provider = input;
-        self
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
+        self.repository_provider = input; self
+    }
+    /// <p>The name of the repository provider where the Proton Ops file is found.</p>
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.repository_provider
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.repository_name = input;
-        self
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.repository_name = input; self
+    }
+    /// <p>The name of the repository where the Proton Ops file is found.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// <p>The name of the code repository branch where the Proton Ops file is found.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,8 +105,11 @@ impl UpdateServiceSyncConfigInputBuilder {
     }
     /// <p>The name of the code repository branch where the Proton Ops file is found.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
+    }
+    /// <p>The name of the code repository branch where the Proton Ops file is found.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// <p>The path to the Proton Ops file.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,24 +118,28 @@ impl UpdateServiceSyncConfigInputBuilder {
     }
     /// <p>The path to the Proton Ops file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
+    }
+    /// <p>The path to the Proton Ops file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
     }
     /// Consumes the builder and constructs a [`UpdateServiceSyncConfigInput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput {
-                service_name: self.service_name,
-                repository_provider: self.repository_provider,
-                repository_name: self.repository_name,
-                branch: self.branch,
-                file_path: self.file_path,
-            },
+                service_name: self.service_name
+                ,
+                repository_provider: self.repository_provider
+                ,
+                repository_name: self.repository_name
+                ,
+                branch: self.branch
+                ,
+                file_path: self.file_path
+                ,
+            }
         )
     }
 }
+

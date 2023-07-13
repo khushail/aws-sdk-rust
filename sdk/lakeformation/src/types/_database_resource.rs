@@ -3,7 +3,7 @@
 /// <p>A structure for the database object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatabaseResource {
+pub struct DatabaseResource  {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DatabaseResource {
 }
 impl DatabaseResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DatabaseResource {
 
 /// A builder for [`DatabaseResource`](crate::types::DatabaseResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseResourceBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DatabaseResourceBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
+    }
+    /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl DatabaseResourceBuilder {
     }
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the database resource. Unique to the Data Catalog.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DatabaseResource`](crate::types::DatabaseResource).
     pub fn build(self) -> crate::types::DatabaseResource {
         crate::types::DatabaseResource {
-            catalog_id: self.catalog_id,
-            name: self.name,
+            catalog_id: self.catalog_id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

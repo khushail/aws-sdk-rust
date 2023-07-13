@@ -3,7 +3,7 @@
 /// <p>Reserved for future use.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlockerDeclaration {
+pub struct BlockerDeclaration  {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct BlockerDeclaration {
 }
 impl BlockerDeclaration {
     /// <p>Reserved for future use.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BlockerType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::BlockerType> {
         self.r#type.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl BlockerDeclaration {
 
 /// A builder for [`BlockerDeclaration`](crate::types::BlockerDeclaration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockerDeclarationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::BlockerType>,
@@ -45,8 +43,11 @@ impl BlockerDeclarationBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Reserved for future use.</p>
     pub fn r#type(mut self, input: crate::types::BlockerType) -> Self {
@@ -55,14 +56,20 @@ impl BlockerDeclarationBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::BlockerType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::BlockerType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`BlockerDeclaration`](crate::types::BlockerDeclaration).
     pub fn build(self) -> crate::types::BlockerDeclaration {
         crate::types::BlockerDeclaration {
-            name: self.name,
-            r#type: self.r#type,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

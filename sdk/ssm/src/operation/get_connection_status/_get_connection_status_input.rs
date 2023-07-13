@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectionStatusInput {
+pub struct GetConnectionStatusInput  {
     /// <p>The managed node ID.</p>
     #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
 }
 impl GetConnectionStatusInput {
     /// <p>The managed node ID.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
 }
 impl GetConnectionStatusInput {
     /// Creates a new builder-style object to manufacture [`GetConnectionStatusInput`](crate::operation::get_connection_status::GetConnectionStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder {
-        crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder {
+        crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConnectionStatusInput`](crate::operation::get_connection_status::GetConnectionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectionStatusInputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetConnectionStatusInputBuilder {
     }
     /// <p>The managed node ID.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
+    }
+    /// <p>The managed node ID.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`GetConnectionStatusInput`](crate::operation::get_connection_status::GetConnectionStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_connection_status::GetConnectionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_connection_status::GetConnectionStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_connection_status::GetConnectionStatusInput {
-                target: self.target,
-            },
+                target: self.target
+                ,
+            }
         )
     }
 }
+

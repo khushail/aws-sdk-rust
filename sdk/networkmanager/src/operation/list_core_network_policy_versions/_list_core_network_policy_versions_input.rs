@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCoreNetworkPolicyVersionsInput {
+pub struct ListCoreNetworkPolicyVersionsInput  {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListCoreNetworkPolicyVersionsInput {
 }
 impl ListCoreNetworkPolicyVersionsInput {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -23,22 +23,20 @@ impl ListCoreNetworkPolicyVersionsInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListCoreNetworkPolicyVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListCoreNetworkPolicyVersionsInput`](crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsInput).
-    pub fn builder() -> crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsInputBuilder {
         crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCoreNetworkPolicyVersionsInput`](crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoreNetworkPolicyVersionsInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,20 +44,17 @@ pub struct ListCoreNetworkPolicyVersionsInputBuilder {
 }
 impl ListCoreNetworkPolicyVersionsInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.core_network_id = input;
-        self
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.core_network_id = input; self
+    }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,8 +63,11 @@ impl ListCoreNetworkPolicyVersionsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,16 +76,14 @@ impl ListCoreNetworkPolicyVersionsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCoreNetworkPolicyVersionsInput`](crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsInput {
                 core_network_id: self.core_network_id
@@ -100,3 +96,4 @@ impl ListCoreNetworkPolicyVersionsInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEventDestinationInput {
+pub struct UpdateEventDestinationInput  {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
     #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
@@ -17,23 +17,21 @@ pub struct UpdateEventDestinationInput {
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_destination:
-        ::std::option::Option<crate::types::CloudWatchLogsDestination>,
+    pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
     #[doc(hidden)]
-    pub kinesis_firehose_destination:
-        ::std::option::Option<crate::types::KinesisFirehoseDestination>,
+    pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
     #[doc(hidden)]
     pub sns_destination: ::std::option::Option<crate::types::SnsDestination>,
 }
 impl UpdateEventDestinationInput {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name to use for the event destination.</p>
-    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> ::std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
     /// <p>When set to true logging is enabled.</p>
@@ -41,84 +39,67 @@ impl UpdateEventDestinationInput {
         self.enabled
     }
     /// <p>An array of event types that determine which events to log.</p>
-    pub fn matching_event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
+    pub fn matching_event_types(&self) -> ::std::option::Option<& [crate::types::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogsDestination> {
+    pub fn cloud_watch_logs_destination(&self) -> ::std::option::Option<& crate::types::CloudWatchLogsDestination> {
         self.cloud_watch_logs_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> ::std::option::Option<& crate::types::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
-    pub fn sns_destination(&self) -> ::std::option::Option<&crate::types::SnsDestination> {
+    pub fn sns_destination(&self) -> ::std::option::Option<& crate::types::SnsDestination> {
         self.sns_destination.as_ref()
     }
 }
 impl UpdateEventDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventDestinationInput`](crate::operation::update_event_destination::UpdateEventDestinationInput).
-    pub fn builder(
-    ) -> crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder {
         crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventDestinationInput`](crate::operation::update_event_destination::UpdateEventDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventDestinationInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) matching_event_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    pub(crate) cloud_watch_logs_destination:
-        ::std::option::Option<crate::types::CloudWatchLogsDestination>,
-    pub(crate) kinesis_firehose_destination:
-        ::std::option::Option<crate::types::KinesisFirehoseDestination>,
+    pub(crate) matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub(crate) cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
+    pub(crate) kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     pub(crate) sns_destination: ::std::option::Option<crate::types::SnsDestination>,
 }
 impl UpdateEventDestinationInputBuilder {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configuration_set_name = input; self
+    }
+    /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// <p>The name to use for the event destination.</p>
-    pub fn event_destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to use for the event destination.</p>
-    pub fn set_event_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_destination_name = input;
-        self
+    pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_destination_name = input; self
+    }
+    /// <p>The name to use for the event destination.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_destination_name
     }
     /// <p>When set to true logging is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -127,8 +108,11 @@ impl UpdateEventDestinationInputBuilder {
     }
     /// <p>When set to true logging is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>When set to true logging is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Appends an item to `matching_event_types`.
     ///
@@ -137,49 +121,43 @@ impl UpdateEventDestinationInputBuilder {
     /// <p>An array of event types that determine which events to log.</p>
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.matching_event_types.unwrap_or_default();
-        v.push(input);
-        self.matching_event_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.matching_event_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of event types that determine which events to log.</p>
-    pub fn set_matching_event_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    ) -> Self {
-        self.matching_event_types = input;
-        self
+    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
+        self.matching_event_types = input; self
+    }
+    /// <p>An array of event types that determine which events to log.</p>
+    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+        &self.matching_event_types
     }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_destination(
-        mut self,
-        input: crate::types::CloudWatchLogsDestination,
-    ) -> Self {
+    pub fn cloud_watch_logs_destination(mut self, input: crate::types::CloudWatchLogsDestination) -> Self {
         self.cloud_watch_logs_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-    pub fn set_cloud_watch_logs_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
-    ) -> Self {
-        self.cloud_watch_logs_destination = input;
-        self
+    pub fn set_cloud_watch_logs_destination(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsDestination>) -> Self {
+        self.cloud_watch_logs_destination = input; self
+    }
+    /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
+    pub fn get_cloud_watch_logs_destination(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
+        &self.cloud_watch_logs_destination
     }
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-    pub fn kinesis_firehose_destination(
-        mut self,
-        input: crate::types::KinesisFirehoseDestination,
-    ) -> Self {
+    pub fn kinesis_firehose_destination(mut self, input: crate::types::KinesisFirehoseDestination) -> Self {
         self.kinesis_firehose_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-    pub fn set_kinesis_firehose_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
-    ) -> Self {
-        self.kinesis_firehose_destination = input;
-        self
+    pub fn set_kinesis_firehose_destination(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
+        self.kinesis_firehose_destination = input; self
+    }
+    /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
+    pub fn get_kinesis_firehose_destination(&self) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
+        &self.kinesis_firehose_destination
     }
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
     pub fn sns_destination(mut self, input: crate::types::SnsDestination) -> Self {
@@ -187,30 +165,33 @@ impl UpdateEventDestinationInputBuilder {
         self
     }
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
-    pub fn set_sns_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::SnsDestination>,
-    ) -> Self {
-        self.sns_destination = input;
-        self
+    pub fn set_sns_destination(mut self, input: ::std::option::Option<crate::types::SnsDestination>) -> Self {
+        self.sns_destination = input; self
+    }
+    /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
+    pub fn get_sns_destination(&self) -> &::std::option::Option<crate::types::SnsDestination> {
+        &self.sns_destination
     }
     /// Consumes the builder and constructs a [`UpdateEventDestinationInput`](crate::operation::update_event_destination::UpdateEventDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_destination::UpdateEventDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_event_destination::UpdateEventDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_event_destination::UpdateEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-                enabled: self.enabled,
-                matching_event_types: self.matching_event_types,
-                cloud_watch_logs_destination: self.cloud_watch_logs_destination,
-                kinesis_firehose_destination: self.kinesis_firehose_destination,
-                sns_destination: self.sns_destination,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination_name: self.event_destination_name
+                ,
+                enabled: self.enabled
+                ,
+                matching_event_types: self.matching_event_types
+                ,
+                cloud_watch_logs_destination: self.cloud_watch_logs_destination
+                ,
+                kinesis_firehose_destination: self.kinesis_firehose_destination
+                ,
+                sns_destination: self.sns_destination
+                ,
+            }
         )
     }
 }
+

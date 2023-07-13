@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRouteOutput {
+pub struct DeleteRouteOutput  {
     /// <p>The ID of the route to delete.</p>
     #[doc(hidden)]
     pub route_id: ::std::option::Option<::std::string::String>,
@@ -25,35 +25,35 @@ pub struct DeleteRouteOutput {
 }
 impl DeleteRouteOutput {
     /// <p>The ID of the route to delete.</p>
-    pub fn route_id(&self) -> ::std::option::Option<&str> {
+    pub fn route_id(&self) -> ::std::option::Option<& str> {
         self.route_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the service that the route belongs to.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the application that the route belongs to.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The current state of the route. </p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::RouteState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::RouteState> {
         self.state.as_ref()
     }
     /// <p>A timestamp that indicates when the route was last updated. </p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteRouteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteOutput`](crate::operation::delete_route::DeleteRouteOutput).
     pub fn builder() -> crate::operation::delete_route::builders::DeleteRouteOutputBuilder {
@@ -63,9 +63,7 @@ impl DeleteRouteOutput {
 
 /// A builder for [`DeleteRouteOutput`](crate::operation::delete_route::DeleteRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRouteOutputBuilder {
     pub(crate) route_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -83,8 +81,11 @@ impl DeleteRouteOutputBuilder {
     }
     /// <p>The ID of the route to delete.</p>
     pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_id = input;
-        self
+        self.route_id = input; self
+    }
+    /// <p>The ID of the route to delete.</p>
+    pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_id
     }
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +94,11 @@ impl DeleteRouteOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the route.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ID of the service that the route belongs to.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,24 +107,24 @@ impl DeleteRouteOutputBuilder {
     }
     /// <p>The ID of the service that the route belongs to.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
+    }
+    /// <p>The ID of the service that the route belongs to.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// <p>The ID of the application that the route belongs to.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application that the route belongs to.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The ID of the application that the route belongs to.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The current state of the route. </p>
     pub fn state(mut self, input: crate::types::RouteState) -> Self {
@@ -129,8 +133,11 @@ impl DeleteRouteOutputBuilder {
     }
     /// <p>The current state of the route. </p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RouteState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The current state of the route. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteState> {
+        &self.state
     }
     /// <p>A timestamp that indicates when the route was last updated. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,32 +145,39 @@ impl DeleteRouteOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the route was last updated. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
+    }
+    /// <p>A timestamp that indicates when the route was last updated. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteRouteOutput`](crate::operation::delete_route::DeleteRouteOutput).
     pub fn build(self) -> crate::operation::delete_route::DeleteRouteOutput {
         crate::operation::delete_route::DeleteRouteOutput {
-            route_id: self.route_id,
-            arn: self.arn,
-            service_id: self.service_id,
-            application_id: self.application_id,
-            state: self.state,
-            last_updated_time: self.last_updated_time,
+            route_id: self.route_id
+            ,
+            arn: self.arn
+            ,
+            service_id: self.service_id
+            ,
+            application_id: self.application_id
+            ,
+            state: self.state
+            ,
+            last_updated_time: self.last_updated_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

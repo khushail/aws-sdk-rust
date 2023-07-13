@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopJobOutput {
+pub struct StopJobOutput  {
     /// <p>The job that was stopped.</p>
     #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::Job>,
@@ -10,15 +10,15 @@ pub struct StopJobOutput {
 }
 impl StopJobOutput {
     /// <p>The job that was stopped.</p>
-    pub fn job(&self) -> ::std::option::Option<&crate::types::Job> {
+    pub fn job(&self) -> ::std::option::Option<& crate::types::Job> {
         self.job.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for StopJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopJobOutput {
     /// Creates a new builder-style object to manufacture [`StopJobOutput`](crate::operation::stop_job::StopJobOutput).
     pub fn builder() -> crate::operation::stop_job::builders::StopJobOutputBuilder {
@@ -28,9 +28,7 @@ impl StopJobOutput {
 
 /// A builder for [`StopJobOutput`](crate::operation::stop_job::StopJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopJobOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl StopJobOutputBuilder {
     }
     /// <p>The job that was stopped.</p>
     pub fn set_job(mut self, input: ::std::option::Option<crate::types::Job>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
+    }
+    /// <p>The job that was stopped.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::Job> {
+        &self.job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopJobOutput`](crate::operation::stop_job::StopJobOutput).
     pub fn build(self) -> crate::operation::stop_job::StopJobOutput {
         crate::operation::stop_job::StopJobOutput {
-            job: self.job,
+            job: self.job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

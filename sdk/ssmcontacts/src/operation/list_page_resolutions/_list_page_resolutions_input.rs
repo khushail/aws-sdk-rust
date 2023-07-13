@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPageResolutionsInput {
+pub struct ListPageResolutionsInput  {
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct ListPageResolutionsInput {
 }
 impl ListPageResolutionsInput {
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
-    pub fn page_id(&self) -> ::std::option::Option<&str> {
+    pub fn page_id(&self) -> ::std::option::Option<& str> {
         self.page_id.as_deref()
     }
 }
 impl ListPageResolutionsInput {
     /// Creates a new builder-style object to manufacture [`ListPageResolutionsInput`](crate::operation::list_page_resolutions::ListPageResolutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder {
-        crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder {
+        crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPageResolutionsInput`](crate::operation::list_page_resolutions::ListPageResolutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPageResolutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_id: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl ListPageResolutionsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
     pub fn page_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl ListPageResolutionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
     pub fn set_page_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_id = input;
-        self
+        self.page_id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
+    pub fn get_page_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_id
     }
     /// Consumes the builder and constructs a [`ListPageResolutionsInput`](crate::operation::list_page_resolutions::ListPageResolutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_page_resolutions::ListPageResolutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_page_resolutions::ListPageResolutionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_page_resolutions::ListPageResolutionsInput {
-                next_token: self.next_token,
-                page_id: self.page_id,
-            },
+                next_token: self.next_token
+                ,
+                page_id: self.page_id
+                ,
+            }
         )
     }
 }
+

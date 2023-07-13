@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteJobTemplateOutput {
+pub struct DeleteJobTemplateOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteJobTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteJobTemplateOutput`](crate::operation::delete_job_template::DeleteJobTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_job_template::builders::DeleteJobTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_job_template::builders::DeleteJobTemplateOutputBuilder {
         crate::operation::delete_job_template::builders::DeleteJobTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteJobTemplateOutput`](crate::operation::delete_job_template::DeleteJobTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteJobTemplateOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteJobTemplateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteJobTemplateOutput`](crate::operation::delete_job_template::DeleteJobTemplateOutput).
     pub fn build(self) -> crate::operation::delete_job_template::DeleteJobTemplateOutput {
         crate::operation::delete_job_template::DeleteJobTemplateOutput {
@@ -43,3 +40,4 @@ impl DeleteJobTemplateOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the agent's status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentStatusReference {
+pub struct AgentStatusReference  {
     /// <p>The start timestamp of the agent's status.</p>
     #[doc(hidden)]
     pub status_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -16,15 +16,15 @@ pub struct AgentStatusReference {
 }
 impl AgentStatusReference {
     /// <p>The start timestamp of the agent's status.</p>
-    pub fn status_start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn status_start_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.status_start_timestamp.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
-    pub fn status_arn(&self) -> ::std::option::Option<&str> {
+    pub fn status_arn(&self) -> ::std::option::Option<& str> {
         self.status_arn.as_deref()
     }
     /// <p>The name of the agent status.</p>
-    pub fn status_name(&self) -> ::std::option::Option<&str> {
+    pub fn status_name(&self) -> ::std::option::Option<& str> {
         self.status_name.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl AgentStatusReference {
 
 /// A builder for [`AgentStatusReference`](crate::types::AgentStatusReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentStatusReferenceBuilder {
     pub(crate) status_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_arn: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl AgentStatusReferenceBuilder {
         self
     }
     /// <p>The start timestamp of the agent's status.</p>
-    pub fn set_status_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.status_start_timestamp = input;
-        self
+    pub fn set_status_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.status_start_timestamp = input; self
+    }
+    /// <p>The start timestamp of the agent's status.</p>
+    pub fn get_status_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.status_start_timestamp
     }
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
     pub fn status_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +64,11 @@ impl AgentStatusReferenceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
     pub fn set_status_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_arn = input;
-        self
+        self.status_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
+    pub fn get_status_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_arn
     }
     /// <p>The name of the agent status.</p>
     pub fn status_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,15 +77,22 @@ impl AgentStatusReferenceBuilder {
     }
     /// <p>The name of the agent status.</p>
     pub fn set_status_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_name = input;
-        self
+        self.status_name = input; self
+    }
+    /// <p>The name of the agent status.</p>
+    pub fn get_status_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_name
     }
     /// Consumes the builder and constructs a [`AgentStatusReference`](crate::types::AgentStatusReference).
     pub fn build(self) -> crate::types::AgentStatusReference {
         crate::types::AgentStatusReference {
-            status_start_timestamp: self.status_start_timestamp,
-            status_arn: self.status_arn,
-            status_name: self.status_name,
+            status_start_timestamp: self.status_start_timestamp
+            ,
+            status_arn: self.status_arn
+            ,
+            status_name: self.status_name
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The output configuration parameters of a batch segment job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchSegmentJobOutput {
+pub struct BatchSegmentJobOutput  {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
     pub s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
 }
 impl BatchSegmentJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_destination(&self) -> ::std::option::Option<&crate::types::S3DataConfig> {
+    pub fn s3_data_destination(&self) -> ::std::option::Option<& crate::types::S3DataConfig> {
         self.s3_data_destination.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl BatchSegmentJobOutput {
 
 /// A builder for [`BatchSegmentJobOutput`](crate::types::BatchSegmentJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchSegmentJobOutputBuilder {
     pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
 }
@@ -36,17 +34,19 @@ impl BatchSegmentJobOutputBuilder {
         self
     }
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn set_s3_data_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataConfig>,
-    ) -> Self {
-        self.s3_data_destination = input;
-        self
+    pub fn set_s3_data_destination(mut self, input: ::std::option::Option<crate::types::S3DataConfig>) -> Self {
+        self.s3_data_destination = input; self
+    }
+    /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    pub fn get_s3_data_destination(&self) -> &::std::option::Option<crate::types::S3DataConfig> {
+        &self.s3_data_destination
     }
     /// Consumes the builder and constructs a [`BatchSegmentJobOutput`](crate::types::BatchSegmentJobOutput).
     pub fn build(self) -> crate::types::BatchSegmentJobOutput {
         crate::types::BatchSegmentJobOutput {
-            s3_data_destination: self.s3_data_destination,
+            s3_data_destination: self.s3_data_destination
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A request to enable or disable the automatic IP address warm-up feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountDedicatedIpWarmupAttributesInput {
+pub struct PutAccountDedicatedIpWarmupAttributesInput  {
     /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
     #[doc(hidden)]
     pub auto_warmup_enabled: bool,
@@ -16,16 +16,14 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
 }
 impl PutAccountDedicatedIpWarmupAttributesInput {
     /// Creates a new builder-style object to manufacture [`PutAccountDedicatedIpWarmupAttributesInput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput).
-    pub fn builder() -> crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesInputBuilder{
+    pub fn builder() -> crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesInputBuilder {
         crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountDedicatedIpWarmupAttributesInput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountDedicatedIpWarmupAttributesInputBuilder {
     pub(crate) auto_warmup_enabled: ::std::option::Option<bool>,
 }
@@ -37,11 +35,14 @@ impl PutAccountDedicatedIpWarmupAttributesInputBuilder {
     }
     /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
     pub fn set_auto_warmup_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_warmup_enabled = input;
-        self
+        self.auto_warmup_enabled = input; self
+    }
+    /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
+    pub fn get_auto_warmup_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_warmup_enabled
     }
     /// Consumes the builder and constructs a [`PutAccountDedicatedIpWarmupAttributesInput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput {
                 auto_warmup_enabled: self.auto_warmup_enabled
@@ -51,3 +52,4 @@ impl PutAccountDedicatedIpWarmupAttributesInputBuilder {
         )
     }
 }
+

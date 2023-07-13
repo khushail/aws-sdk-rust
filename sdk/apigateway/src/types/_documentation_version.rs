@@ -3,7 +3,7 @@
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentationVersion {
+pub struct DocumentationVersion  {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct DocumentationVersion {
 }
 impl DocumentationVersion {
     /// <p>The version identifier of the API documentation snapshot.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API documentation snapshot.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl DocumentationVersion {
 
 /// A builder for [`DocumentationVersion`](crate::types::DocumentationVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentationVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -53,8 +51,11 @@ impl DocumentationVersionBuilder {
     }
     /// <p>The version identifier of the API documentation snapshot.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version identifier of the API documentation snapshot.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The date when the API documentation snapshot is created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -62,12 +63,12 @@ impl DocumentationVersionBuilder {
         self
     }
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_date = input;
-        self
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_date = input; self
+    }
+    /// <p>The date when the API documentation snapshot is created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     /// <p>The description of the API documentation snapshot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,15 +77,22 @@ impl DocumentationVersionBuilder {
     }
     /// <p>The description of the API documentation snapshot.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the API documentation snapshot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`DocumentationVersion`](crate::types::DocumentationVersion).
     pub fn build(self) -> crate::types::DocumentationVersion {
         crate::types::DocumentationVersion {
-            version: self.version,
-            created_date: self.created_date,
-            description: self.description,
+            version: self.version
+            ,
+            created_date: self.created_date
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

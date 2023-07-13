@@ -3,7 +3,7 @@
 /// <p>An object that defines the value of the key and its type in the OperationalData map.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpsItemDataValue {
+pub struct OpsItemDataValue  {
     /// <p>The value of the OperationalData key.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct OpsItemDataValue {
 }
 impl OpsItemDataValue {
     /// <p>The value of the OperationalData key.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and <code>String</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OpsItemDataType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::OpsItemDataType> {
         self.r#type.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl OpsItemDataValue {
 
 /// A builder for [`OpsItemDataValue`](crate::types::OpsItemDataValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemDataValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::OpsItemDataType>,
@@ -45,8 +43,11 @@ impl OpsItemDataValueBuilder {
     }
     /// <p>The value of the OperationalData key.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the OperationalData key.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and <code>String</code>.</p>
     pub fn r#type(mut self, input: crate::types::OpsItemDataType) -> Self {
@@ -55,14 +56,20 @@ impl OpsItemDataValueBuilder {
     }
     /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and <code>String</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OpsItemDataType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of key-value pair. Valid types include <code>SearchableString</code> and <code>String</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OpsItemDataType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`OpsItemDataValue`](crate::types::OpsItemDataValue).
     pub fn build(self) -> crate::types::OpsItemDataValue {
         crate::types::OpsItemDataValue {
-            value: self.value,
-            r#type: self.r#type,
+            value: self.value
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkerFleetOutput {
+pub struct UpdateWorkerFleetOutput  {
     /// Full ARN of the worker fleet.
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -22,44 +22,41 @@ pub struct UpdateWorkerFleetOutput {
 }
 impl UpdateWorkerFleetOutput {
     /// Full ARN of the worker fleet.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the worker fleet's identifier
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    pub fn additional_fixed_properties(&self) -> ::std::option::Option<&str> {
+    pub fn additional_fixed_properties(&self) -> ::std::option::Option<& str> {
         self.additional_fixed_properties.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateWorkerFleetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateWorkerFleetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkerFleetOutput`](crate::operation::update_worker_fleet::UpdateWorkerFleetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_worker_fleet::builders::UpdateWorkerFleetOutputBuilder {
+    pub fn builder() -> crate::operation::update_worker_fleet::builders::UpdateWorkerFleetOutputBuilder {
         crate::operation::update_worker_fleet::builders::UpdateWorkerFleetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkerFleetOutput`](crate::operation::update_worker_fleet::UpdateWorkerFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkerFleetOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -76,8 +73,11 @@ impl UpdateWorkerFleetOutputBuilder {
     }
     /// Full ARN of the worker fleet.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// Full ARN of the worker fleet.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Filters access by the worker fleet's identifier
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +86,11 @@ impl UpdateWorkerFleetOutputBuilder {
     }
     /// Filters access by the worker fleet's identifier
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// Filters access by the worker fleet's identifier
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,8 +99,11 @@ impl UpdateWorkerFleetOutputBuilder {
     }
     /// Human friendly name of the resource.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Timestamp at which the resource was last updated.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,47 +111,50 @@ impl UpdateWorkerFleetOutputBuilder {
         self
     }
     /// Timestamp at which the resource was last updated.
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
+    }
+    /// Timestamp at which the resource was last updated.
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    pub fn additional_fixed_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_fixed_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_fixed_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    pub fn set_additional_fixed_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.additional_fixed_properties = input;
-        self
+    pub fn set_additional_fixed_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.additional_fixed_properties = input; self
+    }
+    /// JSON blob containing additional fixed properties regarding the worker fleet
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_fixed_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateWorkerFleetOutput`](crate::operation::update_worker_fleet::UpdateWorkerFleetOutput).
     pub fn build(self) -> crate::operation::update_worker_fleet::UpdateWorkerFleetOutput {
         crate::operation::update_worker_fleet::UpdateWorkerFleetOutput {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            updated_at: self.updated_at,
-            additional_fixed_properties: self.additional_fixed_properties,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            updated_at: self.updated_at
+            ,
+            additional_fixed_properties: self.additional_fixed_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

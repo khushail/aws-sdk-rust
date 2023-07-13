@@ -3,7 +3,7 @@
 /// <p>Identifier for a single stateless rule group, used in a firewall policy to refer to the rule group. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatelessRuleGroupReference {
+pub struct StatelessRuleGroupReference  {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct StatelessRuleGroupReference {
 }
 impl StatelessRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
@@ -30,9 +30,7 @@ impl StatelessRuleGroupReference {
 
 /// A builder for [`StatelessRuleGroupReference`](crate::types::StatelessRuleGroupReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatelessRuleGroupReferenceBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl StatelessRuleGroupReferenceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -55,14 +56,21 @@ impl StatelessRuleGroupReferenceBuilder {
     }
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
+    }
+    /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Consumes the builder and constructs a [`StatelessRuleGroupReference`](crate::types::StatelessRuleGroupReference).
     pub fn build(self) -> crate::types::StatelessRuleGroupReference {
         crate::types::StatelessRuleGroupReference {
-            resource_arn: self.resource_arn,
-            priority: self.priority.unwrap_or_default(),
+            resource_arn: self.resource_arn
+            ,
+            priority: self.priority
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

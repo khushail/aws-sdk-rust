@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessGatewayCertificateInput {
+pub struct GetWirelessGatewayCertificateInput  {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetWirelessGatewayCertificateInput {
     /// <p>The ID of the resource to get.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetWirelessGatewayCertificateInput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateInput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder {
         crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayCertificateInput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayCertificateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,14 @@ impl GetWirelessGatewayCertificateInputBuilder {
     }
     /// <p>The ID of the resource to get.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the resource to get.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayCertificateInput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput {
                 id: self.id
@@ -54,3 +50,4 @@ impl GetWirelessGatewayCertificateInputBuilder {
         )
     }
 }
+

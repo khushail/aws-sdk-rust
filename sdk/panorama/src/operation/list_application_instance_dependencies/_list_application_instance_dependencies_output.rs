@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationInstanceDependenciesOutput {
+pub struct ListApplicationInstanceDependenciesOutput  {
     /// <p>A list of package objects.</p>
     #[doc(hidden)]
     pub package_objects: ::std::option::Option<::std::vec::Vec<crate::types::PackageObject>>,
@@ -13,31 +13,29 @@ pub struct ListApplicationInstanceDependenciesOutput {
 }
 impl ListApplicationInstanceDependenciesOutput {
     /// <p>A list of package objects.</p>
-    pub fn package_objects(&self) -> ::std::option::Option<&[crate::types::PackageObject]> {
+    pub fn package_objects(&self) -> ::std::option::Option<& [crate::types::PackageObject]> {
         self.package_objects.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListApplicationInstanceDependenciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListApplicationInstanceDependenciesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationInstanceDependenciesOutput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput).
-    pub fn builder() -> crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesOutputBuilder {
         crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationInstanceDependenciesOutput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationInstanceDependenciesOutputBuilder {
     pub(crate) package_objects: ::std::option::Option<::std::vec::Vec<crate::types::PackageObject>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,17 @@ impl ListApplicationInstanceDependenciesOutputBuilder {
     /// <p>A list of package objects.</p>
     pub fn package_objects(mut self, input: crate::types::PackageObject) -> Self {
         let mut v = self.package_objects.unwrap_or_default();
-        v.push(input);
-        self.package_objects = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.package_objects = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of package objects.</p>
-    pub fn set_package_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageObject>>,
-    ) -> Self {
-        self.package_objects = input;
-        self
+    pub fn set_package_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageObject>>) -> Self {
+        self.package_objects = input; self
+    }
+    /// <p>A list of package objects.</p>
+    pub fn get_package_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageObject>> {
+        &self.package_objects
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,20 +68,23 @@ impl ListApplicationInstanceDependenciesOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A pagination token that's included if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListApplicationInstanceDependenciesOutput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput).
-    pub fn build(self) -> crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput{
+    pub fn build(self) -> crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput {
         crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput {
             package_objects: self.package_objects
             ,
@@ -93,3 +94,4 @@ impl ListApplicationInstanceDependenciesOutputBuilder {
         }
     }
 }
+

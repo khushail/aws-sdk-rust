@@ -3,7 +3,7 @@
 /// <p>Filters the response form the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportFilter {
+pub struct ExportFilter  {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ExportFilterName>,
@@ -16,15 +16,15 @@ pub struct ExportFilter {
 }
 impl ExportFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ExportFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::ExportFilterName> {
         self.name.as_ref()
     }
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::ExportFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<& crate::types::ExportFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl ExportFilter {
 
 /// A builder for [`ExportFilter`](crate::types::ExportFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ExportFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,12 +50,12 @@ impl ExportFilterBuilder {
         self
     }
     /// <p>The name of the field to use for filtering.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportFilterName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ExportFilterName>) -> Self {
+        self.name = input; self
+    }
+    /// <p>The name of the field to use for filtering.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ExportFilterName> {
+        &self.name
     }
     /// Appends an item to `values`.
     ///
@@ -66,17 +64,17 @@ impl ExportFilterBuilder {
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
     pub fn operator(mut self, input: crate::types::ExportFilterOperator) -> Self {
@@ -84,19 +82,23 @@ impl ExportFilterBuilder {
         self
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportFilterOperator>,
-    ) -> Self {
-        self.operator = input;
-        self
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::ExportFilterOperator>) -> Self {
+        self.operator = input; self
+    }
+    /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::ExportFilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`ExportFilter`](crate::types::ExportFilter).
     pub fn build(self) -> crate::types::ExportFilter {
         crate::types::ExportFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
+            name: self.name
+            ,
+            values: self.values
+            ,
+            operator: self.operator
+            ,
         }
     }
 }
+

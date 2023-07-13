@@ -3,113 +3,93 @@ pub use crate::operation::list_metric_values::_list_metric_values_output::ListMe
 
 pub use crate::operation::list_metric_values::_list_metric_values_input::ListMetricValuesInputBuilder;
 
+impl ListMetricValuesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_metric_values::ListMetricValuesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_metric_values::ListMetricValuesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_metric_values();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListMetricValues`.
-///
+/// 
 /// <p>Lists the values reported for an IoT Device Defender metric (device-side metric, cloud-side metric, or custom metric) by the given thing during the specified time period.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMetricValuesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder,
+                    inner: crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder,
 }
-impl ListMetricValuesFluentBuilder {
+impl ListMetricValuesFluentBuilder  {
     /// Creates a new `ListMetricValues`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_metric_values::ListMetricValues,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListMetricValues as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_metric_values::ListMetricValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_metric_values::ListMetricValues, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_metric_values::ListMetricValuesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_metric_values::ListMetricValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_metric_values::ListMetricValues,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_metric_values::ListMetricValuesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_metric_values::ListMetricValues, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_metric_values::paginator::ListMetricValuesPaginator {
-        crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_metric_values::paginator::ListMetricValuesPaginator {
+                                crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the thing for which security profile metric values are returned.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
@@ -119,6 +99,10 @@ impl ListMetricValuesFluentBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_name(input);
         self
+    }
+    /// <p>The name of the thing for which security profile metric values are returned.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
     }
     /// <p>The name of the security profile metric for which values are returned.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,21 +114,23 @@ impl ListMetricValuesFluentBuilder {
         self.inner = self.inner.set_metric_name(input);
         self
     }
+    /// <p>The name of the security profile metric for which values are returned.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
+    }
     /// <p>The dimension name.</p>
-    pub fn dimension_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dimension_name(input.into());
         self
     }
     /// <p>The dimension name.</p>
-    pub fn set_dimension_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dimension_name(input);
         self
+    }
+    /// <p>The dimension name.</p>
+    pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dimension_name()
     }
     /// <p>The dimension value operator.</p>
     pub fn dimension_value_operator(mut self, input: crate::types::DimensionValueOperator) -> Self {
@@ -152,12 +138,13 @@ impl ListMetricValuesFluentBuilder {
         self
     }
     /// <p>The dimension value operator.</p>
-    pub fn set_dimension_value_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionValueOperator>,
-    ) -> Self {
+    pub fn set_dimension_value_operator(mut self, input: ::std::option::Option<crate::types::DimensionValueOperator>) -> Self {
         self.inner = self.inner.set_dimension_value_operator(input);
         self
+    }
+    /// <p>The dimension value operator.</p>
+    pub fn get_dimension_value_operator(&self) -> &::std::option::Option<crate::types::DimensionValueOperator> {
+        self.inner.get_dimension_value_operator()
     }
     /// <p>The start of the time period for which metric values are returned.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,12 +152,13 @@ impl ListMetricValuesFluentBuilder {
         self
     }
     /// <p>The start of the time period for which metric values are returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The start of the time period for which metric values are returned.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The end of the time period for which metric values are returned.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -178,12 +166,13 @@ impl ListMetricValuesFluentBuilder {
         self
     }
     /// <p>The end of the time period for which metric values are returned.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The end of the time period for which metric values are returned.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -195,6 +184,10 @@ impl ListMetricValuesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -205,4 +198,9 @@ impl ListMetricValuesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

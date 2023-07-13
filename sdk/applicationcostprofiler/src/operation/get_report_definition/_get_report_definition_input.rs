@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReportDefinitionInput {
+pub struct GetReportDefinitionInput  {
     /// <p>ID of the report to retrieve.</p>
     #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
 }
 impl GetReportDefinitionInput {
     /// <p>ID of the report to retrieve.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
 impl GetReportDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetReportDefinitionInput`](crate::operation::get_report_definition::GetReportDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_report_definition::builders::GetReportDefinitionInputBuilder {
-        crate::operation::get_report_definition::builders::GetReportDefinitionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_report_definition::builders::GetReportDefinitionInputBuilder {
+        crate::operation::get_report_definition::builders::GetReportDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReportDefinitionInput`](crate::operation::get_report_definition::GetReportDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReportDefinitionInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetReportDefinitionInputBuilder {
     }
     /// <p>ID of the report to retrieve.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
+    }
+    /// <p>ID of the report to retrieve.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
     }
     /// Consumes the builder and constructs a [`GetReportDefinitionInput`](crate::operation::get_report_definition::GetReportDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_report_definition::GetReportDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_report_definition::GetReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_report_definition::GetReportDefinitionInput {
-                report_id: self.report_id,
-            },
+                report_id: self.report_id
+                ,
+            }
         )
     }
 }
+

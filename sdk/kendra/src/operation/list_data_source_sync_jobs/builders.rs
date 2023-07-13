@@ -3,112 +3,93 @@ pub use crate::operation::list_data_source_sync_jobs::_list_data_source_sync_job
 
 pub use crate::operation::list_data_source_sync_jobs::_list_data_source_sync_jobs_input::ListDataSourceSyncJobsInputBuilder;
 
+impl ListDataSourceSyncJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_data_source_sync_jobs();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListDataSourceSyncJobs`.
-///
+/// 
 /// <p>Gets statistics about synchronizing a data source connector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataSourceSyncJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsInputBuilder,
+                    inner: crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsInputBuilder,
 }
-impl ListDataSourceSyncJobsFluentBuilder {
+impl ListDataSourceSyncJobsFluentBuilder  {
     /// Creates a new `ListDataSourceSyncJobs`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListDataSourceSyncJobs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobs, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobs, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_data_source_sync_jobs::paginator::ListDataSourceSyncJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_data_source_sync_jobs::paginator::ListDataSourceSyncJobsPaginator
-    {
-        crate::operation::list_data_source_sync_jobs::paginator::ListDataSourceSyncJobsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_data_source_sync_jobs::paginator::ListDataSourceSyncJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_data_source_sync_jobs::paginator::ListDataSourceSyncJobsPaginator {
+                                crate::operation::list_data_source_sync_jobs::paginator::ListDataSourceSyncJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the data source connector.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -118,6 +99,10 @@ impl ListDataSourceSyncJobsFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The identifier of the data source connector.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +114,10 @@ impl ListDataSourceSyncJobsFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index used with the data source connector.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -138,6 +127,10 @@ impl ListDataSourceSyncJobsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -149,18 +142,23 @@ impl ListDataSourceSyncJobsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
     pub fn start_time_filter(mut self, input: crate::types::TimeRange) -> Self {
         self.inner = self.inner.start_time_filter(input);
         self
     }
     /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
-    pub fn set_start_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRange>,
-    ) -> Self {
+    pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
+    }
+    /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
+    pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        self.inner.get_start_time_filter()
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub fn status_filter(mut self, input: crate::types::DataSourceSyncJobStatus) -> Self {
@@ -168,11 +166,13 @@ impl ListDataSourceSyncJobsFluentBuilder {
         self
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceSyncJobStatus>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::DataSourceSyncJobStatus>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }
+    /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::DataSourceSyncJobStatus> {
+        self.inner.get_status_filter()
+    }
 }
+

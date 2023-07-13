@@ -627,6 +627,12 @@ pub use crate::types::_geospatial_map_configuration::GeospatialMapConfigurationB
 
 pub use crate::types::_geospatial_point_style_options::GeospatialPointStyleOptionsBuilder;
 
+pub use crate::types::_geospatial_heatmap_configuration::GeospatialHeatmapConfigurationBuilder;
+
+pub use crate::types::_geospatial_heatmap_color_scale::GeospatialHeatmapColorScaleBuilder;
+
+pub use crate::types::_geospatial_heatmap_data_color::GeospatialHeatmapDataColorBuilder;
+
 pub use crate::types::_cluster_marker_configuration::ClusterMarkerConfigurationBuilder;
 
 pub use crate::types::_cluster_marker::ClusterMarkerBuilder;
@@ -810,6 +816,10 @@ pub use crate::types::_pivot_table_configuration::PivotTableConfigurationBuilder
 pub use crate::types::_pivot_table_paginated_report_options::PivotTablePaginatedReportOptionsBuilder;
 
 pub use crate::types::_pivot_table_field_options::PivotTableFieldOptionsBuilder;
+
+pub use crate::types::_pivot_table_field_collapse_state_option::PivotTableFieldCollapseStateOptionBuilder;
+
+pub use crate::types::_pivot_table_field_collapse_state_target::PivotTableFieldCollapseStateTargetBuilder;
 
 pub use crate::types::_pivot_table_data_path_option::PivotTableDataPathOptionBuilder;
 
@@ -1169,6 +1179,48 @@ pub use crate::types::_account_customization::AccountCustomizationBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_asset_bundle_import_job_override_parameters::AssetBundleImportJobOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_dashboard_override_parameters::AssetBundleImportJobDashboardOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_analysis_override_parameters::AssetBundleImportJobAnalysisOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_theme_override_parameters::AssetBundleImportJobThemeOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_set_override_parameters::AssetBundleImportJobDataSetOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_source_override_parameters::AssetBundleImportJobDataSourceOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_source_credentials::AssetBundleImportJobDataSourceCredentialsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_source_credential_pair::AssetBundleImportJobDataSourceCredentialPairBuilder;
+
+pub use crate::types::_asset_bundle_import_job_refresh_schedule_override_parameters::AssetBundleImportJobRefreshScheduleOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_vpc_connection_override_parameters::AssetBundleImportJobVpcConnectionOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_resource_id_override_configuration::AssetBundleImportJobResourceIdOverrideConfigurationBuilder;
+
+pub use crate::types::_asset_bundle_import_source::AssetBundleImportSourceBuilder;
+
+pub use crate::types::_asset_bundle_cloud_formation_override_property_configuration::AssetBundleCloudFormationOverridePropertyConfigurationBuilder;
+
+pub use crate::types::_asset_bundle_export_job_dashboard_override_properties::AssetBundleExportJobDashboardOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_analysis_override_properties::AssetBundleExportJobAnalysisOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_theme_override_properties::AssetBundleExportJobThemeOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_data_set_override_properties::AssetBundleExportJobDataSetOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_data_source_override_properties::AssetBundleExportJobDataSourceOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_refresh_schedule_override_properties::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_vpc_connection_override_properties::AssetBundleExportJobVpcConnectionOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_resource_id_override_configuration::AssetBundleExportJobResourceIdOverrideConfigurationBuilder;
+
 pub use crate::types::_group_search_filter::GroupSearchFilterBuilder;
 
 pub use crate::types::_folder_summary::FolderSummaryBuilder;
@@ -1241,6 +1293,10 @@ pub use crate::types::_data_source_error_info::DataSourceErrorInfoBuilder;
 
 pub use crate::types::_dashboard_version_summary::DashboardVersionSummaryBuilder;
 
+pub use crate::types::_asset_bundle_import_job_summary::AssetBundleImportJobSummaryBuilder;
+
+pub use crate::types::_asset_bundle_export_job_summary::AssetBundleExportJobSummaryBuilder;
+
 pub use crate::types::_registered_user_embedding_experience_configuration::RegisteredUserEmbeddingExperienceConfigurationBuilder;
 
 pub use crate::types::_registered_user_dashboard_visual_embedding_configuration::RegisteredUserDashboardVisualEmbeddingConfigurationBuilder;
@@ -1305,6 +1361,12 @@ pub use crate::types::_dashboard::DashboardBuilder;
 
 pub use crate::types::_dashboard_version::DashboardVersionBuilder;
 
+pub use crate::types::_asset_bundle_import_source_description::AssetBundleImportSourceDescriptionBuilder;
+
+pub use crate::types::_asset_bundle_import_job_error::AssetBundleImportJobErrorBuilder;
+
+pub use crate::types::_asset_bundle_export_job_error::AssetBundleExportJobErrorBuilder;
+
 pub use crate::types::_analysis_error::AnalysisErrorBuilder;
 
 pub use crate::types::_analysis::AnalysisBuilder;
@@ -1316,3 +1378,4 @@ pub use crate::types::_account_settings::AccountSettingsBuilder;
 pub use crate::types::_folder_member::FolderMemberBuilder;
 
 pub use crate::types::_signup_response::SignupResponseBuilder;
+

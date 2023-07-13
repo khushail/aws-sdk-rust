@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRevealConfigurationOutput {
+pub struct UpdateRevealConfigurationOutput  {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
     #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::RevealConfiguration>,
@@ -10,27 +10,25 @@ pub struct UpdateRevealConfigurationOutput {
 }
 impl UpdateRevealConfigurationOutput {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RevealConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::RevealConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateRevealConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateRevealConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput).
-    pub fn builder() -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationOutputBuilder {
         crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRevealConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RevealConfiguration>,
     _request_id: Option<String>,
@@ -42,29 +40,29 @@ impl UpdateRevealConfigurationOutputBuilder {
         self
     }
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RevealConfiguration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
+        self.configuration = input; self
+    }
+    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
+        &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput {
         crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput {
-            configuration: self.configuration,
+            configuration: self.configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

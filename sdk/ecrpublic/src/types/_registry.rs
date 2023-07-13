@@ -3,7 +3,7 @@
 /// <p>The details of a public registry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Registry {
+pub struct Registry  {
     /// <p>The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
@@ -22,15 +22,15 @@ pub struct Registry {
 }
 impl Registry {
     /// <p>The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
-    pub fn registry_arn(&self) -> ::std::option::Option<&str> {
+    pub fn registry_arn(&self) -> ::std::option::Option<& str> {
         self.registry_arn.as_deref()
     }
     /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
-    pub fn registry_uri(&self) -> ::std::option::Option<&str> {
+    pub fn registry_uri(&self) -> ::std::option::Option<& str> {
         self.registry_uri.as_deref()
     }
     /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
@@ -38,7 +38,7 @@ impl Registry {
         self.verified
     }
     /// <p>An array of objects that represents the aliases for a public registry.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::RegistryAlias]> {
+    pub fn aliases(&self) -> ::std::option::Option<& [crate::types::RegistryAlias]> {
         self.aliases.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl Registry {
 
 /// A builder for [`Registry`](crate::types::Registry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistryBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl RegistryBuilder {
     }
     /// <p>The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
     pub fn registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl RegistryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_arn = input;
-        self
+        self.registry_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
+    pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_arn
     }
     /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
     pub fn registry_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl RegistryBuilder {
     }
     /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
     pub fn set_registry_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_uri = input;
-        self
+        self.registry_uri = input; self
+    }
+    /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
+    pub fn get_registry_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_uri
     }
     /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
     pub fn verified(mut self, input: bool) -> Self {
@@ -99,8 +106,11 @@ impl RegistryBuilder {
     }
     /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
     pub fn set_verified(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.verified = input;
-        self
+        self.verified = input; self
+    }
+    /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
+    pub fn get_verified(&self) -> &::std::option::Option<bool> {
+        &self.verified
     }
     /// Appends an item to `aliases`.
     ///
@@ -109,26 +119,32 @@ impl RegistryBuilder {
     /// <p>An array of objects that represents the aliases for a public registry.</p>
     pub fn aliases(mut self, input: crate::types::RegistryAlias) -> Self {
         let mut v = self.aliases.unwrap_or_default();
-        v.push(input);
-        self.aliases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aliases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that represents the aliases for a public registry.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>>,
-    ) -> Self {
-        self.aliases = input;
-        self
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>>) -> Self {
+        self.aliases = input; self
+    }
+    /// <p>An array of objects that represents the aliases for a public registry.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>> {
+        &self.aliases
     }
     /// Consumes the builder and constructs a [`Registry`](crate::types::Registry).
     pub fn build(self) -> crate::types::Registry {
         crate::types::Registry {
-            registry_id: self.registry_id,
-            registry_arn: self.registry_arn,
-            registry_uri: self.registry_uri,
-            verified: self.verified,
-            aliases: self.aliases,
+            registry_id: self.registry_id
+            ,
+            registry_arn: self.registry_arn
+            ,
+            registry_uri: self.registry_uri
+            ,
+            verified: self.verified
+            ,
+            aliases: self.aliases
+            ,
         }
     }
 }
+

@@ -2,33 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetRulePrioritiesInput {
+pub struct SetRulePrioritiesInput  {
     /// <p>The rule priorities.</p>
     #[doc(hidden)]
     pub rule_priorities: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
 }
 impl SetRulePrioritiesInput {
     /// <p>The rule priorities.</p>
-    pub fn rule_priorities(&self) -> ::std::option::Option<&[crate::types::RulePriorityPair]> {
+    pub fn rule_priorities(&self) -> ::std::option::Option<& [crate::types::RulePriorityPair]> {
         self.rule_priorities.as_deref()
     }
 }
 impl SetRulePrioritiesInput {
     /// Creates a new builder-style object to manufacture [`SetRulePrioritiesInput`](crate::operation::set_rule_priorities::SetRulePrioritiesInput).
-    pub fn builder(
-    ) -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder {
+    pub fn builder() -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder {
         crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder::default()
     }
 }
 
 /// A builder for [`SetRulePrioritiesInput`](crate::operation::set_rule_priorities::SetRulePrioritiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetRulePrioritiesInputBuilder {
-    pub(crate) rule_priorities:
-        ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
+    pub(crate) rule_priorities: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
 }
 impl SetRulePrioritiesInputBuilder {
     /// Appends an item to `rule_priorities`.
@@ -38,29 +34,26 @@ impl SetRulePrioritiesInputBuilder {
     /// <p>The rule priorities.</p>
     pub fn rule_priorities(mut self, input: crate::types::RulePriorityPair) -> Self {
         let mut v = self.rule_priorities.unwrap_or_default();
-        v.push(input);
-        self.rule_priorities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rule_priorities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rule priorities.</p>
-    pub fn set_rule_priorities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
-    ) -> Self {
-        self.rule_priorities = input;
-        self
+    pub fn set_rule_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>) -> Self {
+        self.rule_priorities = input; self
+    }
+    /// <p>The rule priorities.</p>
+    pub fn get_rule_priorities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>> {
+        &self.rule_priorities
     }
     /// Consumes the builder and constructs a [`SetRulePrioritiesInput`](crate::operation::set_rule_priorities::SetRulePrioritiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_rule_priorities::SetRulePrioritiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_rule_priorities::SetRulePrioritiesInput {
-                rule_priorities: self.rule_priorities,
-            },
+                rule_priorities: self.rule_priorities
+                ,
+            }
         )
     }
 }
+

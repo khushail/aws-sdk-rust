@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableInput {
+pub struct EnableInput  {
     /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
     #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,15 +15,15 @@ pub struct EnableInput {
 }
 impl EnableInput {
     /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn account_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>The resource scan types you want to enable.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ResourceScanType]> {
+    pub fn resource_types(&self) -> ::std::option::Option<& [crate::types::ResourceScanType]> {
         self.resource_types.as_deref()
     }
     /// <p>The idempotency token for the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -36,13 +36,10 @@ impl EnableInput {
 
 /// A builder for [`EnableInput`](crate::operation::enable::EnableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resource_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl EnableInputBuilder {
@@ -53,17 +50,17 @@ impl EnableInputBuilder {
     /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_ids = input; self
+    }
+    /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Appends an item to `resource_types`.
     ///
@@ -72,17 +69,17 @@ impl EnableInputBuilder {
     /// <p>The resource scan types you want to enable.</p>
     pub fn resource_types(mut self, input: crate::types::ResourceScanType) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input);
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource scan types you want to enable.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>>,
-    ) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>>) -> Self {
+        self.resource_types = input; self
+    }
+    /// <p>The resource scan types you want to enable.</p>
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>> {
+        &self.resource_types
     }
     /// <p>The idempotency token for the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,20 +88,24 @@ impl EnableInputBuilder {
     }
     /// <p>The idempotency token for the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The idempotency token for the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`EnableInput`](crate::operation::enable::EnableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable::EnableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable::EnableInput {
-            account_ids: self.account_ids,
-            resource_types: self.resource_types,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable::EnableInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable::EnableInput {
+                account_ids: self.account_ids
+                ,
+                resource_types: self.resource_types
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>A single label container. This is used as an element of a label array in multiple contexts, for example, in <code>RuleLabels</code> inside a <code>Rule</code> and in <code>Labels</code> inside a <code>SampledHTTPRequest</code>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Label {
+pub struct Label  {
     /// <p>The label string. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl Label {
     /// <p>The label string. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Label {
 
 /// A builder for [`Label`](crate::types::Label).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl LabelBuilder {
     }
     /// <p>The label string. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The label string. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`Label`](crate::types::Label).
     pub fn build(self) -> crate::types::Label {
-        crate::types::Label { name: self.name }
+        crate::types::Label {
+            name: self.name
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A short summary of a filter's attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterSummary {
+pub struct FilterSummary  {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct FilterSummary {
 }
 impl FilterSummary {
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the filter.</p>
-    pub fn filter_arn(&self) -> ::std::option::Option<&str> {
+    pub fn filter_arn(&self) -> ::std::option::Option<& str> {
         self.filter_arn.as_deref()
     }
     /// <p>The time at which the filter was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the filter was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>If the filter failed, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The status of the filter.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -65,9 +65,7 @@ impl FilterSummary {
 
 /// A builder for [`FilterSummary`](crate::types::FilterSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_arn: ::std::option::Option<::std::string::String>,
@@ -85,8 +83,11 @@ impl FilterSummaryBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ARN of the filter.</p>
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +96,11 @@ impl FilterSummaryBuilder {
     }
     /// <p>The ARN of the filter.</p>
     pub fn set_filter_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_arn = input;
-        self
+        self.filter_arn = input; self
+    }
+    /// <p>The ARN of the filter.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_arn
     }
     /// <p>The time at which the filter was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -104,12 +108,12 @@ impl FilterSummaryBuilder {
         self
     }
     /// <p>The time at which the filter was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
+    }
+    /// <p>The time at which the filter was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The time at which the filter was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -117,44 +121,38 @@ impl FilterSummaryBuilder {
         self
     }
     /// <p>The time at which the filter was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_date_time = input;
-        self
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_date_time = input; self
+    }
+    /// <p>The time at which the filter was last updated.</p>
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dataset_group_arn = input;
-        self
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataset_group_arn = input; self
+    }
+    /// <p>The ARN of the dataset group to which the filter belongs.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// <p>If the filter failed, the reason for the failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the filter failed, the reason for the failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input; self
+    }
+    /// <p>If the filter failed, the reason for the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>The status of the filter.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,19 +161,30 @@ impl FilterSummaryBuilder {
     }
     /// <p>The status of the filter.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the filter.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`FilterSummary`](crate::types::FilterSummary).
     pub fn build(self) -> crate::types::FilterSummary {
         crate::types::FilterSummary {
-            name: self.name,
-            filter_arn: self.filter_arn,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            dataset_group_arn: self.dataset_group_arn,
-            failure_reason: self.failure_reason,
-            status: self.status,
+            name: self.name
+            ,
+            filter_arn: self.filter_arn
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            dataset_group_arn: self.dataset_group_arn
+            ,
+            failure_reason: self.failure_reason
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTargetedSentimentDetectionJobsInput {
+pub struct ListTargetedSentimentDetectionJobsInput  {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter>,
@@ -15,13 +15,11 @@ pub struct ListTargetedSentimentDetectionJobsInput {
 }
 impl ListTargetedSentimentDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetedSentimentDetectionJobFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::TargetedSentimentDetectionJobFilter> {
         self.filter.as_ref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
@@ -31,16 +29,14 @@ impl ListTargetedSentimentDetectionJobsInput {
 }
 impl ListTargetedSentimentDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsInput`](crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput).
-    pub fn builder() -> crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsInputBuilder {
         crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetedSentimentDetectionJobsInput`](crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetedSentimentDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,12 +49,12 @@ impl ListTargetedSentimentDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter>) -> Self {
+        self.filter = input; self
+    }
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::TargetedSentimentDetectionJobFilter> {
+        &self.filter
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,8 +63,11 @@ impl ListTargetedSentimentDetectionJobsInputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -77,11 +76,14 @@ impl ListTargetedSentimentDetectionJobsInputBuilder {
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTargetedSentimentDetectionJobsInput`](crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsInput {
                 filter: self.filter
@@ -94,3 +96,4 @@ impl ListTargetedSentimentDetectionJobsInputBuilder {
         )
     }
 }
+

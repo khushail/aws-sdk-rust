@@ -3,7 +3,7 @@
 /// <p>Provides information about the remote port that was involved in an attempted network connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionRemotePortDetails {
+pub struct ActionRemotePortDetails  {
     /// <p>The number of the port.</p>
     #[doc(hidden)]
     pub port: i32,
@@ -17,7 +17,7 @@ impl ActionRemotePortDetails {
         self.port
     }
     /// <p>The port name of the remote connection.</p>
-    pub fn port_name(&self) -> ::std::option::Option<&str> {
+    pub fn port_name(&self) -> ::std::option::Option<& str> {
         self.port_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ActionRemotePortDetails {
 
 /// A builder for [`ActionRemotePortDetails`](crate::types::ActionRemotePortDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionRemotePortDetailsBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) port_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ActionRemotePortDetailsBuilder {
     }
     /// <p>The number of the port.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
+    }
+    /// <p>The number of the port.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The port name of the remote connection.</p>
     pub fn port_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,21 @@ impl ActionRemotePortDetailsBuilder {
     }
     /// <p>The port name of the remote connection.</p>
     pub fn set_port_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.port_name = input;
-        self
+        self.port_name = input; self
+    }
+    /// <p>The port name of the remote connection.</p>
+    pub fn get_port_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.port_name
     }
     /// Consumes the builder and constructs a [`ActionRemotePortDetails`](crate::types::ActionRemotePortDetails).
     pub fn build(self) -> crate::types::ActionRemotePortDetails {
         crate::types::ActionRemotePortDetails {
-            port: self.port.unwrap_or_default(),
-            port_name: self.port_name,
+            port: self.port
+                .unwrap_or_default()
+            ,
+            port_name: self.port_name
+            ,
         }
     }
 }
+

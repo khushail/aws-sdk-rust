@@ -3,7 +3,7 @@
 /// Request to describe a changeset.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetChangesetInput {
+pub struct GetChangesetInput  {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
     #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct GetChangesetInput {
 }
 impl GetChangesetInput {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
     /// <p>The unique identifier of the Changeset for which to get data.</p>
-    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl GetChangesetInput {
 
 /// A builder for [`GetChangesetInput`](crate::operation::get_changeset::GetChangesetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChangesetInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl GetChangesetInputBuilder {
     }
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_id = input;
-        self
+        self.dataset_id = input; self
+    }
+    /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
     }
     /// <p>The unique identifier of the Changeset for which to get data.</p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,19 +56,22 @@ impl GetChangesetInputBuilder {
     }
     /// <p>The unique identifier of the Changeset for which to get data.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.changeset_id = input;
-        self
+        self.changeset_id = input; self
+    }
+    /// <p>The unique identifier of the Changeset for which to get data.</p>
+    pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.changeset_id
     }
     /// Consumes the builder and constructs a [`GetChangesetInput`](crate::operation::get_changeset::GetChangesetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_changeset::GetChangesetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_changeset::GetChangesetInput {
-            dataset_id: self.dataset_id,
-            changeset_id: self.changeset_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_changeset::GetChangesetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_changeset::GetChangesetInput {
+                dataset_id: self.dataset_id
+                ,
+                changeset_id: self.changeset_id
+                ,
+            }
+        )
     }
 }
+

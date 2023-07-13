@@ -3,7 +3,7 @@
 /// <p>A structure that represents a negative format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NegativeFormat {
+pub struct NegativeFormat  {
     /// <p>The prefix for a negative format.</p>
     #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct NegativeFormat {
 }
 impl NegativeFormat {
     /// <p>The prefix for a negative format.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The suffix for a negative format.</p>
-    pub fn suffix(&self) -> ::std::option::Option<&str> {
+    pub fn suffix(&self) -> ::std::option::Option<& str> {
         self.suffix.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl NegativeFormat {
 
 /// A builder for [`NegativeFormat`](crate::types::NegativeFormat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NegativeFormatBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) suffix: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl NegativeFormatBuilder {
     }
     /// <p>The prefix for a negative format.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
+    }
+    /// <p>The prefix for a negative format.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>The suffix for a negative format.</p>
     pub fn suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl NegativeFormatBuilder {
     }
     /// <p>The suffix for a negative format.</p>
     pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suffix = input;
-        self
+        self.suffix = input; self
+    }
+    /// <p>The suffix for a negative format.</p>
+    pub fn get_suffix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suffix
     }
     /// Consumes the builder and constructs a [`NegativeFormat`](crate::types::NegativeFormat).
     pub fn build(self) -> crate::types::NegativeFormat {
         crate::types::NegativeFormat {
-            prefix: self.prefix,
-            suffix: self.suffix,
+            prefix: self.prefix
+            ,
+            suffix: self.suffix
+            ,
         }
     }
 }
+

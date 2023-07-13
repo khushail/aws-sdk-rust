@@ -3,7 +3,7 @@
 /// <p>The error that has occurred when attempting to retrieve a batch of Records.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetRecordError {
+pub struct BatchGetRecordError  {
     /// <p>The name of the feature group that the record belongs to.</p>
     #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct BatchGetRecordError {
 }
 impl BatchGetRecordError {
     /// <p>The name of the feature group that the record belongs to.</p>
-    pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> ::std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.</p>
-    pub fn record_identifier_value_as_string(&self) -> ::std::option::Option<&str> {
+    pub fn record_identifier_value_as_string(&self) -> ::std::option::Option<& str> {
         self.record_identifier_value_as_string.as_deref()
     }
     /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl BatchGetRecordError {
 
 /// A builder for [`BatchGetRecordError`](crate::types::BatchGetRecordError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetRecordErrorBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
@@ -55,36 +53,30 @@ pub struct BatchGetRecordErrorBuilder {
 }
 impl BatchGetRecordErrorBuilder {
     /// <p>The name of the feature group that the record belongs to.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the feature group that the record belongs to.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.feature_group_name = input;
-        self
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.feature_group_name = input; self
+    }
+    /// <p>The name of the feature group that the record belongs to.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
     }
     /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.</p>
-    pub fn record_identifier_value_as_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.</p>
-    pub fn set_record_identifier_value_as_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.record_identifier_value_as_string = input;
-        self
+    pub fn set_record_identifier_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.record_identifier_value_as_string = input; self
+    }
+    /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.</p>
+    pub fn get_record_identifier_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_identifier_value_as_string
     }
     /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,32 +85,37 @@ impl BatchGetRecordErrorBuilder {
     }
     /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
+    }
+    /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchGetRecordError`](crate::types::BatchGetRecordError).
     pub fn build(self) -> crate::types::BatchGetRecordError {
         crate::types::BatchGetRecordError {
-            feature_group_name: self.feature_group_name,
-            record_identifier_value_as_string: self.record_identifier_value_as_string,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            feature_group_name: self.feature_group_name
+            ,
+            record_identifier_value_as_string: self.record_identifier_value_as_string
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

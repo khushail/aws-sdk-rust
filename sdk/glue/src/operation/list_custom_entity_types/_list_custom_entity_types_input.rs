@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomEntityTypesInput {
+pub struct ListCustomEntityTypesInput  {
     /// <p>A paginated token to offset the results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,13 +11,11 @@ pub struct ListCustomEntityTypesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>A list of key-value pair tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListCustomEntityTypesInput {
     /// <p>A paginated token to offset the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -25,34 +23,24 @@ impl ListCustomEntityTypesInput {
         self.max_results
     }
     /// <p>A list of key-value pair tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ListCustomEntityTypesInput {
     /// Creates a new builder-style object to manufacture [`ListCustomEntityTypesInput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesInput).
-    pub fn builder(
-    ) -> crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesInputBuilder {
         crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomEntityTypesInput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomEntityTypesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListCustomEntityTypesInputBuilder {
     /// <p>A paginated token to offset the results.</p>
@@ -62,8 +50,11 @@ impl ListCustomEntityTypesInputBuilder {
     }
     /// <p>A paginated token to offset the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A paginated token to offset the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,47 +63,43 @@ impl ListCustomEntityTypesInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pair tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pair tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of key-value pair tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ListCustomEntityTypesInput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_entity_types::ListCustomEntityTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_entity_types::ListCustomEntityTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_custom_entity_types::ListCustomEntityTypesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                tags: self.tags,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

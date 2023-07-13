@@ -3,14 +3,14 @@
 /// <p>The display options for the visual tooltip.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TooltipOptions {
+pub struct TooltipOptions  {
     /// <p>Determines whether or not the tooltip is visible.</p>
     #[doc(hidden)]
     pub tooltip_visibility: ::std::option::Option<crate::types::Visibility>,
-    /// <p>The selected type for the tooltip. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li>
-    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li>
+    /// <p>The selected type for the tooltip. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li> 
+    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub selected_tooltip_type: ::std::option::Option<crate::types::SelectedTooltipType>,
@@ -20,21 +20,19 @@ pub struct TooltipOptions {
 }
 impl TooltipOptions {
     /// <p>Determines whether or not the tooltip is visible.</p>
-    pub fn tooltip_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn tooltip_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.tooltip_visibility.as_ref()
     }
-    /// <p>The selected type for the tooltip. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li>
-    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li>
+    /// <p>The selected type for the tooltip. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li> 
+    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li> 
     /// </ul>
-    pub fn selected_tooltip_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelectedTooltipType> {
+    pub fn selected_tooltip_type(&self) -> ::std::option::Option<& crate::types::SelectedTooltipType> {
         self.selected_tooltip_type.as_ref()
     }
     /// <p>The setup for the detailed tooltip. The tooltip setup is always saved. The display type is decided based on the tooltip type.</p>
-    pub fn field_based_tooltip(&self) -> ::std::option::Option<&crate::types::FieldBasedTooltip> {
+    pub fn field_based_tooltip(&self) -> ::std::option::Option<& crate::types::FieldBasedTooltip> {
         self.field_based_tooltip.as_ref()
     }
 }
@@ -47,9 +45,7 @@ impl TooltipOptions {
 
 /// A builder for [`TooltipOptions`](crate::types::TooltipOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooltipOptionsBuilder {
     pub(crate) tooltip_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) selected_tooltip_type: ::std::option::Option<crate::types::SelectedTooltipType>,
@@ -62,33 +58,37 @@ impl TooltipOptionsBuilder {
         self
     }
     /// <p>Determines whether or not the tooltip is visible.</p>
-    pub fn set_tooltip_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.tooltip_visibility = input;
-        self
+    pub fn set_tooltip_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.tooltip_visibility = input; self
     }
-    /// <p>The selected type for the tooltip. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li>
-    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li>
+    /// <p>Determines whether or not the tooltip is visible.</p>
+    pub fn get_tooltip_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.tooltip_visibility
+    }
+    /// <p>The selected type for the tooltip. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li> 
+    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li> 
     /// </ul>
     pub fn selected_tooltip_type(mut self, input: crate::types::SelectedTooltipType) -> Self {
         self.selected_tooltip_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The selected type for the tooltip. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li>
-    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li>
+    /// <p>The selected type for the tooltip. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li> 
+    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li> 
     /// </ul>
-    pub fn set_selected_tooltip_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectedTooltipType>,
-    ) -> Self {
-        self.selected_tooltip_type = input;
-        self
+    pub fn set_selected_tooltip_type(mut self, input: ::std::option::Option<crate::types::SelectedTooltipType>) -> Self {
+        self.selected_tooltip_type = input; self
+    }
+    /// <p>The selected type for the tooltip. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li> 
+    /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li> 
+    /// </ul>
+    pub fn get_selected_tooltip_type(&self) -> &::std::option::Option<crate::types::SelectedTooltipType> {
+        &self.selected_tooltip_type
     }
     /// <p>The setup for the detailed tooltip. The tooltip setup is always saved. The display type is decided based on the tooltip type.</p>
     pub fn field_based_tooltip(mut self, input: crate::types::FieldBasedTooltip) -> Self {
@@ -96,19 +96,23 @@ impl TooltipOptionsBuilder {
         self
     }
     /// <p>The setup for the detailed tooltip. The tooltip setup is always saved. The display type is decided based on the tooltip type.</p>
-    pub fn set_field_based_tooltip(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldBasedTooltip>,
-    ) -> Self {
-        self.field_based_tooltip = input;
-        self
+    pub fn set_field_based_tooltip(mut self, input: ::std::option::Option<crate::types::FieldBasedTooltip>) -> Self {
+        self.field_based_tooltip = input; self
+    }
+    /// <p>The setup for the detailed tooltip. The tooltip setup is always saved. The display type is decided based on the tooltip type.</p>
+    pub fn get_field_based_tooltip(&self) -> &::std::option::Option<crate::types::FieldBasedTooltip> {
+        &self.field_based_tooltip
     }
     /// Consumes the builder and constructs a [`TooltipOptions`](crate::types::TooltipOptions).
     pub fn build(self) -> crate::types::TooltipOptions {
         crate::types::TooltipOptions {
-            tooltip_visibility: self.tooltip_visibility,
-            selected_tooltip_type: self.selected_tooltip_type,
-            field_based_tooltip: self.field_based_tooltip,
+            tooltip_visibility: self.tooltip_visibility
+            ,
+            selected_tooltip_type: self.selected_tooltip_type
+            ,
+            field_based_tooltip: self.field_based_tooltip
+            ,
         }
     }
 }
+

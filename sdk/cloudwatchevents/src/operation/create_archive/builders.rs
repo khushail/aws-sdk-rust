@@ -3,94 +3,87 @@ pub use crate::operation::create_archive::_create_archive_output::CreateArchiveO
 
 pub use crate::operation::create_archive::_create_archive_input::CreateArchiveInputBuilder;
 
+impl CreateArchiveInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_archive::CreateArchiveOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_archive::CreateArchiveError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_archive();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateArchive`.
-///
+/// 
 /// <p>Creates an archive of events with the specified settings. When you create an archive, incoming events might not immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed events. Replayed events are not sent to an archive.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateArchiveFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_archive::builders::CreateArchiveInputBuilder,
+                    inner: crate::operation::create_archive::builders::CreateArchiveInputBuilder,
 }
-impl CreateArchiveFluentBuilder {
+impl CreateArchiveFluentBuilder  {
     /// Creates a new `CreateArchive`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_archive::CreateArchive,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_archive::CreateArchiveError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateArchive as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_archive::builders::CreateArchiveInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_archive::CreateArchiveOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_archive::CreateArchiveError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_archive::CreateArchive, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_archive::CreateArchiveError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_archive::CreateArchiveOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_archive::CreateArchiveError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_archive::CreateArchiveOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_archive::CreateArchiveError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_archive::CreateArchive,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_archive::CreateArchiveError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_archive::CreateArchiveOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_archive::CreateArchiveError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_archive::CreateArchive, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_archive::CreateArchiveError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name for the archive to create.</p>
     pub fn archive_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.archive_name(input.into());
@@ -101,21 +94,23 @@ impl CreateArchiveFluentBuilder {
         self.inner = self.inner.set_archive_name(input);
         self
     }
+    /// <p>The name for the archive to create.</p>
+    pub fn get_archive_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_archive_name()
+    }
     /// <p>The ARN of the event bus that sends events to the archive.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_source_arn(input.into());
         self
     }
     /// <p>The ARN of the event bus that sends events to the archive.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_source_arn(input);
         self
+    }
+    /// <p>The ARN of the event bus that sends events to the archive.</p>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_source_arn()
     }
     /// <p>A description for the archive.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,21 +122,23 @@ impl CreateArchiveFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the archive.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>An event pattern to use to filter events sent to the archive.</p>
-    pub fn event_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_pattern(input.into());
         self
     }
     /// <p>An event pattern to use to filter events sent to the archive.</p>
-    pub fn set_event_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_pattern(input);
         self
+    }
+    /// <p>An event pattern to use to filter events sent to the archive.</p>
+    pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_pattern()
     }
     /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
     pub fn retention_days(mut self, input: i32) -> Self {
@@ -153,4 +150,9 @@ impl CreateArchiveFluentBuilder {
         self.inner = self.inner.set_retention_days(input);
         self
     }
+    /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
+    pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
+        self.inner.get_retention_days()
+    }
 }
+

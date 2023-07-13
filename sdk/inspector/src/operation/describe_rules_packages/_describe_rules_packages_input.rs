@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRulesPackagesInput {
+pub struct DescribeRulesPackagesInput  {
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
     #[doc(hidden)]
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,28 +12,24 @@ pub struct DescribeRulesPackagesInput {
 }
 impl DescribeRulesPackagesInput {
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    pub fn rules_package_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn rules_package_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.rules_package_arns.as_deref()
     }
     /// <p>The locale that you want to translate a rules package description into.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> ::std::option::Option<& crate::types::Locale> {
         self.locale.as_ref()
     }
 }
 impl DescribeRulesPackagesInput {
     /// Creates a new builder-style object to manufacture [`DescribeRulesPackagesInput`](crate::operation::describe_rules_packages::DescribeRulesPackagesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_rules_packages::builders::DescribeRulesPackagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_rules_packages::builders::DescribeRulesPackagesInputBuilder {
         crate::operation::describe_rules_packages::builders::DescribeRulesPackagesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRulesPackagesInput`](crate::operation::describe_rules_packages::DescribeRulesPackagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRulesPackagesInputBuilder {
     pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
@@ -44,22 +40,19 @@ impl DescribeRulesPackagesInputBuilder {
     /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
     ///
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    pub fn rules_package_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rules_package_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rules_package_arns.unwrap_or_default();
-        v.push(input.into());
-        self.rules_package_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rules_package_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    pub fn set_rules_package_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.rules_package_arns = input;
-        self
+    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.rules_package_arns = input; self
+    }
+    /// <p>The ARN that specifies the rules package that you want to describe.</p>
+    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rules_package_arns
     }
     /// <p>The locale that you want to translate a rules package description into.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
@@ -68,21 +61,22 @@ impl DescribeRulesPackagesInputBuilder {
     }
     /// <p>The locale that you want to translate a rules package description into.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
+    }
+    /// <p>The locale that you want to translate a rules package description into.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.locale
     }
     /// Consumes the builder and constructs a [`DescribeRulesPackagesInput`](crate::operation::describe_rules_packages::DescribeRulesPackagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_rules_packages::DescribeRulesPackagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_rules_packages::DescribeRulesPackagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_rules_packages::DescribeRulesPackagesInput {
-                rules_package_arns: self.rules_package_arns,
-                locale: self.locale,
-            },
+                rules_package_arns: self.rules_package_arns
+                ,
+                locale: self.locale
+                ,
+            }
         )
     }
 }
+

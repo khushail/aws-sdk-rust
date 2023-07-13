@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGroupMembershipInput {
+pub struct DeleteGroupMembershipInput  {
     /// <p>The name of the user that you want to delete from the group membership.</p>
     #[doc(hidden)]
     pub member_name: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct DeleteGroupMembershipInput {
 }
 impl DeleteGroupMembershipInput {
     /// <p>The name of the user that you want to delete from the group membership.</p>
-    pub fn member_name(&self) -> ::std::option::Option<&str> {
+    pub fn member_name(&self) -> ::std::option::Option<& str> {
         self.member_name.as_deref()
     }
     /// <p>The name of the group that you want to delete the user from.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace of the group that you want to remove a user from.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
 impl DeleteGroupMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder {
         crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGroupMembershipInputBuilder {
     pub(crate) member_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -62,8 +58,11 @@ impl DeleteGroupMembershipInputBuilder {
     }
     /// <p>The name of the user that you want to delete from the group membership.</p>
     pub fn set_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_name = input;
-        self
+        self.member_name = input; self
+    }
+    /// <p>The name of the user that you want to delete from the group membership.</p>
+    pub fn get_member_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_name
     }
     /// <p>The name of the group that you want to delete the user from.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +71,24 @@ impl DeleteGroupMembershipInputBuilder {
     }
     /// <p>The name of the group that you want to delete the user from.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
+    }
+    /// <p>The name of the group that you want to delete the user from.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The namespace of the group that you want to remove a user from.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,23 +97,26 @@ impl DeleteGroupMembershipInputBuilder {
     }
     /// <p>The namespace of the group that you want to remove a user from.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
+    }
+    /// <p>The namespace of the group that you want to remove a user from.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_group_membership::DeleteGroupMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_group_membership::DeleteGroupMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_group_membership::DeleteGroupMembershipInput {
-                member_name: self.member_name,
-                group_name: self.group_name,
-                aws_account_id: self.aws_account_id,
-                namespace: self.namespace,
-            },
+                member_name: self.member_name
+                ,
+                group_name: self.group_name
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The configuration of your VPC and the associated VPC endpoint. The VPC endpoint is an Amazon Web Services PrivateLink resource that allows access to your App Runner services from within an Amazon VPC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngressVpcConfiguration {
+pub struct IngressVpcConfiguration  {
     /// <p>The ID of the VPC that is used for the VPC endpoint.</p>
     #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct IngressVpcConfiguration {
 }
 impl IngressVpcConfiguration {
     /// <p>The ID of the VPC that is used for the VPC endpoint.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl IngressVpcConfiguration {
 
 /// A builder for [`IngressVpcConfiguration`](crate::types::IngressVpcConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngressVpcConfigurationBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl IngressVpcConfigurationBuilder {
     }
     /// <p>The ID of the VPC that is used for the VPC endpoint.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The ID of the VPC that is used for the VPC endpoint.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-    pub fn vpc_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = input; self
+    }
+    /// <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
     }
     /// Consumes the builder and constructs a [`IngressVpcConfiguration`](crate::types::IngressVpcConfiguration).
     pub fn build(self) -> crate::types::IngressVpcConfiguration {
         crate::types::IngressVpcConfiguration {
-            vpc_id: self.vpc_id,
-            vpc_endpoint_id: self.vpc_endpoint_id,
+            vpc_id: self.vpc_id
+            ,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
         }
     }
 }
+

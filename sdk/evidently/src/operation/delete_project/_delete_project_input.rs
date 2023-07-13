@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectInput {
+pub struct DeleteProjectInput  {
     /// <p>The name or ARN of the project to delete.</p>
     #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProjectInput {
     /// <p>The name or ARN of the project to delete.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteProjectInput {
 
 /// A builder for [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProjectInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>The name or ARN of the project to delete.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
+    }
+    /// <p>The name or ARN of the project to delete.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
     }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_project::DeleteProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput {
-            project: self.project,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_project::DeleteProjectInput {
+                project: self.project
+                ,
+            }
+        )
     }
 }
+

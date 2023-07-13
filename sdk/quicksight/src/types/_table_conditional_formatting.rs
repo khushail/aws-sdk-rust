@@ -3,17 +3,14 @@
 /// <p>The conditional formatting for a <code>PivotTableVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableConditionalFormatting {
+pub struct TableConditionalFormatting  {
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
     #[doc(hidden)]
-    pub conditional_formatting_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
+    pub conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
 }
 impl TableConditionalFormatting {
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-    pub fn conditional_formatting_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TableConditionalFormattingOption]> {
+    pub fn conditional_formatting_options(&self) -> ::std::option::Option<& [crate::types::TableConditionalFormattingOption]> {
         self.conditional_formatting_options.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl TableConditionalFormatting {
 
 /// A builder for [`TableConditionalFormatting`](crate::types::TableConditionalFormatting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableConditionalFormattingBuilder {
-    pub(crate) conditional_formatting_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
+    pub(crate) conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
 }
 impl TableConditionalFormattingBuilder {
     /// Appends an item to `conditional_formatting_options`.
@@ -39,29 +33,26 @@ impl TableConditionalFormattingBuilder {
     /// To override the contents of this collection use [`set_conditional_formatting_options`](Self::set_conditional_formatting_options).
     ///
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-    pub fn conditional_formatting_options(
-        mut self,
-        input: crate::types::TableConditionalFormattingOption,
-    ) -> Self {
+    pub fn conditional_formatting_options(mut self, input: crate::types::TableConditionalFormattingOption) -> Self {
         let mut v = self.conditional_formatting_options.unwrap_or_default();
-        v.push(input);
-        self.conditional_formatting_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conditional_formatting_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-    pub fn set_conditional_formatting_options(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TableConditionalFormattingOption>,
-        >,
-    ) -> Self {
-        self.conditional_formatting_options = input;
-        self
+    pub fn set_conditional_formatting_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>>) -> Self {
+        self.conditional_formatting_options = input; self
+    }
+    /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
+    pub fn get_conditional_formatting_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>> {
+        &self.conditional_formatting_options
     }
     /// Consumes the builder and constructs a [`TableConditionalFormatting`](crate::types::TableConditionalFormatting).
     pub fn build(self) -> crate::types::TableConditionalFormatting {
         crate::types::TableConditionalFormatting {
-            conditional_formatting_options: self.conditional_formatting_options,
+            conditional_formatting_options: self.conditional_formatting_options
+            ,
         }
     }
 }
+

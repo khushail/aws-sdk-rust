@@ -3,7 +3,7 @@
 /// <p>Summary information for a robot application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RobotApplicationSummary {
+pub struct RobotApplicationSummary  {
     /// <p>The name of the robot application.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct RobotApplicationSummary {
 }
 impl RobotApplicationSummary {
     /// <p>The name of the robot application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the robot application.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
-    pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> ::std::option::Option<& crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
 }
@@ -51,9 +51,7 @@ impl RobotApplicationSummary {
 
 /// A builder for [`RobotApplicationSummary`](crate::types::RobotApplicationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RobotApplicationSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl RobotApplicationSummaryBuilder {
     }
     /// <p>The name of the robot application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the robot application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl RobotApplicationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The version of the robot application.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl RobotApplicationSummaryBuilder {
     }
     /// <p>The version of the robot application.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version of the robot application.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -98,12 +105,12 @@ impl RobotApplicationSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
@@ -111,21 +118,27 @@ impl RobotApplicationSummaryBuilder {
         self
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
-        self.robot_software_suite = input;
-        self
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
+        self.robot_software_suite = input; self
+    }
+    /// <p>Information about a robot software suite (ROS distribution).</p>
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+        &self.robot_software_suite
     }
     /// Consumes the builder and constructs a [`RobotApplicationSummary`](crate::types::RobotApplicationSummary).
     pub fn build(self) -> crate::types::RobotApplicationSummary {
         crate::types::RobotApplicationSummary {
-            name: self.name,
-            arn: self.arn,
-            version: self.version,
-            last_updated_at: self.last_updated_at,
-            robot_software_suite: self.robot_software_suite,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            version: self.version
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            robot_software_suite: self.robot_software_suite
+            ,
         }
     }
 }
+

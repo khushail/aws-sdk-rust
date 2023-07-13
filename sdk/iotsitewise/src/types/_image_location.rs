@@ -3,7 +3,7 @@
 /// <p>Contains an image that is uploaded to IoT SiteWise and available at a URL.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageLocation {
+pub struct ImageLocation  {
     /// <p>The ID of the image.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ImageLocation {
 }
 impl ImageLocation {
     /// <p>The ID of the image.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ImageLocation {
 
 /// A builder for [`ImageLocation`](crate::types::ImageLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageLocationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ImageLocationBuilder {
     }
     /// <p>The ID of the image.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the image.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ImageLocationBuilder {
     }
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`ImageLocation`](crate::types::ImageLocation).
     pub fn build(self) -> crate::types::ImageLocation {
         crate::types::ImageLocation {
-            id: self.id,
-            url: self.url,
+            id: self.id
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

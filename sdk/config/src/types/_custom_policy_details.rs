@@ -3,7 +3,7 @@
 /// <p>Provides the runtime system, policy definition, and whether debug logging enabled. You can specify the following CustomPolicyDetails parameter values only for Config Custom Policy rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomPolicyDetails {
+pub struct CustomPolicyDetails  {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
     #[doc(hidden)]
     pub policy_runtime: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct CustomPolicyDetails {
 }
 impl CustomPolicyDetails {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub fn policy_runtime(&self) -> ::std::option::Option<&str> {
+    pub fn policy_runtime(&self) -> ::std::option::Option<& str> {
         self.policy_runtime.as_deref()
     }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
-    pub fn policy_text(&self) -> ::std::option::Option<&str> {
+    pub fn policy_text(&self) -> ::std::option::Option<& str> {
         self.policy_text.as_deref()
     }
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
@@ -37,9 +37,7 @@ impl CustomPolicyDetails {
 
 /// A builder for [`CustomPolicyDetails`](crate::types::CustomPolicyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomPolicyDetailsBuilder {
     pub(crate) policy_runtime: ::std::option::Option<::std::string::String>,
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct CustomPolicyDetailsBuilder {
 }
 impl CustomPolicyDetailsBuilder {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub fn policy_runtime(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_runtime = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub fn set_policy_runtime(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.policy_runtime = input;
-        self
+    pub fn set_policy_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy_runtime = input; self
+    }
+    /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    pub fn get_policy_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_runtime
     }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
     pub fn policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +64,11 @@ impl CustomPolicyDetailsBuilder {
     }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
     pub fn set_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_text = input;
-        self
+        self.policy_text = input; self
+    }
+    /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_text
     }
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
     pub fn enable_debug_log_delivery(mut self, input: bool) -> Self {
@@ -79,15 +77,23 @@ impl CustomPolicyDetailsBuilder {
     }
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
     pub fn set_enable_debug_log_delivery(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_debug_log_delivery = input;
-        self
+        self.enable_debug_log_delivery = input; self
+    }
+    /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
+    pub fn get_enable_debug_log_delivery(&self) -> &::std::option::Option<bool> {
+        &self.enable_debug_log_delivery
     }
     /// Consumes the builder and constructs a [`CustomPolicyDetails`](crate::types::CustomPolicyDetails).
     pub fn build(self) -> crate::types::CustomPolicyDetails {
         crate::types::CustomPolicyDetails {
-            policy_runtime: self.policy_runtime,
-            policy_text: self.policy_text,
-            enable_debug_log_delivery: self.enable_debug_log_delivery.unwrap_or_default(),
+            policy_runtime: self.policy_runtime
+            ,
+            policy_text: self.policy_text
+            ,
+            enable_debug_log_delivery: self.enable_debug_log_delivery
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

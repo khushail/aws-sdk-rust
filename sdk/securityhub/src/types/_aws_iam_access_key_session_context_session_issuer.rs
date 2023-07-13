@@ -3,7 +3,7 @@
 /// <p>Information about the entity that created the session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsIamAccessKeySessionContextSessionIssuer {
+pub struct AwsIamAccessKeySessionContextSessionIssuer  {
     /// <p>The type of principal (user, role, or group) that created the session.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct AwsIamAccessKeySessionContextSessionIssuer {
 }
 impl AwsIamAccessKeySessionContextSessionIssuer {
     /// <p>The type of principal (user, role, or group) that created the session.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The principal ID of the principal (user, role, or group) that created the session.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The ARN of the session.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The identifier of the Amazon Web Services account that created the session.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the principal that created the session.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl AwsIamAccessKeySessionContextSessionIssuer {
 
 /// A builder for [`AwsIamAccessKeySessionContextSessionIssuer`](crate::types::AwsIamAccessKeySessionContextSessionIssuer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamAccessKeySessionContextSessionIssuerBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl AwsIamAccessKeySessionContextSessionIssuerBuilder {
     }
     /// <p>The type of principal (user, role, or group) that created the session.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of principal (user, role, or group) that created the session.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The principal ID of the principal (user, role, or group) that created the session.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl AwsIamAccessKeySessionContextSessionIssuerBuilder {
     }
     /// <p>The principal ID of the principal (user, role, or group) that created the session.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
+    }
+    /// <p>The principal ID of the principal (user, role, or group) that created the session.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// <p>The ARN of the session.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl AwsIamAccessKeySessionContextSessionIssuerBuilder {
     }
     /// <p>The ARN of the session.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of the session.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The identifier of the Amazon Web Services account that created the session.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,8 +106,11 @@ impl AwsIamAccessKeySessionContextSessionIssuerBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account that created the session.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The identifier of the Amazon Web Services account that created the session.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The name of the principal that created the session.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,17 +119,26 @@ impl AwsIamAccessKeySessionContextSessionIssuerBuilder {
     }
     /// <p>The name of the principal that created the session.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
+    }
+    /// <p>The name of the principal that created the session.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Consumes the builder and constructs a [`AwsIamAccessKeySessionContextSessionIssuer`](crate::types::AwsIamAccessKeySessionContextSessionIssuer).
     pub fn build(self) -> crate::types::AwsIamAccessKeySessionContextSessionIssuer {
         crate::types::AwsIamAccessKeySessionContextSessionIssuer {
-            r#type: self.r#type,
-            principal_id: self.principal_id,
-            arn: self.arn,
-            account_id: self.account_id,
-            user_name: self.user_name,
+            r#type: self.r#type
+            ,
+            principal_id: self.principal_id
+            ,
+            arn: self.arn
+            ,
+            account_id: self.account_id
+            ,
+            user_name: self.user_name
+            ,
         }
     }
 }
+

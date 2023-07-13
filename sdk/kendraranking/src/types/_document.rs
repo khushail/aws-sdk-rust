@@ -3,7 +3,7 @@
 /// <p>Information about a document from a search service such as OpenSearch (self managed). Amazon Kendra Intelligent Ranking uses this information to rank and score on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Document {
+pub struct Document  {
     /// <p>The identifier of the document from the search service.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -28,27 +28,27 @@ pub struct Document {
 }
 impl Document {
     /// <p>The identifier of the document from the search service.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The title of the search service's document.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The body text of the search service's document.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-    pub fn tokenized_title(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn tokenized_title(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.tokenized_title.as_deref()
     }
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-    pub fn tokenized_body(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn tokenized_body(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.tokenized_body.as_deref()
     }
     /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
@@ -65,9 +65,7 @@ impl Document {
 
 /// A builder for [`Document`](crate::types::Document).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -85,8 +83,11 @@ impl DocumentBuilder {
     }
     /// <p>The identifier of the document from the search service.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the document from the search service.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +96,11 @@ impl DocumentBuilder {
     }
     /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
+    }
+    /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// <p>The title of the search service's document.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,8 +109,11 @@ impl DocumentBuilder {
     }
     /// <p>The title of the search service's document.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
+    }
+    /// <p>The title of the search service's document.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The body text of the search service's document.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,52 +122,49 @@ impl DocumentBuilder {
     }
     /// <p>The body text of the search service's document.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
+    }
+    /// <p>The body text of the search service's document.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// Appends an item to `tokenized_title`.
     ///
     /// To override the contents of this collection use [`set_tokenized_title`](Self::set_tokenized_title).
     ///
     /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-    pub fn tokenized_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tokenized_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tokenized_title.unwrap_or_default();
-        v.push(input.into());
-        self.tokenized_title = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tokenized_title = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-    pub fn set_tokenized_title(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.tokenized_title = input;
-        self
+    pub fn set_tokenized_title(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tokenized_title = input; self
+    }
+    /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
+    pub fn get_tokenized_title(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tokenized_title
     }
     /// Appends an item to `tokenized_body`.
     ///
     /// To override the contents of this collection use [`set_tokenized_body`](Self::set_tokenized_body).
     ///
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-    pub fn tokenized_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tokenized_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tokenized_body.unwrap_or_default();
-        v.push(input.into());
-        self.tokenized_body = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tokenized_body = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-    pub fn set_tokenized_body(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.tokenized_body = input;
-        self
+    pub fn set_tokenized_body(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tokenized_body = input; self
+    }
+    /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
+    pub fn get_tokenized_body(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tokenized_body
     }
     /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
     pub fn original_score(mut self, input: f32) -> Self {
@@ -169,19 +173,30 @@ impl DocumentBuilder {
     }
     /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
     pub fn set_original_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.original_score = input;
-        self
+        self.original_score = input; self
+    }
+    /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
+    pub fn get_original_score(&self) -> &::std::option::Option<f32> {
+        &self.original_score
     }
     /// Consumes the builder and constructs a [`Document`](crate::types::Document).
     pub fn build(self) -> crate::types::Document {
         crate::types::Document {
-            id: self.id,
-            group_id: self.group_id,
-            title: self.title,
-            body: self.body,
-            tokenized_title: self.tokenized_title,
-            tokenized_body: self.tokenized_body,
-            original_score: self.original_score,
+            id: self.id
+            ,
+            group_id: self.group_id
+            ,
+            title: self.title
+            ,
+            body: self.body
+            ,
+            tokenized_title: self.tokenized_title
+            ,
+            tokenized_body: self.tokenized_body
+            ,
+            original_score: self.original_score
+            ,
         }
     }
 }
+

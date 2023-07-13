@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDocumentMetadataHistoryInput {
+pub struct ListDocumentMetadataHistoryInput  {
     /// <p>The name of the change template.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -21,19 +21,19 @@ pub struct ListDocumentMetadataHistoryInput {
 }
 impl ListDocumentMetadataHistoryInput {
     /// <p>The name of the change template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the change template.</p>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadataEnum> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::DocumentMetadataEnum> {
         self.metadata.as_ref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -43,16 +43,14 @@ impl ListDocumentMetadataHistoryInput {
 }
 impl ListDocumentMetadataHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListDocumentMetadataHistoryInput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput).
-    pub fn builder() -> crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder{
+    pub fn builder() -> crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder {
         crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDocumentMetadataHistoryInput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentMetadataHistoryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
@@ -68,24 +66,24 @@ impl ListDocumentMetadataHistoryInputBuilder {
     }
     /// <p>The name of the change template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the change template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The version of the change template.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the change template.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.document_version = input;
-        self
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.document_version = input; self
+    }
+    /// <p>The version of the change template.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
     }
     /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
     pub fn metadata(mut self, input: crate::types::DocumentMetadataEnum) -> Self {
@@ -93,12 +91,12 @@ impl ListDocumentMetadataHistoryInputBuilder {
         self
     }
     /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadataEnum>,
-    ) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadataEnum>) -> Self {
+        self.metadata = input; self
+    }
+    /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadataEnum> {
+        &self.metadata
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,8 +105,11 @@ impl ListDocumentMetadataHistoryInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -117,24 +118,28 @@ impl ListDocumentMetadataHistoryInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDocumentMetadataHistoryInput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput {
-                name: self.name,
-                document_version: self.document_version,
-                metadata: self.metadata,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                name: self.name
+                ,
+                document_version: self.document_version
+                ,
+                metadata: self.metadata
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

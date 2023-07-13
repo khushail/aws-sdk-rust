@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppImageConfigsInput {
-    /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+pub struct ListAppImageConfigsInput  {
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
@@ -32,57 +32,53 @@ pub struct ListAppImageConfigsInput {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListAppImageConfigsInput {
-    /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
-    pub fn modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_time_before.as_ref()
     }
     /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
-    pub fn modified_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_time_after.as_ref()
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::AppImageConfigSortKey> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::AppImageConfigSortKey> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
 impl ListAppImageConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListAppImageConfigsInput`](crate::operation::list_app_image_configs::ListAppImageConfigsInput).
-    pub fn builder(
-    ) -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsInputBuilder {
-        crate::operation::list_app_image_configs::builders::ListAppImageConfigsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsInputBuilder {
+        crate::operation::list_app_image_configs::builders::ListAppImageConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppImageConfigsInput`](crate::operation::list_app_image_configs::ListAppImageConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppImageConfigsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -95,15 +91,18 @@ pub struct ListAppImageConfigsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListAppImageConfigsInputBuilder {
-    /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,24 +111,24 @@ impl ListAppImageConfigsInputBuilder {
     }
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.name_contains = input;
-        self
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name_contains = input; self
+    }
+    /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
     }
     /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -137,12 +136,12 @@ impl ListAppImageConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_before = input;
-        self
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_before = input; self
+    }
+    /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,12 +149,12 @@ impl ListAppImageConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_after = input;
-        self
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_after = input; self
+    }
+    /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
     }
     /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
     pub fn modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -163,12 +162,12 @@ impl ListAppImageConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
-    pub fn set_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.modified_time_before = input;
-        self
+    pub fn set_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.modified_time_before = input; self
+    }
+    /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
+    pub fn get_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_time_before
     }
     /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
     pub fn modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -176,12 +175,12 @@ impl ListAppImageConfigsInputBuilder {
         self
     }
     /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
-    pub fn set_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.modified_time_after = input;
-        self
+    pub fn set_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.modified_time_after = input; self
+    }
+    /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
+    pub fn get_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_time_after
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::AppImageConfigSortKey) -> Self {
@@ -189,12 +188,12 @@ impl ListAppImageConfigsInputBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::AppImageConfigSortKey>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AppImageConfigSortKey>) -> Self {
+        self.sort_by = input; self
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AppImageConfigSortKey> {
+        &self.sort_by
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -203,28 +202,36 @@ impl ListAppImageConfigsInputBuilder {
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListAppImageConfigsInput`](crate::operation::list_app_image_configs::ListAppImageConfigsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_image_configs::ListAppImageConfigsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_app_image_configs::ListAppImageConfigsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_app_image_configs::ListAppImageConfigsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                name_contains: self.name_contains,
-                creation_time_before: self.creation_time_before,
-                creation_time_after: self.creation_time_after,
-                modified_time_before: self.modified_time_before,
-                modified_time_after: self.modified_time_after,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                name_contains: self.name_contains
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                modified_time_before: self.modified_time_before
+                ,
+                modified_time_after: self.modified_time_after
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
         )
     }
 }
+

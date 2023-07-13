@@ -3,7 +3,7 @@
 /// <p>The required parameters that are needed to connect to a Databricks data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatabricksParameters {
+pub struct DatabricksParameters  {
     /// <p>The host name of the Databricks data source.</p>
     #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct DatabricksParameters {
 }
 impl DatabricksParameters {
     /// <p>The host name of the Databricks data source.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The port for the Databricks data source.</p>
@@ -24,7 +24,7 @@ impl DatabricksParameters {
         self.port
     }
     /// <p>The HTTP path of the Databricks data source.</p>
-    pub fn sql_endpoint_path(&self) -> ::std::option::Option<&str> {
+    pub fn sql_endpoint_path(&self) -> ::std::option::Option<& str> {
         self.sql_endpoint_path.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl DatabricksParameters {
 
 /// A builder for [`DatabricksParameters`](crate::types::DatabricksParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabricksParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl DatabricksParametersBuilder {
     }
     /// <p>The host name of the Databricks data source.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
+    }
+    /// <p>The host name of the Databricks data source.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
     }
     /// <p>The port for the Databricks data source.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -63,31 +64,36 @@ impl DatabricksParametersBuilder {
     }
     /// <p>The port for the Databricks data source.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
+    }
+    /// <p>The port for the Databricks data source.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The HTTP path of the Databricks data source.</p>
-    pub fn sql_endpoint_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sql_endpoint_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_endpoint_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP path of the Databricks data source.</p>
-    pub fn set_sql_endpoint_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sql_endpoint_path = input;
-        self
+    pub fn set_sql_endpoint_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sql_endpoint_path = input; self
+    }
+    /// <p>The HTTP path of the Databricks data source.</p>
+    pub fn get_sql_endpoint_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_endpoint_path
     }
     /// Consumes the builder and constructs a [`DatabricksParameters`](crate::types::DatabricksParameters).
     pub fn build(self) -> crate::types::DatabricksParameters {
         crate::types::DatabricksParameters {
-            host: self.host,
-            port: self.port.unwrap_or_default(),
-            sql_endpoint_path: self.sql_endpoint_path,
+            host: self.host
+            ,
+            port: self.port
+                .unwrap_or_default()
+            ,
+            sql_endpoint_path: self.sql_endpoint_path
+            ,
         }
     }
 }
+

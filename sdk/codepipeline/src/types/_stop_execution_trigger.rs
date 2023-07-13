@@ -3,14 +3,14 @@
 /// <p>The interaction that stopped a pipeline execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopExecutionTrigger {
+pub struct StopExecutionTrigger  {
     /// <p>The user-specified reason the pipeline was stopped.</p>
     #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl StopExecutionTrigger {
     /// <p>The user-specified reason the pipeline was stopped.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl StopExecutionTrigger {
 
 /// A builder for [`StopExecutionTrigger`](crate::types::StopExecutionTrigger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopExecutionTriggerBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl StopExecutionTriggerBuilder {
     }
     /// <p>The user-specified reason the pipeline was stopped.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
+    }
+    /// <p>The user-specified reason the pipeline was stopped.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`StopExecutionTrigger`](crate::types::StopExecutionTrigger).
     pub fn build(self) -> crate::types::StopExecutionTrigger {
         crate::types::StopExecutionTrigger {
-            reason: self.reason,
+            reason: self.reason
+            ,
         }
     }
 }
+

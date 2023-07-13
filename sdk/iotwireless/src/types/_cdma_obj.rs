@@ -3,7 +3,7 @@
 /// <p>CDMA (Code-division multiple access) object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CdmaObj {
+pub struct CdmaObj  {
     /// <p>CDMA system ID (SID).</p>
     #[doc(hidden)]
     pub system_id: ::std::option::Option<i32>,
@@ -50,7 +50,7 @@ impl CdmaObj {
         self.registration_zone
     }
     /// <p>CDMA local identification (local ID) parameters.</p>
-    pub fn cdma_local_id(&self) -> ::std::option::Option<&crate::types::CdmaLocalId> {
+    pub fn cdma_local_id(&self) -> ::std::option::Option<& crate::types::CdmaLocalId> {
         self.cdma_local_id.as_ref()
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
@@ -66,7 +66,7 @@ impl CdmaObj {
         self.base_lng
     }
     /// <p>CDMA network measurement reports.</p>
-    pub fn cdma_nmr(&self) -> ::std::option::Option<&[crate::types::CdmaNmrObj]> {
+    pub fn cdma_nmr(&self) -> ::std::option::Option<& [crate::types::CdmaNmrObj]> {
         self.cdma_nmr.as_deref()
     }
 }
@@ -79,9 +79,7 @@ impl CdmaObj {
 
 /// A builder for [`CdmaObj`](crate::types::CdmaObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CdmaObjBuilder {
     pub(crate) system_id: ::std::option::Option<i32>,
     pub(crate) network_id: ::std::option::Option<i32>,
@@ -101,8 +99,11 @@ impl CdmaObjBuilder {
     }
     /// <p>CDMA system ID (SID).</p>
     pub fn set_system_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.system_id = input;
-        self
+        self.system_id = input; self
+    }
+    /// <p>CDMA system ID (SID).</p>
+    pub fn get_system_id(&self) -> &::std::option::Option<i32> {
+        &self.system_id
     }
     /// <p>CDMA network ID (NID).</p>
     pub fn network_id(mut self, input: i32) -> Self {
@@ -111,8 +112,11 @@ impl CdmaObjBuilder {
     }
     /// <p>CDMA network ID (NID).</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
+    }
+    /// <p>CDMA network ID (NID).</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<i32> {
+        &self.network_id
     }
     /// <p>CDMA base station ID (BSID).</p>
     pub fn base_station_id(mut self, input: i32) -> Self {
@@ -121,8 +125,11 @@ impl CdmaObjBuilder {
     }
     /// <p>CDMA base station ID (BSID).</p>
     pub fn set_base_station_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.base_station_id = input;
-        self
+        self.base_station_id = input; self
+    }
+    /// <p>CDMA base station ID (BSID).</p>
+    pub fn get_base_station_id(&self) -> &::std::option::Option<i32> {
+        &self.base_station_id
     }
     /// <p>CDMA registration zone (RZ).</p>
     pub fn registration_zone(mut self, input: i32) -> Self {
@@ -131,8 +138,11 @@ impl CdmaObjBuilder {
     }
     /// <p>CDMA registration zone (RZ).</p>
     pub fn set_registration_zone(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.registration_zone = input;
-        self
+        self.registration_zone = input; self
+    }
+    /// <p>CDMA registration zone (RZ).</p>
+    pub fn get_registration_zone(&self) -> &::std::option::Option<i32> {
+        &self.registration_zone
     }
     /// <p>CDMA local identification (local ID) parameters.</p>
     pub fn cdma_local_id(mut self, input: crate::types::CdmaLocalId) -> Self {
@@ -140,12 +150,12 @@ impl CdmaObjBuilder {
         self
     }
     /// <p>CDMA local identification (local ID) parameters.</p>
-    pub fn set_cdma_local_id(
-        mut self,
-        input: ::std::option::Option<crate::types::CdmaLocalId>,
-    ) -> Self {
-        self.cdma_local_id = input;
-        self
+    pub fn set_cdma_local_id(mut self, input: ::std::option::Option<crate::types::CdmaLocalId>) -> Self {
+        self.cdma_local_id = input; self
+    }
+    /// <p>CDMA local identification (local ID) parameters.</p>
+    pub fn get_cdma_local_id(&self) -> &::std::option::Option<crate::types::CdmaLocalId> {
+        &self.cdma_local_id
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     pub fn pilot_power(mut self, input: i32) -> Self {
@@ -154,8 +164,11 @@ impl CdmaObjBuilder {
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     pub fn set_pilot_power(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pilot_power = input;
-        self
+        self.pilot_power = input; self
+    }
+    /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
+    pub fn get_pilot_power(&self) -> &::std::option::Option<i32> {
+        &self.pilot_power
     }
     /// <p>CDMA base station latitude in degrees.</p>
     pub fn base_lat(mut self, input: f32) -> Self {
@@ -164,8 +177,11 @@ impl CdmaObjBuilder {
     }
     /// <p>CDMA base station latitude in degrees.</p>
     pub fn set_base_lat(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.base_lat = input;
-        self
+        self.base_lat = input; self
+    }
+    /// <p>CDMA base station latitude in degrees.</p>
+    pub fn get_base_lat(&self) -> &::std::option::Option<f32> {
+        &self.base_lat
     }
     /// <p>CDMA base station longitude in degrees.</p>
     pub fn base_lng(mut self, input: f32) -> Self {
@@ -174,8 +190,11 @@ impl CdmaObjBuilder {
     }
     /// <p>CDMA base station longitude in degrees.</p>
     pub fn set_base_lng(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.base_lng = input;
-        self
+        self.base_lng = input; self
+    }
+    /// <p>CDMA base station longitude in degrees.</p>
+    pub fn get_base_lng(&self) -> &::std::option::Option<f32> {
+        &self.base_lng
     }
     /// Appends an item to `cdma_nmr`.
     ///
@@ -184,30 +203,40 @@ impl CdmaObjBuilder {
     /// <p>CDMA network measurement reports.</p>
     pub fn cdma_nmr(mut self, input: crate::types::CdmaNmrObj) -> Self {
         let mut v = self.cdma_nmr.unwrap_or_default();
-        v.push(input);
-        self.cdma_nmr = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cdma_nmr = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>CDMA network measurement reports.</p>
-    pub fn set_cdma_nmr(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CdmaNmrObj>>,
-    ) -> Self {
-        self.cdma_nmr = input;
-        self
+    pub fn set_cdma_nmr(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CdmaNmrObj>>) -> Self {
+        self.cdma_nmr = input; self
+    }
+    /// <p>CDMA network measurement reports.</p>
+    pub fn get_cdma_nmr(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CdmaNmrObj>> {
+        &self.cdma_nmr
     }
     /// Consumes the builder and constructs a [`CdmaObj`](crate::types::CdmaObj).
     pub fn build(self) -> crate::types::CdmaObj {
         crate::types::CdmaObj {
-            system_id: self.system_id,
-            network_id: self.network_id,
-            base_station_id: self.base_station_id,
-            registration_zone: self.registration_zone,
-            cdma_local_id: self.cdma_local_id,
-            pilot_power: self.pilot_power,
-            base_lat: self.base_lat,
-            base_lng: self.base_lng,
-            cdma_nmr: self.cdma_nmr,
+            system_id: self.system_id
+            ,
+            network_id: self.network_id
+            ,
+            base_station_id: self.base_station_id
+            ,
+            registration_zone: self.registration_zone
+            ,
+            cdma_local_id: self.cdma_local_id
+            ,
+            pilot_power: self.pilot_power
+            ,
+            base_lat: self.base_lat
+            ,
+            base_lng: self.base_lng
+            ,
+            cdma_nmr: self.cdma_nmr
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The parameters for OpenSearch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmazonOpenSearchParameters {
+pub struct AmazonOpenSearchParameters  {
     /// <p>The OpenSearch domain.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl AmazonOpenSearchParameters {
     /// <p>The OpenSearch domain.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl AmazonOpenSearchParameters {
 
 /// A builder for [`AmazonOpenSearchParameters`](crate::types::AmazonOpenSearchParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchParametersBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl AmazonOpenSearchParametersBuilder {
     }
     /// <p>The OpenSearch domain.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The OpenSearch domain.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`AmazonOpenSearchParameters`](crate::types::AmazonOpenSearchParameters).
     pub fn build(self) -> crate::types::AmazonOpenSearchParameters {
         crate::types::AmazonOpenSearchParameters {
-            domain: self.domain,
+            domain: self.domain
+            ,
         }
     }
 }
+

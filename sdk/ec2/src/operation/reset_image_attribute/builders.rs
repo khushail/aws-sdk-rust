@@ -3,114 +3,100 @@ pub use crate::operation::reset_image_attribute::_reset_image_attribute_output::
 
 pub use crate::operation::reset_image_attribute::_reset_image_attribute_input::ResetImageAttributeInputBuilder;
 
+impl ResetImageAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::reset_image_attribute::ResetImageAttributeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::reset_image_attribute::ResetImageAttributeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.reset_image_attribute();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ResetImageAttribute`.
-///
+/// 
 /// <p>Resets an attribute of an AMI to its default value.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetImageAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder,
+                    inner: crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder,
 }
-impl ResetImageAttributeFluentBuilder {
+impl ResetImageAttributeFluentBuilder  {
     /// Creates a new `ResetImageAttribute`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::reset_image_attribute::ResetImageAttribute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_image_attribute::ResetImageAttributeError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ResetImageAttribute as a reference.
+    pub fn as_input(&self) -> &crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_image_attribute::ResetImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_image_attribute::ResetImageAttributeError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::reset_image_attribute::ResetImageAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::reset_image_attribute::ResetImageAttributeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::reset_image_attribute::ResetImageAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::reset_image_attribute::ResetImageAttributeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_image_attribute::ResetImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_image_attribute::ResetImageAttributeError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::reset_image_attribute::ResetImageAttribute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_image_attribute::ResetImageAttributeError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::reset_image_attribute::ResetImageAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::reset_image_attribute::ResetImageAttributeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::reset_image_attribute::ResetImageAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::reset_image_attribute::ResetImageAttributeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
     pub fn attribute(mut self, input: crate::types::ResetImageAttributeName) -> Self {
         self.inner = self.inner.attribute(input);
         self
     }
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ResetImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ResetImageAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
+    }
+    /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ResetImageAttributeName> {
+        self.inner.get_attribute()
     }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,6 +108,10 @@ impl ResetImageAttributeFluentBuilder {
         self.inner = self.inner.set_image_id(input);
         self
     }
+    /// <p>The ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -132,4 +122,9 @@ impl ResetImageAttributeFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
 }
+

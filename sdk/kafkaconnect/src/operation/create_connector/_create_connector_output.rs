@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectorOutput {
+pub struct CreateConnectorOutput  {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
     #[doc(hidden)]
     pub connector_arn: ::std::option::Option<::std::string::String>,
@@ -16,23 +16,23 @@ pub struct CreateConnectorOutput {
 }
 impl CreateConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
-    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connector_arn(&self) -> ::std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
     /// <p>The name of the connector.</p>
-    pub fn connector_name(&self) -> ::std::option::Option<&str> {
+    pub fn connector_name(&self) -> ::std::option::Option<& str> {
         self.connector_name.as_deref()
     }
     /// <p>The state of the connector.</p>
-    pub fn connector_state(&self) -> ::std::option::Option<&crate::types::ConnectorState> {
+    pub fn connector_state(&self) -> ::std::option::Option<& crate::types::ConnectorState> {
         self.connector_state.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateConnectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateConnectorOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorOutput`](crate::operation::create_connector::CreateConnectorOutput).
     pub fn builder() -> crate::operation::create_connector::builders::CreateConnectorOutputBuilder {
@@ -42,9 +42,7 @@ impl CreateConnectorOutput {
 
 /// A builder for [`CreateConnectorOutput`](crate::operation::create_connector::CreateConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectorOutputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_name: ::std::option::Option<::std::string::String>,
@@ -53,36 +51,30 @@ pub struct CreateConnectorOutputBuilder {
 }
 impl CreateConnectorOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
-    pub fn connector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
-    pub fn set_connector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connector_arn = input;
-        self
+    pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
+    pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_arn
     }
     /// <p>The name of the connector.</p>
-    pub fn connector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connector.</p>
-    pub fn set_connector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connector_name = input;
-        self
+    pub fn set_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_name = input; self
+    }
+    /// <p>The name of the connector.</p>
+    pub fn get_connector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_name
     }
     /// <p>The state of the connector.</p>
     pub fn connector_state(mut self, input: crate::types::ConnectorState) -> Self {
@@ -90,29 +82,33 @@ impl CreateConnectorOutputBuilder {
         self
     }
     /// <p>The state of the connector.</p>
-    pub fn set_connector_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorState>,
-    ) -> Self {
-        self.connector_state = input;
-        self
+    pub fn set_connector_state(mut self, input: ::std::option::Option<crate::types::ConnectorState>) -> Self {
+        self.connector_state = input; self
+    }
+    /// <p>The state of the connector.</p>
+    pub fn get_connector_state(&self) -> &::std::option::Option<crate::types::ConnectorState> {
+        &self.connector_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateConnectorOutput`](crate::operation::create_connector::CreateConnectorOutput).
     pub fn build(self) -> crate::operation::create_connector::CreateConnectorOutput {
         crate::operation::create_connector::CreateConnectorOutput {
-            connector_arn: self.connector_arn,
-            connector_name: self.connector_name,
-            connector_state: self.connector_state,
+            connector_arn: self.connector_arn
+            ,
+            connector_name: self.connector_name
+            ,
+            connector_state: self.connector_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

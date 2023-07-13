@@ -3,7 +3,7 @@
 /// <p>The target configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogTargetConfiguration {
+pub struct LogTargetConfiguration  {
     /// <p>A log target</p>
     #[doc(hidden)]
     pub log_target: ::std::option::Option<crate::types::LogTarget>,
@@ -13,11 +13,11 @@ pub struct LogTargetConfiguration {
 }
 impl LogTargetConfiguration {
     /// <p>A log target</p>
-    pub fn log_target(&self) -> ::std::option::Option<&crate::types::LogTarget> {
+    pub fn log_target(&self) -> ::std::option::Option<& crate::types::LogTarget> {
         self.log_target.as_ref()
     }
     /// <p>The logging level.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl LogTargetConfiguration {
 
 /// A builder for [`LogTargetConfiguration`](crate::types::LogTargetConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogTargetConfigurationBuilder {
     pub(crate) log_target: ::std::option::Option<crate::types::LogTarget>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
@@ -45,8 +43,11 @@ impl LogTargetConfigurationBuilder {
     }
     /// <p>A log target</p>
     pub fn set_log_target(mut self, input: ::std::option::Option<crate::types::LogTarget>) -> Self {
-        self.log_target = input;
-        self
+        self.log_target = input; self
+    }
+    /// <p>A log target</p>
+    pub fn get_log_target(&self) -> &::std::option::Option<crate::types::LogTarget> {
+        &self.log_target
     }
     /// <p>The logging level.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
@@ -55,14 +56,20 @@ impl LogTargetConfigurationBuilder {
     }
     /// <p>The logging level.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
+    }
+    /// <p>The logging level.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
     }
     /// Consumes the builder and constructs a [`LogTargetConfiguration`](crate::types::LogTargetConfiguration).
     pub fn build(self) -> crate::types::LogTargetConfiguration {
         crate::types::LogTargetConfiguration {
-            log_target: self.log_target,
-            log_level: self.log_level,
+            log_target: self.log_target
+            ,
+            log_level: self.log_level
+            ,
         }
     }
 }
+

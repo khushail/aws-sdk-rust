@@ -3,7 +3,7 @@
 /// <p>The version for an option. Option group option versions are returned by the <code>DescribeOptionGroupOptions</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OptionVersion {
+pub struct OptionVersion  {
     /// <p>The version of the option.</p>
     #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct OptionVersion {
 }
 impl OptionVersion {
     /// <p>The version of the option.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>True if the version is the default version of the option, and otherwise false.</p>
@@ -30,9 +30,7 @@ impl OptionVersion {
 
 /// A builder for [`OptionVersion`](crate::types::OptionVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptionVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) is_default: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl OptionVersionBuilder {
     }
     /// <p>The version of the option.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version of the option.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>True if the version is the default version of the option, and otherwise false.</p>
     pub fn is_default(mut self, input: bool) -> Self {
@@ -55,14 +56,21 @@ impl OptionVersionBuilder {
     }
     /// <p>True if the version is the default version of the option, and otherwise false.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
+    }
+    /// <p>True if the version is the default version of the option, and otherwise false.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
     }
     /// Consumes the builder and constructs a [`OptionVersion`](crate::types::OptionVersion).
     pub fn build(self) -> crate::types::OptionVersion {
         crate::types::OptionVersion {
-            version: self.version,
-            is_default: self.is_default.unwrap_or_default(),
+            version: self.version
+            ,
+            is_default: self.is_default
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

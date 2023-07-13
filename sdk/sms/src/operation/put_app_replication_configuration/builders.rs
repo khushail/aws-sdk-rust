@@ -3,76 +3,87 @@ pub use crate::operation::put_app_replication_configuration::_put_app_replicatio
 
 pub use crate::operation::put_app_replication_configuration::_put_app_replication_configuration_input::PutAppReplicationConfigurationInputBuilder;
 
+impl PutAppReplicationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_app_replication_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutAppReplicationConfiguration`.
-///
+/// 
 /// <p>Creates or updates the replication configuration for the specified application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAppReplicationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationInputBuilder,
 }
-impl PutAppReplicationConfigurationFluentBuilder {
+impl PutAppReplicationConfigurationFluentBuilder  {
     /// Creates a new `PutAppReplicationConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAppReplicationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_app_replication_configuration::PutAppReplicationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::put_app_replication_configuration::PutAppReplicationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_app_replication_configuration::PutAppReplicationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the application.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
@@ -83,28 +94,27 @@ impl PutAppReplicationConfigurationFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// Appends an item to `serverGroupReplicationConfigurations`.
     ///
     /// To override the contents of this collection use [`set_server_group_replication_configurations`](Self::set_server_group_replication_configurations).
     ///
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    pub fn server_group_replication_configurations(
-        mut self,
-        input: crate::types::ServerGroupReplicationConfiguration,
-    ) -> Self {
+    pub fn server_group_replication_configurations(mut self, input: crate::types::ServerGroupReplicationConfiguration) -> Self {
         self.inner = self.inner.server_group_replication_configurations(input);
         self
     }
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    pub fn set_server_group_replication_configurations(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>,
-        >,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_server_group_replication_configurations(input);
+    pub fn set_server_group_replication_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>) -> Self {
+        self.inner = self.inner.set_server_group_replication_configurations(input);
         self
     }
+    /// <p>Information about the replication configurations for server groups in the application.</p>
+    pub fn get_server_group_replication_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>> {
+        self.inner.get_server_group_replication_configurations()
+    }
 }
+

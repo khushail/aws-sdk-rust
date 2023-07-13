@@ -2,82 +2,85 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachUserPolicyInput {
-    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
+pub struct AttachUserPolicyInput  {
+    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachUserPolicyInput {
-    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
+    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
 impl AttachUserPolicyInput {
     /// Creates a new builder-style object to manufacture [`AttachUserPolicyInput`](crate::operation::attach_user_policy::AttachUserPolicyInput).
-    pub fn builder() -> crate::operation::attach_user_policy::builders::AttachUserPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_user_policy::builders::AttachUserPolicyInputBuilder {
         crate::operation::attach_user_policy::builders::AttachUserPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachUserPolicyInput`](crate::operation::attach_user_policy::AttachUserPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachUserPolicyInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachUserPolicyInputBuilder {
-    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
+    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
+    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p> 
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p> 
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
     }
     /// Consumes the builder and constructs a [`AttachUserPolicyInput`](crate::operation::attach_user_policy::AttachUserPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_user_policy::AttachUserPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_user_policy::AttachUserPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::attach_user_policy::AttachUserPolicyInput {
-                user_name: self.user_name,
-                policy_arn: self.policy_arn,
-            },
+                user_name: self.user_name
+                ,
+                policy_arn: self.policy_arn
+                ,
+            }
         )
     }
 }
+

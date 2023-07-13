@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBundlesInput {
+pub struct GetBundlesInput  {
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     #[doc(hidden)]
     pub include_inactive: ::std::option::Option<bool>,
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
-    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
-    /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important> 
+    /// <p>You must use this parameter to view Lightsail for Research bundles.</p> 
     /// </important>
     #[doc(hidden)]
     pub app_category: ::std::option::Option<crate::types::AppCategory>,
@@ -21,15 +21,15 @@ impl GetBundlesInput {
     pub fn include_inactive(&self) -> ::std::option::Option<bool> {
         self.include_inactive
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
-    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
-    /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important> 
+    /// <p>You must use this parameter to view Lightsail for Research bundles.</p> 
     /// </important>
-    pub fn app_category(&self) -> ::std::option::Option<&crate::types::AppCategory> {
+    pub fn app_category(&self) -> ::std::option::Option<& crate::types::AppCategory> {
         self.app_category.as_ref()
     }
 }
@@ -42,9 +42,7 @@ impl GetBundlesInput {
 
 /// A builder for [`GetBundlesInput`](crate::operation::get_bundles::GetBundlesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBundlesInputBuilder {
     pub(crate) include_inactive: ::std::option::Option<bool>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
@@ -58,49 +56,59 @@ impl GetBundlesInputBuilder {
     }
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub fn set_include_inactive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_inactive = input;
-        self
+        self.include_inactive = input; self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+    pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
+        &self.include_inactive
+    }
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
-    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
-    /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
+    }
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important> 
+    /// <p>You must use this parameter to view Lightsail for Research bundles.</p> 
     /// </important>
     pub fn app_category(mut self, input: crate::types::AppCategory) -> Self {
         self.app_category = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
-    /// <p>You must use this parameter to view Lightsail for Research bundles.</p>
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important> 
+    /// <p>You must use this parameter to view Lightsail for Research bundles.</p> 
     /// </important>
-    pub fn set_app_category(
-        mut self,
-        input: ::std::option::Option<crate::types::AppCategory>,
-    ) -> Self {
-        self.app_category = input;
-        self
+    pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
+        self.app_category = input; self
+    }
+    /// <p>Returns a list of bundles that are specific to Lightsail for Research.</p> <important> 
+    /// <p>You must use this parameter to view Lightsail for Research bundles.</p> 
+    /// </important>
+    pub fn get_app_category(&self) -> &::std::option::Option<crate::types::AppCategory> {
+        &self.app_category
     }
     /// Consumes the builder and constructs a [`GetBundlesInput`](crate::operation::get_bundles::GetBundlesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bundles::GetBundlesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_bundles::GetBundlesInput {
-            include_inactive: self.include_inactive,
-            page_token: self.page_token,
-            app_category: self.app_category,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bundles::GetBundlesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_bundles::GetBundlesInput {
+                include_inactive: self.include_inactive
+                ,
+                page_token: self.page_token
+                ,
+                app_category: self.app_category
+                ,
+            }
+        )
     }
 }
+

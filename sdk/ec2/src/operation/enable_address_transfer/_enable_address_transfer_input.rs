@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableAddressTransferInput {
+pub struct EnableAddressTransferInput  {
     /// <p>The allocation ID of an Elastic IP address.</p>
     #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct EnableAddressTransferInput {
 }
 impl EnableAddressTransferInput {
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn allocation_id(&self) -> ::std::option::Option<&str> {
+    pub fn allocation_id(&self) -> ::std::option::Option<& str> {
         self.allocation_id.as_deref()
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    pub fn transfer_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn transfer_account_id(&self) -> ::std::option::Option<& str> {
         self.transfer_account_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,18 +29,14 @@ impl EnableAddressTransferInput {
 }
 impl EnableAddressTransferInput {
     /// Creates a new builder-style object to manufacture [`EnableAddressTransferInput`](crate::operation::enable_address_transfer::EnableAddressTransferInput).
-    pub fn builder(
-    ) -> crate::operation::enable_address_transfer::builders::EnableAddressTransferInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_address_transfer::builders::EnableAddressTransferInputBuilder {
         crate::operation::enable_address_transfer::builders::EnableAddressTransferInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAddressTransferInput`](crate::operation::enable_address_transfer::EnableAddressTransferInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAddressTransferInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) transfer_account_id: ::std::option::Option<::std::string::String>,
@@ -48,36 +44,30 @@ pub struct EnableAddressTransferInputBuilder {
 }
 impl EnableAddressTransferInputBuilder {
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.allocation_id = input;
-        self
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.allocation_id = input; self
+    }
+    /// <p>The allocation ID of an Elastic IP address.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_id
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    pub fn transfer_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    pub fn set_transfer_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transfer_account_id = input;
-        self
+    pub fn set_transfer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transfer_account_id = input; self
+    }
+    /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
+    pub fn get_transfer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transfer_account_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -86,22 +76,24 @@ impl EnableAddressTransferInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`EnableAddressTransferInput`](crate::operation::enable_address_transfer::EnableAddressTransferInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_address_transfer::EnableAddressTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_address_transfer::EnableAddressTransferInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::enable_address_transfer::EnableAddressTransferInput {
-                allocation_id: self.allocation_id,
-                transfer_account_id: self.transfer_account_id,
-                dry_run: self.dry_run,
-            },
+                allocation_id: self.allocation_id
+                ,
+                transfer_account_id: self.transfer_account_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

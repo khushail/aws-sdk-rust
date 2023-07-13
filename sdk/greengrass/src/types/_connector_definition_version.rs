@@ -3,14 +3,14 @@
 /// Information about the connector definition version, which is a container for connectors.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectorDefinitionVersion {
+pub struct ConnectorDefinitionVersion  {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     #[doc(hidden)]
     pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
 }
 impl ConnectorDefinitionVersion {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn connectors(&self) -> ::std::option::Option<&[crate::types::Connector]> {
+    pub fn connectors(&self) -> ::std::option::Option<& [crate::types::Connector]> {
         self.connectors.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ConnectorDefinitionVersion {
 
 /// A builder for [`ConnectorDefinitionVersion`](crate::types::ConnectorDefinitionVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorDefinitionVersionBuilder {
     pub(crate) connectors: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
 }
@@ -37,22 +35,24 @@ impl ConnectorDefinitionVersionBuilder {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     pub fn connectors(mut self, input: crate::types::Connector) -> Self {
         let mut v = self.connectors.unwrap_or_default();
-        v.push(input);
-        self.connectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connectors = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn set_connectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
-    ) -> Self {
-        self.connectors = input;
-        self
+    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>) -> Self {
+        self.connectors = input; self
+    }
+    /// A list of references to connectors in this version, with their corresponding configuration settings.
+    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connector>> {
+        &self.connectors
     }
     /// Consumes the builder and constructs a [`ConnectorDefinitionVersion`](crate::types::ConnectorDefinitionVersion).
     pub fn build(self) -> crate::types::ConnectorDefinitionVersion {
         crate::types::ConnectorDefinitionVersion {
-            connectors: self.connectors,
+            connectors: self.connectors
+            ,
         }
     }
 }
+

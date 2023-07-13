@@ -3,7 +3,7 @@
 /// <p>Describes a tag for an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
@@ -22,19 +22,19 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The tag key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
@@ -51,9 +51,7 @@ impl Tag {
 
 /// A builder for [`Tag`](crate::types::Tag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -69,24 +67,24 @@ impl TagBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_type = input; self
+    }
+    /// <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// <p>The tag key.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +93,11 @@ impl TagBuilder {
     }
     /// <p>The tag key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The tag key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The tag value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,8 +106,11 @@ impl TagBuilder {
     }
     /// <p>The tag value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The tag value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     pub fn propagate_at_launch(mut self, input: bool) -> Self {
@@ -115,17 +119,26 @@ impl TagBuilder {
     }
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     pub fn set_propagate_at_launch(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.propagate_at_launch = input;
-        self
+        self.propagate_at_launch = input; self
+    }
+    /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
+    pub fn get_propagate_at_launch(&self) -> &::std::option::Option<bool> {
+        &self.propagate_at_launch
     }
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {
         crate::types::Tag {
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            key: self.key,
-            value: self.value,
-            propagate_at_launch: self.propagate_at_launch,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            key: self.key
+            ,
+            value: self.value
+            ,
+            propagate_at_launch: self.propagate_at_launch
+            ,
         }
     }
 }
+

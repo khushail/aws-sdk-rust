@@ -3,14 +3,14 @@
 /// <p>Describes a license configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LicenseConfigurationRequest {
+pub struct LicenseConfigurationRequest  {
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl LicenseConfigurationRequest {
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl LicenseConfigurationRequest {
 
 /// A builder for [`LicenseConfigurationRequest`](crate::types::LicenseConfigurationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LicenseConfigurationRequestBuilder {
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl LicenseConfigurationRequestBuilder {
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.license_configuration_arn = input;
-        self
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.license_configuration_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_arn
     }
     /// Consumes the builder and constructs a [`LicenseConfigurationRequest`](crate::types::LicenseConfigurationRequest).
     pub fn build(self) -> crate::types::LicenseConfigurationRequest {
         crate::types::LicenseConfigurationRequest {
-            license_configuration_arn: self.license_configuration_arn,
+            license_configuration_arn: self.license_configuration_arn
+            ,
         }
     }
 }
+

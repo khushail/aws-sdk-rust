@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteActionInput {
+pub struct DeleteActionInput  {
     /// <p>The name of the action to delete.</p>
     #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteActionInput {
     /// <p>The name of the action to delete.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteActionInput {
 
 /// A builder for [`DeleteActionInput`](crate::operation::delete_action::DeleteActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteActionInputBuilder {
     }
     /// <p>The name of the action to delete.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
+    }
+    /// <p>The name of the action to delete.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// Consumes the builder and constructs a [`DeleteActionInput`](crate::operation::delete_action::DeleteActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_action::DeleteActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_action::DeleteActionInput {
-            action_name: self.action_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_action::DeleteActionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_action::DeleteActionInput {
+                action_name: self.action_name
+                ,
+            }
+        )
     }
 }
+

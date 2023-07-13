@@ -3,14 +3,14 @@
 /// <p>Defines a <code>PolicyInformation</code> qualifier. Amazon Web Services Private CA supports the <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.4">certification practice statement (CPS) qualifier</a> defined in RFC 5280. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Qualifier {
+pub struct Qualifier  {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     #[doc(hidden)]
     pub cps_uri: ::std::option::Option<::std::string::String>,
 }
 impl Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
-    pub fn cps_uri(&self) -> ::std::option::Option<&str> {
+    pub fn cps_uri(&self) -> ::std::option::Option<& str> {
         self.cps_uri.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Qualifier {
 
 /// A builder for [`Qualifier`](crate::types::Qualifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QualifierBuilder {
     pub(crate) cps_uri: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl QualifierBuilder {
     }
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     pub fn set_cps_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cps_uri = input;
-        self
+        self.cps_uri = input; self
+    }
+    /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
+    pub fn get_cps_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cps_uri
     }
     /// Consumes the builder and constructs a [`Qualifier`](crate::types::Qualifier).
     pub fn build(self) -> crate::types::Qualifier {
         crate::types::Qualifier {
-            cps_uri: self.cps_uri,
+            cps_uri: self.cps_uri
+            ,
         }
     }
 }
+

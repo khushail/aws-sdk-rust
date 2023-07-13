@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLendingAnalysisOutput {
+pub struct GetLendingAnalysisOutput  {
     /// <p>Information about the input document.</p>
     #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
@@ -28,52 +28,49 @@ pub struct GetLendingAnalysisOutput {
 }
 impl GetLendingAnalysisOutput {
     /// <p>Information about the input document.</p>
-    pub fn document_metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
+    pub fn document_metadata(&self) -> ::std::option::Option<& crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p> The current status of the lending analysis job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::LendingResult]> {
+    pub fn results(&self) -> ::std::option::Option<& [crate::types::LendingResult]> {
         self.results.as_deref()
     }
     /// <p> A list of warnings that occurred during the lending analysis operation. </p>
-    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::Warning]> {
+    pub fn warnings(&self) -> ::std::option::Option<& [crate::types::Warning]> {
         self.warnings.as_deref()
     }
     /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p> The current model version of the Analyze Lending API.</p>
-    pub fn analyze_lending_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn analyze_lending_model_version(&self) -> ::std::option::Option<& str> {
         self.analyze_lending_model_version.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetLendingAnalysisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetLendingAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`GetLendingAnalysisOutput`](crate::operation::get_lending_analysis::GetLendingAnalysisOutput).
-    pub fn builder(
-    ) -> crate::operation::get_lending_analysis::builders::GetLendingAnalysisOutputBuilder {
+    pub fn builder() -> crate::operation::get_lending_analysis::builders::GetLendingAnalysisOutputBuilder {
         crate::operation::get_lending_analysis::builders::GetLendingAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLendingAnalysisOutput`](crate::operation::get_lending_analysis::GetLendingAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLendingAnalysisOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -91,12 +88,12 @@ impl GetLendingAnalysisOutputBuilder {
         self
     }
     /// <p>Information about the input document.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
-        self.document_metadata = input;
-        self
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
+        self.document_metadata = input; self
+    }
+    /// <p>Information about the input document.</p>
+    pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
+        &self.document_metadata
     }
     /// <p> The current status of the lending analysis job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -105,8 +102,11 @@ impl GetLendingAnalysisOutputBuilder {
     }
     /// <p> The current status of the lending analysis job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
+    }
+    /// <p> The current status of the lending analysis job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,8 +115,11 @@ impl GetLendingAnalysisOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `results`.
     ///
@@ -125,17 +128,17 @@ impl GetLendingAnalysisOutputBuilder {
     /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
     pub fn results(mut self, input: crate::types::LendingResult) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LendingResult>>,
-    ) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LendingResult>>) -> Self {
+        self.results = input; self
+    }
+    /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LendingResult>> {
+        &self.results
     }
     /// Appends an item to `warnings`.
     ///
@@ -144,70 +147,72 @@ impl GetLendingAnalysisOutputBuilder {
     /// <p> A list of warnings that occurred during the lending analysis operation. </p>
     pub fn warnings(mut self, input: crate::types::Warning) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input);
-        self.warnings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.warnings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list of warnings that occurred during the lending analysis operation. </p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
-    ) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>) -> Self {
+        self.warnings = input; self
+    }
+    /// <p> A list of warnings that occurred during the lending analysis operation. </p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Warning>> {
+        &self.warnings
     }
     /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p> The current model version of the Analyze Lending API.</p>
-    pub fn analyze_lending_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyze_lending_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyze_lending_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The current model version of the Analyze Lending API.</p>
-    pub fn set_analyze_lending_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.analyze_lending_model_version = input;
-        self
+    pub fn set_analyze_lending_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.analyze_lending_model_version = input; self
+    }
+    /// <p> The current model version of the Analyze Lending API.</p>
+    pub fn get_analyze_lending_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyze_lending_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetLendingAnalysisOutput`](crate::operation::get_lending_analysis::GetLendingAnalysisOutput).
     pub fn build(self) -> crate::operation::get_lending_analysis::GetLendingAnalysisOutput {
         crate::operation::get_lending_analysis::GetLendingAnalysisOutput {
-            document_metadata: self.document_metadata,
-            job_status: self.job_status,
-            next_token: self.next_token,
-            results: self.results,
-            warnings: self.warnings,
-            status_message: self.status_message,
-            analyze_lending_model_version: self.analyze_lending_model_version,
+            document_metadata: self.document_metadata
+            ,
+            job_status: self.job_status
+            ,
+            next_token: self.next_token
+            ,
+            results: self.results
+            ,
+            warnings: self.warnings
+            ,
+            status_message: self.status_message
+            ,
+            analyze_lending_model_version: self.analyze_lending_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

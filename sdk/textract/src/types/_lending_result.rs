@@ -3,7 +3,7 @@
 /// <p>Contains the detections for each page analyzed through the Analyze Lending API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LendingResult {
+pub struct LendingResult  {
     /// <p>The page number for a page, with regard to whole submission.</p>
     #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
@@ -20,11 +20,11 @@ impl LendingResult {
         self.page
     }
     /// <p>The classifier result for a given page.</p>
-    pub fn page_classification(&self) -> ::std::option::Option<&crate::types::PageClassification> {
+    pub fn page_classification(&self) -> ::std::option::Option<& crate::types::PageClassification> {
         self.page_classification.as_ref()
     }
     /// <p>An array of Extraction to hold structured data. e.g. normalized key value pairs instead of raw OCR detections .</p>
-    pub fn extractions(&self) -> ::std::option::Option<&[crate::types::Extraction]> {
+    pub fn extractions(&self) -> ::std::option::Option<& [crate::types::Extraction]> {
         self.extractions.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl LendingResult {
 
 /// A builder for [`LendingResult`](crate::types::LendingResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LendingResultBuilder {
     pub(crate) page: ::std::option::Option<i32>,
     pub(crate) page_classification: ::std::option::Option<crate::types::PageClassification>,
@@ -53,8 +51,11 @@ impl LendingResultBuilder {
     }
     /// <p>The page number for a page, with regard to whole submission.</p>
     pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page = input;
-        self
+        self.page = input; self
+    }
+    /// <p>The page number for a page, with regard to whole submission.</p>
+    pub fn get_page(&self) -> &::std::option::Option<i32> {
+        &self.page
     }
     /// <p>The classifier result for a given page.</p>
     pub fn page_classification(mut self, input: crate::types::PageClassification) -> Self {
@@ -62,12 +63,12 @@ impl LendingResultBuilder {
         self
     }
     /// <p>The classifier result for a given page.</p>
-    pub fn set_page_classification(
-        mut self,
-        input: ::std::option::Option<crate::types::PageClassification>,
-    ) -> Self {
-        self.page_classification = input;
-        self
+    pub fn set_page_classification(mut self, input: ::std::option::Option<crate::types::PageClassification>) -> Self {
+        self.page_classification = input; self
+    }
+    /// <p>The classifier result for a given page.</p>
+    pub fn get_page_classification(&self) -> &::std::option::Option<crate::types::PageClassification> {
+        &self.page_classification
     }
     /// Appends an item to `extractions`.
     ///
@@ -76,24 +77,28 @@ impl LendingResultBuilder {
     /// <p>An array of Extraction to hold structured data. e.g. normalized key value pairs instead of raw OCR detections .</p>
     pub fn extractions(mut self, input: crate::types::Extraction) -> Self {
         let mut v = self.extractions.unwrap_or_default();
-        v.push(input);
-        self.extractions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.extractions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Extraction to hold structured data. e.g. normalized key value pairs instead of raw OCR detections .</p>
-    pub fn set_extractions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Extraction>>,
-    ) -> Self {
-        self.extractions = input;
-        self
+    pub fn set_extractions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Extraction>>) -> Self {
+        self.extractions = input; self
+    }
+    /// <p>An array of Extraction to hold structured data. e.g. normalized key value pairs instead of raw OCR detections .</p>
+    pub fn get_extractions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Extraction>> {
+        &self.extractions
     }
     /// Consumes the builder and constructs a [`LendingResult`](crate::types::LendingResult).
     pub fn build(self) -> crate::types::LendingResult {
         crate::types::LendingResult {
-            page: self.page,
-            page_classification: self.page_classification,
-            extractions: self.extractions,
+            page: self.page
+            ,
+            page_classification: self.page_classification
+            ,
+            extractions: self.extractions
+            ,
         }
     }
 }
+

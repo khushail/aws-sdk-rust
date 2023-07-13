@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterTargetsOutput {
+pub struct DeregisterTargetsOutput  {
     /// <p>The targets that were successfully deregistered.</p>
     #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
@@ -13,32 +13,29 @@ pub struct DeregisterTargetsOutput {
 }
 impl DeregisterTargetsOutput {
     /// <p>The targets that were successfully deregistered.</p>
-    pub fn successful(&self) -> ::std::option::Option<&[crate::types::Target]> {
+    pub fn successful(&self) -> ::std::option::Option<& [crate::types::Target]> {
         self.successful.as_deref()
     }
     /// <p>The targets that the operation couldn't deregister.</p>
-    pub fn unsuccessful(&self) -> ::std::option::Option<&[crate::types::TargetFailure]> {
+    pub fn unsuccessful(&self) -> ::std::option::Option<& [crate::types::TargetFailure]> {
         self.unsuccessful.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeregisterTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeregisterTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder {
         crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTargetsOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>,
@@ -52,17 +49,17 @@ impl DeregisterTargetsOutputBuilder {
     /// <p>The targets that were successfully deregistered.</p>
     pub fn successful(mut self, input: crate::types::Target) -> Self {
         let mut v = self.successful.unwrap_or_default();
-        v.push(input);
-        self.successful = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.successful = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The targets that were successfully deregistered.</p>
-    pub fn set_successful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
-        self.successful = input;
-        self
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
+        self.successful = input; self
+    }
+    /// <p>The targets that were successfully deregistered.</p>
+    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.successful
     }
     /// Appends an item to `unsuccessful`.
     ///
@@ -71,33 +68,36 @@ impl DeregisterTargetsOutputBuilder {
     /// <p>The targets that the operation couldn't deregister.</p>
     pub fn unsuccessful(mut self, input: crate::types::TargetFailure) -> Self {
         let mut v = self.unsuccessful.unwrap_or_default();
-        v.push(input);
-        self.unsuccessful = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unsuccessful = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The targets that the operation couldn't deregister.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>,
-    ) -> Self {
-        self.unsuccessful = input;
-        self
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>) -> Self {
+        self.unsuccessful = input; self
+    }
+    /// <p>The targets that the operation couldn't deregister.</p>
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>> {
+        &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput).
     pub fn build(self) -> crate::operation::deregister_targets::DeregisterTargetsOutput {
         crate::operation::deregister_targets::DeregisterTargetsOutput {
-            successful: self.successful,
-            unsuccessful: self.unsuccessful,
+            successful: self.successful
+            ,
+            unsuccessful: self.unsuccessful
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

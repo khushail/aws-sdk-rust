@@ -3,7 +3,7 @@
 /// <p>The configuration for the file system and kernels in a SageMaker image running as a KernelGateway app.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KernelGatewayImageConfig {
+pub struct KernelGatewayImageConfig  {
     /// <p>The specification of the Jupyter kernels in the image.</p>
     #[doc(hidden)]
     pub kernel_specs: ::std::option::Option<::std::vec::Vec<crate::types::KernelSpec>>,
@@ -13,11 +13,11 @@ pub struct KernelGatewayImageConfig {
 }
 impl KernelGatewayImageConfig {
     /// <p>The specification of the Jupyter kernels in the image.</p>
-    pub fn kernel_specs(&self) -> ::std::option::Option<&[crate::types::KernelSpec]> {
+    pub fn kernel_specs(&self) -> ::std::option::Option<& [crate::types::KernelSpec]> {
         self.kernel_specs.as_deref()
     }
     /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
-    pub fn file_system_config(&self) -> ::std::option::Option<&crate::types::FileSystemConfig> {
+    pub fn file_system_config(&self) -> ::std::option::Option<& crate::types::FileSystemConfig> {
         self.file_system_config.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl KernelGatewayImageConfig {
 
 /// A builder for [`KernelGatewayImageConfig`](crate::types::KernelGatewayImageConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KernelGatewayImageConfigBuilder {
     pub(crate) kernel_specs: ::std::option::Option<::std::vec::Vec<crate::types::KernelSpec>>,
     pub(crate) file_system_config: ::std::option::Option<crate::types::FileSystemConfig>,
@@ -45,17 +43,17 @@ impl KernelGatewayImageConfigBuilder {
     /// <p>The specification of the Jupyter kernels in the image.</p>
     pub fn kernel_specs(mut self, input: crate::types::KernelSpec) -> Self {
         let mut v = self.kernel_specs.unwrap_or_default();
-        v.push(input);
-        self.kernel_specs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.kernel_specs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The specification of the Jupyter kernels in the image.</p>
-    pub fn set_kernel_specs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KernelSpec>>,
-    ) -> Self {
-        self.kernel_specs = input;
-        self
+    pub fn set_kernel_specs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KernelSpec>>) -> Self {
+        self.kernel_specs = input; self
+    }
+    /// <p>The specification of the Jupyter kernels in the image.</p>
+    pub fn get_kernel_specs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KernelSpec>> {
+        &self.kernel_specs
     }
     /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
     pub fn file_system_config(mut self, input: crate::types::FileSystemConfig) -> Self {
@@ -63,18 +61,21 @@ impl KernelGatewayImageConfigBuilder {
         self
     }
     /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
-    pub fn set_file_system_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystemConfig>,
-    ) -> Self {
-        self.file_system_config = input;
-        self
+    pub fn set_file_system_config(mut self, input: ::std::option::Option<crate::types::FileSystemConfig>) -> Self {
+        self.file_system_config = input; self
+    }
+    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    pub fn get_file_system_config(&self) -> &::std::option::Option<crate::types::FileSystemConfig> {
+        &self.file_system_config
     }
     /// Consumes the builder and constructs a [`KernelGatewayImageConfig`](crate::types::KernelGatewayImageConfig).
     pub fn build(self) -> crate::types::KernelGatewayImageConfig {
         crate::types::KernelGatewayImageConfig {
-            kernel_specs: self.kernel_specs,
-            file_system_config: self.file_system_config,
+            kernel_specs: self.kernel_specs
+            ,
+            file_system_config: self.file_system_config
+            ,
         }
     }
 }
+

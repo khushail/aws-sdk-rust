@@ -3,14 +3,14 @@
 /// <p>Container for Payer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestPaymentConfiguration {
+pub struct RequestPaymentConfiguration  {
     /// <p>Specifies who pays for the download and request fees.</p>
     #[doc(hidden)]
     pub payer: ::std::option::Option<crate::types::Payer>,
 }
 impl RequestPaymentConfiguration {
     /// <p>Specifies who pays for the download and request fees.</p>
-    pub fn payer(&self) -> ::std::option::Option<&crate::types::Payer> {
+    pub fn payer(&self) -> ::std::option::Option<& crate::types::Payer> {
         self.payer.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl RequestPaymentConfiguration {
 
 /// A builder for [`RequestPaymentConfiguration`](crate::types::RequestPaymentConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestPaymentConfigurationBuilder {
     pub(crate) payer: ::std::option::Option<crate::types::Payer>,
 }
@@ -37,11 +35,18 @@ impl RequestPaymentConfigurationBuilder {
     }
     /// <p>Specifies who pays for the download and request fees.</p>
     pub fn set_payer(mut self, input: ::std::option::Option<crate::types::Payer>) -> Self {
-        self.payer = input;
-        self
+        self.payer = input; self
+    }
+    /// <p>Specifies who pays for the download and request fees.</p>
+    pub fn get_payer(&self) -> &::std::option::Option<crate::types::Payer> {
+        &self.payer
     }
     /// Consumes the builder and constructs a [`RequestPaymentConfiguration`](crate::types::RequestPaymentConfiguration).
     pub fn build(self) -> crate::types::RequestPaymentConfiguration {
-        crate::types::RequestPaymentConfiguration { payer: self.payer }
+        crate::types::RequestPaymentConfiguration {
+            payer: self.payer
+            ,
+        }
     }
 }
+

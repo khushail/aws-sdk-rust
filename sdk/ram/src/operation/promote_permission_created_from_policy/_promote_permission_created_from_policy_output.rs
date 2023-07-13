@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PromotePermissionCreatedFromPolicyOutput {
+pub struct PromotePermissionCreatedFromPolicyOutput  {
     /// <p>Information about an RAM permission.</p>
     #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
@@ -13,33 +13,29 @@ pub struct PromotePermissionCreatedFromPolicyOutput {
 }
 impl PromotePermissionCreatedFromPolicyOutput {
     /// <p>Information about an RAM permission.</p>
-    pub fn permission(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceSharePermissionSummary> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::ResourceSharePermissionSummary> {
         self.permission.as_ref()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for PromotePermissionCreatedFromPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PromotePermissionCreatedFromPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PromotePermissionCreatedFromPolicyOutput`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput).
-    pub fn builder() -> crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyOutputBuilder {
         crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PromotePermissionCreatedFromPolicyOutput`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromotePermissionCreatedFromPolicyOutputBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -52,12 +48,12 @@ impl PromotePermissionCreatedFromPolicyOutputBuilder {
         self
     }
     /// <p>Information about an RAM permission.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
-    ) -> Self {
-        self.permission = input;
-        self
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::ResourceSharePermissionSummary>) -> Self {
+        self.permission = input; self
+    }
+    /// <p>Information about an RAM permission.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::ResourceSharePermissionSummary> {
+        &self.permission
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,20 +62,23 @@ impl PromotePermissionCreatedFromPolicyOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PromotePermissionCreatedFromPolicyOutput`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput).
-    pub fn build(self) -> crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput{
+    pub fn build(self) -> crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput {
         crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput {
             permission: self.permission
             ,
@@ -89,3 +88,4 @@ impl PromotePermissionCreatedFromPolicyOutputBuilder {
         }
     }
 }
+

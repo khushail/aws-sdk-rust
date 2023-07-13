@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEntityTypeInput {
+pub struct DeleteEntityTypeInput  {
     /// <p>The name of the entity type to delete.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEntityTypeInput {
     /// <p>The name of the entity type to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteEntityTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteEntityTypeInput`](crate::operation::delete_entity_type::DeleteEntityTypeInput).
-    pub fn builder() -> crate::operation::delete_entity_type::builders::DeleteEntityTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_entity_type::builders::DeleteEntityTypeInputBuilder {
         crate::operation::delete_entity_type::builders::DeleteEntityTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEntityTypeInput`](crate::operation::delete_entity_type::DeleteEntityTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEntityTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DeleteEntityTypeInputBuilder {
     }
     /// <p>The name of the entity type to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the entity type to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DeleteEntityTypeInput`](crate::operation::delete_entity_type::DeleteEntityTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_entity_type::DeleteEntityTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_entity_type::DeleteEntityTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_entity_type::DeleteEntityTypeInput { name: self.name },
+            crate::operation::delete_entity_type::DeleteEntityTypeInput {
+                name: self.name
+                ,
+            }
         )
     }
 }
+

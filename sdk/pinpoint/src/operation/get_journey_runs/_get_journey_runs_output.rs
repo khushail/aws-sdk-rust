@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetJourneyRunsOutput {
+pub struct GetJourneyRunsOutput  {
     /// <p>Provides information from all runs of a journey.</p>
     #[doc(hidden)]
     pub journey_runs_response: ::std::option::Option<crate::types::JourneyRunsResponse>,
@@ -10,17 +10,15 @@ pub struct GetJourneyRunsOutput {
 }
 impl GetJourneyRunsOutput {
     /// <p>Provides information from all runs of a journey.</p>
-    pub fn journey_runs_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JourneyRunsResponse> {
+    pub fn journey_runs_response(&self) -> ::std::option::Option<& crate::types::JourneyRunsResponse> {
         self.journey_runs_response.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetJourneyRunsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetJourneyRunsOutput {
     /// Creates a new builder-style object to manufacture [`GetJourneyRunsOutput`](crate::operation::get_journey_runs::GetJourneyRunsOutput).
     pub fn builder() -> crate::operation::get_journey_runs::builders::GetJourneyRunsOutputBuilder {
@@ -30,9 +28,7 @@ impl GetJourneyRunsOutput {
 
 /// A builder for [`GetJourneyRunsOutput`](crate::operation::get_journey_runs::GetJourneyRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJourneyRunsOutputBuilder {
     pub(crate) journey_runs_response: ::std::option::Option<crate::types::JourneyRunsResponse>,
     _request_id: Option<String>,
@@ -44,27 +40,29 @@ impl GetJourneyRunsOutputBuilder {
         self
     }
     /// <p>Provides information from all runs of a journey.</p>
-    pub fn set_journey_runs_response(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyRunsResponse>,
-    ) -> Self {
-        self.journey_runs_response = input;
-        self
+    pub fn set_journey_runs_response(mut self, input: ::std::option::Option<crate::types::JourneyRunsResponse>) -> Self {
+        self.journey_runs_response = input; self
+    }
+    /// <p>Provides information from all runs of a journey.</p>
+    pub fn get_journey_runs_response(&self) -> &::std::option::Option<crate::types::JourneyRunsResponse> {
+        &self.journey_runs_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetJourneyRunsOutput`](crate::operation::get_journey_runs::GetJourneyRunsOutput).
     pub fn build(self) -> crate::operation::get_journey_runs::GetJourneyRunsOutput {
         crate::operation::get_journey_runs::GetJourneyRunsOutput {
-            journey_runs_response: self.journey_runs_response,
+            journey_runs_response: self.journey_runs_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

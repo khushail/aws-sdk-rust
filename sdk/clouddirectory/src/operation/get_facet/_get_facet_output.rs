@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFacetOutput {
+pub struct GetFacetOutput  {
     /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
     #[doc(hidden)]
     pub facet: ::std::option::Option<crate::types::Facet>,
@@ -10,15 +10,15 @@ pub struct GetFacetOutput {
 }
 impl GetFacetOutput {
     /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
-    pub fn facet(&self) -> ::std::option::Option<&crate::types::Facet> {
+    pub fn facet(&self) -> ::std::option::Option<& crate::types::Facet> {
         self.facet.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetFacetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetFacetOutput {
     /// Creates a new builder-style object to manufacture [`GetFacetOutput`](crate::operation::get_facet::GetFacetOutput).
     pub fn builder() -> crate::operation::get_facet::builders::GetFacetOutputBuilder {
@@ -28,9 +28,7 @@ impl GetFacetOutput {
 
 /// A builder for [`GetFacetOutput`](crate::operation::get_facet::GetFacetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFacetOutputBuilder {
     pub(crate) facet: ::std::option::Option<crate::types::Facet>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl GetFacetOutputBuilder {
     }
     /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
     pub fn set_facet(mut self, input: ::std::option::Option<crate::types::Facet>) -> Self {
-        self.facet = input;
-        self
+        self.facet = input; self
+    }
+    /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
+    pub fn get_facet(&self) -> &::std::option::Option<crate::types::Facet> {
+        &self.facet
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetFacetOutput`](crate::operation::get_facet::GetFacetOutput).
     pub fn build(self) -> crate::operation::get_facet::GetFacetOutput {
         crate::operation::get_facet::GetFacetOutput {
-            facet: self.facet,
+            facet: self.facet
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

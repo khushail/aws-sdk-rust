@@ -3,7 +3,7 @@
 /// <p>Use this parameter to configure your Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CognitoConfig {
+pub struct CognitoConfig  {
     /// <p>A <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> user pool</a> is a user directory in Amazon Cognito. With a user pool, your users can sign in to your web or mobile app through Amazon Cognito. Your users can also sign in through social identity providers like Google, Facebook, Amazon, or Apple, and through SAML identity providers.</p>
     #[doc(hidden)]
     pub user_pool: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct CognitoConfig {
 }
 impl CognitoConfig {
     /// <p>A <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> user pool</a> is a user directory in Amazon Cognito. With a user pool, your users can sign in to your web or mobile app through Amazon Cognito. Your users can also sign in through social identity providers like Google, Facebook, Amazon, or Apple, and through SAML identity providers.</p>
-    pub fn user_pool(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool(&self) -> ::std::option::Option<& str> {
         self.user_pool.as_deref()
     }
     /// <p>The client ID for your Amazon Cognito user pool.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl CognitoConfig {
 
 /// A builder for [`CognitoConfig`](crate::types::CognitoConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CognitoConfigBuilder {
     pub(crate) user_pool: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl CognitoConfigBuilder {
     }
     /// <p>A <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> user pool</a> is a user directory in Amazon Cognito. With a user pool, your users can sign in to your web or mobile app through Amazon Cognito. Your users can also sign in through social identity providers like Google, Facebook, Amazon, or Apple, and through SAML identity providers.</p>
     pub fn set_user_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool = input;
-        self
+        self.user_pool = input; self
+    }
+    /// <p>A <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> user pool</a> is a user directory in Amazon Cognito. With a user pool, your users can sign in to your web or mobile app through Amazon Cognito. Your users can also sign in through social identity providers like Google, Facebook, Amazon, or Apple, and through SAML identity providers.</p>
+    pub fn get_user_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool
     }
     /// <p>The client ID for your Amazon Cognito user pool.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl CognitoConfigBuilder {
     }
     /// <p>The client ID for your Amazon Cognito user pool.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
+    }
+    /// <p>The client ID for your Amazon Cognito user pool.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// Consumes the builder and constructs a [`CognitoConfig`](crate::types::CognitoConfig).
     pub fn build(self) -> crate::types::CognitoConfig {
         crate::types::CognitoConfig {
-            user_pool: self.user_pool,
-            client_id: self.client_id,
+            user_pool: self.user_pool
+            ,
+            client_id: self.client_id
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStudioInput {
+pub struct UpdateStudioInput  {
     /// <p>The ID of the Amazon EMR Studio to update.</p>
     #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
@@ -21,23 +21,23 @@ pub struct UpdateStudioInput {
 }
 impl UpdateStudioInput {
     /// <p>The ID of the Amazon EMR Studio to update.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
-    pub fn default_s3_location(&self) -> ::std::option::Option<&str> {
+    pub fn default_s3_location(&self) -> ::std::option::Option<& str> {
         self.default_s3_location.as_deref()
     }
 }
@@ -50,9 +50,7 @@ impl UpdateStudioInput {
 
 /// A builder for [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStudioInputBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -68,8 +66,11 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio to update.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
+    }
+    /// <p>The ID of the Amazon EMR Studio to update.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,8 +79,11 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A descriptive name for the Amazon EMR Studio.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +92,11 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -98,47 +105,47 @@ impl UpdateStudioInputBuilder {
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
+    }
+    /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
-    pub fn default_s3_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_s3_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
-    pub fn set_default_s3_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.default_s3_location = input;
-        self
+    pub fn set_default_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_s3_location = input; self
+    }
+    /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
+    pub fn get_default_s3_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_s3_location
     }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_studio::UpdateStudioInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_studio::UpdateStudioInput {
-            studio_id: self.studio_id,
-            name: self.name,
-            description: self.description,
-            subnet_ids: self.subnet_ids,
-            default_s3_location: self.default_s3_location,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_studio::UpdateStudioInput {
+                studio_id: self.studio_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                default_s3_location: self.default_s3_location
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceRoleForAccountInput {}
+pub struct GetServiceRoleForAccountInput  {
+}
 impl GetServiceRoleForAccountInput {
     /// Creates a new builder-style object to manufacture [`GetServiceRoleForAccountInput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountInput).
-    pub fn builder() -> crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountInputBuilder{
+    pub fn builder() -> crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountInputBuilder {
         crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceRoleForAccountInput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct GetServiceRoleForAccountInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct GetServiceRoleForAccountInputBuilder {
+}
 impl GetServiceRoleForAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceRoleForAccountInput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_role_for_account::GetServiceRoleForAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_role_for_account::GetServiceRoleForAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_service_role_for_account::GetServiceRoleForAccountInput {},
+            crate::operation::get_service_role_for_account::GetServiceRoleForAccountInput {
+            }
         )
     }
 }
+

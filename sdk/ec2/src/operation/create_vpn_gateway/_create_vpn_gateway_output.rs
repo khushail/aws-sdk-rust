@@ -3,7 +3,7 @@
 /// <p>Contains the output of CreateVpnGateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpnGatewayOutput {
+pub struct CreateVpnGatewayOutput  {
     /// <p>Information about the virtual private gateway.</p>
     #[doc(hidden)]
     pub vpn_gateway: ::std::option::Option<crate::types::VpnGateway>,
@@ -11,28 +11,25 @@ pub struct CreateVpnGatewayOutput {
 }
 impl CreateVpnGatewayOutput {
     /// <p>Information about the virtual private gateway.</p>
-    pub fn vpn_gateway(&self) -> ::std::option::Option<&crate::types::VpnGateway> {
+    pub fn vpn_gateway(&self) -> ::std::option::Option<& crate::types::VpnGateway> {
         self.vpn_gateway.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateVpnGatewayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateVpnGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpnGatewayOutput`](crate::operation::create_vpn_gateway::CreateVpnGatewayOutput).
-    pub fn builder() -> crate::operation::create_vpn_gateway::builders::CreateVpnGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_vpn_gateway::builders::CreateVpnGatewayOutputBuilder {
         crate::operation::create_vpn_gateway::builders::CreateVpnGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpnGatewayOutput`](crate::operation::create_vpn_gateway::CreateVpnGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpnGatewayOutputBuilder {
     pub(crate) vpn_gateway: ::std::option::Option<crate::types::VpnGateway>,
     _request_id: Option<String>,
@@ -44,27 +41,29 @@ impl CreateVpnGatewayOutputBuilder {
         self
     }
     /// <p>Information about the virtual private gateway.</p>
-    pub fn set_vpn_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnGateway>,
-    ) -> Self {
-        self.vpn_gateway = input;
-        self
+    pub fn set_vpn_gateway(mut self, input: ::std::option::Option<crate::types::VpnGateway>) -> Self {
+        self.vpn_gateway = input; self
+    }
+    /// <p>Information about the virtual private gateway.</p>
+    pub fn get_vpn_gateway(&self) -> &::std::option::Option<crate::types::VpnGateway> {
+        &self.vpn_gateway
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateVpnGatewayOutput`](crate::operation::create_vpn_gateway::CreateVpnGatewayOutput).
     pub fn build(self) -> crate::operation::create_vpn_gateway::CreateVpnGatewayOutput {
         crate::operation::create_vpn_gateway::CreateVpnGatewayOutput {
-            vpn_gateway: self.vpn_gateway,
+            vpn_gateway: self.vpn_gateway
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

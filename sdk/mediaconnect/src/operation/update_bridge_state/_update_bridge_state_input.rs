@@ -3,7 +3,7 @@
 /// A request to update the bridge state.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBridgeStateInput {
+pub struct UpdateBridgeStateInput  {
     /// The ARN of the bridge that you want to update.
     #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
@@ -13,27 +13,24 @@ pub struct UpdateBridgeStateInput {
 }
 impl UpdateBridgeStateInput {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<& str> {
         self.bridge_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::DesiredState> {
+    pub fn desired_state(&self) -> ::std::option::Option<& crate::types::DesiredState> {
         self.desired_state.as_ref()
     }
 }
 impl UpdateBridgeStateInput {
     /// Creates a new builder-style object to manufacture [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
-    pub fn builder(
-    ) -> crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuilder {
+    pub fn builder() -> crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuilder {
         crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBridgeStateInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) desired_state: ::std::option::Option<crate::types::DesiredState>,
@@ -46,8 +43,11 @@ impl UpdateBridgeStateInputBuilder {
     }
     /// The ARN of the bridge that you want to update.
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bridge_arn = input;
-        self
+        self.bridge_arn = input; self
+    }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
@@ -55,25 +55,23 @@ impl UpdateBridgeStateInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredState>,
-    ) -> Self {
-        self.desired_state = input;
-        self
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::DesiredState>) -> Self {
+        self.desired_state = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::DesiredState> {
+        &self.desired_state
     }
     /// Consumes the builder and constructs a [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bridge_state::UpdateBridgeStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_bridge_state::UpdateBridgeStateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_bridge_state::UpdateBridgeStateInput {
-                bridge_arn: self.bridge_arn,
-                desired_state: self.desired_state,
-            },
+                bridge_arn: self.bridge_arn
+                ,
+                desired_state: self.desired_state
+                ,
+            }
         )
     }
 }
+

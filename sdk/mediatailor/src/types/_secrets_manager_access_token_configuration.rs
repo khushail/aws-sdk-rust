@@ -3,7 +3,7 @@
 /// <p>AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecretsManagerAccessTokenConfiguration {
+pub struct SecretsManagerAccessTokenConfiguration  {
     /// <p>The name of the HTTP header used to supply the access token in requests to the source location.</p>
     #[doc(hidden)]
     pub header_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct SecretsManagerAccessTokenConfiguration {
 }
 impl SecretsManagerAccessTokenConfiguration {
     /// <p>The name of the HTTP header used to supply the access token in requests to the source location.</p>
-    pub fn header_name(&self) -> ::std::option::Option<&str> {
+    pub fn header_name(&self) -> ::std::option::Option<& str> {
         self.header_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
-    pub fn secret_string_key(&self) -> ::std::option::Option<&str> {
+    pub fn secret_string_key(&self) -> ::std::option::Option<& str> {
         self.secret_string_key.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl SecretsManagerAccessTokenConfiguration {
 
 /// A builder for [`SecretsManagerAccessTokenConfiguration`](crate::types::SecretsManagerAccessTokenConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecretsManagerAccessTokenConfigurationBuilder {
     pub(crate) header_name: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl SecretsManagerAccessTokenConfigurationBuilder {
     }
     /// <p>The name of the HTTP header used to supply the access token in requests to the source location.</p>
     pub fn set_header_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.header_name = input;
-        self
+        self.header_name = input; self
+    }
+    /// <p>The name of the HTTP header used to supply the access token in requests to the source location.</p>
+    pub fn get_header_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header_name
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,31 +64,35 @@ impl SecretsManagerAccessTokenConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
-    pub fn secret_string_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_string_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_string_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
-    pub fn set_secret_string_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.secret_string_key = input;
-        self
+    pub fn set_secret_string_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.secret_string_key = input; self
+    }
+    /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
+    pub fn get_secret_string_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_string_key
     }
     /// Consumes the builder and constructs a [`SecretsManagerAccessTokenConfiguration`](crate::types::SecretsManagerAccessTokenConfiguration).
     pub fn build(self) -> crate::types::SecretsManagerAccessTokenConfiguration {
         crate::types::SecretsManagerAccessTokenConfiguration {
-            header_name: self.header_name,
-            secret_arn: self.secret_arn,
-            secret_string_key: self.secret_string_key,
+            header_name: self.header_name
+            ,
+            secret_arn: self.secret_arn
+            ,
+            secret_string_key: self.secret_string_key
+            ,
         }
     }
 }
+

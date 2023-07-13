@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceUefiDataInput {
+pub struct GetInstanceUefiDataInput  {
     /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct GetInstanceUefiDataInput {
 }
 impl GetInstanceUefiDataInput {
     /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,18 +22,14 @@ impl GetInstanceUefiDataInput {
 }
 impl GetInstanceUefiDataInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceUefiDataInput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder {
-        crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder {
+        crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceUefiDataInput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceUefiDataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -46,8 +42,11 @@ impl GetInstanceUefiDataInputBuilder {
     }
     /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -56,21 +55,22 @@ impl GetInstanceUefiDataInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetInstanceUefiDataInput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput {
-                instance_id: self.instance_id,
-                dry_run: self.dry_run,
-            },
+                instance_id: self.instance_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

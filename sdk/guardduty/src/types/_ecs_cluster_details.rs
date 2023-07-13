@@ -3,7 +3,7 @@
 /// <p>Contains information about the details of the ECS Cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsClusterDetails {
+pub struct EcsClusterDetails  {
     /// <p>The name of the ECS Cluster.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -31,15 +31,15 @@ pub struct EcsClusterDetails {
 }
 impl EcsClusterDetails {
     /// <p>The name of the ECS Cluster.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the ECS cluster.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
@@ -55,11 +55,11 @@ impl EcsClusterDetails {
         self.running_tasks_count
     }
     /// <p>The tags of the ECS Cluster.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Contains information about the details of the ECS Task.</p>
-    pub fn task_details(&self) -> ::std::option::Option<&crate::types::EcsTaskDetails> {
+    pub fn task_details(&self) -> ::std::option::Option<& crate::types::EcsTaskDetails> {
         self.task_details.as_ref()
     }
 }
@@ -72,9 +72,7 @@ impl EcsClusterDetails {
 
 /// A builder for [`EcsClusterDetails`](crate::types::EcsClusterDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsClusterDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -93,8 +91,11 @@ impl EcsClusterDetailsBuilder {
     }
     /// <p>The name of the ECS Cluster.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the ECS Cluster.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +104,11 @@ impl EcsClusterDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The status of the ECS cluster.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,8 +117,11 @@ impl EcsClusterDetailsBuilder {
     }
     /// <p>The status of the ECS cluster.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the ECS cluster.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
     pub fn active_services_count(mut self, input: i32) -> Self {
@@ -123,8 +130,11 @@ impl EcsClusterDetailsBuilder {
     }
     /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
     pub fn set_active_services_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.active_services_count = input;
-        self
+        self.active_services_count = input; self
+    }
+    /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
+    pub fn get_active_services_count(&self) -> &::std::option::Option<i32> {
+        &self.active_services_count
     }
     /// <p>The number of container instances registered into the cluster.</p>
     pub fn registered_container_instances_count(mut self, input: i32) -> Self {
@@ -132,12 +142,12 @@ impl EcsClusterDetailsBuilder {
         self
     }
     /// <p>The number of container instances registered into the cluster.</p>
-    pub fn set_registered_container_instances_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.registered_container_instances_count = input;
-        self
+    pub fn set_registered_container_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.registered_container_instances_count = input; self
+    }
+    /// <p>The number of container instances registered into the cluster.</p>
+    pub fn get_registered_container_instances_count(&self) -> &::std::option::Option<i32> {
+        &self.registered_container_instances_count
     }
     /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
     pub fn running_tasks_count(mut self, input: i32) -> Self {
@@ -146,8 +156,11 @@ impl EcsClusterDetailsBuilder {
     }
     /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
     pub fn set_running_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.running_tasks_count = input;
-        self
+        self.running_tasks_count = input; self
+    }
+    /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
+    pub fn get_running_tasks_count(&self) -> &::std::option::Option<i32> {
+        &self.running_tasks_count
     }
     /// Appends an item to `tags`.
     ///
@@ -156,17 +169,17 @@ impl EcsClusterDetailsBuilder {
     /// <p>The tags of the ECS Cluster.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags of the ECS Cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags of the ECS Cluster.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>Contains information about the details of the ECS Task.</p>
     pub fn task_details(mut self, input: crate::types::EcsTaskDetails) -> Self {
@@ -174,26 +187,36 @@ impl EcsClusterDetailsBuilder {
         self
     }
     /// <p>Contains information about the details of the ECS Task.</p>
-    pub fn set_task_details(
-        mut self,
-        input: ::std::option::Option<crate::types::EcsTaskDetails>,
-    ) -> Self {
-        self.task_details = input;
-        self
+    pub fn set_task_details(mut self, input: ::std::option::Option<crate::types::EcsTaskDetails>) -> Self {
+        self.task_details = input; self
+    }
+    /// <p>Contains information about the details of the ECS Task.</p>
+    pub fn get_task_details(&self) -> &::std::option::Option<crate::types::EcsTaskDetails> {
+        &self.task_details
     }
     /// Consumes the builder and constructs a [`EcsClusterDetails`](crate::types::EcsClusterDetails).
     pub fn build(self) -> crate::types::EcsClusterDetails {
         crate::types::EcsClusterDetails {
-            name: self.name,
-            arn: self.arn,
-            status: self.status,
-            active_services_count: self.active_services_count.unwrap_or_default(),
-            registered_container_instances_count: self
-                .registered_container_instances_count
-                .unwrap_or_default(),
-            running_tasks_count: self.running_tasks_count.unwrap_or_default(),
-            tags: self.tags,
-            task_details: self.task_details,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            active_services_count: self.active_services_count
+                .unwrap_or_default()
+            ,
+            registered_container_instances_count: self.registered_container_instances_count
+                .unwrap_or_default()
+            ,
+            running_tasks_count: self.running_tasks_count
+                .unwrap_or_default()
+            ,
+            tags: self.tags
+            ,
+            task_details: self.task_details
+            ,
         }
     }
 }
+

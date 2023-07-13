@@ -3,14 +3,14 @@
 /// <p>Endpoints can replicate all events to the secondary Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationConfig {
+pub struct ReplicationConfig  {
     /// <p>The state of event replication.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReplicationState>,
 }
 impl ReplicationConfig {
     /// <p>The state of event replication.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ReplicationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ReplicationState> {
         self.state.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ReplicationConfig {
 
 /// A builder for [`ReplicationConfig`](crate::types::ReplicationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationConfigBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ReplicationState>,
 }
@@ -36,15 +34,19 @@ impl ReplicationConfigBuilder {
         self
     }
     /// <p>The state of event replication.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReplicationState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of event replication.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplicationState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ReplicationConfig`](crate::types::ReplicationConfig).
     pub fn build(self) -> crate::types::ReplicationConfig {
-        crate::types::ReplicationConfig { state: self.state }
+        crate::types::ReplicationConfig {
+            state: self.state
+            ,
+        }
     }
 }
+

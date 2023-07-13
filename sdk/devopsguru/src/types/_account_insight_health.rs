@@ -3,7 +3,7 @@
 /// <p> Information about the number of open reactive and proactive insights that can be used to gauge the health of your system. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountInsightHealth {
+pub struct AccountInsightHealth  {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub open_proactive_insights: i32,
@@ -30,9 +30,7 @@ impl AccountInsightHealth {
 
 /// A builder for [`AccountInsightHealth`](crate::types::AccountInsightHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountInsightHealthBuilder {
     pub(crate) open_proactive_insights: ::std::option::Option<i32>,
     pub(crate) open_reactive_insights: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl AccountInsightHealthBuilder {
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn set_open_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.open_proactive_insights = input;
-        self
+        self.open_proactive_insights = input; self
+    }
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    pub fn get_open_proactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.open_proactive_insights
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub fn open_reactive_insights(mut self, input: i32) -> Self {
@@ -55,14 +56,22 @@ impl AccountInsightHealthBuilder {
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub fn set_open_reactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.open_reactive_insights = input;
-        self
+        self.open_reactive_insights = input; self
+    }
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    pub fn get_open_reactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.open_reactive_insights
     }
     /// Consumes the builder and constructs a [`AccountInsightHealth`](crate::types::AccountInsightHealth).
     pub fn build(self) -> crate::types::AccountInsightHealth {
         crate::types::AccountInsightHealth {
-            open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),
-            open_reactive_insights: self.open_reactive_insights.unwrap_or_default(),
+            open_proactive_insights: self.open_proactive_insights
+                .unwrap_or_default()
+            ,
+            open_reactive_insights: self.open_reactive_insights
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

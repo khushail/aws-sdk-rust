@@ -3,7 +3,7 @@
 /// <p>A FieldFolder element is a folder that contains fields and nested subfolders.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldFolder {
+pub struct FieldFolder  {
     /// <p>The description for a field folder.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct FieldFolder {
 }
 impl FieldFolder {
     /// <p>The description for a field folder.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn columns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.columns.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl FieldFolder {
 
 /// A builder for [`FieldFolder`](crate::types::FieldFolder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldFolderBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl FieldFolderBuilder {
     }
     /// <p>The description for a field folder.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description for a field folder.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `columns`.
     ///
@@ -55,23 +56,26 @@ impl FieldFolderBuilder {
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
     pub fn columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input.into());
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.columns = input; self
+    }
+    /// <p>A folder has a list of columns. A column can only be in one folder.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.columns
     }
     /// Consumes the builder and constructs a [`FieldFolder`](crate::types::FieldFolder).
     pub fn build(self) -> crate::types::FieldFolder {
         crate::types::FieldFolder {
-            description: self.description,
-            columns: self.columns,
+            description: self.description
+            ,
+            columns: self.columns
+            ,
         }
     }
 }
+

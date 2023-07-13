@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIpamOutput {
+pub struct DeleteIpamOutput  {
     /// <p>Information about the results of the deletion.</p>
     #[doc(hidden)]
     pub ipam: ::std::option::Option<crate::types::Ipam>,
@@ -10,15 +10,15 @@ pub struct DeleteIpamOutput {
 }
 impl DeleteIpamOutput {
     /// <p>Information about the results of the deletion.</p>
-    pub fn ipam(&self) -> ::std::option::Option<&crate::types::Ipam> {
+    pub fn ipam(&self) -> ::std::option::Option<& crate::types::Ipam> {
         self.ipam.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteIpamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteIpamOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIpamOutput`](crate::operation::delete_ipam::DeleteIpamOutput).
     pub fn builder() -> crate::operation::delete_ipam::builders::DeleteIpamOutputBuilder {
@@ -28,9 +28,7 @@ impl DeleteIpamOutput {
 
 /// A builder for [`DeleteIpamOutput`](crate::operation::delete_ipam::DeleteIpamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIpamOutputBuilder {
     pub(crate) ipam: ::std::option::Option<crate::types::Ipam>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl DeleteIpamOutputBuilder {
     }
     /// <p>Information about the results of the deletion.</p>
     pub fn set_ipam(mut self, input: ::std::option::Option<crate::types::Ipam>) -> Self {
-        self.ipam = input;
-        self
+        self.ipam = input; self
+    }
+    /// <p>Information about the results of the deletion.</p>
+    pub fn get_ipam(&self) -> &::std::option::Option<crate::types::Ipam> {
+        &self.ipam
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteIpamOutput`](crate::operation::delete_ipam::DeleteIpamOutput).
     pub fn build(self) -> crate::operation::delete_ipam::DeleteIpamOutput {
         crate::operation::delete_ipam::DeleteIpamOutput {
-            ipam: self.ipam,
+            ipam: self.ipam
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

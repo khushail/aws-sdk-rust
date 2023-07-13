@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStreamInput {
+pub struct UpdateStreamInput  {
     /// <p>The stream ID.</p>
     #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
@@ -18,19 +18,19 @@ pub struct UpdateStreamInput {
 }
 impl UpdateStreamInput {
     /// <p>The stream ID.</p>
-    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+    pub fn stream_id(&self) -> ::std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>The description of the stream.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The files associated with the stream.</p>
-    pub fn files(&self) -> ::std::option::Option<&[crate::types::StreamFile]> {
+    pub fn files(&self) -> ::std::option::Option<& [crate::types::StreamFile]> {
         self.files.as_deref()
     }
     /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -43,9 +43,7 @@ impl UpdateStreamInput {
 
 /// A builder for [`UpdateStreamInput`](crate::operation::update_stream::UpdateStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStreamInputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -60,8 +58,11 @@ impl UpdateStreamInputBuilder {
     }
     /// <p>The stream ID.</p>
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
+    }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// <p>The description of the stream.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +71,11 @@ impl UpdateStreamInputBuilder {
     }
     /// <p>The description of the stream.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the stream.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `files`.
     ///
@@ -80,17 +84,17 @@ impl UpdateStreamInputBuilder {
     /// <p>The files associated with the stream.</p>
     pub fn files(mut self, input: crate::types::StreamFile) -> Self {
         let mut v = self.files.unwrap_or_default();
-        v.push(input);
-        self.files = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.files = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The files associated with the stream.</p>
-    pub fn set_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamFile>>,
-    ) -> Self {
-        self.files = input;
-        self
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamFile>>) -> Self {
+        self.files = input; self
+    }
+    /// <p>The files associated with the stream.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamFile>> {
+        &self.files
     }
     /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,21 +103,26 @@ impl UpdateStreamInputBuilder {
     }
     /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateStreamInput`](crate::operation::update_stream::UpdateStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_stream::UpdateStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_stream::UpdateStreamInput {
-            stream_id: self.stream_id,
-            description: self.description,
-            files: self.files,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stream::UpdateStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_stream::UpdateStreamInput {
+                stream_id: self.stream_id
+                ,
+                description: self.description
+                ,
+                files: self.files
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

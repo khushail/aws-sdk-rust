@@ -3,113 +3,93 @@ pub use crate::operation::list_fhir_export_jobs::_list_fhir_export_jobs_output::
 
 pub use crate::operation::list_fhir_export_jobs::_list_fhir_export_jobs_input::ListFhirExportJobsInputBuilder;
 
+impl ListFhirExportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_fhir_export_jobs();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListFHIRExportJobs`.
-///
+/// 
 /// <p> Lists all FHIR export jobs associated with an account and their statuses. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFHIRExportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_fhir_export_jobs::builders::ListFhirExportJobsInputBuilder,
+                    inner: crate::operation::list_fhir_export_jobs::builders::ListFhirExportJobsInputBuilder,
 }
-impl ListFHIRExportJobsFluentBuilder {
+impl ListFHIRExportJobsFluentBuilder  {
     /// Creates a new `ListFHIRExportJobs`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_fhir_export_jobs::ListFHIRExportJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListFHIRExportJobs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_fhir_export_jobs::builders::ListFhirExportJobsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_fhir_export_jobs::ListFHIRExportJobs, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_fhir_export_jobs::ListFHIRExportJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_fhir_export_jobs::ListFHIRExportJobs, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_fhir_export_jobs::paginator::ListFhirExportJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_fhir_export_jobs::paginator::ListFhirExportJobsPaginator {
-        crate::operation::list_fhir_export_jobs::paginator::ListFhirExportJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_fhir_export_jobs::paginator::ListFhirExportJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_fhir_export_jobs::paginator::ListFhirExportJobsPaginator {
+                                crate::operation::list_fhir_export_jobs::paginator::ListFhirExportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
@@ -119,6 +99,10 @@ impl ListFHIRExportJobsFluentBuilder {
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
+    }
+    /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_datastore_id()
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +114,10 @@ impl ListFHIRExportJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -139,6 +127,10 @@ impl ListFHIRExportJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p> This parameter limits the response to the export job with the specified job name. </p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +142,10 @@ impl ListFHIRExportJobsFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p> This parameter limits the response to the export job with the specified job name. </p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.inner = self.inner.job_status(input);
@@ -160,18 +156,23 @@ impl ListFHIRExportJobsFluentBuilder {
         self.inner = self.inner.set_job_status(input);
         self
     }
+    /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        self.inner.get_job_status()
+    }
     /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
     pub fn submitted_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.submitted_before(input);
         self
     }
     /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
-    pub fn set_submitted_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submitted_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_submitted_before(input);
         self
+    }
+    /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
+    pub fn get_submitted_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_submitted_before()
     }
     /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
     pub fn submitted_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -179,11 +180,13 @@ impl ListFHIRExportJobsFluentBuilder {
         self
     }
     /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
-    pub fn set_submitted_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submitted_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_submitted_after(input);
         self
     }
+    /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
+    pub fn get_submitted_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_submitted_after()
+    }
 }
+

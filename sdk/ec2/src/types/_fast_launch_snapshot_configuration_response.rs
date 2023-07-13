@@ -3,7 +3,7 @@
 /// <p>Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch enabled Windows AMI.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FastLaunchSnapshotConfigurationResponse {
+pub struct FastLaunchSnapshotConfigurationResponse  {
     /// <p>The number of pre-provisioned snapshots requested to keep on hand for a fast-launch enabled Windows AMI.</p>
     #[doc(hidden)]
     pub target_resource_count: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl FastLaunchSnapshotConfigurationResponse {
 
 /// A builder for [`FastLaunchSnapshotConfigurationResponse`](crate::types::FastLaunchSnapshotConfigurationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FastLaunchSnapshotConfigurationResponseBuilder {
     pub(crate) target_resource_count: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl FastLaunchSnapshotConfigurationResponseBuilder {
     }
     /// <p>The number of pre-provisioned snapshots requested to keep on hand for a fast-launch enabled Windows AMI.</p>
     pub fn set_target_resource_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_resource_count = input;
-        self
+        self.target_resource_count = input; self
+    }
+    /// <p>The number of pre-provisioned snapshots requested to keep on hand for a fast-launch enabled Windows AMI.</p>
+    pub fn get_target_resource_count(&self) -> &::std::option::Option<i32> {
+        &self.target_resource_count
     }
     /// Consumes the builder and constructs a [`FastLaunchSnapshotConfigurationResponse`](crate::types::FastLaunchSnapshotConfigurationResponse).
     pub fn build(self) -> crate::types::FastLaunchSnapshotConfigurationResponse {
         crate::types::FastLaunchSnapshotConfigurationResponse {
-            target_resource_count: self.target_resource_count,
+            target_resource_count: self.target_resource_count
+            ,
         }
     }
 }
+

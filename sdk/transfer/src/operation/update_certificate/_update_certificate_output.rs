@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCertificateOutput {
+pub struct UpdateCertificateOutput  {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
     #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
@@ -10,63 +10,59 @@ pub struct UpdateCertificateOutput {
 }
 impl UpdateCertificateOutput {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder {
         crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCertificateOutputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateCertificateOutputBuilder {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.certificate_id = input;
-        self
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_id = input; self
+    }
+    /// <p>Returns the identifier of the certificate object that you are updating.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput).
     pub fn build(self) -> crate::operation::update_certificate::UpdateCertificateOutput {
         crate::operation::update_certificate::UpdateCertificateOutput {
-            certificate_id: self.certificate_id,
+            certificate_id: self.certificate_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

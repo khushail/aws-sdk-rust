@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProjectOutput {
+pub struct DescribeProjectOutput  {
     /// <p>The description of the project.</p>
     #[doc(hidden)]
     pub project_description: ::std::option::Option<crate::types::ProjectDescription>,
@@ -10,15 +10,15 @@ pub struct DescribeProjectOutput {
 }
 impl DescribeProjectOutput {
     /// <p>The description of the project.</p>
-    pub fn project_description(&self) -> ::std::option::Option<&crate::types::ProjectDescription> {
+    pub fn project_description(&self) -> ::std::option::Option<& crate::types::ProjectDescription> {
         self.project_description.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn builder() -> crate::operation::describe_project::builders::DescribeProjectOutputBuilder {
@@ -28,9 +28,7 @@ impl DescribeProjectOutput {
 
 /// A builder for [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectOutputBuilder {
     pub(crate) project_description: ::std::option::Option<crate::types::ProjectDescription>,
     _request_id: Option<String>,
@@ -42,27 +40,29 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The description of the project.</p>
-    pub fn set_project_description(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectDescription>,
-    ) -> Self {
-        self.project_description = input;
-        self
+    pub fn set_project_description(mut self, input: ::std::option::Option<crate::types::ProjectDescription>) -> Self {
+        self.project_description = input; self
+    }
+    /// <p>The description of the project.</p>
+    pub fn get_project_description(&self) -> &::std::option::Option<crate::types::ProjectDescription> {
+        &self.project_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn build(self) -> crate::operation::describe_project::DescribeProjectOutput {
         crate::operation::describe_project::DescribeProjectOutput {
-            project_description: self.project_description,
+            project_description: self.project_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

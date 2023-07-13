@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssessmentFrameworkShareRequestsInput {
+pub struct ListAssessmentFrameworkShareRequestsInput  {
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
     #[doc(hidden)]
     pub request_type: ::std::option::Option<crate::types::ShareRequestType>,
@@ -15,11 +15,11 @@ pub struct ListAssessmentFrameworkShareRequestsInput {
 }
 impl ListAssessmentFrameworkShareRequestsInput {
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
-    pub fn request_type(&self) -> ::std::option::Option<&crate::types::ShareRequestType> {
+    pub fn request_type(&self) -> ::std::option::Option<& crate::types::ShareRequestType> {
         self.request_type.as_ref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -29,16 +29,14 @@ impl ListAssessmentFrameworkShareRequestsInput {
 }
 impl ListAssessmentFrameworkShareRequestsInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworkShareRequestsInput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput).
-    pub fn builder() -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder{
+    pub fn builder() -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder {
         crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentFrameworkShareRequestsInput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworkShareRequestsInputBuilder {
     pub(crate) request_type: ::std::option::Option<crate::types::ShareRequestType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,12 +49,12 @@ impl ListAssessmentFrameworkShareRequestsInputBuilder {
         self
     }
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
-    pub fn set_request_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareRequestType>,
-    ) -> Self {
-        self.request_type = input;
-        self
+    pub fn set_request_type(mut self, input: ::std::option::Option<crate::types::ShareRequestType>) -> Self {
+        self.request_type = input; self
+    }
+    /// <p> Specifies whether the share request is a sent request or a received request.</p>
+    pub fn get_request_type(&self) -> &::std::option::Option<crate::types::ShareRequestType> {
+        &self.request_type
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,8 +63,11 @@ impl ListAssessmentFrameworkShareRequestsInputBuilder {
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,11 +76,14 @@ impl ListAssessmentFrameworkShareRequestsInputBuilder {
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentFrameworkShareRequestsInput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput {
                 request_type: self.request_type
@@ -92,3 +96,4 @@ impl ListAssessmentFrameworkShareRequestsInputBuilder {
         )
     }
 }
+

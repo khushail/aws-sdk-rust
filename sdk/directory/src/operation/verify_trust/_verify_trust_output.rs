@@ -3,7 +3,7 @@
 /// <p>Result of a VerifyTrust request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyTrustOutput {
+pub struct VerifyTrustOutput  {
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
     #[doc(hidden)]
     pub trust_id: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,15 @@ pub struct VerifyTrustOutput {
 }
 impl VerifyTrustOutput {
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
-    pub fn trust_id(&self) -> ::std::option::Option<&str> {
+    pub fn trust_id(&self) -> ::std::option::Option<& str> {
         self.trust_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for VerifyTrustOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl VerifyTrustOutput {
     /// Creates a new builder-style object to manufacture [`VerifyTrustOutput`](crate::operation::verify_trust::VerifyTrustOutput).
     pub fn builder() -> crate::operation::verify_trust::builders::VerifyTrustOutputBuilder {
@@ -29,9 +29,7 @@ impl VerifyTrustOutput {
 
 /// A builder for [`VerifyTrustOutput`](crate::operation::verify_trust::VerifyTrustOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyTrustOutputBuilder {
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -44,23 +42,28 @@ impl VerifyTrustOutputBuilder {
     }
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
     pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_id = input;
-        self
+        self.trust_id = input; self
+    }
+    /// <p>The unique Trust ID of the trust relationship that was verified.</p>
+    pub fn get_trust_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`VerifyTrustOutput`](crate::operation::verify_trust::VerifyTrustOutput).
     pub fn build(self) -> crate::operation::verify_trust::VerifyTrustOutput {
         crate::operation::verify_trust::VerifyTrustOutput {
-            trust_id: self.trust_id,
+            trust_id: self.trust_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

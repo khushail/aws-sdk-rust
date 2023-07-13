@@ -3,7 +3,7 @@
 /// <p>Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectionsFilter {
+pub struct GetConnectionsFilter  {
     /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
     #[doc(hidden)]
     pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,11 +13,11 @@ pub struct GetConnectionsFilter {
 }
 impl GetConnectionsFilter {
     /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
-    pub fn match_criteria(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn match_criteria(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.match_criteria.as_deref()
     }
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
-    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
+    pub fn connection_type(&self) -> ::std::option::Option<& crate::types::ConnectionType> {
         self.connection_type.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl GetConnectionsFilter {
 
 /// A builder for [`GetConnectionsFilter`](crate::types::GetConnectionsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectionsFilterBuilder {
     pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
@@ -43,22 +41,19 @@ impl GetConnectionsFilterBuilder {
     /// To override the contents of this collection use [`set_match_criteria`](Self::set_match_criteria).
     ///
     /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
-    pub fn match_criteria(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn match_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.match_criteria.unwrap_or_default();
-        v.push(input.into());
-        self.match_criteria = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.match_criteria = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
-    pub fn set_match_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.match_criteria = input;
-        self
+    pub fn set_match_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.match_criteria = input; self
+    }
+    /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
+    pub fn get_match_criteria(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.match_criteria
     }
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
@@ -66,18 +61,21 @@ impl GetConnectionsFilterBuilder {
         self
     }
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionType>,
-    ) -> Self {
-        self.connection_type = input;
-        self
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
+        self.connection_type = input; self
+    }
+    /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        &self.connection_type
     }
     /// Consumes the builder and constructs a [`GetConnectionsFilter`](crate::types::GetConnectionsFilter).
     pub fn build(self) -> crate::types::GetConnectionsFilter {
         crate::types::GetConnectionsFilter {
-            match_criteria: self.match_criteria,
-            connection_type: self.connection_type,
+            match_criteria: self.match_criteria
+            ,
+            connection_type: self.connection_type
+            ,
         }
     }
 }
+

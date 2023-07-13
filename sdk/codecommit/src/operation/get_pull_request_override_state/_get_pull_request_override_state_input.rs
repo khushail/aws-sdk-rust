@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPullRequestOverrideStateInput {
+pub struct GetPullRequestOverrideStateInput  {
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
     #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
@@ -12,46 +12,41 @@ pub struct GetPullRequestOverrideStateInput {
 }
 impl GetPullRequestOverrideStateInput {
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 impl GetPullRequestOverrideStateInput {
     /// Creates a new builder-style object to manufacture [`GetPullRequestOverrideStateInput`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput).
-    pub fn builder() -> crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder{
+    pub fn builder() -> crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder {
         crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPullRequestOverrideStateInput`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPullRequestOverrideStateInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPullRequestOverrideStateInputBuilder {
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.pull_request_id = input;
-        self
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pull_request_id = input; self
+    }
+    /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
     }
     /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,21 +55,22 @@ impl GetPullRequestOverrideStateInputBuilder {
     }
     /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
+    }
+    /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`GetPullRequestOverrideStateInput`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput {
-                pull_request_id: self.pull_request_id,
-                revision_id: self.revision_id,
-            },
+                pull_request_id: self.pull_request_id
+                ,
+                revision_id: self.revision_id
+                ,
+            }
         )
     }
 }
+

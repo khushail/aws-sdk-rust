@@ -3,7 +3,7 @@
 /// <p>Information about a traffic distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Distribution {
+pub struct Distribution  {
     /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
     #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct Distribution {
 }
 impl Distribution {
     /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
@@ -30,9 +30,7 @@ impl Distribution {
 
 /// A builder for [`Distribution`](crate::types::Distribution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DistributionBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) percentage: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl DistributionBuilder {
     }
     /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
+    }
+    /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
     pub fn percentage(mut self, input: i32) -> Self {
@@ -55,14 +56,21 @@ impl DistributionBuilder {
     }
     /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
     pub fn set_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percentage = input;
-        self
+        self.percentage = input; self
+    }
+    /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
+    pub fn get_percentage(&self) -> &::std::option::Option<i32> {
+        &self.percentage
     }
     /// Consumes the builder and constructs a [`Distribution`](crate::types::Distribution).
     pub fn build(self) -> crate::types::Distribution {
         crate::types::Distribution {
-            region: self.region,
-            percentage: self.percentage.unwrap_or_default(),
+            region: self.region
+            ,
+            percentage: self.percentage
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

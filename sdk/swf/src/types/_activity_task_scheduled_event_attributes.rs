@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>ActivityTaskScheduled</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivityTaskScheduledEventAttributes {
+pub struct ActivityTaskScheduledEventAttributes  {
     /// <p>The type of the activity task.</p>
     #[doc(hidden)]
     pub activity_type: ::std::option::Option<crate::types::ActivityType>,
@@ -28,8 +28,8 @@ pub struct ActivityTaskScheduledEventAttributes {
     /// <p>The task list in which the activity task has been scheduled.</p>
     #[doc(hidden)]
     pub task_list: ::std::option::Option<crate::types::TaskList>,
-    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
-    /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p> 
+    /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     #[doc(hidden)]
     pub task_priority: ::std::option::Option<::std::string::String>,
@@ -42,41 +42,41 @@ pub struct ActivityTaskScheduledEventAttributes {
 }
 impl ActivityTaskScheduledEventAttributes {
     /// <p>The type of the activity task.</p>
-    pub fn activity_type(&self) -> ::std::option::Option<&crate::types::ActivityType> {
+    pub fn activity_type(&self) -> ::std::option::Option<& crate::types::ActivityType> {
         self.activity_type.as_ref()
     }
     /// <p>The unique ID of the activity task.</p>
-    pub fn activity_id(&self) -> ::std::option::Option<&str> {
+    pub fn activity_id(&self) -> ::std::option::Option<& str> {
         self.activity_id.as_deref()
     }
     /// <p>The input provided to the activity task.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
-    pub fn control(&self) -> ::std::option::Option<&str> {
+    pub fn control(&self) -> ::std::option::Option<& str> {
         self.control.as_deref()
     }
     /// <p>The maximum amount of time the activity task can wait to be assigned to a worker.</p>
-    pub fn schedule_to_start_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_to_start_timeout(&self) -> ::std::option::Option<& str> {
         self.schedule_to_start_timeout.as_deref()
     }
     /// <p>The maximum amount of time for this activity task.</p>
-    pub fn schedule_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.schedule_to_close_timeout.as_deref()
     }
     /// <p>The maximum amount of time a worker may take to process the activity task.</p>
-    pub fn start_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn start_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.start_to_close_timeout.as_deref()
     }
     /// <p>The task list in which the activity task has been scheduled.</p>
-    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+    pub fn task_list(&self) -> ::std::option::Option<& crate::types::TaskList> {
         self.task_list.as_ref()
     }
-    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
-    /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p> 
+    /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn task_priority(&self) -> ::std::option::Option<&str> {
+    pub fn task_priority(&self) -> ::std::option::Option<& str> {
         self.task_priority.as_deref()
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -84,7 +84,7 @@ impl ActivityTaskScheduledEventAttributes {
         self.decision_task_completed_event_id
     }
     /// <p>The maximum time before which the worker processing this task must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.</p>
-    pub fn heartbeat_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn heartbeat_timeout(&self) -> ::std::option::Option<& str> {
         self.heartbeat_timeout.as_deref()
     }
 }
@@ -97,9 +97,7 @@ impl ActivityTaskScheduledEventAttributes {
 
 /// A builder for [`ActivityTaskScheduledEventAttributes`](crate::types::ActivityTaskScheduledEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivityTaskScheduledEventAttributesBuilder {
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,
@@ -120,12 +118,12 @@ impl ActivityTaskScheduledEventAttributesBuilder {
         self
     }
     /// <p>The type of the activity task.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
-        self.activity_type = input;
-        self
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
+        self.activity_type = input; self
+    }
+    /// <p>The type of the activity task.</p>
+    pub fn get_activity_type(&self) -> &::std::option::Option<crate::types::ActivityType> {
+        &self.activity_type
     }
     /// <p>The unique ID of the activity task.</p>
     pub fn activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,8 +132,11 @@ impl ActivityTaskScheduledEventAttributesBuilder {
     }
     /// <p>The unique ID of the activity task.</p>
     pub fn set_activity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activity_id = input;
-        self
+        self.activity_id = input; self
+    }
+    /// <p>The unique ID of the activity task.</p>
+    pub fn get_activity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_id
     }
     /// <p>The input provided to the activity task.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,8 +145,11 @@ impl ActivityTaskScheduledEventAttributesBuilder {
     }
     /// <p>The input provided to the activity task.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
+    }
+    /// <p>The input provided to the activity task.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,56 +158,50 @@ impl ActivityTaskScheduledEventAttributesBuilder {
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control = input;
-        self
+        self.control = input; self
+    }
+    /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
     }
     /// <p>The maximum amount of time the activity task can wait to be assigned to a worker.</p>
-    pub fn schedule_to_start_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_to_start_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_to_start_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum amount of time the activity task can wait to be assigned to a worker.</p>
-    pub fn set_schedule_to_start_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.schedule_to_start_timeout = input;
-        self
+    pub fn set_schedule_to_start_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schedule_to_start_timeout = input; self
+    }
+    /// <p>The maximum amount of time the activity task can wait to be assigned to a worker.</p>
+    pub fn get_schedule_to_start_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_to_start_timeout
     }
     /// <p>The maximum amount of time for this activity task.</p>
-    pub fn schedule_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum amount of time for this activity task.</p>
-    pub fn set_schedule_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.schedule_to_close_timeout = input;
-        self
+    pub fn set_schedule_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schedule_to_close_timeout = input; self
+    }
+    /// <p>The maximum amount of time for this activity task.</p>
+    pub fn get_schedule_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_to_close_timeout
     }
     /// <p>The maximum amount of time a worker may take to process the activity task.</p>
-    pub fn start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum amount of time a worker may take to process the activity task.</p>
-    pub fn set_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.start_to_close_timeout = input;
-        self
+    pub fn set_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.start_to_close_timeout = input; self
+    }
+    /// <p>The maximum amount of time a worker may take to process the activity task.</p>
+    pub fn get_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_to_close_timeout
     }
     /// <p>The task list in which the activity task has been scheduled.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
@@ -212,28 +210,30 @@ impl ActivityTaskScheduledEventAttributesBuilder {
     }
     /// <p>The task list in which the activity task has been scheduled.</p>
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
-        self.task_list = input;
-        self
+        self.task_list = input; self
     }
-    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
-    /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The task list in which the activity task has been scheduled.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
+    }
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p> 
+    /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn task_priority(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_priority = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p>
-    /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p> 
+    /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn set_task_priority(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.task_priority = input;
-        self
+    pub fn set_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.task_priority = input; self
+    }
+    /// <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p> 
+    /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    pub fn get_task_priority(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_priority
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
@@ -241,45 +241,53 @@ impl ActivityTaskScheduledEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
-        self.decision_task_completed_event_id = input;
-        self
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.decision_task_completed_event_id = input; self
+    }
+    /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
     }
     /// <p>The maximum time before which the worker processing this task must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.</p>
-    pub fn heartbeat_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn heartbeat_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.heartbeat_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum time before which the worker processing this task must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.</p>
-    pub fn set_heartbeat_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.heartbeat_timeout = input;
-        self
+    pub fn set_heartbeat_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.heartbeat_timeout = input; self
+    }
+    /// <p>The maximum time before which the worker processing this task must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.</p>
+    pub fn get_heartbeat_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.heartbeat_timeout
     }
     /// Consumes the builder and constructs a [`ActivityTaskScheduledEventAttributes`](crate::types::ActivityTaskScheduledEventAttributes).
     pub fn build(self) -> crate::types::ActivityTaskScheduledEventAttributes {
         crate::types::ActivityTaskScheduledEventAttributes {
-            activity_type: self.activity_type,
-            activity_id: self.activity_id,
-            input: self.input,
-            control: self.control,
-            schedule_to_start_timeout: self.schedule_to_start_timeout,
-            schedule_to_close_timeout: self.schedule_to_close_timeout,
-            start_to_close_timeout: self.start_to_close_timeout,
-            task_list: self.task_list,
-            task_priority: self.task_priority,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
-            heartbeat_timeout: self.heartbeat_timeout,
+            activity_type: self.activity_type
+            ,
+            activity_id: self.activity_id
+            ,
+            input: self.input
+            ,
+            control: self.control
+            ,
+            schedule_to_start_timeout: self.schedule_to_start_timeout
+            ,
+            schedule_to_close_timeout: self.schedule_to_close_timeout
+            ,
+            start_to_close_timeout: self.start_to_close_timeout
+            ,
+            task_list: self.task_list
+            ,
+            task_priority: self.task_priority
+            ,
+            decision_task_completed_event_id: self.decision_task_completed_event_id
+                .unwrap_or_default()
+            ,
+            heartbeat_timeout: self.heartbeat_timeout
+            ,
         }
     }
 }
+

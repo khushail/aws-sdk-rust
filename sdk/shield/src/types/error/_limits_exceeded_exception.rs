@@ -3,7 +3,7 @@
 /// <p>Exception that indicates that the operation would exceed a limit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LimitsExceededException {
+pub struct LimitsExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct LimitsExceededException {
 }
 impl LimitsExceededException {
     /// <p>The type of limit that would be exceeded.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The threshold that would be exceeded.</p>
@@ -27,15 +27,13 @@ impl LimitsExceededException {
 }
 impl LimitsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for LimitsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "LimitsExceededException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -50,9 +48,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::LimitsExceededEx
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for LimitsExceededException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl LimitsExceededException {
     /// Creates a new builder-style object to manufacture [`LimitsExceededException`](crate::types::error::LimitsExceededException).
@@ -63,9 +59,7 @@ impl LimitsExceededException {
 
 /// A builder for [`LimitsExceededException`](crate::types::error::LimitsExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LimitsExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -80,8 +74,11 @@ impl LimitsExceededExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The type of limit that would be exceeded.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,8 +87,11 @@ impl LimitsExceededExceptionBuilder {
     }
     /// <p>The type of limit that would be exceeded.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of limit that would be exceeded.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The threshold that would be exceeded.</p>
     pub fn limit(mut self, input: i64) -> Self {
@@ -100,30 +100,35 @@ impl LimitsExceededExceptionBuilder {
     }
     /// <p>The threshold that would be exceeded.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The threshold that would be exceeded.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i64> {
+        &self.limit
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`LimitsExceededException`](crate::types::error::LimitsExceededException).
     pub fn build(self) -> crate::types::error::LimitsExceededException {
         crate::types::error::LimitsExceededException {
-            message: self.message,
-            r#type: self.r#type,
-            limit: self.limit.unwrap_or_default(),
+            message: self.message
+            ,
+            r#type: self.r#type
+            ,
+            limit: self.limit
+                .unwrap_or_default()
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

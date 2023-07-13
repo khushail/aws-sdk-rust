@@ -3,14 +3,14 @@
 /// Reference to an OutputDestination ID defined in the channel
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputLocationRef {
+pub struct OutputLocationRef  {
     /// Placeholder documentation for __string
     #[doc(hidden)]
     pub destination_ref_id: ::std::option::Option<::std::string::String>,
 }
 impl OutputLocationRef {
     /// Placeholder documentation for __string
-    pub fn destination_ref_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_ref_id(&self) -> ::std::option::Option<& str> {
         self.destination_ref_id.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl OutputLocationRef {
 
 /// A builder for [`OutputLocationRef`](crate::types::OutputLocationRef).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputLocationRefBuilder {
     pub(crate) destination_ref_id: ::std::option::Option<::std::string::String>,
 }
 impl OutputLocationRefBuilder {
     /// Placeholder documentation for __string
-    pub fn destination_ref_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ref_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ref_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Placeholder documentation for __string
-    pub fn set_destination_ref_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_ref_id = input;
-        self
+    pub fn set_destination_ref_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_ref_id = input; self
+    }
+    /// Placeholder documentation for __string
+    pub fn get_destination_ref_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ref_id
     }
     /// Consumes the builder and constructs a [`OutputLocationRef`](crate::types::OutputLocationRef).
     pub fn build(self) -> crate::types::OutputLocationRef {
         crate::types::OutputLocationRef {
-            destination_ref_id: self.destination_ref_id,
+            destination_ref_id: self.destination_ref_id
+            ,
         }
     }
 }
+

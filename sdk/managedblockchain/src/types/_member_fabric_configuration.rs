@@ -3,7 +3,7 @@
 /// <p>Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network that is using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MemberFabricConfiguration {
+pub struct MemberFabricConfiguration  {
     /// <p>The user name for the member's initial administrative user.</p>
     #[doc(hidden)]
     pub admin_username: ::std::option::Option<::std::string::String>,
@@ -13,15 +13,15 @@ pub struct MemberFabricConfiguration {
 }
 impl MemberFabricConfiguration {
     /// <p>The user name for the member's initial administrative user.</p>
-    pub fn admin_username(&self) -> ::std::option::Option<&str> {
+    pub fn admin_username(&self) -> ::std::option::Option<& str> {
         self.admin_username.as_deref()
     }
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-    pub fn admin_password(&self) -> ::std::option::Option<&str> {
+    pub fn admin_password(&self) -> ::std::option::Option<& str> {
         self.admin_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for MemberFabricConfiguration {
+impl  ::std::fmt::Debug for MemberFabricConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MemberFabricConfiguration");
         formatter.field("admin_username", &self.admin_username);
@@ -45,42 +45,38 @@ pub struct MemberFabricConfigurationBuilder {
 }
 impl MemberFabricConfigurationBuilder {
     /// <p>The user name for the member's initial administrative user.</p>
-    pub fn admin_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name for the member's initial administrative user.</p>
-    pub fn set_admin_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.admin_username = input;
-        self
+    pub fn set_admin_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_username = input; self
+    }
+    /// <p>The user name for the member's initial administrative user.</p>
+    pub fn get_admin_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_username
     }
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-    pub fn admin_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-    pub fn set_admin_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.admin_password = input;
-        self
+    pub fn set_admin_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_password = input; self
+    }
+    /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
+    pub fn get_admin_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_password
     }
     /// Consumes the builder and constructs a [`MemberFabricConfiguration`](crate::types::MemberFabricConfiguration).
     pub fn build(self) -> crate::types::MemberFabricConfiguration {
         crate::types::MemberFabricConfiguration {
-            admin_username: self.admin_username,
-            admin_password: self.admin_password,
+            admin_username: self.admin_username
+            ,
+            admin_password: self.admin_password
+            ,
         }
     }
 }
@@ -92,3 +88,4 @@ impl ::std::fmt::Debug for MemberFabricConfigurationBuilder {
         formatter.finish()
     }
 }
+

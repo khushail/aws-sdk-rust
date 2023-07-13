@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePartnerEventSourceInput {
+pub struct DeletePartnerEventSourceInput  {
     /// <p>The name of the event source to delete.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DeletePartnerEventSourceInput {
 }
 impl DeletePartnerEventSourceInput {
     /// <p>The name of the event source to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
 }
 impl DeletePartnerEventSourceInput {
     /// Creates a new builder-style object to manufacture [`DeletePartnerEventSourceInput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder {
         crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePartnerEventSourceInput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePartnerEventSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl DeletePartnerEventSourceInputBuilder {
     }
     /// <p>The name of the event source to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the event source to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl DeletePartnerEventSourceInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
+    }
+    /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
     }
     /// Consumes the builder and constructs a [`DeletePartnerEventSourceInput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput {
-                name: self.name,
-                account: self.account,
-            },
+                name: self.name
+                ,
+                account: self.account
+                ,
+            }
         )
     }
 }
+

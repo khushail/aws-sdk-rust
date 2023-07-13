@@ -3,7 +3,7 @@
 /// <p>Describes bandwidth information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Bandwidth {
+pub struct Bandwidth  {
     /// <p>Upload speed in Mbps.</p>
     #[doc(hidden)]
     pub upload_speed: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl Bandwidth {
 
 /// A builder for [`Bandwidth`](crate::types::Bandwidth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BandwidthBuilder {
     pub(crate) upload_speed: ::std::option::Option<i32>,
     pub(crate) download_speed: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl BandwidthBuilder {
     }
     /// <p>Upload speed in Mbps.</p>
     pub fn set_upload_speed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.upload_speed = input;
-        self
+        self.upload_speed = input; self
+    }
+    /// <p>Upload speed in Mbps.</p>
+    pub fn get_upload_speed(&self) -> &::std::option::Option<i32> {
+        &self.upload_speed
     }
     /// <p>Download speed in Mbps.</p>
     pub fn download_speed(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl BandwidthBuilder {
     }
     /// <p>Download speed in Mbps.</p>
     pub fn set_download_speed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.download_speed = input;
-        self
+        self.download_speed = input; self
+    }
+    /// <p>Download speed in Mbps.</p>
+    pub fn get_download_speed(&self) -> &::std::option::Option<i32> {
+        &self.download_speed
     }
     /// Consumes the builder and constructs a [`Bandwidth`](crate::types::Bandwidth).
     pub fn build(self) -> crate::types::Bandwidth {
         crate::types::Bandwidth {
-            upload_speed: self.upload_speed,
-            download_speed: self.download_speed,
+            upload_speed: self.upload_speed
+            ,
+            download_speed: self.download_speed
+            ,
         }
     }
 }
+

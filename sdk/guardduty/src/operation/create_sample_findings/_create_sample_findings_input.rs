@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSampleFindingsInput {
+pub struct CreateSampleFindingsInput  {
     /// <p>The ID of the detector to create sample findings for.</p>
     #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct CreateSampleFindingsInput {
 }
 impl CreateSampleFindingsInput {
     /// <p>The ID of the detector to create sample findings for.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The types of sample findings to generate.</p>
-    pub fn finding_types(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn finding_types(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.finding_types.as_deref()
     }
 }
 impl CreateSampleFindingsInput {
     /// Creates a new builder-style object to manufacture [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
-    pub fn builder(
-    ) -> crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
+    pub fn builder() -> crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
         crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSampleFindingsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,43 +42,41 @@ impl CreateSampleFindingsInputBuilder {
     }
     /// <p>The ID of the detector to create sample findings for.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
+    }
+    /// <p>The ID of the detector to create sample findings for.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// Appends an item to `finding_types`.
     ///
     /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
     ///
     /// <p>The types of sample findings to generate.</p>
-    pub fn finding_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.finding_types.unwrap_or_default();
-        v.push(input.into());
-        self.finding_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.finding_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of sample findings to generate.</p>
-    pub fn set_finding_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.finding_types = input;
-        self
+    pub fn set_finding_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.finding_types = input; self
+    }
+    /// <p>The types of sample findings to generate.</p>
+    pub fn get_finding_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_types
     }
     /// Consumes the builder and constructs a [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sample_findings::CreateSampleFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_sample_findings::CreateSampleFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_sample_findings::CreateSampleFindingsInput {
-                detector_id: self.detector_id,
-                finding_types: self.finding_types,
-            },
+                detector_id: self.detector_id
+                ,
+                finding_types: self.finding_types
+                ,
+            }
         )
     }
 }
+

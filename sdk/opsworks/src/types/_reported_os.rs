@@ -3,7 +3,7 @@
 /// <p>A registered instance's reported operating system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportedOs {
+pub struct ReportedOs  {
     /// <p>The operating system family.</p>
     #[doc(hidden)]
     pub family: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ReportedOs {
 }
 impl ReportedOs {
     /// <p>The operating system family.</p>
-    pub fn family(&self) -> ::std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The operating system name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The operating system version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ReportedOs {
 
 /// A builder for [`ReportedOs`](crate::types::ReportedOs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportedOsBuilder {
     pub(crate) family: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl ReportedOsBuilder {
     }
     /// <p>The operating system family.</p>
     pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.family = input;
-        self
+        self.family = input; self
+    }
+    /// <p>The operating system family.</p>
+    pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.family
     }
     /// <p>The operating system name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl ReportedOsBuilder {
     }
     /// <p>The operating system name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The operating system name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The operating system version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl ReportedOsBuilder {
     }
     /// <p>The operating system version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The operating system version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ReportedOs`](crate::types::ReportedOs).
     pub fn build(self) -> crate::types::ReportedOs {
         crate::types::ReportedOs {
-            family: self.family,
-            name: self.name,
-            version: self.version,
+            family: self.family
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

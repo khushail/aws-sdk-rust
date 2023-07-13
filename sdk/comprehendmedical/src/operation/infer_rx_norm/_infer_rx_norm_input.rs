@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferRxNormInput {
+pub struct InferRxNormInput  {
     /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
     #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl InferRxNormInput {
     /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl InferRxNormInput {
 
 /// A builder for [`InferRxNormInput`](crate::operation::infer_rx_norm::InferRxNormInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferRxNormInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl InferRxNormInputBuilder {
     }
     /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// Consumes the builder and constructs a [`InferRxNormInput`](crate::operation::infer_rx_norm::InferRxNormInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::infer_rx_norm::InferRxNormInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::infer_rx_norm::InferRxNormInput {
-            text: self.text,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::infer_rx_norm::InferRxNormInput {
+                text: self.text
+                ,
+            }
+        )
     }
 }
+

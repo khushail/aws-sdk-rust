@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInsightRulesOutput {
+pub struct DeleteInsightRulesOutput  {
     /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
     #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
@@ -10,28 +10,25 @@ pub struct DeleteInsightRulesOutput {
 }
 impl DeleteInsightRulesOutput {
     /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::PartialFailure]> {
+    pub fn failures(&self) -> ::std::option::Option<& [crate::types::PartialFailure]> {
         self.failures.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteInsightRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInsightRulesOutput`](crate::operation::delete_insight_rules::DeleteInsightRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_insight_rules::builders::DeleteInsightRulesOutputBuilder {
+    pub fn builder() -> crate::operation::delete_insight_rules::builders::DeleteInsightRulesOutputBuilder {
         crate::operation::delete_insight_rules::builders::DeleteInsightRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInsightRulesOutput`](crate::operation::delete_insight_rules::DeleteInsightRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInsightRulesOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,
@@ -44,32 +41,34 @@ impl DeleteInsightRulesOutputBuilder {
     /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
     pub fn failures(mut self, input: crate::types::PartialFailure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
-    ) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>) -> Self {
+        self.failures = input; self
+    }
+    /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>> {
+        &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteInsightRulesOutput`](crate::operation::delete_insight_rules::DeleteInsightRulesOutput).
     pub fn build(self) -> crate::operation::delete_insight_rules::DeleteInsightRulesOutput {
         crate::operation::delete_insight_rules::DeleteInsightRulesOutput {
-            failures: self.failures,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

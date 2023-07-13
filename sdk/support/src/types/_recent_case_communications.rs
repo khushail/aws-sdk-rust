@@ -3,7 +3,7 @@
 /// <p>The five most recent communications associated with the case.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecentCaseCommunications {
+pub struct RecentCaseCommunications  {
     /// <p>The five most recent communications associated with the case.</p>
     #[doc(hidden)]
     pub communications: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>,
@@ -13,11 +13,11 @@ pub struct RecentCaseCommunications {
 }
 impl RecentCaseCommunications {
     /// <p>The five most recent communications associated with the case.</p>
-    pub fn communications(&self) -> ::std::option::Option<&[crate::types::Communication]> {
+    pub fn communications(&self) -> ::std::option::Option<& [crate::types::Communication]> {
         self.communications.as_deref()
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl RecentCaseCommunications {
 
 /// A builder for [`RecentCaseCommunications`](crate::types::RecentCaseCommunications).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecentCaseCommunicationsBuilder {
     pub(crate) communications: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -45,17 +43,17 @@ impl RecentCaseCommunicationsBuilder {
     /// <p>The five most recent communications associated with the case.</p>
     pub fn communications(mut self, input: crate::types::Communication) -> Self {
         let mut v = self.communications.unwrap_or_default();
-        v.push(input);
-        self.communications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.communications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The five most recent communications associated with the case.</p>
-    pub fn set_communications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>,
-    ) -> Self {
-        self.communications = input;
-        self
+    pub fn set_communications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>) -> Self {
+        self.communications = input; self
+    }
+    /// <p>The five most recent communications associated with the case.</p>
+    pub fn get_communications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Communication>> {
+        &self.communications
     }
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,14 +62,20 @@ impl RecentCaseCommunicationsBuilder {
     }
     /// <p>A resumption point for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A resumption point for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`RecentCaseCommunications`](crate::types::RecentCaseCommunications).
     pub fn build(self) -> crate::types::RecentCaseCommunications {
         crate::types::RecentCaseCommunications {
-            communications: self.communications,
-            next_token: self.next_token,
+            communications: self.communications
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

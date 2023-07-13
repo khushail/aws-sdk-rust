@@ -3,105 +3,90 @@ pub use crate::operation::register_container_instance::_register_container_insta
 
 pub use crate::operation::register_container_instance::_register_container_instance_input::RegisterContainerInstanceInputBuilder;
 
+impl RegisterContainerInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::register_container_instance::RegisterContainerInstanceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::register_container_instance::RegisterContainerInstanceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.register_container_instance();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `RegisterContainerInstance`.
-///
-/// <note>
-/// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
-/// </note>
+/// 
+/// <note> 
+/// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p> 
+/// </note> 
 /// <p>Registers an EC2 instance into the specified cluster. This instance becomes available to place containers on.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterContainerInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::register_container_instance::builders::RegisterContainerInstanceInputBuilder,
 }
-impl RegisterContainerInstanceFluentBuilder {
+impl RegisterContainerInstanceFluentBuilder  {
     /// Creates a new `RegisterContainerInstance`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::register_container_instance::RegisterContainerInstance,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_container_instance::RegisterContainerInstanceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the RegisterContainerInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_container_instance::builders::RegisterContainerInstanceInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_container_instance::RegisterContainerInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_container_instance::RegisterContainerInstanceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::register_container_instance::RegisterContainerInstance, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::register_container_instance::RegisterContainerInstanceError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_container_instance::RegisterContainerInstanceOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_container_instance::RegisterContainerInstanceError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_container_instance::RegisterContainerInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_container_instance::RegisterContainerInstanceError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::register_container_instance::RegisterContainerInstance,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_container_instance::RegisterContainerInstanceError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_container_instance::RegisterContainerInstanceOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_container_instance::RegisterContainerInstanceError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::register_container_instance::RegisterContainerInstance, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::register_container_instance::RegisterContainerInstanceError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
@@ -112,39 +97,37 @@ impl RegisterContainerInstanceFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
-    pub fn instance_identity_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_identity_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_identity_document(input.into());
         self
     }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
-    pub fn set_instance_identity_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_identity_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_identity_document(input);
         self
     }
+    /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
+    pub fn get_instance_identity_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_identity_document()
+    }
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
-    pub fn instance_identity_document_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .instance_identity_document_signature(input.into());
+    pub fn instance_identity_document_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.instance_identity_document_signature(input.into());
         self
     }
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
-    pub fn set_instance_identity_document_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_identity_document_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_identity_document_signature(input);
         self
+    }
+    /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
+    pub fn get_instance_identity_document_signature(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_identity_document_signature()
     }
     /// Appends an item to `totalResources`.
     ///
@@ -156,12 +139,13 @@ impl RegisterContainerInstanceFluentBuilder {
         self
     }
     /// <p>The resources available on the instance.</p>
-    pub fn set_total_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_total_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.inner = self.inner.set_total_resources(input);
         self
+    }
+    /// <p>The resources available on the instance.</p>
+    pub fn get_total_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        self.inner.get_total_resources()
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
     pub fn version_info(mut self, input: crate::types::VersionInfo) -> Self {
@@ -169,28 +153,27 @@ impl RegisterContainerInstanceFluentBuilder {
         self
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
-    pub fn set_version_info(
-        mut self,
-        input: ::std::option::Option<crate::types::VersionInfo>,
-    ) -> Self {
+    pub fn set_version_info(mut self, input: ::std::option::Option<crate::types::VersionInfo>) -> Self {
         self.inner = self.inner.set_version_info(input);
         self
     }
+    /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
+    pub fn get_version_info(&self) -> &::std::option::Option<crate::types::VersionInfo> {
+        self.inner.get_version_info()
+    }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
-    pub fn container_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
-    pub fn set_container_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_instance_arn(input);
         self
+    }
+    /// <p>The ARN of the container instance (if it was previously registered).</p>
+    pub fn get_container_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_instance_arn()
     }
     /// Appends an item to `attributes`.
     ///
@@ -202,12 +185,13 @@ impl RegisterContainerInstanceFluentBuilder {
         self
     }
     /// <p>The container instance attributes that this container instance supports.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>The container instance attributes that this container instance supports.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        self.inner.get_attributes()
     }
     /// Appends an item to `platformDevices`.
     ///
@@ -219,48 +203,61 @@ impl RegisterContainerInstanceFluentBuilder {
         self
     }
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
-    pub fn set_platform_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>,
-    ) -> Self {
+    pub fn set_platform_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>) -> Self {
         self.inner = self.inner.set_platform_devices(input);
         self
+    }
+    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    pub fn get_platform_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>> {
+        self.inner.get_platform_devices()
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

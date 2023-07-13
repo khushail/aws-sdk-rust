@@ -3,7 +3,7 @@
 /// <p>Describes the placement for a Scheduled Instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledInstancesPlacement {
+pub struct ScheduledInstancesPlacement  {
     /// <p>The Availability Zone.</p>
     #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ScheduledInstancesPlacement {
 }
 impl ScheduledInstancesPlacement {
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The name of the placement group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl ScheduledInstancesPlacement {
 
 /// A builder for [`ScheduledInstancesPlacement`](crate::types::ScheduledInstancesPlacement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledInstancesPlacementBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesPlacementBuilder {
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input; self
+    }
+    /// <p>The Availability Zone.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// <p>The name of the placement group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl ScheduledInstancesPlacementBuilder {
     }
     /// <p>The name of the placement group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
+    }
+    /// <p>The name of the placement group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Consumes the builder and constructs a [`ScheduledInstancesPlacement`](crate::types::ScheduledInstancesPlacement).
     pub fn build(self) -> crate::types::ScheduledInstancesPlacement {
         crate::types::ScheduledInstancesPlacement {
-            availability_zone: self.availability_zone,
-            group_name: self.group_name,
+            availability_zone: self.availability_zone
+            ,
+            group_name: self.group_name
+            ,
         }
     }
 }
+

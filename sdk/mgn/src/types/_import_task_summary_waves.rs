@@ -3,7 +3,7 @@
 /// <p>Import task summery waves.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportTaskSummaryWaves {
+pub struct ImportTaskSummaryWaves  {
     /// <p>Import task summery waves created count.</p>
     #[doc(hidden)]
     pub created_count: i64,
@@ -30,9 +30,7 @@ impl ImportTaskSummaryWaves {
 
 /// A builder for [`ImportTaskSummaryWaves`](crate::types::ImportTaskSummaryWaves).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTaskSummaryWavesBuilder {
     pub(crate) created_count: ::std::option::Option<i64>,
     pub(crate) modified_count: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl ImportTaskSummaryWavesBuilder {
     }
     /// <p>Import task summery waves created count.</p>
     pub fn set_created_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.created_count = input;
-        self
+        self.created_count = input; self
+    }
+    /// <p>Import task summery waves created count.</p>
+    pub fn get_created_count(&self) -> &::std::option::Option<i64> {
+        &self.created_count
     }
     /// <p>Import task summery waves modified count.</p>
     pub fn modified_count(mut self, input: i64) -> Self {
@@ -55,14 +56,22 @@ impl ImportTaskSummaryWavesBuilder {
     }
     /// <p>Import task summery waves modified count.</p>
     pub fn set_modified_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.modified_count = input;
-        self
+        self.modified_count = input; self
+    }
+    /// <p>Import task summery waves modified count.</p>
+    pub fn get_modified_count(&self) -> &::std::option::Option<i64> {
+        &self.modified_count
     }
     /// Consumes the builder and constructs a [`ImportTaskSummaryWaves`](crate::types::ImportTaskSummaryWaves).
     pub fn build(self) -> crate::types::ImportTaskSummaryWaves {
         crate::types::ImportTaskSummaryWaves {
-            created_count: self.created_count.unwrap_or_default(),
-            modified_count: self.modified_count.unwrap_or_default(),
+            created_count: self.created_count
+                .unwrap_or_default()
+            ,
+            modified_count: self.modified_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>EC2 security group information for an RDS DB security group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbSecurityGroupEc2SecurityGroup {
+pub struct AwsRdsDbSecurityGroupEc2SecurityGroup  {
     /// <p>Specifies the ID for the EC2 security group.</p>
     #[doc(hidden)]
     pub ec2_security_group_id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct AwsRdsDbSecurityGroupEc2SecurityGroup {
 }
 impl AwsRdsDbSecurityGroupEc2SecurityGroup {
     /// <p>Specifies the ID for the EC2 security group.</p>
-    pub fn ec2_security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_security_group_id(&self) -> ::std::option::Option<& str> {
         self.ec2_security_group_id.as_deref()
     }
     /// <p>Specifies the name of the EC2 security group.</p>
-    pub fn ec2_security_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_security_group_name(&self) -> ::std::option::Option<& str> {
         self.ec2_security_group_name.as_deref()
     }
     /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
-    pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<& str> {
         self.ec2_security_group_owner_id.as_deref()
     }
     /// <p>Provides the status of the EC2 security group.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl AwsRdsDbSecurityGroupEc2SecurityGroup {
 
 /// A builder for [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
     pub(crate) ec2_security_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,
@@ -55,52 +53,43 @@ pub struct AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
 }
 impl AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
     /// <p>Specifies the ID for the EC2 security group.</p>
-    pub fn ec2_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID for the EC2 security group.</p>
-    pub fn set_ec2_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ec2_security_group_id = input;
-        self
+    pub fn set_ec2_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ec2_security_group_id = input; self
+    }
+    /// <p>Specifies the ID for the EC2 security group.</p>
+    pub fn get_ec2_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_id
     }
     /// <p>Specifies the name of the EC2 security group.</p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the EC2 security group.</p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ec2_security_group_name = input;
-        self
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ec2_security_group_name = input; self
+    }
+    /// <p>Specifies the name of the EC2 security group.</p>
+    pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_name
     }
     /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ec2_security_group_owner_id = input;
-        self
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ec2_security_group_owner_id = input; self
+    }
+    /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
+    pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_owner_id
     }
     /// <p>Provides the status of the EC2 security group.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,16 +98,24 @@ impl AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
     }
     /// <p>Provides the status of the EC2 security group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Provides the status of the EC2 security group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup).
     pub fn build(self) -> crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup {
         crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup {
-            ec2_security_group_id: self.ec2_security_group_id,
-            ec2_security_group_name: self.ec2_security_group_name,
-            ec2_security_group_owner_id: self.ec2_security_group_owner_id,
-            status: self.status,
+            ec2_security_group_id: self.ec2_security_group_id
+            ,
+            ec2_security_group_name: self.ec2_security_group_name
+            ,
+            ec2_security_group_owner_id: self.ec2_security_group_owner_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Custom parameter required for OAuth 2.0 authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OAuth2CustomParameter {
+pub struct OAuth2CustomParameter  {
     /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct OAuth2CustomParameter {
 }
 impl OAuth2CustomParameter {
     /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
@@ -36,11 +36,11 @@ impl OAuth2CustomParameter {
         self.is_required
     }
     /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
@@ -48,11 +48,11 @@ impl OAuth2CustomParameter {
         self.is_sensitive_field
     }
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn connector_supplied_values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn connector_supplied_values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.connector_supplied_values.as_deref()
     }
     /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OAuth2CustomPropType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::OAuth2CustomPropType> {
         self.r#type.as_ref()
     }
 }
@@ -65,17 +65,14 @@ impl OAuth2CustomParameter {
 
 /// A builder for [`OAuth2CustomParameter`](crate::types::OAuth2CustomParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OAuth2CustomParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) is_required: ::std::option::Option<bool>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) is_sensitive_field: ::std::option::Option<bool>,
-    pub(crate) connector_supplied_values:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connector_supplied_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::OAuth2CustomPropType>,
 }
 impl OAuth2CustomParameterBuilder {
@@ -86,8 +83,11 @@ impl OAuth2CustomParameterBuilder {
     }
     /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The key of the custom parameter required for OAuth 2.0 authentication.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
     pub fn is_required(mut self, input: bool) -> Self {
@@ -96,8 +96,11 @@ impl OAuth2CustomParameterBuilder {
     }
     /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
     pub fn set_is_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_required = input;
-        self
+        self.is_required = input; self
+    }
+    /// <p>Indicates whether the custom parameter for OAuth 2.0 authentication is required.</p>
+    pub fn get_is_required(&self) -> &::std::option::Option<bool> {
+        &self.is_required
     }
     /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +109,11 @@ impl OAuth2CustomParameterBuilder {
     }
     /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
+    }
+    /// <p>The label of the custom parameter used for OAuth 2.0 authentication.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,8 +122,11 @@ impl OAuth2CustomParameterBuilder {
     }
     /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description about the custom parameter used for OAuth 2.0 authentication.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
     pub fn is_sensitive_field(mut self, input: bool) -> Self {
@@ -126,30 +135,30 @@ impl OAuth2CustomParameterBuilder {
     }
     /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
     pub fn set_is_sensitive_field(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_sensitive_field = input;
-        self
+        self.is_sensitive_field = input; self
+    }
+    /// <p>Indicates whether this authentication custom parameter is a sensitive field.</p>
+    pub fn get_is_sensitive_field(&self) -> &::std::option::Option<bool> {
+        &self.is_sensitive_field
     }
     /// Appends an item to `connector_supplied_values`.
     ///
     /// To override the contents of this collection use [`set_connector_supplied_values`](Self::set_connector_supplied_values).
     ///
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn connector_supplied_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_supplied_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connector_supplied_values.unwrap_or_default();
-        v.push(input.into());
-        self.connector_supplied_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.connector_supplied_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn set_connector_supplied_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.connector_supplied_values = input;
-        self
+    pub fn set_connector_supplied_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.connector_supplied_values = input; self
+    }
+    /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
+    pub fn get_connector_supplied_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connector_supplied_values
     }
     /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
     pub fn r#type(mut self, input: crate::types::OAuth2CustomPropType) -> Self {
@@ -157,23 +166,33 @@ impl OAuth2CustomParameterBuilder {
         self
     }
     /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OAuth2CustomPropType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OAuth2CustomPropType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OAuth2CustomPropType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`OAuth2CustomParameter`](crate::types::OAuth2CustomParameter).
     pub fn build(self) -> crate::types::OAuth2CustomParameter {
         crate::types::OAuth2CustomParameter {
-            key: self.key,
-            is_required: self.is_required.unwrap_or_default(),
-            label: self.label,
-            description: self.description,
-            is_sensitive_field: self.is_sensitive_field.unwrap_or_default(),
-            connector_supplied_values: self.connector_supplied_values,
-            r#type: self.r#type,
+            key: self.key
+            ,
+            is_required: self.is_required
+                .unwrap_or_default()
+            ,
+            label: self.label
+            ,
+            description: self.description
+            ,
+            is_sensitive_field: self.is_sensitive_field
+                .unwrap_or_default()
+            ,
+            connector_supplied_values: self.connector_supplied_values
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

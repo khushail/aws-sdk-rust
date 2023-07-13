@@ -2,32 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoggingOptionsInput {}
+pub struct DescribeLoggingOptionsInput  {
+}
 impl DescribeLoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingOptionsInput`](crate::operation::describe_logging_options::DescribeLoggingOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_logging_options::builders::DescribeLoggingOptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_logging_options::builders::DescribeLoggingOptionsInputBuilder {
         crate::operation::describe_logging_options::builders::DescribeLoggingOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoggingOptionsInput`](crate::operation::describe_logging_options::DescribeLoggingOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct DescribeLoggingOptionsInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct DescribeLoggingOptionsInputBuilder {
+}
 impl DescribeLoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLoggingOptionsInput`](crate::operation::describe_logging_options::DescribeLoggingOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_logging_options::DescribeLoggingOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_logging_options::DescribeLoggingOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_logging_options::DescribeLoggingOptionsInput {},
+            crate::operation::describe_logging_options::DescribeLoggingOptionsInput {
+            }
         )
     }
 }
+

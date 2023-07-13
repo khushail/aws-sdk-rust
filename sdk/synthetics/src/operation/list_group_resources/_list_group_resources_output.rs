@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGroupResourcesOutput {
+pub struct ListGroupResourcesOutput  {
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
     #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,32 +13,29 @@ pub struct ListGroupResourcesOutput {
 }
 impl ListGroupResourcesOutput {
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn resources(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.resources.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListGroupResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListGroupResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_group_resources::builders::ListGroupResourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_group_resources::builders::ListGroupResourcesOutputBuilder {
         crate::operation::list_group_resources::builders::ListGroupResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupResourcesOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,17 @@ impl ListGroupResourcesOutputBuilder {
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input.into());
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.resources = input; self
+    }
+    /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +68,30 @@ impl ListGroupResourcesOutputBuilder {
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput).
     pub fn build(self) -> crate::operation::list_group_resources::ListGroupResourcesOutput {
         crate::operation::list_group_resources::ListGroupResourcesOutput {
-            resources: self.resources,
-            next_token: self.next_token,
+            resources: self.resources
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

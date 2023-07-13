@@ -3,7 +3,7 @@
 /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionRunAsConfig {
+pub struct FunctionRunAsConfig  {
     /// The group ID whose permissions are used to run a Lambda function.
     #[doc(hidden)]
     pub gid: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl FunctionRunAsConfig {
 
 /// A builder for [`FunctionRunAsConfig`](crate::types::FunctionRunAsConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionRunAsConfigBuilder {
     pub(crate) gid: ::std::option::Option<i32>,
     pub(crate) uid: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl FunctionRunAsConfigBuilder {
     }
     /// The group ID whose permissions are used to run a Lambda function.
     pub fn set_gid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gid = input;
-        self
+        self.gid = input; self
+    }
+    /// The group ID whose permissions are used to run a Lambda function.
+    pub fn get_gid(&self) -> &::std::option::Option<i32> {
+        &self.gid
     }
     /// The user ID whose permissions are used to run a Lambda function.
     pub fn uid(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl FunctionRunAsConfigBuilder {
     }
     /// The user ID whose permissions are used to run a Lambda function.
     pub fn set_uid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
+    }
+    /// The user ID whose permissions are used to run a Lambda function.
+    pub fn get_uid(&self) -> &::std::option::Option<i32> {
+        &self.uid
     }
     /// Consumes the builder and constructs a [`FunctionRunAsConfig`](crate::types::FunctionRunAsConfig).
     pub fn build(self) -> crate::types::FunctionRunAsConfig {
         crate::types::FunctionRunAsConfig {
-            gid: self.gid,
-            uid: self.uid,
+            gid: self.gid
+            ,
+            uid: self.uid
+            ,
         }
     }
 }
+

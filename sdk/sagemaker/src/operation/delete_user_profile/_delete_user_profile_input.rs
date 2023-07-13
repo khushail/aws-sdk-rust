@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserProfileInput {
+pub struct DeleteUserProfileInput  {
     /// <p>The domain ID.</p>
     #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct DeleteUserProfileInput {
 }
 impl DeleteUserProfileInput {
     /// <p>The domain ID.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The user profile name.</p>
-    pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_profile_name(&self) -> ::std::option::Option<& str> {
         self.user_profile_name.as_deref()
     }
 }
 impl DeleteUserProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
-    pub fn builder(
-    ) -> crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder {
+    pub fn builder() -> crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder {
         crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserProfileInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
@@ -45,37 +42,35 @@ impl DeleteUserProfileInputBuilder {
     }
     /// <p>The domain ID.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
+    }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
     }
     /// <p>The user profile name.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user profile name.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.user_profile_name = input;
-        self
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_profile_name = input; self
+    }
+    /// <p>The user profile name.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_profile_name
     }
     /// Consumes the builder and constructs a [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_user_profile::DeleteUserProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_user_profile::DeleteUserProfileInput {
-                domain_id: self.domain_id,
-                user_profile_name: self.user_profile_name,
-            },
+                domain_id: self.domain_id
+                ,
+                user_profile_name: self.user_profile_name
+                ,
+            }
         )
     }
 }
+

@@ -3,103 +3,88 @@ pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_output::Author
 
 pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_input::AuthorizeIpRulesInputBuilder;
 
+impl AuthorizeIpRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.authorize_ip_rules();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `AuthorizeIpRules`.
-///
-/// <p>Adds one or more rules to the specified IP access control group.</p>
+/// 
+/// <p>Adds one or more rules to the specified IP access control group.</p> 
 /// <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeIpRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder,
+                    inner: crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder,
 }
-impl AuthorizeIpRulesFluentBuilder {
+impl AuthorizeIpRulesFluentBuilder  {
     /// Creates a new `AuthorizeIpRules`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::authorize_ip_rules::AuthorizeIpRules,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the AuthorizeIpRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::authorize_ip_rules::AuthorizeIpRules, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::authorize_ip_rules::AuthorizeIpRulesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput, ::aws_smithy_http::result::SdkError<crate::operation::authorize_ip_rules::AuthorizeIpRulesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::authorize_ip_rules::AuthorizeIpRules,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput, ::aws_smithy_http::result::SdkError<crate::operation::authorize_ip_rules::AuthorizeIpRulesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::authorize_ip_rules::AuthorizeIpRules, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::authorize_ip_rules::AuthorizeIpRulesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -109,6 +94,10 @@ impl AuthorizeIpRulesFluentBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// <p>The identifier of the group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
     }
     /// Appends an item to `UserRules`.
     ///
@@ -120,11 +109,13 @@ impl AuthorizeIpRulesFluentBuilder {
         self
     }
     /// <p>The rules to add to the group.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
-    ) -> Self {
+    pub fn set_user_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>) -> Self {
         self.inner = self.inner.set_user_rules(input);
         self
     }
+    /// <p>The rules to add to the group.</p>
+    pub fn get_user_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+        self.inner.get_user_rules()
+    }
 }
+

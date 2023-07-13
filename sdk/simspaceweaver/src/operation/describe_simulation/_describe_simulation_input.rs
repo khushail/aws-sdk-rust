@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSimulationInput {
+pub struct DescribeSimulationInput  {
     /// <p>The name of the simulation.</p>
     #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSimulationInput {
     /// <p>The name of the simulation.</p>
-    pub fn simulation(&self) -> ::std::option::Option<&str> {
+    pub fn simulation(&self) -> ::std::option::Option<& str> {
         self.simulation.as_deref()
     }
 }
 impl DescribeSimulationInput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationInput`](crate::operation::describe_simulation::DescribeSimulationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_simulation::builders::DescribeSimulationInputBuilder {
+    pub fn builder() -> crate::operation::describe_simulation::builders::DescribeSimulationInputBuilder {
         crate::operation::describe_simulation::builders::DescribeSimulationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSimulationInput`](crate::operation::describe_simulation::DescribeSimulationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSimulationInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl DescribeSimulationInputBuilder {
     }
     /// <p>The name of the simulation.</p>
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.simulation = input;
-        self
+        self.simulation = input; self
+    }
+    /// <p>The name of the simulation.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
     }
     /// Consumes the builder and constructs a [`DescribeSimulationInput`](crate::operation::describe_simulation::DescribeSimulationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_simulation::DescribeSimulationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_simulation::DescribeSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_simulation::DescribeSimulationInput {
-                simulation: self.simulation,
-            },
+                simulation: self.simulation
+                ,
+            }
         )
     }
 }
+

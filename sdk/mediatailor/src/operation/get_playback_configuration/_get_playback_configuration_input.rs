@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPlaybackConfigurationInput {
+pub struct GetPlaybackConfigurationInput  {
     /// <p>The identifier for the playback configuration.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetPlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetPlaybackConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetPlaybackConfigurationInput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder {
         crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPlaybackConfigurationInput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPlaybackConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetPlaybackConfigurationInputBuilder {
     }
     /// <p>The identifier for the playback configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`GetPlaybackConfigurationInput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_playback_configuration::GetPlaybackConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_playback_configuration::GetPlaybackConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_playback_configuration::GetPlaybackConfigurationInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

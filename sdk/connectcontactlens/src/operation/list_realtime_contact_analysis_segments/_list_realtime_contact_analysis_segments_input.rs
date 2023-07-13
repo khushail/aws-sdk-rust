@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRealtimeContactAnalysisSegmentsInput {
+pub struct ListRealtimeContactAnalysisSegmentsInput  {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListRealtimeContactAnalysisSegmentsInput {
 }
 impl ListRealtimeContactAnalysisSegmentsInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The maximimum number of results to return per page.</p>
@@ -30,22 +30,20 @@ impl ListRealtimeContactAnalysisSegmentsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListRealtimeContactAnalysisSegmentsInput {
     /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
-    pub fn builder() -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsInputBuilder{
+    pub fn builder() -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsInputBuilder {
         crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
@@ -60,8 +58,11 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The identifier of the contact.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +71,11 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     }
     /// <p>The identifier of the contact.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
     }
     /// <p>The maximimum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -80,8 +84,11 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     }
     /// <p>The maximimum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximimum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,11 +97,14 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput {
                 instance_id: self.instance_id
@@ -110,3 +120,4 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
         )
     }
 }
+

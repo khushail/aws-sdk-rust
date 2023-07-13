@@ -3,14 +3,14 @@
 /// <p>Configuration information for port forwarding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortForwardingConfig {
+pub struct PortForwardingConfig  {
     /// <p>The port mappings for the configuration.</p>
     #[doc(hidden)]
     pub port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>,
 }
 impl PortForwardingConfig {
     /// <p>The port mappings for the configuration.</p>
-    pub fn port_mappings(&self) -> ::std::option::Option<&[crate::types::PortMapping]> {
+    pub fn port_mappings(&self) -> ::std::option::Option<& [crate::types::PortMapping]> {
         self.port_mappings.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl PortForwardingConfig {
 
 /// A builder for [`PortForwardingConfig`](crate::types::PortForwardingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortForwardingConfigBuilder {
     pub(crate) port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>,
 }
@@ -37,22 +35,24 @@ impl PortForwardingConfigBuilder {
     /// <p>The port mappings for the configuration.</p>
     pub fn port_mappings(mut self, input: crate::types::PortMapping) -> Self {
         let mut v = self.port_mappings.unwrap_or_default();
-        v.push(input);
-        self.port_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.port_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The port mappings for the configuration.</p>
-    pub fn set_port_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>,
-    ) -> Self {
-        self.port_mappings = input;
-        self
+    pub fn set_port_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>) -> Self {
+        self.port_mappings = input; self
+    }
+    /// <p>The port mappings for the configuration.</p>
+    pub fn get_port_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortMapping>> {
+        &self.port_mappings
     }
     /// Consumes the builder and constructs a [`PortForwardingConfig`](crate::types::PortForwardingConfig).
     pub fn build(self) -> crate::types::PortForwardingConfig {
         crate::types::PortForwardingConfig {
-            port_mappings: self.port_mappings,
+            port_mappings: self.port_mappings
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies a condition that filters the results of a request for information about classification jobs. Each condition consists of a property, an operator, and one or more values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobsFilterTerm {
+pub struct ListJobsFilterTerm  {
     /// <p>The operator to use to filter the results.</p>
     #[doc(hidden)]
     pub comparator: ::std::option::Option<crate::types::JobComparator>,
@@ -16,15 +16,15 @@ pub struct ListJobsFilterTerm {
 }
 impl ListJobsFilterTerm {
     /// <p>The operator to use to filter the results.</p>
-    pub fn comparator(&self) -> ::std::option::Option<&crate::types::JobComparator> {
+    pub fn comparator(&self) -> ::std::option::Option<& crate::types::JobComparator> {
         self.comparator.as_ref()
     }
     /// <p>The property to use to filter the results.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::ListJobsFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::ListJobsFilterKey> {
         self.key.as_ref()
     }
     /// <p>An array that lists one or more values to use to filter the results.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ListJobsFilterTerm {
 
 /// A builder for [`ListJobsFilterTerm`](crate::types::ListJobsFilterTerm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsFilterTermBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) key: ::std::option::Option<crate::types::ListJobsFilterKey>,
@@ -52,12 +50,12 @@ impl ListJobsFilterTermBuilder {
         self
     }
     /// <p>The operator to use to filter the results.</p>
-    pub fn set_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::JobComparator>,
-    ) -> Self {
-        self.comparator = input;
-        self
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::JobComparator>) -> Self {
+        self.comparator = input; self
+    }
+    /// <p>The operator to use to filter the results.</p>
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::JobComparator> {
+        &self.comparator
     }
     /// <p>The property to use to filter the results.</p>
     pub fn key(mut self, input: crate::types::ListJobsFilterKey) -> Self {
@@ -65,12 +63,12 @@ impl ListJobsFilterTermBuilder {
         self
     }
     /// <p>The property to use to filter the results.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::ListJobsFilterKey>,
-    ) -> Self {
-        self.key = input;
-        self
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::ListJobsFilterKey>) -> Self {
+        self.key = input; self
+    }
+    /// <p>The property to use to filter the results.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::ListJobsFilterKey> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -79,24 +77,28 @@ impl ListJobsFilterTermBuilder {
     /// <p>An array that lists one or more values to use to filter the results.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that lists one or more values to use to filter the results.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>An array that lists one or more values to use to filter the results.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ListJobsFilterTerm`](crate::types::ListJobsFilterTerm).
     pub fn build(self) -> crate::types::ListJobsFilterTerm {
         crate::types::ListJobsFilterTerm {
-            comparator: self.comparator,
-            key: self.key,
-            values: self.values,
+            comparator: self.comparator
+            ,
+            key: self.key
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

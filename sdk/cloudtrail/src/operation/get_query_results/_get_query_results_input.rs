@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryResultsInput {
+pub struct GetQueryResultsInput  {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
     #[doc(hidden)]
@@ -20,15 +20,15 @@ pub struct GetQueryResultsInput {
 impl GetQueryResultsInput {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
-    pub fn event_data_store(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store(&self) -> ::std::option::Option<& str> {
         self.event_data_store.as_deref()
     }
     /// <p>The ID of the query for which you want to get results.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>A token you can use to get the next page of query results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of query results to display on a single page.</p>
@@ -45,9 +45,7 @@ impl GetQueryResultsInput {
 
 /// A builder for [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryResultsInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
@@ -57,21 +55,19 @@ pub struct GetQueryResultsInputBuilder {
 impl GetQueryResultsInputBuilder {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_data_store = input;
-        self
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store = input; self
+    }
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+    #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store
     }
     /// <p>The ID of the query for which you want to get results.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,8 +76,11 @@ impl GetQueryResultsInputBuilder {
     }
     /// <p>The ID of the query for which you want to get results.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
+    }
+    /// <p>The ID of the query for which you want to get results.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
     }
     /// <p>A token you can use to get the next page of query results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,8 +89,11 @@ impl GetQueryResultsInputBuilder {
     }
     /// <p>A token you can use to get the next page of query results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token you can use to get the next page of query results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of query results to display on a single page.</p>
     pub fn max_query_results(mut self, input: i32) -> Self {
@@ -100,21 +102,26 @@ impl GetQueryResultsInputBuilder {
     }
     /// <p>The maximum number of query results to display on a single page.</p>
     pub fn set_max_query_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_query_results = input;
-        self
+        self.max_query_results = input; self
+    }
+    /// <p>The maximum number of query results to display on a single page.</p>
+    pub fn get_max_query_results(&self) -> &::std::option::Option<i32> {
+        &self.max_query_results
     }
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_query_results::GetQueryResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_query_results::GetQueryResultsInput {
-            event_data_store: self.event_data_store,
-            query_id: self.query_id,
-            next_token: self.next_token,
-            max_query_results: self.max_query_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_query_results::GetQueryResultsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_query_results::GetQueryResultsInput {
+                event_data_store: self.event_data_store
+                ,
+                query_id: self.query_id
+                ,
+                next_token: self.next_token
+                ,
+                max_query_results: self.max_query_results
+                ,
+            }
+        )
     }
 }
+

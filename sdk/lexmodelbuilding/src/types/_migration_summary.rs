@@ -3,7 +3,7 @@
 /// <p>Provides information about migrating a bot from Amazon Lex V1 to Amazon Lex V2.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MigrationSummary {
+pub struct MigrationSummary  {
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
     #[doc(hidden)]
     pub migration_id: ::std::option::Option<::std::string::String>,
@@ -34,39 +34,39 @@ pub struct MigrationSummary {
 }
 impl MigrationSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
-    pub fn migration_id(&self) -> ::std::option::Option<&str> {
+    pub fn migration_id(&self) -> ::std::option::Option<& str> {
         self.migration_id.as_deref()
     }
     /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
-    pub fn v1_bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn v1_bot_name(&self) -> ::std::option::Option<& str> {
         self.v1_bot_name.as_deref()
     }
     /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
-    pub fn v1_bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn v1_bot_version(&self) -> ::std::option::Option<& str> {
         self.v1_bot_version.as_deref()
     }
     /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
-    pub fn v1_bot_locale(&self) -> ::std::option::Option<&crate::types::Locale> {
+    pub fn v1_bot_locale(&self) -> ::std::option::Option<& crate::types::Locale> {
         self.v1_bot_locale.as_ref()
     }
     /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
-    pub fn v2_bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn v2_bot_id(&self) -> ::std::option::Option<& str> {
         self.v2_bot_id.as_deref()
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    pub fn v2_bot_role(&self) -> ::std::option::Option<&str> {
+    pub fn v2_bot_role(&self) -> ::std::option::Option<& str> {
         self.v2_bot_role.as_deref()
     }
     /// <p>The status of the operation. When the status is <code>COMPLETE</code> the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-    pub fn migration_status(&self) -> ::std::option::Option<&crate::types::MigrationStatus> {
+    pub fn migration_status(&self) -> ::std::option::Option<& crate::types::MigrationStatus> {
         self.migration_status.as_ref()
     }
     /// <p>The strategy used to conduct the migration.</p>
-    pub fn migration_strategy(&self) -> ::std::option::Option<&crate::types::MigrationStrategy> {
+    pub fn migration_strategy(&self) -> ::std::option::Option<& crate::types::MigrationStrategy> {
         self.migration_strategy.as_ref()
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn migration_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn migration_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.migration_timestamp.as_ref()
     }
 }
@@ -79,9 +79,7 @@ impl MigrationSummary {
 
 /// A builder for [`MigrationSummary`](crate::types::MigrationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MigrationSummaryBuilder {
     pub(crate) migration_id: ::std::option::Option<::std::string::String>,
     pub(crate) v1_bot_name: ::std::option::Option<::std::string::String>,
@@ -101,8 +99,11 @@ impl MigrationSummaryBuilder {
     }
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
     pub fn set_migration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_id = input;
-        self
+        self.migration_id = input; self
+    }
+    /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+    pub fn get_migration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_id
     }
     /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
     pub fn v1_bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,24 +112,24 @@ impl MigrationSummaryBuilder {
     }
     /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
     pub fn set_v1_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v1_bot_name = input;
-        self
+        self.v1_bot_name = input; self
+    }
+    /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
+    pub fn get_v1_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.v1_bot_name
     }
     /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
-    pub fn v1_bot_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn v1_bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.v1_bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
-    pub fn set_v1_bot_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.v1_bot_version = input;
-        self
+    pub fn set_v1_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.v1_bot_version = input; self
+    }
+    /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
+    pub fn get_v1_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.v1_bot_version
     }
     /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
     pub fn v1_bot_locale(mut self, input: crate::types::Locale) -> Self {
@@ -137,8 +138,11 @@ impl MigrationSummaryBuilder {
     }
     /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
     pub fn set_v1_bot_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.v1_bot_locale = input;
-        self
+        self.v1_bot_locale = input; self
+    }
+    /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
+    pub fn get_v1_bot_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.v1_bot_locale
     }
     /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
     pub fn v2_bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,8 +151,11 @@ impl MigrationSummaryBuilder {
     }
     /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
     pub fn set_v2_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v2_bot_id = input;
-        self
+        self.v2_bot_id = input; self
+    }
+    /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
+    pub fn get_v2_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.v2_bot_id
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn v2_bot_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,8 +164,11 @@ impl MigrationSummaryBuilder {
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn set_v2_bot_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v2_bot_role = input;
-        self
+        self.v2_bot_role = input; self
+    }
+    /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    pub fn get_v2_bot_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.v2_bot_role
     }
     /// <p>The status of the operation. When the status is <code>COMPLETE</code> the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
     pub fn migration_status(mut self, input: crate::types::MigrationStatus) -> Self {
@@ -166,12 +176,12 @@ impl MigrationSummaryBuilder {
         self
     }
     /// <p>The status of the operation. When the status is <code>COMPLETE</code> the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-    pub fn set_migration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStatus>,
-    ) -> Self {
-        self.migration_status = input;
-        self
+    pub fn set_migration_status(mut self, input: ::std::option::Option<crate::types::MigrationStatus>) -> Self {
+        self.migration_status = input; self
+    }
+    /// <p>The status of the operation. When the status is <code>COMPLETE</code> the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
+    pub fn get_migration_status(&self) -> &::std::option::Option<crate::types::MigrationStatus> {
+        &self.migration_status
     }
     /// <p>The strategy used to conduct the migration.</p>
     pub fn migration_strategy(mut self, input: crate::types::MigrationStrategy) -> Self {
@@ -179,12 +189,12 @@ impl MigrationSummaryBuilder {
         self
     }
     /// <p>The strategy used to conduct the migration.</p>
-    pub fn set_migration_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStrategy>,
-    ) -> Self {
-        self.migration_strategy = input;
-        self
+    pub fn set_migration_strategy(mut self, input: ::std::option::Option<crate::types::MigrationStrategy>) -> Self {
+        self.migration_strategy = input; self
+    }
+    /// <p>The strategy used to conduct the migration.</p>
+    pub fn get_migration_strategy(&self) -> &::std::option::Option<crate::types::MigrationStrategy> {
+        &self.migration_strategy
     }
     /// <p>The date and time that the migration started.</p>
     pub fn migration_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -192,25 +202,35 @@ impl MigrationSummaryBuilder {
         self
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn set_migration_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.migration_timestamp = input;
-        self
+    pub fn set_migration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.migration_timestamp = input; self
+    }
+    /// <p>The date and time that the migration started.</p>
+    pub fn get_migration_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.migration_timestamp
     }
     /// Consumes the builder and constructs a [`MigrationSummary`](crate::types::MigrationSummary).
     pub fn build(self) -> crate::types::MigrationSummary {
         crate::types::MigrationSummary {
-            migration_id: self.migration_id,
-            v1_bot_name: self.v1_bot_name,
-            v1_bot_version: self.v1_bot_version,
-            v1_bot_locale: self.v1_bot_locale,
-            v2_bot_id: self.v2_bot_id,
-            v2_bot_role: self.v2_bot_role,
-            migration_status: self.migration_status,
-            migration_strategy: self.migration_strategy,
-            migration_timestamp: self.migration_timestamp,
+            migration_id: self.migration_id
+            ,
+            v1_bot_name: self.v1_bot_name
+            ,
+            v1_bot_version: self.v1_bot_version
+            ,
+            v1_bot_locale: self.v1_bot_locale
+            ,
+            v2_bot_id: self.v2_bot_id
+            ,
+            v2_bot_role: self.v2_bot_role
+            ,
+            migration_status: self.migration_status
+            ,
+            migration_strategy: self.migration_strategy
+            ,
+            migration_timestamp: self.migration_timestamp
+            ,
         }
     }
 }
+

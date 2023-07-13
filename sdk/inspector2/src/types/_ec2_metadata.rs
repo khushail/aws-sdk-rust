@@ -3,12 +3,10 @@
 /// <p>Meta data details of an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2Metadata {
+pub struct Ec2Metadata  {
     /// <p>The tags attached to the instance.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
     #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
@@ -18,19 +16,15 @@ pub struct Ec2Metadata {
 }
 impl Ec2Metadata {
     /// <p>The tags attached to the instance.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
-    pub fn ami_id(&self) -> ::std::option::Option<&str> {
+    pub fn ami_id(&self) -> ::std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The platform of the instance.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::Ec2Platform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::Ec2Platform> {
         self.platform.as_ref()
     }
 }
@@ -43,13 +37,9 @@ impl Ec2Metadata {
 
 /// A builder for [`Ec2Metadata`](crate::types::Ec2Metadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2MetadataBuilder {
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) ami_id: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<crate::types::Ec2Platform>,
 }
@@ -59,25 +49,19 @@ impl Ec2MetadataBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags attached to the instance.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags attached to the instance.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags attached to the instance.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +70,11 @@ impl Ec2MetadataBuilder {
     }
     /// <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ami_id = input;
-        self
+        self.ami_id = input; self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
     }
     /// <p>The platform of the instance.</p>
     pub fn platform(mut self, input: crate::types::Ec2Platform) -> Self {
@@ -96,15 +83,22 @@ impl Ec2MetadataBuilder {
     }
     /// <p>The platform of the instance.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Ec2Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
+    }
+    /// <p>The platform of the instance.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Ec2Platform> {
+        &self.platform
     }
     /// Consumes the builder and constructs a [`Ec2Metadata`](crate::types::Ec2Metadata).
     pub fn build(self) -> crate::types::Ec2Metadata {
         crate::types::Ec2Metadata {
-            tags: self.tags,
-            ami_id: self.ami_id,
-            platform: self.platform,
+            tags: self.tags
+            ,
+            ami_id: self.ami_id
+            ,
+            platform: self.platform
+            ,
         }
     }
 }
+

@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateConnectionAliasInput {
+pub struct DisassociateConnectionAliasInput  {
     /// <p>The identifier of the connection alias to disassociate.</p>
     #[doc(hidden)]
     pub alias_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateConnectionAliasInput {
     /// <p>The identifier of the connection alias to disassociate.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
 }
 impl DisassociateConnectionAliasInput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectionAliasInput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput).
-    pub fn builder() -> crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder {
         crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateConnectionAliasInput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateConnectionAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl DisassociateConnectionAliasInputBuilder {
     }
     /// <p>The identifier of the connection alias to disassociate.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
+    }
+    /// <p>The identifier of the connection alias to disassociate.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
     }
     /// Consumes the builder and constructs a [`DisassociateConnectionAliasInput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput {
-                alias_id: self.alias_id,
-            },
+                alias_id: self.alias_id
+                ,
+            }
         )
     }
 }
+

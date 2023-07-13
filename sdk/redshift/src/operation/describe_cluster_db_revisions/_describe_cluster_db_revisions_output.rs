@@ -2,49 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClusterDbRevisionsOutput {
+pub struct DescribeClusterDbRevisionsOutput  {
     /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of revisions.</p>
     #[doc(hidden)]
-    pub cluster_db_revisions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
+    pub cluster_db_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterDbRevisionsOutput {
     /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of revisions.</p>
-    pub fn cluster_db_revisions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClusterDbRevision]> {
+    pub fn cluster_db_revisions(&self) -> ::std::option::Option<& [crate::types::ClusterDbRevision]> {
         self.cluster_db_revisions.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeClusterDbRevisionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeClusterDbRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterDbRevisionsOutput`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput).
-    pub fn builder() -> crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsOutputBuilder {
         crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterDbRevisionsOutput`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterDbRevisionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_db_revisions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
+    pub(crate) cluster_db_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterDbRevisionsOutputBuilder {
@@ -55,8 +49,11 @@ impl DescribeClusterDbRevisionsOutputBuilder {
     }
     /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Appends an item to `cluster_db_revisions`.
     ///
@@ -65,35 +62,36 @@ impl DescribeClusterDbRevisionsOutputBuilder {
     /// <p>A list of revisions.</p>
     pub fn cluster_db_revisions(mut self, input: crate::types::ClusterDbRevision) -> Self {
         let mut v = self.cluster_db_revisions.unwrap_or_default();
-        v.push(input);
-        self.cluster_db_revisions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cluster_db_revisions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of revisions.</p>
-    pub fn set_cluster_db_revisions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
-    ) -> Self {
-        self.cluster_db_revisions = input;
-        self
+    pub fn set_cluster_db_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>) -> Self {
+        self.cluster_db_revisions = input; self
+    }
+    /// <p>A list of revisions.</p>
+    pub fn get_cluster_db_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>> {
+        &self.cluster_db_revisions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeClusterDbRevisionsOutput`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput {
+    pub fn build(self) -> crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput {
         crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput {
-            marker: self.marker,
-            cluster_db_revisions: self.cluster_db_revisions,
+            marker: self.marker
+            ,
+            cluster_db_revisions: self.cluster_db_revisions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

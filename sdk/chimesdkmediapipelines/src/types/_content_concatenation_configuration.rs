@@ -3,14 +3,14 @@
 /// <p>The composited content configuration object for a specified media pipeline. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentConcatenationConfiguration {
+pub struct ContentConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
 impl ContentConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ArtifactsConcatenationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ArtifactsConcatenationState> {
         self.state.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ContentConcatenationConfiguration {
 
 /// A builder for [`ContentConcatenationConfiguration`](crate::types::ContentConcatenationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContentConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
@@ -36,15 +34,19 @@ impl ContentConcatenationConfigurationBuilder {
         self
     }
     /// <p>Enables or disables the configuration object.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>Enables or disables the configuration object.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsConcatenationState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ContentConcatenationConfiguration`](crate::types::ContentConcatenationConfiguration).
     pub fn build(self) -> crate::types::ContentConcatenationConfiguration {
-        crate::types::ContentConcatenationConfiguration { state: self.state }
+        crate::types::ContentConcatenationConfiguration {
+            state: self.state
+            ,
+        }
     }
 }
+

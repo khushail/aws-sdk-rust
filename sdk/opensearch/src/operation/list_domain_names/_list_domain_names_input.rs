@@ -3,14 +3,14 @@
 /// <p>Container for the parameters to the <code>ListDomainNames</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainNamesInput {
+pub struct ListDomainNamesInput  {
     /// <p>Filters the output by domain engine type.</p>
     #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
 }
 impl ListDomainNamesInput {
     /// <p>Filters the output by domain engine type.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> ::std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ListDomainNamesInput {
 
 /// A builder for [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainNamesInputBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
 }
@@ -36,22 +34,21 @@ impl ListDomainNamesInputBuilder {
         self
     }
     /// <p>Filters the output by domain engine type.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
-        self.engine_type = input;
-        self
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
+        self.engine_type = input; self
+    }
+    /// <p>Filters the output by domain engine type.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// Consumes the builder and constructs a [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_domain_names::ListDomainNamesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_domain_names::ListDomainNamesInput {
-            engine_type: self.engine_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domain_names::ListDomainNamesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_domain_names::ListDomainNamesInput {
+                engine_type: self.engine_type
+                ,
+            }
+        )
     }
 }
+

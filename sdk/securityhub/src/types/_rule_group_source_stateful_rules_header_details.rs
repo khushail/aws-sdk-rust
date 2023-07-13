@@ -3,7 +3,7 @@
 /// <p>The inspection criteria for a stateful rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupSourceStatefulRulesHeaderDetails {
+pub struct RuleGroupSourceStatefulRulesHeaderDetails  {
     /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>.</p>
     #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct RuleGroupSourceStatefulRulesHeaderDetails {
 }
 impl RuleGroupSourceStatefulRulesHeaderDetails {
     /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The destination port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
-    pub fn destination_port(&self) -> ::std::option::Option<&str> {
+    pub fn destination_port(&self) -> ::std::option::Option<& str> {
         self.destination_port.as_deref()
     }
     /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection matches bidirectional traffic, both from the source to the destination and from the destination to the source. If set to <code>FORWARD</code>, the inspection only matches traffic going from the source to the destination.</p>
-    pub fn direction(&self) -> ::std::option::Option<&str> {
+    pub fn direction(&self) -> ::std::option::Option<& str> {
         self.direction.as_deref()
     }
     /// <p>The protocol to inspect for. To inspector for all protocols, use <code>IP</code>.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The source port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
-    pub fn source_port(&self) -> ::std::option::Option<&str> {
+    pub fn source_port(&self) -> ::std::option::Option<& str> {
         self.source_port.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl RuleGroupSourceStatefulRulesHeaderDetails {
 
 /// A builder for [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::types::RuleGroupSourceStatefulRulesHeaderDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatefulRulesHeaderDetailsBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) destination_port: ::std::option::Option<::std::string::String>,
@@ -77,24 +75,24 @@ impl RuleGroupSourceStatefulRulesHeaderDetailsBuilder {
     }
     /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
+    }
+    /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// <p>The destination port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
-    pub fn destination_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_port = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
-    pub fn set_destination_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_port = input;
-        self
+    pub fn set_destination_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_port = input; self
+    }
+    /// <p>The destination port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    pub fn get_destination_port(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_port
     }
     /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection matches bidirectional traffic, both from the source to the destination and from the destination to the source. If set to <code>FORWARD</code>, the inspection only matches traffic going from the source to the destination.</p>
     pub fn direction(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +101,11 @@ impl RuleGroupSourceStatefulRulesHeaderDetailsBuilder {
     }
     /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection matches bidirectional traffic, both from the source to the destination and from the destination to the source. If set to <code>FORWARD</code>, the inspection only matches traffic going from the source to the destination.</p>
     pub fn set_direction(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direction = input;
-        self
+        self.direction = input; self
+    }
+    /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection matches bidirectional traffic, both from the source to the destination and from the destination to the source. If set to <code>FORWARD</code>, the inspection only matches traffic going from the source to the destination.</p>
+    pub fn get_direction(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direction
     }
     /// <p>The protocol to inspect for. To inspector for all protocols, use <code>IP</code>.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,8 +114,11 @@ impl RuleGroupSourceStatefulRulesHeaderDetailsBuilder {
     }
     /// <p>The protocol to inspect for. To inspector for all protocols, use <code>IP</code>.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
+    }
+    /// <p>The protocol to inspect for. To inspector for all protocols, use <code>IP</code>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,8 +127,11 @@ impl RuleGroupSourceStatefulRulesHeaderDetailsBuilder {
     }
     /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The source port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
     pub fn source_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,18 +140,28 @@ impl RuleGroupSourceStatefulRulesHeaderDetailsBuilder {
     }
     /// <p>The source port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
     pub fn set_source_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_port = input;
-        self
+        self.source_port = input; self
+    }
+    /// <p>The source port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    pub fn get_source_port(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_port
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::types::RuleGroupSourceStatefulRulesHeaderDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceStatefulRulesHeaderDetails {
         crate::types::RuleGroupSourceStatefulRulesHeaderDetails {
-            destination: self.destination,
-            destination_port: self.destination_port,
-            direction: self.direction,
-            protocol: self.protocol,
-            source: self.source,
-            source_port: self.source_port,
+            destination: self.destination
+            ,
+            destination_port: self.destination_port
+            ,
+            direction: self.direction
+            ,
+            protocol: self.protocol
+            ,
+            source: self.source
+            ,
+            source_port: self.source_port
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Attributes of Hyperledger Fabric for a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeFabricAttributes {
+pub struct NodeFabricAttributes  {
     /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
     #[doc(hidden)]
     pub peer_endpoint: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct NodeFabricAttributes {
 }
 impl NodeFabricAttributes {
     /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
-    pub fn peer_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn peer_endpoint(&self) -> ::std::option::Option<& str> {
         self.peer_endpoint.as_deref()
     }
     /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
-    pub fn peer_event_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn peer_event_endpoint(&self) -> ::std::option::Option<& str> {
         self.peer_event_endpoint.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl NodeFabricAttributes {
 
 /// A builder for [`NodeFabricAttributes`](crate::types::NodeFabricAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeFabricAttributesBuilder {
     pub(crate) peer_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) peer_event_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl NodeFabricAttributesBuilder {
     /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
-    pub fn peer_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
-    pub fn set_peer_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.peer_endpoint = input;
-        self
+    pub fn set_peer_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.peer_endpoint = input; self
+    }
+    /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
+    pub fn get_peer_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_endpoint
     }
     /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
-    pub fn peer_event_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_event_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_event_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
-    pub fn set_peer_event_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.peer_event_endpoint = input;
-        self
+    pub fn set_peer_event_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.peer_event_endpoint = input; self
+    }
+    /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
+    pub fn get_peer_event_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_event_endpoint
     }
     /// Consumes the builder and constructs a [`NodeFabricAttributes`](crate::types::NodeFabricAttributes).
     pub fn build(self) -> crate::types::NodeFabricAttributes {
         crate::types::NodeFabricAttributes {
-            peer_endpoint: self.peer_endpoint,
-            peer_event_endpoint: self.peer_event_endpoint,
+            peer_endpoint: self.peer_endpoint
+            ,
+            peer_event_endpoint: self.peer_event_endpoint
+            ,
         }
     }
 }
+

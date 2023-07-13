@@ -3,7 +3,7 @@
 /// <p>The structure representing the configuration for Temporal Statistics operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemporalStatisticsConfigInput {
+pub struct TemporalStatisticsConfigInput  {
     /// <p>The input for the temporal statistics grouping by time frequency option.</p>
     #[doc(hidden)]
     pub group_by: ::std::option::Option<crate::types::GroupBy>,
@@ -16,15 +16,15 @@ pub struct TemporalStatisticsConfigInput {
 }
 impl TemporalStatisticsConfigInput {
     /// <p>The input for the temporal statistics grouping by time frequency option.</p>
-    pub fn group_by(&self) -> ::std::option::Option<&crate::types::GroupBy> {
+    pub fn group_by(&self) -> ::std::option::Option<& crate::types::GroupBy> {
         self.group_by.as_ref()
     }
     /// <p>The list of the statistics method options.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&[crate::types::TemporalStatistics]> {
+    pub fn statistics(&self) -> ::std::option::Option<& [crate::types::TemporalStatistics]> {
         self.statistics.as_deref()
     }
     /// <p>The list of target band names for the temporal statistic to calculate.</p>
-    pub fn target_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn target_bands(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.target_bands.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl TemporalStatisticsConfigInput {
 
 /// A builder for [`TemporalStatisticsConfigInput`](crate::types::TemporalStatisticsConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemporalStatisticsConfigInputBuilder {
     pub(crate) group_by: ::std::option::Option<crate::types::GroupBy>,
     pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>>,
@@ -53,8 +51,11 @@ impl TemporalStatisticsConfigInputBuilder {
     }
     /// <p>The input for the temporal statistics grouping by time frequency option.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::GroupBy>) -> Self {
-        self.group_by = input;
-        self
+        self.group_by = input; self
+    }
+    /// <p>The input for the temporal statistics grouping by time frequency option.</p>
+    pub fn get_group_by(&self) -> &::std::option::Option<crate::types::GroupBy> {
+        &self.group_by
     }
     /// Appends an item to `statistics`.
     ///
@@ -63,17 +64,17 @@ impl TemporalStatisticsConfigInputBuilder {
     /// <p>The list of the statistics method options.</p>
     pub fn statistics(mut self, input: crate::types::TemporalStatistics) -> Self {
         let mut v = self.statistics.unwrap_or_default();
-        v.push(input);
-        self.statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of the statistics method options.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>>,
-    ) -> Self {
-        self.statistics = input;
-        self
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>>) -> Self {
+        self.statistics = input; self
+    }
+    /// <p>The list of the statistics method options.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>> {
+        &self.statistics
     }
     /// Appends an item to `target_bands`.
     ///
@@ -82,24 +83,28 @@ impl TemporalStatisticsConfigInputBuilder {
     /// <p>The list of target band names for the temporal statistic to calculate.</p>
     pub fn target_bands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_bands.unwrap_or_default();
-        v.push(input.into());
-        self.target_bands = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_bands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of target band names for the temporal statistic to calculate.</p>
-    pub fn set_target_bands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.target_bands = input;
-        self
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.target_bands = input; self
+    }
+    /// <p>The list of target band names for the temporal statistic to calculate.</p>
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_bands
     }
     /// Consumes the builder and constructs a [`TemporalStatisticsConfigInput`](crate::types::TemporalStatisticsConfigInput).
     pub fn build(self) -> crate::types::TemporalStatisticsConfigInput {
         crate::types::TemporalStatisticsConfigInput {
-            group_by: self.group_by,
-            statistics: self.statistics,
-            target_bands: self.target_bands,
+            group_by: self.group_by
+            ,
+            statistics: self.statistics
+            ,
+            target_bands: self.target_bands
+            ,
         }
     }
 }
+

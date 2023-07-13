@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeListenersInput {
+pub struct DescribeListenersInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct DescribeListenersInput {
 }
 impl DescribeListenersInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> ::std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn listener_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn listener_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.listener_arns.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -36,17 +36,14 @@ impl DescribeListenersInput {
 }
 impl DescribeListenersInput {
     /// Creates a new builder-style object to manufacture [`DescribeListenersInput`](crate::operation::describe_listeners::DescribeListenersInput).
-    pub fn builder() -> crate::operation::describe_listeners::builders::DescribeListenersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_listeners::builders::DescribeListenersInputBuilder {
         crate::operation::describe_listeners::builders::DescribeListenersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeListenersInput`](crate::operation::describe_listeners::DescribeListenersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenersInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) listener_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -55,42 +52,36 @@ pub struct DescribeListenersInputBuilder {
 }
 impl DescribeListenersInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.load_balancer_arn = input;
-        self
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.load_balancer_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
     }
     /// Appends an item to `listener_arns`.
     ///
     /// To override the contents of this collection use [`set_listener_arns`](Self::set_listener_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn listener_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn listener_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.listener_arns.unwrap_or_default();
-        v.push(input.into());
-        self.listener_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.listener_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn set_listener_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.listener_arns = input;
-        self
+    pub fn set_listener_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.listener_arns = input; self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
+    pub fn get_listener_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.listener_arns
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,8 +90,11 @@ impl DescribeListenersInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -109,23 +103,26 @@ impl DescribeListenersInputBuilder {
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
+    }
+    /// <p>The maximum number of results to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`DescribeListenersInput`](crate::operation::describe_listeners::DescribeListenersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_listeners::DescribeListenersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_listeners::DescribeListenersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_listeners::DescribeListenersInput {
-                load_balancer_arn: self.load_balancer_arn,
-                listener_arns: self.listener_arns,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
+                load_balancer_arn: self.load_balancer_arn
+                ,
+                listener_arns: self.listener_arns
+                ,
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+            }
         )
     }
 }
+

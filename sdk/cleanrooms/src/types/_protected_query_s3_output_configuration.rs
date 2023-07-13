@@ -3,7 +3,7 @@
 /// <p>Contains the configuration to write the query results to S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectedQueryS3OutputConfiguration {
+pub struct ProtectedQueryS3OutputConfiguration  {
     /// <p>Intended file format of the result.</p>
     #[doc(hidden)]
     pub result_format: ::std::option::Option<crate::types::ResultFormat>,
@@ -16,15 +16,15 @@ pub struct ProtectedQueryS3OutputConfiguration {
 }
 impl ProtectedQueryS3OutputConfiguration {
     /// <p>Intended file format of the result.</p>
-    pub fn result_format(&self) -> ::std::option::Option<&crate::types::ResultFormat> {
+    pub fn result_format(&self) -> ::std::option::Option<& crate::types::ResultFormat> {
         self.result_format.as_ref()
     }
     /// <p>The S3 bucket to unload the protected query results.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The S3 prefix to unload the protected query results.</p>
-    pub fn key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn key_prefix(&self) -> ::std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ProtectedQueryS3OutputConfiguration {
 
 /// A builder for [`ProtectedQueryS3OutputConfiguration`](crate::types::ProtectedQueryS3OutputConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectedQueryS3OutputConfigurationBuilder {
     pub(crate) result_format: ::std::option::Option<crate::types::ResultFormat>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl ProtectedQueryS3OutputConfigurationBuilder {
         self
     }
     /// <p>Intended file format of the result.</p>
-    pub fn set_result_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultFormat>,
-    ) -> Self {
-        self.result_format = input;
-        self
+    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormat>) -> Self {
+        self.result_format = input; self
+    }
+    /// <p>Intended file format of the result.</p>
+    pub fn get_result_format(&self) -> &::std::option::Option<crate::types::ResultFormat> {
+        &self.result_format
     }
     /// <p>The S3 bucket to unload the protected query results.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +64,11 @@ impl ProtectedQueryS3OutputConfigurationBuilder {
     }
     /// <p>The S3 bucket to unload the protected query results.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
+    }
+    /// <p>The S3 bucket to unload the protected query results.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>The S3 prefix to unload the protected query results.</p>
     pub fn key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,15 +77,22 @@ impl ProtectedQueryS3OutputConfigurationBuilder {
     }
     /// <p>The S3 prefix to unload the protected query results.</p>
     pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_prefix = input;
-        self
+        self.key_prefix = input; self
+    }
+    /// <p>The S3 prefix to unload the protected query results.</p>
+    pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_prefix
     }
     /// Consumes the builder and constructs a [`ProtectedQueryS3OutputConfiguration`](crate::types::ProtectedQueryS3OutputConfiguration).
     pub fn build(self) -> crate::types::ProtectedQueryS3OutputConfiguration {
         crate::types::ProtectedQueryS3OutputConfiguration {
-            result_format: self.result_format,
-            bucket: self.bucket,
-            key_prefix: self.key_prefix,
+            result_format: self.result_format
+            ,
+            bucket: self.bucket
+            ,
+            key_prefix: self.key_prefix
+            ,
         }
     }
 }
+

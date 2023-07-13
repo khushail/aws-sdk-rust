@@ -3,7 +3,7 @@
 /// <p>An object that represents summary details of a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobSummary {
+pub struct JobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
@@ -34,8 +34,8 @@ pub struct JobSummary {
     /// <p>The array properties of the job, if it's an array job.</p>
     #[doc(hidden)]
     pub array_properties: ::std::option::Option<crate::types::ArrayPropertiesSummary>,
-    /// <p>The node properties for a single node in a job summary list.</p> <note>
-    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+    /// <p>The node properties for a single node in a job summary list.</p> <note> 
+    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p> 
     /// </note>
     #[doc(hidden)]
     pub node_properties: ::std::option::Option<crate::types::NodePropertiesSummary>,
@@ -45,15 +45,15 @@ pub struct JobSummary {
 }
 impl JobSummary {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The job name.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
@@ -61,11 +61,11 @@ impl JobSummary {
         self.created_at
     }
     /// <p>The current status for the job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
@@ -77,21 +77,21 @@ impl JobSummary {
         self.stopped_at
     }
     /// <p>An object that represents the details of the container that's associated with the job.</p>
-    pub fn container(&self) -> ::std::option::Option<&crate::types::ContainerSummary> {
+    pub fn container(&self) -> ::std::option::Option<& crate::types::ContainerSummary> {
         self.container.as_ref()
     }
     /// <p>The array properties of the job, if it's an array job.</p>
-    pub fn array_properties(&self) -> ::std::option::Option<&crate::types::ArrayPropertiesSummary> {
+    pub fn array_properties(&self) -> ::std::option::Option<& crate::types::ArrayPropertiesSummary> {
         self.array_properties.as_ref()
     }
-    /// <p>The node properties for a single node in a job summary list.</p> <note>
-    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+    /// <p>The node properties for a single node in a job summary list.</p> <note> 
+    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p> 
     /// </note>
-    pub fn node_properties(&self) -> ::std::option::Option<&crate::types::NodePropertiesSummary> {
+    pub fn node_properties(&self) -> ::std::option::Option<& crate::types::NodePropertiesSummary> {
         self.node_properties.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    pub fn job_definition(&self) -> ::std::option::Option<&str> {
+    pub fn job_definition(&self) -> ::std::option::Option<& str> {
         self.job_definition.as_deref()
     }
 }
@@ -104,9 +104,7 @@ impl JobSummary {
 
 /// A builder for [`JobSummary`](crate::types::JobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobSummaryBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -129,8 +127,11 @@ impl JobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
     }
     /// <p>The job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,8 +140,11 @@ impl JobSummaryBuilder {
     }
     /// <p>The job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The job name.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,8 +153,11 @@ impl JobSummaryBuilder {
     }
     /// <p>The job name.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The job name.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn created_at(mut self, input: i64) -> Self {
@@ -159,8 +166,11 @@ impl JobSummaryBuilder {
     }
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<i64> {
+        &self.created_at
     }
     /// <p>The current status for the job.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
@@ -169,24 +179,24 @@ impl JobSummaryBuilder {
     }
     /// <p>The current status for the job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The current status for the job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_reason = input;
-        self
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input; self
+    }
+    /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// <p>The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
     pub fn started_at(mut self, input: i64) -> Self {
@@ -195,8 +205,11 @@ impl JobSummaryBuilder {
     }
     /// <p>The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
+    }
+    /// <p>The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<i64> {
+        &self.started_at
     }
     /// <p>The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
     pub fn stopped_at(mut self, input: i64) -> Self {
@@ -205,8 +218,11 @@ impl JobSummaryBuilder {
     }
     /// <p>The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
     pub fn set_stopped_at(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.stopped_at = input;
-        self
+        self.stopped_at = input; self
+    }
+    /// <p>The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
+    pub fn get_stopped_at(&self) -> &::std::option::Option<i64> {
+        &self.stopped_at
     }
     /// <p>An object that represents the details of the container that's associated with the job.</p>
     pub fn container(mut self, input: crate::types::ContainerSummary) -> Self {
@@ -214,12 +230,12 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>An object that represents the details of the container that's associated with the job.</p>
-    pub fn set_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerSummary>,
-    ) -> Self {
-        self.container = input;
-        self
+    pub fn set_container(mut self, input: ::std::option::Option<crate::types::ContainerSummary>) -> Self {
+        self.container = input; self
+    }
+    /// <p>An object that represents the details of the container that's associated with the job.</p>
+    pub fn get_container(&self) -> &::std::option::Option<crate::types::ContainerSummary> {
+        &self.container
     }
     /// <p>The array properties of the job, if it's an array job.</p>
     pub fn array_properties(mut self, input: crate::types::ArrayPropertiesSummary) -> Self {
@@ -227,61 +243,73 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>The array properties of the job, if it's an array job.</p>
-    pub fn set_array_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ArrayPropertiesSummary>,
-    ) -> Self {
-        self.array_properties = input;
-        self
+    pub fn set_array_properties(mut self, input: ::std::option::Option<crate::types::ArrayPropertiesSummary>) -> Self {
+        self.array_properties = input; self
     }
-    /// <p>The node properties for a single node in a job summary list.</p> <note>
-    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+    /// <p>The array properties of the job, if it's an array job.</p>
+    pub fn get_array_properties(&self) -> &::std::option::Option<crate::types::ArrayPropertiesSummary> {
+        &self.array_properties
+    }
+    /// <p>The node properties for a single node in a job summary list.</p> <note> 
+    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p> 
     /// </note>
     pub fn node_properties(mut self, input: crate::types::NodePropertiesSummary) -> Self {
         self.node_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The node properties for a single node in a job summary list.</p> <note>
-    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+    /// <p>The node properties for a single node in a job summary list.</p> <note> 
+    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p> 
     /// </note>
-    pub fn set_node_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::NodePropertiesSummary>,
-    ) -> Self {
-        self.node_properties = input;
-        self
+    pub fn set_node_properties(mut self, input: ::std::option::Option<crate::types::NodePropertiesSummary>) -> Self {
+        self.node_properties = input; self
+    }
+    /// <p>The node properties for a single node in a job summary list.</p> <note> 
+    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p> 
+    /// </note>
+    pub fn get_node_properties(&self) -> &::std::option::Option<crate::types::NodePropertiesSummary> {
+        &self.node_properties
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    pub fn job_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    pub fn set_job_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.job_definition = input;
-        self
+    pub fn set_job_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_definition = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
+    pub fn get_job_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
     pub fn build(self) -> crate::types::JobSummary {
         crate::types::JobSummary {
-            job_arn: self.job_arn,
-            job_id: self.job_id,
-            job_name: self.job_name,
-            created_at: self.created_at,
-            status: self.status,
-            status_reason: self.status_reason,
-            started_at: self.started_at,
-            stopped_at: self.stopped_at,
-            container: self.container,
-            array_properties: self.array_properties,
-            node_properties: self.node_properties,
-            job_definition: self.job_definition,
+            job_arn: self.job_arn
+            ,
+            job_id: self.job_id
+            ,
+            job_name: self.job_name
+            ,
+            created_at: self.created_at
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            started_at: self.started_at
+            ,
+            stopped_at: self.stopped_at
+            ,
+            container: self.container
+            ,
+            array_properties: self.array_properties
+            ,
+            node_properties: self.node_properties
+            ,
+            job_definition: self.job_definition
+            ,
         }
     }
 }
+

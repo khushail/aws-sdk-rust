@@ -2,117 +2,108 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConnectionInput {
-    /// <p>The ID of the dedicated connection.</p>
+pub struct UpdateConnectionInput  {
+    /// <p>The ID of the dedicated connection.</p> 
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
-    /// <p>The connection MAC Security (MACsec) encryption mode.</p>
+    /// <p>The connection MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectionInput {
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the dedicated connection.</p> 
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
-    /// <p>The connection MAC Security (MACsec) encryption mode.</p>
+    /// <p>The connection MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> ::std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
 }
 impl UpdateConnectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
-    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
         crate::operation::update_connection::builders::UpdateConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectionInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectionInputBuilder {
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the dedicated connection.</p> 
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the dedicated connection.</p> 
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_id = input;
-        self
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_id = input; self
+    }
+    /// <p>The ID of the dedicated connection.</p> 
+    /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_name = input;
-        self
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_name = input; self
     }
-    /// <p>The connection MAC Security (MACsec) encryption mode.</p>
+    /// <p>The name of the connection.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
+    }
+    /// <p>The connection MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The connection MAC Security (MACsec) encryption mode.</p>
+    /// <p>The connection MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.encryption_mode = input;
-        self
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.encryption_mode = input; self
+    }
+    /// <p>The connection MAC Security (MACsec) encryption mode.</p> 
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_mode
     }
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connection::UpdateConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_connection::UpdateConnectionInput {
-            connection_id: self.connection_id,
-            connection_name: self.connection_name,
-            encryption_mode: self.encryption_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_connection::UpdateConnectionInput {
+                connection_id: self.connection_id
+                ,
+                connection_name: self.connection_name
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+            }
+        )
     }
 }
+

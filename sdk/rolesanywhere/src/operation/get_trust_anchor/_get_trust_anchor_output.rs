@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrustAnchorOutput {
+pub struct GetTrustAnchorOutput  {
     /// <p>The state of the trust anchor after a read or write operation. </p>
     #[doc(hidden)]
     pub trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
@@ -10,15 +10,15 @@ pub struct GetTrustAnchorOutput {
 }
 impl GetTrustAnchorOutput {
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn trust_anchor(&self) -> ::std::option::Option<&crate::types::TrustAnchorDetail> {
+    pub fn trust_anchor(&self) -> ::std::option::Option<& crate::types::TrustAnchorDetail> {
         self.trust_anchor.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTrustAnchorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetTrustAnchorOutput {
     /// Creates a new builder-style object to manufacture [`GetTrustAnchorOutput`](crate::operation::get_trust_anchor::GetTrustAnchorOutput).
     pub fn builder() -> crate::operation::get_trust_anchor::builders::GetTrustAnchorOutputBuilder {
@@ -28,9 +28,7 @@ impl GetTrustAnchorOutput {
 
 /// A builder for [`GetTrustAnchorOutput`](crate::operation::get_trust_anchor::GetTrustAnchorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrustAnchorOutputBuilder {
     pub(crate) trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
     _request_id: Option<String>,
@@ -42,27 +40,29 @@ impl GetTrustAnchorOutputBuilder {
         self
     }
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn set_trust_anchor(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustAnchorDetail>,
-    ) -> Self {
-        self.trust_anchor = input;
-        self
+    pub fn set_trust_anchor(mut self, input: ::std::option::Option<crate::types::TrustAnchorDetail>) -> Self {
+        self.trust_anchor = input; self
+    }
+    /// <p>The state of the trust anchor after a read or write operation. </p>
+    pub fn get_trust_anchor(&self) -> &::std::option::Option<crate::types::TrustAnchorDetail> {
+        &self.trust_anchor
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetTrustAnchorOutput`](crate::operation::get_trust_anchor::GetTrustAnchorOutput).
     pub fn build(self) -> crate::operation::get_trust_anchor::GetTrustAnchorOutput {
         crate::operation::get_trust_anchor::GetTrustAnchorOutput {
-            trust_anchor: self.trust_anchor,
+            trust_anchor: self.trust_anchor
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

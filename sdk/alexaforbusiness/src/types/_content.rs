@@ -3,7 +3,7 @@
 /// <p>The content definition. This can contain only one text, SSML, or audio list object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Content {
+pub struct Content  {
     /// <p>The list of text messages.</p>
     #[doc(hidden)]
     pub text_list: ::std::option::Option<::std::vec::Vec<crate::types::Text>>,
@@ -16,15 +16,15 @@ pub struct Content {
 }
 impl Content {
     /// <p>The list of text messages.</p>
-    pub fn text_list(&self) -> ::std::option::Option<&[crate::types::Text]> {
+    pub fn text_list(&self) -> ::std::option::Option<& [crate::types::Text]> {
         self.text_list.as_deref()
     }
     /// <p>The list of SSML messages.</p>
-    pub fn ssml_list(&self) -> ::std::option::Option<&[crate::types::Ssml]> {
+    pub fn ssml_list(&self) -> ::std::option::Option<& [crate::types::Ssml]> {
         self.ssml_list.as_deref()
     }
     /// <p>The list of audio messages.</p>
-    pub fn audio_list(&self) -> ::std::option::Option<&[crate::types::Audio]> {
+    pub fn audio_list(&self) -> ::std::option::Option<& [crate::types::Audio]> {
         self.audio_list.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl Content {
 
 /// A builder for [`Content`](crate::types::Content).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContentBuilder {
     pub(crate) text_list: ::std::option::Option<::std::vec::Vec<crate::types::Text>>,
     pub(crate) ssml_list: ::std::option::Option<::std::vec::Vec<crate::types::Ssml>>,
@@ -53,17 +51,17 @@ impl ContentBuilder {
     /// <p>The list of text messages.</p>
     pub fn text_list(mut self, input: crate::types::Text) -> Self {
         let mut v = self.text_list.unwrap_or_default();
-        v.push(input);
-        self.text_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.text_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of text messages.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Text>>,
-    ) -> Self {
-        self.text_list = input;
-        self
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Text>>) -> Self {
+        self.text_list = input; self
+    }
+    /// <p>The list of text messages.</p>
+    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Text>> {
+        &self.text_list
     }
     /// Appends an item to `ssml_list`.
     ///
@@ -72,17 +70,17 @@ impl ContentBuilder {
     /// <p>The list of SSML messages.</p>
     pub fn ssml_list(mut self, input: crate::types::Ssml) -> Self {
         let mut v = self.ssml_list.unwrap_or_default();
-        v.push(input);
-        self.ssml_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ssml_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of SSML messages.</p>
-    pub fn set_ssml_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ssml>>,
-    ) -> Self {
-        self.ssml_list = input;
-        self
+    pub fn set_ssml_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ssml>>) -> Self {
+        self.ssml_list = input; self
+    }
+    /// <p>The list of SSML messages.</p>
+    pub fn get_ssml_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ssml>> {
+        &self.ssml_list
     }
     /// Appends an item to `audio_list`.
     ///
@@ -91,24 +89,28 @@ impl ContentBuilder {
     /// <p>The list of audio messages.</p>
     pub fn audio_list(mut self, input: crate::types::Audio) -> Self {
         let mut v = self.audio_list.unwrap_or_default();
-        v.push(input);
-        self.audio_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.audio_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of audio messages.</p>
-    pub fn set_audio_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Audio>>,
-    ) -> Self {
-        self.audio_list = input;
-        self
+    pub fn set_audio_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Audio>>) -> Self {
+        self.audio_list = input; self
+    }
+    /// <p>The list of audio messages.</p>
+    pub fn get_audio_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Audio>> {
+        &self.audio_list
     }
     /// Consumes the builder and constructs a [`Content`](crate::types::Content).
     pub fn build(self) -> crate::types::Content {
         crate::types::Content {
-            text_list: self.text_list,
-            ssml_list: self.ssml_list,
-            audio_list: self.audio_list,
+            text_list: self.text_list
+            ,
+            ssml_list: self.ssml_list
+            ,
+            audio_list: self.audio_list
+            ,
         }
     }
 }
+

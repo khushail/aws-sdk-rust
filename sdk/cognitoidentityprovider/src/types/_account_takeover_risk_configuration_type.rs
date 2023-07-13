@@ -3,7 +3,7 @@
 /// <p>Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountTakeoverRiskConfigurationType {
+pub struct AccountTakeoverRiskConfigurationType  {
     /// <p>The notify configuration used to construct email notifications.</p>
     #[doc(hidden)]
     pub notify_configuration: ::std::option::Option<crate::types::NotifyConfigurationType>,
@@ -13,13 +13,11 @@ pub struct AccountTakeoverRiskConfigurationType {
 }
 impl AccountTakeoverRiskConfigurationType {
     /// <p>The notify configuration used to construct email notifications.</p>
-    pub fn notify_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotifyConfigurationType> {
+    pub fn notify_configuration(&self) -> ::std::option::Option<& crate::types::NotifyConfigurationType> {
         self.notify_configuration.as_ref()
     }
     /// <p>Account takeover risk configuration actions.</p>
-    pub fn actions(&self) -> ::std::option::Option<&crate::types::AccountTakeoverActionsType> {
+    pub fn actions(&self) -> ::std::option::Option<& crate::types::AccountTakeoverActionsType> {
         self.actions.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl AccountTakeoverRiskConfigurationType {
 
 /// A builder for [`AccountTakeoverRiskConfigurationType`](crate::types::AccountTakeoverRiskConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountTakeoverRiskConfigurationTypeBuilder {
     pub(crate) notify_configuration: ::std::option::Option<crate::types::NotifyConfigurationType>,
     pub(crate) actions: ::std::option::Option<crate::types::AccountTakeoverActionsType>,
@@ -46,12 +42,12 @@ impl AccountTakeoverRiskConfigurationTypeBuilder {
         self
     }
     /// <p>The notify configuration used to construct email notifications.</p>
-    pub fn set_notify_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotifyConfigurationType>,
-    ) -> Self {
-        self.notify_configuration = input;
-        self
+    pub fn set_notify_configuration(mut self, input: ::std::option::Option<crate::types::NotifyConfigurationType>) -> Self {
+        self.notify_configuration = input; self
+    }
+    /// <p>The notify configuration used to construct email notifications.</p>
+    pub fn get_notify_configuration(&self) -> &::std::option::Option<crate::types::NotifyConfigurationType> {
+        &self.notify_configuration
     }
     /// <p>Account takeover risk configuration actions.</p>
     pub fn actions(mut self, input: crate::types::AccountTakeoverActionsType) -> Self {
@@ -59,18 +55,21 @@ impl AccountTakeoverRiskConfigurationTypeBuilder {
         self
     }
     /// <p>Account takeover risk configuration actions.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountTakeoverActionsType>,
-    ) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<crate::types::AccountTakeoverActionsType>) -> Self {
+        self.actions = input; self
+    }
+    /// <p>Account takeover risk configuration actions.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<crate::types::AccountTakeoverActionsType> {
+        &self.actions
     }
     /// Consumes the builder and constructs a [`AccountTakeoverRiskConfigurationType`](crate::types::AccountTakeoverRiskConfigurationType).
     pub fn build(self) -> crate::types::AccountTakeoverRiskConfigurationType {
         crate::types::AccountTakeoverRiskConfigurationType {
-            notify_configuration: self.notify_configuration,
-            actions: self.actions,
+            notify_configuration: self.notify_configuration
+            ,
+            actions: self.actions
+            ,
         }
     }
 }
+

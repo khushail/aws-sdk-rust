@@ -3,7 +3,7 @@
 /// <p>Represents information about the state of transitions between one stage and another stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitionState {
+pub struct TransitionState  {
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -23,15 +23,15 @@ impl TransitionState {
         self.enabled
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn last_changed_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_changed_by(&self) -> ::std::option::Option<& str> {
         self.last_changed_by.as_deref()
     }
     /// <p>The timestamp when the transition state was last changed.</p>
-    pub fn last_changed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_changed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_changed_at.as_ref()
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn disabled_reason(&self) -> ::std::option::Option<&str> {
+    pub fn disabled_reason(&self) -> ::std::option::Option<& str> {
         self.disabled_reason.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl TransitionState {
 
 /// A builder for [`TransitionState`](crate::types::TransitionState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitionStateBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) last_changed_by: ::std::option::Option<::std::string::String>,
@@ -61,24 +59,24 @@ impl TransitionStateBuilder {
     }
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn last_changed_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_changed_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_changed_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn set_last_changed_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_changed_by = input;
-        self
+    pub fn set_last_changed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_changed_by = input; self
+    }
+    /// <p>The ID of the user who last changed the transition state.</p>
+    pub fn get_last_changed_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_changed_by
     }
     /// <p>The timestamp when the transition state was last changed.</p>
     pub fn last_changed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -86,36 +84,39 @@ impl TransitionStateBuilder {
         self
     }
     /// <p>The timestamp when the transition state was last changed.</p>
-    pub fn set_last_changed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_changed_at = input;
-        self
+    pub fn set_last_changed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_changed_at = input; self
+    }
+    /// <p>The timestamp when the transition state was last changed.</p>
+    pub fn get_last_changed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_changed_at
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn disabled_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disabled_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disabled_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn set_disabled_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.disabled_reason = input;
-        self
+    pub fn set_disabled_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.disabled_reason = input; self
+    }
+    /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
+    pub fn get_disabled_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disabled_reason
     }
     /// Consumes the builder and constructs a [`TransitionState`](crate::types::TransitionState).
     pub fn build(self) -> crate::types::TransitionState {
         crate::types::TransitionState {
-            enabled: self.enabled.unwrap_or_default(),
-            last_changed_by: self.last_changed_by,
-            last_changed_at: self.last_changed_at,
-            disabled_reason: self.disabled_reason,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            last_changed_by: self.last_changed_by
+            ,
+            last_changed_at: self.last_changed_at
+            ,
+            disabled_reason: self.disabled_reason
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the time period for a Scheduled Instance to start its first schedule. The time period must span less than one day.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotDateTimeRangeRequest {
+pub struct SlotDateTimeRangeRequest  {
     /// <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
     #[doc(hidden)]
     pub earliest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct SlotDateTimeRangeRequest {
 }
 impl SlotDateTimeRangeRequest {
     /// <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
-    pub fn earliest_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn earliest_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.earliest_time.as_ref()
     }
     /// <p>The latest date and time, in UTC, for the Scheduled Instance to start. This value must be later than or equal to the earliest date and at most three months in the future.</p>
-    pub fn latest_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_time.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl SlotDateTimeRangeRequest {
 
 /// A builder for [`SlotDateTimeRangeRequest`](crate::types::SlotDateTimeRangeRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotDateTimeRangeRequestBuilder {
     pub(crate) earliest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,12 +42,12 @@ impl SlotDateTimeRangeRequestBuilder {
         self
     }
     /// <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
-    pub fn set_earliest_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.earliest_time = input;
-        self
+    pub fn set_earliest_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.earliest_time = input; self
+    }
+    /// <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
+    pub fn get_earliest_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.earliest_time
     }
     /// <p>The latest date and time, in UTC, for the Scheduled Instance to start. This value must be later than or equal to the earliest date and at most three months in the future.</p>
     pub fn latest_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -57,18 +55,21 @@ impl SlotDateTimeRangeRequestBuilder {
         self
     }
     /// <p>The latest date and time, in UTC, for the Scheduled Instance to start. This value must be later than or equal to the earliest date and at most three months in the future.</p>
-    pub fn set_latest_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.latest_time = input;
-        self
+    pub fn set_latest_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.latest_time = input; self
+    }
+    /// <p>The latest date and time, in UTC, for the Scheduled Instance to start. This value must be later than or equal to the earliest date and at most three months in the future.</p>
+    pub fn get_latest_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_time
     }
     /// Consumes the builder and constructs a [`SlotDateTimeRangeRequest`](crate::types::SlotDateTimeRangeRequest).
     pub fn build(self) -> crate::types::SlotDateTimeRangeRequest {
         crate::types::SlotDateTimeRangeRequest {
-            earliest_time: self.earliest_time,
-            latest_time: self.latest_time,
+            earliest_time: self.earliest_time
+            ,
+            latest_time: self.latest_time
+            ,
         }
     }
 }
+

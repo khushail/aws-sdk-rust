@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RotateIngestEndpointCredentialsInput {
+pub struct RotateIngestEndpointCredentialsInput  {
     /// The ID of the channel the IngestEndpoint is on.
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct RotateIngestEndpointCredentialsInput {
 }
 impl RotateIngestEndpointCredentialsInput {
     /// The ID of the channel the IngestEndpoint is on.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The id of the IngestEndpoint whose credentials should be rotated
-    pub fn ingest_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn ingest_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.ingest_endpoint_id.as_deref()
     }
 }
 impl RotateIngestEndpointCredentialsInput {
     /// Creates a new builder-style object to manufacture [`RotateIngestEndpointCredentialsInput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput).
-    pub fn builder() -> crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsInputBuilder {
         crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`RotateIngestEndpointCredentialsInput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RotateIngestEndpointCredentialsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ingest_endpoint_id: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,27 @@ impl RotateIngestEndpointCredentialsInputBuilder {
     }
     /// The ID of the channel the IngestEndpoint is on.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// The ID of the channel the IngestEndpoint is on.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The id of the IngestEndpoint whose credentials should be rotated
-    pub fn ingest_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingest_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingest_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The id of the IngestEndpoint whose credentials should be rotated
-    pub fn set_ingest_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ingest_endpoint_id = input;
-        self
+    pub fn set_ingest_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ingest_endpoint_id = input; self
+    }
+    /// The id of the IngestEndpoint whose credentials should be rotated
+    pub fn get_ingest_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingest_endpoint_id
     }
     /// Consumes the builder and constructs a [`RotateIngestEndpointCredentialsInput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput {
                 id: self.id
@@ -80,3 +73,4 @@ impl RotateIngestEndpointCredentialsInputBuilder {
         )
     }
 }
+

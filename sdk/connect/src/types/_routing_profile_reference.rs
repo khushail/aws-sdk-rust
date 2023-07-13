@@ -3,7 +3,7 @@
 /// <p>Information about the routing profile assigned to the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoutingProfileReference {
+pub struct RoutingProfileReference  {
     /// <p>The identifier of the routing profile.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct RoutingProfileReference {
 }
 impl RoutingProfileReference {
     /// <p>The identifier of the routing profile.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl RoutingProfileReference {
 
 /// A builder for [`RoutingProfileReference`](crate::types::RoutingProfileReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoutingProfileReferenceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl RoutingProfileReferenceBuilder {
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl RoutingProfileReferenceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`RoutingProfileReference`](crate::types::RoutingProfileReference).
     pub fn build(self) -> crate::types::RoutingProfileReference {
         crate::types::RoutingProfileReference {
-            id: self.id,
-            arn: self.arn,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

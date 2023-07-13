@@ -3,7 +3,7 @@
 /// <p>Contains information on the current access control policies for the bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessControlList {
+pub struct AccessControlList  {
     /// <p>A value that indicates whether public read access for the bucket is enabled through an Access Control List (ACL).</p>
     #[doc(hidden)]
     pub allows_public_read_access: bool,
@@ -30,9 +30,7 @@ impl AccessControlList {
 
 /// A builder for [`AccessControlList`](crate::types::AccessControlList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessControlListBuilder {
     pub(crate) allows_public_read_access: ::std::option::Option<bool>,
     pub(crate) allows_public_write_access: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl AccessControlListBuilder {
     }
     /// <p>A value that indicates whether public read access for the bucket is enabled through an Access Control List (ACL).</p>
     pub fn set_allows_public_read_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allows_public_read_access = input;
-        self
+        self.allows_public_read_access = input; self
+    }
+    /// <p>A value that indicates whether public read access for the bucket is enabled through an Access Control List (ACL).</p>
+    pub fn get_allows_public_read_access(&self) -> &::std::option::Option<bool> {
+        &self.allows_public_read_access
     }
     /// <p>A value that indicates whether public write access for the bucket is enabled through an Access Control List (ACL).</p>
     pub fn allows_public_write_access(mut self, input: bool) -> Self {
@@ -55,14 +56,22 @@ impl AccessControlListBuilder {
     }
     /// <p>A value that indicates whether public write access for the bucket is enabled through an Access Control List (ACL).</p>
     pub fn set_allows_public_write_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allows_public_write_access = input;
-        self
+        self.allows_public_write_access = input; self
+    }
+    /// <p>A value that indicates whether public write access for the bucket is enabled through an Access Control List (ACL).</p>
+    pub fn get_allows_public_write_access(&self) -> &::std::option::Option<bool> {
+        &self.allows_public_write_access
     }
     /// Consumes the builder and constructs a [`AccessControlList`](crate::types::AccessControlList).
     pub fn build(self) -> crate::types::AccessControlList {
         crate::types::AccessControlList {
-            allows_public_read_access: self.allows_public_read_access.unwrap_or_default(),
-            allows_public_write_access: self.allows_public_write_access.unwrap_or_default(),
+            allows_public_read_access: self.allows_public_read_access
+                .unwrap_or_default()
+            ,
+            allows_public_write_access: self.allows_public_write_access
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

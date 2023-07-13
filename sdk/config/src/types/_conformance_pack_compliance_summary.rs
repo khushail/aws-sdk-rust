@@ -3,24 +3,21 @@
 /// <p>Summary includes the name and status of the conformance pack.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConformancePackComplianceSummary {
+pub struct ConformancePackComplianceSummary  {
     /// <p>The name of the conformance pack name.</p>
     #[doc(hidden)]
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the conformance pack.</p>
     #[doc(hidden)]
-    pub conformance_pack_compliance_status:
-        ::std::option::Option<crate::types::ConformancePackComplianceType>,
+    pub conformance_pack_compliance_status: ::std::option::Option<crate::types::ConformancePackComplianceType>,
 }
 impl ConformancePackComplianceSummary {
     /// <p>The name of the conformance pack name.</p>
-    pub fn conformance_pack_name(&self) -> ::std::option::Option<&str> {
+    pub fn conformance_pack_name(&self) -> ::std::option::Option<& str> {
         self.conformance_pack_name.as_deref()
     }
     /// <p>The status of the conformance pack.</p>
-    pub fn conformance_pack_compliance_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConformancePackComplianceType> {
+    pub fn conformance_pack_compliance_status(&self) -> ::std::option::Option<& crate::types::ConformancePackComplianceType> {
         self.conformance_pack_compliance_status.as_ref()
     }
 }
@@ -33,52 +30,46 @@ impl ConformancePackComplianceSummary {
 
 /// A builder for [`ConformancePackComplianceSummary`](crate::types::ConformancePackComplianceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConformancePackComplianceSummaryBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
-    pub(crate) conformance_pack_compliance_status:
-        ::std::option::Option<crate::types::ConformancePackComplianceType>,
+    pub(crate) conformance_pack_compliance_status: ::std::option::Option<crate::types::ConformancePackComplianceType>,
 }
 impl ConformancePackComplianceSummaryBuilder {
     /// <p>The name of the conformance pack name.</p>
-    pub fn conformance_pack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the conformance pack name.</p>
-    pub fn set_conformance_pack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.conformance_pack_name = input;
-        self
+    pub fn set_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.conformance_pack_name = input; self
+    }
+    /// <p>The name of the conformance pack name.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conformance_pack_name
     }
     /// <p>The status of the conformance pack.</p>
-    pub fn conformance_pack_compliance_status(
-        mut self,
-        input: crate::types::ConformancePackComplianceType,
-    ) -> Self {
+    pub fn conformance_pack_compliance_status(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
         self.conformance_pack_compliance_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the conformance pack.</p>
-    pub fn set_conformance_pack_compliance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConformancePackComplianceType>,
-    ) -> Self {
-        self.conformance_pack_compliance_status = input;
-        self
+    pub fn set_conformance_pack_compliance_status(mut self, input: ::std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
+        self.conformance_pack_compliance_status = input; self
+    }
+    /// <p>The status of the conformance pack.</p>
+    pub fn get_conformance_pack_compliance_status(&self) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
+        &self.conformance_pack_compliance_status
     }
     /// Consumes the builder and constructs a [`ConformancePackComplianceSummary`](crate::types::ConformancePackComplianceSummary).
     pub fn build(self) -> crate::types::ConformancePackComplianceSummary {
         crate::types::ConformancePackComplianceSummary {
-            conformance_pack_name: self.conformance_pack_name,
-            conformance_pack_compliance_status: self.conformance_pack_compliance_status,
+            conformance_pack_name: self.conformance_pack_name
+            ,
+            conformance_pack_compliance_status: self.conformance_pack_compliance_status
+            ,
         }
     }
 }
+

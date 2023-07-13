@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHostInput {
+pub struct GetHostInput  {
     /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
     #[doc(hidden)]
     pub host_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetHostInput {
     /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
-    pub fn host_arn(&self) -> ::std::option::Option<&str> {
+    pub fn host_arn(&self) -> ::std::option::Option<& str> {
         self.host_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetHostInput {
 
 /// A builder for [`GetHostInput`](crate::operation::get_host::GetHostInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostInputBuilder {
     pub(crate) host_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetHostInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_arn = input;
-        self
+        self.host_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_arn
     }
     /// Consumes the builder and constructs a [`GetHostInput`](crate::operation::get_host::GetHostInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_host::GetHostInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_host::GetHostInput {
-            host_arn: self.host_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_host::GetHostInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_host::GetHostInput {
+                host_arn: self.host_arn
+                ,
+            }
+        )
     }
 }
+

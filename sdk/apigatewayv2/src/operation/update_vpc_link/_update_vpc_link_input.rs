@@ -3,7 +3,7 @@
 /// <p>Updates a VPC link.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVpcLinkInput {
+pub struct UpdateVpcLinkInput  {
     /// <p>The name of the VPC link.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct UpdateVpcLinkInput {
 }
 impl UpdateVpcLinkInput {
     /// <p>The name of the VPC link.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the VPC link.</p>
-    pub fn vpc_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> ::std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl UpdateVpcLinkInput {
 
 /// A builder for [`UpdateVpcLinkInput`](crate::operation::update_vpc_link::UpdateVpcLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVpcLinkInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_link_id: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl UpdateVpcLinkInputBuilder {
     }
     /// <p>The name of the VPC link.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the VPC link.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ID of the VPC link.</p>
     pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,19 +56,22 @@ impl UpdateVpcLinkInputBuilder {
     }
     /// <p>The ID of the VPC link.</p>
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_link_id = input;
-        self
+        self.vpc_link_id = input; self
+    }
+    /// <p>The ID of the VPC link.</p>
+    pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_link_id
     }
     /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::operation::update_vpc_link::UpdateVpcLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_vpc_link::UpdateVpcLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_vpc_link::UpdateVpcLinkInput {
-            name: self.name,
-            vpc_link_id: self.vpc_link_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_vpc_link::UpdateVpcLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_vpc_link::UpdateVpcLinkInput {
+                name: self.name
+                ,
+                vpc_link_id: self.vpc_link_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,82 +3,94 @@ pub use crate::operation::enable_health_service_access_for_organization::_enable
 
 pub use crate::operation::enable_health_service_access_for_organization::_enable_health_service_access_for_organization_input::EnableHealthServiceAccessForOrganizationInputBuilder;
 
+impl EnableHealthServiceAccessForOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.enable_health_service_access_for_organization();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `EnableHealthServiceAccessForOrganization`.
-///
-/// <p>Enables Health to work with Organizations. You can use the organizational view feature to aggregate events from all Amazon Web Services accounts in your organization in a centralized location. </p>
-/// <p>This operation also creates a service-linked role for the management account in the organization. </p> <note>
-/// <p>To call this operation, you must meet the following requirements:</p>
-/// <ul>
-/// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health API. If you call the Health API from an Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, you receive a <code>SubscriptionRequiredException</code> error.</p> </li>
-/// <li> <p>You must have permission to call this operation from the organization's management account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health identity-based policy examples</a>.</p> </li>
-/// </ul>
-/// </note>
+/// 
+/// <p>Enables Health to work with Organizations. You can use the organizational view feature to aggregate events from all Amazon Web Services accounts in your organization in a centralized location. </p> 
+/// <p>This operation also creates a service-linked role for the management account in the organization. </p> <note> 
+/// <p>To call this operation, you must meet the following requirements:</p> 
+/// <ul> 
+/// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health API. If you call the Health API from an Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, you receive a <code>SubscriptionRequiredException</code> error.</p> </li> 
+/// <li> <p>You must have permission to call this operation from the organization's management account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health identity-based policy examples</a>.</p> </li> 
+/// </ul> 
+/// </note> 
 /// <p>If you don't have the required support plan, you can instead use the Health console to enable the organizational view feature. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating Health events</a> in the <i>Health User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableHealthServiceAccessForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationInputBuilder,
 }
-impl EnableHealthServiceAccessForOrganizationFluentBuilder {
+impl EnableHealthServiceAccessForOrganizationFluentBuilder  {
     /// Creates a new `EnableHealthServiceAccessForOrganization`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableHealthServiceAccessForOrganization as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
 }
+

@@ -3,104 +3,89 @@ pub use crate::operation::disassociate_vehicle_fleet::_disassociate_vehicle_flee
 
 pub use crate::operation::disassociate_vehicle_fleet::_disassociate_vehicle_fleet_input::DisassociateVehicleFleetInputBuilder;
 
+impl DisassociateVehicleFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.disassociate_vehicle_fleet();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DisassociateVehicleFleet`.
-///
-/// <p>Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle from a fleet doesn't delete the vehicle.</p> <note>
-/// <p>If the vehicle is successfully dissociated from a fleet, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
+/// 
+/// <p>Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle from a fleet doesn't delete the vehicle.</p> <note> 
+/// <p>If the vehicle is successfully dissociated from a fleet, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateVehicleFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder,
 }
-impl DisassociateVehicleFleetFluentBuilder {
+impl DisassociateVehicleFleetFluentBuilder  {
     /// Creates a new `DisassociateVehicleFleet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DisassociateVehicleFleet as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleet, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleet, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vehicle_name(input.into());
@@ -110,6 +95,10 @@ impl DisassociateVehicleFleetFluentBuilder {
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vehicle_name(input);
         self
+    }
+    /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vehicle_name()
     }
     /// <p> The unique ID of a fleet. </p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,4 +110,9 @@ impl DisassociateVehicleFleetFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p> The unique ID of a fleet. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
 }
+

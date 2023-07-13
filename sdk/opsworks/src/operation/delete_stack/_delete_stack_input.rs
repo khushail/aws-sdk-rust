@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStackInput {
+pub struct DeleteStackInput  {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStackInput {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteStackInput {
 
 /// A builder for [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStackInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteStackInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Consumes the builder and constructs a [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_stack::DeleteStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_stack::DeleteStackInput {
-            stack_id: self.stack_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stack::DeleteStackInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_stack::DeleteStackInput {
+                stack_id: self.stack_id
+                ,
+            }
+        )
     }
 }
+

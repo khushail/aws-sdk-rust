@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-osis = "0.1.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-osis = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -28,8 +28,8 @@ use aws_sdk_osis as osis;
 
 #[::tokio::main]
 async fn main() -> Result<(), osis::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = osis::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_osis::Client::new(&config);
 
     // ... make some calls with the client
 

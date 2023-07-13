@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGeofenceInput {
+pub struct GetGeofenceInput  {
     /// <p>The geofence collection storing the target geofence.</p>
     #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetGeofenceInput {
 }
 impl GetGeofenceInput {
     /// <p>The geofence collection storing the target geofence.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+    pub fn collection_name(&self) -> ::std::option::Option<& str> {
         self.collection_name.as_deref()
     }
     /// <p>The geofence you're retrieving details for.</p>
-    pub fn geofence_id(&self) -> ::std::option::Option<&str> {
+    pub fn geofence_id(&self) -> ::std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
 }
@@ -29,29 +29,24 @@ impl GetGeofenceInput {
 
 /// A builder for [`GetGeofenceInput`](crate::operation::get_geofence::GetGeofenceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGeofenceInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGeofenceInputBuilder {
     /// <p>The geofence collection storing the target geofence.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The geofence collection storing the target geofence.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.collection_name = input;
-        self
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collection_name = input; self
+    }
+    /// <p>The geofence collection storing the target geofence.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
     }
     /// <p>The geofence you're retrieving details for.</p>
     pub fn geofence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,19 +55,22 @@ impl GetGeofenceInputBuilder {
     }
     /// <p>The geofence you're retrieving details for.</p>
     pub fn set_geofence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.geofence_id = input;
-        self
+        self.geofence_id = input; self
+    }
+    /// <p>The geofence you're retrieving details for.</p>
+    pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geofence_id
     }
     /// Consumes the builder and constructs a [`GetGeofenceInput`](crate::operation::get_geofence::GetGeofenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_geofence::GetGeofenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_geofence::GetGeofenceInput {
-            collection_name: self.collection_name,
-            geofence_id: self.geofence_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_geofence::GetGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_geofence::GetGeofenceInput {
+                collection_name: self.collection_name
+                ,
+                geofence_id: self.geofence_id
+                ,
+            }
+        )
     }
 }
+

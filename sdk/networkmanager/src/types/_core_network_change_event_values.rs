@@ -3,7 +3,7 @@
 /// <p>Describes a core network change event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoreNetworkChangeEventValues {
+pub struct CoreNetworkChangeEventValues  {
     /// <p>The edge location for the core network change event.</p>
     #[doc(hidden)]
     pub edge_location: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct CoreNetworkChangeEventValues {
 }
 impl CoreNetworkChangeEventValues {
     /// <p>The edge location for the core network change event.</p>
-    pub fn edge_location(&self) -> ::std::option::Option<&str> {
+    pub fn edge_location(&self) -> ::std::option::Option<& str> {
         self.edge_location.as_deref()
     }
     /// <p>The segment name if the change event is associated with a segment.</p>
-    pub fn segment_name(&self) -> ::std::option::Option<&str> {
+    pub fn segment_name(&self) -> ::std::option::Option<& str> {
         self.segment_name.as_deref()
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl CoreNetworkChangeEventValues {
 
 /// A builder for [`CoreNetworkChangeEventValues`](crate::types::CoreNetworkChangeEventValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeEventValuesBuilder {
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
@@ -55,20 +53,17 @@ pub struct CoreNetworkChangeEventValuesBuilder {
 }
 impl CoreNetworkChangeEventValuesBuilder {
     /// <p>The edge location for the core network change event.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The edge location for the core network change event.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.edge_location = input;
-        self
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.edge_location = input; self
+    }
+    /// <p>The edge location for the core network change event.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
     }
     /// <p>The segment name if the change event is associated with a segment.</p>
     pub fn segment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,24 +72,24 @@ impl CoreNetworkChangeEventValuesBuilder {
     }
     /// <p>The segment name if the change event is associated with a segment.</p>
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_name = input;
-        self
+        self.segment_name = input; self
+    }
+    /// <p>The segment name if the change event is associated with a segment.</p>
+    pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_name
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.attachment_id = input;
-        self
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attachment_id = input; self
+    }
+    /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
     }
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,16 +98,24 @@ impl CoreNetworkChangeEventValuesBuilder {
     }
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
+    }
+    /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// Consumes the builder and constructs a [`CoreNetworkChangeEventValues`](crate::types::CoreNetworkChangeEventValues).
     pub fn build(self) -> crate::types::CoreNetworkChangeEventValues {
         crate::types::CoreNetworkChangeEventValues {
-            edge_location: self.edge_location,
-            segment_name: self.segment_name,
-            attachment_id: self.attachment_id,
-            cidr: self.cidr,
+            edge_location: self.edge_location
+            ,
+            segment_name: self.segment_name
+            ,
+            attachment_id: self.attachment_id
+            ,
+            cidr: self.cidr
+            ,
         }
     }
 }
+

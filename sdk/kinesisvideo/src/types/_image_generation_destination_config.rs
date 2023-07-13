@@ -3,7 +3,7 @@
 /// <p>The structure that contains the information required to deliver images to a customer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageGenerationDestinationConfig {
+pub struct ImageGenerationDestinationConfig  {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ImageGenerationDestinationConfig {
 }
 impl ImageGenerationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-    pub fn destination_region(&self) -> ::std::option::Option<&str> {
+    pub fn destination_region(&self) -> ::std::option::Option<& str> {
         self.destination_region.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ImageGenerationDestinationConfig {
 
 /// A builder for [`ImageGenerationDestinationConfig`](crate::types::ImageGenerationDestinationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageGenerationDestinationConfigBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) destination_region: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ImageGenerationDestinationConfigBuilder {
     }
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
+    }
+    /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-    pub fn destination_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-    pub fn set_destination_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_region = input;
-        self
+    pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_region = input; self
+    }
+    /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
+    pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_region
     }
     /// Consumes the builder and constructs a [`ImageGenerationDestinationConfig`](crate::types::ImageGenerationDestinationConfig).
     pub fn build(self) -> crate::types::ImageGenerationDestinationConfig {
         crate::types::ImageGenerationDestinationConfig {
-            uri: self.uri,
-            destination_region: self.destination_region,
+            uri: self.uri
+            ,
+            destination_region: self.destination_region
+            ,
         }
     }
 }
+

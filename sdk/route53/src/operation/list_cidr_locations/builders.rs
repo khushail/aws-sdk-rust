@@ -3,140 +3,123 @@ pub use crate::operation::list_cidr_locations::_list_cidr_locations_output::List
 
 pub use crate::operation::list_cidr_locations::_list_cidr_locations_input::ListCidrLocationsInputBuilder;
 
+impl ListCidrLocationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_cidr_locations::ListCidrLocationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_cidr_locations::ListCidrLocationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_cidr_locations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListCidrLocations`.
-///
+/// 
 /// <p>Returns a paginated list of CIDR locations for the given collection (metadata only, does not include CIDR blocks).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCidrLocationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder,
+                    inner: crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder,
 }
-impl ListCidrLocationsFluentBuilder {
+impl ListCidrLocationsFluentBuilder  {
     /// Creates a new `ListCidrLocations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_cidr_locations::ListCidrLocations,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_locations::ListCidrLocationsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListCidrLocations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cidr_locations::ListCidrLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_locations::ListCidrLocationsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_cidr_locations::ListCidrLocations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_locations::ListCidrLocationsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_cidr_locations::ListCidrLocationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_locations::ListCidrLocationsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cidr_locations::ListCidrLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_locations::ListCidrLocationsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_cidr_locations::ListCidrLocations,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_locations::ListCidrLocationsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_cidr_locations::ListCidrLocationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_locations::ListCidrLocationsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_cidr_locations::ListCidrLocations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_locations::ListCidrLocationsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator {
-        crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator {
+                                crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The CIDR collection ID.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>The CIDR collection ID.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }
-    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>The CIDR collection ID.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> 
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> 
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> 
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of CIDR collection locations to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -148,4 +131,9 @@ impl ListCidrLocationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
 }
+

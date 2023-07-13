@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPricingPlansAssociatedWithPricingRuleOutput {
+pub struct ListPricingPlansAssociatedWithPricingRuleOutput  {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
     #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
@@ -19,39 +19,37 @@ pub struct ListPricingPlansAssociatedWithPricingRuleOutput {
 }
 impl ListPricingPlansAssociatedWithPricingRuleOutput {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
-    pub fn billing_period(&self) -> ::std::option::Option<&str> {
+    pub fn billing_period(&self) -> ::std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    pub fn pricing_rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pricing_rule_arn(&self) -> ::std::option::Option<& str> {
         self.pricing_rule_arn.as_deref()
     }
     /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
-    pub fn pricing_plan_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn pricing_plan_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.pricing_plan_arns.as_deref()
     }
     /// <p> The pagination token to be used on subsequent calls. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPricingPlansAssociatedWithPricingRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPricingPlansAssociatedWithPricingRuleOutput {
     /// Creates a new builder-style object to manufacture [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleOutput).
-    pub fn builder() -> crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleOutputBuilder{
+    pub fn builder() -> crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleOutputBuilder {
         crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingPlansAssociatedWithPricingRuleOutputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_rule_arn: ::std::option::Option<::std::string::String>,
@@ -61,58 +59,49 @@ pub struct ListPricingPlansAssociatedWithPricingRuleOutputBuilder {
 }
 impl ListPricingPlansAssociatedWithPricingRuleOutputBuilder {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The pricing plan billing period for which associations will be listed. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.billing_period = input;
-        self
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.billing_period = input; self
+    }
+    /// <p> The pricing plan billing period for which associations will be listed. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_period
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    pub fn pricing_rule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    pub fn set_pricing_rule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.pricing_rule_arn = input;
-        self
+    pub fn set_pricing_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pricing_rule_arn = input; self
+    }
+    /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
+    pub fn get_pricing_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_rule_arn
     }
     /// Appends an item to `pricing_plan_arns`.
     ///
     /// To override the contents of this collection use [`set_pricing_plan_arns`](Self::set_pricing_plan_arns).
     ///
     /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
-    pub fn pricing_plan_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_plan_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pricing_plan_arns.unwrap_or_default();
-        v.push(input.into());
-        self.pricing_plan_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.pricing_plan_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
-    pub fn set_pricing_plan_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.pricing_plan_arns = input;
-        self
+    pub fn set_pricing_plan_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.pricing_plan_arns = input; self
+    }
+    /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
+    pub fn get_pricing_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pricing_plan_arns
     }
     /// <p> The pagination token to be used on subsequent calls. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,20 +110,23 @@ impl ListPricingPlansAssociatedWithPricingRuleOutputBuilder {
     }
     /// <p> The pagination token to be used on subsequent calls. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> The pagination token to be used on subsequent calls. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleOutput).
-    pub fn build(self) -> crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleOutput{
+    pub fn build(self) -> crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleOutput {
         crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleOutput {
             billing_period: self.billing_period
             ,
@@ -148,3 +140,4 @@ impl ListPricingPlansAssociatedWithPricingRuleOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the certificate chain being used when code signing a file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeSigningCertificateChain {
+pub struct CodeSigningCertificateChain  {
     /// <p>The name of the certificate.</p>
     #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct CodeSigningCertificateChain {
 }
 impl CodeSigningCertificateChain {
     /// <p>The name of the certificate.</p>
-    pub fn certificate_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_name(&self) -> ::std::option::Option<& str> {
         self.certificate_name.as_deref()
     }
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
-    pub fn inline_document(&self) -> ::std::option::Option<&str> {
+    pub fn inline_document(&self) -> ::std::option::Option<& str> {
         self.inline_document.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl CodeSigningCertificateChain {
 
 /// A builder for [`CodeSigningCertificateChain`](crate::types::CodeSigningCertificateChain).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeSigningCertificateChainBuilder {
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
     pub(crate) inline_document: ::std::option::Option<::std::string::String>,
 }
 impl CodeSigningCertificateChainBuilder {
     /// <p>The name of the certificate.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the certificate.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.certificate_name = input;
-        self
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_name = input; self
+    }
+    /// <p>The name of the certificate.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
     }
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
-    pub fn inline_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inline_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inline_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
-    pub fn set_inline_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inline_document = input;
-        self
+    pub fn set_inline_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inline_document = input; self
+    }
+    /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
+    pub fn get_inline_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inline_document
     }
     /// Consumes the builder and constructs a [`CodeSigningCertificateChain`](crate::types::CodeSigningCertificateChain).
     pub fn build(self) -> crate::types::CodeSigningCertificateChain {
         crate::types::CodeSigningCertificateChain {
-            certificate_name: self.certificate_name,
-            inline_document: self.inline_document,
+            certificate_name: self.certificate_name
+            ,
+            inline_document: self.inline_document
+            ,
         }
     }
 }
+

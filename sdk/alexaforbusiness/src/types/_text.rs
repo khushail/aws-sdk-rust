@@ -3,7 +3,7 @@
 /// <p>The text message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Text {
+pub struct Text  {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
     #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
@@ -13,11 +13,11 @@ pub struct Text {
 }
 impl Text {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> ::std::option::Option<& crate::types::Locale> {
         self.locale.as_ref()
     }
     /// <p>The value of the text message.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Text {
 
 /// A builder for [`Text`](crate::types::Text).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextBuilder {
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl TextBuilder {
     }
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
+    }
+    /// <p>The locale of the text message. Currently, en-US is supported.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.locale
     }
     /// <p>The value of the text message.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl TextBuilder {
     }
     /// <p>The value of the text message.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the text message.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Text`](crate::types::Text).
     pub fn build(self) -> crate::types::Text {
         crate::types::Text {
-            locale: self.locale,
-            value: self.value,
+            locale: self.locale
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

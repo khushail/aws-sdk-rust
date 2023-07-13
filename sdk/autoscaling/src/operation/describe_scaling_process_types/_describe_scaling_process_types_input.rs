@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScalingProcessTypesInput {}
+pub struct DescribeScalingProcessTypesInput  {
+}
 impl DescribeScalingProcessTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingProcessTypesInput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput).
-    pub fn builder() -> crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesInputBuilder{
+    pub fn builder() -> crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesInputBuilder {
         crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingProcessTypesInput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct DescribeScalingProcessTypesInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct DescribeScalingProcessTypesInputBuilder {
+}
 impl DescribeScalingProcessTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScalingProcessTypesInput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput {},
+            crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput {
+            }
         )
     }
 }
+

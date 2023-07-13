@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceNetworkOutput {
+pub struct DeleteServiceNetworkOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteServiceNetworkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteServiceNetworkOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceNetworkOutput`](crate::operation::delete_service_network::DeleteServiceNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_network::builders::DeleteServiceNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::delete_service_network::builders::DeleteServiceNetworkOutputBuilder {
         crate::operation::delete_service_network::builders::DeleteServiceNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceNetworkOutput`](crate::operation::delete_service_network::DeleteServiceNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceNetworkOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteServiceNetworkOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteServiceNetworkOutput`](crate::operation::delete_service_network::DeleteServiceNetworkOutput).
     pub fn build(self) -> crate::operation::delete_service_network::DeleteServiceNetworkOutput {
         crate::operation::delete_service_network::DeleteServiceNetworkOutput {
@@ -43,3 +40,4 @@ impl DeleteServiceNetworkOutputBuilder {
         }
     }
 }
+

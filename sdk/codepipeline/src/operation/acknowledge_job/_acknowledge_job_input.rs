@@ -3,21 +3,21 @@
 /// <p>Represents the input of an AcknowledgeJob action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcknowledgeJobInput {
+pub struct AcknowledgeJobInput  {
     /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
     #[doc(hidden)]
     pub nonce: ::std::option::Option<::std::string::String>,
 }
 impl AcknowledgeJobInput {
     /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
-    pub fn nonce(&self) -> ::std::option::Option<&str> {
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    pub fn nonce(&self) -> ::std::option::Option<& str> {
         self.nonce.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AcknowledgeJobInput {
 
 /// A builder for [`AcknowledgeJobInput`](crate::operation::acknowledge_job::AcknowledgeJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcknowledgeJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) nonce: ::std::option::Option<::std::string::String>,
@@ -45,29 +43,35 @@ impl AcknowledgeJobInputBuilder {
     }
     /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nonce = input;
-        self
+        self.nonce = input; self
+    }
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nonce
     }
     /// Consumes the builder and constructs a [`AcknowledgeJobInput`](crate::operation::acknowledge_job::AcknowledgeJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::acknowledge_job::AcknowledgeJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::acknowledge_job::AcknowledgeJobInput {
-            job_id: self.job_id,
-            nonce: self.nonce,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::acknowledge_job::AcknowledgeJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::acknowledge_job::AcknowledgeJobInput {
+                job_id: self.job_id
+                ,
+                nonce: self.nonce
+                ,
+            }
+        )
     }
 }
+

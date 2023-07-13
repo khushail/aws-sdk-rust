@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEnrollmentStatusInput {
-    /// <p>The new enrollment status of the account.</p>
-    /// <p>The following status options are available:</p>
-    /// <ul>
-    /// <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li>
-    /// <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>
-    /// </ul> <note>
-    /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p>
+pub struct UpdateEnrollmentStatusInput  {
+    /// <p>The new enrollment status of the account.</p> 
+    /// <p>The following status options are available:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li> 
+    /// <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p> 
     /// </note>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
@@ -18,15 +18,15 @@ pub struct UpdateEnrollmentStatusInput {
     pub include_member_accounts: ::std::option::Option<bool>,
 }
 impl UpdateEnrollmentStatusInput {
-    /// <p>The new enrollment status of the account.</p>
-    /// <p>The following status options are available:</p>
-    /// <ul>
-    /// <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li>
-    /// <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>
-    /// </ul> <note>
-    /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p>
+    /// <p>The new enrollment status of the account.</p> 
+    /// <p>The following status options are available:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li> 
+    /// <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p> 
     /// </note>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account of an organization.</p>
@@ -36,46 +36,52 @@ impl UpdateEnrollmentStatusInput {
 }
 impl UpdateEnrollmentStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusInput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusInputBuilder {
         crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEnrollmentStatusInput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnrollmentStatusInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) include_member_accounts: ::std::option::Option<bool>,
 }
 impl UpdateEnrollmentStatusInputBuilder {
-    /// <p>The new enrollment status of the account.</p>
-    /// <p>The following status options are available:</p>
-    /// <ul>
-    /// <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li>
-    /// <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>
-    /// </ul> <note>
-    /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p>
+    /// <p>The new enrollment status of the account.</p> 
+    /// <p>The following status options are available:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li> 
+    /// <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p> 
     /// </note>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The new enrollment status of the account.</p>
-    /// <p>The following status options are available:</p>
-    /// <ul>
-    /// <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li>
-    /// <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>
-    /// </ul> <note>
-    /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p>
+    /// <p>The new enrollment status of the account.</p> 
+    /// <p>The following status options are available:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li> 
+    /// <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p> 
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The new enrollment status of the account.</p> 
+    /// <p>The following status options are available:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li> 
+    /// <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p> 
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account of an organization.</p>
     pub fn include_member_accounts(mut self, input: bool) -> Self {
@@ -84,21 +90,22 @@ impl UpdateEnrollmentStatusInputBuilder {
     }
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account of an organization.</p>
     pub fn set_include_member_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_member_accounts = input;
-        self
+        self.include_member_accounts = input; self
+    }
+    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account of an organization.</p>
+    pub fn get_include_member_accounts(&self) -> &::std::option::Option<bool> {
+        &self.include_member_accounts
     }
     /// Consumes the builder and constructs a [`UpdateEnrollmentStatusInput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput {
-                status: self.status,
-                include_member_accounts: self.include_member_accounts,
-            },
+                status: self.status
+                ,
+                include_member_accounts: self.include_member_accounts
+                ,
+            }
         )
     }
 }
+

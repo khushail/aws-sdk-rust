@@ -3,62 +3,52 @@
 /// GetConnectInstanceConfigRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectInstanceConfigInput {
+pub struct GetConnectInstanceConfigInput  {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
     pub connect_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetConnectInstanceConfigInput {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> ::std::option::Option<& str> {
         self.connect_instance_id.as_deref()
     }
 }
 impl GetConnectInstanceConfigInput {
     /// Creates a new builder-style object to manufacture [`GetConnectInstanceConfigInput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigInputBuilder {
         crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConnectInstanceConfigInput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectInstanceConfigInputBuilder {
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetConnectInstanceConfigInputBuilder {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connect_instance_id = input;
-        self
+    pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connect_instance_id = input; self
+    }
+    /// Amazon Connect Instance Id
+    pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_instance_id
     }
     /// Consumes the builder and constructs a [`GetConnectInstanceConfigInput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput {
-                connect_instance_id: self.connect_instance_id,
-            },
+                connect_instance_id: self.connect_instance_id
+                ,
+            }
         )
     }
 }
+

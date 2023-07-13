@@ -2,15 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchOrganizationInsightsOutput {
+pub struct SearchOrganizationInsightsOutput  {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub proactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
+    pub proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub reactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
+    pub reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,44 +16,36 @@ pub struct SearchOrganizationInsightsOutput {
 }
 impl SearchOrganizationInsightsOutput {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    pub fn proactive_insights(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProactiveInsightSummary]> {
+    pub fn proactive_insights(&self) -> ::std::option::Option<& [crate::types::ProactiveInsightSummary]> {
         self.proactive_insights.as_deref()
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn reactive_insights(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReactiveInsightSummary]> {
+    pub fn reactive_insights(&self) -> ::std::option::Option<& [crate::types::ReactiveInsightSummary]> {
         self.reactive_insights.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchOrganizationInsightsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchOrganizationInsightsOutput {
     /// Creates a new builder-style object to manufacture [`SearchOrganizationInsightsOutput`](crate::operation::search_organization_insights::SearchOrganizationInsightsOutput).
-    pub fn builder() -> crate::operation::search_organization_insights::builders::SearchOrganizationInsightsOutputBuilder{
+    pub fn builder() -> crate::operation::search_organization_insights::builders::SearchOrganizationInsightsOutputBuilder {
         crate::operation::search_organization_insights::builders::SearchOrganizationInsightsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchOrganizationInsightsOutput`](crate::operation::search_organization_insights::SearchOrganizationInsightsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchOrganizationInsightsOutputBuilder {
-    pub(crate) proactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
-    pub(crate) reactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
+    pub(crate) proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
+    pub(crate) reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -67,17 +57,17 @@ impl SearchOrganizationInsightsOutputBuilder {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn proactive_insights(mut self, input: crate::types::ProactiveInsightSummary) -> Self {
         let mut v = self.proactive_insights.unwrap_or_default();
-        v.push(input);
-        self.proactive_insights = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.proactive_insights = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    pub fn set_proactive_insights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
-    ) -> Self {
-        self.proactive_insights = input;
-        self
+    pub fn set_proactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>) -> Self {
+        self.proactive_insights = input; self
+    }
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    pub fn get_proactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>> {
+        &self.proactive_insights
     }
     /// Appends an item to `reactive_insights`.
     ///
@@ -86,17 +76,17 @@ impl SearchOrganizationInsightsOutputBuilder {
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub fn reactive_insights(mut self, input: crate::types::ReactiveInsightSummary) -> Self {
         let mut v = self.reactive_insights.unwrap_or_default();
-        v.push(input);
-        self.reactive_insights = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reactive_insights = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn set_reactive_insights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
-    ) -> Self {
-        self.reactive_insights = input;
-        self
+    pub fn set_reactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>) -> Self {
+        self.reactive_insights = input; self
+    }
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    pub fn get_reactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>> {
+        &self.reactive_insights
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,27 +95,32 @@ impl SearchOrganizationInsightsOutputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchOrganizationInsightsOutput`](crate::operation::search_organization_insights::SearchOrganizationInsightsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_organization_insights::SearchOrganizationInsightsOutput {
+    pub fn build(self) -> crate::operation::search_organization_insights::SearchOrganizationInsightsOutput {
         crate::operation::search_organization_insights::SearchOrganizationInsightsOutput {
-            proactive_insights: self.proactive_insights,
-            reactive_insights: self.reactive_insights,
-            next_token: self.next_token,
+            proactive_insights: self.proactive_insights
+            ,
+            reactive_insights: self.reactive_insights
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

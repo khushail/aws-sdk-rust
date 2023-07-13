@@ -3,14 +3,14 @@
 /// <p>List of fields that must have a value provided to create a case.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequiredField {
+pub struct RequiredField  {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
 }
 impl RequiredField {
     /// <p>Unique identifier of a field.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<& str> {
         self.field_id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl RequiredField {
 
 /// A builder for [`RequiredField`](crate::types::RequiredField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequiredFieldBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl RequiredFieldBuilder {
     }
     /// <p>Unique identifier of a field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
+    }
+    /// <p>Unique identifier of a field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
     }
     /// Consumes the builder and constructs a [`RequiredField`](crate::types::RequiredField).
     pub fn build(self) -> crate::types::RequiredField {
         crate::types::RequiredField {
-            field_id: self.field_id,
+            field_id: self.field_id
+            ,
         }
     }
 }
+

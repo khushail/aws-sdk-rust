@@ -3,7 +3,7 @@
 /// <p>Displays errors that occurred during validation of the resource policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationErrorsEntry {
+pub struct ValidationErrorsEntry  {
     /// <p>Checks the name of the policy.</p>
     #[doc(hidden)]
     pub check_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ValidationErrorsEntry {
 }
 impl ValidationErrorsEntry {
     /// <p>Checks the name of the policy.</p>
-    pub fn check_name(&self) -> ::std::option::Option<&str> {
+    pub fn check_name(&self) -> ::std::option::Option<& str> {
         self.check_name.as_deref()
     }
     /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ValidationErrorsEntry {
 
 /// A builder for [`ValidationErrorsEntry`](crate::types::ValidationErrorsEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationErrorsEntryBuilder {
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ValidationErrorsEntryBuilder {
     }
     /// <p>Checks the name of the policy.</p>
     pub fn set_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_name = input;
-        self
+        self.check_name = input; self
+    }
+    /// <p>Checks the name of the policy.</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_name
     }
     /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ValidationErrorsEntry`](crate::types::ValidationErrorsEntry).
     pub fn build(self) -> crate::types::ValidationErrorsEntry {
         crate::types::ValidationErrorsEntry {
-            check_name: self.check_name,
-            error_message: self.error_message,
+            check_name: self.check_name
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

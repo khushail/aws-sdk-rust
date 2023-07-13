@@ -3,7 +3,7 @@
 /// <p>A component of the key schema for the DynamoDB table, a global secondary index, or a local secondary index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDynamoDbTableKeySchema {
+pub struct AwsDynamoDbTableKeySchema  {
     /// <p>The name of the key schema attribute.</p>
     #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsDynamoDbTableKeySchema {
 }
 impl AwsDynamoDbTableKeySchema {
     /// <p>The name of the key schema attribute.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
-    pub fn key_type(&self) -> ::std::option::Option<&str> {
+    pub fn key_type(&self) -> ::std::option::Option<& str> {
         self.key_type.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl AwsDynamoDbTableKeySchema {
 
 /// A builder for [`AwsDynamoDbTableKeySchema`](crate::types::AwsDynamoDbTableKeySchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableKeySchemaBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableKeySchemaBuilder {
     /// <p>The name of the key schema attribute.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the key schema attribute.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.attribute_name = input;
-        self
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attribute_name = input; self
+    }
+    /// <p>The name of the key schema attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
     }
     /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
     pub fn key_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl AwsDynamoDbTableKeySchemaBuilder {
     }
     /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
     pub fn set_key_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_type = input;
-        self
+        self.key_type = input; self
+    }
+    /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
+    pub fn get_key_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_type
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableKeySchema`](crate::types::AwsDynamoDbTableKeySchema).
     pub fn build(self) -> crate::types::AwsDynamoDbTableKeySchema {
         crate::types::AwsDynamoDbTableKeySchema {
-            attribute_name: self.attribute_name,
-            key_type: self.key_type,
+            attribute_name: self.attribute_name
+            ,
+            key_type: self.key_type
+            ,
         }
     }
 }
+

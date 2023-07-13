@@ -3,7 +3,7 @@
 /// <p>LoRaWAN gateway metatdata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanGatewayMetadata {
+pub struct LoRaWanGatewayMetadata  {
     /// <p>The gateway's EUI value.</p>
     #[doc(hidden)]
     pub gateway_eui: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct LoRaWanGatewayMetadata {
 }
 impl LoRaWanGatewayMetadata {
     /// <p>The gateway's EUI value.</p>
-    pub fn gateway_eui(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_eui(&self) -> ::std::option::Option<& str> {
         self.gateway_eui.as_deref()
     }
     /// <p>The SNR value.</p>
@@ -37,9 +37,7 @@ impl LoRaWanGatewayMetadata {
 
 /// A builder for [`LoRaWanGatewayMetadata`](crate::types::LoRaWanGatewayMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanGatewayMetadataBuilder {
     pub(crate) gateway_eui: ::std::option::Option<::std::string::String>,
     pub(crate) snr: ::std::option::Option<f64>,
@@ -53,8 +51,11 @@ impl LoRaWanGatewayMetadataBuilder {
     }
     /// <p>The gateway's EUI value.</p>
     pub fn set_gateway_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_eui = input;
-        self
+        self.gateway_eui = input; self
+    }
+    /// <p>The gateway's EUI value.</p>
+    pub fn get_gateway_eui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_eui
     }
     /// <p>The SNR value.</p>
     pub fn snr(mut self, input: f64) -> Self {
@@ -63,8 +64,11 @@ impl LoRaWanGatewayMetadataBuilder {
     }
     /// <p>The SNR value.</p>
     pub fn set_snr(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.snr = input;
-        self
+        self.snr = input; self
+    }
+    /// <p>The SNR value.</p>
+    pub fn get_snr(&self) -> &::std::option::Option<f64> {
+        &self.snr
     }
     /// <p>The RSSI value.</p>
     pub fn rssi(mut self, input: f64) -> Self {
@@ -73,15 +77,22 @@ impl LoRaWanGatewayMetadataBuilder {
     }
     /// <p>The RSSI value.</p>
     pub fn set_rssi(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.rssi = input;
-        self
+        self.rssi = input; self
+    }
+    /// <p>The RSSI value.</p>
+    pub fn get_rssi(&self) -> &::std::option::Option<f64> {
+        &self.rssi
     }
     /// Consumes the builder and constructs a [`LoRaWanGatewayMetadata`](crate::types::LoRaWanGatewayMetadata).
     pub fn build(self) -> crate::types::LoRaWanGatewayMetadata {
         crate::types::LoRaWanGatewayMetadata {
-            gateway_eui: self.gateway_eui,
-            snr: self.snr,
-            rssi: self.rssi,
+            gateway_eui: self.gateway_eui
+            ,
+            snr: self.snr
+            ,
+            rssi: self.rssi
+            ,
         }
     }
 }
+

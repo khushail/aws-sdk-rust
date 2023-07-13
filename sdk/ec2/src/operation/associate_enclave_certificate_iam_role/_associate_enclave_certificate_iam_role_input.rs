@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateEnclaveCertificateIamRoleInput {
+pub struct AssociateEnclaveCertificateIamRoleInput  {
     /// <p>The ARN of the ACM certificate with which to associate the IAM role.</p>
     #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct AssociateEnclaveCertificateIamRoleInput {
 }
 impl AssociateEnclaveCertificateIamRoleInput {
     /// <p>The ARN of the ACM certificate with which to associate the IAM role.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The ARN of the IAM role to associate with the ACM certificate. You can associate up to 16 IAM roles with an ACM certificate.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,16 +29,14 @@ impl AssociateEnclaveCertificateIamRoleInput {
 }
 impl AssociateEnclaveCertificateIamRoleInput {
     /// Creates a new builder-style object to manufacture [`AssociateEnclaveCertificateIamRoleInput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput).
-    pub fn builder() -> crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleInputBuilder{
+    pub fn builder() -> crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleInputBuilder {
         crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateEnclaveCertificateIamRoleInput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateEnclaveCertificateIamRoleInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct AssociateEnclaveCertificateIamRoleInputBuilder {
 }
 impl AssociateEnclaveCertificateIamRoleInputBuilder {
     /// <p>The ARN of the ACM certificate with which to associate the IAM role.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the ACM certificate with which to associate the IAM role.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.certificate_arn = input;
-        self
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_arn = input; self
+    }
+    /// <p>The ARN of the ACM certificate with which to associate the IAM role.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
     }
     /// <p>The ARN of the IAM role to associate with the ACM certificate. You can associate up to 16 IAM roles with an ACM certificate.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl AssociateEnclaveCertificateIamRoleInputBuilder {
     }
     /// <p>The ARN of the IAM role to associate with the ACM certificate. You can associate up to 16 IAM roles with an ACM certificate.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The ARN of the IAM role to associate with the ACM certificate. You can associate up to 16 IAM roles with an ACM certificate.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -78,11 +76,14 @@ impl AssociateEnclaveCertificateIamRoleInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateEnclaveCertificateIamRoleInput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput {
                 certificate_arn: self.certificate_arn
@@ -95,3 +96,4 @@ impl AssociateEnclaveCertificateIamRoleInputBuilder {
         )
     }
 }
+

@@ -2,59 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEvaluationInput {
+pub struct DeleteEvaluationInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
     #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> ::std::option::Option<& str> {
         self.evaluation_id.as_deref()
     }
 }
 impl DeleteEvaluationInput {
     /// Creates a new builder-style object to manufacture [`DeleteEvaluationInput`](crate::operation::delete_evaluation::DeleteEvaluationInput).
-    pub fn builder() -> crate::operation::delete_evaluation::builders::DeleteEvaluationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_evaluation::builders::DeleteEvaluationInputBuilder {
         crate::operation::delete_evaluation::builders::DeleteEvaluationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEvaluationInput`](crate::operation::delete_evaluation::DeleteEvaluationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEvaluationInputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEvaluationInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.evaluation_id = input;
-        self
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_id = input; self
+    }
+    /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
     }
     /// Consumes the builder and constructs a [`DeleteEvaluationInput`](crate::operation::delete_evaluation::DeleteEvaluationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_evaluation::DeleteEvaluationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_evaluation::DeleteEvaluationInput {
-            evaluation_id: self.evaluation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_evaluation::DeleteEvaluationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_evaluation::DeleteEvaluationInput {
+                evaluation_id: self.evaluation_id
+                ,
+            }
+        )
     }
 }
+

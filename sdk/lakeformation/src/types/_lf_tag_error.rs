@@ -3,7 +3,7 @@
 /// <p>A structure containing an error related to a <code>TagResource</code> or <code>UnTagResource</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LfTagError {
+pub struct LfTagError  {
     /// <p>The key-name of the LF-tag.</p>
     #[doc(hidden)]
     pub lf_tag: ::std::option::Option<crate::types::LfTagPair>,
@@ -13,11 +13,11 @@ pub struct LfTagError {
 }
 impl LfTagError {
     /// <p>The key-name of the LF-tag.</p>
-    pub fn lf_tag(&self) -> ::std::option::Option<&crate::types::LfTagPair> {
+    pub fn lf_tag(&self) -> ::std::option::Option<& crate::types::LfTagPair> {
         self.lf_tag.as_ref()
     }
     /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl LfTagError {
 
 /// A builder for [`LfTagError`](crate::types::LfTagError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LfTagErrorBuilder {
     pub(crate) lf_tag: ::std::option::Option<crate::types::LfTagPair>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,
@@ -45,8 +43,11 @@ impl LfTagErrorBuilder {
     }
     /// <p>The key-name of the LF-tag.</p>
     pub fn set_lf_tag(mut self, input: ::std::option::Option<crate::types::LfTagPair>) -> Self {
-        self.lf_tag = input;
-        self
+        self.lf_tag = input; self
+    }
+    /// <p>The key-name of the LF-tag.</p>
+    pub fn get_lf_tag(&self) -> &::std::option::Option<crate::types::LfTagPair> {
+        &self.lf_tag
     }
     /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
     pub fn error(mut self, input: crate::types::ErrorDetail) -> Self {
@@ -55,14 +56,20 @@ impl LfTagErrorBuilder {
     }
     /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
+    }
+    /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`LfTagError`](crate::types::LfTagError).
     pub fn build(self) -> crate::types::LfTagError {
         crate::types::LfTagError {
-            lf_tag: self.lf_tag,
-            error: self.error,
+            lf_tag: self.lf_tag
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

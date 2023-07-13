@@ -3,7 +3,7 @@
 /// <p>An asset property value entry containing the following information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAssetPropertyValueEntry {
+pub struct PutAssetPropertyValueEntry  {
     /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
     #[doc(hidden)]
     pub entry_id: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct PutAssetPropertyValueEntry {
 }
 impl PutAssetPropertyValueEntry {
     /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
-    pub fn entry_id(&self) -> ::std::option::Option<&str> {
+    pub fn entry_id(&self) -> ::std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
-    pub fn property_alias(&self) -> ::std::option::Option<&str> {
+    pub fn property_alias(&self) -> ::std::option::Option<& str> {
         self.property_alias.as_deref()
     }
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
-    pub fn property_values(&self) -> ::std::option::Option<&[crate::types::AssetPropertyValue]> {
+    pub fn property_values(&self) -> ::std::option::Option<& [crate::types::AssetPropertyValue]> {
         self.property_values.as_deref()
     }
 }
@@ -51,16 +51,13 @@ impl PutAssetPropertyValueEntry {
 
 /// A builder for [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAssetPropertyValueEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_alias: ::std::option::Option<::std::string::String>,
-    pub(crate) property_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub(crate) property_values: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
 }
 impl PutAssetPropertyValueEntryBuilder {
     /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
@@ -70,8 +67,11 @@ impl PutAssetPropertyValueEntryBuilder {
     }
     /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
+    }
+    /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
+    pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_id
     }
     /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,8 +80,11 @@ impl PutAssetPropertyValueEntryBuilder {
     }
     /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
+    }
+    /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,24 +93,24 @@ impl PutAssetPropertyValueEntryBuilder {
     }
     /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
+    }
+    /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
     }
     /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.property_alias = input;
-        self
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.property_alias = input; self
+    }
+    /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
+    pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_alias
     }
     /// Appends an item to `property_values`.
     ///
@@ -116,26 +119,32 @@ impl PutAssetPropertyValueEntryBuilder {
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
     pub fn property_values(mut self, input: crate::types::AssetPropertyValue) -> Self {
         let mut v = self.property_values.unwrap_or_default();
-        v.push(input);
-        self.property_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.property_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
-    pub fn set_property_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
-    ) -> Self {
-        self.property_values = input;
-        self
+    pub fn set_property_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>) -> Self {
+        self.property_values = input; self
+    }
+    /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
+    pub fn get_property_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
+        &self.property_values
     }
     /// Consumes the builder and constructs a [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).
     pub fn build(self) -> crate::types::PutAssetPropertyValueEntry {
         crate::types::PutAssetPropertyValueEntry {
-            entry_id: self.entry_id,
-            asset_id: self.asset_id,
-            property_id: self.property_id,
-            property_alias: self.property_alias,
-            property_values: self.property_values,
+            entry_id: self.entry_id
+            ,
+            asset_id: self.asset_id
+            ,
+            property_id: self.property_id
+            ,
+            property_alias: self.property_alias
+            ,
+            property_values: self.property_values
+            ,
         }
     }
 }
+

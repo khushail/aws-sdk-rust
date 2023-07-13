@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMeetingTagsInput {
+pub struct ListMeetingTagsInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
 }
 impl ListMeetingTagsInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> ::std::option::Option<&str> {
+    pub fn meeting_id(&self) -> ::std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl ListMeetingTagsInput {
 
 /// A builder for [`ListMeetingTagsInput`](crate::operation::list_meeting_tags::ListMeetingTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMeetingTagsInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl ListMeetingTagsInputBuilder {
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
+    }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
     }
     /// Consumes the builder and constructs a [`ListMeetingTagsInput`](crate::operation::list_meeting_tags::ListMeetingTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_meeting_tags::ListMeetingTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_meeting_tags::ListMeetingTagsInput {
-            meeting_id: self.meeting_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_meeting_tags::ListMeetingTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_meeting_tags::ListMeetingTagsInput {
+                meeting_id: self.meeting_id
+                ,
+            }
+        )
     }
 }
+

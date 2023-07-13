@@ -3,139 +3,123 @@ pub use crate::operation::change_message_visibility_batch::_change_message_visib
 
 pub use crate::operation::change_message_visibility_batch::_change_message_visibility_batch_input::ChangeMessageVisibilityBatchInputBuilder;
 
+impl ChangeMessageVisibilityBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.change_message_visibility_batch();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ChangeMessageVisibilityBatch`.
-///
-/// <p>Changes the visibility timeout of multiple messages. This is a batch version of <code> <code>ChangeMessageVisibility</code>.</code> The result of the action on each message is reported individually in the response. You can send up to 10 <code> <code>ChangeMessageVisibility</code> </code> requests with each <code>ChangeMessageVisibilityBatch</code> action.</p> <important>
-/// <p>Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of <code>200</code>.</p>
+/// 
+/// <p>Changes the visibility timeout of multiple messages. This is a batch version of <code> <code>ChangeMessageVisibility</code>.</code> The result of the action on each message is reported individually in the response. You can send up to 10 <code> <code>ChangeMessageVisibility</code> </code> requests with each <code>ChangeMessageVisibilityBatch</code> action.</p> <important> 
+/// <p>Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of <code>200</code>.</p> 
 /// </important>
-/// <p>Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:</p>
-/// <p> <code>&amp;AttributeName.1=first</code> </p>
-/// <p> <code>&amp;AttributeName.2=second</code> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchInputBuilder,
 }
-impl ChangeMessageVisibilityBatchFluentBuilder {
+impl ChangeMessageVisibilityBatchFluentBuilder  {
     /// Creates a new `ChangeMessageVisibilityBatch`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatch,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ChangeMessageVisibilityBatch as a reference.
+    pub fn as_input(&self) -> &crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatch, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput, ::aws_smithy_http::result::SdkError<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatch,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput, ::aws_smithy_http::result::SdkError<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatch, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_url(input.into());
         self
     }
-    /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
+    /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_url(input);
         self
     }
+    /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p> 
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_url()
+    }
     /// Appends an item to `Entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
-    pub fn entries(
-        mut self,
-        input: crate::types::ChangeMessageVisibilityBatchRequestEntry,
-    ) -> Self {
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
+    pub fn entries(mut self, input: crate::types::ChangeMessageVisibilityBatchRequestEntry) -> Self {
         self.inner = self.inner.entries(input);
         self
     }
-    /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>,
-        >,
-    ) -> Self {
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>> {
+        self.inner.get_entries()
+    }
 }
+

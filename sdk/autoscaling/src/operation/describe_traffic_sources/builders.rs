@@ -3,159 +3,140 @@ pub use crate::operation::describe_traffic_sources::_describe_traffic_sources_ou
 
 pub use crate::operation::describe_traffic_sources::_describe_traffic_sources_input::DescribeTrafficSourcesInputBuilder;
 
+impl DescribeTrafficSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_traffic_sources();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeTrafficSources`.
-///
-/// <p>Gets information about the traffic sources for the specified Auto Scaling group.</p>
-/// <p>You can optionally provide a traffic source type. If you provide a traffic source type, then the results only include that traffic source type.</p>
+/// 
+/// <p>Gets information about the traffic sources for the specified Auto Scaling group.</p> 
+/// <p>You can optionally provide a traffic source type. If you provide a traffic source type, then the results only include that traffic source type.</p> 
 /// <p>If you do not provide a traffic source type, then the results include all the traffic sources for the specified Auto Scaling group. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrafficSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder,
+                    inner: crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder,
 }
-impl DescribeTrafficSourcesFluentBuilder {
+impl DescribeTrafficSourcesFluentBuilder  {
     /// Creates a new `DescribeTrafficSources`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_traffic_sources::DescribeTrafficSources,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeTrafficSources as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_traffic_sources::DescribeTrafficSources, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_sources::DescribeTrafficSourcesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_sources::DescribeTrafficSourcesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_traffic_sources::DescribeTrafficSources,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_sources::DescribeTrafficSourcesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_traffic_sources::DescribeTrafficSources, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_sources::DescribeTrafficSourcesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator
-    {
-        crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator {
+                                crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
-    /// <p>The traffic source type that you want to describe.</p>
-    /// <p>The following lists the valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li>
-    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
-    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
+    /// <p>The traffic source type that you want to describe.</p> 
+    /// <p>The following lists the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li> 
+    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li> 
+    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li> 
     /// </ul>
-    pub fn traffic_source_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_source_type(input.into());
         self
     }
-    /// <p>The traffic source type that you want to describe.</p>
-    /// <p>The following lists the valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li>
-    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
-    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
+    /// <p>The traffic source type that you want to describe.</p> 
+    /// <p>The following lists the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li> 
+    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li> 
+    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li> 
     /// </ul>
-    pub fn set_traffic_source_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_source_type(input);
         self
+    }
+    /// <p>The traffic source type that you want to describe.</p> 
+    /// <p>The following lists the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>elb</code> if the traffic source is a Classic Load Balancer.</p> </li> 
+    /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li> 
+    /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li> 
+    /// </ul>
+    pub fn get_traffic_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_traffic_source_type()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,6 +148,10 @@ impl DescribeTrafficSourcesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -177,4 +162,9 @@ impl DescribeTrafficSourcesFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
 }
+

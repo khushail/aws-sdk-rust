@@ -51,6 +51,12 @@ pub use crate::types::_source_control_details::SourceControlDetailsBuilder;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNodeBuilder;
 
+pub use crate::types::_evaluate_data_quality_multi_frame::EvaluateDataQualityMultiFrameBuilder;
+
+pub use crate::types::_dq_stop_job_on_failure_options::DqStopJobOnFailureOptionsBuilder;
+
+pub use crate::types::_dq_results_publishing_options::DqResultsPublishingOptionsBuilder;
+
 pub use crate::types::_amazon_redshift_target::AmazonRedshiftTargetBuilder;
 
 pub use crate::types::_amazon_redshift_node_data::AmazonRedshiftNodeDataBuilder;
@@ -94,10 +100,6 @@ pub use crate::types::_catalog_hudi_source::CatalogHudiSourceBuilder;
 pub use crate::types::_s3_catalog_hudi_source::S3CatalogHudiSourceBuilder;
 
 pub use crate::types::_evaluate_data_quality::EvaluateDataQualityBuilder;
-
-pub use crate::types::_dq_stop_job_on_failure_options::DqStopJobOnFailureOptionsBuilder;
-
-pub use crate::types::_dq_results_publishing_options::DqResultsPublishingOptionsBuilder;
 
 pub use crate::types::_dynamic_transform::DynamicTransformBuilder;
 
@@ -309,11 +311,11 @@ pub use crate::types::_update_xml_classifier_request::UpdateXmlClassifierRequest
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequestBuilder;
 
-pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptionsBuilder;
-
 pub use crate::types::_data_source::DataSourceBuilder;
 
 pub use crate::types::_glue_table::GlueTableBuilder;
+
+pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptionsBuilder;
 
 pub use crate::types::_table::TableBuilder;
 
@@ -556,3 +558,4 @@ pub use crate::types::_table_version_error::TableVersionErrorBuilder;
 pub use crate::types::_table_error::TableErrorBuilder;
 
 pub use crate::types::_partition_error::PartitionErrorBuilder;
+

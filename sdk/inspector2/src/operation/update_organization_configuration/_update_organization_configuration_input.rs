@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOrganizationConfigurationInput {
+pub struct UpdateOrganizationConfigurationInput  {
     /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
     #[doc(hidden)]
     pub auto_enable: ::std::option::Option<crate::types::AutoEnable>,
 }
 impl UpdateOrganizationConfigurationInput {
     /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
-    pub fn auto_enable(&self) -> ::std::option::Option<&crate::types::AutoEnable> {
+    pub fn auto_enable(&self) -> ::std::option::Option<& crate::types::AutoEnable> {
         self.auto_enable.as_ref()
     }
 }
 impl UpdateOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder {
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInputBuilder {
     pub(crate) auto_enable: ::std::option::Option<crate::types::AutoEnable>,
 }
@@ -35,20 +33,15 @@ impl UpdateOrganizationConfigurationInputBuilder {
         self
     }
     /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
-    pub fn set_auto_enable(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoEnable>,
-    ) -> Self {
-        self.auto_enable = input;
-        self
+    pub fn set_auto_enable(mut self, input: ::std::option::Option<crate::types::AutoEnable>) -> Self {
+        self.auto_enable = input; self
+    }
+    /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::AutoEnable> {
+        &self.auto_enable
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput {
                 auto_enable: self.auto_enable
@@ -57,3 +50,4 @@ impl UpdateOrganizationConfigurationInputBuilder {
         )
     }
 }
+

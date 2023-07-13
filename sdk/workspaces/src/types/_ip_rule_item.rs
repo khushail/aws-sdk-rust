@@ -3,7 +3,7 @@
 /// <p>Describes a rule for an IP access control group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpRuleItem {
+pub struct IpRuleItem  {
     /// <p>The IP address range, in CIDR notation.</p>
     #[doc(hidden)]
     pub ip_rule: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct IpRuleItem {
 }
 impl IpRuleItem {
     /// <p>The IP address range, in CIDR notation.</p>
-    pub fn ip_rule(&self) -> ::std::option::Option<&str> {
+    pub fn ip_rule(&self) -> ::std::option::Option<& str> {
         self.ip_rule.as_deref()
     }
     /// <p>The description.</p>
-    pub fn rule_desc(&self) -> ::std::option::Option<&str> {
+    pub fn rule_desc(&self) -> ::std::option::Option<& str> {
         self.rule_desc.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl IpRuleItem {
 
 /// A builder for [`IpRuleItem`](crate::types::IpRuleItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpRuleItemBuilder {
     pub(crate) ip_rule: ::std::option::Option<::std::string::String>,
     pub(crate) rule_desc: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl IpRuleItemBuilder {
     }
     /// <p>The IP address range, in CIDR notation.</p>
     pub fn set_ip_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_rule = input;
-        self
+        self.ip_rule = input; self
+    }
+    /// <p>The IP address range, in CIDR notation.</p>
+    pub fn get_ip_rule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_rule
     }
     /// <p>The description.</p>
     pub fn rule_desc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl IpRuleItemBuilder {
     }
     /// <p>The description.</p>
     pub fn set_rule_desc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_desc = input;
-        self
+        self.rule_desc = input; self
+    }
+    /// <p>The description.</p>
+    pub fn get_rule_desc(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_desc
     }
     /// Consumes the builder and constructs a [`IpRuleItem`](crate::types::IpRuleItem).
     pub fn build(self) -> crate::types::IpRuleItem {
         crate::types::IpRuleItem {
-            ip_rule: self.ip_rule,
-            rule_desc: self.rule_desc,
+            ip_rule: self.ip_rule
+            ,
+            rule_desc: self.rule_desc
+            ,
         }
     }
 }
+

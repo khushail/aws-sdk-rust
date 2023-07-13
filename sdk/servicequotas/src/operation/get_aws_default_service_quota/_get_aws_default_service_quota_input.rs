@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAwsDefaultServiceQuotaInput {
+pub struct GetAwsDefaultServiceQuotaInput  {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct GetAwsDefaultServiceQuotaInput {
 }
 impl GetAwsDefaultServiceQuotaInput {
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The quota identifier.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<& str> {
         self.quota_code.as_deref()
     }
 }
 impl GetAwsDefaultServiceQuotaInput {
     /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaInput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput).
-    pub fn builder() -> crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder{
+    pub fn builder() -> crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder {
         crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAwsDefaultServiceQuotaInput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAwsDefaultServiceQuotaInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetAwsDefaultServiceQuotaInputBuilder {
     }
     /// <p>The service identifier.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
+    }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,21 +55,22 @@ impl GetAwsDefaultServiceQuotaInputBuilder {
     }
     /// <p>The quota identifier.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_code = input;
-        self
+        self.quota_code = input; self
+    }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
     }
     /// Consumes the builder and constructs a [`GetAwsDefaultServiceQuotaInput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput {
-                service_code: self.service_code,
-                quota_code: self.quota_code,
-            },
+                service_code: self.service_code
+                ,
+                quota_code: self.quota_code
+                ,
+            }
         )
     }
 }
+

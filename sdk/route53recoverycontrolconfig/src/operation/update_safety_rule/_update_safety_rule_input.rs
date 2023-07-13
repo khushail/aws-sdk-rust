@@ -3,7 +3,7 @@
 /// <p>A rule that you add to Application Recovery Controller to ensure that recovery actions don't accidentally impair your application's availability.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSafetyRuleInput {
+pub struct UpdateSafetyRuleInput  {
     /// <p>The assertion rule to update.</p>
     #[doc(hidden)]
     pub assertion_rule_update: ::std::option::Option<crate::types::AssertionRuleUpdate>,
@@ -13,29 +13,24 @@ pub struct UpdateSafetyRuleInput {
 }
 impl UpdateSafetyRuleInput {
     /// <p>The assertion rule to update.</p>
-    pub fn assertion_rule_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssertionRuleUpdate> {
+    pub fn assertion_rule_update(&self) -> ::std::option::Option<& crate::types::AssertionRuleUpdate> {
         self.assertion_rule_update.as_ref()
     }
     /// <p>The gating rule to update.</p>
-    pub fn gating_rule_update(&self) -> ::std::option::Option<&crate::types::GatingRuleUpdate> {
+    pub fn gating_rule_update(&self) -> ::std::option::Option<& crate::types::GatingRuleUpdate> {
         self.gating_rule_update.as_ref()
     }
 }
 impl UpdateSafetyRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateSafetyRuleInput`](crate::operation::update_safety_rule::UpdateSafetyRuleInput).
-    pub fn builder() -> crate::operation::update_safety_rule::builders::UpdateSafetyRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_safety_rule::builders::UpdateSafetyRuleInputBuilder {
         crate::operation::update_safety_rule::builders::UpdateSafetyRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSafetyRuleInput`](crate::operation::update_safety_rule::UpdateSafetyRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSafetyRuleInputBuilder {
     pub(crate) assertion_rule_update: ::std::option::Option<crate::types::AssertionRuleUpdate>,
     pub(crate) gating_rule_update: ::std::option::Option<crate::types::GatingRuleUpdate>,
@@ -47,12 +42,12 @@ impl UpdateSafetyRuleInputBuilder {
         self
     }
     /// <p>The assertion rule to update.</p>
-    pub fn set_assertion_rule_update(
-        mut self,
-        input: ::std::option::Option<crate::types::AssertionRuleUpdate>,
-    ) -> Self {
-        self.assertion_rule_update = input;
-        self
+    pub fn set_assertion_rule_update(mut self, input: ::std::option::Option<crate::types::AssertionRuleUpdate>) -> Self {
+        self.assertion_rule_update = input; self
+    }
+    /// <p>The assertion rule to update.</p>
+    pub fn get_assertion_rule_update(&self) -> &::std::option::Option<crate::types::AssertionRuleUpdate> {
+        &self.assertion_rule_update
     }
     /// <p>The gating rule to update.</p>
     pub fn gating_rule_update(mut self, input: crate::types::GatingRuleUpdate) -> Self {
@@ -60,25 +55,23 @@ impl UpdateSafetyRuleInputBuilder {
         self
     }
     /// <p>The gating rule to update.</p>
-    pub fn set_gating_rule_update(
-        mut self,
-        input: ::std::option::Option<crate::types::GatingRuleUpdate>,
-    ) -> Self {
-        self.gating_rule_update = input;
-        self
+    pub fn set_gating_rule_update(mut self, input: ::std::option::Option<crate::types::GatingRuleUpdate>) -> Self {
+        self.gating_rule_update = input; self
+    }
+    /// <p>The gating rule to update.</p>
+    pub fn get_gating_rule_update(&self) -> &::std::option::Option<crate::types::GatingRuleUpdate> {
+        &self.gating_rule_update
     }
     /// Consumes the builder and constructs a [`UpdateSafetyRuleInput`](crate::operation::update_safety_rule::UpdateSafetyRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_safety_rule::UpdateSafetyRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_safety_rule::UpdateSafetyRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_safety_rule::UpdateSafetyRuleInput {
-                assertion_rule_update: self.assertion_rule_update,
-                gating_rule_update: self.gating_rule_update,
-            },
+                assertion_rule_update: self.assertion_rule_update
+                ,
+                gating_rule_update: self.gating_rule_update
+                ,
+            }
         )
     }
 }
+

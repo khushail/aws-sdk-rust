@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSceneInput {
+pub struct DeleteSceneInput  {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteSceneInput {
 }
 impl DeleteSceneInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the scene to delete.</p>
-    pub fn scene_id(&self) -> ::std::option::Option<&str> {
+    pub fn scene_id(&self) -> ::std::option::Option<& str> {
         self.scene_id.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DeleteSceneInput {
 
 /// A builder for [`DeleteSceneInput`](crate::operation::delete_scene::DeleteSceneInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSceneInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) scene_id: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeleteSceneInputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
+    }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// <p>The ID of the scene to delete.</p>
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl DeleteSceneInputBuilder {
     }
     /// <p>The ID of the scene to delete.</p>
     pub fn set_scene_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scene_id = input;
-        self
+        self.scene_id = input; self
+    }
+    /// <p>The ID of the scene to delete.</p>
+    pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scene_id
     }
     /// Consumes the builder and constructs a [`DeleteSceneInput`](crate::operation::delete_scene::DeleteSceneInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_scene::DeleteSceneInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_scene::DeleteSceneInput {
-            workspace_id: self.workspace_id,
-            scene_id: self.scene_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scene::DeleteSceneInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_scene::DeleteSceneInput {
+                workspace_id: self.workspace_id
+                ,
+                scene_id: self.scene_id
+                ,
+            }
+        )
     }
 }
+

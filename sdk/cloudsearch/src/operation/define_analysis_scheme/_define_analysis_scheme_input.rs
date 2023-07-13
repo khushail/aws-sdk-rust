@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code><code>DefineAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefineAnalysisSchemeInput {
+pub struct DefineAnalysisSchemeInput  {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -13,27 +13,24 @@ pub struct DefineAnalysisSchemeInput {
 }
 impl DefineAnalysisSchemeInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-    pub fn analysis_scheme(&self) -> ::std::option::Option<&crate::types::AnalysisScheme> {
+    pub fn analysis_scheme(&self) -> ::std::option::Option<& crate::types::AnalysisScheme> {
         self.analysis_scheme.as_ref()
     }
 }
 impl DefineAnalysisSchemeInput {
     /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeInput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput).
-    pub fn builder(
-    ) -> crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeInputBuilder {
+    pub fn builder() -> crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeInputBuilder {
         crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeInputBuilder::default()
     }
 }
 
 /// A builder for [`DefineAnalysisSchemeInput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefineAnalysisSchemeInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_scheme: ::std::option::Option<crate::types::AnalysisScheme>,
@@ -46,8 +43,11 @@ impl DefineAnalysisSchemeInputBuilder {
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
     pub fn analysis_scheme(mut self, input: crate::types::AnalysisScheme) -> Self {
@@ -55,25 +55,23 @@ impl DefineAnalysisSchemeInputBuilder {
         self
     }
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-    pub fn set_analysis_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisScheme>,
-    ) -> Self {
-        self.analysis_scheme = input;
-        self
+    pub fn set_analysis_scheme(mut self, input: ::std::option::Option<crate::types::AnalysisScheme>) -> Self {
+        self.analysis_scheme = input; self
+    }
+    /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
+    pub fn get_analysis_scheme(&self) -> &::std::option::Option<crate::types::AnalysisScheme> {
+        &self.analysis_scheme
     }
     /// Consumes the builder and constructs a [`DefineAnalysisSchemeInput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput {
-                domain_name: self.domain_name,
-                analysis_scheme: self.analysis_scheme,
-            },
+                domain_name: self.domain_name
+                ,
+                analysis_scheme: self.analysis_scheme
+                ,
+            }
         )
     }
 }
+

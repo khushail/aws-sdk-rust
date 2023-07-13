@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMonitorInput {
+pub struct DeleteMonitorInput  {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
     #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMonitorInput {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> ::std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteMonitorInput {
 
 /// A builder for [`DeleteMonitorInput`](crate::operation::delete_monitor::DeleteMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMonitorInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteMonitorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
     }
     /// Consumes the builder and constructs a [`DeleteMonitorInput`](crate::operation::delete_monitor::DeleteMonitorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_monitor::DeleteMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_monitor::DeleteMonitorInput {
-            monitor_arn: self.monitor_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_monitor::DeleteMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_monitor::DeleteMonitorInput {
+                monitor_arn: self.monitor_arn
+                ,
+            }
+        )
     }
 }
+

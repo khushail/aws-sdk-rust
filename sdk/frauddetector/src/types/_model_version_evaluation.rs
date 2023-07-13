@@ -3,7 +3,7 @@
 /// <p> The model version evalutions. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelVersionEvaluation {
+pub struct ModelVersionEvaluation  {
     /// <p> The output variable name. </p>
     #[doc(hidden)]
     pub output_variable_name: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,15 @@ pub struct ModelVersionEvaluation {
 }
 impl ModelVersionEvaluation {
     /// <p> The output variable name. </p>
-    pub fn output_variable_name(&self) -> ::std::option::Option<&str> {
+    pub fn output_variable_name(&self) -> ::std::option::Option<& str> {
         self.output_variable_name.as_deref()
     }
     /// <p> The evaluation score generated for the model version. </p>
-    pub fn evaluation_score(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_score(&self) -> ::std::option::Option<& str> {
         self.evaluation_score.as_deref()
     }
     /// <p> The prediction explanations generated for the model version. </p>
-    pub fn prediction_explanations(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictionExplanations> {
+    pub fn prediction_explanations(&self) -> ::std::option::Option<& crate::types::PredictionExplanations> {
         self.prediction_explanations.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl ModelVersionEvaluation {
 
 /// A builder for [`ModelVersionEvaluation`](crate::types::ModelVersionEvaluation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelVersionEvaluationBuilder {
     pub(crate) output_variable_name: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_score: ::std::option::Option<::std::string::String>,
@@ -49,36 +45,30 @@ pub struct ModelVersionEvaluationBuilder {
 }
 impl ModelVersionEvaluationBuilder {
     /// <p> The output variable name. </p>
-    pub fn output_variable_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_variable_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_variable_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The output variable name. </p>
-    pub fn set_output_variable_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.output_variable_name = input;
-        self
+    pub fn set_output_variable_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output_variable_name = input; self
+    }
+    /// <p> The output variable name. </p>
+    pub fn get_output_variable_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_variable_name
     }
     /// <p> The evaluation score generated for the model version. </p>
-    pub fn evaluation_score(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_score(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_score = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The evaluation score generated for the model version. </p>
-    pub fn set_evaluation_score(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.evaluation_score = input;
-        self
+    pub fn set_evaluation_score(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_score = input; self
+    }
+    /// <p> The evaluation score generated for the model version. </p>
+    pub fn get_evaluation_score(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_score
     }
     /// <p> The prediction explanations generated for the model version. </p>
     pub fn prediction_explanations(mut self, input: crate::types::PredictionExplanations) -> Self {
@@ -86,19 +76,23 @@ impl ModelVersionEvaluationBuilder {
         self
     }
     /// <p> The prediction explanations generated for the model version. </p>
-    pub fn set_prediction_explanations(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictionExplanations>,
-    ) -> Self {
-        self.prediction_explanations = input;
-        self
+    pub fn set_prediction_explanations(mut self, input: ::std::option::Option<crate::types::PredictionExplanations>) -> Self {
+        self.prediction_explanations = input; self
+    }
+    /// <p> The prediction explanations generated for the model version. </p>
+    pub fn get_prediction_explanations(&self) -> &::std::option::Option<crate::types::PredictionExplanations> {
+        &self.prediction_explanations
     }
     /// Consumes the builder and constructs a [`ModelVersionEvaluation`](crate::types::ModelVersionEvaluation).
     pub fn build(self) -> crate::types::ModelVersionEvaluation {
         crate::types::ModelVersionEvaluation {
-            output_variable_name: self.output_variable_name,
-            evaluation_score: self.evaluation_score,
-            prediction_explanations: self.prediction_explanations,
+            output_variable_name: self.output_variable_name
+            ,
+            evaluation_score: self.evaluation_score
+            ,
+            prediction_explanations: self.prediction_explanations
+            ,
         }
     }
 }
+

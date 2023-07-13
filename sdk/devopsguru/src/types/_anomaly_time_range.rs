@@ -3,7 +3,7 @@
 /// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyTimeRange {
+pub struct AnomalyTimeRange  {
     /// <p> The time when the anomalous behavior started. </p>
     #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct AnomalyTimeRange {
 }
 impl AnomalyTimeRange {
     /// <p> The time when the anomalous behavior started. </p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The time when the anomalous behavior ended. </p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl AnomalyTimeRange {
 
 /// A builder for [`AnomalyTimeRange`](crate::types::AnomalyTimeRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyTimeRangeBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,12 +42,12 @@ impl AnomalyTimeRangeBuilder {
         self
     }
     /// <p> The time when the anomalous behavior started. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p> The time when the anomalous behavior started. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p> The time when the anomalous behavior ended. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -57,18 +55,21 @@ impl AnomalyTimeRangeBuilder {
         self
     }
     /// <p> The time when the anomalous behavior ended. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p> The time when the anomalous behavior ended. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`AnomalyTimeRange`](crate::types::AnomalyTimeRange).
     pub fn build(self) -> crate::types::AnomalyTimeRange {
         crate::types::AnomalyTimeRange {
-            start_time: self.start_time,
-            end_time: self.end_time,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

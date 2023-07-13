@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProfileOutput {
+pub struct DeleteProfileOutput  {
     /// <p>The state of the profile after a read or write operation.</p>
     #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::ProfileDetail>,
@@ -10,15 +10,15 @@ pub struct DeleteProfileOutput {
 }
 impl DeleteProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn profile(&self) -> ::std::option::Option<&crate::types::ProfileDetail> {
+    pub fn profile(&self) -> ::std::option::Option<& crate::types::ProfileDetail> {
         self.profile.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileOutput`](crate::operation::delete_profile::DeleteProfileOutput).
     pub fn builder() -> crate::operation::delete_profile::builders::DeleteProfileOutputBuilder {
@@ -28,9 +28,7 @@ impl DeleteProfileOutput {
 
 /// A builder for [`DeleteProfileOutput`](crate::operation::delete_profile::DeleteProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProfileOutputBuilder {
     pub(crate) profile: ::std::option::Option<crate::types::ProfileDetail>,
     _request_id: Option<String>,
@@ -42,27 +40,29 @@ impl DeleteProfileOutputBuilder {
         self
     }
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn set_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileDetail>,
-    ) -> Self {
-        self.profile = input;
-        self
+    pub fn set_profile(mut self, input: ::std::option::Option<crate::types::ProfileDetail>) -> Self {
+        self.profile = input; self
+    }
+    /// <p>The state of the profile after a read or write operation.</p>
+    pub fn get_profile(&self) -> &::std::option::Option<crate::types::ProfileDetail> {
+        &self.profile
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteProfileOutput`](crate::operation::delete_profile::DeleteProfileOutput).
     pub fn build(self) -> crate::operation::delete_profile::DeleteProfileOutput {
         crate::operation::delete_profile::DeleteProfileOutput {
-            profile: self.profile,
+            profile: self.profile
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

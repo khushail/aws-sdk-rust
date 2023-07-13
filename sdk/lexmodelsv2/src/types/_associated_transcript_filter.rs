@@ -3,7 +3,7 @@
 /// <p>Filters to search for the associated transcript.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociatedTranscriptFilter {
+pub struct AssociatedTranscriptFilter  {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>,
@@ -13,11 +13,11 @@ pub struct AssociatedTranscriptFilter {
 }
 impl AssociatedTranscriptFilter {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AssociatedTranscriptFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AssociatedTranscriptFilterName> {
         self.name.as_ref()
     }
     /// <p>The values to use to filter the transcript.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AssociatedTranscriptFilter {
 
 /// A builder for [`AssociatedTranscriptFilter`](crate::types::AssociatedTranscriptFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatedTranscriptFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,12 +42,12 @@ impl AssociatedTranscriptFilterBuilder {
         self
     }
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>) -> Self {
+        self.name = input; self
+    }
+    /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AssociatedTranscriptFilterName> {
+        &self.name
     }
     /// Appends an item to `values`.
     ///
@@ -58,23 +56,26 @@ impl AssociatedTranscriptFilterBuilder {
     /// <p>The values to use to filter the transcript.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values to use to filter the transcript.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>The values to use to filter the transcript.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`AssociatedTranscriptFilter`](crate::types::AssociatedTranscriptFilter).
     pub fn build(self) -> crate::types::AssociatedTranscriptFilter {
         crate::types::AssociatedTranscriptFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

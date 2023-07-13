@@ -3,7 +3,7 @@
 /// <p>The object that contains the statistical summary of recommended intents associated with the bot recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntentStatistics {
+pub struct IntentStatistics  {
     /// <p>The number of recommended intents associated with the bot recommendation.</p>
     #[doc(hidden)]
     pub discovered_intent_count: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl IntentStatistics {
 
 /// A builder for [`IntentStatistics`](crate::types::IntentStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentStatisticsBuilder {
     pub(crate) discovered_intent_count: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl IntentStatisticsBuilder {
     }
     /// <p>The number of recommended intents associated with the bot recommendation.</p>
     pub fn set_discovered_intent_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.discovered_intent_count = input;
-        self
+        self.discovered_intent_count = input; self
+    }
+    /// <p>The number of recommended intents associated with the bot recommendation.</p>
+    pub fn get_discovered_intent_count(&self) -> &::std::option::Option<i32> {
+        &self.discovered_intent_count
     }
     /// Consumes the builder and constructs a [`IntentStatistics`](crate::types::IntentStatistics).
     pub fn build(self) -> crate::types::IntentStatistics {
         crate::types::IntentStatistics {
-            discovered_intent_count: self.discovered_intent_count,
+            discovered_intent_count: self.discovered_intent_count
+            ,
         }
     }
 }
+

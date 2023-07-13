@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourcesInput {
+pub struct ListResourcesInput  {
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
     #[doc(hidden)]
-    pub filter_condition_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
+    pub filter_condition_list: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
     /// <p>The maximum number of resource results.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -16,7 +15,7 @@ pub struct ListResourcesInput {
 }
 impl ListResourcesInput {
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
-    pub fn filter_condition_list(&self) -> ::std::option::Option<&[crate::types::FilterCondition]> {
+    pub fn filter_condition_list(&self) -> ::std::option::Option<& [crate::types::FilterCondition]> {
         self.filter_condition_list.as_deref()
     }
     /// <p>The maximum number of resource results.</p>
@@ -24,7 +23,7 @@ impl ListResourcesInput {
         self.max_results
     }
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -37,12 +36,9 @@ impl ListResourcesInput {
 
 /// A builder for [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesInputBuilder {
-    pub(crate) filter_condition_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
+    pub(crate) filter_condition_list: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -54,17 +50,17 @@ impl ListResourcesInputBuilder {
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
     pub fn filter_condition_list(mut self, input: crate::types::FilterCondition) -> Self {
         let mut v = self.filter_condition_list.unwrap_or_default();
-        v.push(input);
-        self.filter_condition_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_condition_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
-    pub fn set_filter_condition_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
-    ) -> Self {
-        self.filter_condition_list = input;
-        self
+    pub fn set_filter_condition_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>) -> Self {
+        self.filter_condition_list = input; self
+    }
+    /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
+    pub fn get_filter_condition_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
+        &self.filter_condition_list
     }
     /// <p>The maximum number of resource results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -73,8 +69,11 @@ impl ListResourcesInputBuilder {
     }
     /// <p>The maximum number of resource results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of resource results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,20 +82,24 @@ impl ListResourcesInputBuilder {
     }
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resources::ListResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_resources::ListResourcesInput {
-            filter_condition_list: self.filter_condition_list,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resources::ListResourcesInput {
+                filter_condition_list: self.filter_condition_list
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

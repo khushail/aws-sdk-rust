@@ -3,7 +3,7 @@
 /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JdbcConnectorTarget {
+pub struct JdbcConnectorTarget  {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -24,48 +24,42 @@ pub struct JdbcConnectorTarget {
     pub connection_type: ::std::option::Option<::std::string::String>,
     /// <p>Additional connection options for the connector.</p>
     #[doc(hidden)]
-    pub additional_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the data schema for the JDBC target.</p>
     #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl JdbcConnectorTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The name of the table in the data target.</p>
-    pub fn connection_table(&self) -> ::std::option::Option<&str> {
+    pub fn connection_table(&self) -> ::std::option::Option<& str> {
         self.connection_table.as_deref()
     }
     /// <p>The name of a connector that will be used.</p>
-    pub fn connector_name(&self) -> ::std::option::Option<&str> {
+    pub fn connector_name(&self) -> ::std::option::Option<& str> {
         self.connector_name.as_deref()
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
-    pub fn connection_type(&self) -> ::std::option::Option<&str> {
+    pub fn connection_type(&self) -> ::std::option::Option<& str> {
         self.connection_type.as_deref()
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn additional_options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_options(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_options.as_ref()
     }
     /// <p>Specifies the data schema for the JDBC target.</p>
-    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
+    pub fn output_schemas(&self) -> ::std::option::Option<& [crate::types::GlueSchema]> {
         self.output_schemas.as_deref()
     }
 }
@@ -78,9 +72,7 @@ impl JdbcConnectorTarget {
 
 /// A builder for [`JdbcConnectorTarget`](crate::types::JdbcConnectorTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JdbcConnectorTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -88,9 +80,7 @@ pub struct JdbcConnectorTargetBuilder {
     pub(crate) connection_table: ::std::option::Option<::std::string::String>,
     pub(crate) connector_name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_type: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl JdbcConnectorTargetBuilder {
@@ -101,8 +91,11 @@ impl JdbcConnectorTargetBuilder {
     }
     /// <p>The name of the data target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the data target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `inputs`.
     ///
@@ -111,106 +104,88 @@ impl JdbcConnectorTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inputs = input; self
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_name = input;
-        self
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_name = input; self
+    }
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// <p>The name of the table in the data target.</p>
-    pub fn connection_table(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table in the data target.</p>
-    pub fn set_connection_table(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_table = input;
-        self
+    pub fn set_connection_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_table = input; self
+    }
+    /// <p>The name of the table in the data target.</p>
+    pub fn get_connection_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_table
     }
     /// <p>The name of a connector that will be used.</p>
-    pub fn connector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a connector that will be used.</p>
-    pub fn set_connector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connector_name = input;
-        self
+    pub fn set_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_name = input; self
+    }
+    /// <p>The name of a connector that will be used.</p>
+    pub fn get_connector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_name
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
-    pub fn connection_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_type = input;
-        self
+    pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_type = input; self
+    }
+    /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_type
     }
     /// Adds a key-value pair to `additional_options`.
     ///
     /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
     ///
     /// <p>Additional connection options for the connector.</p>
-    pub fn additional_options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.additional_options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn set_additional_options(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.additional_options = input;
-        self
+    pub fn set_additional_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.additional_options = input; self
+    }
+    /// <p>Additional connection options for the connector.</p>
+    pub fn get_additional_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.additional_options
     }
     /// Appends an item to `output_schemas`.
     ///
@@ -219,29 +194,38 @@ impl JdbcConnectorTargetBuilder {
     /// <p>Specifies the data schema for the JDBC target.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
-        v.push(input);
-        self.output_schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the data schema for the JDBC target.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
-        self.output_schemas = input;
-        self
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input; self
+    }
+    /// <p>Specifies the data schema for the JDBC target.</p>
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`JdbcConnectorTarget`](crate::types::JdbcConnectorTarget).
     pub fn build(self) -> crate::types::JdbcConnectorTarget {
         crate::types::JdbcConnectorTarget {
-            name: self.name,
-            inputs: self.inputs,
-            connection_name: self.connection_name,
-            connection_table: self.connection_table,
-            connector_name: self.connector_name,
-            connection_type: self.connection_type,
-            additional_options: self.additional_options,
-            output_schemas: self.output_schemas,
+            name: self.name
+            ,
+            inputs: self.inputs
+            ,
+            connection_name: self.connection_name
+            ,
+            connection_table: self.connection_table
+            ,
+            connector_name: self.connector_name
+            ,
+            connection_type: self.connection_type
+            ,
+            additional_options: self.additional_options
+            ,
+            output_schemas: self.output_schemas
+            ,
         }
     }
 }
+

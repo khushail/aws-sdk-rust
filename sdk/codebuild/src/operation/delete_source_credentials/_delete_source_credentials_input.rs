@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSourceCredentialsInput {
+pub struct DeleteSourceCredentialsInput  {
     /// <p> The Amazon Resource Name (ARN) of the token.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSourceCredentialsInput {
     /// <p> The Amazon Resource Name (ARN) of the token.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeleteSourceCredentialsInput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceCredentialsInput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsInputBuilder {
         crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSourceCredentialsInput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSourceCredentialsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DeleteSourceCredentialsInputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the token.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the token.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteSourceCredentialsInput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_source_credentials::DeleteSourceCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_source_credentials::DeleteSourceCredentialsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_source_credentials::DeleteSourceCredentialsInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelReplayOutput {
+pub struct CancelReplayOutput  {
     /// <p>The ARN of the replay to cancel.</p>
     #[doc(hidden)]
     pub replay_arn: ::std::option::Option<::std::string::String>,
@@ -16,23 +16,23 @@ pub struct CancelReplayOutput {
 }
 impl CancelReplayOutput {
     /// <p>The ARN of the replay to cancel.</p>
-    pub fn replay_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replay_arn(&self) -> ::std::option::Option<& str> {
         self.replay_arn.as_deref()
     }
     /// <p>The current state of the replay.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ReplayState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ReplayState> {
         self.state.as_ref()
     }
     /// <p>The reason that the replay is in the current state.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<& str> {
         self.state_reason.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelReplayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelReplayOutput {
     /// Creates a new builder-style object to manufacture [`CancelReplayOutput`](crate::operation::cancel_replay::CancelReplayOutput).
     pub fn builder() -> crate::operation::cancel_replay::builders::CancelReplayOutputBuilder {
@@ -42,9 +42,7 @@ impl CancelReplayOutput {
 
 /// A builder for [`CancelReplayOutput`](crate::operation::cancel_replay::CancelReplayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelReplayOutputBuilder {
     pub(crate) replay_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ReplayState>,
@@ -59,8 +57,11 @@ impl CancelReplayOutputBuilder {
     }
     /// <p>The ARN of the replay to cancel.</p>
     pub fn set_replay_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replay_arn = input;
-        self
+        self.replay_arn = input; self
+    }
+    /// <p>The ARN of the replay to cancel.</p>
+    pub fn get_replay_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replay_arn
     }
     /// <p>The current state of the replay.</p>
     pub fn state(mut self, input: crate::types::ReplayState) -> Self {
@@ -69,8 +70,11 @@ impl CancelReplayOutputBuilder {
     }
     /// <p>The current state of the replay.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReplayState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The current state of the replay.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplayState> {
+        &self.state
     }
     /// <p>The reason that the replay is in the current state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,25 +83,32 @@ impl CancelReplayOutputBuilder {
     }
     /// <p>The reason that the replay is in the current state.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
+    }
+    /// <p>The reason that the replay is in the current state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelReplayOutput`](crate::operation::cancel_replay::CancelReplayOutput).
     pub fn build(self) -> crate::operation::cancel_replay::CancelReplayOutput {
         crate::operation::cancel_replay::CancelReplayOutput {
-            replay_arn: self.replay_arn,
-            state: self.state,
-            state_reason: self.state_reason,
+            replay_arn: self.replay_arn
+            ,
+            state: self.state
+            ,
+            state_reason: self.state_reason
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

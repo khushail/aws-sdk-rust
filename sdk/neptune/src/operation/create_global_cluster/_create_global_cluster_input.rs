@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGlobalClusterInput {
+pub struct CreateGlobalClusterInput  {
     /// <p>The cluster identifier of the new global database cluster.</p>
     #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
     #[doc(hidden)]
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the database engine to be used in the global database.</p>
+    /// <p>The name of the database engine to be used in the global database.</p> 
     /// <p>Valid values: <code>neptune</code> </p>
     #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
-    /// <p>The Neptune engine version to be used by the global database.</p>
+    /// <p>The Neptune engine version to be used by the global database.</p> 
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
     #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
@@ -26,21 +26,21 @@ pub struct CreateGlobalClusterInput {
 }
 impl CreateGlobalClusterInput {
     /// <p>The cluster identifier of the new global database cluster.</p>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
-    pub fn source_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.source_db_cluster_identifier.as_deref()
     }
-    /// <p>The name of the database engine to be used in the global database.</p>
+    /// <p>The name of the database engine to be used in the global database.</p> 
     /// <p>Valid values: <code>neptune</code> </p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
-    /// <p>The Neptune engine version to be used by the global database.</p>
+    /// <p>The Neptune engine version to be used by the global database.</p> 
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
@@ -54,18 +54,14 @@ impl CreateGlobalClusterInput {
 }
 impl CreateGlobalClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
-    pub fn builder(
-    ) -> crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder {
-        crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder {
+        crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGlobalClusterInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -76,66 +72,62 @@ pub struct CreateGlobalClusterInputBuilder {
 }
 impl CreateGlobalClusterInputBuilder {
     /// <p>The cluster identifier of the new global database cluster.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier of the new global database cluster.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.global_cluster_identifier = input;
-        self
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_cluster_identifier = input; self
+    }
+    /// <p>The cluster identifier of the new global database cluster.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
     }
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
-    pub fn source_db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
-    pub fn set_source_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_db_cluster_identifier = input;
-        self
+    pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_db_cluster_identifier = input; self
     }
-    /// <p>The name of the database engine to be used in the global database.</p>
+    /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+    pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_db_cluster_identifier
+    }
+    /// <p>The name of the database engine to be used in the global database.</p> 
     /// <p>Valid values: <code>neptune</code> </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the database engine to be used in the global database.</p>
+    /// <p>The name of the database engine to be used in the global database.</p> 
     /// <p>Valid values: <code>neptune</code> </p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
-    /// <p>The Neptune engine version to be used by the global database.</p>
+    /// <p>The name of the database engine to be used in the global database.</p> 
+    /// <p>Valid values: <code>neptune</code> </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
+    /// <p>The Neptune engine version to be used by the global database.</p> 
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Neptune engine version to be used by the global database.</p>
+    /// <p>The Neptune engine version to be used by the global database.</p> 
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.engine_version = input;
-        self
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_version = input; self
+    }
+    /// <p>The Neptune engine version to be used by the global database.</p> 
+    /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -144,8 +136,11 @@ impl CreateGlobalClusterInputBuilder {
     }
     /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
+    }
+    /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
     }
     /// <p>The storage encryption setting for the new global database cluster.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
@@ -154,25 +149,30 @@ impl CreateGlobalClusterInputBuilder {
     }
     /// <p>The storage encryption setting for the new global database cluster.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.storage_encrypted = input;
-        self
+        self.storage_encrypted = input; self
+    }
+    /// <p>The storage encryption setting for the new global database cluster.</p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.storage_encrypted
     }
     /// Consumes the builder and constructs a [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_global_cluster::CreateGlobalClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_global_cluster::CreateGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_global_cluster::CreateGlobalClusterInput {
-                global_cluster_identifier: self.global_cluster_identifier,
-                source_db_cluster_identifier: self.source_db_cluster_identifier,
-                engine: self.engine,
-                engine_version: self.engine_version,
-                deletion_protection: self.deletion_protection,
-                storage_encrypted: self.storage_encrypted,
-            },
+                global_cluster_identifier: self.global_cluster_identifier
+                ,
+                source_db_cluster_identifier: self.source_db_cluster_identifier
+                ,
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+                storage_encrypted: self.storage_encrypted
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about targets that resolved during the Automation execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolvedTargets {
+pub struct ResolvedTargets  {
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
     #[doc(hidden)]
     pub parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,7 +13,7 @@ pub struct ResolvedTargets {
 }
 impl ResolvedTargets {
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
-    pub fn parameter_values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn parameter_values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.parameter_values.as_deref()
     }
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
@@ -30,9 +30,7 @@ impl ResolvedTargets {
 
 /// A builder for [`ResolvedTargets`](crate::types::ResolvedTargets).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolvedTargetsBuilder {
     pub(crate) parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) truncated: ::std::option::Option<bool>,
@@ -43,22 +41,19 @@ impl ResolvedTargetsBuilder {
     /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
     ///
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
-    pub fn parameter_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.parameter_values.unwrap_or_default();
-        v.push(input.into());
-        self.parameter_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.parameter_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
-    pub fn set_parameter_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.parameter_values = input;
-        self
+    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.parameter_values = input; self
+    }
+    /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
+    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parameter_values
     }
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
     pub fn truncated(mut self, input: bool) -> Self {
@@ -67,14 +62,21 @@ impl ResolvedTargetsBuilder {
     }
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
     pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.truncated = input;
-        self
+        self.truncated = input; self
+    }
+    /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
+    pub fn get_truncated(&self) -> &::std::option::Option<bool> {
+        &self.truncated
     }
     /// Consumes the builder and constructs a [`ResolvedTargets`](crate::types::ResolvedTargets).
     pub fn build(self) -> crate::types::ResolvedTargets {
         crate::types::ResolvedTargets {
-            parameter_values: self.parameter_values,
-            truncated: self.truncated.unwrap_or_default(),
+            parameter_values: self.parameter_values
+            ,
+            truncated: self.truncated
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

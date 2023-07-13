@@ -3,7 +3,7 @@
 /// <p>Describes the default credit option for CPU usage of a burstable performance instance family.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceFamilyCreditSpecification {
+pub struct InstanceFamilyCreditSpecification  {
     /// <p>The instance family.</p>
     #[doc(hidden)]
     pub instance_family: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
@@ -13,13 +13,11 @@ pub struct InstanceFamilyCreditSpecification {
 }
 impl InstanceFamilyCreditSpecification {
     /// <p>The instance family.</p>
-    pub fn instance_family(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UnlimitedSupportedInstanceFamily> {
+    pub fn instance_family(&self) -> ::std::option::Option<& crate::types::UnlimitedSupportedInstanceFamily> {
         self.instance_family.as_ref()
     }
     /// <p>The default credit option for CPU usage of the instance family. Valid values are <code>standard</code> and <code>unlimited</code>.</p>
-    pub fn cpu_credits(&self) -> ::std::option::Option<&str> {
+    pub fn cpu_credits(&self) -> ::std::option::Option<& str> {
         self.cpu_credits.as_deref()
     }
 }
@@ -32,30 +30,24 @@ impl InstanceFamilyCreditSpecification {
 
 /// A builder for [`InstanceFamilyCreditSpecification`](crate::types::InstanceFamilyCreditSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceFamilyCreditSpecificationBuilder {
-    pub(crate) instance_family:
-        ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
+    pub(crate) instance_family: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
     pub(crate) cpu_credits: ::std::option::Option<::std::string::String>,
 }
 impl InstanceFamilyCreditSpecificationBuilder {
     /// <p>The instance family.</p>
-    pub fn instance_family(
-        mut self,
-        input: crate::types::UnlimitedSupportedInstanceFamily,
-    ) -> Self {
+    pub fn instance_family(mut self, input: crate::types::UnlimitedSupportedInstanceFamily) -> Self {
         self.instance_family = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance family.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
-    ) -> Self {
-        self.instance_family = input;
-        self
+    pub fn set_instance_family(mut self, input: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>) -> Self {
+        self.instance_family = input; self
+    }
+    /// <p>The instance family.</p>
+    pub fn get_instance_family(&self) -> &::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily> {
+        &self.instance_family
     }
     /// <p>The default credit option for CPU usage of the instance family. Valid values are <code>standard</code> and <code>unlimited</code>.</p>
     pub fn cpu_credits(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,14 +56,20 @@ impl InstanceFamilyCreditSpecificationBuilder {
     }
     /// <p>The default credit option for CPU usage of the instance family. Valid values are <code>standard</code> and <code>unlimited</code>.</p>
     pub fn set_cpu_credits(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu_credits = input;
-        self
+        self.cpu_credits = input; self
+    }
+    /// <p>The default credit option for CPU usage of the instance family. Valid values are <code>standard</code> and <code>unlimited</code>.</p>
+    pub fn get_cpu_credits(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cpu_credits
     }
     /// Consumes the builder and constructs a [`InstanceFamilyCreditSpecification`](crate::types::InstanceFamilyCreditSpecification).
     pub fn build(self) -> crate::types::InstanceFamilyCreditSpecification {
         crate::types::InstanceFamilyCreditSpecification {
-            instance_family: self.instance_family,
-            cpu_credits: self.cpu_credits,
+            instance_family: self.instance_family
+            ,
+            cpu_credits: self.cpu_credits
+            ,
         }
     }
 }
+

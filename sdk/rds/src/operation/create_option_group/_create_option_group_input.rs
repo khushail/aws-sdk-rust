@@ -3,31 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOptionGroupInput {
-    /// <p>Specifies the name of the option group to be created.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+pub struct CreateOptionGroupInput  {
+    /// <p>Specifies the name of the option group to be created.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>myoptiongroup</code> </p>
     #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <p>Specifies the name of the engine that this option group should be associated with.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
@@ -42,61 +42,58 @@ pub struct CreateOptionGroupInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOptionGroupInput {
-    /// <p>Specifies the name of the option group to be created.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>Specifies the name of the option group to be created.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>myoptiongroup</code> </p>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <p>Specifies the name of the engine that this option group should be associated with.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
-    pub fn engine_name(&self) -> ::std::option::Option<&str> {
+    pub fn engine_name(&self) -> ::std::option::Option<& str> {
         self.engine_name.as_deref()
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> ::std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
     /// <p>The description of the option group.</p>
-    pub fn option_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_description(&self) -> ::std::option::Option<& str> {
         self.option_group_description.as_deref()
     }
     /// <p>Tags to assign to the option group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateOptionGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_option_group::builders::CreateOptionGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_option_group::builders::CreateOptionGroupInputBuilder {
         crate::operation::create_option_group::builders::CreateOptionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOptionGroupInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine_name: ::std::option::Option<::std::string::String>,
@@ -105,105 +102,120 @@ pub struct CreateOptionGroupInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOptionGroupInputBuilder {
-    /// <p>Specifies the name of the option group to be created.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>Specifies the name of the option group to be created.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>myoptiongroup</code> </p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the option group to be created.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>Specifies the name of the option group to be created.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>myoptiongroup</code> </p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.option_group_name = input;
-        self
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.option_group_name = input; self
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <p>Specifies the name of the option group to be created.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
+    /// <p>Example: <code>myoptiongroup</code> </p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
+    }
+    /// <p>Specifies the name of the engine that this option group should be associated with.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <p>Specifies the name of the engine that this option group should be associated with.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_name = input;
-        self
+        self.engine_name = input; self
+    }
+    /// <p>Specifies the name of the engine that this option group should be associated with.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
+    /// </ul>
+    pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_name
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn major_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn set_major_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.major_engine_version = input;
-        self
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.major_engine_version = input; self
+    }
+    /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
+    pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_engine_version
     }
     /// <p>The description of the option group.</p>
-    pub fn option_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the option group.</p>
-    pub fn set_option_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.option_group_description = input;
-        self
+    pub fn set_option_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.option_group_description = input; self
+    }
+    /// <p>The description of the option group.</p>
+    pub fn get_option_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_description
     }
     /// Appends an item to `tags`.
     ///
@@ -212,33 +224,34 @@ impl CreateOptionGroupInputBuilder {
     /// <p>Tags to assign to the option group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to assign to the option group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Tags to assign to the option group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_option_group::CreateOptionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_option_group::CreateOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_option_group::CreateOptionGroupInput {
-                option_group_name: self.option_group_name,
-                engine_name: self.engine_name,
-                major_engine_version: self.major_engine_version,
-                option_group_description: self.option_group_description,
-                tags: self.tags,
-            },
+                option_group_name: self.option_group_name
+                ,
+                engine_name: self.engine_name
+                ,
+                major_engine_version: self.major_engine_version
+                ,
+                option_group_description: self.option_group_description
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

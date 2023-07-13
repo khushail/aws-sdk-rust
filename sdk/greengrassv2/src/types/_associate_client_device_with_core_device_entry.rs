@@ -3,14 +3,14 @@
 /// <p>Contains a request to associate a client device with a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation consumes a list of these requests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateClientDeviceWithCoreDeviceEntry {
+pub struct AssociateClientDeviceWithCoreDeviceEntry  {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
     #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateClientDeviceWithCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl AssociateClientDeviceWithCoreDeviceEntry {
 
 /// A builder for [`AssociateClientDeviceWithCoreDeviceEntry`](crate::types::AssociateClientDeviceWithCoreDeviceEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateClientDeviceWithCoreDeviceEntryBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl AssociateClientDeviceWithCoreDeviceEntryBuilder {
     }
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
+    }
+    /// <p>The name of the IoT thing that represents the client device to associate.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// Consumes the builder and constructs a [`AssociateClientDeviceWithCoreDeviceEntry`](crate::types::AssociateClientDeviceWithCoreDeviceEntry).
     pub fn build(self) -> crate::types::AssociateClientDeviceWithCoreDeviceEntry {
         crate::types::AssociateClientDeviceWithCoreDeviceEntry {
-            thing_name: self.thing_name,
+            thing_name: self.thing_name
+            ,
         }
     }
 }
+

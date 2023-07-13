@@ -3,14 +3,14 @@
 /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PinpointDestination {
+pub struct PinpointDestination  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.</p>
     #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
 }
 impl PinpointDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl PinpointDestination {
 
 /// A builder for [`PinpointDestination`](crate::types::PinpointDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PinpointDestinationBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
 }
 impl PinpointDestinationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_arn = input;
-        self
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
     }
     /// Consumes the builder and constructs a [`PinpointDestination`](crate::types::PinpointDestination).
     pub fn build(self) -> crate::types::PinpointDestination {
         crate::types::PinpointDestination {
-            application_arn: self.application_arn,
+            application_arn: self.application_arn
+            ,
         }
     }
 }
+

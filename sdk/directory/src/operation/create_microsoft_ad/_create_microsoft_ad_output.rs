@@ -3,7 +3,7 @@
 /// <p>Result of a CreateMicrosoftAD request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMicrosoftAdOutput {
+pub struct CreateMicrosoftAdOutput  {
     /// <p>The identifier of the directory that was created.</p>
     #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
@@ -11,28 +11,25 @@ pub struct CreateMicrosoftAdOutput {
 }
 impl CreateMicrosoftAdOutput {
     /// <p>The identifier of the directory that was created.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateMicrosoftAdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateMicrosoftAdOutput {
     /// Creates a new builder-style object to manufacture [`CreateMicrosoftAdOutput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput).
-    pub fn builder(
-    ) -> crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdOutputBuilder {
+    pub fn builder() -> crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdOutputBuilder {
         crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMicrosoftAdOutput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMicrosoftAdOutputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -45,23 +42,28 @@ impl CreateMicrosoftAdOutputBuilder {
     }
     /// <p>The identifier of the directory that was created.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
+    }
+    /// <p>The identifier of the directory that was created.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateMicrosoftAdOutput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput).
     pub fn build(self) -> crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput {
         crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput {
-            directory_id: self.directory_id,
+            directory_id: self.directory_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

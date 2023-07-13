@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateCreatedArtifactInput {
+pub struct DisassociateCreatedArtifactInput  {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct DisassociateCreatedArtifactInput {
 }
 impl DisassociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(&self) -> ::std::option::Option<&str> {
+    pub fn progress_update_stream(&self) -> ::std::option::Option<& str> {
         self.progress_update_stream.as_deref()
     }
     /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(&self) -> ::std::option::Option<&str> {
+    pub fn migration_task_name(&self) -> ::std::option::Option<& str> {
         self.migration_task_name.as_deref()
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
-    pub fn created_artifact_name(&self) -> ::std::option::Option<&str> {
+    pub fn created_artifact_name(&self) -> ::std::option::Option<& str> {
         self.created_artifact_name.as_deref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
@@ -36,16 +36,14 @@ impl DisassociateCreatedArtifactInput {
 }
 impl DisassociateCreatedArtifactInput {
     /// Creates a new builder-style object to manufacture [`DisassociateCreatedArtifactInput`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput).
-    pub fn builder() -> crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactInputBuilder {
         crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateCreatedArtifactInput`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateCreatedArtifactInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
@@ -54,52 +52,43 @@ pub struct DisassociateCreatedArtifactInputBuilder {
 }
 impl DisassociateCreatedArtifactInputBuilder {
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.progress_update_stream = input;
-        self
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.progress_update_stream = input; self
+    }
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.migration_task_name = input;
-        self
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.migration_task_name = input; self
+    }
+    /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_task_name
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
-    pub fn created_artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_artifact_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
-    pub fn set_created_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.created_artifact_name = input;
-        self
+    pub fn set_created_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_artifact_name = input; self
+    }
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    pub fn get_created_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_artifact_name
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -108,23 +97,27 @@ impl DisassociateCreatedArtifactInputBuilder {
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisassociateCreatedArtifactInput`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-                created_artifact_name: self.created_artifact_name,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
+                progress_update_stream: self.progress_update_stream
+                ,
+                migration_task_name: self.migration_task_name
+                ,
+                created_artifact_name: self.created_artifact_name
+                ,
+                dry_run: self.dry_run
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMediaForFragmentListInput {
+pub struct GetMediaForFragmentListInput  {
     /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
     #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct GetMediaForFragmentListInput {
 }
 impl GetMediaForFragmentListInput {
     /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
-    pub fn fragments(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn fragments(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.fragments.as_deref()
     }
 }
 impl GetMediaForFragmentListInput {
     /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListInput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput).
-    pub fn builder(
-    ) -> crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder {
         crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMediaForFragmentListInput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMediaForFragmentListInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -54,8 +50,11 @@ impl GetMediaForFragmentListInputBuilder {
     }
     /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
+    }
+    /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,8 +63,11 @@ impl GetMediaForFragmentListInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Appends an item to `fragments`.
     ///
@@ -74,31 +76,30 @@ impl GetMediaForFragmentListInputBuilder {
     /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
     pub fn fragments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fragments.unwrap_or_default();
-        v.push(input.into());
-        self.fragments = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.fragments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
-    pub fn set_fragments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.fragments = input;
-        self
+    pub fn set_fragments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.fragments = input; self
+    }
+    /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
+    pub fn get_fragments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.fragments
     }
     /// Consumes the builder and constructs a [`GetMediaForFragmentListInput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                fragments: self.fragments,
-            },
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                fragments: self.fragments
+                ,
+            }
         )
     }
 }
+

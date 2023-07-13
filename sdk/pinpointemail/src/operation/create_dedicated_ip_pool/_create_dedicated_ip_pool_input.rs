@@ -3,7 +3,7 @@
 /// <p>A request to create a new dedicated IP pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDedicatedIpPoolInput {
+pub struct CreateDedicatedIpPoolInput  {
     /// <p>The name of the dedicated IP pool.</p>
     #[doc(hidden)]
     pub pool_name: ::std::option::Option<::std::string::String>,
@@ -13,28 +13,24 @@ pub struct CreateDedicatedIpPoolInput {
 }
 impl CreateDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool.</p>
-    pub fn pool_name(&self) -> ::std::option::Option<&str> {
+    pub fn pool_name(&self) -> ::std::option::Option<& str> {
         self.pool_name.as_deref()
     }
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateDedicatedIpPoolInput {
     /// Creates a new builder-style object to manufacture [`CreateDedicatedIpPoolInput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput).
-    pub fn builder(
-    ) -> crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolInputBuilder {
         crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDedicatedIpPoolInput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDedicatedIpPoolInputBuilder {
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -47,8 +43,11 @@ impl CreateDedicatedIpPoolInputBuilder {
     }
     /// <p>The name of the dedicated IP pool.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_name = input;
-        self
+        self.pool_name = input; self
+    }
+    /// <p>The name of the dedicated IP pool.</p>
+    pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_name
     }
     /// Appends an item to `tags`.
     ///
@@ -57,30 +56,28 @@ impl CreateDedicatedIpPoolInputBuilder {
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDedicatedIpPoolInput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput {
-                pool_name: self.pool_name,
-                tags: self.tags,
-            },
+                pool_name: self.pool_name
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

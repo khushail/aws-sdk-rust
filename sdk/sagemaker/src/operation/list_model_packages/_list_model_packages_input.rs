@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListModelPackagesInput {
+pub struct ListModelPackagesInput  {
     /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
     #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -21,11 +21,11 @@ pub struct ListModelPackagesInput {
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
     #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
-    /// <ul>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
-    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li> 
+    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li> 
+    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub model_package_type: ::std::option::Option<crate::types::ModelPackageType>,
@@ -41,11 +41,11 @@ pub struct ListModelPackagesInput {
 }
 impl ListModelPackagesInput {
     /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>The maximum number of model packages to return in the response.</p>
@@ -53,54 +53,49 @@ impl ListModelPackagesInput {
         self.max_results
     }
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
-    pub fn model_approval_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
+    pub fn model_approval_status(&self) -> ::std::option::Option<& crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
-    pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> ::std::option::Option<& str> {
         self.model_package_group_name.as_deref()
     }
-    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
-    /// <ul>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
-    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li> 
+    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li> 
+    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li> 
     /// </ul>
-    pub fn model_package_type(&self) -> ::std::option::Option<&crate::types::ModelPackageType> {
+    pub fn model_package_type(&self) -> ::std::option::Option<& crate::types::ModelPackageType> {
         self.model_package_type.as_ref()
     }
     /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ModelPackageSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ModelPackageSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
 impl ListModelPackagesInput {
     /// Creates a new builder-style object to manufacture [`ListModelPackagesInput`](crate::operation::list_model_packages::ListModelPackagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder {
+    pub fn builder() -> crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder {
         crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelPackagesInput`](crate::operation::list_model_packages::ListModelPackagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelPackagesInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -120,12 +115,12 @@ impl ListModelPackagesInputBuilder {
         self
     }
     /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_after = input;
-        self
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_after = input; self
+    }
+    /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
     }
     /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -133,12 +128,12 @@ impl ListModelPackagesInputBuilder {
         self
     }
     /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_before = input;
-        self
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_before = input; self
+    }
+    /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>The maximum number of model packages to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -147,24 +142,24 @@ impl ListModelPackagesInputBuilder {
     }
     /// <p>The maximum number of model packages to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of model packages to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.name_contains = input;
-        self
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name_contains = input; self
+    }
+    /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
     }
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
     pub fn model_approval_status(mut self, input: crate::types::ModelApprovalStatus) -> Self {
@@ -172,51 +167,53 @@ impl ListModelPackagesInputBuilder {
         self
     }
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
-    pub fn set_model_approval_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelApprovalStatus>,
-    ) -> Self {
-        self.model_approval_status = input;
-        self
+    pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
+        self.model_approval_status = input; self
+    }
+    /// <p>A filter that returns only the model packages with the specified approval status.</p>
+    pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
+        &self.model_approval_status
     }
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.model_package_group_name = input;
-        self
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_package_group_name = input; self
     }
-    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
-    /// <ul>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
-    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// <p>A filter that returns only model versions that belong to the specified model group.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
+    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li> 
+    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li> 
+    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li> 
     /// </ul>
     pub fn model_package_type(mut self, input: crate::types::ModelPackageType) -> Self {
         self.model_package_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
-    /// <ul>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
-    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li> 
+    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li> 
+    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li> 
     /// </ul>
-    pub fn set_model_package_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageType>,
-    ) -> Self {
-        self.model_package_type = input;
-        self
+    pub fn set_model_package_type(mut self, input: ::std::option::Option<crate::types::ModelPackageType>) -> Self {
+        self.model_package_type = input; self
+    }
+    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li> 
+    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li> 
+    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li> 
+    /// </ul>
+    pub fn get_model_package_type(&self) -> &::std::option::Option<crate::types::ModelPackageType> {
+        &self.model_package_type
     }
     /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -225,8 +222,11 @@ impl ListModelPackagesInputBuilder {
     }
     /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ModelPackageSortBy) -> Self {
@@ -234,12 +234,12 @@ impl ListModelPackagesInputBuilder {
         self
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageSortBy>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ModelPackageSortBy>) -> Self {
+        self.sort_by = input; self
+    }
+    /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ModelPackageSortBy> {
+        &self.sort_by
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -248,29 +248,38 @@ impl ListModelPackagesInputBuilder {
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListModelPackagesInput`](crate::operation::list_model_packages::ListModelPackagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_model_packages::ListModelPackagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_model_packages::ListModelPackagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_model_packages::ListModelPackagesInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                max_results: self.max_results,
-                name_contains: self.name_contains,
-                model_approval_status: self.model_approval_status,
-                model_package_group_name: self.model_package_group_name,
-                model_package_type: self.model_package_type,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                max_results: self.max_results
+                ,
+                name_contains: self.name_contains
+                ,
+                model_approval_status: self.model_approval_status
+                ,
+                model_package_group_name: self.model_package_group_name
+                ,
+                model_package_type: self.model_package_type
+                ,
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
         )
     }
 }
+

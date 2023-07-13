@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDirectConnectGatewayInput {
+pub struct UpdateDirectConnectGatewayInput  {
     /// <p>The ID of the Direct Connect gateway to update.</p>
     #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
@@ -12,75 +12,65 @@ pub struct UpdateDirectConnectGatewayInput {
 }
 impl UpdateDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway to update.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The new name for the Direct Connect gateway.</p>
-    pub fn new_direct_connect_gateway_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_direct_connect_gateway_name(&self) -> ::std::option::Option<& str> {
         self.new_direct_connect_gateway_name.as_deref()
     }
 }
 impl UpdateDirectConnectGatewayInput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayInput`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayInput).
-    pub fn builder() -> crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder{
+    pub fn builder() -> crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder {
         crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDirectConnectGatewayInput`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayInputBuilder {
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_direct_connect_gateway_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDirectConnectGatewayInputBuilder {
     /// <p>The ID of the Direct Connect gateway to update.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway to update.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.direct_connect_gateway_id = input; self
+    }
+    /// <p>The ID of the Direct Connect gateway to update.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
     }
     /// <p>The new name for the Direct Connect gateway.</p>
-    pub fn new_direct_connect_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_direct_connect_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_direct_connect_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new name for the Direct Connect gateway.</p>
-    pub fn set_new_direct_connect_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.new_direct_connect_gateway_name = input;
-        self
+    pub fn set_new_direct_connect_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.new_direct_connect_gateway_name = input; self
+    }
+    /// <p>The new name for the Direct Connect gateway.</p>
+    pub fn get_new_direct_connect_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_direct_connect_gateway_name
     }
     /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayInput`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayInput {
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                new_direct_connect_gateway_name: self.new_direct_connect_gateway_name,
-            },
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                new_direct_connect_gateway_name: self.new_direct_connect_gateway_name
+                ,
+            }
         )
     }
 }
+

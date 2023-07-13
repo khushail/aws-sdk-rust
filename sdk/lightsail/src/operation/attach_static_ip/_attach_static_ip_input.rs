@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachStaticIpInput {
+pub struct AttachStaticIpInput  {
     /// <p>The name of the static IP.</p>
     #[doc(hidden)]
     pub static_ip_name: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct AttachStaticIpInput {
 }
 impl AttachStaticIpInput {
     /// <p>The name of the static IP.</p>
-    pub fn static_ip_name(&self) -> ::std::option::Option<&str> {
+    pub fn static_ip_name(&self) -> ::std::option::Option<& str> {
         self.static_ip_name.as_deref()
     }
     /// <p>The instance name to which you want to attach the static IP address.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
 }
@@ -29,56 +29,48 @@ impl AttachStaticIpInput {
 
 /// A builder for [`AttachStaticIpInput`](crate::operation::attach_static_ip::AttachStaticIpInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachStaticIpInputBuilder {
     pub(crate) static_ip_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachStaticIpInputBuilder {
     /// <p>The name of the static IP.</p>
-    pub fn static_ip_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_ip_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.static_ip_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the static IP.</p>
-    pub fn set_static_ip_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.static_ip_name = input;
-        self
+    pub fn set_static_ip_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.static_ip_name = input; self
+    }
+    /// <p>The name of the static IP.</p>
+    pub fn get_static_ip_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.static_ip_name
     }
     /// <p>The instance name to which you want to attach the static IP address.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance name to which you want to attach the static IP address.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.instance_name = input;
-        self
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_name = input; self
+    }
+    /// <p>The instance name to which you want to attach the static IP address.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
     }
     /// Consumes the builder and constructs a [`AttachStaticIpInput`](crate::operation::attach_static_ip::AttachStaticIpInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_static_ip::AttachStaticIpInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::attach_static_ip::AttachStaticIpInput {
-            static_ip_name: self.static_ip_name,
-            instance_name: self.instance_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_static_ip::AttachStaticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::attach_static_ip::AttachStaticIpInput {
+                static_ip_name: self.static_ip_name
+                ,
+                instance_name: self.instance_name
+                ,
+            }
+        )
     }
 }
+

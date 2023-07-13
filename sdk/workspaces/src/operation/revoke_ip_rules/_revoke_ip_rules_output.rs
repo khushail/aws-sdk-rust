@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokeIpRulesOutput {
+pub struct RevokeIpRulesOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for RevokeIpRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RevokeIpRulesOutput {
     /// Creates a new builder-style object to manufacture [`RevokeIpRulesOutput`](crate::operation::revoke_ip_rules::RevokeIpRulesOutput).
     pub fn builder() -> crate::operation::revoke_ip_rules::builders::RevokeIpRulesOutputBuilder {
@@ -19,22 +19,20 @@ impl RevokeIpRulesOutput {
 
 /// A builder for [`RevokeIpRulesOutput`](crate::operation::revoke_ip_rules::RevokeIpRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeIpRulesOutputBuilder {
     _request_id: Option<String>,
 }
 impl RevokeIpRulesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RevokeIpRulesOutput`](crate::operation::revoke_ip_rules::RevokeIpRulesOutput).
     pub fn build(self) -> crate::operation::revoke_ip_rules::RevokeIpRulesOutput {
         crate::operation::revoke_ip_rules::RevokeIpRulesOutput {
@@ -42,3 +40,4 @@ impl RevokeIpRulesOutputBuilder {
         }
     }
 }
+

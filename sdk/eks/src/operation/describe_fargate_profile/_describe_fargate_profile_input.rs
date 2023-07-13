@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFargateProfileInput {
+pub struct DescribeFargateProfileInput  {
     /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
     #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DescribeFargateProfileInput {
 }
 impl DescribeFargateProfileInput {
     /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the Fargate profile to describe.</p>
-    pub fn fargate_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn fargate_profile_name(&self) -> ::std::option::Option<& str> {
         self.fargate_profile_name.as_deref()
     }
 }
 impl DescribeFargateProfileInput {
     /// Creates a new builder-style object to manufacture [`DescribeFargateProfileInput`](crate::operation::describe_fargate_profile::DescribeFargateProfileInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fargate_profile::builders::DescribeFargateProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fargate_profile::builders::DescribeFargateProfileInputBuilder {
         crate::operation::describe_fargate_profile::builders::DescribeFargateProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFargateProfileInput`](crate::operation::describe_fargate_profile::DescribeFargateProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFargateProfileInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) fargate_profile_name: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl DescribeFargateProfileInputBuilder {
     }
     /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
+    }
+    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// <p>The name of the Fargate profile to describe.</p>
-    pub fn fargate_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fargate_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fargate_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Fargate profile to describe.</p>
-    pub fn set_fargate_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.fargate_profile_name = input;
-        self
+    pub fn set_fargate_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.fargate_profile_name = input; self
+    }
+    /// <p>The name of the Fargate profile to describe.</p>
+    pub fn get_fargate_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fargate_profile_name
     }
     /// Consumes the builder and constructs a [`DescribeFargateProfileInput`](crate::operation::describe_fargate_profile::DescribeFargateProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fargate_profile::DescribeFargateProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fargate_profile::DescribeFargateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_fargate_profile::DescribeFargateProfileInput {
-                cluster_name: self.cluster_name,
-                fargate_profile_name: self.fargate_profile_name,
-            },
+                cluster_name: self.cluster_name
+                ,
+                fargate_profile_name: self.fargate_profile_name
+                ,
+            }
         )
     }
 }
+

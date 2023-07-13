@@ -3,7 +3,7 @@
 /// <p>Violation detail for an expected route missing in Network Firewall.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkFirewallMissingExpectedRoutesViolation {
+pub struct NetworkFirewallMissingExpectedRoutesViolation  {
     /// <p>The target of the violation.</p>
     #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
@@ -16,31 +16,28 @@ pub struct NetworkFirewallMissingExpectedRoutesViolation {
 }
 impl NetworkFirewallMissingExpectedRoutesViolation {
     /// <p>The target of the violation.</p>
-    pub fn violation_target(&self) -> ::std::option::Option<&str> {
+    pub fn violation_target(&self) -> ::std::option::Option<& str> {
         self.violation_target.as_deref()
     }
     /// <p>The expected routes.</p>
-    pub fn expected_routes(&self) -> ::std::option::Option<&[crate::types::ExpectedRoute]> {
+    pub fn expected_routes(&self) -> ::std::option::Option<& [crate::types::ExpectedRoute]> {
         self.expected_routes.as_deref()
     }
     /// <p>Information about the VPC ID.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 impl NetworkFirewallMissingExpectedRoutesViolation {
     /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRoutesViolation`](crate::types::NetworkFirewallMissingExpectedRoutesViolation).
-    pub fn builder() -> crate::types::builders::NetworkFirewallMissingExpectedRoutesViolationBuilder
-    {
+    pub fn builder() -> crate::types::builders::NetworkFirewallMissingExpectedRoutesViolationBuilder {
         crate::types::builders::NetworkFirewallMissingExpectedRoutesViolationBuilder::default()
     }
 }
 
 /// A builder for [`NetworkFirewallMissingExpectedRoutesViolation`](crate::types::NetworkFirewallMissingExpectedRoutesViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallMissingExpectedRoutesViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) expected_routes: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>,
@@ -48,20 +45,17 @@ pub struct NetworkFirewallMissingExpectedRoutesViolationBuilder {
 }
 impl NetworkFirewallMissingExpectedRoutesViolationBuilder {
     /// <p>The target of the violation.</p>
-    pub fn violation_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target of the violation.</p>
-    pub fn set_violation_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.violation_target = input;
-        self
+    pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.violation_target = input; self
+    }
+    /// <p>The target of the violation.</p>
+    pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target
     }
     /// Appends an item to `expected_routes`.
     ///
@@ -70,17 +64,17 @@ impl NetworkFirewallMissingExpectedRoutesViolationBuilder {
     /// <p>The expected routes.</p>
     pub fn expected_routes(mut self, input: crate::types::ExpectedRoute) -> Self {
         let mut v = self.expected_routes.unwrap_or_default();
-        v.push(input);
-        self.expected_routes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.expected_routes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The expected routes.</p>
-    pub fn set_expected_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>,
-    ) -> Self {
-        self.expected_routes = input;
-        self
+    pub fn set_expected_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>) -> Self {
+        self.expected_routes = input; self
+    }
+    /// <p>The expected routes.</p>
+    pub fn get_expected_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>> {
+        &self.expected_routes
     }
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,15 +83,22 @@ impl NetworkFirewallMissingExpectedRoutesViolationBuilder {
     }
     /// <p>Information about the VPC ID.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>Information about the VPC ID.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`NetworkFirewallMissingExpectedRoutesViolation`](crate::types::NetworkFirewallMissingExpectedRoutesViolation).
     pub fn build(self) -> crate::types::NetworkFirewallMissingExpectedRoutesViolation {
         crate::types::NetworkFirewallMissingExpectedRoutesViolation {
-            violation_target: self.violation_target,
-            expected_routes: self.expected_routes,
-            vpc_id: self.vpc_id,
+            violation_target: self.violation_target
+            ,
+            expected_routes: self.expected_routes
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportGameConfigurationInput {
+pub struct ImportGameConfigurationInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
@@ -12,30 +12,24 @@ pub struct ImportGameConfigurationInput {
 }
 impl ImportGameConfigurationInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_name(&self) -> ::std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The source used to import configuration sections.</p>
-    pub fn import_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImportGameConfigurationSource> {
+    pub fn import_source(&self) -> ::std::option::Option<& crate::types::ImportGameConfigurationSource> {
         self.import_source.as_ref()
     }
 }
 impl ImportGameConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ImportGameConfigurationInput`](crate::operation::import_game_configuration::ImportGameConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder {
         crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportGameConfigurationInput`](crate::operation::import_game_configuration::ImportGameConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportGameConfigurationInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) import_source: ::std::option::Option<crate::types::ImportGameConfigurationSource>,
@@ -48,8 +42,11 @@ impl ImportGameConfigurationInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
+    }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
     }
     /// <p>The source used to import configuration sections.</p>
     pub fn import_source(mut self, input: crate::types::ImportGameConfigurationSource) -> Self {
@@ -57,25 +54,23 @@ impl ImportGameConfigurationInputBuilder {
         self
     }
     /// <p>The source used to import configuration sections.</p>
-    pub fn set_import_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportGameConfigurationSource>,
-    ) -> Self {
-        self.import_source = input;
-        self
+    pub fn set_import_source(mut self, input: ::std::option::Option<crate::types::ImportGameConfigurationSource>) -> Self {
+        self.import_source = input; self
+    }
+    /// <p>The source used to import configuration sections.</p>
+    pub fn get_import_source(&self) -> &::std::option::Option<crate::types::ImportGameConfigurationSource> {
+        &self.import_source
     }
     /// Consumes the builder and constructs a [`ImportGameConfigurationInput`](crate::operation::import_game_configuration::ImportGameConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_game_configuration::ImportGameConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_game_configuration::ImportGameConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::import_game_configuration::ImportGameConfigurationInput {
-                game_name: self.game_name,
-                import_source: self.import_source,
-            },
+                game_name: self.game_name
+                ,
+                import_source: self.import_source
+                ,
+            }
         )
     }
 }
+

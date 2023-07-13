@@ -3,14 +3,14 @@
 /// <p>The incremental refresh configuration for a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncrementalRefresh {
+pub struct IncrementalRefresh  {
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
     #[doc(hidden)]
     pub lookback_window: ::std::option::Option<crate::types::LookbackWindow>,
 }
 impl IncrementalRefresh {
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
-    pub fn lookback_window(&self) -> ::std::option::Option<&crate::types::LookbackWindow> {
+    pub fn lookback_window(&self) -> ::std::option::Option<& crate::types::LookbackWindow> {
         self.lookback_window.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl IncrementalRefresh {
 
 /// A builder for [`IncrementalRefresh`](crate::types::IncrementalRefresh).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncrementalRefreshBuilder {
     pub(crate) lookback_window: ::std::option::Option<crate::types::LookbackWindow>,
 }
@@ -36,17 +34,19 @@ impl IncrementalRefreshBuilder {
         self
     }
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
-    pub fn set_lookback_window(
-        mut self,
-        input: ::std::option::Option<crate::types::LookbackWindow>,
-    ) -> Self {
-        self.lookback_window = input;
-        self
+    pub fn set_lookback_window(mut self, input: ::std::option::Option<crate::types::LookbackWindow>) -> Self {
+        self.lookback_window = input; self
+    }
+    /// <p>The lookback window setup for an incremental refresh configuration.</p>
+    pub fn get_lookback_window(&self) -> &::std::option::Option<crate::types::LookbackWindow> {
+        &self.lookback_window
     }
     /// Consumes the builder and constructs a [`IncrementalRefresh`](crate::types::IncrementalRefresh).
     pub fn build(self) -> crate::types::IncrementalRefresh {
         crate::types::IncrementalRefresh {
-            lookback_window: self.lookback_window,
+            lookback_window: self.lookback_window
+            ,
         }
     }
 }
+

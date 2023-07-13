@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyspaceInput {
+pub struct GetKeyspaceInput  {
     /// <p>The name of the keyspace.</p>
     #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKeyspaceInput {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl GetKeyspaceInput {
 
 /// A builder for [`GetKeyspaceInput`](crate::operation::get_keyspace::GetKeyspaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyspaceInputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKeyspaceInputBuilder {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.keyspace_name = input;
-        self
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.keyspace_name = input; self
+    }
+    /// <p>The name of the keyspace.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyspace_name
     }
     /// Consumes the builder and constructs a [`GetKeyspaceInput`](crate::operation::get_keyspace::GetKeyspaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_keyspace::GetKeyspaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_keyspace::GetKeyspaceInput {
-            keyspace_name: self.keyspace_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_keyspace::GetKeyspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_keyspace::GetKeyspaceInput {
+                keyspace_name: self.keyspace_name
+                ,
+            }
+        )
     }
 }
+

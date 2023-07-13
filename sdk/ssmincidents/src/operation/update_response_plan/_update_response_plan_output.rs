@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResponsePlanOutput {
+pub struct UpdateResponsePlanOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UpdateResponsePlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateResponsePlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResponsePlanOutput`](crate::operation::update_response_plan::UpdateResponsePlanOutput).
-    pub fn builder(
-    ) -> crate::operation::update_response_plan::builders::UpdateResponsePlanOutputBuilder {
+    pub fn builder() -> crate::operation::update_response_plan::builders::UpdateResponsePlanOutputBuilder {
         crate::operation::update_response_plan::builders::UpdateResponsePlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResponsePlanOutput`](crate::operation::update_response_plan::UpdateResponsePlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResponsePlanOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateResponsePlanOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateResponsePlanOutput`](crate::operation::update_response_plan::UpdateResponsePlanOutput).
     pub fn build(self) -> crate::operation::update_response_plan::UpdateResponsePlanOutput {
         crate::operation::update_response_plan::UpdateResponsePlanOutput {
@@ -43,3 +40,4 @@ impl UpdateResponsePlanOutputBuilder {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReadSetImportJobInput {
+pub struct GetReadSetImportJobInput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct GetReadSetImportJobInput {
 }
 impl GetReadSetImportJobInput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
 }
 impl GetReadSetImportJobInput {
     /// Creates a new builder-style object to manufacture [`GetReadSetImportJobInput`](crate::operation::get_read_set_import_job::GetReadSetImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_read_set_import_job::builders::GetReadSetImportJobInputBuilder {
+    pub fn builder() -> crate::operation::get_read_set_import_job::builders::GetReadSetImportJobInputBuilder {
         crate::operation::get_read_set_import_job::builders::GetReadSetImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadSetImportJobInput`](crate::operation::get_read_set_import_job::GetReadSetImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadSetImportJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
@@ -45,37 +42,35 @@ impl GetReadSetImportJobInputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The job's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sequence_store_id = input;
-        self
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sequence_store_id = input; self
+    }
+    /// <p>The job's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
     }
     /// Consumes the builder and constructs a [`GetReadSetImportJobInput`](crate::operation::get_read_set_import_job::GetReadSetImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_read_set_import_job::GetReadSetImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_read_set_import_job::GetReadSetImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_read_set_import_job::GetReadSetImportJobInput {
-                id: self.id,
-                sequence_store_id: self.sequence_store_id,
-            },
+                id: self.id
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+            }
         )
     }
 }
+

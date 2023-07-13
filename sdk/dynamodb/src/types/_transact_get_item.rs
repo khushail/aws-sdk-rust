@@ -3,14 +3,14 @@
 /// <p>Specifies an item to be retrieved as part of the transaction.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransactGetItem {
+pub struct TransactGetItem  {
     /// <p>Contains the primary key that identifies the item to get, together with the name of the table that contains the item, and optionally the specific attributes of the item to retrieve.</p>
     #[doc(hidden)]
     pub get: ::std::option::Option<crate::types::Get>,
 }
 impl TransactGetItem {
     /// <p>Contains the primary key that identifies the item to get, together with the name of the table that contains the item, and optionally the specific attributes of the item to retrieve.</p>
-    pub fn get(&self) -> ::std::option::Option<&crate::types::Get> {
+    pub fn get(&self) -> ::std::option::Option<& crate::types::Get> {
         self.get.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl TransactGetItem {
 
 /// A builder for [`TransactGetItem`](crate::types::TransactGetItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransactGetItemBuilder {
     pub(crate) get: ::std::option::Option<crate::types::Get>,
 }
@@ -37,11 +35,18 @@ impl TransactGetItemBuilder {
     }
     /// <p>Contains the primary key that identifies the item to get, together with the name of the table that contains the item, and optionally the specific attributes of the item to retrieve.</p>
     pub fn set_get(mut self, input: ::std::option::Option<crate::types::Get>) -> Self {
-        self.get = input;
-        self
+        self.get = input; self
+    }
+    /// <p>Contains the primary key that identifies the item to get, together with the name of the table that contains the item, and optionally the specific attributes of the item to retrieve.</p>
+    pub fn get_get(&self) -> &::std::option::Option<crate::types::Get> {
+        &self.get
     }
     /// Consumes the builder and constructs a [`TransactGetItem`](crate::types::TransactGetItem).
     pub fn build(self) -> crate::types::TransactGetItem {
-        crate::types::TransactGetItem { get: self.get }
+        crate::types::TransactGetItem {
+            get: self.get
+            ,
+        }
     }
 }
+

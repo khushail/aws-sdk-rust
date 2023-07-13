@@ -3,104 +3,89 @@ pub use crate::operation::associate_external_connection::_associate_external_con
 
 pub use crate::operation::associate_external_connection::_associate_external_connection_input::AssociateExternalConnectionInputBuilder;
 
+impl AssociateExternalConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::associate_external_connection::AssociateExternalConnectionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::associate_external_connection::AssociateExternalConnectionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.associate_external_connection();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `AssociateExternalConnection`.
-///
-/// <p>Adds an existing external connection to a repository. One external connection is allowed per repository.</p> <note>
-/// <p>A repository can have one or more upstream repositories, or an external connection.</p>
+/// 
+/// <p>Adds an existing external connection to a repository. One external connection is allowed per repository.</p> <note> 
+/// <p>A repository can have one or more upstream repositories, or an external connection.</p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateExternalConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder,
 }
-impl AssociateExternalConnectionFluentBuilder {
+impl AssociateExternalConnectionFluentBuilder  {
     /// Creates a new `AssociateExternalConnection`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::associate_external_connection::AssociateExternalConnection,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_external_connection::AssociateExternalConnectionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the AssociateExternalConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_external_connection::AssociateExternalConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_external_connection::AssociateExternalConnectionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::associate_external_connection::AssociateExternalConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::associate_external_connection::AssociateExternalConnectionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_external_connection::AssociateExternalConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_external_connection::AssociateExternalConnectionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_external_connection::AssociateExternalConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_external_connection::AssociateExternalConnectionError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::associate_external_connection::AssociateExternalConnection,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_external_connection::AssociateExternalConnectionError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_external_connection::AssociateExternalConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_external_connection::AssociateExternalConnectionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::associate_external_connection::AssociateExternalConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::associate_external_connection::AssociateExternalConnectionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the domain that contains the repository.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -110,6 +95,10 @@ impl AssociateExternalConnectionFluentBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
+    }
+    /// <p>The name of the domain that contains the repository.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,6 +110,10 @@ impl AssociateExternalConnectionFluentBuilder {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
+    }
     /// <p> The name of the repository to which the external connection is added. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
@@ -131,40 +124,53 @@ impl AssociateExternalConnectionFluentBuilder {
         self.inner = self.inner.set_repository(input);
         self
     }
-    /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
-    /// <ul>
-    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
-    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
-    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
-    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
-    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
-    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
-    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
-    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
+    /// <p> The name of the repository to which the external connection is added. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository()
+    }
+    /// <p> The name of the external connection to add to the repository. The following values are supported: </p> 
+    /// <ul> 
+    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li> 
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li> 
+    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li> 
+    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li> 
+    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li> 
+    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li> 
+    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li> 
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li> 
     /// </ul>
-    pub fn external_connection(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_connection(input.into());
         self
     }
-    /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
-    /// <ul>
-    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
-    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
-    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
-    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
-    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
-    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
-    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
-    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
+    /// <p> The name of the external connection to add to the repository. The following values are supported: </p> 
+    /// <ul> 
+    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li> 
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li> 
+    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li> 
+    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li> 
+    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li> 
+    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li> 
+    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li> 
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li> 
     /// </ul>
-    pub fn set_external_connection(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_connection(input);
         self
     }
+    /// <p> The name of the external connection to add to the repository. The following values are supported: </p> 
+    /// <ul> 
+    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li> 
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li> 
+    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li> 
+    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li> 
+    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li> 
+    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li> 
+    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li> 
+    /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li> 
+    /// </ul>
+    pub fn get_external_connection(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_external_connection()
+    }
 }
+

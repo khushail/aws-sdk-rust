@@ -3,76 +3,87 @@ pub use crate::operation::update_image_generation_configuration::_update_image_g
 
 pub use crate::operation::update_image_generation_configuration::_update_image_generation_configuration_input::UpdateImageGenerationConfigurationInputBuilder;
 
+impl UpdateImageGenerationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_image_generation_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateImageGenerationConfiguration`.
-///
+/// 
 /// <p>Updates the <code>StreamInfo</code> and <code>ImageProcessingConfiguration</code> fields.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateImageGenerationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationInputBuilder,
 }
-impl UpdateImageGenerationConfigurationFluentBuilder {
+impl UpdateImageGenerationConfigurationFluentBuilder  {
     /// Creates a new `UpdateImageGenerationConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateImageGenerationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the stream from which to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -82,6 +93,10 @@ impl UpdateImageGenerationConfigurationFluentBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_name(input);
         self
+    }
+    /// <p>The name of the stream from which to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,20 +108,23 @@ impl UpdateImageGenerationConfigurationFluentBuilder {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
+    }
     /// <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn image_generation_configuration(
-        mut self,
-        input: crate::types::ImageGenerationConfiguration,
-    ) -> Self {
+    pub fn image_generation_configuration(mut self, input: crate::types::ImageGenerationConfiguration) -> Self {
         self.inner = self.inner.image_generation_configuration(input);
         self
     }
     /// <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn set_image_generation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageGenerationConfiguration>,
-    ) -> Self {
+    pub fn set_image_generation_configuration(mut self, input: ::std::option::Option<crate::types::ImageGenerationConfiguration>) -> Self {
         self.inner = self.inner.set_image_generation_configuration(input);
         self
     }
+    /// <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
+    pub fn get_image_generation_configuration(&self) -> &::std::option::Option<crate::types::ImageGenerationConfiguration> {
+        self.inner.get_image_generation_configuration()
+    }
 }
+

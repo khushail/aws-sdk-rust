@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSimulationOutput {
+pub struct DescribeSimulationOutput  {
     /// <p>The name of the simulation.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -53,89 +53,82 @@ pub struct DescribeSimulationOutput {
 }
 impl DescribeSimulationOutput {
     /// <p>The name of the simulation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A universally unique identifier (UUID) for this simulation.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the simulation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current lifecycle state of the simulation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SimulationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SimulationStatus> {
         self.status.as_ref()
     }
     /// <p>The desired lifecycle state of the simulation.</p>
-    pub fn target_status(&self) -> ::std::option::Option<&crate::types::SimulationTargetStatus> {
+    pub fn target_status(&self) -> ::std::option::Option<& crate::types::SimulationTargetStatus> {
         self.target_status.as_ref()
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-    pub fn schema_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn schema_s3_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.schema_s3_location.as_ref()
     }
     /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
     #[deprecated(note = "SchemaError is no longer used, check StartError instead.")]
-    pub fn schema_error(&self) -> ::std::option::Option<&str> {
+    pub fn schema_error(&self) -> ::std::option::Option<& str> {
         self.schema_error.as_deref()
     }
     /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<& crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
-    pub fn live_simulation_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LiveSimulationState> {
+    pub fn live_simulation_state(&self) -> ::std::option::Option<& crate::types::LiveSimulationState> {
         self.live_simulation_state.as_ref()
     }
     /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
-    pub fn maximum_duration(&self) -> ::std::option::Option<&str> {
+    pub fn maximum_duration(&self) -> ::std::option::Option<& str> {
         self.maximum_duration.as_deref()
     }
     /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-    pub fn snapshot_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn snapshot_s3_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.snapshot_s3_location.as_ref()
     }
     /// <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
-    pub fn start_error(&self) -> ::std::option::Option<&str> {
+    pub fn start_error(&self) -> ::std::option::Option<& str> {
         self.start_error.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSimulationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSimulationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationOutput`](crate::operation::describe_simulation::DescribeSimulationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder {
         crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSimulationOutput`](crate::operation::describe_simulation::DescribeSimulationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSimulationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
@@ -162,8 +155,11 @@ impl DescribeSimulationOutputBuilder {
     }
     /// <p>The name of the simulation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the simulation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A universally unique identifier (UUID) for this simulation.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,8 +168,11 @@ impl DescribeSimulationOutputBuilder {
     }
     /// <p>A universally unique identifier (UUID) for this simulation.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
+    }
+    /// <p>A universally unique identifier (UUID) for this simulation.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -182,8 +181,11 @@ impl DescribeSimulationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The description of the simulation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,8 +194,11 @@ impl DescribeSimulationOutputBuilder {
     }
     /// <p>The description of the simulation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the simulation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -202,8 +207,11 @@ impl DescribeSimulationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -211,12 +219,12 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The current lifecycle state of the simulation.</p>
     pub fn status(mut self, input: crate::types::SimulationStatus) -> Self {
@@ -224,12 +232,12 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>The current lifecycle state of the simulation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The current lifecycle state of the simulation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SimulationStatus> {
+        &self.status
     }
     /// <p>The desired lifecycle state of the simulation.</p>
     pub fn target_status(mut self, input: crate::types::SimulationTargetStatus) -> Self {
@@ -237,12 +245,12 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>The desired lifecycle state of the simulation.</p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationTargetStatus>,
-    ) -> Self {
-        self.target_status = input;
-        self
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::SimulationTargetStatus>) -> Self {
+        self.target_status = input; self
+    }
+    /// <p>The desired lifecycle state of the simulation.</p>
+    pub fn get_target_status(&self) -> &::std::option::Option<crate::types::SimulationTargetStatus> {
+        &self.target_status
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
     pub fn schema_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -250,12 +258,12 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-    pub fn set_schema_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
-        self.schema_s3_location = input;
-        self
+    pub fn set_schema_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
+        self.schema_s3_location = input; self
+    }
+    /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    pub fn get_schema_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.schema_s3_location
     }
     /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
     #[deprecated(note = "SchemaError is no longer used, check StartError instead.")]
@@ -266,8 +274,12 @@ impl DescribeSimulationOutputBuilder {
     /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
     #[deprecated(note = "SchemaError is no longer used, check StartError instead.")]
     pub fn set_schema_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_error = input;
-        self
+        self.schema_error = input; self
+    }
+    /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
+    #[deprecated(note = "SchemaError is no longer used, check StartError instead.")]
+    pub fn get_schema_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_error
     }
     /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
@@ -275,12 +287,12 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
-        self.logging_configuration = input;
-        self
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
+        self.logging_configuration = input; self
+    }
+    /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
     }
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
     pub fn live_simulation_state(mut self, input: crate::types::LiveSimulationState) -> Self {
@@ -288,28 +300,25 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
-    pub fn set_live_simulation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LiveSimulationState>,
-    ) -> Self {
-        self.live_simulation_state = input;
-        self
+    pub fn set_live_simulation_state(mut self, input: ::std::option::Option<crate::types::LiveSimulationState>) -> Self {
+        self.live_simulation_state = input; self
+    }
+    /// <p>A collection of additional state information, such as domain and clock configuration.</p>
+    pub fn get_live_simulation_state(&self) -> &::std::option::Option<crate::types::LiveSimulationState> {
+        &self.live_simulation_state
     }
     /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
-    pub fn maximum_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maximum_duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
-    pub fn set_maximum_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.maximum_duration = input;
-        self
+    pub fn set_maximum_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.maximum_duration = input; self
+    }
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
+    pub fn get_maximum_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maximum_duration
     }
     /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
     pub fn snapshot_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -317,12 +326,12 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-    pub fn set_snapshot_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
-        self.snapshot_s3_location = input;
-        self
+    pub fn set_snapshot_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
+        self.snapshot_s3_location = input; self
+    }
+    /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    pub fn get_snapshot_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.snapshot_s3_location
     }
     /// <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
     pub fn start_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -331,37 +340,56 @@ impl DescribeSimulationOutputBuilder {
     }
     /// <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
     pub fn set_start_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_error = input;
-        self
+        self.start_error = input; self
+    }
+    /// <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
+    pub fn get_start_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_error
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSimulationOutput`](crate::operation::describe_simulation::DescribeSimulationOutput).
     pub fn build(self) -> crate::operation::describe_simulation::DescribeSimulationOutput {
         crate::operation::describe_simulation::DescribeSimulationOutput {
-            name: self.name,
-            execution_id: self.execution_id,
-            arn: self.arn,
-            description: self.description,
-            role_arn: self.role_arn,
-            creation_time: self.creation_time,
-            status: self.status,
-            target_status: self.target_status,
-            schema_s3_location: self.schema_s3_location,
-            schema_error: self.schema_error,
-            logging_configuration: self.logging_configuration,
-            live_simulation_state: self.live_simulation_state,
-            maximum_duration: self.maximum_duration,
-            snapshot_s3_location: self.snapshot_s3_location,
-            start_error: self.start_error,
+            name: self.name
+            ,
+            execution_id: self.execution_id
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            role_arn: self.role_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            status: self.status
+            ,
+            target_status: self.target_status
+            ,
+            schema_s3_location: self.schema_s3_location
+            ,
+            schema_error: self.schema_error
+            ,
+            logging_configuration: self.logging_configuration
+            ,
+            live_simulation_state: self.live_simulation_state
+            ,
+            maximum_duration: self.maximum_duration
+            ,
+            snapshot_s3_location: self.snapshot_s3_location
+            ,
+            start_error: self.start_error
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

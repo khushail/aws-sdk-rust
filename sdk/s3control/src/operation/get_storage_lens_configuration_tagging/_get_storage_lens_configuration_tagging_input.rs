@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStorageLensConfigurationTaggingInput {
+pub struct GetStorageLensConfigurationTaggingInput  {
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
     #[doc(hidden)]
     pub config_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct GetStorageLensConfigurationTaggingInput {
 }
 impl GetStorageLensConfigurationTaggingInput {
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
-    pub fn config_id(&self) -> ::std::option::Option<&str> {
+    pub fn config_id(&self) -> ::std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>The account ID of the requester.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 impl GetStorageLensConfigurationTaggingInput {
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingInput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput).
-    pub fn builder() -> crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingInputBuilder{
+    pub fn builder() -> crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingInputBuilder {
         crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStorageLensConfigurationTaggingInput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStorageLensConfigurationTaggingInputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetStorageLensConfigurationTaggingInputBuilder {
     }
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
     pub fn set_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_id = input;
-        self
+        self.config_id = input; self
+    }
+    /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_id
     }
     /// <p>The account ID of the requester.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,11 +55,14 @@ impl GetStorageLensConfigurationTaggingInputBuilder {
     }
     /// <p>The account ID of the requester.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The account ID of the requester.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`GetStorageLensConfigurationTaggingInput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput {
                 config_id: self.config_id
@@ -69,3 +73,4 @@ impl GetStorageLensConfigurationTaggingInputBuilder {
         )
     }
 }
+

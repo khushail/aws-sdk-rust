@@ -2,41 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeprecateFlowTemplateOutput {
+pub struct DeprecateFlowTemplateOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeprecateFlowTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeprecateFlowTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateFlowTemplateOutput`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateOutputBuilder {
         crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateFlowTemplateOutput`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateFlowTemplateOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeprecateFlowTemplateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeprecateFlowTemplateOutput`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput).
     pub fn build(self) -> crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput {
         crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput {
@@ -44,3 +40,4 @@ impl DeprecateFlowTemplateOutputBuilder {
         }
     }
 }
+

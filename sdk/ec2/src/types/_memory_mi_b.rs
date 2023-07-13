@@ -3,7 +3,7 @@
 /// <p>The minimum and maximum amount of memory, in MiB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemoryMiB {
+pub struct MemoryMiB  {
     /// <p>The minimum amount of memory, in MiB. If this parameter is not specified, there is no minimum limit.</p>
     #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl MemoryMiB {
 
 /// A builder for [`MemoryMiB`](crate::types::MemoryMiB).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemoryMiBBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl MemoryMiBBuilder {
     }
     /// <p>The minimum amount of memory, in MiB. If this parameter is not specified, there is no minimum limit.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
+    }
+    /// <p>The minimum amount of memory, in MiB. If this parameter is not specified, there is no minimum limit.</p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
     }
     /// <p>The maximum amount of memory, in MiB. If this parameter is not specified, there is no maximum limit.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl MemoryMiBBuilder {
     }
     /// <p>The maximum amount of memory, in MiB. If this parameter is not specified, there is no maximum limit.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
+    }
+    /// <p>The maximum amount of memory, in MiB. If this parameter is not specified, there is no maximum limit.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`MemoryMiB`](crate::types::MemoryMiB).
     pub fn build(self) -> crate::types::MemoryMiB {
         crate::types::MemoryMiB {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

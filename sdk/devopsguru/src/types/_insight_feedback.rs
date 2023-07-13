@@ -3,7 +3,7 @@
 /// <p> Information about insight feedback received from a customer. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightFeedback {
+pub struct InsightFeedback  {
     /// <p> The insight feedback ID. </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct InsightFeedback {
 }
 impl InsightFeedback {
     /// <p> The insight feedback ID. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The feedback provided by the customer. </p>
-    pub fn feedback(&self) -> ::std::option::Option<&crate::types::InsightFeedbackOption> {
+    pub fn feedback(&self) -> ::std::option::Option<& crate::types::InsightFeedbackOption> {
         self.feedback.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl InsightFeedback {
 
 /// A builder for [`InsightFeedback`](crate::types::InsightFeedback).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightFeedbackBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) feedback: ::std::option::Option<crate::types::InsightFeedbackOption>,
@@ -45,8 +43,11 @@ impl InsightFeedbackBuilder {
     }
     /// <p> The insight feedback ID. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p> The insight feedback ID. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p> The feedback provided by the customer. </p>
     pub fn feedback(mut self, input: crate::types::InsightFeedbackOption) -> Self {
@@ -54,18 +55,21 @@ impl InsightFeedbackBuilder {
         self
     }
     /// <p> The feedback provided by the customer. </p>
-    pub fn set_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightFeedbackOption>,
-    ) -> Self {
-        self.feedback = input;
-        self
+    pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::InsightFeedbackOption>) -> Self {
+        self.feedback = input; self
+    }
+    /// <p> The feedback provided by the customer. </p>
+    pub fn get_feedback(&self) -> &::std::option::Option<crate::types::InsightFeedbackOption> {
+        &self.feedback
     }
     /// Consumes the builder and constructs a [`InsightFeedback`](crate::types::InsightFeedback).
     pub fn build(self) -> crate::types::InsightFeedback {
         crate::types::InsightFeedback {
-            id: self.id,
-            feedback: self.feedback,
+            id: self.id
+            ,
+            feedback: self.feedback
+            ,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFacetOutput {
+pub struct UpdateFacetOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UpdateFacetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateFacetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFacetOutput`](crate::operation::update_facet::UpdateFacetOutput).
     pub fn builder() -> crate::operation::update_facet::builders::UpdateFacetOutputBuilder {
@@ -19,22 +19,20 @@ impl UpdateFacetOutput {
 
 /// A builder for [`UpdateFacetOutput`](crate::operation::update_facet::UpdateFacetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFacetOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFacetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateFacetOutput`](crate::operation::update_facet::UpdateFacetOutput).
     pub fn build(self) -> crate::operation::update_facet::UpdateFacetOutput {
         crate::operation::update_facet::UpdateFacetOutput {
@@ -42,3 +40,4 @@ impl UpdateFacetOutputBuilder {
         }
     }
 }
+

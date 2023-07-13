@@ -3,102 +3,87 @@ pub use crate::operation::create_typed_link_facet::_create_typed_link_facet_outp
 
 pub use crate::operation::create_typed_link_facet::_create_typed_link_facet_input::CreateTypedLinkFacetInputBuilder;
 
+impl CreateTypedLinkFacetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_typed_link_facet::CreateTypedLinkFacetError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_typed_link_facet();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateTypedLinkFacet`.
-///
+/// 
 /// <p>Creates a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTypedLinkFacetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetInputBuilder,
+                    inner: crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetInputBuilder,
 }
-impl CreateTypedLinkFacetFluentBuilder {
+impl CreateTypedLinkFacetFluentBuilder  {
     /// Creates a new `CreateTypedLinkFacet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_typed_link_facet::CreateTypedLinkFacet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_typed_link_facet::CreateTypedLinkFacetError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateTypedLinkFacet as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_typed_link_facet::CreateTypedLinkFacetError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_typed_link_facet::CreateTypedLinkFacet, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_typed_link_facet::CreateTypedLinkFacetError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_typed_link_facet::CreateTypedLinkFacetError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_typed_link_facet::CreateTypedLinkFacetError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_typed_link_facet::CreateTypedLinkFacet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_typed_link_facet::CreateTypedLinkFacetError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_typed_link_facet::CreateTypedLinkFacetError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_typed_link_facet::CreateTypedLinkFacet, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_typed_link_facet::CreateTypedLinkFacetError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());
@@ -108,6 +93,10 @@ impl CreateTypedLinkFacetFluentBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
     }
     /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn facet(mut self, input: crate::types::TypedLinkFacet) -> Self {
@@ -119,4 +108,9 @@ impl CreateTypedLinkFacetFluentBuilder {
         self.inner = self.inner.set_facet(input);
         self
     }
+    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
+    pub fn get_facet(&self) -> &::std::option::Option<crate::types::TypedLinkFacet> {
+        self.inner.get_facet()
+    }
 }
+

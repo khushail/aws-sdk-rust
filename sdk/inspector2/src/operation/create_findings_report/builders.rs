@@ -3,114 +3,100 @@ pub use crate::operation::create_findings_report::_create_findings_report_output
 
 pub use crate::operation::create_findings_report::_create_findings_report_input::CreateFindingsReportInputBuilder;
 
+impl CreateFindingsReportInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_findings_report::CreateFindingsReportOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_findings_report::CreateFindingsReportError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_findings_report();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateFindingsReport`.
-///
+/// 
 /// <p>Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the <code>findingStatus</code> filter criteria. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFindingsReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_findings_report::builders::CreateFindingsReportInputBuilder,
+                    inner: crate::operation::create_findings_report::builders::CreateFindingsReportInputBuilder,
 }
-impl CreateFindingsReportFluentBuilder {
+impl CreateFindingsReportFluentBuilder  {
     /// Creates a new `CreateFindingsReport`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_findings_report::CreateFindingsReport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_report::CreateFindingsReportError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateFindingsReport as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_findings_report::builders::CreateFindingsReportInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_findings_report::CreateFindingsReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_report::CreateFindingsReportError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_findings_report::CreateFindingsReport, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_findings_report::CreateFindingsReportError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_findings_report::CreateFindingsReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_findings_report::CreateFindingsReportError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_findings_report::CreateFindingsReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_report::CreateFindingsReportError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_findings_report::CreateFindingsReport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_report::CreateFindingsReportError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_findings_report::CreateFindingsReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_findings_report::CreateFindingsReportError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_findings_report::CreateFindingsReport, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_findings_report::CreateFindingsReportError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The filter criteria to apply to the results of the finding report.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);
         self
     }
     /// <p>The filter criteria to apply to the results of the finding report.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::FilterCriteria>) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
+    }
+    /// <p>The filter criteria to apply to the results of the finding report.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
+        self.inner.get_filter_criteria()
     }
     /// <p>The format to generate the report in.</p>
     pub fn report_format(mut self, input: crate::types::ReportFormat) -> Self {
@@ -118,12 +104,13 @@ impl CreateFindingsReportFluentBuilder {
         self
     }
     /// <p>The format to generate the report in.</p>
-    pub fn set_report_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportFormat>,
-    ) -> Self {
+    pub fn set_report_format(mut self, input: ::std::option::Option<crate::types::ReportFormat>) -> Self {
         self.inner = self.inner.set_report_format(input);
         self
+    }
+    /// <p>The format to generate the report in.</p>
+    pub fn get_report_format(&self) -> &::std::option::Option<crate::types::ReportFormat> {
+        self.inner.get_report_format()
     }
     /// <p>The Amazon S3 export destination for the report.</p>
     pub fn s3_destination(mut self, input: crate::types::Destination) -> Self {
@@ -131,11 +118,13 @@ impl CreateFindingsReportFluentBuilder {
         self
     }
     /// <p>The Amazon S3 export destination for the report.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
     }
+    /// <p>The Amazon S3 export destination for the report.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        self.inner.get_s3_destination()
+    }
 }
+

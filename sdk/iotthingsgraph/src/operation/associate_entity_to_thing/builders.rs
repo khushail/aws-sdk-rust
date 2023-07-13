@@ -3,105 +3,89 @@ pub use crate::operation::associate_entity_to_thing::_associate_entity_to_thing_
 
 pub use crate::operation::associate_entity_to_thing::_associate_entity_to_thing_input::AssociateEntityToThingInputBuilder;
 
+impl AssociateEntityToThingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.associate_entity_to_thing();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `AssociateEntityToThing`.
-///
-/// <p>Associates a device with a concrete thing that is in the user's registry.</p>
+/// 
+/// <p>Associates a device with a concrete thing that is in the user's registry.</p> 
 /// <p>A thing can be associated with only one device at a time. If you associate a thing with a new device id, its previous association will be removed.</p>
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateEntityToThingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder,
+                    inner: crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder,
 }
-impl AssociateEntityToThingFluentBuilder {
+impl AssociateEntityToThingFluentBuilder  {
     /// Creates a new `AssociateEntityToThing`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThing,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the AssociateEntityToThing as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::associate_entity_to_thing::AssociateEntityToThing, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::associate_entity_to_thing::AssociateEntityToThingError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_entity_to_thing::AssociateEntityToThingError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThing,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_entity_to_thing::AssociateEntityToThingError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::associate_entity_to_thing::AssociateEntityToThing, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::associate_entity_to_thing::AssociateEntityToThingError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the thing to which the entity is to be associated.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
@@ -112,19 +96,29 @@ impl AssociateEntityToThingFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
-    /// <p>The ID of the device to be associated with the thing.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The name of the thing to which the entity is to be associated.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
+    /// <p>The ID of the device to be associated with the thing.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
         self
     }
-    /// <p>The ID of the device to be associated with the thing.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the device to be associated with the thing.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>The ID of the device to be associated with the thing.</p> 
+    /// <p>The ID should be in the following format.</p> 
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
@@ -136,4 +130,9 @@ impl AssociateEntityToThingFluentBuilder {
         self.inner = self.inner.set_namespace_version(input);
         self
     }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_namespace_version()
+    }
 }
+

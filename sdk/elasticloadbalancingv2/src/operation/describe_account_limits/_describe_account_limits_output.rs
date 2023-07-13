@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountLimitsOutput {
+pub struct DescribeAccountLimitsOutput  {
     /// <p>Information about the limits.</p>
     #[doc(hidden)]
     pub limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
@@ -13,33 +13,29 @@ pub struct DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// <p>Information about the limits.</p>
-    pub fn limits(&self) -> ::std::option::Option<&[crate::types::Limit]> {
+    pub fn limits(&self) -> ::std::option::Option<& [crate::types::Limit]> {
         self.limits.as_deref()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAccountLimitsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAccountLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder {
         crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsOutputBuilder {
     pub(crate) limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,17 @@ impl DescribeAccountLimitsOutputBuilder {
     /// <p>Information about the limits.</p>
     pub fn limits(mut self, input: crate::types::Limit) -> Self {
         let mut v = self.limits.unwrap_or_default();
-        v.push(input);
-        self.limits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.limits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the limits.</p>
-    pub fn set_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
-    ) -> Self {
-        self.limits = input;
-        self
+    pub fn set_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>) -> Self {
+        self.limits = input; self
+    }
+    /// <p>Information about the limits.</p>
+    pub fn get_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Limit>> {
+        &self.limits
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +68,30 @@ impl DescribeAccountLimitsOutputBuilder {
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
+    }
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
     pub fn build(self) -> crate::operation::describe_account_limits::DescribeAccountLimitsOutput {
         crate::operation::describe_account_limits::DescribeAccountLimitsOutput {
-            limits: self.limits,
-            next_marker: self.next_marker,
+            limits: self.limits
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

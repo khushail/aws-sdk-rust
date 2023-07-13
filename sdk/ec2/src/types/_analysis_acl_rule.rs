@@ -3,7 +3,7 @@
 /// <p>Describes a network access control (ACL) rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisAclRule {
+pub struct AnalysisAclRule  {
     /// <p>The IPv4 address range, in CIDR notation.</p>
     #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ pub struct AnalysisAclRule {
 }
 impl AnalysisAclRule {
     /// <p>The IPv4 address range, in CIDR notation.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>Indicates whether the rule is an outbound rule.</p>
@@ -33,15 +33,15 @@ impl AnalysisAclRule {
         self.egress
     }
     /// <p>The range of ports.</p>
-    pub fn port_range(&self) -> ::std::option::Option<&crate::types::PortRange> {
+    pub fn port_range(&self) -> ::std::option::Option<& crate::types::PortRange> {
         self.port_range.as_ref()
     }
     /// <p>The protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>Indicates whether to allow or deny traffic that matches the rule.</p>
-    pub fn rule_action(&self) -> ::std::option::Option<&str> {
+    pub fn rule_action(&self) -> ::std::option::Option<& str> {
         self.rule_action.as_deref()
     }
     /// <p>The rule number.</p>
@@ -58,9 +58,7 @@ impl AnalysisAclRule {
 
 /// A builder for [`AnalysisAclRule`](crate::types::AnalysisAclRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisAclRuleBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) egress: ::std::option::Option<bool>,
@@ -77,8 +75,11 @@ impl AnalysisAclRuleBuilder {
     }
     /// <p>The IPv4 address range, in CIDR notation.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
+    }
+    /// <p>The IPv4 address range, in CIDR notation.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// <p>Indicates whether the rule is an outbound rule.</p>
     pub fn egress(mut self, input: bool) -> Self {
@@ -87,8 +88,11 @@ impl AnalysisAclRuleBuilder {
     }
     /// <p>Indicates whether the rule is an outbound rule.</p>
     pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.egress = input;
-        self
+        self.egress = input; self
+    }
+    /// <p>Indicates whether the rule is an outbound rule.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        &self.egress
     }
     /// <p>The range of ports.</p>
     pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
@@ -97,8 +101,11 @@ impl AnalysisAclRuleBuilder {
     }
     /// <p>The range of ports.</p>
     pub fn set_port_range(mut self, input: ::std::option::Option<crate::types::PortRange>) -> Self {
-        self.port_range = input;
-        self
+        self.port_range = input; self
+    }
+    /// <p>The range of ports.</p>
+    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRange> {
+        &self.port_range
     }
     /// <p>The protocol.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,8 +114,11 @@ impl AnalysisAclRuleBuilder {
     }
     /// <p>The protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
+    }
+    /// <p>The protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>Indicates whether to allow or deny traffic that matches the rule.</p>
     pub fn rule_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,8 +127,11 @@ impl AnalysisAclRuleBuilder {
     }
     /// <p>Indicates whether to allow or deny traffic that matches the rule.</p>
     pub fn set_rule_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_action = input;
-        self
+        self.rule_action = input; self
+    }
+    /// <p>Indicates whether to allow or deny traffic that matches the rule.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_action
     }
     /// <p>The rule number.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
@@ -127,18 +140,28 @@ impl AnalysisAclRuleBuilder {
     }
     /// <p>The rule number.</p>
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rule_number = input;
-        self
+        self.rule_number = input; self
+    }
+    /// <p>The rule number.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.rule_number
     }
     /// Consumes the builder and constructs a [`AnalysisAclRule`](crate::types::AnalysisAclRule).
     pub fn build(self) -> crate::types::AnalysisAclRule {
         crate::types::AnalysisAclRule {
-            cidr: self.cidr,
-            egress: self.egress,
-            port_range: self.port_range,
-            protocol: self.protocol,
-            rule_action: self.rule_action,
-            rule_number: self.rule_number,
+            cidr: self.cidr
+            ,
+            egress: self.egress
+            ,
+            port_range: self.port_range
+            ,
+            protocol: self.protocol
+            ,
+            rule_action: self.rule_action
+            ,
+            rule_number: self.rule_number
+            ,
         }
     }
 }
+

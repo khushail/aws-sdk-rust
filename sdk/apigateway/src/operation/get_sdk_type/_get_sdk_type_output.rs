@@ -3,7 +3,7 @@
 /// <p>A type of SDK that API Gateway can generate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSdkTypeOutput {
+pub struct GetSdkTypeOutput  {
     /// <p>The identifier of an SdkType instance.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -15,35 +15,32 @@ pub struct GetSdkTypeOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of configuration properties of an SdkType.</p>
     #[doc(hidden)]
-    pub configuration_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>,
+    pub configuration_properties: ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>,
     _request_id: Option<String>,
 }
 impl GetSdkTypeOutput {
     /// <p>The identifier of an SdkType instance.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The user-friendly name of an SdkType instance.</p>
-    pub fn friendly_name(&self) -> ::std::option::Option<&str> {
+    pub fn friendly_name(&self) -> ::std::option::Option<& str> {
         self.friendly_name.as_deref()
     }
     /// <p>The description of an SdkType.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of configuration properties of an SdkType.</p>
-    pub fn configuration_properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SdkConfigurationProperty]> {
+    pub fn configuration_properties(&self) -> ::std::option::Option<& [crate::types::SdkConfigurationProperty]> {
         self.configuration_properties.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSdkTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSdkTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetSdkTypeOutput`](crate::operation::get_sdk_type::GetSdkTypeOutput).
     pub fn builder() -> crate::operation::get_sdk_type::builders::GetSdkTypeOutputBuilder {
@@ -53,15 +50,12 @@ impl GetSdkTypeOutput {
 
 /// A builder for [`GetSdkTypeOutput`](crate::operation::get_sdk_type::GetSdkTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSdkTypeOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) friendly_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>,
+    pub(crate) configuration_properties: ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>,
     _request_id: Option<String>,
 }
 impl GetSdkTypeOutputBuilder {
@@ -72,24 +66,24 @@ impl GetSdkTypeOutputBuilder {
     }
     /// <p>The identifier of an SdkType instance.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of an SdkType instance.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The user-friendly name of an SdkType instance.</p>
-    pub fn friendly_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn friendly_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.friendly_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of an SdkType instance.</p>
-    pub fn set_friendly_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.friendly_name = input;
-        self
+    pub fn set_friendly_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.friendly_name = input; self
+    }
+    /// <p>The user-friendly name of an SdkType instance.</p>
+    pub fn get_friendly_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.friendly_name
     }
     /// <p>The description of an SdkType.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,48 +92,53 @@ impl GetSdkTypeOutputBuilder {
     }
     /// <p>The description of an SdkType.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of an SdkType.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `configuration_properties`.
     ///
     /// To override the contents of this collection use [`set_configuration_properties`](Self::set_configuration_properties).
     ///
     /// <p>A list of configuration properties of an SdkType.</p>
-    pub fn configuration_properties(
-        mut self,
-        input: crate::types::SdkConfigurationProperty,
-    ) -> Self {
+    pub fn configuration_properties(mut self, input: crate::types::SdkConfigurationProperty) -> Self {
         let mut v = self.configuration_properties.unwrap_or_default();
-        v.push(input);
-        self.configuration_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.configuration_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of configuration properties of an SdkType.</p>
-    pub fn set_configuration_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>,
-    ) -> Self {
-        self.configuration_properties = input;
-        self
+    pub fn set_configuration_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>) -> Self {
+        self.configuration_properties = input; self
+    }
+    /// <p>A list of configuration properties of an SdkType.</p>
+    pub fn get_configuration_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>> {
+        &self.configuration_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSdkTypeOutput`](crate::operation::get_sdk_type::GetSdkTypeOutput).
     pub fn build(self) -> crate::operation::get_sdk_type::GetSdkTypeOutput {
         crate::operation::get_sdk_type::GetSdkTypeOutput {
-            id: self.id,
-            friendly_name: self.friendly_name,
-            description: self.description,
-            configuration_properties: self.configuration_properties,
+            id: self.id
+            ,
+            friendly_name: self.friendly_name
+            ,
+            description: self.description
+            ,
+            configuration_properties: self.configuration_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

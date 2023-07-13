@@ -3,88 +3,81 @@
 /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerTlsCertificateDnsRecordCreationState {
-    /// <p>The status code for the automated DNS record creation.</p>
-    /// <p>Following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
-    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
+pub struct LoadBalancerTlsCertificateDnsRecordCreationState  {
+    /// <p>The status code for the automated DNS record creation.</p> 
+    /// <p>Following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li> 
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub code:
-        ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode>,
+    pub code: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerTlsCertificateDnsRecordCreationState {
-    /// <p>The status code for the automated DNS record creation.</p>
-    /// <p>Following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
-    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
+    /// <p>The status code for the automated DNS record creation.</p> 
+    /// <p>Following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li> 
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li> 
     /// </ul>
-    pub fn code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode>
-    {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode> {
         self.code.as_ref()
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 impl LoadBalancerTlsCertificateDnsRecordCreationState {
     /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::types::LoadBalancerTlsCertificateDnsRecordCreationState).
-    pub fn builder(
-    ) -> crate::types::builders::LoadBalancerTlsCertificateDnsRecordCreationStateBuilder {
+    pub fn builder() -> crate::types::builders::LoadBalancerTlsCertificateDnsRecordCreationStateBuilder {
         crate::types::builders::LoadBalancerTlsCertificateDnsRecordCreationStateBuilder::default()
     }
 }
 
 /// A builder for [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::types::LoadBalancerTlsCertificateDnsRecordCreationState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateDnsRecordCreationStateBuilder {
-    pub(crate) code:
-        ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode>,
+    pub(crate) code: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerTlsCertificateDnsRecordCreationStateBuilder {
-    /// <p>The status code for the automated DNS record creation.</p>
-    /// <p>Following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
-    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
+    /// <p>The status code for the automated DNS record creation.</p> 
+    /// <p>Following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li> 
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li> 
     /// </ul>
-    pub fn code(
-        mut self,
-        input: crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode,
-    ) -> Self {
+    pub fn code(mut self, input: crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status code for the automated DNS record creation.</p>
-    /// <p>Following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li>
-    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li>
+    /// <p>The status code for the automated DNS record creation.</p> 
+    /// <p>Following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li> 
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li> 
     /// </ul>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode,
-        >,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode>) -> Self {
+        self.code = input; self
+    }
+    /// <p>The status code for the automated DNS record creation.</p> 
+    /// <p>Following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SUCCEEDED</code> - The validation records were successfully added.</p> </li> 
+    /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The validation record addition failed.</p> </li> 
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationStateCode> {
+        &self.code
     }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,14 +86,20 @@ impl LoadBalancerTlsCertificateDnsRecordCreationStateBuilder {
     }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The message that describes the reason for the status code.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::types::LoadBalancerTlsCertificateDnsRecordCreationState).
     pub fn build(self) -> crate::types::LoadBalancerTlsCertificateDnsRecordCreationState {
         crate::types::LoadBalancerTlsCertificateDnsRecordCreationState {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

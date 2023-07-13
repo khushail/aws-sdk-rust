@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHitWithHitTypeInput {
+pub struct CreateHitWithHitTypeInput  {
     /// <p>The HIT type ID you want to create this HIT with.</p>
     #[doc(hidden)]
     pub hit_type_id: ::std::option::Option<::std::string::String>,
@@ -12,18 +12,18 @@ pub struct CreateHitWithHitTypeInput {
     /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
     #[doc(hidden)]
     pub lifetime_in_seconds: ::std::option::Option<i64>,
-    /// <p> The data the person completing the HIT uses to produce the results. </p>
-    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
+    /// <p> The data the person completing the HIT uses to produce the results. </p> 
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p> 
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
     #[doc(hidden)]
     pub question: ::std::option::Option<::std::string::String>,
-    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
-    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p> 
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p> 
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
     #[doc(hidden)]
     pub requester_annotation: ::std::option::Option<::std::string::String>,
-    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
-    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note> 
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p> 
     /// </note>
     #[doc(hidden)]
     pub unique_request_token: ::std::option::Option<::std::string::String>,
@@ -33,18 +33,17 @@ pub struct CreateHitWithHitTypeInput {
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     #[doc(hidden)]
     pub hit_review_policy: ::std::option::Option<crate::types::ReviewPolicy>,
-    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p> 
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
     #[doc(hidden)]
     pub hit_layout_id: ::std::option::Option<::std::string::String>,
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
     #[doc(hidden)]
-    pub hit_layout_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>,
+    pub hit_layout_parameters: ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>,
 }
 impl CreateHitWithHitTypeInput {
     /// <p>The HIT type ID you want to create this HIT with.</p>
-    pub fn hit_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn hit_type_id(&self) -> ::std::option::Option<& str> {
         self.hit_type_id.as_deref()
     }
     /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
@@ -55,58 +54,52 @@ impl CreateHitWithHitTypeInput {
     pub fn lifetime_in_seconds(&self) -> ::std::option::Option<i64> {
         self.lifetime_in_seconds
     }
-    /// <p> The data the person completing the HIT uses to produce the results. </p>
-    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
+    /// <p> The data the person completing the HIT uses to produce the results. </p> 
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p> 
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
-    pub fn question(&self) -> ::std::option::Option<&str> {
+    pub fn question(&self) -> ::std::option::Option<& str> {
         self.question.as_deref()
     }
-    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
-    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p> 
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p> 
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
-    pub fn requester_annotation(&self) -> ::std::option::Option<&str> {
+    pub fn requester_annotation(&self) -> ::std::option::Option<& str> {
         self.requester_annotation.as_deref()
     }
-    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
-    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note> 
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p> 
     /// </note>
-    pub fn unique_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn unique_request_token(&self) -> ::std::option::Option<& str> {
         self.unique_request_token.as_deref()
     }
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn assignment_review_policy(&self) -> ::std::option::Option<&crate::types::ReviewPolicy> {
+    pub fn assignment_review_policy(&self) -> ::std::option::Option<& crate::types::ReviewPolicy> {
         self.assignment_review_policy.as_ref()
     }
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn hit_review_policy(&self) -> ::std::option::Option<&crate::types::ReviewPolicy> {
+    pub fn hit_review_policy(&self) -> ::std::option::Option<& crate::types::ReviewPolicy> {
         self.hit_review_policy.as_ref()
     }
-    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p> 
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
-    pub fn hit_layout_id(&self) -> ::std::option::Option<&str> {
+    pub fn hit_layout_id(&self) -> ::std::option::Option<& str> {
         self.hit_layout_id.as_deref()
     }
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
-    pub fn hit_layout_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HitLayoutParameter]> {
+    pub fn hit_layout_parameters(&self) -> ::std::option::Option<& [crate::types::HitLayoutParameter]> {
         self.hit_layout_parameters.as_deref()
     }
 }
 impl CreateHitWithHitTypeInput {
     /// Creates a new builder-style object to manufacture [`CreateHitWithHitTypeInput`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput).
-    pub fn builder(
-    ) -> crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeInputBuilder {
         crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHitWithHitTypeInput`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHitWithHitTypeInputBuilder {
     pub(crate) hit_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_assignments: ::std::option::Option<i32>,
@@ -117,8 +110,7 @@ pub struct CreateHitWithHitTypeInputBuilder {
     pub(crate) assignment_review_policy: ::std::option::Option<crate::types::ReviewPolicy>,
     pub(crate) hit_review_policy: ::std::option::Option<crate::types::ReviewPolicy>,
     pub(crate) hit_layout_id: ::std::option::Option<::std::string::String>,
-    pub(crate) hit_layout_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>,
+    pub(crate) hit_layout_parameters: ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>,
 }
 impl CreateHitWithHitTypeInputBuilder {
     /// <p>The HIT type ID you want to create this HIT with.</p>
@@ -128,8 +120,11 @@ impl CreateHitWithHitTypeInputBuilder {
     }
     /// <p>The HIT type ID you want to create this HIT with.</p>
     pub fn set_hit_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hit_type_id = input;
-        self
+        self.hit_type_id = input; self
+    }
+    /// <p>The HIT type ID you want to create this HIT with.</p>
+    pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_type_id
     }
     /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     pub fn max_assignments(mut self, input: i32) -> Self {
@@ -138,8 +133,11 @@ impl CreateHitWithHitTypeInputBuilder {
     }
     /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     pub fn set_max_assignments(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_assignments = input;
-        self
+        self.max_assignments = input; self
+    }
+    /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
+    pub fn get_max_assignments(&self) -> &::std::option::Option<i32> {
+        &self.max_assignments
     }
     /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
     pub fn lifetime_in_seconds(mut self, input: i64) -> Self {
@@ -148,62 +146,68 @@ impl CreateHitWithHitTypeInputBuilder {
     }
     /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
     pub fn set_lifetime_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.lifetime_in_seconds = input;
-        self
+        self.lifetime_in_seconds = input; self
     }
-    /// <p> The data the person completing the HIT uses to produce the results. </p>
-    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
+    /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
+    pub fn get_lifetime_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.lifetime_in_seconds
+    }
+    /// <p> The data the person completing the HIT uses to produce the results. </p> 
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p> 
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
     pub fn question(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The data the person completing the HIT uses to produce the results. </p>
-    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
+    /// <p> The data the person completing the HIT uses to produce the results. </p> 
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p> 
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
     pub fn set_question(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question = input;
-        self
+        self.question = input; self
     }
-    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
-    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+    /// <p> The data the person completing the HIT uses to produce the results. </p> 
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p> 
+    /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
+    pub fn get_question(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question
+    }
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p> 
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p> 
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
-    pub fn requester_annotation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_annotation = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
-    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p> 
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p> 
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
-    pub fn set_requester_annotation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.requester_annotation = input;
-        self
+    pub fn set_requester_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.requester_annotation = input; self
     }
-    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
-    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p> 
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p> 
+    /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
+    pub fn get_requester_annotation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requester_annotation
+    }
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note> 
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p> 
     /// </note>
-    pub fn unique_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unique_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unique_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
-    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note> 
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p> 
     /// </note>
-    pub fn set_unique_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.unique_request_token = input;
-        self
+    pub fn set_unique_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.unique_request_token = input; self
+    }
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note> 
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p> 
+    /// </note>
+    pub fn get_unique_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unique_request_token
     }
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub fn assignment_review_policy(mut self, input: crate::types::ReviewPolicy) -> Self {
@@ -211,12 +215,12 @@ impl CreateHitWithHitTypeInputBuilder {
         self
     }
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn set_assignment_review_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewPolicy>,
-    ) -> Self {
-        self.assignment_review_policy = input;
-        self
+    pub fn set_assignment_review_policy(mut self, input: ::std::option::Option<crate::types::ReviewPolicy>) -> Self {
+        self.assignment_review_policy = input; self
+    }
+    /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    pub fn get_assignment_review_policy(&self) -> &::std::option::Option<crate::types::ReviewPolicy> {
+        &self.assignment_review_policy
     }
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub fn hit_review_policy(mut self, input: crate::types::ReviewPolicy) -> Self {
@@ -224,30 +228,28 @@ impl CreateHitWithHitTypeInputBuilder {
         self
     }
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn set_hit_review_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewPolicy>,
-    ) -> Self {
-        self.hit_review_policy = input;
-        self
+    pub fn set_hit_review_policy(mut self, input: ::std::option::Option<crate::types::ReviewPolicy>) -> Self {
+        self.hit_review_policy = input; self
     }
-    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+    /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    pub fn get_hit_review_policy(&self) -> &::std::option::Option<crate::types::ReviewPolicy> {
+        &self.hit_review_policy
+    }
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p> 
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
-    pub fn hit_layout_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hit_layout_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_layout_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p> 
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
-    pub fn set_hit_layout_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hit_layout_id = input;
-        self
+    pub fn set_hit_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hit_layout_id = input; self
+    }
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p> 
+    /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
+    pub fn get_hit_layout_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_layout_id
     }
     /// Appends an item to `hit_layout_parameters`.
     ///
@@ -256,38 +258,44 @@ impl CreateHitWithHitTypeInputBuilder {
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
     pub fn hit_layout_parameters(mut self, input: crate::types::HitLayoutParameter) -> Self {
         let mut v = self.hit_layout_parameters.unwrap_or_default();
-        v.push(input);
-        self.hit_layout_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hit_layout_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
-    pub fn set_hit_layout_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>,
-    ) -> Self {
-        self.hit_layout_parameters = input;
-        self
+    pub fn set_hit_layout_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>) -> Self {
+        self.hit_layout_parameters = input; self
+    }
+    /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+    pub fn get_hit_layout_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>> {
+        &self.hit_layout_parameters
     }
     /// Consumes the builder and constructs a [`CreateHitWithHitTypeInput`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput {
-                hit_type_id: self.hit_type_id,
-                max_assignments: self.max_assignments,
-                lifetime_in_seconds: self.lifetime_in_seconds,
-                question: self.question,
-                requester_annotation: self.requester_annotation,
-                unique_request_token: self.unique_request_token,
-                assignment_review_policy: self.assignment_review_policy,
-                hit_review_policy: self.hit_review_policy,
-                hit_layout_id: self.hit_layout_id,
-                hit_layout_parameters: self.hit_layout_parameters,
-            },
+                hit_type_id: self.hit_type_id
+                ,
+                max_assignments: self.max_assignments
+                ,
+                lifetime_in_seconds: self.lifetime_in_seconds
+                ,
+                question: self.question
+                ,
+                requester_annotation: self.requester_annotation
+                ,
+                unique_request_token: self.unique_request_token
+                ,
+                assignment_review_policy: self.assignment_review_policy
+                ,
+                hit_review_policy: self.hit_review_policy
+                ,
+                hit_layout_id: self.hit_layout_id
+                ,
+                hit_layout_parameters: self.hit_layout_parameters
+                ,
+            }
         )
     }
 }
+

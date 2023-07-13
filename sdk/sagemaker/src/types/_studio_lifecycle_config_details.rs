@@ -3,7 +3,7 @@
 /// <p>Details of the Studio Lifecycle Configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StudioLifecycleConfigDetails {
+pub struct StudioLifecycleConfigDetails  {
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
     #[doc(hidden)]
     pub studio_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
@@ -18,30 +18,27 @@ pub struct StudioLifecycleConfigDetails {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The App type to which the Lifecycle Configuration is attached.</p>
     #[doc(hidden)]
-    pub studio_lifecycle_config_app_type:
-        ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
+    pub studio_lifecycle_config_app_type: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
 }
 impl StudioLifecycleConfigDetails {
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
-    pub fn studio_lifecycle_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn studio_lifecycle_config_arn(&self) -> ::std::option::Option<& str> {
         self.studio_lifecycle_config_arn.as_deref()
     }
     /// <p>The name of the Studio Lifecycle Configuration.</p>
-    pub fn studio_lifecycle_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn studio_lifecycle_config_name(&self) -> ::std::option::Option<& str> {
         self.studio_lifecycle_config_name.as_deref()
     }
     /// <p>The creation time of the Studio Lifecycle Configuration.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The App type to which the Lifecycle Configuration is attached.</p>
-    pub fn studio_lifecycle_config_app_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StudioLifecycleConfigAppType> {
+    pub fn studio_lifecycle_config_app_type(&self) -> ::std::option::Option<& crate::types::StudioLifecycleConfigAppType> {
         self.studio_lifecycle_config_app_type.as_ref()
     }
 }
@@ -54,49 +51,40 @@ impl StudioLifecycleConfigDetails {
 
 /// A builder for [`StudioLifecycleConfigDetails`](crate::types::StudioLifecycleConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StudioLifecycleConfigDetailsBuilder {
     pub(crate) studio_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) studio_lifecycle_config_app_type:
-        ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
+    pub(crate) studio_lifecycle_config_app_type: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
 }
 impl StudioLifecycleConfigDetailsBuilder {
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
-    pub fn studio_lifecycle_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
-    pub fn set_studio_lifecycle_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.studio_lifecycle_config_arn = input;
-        self
+    pub fn set_studio_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.studio_lifecycle_config_arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
+    pub fn get_studio_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_arn
     }
     /// <p>The name of the Studio Lifecycle Configuration.</p>
-    pub fn studio_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration.</p>
-    pub fn set_studio_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.studio_lifecycle_config_name = input;
-        self
+    pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.studio_lifecycle_config_name = input; self
+    }
+    /// <p>The name of the Studio Lifecycle Configuration.</p>
+    pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_name
     }
     /// <p>The creation time of the Studio Lifecycle Configuration.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -104,12 +92,12 @@ impl StudioLifecycleConfigDetailsBuilder {
         self
     }
     /// <p>The creation time of the Studio Lifecycle Configuration.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The creation time of the Studio Lifecycle Configuration.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -117,37 +105,40 @@ impl StudioLifecycleConfigDetailsBuilder {
         self
     }
     /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
+    }
+    /// <p>This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The App type to which the Lifecycle Configuration is attached.</p>
-    pub fn studio_lifecycle_config_app_type(
-        mut self,
-        input: crate::types::StudioLifecycleConfigAppType,
-    ) -> Self {
+    pub fn studio_lifecycle_config_app_type(mut self, input: crate::types::StudioLifecycleConfigAppType) -> Self {
         self.studio_lifecycle_config_app_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The App type to which the Lifecycle Configuration is attached.</p>
-    pub fn set_studio_lifecycle_config_app_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
-    ) -> Self {
-        self.studio_lifecycle_config_app_type = input;
-        self
+    pub fn set_studio_lifecycle_config_app_type(mut self, input: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>) -> Self {
+        self.studio_lifecycle_config_app_type = input; self
+    }
+    /// <p>The App type to which the Lifecycle Configuration is attached.</p>
+    pub fn get_studio_lifecycle_config_app_type(&self) -> &::std::option::Option<crate::types::StudioLifecycleConfigAppType> {
+        &self.studio_lifecycle_config_app_type
     }
     /// Consumes the builder and constructs a [`StudioLifecycleConfigDetails`](crate::types::StudioLifecycleConfigDetails).
     pub fn build(self) -> crate::types::StudioLifecycleConfigDetails {
         crate::types::StudioLifecycleConfigDetails {
-            studio_lifecycle_config_arn: self.studio_lifecycle_config_arn,
-            studio_lifecycle_config_name: self.studio_lifecycle_config_name,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            studio_lifecycle_config_app_type: self.studio_lifecycle_config_app_type,
+            studio_lifecycle_config_arn: self.studio_lifecycle_config_arn
+            ,
+            studio_lifecycle_config_name: self.studio_lifecycle_config_name
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            studio_lifecycle_config_app_type: self.studio_lifecycle_config_app_type
+            ,
         }
     }
 }
+

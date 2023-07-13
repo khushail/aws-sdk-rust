@@ -3,7 +3,7 @@
 /// Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you work directly in your JSON job specification, include this object only when your job has a transport stream output and the container settings contain the object M2tsSettings.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DvbTdtSettings {
+pub struct DvbTdtSettings  {
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
     pub tdt_interval: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl DvbTdtSettings {
 
 /// A builder for [`DvbTdtSettings`](crate::types::DvbTdtSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DvbTdtSettingsBuilder {
     pub(crate) tdt_interval: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl DvbTdtSettingsBuilder {
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn set_tdt_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.tdt_interval = input;
-        self
+        self.tdt_interval = input; self
+    }
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn get_tdt_interval(&self) -> &::std::option::Option<i32> {
+        &self.tdt_interval
     }
     /// Consumes the builder and constructs a [`DvbTdtSettings`](crate::types::DvbTdtSettings).
     pub fn build(self) -> crate::types::DvbTdtSettings {
         crate::types::DvbTdtSettings {
-            tdt_interval: self.tdt_interval,
+            tdt_interval: self.tdt_interval
+            ,
         }
     }
 }
+

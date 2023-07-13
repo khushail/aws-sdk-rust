@@ -3,103 +3,96 @@ pub use crate::operation::update_lag::_update_lag_output::UpdateLagOutputBuilder
 
 pub use crate::operation::update_lag::_update_lag_input::UpdateLagInputBuilder;
 
+impl UpdateLagInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_lag::UpdateLagOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_lag::UpdateLagError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_lag();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateLag`.
-///
-/// <p>Updates the attributes of the specified link aggregation group (LAG).</p>
-/// <p>You can update the following LAG attributes:</p>
-/// <ul>
-/// <li> <p>The name of the LAG.</p> </li>
-/// <li> <p>The value for the minimum number of connections that must be operational for the LAG itself to be operational. </p> </li>
-/// <li> <p>The LAG's MACsec encryption mode.</p> <p>Amazon Web Services assigns this value to each connection which is part of the LAG.</p> </li>
-/// <li> <p>The tags</p> </li>
-/// </ul> <note>
-/// <p>If you adjust the threshold value for the minimum number of operational connections, ensure that the new value does not cause the LAG to fall below the threshold and become non-operational.</p>
+/// 
+/// <p>Updates the attributes of the specified link aggregation group (LAG).</p> 
+/// <p>You can update the following LAG attributes:</p> 
+/// <ul> 
+/// <li> <p>The name of the LAG.</p> </li> 
+/// <li> <p>The value for the minimum number of connections that must be operational for the LAG itself to be operational. </p> </li> 
+/// <li> <p>The LAG's MACsec encryption mode.</p> <p>Amazon Web Services assigns this value to each connection which is part of the LAG.</p> </li> 
+/// <li> <p>The tags</p> </li> 
+/// </ul> <note> 
+/// <p>If you adjust the threshold value for the minimum number of operational connections, ensure that the new value does not cause the LAG to fall below the threshold and become non-operational.</p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLagFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_lag::builders::UpdateLagInputBuilder,
+                    inner: crate::operation::update_lag::builders::UpdateLagInputBuilder,
 }
-impl UpdateLagFluentBuilder {
+impl UpdateLagFluentBuilder  {
     /// Creates a new `UpdateLag`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_lag::UpdateLag,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_lag::UpdateLagError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateLag as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_lag::builders::UpdateLagInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_lag::UpdateLagOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_lag::UpdateLagError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_lag::UpdateLag, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_lag::UpdateLagError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_lag::UpdateLagOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_lag::UpdateLagError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_lag::UpdateLagOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_lag::UpdateLagError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_lag::UpdateLag,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_lag::UpdateLagError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_lag::UpdateLagOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_lag::UpdateLagError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_lag::UpdateLag, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_lag::UpdateLagError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lag_id(input.into());
@@ -109,6 +102,10 @@ impl UpdateLagFluentBuilder {
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lag_id(input);
         self
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lag_id()
     }
     /// <p>The name of the LAG.</p>
     pub fn lag_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +117,10 @@ impl UpdateLagFluentBuilder {
         self.inner = self.inner.set_lag_name(input);
         self
     }
+    /// <p>The name of the LAG.</p>
+    pub fn get_lag_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lag_name()
+    }
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
     pub fn minimum_links(mut self, input: i32) -> Self {
         self.inner = self.inner.minimum_links(input);
@@ -130,22 +131,26 @@ impl UpdateLagFluentBuilder {
         self.inner = self.inner.set_minimum_links(input);
         self
     }
-    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
+    pub fn get_minimum_links(&self) -> &::std::option::Option<i32> {
+        self.inner.get_minimum_links()
+    }
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
-    pub fn encryption_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_mode(input.into());
         self
     }
-    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
         self
     }
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
+    /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_mode()
+    }
 }
+

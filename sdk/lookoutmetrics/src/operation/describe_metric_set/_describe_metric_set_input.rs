@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMetricSetInput {
+pub struct DescribeMetricSetInput  {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
     pub metric_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMetricSetInput {
     /// <p>The ARN of the dataset.</p>
-    pub fn metric_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn metric_set_arn(&self) -> ::std::option::Option<& str> {
         self.metric_set_arn.as_deref()
     }
 }
 impl DescribeMetricSetInput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricSetInput`](crate::operation::describe_metric_set::DescribeMetricSetInput).
-    pub fn builder(
-    ) -> crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder {
+    pub fn builder() -> crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder {
         crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMetricSetInput`](crate::operation::describe_metric_set::DescribeMetricSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMetricSetInputBuilder {
     pub(crate) metric_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMetricSetInputBuilder {
     /// <p>The ARN of the dataset.</p>
-    pub fn metric_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset.</p>
-    pub fn set_metric_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metric_set_arn = input;
-        self
+    pub fn set_metric_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metric_set_arn = input; self
+    }
+    /// <p>The ARN of the dataset.</p>
+    pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_arn
     }
     /// Consumes the builder and constructs a [`DescribeMetricSetInput`](crate::operation::describe_metric_set::DescribeMetricSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_metric_set::DescribeMetricSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_metric_set::DescribeMetricSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_metric_set::DescribeMetricSetInput {
-                metric_set_arn: self.metric_set_arn,
-            },
+                metric_set_arn: self.metric_set_arn
+                ,
+            }
         )
     }
 }
+

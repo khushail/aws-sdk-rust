@@ -3,7 +3,7 @@
 /// <p>A stateless rule group that is used by the firewall policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallPolicyStatelessRuleGroupReferencesDetails {
+pub struct FirewallPolicyStatelessRuleGroupReferencesDetails  {
     /// <p>The order in which to run the stateless rule group.</p>
     #[doc(hidden)]
     pub priority: i32,
@@ -17,23 +17,20 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetails {
         self.priority
     }
     /// <p>The ARN of the stateless rule group.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl FirewallPolicyStatelessRuleGroupReferencesDetails {
     /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails).
-    pub fn builder(
-    ) -> crate::types::builders::FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
+    pub fn builder() -> crate::types::builders::FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
         crate::types::builders::FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder::default()
     }
 }
 
 /// A builder for [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -46,8 +43,11 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
     }
     /// <p>The order in which to run the stateless rule group.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
+    }
+    /// <p>The order in which to run the stateless rule group.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The ARN of the stateless rule group.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,14 +56,21 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
     }
     /// <p>The ARN of the stateless rule group.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The ARN of the stateless rule group.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails).
     pub fn build(self) -> crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails {
         crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails {
-            priority: self.priority.unwrap_or_default(),
-            resource_arn: self.resource_arn,
+            priority: self.priority
+                .unwrap_or_default()
+            ,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

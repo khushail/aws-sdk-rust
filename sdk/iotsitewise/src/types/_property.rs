@@ -3,7 +3,7 @@
 /// <p>Contains asset property information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Property {
+pub struct Property  {
     /// <p>The ID of the asset property.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct Property {
 }
 impl Property {
     /// <p>The ID of the asset property.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    pub fn notification(&self) -> ::std::option::Option<&crate::types::PropertyNotification> {
+    pub fn notification(&self) -> ::std::option::Option<& crate::types::PropertyNotification> {
         self.notification.as_ref()
     }
     /// <p>The property data type.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::PropertyDataType> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::PropertyDataType> {
         self.data_type.as_ref()
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PropertyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PropertyType> {
         self.r#type.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl Property {
 
 /// A builder for [`Property`](crate::types::Property).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -85,8 +83,11 @@ impl PropertyBuilder {
     }
     /// <p>The ID of the asset property.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the property.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +96,11 @@ impl PropertyBuilder {
     }
     /// <p>The name of the property.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the property.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,8 +109,11 @@ impl PropertyBuilder {
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     pub fn notification(mut self, input: crate::types::PropertyNotification) -> Self {
@@ -114,12 +121,12 @@ impl PropertyBuilder {
         self
     }
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyNotification>,
-    ) -> Self {
-        self.notification = input;
-        self
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::PropertyNotification>) -> Self {
+        self.notification = input; self
+    }
+    /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::PropertyNotification> {
+        &self.notification
     }
     /// <p>The property data type.</p>
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
@@ -127,12 +134,12 @@ impl PropertyBuilder {
         self
     }
     /// <p>The property data type.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyDataType>,
-    ) -> Self {
-        self.data_type = input;
-        self
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::PropertyDataType>) -> Self {
+        self.data_type = input; self
+    }
+    /// <p>The property data type.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::PropertyDataType> {
+        &self.data_type
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,8 +148,11 @@ impl PropertyBuilder {
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
+    }
+    /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
     pub fn r#type(mut self, input: crate::types::PropertyType) -> Self {
@@ -151,19 +161,30 @@ impl PropertyBuilder {
     }
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PropertyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PropertyType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Property`](crate::types::Property).
     pub fn build(self) -> crate::types::Property {
         crate::types::Property {
-            id: self.id,
-            name: self.name,
-            alias: self.alias,
-            notification: self.notification,
-            data_type: self.data_type,
-            unit: self.unit,
-            r#type: self.r#type,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            alias: self.alias
+            ,
+            notification: self.notification
+            ,
+            data_type: self.data_type
+            ,
+            unit: self.unit
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

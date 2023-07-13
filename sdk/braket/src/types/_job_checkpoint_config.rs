@@ -3,7 +3,7 @@
 /// <p>Contains information about the output locations for job checkpoint data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobCheckpointConfig {
+pub struct JobCheckpointConfig  {
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
     #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct JobCheckpointConfig {
 }
 impl JobCheckpointConfig {
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
-    pub fn local_path(&self) -> ::std::option::Option<&str> {
+    pub fn local_path(&self) -> ::std::option::Option<& str> {
         self.local_path.as_deref()
     }
     /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl JobCheckpointConfig {
 
 /// A builder for [`JobCheckpointConfig`](crate::types::JobCheckpointConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobCheckpointConfigBuilder {
     pub(crate) local_path: ::std::option::Option<::std::string::String>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl JobCheckpointConfigBuilder {
     }
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_path = input;
-        self
+        self.local_path = input; self
+    }
+    /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
+    pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_path
     }
     /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl JobCheckpointConfigBuilder {
     }
     /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
+    }
+    /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Consumes the builder and constructs a [`JobCheckpointConfig`](crate::types::JobCheckpointConfig).
     pub fn build(self) -> crate::types::JobCheckpointConfig {
         crate::types::JobCheckpointConfig {
-            local_path: self.local_path,
-            s3_uri: self.s3_uri,
+            local_path: self.local_path
+            ,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
+

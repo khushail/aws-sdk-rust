@@ -3,7 +3,7 @@
 /// <p>Contains the inputs for the <code>UpdateRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRadiusInput {
+pub struct UpdateRadiusInput  {
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
     #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct UpdateRadiusInput {
 }
 impl UpdateRadiusInput {
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    pub fn radius_settings(&self) -> ::std::option::Option<&crate::types::RadiusSettings> {
+    pub fn radius_settings(&self) -> ::std::option::Option<& crate::types::RadiusSettings> {
         self.radius_settings.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl UpdateRadiusInput {
 
 /// A builder for [`UpdateRadiusInput`](crate::operation::update_radius::UpdateRadiusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRadiusInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
@@ -45,8 +43,11 @@ impl UpdateRadiusInputBuilder {
     }
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
+    }
+    /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn radius_settings(mut self, input: crate::types::RadiusSettings) -> Self {
@@ -54,23 +55,23 @@ impl UpdateRadiusInputBuilder {
         self
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    pub fn set_radius_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RadiusSettings>,
-    ) -> Self {
-        self.radius_settings = input;
-        self
+    pub fn set_radius_settings(mut self, input: ::std::option::Option<crate::types::RadiusSettings>) -> Self {
+        self.radius_settings = input; self
+    }
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    pub fn get_radius_settings(&self) -> &::std::option::Option<crate::types::RadiusSettings> {
+        &self.radius_settings
     }
     /// Consumes the builder and constructs a [`UpdateRadiusInput`](crate::operation::update_radius::UpdateRadiusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_radius::UpdateRadiusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_radius::UpdateRadiusInput {
-            directory_id: self.directory_id,
-            radius_settings: self.radius_settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_radius::UpdateRadiusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_radius::UpdateRadiusInput {
+                directory_id: self.directory_id
+                ,
+                radius_settings: self.radius_settings
+                ,
+            }
+        )
     }
 }
+

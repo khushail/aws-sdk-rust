@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkerInput {
+pub struct GetWorkerInput  {
     /// Full ARN of the worker.
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkerInput {
     /// Full ARN of the worker.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetWorkerInput {
 
 /// A builder for [`GetWorkerInput`](crate::operation::get_worker::GetWorkerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkerInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,20 @@ impl GetWorkerInputBuilder {
     }
     /// Full ARN of the worker.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// Full ARN of the worker.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetWorkerInput`](crate::operation::get_worker::GetWorkerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_worker::GetWorkerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_worker::GetWorkerInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_worker::GetWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_worker::GetWorkerInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

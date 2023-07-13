@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCustomDataIdentifiersInput {
+pub struct BatchGetCustomDataIdentifiersInput  {
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
     #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetCustomDataIdentifiersInput {
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.ids.as_deref()
     }
 }
 impl BatchGetCustomDataIdentifiersInput {
     /// Creates a new builder-style object to manufacture [`BatchGetCustomDataIdentifiersInput`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput).
-    pub fn builder() -> crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder {
         crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetCustomDataIdentifiersInput`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCustomDataIdentifiersInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,25 +34,20 @@ impl BatchGetCustomDataIdentifiersInputBuilder {
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ids = input; self
+    }
+    /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
     }
     /// Consumes the builder and constructs a [`BatchGetCustomDataIdentifiersInput`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput {
                 ids: self.ids
@@ -63,3 +56,4 @@ impl BatchGetCustomDataIdentifiersInputBuilder {
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualRouterServiceProvider {
+pub struct VirtualRouterServiceProvider  {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
     #[doc(hidden)]
     pub virtual_router_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
-    pub fn virtual_router_name(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_router_name(&self) -> ::std::option::Option<& str> {
         self.virtual_router_name.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl VirtualRouterServiceProvider {
 
 /// A builder for [`VirtualRouterServiceProvider`](crate::types::VirtualRouterServiceProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualRouterServiceProviderBuilder {
     pub(crate) virtual_router_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualRouterServiceProviderBuilder {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual router that is acting as a service provider.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_router_name = input;
-        self
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_router_name = input; self
+    }
+    /// <p>The name of the virtual router that is acting as a service provider.</p>
+    pub fn get_virtual_router_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_router_name
     }
     /// Consumes the builder and constructs a [`VirtualRouterServiceProvider`](crate::types::VirtualRouterServiceProvider).
     pub fn build(self) -> crate::types::VirtualRouterServiceProvider {
         crate::types::VirtualRouterServiceProvider {
-            virtual_router_name: self.virtual_router_name,
+            virtual_router_name: self.virtual_router_name
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A transform operation that renames a column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenameColumnOperation {
+pub struct RenameColumnOperation  {
     /// <p>The name of the column to be renamed.</p>
     #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct RenameColumnOperation {
 }
 impl RenameColumnOperation {
     /// <p>The name of the column to be renamed.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
+    pub fn column_name(&self) -> ::std::option::Option<& str> {
         self.column_name.as_deref()
     }
     /// <p>The new name for the column.</p>
-    pub fn new_column_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_column_name(&self) -> ::std::option::Option<& str> {
         self.new_column_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl RenameColumnOperation {
 
 /// A builder for [`RenameColumnOperation`](crate::types::RenameColumnOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenameColumnOperationBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_column_name: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl RenameColumnOperationBuilder {
     }
     /// <p>The name of the column to be renamed.</p>
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
+    }
+    /// <p>The name of the column to be renamed.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
     }
     /// <p>The new name for the column.</p>
-    pub fn new_column_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new name for the column.</p>
-    pub fn set_new_column_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.new_column_name = input;
-        self
+    pub fn set_new_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.new_column_name = input; self
+    }
+    /// <p>The new name for the column.</p>
+    pub fn get_new_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_column_name
     }
     /// Consumes the builder and constructs a [`RenameColumnOperation`](crate::types::RenameColumnOperation).
     pub fn build(self) -> crate::types::RenameColumnOperation {
         crate::types::RenameColumnOperation {
-            column_name: self.column_name,
-            new_column_name: self.new_column_name,
+            column_name: self.column_name
+            ,
+            new_column_name: self.new_column_name
+            ,
         }
     }
 }
+

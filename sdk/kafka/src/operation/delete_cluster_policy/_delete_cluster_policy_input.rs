@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClusterPolicyInput {
+pub struct DeleteClusterPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteClusterPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
 }
 impl DeleteClusterPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterPolicyInput`](crate::operation::delete_cluster_policy::DeleteClusterPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyInputBuilder {
-        crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyInputBuilder {
+        crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClusterPolicyInput`](crate::operation::delete_cluster_policy::DeleteClusterPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClusterPolicyInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DeleteClusterPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`DeleteClusterPolicyInput`](crate::operation::delete_cluster_policy::DeleteClusterPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cluster_policy::DeleteClusterPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cluster_policy::DeleteClusterPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_cluster_policy::DeleteClusterPolicyInput {
-                cluster_arn: self.cluster_arn,
-            },
+                cluster_arn: self.cluster_arn
+                ,
+            }
         )
     }
 }
+

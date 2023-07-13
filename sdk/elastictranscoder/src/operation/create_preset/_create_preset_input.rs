@@ -3,7 +3,7 @@
 /// <p>The <code>CreatePresetRequest</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePresetInput {
+pub struct CreatePresetInput  {
     /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct CreatePresetInput {
 }
 impl CreatePresetInput {
     /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the preset.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
-    pub fn container(&self) -> ::std::option::Option<&str> {
+    pub fn container(&self) -> ::std::option::Option<& str> {
         self.container.as_deref()
     }
     /// <p>A section of the request body that specifies the video parameters.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::VideoParameters> {
+    pub fn video(&self) -> ::std::option::Option<& crate::types::VideoParameters> {
         self.video.as_ref()
     }
     /// <p>A section of the request body that specifies the audio parameters.</p>
-    pub fn audio(&self) -> ::std::option::Option<&crate::types::AudioParameters> {
+    pub fn audio(&self) -> ::std::option::Option<& crate::types::AudioParameters> {
         self.audio.as_ref()
     }
     /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
-    pub fn thumbnails(&self) -> ::std::option::Option<&crate::types::Thumbnails> {
+    pub fn thumbnails(&self) -> ::std::option::Option<& crate::types::Thumbnails> {
         self.thumbnails.as_ref()
     }
 }
@@ -58,9 +58,7 @@ impl CreatePresetInput {
 
 /// A builder for [`CreatePresetInput`](crate::operation::create_preset::CreatePresetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePresetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -77,8 +75,11 @@ impl CreatePresetInputBuilder {
     }
     /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A description of the preset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +88,11 @@ impl CreatePresetInputBuilder {
     }
     /// <p>A description of the preset.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the preset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     pub fn container(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,8 +101,11 @@ impl CreatePresetInputBuilder {
     }
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     pub fn set_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container = input;
-        self
+        self.container = input; self
+    }
+    /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+    pub fn get_container(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container
     }
     /// <p>A section of the request body that specifies the video parameters.</p>
     pub fn video(mut self, input: crate::types::VideoParameters) -> Self {
@@ -106,12 +113,12 @@ impl CreatePresetInputBuilder {
         self
     }
     /// <p>A section of the request body that specifies the video parameters.</p>
-    pub fn set_video(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoParameters>,
-    ) -> Self {
-        self.video = input;
-        self
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoParameters>) -> Self {
+        self.video = input; self
+    }
+    /// <p>A section of the request body that specifies the video parameters.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoParameters> {
+        &self.video
     }
     /// <p>A section of the request body that specifies the audio parameters.</p>
     pub fn audio(mut self, input: crate::types::AudioParameters) -> Self {
@@ -119,12 +126,12 @@ impl CreatePresetInputBuilder {
         self
     }
     /// <p>A section of the request body that specifies the audio parameters.</p>
-    pub fn set_audio(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioParameters>,
-    ) -> Self {
-        self.audio = input;
-        self
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioParameters>) -> Self {
+        self.audio = input; self
+    }
+    /// <p>A section of the request body that specifies the audio parameters.</p>
+    pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioParameters> {
+        &self.audio
     }
     /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
     pub fn thumbnails(mut self, input: crate::types::Thumbnails) -> Self {
@@ -132,27 +139,31 @@ impl CreatePresetInputBuilder {
         self
     }
     /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
-    pub fn set_thumbnails(
-        mut self,
-        input: ::std::option::Option<crate::types::Thumbnails>,
-    ) -> Self {
-        self.thumbnails = input;
-        self
+    pub fn set_thumbnails(mut self, input: ::std::option::Option<crate::types::Thumbnails>) -> Self {
+        self.thumbnails = input; self
+    }
+    /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
+    pub fn get_thumbnails(&self) -> &::std::option::Option<crate::types::Thumbnails> {
+        &self.thumbnails
     }
     /// Consumes the builder and constructs a [`CreatePresetInput`](crate::operation::create_preset::CreatePresetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_preset::CreatePresetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_preset::CreatePresetInput {
-            name: self.name,
-            description: self.description,
-            container: self.container,
-            video: self.video,
-            audio: self.audio,
-            thumbnails: self.thumbnails,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_preset::CreatePresetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_preset::CreatePresetInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                container: self.container
+                ,
+                video: self.video
+                ,
+                audio: self.audio
+                ,
+                thumbnails: self.thumbnails
+                ,
+            }
+        )
     }
 }
+

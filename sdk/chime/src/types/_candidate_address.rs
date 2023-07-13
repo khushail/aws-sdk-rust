@@ -3,7 +3,7 @@
 /// <p>A suggested address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CandidateAddress {
+pub struct CandidateAddress  {
     /// <p>The street information of a candidate address</p>
     #[doc(hidden)]
     pub street_info: ::std::option::Option<::std::string::String>,
@@ -28,35 +28,35 @@ pub struct CandidateAddress {
 }
 impl CandidateAddress {
     /// <p>The street information of a candidate address</p>
-    pub fn street_info(&self) -> ::std::option::Option<&str> {
+    pub fn street_info(&self) -> ::std::option::Option<& str> {
         self.street_info.as_deref()
     }
     /// <p>The numeric portion of a candidate address.</p>
-    pub fn street_number(&self) -> ::std::option::Option<&str> {
+    pub fn street_number(&self) -> ::std::option::Option<& str> {
         self.street_number.as_deref()
     }
     /// <p>The city of a candidate address.</p>
-    pub fn city(&self) -> ::std::option::Option<&str> {
+    pub fn city(&self) -> ::std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The state of a candidate address.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The postal code of a candidate address.</p>
-    pub fn postal_code(&self) -> ::std::option::Option<&str> {
+    pub fn postal_code(&self) -> ::std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     /// <p>The Zip + 4 or postal code + 4 of a candidate address.</p>
-    pub fn postal_code_plus4(&self) -> ::std::option::Option<&str> {
+    pub fn postal_code_plus4(&self) -> ::std::option::Option<& str> {
         self.postal_code_plus4.as_deref()
     }
     /// <p>The country of a candidate address.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
 }
-impl ::std::fmt::Debug for CandidateAddress {
+impl  ::std::fmt::Debug for CandidateAddress  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CandidateAddress");
         formatter.field("street_info", &"*** Sensitive Data Redacted ***");
@@ -96,24 +96,24 @@ impl CandidateAddressBuilder {
     }
     /// <p>The street information of a candidate address</p>
     pub fn set_street_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street_info = input;
-        self
+        self.street_info = input; self
+    }
+    /// <p>The street information of a candidate address</p>
+    pub fn get_street_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street_info
     }
     /// <p>The numeric portion of a candidate address.</p>
-    pub fn street_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn street_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The numeric portion of a candidate address.</p>
-    pub fn set_street_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.street_number = input;
-        self
+    pub fn set_street_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.street_number = input; self
+    }
+    /// <p>The numeric portion of a candidate address.</p>
+    pub fn get_street_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street_number
     }
     /// <p>The city of a candidate address.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,8 +122,11 @@ impl CandidateAddressBuilder {
     }
     /// <p>The city of a candidate address.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
+    }
+    /// <p>The city of a candidate address.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
     }
     /// <p>The state of a candidate address.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,8 +135,11 @@ impl CandidateAddressBuilder {
     }
     /// <p>The state of a candidate address.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The state of a candidate address.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>The postal code of a candidate address.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,24 +148,24 @@ impl CandidateAddressBuilder {
     }
     /// <p>The postal code of a candidate address.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.postal_code = input;
-        self
+        self.postal_code = input; self
+    }
+    /// <p>The postal code of a candidate address.</p>
+    pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.postal_code
     }
     /// <p>The Zip + 4 or postal code + 4 of a candidate address.</p>
-    pub fn postal_code_plus4(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn postal_code_plus4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code_plus4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Zip + 4 or postal code + 4 of a candidate address.</p>
-    pub fn set_postal_code_plus4(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.postal_code_plus4 = input;
-        self
+    pub fn set_postal_code_plus4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.postal_code_plus4 = input; self
+    }
+    /// <p>The Zip + 4 or postal code + 4 of a candidate address.</p>
+    pub fn get_postal_code_plus4(&self) -> &::std::option::Option<::std::string::String> {
+        &self.postal_code_plus4
     }
     /// <p>The country of a candidate address.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,19 +174,29 @@ impl CandidateAddressBuilder {
     }
     /// <p>The country of a candidate address.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
+    }
+    /// <p>The country of a candidate address.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// Consumes the builder and constructs a [`CandidateAddress`](crate::types::CandidateAddress).
     pub fn build(self) -> crate::types::CandidateAddress {
         crate::types::CandidateAddress {
-            street_info: self.street_info,
-            street_number: self.street_number,
-            city: self.city,
-            state: self.state,
-            postal_code: self.postal_code,
-            postal_code_plus4: self.postal_code_plus4,
-            country: self.country,
+            street_info: self.street_info
+            ,
+            street_number: self.street_number
+            ,
+            city: self.city
+            ,
+            state: self.state
+            ,
+            postal_code: self.postal_code
+            ,
+            postal_code_plus4: self.postal_code_plus4
+            ,
+            country: self.country
+            ,
         }
     }
 }
@@ -197,3 +213,4 @@ impl ::std::fmt::Debug for CandidateAddressBuilder {
         formatter.finish()
     }
 }
+

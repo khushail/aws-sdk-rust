@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMulticastGroupSessionInput {
+pub struct StartMulticastGroupSessionInput  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct StartMulticastGroupSessionInput {
 }
 impl StartMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanMulticastSession> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanMulticastSession> {
         self.lo_ra_wan.as_ref()
     }
 }
 impl StartMulticastGroupSessionInput {
     /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionInput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput).
-    pub fn builder() -> crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder{
+    pub fn builder() -> crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder {
         crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMulticastGroupSessionInput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMulticastGroupSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
@@ -44,8 +42,11 @@ impl StartMulticastGroupSessionInputBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanMulticastSession) -> Self {
@@ -53,25 +54,23 @@ impl StartMulticastGroupSessionInputBuilder {
         self
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
-    ) -> Self {
-        self.lo_ra_wan = input;
-        self
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticastSession>) -> Self {
+        self.lo_ra_wan = input; self
+    }
+    /// <p>The LoRaWAN information used with the multicast session.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanMulticastSession> {
+        &self.lo_ra_wan
     }
     /// Consumes the builder and constructs a [`StartMulticastGroupSessionInput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput {
-                id: self.id,
-                lo_ra_wan: self.lo_ra_wan,
-            },
+                id: self.id
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+            }
         )
     }
 }
+

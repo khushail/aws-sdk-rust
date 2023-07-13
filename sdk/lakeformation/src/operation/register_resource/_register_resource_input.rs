@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterResourceInput {
+pub struct RegisterResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     #[doc(hidden)]
     pub use_service_linked_role: ::std::option::Option<bool>,
@@ -19,16 +19,16 @@ pub struct RegisterResourceInput {
 }
 impl RegisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub fn use_service_linked_role(&self) -> ::std::option::Option<bool> {
         self.use_service_linked_role
     }
     /// <p>The identifier for the role that registers the resource.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Whether or not the resource is a federated resource.</p>
@@ -38,17 +38,14 @@ impl RegisterResourceInput {
 }
 impl RegisterResourceInput {
     /// Creates a new builder-style object to manufacture [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
-    pub fn builder() -> crate::operation::register_resource::builders::RegisterResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_resource::builders::RegisterResourceInputBuilder {
         crate::operation::register_resource::builders::RegisterResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) use_service_linked_role: ::std::option::Option<bool>,
@@ -63,20 +60,27 @@ impl RegisterResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
-    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
+    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub fn use_service_linked_role(mut self, input: bool) -> Self {
         self.use_service_linked_role = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub fn set_use_service_linked_role(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_service_linked_role = input;
-        self
+        self.use_service_linked_role = input; self
+    }
+    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
+    pub fn get_use_service_linked_role(&self) -> &::std::option::Option<bool> {
+        &self.use_service_linked_role
     }
     /// <p>The identifier for the role that registers the resource.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,8 +89,11 @@ impl RegisterResourceInputBuilder {
     }
     /// <p>The identifier for the role that registers the resource.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The identifier for the role that registers the resource.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn with_federation(mut self, input: bool) -> Self {
@@ -95,21 +102,26 @@ impl RegisterResourceInputBuilder {
     }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn set_with_federation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.with_federation = input;
-        self
+        self.with_federation = input; self
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn get_with_federation(&self) -> &::std::option::Option<bool> {
+        &self.with_federation
     }
     /// Consumes the builder and constructs a [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_resource::RegisterResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::register_resource::RegisterResourceInput {
-            resource_arn: self.resource_arn,
-            use_service_linked_role: self.use_service_linked_role,
-            role_arn: self.role_arn,
-            with_federation: self.with_federation,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_resource::RegisterResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_resource::RegisterResourceInput {
+                resource_arn: self.resource_arn
+                ,
+                use_service_linked_role: self.use_service_linked_role
+                ,
+                role_arn: self.role_arn
+                ,
+                with_federation: self.with_federation
+                ,
+            }
+        )
     }
 }
+

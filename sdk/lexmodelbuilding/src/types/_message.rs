@@ -3,7 +3,7 @@
 /// <p>The message object that provides the message text and its type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>The content type of the message string.</p>
     #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::ContentType>,
@@ -16,11 +16,11 @@ pub struct Message {
 }
 impl Message {
     /// <p>The content type of the message string.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<& crate::types::ContentType> {
         self.content_type.as_ref()
     }
     /// <p>The text of the message.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
@@ -37,9 +37,7 @@ impl Message {
 
 /// A builder for [`Message`](crate::types::Message).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::ContentType>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl MessageBuilder {
         self
     }
     /// <p>The content type of the message string.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentType>,
-    ) -> Self {
-        self.content_type = input;
-        self
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
+        self.content_type = input; self
+    }
+    /// <p>The content type of the message string.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ContentType> {
+        &self.content_type
     }
     /// <p>The text of the message.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +64,11 @@ impl MessageBuilder {
     }
     /// <p>The text of the message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
+    }
+    /// <p>The text of the message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub fn group_number(mut self, input: i32) -> Self {
@@ -76,15 +77,22 @@ impl MessageBuilder {
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub fn set_group_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.group_number = input;
-        self
+        self.group_number = input; self
+    }
+    /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
+    pub fn get_group_number(&self) -> &::std::option::Option<i32> {
+        &self.group_number
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {
         crate::types::Message {
-            content_type: self.content_type,
-            content: self.content,
-            group_number: self.group_number,
+            content_type: self.content_type
+            ,
+            content: self.content
+            ,
+            group_number: self.group_number
+            ,
         }
     }
 }
+

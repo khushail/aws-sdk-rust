@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEndpointInput {
+pub struct UpdateEndpointInput  {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
     #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
@@ -21,11 +21,11 @@ pub struct UpdateEndpointInput {
 }
 impl UpdateEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
-    pub fn desired_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn desired_model_arn(&self) -> ::std::option::Option<& str> {
         self.desired_model_arn.as_deref()
     }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
@@ -33,11 +33,11 @@ impl UpdateEndpointInput {
         self.desired_inference_units
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn desired_data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn desired_data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.desired_data_access_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    pub fn flywheel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> ::std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
 }
@@ -50,9 +50,7 @@ impl UpdateEndpointInput {
 
 /// A builder for [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEndpointInputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) desired_model_arn: ::std::option::Option<::std::string::String>,
@@ -68,24 +66,24 @@ impl UpdateEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
-    pub fn desired_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
-    pub fn set_desired_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.desired_model_arn = input;
-        self
+    pub fn set_desired_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.desired_model_arn = input; self
+    }
+    /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
+    pub fn get_desired_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.desired_model_arn
     }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(mut self, input: i32) -> Self {
@@ -94,24 +92,24 @@ impl UpdateEndpointInputBuilder {
     }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn set_desired_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_inference_units = input;
-        self
+        self.desired_inference_units = input; self
+    }
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    pub fn get_desired_inference_units(&self) -> &::std::option::Option<i32> {
+        &self.desired_inference_units
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn desired_data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn set_desired_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.desired_data_access_role_arn = input;
-        self
+    pub fn set_desired_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.desired_data_access_role_arn = input; self
+    }
+    /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
+    pub fn get_desired_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.desired_data_access_role_arn
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,22 +118,28 @@ impl UpdateEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
     pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
     }
     /// Consumes the builder and constructs a [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_endpoint::UpdateEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_endpoint::UpdateEndpointInput {
-            endpoint_arn: self.endpoint_arn,
-            desired_model_arn: self.desired_model_arn,
-            desired_inference_units: self.desired_inference_units,
-            desired_data_access_role_arn: self.desired_data_access_role_arn,
-            flywheel_arn: self.flywheel_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_endpoint::UpdateEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_endpoint::UpdateEndpointInput {
+                endpoint_arn: self.endpoint_arn
+                ,
+                desired_model_arn: self.desired_model_arn
+                ,
+                desired_inference_units: self.desired_inference_units
+                ,
+                desired_data_access_role_arn: self.desired_data_access_role_arn
+                ,
+                flywheel_arn: self.flywheel_arn
+                ,
+            }
+        )
     }
 }
+

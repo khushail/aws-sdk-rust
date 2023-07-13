@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoadBalancerTargetGroupsInput {
+pub struct DescribeLoadBalancerTargetGroupsInput  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct DescribeLoadBalancerTargetGroupsInput {
 }
 impl DescribeLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
@@ -29,16 +29,14 @@ impl DescribeLoadBalancerTargetGroupsInput {
 }
 impl DescribeLoadBalancerTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerTargetGroupsInput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput).
-    pub fn builder() -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsInputBuilder {
         crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBalancerTargetGroupsInput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerTargetGroupsInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct DescribeLoadBalancerTargetGroupsInputBuilder {
 }
 impl DescribeLoadBalancerTargetGroupsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl DescribeLoadBalancerTargetGroupsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -78,11 +76,14 @@ impl DescribeLoadBalancerTargetGroupsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
+    }
+    /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerTargetGroupsInput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name
@@ -95,3 +96,4 @@ impl DescribeLoadBalancerTargetGroupsInputBuilder {
         )
     }
 }
+

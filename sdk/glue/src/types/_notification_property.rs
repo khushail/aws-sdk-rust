@@ -3,7 +3,7 @@
 /// <p>Specifies configuration properties of a notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationProperty {
+pub struct NotificationProperty  {
     /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
     #[doc(hidden)]
     pub notify_delay_after: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl NotificationProperty {
 
 /// A builder for [`NotificationProperty`](crate::types::NotificationProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationPropertyBuilder {
     pub(crate) notify_delay_after: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl NotificationPropertyBuilder {
     }
     /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
     pub fn set_notify_delay_after(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.notify_delay_after = input;
-        self
+        self.notify_delay_after = input; self
+    }
+    /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
+    pub fn get_notify_delay_after(&self) -> &::std::option::Option<i32> {
+        &self.notify_delay_after
     }
     /// Consumes the builder and constructs a [`NotificationProperty`](crate::types::NotificationProperty).
     pub fn build(self) -> crate::types::NotificationProperty {
         crate::types::NotificationProperty {
-            notify_delay_after: self.notify_delay_after,
+            notify_delay_after: self.notify_delay_after
+            ,
         }
     }
 }
+

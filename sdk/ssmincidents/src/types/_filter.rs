@@ -3,7 +3,7 @@
 /// <p>Filter the selection by using a condition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The key that you're filtering on.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The key that you're filtering on.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::Condition> {
         self.condition.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) condition: ::std::option::Option<crate::types::Condition>,
@@ -45,8 +43,11 @@ impl FilterBuilder {
     }
     /// <p>The key that you're filtering on.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The key that you're filtering on.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
@@ -55,14 +56,20 @@ impl FilterBuilder {
     }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
+    }
+    /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            key: self.key,
-            condition: self.condition,
+            key: self.key
+            ,
+            condition: self.condition
+            ,
         }
     }
 }
+

@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMitigationActionInput {
+pub struct DescribeMitigationActionInput  {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
     #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMitigationActionInput {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
 }
 impl DescribeMitigationActionInput {
     /// Creates a new builder-style object to manufacture [`DescribeMitigationActionInput`](crate::operation::describe_mitigation_action::DescribeMitigationActionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_mitigation_action::builders::DescribeMitigationActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_mitigation_action::builders::DescribeMitigationActionInputBuilder {
         crate::operation::describe_mitigation_action::builders::DescribeMitigationActionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMitigationActionInput`](crate::operation::describe_mitigation_action::DescribeMitigationActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMitigationActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DescribeMitigationActionInputBuilder {
     }
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
+    }
+    /// <p>The friendly name that uniquely identifies the mitigation action.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// Consumes the builder and constructs a [`DescribeMitigationActionInput`](crate::operation::describe_mitigation_action::DescribeMitigationActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_mitigation_action::DescribeMitigationActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mitigation_action::DescribeMitigationActionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_mitigation_action::DescribeMitigationActionInput {
-                action_name: self.action_name,
-            },
+                action_name: self.action_name
+                ,
+            }
         )
     }
 }
+

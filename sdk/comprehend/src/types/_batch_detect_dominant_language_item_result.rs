@@ -3,7 +3,7 @@
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDetectDominantLanguageItemResult {
+pub struct BatchDetectDominantLanguageItemResult  {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl BatchDetectDominantLanguageItemResult {
         self.index
     }
     /// <p>One or more <code>DominantLanguage</code> objects describing the dominant languages in the document.</p>
-    pub fn languages(&self) -> ::std::option::Option<&[crate::types::DominantLanguage]> {
+    pub fn languages(&self) -> ::std::option::Option<& [crate::types::DominantLanguage]> {
         self.languages.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl BatchDetectDominantLanguageItemResult {
 
 /// A builder for [`BatchDetectDominantLanguageItemResult`](crate::types::BatchDetectDominantLanguageItemResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetectDominantLanguageItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) languages: ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguage>>,
@@ -45,8 +43,11 @@ impl BatchDetectDominantLanguageItemResultBuilder {
     }
     /// <p>The zero-based index of the document in the input list.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
+    }
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
     }
     /// Appends an item to `languages`.
     ///
@@ -55,23 +56,26 @@ impl BatchDetectDominantLanguageItemResultBuilder {
     /// <p>One or more <code>DominantLanguage</code> objects describing the dominant languages in the document.</p>
     pub fn languages(mut self, input: crate::types::DominantLanguage) -> Self {
         let mut v = self.languages.unwrap_or_default();
-        v.push(input);
-        self.languages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.languages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more <code>DominantLanguage</code> objects describing the dominant languages in the document.</p>
-    pub fn set_languages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguage>>,
-    ) -> Self {
-        self.languages = input;
-        self
+    pub fn set_languages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguage>>) -> Self {
+        self.languages = input; self
+    }
+    /// <p>One or more <code>DominantLanguage</code> objects describing the dominant languages in the document.</p>
+    pub fn get_languages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantLanguage>> {
+        &self.languages
     }
     /// Consumes the builder and constructs a [`BatchDetectDominantLanguageItemResult`](crate::types::BatchDetectDominantLanguageItemResult).
     pub fn build(self) -> crate::types::BatchDetectDominantLanguageItemResult {
         crate::types::BatchDetectDominantLanguageItemResult {
-            index: self.index,
-            languages: self.languages,
+            index: self.index
+            ,
+            languages: self.languages
+            ,
         }
     }
 }
+

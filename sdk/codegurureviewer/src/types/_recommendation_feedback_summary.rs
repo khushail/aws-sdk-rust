@@ -3,30 +3,30 @@
 /// <p>Information about recommendation feedback summaries.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationFeedbackSummary {
+pub struct RecommendationFeedbackSummary  {
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
     #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
     #[doc(hidden)]
     pub reactions: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,
-    /// <p>The ID of the user that gave the feedback.</p>
+    /// <p>The ID of the user that gave the feedback.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationFeedbackSummary {
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
-    pub fn reactions(&self) -> ::std::option::Option<&[crate::types::Reaction]> {
+    pub fn reactions(&self) -> ::std::option::Option<& [crate::types::Reaction]> {
         self.reactions.as_deref()
     }
-    /// <p>The ID of the user that gave the feedback.</p>
+    /// <p>The ID of the user that gave the feedback.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -39,9 +39,7 @@ impl RecommendationFeedbackSummary {
 
 /// A builder for [`RecommendationFeedbackSummary`](crate::types::RecommendationFeedbackSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationFeedbackSummaryBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) reactions: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,
@@ -49,20 +47,17 @@ pub struct RecommendationFeedbackSummaryBuilder {
 }
 impl RecommendationFeedbackSummaryBuilder {
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.recommendation_id = input;
-        self
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommendation_id = input; self
+    }
+    /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
     }
     /// Appends an item to `reactions`.
     ///
@@ -71,36 +66,44 @@ impl RecommendationFeedbackSummaryBuilder {
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
     pub fn reactions(mut self, input: crate::types::Reaction) -> Self {
         let mut v = self.reactions.unwrap_or_default();
-        v.push(input);
-        self.reactions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reactions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
-    pub fn set_reactions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,
-    ) -> Self {
-        self.reactions = input;
-        self
+    pub fn set_reactions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>) -> Self {
+        self.reactions = input; self
     }
-    /// <p>The ID of the user that gave the feedback.</p>
+    /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
+    pub fn get_reactions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reaction>> {
+        &self.reactions
+    }
+    /// <p>The ID of the user that gave the feedback.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user that gave the feedback.</p>
+    /// <p>The ID of the user that gave the feedback.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The ID of the user that gave the feedback.</p> 
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`RecommendationFeedbackSummary`](crate::types::RecommendationFeedbackSummary).
     pub fn build(self) -> crate::types::RecommendationFeedbackSummary {
         crate::types::RecommendationFeedbackSummary {
-            recommendation_id: self.recommendation_id,
-            reactions: self.reactions,
-            user_id: self.user_id,
+            recommendation_id: self.recommendation_id
+            ,
+            reactions: self.reactions
+            ,
+            user_id: self.user_id
+            ,
         }
     }
 }
+

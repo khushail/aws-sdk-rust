@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveBridgeOutputInput {
+pub struct RemoveBridgeOutputInput  {
     /// The ARN of the bridge that you want to update.
     #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct RemoveBridgeOutputInput {
 }
 impl RemoveBridgeOutputInput {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<& str> {
         self.bridge_arn.as_deref()
     }
     /// The name of the bridge output that you want to remove.
-    pub fn output_name(&self) -> ::std::option::Option<&str> {
+    pub fn output_name(&self) -> ::std::option::Option<& str> {
         self.output_name.as_deref()
     }
 }
 impl RemoveBridgeOutputInput {
     /// Creates a new builder-style object to manufacture [`RemoveBridgeOutputInput`](crate::operation::remove_bridge_output::RemoveBridgeOutputInput).
-    pub fn builder(
-    ) -> crate::operation::remove_bridge_output::builders::RemoveBridgeOutputInputBuilder {
+    pub fn builder() -> crate::operation::remove_bridge_output::builders::RemoveBridgeOutputInputBuilder {
         crate::operation::remove_bridge_output::builders::RemoveBridgeOutputInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveBridgeOutputInput`](crate::operation::remove_bridge_output::RemoveBridgeOutputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveBridgeOutputInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl RemoveBridgeOutputInputBuilder {
     }
     /// The ARN of the bridge that you want to update.
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bridge_arn = input;
-        self
+        self.bridge_arn = input; self
+    }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
     }
     /// The name of the bridge output that you want to remove.
     pub fn output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl RemoveBridgeOutputInputBuilder {
     }
     /// The name of the bridge output that you want to remove.
     pub fn set_output_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_name = input;
-        self
+        self.output_name = input; self
+    }
+    /// The name of the bridge output that you want to remove.
+    pub fn get_output_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_name
     }
     /// Consumes the builder and constructs a [`RemoveBridgeOutputInput`](crate::operation::remove_bridge_output::RemoveBridgeOutputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_bridge_output::RemoveBridgeOutputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_bridge_output::RemoveBridgeOutputInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::remove_bridge_output::RemoveBridgeOutputInput {
-                bridge_arn: self.bridge_arn,
-                output_name: self.output_name,
-            },
+                bridge_arn: self.bridge_arn
+                ,
+                output_name: self.output_name
+                ,
+            }
         )
     }
 }
+

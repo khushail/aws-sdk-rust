@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoteOnProposalOutput {
+pub struct VoteOnProposalOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for VoteOnProposalOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl VoteOnProposalOutput {
     /// Creates a new builder-style object to manufacture [`VoteOnProposalOutput`](crate::operation::vote_on_proposal::VoteOnProposalOutput).
     pub fn builder() -> crate::operation::vote_on_proposal::builders::VoteOnProposalOutputBuilder {
@@ -19,22 +19,20 @@ impl VoteOnProposalOutput {
 
 /// A builder for [`VoteOnProposalOutput`](crate::operation::vote_on_proposal::VoteOnProposalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoteOnProposalOutputBuilder {
     _request_id: Option<String>,
 }
 impl VoteOnProposalOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`VoteOnProposalOutput`](crate::operation::vote_on_proposal::VoteOnProposalOutput).
     pub fn build(self) -> crate::operation::vote_on_proposal::VoteOnProposalOutput {
         crate::operation::vote_on_proposal::VoteOnProposalOutput {
@@ -42,3 +40,4 @@ impl VoteOnProposalOutputBuilder {
         }
     }
 }
+

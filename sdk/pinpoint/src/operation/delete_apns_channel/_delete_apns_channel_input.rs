@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApnsChannelInput {
+pub struct DeleteApnsChannelInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApnsChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
 impl DeleteApnsChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteApnsChannelInput`](crate::operation::delete_apns_channel::DeleteApnsChannelInput).
-    pub fn builder(
-    ) -> crate::operation::delete_apns_channel::builders::DeleteApnsChannelInputBuilder {
+    pub fn builder() -> crate::operation::delete_apns_channel::builders::DeleteApnsChannelInputBuilder {
         crate::operation::delete_apns_channel::builders::DeleteApnsChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApnsChannelInput`](crate::operation::delete_apns_channel::DeleteApnsChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApnsChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApnsChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// Consumes the builder and constructs a [`DeleteApnsChannelInput`](crate::operation::delete_apns_channel::DeleteApnsChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_apns_channel::DeleteApnsChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_apns_channel::DeleteApnsChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_apns_channel::DeleteApnsChannelInput {
-                application_id: self.application_id,
-            },
+                application_id: self.application_id
+                ,
+            }
         )
     }
 }
+

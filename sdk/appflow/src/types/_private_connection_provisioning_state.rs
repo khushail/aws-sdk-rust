@@ -3,7 +3,7 @@
 /// <p> Specifies the private connection provisioning state. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateConnectionProvisioningState {
+pub struct PrivateConnectionProvisioningState  {
     /// <p> Specifies the private connection provisioning status. </p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PrivateConnectionProvisioningStatus>,
@@ -12,24 +12,19 @@ pub struct PrivateConnectionProvisioningState {
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the private connection provisioning failure cause. </p>
     #[doc(hidden)]
-    pub failure_cause:
-        ::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause>,
+    pub failure_cause: ::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause>,
 }
 impl PrivateConnectionProvisioningState {
     /// <p> Specifies the private connection provisioning status. </p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PrivateConnectionProvisioningStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PrivateConnectionProvisioningStatus> {
         self.status.as_ref()
     }
     /// <p> Specifies the private connection provisioning failure reason. </p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
     /// <p> Specifies the private connection provisioning failure cause. </p>
-    pub fn failure_cause(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PrivateConnectionProvisioningFailureCause> {
+    pub fn failure_cause(&self) -> ::std::option::Option<& crate::types::PrivateConnectionProvisioningFailureCause> {
         self.failure_cause.as_ref()
     }
 }
@@ -42,14 +37,11 @@ impl PrivateConnectionProvisioningState {
 
 /// A builder for [`PrivateConnectionProvisioningState`](crate::types::PrivateConnectionProvisioningState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrivateConnectionProvisioningStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PrivateConnectionProvisioningStatus>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
-    pub(crate) failure_cause:
-        ::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause>,
+    pub(crate) failure_cause: ::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause>,
 }
 impl PrivateConnectionProvisioningStateBuilder {
     /// <p> Specifies the private connection provisioning status. </p>
@@ -58,51 +50,49 @@ impl PrivateConnectionProvisioningStateBuilder {
         self
     }
     /// <p> Specifies the private connection provisioning status. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateConnectionProvisioningStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PrivateConnectionProvisioningStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p> Specifies the private connection provisioning status. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PrivateConnectionProvisioningStatus> {
+        &self.status
     }
     /// <p> Specifies the private connection provisioning failure reason. </p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the private connection provisioning failure reason. </p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_message = input;
-        self
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_message = input; self
+    }
+    /// <p> Specifies the private connection provisioning failure reason. </p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
     }
     /// <p> Specifies the private connection provisioning failure cause. </p>
-    pub fn failure_cause(
-        mut self,
-        input: crate::types::PrivateConnectionProvisioningFailureCause,
-    ) -> Self {
+    pub fn failure_cause(mut self, input: crate::types::PrivateConnectionProvisioningFailureCause) -> Self {
         self.failure_cause = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the private connection provisioning failure cause. </p>
-    pub fn set_failure_cause(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause>,
-    ) -> Self {
-        self.failure_cause = input;
-        self
+    pub fn set_failure_cause(mut self, input: ::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause>) -> Self {
+        self.failure_cause = input; self
+    }
+    /// <p> Specifies the private connection provisioning failure cause. </p>
+    pub fn get_failure_cause(&self) -> &::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause> {
+        &self.failure_cause
     }
     /// Consumes the builder and constructs a [`PrivateConnectionProvisioningState`](crate::types::PrivateConnectionProvisioningState).
     pub fn build(self) -> crate::types::PrivateConnectionProvisioningState {
         crate::types::PrivateConnectionProvisioningState {
-            status: self.status,
-            failure_message: self.failure_message,
-            failure_cause: self.failure_cause,
+            status: self.status
+            ,
+            failure_message: self.failure_message
+            ,
+            failure_cause: self.failure_cause
+            ,
         }
     }
 }
+

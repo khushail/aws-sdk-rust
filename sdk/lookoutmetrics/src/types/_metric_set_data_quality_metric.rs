@@ -3,24 +3,21 @@
 /// <p>An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricSetDataQualityMetric {
+pub struct MetricSetDataQualityMetric  {
     /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
     #[doc(hidden)]
     pub metric_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The array of data quality metrics contained in the data quality metric set.</p>
     #[doc(hidden)]
-    pub data_quality_metric_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataQualityMetric>>,
+    pub data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityMetric>>,
 }
 impl MetricSetDataQualityMetric {
     /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
-    pub fn metric_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn metric_set_arn(&self) -> ::std::option::Option<& str> {
         self.metric_set_arn.as_deref()
     }
     /// <p>The array of data quality metrics contained in the data quality metric set.</p>
-    pub fn data_quality_metric_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataQualityMetric]> {
+    pub fn data_quality_metric_list(&self) -> ::std::option::Option<& [crate::types::DataQualityMetric]> {
         self.data_quality_metric_list.as_deref()
     }
 }
@@ -33,30 +30,24 @@ impl MetricSetDataQualityMetric {
 
 /// A builder for [`MetricSetDataQualityMetric`](crate::types::MetricSetDataQualityMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricSetDataQualityMetricBuilder {
     pub(crate) metric_set_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) data_quality_metric_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataQualityMetric>>,
+    pub(crate) data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityMetric>>,
 }
 impl MetricSetDataQualityMetricBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
-    pub fn metric_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
-    pub fn set_metric_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metric_set_arn = input;
-        self
+    pub fn set_metric_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metric_set_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
+    pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_arn
     }
     /// Appends an item to `data_quality_metric_list`.
     ///
@@ -65,23 +56,26 @@ impl MetricSetDataQualityMetricBuilder {
     /// <p>The array of data quality metrics contained in the data quality metric set.</p>
     pub fn data_quality_metric_list(mut self, input: crate::types::DataQualityMetric) -> Self {
         let mut v = self.data_quality_metric_list.unwrap_or_default();
-        v.push(input);
-        self.data_quality_metric_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_quality_metric_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of data quality metrics contained in the data quality metric set.</p>
-    pub fn set_data_quality_metric_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityMetric>>,
-    ) -> Self {
-        self.data_quality_metric_list = input;
-        self
+    pub fn set_data_quality_metric_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityMetric>>) -> Self {
+        self.data_quality_metric_list = input; self
+    }
+    /// <p>The array of data quality metrics contained in the data quality metric set.</p>
+    pub fn get_data_quality_metric_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityMetric>> {
+        &self.data_quality_metric_list
     }
     /// Consumes the builder and constructs a [`MetricSetDataQualityMetric`](crate::types::MetricSetDataQualityMetric).
     pub fn build(self) -> crate::types::MetricSetDataQualityMetric {
         crate::types::MetricSetDataQualityMetric {
-            metric_set_arn: self.metric_set_arn,
-            data_quality_metric_list: self.data_quality_metric_list,
+            metric_set_arn: self.metric_set_arn
+            ,
+            data_quality_metric_list: self.data_quality_metric_list
+            ,
         }
     }
 }
+

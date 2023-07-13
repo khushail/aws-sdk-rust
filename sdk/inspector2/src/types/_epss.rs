@@ -3,7 +3,7 @@
 /// <p>Details about the Exploit Prediction Scoring System (EPSS) score.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Epss {
+pub struct Epss  {
     /// <p>The Exploit Prediction Scoring System (EPSS) score.</p>
     #[doc(hidden)]
     pub score: f64,
@@ -23,9 +23,7 @@ impl Epss {
 
 /// A builder for [`Epss`](crate::types::Epss).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EpssBuilder {
     pub(crate) score: ::std::option::Option<f64>,
 }
@@ -37,13 +35,19 @@ impl EpssBuilder {
     }
     /// <p>The Exploit Prediction Scoring System (EPSS) score.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
+    }
+    /// <p>The Exploit Prediction Scoring System (EPSS) score.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f64> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`Epss`](crate::types::Epss).
     pub fn build(self) -> crate::types::Epss {
         crate::types::Epss {
-            score: self.score.unwrap_or_default(),
+            score: self.score
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

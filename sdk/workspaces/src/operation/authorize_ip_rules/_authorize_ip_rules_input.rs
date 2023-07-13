@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizeIpRulesInput {
+pub struct AuthorizeIpRulesInput  {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct AuthorizeIpRulesInput {
 }
 impl AuthorizeIpRulesInput {
     /// <p>The identifier of the group.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The rules to add to the group.</p>
-    pub fn user_rules(&self) -> ::std::option::Option<&[crate::types::IpRuleItem]> {
+    pub fn user_rules(&self) -> ::std::option::Option<& [crate::types::IpRuleItem]> {
         self.user_rules.as_deref()
     }
 }
 impl AuthorizeIpRulesInput {
     /// Creates a new builder-style object to manufacture [`AuthorizeIpRulesInput`](crate::operation::authorize_ip_rules::AuthorizeIpRulesInput).
-    pub fn builder() -> crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder {
         crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeIpRulesInput`](crate::operation::authorize_ip_rules::AuthorizeIpRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeIpRulesInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
@@ -45,8 +42,11 @@ impl AuthorizeIpRulesInputBuilder {
     }
     /// <p>The identifier of the group.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
+    }
+    /// <p>The identifier of the group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Appends an item to `user_rules`.
     ///
@@ -55,30 +55,28 @@ impl AuthorizeIpRulesInputBuilder {
     /// <p>The rules to add to the group.</p>
     pub fn user_rules(mut self, input: crate::types::IpRuleItem) -> Self {
         let mut v = self.user_rules.unwrap_or_default();
-        v.push(input);
-        self.user_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rules to add to the group.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
-    ) -> Self {
-        self.user_rules = input;
-        self
+    pub fn set_user_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>) -> Self {
+        self.user_rules = input; self
+    }
+    /// <p>The rules to add to the group.</p>
+    pub fn get_user_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+        &self.user_rules
     }
     /// Consumes the builder and constructs a [`AuthorizeIpRulesInput`](crate::operation::authorize_ip_rules::AuthorizeIpRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_ip_rules::AuthorizeIpRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::authorize_ip_rules::AuthorizeIpRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::authorize_ip_rules::AuthorizeIpRulesInput {
-                group_id: self.group_id,
-                user_rules: self.user_rules,
-            },
+                group_id: self.group_id
+                ,
+                user_rules: self.user_rules
+                ,
+            }
         )
     }
 }
+

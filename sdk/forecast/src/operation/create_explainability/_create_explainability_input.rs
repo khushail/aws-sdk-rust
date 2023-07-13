@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateExplainabilityInput {
+pub struct CreateExplainabilityInput  {
     /// <p>A unique name for the Explainability.</p>
     #[doc(hidden)]
     pub explainability_name: ::std::option::Option<::std::string::String>,
@@ -21,92 +21,86 @@ pub struct CreateExplainabilityInput {
     /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     #[doc(hidden)]
     pub enable_visualization: ::std::option::Option<bool>,
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p> 
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
     #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::std::string::String>,
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p> 
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
     #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::std::string::String>,
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
-    /// <p>The following restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
-    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
-    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p> 
+    /// <p>The following restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li> 
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li> 
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li> 
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateExplainabilityInput {
     /// <p>A unique name for the Explainability.</p>
-    pub fn explainability_name(&self) -> ::std::option::Option<&str> {
+    pub fn explainability_name(&self) -> ::std::option::Option<& str> {
         self.explainability_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
-    pub fn explainability_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExplainabilityConfig> {
+    pub fn explainability_config(&self) -> ::std::option::Option<& crate::types::ExplainabilityConfig> {
         self.explainability_config.as_ref()
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>Defines the fields of a dataset.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> ::std::option::Option<& crate::types::Schema> {
         self.schema.as_ref()
     }
     /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     pub fn enable_visualization(&self) -> ::std::option::Option<bool> {
         self.enable_visualization
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p> 
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn start_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_date_time(&self) -> ::std::option::Option<& str> {
         self.start_date_time.as_deref()
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p> 
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_date_time(&self) -> ::std::option::Option<& str> {
         self.end_date_time.as_deref()
     }
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
-    /// <p>The following restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
-    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
-    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p> 
+    /// <p>The following restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li> 
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li> 
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li> 
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li> 
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateExplainabilityInput {
     /// Creates a new builder-style object to manufacture [`CreateExplainabilityInput`](crate::operation::create_explainability::CreateExplainabilityInput).
-    pub fn builder(
-    ) -> crate::operation::create_explainability::builders::CreateExplainabilityInputBuilder {
-        crate::operation::create_explainability::builders::CreateExplainabilityInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_explainability::builders::CreateExplainabilityInputBuilder {
+        crate::operation::create_explainability::builders::CreateExplainabilityInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExplainabilityInput`](crate::operation::create_explainability::CreateExplainabilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExplainabilityInputBuilder {
     pub(crate) explainability_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -120,20 +114,17 @@ pub struct CreateExplainabilityInputBuilder {
 }
 impl CreateExplainabilityInputBuilder {
     /// <p>A unique name for the Explainability.</p>
-    pub fn explainability_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique name for the Explainability.</p>
-    pub fn set_explainability_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.explainability_name = input;
-        self
+    pub fn set_explainability_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.explainability_name = input; self
+    }
+    /// <p>A unique name for the Explainability.</p>
+    pub fn get_explainability_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.explainability_name
     }
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,8 +133,11 @@ impl CreateExplainabilityInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     pub fn explainability_config(mut self, input: crate::types::ExplainabilityConfig) -> Self {
@@ -151,12 +145,12 @@ impl CreateExplainabilityInputBuilder {
         self
     }
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
-    pub fn set_explainability_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ExplainabilityConfig>,
-    ) -> Self {
-        self.explainability_config = input;
-        self
+    pub fn set_explainability_config(mut self, input: ::std::option::Option<crate::types::ExplainabilityConfig>) -> Self {
+        self.explainability_config = input; self
+    }
+    /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
+    pub fn get_explainability_config(&self) -> &::std::option::Option<crate::types::ExplainabilityConfig> {
+        &self.explainability_config
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -164,12 +158,12 @@ impl CreateExplainabilityInputBuilder {
         self
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
-        self.data_source = input;
-        self
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
+        self.data_source = input; self
+    }
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
     }
     /// <p>Defines the fields of a dataset.</p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
@@ -178,8 +172,11 @@ impl CreateExplainabilityInputBuilder {
     }
     /// <p>Defines the fields of a dataset.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
+    }
+    /// <p>Defines the fields of a dataset.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
+        &self.schema
     }
     /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     pub fn enable_visualization(mut self, input: bool) -> Self {
@@ -188,101 +185,114 @@ impl CreateExplainabilityInputBuilder {
     }
     /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
     pub fn set_enable_visualization(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_visualization = input;
-        self
+        self.enable_visualization = input; self
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+    /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
+    pub fn get_enable_visualization(&self) -> &::std::option::Option<bool> {
+        &self.enable_visualization
+    }
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p> 
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn start_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p> 
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.start_date_time = input;
-        self
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.start_date_time = input; self
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p> 
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn end_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date_time
+    }
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p> 
+    /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
+    pub fn end_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p> 
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.end_date_time = input;
-        self
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.end_date_time = input; self
+    }
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p> 
+    /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_date_time
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
-    /// <p>The following restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
-    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
-    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p> 
+    /// <p>The following restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li> 
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li> 
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li> 
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li> 
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
-    /// <p>The following restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
-    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
-    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p> 
+    /// <p>The following restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li> 
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li> 
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li> 
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li> 
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p> 
+    /// <p>The following restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li> 
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li> 
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li> 
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li> 
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateExplainabilityInput`](crate::operation::create_explainability::CreateExplainabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_explainability::CreateExplainabilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_explainability::CreateExplainabilityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_explainability::CreateExplainabilityInput {
-                explainability_name: self.explainability_name,
-                resource_arn: self.resource_arn,
-                explainability_config: self.explainability_config,
-                data_source: self.data_source,
-                schema: self.schema,
-                enable_visualization: self.enable_visualization,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
-                tags: self.tags,
-            },
+                explainability_name: self.explainability_name
+                ,
+                resource_arn: self.resource_arn
+                ,
+                explainability_config: self.explainability_config
+                ,
+                data_source: self.data_source
+                ,
+                schema: self.schema
+                ,
+                enable_visualization: self.enable_visualization
+                ,
+                start_date_time: self.start_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

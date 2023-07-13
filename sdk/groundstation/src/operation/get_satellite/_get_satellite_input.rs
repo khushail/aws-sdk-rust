@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSatelliteInput {
+pub struct GetSatelliteInput  {
     /// <p>UUID of a satellite.</p>
     #[doc(hidden)]
     pub satellite_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSatelliteInput {
     /// <p>UUID of a satellite.</p>
-    pub fn satellite_id(&self) -> ::std::option::Option<&str> {
+    pub fn satellite_id(&self) -> ::std::option::Option<& str> {
         self.satellite_id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl GetSatelliteInput {
 
 /// A builder for [`GetSatelliteInput`](crate::operation::get_satellite::GetSatelliteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSatelliteInputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +35,20 @@ impl GetSatelliteInputBuilder {
     }
     /// <p>UUID of a satellite.</p>
     pub fn set_satellite_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.satellite_id = input;
-        self
+        self.satellite_id = input; self
+    }
+    /// <p>UUID of a satellite.</p>
+    pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_id
     }
     /// Consumes the builder and constructs a [`GetSatelliteInput`](crate::operation::get_satellite::GetSatelliteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_satellite::GetSatelliteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_satellite::GetSatelliteInput {
-            satellite_id: self.satellite_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_satellite::GetSatelliteInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_satellite::GetSatelliteInput {
+                satellite_id: self.satellite_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes an individual setting that controls some aspect of MemoryDB behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Parameter {
+pub struct Parameter  {
     /// <p>The name of the parameter</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct Parameter {
 }
 impl Parameter {
     /// <p>The name of the parameter</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the parameter</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A description of the parameter</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The parameter's data type</p>
-    pub fn data_type(&self) -> ::std::option::Option<&str> {
+    pub fn data_type(&self) -> ::std::option::Option<& str> {
         self.data_type.as_deref()
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&str> {
+    pub fn allowed_values(&self) -> ::std::option::Option<& str> {
         self.allowed_values.as_deref()
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> ::std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl Parameter {
 
 /// A builder for [`Parameter`](crate::types::Parameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -77,8 +75,11 @@ impl ParameterBuilder {
     }
     /// <p>The name of the parameter</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the parameter</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The value of the parameter</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +88,11 @@ impl ParameterBuilder {
     }
     /// <p>The value of the parameter</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the parameter</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>A description of the parameter</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,8 +101,11 @@ impl ParameterBuilder {
     }
     /// <p>A description of the parameter</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the parameter</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The parameter's data type</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,50 +114,54 @@ impl ParameterBuilder {
     }
     /// <p>The parameter's data type</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
+    }
+    /// <p>The parameter's data type</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.allowed_values = input;
-        self
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.allowed_values = input; self
+    }
+    /// <p>The valid range of values for the parameter.</p>
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_values
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.minimum_engine_version = input;
-        self
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.minimum_engine_version = input; self
+    }
+    /// <p>The earliest engine version to which the parameter can apply.</p>
+    pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_engine_version
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {
         crate::types::Parameter {
-            name: self.name,
-            value: self.value,
-            description: self.description,
-            data_type: self.data_type,
-            allowed_values: self.allowed_values,
-            minimum_engine_version: self.minimum_engine_version,
+            name: self.name
+            ,
+            value: self.value
+            ,
+            description: self.description
+            ,
+            data_type: self.data_type
+            ,
+            allowed_values: self.allowed_values
+            ,
+            minimum_engine_version: self.minimum_engine_version
+            ,
         }
     }
 }
+

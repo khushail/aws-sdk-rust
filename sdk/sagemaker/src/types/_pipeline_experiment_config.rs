@@ -3,7 +3,7 @@
 /// <p>Specifies the names of the experiment and trial created by a pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineExperimentConfig {
+pub struct PipelineExperimentConfig  {
     /// <p>The name of the experiment.</p>
     #[doc(hidden)]
     pub experiment_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct PipelineExperimentConfig {
 }
 impl PipelineExperimentConfig {
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
     /// <p>The name of the trial.</p>
-    pub fn trial_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_name(&self) -> ::std::option::Option<& str> {
         self.trial_name.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl PipelineExperimentConfig {
 
 /// A builder for [`PipelineExperimentConfig`](crate::types::PipelineExperimentConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineExperimentConfigBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
 }
 impl PipelineExperimentConfigBuilder {
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.experiment_name = input;
-        self
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.experiment_name = input; self
+    }
+    /// <p>The name of the experiment.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
     }
     /// <p>The name of the trial.</p>
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl PipelineExperimentConfigBuilder {
     }
     /// <p>The name of the trial.</p>
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_name = input;
-        self
+        self.trial_name = input; self
+    }
+    /// <p>The name of the trial.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
     }
     /// Consumes the builder and constructs a [`PipelineExperimentConfig`](crate::types::PipelineExperimentConfig).
     pub fn build(self) -> crate::types::PipelineExperimentConfig {
         crate::types::PipelineExperimentConfig {
-            experiment_name: self.experiment_name,
-            trial_name: self.trial_name,
+            experiment_name: self.experiment_name
+            ,
+            trial_name: self.trial_name
+            ,
         }
     }
 }
+

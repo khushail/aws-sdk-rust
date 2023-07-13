@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResendContactReachabilityEmailOutput {
+pub struct ResendContactReachabilityEmailOutput  {
     /// <p>The domain name for which you requested a confirmation email.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct ResendContactReachabilityEmailOutput {
 }
 impl ResendContactReachabilityEmailOutput {
     /// <p>The domain name for which you requested a confirmation email.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
@@ -29,22 +29,20 @@ impl ResendContactReachabilityEmailOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for ResendContactReachabilityEmailOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ResendContactReachabilityEmailOutput {
     /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailOutput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput).
-    pub fn builder() -> crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailOutputBuilder{
+    pub fn builder() -> crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailOutputBuilder {
         crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResendContactReachabilityEmailOutput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
@@ -59,24 +57,24 @@ impl ResendContactReachabilityEmailOutputBuilder {
     }
     /// <p>The domain name for which you requested a confirmation email.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The domain name for which you requested a confirmation email.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.email_address = input;
-        self
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.email_address = input; self
+    }
+    /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     pub fn is_already_verified(mut self, input: bool) -> Self {
@@ -85,28 +83,32 @@ impl ResendContactReachabilityEmailOutputBuilder {
     }
     /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     pub fn set_is_already_verified(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_already_verified = input;
-        self
+        self.is_already_verified = input; self
+    }
+    /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    pub fn get_is_already_verified(&self) -> &::std::option::Option<bool> {
+        &self.is_already_verified
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ResendContactReachabilityEmailOutput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput
-    {
+    pub fn build(self) -> crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput {
         crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput {
-            domain_name: self.domain_name,
-            email_address: self.email_address,
-            is_already_verified: self.is_already_verified,
+            domain_name: self.domain_name
+            ,
+            email_address: self.email_address
+            ,
+            is_already_verified: self.is_already_verified
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

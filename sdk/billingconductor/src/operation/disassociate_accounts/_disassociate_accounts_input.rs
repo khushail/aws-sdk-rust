@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateAccountsInput {
+pub struct DisassociateAccountsInput  {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DisassociateAccountsInput {
 }
 impl DisassociateAccountsInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The array of account IDs to disassociate. </p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn account_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.account_ids.as_deref()
     }
 }
 impl DisassociateAccountsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAccountsInput`](crate::operation::disassociate_accounts::DisassociateAccountsInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_accounts::builders::DisassociateAccountsInputBuilder {
-        crate::operation::disassociate_accounts::builders::DisassociateAccountsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_accounts::builders::DisassociateAccountsInputBuilder {
+        crate::operation::disassociate_accounts::builders::DisassociateAccountsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAccountsInput`](crate::operation::disassociate_accounts::DisassociateAccountsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAccountsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,8 +42,11 @@ impl DisassociateAccountsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Appends an item to `account_ids`.
     ///
@@ -56,30 +55,28 @@ impl DisassociateAccountsInputBuilder {
     /// <p>The array of account IDs to disassociate. </p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of account IDs to disassociate. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_ids = input; self
+    }
+    /// <p>The array of account IDs to disassociate. </p>
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`DisassociateAccountsInput`](crate::operation::disassociate_accounts::DisassociateAccountsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_accounts::DisassociateAccountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_accounts::DisassociateAccountsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_accounts::DisassociateAccountsInput {
-                arn: self.arn,
-                account_ids: self.account_ids,
-            },
+                arn: self.arn
+                ,
+                account_ids: self.account_ids
+                ,
+            }
         )
     }
 }
+

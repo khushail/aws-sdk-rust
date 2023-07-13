@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVpcPeeringConnectionInput {
+pub struct DeleteVpcPeeringConnectionInput  {
     /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DeleteVpcPeeringConnectionInput {
 }
 impl DeleteVpcPeeringConnectionInput {
     /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A unique identifier for a VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpc_peering_connection_id.as_deref()
     }
 }
 impl DeleteVpcPeeringConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcPeeringConnectionInput`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionInput).
-    pub fn builder() -> crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder{
+    pub fn builder() -> crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder {
         crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcPeeringConnectionInput`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcPeeringConnectionInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
@@ -44,37 +42,35 @@ impl DeleteVpcPeeringConnectionInputBuilder {
     }
     /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
+    }
+    /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// <p>A unique identifier for a VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a VPC peering connection.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_peering_connection_id = input;
-        self
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_peering_connection_id = input; self
+    }
+    /// <p>A unique identifier for a VPC peering connection.</p>
+    pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_peering_connection_id
     }
     /// Consumes the builder and constructs a [`DeleteVpcPeeringConnectionInput`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionInput {
-                fleet_id: self.fleet_id,
-                vpc_peering_connection_id: self.vpc_peering_connection_id,
-            },
+                fleet_id: self.fleet_id
+                ,
+                vpc_peering_connection_id: self.vpc_peering_connection_id
+                ,
+            }
         )
     }
 }
+

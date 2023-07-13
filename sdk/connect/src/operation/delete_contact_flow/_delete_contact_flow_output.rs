@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteContactFlowOutput {
+pub struct DeleteContactFlowOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteContactFlowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteContactFlowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactFlowOutput`](crate::operation::delete_contact_flow::DeleteContactFlowOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_contact_flow::builders::DeleteContactFlowOutputBuilder {
+    pub fn builder() -> crate::operation::delete_contact_flow::builders::DeleteContactFlowOutputBuilder {
         crate::operation::delete_contact_flow::builders::DeleteContactFlowOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContactFlowOutput`](crate::operation::delete_contact_flow::DeleteContactFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContactFlowOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteContactFlowOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteContactFlowOutput`](crate::operation::delete_contact_flow::DeleteContactFlowOutput).
     pub fn build(self) -> crate::operation::delete_contact_flow::DeleteContactFlowOutput {
         crate::operation::delete_contact_flow::DeleteContactFlowOutput {
@@ -43,3 +40,4 @@ impl DeleteContactFlowOutputBuilder {
         }
     }
 }
+

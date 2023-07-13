@@ -3,133 +3,114 @@ pub use crate::operation::validate_e911_address::_validate_e911_address_output::
 
 pub use crate::operation::validate_e911_address::_validate_e911_address_input::ValidateE911AddressInputBuilder;
 
+impl ValidateE911AddressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::validate_e911_address::ValidateE911AddressOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::validate_e911_address::ValidateE911AddressError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.validate_e911_address();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ValidateE911Address`.
-///
+/// 
 /// <p>Validates an address to be used for 911 calls made with Amazon Chime Voice Connectors. You can use validated addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps ensure that addresses are routed to the appropriate Public Safety Answering Point.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidateE911AddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder,
+                    inner: crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder,
 }
-impl ValidateE911AddressFluentBuilder {
+impl ValidateE911AddressFluentBuilder  {
     /// Creates a new `ValidateE911Address`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::validate_e911_address::ValidateE911Address,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_e911_address::ValidateE911AddressError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ValidateE911Address as a reference.
+    pub fn as_input(&self) -> &crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_e911_address::ValidateE911AddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_e911_address::ValidateE911AddressError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::validate_e911_address::ValidateE911Address, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::validate_e911_address::ValidateE911AddressError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::validate_e911_address::ValidateE911AddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::validate_e911_address::ValidateE911AddressError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_e911_address::ValidateE911AddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_e911_address::ValidateE911AddressError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::validate_e911_address::ValidateE911Address,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_e911_address::ValidateE911AddressError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::validate_e911_address::ValidateE911AddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::validate_e911_address::ValidateE911AddressError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::validate_e911_address::ValidateE911Address, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::validate_e911_address::ValidateE911AddressError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The AWS account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The AWS account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The AWS account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
-    pub fn street_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn street_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.street_number(input.into());
         self
     }
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
-    pub fn set_street_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_street_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_street_number(input);
         self
+    }
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+    pub fn get_street_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_street_number()
     }
     /// <p>The address street information, such as <code>8th Avenue</code>.</p>
     pub fn street_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +122,10 @@ impl ValidateE911AddressFluentBuilder {
         self.inner = self.inner.set_street_info(input);
         self
     }
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+    pub fn get_street_info(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_street_info()
+    }
     /// <p>The address city, such as <code>Portland</code>.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.city(input.into());
@@ -150,6 +135,10 @@ impl ValidateE911AddressFluentBuilder {
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_city(input);
         self
+    }
+    /// <p>The address city, such as <code>Portland</code>.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_city()
     }
     /// <p>The address state, such as <code>ME</code>.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +150,10 @@ impl ValidateE911AddressFluentBuilder {
         self.inner = self.inner.set_state(input);
         self
     }
+    /// <p>The address state, such as <code>ME</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state()
+    }
     /// <p>The address country, such as <code>US</code>. </p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.country(input.into());
@@ -170,6 +163,10 @@ impl ValidateE911AddressFluentBuilder {
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_country(input);
         self
+    }
+    /// <p>The address country, such as <code>US</code>. </p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_country()
     }
     /// <p>The address postal code, such as <code>04352</code>.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,4 +178,9 @@ impl ValidateE911AddressFluentBuilder {
         self.inner = self.inner.set_postal_code(input);
         self
     }
+    /// <p>The address postal code, such as <code>04352</code>.</p>
+    pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_postal_code()
+    }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTypeInput {
+pub struct DeleteTypeInput  {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteTypeInput {
 }
 impl DeleteTypeInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The type name.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DeleteTypeInput {
 
 /// A builder for [`DeleteTypeInput`](crate::operation::delete_type::DeleteTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTypeInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeleteTypeInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
+    }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>The type name.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl DeleteTypeInputBuilder {
     }
     /// <p>The type name.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
+    }
+    /// <p>The type name.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// Consumes the builder and constructs a [`DeleteTypeInput`](crate::operation::delete_type::DeleteTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_type::DeleteTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_type::DeleteTypeInput {
-            api_id: self.api_id,
-            type_name: self.type_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_type::DeleteTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_type::DeleteTypeInput {
+                api_id: self.api_id
+                ,
+                type_name: self.type_name
+                ,
+            }
+        )
     }
 }
+

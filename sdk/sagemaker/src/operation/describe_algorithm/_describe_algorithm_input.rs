@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlgorithmInput {
+pub struct DescribeAlgorithmInput  {
     /// <p>The name of the algorithm to describe.</p>
     #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAlgorithmInput {
     /// <p>The name of the algorithm to describe.</p>
-    pub fn algorithm_name(&self) -> ::std::option::Option<&str> {
+    pub fn algorithm_name(&self) -> ::std::option::Option<& str> {
         self.algorithm_name.as_deref()
     }
 }
 impl DescribeAlgorithmInput {
     /// Creates a new builder-style object to manufacture [`DescribeAlgorithmInput`](crate::operation::describe_algorithm::DescribeAlgorithmInput).
-    pub fn builder() -> crate::operation::describe_algorithm::builders::DescribeAlgorithmInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_algorithm::builders::DescribeAlgorithmInputBuilder {
         crate::operation::describe_algorithm::builders::DescribeAlgorithmInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAlgorithmInput`](crate::operation::describe_algorithm::DescribeAlgorithmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlgorithmInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAlgorithmInputBuilder {
     /// <p>The name of the algorithm to describe.</p>
-    pub fn algorithm_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the algorithm to describe.</p>
-    pub fn set_algorithm_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.algorithm_name = input;
-        self
+    pub fn set_algorithm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.algorithm_name = input; self
+    }
+    /// <p>The name of the algorithm to describe.</p>
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.algorithm_name
     }
     /// Consumes the builder and constructs a [`DescribeAlgorithmInput`](crate::operation::describe_algorithm::DescribeAlgorithmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_algorithm::DescribeAlgorithmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_algorithm::DescribeAlgorithmInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_algorithm::DescribeAlgorithmInput {
-                algorithm_name: self.algorithm_name,
-            },
+                algorithm_name: self.algorithm_name
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Represents a task list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskList {
+pub struct TaskList  {
     /// <p>The name of the task list.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl TaskList {
     /// <p>The name of the task list.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl TaskList {
 
 /// A builder for [`TaskList`](crate::types::TaskList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskListBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl TaskListBuilder {
     }
     /// <p>The name of the task list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the task list.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`TaskList`](crate::types::TaskList).
     pub fn build(self) -> crate::types::TaskList {
-        crate::types::TaskList { name: self.name }
+        crate::types::TaskList {
+            name: self.name
+            ,
+        }
     }
 }
+

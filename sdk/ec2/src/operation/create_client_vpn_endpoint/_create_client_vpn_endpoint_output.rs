@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClientVpnEndpointOutput {
+pub struct CreateClientVpnEndpointOutput  {
     /// <p>The ID of the Client VPN endpoint.</p>
     #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
@@ -16,37 +16,33 @@ pub struct CreateClientVpnEndpointOutput {
 }
 impl CreateClientVpnEndpointOutput {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The current state of the Client VPN endpoint.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ClientVpnEndpointStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ClientVpnEndpointStatus> {
         self.status.as_ref()
     }
     /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
-    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<& str> {
         self.dns_name.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateClientVpnEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateClientVpnEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateClientVpnEndpointOutput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointOutputBuilder {
         crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClientVpnEndpointOutput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClientVpnEndpointOutputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnEndpointStatus>,
@@ -55,20 +51,17 @@ pub struct CreateClientVpnEndpointOutputBuilder {
 }
 impl CreateClientVpnEndpointOutputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_vpn_endpoint_id = input; self
+    }
+    /// <p>The ID of the Client VPN endpoint.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
     }
     /// <p>The current state of the Client VPN endpoint.</p>
     pub fn status(mut self, input: crate::types::ClientVpnEndpointStatus) -> Self {
@@ -76,12 +69,12 @@ impl CreateClientVpnEndpointOutputBuilder {
         self
     }
     /// <p>The current state of the Client VPN endpoint.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnEndpointStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnEndpointStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The current state of the Client VPN endpoint.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientVpnEndpointStatus> {
+        &self.status
     }
     /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,27 +83,32 @@ impl CreateClientVpnEndpointOutputBuilder {
     }
     /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
+    }
+    /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateClientVpnEndpointOutput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput {
+    pub fn build(self) -> crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput {
         crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-            status: self.status,
-            dns_name: self.dns_name,
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id
+            ,
+            status: self.status
+            ,
+            dns_name: self.dns_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

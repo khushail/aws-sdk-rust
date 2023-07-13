@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateTrunkInterfaceOutput {
+pub struct AssociateTrunkInterfaceOutput  {
     /// <p>Information about the association between the trunk network interface and branch network interface.</p>
     #[doc(hidden)]
     pub interface_association: ::std::option::Option<crate::types::TrunkInterfaceAssociation>,
@@ -13,38 +13,31 @@ pub struct AssociateTrunkInterfaceOutput {
 }
 impl AssociateTrunkInterfaceOutput {
     /// <p>Information about the association between the trunk network interface and branch network interface.</p>
-    pub fn interface_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrunkInterfaceAssociation> {
+    pub fn interface_association(&self) -> ::std::option::Option<& crate::types::TrunkInterfaceAssociation> {
         self.interface_association.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateTrunkInterfaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateTrunkInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTrunkInterfaceOutput`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceOutputBuilder {
         crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTrunkInterfaceOutput`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTrunkInterfaceOutputBuilder {
-    pub(crate) interface_association:
-        ::std::option::Option<crate::types::TrunkInterfaceAssociation>,
+    pub(crate) interface_association: ::std::option::Option<crate::types::TrunkInterfaceAssociation>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,12 +48,12 @@ impl AssociateTrunkInterfaceOutputBuilder {
         self
     }
     /// <p>Information about the association between the trunk network interface and branch network interface.</p>
-    pub fn set_interface_association(
-        mut self,
-        input: ::std::option::Option<crate::types::TrunkInterfaceAssociation>,
-    ) -> Self {
-        self.interface_association = input;
-        self
+    pub fn set_interface_association(mut self, input: ::std::option::Option<crate::types::TrunkInterfaceAssociation>) -> Self {
+        self.interface_association = input; self
+    }
+    /// <p>Information about the association between the trunk network interface and branch network interface.</p>
+    pub fn get_interface_association(&self) -> &::std::option::Option<crate::types::TrunkInterfaceAssociation> {
+        &self.interface_association
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,26 +62,30 @@ impl AssociateTrunkInterfaceOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateTrunkInterfaceOutput`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput {
+    pub fn build(self) -> crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput {
         crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput {
-            interface_association: self.interface_association,
-            client_token: self.client_token,
+            interface_association: self.interface_association
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

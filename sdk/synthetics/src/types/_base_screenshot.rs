@@ -3,7 +3,7 @@
 /// <p>A structure representing a screenshot that is used as a baseline during visual monitoring comparisons made by the canary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BaseScreenshot {
+pub struct BaseScreenshot  {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
     #[doc(hidden)]
     pub screenshot_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct BaseScreenshot {
 }
 impl BaseScreenshot {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
-    pub fn screenshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn screenshot_name(&self) -> ::std::option::Option<& str> {
         self.screenshot_name.as_deref()
     }
     /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
-    pub fn ignore_coordinates(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn ignore_coordinates(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.ignore_coordinates.as_deref()
     }
 }
@@ -30,57 +30,52 @@ impl BaseScreenshot {
 
 /// A builder for [`BaseScreenshot`](crate::types::BaseScreenshot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BaseScreenshotBuilder {
     pub(crate) screenshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) ignore_coordinates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BaseScreenshotBuilder {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
-    pub fn screenshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn screenshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screenshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
-    pub fn set_screenshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.screenshot_name = input;
-        self
+    pub fn set_screenshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.screenshot_name = input; self
+    }
+    /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
+    pub fn get_screenshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.screenshot_name
     }
     /// Appends an item to `ignore_coordinates`.
     ///
     /// To override the contents of this collection use [`set_ignore_coordinates`](Self::set_ignore_coordinates).
     ///
     /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
-    pub fn ignore_coordinates(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ignore_coordinates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ignore_coordinates.unwrap_or_default();
-        v.push(input.into());
-        self.ignore_coordinates = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ignore_coordinates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
-    pub fn set_ignore_coordinates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.ignore_coordinates = input;
-        self
+    pub fn set_ignore_coordinates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ignore_coordinates = input; self
+    }
+    /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
+    pub fn get_ignore_coordinates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ignore_coordinates
     }
     /// Consumes the builder and constructs a [`BaseScreenshot`](crate::types::BaseScreenshot).
     pub fn build(self) -> crate::types::BaseScreenshot {
         crate::types::BaseScreenshot {
-            screenshot_name: self.screenshot_name,
-            ignore_coordinates: self.ignore_coordinates,
+            screenshot_name: self.screenshot_name
+            ,
+            ignore_coordinates: self.ignore_coordinates
+            ,
         }
     }
 }
+

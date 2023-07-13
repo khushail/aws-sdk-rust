@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketBundlesInput {
+pub struct GetBucketBundlesInput  {
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     #[doc(hidden)]
     pub include_inactive: ::std::option::Option<bool>,
@@ -15,17 +15,14 @@ impl GetBucketBundlesInput {
 }
 impl GetBucketBundlesInput {
     /// Creates a new builder-style object to manufacture [`GetBucketBundlesInput`](crate::operation::get_bucket_bundles::GetBucketBundlesInput).
-    pub fn builder() -> crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder {
         crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketBundlesInput`](crate::operation::get_bucket_bundles::GetBucketBundlesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketBundlesInputBuilder {
     pub(crate) include_inactive: ::std::option::Option<bool>,
 }
@@ -37,20 +34,20 @@ impl GetBucketBundlesInputBuilder {
     }
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub fn set_include_inactive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_inactive = input;
-        self
+        self.include_inactive = input; self
+    }
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+    pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
+        &self.include_inactive
     }
     /// Consumes the builder and constructs a [`GetBucketBundlesInput`](crate::operation::get_bucket_bundles::GetBucketBundlesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_bundles::GetBucketBundlesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket_bundles::GetBucketBundlesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_bucket_bundles::GetBucketBundlesInput {
-                include_inactive: self.include_inactive,
-            },
+                include_inactive: self.include_inactive
+                ,
+            }
         )
     }
 }
+

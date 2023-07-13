@@ -3,14 +3,14 @@
 /// <p>Describes an action to invoke a Lambda function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaAction {
+pub struct LambdaAction  {
     /// <p>The ARN of the Lambda function.</p>
     #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaAction {
     /// <p>The ARN of the Lambda function.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn function_arn(&self) -> ::std::option::Option<& str> {
         self.function_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl LambdaAction {
 
 /// A builder for [`LambdaAction`](crate::types::LambdaAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaActionBuilder {
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl LambdaActionBuilder {
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
+    }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
     }
     /// Consumes the builder and constructs a [`LambdaAction`](crate::types::LambdaAction).
     pub fn build(self) -> crate::types::LambdaAction {
         crate::types::LambdaAction {
-            function_arn: self.function_arn,
+            function_arn: self.function_arn
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a core network policy. You can have only one LIVE Core Policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoreNetworkPolicy {
+pub struct CoreNetworkPolicy  {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
@@ -31,7 +31,7 @@ pub struct CoreNetworkPolicy {
 }
 impl CoreNetworkPolicy {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ID of the policy version.</p>
@@ -39,27 +39,27 @@ impl CoreNetworkPolicy {
         self.policy_version_id
     }
     /// <p>Whether a core network policy is the current LIVE policy or the most recently submitted policy.</p>
-    pub fn alias(&self) -> ::std::option::Option<&crate::types::CoreNetworkPolicyAlias> {
+    pub fn alias(&self) -> ::std::option::Option<& crate::types::CoreNetworkPolicyAlias> {
         self.alias.as_ref()
     }
     /// <p>The description of a core network policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp when a core network policy was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The state of a core network policy.</p>
-    pub fn change_set_state(&self) -> ::std::option::Option<&crate::types::ChangeSetState> {
+    pub fn change_set_state(&self) -> ::std::option::Option<& crate::types::ChangeSetState> {
         self.change_set_state.as_ref()
     }
     /// <p>Describes any errors in a core network policy.</p>
-    pub fn policy_errors(&self) -> ::std::option::Option<&[crate::types::CoreNetworkPolicyError]> {
+    pub fn policy_errors(&self) -> ::std::option::Option<& [crate::types::CoreNetworkPolicyError]> {
         self.policy_errors.as_deref()
     }
     /// <p>Describes a core network policy.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl CoreNetworkPolicy {
 
 /// A builder for [`CoreNetworkPolicy`](crate::types::CoreNetworkPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkPolicyBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_version_id: ::std::option::Option<i32>,
@@ -82,26 +80,22 @@ pub struct CoreNetworkPolicyBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) change_set_state: ::std::option::Option<crate::types::ChangeSetState>,
-    pub(crate) policy_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
+    pub(crate) policy_errors: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
 }
 impl CoreNetworkPolicyBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.core_network_id = input;
-        self
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.core_network_id = input; self
+    }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
     }
     /// <p>The ID of the policy version.</p>
     pub fn policy_version_id(mut self, input: i32) -> Self {
@@ -110,8 +104,11 @@ impl CoreNetworkPolicyBuilder {
     }
     /// <p>The ID of the policy version.</p>
     pub fn set_policy_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.policy_version_id = input;
-        self
+        self.policy_version_id = input; self
+    }
+    /// <p>The ID of the policy version.</p>
+    pub fn get_policy_version_id(&self) -> &::std::option::Option<i32> {
+        &self.policy_version_id
     }
     /// <p>Whether a core network policy is the current LIVE policy or the most recently submitted policy.</p>
     pub fn alias(mut self, input: crate::types::CoreNetworkPolicyAlias) -> Self {
@@ -119,12 +116,12 @@ impl CoreNetworkPolicyBuilder {
         self
     }
     /// <p>Whether a core network policy is the current LIVE policy or the most recently submitted policy.</p>
-    pub fn set_alias(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
-    ) -> Self {
-        self.alias = input;
-        self
+    pub fn set_alias(mut self, input: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>) -> Self {
+        self.alias = input; self
+    }
+    /// <p>Whether a core network policy is the current LIVE policy or the most recently submitted policy.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<crate::types::CoreNetworkPolicyAlias> {
+        &self.alias
     }
     /// <p>The description of a core network policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,8 +130,11 @@ impl CoreNetworkPolicyBuilder {
     }
     /// <p>The description of a core network policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of a core network policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The timestamp when a core network policy was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -142,12 +142,12 @@ impl CoreNetworkPolicyBuilder {
         self
     }
     /// <p>The timestamp when a core network policy was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The timestamp when a core network policy was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The state of a core network policy.</p>
     pub fn change_set_state(mut self, input: crate::types::ChangeSetState) -> Self {
@@ -155,12 +155,12 @@ impl CoreNetworkPolicyBuilder {
         self
     }
     /// <p>The state of a core network policy.</p>
-    pub fn set_change_set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeSetState>,
-    ) -> Self {
-        self.change_set_state = input;
-        self
+    pub fn set_change_set_state(mut self, input: ::std::option::Option<crate::types::ChangeSetState>) -> Self {
+        self.change_set_state = input; self
+    }
+    /// <p>The state of a core network policy.</p>
+    pub fn get_change_set_state(&self) -> &::std::option::Option<crate::types::ChangeSetState> {
+        &self.change_set_state
     }
     /// Appends an item to `policy_errors`.
     ///
@@ -169,45 +169,51 @@ impl CoreNetworkPolicyBuilder {
     /// <p>Describes any errors in a core network policy.</p>
     pub fn policy_errors(mut self, input: crate::types::CoreNetworkPolicyError) -> Self {
         let mut v = self.policy_errors.unwrap_or_default();
-        v.push(input);
-        self.policy_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes any errors in a core network policy.</p>
-    pub fn set_policy_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
-    ) -> Self {
-        self.policy_errors = input;
-        self
+    pub fn set_policy_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>) -> Self {
+        self.policy_errors = input; self
+    }
+    /// <p>Describes any errors in a core network policy.</p>
+    pub fn get_policy_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>> {
+        &self.policy_errors
     }
     /// <p>Describes a core network policy.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes a core network policy.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.policy_document = input;
-        self
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy_document = input; self
+    }
+    /// <p>Describes a core network policy.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// Consumes the builder and constructs a [`CoreNetworkPolicy`](crate::types::CoreNetworkPolicy).
     pub fn build(self) -> crate::types::CoreNetworkPolicy {
         crate::types::CoreNetworkPolicy {
-            core_network_id: self.core_network_id,
-            policy_version_id: self.policy_version_id,
-            alias: self.alias,
-            description: self.description,
-            created_at: self.created_at,
-            change_set_state: self.change_set_state,
-            policy_errors: self.policy_errors,
-            policy_document: self.policy_document,
+            core_network_id: self.core_network_id
+            ,
+            policy_version_id: self.policy_version_id
+            ,
+            alias: self.alias
+            ,
+            description: self.description
+            ,
+            created_at: self.created_at
+            ,
+            change_set_state: self.change_set_state
+            ,
+            policy_errors: self.policy_errors
+            ,
+            policy_document: self.policy_document
+            ,
         }
     }
 }
+

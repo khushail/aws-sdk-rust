@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateListenerInput {
+pub struct CreateListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct CreateListenerInput {
     /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
     #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub ssl_policy: ::std::option::Option<::std::string::String>,
@@ -22,14 +22,14 @@ pub struct CreateListenerInput {
     /// <p>The actions for the default rule.</p>
     #[doc(hidden)]
     pub default_actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>HTTP1Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-    /// <li> <p> <code>None</code> </p> </li>
-    /// </ul>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+    /// <li> <p> <code>None</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub alpn_policy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -39,44 +39,44 @@ pub struct CreateListenerInput {
 }
 impl CreateListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> ::std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::ProtocolEnum> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::ProtocolEnum> {
         self.protocol.as_ref()
     }
     /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn ssl_policy(&self) -> ::std::option::Option<&str> {
+    pub fn ssl_policy(&self) -> ::std::option::Option<& str> {
         self.ssl_policy.as_deref()
     }
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
+    pub fn certificates(&self) -> ::std::option::Option<& [crate::types::Certificate]> {
         self.certificates.as_deref()
     }
     /// <p>The actions for the default rule.</p>
-    pub fn default_actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
+    pub fn default_actions(&self) -> ::std::option::Option<& [crate::types::Action]> {
         self.default_actions.as_deref()
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>HTTP1Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-    /// <li> <p> <code>None</code> </p> </li>
-    /// </ul>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+    /// <li> <p> <code>None</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn alpn_policy(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn alpn_policy(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.alpn_policy.as_deref()
     }
     /// <p>The tags to assign to the listener.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -89,9 +89,7 @@ impl CreateListenerInput {
 
 /// A builder for [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateListenerInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::ProtocolEnum>,
@@ -104,20 +102,17 @@ pub struct CreateListenerInputBuilder {
 }
 impl CreateListenerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.load_balancer_arn = input;
-        self
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.load_balancer_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
     }
     /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
     pub fn protocol(mut self, input: crate::types::ProtocolEnum) -> Self {
@@ -125,12 +120,12 @@ impl CreateListenerInputBuilder {
         self
     }
     /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
-        self.protocol = input;
-        self
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
+        self.protocol = input; self
+    }
+    /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolEnum> {
+        &self.protocol
     }
     /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -139,20 +134,27 @@ impl CreateListenerInputBuilder {
     }
     /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn ssl_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn set_ssl_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssl_policy = input;
-        self
+        self.ssl_policy = input; self
+    }
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    pub fn get_ssl_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssl_policy
     }
     /// Appends an item to `certificates`.
     ///
@@ -161,17 +163,17 @@ impl CreateListenerInputBuilder {
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.certificates = input; self
+    }
+    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
     }
     /// Appends an item to `default_actions`.
     ///
@@ -180,52 +182,60 @@ impl CreateListenerInputBuilder {
     /// <p>The actions for the default rule.</p>
     pub fn default_actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.default_actions.unwrap_or_default();
-        v.push(input);
-        self.default_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.default_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions for the default rule.</p>
-    pub fn set_default_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
-        self.default_actions = input;
-        self
+    pub fn set_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
+        self.default_actions = input; self
+    }
+    /// <p>The actions for the default rule.</p>
+    pub fn get_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.default_actions
     }
     /// Appends an item to `alpn_policy`.
     ///
     /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
     ///
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>HTTP1Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-    /// <li> <p> <code>None</code> </p> </li>
-    /// </ul>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+    /// <li> <p> <code>None</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn alpn_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alpn_policy.unwrap_or_default();
-        v.push(input.into());
-        self.alpn_policy = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alpn_policy = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>HTTP1Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-    /// <li> <p> <code>None</code> </p> </li>
-    /// </ul>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+    /// <li> <p> <code>None</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn set_alpn_policy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.alpn_policy = input;
-        self
+    pub fn set_alpn_policy(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.alpn_policy = input; self
+    }
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+    /// <li> <p> <code>None</code> </p> </li> 
+    /// </ul> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    pub fn get_alpn_policy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.alpn_policy
     }
     /// Appends an item to `tags`.
     ///
@@ -234,34 +244,40 @@ impl CreateListenerInputBuilder {
     /// <p>The tags to assign to the listener.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to assign to the listener.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags to assign to the listener.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_listener::CreateListenerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_listener::CreateListenerInput {
-            load_balancer_arn: self.load_balancer_arn,
-            protocol: self.protocol,
-            port: self.port,
-            ssl_policy: self.ssl_policy,
-            certificates: self.certificates,
-            default_actions: self.default_actions,
-            alpn_policy: self.alpn_policy,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_listener::CreateListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_listener::CreateListenerInput {
+                load_balancer_arn: self.load_balancer_arn
+                ,
+                protocol: self.protocol
+                ,
+                port: self.port
+                ,
+                ssl_policy: self.ssl_policy
+                ,
+                certificates: self.certificates
+                ,
+                default_actions: self.default_actions
+                ,
+                alpn_policy: self.alpn_policy
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

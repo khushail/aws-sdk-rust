@@ -3,7 +3,7 @@
 /// <p>Concatenates audio and video data from one or more data streams.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaConcatenationPipeline {
+pub struct MediaConcatenationPipeline  {
     /// <p>The ID of the media pipeline being concatenated.</p>
     #[doc(hidden)]
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct MediaConcatenationPipeline {
 }
 impl MediaConcatenationPipeline {
     /// <p>The ID of the media pipeline being concatenated.</p>
-    pub fn media_pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn media_pipeline_id(&self) -> ::std::option::Option<& str> {
         self.media_pipeline_id.as_deref()
     }
     /// <p>The ARN of the media pipeline that you specify in the <code>SourceConfiguration</code> object.</p>
-    pub fn media_pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn media_pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.media_pipeline_arn.as_deref()
     }
     /// <p>The data sources being concatenated.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::ConcatenationSource]> {
+    pub fn sources(&self) -> ::std::option::Option<& [crate::types::ConcatenationSource]> {
         self.sources.as_deref()
     }
     /// <p>The data sinks of the concatenation pipeline.</p>
-    pub fn sinks(&self) -> ::std::option::Option<&[crate::types::ConcatenationSink]> {
+    pub fn sinks(&self) -> ::std::option::Option<& [crate::types::ConcatenationSink]> {
         self.sinks.as_deref()
     }
     /// <p>The status of the concatenation pipeline.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MediaPipelineStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MediaPipelineStatus> {
         self.status.as_ref()
     }
     /// <p>The time at which the concatenation pipeline was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the concatenation pipeline was last updated.</p>
-    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl MediaConcatenationPipeline {
 
 /// A builder for [`MediaConcatenationPipeline`](crate::types::MediaConcatenationPipeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaConcatenationPipelineBuilder {
     pub(crate) media_pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) media_pipeline_arn: ::std::option::Option<::std::string::String>,
@@ -79,36 +77,30 @@ pub struct MediaConcatenationPipelineBuilder {
 }
 impl MediaConcatenationPipelineBuilder {
     /// <p>The ID of the media pipeline being concatenated.</p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the media pipeline being concatenated.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.media_pipeline_id = input;
-        self
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.media_pipeline_id = input; self
+    }
+    /// <p>The ID of the media pipeline being concatenated.</p>
+    pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_id
     }
     /// <p>The ARN of the media pipeline that you specify in the <code>SourceConfiguration</code> object.</p>
-    pub fn media_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the media pipeline that you specify in the <code>SourceConfiguration</code> object.</p>
-    pub fn set_media_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.media_pipeline_arn = input;
-        self
+    pub fn set_media_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.media_pipeline_arn = input; self
+    }
+    /// <p>The ARN of the media pipeline that you specify in the <code>SourceConfiguration</code> object.</p>
+    pub fn get_media_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_arn
     }
     /// Appends an item to `sources`.
     ///
@@ -117,17 +109,17 @@ impl MediaConcatenationPipelineBuilder {
     /// <p>The data sources being concatenated.</p>
     pub fn sources(mut self, input: crate::types::ConcatenationSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data sources being concatenated.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>,
-    ) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>) -> Self {
+        self.sources = input; self
+    }
+    /// <p>The data sources being concatenated.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>> {
+        &self.sources
     }
     /// Appends an item to `sinks`.
     ///
@@ -136,17 +128,17 @@ impl MediaConcatenationPipelineBuilder {
     /// <p>The data sinks of the concatenation pipeline.</p>
     pub fn sinks(mut self, input: crate::types::ConcatenationSink) -> Self {
         let mut v = self.sinks.unwrap_or_default();
-        v.push(input);
-        self.sinks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sinks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data sinks of the concatenation pipeline.</p>
-    pub fn set_sinks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>>,
-    ) -> Self {
-        self.sinks = input;
-        self
+    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>>) -> Self {
+        self.sinks = input; self
+    }
+    /// <p>The data sinks of the concatenation pipeline.</p>
+    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>> {
+        &self.sinks
     }
     /// <p>The status of the concatenation pipeline.</p>
     pub fn status(mut self, input: crate::types::MediaPipelineStatus) -> Self {
@@ -154,12 +146,12 @@ impl MediaConcatenationPipelineBuilder {
         self
     }
     /// <p>The status of the concatenation pipeline.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaPipelineStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MediaPipelineStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the concatenation pipeline.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MediaPipelineStatus> {
+        &self.status
     }
     /// <p>The time at which the concatenation pipeline was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -167,12 +159,12 @@ impl MediaConcatenationPipelineBuilder {
         self
     }
     /// <p>The time at which the concatenation pipeline was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
+    }
+    /// <p>The time at which the concatenation pipeline was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The time at which the concatenation pipeline was last updated.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -180,23 +172,31 @@ impl MediaConcatenationPipelineBuilder {
         self
     }
     /// <p>The time at which the concatenation pipeline was last updated.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_timestamp = input;
-        self
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_timestamp = input; self
+    }
+    /// <p>The time at which the concatenation pipeline was last updated.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`MediaConcatenationPipeline`](crate::types::MediaConcatenationPipeline).
     pub fn build(self) -> crate::types::MediaConcatenationPipeline {
         crate::types::MediaConcatenationPipeline {
-            media_pipeline_id: self.media_pipeline_id,
-            media_pipeline_arn: self.media_pipeline_arn,
-            sources: self.sources,
-            sinks: self.sinks,
-            status: self.status,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
+            media_pipeline_id: self.media_pipeline_id
+            ,
+            media_pipeline_arn: self.media_pipeline_arn
+            ,
+            sources: self.sources
+            ,
+            sinks: self.sinks
+            ,
+            status: self.status
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Contains information about a detector's configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyDetectorConfig {
+pub struct AnomalyDetectorConfig  {
     /// <p>The frequency at which the detector analyzes its source data.</p>
     #[doc(hidden)]
     pub anomaly_detector_frequency: ::std::option::Option<crate::types::Frequency>,
 }
 impl AnomalyDetectorConfig {
     /// <p>The frequency at which the detector analyzes its source data.</p>
-    pub fn anomaly_detector_frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
+    pub fn anomaly_detector_frequency(&self) -> ::std::option::Option<& crate::types::Frequency> {
         self.anomaly_detector_frequency.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl AnomalyDetectorConfig {
 
 /// A builder for [`AnomalyDetectorConfig`](crate::types::AnomalyDetectorConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyDetectorConfigBuilder {
     pub(crate) anomaly_detector_frequency: ::std::option::Option<crate::types::Frequency>,
 }
@@ -36,17 +34,19 @@ impl AnomalyDetectorConfigBuilder {
         self
     }
     /// <p>The frequency at which the detector analyzes its source data.</p>
-    pub fn set_anomaly_detector_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::Frequency>,
-    ) -> Self {
-        self.anomaly_detector_frequency = input;
-        self
+    pub fn set_anomaly_detector_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
+        self.anomaly_detector_frequency = input; self
+    }
+    /// <p>The frequency at which the detector analyzes its source data.</p>
+    pub fn get_anomaly_detector_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
+        &self.anomaly_detector_frequency
     }
     /// Consumes the builder and constructs a [`AnomalyDetectorConfig`](crate::types::AnomalyDetectorConfig).
     pub fn build(self) -> crate::types::AnomalyDetectorConfig {
         crate::types::AnomalyDetectorConfig {
-            anomaly_detector_frequency: self.anomaly_detector_frequency,
+            anomaly_detector_frequency: self.anomaly_detector_frequency
+            ,
         }
     }
 }
+

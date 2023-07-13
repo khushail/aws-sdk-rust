@@ -3,117 +3,100 @@ pub use crate::operation::put_source_server_action::_put_source_server_action_ou
 
 pub use crate::operation::put_source_server_action::_put_source_server_action_input::PutSourceServerActionInputBuilder;
 
+impl PutSourceServerActionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_source_server_action::PutSourceServerActionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_source_server_action::PutSourceServerActionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_source_server_action();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutSourceServerAction`.
-///
+/// 
 /// <p>Put source server post migration custom action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSourceServerActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder,
+                    inner: crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder,
 }
-impl PutSourceServerActionFluentBuilder {
+impl PutSourceServerActionFluentBuilder  {
     /// Creates a new `PutSourceServerAction`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_source_server_action::PutSourceServerAction,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_source_server_action::PutSourceServerActionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutSourceServerAction as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_source_server_action::PutSourceServerActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_source_server_action::PutSourceServerActionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_source_server_action::PutSourceServerAction, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_source_server_action::PutSourceServerActionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_source_server_action::PutSourceServerActionOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_source_server_action::PutSourceServerActionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_source_server_action::PutSourceServerActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_source_server_action::PutSourceServerActionError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_source_server_action::PutSourceServerAction,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_source_server_action::PutSourceServerActionError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_source_server_action::PutSourceServerActionOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_source_server_action::PutSourceServerActionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_source_server_action::PutSourceServerAction, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_source_server_action::PutSourceServerActionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
+    }
+    /// <p>Source server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_server_id()
     }
     /// <p>Source server post migration custom action name.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,21 +108,23 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_action_name(input);
         self
     }
+    /// <p>Source server post migration custom action name.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_name()
+    }
     /// <p>Source server post migration custom action document identifier.</p>
-    pub fn document_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_identifier(input.into());
         self
     }
     /// <p>Source server post migration custom action document identifier.</p>
-    pub fn set_document_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_identifier(input);
         self
+    }
+    /// <p>Source server post migration custom action document identifier.</p>
+    pub fn get_document_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_identifier()
     }
     /// <p>Source server post migration custom action order.</p>
     pub fn order(mut self, input: i32) -> Self {
@@ -151,6 +136,10 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_order(input);
         self
     }
+    /// <p>Source server post migration custom action order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<i32> {
+        self.inner.get_order()
+    }
     /// <p>Source server post migration custom action ID.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_id(input.into());
@@ -161,21 +150,23 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_action_id(input);
         self
     }
+    /// <p>Source server post migration custom action ID.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_id()
+    }
     /// <p>Source server post migration custom action document version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>Source server post migration custom action document version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
+    }
+    /// <p>Source server post migration custom action document version.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_version()
     }
     /// <p>Source server post migration custom action active status.</p>
     pub fn active(mut self, input: bool) -> Self {
@@ -187,6 +178,10 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_active(input);
         self
     }
+    /// <p>Source server post migration custom action active status.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_active()
+    }
     /// <p>Source server post migration custom action timeout in seconds.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.timeout_seconds(input);
@@ -196,6 +191,10 @@ impl PutSourceServerActionFluentBuilder {
     pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout_seconds(input);
         self
+    }
+    /// <p>Source server post migration custom action timeout in seconds.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_timeout_seconds()
     }
     /// <p>Source server post migration custom action must succeed for cutover.</p>
     pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
@@ -207,54 +206,45 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_must_succeed_for_cutover(input);
         self
     }
+    /// <p>Source server post migration custom action must succeed for cutover.</p>
+    pub fn get_must_succeed_for_cutover(&self) -> &::std::option::Option<bool> {
+        self.inner.get_must_succeed_for_cutover()
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>Source server post migration custom action parameters.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::SsmParameterStoreParameter>) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
     /// <p>Source server post migration custom action parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-            >,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
+    }
+    /// <p>Source server post migration custom action parameters.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
+        self.inner.get_parameters()
     }
     /// Adds a key-value pair to `externalParameters`.
     ///
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
     ///
     /// <p>Source server post migration custom action external parameters.</p>
-    pub fn external_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::SsmExternalParameter,
-    ) -> Self {
+    pub fn external_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SsmExternalParameter) -> Self {
         self.inner = self.inner.external_parameters(k.into(), v);
         self
     }
     /// <p>Source server post migration custom action external parameters.</p>
-    pub fn set_external_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-        >,
-    ) -> Self {
+    pub fn set_external_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>) -> Self {
         self.inner = self.inner.set_external_parameters(input);
         self
+    }
+    /// <p>Source server post migration custom action external parameters.</p>
+    pub fn get_external_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
+        self.inner.get_external_parameters()
     }
     /// <p>Source server post migration custom action description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -266,17 +256,23 @@ impl PutSourceServerActionFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>Source server post migration custom action description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Source server post migration custom action category.</p>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.inner = self.inner.category(input);
         self
     }
     /// <p>Source server post migration custom action category.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }
+    /// <p>Source server post migration custom action category.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        self.inner.get_category()
+    }
 }
+

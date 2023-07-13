@@ -3,7 +3,7 @@
 /// <p>Describes the status of the last update on the environment, and any errors that were encountered.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LastUpdate {
+pub struct LastUpdate  {
     /// <p>The status of the last update on the environment.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UpdateStatus>,
@@ -19,19 +19,19 @@ pub struct LastUpdate {
 }
 impl LastUpdate {
     /// <p>The status of the last update on the environment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::UpdateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::UpdateStatus> {
         self.status.as_ref()
     }
     /// <p>The day and time of the last update on the environment.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The error that was encountered during the last update of the environment.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::UpdateError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::UpdateError> {
         self.error.as_ref()
     }
     /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl LastUpdate {
 
 /// A builder for [`LastUpdate`](crate::types::LastUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LastUpdateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::UpdateStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -61,8 +59,11 @@ impl LastUpdateBuilder {
     }
     /// <p>The status of the last update on the environment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UpdateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the last update on the environment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::UpdateStatus> {
+        &self.status
     }
     /// <p>The day and time of the last update on the environment.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -70,12 +71,12 @@ impl LastUpdateBuilder {
         self
     }
     /// <p>The day and time of the last update on the environment.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The day and time of the last update on the environment.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The error that was encountered during the last update of the environment.</p>
     pub fn error(mut self, input: crate::types::UpdateError) -> Self {
@@ -84,8 +85,11 @@ impl LastUpdateBuilder {
     }
     /// <p>The error that was encountered during the last update of the environment.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::UpdateError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
+    }
+    /// <p>The error that was encountered during the last update of the environment.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::UpdateError> {
+        &self.error
     }
     /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,16 +98,24 @@ impl LastUpdateBuilder {
     }
     /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`LastUpdate`](crate::types::LastUpdate).
     pub fn build(self) -> crate::types::LastUpdate {
         crate::types::LastUpdate {
-            status: self.status,
-            created_at: self.created_at,
-            error: self.error,
-            source: self.source,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            error: self.error
+            ,
+            source: self.source
+            ,
         }
     }
 }
+

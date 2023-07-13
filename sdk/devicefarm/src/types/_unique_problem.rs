@@ -3,7 +3,7 @@
 /// <p>A collection of one or more problems, grouped by their result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UniqueProblem {
+pub struct UniqueProblem  {
     /// <p>A message about the unique problems' result.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct UniqueProblem {
 }
 impl UniqueProblem {
     /// <p>A message about the unique problems' result.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Information about the problems.</p>
-    pub fn problems(&self) -> ::std::option::Option<&[crate::types::Problem]> {
+    pub fn problems(&self) -> ::std::option::Option<& [crate::types::Problem]> {
         self.problems.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl UniqueProblem {
 
 /// A builder for [`UniqueProblem`](crate::types::UniqueProblem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UniqueProblemBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) problems: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
@@ -45,8 +43,11 @@ impl UniqueProblemBuilder {
     }
     /// <p>A message about the unique problems' result.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A message about the unique problems' result.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `problems`.
     ///
@@ -55,23 +56,26 @@ impl UniqueProblemBuilder {
     /// <p>Information about the problems.</p>
     pub fn problems(mut self, input: crate::types::Problem) -> Self {
         let mut v = self.problems.unwrap_or_default();
-        v.push(input);
-        self.problems = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.problems = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the problems.</p>
-    pub fn set_problems(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
-    ) -> Self {
-        self.problems = input;
-        self
+    pub fn set_problems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>) -> Self {
+        self.problems = input; self
+    }
+    /// <p>Information about the problems.</p>
+    pub fn get_problems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Problem>> {
+        &self.problems
     }
     /// Consumes the builder and constructs a [`UniqueProblem`](crate::types::UniqueProblem).
     pub fn build(self) -> crate::types::UniqueProblem {
         crate::types::UniqueProblem {
-            message: self.message,
-            problems: self.problems,
+            message: self.message
+            ,
+            problems: self.problems
+            ,
         }
     }
 }
+

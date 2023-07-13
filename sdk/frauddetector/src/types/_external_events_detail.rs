@@ -3,7 +3,7 @@
 /// <p>Details for the external events data used for model version training.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalEventsDetail {
+pub struct ExternalEventsDetail  {
     /// <p>The Amazon S3 bucket location for the data.</p>
     #[doc(hidden)]
     pub data_location: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExternalEventsDetail {
 }
 impl ExternalEventsDetail {
     /// <p>The Amazon S3 bucket location for the data.</p>
-    pub fn data_location(&self) -> ::std::option::Option<&str> {
+    pub fn data_location(&self) -> ::std::option::Option<& str> {
         self.data_location.as_deref()
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl ExternalEventsDetail {
 
 /// A builder for [`ExternalEventsDetail`](crate::types::ExternalEventsDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalEventsDetailBuilder {
     pub(crate) data_location: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExternalEventsDetailBuilder {
     /// <p>The Amazon S3 bucket location for the data.</p>
-    pub fn data_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket location for the data.</p>
-    pub fn set_data_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_location = input;
-        self
+    pub fn set_data_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_location = input; self
+    }
+    /// <p>The Amazon S3 bucket location for the data.</p>
+    pub fn get_data_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_location
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_access_role_arn = input;
-        self
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_access_role_arn = input; self
+    }
+    /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
     }
     /// Consumes the builder and constructs a [`ExternalEventsDetail`](crate::types::ExternalEventsDetail).
     pub fn build(self) -> crate::types::ExternalEventsDetail {
         crate::types::ExternalEventsDetail {
-            data_location: self.data_location,
-            data_access_role_arn: self.data_access_role_arn,
+            data_location: self.data_location
+            ,
+            data_access_role_arn: self.data_access_role_arn
+            ,
         }
     }
 }
+

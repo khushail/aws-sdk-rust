@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssessmentReportOutput {
+pub struct GetAssessmentReportOutput  {
     /// <p>Specifies the status of the request to generate an assessment report. </p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReportStatus>,
@@ -13,33 +13,29 @@ pub struct GetAssessmentReportOutput {
 }
 impl GetAssessmentReportOutput {
     /// <p>Specifies the status of the request to generate an assessment report. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReportStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReportStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAssessmentReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAssessmentReportOutput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentReportOutput`](crate::operation::get_assessment_report::GetAssessmentReportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder {
-        crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder {
+        crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssessmentReportOutput`](crate::operation::get_assessment_report::GetAssessmentReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentReportOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ReportStatus>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -53,8 +49,11 @@ impl GetAssessmentReportOutputBuilder {
     }
     /// <p>Specifies the status of the request to generate an assessment report. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Specifies the status of the request to generate an assessment report. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReportStatus> {
+        &self.status
     }
     /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,24 +62,30 @@ impl GetAssessmentReportOutputBuilder {
     }
     /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAssessmentReportOutput`](crate::operation::get_assessment_report::GetAssessmentReportOutput).
     pub fn build(self) -> crate::operation::get_assessment_report::GetAssessmentReportOutput {
         crate::operation::get_assessment_report::GetAssessmentReportOutput {
-            status: self.status,
-            url: self.url,
+            status: self.status
+            ,
+            url: self.url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

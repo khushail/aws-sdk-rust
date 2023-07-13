@@ -840,3 +840,4 @@ pub mod builders;
 
 /// Error types that AWSKendraFrontendService can respond with.
 pub mod error;
+

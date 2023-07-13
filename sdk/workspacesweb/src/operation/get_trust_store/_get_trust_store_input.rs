@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrustStoreInput {
+pub struct GetTrustStoreInput  {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetTrustStoreInput {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl GetTrustStoreInput {
 
 /// A builder for [`GetTrustStoreInput`](crate::operation::get_trust_store::GetTrustStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrustStoreInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetTrustStoreInputBuilder {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.trust_store_arn = input;
-        self
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trust_store_arn = input; self
+    }
+    /// <p>The ARN of the trust store.</p>
+    pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_store_arn
     }
     /// Consumes the builder and constructs a [`GetTrustStoreInput`](crate::operation::get_trust_store::GetTrustStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_trust_store::GetTrustStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_trust_store::GetTrustStoreInput {
-            trust_store_arn: self.trust_store_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_trust_store::GetTrustStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_trust_store::GetTrustStoreInput {
+                trust_store_arn: self.trust_store_arn
+                ,
+            }
+        )
     }
 }
+

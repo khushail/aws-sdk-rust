@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the domain name and optional change specific identity for which you want progress information. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainChangeProgressInput {
+pub struct DescribeDomainChangeProgressInput  {
     /// <p>The domain you want to get the progress information about.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -13,26 +13,24 @@ pub struct DescribeDomainChangeProgressInput {
 }
 impl DescribeDomainChangeProgressInput {
     /// <p>The domain you want to get the progress information about.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
-    pub fn change_id(&self) -> ::std::option::Option<&str> {
+    pub fn change_id(&self) -> ::std::option::Option<& str> {
         self.change_id.as_deref()
     }
 }
 impl DescribeDomainChangeProgressInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressInput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput).
-    pub fn builder() -> crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder{
+    pub fn builder() -> crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder {
         crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainChangeProgressInput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) change_id: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DescribeDomainChangeProgressInputBuilder {
     }
     /// <p>The domain you want to get the progress information about.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The domain you want to get the progress information about.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
     pub fn change_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +56,22 @@ impl DescribeDomainChangeProgressInputBuilder {
     }
     /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
     pub fn set_change_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_id = input;
-        self
+        self.change_id = input; self
+    }
+    /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+    pub fn get_change_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_id
     }
     /// Consumes the builder and constructs a [`DescribeDomainChangeProgressInput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput {
-                domain_name: self.domain_name,
-                change_id: self.change_id,
-            },
+                domain_name: self.domain_name
+                ,
+                change_id: self.change_id
+                ,
+            }
         )
     }
 }
+

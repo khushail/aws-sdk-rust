@@ -2,51 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTestRecommendationsOutput {
+pub struct ListTestRecommendationsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The test recommendations for the Resilience Hub application.</p>
     #[doc(hidden)]
-    pub test_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
+    pub test_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
     _request_id: Option<String>,
 }
 impl ListTestRecommendationsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The test recommendations for the Resilience Hub application.</p>
-    pub fn test_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TestRecommendation]> {
+    pub fn test_recommendations(&self) -> ::std::option::Option<& [crate::types::TestRecommendation]> {
         self.test_recommendations.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListTestRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListTestRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestRecommendationsOutput`](crate::operation::list_test_recommendations::ListTestRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_test_recommendations::builders::ListTestRecommendationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_test_recommendations::builders::ListTestRecommendationsOutputBuilder {
         crate::operation::list_test_recommendations::builders::ListTestRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestRecommendationsOutput`](crate::operation::list_test_recommendations::ListTestRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) test_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
+    pub(crate) test_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
     _request_id: Option<String>,
 }
 impl ListTestRecommendationsOutputBuilder {
@@ -57,8 +49,11 @@ impl ListTestRecommendationsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `test_recommendations`.
     ///
@@ -67,35 +62,36 @@ impl ListTestRecommendationsOutputBuilder {
     /// <p>The test recommendations for the Resilience Hub application.</p>
     pub fn test_recommendations(mut self, input: crate::types::TestRecommendation) -> Self {
         let mut v = self.test_recommendations.unwrap_or_default();
-        v.push(input);
-        self.test_recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.test_recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The test recommendations for the Resilience Hub application.</p>
-    pub fn set_test_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
-    ) -> Self {
-        self.test_recommendations = input;
-        self
+    pub fn set_test_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>) -> Self {
+        self.test_recommendations = input; self
+    }
+    /// <p>The test recommendations for the Resilience Hub application.</p>
+    pub fn get_test_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>> {
+        &self.test_recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListTestRecommendationsOutput`](crate::operation::list_test_recommendations::ListTestRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
+    pub fn build(self) -> crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
         crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
-            next_token: self.next_token,
-            test_recommendations: self.test_recommendations,
+            next_token: self.next_token
+            ,
+            test_recommendations: self.test_recommendations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

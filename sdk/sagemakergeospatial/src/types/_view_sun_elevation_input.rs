@@ -3,7 +3,7 @@
 /// <p>The input structure for specifying ViewSunElevation angle property filter. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ViewSunElevationInput {
+pub struct ViewSunElevationInput  {
     /// <p>The lower bound to view the sun elevation.</p>
     #[doc(hidden)]
     pub lower_bound: ::std::option::Option<f32>,
@@ -30,9 +30,7 @@ impl ViewSunElevationInput {
 
 /// A builder for [`ViewSunElevationInput`](crate::types::ViewSunElevationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ViewSunElevationInputBuilder {
     pub(crate) lower_bound: ::std::option::Option<f32>,
     pub(crate) upper_bound: ::std::option::Option<f32>,
@@ -45,8 +43,11 @@ impl ViewSunElevationInputBuilder {
     }
     /// <p>The lower bound to view the sun elevation.</p>
     pub fn set_lower_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.lower_bound = input;
-        self
+        self.lower_bound = input; self
+    }
+    /// <p>The lower bound to view the sun elevation.</p>
+    pub fn get_lower_bound(&self) -> &::std::option::Option<f32> {
+        &self.lower_bound
     }
     /// <p>The upper bound to view the sun elevation.</p>
     pub fn upper_bound(mut self, input: f32) -> Self {
@@ -55,14 +56,20 @@ impl ViewSunElevationInputBuilder {
     }
     /// <p>The upper bound to view the sun elevation.</p>
     pub fn set_upper_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.upper_bound = input;
-        self
+        self.upper_bound = input; self
+    }
+    /// <p>The upper bound to view the sun elevation.</p>
+    pub fn get_upper_bound(&self) -> &::std::option::Option<f32> {
+        &self.upper_bound
     }
     /// Consumes the builder and constructs a [`ViewSunElevationInput`](crate::types::ViewSunElevationInput).
     pub fn build(self) -> crate::types::ViewSunElevationInput {
         crate::types::ViewSunElevationInput {
-            lower_bound: self.lower_bound,
-            upper_bound: self.upper_bound,
+            lower_bound: self.lower_bound
+            ,
+            upper_bound: self.upper_bound
+            ,
         }
     }
 }
+

@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNotebookMetadataInput {
+pub struct GetNotebookMetadataInput  {
     /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
     #[doc(hidden)]
     pub notebook_id: ::std::option::Option<::std::string::String>,
 }
 impl GetNotebookMetadataInput {
     /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
-    pub fn notebook_id(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_id(&self) -> ::std::option::Option<& str> {
         self.notebook_id.as_deref()
     }
 }
 impl GetNotebookMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetNotebookMetadataInput`](crate::operation::get_notebook_metadata::GetNotebookMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::get_notebook_metadata::builders::GetNotebookMetadataInputBuilder {
-        crate::operation::get_notebook_metadata::builders::GetNotebookMetadataInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_notebook_metadata::builders::GetNotebookMetadataInputBuilder {
+        crate::operation::get_notebook_metadata::builders::GetNotebookMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetNotebookMetadataInput`](crate::operation::get_notebook_metadata::GetNotebookMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNotebookMetadataInputBuilder {
     pub(crate) notebook_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetNotebookMetadataInputBuilder {
     }
     /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
     pub fn set_notebook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_id = input;
-        self
+        self.notebook_id = input; self
+    }
+    /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+    pub fn get_notebook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_id
     }
     /// Consumes the builder and constructs a [`GetNotebookMetadataInput`](crate::operation::get_notebook_metadata::GetNotebookMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_notebook_metadata::GetNotebookMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_notebook_metadata::GetNotebookMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_notebook_metadata::GetNotebookMetadataInput {
-                notebook_id: self.notebook_id,
-            },
+                notebook_id: self.notebook_id
+                ,
+            }
         )
     }
 }
+

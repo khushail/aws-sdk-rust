@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteParametersOutput {
+pub struct DeleteParametersOutput  {
     /// <p>The names of the deleted parameters.</p>
     #[doc(hidden)]
     pub deleted_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,32 +13,29 @@ pub struct DeleteParametersOutput {
 }
 impl DeleteParametersOutput {
     /// <p>The names of the deleted parameters.</p>
-    pub fn deleted_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn deleted_parameters(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.deleted_parameters.as_deref()
     }
     /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
-    pub fn invalid_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn invalid_parameters(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.invalid_parameters.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteParametersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteParametersOutput {
     /// Creates a new builder-style object to manufacture [`DeleteParametersOutput`](crate::operation::delete_parameters::DeleteParametersOutput).
-    pub fn builder() -> crate::operation::delete_parameters::builders::DeleteParametersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_parameters::builders::DeleteParametersOutputBuilder {
         crate::operation::delete_parameters::builders::DeleteParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteParametersOutput`](crate::operation::delete_parameters::DeleteParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteParametersOutputBuilder {
     pub(crate) deleted_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) invalid_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,60 +47,57 @@ impl DeleteParametersOutputBuilder {
     /// To override the contents of this collection use [`set_deleted_parameters`](Self::set_deleted_parameters).
     ///
     /// <p>The names of the deleted parameters.</p>
-    pub fn deleted_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deleted_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deleted_parameters.unwrap_or_default();
-        v.push(input.into());
-        self.deleted_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.deleted_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the deleted parameters.</p>
-    pub fn set_deleted_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.deleted_parameters = input;
-        self
+    pub fn set_deleted_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.deleted_parameters = input; self
+    }
+    /// <p>The names of the deleted parameters.</p>
+    pub fn get_deleted_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deleted_parameters
     }
     /// Appends an item to `invalid_parameters`.
     ///
     /// To override the contents of this collection use [`set_invalid_parameters`](Self::set_invalid_parameters).
     ///
     /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
-    pub fn invalid_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invalid_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.invalid_parameters.unwrap_or_default();
-        v.push(input.into());
-        self.invalid_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.invalid_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
-    pub fn set_invalid_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.invalid_parameters = input;
-        self
+    pub fn set_invalid_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.invalid_parameters = input; self
+    }
+    /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
+    pub fn get_invalid_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.invalid_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteParametersOutput`](crate::operation::delete_parameters::DeleteParametersOutput).
     pub fn build(self) -> crate::operation::delete_parameters::DeleteParametersOutput {
         crate::operation::delete_parameters::DeleteParametersOutput {
-            deleted_parameters: self.deleted_parameters,
-            invalid_parameters: self.invalid_parameters,
+            deleted_parameters: self.deleted_parameters
+            ,
+            invalid_parameters: self.invalid_parameters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

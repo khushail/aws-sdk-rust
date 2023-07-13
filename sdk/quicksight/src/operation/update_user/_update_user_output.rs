@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserOutput {
+pub struct UpdateUserOutput  {
     /// <p>The Amazon QuickSight user.</p>
     #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::User>,
@@ -16,11 +16,11 @@ pub struct UpdateUserOutput {
 }
 impl UpdateUserOutput {
     /// <p>The Amazon QuickSight user.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::User> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::User> {
         self.user.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -29,10 +29,10 @@ impl UpdateUserOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateUserOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput).
     pub fn builder() -> crate::operation::update_user::builders::UpdateUserOutputBuilder {
@@ -42,9 +42,7 @@ impl UpdateUserOutput {
 
 /// A builder for [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -59,8 +57,11 @@ impl UpdateUserOutputBuilder {
     }
     /// <p>The Amazon QuickSight user.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
+    }
+    /// <p>The Amazon QuickSight user.</p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::User> {
+        &self.user
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +70,11 @@ impl UpdateUserOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -79,25 +83,33 @@ impl UpdateUserOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput).
     pub fn build(self) -> crate::operation::update_user::UpdateUserOutput {
         crate::operation::update_user::UpdateUserOutput {
-            user: self.user,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            user: self.user
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

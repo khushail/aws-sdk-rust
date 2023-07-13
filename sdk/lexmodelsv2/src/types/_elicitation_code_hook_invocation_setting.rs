@@ -3,7 +3,7 @@
 /// <p>Settings that specify the dialog code hook that is called by Amazon Lex between eliciting slot values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElicitationCodeHookInvocationSetting {
+pub struct ElicitationCodeHookInvocationSetting  {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     #[doc(hidden)]
     pub enable_code_hook_invocation: ::std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl ElicitationCodeHookInvocationSetting {
         self.enable_code_hook_invocation
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn invocation_label(&self) -> ::std::option::Option<&str> {
+    pub fn invocation_label(&self) -> ::std::option::Option<& str> {
         self.invocation_label.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ElicitationCodeHookInvocationSetting {
 
 /// A builder for [`ElicitationCodeHookInvocationSetting`](crate::types::ElicitationCodeHookInvocationSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElicitationCodeHookInvocationSettingBuilder {
     pub(crate) enable_code_hook_invocation: ::std::option::Option<bool>,
     pub(crate) invocation_label: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ElicitationCodeHookInvocationSettingBuilder {
     }
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     pub fn set_enable_code_hook_invocation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_code_hook_invocation = input;
-        self
+        self.enable_code_hook_invocation = input; self
+    }
+    /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+    pub fn get_enable_code_hook_invocation(&self) -> &::std::option::Option<bool> {
+        &self.enable_code_hook_invocation
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn invocation_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invocation_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn set_invocation_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.invocation_label = input;
-        self
+    pub fn set_invocation_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.invocation_label = input; self
+    }
+    /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+    pub fn get_invocation_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_label
     }
     /// Consumes the builder and constructs a [`ElicitationCodeHookInvocationSetting`](crate::types::ElicitationCodeHookInvocationSetting).
     pub fn build(self) -> crate::types::ElicitationCodeHookInvocationSetting {
         crate::types::ElicitationCodeHookInvocationSetting {
-            enable_code_hook_invocation: self.enable_code_hook_invocation,
-            invocation_label: self.invocation_label,
+            enable_code_hook_invocation: self.enable_code_hook_invocation
+            ,
+            invocation_label: self.invocation_label
+            ,
         }
     }
 }
+

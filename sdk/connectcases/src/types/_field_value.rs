@@ -3,7 +3,7 @@
 /// <p>Object for case field values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldValue {
+pub struct FieldValue  {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct FieldValue {
 }
 impl FieldValue {
     /// <p>Unique identifier of a field.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Union of potential field value types.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::FieldValueUnion> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::FieldValueUnion> {
         self.value.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl FieldValue {
 
 /// A builder for [`FieldValue`](crate::types::FieldValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldValueBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::FieldValueUnion>,
@@ -45,8 +43,11 @@ impl FieldValueBuilder {
     }
     /// <p>Unique identifier of a field.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>Unique identifier of a field.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Union of potential field value types.</p>
     pub fn value(mut self, input: crate::types::FieldValueUnion) -> Self {
@@ -54,18 +55,21 @@ impl FieldValueBuilder {
         self
     }
     /// <p>Union of potential field value types.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldValueUnion>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::FieldValueUnion>) -> Self {
+        self.value = input; self
+    }
+    /// <p>Union of potential field value types.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::FieldValueUnion> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`FieldValue`](crate::types::FieldValue).
     pub fn build(self) -> crate::types::FieldValue {
         crate::types::FieldValue {
-            id: self.id,
-            value: self.value,
+            id: self.id
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

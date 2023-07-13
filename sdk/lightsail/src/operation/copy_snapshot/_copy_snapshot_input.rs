@@ -2,35 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopySnapshotInput {
-    /// <p>The name of the source manual snapshot to copy.</p>
-    /// <p>Constraint:</p>
-    /// <ul>
-    /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>
+pub struct CopySnapshotInput  {
+    /// <p>The name of the source manual snapshot to copy.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub source_snapshot_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p>
-    /// <p>Constraint:</p>
-    /// <ul>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub source_resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
-    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li> 
+    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub restore_date: ::std::option::Option<::std::string::String>,
-    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub use_latest_restorable_auto_snapshot: ::std::option::Option<bool>,
@@ -42,47 +42,47 @@ pub struct CopySnapshotInput {
     pub source_region: ::std::option::Option<crate::types::RegionName>,
 }
 impl CopySnapshotInput {
-    /// <p>The name of the source manual snapshot to copy.</p>
-    /// <p>Constraint:</p>
-    /// <ul>
-    /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>
+    /// <p>The name of the source manual snapshot to copy.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li> 
     /// </ul>
-    pub fn source_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.source_snapshot_name.as_deref()
     }
-    /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p>
-    /// <p>Constraint:</p>
-    /// <ul>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
-    pub fn source_resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_resource_name(&self) -> ::std::option::Option<& str> {
         self.source_resource_name.as_deref()
     }
-    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
-    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li> 
+    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
-    pub fn restore_date(&self) -> ::std::option::Option<&str> {
+    pub fn restore_date(&self) -> ::std::option::Option<& str> {
         self.restore_date.as_deref()
     }
-    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
     pub fn use_latest_restorable_auto_snapshot(&self) -> ::std::option::Option<bool> {
         self.use_latest_restorable_auto_snapshot
     }
     /// <p>The name of the new manual snapshot to be created as a copy.</p>
-    pub fn target_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.target_snapshot_name.as_deref()
     }
     /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
-    pub fn source_region(&self) -> ::std::option::Option<&crate::types::RegionName> {
+    pub fn source_region(&self) -> ::std::option::Option<& crate::types::RegionName> {
         self.source_region.as_ref()
     }
 }
@@ -95,9 +95,7 @@ impl CopySnapshotInput {
 
 /// A builder for [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopySnapshotInputBuilder {
     pub(crate) source_snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_resource_name: ::std::option::Option<::std::string::String>,
@@ -107,114 +105,127 @@ pub struct CopySnapshotInputBuilder {
     pub(crate) source_region: ::std::option::Option<crate::types::RegionName>,
 }
 impl CopySnapshotInputBuilder {
-    /// <p>The name of the source manual snapshot to copy.</p>
-    /// <p>Constraint:</p>
-    /// <ul>
-    /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>
+    /// <p>The name of the source manual snapshot to copy.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li> 
     /// </ul>
-    pub fn source_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the source manual snapshot to copy.</p>
-    /// <p>Constraint:</p>
-    /// <ul>
-    /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>
+    /// <p>The name of the source manual snapshot to copy.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li> 
     /// </ul>
-    pub fn set_source_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_snapshot_name = input;
-        self
+    pub fn set_source_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_snapshot_name = input; self
     }
-    /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p>
-    /// <p>Constraint:</p>
-    /// <ul>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>The name of the source manual snapshot to copy.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li> 
     /// </ul>
-    pub fn source_resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_source_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_snapshot_name
+    }
+    /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
+    /// </ul>
+    pub fn source_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p>
-    /// <p>Constraint:</p>
-    /// <ul>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
-    pub fn set_source_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_resource_name = input;
-        self
+    pub fn set_source_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_resource_name = input; self
     }
-    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
-    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p> 
+    /// <p>Constraint:</p> 
+    /// <ul> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
+    /// </ul>
+    pub fn get_source_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_resource_name
+    }
+    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li> 
+    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
     pub fn restore_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
-    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li> 
+    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
     pub fn set_restore_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_date = input;
-        self
+        self.restore_date = input; self
     }
-    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li> 
+    /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
+    /// </ul>
+    pub fn get_restore_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.restore_date
+    }
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
     pub fn use_latest_restorable_auto_snapshot(mut self, input: bool) -> Self {
         self.use_latest_restorable_auto_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
-    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
     /// </ul>
-    pub fn set_use_latest_restorable_auto_snapshot(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.use_latest_restorable_auto_snapshot = input;
-        self
+    pub fn set_use_latest_restorable_auto_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_latest_restorable_auto_snapshot = input; self
+    }
+    /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li> 
+    /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li> 
+    /// </ul>
+    pub fn get_use_latest_restorable_auto_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.use_latest_restorable_auto_snapshot
     }
     /// <p>The name of the new manual snapshot to be created as a copy.</p>
-    pub fn target_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new manual snapshot to be created as a copy.</p>
-    pub fn set_target_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_snapshot_name = input;
-        self
+    pub fn set_target_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_snapshot_name = input; self
+    }
+    /// <p>The name of the new manual snapshot to be created as a copy.</p>
+    pub fn get_target_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_snapshot_name
     }
     /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
     pub fn source_region(mut self, input: crate::types::RegionName) -> Self {
@@ -222,27 +233,31 @@ impl CopySnapshotInputBuilder {
         self
     }
     /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionName>,
-    ) -> Self {
-        self.source_region = input;
-        self
+    pub fn set_source_region(mut self, input: ::std::option::Option<crate::types::RegionName>) -> Self {
+        self.source_region = input; self
+    }
+    /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
+    pub fn get_source_region(&self) -> &::std::option::Option<crate::types::RegionName> {
+        &self.source_region
     }
     /// Consumes the builder and constructs a [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_snapshot::CopySnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::copy_snapshot::CopySnapshotInput {
-            source_snapshot_name: self.source_snapshot_name,
-            source_resource_name: self.source_resource_name,
-            restore_date: self.restore_date,
-            use_latest_restorable_auto_snapshot: self.use_latest_restorable_auto_snapshot,
-            target_snapshot_name: self.target_snapshot_name,
-            source_region: self.source_region,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_snapshot::CopySnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_snapshot::CopySnapshotInput {
+                source_snapshot_name: self.source_snapshot_name
+                ,
+                source_resource_name: self.source_resource_name
+                ,
+                restore_date: self.restore_date
+                ,
+                use_latest_restorable_auto_snapshot: self.use_latest_restorable_auto_snapshot
+                ,
+                target_snapshot_name: self.target_snapshot_name
+                ,
+                source_region: self.source_region
+                ,
+            }
+        )
     }
 }
+

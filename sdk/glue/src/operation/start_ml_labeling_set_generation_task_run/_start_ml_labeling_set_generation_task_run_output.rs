@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMlLabelingSetGenerationTaskRunOutput {
+pub struct StartMlLabelingSetGenerationTaskRunOutput  {
     /// <p>The unique run identifier that is associated with this task run.</p>
     #[doc(hidden)]
     pub task_run_id: ::std::option::Option<::std::string::String>,
@@ -10,27 +10,25 @@ pub struct StartMlLabelingSetGenerationTaskRunOutput {
 }
 impl StartMlLabelingSetGenerationTaskRunOutput {
     /// <p>The unique run identifier that is associated with this task run.</p>
-    pub fn task_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_run_id(&self) -> ::std::option::Option<& str> {
         self.task_run_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartMlLabelingSetGenerationTaskRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartMlLabelingSetGenerationTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`StartMlLabelingSetGenerationTaskRunOutput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput).
-    pub fn builder() -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunOutputBuilder{
+    pub fn builder() -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunOutputBuilder {
         crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMlLabelingSetGenerationTaskRunOutput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMlLabelingSetGenerationTaskRunOutputBuilder {
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -43,20 +41,23 @@ impl StartMlLabelingSetGenerationTaskRunOutputBuilder {
     }
     /// <p>The unique run identifier that is associated with this task run.</p>
     pub fn set_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_run_id = input;
-        self
+        self.task_run_id = input; self
+    }
+    /// <p>The unique run identifier that is associated with this task run.</p>
+    pub fn get_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_run_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartMlLabelingSetGenerationTaskRunOutput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput).
-    pub fn build(self) -> crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput{
+    pub fn build(self) -> crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput {
         crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput {
             task_run_id: self.task_run_id
             ,
@@ -64,3 +65,4 @@ impl StartMlLabelingSetGenerationTaskRunOutputBuilder {
         }
     }
 }
+

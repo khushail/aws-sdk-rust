@@ -3,7 +3,7 @@
 /// <p>Details about the metrics source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricsSource {
+pub struct MetricsSource  {
     /// <p>The metric source content type.</p>
     #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct MetricsSource {
 }
 impl MetricsSource {
     /// <p>The metric source content type.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The hash key used for the metrics source.</p>
-    pub fn content_digest(&self) -> ::std::option::Option<&str> {
+    pub fn content_digest(&self) -> ::std::option::Option<& str> {
         self.content_digest.as_deref()
     }
     /// <p>The S3 URI for the metrics source.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl MetricsSource {
 
 /// A builder for [`MetricsSource`](crate::types::MetricsSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricsSourceBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) content_digest: ::std::option::Option<::std::string::String>,
@@ -53,24 +51,24 @@ impl MetricsSourceBuilder {
     }
     /// <p>The metric source content type.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
+    }
+    /// <p>The metric source content type.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The hash key used for the metrics source.</p>
-    pub fn content_digest(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_digest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash key used for the metrics source.</p>
-    pub fn set_content_digest(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.content_digest = input;
-        self
+    pub fn set_content_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.content_digest = input; self
+    }
+    /// <p>The hash key used for the metrics source.</p>
+    pub fn get_content_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_digest
     }
     /// <p>The S3 URI for the metrics source.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl MetricsSourceBuilder {
     }
     /// <p>The S3 URI for the metrics source.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
+    }
+    /// <p>The S3 URI for the metrics source.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Consumes the builder and constructs a [`MetricsSource`](crate::types::MetricsSource).
     pub fn build(self) -> crate::types::MetricsSource {
         crate::types::MetricsSource {
-            content_type: self.content_type,
-            content_digest: self.content_digest,
-            s3_uri: self.s3_uri,
+            content_type: self.content_type
+            ,
+            content_digest: self.content_digest
+            ,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
+

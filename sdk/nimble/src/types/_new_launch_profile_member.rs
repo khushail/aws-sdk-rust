@@ -3,7 +3,7 @@
 /// <p>A new member that is added to a launch profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NewLaunchProfileMember {
+pub struct NewLaunchProfileMember  {
     /// <p>The persona.</p>
     #[doc(hidden)]
     pub persona: ::std::option::Option<crate::types::LaunchProfilePersona>,
@@ -13,11 +13,11 @@ pub struct NewLaunchProfileMember {
 }
 impl NewLaunchProfileMember {
     /// <p>The persona.</p>
-    pub fn persona(&self) -> ::std::option::Option<&crate::types::LaunchProfilePersona> {
+    pub fn persona(&self) -> ::std::option::Option<& crate::types::LaunchProfilePersona> {
         self.persona.as_ref()
     }
     /// <p>The principal ID.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl NewLaunchProfileMember {
 
 /// A builder for [`NewLaunchProfileMember`](crate::types::NewLaunchProfileMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NewLaunchProfileMemberBuilder {
     pub(crate) persona: ::std::option::Option<crate::types::LaunchProfilePersona>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl NewLaunchProfileMemberBuilder {
         self
     }
     /// <p>The persona.</p>
-    pub fn set_persona(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchProfilePersona>,
-    ) -> Self {
-        self.persona = input;
-        self
+    pub fn set_persona(mut self, input: ::std::option::Option<crate::types::LaunchProfilePersona>) -> Self {
+        self.persona = input; self
+    }
+    /// <p>The persona.</p>
+    pub fn get_persona(&self) -> &::std::option::Option<crate::types::LaunchProfilePersona> {
+        &self.persona
     }
     /// <p>The principal ID.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl NewLaunchProfileMemberBuilder {
     }
     /// <p>The principal ID.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
+    }
+    /// <p>The principal ID.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// Consumes the builder and constructs a [`NewLaunchProfileMember`](crate::types::NewLaunchProfileMember).
     pub fn build(self) -> crate::types::NewLaunchProfileMember {
         crate::types::NewLaunchProfileMember {
-            persona: self.persona,
-            principal_id: self.principal_id,
+            persona: self.persona
+            ,
+            principal_id: self.principal_id
+            ,
         }
     }
 }
+

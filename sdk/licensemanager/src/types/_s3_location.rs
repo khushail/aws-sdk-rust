@@ -3,7 +3,7 @@
 /// <p>Details of the S3 bucket that report generator reports are published to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>Name of the S3 bucket reports are published to.</p>
     #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>Name of the S3 bucket reports are published to.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Prefix of the S3 bucket reports are published to.</p>
-    pub fn key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn key_prefix(&self) -> ::std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl S3Location {
 
 /// A builder for [`S3Location`](crate::types::S3Location).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3LocationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl S3LocationBuilder {
     }
     /// <p>Name of the S3 bucket reports are published to.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
+    }
+    /// <p>Name of the S3 bucket reports are published to.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>Prefix of the S3 bucket reports are published to.</p>
     pub fn key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl S3LocationBuilder {
     }
     /// <p>Prefix of the S3 bucket reports are published to.</p>
     pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_prefix = input;
-        self
+        self.key_prefix = input; self
+    }
+    /// <p>Prefix of the S3 bucket reports are published to.</p>
+    pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_prefix
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            bucket: self.bucket,
-            key_prefix: self.key_prefix,
+            bucket: self.bucket
+            ,
+            key_prefix: self.key_prefix
+            ,
         }
     }
 }
+

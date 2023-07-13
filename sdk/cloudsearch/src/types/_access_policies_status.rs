@@ -3,7 +3,7 @@
 /// <p>The configured access rules for the domain's document and search endpoints, and the current status of those rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessPoliciesStatus {
+pub struct AccessPoliciesStatus  {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
     #[doc(hidden)]
     pub options: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AccessPoliciesStatus {
 }
 impl AccessPoliciesStatus {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
-    pub fn options(&self) -> ::std::option::Option<&str> {
+    pub fn options(&self) -> ::std::option::Option<& str> {
         self.options.as_deref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl AccessPoliciesStatus {
 
 /// A builder for [`AccessPoliciesStatus`](crate::types::AccessPoliciesStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessPoliciesStatusBuilder {
     pub(crate) options: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -45,8 +43,11 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
     pub fn set_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
+    }
+    /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
+    pub fn get_options(&self) -> &::std::option::Option<::std::string::String> {
+        &self.options
     }
     /// <p>The status of domain configuration option.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -55,14 +56,20 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>The status of domain configuration option.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AccessPoliciesStatus`](crate::types::AccessPoliciesStatus).
     pub fn build(self) -> crate::types::AccessPoliciesStatus {
         crate::types::AccessPoliciesStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

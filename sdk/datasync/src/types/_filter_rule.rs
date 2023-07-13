@@ -3,23 +3,23 @@
 /// <p>Specifies which files, folders, and objects to include or exclude when transferring files from source to destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterRule {
+pub struct FilterRule  {
     /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.</p>
     #[doc(hidden)]
     pub filter_type: ::std::option::Option<crate::types::FilterType>,
-    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
+    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p> 
     /// <p> </p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl FilterRule {
     /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.</p>
-    pub fn filter_type(&self) -> ::std::option::Option<&crate::types::FilterType> {
+    pub fn filter_type(&self) -> ::std::option::Option<& crate::types::FilterType> {
         self.filter_type.as_ref()
     }
-    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
+    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p> 
     /// <p> </p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -32,9 +32,7 @@ impl FilterRule {
 
 /// A builder for [`FilterRule`](crate::types::FilterRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterRuleBuilder {
     pub(crate) filter_type: ::std::option::Option<crate::types::FilterType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -46,30 +44,37 @@ impl FilterRuleBuilder {
         self
     }
     /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.</p>
-    pub fn set_filter_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterType>,
-    ) -> Self {
-        self.filter_type = input;
-        self
+    pub fn set_filter_type(mut self, input: ::std::option::Option<crate::types::FilterType>) -> Self {
+        self.filter_type = input; self
     }
-    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
+    /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.</p>
+    pub fn get_filter_type(&self) -> &::std::option::Option<crate::types::FilterType> {
+        &self.filter_type
+    }
+    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p> 
     /// <p> </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
+    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p> 
     /// <p> </p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p> 
+    /// <p> </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`FilterRule`](crate::types::FilterRule).
     pub fn build(self) -> crate::types::FilterRule {
         crate::types::FilterRule {
-            filter_type: self.filter_type,
-            value: self.value,
+            filter_type: self.filter_type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

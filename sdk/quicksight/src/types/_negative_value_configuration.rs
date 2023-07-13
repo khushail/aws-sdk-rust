@@ -3,14 +3,14 @@
 /// <p>The options that determine the negative value configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NegativeValueConfiguration {
+pub struct NegativeValueConfiguration  {
     /// <p>Determines the display mode of the negative value configuration.</p>
     #[doc(hidden)]
     pub display_mode: ::std::option::Option<crate::types::NegativeValueDisplayMode>,
 }
 impl NegativeValueConfiguration {
     /// <p>Determines the display mode of the negative value configuration.</p>
-    pub fn display_mode(&self) -> ::std::option::Option<&crate::types::NegativeValueDisplayMode> {
+    pub fn display_mode(&self) -> ::std::option::Option<& crate::types::NegativeValueDisplayMode> {
         self.display_mode.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl NegativeValueConfiguration {
 
 /// A builder for [`NegativeValueConfiguration`](crate::types::NegativeValueConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NegativeValueConfigurationBuilder {
     pub(crate) display_mode: ::std::option::Option<crate::types::NegativeValueDisplayMode>,
 }
@@ -36,17 +34,19 @@ impl NegativeValueConfigurationBuilder {
         self
     }
     /// <p>Determines the display mode of the negative value configuration.</p>
-    pub fn set_display_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::NegativeValueDisplayMode>,
-    ) -> Self {
-        self.display_mode = input;
-        self
+    pub fn set_display_mode(mut self, input: ::std::option::Option<crate::types::NegativeValueDisplayMode>) -> Self {
+        self.display_mode = input; self
+    }
+    /// <p>Determines the display mode of the negative value configuration.</p>
+    pub fn get_display_mode(&self) -> &::std::option::Option<crate::types::NegativeValueDisplayMode> {
+        &self.display_mode
     }
     /// Consumes the builder and constructs a [`NegativeValueConfiguration`](crate::types::NegativeValueConfiguration).
     pub fn build(self) -> crate::types::NegativeValueConfiguration {
         crate::types::NegativeValueConfiguration {
-            display_mode: self.display_mode,
+            display_mode: self.display_mode
+            ,
         }
     }
 }
+

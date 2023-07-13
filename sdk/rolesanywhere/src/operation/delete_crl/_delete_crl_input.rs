@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCrlInput {
+pub struct DeleteCrlInput  {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
     pub crl_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn crl_id(&self) -> ::std::option::Option<&str> {
+    pub fn crl_id(&self) -> ::std::option::Option<& str> {
         self.crl_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteCrlInput {
 
 /// A builder for [`DeleteCrlInput`](crate::operation::delete_crl::DeleteCrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCrlInputBuilder {
     pub(crate) crl_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteCrlInputBuilder {
     }
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     pub fn set_crl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crl_id = input;
-        self
+        self.crl_id = input; self
+    }
+    /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    pub fn get_crl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.crl_id
     }
     /// Consumes the builder and constructs a [`DeleteCrlInput`](crate::operation::delete_crl::DeleteCrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_crl::DeleteCrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_crl::DeleteCrlInput {
-            crl_id: self.crl_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_crl::DeleteCrlInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_crl::DeleteCrlInput {
+                crl_id: self.crl_id
+                ,
+            }
+        )
     }
 }
+

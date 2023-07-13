@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveFromGlobalClusterOutput {
+pub struct RemoveFromGlobalClusterOutput  {
     /// <p>A data type representing an Aurora global database.</p>
     #[doc(hidden)]
     pub global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
@@ -10,29 +10,25 @@ pub struct RemoveFromGlobalClusterOutput {
 }
 impl RemoveFromGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
-    pub fn global_cluster(&self) -> ::std::option::Option<&crate::types::GlobalCluster> {
+    pub fn global_cluster(&self) -> ::std::option::Option<& crate::types::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for RemoveFromGlobalClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RemoveFromGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterOutput`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder {
         crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveFromGlobalClusterOutput`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFromGlobalClusterOutputBuilder {
     pub(crate) global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,
@@ -44,29 +40,29 @@ impl RemoveFromGlobalClusterOutputBuilder {
         self
     }
     /// <p>A data type representing an Aurora global database.</p>
-    pub fn set_global_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalCluster>,
-    ) -> Self {
-        self.global_cluster = input;
-        self
+    pub fn set_global_cluster(mut self, input: ::std::option::Option<crate::types::GlobalCluster>) -> Self {
+        self.global_cluster = input; self
+    }
+    /// <p>A data type representing an Aurora global database.</p>
+    pub fn get_global_cluster(&self) -> &::std::option::Option<crate::types::GlobalCluster> {
+        &self.global_cluster
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RemoveFromGlobalClusterOutput`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput {
+    pub fn build(self) -> crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput {
         crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput {
-            global_cluster: self.global_cluster,
+            global_cluster: self.global_cluster
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

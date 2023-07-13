@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectClientVpcConnectionInput {
+pub struct RejectClientVpcConnectionInput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct RejectClientVpcConnectionInput {
 }
 impl RejectClientVpcConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The VPC connection ARN.</p>
-    pub fn vpc_connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connection_arn(&self) -> ::std::option::Option<& str> {
         self.vpc_connection_arn.as_deref()
     }
 }
 impl RejectClientVpcConnectionInput {
     /// Creates a new builder-style object to manufacture [`RejectClientVpcConnectionInput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput).
-    pub fn builder() -> crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder{
+    pub fn builder() -> crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder {
         crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`RejectClientVpcConnectionInput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectClientVpcConnectionInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_connection_arn: ::std::option::Option<::std::string::String>,
@@ -44,37 +42,35 @@ impl RejectClientVpcConnectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     /// <p>The VPC connection ARN.</p>
-    pub fn vpc_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VPC connection ARN.</p>
-    pub fn set_vpc_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_connection_arn = input;
-        self
+    pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_connection_arn = input; self
+    }
+    /// <p>The VPC connection ARN.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
     }
     /// Consumes the builder and constructs a [`RejectClientVpcConnectionInput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput {
-                cluster_arn: self.cluster_arn,
-                vpc_connection_arn: self.vpc_connection_arn,
-            },
+                cluster_arn: self.cluster_arn
+                ,
+                vpc_connection_arn: self.vpc_connection_arn
+                ,
+            }
         )
     }
 }
+

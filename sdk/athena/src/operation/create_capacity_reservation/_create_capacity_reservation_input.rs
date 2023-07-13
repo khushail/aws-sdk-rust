@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCapacityReservationInput {
+pub struct CreateCapacityReservationInput  {
     /// <p>The number of requested data processing units.</p>
     #[doc(hidden)]
     pub target_dpus: ::std::option::Option<i32>,
@@ -19,26 +19,24 @@ impl CreateCapacityReservationInput {
         self.target_dpus
     }
     /// <p>The name of the capacity reservation to create.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The tags for the capacity reservation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`CreateCapacityReservationInput`](crate::operation::create_capacity_reservation::CreateCapacityReservationInput).
-    pub fn builder() -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder{
+    pub fn builder() -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder {
         crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCapacityReservationInput`](crate::operation::create_capacity_reservation::CreateCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationInputBuilder {
     pub(crate) target_dpus: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl CreateCapacityReservationInputBuilder {
     }
     /// <p>The number of requested data processing units.</p>
     pub fn set_target_dpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_dpus = input;
-        self
+        self.target_dpus = input; self
+    }
+    /// <p>The number of requested data processing units.</p>
+    pub fn get_target_dpus(&self) -> &::std::option::Option<i32> {
+        &self.target_dpus
     }
     /// <p>The name of the capacity reservation to create.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl CreateCapacityReservationInputBuilder {
     }
     /// <p>The name of the capacity reservation to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the capacity reservation to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `tags`.
     ///
@@ -72,31 +76,30 @@ impl CreateCapacityReservationInputBuilder {
     /// <p>The tags for the capacity reservation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the capacity reservation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags for the capacity reservation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCapacityReservationInput`](crate::operation::create_capacity_reservation::CreateCapacityReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_capacity_reservation::CreateCapacityReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_capacity_reservation::CreateCapacityReservationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_capacity_reservation::CreateCapacityReservationInput {
-                target_dpus: self.target_dpus,
-                name: self.name,
-                tags: self.tags,
-            },
+                target_dpus: self.target_dpus
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

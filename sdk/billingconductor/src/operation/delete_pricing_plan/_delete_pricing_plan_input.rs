@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePricingPlanInput {
+pub struct DeletePricingPlanInput  {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeletePricingPlanInput {
     /// Creates a new builder-style object to manufacture [`DeletePricingPlanInput`](crate::operation::delete_pricing_plan::DeletePricingPlanInput).
-    pub fn builder(
-    ) -> crate::operation::delete_pricing_plan::builders::DeletePricingPlanInputBuilder {
+    pub fn builder() -> crate::operation::delete_pricing_plan::builders::DeletePricingPlanInputBuilder {
         crate::operation::delete_pricing_plan::builders::DeletePricingPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePricingPlanInput`](crate::operation::delete_pricing_plan::DeletePricingPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePricingPlanInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DeletePricingPlanInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeletePricingPlanInput`](crate::operation::delete_pricing_plan::DeletePricingPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pricing_plan::DeletePricingPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pricing_plan::DeletePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_pricing_plan::DeletePricingPlanInput { arn: self.arn },
+            crate::operation::delete_pricing_plan::DeletePricingPlanInput {
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

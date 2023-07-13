@@ -3,7 +3,7 @@
 /// <p>The input argument to the <code>CancelSteps</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelStepsInput {
+pub struct CancelStepsInput  {
     /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
     #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,15 @@ pub struct CancelStepsInput {
 }
 impl CancelStepsInput {
     /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
-    pub fn step_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn step_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.step_ids.as_deref()
     }
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
-    pub fn step_cancellation_option(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StepCancellationOption> {
+    pub fn step_cancellation_option(&self) -> ::std::option::Option<& crate::types::StepCancellationOption> {
         self.step_cancellation_option.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl CancelStepsInput {
 
 /// A builder for [`CancelStepsInput`](crate::operation::cancel_steps::CancelStepsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelStepsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) step_cancellation_option:
-        ::std::option::Option<crate::types::StepCancellationOption>,
+    pub(crate) step_cancellation_option: ::std::option::Option<crate::types::StepCancellationOption>,
 }
 impl CancelStepsInputBuilder {
     /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
@@ -56,8 +51,11 @@ impl CancelStepsInputBuilder {
     }
     /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
+    }
+    /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
     }
     /// Appends an item to `step_ids`.
     ///
@@ -66,17 +64,17 @@ impl CancelStepsInputBuilder {
     /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
     pub fn step_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.step_ids.unwrap_or_default();
-        v.push(input.into());
-        self.step_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.step_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
-    pub fn set_step_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.step_ids = input;
-        self
+    pub fn set_step_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.step_ids = input; self
+    }
+    /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
+    pub fn get_step_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.step_ids
     }
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
     pub fn step_cancellation_option(mut self, input: crate::types::StepCancellationOption) -> Self {
@@ -84,24 +82,25 @@ impl CancelStepsInputBuilder {
         self
     }
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
-    pub fn set_step_cancellation_option(
-        mut self,
-        input: ::std::option::Option<crate::types::StepCancellationOption>,
-    ) -> Self {
-        self.step_cancellation_option = input;
-        self
+    pub fn set_step_cancellation_option(mut self, input: ::std::option::Option<crate::types::StepCancellationOption>) -> Self {
+        self.step_cancellation_option = input; self
+    }
+    /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
+    pub fn get_step_cancellation_option(&self) -> &::std::option::Option<crate::types::StepCancellationOption> {
+        &self.step_cancellation_option
     }
     /// Consumes the builder and constructs a [`CancelStepsInput`](crate::operation::cancel_steps::CancelStepsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_steps::CancelStepsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_steps::CancelStepsInput {
-            cluster_id: self.cluster_id,
-            step_ids: self.step_ids,
-            step_cancellation_option: self.step_cancellation_option,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_steps::CancelStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_steps::CancelStepsInput {
+                cluster_id: self.cluster_id
+                ,
+                step_ids: self.step_ids
+                ,
+                step_cancellation_option: self.step_cancellation_option
+                ,
+            }
+        )
     }
 }
+

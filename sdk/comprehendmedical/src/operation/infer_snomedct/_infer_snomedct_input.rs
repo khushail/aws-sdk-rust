@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferSnomedctInput {
+pub struct InferSnomedctInput  {
     /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
     #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl InferSnomedctInput {
     /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl InferSnomedctInput {
 
 /// A builder for [`InferSnomedctInput`](crate::operation::infer_snomedct::InferSnomedctInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferSnomedctInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl InferSnomedctInputBuilder {
     }
     /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// Consumes the builder and constructs a [`InferSnomedctInput`](crate::operation::infer_snomedct::InferSnomedctInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::infer_snomedct::InferSnomedctInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::infer_snomedct::InferSnomedctInput {
-            text: self.text,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::infer_snomedct::InferSnomedctInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::infer_snomedct::InferSnomedctInput {
+                text: self.text
+                ,
+            }
+        )
     }
 }
+

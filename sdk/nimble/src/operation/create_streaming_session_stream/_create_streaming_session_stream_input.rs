@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStreamingSessionStreamInput {
+pub struct CreateStreamingSessionStreamInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct CreateStreamingSessionStreamInput {
 }
 impl CreateStreamingSessionStreamInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The expiration time in seconds.</p>
@@ -26,26 +26,24 @@ impl CreateStreamingSessionStreamInput {
         self.expiration_in_seconds
     }
     /// <p>The streaming session ID.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
 impl CreateStreamingSessionStreamInput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingSessionStreamInput`](crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput).
-    pub fn builder() -> crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder{
+    pub fn builder() -> crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder {
         crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStreamingSessionStreamInput`](crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamingSessionStreamInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiration_in_seconds: ::std::option::Option<i32>,
@@ -60,8 +58,11 @@ impl CreateStreamingSessionStreamInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The expiration time in seconds.</p>
     pub fn expiration_in_seconds(mut self, input: i32) -> Self {
@@ -70,8 +71,11 @@ impl CreateStreamingSessionStreamInputBuilder {
     }
     /// <p>The expiration time in seconds.</p>
     pub fn set_expiration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expiration_in_seconds = input;
-        self
+        self.expiration_in_seconds = input; self
+    }
+    /// <p>The expiration time in seconds.</p>
+    pub fn get_expiration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.expiration_in_seconds
     }
     /// <p>The streaming session ID.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,8 +84,11 @@ impl CreateStreamingSessionStreamInputBuilder {
     }
     /// <p>The streaming session ID.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
+    }
+    /// <p>The streaming session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,23 +97,26 @@ impl CreateStreamingSessionStreamInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`CreateStreamingSessionStreamInput`](crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput {
-                client_token: self.client_token,
-                expiration_in_seconds: self.expiration_in_seconds,
-                session_id: self.session_id,
-                studio_id: self.studio_id,
-            },
+                client_token: self.client_token
+                ,
+                expiration_in_seconds: self.expiration_in_seconds
+                ,
+                session_id: self.session_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
         )
     }
 }
+

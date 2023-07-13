@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateEnclaveCertificateIamRoleOutput {
+pub struct DisassociateEnclaveCertificateIamRoleOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     #[doc(hidden)]
     pub r#return: ::std::option::Option<bool>,
@@ -15,22 +15,20 @@ impl DisassociateEnclaveCertificateIamRoleOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for DisassociateEnclaveCertificateIamRoleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateEnclaveCertificateIamRoleOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateEnclaveCertificateIamRoleOutput`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput).
-    pub fn builder() -> crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleOutputBuilder {
         crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateEnclaveCertificateIamRoleOutput`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateEnclaveCertificateIamRoleOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -43,20 +41,23 @@ impl DisassociateEnclaveCertificateIamRoleOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#return = input;
-        self
+        self.r#return = input; self
+    }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateEnclaveCertificateIamRoleOutput`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput).
-    pub fn build(self) -> crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput{
+    pub fn build(self) -> crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput {
         crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput {
             r#return: self.r#return
             ,
@@ -64,3 +65,4 @@ impl DisassociateEnclaveCertificateIamRoleOutputBuilder {
         }
     }
 }
+

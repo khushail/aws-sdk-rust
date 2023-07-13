@@ -3,19 +3,19 @@
 /// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html">BatchSegmentJob</a> datatype. <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchSegmentJobs.html">ListBatchSegmentJobs</a> operation returns a list of batch segment job summaries.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchSegmentJobSummary {
+pub struct BatchSegmentJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
     #[doc(hidden)]
     pub batch_segment_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the batch segment job.</p>
     #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the batch segment job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
@@ -34,37 +34,37 @@ pub struct BatchSegmentJobSummary {
 }
 impl BatchSegmentJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
-    pub fn batch_segment_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn batch_segment_job_arn(&self) -> ::std::option::Option<& str> {
         self.batch_segment_job_arn.as_deref()
     }
     /// <p>The name of the batch segment job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
-    /// <p>The status of the batch segment job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time at which the batch segment job was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the batch segment job was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If the batch segment job failed, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
-    pub fn solution_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> ::std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
 }
@@ -77,9 +77,7 @@ impl BatchSegmentJobSummary {
 
 /// A builder for [`BatchSegmentJobSummary`](crate::types::BatchSegmentJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchSegmentJobSummaryBuilder {
     pub(crate) batch_segment_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -91,20 +89,17 @@ pub struct BatchSegmentJobSummaryBuilder {
 }
 impl BatchSegmentJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
-    pub fn batch_segment_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_segment_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_segment_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
-    pub fn set_batch_segment_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.batch_segment_job_arn = input;
-        self
+    pub fn set_batch_segment_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.batch_segment_job_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
+    pub fn get_batch_segment_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_segment_job_arn
     }
     /// <p>The name of the batch segment job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,30 +108,42 @@ impl BatchSegmentJobSummaryBuilder {
     }
     /// <p>The name of the batch segment job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
-    /// <p>The status of the batch segment job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The name of the batch segment job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
+    /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the batch segment job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The time at which the batch segment job was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -144,12 +151,12 @@ impl BatchSegmentJobSummaryBuilder {
         self
     }
     /// <p>The time at which the batch segment job was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
+    }
+    /// <p>The time at which the batch segment job was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The time at which the batch segment job was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -157,55 +164,57 @@ impl BatchSegmentJobSummaryBuilder {
         self
     }
     /// <p>The time at which the batch segment job was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_date_time = input;
-        self
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_date_time = input; self
+    }
+    /// <p>The time at which the batch segment job was last updated.</p>
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>If the batch segment job failed, the reason for the failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the batch segment job failed, the reason for the failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input; self
+    }
+    /// <p>If the batch segment job failed, the reason for the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.solution_version_arn = input;
-        self
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.solution_version_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_version_arn
     }
     /// Consumes the builder and constructs a [`BatchSegmentJobSummary`](crate::types::BatchSegmentJobSummary).
     pub fn build(self) -> crate::types::BatchSegmentJobSummary {
         crate::types::BatchSegmentJobSummary {
-            batch_segment_job_arn: self.batch_segment_job_arn,
-            job_name: self.job_name,
-            status: self.status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            failure_reason: self.failure_reason,
-            solution_version_arn: self.solution_version_arn,
+            batch_segment_job_arn: self.batch_segment_job_arn
+            ,
+            job_name: self.job_name
+            ,
+            status: self.status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            solution_version_arn: self.solution_version_arn
+            ,
         }
     }
 }
+

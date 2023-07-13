@@ -3,34 +3,31 @@
 /// <p>The input for the <code>GetSMSAttributes</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSmsAttributesInput {
-    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
-    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
+pub struct GetSmsAttributesInput  {
+    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p> 
+    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p> 
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
     #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetSmsAttributesInput {
-    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
-    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
+    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p> 
+    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p> 
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn attributes(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.attributes.as_deref()
     }
 }
 impl GetSmsAttributesInput {
     /// Creates a new builder-style object to manufacture [`GetSmsAttributesInput`](crate::operation::get_sms_attributes::GetSmsAttributesInput).
-    pub fn builder() -> crate::operation::get_sms_attributes::builders::GetSmsAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sms_attributes::builders::GetSmsAttributesInputBuilder {
         crate::operation::get_sms_attributes::builders::GetSmsAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSmsAttributesInput`](crate::operation::get_sms_attributes::GetSmsAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSmsAttributesInputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -39,36 +36,35 @@ impl GetSmsAttributesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
-    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
+    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p> 
+    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p> 
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input.into());
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
-    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
+    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p> 
+    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p> 
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p> 
+    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p> 
+    /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`GetSmsAttributesInput`](crate::operation::get_sms_attributes::GetSmsAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sms_attributes::GetSmsAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sms_attributes::GetSmsAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_sms_attributes::GetSmsAttributesInput {
-                attributes: self.attributes,
-            },
+                attributes: self.attributes
+                ,
+            }
         )
     }
 }
+

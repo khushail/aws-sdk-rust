@@ -3,7 +3,7 @@
 /// <p>Describes a stop condition for an experiment template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentTemplateStopCondition {
+pub struct ExperimentTemplateStopCondition  {
     /// <p>The source for the stop condition.</p>
     #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExperimentTemplateStopCondition {
 }
 impl ExperimentTemplateStopCondition {
     /// <p>The source for the stop condition.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ExperimentTemplateStopCondition {
 
 /// A builder for [`ExperimentTemplateStopCondition`](crate::types::ExperimentTemplateStopCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentTemplateStopConditionBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ExperimentTemplateStopConditionBuilder {
     }
     /// <p>The source for the stop condition.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The source for the stop condition.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ExperimentTemplateStopConditionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateStopCondition`](crate::types::ExperimentTemplateStopCondition).
     pub fn build(self) -> crate::types::ExperimentTemplateStopCondition {
         crate::types::ExperimentTemplateStopCondition {
-            source: self.source,
-            value: self.value,
+            source: self.source
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeComponentInput {
+pub struct DescribeComponentInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeComponentInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DescribeComponentInput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentInput`](crate::operation::describe_component::DescribeComponentInput).
-    pub fn builder() -> crate::operation::describe_component::builders::DescribeComponentInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_component::builders::DescribeComponentInputBuilder {
         crate::operation::describe_component::builders::DescribeComponentInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeComponentInput`](crate::operation::describe_component::DescribeComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComponentInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DescribeComponentInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DescribeComponentInput`](crate::operation::describe_component::DescribeComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_component::DescribeComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_component::DescribeComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_component::DescribeComponentInput { arn: self.arn },
+            crate::operation::describe_component::DescribeComponentInput {
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

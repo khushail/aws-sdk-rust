@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteBuildsInput {
+pub struct BatchDeleteBuildsInput  {
     /// <p>The IDs of the builds to delete.</p>
     #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteBuildsInput {
     /// <p>The IDs of the builds to delete.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.ids.as_deref()
     }
 }
 impl BatchDeleteBuildsInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteBuildsInput`](crate::operation::batch_delete_builds::BatchDeleteBuildsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_builds::builders::BatchDeleteBuildsInputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_builds::builders::BatchDeleteBuildsInputBuilder {
         crate::operation::batch_delete_builds::builders::BatchDeleteBuildsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteBuildsInput`](crate::operation::batch_delete_builds::BatchDeleteBuildsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteBuildsInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -37,27 +34,26 @@ impl BatchDeleteBuildsInputBuilder {
     /// <p>The IDs of the builds to delete.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the builds to delete.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ids = input; self
+    }
+    /// <p>The IDs of the builds to delete.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteBuildsInput`](crate::operation::batch_delete_builds::BatchDeleteBuildsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_builds::BatchDeleteBuildsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_builds::BatchDeleteBuildsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::batch_delete_builds::BatchDeleteBuildsInput { ids: self.ids },
+            crate::operation::batch_delete_builds::BatchDeleteBuildsInput {
+                ids: self.ids
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GcmChannelRequest {
+pub struct GcmChannelRequest  {
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct GcmChannelRequest {
 }
 impl GcmChannelRequest {
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
-    pub fn api_key(&self) -> ::std::option::Option<&str> {
+    pub fn api_key(&self) -> ::std::option::Option<& str> {
         self.api_key.as_deref()
     }
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
@@ -30,9 +30,7 @@ impl GcmChannelRequest {
 
 /// A builder for [`GcmChannelRequest`](crate::types::GcmChannelRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GcmChannelRequestBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl GcmChannelRequestBuilder {
     }
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
+    }
+    /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
     }
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -55,14 +56,20 @@ impl GcmChannelRequestBuilder {
     }
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Specifies whether to enable the GCM channel for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`GcmChannelRequest`](crate::types::GcmChannelRequest).
     pub fn build(self) -> crate::types::GcmChannelRequest {
         crate::types::GcmChannelRequest {
-            api_key: self.api_key,
-            enabled: self.enabled,
+            api_key: self.api_key
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

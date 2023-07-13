@@ -3,14 +3,14 @@
 /// <p> The details of a violation event. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ViolationEventAdditionalInfo {
+pub struct ViolationEventAdditionalInfo  {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     #[doc(hidden)]
     pub confidence_level: ::std::option::Option<crate::types::ConfidenceLevel>,
 }
 impl ViolationEventAdditionalInfo {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
-    pub fn confidence_level(&self) -> ::std::option::Option<&crate::types::ConfidenceLevel> {
+    pub fn confidence_level(&self) -> ::std::option::Option<& crate::types::ConfidenceLevel> {
         self.confidence_level.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ViolationEventAdditionalInfo {
 
 /// A builder for [`ViolationEventAdditionalInfo`](crate::types::ViolationEventAdditionalInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ViolationEventAdditionalInfoBuilder {
     pub(crate) confidence_level: ::std::option::Option<crate::types::ConfidenceLevel>,
 }
@@ -36,17 +34,19 @@ impl ViolationEventAdditionalInfoBuilder {
         self
     }
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
-    pub fn set_confidence_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfidenceLevel>,
-    ) -> Self {
-        self.confidence_level = input;
-        self
+    pub fn set_confidence_level(mut self, input: ::std::option::Option<crate::types::ConfidenceLevel>) -> Self {
+        self.confidence_level = input; self
+    }
+    /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
+    pub fn get_confidence_level(&self) -> &::std::option::Option<crate::types::ConfidenceLevel> {
+        &self.confidence_level
     }
     /// Consumes the builder and constructs a [`ViolationEventAdditionalInfo`](crate::types::ViolationEventAdditionalInfo).
     pub fn build(self) -> crate::types::ViolationEventAdditionalInfo {
         crate::types::ViolationEventAdditionalInfo {
-            confidence_level: self.confidence_level,
+            confidence_level: self.confidence_level
+            ,
         }
     }
 }
+

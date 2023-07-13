@@ -3,7 +3,7 @@
 /// <p>A lens return object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Lens {
+pub struct Lens  {
     /// <p>The ARN of a lens.</p>
     #[doc(hidden)]
     pub lens_arn: ::std::option::Option<::std::string::String>,
@@ -24,41 +24,35 @@ pub struct Lens {
     pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the lens.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Lens {
     /// <p>The ARN of a lens.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The version of a lens.</p>
-    pub fn lens_version(&self) -> ::std::option::Option<&str> {
+    pub fn lens_version(&self) -> ::std::option::Option<& str> {
         self.lens_version.as_deref()
     }
     /// <p>The full name of the lens.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the lens.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Web Services account ID that owns the lens.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(&self) -> ::std::option::Option<&str> {
+    pub fn share_invitation_id(&self) -> ::std::option::Option<& str> {
         self.share_invitation_id.as_deref()
     }
     /// <p>The tags assigned to the lens.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl Lens {
 
 /// A builder for [`Lens`](crate::types::Lens).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LensBuilder {
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lens_version: ::std::option::Option<::std::string::String>,
@@ -81,9 +73,7 @@ pub struct LensBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) share_invitation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LensBuilder {
     /// <p>The ARN of a lens.</p>
@@ -93,8 +83,11 @@ impl LensBuilder {
     }
     /// <p>The ARN of a lens.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
+    }
+    /// <p>The ARN of a lens.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
     }
     /// <p>The version of a lens.</p>
     pub fn lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +96,11 @@ impl LensBuilder {
     }
     /// <p>The version of a lens.</p>
     pub fn set_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_version = input;
-        self
+        self.lens_version = input; self
+    }
+    /// <p>The version of a lens.</p>
+    pub fn get_lens_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_version
     }
     /// <p>The full name of the lens.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,8 +109,11 @@ impl LensBuilder {
     }
     /// <p>The full name of the lens.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the lens.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,8 +122,11 @@ impl LensBuilder {
     }
     /// <p>The description of the lens.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the lens.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Web Services account ID that owns the lens.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,60 +135,62 @@ impl LensBuilder {
     }
     /// <p>The Amazon Web Services account ID that owns the lens.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
+    }
+    /// <p>The Amazon Web Services account ID that owns the lens.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn share_invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn set_share_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.share_invitation_id = input;
-        self
+    pub fn set_share_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.share_invitation_id = input; self
+    }
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn get_share_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_invitation_id
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the lens.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags assigned to the lens.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags assigned to the lens.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Lens`](crate::types::Lens).
     pub fn build(self) -> crate::types::Lens {
         crate::types::Lens {
-            lens_arn: self.lens_arn,
-            lens_version: self.lens_version,
-            name: self.name,
-            description: self.description,
-            owner: self.owner,
-            share_invitation_id: self.share_invitation_id,
-            tags: self.tags,
+            lens_arn: self.lens_arn
+            ,
+            lens_version: self.lens_version
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            owner: self.owner
+            ,
+            share_invitation_id: self.share_invitation_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

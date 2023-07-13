@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourceServerInput {
+pub struct DeleteResourceServerInput  {
     /// <p>The user pool ID for the user pool that hosts the resource server.</p>
     #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct DeleteResourceServerInput {
 }
 impl DeleteResourceServerInput {
     /// <p>The user pool ID for the user pool that hosts the resource server.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The identifier for the resource server.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
 impl DeleteResourceServerInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceServerInput`](crate::operation::delete_resource_server::DeleteResourceServerInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_server::builders::DeleteResourceServerInputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_server::builders::DeleteResourceServerInputBuilder {
         crate::operation::delete_resource_server::builders::DeleteResourceServerInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceServerInput`](crate::operation::delete_resource_server::DeleteResourceServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceServerInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl DeleteResourceServerInputBuilder {
     }
     /// <p>The user pool ID for the user pool that hosts the resource server.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
+    }
+    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// <p>The identifier for the resource server.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl DeleteResourceServerInputBuilder {
     }
     /// <p>The identifier for the resource server.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
+    }
+    /// <p>The identifier for the resource server.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteResourceServerInput`](crate::operation::delete_resource_server::DeleteResourceServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resource_server::DeleteResourceServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resource_server::DeleteResourceServerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_resource_server::DeleteResourceServerInput {
-                user_pool_id: self.user_pool_id,
-                identifier: self.identifier,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                identifier: self.identifier
+                ,
+            }
         )
     }
 }
+

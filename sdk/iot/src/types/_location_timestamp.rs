@@ -3,23 +3,23 @@
 /// <p>Describes how to interpret an application-defined timestamp value from an MQTT message payload and the precision of that value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LocationTimestamp {
+pub struct LocationTimestamp  {
     /// <p>An expression that returns a long epoch time value.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
-    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p> 
     /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
     #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl LocationTimestamp {
     /// <p>An expression that returns a long epoch time value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
-    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p> 
     /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
@@ -32,9 +32,7 @@ impl LocationTimestamp {
 
 /// A builder for [`LocationTimestamp`](crate::types::LocationTimestamp).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocationTimestampBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
@@ -47,26 +45,36 @@ impl LocationTimestampBuilder {
     }
     /// <p>An expression that returns a long epoch time value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
-    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+    /// <p>An expression that returns a long epoch time value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p> 
     /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p> 
     /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
+    }
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p> 
+    /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`LocationTimestamp`](crate::types::LocationTimestamp).
     pub fn build(self) -> crate::types::LocationTimestamp {
         crate::types::LocationTimestamp {
-            value: self.value,
-            unit: self.unit,
+            value: self.value
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

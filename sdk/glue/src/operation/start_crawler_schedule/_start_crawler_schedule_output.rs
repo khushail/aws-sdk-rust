@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCrawlerScheduleOutput {
+pub struct StartCrawlerScheduleOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for StartCrawlerScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartCrawlerScheduleOutput {
     /// Creates a new builder-style object to manufacture [`StartCrawlerScheduleOutput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleOutputBuilder {
+    pub fn builder() -> crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleOutputBuilder {
         crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartCrawlerScheduleOutput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCrawlerScheduleOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartCrawlerScheduleOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartCrawlerScheduleOutput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleOutput).
     pub fn build(self) -> crate::operation::start_crawler_schedule::StartCrawlerScheduleOutput {
         crate::operation::start_crawler_schedule::StartCrawlerScheduleOutput {
@@ -43,3 +40,4 @@ impl StartCrawlerScheduleOutputBuilder {
         }
     }
 }
+

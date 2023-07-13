@@ -3,7 +3,7 @@
 /// <p>The display options for margins around the outside edge of sheets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MarginStyle {
+pub struct MarginStyle  {
     /// <p>This Boolean value controls whether to display sheet margins.</p>
     #[doc(hidden)]
     pub show: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl MarginStyle {
 
 /// A builder for [`MarginStyle`](crate::types::MarginStyle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MarginStyleBuilder {
     pub(crate) show: ::std::option::Option<bool>,
 }
@@ -37,11 +35,18 @@ impl MarginStyleBuilder {
     }
     /// <p>This Boolean value controls whether to display sheet margins.</p>
     pub fn set_show(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show = input;
-        self
+        self.show = input; self
+    }
+    /// <p>This Boolean value controls whether to display sheet margins.</p>
+    pub fn get_show(&self) -> &::std::option::Option<bool> {
+        &self.show
     }
     /// Consumes the builder and constructs a [`MarginStyle`](crate::types::MarginStyle).
     pub fn build(self) -> crate::types::MarginStyle {
-        crate::types::MarginStyle { show: self.show }
+        crate::types::MarginStyle {
+            show: self.show
+            ,
+        }
     }
 }
+

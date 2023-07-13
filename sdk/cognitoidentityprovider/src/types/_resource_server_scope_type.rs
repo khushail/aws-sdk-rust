@@ -3,7 +3,7 @@
 /// <p>A resource server scope.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceServerScopeType {
+pub struct ResourceServerScopeType  {
     /// <p>The name of the scope.</p>
     #[doc(hidden)]
     pub scope_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ResourceServerScopeType {
 }
 impl ResourceServerScopeType {
     /// <p>The name of the scope.</p>
-    pub fn scope_name(&self) -> ::std::option::Option<&str> {
+    pub fn scope_name(&self) -> ::std::option::Option<& str> {
         self.scope_name.as_deref()
     }
     /// <p>A description of the scope.</p>
-    pub fn scope_description(&self) -> ::std::option::Option<&str> {
+    pub fn scope_description(&self) -> ::std::option::Option<& str> {
         self.scope_description.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ResourceServerScopeType {
 
 /// A builder for [`ResourceServerScopeType`](crate::types::ResourceServerScopeType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceServerScopeTypeBuilder {
     pub(crate) scope_name: ::std::option::Option<::std::string::String>,
     pub(crate) scope_description: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ResourceServerScopeTypeBuilder {
     }
     /// <p>The name of the scope.</p>
     pub fn set_scope_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope_name = input;
-        self
+        self.scope_name = input; self
+    }
+    /// <p>The name of the scope.</p>
+    pub fn get_scope_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope_name
     }
     /// <p>A description of the scope.</p>
-    pub fn scope_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scope_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scope_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the scope.</p>
-    pub fn set_scope_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.scope_description = input;
-        self
+    pub fn set_scope_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.scope_description = input; self
+    }
+    /// <p>A description of the scope.</p>
+    pub fn get_scope_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope_description
     }
     /// Consumes the builder and constructs a [`ResourceServerScopeType`](crate::types::ResourceServerScopeType).
     pub fn build(self) -> crate::types::ResourceServerScopeType {
         crate::types::ResourceServerScopeType {
-            scope_name: self.scope_name,
-            scope_description: self.scope_description,
+            scope_name: self.scope_name
+            ,
+            scope_description: self.scope_description
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>A keyword filter for querying findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeywordFilter {
+pub struct KeywordFilter  {
     /// <p>A value for the keyword.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl KeywordFilter {
     /// <p>A value for the keyword.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl KeywordFilter {
 
 /// A builder for [`KeywordFilter`](crate::types::KeywordFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeywordFilterBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl KeywordFilterBuilder {
     }
     /// <p>A value for the keyword.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>A value for the keyword.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`KeywordFilter`](crate::types::KeywordFilter).
     pub fn build(self) -> crate::types::KeywordFilter {
-        crate::types::KeywordFilter { value: self.value }
+        crate::types::KeywordFilter {
+            value: self.value
+            ,
+        }
     }
 }
+

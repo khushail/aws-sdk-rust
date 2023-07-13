@@ -2,61 +2,51 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachTrafficSourcesInput {
+pub struct DetachTrafficSourcesInput  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
     #[doc(hidden)]
-    pub traffic_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    pub traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
 }
 impl DetachTrafficSourcesInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    pub fn traffic_sources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficSourceIdentifier]> {
+    pub fn traffic_sources(&self) -> ::std::option::Option<& [crate::types::TrafficSourceIdentifier]> {
         self.traffic_sources.as_deref()
     }
 }
 impl DetachTrafficSourcesInput {
     /// Creates a new builder-style object to manufacture [`DetachTrafficSourcesInput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesInput).
-    pub fn builder(
-    ) -> crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesInputBuilder {
+    pub fn builder() -> crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesInputBuilder {
         crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachTrafficSourcesInput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachTrafficSourcesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) traffic_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
 }
 impl DetachTrafficSourcesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// Appends an item to `traffic_sources`.
     ///
@@ -65,30 +55,28 @@ impl DetachTrafficSourcesInputBuilder {
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
     pub fn traffic_sources(mut self, input: crate::types::TrafficSourceIdentifier) -> Self {
         let mut v = self.traffic_sources.unwrap_or_default();
-        v.push(input);
-        self.traffic_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.traffic_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    pub fn set_traffic_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
-    ) -> Self {
-        self.traffic_sources = input;
-        self
+    pub fn set_traffic_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>) -> Self {
+        self.traffic_sources = input; self
+    }
+    /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
+    pub fn get_traffic_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>> {
+        &self.traffic_sources
     }
     /// Consumes the builder and constructs a [`DetachTrafficSourcesInput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_traffic_sources::DetachTrafficSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_traffic_sources::DetachTrafficSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::detach_traffic_sources::DetachTrafficSourcesInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                traffic_sources: self.traffic_sources,
-            },
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                traffic_sources: self.traffic_sources
+                ,
+            }
         )
     }
 }
+

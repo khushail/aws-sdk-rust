@@ -2,14 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTargetsOutput {
+pub struct RemoveTargetsOutput  {
     /// <p>The number of failed entries.</p>
     #[doc(hidden)]
     pub failed_entry_count: i32,
     /// <p>The failed target entries.</p>
     #[doc(hidden)]
-    pub failed_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
+    pub failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
     _request_id: Option<String>,
 }
 impl RemoveTargetsOutput {
@@ -18,17 +17,15 @@ impl RemoveTargetsOutput {
         self.failed_entry_count
     }
     /// <p>The failed target entries.</p>
-    pub fn failed_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RemoveTargetsResultEntry]> {
+    pub fn failed_entries(&self) -> ::std::option::Option<& [crate::types::RemoveTargetsResultEntry]> {
         self.failed_entries.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RemoveTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RemoveTargetsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTargetsOutput`](crate::operation::remove_targets::RemoveTargetsOutput).
     pub fn builder() -> crate::operation::remove_targets::builders::RemoveTargetsOutputBuilder {
@@ -38,13 +35,10 @@ impl RemoveTargetsOutput {
 
 /// A builder for [`RemoveTargetsOutput`](crate::operation::remove_targets::RemoveTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTargetsOutputBuilder {
     pub(crate) failed_entry_count: ::std::option::Option<i32>,
-    pub(crate) failed_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
+    pub(crate) failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
     _request_id: Option<String>,
 }
 impl RemoveTargetsOutputBuilder {
@@ -55,8 +49,11 @@ impl RemoveTargetsOutputBuilder {
     }
     /// <p>The number of failed entries.</p>
     pub fn set_failed_entry_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_entry_count = input;
-        self
+        self.failed_entry_count = input; self
+    }
+    /// <p>The number of failed entries.</p>
+    pub fn get_failed_entry_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_entry_count
     }
     /// Appends an item to `failed_entries`.
     ///
@@ -65,33 +62,37 @@ impl RemoveTargetsOutputBuilder {
     /// <p>The failed target entries.</p>
     pub fn failed_entries(mut self, input: crate::types::RemoveTargetsResultEntry) -> Self {
         let mut v = self.failed_entries.unwrap_or_default();
-        v.push(input);
-        self.failed_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The failed target entries.</p>
-    pub fn set_failed_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
-    ) -> Self {
-        self.failed_entries = input;
-        self
+    pub fn set_failed_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>) -> Self {
+        self.failed_entries = input; self
+    }
+    /// <p>The failed target entries.</p>
+    pub fn get_failed_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>> {
+        &self.failed_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RemoveTargetsOutput`](crate::operation::remove_targets::RemoveTargetsOutput).
     pub fn build(self) -> crate::operation::remove_targets::RemoveTargetsOutput {
         crate::operation::remove_targets::RemoveTargetsOutput {
-            failed_entry_count: self.failed_entry_count.unwrap_or_default(),
-            failed_entries: self.failed_entries,
+            failed_entry_count: self.failed_entry_count
+                .unwrap_or_default()
+            ,
+            failed_entries: self.failed_entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

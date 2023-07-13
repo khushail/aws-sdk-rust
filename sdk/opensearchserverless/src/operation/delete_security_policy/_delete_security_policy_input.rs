@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSecurityPolicyInput {
+pub struct DeleteSecurityPolicyInput  {
     /// <p>The type of policy.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
@@ -15,31 +15,28 @@ pub struct DeleteSecurityPolicyInput {
 }
 impl DeleteSecurityPolicyInput {
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityPolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SecurityPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the policy to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteSecurityPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityPolicyInput`](crate::operation::delete_security_policy::DeleteSecurityPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder {
         crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSecurityPolicyInput`](crate::operation::delete_security_policy::DeleteSecurityPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSecurityPolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -52,12 +49,12 @@ impl DeleteSecurityPolicyInputBuilder {
         self
     }
     /// <p>The type of policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityPolicyType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityPolicyType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of policy.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityPolicyType> {
+        &self.r#type
     }
     /// <p>The name of the policy to delete.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +63,11 @@ impl DeleteSecurityPolicyInputBuilder {
     }
     /// <p>The name of the policy to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the policy to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,22 +76,24 @@ impl DeleteSecurityPolicyInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteSecurityPolicyInput`](crate::operation::delete_security_policy::DeleteSecurityPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_security_policy::DeleteSecurityPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_security_policy::DeleteSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_security_policy::DeleteSecurityPolicyInput {
-                r#type: self.r#type,
-                name: self.name,
-                client_token: self.client_token,
-            },
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

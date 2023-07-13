@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestAvailabilityConfigurationInput {
+pub struct TestAvailabilityConfigurationInput  {
     /// <p>The WorkMail organization where the availability provider will be tested.</p>
     #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct TestAvailabilityConfigurationInput {
 }
 impl TestAvailabilityConfigurationInput {
     /// <p>The WorkMail organization where the availability provider will be tested.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
-    pub fn ews_provider(&self) -> ::std::option::Option<&crate::types::EwsAvailabilityProvider> {
+    pub fn ews_provider(&self) -> ::std::option::Option<& crate::types::EwsAvailabilityProvider> {
         self.ews_provider.as_ref()
     }
     /// <p>Describes a Lambda based availability provider.</p>
-    pub fn lambda_provider(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LambdaAvailabilityProvider> {
+    pub fn lambda_provider(&self) -> ::std::option::Option<& crate::types::LambdaAvailabilityProvider> {
         self.lambda_provider.as_ref()
     }
 }
 impl TestAvailabilityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`TestAvailabilityConfigurationInput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationInput).
-    pub fn builder() -> crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationInputBuilder {
         crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`TestAvailabilityConfigurationInput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestAvailabilityConfigurationInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -56,20 +52,17 @@ pub struct TestAvailabilityConfigurationInputBuilder {
 }
 impl TestAvailabilityConfigurationInputBuilder {
     /// <p>The WorkMail organization where the availability provider will be tested.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization where the availability provider will be tested.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
+    }
+    /// <p>The WorkMail organization where the availability provider will be tested.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,8 +71,11 @@ impl TestAvailabilityConfigurationInputBuilder {
     }
     /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
     pub fn ews_provider(mut self, input: crate::types::EwsAvailabilityProvider) -> Self {
@@ -87,12 +83,12 @@ impl TestAvailabilityConfigurationInputBuilder {
         self
     }
     /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
-    pub fn set_ews_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::EwsAvailabilityProvider>,
-    ) -> Self {
-        self.ews_provider = input;
-        self
+    pub fn set_ews_provider(mut self, input: ::std::option::Option<crate::types::EwsAvailabilityProvider>) -> Self {
+        self.ews_provider = input; self
+    }
+    /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+    pub fn get_ews_provider(&self) -> &::std::option::Option<crate::types::EwsAvailabilityProvider> {
+        &self.ews_provider
     }
     /// <p>Describes a Lambda based availability provider.</p>
     pub fn lambda_provider(mut self, input: crate::types::LambdaAvailabilityProvider) -> Self {
@@ -100,27 +96,27 @@ impl TestAvailabilityConfigurationInputBuilder {
         self
     }
     /// <p>Describes a Lambda based availability provider.</p>
-    pub fn set_lambda_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaAvailabilityProvider>,
-    ) -> Self {
-        self.lambda_provider = input;
-        self
+    pub fn set_lambda_provider(mut self, input: ::std::option::Option<crate::types::LambdaAvailabilityProvider>) -> Self {
+        self.lambda_provider = input; self
+    }
+    /// <p>Describes a Lambda based availability provider.</p>
+    pub fn get_lambda_provider(&self) -> &::std::option::Option<crate::types::LambdaAvailabilityProvider> {
+        &self.lambda_provider
     }
     /// Consumes the builder and constructs a [`TestAvailabilityConfigurationInput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_availability_configuration::TestAvailabilityConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_availability_configuration::TestAvailabilityConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::test_availability_configuration::TestAvailabilityConfigurationInput {
-                organization_id: self.organization_id,
-                domain_name: self.domain_name,
-                ews_provider: self.ews_provider,
-                lambda_provider: self.lambda_provider,
-            },
+                organization_id: self.organization_id
+                ,
+                domain_name: self.domain_name
+                ,
+                ews_provider: self.ews_provider
+                ,
+                lambda_provider: self.lambda_provider
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableControlInput {
+pub struct DisableControlInput  {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     #[doc(hidden)]
     pub control_identifier: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DisableControlInput {
 }
 impl DisableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn control_identifier(&self) -> ::std::option::Option<& str> {
         self.control_identifier.as_deref()
     }
     /// <p>The ARN of the organizational unit.</p>
-    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_identifier(&self) -> ::std::option::Option<& str> {
         self.target_identifier.as_deref()
     }
 }
@@ -29,56 +29,48 @@ impl DisableControlInput {
 
 /// A builder for [`DisableControlInput`](crate::operation::disable_control::DisableControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableControlInputBuilder {
     pub(crate) control_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DisableControlInputBuilder {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    pub fn control_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    pub fn set_control_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.control_identifier = input;
-        self
+    pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.control_identifier = input; self
+    }
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
+    pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_identifier
     }
     /// <p>The ARN of the organizational unit.</p>
-    pub fn target_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the organizational unit.</p>
-    pub fn set_target_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_identifier = input;
-        self
+    pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_identifier = input; self
+    }
+    /// <p>The ARN of the organizational unit.</p>
+    pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_identifier
     }
     /// Consumes the builder and constructs a [`DisableControlInput`](crate::operation::disable_control::DisableControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_control::DisableControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_control::DisableControlInput {
-            control_identifier: self.control_identifier,
-            target_identifier: self.target_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_control::DisableControlInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_control::DisableControlInput {
+                control_identifier: self.control_identifier
+                ,
+                target_identifier: self.target_identifier
+                ,
+            }
+        )
     }
 }
+

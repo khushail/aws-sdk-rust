@@ -3,7 +3,7 @@
 /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Preset {
+pub struct Preset  {
     /// An identifier for this resource that is unique within all of AWS.
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -31,35 +31,35 @@ pub struct Preset {
 }
 impl Preset {
     /// An identifier for this resource that is unique within all of AWS.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// An optional category you create to organize your presets.
-    pub fn category(&self) -> ::std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<& str> {
         self.category.as_deref()
     }
     /// The timestamp in epoch seconds for preset creation.
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// An optional description you create for each preset.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The timestamp in epoch seconds when the preset was last updated.
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// A name you create for each preset. Each name must be unique within your account.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Settings for preset
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::PresetSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::PresetSettings> {
         self.settings.as_ref()
     }
     /// A preset can be of two types: system or custom. System or built-in preset can't be modified or deleted by the user.
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -72,9 +72,7 @@ impl Preset {
 
 /// A builder for [`Preset`](crate::types::Preset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PresetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
@@ -93,8 +91,11 @@ impl PresetBuilder {
     }
     /// An identifier for this resource that is unique within all of AWS.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// An identifier for this resource that is unique within all of AWS.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// An optional category you create to organize your presets.
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +104,11 @@ impl PresetBuilder {
     }
     /// An optional category you create to organize your presets.
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
+    }
+    /// An optional category you create to organize your presets.
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
     }
     /// The timestamp in epoch seconds for preset creation.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -112,12 +116,12 @@ impl PresetBuilder {
         self
     }
     /// The timestamp in epoch seconds for preset creation.
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// The timestamp in epoch seconds for preset creation.
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// An optional description you create for each preset.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,8 +130,11 @@ impl PresetBuilder {
     }
     /// An optional description you create for each preset.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// An optional description you create for each preset.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// The timestamp in epoch seconds when the preset was last updated.
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,12 +142,12 @@ impl PresetBuilder {
         self
     }
     /// The timestamp in epoch seconds when the preset was last updated.
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
+    }
+    /// The timestamp in epoch seconds when the preset was last updated.
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// A name you create for each preset. Each name must be unique within your account.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,8 +156,11 @@ impl PresetBuilder {
     }
     /// A name you create for each preset. Each name must be unique within your account.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// A name you create for each preset. Each name must be unique within your account.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Settings for preset
     pub fn settings(mut self, input: crate::types::PresetSettings) -> Self {
@@ -158,12 +168,12 @@ impl PresetBuilder {
         self
     }
     /// Settings for preset
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::PresetSettings>,
-    ) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::PresetSettings>) -> Self {
+        self.settings = input; self
+    }
+    /// Settings for preset
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::PresetSettings> {
+        &self.settings
     }
     /// A preset can be of two types: system or custom. System or built-in preset can't be modified or deleted by the user.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
@@ -172,20 +182,32 @@ impl PresetBuilder {
     }
     /// A preset can be of two types: system or custom. System or built-in preset can't be modified or deleted by the user.
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// A preset can be of two types: system or custom. System or built-in preset can't be modified or deleted by the user.
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Preset`](crate::types::Preset).
     pub fn build(self) -> crate::types::Preset {
         crate::types::Preset {
-            arn: self.arn,
-            category: self.category,
-            created_at: self.created_at,
-            description: self.description,
-            last_updated: self.last_updated,
-            name: self.name,
-            settings: self.settings,
-            r#type: self.r#type,
+            arn: self.arn
+            ,
+            category: self.category
+            ,
+            created_at: self.created_at
+            ,
+            description: self.description
+            ,
+            last_updated: self.last_updated
+            ,
+            name: self.name
+            ,
+            settings: self.settings
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

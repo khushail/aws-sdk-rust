@@ -3,7 +3,7 @@
 /// <p>The training data schema.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrainingDataSchema {
+pub struct TrainingDataSchema  {
     /// <p>The training data schema variables.</p>
     #[doc(hidden)]
     pub model_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,11 +13,11 @@ pub struct TrainingDataSchema {
 }
 impl TrainingDataSchema {
     /// <p>The training data schema variables.</p>
-    pub fn model_variables(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn model_variables(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.model_variables.as_deref()
     }
     /// <p>The label schema.</p>
-    pub fn label_schema(&self) -> ::std::option::Option<&crate::types::LabelSchema> {
+    pub fn label_schema(&self) -> ::std::option::Option<& crate::types::LabelSchema> {
         self.label_schema.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl TrainingDataSchema {
 
 /// A builder for [`TrainingDataSchema`](crate::types::TrainingDataSchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingDataSchemaBuilder {
     pub(crate) model_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) label_schema: ::std::option::Option<crate::types::LabelSchema>,
@@ -43,22 +41,19 @@ impl TrainingDataSchemaBuilder {
     /// To override the contents of this collection use [`set_model_variables`](Self::set_model_variables).
     ///
     /// <p>The training data schema variables.</p>
-    pub fn model_variables(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.model_variables.unwrap_or_default();
-        v.push(input.into());
-        self.model_variables = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.model_variables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The training data schema variables.</p>
-    pub fn set_model_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.model_variables = input;
-        self
+    pub fn set_model_variables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.model_variables = input; self
+    }
+    /// <p>The training data schema variables.</p>
+    pub fn get_model_variables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.model_variables
     }
     /// <p>The label schema.</p>
     pub fn label_schema(mut self, input: crate::types::LabelSchema) -> Self {
@@ -66,18 +61,21 @@ impl TrainingDataSchemaBuilder {
         self
     }
     /// <p>The label schema.</p>
-    pub fn set_label_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelSchema>,
-    ) -> Self {
-        self.label_schema = input;
-        self
+    pub fn set_label_schema(mut self, input: ::std::option::Option<crate::types::LabelSchema>) -> Self {
+        self.label_schema = input; self
+    }
+    /// <p>The label schema.</p>
+    pub fn get_label_schema(&self) -> &::std::option::Option<crate::types::LabelSchema> {
+        &self.label_schema
     }
     /// Consumes the builder and constructs a [`TrainingDataSchema`](crate::types::TrainingDataSchema).
     pub fn build(self) -> crate::types::TrainingDataSchema {
         crate::types::TrainingDataSchema {
-            model_variables: self.model_variables,
-            label_schema: self.label_schema,
+            model_variables: self.model_variables
+            ,
+            label_schema: self.label_schema
+            ,
         }
     }
 }
+

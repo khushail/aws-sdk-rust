@@ -3,14 +3,14 @@
 /// <p>An ad hoc (one-time) filtering option.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdHocFilteringOption {
+pub struct AdHocFilteringOption  {
     /// <p>Availability status.</p>
     #[doc(hidden)]
     pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl AdHocFilteringOption {
     /// <p>Availability status.</p>
-    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::DashboardBehavior> {
+    pub fn availability_status(&self) -> ::std::option::Option<& crate::types::DashboardBehavior> {
         self.availability_status.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl AdHocFilteringOption {
 
 /// A builder for [`AdHocFilteringOption`](crate::types::AdHocFilteringOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdHocFilteringOptionBuilder {
     pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
@@ -36,17 +34,19 @@ impl AdHocFilteringOptionBuilder {
         self
     }
     /// <p>Availability status.</p>
-    pub fn set_availability_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DashboardBehavior>,
-    ) -> Self {
-        self.availability_status = input;
-        self
+    pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::DashboardBehavior>) -> Self {
+        self.availability_status = input; self
+    }
+    /// <p>Availability status.</p>
+    pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::DashboardBehavior> {
+        &self.availability_status
     }
     /// Consumes the builder and constructs a [`AdHocFilteringOption`](crate::types::AdHocFilteringOption).
     pub fn build(self) -> crate::types::AdHocFilteringOption {
         crate::types::AdHocFilteringOption {
-            availability_status: self.availability_status,
+            availability_status: self.availability_status
+            ,
         }
     }
 }
+

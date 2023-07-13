@@ -3,7 +3,7 @@
 /// <p> The request structure for the stop job request. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopJobInput {
+pub struct StopJobInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct StopJobInput {
 }
 impl StopJobInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch, for the job. </p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The unique id for the job. </p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl StopJobInput {
 
 /// A builder for [`StopJobInput`](crate::operation::stop_job::StopJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopJobInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl StopJobInputBuilder {
     }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p> The name for the branch, for the job. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl StopJobInputBuilder {
     }
     /// <p> The name for the branch, for the job. </p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
+    }
+    /// <p> The name for the branch, for the job. </p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// <p> The unique id for the job. </p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,20 +77,24 @@ impl StopJobInputBuilder {
     }
     /// <p> The unique id for the job. </p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p> The unique id for the job. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`StopJobInput`](crate::operation::stop_job::StopJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_job::StopJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_job::StopJobInput {
-            app_id: self.app_id,
-            branch_name: self.branch_name,
-            job_id: self.job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_job::StopJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_job::StopJobInput {
+                app_id: self.app_id
+                ,
+                branch_name: self.branch_name
+                ,
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

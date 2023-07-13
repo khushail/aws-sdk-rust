@@ -3,7 +3,7 @@
 /// <p>The S3 bucket name and key where code signing saved your signed code image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3SignedObject {
+pub struct S3SignedObject  {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3SignedObject {
 }
 impl S3SignedObject {
     /// <p>Name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl S3SignedObject {
 
 /// A builder for [`S3SignedObject`](crate::types::S3SignedObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3SignedObjectBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl S3SignedObjectBuilder {
     }
     /// <p>Name of the S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
+    }
+    /// <p>Name of the S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl S3SignedObjectBuilder {
     }
     /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`S3SignedObject`](crate::types::S3SignedObject).
     pub fn build(self) -> crate::types::S3SignedObject {
         crate::types::S3SignedObject {
-            bucket_name: self.bucket_name,
-            key: self.key,
+            bucket_name: self.bucket_name
+            ,
+            key: self.key
+            ,
         }
     }
 }
+

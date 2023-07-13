@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMlLabelingSetGenerationTaskRunInput {
+pub struct StartMlLabelingSetGenerationTaskRunInput  {
     /// <p>The unique identifier of the machine learning transform.</p>
     #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct StartMlLabelingSetGenerationTaskRunInput {
 }
 impl StartMlLabelingSetGenerationTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> ::std::option::Option<&str> {
+    pub fn transform_id(&self) -> ::std::option::Option<& str> {
         self.transform_id.as_deref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
-    pub fn output_s3_path(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_path(&self) -> ::std::option::Option<& str> {
         self.output_s3_path.as_deref()
     }
 }
 impl StartMlLabelingSetGenerationTaskRunInput {
     /// Creates a new builder-style object to manufacture [`StartMlLabelingSetGenerationTaskRunInput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput).
-    pub fn builder() -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder{
+    pub fn builder() -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder {
         crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMlLabelingSetGenerationTaskRunInput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMlLabelingSetGenerationTaskRunInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
@@ -44,27 +42,27 @@ impl StartMlLabelingSetGenerationTaskRunInputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
+    }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
-    pub fn output_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
-    pub fn set_output_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.output_s3_path = input;
-        self
+    pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output_s3_path = input; self
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
+    pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_path
     }
     /// Consumes the builder and constructs a [`StartMlLabelingSetGenerationTaskRunInput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput {
                 transform_id: self.transform_id
@@ -75,3 +73,4 @@ impl StartMlLabelingSetGenerationTaskRunInputBuilder {
         )
     }
 }
+

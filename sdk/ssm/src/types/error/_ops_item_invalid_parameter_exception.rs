@@ -3,7 +3,7 @@
 /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpsItemInvalidParameterException {
+pub struct OpsItemInvalidParameterException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub parameter_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -14,21 +14,19 @@ pub struct OpsItemInvalidParameterException {
 }
 impl OpsItemInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn parameter_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn parameter_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.parameter_names.as_deref()
     }
 }
 impl OpsItemInvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for OpsItemInvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "OpsItemInvalidParameterException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -42,12 +40,8 @@ impl ::aws_http::request_id::RequestId for crate::types::error::OpsItemInvalidPa
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for OpsItemInvalidParameterException
-{
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for OpsItemInvalidParameterException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl OpsItemInvalidParameterException {
     /// Creates a new builder-style object to manufacture [`OpsItemInvalidParameterException`](crate::types::error::OpsItemInvalidParameterException).
@@ -58,9 +52,7 @@ impl OpsItemInvalidParameterException {
 
 /// A builder for [`OpsItemInvalidParameterException`](crate::types::error::OpsItemInvalidParameterException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemInvalidParameterExceptionBuilder {
     pub(crate) parameter_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -71,22 +63,19 @@ impl OpsItemInvalidParameterExceptionBuilder {
     ///
     /// To override the contents of this collection use [`set_parameter_names`](Self::set_parameter_names).
     ///
-    pub fn parameter_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.parameter_names.unwrap_or_default();
-        v.push(input.into());
-        self.parameter_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.parameter_names = ::std::option::Option::Some(v);
+                        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_parameter_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.parameter_names = input;
-        self
+    pub fn set_parameter_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.parameter_names = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_parameter_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parameter_names
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,29 +84,32 @@ impl OpsItemInvalidParameterExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`OpsItemInvalidParameterException`](crate::types::error::OpsItemInvalidParameterException).
     pub fn build(self) -> crate::types::error::OpsItemInvalidParameterException {
         crate::types::error::OpsItemInvalidParameterException {
-            parameter_names: self.parameter_names,
-            message: self.message,
+            parameter_names: self.parameter_names
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

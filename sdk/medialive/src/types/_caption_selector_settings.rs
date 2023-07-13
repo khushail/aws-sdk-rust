@@ -3,7 +3,7 @@
 /// Caption Selector Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CaptionSelectorSettings {
+pub struct CaptionSelectorSettings  {
     /// Ancillary Source Settings
     #[doc(hidden)]
     pub ancillary_source_settings: ::std::option::Option<crate::types::AncillarySourceSettings>,
@@ -28,43 +28,31 @@ pub struct CaptionSelectorSettings {
 }
 impl CaptionSelectorSettings {
     /// Ancillary Source Settings
-    pub fn ancillary_source_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AncillarySourceSettings> {
+    pub fn ancillary_source_settings(&self) -> ::std::option::Option<& crate::types::AncillarySourceSettings> {
         self.ancillary_source_settings.as_ref()
     }
     /// Arib Source Settings
-    pub fn arib_source_settings(&self) -> ::std::option::Option<&crate::types::AribSourceSettings> {
+    pub fn arib_source_settings(&self) -> ::std::option::Option<& crate::types::AribSourceSettings> {
         self.arib_source_settings.as_ref()
     }
     /// Dvb Sub Source Settings
-    pub fn dvb_sub_source_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DvbSubSourceSettings> {
+    pub fn dvb_sub_source_settings(&self) -> ::std::option::Option<& crate::types::DvbSubSourceSettings> {
         self.dvb_sub_source_settings.as_ref()
     }
     /// Embedded Source Settings
-    pub fn embedded_source_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EmbeddedSourceSettings> {
+    pub fn embedded_source_settings(&self) -> ::std::option::Option<& crate::types::EmbeddedSourceSettings> {
         self.embedded_source_settings.as_ref()
     }
     /// Scte20 Source Settings
-    pub fn scte20_source_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Scte20SourceSettings> {
+    pub fn scte20_source_settings(&self) -> ::std::option::Option<& crate::types::Scte20SourceSettings> {
         self.scte20_source_settings.as_ref()
     }
     /// Scte27 Source Settings
-    pub fn scte27_source_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Scte27SourceSettings> {
+    pub fn scte27_source_settings(&self) -> ::std::option::Option<& crate::types::Scte27SourceSettings> {
         self.scte27_source_settings.as_ref()
     }
     /// Teletext Source Settings
-    pub fn teletext_source_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TeletextSourceSettings> {
+    pub fn teletext_source_settings(&self) -> ::std::option::Option<& crate::types::TeletextSourceSettings> {
         self.teletext_source_settings.as_ref()
     }
 }
@@ -77,37 +65,29 @@ impl CaptionSelectorSettings {
 
 /// A builder for [`CaptionSelectorSettings`](crate::types::CaptionSelectorSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptionSelectorSettingsBuilder {
-    pub(crate) ancillary_source_settings:
-        ::std::option::Option<crate::types::AncillarySourceSettings>,
+    pub(crate) ancillary_source_settings: ::std::option::Option<crate::types::AncillarySourceSettings>,
     pub(crate) arib_source_settings: ::std::option::Option<crate::types::AribSourceSettings>,
     pub(crate) dvb_sub_source_settings: ::std::option::Option<crate::types::DvbSubSourceSettings>,
-    pub(crate) embedded_source_settings:
-        ::std::option::Option<crate::types::EmbeddedSourceSettings>,
+    pub(crate) embedded_source_settings: ::std::option::Option<crate::types::EmbeddedSourceSettings>,
     pub(crate) scte20_source_settings: ::std::option::Option<crate::types::Scte20SourceSettings>,
     pub(crate) scte27_source_settings: ::std::option::Option<crate::types::Scte27SourceSettings>,
-    pub(crate) teletext_source_settings:
-        ::std::option::Option<crate::types::TeletextSourceSettings>,
+    pub(crate) teletext_source_settings: ::std::option::Option<crate::types::TeletextSourceSettings>,
 }
 impl CaptionSelectorSettingsBuilder {
     /// Ancillary Source Settings
-    pub fn ancillary_source_settings(
-        mut self,
-        input: crate::types::AncillarySourceSettings,
-    ) -> Self {
+    pub fn ancillary_source_settings(mut self, input: crate::types::AncillarySourceSettings) -> Self {
         self.ancillary_source_settings = ::std::option::Option::Some(input);
         self
     }
     /// Ancillary Source Settings
-    pub fn set_ancillary_source_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AncillarySourceSettings>,
-    ) -> Self {
-        self.ancillary_source_settings = input;
-        self
+    pub fn set_ancillary_source_settings(mut self, input: ::std::option::Option<crate::types::AncillarySourceSettings>) -> Self {
+        self.ancillary_source_settings = input; self
+    }
+    /// Ancillary Source Settings
+    pub fn get_ancillary_source_settings(&self) -> &::std::option::Option<crate::types::AncillarySourceSettings> {
+        &self.ancillary_source_settings
     }
     /// Arib Source Settings
     pub fn arib_source_settings(mut self, input: crate::types::AribSourceSettings) -> Self {
@@ -115,12 +95,12 @@ impl CaptionSelectorSettingsBuilder {
         self
     }
     /// Arib Source Settings
-    pub fn set_arib_source_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AribSourceSettings>,
-    ) -> Self {
-        self.arib_source_settings = input;
-        self
+    pub fn set_arib_source_settings(mut self, input: ::std::option::Option<crate::types::AribSourceSettings>) -> Self {
+        self.arib_source_settings = input; self
+    }
+    /// Arib Source Settings
+    pub fn get_arib_source_settings(&self) -> &::std::option::Option<crate::types::AribSourceSettings> {
+        &self.arib_source_settings
     }
     /// Dvb Sub Source Settings
     pub fn dvb_sub_source_settings(mut self, input: crate::types::DvbSubSourceSettings) -> Self {
@@ -128,12 +108,12 @@ impl CaptionSelectorSettingsBuilder {
         self
     }
     /// Dvb Sub Source Settings
-    pub fn set_dvb_sub_source_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DvbSubSourceSettings>,
-    ) -> Self {
-        self.dvb_sub_source_settings = input;
-        self
+    pub fn set_dvb_sub_source_settings(mut self, input: ::std::option::Option<crate::types::DvbSubSourceSettings>) -> Self {
+        self.dvb_sub_source_settings = input; self
+    }
+    /// Dvb Sub Source Settings
+    pub fn get_dvb_sub_source_settings(&self) -> &::std::option::Option<crate::types::DvbSubSourceSettings> {
+        &self.dvb_sub_source_settings
     }
     /// Embedded Source Settings
     pub fn embedded_source_settings(mut self, input: crate::types::EmbeddedSourceSettings) -> Self {
@@ -141,12 +121,12 @@ impl CaptionSelectorSettingsBuilder {
         self
     }
     /// Embedded Source Settings
-    pub fn set_embedded_source_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::EmbeddedSourceSettings>,
-    ) -> Self {
-        self.embedded_source_settings = input;
-        self
+    pub fn set_embedded_source_settings(mut self, input: ::std::option::Option<crate::types::EmbeddedSourceSettings>) -> Self {
+        self.embedded_source_settings = input; self
+    }
+    /// Embedded Source Settings
+    pub fn get_embedded_source_settings(&self) -> &::std::option::Option<crate::types::EmbeddedSourceSettings> {
+        &self.embedded_source_settings
     }
     /// Scte20 Source Settings
     pub fn scte20_source_settings(mut self, input: crate::types::Scte20SourceSettings) -> Self {
@@ -154,12 +134,12 @@ impl CaptionSelectorSettingsBuilder {
         self
     }
     /// Scte20 Source Settings
-    pub fn set_scte20_source_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Scte20SourceSettings>,
-    ) -> Self {
-        self.scte20_source_settings = input;
-        self
+    pub fn set_scte20_source_settings(mut self, input: ::std::option::Option<crate::types::Scte20SourceSettings>) -> Self {
+        self.scte20_source_settings = input; self
+    }
+    /// Scte20 Source Settings
+    pub fn get_scte20_source_settings(&self) -> &::std::option::Option<crate::types::Scte20SourceSettings> {
+        &self.scte20_source_settings
     }
     /// Scte27 Source Settings
     pub fn scte27_source_settings(mut self, input: crate::types::Scte27SourceSettings) -> Self {
@@ -167,12 +147,12 @@ impl CaptionSelectorSettingsBuilder {
         self
     }
     /// Scte27 Source Settings
-    pub fn set_scte27_source_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Scte27SourceSettings>,
-    ) -> Self {
-        self.scte27_source_settings = input;
-        self
+    pub fn set_scte27_source_settings(mut self, input: ::std::option::Option<crate::types::Scte27SourceSettings>) -> Self {
+        self.scte27_source_settings = input; self
+    }
+    /// Scte27 Source Settings
+    pub fn get_scte27_source_settings(&self) -> &::std::option::Option<crate::types::Scte27SourceSettings> {
+        &self.scte27_source_settings
     }
     /// Teletext Source Settings
     pub fn teletext_source_settings(mut self, input: crate::types::TeletextSourceSettings) -> Self {
@@ -180,23 +160,31 @@ impl CaptionSelectorSettingsBuilder {
         self
     }
     /// Teletext Source Settings
-    pub fn set_teletext_source_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TeletextSourceSettings>,
-    ) -> Self {
-        self.teletext_source_settings = input;
-        self
+    pub fn set_teletext_source_settings(mut self, input: ::std::option::Option<crate::types::TeletextSourceSettings>) -> Self {
+        self.teletext_source_settings = input; self
+    }
+    /// Teletext Source Settings
+    pub fn get_teletext_source_settings(&self) -> &::std::option::Option<crate::types::TeletextSourceSettings> {
+        &self.teletext_source_settings
     }
     /// Consumes the builder and constructs a [`CaptionSelectorSettings`](crate::types::CaptionSelectorSettings).
     pub fn build(self) -> crate::types::CaptionSelectorSettings {
         crate::types::CaptionSelectorSettings {
-            ancillary_source_settings: self.ancillary_source_settings,
-            arib_source_settings: self.arib_source_settings,
-            dvb_sub_source_settings: self.dvb_sub_source_settings,
-            embedded_source_settings: self.embedded_source_settings,
-            scte20_source_settings: self.scte20_source_settings,
-            scte27_source_settings: self.scte27_source_settings,
-            teletext_source_settings: self.teletext_source_settings,
+            ancillary_source_settings: self.ancillary_source_settings
+            ,
+            arib_source_settings: self.arib_source_settings
+            ,
+            dvb_sub_source_settings: self.dvb_sub_source_settings
+            ,
+            embedded_source_settings: self.embedded_source_settings
+            ,
+            scte20_source_settings: self.scte20_source_settings
+            ,
+            scte27_source_settings: self.scte27_source_settings
+            ,
+            teletext_source_settings: self.teletext_source_settings
+            ,
         }
     }
 }
+

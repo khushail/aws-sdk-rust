@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQueryLoggingConfigInput {
+pub struct DeleteQueryLoggingConfigInput  {
     /// <p>The ID of the configuration that you want to delete. </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteQueryLoggingConfigInput {
     /// <p>The ID of the configuration that you want to delete. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteQueryLoggingConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteQueryLoggingConfigInput`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigInput).
-    pub fn builder(
-    ) -> crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigInputBuilder {
         crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQueryLoggingConfigInput`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueryLoggingConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DeleteQueryLoggingConfigInputBuilder {
     }
     /// <p>The ID of the configuration that you want to delete. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the configuration that you want to delete. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeleteQueryLoggingConfigInput`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

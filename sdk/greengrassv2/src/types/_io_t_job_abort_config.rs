@@ -3,14 +3,14 @@
 /// <p>Contains a list of criteria that define when and how to cancel a configuration deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IoTJobAbortConfig {
+pub struct IoTJobAbortConfig  {
     /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
     #[doc(hidden)]
     pub criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::IoTJobAbortCriteria>>,
 }
 impl IoTJobAbortConfig {
     /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
-    pub fn criteria_list(&self) -> ::std::option::Option<&[crate::types::IoTJobAbortCriteria]> {
+    pub fn criteria_list(&self) -> ::std::option::Option<& [crate::types::IoTJobAbortCriteria]> {
         self.criteria_list.as_deref()
     }
 }
@@ -23,12 +23,9 @@ impl IoTJobAbortConfig {
 
 /// A builder for [`IoTJobAbortConfig`](crate::types::IoTJobAbortConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IoTJobAbortConfigBuilder {
-    pub(crate) criteria_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::IoTJobAbortCriteria>>,
+    pub(crate) criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::IoTJobAbortCriteria>>,
 }
 impl IoTJobAbortConfigBuilder {
     /// Appends an item to `criteria_list`.
@@ -38,22 +35,24 @@ impl IoTJobAbortConfigBuilder {
     /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
     pub fn criteria_list(mut self, input: crate::types::IoTJobAbortCriteria) -> Self {
         let mut v = self.criteria_list.unwrap_or_default();
-        v.push(input);
-        self.criteria_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.criteria_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
-    pub fn set_criteria_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IoTJobAbortCriteria>>,
-    ) -> Self {
-        self.criteria_list = input;
-        self
+    pub fn set_criteria_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IoTJobAbortCriteria>>) -> Self {
+        self.criteria_list = input; self
+    }
+    /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
+    pub fn get_criteria_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IoTJobAbortCriteria>> {
+        &self.criteria_list
     }
     /// Consumes the builder and constructs a [`IoTJobAbortConfig`](crate::types::IoTJobAbortConfig).
     pub fn build(self) -> crate::types::IoTJobAbortConfig {
         crate::types::IoTJobAbortConfig {
-            criteria_list: self.criteria_list,
+            criteria_list: self.criteria_list
+            ,
         }
     }
 }
+

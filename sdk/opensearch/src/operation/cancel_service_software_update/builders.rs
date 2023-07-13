@@ -3,102 +3,87 @@ pub use crate::operation::cancel_service_software_update::_cancel_service_softwa
 
 pub use crate::operation::cancel_service_software_update::_cancel_service_software_update_input::CancelServiceSoftwareUpdateInputBuilder;
 
+impl CancelServiceSoftwareUpdateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.cancel_service_software_update();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CancelServiceSoftwareUpdate`.
-///
+/// 
 /// <p>Cancels a scheduled service software update for an Amazon OpenSearch Service domain. You can only perform this operation before the <code>AutomatedUpdateDate</code> and when the domain's <code>UpdateStatus</code> is <code>PENDING_UPDATE</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service software updates in Amazon OpenSearch Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelServiceSoftwareUpdateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder,
 }
-impl CancelServiceSoftwareUpdateFluentBuilder {
+impl CancelServiceSoftwareUpdateFluentBuilder  {
     /// Creates a new `CancelServiceSoftwareUpdate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdate,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CancelServiceSoftwareUpdate as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdate, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdate,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdate, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -109,4 +94,9 @@ impl CancelServiceSoftwareUpdateFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
 }
+

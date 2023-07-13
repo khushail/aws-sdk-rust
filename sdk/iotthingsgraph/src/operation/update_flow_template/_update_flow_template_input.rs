@@ -2,32 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFlowTemplateInput {
-    /// <p>The ID of the workflow to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+pub struct UpdateFlowTemplateInput  {
+    /// <p>The ID of the workflow to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
     #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
-    /// <p>The version of the user's namespace.</p>
+    /// <p>The version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     #[doc(hidden)]
     pub compatible_namespace_version: ::std::option::Option<i64>,
 }
 impl UpdateFlowTemplateInput {
-    /// <p>The ID of the workflow to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the workflow to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
-    /// <p>The version of the user's namespace.</p>
+    /// <p>The version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     pub fn compatible_namespace_version(&self) -> ::std::option::Option<i64> {
         self.compatible_namespace_version
@@ -35,36 +35,38 @@ impl UpdateFlowTemplateInput {
 }
 impl UpdateFlowTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_flow_template::builders::UpdateFlowTemplateInputBuilder {
+    pub fn builder() -> crate::operation::update_flow_template::builders::UpdateFlowTemplateInputBuilder {
         crate::operation::update_flow_template::builders::UpdateFlowTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
     pub(crate) compatible_namespace_version: ::std::option::Option<i64>,
 }
 impl UpdateFlowTemplateInputBuilder {
-    /// <p>The ID of the workflow to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the workflow to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the workflow to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the workflow to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the workflow to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
@@ -72,38 +74,41 @@ impl UpdateFlowTemplateInputBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
+        self.definition = input; self
     }
-    /// <p>The version of the user's namespace.</p>
+    /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        &self.definition
+    }
+    /// <p>The version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     pub fn compatible_namespace_version(mut self, input: i64) -> Self {
         self.compatible_namespace_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The version of the user's namespace.</p>
+    /// <p>The version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     pub fn set_compatible_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.compatible_namespace_version = input;
-        self
+        self.compatible_namespace_version = input; self
+    }
+    /// <p>The version of the user's namespace.</p> 
+    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
+    pub fn get_compatible_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.compatible_namespace_version
     }
     /// Consumes the builder and constructs a [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_flow_template::UpdateFlowTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_flow_template::UpdateFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_flow_template::UpdateFlowTemplateInput {
-                id: self.id,
-                definition: self.definition,
-                compatible_namespace_version: self.compatible_namespace_version,
-            },
+                id: self.id
+                ,
+                definition: self.definition
+                ,
+                compatible_namespace_version: self.compatible_namespace_version
+                ,
+            }
         )
     }
 }
+

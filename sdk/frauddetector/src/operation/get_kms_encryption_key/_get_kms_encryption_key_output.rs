@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKmsEncryptionKeyOutput {
+pub struct GetKmsEncryptionKeyOutput  {
     /// <p>The KMS encryption key.</p>
     #[doc(hidden)]
     pub kms_key: ::std::option::Option<crate::types::KmsKey>,
@@ -10,28 +10,25 @@ pub struct GetKmsEncryptionKeyOutput {
 }
 impl GetKmsEncryptionKeyOutput {
     /// <p>The KMS encryption key.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&crate::types::KmsKey> {
+    pub fn kms_key(&self) -> ::std::option::Option<& crate::types::KmsKey> {
         self.kms_key.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetKmsEncryptionKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetKmsEncryptionKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetKmsEncryptionKeyOutput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyOutputBuilder {
+    pub fn builder() -> crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyOutputBuilder {
         crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetKmsEncryptionKeyOutput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKmsEncryptionKeyOutputBuilder {
     pub(crate) kms_key: ::std::option::Option<crate::types::KmsKey>,
     _request_id: Option<String>,
@@ -44,23 +41,28 @@ impl GetKmsEncryptionKeyOutputBuilder {
     }
     /// <p>The KMS encryption key.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<crate::types::KmsKey>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
+    }
+    /// <p>The KMS encryption key.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<crate::types::KmsKey> {
+        &self.kms_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetKmsEncryptionKeyOutput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput).
     pub fn build(self) -> crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput {
         crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput {
-            kms_key: self.kms_key,
+            kms_key: self.kms_key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

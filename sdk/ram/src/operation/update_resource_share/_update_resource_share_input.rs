@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResourceShareInput {
+pub struct UpdateResourceShareInput  {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
     #[doc(hidden)]
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
@@ -12,46 +12,42 @@ pub struct UpdateResourceShareInput {
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
     #[doc(hidden)]
     pub allow_external_principals: ::std::option::Option<bool>,
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResourceShareInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
-    pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> ::std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>If specified, the new name that you want to attach to the resource share.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub fn allow_external_principals(&self) -> ::std::option::Option<bool> {
         self.allow_external_principals
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl UpdateResourceShareInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceShareInput`](crate::operation::update_resource_share::UpdateResourceShareInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder {
-        crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder {
+        crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceShareInput`](crate::operation::update_resource_share::UpdateResourceShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceShareInputBuilder {
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -60,20 +56,17 @@ pub struct UpdateResourceShareInputBuilder {
 }
 impl UpdateResourceShareInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_share_arn = input;
-        self
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_share_arn = input; self
+    }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_arn
     }
     /// <p>If specified, the new name that you want to attach to the resource share.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,8 +75,11 @@ impl UpdateResourceShareInputBuilder {
     }
     /// <p>If specified, the new name that you want to attach to the resource share.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>If specified, the new name that you want to attach to the resource share.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub fn allow_external_principals(mut self, input: bool) -> Self {
@@ -92,37 +88,45 @@ impl UpdateResourceShareInputBuilder {
     }
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub fn set_allow_external_principals(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_external_principals = input;
-        self
+        self.allow_external_principals = input; self
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
+    pub fn get_allow_external_principals(&self) -> &::std::option::Option<bool> {
+        &self.allow_external_principals
+    }
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateResourceShareInput`](crate::operation::update_resource_share::UpdateResourceShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource_share::UpdateResourceShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_resource_share::UpdateResourceShareInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_resource_share::UpdateResourceShareInput {
-                resource_share_arn: self.resource_share_arn,
-                name: self.name,
-                allow_external_principals: self.allow_external_principals,
-                client_token: self.client_token,
-            },
+                resource_share_arn: self.resource_share_arn
+                ,
+                name: self.name
+                ,
+                allow_external_principals: self.allow_external_principals
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

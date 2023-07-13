@@ -3,14 +3,14 @@
 /// Describes an account-specific API endpoint.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Endpoint {
+pub struct Endpoint  {
     /// URL of endpoint
     #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl Endpoint {
     /// URL of endpoint
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Endpoint {
 
 /// A builder for [`Endpoint`](crate::types::Endpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl EndpointBuilder {
     }
     /// URL of endpoint
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// URL of endpoint
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
-        crate::types::Endpoint { url: self.url }
+        crate::types::Endpoint {
+            url: self.url
+            ,
+        }
     }
 }
+

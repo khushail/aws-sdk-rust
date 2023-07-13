@@ -3,7 +3,7 @@
 /// <p>Returns information about an event for an approval rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApprovalRuleEventMetadata {
+pub struct ApprovalRuleEventMetadata  {
     /// <p>The name of the approval rule.</p>
     #[doc(hidden)]
     pub approval_rule_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ApprovalRuleEventMetadata {
 }
 impl ApprovalRuleEventMetadata {
     /// <p>The name of the approval rule.</p>
-    pub fn approval_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_name(&self) -> ::std::option::Option<& str> {
         self.approval_rule_name.as_deref()
     }
     /// <p>The system-generated ID of the approval rule.</p>
-    pub fn approval_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_id(&self) -> ::std::option::Option<& str> {
         self.approval_rule_id.as_deref()
     }
     /// <p>The content of the approval rule.</p>
-    pub fn approval_rule_content(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_content(&self) -> ::std::option::Option<& str> {
         self.approval_rule_content.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ApprovalRuleEventMetadata {
 
 /// A builder for [`ApprovalRuleEventMetadata`](crate::types::ApprovalRuleEventMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalRuleEventMetadataBuilder {
     pub(crate) approval_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) approval_rule_id: ::std::option::Option<::std::string::String>,
@@ -47,59 +45,54 @@ pub struct ApprovalRuleEventMetadataBuilder {
 }
 impl ApprovalRuleEventMetadataBuilder {
     /// <p>The name of the approval rule.</p>
-    pub fn approval_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the approval rule.</p>
-    pub fn set_approval_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.approval_rule_name = input;
-        self
+    pub fn set_approval_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.approval_rule_name = input; self
+    }
+    /// <p>The name of the approval rule.</p>
+    pub fn get_approval_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_name
     }
     /// <p>The system-generated ID of the approval rule.</p>
-    pub fn approval_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the approval rule.</p>
-    pub fn set_approval_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.approval_rule_id = input;
-        self
+    pub fn set_approval_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.approval_rule_id = input; self
+    }
+    /// <p>The system-generated ID of the approval rule.</p>
+    pub fn get_approval_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_id
     }
     /// <p>The content of the approval rule.</p>
-    pub fn approval_rule_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the approval rule.</p>
-    pub fn set_approval_rule_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.approval_rule_content = input;
-        self
+    pub fn set_approval_rule_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.approval_rule_content = input; self
+    }
+    /// <p>The content of the approval rule.</p>
+    pub fn get_approval_rule_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_content
     }
     /// Consumes the builder and constructs a [`ApprovalRuleEventMetadata`](crate::types::ApprovalRuleEventMetadata).
     pub fn build(self) -> crate::types::ApprovalRuleEventMetadata {
         crate::types::ApprovalRuleEventMetadata {
-            approval_rule_name: self.approval_rule_name,
-            approval_rule_id: self.approval_rule_id,
-            approval_rule_content: self.approval_rule_content,
+            approval_rule_name: self.approval_rule_name
+            ,
+            approval_rule_id: self.approval_rule_id
+            ,
+            approval_rule_content: self.approval_rule_content
+            ,
         }
     }
 }
+

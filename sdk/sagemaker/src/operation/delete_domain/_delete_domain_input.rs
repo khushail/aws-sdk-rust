@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDomainInput {
+pub struct DeleteDomainInput  {
     /// <p>The domain ID.</p>
     #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteDomainInput {
 }
 impl DeleteDomainInput {
     /// <p>The domain ID.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
-    pub fn retention_policy(&self) -> ::std::option::Option<&crate::types::RetentionPolicy> {
+    pub fn retention_policy(&self) -> ::std::option::Option<& crate::types::RetentionPolicy> {
         self.retention_policy.as_ref()
     }
 }
@@ -29,9 +29,7 @@ impl DeleteDomainInput {
 
 /// A builder for [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDomainInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) retention_policy: ::std::option::Option<crate::types::RetentionPolicy>,
@@ -44,8 +42,11 @@ impl DeleteDomainInputBuilder {
     }
     /// <p>The domain ID.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
+    }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
     }
     /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
     pub fn retention_policy(mut self, input: crate::types::RetentionPolicy) -> Self {
@@ -53,23 +54,23 @@ impl DeleteDomainInputBuilder {
         self
     }
     /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
-    pub fn set_retention_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPolicy>,
-    ) -> Self {
-        self.retention_policy = input;
-        self
+    pub fn set_retention_policy(mut self, input: ::std::option::Option<crate::types::RetentionPolicy>) -> Self {
+        self.retention_policy = input; self
+    }
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
+    pub fn get_retention_policy(&self) -> &::std::option::Option<crate::types::RetentionPolicy> {
+        &self.retention_policy
     }
     /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_domain::DeleteDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_domain::DeleteDomainInput {
-            domain_id: self.domain_id,
-            retention_policy: self.retention_policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_domain::DeleteDomainInput {
+                domain_id: self.domain_id
+                ,
+                retention_policy: self.retention_policy
+                ,
+            }
+        )
     }
 }
+

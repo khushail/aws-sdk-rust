@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeviceFleetInput {
+pub struct DeleteDeviceFleetInput  {
     /// <p>The name of the fleet to delete.</p>
     #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeviceFleetInput {
     /// <p>The name of the fleet to delete.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
 }
 impl DeleteDeviceFleetInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeviceFleetInput`](crate::operation::delete_device_fleet::DeleteDeviceFleetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_device_fleet::builders::DeleteDeviceFleetInputBuilder {
+    pub fn builder() -> crate::operation::delete_device_fleet::builders::DeleteDeviceFleetInputBuilder {
         crate::operation::delete_device_fleet::builders::DeleteDeviceFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeviceFleetInput`](crate::operation::delete_device_fleet::DeleteDeviceFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeviceFleetInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeviceFleetInputBuilder {
     /// <p>The name of the fleet to delete.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet to delete.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.device_fleet_name = input;
-        self
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.device_fleet_name = input; self
+    }
+    /// <p>The name of the fleet to delete.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
     }
     /// Consumes the builder and constructs a [`DeleteDeviceFleetInput`](crate::operation::delete_device_fleet::DeleteDeviceFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_device_fleet::DeleteDeviceFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_device_fleet::DeleteDeviceFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_device_fleet::DeleteDeviceFleetInput {
-                device_fleet_name: self.device_fleet_name,
-            },
+                device_fleet_name: self.device_fleet_name
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendQuota {
+pub struct SendQuota  {
     /// <p>The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
     #[doc(hidden)]
     pub max24_hour_send: f64,
@@ -37,9 +37,7 @@ impl SendQuota {
 
 /// A builder for [`SendQuota`](crate::types::SendQuota).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendQuotaBuilder {
     pub(crate) max24_hour_send: ::std::option::Option<f64>,
     pub(crate) max_send_rate: ::std::option::Option<f64>,
@@ -53,8 +51,11 @@ impl SendQuotaBuilder {
     }
     /// <p>The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
     pub fn set_max24_hour_send(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max24_hour_send = input;
-        self
+        self.max24_hour_send = input; self
+    }
+    /// <p>The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
+    pub fn get_max24_hour_send(&self) -> &::std::option::Option<f64> {
+        &self.max24_hour_send
     }
     /// <p>The maximum number of emails that you can send per second in the current AWS Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
     pub fn max_send_rate(mut self, input: f64) -> Self {
@@ -63,8 +64,11 @@ impl SendQuotaBuilder {
     }
     /// <p>The maximum number of emails that you can send per second in the current AWS Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
     pub fn set_max_send_rate(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_send_rate = input;
-        self
+        self.max_send_rate = input; self
+    }
+    /// <p>The maximum number of emails that you can send per second in the current AWS Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
+    pub fn get_max_send_rate(&self) -> &::std::option::Option<f64> {
+        &self.max_send_rate
     }
     /// <p>The number of emails sent from your Amazon Pinpoint account in the current AWS Region over the past 24 hours.</p>
     pub fn sent_last24_hours(mut self, input: f64) -> Self {
@@ -73,15 +77,25 @@ impl SendQuotaBuilder {
     }
     /// <p>The number of emails sent from your Amazon Pinpoint account in the current AWS Region over the past 24 hours.</p>
     pub fn set_sent_last24_hours(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sent_last24_hours = input;
-        self
+        self.sent_last24_hours = input; self
+    }
+    /// <p>The number of emails sent from your Amazon Pinpoint account in the current AWS Region over the past 24 hours.</p>
+    pub fn get_sent_last24_hours(&self) -> &::std::option::Option<f64> {
+        &self.sent_last24_hours
     }
     /// Consumes the builder and constructs a [`SendQuota`](crate::types::SendQuota).
     pub fn build(self) -> crate::types::SendQuota {
         crate::types::SendQuota {
-            max24_hour_send: self.max24_hour_send.unwrap_or_default(),
-            max_send_rate: self.max_send_rate.unwrap_or_default(),
-            sent_last24_hours: self.sent_last24_hours.unwrap_or_default(),
+            max24_hour_send: self.max24_hour_send
+                .unwrap_or_default()
+            ,
+            max_send_rate: self.max_send_rate
+                .unwrap_or_default()
+            ,
+            sent_last24_hours: self.sent_last24_hours
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

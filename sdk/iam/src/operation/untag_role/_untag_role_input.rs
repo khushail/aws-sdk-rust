@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagRoleInput {
-    /// <p>The name of the IAM role from which you want to remove tags.</p>
+pub struct UntagRoleInput  {
+    /// <p>The name of the IAM role from which you want to remove tags.</p> 
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
@@ -12,13 +12,13 @@ pub struct UntagRoleInput {
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagRoleInput {
-    /// <p>The name of the IAM role from which you want to remove tags.</p>
+    /// <p>The name of the IAM role from which you want to remove tags.</p> 
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified role.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn tag_keys(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -31,25 +31,27 @@ impl UntagRoleInput {
 
 /// A builder for [`UntagRoleInput`](crate::operation::untag_role::UntagRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagRoleInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagRoleInputBuilder {
-    /// <p>The name of the IAM role from which you want to remove tags.</p>
+    /// <p>The name of the IAM role from which you want to remove tags.</p> 
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the IAM role from which you want to remove tags.</p>
+    /// <p>The name of the IAM role from which you want to remove tags.</p> 
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
+    }
+    /// <p>The name of the IAM role from which you want to remove tags.</p> 
+    /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -58,28 +60,28 @@ impl UntagRoleInputBuilder {
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified role.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified role.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified role.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagRoleInput`](crate::operation::untag_role::UntagRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_role::UntagRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::untag_role::UntagRoleInput {
-            role_name: self.role_name,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_role::UntagRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::untag_role::UntagRoleInput {
+                role_name: self.role_name
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

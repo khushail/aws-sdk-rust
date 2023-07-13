@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloseInstancePublicPortsInput {
+pub struct CloseInstancePublicPortsInput  {
     /// <p>An object to describe the ports to close for the specified instance.</p>
     #[doc(hidden)]
     pub port_info: ::std::option::Option<crate::types::PortInfo>,
@@ -12,28 +12,24 @@ pub struct CloseInstancePublicPortsInput {
 }
 impl CloseInstancePublicPortsInput {
     /// <p>An object to describe the ports to close for the specified instance.</p>
-    pub fn port_info(&self) -> ::std::option::Option<&crate::types::PortInfo> {
+    pub fn port_info(&self) -> ::std::option::Option<& crate::types::PortInfo> {
         self.port_info.as_ref()
     }
     /// <p>The name of the instance for which to close ports.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
 }
 impl CloseInstancePublicPortsInput {
     /// Creates a new builder-style object to manufacture [`CloseInstancePublicPortsInput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput).
-    pub fn builder(
-    ) -> crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsInputBuilder
-    {
+    pub fn builder() -> crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsInputBuilder {
         crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsInputBuilder::default()
     }
 }
 
 /// A builder for [`CloseInstancePublicPortsInput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloseInstancePublicPortsInputBuilder {
     pub(crate) port_info: ::std::option::Option<crate::types::PortInfo>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl CloseInstancePublicPortsInputBuilder {
     }
     /// <p>An object to describe the ports to close for the specified instance.</p>
     pub fn set_port_info(mut self, input: ::std::option::Option<crate::types::PortInfo>) -> Self {
-        self.port_info = input;
-        self
+        self.port_info = input; self
+    }
+    /// <p>An object to describe the ports to close for the specified instance.</p>
+    pub fn get_port_info(&self) -> &::std::option::Option<crate::types::PortInfo> {
+        &self.port_info
     }
     /// <p>The name of the instance for which to close ports.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance for which to close ports.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.instance_name = input;
-        self
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_name = input; self
+    }
+    /// <p>The name of the instance for which to close ports.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
     }
     /// Consumes the builder and constructs a [`CloseInstancePublicPortsInput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput {
-                port_info: self.port_info,
-                instance_name: self.instance_name,
-            },
+                port_info: self.port_info
+                ,
+                instance_name: self.instance_name
+                ,
+            }
         )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApiInput {
+pub struct GetApiInput  {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApiInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetApiInput {
 
 /// A builder for [`GetApiInput`](crate::operation::get_api::GetApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetApiInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
+    }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// Consumes the builder and constructs a [`GetApiInput`](crate::operation::get_api::GetApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_api::GetApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_api::GetApiInput {
-            api_id: self.api_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_api::GetApiInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_api::GetApiInput {
+                api_id: self.api_id
+                ,
+            }
+        )
     }
 }
+

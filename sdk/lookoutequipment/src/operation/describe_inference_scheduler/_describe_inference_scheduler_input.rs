@@ -2,60 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInferenceSchedulerInput {
+pub struct DescribeInferenceSchedulerInput  {
     /// <p>The name of the inference scheduler being described. </p>
     #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInferenceSchedulerInput {
     /// <p>The name of the inference scheduler being described. </p>
-    pub fn inference_scheduler_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
 }
 impl DescribeInferenceSchedulerInput {
     /// Creates a new builder-style object to manufacture [`DescribeInferenceSchedulerInput`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput).
-    pub fn builder() -> crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder{
+    pub fn builder() -> crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder {
         crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInferenceSchedulerInput`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInferenceSchedulerInputBuilder {
     pub(crate) inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInferenceSchedulerInputBuilder {
     /// <p>The name of the inference scheduler being described. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler being described. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inference_scheduler_name = input;
-        self
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inference_scheduler_name = input; self
+    }
+    /// <p>The name of the inference scheduler being described. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
     }
     /// Consumes the builder and constructs a [`DescribeInferenceSchedulerInput`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput {
-                inference_scheduler_name: self.inference_scheduler_name,
-            },
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+            }
         )
     }
 }
+

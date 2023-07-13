@@ -2,32 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPipelineBlueprintsInput {}
+pub struct ListPipelineBlueprintsInput  {
+}
 impl ListPipelineBlueprintsInput {
     /// Creates a new builder-style object to manufacture [`ListPipelineBlueprintsInput`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsInput).
-    pub fn builder(
-    ) -> crate::operation::list_pipeline_blueprints::builders::ListPipelineBlueprintsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pipeline_blueprints::builders::ListPipelineBlueprintsInputBuilder {
         crate::operation::list_pipeline_blueprints::builders::ListPipelineBlueprintsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineBlueprintsInput`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct ListPipelineBlueprintsInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct ListPipelineBlueprintsInputBuilder {
+}
 impl ListPipelineBlueprintsInputBuilder {
     /// Consumes the builder and constructs a [`ListPipelineBlueprintsInput`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsInput {},
+            crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsInput {
+            }
         )
     }
 }
+

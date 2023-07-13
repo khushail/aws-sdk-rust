@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnsubscribeOutput {
+pub struct UnsubscribeOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UnsubscribeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UnsubscribeOutput {
     /// Creates a new builder-style object to manufacture [`UnsubscribeOutput`](crate::operation::unsubscribe::UnsubscribeOutput).
     pub fn builder() -> crate::operation::unsubscribe::builders::UnsubscribeOutputBuilder {
@@ -19,22 +19,20 @@ impl UnsubscribeOutput {
 
 /// A builder for [`UnsubscribeOutput`](crate::operation::unsubscribe::UnsubscribeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsubscribeOutputBuilder {
     _request_id: Option<String>,
 }
 impl UnsubscribeOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UnsubscribeOutput`](crate::operation::unsubscribe::UnsubscribeOutput).
     pub fn build(self) -> crate::operation::unsubscribe::UnsubscribeOutput {
         crate::operation::unsubscribe::UnsubscribeOutput {
@@ -42,3 +40,4 @@ impl UnsubscribeOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details of an Amazon Chime SDK Voice Connector call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CallDetails {
+pub struct CallDetails  {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct CallDetails {
 }
 impl CallDetails {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The transaction ID of a Voice Connector call.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>Identifies a person as the caller or the callee.</p>
@@ -37,9 +37,7 @@ impl CallDetails {
 
 /// A builder for [`CallDetails`](crate::types::CallDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CallDetailsBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
@@ -47,36 +45,30 @@ pub struct CallDetailsBuilder {
 }
 impl CallDetailsBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voice_connector_id = input; self
+    }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
     }
     /// <p>The transaction ID of a Voice Connector call.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID of a Voice Connector call.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transaction_id = input;
-        self
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transaction_id = input; self
+    }
+    /// <p>The transaction ID of a Voice Connector call.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// <p>Identifies a person as the caller or the callee.</p>
     pub fn is_caller(mut self, input: bool) -> Self {
@@ -85,15 +77,22 @@ impl CallDetailsBuilder {
     }
     /// <p>Identifies a person as the caller or the callee.</p>
     pub fn set_is_caller(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_caller = input;
-        self
+        self.is_caller = input; self
+    }
+    /// <p>Identifies a person as the caller or the callee.</p>
+    pub fn get_is_caller(&self) -> &::std::option::Option<bool> {
+        &self.is_caller
     }
     /// Consumes the builder and constructs a [`CallDetails`](crate::types::CallDetails).
     pub fn build(self) -> crate::types::CallDetails {
         crate::types::CallDetails {
-            voice_connector_id: self.voice_connector_id,
-            transaction_id: self.transaction_id,
-            is_caller: self.is_caller,
+            voice_connector_id: self.voice_connector_id
+            ,
+            transaction_id: self.transaction_id
+            ,
+            is_caller: self.is_caller
+            ,
         }
     }
 }
+

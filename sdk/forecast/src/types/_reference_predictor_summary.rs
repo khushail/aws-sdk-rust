@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the reference predictor used when retraining or upgrading a predictor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferencePredictorSummary {
+pub struct ReferencePredictorSummary  {
     /// <p>The ARN of the reference predictor.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReferencePredictorSummary {
 }
 impl ReferencePredictorSummary {
     /// <p>The ARN of the reference predictor.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl ReferencePredictorSummary {
 
 /// A builder for [`ReferencePredictorSummary`](crate::types::ReferencePredictorSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferencePredictorSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::State>,
@@ -45,8 +43,11 @@ impl ReferencePredictorSummaryBuilder {
     }
     /// <p>The ARN of the reference predictor.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of the reference predictor.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
@@ -55,14 +56,20 @@ impl ReferencePredictorSummaryBuilder {
     }
     /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ReferencePredictorSummary`](crate::types::ReferencePredictorSummary).
     pub fn build(self) -> crate::types::ReferencePredictorSummary {
         crate::types::ReferencePredictorSummary {
-            arn: self.arn,
-            state: self.state,
+            arn: self.arn
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

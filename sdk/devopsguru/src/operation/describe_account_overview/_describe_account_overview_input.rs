@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountOverviewInput {
+pub struct DescribeAccountOverviewInput  {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     #[doc(hidden)]
     pub from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -12,28 +12,24 @@ pub struct DescribeAccountOverviewInput {
 }
 impl DescribeAccountOverviewInput {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    pub fn from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn from_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
-    pub fn to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn to_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
 }
 impl DescribeAccountOverviewInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountOverviewInput`](crate::operation::describe_account_overview::DescribeAccountOverviewInput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder {
         crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountOverviewInput`](crate::operation::describe_account_overview::DescribeAccountOverviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountOverviewInputBuilder {
     pub(crate) from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,12 +41,12 @@ impl DescribeAccountOverviewInputBuilder {
         self
     }
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    pub fn set_from_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.from_time = input;
-        self
+    pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.from_time = input; self
+    }
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from_time
     }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -58,25 +54,23 @@ impl DescribeAccountOverviewInputBuilder {
         self
     }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
-    pub fn set_to_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.to_time = input;
-        self
+    pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.to_time = input; self
+    }
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+    pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.to_time
     }
     /// Consumes the builder and constructs a [`DescribeAccountOverviewInput`](crate::operation::describe_account_overview::DescribeAccountOverviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_account_overview::DescribeAccountOverviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_account_overview::DescribeAccountOverviewInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_account_overview::DescribeAccountOverviewInput {
-                from_time: self.from_time,
-                to_time: self.to_time,
-            },
+                from_time: self.from_time
+                ,
+                to_time: self.to_time
+                ,
+            }
         )
     }
 }
+

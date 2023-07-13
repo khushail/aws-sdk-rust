@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListQuickConnectsInput {
+pub struct ListQuickConnectsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListQuickConnectsInput {
 }
 impl ListQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
@@ -30,29 +30,25 @@ impl ListQuickConnectsInput {
         self.max_results
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn quick_connect_types(&self) -> ::std::option::Option<&[crate::types::QuickConnectType]> {
+    pub fn quick_connect_types(&self) -> ::std::option::Option<& [crate::types::QuickConnectType]> {
         self.quick_connect_types.as_deref()
     }
 }
 impl ListQuickConnectsInput {
     /// Creates a new builder-style object to manufacture [`ListQuickConnectsInput`](crate::operation::list_quick_connects::ListQuickConnectsInput).
-    pub fn builder(
-    ) -> crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuilder {
+    pub fn builder() -> crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuilder {
         crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListQuickConnectsInput`](crate::operation::list_quick_connects::ListQuickConnectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQuickConnectsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) quick_connect_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>,
+    pub(crate) quick_connect_types: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>,
 }
 impl ListQuickConnectsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -62,8 +58,11 @@ impl ListQuickConnectsInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +71,11 @@ impl ListQuickConnectsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -82,8 +84,11 @@ impl ListQuickConnectsInputBuilder {
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `quick_connect_types`.
     ///
@@ -92,32 +97,32 @@ impl ListQuickConnectsInputBuilder {
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn quick_connect_types(mut self, input: crate::types::QuickConnectType) -> Self {
         let mut v = self.quick_connect_types.unwrap_or_default();
-        v.push(input);
-        self.quick_connect_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.quick_connect_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn set_quick_connect_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>,
-    ) -> Self {
-        self.quick_connect_types = input;
-        self
+    pub fn set_quick_connect_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>) -> Self {
+        self.quick_connect_types = input; self
+    }
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    pub fn get_quick_connect_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>> {
+        &self.quick_connect_types
     }
     /// Consumes the builder and constructs a [`ListQuickConnectsInput`](crate::operation::list_quick_connects::ListQuickConnectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_quick_connects::ListQuickConnectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_quick_connects::ListQuickConnectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_quick_connects::ListQuickConnectsInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                quick_connect_types: self.quick_connect_types,
-            },
+                instance_id: self.instance_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                quick_connect_types: self.quick_connect_types
+                ,
+            }
         )
     }
 }
+

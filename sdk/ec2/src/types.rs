@@ -1597,6 +1597,10 @@ pub use crate::types::_reservation::Reservation;
 
 pub use crate::types::_instance_credit_specification::InstanceCreditSpecification;
 
+pub use crate::types::_ec2_instance_connect_endpoint::Ec2InstanceConnectEndpoint;
+
+pub use crate::types::_ec2_instance_connect_endpoint_state::Ec2InstanceConnectEndpointState;
+
 pub use crate::types::_import_snapshot_task::ImportSnapshotTask;
 
 pub use crate::types::_import_image_task::ImportImageTask;
@@ -2472,6 +2476,10 @@ mod _ebs_nvme_support;
 mod _ebs_optimized_info;
 
 mod _ebs_optimized_support;
+
+mod _ec2_instance_connect_endpoint;
+
+mod _ec2_instance_connect_endpoint_state;
 
 mod _efa_info;
 
@@ -4041,3 +4049,4 @@ mod _week_day;
 
 /// Builders
 pub mod builders;
+

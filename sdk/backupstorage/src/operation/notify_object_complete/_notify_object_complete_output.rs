@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyObjectCompleteOutput {
+pub struct NotifyObjectCompleteOutput  {
     /// Object checksum
     #[doc(hidden)]
     pub object_checksum: ::std::option::Option<::std::string::String>,
@@ -13,88 +13,79 @@ pub struct NotifyObjectCompleteOutput {
 }
 impl NotifyObjectCompleteOutput {
     /// Object checksum
-    pub fn object_checksum(&self) -> ::std::option::Option<&str> {
+    pub fn object_checksum(&self) -> ::std::option::Option<& str> {
         self.object_checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
+    pub fn object_checksum_algorithm(&self) -> ::std::option::Option<& crate::types::SummaryChecksumAlgorithm> {
         self.object_checksum_algorithm.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for NotifyObjectCompleteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl NotifyObjectCompleteOutput {
     /// Creates a new builder-style object to manufacture [`NotifyObjectCompleteOutput`](crate::operation::notify_object_complete::NotifyObjectCompleteOutput).
-    pub fn builder(
-    ) -> crate::operation::notify_object_complete::builders::NotifyObjectCompleteOutputBuilder {
+    pub fn builder() -> crate::operation::notify_object_complete::builders::NotifyObjectCompleteOutputBuilder {
         crate::operation::notify_object_complete::builders::NotifyObjectCompleteOutputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyObjectCompleteOutput`](crate::operation::notify_object_complete::NotifyObjectCompleteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyObjectCompleteOutputBuilder {
     pub(crate) object_checksum: ::std::option::Option<::std::string::String>,
-    pub(crate) object_checksum_algorithm:
-        ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
+    pub(crate) object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     _request_id: Option<String>,
 }
 impl NotifyObjectCompleteOutputBuilder {
     /// Object checksum
-    pub fn object_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// Object checksum
-    pub fn set_object_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.object_checksum = input;
-        self
+    pub fn set_object_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.object_checksum = input; self
+    }
+    /// Object checksum
+    pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_checksum
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(
-        mut self,
-        input: crate::types::SummaryChecksumAlgorithm,
-    ) -> Self {
+    pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
         self.object_checksum_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Checksum algorithm
-    pub fn set_object_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
-    ) -> Self {
-        self.object_checksum_algorithm = input;
-        self
+    pub fn set_object_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>) -> Self {
+        self.object_checksum_algorithm = input; self
+    }
+    /// Checksum algorithm
+    pub fn get_object_checksum_algorithm(&self) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+        &self.object_checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`NotifyObjectCompleteOutput`](crate::operation::notify_object_complete::NotifyObjectCompleteOutput).
     pub fn build(self) -> crate::operation::notify_object_complete::NotifyObjectCompleteOutput {
         crate::operation::notify_object_complete::NotifyObjectCompleteOutput {
-            object_checksum: self.object_checksum,
-            object_checksum_algorithm: self.object_checksum_algorithm,
+            object_checksum: self.object_checksum
+            ,
+            object_checksum_algorithm: self.object_checksum_algorithm
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

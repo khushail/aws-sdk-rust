@@ -3,7 +3,7 @@
 /// <p>The file in Amazon S3 where your data is saved. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct File {
+pub struct File  {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
     #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct File {
 }
 impl File {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl File {
 
 /// A builder for [`File`](crate::types::File).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl FileBuilder {
     }
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
+    }
+    /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl FileBuilder {
     }
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl FileBuilder {
     }
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
+    }
+    /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`File`](crate::types::File).
     pub fn build(self) -> crate::types::File {
         crate::types::File {
-            bucket: self.bucket,
-            key: self.key,
-            version_id: self.version_id,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
+            version_id: self.version_id
+            ,
         }
     }
 }
+

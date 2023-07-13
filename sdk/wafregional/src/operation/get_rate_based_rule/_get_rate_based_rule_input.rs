@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRateBasedRuleInput {
+pub struct GetRateBasedRuleInput  {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
 }
 impl GetRateBasedRuleInput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedRuleInput`](crate::operation::get_rate_based_rule::GetRateBasedRuleInput).
-    pub fn builder() -> crate::operation::get_rate_based_rule::builders::GetRateBasedRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_rate_based_rule::builders::GetRateBasedRuleInputBuilder {
         crate::operation::get_rate_based_rule::builders::GetRateBasedRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRateBasedRuleInput`](crate::operation::get_rate_based_rule::GetRateBasedRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl GetRateBasedRuleInputBuilder {
     }
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
+    }
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// Consumes the builder and constructs a [`GetRateBasedRuleInput`](crate::operation::get_rate_based_rule::GetRateBasedRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rate_based_rule::GetRateBasedRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rate_based_rule::GetRateBasedRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_rate_based_rule::GetRateBasedRuleInput {
-                rule_id: self.rule_id,
-            },
+                rule_id: self.rule_id
+                ,
+            }
         )
     }
 }
+

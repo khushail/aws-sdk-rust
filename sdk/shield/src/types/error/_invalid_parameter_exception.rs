@@ -3,7 +3,7 @@
 /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidParameterException {
+pub struct InvalidParameterException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -17,25 +17,23 @@ pub struct InvalidParameterException {
 }
 impl InvalidParameterException {
     /// <p>Additional information about the exception.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::ValidationExceptionReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::ValidationExceptionReason> {
         self.reason.as_ref()
     }
     /// <p>Fields that caused the exception.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionField]> {
+    pub fn fields(&self) -> ::std::option::Option<& [crate::types::ValidationExceptionField]> {
         self.fields.as_deref()
     }
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidParameterException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -50,9 +48,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::InvalidParameter
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::types::error::InvalidParameterException).
@@ -63,14 +59,11 @@ impl InvalidParameterException {
 
 /// A builder for [`InvalidParameterException`](crate::types::error::InvalidParameterException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidParameterExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
-    pub(crate) fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidParameterExceptionBuilder {
@@ -81,8 +74,11 @@ impl InvalidParameterExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>Additional information about the exception.</p>
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
@@ -90,12 +86,12 @@ impl InvalidParameterExceptionBuilder {
         self
     }
     /// <p>Additional information about the exception.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationExceptionReason>,
-    ) -> Self {
-        self.reason = input;
-        self
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ValidationExceptionReason>) -> Self {
+        self.reason = input; self
+    }
+    /// <p>Additional information about the exception.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ValidationExceptionReason> {
+        &self.reason
     }
     /// Appends an item to `fields`.
     ///
@@ -104,39 +100,40 @@ impl InvalidParameterExceptionBuilder {
     /// <p>Fields that caused the exception.</p>
     pub fn fields(mut self, input: crate::types::ValidationExceptionField) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Fields that caused the exception.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
-    ) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>) -> Self {
+        self.fields = input; self
+    }
+    /// <p>Fields that caused the exception.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+        &self.fields
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidParameterException`](crate::types::error::InvalidParameterException).
     pub fn build(self) -> crate::types::error::InvalidParameterException {
         crate::types::error::InvalidParameterException {
-            message: self.message,
-            reason: self.reason,
-            fields: self.fields,
+            message: self.message
+            ,
+            reason: self.reason
+            ,
+            fields: self.fields
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

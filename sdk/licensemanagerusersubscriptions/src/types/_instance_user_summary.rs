@@ -3,7 +3,7 @@
 /// <p>Describes users of an EC2 instance providing user-based subscriptions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceUserSummary {
+pub struct InstanceUserSummary  {
     /// <p>The user name from the identity provider for the user.</p>
     #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
@@ -31,35 +31,35 @@ pub struct InstanceUserSummary {
 }
 impl InstanceUserSummary {
     /// <p>The user name from the identity provider for the user.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<& crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The status of a user associated with an EC2 instance.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The status message for users of an EC2 instance.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
-    pub fn association_date(&self) -> ::std::option::Option<&str> {
+    pub fn association_date(&self) -> ::std::option::Option<& str> {
         self.association_date.as_deref()
     }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
-    pub fn disassociation_date(&self) -> ::std::option::Option<&str> {
+    pub fn disassociation_date(&self) -> ::std::option::Option<& str> {
         self.disassociation_date.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl InstanceUserSummary {
 
 /// A builder for [`InstanceUserSummary`](crate::types::InstanceUserSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceUserSummaryBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -93,8 +91,11 @@ impl InstanceUserSummaryBuilder {
     }
     /// <p>The user name from the identity provider for the user.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// <p>The user name from the identity provider for the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +104,11 @@ impl InstanceUserSummaryBuilder {
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
@@ -112,12 +116,12 @@ impl InstanceUserSummaryBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
-        self.identity_provider = input;
-        self
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
+        self.identity_provider = input; self
+    }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
     }
     /// <p>The status of a user associated with an EC2 instance.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,24 +130,24 @@ impl InstanceUserSummaryBuilder {
     }
     /// <p>The status of a user associated with an EC2 instance.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of a user associated with an EC2 instance.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The status message for users of an EC2 instance.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for users of an EC2 instance.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>The status message for users of an EC2 instance.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>The domain name of the user.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,52 +156,58 @@ impl InstanceUserSummaryBuilder {
     }
     /// <p>The domain name of the user.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The domain name of the user.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
-    pub fn association_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
-    pub fn set_association_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.association_date = input;
-        self
+    pub fn set_association_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.association_date = input; self
+    }
+    /// <p>The date a user was associated with an EC2 instance.</p>
+    pub fn get_association_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_date
     }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
-    pub fn disassociation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disassociation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disassociation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
-    pub fn set_disassociation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.disassociation_date = input;
-        self
+    pub fn set_disassociation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.disassociation_date = input; self
+    }
+    /// <p>The date a user was disassociated from an EC2 instance.</p>
+    pub fn get_disassociation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disassociation_date
     }
     /// Consumes the builder and constructs a [`InstanceUserSummary`](crate::types::InstanceUserSummary).
     pub fn build(self) -> crate::types::InstanceUserSummary {
         crate::types::InstanceUserSummary {
-            username: self.username,
-            instance_id: self.instance_id,
-            identity_provider: self.identity_provider,
-            status: self.status,
-            status_message: self.status_message,
-            domain: self.domain,
-            association_date: self.association_date,
-            disassociation_date: self.disassociation_date,
+            username: self.username
+            ,
+            instance_id: self.instance_id
+            ,
+            identity_provider: self.identity_provider
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            domain: self.domain
+            ,
+            association_date: self.association_date
+            ,
+            disassociation_date: self.disassociation_date
+            ,
         }
     }
 }
+

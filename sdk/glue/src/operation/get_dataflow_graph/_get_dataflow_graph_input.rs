@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataflowGraphInput {
+pub struct GetDataflowGraphInput  {
     /// <p>The Python script to transform.</p>
     #[doc(hidden)]
     pub python_script: ::std::option::Option<::std::string::String>,
 }
 impl GetDataflowGraphInput {
     /// <p>The Python script to transform.</p>
-    pub fn python_script(&self) -> ::std::option::Option<&str> {
+    pub fn python_script(&self) -> ::std::option::Option<& str> {
         self.python_script.as_deref()
     }
 }
 impl GetDataflowGraphInput {
     /// Creates a new builder-style object to manufacture [`GetDataflowGraphInput`](crate::operation::get_dataflow_graph::GetDataflowGraphInput).
-    pub fn builder() -> crate::operation::get_dataflow_graph::builders::GetDataflowGraphInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_dataflow_graph::builders::GetDataflowGraphInputBuilder {
         crate::operation::get_dataflow_graph::builders::GetDataflowGraphInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataflowGraphInput`](crate::operation::get_dataflow_graph::GetDataflowGraphInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataflowGraphInputBuilder {
     pub(crate) python_script: ::std::option::Option<::std::string::String>,
 }
 impl GetDataflowGraphInputBuilder {
     /// <p>The Python script to transform.</p>
-    pub fn python_script(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn python_script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.python_script = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Python script to transform.</p>
-    pub fn set_python_script(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.python_script = input;
-        self
+    pub fn set_python_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.python_script = input; self
+    }
+    /// <p>The Python script to transform.</p>
+    pub fn get_python_script(&self) -> &::std::option::Option<::std::string::String> {
+        &self.python_script
     }
     /// Consumes the builder and constructs a [`GetDataflowGraphInput`](crate::operation::get_dataflow_graph::GetDataflowGraphInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dataflow_graph::GetDataflowGraphInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dataflow_graph::GetDataflowGraphInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_dataflow_graph::GetDataflowGraphInput {
-                python_script: self.python_script,
-            },
+                python_script: self.python_script
+                ,
+            }
         )
     }
 }
+

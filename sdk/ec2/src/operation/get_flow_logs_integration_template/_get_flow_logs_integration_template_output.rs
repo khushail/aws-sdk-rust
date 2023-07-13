@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFlowLogsIntegrationTemplateOutput {
+pub struct GetFlowLogsIntegrationTemplateOutput  {
     /// <p>The generated CloudFormation template.</p>
     #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
@@ -10,27 +10,25 @@ pub struct GetFlowLogsIntegrationTemplateOutput {
 }
 impl GetFlowLogsIntegrationTemplateOutput {
     /// <p>The generated CloudFormation template.</p>
-    pub fn result(&self) -> ::std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<& str> {
         self.result.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetFlowLogsIntegrationTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetFlowLogsIntegrationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetFlowLogsIntegrationTemplateOutput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput).
-    pub fn builder() -> crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateOutputBuilder {
         crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFlowLogsIntegrationTemplateOutput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFlowLogsIntegrationTemplateOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -43,26 +41,28 @@ impl GetFlowLogsIntegrationTemplateOutputBuilder {
     }
     /// <p>The generated CloudFormation template.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
+    }
+    /// <p>The generated CloudFormation template.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetFlowLogsIntegrationTemplateOutput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput
-    {
+    pub fn build(self) -> crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput {
         crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput {
-            result: self.result,
+            result: self.result
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

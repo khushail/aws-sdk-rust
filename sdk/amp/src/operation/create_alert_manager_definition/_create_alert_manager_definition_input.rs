@@ -3,7 +3,7 @@
 /// Represents the input of a CreateAlertManagerDefinition operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAlertManagerDefinitionInput {
+pub struct CreateAlertManagerDefinitionInput  {
     /// The ID of the workspace in which to create the alert manager definition.
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
@@ -16,30 +16,28 @@ pub struct CreateAlertManagerDefinitionInput {
 }
 impl CreateAlertManagerDefinitionInput {
     /// The ID of the workspace in which to create the alert manager definition.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// The alert manager definition data.
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl CreateAlertManagerDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateAlertManagerDefinitionInput`](crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput).
-    pub fn builder() -> crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionInputBuilder {
         crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAlertManagerDefinitionInput`](crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAlertManagerDefinitionInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -53,8 +51,11 @@ impl CreateAlertManagerDefinitionInputBuilder {
     }
     /// The ID of the workspace in which to create the alert manager definition.
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
+    }
+    /// The ID of the workspace in which to create the alert manager definition.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// The alert manager definition data.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -63,8 +64,11 @@ impl CreateAlertManagerDefinitionInputBuilder {
     }
     /// The alert manager definition data.
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
+    }
+    /// The alert manager definition data.
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.data
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,22 +77,24 @@ impl CreateAlertManagerDefinitionInputBuilder {
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAlertManagerDefinitionInput`](crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput {
-                workspace_id: self.workspace_id,
-                data: self.data,
-                client_token: self.client_token,
-            },
+                workspace_id: self.workspace_id
+                ,
+                data: self.data
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

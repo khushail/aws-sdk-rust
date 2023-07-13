@@ -3,7 +3,7 @@
 /// <p>An genome reference source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportReferenceSourceItem {
+pub struct ImportReferenceSourceItem  {
     /// <p>The source file's location in Amazon S3.</p>
     #[doc(hidden)]
     pub source_file: ::std::option::Option<::std::string::String>,
@@ -21,37 +21,31 @@ pub struct ImportReferenceSourceItem {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The source's tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImportReferenceSourceItem {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source_file(&self) -> ::std::option::Option<&str> {
+    pub fn source_file(&self) -> ::std::option::Option<& str> {
         self.source_file.as_deref()
     }
     /// <p>The source's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceImportJobItemStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReferenceImportJobItemStatus> {
         self.status.as_ref()
     }
     /// <p>The source's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The source's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The source's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The source's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -64,18 +58,14 @@ impl ImportReferenceSourceItem {
 
 /// A builder for [`ImportReferenceSourceItem`](crate::types::ImportReferenceSourceItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportReferenceSourceItemBuilder {
     pub(crate) source_file: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ReferenceImportJobItemStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImportReferenceSourceItemBuilder {
     /// <p>The source file's location in Amazon S3.</p>
@@ -85,8 +75,11 @@ impl ImportReferenceSourceItemBuilder {
     }
     /// <p>The source file's location in Amazon S3.</p>
     pub fn set_source_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_file = input;
-        self
+        self.source_file = input; self
+    }
+    /// <p>The source file's location in Amazon S3.</p>
+    pub fn get_source_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file
     }
     /// <p>The source's status.</p>
     pub fn status(mut self, input: crate::types::ReferenceImportJobItemStatus) -> Self {
@@ -94,28 +87,25 @@ impl ImportReferenceSourceItemBuilder {
         self
     }
     /// <p>The source's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceImportJobItemStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceImportJobItemStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The source's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceImportJobItemStatus> {
+        &self.status
     }
     /// <p>The source's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>The source's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>The source's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,8 +114,11 @@ impl ImportReferenceSourceItemBuilder {
     }
     /// <p>The source's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The source's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The source's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,43 +127,47 @@ impl ImportReferenceSourceItemBuilder {
     }
     /// <p>The source's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The source's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The source's tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The source's tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The source's tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportReferenceSourceItem`](crate::types::ImportReferenceSourceItem).
     pub fn build(self) -> crate::types::ImportReferenceSourceItem {
         crate::types::ImportReferenceSourceItem {
-            source_file: self.source_file,
-            status: self.status,
-            status_message: self.status_message,
-            name: self.name,
-            description: self.description,
-            tags: self.tags,
+            source_file: self.source_file
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

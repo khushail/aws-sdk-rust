@@ -3,7 +3,7 @@
 /// <p>Details about a deleted OpenSearch Serverless collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCollectionDetail {
+pub struct DeleteCollectionDetail  {
     /// <p>The unique identifier of the collection.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct DeleteCollectionDetail {
 }
 impl DeleteCollectionDetail {
     /// <p>The unique identifier of the collection.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CollectionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CollectionStatus> {
         self.status.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl DeleteCollectionDetail {
 
 /// A builder for [`DeleteCollectionDetail`](crate::types::DeleteCollectionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCollectionDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl DeleteCollectionDetailBuilder {
     }
     /// <p>The unique identifier of the collection.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier of the collection.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the collection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl DeleteCollectionDetailBuilder {
     }
     /// <p>The name of the collection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the collection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The current status of the collection.</p>
     pub fn status(mut self, input: crate::types::CollectionStatus) -> Self {
@@ -72,19 +76,23 @@ impl DeleteCollectionDetailBuilder {
         self
     }
     /// <p>The current status of the collection.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CollectionStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The current status of the collection.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CollectionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DeleteCollectionDetail`](crate::types::DeleteCollectionDetail).
     pub fn build(self) -> crate::types::DeleteCollectionDetail {
         crate::types::DeleteCollectionDetail {
-            id: self.id,
-            name: self.name,
-            status: self.status,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

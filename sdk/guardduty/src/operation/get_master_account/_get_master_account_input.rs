@@ -3,30 +3,27 @@
 #[deprecated(note = "This input is deprecated, use GetAdministratorAccountRequest instead")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMasterAccountInput {
+pub struct GetMasterAccountInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMasterAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
 }
 impl GetMasterAccountInput {
     /// Creates a new builder-style object to manufacture [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
-    pub fn builder() -> crate::operation::get_master_account::builders::GetMasterAccountInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_master_account::builders::GetMasterAccountInputBuilder {
         crate::operation::get_master_account::builders::GetMasterAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMasterAccountInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +35,20 @@ impl GetMasterAccountInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
+    }
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// Consumes the builder and constructs a [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_master_account::GetMasterAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_master_account::GetMasterAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_master_account::GetMasterAccountInput {
-                detector_id: self.detector_id,
-            },
+                detector_id: self.detector_id
+                ,
+            }
         )
     }
 }
+

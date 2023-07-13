@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateStepGroupInput {
+pub struct GetTemplateStepGroupInput  {
     /// <p>The ID of the template.</p>
     #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct GetTemplateStepGroupInput {
 }
 impl GetTemplateStepGroupInput {
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetTemplateStepGroupInput {
     /// Creates a new builder-style object to manufacture [`GetTemplateStepGroupInput`](crate::operation::get_template_step_group::GetTemplateStepGroupInput).
-    pub fn builder(
-    ) -> crate::operation::get_template_step_group::builders::GetTemplateStepGroupInputBuilder {
+    pub fn builder() -> crate::operation::get_template_step_group::builders::GetTemplateStepGroupInputBuilder {
         crate::operation::get_template_step_group::builders::GetTemplateStepGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemplateStepGroupInput`](crate::operation::get_template_step_group::GetTemplateStepGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateStepGroupInputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl GetTemplateStepGroupInputBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>The ID of the step group.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl GetTemplateStepGroupInputBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the step group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetTemplateStepGroupInput`](crate::operation::get_template_step_group::GetTemplateStepGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_template_step_group::GetTemplateStepGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template_step_group::GetTemplateStepGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_template_step_group::GetTemplateStepGroupInput {
-                template_id: self.template_id,
-                id: self.id,
-            },
+                template_id: self.template_id
+                ,
+                id: self.id
+                ,
+            }
         )
     }
 }
+

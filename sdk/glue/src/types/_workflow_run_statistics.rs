@@ -3,7 +3,7 @@
 /// <p>Workflow run statistics provides statistics about the workflow run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowRunStatistics {
+pub struct WorkflowRunStatistics  {
     /// <p>Total number of Actions in the workflow run.</p>
     #[doc(hidden)]
     pub total_actions: i32,
@@ -72,9 +72,7 @@ impl WorkflowRunStatistics {
 
 /// A builder for [`WorkflowRunStatistics`](crate::types::WorkflowRunStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowRunStatisticsBuilder {
     pub(crate) total_actions: ::std::option::Option<i32>,
     pub(crate) timeout_actions: ::std::option::Option<i32>,
@@ -93,8 +91,11 @@ impl WorkflowRunStatisticsBuilder {
     }
     /// <p>Total number of Actions in the workflow run.</p>
     pub fn set_total_actions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_actions = input;
-        self
+        self.total_actions = input; self
+    }
+    /// <p>Total number of Actions in the workflow run.</p>
+    pub fn get_total_actions(&self) -> &::std::option::Option<i32> {
+        &self.total_actions
     }
     /// <p>Total number of Actions that timed out.</p>
     pub fn timeout_actions(mut self, input: i32) -> Self {
@@ -103,8 +104,11 @@ impl WorkflowRunStatisticsBuilder {
     }
     /// <p>Total number of Actions that timed out.</p>
     pub fn set_timeout_actions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_actions = input;
-        self
+        self.timeout_actions = input; self
+    }
+    /// <p>Total number of Actions that timed out.</p>
+    pub fn get_timeout_actions(&self) -> &::std::option::Option<i32> {
+        &self.timeout_actions
     }
     /// <p>Total number of Actions that have failed.</p>
     pub fn failed_actions(mut self, input: i32) -> Self {
@@ -113,8 +117,11 @@ impl WorkflowRunStatisticsBuilder {
     }
     /// <p>Total number of Actions that have failed.</p>
     pub fn set_failed_actions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_actions = input;
-        self
+        self.failed_actions = input; self
+    }
+    /// <p>Total number of Actions that have failed.</p>
+    pub fn get_failed_actions(&self) -> &::std::option::Option<i32> {
+        &self.failed_actions
     }
     /// <p>Total number of Actions that have stopped.</p>
     pub fn stopped_actions(mut self, input: i32) -> Self {
@@ -123,8 +130,11 @@ impl WorkflowRunStatisticsBuilder {
     }
     /// <p>Total number of Actions that have stopped.</p>
     pub fn set_stopped_actions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.stopped_actions = input;
-        self
+        self.stopped_actions = input; self
+    }
+    /// <p>Total number of Actions that have stopped.</p>
+    pub fn get_stopped_actions(&self) -> &::std::option::Option<i32> {
+        &self.stopped_actions
     }
     /// <p>Total number of Actions that have succeeded.</p>
     pub fn succeeded_actions(mut self, input: i32) -> Self {
@@ -133,8 +143,11 @@ impl WorkflowRunStatisticsBuilder {
     }
     /// <p>Total number of Actions that have succeeded.</p>
     pub fn set_succeeded_actions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.succeeded_actions = input;
-        self
+        self.succeeded_actions = input; self
+    }
+    /// <p>Total number of Actions that have succeeded.</p>
+    pub fn get_succeeded_actions(&self) -> &::std::option::Option<i32> {
+        &self.succeeded_actions
     }
     /// <p>Total number Actions in running state.</p>
     pub fn running_actions(mut self, input: i32) -> Self {
@@ -143,8 +156,11 @@ impl WorkflowRunStatisticsBuilder {
     }
     /// <p>Total number Actions in running state.</p>
     pub fn set_running_actions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.running_actions = input;
-        self
+        self.running_actions = input; self
+    }
+    /// <p>Total number Actions in running state.</p>
+    pub fn get_running_actions(&self) -> &::std::option::Option<i32> {
+        &self.running_actions
     }
     /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
     pub fn errored_actions(mut self, input: i32) -> Self {
@@ -153,8 +169,11 @@ impl WorkflowRunStatisticsBuilder {
     }
     /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
     pub fn set_errored_actions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.errored_actions = input;
-        self
+        self.errored_actions = input; self
+    }
+    /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+    pub fn get_errored_actions(&self) -> &::std::option::Option<i32> {
+        &self.errored_actions
     }
     /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
     pub fn waiting_actions(mut self, input: i32) -> Self {
@@ -163,20 +182,40 @@ impl WorkflowRunStatisticsBuilder {
     }
     /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
     pub fn set_waiting_actions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.waiting_actions = input;
-        self
+        self.waiting_actions = input; self
+    }
+    /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+    pub fn get_waiting_actions(&self) -> &::std::option::Option<i32> {
+        &self.waiting_actions
     }
     /// Consumes the builder and constructs a [`WorkflowRunStatistics`](crate::types::WorkflowRunStatistics).
     pub fn build(self) -> crate::types::WorkflowRunStatistics {
         crate::types::WorkflowRunStatistics {
-            total_actions: self.total_actions.unwrap_or_default(),
-            timeout_actions: self.timeout_actions.unwrap_or_default(),
-            failed_actions: self.failed_actions.unwrap_or_default(),
-            stopped_actions: self.stopped_actions.unwrap_or_default(),
-            succeeded_actions: self.succeeded_actions.unwrap_or_default(),
-            running_actions: self.running_actions.unwrap_or_default(),
-            errored_actions: self.errored_actions.unwrap_or_default(),
-            waiting_actions: self.waiting_actions.unwrap_or_default(),
+            total_actions: self.total_actions
+                .unwrap_or_default()
+            ,
+            timeout_actions: self.timeout_actions
+                .unwrap_or_default()
+            ,
+            failed_actions: self.failed_actions
+                .unwrap_or_default()
+            ,
+            stopped_actions: self.stopped_actions
+                .unwrap_or_default()
+            ,
+            succeeded_actions: self.succeeded_actions
+                .unwrap_or_default()
+            ,
+            running_actions: self.running_actions
+                .unwrap_or_default()
+            ,
+            errored_actions: self.errored_actions
+                .unwrap_or_default()
+            ,
+            waiting_actions: self.waiting_actions
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFunctionOutput {
+pub struct CreateFunctionOutput  {
     /// <p>The <code>Function</code> object.</p>
     #[doc(hidden)]
     pub function_configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
@@ -10,17 +10,15 @@ pub struct CreateFunctionOutput {
 }
 impl CreateFunctionOutput {
     /// <p>The <code>Function</code> object.</p>
-    pub fn function_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FunctionConfiguration> {
+    pub fn function_configuration(&self) -> ::std::option::Option<& crate::types::FunctionConfiguration> {
         self.function_configuration.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateFunctionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateFunctionOutput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionOutput`](crate::operation::create_function::CreateFunctionOutput).
     pub fn builder() -> crate::operation::create_function::builders::CreateFunctionOutputBuilder {
@@ -30,9 +28,7 @@ impl CreateFunctionOutput {
 
 /// A builder for [`CreateFunctionOutput`](crate::operation::create_function::CreateFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFunctionOutputBuilder {
     pub(crate) function_configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     _request_id: Option<String>,
@@ -44,27 +40,29 @@ impl CreateFunctionOutputBuilder {
         self
     }
     /// <p>The <code>Function</code> object.</p>
-    pub fn set_function_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionConfiguration>,
-    ) -> Self {
-        self.function_configuration = input;
-        self
+    pub fn set_function_configuration(mut self, input: ::std::option::Option<crate::types::FunctionConfiguration>) -> Self {
+        self.function_configuration = input; self
+    }
+    /// <p>The <code>Function</code> object.</p>
+    pub fn get_function_configuration(&self) -> &::std::option::Option<crate::types::FunctionConfiguration> {
+        &self.function_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateFunctionOutput`](crate::operation::create_function::CreateFunctionOutput).
     pub fn build(self) -> crate::operation::create_function::CreateFunctionOutput {
         crate::operation::create_function::CreateFunctionOutput {
-            function_configuration: self.function_configuration,
+            function_configuration: self.function_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

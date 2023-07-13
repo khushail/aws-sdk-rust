@@ -3,7 +3,7 @@
 /// Statmux rate control settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiplexStatmuxVideoSettings {
+pub struct MultiplexStatmuxVideoSettings  {
     /// Maximum statmux bitrate.
     #[doc(hidden)]
     pub maximum_bitrate: ::std::option::Option<i32>,
@@ -37,9 +37,7 @@ impl MultiplexStatmuxVideoSettings {
 
 /// A builder for [`MultiplexStatmuxVideoSettings`](crate::types::MultiplexStatmuxVideoSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiplexStatmuxVideoSettingsBuilder {
     pub(crate) maximum_bitrate: ::std::option::Option<i32>,
     pub(crate) minimum_bitrate: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl MultiplexStatmuxVideoSettingsBuilder {
     }
     /// Maximum statmux bitrate.
     pub fn set_maximum_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_bitrate = input;
-        self
+        self.maximum_bitrate = input; self
+    }
+    /// Maximum statmux bitrate.
+    pub fn get_maximum_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.maximum_bitrate
     }
     /// Minimum statmux bitrate.
     pub fn minimum_bitrate(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl MultiplexStatmuxVideoSettingsBuilder {
     }
     /// Minimum statmux bitrate.
     pub fn set_minimum_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_bitrate = input;
-        self
+        self.minimum_bitrate = input; self
+    }
+    /// Minimum statmux bitrate.
+    pub fn get_minimum_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.minimum_bitrate
     }
     /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
     pub fn priority(mut self, input: i32) -> Self {
@@ -73,15 +77,22 @@ impl MultiplexStatmuxVideoSettingsBuilder {
     }
     /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
+    }
+    /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Consumes the builder and constructs a [`MultiplexStatmuxVideoSettings`](crate::types::MultiplexStatmuxVideoSettings).
     pub fn build(self) -> crate::types::MultiplexStatmuxVideoSettings {
         crate::types::MultiplexStatmuxVideoSettings {
-            maximum_bitrate: self.maximum_bitrate,
-            minimum_bitrate: self.minimum_bitrate,
-            priority: self.priority,
+            maximum_bitrate: self.maximum_bitrate
+            ,
+            minimum_bitrate: self.minimum_bitrate
+            ,
+            priority: self.priority
+            ,
         }
     }
 }
+

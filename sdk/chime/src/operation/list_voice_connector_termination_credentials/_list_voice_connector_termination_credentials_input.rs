@@ -2,51 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVoiceConnectorTerminationCredentialsInput {
+pub struct ListVoiceConnectorTerminationCredentialsInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl ListVoiceConnectorTerminationCredentialsInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
 }
 impl ListVoiceConnectorTerminationCredentialsInput {
     /// Creates a new builder-style object to manufacture [`ListVoiceConnectorTerminationCredentialsInput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsInput).
-    pub fn builder() -> crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsInputBuilder {
         crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVoiceConnectorTerminationCredentialsInput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVoiceConnectorTerminationCredentialsInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl ListVoiceConnectorTerminationCredentialsInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voice_connector_id = input; self
+    }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
     }
     /// Consumes the builder and constructs a [`ListVoiceConnectorTerminationCredentialsInput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsInput {
                 voice_connector_id: self.voice_connector_id
@@ -55,3 +50,4 @@ impl ListVoiceConnectorTerminationCredentialsInputBuilder {
         )
     }
 }
+

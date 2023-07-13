@@ -3,7 +3,7 @@
 /// <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionInfo {
+pub struct EncryptionInfo  {
     /// <p>The data-volume encryption details.</p>
     #[doc(hidden)]
     pub encryption_at_rest: ::std::option::Option<crate::types::EncryptionAtRest>,
@@ -13,13 +13,11 @@ pub struct EncryptionInfo {
 }
 impl EncryptionInfo {
     /// <p>The data-volume encryption details.</p>
-    pub fn encryption_at_rest(&self) -> ::std::option::Option<&crate::types::EncryptionAtRest> {
+    pub fn encryption_at_rest(&self) -> ::std::option::Option<& crate::types::EncryptionAtRest> {
         self.encryption_at_rest.as_ref()
     }
     /// <p>The details for encryption in transit.</p>
-    pub fn encryption_in_transit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionInTransit> {
+    pub fn encryption_in_transit(&self) -> ::std::option::Option<& crate::types::EncryptionInTransit> {
         self.encryption_in_transit.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl EncryptionInfo {
 
 /// A builder for [`EncryptionInfo`](crate::types::EncryptionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionInfoBuilder {
     pub(crate) encryption_at_rest: ::std::option::Option<crate::types::EncryptionAtRest>,
     pub(crate) encryption_in_transit: ::std::option::Option<crate::types::EncryptionInTransit>,
@@ -46,12 +42,12 @@ impl EncryptionInfoBuilder {
         self
     }
     /// <p>The data-volume encryption details.</p>
-    pub fn set_encryption_at_rest(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionAtRest>,
-    ) -> Self {
-        self.encryption_at_rest = input;
-        self
+    pub fn set_encryption_at_rest(mut self, input: ::std::option::Option<crate::types::EncryptionAtRest>) -> Self {
+        self.encryption_at_rest = input; self
+    }
+    /// <p>The data-volume encryption details.</p>
+    pub fn get_encryption_at_rest(&self) -> &::std::option::Option<crate::types::EncryptionAtRest> {
+        &self.encryption_at_rest
     }
     /// <p>The details for encryption in transit.</p>
     pub fn encryption_in_transit(mut self, input: crate::types::EncryptionInTransit) -> Self {
@@ -59,18 +55,21 @@ impl EncryptionInfoBuilder {
         self
     }
     /// <p>The details for encryption in transit.</p>
-    pub fn set_encryption_in_transit(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionInTransit>,
-    ) -> Self {
-        self.encryption_in_transit = input;
-        self
+    pub fn set_encryption_in_transit(mut self, input: ::std::option::Option<crate::types::EncryptionInTransit>) -> Self {
+        self.encryption_in_transit = input; self
+    }
+    /// <p>The details for encryption in transit.</p>
+    pub fn get_encryption_in_transit(&self) -> &::std::option::Option<crate::types::EncryptionInTransit> {
+        &self.encryption_in_transit
     }
     /// Consumes the builder and constructs a [`EncryptionInfo`](crate::types::EncryptionInfo).
     pub fn build(self) -> crate::types::EncryptionInfo {
         crate::types::EncryptionInfo {
-            encryption_at_rest: self.encryption_at_rest,
-            encryption_in_transit: self.encryption_in_transit,
+            encryption_at_rest: self.encryption_at_rest
+            ,
+            encryption_in_transit: self.encryption_in_transit
+            ,
         }
     }
 }
+

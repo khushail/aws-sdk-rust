@@ -3,7 +3,7 @@
 /// <p>Provides details about the configuration for node-to-node encryption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
+pub struct AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails  {
     /// <p>Whether node-to-node encryption is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -16,18 +16,14 @@ impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
 }
 impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder {
         crate::types::builders::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -39,15 +35,19 @@ impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder {
     }
     /// <p>Whether node-to-node encryption is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Whether node-to-node encryption is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
+    pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
         crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

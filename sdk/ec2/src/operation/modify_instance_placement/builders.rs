@@ -3,111 +3,95 @@ pub use crate::operation::modify_instance_placement::_modify_instance_placement_
 
 pub use crate::operation::modify_instance_placement::_modify_instance_placement_input::ModifyInstancePlacementInputBuilder;
 
+impl ModifyInstancePlacementInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.modify_instance_placement();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ModifyInstancePlacement`.
-///
-/// <p>Modifies the placement attributes for a specified instance. You can do the following:</p>
-/// <ul>
-/// <li> <p>Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next time the instance is launched, it is automatically associated with the host on which it lands. If the instance is restarted or rebooted, this relationship persists.</p> </li>
-/// <li> <p>Change the Dedicated Host with which an instance is associated.</p> </li>
-/// <li> <p>Change the instance tenancy of an instance.</p> </li>
-/// <li> <p>Move an instance to or from a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement group</a>.</p> </li>
-/// </ul>
-/// <p>At least one attribute for affinity, host ID, tenancy, or placement group name must be specified in the request. Affinity and tenancy can be modified in the same request.</p>
+/// 
+/// <p>Modifies the placement attributes for a specified instance. You can do the following:</p> 
+/// <ul> 
+/// <li> <p>Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next time the instance is launched, it is automatically associated with the host on which it lands. If the instance is restarted or rebooted, this relationship persists.</p> </li> 
+/// <li> <p>Change the Dedicated Host with which an instance is associated.</p> </li> 
+/// <li> <p>Change the instance tenancy of an instance.</p> </li> 
+/// <li> <p>Move an instance to or from a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement group</a>.</p> </li> 
+/// </ul> 
+/// <p>At least one attribute for affinity, host ID, tenancy, or placement group name must be specified in the request. Affinity and tenancy can be modified in the same request.</p> 
 /// <p>To modify the host ID, tenancy, placement group, or partition for an instance, the instance must be in the <code>stopped</code> state.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyInstancePlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder,
+                    inner: crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder,
 }
-impl ModifyInstancePlacementFluentBuilder {
+impl ModifyInstancePlacementFluentBuilder  {
     /// Creates a new `ModifyInstancePlacement`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_instance_placement::ModifyInstancePlacement,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ModifyInstancePlacement as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::modify_instance_placement::ModifyInstancePlacement, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_placement::ModifyInstancePlacementError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_instance_placement::ModifyInstancePlacementOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_placement::ModifyInstancePlacementError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_instance_placement::ModifyInstancePlacement,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_instance_placement::ModifyInstancePlacementOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_placement::ModifyInstancePlacementError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::modify_instance_placement::ModifyInstancePlacement, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_placement::ModifyInstancePlacementError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The affinity setting for the instance.</p>
     pub fn affinity(mut self, input: crate::types::Affinity) -> Self {
         self.inner = self.inner.affinity(input);
@@ -118,17 +102,26 @@ impl ModifyInstancePlacementFluentBuilder {
         self.inner = self.inner.set_affinity(input);
         self
     }
-    /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
+    /// <p>The affinity setting for the instance.</p>
+    pub fn get_affinity(&self) -> &::std::option::Option<crate::types::Affinity> {
+        self.inner.get_affinity()
+    }
+    /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p> 
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
-    /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
+    /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p> 
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
+    }
+    /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p> 
+    /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
     }
     /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
     pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +133,10 @@ impl ModifyInstancePlacementFluentBuilder {
         self.inner = self.inner.set_host_id(input);
         self
     }
+    /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
+    pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host_id()
+    }
     /// <p>The ID of the instance that you are modifying.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -150,19 +147,29 @@ impl ModifyInstancePlacementFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The tenancy for the instance.</p> <note>
-    /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results in the <code>InvalidTenancy</code> error code.</p>
+    /// <p>The ID of the instance that you are modifying.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
+    /// <p>The tenancy for the instance.</p> <note> 
+    /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results in the <code>InvalidTenancy</code> error code.</p> 
     /// </note>
     pub fn tenancy(mut self, input: crate::types::HostTenancy) -> Self {
         self.inner = self.inner.tenancy(input);
         self
     }
-    /// <p>The tenancy for the instance.</p> <note>
-    /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results in the <code>InvalidTenancy</code> error code.</p>
+    /// <p>The tenancy for the instance.</p> <note> 
+    /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results in the <code>InvalidTenancy</code> error code.</p> 
     /// </note>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::HostTenancy>) -> Self {
         self.inner = self.inner.set_tenancy(input);
         self
+    }
+    /// <p>The tenancy for the instance.</p> <note> 
+    /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results in the <code>InvalidTenancy</code> error code.</p> 
+    /// </note>
+    pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::HostTenancy> {
+        self.inner.get_tenancy()
     }
     /// <p>The number of the partition in which to place the instance. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     pub fn partition_number(mut self, input: i32) -> Self {
@@ -174,21 +181,23 @@ impl ModifyInstancePlacementFluentBuilder {
         self.inner = self.inner.set_partition_number(input);
         self
     }
+    /// <p>The number of the partition in which to place the instance. Valid only if the placement group strategy is set to <code>partition</code>.</p>
+    pub fn get_partition_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_partition_number()
+    }
     /// <p>The ARN of the host resource group in which to place the instance.</p>
-    pub fn host_resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_resource_group_arn(input.into());
         self
     }
     /// <p>The ARN of the host resource group in which to place the instance.</p>
-    pub fn set_host_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host_resource_group_arn(input);
         self
+    }
+    /// <p>The ARN of the host resource group in which to place the instance.</p>
+    pub fn get_host_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host_resource_group_arn()
     }
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -200,4 +209,9 @@ impl ModifyInstancePlacementFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
+    /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
+    }
 }
+

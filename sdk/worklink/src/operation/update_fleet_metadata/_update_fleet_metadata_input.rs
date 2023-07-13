@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFleetMetadataInput {
+pub struct UpdateFleetMetadataInput  {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpdateFleetMetadataInput {
 }
 impl UpdateFleetMetadataInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
@@ -29,18 +29,14 @@ impl UpdateFleetMetadataInput {
 }
 impl UpdateFleetMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetMetadataInput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder {
-        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder {
+        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFleetMetadataInput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetMetadataInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -54,8 +50,11 @@ impl UpdateFleetMetadataInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
+    }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
     }
     /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,8 +63,11 @@ impl UpdateFleetMetadataInputBuilder {
     }
     /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
+    }
+    /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
@@ -73,26 +75,25 @@ impl UpdateFleetMetadataInputBuilder {
         self
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
-    pub fn set_optimize_for_end_user_location(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.optimize_for_end_user_location = input;
-        self
+    pub fn set_optimize_for_end_user_location(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.optimize_for_end_user_location = input; self
+    }
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    pub fn get_optimize_for_end_user_location(&self) -> &::std::option::Option<bool> {
+        &self.optimize_for_end_user_location
     }
     /// Consumes the builder and constructs a [`UpdateFleetMetadataInput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_fleet_metadata::UpdateFleetMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet_metadata::UpdateFleetMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_fleet_metadata::UpdateFleetMetadataInput {
-                fleet_arn: self.fleet_arn,
-                display_name: self.display_name,
-                optimize_for_end_user_location: self.optimize_for_end_user_location,
-            },
+                fleet_arn: self.fleet_arn
+                ,
+                display_name: self.display_name
+                ,
+                optimize_for_end_user_location: self.optimize_for_end_user_location
+                ,
+            }
         )
     }
 }
+

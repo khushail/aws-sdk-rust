@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAllowedNodeTypeUpdatesInput {
+pub struct ListAllowedNodeTypeUpdatesInput  {
     /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
     #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
 }
 impl ListAllowedNodeTypeUpdatesInput {
     /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
 }
 impl ListAllowedNodeTypeUpdatesInput {
     /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeUpdatesInput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput).
-    pub fn builder() -> crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesInputBuilder{
+    pub fn builder() -> crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesInputBuilder {
         crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAllowedNodeTypeUpdatesInput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAllowedNodeTypeUpdatesInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl ListAllowedNodeTypeUpdatesInputBuilder {
     }
     /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
+    }
+    /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// Consumes the builder and constructs a [`ListAllowedNodeTypeUpdatesInput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput {
-                cluster_name: self.cluster_name,
-            },
+                cluster_name: self.cluster_name
+                ,
+            }
         )
     }
 }
+

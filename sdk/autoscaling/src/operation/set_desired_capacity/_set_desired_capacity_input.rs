@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetDesiredCapacityInput {
+pub struct SetDesiredCapacityInput  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct SetDesiredCapacityInput {
 }
 impl SetDesiredCapacityInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
@@ -29,17 +29,14 @@ impl SetDesiredCapacityInput {
 }
 impl SetDesiredCapacityInput {
     /// Creates a new builder-style object to manufacture [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
-    pub fn builder(
-    ) -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityInputBuilder {
+    pub fn builder() -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityInputBuilder {
         crate::operation::set_desired_capacity::builders::SetDesiredCapacityInputBuilder::default()
     }
 }
 
 /// A builder for [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDesiredCapacityInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) desired_capacity: ::std::option::Option<i32>,
@@ -47,20 +44,17 @@ pub struct SetDesiredCapacityInputBuilder {
 }
 impl SetDesiredCapacityInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
@@ -69,8 +63,11 @@ impl SetDesiredCapacityInputBuilder {
     }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_capacity = input;
-        self
+        self.desired_capacity = input; self
+    }
+    /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
+    pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
+        &self.desired_capacity
     }
     /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
     pub fn honor_cooldown(mut self, input: bool) -> Self {
@@ -79,22 +76,24 @@ impl SetDesiredCapacityInputBuilder {
     }
     /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
     pub fn set_honor_cooldown(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.honor_cooldown = input;
-        self
+        self.honor_cooldown = input; self
+    }
+    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
+    pub fn get_honor_cooldown(&self) -> &::std::option::Option<bool> {
+        &self.honor_cooldown
     }
     /// Consumes the builder and constructs a [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_desired_capacity::SetDesiredCapacityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_desired_capacity::SetDesiredCapacityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_desired_capacity::SetDesiredCapacityInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                desired_capacity: self.desired_capacity,
-                honor_cooldown: self.honor_cooldown,
-            },
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                desired_capacity: self.desired_capacity
+                ,
+                honor_cooldown: self.honor_cooldown
+                ,
+            }
         )
     }
 }
+

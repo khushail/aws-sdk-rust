@@ -2,29 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLogSourcesInput {
-    /// <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
+pub struct ListLogSourcesInput  {
+    /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
     #[doc(hidden)]
-    pub input_order: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
+    pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The list of regions for which log sources are displayed.</p>
     #[doc(hidden)]
-    pub list_all_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
-    /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
+    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The list of sources for which log sources are displayed.</p>
     #[doc(hidden)]
-    pub list_two_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    /// <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-    #[doc(hidden)]
-    pub list_single_dimension: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -33,42 +20,24 @@ pub struct ListLogSourcesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLogSourcesInput {
-    /// <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
-    pub fn input_order(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.input_order.as_deref()
+    /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
+    pub fn accounts(&self) -> ::std::option::Option<& [::std::string::String]> {
+        self.accounts.as_deref()
     }
-    /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn list_all_dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    > {
-        self.list_all_dimensions.as_ref()
+    /// <p>The list of regions for which log sources are displayed.</p>
+    pub fn regions(&self) -> ::std::option::Option<& [::std::string::String]> {
+        self.regions.as_deref()
     }
-    /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn list_two_dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
-        self.list_two_dimensions.as_ref()
-    }
-    /// <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn list_single_dimension(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.list_single_dimension.as_deref()
+    /// <p>The list of sources for which log sources are displayed.</p>
+    pub fn sources(&self) -> ::std::option::Option<& [crate::types::LogSourceResource]> {
+        self.sources.as_deref()
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -81,130 +50,71 @@ impl ListLogSourcesInput {
 
 /// A builder for [`ListLogSourcesInput`](crate::operation::list_log_sources::ListLogSourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogSourcesInputBuilder {
-    pub(crate) input_order: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    pub(crate) list_all_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
-    pub(crate) list_two_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    pub(crate) list_single_dimension: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLogSourcesInputBuilder {
-    /// Appends an item to `input_order`.
+    /// Appends an item to `accounts`.
     ///
-    /// To override the contents of this collection use [`set_input_order`](Self::set_input_order).
+    /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
-    pub fn input_order(mut self, input: crate::types::Dimension) -> Self {
-        let mut v = self.input_order.unwrap_or_default();
-        v.push(input);
-        self.input_order = ::std::option::Option::Some(v);
-        self
+    /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
+    pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.accounts.unwrap_or_default();
+                        v.push(input.into());
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
-    pub fn set_input_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
-        self.input_order = input;
-        self
+    /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.accounts = input; self
     }
-    /// Adds a key-value pair to `list_all_dimensions`.
-    ///
-    /// To override the contents of this collection use [`set_list_all_dimensions`](Self::set_list_all_dimensions).
-    ///
-    /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn list_all_dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    ) -> Self {
-        let mut hash_map = self.list_all_dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.list_all_dimensions = ::std::option::Option::Some(hash_map);
-        self
+    /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accounts
     }
-    /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn set_list_all_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
-    ) -> Self {
-        self.list_all_dimensions = input;
-        self
-    }
-    /// Adds a key-value pair to `list_two_dimensions`.
+    /// Appends an item to `regions`.
     ///
-    /// To override the contents of this collection use [`set_list_two_dimensions`](Self::set_list_two_dimensions).
+    /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn list_two_dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
-        let mut hash_map = self.list_two_dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.list_two_dimensions = ::std::option::Option::Some(hash_map);
-        self
+    /// <p>The list of regions for which log sources are displayed.</p>
+    pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.regions.unwrap_or_default();
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn set_list_two_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    ) -> Self {
-        self.list_two_dimensions = input;
-        self
+    /// <p>The list of regions for which log sources are displayed.</p>
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
-    /// Appends an item to `list_single_dimension`.
+    /// <p>The list of regions for which log sources are displayed.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
+    /// Appends an item to `sources`.
     ///
-    /// To override the contents of this collection use [`set_list_single_dimension`](Self::set_list_single_dimension).
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn list_single_dimension(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self.list_single_dimension.unwrap_or_default();
-        v.push(input.into());
-        self.list_single_dimension = ::std::option::Option::Some(v);
-        self
+    /// <p>The list of sources for which log sources are displayed.</p>
+    pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
+        let mut v = self.sources.unwrap_or_default();
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn set_list_single_dimension(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.list_single_dimension = input;
-        self
+    /// <p>The list of sources for which log sources are displayed.</p>
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
+        self.sources = input; self
+    }
+    /// <p>The list of sources for which log sources are displayed.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+        &self.sources
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -213,8 +123,11 @@ impl ListLogSourcesInputBuilder {
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of accounts for which the log sources are displayed.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -223,23 +136,28 @@ impl ListLogSourcesInputBuilder {
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLogSourcesInput`](crate::operation::list_log_sources::ListLogSourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_log_sources::ListLogSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_log_sources::ListLogSourcesInput {
-            input_order: self.input_order,
-            list_all_dimensions: self.list_all_dimensions,
-            list_two_dimensions: self.list_two_dimensions,
-            list_single_dimension: self.list_single_dimension,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_log_sources::ListLogSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_log_sources::ListLogSourcesInput {
+                accounts: self.accounts
+                ,
+                regions: self.regions
+                ,
+                sources: self.sources
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

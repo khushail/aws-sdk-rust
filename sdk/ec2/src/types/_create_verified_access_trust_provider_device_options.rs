@@ -3,30 +3,27 @@
 /// <p>Describes the options when creating an Amazon Web Services Verified Access trust provider using the <code>device</code> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVerifiedAccessTrustProviderDeviceOptions {
+pub struct CreateVerifiedAccessTrustProviderDeviceOptions  {
     /// <p>The ID of the tenant application with the device-identity provider.</p>
     #[doc(hidden)]
     pub tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateVerifiedAccessTrustProviderDeviceOptions {
     /// <p>The ID of the tenant application with the device-identity provider.</p>
-    pub fn tenant_id(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_id(&self) -> ::std::option::Option<& str> {
         self.tenant_id.as_deref()
     }
 }
 impl CreateVerifiedAccessTrustProviderDeviceOptions {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessTrustProviderDeviceOptions`](crate::types::CreateVerifiedAccessTrustProviderDeviceOptions).
-    pub fn builder() -> crate::types::builders::CreateVerifiedAccessTrustProviderDeviceOptionsBuilder
-    {
+    pub fn builder() -> crate::types::builders::CreateVerifiedAccessTrustProviderDeviceOptionsBuilder {
         crate::types::builders::CreateVerifiedAccessTrustProviderDeviceOptionsBuilder::default()
     }
 }
 
 /// A builder for [`CreateVerifiedAccessTrustProviderDeviceOptions`](crate::types::CreateVerifiedAccessTrustProviderDeviceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessTrustProviderDeviceOptionsBuilder {
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,13 +35,18 @@ impl CreateVerifiedAccessTrustProviderDeviceOptionsBuilder {
     }
     /// <p>The ID of the tenant application with the device-identity provider.</p>
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_id = input;
-        self
+        self.tenant_id = input; self
+    }
+    /// <p>The ID of the tenant application with the device-identity provider.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
     }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessTrustProviderDeviceOptions`](crate::types::CreateVerifiedAccessTrustProviderDeviceOptions).
     pub fn build(self) -> crate::types::CreateVerifiedAccessTrustProviderDeviceOptions {
         crate::types::CreateVerifiedAccessTrustProviderDeviceOptions {
-            tenant_id: self.tenant_id,
+            tenant_id: self.tenant_id
+            ,
         }
     }
 }
+

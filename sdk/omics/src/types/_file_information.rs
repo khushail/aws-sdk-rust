@@ -3,7 +3,7 @@
 /// <p>Details about a file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileInformation {
+pub struct FileInformation  {
     /// <p>The file's total parts.</p>
     #[doc(hidden)]
     pub total_parts: ::std::option::Option<i32>,
@@ -37,9 +37,7 @@ impl FileInformation {
 
 /// A builder for [`FileInformation`](crate::types::FileInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileInformationBuilder {
     pub(crate) total_parts: ::std::option::Option<i32>,
     pub(crate) part_size: ::std::option::Option<i64>,
@@ -53,8 +51,11 @@ impl FileInformationBuilder {
     }
     /// <p>The file's total parts.</p>
     pub fn set_total_parts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_parts = input;
-        self
+        self.total_parts = input; self
+    }
+    /// <p>The file's total parts.</p>
+    pub fn get_total_parts(&self) -> &::std::option::Option<i32> {
+        &self.total_parts
     }
     /// <p>The file's part size.</p>
     pub fn part_size(mut self, input: i64) -> Self {
@@ -63,8 +64,11 @@ impl FileInformationBuilder {
     }
     /// <p>The file's part size.</p>
     pub fn set_part_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.part_size = input;
-        self
+        self.part_size = input; self
+    }
+    /// <p>The file's part size.</p>
+    pub fn get_part_size(&self) -> &::std::option::Option<i64> {
+        &self.part_size
     }
     /// <p>The file's content length.</p>
     pub fn content_length(mut self, input: i64) -> Self {
@@ -73,15 +77,22 @@ impl FileInformationBuilder {
     }
     /// <p>The file's content length.</p>
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.content_length = input;
-        self
+        self.content_length = input; self
+    }
+    /// <p>The file's content length.</p>
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        &self.content_length
     }
     /// Consumes the builder and constructs a [`FileInformation`](crate::types::FileInformation).
     pub fn build(self) -> crate::types::FileInformation {
         crate::types::FileInformation {
-            total_parts: self.total_parts,
-            part_size: self.part_size,
-            content_length: self.content_length,
+            total_parts: self.total_parts
+            ,
+            part_size: self.part_size
+            ,
+            content_length: self.content_length
+            ,
         }
     }
 }
+

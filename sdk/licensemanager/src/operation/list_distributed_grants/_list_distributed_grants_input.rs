@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDistributedGrantsInput {
+pub struct ListDistributedGrantsInput  {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
     #[doc(hidden)]
     pub grant_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArn</code> </p> </li> 
+    /// <li> <p> <code>GrantStatus</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -25,22 +25,22 @@ pub struct ListDistributedGrantsInput {
 }
 impl ListDistributedGrantsInput {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-    pub fn grant_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn grant_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.grant_arns.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArn</code> </p> </li> 
+    /// <li> <p> <code>GrantStatus</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -50,18 +50,14 @@ impl ListDistributedGrantsInput {
 }
 impl ListDistributedGrantsInput {
     /// Creates a new builder-style object to manufacture [`ListDistributedGrantsInput`](crate::operation::list_distributed_grants::ListDistributedGrantsInput).
-    pub fn builder(
-    ) -> crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder {
         crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributedGrantsInput`](crate::operation::list_distributed_grants::ListDistributedGrantsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributedGrantsInputBuilder {
     pub(crate) grant_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -76,50 +72,57 @@ impl ListDistributedGrantsInputBuilder {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
     pub fn grant_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.grant_arns.unwrap_or_default();
-        v.push(input.into());
-        self.grant_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.grant_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-    pub fn set_grant_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.grant_arns = input;
-        self
+    pub fn set_grant_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.grant_arns = input; self
+    }
+    /// <p>Amazon Resource Names (ARNs) of the grants.</p>
+    pub fn get_grant_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.grant_arns
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArn</code> </p> </li> 
+    /// <li> <p> <code>GrantStatus</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArn</code> </p> </li> 
+    /// <li> <p> <code>GrantStatus</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArn</code> </p> </li> 
+    /// <li> <p> <code>GrantStatus</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,8 +131,11 @@ impl ListDistributedGrantsInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -138,23 +144,26 @@ impl ListDistributedGrantsInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDistributedGrantsInput`](crate::operation::list_distributed_grants::ListDistributedGrantsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_distributed_grants::ListDistributedGrantsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_distributed_grants::ListDistributedGrantsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_distributed_grants::ListDistributedGrantsInput {
-                grant_arns: self.grant_arns,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                grant_arns: self.grant_arns
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -3,149 +3,128 @@ pub use crate::operation::create_flow_definition::_create_flow_definition_output
 
 pub use crate::operation::create_flow_definition::_create_flow_definition_input::CreateFlowDefinitionInputBuilder;
 
+impl CreateFlowDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_flow_definition::CreateFlowDefinitionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_flow_definition::CreateFlowDefinitionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_flow_definition();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateFlowDefinition`.
-///
+/// 
 /// <p>Creates a flow definition.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFlowDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_flow_definition::builders::CreateFlowDefinitionInputBuilder,
+                    inner: crate::operation::create_flow_definition::builders::CreateFlowDefinitionInputBuilder,
 }
-impl CreateFlowDefinitionFluentBuilder {
+impl CreateFlowDefinitionFluentBuilder  {
     /// Creates a new `CreateFlowDefinition`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_flow_definition::CreateFlowDefinition,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_definition::CreateFlowDefinitionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateFlowDefinition as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_flow_definition::builders::CreateFlowDefinitionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_flow_definition::CreateFlowDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_definition::CreateFlowDefinitionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_flow_definition::CreateFlowDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_flow_definition::CreateFlowDefinitionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_flow_definition::CreateFlowDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_flow_definition::CreateFlowDefinitionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_flow_definition::CreateFlowDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_definition::CreateFlowDefinitionError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_flow_definition::CreateFlowDefinition,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_definition::CreateFlowDefinitionError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_flow_definition::CreateFlowDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_flow_definition::CreateFlowDefinitionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_flow_definition::CreateFlowDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_flow_definition::CreateFlowDefinitionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of your flow definition.</p>
-    pub fn flow_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_definition_name(input.into());
         self
     }
     /// <p>The name of your flow definition.</p>
-    pub fn set_flow_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_definition_name(input);
         self
     }
+    /// <p>The name of your flow definition.</p>
+    pub fn get_flow_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_definition_name()
+    }
     /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
-    pub fn human_loop_request_source(
-        mut self,
-        input: crate::types::HumanLoopRequestSource,
-    ) -> Self {
+    pub fn human_loop_request_source(mut self, input: crate::types::HumanLoopRequestSource) -> Self {
         self.inner = self.inner.human_loop_request_source(input);
         self
     }
     /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
-    pub fn set_human_loop_request_source(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopRequestSource>,
-    ) -> Self {
+    pub fn set_human_loop_request_source(mut self, input: ::std::option::Option<crate::types::HumanLoopRequestSource>) -> Self {
         self.inner = self.inner.set_human_loop_request_source(input);
         self
     }
+    /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+    pub fn get_human_loop_request_source(&self) -> &::std::option::Option<crate::types::HumanLoopRequestSource> {
+        self.inner.get_human_loop_request_source()
+    }
     /// <p>An object containing information about the events that trigger a human workflow.</p>
-    pub fn human_loop_activation_config(
-        mut self,
-        input: crate::types::HumanLoopActivationConfig,
-    ) -> Self {
+    pub fn human_loop_activation_config(mut self, input: crate::types::HumanLoopActivationConfig) -> Self {
         self.inner = self.inner.human_loop_activation_config(input);
         self
     }
     /// <p>An object containing information about the events that trigger a human workflow.</p>
-    pub fn set_human_loop_activation_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopActivationConfig>,
-    ) -> Self {
+    pub fn set_human_loop_activation_config(mut self, input: ::std::option::Option<crate::types::HumanLoopActivationConfig>) -> Self {
         self.inner = self.inner.set_human_loop_activation_config(input);
         self
+    }
+    /// <p>An object containing information about the events that trigger a human workflow.</p>
+    pub fn get_human_loop_activation_config(&self) -> &::std::option::Option<crate::types::HumanLoopActivationConfig> {
+        self.inner.get_human_loop_activation_config()
     }
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
@@ -153,12 +132,13 @@ impl CreateFlowDefinitionFluentBuilder {
         self
     }
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
-    pub fn set_human_loop_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopConfig>,
-    ) -> Self {
+    pub fn set_human_loop_config(mut self, input: ::std::option::Option<crate::types::HumanLoopConfig>) -> Self {
         self.inner = self.inner.set_human_loop_config(input);
         self
+    }
+    /// <p>An object containing information about the tasks the human reviewers will perform.</p>
+    pub fn get_human_loop_config(&self) -> &::std::option::Option<crate::types::HumanLoopConfig> {
+        self.inner.get_human_loop_config()
     }
     /// <p>An object containing information about where the human review results will be uploaded.</p>
     pub fn output_config(mut self, input: crate::types::FlowDefinitionOutputConfig) -> Self {
@@ -166,12 +146,13 @@ impl CreateFlowDefinitionFluentBuilder {
         self
     }
     /// <p>An object containing information about where the human review results will be uploaded.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowDefinitionOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::FlowDefinitionOutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
+    }
+    /// <p>An object containing information about where the human review results will be uploaded.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::FlowDefinitionOutputConfig> {
+        self.inner.get_output_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,6 +164,10 @@ impl CreateFlowDefinitionFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -193,11 +178,13 @@ impl CreateFlowDefinitionFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

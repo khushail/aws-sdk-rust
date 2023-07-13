@@ -3,7 +3,7 @@
 /// <p>Contains information about the dimensions for a set of metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dimensions {
+pub struct Dimensions  {
     /// <p>Information about the queue for which metrics are returned.</p>
     #[doc(hidden)]
     pub queue: ::std::option::Option<crate::types::QueueReference>,
@@ -16,15 +16,15 @@ pub struct Dimensions {
 }
 impl Dimensions {
     /// <p>Information about the queue for which metrics are returned.</p>
-    pub fn queue(&self) -> ::std::option::Option<&crate::types::QueueReference> {
+    pub fn queue(&self) -> ::std::option::Option<& crate::types::QueueReference> {
         self.queue.as_ref()
     }
     /// <p>The channel used for grouping and filters.</p>
-    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> ::std::option::Option<& crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>Information about the routing profile assigned to the user.</p>
-    pub fn routing_profile(&self) -> ::std::option::Option<&crate::types::RoutingProfileReference> {
+    pub fn routing_profile(&self) -> ::std::option::Option<& crate::types::RoutingProfileReference> {
         self.routing_profile.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl Dimensions {
 
 /// A builder for [`Dimensions`](crate::types::Dimensions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionsBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::QueueReference>,
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
@@ -53,8 +51,11 @@ impl DimensionsBuilder {
     }
     /// <p>Information about the queue for which metrics are returned.</p>
     pub fn set_queue(mut self, input: ::std::option::Option<crate::types::QueueReference>) -> Self {
-        self.queue = input;
-        self
+        self.queue = input; self
+    }
+    /// <p>Information about the queue for which metrics are returned.</p>
+    pub fn get_queue(&self) -> &::std::option::Option<crate::types::QueueReference> {
+        &self.queue
     }
     /// <p>The channel used for grouping and filters.</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
@@ -63,8 +64,11 @@ impl DimensionsBuilder {
     }
     /// <p>The channel used for grouping and filters.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
+    }
+    /// <p>The channel used for grouping and filters.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
+        &self.channel
     }
     /// <p>Information about the routing profile assigned to the user.</p>
     pub fn routing_profile(mut self, input: crate::types::RoutingProfileReference) -> Self {
@@ -72,19 +76,23 @@ impl DimensionsBuilder {
         self
     }
     /// <p>Information about the routing profile assigned to the user.</p>
-    pub fn set_routing_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingProfileReference>,
-    ) -> Self {
-        self.routing_profile = input;
-        self
+    pub fn set_routing_profile(mut self, input: ::std::option::Option<crate::types::RoutingProfileReference>) -> Self {
+        self.routing_profile = input; self
+    }
+    /// <p>Information about the routing profile assigned to the user.</p>
+    pub fn get_routing_profile(&self) -> &::std::option::Option<crate::types::RoutingProfileReference> {
+        &self.routing_profile
     }
     /// Consumes the builder and constructs a [`Dimensions`](crate::types::Dimensions).
     pub fn build(self) -> crate::types::Dimensions {
         crate::types::Dimensions {
-            queue: self.queue,
-            channel: self.channel,
-            routing_profile: self.routing_profile,
+            queue: self.queue
+            ,
+            channel: self.channel
+            ,
+            routing_profile: self.routing_profile
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents additional options for correct interpretation of datetime parameters used in the Amazon S3 path of a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatetimeOptions {
+pub struct DatetimeOptions  {
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
     #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct DatetimeOptions {
 }
 impl DatetimeOptions {
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
-    pub fn format(&self) -> ::std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
-    pub fn timezone_offset(&self) -> ::std::option::Option<&str> {
+    pub fn timezone_offset(&self) -> ::std::option::Option<& str> {
         self.timezone_offset.as_deref()
     }
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
-    pub fn locale_code(&self) -> ::std::option::Option<&str> {
+    pub fn locale_code(&self) -> ::std::option::Option<& str> {
         self.locale_code.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl DatetimeOptions {
 
 /// A builder for [`DatetimeOptions`](crate::types::DatetimeOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatetimeOptionsBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) timezone_offset: ::std::option::Option<::std::string::String>,
@@ -53,24 +51,24 @@ impl DatetimeOptionsBuilder {
     }
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
+    }
+    /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
-    pub fn timezone_offset(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timezone_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone_offset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
-    pub fn set_timezone_offset(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.timezone_offset = input;
-        self
+    pub fn set_timezone_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.timezone_offset = input; self
+    }
+    /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
+    pub fn get_timezone_offset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone_offset
     }
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
     pub fn locale_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl DatetimeOptionsBuilder {
     }
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
     pub fn set_locale_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_code = input;
-        self
+        self.locale_code = input; self
+    }
+    /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
+    pub fn get_locale_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_code
     }
     /// Consumes the builder and constructs a [`DatetimeOptions`](crate::types::DatetimeOptions).
     pub fn build(self) -> crate::types::DatetimeOptions {
         crate::types::DatetimeOptions {
-            format: self.format,
-            timezone_offset: self.timezone_offset,
-            locale_code: self.locale_code,
+            format: self.format
+            ,
+            timezone_offset: self.timezone_offset
+            ,
+            locale_code: self.locale_code
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A user settings resource that can be associated with a web portal. Once associated with a web portal, user settings control how users can transfer data between a streaming session and the their local devices. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserSettings {
+pub struct UserSettings  {
     /// <p>The ARN of the user settings.</p>
     #[doc(hidden)]
     pub user_settings_arn: ::std::option::Option<::std::string::String>,
@@ -34,31 +34,31 @@ pub struct UserSettings {
 }
 impl UserSettings {
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_settings_arn(&self) -> ::std::option::Option<& str> {
         self.user_settings_arn.as_deref()
     }
     /// <p>A list of web portal ARNs that this user settings is associated with.</p>
-    pub fn associated_portal_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn associated_portal_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.associated_portal_arns.as_deref()
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
-    pub fn copy_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn copy_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.copy_allowed.as_ref()
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
-    pub fn paste_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn paste_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.paste_allowed.as_ref()
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
-    pub fn download_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn download_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.download_allowed.as_ref()
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
-    pub fn upload_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn upload_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.upload_allowed.as_ref()
     }
     /// <p>Specifies whether the user can print to the local device.</p>
-    pub fn print_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn print_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.print_allowed.as_ref()
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
@@ -79,13 +79,10 @@ impl UserSettings {
 
 /// A builder for [`UserSettings`](crate::types::UserSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserSettingsBuilder {
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_portal_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) copy_allowed: ::std::option::Option<crate::types::EnabledType>,
     pub(crate) paste_allowed: ::std::option::Option<crate::types::EnabledType>,
     pub(crate) download_allowed: ::std::option::Option<crate::types::EnabledType>,
@@ -96,42 +93,36 @@ pub struct UserSettingsBuilder {
 }
 impl UserSettingsBuilder {
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn set_user_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.user_settings_arn = input;
-        self
+    pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_settings_arn = input; self
+    }
+    /// <p>The ARN of the user settings.</p>
+    pub fn get_user_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_settings_arn
     }
     /// Appends an item to `associated_portal_arns`.
     ///
     /// To override the contents of this collection use [`set_associated_portal_arns`](Self::set_associated_portal_arns).
     ///
     /// <p>A list of web portal ARNs that this user settings is associated with.</p>
-    pub fn associated_portal_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_portal_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_portal_arns.unwrap_or_default();
-        v.push(input.into());
-        self.associated_portal_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_portal_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of web portal ARNs that this user settings is associated with.</p>
-    pub fn set_associated_portal_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.associated_portal_arns = input;
-        self
+    pub fn set_associated_portal_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.associated_portal_arns = input; self
+    }
+    /// <p>A list of web portal ARNs that this user settings is associated with.</p>
+    pub fn get_associated_portal_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_portal_arns
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn copy_allowed(mut self, input: crate::types::EnabledType) -> Self {
@@ -139,12 +130,12 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
-    pub fn set_copy_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
-        self.copy_allowed = input;
-        self
+    pub fn set_copy_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.copy_allowed = input; self
+    }
+    /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
+    pub fn get_copy_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.copy_allowed
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub fn paste_allowed(mut self, input: crate::types::EnabledType) -> Self {
@@ -152,12 +143,12 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
-    pub fn set_paste_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
-        self.paste_allowed = input;
-        self
+    pub fn set_paste_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.paste_allowed = input; self
+    }
+    /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
+    pub fn get_paste_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.paste_allowed
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub fn download_allowed(mut self, input: crate::types::EnabledType) -> Self {
@@ -165,12 +156,12 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
-    pub fn set_download_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
-        self.download_allowed = input;
-        self
+    pub fn set_download_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.download_allowed = input; self
+    }
+    /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
+    pub fn get_download_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.download_allowed
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub fn upload_allowed(mut self, input: crate::types::EnabledType) -> Self {
@@ -178,12 +169,12 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
-    pub fn set_upload_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
-        self.upload_allowed = input;
-        self
+    pub fn set_upload_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.upload_allowed = input; self
+    }
+    /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
+    pub fn get_upload_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.upload_allowed
     }
     /// <p>Specifies whether the user can print to the local device.</p>
     pub fn print_allowed(mut self, input: crate::types::EnabledType) -> Self {
@@ -191,12 +182,12 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>Specifies whether the user can print to the local device.</p>
-    pub fn set_print_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
-        self.print_allowed = input;
-        self
+    pub fn set_print_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.print_allowed = input; self
+    }
+    /// <p>Specifies whether the user can print to the local device.</p>
+    pub fn get_print_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.print_allowed
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
     pub fn disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
@@ -205,8 +196,11 @@ impl UserSettingsBuilder {
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
     pub fn set_disconnect_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.disconnect_timeout_in_minutes = input;
-        self
+        self.disconnect_timeout_in_minutes = input; self
+    }
+    /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
+    pub fn get_disconnect_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.disconnect_timeout_in_minutes
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
     pub fn idle_disconnect_timeout_in_minutes(mut self, input: i32) -> Self {
@@ -214,25 +208,35 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
-    pub fn set_idle_disconnect_timeout_in_minutes(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.idle_disconnect_timeout_in_minutes = input;
-        self
+    pub fn set_idle_disconnect_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.idle_disconnect_timeout_in_minutes = input; self
+    }
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
+    pub fn get_idle_disconnect_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.idle_disconnect_timeout_in_minutes
     }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {
         crate::types::UserSettings {
-            user_settings_arn: self.user_settings_arn,
-            associated_portal_arns: self.associated_portal_arns,
-            copy_allowed: self.copy_allowed,
-            paste_allowed: self.paste_allowed,
-            download_allowed: self.download_allowed,
-            upload_allowed: self.upload_allowed,
-            print_allowed: self.print_allowed,
-            disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
-            idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
+            user_settings_arn: self.user_settings_arn
+            ,
+            associated_portal_arns: self.associated_portal_arns
+            ,
+            copy_allowed: self.copy_allowed
+            ,
+            paste_allowed: self.paste_allowed
+            ,
+            download_allowed: self.download_allowed
+            ,
+            upload_allowed: self.upload_allowed
+            ,
+            print_allowed: self.print_allowed
+            ,
+            disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes
+            ,
+            idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes
+            ,
         }
     }
 }
+

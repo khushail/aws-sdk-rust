@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAcceleratorInput {
+pub struct UpdateAcceleratorInput  {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
     #[doc(hidden)]
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
@@ -12,25 +12,25 @@ pub struct UpdateAcceleratorInput {
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
     #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> 
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl UpdateAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    pub fn accelerator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn accelerator_arn(&self) -> ::std::option::Option<& str> {
         self.accelerator_arn.as_deref()
     }
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> 
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -38,17 +38,14 @@ impl UpdateAcceleratorInput {
 }
 impl UpdateAcceleratorInput {
     /// Creates a new builder-style object to manufacture [`UpdateAcceleratorInput`](crate::operation::update_accelerator::UpdateAcceleratorInput).
-    pub fn builder() -> crate::operation::update_accelerator::builders::UpdateAcceleratorInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_accelerator::builders::UpdateAcceleratorInputBuilder {
         crate::operation::update_accelerator::builders::UpdateAcceleratorInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAcceleratorInput`](crate::operation::update_accelerator::UpdateAcceleratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAcceleratorInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -57,20 +54,17 @@ pub struct UpdateAcceleratorInputBuilder {
 }
 impl UpdateAcceleratorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.accelerator_arn = input;
-        self
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.accelerator_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_arn
     }
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +73,11 @@ impl UpdateAcceleratorInputBuilder {
     }
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -88,39 +85,43 @@ impl UpdateAcceleratorInputBuilder {
         self
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
-        self.ip_address_type = input;
-        self
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input; self
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> 
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> 
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> 
+    /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateAcceleratorInput`](crate::operation::update_accelerator::UpdateAcceleratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_accelerator::UpdateAcceleratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_accelerator::UpdateAcceleratorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_accelerator::UpdateAcceleratorInput {
-                accelerator_arn: self.accelerator_arn,
-                name: self.name,
-                ip_address_type: self.ip_address_type,
-                enabled: self.enabled,
-            },
+                accelerator_arn: self.accelerator_arn
+                ,
+                name: self.name
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+                enabled: self.enabled
+                ,
+            }
         )
     }
 }
+

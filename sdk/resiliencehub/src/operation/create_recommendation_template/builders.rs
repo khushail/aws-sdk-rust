@@ -3,235 +3,252 @@ pub use crate::operation::create_recommendation_template::_create_recommendation
 
 pub use crate::operation::create_recommendation_template::_create_recommendation_template_input::CreateRecommendationTemplateInputBuilder;
 
+impl CreateRecommendationTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_recommendation_template::CreateRecommendationTemplateError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_recommendation_template();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateRecommendationTemplate`.
-///
+/// 
 /// <p>Creates a new recommendation template for the Resilience Hub application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRecommendationTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateInputBuilder,
 }
-impl CreateRecommendationTemplateFluentBuilder {
+impl CreateRecommendationTemplateFluentBuilder  {
     /// Creates a new `CreateRecommendationTemplate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_recommendation_template::CreateRecommendationTemplate,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommendation_template::CreateRecommendationTemplateError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateRecommendationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommendation_template::CreateRecommendationTemplateError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_recommendation_template::CreateRecommendationTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_recommendation_template::CreateRecommendationTemplateError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_recommendation_template::CreateRecommendationTemplateError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommendation_template::CreateRecommendationTemplateError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_recommendation_template::CreateRecommendationTemplate,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommendation_template::CreateRecommendationTemplateError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_recommendation_template::CreateRecommendationTemplateError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_recommendation_template::CreateRecommendationTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_recommendation_template::CreateRecommendationTemplateError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Appends an item to `recommendationIds`.
     ///
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
     ///
     /// <p>Identifiers for the recommendations used to create a recommendation template.</p>
-    pub fn recommendation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommendation_ids(input.into());
         self
     }
     /// <p>Identifiers for the recommendations used to create a recommendation template.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_recommendation_ids(input);
         self
     }
-    /// <p>The format for the recommendation template.</p>
-    /// <dl>
+    /// <p>Identifiers for the recommendations used to create a recommendation template.</p>
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_recommendation_ids()
+    }
+    /// <p>The format for the recommendation template.</p> 
+    /// <dl> 
     /// <dt>
     /// CfnJson
-    /// </dt>
-    /// <dd>
-    /// <p>The template is CloudFormation JSON.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation JSON.</p> 
+    /// </dd> 
     /// <dt>
     /// CfnYaml
-    /// </dt>
-    /// <dd>
-    /// <p>The template is CloudFormation YAML.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation YAML.</p> 
+    /// </dd> 
     /// </dl>
     pub fn format(mut self, input: crate::types::TemplateFormat) -> Self {
         self.inner = self.inner.format(input);
         self
     }
-    /// <p>The format for the recommendation template.</p>
-    /// <dl>
+    /// <p>The format for the recommendation template.</p> 
+    /// <dl> 
     /// <dt>
     /// CfnJson
-    /// </dt>
-    /// <dd>
-    /// <p>The template is CloudFormation JSON.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation JSON.</p> 
+    /// </dd> 
     /// <dt>
     /// CfnYaml
-    /// </dt>
-    /// <dd>
-    /// <p>The template is CloudFormation YAML.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation YAML.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TemplateFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The format for the recommendation template.</p> 
+    /// <dl> 
+    /// <dt>
+    /// CfnJson
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation JSON.</p> 
+    /// </dd> 
+    /// <dt>
+    /// CfnYaml
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation YAML.</p> 
+    /// </dd> 
+    /// </dl>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TemplateFormat> {
+        self.inner.get_format()
     }
     /// Appends an item to `recommendationTypes`.
     ///
     /// To override the contents of this collection use [`set_recommendation_types`](Self::set_recommendation_types).
     ///
-    /// <p>An array of strings that specify the recommendation template type or types.</p>
-    /// <dl>
+    /// <p>An array of strings that specify the recommendation template type or types.</p> 
+    /// <dl> 
     /// <dt>
     /// Alarm
-    /// </dt>
-    /// <dd>
-    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p> 
+    /// </dd> 
     /// <dt>
     /// Sop
-    /// </dt>
-    /// <dd>
-    /// <p>The template is a <code>SopRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>SopRecommendation</code> template.</p> 
+    /// </dd> 
     /// <dt>
     /// Test
-    /// </dt>
-    /// <dd>
-    /// <p>The template is a <code>TestRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>TestRecommendation</code> template.</p> 
+    /// </dd> 
     /// </dl>
     pub fn recommendation_types(mut self, input: crate::types::RenderRecommendationType) -> Self {
         self.inner = self.inner.recommendation_types(input);
         self
     }
-    /// <p>An array of strings that specify the recommendation template type or types.</p>
-    /// <dl>
+    /// <p>An array of strings that specify the recommendation template type or types.</p> 
+    /// <dl> 
     /// <dt>
     /// Alarm
-    /// </dt>
-    /// <dd>
-    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p> 
+    /// </dd> 
     /// <dt>
     /// Sop
-    /// </dt>
-    /// <dd>
-    /// <p>The template is a <code>SopRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>SopRecommendation</code> template.</p> 
+    /// </dd> 
     /// <dt>
     /// Test
-    /// </dt>
-    /// <dd>
-    /// <p>The template is a <code>TestRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>TestRecommendation</code> template.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_recommendation_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>>,
-    ) -> Self {
+    pub fn set_recommendation_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>>) -> Self {
         self.inner = self.inner.set_recommendation_types(input);
         self
     }
+    /// <p>An array of strings that specify the recommendation template type or types.</p> 
+    /// <dl> 
+    /// <dt>
+    /// Alarm
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p> 
+    /// </dd> 
+    /// <dt>
+    /// Sop
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>SopRecommendation</code> template.</p> 
+    /// </dd> 
+    /// <dt>
+    /// Test
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>TestRecommendation</code> template.</p> 
+    /// </dd> 
+    /// </dl>
+    pub fn get_recommendation_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>> {
+        self.inner.get_recommendation_types()
+    }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_arn()
     }
     /// <p>The name for the recommendation template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -243,6 +260,10 @@ impl CreateRecommendationTemplateFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the recommendation template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -253,28 +274,27 @@ impl CreateRecommendationTemplateFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_tags()
     }
     /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -286,4 +306,9 @@ impl CreateRecommendationTemplateFluentBuilder {
         self.inner = self.inner.set_bucket_name(input);
         self
     }
+    /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_name()
+    }
 }
+

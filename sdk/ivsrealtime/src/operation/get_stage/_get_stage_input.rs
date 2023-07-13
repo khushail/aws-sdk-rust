@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStageInput {
+pub struct GetStageInput  {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetStageInput {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetStageInput {
 
 /// A builder for [`GetStageInput`](crate::operation::get_stage::GetStageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStageInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,20 @@ impl GetStageInputBuilder {
     }
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>ARN of the stage for which the information is to be retrieved.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`GetStageInput`](crate::operation::get_stage::GetStageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_stage::GetStageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_stage::GetStageInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stage::GetStageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_stage::GetStageInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

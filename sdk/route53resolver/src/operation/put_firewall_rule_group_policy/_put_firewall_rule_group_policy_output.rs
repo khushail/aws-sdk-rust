@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutFirewallRuleGroupPolicyOutput {
+pub struct PutFirewallRuleGroupPolicyOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub return_value: bool,
@@ -15,22 +15,20 @@ impl PutFirewallRuleGroupPolicyOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for PutFirewallRuleGroupPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutFirewallRuleGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutFirewallRuleGroupPolicyOutput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput).
-    pub fn builder() -> crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyOutputBuilder {
         crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutFirewallRuleGroupPolicyOutput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -43,25 +41,29 @@ impl PutFirewallRuleGroupPolicyOutputBuilder {
     }
     /// <p></p>
     pub fn set_return_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.return_value = input;
-        self
+        self.return_value = input; self
+    }
+    /// <p></p>
+    pub fn get_return_value(&self) -> &::std::option::Option<bool> {
+        &self.return_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutFirewallRuleGroupPolicyOutput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput {
+    pub fn build(self) -> crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput {
         crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput {
-            return_value: self.return_value.unwrap_or_default(),
+            return_value: self.return_value
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCustomRulePolicyOutput {
+pub struct GetCustomRulePolicyOutput  {
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
     #[doc(hidden)]
     pub policy_text: ::std::option::Option<::std::string::String>,
@@ -10,28 +10,25 @@ pub struct GetCustomRulePolicyOutput {
 }
 impl GetCustomRulePolicyOutput {
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
-    pub fn policy_text(&self) -> ::std::option::Option<&str> {
+    pub fn policy_text(&self) -> ::std::option::Option<& str> {
         self.policy_text.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCustomRulePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCustomRulePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetCustomRulePolicyOutput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyOutputBuilder {
         crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCustomRulePolicyOutput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCustomRulePolicyOutputBuilder {
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -44,23 +41,28 @@ impl GetCustomRulePolicyOutputBuilder {
     }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
     pub fn set_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_text = input;
-        self
+        self.policy_text = input; self
+    }
+    /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_text
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCustomRulePolicyOutput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput).
     pub fn build(self) -> crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput {
         crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput {
-            policy_text: self.policy_text,
+            policy_text: self.policy_text
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

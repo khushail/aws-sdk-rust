@@ -3,7 +3,7 @@
 /// <p>An Active Directory Domain membership record associated with the DB instance or cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainMembership {
+pub struct DomainMembership  {
     /// <p>The identifier of the Active Directory Domain.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct DomainMembership {
 }
 impl DomainMembership {
     /// <p>The identifier of the Active Directory Domain.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The fully qualified domain name of the Active Directory Domain.</p>
-    pub fn fqdn(&self) -> ::std::option::Option<&str> {
+    pub fn fqdn(&self) -> ::std::option::Option<& str> {
         self.fqdn.as_deref()
     }
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
-    pub fn iam_role_name(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_name(&self) -> ::std::option::Option<& str> {
         self.iam_role_name.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl DomainMembership {
 
 /// A builder for [`DomainMembership`](crate::types::DomainMembership).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainMembershipBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl DomainMembershipBuilder {
     }
     /// <p>The identifier of the Active Directory Domain.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The identifier of the Active Directory Domain.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl DomainMembershipBuilder {
     }
     /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The fully qualified domain name of the Active Directory Domain.</p>
     pub fn fqdn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,32 +85,37 @@ impl DomainMembershipBuilder {
     }
     /// <p>The fully qualified domain name of the Active Directory Domain.</p>
     pub fn set_fqdn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fqdn = input;
-        self
+        self.fqdn = input; self
+    }
+    /// <p>The fully qualified domain name of the Active Directory Domain.</p>
+    pub fn get_fqdn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fqdn
     }
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
-    pub fn iam_role_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
-    pub fn set_iam_role_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.iam_role_name = input;
-        self
+    pub fn set_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_role_name = input; self
+    }
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
+    pub fn get_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_name
     }
     /// Consumes the builder and constructs a [`DomainMembership`](crate::types::DomainMembership).
     pub fn build(self) -> crate::types::DomainMembership {
         crate::types::DomainMembership {
-            domain: self.domain,
-            status: self.status,
-            fqdn: self.fqdn,
-            iam_role_name: self.iam_role_name,
+            domain: self.domain
+            ,
+            status: self.status
+            ,
+            fqdn: self.fqdn
+            ,
+            iam_role_name: self.iam_role_name
+            ,
         }
     }
 }
+

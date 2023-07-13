@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateOriginationIdentityOutput {
+pub struct AssociateOriginationIdentityOutput  {
     /// <p>The Amazon Resource Name (ARN) of the pool that is now associated with the origination identity.</p>
     #[doc(hidden)]
     pub pool_arn: ::std::option::Option<::std::string::String>,
@@ -22,43 +22,41 @@ pub struct AssociateOriginationIdentityOutput {
 }
 impl AssociateOriginationIdentityOutput {
     /// <p>The Amazon Resource Name (ARN) of the pool that is now associated with the origination identity.</p>
-    pub fn pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pool_arn(&self) -> ::std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The PoolId of the pool that is now associated with the origination identity.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-    pub fn origination_identity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn origination_identity_arn(&self) -> ::std::option::Option<& str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+    pub fn origination_identity(&self) -> ::std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateOriginationIdentityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateOriginationIdentityOutput {
     /// Creates a new builder-style object to manufacture [`AssociateOriginationIdentityOutput`](crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput).
-    pub fn builder() -> crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityOutputBuilder{
+    pub fn builder() -> crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityOutputBuilder {
         crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateOriginationIdentityOutput`](crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateOriginationIdentityOutputBuilder {
     pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
@@ -75,8 +73,11 @@ impl AssociateOriginationIdentityOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pool that is now associated with the origination identity.</p>
     pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_arn = input;
-        self
+        self.pool_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pool that is now associated with the origination identity.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
     }
     /// <p>The PoolId of the pool that is now associated with the origination identity.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,77 +86,75 @@ impl AssociateOriginationIdentityOutputBuilder {
     }
     /// <p>The PoolId of the pool that is now associated with the origination identity.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
+    }
+    /// <p>The PoolId of the pool that is now associated with the origination identity.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
     }
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-    pub fn origination_identity_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-    pub fn set_origination_identity_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.origination_identity_arn = input;
-        self
+    pub fn set_origination_identity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.origination_identity_arn = input; self
+    }
+    /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
+    pub fn get_origination_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity_arn
     }
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.origination_identity = input;
-        self
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.origination_identity = input; self
+    }
+    /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.iso_country_code = input;
-        self
+    pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iso_country_code = input; self
+    }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iso_country_code
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateOriginationIdentityOutput`](crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput {
+    pub fn build(self) -> crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput {
         crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput {
-            pool_arn: self.pool_arn,
-            pool_id: self.pool_id,
-            origination_identity_arn: self.origination_identity_arn,
-            origination_identity: self.origination_identity,
-            iso_country_code: self.iso_country_code,
+            pool_arn: self.pool_arn
+            ,
+            pool_id: self.pool_id
+            ,
+            origination_identity_arn: self.origination_identity_arn
+            ,
+            origination_identity: self.origination_identity
+            ,
+            iso_country_code: self.iso_country_code
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

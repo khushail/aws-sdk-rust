@@ -3,7 +3,7 @@
 /// <p> A representation of the charge details that are associated with a percentage custom line item. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomLineItemPercentageChargeDetails {
+pub struct CustomLineItemPercentageChargeDetails  {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
     pub percentage_value: ::std::option::Option<f64>,
@@ -17,7 +17,7 @@ impl CustomLineItemPercentageChargeDetails {
         self.percentage_value
     }
     /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
-    pub fn associated_values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn associated_values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.associated_values.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl CustomLineItemPercentageChargeDetails {
 
 /// A builder for [`CustomLineItemPercentageChargeDetails`](crate::types::CustomLineItemPercentageChargeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomLineItemPercentageChargeDetailsBuilder {
     pub(crate) percentage_value: ::std::option::Option<f64>,
     pub(crate) associated_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,36 +43,39 @@ impl CustomLineItemPercentageChargeDetailsBuilder {
     }
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     pub fn set_percentage_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.percentage_value = input;
-        self
+        self.percentage_value = input; self
+    }
+    /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    pub fn get_percentage_value(&self) -> &::std::option::Option<f64> {
+        &self.percentage_value
     }
     /// Appends an item to `associated_values`.
     ///
     /// To override the contents of this collection use [`set_associated_values`](Self::set_associated_values).
     ///
     /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
-    pub fn associated_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_values.unwrap_or_default();
-        v.push(input.into());
-        self.associated_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
-    pub fn set_associated_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.associated_values = input;
-        self
+    pub fn set_associated_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.associated_values = input; self
+    }
+    /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
+    pub fn get_associated_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_values
     }
     /// Consumes the builder and constructs a [`CustomLineItemPercentageChargeDetails`](crate::types::CustomLineItemPercentageChargeDetails).
     pub fn build(self) -> crate::types::CustomLineItemPercentageChargeDetails {
         crate::types::CustomLineItemPercentageChargeDetails {
-            percentage_value: self.percentage_value,
-            associated_values: self.associated_values,
+            percentage_value: self.percentage_value
+            ,
+            associated_values: self.associated_values
+            ,
         }
     }
 }
+

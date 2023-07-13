@@ -3,106 +3,91 @@ pub use crate::operation::associate_lenses::_associate_lenses_output::AssociateL
 
 pub use crate::operation::associate_lenses::_associate_lenses_input::AssociateLensesInputBuilder;
 
+impl AssociateLensesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::associate_lenses::AssociateLensesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::associate_lenses::AssociateLensesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.associate_lenses();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `AssociateLenses`.
-///
-/// <p>Associate a lens to a workload.</p>
-/// <p>Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.</p> <note>
-/// <p> <b>Disclaimer</b> </p>
-/// <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement. </p>
+/// 
+/// <p>Associate a lens to a workload.</p> 
+/// <p>Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.</p> <note> 
+/// <p> <b>Disclaimer</b> </p> 
+/// <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement. </p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateLensesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::associate_lenses::builders::AssociateLensesInputBuilder,
+                    inner: crate::operation::associate_lenses::builders::AssociateLensesInputBuilder,
 }
-impl AssociateLensesFluentBuilder {
+impl AssociateLensesFluentBuilder  {
     /// Creates a new `AssociateLenses`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::associate_lenses::AssociateLenses,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_lenses::AssociateLensesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the AssociateLenses as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_lenses::builders::AssociateLensesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_lenses::AssociateLensesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_lenses::AssociateLensesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::associate_lenses::AssociateLenses, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::associate_lenses::AssociateLensesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_lenses::AssociateLensesOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_lenses::AssociateLensesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_lenses::AssociateLensesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_lenses::AssociateLensesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::associate_lenses::AssociateLenses,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_lenses::AssociateLensesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_lenses::AssociateLensesOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_lenses::AssociateLensesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::associate_lenses::AssociateLenses, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::associate_lenses::AssociateLensesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_id(input.into());
@@ -113,23 +98,30 @@ impl AssociateLensesFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_id()
+    }
     /// Appends an item to `LensAliases`.
     ///
     /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
     ///
-    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p> 
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lens_aliases(input.into());
         self
     }
-    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p> 
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lens_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lens_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_lens_aliases(input);
         self
     }
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p> 
+    /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_lens_aliases()
+    }
 }
+

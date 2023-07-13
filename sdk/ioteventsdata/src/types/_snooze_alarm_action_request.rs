@@ -3,7 +3,7 @@
 /// <p>Information needed to snooze the alarm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnoozeAlarmActionRequest {
+pub struct SnoozeAlarmActionRequest  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -22,19 +22,19 @@ pub struct SnoozeAlarmActionRequest {
 }
 impl SnoozeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> ::std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> ::std::option::Option<&str> {
+    pub fn key_value(&self) -> ::std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    pub fn note(&self) -> ::std::option::Option<&str> {
+    pub fn note(&self) -> ::std::option::Option<& str> {
         self.note.as_deref()
     }
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
@@ -51,9 +51,7 @@ impl SnoozeAlarmActionRequest {
 
 /// A builder for [`SnoozeAlarmActionRequest`](crate::types::SnoozeAlarmActionRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnoozeAlarmActionRequestBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
@@ -69,24 +67,24 @@ impl SnoozeAlarmActionRequestBuilder {
     }
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
+    }
+    /// <p>The request ID. Each ID must be unique within each batch.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.alarm_model_name = input;
-        self
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alarm_model_name = input; self
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +93,11 @@ impl SnoozeAlarmActionRequestBuilder {
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_value = input;
-        self
+        self.key_value = input; self
+    }
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_value
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
     pub fn note(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,8 +106,11 @@ impl SnoozeAlarmActionRequestBuilder {
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
     pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.note = input;
-        self
+        self.note = input; self
+    }
+    /// <p>The note that you can leave when you snooze the alarm.</p>
+    pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
+        &self.note
     }
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     pub fn snooze_duration(mut self, input: i32) -> Self {
@@ -115,17 +119,26 @@ impl SnoozeAlarmActionRequestBuilder {
     }
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     pub fn set_snooze_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snooze_duration = input;
-        self
+        self.snooze_duration = input; self
+    }
+    /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
+    pub fn get_snooze_duration(&self) -> &::std::option::Option<i32> {
+        &self.snooze_duration
     }
     /// Consumes the builder and constructs a [`SnoozeAlarmActionRequest`](crate::types::SnoozeAlarmActionRequest).
     pub fn build(self) -> crate::types::SnoozeAlarmActionRequest {
         crate::types::SnoozeAlarmActionRequest {
-            request_id: self.request_id,
-            alarm_model_name: self.alarm_model_name,
-            key_value: self.key_value,
-            note: self.note,
-            snooze_duration: self.snooze_duration,
+            request_id: self.request_id
+            ,
+            alarm_model_name: self.alarm_model_name
+            ,
+            key_value: self.key_value
+            ,
+            note: self.note
+            ,
+            snooze_duration: self.snooze_duration
+            ,
         }
     }
 }
+

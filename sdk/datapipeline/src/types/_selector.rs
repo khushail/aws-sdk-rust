@@ -3,7 +3,7 @@
 /// <p>A comparision that is used to determine whether a query should return this object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Selector {
+pub struct Selector  {
     /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
     #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Selector {
 }
 impl Selector {
     /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
-    pub fn field_name(&self) -> ::std::option::Option<&str> {
+    pub fn field_name(&self) -> ::std::option::Option<& str> {
         self.field_name.as_deref()
     }
     /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
+    pub fn operator(&self) -> ::std::option::Option<& crate::types::Operator> {
         self.operator.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Selector {
 
 /// A builder for [`Selector`](crate::types::Selector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectorBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::Operator>,
@@ -45,8 +43,11 @@ impl SelectorBuilder {
     }
     /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
+    }
+    /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
     }
     /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
@@ -55,14 +56,20 @@ impl SelectorBuilder {
     }
     /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
+    }
+    /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`Selector`](crate::types::Selector).
     pub fn build(self) -> crate::types::Selector {
         crate::types::Selector {
-            field_name: self.field_name,
-            operator: self.operator,
+            field_name: self.field_name
+            ,
+            operator: self.operator
+            ,
         }
     }
 }
+

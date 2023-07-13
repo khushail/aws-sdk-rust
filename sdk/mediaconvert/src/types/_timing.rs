@@ -3,7 +3,7 @@
 /// Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Timing {
+pub struct Timing  {
     /// The time, in Unix epoch format, that the transcoding job finished
     #[doc(hidden)]
     pub finish_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -16,15 +16,15 @@ pub struct Timing {
 }
 impl Timing {
     /// The time, in Unix epoch format, that the transcoding job finished
-    pub fn finish_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn finish_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.finish_time.as_ref()
     }
     /// The time, in Unix epoch format, that transcoding for the job began.
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// The time, in Unix epoch format, that you submitted the job.
-    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl Timing {
 
 /// A builder for [`Timing`](crate::types::Timing).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimingBuilder {
     pub(crate) finish_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,12 +50,12 @@ impl TimingBuilder {
         self
     }
     /// The time, in Unix epoch format, that the transcoding job finished
-    pub fn set_finish_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.finish_time = input;
-        self
+    pub fn set_finish_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.finish_time = input; self
+    }
+    /// The time, in Unix epoch format, that the transcoding job finished
+    pub fn get_finish_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.finish_time
     }
     /// The time, in Unix epoch format, that transcoding for the job began.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -65,12 +63,12 @@ impl TimingBuilder {
         self
     }
     /// The time, in Unix epoch format, that transcoding for the job began.
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// The time, in Unix epoch format, that transcoding for the job began.
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// The time, in Unix epoch format, that you submitted the job.
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,19 +76,23 @@ impl TimingBuilder {
         self
     }
     /// The time, in Unix epoch format, that you submitted the job.
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.submit_time = input;
-        self
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.submit_time = input; self
+    }
+    /// The time, in Unix epoch format, that you submitted the job.
+    pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time
     }
     /// Consumes the builder and constructs a [`Timing`](crate::types::Timing).
     pub fn build(self) -> crate::types::Timing {
         crate::types::Timing {
-            finish_time: self.finish_time,
-            start_time: self.start_time,
-            submit_time: self.submit_time,
+            finish_time: self.finish_time
+            ,
+            start_time: self.start_time
+            ,
+            submit_time: self.submit_time
+            ,
         }
     }
 }
+

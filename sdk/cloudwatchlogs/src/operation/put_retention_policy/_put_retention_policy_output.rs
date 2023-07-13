@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRetentionPolicyOutput {
+pub struct PutRetentionPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for PutRetentionPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutRetentionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutRetentionPolicyOutput`](crate::operation::put_retention_policy::PutRetentionPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_retention_policy::builders::PutRetentionPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_retention_policy::builders::PutRetentionPolicyOutputBuilder {
         crate::operation::put_retention_policy::builders::PutRetentionPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRetentionPolicyOutput`](crate::operation::put_retention_policy::PutRetentionPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRetentionPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutRetentionPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutRetentionPolicyOutput`](crate::operation::put_retention_policy::PutRetentionPolicyOutput).
     pub fn build(self) -> crate::operation::put_retention_policy::PutRetentionPolicyOutput {
         crate::operation::put_retention_policy::PutRetentionPolicyOutput {
@@ -43,3 +40,4 @@ impl PutRetentionPolicyOutputBuilder {
         }
     }
 }
+

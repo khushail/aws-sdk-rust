@@ -3,7 +3,7 @@
 /// <p>Provides information about the configuration of an EC2 instance for the load balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElbLoadBalancerBackendServerDescription {
+pub struct AwsElbLoadBalancerBackendServerDescription  {
     /// <p>The port on which the EC2 instance is listening.</p>
     #[doc(hidden)]
     pub instance_port: i32,
@@ -17,7 +17,7 @@ impl AwsElbLoadBalancerBackendServerDescription {
         self.instance_port
     }
     /// <p>The names of the policies that are enabled for the EC2 instance.</p>
-    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn policy_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.policy_names.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AwsElbLoadBalancerBackendServerDescription {
 
 /// A builder for [`AwsElbLoadBalancerBackendServerDescription`](crate::types::AwsElbLoadBalancerBackendServerDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerBackendServerDescriptionBuilder {
     pub(crate) instance_port: ::std::option::Option<i32>,
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl AwsElbLoadBalancerBackendServerDescriptionBuilder {
     }
     /// <p>The port on which the EC2 instance is listening.</p>
     pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_port = input;
-        self
+        self.instance_port = input; self
+    }
+    /// <p>The port on which the EC2 instance is listening.</p>
+    pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
+        &self.instance_port
     }
     /// Appends an item to `policy_names`.
     ///
@@ -55,23 +56,27 @@ impl AwsElbLoadBalancerBackendServerDescriptionBuilder {
     /// <p>The names of the policies that are enabled for the EC2 instance.</p>
     pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the policies that are enabled for the EC2 instance.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.policy_names = input;
-        self
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.policy_names = input; self
+    }
+    /// <p>The names of the policies that are enabled for the EC2 instance.</p>
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_names
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerBackendServerDescription`](crate::types::AwsElbLoadBalancerBackendServerDescription).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerBackendServerDescription {
         crate::types::AwsElbLoadBalancerBackendServerDescription {
-            instance_port: self.instance_port.unwrap_or_default(),
-            policy_names: self.policy_names,
+            instance_port: self.instance_port
+                .unwrap_or_default()
+            ,
+            policy_names: self.policy_names
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// MediaLive will perform a failover if content is not detected in this input for the specified period.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputLossFailoverSettings {
+pub struct InputLossFailoverSettings  {
     /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
     #[doc(hidden)]
     pub input_loss_threshold_msec: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl InputLossFailoverSettings {
 
 /// A builder for [`InputLossFailoverSettings`](crate::types::InputLossFailoverSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputLossFailoverSettingsBuilder {
     pub(crate) input_loss_threshold_msec: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl InputLossFailoverSettingsBuilder {
     }
     /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
     pub fn set_input_loss_threshold_msec(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.input_loss_threshold_msec = input;
-        self
+        self.input_loss_threshold_msec = input; self
+    }
+    /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
+    pub fn get_input_loss_threshold_msec(&self) -> &::std::option::Option<i32> {
+        &self.input_loss_threshold_msec
     }
     /// Consumes the builder and constructs a [`InputLossFailoverSettings`](crate::types::InputLossFailoverSettings).
     pub fn build(self) -> crate::types::InputLossFailoverSettings {
         crate::types::InputLossFailoverSettings {
-            input_loss_threshold_msec: self.input_loss_threshold_msec,
+            input_loss_threshold_msec: self.input_loss_threshold_msec
+            ,
         }
     }
 }
+

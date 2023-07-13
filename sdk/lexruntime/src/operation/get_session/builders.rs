@@ -3,94 +3,87 @@ pub use crate::operation::get_session::_get_session_output::GetSessionOutputBuil
 
 pub use crate::operation::get_session::_get_session_input::GetSessionInputBuilder;
 
+impl GetSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_session::GetSessionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_session::GetSessionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_session();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetSession`.
-///
+/// 
 /// <p>Returns session information for a specified bot, alias, and user ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_session::builders::GetSessionInputBuilder,
+                    inner: crate::operation::get_session::builders::GetSessionInputBuilder,
 }
-impl GetSessionFluentBuilder {
+impl GetSessionFluentBuilder  {
     /// Creates a new `GetSession`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_session::GetSession,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_session::builders::GetSessionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_session::GetSessionOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_session::GetSession, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_session::GetSessionOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_session::GetSessionOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_session::GetSession,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_session::GetSessionOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_session::GetSession, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the bot that contains the session data.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
@@ -100,6 +93,10 @@ impl GetSessionFluentBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_name(input);
         self
+    }
+    /// <p>The name of the bot that contains the session data.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +108,10 @@ impl GetSessionFluentBuilder {
         self.inner = self.inner.set_bot_alias(input);
         self
     }
+    /// <p>The alias in use for the bot that contains the session data.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_alias()
+    }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -121,22 +122,26 @@ impl GetSessionFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
+    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
+    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p> 
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
-    pub fn checkpoint_label_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn checkpoint_label_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.checkpoint_label_filter(input.into());
         self
     }
-    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
+    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p> 
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
-    pub fn set_checkpoint_label_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_checkpoint_label_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_checkpoint_label_filter(input);
         self
     }
+    /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p> 
+    /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
+    pub fn get_checkpoint_label_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checkpoint_label_filter()
+    }
 }
+

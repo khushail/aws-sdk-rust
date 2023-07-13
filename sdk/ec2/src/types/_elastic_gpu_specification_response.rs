@@ -3,14 +3,14 @@
 /// <p>Describes an elastic GPU.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticGpuSpecificationResponse {
+pub struct ElasticGpuSpecificationResponse  {
     /// <p>The elastic GPU type.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl ElasticGpuSpecificationResponse {
     /// <p>The elastic GPU type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ElasticGpuSpecificationResponse {
 
 /// A builder for [`ElasticGpuSpecificationResponse`](crate::types::ElasticGpuSpecificationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticGpuSpecificationResponseBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ElasticGpuSpecificationResponseBuilder {
     }
     /// <p>The elastic GPU type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The elastic GPU type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ElasticGpuSpecificationResponse`](crate::types::ElasticGpuSpecificationResponse).
     pub fn build(self) -> crate::types::ElasticGpuSpecificationResponse {
         crate::types::ElasticGpuSpecificationResponse {
-            r#type: self.r#type,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRemediationExecutionStatusInput {
+pub struct DescribeRemediationExecutionStatusInput  {
     /// <p>A list of Config rule names.</p>
     #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeRemediationExecutionStatusInput {
 }
 impl DescribeRemediationExecutionStatusInput {
     /// <p>A list of Config rule names.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-    pub fn resource_keys(&self) -> ::std::option::Option<&[crate::types::ResourceKey]> {
+    pub fn resource_keys(&self) -> ::std::option::Option<& [crate::types::ResourceKey]> {
         self.resource_keys.as_deref()
     }
     /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
@@ -30,22 +30,20 @@ impl DescribeRemediationExecutionStatusInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeRemediationExecutionStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeRemediationExecutionStatusInput`](crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusInput).
-    pub fn builder() -> crate::operation::describe_remediation_execution_status::builders::DescribeRemediationExecutionStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_remediation_execution_status::builders::DescribeRemediationExecutionStatusInputBuilder {
         crate::operation::describe_remediation_execution_status::builders::DescribeRemediationExecutionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRemediationExecutionStatusInput`](crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRemediationExecutionStatusInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
@@ -54,20 +52,17 @@ pub struct DescribeRemediationExecutionStatusInputBuilder {
 }
 impl DescribeRemediationExecutionStatusInputBuilder {
     /// <p>A list of Config rule names.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of Config rule names.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.config_rule_name = input;
-        self
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.config_rule_name = input; self
+    }
+    /// <p>A list of Config rule names.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
     }
     /// Appends an item to `resource_keys`.
     ///
@@ -76,17 +71,17 @@ impl DescribeRemediationExecutionStatusInputBuilder {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
     pub fn resource_keys(mut self, input: crate::types::ResourceKey) -> Self {
         let mut v = self.resource_keys.unwrap_or_default();
-        v.push(input);
-        self.resource_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-    pub fn set_resource_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
-    ) -> Self {
-        self.resource_keys = input;
-        self
+    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
+        self.resource_keys = input; self
+    }
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+        &self.resource_keys
     }
     /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -95,8 +90,11 @@ impl DescribeRemediationExecutionStatusInputBuilder {
     }
     /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,11 +103,14 @@ impl DescribeRemediationExecutionStatusInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRemediationExecutionStatusInput`](crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusInput {
                 config_rule_name: self.config_rule_name
@@ -124,3 +125,4 @@ impl DescribeRemediationExecutionStatusInputBuilder {
         )
     }
 }
+

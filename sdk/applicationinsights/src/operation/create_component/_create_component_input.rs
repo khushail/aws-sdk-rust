@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateComponentInput {
+pub struct CreateComponentInput  {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct CreateComponentInput {
 }
 impl CreateComponentInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn resource_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn resource_list(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.resource_list.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl CreateComponentInput {
 
 /// A builder for [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateComponentInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
@@ -46,70 +44,62 @@ pub struct CreateComponentInputBuilder {
 }
 impl CreateComponentInputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_group_name = input;
-        self
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_group_name = input; self
+    }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.component_name = input;
-        self
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_name = input; self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
     }
     /// Appends an item to `resource_list`.
     ///
     /// To override the contents of this collection use [`set_resource_list`](Self::set_resource_list).
     ///
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn resource_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_list.unwrap_or_default();
-        v.push(input.into());
-        self.resource_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn set_resource_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.resource_list = input;
-        self
+    pub fn set_resource_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.resource_list = input; self
+    }
+    /// <p>The list of resource ARNs that belong to the component.</p>
+    pub fn get_resource_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_list
     }
     /// Consumes the builder and constructs a [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_component::CreateComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_component::CreateComponentInput {
-            resource_group_name: self.resource_group_name,
-            component_name: self.component_name,
-            resource_list: self.resource_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_component::CreateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_component::CreateComponentInput {
+                resource_group_name: self.resource_group_name
+                ,
+                component_name: self.component_name
+                ,
+                resource_list: self.resource_list
+                ,
+            }
+        )
     }
 }
+

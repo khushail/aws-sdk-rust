@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTrafficMirrorSessionInput {
+pub struct DeleteTrafficMirrorSessionInput  {
     /// <p>The ID of the Traffic Mirror session.</p>
     #[doc(hidden)]
     pub traffic_mirror_session_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteTrafficMirrorSessionInput {
 }
 impl DeleteTrafficMirrorSessionInput {
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_session_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_session_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,36 +22,31 @@ impl DeleteTrafficMirrorSessionInput {
 }
 impl DeleteTrafficMirrorSessionInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficMirrorSessionInput`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput).
-    pub fn builder() -> crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionInputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionInputBuilder {
         crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficMirrorSessionInput`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorSessionInputBuilder {
     pub(crate) traffic_mirror_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteTrafficMirrorSessionInputBuilder {
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn set_traffic_mirror_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.traffic_mirror_session_id = input;
-        self
+    pub fn set_traffic_mirror_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.traffic_mirror_session_id = input; self
+    }
+    /// <p>The ID of the Traffic Mirror session.</p>
+    pub fn get_traffic_mirror_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.traffic_mirror_session_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -60,21 +55,22 @@ impl DeleteTrafficMirrorSessionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteTrafficMirrorSessionInput`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput {
-                traffic_mirror_session_id: self.traffic_mirror_session_id,
-                dry_run: self.dry_run,
-            },
+                traffic_mirror_session_id: self.traffic_mirror_session_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

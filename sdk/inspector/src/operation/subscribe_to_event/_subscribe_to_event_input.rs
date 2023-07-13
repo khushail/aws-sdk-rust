@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubscribeToEventInput {
+pub struct SubscribeToEventInput  {
     /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct SubscribeToEventInput {
 }
 impl SubscribeToEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The event for which you want to receive SNS notifications.</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::InspectorEvent> {
+    pub fn event(&self) -> ::std::option::Option<& crate::types::InspectorEvent> {
         self.event.as_ref()
     }
     /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
 }
 impl SubscribeToEventInput {
     /// Creates a new builder-style object to manufacture [`SubscribeToEventInput`](crate::operation::subscribe_to_event::SubscribeToEventInput).
-    pub fn builder() -> crate::operation::subscribe_to_event::builders::SubscribeToEventInputBuilder
-    {
+    pub fn builder() -> crate::operation::subscribe_to_event::builders::SubscribeToEventInputBuilder {
         crate::operation::subscribe_to_event::builders::SubscribeToEventInputBuilder::default()
     }
 }
 
 /// A builder for [`SubscribeToEventInput`](crate::operation::subscribe_to_event::SubscribeToEventInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscribeToEventInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event: ::std::option::Option<crate::types::InspectorEvent>,
@@ -53,8 +50,11 @@ impl SubscribeToEventInputBuilder {
     }
     /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The event for which you want to receive SNS notifications.</p>
     pub fn event(mut self, input: crate::types::InspectorEvent) -> Self {
@@ -63,8 +63,11 @@ impl SubscribeToEventInputBuilder {
     }
     /// <p>The event for which you want to receive SNS notifications.</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::InspectorEvent>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
+    }
+    /// <p>The event for which you want to receive SNS notifications.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::InspectorEvent> {
+        &self.event
     }
     /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,22 +76,24 @@ impl SubscribeToEventInputBuilder {
     }
     /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
+    }
+    /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
     }
     /// Consumes the builder and constructs a [`SubscribeToEventInput`](crate::operation::subscribe_to_event::SubscribeToEventInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::subscribe_to_event::SubscribeToEventInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::subscribe_to_event::SubscribeToEventInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::subscribe_to_event::SubscribeToEventInput {
-                resource_arn: self.resource_arn,
-                event: self.event,
-                topic_arn: self.topic_arn,
-            },
+                resource_arn: self.resource_arn
+                ,
+                event: self.event
+                ,
+                topic_arn: self.topic_arn
+                ,
+            }
         )
     }
 }
+

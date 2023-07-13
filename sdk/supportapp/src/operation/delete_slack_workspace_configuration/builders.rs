@@ -3,76 +3,87 @@ pub use crate::operation::delete_slack_workspace_configuration::_delete_slack_wo
 
 pub use crate::operation::delete_slack_workspace_configuration::_delete_slack_workspace_configuration_input::DeleteSlackWorkspaceConfigurationInputBuilder;
 
+impl DeleteSlackWorkspaceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.delete_slack_workspace_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DeleteSlackWorkspaceConfiguration`.
-///
+/// 
 /// <p>Deletes a Slack workspace configuration from your Amazon Web Services account. This operation doesn't delete your Slack workspace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationInputBuilder,
 }
-impl DeleteSlackWorkspaceConfigurationFluentBuilder {
+impl DeleteSlackWorkspaceConfigurationFluentBuilder  {
     /// Creates a new `DeleteSlackWorkspaceConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSlackWorkspaceConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.team_id(input.into());
@@ -83,4 +94,9 @@ impl DeleteSlackWorkspaceConfigurationFluentBuilder {
         self.inner = self.inner.set_team_id(input);
         self
     }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_team_id()
+    }
 }
+

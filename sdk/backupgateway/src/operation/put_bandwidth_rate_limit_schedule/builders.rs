@@ -3,102 +3,87 @@ pub use crate::operation::put_bandwidth_rate_limit_schedule::_put_bandwidth_rate
 
 pub use crate::operation::put_bandwidth_rate_limit_schedule::_put_bandwidth_rate_limit_schedule_input::PutBandwidthRateLimitScheduleInputBuilder;
 
+impl PutBandwidthRateLimitScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_bandwidth_rate_limit_schedule();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutBandwidthRateLimitSchedule`.
-///
+/// 
 /// <p>This action sets the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have a bandwidth rate limit schedule, which means no bandwidth rate limiting is in effect. Use this to initiate a gateway's bandwidth rate limit schedule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBandwidthRateLimitScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleInputBuilder,
 }
-impl PutBandwidthRateLimitScheduleFluentBuilder {
+impl PutBandwidthRateLimitScheduleFluentBuilder  {
     /// Creates a new `PutBandwidthRateLimitSchedule`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitSchedule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutBandwidthRateLimitSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitSchedule, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitSchedule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitSchedule, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -109,24 +94,27 @@ impl PutBandwidthRateLimitScheduleFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// Appends an item to `BandwidthRateLimitIntervals`.
     ///
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
     ///
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn bandwidth_rate_limit_intervals(
-        mut self,
-        input: crate::types::BandwidthRateLimitInterval,
-    ) -> Self {
+    pub fn bandwidth_rate_limit_intervals(mut self, input: crate::types::BandwidthRateLimitInterval) -> Self {
         self.inner = self.inner.bandwidth_rate_limit_intervals(input);
         self
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn set_bandwidth_rate_limit_intervals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
-    ) -> Self {
+    pub fn set_bandwidth_rate_limit_intervals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>) -> Self {
         self.inner = self.inner.set_bandwidth_rate_limit_intervals(input);
         self
     }
+    /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
+    pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
+        self.inner.get_bandwidth_rate_limit_intervals()
+    }
 }
+

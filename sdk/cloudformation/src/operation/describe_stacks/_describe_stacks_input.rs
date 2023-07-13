@@ -3,12 +3,17 @@
 /// <p>The input for <code>DescribeStacks</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStacksInput {
-    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
-    /// <ul>
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
-    /// </ul>
+pub struct DescribeStacksInput  {
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</p> 
+    /// </note> 
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
+    /// <ul> 
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
+    /// </ul> 
     /// <p>Default: There is no default value.</p>
     #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
@@ -17,17 +22,22 @@ pub struct DescribeStacksInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStacksInput {
-    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
-    /// <ul>
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
-    /// </ul>
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</p> 
+    /// </note> 
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
+    /// <ul> 
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
+    /// </ul> 
     /// <p>Default: There is no default value.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -40,33 +50,54 @@ impl DescribeStacksInput {
 
 /// A builder for [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStacksInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStacksInputBuilder {
-    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
-    /// <ul>
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
-    /// </ul>
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</p> 
+    /// </note> 
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
+    /// <ul> 
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
+    /// </ul> 
     /// <p>Default: There is no default value.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
-    /// <ul>
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
-    /// </ul>
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</p> 
+    /// </note> 
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
+    /// <ul> 
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
+    /// </ul> 
     /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
+    }
+    /// <note> 
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p> 
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p> 
+    /// <p>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</p> 
+    /// </note> 
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
+    /// <ul> 
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
+    /// </ul> 
+    /// <p>Default: There is no default value.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,19 +106,22 @@ impl DescribeStacksInputBuilder {
     }
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stacks::DescribeStacksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_stacks::DescribeStacksInput {
-            stack_name: self.stack_name,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_stacks::DescribeStacksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_stacks::DescribeStacksInput {
+                stack_name: self.stack_name
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

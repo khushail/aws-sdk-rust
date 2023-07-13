@@ -3,23 +3,23 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTagsInput {
+pub struct DescribeTagsInput  {
     /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
     #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p>
-    /// <ul>
-    /// <li> <p>Cluster</p> </li>
-    /// <li> <p>CIDR/IP</p> </li>
-    /// <li> <p>EC2 security group</p> </li>
-    /// <li> <p>Snapshot</p> </li>
-    /// <li> <p>Cluster security group</p> </li>
-    /// <li> <p>Subnet group</p> </li>
-    /// <li> <p>HSM connection</p> </li>
-    /// <li> <p>HSM certificate</p> </li>
-    /// <li> <p>Parameter group</p> </li>
-    /// <li> <p>Snapshot copy grant</p> </li>
-    /// </ul>
+    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p> 
+    /// <ul> 
+    /// <li> <p>Cluster</p> </li> 
+    /// <li> <p>CIDR/IP</p> </li> 
+    /// <li> <p>EC2 security group</p> </li> 
+    /// <li> <p>Snapshot</p> </li> 
+    /// <li> <p>Cluster security group</p> </li> 
+    /// <li> <p>Subnet group</p> </li> 
+    /// <li> <p>HSM connection</p> </li> 
+    /// <li> <p>HSM certificate</p> </li> 
+    /// <li> <p>Parameter group</p> </li> 
+    /// <li> <p>Snapshot copy grant</p> </li> 
+    /// </ul> 
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide. </p>
     #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
@@ -38,24 +38,24 @@ pub struct DescribeTagsInput {
 }
 impl DescribeTagsInput {
     /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
-    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p>
-    /// <ul>
-    /// <li> <p>Cluster</p> </li>
-    /// <li> <p>CIDR/IP</p> </li>
-    /// <li> <p>EC2 security group</p> </li>
-    /// <li> <p>Snapshot</p> </li>
-    /// <li> <p>Cluster security group</p> </li>
-    /// <li> <p>Subnet group</p> </li>
-    /// <li> <p>HSM connection</p> </li>
-    /// <li> <p>HSM certificate</p> </li>
-    /// <li> <p>Parameter group</p> </li>
-    /// <li> <p>Snapshot copy grant</p> </li>
-    /// </ul>
+    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p> 
+    /// <ul> 
+    /// <li> <p>Cluster</p> </li> 
+    /// <li> <p>CIDR/IP</p> </li> 
+    /// <li> <p>EC2 security group</p> </li> 
+    /// <li> <p>Snapshot</p> </li> 
+    /// <li> <p>Cluster security group</p> </li> 
+    /// <li> <p>Subnet group</p> </li> 
+    /// <li> <p>HSM connection</p> </li> 
+    /// <li> <p>HSM certificate</p> </li> 
+    /// <li> <p>Parameter group</p> </li> 
+    /// <li> <p>Snapshot copy grant</p> </li> 
+    /// </ul> 
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide. </p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value. </p>
@@ -63,15 +63,15 @@ impl DescribeTagsInput {
         self.max_records
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn tag_keys(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.tag_keys.as_deref()
     }
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
-    pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn tag_values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.tag_values.as_deref()
     }
 }
@@ -84,9 +84,7 @@ impl DescribeTagsInput {
 
 /// A builder for [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTagsInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -97,62 +95,69 @@ pub struct DescribeTagsInputBuilder {
 }
 impl DescribeTagsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_name = input;
-        self
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_name = input; self
     }
-    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p>
-    /// <ul>
-    /// <li> <p>Cluster</p> </li>
-    /// <li> <p>CIDR/IP</p> </li>
-    /// <li> <p>EC2 security group</p> </li>
-    /// <li> <p>Snapshot</p> </li>
-    /// <li> <p>Cluster security group</p> </li>
-    /// <li> <p>Subnet group</p> </li>
-    /// <li> <p>HSM connection</p> </li>
-    /// <li> <p>HSM certificate</p> </li>
-    /// <li> <p>Parameter group</p> </li>
-    /// <li> <p>Snapshot copy grant</p> </li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
+    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p> 
+    /// <ul> 
+    /// <li> <p>Cluster</p> </li> 
+    /// <li> <p>CIDR/IP</p> </li> 
+    /// <li> <p>EC2 security group</p> </li> 
+    /// <li> <p>Snapshot</p> </li> 
+    /// <li> <p>Cluster security group</p> </li> 
+    /// <li> <p>Subnet group</p> </li> 
+    /// <li> <p>HSM connection</p> </li> 
+    /// <li> <p>HSM certificate</p> </li> 
+    /// <li> <p>Parameter group</p> </li> 
+    /// <li> <p>Snapshot copy grant</p> </li> 
+    /// </ul> 
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide. </p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p>
-    /// <ul>
-    /// <li> <p>Cluster</p> </li>
-    /// <li> <p>CIDR/IP</p> </li>
-    /// <li> <p>EC2 security group</p> </li>
-    /// <li> <p>Snapshot</p> </li>
-    /// <li> <p>Cluster security group</p> </li>
-    /// <li> <p>Subnet group</p> </li>
-    /// <li> <p>HSM connection</p> </li>
-    /// <li> <p>HSM certificate</p> </li>
-    /// <li> <p>Parameter group</p> </li>
-    /// <li> <p>Snapshot copy grant</p> </li>
-    /// </ul>
+    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p> 
+    /// <ul> 
+    /// <li> <p>Cluster</p> </li> 
+    /// <li> <p>CIDR/IP</p> </li> 
+    /// <li> <p>EC2 security group</p> </li> 
+    /// <li> <p>Snapshot</p> </li> 
+    /// <li> <p>Cluster security group</p> </li> 
+    /// <li> <p>Subnet group</p> </li> 
+    /// <li> <p>HSM connection</p> </li> 
+    /// <li> <p>HSM certificate</p> </li> 
+    /// <li> <p>Parameter group</p> </li> 
+    /// <li> <p>Snapshot copy grant</p> </li> 
+    /// </ul> 
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_type = input; self
+    }
+    /// <p>The type of resource with which you want to view tags. Valid resource types are: </p> 
+    /// <ul> 
+    /// <li> <p>Cluster</p> </li> 
+    /// <li> <p>CIDR/IP</p> </li> 
+    /// <li> <p>EC2 security group</p> </li> 
+    /// <li> <p>Snapshot</p> </li> 
+    /// <li> <p>Cluster security group</p> </li> 
+    /// <li> <p>Subnet group</p> </li> 
+    /// <li> <p>HSM connection</p> </li> 
+    /// <li> <p>HSM certificate</p> </li> 
+    /// <li> <p>Parameter group</p> </li> 
+    /// <li> <p>Snapshot copy grant</p> </li> 
+    /// </ul> 
+    /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide. </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value. </p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -161,8 +166,11 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value. </p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
+    }
+    /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value. </p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,8 +179,11 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -181,17 +192,17 @@ impl DescribeTagsInputBuilder {
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
+    }
+    /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Appends an item to `tag_values`.
     ///
@@ -200,32 +211,36 @@ impl DescribeTagsInputBuilder {
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
     pub fn tag_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-        v.push(input.into());
-        self.tag_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.tag_values = input;
-        self
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tag_values = input; self
+    }
+    /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_values
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tags::DescribeTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
-            resource_name: self.resource_name,
-            resource_type: self.resource_type,
-            max_records: self.max_records,
-            marker: self.marker,
-            tag_keys: self.tag_keys,
-            tag_values: self.tag_values,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_tags::DescribeTagsInput {
+                resource_name: self.resource_name
+                ,
+                resource_type: self.resource_type
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                tag_keys: self.tag_keys
+                ,
+                tag_values: self.tag_values
+                ,
+            }
+        )
     }
 }
+

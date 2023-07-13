@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEventActionInput {
+pub struct GetEventActionInput  {
     /// <p>The unique identifier for the event action.</p>
     #[doc(hidden)]
     pub event_action_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEventActionInput {
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_action_id(&self) -> ::std::option::Option<& str> {
         self.event_action_id.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl GetEventActionInput {
 
 /// A builder for [`GetEventActionInput`](crate::operation::get_event_action::GetEventActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventActionInputBuilder {
     pub(crate) event_action_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEventActionInputBuilder {
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_action_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn set_event_action_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_action_id = input;
-        self
+    pub fn set_event_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_action_id = input; self
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn get_event_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_action_id
     }
     /// Consumes the builder and constructs a [`GetEventActionInput`](crate::operation::get_event_action::GetEventActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_event_action::GetEventActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_event_action::GetEventActionInput {
-            event_action_id: self.event_action_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_event_action::GetEventActionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_event_action::GetEventActionInput {
+                event_action_id: self.event_action_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClosedDays {
+pub struct ClosedDays  {
     /// <p>Rules for the Email channel.</p>
     #[doc(hidden)]
     pub email: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
@@ -22,23 +22,23 @@ pub struct ClosedDays {
 }
 impl ClosedDays {
     /// <p>Rules for the Email channel.</p>
-    pub fn email(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
+    pub fn email(&self) -> ::std::option::Option<& [crate::types::ClosedDaysRule]> {
         self.email.as_deref()
     }
     /// <p>Rules for the SMS channel.</p>
-    pub fn sms(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
+    pub fn sms(&self) -> ::std::option::Option<& [crate::types::ClosedDaysRule]> {
         self.sms.as_deref()
     }
     /// <p>Rules for the Push channel.</p>
-    pub fn push(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
+    pub fn push(&self) -> ::std::option::Option<& [crate::types::ClosedDaysRule]> {
         self.push.as_deref()
     }
     /// <p>Rules for the Voice channel.</p>
-    pub fn voice(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
+    pub fn voice(&self) -> ::std::option::Option<& [crate::types::ClosedDaysRule]> {
         self.voice.as_deref()
     }
     /// <p>Rules for the Custom channel.</p>
-    pub fn custom(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
+    pub fn custom(&self) -> ::std::option::Option<& [crate::types::ClosedDaysRule]> {
         self.custom.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl ClosedDays {
 
 /// A builder for [`ClosedDays`](crate::types::ClosedDays).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClosedDaysBuilder {
     pub(crate) email: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
     pub(crate) sms: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
@@ -69,17 +67,17 @@ impl ClosedDaysBuilder {
     /// <p>Rules for the Email channel.</p>
     pub fn email(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.email.unwrap_or_default();
-        v.push(input);
-        self.email = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.email = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Rules for the Email channel.</p>
-    pub fn set_email(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
-    ) -> Self {
-        self.email = input;
-        self
+    pub fn set_email(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
+        self.email = input; self
+    }
+    /// <p>Rules for the Email channel.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.email
     }
     /// Appends an item to `sms`.
     ///
@@ -88,17 +86,17 @@ impl ClosedDaysBuilder {
     /// <p>Rules for the SMS channel.</p>
     pub fn sms(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.sms.unwrap_or_default();
-        v.push(input);
-        self.sms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Rules for the SMS channel.</p>
-    pub fn set_sms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
-    ) -> Self {
-        self.sms = input;
-        self
+    pub fn set_sms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
+        self.sms = input; self
+    }
+    /// <p>Rules for the SMS channel.</p>
+    pub fn get_sms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.sms
     }
     /// Appends an item to `push`.
     ///
@@ -107,17 +105,17 @@ impl ClosedDaysBuilder {
     /// <p>Rules for the Push channel.</p>
     pub fn push(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.push.unwrap_or_default();
-        v.push(input);
-        self.push = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.push = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Rules for the Push channel.</p>
-    pub fn set_push(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
-    ) -> Self {
-        self.push = input;
-        self
+    pub fn set_push(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
+        self.push = input; self
+    }
+    /// <p>Rules for the Push channel.</p>
+    pub fn get_push(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.push
     }
     /// Appends an item to `voice`.
     ///
@@ -126,17 +124,17 @@ impl ClosedDaysBuilder {
     /// <p>Rules for the Voice channel.</p>
     pub fn voice(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.voice.unwrap_or_default();
-        v.push(input);
-        self.voice = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.voice = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Rules for the Voice channel.</p>
-    pub fn set_voice(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
-    ) -> Self {
-        self.voice = input;
-        self
+    pub fn set_voice(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
+        self.voice = input; self
+    }
+    /// <p>Rules for the Voice channel.</p>
+    pub fn get_voice(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.voice
     }
     /// Appends an item to `custom`.
     ///
@@ -145,26 +143,32 @@ impl ClosedDaysBuilder {
     /// <p>Rules for the Custom channel.</p>
     pub fn custom(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.custom.unwrap_or_default();
-        v.push(input);
-        self.custom = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Rules for the Custom channel.</p>
-    pub fn set_custom(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
-    ) -> Self {
-        self.custom = input;
-        self
+    pub fn set_custom(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
+        self.custom = input; self
+    }
+    /// <p>Rules for the Custom channel.</p>
+    pub fn get_custom(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>> {
+        &self.custom
     }
     /// Consumes the builder and constructs a [`ClosedDays`](crate::types::ClosedDays).
     pub fn build(self) -> crate::types::ClosedDays {
         crate::types::ClosedDays {
-            email: self.email,
-            sms: self.sms,
-            push: self.push,
-            voice: self.voice,
-            custom: self.custom,
+            email: self.email
+            ,
+            sms: self.sms
+            ,
+            push: self.push
+            ,
+            voice: self.voice
+            ,
+            custom: self.custom
+            ,
         }
     }
 }
+

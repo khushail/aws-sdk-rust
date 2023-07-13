@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCrawlsInput {
+pub struct ListCrawlsInput  {
     /// <p>The name of the crawler whose runs you want to retrieve.</p>
     #[doc(hidden)]
     pub crawler_name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListCrawlsInput {
 }
 impl ListCrawlsInput {
     /// <p>The name of the crawler whose runs you want to retrieve.</p>
-    pub fn crawler_name(&self) -> ::std::option::Option<&str> {
+    pub fn crawler_name(&self) -> ::std::option::Option<& str> {
         self.crawler_name.as_deref()
     }
     /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
@@ -26,11 +26,11 @@ impl ListCrawlsInput {
         self.max_results
     }
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::CrawlsFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::CrawlsFilter]> {
         self.filters.as_deref()
     }
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -43,9 +43,7 @@ impl ListCrawlsInput {
 
 /// A builder for [`ListCrawlsInput`](crate::operation::list_crawls::ListCrawlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrawlsInputBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -60,8 +58,11 @@ impl ListCrawlsInputBuilder {
     }
     /// <p>The name of the crawler whose runs you want to retrieve.</p>
     pub fn set_crawler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crawler_name = input;
-        self
+        self.crawler_name = input; self
+    }
+    /// <p>The name of the crawler whose runs you want to retrieve.</p>
+    pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.crawler_name
     }
     /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,8 +71,11 @@ impl ListCrawlsInputBuilder {
     }
     /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `filters`.
     ///
@@ -80,17 +84,17 @@ impl ListCrawlsInputBuilder {
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
     pub fn filters(mut self, input: crate::types::CrawlsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>> {
+        &self.filters
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,21 +103,26 @@ impl ListCrawlsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCrawlsInput`](crate::operation::list_crawls::ListCrawlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_crawls::ListCrawlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_crawls::ListCrawlsInput {
-            crawler_name: self.crawler_name,
-            max_results: self.max_results,
-            filters: self.filters,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_crawls::ListCrawlsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_crawls::ListCrawlsInput {
+                crawler_name: self.crawler_name
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

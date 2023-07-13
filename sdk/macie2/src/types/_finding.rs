@@ -3,7 +3,7 @@
 /// <p>Provides the details of a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Finding {
+pub struct Finding  {
     /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -61,7 +61,7 @@ pub struct Finding {
 }
 impl Finding {
     /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Specifies whether the finding is archived (suppressed).</p>
@@ -69,13 +69,11 @@ impl Finding {
         self.archived
     }
     /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::FindingCategory> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::FindingCategory> {
         self.category.as_ref()
     }
     /// <p>The details of a sensitive data finding. This value is null for a policy finding.</p>
-    pub fn classification_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClassificationDetails> {
+    pub fn classification_details(&self) -> ::std::option::Option<& crate::types::ClassificationDetails> {
         self.classification_details.as_ref()
     }
     /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered unique.</p>
@@ -83,31 +81,31 @@ impl Finding {
         self.count
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The description of the finding.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Web Services partition that Amazon Macie created the finding in.</p>
-    pub fn partition(&self) -> ::std::option::Option<&str> {
+    pub fn partition(&self) -> ::std::option::Option<& str> {
         self.partition.as_deref()
     }
     /// <p>The details of a policy finding. This value is null for a sensitive data finding.</p>
-    pub fn policy_details(&self) -> ::std::option::Option<&crate::types::PolicyDetails> {
+    pub fn policy_details(&self) -> ::std::option::Option<& crate::types::PolicyDetails> {
         self.policy_details.as_ref()
     }
     /// <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The resources that the finding applies to.</p>
-    pub fn resources_affected(&self) -> ::std::option::Option<&crate::types::ResourcesAffected> {
+    pub fn resources_affected(&self) -> ::std::option::Option<& crate::types::ResourcesAffected> {
         self.resources_affected.as_ref()
     }
     /// <p>Specifies whether the finding is a sample finding. A <i>sample finding</i> is a finding that uses example data to demonstrate what a finding might contain.</p>
@@ -115,23 +113,23 @@ impl Finding {
         self.sample
     }
     /// <p>The version of the schema that was used to define the data structures in the finding.</p>
-    pub fn schema_version(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version(&self) -> ::std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>The severity level and score for the finding.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::Severity> {
+    pub fn severity(&self) -> ::std::option::Option<& crate::types::Severity> {
         self.severity.as_ref()
     }
     /// <p>The brief description of the finding.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The type of the finding.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FindingType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::FindingType> {
         self.r#type.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -144,9 +142,7 @@ impl Finding {
 
 /// A builder for [`Finding`](crate::types::Finding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) archived: ::std::option::Option<bool>,
@@ -175,8 +171,11 @@ impl FindingBuilder {
     }
     /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>Specifies whether the finding is archived (suppressed).</p>
     pub fn archived(mut self, input: bool) -> Self {
@@ -185,8 +184,11 @@ impl FindingBuilder {
     }
     /// <p>Specifies whether the finding is archived (suppressed).</p>
     pub fn set_archived(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.archived = input;
-        self
+        self.archived = input; self
+    }
+    /// <p>Specifies whether the finding is archived (suppressed).</p>
+    pub fn get_archived(&self) -> &::std::option::Option<bool> {
+        &self.archived
     }
     /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
     pub fn category(mut self, input: crate::types::FindingCategory) -> Self {
@@ -194,12 +196,12 @@ impl FindingBuilder {
         self
     }
     /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCategory>,
-    ) -> Self {
-        self.category = input;
-        self
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::FindingCategory>) -> Self {
+        self.category = input; self
+    }
+    /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::FindingCategory> {
+        &self.category
     }
     /// <p>The details of a sensitive data finding. This value is null for a policy finding.</p>
     pub fn classification_details(mut self, input: crate::types::ClassificationDetails) -> Self {
@@ -207,12 +209,12 @@ impl FindingBuilder {
         self
     }
     /// <p>The details of a sensitive data finding. This value is null for a policy finding.</p>
-    pub fn set_classification_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassificationDetails>,
-    ) -> Self {
-        self.classification_details = input;
-        self
+    pub fn set_classification_details(mut self, input: ::std::option::Option<crate::types::ClassificationDetails>) -> Self {
+        self.classification_details = input; self
+    }
+    /// <p>The details of a sensitive data finding. This value is null for a policy finding.</p>
+    pub fn get_classification_details(&self) -> &::std::option::Option<crate::types::ClassificationDetails> {
+        &self.classification_details
     }
     /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered unique.</p>
     pub fn count(mut self, input: i64) -> Self {
@@ -221,8 +223,11 @@ impl FindingBuilder {
     }
     /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered unique.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
+    }
+    /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered unique.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -230,12 +235,12 @@ impl FindingBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The description of the finding.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -244,8 +249,11 @@ impl FindingBuilder {
     }
     /// <p>The description of the finding.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the finding.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -254,8 +262,11 @@ impl FindingBuilder {
     }
     /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Web Services partition that Amazon Macie created the finding in.</p>
     pub fn partition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -264,8 +275,11 @@ impl FindingBuilder {
     }
     /// <p>The Amazon Web Services partition that Amazon Macie created the finding in.</p>
     pub fn set_partition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partition = input;
-        self
+        self.partition = input; self
+    }
+    /// <p>The Amazon Web Services partition that Amazon Macie created the finding in.</p>
+    pub fn get_partition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition
     }
     /// <p>The details of a policy finding. This value is null for a sensitive data finding.</p>
     pub fn policy_details(mut self, input: crate::types::PolicyDetails) -> Self {
@@ -273,12 +287,12 @@ impl FindingBuilder {
         self
     }
     /// <p>The details of a policy finding. This value is null for a sensitive data finding.</p>
-    pub fn set_policy_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyDetails>,
-    ) -> Self {
-        self.policy_details = input;
-        self
+    pub fn set_policy_details(mut self, input: ::std::option::Option<crate::types::PolicyDetails>) -> Self {
+        self.policy_details = input; self
+    }
+    /// <p>The details of a policy finding. This value is null for a sensitive data finding.</p>
+    pub fn get_policy_details(&self) -> &::std::option::Option<crate::types::PolicyDetails> {
+        &self.policy_details
     }
     /// <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -287,8 +301,11 @@ impl FindingBuilder {
     }
     /// <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
+    }
+    /// <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The resources that the finding applies to.</p>
     pub fn resources_affected(mut self, input: crate::types::ResourcesAffected) -> Self {
@@ -296,12 +313,12 @@ impl FindingBuilder {
         self
     }
     /// <p>The resources that the finding applies to.</p>
-    pub fn set_resources_affected(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourcesAffected>,
-    ) -> Self {
-        self.resources_affected = input;
-        self
+    pub fn set_resources_affected(mut self, input: ::std::option::Option<crate::types::ResourcesAffected>) -> Self {
+        self.resources_affected = input; self
+    }
+    /// <p>The resources that the finding applies to.</p>
+    pub fn get_resources_affected(&self) -> &::std::option::Option<crate::types::ResourcesAffected> {
+        &self.resources_affected
     }
     /// <p>Specifies whether the finding is a sample finding. A <i>sample finding</i> is a finding that uses example data to demonstrate what a finding might contain.</p>
     pub fn sample(mut self, input: bool) -> Self {
@@ -310,24 +327,24 @@ impl FindingBuilder {
     }
     /// <p>Specifies whether the finding is a sample finding. A <i>sample finding</i> is a finding that uses example data to demonstrate what a finding might contain.</p>
     pub fn set_sample(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sample = input;
-        self
+        self.sample = input; self
+    }
+    /// <p>Specifies whether the finding is a sample finding. A <i>sample finding</i> is a finding that uses example data to demonstrate what a finding might contain.</p>
+    pub fn get_sample(&self) -> &::std::option::Option<bool> {
+        &self.sample
     }
     /// <p>The version of the schema that was used to define the data structures in the finding.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the schema that was used to define the data structures in the finding.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.schema_version = input;
-        self
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schema_version = input; self
+    }
+    /// <p>The version of the schema that was used to define the data structures in the finding.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
     }
     /// <p>The severity level and score for the finding.</p>
     pub fn severity(mut self, input: crate::types::Severity) -> Self {
@@ -336,8 +353,11 @@ impl FindingBuilder {
     }
     /// <p>The severity level and score for the finding.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::Severity>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
+    }
+    /// <p>The severity level and score for the finding.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::Severity> {
+        &self.severity
     }
     /// <p>The brief description of the finding.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -346,8 +366,11 @@ impl FindingBuilder {
     }
     /// <p>The brief description of the finding.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
+    }
+    /// <p>The brief description of the finding.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The type of the finding.</p>
     pub fn r#type(mut self, input: crate::types::FindingType) -> Self {
@@ -356,8 +379,11 @@ impl FindingBuilder {
     }
     /// <p>The type of the finding.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FindingType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the finding.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FindingType> {
+        &self.r#type
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -365,34 +391,53 @@ impl FindingBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     pub fn build(self) -> crate::types::Finding {
         crate::types::Finding {
-            account_id: self.account_id,
-            archived: self.archived,
-            category: self.category,
-            classification_details: self.classification_details,
-            count: self.count,
-            created_at: self.created_at,
-            description: self.description,
-            id: self.id,
-            partition: self.partition,
-            policy_details: self.policy_details,
-            region: self.region,
-            resources_affected: self.resources_affected,
-            sample: self.sample,
-            schema_version: self.schema_version,
-            severity: self.severity,
-            title: self.title,
-            r#type: self.r#type,
-            updated_at: self.updated_at,
+            account_id: self.account_id
+            ,
+            archived: self.archived
+            ,
+            category: self.category
+            ,
+            classification_details: self.classification_details
+            ,
+            count: self.count
+            ,
+            created_at: self.created_at
+            ,
+            description: self.description
+            ,
+            id: self.id
+            ,
+            partition: self.partition
+            ,
+            policy_details: self.policy_details
+            ,
+            region: self.region
+            ,
+            resources_affected: self.resources_affected
+            ,
+            sample: self.sample
+            ,
+            schema_version: self.schema_version
+            ,
+            severity: self.severity
+            ,
+            title: self.title
+            ,
+            r#type: self.r#type
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

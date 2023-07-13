@@ -3,7 +3,7 @@
 /// <p>Contains information about conversation log settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversationLogsResponse {
+pub struct ConversationLogsResponse  {
     /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
     #[doc(hidden)]
     pub log_settings: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>,
@@ -13,11 +13,11 @@ pub struct ConversationLogsResponse {
 }
 impl ConversationLogsResponse {
     /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
-    pub fn log_settings(&self) -> ::std::option::Option<&[crate::types::LogSettingsResponse]> {
+    pub fn log_settings(&self) -> ::std::option::Option<& [crate::types::LogSettingsResponse]> {
         self.log_settings.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
 }
@@ -30,12 +30,9 @@ impl ConversationLogsResponse {
 
 /// A builder for [`ConversationLogsResponse`](crate::types::ConversationLogsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLogsResponseBuilder {
-    pub(crate) log_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>,
+    pub(crate) log_settings: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConversationLogsResponseBuilder {
@@ -46,17 +43,17 @@ impl ConversationLogsResponseBuilder {
     /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
     pub fn log_settings(mut self, input: crate::types::LogSettingsResponse) -> Self {
         let mut v = self.log_settings.unwrap_or_default();
-        v.push(input);
-        self.log_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
-    pub fn set_log_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>,
-    ) -> Self {
-        self.log_settings = input;
-        self
+    pub fn set_log_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>) -> Self {
+        self.log_settings = input; self
+    }
+    /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
+    pub fn get_log_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>> {
+        &self.log_settings
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,14 +62,20 @@ impl ConversationLogsResponseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// Consumes the builder and constructs a [`ConversationLogsResponse`](crate::types::ConversationLogsResponse).
     pub fn build(self) -> crate::types::ConversationLogsResponse {
         crate::types::ConversationLogsResponse {
-            log_settings: self.log_settings,
-            iam_role_arn: self.iam_role_arn,
+            log_settings: self.log_settings
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
         }
     }
 }
+

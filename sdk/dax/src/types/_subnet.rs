@@ -3,7 +3,7 @@
 /// <p>Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Subnet {
+pub struct Subnet  {
     /// <p>The system-assigned identifier for the subnet.</p>
     #[doc(hidden)]
     pub subnet_identifier: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Subnet {
 }
 impl Subnet {
     /// <p>The system-assigned identifier for the subnet.</p>
-    pub fn subnet_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_identifier(&self) -> ::std::option::Option<& str> {
         self.subnet_identifier.as_deref()
     }
     /// <p>The Availability Zone (AZ) for the subnet.</p>
-    pub fn subnet_availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_availability_zone(&self) -> ::std::option::Option<& str> {
         self.subnet_availability_zone.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl Subnet {
 
 /// A builder for [`Subnet`](crate::types::Subnet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubnetBuilder {
     pub(crate) subnet_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl SubnetBuilder {
     /// <p>The system-assigned identifier for the subnet.</p>
-    pub fn subnet_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-assigned identifier for the subnet.</p>
-    pub fn set_subnet_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.subnet_identifier = input;
-        self
+    pub fn set_subnet_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_identifier = input; self
+    }
+    /// <p>The system-assigned identifier for the subnet.</p>
+    pub fn get_subnet_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_identifier
     }
     /// <p>The Availability Zone (AZ) for the subnet.</p>
-    pub fn subnet_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone (AZ) for the subnet.</p>
-    pub fn set_subnet_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.subnet_availability_zone = input;
-        self
+    pub fn set_subnet_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_availability_zone = input; self
+    }
+    /// <p>The Availability Zone (AZ) for the subnet.</p>
+    pub fn get_subnet_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_availability_zone
     }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {
         crate::types::Subnet {
-            subnet_identifier: self.subnet_identifier,
-            subnet_availability_zone: self.subnet_availability_zone,
+            subnet_identifier: self.subnet_identifier
+            ,
+            subnet_availability_zone: self.subnet_availability_zone
+            ,
         }
     }
 }
+

@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterJobDefinitionInput {
+pub struct DeregisterJobDefinitionInput  {
     /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
     #[doc(hidden)]
     pub job_definition: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterJobDefinitionInput {
     /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
-    pub fn job_definition(&self) -> ::std::option::Option<&str> {
+    pub fn job_definition(&self) -> ::std::option::Option<& str> {
         self.job_definition.as_deref()
     }
 }
 impl DeregisterJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeregisterJobDefinitionInput`](crate::operation::deregister_job_definition::DeregisterJobDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionInputBuilder {
         crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterJobDefinitionInput`](crate::operation::deregister_job_definition::DeregisterJobDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterJobDefinitionInputBuilder {
     pub(crate) job_definition: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterJobDefinitionInputBuilder {
     /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
-    pub fn job_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
-    pub fn set_job_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.job_definition = input;
-        self
+    pub fn set_job_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_definition = input; self
+    }
+    /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
+    pub fn get_job_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition
     }
     /// Consumes the builder and constructs a [`DeregisterJobDefinitionInput`](crate::operation::deregister_job_definition::DeregisterJobDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_job_definition::DeregisterJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_job_definition::DeregisterJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_job_definition::DeregisterJobDefinitionInput {
-                job_definition: self.job_definition,
-            },
+                job_definition: self.job_definition
+                ,
+            }
         )
     }
 }
+

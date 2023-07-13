@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableAwsServiceAccessInput {
+pub struct EnableAwsServiceAccessInput  {
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     #[doc(hidden)]
     pub service_principal: ::std::option::Option<::std::string::String>,
 }
 impl EnableAwsServiceAccessInput {
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(&self) -> ::std::option::Option<&str> {
+    pub fn service_principal(&self) -> ::std::option::Option<& str> {
         self.service_principal.as_deref()
     }
 }
 impl EnableAwsServiceAccessInput {
     /// Creates a new builder-style object to manufacture [`EnableAwsServiceAccessInput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput).
-    pub fn builder(
-    ) -> crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder {
         crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAwsServiceAccessInput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAwsServiceAccessInputBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
 }
 impl EnableAwsServiceAccessInputBuilder {
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.service_principal = input;
-        self
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_principal = input; self
+    }
+    /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_principal
     }
     /// Consumes the builder and constructs a [`EnableAwsServiceAccessInput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput {
-                service_principal: self.service_principal,
-            },
+                service_principal: self.service_principal
+                ,
+            }
         )
     }
 }
+

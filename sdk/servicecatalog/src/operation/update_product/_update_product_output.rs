@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProductOutput {
+pub struct UpdateProductOutput  {
     /// <p>Information about the product view.</p>
     #[doc(hidden)]
     pub product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
@@ -13,19 +13,19 @@ pub struct UpdateProductOutput {
 }
 impl UpdateProductOutput {
     /// <p>Information about the product view.</p>
-    pub fn product_view_detail(&self) -> ::std::option::Option<&crate::types::ProductViewDetail> {
+    pub fn product_view_detail(&self) -> ::std::option::Option<& crate::types::ProductViewDetail> {
         self.product_view_detail.as_ref()
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateProductOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateProductOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProductOutput`](crate::operation::update_product::UpdateProductOutput).
     pub fn builder() -> crate::operation::update_product::builders::UpdateProductOutputBuilder {
@@ -35,9 +35,7 @@ impl UpdateProductOutput {
 
 /// A builder for [`UpdateProductOutput`](crate::operation::update_product::UpdateProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProductOutputBuilder {
     pub(crate) product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -50,12 +48,12 @@ impl UpdateProductOutputBuilder {
         self
     }
     /// <p>Information about the product view.</p>
-    pub fn set_product_view_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewDetail>,
-    ) -> Self {
-        self.product_view_detail = input;
-        self
+    pub fn set_product_view_detail(mut self, input: ::std::option::Option<crate::types::ProductViewDetail>) -> Self {
+        self.product_view_detail = input; self
+    }
+    /// <p>Information about the product view.</p>
+    pub fn get_product_view_detail(&self) -> &::std::option::Option<crate::types::ProductViewDetail> {
+        &self.product_view_detail
     }
     /// Appends an item to `tags`.
     ///
@@ -64,33 +62,36 @@ impl UpdateProductOutputBuilder {
     /// <p>Information about the tags associated with the product.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Information about the tags associated with the product.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateProductOutput`](crate::operation::update_product::UpdateProductOutput).
     pub fn build(self) -> crate::operation::update_product::UpdateProductOutput {
         crate::operation::update_product::UpdateProductOutput {
-            product_view_detail: self.product_view_detail,
-            tags: self.tags,
+            product_view_detail: self.product_view_detail
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

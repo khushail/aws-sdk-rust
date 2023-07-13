@@ -3,34 +3,34 @@
 /// <p>Represents a request to the get device pool compatibility operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDevicePoolCompatibilityInput {
+pub struct GetDevicePoolCompatibilityInput  {
     /// <p>The device pool's ARN.</p>
     #[doc(hidden)]
     pub device_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
     #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The test type for the specified device pool.</p>
-    /// <p>Allowed values include the following:</p>
-    /// <ul>
-    /// <li> <p>BUILTIN_FUZZ.</p> </li>
-    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
-    /// <li> <p>APPIUM_PYTHON.</p> </li>
-    /// <li> <p>APPIUM_NODE.</p> </li>
-    /// <li> <p>APPIUM_RUBY.</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
-    /// <li> <p>CALABASH.</p> </li>
-    /// <li> <p>INSTRUMENTATION.</p> </li>
-    /// <li> <p>UIAUTOMATION.</p> </li>
-    /// <li> <p>UIAUTOMATOR.</p> </li>
-    /// <li> <p>XCTEST.</p> </li>
-    /// <li> <p>XCTEST_UI.</p> </li>
+    /// <p>The test type for the specified device pool.</p> 
+    /// <p>Allowed values include the following:</p> 
+    /// <ul> 
+    /// <li> <p>BUILTIN_FUZZ.</p> </li> 
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_NODE.</p> </li> 
+    /// <li> <p>APPIUM_RUBY.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li> 
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li> 
+    /// <li> <p>CALABASH.</p> </li> 
+    /// <li> <p>INSTRUMENTATION.</p> </li> 
+    /// <li> <p>UIAUTOMATION.</p> </li> 
+    /// <li> <p>UIAUTOMATOR.</p> </li> 
+    /// <li> <p>XCTEST.</p> </li> 
+    /// <li> <p>XCTEST_UI.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub test_type: ::std::option::Option<crate::types::TestType>,
@@ -43,59 +43,57 @@ pub struct GetDevicePoolCompatibilityInput {
 }
 impl GetDevicePoolCompatibilityInput {
     /// <p>The device pool's ARN.</p>
-    pub fn device_pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_pool_arn(&self) -> ::std::option::Option<& str> {
         self.device_pool_arn.as_deref()
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
-    /// <p>The test type for the specified device pool.</p>
-    /// <p>Allowed values include the following:</p>
-    /// <ul>
-    /// <li> <p>BUILTIN_FUZZ.</p> </li>
-    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
-    /// <li> <p>APPIUM_PYTHON.</p> </li>
-    /// <li> <p>APPIUM_NODE.</p> </li>
-    /// <li> <p>APPIUM_RUBY.</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
-    /// <li> <p>CALABASH.</p> </li>
-    /// <li> <p>INSTRUMENTATION.</p> </li>
-    /// <li> <p>UIAUTOMATION.</p> </li>
-    /// <li> <p>UIAUTOMATOR.</p> </li>
-    /// <li> <p>XCTEST.</p> </li>
-    /// <li> <p>XCTEST_UI.</p> </li>
+    /// <p>The test type for the specified device pool.</p> 
+    /// <p>Allowed values include the following:</p> 
+    /// <ul> 
+    /// <li> <p>BUILTIN_FUZZ.</p> </li> 
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_NODE.</p> </li> 
+    /// <li> <p>APPIUM_RUBY.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li> 
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li> 
+    /// <li> <p>CALABASH.</p> </li> 
+    /// <li> <p>INSTRUMENTATION.</p> </li> 
+    /// <li> <p>UIAUTOMATION.</p> </li> 
+    /// <li> <p>UIAUTOMATOR.</p> </li> 
+    /// <li> <p>XCTEST.</p> </li> 
+    /// <li> <p>XCTEST_UI.</p> </li> 
     /// </ul>
-    pub fn test_type(&self) -> ::std::option::Option<&crate::types::TestType> {
+    pub fn test_type(&self) -> ::std::option::Option<& crate::types::TestType> {
         self.test_type.as_ref()
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
-    pub fn test(&self) -> ::std::option::Option<&crate::types::ScheduleRunTest> {
+    pub fn test(&self) -> ::std::option::Option<& crate::types::ScheduleRunTest> {
         self.test.as_ref()
     }
     /// <p>An object that contains information about the settings for a run.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ScheduleRunConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ScheduleRunConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl GetDevicePoolCompatibilityInput {
     /// Creates a new builder-style object to manufacture [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
-    pub fn builder() -> crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder{
+    pub fn builder() -> crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder {
         crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevicePoolCompatibilityInputBuilder {
     pub(crate) device_pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
@@ -105,20 +103,17 @@ pub struct GetDevicePoolCompatibilityInputBuilder {
 }
 impl GetDevicePoolCompatibilityInputBuilder {
     /// <p>The device pool's ARN.</p>
-    pub fn device_pool_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device pool's ARN.</p>
-    pub fn set_device_pool_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.device_pool_arn = input;
-        self
+    pub fn set_device_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.device_pool_arn = input; self
+    }
+    /// <p>The device pool's ARN.</p>
+    pub fn get_device_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_pool_arn
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,60 +122,87 @@ impl GetDevicePoolCompatibilityInputBuilder {
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
-    /// <p>The test type for the specified device pool.</p>
-    /// <p>Allowed values include the following:</p>
-    /// <ul>
-    /// <li> <p>BUILTIN_FUZZ.</p> </li>
-    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
-    /// <li> <p>APPIUM_PYTHON.</p> </li>
-    /// <li> <p>APPIUM_NODE.</p> </li>
-    /// <li> <p>APPIUM_RUBY.</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
-    /// <li> <p>CALABASH.</p> </li>
-    /// <li> <p>INSTRUMENTATION.</p> </li>
-    /// <li> <p>UIAUTOMATION.</p> </li>
-    /// <li> <p>UIAUTOMATOR.</p> </li>
-    /// <li> <p>XCTEST.</p> </li>
-    /// <li> <p>XCTEST_UI.</p> </li>
+    /// <p>The ARN of the app that is associated with the specified device pool.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
+    /// <p>The test type for the specified device pool.</p> 
+    /// <p>Allowed values include the following:</p> 
+    /// <ul> 
+    /// <li> <p>BUILTIN_FUZZ.</p> </li> 
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_NODE.</p> </li> 
+    /// <li> <p>APPIUM_RUBY.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li> 
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li> 
+    /// <li> <p>CALABASH.</p> </li> 
+    /// <li> <p>INSTRUMENTATION.</p> </li> 
+    /// <li> <p>UIAUTOMATION.</p> </li> 
+    /// <li> <p>UIAUTOMATOR.</p> </li> 
+    /// <li> <p>XCTEST.</p> </li> 
+    /// <li> <p>XCTEST_UI.</p> </li> 
     /// </ul>
     pub fn test_type(mut self, input: crate::types::TestType) -> Self {
         self.test_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The test type for the specified device pool.</p>
-    /// <p>Allowed values include the following:</p>
-    /// <ul>
-    /// <li> <p>BUILTIN_FUZZ.</p> </li>
-    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
-    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
-    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
-    /// <li> <p>APPIUM_PYTHON.</p> </li>
-    /// <li> <p>APPIUM_NODE.</p> </li>
-    /// <li> <p>APPIUM_RUBY.</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
-    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
-    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
-    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
-    /// <li> <p>CALABASH.</p> </li>
-    /// <li> <p>INSTRUMENTATION.</p> </li>
-    /// <li> <p>UIAUTOMATION.</p> </li>
-    /// <li> <p>UIAUTOMATOR.</p> </li>
-    /// <li> <p>XCTEST.</p> </li>
-    /// <li> <p>XCTEST_UI.</p> </li>
+    /// <p>The test type for the specified device pool.</p> 
+    /// <p>Allowed values include the following:</p> 
+    /// <ul> 
+    /// <li> <p>BUILTIN_FUZZ.</p> </li> 
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_NODE.</p> </li> 
+    /// <li> <p>APPIUM_RUBY.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li> 
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li> 
+    /// <li> <p>CALABASH.</p> </li> 
+    /// <li> <p>INSTRUMENTATION.</p> </li> 
+    /// <li> <p>UIAUTOMATION.</p> </li> 
+    /// <li> <p>UIAUTOMATOR.</p> </li> 
+    /// <li> <p>XCTEST.</p> </li> 
+    /// <li> <p>XCTEST_UI.</p> </li> 
     /// </ul>
     pub fn set_test_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
-        self.test_type = input;
-        self
+        self.test_type = input; self
+    }
+    /// <p>The test type for the specified device pool.</p> 
+    /// <p>Allowed values include the following:</p> 
+    /// <ul> 
+    /// <li> <p>BUILTIN_FUZZ.</p> </li> 
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_NODE.</p> </li> 
+    /// <li> <p>APPIUM_RUBY.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li> 
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li> 
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li> 
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li> 
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li> 
+    /// <li> <p>CALABASH.</p> </li> 
+    /// <li> <p>INSTRUMENTATION.</p> </li> 
+    /// <li> <p>UIAUTOMATION.</p> </li> 
+    /// <li> <p>UIAUTOMATOR.</p> </li> 
+    /// <li> <p>XCTEST.</p> </li> 
+    /// <li> <p>XCTEST_UI.</p> </li> 
+    /// </ul>
+    pub fn get_test_type(&self) -> &::std::option::Option<crate::types::TestType> {
+        &self.test_type
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
     pub fn test(mut self, input: crate::types::ScheduleRunTest) -> Self {
@@ -189,8 +211,11 @@ impl GetDevicePoolCompatibilityInputBuilder {
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
     pub fn set_test(mut self, input: ::std::option::Option<crate::types::ScheduleRunTest>) -> Self {
-        self.test = input;
-        self
+        self.test = input; self
+    }
+    /// <p>Information about the uploaded test to be run against the device pool.</p>
+    pub fn get_test(&self) -> &::std::option::Option<crate::types::ScheduleRunTest> {
+        &self.test
     }
     /// <p>An object that contains information about the settings for a run.</p>
     pub fn configuration(mut self, input: crate::types::ScheduleRunConfiguration) -> Self {
@@ -198,28 +223,29 @@ impl GetDevicePoolCompatibilityInputBuilder {
         self
     }
     /// <p>An object that contains information about the settings for a run.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleRunConfiguration>) -> Self {
+        self.configuration = input; self
+    }
+    /// <p>An object that contains information about the settings for a run.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput {
-                device_pool_arn: self.device_pool_arn,
-                app_arn: self.app_arn,
-                test_type: self.test_type,
-                test: self.test,
-                configuration: self.configuration,
-            },
+                device_pool_arn: self.device_pool_arn
+                ,
+                app_arn: self.app_arn
+                ,
+                test_type: self.test_type
+                ,
+                test: self.test
+                ,
+                configuration: self.configuration
+                ,
+            }
         )
     }
 }
+

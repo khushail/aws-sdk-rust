@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCoverageInput {
+pub struct ListCoverageInput  {
     /// <p>The maximum number of results to return in the response.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -19,11 +19,11 @@ impl ListCoverageInput {
         self.max_results
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::CoverageFilterCriteria> {
+    pub fn filter_criteria(&self) -> ::std::option::Option<& crate::types::CoverageFilterCriteria> {
         self.filter_criteria.as_ref()
     }
 }
@@ -36,9 +36,7 @@ impl ListCoverageInput {
 
 /// A builder for [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoverageInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl ListCoverageInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl ListCoverageInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
@@ -71,24 +75,25 @@ impl ListCoverageInputBuilder {
         self
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageFilterCriteria>,
-    ) -> Self {
-        self.filter_criteria = input;
-        self
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
+        self.filter_criteria = input; self
+    }
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+        &self.filter_criteria
     }
     /// Consumes the builder and constructs a [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_coverage::ListCoverageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_coverage::ListCoverageInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            filter_criteria: self.filter_criteria,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_coverage::ListCoverageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_coverage::ListCoverageInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filter_criteria: self.filter_criteria
+                ,
+            }
+        )
     }
 }
+

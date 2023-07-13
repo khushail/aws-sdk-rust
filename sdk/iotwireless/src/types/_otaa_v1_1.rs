@@ -3,7 +3,7 @@
 /// <p>OTAA device object for v1.1</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OtaaV11 {
+pub struct OtaaV11  {
     /// <p>The AppKey value.</p>
     #[doc(hidden)]
     pub app_key: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct OtaaV11 {
 }
 impl OtaaV11 {
     /// <p>The AppKey value.</p>
-    pub fn app_key(&self) -> ::std::option::Option<&str> {
+    pub fn app_key(&self) -> ::std::option::Option<& str> {
         self.app_key.as_deref()
     }
     /// <p>The NwkKey value.</p>
-    pub fn nwk_key(&self) -> ::std::option::Option<&str> {
+    pub fn nwk_key(&self) -> ::std::option::Option<& str> {
         self.nwk_key.as_deref()
     }
     /// <p>The JoinEUI value.</p>
-    pub fn join_eui(&self) -> ::std::option::Option<&str> {
+    pub fn join_eui(&self) -> ::std::option::Option<& str> {
         self.join_eui.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl OtaaV11 {
 
 /// A builder for [`OtaaV11`](crate::types::OtaaV11).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OtaaV11Builder {
     pub(crate) app_key: ::std::option::Option<::std::string::String>,
     pub(crate) nwk_key: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl OtaaV11Builder {
     }
     /// <p>The AppKey value.</p>
     pub fn set_app_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_key = input;
-        self
+        self.app_key = input; self
+    }
+    /// <p>The AppKey value.</p>
+    pub fn get_app_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_key
     }
     /// <p>The NwkKey value.</p>
     pub fn nwk_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl OtaaV11Builder {
     }
     /// <p>The NwkKey value.</p>
     pub fn set_nwk_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nwk_key = input;
-        self
+        self.nwk_key = input; self
+    }
+    /// <p>The NwkKey value.</p>
+    pub fn get_nwk_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nwk_key
     }
     /// <p>The JoinEUI value.</p>
     pub fn join_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl OtaaV11Builder {
     }
     /// <p>The JoinEUI value.</p>
     pub fn set_join_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.join_eui = input;
-        self
+        self.join_eui = input; self
+    }
+    /// <p>The JoinEUI value.</p>
+    pub fn get_join_eui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.join_eui
     }
     /// Consumes the builder and constructs a [`OtaaV11`](crate::types::OtaaV11).
     pub fn build(self) -> crate::types::OtaaV11 {
         crate::types::OtaaV11 {
-            app_key: self.app_key,
-            nwk_key: self.nwk_key,
-            join_eui: self.join_eui,
+            app_key: self.app_key
+            ,
+            nwk_key: self.nwk_key
+            ,
+            join_eui: self.join_eui
+            ,
         }
     }
 }
+

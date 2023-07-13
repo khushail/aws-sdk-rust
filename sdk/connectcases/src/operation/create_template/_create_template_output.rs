@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTemplateOutput {
+pub struct CreateTemplateOutput  {
     /// <p>A unique identifier of a template.</p>
     #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct CreateTemplateOutput {
 }
 impl CreateTemplateOutput {
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateTemplateOutput`](crate::operation::create_template::CreateTemplateOutput).
     pub fn builder() -> crate::operation::create_template::builders::CreateTemplateOutputBuilder {
@@ -35,9 +35,7 @@ impl CreateTemplateOutput {
 
 /// A builder for [`CreateTemplateOutput`](crate::operation::create_template::CreateTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTemplateOutputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
@@ -51,8 +49,11 @@ impl CreateTemplateOutputBuilder {
     }
     /// <p>A unique identifier of a template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
+    }
+    /// <p>A unique identifier of a template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,24 +62,30 @@ impl CreateTemplateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTemplateOutput`](crate::operation::create_template::CreateTemplateOutput).
     pub fn build(self) -> crate::operation::create_template::CreateTemplateOutput {
         crate::operation::create_template::CreateTemplateOutput {
-            template_id: self.template_id,
-            template_arn: self.template_arn,
+            template_id: self.template_id
+            ,
+            template_arn: self.template_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,54 +2,50 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResolverRulePolicyInput {
+pub struct PutResolverRulePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
-    /// <ul>
-    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
-    /// </ul>
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li> 
+    /// </ul> 
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
     #[doc(hidden)]
     pub resolver_rule_policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResolverRulePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
-    /// <ul>
-    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
-    /// </ul>
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li> 
+    /// </ul> 
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    pub fn resolver_rule_policy(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_rule_policy(&self) -> ::std::option::Option<& str> {
         self.resolver_rule_policy.as_deref()
     }
 }
 impl PutResolverRulePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyInput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder {
         crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutResolverRulePolicyInput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResolverRulePolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_rule_policy: ::std::option::Option<::std::string::String>,
@@ -62,53 +58,59 @@ impl PutResolverRulePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
-    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
-    /// <ul>
-    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li> 
+    /// </ul> 
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    pub fn resolver_rule_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
-    /// <ul>
-    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
-    /// </ul>
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li> 
+    /// </ul> 
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    pub fn set_resolver_rule_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resolver_rule_policy = input;
-        self
+    pub fn set_resolver_rule_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resolver_rule_policy = input; self
+    }
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li> 
+    /// </ul> 
+    /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
+    pub fn get_resolver_rule_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_rule_policy
     }
     /// Consumes the builder and constructs a [`PutResolverRulePolicyInput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput {
-                arn: self.arn,
-                resolver_rule_policy: self.resolver_rule_policy,
-            },
+                arn: self.arn
+                ,
+                resolver_rule_policy: self.resolver_rule_policy
+                ,
+            }
         )
     }
 }
+

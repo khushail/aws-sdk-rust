@@ -3,119 +3,101 @@ pub use crate::operation::authorize_snapshot_access::_authorize_snapshot_access_
 
 pub use crate::operation::authorize_snapshot_access::_authorize_snapshot_access_input::AuthorizeSnapshotAccessInputBuilder;
 
+impl AuthorizeSnapshotAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.authorize_snapshot_access();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `AuthorizeSnapshotAccess`.
-///
-/// <p>Authorizes the specified Amazon Web Services account to restore the specified snapshot.</p>
+/// 
+/// <p>Authorizes the specified Amazon Web Services account to restore the specified snapshot.</p> 
 /// <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeSnapshotAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder,
+                    inner: crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder,
 }
-impl AuthorizeSnapshotAccessFluentBuilder {
+impl AuthorizeSnapshotAccessFluentBuilder  {
     /// Creates a new `AuthorizeSnapshotAccess`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccess,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the AuthorizeSnapshotAccess as a reference.
+    pub fn as_input(&self) -> &crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccess,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
+    }
+    /// <p>The identifier of the snapshot the account is authorized to restore.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,38 +109,40 @@ impl AuthorizeSnapshotAccessFluentBuilder {
         self.inner = self.inner.set_snapshot_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_arn()
+    }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn snapshot_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn set_snapshot_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_cluster_identifier(input);
         self
     }
-    /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
+    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    pub fn get_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_cluster_identifier()
+    }
+    /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p> 
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
-    pub fn account_with_restore_access(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_with_restore_access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_with_restore_access(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
+    /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p> 
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
-    pub fn set_account_with_restore_access(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_with_restore_access(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_with_restore_access(input);
         self
     }
+    /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p> 
+    /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
+    pub fn get_account_with_restore_access(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_with_restore_access()
+    }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An asset property value entry containing the following information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetPropertyValue {
+pub struct AssetPropertyValue  {
     /// <p>The value of the asset property.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::AssetPropertyVariant>,
@@ -16,15 +16,15 @@ pub struct AssetPropertyValue {
 }
 impl AssetPropertyValue {
     /// <p>The value of the asset property.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::AssetPropertyVariant> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::AssetPropertyVariant> {
         self.value.as_ref()
     }
     /// <p>The asset property value timestamp.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&crate::types::AssetPropertyTimestamp> {
+    pub fn timestamp(&self) -> ::std::option::Option<& crate::types::AssetPropertyTimestamp> {
         self.timestamp.as_ref()
     }
     /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
-    pub fn quality(&self) -> ::std::option::Option<&str> {
+    pub fn quality(&self) -> ::std::option::Option<& str> {
         self.quality.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl AssetPropertyValue {
 
 /// A builder for [`AssetPropertyValue`](crate::types::AssetPropertyValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetPropertyValueBuilder {
     pub(crate) value: ::std::option::Option<crate::types::AssetPropertyVariant>,
     pub(crate) timestamp: ::std::option::Option<crate::types::AssetPropertyTimestamp>,
@@ -52,12 +50,12 @@ impl AssetPropertyValueBuilder {
         self
     }
     /// <p>The value of the asset property.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetPropertyVariant>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::AssetPropertyVariant>) -> Self {
+        self.value = input; self
+    }
+    /// <p>The value of the asset property.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::AssetPropertyVariant> {
+        &self.value
     }
     /// <p>The asset property value timestamp.</p>
     pub fn timestamp(mut self, input: crate::types::AssetPropertyTimestamp) -> Self {
@@ -65,12 +63,12 @@ impl AssetPropertyValueBuilder {
         self
     }
     /// <p>The asset property value timestamp.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetPropertyTimestamp>,
-    ) -> Self {
-        self.timestamp = input;
-        self
+    pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::AssetPropertyTimestamp>) -> Self {
+        self.timestamp = input; self
+    }
+    /// <p>The asset property value timestamp.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<crate::types::AssetPropertyTimestamp> {
+        &self.timestamp
     }
     /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
     pub fn quality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl AssetPropertyValueBuilder {
     }
     /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
     pub fn set_quality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quality = input;
-        self
+        self.quality = input; self
+    }
+    /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
+    pub fn get_quality(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quality
     }
     /// Consumes the builder and constructs a [`AssetPropertyValue`](crate::types::AssetPropertyValue).
     pub fn build(self) -> crate::types::AssetPropertyValue {
         crate::types::AssetPropertyValue {
-            value: self.value,
-            timestamp: self.timestamp,
-            quality: self.quality,
+            value: self.value
+            ,
+            timestamp: self.timestamp
+            ,
+            quality: self.quality
+            ,
         }
     }
 }
+

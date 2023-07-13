@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInsightsByAssessmentInput {
+pub struct GetInsightsByAssessmentInput  {
     /// <p>The unique identifier for the assessment. </p>
     #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightsByAssessmentInput {
     /// <p>The unique identifier for the assessment. </p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
 }
 impl GetInsightsByAssessmentInput {
     /// Creates a new builder-style object to manufacture [`GetInsightsByAssessmentInput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentInput).
-    pub fn builder(
-    ) -> crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentInputBuilder {
         crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightsByAssessmentInput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightsByAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightsByAssessmentInputBuilder {
     /// <p>The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.assessment_id = input;
-        self
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.assessment_id = input; self
+    }
+    /// <p>The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
     }
     /// Consumes the builder and constructs a [`GetInsightsByAssessmentInput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_insights_by_assessment::GetInsightsByAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_insights_by_assessment::GetInsightsByAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_insights_by_assessment::GetInsightsByAssessmentInput {
-                assessment_id: self.assessment_id,
-            },
+                assessment_id: self.assessment_id
+                ,
+            }
         )
     }
 }
+

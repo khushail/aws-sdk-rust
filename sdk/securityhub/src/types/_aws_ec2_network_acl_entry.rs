@@ -3,7 +3,7 @@
 /// <p>A rule for the network ACL. Each rule allows or denies access based on the IP address, traffic direction, port, and protocol.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2NetworkAclEntry {
+pub struct AwsEc2NetworkAclEntry  {
     /// <p>The IPV4 network range for which to deny or allow access.</p>
     #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
@@ -31,7 +31,7 @@ pub struct AwsEc2NetworkAclEntry {
 }
 impl AwsEc2NetworkAclEntry {
     /// <p>The IPV4 network range for which to deny or allow access.</p>
-    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_block(&self) -> ::std::option::Option<& str> {
         self.cidr_block.as_deref()
     }
     /// <p>Whether the rule is an egress rule. An egress rule is a rule that applies to traffic that leaves the subnet.</p>
@@ -39,23 +39,23 @@ impl AwsEc2NetworkAclEntry {
         self.egress
     }
     /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
-    pub fn icmp_type_code(&self) -> ::std::option::Option<&crate::types::IcmpTypeCode> {
+    pub fn icmp_type_code(&self) -> ::std::option::Option<& crate::types::IcmpTypeCode> {
         self.icmp_type_code.as_ref()
     }
     /// <p>The IPV6 network range for which to deny or allow access.</p>
-    pub fn ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_cidr_block(&self) -> ::std::option::Option<& str> {
         self.ipv6_cidr_block.as_deref()
     }
     /// <p>For TCP or UDP protocols, the range of ports that the rule applies to.</p>
-    pub fn port_range(&self) -> ::std::option::Option<&crate::types::PortRangeFromTo> {
+    pub fn port_range(&self) -> ::std::option::Option<& crate::types::PortRangeFromTo> {
         self.port_range.as_ref()
     }
     /// <p>The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>Whether the rule is used to allow access or deny access.</p>
-    pub fn rule_action(&self) -> ::std::option::Option<&str> {
+    pub fn rule_action(&self) -> ::std::option::Option<& str> {
         self.rule_action.as_deref()
     }
     /// <p>The rule number. The rules are processed in order by their number.</p>
@@ -72,9 +72,7 @@ impl AwsEc2NetworkAclEntry {
 
 /// A builder for [`AwsEc2NetworkAclEntry`](crate::types::AwsEc2NetworkAclEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkAclEntryBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) egress: ::std::option::Option<bool>,
@@ -93,8 +91,11 @@ impl AwsEc2NetworkAclEntryBuilder {
     }
     /// <p>The IPV4 network range for which to deny or allow access.</p>
     pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_block = input;
-        self
+        self.cidr_block = input; self
+    }
+    /// <p>The IPV4 network range for which to deny or allow access.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
     }
     /// <p>Whether the rule is an egress rule. An egress rule is a rule that applies to traffic that leaves the subnet.</p>
     pub fn egress(mut self, input: bool) -> Self {
@@ -103,8 +104,11 @@ impl AwsEc2NetworkAclEntryBuilder {
     }
     /// <p>Whether the rule is an egress rule. An egress rule is a rule that applies to traffic that leaves the subnet.</p>
     pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.egress = input;
-        self
+        self.egress = input; self
+    }
+    /// <p>Whether the rule is an egress rule. An egress rule is a rule that applies to traffic that leaves the subnet.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        &self.egress
     }
     /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
     pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
@@ -112,28 +116,25 @@ impl AwsEc2NetworkAclEntryBuilder {
         self
     }
     /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
-    pub fn set_icmp_type_code(
-        mut self,
-        input: ::std::option::Option<crate::types::IcmpTypeCode>,
-    ) -> Self {
-        self.icmp_type_code = input;
-        self
+    pub fn set_icmp_type_code(mut self, input: ::std::option::Option<crate::types::IcmpTypeCode>) -> Self {
+        self.icmp_type_code = input; self
+    }
+    /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
+    pub fn get_icmp_type_code(&self) -> &::std::option::Option<crate::types::IcmpTypeCode> {
+        &self.icmp_type_code
     }
     /// <p>The IPV6 network range for which to deny or allow access.</p>
-    pub fn ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPV6 network range for which to deny or allow access.</p>
-    pub fn set_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ipv6_cidr_block = input;
-        self
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_cidr_block = input; self
+    }
+    /// <p>The IPV6 network range for which to deny or allow access.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
     }
     /// <p>For TCP or UDP protocols, the range of ports that the rule applies to.</p>
     pub fn port_range(mut self, input: crate::types::PortRangeFromTo) -> Self {
@@ -141,12 +142,12 @@ impl AwsEc2NetworkAclEntryBuilder {
         self
     }
     /// <p>For TCP or UDP protocols, the range of ports that the rule applies to.</p>
-    pub fn set_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::PortRangeFromTo>,
-    ) -> Self {
-        self.port_range = input;
-        self
+    pub fn set_port_range(mut self, input: ::std::option::Option<crate::types::PortRangeFromTo>) -> Self {
+        self.port_range = input; self
+    }
+    /// <p>For TCP or UDP protocols, the range of ports that the rule applies to.</p>
+    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRangeFromTo> {
+        &self.port_range
     }
     /// <p>The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,8 +156,11 @@ impl AwsEc2NetworkAclEntryBuilder {
     }
     /// <p>The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
+    }
+    /// <p>The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>Whether the rule is used to allow access or deny access.</p>
     pub fn rule_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,8 +169,11 @@ impl AwsEc2NetworkAclEntryBuilder {
     }
     /// <p>Whether the rule is used to allow access or deny access.</p>
     pub fn set_rule_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_action = input;
-        self
+        self.rule_action = input; self
+    }
+    /// <p>Whether the rule is used to allow access or deny access.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_action
     }
     /// <p>The rule number. The rules are processed in order by their number.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
@@ -175,20 +182,34 @@ impl AwsEc2NetworkAclEntryBuilder {
     }
     /// <p>The rule number. The rules are processed in order by their number.</p>
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rule_number = input;
-        self
+        self.rule_number = input; self
+    }
+    /// <p>The rule number. The rules are processed in order by their number.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.rule_number
     }
     /// Consumes the builder and constructs a [`AwsEc2NetworkAclEntry`](crate::types::AwsEc2NetworkAclEntry).
     pub fn build(self) -> crate::types::AwsEc2NetworkAclEntry {
         crate::types::AwsEc2NetworkAclEntry {
-            cidr_block: self.cidr_block,
-            egress: self.egress.unwrap_or_default(),
-            icmp_type_code: self.icmp_type_code,
-            ipv6_cidr_block: self.ipv6_cidr_block,
-            port_range: self.port_range,
-            protocol: self.protocol,
-            rule_action: self.rule_action,
-            rule_number: self.rule_number.unwrap_or_default(),
+            cidr_block: self.cidr_block
+            ,
+            egress: self.egress
+                .unwrap_or_default()
+            ,
+            icmp_type_code: self.icmp_type_code
+            ,
+            ipv6_cidr_block: self.ipv6_cidr_block
+            ,
+            port_range: self.port_range
+            ,
+            protocol: self.protocol
+            ,
+            rule_action: self.rule_action
+            ,
+            rule_number: self.rule_number
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

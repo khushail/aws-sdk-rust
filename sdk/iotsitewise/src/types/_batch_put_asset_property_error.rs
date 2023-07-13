@@ -3,7 +3,7 @@
 /// <p>Contains error information from updating a batch of asset property values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutAssetPropertyError {
+pub struct BatchPutAssetPropertyError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::BatchPutAssetPropertyValueErrorCode>,
@@ -16,17 +16,15 @@ pub struct BatchPutAssetPropertyError {
 }
 impl BatchPutAssetPropertyError {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchPutAssetPropertyValueErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::BatchPutAssetPropertyValueErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>A list of timestamps for each error, if any.</p>
-    pub fn timestamps(&self) -> ::std::option::Option<&[crate::types::TimeInNanos]> {
+    pub fn timestamps(&self) -> ::std::option::Option<& [crate::types::TimeInNanos]> {
         self.timestamps.as_deref()
     }
 }
@@ -39,9 +37,7 @@ impl BatchPutAssetPropertyError {
 
 /// A builder for [`BatchPutAssetPropertyError`](crate::types::BatchPutAssetPropertyError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyErrorBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::BatchPutAssetPropertyValueErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -54,28 +50,25 @@ impl BatchPutAssetPropertyErrorBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchPutAssetPropertyValueErrorCode>,
-    ) -> Self {
-        self.error_code = input;
-        self
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::BatchPutAssetPropertyValueErrorCode>) -> Self {
+        self.error_code = input; self
+    }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BatchPutAssetPropertyValueErrorCode> {
+        &self.error_code
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The associated error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>The associated error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Appends an item to `timestamps`.
     ///
@@ -84,24 +77,28 @@ impl BatchPutAssetPropertyErrorBuilder {
     /// <p>A list of timestamps for each error, if any.</p>
     pub fn timestamps(mut self, input: crate::types::TimeInNanos) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
-        v.push(input);
-        self.timestamps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timestamps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of timestamps for each error, if any.</p>
-    pub fn set_timestamps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeInNanos>>,
-    ) -> Self {
-        self.timestamps = input;
-        self
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeInNanos>>) -> Self {
+        self.timestamps = input; self
+    }
+    /// <p>A list of timestamps for each error, if any.</p>
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeInNanos>> {
+        &self.timestamps
     }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyError`](crate::types::BatchPutAssetPropertyError).
     pub fn build(self) -> crate::types::BatchPutAssetPropertyError {
         crate::types::BatchPutAssetPropertyError {
-            error_code: self.error_code,
-            error_message: self.error_message,
-            timestamps: self.timestamps,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
+            timestamps: self.timestamps
+            ,
         }
     }
 }
+

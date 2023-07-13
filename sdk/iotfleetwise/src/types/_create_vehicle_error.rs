@@ -3,7 +3,7 @@
 /// <p>An HTTP error resulting from creating a vehicle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVehicleError {
+pub struct CreateVehicleError  {
     /// <p>The ID of the vehicle with the error.</p>
     #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct CreateVehicleError {
 }
 impl CreateVehicleError {
     /// <p>The ID of the vehicle with the error.</p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>An HTTP error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A description of the HTTP error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl CreateVehicleError {
 
 /// A builder for [`CreateVehicleError`](crate::types::CreateVehicleError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVehicleErrorBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl CreateVehicleErrorBuilder {
     }
     /// <p>The ID of the vehicle with the error.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
+    }
+    /// <p>The ID of the vehicle with the error.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
     }
     /// <p>An HTTP error code.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl CreateVehicleErrorBuilder {
     }
     /// <p>An HTTP error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>An HTTP error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>A description of the HTTP error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl CreateVehicleErrorBuilder {
     }
     /// <p>A description of the HTTP error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A description of the HTTP error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`CreateVehicleError`](crate::types::CreateVehicleError).
     pub fn build(self) -> crate::types::CreateVehicleError {
         crate::types::CreateVehicleError {
-            vehicle_name: self.vehicle_name,
-            code: self.code,
-            message: self.message,
+            vehicle_name: self.vehicle_name
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

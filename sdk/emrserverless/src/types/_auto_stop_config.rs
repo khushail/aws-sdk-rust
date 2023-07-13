@@ -3,7 +3,7 @@
 /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoStopConfig {
+pub struct AutoStopConfig  {
     /// <p>Enables the application to automatically stop after a certain amount of time being idle. Defaults to true.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
@@ -30,9 +30,7 @@ impl AutoStopConfig {
 
 /// A builder for [`AutoStopConfig`](crate::types::AutoStopConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoStopConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) idle_timeout_minutes: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl AutoStopConfigBuilder {
     }
     /// <p>Enables the application to automatically stop after a certain amount of time being idle. Defaults to true.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Enables the application to automatically stop after a certain amount of time being idle. Defaults to true.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The amount of idle time in minutes after which your application will automatically stop. Defaults to 15 minutes.</p>
     pub fn idle_timeout_minutes(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl AutoStopConfigBuilder {
     }
     /// <p>The amount of idle time in minutes after which your application will automatically stop. Defaults to 15 minutes.</p>
     pub fn set_idle_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_timeout_minutes = input;
-        self
+        self.idle_timeout_minutes = input; self
+    }
+    /// <p>The amount of idle time in minutes after which your application will automatically stop. Defaults to 15 minutes.</p>
+    pub fn get_idle_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.idle_timeout_minutes
     }
     /// Consumes the builder and constructs a [`AutoStopConfig`](crate::types::AutoStopConfig).
     pub fn build(self) -> crate::types::AutoStopConfig {
         crate::types::AutoStopConfig {
-            enabled: self.enabled,
-            idle_timeout_minutes: self.idle_timeout_minutes,
+            enabled: self.enabled
+            ,
+            idle_timeout_minutes: self.idle_timeout_minutes
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateNetworkSettingsInput {
+pub struct AssociateNetworkSettingsInput  {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct AssociateNetworkSettingsInput {
 }
 impl AssociateNetworkSettingsInput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_settings_arn(&self) -> ::std::option::Option<& str> {
         self.network_settings_arn.as_deref()
     }
 }
 impl AssociateNetworkSettingsInput {
     /// Creates a new builder-style object to manufacture [`AssociateNetworkSettingsInput`](crate::operation::associate_network_settings::AssociateNetworkSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::associate_network_settings::builders::AssociateNetworkSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_network_settings::builders::AssociateNetworkSettingsInputBuilder {
         crate::operation::associate_network_settings::builders::AssociateNetworkSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateNetworkSettingsInput`](crate::operation::associate_network_settings::AssociateNetworkSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateNetworkSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl AssociateNetworkSettingsInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
+    }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn set_network_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_settings_arn = input;
-        self
+    pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_settings_arn = input; self
+    }
+    /// <p>The ARN of the network settings.</p>
+    pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_settings_arn
     }
     /// Consumes the builder and constructs a [`AssociateNetworkSettingsInput`](crate::operation::associate_network_settings::AssociateNetworkSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_network_settings::AssociateNetworkSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_network_settings::AssociateNetworkSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_network_settings::AssociateNetworkSettingsInput {
-                portal_arn: self.portal_arn,
-                network_settings_arn: self.network_settings_arn,
-            },
+                portal_arn: self.portal_arn
+                ,
+                network_settings_arn: self.network_settings_arn
+                ,
+            }
         )
     }
 }
+

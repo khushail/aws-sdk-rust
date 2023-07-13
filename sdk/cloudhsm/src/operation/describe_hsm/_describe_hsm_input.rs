@@ -3,7 +3,7 @@
 /// <p>Contains the inputs for the <code>DescribeHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHsmInput {
+pub struct DescribeHsmInput  {
     /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
     #[doc(hidden)]
     pub hsm_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DescribeHsmInput {
 }
 impl DescribeHsmInput {
     /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
-    pub fn hsm_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_arn(&self) -> ::std::option::Option<& str> {
         self.hsm_arn.as_deref()
     }
     /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
-    pub fn hsm_serial_number(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_serial_number(&self) -> ::std::option::Option<& str> {
         self.hsm_serial_number.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DescribeHsmInput {
 
 /// A builder for [`DescribeHsmInput`](crate::operation::describe_hsm::DescribeHsmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHsmInputBuilder {
     pub(crate) hsm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_serial_number: ::std::option::Option<::std::string::String>,
@@ -45,35 +43,35 @@ impl DescribeHsmInputBuilder {
     }
     /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
     pub fn set_hsm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_arn = input;
-        self
+        self.hsm_arn = input; self
+    }
+    /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
+    pub fn get_hsm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_arn
     }
     /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
-    pub fn hsm_serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
-    pub fn set_hsm_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hsm_serial_number = input;
-        self
+    pub fn set_hsm_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hsm_serial_number = input; self
+    }
+    /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
+    pub fn get_hsm_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_serial_number
     }
     /// Consumes the builder and constructs a [`DescribeHsmInput`](crate::operation::describe_hsm::DescribeHsmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_hsm::DescribeHsmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_hsm::DescribeHsmInput {
-            hsm_arn: self.hsm_arn,
-            hsm_serial_number: self.hsm_serial_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hsm::DescribeHsmInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_hsm::DescribeHsmInput {
+                hsm_arn: self.hsm_arn
+                ,
+                hsm_serial_number: self.hsm_serial_number
+                ,
+            }
+        )
     }
 }
+

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPointOutput {
-    /// <p>The ARN of the access point.</p> <note>
-    /// <p>This is only supported by Amazon S3 on Outposts.</p>
+pub struct CreateAccessPointOutput  {
+    /// <p>The ARN of the access point.</p> <note> 
+    /// <p>This is only supported by Amazon S3 on Outposts.</p> 
     /// </note>
     #[doc(hidden)]
     pub access_point_arn: ::std::option::Option<::std::string::String>,
@@ -14,60 +14,56 @@ pub struct CreateAccessPointOutput {
     _request_id: Option<String>,
 }
 impl CreateAccessPointOutput {
-    /// <p>The ARN of the access point.</p> <note>
-    /// <p>This is only supported by Amazon S3 on Outposts.</p>
+    /// <p>The ARN of the access point.</p> <note> 
+    /// <p>This is only supported by Amazon S3 on Outposts.</p> 
     /// </note>
-    pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> ::std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The name or alias of the access point.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAccessPointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointOutput`](crate::operation::create_access_point::CreateAccessPointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_access_point::builders::CreateAccessPointOutputBuilder {
+    pub fn builder() -> crate::operation::create_access_point::builders::CreateAccessPointOutputBuilder {
         crate::operation::create_access_point::builders::CreateAccessPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPointOutput`](crate::operation::create_access_point::CreateAccessPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPointOutputBuilder {
     pub(crate) access_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAccessPointOutputBuilder {
-    /// <p>The ARN of the access point.</p> <note>
-    /// <p>This is only supported by Amazon S3 on Outposts.</p>
+    /// <p>The ARN of the access point.</p> <note> 
+    /// <p>This is only supported by Amazon S3 on Outposts.</p> 
     /// </note>
-    pub fn access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the access point.</p> <note>
-    /// <p>This is only supported by Amazon S3 on Outposts.</p>
+    /// <p>The ARN of the access point.</p> <note> 
+    /// <p>This is only supported by Amazon S3 on Outposts.</p> 
     /// </note>
-    pub fn set_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.access_point_arn = input;
-        self
+    pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_point_arn = input; self
+    }
+    /// <p>The ARN of the access point.</p> <note> 
+    /// <p>This is only supported by Amazon S3 on Outposts.</p> 
+    /// </note>
+    pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_arn
     }
     /// <p>The name or alias of the access point.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,24 +72,30 @@ impl CreateAccessPointOutputBuilder {
     }
     /// <p>The name or alias of the access point.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
+    }
+    /// <p>The name or alias of the access point.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateAccessPointOutput`](crate::operation::create_access_point::CreateAccessPointOutput).
     pub fn build(self) -> crate::operation::create_access_point::CreateAccessPointOutput {
         crate::operation::create_access_point::CreateAccessPointOutput {
-            access_point_arn: self.access_point_arn,
-            alias: self.alias,
+            access_point_arn: self.access_point_arn
+            ,
+            alias: self.alias
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

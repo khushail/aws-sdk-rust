@@ -3,51 +3,43 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointTypesOutput {
+pub struct DescribeEndpointTypesOutput  {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The types of endpoints that are supported.</p>
     #[doc(hidden)]
-    pub supported_endpoint_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedEndpointType>>,
+    pub supported_endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedEndpointType>>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointTypesOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The types of endpoints that are supported.</p>
-    pub fn supported_endpoint_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SupportedEndpointType]> {
+    pub fn supported_endpoint_types(&self) -> ::std::option::Option<& [crate::types::SupportedEndpointType]> {
         self.supported_endpoint_types.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEndpointTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEndpointTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointTypesOutput`](crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesOutputBuilder {
         crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointTypesOutput`](crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointTypesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_endpoint_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedEndpointType>>,
+    pub(crate) supported_endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedEndpointType>>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointTypesOutputBuilder {
@@ -58,8 +50,11 @@ impl DescribeEndpointTypesOutputBuilder {
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Appends an item to `supported_endpoint_types`.
     ///
@@ -68,33 +63,36 @@ impl DescribeEndpointTypesOutputBuilder {
     /// <p>The types of endpoints that are supported.</p>
     pub fn supported_endpoint_types(mut self, input: crate::types::SupportedEndpointType) -> Self {
         let mut v = self.supported_endpoint_types.unwrap_or_default();
-        v.push(input);
-        self.supported_endpoint_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_endpoint_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of endpoints that are supported.</p>
-    pub fn set_supported_endpoint_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedEndpointType>>,
-    ) -> Self {
-        self.supported_endpoint_types = input;
-        self
+    pub fn set_supported_endpoint_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedEndpointType>>) -> Self {
+        self.supported_endpoint_types = input; self
+    }
+    /// <p>The types of endpoints that are supported.</p>
+    pub fn get_supported_endpoint_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedEndpointType>> {
+        &self.supported_endpoint_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEndpointTypesOutput`](crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput).
     pub fn build(self) -> crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput {
         crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput {
-            marker: self.marker,
-            supported_endpoint_types: self.supported_endpoint_types,
+            marker: self.marker
+            ,
+            supported_endpoint_types: self.supported_endpoint_types
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

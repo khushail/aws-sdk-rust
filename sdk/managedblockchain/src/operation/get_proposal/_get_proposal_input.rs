@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProposalInput {
+pub struct GetProposalInput  {
     /// <p>The unique identifier of the network for which the proposal is made.</p>
     #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetProposalInput {
 }
 impl GetProposalInput {
     /// <p>The unique identifier of the network for which the proposal is made.</p>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The unique identifier of the proposal.</p>
-    pub fn proposal_id(&self) -> ::std::option::Option<&str> {
+    pub fn proposal_id(&self) -> ::std::option::Option<& str> {
         self.proposal_id.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl GetProposalInput {
 
 /// A builder for [`GetProposalInput`](crate::operation::get_proposal::GetProposalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProposalInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetProposalInputBuilder {
     }
     /// <p>The unique identifier of the network for which the proposal is made.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
+    }
+    /// <p>The unique identifier of the network for which the proposal is made.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
     }
     /// <p>The unique identifier of the proposal.</p>
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl GetProposalInputBuilder {
     }
     /// <p>The unique identifier of the proposal.</p>
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proposal_id = input;
-        self
+        self.proposal_id = input; self
+    }
+    /// <p>The unique identifier of the proposal.</p>
+    pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proposal_id
     }
     /// Consumes the builder and constructs a [`GetProposalInput`](crate::operation::get_proposal::GetProposalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_proposal::GetProposalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_proposal::GetProposalInput {
-            network_id: self.network_id,
-            proposal_id: self.proposal_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_proposal::GetProposalInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_proposal::GetProposalInput {
+                network_id: self.network_id
+                ,
+                proposal_id: self.proposal_id
+                ,
+            }
+        )
     }
 }
+

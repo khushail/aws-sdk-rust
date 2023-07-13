@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchFlowExecutionsInput {
+pub struct SearchFlowExecutionsInput  {
     /// <p>The ID of the system instance that contains the flow.</p>
     #[doc(hidden)]
     pub system_instance_id: ::std::option::Option<::std::string::String>,
@@ -24,23 +24,23 @@ pub struct SearchFlowExecutionsInput {
 }
 impl SearchFlowExecutionsInput {
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn system_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn system_instance_id(&self) -> ::std::option::Option<& str> {
         self.system_instance_id.as_deref()
     }
     /// <p>The ID of a flow execution.</p>
-    pub fn flow_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn flow_execution_id(&self) -> ::std::option::Option<& str> {
         self.flow_execution_id.as_deref()
     }
     /// <p>The date and time of the earliest flow execution to return.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time of the latest flow execution to return.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -50,17 +50,14 @@ impl SearchFlowExecutionsInput {
 }
 impl SearchFlowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`SearchFlowExecutionsInput`](crate::operation::search_flow_executions::SearchFlowExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder {
+    pub fn builder() -> crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder {
         crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchFlowExecutionsInput`](crate::operation::search_flow_executions::SearchFlowExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFlowExecutionsInputBuilder {
     pub(crate) system_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) flow_execution_id: ::std::option::Option<::std::string::String>,
@@ -71,36 +68,30 @@ pub struct SearchFlowExecutionsInputBuilder {
 }
 impl SearchFlowExecutionsInputBuilder {
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn system_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn system_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.system_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn set_system_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.system_instance_id = input;
-        self
+    pub fn set_system_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.system_instance_id = input; self
+    }
+    /// <p>The ID of the system instance that contains the flow.</p>
+    pub fn get_system_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.system_instance_id
     }
     /// <p>The ID of a flow execution.</p>
-    pub fn flow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a flow execution.</p>
-    pub fn set_flow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.flow_execution_id = input;
-        self
+    pub fn set_flow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.flow_execution_id = input; self
+    }
+    /// <p>The ID of a flow execution.</p>
+    pub fn get_flow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_execution_id
     }
     /// <p>The date and time of the earliest flow execution to return.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -108,12 +99,12 @@ impl SearchFlowExecutionsInputBuilder {
         self
     }
     /// <p>The date and time of the earliest flow execution to return.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>The date and time of the earliest flow execution to return.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The date and time of the latest flow execution to return.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -121,12 +112,12 @@ impl SearchFlowExecutionsInputBuilder {
         self
     }
     /// <p>The date and time of the latest flow execution to return.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p>The date and time of the latest flow execution to return.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,8 +126,11 @@ impl SearchFlowExecutionsInputBuilder {
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -145,25 +139,30 @@ impl SearchFlowExecutionsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`SearchFlowExecutionsInput`](crate::operation::search_flow_executions::SearchFlowExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_flow_executions::SearchFlowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_flow_executions::SearchFlowExecutionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::search_flow_executions::SearchFlowExecutionsInput {
-                system_instance_id: self.system_instance_id,
-                flow_execution_id: self.flow_execution_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                system_instance_id: self.system_instance_id
+                ,
+                flow_execution_id: self.flow_execution_id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

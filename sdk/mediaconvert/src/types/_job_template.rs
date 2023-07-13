@@ -3,7 +3,7 @@
 /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobTemplate {
+pub struct JobTemplate  {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
     #[doc(hidden)]
     pub acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
@@ -46,37 +46,35 @@ pub struct JobTemplate {
 }
 impl JobTemplate {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
-    pub fn acceleration_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccelerationSettings> {
+    pub fn acceleration_settings(&self) -> ::std::option::Option<& crate::types::AccelerationSettings> {
         self.acceleration_settings.as_ref()
     }
     /// An identifier for this resource that is unique within all of AWS.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// An optional category you create to organize your job templates.
-    pub fn category(&self) -> ::std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<& str> {
         self.category.as_deref()
     }
     /// The timestamp in epoch seconds for Job template creation.
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// An optional description you create for each job template.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Optional list of hop destinations.
-    pub fn hop_destinations(&self) -> ::std::option::Option<&[crate::types::HopDestination]> {
+    pub fn hop_destinations(&self) -> ::std::option::Option<& [crate::types::HopDestination]> {
         self.hop_destinations.as_deref()
     }
     /// The timestamp in epoch seconds when the Job template was last updated.
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// A name you create for each job template. Each name must be unique within your account.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Relative priority on the job.
@@ -84,21 +82,19 @@ impl JobTemplate {
         self.priority
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
-    pub fn queue(&self) -> ::std::option::Option<&str> {
+    pub fn queue(&self) -> ::std::option::Option<& str> {
         self.queue.as_deref()
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::JobTemplateSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::JobTemplateSettings> {
         self.settings.as_ref()
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn status_update_interval(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StatusUpdateInterval> {
+    pub fn status_update_interval(&self) -> ::std::option::Option<& crate::types::StatusUpdateInterval> {
         self.status_update_interval.as_ref()
     }
     /// A job template can be of two types: system or custom. System or built-in job templates can't be modified or deleted by the user.
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -111,17 +107,14 @@ impl JobTemplate {
 
 /// A builder for [`JobTemplate`](crate::types::JobTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobTemplateBuilder {
     pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) hop_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
+    pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -137,12 +130,12 @@ impl JobTemplateBuilder {
         self
     }
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
-    pub fn set_acceleration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AccelerationSettings>,
-    ) -> Self {
-        self.acceleration_settings = input;
-        self
+    pub fn set_acceleration_settings(mut self, input: ::std::option::Option<crate::types::AccelerationSettings>) -> Self {
+        self.acceleration_settings = input; self
+    }
+    /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
+    pub fn get_acceleration_settings(&self) -> &::std::option::Option<crate::types::AccelerationSettings> {
+        &self.acceleration_settings
     }
     /// An identifier for this resource that is unique within all of AWS.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,8 +144,11 @@ impl JobTemplateBuilder {
     }
     /// An identifier for this resource that is unique within all of AWS.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// An identifier for this resource that is unique within all of AWS.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// An optional category you create to organize your job templates.
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,8 +157,11 @@ impl JobTemplateBuilder {
     }
     /// An optional category you create to organize your job templates.
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
+    }
+    /// An optional category you create to organize your job templates.
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
     }
     /// The timestamp in epoch seconds for Job template creation.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -170,12 +169,12 @@ impl JobTemplateBuilder {
         self
     }
     /// The timestamp in epoch seconds for Job template creation.
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// The timestamp in epoch seconds for Job template creation.
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// An optional description you create for each job template.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,8 +183,11 @@ impl JobTemplateBuilder {
     }
     /// An optional description you create for each job template.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// An optional description you create for each job template.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `hop_destinations`.
     ///
@@ -194,17 +196,17 @@ impl JobTemplateBuilder {
     /// Optional list of hop destinations.
     pub fn hop_destinations(mut self, input: crate::types::HopDestination) -> Self {
         let mut v = self.hop_destinations.unwrap_or_default();
-        v.push(input);
-        self.hop_destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hop_destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// Optional list of hop destinations.
-    pub fn set_hop_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
-    ) -> Self {
-        self.hop_destinations = input;
-        self
+    pub fn set_hop_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>) -> Self {
+        self.hop_destinations = input; self
+    }
+    /// Optional list of hop destinations.
+    pub fn get_hop_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HopDestination>> {
+        &self.hop_destinations
     }
     /// The timestamp in epoch seconds when the Job template was last updated.
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -212,12 +214,12 @@ impl JobTemplateBuilder {
         self
     }
     /// The timestamp in epoch seconds when the Job template was last updated.
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
+    }
+    /// The timestamp in epoch seconds when the Job template was last updated.
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// A name you create for each job template. Each name must be unique within your account.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -226,8 +228,11 @@ impl JobTemplateBuilder {
     }
     /// A name you create for each job template. Each name must be unique within your account.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// A name you create for each job template. Each name must be unique within your account.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Relative priority on the job.
     pub fn priority(mut self, input: i32) -> Self {
@@ -236,8 +241,11 @@ impl JobTemplateBuilder {
     }
     /// Relative priority on the job.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
+    }
+    /// Relative priority on the job.
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
     pub fn queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -246,8 +254,11 @@ impl JobTemplateBuilder {
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
     pub fn set_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue = input;
-        self
+        self.queue = input; self
+    }
+    /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
+    pub fn get_queue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
     pub fn settings(mut self, input: crate::types::JobTemplateSettings) -> Self {
@@ -255,12 +266,12 @@ impl JobTemplateBuilder {
         self
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::JobTemplateSettings>,
-    ) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::JobTemplateSettings>) -> Self {
+        self.settings = input; self
+    }
+    /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::JobTemplateSettings> {
+        &self.settings
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub fn status_update_interval(mut self, input: crate::types::StatusUpdateInterval) -> Self {
@@ -268,12 +279,12 @@ impl JobTemplateBuilder {
         self
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn set_status_update_interval(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusUpdateInterval>,
-    ) -> Self {
-        self.status_update_interval = input;
-        self
+    pub fn set_status_update_interval(mut self, input: ::std::option::Option<crate::types::StatusUpdateInterval>) -> Self {
+        self.status_update_interval = input; self
+    }
+    /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    pub fn get_status_update_interval(&self) -> &::std::option::Option<crate::types::StatusUpdateInterval> {
+        &self.status_update_interval
     }
     /// A job template can be of two types: system or custom. System or built-in job templates can't be modified or deleted by the user.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
@@ -282,25 +293,42 @@ impl JobTemplateBuilder {
     }
     /// A job template can be of two types: system or custom. System or built-in job templates can't be modified or deleted by the user.
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// A job template can be of two types: system or custom. System or built-in job templates can't be modified or deleted by the user.
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`JobTemplate`](crate::types::JobTemplate).
     pub fn build(self) -> crate::types::JobTemplate {
         crate::types::JobTemplate {
-            acceleration_settings: self.acceleration_settings,
-            arn: self.arn,
-            category: self.category,
-            created_at: self.created_at,
-            description: self.description,
-            hop_destinations: self.hop_destinations,
-            last_updated: self.last_updated,
-            name: self.name,
-            priority: self.priority,
-            queue: self.queue,
-            settings: self.settings,
-            status_update_interval: self.status_update_interval,
-            r#type: self.r#type,
+            acceleration_settings: self.acceleration_settings
+            ,
+            arn: self.arn
+            ,
+            category: self.category
+            ,
+            created_at: self.created_at
+            ,
+            description: self.description
+            ,
+            hop_destinations: self.hop_destinations
+            ,
+            last_updated: self.last_updated
+            ,
+            name: self.name
+            ,
+            priority: self.priority
+            ,
+            queue: self.queue
+            ,
+            settings: self.settings
+            ,
+            status_update_interval: self.status_update_interval
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

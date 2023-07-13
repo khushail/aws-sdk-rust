@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDiscovererOutput {
+pub struct StopDiscovererOutput  {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
     pub discoverer_id: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct StopDiscovererOutput {
 }
 impl StopDiscovererOutput {
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> ::std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> ::std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
     /// <p>The state of the discoverer.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::DiscovererState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::DiscovererState> {
         self.state.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for StopDiscovererOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`StopDiscovererOutput`](crate::operation::stop_discoverer::StopDiscovererOutput).
     pub fn builder() -> crate::operation::stop_discoverer::builders::StopDiscovererOutputBuilder {
@@ -35,9 +35,7 @@ impl StopDiscovererOutput {
 
 /// A builder for [`StopDiscovererOutput`](crate::operation::stop_discoverer::StopDiscovererOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDiscovererOutputBuilder {
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::DiscovererState>,
@@ -45,20 +43,17 @@ pub struct StopDiscovererOutputBuilder {
 }
 impl StopDiscovererOutputBuilder {
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn set_discoverer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.discoverer_id = input;
-        self
+    pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.discoverer_id = input; self
+    }
+    /// <p>The ID of the discoverer.</p>
+    pub fn get_discoverer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discoverer_id
     }
     /// <p>The state of the discoverer.</p>
     pub fn state(mut self, input: crate::types::DiscovererState) -> Self {
@@ -66,28 +61,31 @@ impl StopDiscovererOutputBuilder {
         self
     }
     /// <p>The state of the discoverer.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscovererState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DiscovererState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of the discoverer.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DiscovererState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopDiscovererOutput`](crate::operation::stop_discoverer::StopDiscovererOutput).
     pub fn build(self) -> crate::operation::stop_discoverer::StopDiscovererOutput {
         crate::operation::stop_discoverer::StopDiscovererOutput {
-            discoverer_id: self.discoverer_id,
-            state: self.state,
+            discoverer_id: self.discoverer_id
+            ,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

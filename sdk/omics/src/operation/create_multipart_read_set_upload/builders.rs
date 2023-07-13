@@ -3,117 +3,100 @@ pub use crate::operation::create_multipart_read_set_upload::_create_multipart_re
 
 pub use crate::operation::create_multipart_read_set_upload::_create_multipart_read_set_upload_input::CreateMultipartReadSetUploadInputBuilder;
 
+impl CreateMultipartReadSetUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_multipart_read_set_upload();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateMultipartReadSetUpload`.
-///
+/// 
 /// <p> Begins a multipart read set upload. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMultipartReadSetUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadInputBuilder,
 }
-impl CreateMultipartReadSetUploadFluentBuilder {
+impl CreateMultipartReadSetUploadFluentBuilder  {
     /// Creates a new `CreateMultipartReadSetUpload`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUpload,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateMultipartReadSetUpload as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUpload, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUpload,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUpload, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
+    }
+    /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sequence_store_id()
     }
     /// <p> An idempotency token that can be used to avoid triggering multiple multipart uploads. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,18 +108,23 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p> An idempotency token that can be used to avoid triggering multiple multipart uploads. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p> The type of file being uploaded. </p>
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
         self.inner = self.inner.source_file_type(input);
         self
     }
     /// <p> The type of file being uploaded. </p>
-    pub fn set_source_file_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FileType>,
-    ) -> Self {
+    pub fn set_source_file_type(mut self, input: ::std::option::Option<crate::types::FileType>) -> Self {
         self.inner = self.inner.set_source_file_type(input);
         self
+    }
+    /// <p> The type of file being uploaded. </p>
+    pub fn get_source_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
+        self.inner.get_source_file_type()
     }
     /// <p> The source's subject ID. </p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +136,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_subject_id(input);
         self
     }
+    /// <p> The source's subject ID. </p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subject_id()
+    }
     /// <p> The source's sample ID. </p>
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sample_id(input.into());
@@ -158,37 +150,37 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_sample_id(input);
         self
     }
+    /// <p> The source's sample ID. </p>
+    pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sample_id()
+    }
     /// <p> Where the source originated. </p>
-    pub fn generated_from(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.generated_from(input.into());
         self
     }
     /// <p> Where the source originated. </p>
-    pub fn set_generated_from(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generated_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_generated_from(input);
         self
     }
+    /// <p> Where the source originated. </p>
+    pub fn get_generated_from(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_generated_from()
+    }
     /// <p> The ARN of the reference. </p>
-    pub fn reference_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_arn(input.into());
         self
     }
     /// <p> The ARN of the reference. </p>
-    pub fn set_reference_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_arn(input);
         self
+    }
+    /// <p> The ARN of the reference. </p>
+    pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reference_arn()
     }
     /// <p> The name of the read set. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -200,6 +192,10 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the read set. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The description of the read set. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -210,27 +206,27 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p> The description of the read set. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> Any tags to add to the read set. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> Any tags to add to the read set. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p> Any tags to add to the read set. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_tags()
+    }
 }
+

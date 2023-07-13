@@ -3,7 +3,7 @@
 /// <p>A file containing a batch job definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileBatchJobDefinition {
+pub struct FileBatchJobDefinition  {
     /// <p>The name of the file containing the batch job definition.</p>
     #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct FileBatchJobDefinition {
 }
 impl FileBatchJobDefinition {
     /// <p>The name of the file containing the batch job definition.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<& str> {
         self.file_name.as_deref()
     }
     /// <p>The path to the file containing the batch job definition.</p>
-    pub fn folder_path(&self) -> ::std::option::Option<&str> {
+    pub fn folder_path(&self) -> ::std::option::Option<& str> {
         self.folder_path.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl FileBatchJobDefinition {
 
 /// A builder for [`FileBatchJobDefinition`](crate::types::FileBatchJobDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileBatchJobDefinitionBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
     pub(crate) folder_path: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl FileBatchJobDefinitionBuilder {
     }
     /// <p>The name of the file containing the batch job definition.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
+    }
+    /// <p>The name of the file containing the batch job definition.</p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
     }
     /// <p>The path to the file containing the batch job definition.</p>
     pub fn folder_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl FileBatchJobDefinitionBuilder {
     }
     /// <p>The path to the file containing the batch job definition.</p>
     pub fn set_folder_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_path = input;
-        self
+        self.folder_path = input; self
+    }
+    /// <p>The path to the file containing the batch job definition.</p>
+    pub fn get_folder_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_path
     }
     /// Consumes the builder and constructs a [`FileBatchJobDefinition`](crate::types::FileBatchJobDefinition).
     pub fn build(self) -> crate::types::FileBatchJobDefinition {
         crate::types::FileBatchJobDefinition {
-            file_name: self.file_name,
-            folder_path: self.folder_path,
+            file_name: self.file_name
+            ,
+            folder_path: self.folder_path
+            ,
         }
     }
 }
+

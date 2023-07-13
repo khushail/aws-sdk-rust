@@ -3,14 +3,14 @@
 /// <p>Represents a global secondary index to be deleted from an existing table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGlobalSecondaryIndexAction {
+pub struct DeleteGlobalSecondaryIndexAction  {
     /// <p>The name of the global secondary index to be deleted.</p>
     #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be deleted.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DeleteGlobalSecondaryIndexAction {
 
 /// A builder for [`DeleteGlobalSecondaryIndexAction`](crate::types::DeleteGlobalSecondaryIndexAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGlobalSecondaryIndexActionBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl DeleteGlobalSecondaryIndexActionBuilder {
     }
     /// <p>The name of the global secondary index to be deleted.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
+    }
+    /// <p>The name of the global secondary index to be deleted.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// Consumes the builder and constructs a [`DeleteGlobalSecondaryIndexAction`](crate::types::DeleteGlobalSecondaryIndexAction).
     pub fn build(self) -> crate::types::DeleteGlobalSecondaryIndexAction {
         crate::types::DeleteGlobalSecondaryIndexAction {
-            index_name: self.index_name,
+            index_name: self.index_name
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let externalmetricstatuscode = unimplemented!();
 /// match externalmetricstatuscode {
@@ -38,22 +38,14 @@
 /// Specifically, when `externalmetricstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExternalMetricStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ExternalMetricStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     DatadogIntegrationError,
@@ -76,77 +68,57 @@ pub enum ExternalMetricStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     NoExternalMetricSet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ExternalMetricStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "DATADOG_INTEGRATION_ERROR" => ExternalMetricStatusCode::DatadogIntegrationError,
-            "DYNATRACE_INTEGRATION_ERROR" => ExternalMetricStatusCode::DynatraceIntegrationError,
-            "INSTANA_INTEGRATION_ERROR" => ExternalMetricStatusCode::InstanaIntegrationError,
-            "INSUFFICIENT_DATADOG_METRICS" => ExternalMetricStatusCode::InsufficientDatadogMetrics,
-            "INSUFFICIENT_DYNATRACE_METRICS" => {
-                ExternalMetricStatusCode::InsufficientDynatraceMetrics
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DATADOG_INTEGRATION_ERROR" => ExternalMetricStatusCode::DatadogIntegrationError,
+"DYNATRACE_INTEGRATION_ERROR" => ExternalMetricStatusCode::DynatraceIntegrationError,
+"INSTANA_INTEGRATION_ERROR" => ExternalMetricStatusCode::InstanaIntegrationError,
+"INSUFFICIENT_DATADOG_METRICS" => ExternalMetricStatusCode::InsufficientDatadogMetrics,
+"INSUFFICIENT_DYNATRACE_METRICS" => ExternalMetricStatusCode::InsufficientDynatraceMetrics,
+"INSUFFICIENT_INSTANA_METRICS" => ExternalMetricStatusCode::InsufficientInstanaMetrics,
+"INSUFFICIENT_NEWRELIC_METRICS" => ExternalMetricStatusCode::InsufficientNewrelicMetrics,
+"INTEGRATION_SUCCESS" => ExternalMetricStatusCode::IntegrationSuccess,
+"NEWRELIC_INTEGRATION_ERROR" => ExternalMetricStatusCode::NewrelicIntegrationError,
+"NO_EXTERNAL_METRIC_SET" => ExternalMetricStatusCode::NoExternalMetricSet,
+other => ExternalMetricStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "INSUFFICIENT_INSTANA_METRICS" => ExternalMetricStatusCode::InsufficientInstanaMetrics,
-            "INSUFFICIENT_NEWRELIC_METRICS" => {
-                ExternalMetricStatusCode::InsufficientNewrelicMetrics
-            }
-            "INTEGRATION_SUCCESS" => ExternalMetricStatusCode::IntegrationSuccess,
-            "NEWRELIC_INTEGRATION_ERROR" => ExternalMetricStatusCode::NewrelicIntegrationError,
-            "NO_EXTERNAL_METRIC_SET" => ExternalMetricStatusCode::NoExternalMetricSet,
-            other => ExternalMetricStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl ::std::str::FromStr for ExternalMetricStatusCode {
-    type Err = ::std::convert::Infallible;
+                type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ExternalMetricStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                    ::std::result::Result::Ok(ExternalMetricStatusCode::from(s))
+                }
+            }
 impl ExternalMetricStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExternalMetricStatusCode::DatadogIntegrationError => "DATADOG_INTEGRATION_ERROR",
-            ExternalMetricStatusCode::DynatraceIntegrationError => "DYNATRACE_INTEGRATION_ERROR",
-            ExternalMetricStatusCode::InstanaIntegrationError => "INSTANA_INTEGRATION_ERROR",
-            ExternalMetricStatusCode::InsufficientDatadogMetrics => "INSUFFICIENT_DATADOG_METRICS",
-            ExternalMetricStatusCode::InsufficientDynatraceMetrics => {
-                "INSUFFICIENT_DYNATRACE_METRICS"
-            }
-            ExternalMetricStatusCode::InsufficientInstanaMetrics => "INSUFFICIENT_INSTANA_METRICS",
-            ExternalMetricStatusCode::InsufficientNewrelicMetrics => {
-                "INSUFFICIENT_NEWRELIC_METRICS"
-            }
-            ExternalMetricStatusCode::IntegrationSuccess => "INTEGRATION_SUCCESS",
-            ExternalMetricStatusCode::NewrelicIntegrationError => "NEWRELIC_INTEGRATION_ERROR",
-            ExternalMetricStatusCode::NoExternalMetricSet => "NO_EXTERNAL_METRIC_SET",
-            ExternalMetricStatusCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DATADOG_INTEGRATION_ERROR",
-            "DYNATRACE_INTEGRATION_ERROR",
-            "INSTANA_INTEGRATION_ERROR",
-            "INSUFFICIENT_DATADOG_METRICS",
-            "INSUFFICIENT_DYNATRACE_METRICS",
-            "INSUFFICIENT_INSTANA_METRICS",
-            "INSUFFICIENT_NEWRELIC_METRICS",
-            "INTEGRATION_SUCCESS",
-            "NEWRELIC_INTEGRATION_ERROR",
-            "NO_EXTERNAL_METRIC_SET",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExternalMetricStatusCode::DatadogIntegrationError => "DATADOG_INTEGRATION_ERROR",
+    ExternalMetricStatusCode::DynatraceIntegrationError => "DYNATRACE_INTEGRATION_ERROR",
+    ExternalMetricStatusCode::InstanaIntegrationError => "INSTANA_INTEGRATION_ERROR",
+    ExternalMetricStatusCode::InsufficientDatadogMetrics => "INSUFFICIENT_DATADOG_METRICS",
+    ExternalMetricStatusCode::InsufficientDynatraceMetrics => "INSUFFICIENT_DYNATRACE_METRICS",
+    ExternalMetricStatusCode::InsufficientInstanaMetrics => "INSUFFICIENT_INSTANA_METRICS",
+    ExternalMetricStatusCode::InsufficientNewrelicMetrics => "INSUFFICIENT_NEWRELIC_METRICS",
+    ExternalMetricStatusCode::IntegrationSuccess => "INTEGRATION_SUCCESS",
+    ExternalMetricStatusCode::NewrelicIntegrationError => "NEWRELIC_INTEGRATION_ERROR",
+    ExternalMetricStatusCode::NoExternalMetricSet => "NO_EXTERNAL_METRIC_SET",
+    ExternalMetricStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DATADOG_INTEGRATION_ERROR", "DYNATRACE_INTEGRATION_ERROR", "INSTANA_INTEGRATION_ERROR", "INSUFFICIENT_DATADOG_METRICS", "INSUFFICIENT_DYNATRACE_METRICS", "INSUFFICIENT_INSTANA_METRICS", "INSUFFICIENT_NEWRELIC_METRICS", "INTEGRATION_SUCCESS", "NEWRELIC_INTEGRATION_ERROR", "NO_EXTERNAL_METRIC_SET"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ExternalMetricStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

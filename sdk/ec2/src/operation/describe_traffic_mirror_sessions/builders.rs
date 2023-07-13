@@ -3,127 +3,110 @@ pub use crate::operation::describe_traffic_mirror_sessions::_describe_traffic_mi
 
 pub use crate::operation::describe_traffic_mirror_sessions::_describe_traffic_mirror_sessions_input::DescribeTrafficMirrorSessionsInputBuilder;
 
+impl DescribeTrafficMirrorSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_traffic_mirror_sessions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeTrafficMirrorSessions`.
-///
+/// 
 /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrafficMirrorSessionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsInputBuilder,
 }
-impl DescribeTrafficMirrorSessionsFluentBuilder {
+impl DescribeTrafficMirrorSessionsFluentBuilder  {
     /// Creates a new `DescribeTrafficMirrorSessions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeTrafficMirrorSessions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator{
-        crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator {
+                                crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TrafficMirrorSessionIds`.
     ///
     /// To override the contents of this collection use [`set_traffic_mirror_session_ids`](Self::set_traffic_mirror_session_ids).
     ///
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_session_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_mirror_session_ids(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn set_traffic_mirror_session_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_traffic_mirror_session_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_traffic_mirror_session_ids(input);
         self
+    }
+    /// <p>The ID of the Traffic Mirror session.</p>
+    pub fn get_traffic_mirror_session_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_traffic_mirror_session_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -135,44 +118,60 @@ impl DescribeTrafficMirrorSessionsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters. The possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>description</code>: The Traffic Mirror session description.</p> </li>
-    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
-    /// <li> <p> <code>packet-length</code>: The assigned number of packets to mirror. </p> </li>
-    /// <li> <p> <code>session-number</code>: The assigned session number. </p> </li>
-    /// <li> <p> <code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p> </li>
-    /// <li> <p> <code>traffic-mirror-session-id</code>: The ID of the Traffic Mirror session.</p> </li>
-    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
-    /// <li> <p> <code>virtual-network-id</code>: The virtual network ID of the Traffic Mirror session.</p> </li>
+    /// <p>One or more filters. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>description</code>: The Traffic Mirror session description.</p> </li> 
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li> 
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li> 
+    /// <li> <p> <code>packet-length</code>: The assigned number of packets to mirror. </p> </li> 
+    /// <li> <p> <code>session-number</code>: The assigned session number. </p> </li> 
+    /// <li> <p> <code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p> </li> 
+    /// <li> <p> <code>traffic-mirror-session-id</code>: The ID of the Traffic Mirror session.</p> </li> 
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li> 
+    /// <li> <p> <code>virtual-network-id</code>: The virtual network ID of the Traffic Mirror session.</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters. The possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>description</code>: The Traffic Mirror session description.</p> </li>
-    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
-    /// <li> <p> <code>packet-length</code>: The assigned number of packets to mirror. </p> </li>
-    /// <li> <p> <code>session-number</code>: The assigned session number. </p> </li>
-    /// <li> <p> <code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p> </li>
-    /// <li> <p> <code>traffic-mirror-session-id</code>: The ID of the Traffic Mirror session.</p> </li>
-    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
-    /// <li> <p> <code>virtual-network-id</code>: The virtual network ID of the Traffic Mirror session.</p> </li>
+    /// <p>One or more filters. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>description</code>: The Traffic Mirror session description.</p> </li> 
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li> 
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li> 
+    /// <li> <p> <code>packet-length</code>: The assigned number of packets to mirror. </p> </li> 
+    /// <li> <p> <code>session-number</code>: The assigned session number. </p> </li> 
+    /// <li> <p> <code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p> </li> 
+    /// <li> <p> <code>traffic-mirror-session-id</code>: The ID of the Traffic Mirror session.</p> </li> 
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li> 
+    /// <li> <p> <code>virtual-network-id</code>: The virtual network ID of the Traffic Mirror session.</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>One or more filters. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>description</code>: The Traffic Mirror session description.</p> </li> 
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li> 
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li> 
+    /// <li> <p> <code>packet-length</code>: The assigned number of packets to mirror. </p> </li> 
+    /// <li> <p> <code>session-number</code>: The assigned session number. </p> </li> 
+    /// <li> <p> <code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p> </li> 
+    /// <li> <p> <code>traffic-mirror-session-id</code>: The ID of the Traffic Mirror session.</p> </li> 
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li> 
+    /// <li> <p> <code>virtual-network-id</code>: The virtual network ID of the Traffic Mirror session.</p> </li> 
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -184,6 +183,10 @@ impl DescribeTrafficMirrorSessionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -194,4 +197,9 @@ impl DescribeTrafficMirrorSessionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

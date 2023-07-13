@@ -3,14 +3,14 @@
 /// <p>An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// <p>The <code>S3Source</code> object.</p>
     #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3Source>,
 }
 impl Source {
     /// <p>The <code>S3Source</code> object.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3Source> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3Source> {
         self.s3.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl Source {
 
 /// A builder for [`Source`](crate::types::Source).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::S3Source>,
 }
@@ -37,11 +35,18 @@ impl SourceBuilder {
     }
     /// <p>The <code>S3Source</code> object.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3Source>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
+    }
+    /// <p>The <code>S3Source</code> object.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Source> {
+        &self.s3
     }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
-        crate::types::Source { s3: self.s3 }
+        crate::types::Source {
+            s3: self.s3
+            ,
+        }
     }
 }
+

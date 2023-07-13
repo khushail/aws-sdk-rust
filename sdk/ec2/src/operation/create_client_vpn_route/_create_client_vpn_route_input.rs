@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClientVpnRouteInput {
+pub struct CreateClientVpnRouteInput  {
     /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
     #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
-    /// <ul>
-    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li>
-    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li>
-    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
-    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
+    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p> 
+    /// <ul> 
+    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li> 
+    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
+    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p> 
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
     #[doc(hidden)]
     pub target_vpc_subnet_id: ::std::option::Option<::std::string::String>,
@@ -31,30 +31,30 @@ pub struct CreateClientVpnRouteInput {
 }
 impl CreateClientVpnRouteInput {
     /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
-    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
-    /// <ul>
-    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li>
-    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li>
-    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
-    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
+    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p> 
+    /// <ul> 
+    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li> 
+    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li> 
     /// </ul>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
-    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
+    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p> 
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
-    pub fn target_vpc_subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_vpc_subnet_id(&self) -> ::std::option::Option<& str> {
         self.target_vpc_subnet_id.as_deref()
     }
     /// <p>A brief description of the route.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -64,17 +64,14 @@ impl CreateClientVpnRouteInput {
 }
 impl CreateClientVpnRouteInput {
     /// Creates a new builder-style object to manufacture [`CreateClientVpnRouteInput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteInput).
-    pub fn builder(
-    ) -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder {
+    pub fn builder() -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder {
         crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClientVpnRouteInput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClientVpnRouteInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
@@ -85,66 +82,64 @@ pub struct CreateClientVpnRouteInputBuilder {
 }
 impl CreateClientVpnRouteInputBuilder {
     /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_vpn_endpoint_id = input; self
     }
-    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
-    /// <ul>
-    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li>
-    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li>
-    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
-    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
+    /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
+    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p> 
+    /// <ul> 
+    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li> 
+    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li> 
     /// </ul>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
-    /// <ul>
-    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li>
-    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li>
-    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
-    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
+    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p> 
+    /// <ul> 
+    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li> 
+    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li> 
     /// </ul>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_cidr_block = input;
-        self
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_cidr_block = input; self
     }
-    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
+    /// <p>The IPv4 address range, in CIDR notation, of the route destination. For example:</p> 
+    /// <ul> 
+    /// <li> <p>To add a route for Internet access, enter <code>0.0.0.0/0</code> </p> </li> 
+    /// <li> <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li> 
+    /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li> 
+    /// </ul>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
+    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p> 
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
-    pub fn target_vpc_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_vpc_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_vpc_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
+    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p> 
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
-    pub fn set_target_vpc_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_vpc_subnet_id = input;
-        self
+    pub fn set_target_vpc_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_vpc_subnet_id = input; self
+    }
+    /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p> 
+    /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
+    pub fn get_target_vpc_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_vpc_subnet_id
     }
     /// <p>A brief description of the route.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,8 +148,11 @@ impl CreateClientVpnRouteInputBuilder {
     }
     /// <p>A brief description of the route.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A brief description of the route.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,8 +161,11 @@ impl CreateClientVpnRouteInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -173,25 +174,30 @@ impl CreateClientVpnRouteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateClientVpnRouteInput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_client_vpn_route::CreateClientVpnRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_client_vpn_route::CreateClientVpnRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_client_vpn_route::CreateClientVpnRouteInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-                destination_cidr_block: self.destination_cidr_block,
-                target_vpc_subnet_id: self.target_vpc_subnet_id,
-                description: self.description,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-            },
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id
+                ,
+                destination_cidr_block: self.destination_cidr_block
+                ,
+                target_vpc_subnet_id: self.target_vpc_subnet_id
+                ,
+                description: self.description
+                ,
+                client_token: self.client_token
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

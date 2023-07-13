@@ -3,7 +3,7 @@
 /// <p> The OAuth properties required for OAuth type authentication. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OAuthProperties {
+pub struct OAuthProperties  {
     /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
     #[doc(hidden)]
     pub token_url: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct OAuthProperties {
 }
 impl OAuthProperties {
     /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
-    pub fn token_url(&self) -> ::std::option::Option<&str> {
+    pub fn token_url(&self) -> ::std::option::Option<& str> {
         self.token_url.as_deref()
     }
     /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
-    pub fn auth_code_url(&self) -> ::std::option::Option<&str> {
+    pub fn auth_code_url(&self) -> ::std::option::Option<& str> {
         self.auth_code_url.as_deref()
     }
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
-    pub fn o_auth_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn o_auth_scopes(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.o_auth_scopes.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl OAuthProperties {
 
 /// A builder for [`OAuthProperties`](crate::types::OAuthProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OAuthPropertiesBuilder {
     pub(crate) token_url: ::std::option::Option<::std::string::String>,
     pub(crate) auth_code_url: ::std::option::Option<::std::string::String>,
@@ -53,53 +51,54 @@ impl OAuthPropertiesBuilder {
     }
     /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
     pub fn set_token_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_url = input;
-        self
+        self.token_url = input; self
+    }
+    /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
+    pub fn get_token_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_url
     }
     /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
-    pub fn auth_code_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auth_code_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_code_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
-    pub fn set_auth_code_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.auth_code_url = input;
-        self
+    pub fn set_auth_code_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auth_code_url = input; self
+    }
+    /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
+    pub fn get_auth_code_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_code_url
     }
     /// Appends an item to `o_auth_scopes`.
     ///
     /// To override the contents of this collection use [`set_o_auth_scopes`](Self::set_o_auth_scopes).
     ///
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
-    pub fn o_auth_scopes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn o_auth_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.o_auth_scopes.unwrap_or_default();
-        v.push(input.into());
-        self.o_auth_scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.o_auth_scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
-    pub fn set_o_auth_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.o_auth_scopes = input;
-        self
+    pub fn set_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.o_auth_scopes = input; self
+    }
+    /// <p> The OAuth scopes required for OAuth type authentication. </p>
+    pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.o_auth_scopes
     }
     /// Consumes the builder and constructs a [`OAuthProperties`](crate::types::OAuthProperties).
     pub fn build(self) -> crate::types::OAuthProperties {
         crate::types::OAuthProperties {
-            token_url: self.token_url,
-            auth_code_url: self.auth_code_url,
-            o_auth_scopes: self.o_auth_scopes,
+            token_url: self.token_url
+            ,
+            auth_code_url: self.auth_code_url
+            ,
+            o_auth_scopes: self.o_auth_scopes
+            ,
         }
     }
 }
+

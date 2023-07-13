@@ -3,14 +3,14 @@
 /// <p>The information about a dimension.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionDetail {
+pub struct DimensionDetail  {
     /// <p>The identifier of a dimension.</p>
     #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl DimensionDetail {
     /// <p>The identifier of a dimension.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DimensionDetail {
 
 /// A builder for [`DimensionDetail`](crate::types::DimensionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionDetailBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl DimensionDetailBuilder {
     }
     /// <p>The identifier of a dimension.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
+    }
+    /// <p>The identifier of a dimension.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Consumes the builder and constructs a [`DimensionDetail`](crate::types::DimensionDetail).
     pub fn build(self) -> crate::types::DimensionDetail {
         crate::types::DimensionDetail {
-            identifier: self.identifier,
+            identifier: self.identifier
+            ,
         }
     }
 }
+

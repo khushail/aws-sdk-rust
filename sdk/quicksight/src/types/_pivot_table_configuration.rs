@@ -3,7 +3,7 @@
 /// <p>The configuration for a <code>PivotTableVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableConfiguration {
+pub struct PivotTableConfiguration  {
     /// <p>The field wells of the visual.</p>
     #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::PivotTableFieldWells>,
@@ -21,36 +21,31 @@ pub struct PivotTableConfiguration {
     pub field_options: ::std::option::Option<crate::types::PivotTableFieldOptions>,
     /// <p>The paginated report options for a pivot table visual.</p>
     #[doc(hidden)]
-    pub paginated_report_options:
-        ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>,
+    pub paginated_report_options: ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>,
 }
 impl PivotTableConfiguration {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::PivotTableFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<& crate::types::PivotTableFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PivotTableSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<& crate::types::PivotTableSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The table options for a pivot table visual.</p>
-    pub fn table_options(&self) -> ::std::option::Option<&crate::types::PivotTableOptions> {
+    pub fn table_options(&self) -> ::std::option::Option<& crate::types::PivotTableOptions> {
         self.table_options.as_ref()
     }
     /// <p>The total options for a pivot table visual.</p>
-    pub fn total_options(&self) -> ::std::option::Option<&crate::types::PivotTableTotalOptions> {
+    pub fn total_options(&self) -> ::std::option::Option<& crate::types::PivotTableTotalOptions> {
         self.total_options.as_ref()
     }
     /// <p>The field options for a pivot table visual.</p>
-    pub fn field_options(&self) -> ::std::option::Option<&crate::types::PivotTableFieldOptions> {
+    pub fn field_options(&self) -> ::std::option::Option<& crate::types::PivotTableFieldOptions> {
         self.field_options.as_ref()
     }
     /// <p>The paginated report options for a pivot table visual.</p>
-    pub fn paginated_report_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PivotTablePaginatedReportOptions> {
+    pub fn paginated_report_options(&self) -> ::std::option::Option<& crate::types::PivotTablePaginatedReportOptions> {
         self.paginated_report_options.as_ref()
     }
 }
@@ -63,17 +58,14 @@ impl PivotTableConfiguration {
 
 /// A builder for [`PivotTableConfiguration`](crate::types::PivotTableConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::PivotTableFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::PivotTableSortConfiguration>,
     pub(crate) table_options: ::std::option::Option<crate::types::PivotTableOptions>,
     pub(crate) total_options: ::std::option::Option<crate::types::PivotTableTotalOptions>,
     pub(crate) field_options: ::std::option::Option<crate::types::PivotTableFieldOptions>,
-    pub(crate) paginated_report_options:
-        ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>,
+    pub(crate) paginated_report_options: ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>,
 }
 impl PivotTableConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
@@ -82,12 +74,12 @@ impl PivotTableConfigurationBuilder {
         self
     }
     /// <p>The field wells of the visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableFieldWells>,
-    ) -> Self {
-        self.field_wells = input;
-        self
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::PivotTableFieldWells>) -> Self {
+        self.field_wells = input; self
+    }
+    /// <p>The field wells of the visual.</p>
+    pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::PivotTableFieldWells> {
+        &self.field_wells
     }
     /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
     pub fn sort_configuration(mut self, input: crate::types::PivotTableSortConfiguration) -> Self {
@@ -95,12 +87,12 @@ impl PivotTableConfigurationBuilder {
         self
     }
     /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableSortConfiguration>,
-    ) -> Self {
-        self.sort_configuration = input;
-        self
+    pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::PivotTableSortConfiguration>) -> Self {
+        self.sort_configuration = input; self
+    }
+    /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
+    pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::PivotTableSortConfiguration> {
+        &self.sort_configuration
     }
     /// <p>The table options for a pivot table visual.</p>
     pub fn table_options(mut self, input: crate::types::PivotTableOptions) -> Self {
@@ -108,12 +100,12 @@ impl PivotTableConfigurationBuilder {
         self
     }
     /// <p>The table options for a pivot table visual.</p>
-    pub fn set_table_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableOptions>,
-    ) -> Self {
-        self.table_options = input;
-        self
+    pub fn set_table_options(mut self, input: ::std::option::Option<crate::types::PivotTableOptions>) -> Self {
+        self.table_options = input; self
+    }
+    /// <p>The table options for a pivot table visual.</p>
+    pub fn get_table_options(&self) -> &::std::option::Option<crate::types::PivotTableOptions> {
+        &self.table_options
     }
     /// <p>The total options for a pivot table visual.</p>
     pub fn total_options(mut self, input: crate::types::PivotTableTotalOptions) -> Self {
@@ -121,12 +113,12 @@ impl PivotTableConfigurationBuilder {
         self
     }
     /// <p>The total options for a pivot table visual.</p>
-    pub fn set_total_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableTotalOptions>,
-    ) -> Self {
-        self.total_options = input;
-        self
+    pub fn set_total_options(mut self, input: ::std::option::Option<crate::types::PivotTableTotalOptions>) -> Self {
+        self.total_options = input; self
+    }
+    /// <p>The total options for a pivot table visual.</p>
+    pub fn get_total_options(&self) -> &::std::option::Option<crate::types::PivotTableTotalOptions> {
+        &self.total_options
     }
     /// <p>The field options for a pivot table visual.</p>
     pub fn field_options(mut self, input: crate::types::PivotTableFieldOptions) -> Self {
@@ -134,38 +126,42 @@ impl PivotTableConfigurationBuilder {
         self
     }
     /// <p>The field options for a pivot table visual.</p>
-    pub fn set_field_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableFieldOptions>,
-    ) -> Self {
-        self.field_options = input;
-        self
+    pub fn set_field_options(mut self, input: ::std::option::Option<crate::types::PivotTableFieldOptions>) -> Self {
+        self.field_options = input; self
+    }
+    /// <p>The field options for a pivot table visual.</p>
+    pub fn get_field_options(&self) -> &::std::option::Option<crate::types::PivotTableFieldOptions> {
+        &self.field_options
     }
     /// <p>The paginated report options for a pivot table visual.</p>
-    pub fn paginated_report_options(
-        mut self,
-        input: crate::types::PivotTablePaginatedReportOptions,
-    ) -> Self {
+    pub fn paginated_report_options(mut self, input: crate::types::PivotTablePaginatedReportOptions) -> Self {
         self.paginated_report_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The paginated report options for a pivot table visual.</p>
-    pub fn set_paginated_report_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>,
-    ) -> Self {
-        self.paginated_report_options = input;
-        self
+    pub fn set_paginated_report_options(mut self, input: ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>) -> Self {
+        self.paginated_report_options = input; self
+    }
+    /// <p>The paginated report options for a pivot table visual.</p>
+    pub fn get_paginated_report_options(&self) -> &::std::option::Option<crate::types::PivotTablePaginatedReportOptions> {
+        &self.paginated_report_options
     }
     /// Consumes the builder and constructs a [`PivotTableConfiguration`](crate::types::PivotTableConfiguration).
     pub fn build(self) -> crate::types::PivotTableConfiguration {
         crate::types::PivotTableConfiguration {
-            field_wells: self.field_wells,
-            sort_configuration: self.sort_configuration,
-            table_options: self.table_options,
-            total_options: self.total_options,
-            field_options: self.field_options,
-            paginated_report_options: self.paginated_report_options,
+            field_wells: self.field_wells
+            ,
+            sort_configuration: self.sort_configuration
+            ,
+            table_options: self.table_options
+            ,
+            total_options: self.total_options
+            ,
+            field_options: self.field_options
+            ,
+            paginated_report_options: self.paginated_report_options
+            ,
         }
     }
 }
+

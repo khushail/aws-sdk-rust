@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAttributeGroupInput {
+pub struct UpdateAttributeGroupInput  {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     #[doc(hidden)]
     pub attribute_group: ::std::option::Option<::std::string::String>,
@@ -19,36 +19,33 @@ pub struct UpdateAttributeGroupInput {
 }
 impl UpdateAttributeGroupInput {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn attribute_group(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_group(&self) -> ::std::option::Option<& str> {
         self.attribute_group.as_deref()
     }
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for attribute group is deprecated.")]
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the attribute group that the user provides.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&str> {
+    pub fn attributes(&self) -> ::std::option::Option<& str> {
         self.attributes.as_deref()
     }
 }
 impl UpdateAttributeGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateAttributeGroupInput`](crate::operation::update_attribute_group::UpdateAttributeGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_attribute_group::builders::UpdateAttributeGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_attribute_group::builders::UpdateAttributeGroupInputBuilder {
         crate::operation::update_attribute_group::builders::UpdateAttributeGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAttributeGroupInput`](crate::operation::update_attribute_group::UpdateAttributeGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAttributeGroupInputBuilder {
     pub(crate) attribute_group: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -57,20 +54,17 @@ pub struct UpdateAttributeGroupInputBuilder {
 }
 impl UpdateAttributeGroupInputBuilder {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn attribute_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn set_attribute_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.attribute_group = input;
-        self
+    pub fn set_attribute_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attribute_group = input; self
+    }
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_group
     }
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for attribute group is deprecated.")]
@@ -81,8 +75,12 @@ impl UpdateAttributeGroupInputBuilder {
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for attribute group is deprecated.")]
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
+    #[deprecated(note = "Name update for attribute group is deprecated.")]
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,8 +89,11 @@ impl UpdateAttributeGroupInputBuilder {
     }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,23 +102,26 @@ impl UpdateAttributeGroupInputBuilder {
     }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attributes = input;
-        self
+        self.attributes = input; self
+    }
+    /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`UpdateAttributeGroupInput`](crate::operation::update_attribute_group::UpdateAttributeGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_attribute_group::UpdateAttributeGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_attribute_group::UpdateAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_attribute_group::UpdateAttributeGroupInput {
-                attribute_group: self.attribute_group,
-                name: self.name,
-                description: self.description,
-                attributes: self.attributes,
-            },
+                attribute_group: self.attribute_group
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                attributes: self.attributes
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetManagedEndpointSessionCredentialsInput {
+pub struct GetManagedEndpointSessionCredentialsInput  {
     /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
     #[doc(hidden)]
     pub endpoint_identifier: ::std::option::Option<::std::string::String>,
@@ -27,19 +27,19 @@ pub struct GetManagedEndpointSessionCredentialsInput {
 }
 impl GetManagedEndpointSessionCredentialsInput {
     /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
-    pub fn endpoint_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_identifier(&self) -> ::std::option::Option<& str> {
         self.endpoint_identifier.as_deref()
     }
     /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
-    pub fn virtual_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.virtual_cluster_identifier.as_deref()
     }
     /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
-    pub fn credential_type(&self) -> ::std::option::Option<&str> {
+    pub fn credential_type(&self) -> ::std::option::Option<& str> {
         self.credential_type.as_deref()
     }
     /// <p>Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.</p>
@@ -47,26 +47,24 @@ impl GetManagedEndpointSessionCredentialsInput {
         self.duration_in_seconds
     }
     /// <p>String identifier used to separate sections of the execution logs uploaded to S3.</p>
-    pub fn log_context(&self) -> ::std::option::Option<&str> {
+    pub fn log_context(&self) -> ::std::option::Option<& str> {
         self.log_context.as_deref()
     }
     /// <p>The client idempotency token of the job run request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl GetManagedEndpointSessionCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetManagedEndpointSessionCredentialsInput`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput).
-    pub fn builder() -> crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsInputBuilder {
         crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetManagedEndpointSessionCredentialsInput`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetManagedEndpointSessionCredentialsInputBuilder {
     pub(crate) endpoint_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -78,68 +76,56 @@ pub struct GetManagedEndpointSessionCredentialsInputBuilder {
 }
 impl GetManagedEndpointSessionCredentialsInputBuilder {
     /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
-    pub fn endpoint_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
-    pub fn set_endpoint_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.endpoint_identifier = input;
-        self
+    pub fn set_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_identifier = input; self
+    }
+    /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
+    pub fn get_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_identifier
     }
     /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
-    pub fn virtual_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
-    pub fn set_virtual_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_cluster_identifier = input;
-        self
+    pub fn set_virtual_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_cluster_identifier = input; self
+    }
+    /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
+    pub fn get_virtual_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_identifier
     }
     /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input; self
+    }
+    /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
-    pub fn credential_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credential_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credential_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
-    pub fn set_credential_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.credential_type = input;
-        self
+    pub fn set_credential_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.credential_type = input; self
+    }
+    /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
+    pub fn get_credential_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credential_type
     }
     /// <p>Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -148,8 +134,11 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
     }
     /// <p>Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
+    }
+    /// <p>Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_seconds
     }
     /// <p>String identifier used to separate sections of the execution logs uploaded to S3.</p>
     pub fn log_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,8 +147,11 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
     }
     /// <p>String identifier used to separate sections of the execution logs uploaded to S3.</p>
     pub fn set_log_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_context = input;
-        self
+        self.log_context = input; self
+    }
+    /// <p>String identifier used to separate sections of the execution logs uploaded to S3.</p>
+    pub fn get_log_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_context
     }
     /// <p>The client idempotency token of the job run request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,11 +160,14 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
     }
     /// <p>The client idempotency token of the job run request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The client idempotency token of the job run request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`GetManagedEndpointSessionCredentialsInput`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput {
                 endpoint_identifier: self.endpoint_identifier
@@ -193,3 +188,4 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
         )
     }
 }
+

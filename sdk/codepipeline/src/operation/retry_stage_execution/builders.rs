@@ -3,117 +3,100 @@ pub use crate::operation::retry_stage_execution::_retry_stage_execution_output::
 
 pub use crate::operation::retry_stage_execution::_retry_stage_execution_input::RetryStageExecutionInputBuilder;
 
+impl RetryStageExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::retry_stage_execution::RetryStageExecutionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::retry_stage_execution::RetryStageExecutionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.retry_stage_execution();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `RetryStageExecution`.
-///
+/// 
 /// <p>Resumes the pipeline execution by retrying the last failed actions in a stage. You can retry a stage immediately if any of the actions in the stage fail. When you retry, all actions that are still in progress continue working, and failed actions are triggered again.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetryStageExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::retry_stage_execution::builders::RetryStageExecutionInputBuilder,
+                    inner: crate::operation::retry_stage_execution::builders::RetryStageExecutionInputBuilder,
 }
-impl RetryStageExecutionFluentBuilder {
+impl RetryStageExecutionFluentBuilder  {
     /// Creates a new `RetryStageExecution`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::retry_stage_execution::RetryStageExecution,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_stage_execution::RetryStageExecutionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the RetryStageExecution as a reference.
+    pub fn as_input(&self) -> &crate::operation::retry_stage_execution::builders::RetryStageExecutionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::retry_stage_execution::RetryStageExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_stage_execution::RetryStageExecutionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::retry_stage_execution::RetryStageExecution, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::retry_stage_execution::RetryStageExecutionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::retry_stage_execution::RetryStageExecutionOutput, ::aws_smithy_http::result::SdkError<crate::operation::retry_stage_execution::RetryStageExecutionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::retry_stage_execution::RetryStageExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_stage_execution::RetryStageExecutionError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::retry_stage_execution::RetryStageExecution,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_stage_execution::RetryStageExecutionError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::retry_stage_execution::RetryStageExecutionOutput, ::aws_smithy_http::result::SdkError<crate::operation::retry_stage_execution::RetryStageExecutionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::retry_stage_execution::RetryStageExecution, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::retry_stage_execution::RetryStageExecutionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the pipeline that contains the failed stage.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline that contains the failed stage.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
+    }
+    /// <p>The name of the pipeline that contains the failed stage.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
     }
     /// <p>The name of the failed stage to be retried.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,21 +108,23 @@ impl RetryStageExecutionFluentBuilder {
         self.inner = self.inner.set_stage_name(input);
         self
     }
+    /// <p>The name of the failed stage to be retried.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
+    }
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_id(input.into());
         self
     }
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_id(input);
         self
+    }
+    /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_execution_id()
     }
     /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
     pub fn retry_mode(mut self, input: crate::types::StageRetryMode) -> Self {
@@ -147,11 +132,13 @@ impl RetryStageExecutionFluentBuilder {
         self
     }
     /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
-    pub fn set_retry_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::StageRetryMode>,
-    ) -> Self {
+    pub fn set_retry_mode(mut self, input: ::std::option::Option<crate::types::StageRetryMode>) -> Self {
         self.inner = self.inner.set_retry_mode(input);
         self
     }
+    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    pub fn get_retry_mode(&self) -> &::std::option::Option<crate::types::StageRetryMode> {
+        self.inner.get_retry_mode()
+    }
 }
+

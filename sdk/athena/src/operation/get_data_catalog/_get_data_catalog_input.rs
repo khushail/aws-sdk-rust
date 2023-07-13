@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataCatalogInput {
+pub struct GetDataCatalogInput  {
     /// <p>The name of the data catalog to return.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetDataCatalogInput {
     /// <p>The name of the data catalog to return.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetDataCatalogInput {
 
 /// A builder for [`GetDataCatalogInput`](crate::operation::get_data_catalog::GetDataCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetDataCatalogInputBuilder {
     }
     /// <p>The name of the data catalog to return.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the data catalog to return.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`GetDataCatalogInput`](crate::operation::get_data_catalog::GetDataCatalogInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_catalog::GetDataCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_data_catalog::GetDataCatalogInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_catalog::GetDataCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_catalog::GetDataCatalogInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

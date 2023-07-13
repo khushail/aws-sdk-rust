@@ -3,7 +3,7 @@
 /// DescribeEndpointsRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointsInput {
+pub struct DescribeEndpointsInput  {
     /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -20,27 +20,24 @@ impl DescribeEndpointsInput {
         self.max_results
     }
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::DescribeEndpointsMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::DescribeEndpointsMode> {
         self.mode.as_ref()
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeEndpointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
-    pub fn builder() -> crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder {
         crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) mode: ::std::option::Option<crate::types::DescribeEndpointsMode>,
@@ -54,8 +51,11 @@ impl DescribeEndpointsInputBuilder {
     }
     /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
     pub fn mode(mut self, input: crate::types::DescribeEndpointsMode) -> Self {
@@ -63,12 +63,12 @@ impl DescribeEndpointsInputBuilder {
         self
     }
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeEndpointsMode>,
-    ) -> Self {
-        self.mode = input;
-        self
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DescribeEndpointsMode>) -> Self {
+        self.mode = input; self
+    }
+    /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::DescribeEndpointsMode> {
+        &self.mode
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,22 +77,24 @@ impl DescribeEndpointsInputBuilder {
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoints::DescribeEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_endpoints::DescribeEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_endpoints::DescribeEndpointsInput {
-                max_results: self.max_results,
-                mode: self.mode,
-                next_token: self.next_token,
-            },
+                max_results: self.max_results
+                ,
+                mode: self.mode
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

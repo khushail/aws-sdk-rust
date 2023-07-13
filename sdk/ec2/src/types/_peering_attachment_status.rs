@@ -3,7 +3,7 @@
 /// <p>The status of the transit gateway peering attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PeeringAttachmentStatus {
+pub struct PeeringAttachmentStatus  {
     /// <p>The status code.</p>
     #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct PeeringAttachmentStatus {
 }
 impl PeeringAttachmentStatus {
     /// <p>The status code.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The status message, if applicable.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl PeeringAttachmentStatus {
 
 /// A builder for [`PeeringAttachmentStatus`](crate::types::PeeringAttachmentStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PeeringAttachmentStatusBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl PeeringAttachmentStatusBuilder {
     }
     /// <p>The status code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>The status code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>The status message, if applicable.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl PeeringAttachmentStatusBuilder {
     }
     /// <p>The status message, if applicable.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The status message, if applicable.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`PeeringAttachmentStatus`](crate::types::PeeringAttachmentStatus).
     pub fn build(self) -> crate::types::PeeringAttachmentStatus {
         crate::types::PeeringAttachmentStatus {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

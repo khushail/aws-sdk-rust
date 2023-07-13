@@ -3,7 +3,7 @@
 /// <p>Specifies a tag key, a tag value, or a tag key and value (as a pair) to use in a tag-based condition that determines whether an S3 bucket is included or excluded from a classification job. Tag keys and values are case sensitive. Also, Amazon Macie doesn't support use of partial values or wildcard characters in tag-based conditions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagCriterionPairForJob {
+pub struct TagCriterionPairForJob  {
     /// <p>The value for the tag key to use in the condition.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct TagCriterionPairForJob {
 }
 impl TagCriterionPairForJob {
     /// <p>The value for the tag key to use in the condition.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value to use in the condition.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl TagCriterionPairForJob {
 
 /// A builder for [`TagCriterionPairForJob`](crate::types::TagCriterionPairForJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagCriterionPairForJobBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl TagCriterionPairForJobBuilder {
     }
     /// <p>The value for the tag key to use in the condition.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The value for the tag key to use in the condition.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The tag value to use in the condition.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl TagCriterionPairForJobBuilder {
     }
     /// <p>The tag value to use in the condition.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The tag value to use in the condition.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`TagCriterionPairForJob`](crate::types::TagCriterionPairForJob).
     pub fn build(self) -> crate::types::TagCriterionPairForJob {
         crate::types::TagCriterionPairForJob {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

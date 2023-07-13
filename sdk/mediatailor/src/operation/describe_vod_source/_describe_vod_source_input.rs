@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVodSourceInput {
+pub struct DescribeVodSourceInput  {
     /// <p>The name of the source location associated with this VOD Source.</p>
     #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
@@ -12,76 +12,65 @@ pub struct DescribeVodSourceInput {
 }
 impl DescribeVodSourceInput {
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
     /// <p>The name of the VOD Source.</p>
-    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> ::std::option::Option<& str> {
         self.vod_source_name.as_deref()
     }
 }
 impl DescribeVodSourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeVodSourceInput`](crate::operation::describe_vod_source::DescribeVodSourceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_vod_source::builders::DescribeVodSourceInputBuilder {
+    pub fn builder() -> crate::operation::describe_vod_source::builders::DescribeVodSourceInputBuilder {
         crate::operation::describe_vod_source::builders::DescribeVodSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVodSourceInput`](crate::operation::describe_vod_source::DescribeVodSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVodSourceInputBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVodSourceInputBuilder {
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_location_name = input;
-        self
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_location_name = input; self
+    }
+    /// <p>The name of the source location associated with this VOD Source.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
     }
     /// <p>The name of the VOD Source.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vod_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the VOD Source.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vod_source_name = input;
-        self
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vod_source_name = input; self
+    }
+    /// <p>The name of the VOD Source.</p>
+    pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vod_source_name
     }
     /// Consumes the builder and constructs a [`DescribeVodSourceInput`](crate::operation::describe_vod_source::DescribeVodSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_vod_source::DescribeVodSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vod_source::DescribeVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_vod_source::DescribeVodSourceInput {
-                source_location_name: self.source_location_name,
-                vod_source_name: self.vod_source_name,
-            },
+                source_location_name: self.source_location_name
+                ,
+                vod_source_name: self.vod_source_name
+                ,
+            }
         )
     }
 }
+

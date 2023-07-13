@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReadSetExportJobInput {
+pub struct GetReadSetExportJobInput  {
     /// <p>The job's sequence store ID.</p>
     #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct GetReadSetExportJobInput {
 }
 impl GetReadSetExportJobInput {
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetReadSetExportJobInput {
     /// Creates a new builder-style object to manufacture [`GetReadSetExportJobInput`](crate::operation::get_read_set_export_job::GetReadSetExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_read_set_export_job::builders::GetReadSetExportJobInputBuilder {
+    pub fn builder() -> crate::operation::get_read_set_export_job::builders::GetReadSetExportJobInputBuilder {
         crate::operation::get_read_set_export_job::builders::GetReadSetExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadSetExportJobInput`](crate::operation::get_read_set_export_job::GetReadSetExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadSetExportJobInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl GetReadSetExportJobInputBuilder {
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sequence_store_id = input;
-        self
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sequence_store_id = input; self
+    }
+    /// <p>The job's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
     }
     /// <p>The job's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,21 +55,22 @@ impl GetReadSetExportJobInputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The job's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetReadSetExportJobInput`](crate::operation::get_read_set_export_job::GetReadSetExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_read_set_export_job::GetReadSetExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_read_set_export_job::GetReadSetExportJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_read_set_export_job::GetReadSetExportJobInput {
-                sequence_store_id: self.sequence_store_id,
-                id: self.id,
-            },
+                sequence_store_id: self.sequence_store_id
+                ,
+                id: self.id
+                ,
+            }
         )
     }
 }
+

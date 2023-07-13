@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteImportInput {
+pub struct DeleteImportInput  {
     /// <p>The unique identifier of the import to delete.</p>
     #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImportInput {
     /// <p>The unique identifier of the import to delete.</p>
-    pub fn import_id(&self) -> ::std::option::Option<&str> {
+    pub fn import_id(&self) -> ::std::option::Option<& str> {
         self.import_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteImportInput {
 
 /// A builder for [`DeleteImportInput`](crate::operation::delete_import::DeleteImportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImportInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteImportInputBuilder {
     }
     /// <p>The unique identifier of the import to delete.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
+    }
+    /// <p>The unique identifier of the import to delete.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
     }
     /// Consumes the builder and constructs a [`DeleteImportInput`](crate::operation::delete_import::DeleteImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_import::DeleteImportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_import::DeleteImportInput {
-            import_id: self.import_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_import::DeleteImportInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_import::DeleteImportInput {
+                import_id: self.import_id
+                ,
+            }
+        )
     }
 }
+

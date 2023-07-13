@@ -3,7 +3,7 @@
 /// <p>Details of the Amazon Inspector delegated administrator for your organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DelegatedAdminAccount {
+pub struct DelegatedAdminAccount  {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DelegatedAdminAccount {
 }
 impl DelegatedAdminAccount {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DelegatedAdminStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DelegatedAdminStatus> {
         self.status.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl DelegatedAdminAccount {
 
 /// A builder for [`DelegatedAdminAccount`](crate::types::DelegatedAdminAccount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DelegatedAdminAccountBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DelegatedAdminStatus>,
@@ -45,8 +43,11 @@ impl DelegatedAdminAccountBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
     pub fn status(mut self, input: crate::types::DelegatedAdminStatus) -> Self {
@@ -54,18 +55,21 @@ impl DelegatedAdminAccountBuilder {
         self
     }
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DelegatedAdminStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DelegatedAdminStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the Amazon Inspector delegated administrator.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DelegatedAdminStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DelegatedAdminAccount`](crate::types::DelegatedAdminAccount).
     pub fn build(self) -> crate::types::DelegatedAdminAccount {
         crate::types::DelegatedAdminAccount {
-            account_id: self.account_id,
-            status: self.status,
+            account_id: self.account_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

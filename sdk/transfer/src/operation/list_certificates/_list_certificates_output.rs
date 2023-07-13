@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCertificatesOutput {
+pub struct ListCertificatesOutput  {
     /// <p>Returns the next token, which you can use to list the next certificate.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,36 +13,32 @@ pub struct ListCertificatesOutput {
 }
 impl ListCertificatesOutput {
     /// <p>Returns the next token, which you can use to list the next certificate.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::ListedCertificate]> {
+    pub fn certificates(&self) -> ::std::option::Option<& [crate::types::ListedCertificate]> {
         self.certificates.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCertificatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
-    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder {
         crate::operation::list_certificates::builders::ListCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>,
     _request_id: Option<String>,
 }
 impl ListCertificatesOutputBuilder {
@@ -53,8 +49,11 @@ impl ListCertificatesOutputBuilder {
     }
     /// <p>Returns the next token, which you can use to list the next certificate.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Returns the next token, which you can use to list the next certificate.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `certificates`.
     ///
@@ -63,33 +62,36 @@ impl ListCertificatesOutputBuilder {
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
     pub fn certificates(mut self, input: crate::types::ListedCertificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>,
-    ) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>) -> Self {
+        self.certificates = input; self
+    }
+    /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>> {
+        &self.certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
     pub fn build(self) -> crate::operation::list_certificates::ListCertificatesOutput {
         crate::operation::list_certificates::ListCertificatesOutput {
-            next_token: self.next_token,
-            certificates: self.certificates,
+            next_token: self.next_token
+            ,
+            certificates: self.certificates
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

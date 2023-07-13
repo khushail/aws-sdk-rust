@@ -3,111 +3,93 @@ pub use crate::operation::describe_fast_launch_images::_describe_fast_launch_ima
 
 pub use crate::operation::describe_fast_launch_images::_describe_fast_launch_images_input::DescribeFastLaunchImagesInputBuilder;
 
+impl DescribeFastLaunchImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_fast_launch_images();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeFastLaunchImages`.
-///
+/// 
 /// <p>Describe details for Windows AMIs that are configured for faster launching.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFastLaunchImagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesInputBuilder,
 }
-impl DescribeFastLaunchImagesFluentBuilder {
+impl DescribeFastLaunchImagesFluentBuilder  {
     /// Creates a new `DescribeFastLaunchImages`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_fast_launch_images::DescribeFastLaunchImages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeFastLaunchImages as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_fast_launch_images::DescribeFastLaunchImages, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_fast_launch_images::DescribeFastLaunchImages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_fast_launch_images::DescribeFastLaunchImages, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator
-    {
-        crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator {
+                                crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ImageIds`.
     ///
     /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
@@ -118,41 +100,49 @@ impl DescribeFastLaunchImagesFluentBuilder {
         self
     }
     /// <p>Details for one or more Windows AMI image IDs.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
+    }
+    /// <p>Details for one or more Windows AMI image IDs.</p>
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_image_ids()
     }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Use the following filters to streamline results.</p>
-    /// <ul>
-    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
-    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
+    /// <p>Use the following filters to streamline results.</p> 
+    /// <ul> 
+    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li> 
+    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li> 
+    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li> 
+    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Use the following filters to streamline results.</p>
-    /// <ul>
-    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li>
-    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
-    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
+    /// <p>Use the following filters to streamline results.</p> 
+    /// <ul> 
+    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li> 
+    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li> 
+    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li> 
+    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>Use the following filters to streamline results.</p> 
+    /// <ul> 
+    /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li> 
+    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li> 
+    /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li> 
+    /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li> 
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -164,6 +154,10 @@ impl DescribeFastLaunchImagesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -173,6 +167,10 @@ impl DescribeFastLaunchImagesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -184,4 +182,9 @@ impl DescribeFastLaunchImagesFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
 }
+

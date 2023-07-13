@@ -3,7 +3,7 @@
 /// <p>Contains total number of infected files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThreatsDetectedItemCount {
+pub struct ThreatsDetectedItemCount  {
     /// <p>Total number of infected files.</p>
     #[doc(hidden)]
     pub files: i32,
@@ -23,9 +23,7 @@ impl ThreatsDetectedItemCount {
 
 /// A builder for [`ThreatsDetectedItemCount`](crate::types::ThreatsDetectedItemCount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThreatsDetectedItemCountBuilder {
     pub(crate) files: ::std::option::Option<i32>,
 }
@@ -37,13 +35,19 @@ impl ThreatsDetectedItemCountBuilder {
     }
     /// <p>Total number of infected files.</p>
     pub fn set_files(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.files = input;
-        self
+        self.files = input; self
+    }
+    /// <p>Total number of infected files.</p>
+    pub fn get_files(&self) -> &::std::option::Option<i32> {
+        &self.files
     }
     /// Consumes the builder and constructs a [`ThreatsDetectedItemCount`](crate::types::ThreatsDetectedItemCount).
     pub fn build(self) -> crate::types::ThreatsDetectedItemCount {
         crate::types::ThreatsDetectedItemCount {
-            files: self.files.unwrap_or_default(),
+            files: self.files
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

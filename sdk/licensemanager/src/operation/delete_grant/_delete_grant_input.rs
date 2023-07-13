@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGrantInput {
+pub struct DeleteGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
     pub grant_arn: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct DeleteGrantInput {
 }
 impl DeleteGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> ::std::option::Option<&str> {
+    pub fn grant_arn(&self) -> ::std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>The Status reason for the delete request.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Current version of the grant.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl DeleteGrantInput {
 
 /// A builder for [`DeleteGrantInput`](crate::operation::delete_grant::DeleteGrantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGrantInputBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -52,24 +50,24 @@ impl DeleteGrantInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn set_grant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_arn = input;
-        self
+        self.grant_arn = input; self
+    }
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_arn
     }
     /// <p>The Status reason for the delete request.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Status reason for the delete request.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_reason = input;
-        self
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input; self
+    }
+    /// <p>The Status reason for the delete request.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// <p>Current version of the grant.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,20 +76,24 @@ impl DeleteGrantInputBuilder {
     }
     /// <p>Current version of the grant.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>Current version of the grant.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`DeleteGrantInput`](crate::operation::delete_grant::DeleteGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_grant::DeleteGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_grant::DeleteGrantInput {
-            grant_arn: self.grant_arn,
-            status_reason: self.status_reason,
-            version: self.version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_grant::DeleteGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_grant::DeleteGrantInput {
+                grant_arn: self.grant_arn
+                ,
+                status_reason: self.status_reason
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

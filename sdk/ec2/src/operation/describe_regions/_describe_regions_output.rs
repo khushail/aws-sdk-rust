@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegionsOutput {
+pub struct DescribeRegionsOutput  {
     /// <p>Information about the Regions.</p>
     #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
@@ -10,15 +10,15 @@ pub struct DescribeRegionsOutput {
 }
 impl DescribeRegionsOutput {
     /// <p>Information about the Regions.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[crate::types::Region]> {
+    pub fn regions(&self) -> ::std::option::Option<& [crate::types::Region]> {
         self.regions.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeRegionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeRegionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput).
     pub fn builder() -> crate::operation::describe_regions::builders::DescribeRegionsOutputBuilder {
@@ -28,9 +28,7 @@ impl DescribeRegionsOutput {
 
 /// A builder for [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegionsOutputBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     _request_id: Option<String>,
@@ -43,32 +41,34 @@ impl DescribeRegionsOutputBuilder {
     /// <p>Information about the Regions.</p>
     pub fn regions(mut self, input: crate::types::Region) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input);
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the Regions.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Region>>) -> Self {
+        self.regions = input; self
+    }
+    /// <p>Information about the Regions.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Region>> {
+        &self.regions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput).
     pub fn build(self) -> crate::operation::describe_regions::DescribeRegionsOutput {
         crate::operation::describe_regions::DescribeRegionsOutput {
-            regions: self.regions,
+            regions: self.regions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

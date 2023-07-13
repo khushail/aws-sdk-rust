@@ -3,7 +3,7 @@
 /// <p>Information about the VPC configuration used by the cluster control plane.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEksClusterResourcesVpcConfigDetails {
+pub struct AwsEksClusterResourcesVpcConfigDetails  {
     /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
     #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,11 +16,11 @@ pub struct AwsEksClusterResourcesVpcConfigDetails {
 }
 impl AwsEksClusterResourcesVpcConfigDetails {
     /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn security_group_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The subnets that are associated with the cluster.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
@@ -37,9 +37,7 @@ impl AwsEksClusterResourcesVpcConfigDetails {
 
 /// A builder for [`AwsEksClusterResourcesVpcConfigDetails`](crate::types::AwsEksClusterResourcesVpcConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEksClusterResourcesVpcConfigDetailsBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -51,22 +49,19 @@ impl AwsEksClusterResourcesVpcConfigDetailsBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
+    }
+    /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -75,17 +70,17 @@ impl AwsEksClusterResourcesVpcConfigDetailsBuilder {
     /// <p>The subnets that are associated with the cluster.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subnets that are associated with the cluster.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
+    }
+    /// <p>The subnets that are associated with the cluster.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
     pub fn endpoint_public_access(mut self, input: bool) -> Self {
@@ -94,15 +89,23 @@ impl AwsEksClusterResourcesVpcConfigDetailsBuilder {
     }
     /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
     pub fn set_endpoint_public_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.endpoint_public_access = input;
-        self
+        self.endpoint_public_access = input; self
+    }
+    /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
+    pub fn get_endpoint_public_access(&self) -> &::std::option::Option<bool> {
+        &self.endpoint_public_access
     }
     /// Consumes the builder and constructs a [`AwsEksClusterResourcesVpcConfigDetails`](crate::types::AwsEksClusterResourcesVpcConfigDetails).
     pub fn build(self) -> crate::types::AwsEksClusterResourcesVpcConfigDetails {
         crate::types::AwsEksClusterResourcesVpcConfigDetails {
-            security_group_ids: self.security_group_ids,
-            subnet_ids: self.subnet_ids,
-            endpoint_public_access: self.endpoint_public_access.unwrap_or_default(),
+            security_group_ids: self.security_group_ids
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            endpoint_public_access: self.endpoint_public_access
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

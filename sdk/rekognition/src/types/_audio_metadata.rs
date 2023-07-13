@@ -3,7 +3,7 @@
 /// <p>Metadata information about an audio stream. An array of <code>AudioMetadata</code> objects for the audio streams found in a stored video is returned by <code>GetSegmentDetection</code>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioMetadata {
+pub struct AudioMetadata  {
     /// <p>The audio codec used to encode or decode the audio stream. </p>
     #[doc(hidden)]
     pub codec: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct AudioMetadata {
 }
 impl AudioMetadata {
     /// <p>The audio codec used to encode or decode the audio stream. </p>
-    pub fn codec(&self) -> ::std::option::Option<&str> {
+    pub fn codec(&self) -> ::std::option::Option<& str> {
         self.codec.as_deref()
     }
     /// <p>The duration of the audio stream in milliseconds.</p>
@@ -44,9 +44,7 @@ impl AudioMetadata {
 
 /// A builder for [`AudioMetadata`](crate::types::AudioMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioMetadataBuilder {
     pub(crate) codec: ::std::option::Option<::std::string::String>,
     pub(crate) duration_millis: ::std::option::Option<i64>,
@@ -61,8 +59,11 @@ impl AudioMetadataBuilder {
     }
     /// <p>The audio codec used to encode or decode the audio stream. </p>
     pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.codec = input;
-        self
+        self.codec = input; self
+    }
+    /// <p>The audio codec used to encode or decode the audio stream. </p>
+    pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.codec
     }
     /// <p>The duration of the audio stream in milliseconds.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
@@ -71,8 +72,11 @@ impl AudioMetadataBuilder {
     }
     /// <p>The duration of the audio stream in milliseconds.</p>
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_millis = input;
-        self
+        self.duration_millis = input; self
+    }
+    /// <p>The duration of the audio stream in milliseconds.</p>
+    pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.duration_millis
     }
     /// <p>The sample rate for the audio stream.</p>
     pub fn sample_rate(mut self, input: i64) -> Self {
@@ -81,8 +85,11 @@ impl AudioMetadataBuilder {
     }
     /// <p>The sample rate for the audio stream.</p>
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.sample_rate = input;
-        self
+        self.sample_rate = input; self
+    }
+    /// <p>The sample rate for the audio stream.</p>
+    pub fn get_sample_rate(&self) -> &::std::option::Option<i64> {
+        &self.sample_rate
     }
     /// <p>The number of audio channels in the segment.</p>
     pub fn number_of_channels(mut self, input: i64) -> Self {
@@ -91,16 +98,24 @@ impl AudioMetadataBuilder {
     }
     /// <p>The number of audio channels in the segment.</p>
     pub fn set_number_of_channels(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_channels = input;
-        self
+        self.number_of_channels = input; self
+    }
+    /// <p>The number of audio channels in the segment.</p>
+    pub fn get_number_of_channels(&self) -> &::std::option::Option<i64> {
+        &self.number_of_channels
     }
     /// Consumes the builder and constructs a [`AudioMetadata`](crate::types::AudioMetadata).
     pub fn build(self) -> crate::types::AudioMetadata {
         crate::types::AudioMetadata {
-            codec: self.codec,
-            duration_millis: self.duration_millis,
-            sample_rate: self.sample_rate,
-            number_of_channels: self.number_of_channels,
+            codec: self.codec
+            ,
+            duration_millis: self.duration_millis
+            ,
+            sample_rate: self.sample_rate
+            ,
+            number_of_channels: self.number_of_channels
+            ,
         }
     }
 }
+

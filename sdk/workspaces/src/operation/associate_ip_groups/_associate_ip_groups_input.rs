@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateIpGroupsInput {
+pub struct AssociateIpGroupsInput  {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct AssociateIpGroupsInput {
 }
 impl AssociateIpGroupsInput {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn group_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.group_ids.as_deref()
     }
 }
 impl AssociateIpGroupsInput {
     /// Creates a new builder-style object to manufacture [`AssociateIpGroupsInput`](crate::operation::associate_ip_groups::AssociateIpGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::associate_ip_groups::builders::AssociateIpGroupsInputBuilder {
+    pub fn builder() -> crate::operation::associate_ip_groups::builders::AssociateIpGroupsInputBuilder {
         crate::operation::associate_ip_groups::builders::AssociateIpGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateIpGroupsInput`](crate::operation::associate_ip_groups::AssociateIpGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateIpGroupsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +42,11 @@ impl AssociateIpGroupsInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
+    }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// Appends an item to `group_ids`.
     ///
@@ -55,30 +55,28 @@ impl AssociateIpGroupsInputBuilder {
     /// <p>The identifiers of one or more IP access control groups.</p>
     pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.group_ids = input;
-        self
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.group_ids = input; self
+    }
+    /// <p>The identifiers of one or more IP access control groups.</p>
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_ids
     }
     /// Consumes the builder and constructs a [`AssociateIpGroupsInput`](crate::operation::associate_ip_groups::AssociateIpGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_ip_groups::AssociateIpGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_ip_groups::AssociateIpGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_ip_groups::AssociateIpGroupsInput {
-                directory_id: self.directory_id,
-                group_ids: self.group_ids,
-            },
+                directory_id: self.directory_id
+                ,
+                group_ids: self.group_ids
+                ,
+            }
         )
     }
 }
+

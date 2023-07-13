@@ -3,7 +3,7 @@
 /// <p>AWS Systems Manager Parameter Store parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SsmParameterStoreParameter {
+pub struct SsmParameterStoreParameter  {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
     #[doc(hidden)]
     pub parameter_type: ::std::option::Option<crate::types::SsmParameterStoreParameterType>,
@@ -13,13 +13,11 @@ pub struct SsmParameterStoreParameter {
 }
 impl SsmParameterStoreParameter {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
-    pub fn parameter_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SsmParameterStoreParameterType> {
+    pub fn parameter_type(&self) -> ::std::option::Option<& crate::types::SsmParameterStoreParameterType> {
         self.parameter_type.as_ref()
     }
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
 }
@@ -32,9 +30,7 @@ impl SsmParameterStoreParameter {
 
 /// A builder for [`SsmParameterStoreParameter`](crate::types::SsmParameterStoreParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SsmParameterStoreParameterBuilder {
     pub(crate) parameter_type: ::std::option::Option<crate::types::SsmParameterStoreParameterType>,
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
@@ -46,34 +42,34 @@ impl SsmParameterStoreParameterBuilder {
         self
     }
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
-    pub fn set_parameter_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SsmParameterStoreParameterType>,
-    ) -> Self {
-        self.parameter_type = input;
-        self
+    pub fn set_parameter_type(mut self, input: ::std::option::Option<crate::types::SsmParameterStoreParameterType>) -> Self {
+        self.parameter_type = input; self
+    }
+    /// <p>AWS Systems Manager Parameter Store parameter type.</p>
+    pub fn get_parameter_type(&self) -> &::std::option::Option<crate::types::SsmParameterStoreParameterType> {
+        &self.parameter_type
     }
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.parameter_name = input;
-        self
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parameter_name = input; self
+    }
+    /// <p>AWS Systems Manager Parameter Store parameter name.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
     }
     /// Consumes the builder and constructs a [`SsmParameterStoreParameter`](crate::types::SsmParameterStoreParameter).
     pub fn build(self) -> crate::types::SsmParameterStoreParameter {
         crate::types::SsmParameterStoreParameter {
-            parameter_type: self.parameter_type,
-            parameter_name: self.parameter_name,
+            parameter_type: self.parameter_type
+            ,
+            parameter_name: self.parameter_name
+            ,
         }
     }
 }
+

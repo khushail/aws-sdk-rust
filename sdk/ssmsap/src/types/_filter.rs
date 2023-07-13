@@ -3,7 +3,7 @@
 /// <p>A specific result obtained by specifying the name, value, and operator. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the filter. Filter names are case-sensitive. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of the filter. Filter names are case-sensitive. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The filter values. Filter values are case-sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The operator for the filter. </p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<& crate::types::FilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl FilterBuilder {
     }
     /// <p>The name of the filter. Filter names are case-sensitive. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the filter. Filter names are case-sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The filter values. Filter values are case-sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl FilterBuilder {
     }
     /// <p>The filter values. Filter values are case-sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The filter values. Filter values are case-sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The operator for the filter. </p>
     pub fn operator(mut self, input: crate::types::FilterOperator) -> Self {
@@ -72,19 +76,23 @@ impl FilterBuilder {
         self
     }
     /// <p>The operator for the filter. </p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterOperator>,
-    ) -> Self {
-        self.operator = input;
-        self
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::FilterOperator>) -> Self {
+        self.operator = input; self
+    }
+    /// <p>The operator for the filter. </p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::FilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            name: self.name,
-            value: self.value,
-            operator: self.operator,
+            name: self.name
+            ,
+            value: self.value
+            ,
+            operator: self.operator
+            ,
         }
     }
 }
+

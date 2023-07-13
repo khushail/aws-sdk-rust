@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutKeyPolicyOutput {
+pub struct PutKeyPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for PutKeyPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutKeyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutKeyPolicyOutput`](crate::operation::put_key_policy::PutKeyPolicyOutput).
     pub fn builder() -> crate::operation::put_key_policy::builders::PutKeyPolicyOutputBuilder {
@@ -19,22 +19,20 @@ impl PutKeyPolicyOutput {
 
 /// A builder for [`PutKeyPolicyOutput`](crate::operation::put_key_policy::PutKeyPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutKeyPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutKeyPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutKeyPolicyOutput`](crate::operation::put_key_policy::PutKeyPolicyOutput).
     pub fn build(self) -> crate::operation::put_key_policy::PutKeyPolicyOutput {
         crate::operation::put_key_policy::PutKeyPolicyOutput {
@@ -42,3 +40,4 @@ impl PutKeyPolicyOutputBuilder {
         }
     }
 }
+

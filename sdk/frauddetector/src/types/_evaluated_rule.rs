@@ -3,7 +3,7 @@
 /// <p> The details of the rule used for evaluating variable values. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EvaluatedRule {
+pub struct EvaluatedRule  {
     /// <p> The rule ID. </p>
     #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
@@ -28,23 +28,23 @@ pub struct EvaluatedRule {
 }
 impl EvaluatedRule {
     /// <p> The rule ID. </p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p> The rule version. </p>
-    pub fn rule_version(&self) -> ::std::option::Option<&str> {
+    pub fn rule_version(&self) -> ::std::option::Option<& str> {
         self.rule_version.as_deref()
     }
     /// <p> The rule expression. </p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p> The rule expression value. </p>
-    pub fn expression_with_values(&self) -> ::std::option::Option<&str> {
+    pub fn expression_with_values(&self) -> ::std::option::Option<& str> {
         self.expression_with_values.as_deref()
     }
     /// <p> The rule outcome. </p>
-    pub fn outcomes(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn outcomes(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.outcomes.as_deref()
     }
     /// <p> Indicates whether the rule was evaluated. </p>
@@ -56,7 +56,7 @@ impl EvaluatedRule {
         self.matched
     }
 }
-impl ::std::fmt::Debug for EvaluatedRule {
+impl  ::std::fmt::Debug for EvaluatedRule  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluatedRule");
         formatter.field("rule_id", &self.rule_id);
@@ -96,8 +96,11 @@ impl EvaluatedRuleBuilder {
     }
     /// <p> The rule ID. </p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
+    }
+    /// <p> The rule ID. </p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// <p> The rule version. </p>
     pub fn rule_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +109,11 @@ impl EvaluatedRuleBuilder {
     }
     /// <p> The rule version. </p>
     pub fn set_rule_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_version = input;
-        self
+        self.rule_version = input; self
+    }
+    /// <p> The rule version. </p>
+    pub fn get_rule_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_version
     }
     /// <p> The rule expression. </p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,24 +122,24 @@ impl EvaluatedRuleBuilder {
     }
     /// <p> The rule expression. </p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
+    }
+    /// <p> The rule expression. </p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// <p> The rule expression value. </p>
-    pub fn expression_with_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expression_with_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression_with_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The rule expression value. </p>
-    pub fn set_expression_with_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.expression_with_values = input;
-        self
+    pub fn set_expression_with_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expression_with_values = input; self
+    }
+    /// <p> The rule expression value. </p>
+    pub fn get_expression_with_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression_with_values
     }
     /// Appends an item to `outcomes`.
     ///
@@ -142,17 +148,17 @@ impl EvaluatedRuleBuilder {
     /// <p> The rule outcome. </p>
     pub fn outcomes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
-        v.push(input.into());
-        self.outcomes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.outcomes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The rule outcome. </p>
-    pub fn set_outcomes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.outcomes = input;
-        self
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.outcomes = input; self
+    }
+    /// <p> The rule outcome. </p>
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.outcomes
     }
     /// <p> Indicates whether the rule was evaluated. </p>
     pub fn evaluated(mut self, input: bool) -> Self {
@@ -161,8 +167,11 @@ impl EvaluatedRuleBuilder {
     }
     /// <p> Indicates whether the rule was evaluated. </p>
     pub fn set_evaluated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.evaluated = input;
-        self
+        self.evaluated = input; self
+    }
+    /// <p> Indicates whether the rule was evaluated. </p>
+    pub fn get_evaluated(&self) -> &::std::option::Option<bool> {
+        &self.evaluated
     }
     /// <p> Indicates whether the rule matched. </p>
     pub fn matched(mut self, input: bool) -> Self {
@@ -171,19 +180,29 @@ impl EvaluatedRuleBuilder {
     }
     /// <p> Indicates whether the rule matched. </p>
     pub fn set_matched(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.matched = input;
-        self
+        self.matched = input; self
+    }
+    /// <p> Indicates whether the rule matched. </p>
+    pub fn get_matched(&self) -> &::std::option::Option<bool> {
+        &self.matched
     }
     /// Consumes the builder and constructs a [`EvaluatedRule`](crate::types::EvaluatedRule).
     pub fn build(self) -> crate::types::EvaluatedRule {
         crate::types::EvaluatedRule {
-            rule_id: self.rule_id,
-            rule_version: self.rule_version,
-            expression: self.expression,
-            expression_with_values: self.expression_with_values,
-            outcomes: self.outcomes,
-            evaluated: self.evaluated,
-            matched: self.matched,
+            rule_id: self.rule_id
+            ,
+            rule_version: self.rule_version
+            ,
+            expression: self.expression
+            ,
+            expression_with_values: self.expression_with_values
+            ,
+            outcomes: self.outcomes
+            ,
+            evaluated: self.evaluated
+            ,
+            matched: self.matched
+            ,
         }
     }
 }
@@ -200,3 +219,4 @@ impl ::std::fmt::Debug for EvaluatedRuleBuilder {
         formatter.finish()
     }
 }
+

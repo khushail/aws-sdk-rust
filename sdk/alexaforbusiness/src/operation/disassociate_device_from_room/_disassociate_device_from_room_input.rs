@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateDeviceFromRoomInput {
+pub struct DisassociateDeviceFromRoomInput  {
     /// <p>The ARN of the device to disassociate from a room. Required.</p>
     #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateDeviceFromRoomInput {
     /// <p>The ARN of the device to disassociate from a room. Required.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
 }
 impl DisassociateDeviceFromRoomInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDeviceFromRoomInput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput).
-    pub fn builder() -> crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder {
         crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDeviceFromRoomInput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDeviceFromRoomInputBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl DisassociateDeviceFromRoomInputBuilder {
     }
     /// <p>The ARN of the device to disassociate from a room. Required.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
+    }
+    /// <p>The ARN of the device to disassociate from a room. Required.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
     }
     /// Consumes the builder and constructs a [`DisassociateDeviceFromRoomInput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput {
-                device_arn: self.device_arn,
-            },
+                device_arn: self.device_arn
+                ,
+            }
         )
     }
 }
+

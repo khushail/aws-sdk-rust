@@ -3,7 +3,7 @@
 /// <p>This structure defines a metric that you want to use to evaluate the variations during a launch or experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDefinitionConfig {
+pub struct MetricDefinitionConfig  {
     /// <p>A name for the metric.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct MetricDefinitionConfig {
     /// <p>The value that is tracked to produce the metric.</p>
     #[doc(hidden)]
     pub value_key: ::std::option::Option<::std::string::String>,
-    /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
+    /// <p>The EventBridge event pattern that defines how the metric is recorded.</p> 
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
     #[doc(hidden)]
     pub event_pattern: ::std::option::Option<::std::string::String>,
@@ -23,24 +23,24 @@ pub struct MetricDefinitionConfig {
 }
 impl MetricDefinitionConfig {
     /// <p>A name for the metric.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
-    pub fn entity_id_key(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id_key(&self) -> ::std::option::Option<& str> {
         self.entity_id_key.as_deref()
     }
     /// <p>The value that is tracked to produce the metric.</p>
-    pub fn value_key(&self) -> ::std::option::Option<&str> {
+    pub fn value_key(&self) -> ::std::option::Option<& str> {
         self.value_key.as_deref()
     }
-    /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
+    /// <p>The EventBridge event pattern that defines how the metric is recorded.</p> 
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
-    pub fn event_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn event_pattern(&self) -> ::std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>A label for the units that the metric is measuring.</p>
-    pub fn unit_label(&self) -> ::std::option::Option<&str> {
+    pub fn unit_label(&self) -> ::std::option::Option<& str> {
         self.unit_label.as_deref()
     }
 }
@@ -53,9 +53,7 @@ impl MetricDefinitionConfig {
 
 /// A builder for [`MetricDefinitionConfig`](crate::types::MetricDefinitionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDefinitionConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id_key: ::std::option::Option<::std::string::String>,
@@ -71,24 +69,24 @@ impl MetricDefinitionConfigBuilder {
     }
     /// <p>A name for the metric.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A name for the metric.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
-    pub fn entity_id_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_id_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
-    pub fn set_entity_id_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.entity_id_key = input;
-        self
+    pub fn set_entity_id_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.entity_id_key = input; self
+    }
+    /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
+    pub fn get_entity_id_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id_key
     }
     /// <p>The value that is tracked to produce the metric.</p>
     pub fn value_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,26 +95,27 @@ impl MetricDefinitionConfigBuilder {
     }
     /// <p>The value that is tracked to produce the metric.</p>
     pub fn set_value_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value_key = input;
-        self
+        self.value_key = input; self
     }
-    /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
+    /// <p>The value that is tracked to produce the metric.</p>
+    pub fn get_value_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_key
+    }
+    /// <p>The EventBridge event pattern that defines how the metric is recorded.</p> 
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
-    pub fn event_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_pattern = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
+    /// <p>The EventBridge event pattern that defines how the metric is recorded.</p> 
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
-    pub fn set_event_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_pattern = input;
-        self
+    pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_pattern = input; self
+    }
+    /// <p>The EventBridge event pattern that defines how the metric is recorded.</p> 
+    /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+    pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_pattern
     }
     /// <p>A label for the units that the metric is measuring.</p>
     pub fn unit_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,17 +124,26 @@ impl MetricDefinitionConfigBuilder {
     }
     /// <p>A label for the units that the metric is measuring.</p>
     pub fn set_unit_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit_label = input;
-        self
+        self.unit_label = input; self
+    }
+    /// <p>A label for the units that the metric is measuring.</p>
+    pub fn get_unit_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit_label
     }
     /// Consumes the builder and constructs a [`MetricDefinitionConfig`](crate::types::MetricDefinitionConfig).
     pub fn build(self) -> crate::types::MetricDefinitionConfig {
         crate::types::MetricDefinitionConfig {
-            name: self.name,
-            entity_id_key: self.entity_id_key,
-            value_key: self.value_key,
-            event_pattern: self.event_pattern,
-            unit_label: self.unit_label,
+            name: self.name
+            ,
+            entity_id_key: self.entity_id_key
+            ,
+            value_key: self.value_key
+            ,
+            event_pattern: self.event_pattern
+            ,
+            unit_label: self.unit_label
+            ,
         }
     }
 }
+

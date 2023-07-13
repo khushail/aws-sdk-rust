@@ -3,7 +3,7 @@
 /// <p>Describes the properties of the Dedicated Host. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Host {
+pub struct Host  {
     /// <p>The name of the Dedicated Host.</p>
     #[doc(hidden)]
     pub host_name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct Host {
 }
 impl Host {
     /// <p>The name of the Dedicated Host.</p>
-    pub fn host_name(&self) -> ::std::option::Option<&str> {
+    pub fn host_name(&self) -> ::std::option::Option<& str> {
         self.host_name.as_deref()
     }
     /// <p>The role of the Dedicated Host.</p>
-    pub fn host_role(&self) -> ::std::option::Option<&crate::types::HostRole> {
+    pub fn host_role(&self) -> ::std::option::Option<& crate::types::HostRole> {
         self.host_role.as_ref()
     }
     /// <p>The IP address of the Dedicated Host. </p>
-    pub fn host_ip(&self) -> ::std::option::Option<&str> {
+    pub fn host_ip(&self) -> ::std::option::Option<& str> {
         self.host_ip.as_deref()
     }
     /// <p>The instance ID of the instance on the Dedicated Host.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl Host {
 
 /// A builder for [`Host`](crate::types::Host).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostBuilder {
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_role: ::std::option::Option<crate::types::HostRole>,
@@ -61,8 +59,11 @@ impl HostBuilder {
     }
     /// <p>The name of the Dedicated Host.</p>
     pub fn set_host_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_name = input;
-        self
+        self.host_name = input; self
+    }
+    /// <p>The name of the Dedicated Host.</p>
+    pub fn get_host_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_name
     }
     /// <p>The role of the Dedicated Host.</p>
     pub fn host_role(mut self, input: crate::types::HostRole) -> Self {
@@ -71,8 +72,11 @@ impl HostBuilder {
     }
     /// <p>The role of the Dedicated Host.</p>
     pub fn set_host_role(mut self, input: ::std::option::Option<crate::types::HostRole>) -> Self {
-        self.host_role = input;
-        self
+        self.host_role = input; self
+    }
+    /// <p>The role of the Dedicated Host.</p>
+    pub fn get_host_role(&self) -> &::std::option::Option<crate::types::HostRole> {
+        &self.host_role
     }
     /// <p>The IP address of the Dedicated Host. </p>
     pub fn host_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl HostBuilder {
     }
     /// <p>The IP address of the Dedicated Host. </p>
     pub fn set_host_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_ip = input;
-        self
+        self.host_ip = input; self
+    }
+    /// <p>The IP address of the Dedicated Host. </p>
+    pub fn get_host_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_ip
     }
     /// <p>The instance ID of the instance on the Dedicated Host.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl HostBuilder {
     }
     /// <p>The instance ID of the instance on the Dedicated Host.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The instance ID of the instance on the Dedicated Host.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`Host`](crate::types::Host).
     pub fn build(self) -> crate::types::Host {
         crate::types::Host {
-            host_name: self.host_name,
-            host_role: self.host_role,
-            host_ip: self.host_ip,
-            instance_id: self.instance_id,
+            host_name: self.host_name
+            ,
+            host_role: self.host_role
+            ,
+            host_ip: self.host_ip
+            ,
+            instance_id: self.instance_id
+            ,
         }
     }
 }
+

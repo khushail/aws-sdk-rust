@@ -2,51 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVoiceConnectorEmergencyCallingConfigurationInput {
+pub struct DeleteVoiceConnectorEmergencyCallingConfigurationInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
 }
 impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_voice_connector_emergency_calling_configuration::builders::DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_voice_connector_emergency_calling_configuration::builders::DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         crate::operation::delete_voice_connector_emergency_calling_configuration::builders::DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voice_connector_id = input; self
+    }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput {
                 voice_connector_id: self.voice_connector_id
@@ -55,3 +50,4 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         )
     }
 }
+

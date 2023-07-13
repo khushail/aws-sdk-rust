@@ -3,7 +3,7 @@
 /// <p>An anomalous metric in an anomaly group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyGroupTimeSeries {
+pub struct AnomalyGroupTimeSeries  {
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
     pub anomaly_group_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AnomalyGroupTimeSeries {
 }
 impl AnomalyGroupTimeSeries {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> ::std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(&self) -> ::std::option::Option<&str> {
+    pub fn time_series_id(&self) -> ::std::option::Option<& str> {
         self.time_series_id.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl AnomalyGroupTimeSeries {
 
 /// A builder for [`AnomalyGroupTimeSeries`](crate::types::AnomalyGroupTimeSeries).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyGroupTimeSeriesBuilder {
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) time_series_id: ::std::option::Option<::std::string::String>,
 }
 impl AnomalyGroupTimeSeriesBuilder {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.anomaly_group_id = input;
-        self
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.anomaly_group_id = input; self
+    }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_group_id
     }
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_series_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_series_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the metric.</p>
-    pub fn set_time_series_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.time_series_id = input;
-        self
+    pub fn set_time_series_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.time_series_id = input; self
+    }
+    /// <p>The ID of the metric.</p>
+    pub fn get_time_series_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_series_id
     }
     /// Consumes the builder and constructs a [`AnomalyGroupTimeSeries`](crate::types::AnomalyGroupTimeSeries).
     pub fn build(self) -> crate::types::AnomalyGroupTimeSeries {
         crate::types::AnomalyGroupTimeSeries {
-            anomaly_group_id: self.anomaly_group_id,
-            time_series_id: self.time_series_id,
+            anomaly_group_id: self.anomaly_group_id
+            ,
+            time_series_id: self.time_series_id
+            ,
         }
     }
 }
+

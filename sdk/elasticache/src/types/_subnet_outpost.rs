@@ -3,14 +3,14 @@
 /// <p>The ID of the outpost subnet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubnetOutpost {
+pub struct SubnetOutpost  {
     /// <p>The outpost ARN of the subnet.</p>
     #[doc(hidden)]
     pub subnet_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl SubnetOutpost {
     /// <p>The outpost ARN of the subnet.</p>
-    pub fn subnet_outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_outpost_arn(&self) -> ::std::option::Option<& str> {
         self.subnet_outpost_arn.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl SubnetOutpost {
 
 /// A builder for [`SubnetOutpost`](crate::types::SubnetOutpost).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubnetOutpostBuilder {
     pub(crate) subnet_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl SubnetOutpostBuilder {
     /// <p>The outpost ARN of the subnet.</p>
-    pub fn subnet_outpost_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outpost ARN of the subnet.</p>
-    pub fn set_subnet_outpost_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.subnet_outpost_arn = input;
-        self
+    pub fn set_subnet_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_outpost_arn = input; self
+    }
+    /// <p>The outpost ARN of the subnet.</p>
+    pub fn get_subnet_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_outpost_arn
     }
     /// Consumes the builder and constructs a [`SubnetOutpost`](crate::types::SubnetOutpost).
     pub fn build(self) -> crate::types::SubnetOutpost {
         crate::types::SubnetOutpost {
-            subnet_outpost_arn: self.subnet_outpost_arn,
+            subnet_outpost_arn: self.subnet_outpost_arn
+            ,
         }
     }
 }
+

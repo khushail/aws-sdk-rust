@@ -3,30 +3,27 @@
 /// <p>A stateful rule group that is used by the firewall policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallPolicyStatefulRuleGroupReferencesDetails {
+pub struct FirewallPolicyStatefulRuleGroupReferencesDetails  {
     /// <p>The ARN of the stateful rule group.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatefulRuleGroupReferencesDetails {
     /// <p>The ARN of the stateful rule group.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl FirewallPolicyStatefulRuleGroupReferencesDetails {
     /// Creates a new builder-style object to manufacture [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails).
-    pub fn builder(
-    ) -> crate::types::builders::FirewallPolicyStatefulRuleGroupReferencesDetailsBuilder {
+    pub fn builder() -> crate::types::builders::FirewallPolicyStatefulRuleGroupReferencesDetailsBuilder {
         crate::types::builders::FirewallPolicyStatefulRuleGroupReferencesDetailsBuilder::default()
     }
 }
 
 /// A builder for [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatefulRuleGroupReferencesDetailsBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,13 +35,18 @@ impl FirewallPolicyStatefulRuleGroupReferencesDetailsBuilder {
     }
     /// <p>The ARN of the stateful rule group.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The ARN of the stateful rule group.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails).
     pub fn build(self) -> crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails {
         crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails {
-            resource_arn: self.resource_arn,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

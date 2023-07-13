@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFlywheelInput {
+pub struct CreateFlywheelInput  {
     /// <p>Name for the flywheel.</p>
     #[doc(hidden)]
     pub flywheel_name: ::std::option::Option<::std::string::String>,
@@ -33,39 +33,39 @@ pub struct CreateFlywheelInput {
 }
 impl CreateFlywheelInput {
     /// <p>Name for the flywheel.</p>
-    pub fn flywheel_name(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_name(&self) -> ::std::option::Option<& str> {
         self.flywheel_name.as_deref()
     }
     /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
-    pub fn active_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn active_model_arn(&self) -> ::std::option::Option<& str> {
         self.active_model_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
-    pub fn task_config(&self) -> ::std::option::Option<&crate::types::TaskConfig> {
+    pub fn task_config(&self) -> ::std::option::Option<& crate::types::TaskConfig> {
         self.task_config.as_ref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelType> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelType> {
         self.model_type.as_ref()
     }
     /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
-    pub fn data_lake_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn data_lake_s3_uri(&self) -> ::std::option::Option<& str> {
         self.data_lake_s3_uri.as_deref()
     }
     /// <p>Data security configurations.</p>
-    pub fn data_security_config(&self) -> ::std::option::Option<&crate::types::DataSecurityConfig> {
+    pub fn data_security_config(&self) -> ::std::option::Option<& crate::types::DataSecurityConfig> {
         self.data_security_config.as_ref()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags to associate with this flywheel.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -78,9 +78,7 @@ impl CreateFlywheelInput {
 
 /// A builder for [`CreateFlywheelInput`](crate::operation::create_flywheel::CreateFlywheelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFlywheelInputBuilder {
     pub(crate) flywheel_name: ::std::option::Option<::std::string::String>,
     pub(crate) active_model_arn: ::std::option::Option<::std::string::String>,
@@ -94,52 +92,43 @@ pub struct CreateFlywheelInputBuilder {
 }
 impl CreateFlywheelInputBuilder {
     /// <p>Name for the flywheel.</p>
-    pub fn flywheel_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flywheel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name for the flywheel.</p>
-    pub fn set_flywheel_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.flywheel_name = input;
-        self
+    pub fn set_flywheel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.flywheel_name = input; self
+    }
+    /// <p>Name for the flywheel.</p>
+    pub fn get_flywheel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_name
     }
     /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
-    pub fn active_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
-    pub fn set_active_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.active_model_arn = input;
-        self
+    pub fn set_active_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.active_model_arn = input; self
+    }
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    pub fn get_active_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_model_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_access_role_arn = input;
-        self
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_access_role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
     }
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
     pub fn task_config(mut self, input: crate::types::TaskConfig) -> Self {
@@ -147,12 +136,12 @@ impl CreateFlywheelInputBuilder {
         self
     }
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
-    pub fn set_task_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskConfig>,
-    ) -> Self {
-        self.task_config = input;
-        self
+    pub fn set_task_config(mut self, input: ::std::option::Option<crate::types::TaskConfig>) -> Self {
+        self.task_config = input; self
+    }
+    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    pub fn get_task_config(&self) -> &::std::option::Option<crate::types::TaskConfig> {
+        &self.task_config
     }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelType) -> Self {
@@ -161,24 +150,24 @@ impl CreateFlywheelInputBuilder {
     }
     /// <p>The model type.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelType>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelType> {
+        &self.model_type
     }
     /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
-    pub fn data_lake_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_lake_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
-    pub fn set_data_lake_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_lake_s3_uri = input;
-        self
+    pub fn set_data_lake_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_lake_s3_uri = input; self
+    }
+    /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
+    pub fn get_data_lake_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_lake_s3_uri
     }
     /// <p>Data security configurations.</p>
     pub fn data_security_config(mut self, input: crate::types::DataSecurityConfig) -> Self {
@@ -186,28 +175,25 @@ impl CreateFlywheelInputBuilder {
         self
     }
     /// <p>Data security configurations.</p>
-    pub fn set_data_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSecurityConfig>,
-    ) -> Self {
-        self.data_security_config = input;
-        self
+    pub fn set_data_security_config(mut self, input: ::std::option::Option<crate::types::DataSecurityConfig>) -> Self {
+        self.data_security_config = input; self
+    }
+    /// <p>Data security configurations.</p>
+    pub fn get_data_security_config(&self) -> &::std::option::Option<crate::types::DataSecurityConfig> {
+        &self.data_security_config
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -216,35 +202,42 @@ impl CreateFlywheelInputBuilder {
     /// <p>The tags to associate with this flywheel.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to associate with this flywheel.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags to associate with this flywheel.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFlywheelInput`](crate::operation::create_flywheel::CreateFlywheelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_flywheel::CreateFlywheelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_flywheel::CreateFlywheelInput {
-            flywheel_name: self.flywheel_name,
-            active_model_arn: self.active_model_arn,
-            data_access_role_arn: self.data_access_role_arn,
-            task_config: self.task_config,
-            model_type: self.model_type,
-            data_lake_s3_uri: self.data_lake_s3_uri,
-            data_security_config: self.data_security_config,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_flywheel::CreateFlywheelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_flywheel::CreateFlywheelInput {
+                flywheel_name: self.flywheel_name
+                ,
+                active_model_arn: self.active_model_arn
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                task_config: self.task_config
+                ,
+                model_type: self.model_type
+                ,
+                data_lake_s3_uri: self.data_lake_s3_uri
+                ,
+                data_security_config: self.data_security_config
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

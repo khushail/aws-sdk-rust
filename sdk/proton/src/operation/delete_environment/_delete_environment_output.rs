@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEnvironmentOutput {
+pub struct DeleteEnvironmentOutput  {
     /// <p>The detailed data of the environment being deleted.</p>
     #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
@@ -10,28 +10,25 @@ pub struct DeleteEnvironmentOutput {
 }
 impl DeleteEnvironmentOutput {
     /// <p>The detailed data of the environment being deleted.</p>
-    pub fn environment(&self) -> ::std::option::Option<&crate::types::Environment> {
+    pub fn environment(&self) -> ::std::option::Option<& crate::types::Environment> {
         self.environment.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentOutputBuilder {
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,
@@ -43,27 +40,29 @@ impl DeleteEnvironmentOutputBuilder {
         self
     }
     /// <p>The detailed data of the environment being deleted.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
+        self.environment = input; self
+    }
+    /// <p>The detailed data of the environment being deleted.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        &self.environment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
     pub fn build(self) -> crate::operation::delete_environment::DeleteEnvironmentOutput {
         crate::operation::delete_environment::DeleteEnvironmentOutput {
-            environment: self.environment,
+            environment: self.environment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

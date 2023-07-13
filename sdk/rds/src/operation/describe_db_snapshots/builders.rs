@@ -3,243 +3,250 @@ pub use crate::operation::describe_db_snapshots::_describe_db_snapshots_output::
 
 pub use crate::operation::describe_db_snapshots::_describe_db_snapshots_input::DescribeDbSnapshotsInputBuilder;
 
+impl DescribeDbSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_db_snapshots();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeDBSnapshots`.
-///
+/// 
 /// <p>Returns information about DB snapshots. This API action supports pagination.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder,
+                    inner: crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder,
 }
-impl DescribeDBSnapshotsFluentBuilder {
+impl DescribeDBSnapshotsFluentBuilder  {
     /// Creates a new `DescribeDBSnapshots`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshots,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeDBSnapshots as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_db_snapshots::DescribeDBSnapshots, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_db_snapshots::DescribeDBSnapshotsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_snapshots::DescribeDBSnapshotsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshots,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_snapshots::DescribeDBSnapshotsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_db_snapshots::DescribeDBSnapshots, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_db_snapshots::DescribeDBSnapshotsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator {
-        crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator {
+                                crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::new(self.handle, self.inner)
+                            }
+    /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li> 
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
-    /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
+    /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li> 
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
-    /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
-    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
+    /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li> 
     /// </ul>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_identifier()
+    }
+    /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li> 
+    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li> 
+    /// </ul>
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_snapshot_identifier(input.into());
         self
     }
-    /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
-    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
+    /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li> 
+    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li> 
     /// </ul>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
         self
     }
-    /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p> </li>
-    /// <li> <p> <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p> </li>
-    /// <li> <p> <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p> </li>
-    /// <li> <p> <code>public</code> - Return all DB snapshots that have been marked as public.</p> </li>
-    /// <li> <p> <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p> <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type does not apply to Aurora.</p> </li>
+    /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li> 
+    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li> 
     /// </ul>
-    /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
+    pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_snapshot_identifier()
+    }
+    /// <p>The type of snapshots to be returned. You can specify one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p> </li> 
+    /// <li> <p> <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p> </li> 
+    /// <li> <p> <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p> </li> 
+    /// <li> <p> <code>public</code> - Return all DB snapshots that have been marked as public.</p> </li> 
+    /// <li> <p> <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p> <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type does not apply to Aurora.</p> </li> 
+    /// </ul> 
+    /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p> 
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_type(input.into());
         self
     }
-    /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p> </li>
-    /// <li> <p> <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p> </li>
-    /// <li> <p> <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p> </li>
-    /// <li> <p> <code>public</code> - Return all DB snapshots that have been marked as public.</p> </li>
-    /// <li> <p> <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p> <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type does not apply to Aurora.</p> </li>
-    /// </ul>
-    /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
+    /// <p>The type of snapshots to be returned. You can specify one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p> </li> 
+    /// <li> <p> <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p> </li> 
+    /// <li> <p> <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p> </li> 
+    /// <li> <p> <code>public</code> - Return all DB snapshots that have been marked as public.</p> </li> 
+    /// <li> <p> <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p> <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type does not apply to Aurora.</p> </li> 
+    /// </ul> 
+    /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p> 
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_type(input);
         self
+    }
+    /// <p>The type of snapshots to be returned. You can specify one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>automated</code> - Return all DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p> </li> 
+    /// <li> <p> <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p> </li> 
+    /// <li> <p> <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p> </li> 
+    /// <li> <p> <code>public</code> - Return all DB snapshots that have been marked as public.</p> </li> 
+    /// <li> <p> <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p> <p>For information about Amazon Web Services Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>Amazon Web Services Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type does not apply to Aurora.</p> </li> 
+    /// </ul> 
+    /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p> 
+    /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
+    pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_type()
     }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A filter that specifies one or more DB snapshots to describe.</p>
-    /// <p>Supported filters:</p>
-    /// <ul>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
-    /// <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p> </li>
-    /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
+    /// <p>A filter that specifies one or more DB snapshots to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li> 
+    /// <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p> </li> 
+    /// <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p> </li> 
+    /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A filter that specifies one or more DB snapshots to describe.</p>
-    /// <p>Supported filters:</p>
-    /// <ul>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
-    /// <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p> </li>
-    /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
+    /// <p>A filter that specifies one or more DB snapshots to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li> 
+    /// <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p> </li> 
+    /// <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p> </li> 
+    /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>A filter that specifies one or more DB snapshots to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li> 
+    /// <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p> </li> 
+    /// <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.</p> </li> 
+    /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li> 
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -251,48 +258,63 @@ impl DescribeDBSnapshotsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
-    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
-    /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
+    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p> 
+    /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p> 
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn include_shared(mut self, input: bool) -> Self {
         self.inner = self.inner.include_shared(input);
         self
     }
-    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
-    /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p> 
+    /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p> 
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_shared(input);
         self
     }
-    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
-    /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
+    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p> 
+    /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p> 
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_include_shared(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_shared()
+    }
+    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p> 
+    /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p> 
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn include_public(mut self, input: bool) -> Self {
         self.inner = self.inner.include_public(input);
         self
     }
-    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
-    /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
+    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p> 
+    /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p> 
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_include_public(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_public(input);
         self
     }
+    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p> 
+    /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p> 
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_include_public(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_public()
+    }
     /// <p>A specific DB resource ID to describe.</p>
-    pub fn dbi_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dbi_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dbi_resource_id(input.into());
         self
     }
     /// <p>A specific DB resource ID to describe.</p>
-    pub fn set_dbi_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dbi_resource_id(input);
         self
     }
+    /// <p>A specific DB resource ID to describe.</p>
+    pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dbi_resource_id()
+    }
 }
+

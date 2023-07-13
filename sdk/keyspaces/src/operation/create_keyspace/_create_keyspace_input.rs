@@ -2,24 +2,39 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyspaceInput {
+pub struct CreateKeyspaceInput  {
     /// <p>The name of the keyspace to be created.</p>
     #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p> The replication specification of the keyspace includes:</p> 
+    /// <ul> 
+    /// <li> <p> <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> 
+    /// <li> <p> <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p> </li> 
+    /// </ul>
+    #[doc(hidden)]
+    pub replication_specification: ::std::option::Option<crate::types::ReplicationSpecification>,
 }
 impl CreateKeyspaceInput {
     /// <p>The name of the keyspace to be created.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p> The replication specification of the keyspace includes:</p> 
+    /// <ul> 
+    /// <li> <p> <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> 
+    /// <li> <p> <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p> </li> 
+    /// </ul>
+    pub fn replication_specification(&self) -> ::std::option::Option<& crate::types::ReplicationSpecification> {
+        self.replication_specification.as_ref()
     }
 }
 impl CreateKeyspaceInput {
@@ -31,61 +46,85 @@ impl CreateKeyspaceInput {
 
 /// A builder for [`CreateKeyspaceInput`](crate::operation::create_keyspace::CreateKeyspaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKeyspaceInputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) replication_specification: ::std::option::Option<crate::types::ReplicationSpecification>,
 }
 impl CreateKeyspaceInputBuilder {
     /// <p>The name of the keyspace to be created.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace to be created.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.keyspace_name = input;
-        self
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.keyspace_name = input; self
+    }
+    /// <p>The name of the keyspace to be created.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyspace_name
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
+    }
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
+    /// <p> The replication specification of the keyspace includes:</p> 
+    /// <ul> 
+    /// <li> <p> <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> 
+    /// <li> <p> <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p> </li> 
+    /// </ul>
+    pub fn replication_specification(mut self, input: crate::types::ReplicationSpecification) -> Self {
+        self.replication_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    /// <p> The replication specification of the keyspace includes:</p> 
+    /// <ul> 
+    /// <li> <p> <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> 
+    /// <li> <p> <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p> </li> 
+    /// </ul>
+    pub fn set_replication_specification(mut self, input: ::std::option::Option<crate::types::ReplicationSpecification>) -> Self {
+        self.replication_specification = input; self
+    }
+    /// <p> The replication specification of the keyspace includes:</p> 
+    /// <ul> 
+    /// <li> <p> <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li> 
+    /// <li> <p> <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p> </li> 
+    /// </ul>
+    pub fn get_replication_specification(&self) -> &::std::option::Option<crate::types::ReplicationSpecification> {
+        &self.replication_specification
     }
     /// Consumes the builder and constructs a [`CreateKeyspaceInput`](crate::operation::create_keyspace::CreateKeyspaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_keyspace::CreateKeyspaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_keyspace::CreateKeyspaceInput {
-            keyspace_name: self.keyspace_name,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_keyspace::CreateKeyspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_keyspace::CreateKeyspaceInput {
+                keyspace_name: self.keyspace_name
+                ,
+                tags: self.tags
+                ,
+                replication_specification: self.replication_specification
+                ,
+            }
+        )
     }
 }
+

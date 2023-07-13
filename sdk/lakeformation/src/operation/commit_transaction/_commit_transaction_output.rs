@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CommitTransactionOutput {
+pub struct CommitTransactionOutput  {
     /// <p>The status of the transaction.</p>
     #[doc(hidden)]
     pub transaction_status: ::std::option::Option<crate::types::TransactionStatus>,
@@ -10,28 +10,25 @@ pub struct CommitTransactionOutput {
 }
 impl CommitTransactionOutput {
     /// <p>The status of the transaction.</p>
-    pub fn transaction_status(&self) -> ::std::option::Option<&crate::types::TransactionStatus> {
+    pub fn transaction_status(&self) -> ::std::option::Option<& crate::types::TransactionStatus> {
         self.transaction_status.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CommitTransactionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CommitTransactionOutput {
     /// Creates a new builder-style object to manufacture [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput).
-    pub fn builder(
-    ) -> crate::operation::commit_transaction::builders::CommitTransactionOutputBuilder {
+    pub fn builder() -> crate::operation::commit_transaction::builders::CommitTransactionOutputBuilder {
         crate::operation::commit_transaction::builders::CommitTransactionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommitTransactionOutputBuilder {
     pub(crate) transaction_status: ::std::option::Option<crate::types::TransactionStatus>,
     _request_id: Option<String>,
@@ -43,27 +40,29 @@ impl CommitTransactionOutputBuilder {
         self
     }
     /// <p>The status of the transaction.</p>
-    pub fn set_transaction_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TransactionStatus>,
-    ) -> Self {
-        self.transaction_status = input;
-        self
+    pub fn set_transaction_status(mut self, input: ::std::option::Option<crate::types::TransactionStatus>) -> Self {
+        self.transaction_status = input; self
+    }
+    /// <p>The status of the transaction.</p>
+    pub fn get_transaction_status(&self) -> &::std::option::Option<crate::types::TransactionStatus> {
+        &self.transaction_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput).
     pub fn build(self) -> crate::operation::commit_transaction::CommitTransactionOutput {
         crate::operation::commit_transaction::CommitTransactionOutput {
-            transaction_status: self.transaction_status,
+            transaction_status: self.transaction_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

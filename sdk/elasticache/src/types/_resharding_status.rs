@@ -3,14 +3,14 @@
 /// <p>The status of an online resharding operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReshardingStatus {
+pub struct ReshardingStatus  {
     /// <p>Represents the progress of an online resharding operation.</p>
     #[doc(hidden)]
     pub slot_migration: ::std::option::Option<crate::types::SlotMigration>,
 }
 impl ReshardingStatus {
     /// <p>Represents the progress of an online resharding operation.</p>
-    pub fn slot_migration(&self) -> ::std::option::Option<&crate::types::SlotMigration> {
+    pub fn slot_migration(&self) -> ::std::option::Option<& crate::types::SlotMigration> {
         self.slot_migration.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ReshardingStatus {
 
 /// A builder for [`ReshardingStatus`](crate::types::ReshardingStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReshardingStatusBuilder {
     pub(crate) slot_migration: ::std::option::Option<crate::types::SlotMigration>,
 }
@@ -36,17 +34,19 @@ impl ReshardingStatusBuilder {
         self
     }
     /// <p>Represents the progress of an online resharding operation.</p>
-    pub fn set_slot_migration(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotMigration>,
-    ) -> Self {
-        self.slot_migration = input;
-        self
+    pub fn set_slot_migration(mut self, input: ::std::option::Option<crate::types::SlotMigration>) -> Self {
+        self.slot_migration = input; self
+    }
+    /// <p>Represents the progress of an online resharding operation.</p>
+    pub fn get_slot_migration(&self) -> &::std::option::Option<crate::types::SlotMigration> {
+        &self.slot_migration
     }
     /// Consumes the builder and constructs a [`ReshardingStatus`](crate::types::ReshardingStatus).
     pub fn build(self) -> crate::types::ReshardingStatus {
         crate::types::ReshardingStatus {
-            slot_migration: self.slot_migration,
+            slot_migration: self.slot_migration
+            ,
         }
     }
 }
+

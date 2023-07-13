@@ -3,7 +3,7 @@
 /// <p>Associates a form property to a binding property. This enables exposed properties on the top level form to propagate data to the form's property values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FormInputValuePropertyBindingProperties {
+pub struct FormInputValuePropertyBindingProperties  {
     /// <p>The form property to bind to the data field.</p>
     #[doc(hidden)]
     pub property: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct FormInputValuePropertyBindingProperties {
 }
 impl FormInputValuePropertyBindingProperties {
     /// <p>The form property to bind to the data field.</p>
-    pub fn property(&self) -> ::std::option::Option<&str> {
+    pub fn property(&self) -> ::std::option::Option<& str> {
         self.property.as_deref()
     }
     /// <p>The data field to bind the property to.</p>
-    pub fn field(&self) -> ::std::option::Option<&str> {
+    pub fn field(&self) -> ::std::option::Option<& str> {
         self.field.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl FormInputValuePropertyBindingProperties {
 
 /// A builder for [`FormInputValuePropertyBindingProperties`](crate::types::FormInputValuePropertyBindingProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FormInputValuePropertyBindingPropertiesBuilder {
     pub(crate) property: ::std::option::Option<::std::string::String>,
     pub(crate) field: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl FormInputValuePropertyBindingPropertiesBuilder {
     }
     /// <p>The form property to bind to the data field.</p>
     pub fn set_property(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property = input;
-        self
+        self.property = input; self
+    }
+    /// <p>The form property to bind to the data field.</p>
+    pub fn get_property(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property
     }
     /// <p>The data field to bind the property to.</p>
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl FormInputValuePropertyBindingPropertiesBuilder {
     }
     /// <p>The data field to bind the property to.</p>
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
+    }
+    /// <p>The data field to bind the property to.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
     }
     /// Consumes the builder and constructs a [`FormInputValuePropertyBindingProperties`](crate::types::FormInputValuePropertyBindingProperties).
     pub fn build(self) -> crate::types::FormInputValuePropertyBindingProperties {
         crate::types::FormInputValuePropertyBindingProperties {
-            property: self.property,
-            field: self.field,
+            property: self.property
+            ,
+            field: self.field
+            ,
         }
     }
 }
+

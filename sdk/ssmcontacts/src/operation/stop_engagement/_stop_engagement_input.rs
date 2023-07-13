@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopEngagementInput {
+pub struct StopEngagementInput  {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     #[doc(hidden)]
     pub engagement_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct StopEngagementInput {
 }
 impl StopEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn engagement_id(&self) -> ::std::option::Option<&str> {
+    pub fn engagement_id(&self) -> ::std::option::Option<& str> {
         self.engagement_id.as_deref()
     }
     /// <p>The reason that you're stopping the engagement.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -29,29 +29,24 @@ impl StopEngagementInput {
 
 /// A builder for [`StopEngagementInput`](crate::operation::stop_engagement::StopEngagementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEngagementInputBuilder {
     pub(crate) engagement_id: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl StopEngagementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn engagement_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn set_engagement_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.engagement_id = input;
-        self
+    pub fn set_engagement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engagement_id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_id
     }
     /// <p>The reason that you're stopping the engagement.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,19 +55,22 @@ impl StopEngagementInputBuilder {
     }
     /// <p>The reason that you're stopping the engagement.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
+    }
+    /// <p>The reason that you're stopping the engagement.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`StopEngagementInput`](crate::operation::stop_engagement::StopEngagementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_engagement::StopEngagementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_engagement::StopEngagementInput {
-            engagement_id: self.engagement_id,
-            reason: self.reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_engagement::StopEngagementInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_engagement::StopEngagementInput {
+                engagement_id: self.engagement_id
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

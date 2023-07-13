@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImageVersionsInput {
+pub struct ListImageVersionsInput  {
     /// <p>A filter that returns only versions created on or after the specified time.</p>
     #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -33,25 +33,23 @@ pub struct ListImageVersionsInput {
 }
 impl ListImageVersionsInput {
     /// <p>A filter that returns only versions created on or after the specified time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that returns only versions created on or before the specified time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>The name of the image to list the versions of.</p>
-    pub fn image_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_name(&self) -> ::std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>A filter that returns only versions modified on or after the specified time.</p>
-    pub fn last_modified_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_after.as_ref()
     }
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
@@ -59,31 +57,28 @@ impl ListImageVersionsInput {
         self.max_results
     }
     /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ImageVersionSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ImageVersionSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::ImageVersionSortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::ImageVersionSortOrder> {
         self.sort_order.as_ref()
     }
 }
 impl ListImageVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListImageVersionsInput`](crate::operation::list_image_versions::ListImageVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder {
         crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageVersionsInput`](crate::operation::list_image_versions::ListImageVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageVersionsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -102,12 +97,12 @@ impl ListImageVersionsInputBuilder {
         self
     }
     /// <p>A filter that returns only versions created on or after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_after = input;
-        self
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_after = input; self
+    }
+    /// <p>A filter that returns only versions created on or after the specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
     }
     /// <p>A filter that returns only versions created on or before the specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -115,12 +110,12 @@ impl ListImageVersionsInputBuilder {
         self
     }
     /// <p>A filter that returns only versions created on or before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_before = input;
-        self
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_before = input; self
+    }
+    /// <p>A filter that returns only versions created on or before the specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>The name of the image to list the versions of.</p>
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,8 +124,11 @@ impl ListImageVersionsInputBuilder {
     }
     /// <p>The name of the image to list the versions of.</p>
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
+    }
+    /// <p>The name of the image to list the versions of.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
     }
     /// <p>A filter that returns only versions modified on or after the specified time.</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,12 +136,12 @@ impl ListImageVersionsInputBuilder {
         self
     }
     /// <p>A filter that returns only versions modified on or after the specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time_after = input;
-        self
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time_after = input; self
+    }
+    /// <p>A filter that returns only versions modified on or after the specified time.</p>
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_after
     }
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -151,12 +149,12 @@ impl ListImageVersionsInputBuilder {
         self
     }
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time_before = input;
-        self
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time_before = input; self
+    }
+    /// <p>A filter that returns only versions modified on or before the specified time.</p>
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_before
     }
     /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -165,8 +163,11 @@ impl ListImageVersionsInputBuilder {
     }
     /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,8 +176,11 @@ impl ListImageVersionsInputBuilder {
     }
     /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ImageVersionSortBy) -> Self {
@@ -184,12 +188,12 @@ impl ListImageVersionsInputBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageVersionSortBy>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ImageVersionSortBy>) -> Self {
+        self.sort_by = input; self
+    }
+    /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ImageVersionSortBy> {
+        &self.sort_by
     }
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
     pub fn sort_order(mut self, input: crate::types::ImageVersionSortOrder) -> Self {
@@ -197,32 +201,37 @@ impl ListImageVersionsInputBuilder {
         self
     }
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageVersionSortOrder>,
-    ) -> Self {
-        self.sort_order = input;
-        self
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::ImageVersionSortOrder>) -> Self {
+        self.sort_order = input; self
+    }
+    /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::ImageVersionSortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListImageVersionsInput`](crate::operation::list_image_versions::ListImageVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_image_versions::ListImageVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_image_versions::ListImageVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_image_versions::ListImageVersionsInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                image_name: self.image_name,
-                last_modified_time_after: self.last_modified_time_after,
-                last_modified_time_before: self.last_modified_time_before,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                image_name: self.image_name
+                ,
+                last_modified_time_after: self.last_modified_time_after
+                ,
+                last_modified_time_before: self.last_modified_time_before
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
         )
     }
 }
+

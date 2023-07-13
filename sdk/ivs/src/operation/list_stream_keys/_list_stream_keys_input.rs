@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamKeysInput {
+pub struct ListStreamKeysInput  {
     /// <p>Channel ARN used to filter the list.</p>
     #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListStreamKeysInput {
 }
 impl ListStreamKeysInput {
     /// <p>Channel ARN used to filter the list.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of streamKeys to return. Default: 1.</p>
@@ -36,9 +36,7 @@ impl ListStreamKeysInput {
 
 /// A builder for [`ListStreamKeysInput`](crate::operation::list_stream_keys::ListStreamKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamKeysInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl ListStreamKeysInputBuilder {
     }
     /// <p>Channel ARN used to filter the list.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>Channel ARN used to filter the list.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl ListStreamKeysInputBuilder {
     }
     /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Maximum number of streamKeys to return. Default: 1.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,20 +76,25 @@ impl ListStreamKeysInputBuilder {
     }
     /// <p>Maximum number of streamKeys to return. Default: 1.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Maximum number of streamKeys to return. Default: 1.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListStreamKeysInput`](crate::operation::list_stream_keys::ListStreamKeysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stream_keys::ListStreamKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_stream_keys::ListStreamKeysInput {
-            channel_arn: self.channel_arn,
-            next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stream_keys::ListStreamKeysInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_stream_keys::ListStreamKeysInput {
+                channel_arn: self.channel_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStageInput {
+pub struct DeleteStageInput  {
     /// <p>ARN of the stage to be deleted.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStageInput {
     /// <p>ARN of the stage to be deleted.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteStageInput {
 
 /// A builder for [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStageInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteStageInputBuilder {
     }
     /// <p>ARN of the stage to be deleted.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>ARN of the stage to be deleted.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_stage::DeleteStageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_stage::DeleteStageInput {
-            arn: self.arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stage::DeleteStageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_stage::DeleteStageInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

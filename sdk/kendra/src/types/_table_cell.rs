@@ -3,7 +3,7 @@
 /// <p>Provides information about a table cell in a table excerpt.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableCell {
+pub struct TableCell  {
     /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct TableCell {
 }
 impl TableCell {
     /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
@@ -44,9 +44,7 @@ impl TableCell {
 
 /// A builder for [`TableCell`](crate::types::TableCell).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableCellBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) top_answer: ::std::option::Option<bool>,
@@ -61,8 +59,11 @@ impl TableCellBuilder {
     }
     /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The actual value or content within a table cell. A table cell could contain a date value of a year, or a string value of text, for example.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
     pub fn top_answer(mut self, input: bool) -> Self {
@@ -71,8 +72,11 @@ impl TableCellBuilder {
     }
     /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
     pub fn set_top_answer(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.top_answer = input;
-        self
+        self.top_answer = input; self
+    }
+    /// <p> <code>TRUE</code> if the response of the table cell is the top answer. This is the cell value or content with the highest confidence score or is the most relevant to the query.</p>
+    pub fn get_top_answer(&self) -> &::std::option::Option<bool> {
+        &self.top_answer
     }
     /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
     pub fn highlighted(mut self, input: bool) -> Self {
@@ -81,8 +85,11 @@ impl TableCellBuilder {
     }
     /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
     pub fn set_highlighted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.highlighted = input;
-        self
+        self.highlighted = input; self
+    }
+    /// <p> <code>TRUE</code> means that the table cell has a high enough confidence and is relevant to the query, so the value or content should be highlighted.</p>
+    pub fn get_highlighted(&self) -> &::std::option::Option<bool> {
+        &self.highlighted
     }
     /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
     pub fn header(mut self, input: bool) -> Self {
@@ -91,16 +98,27 @@ impl TableCellBuilder {
     }
     /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
     pub fn set_header(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
+    }
+    /// <p> <code>TRUE</code> means that the table cell should be treated as a header.</p>
+    pub fn get_header(&self) -> &::std::option::Option<bool> {
+        &self.header
     }
     /// Consumes the builder and constructs a [`TableCell`](crate::types::TableCell).
     pub fn build(self) -> crate::types::TableCell {
         crate::types::TableCell {
-            value: self.value,
-            top_answer: self.top_answer.unwrap_or_default(),
-            highlighted: self.highlighted.unwrap_or_default(),
-            header: self.header.unwrap_or_default(),
+            value: self.value
+            ,
+            top_answer: self.top_answer
+                .unwrap_or_default()
+            ,
+            highlighted: self.highlighted
+                .unwrap_or_default()
+            ,
+            header: self.header
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>CancelArchivalInput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelArchivalInput {
+pub struct CancelArchivalInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct CancelArchivalInput {
 }
 impl CancelArchivalInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel archiving for.</p>
-    pub fn tape_arn(&self) -> ::std::option::Option<&str> {
+    pub fn tape_arn(&self) -> ::std::option::Option<& str> {
         self.tape_arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl CancelArchivalInput {
 
 /// A builder for [`CancelArchivalInput`](crate::operation::cancel_archival::CancelArchivalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelArchivalInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl CancelArchivalInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel archiving for.</p>
     pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,19 +56,22 @@ impl CancelArchivalInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel archiving for.</p>
     pub fn set_tape_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tape_arn = input;
-        self
+        self.tape_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel archiving for.</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_arn
     }
     /// Consumes the builder and constructs a [`CancelArchivalInput`](crate::operation::cancel_archival::CancelArchivalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_archival::CancelArchivalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_archival::CancelArchivalInput {
-            gateway_arn: self.gateway_arn,
-            tape_arn: self.tape_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_archival::CancelArchivalInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_archival::CancelArchivalInput {
+                gateway_arn: self.gateway_arn
+                ,
+                tape_arn: self.tape_arn
+                ,
+            }
+        )
     }
 }
+

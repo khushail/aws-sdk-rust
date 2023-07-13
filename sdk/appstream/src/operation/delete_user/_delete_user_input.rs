@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeleteUserInput {
-    /// <p>The email address of the user.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+pub struct DeleteUserInput  {
+    /// <p>The email address of the user.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
     #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -13,18 +13,18 @@ pub struct DeleteUserInput {
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl DeleteUserInput {
-    /// <p>The email address of the user.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
 }
-impl ::std::fmt::Debug for DeleteUserInput {
+impl  ::std::fmt::Debug for DeleteUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserInput");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -47,19 +47,24 @@ pub struct DeleteUserInputBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl DeleteUserInputBuilder {
-    /// <p>The email address of the user.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address of the user.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
+    }
+    /// <p>The email address of the user.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
+    /// </note>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
@@ -67,24 +72,23 @@ impl DeleteUserInputBuilder {
         self
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
-        self.authentication_type = input;
-        self
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
+        self.authentication_type = input; self
+    }
+    /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_user::DeleteUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
-            user_name: self.user_name,
-            authentication_type: self.authentication_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                user_name: self.user_name
+                ,
+                authentication_type: self.authentication_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeleteUserInputBuilder {
@@ -95,3 +99,4 @@ impl ::std::fmt::Debug for DeleteUserInputBuilder {
         formatter.finish()
     }
 }
+

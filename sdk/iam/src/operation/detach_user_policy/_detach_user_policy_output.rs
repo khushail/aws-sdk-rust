@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachUserPolicyOutput {
+pub struct DetachUserPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DetachUserPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetachUserPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DetachUserPolicyOutput`](crate::operation::detach_user_policy::DetachUserPolicyOutput).
-    pub fn builder() -> crate::operation::detach_user_policy::builders::DetachUserPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_user_policy::builders::DetachUserPolicyOutputBuilder {
         crate::operation::detach_user_policy::builders::DetachUserPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachUserPolicyOutput`](crate::operation::detach_user_policy::DetachUserPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachUserPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl DetachUserPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetachUserPolicyOutput`](crate::operation::detach_user_policy::DetachUserPolicyOutput).
     pub fn build(self) -> crate::operation::detach_user_policy::DetachUserPolicyOutput {
         crate::operation::detach_user_policy::DetachUserPolicyOutput {
@@ -43,3 +40,4 @@ impl DetachUserPolicyOutputBuilder {
         }
     }
 }
+

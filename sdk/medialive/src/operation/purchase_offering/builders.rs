@@ -3,102 +3,87 @@ pub use crate::operation::purchase_offering::_purchase_offering_output::Purchase
 
 pub use crate::operation::purchase_offering::_purchase_offering_input::PurchaseOfferingInputBuilder;
 
+impl PurchaseOfferingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::purchase_offering::PurchaseOfferingOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::purchase_offering::PurchaseOfferingError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.purchase_offering();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PurchaseOffering`.
-///
+/// 
 /// Purchase an offering and create a reservation.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseOfferingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder,
+                    inner: crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder,
 }
-impl PurchaseOfferingFluentBuilder {
+impl PurchaseOfferingFluentBuilder  {
     /// Creates a new `PurchaseOffering`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::purchase_offering::PurchaseOffering,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_offering::PurchaseOfferingError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PurchaseOffering as a reference.
+    pub fn as_input(&self) -> &crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::purchase_offering::PurchaseOfferingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_offering::PurchaseOfferingError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::purchase_offering::PurchaseOffering, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::purchase_offering::PurchaseOfferingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_offering::PurchaseOfferingError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::purchase_offering::PurchaseOffering,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_offering::PurchaseOfferingError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::purchase_offering::PurchaseOffering, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Number of resources
     pub fn count(mut self, input: i32) -> Self {
         self.inner = self.inner.count(input);
@@ -108,6 +93,10 @@ impl PurchaseOfferingFluentBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_count(input);
         self
+    }
+    /// Number of resources
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_count()
     }
     /// Name for the new reservation
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +108,10 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// Name for the new reservation
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Offering to purchase, e.g. '87654321'
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_id(input.into());
@@ -129,18 +122,23 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_offering_id(input);
         self
     }
+    /// Offering to purchase, e.g. '87654321'
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_offering_id()
+    }
     /// Renewal settings for the reservation
     pub fn renewal_settings(mut self, input: crate::types::RenewalSettings) -> Self {
         self.inner = self.inner.renewal_settings(input);
         self
     }
     /// Renewal settings for the reservation
-    pub fn set_renewal_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RenewalSettings>,
-    ) -> Self {
+    pub fn set_renewal_settings(mut self, input: ::std::option::Option<crate::types::RenewalSettings>) -> Self {
         self.inner = self.inner.set_renewal_settings(input);
         self
+    }
+    /// Renewal settings for the reservation
+    pub fn get_renewal_settings(&self) -> &::std::option::Option<crate::types::RenewalSettings> {
+        self.inner.get_renewal_settings()
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +150,10 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_request_id(input);
         self
     }
+    /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
+    }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
     pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start(input.into());
@@ -162,27 +164,27 @@ impl PurchaseOfferingFluentBuilder {
         self.inner = self.inner.set_start(input);
         self
     }
+    /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
+    pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start()
+    }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// A collection of key-value pairs
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// A collection of key-value pairs
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_tags()
+    }
 }
+

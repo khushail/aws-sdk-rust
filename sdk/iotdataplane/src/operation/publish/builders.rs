@@ -3,97 +3,90 @@ pub use crate::operation::publish::_publish_output::PublishOutputBuilder;
 
 pub use crate::operation::publish::_publish_input::PublishInputBuilder;
 
+impl PublishInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::publish::PublishOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::publish::PublishError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.publish();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `Publish`.
-///
-/// <p>Publishes an MQTT message.</p>
-/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">Publish</a> action.</p>
-/// <p>For more information about MQTT messages, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT Protocol</a> in the IoT Developer Guide.</p>
+/// 
+/// <p>Publishes an MQTT message.</p> 
+/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">Publish</a> action.</p> 
+/// <p>For more information about MQTT messages, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT Protocol</a> in the IoT Developer Guide.</p> 
 /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT Core pricing - Messaging</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PublishFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::publish::builders::PublishInputBuilder,
+                    inner: crate::operation::publish::builders::PublishInputBuilder,
 }
-impl PublishFluentBuilder {
+impl PublishFluentBuilder  {
     /// Creates a new `Publish`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::publish::Publish,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the Publish as a reference.
+    pub fn as_input(&self) -> &crate::operation::publish::builders::PublishInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::publish::PublishOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::publish::Publish, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::publish::PublishOutput, ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::publish::PublishOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::publish::Publish,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::publish::PublishOutput, ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::publish::Publish, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the MQTT topic.</p>
     pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic(input.into());
@@ -103,6 +96,10 @@ impl PublishFluentBuilder {
     pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic(input);
         self
+    }
+    /// <p>The name of the MQTT topic.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic()
     }
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
     pub fn qos(mut self, input: i32) -> Self {
@@ -114,53 +111,69 @@ impl PublishFluentBuilder {
         self.inner = self.inner.set_qos(input);
         self
     }
-    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
+    pub fn get_qos(&self) -> &::std::option::Option<i32> {
+        self.inner.get_qos()
+    }
+    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> 
+    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> 
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p> 
     /// <p>Default value: <code>false</code> </p>
     pub fn retain(mut self, input: bool) -> Self {
         self.inner = self.inner.retain(input);
         self
     }
-    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> 
+    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> 
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p> 
     /// <p>Default value: <code>false</code> </p>
     pub fn set_retain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain(input);
         self
     }
-    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
+    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> 
+    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> 
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p> 
+    /// <p>Default value: <code>false</code> </p>
+    pub fn get_retain(&self) -> &::std::option::Option<bool> {
+        self.inner.get_retain()
+    }
+    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p> 
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.payload(input);
         self
     }
-    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
+    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p> 
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
-    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
+    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p> 
+    /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_payload()
+    }
+    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p> 
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p> 
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn user_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_properties(input.into());
         self
     }
-    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
+    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p> 
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p> 
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn set_user_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_properties(input);
         self
+    }
+    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p> 
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p> 
+    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    pub fn get_user_properties(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_properties()
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
     pub fn payload_format_indicator(mut self, input: crate::types::PayloadFormatIndicator) -> Self {
@@ -168,12 +181,13 @@ impl PublishFluentBuilder {
         self
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    pub fn set_payload_format_indicator(
-        mut self,
-        input: ::std::option::Option<crate::types::PayloadFormatIndicator>,
-    ) -> Self {
+    pub fn set_payload_format_indicator(mut self, input: ::std::option::Option<crate::types::PayloadFormatIndicator>) -> Self {
         self.inner = self.inner.set_payload_format_indicator(input);
         self
+    }
+    /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
+    pub fn get_payload_format_indicator(&self) -> &::std::option::Option<crate::types::PayloadFormatIndicator> {
+        self.inner.get_payload_format_indicator()
     }
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,37 +199,37 @@ impl PublishFluentBuilder {
         self.inner = self.inner.set_content_type(input);
         self
     }
+    /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
+    }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn response_topic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_topic(input.into());
         self
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn set_response_topic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_topic(input);
         self
     }
+    /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
+    pub fn get_response_topic(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_response_topic()
+    }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn correlation_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn correlation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.correlation_data(input.into());
         self
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn set_correlation_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_correlation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_correlation_data(input);
         self
+    }
+    /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
+    pub fn get_correlation_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_correlation_data()
     }
     /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
     pub fn message_expiry(mut self, input: i64) -> Self {
@@ -227,4 +241,9 @@ impl PublishFluentBuilder {
         self.inner = self.inner.set_message_expiry(input);
         self
     }
+    /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
+    pub fn get_message_expiry(&self) -> &::std::option::Option<i64> {
+        self.inner.get_message_expiry()
+    }
 }
+

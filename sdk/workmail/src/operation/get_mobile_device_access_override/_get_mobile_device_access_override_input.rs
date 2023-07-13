@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMobileDeviceAccessOverrideInput {
+pub struct GetMobileDeviceAccessOverrideInput  {
     /// <p>The WorkMail organization to which you want to apply the override.</p>
     #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
-    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
-    /// <ul>
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
-    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p> 
+    /// <ul> 
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
+    /// <li> <p>User name: <code>user</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -20,35 +20,33 @@ pub struct GetMobileDeviceAccessOverrideInput {
 }
 impl GetMobileDeviceAccessOverrideInput {
     /// <p>The WorkMail organization to which you want to apply the override.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
-    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
-    /// <ul>
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
-    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p> 
+    /// <ul> 
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
+    /// <li> <p>User name: <code>user</code> </p> </li> 
     /// </ul>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
 impl GetMobileDeviceAccessOverrideInput {
     /// Creates a new builder-style object to manufacture [`GetMobileDeviceAccessOverrideInput`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput).
-    pub fn builder() -> crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideInputBuilder{
+    pub fn builder() -> crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideInputBuilder {
         crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMobileDeviceAccessOverrideInput`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMobileDeviceAccessOverrideInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -56,40 +54,45 @@ pub struct GetMobileDeviceAccessOverrideInputBuilder {
 }
 impl GetMobileDeviceAccessOverrideInputBuilder {
     /// <p>The WorkMail organization to which you want to apply the override.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization to which you want to apply the override.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
     }
-    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
-    /// <ul>
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
-    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// <p>The WorkMail organization to which you want to apply the override.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
+    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p> 
+    /// <ul> 
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
+    /// <li> <p>User name: <code>user</code> </p> </li> 
     /// </ul>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
-    /// <ul>
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
-    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p> 
+    /// <ul> 
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
+    /// <li> <p>User name: <code>user</code> </p> </li> 
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p> 
+    /// <ul> 
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
+    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// </ul>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,16 +101,14 @@ impl GetMobileDeviceAccessOverrideInputBuilder {
     }
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
+    }
+    /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// Consumes the builder and constructs a [`GetMobileDeviceAccessOverrideInput`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput {
                 organization_id: self.organization_id
@@ -120,3 +121,4 @@ impl GetMobileDeviceAccessOverrideInputBuilder {
         )
     }
 }
+

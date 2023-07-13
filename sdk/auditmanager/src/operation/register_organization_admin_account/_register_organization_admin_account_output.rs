@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterOrganizationAdminAccountOutput {
+pub struct RegisterOrganizationAdminAccountOutput  {
     /// <p> The identifier for the delegated administrator account. </p>
     #[doc(hidden)]
     pub admin_account_id: ::std::option::Option<::std::string::String>,
@@ -13,31 +13,29 @@ pub struct RegisterOrganizationAdminAccountOutput {
 }
 impl RegisterOrganizationAdminAccountOutput {
     /// <p> The identifier for the delegated administrator account. </p>
-    pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn admin_account_id(&self) -> ::std::option::Option<& str> {
         self.admin_account_id.as_deref()
     }
     /// <p> The identifier for the organization. </p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RegisterOrganizationAdminAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterOrganizationAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`RegisterOrganizationAdminAccountOutput`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput).
-    pub fn builder() -> crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountOutputBuilder{
+    pub fn builder() -> crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountOutputBuilder {
         crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterOrganizationAdminAccountOutput`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterOrganizationAdminAccountOutputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
@@ -45,51 +43,42 @@ pub struct RegisterOrganizationAdminAccountOutputBuilder {
 }
 impl RegisterOrganizationAdminAccountOutputBuilder {
     /// <p> The identifier for the delegated administrator account. </p>
-    pub fn admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the delegated administrator account. </p>
-    pub fn set_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.admin_account_id = input;
-        self
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_account_id = input; self
+    }
+    /// <p> The identifier for the delegated administrator account. </p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account_id
     }
     /// <p> The identifier for the organization. </p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the organization. </p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
+    }
+    /// <p> The identifier for the organization. </p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterOrganizationAdminAccountOutput`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput
-    {
+    pub fn build(self) -> crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput {
         crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput {
             admin_account_id: self.admin_account_id
             ,
@@ -99,3 +88,4 @@ impl RegisterOrganizationAdminAccountOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorStatistics {
+pub struct ErrorStatistics  {
     /// <p>The number of requests that failed with a 419 throttling status code.</p>
     #[doc(hidden)]
     pub throttle_count: ::std::option::Option<i64>,
@@ -37,9 +37,7 @@ impl ErrorStatistics {
 
 /// A builder for [`ErrorStatistics`](crate::types::ErrorStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorStatisticsBuilder {
     pub(crate) throttle_count: ::std::option::Option<i64>,
     pub(crate) other_count: ::std::option::Option<i64>,
@@ -53,8 +51,11 @@ impl ErrorStatisticsBuilder {
     }
     /// <p>The number of requests that failed with a 419 throttling status code.</p>
     pub fn set_throttle_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.throttle_count = input;
-        self
+        self.throttle_count = input; self
+    }
+    /// <p>The number of requests that failed with a 419 throttling status code.</p>
+    pub fn get_throttle_count(&self) -> &::std::option::Option<i64> {
+        &self.throttle_count
     }
     /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
     pub fn other_count(mut self, input: i64) -> Self {
@@ -63,8 +64,11 @@ impl ErrorStatisticsBuilder {
     }
     /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
     pub fn set_other_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.other_count = input;
-        self
+        self.other_count = input; self
+    }
+    /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
+    pub fn get_other_count(&self) -> &::std::option::Option<i64> {
+        &self.other_count
     }
     /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
     pub fn total_count(mut self, input: i64) -> Self {
@@ -73,15 +77,22 @@ impl ErrorStatisticsBuilder {
     }
     /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
+    }
+    /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
     }
     /// Consumes the builder and constructs a [`ErrorStatistics`](crate::types::ErrorStatistics).
     pub fn build(self) -> crate::types::ErrorStatistics {
         crate::types::ErrorStatistics {
-            throttle_count: self.throttle_count,
-            other_count: self.other_count,
-            total_count: self.total_count,
+            throttle_count: self.throttle_count
+            ,
+            other_count: self.other_count
+            ,
+            total_count: self.total_count
+            ,
         }
     }
 }
+

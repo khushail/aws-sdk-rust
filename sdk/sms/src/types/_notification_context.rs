@@ -3,7 +3,7 @@
 /// <p>Contains the status of validating an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationContext {
+pub struct NotificationContext  {
     /// <p>The ID of the validation.</p>
     #[doc(hidden)]
     pub validation_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct NotificationContext {
 }
 impl NotificationContext {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(&self) -> ::std::option::Option<&str> {
+    pub fn validation_id(&self) -> ::std::option::Option<& str> {
         self.validation_id.as_deref()
     }
     /// <p>The status of the validation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ValidationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ValidationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl NotificationContext {
 
 /// A builder for [`NotificationContext`](crate::types::NotificationContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationContextBuilder {
     pub(crate) validation_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ValidationStatus>,
@@ -47,20 +45,17 @@ pub struct NotificationContextBuilder {
 }
 impl NotificationContextBuilder {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the validation.</p>
-    pub fn set_validation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.validation_id = input;
-        self
+    pub fn set_validation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.validation_id = input; self
+    }
+    /// <p>The ID of the validation.</p>
+    pub fn get_validation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_id
     }
     /// <p>The status of the validation.</p>
     pub fn status(mut self, input: crate::types::ValidationStatus) -> Self {
@@ -68,35 +63,36 @@ impl NotificationContextBuilder {
         self
     }
     /// <p>The status of the validation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ValidationStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the validation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ValidationStatus> {
+        &self.status
     }
     /// <p>The status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>The status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`NotificationContext`](crate::types::NotificationContext).
     pub fn build(self) -> crate::types::NotificationContext {
         crate::types::NotificationContext {
-            validation_id: self.validation_id,
-            status: self.status,
-            status_message: self.status_message,
+            validation_id: self.validation_id
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

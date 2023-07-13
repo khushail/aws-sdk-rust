@@ -3,7 +3,7 @@
 /// <p>An object that contains information on the status of whether EBS volumes scanning will be enabled as a data source for an organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationEbsVolumesResult {
+pub struct OrganizationEbsVolumesResult  {
     /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     #[doc(hidden)]
     pub auto_enable: bool,
@@ -23,9 +23,7 @@ impl OrganizationEbsVolumesResult {
 
 /// A builder for [`OrganizationEbsVolumesResult`](crate::types::OrganizationEbsVolumesResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationEbsVolumesResultBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
 }
@@ -37,13 +35,19 @@ impl OrganizationEbsVolumesResultBuilder {
     }
     /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
+    }
+    /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable
     }
     /// Consumes the builder and constructs a [`OrganizationEbsVolumesResult`](crate::types::OrganizationEbsVolumesResult).
     pub fn build(self) -> crate::types::OrganizationEbsVolumesResult {
         crate::types::OrganizationEbsVolumesResult {
-            auto_enable: self.auto_enable.unwrap_or_default(),
+            auto_enable: self.auto_enable
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

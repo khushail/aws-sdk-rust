@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFlowOutput {
+pub struct UpdateFlowOutput  {
     /// <p>Indicates the current status of the flow. </p>
     #[doc(hidden)]
     pub flow_status: ::std::option::Option<crate::types::FlowStatus>,
@@ -10,15 +10,15 @@ pub struct UpdateFlowOutput {
 }
 impl UpdateFlowOutput {
     /// <p>Indicates the current status of the flow. </p>
-    pub fn flow_status(&self) -> ::std::option::Option<&crate::types::FlowStatus> {
+    pub fn flow_status(&self) -> ::std::option::Option<& crate::types::FlowStatus> {
         self.flow_status.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateFlowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateFlowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowOutput`](crate::operation::update_flow::UpdateFlowOutput).
     pub fn builder() -> crate::operation::update_flow::builders::UpdateFlowOutputBuilder {
@@ -28,9 +28,7 @@ impl UpdateFlowOutput {
 
 /// A builder for [`UpdateFlowOutput`](crate::operation::update_flow::UpdateFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowOutputBuilder {
     pub(crate) flow_status: ::std::option::Option<crate::types::FlowStatus>,
     _request_id: Option<String>,
@@ -42,27 +40,29 @@ impl UpdateFlowOutputBuilder {
         self
     }
     /// <p>Indicates the current status of the flow. </p>
-    pub fn set_flow_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowStatus>,
-    ) -> Self {
-        self.flow_status = input;
-        self
+    pub fn set_flow_status(mut self, input: ::std::option::Option<crate::types::FlowStatus>) -> Self {
+        self.flow_status = input; self
+    }
+    /// <p>Indicates the current status of the flow. </p>
+    pub fn get_flow_status(&self) -> &::std::option::Option<crate::types::FlowStatus> {
+        &self.flow_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateFlowOutput`](crate::operation::update_flow::UpdateFlowOutput).
     pub fn build(self) -> crate::operation::update_flow::UpdateFlowOutput {
         crate::operation::update_flow::UpdateFlowOutput {
-            flow_status: self.flow_status,
+            flow_status: self.flow_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

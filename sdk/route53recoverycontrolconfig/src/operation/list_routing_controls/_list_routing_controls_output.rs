@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRoutingControlsOutput {
+pub struct ListRoutingControlsOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,37 +13,32 @@ pub struct ListRoutingControlsOutput {
 }
 impl ListRoutingControlsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of routing controls.</p>
-    pub fn routing_controls(&self) -> ::std::option::Option<&[crate::types::RoutingControl]> {
+    pub fn routing_controls(&self) -> ::std::option::Option<& [crate::types::RoutingControl]> {
         self.routing_controls.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRoutingControlsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListRoutingControlsOutput {
     /// Creates a new builder-style object to manufacture [`ListRoutingControlsOutput`](crate::operation::list_routing_controls::ListRoutingControlsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder {
-        crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder {
+        crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRoutingControlsOutput`](crate::operation::list_routing_controls::ListRoutingControlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoutingControlsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) routing_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>>,
+    pub(crate) routing_controls: ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>>,
     _request_id: Option<String>,
 }
 impl ListRoutingControlsOutputBuilder {
@@ -54,8 +49,11 @@ impl ListRoutingControlsOutputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `routing_controls`.
     ///
@@ -64,33 +62,36 @@ impl ListRoutingControlsOutputBuilder {
     /// <p>An array of routing controls.</p>
     pub fn routing_controls(mut self, input: crate::types::RoutingControl) -> Self {
         let mut v = self.routing_controls.unwrap_or_default();
-        v.push(input);
-        self.routing_controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.routing_controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of routing controls.</p>
-    pub fn set_routing_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>>,
-    ) -> Self {
-        self.routing_controls = input;
-        self
+    pub fn set_routing_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>>) -> Self {
+        self.routing_controls = input; self
+    }
+    /// <p>An array of routing controls.</p>
+    pub fn get_routing_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>> {
+        &self.routing_controls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListRoutingControlsOutput`](crate::operation::list_routing_controls::ListRoutingControlsOutput).
     pub fn build(self) -> crate::operation::list_routing_controls::ListRoutingControlsOutput {
         crate::operation::list_routing_controls::ListRoutingControlsOutput {
-            next_token: self.next_token,
-            routing_controls: self.routing_controls,
+            next_token: self.next_token
+            ,
+            routing_controls: self.routing_controls
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

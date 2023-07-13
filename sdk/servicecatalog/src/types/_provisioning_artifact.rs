@@ -3,7 +3,7 @@
 /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisioningArtifact {
+pub struct ProvisioningArtifact  {
     /// <p>The identifier of the provisioning artifact.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct ProvisioningArtifact {
 }
 impl ProvisioningArtifact {
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the provisioning artifact.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
-    pub fn guidance(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactGuidance> {
+    pub fn guidance(&self) -> ::std::option::Option<& crate::types::ProvisioningArtifactGuidance> {
         self.guidance.as_ref()
     }
 }
@@ -51,9 +51,7 @@ impl ProvisioningArtifact {
 
 /// A builder for [`ProvisioningArtifact`](crate::types::ProvisioningArtifact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl ProvisioningArtifactBuilder {
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the provisioning artifact.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl ProvisioningArtifactBuilder {
     }
     /// <p>The name of the provisioning artifact.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the provisioning artifact.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the provisioning artifact.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl ProvisioningArtifactBuilder {
     }
     /// <p>The description of the provisioning artifact.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the provisioning artifact.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -98,12 +105,12 @@ impl ProvisioningArtifactBuilder {
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub fn guidance(mut self, input: crate::types::ProvisioningArtifactGuidance) -> Self {
@@ -111,21 +118,27 @@ impl ProvisioningArtifactBuilder {
         self
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
-    pub fn set_guidance(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
-    ) -> Self {
-        self.guidance = input;
-        self
+    pub fn set_guidance(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>) -> Self {
+        self.guidance = input; self
+    }
+    /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
+    pub fn get_guidance(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
+        &self.guidance
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifact`](crate::types::ProvisioningArtifact).
     pub fn build(self) -> crate::types::ProvisioningArtifact {
         crate::types::ProvisioningArtifact {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            created_time: self.created_time,
-            guidance: self.guidance,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            created_time: self.created_time
+            ,
+            guidance: self.guidance
+            ,
         }
     }
 }
+

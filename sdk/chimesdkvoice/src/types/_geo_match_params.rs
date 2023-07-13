@@ -3,7 +3,7 @@
 /// <p>The country and area code for a proxy phone number in a proxy phone session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeoMatchParams {
+pub struct GeoMatchParams  {
     /// <p>The country.</p>
     #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct GeoMatchParams {
 }
 impl GeoMatchParams {
     /// <p>The country.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>The area code.</p>
-    pub fn area_code(&self) -> ::std::option::Option<&str> {
+    pub fn area_code(&self) -> ::std::option::Option<& str> {
         self.area_code.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl GeoMatchParams {
 
 /// A builder for [`GeoMatchParams`](crate::types::GeoMatchParams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoMatchParamsBuilder {
     pub(crate) country: ::std::option::Option<::std::string::String>,
     pub(crate) area_code: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl GeoMatchParamsBuilder {
     }
     /// <p>The country.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
+    }
+    /// <p>The country.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// <p>The area code.</p>
     pub fn area_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl GeoMatchParamsBuilder {
     }
     /// <p>The area code.</p>
     pub fn set_area_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.area_code = input;
-        self
+        self.area_code = input; self
+    }
+    /// <p>The area code.</p>
+    pub fn get_area_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.area_code
     }
     /// Consumes the builder and constructs a [`GeoMatchParams`](crate::types::GeoMatchParams).
     pub fn build(self) -> crate::types::GeoMatchParams {
         crate::types::GeoMatchParams {
-            country: self.country,
-            area_code: self.area_code,
+            country: self.country
+            ,
+            area_code: self.area_code
+            ,
         }
     }
 }
+

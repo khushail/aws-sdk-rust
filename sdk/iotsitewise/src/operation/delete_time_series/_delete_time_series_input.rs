@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTimeSeriesInput {
+pub struct DeleteTimeSeriesInput  {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
@@ -18,35 +18,32 @@ pub struct DeleteTimeSeriesInput {
 }
 impl DeleteTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteTimeSeriesInput {
     /// Creates a new builder-style object to manufacture [`DeleteTimeSeriesInput`](crate::operation::delete_time_series::DeleteTimeSeriesInput).
-    pub fn builder() -> crate::operation::delete_time_series::builders::DeleteTimeSeriesInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_time_series::builders::DeleteTimeSeriesInputBuilder {
         crate::operation::delete_time_series::builders::DeleteTimeSeriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTimeSeriesInput`](crate::operation::delete_time_series::DeleteTimeSeriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTimeSeriesInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
@@ -61,8 +58,11 @@ impl DeleteTimeSeriesInputBuilder {
     }
     /// <p>The alias that identifies the time series.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
+    }
+    /// <p>The alias that identifies the time series.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +71,11 @@ impl DeleteTimeSeriesInputBuilder {
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +84,11 @@ impl DeleteTimeSeriesInputBuilder {
     }
     /// <p>The ID of the asset property.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,23 +97,26 @@ impl DeleteTimeSeriesInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteTimeSeriesInput`](crate::operation::delete_time_series::DeleteTimeSeriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_time_series::DeleteTimeSeriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_time_series::DeleteTimeSeriesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_time_series::DeleteTimeSeriesInput {
-                alias: self.alias,
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-                client_token: self.client_token,
-            },
+                alias: self.alias
+                ,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

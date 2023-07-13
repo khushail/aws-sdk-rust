@@ -3,7 +3,7 @@
 /// <p>Details about an imported variant item.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VariantImportItemDetail {
+pub struct VariantImportItemDetail  {
     /// <p>The source file's location in Amazon S3.</p>
     #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct VariantImportItemDetail {
 }
 impl VariantImportItemDetail {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The item's job status.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p> A message that provides additional context about a job </p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl VariantImportItemDetail {
 
 /// A builder for [`VariantImportItemDetail`](crate::types::VariantImportItemDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VariantImportItemDetailBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -53,8 +51,11 @@ impl VariantImportItemDetailBuilder {
     }
     /// <p>The source file's location in Amazon S3.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The source file's location in Amazon S3.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The item's job status.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -63,31 +64,35 @@ impl VariantImportItemDetailBuilder {
     }
     /// <p>The item's job status.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
+    }
+    /// <p>The item's job status.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// <p> A message that provides additional context about a job </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message that provides additional context about a job </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p> A message that provides additional context about a job </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`VariantImportItemDetail`](crate::types::VariantImportItemDetail).
     pub fn build(self) -> crate::types::VariantImportItemDetail {
         crate::types::VariantImportItemDetail {
-            source: self.source,
-            job_status: self.job_status,
-            status_message: self.status_message,
+            source: self.source
+            ,
+            job_status: self.job_status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a streaming session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Session {
+pub struct Session  {
     /// <p>The identifier of the streaming session.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -33,50 +33,47 @@ pub struct Session {
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The network details for the streaming session.</p>
     #[doc(hidden)]
-    pub network_access_configuration:
-        ::std::option::Option<crate::types::NetworkAccessConfiguration>,
+    pub network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
 }
 impl Session {
     /// <p>The identifier of the streaming session.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the user for whom the session was created.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The name of the stack for the streaming session.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The name of the fleet for the streaming session.</p>
-    pub fn fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_name(&self) -> ::std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The current state of the streaming session.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SessionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SessionState> {
         self.state.as_ref()
     }
     /// <p>Specifies whether a user is connected to the streaming session.</p>
-    pub fn connection_state(&self) -> ::std::option::Option<&crate::types::SessionConnectionState> {
+    pub fn connection_state(&self) -> ::std::option::Option<& crate::types::SessionConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The time when a streaming instance is dedicated for the user.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-    pub fn max_expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn max_expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.max_expiration_time.as_ref()
     }
     /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The network details for the streaming session.</p>
-    pub fn network_access_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkAccessConfiguration> {
+    pub fn network_access_configuration(&self) -> ::std::option::Option<& crate::types::NetworkAccessConfiguration> {
         self.network_access_configuration.as_ref()
     }
 }
@@ -89,9 +86,7 @@ impl Session {
 
 /// A builder for [`Session`](crate::types::Session).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -102,8 +97,7 @@ pub struct SessionBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) max_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
-    pub(crate) network_access_configuration:
-        ::std::option::Option<crate::types::NetworkAccessConfiguration>,
+    pub(crate) network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
 }
 impl SessionBuilder {
     /// <p>The identifier of the streaming session.</p>
@@ -113,8 +107,11 @@ impl SessionBuilder {
     }
     /// <p>The identifier of the streaming session.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the streaming session.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The identifier of the user for whom the session was created.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,8 +120,11 @@ impl SessionBuilder {
     }
     /// <p>The identifier of the user for whom the session was created.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The identifier of the user for whom the session was created.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The name of the stack for the streaming session.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,8 +133,11 @@ impl SessionBuilder {
     }
     /// <p>The name of the stack for the streaming session.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
+    }
+    /// <p>The name of the stack for the streaming session.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// <p>The name of the fleet for the streaming session.</p>
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,8 +146,11 @@ impl SessionBuilder {
     }
     /// <p>The name of the fleet for the streaming session.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
+    }
+    /// <p>The name of the fleet for the streaming session.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_name
     }
     /// <p>The current state of the streaming session.</p>
     pub fn state(mut self, input: crate::types::SessionState) -> Self {
@@ -153,8 +159,11 @@ impl SessionBuilder {
     }
     /// <p>The current state of the streaming session.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The current state of the streaming session.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::SessionState> {
+        &self.state
     }
     /// <p>Specifies whether a user is connected to the streaming session.</p>
     pub fn connection_state(mut self, input: crate::types::SessionConnectionState) -> Self {
@@ -162,12 +171,12 @@ impl SessionBuilder {
         self
     }
     /// <p>Specifies whether a user is connected to the streaming session.</p>
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionConnectionState>,
-    ) -> Self {
-        self.connection_state = input;
-        self
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::SessionConnectionState>) -> Self {
+        self.connection_state = input; self
+    }
+    /// <p>Specifies whether a user is connected to the streaming session.</p>
+    pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::SessionConnectionState> {
+        &self.connection_state
     }
     /// <p>The time when a streaming instance is dedicated for the user.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -175,12 +184,12 @@ impl SessionBuilder {
         self
     }
     /// <p>The time when a streaming instance is dedicated for the user.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>The time when a streaming instance is dedicated for the user.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
     pub fn max_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -188,12 +197,12 @@ impl SessionBuilder {
         self
     }
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-    pub fn set_max_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.max_expiration_time = input;
-        self
+    pub fn set_max_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.max_expiration_time = input; self
+    }
+    /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
+    pub fn get_max_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.max_expiration_time
     }
     /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
@@ -201,42 +210,50 @@ impl SessionBuilder {
         self
     }
     /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
-        self.authentication_type = input;
-        self
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
+        self.authentication_type = input; self
+    }
+    /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
     }
     /// <p>The network details for the streaming session.</p>
-    pub fn network_access_configuration(
-        mut self,
-        input: crate::types::NetworkAccessConfiguration,
-    ) -> Self {
+    pub fn network_access_configuration(mut self, input: crate::types::NetworkAccessConfiguration) -> Self {
         self.network_access_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The network details for the streaming session.</p>
-    pub fn set_network_access_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
-    ) -> Self {
-        self.network_access_configuration = input;
-        self
+    pub fn set_network_access_configuration(mut self, input: ::std::option::Option<crate::types::NetworkAccessConfiguration>) -> Self {
+        self.network_access_configuration = input; self
+    }
+    /// <p>The network details for the streaming session.</p>
+    pub fn get_network_access_configuration(&self) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
+        &self.network_access_configuration
     }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
-            id: self.id,
-            user_id: self.user_id,
-            stack_name: self.stack_name,
-            fleet_name: self.fleet_name,
-            state: self.state,
-            connection_state: self.connection_state,
-            start_time: self.start_time,
-            max_expiration_time: self.max_expiration_time,
-            authentication_type: self.authentication_type,
-            network_access_configuration: self.network_access_configuration,
+            id: self.id
+            ,
+            user_id: self.user_id
+            ,
+            stack_name: self.stack_name
+            ,
+            fleet_name: self.fleet_name
+            ,
+            state: self.state
+            ,
+            connection_state: self.connection_state
+            ,
+            start_time: self.start_time
+            ,
+            max_expiration_time: self.max_expiration_time
+            ,
+            authentication_type: self.authentication_type
+            ,
+            network_access_configuration: self.network_access_configuration
+            ,
         }
     }
 }
+

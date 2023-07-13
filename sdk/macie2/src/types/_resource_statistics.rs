@@ -3,7 +3,7 @@
 /// <p>Provides statistical data for sensitive data discovery metrics that apply to an S3 bucket that Amazon Macie monitors and analyzes for your account. The statistics capture the results of automated sensitive data discovery activities that Macie has performed for the bucket. The data is available only if automated sensitive data discovery is currently enabled for your account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceStatistics {
+pub struct ResourceStatistics  {
     /// <p>The total amount of data, in bytes, that Amazon Macie has analyzed in the bucket.</p>
     #[doc(hidden)]
     pub total_bytes_classified: ::std::option::Option<i64>,
@@ -79,9 +79,7 @@ impl ResourceStatistics {
 
 /// A builder for [`ResourceStatistics`](crate::types::ResourceStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceStatisticsBuilder {
     pub(crate) total_bytes_classified: ::std::option::Option<i64>,
     pub(crate) total_detections: ::std::option::Option<i64>,
@@ -101,8 +99,11 @@ impl ResourceStatisticsBuilder {
     }
     /// <p>The total amount of data, in bytes, that Amazon Macie has analyzed in the bucket.</p>
     pub fn set_total_bytes_classified(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_bytes_classified = input;
-        self
+        self.total_bytes_classified = input; self
+    }
+    /// <p>The total amount of data, in bytes, that Amazon Macie has analyzed in the bucket.</p>
+    pub fn get_total_bytes_classified(&self) -> &::std::option::Option<i64> {
+        &self.total_bytes_classified
     }
     /// <p>The total number of occurrences of sensitive data that Amazon Macie has found in the bucket's objects. This includes occurrences that are currently suppressed by the sensitivity scoring settings for the bucket (totalDetectionsSuppressed).</p>
     pub fn total_detections(mut self, input: i64) -> Self {
@@ -111,8 +112,11 @@ impl ResourceStatisticsBuilder {
     }
     /// <p>The total number of occurrences of sensitive data that Amazon Macie has found in the bucket's objects. This includes occurrences that are currently suppressed by the sensitivity scoring settings for the bucket (totalDetectionsSuppressed).</p>
     pub fn set_total_detections(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_detections = input;
-        self
+        self.total_detections = input; self
+    }
+    /// <p>The total number of occurrences of sensitive data that Amazon Macie has found in the bucket's objects. This includes occurrences that are currently suppressed by the sensitivity scoring settings for the bucket (totalDetectionsSuppressed).</p>
+    pub fn get_total_detections(&self) -> &::std::option::Option<i64> {
+        &self.total_detections
     }
     /// <p>The total number of occurrences of sensitive data that are currently suppressed by the sensitivity scoring settings for the bucket. These represent occurrences of sensitive data that Amazon Macie found in the bucket's objects, but the occurrences were manually suppressed. By default, suppressed occurrences are excluded from the bucket's sensitivity score.</p>
     pub fn total_detections_suppressed(mut self, input: i64) -> Self {
@@ -121,8 +125,11 @@ impl ResourceStatisticsBuilder {
     }
     /// <p>The total number of occurrences of sensitive data that are currently suppressed by the sensitivity scoring settings for the bucket. These represent occurrences of sensitive data that Amazon Macie found in the bucket's objects, but the occurrences were manually suppressed. By default, suppressed occurrences are excluded from the bucket's sensitivity score.</p>
     pub fn set_total_detections_suppressed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_detections_suppressed = input;
-        self
+        self.total_detections_suppressed = input; self
+    }
+    /// <p>The total number of occurrences of sensitive data that are currently suppressed by the sensitivity scoring settings for the bucket. These represent occurrences of sensitive data that Amazon Macie found in the bucket's objects, but the occurrences were manually suppressed. By default, suppressed occurrences are excluded from the bucket's sensitivity score.</p>
+    pub fn get_total_detections_suppressed(&self) -> &::std::option::Option<i64> {
+        &self.total_detections_suppressed
     }
     /// <p>The total number of objects that Amazon Macie has analyzed in the bucket.</p>
     pub fn total_items_classified(mut self, input: i64) -> Self {
@@ -131,8 +138,11 @@ impl ResourceStatisticsBuilder {
     }
     /// <p>The total number of objects that Amazon Macie has analyzed in the bucket.</p>
     pub fn set_total_items_classified(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_items_classified = input;
-        self
+        self.total_items_classified = input; self
+    }
+    /// <p>The total number of objects that Amazon Macie has analyzed in the bucket.</p>
+    pub fn get_total_items_classified(&self) -> &::std::option::Option<i64> {
+        &self.total_items_classified
     }
     /// <p>The total number of the bucket's objects that Amazon Macie has found sensitive data in.</p>
     pub fn total_items_sensitive(mut self, input: i64) -> Self {
@@ -141,8 +151,11 @@ impl ResourceStatisticsBuilder {
     }
     /// <p>The total number of the bucket's objects that Amazon Macie has found sensitive data in.</p>
     pub fn set_total_items_sensitive(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_items_sensitive = input;
-        self
+        self.total_items_sensitive = input; self
+    }
+    /// <p>The total number of the bucket's objects that Amazon Macie has found sensitive data in.</p>
+    pub fn get_total_items_sensitive(&self) -> &::std::option::Option<i64> {
+        &self.total_items_sensitive
     }
     /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for reasons reported by other statistics in the ResourceStatistics object.</p>
     pub fn total_items_skipped(mut self, input: i64) -> Self {
@@ -151,8 +164,11 @@ impl ResourceStatisticsBuilder {
     }
     /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for reasons reported by other statistics in the ResourceStatistics object.</p>
     pub fn set_total_items_skipped(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_items_skipped = input;
-        self
+        self.total_items_skipped = input; self
+    }
+    /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for reasons reported by other statistics in the ResourceStatistics object.</p>
+    pub fn get_total_items_skipped(&self) -> &::std::option::Option<i64> {
+        &self.total_items_skipped
     }
     /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted with a key that Macie isn't allowed to use.</p>
     pub fn total_items_skipped_invalid_encryption(mut self, input: i64) -> Self {
@@ -160,12 +176,12 @@ impl ResourceStatisticsBuilder {
         self
     }
     /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted with a key that Macie isn't allowed to use.</p>
-    pub fn set_total_items_skipped_invalid_encryption(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
-        self.total_items_skipped_invalid_encryption = input;
-        self
+    pub fn set_total_items_skipped_invalid_encryption(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.total_items_skipped_invalid_encryption = input; self
+    }
+    /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted with a key that Macie isn't allowed to use.</p>
+    pub fn get_total_items_skipped_invalid_encryption(&self) -> &::std::option::Option<i64> {
+        &self.total_items_skipped_invalid_encryption
     }
     /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted with an KMS key that was disabled or deleted.</p>
     pub fn total_items_skipped_invalid_kms(mut self, input: i64) -> Self {
@@ -173,12 +189,12 @@ impl ResourceStatisticsBuilder {
         self
     }
     /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted with an KMS key that was disabled or deleted.</p>
-    pub fn set_total_items_skipped_invalid_kms(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
-        self.total_items_skipped_invalid_kms = input;
-        self
+    pub fn set_total_items_skipped_invalid_kms(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.total_items_skipped_invalid_kms = input; self
+    }
+    /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted with an KMS key that was disabled or deleted.</p>
+    pub fn get_total_items_skipped_invalid_kms(&self) -> &::std::option::Option<i64> {
+        &self.total_items_skipped_invalid_kms
     }
     /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed to access the objects.</p>
     pub fn total_items_skipped_permission_denied(mut self, input: i64) -> Self {
@@ -186,25 +202,35 @@ impl ResourceStatisticsBuilder {
         self
     }
     /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed to access the objects.</p>
-    pub fn set_total_items_skipped_permission_denied(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
-        self.total_items_skipped_permission_denied = input;
-        self
+    pub fn set_total_items_skipped_permission_denied(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.total_items_skipped_permission_denied = input; self
+    }
+    /// <p>The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed to access the objects.</p>
+    pub fn get_total_items_skipped_permission_denied(&self) -> &::std::option::Option<i64> {
+        &self.total_items_skipped_permission_denied
     }
     /// Consumes the builder and constructs a [`ResourceStatistics`](crate::types::ResourceStatistics).
     pub fn build(self) -> crate::types::ResourceStatistics {
         crate::types::ResourceStatistics {
-            total_bytes_classified: self.total_bytes_classified,
-            total_detections: self.total_detections,
-            total_detections_suppressed: self.total_detections_suppressed,
-            total_items_classified: self.total_items_classified,
-            total_items_sensitive: self.total_items_sensitive,
-            total_items_skipped: self.total_items_skipped,
-            total_items_skipped_invalid_encryption: self.total_items_skipped_invalid_encryption,
-            total_items_skipped_invalid_kms: self.total_items_skipped_invalid_kms,
-            total_items_skipped_permission_denied: self.total_items_skipped_permission_denied,
+            total_bytes_classified: self.total_bytes_classified
+            ,
+            total_detections: self.total_detections
+            ,
+            total_detections_suppressed: self.total_detections_suppressed
+            ,
+            total_items_classified: self.total_items_classified
+            ,
+            total_items_sensitive: self.total_items_sensitive
+            ,
+            total_items_skipped: self.total_items_skipped
+            ,
+            total_items_skipped_invalid_encryption: self.total_items_skipped_invalid_encryption
+            ,
+            total_items_skipped_invalid_kms: self.total_items_skipped_invalid_kms
+            ,
+            total_items_skipped_permission_denied: self.total_items_skipped_permission_denied
+            ,
         }
     }
 }
+

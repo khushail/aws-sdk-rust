@@ -3,14 +3,14 @@
 /// <p>The container element for a bucket's ownership controls.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OwnershipControls {
+pub struct OwnershipControls  {
     /// <p>The container element for an ownership control rule.</p>
     #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::OwnershipControlsRule>>,
 }
 impl OwnershipControls {
     /// <p>The container element for an ownership control rule.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::OwnershipControlsRule]> {
+    pub fn rules(&self) -> ::std::option::Option<& [crate::types::OwnershipControlsRule]> {
         self.rules.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl OwnershipControls {
 
 /// A builder for [`OwnershipControls`](crate::types::OwnershipControls).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OwnershipControlsBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::OwnershipControlsRule>>,
 }
@@ -37,20 +35,24 @@ impl OwnershipControlsBuilder {
     /// <p>The container element for an ownership control rule.</p>
     pub fn rules(mut self, input: crate::types::OwnershipControlsRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container element for an ownership control rule.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OwnershipControlsRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OwnershipControlsRule>>) -> Self {
+        self.rules = input; self
+    }
+    /// <p>The container element for an ownership control rule.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OwnershipControlsRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`OwnershipControls`](crate::types::OwnershipControls).
     pub fn build(self) -> crate::types::OwnershipControls {
-        crate::types::OwnershipControls { rules: self.rules }
+        crate::types::OwnershipControls {
+            rules: self.rules
+            ,
+        }
     }
 }
+

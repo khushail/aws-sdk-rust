@@ -3,14 +3,14 @@
 /// <p>The properties that are applied when using Zendesk as a flow source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ZendeskSourceProperties {
+pub struct ZendeskSourceProperties  {
     /// <p>The object specified in the Zendesk flow source.</p>
     #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
 }
 impl ZendeskSourceProperties {
     /// <p>The object specified in the Zendesk flow source.</p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<& str> {
         self.object.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ZendeskSourceProperties {
 
 /// A builder for [`ZendeskSourceProperties`](crate::types::ZendeskSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZendeskSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ZendeskSourcePropertiesBuilder {
     }
     /// <p>The object specified in the Zendesk flow source.</p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
+    }
+    /// <p>The object specified in the Zendesk flow source.</p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
     }
     /// Consumes the builder and constructs a [`ZendeskSourceProperties`](crate::types::ZendeskSourceProperties).
     pub fn build(self) -> crate::types::ZendeskSourceProperties {
         crate::types::ZendeskSourceProperties {
-            object: self.object,
+            object: self.object
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetryBuildBatchOutput {
+pub struct RetryBuildBatchOutput  {
     /// <p>Contains information about a batch build.</p>
     #[doc(hidden)]
     pub build_batch: ::std::option::Option<crate::types::BuildBatch>,
@@ -10,28 +10,25 @@ pub struct RetryBuildBatchOutput {
 }
 impl RetryBuildBatchOutput {
     /// <p>Contains information about a batch build.</p>
-    pub fn build_batch(&self) -> ::std::option::Option<&crate::types::BuildBatch> {
+    pub fn build_batch(&self) -> ::std::option::Option<& crate::types::BuildBatch> {
         self.build_batch.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for RetryBuildBatchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RetryBuildBatchOutput {
     /// Creates a new builder-style object to manufacture [`RetryBuildBatchOutput`](crate::operation::retry_build_batch::RetryBuildBatchOutput).
-    pub fn builder() -> crate::operation::retry_build_batch::builders::RetryBuildBatchOutputBuilder
-    {
+    pub fn builder() -> crate::operation::retry_build_batch::builders::RetryBuildBatchOutputBuilder {
         crate::operation::retry_build_batch::builders::RetryBuildBatchOutputBuilder::default()
     }
 }
 
 /// A builder for [`RetryBuildBatchOutput`](crate::operation::retry_build_batch::RetryBuildBatchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetryBuildBatchOutputBuilder {
     pub(crate) build_batch: ::std::option::Option<crate::types::BuildBatch>,
     _request_id: Option<String>,
@@ -43,27 +40,29 @@ impl RetryBuildBatchOutputBuilder {
         self
     }
     /// <p>Contains information about a batch build.</p>
-    pub fn set_build_batch(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildBatch>,
-    ) -> Self {
-        self.build_batch = input;
-        self
+    pub fn set_build_batch(mut self, input: ::std::option::Option<crate::types::BuildBatch>) -> Self {
+        self.build_batch = input; self
+    }
+    /// <p>Contains information about a batch build.</p>
+    pub fn get_build_batch(&self) -> &::std::option::Option<crate::types::BuildBatch> {
+        &self.build_batch
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RetryBuildBatchOutput`](crate::operation::retry_build_batch::RetryBuildBatchOutput).
     pub fn build(self) -> crate::operation::retry_build_batch::RetryBuildBatchOutput {
         crate::operation::retry_build_batch::RetryBuildBatchOutput {
-            build_batch: self.build_batch,
+            build_batch: self.build_batch
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

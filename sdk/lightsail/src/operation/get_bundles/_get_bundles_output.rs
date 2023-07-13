@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBundlesOutput {
+pub struct GetBundlesOutput  {
     /// <p>An array of key-value pairs that contains information about the available bundles.</p>
     #[doc(hidden)]
     pub bundles: ::std::option::Option<::std::vec::Vec<crate::types::Bundle>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetBundlesOutput {
 }
 impl GetBundlesOutput {
     /// <p>An array of key-value pairs that contains information about the available bundles.</p>
-    pub fn bundles(&self) -> ::std::option::Option<&[crate::types::Bundle]> {
+    pub fn bundles(&self) -> ::std::option::Option<& [crate::types::Bundle]> {
         self.bundles.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBundlesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBundlesOutput {
     /// Creates a new builder-style object to manufacture [`GetBundlesOutput`](crate::operation::get_bundles::GetBundlesOutput).
     pub fn builder() -> crate::operation::get_bundles::builders::GetBundlesOutputBuilder {
@@ -39,9 +39,7 @@ impl GetBundlesOutput {
 
 /// A builder for [`GetBundlesOutput`](crate::operation::get_bundles::GetBundlesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBundlesOutputBuilder {
     pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::Bundle>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -55,53 +53,55 @@ impl GetBundlesOutputBuilder {
     /// <p>An array of key-value pairs that contains information about the available bundles.</p>
     pub fn bundles(mut self, input: crate::types::Bundle) -> Self {
         let mut v = self.bundles.unwrap_or_default();
-        v.push(input);
-        self.bundles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bundles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs that contains information about the available bundles.</p>
-    pub fn set_bundles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Bundle>>,
-    ) -> Self {
-        self.bundles = input;
-        self
+    pub fn set_bundles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Bundle>>) -> Self {
+        self.bundles = input; self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>An array of key-value pairs that contains information about the available bundles.</p>
+    pub fn get_bundles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Bundle>> {
+        &self.bundles
+    }
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_page_token = input;
-        self
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_page_token = input; self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
+    /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBundlesOutput`](crate::operation::get_bundles::GetBundlesOutput).
     pub fn build(self) -> crate::operation::get_bundles::GetBundlesOutput {
         crate::operation::get_bundles::GetBundlesOutput {
-            bundles: self.bundles,
-            next_page_token: self.next_page_token,
+            bundles: self.bundles
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

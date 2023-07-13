@@ -3,14 +3,14 @@
 /// <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobExecutionsRetryConfig {
+pub struct JobExecutionsRetryConfig  {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
     #[doc(hidden)]
     pub criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>>,
 }
 impl JobExecutionsRetryConfig {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
-    pub fn criteria_list(&self) -> ::std::option::Option<&[crate::types::RetryCriteria]> {
+    pub fn criteria_list(&self) -> ::std::option::Option<& [crate::types::RetryCriteria]> {
         self.criteria_list.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl JobExecutionsRetryConfig {
 
 /// A builder for [`JobExecutionsRetryConfig`](crate::types::JobExecutionsRetryConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobExecutionsRetryConfigBuilder {
     pub(crate) criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>>,
 }
@@ -37,22 +35,24 @@ impl JobExecutionsRetryConfigBuilder {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
     pub fn criteria_list(mut self, input: crate::types::RetryCriteria) -> Self {
         let mut v = self.criteria_list.unwrap_or_default();
-        v.push(input);
-        self.criteria_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.criteria_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
-    pub fn set_criteria_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>>,
-    ) -> Self {
-        self.criteria_list = input;
-        self
+    pub fn set_criteria_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>>) -> Self {
+        self.criteria_list = input; self
+    }
+    /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
+    pub fn get_criteria_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>> {
+        &self.criteria_list
     }
     /// Consumes the builder and constructs a [`JobExecutionsRetryConfig`](crate::types::JobExecutionsRetryConfig).
     pub fn build(self) -> crate::types::JobExecutionsRetryConfig {
         crate::types::JobExecutionsRetryConfig {
-            criteria_list: self.criteria_list,
+            criteria_list: self.criteria_list
+            ,
         }
     }
 }
+

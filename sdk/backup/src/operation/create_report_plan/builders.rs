@@ -3,134 +3,115 @@ pub use crate::operation::create_report_plan::_create_report_plan_output::Create
 
 pub use crate::operation::create_report_plan::_create_report_plan_input::CreateReportPlanInputBuilder;
 
+impl CreateReportPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_report_plan::CreateReportPlanOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_report_plan::CreateReportPlanError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_report_plan();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateReportPlan`.
-///
-/// <p>Creates a report plan. A report plan is a document that contains information about the contents of the report and where Backup will deliver it.</p>
+/// 
+/// <p>Creates a report plan. A report plan is a document that contains information about the contents of the report and where Backup will deliver it.</p> 
 /// <p>If you call <code>CreateReportPlan</code> with a plan that already exists, you receive an <code>AlreadyExistsException</code> exception.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReportPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_report_plan::builders::CreateReportPlanInputBuilder,
+                    inner: crate::operation::create_report_plan::builders::CreateReportPlanInputBuilder,
 }
-impl CreateReportPlanFluentBuilder {
+impl CreateReportPlanFluentBuilder  {
     /// Creates a new `CreateReportPlan`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_report_plan::CreateReportPlan,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_report_plan::CreateReportPlanError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateReportPlan as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_report_plan::builders::CreateReportPlanInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_report_plan::CreateReportPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_report_plan::CreateReportPlanError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_report_plan::CreateReportPlan, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_report_plan::CreateReportPlanError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_report_plan::CreateReportPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_report_plan::CreateReportPlanError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_report_plan::CreateReportPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_report_plan::CreateReportPlanError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_report_plan::CreateReportPlan,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_report_plan::CreateReportPlanError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_report_plan::CreateReportPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_report_plan::CreateReportPlanError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_report_plan::CreateReportPlan, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_report_plan::CreateReportPlanError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn report_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_plan_name(input.into());
         self
     }
     /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_report_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_plan_name(input);
         self
     }
+    /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    pub fn get_report_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_plan_name()
+    }
     /// <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
-    pub fn report_plan_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_plan_description(input.into());
         self
     }
     /// <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
-    pub fn set_report_plan_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_plan_description(input);
         self
+    }
+    /// <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
+    pub fn get_report_plan_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_plan_description()
     }
     /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub fn report_delivery_channel(mut self, input: crate::types::ReportDeliveryChannel) -> Self {
@@ -138,67 +119,65 @@ impl CreateReportPlanFluentBuilder {
         self
     }
     /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn set_report_delivery_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportDeliveryChannel>,
-    ) -> Self {
+    pub fn set_report_delivery_channel(mut self, input: ::std::option::Option<crate::types::ReportDeliveryChannel>) -> Self {
         self.inner = self.inner.set_report_delivery_channel(input);
         self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    pub fn get_report_delivery_channel(&self) -> &::std::option::Option<crate::types::ReportDeliveryChannel> {
+        self.inner.get_report_delivery_channel()
+    }
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn report_setting(mut self, input: crate::types::ReportSetting) -> Self {
         self.inner = self.inner.report_setting(input);
         self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
-    pub fn set_report_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportSetting>,
-    ) -> Self {
+    pub fn set_report_setting(mut self, input: ::std::option::Option<crate::types::ReportSetting>) -> Self {
         self.inner = self.inner.set_report_setting(input);
         self
+    }
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
+    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
+    pub fn get_report_setting(&self) -> &::std::option::Option<crate::types::ReportSetting> {
+        self.inner.get_report_setting()
     }
     /// Adds a key-value pair to `ReportPlanTags`.
     ///
     /// To override the contents of this collection use [`set_report_plan_tags`](Self::set_report_plan_tags).
     ///
     /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
-    pub fn report_plan_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_plan_tags(k.into(), v.into());
         self
     }
     /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
-    pub fn set_report_plan_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_report_plan_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_report_plan_tags(input);
         self
     }
+    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    pub fn get_report_plan_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_report_plan_tags()
+    }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
+    }
 }
+

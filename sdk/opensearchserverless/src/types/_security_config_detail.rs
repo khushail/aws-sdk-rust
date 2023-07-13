@@ -3,7 +3,7 @@
 /// <p>Details about a security configuration for OpenSearch Serverless. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityConfigDetail {
+pub struct SecurityConfigDetail  {
     /// <p>The unique identifier of the security configuration.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -28,23 +28,23 @@ pub struct SecurityConfigDetail {
 }
 impl SecurityConfigDetail {
     /// <p>The unique identifier of the security configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of security configuration.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityConfigType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SecurityConfigType> {
         self.r#type.as_ref()
     }
     /// <p>The version of the security configuration.</p>
-    pub fn config_version(&self) -> ::std::option::Option<&str> {
+    pub fn config_version(&self) -> ::std::option::Option<& str> {
         self.config_version.as_deref()
     }
     /// <p>The description of the security configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>SAML options for the security configuration in the form of a key-value map.</p>
-    pub fn saml_options(&self) -> ::std::option::Option<&crate::types::SamlConfigOptions> {
+    pub fn saml_options(&self) -> ::std::option::Option<& crate::types::SamlConfigOptions> {
         self.saml_options.as_ref()
     }
     /// <p>The date the configuration was created.</p>
@@ -65,9 +65,7 @@ impl SecurityConfigDetail {
 
 /// A builder for [`SecurityConfigDetail`](crate::types::SecurityConfigDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityConfigDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityConfigType>,
@@ -85,8 +83,11 @@ impl SecurityConfigDetailBuilder {
     }
     /// <p>The unique identifier of the security configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier of the security configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The type of security configuration.</p>
     pub fn r#type(mut self, input: crate::types::SecurityConfigType) -> Self {
@@ -94,28 +95,25 @@ impl SecurityConfigDetailBuilder {
         self
     }
     /// <p>The type of security configuration.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityConfigType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityConfigType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of security configuration.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityConfigType> {
+        &self.r#type
     }
     /// <p>The version of the security configuration.</p>
-    pub fn config_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the security configuration.</p>
-    pub fn set_config_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.config_version = input;
-        self
+    pub fn set_config_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.config_version = input; self
+    }
+    /// <p>The version of the security configuration.</p>
+    pub fn get_config_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_version
     }
     /// <p>The description of the security configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,8 +122,11 @@ impl SecurityConfigDetailBuilder {
     }
     /// <p>The description of the security configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the security configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>SAML options for the security configuration in the form of a key-value map.</p>
     pub fn saml_options(mut self, input: crate::types::SamlConfigOptions) -> Self {
@@ -133,12 +134,12 @@ impl SecurityConfigDetailBuilder {
         self
     }
     /// <p>SAML options for the security configuration in the form of a key-value map.</p>
-    pub fn set_saml_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlConfigOptions>,
-    ) -> Self {
-        self.saml_options = input;
-        self
+    pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlConfigOptions>) -> Self {
+        self.saml_options = input; self
+    }
+    /// <p>SAML options for the security configuration in the form of a key-value map.</p>
+    pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
+        &self.saml_options
     }
     /// <p>The date the configuration was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
@@ -147,8 +148,11 @@ impl SecurityConfigDetailBuilder {
     }
     /// <p>The date the configuration was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
+    }
+    /// <p>The date the configuration was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<i64> {
+        &self.created_date
     }
     /// <p>The timestamp of when the configuration was last modified.</p>
     pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -157,19 +161,30 @@ impl SecurityConfigDetailBuilder {
     }
     /// <p>The timestamp of when the configuration was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
+    }
+    /// <p>The timestamp of when the configuration was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_date
     }
     /// Consumes the builder and constructs a [`SecurityConfigDetail`](crate::types::SecurityConfigDetail).
     pub fn build(self) -> crate::types::SecurityConfigDetail {
         crate::types::SecurityConfigDetail {
-            id: self.id,
-            r#type: self.r#type,
-            config_version: self.config_version,
-            description: self.description,
-            saml_options: self.saml_options,
-            created_date: self.created_date,
-            last_modified_date: self.last_modified_date,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            config_version: self.config_version
+            ,
+            description: self.description
+            ,
+            saml_options: self.saml_options
+            ,
+            created_date: self.created_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

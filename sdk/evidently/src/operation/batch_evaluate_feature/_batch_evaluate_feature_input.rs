@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchEvaluateFeatureInput {
+pub struct BatchEvaluateFeatureInput  {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
     #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct BatchEvaluateFeatureInput {
 }
 impl BatchEvaluateFeatureInput {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-    pub fn requests(&self) -> ::std::option::Option<&[crate::types::EvaluationRequest]> {
+    pub fn requests(&self) -> ::std::option::Option<& [crate::types::EvaluationRequest]> {
         self.requests.as_deref()
     }
 }
 impl BatchEvaluateFeatureInput {
     /// Creates a new builder-style object to manufacture [`BatchEvaluateFeatureInput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput).
-    pub fn builder(
-    ) -> crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureInputBuilder {
+    pub fn builder() -> crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureInputBuilder {
         crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchEvaluateFeatureInput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEvaluateFeatureInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) requests: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>>,
@@ -45,8 +42,11 @@ impl BatchEvaluateFeatureInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
+    }
+    /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
     }
     /// Appends an item to `requests`.
     ///
@@ -55,30 +55,28 @@ impl BatchEvaluateFeatureInputBuilder {
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
     pub fn requests(mut self, input: crate::types::EvaluationRequest) -> Self {
         let mut v = self.requests.unwrap_or_default();
-        v.push(input);
-        self.requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-    pub fn set_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>>,
-    ) -> Self {
-        self.requests = input;
-        self
+    pub fn set_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>>) -> Self {
+        self.requests = input; self
+    }
+    /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
+    pub fn get_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>> {
+        &self.requests
     }
     /// Consumes the builder and constructs a [`BatchEvaluateFeatureInput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput {
-                project: self.project,
-                requests: self.requests,
-            },
+                project: self.project
+                ,
+                requests: self.requests
+                ,
+            }
         )
     }
 }
+

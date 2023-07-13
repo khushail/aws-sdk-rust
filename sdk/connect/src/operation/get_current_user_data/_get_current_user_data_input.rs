@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCurrentUserDataInput {
+pub struct GetCurrentUserDataInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
-    /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Agents: 100</p> </li>
-    /// <li> <p>Contact states: 9</p> </li>
-    /// <li> <p>User hierarchy groups: 1</p> </li>
-    /// </ul>
-    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p> 
+    /// <ul> 
+    /// <li> <p>Queues: 100</p> </li> 
+    /// <li> <p>Routing profiles: 100</p> </li> 
+    /// <li> <p>Agents: 100</p> </li> 
+    /// <li> <p>Contact states: 9</p> </li> 
+    /// <li> <p>User hierarchy groups: 1</p> </li> 
+    /// </ul> 
+    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p> 
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::UserDataFilters>,
@@ -27,24 +27,24 @@ pub struct GetCurrentUserDataInput {
 }
 impl GetCurrentUserDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
-    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
-    /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Agents: 100</p> </li>
-    /// <li> <p>Contact states: 9</p> </li>
-    /// <li> <p>User hierarchy groups: 1</p> </li>
-    /// </ul>
-    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p> 
+    /// <ul> 
+    /// <li> <p>Queues: 100</p> </li> 
+    /// <li> <p>Routing profiles: 100</p> </li> 
+    /// <li> <p>Agents: 100</p> </li> 
+    /// <li> <p>Contact states: 9</p> </li> 
+    /// <li> <p>User hierarchy groups: 1</p> </li> 
+    /// </ul> 
+    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p> 
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::UserDataFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::UserDataFilters> {
         self.filters.as_ref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -54,17 +54,14 @@ impl GetCurrentUserDataInput {
 }
 impl GetCurrentUserDataInput {
     /// Creates a new builder-style object to manufacture [`GetCurrentUserDataInput`](crate::operation::get_current_user_data::GetCurrentUserDataInput).
-    pub fn builder(
-    ) -> crate::operation::get_current_user_data::builders::GetCurrentUserDataInputBuilder {
+    pub fn builder() -> crate::operation::get_current_user_data::builders::GetCurrentUserDataInputBuilder {
         crate::operation::get_current_user_data::builders::GetCurrentUserDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCurrentUserDataInput`](crate::operation::get_current_user_data::GetCurrentUserDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCurrentUserDataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::UserDataFilters>,
@@ -79,39 +76,51 @@ impl GetCurrentUserDataInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
-    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
-    /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Agents: 100</p> </li>
-    /// <li> <p>Contact states: 9</p> </li>
-    /// <li> <p>User hierarchy groups: 1</p> </li>
-    /// </ul>
-    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
+    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p> 
+    /// <ul> 
+    /// <li> <p>Queues: 100</p> </li> 
+    /// <li> <p>Routing profiles: 100</p> </li> 
+    /// <li> <p>Agents: 100</p> </li> 
+    /// <li> <p>Contact states: 9</p> </li> 
+    /// <li> <p>User hierarchy groups: 1</p> </li> 
+    /// </ul> 
+    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p> 
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn filters(mut self, input: crate::types::UserDataFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
-    /// <ul>
-    /// <li> <p>Queues: 100</p> </li>
-    /// <li> <p>Routing profiles: 100</p> </li>
-    /// <li> <p>Agents: 100</p> </li>
-    /// <li> <p>Contact states: 9</p> </li>
-    /// <li> <p>User hierarchy groups: 1</p> </li>
-    /// </ul>
-    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
+    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p> 
+    /// <ul> 
+    /// <li> <p>Queues: 100</p> </li> 
+    /// <li> <p>Routing profiles: 100</p> </li> 
+    /// <li> <p>Agents: 100</p> </li> 
+    /// <li> <p>Contact states: 9</p> </li> 
+    /// <li> <p>User hierarchy groups: 1</p> </li> 
+    /// </ul> 
+    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p> 
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDataFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::UserDataFilters>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p> 
+    /// <ul> 
+    /// <li> <p>Queues: 100</p> </li> 
+    /// <li> <p>Routing profiles: 100</p> </li> 
+    /// <li> <p>Agents: 100</p> </li> 
+    /// <li> <p>Contact states: 9</p> </li> 
+    /// <li> <p>User hierarchy groups: 1</p> </li> 
+    /// </ul> 
+    /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p> 
+    /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::UserDataFilters> {
+        &self.filters
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,8 +129,11 @@ impl GetCurrentUserDataInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -130,23 +142,26 @@ impl GetCurrentUserDataInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetCurrentUserDataInput`](crate::operation::get_current_user_data::GetCurrentUserDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_current_user_data::GetCurrentUserDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_current_user_data::GetCurrentUserDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_current_user_data::GetCurrentUserDataInput {
-                instance_id: self.instance_id,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                instance_id: self.instance_id
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

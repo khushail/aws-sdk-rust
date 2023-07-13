@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEventsConfigurationInput {
+pub struct DeleteEventsConfigurationInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DeleteEventsConfigurationInput {
 }
 impl DeleteEventsConfigurationInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The bot ID.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
 }
 impl DeleteEventsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventsConfigurationInput`](crate::operation::delete_events_configuration::DeleteEventsConfigurationInput).
-    pub fn builder() -> crate::operation::delete_events_configuration::builders::DeleteEventsConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_events_configuration::builders::DeleteEventsConfigurationInputBuilder {
         crate::operation::delete_events_configuration::builders::DeleteEventsConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventsConfigurationInput`](crate::operation::delete_events_configuration::DeleteEventsConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventsConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeleteEventsConfigurationInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The bot ID.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,21 +55,22 @@ impl DeleteEventsConfigurationInputBuilder {
     }
     /// <p>The bot ID.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
+    }
+    /// <p>The bot ID.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// Consumes the builder and constructs a [`DeleteEventsConfigurationInput`](crate::operation::delete_events_configuration::DeleteEventsConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_events_configuration::DeleteEventsConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_events_configuration::DeleteEventsConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_events_configuration::DeleteEventsConfigurationInput {
-                account_id: self.account_id,
-                bot_id: self.bot_id,
-            },
+                account_id: self.account_id
+                ,
+                bot_id: self.bot_id
+                ,
+            }
         )
     }
 }
+

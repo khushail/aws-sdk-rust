@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAddonVersionsInput {
+pub struct DescribeAddonVersionsInput  {
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
     #[doc(hidden)]
     pub kubernetes_version: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,50 +29,46 @@ pub struct DescribeAddonVersionsInput {
 }
 impl DescribeAddonVersionsInput {
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
-    pub fn kubernetes_version(&self) -> ::std::option::Option<&str> {
+    pub fn kubernetes_version(&self) -> ::std::option::Option<& str> {
         self.kubernetes_version.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
-    pub fn addon_name(&self) -> ::std::option::Option<&str> {
+    pub fn addon_name(&self) -> ::std::option::Option<& str> {
         self.addon_name.as_deref()
     }
     /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn types(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.types.as_deref()
     }
     /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
-    pub fn publishers(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn publishers(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.publishers.as_deref()
     }
     /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
-    pub fn owners(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn owners(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.owners.as_deref()
     }
 }
 impl DescribeAddonVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAddonVersionsInput`](crate::operation::describe_addon_versions::DescribeAddonVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder {
         crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddonVersionsInput`](crate::operation::describe_addon_versions::DescribeAddonVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddonVersionsInputBuilder {
     pub(crate) kubernetes_version: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -84,20 +80,17 @@ pub struct DescribeAddonVersionsInputBuilder {
 }
 impl DescribeAddonVersionsInputBuilder {
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
-    pub fn kubernetes_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kubernetes_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kubernetes_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
-    pub fn set_kubernetes_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.kubernetes_version = input;
-        self
+    pub fn set_kubernetes_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kubernetes_version = input; self
+    }
+    /// <p>The Kubernetes versions that you can use the add-on with.</p>
+    pub fn get_kubernetes_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kubernetes_version
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -106,22 +99,30 @@ impl DescribeAddonVersionsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> 
+    /// </note>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,8 +131,11 @@ impl DescribeAddonVersionsInputBuilder {
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_name = input;
-        self
+        self.addon_name = input; self
+    }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_name
     }
     /// Appends an item to `types`.
     ///
@@ -140,17 +144,17 @@ impl DescribeAddonVersionsInputBuilder {
     /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
     pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input.into());
-        self.types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.types = input; self
+    }
+    /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.types
     }
     /// Appends an item to `publishers`.
     ///
@@ -159,17 +163,17 @@ impl DescribeAddonVersionsInputBuilder {
     /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
     pub fn publishers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.publishers.unwrap_or_default();
-        v.push(input.into());
-        self.publishers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.publishers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
-    pub fn set_publishers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.publishers = input;
-        self
+    pub fn set_publishers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.publishers = input; self
+    }
+    /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
+    pub fn get_publishers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.publishers
     }
     /// Appends an item to `owners`.
     ///
@@ -178,35 +182,38 @@ impl DescribeAddonVersionsInputBuilder {
     /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
     pub fn owners(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.owners.unwrap_or_default();
-        v.push(input.into());
-        self.owners = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.owners = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
-    pub fn set_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.owners = input;
-        self
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.owners = input; self
+    }
+    /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
+    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.owners
     }
     /// Consumes the builder and constructs a [`DescribeAddonVersionsInput`](crate::operation::describe_addon_versions::DescribeAddonVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_addon_versions::DescribeAddonVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_addon_versions::DescribeAddonVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_addon_versions::DescribeAddonVersionsInput {
-                kubernetes_version: self.kubernetes_version,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                addon_name: self.addon_name,
-                types: self.types,
-                publishers: self.publishers,
-                owners: self.owners,
-            },
+                kubernetes_version: self.kubernetes_version
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                addon_name: self.addon_name
+                ,
+                types: self.types
+                ,
+                publishers: self.publishers
+                ,
+                owners: self.owners
+                ,
+            }
         )
     }
 }
+

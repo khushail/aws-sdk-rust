@@ -3,7 +3,7 @@
 /// <p>Contains the status of a component version in the IoT Greengrass service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudComponentStatus {
+pub struct CloudComponentStatus  {
     /// <p>The state of the component version.</p>
     #[doc(hidden)]
     pub component_state: ::std::option::Option<crate::types::CloudComponentState>,
@@ -12,14 +12,12 @@ pub struct CloudComponentStatus {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A dictionary of errors that communicate why the component version is in an error state. For example, if IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
     #[doc(hidden)]
-    pub errors: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li>
-    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
-    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
+    pub errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li> 
+    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li> 
+    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
@@ -29,32 +27,28 @@ pub struct CloudComponentStatus {
 }
 impl CloudComponentStatus {
     /// <p>The state of the component version.</p>
-    pub fn component_state(&self) -> ::std::option::Option<&crate::types::CloudComponentState> {
+    pub fn component_state(&self) -> ::std::option::Option<& crate::types::CloudComponentState> {
         self.component_state.as_ref()
     }
     /// <p>A message that communicates details, such as errors, about the status of the component version.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>A dictionary of errors that communicate why the component version is in an error state. For example, if IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn errors(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.errors.as_ref()
     }
-    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li>
-    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
-    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
+    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li> 
+    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li> 
+    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li> 
     /// </ul>
-    pub fn vendor_guidance(&self) -> ::std::option::Option<&crate::types::VendorGuidance> {
+    pub fn vendor_guidance(&self) -> ::std::option::Option<& crate::types::VendorGuidance> {
         self.vendor_guidance.as_ref()
     }
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
-    pub fn vendor_guidance_message(&self) -> ::std::option::Option<&str> {
+    pub fn vendor_guidance_message(&self) -> ::std::option::Option<& str> {
         self.vendor_guidance_message.as_deref()
     }
 }
@@ -67,15 +61,11 @@ impl CloudComponentStatus {
 
 /// A builder for [`CloudComponentStatus`](crate::types::CloudComponentStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudComponentStatusBuilder {
     pub(crate) component_state: ::std::option::Option<crate::types::CloudComponentState>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) errors: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     pub(crate) vendor_guidance_message: ::std::option::Option<::std::string::String>,
 }
@@ -86,12 +76,12 @@ impl CloudComponentStatusBuilder {
         self
     }
     /// <p>The state of the component version.</p>
-    pub fn set_component_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudComponentState>,
-    ) -> Self {
-        self.component_state = input;
-        self
+    pub fn set_component_state(mut self, input: ::std::option::Option<crate::types::CloudComponentState>) -> Self {
+        self.component_state = input; self
+    }
+    /// <p>The state of the component version.</p>
+    pub fn get_component_state(&self) -> &::std::option::Option<crate::types::CloudComponentState> {
+        &self.component_state
     }
     /// <p>A message that communicates details, such as errors, about the status of the component version.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,81 +90,86 @@ impl CloudComponentStatusBuilder {
     }
     /// <p>A message that communicates details, such as errors, about the status of the component version.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A message that communicates details, such as errors, about the status of the component version.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Adds a key-value pair to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
     /// <p>A dictionary of errors that communicate why the component version is in an error state. For example, if IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
-    pub fn errors(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn errors(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.errors.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.errors = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.errors = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A dictionary of errors that communicate why the component version is in an error state. For example, if IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.errors = input; self
     }
-    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li>
-    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
-    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
+    /// <p>A dictionary of errors that communicate why the component version is in an error state. For example, if IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.errors
+    }
+    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li> 
+    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li> 
+    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li> 
     /// </ul>
     pub fn vendor_guidance(mut self, input: crate::types::VendorGuidance) -> Self {
         self.vendor_guidance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li>
-    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
-    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
+    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li> 
+    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li> 
+    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li> 
     /// </ul>
-    pub fn set_vendor_guidance(
-        mut self,
-        input: ::std::option::Option<crate::types::VendorGuidance>,
-    ) -> Self {
-        self.vendor_guidance = input;
-        self
+    pub fn set_vendor_guidance(mut self, input: ::std::option::Option<crate::types::VendorGuidance>) -> Self {
+        self.vendor_guidance = input; self
+    }
+    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li> 
+    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li> 
+    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li> 
+    /// </ul>
+    pub fn get_vendor_guidance(&self) -> &::std::option::Option<crate::types::VendorGuidance> {
+        &self.vendor_guidance
     }
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
-    pub fn vendor_guidance_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vendor_guidance_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vendor_guidance_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
-    pub fn set_vendor_guidance_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vendor_guidance_message = input;
-        self
+    pub fn set_vendor_guidance_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vendor_guidance_message = input; self
+    }
+    /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
+    pub fn get_vendor_guidance_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_guidance_message
     }
     /// Consumes the builder and constructs a [`CloudComponentStatus`](crate::types::CloudComponentStatus).
     pub fn build(self) -> crate::types::CloudComponentStatus {
         crate::types::CloudComponentStatus {
-            component_state: self.component_state,
-            message: self.message,
-            errors: self.errors,
-            vendor_guidance: self.vendor_guidance,
-            vendor_guidance_message: self.vendor_guidance_message,
+            component_state: self.component_state
+            ,
+            message: self.message
+            ,
+            errors: self.errors
+            ,
+            vendor_guidance: self.vendor_guidance
+            ,
+            vendor_guidance_message: self.vendor_guidance_message
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon Lightsail instance that has access to a Lightsail bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceReceivingAccess {
+pub struct ResourceReceivingAccess  {
     /// <p>The name of the Lightsail instance.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ResourceReceivingAccess {
 }
 impl ResourceReceivingAccess {
     /// <p>The name of the Lightsail instance.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ResourceReceivingAccess {
 
 /// A builder for [`ResourceReceivingAccess`](crate::types::ResourceReceivingAccess).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceReceivingAccessBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ResourceReceivingAccessBuilder {
     }
     /// <p>The name of the Lightsail instance.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the Lightsail instance.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_type = input; self
+    }
+    /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResourceReceivingAccess`](crate::types::ResourceReceivingAccess).
     pub fn build(self) -> crate::types::ResourceReceivingAccess {
         crate::types::ResourceReceivingAccess {
-            name: self.name,
-            resource_type: self.resource_type,
+            name: self.name
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

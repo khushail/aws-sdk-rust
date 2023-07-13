@@ -3,94 +3,87 @@ pub use crate::operation::stop_multiplex::_stop_multiplex_output::StopMultiplexO
 
 pub use crate::operation::stop_multiplex::_stop_multiplex_input::StopMultiplexInputBuilder;
 
+impl StopMultiplexInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::stop_multiplex::StopMultiplexOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::stop_multiplex::StopMultiplexError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.stop_multiplex();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `StopMultiplex`.
-///
+/// 
 /// Stops a running multiplex. If the multiplex isn't running, this action has no effect.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopMultiplexFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::stop_multiplex::builders::StopMultiplexInputBuilder,
+                    inner: crate::operation::stop_multiplex::builders::StopMultiplexInputBuilder,
 }
-impl StopMultiplexFluentBuilder {
+impl StopMultiplexFluentBuilder  {
     /// Creates a new `StopMultiplex`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_multiplex::StopMultiplex,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_multiplex::StopMultiplexError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the StopMultiplex as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_multiplex::builders::StopMultiplexInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_multiplex::StopMultiplexOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_multiplex::StopMultiplexError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::stop_multiplex::StopMultiplex, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::stop_multiplex::StopMultiplexError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::stop_multiplex::StopMultiplexOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_multiplex::StopMultiplexError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_multiplex::StopMultiplexOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_multiplex::StopMultiplexError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_multiplex::StopMultiplex,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_multiplex::StopMultiplexError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::stop_multiplex::StopMultiplexOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_multiplex::StopMultiplexError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::stop_multiplex::StopMultiplex, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::stop_multiplex::StopMultiplexError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// The ID of the multiplex.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multiplex_id(input.into());
@@ -101,4 +94,9 @@ impl StopMultiplexFluentBuilder {
         self.inner = self.inner.set_multiplex_id(input);
         self
     }
+    /// The ID of the multiplex.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_multiplex_id()
+    }
 }
+

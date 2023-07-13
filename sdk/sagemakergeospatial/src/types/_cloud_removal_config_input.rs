@@ -3,7 +3,7 @@
 /// <p>Input structure for Cloud Removal Operation type</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudRemovalConfigInput {
+pub struct CloudRemovalConfigInput  {
     /// <p>The name of the algorithm used for cloud removal.</p>
     #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<crate::types::AlgorithmNameCloudRemoval>,
@@ -16,17 +16,15 @@ pub struct CloudRemovalConfigInput {
 }
 impl CloudRemovalConfigInput {
     /// <p>The name of the algorithm used for cloud removal.</p>
-    pub fn algorithm_name(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlgorithmNameCloudRemoval> {
+    pub fn algorithm_name(&self) -> ::std::option::Option<& crate::types::AlgorithmNameCloudRemoval> {
         self.algorithm_name.as_ref()
     }
     /// <p>The interpolation value you provide for cloud removal.</p>
-    pub fn interpolation_value(&self) -> ::std::option::Option<&str> {
+    pub fn interpolation_value(&self) -> ::std::option::Option<& str> {
         self.interpolation_value.as_deref()
     }
     /// <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
-    pub fn target_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn target_bands(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.target_bands.as_deref()
     }
 }
@@ -39,9 +37,7 @@ impl CloudRemovalConfigInput {
 
 /// A builder for [`CloudRemovalConfigInput`](crate::types::CloudRemovalConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudRemovalConfigInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<crate::types::AlgorithmNameCloudRemoval>,
     pub(crate) interpolation_value: ::std::option::Option<::std::string::String>,
@@ -54,28 +50,25 @@ impl CloudRemovalConfigInputBuilder {
         self
     }
     /// <p>The name of the algorithm used for cloud removal.</p>
-    pub fn set_algorithm_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AlgorithmNameCloudRemoval>,
-    ) -> Self {
-        self.algorithm_name = input;
-        self
+    pub fn set_algorithm_name(mut self, input: ::std::option::Option<crate::types::AlgorithmNameCloudRemoval>) -> Self {
+        self.algorithm_name = input; self
+    }
+    /// <p>The name of the algorithm used for cloud removal.</p>
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<crate::types::AlgorithmNameCloudRemoval> {
+        &self.algorithm_name
     }
     /// <p>The interpolation value you provide for cloud removal.</p>
-    pub fn interpolation_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interpolation_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interpolation_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The interpolation value you provide for cloud removal.</p>
-    pub fn set_interpolation_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.interpolation_value = input;
-        self
+    pub fn set_interpolation_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.interpolation_value = input; self
+    }
+    /// <p>The interpolation value you provide for cloud removal.</p>
+    pub fn get_interpolation_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interpolation_value
     }
     /// Appends an item to `target_bands`.
     ///
@@ -84,24 +77,28 @@ impl CloudRemovalConfigInputBuilder {
     /// <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
     pub fn target_bands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_bands.unwrap_or_default();
-        v.push(input.into());
-        self.target_bands = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_bands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
-    pub fn set_target_bands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.target_bands = input;
-        self
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.target_bands = input; self
+    }
+    /// <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_bands
     }
     /// Consumes the builder and constructs a [`CloudRemovalConfigInput`](crate::types::CloudRemovalConfigInput).
     pub fn build(self) -> crate::types::CloudRemovalConfigInput {
         crate::types::CloudRemovalConfigInput {
-            algorithm_name: self.algorithm_name,
-            interpolation_value: self.interpolation_value,
-            target_bands: self.target_bands,
+            algorithm_name: self.algorithm_name
+            ,
+            interpolation_value: self.interpolation_value
+            ,
+            target_bands: self.target_bands
+            ,
         }
     }
 }
+

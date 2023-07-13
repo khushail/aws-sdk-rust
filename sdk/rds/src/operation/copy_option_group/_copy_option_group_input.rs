@@ -3,22 +3,22 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyOptionGroupInput {
-    /// <p>The identifier for the source option group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must specify a valid option group.</p> </li>
+pub struct CopyOptionGroupInput  {
+    /// <p>The identifier for the source option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must specify a valid option group.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub source_option_group_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the copied option group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>The identifier for the copied option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Can't be null, empty, or blank</p> </li> 
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-option-group</code> </p>
     #[doc(hidden)]
     pub target_option_group_identifier: ::std::option::Option<::std::string::String>,
@@ -30,32 +30,32 @@ pub struct CopyOptionGroupInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyOptionGroupInput {
-    /// <p>The identifier for the source option group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// <p>The identifier for the source option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must specify a valid option group.</p> </li> 
     /// </ul>
-    pub fn source_option_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_option_group_identifier(&self) -> ::std::option::Option<& str> {
         self.source_option_group_identifier.as_deref()
     }
-    /// <p>The identifier for the copied option group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>The identifier for the copied option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Can't be null, empty, or blank</p> </li> 
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-option-group</code> </p>
-    pub fn target_option_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_option_group_identifier(&self) -> ::std::option::Option<& str> {
         self.target_option_group_identifier.as_deref()
     }
     /// <p>The description for the copied option group.</p>
-    pub fn target_option_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn target_option_group_description(&self) -> ::std::option::Option<& str> {
         self.target_option_group_description.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -68,9 +68,7 @@ impl CopyOptionGroupInput {
 
 /// A builder for [`CopyOptionGroupInput`](crate::operation::copy_option_group::CopyOptionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyOptionGroupInputBuilder {
     pub(crate) source_option_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_option_group_identifier: ::std::option::Option<::std::string::String>,
@@ -78,77 +76,80 @@ pub struct CopyOptionGroupInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyOptionGroupInputBuilder {
-    /// <p>The identifier for the source option group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// <p>The identifier for the source option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must specify a valid option group.</p> </li> 
     /// </ul>
-    pub fn source_option_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_option_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the source option group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must specify a valid option group.</p> </li>
+    /// <p>The identifier for the source option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must specify a valid option group.</p> </li> 
     /// </ul>
-    pub fn set_source_option_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_option_group_identifier = input;
-        self
+    pub fn set_source_option_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_option_group_identifier = input; self
     }
-    /// <p>The identifier for the copied option group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <p>The identifier for the source option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must specify a valid option group.</p> </li> 
     /// </ul>
+    pub fn get_source_option_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_option_group_identifier
+    }
+    /// <p>The identifier for the copied option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Can't be null, empty, or blank</p> </li> 
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-option-group</code> </p>
-    pub fn target_option_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_option_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the copied option group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>The identifier for the copied option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Can't be null, empty, or blank</p> </li> 
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-option-group</code> </p>
-    pub fn set_target_option_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_option_group_identifier = input;
-        self
+    pub fn set_target_option_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_option_group_identifier = input; self
+    }
+    /// <p>The identifier for the copied option group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Can't be null, empty, or blank</p> </li> 
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
+    /// <p>Example: <code>my-option-group</code> </p>
+    pub fn get_target_option_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_option_group_identifier
     }
     /// <p>The description for the copied option group.</p>
-    pub fn target_option_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_option_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_option_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the copied option group.</p>
-    pub fn set_target_option_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_option_group_description = input;
-        self
+    pub fn set_target_option_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_option_group_description = input; self
+    }
+    /// <p>The description for the copied option group.</p>
+    pub fn get_target_option_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_option_group_description
     }
     /// Appends an item to `tags`.
     ///
@@ -157,30 +158,32 @@ impl CopyOptionGroupInputBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CopyOptionGroupInput`](crate::operation::copy_option_group::CopyOptionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_option_group::CopyOptionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::copy_option_group::CopyOptionGroupInput {
-            source_option_group_identifier: self.source_option_group_identifier,
-            target_option_group_identifier: self.target_option_group_identifier,
-            target_option_group_description: self.target_option_group_description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_option_group::CopyOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_option_group::CopyOptionGroupInput {
+                source_option_group_identifier: self.source_option_group_identifier
+                ,
+                target_option_group_identifier: self.target_option_group_identifier
+                ,
+                target_option_group_description: self.target_option_group_description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

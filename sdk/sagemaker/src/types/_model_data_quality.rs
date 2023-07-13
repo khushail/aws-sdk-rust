@@ -3,7 +3,7 @@
 /// <p>Data quality constraints and statistics for a model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelDataQuality {
+pub struct ModelDataQuality  {
     /// <p>Data quality statistics for a model.</p>
     #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::MetricsSource>,
@@ -13,11 +13,11 @@ pub struct ModelDataQuality {
 }
 impl ModelDataQuality {
     /// <p>Data quality statistics for a model.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&crate::types::MetricsSource> {
+    pub fn statistics(&self) -> ::std::option::Option<& crate::types::MetricsSource> {
         self.statistics.as_ref()
     }
     /// <p>Data quality constraints for a model.</p>
-    pub fn constraints(&self) -> ::std::option::Option<&crate::types::MetricsSource> {
+    pub fn constraints(&self) -> ::std::option::Option<& crate::types::MetricsSource> {
         self.constraints.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl ModelDataQuality {
 
 /// A builder for [`ModelDataQuality`](crate::types::ModelDataQuality).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelDataQualityBuilder {
     pub(crate) statistics: ::std::option::Option<crate::types::MetricsSource>,
     pub(crate) constraints: ::std::option::Option<crate::types::MetricsSource>,
@@ -44,12 +42,12 @@ impl ModelDataQualityBuilder {
         self
     }
     /// <p>Data quality statistics for a model.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsSource>,
-    ) -> Self {
-        self.statistics = input;
-        self
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::MetricsSource>) -> Self {
+        self.statistics = input; self
+    }
+    /// <p>Data quality statistics for a model.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.statistics
     }
     /// <p>Data quality constraints for a model.</p>
     pub fn constraints(mut self, input: crate::types::MetricsSource) -> Self {
@@ -57,18 +55,21 @@ impl ModelDataQualityBuilder {
         self
     }
     /// <p>Data quality constraints for a model.</p>
-    pub fn set_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsSource>,
-    ) -> Self {
-        self.constraints = input;
-        self
+    pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::MetricsSource>) -> Self {
+        self.constraints = input; self
+    }
+    /// <p>Data quality constraints for a model.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.constraints
     }
     /// Consumes the builder and constructs a [`ModelDataQuality`](crate::types::ModelDataQuality).
     pub fn build(self) -> crate::types::ModelDataQuality {
         crate::types::ModelDataQuality {
-            statistics: self.statistics,
-            constraints: self.constraints,
+            statistics: self.statistics
+            ,
+            constraints: self.constraints
+            ,
         }
     }
 }
+

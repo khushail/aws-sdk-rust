@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllocateTransitVirtualInterfaceOutput {
+pub struct AllocateTransitVirtualInterfaceOutput  {
     /// <p>Information about a virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: ::std::option::Option<crate::types::VirtualInterface>,
@@ -10,27 +10,25 @@ pub struct AllocateTransitVirtualInterfaceOutput {
 }
 impl AllocateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
-    pub fn virtual_interface(&self) -> ::std::option::Option<&crate::types::VirtualInterface> {
+    pub fn virtual_interface(&self) -> ::std::option::Option<& crate::types::VirtualInterface> {
         self.virtual_interface.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for AllocateTransitVirtualInterfaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AllocateTransitVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`AllocateTransitVirtualInterfaceOutput`](crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceOutput).
-    pub fn builder() -> crate::operation::allocate_transit_virtual_interface::builders::AllocateTransitVirtualInterfaceOutputBuilder{
+    pub fn builder() -> crate::operation::allocate_transit_virtual_interface::builders::AllocateTransitVirtualInterfaceOutputBuilder {
         crate::operation::allocate_transit_virtual_interface::builders::AllocateTransitVirtualInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AllocateTransitVirtualInterfaceOutput`](crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllocateTransitVirtualInterfaceOutputBuilder {
     pub(crate) virtual_interface: ::std::option::Option<crate::types::VirtualInterface>,
     _request_id: Option<String>,
@@ -42,27 +40,24 @@ impl AllocateTransitVirtualInterfaceOutputBuilder {
         self
     }
     /// <p>Information about a virtual interface.</p>
-    pub fn set_virtual_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualInterface>,
-    ) -> Self {
-        self.virtual_interface = input;
-        self
+    pub fn set_virtual_interface(mut self, input: ::std::option::Option<crate::types::VirtualInterface>) -> Self {
+        self.virtual_interface = input; self
+    }
+    /// <p>Information about a virtual interface.</p>
+    pub fn get_virtual_interface(&self) -> &::std::option::Option<crate::types::VirtualInterface> {
+        &self.virtual_interface
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AllocateTransitVirtualInterfaceOutput`](crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceOutput
-    {
+    pub fn build(self) -> crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceOutput {
         crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceOutput {
             virtual_interface: self.virtual_interface
             ,
@@ -70,3 +65,4 @@ impl AllocateTransitVirtualInterfaceOutputBuilder {
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IssueDetected {
+pub struct IssueDetected  {
     /// <p>The offset for when the issue was detected in the segment.</p>
     #[doc(hidden)]
     pub character_offsets: ::std::option::Option<crate::types::CharacterOffsets>,
 }
 impl IssueDetected {
     /// <p>The offset for when the issue was detected in the segment.</p>
-    pub fn character_offsets(&self) -> ::std::option::Option<&crate::types::CharacterOffsets> {
+    pub fn character_offsets(&self) -> ::std::option::Option<& crate::types::CharacterOffsets> {
         self.character_offsets.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl IssueDetected {
 
 /// A builder for [`IssueDetected`](crate::types::IssueDetected).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IssueDetectedBuilder {
     pub(crate) character_offsets: ::std::option::Option<crate::types::CharacterOffsets>,
 }
@@ -36,17 +34,19 @@ impl IssueDetectedBuilder {
         self
     }
     /// <p>The offset for when the issue was detected in the segment.</p>
-    pub fn set_character_offsets(
-        mut self,
-        input: ::std::option::Option<crate::types::CharacterOffsets>,
-    ) -> Self {
-        self.character_offsets = input;
-        self
+    pub fn set_character_offsets(mut self, input: ::std::option::Option<crate::types::CharacterOffsets>) -> Self {
+        self.character_offsets = input; self
+    }
+    /// <p>The offset for when the issue was detected in the segment.</p>
+    pub fn get_character_offsets(&self) -> &::std::option::Option<crate::types::CharacterOffsets> {
+        &self.character_offsets
     }
     /// Consumes the builder and constructs a [`IssueDetected`](crate::types::IssueDetected).
     pub fn build(self) -> crate::types::IssueDetected {
         crate::types::IssueDetected {
-            character_offsets: self.character_offsets,
+            character_offsets: self.character_offsets
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplaceRouteInput {
+pub struct ReplaceRouteInput  {
     /// <p>The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
     #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
@@ -57,15 +57,15 @@ pub struct ReplaceRouteInput {
 }
 impl ReplaceRouteInput {
     /// <p>The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_ipv6_cidr_block.as_deref()
     }
     /// <p>The ID of the prefix list for the route.</p>
-    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.destination_prefix_list_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -73,19 +73,19 @@ impl ReplaceRouteInput {
         self.dry_run
     }
     /// <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<& str> {
         self.egress_only_internet_gateway_id.as_deref()
     }
     /// <p>The ID of an internet gateway or virtual private gateway.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The ID of a NAT instance in your VPC.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Specifies whether to reset the local route to its default target (<code>local</code>).</p>
@@ -93,35 +93,35 @@ impl ReplaceRouteInput {
         self.local_target
     }
     /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-    pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn nat_gateway_id(&self) -> ::std::option::Option<& str> {
         self.nat_gateway_id.as_deref()
     }
     /// <p>The ID of a transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_gateway_id(&self) -> ::std::option::Option<& str> {
         self.local_gateway_id.as_deref()
     }
     /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
-    pub fn carrier_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn carrier_gateway_id(&self) -> ::std::option::Option<& str> {
         self.carrier_gateway_id.as_deref()
     }
     /// <p>The ID of a network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<& str> {
         self.route_table_id.as_deref()
     }
     /// <p>The ID of a VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpc_peering_connection_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
-    pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_arn(&self) -> ::std::option::Option<& str> {
         self.core_network_arn.as_deref()
     }
 }
@@ -134,9 +134,7 @@ impl ReplaceRouteInput {
 
 /// A builder for [`ReplaceRouteInput`](crate::operation::replace_route::ReplaceRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceRouteInputBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
@@ -158,52 +156,43 @@ pub struct ReplaceRouteInputBuilder {
 }
 impl ReplaceRouteInputBuilder {
     /// <p>The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_cidr_block = input;
-        self
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_cidr_block = input; self
+    }
+    /// <p>The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
     }
     /// <p>The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn destination_ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn set_destination_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_ipv6_cidr_block = input;
-        self
+    pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_ipv6_cidr_block = input; self
+    }
+    /// <p>The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
+    pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ipv6_cidr_block
     }
     /// <p>The ID of the prefix list for the route.</p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list for the route.</p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_prefix_list_id = input;
-        self
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_prefix_list_id = input; self
+    }
+    /// <p>The ID of the prefix list for the route.</p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_prefix_list_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -212,40 +201,37 @@ impl ReplaceRouteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    pub fn vpc_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = input; self
+    }
+    /// <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
     }
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn egress_only_internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.egress_only_internet_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    pub fn set_egress_only_internet_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.egress_only_internet_gateway_id = input;
-        self
+    pub fn set_egress_only_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.egress_only_internet_gateway_id = input; self
+    }
+    /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+    pub fn get_egress_only_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.egress_only_internet_gateway_id
     }
     /// <p>The ID of an internet gateway or virtual private gateway.</p>
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -254,8 +240,11 @@ impl ReplaceRouteInputBuilder {
     }
     /// <p>The ID of an internet gateway or virtual private gateway.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
+    }
+    /// <p>The ID of an internet gateway or virtual private gateway.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
     }
     /// <p>The ID of a NAT instance in your VPC.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -264,8 +253,11 @@ impl ReplaceRouteInputBuilder {
     }
     /// <p>The ID of a NAT instance in your VPC.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The ID of a NAT instance in your VPC.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>Specifies whether to reset the local route to its default target (<code>local</code>).</p>
     pub fn local_target(mut self, input: bool) -> Self {
@@ -274,162 +266,156 @@ impl ReplaceRouteInputBuilder {
     }
     /// <p>Specifies whether to reset the local route to its default target (<code>local</code>).</p>
     pub fn set_local_target(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.local_target = input;
-        self
+        self.local_target = input; self
+    }
+    /// <p>Specifies whether to reset the local route to its default target (<code>local</code>).</p>
+    pub fn get_local_target(&self) -> &::std::option::Option<bool> {
+        &self.local_target
     }
     /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.nat_gateway_id = input;
-        self
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.nat_gateway_id = input; self
+    }
+    /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nat_gateway_id
     }
     /// <p>The ID of a transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transit_gateway_id = input;
-        self
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_id = input; self
+    }
+    /// <p>The ID of a transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn set_local_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.local_gateway_id = input;
-        self
+    pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.local_gateway_id = input; self
+    }
+    /// <p>The ID of the local gateway.</p>
+    pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_id
     }
     /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
-    pub fn carrier_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn carrier_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
-    pub fn set_carrier_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.carrier_gateway_id = input;
-        self
+    pub fn set_carrier_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.carrier_gateway_id = input; self
+    }
+    /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+    pub fn get_carrier_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.carrier_gateway_id
     }
     /// <p>The ID of a network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_interface_id = input; self
+    }
+    /// <p>The ID of a network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.route_table_id = input;
-        self
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.route_table_id = input; self
+    }
+    /// <p>The ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
     }
     /// <p>The ID of a VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a VPC peering connection.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_peering_connection_id = input;
-        self
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_peering_connection_id = input; self
+    }
+    /// <p>The ID of a VPC peering connection.</p>
+    pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_peering_connection_id
     }
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
-    pub fn core_network_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
-    pub fn set_core_network_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.core_network_arn = input;
-        self
+    pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.core_network_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the core network.</p>
+    pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_arn
     }
     /// Consumes the builder and constructs a [`ReplaceRouteInput`](crate::operation::replace_route::ReplaceRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::replace_route::ReplaceRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::replace_route::ReplaceRouteInput {
-            destination_cidr_block: self.destination_cidr_block,
-            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block,
-            destination_prefix_list_id: self.destination_prefix_list_id,
-            dry_run: self.dry_run,
-            vpc_endpoint_id: self.vpc_endpoint_id,
-            egress_only_internet_gateway_id: self.egress_only_internet_gateway_id,
-            gateway_id: self.gateway_id,
-            instance_id: self.instance_id,
-            local_target: self.local_target,
-            nat_gateway_id: self.nat_gateway_id,
-            transit_gateway_id: self.transit_gateway_id,
-            local_gateway_id: self.local_gateway_id,
-            carrier_gateway_id: self.carrier_gateway_id,
-            network_interface_id: self.network_interface_id,
-            route_table_id: self.route_table_id,
-            vpc_peering_connection_id: self.vpc_peering_connection_id,
-            core_network_arn: self.core_network_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::replace_route::ReplaceRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::replace_route::ReplaceRouteInput {
+                destination_cidr_block: self.destination_cidr_block
+                ,
+                destination_ipv6_cidr_block: self.destination_ipv6_cidr_block
+                ,
+                destination_prefix_list_id: self.destination_prefix_list_id
+                ,
+                dry_run: self.dry_run
+                ,
+                vpc_endpoint_id: self.vpc_endpoint_id
+                ,
+                egress_only_internet_gateway_id: self.egress_only_internet_gateway_id
+                ,
+                gateway_id: self.gateway_id
+                ,
+                instance_id: self.instance_id
+                ,
+                local_target: self.local_target
+                ,
+                nat_gateway_id: self.nat_gateway_id
+                ,
+                transit_gateway_id: self.transit_gateway_id
+                ,
+                local_gateway_id: self.local_gateway_id
+                ,
+                carrier_gateway_id: self.carrier_gateway_id
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                route_table_id: self.route_table_id
+                ,
+                vpc_peering_connection_id: self.vpc_peering_connection_id
+                ,
+                core_network_arn: self.core_network_arn
+                ,
+            }
+        )
     }
 }
+

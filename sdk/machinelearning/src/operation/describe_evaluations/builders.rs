@@ -3,143 +3,133 @@ pub use crate::operation::describe_evaluations::_describe_evaluations_output::De
 
 pub use crate::operation::describe_evaluations::_describe_evaluations_input::DescribeEvaluationsInputBuilder;
 
+impl DescribeEvaluationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_evaluations::DescribeEvaluationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_evaluations::DescribeEvaluationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_evaluations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeEvaluations`.
-///
+/// 
 /// <p>Returns a list of <code>DescribeEvaluations</code> that match the search criteria in the request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEvaluationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder,
+                    inner: crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder,
 }
-impl DescribeEvaluationsFluentBuilder {
+impl DescribeEvaluationsFluentBuilder  {
     /// Creates a new `DescribeEvaluations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_evaluations::DescribeEvaluations,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluations::DescribeEvaluationsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeEvaluations as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_evaluations::DescribeEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluations::DescribeEvaluationsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_evaluations::DescribeEvaluations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluations::DescribeEvaluationsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_evaluations::DescribeEvaluationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluations::DescribeEvaluationsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_evaluations::DescribeEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluations::DescribeEvaluationsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_evaluations::DescribeEvaluations,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluations::DescribeEvaluationsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_evaluations::DescribeEvaluationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluations::DescribeEvaluationsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_evaluations::DescribeEvaluations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluations::DescribeEvaluationsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator {
-        crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
-    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator {
+                                crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::new(self.handle, self.inner)
+                            }
+    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li> 
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
     /// </ul>
     pub fn filter_variable(mut self, input: crate::types::EvaluationFilterVariable) -> Self {
         self.inner = self.inner.filter_variable(input);
         self
     }
-    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
-    /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
-    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li> 
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
     /// </ul>
-    pub fn set_filter_variable(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFilterVariable>,
-    ) -> Self {
+    pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::EvaluationFilterVariable>) -> Self {
         self.inner = self.inner.set_filter_variable(input);
         self
+    }
+    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li> 
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li> 
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> 
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li> 
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> 
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> 
+    /// </ul>
+    pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::EvaluationFilterVariable> {
+        self.inner.get_filter_variable()
     }
     /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn eq(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,6 +141,10 @@ impl DescribeEvaluationsFluentBuilder {
         self.inner = self.inner.set_eq(input);
         self
     }
+    /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    pub fn get_eq(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_eq()
+    }
     /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn gt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gt(input.into());
@@ -160,6 +154,10 @@ impl DescribeEvaluationsFluentBuilder {
     pub fn set_gt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gt(input);
         self
+    }
+    /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    pub fn get_gt(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gt()
     }
     /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn lt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,6 +169,10 @@ impl DescribeEvaluationsFluentBuilder {
         self.inner = self.inner.set_lt(input);
         self
     }
+    /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    pub fn get_lt(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lt()
+    }
     /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub fn ge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ge(input.into());
@@ -180,6 +182,10 @@ impl DescribeEvaluationsFluentBuilder {
     pub fn set_ge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ge(input);
         self
+    }
+    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    pub fn get_ge(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ge()
     }
     /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub fn le(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -191,6 +197,10 @@ impl DescribeEvaluationsFluentBuilder {
         self.inner = self.inner.set_le(input);
         self
     }
+    /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    pub fn get_le(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_le()
+    }
     /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub fn ne(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ne(input.into());
@@ -201,47 +211,70 @@ impl DescribeEvaluationsFluentBuilder {
         self.inner = self.inner.set_ne(input);
         self
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    pub fn get_ne(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ne()
+    }
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
         self
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
-    /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
+    /// <ul> 
+    /// <li> <p>2014-09</p> </li> 
+    /// <li> <p>2014-09-09</p> </li> 
+    /// <li> <p>2014-09-09-Holiday</p> </li> 
     /// </ul>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix()
+    }
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
-    /// </ul>
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
+    /// </ul> 
+    /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>The ID of the page in the paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -253,6 +286,10 @@ impl DescribeEvaluationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The ID of the page in the paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -263,4 +300,9 @@ impl DescribeEvaluationsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
 }
+

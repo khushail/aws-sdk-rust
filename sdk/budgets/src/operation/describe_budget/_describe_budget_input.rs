@@ -3,7 +3,7 @@
 /// <p> Request of DescribeBudget </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBudgetInput {
+pub struct DescribeBudgetInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DescribeBudgetInput {
 }
 impl DescribeBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget that you want a description of.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<& str> {
         self.budget_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DescribeBudgetInput {
 
 /// A builder for [`DescribeBudgetInput`](crate::operation::describe_budget::DescribeBudgetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DescribeBudgetInputBuilder {
     }
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The name of the budget that you want a description of.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,19 +56,22 @@ impl DescribeBudgetInputBuilder {
     }
     /// <p>The name of the budget that you want a description of.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
+    }
+    /// <p>The name of the budget that you want a description of.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// Consumes the builder and constructs a [`DescribeBudgetInput`](crate::operation::describe_budget::DescribeBudgetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_budget::DescribeBudgetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_budget::DescribeBudgetInput {
-            account_id: self.account_id,
-            budget_name: self.budget_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_budget::DescribeBudgetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_budget::DescribeBudgetInput {
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+            }
+        )
     }
 }
+

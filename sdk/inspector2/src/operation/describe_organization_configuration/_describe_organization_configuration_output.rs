@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationOutput {
+pub struct DescribeOrganizationConfigurationOutput  {
     /// <p>The scan types are automatically enabled for new members of your organization.</p>
     #[doc(hidden)]
     pub auto_enable: ::std::option::Option<crate::types::AutoEnable>,
@@ -13,7 +13,7 @@ pub struct DescribeOrganizationConfigurationOutput {
 }
 impl DescribeOrganizationConfigurationOutput {
     /// <p>The scan types are automatically enabled for new members of your organization.</p>
-    pub fn auto_enable(&self) -> ::std::option::Option<&crate::types::AutoEnable> {
+    pub fn auto_enable(&self) -> ::std::option::Option<& crate::types::AutoEnable> {
         self.auto_enable.as_ref()
     }
     /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
@@ -22,22 +22,20 @@ impl DescribeOrganizationConfigurationOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeOrganizationConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationOutputBuilder {
     pub(crate) auto_enable: ::std::option::Option<crate::types::AutoEnable>,
     pub(crate) max_account_limit_reached: ::std::option::Option<bool>,
@@ -50,12 +48,12 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         self
     }
     /// <p>The scan types are automatically enabled for new members of your organization.</p>
-    pub fn set_auto_enable(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoEnable>,
-    ) -> Self {
-        self.auto_enable = input;
-        self
+    pub fn set_auto_enable(mut self, input: ::std::option::Option<crate::types::AutoEnable>) -> Self {
+        self.auto_enable = input; self
+    }
+    /// <p>The scan types are automatically enabled for new members of your organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::AutoEnable> {
+        &self.auto_enable
     }
     /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
     pub fn max_account_limit_reached(mut self, input: bool) -> Self {
@@ -64,20 +62,23 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     }
     /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
     pub fn set_max_account_limit_reached(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.max_account_limit_reached = input;
-        self
+        self.max_account_limit_reached = input; self
+    }
+    /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
+    pub fn get_max_account_limit_reached(&self) -> &::std::option::Option<bool> {
+        &self.max_account_limit_reached
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
             auto_enable: self.auto_enable
             ,
@@ -87,3 +88,4 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         }
     }
 }
+

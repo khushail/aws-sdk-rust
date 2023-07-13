@@ -2,68 +2,67 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSubscriberOutput {
-    /// <p>The account of the subscriber.</p>
+pub struct UpdateSubscriberOutput  {
+    /// <p>The updated subscriber information.</p>
     #[doc(hidden)]
     pub subscriber: ::std::option::Option<crate::types::SubscriberResource>,
     _request_id: Option<String>,
 }
 impl UpdateSubscriberOutput {
-    /// <p>The account of the subscriber.</p>
-    pub fn subscriber(&self) -> ::std::option::Option<&crate::types::SubscriberResource> {
+    /// <p>The updated subscriber information.</p>
+    pub fn subscriber(&self) -> ::std::option::Option<& crate::types::SubscriberResource> {
         self.subscriber.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateSubscriberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput).
-    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberOutputBuilder {
         crate::operation::update_subscriber::builders::UpdateSubscriberOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSubscriberOutputBuilder {
     pub(crate) subscriber: ::std::option::Option<crate::types::SubscriberResource>,
     _request_id: Option<String>,
 }
 impl UpdateSubscriberOutputBuilder {
-    /// <p>The account of the subscriber.</p>
+    /// <p>The updated subscriber information.</p>
     pub fn subscriber(mut self, input: crate::types::SubscriberResource) -> Self {
         self.subscriber = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The account of the subscriber.</p>
-    pub fn set_subscriber(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriberResource>,
-    ) -> Self {
-        self.subscriber = input;
-        self
+    /// <p>The updated subscriber information.</p>
+    pub fn set_subscriber(mut self, input: ::std::option::Option<crate::types::SubscriberResource>) -> Self {
+        self.subscriber = input; self
+    }
+    /// <p>The updated subscriber information.</p>
+    pub fn get_subscriber(&self) -> &::std::option::Option<crate::types::SubscriberResource> {
+        &self.subscriber
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput).
     pub fn build(self) -> crate::operation::update_subscriber::UpdateSubscriberOutput {
         crate::operation::update_subscriber::UpdateSubscriberOutput {
-            subscriber: self.subscriber,
+            subscriber: self.subscriber
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

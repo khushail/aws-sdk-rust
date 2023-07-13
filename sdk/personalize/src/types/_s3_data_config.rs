@@ -3,7 +3,7 @@
 /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DataConfig {
+pub struct S3DataConfig  {
     /// <p>The file path of the Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3DataConfig {
 }
 impl S3DataConfig {
     /// <p>The file path of the Amazon S3 bucket.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl S3DataConfig {
 
 /// A builder for [`S3DataConfig`](crate::types::S3DataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DataConfigBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl S3DataConfigBuilder {
     }
     /// <p>The file path of the Amazon S3 bucket.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
+    }
+    /// <p>The file path of the Amazon S3 bucket.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl S3DataConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`S3DataConfig`](crate::types::S3DataConfig).
     pub fn build(self) -> crate::types::S3DataConfig {
         crate::types::S3DataConfig {
-            path: self.path,
-            kms_key_arn: self.kms_key_arn,
+            path: self.path
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
         }
     }
 }
+

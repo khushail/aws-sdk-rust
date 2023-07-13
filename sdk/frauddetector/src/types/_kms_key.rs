@@ -3,14 +3,14 @@
 /// <p>The KMS key details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KmsKey {
+pub struct KmsKey  {
     /// <p>The encryption key ARN.</p>
     #[doc(hidden)]
     pub kms_encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KmsKey {
     /// <p>The encryption key ARN.</p>
-    pub fn kms_encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_encryption_key_arn.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl KmsKey {
 
 /// A builder for [`KmsKey`](crate::types::KmsKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KmsKeyBuilder {
     pub(crate) kms_encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KmsKeyBuilder {
     /// <p>The encryption key ARN.</p>
-    pub fn kms_encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encryption key ARN.</p>
-    pub fn set_kms_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.kms_encryption_key_arn = input;
-        self
+    pub fn set_kms_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_encryption_key_arn = input; self
+    }
+    /// <p>The encryption key ARN.</p>
+    pub fn get_kms_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_encryption_key_arn
     }
     /// Consumes the builder and constructs a [`KmsKey`](crate::types::KmsKey).
     pub fn build(self) -> crate::types::KmsKey {
         crate::types::KmsKey {
-            kms_encryption_key_arn: self.kms_encryption_key_arn,
+            kms_encryption_key_arn: self.kms_encryption_key_arn
+            ,
         }
     }
 }
+

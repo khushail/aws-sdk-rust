@@ -3,7 +3,7 @@
 /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SsmActionDefinition {
+pub struct SsmActionDefinition  {
     /// <p>The action subType. </p>
     #[doc(hidden)]
     pub action_sub_type: ::std::option::Option<crate::types::ActionSubType>,
@@ -16,15 +16,15 @@ pub struct SsmActionDefinition {
 }
 impl SsmActionDefinition {
     /// <p>The action subType. </p>
-    pub fn action_sub_type(&self) -> ::std::option::Option<&crate::types::ActionSubType> {
+    pub fn action_sub_type(&self) -> ::std::option::Option<& crate::types::ActionSubType> {
         self.action_sub_type.as_ref()
     }
     /// <p>The Region to run the SSM document. </p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The EC2 and RDS instance IDs. </p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn instance_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.instance_ids.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl SsmActionDefinition {
 
 /// A builder for [`SsmActionDefinition`](crate::types::SsmActionDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SsmActionDefinitionBuilder {
     pub(crate) action_sub_type: ::std::option::Option<crate::types::ActionSubType>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl SsmActionDefinitionBuilder {
         self
     }
     /// <p>The action subType. </p>
-    pub fn set_action_sub_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionSubType>,
-    ) -> Self {
-        self.action_sub_type = input;
-        self
+    pub fn set_action_sub_type(mut self, input: ::std::option::Option<crate::types::ActionSubType>) -> Self {
+        self.action_sub_type = input; self
+    }
+    /// <p>The action subType. </p>
+    pub fn get_action_sub_type(&self) -> &::std::option::Option<crate::types::ActionSubType> {
+        &self.action_sub_type
     }
     /// <p>The Region to run the SSM document. </p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +64,11 @@ impl SsmActionDefinitionBuilder {
     }
     /// <p>The Region to run the SSM document. </p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
+    }
+    /// <p>The Region to run the SSM document. </p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -76,24 +77,28 @@ impl SsmActionDefinitionBuilder {
     /// <p>The EC2 and RDS instance IDs. </p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EC2 and RDS instance IDs. </p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.instance_ids = input; self
+    }
+    /// <p>The EC2 and RDS instance IDs. </p>
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
     }
     /// Consumes the builder and constructs a [`SsmActionDefinition`](crate::types::SsmActionDefinition).
     pub fn build(self) -> crate::types::SsmActionDefinition {
         crate::types::SsmActionDefinition {
-            action_sub_type: self.action_sub_type,
-            region: self.region,
-            instance_ids: self.instance_ids,
+            action_sub_type: self.action_sub_type
+            ,
+            region: self.region
+            ,
+            instance_ids: self.instance_ids
+            ,
         }
     }
 }
+

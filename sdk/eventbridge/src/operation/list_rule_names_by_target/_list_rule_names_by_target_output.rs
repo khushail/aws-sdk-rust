@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRuleNamesByTargetOutput {
+pub struct ListRuleNamesByTargetOutput  {
     /// <p>The names of the rules that can invoke the given target.</p>
     #[doc(hidden)]
     pub rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,33 +13,29 @@ pub struct ListRuleNamesByTargetOutput {
 }
 impl ListRuleNamesByTargetOutput {
     /// <p>The names of the rules that can invoke the given target.</p>
-    pub fn rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn rule_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.rule_names.as_deref()
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRuleNamesByTargetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListRuleNamesByTargetOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleNamesByTargetOutput`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetOutputBuilder {
         crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRuleNamesByTargetOutput`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleNamesByTargetOutputBuilder {
     pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,17 @@ impl ListRuleNamesByTargetOutputBuilder {
     /// <p>The names of the rules that can invoke the given target.</p>
     pub fn rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.rule_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rule_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the rules that can invoke the given target.</p>
-    pub fn set_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.rule_names = input;
-        self
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.rule_names = input; self
+    }
+    /// <p>The names of the rules that can invoke the given target.</p>
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rule_names
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +68,30 @@ impl ListRuleNamesByTargetOutputBuilder {
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListRuleNamesByTargetOutput`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput).
     pub fn build(self) -> crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput {
         crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput {
-            rule_names: self.rule_names,
-            next_token: self.next_token,
+            rule_names: self.rule_names
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

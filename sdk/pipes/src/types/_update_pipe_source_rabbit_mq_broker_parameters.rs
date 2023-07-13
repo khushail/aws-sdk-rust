@@ -3,7 +3,7 @@
 /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePipeSourceRabbitMqBrokerParameters {
+pub struct UpdatePipeSourceRabbitMqBrokerParameters  {
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
@@ -16,7 +16,7 @@ pub struct UpdatePipeSourceRabbitMqBrokerParameters {
 }
 impl UpdatePipeSourceRabbitMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&crate::types::MqBrokerAccessCredentials> {
+    pub fn credentials(&self) -> ::std::option::Option<& crate::types::MqBrokerAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -37,9 +37,7 @@ impl UpdatePipeSourceRabbitMqBrokerParameters {
 
 /// A builder for [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::types::UpdatePipeSourceRabbitMqBrokerParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceRabbitMqBrokerParametersBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     pub(crate) batch_size: ::std::option::Option<i32>,
@@ -52,12 +50,12 @@ impl UpdatePipeSourceRabbitMqBrokerParametersBuilder {
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
-    ) -> Self {
-        self.credentials = input;
-        self
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::MqBrokerAccessCredentials>) -> Self {
+        self.credentials = input; self
+    }
+    /// <p>The credentials needed to access the resource.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::MqBrokerAccessCredentials> {
+        &self.credentials
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
@@ -66,8 +64,11 @@ impl UpdatePipeSourceRabbitMqBrokerParametersBuilder {
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.batch_size = input;
-        self
+        self.batch_size = input; self
+    }
+    /// <p>The maximum number of records to include in each batch.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -75,19 +76,23 @@ impl UpdatePipeSourceRabbitMqBrokerParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.maximum_batching_window_in_seconds = input;
-        self
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_batching_window_in_seconds = input; self
+    }
+    /// <p>The maximum length of a time to wait for events.</p>
+    pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_batching_window_in_seconds
     }
     /// Consumes the builder and constructs a [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::types::UpdatePipeSourceRabbitMqBrokerParameters).
     pub fn build(self) -> crate::types::UpdatePipeSourceRabbitMqBrokerParameters {
         crate::types::UpdatePipeSourceRabbitMqBrokerParameters {
-            credentials: self.credentials,
-            batch_size: self.batch_size,
-            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+            credentials: self.credentials
+            ,
+            batch_size: self.batch_size
+            ,
+            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+            ,
         }
     }
 }
+

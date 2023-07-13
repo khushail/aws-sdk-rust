@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestIdentityProviderOutput {
+pub struct TestIdentityProviderOutput  {
     /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
     #[doc(hidden)]
     pub response: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     #[doc(hidden)]
     pub status_code: i32,
-    /// <p>A message that indicates whether the test was successful or not.</p> <note>
-    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note> 
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p> 
     /// </note>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -21,42 +21,39 @@ pub struct TestIdentityProviderOutput {
 }
 impl TestIdentityProviderOutput {
     /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
-    pub fn response(&self) -> ::std::option::Option<&str> {
+    pub fn response(&self) -> ::std::option::Option<& str> {
         self.response.as_deref()
     }
     /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
-    /// <p>A message that indicates whether the test was successful or not.</p> <note>
-    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note> 
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p> 
     /// </note>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The endpoint of the service used to authenticate a user.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for TestIdentityProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl TestIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`TestIdentityProviderOutput`](crate::operation::test_identity_provider::TestIdentityProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder {
+    pub fn builder() -> crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder {
         crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestIdentityProviderOutput`](crate::operation::test_identity_provider::TestIdentityProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestIdentityProviderOutputBuilder {
     pub(crate) response: ::std::option::Option<::std::string::String>,
     pub(crate) status_code: ::std::option::Option<i32>,
@@ -72,8 +69,11 @@ impl TestIdentityProviderOutputBuilder {
     }
     /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
     pub fn set_response(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.response = input;
-        self
+        self.response = input; self
+    }
+    /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
+    pub fn get_response(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response
     }
     /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     pub fn status_code(mut self, input: i32) -> Self {
@@ -82,22 +82,30 @@ impl TestIdentityProviderOutputBuilder {
     }
     /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
-    /// <p>A message that indicates whether the test was successful or not.</p> <note>
-    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+    /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
+    }
+    /// <p>A message that indicates whether the test was successful or not.</p> <note> 
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p> 
     /// </note>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A message that indicates whether the test was successful or not.</p> <note>
-    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note> 
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p> 
     /// </note>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A message that indicates whether the test was successful or not.</p> <note> 
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p> 
+    /// </note>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The endpoint of the service used to authenticate a user.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,26 +114,35 @@ impl TestIdentityProviderOutputBuilder {
     }
     /// <p>The endpoint of the service used to authenticate a user.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// <p>The endpoint of the service used to authenticate a user.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`TestIdentityProviderOutput`](crate::operation::test_identity_provider::TestIdentityProviderOutput).
     pub fn build(self) -> crate::operation::test_identity_provider::TestIdentityProviderOutput {
         crate::operation::test_identity_provider::TestIdentityProviderOutput {
-            response: self.response,
-            status_code: self.status_code.unwrap_or_default(),
-            message: self.message,
-            url: self.url,
+            response: self.response
+            ,
+            status_code: self.status_code
+                .unwrap_or_default()
+            ,
+            message: self.message
+            ,
+            url: self.url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

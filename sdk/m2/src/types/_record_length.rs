@@ -3,7 +3,7 @@
 /// <p>The length of the records in the data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordLength {
+pub struct RecordLength  {
     /// <p>The minimum record length of a record.</p>
     #[doc(hidden)]
     pub min: i32,
@@ -30,9 +30,7 @@ impl RecordLength {
 
 /// A builder for [`RecordLength`](crate::types::RecordLength).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordLengthBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl RecordLengthBuilder {
     }
     /// <p>The minimum record length of a record.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
+    }
+    /// <p>The minimum record length of a record.</p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
     }
     /// <p>The maximum record length. In case of fixed, both minimum and maximum are the same.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -55,14 +56,22 @@ impl RecordLengthBuilder {
     }
     /// <p>The maximum record length. In case of fixed, both minimum and maximum are the same.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
+    }
+    /// <p>The maximum record length. In case of fixed, both minimum and maximum are the same.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`RecordLength`](crate::types::RecordLength).
     pub fn build(self) -> crate::types::RecordLength {
         crate::types::RecordLength {
-            min: self.min.unwrap_or_default(),
-            max: self.max.unwrap_or_default(),
+            min: self.min
+                .unwrap_or_default()
+            ,
+            max: self.max
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

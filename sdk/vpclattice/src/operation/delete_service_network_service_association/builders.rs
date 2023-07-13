@@ -3,94 +3,100 @@ pub use crate::operation::delete_service_network_service_association::_delete_se
 
 pub use crate::operation::delete_service_network_service_association::_delete_service_network_service_association_input::DeleteServiceNetworkServiceAssociationInputBuilder;
 
+impl DeleteServiceNetworkServiceAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.delete_service_network_service_association();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DeleteServiceNetworkServiceAssociation`.
-///
+/// 
 /// <p>Deletes the association between a specified service and the specific service network. This request will fail if an association is still in progress.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceNetworkServiceAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationInputBuilder,
 }
-impl DeleteServiceNetworkServiceAssociationFluentBuilder {
+impl DeleteServiceNetworkServiceAssociationFluentBuilder  {
     /// Creates a new `DeleteServiceNetworkServiceAssociation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteServiceNetworkServiceAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_service_association_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .service_network_service_association_identifier(input.into());
+    pub fn service_network_service_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.service_network_service_association_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn set_service_network_service_association_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_service_network_service_association_identifier(input);
+    pub fn set_service_network_service_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_service_network_service_association_identifier(input);
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    pub fn get_service_network_service_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_network_service_association_identifier()
     }
 }
+

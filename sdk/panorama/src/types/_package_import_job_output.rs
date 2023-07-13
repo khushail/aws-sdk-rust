@@ -3,7 +3,7 @@
 /// <p>Results of a package import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageImportJobOutput {
+pub struct PackageImportJobOutput  {
     /// <p>The package's ID.</p>
     #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct PackageImportJobOutput {
 }
 impl PackageImportJobOutput {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>The package's version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The package's patch version.</p>
-    pub fn patch_version(&self) -> ::std::option::Option<&str> {
+    pub fn patch_version(&self) -> ::std::option::Option<& str> {
         self.patch_version.as_deref()
     }
     /// <p>The package's output location.</p>
-    pub fn output_s3_location(&self) -> ::std::option::Option<&crate::types::OutPutS3Location> {
+    pub fn output_s3_location(&self) -> ::std::option::Option<& crate::types::OutPutS3Location> {
         self.output_s3_location.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl PackageImportJobOutput {
 
 /// A builder for [`PackageImportJobOutput`](crate::types::PackageImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageImportJobOutputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) package_version: ::std::option::Option<::std::string::String>,
@@ -61,40 +59,37 @@ impl PackageImportJobOutputBuilder {
     }
     /// <p>The package's ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
+    }
+    /// <p>The package's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
     }
     /// <p>The package's version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package's version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.package_version = input;
-        self
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.package_version = input; self
+    }
+    /// <p>The package's version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
     }
     /// <p>The package's patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package's patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.patch_version = input;
-        self
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.patch_version = input; self
+    }
+    /// <p>The package's patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
     }
     /// <p>The package's output location.</p>
     pub fn output_s3_location(mut self, input: crate::types::OutPutS3Location) -> Self {
@@ -102,20 +97,25 @@ impl PackageImportJobOutputBuilder {
         self
     }
     /// <p>The package's output location.</p>
-    pub fn set_output_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::OutPutS3Location>,
-    ) -> Self {
-        self.output_s3_location = input;
-        self
+    pub fn set_output_s3_location(mut self, input: ::std::option::Option<crate::types::OutPutS3Location>) -> Self {
+        self.output_s3_location = input; self
+    }
+    /// <p>The package's output location.</p>
+    pub fn get_output_s3_location(&self) -> &::std::option::Option<crate::types::OutPutS3Location> {
+        &self.output_s3_location
     }
     /// Consumes the builder and constructs a [`PackageImportJobOutput`](crate::types::PackageImportJobOutput).
     pub fn build(self) -> crate::types::PackageImportJobOutput {
         crate::types::PackageImportJobOutput {
-            package_id: self.package_id,
-            package_version: self.package_version,
-            patch_version: self.patch_version,
-            output_s3_location: self.output_s3_location,
+            package_id: self.package_id
+            ,
+            package_version: self.package_version
+            ,
+            patch_version: self.patch_version
+            ,
+            output_s3_location: self.output_s3_location
+            ,
         }
     }
 }
+

@@ -3,24 +3,21 @@
 /// <p>Specifies a header as an aggregate key for a rate-based rule. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RateLimitHeader {
+pub struct RateLimitHeader  {
     /// <p>The name of the header to use. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
     #[doc(hidden)]
-    pub text_transformations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
 }
 impl RateLimitHeader {
     /// <p>The name of the header to use. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
-    pub fn text_transformations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TextTransformation]> {
+    pub fn text_transformations(&self) -> ::std::option::Option<& [crate::types::TextTransformation]> {
         self.text_transformations.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl RateLimitHeader {
 
 /// A builder for [`RateLimitHeader`](crate::types::RateLimitHeader).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RateLimitHeaderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) text_transformations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
 }
 impl RateLimitHeaderBuilder {
     /// <p>The name of the header to use. </p>
@@ -49,8 +43,11 @@ impl RateLimitHeaderBuilder {
     }
     /// <p>The name of the header to use. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the header to use. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `text_transformations`.
     ///
@@ -59,23 +56,26 @@ impl RateLimitHeaderBuilder {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
-        v.push(input);
-        self.text_transformations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.text_transformations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
-    pub fn set_text_transformations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
-    ) -> Self {
-        self.text_transformations = input;
-        self
+    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>) -> Self {
+        self.text_transformations = input; self
+    }
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
+    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
+        &self.text_transformations
     }
     /// Consumes the builder and constructs a [`RateLimitHeader`](crate::types::RateLimitHeader).
     pub fn build(self) -> crate::types::RateLimitHeader {
         crate::types::RateLimitHeader {
-            name: self.name,
-            text_transformations: self.text_transformations,
+            name: self.name
+            ,
+            text_transformations: self.text_transformations
+            ,
         }
     }
 }
+

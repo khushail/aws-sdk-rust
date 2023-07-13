@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResyncMfaDeviceOutput {
+pub struct ResyncMfaDeviceOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for ResyncMfaDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ResyncMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`ResyncMfaDeviceOutput`](crate::operation::resync_mfa_device::ResyncMfaDeviceOutput).
-    pub fn builder() -> crate::operation::resync_mfa_device::builders::ResyncMfaDeviceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::resync_mfa_device::builders::ResyncMfaDeviceOutputBuilder {
         crate::operation::resync_mfa_device::builders::ResyncMfaDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResyncMfaDeviceOutput`](crate::operation::resync_mfa_device::ResyncMfaDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResyncMfaDeviceOutputBuilder {
     _request_id: Option<String>,
 }
 impl ResyncMfaDeviceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ResyncMfaDeviceOutput`](crate::operation::resync_mfa_device::ResyncMfaDeviceOutput).
     pub fn build(self) -> crate::operation::resync_mfa_device::ResyncMfaDeviceOutput {
         crate::operation::resync_mfa_device::ResyncMfaDeviceOutput {
@@ -43,3 +40,4 @@ impl ResyncMfaDeviceOutputBuilder {
         }
     }
 }
+

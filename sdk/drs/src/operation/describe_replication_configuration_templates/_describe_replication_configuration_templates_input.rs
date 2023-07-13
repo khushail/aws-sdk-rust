@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicationConfigurationTemplatesInput {
+pub struct DescribeReplicationConfigurationTemplatesInput  {
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
     #[doc(hidden)]
-    pub replication_configuration_template_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,9 +15,7 @@ pub struct DescribeReplicationConfigurationTemplatesInput {
 }
 impl DescribeReplicationConfigurationTemplatesInput {
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-    pub fn replication_configuration_template_i_ds(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn replication_configuration_template_i_ds(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.replication_configuration_template_i_ds.as_deref()
     }
     /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
@@ -26,25 +23,22 @@ impl DescribeReplicationConfigurationTemplatesInput {
         self.max_results
     }
     /// <p>The token of the next Replication Configuration Template to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeReplicationConfigurationTemplatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationTemplatesInput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput).
-    pub fn builder() -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesInputBuilder {
         crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationConfigurationTemplatesInput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesInputBuilder {
-    pub(crate) replication_configuration_template_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -54,24 +48,19 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
     /// To override the contents of this collection use [`set_replication_configuration_template_i_ds`](Self::set_replication_configuration_template_i_ds).
     ///
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-    pub fn replication_configuration_template_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .replication_configuration_template_i_ds
-            .unwrap_or_default();
-        v.push(input.into());
-        self.replication_configuration_template_i_ds = ::std::option::Option::Some(v);
-        self
+    pub fn replication_configuration_template_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_configuration_template_i_ds.unwrap_or_default();
+                        v.push(input.into());
+                        self.replication_configuration_template_i_ds = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-    pub fn set_replication_configuration_template_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.replication_configuration_template_i_ds = input;
-        self
+    pub fn set_replication_configuration_template_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.replication_configuration_template_i_ds = input; self
+    }
+    /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
+    pub fn get_replication_configuration_template_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_configuration_template_i_ds
     }
     /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -80,8 +69,11 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
     }
     /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token of the next Replication Configuration Template to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,11 +82,14 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
     }
     /// <p>The token of the next Replication Configuration Template to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token of the next Replication Configuration Template to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigurationTemplatesInput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput {
                 replication_configuration_template_i_ds: self.replication_configuration_template_i_ds
@@ -108,3 +103,4 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
         )
     }
 }
+

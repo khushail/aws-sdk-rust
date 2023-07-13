@@ -3,7 +3,7 @@
 /// <p>Represents an update integration request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIntegrationInput {
+pub struct UpdateIntegrationInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
@@ -19,41 +19,37 @@ pub struct UpdateIntegrationInput {
 }
 impl UpdateIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>Represents an update integration request's resource identifier.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Represents an update integration request's HTTP method.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&str> {
+    pub fn http_method(&self) -> ::std::option::Option<& str> {
         self.http_method.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
+    pub fn patch_operations(&self) -> ::std::option::Option<& [crate::types::PatchOperation]> {
         self.patch_operations.as_deref()
     }
 }
 impl UpdateIntegrationInput {
     /// Creates a new builder-style object to manufacture [`UpdateIntegrationInput`](crate::operation::update_integration::UpdateIntegrationInput).
-    pub fn builder() -> crate::operation::update_integration::builders::UpdateIntegrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_integration::builders::UpdateIntegrationInputBuilder {
         crate::operation::update_integration::builders::UpdateIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIntegrationInput`](crate::operation::update_integration::UpdateIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIntegrationInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
-    pub(crate) patch_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateIntegrationInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -63,8 +59,11 @@ impl UpdateIntegrationInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
     }
     /// <p>Represents an update integration request's resource identifier.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,8 +72,11 @@ impl UpdateIntegrationInputBuilder {
     }
     /// <p>Represents an update integration request's resource identifier.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>Represents an update integration request's resource identifier.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>Represents an update integration request's HTTP method.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,8 +85,11 @@ impl UpdateIntegrationInputBuilder {
     }
     /// <p>Represents an update integration request's HTTP method.</p>
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
+    }
+    /// <p>Represents an update integration request's HTTP method.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -93,32 +98,32 @@ impl UpdateIntegrationInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-        v.push(input);
-        self.patch_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.patch_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
-        self.patch_operations = input;
-        self
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
+        self.patch_operations = input; self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateIntegrationInput`](crate::operation::update_integration::UpdateIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_integration::UpdateIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_integration::UpdateIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_integration::UpdateIntegrationInput {
-                rest_api_id: self.rest_api_id,
-                resource_id: self.resource_id,
-                http_method: self.http_method,
-                patch_operations: self.patch_operations,
-            },
+                rest_api_id: self.rest_api_id
+                ,
+                resource_id: self.resource_id
+                ,
+                http_method: self.http_method
+                ,
+                patch_operations: self.patch_operations
+                ,
+            }
         )
     }
 }
+

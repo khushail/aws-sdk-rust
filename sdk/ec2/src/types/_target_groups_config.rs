@@ -3,14 +3,14 @@
 /// <p>Describes the target groups to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these target groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetGroupsConfig {
+pub struct TargetGroupsConfig  {
     /// <p>One or more target groups.</p>
     #[doc(hidden)]
     pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
 }
 impl TargetGroupsConfig {
     /// <p>One or more target groups.</p>
-    pub fn target_groups(&self) -> ::std::option::Option<&[crate::types::TargetGroup]> {
+    pub fn target_groups(&self) -> ::std::option::Option<& [crate::types::TargetGroup]> {
         self.target_groups.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl TargetGroupsConfig {
 
 /// A builder for [`TargetGroupsConfig`](crate::types::TargetGroupsConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetGroupsConfigBuilder {
     pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
 }
@@ -37,22 +35,24 @@ impl TargetGroupsConfigBuilder {
     /// <p>One or more target groups.</p>
     pub fn target_groups(mut self, input: crate::types::TargetGroup) -> Self {
         let mut v = self.target_groups.unwrap_or_default();
-        v.push(input);
-        self.target_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more target groups.</p>
-    pub fn set_target_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
-    ) -> Self {
-        self.target_groups = input;
-        self
+    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>) -> Self {
+        self.target_groups = input; self
+    }
+    /// <p>One or more target groups.</p>
+    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
+        &self.target_groups
     }
     /// Consumes the builder and constructs a [`TargetGroupsConfig`](crate::types::TargetGroupsConfig).
     pub fn build(self) -> crate::types::TargetGroupsConfig {
         crate::types::TargetGroupsConfig {
-            target_groups: self.target_groups,
+            target_groups: self.target_groups
+            ,
         }
     }
 }
+

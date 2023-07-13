@@ -3,14 +3,14 @@
 /// <p>An object that represents the current status of the virtual node.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualNodeStatus {
+pub struct VirtualNodeStatus  {
     /// <p>The current status of the virtual node.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VirtualNodeStatusCode>,
 }
 impl VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VirtualNodeStatusCode> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VirtualNodeStatusCode> {
         self.status.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl VirtualNodeStatus {
 
 /// A builder for [`VirtualNodeStatus`](crate::types::VirtualNodeStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualNodeStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VirtualNodeStatusCode>,
 }
@@ -36,17 +34,19 @@ impl VirtualNodeStatusBuilder {
         self
     }
     /// <p>The current status of the virtual node.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualNodeStatusCode>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualNodeStatusCode>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The current status of the virtual node.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualNodeStatusCode> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VirtualNodeStatus`](crate::types::VirtualNodeStatus).
     pub fn build(self) -> crate::types::VirtualNodeStatus {
         crate::types::VirtualNodeStatus {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

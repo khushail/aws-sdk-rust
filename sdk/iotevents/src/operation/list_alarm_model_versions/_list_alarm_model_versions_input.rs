@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAlarmModelVersionsInput {
+pub struct ListAlarmModelVersionsInput  {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListAlarmModelVersionsInput {
 }
 impl ListAlarmModelVersionsInput {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> ::std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The token that you can use to return the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -29,18 +29,14 @@ impl ListAlarmModelVersionsInput {
 }
 impl ListAlarmModelVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListAlarmModelVersionsInput`](crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsInputBuilder {
         crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAlarmModelVersionsInput`](crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlarmModelVersionsInputBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,20 +44,17 @@ pub struct ListAlarmModelVersionsInputBuilder {
 }
 impl ListAlarmModelVersionsInputBuilder {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.alarm_model_name = input;
-        self
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alarm_model_name = input; self
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +63,11 @@ impl ListAlarmModelVersionsInputBuilder {
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -80,22 +76,24 @@ impl ListAlarmModelVersionsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAlarmModelVersionsInput`](crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_alarm_model_versions::ListAlarmModelVersionsInput {
-                alarm_model_name: self.alarm_model_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                alarm_model_name: self.alarm_model_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

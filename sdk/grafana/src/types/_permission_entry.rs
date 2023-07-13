@@ -3,7 +3,7 @@
 /// <p>A structure containing the identity of one user or group and the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role that they have.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PermissionEntry {
+pub struct PermissionEntry  {
     /// <p>A structure with the ID of the user or group with this role.</p>
     #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::User>,
@@ -13,11 +13,11 @@ pub struct PermissionEntry {
 }
 impl PermissionEntry {
     /// <p>A structure with the ID of the user or group with this role.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::User> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::User> {
         self.user.as_ref()
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::Role> {
         self.role.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl PermissionEntry {
 
 /// A builder for [`PermissionEntry`](crate::types::PermissionEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PermissionEntryBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     pub(crate) role: ::std::option::Option<crate::types::Role>,
@@ -45,8 +43,11 @@ impl PermissionEntryBuilder {
     }
     /// <p>A structure with the ID of the user or group with this role.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
+    }
+    /// <p>A structure with the ID of the user or group with this role.</p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::User> {
+        &self.user
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     pub fn role(mut self, input: crate::types::Role) -> Self {
@@ -55,14 +56,20 @@ impl PermissionEntryBuilder {
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
+    }
+    /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
+        &self.role
     }
     /// Consumes the builder and constructs a [`PermissionEntry`](crate::types::PermissionEntry).
     pub fn build(self) -> crate::types::PermissionEntry {
         crate::types::PermissionEntry {
-            user: self.user,
-            role: self.role,
+            user: self.user
+            ,
+            role: self.role
+            ,
         }
     }
 }
+

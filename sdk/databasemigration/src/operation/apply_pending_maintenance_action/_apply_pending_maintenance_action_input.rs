@@ -3,57 +3,55 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplyPendingMaintenanceActionInput {
+pub struct ApplyPendingMaintenanceActionInput  {
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
     #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The pending maintenance action to apply to this resource.</p>
+    /// <p>The pending maintenance action to apply to this resource.</p> 
     /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
     #[doc(hidden)]
     pub apply_action: ::std::option::Option<::std::string::String>,
-    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
-    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
-    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
+    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li> 
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li> 
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub opt_in_type: ::std::option::Option<::std::string::String>,
 }
 impl ApplyPendingMaintenanceActionInput {
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
-    pub fn replication_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_instance_arn(&self) -> ::std::option::Option<& str> {
         self.replication_instance_arn.as_deref()
     }
-    /// <p>The pending maintenance action to apply to this resource.</p>
+    /// <p>The pending maintenance action to apply to this resource.</p> 
     /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
-    pub fn apply_action(&self) -> ::std::option::Option<&str> {
+    pub fn apply_action(&self) -> ::std::option::Option<& str> {
         self.apply_action.as_deref()
     }
-    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
-    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
-    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
+    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li> 
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li> 
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li> 
     /// </ul>
-    pub fn opt_in_type(&self) -> ::std::option::Option<&str> {
+    pub fn opt_in_type(&self) -> ::std::option::Option<& str> {
         self.opt_in_type.as_deref()
     }
 }
 impl ApplyPendingMaintenanceActionInput {
     /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionInput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput).
-    pub fn builder() -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder{
+    pub fn builder() -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder {
         crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder::default()
     }
 }
 
 /// A builder for [`ApplyPendingMaintenanceActionInput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) apply_action: ::std::option::Option<::std::string::String>,
@@ -61,62 +59,67 @@ pub struct ApplyPendingMaintenanceActionInputBuilder {
 }
 impl ApplyPendingMaintenanceActionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.replication_instance_arn = input;
-        self
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.replication_instance_arn = input; self
     }
-    /// <p>The pending maintenance action to apply to this resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
+    }
+    /// <p>The pending maintenance action to apply to this resource.</p> 
     /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
     pub fn apply_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apply_action = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pending maintenance action to apply to this resource.</p>
+    /// <p>The pending maintenance action to apply to this resource.</p> 
     /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
     pub fn set_apply_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.apply_action = input;
-        self
+        self.apply_action = input; self
     }
-    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
-    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
-    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
+    /// <p>The pending maintenance action to apply to this resource.</p> 
+    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
+    pub fn get_apply_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.apply_action
+    }
+    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li> 
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li> 
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li> 
     /// </ul>
     pub fn opt_in_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_in_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
-    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
-    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
+    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li> 
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li> 
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li> 
     /// </ul>
     pub fn set_opt_in_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_in_type = input;
-        self
+        self.opt_in_type = input; self
+    }
+    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li> 
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li> 
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li> 
+    /// </ul>
+    pub fn get_opt_in_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_in_type
     }
     /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionInput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput {
                 replication_instance_arn: self.replication_instance_arn
@@ -129,3 +132,4 @@ impl ApplyPendingMaintenanceActionInputBuilder {
         )
     }
 }
+

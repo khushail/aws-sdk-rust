@@ -37,8 +37,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-codedeploy = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-codedeploy = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -49,8 +49,8 @@ use aws_sdk_codedeploy as codedeploy;
 
 #[::tokio::main]
 async fn main() -> Result<(), codedeploy::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = codedeploy::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_codedeploy::Client::new(&config);
 
     // ... make some calls with the client
 

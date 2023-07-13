@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReferenceImportJobInput {
+pub struct GetReferenceImportJobInput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct GetReferenceImportJobInput {
 }
 impl GetReferenceImportJobInput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn reference_store_id(&self) -> ::std::option::Option<& str> {
         self.reference_store_id.as_deref()
     }
 }
 impl GetReferenceImportJobInput {
     /// Creates a new builder-style object to manufacture [`GetReferenceImportJobInput`](crate::operation::get_reference_import_job::GetReferenceImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_reference_import_job::builders::GetReferenceImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_reference_import_job::builders::GetReferenceImportJobInputBuilder {
         crate::operation::get_reference_import_job::builders::GetReferenceImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReferenceImportJobInput`](crate::operation::get_reference_import_job::GetReferenceImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReferenceImportJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl GetReferenceImportJobInputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The job's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's reference store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reference_store_id = input;
-        self
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reference_store_id = input; self
+    }
+    /// <p>The job's reference store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_store_id
     }
     /// Consumes the builder and constructs a [`GetReferenceImportJobInput`](crate::operation::get_reference_import_job::GetReferenceImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reference_import_job::GetReferenceImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reference_import_job::GetReferenceImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_reference_import_job::GetReferenceImportJobInput {
-                id: self.id,
-                reference_store_id: self.reference_store_id,
-            },
+                id: self.id
+                ,
+                reference_store_id: self.reference_store_id
+                ,
+            }
         )
     }
 }
+

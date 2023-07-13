@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceMethod {
+pub struct DeviceMethod  {
     /// <p>The type of the device, such as "button".</p>
     #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeviceMethod {
 }
 impl DeviceMethod {
     /// <p>The type of the device, such as "button".</p>
-    pub fn device_type(&self) -> ::std::option::Option<&str> {
+    pub fn device_type(&self) -> ::std::option::Option<& str> {
         self.device_type.as_deref()
     }
     /// <p>The name of the method applicable to the deviceType.</p>
-    pub fn method_name(&self) -> ::std::option::Option<&str> {
+    pub fn method_name(&self) -> ::std::option::Option<& str> {
         self.method_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DeviceMethod {
 
 /// A builder for [`DeviceMethod`](crate::types::DeviceMethod).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceMethodBuilder {
     pub(crate) device_type: ::std::option::Option<::std::string::String>,
     pub(crate) method_name: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeviceMethodBuilder {
     }
     /// <p>The type of the device, such as "button".</p>
     pub fn set_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_type = input;
-        self
+        self.device_type = input; self
+    }
+    /// <p>The type of the device, such as "button".</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_type
     }
     /// <p>The name of the method applicable to the deviceType.</p>
     pub fn method_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,14 +55,20 @@ impl DeviceMethodBuilder {
     }
     /// <p>The name of the method applicable to the deviceType.</p>
     pub fn set_method_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.method_name = input;
-        self
+        self.method_name = input; self
+    }
+    /// <p>The name of the method applicable to the deviceType.</p>
+    pub fn get_method_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.method_name
     }
     /// Consumes the builder and constructs a [`DeviceMethod`](crate::types::DeviceMethod).
     pub fn build(self) -> crate::types::DeviceMethod {
         crate::types::DeviceMethod {
-            device_type: self.device_type,
-            method_name: self.method_name,
+            device_type: self.device_type
+            ,
+            method_name: self.method_name
+            ,
         }
     }
 }
+

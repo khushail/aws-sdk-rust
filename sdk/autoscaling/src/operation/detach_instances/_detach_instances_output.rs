@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachInstancesOutput {
+pub struct DetachInstancesOutput  {
     /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
     #[doc(hidden)]
     pub activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
@@ -10,15 +10,15 @@ pub struct DetachInstancesOutput {
 }
 impl DetachInstancesOutput {
     /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
-    pub fn activities(&self) -> ::std::option::Option<&[crate::types::Activity]> {
+    pub fn activities(&self) -> ::std::option::Option<& [crate::types::Activity]> {
         self.activities.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DetachInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetachInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DetachInstancesOutput`](crate::operation::detach_instances::DetachInstancesOutput).
     pub fn builder() -> crate::operation::detach_instances::builders::DetachInstancesOutputBuilder {
@@ -28,9 +28,7 @@ impl DetachInstancesOutput {
 
 /// A builder for [`DetachInstancesOutput`](crate::operation::detach_instances::DetachInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachInstancesOutputBuilder {
     pub(crate) activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     _request_id: Option<String>,
@@ -43,32 +41,34 @@ impl DetachInstancesOutputBuilder {
     /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
     pub fn activities(mut self, input: crate::types::Activity) -> Self {
         let mut v = self.activities.unwrap_or_default();
-        v.push(input);
-        self.activities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.activities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
-    pub fn set_activities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
-    ) -> Self {
-        self.activities = input;
-        self
+    pub fn set_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>) -> Self {
+        self.activities = input; self
+    }
+    /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
+    pub fn get_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+        &self.activities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetachInstancesOutput`](crate::operation::detach_instances::DetachInstancesOutput).
     pub fn build(self) -> crate::operation::detach_instances::DetachInstancesOutput {
         crate::operation::detach_instances::DetachInstancesOutput {
-            activities: self.activities,
+            activities: self.activities
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

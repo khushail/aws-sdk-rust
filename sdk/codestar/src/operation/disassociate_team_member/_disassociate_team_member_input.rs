@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateTeamMemberInput {
+pub struct DisassociateTeamMemberInput  {
     /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
     #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DisassociateTeamMemberInput {
 }
 impl DisassociateTeamMemberInput {
     /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
 }
 impl DisassociateTeamMemberInput {
     /// Creates a new builder-style object to manufacture [`DisassociateTeamMemberInput`](crate::operation::disassociate_team_member::DisassociateTeamMemberInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_team_member::builders::DisassociateTeamMemberInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_team_member::builders::DisassociateTeamMemberInputBuilder {
         crate::operation::disassociate_team_member::builders::DisassociateTeamMemberInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTeamMemberInput`](crate::operation::disassociate_team_member::DisassociateTeamMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTeamMemberInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl DisassociateTeamMemberInputBuilder {
     }
     /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
+    }
+    /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl DisassociateTeamMemberInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
     }
     /// Consumes the builder and constructs a [`DisassociateTeamMemberInput`](crate::operation::disassociate_team_member::DisassociateTeamMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_team_member::DisassociateTeamMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_team_member::DisassociateTeamMemberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_team_member::DisassociateTeamMemberInput {
-                project_id: self.project_id,
-                user_arn: self.user_arn,
-            },
+                project_id: self.project_id
+                ,
+                user_arn: self.user_arn
+                ,
+            }
         )
     }
 }
+

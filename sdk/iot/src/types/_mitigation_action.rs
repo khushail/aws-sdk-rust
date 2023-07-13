@@ -3,7 +3,7 @@
 /// <p>Describes which changes should be applied as part of a mitigation action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MitigationAction {
+pub struct MitigationAction  {
     /// <p>A user-friendly name for the mitigation action.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct MitigationAction {
 }
 impl MitigationAction {
     /// <p>A user-friendly name for the mitigation action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the mitigation action.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
-    pub fn action_params(&self) -> ::std::option::Option<&crate::types::MitigationActionParams> {
+    pub fn action_params(&self) -> ::std::option::Option<& crate::types::MitigationActionParams> {
         self.action_params.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl MitigationAction {
 
 /// A builder for [`MitigationAction`](crate::types::MitigationAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MitigationActionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl MitigationActionBuilder {
     }
     /// <p>A user-friendly name for the mitigation action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A user-friendly name for the mitigation action.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A unique identifier for the mitigation action.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl MitigationActionBuilder {
     }
     /// <p>A unique identifier for the mitigation action.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>A unique identifier for the mitigation action.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl MitigationActionBuilder {
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The IAM role ARN used to apply this mitigation action.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
     pub fn action_params(mut self, input: crate::types::MitigationActionParams) -> Self {
@@ -90,20 +97,25 @@ impl MitigationActionBuilder {
         self
     }
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
-    pub fn set_action_params(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionParams>,
-    ) -> Self {
-        self.action_params = input;
-        self
+    pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
+        self.action_params = input; self
+    }
+    /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
+    pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
+        &self.action_params
     }
     /// Consumes the builder and constructs a [`MitigationAction`](crate::types::MitigationAction).
     pub fn build(self) -> crate::types::MitigationAction {
         crate::types::MitigationAction {
-            name: self.name,
-            id: self.id,
-            role_arn: self.role_arn,
-            action_params: self.action_params,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            role_arn: self.role_arn
+            ,
+            action_params: self.action_params
+            ,
         }
     }
 }
+

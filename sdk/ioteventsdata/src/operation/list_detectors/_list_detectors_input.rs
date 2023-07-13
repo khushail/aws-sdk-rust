@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDetectorsInput {
+pub struct ListDetectorsInput  {
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
     #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListDetectorsInput {
 }
 impl ListDetectorsInput {
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    pub fn detector_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> ::std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
-    pub fn state_name(&self) -> ::std::option::Option<&str> {
+    pub fn state_name(&self) -> ::std::option::Option<& str> {
         self.state_name.as_deref()
     }
     /// <p>The token that you can use to return the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -43,9 +43,7 @@ impl ListDetectorsInput {
 
 /// A builder for [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectorsInputBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) state_name: ::std::option::Option<::std::string::String>,
@@ -54,20 +52,17 @@ pub struct ListDetectorsInputBuilder {
 }
 impl ListDetectorsInputBuilder {
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.detector_model_name = input;
-        self
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.detector_model_name = input; self
+    }
+    /// <p>The name of the detector model whose detectors (instances) are listed.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
     }
     /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
     pub fn state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,8 +71,11 @@ impl ListDetectorsInputBuilder {
     }
     /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
     pub fn set_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_name = input;
-        self
+        self.state_name = input; self
+    }
+    /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
+    pub fn get_state_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_name
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +84,11 @@ impl ListDetectorsInputBuilder {
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -96,21 +97,26 @@ impl ListDetectorsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_detectors::ListDetectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_detectors::ListDetectorsInput {
-            detector_model_name: self.detector_model_name,
-            state_name: self.state_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_detectors::ListDetectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_detectors::ListDetectorsInput {
+                detector_model_name: self.detector_model_name
+                ,
+                state_name: self.state_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

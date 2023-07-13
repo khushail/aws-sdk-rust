@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBotAliasInput {
+pub struct DeleteBotAliasInput  {
     /// <p>The name of the alias to delete. The name is case sensitive. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteBotAliasInput {
 }
 impl DeleteBotAliasInput {
     /// <p>The name of the alias to delete. The name is case sensitive. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the bot that the alias points to.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DeleteBotAliasInput {
 
 /// A builder for [`DeleteBotAliasInput`](crate::operation::delete_bot_alias::DeleteBotAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBotAliasInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeleteBotAliasInputBuilder {
     }
     /// <p>The name of the alias to delete. The name is case sensitive. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the bot that the alias points to.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl DeleteBotAliasInputBuilder {
     }
     /// <p>The name of the bot that the alias points to.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
+    }
+    /// <p>The name of the bot that the alias points to.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
     }
     /// Consumes the builder and constructs a [`DeleteBotAliasInput`](crate::operation::delete_bot_alias::DeleteBotAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_bot_alias::DeleteBotAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_bot_alias::DeleteBotAliasInput {
-            name: self.name,
-            bot_name: self.bot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bot_alias::DeleteBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_bot_alias::DeleteBotAliasInput {
+                name: self.name
+                ,
+                bot_name: self.bot_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about the source configuration in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SampleDataS3SourceConfig {
+pub struct SampleDataS3SourceConfig  {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -19,21 +19,19 @@ pub struct SampleDataS3SourceConfig {
 }
 impl SampleDataS3SourceConfig {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An array of strings containing the list of templated paths.</p>
-    pub fn templated_path_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn templated_path_list(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.templated_path_list.as_deref()
     }
     /// <p>An array of strings containing the historical set of data paths.</p>
-    pub fn historical_data_path_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn historical_data_path_list(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.historical_data_path_list.as_deref()
     }
     /// <p>Contains information about a source file's formatting.</p>
-    pub fn file_format_descriptor(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FileFormatDescriptor> {
+    pub fn file_format_descriptor(&self) -> ::std::option::Option<& crate::types::FileFormatDescriptor> {
         self.file_format_descriptor.as_ref()
     }
 }
@@ -46,14 +44,11 @@ impl SampleDataS3SourceConfig {
 
 /// A builder for [`SampleDataS3SourceConfig`](crate::types::SampleDataS3SourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SampleDataS3SourceConfigBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) templated_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) historical_data_path_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) historical_data_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) file_format_descriptor: ::std::option::Option<crate::types::FileFormatDescriptor>,
 }
 impl SampleDataS3SourceConfigBuilder {
@@ -64,52 +59,49 @@ impl SampleDataS3SourceConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Appends an item to `templated_path_list`.
     ///
     /// To override the contents of this collection use [`set_templated_path_list`](Self::set_templated_path_list).
     ///
     /// <p>An array of strings containing the list of templated paths.</p>
-    pub fn templated_path_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn templated_path_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.templated_path_list.unwrap_or_default();
-        v.push(input.into());
-        self.templated_path_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.templated_path_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings containing the list of templated paths.</p>
-    pub fn set_templated_path_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.templated_path_list = input;
-        self
+    pub fn set_templated_path_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.templated_path_list = input; self
+    }
+    /// <p>An array of strings containing the list of templated paths.</p>
+    pub fn get_templated_path_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.templated_path_list
     }
     /// Appends an item to `historical_data_path_list`.
     ///
     /// To override the contents of this collection use [`set_historical_data_path_list`](Self::set_historical_data_path_list).
     ///
     /// <p>An array of strings containing the historical set of data paths.</p>
-    pub fn historical_data_path_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn historical_data_path_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.historical_data_path_list.unwrap_or_default();
-        v.push(input.into());
-        self.historical_data_path_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.historical_data_path_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings containing the historical set of data paths.</p>
-    pub fn set_historical_data_path_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.historical_data_path_list = input;
-        self
+    pub fn set_historical_data_path_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.historical_data_path_list = input; self
+    }
+    /// <p>An array of strings containing the historical set of data paths.</p>
+    pub fn get_historical_data_path_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.historical_data_path_list
     }
     /// <p>Contains information about a source file's formatting.</p>
     pub fn file_format_descriptor(mut self, input: crate::types::FileFormatDescriptor) -> Self {
@@ -117,20 +109,25 @@ impl SampleDataS3SourceConfigBuilder {
         self
     }
     /// <p>Contains information about a source file's formatting.</p>
-    pub fn set_file_format_descriptor(
-        mut self,
-        input: ::std::option::Option<crate::types::FileFormatDescriptor>,
-    ) -> Self {
-        self.file_format_descriptor = input;
-        self
+    pub fn set_file_format_descriptor(mut self, input: ::std::option::Option<crate::types::FileFormatDescriptor>) -> Self {
+        self.file_format_descriptor = input; self
+    }
+    /// <p>Contains information about a source file's formatting.</p>
+    pub fn get_file_format_descriptor(&self) -> &::std::option::Option<crate::types::FileFormatDescriptor> {
+        &self.file_format_descriptor
     }
     /// Consumes the builder and constructs a [`SampleDataS3SourceConfig`](crate::types::SampleDataS3SourceConfig).
     pub fn build(self) -> crate::types::SampleDataS3SourceConfig {
         crate::types::SampleDataS3SourceConfig {
-            role_arn: self.role_arn,
-            templated_path_list: self.templated_path_list,
-            historical_data_path_list: self.historical_data_path_list,
-            file_format_descriptor: self.file_format_descriptor,
+            role_arn: self.role_arn
+            ,
+            templated_path_list: self.templated_path_list
+            ,
+            historical_data_path_list: self.historical_data_path_list
+            ,
+            file_format_descriptor: self.file_format_descriptor
+            ,
         }
     }
 }
+

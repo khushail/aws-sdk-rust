@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAttributeGroupInput {
+pub struct GetAttributeGroupInput  {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     #[doc(hidden)]
     pub attribute_group: ::std::option::Option<::std::string::String>,
 }
 impl GetAttributeGroupInput {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn attribute_group(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_group(&self) -> ::std::option::Option<& str> {
         self.attribute_group.as_deref()
     }
 }
 impl GetAttributeGroupInput {
     /// Creates a new builder-style object to manufacture [`GetAttributeGroupInput`](crate::operation::get_attribute_group::GetAttributeGroupInput).
-    pub fn builder(
-    ) -> crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder {
+    pub fn builder() -> crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder {
         crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAttributeGroupInput`](crate::operation::get_attribute_group::GetAttributeGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAttributeGroupInputBuilder {
     pub(crate) attribute_group: ::std::option::Option<::std::string::String>,
 }
 impl GetAttributeGroupInputBuilder {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn attribute_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn set_attribute_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.attribute_group = input;
-        self
+    pub fn set_attribute_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attribute_group = input; self
+    }
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_group
     }
     /// Consumes the builder and constructs a [`GetAttributeGroupInput`](crate::operation::get_attribute_group::GetAttributeGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_attribute_group::GetAttributeGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_attribute_group::GetAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_attribute_group::GetAttributeGroupInput {
-                attribute_group: self.attribute_group,
-            },
+                attribute_group: self.attribute_group
+                ,
+            }
         )
     }
 }
+

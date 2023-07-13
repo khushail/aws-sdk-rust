@@ -3,94 +3,87 @@ pub use crate::operation::update_campaign::_update_campaign_output::UpdateCampai
 
 pub use crate::operation::update_campaign::_update_campaign_input::UpdateCampaignInputBuilder;
 
+impl UpdateCampaignInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_campaign::UpdateCampaignOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_campaign::UpdateCampaignError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_campaign();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateCampaign`.
-///
+/// 
 /// <p> Updates a campaign. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCampaignFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_campaign::builders::UpdateCampaignInputBuilder,
+                    inner: crate::operation::update_campaign::builders::UpdateCampaignInputBuilder,
 }
-impl UpdateCampaignFluentBuilder {
+impl UpdateCampaignFluentBuilder  {
     /// Creates a new `UpdateCampaign`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_campaign::UpdateCampaign,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateCampaign as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_campaign::builders::UpdateCampaignInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_campaign::UpdateCampaignOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_campaign::UpdateCampaign, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_campaign::UpdateCampaignOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_campaign::UpdateCampaign,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_campaign::UpdateCampaign, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The name of the campaign to update. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -100,6 +93,10 @@ impl UpdateCampaignFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p> The name of the campaign to update. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The description of the campaign.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,51 +108,62 @@ impl UpdateCampaignFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the campaign.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `dataExtraDimensions`.
     ///
     /// To override the contents of this collection use [`set_data_extra_dimensions`](Self::set_data_extra_dimensions).
     ///
-    /// <p> A list of vehicle attributes to associate with a signal. </p>
+    /// <p> A list of vehicle attributes to associate with a signal. </p> 
     /// <p>Default: An empty array</p>
-    pub fn data_extra_dimensions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_extra_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_extra_dimensions(input.into());
         self
     }
-    /// <p> A list of vehicle attributes to associate with a signal. </p>
+    /// <p> A list of vehicle attributes to associate with a signal. </p> 
     /// <p>Default: An empty array</p>
-    pub fn set_data_extra_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_extra_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_data_extra_dimensions(input);
         self
     }
-    /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li>
-    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. </p> </li>
-    /// <li> <p> <code>RESUME</code> - To resume collecting signal data. </p> </li>
-    /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
+    /// <p> A list of vehicle attributes to associate with a signal. </p> 
+    /// <p>Default: An empty array</p>
+    pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_data_extra_dimensions()
+    }
+    /// <p> Specifies how to update a campaign. The action can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li> 
+    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p> </li> 
+    /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li> 
+    /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li> 
     /// </ul>
     pub fn action(mut self, input: crate::types::UpdateCampaignAction) -> Self {
         self.inner = self.inner.action(input);
         self
     }
-    /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li>
-    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. </p> </li>
-    /// <li> <p> <code>RESUME</code> - To resume collecting signal data. </p> </li>
-    /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
+    /// <p> Specifies how to update a campaign. The action can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li> 
+    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p> </li> 
+    /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li> 
+    /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li> 
     /// </ul>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateCampaignAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateCampaignAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
+    /// <p> Specifies how to update a campaign. The action can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li> 
+    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p> </li> 
+    /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li> 
+    /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li> 
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::UpdateCampaignAction> {
+        self.inner.get_action()
+    }
 }
+

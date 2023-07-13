@@ -3,7 +3,7 @@
 /// <p>A list of key groups whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustedKeyGroups {
+pub struct TrustedKeyGroups  {
     /// <p>This field is <code>true</code> if any of the key groups in the list have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
@@ -24,7 +24,7 @@ impl TrustedKeyGroups {
         self.quantity
     }
     /// <p>A list of key groups identifiers.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn items(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.items.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl TrustedKeyGroups {
 
 /// A builder for [`TrustedKeyGroups`](crate::types::TrustedKeyGroups).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrustedKeyGroupsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl TrustedKeyGroupsBuilder {
     }
     /// <p>This field is <code>true</code> if any of the key groups in the list have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>This field is <code>true</code> if any of the key groups in the list have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The number of key groups in the list.</p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl TrustedKeyGroupsBuilder {
     }
     /// <p>The number of key groups in the list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
+    }
+    /// <p>The number of key groups in the list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -73,24 +77,28 @@ impl TrustedKeyGroupsBuilder {
     /// <p>A list of key groups identifiers.</p>
     pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key groups identifiers.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.items = input; self
+    }
+    /// <p>A list of key groups identifiers.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`TrustedKeyGroups`](crate::types::TrustedKeyGroups).
     pub fn build(self) -> crate::types::TrustedKeyGroups {
         crate::types::TrustedKeyGroups {
-            enabled: self.enabled,
-            quantity: self.quantity,
-            items: self.items,
+            enabled: self.enabled
+            ,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

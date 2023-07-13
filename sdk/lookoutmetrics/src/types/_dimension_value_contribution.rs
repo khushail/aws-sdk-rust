@@ -3,7 +3,7 @@
 /// <p>The severity of a value of a dimension that contributed to an anomaly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionValueContribution {
+pub struct DimensionValueContribution  {
     /// <p>The value of the dimension.</p>
     #[doc(hidden)]
     pub dimension_value: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct DimensionValueContribution {
 }
 impl DimensionValueContribution {
     /// <p>The value of the dimension.</p>
-    pub fn dimension_value(&self) -> ::std::option::Option<&str> {
+    pub fn dimension_value(&self) -> ::std::option::Option<& str> {
         self.dimension_value.as_deref()
     }
     /// <p>The severity score of the value.</p>
@@ -30,29 +30,24 @@ impl DimensionValueContribution {
 
 /// A builder for [`DimensionValueContribution`](crate::types::DimensionValueContribution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionValueContributionBuilder {
     pub(crate) dimension_value: ::std::option::Option<::std::string::String>,
     pub(crate) contribution_score: ::std::option::Option<f64>,
 }
 impl DimensionValueContributionBuilder {
     /// <p>The value of the dimension.</p>
-    pub fn dimension_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the dimension.</p>
-    pub fn set_dimension_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dimension_value = input;
-        self
+    pub fn set_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dimension_value = input; self
+    }
+    /// <p>The value of the dimension.</p>
+    pub fn get_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_value
     }
     /// <p>The severity score of the value.</p>
     pub fn contribution_score(mut self, input: f64) -> Self {
@@ -61,14 +56,20 @@ impl DimensionValueContributionBuilder {
     }
     /// <p>The severity score of the value.</p>
     pub fn set_contribution_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.contribution_score = input;
-        self
+        self.contribution_score = input; self
+    }
+    /// <p>The severity score of the value.</p>
+    pub fn get_contribution_score(&self) -> &::std::option::Option<f64> {
+        &self.contribution_score
     }
     /// Consumes the builder and constructs a [`DimensionValueContribution`](crate::types::DimensionValueContribution).
     pub fn build(self) -> crate::types::DimensionValueContribution {
         crate::types::DimensionValueContribution {
-            dimension_value: self.dimension_value,
-            contribution_score: self.contribution_score,
+            dimension_value: self.dimension_value
+            ,
+            contribution_score: self.contribution_score
+            ,
         }
     }
 }
+

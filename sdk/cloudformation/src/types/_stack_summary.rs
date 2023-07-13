@@ -3,7 +3,7 @@
 /// <p>The StackSummary Data Type</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackSummary {
+pub struct StackSummary  {
     /// <p>Unique stack identifier.</p>
     #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
@@ -28,65 +28,63 @@ pub struct StackSummary {
     /// <p>Success/Failure message associated with the stack status.</p>
     #[doc(hidden)]
     pub stack_status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p> 
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
     pub parent_id: ::std::option::Option<::std::string::String>,
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p> 
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
     pub root_id: ::std::option::Option<::std::string::String>,
-    /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     #[doc(hidden)]
     pub drift_information: ::std::option::Option<crate::types::StackDriftInformationSummary>,
 }
 impl StackSummary {
     /// <p>Unique stack identifier.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The name associated with the stack.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The template description of the template used to create the stack.</p>
-    pub fn template_description(&self) -> ::std::option::Option<&str> {
+    pub fn template_description(&self) -> ::std::option::Option<& str> {
         self.template_description.as_deref()
     }
     /// <p>The time the stack was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The time the stack was deleted.</p>
-    pub fn deletion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deletion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deletion_time.as_ref()
     }
     /// <p>The current status of the stack.</p>
-    pub fn stack_status(&self) -> ::std::option::Option<&crate::types::StackStatus> {
+    pub fn stack_status(&self) -> ::std::option::Option<& crate::types::StackStatus> {
         self.stack_status.as_ref()
     }
     /// <p>Success/Failure message associated with the stack status.</p>
-    pub fn stack_status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn stack_status_reason(&self) -> ::std::option::Option<& str> {
         self.stack_status_reason.as_deref()
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p> 
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn parent_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_id(&self) -> ::std::option::Option<& str> {
         self.parent_id.as_deref()
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p> 
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn root_id(&self) -> ::std::option::Option<&str> {
+    pub fn root_id(&self) -> ::std::option::Option<& str> {
         self.root_id.as_deref()
     }
-    /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn drift_information(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackDriftInformationSummary> {
+    /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    pub fn drift_information(&self) -> ::std::option::Option<& crate::types::StackDriftInformationSummary> {
         self.drift_information.as_ref()
     }
 }
@@ -99,9 +97,7 @@ impl StackSummary {
 
 /// A builder for [`StackSummary`](crate::types::StackSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSummaryBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -123,8 +119,11 @@ impl StackSummaryBuilder {
     }
     /// <p>Unique stack identifier.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
+    }
+    /// <p>Unique stack identifier.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// <p>The name associated with the stack.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,24 +132,24 @@ impl StackSummaryBuilder {
     }
     /// <p>The name associated with the stack.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
+    }
+    /// <p>The name associated with the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// <p>The template description of the template used to create the stack.</p>
-    pub fn template_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The template description of the template used to create the stack.</p>
-    pub fn set_template_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.template_description = input;
-        self
+    pub fn set_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_description = input; self
+    }
+    /// <p>The template description of the template used to create the stack.</p>
+    pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_description
     }
     /// <p>The time the stack was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -158,12 +157,12 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>The time the stack was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time the stack was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -171,12 +170,12 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
+    }
+    /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>The time the stack was deleted.</p>
     pub fn deletion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -184,12 +183,12 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>The time the stack was deleted.</p>
-    pub fn set_deletion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.deletion_time = input;
-        self
+    pub fn set_deletion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.deletion_time = input; self
+    }
+    /// <p>The time the stack was deleted.</p>
+    pub fn get_deletion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deletion_time
     }
     /// <p>The current status of the stack.</p>
     pub fn stack_status(mut self, input: crate::types::StackStatus) -> Self {
@@ -197,80 +196,97 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>The current status of the stack.</p>
-    pub fn set_stack_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackStatus>,
-    ) -> Self {
-        self.stack_status = input;
-        self
+    pub fn set_stack_status(mut self, input: ::std::option::Option<crate::types::StackStatus>) -> Self {
+        self.stack_status = input; self
+    }
+    /// <p>The current status of the stack.</p>
+    pub fn get_stack_status(&self) -> &::std::option::Option<crate::types::StackStatus> {
+        &self.stack_status
     }
     /// <p>Success/Failure message associated with the stack status.</p>
-    pub fn stack_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Success/Failure message associated with the stack status.</p>
-    pub fn set_stack_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.stack_status_reason = input;
-        self
+    pub fn set_stack_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stack_status_reason = input; self
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+    /// <p>Success/Failure message associated with the stack status.</p>
+    pub fn get_stack_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_status_reason
+    }
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p> 
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p> 
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_id = input;
-        self
+        self.parent_id = input; self
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p> 
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_id
+    }
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p> 
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn root_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p> 
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_root_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_id = input;
-        self
+        self.root_id = input; self
     }
-    /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p> 
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn get_root_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_id
+    }
+    /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn drift_information(mut self, input: crate::types::StackDriftInformationSummary) -> Self {
         self.drift_information = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn set_drift_information(
-        mut self,
-        input: ::std::option::Option<crate::types::StackDriftInformationSummary>,
-    ) -> Self {
-        self.drift_information = input;
-        self
+    /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    pub fn set_drift_information(mut self, input: ::std::option::Option<crate::types::StackDriftInformationSummary>) -> Self {
+        self.drift_information = input; self
+    }
+    /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+    pub fn get_drift_information(&self) -> &::std::option::Option<crate::types::StackDriftInformationSummary> {
+        &self.drift_information
     }
     /// Consumes the builder and constructs a [`StackSummary`](crate::types::StackSummary).
     pub fn build(self) -> crate::types::StackSummary {
         crate::types::StackSummary {
-            stack_id: self.stack_id,
-            stack_name: self.stack_name,
-            template_description: self.template_description,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            deletion_time: self.deletion_time,
-            stack_status: self.stack_status,
-            stack_status_reason: self.stack_status_reason,
-            parent_id: self.parent_id,
-            root_id: self.root_id,
-            drift_information: self.drift_information,
+            stack_id: self.stack_id
+            ,
+            stack_name: self.stack_name
+            ,
+            template_description: self.template_description
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            deletion_time: self.deletion_time
+            ,
+            stack_status: self.stack_status
+            ,
+            stack_status_reason: self.stack_status_reason
+            ,
+            parent_id: self.parent_id
+            ,
+            root_id: self.root_id
+            ,
+            drift_information: self.drift_information
+            ,
         }
     }
 }
+

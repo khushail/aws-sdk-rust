@@ -3,7 +3,7 @@
 /// <p>Information related to an address book.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddressBookData {
+pub struct AddressBookData  {
     /// <p>The ARN of the address book.</p>
     #[doc(hidden)]
     pub address_book_arn: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct AddressBookData {
 }
 impl AddressBookData {
     /// <p>The ARN of the address book.</p>
-    pub fn address_book_arn(&self) -> ::std::option::Option<&str> {
+    pub fn address_book_arn(&self) -> ::std::option::Option<& str> {
         self.address_book_arn.as_deref()
     }
     /// <p>The name of the address book.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the address book.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl AddressBookData {
 
 /// A builder for [`AddressBookData`](crate::types::AddressBookData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddressBookDataBuilder {
     pub(crate) address_book_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct AddressBookDataBuilder {
 }
 impl AddressBookDataBuilder {
     /// <p>The ARN of the address book.</p>
-    pub fn address_book_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_book_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the address book.</p>
-    pub fn set_address_book_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.address_book_arn = input;
-        self
+    pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.address_book_arn = input; self
+    }
+    /// <p>The ARN of the address book.</p>
+    pub fn get_address_book_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_book_arn
     }
     /// <p>The name of the address book.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +64,11 @@ impl AddressBookDataBuilder {
     }
     /// <p>The name of the address book.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the address book.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the address book.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl AddressBookDataBuilder {
     }
     /// <p>The description of the address book.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the address book.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`AddressBookData`](crate::types::AddressBookData).
     pub fn build(self) -> crate::types::AddressBookData {
         crate::types::AddressBookData {
-            address_book_arn: self.address_book_arn,
-            name: self.name,
-            description: self.description,
+            address_book_arn: self.address_book_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

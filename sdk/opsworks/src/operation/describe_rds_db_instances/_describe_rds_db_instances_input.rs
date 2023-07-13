@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRdsDbInstancesInput {
+pub struct DescribeRdsDbInstancesInput  {
     /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
     #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DescribeRdsDbInstancesInput {
 }
 impl DescribeRdsDbInstancesInput {
     /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>An array containing the ARNs of the instances to be described.</p>
-    pub fn rds_db_instance_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn rds_db_instance_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.rds_db_instance_arns.as_deref()
     }
 }
 impl DescribeRdsDbInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeRdsDbInstancesInput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesInputBuilder {
         crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRdsDbInstancesInput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRdsDbInstancesInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) rds_db_instance_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,43 +42,41 @@ impl DescribeRdsDbInstancesInputBuilder {
     }
     /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
+    }
+    /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Appends an item to `rds_db_instance_arns`.
     ///
     /// To override the contents of this collection use [`set_rds_db_instance_arns`](Self::set_rds_db_instance_arns).
     ///
     /// <p>An array containing the ARNs of the instances to be described.</p>
-    pub fn rds_db_instance_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_db_instance_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rds_db_instance_arns.unwrap_or_default();
-        v.push(input.into());
-        self.rds_db_instance_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rds_db_instance_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing the ARNs of the instances to be described.</p>
-    pub fn set_rds_db_instance_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.rds_db_instance_arns = input;
-        self
+    pub fn set_rds_db_instance_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.rds_db_instance_arns = input; self
+    }
+    /// <p>An array containing the ARNs of the instances to be described.</p>
+    pub fn get_rds_db_instance_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rds_db_instance_arns
     }
     /// Consumes the builder and constructs a [`DescribeRdsDbInstancesInput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput {
-                stack_id: self.stack_id,
-                rds_db_instance_arns: self.rds_db_instance_arns,
-            },
+                stack_id: self.stack_id
+                ,
+                rds_db_instance_arns: self.rds_db_instance_arns
+                ,
+            }
         )
     }
 }
+

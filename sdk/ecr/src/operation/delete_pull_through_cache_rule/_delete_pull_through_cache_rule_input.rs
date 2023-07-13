@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePullThroughCacheRuleInput {
+pub struct DeletePullThroughCacheRuleInput  {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
     #[doc(hidden)]
     pub ecr_repository_prefix: ::std::option::Option<::std::string::String>,
@@ -12,46 +12,41 @@ pub struct DeletePullThroughCacheRuleInput {
 }
 impl DeletePullThroughCacheRuleInput {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
-    pub fn ecr_repository_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn ecr_repository_prefix(&self) -> ::std::option::Option<& str> {
         self.ecr_repository_prefix.as_deref()
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
 }
 impl DeletePullThroughCacheRuleInput {
     /// Creates a new builder-style object to manufacture [`DeletePullThroughCacheRuleInput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput).
-    pub fn builder() -> crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder{
+    pub fn builder() -> crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder {
         crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePullThroughCacheRuleInput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePullThroughCacheRuleInputBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePullThroughCacheRuleInputBuilder {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
-    pub fn ecr_repository_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecr_repository_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
-    pub fn set_ecr_repository_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ecr_repository_prefix = input;
-        self
+    pub fn set_ecr_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ecr_repository_prefix = input; self
+    }
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
+    pub fn get_ecr_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ecr_repository_prefix
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,21 +55,22 @@ impl DeletePullThroughCacheRuleInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// Consumes the builder and constructs a [`DeletePullThroughCacheRuleInput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput {
-                ecr_repository_prefix: self.ecr_repository_prefix,
-                registry_id: self.registry_id,
-            },
+                ecr_repository_prefix: self.ecr_repository_prefix
+                ,
+                registry_id: self.registry_id
+                ,
+            }
         )
     }
 }
+

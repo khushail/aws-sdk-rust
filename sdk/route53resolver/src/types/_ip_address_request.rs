@@ -3,7 +3,7 @@
 /// <p>In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request, the IP address that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). <code>IpAddressRequest</code> also includes the ID of the subnet that contains the IP address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpAddressRequest {
+pub struct IpAddressRequest  {
     /// <p>The ID of the subnet that contains the IP address. </p>
     #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct IpAddressRequest {
 }
 impl IpAddressRequest {
     /// <p>The ID of the subnet that contains the IP address. </p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The IPv4 address that you want to use for DNS queries.</p>
-    pub fn ip(&self) -> ::std::option::Option<&str> {
+    pub fn ip(&self) -> ::std::option::Option<& str> {
         self.ip.as_deref()
     }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
-    pub fn ipv6(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6(&self) -> ::std::option::Option<& str> {
         self.ipv6.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl IpAddressRequest {
 
 /// A builder for [`IpAddressRequest`](crate::types::IpAddressRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpAddressRequestBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl IpAddressRequestBuilder {
     }
     /// <p>The ID of the subnet that contains the IP address. </p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
+    }
+    /// <p>The ID of the subnet that contains the IP address. </p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The IPv4 address that you want to use for DNS queries.</p>
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl IpAddressRequestBuilder {
     }
     /// <p>The IPv4 address that you want to use for DNS queries.</p>
     pub fn set_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip = input;
-        self
+        self.ip = input; self
+    }
+    /// <p>The IPv4 address that you want to use for DNS queries.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
     }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl IpAddressRequestBuilder {
     }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6 = input;
-        self
+        self.ipv6 = input; self
+    }
+    /// <p> The IPv6 address that you want to use for DNS queries. </p>
+    pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6
     }
     /// Consumes the builder and constructs a [`IpAddressRequest`](crate::types::IpAddressRequest).
     pub fn build(self) -> crate::types::IpAddressRequest {
         crate::types::IpAddressRequest {
-            subnet_id: self.subnet_id,
-            ip: self.ip,
-            ipv6: self.ipv6,
+            subnet_id: self.subnet_id
+            ,
+            ip: self.ip
+            ,
+            ipv6: self.ipv6
+            ,
         }
     }
 }
+

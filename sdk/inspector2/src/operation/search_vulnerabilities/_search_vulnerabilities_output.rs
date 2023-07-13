@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchVulnerabilitiesOutput {
+pub struct SearchVulnerabilitiesOutput  {
     /// <p>Details about the listed vulnerability.</p>
     #[doc(hidden)]
     pub vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
@@ -13,33 +13,29 @@ pub struct SearchVulnerabilitiesOutput {
 }
 impl SearchVulnerabilitiesOutput {
     /// <p>Details about the listed vulnerability.</p>
-    pub fn vulnerabilities(&self) -> ::std::option::Option<&[crate::types::Vulnerability]> {
+    pub fn vulnerabilities(&self) -> ::std::option::Option<& [crate::types::Vulnerability]> {
         self.vulnerabilities.as_deref()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchVulnerabilitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchVulnerabilitiesOutput {
     /// Creates a new builder-style object to manufacture [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder {
         crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesOutputBuilder {
     pub(crate) vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,17 @@ impl SearchVulnerabilitiesOutputBuilder {
     /// <p>Details about the listed vulnerability.</p>
     pub fn vulnerabilities(mut self, input: crate::types::Vulnerability) -> Self {
         let mut v = self.vulnerabilities.unwrap_or_default();
-        v.push(input);
-        self.vulnerabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vulnerabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about the listed vulnerability.</p>
-    pub fn set_vulnerabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
-    ) -> Self {
-        self.vulnerabilities = input;
-        self
+    pub fn set_vulnerabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>) -> Self {
+        self.vulnerabilities = input; self
+    }
+    /// <p>Details about the listed vulnerability.</p>
+    pub fn get_vulnerabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>> {
+        &self.vulnerabilities
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +68,30 @@ impl SearchVulnerabilitiesOutputBuilder {
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput).
     pub fn build(self) -> crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput {
         crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput {
-            vulnerabilities: self.vulnerabilities,
-            next_token: self.next_token,
+            vulnerabilities: self.vulnerabilities
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

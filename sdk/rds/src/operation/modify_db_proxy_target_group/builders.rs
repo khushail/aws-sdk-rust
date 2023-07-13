@@ -3,149 +3,128 @@ pub use crate::operation::modify_db_proxy_target_group::_modify_db_proxy_target_
 
 pub use crate::operation::modify_db_proxy_target_group::_modify_db_proxy_target_group_input::ModifyDbProxyTargetGroupInputBuilder;
 
+impl ModifyDbProxyTargetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.modify_db_proxy_target_group();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ModifyDBProxyTargetGroup`.
-///
+/// 
 /// <p>Modifies the properties of a <code>DBProxyTargetGroup</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBProxyTargetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupInputBuilder,
 }
-impl ModifyDBProxyTargetGroupFluentBuilder {
+impl ModifyDBProxyTargetGroupFluentBuilder  {
     /// Creates a new `ModifyDBProxyTargetGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ModifyDBProxyTargetGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the target group to modify.</p>
-    pub fn target_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_name(input.into());
         self
     }
     /// <p>The name of the target group to modify.</p>
-    pub fn set_target_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_group_name(input);
         self
     }
+    /// <p>The name of the target group to modify.</p>
+    pub fn get_target_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_group_name()
+    }
     /// <p>The name of the proxy.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());
         self
     }
     /// <p>The name of the proxy.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
+    /// <p>The name of the proxy.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_proxy_name()
+    }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn connection_pool_config(
-        mut self,
-        input: crate::types::ConnectionPoolConfiguration,
-    ) -> Self {
+    pub fn connection_pool_config(mut self, input: crate::types::ConnectionPoolConfiguration) -> Self {
         self.inner = self.inner.connection_pool_config(input);
         self
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn set_connection_pool_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionPoolConfiguration>,
-    ) -> Self {
+    pub fn set_connection_pool_config(mut self, input: ::std::option::Option<crate::types::ConnectionPoolConfiguration>) -> Self {
         self.inner = self.inner.set_connection_pool_config(input);
         self
+    }
+    /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
+    pub fn get_connection_pool_config(&self) -> &::std::option::Option<crate::types::ConnectionPoolConfiguration> {
+        self.inner.get_connection_pool_config()
     }
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn new_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,4 +136,9 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
         self.inner = self.inner.set_new_name(input);
         self
     }
+    /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    pub fn get_new_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_name()
+    }
 }
+

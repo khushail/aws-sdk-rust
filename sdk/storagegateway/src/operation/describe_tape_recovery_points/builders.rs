@@ -3,109 +3,94 @@ pub use crate::operation::describe_tape_recovery_points::_describe_tape_recovery
 
 pub use crate::operation::describe_tape_recovery_points::_describe_tape_recovery_points_input::DescribeTapeRecoveryPointsInputBuilder;
 
+impl DescribeTapeRecoveryPointsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_tape_recovery_points();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeTapeRecoveryPoints`.
-///
-/// <p>Returns a list of virtual tape recovery points that are available for the specified tape gateway.</p>
+/// 
+/// <p>Returns a list of virtual tape recovery points that are available for the specified tape gateway.</p> 
 /// <p>A recovery point is a point-in-time view of a virtual tape at which all the data on the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway. This operation is only supported in the tape gateway type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTapeRecoveryPointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder,
 }
-impl DescribeTapeRecoveryPointsFluentBuilder {
+impl DescribeTapeRecoveryPointsFluentBuilder  {
     /// Creates a new `DescribeTapeRecoveryPoints`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPoints,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeTapeRecoveryPoints as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPoints, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPoints,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPoints, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator{
-        crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator {
+                                crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -115,6 +100,10 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
     }
     /// <p>An opaque string that indicates the position at which to begin describing the virtual tape recovery points.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +115,10 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>An opaque string that indicates the position at which to begin describing the virtual tape recovery points.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>Specifies that the number of virtual tape recovery points that are described be limited to the specified number.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -136,4 +129,9 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>Specifies that the number of virtual tape recovery points that are described be limited to the specified number.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
 }
+

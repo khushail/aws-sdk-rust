@@ -3,7 +3,7 @@
 /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceUnavailableException {
+pub struct ServiceUnavailableException  {
     /// <p> The Exception Error Message. </p>
     #[doc(hidden)]
     pub retry_after_seconds: ::std::option::Option<::std::string::String>,
@@ -14,21 +14,19 @@ pub struct ServiceUnavailableException {
 }
 impl ServiceUnavailableException {
     /// <p> The Exception Error Message. </p>
-    pub fn retry_after_seconds(&self) -> ::std::option::Option<&str> {
+    pub fn retry_after_seconds(&self) -> ::std::option::Option<& str> {
         self.retry_after_seconds.as_deref()
     }
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceUnavailableException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +41,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::ServiceUnavailab
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceUnavailableException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ServiceUnavailableException {
     /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::types::error::ServiceUnavailableException).
@@ -56,9 +52,7 @@ impl ServiceUnavailableException {
 
 /// A builder for [`ServiceUnavailableException`](crate::types::error::ServiceUnavailableException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceUnavailableExceptionBuilder {
     pub(crate) retry_after_seconds: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -66,20 +60,17 @@ pub struct ServiceUnavailableExceptionBuilder {
 }
 impl ServiceUnavailableExceptionBuilder {
     /// <p> The Exception Error Message. </p>
-    pub fn retry_after_seconds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retry_after_seconds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retry_after_seconds = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Exception Error Message. </p>
-    pub fn set_retry_after_seconds(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.retry_after_seconds = input;
-        self
+    pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.retry_after_seconds = input; self
+    }
+    /// <p> The Exception Error Message. </p>
+    pub fn get_retry_after_seconds(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retry_after_seconds
     }
     /// <p> The Exception Error Message. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,29 +79,32 @@ impl ServiceUnavailableExceptionBuilder {
     }
     /// <p> The Exception Error Message. </p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p> The Exception Error Message. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::types::error::ServiceUnavailableException).
     pub fn build(self) -> crate::types::error::ServiceUnavailableException {
         crate::types::error::ServiceUnavailableException {
-            retry_after_seconds: self.retry_after_seconds,
-            message: self.message,
+            retry_after_seconds: self.retry_after_seconds
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

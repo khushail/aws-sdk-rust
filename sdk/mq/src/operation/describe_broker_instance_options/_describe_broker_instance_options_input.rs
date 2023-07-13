@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBrokerInstanceOptionsInput {
+pub struct DescribeBrokerInstanceOptionsInput  {
     /// <p>Filter response by engine type.</p>
     #[doc(hidden)]
     pub engine_type: ::std::option::Option<::std::string::String>,
@@ -21,11 +21,11 @@ pub struct DescribeBrokerInstanceOptionsInput {
 }
 impl DescribeBrokerInstanceOptionsInput {
     /// <p>Filter response by engine type.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&str> {
+    pub fn engine_type(&self) -> ::std::option::Option<& str> {
         self.engine_type.as_deref()
     }
     /// <p>Filter response by host instance type.</p>
-    pub fn host_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn host_instance_type(&self) -> ::std::option::Option<& str> {
         self.host_instance_type.as_deref()
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -33,26 +33,24 @@ impl DescribeBrokerInstanceOptionsInput {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filter response by storage type.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
 }
 impl DescribeBrokerInstanceOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeBrokerInstanceOptionsInput`](crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput).
-    pub fn builder() -> crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder {
         crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBrokerInstanceOptionsInput`](crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBrokerInstanceOptionsInputBuilder {
     pub(crate) engine_type: ::std::option::Option<::std::string::String>,
     pub(crate) host_instance_type: ::std::option::Option<::std::string::String>,
@@ -68,24 +66,24 @@ impl DescribeBrokerInstanceOptionsInputBuilder {
     }
     /// <p>Filter response by engine type.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
+    }
+    /// <p>Filter response by engine type.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_type
     }
     /// <p>Filter response by host instance type.</p>
-    pub fn host_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter response by host instance type.</p>
-    pub fn set_host_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.host_instance_type = input;
-        self
+    pub fn set_host_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.host_instance_type = input; self
+    }
+    /// <p>Filter response by host instance type.</p>
+    pub fn get_host_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_instance_type
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -94,8 +92,11 @@ impl DescribeBrokerInstanceOptionsInputBuilder {
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,8 +105,11 @@ impl DescribeBrokerInstanceOptionsInputBuilder {
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Filter response by storage type.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,16 +118,14 @@ impl DescribeBrokerInstanceOptionsInputBuilder {
     }
     /// <p>Filter response by storage type.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
+    }
+    /// <p>Filter response by storage type.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// Consumes the builder and constructs a [`DescribeBrokerInstanceOptionsInput`](crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput {
                 engine_type: self.engine_type
@@ -140,3 +142,4 @@ impl DescribeBrokerInstanceOptionsInputBuilder {
         )
     }
 }
+

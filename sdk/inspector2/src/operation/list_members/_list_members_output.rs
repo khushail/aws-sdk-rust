@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMembersOutput {
+pub struct ListMembersOutput  {
     /// <p>An object that contains details for each member account.</p>
     #[doc(hidden)]
     pub members: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
@@ -13,19 +13,19 @@ pub struct ListMembersOutput {
 }
 impl ListMembersOutput {
     /// <p>An object that contains details for each member account.</p>
-    pub fn members(&self) -> ::std::option::Option<&[crate::types::Member]> {
+    pub fn members(&self) -> ::std::option::Option<& [crate::types::Member]> {
         self.members.as_deref()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
     pub fn builder() -> crate::operation::list_members::builders::ListMembersOutputBuilder {
@@ -35,9 +35,7 @@ impl ListMembersOutput {
 
 /// A builder for [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMembersOutputBuilder {
     pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,17 @@ impl ListMembersOutputBuilder {
     /// <p>An object that contains details for each member account.</p>
     pub fn members(mut self, input: crate::types::Member) -> Self {
         let mut v = self.members.unwrap_or_default();
-        v.push(input);
-        self.members = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains details for each member account.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
-    ) -> Self {
-        self.members = input;
-        self
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Member>>) -> Self {
+        self.members = input; self
+    }
+    /// <p>An object that contains details for each member account.</p>
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Member>> {
+        &self.members
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,24 +68,30 @@ impl ListMembersOutputBuilder {
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
     pub fn build(self) -> crate::operation::list_members::ListMembersOutput {
         crate::operation::list_members::ListMembersOutput {
-            members: self.members,
-            next_token: self.next_token,
+            members: self.members
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

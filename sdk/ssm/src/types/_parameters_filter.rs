@@ -3,7 +3,7 @@
 /// <p>This data type is deprecated. Instead, use <code>ParameterStringFilter</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParametersFilter {
+pub struct ParametersFilter  {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::ParametersFilterKey>,
@@ -13,11 +13,11 @@ pub struct ParametersFilter {
 }
 impl ParametersFilter {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::ParametersFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::ParametersFilterKey> {
         self.key.as_ref()
     }
     /// <p>The filter values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ParametersFilter {
 
 /// A builder for [`ParametersFilter`](crate::types::ParametersFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParametersFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::ParametersFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,12 +42,12 @@ impl ParametersFilterBuilder {
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::ParametersFilterKey>,
-    ) -> Self {
-        self.key = input;
-        self
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::ParametersFilterKey>) -> Self {
+        self.key = input; self
+    }
+    /// <p>The name of the filter.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::ParametersFilterKey> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -58,23 +56,26 @@ impl ParametersFilterBuilder {
     /// <p>The filter values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>The filter values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ParametersFilter`](crate::types::ParametersFilter).
     pub fn build(self) -> crate::types::ParametersFilter {
         crate::types::ParametersFilter {
-            key: self.key,
-            values: self.values,
+            key: self.key
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

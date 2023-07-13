@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestWirelessDeviceInput {
+pub struct TestWirelessDeviceInput  {
     /// <p>The ID of the wireless device to test.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl TestWirelessDeviceInput {
     /// <p>The ID of the wireless device to test.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl TestWirelessDeviceInput {
     /// Creates a new builder-style object to manufacture [`TestWirelessDeviceInput`](crate::operation::test_wireless_device::TestWirelessDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::test_wireless_device::builders::TestWirelessDeviceInputBuilder {
+    pub fn builder() -> crate::operation::test_wireless_device::builders::TestWirelessDeviceInputBuilder {
         crate::operation::test_wireless_device::builders::TestWirelessDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`TestWirelessDeviceInput`](crate::operation::test_wireless_device::TestWirelessDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestWirelessDeviceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl TestWirelessDeviceInputBuilder {
     }
     /// <p>The ID of the wireless device to test.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the wireless device to test.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`TestWirelessDeviceInput`](crate::operation::test_wireless_device::TestWirelessDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_wireless_device::TestWirelessDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_wireless_device::TestWirelessDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::test_wireless_device::TestWirelessDeviceInput { id: self.id },
+            crate::operation::test_wireless_device::TestWirelessDeviceInput {
+                id: self.id
+                ,
+            }
         )
     }
 }
+

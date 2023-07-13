@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFieldLevelEncryptionConfigInput {
+pub struct GetFieldLevelEncryptionConfigInput  {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetFieldLevelEncryptionConfigInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetFieldLevelEncryptionConfigInput {
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionConfigInput`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput).
-    pub fn builder() -> crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigInputBuilder{
+    pub fn builder() -> crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigInputBuilder {
         crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFieldLevelEncryptionConfigInput`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,14 @@ impl GetFieldLevelEncryptionConfigInputBuilder {
     }
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>Request the ID for the field-level encryption configuration information.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetFieldLevelEncryptionConfigInput`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput {
                 id: self.id
@@ -54,3 +50,4 @@ impl GetFieldLevelEncryptionConfigInputBuilder {
         )
     }
 }
+

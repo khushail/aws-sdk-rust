@@ -3,7 +3,7 @@
 /// <p> Describes an execution step, for an execution job, for an Amplify app. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Step {
+pub struct Step  {
     /// <p> The name of the execution step. </p>
     #[doc(hidden)]
     pub step_name: ::std::option::Option<::std::string::String>,
@@ -30,9 +30,7 @@ pub struct Step {
     pub test_config_url: ::std::option::Option<::std::string::String>,
     /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
     #[doc(hidden)]
-    pub screenshots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub screenshots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The reason for the current step status. </p>
     #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
@@ -42,51 +40,47 @@ pub struct Step {
 }
 impl Step {
     /// <p> The name of the execution step. </p>
-    pub fn step_name(&self) -> ::std::option::Option<&str> {
+    pub fn step_name(&self) -> ::std::option::Option<& str> {
         self.step_name.as_deref()
     }
     /// <p> The start date and time of the execution step. </p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The status of the execution step. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p> The end date and time of the execution step. </p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> The URL to the logs for the execution step. </p>
-    pub fn log_url(&self) -> ::std::option::Option<&str> {
+    pub fn log_url(&self) -> ::std::option::Option<& str> {
         self.log_url.as_deref()
     }
     /// <p> The URL to the artifact for the execution step. </p>
-    pub fn artifacts_url(&self) -> ::std::option::Option<&str> {
+    pub fn artifacts_url(&self) -> ::std::option::Option<& str> {
         self.artifacts_url.as_deref()
     }
     /// <p> The URL to the test artifact for the execution step. </p>
-    pub fn test_artifacts_url(&self) -> ::std::option::Option<&str> {
+    pub fn test_artifacts_url(&self) -> ::std::option::Option<& str> {
         self.test_artifacts_url.as_deref()
     }
     /// <p> The URL to the test configuration for the execution step. </p>
-    pub fn test_config_url(&self) -> ::std::option::Option<&str> {
+    pub fn test_config_url(&self) -> ::std::option::Option<& str> {
         self.test_config_url.as_deref()
     }
     /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
-    pub fn screenshots(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn screenshots(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.screenshots.as_ref()
     }
     /// <p> The reason for the current step status. </p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p> The context for the current step. Includes a build image if the step is build. </p>
-    pub fn context(&self) -> ::std::option::Option<&str> {
+    pub fn context(&self) -> ::std::option::Option<& str> {
         self.context.as_deref()
     }
 }
@@ -99,9 +93,7 @@ impl Step {
 
 /// A builder for [`Step`](crate::types::Step).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepBuilder {
     pub(crate) step_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -111,9 +103,7 @@ pub struct StepBuilder {
     pub(crate) artifacts_url: ::std::option::Option<::std::string::String>,
     pub(crate) test_artifacts_url: ::std::option::Option<::std::string::String>,
     pub(crate) test_config_url: ::std::option::Option<::std::string::String>,
-    pub(crate) screenshots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) screenshots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
 }
@@ -125,8 +115,11 @@ impl StepBuilder {
     }
     /// <p> The name of the execution step. </p>
     pub fn set_step_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_name = input;
-        self
+        self.step_name = input; self
+    }
+    /// <p> The name of the execution step. </p>
+    pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_name
     }
     /// <p> The start date and time of the execution step. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -134,12 +127,12 @@ impl StepBuilder {
         self
     }
     /// <p> The start date and time of the execution step. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p> The start date and time of the execution step. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p> The status of the execution step. </p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
@@ -148,8 +141,11 @@ impl StepBuilder {
     }
     /// <p> The status of the execution step. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p> The status of the execution step. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p> The end date and time of the execution step. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -157,12 +153,12 @@ impl StepBuilder {
         self
     }
     /// <p> The end date and time of the execution step. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p> The end date and time of the execution step. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p> The URL to the logs for the execution step. </p>
     pub fn log_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,97 +167,82 @@ impl StepBuilder {
     }
     /// <p> The URL to the logs for the execution step. </p>
     pub fn set_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_url = input;
-        self
+        self.log_url = input; self
+    }
+    /// <p> The URL to the logs for the execution step. </p>
+    pub fn get_log_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_url
     }
     /// <p> The URL to the artifact for the execution step. </p>
-    pub fn artifacts_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifacts_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifacts_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The URL to the artifact for the execution step. </p>
-    pub fn set_artifacts_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.artifacts_url = input;
-        self
+    pub fn set_artifacts_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.artifacts_url = input; self
+    }
+    /// <p> The URL to the artifact for the execution step. </p>
+    pub fn get_artifacts_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifacts_url
     }
     /// <p> The URL to the test artifact for the execution step. </p>
-    pub fn test_artifacts_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_artifacts_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_artifacts_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The URL to the test artifact for the execution step. </p>
-    pub fn set_test_artifacts_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.test_artifacts_url = input;
-        self
+    pub fn set_test_artifacts_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.test_artifacts_url = input; self
+    }
+    /// <p> The URL to the test artifact for the execution step. </p>
+    pub fn get_test_artifacts_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_artifacts_url
     }
     /// <p> The URL to the test configuration for the execution step. </p>
-    pub fn test_config_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_config_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_config_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The URL to the test configuration for the execution step. </p>
-    pub fn set_test_config_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.test_config_url = input;
-        self
+    pub fn set_test_config_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.test_config_url = input; self
+    }
+    /// <p> The URL to the test configuration for the execution step. </p>
+    pub fn get_test_config_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_config_url
     }
     /// Adds a key-value pair to `screenshots`.
     ///
     /// To override the contents of this collection use [`set_screenshots`](Self::set_screenshots).
     ///
     /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
-    pub fn screenshots(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn screenshots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.screenshots.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.screenshots = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.screenshots = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
-    pub fn set_screenshots(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.screenshots = input;
-        self
+    pub fn set_screenshots(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.screenshots = input; self
+    }
+    /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
+    pub fn get_screenshots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.screenshots
     }
     /// <p> The reason for the current step status. </p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason for the current step status. </p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_reason = input;
-        self
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input; self
+    }
+    /// <p> The reason for the current step status. </p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// <p> The context for the current step. Includes a build image if the step is build. </p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -270,23 +251,38 @@ impl StepBuilder {
     }
     /// <p> The context for the current step. Includes a build image if the step is build. </p>
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
+    }
+    /// <p> The context for the current step. Includes a build image if the step is build. </p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
     }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
     pub fn build(self) -> crate::types::Step {
         crate::types::Step {
-            step_name: self.step_name,
-            start_time: self.start_time,
-            status: self.status,
-            end_time: self.end_time,
-            log_url: self.log_url,
-            artifacts_url: self.artifacts_url,
-            test_artifacts_url: self.test_artifacts_url,
-            test_config_url: self.test_config_url,
-            screenshots: self.screenshots,
-            status_reason: self.status_reason,
-            context: self.context,
+            step_name: self.step_name
+            ,
+            start_time: self.start_time
+            ,
+            status: self.status
+            ,
+            end_time: self.end_time
+            ,
+            log_url: self.log_url
+            ,
+            artifacts_url: self.artifacts_url
+            ,
+            test_artifacts_url: self.test_artifacts_url
+            ,
+            test_config_url: self.test_config_url
+            ,
+            screenshots: self.screenshots
+            ,
+            status_reason: self.status_reason
+            ,
+            context: self.context
+            ,
         }
     }
 }
+

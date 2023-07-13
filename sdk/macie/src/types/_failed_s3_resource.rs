@@ -3,7 +3,7 @@
 /// <p>(Discontinued) Includes details about the failed S3 resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedS3Resource {
+pub struct FailedS3Resource  {
     /// <p>(Discontinued) The failed S3 resources.</p>
     #[doc(hidden)]
     pub failed_item: ::std::option::Option<crate::types::S3Resource>,
@@ -16,15 +16,15 @@ pub struct FailedS3Resource {
 }
 impl FailedS3Resource {
     /// <p>(Discontinued) The failed S3 resources.</p>
-    pub fn failed_item(&self) -> ::std::option::Option<&crate::types::S3Resource> {
+    pub fn failed_item(&self) -> ::std::option::Option<& crate::types::S3Resource> {
         self.failed_item.as_ref()
     }
     /// <p>(Discontinued) The status code of a failed item.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>(Discontinued) The error message of a failed item.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl FailedS3Resource {
 
 /// A builder for [`FailedS3Resource`](crate::types::FailedS3Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedS3ResourceBuilder {
     pub(crate) failed_item: ::std::option::Option<crate::types::S3Resource>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl FailedS3ResourceBuilder {
         self
     }
     /// <p>(Discontinued) The failed S3 resources.</p>
-    pub fn set_failed_item(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Resource>,
-    ) -> Self {
-        self.failed_item = input;
-        self
+    pub fn set_failed_item(mut self, input: ::std::option::Option<crate::types::S3Resource>) -> Self {
+        self.failed_item = input; self
+    }
+    /// <p>(Discontinued) The failed S3 resources.</p>
+    pub fn get_failed_item(&self) -> &::std::option::Option<crate::types::S3Resource> {
+        &self.failed_item
     }
     /// <p>(Discontinued) The status code of a failed item.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,31 +64,35 @@ impl FailedS3ResourceBuilder {
     }
     /// <p>(Discontinued) The status code of a failed item.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
+    }
+    /// <p>(Discontinued) The status code of a failed item.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>(Discontinued) The error message of a failed item.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Discontinued) The error message of a failed item.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>(Discontinued) The error message of a failed item.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedS3Resource`](crate::types::FailedS3Resource).
     pub fn build(self) -> crate::types::FailedS3Resource {
         crate::types::FailedS3Resource {
-            failed_item: self.failed_item,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            failed_item: self.failed_item
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

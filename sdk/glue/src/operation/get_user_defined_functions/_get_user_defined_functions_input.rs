@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUserDefinedFunctionsInput {
+pub struct GetUserDefinedFunctionsInput  {
     /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
@@ -21,19 +21,19 @@ pub struct GetUserDefinedFunctionsInput {
 }
 impl GetUserDefinedFunctionsInput {
     /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
-    pub fn pattern(&self) -> ::std::option::Option<&str> {
+    pub fn pattern(&self) -> ::std::option::Option<& str> {
         self.pattern.as_deref()
     }
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of functions to return in one response.</p>
@@ -43,18 +43,14 @@ impl GetUserDefinedFunctionsInput {
 }
 impl GetUserDefinedFunctionsInput {
     /// Creates a new builder-style object to manufacture [`GetUserDefinedFunctionsInput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder {
         crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUserDefinedFunctionsInput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserDefinedFunctionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -70,24 +66,24 @@ impl GetUserDefinedFunctionsInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
+    }
+    /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_name = input;
-        self
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_name = input; self
+    }
+    /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,8 +92,11 @@ impl GetUserDefinedFunctionsInputBuilder {
     }
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern = input;
-        self
+        self.pattern = input; self
+    }
+    /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +105,11 @@ impl GetUserDefinedFunctionsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of functions to return in one response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -116,24 +118,28 @@ impl GetUserDefinedFunctionsInputBuilder {
     }
     /// <p>The maximum number of functions to return in one response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of functions to return in one response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetUserDefinedFunctionsInput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                pattern: self.pattern,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                pattern: self.pattern
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

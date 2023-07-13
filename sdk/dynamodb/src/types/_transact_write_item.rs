@@ -3,7 +3,7 @@
 /// <p>A list of requests that can perform update, put, delete, or check operations on multiple items in one or more tables atomically.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransactWriteItem {
+pub struct TransactWriteItem  {
     /// <p>A request to perform a check item operation.</p>
     #[doc(hidden)]
     pub condition_check: ::std::option::Option<crate::types::ConditionCheck>,
@@ -19,19 +19,19 @@ pub struct TransactWriteItem {
 }
 impl TransactWriteItem {
     /// <p>A request to perform a check item operation.</p>
-    pub fn condition_check(&self) -> ::std::option::Option<&crate::types::ConditionCheck> {
+    pub fn condition_check(&self) -> ::std::option::Option<& crate::types::ConditionCheck> {
         self.condition_check.as_ref()
     }
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
-    pub fn put(&self) -> ::std::option::Option<&crate::types::Put> {
+    pub fn put(&self) -> ::std::option::Option<& crate::types::Put> {
         self.put.as_ref()
     }
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
-    pub fn delete(&self) -> ::std::option::Option<&crate::types::Delete> {
+    pub fn delete(&self) -> ::std::option::Option<& crate::types::Delete> {
         self.delete.as_ref()
     }
     /// <p>A request to perform an <code>UpdateItem</code> operation.</p>
-    pub fn update(&self) -> ::std::option::Option<&crate::types::Update> {
+    pub fn update(&self) -> ::std::option::Option<& crate::types::Update> {
         self.update.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl TransactWriteItem {
 
 /// A builder for [`TransactWriteItem`](crate::types::TransactWriteItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransactWriteItemBuilder {
     pub(crate) condition_check: ::std::option::Option<crate::types::ConditionCheck>,
     pub(crate) put: ::std::option::Option<crate::types::Put>,
@@ -60,12 +58,12 @@ impl TransactWriteItemBuilder {
         self
     }
     /// <p>A request to perform a check item operation.</p>
-    pub fn set_condition_check(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionCheck>,
-    ) -> Self {
-        self.condition_check = input;
-        self
+    pub fn set_condition_check(mut self, input: ::std::option::Option<crate::types::ConditionCheck>) -> Self {
+        self.condition_check = input; self
+    }
+    /// <p>A request to perform a check item operation.</p>
+    pub fn get_condition_check(&self) -> &::std::option::Option<crate::types::ConditionCheck> {
+        &self.condition_check
     }
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
     pub fn put(mut self, input: crate::types::Put) -> Self {
@@ -74,8 +72,11 @@ impl TransactWriteItemBuilder {
     }
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
     pub fn set_put(mut self, input: ::std::option::Option<crate::types::Put>) -> Self {
-        self.put = input;
-        self
+        self.put = input; self
+    }
+    /// <p>A request to perform a <code>PutItem</code> operation.</p>
+    pub fn get_put(&self) -> &::std::option::Option<crate::types::Put> {
+        &self.put
     }
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
     pub fn delete(mut self, input: crate::types::Delete) -> Self {
@@ -84,8 +85,11 @@ impl TransactWriteItemBuilder {
     }
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
     pub fn set_delete(mut self, input: ::std::option::Option<crate::types::Delete>) -> Self {
-        self.delete = input;
-        self
+        self.delete = input; self
+    }
+    /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
+    pub fn get_delete(&self) -> &::std::option::Option<crate::types::Delete> {
+        &self.delete
     }
     /// <p>A request to perform an <code>UpdateItem</code> operation.</p>
     pub fn update(mut self, input: crate::types::Update) -> Self {
@@ -94,16 +98,24 @@ impl TransactWriteItemBuilder {
     }
     /// <p>A request to perform an <code>UpdateItem</code> operation.</p>
     pub fn set_update(mut self, input: ::std::option::Option<crate::types::Update>) -> Self {
-        self.update = input;
-        self
+        self.update = input; self
+    }
+    /// <p>A request to perform an <code>UpdateItem</code> operation.</p>
+    pub fn get_update(&self) -> &::std::option::Option<crate::types::Update> {
+        &self.update
     }
     /// Consumes the builder and constructs a [`TransactWriteItem`](crate::types::TransactWriteItem).
     pub fn build(self) -> crate::types::TransactWriteItem {
         crate::types::TransactWriteItem {
-            condition_check: self.condition_check,
-            put: self.put,
-            delete: self.delete,
-            update: self.update,
+            condition_check: self.condition_check
+            ,
+            put: self.put
+            ,
+            delete: self.delete
+            ,
+            update: self.update
+            ,
         }
     }
 }
+

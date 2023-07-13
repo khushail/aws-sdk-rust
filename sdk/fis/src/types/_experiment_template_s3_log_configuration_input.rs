@@ -3,7 +3,7 @@
 /// <p>Specifies the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentTemplateS3LogConfigurationInput {
+pub struct ExperimentTemplateS3LogConfigurationInput  {
     /// <p>The name of the destination bucket.</p>
     #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExperimentTemplateS3LogConfigurationInput {
 }
 impl ExperimentTemplateS3LogConfigurationInput {
     /// <p>The name of the destination bucket.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The bucket prefix.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ExperimentTemplateS3LogConfigurationInput {
 
 /// A builder for [`ExperimentTemplateS3LogConfigurationInput`](crate::types::ExperimentTemplateS3LogConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentTemplateS3LogConfigurationInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ExperimentTemplateS3LogConfigurationInputBuilder {
     }
     /// <p>The name of the destination bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
+    }
+    /// <p>The name of the destination bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// <p>The bucket prefix.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ExperimentTemplateS3LogConfigurationInputBuilder {
     }
     /// <p>The bucket prefix.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
+    }
+    /// <p>The bucket prefix.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateS3LogConfigurationInput`](crate::types::ExperimentTemplateS3LogConfigurationInput).
     pub fn build(self) -> crate::types::ExperimentTemplateS3LogConfigurationInput {
         crate::types::ExperimentTemplateS3LogConfigurationInput {
-            bucket_name: self.bucket_name,
-            prefix: self.prefix,
+            bucket_name: self.bucket_name
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

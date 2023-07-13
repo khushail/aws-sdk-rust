@@ -3,7 +3,7 @@
 /// <p>The Amazon SageMaker model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalModelSummary {
+pub struct ExternalModelSummary  {
     /// <p>The endpoint of the Amazon SageMaker model.</p>
     #[doc(hidden)]
     pub model_endpoint: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExternalModelSummary {
 }
 impl ExternalModelSummary {
     /// <p>The endpoint of the Amazon SageMaker model.</p>
-    pub fn model_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn model_endpoint(&self) -> ::std::option::Option<& str> {
         self.model_endpoint.as_deref()
     }
     /// <p>The source of the model.</p>
-    pub fn model_source(&self) -> ::std::option::Option<&crate::types::ModelSource> {
+    pub fn model_source(&self) -> ::std::option::Option<& crate::types::ModelSource> {
         self.model_source.as_ref()
     }
 }
@@ -30,29 +30,24 @@ impl ExternalModelSummary {
 
 /// A builder for [`ExternalModelSummary`](crate::types::ExternalModelSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalModelSummaryBuilder {
     pub(crate) model_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) model_source: ::std::option::Option<crate::types::ModelSource>,
 }
 impl ExternalModelSummaryBuilder {
     /// <p>The endpoint of the Amazon SageMaker model.</p>
-    pub fn model_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the Amazon SageMaker model.</p>
-    pub fn set_model_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.model_endpoint = input;
-        self
+    pub fn set_model_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_endpoint = input; self
+    }
+    /// <p>The endpoint of the Amazon SageMaker model.</p>
+    pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_endpoint
     }
     /// <p>The source of the model.</p>
     pub fn model_source(mut self, input: crate::types::ModelSource) -> Self {
@@ -60,18 +55,21 @@ impl ExternalModelSummaryBuilder {
         self
     }
     /// <p>The source of the model.</p>
-    pub fn set_model_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelSource>,
-    ) -> Self {
-        self.model_source = input;
-        self
+    pub fn set_model_source(mut self, input: ::std::option::Option<crate::types::ModelSource>) -> Self {
+        self.model_source = input; self
+    }
+    /// <p>The source of the model.</p>
+    pub fn get_model_source(&self) -> &::std::option::Option<crate::types::ModelSource> {
+        &self.model_source
     }
     /// Consumes the builder and constructs a [`ExternalModelSummary`](crate::types::ExternalModelSummary).
     pub fn build(self) -> crate::types::ExternalModelSummary {
         crate::types::ExternalModelSummary {
-            model_endpoint: self.model_endpoint,
-            model_source: self.model_source,
+            model_endpoint: self.model_endpoint
+            ,
+            model_source: self.model_source
+            ,
         }
     }
 }
+

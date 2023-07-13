@@ -3,7 +3,7 @@
 /// <p>LoRaWANGatewayVersion object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanGatewayVersion {
+pub struct LoRaWanGatewayVersion  {
     /// <p>The version of the wireless gateway firmware.</p>
     #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct LoRaWanGatewayVersion {
 }
 impl LoRaWanGatewayVersion {
     /// <p>The version of the wireless gateway firmware.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The model number of the wireless gateway.</p>
-    pub fn model(&self) -> ::std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The basic station version of the wireless gateway.</p>
-    pub fn station(&self) -> ::std::option::Option<&str> {
+    pub fn station(&self) -> ::std::option::Option<& str> {
         self.station.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl LoRaWanGatewayVersion {
 
 /// A builder for [`LoRaWanGatewayVersion`](crate::types::LoRaWanGatewayVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanGatewayVersionBuilder {
     pub(crate) package_version: ::std::option::Option<::std::string::String>,
     pub(crate) model: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct LoRaWanGatewayVersionBuilder {
 }
 impl LoRaWanGatewayVersionBuilder {
     /// <p>The version of the wireless gateway firmware.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the wireless gateway firmware.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.package_version = input;
-        self
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.package_version = input; self
+    }
+    /// <p>The version of the wireless gateway firmware.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
     }
     /// <p>The model number of the wireless gateway.</p>
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +64,11 @@ impl LoRaWanGatewayVersionBuilder {
     }
     /// <p>The model number of the wireless gateway.</p>
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
+    }
+    /// <p>The model number of the wireless gateway.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
     }
     /// <p>The basic station version of the wireless gateway.</p>
     pub fn station(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl LoRaWanGatewayVersionBuilder {
     }
     /// <p>The basic station version of the wireless gateway.</p>
     pub fn set_station(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.station = input;
-        self
+        self.station = input; self
+    }
+    /// <p>The basic station version of the wireless gateway.</p>
+    pub fn get_station(&self) -> &::std::option::Option<::std::string::String> {
+        &self.station
     }
     /// Consumes the builder and constructs a [`LoRaWanGatewayVersion`](crate::types::LoRaWanGatewayVersion).
     pub fn build(self) -> crate::types::LoRaWanGatewayVersion {
         crate::types::LoRaWanGatewayVersion {
-            package_version: self.package_version,
-            model: self.model,
-            station: self.station,
+            package_version: self.package_version
+            ,
+            model: self.model
+            ,
+            station: self.station
+            ,
         }
     }
 }
+

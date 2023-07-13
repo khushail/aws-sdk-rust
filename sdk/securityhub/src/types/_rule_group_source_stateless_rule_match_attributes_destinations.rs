@@ -3,55 +3,50 @@
 /// <p>A destination IP address or range.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinations {
+pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinations  {
     /// <p>An IP address or a block of IP addresses.</p>
     #[doc(hidden)]
     pub address_definition: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn address_definition(&self) -> ::std::option::Option<&str> {
+    pub fn address_definition(&self) -> ::std::option::Option<& str> {
         self.address_definition.as_deref()
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
     /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
-    pub fn builder(
-    ) -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder
-    {
+    pub fn builder() -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder {
         crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder::default()
     }
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder {
     pub(crate) address_definition: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder {
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn address_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn set_address_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.address_definition = input;
-        self
+    pub fn set_address_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.address_definition = input; self
+    }
+    /// <p>An IP address or a block of IP addresses.</p>
+    pub fn get_address_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_definition
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations {
         crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations {
-            address_definition: self.address_definition,
+            address_definition: self.address_definition
+            ,
         }
     }
 }
+

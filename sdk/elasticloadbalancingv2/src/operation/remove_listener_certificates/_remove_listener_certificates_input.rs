@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveListenerCertificatesInput {
+pub struct RemoveListenerCertificatesInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct RemoveListenerCertificatesInput {
 }
 impl RemoveListenerCertificatesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> ::std::option::Option<&str> {
+    pub fn listener_arn(&self) -> ::std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
+    pub fn certificates(&self) -> ::std::option::Option<& [crate::types::Certificate]> {
         self.certificates.as_deref()
     }
 }
 impl RemoveListenerCertificatesInput {
     /// Creates a new builder-style object to manufacture [`RemoveListenerCertificatesInput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput).
-    pub fn builder() -> crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder{
+    pub fn builder() -> crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder {
         crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveListenerCertificatesInput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveListenerCertificatesInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
@@ -44,8 +42,11 @@ impl RemoveListenerCertificatesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
     }
     /// Appends an item to `certificates`.
     ///
@@ -54,30 +55,28 @@ impl RemoveListenerCertificatesInputBuilder {
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.certificates = input; self
+    }
+    /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
     }
     /// Consumes the builder and constructs a [`RemoveListenerCertificatesInput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput {
-                listener_arn: self.listener_arn,
-                certificates: self.certificates,
-            },
+                listener_arn: self.listener_arn
+                ,
+                certificates: self.certificates
+                ,
+            }
         )
     }
 }
+

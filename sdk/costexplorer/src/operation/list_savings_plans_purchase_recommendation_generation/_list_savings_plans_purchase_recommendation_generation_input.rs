@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSavingsPlansPurchaseRecommendationGenerationInput {
+pub struct ListSavingsPlansPurchaseRecommendationGenerationInput  {
     /// <p>The status of the recommendation generation.</p>
     #[doc(hidden)]
     pub generation_status: ::std::option::Option<crate::types::GenerationStatus>,
@@ -18,11 +18,11 @@ pub struct ListSavingsPlansPurchaseRecommendationGenerationInput {
 }
 impl ListSavingsPlansPurchaseRecommendationGenerationInput {
     /// <p>The status of the recommendation generation.</p>
-    pub fn generation_status(&self) -> ::std::option::Option<&crate::types::GenerationStatus> {
+    pub fn generation_status(&self) -> ::std::option::Option<& crate::types::GenerationStatus> {
         self.generation_status.as_ref()
     }
     /// <p>The IDs for each specific recommendation.</p>
-    pub fn recommendation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn recommendation_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.recommendation_ids.as_deref()
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
@@ -30,22 +30,20 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInput {
         self.page_size
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ListSavingsPlansPurchaseRecommendationGenerationInput {
     /// Creates a new builder-style object to manufacture [`ListSavingsPlansPurchaseRecommendationGenerationInput`](crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationInput).
-    pub fn builder() -> crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder{
+    pub fn builder() -> crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
         crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSavingsPlansPurchaseRecommendationGenerationInput`](crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
     pub(crate) generation_status: ::std::option::Option<crate::types::GenerationStatus>,
     pub(crate) recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -59,34 +57,31 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
         self
     }
     /// <p>The status of the recommendation generation.</p>
-    pub fn set_generation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GenerationStatus>,
-    ) -> Self {
-        self.generation_status = input;
-        self
+    pub fn set_generation_status(mut self, input: ::std::option::Option<crate::types::GenerationStatus>) -> Self {
+        self.generation_status = input; self
+    }
+    /// <p>The status of the recommendation generation.</p>
+    pub fn get_generation_status(&self) -> &::std::option::Option<crate::types::GenerationStatus> {
+        &self.generation_status
     }
     /// Appends an item to `recommendation_ids`.
     ///
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
     ///
     /// <p>The IDs for each specific recommendation.</p>
-    pub fn recommendation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.recommendation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recommendation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs for each specific recommendation.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.recommendation_ids = input;
-        self
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.recommendation_ids = input; self
+    }
+    /// <p>The IDs for each specific recommendation.</p>
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recommendation_ids
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -95,27 +90,27 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
+    }
+    /// <p>The number of recommendations that you want returned in a single response object.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_page_token = input;
-        self
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_page_token = input; self
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     /// Consumes the builder and constructs a [`ListSavingsPlansPurchaseRecommendationGenerationInput`](crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationInput {
                 generation_status: self.generation_status
@@ -131,3 +126,4 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A column of a data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnIdentifier {
+pub struct ColumnIdentifier  {
     /// <p>The data set that the column belongs to.</p>
     #[doc(hidden)]
     pub data_set_identifier: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ColumnIdentifier {
 }
 impl ColumnIdentifier {
     /// <p>The data set that the column belongs to.</p>
-    pub fn data_set_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_identifier(&self) -> ::std::option::Option<& str> {
         self.data_set_identifier.as_deref()
     }
     /// <p>The name of the column.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
+    pub fn column_name(&self) -> ::std::option::Option<& str> {
         self.column_name.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl ColumnIdentifier {
 
 /// A builder for [`ColumnIdentifier`](crate::types::ColumnIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnIdentifierBuilder {
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
 }
 impl ColumnIdentifierBuilder {
     /// <p>The data set that the column belongs to.</p>
-    pub fn data_set_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data set that the column belongs to.</p>
-    pub fn set_data_set_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_set_identifier = input;
-        self
+    pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_set_identifier = input; self
+    }
+    /// <p>The data set that the column belongs to.</p>
+    pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_identifier
     }
     /// <p>The name of the column.</p>
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl ColumnIdentifierBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
+    }
+    /// <p>The name of the column.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
     }
     /// Consumes the builder and constructs a [`ColumnIdentifier`](crate::types::ColumnIdentifier).
     pub fn build(self) -> crate::types::ColumnIdentifier {
         crate::types::ColumnIdentifier {
-            data_set_identifier: self.data_set_identifier,
-            column_name: self.column_name,
+            data_set_identifier: self.data_set_identifier
+            ,
+            column_name: self.column_name
+            ,
         }
     }
 }
+

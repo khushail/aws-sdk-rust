@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSiteToSiteVpnAttachmentInput {
+pub struct CreateSiteToSiteVpnAttachmentInput  {
     /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
     #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
@@ -18,34 +18,32 @@ pub struct CreateSiteToSiteVpnAttachmentInput {
 }
 impl CreateSiteToSiteVpnAttachmentInput {
     /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ARN identifying the VPN attachment.</p>
-    pub fn vpn_connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_connection_arn(&self) -> ::std::option::Option<& str> {
         self.vpn_connection_arn.as_deref()
     }
     /// <p>The tags associated with the request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl CreateSiteToSiteVpnAttachmentInput {
     /// Creates a new builder-style object to manufacture [`CreateSiteToSiteVpnAttachmentInput`](crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentInput).
-    pub fn builder() -> crate::operation::create_site_to_site_vpn_attachment::builders::CreateSiteToSiteVpnAttachmentInputBuilder{
+    pub fn builder() -> crate::operation::create_site_to_site_vpn_attachment::builders::CreateSiteToSiteVpnAttachmentInputBuilder {
         crate::operation::create_site_to_site_vpn_attachment::builders::CreateSiteToSiteVpnAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSiteToSiteVpnAttachmentInput`](crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSiteToSiteVpnAttachmentInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_connection_arn: ::std::option::Option<::std::string::String>,
@@ -54,36 +52,30 @@ pub struct CreateSiteToSiteVpnAttachmentInputBuilder {
 }
 impl CreateSiteToSiteVpnAttachmentInputBuilder {
     /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.core_network_id = input;
-        self
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.core_network_id = input; self
+    }
+    /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
     }
     /// <p>The ARN identifying the VPN attachment.</p>
-    pub fn vpn_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN identifying the VPN attachment.</p>
-    pub fn set_vpn_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpn_connection_arn = input;
-        self
+    pub fn set_vpn_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpn_connection_arn = input; self
+    }
+    /// <p>The ARN identifying the VPN attachment.</p>
+    pub fn get_vpn_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -92,17 +84,17 @@ impl CreateSiteToSiteVpnAttachmentInputBuilder {
     /// <p>The tags associated with the request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,16 +103,14 @@ impl CreateSiteToSiteVpnAttachmentInputBuilder {
     }
     /// <p>The client token associated with the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateSiteToSiteVpnAttachmentInput`](crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentInput {
                 core_network_id: self.core_network_id
@@ -135,3 +125,4 @@ impl CreateSiteToSiteVpnAttachmentInputBuilder {
         )
     }
 }
+

@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpcConnectorInput {
+pub struct CreateVpcConnectorInput  {
     /// <p>A name for the VPC connector.</p>
     #[doc(hidden)]
     pub vpc_connector_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
-    /// <p> App Runner currently only provides support for IPv4. </p>
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note> 
+    /// <p> App Runner currently only provides support for IPv4. </p> 
     /// </note>
     #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -20,37 +20,34 @@ pub struct CreateVpcConnectorInput {
 }
 impl CreateVpcConnectorInput {
     /// <p>A name for the VPC connector.</p>
-    pub fn vpc_connector_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connector_name(&self) -> ::std::option::Option<& str> {
         self.vpc_connector_name.as_deref()
     }
-    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
-    /// <p> App Runner currently only provides support for IPv4. </p>
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note> 
+    /// <p> App Runner currently only provides support for IPv4. </p> 
     /// </note>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn subnets(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn security_groups(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateVpcConnectorInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcConnectorInput`](crate::operation::create_vpc_connector::CreateVpcConnectorInput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_connector::builders::CreateVpcConnectorInputBuilder {
+    pub fn builder() -> crate::operation::create_vpc_connector::builders::CreateVpcConnectorInputBuilder {
         crate::operation::create_vpc_connector::builders::CreateVpcConnectorInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcConnectorInput`](crate::operation::create_vpc_connector::CreateVpcConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcConnectorInputBuilder {
     pub(crate) vpc_connector_name: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -59,65 +56,61 @@ pub struct CreateVpcConnectorInputBuilder {
 }
 impl CreateVpcConnectorInputBuilder {
     /// <p>A name for the VPC connector.</p>
-    pub fn vpc_connector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the VPC connector.</p>
-    pub fn set_vpc_connector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_connector_name = input;
-        self
+    pub fn set_vpc_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_connector_name = input; self
+    }
+    /// <p>A name for the VPC connector.</p>
+    pub fn get_vpc_connector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connector_name
     }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
-    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
-    /// <p> App Runner currently only provides support for IPv4. </p>
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note> 
+    /// <p> App Runner currently only provides support for IPv4. </p> 
     /// </note>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
-    /// <p> App Runner currently only provides support for IPv4. </p>
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note> 
+    /// <p> App Runner currently only provides support for IPv4. </p> 
     /// </note>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnets = input; self
+    }
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note> 
+    /// <p> App Runner currently only provides support for IPv4. </p> 
+    /// </note>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
     }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.security_groups = input; self
+    }
+    /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
     }
     /// Appends an item to `tags`.
     ///
@@ -126,32 +119,32 @@ impl CreateVpcConnectorInputBuilder {
     /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVpcConnectorInput`](crate::operation::create_vpc_connector::CreateVpcConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpc_connector::CreateVpcConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc_connector::CreateVpcConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_vpc_connector::CreateVpcConnectorInput {
-                vpc_connector_name: self.vpc_connector_name,
-                subnets: self.subnets,
-                security_groups: self.security_groups,
-                tags: self.tags,
-            },
+                vpc_connector_name: self.vpc_connector_name
+                ,
+                subnets: self.subnets
+                ,
+                security_groups: self.security_groups
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

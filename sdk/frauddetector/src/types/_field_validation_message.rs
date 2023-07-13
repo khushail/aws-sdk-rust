@@ -3,7 +3,7 @@
 /// <p>The message details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldValidationMessage {
+pub struct FieldValidationMessage  {
     /// <p>The field name.</p>
     #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct FieldValidationMessage {
 }
 impl FieldValidationMessage {
     /// <p>The field name.</p>
-    pub fn field_name(&self) -> ::std::option::Option<&str> {
+    pub fn field_name(&self) -> ::std::option::Option<& str> {
         self.field_name.as_deref()
     }
     /// <p>The message ID.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The message title.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The message content.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The message type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl FieldValidationMessage {
 
 /// A builder for [`FieldValidationMessage`](crate::types::FieldValidationMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldValidationMessageBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl FieldValidationMessageBuilder {
     }
     /// <p>The field name.</p>
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
+    }
+    /// <p>The field name.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
     }
     /// <p>The message ID.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl FieldValidationMessageBuilder {
     }
     /// <p>The message ID.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
+    }
+    /// <p>The message ID.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>The message title.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl FieldValidationMessageBuilder {
     }
     /// <p>The message title.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
+    }
+    /// <p>The message title.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The message content.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,8 +106,11 @@ impl FieldValidationMessageBuilder {
     }
     /// <p>The message content.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
+    }
+    /// <p>The message content.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The message type.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,17 +119,26 @@ impl FieldValidationMessageBuilder {
     }
     /// <p>The message type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The message type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`FieldValidationMessage`](crate::types::FieldValidationMessage).
     pub fn build(self) -> crate::types::FieldValidationMessage {
         crate::types::FieldValidationMessage {
-            field_name: self.field_name,
-            identifier: self.identifier,
-            title: self.title,
-            content: self.content,
-            r#type: self.r#type,
+            field_name: self.field_name
+            ,
+            identifier: self.identifier
+            ,
+            title: self.title
+            ,
+            content: self.content
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

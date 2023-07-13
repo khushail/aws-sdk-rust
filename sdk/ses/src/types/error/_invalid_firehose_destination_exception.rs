@@ -3,7 +3,7 @@
 /// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidFirehoseDestinationException {
+pub struct InvalidFirehoseDestinationException  {
     /// <p>Indicates that the configuration set does not exist.</p>
     #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
@@ -17,25 +17,23 @@ pub struct InvalidFirehoseDestinationException {
 }
 impl InvalidFirehoseDestinationException {
     /// <p>Indicates that the configuration set does not exist.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>Indicates that the event destination does not exist.</p>
-    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> ::std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
 }
 impl InvalidFirehoseDestinationException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidFirehoseDestinationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidFirehoseDestinationException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,20 +41,14 @@ impl ::std::fmt::Display for InvalidFirehoseDestinationException {
     }
 }
 impl ::std::error::Error for InvalidFirehoseDestinationException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidFirehoseDestinationException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidFirehoseDestinationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidFirehoseDestinationException
-{
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidFirehoseDestinationException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidFirehoseDestinationException {
     /// Creates a new builder-style object to manufacture [`InvalidFirehoseDestinationException`](crate::types::error::InvalidFirehoseDestinationException).
@@ -67,9 +59,7 @@ impl InvalidFirehoseDestinationException {
 
 /// A builder for [`InvalidFirehoseDestinationException`](crate::types::error::InvalidFirehoseDestinationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidFirehoseDestinationExceptionBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destination_name: ::std::option::Option<::std::string::String>,
@@ -78,36 +68,30 @@ pub struct InvalidFirehoseDestinationExceptionBuilder {
 }
 impl InvalidFirehoseDestinationExceptionBuilder {
     /// <p>Indicates that the configuration set does not exist.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the configuration set does not exist.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configuration_set_name = input; self
+    }
+    /// <p>Indicates that the configuration set does not exist.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// <p>Indicates that the event destination does not exist.</p>
-    pub fn event_destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the event destination does not exist.</p>
-    pub fn set_event_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_destination_name = input;
-        self
+    pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_destination_name = input; self
+    }
+    /// <p>Indicates that the event destination does not exist.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_destination_name
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,30 +100,34 @@ impl InvalidFirehoseDestinationExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidFirehoseDestinationException`](crate::types::error::InvalidFirehoseDestinationException).
     pub fn build(self) -> crate::types::error::InvalidFirehoseDestinationException {
         crate::types::error::InvalidFirehoseDestinationException {
-            configuration_set_name: self.configuration_set_name,
-            event_destination_name: self.event_destination_name,
-            message: self.message,
+            configuration_set_name: self.configuration_set_name
+            ,
+            event_destination_name: self.event_destination_name
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobRunOutput {
+pub struct DescribeJobRunOutput  {
     /// <p>The output displays information about a job run.</p>
     #[doc(hidden)]
     pub job_run: ::std::option::Option<crate::types::JobRun>,
@@ -10,15 +10,15 @@ pub struct DescribeJobRunOutput {
 }
 impl DescribeJobRunOutput {
     /// <p>The output displays information about a job run.</p>
-    pub fn job_run(&self) -> ::std::option::Option<&crate::types::JobRun> {
+    pub fn job_run(&self) -> ::std::option::Option<& crate::types::JobRun> {
         self.job_run.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeJobRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeJobRunOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobRunOutput`](crate::operation::describe_job_run::DescribeJobRunOutput).
     pub fn builder() -> crate::operation::describe_job_run::builders::DescribeJobRunOutputBuilder {
@@ -28,9 +28,7 @@ impl DescribeJobRunOutput {
 
 /// A builder for [`DescribeJobRunOutput`](crate::operation::describe_job_run::DescribeJobRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobRunOutputBuilder {
     pub(crate) job_run: ::std::option::Option<crate::types::JobRun>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl DescribeJobRunOutputBuilder {
     }
     /// <p>The output displays information about a job run.</p>
     pub fn set_job_run(mut self, input: ::std::option::Option<crate::types::JobRun>) -> Self {
-        self.job_run = input;
-        self
+        self.job_run = input; self
+    }
+    /// <p>The output displays information about a job run.</p>
+    pub fn get_job_run(&self) -> &::std::option::Option<crate::types::JobRun> {
+        &self.job_run
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeJobRunOutput`](crate::operation::describe_job_run::DescribeJobRunOutput).
     pub fn build(self) -> crate::operation::describe_job_run::DescribeJobRunOutput {
         crate::operation::describe_job_run::DescribeJobRunOutput {
-            job_run: self.job_run,
+            job_run: self.job_run
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details of a speaker search task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpeakerSearchDetails {
+pub struct SpeakerSearchDetails  {
     /// <p>The result value in the speaker search details.</p>
     #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSearchResult>>,
@@ -13,11 +13,11 @@ pub struct SpeakerSearchDetails {
 }
 impl SpeakerSearchDetails {
     /// <p>The result value in the speaker search details.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::SpeakerSearchResult]> {
+    pub fn results(&self) -> ::std::option::Option<& [crate::types::SpeakerSearchResult]> {
         self.results.as_deref()
     }
     /// <p>The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code> or <code>VoiceprintGenerationFailure</code>..</p>
-    pub fn voiceprint_generation_status(&self) -> ::std::option::Option<&str> {
+    pub fn voiceprint_generation_status(&self) -> ::std::option::Option<& str> {
         self.voiceprint_generation_status.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl SpeakerSearchDetails {
 
 /// A builder for [`SpeakerSearchDetails`](crate::types::SpeakerSearchDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpeakerSearchDetailsBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSearchResult>>,
     pub(crate) voiceprint_generation_status: ::std::option::Option<::std::string::String>,
@@ -45,39 +43,39 @@ impl SpeakerSearchDetailsBuilder {
     /// <p>The result value in the speaker search details.</p>
     pub fn results(mut self, input: crate::types::SpeakerSearchResult) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The result value in the speaker search details.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSearchResult>>,
-    ) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSearchResult>>) -> Self {
+        self.results = input; self
+    }
+    /// <p>The result value in the speaker search details.</p>
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeakerSearchResult>> {
+        &self.results
     }
     /// <p>The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code> or <code>VoiceprintGenerationFailure</code>..</p>
-    pub fn voiceprint_generation_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voiceprint_generation_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voiceprint_generation_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code> or <code>VoiceprintGenerationFailure</code>..</p>
-    pub fn set_voiceprint_generation_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voiceprint_generation_status = input;
-        self
+    pub fn set_voiceprint_generation_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voiceprint_generation_status = input; self
+    }
+    /// <p>The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code> or <code>VoiceprintGenerationFailure</code>..</p>
+    pub fn get_voiceprint_generation_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voiceprint_generation_status
     }
     /// Consumes the builder and constructs a [`SpeakerSearchDetails`](crate::types::SpeakerSearchDetails).
     pub fn build(self) -> crate::types::SpeakerSearchDetails {
         crate::types::SpeakerSearchDetails {
-            results: self.results,
-            voiceprint_generation_status: self.voiceprint_generation_status,
+            results: self.results
+            ,
+            voiceprint_generation_status: self.voiceprint_generation_status
+            ,
         }
     }
 }
+

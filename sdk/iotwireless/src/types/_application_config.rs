@@ -3,7 +3,7 @@
 /// <p>LoRaWAN application configuration, which can be used to perform geolocation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationConfig {
+pub struct ApplicationConfig  {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
     pub f_port: ::std::option::Option<i32>,
@@ -20,11 +20,11 @@ impl ApplicationConfig {
         self.f_port
     }
     /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApplicationConfigType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ApplicationConfigType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_name(&self) -> ::std::option::Option<& str> {
         self.destination_name.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ApplicationConfig {
 
 /// A builder for [`ApplicationConfig`](crate::types::ApplicationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationConfigBuilder {
     pub(crate) f_port: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::ApplicationConfigType>,
@@ -53,8 +51,11 @@ impl ApplicationConfigBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_f_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.f_port = input;
-        self
+        self.f_port = input; self
+    }
+    /// <p>The Fport value.</p>
+    pub fn get_f_port(&self) -> &::std::option::Option<i32> {
+        &self.f_port
     }
     /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
     pub fn r#type(mut self, input: crate::types::ApplicationConfigType) -> Self {
@@ -62,35 +63,36 @@ impl ApplicationConfigBuilder {
         self
     }
     /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationConfigType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApplicationConfigType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ApplicationConfigType> {
+        &self.r#type
     }
     /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_name = input;
-        self
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_name = input; self
+    }
+    /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
     }
     /// Consumes the builder and constructs a [`ApplicationConfig`](crate::types::ApplicationConfig).
     pub fn build(self) -> crate::types::ApplicationConfig {
         crate::types::ApplicationConfig {
-            f_port: self.f_port,
-            r#type: self.r#type,
-            destination_name: self.destination_name,
+            f_port: self.f_port
+            ,
+            r#type: self.r#type
+            ,
+            destination_name: self.destination_name
+            ,
         }
     }
 }
+

@@ -2,60 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessGatewayStatisticsInput {
+pub struct GetWirelessGatewayStatisticsInput  {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
     #[doc(hidden)]
     pub wireless_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWirelessGatewayStatisticsInput {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
-    pub fn wireless_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn wireless_gateway_id(&self) -> ::std::option::Option<& str> {
         self.wireless_gateway_id.as_deref()
     }
 }
 impl GetWirelessGatewayStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsInput`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder {
         crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayStatisticsInput`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayStatisticsInputBuilder {
     pub(crate) wireless_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWirelessGatewayStatisticsInputBuilder {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
-    pub fn wireless_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the wireless gateway for which to get the data.</p>
-    pub fn set_wireless_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.wireless_gateway_id = input;
-        self
+    pub fn set_wireless_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.wireless_gateway_id = input; self
+    }
+    /// <p>The ID of the wireless gateway for which to get the data.</p>
+    pub fn get_wireless_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wireless_gateway_id
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayStatisticsInput`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput {
-                wireless_gateway_id: self.wireless_gateway_id,
-            },
+                wireless_gateway_id: self.wireless_gateway_id
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Metadata to assign to an Application Manager application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetadataValue {
+pub struct MetadataValue  {
     /// <p>Metadata value to assign to an Application Manager application.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl MetadataValue {
     /// <p>Metadata value to assign to an Application Manager application.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl MetadataValue {
 
 /// A builder for [`MetadataValue`](crate::types::MetadataValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetadataValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl MetadataValueBuilder {
     }
     /// <p>Metadata value to assign to an Application Manager application.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>Metadata value to assign to an Application Manager application.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`MetadataValue`](crate::types::MetadataValue).
     pub fn build(self) -> crate::types::MetadataValue {
-        crate::types::MetadataValue { value: self.value }
+        crate::types::MetadataValue {
+            value: self.value
+            ,
+        }
     }
 }
+

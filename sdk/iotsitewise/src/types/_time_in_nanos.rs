@@ -3,7 +3,7 @@
 /// <p>Contains a timestamp with optional nanosecond granularity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeInNanos {
+pub struct TimeInNanos  {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     #[doc(hidden)]
     pub time_in_seconds: ::std::option::Option<i64>,
@@ -30,9 +30,7 @@ impl TimeInNanos {
 
 /// A builder for [`TimeInNanos`](crate::types::TimeInNanos).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeInNanosBuilder {
     pub(crate) time_in_seconds: ::std::option::Option<i64>,
     pub(crate) offset_in_nanos: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl TimeInNanosBuilder {
     }
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     pub fn set_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.time_in_seconds = input;
-        self
+        self.time_in_seconds = input; self
+    }
+    /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
+    pub fn get_time_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.time_in_seconds
     }
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
     pub fn offset_in_nanos(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl TimeInNanosBuilder {
     }
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
     pub fn set_offset_in_nanos(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.offset_in_nanos = input;
-        self
+        self.offset_in_nanos = input; self
+    }
+    /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
+    pub fn get_offset_in_nanos(&self) -> &::std::option::Option<i32> {
+        &self.offset_in_nanos
     }
     /// Consumes the builder and constructs a [`TimeInNanos`](crate::types::TimeInNanos).
     pub fn build(self) -> crate::types::TimeInNanos {
         crate::types::TimeInNanos {
-            time_in_seconds: self.time_in_seconds,
-            offset_in_nanos: self.offset_in_nanos,
+            time_in_seconds: self.time_in_seconds
+            ,
+            offset_in_nanos: self.offset_in_nanos
+            ,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScriptInput {
+pub struct DescribeScriptInput  {
     /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
     #[doc(hidden)]
     pub script_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScriptInput {
     /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
-    pub fn script_id(&self) -> ::std::option::Option<&str> {
+    pub fn script_id(&self) -> ::std::option::Option<& str> {
         self.script_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeScriptInput {
 
 /// A builder for [`DescribeScriptInput`](crate::operation::describe_script::DescribeScriptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScriptInputBuilder {
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeScriptInputBuilder {
     }
     /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
     pub fn set_script_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.script_id = input;
-        self
+        self.script_id = input; self
+    }
+    /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
+    pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_id
     }
     /// Consumes the builder and constructs a [`DescribeScriptInput`](crate::operation::describe_script::DescribeScriptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_script::DescribeScriptInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_script::DescribeScriptInput {
-            script_id: self.script_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_script::DescribeScriptInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_script::DescribeScriptInput {
+                script_id: self.script_id
+                ,
+            }
+        )
     }
 }
+

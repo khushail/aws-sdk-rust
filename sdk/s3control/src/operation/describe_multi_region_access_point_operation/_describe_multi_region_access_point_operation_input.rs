@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMultiRegionAccessPointOperationInput {
+pub struct DescribeMultiRegionAccessPointOperationInput  {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DescribeMultiRegionAccessPointOperationInput {
 }
 impl DescribeMultiRegionAccessPointOperationInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
-    pub fn request_token_arn(&self) -> ::std::option::Option<&str> {
+    pub fn request_token_arn(&self) -> ::std::option::Option<& str> {
         self.request_token_arn.as_deref()
     }
 }
 impl DescribeMultiRegionAccessPointOperationInput {
     /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationInput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationInput).
-    pub fn builder() -> crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationInputBuilder{
+    pub fn builder() -> crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationInputBuilder {
         crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMultiRegionAccessPointOperationInput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMultiRegionAccessPointOperationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_token_arn: ::std::option::Option<::std::string::String>,
@@ -44,27 +42,27 @@ impl DescribeMultiRegionAccessPointOperationInputBuilder {
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
-    pub fn request_token_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
-    pub fn set_request_token_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.request_token_arn = input;
-        self
+    pub fn set_request_token_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_token_arn = input; self
+    }
+    /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
+    pub fn get_request_token_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_token_arn
     }
     /// Consumes the builder and constructs a [`DescribeMultiRegionAccessPointOperationInput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationInput {
                 account_id: self.account_id
@@ -75,3 +73,4 @@ impl DescribeMultiRegionAccessPointOperationInputBuilder {
         )
     }
 }
+

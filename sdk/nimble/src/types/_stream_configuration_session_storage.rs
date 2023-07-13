@@ -3,7 +3,7 @@
 /// <p>The configuration for a streaming session’s upload storage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamConfigurationSessionStorage {
+pub struct StreamConfigurationSessionStorage  {
     /// <p>The configuration for the upload storage root of the streaming session.</p>
     #[doc(hidden)]
     pub root: ::std::option::Option<crate::types::StreamingSessionStorageRoot>,
@@ -13,11 +13,11 @@ pub struct StreamConfigurationSessionStorage {
 }
 impl StreamConfigurationSessionStorage {
     /// <p>The configuration for the upload storage root of the streaming session.</p>
-    pub fn root(&self) -> ::std::option::Option<&crate::types::StreamingSessionStorageRoot> {
+    pub fn root(&self) -> ::std::option::Option<& crate::types::StreamingSessionStorageRoot> {
         self.root.as_ref()
     }
     /// <p>Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.</p>
-    pub fn mode(&self) -> ::std::option::Option<&[crate::types::StreamingSessionStorageMode]> {
+    pub fn mode(&self) -> ::std::option::Option<& [crate::types::StreamingSessionStorageMode]> {
         self.mode.as_deref()
     }
 }
@@ -30,13 +30,10 @@ impl StreamConfigurationSessionStorage {
 
 /// A builder for [`StreamConfigurationSessionStorage`](crate::types::StreamConfigurationSessionStorage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamConfigurationSessionStorageBuilder {
     pub(crate) root: ::std::option::Option<crate::types::StreamingSessionStorageRoot>,
-    pub(crate) mode:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionStorageMode>>,
+    pub(crate) mode: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionStorageMode>>,
 }
 impl StreamConfigurationSessionStorageBuilder {
     /// <p>The configuration for the upload storage root of the streaming session.</p>
@@ -45,12 +42,12 @@ impl StreamConfigurationSessionStorageBuilder {
         self
     }
     /// <p>The configuration for the upload storage root of the streaming session.</p>
-    pub fn set_root(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingSessionStorageRoot>,
-    ) -> Self {
-        self.root = input;
-        self
+    pub fn set_root(mut self, input: ::std::option::Option<crate::types::StreamingSessionStorageRoot>) -> Self {
+        self.root = input; self
+    }
+    /// <p>The configuration for the upload storage root of the streaming session.</p>
+    pub fn get_root(&self) -> &::std::option::Option<crate::types::StreamingSessionStorageRoot> {
+        &self.root
     }
     /// Appends an item to `mode`.
     ///
@@ -59,23 +56,26 @@ impl StreamConfigurationSessionStorageBuilder {
     /// <p>Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.</p>
     pub fn mode(mut self, input: crate::types::StreamingSessionStorageMode) -> Self {
         let mut v = self.mode.unwrap_or_default();
-        v.push(input);
-        self.mode = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mode = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionStorageMode>>,
-    ) -> Self {
-        self.mode = input;
-        self
+    pub fn set_mode(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionStorageMode>>) -> Self {
+        self.mode = input; self
+    }
+    /// <p>Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionStorageMode>> {
+        &self.mode
     }
     /// Consumes the builder and constructs a [`StreamConfigurationSessionStorage`](crate::types::StreamConfigurationSessionStorage).
     pub fn build(self) -> crate::types::StreamConfigurationSessionStorage {
         crate::types::StreamConfigurationSessionStorage {
-            root: self.root,
-            mode: self.mode,
+            root: self.root
+            ,
+            mode: self.mode
+            ,
         }
     }
 }
+

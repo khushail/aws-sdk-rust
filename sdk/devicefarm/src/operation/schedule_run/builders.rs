@@ -3,94 +3,87 @@ pub use crate::operation::schedule_run::_schedule_run_output::ScheduleRunOutputB
 
 pub use crate::operation::schedule_run::_schedule_run_input::ScheduleRunInputBuilder;
 
+impl ScheduleRunInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::schedule_run::ScheduleRunOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::schedule_run::ScheduleRunError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.schedule_run();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ScheduleRun`.
-///
+/// 
 /// <p>Schedules a run.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ScheduleRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::schedule_run::builders::ScheduleRunInputBuilder,
+                    inner: crate::operation::schedule_run::builders::ScheduleRunInputBuilder,
 }
-impl ScheduleRunFluentBuilder {
+impl ScheduleRunFluentBuilder  {
     /// Creates a new `ScheduleRun`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::schedule_run::ScheduleRun,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::schedule_run::ScheduleRunError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ScheduleRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::schedule_run::builders::ScheduleRunInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::schedule_run::ScheduleRunOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::schedule_run::ScheduleRunError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::schedule_run::ScheduleRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::schedule_run::ScheduleRunError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::schedule_run::ScheduleRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::schedule_run::ScheduleRunError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::schedule_run::ScheduleRunOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::schedule_run::ScheduleRunError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::schedule_run::ScheduleRun,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::schedule_run::ScheduleRunError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::schedule_run::ScheduleRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::schedule_run::ScheduleRunError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::schedule_run::ScheduleRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::schedule_run::ScheduleRunError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ARN of the project for the run to be scheduled.</p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_arn(input.into());
@@ -100,6 +93,10 @@ impl ScheduleRunFluentBuilder {
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_arn(input);
         self
+    }
+    /// <p>The ARN of the project for the run to be scheduled.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
     }
     /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,39 +108,40 @@ impl ScheduleRunFluentBuilder {
         self.inner = self.inner.set_app_arn(input);
         self
     }
+    /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_arn()
+    }
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
-    pub fn device_pool_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_pool_arn(input.into());
         self
     }
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
-    pub fn set_device_pool_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_pool_arn(input);
         self
     }
-    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+    /// <p>The ARN of the device pool for the run to be scheduled.</p>
+    pub fn get_device_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_pool_arn()
+    }
+    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p> 
     /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
-    pub fn device_selection_configuration(
-        mut self,
-        input: crate::types::DeviceSelectionConfiguration,
-    ) -> Self {
+    pub fn device_selection_configuration(mut self, input: crate::types::DeviceSelectionConfiguration) -> Self {
         self.inner = self.inner.device_selection_configuration(input);
         self
     }
-    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p> 
     /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
-    pub fn set_device_selection_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceSelectionConfiguration>,
-    ) -> Self {
+    pub fn set_device_selection_configuration(mut self, input: ::std::option::Option<crate::types::DeviceSelectionConfiguration>) -> Self {
         self.inner = self.inner.set_device_selection_configuration(input);
         self
+    }
+    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p> 
+    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+    pub fn get_device_selection_configuration(&self) -> &::std::option::Option<crate::types::DeviceSelectionConfiguration> {
+        self.inner.get_device_selection_configuration()
     }
     /// <p>The name for the run to be scheduled.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +153,10 @@ impl ScheduleRunFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the run to be scheduled.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Information about the test for the run to be scheduled.</p>
     pub fn test(mut self, input: crate::types::ScheduleRunTest) -> Self {
         self.inner = self.inner.test(input);
@@ -165,18 +167,23 @@ impl ScheduleRunFluentBuilder {
         self.inner = self.inner.set_test(input);
         self
     }
+    /// <p>Information about the test for the run to be scheduled.</p>
+    pub fn get_test(&self) -> &::std::option::Option<crate::types::ScheduleRunTest> {
+        self.inner.get_test()
+    }
     /// <p>Information about the settings for the run to be scheduled.</p>
     pub fn configuration(mut self, input: crate::types::ScheduleRunConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
     /// <p>Information about the settings for the run to be scheduled.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleRunConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>Information about the settings for the run to be scheduled.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
+        self.inner.get_configuration()
     }
     /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
     pub fn execution_configuration(mut self, input: crate::types::ExecutionConfiguration) -> Self {
@@ -184,11 +191,13 @@ impl ScheduleRunFluentBuilder {
         self
     }
     /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
-    pub fn set_execution_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionConfiguration>,
-    ) -> Self {
+    pub fn set_execution_configuration(mut self, input: ::std::option::Option<crate::types::ExecutionConfiguration>) -> Self {
         self.inner = self.inner.set_execution_configuration(input);
         self
     }
+    /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
+    pub fn get_execution_configuration(&self) -> &::std::option::Option<crate::types::ExecutionConfiguration> {
+        self.inner.get_execution_configuration()
+    }
 }
+

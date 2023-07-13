@@ -2,60 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateMemberAccountInput {
+pub struct DisassociateMemberAccountInput  {
     /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
     #[doc(hidden)]
     pub member_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMemberAccountInput {
     /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
-    pub fn member_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_account_id(&self) -> ::std::option::Option<& str> {
         self.member_account_id.as_deref()
     }
 }
 impl DisassociateMemberAccountInput {
     /// Creates a new builder-style object to manufacture [`DisassociateMemberAccountInput`](crate::operation::disassociate_member_account::DisassociateMemberAccountInput).
-    pub fn builder() -> crate::operation::disassociate_member_account::builders::DisassociateMemberAccountInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_member_account::builders::DisassociateMemberAccountInputBuilder {
         crate::operation::disassociate_member_account::builders::DisassociateMemberAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMemberAccountInput`](crate::operation::disassociate_member_account::DisassociateMemberAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMemberAccountInputBuilder {
     pub(crate) member_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMemberAccountInputBuilder {
     /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.member_account_id = input;
-        self
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.member_account_id = input; self
+    }
+    /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account_id
     }
     /// Consumes the builder and constructs a [`DisassociateMemberAccountInput`](crate::operation::disassociate_member_account::DisassociateMemberAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_member_account::DisassociateMemberAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_member_account::DisassociateMemberAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_member_account::DisassociateMemberAccountInput {
-                member_account_id: self.member_account_id,
-            },
+                member_account_id: self.member_account_id
+                ,
+            }
         )
     }
 }
+

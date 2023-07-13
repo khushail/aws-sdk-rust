@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePullRequestTitleInput {
+pub struct UpdatePullRequestTitleInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct UpdatePullRequestTitleInput {
 }
 impl UpdatePullRequestTitleInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
 }
 impl UpdatePullRequestTitleInput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestTitleInput`](crate::operation::update_pull_request_title::UpdatePullRequestTitleInput).
-    pub fn builder(
-    ) -> crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleInputBuilder {
         crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePullRequestTitleInput`](crate::operation::update_pull_request_title::UpdatePullRequestTitleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePullRequestTitleInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePullRequestTitleInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.pull_request_id = input;
-        self
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pull_request_id = input; self
+    }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
     }
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,21 +55,22 @@ impl UpdatePullRequestTitleInputBuilder {
     }
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
+    }
+    /// <p>The updated title of the pull request. This replaces the existing title.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestTitleInput`](crate::operation::update_pull_request_title::UpdatePullRequestTitleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pull_request_title::UpdatePullRequestTitleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pull_request_title::UpdatePullRequestTitleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_pull_request_title::UpdatePullRequestTitleInput {
-                pull_request_id: self.pull_request_id,
-                title: self.title,
-            },
+                pull_request_id: self.pull_request_id
+                ,
+                title: self.title
+                ,
+            }
         )
     }
 }
+

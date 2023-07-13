@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnalysisInput {
+pub struct UpdateAnalysisInput  {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -21,39 +21,39 @@ pub struct UpdateAnalysisInput {
     /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     #[doc(hidden)]
     pub theme_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The definition of an analysis.</p>
+    /// <p>The definition of an analysis.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::AnalysisDefinition>,
 }
 impl UpdateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
-    pub fn analysis_id(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_id(&self) -> ::std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    pub fn parameters(&self) -> ::std::option::Option<&crate::types::Parameters> {
+    pub fn parameters(&self) -> ::std::option::Option<& crate::types::Parameters> {
         self.parameters.as_ref()
     }
     /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
-    pub fn source_entity(&self) -> ::std::option::Option<&crate::types::AnalysisSourceEntity> {
+    pub fn source_entity(&self) -> ::std::option::Option<& crate::types::AnalysisSourceEntity> {
         self.source_entity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
-    pub fn theme_arn(&self) -> ::std::option::Option<&str> {
+    pub fn theme_arn(&self) -> ::std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
-    /// <p>The definition of an analysis.</p>
+    /// <p>The definition of an analysis.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::AnalysisDefinition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::AnalysisDefinition> {
         self.definition.as_ref()
     }
 }
@@ -66,9 +66,7 @@ impl UpdateAnalysisInput {
 
 /// A builder for [`UpdateAnalysisInput`](crate::operation::update_analysis::UpdateAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnalysisInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
@@ -80,20 +78,17 @@ pub struct UpdateAnalysisInputBuilder {
 }
 impl UpdateAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,8 +97,11 @@ impl UpdateAnalysisInputBuilder {
     }
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_id = input;
-        self
+        self.analysis_id = input; self
+    }
+    /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_id
     }
     /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,8 +110,11 @@ impl UpdateAnalysisInputBuilder {
     }
     /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn parameters(mut self, input: crate::types::Parameters) -> Self {
@@ -121,12 +122,12 @@ impl UpdateAnalysisInputBuilder {
         self
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::Parameters>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
+        self.parameters = input; self
+    }
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
+    pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
+        &self.parameters
     }
     /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     pub fn source_entity(mut self, input: crate::types::AnalysisSourceEntity) -> Self {
@@ -134,12 +135,12 @@ impl UpdateAnalysisInputBuilder {
         self
     }
     /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
-    pub fn set_source_entity(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisSourceEntity>,
-    ) -> Self {
-        self.source_entity = input;
-        self
+    pub fn set_source_entity(mut self, input: ::std::option::Option<crate::types::AnalysisSourceEntity>) -> Self {
+        self.source_entity = input; self
+    }
+    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::AnalysisSourceEntity> {
+        &self.source_entity
     }
     /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,39 +149,48 @@ impl UpdateAnalysisInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.theme_arn = input;
-        self
+        self.theme_arn = input; self
     }
-    /// <p>The definition of an analysis.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_arn
+    }
+    /// <p>The definition of an analysis.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     pub fn definition(mut self, input: crate::types::AnalysisDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The definition of an analysis.</p>
+    /// <p>The definition of an analysis.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisDefinition>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::AnalysisDefinition>) -> Self {
+        self.definition = input; self
+    }
+    /// <p>The definition of an analysis.</p> 
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::AnalysisDefinition> {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`UpdateAnalysisInput`](crate::operation::update_analysis::UpdateAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_analysis::UpdateAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_analysis::UpdateAnalysisInput {
-            aws_account_id: self.aws_account_id,
-            analysis_id: self.analysis_id,
-            name: self.name,
-            parameters: self.parameters,
-            source_entity: self.source_entity,
-            theme_arn: self.theme_arn,
-            definition: self.definition,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_analysis::UpdateAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_analysis::UpdateAnalysisInput {
+                aws_account_id: self.aws_account_id
+                ,
+                analysis_id: self.analysis_id
+                ,
+                name: self.name
+                ,
+                parameters: self.parameters
+                ,
+                source_entity: self.source_entity
+                ,
+                theme_arn: self.theme_arn
+                ,
+                definition: self.definition
+                ,
+            }
+        )
     }
 }
+

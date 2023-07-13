@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information that's required to connect to a database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionConfiguration {
+pub struct ConnectionConfiguration  {
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
     #[doc(hidden)]
     pub database_host: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct ConnectionConfiguration {
 }
 impl ConnectionConfiguration {
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
-    pub fn database_host(&self) -> ::std::option::Option<&str> {
+    pub fn database_host(&self) -> ::std::option::Option<& str> {
         self.database_host.as_deref()
     }
     /// <p>The port that the database uses for connections.</p>
@@ -30,15 +30,15 @@ impl ConnectionConfiguration {
         self.database_port
     }
     /// <p>The name of the database containing the document data.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table that contains the document data.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl ConnectionConfiguration {
 
 /// A builder for [`ConnectionConfiguration`](crate::types::ConnectionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionConfigurationBuilder {
     pub(crate) database_host: ::std::option::Option<::std::string::String>,
     pub(crate) database_port: ::std::option::Option<i32>,
@@ -63,20 +61,17 @@ pub struct ConnectionConfigurationBuilder {
 }
 impl ConnectionConfigurationBuilder {
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
-    pub fn database_host(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_host = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
-    pub fn set_database_host(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_host = input;
-        self
+    pub fn set_database_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_host = input; self
+    }
+    /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
+    pub fn get_database_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_host
     }
     /// <p>The port that the database uses for connections.</p>
     pub fn database_port(mut self, input: i32) -> Self {
@@ -85,24 +80,24 @@ impl ConnectionConfigurationBuilder {
     }
     /// <p>The port that the database uses for connections.</p>
     pub fn set_database_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.database_port = input;
-        self
+        self.database_port = input; self
+    }
+    /// <p>The port that the database uses for connections.</p>
+    pub fn get_database_port(&self) -> &::std::option::Option<i32> {
+        &self.database_port
     }
     /// <p>The name of the database containing the document data.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database containing the document data.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_name = input;
-        self
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_name = input; self
+    }
+    /// <p>The name of the database containing the document data.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// <p>The name of the table that contains the document data.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,8 +106,11 @@ impl ConnectionConfigurationBuilder {
     }
     /// <p>The name of the table that contains the document data.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
+    }
+    /// <p>The name of the table that contains the document data.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,17 +119,26 @@ impl ConnectionConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// Consumes the builder and constructs a [`ConnectionConfiguration`](crate::types::ConnectionConfiguration).
     pub fn build(self) -> crate::types::ConnectionConfiguration {
         crate::types::ConnectionConfiguration {
-            database_host: self.database_host,
-            database_port: self.database_port,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            secret_arn: self.secret_arn,
+            database_host: self.database_host
+            ,
+            database_port: self.database_port
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            secret_arn: self.secret_arn
+            ,
         }
     }
 }
+

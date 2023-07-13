@@ -3,7 +3,7 @@
 /// Represents the input of a DeleteLoggingConfiguration operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLoggingConfigurationInput {
+pub struct DeleteLoggingConfigurationInput  {
     /// The ID of the workspace to vend logs to.
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
@@ -13,26 +13,24 @@ pub struct DeleteLoggingConfigurationInput {
 }
 impl DeleteLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder {
         crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DeleteLoggingConfigurationInputBuilder {
     }
     /// The ID of the workspace to vend logs to.
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
+    }
+    /// The ID of the workspace to vend logs to.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +56,22 @@ impl DeleteLoggingConfigurationInputBuilder {
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput {
-                workspace_id: self.workspace_id,
-                client_token: self.client_token,
-            },
+                workspace_id: self.workspace_id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

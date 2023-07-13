@@ -3,7 +3,7 @@
 /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaReference {
+pub struct SchemaReference  {
     /// <p>A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.</p>
     #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
@@ -16,11 +16,11 @@ pub struct SchemaReference {
 }
 impl SchemaReference {
     /// <p>A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.</p>
-    pub fn schema_id(&self) -> ::std::option::Option<&crate::types::SchemaId> {
+    pub fn schema_id(&self) -> ::std::option::Option<& crate::types::SchemaId> {
         self.schema_id.as_ref()
     }
     /// <p>The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.</p>
-    pub fn schema_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version_id(&self) -> ::std::option::Option<& str> {
         self.schema_version_id.as_deref()
     }
     /// <p>The version number of the schema.</p>
@@ -37,9 +37,7 @@ impl SchemaReference {
 
 /// A builder for [`SchemaReference`](crate::types::SchemaReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaReferenceBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
@@ -53,24 +51,24 @@ impl SchemaReferenceBuilder {
     }
     /// <p>A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.</p>
     pub fn set_schema_id(mut self, input: ::std::option::Option<crate::types::SchemaId>) -> Self {
-        self.schema_id = input;
-        self
+        self.schema_id = input; self
+    }
+    /// <p>A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        &self.schema_id
     }
     /// <p>The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.schema_version_id = input;
-        self
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schema_version_id = input; self
+    }
+    /// <p>The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
     }
     /// <p>The version number of the schema.</p>
     pub fn schema_version_number(mut self, input: i64) -> Self {
@@ -79,15 +77,22 @@ impl SchemaReferenceBuilder {
     }
     /// <p>The version number of the schema.</p>
     pub fn set_schema_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.schema_version_number = input;
-        self
+        self.schema_version_number = input; self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_schema_version_number(&self) -> &::std::option::Option<i64> {
+        &self.schema_version_number
     }
     /// Consumes the builder and constructs a [`SchemaReference`](crate::types::SchemaReference).
     pub fn build(self) -> crate::types::SchemaReference {
         crate::types::SchemaReference {
-            schema_id: self.schema_id,
-            schema_version_id: self.schema_version_id,
-            schema_version_number: self.schema_version_number,
+            schema_id: self.schema_id
+            ,
+            schema_version_id: self.schema_version_id
+            ,
+            schema_version_number: self.schema_version_number
+            ,
         }
     }
 }
+

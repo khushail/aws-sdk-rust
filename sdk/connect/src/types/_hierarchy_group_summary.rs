@@ -3,7 +3,7 @@
 /// <p>Contains summary information about a hierarchy group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HierarchyGroupSummary {
+pub struct HierarchyGroupSummary  {
     /// <p>The identifier of the hierarchy group.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct HierarchyGroupSummary {
 }
 impl HierarchyGroupSummary {
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the hierarchy group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl HierarchyGroupSummary {
 
 /// A builder for [`HierarchyGroupSummary`](crate::types::HierarchyGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HierarchyGroupSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl HierarchyGroupSummaryBuilder {
     }
     /// <p>The identifier of the hierarchy group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl HierarchyGroupSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the hierarchy group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl HierarchyGroupSummaryBuilder {
     }
     /// <p>The name of the hierarchy group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the hierarchy group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`HierarchyGroupSummary`](crate::types::HierarchyGroupSummary).
     pub fn build(self) -> crate::types::HierarchyGroupSummary {
         crate::types::HierarchyGroupSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

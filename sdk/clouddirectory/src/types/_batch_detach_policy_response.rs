@@ -3,7 +3,8 @@
 /// <p>Represents the output of a <code>DetachPolicy</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDetachPolicyResponse {}
+pub struct BatchDetachPolicyResponse  {
+}
 impl BatchDetachPolicyResponse {
     /// Creates a new builder-style object to manufacture [`BatchDetachPolicyResponse`](crate::types::BatchDetachPolicyResponse).
     pub fn builder() -> crate::types::builders::BatchDetachPolicyResponseBuilder {
@@ -13,13 +14,14 @@ impl BatchDetachPolicyResponse {
 
 /// A builder for [`BatchDetachPolicyResponse`](crate::types::BatchDetachPolicyResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct BatchDetachPolicyResponseBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct BatchDetachPolicyResponseBuilder {
+}
 impl BatchDetachPolicyResponseBuilder {
     /// Consumes the builder and constructs a [`BatchDetachPolicyResponse`](crate::types::BatchDetachPolicyResponse).
     pub fn build(self) -> crate::types::BatchDetachPolicyResponse {
-        crate::types::BatchDetachPolicyResponse {}
+        crate::types::BatchDetachPolicyResponse {
+        }
     }
 }
+

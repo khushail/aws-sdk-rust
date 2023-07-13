@@ -3,7 +3,7 @@
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDetectEntitiesItemResult {
+pub struct BatchDetectEntitiesItemResult  {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl BatchDetectEntitiesItemResult {
         self.index
     }
     /// <p>One or more <code>Entity</code> objects, one for each entity detected in the document.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
+    pub fn entities(&self) -> ::std::option::Option<& [crate::types::Entity]> {
         self.entities.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl BatchDetectEntitiesItemResult {
 
 /// A builder for [`BatchDetectEntitiesItemResult`](crate::types::BatchDetectEntitiesItemResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetectEntitiesItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
@@ -45,8 +43,11 @@ impl BatchDetectEntitiesItemResultBuilder {
     }
     /// <p>The zero-based index of the document in the input list.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
+    }
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
     }
     /// Appends an item to `entities`.
     ///
@@ -55,23 +56,26 @@ impl BatchDetectEntitiesItemResultBuilder {
     /// <p>One or more <code>Entity</code> objects, one for each entity detected in the document.</p>
     pub fn entities(mut self, input: crate::types::Entity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more <code>Entity</code> objects, one for each entity detected in the document.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
+        self.entities = input; self
+    }
+    /// <p>One or more <code>Entity</code> objects, one for each entity detected in the document.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        &self.entities
     }
     /// Consumes the builder and constructs a [`BatchDetectEntitiesItemResult`](crate::types::BatchDetectEntitiesItemResult).
     pub fn build(self) -> crate::types::BatchDetectEntitiesItemResult {
         crate::types::BatchDetectEntitiesItemResult {
-            index: self.index,
-            entities: self.entities,
+            index: self.index
+            ,
+            entities: self.entities
+            ,
         }
     }
 }
+

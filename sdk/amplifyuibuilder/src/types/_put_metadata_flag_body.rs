@@ -3,14 +3,14 @@
 /// <p>Stores the metadata information about a feature on a form.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMetadataFlagBody {
+pub struct PutMetadataFlagBody  {
     /// <p>The new information to store.</p>
     #[doc(hidden)]
     pub new_value: ::std::option::Option<::std::string::String>,
 }
 impl PutMetadataFlagBody {
     /// <p>The new information to store.</p>
-    pub fn new_value(&self) -> ::std::option::Option<&str> {
+    pub fn new_value(&self) -> ::std::option::Option<& str> {
         self.new_value.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl PutMetadataFlagBody {
 
 /// A builder for [`PutMetadataFlagBody`](crate::types::PutMetadataFlagBody).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetadataFlagBodyBuilder {
     pub(crate) new_value: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl PutMetadataFlagBodyBuilder {
     }
     /// <p>The new information to store.</p>
     pub fn set_new_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_value = input;
-        self
+        self.new_value = input; self
+    }
+    /// <p>The new information to store.</p>
+    pub fn get_new_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_value
     }
     /// Consumes the builder and constructs a [`PutMetadataFlagBody`](crate::types::PutMetadataFlagBody).
     pub fn build(self) -> crate::types::PutMetadataFlagBody {
         crate::types::PutMetadataFlagBody {
-            new_value: self.new_value,
+            new_value: self.new_value
+            ,
         }
     }
 }
+

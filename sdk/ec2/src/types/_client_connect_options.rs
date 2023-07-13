@@ -3,7 +3,7 @@
 /// <p>The options for managing connection authorization for new client connections.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClientConnectOptions {
+pub struct ClientConnectOptions  {
     /// <p>Indicates whether client connect options are enabled. The default is <code>false</code> (not enabled).</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl ClientConnectOptions {
         self.enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ClientConnectOptions {
 
 /// A builder for [`ClientConnectOptions`](crate::types::ClientConnectOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientConnectOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ClientConnectOptionsBuilder {
     }
     /// <p>Indicates whether client connect options are enabled. The default is <code>false</code> (not enabled).</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Indicates whether client connect options are enabled. The default is <code>false</code> (not enabled).</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    pub fn lambda_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    pub fn set_lambda_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.lambda_function_arn = input;
-        self
+    pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lambda_function_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_arn
     }
     /// Consumes the builder and constructs a [`ClientConnectOptions`](crate::types::ClientConnectOptions).
     pub fn build(self) -> crate::types::ClientConnectOptions {
         crate::types::ClientConnectOptions {
-            enabled: self.enabled,
-            lambda_function_arn: self.lambda_function_arn,
+            enabled: self.enabled
+            ,
+            lambda_function_arn: self.lambda_function_arn
+            ,
         }
     }
 }
+

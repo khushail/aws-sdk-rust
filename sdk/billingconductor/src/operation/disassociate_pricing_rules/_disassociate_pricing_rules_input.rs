@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociatePricingRulesInput {
+pub struct DisassociatePricingRulesInput  {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DisassociatePricingRulesInput {
 }
 impl DisassociatePricingRulesInput {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    pub fn pricing_rule_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn pricing_rule_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.pricing_rule_arns.as_deref()
     }
 }
 impl DisassociatePricingRulesInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePricingRulesInput`](crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder {
         crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePricingRulesInput`](crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePricingRulesInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,43 +42,41 @@ impl DisassociatePricingRulesInputBuilder {
     }
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Appends an item to `pricing_rule_arns`.
     ///
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    pub fn pricing_rule_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pricing_rule_arns.unwrap_or_default();
-        v.push(input.into());
-        self.pricing_rule_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.pricing_rule_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    pub fn set_pricing_rule_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.pricing_rule_arns = input;
-        self
+    pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.pricing_rule_arns = input; self
+    }
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
+    pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pricing_rule_arns
     }
     /// Consumes the builder and constructs a [`DisassociatePricingRulesInput`](crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput {
-                arn: self.arn,
-                pricing_rule_arns: self.pricing_rule_arns,
-            },
+                arn: self.arn
+                ,
+                pricing_rule_arns: self.pricing_rule_arns
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// StopCampaignRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopCampaignInput {
+pub struct StopCampaignInput  {
     /// Identifier representing a Campaign
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl StopCampaignInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl StopCampaignInput {
 
 /// A builder for [`StopCampaignInput`](crate::operation::stop_campaign::StopCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCampaignInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +35,20 @@ impl StopCampaignInputBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`StopCampaignInput`](crate::operation::stop_campaign::StopCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_campaign::StopCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_campaign::StopCampaignInput {
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_campaign::StopCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_campaign::StopCampaignInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

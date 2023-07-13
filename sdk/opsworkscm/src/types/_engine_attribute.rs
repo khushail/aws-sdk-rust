@@ -3,7 +3,7 @@
 /// <p>A name and value pair that is specific to the engine of the server. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EngineAttribute {
+pub struct EngineAttribute  {
     /// <p>The name of the engine attribute. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,15 +13,15 @@ pub struct EngineAttribute {
 }
 impl EngineAttribute {
     /// <p>The name of the engine attribute. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the engine attribute. </p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
-impl ::std::fmt::Debug for EngineAttribute {
+impl  ::std::fmt::Debug for EngineAttribute  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EngineAttribute");
         formatter.field("name", &self.name);
@@ -51,8 +51,11 @@ impl EngineAttributeBuilder {
     }
     /// <p>The name of the engine attribute. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the engine attribute. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The value of the engine attribute. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +64,19 @@ impl EngineAttributeBuilder {
     }
     /// <p>The value of the engine attribute. </p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the engine attribute. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`EngineAttribute`](crate::types::EngineAttribute).
     pub fn build(self) -> crate::types::EngineAttribute {
         crate::types::EngineAttribute {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
@@ -80,3 +88,4 @@ impl ::std::fmt::Debug for EngineAttributeBuilder {
         formatter.finish()
     }
 }
+

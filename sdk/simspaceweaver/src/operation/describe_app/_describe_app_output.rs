@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAppOutput {
+pub struct DescribeAppOutput  {
     /// <p>The name of the app.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -31,43 +31,43 @@ pub struct DescribeAppOutput {
 }
 impl DescribeAppOutput {
     /// <p>The name of the app.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> ::std::option::Option<&str> {
+    pub fn simulation(&self) -> ::std::option::Option<& str> {
         self.simulation.as_deref()
     }
     /// <p>The name of the domain of the app.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The current lifecycle state of the custom app.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SimulationAppStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SimulationAppStatus> {
         self.status.as_ref()
     }
     /// <p>The desired lifecycle state of the custom app.</p>
-    pub fn target_status(&self) -> ::std::option::Option<&crate::types::SimulationAppTargetStatus> {
+    pub fn target_status(&self) -> ::std::option::Option<& crate::types::SimulationAppTargetStatus> {
         self.target_status.as_ref()
     }
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
-    pub fn launch_overrides(&self) -> ::std::option::Option<&crate::types::LaunchOverrides> {
+    pub fn launch_overrides(&self) -> ::std::option::Option<& crate::types::LaunchOverrides> {
         self.launch_overrides.as_ref()
     }
     /// <p>The description of the app.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
-    pub fn endpoint_info(&self) -> ::std::option::Option<&crate::types::SimulationAppEndpointInfo> {
+    pub fn endpoint_info(&self) -> ::std::option::Option<& crate::types::SimulationAppEndpointInfo> {
         self.endpoint_info.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAppOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAppOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
     pub fn builder() -> crate::operation::describe_app::builders::DescribeAppOutputBuilder {
@@ -77,9 +77,7 @@ impl DescribeAppOutput {
 
 /// A builder for [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
@@ -99,8 +97,11 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The name of the app.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the app.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the simulation of the app.</p>
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,8 +110,11 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The name of the simulation of the app.</p>
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.simulation = input;
-        self
+        self.simulation = input; self
+    }
+    /// <p>The name of the simulation of the app.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
     }
     /// <p>The name of the domain of the app.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,8 +123,11 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The name of the domain of the app.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The name of the domain of the app.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The current lifecycle state of the custom app.</p>
     pub fn status(mut self, input: crate::types::SimulationAppStatus) -> Self {
@@ -128,12 +135,12 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The current lifecycle state of the custom app.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationAppStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationAppStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The current lifecycle state of the custom app.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SimulationAppStatus> {
+        &self.status
     }
     /// <p>The desired lifecycle state of the custom app.</p>
     pub fn target_status(mut self, input: crate::types::SimulationAppTargetStatus) -> Self {
@@ -141,12 +148,12 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The desired lifecycle state of the custom app.</p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationAppTargetStatus>,
-    ) -> Self {
-        self.target_status = input;
-        self
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::SimulationAppTargetStatus>) -> Self {
+        self.target_status = input; self
+    }
+    /// <p>The desired lifecycle state of the custom app.</p>
+    pub fn get_target_status(&self) -> &::std::option::Option<crate::types::SimulationAppTargetStatus> {
+        &self.target_status
     }
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn launch_overrides(mut self, input: crate::types::LaunchOverrides) -> Self {
@@ -154,12 +161,12 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
-    pub fn set_launch_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchOverrides>,
-    ) -> Self {
-        self.launch_overrides = input;
-        self
+    pub fn set_launch_overrides(mut self, input: ::std::option::Option<crate::types::LaunchOverrides>) -> Self {
+        self.launch_overrides = input; self
+    }
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
+    pub fn get_launch_overrides(&self) -> &::std::option::Option<crate::types::LaunchOverrides> {
+        &self.launch_overrides
     }
     /// <p>The description of the app.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,8 +175,11 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The description of the app.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the app.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
     pub fn endpoint_info(mut self, input: crate::types::SimulationAppEndpointInfo) -> Self {
@@ -177,34 +187,43 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
-    pub fn set_endpoint_info(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationAppEndpointInfo>,
-    ) -> Self {
-        self.endpoint_info = input;
-        self
+    pub fn set_endpoint_info(mut self, input: ::std::option::Option<crate::types::SimulationAppEndpointInfo>) -> Self {
+        self.endpoint_info = input; self
+    }
+    /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
+    pub fn get_endpoint_info(&self) -> &::std::option::Option<crate::types::SimulationAppEndpointInfo> {
+        &self.endpoint_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
     pub fn build(self) -> crate::operation::describe_app::DescribeAppOutput {
         crate::operation::describe_app::DescribeAppOutput {
-            name: self.name,
-            simulation: self.simulation,
-            domain: self.domain,
-            status: self.status,
-            target_status: self.target_status,
-            launch_overrides: self.launch_overrides,
-            description: self.description,
-            endpoint_info: self.endpoint_info,
+            name: self.name
+            ,
+            simulation: self.simulation
+            ,
+            domain: self.domain
+            ,
+            status: self.status
+            ,
+            target_status: self.target_status
+            ,
+            launch_overrides: self.launch_overrides
+            ,
+            description: self.description
+            ,
+            endpoint_info: self.endpoint_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutComponentPolicyOutput {
+pub struct PutComponentPolicyOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -13,32 +13,29 @@ pub struct PutComponentPolicyOutput {
 }
 impl PutComponentPolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component that this policy was applied to.</p>
-    pub fn component_arn(&self) -> ::std::option::Option<&str> {
+    pub fn component_arn(&self) -> ::std::option::Option<& str> {
         self.component_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for PutComponentPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutComponentPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutComponentPolicyOutput`](crate::operation::put_component_policy::PutComponentPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_component_policy::builders::PutComponentPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_component_policy::builders::PutComponentPolicyOutputBuilder {
         crate::operation::put_component_policy::builders::PutComponentPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutComponentPolicyOutput`](crate::operation::put_component_policy::PutComponentPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutComponentPolicyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_arn: ::std::option::Option<::std::string::String>,
@@ -52,40 +49,43 @@ impl PutComponentPolicyOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
+    }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) of the component that this policy was applied to.</p>
-    pub fn component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component that this policy was applied to.</p>
-    pub fn set_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.component_arn = input;
-        self
+    pub fn set_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component that this policy was applied to.</p>
+    pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutComponentPolicyOutput`](crate::operation::put_component_policy::PutComponentPolicyOutput).
     pub fn build(self) -> crate::operation::put_component_policy::PutComponentPolicyOutput {
         crate::operation::put_component_policy::PutComponentPolicyOutput {
-            request_id: self.request_id,
-            component_arn: self.component_arn,
+            request_id: self.request_id
+            ,
+            component_arn: self.component_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

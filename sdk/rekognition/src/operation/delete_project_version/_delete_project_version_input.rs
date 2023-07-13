@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectVersionInput {
+pub struct DeleteProjectVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     #[doc(hidden)]
     pub project_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProjectVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
-    pub fn project_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_version_arn(&self) -> ::std::option::Option<& str> {
         self.project_version_arn.as_deref()
     }
 }
 impl DeleteProjectVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectVersionInput`](crate::operation::delete_project_version::DeleteProjectVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_project_version::builders::DeleteProjectVersionInputBuilder {
+    pub fn builder() -> crate::operation::delete_project_version::builders::DeleteProjectVersionInputBuilder {
         crate::operation::delete_project_version::builders::DeleteProjectVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProjectVersionInput`](crate::operation::delete_project_version::DeleteProjectVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProjectVersionInputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProjectVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.project_version_arn = input;
-        self
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_version_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_version_arn
     }
     /// Consumes the builder and constructs a [`DeleteProjectVersionInput`](crate::operation::delete_project_version::DeleteProjectVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_project_version::DeleteProjectVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_project_version::DeleteProjectVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_project_version::DeleteProjectVersionInput {
-                project_version_arn: self.project_version_arn,
-            },
+                project_version_arn: self.project_version_arn
+                ,
+            }
         )
     }
 }
+

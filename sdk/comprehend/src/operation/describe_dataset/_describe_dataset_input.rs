@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetInput {
+pub struct DescribeDatasetInput  {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetInput {
     /// <p>The ARN of the dataset.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeDatasetInput {
 
 /// A builder for [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeDatasetInputBuilder {
     }
     /// <p>The ARN of the dataset.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
+    }
+    /// <p>The ARN of the dataset.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dataset::DescribeDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_dataset::DescribeDatasetInput {
-            dataset_arn: self.dataset_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dataset::DescribeDatasetInput {
+                dataset_arn: self.dataset_arn
+                ,
+            }
+        )
     }
 }
+

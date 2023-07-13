@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFhirExportJobOutput {
+pub struct StartFhirExportJobOutput  {
     /// <p>The AWS generated ID for an export job.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -16,37 +16,33 @@ pub struct StartFhirExportJobOutput {
 }
 impl StartFhirExportJobOutput {
     /// <p>The AWS generated ID for an export job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartFhirExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartFhirExportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartFhirExportJobOutput`](crate::operation::start_fhir_export_job::StartFhirExportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_fhir_export_job::builders::StartFhirExportJobOutputBuilder {
-        crate::operation::start_fhir_export_job::builders::StartFhirExportJobOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_fhir_export_job::builders::StartFhirExportJobOutputBuilder {
+        crate::operation::start_fhir_export_job::builders::StartFhirExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartFhirExportJobOutput`](crate::operation::start_fhir_export_job::StartFhirExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFhirExportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -61,8 +57,11 @@ impl StartFhirExportJobOutputBuilder {
     }
     /// <p>The AWS generated ID for an export job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The AWS generated ID for an export job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -71,8 +70,11 @@ impl StartFhirExportJobOutputBuilder {
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
+    }
+    /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,25 +83,32 @@ impl StartFhirExportJobOutputBuilder {
     }
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
+    }
+    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartFhirExportJobOutput`](crate::operation::start_fhir_export_job::StartFhirExportJobOutput).
     pub fn build(self) -> crate::operation::start_fhir_export_job::StartFhirExportJobOutput {
         crate::operation::start_fhir_export_job::StartFhirExportJobOutput {
-            job_id: self.job_id,
-            job_status: self.job_status,
-            datastore_id: self.datastore_id,
+            job_id: self.job_id
+            ,
+            job_status: self.job_status
+            ,
+            datastore_id: self.datastore_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

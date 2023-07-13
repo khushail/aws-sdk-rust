@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteContactInput {
+pub struct DeleteContactInput  {
     /// <p>The name of the contact list from which the contact should be removed.</p>
     #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteContactInput {
 }
 impl DeleteContactInput {
     /// <p>The name of the contact list from which the contact should be removed.</p>
-    pub fn contact_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> ::std::option::Option<& str> {
         self.contact_list_name.as_deref()
     }
     /// <p>The contact's email address.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
@@ -29,56 +29,48 @@ impl DeleteContactInput {
 
 /// A builder for [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContactInputBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }
 impl DeleteContactInputBuilder {
     /// <p>The name of the contact list from which the contact should be removed.</p>
-    pub fn contact_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the contact list from which the contact should be removed.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.contact_list_name = input;
-        self
+    pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.contact_list_name = input; self
+    }
+    /// <p>The name of the contact list from which the contact should be removed.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_list_name
     }
     /// <p>The contact's email address.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contact's email address.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.email_address = input;
-        self
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.email_address = input; self
+    }
+    /// <p>The contact's email address.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// Consumes the builder and constructs a [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_contact::DeleteContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_contact::DeleteContactInput {
-            contact_list_name: self.contact_list_name,
-            email_address: self.email_address,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_contact::DeleteContactInput {
+                contact_list_name: self.contact_list_name
+                ,
+                email_address: self.email_address
+                ,
+            }
+        )
     }
 }
+

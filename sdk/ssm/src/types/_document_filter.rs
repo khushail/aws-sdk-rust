@@ -3,7 +3,7 @@
 /// <p>This data type is deprecated. Instead, use <code>DocumentKeyValuesFilter</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentFilter {
+pub struct DocumentFilter  {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::DocumentFilterKey>,
@@ -13,11 +13,11 @@ pub struct DocumentFilter {
 }
 impl DocumentFilter {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::DocumentFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::DocumentFilterKey> {
         self.key.as_ref()
     }
     /// <p>The value of the filter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DocumentFilter {
 
 /// A builder for [`DocumentFilter`](crate::types::DocumentFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::DocumentFilterKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl DocumentFilterBuilder {
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFilterKey>,
-    ) -> Self {
-        self.key = input;
-        self
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::DocumentFilterKey>) -> Self {
+        self.key = input; self
+    }
+    /// <p>The name of the filter.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::DocumentFilterKey> {
+        &self.key
     }
     /// <p>The value of the filter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl DocumentFilterBuilder {
     }
     /// <p>The value of the filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the filter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`DocumentFilter`](crate::types::DocumentFilter).
     pub fn build(self) -> crate::types::DocumentFilter {
         crate::types::DocumentFilter {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

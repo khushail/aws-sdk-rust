@@ -2,59 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExperimentInput {
+pub struct DeleteExperimentInput  {
     /// <p>The name of the experiment to delete.</p>
     #[doc(hidden)]
     pub experiment_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExperimentInput {
     /// <p>The name of the experiment to delete.</p>
-    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
 }
 impl DeleteExperimentInput {
     /// Creates a new builder-style object to manufacture [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
-    pub fn builder() -> crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder {
         crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExperimentInputBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExperimentInputBuilder {
     /// <p>The name of the experiment to delete.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment to delete.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.experiment_name = input;
-        self
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.experiment_name = input; self
+    }
+    /// <p>The name of the experiment to delete.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
     }
     /// Consumes the builder and constructs a [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_experiment::DeleteExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_experiment::DeleteExperimentInput {
-            experiment_name: self.experiment_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_experiment::DeleteExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_experiment::DeleteExperimentInput {
+                experiment_name: self.experiment_name
+                ,
+            }
+        )
     }
 }
+

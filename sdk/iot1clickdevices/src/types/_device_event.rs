@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceEvent {
+pub struct DeviceEvent  {
     /// <p>An object representing the device associated with the event.</p>
     #[doc(hidden)]
     pub device: ::std::option::Option<crate::types::Device>,
@@ -12,11 +12,11 @@ pub struct DeviceEvent {
 }
 impl DeviceEvent {
     /// <p>An object representing the device associated with the event.</p>
-    pub fn device(&self) -> ::std::option::Option<&crate::types::Device> {
+    pub fn device(&self) -> ::std::option::Option<& crate::types::Device> {
         self.device.as_ref()
     }
     /// <p>A serialized JSON object representing the device-type specific event.</p>
-    pub fn std_event(&self) -> ::std::option::Option<&str> {
+    pub fn std_event(&self) -> ::std::option::Option<& str> {
         self.std_event.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DeviceEvent {
 
 /// A builder for [`DeviceEvent`](crate::types::DeviceEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceEventBuilder {
     pub(crate) device: ::std::option::Option<crate::types::Device>,
     pub(crate) std_event: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeviceEventBuilder {
     }
     /// <p>An object representing the device associated with the event.</p>
     pub fn set_device(mut self, input: ::std::option::Option<crate::types::Device>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
+    }
+    /// <p>An object representing the device associated with the event.</p>
+    pub fn get_device(&self) -> &::std::option::Option<crate::types::Device> {
+        &self.device
     }
     /// <p>A serialized JSON object representing the device-type specific event.</p>
     pub fn std_event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,14 +55,20 @@ impl DeviceEventBuilder {
     }
     /// <p>A serialized JSON object representing the device-type specific event.</p>
     pub fn set_std_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.std_event = input;
-        self
+        self.std_event = input; self
+    }
+    /// <p>A serialized JSON object representing the device-type specific event.</p>
+    pub fn get_std_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.std_event
     }
     /// Consumes the builder and constructs a [`DeviceEvent`](crate::types::DeviceEvent).
     pub fn build(self) -> crate::types::DeviceEvent {
         crate::types::DeviceEvent {
-            device: self.device,
-            std_event: self.std_event,
+            device: self.device
+            ,
+            std_event: self.std_event
+            ,
         }
     }
 }
+

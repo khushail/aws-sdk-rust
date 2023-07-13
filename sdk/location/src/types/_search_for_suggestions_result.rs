@@ -3,26 +3,44 @@
 /// <p>Contains a place suggestion resulting from a place suggestion query that is run on a place index resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchForSuggestionsResult {
+pub struct SearchForSuggestionsResult  {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p> 
+    /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
     #[doc(hidden)]
     pub place_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Location categories that describe the Place.</p> 
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
+    #[doc(hidden)]
+    pub supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p> 
+    /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
-    pub fn place_id(&self) -> ::std::option::Option<&str> {
+    pub fn place_id(&self) -> ::std::option::Option<& str> {
         self.place_id.as_deref()
+    }
+    /// <p>The Amazon Location categories that describe the Place.</p> 
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn categories(&self) -> ::std::option::Option<& [::std::string::String]> {
+        self.categories.as_deref()
+    }
+    /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
+    pub fn supplemental_categories(&self) -> ::std::option::Option<& [::std::string::String]> {
+        self.supplemental_categories.as_deref()
     }
 }
 impl SearchForSuggestionsResult {
@@ -34,12 +52,12 @@ impl SearchForSuggestionsResult {
 
 /// A builder for [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchForSuggestionsResultBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) place_id: ::std::option::Option<::std::string::String>,
+    pub(crate) categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchForSuggestionsResultBuilder {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
@@ -49,28 +67,87 @@ impl SearchForSuggestionsResultBuilder {
     }
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The text of the place suggestion, typically formatted as an address string.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
+    /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p> 
+    /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
     pub fn place_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.place_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p> 
+    /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
     pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.place_id = input;
-        self
+        self.place_id = input; self
+    }
+    /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p> 
+    /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
+    /// </note>
+    pub fn get_place_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.place_id
+    }
+    /// Appends an item to `categories`.
+    ///
+    /// To override the contents of this collection use [`set_categories`](Self::set_categories).
+    ///
+    /// <p>The Amazon Location categories that describe the Place.</p> 
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.categories.unwrap_or_default();
+                        v.push(input.into());
+                        self.categories = ::std::option::Option::Some(v);
+                        self
+    }
+    /// <p>The Amazon Location categories that describe the Place.</p> 
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.categories = input; self
+    }
+    /// <p>The Amazon Location categories that describe the Place.</p> 
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.categories
+    }
+    /// Appends an item to `supplemental_categories`.
+    ///
+    /// To override the contents of this collection use [`set_supplemental_categories`](Self::set_supplemental_categories).
+    ///
+    /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
+    pub fn supplemental_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supplemental_categories.unwrap_or_default();
+                        v.push(input.into());
+                        self.supplemental_categories = ::std::option::Option::Some(v);
+                        self
+    }
+    /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
+    pub fn set_supplemental_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supplemental_categories = input; self
+    }
+    /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
+    pub fn get_supplemental_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supplemental_categories
     }
     /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
     pub fn build(self) -> crate::types::SearchForSuggestionsResult {
         crate::types::SearchForSuggestionsResult {
-            text: self.text,
-            place_id: self.place_id,
+            text: self.text
+            ,
+            place_id: self.place_id
+            ,
+            categories: self.categories
+            ,
+            supplemental_categories: self.supplemental_categories
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSimulationApplicationInput {
+pub struct DeleteSimulationApplicationInput  {
     /// <p>The application information for the simulation application to delete.</p>
     #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DeleteSimulationApplicationInput {
 }
 impl DeleteSimulationApplicationInput {
     /// <p>The application information for the simulation application to delete.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The version of the simulation application to delete.</p>
-    pub fn application_version(&self) -> ::std::option::Option<&str> {
+    pub fn application_version(&self) -> ::std::option::Option<& str> {
         self.application_version.as_deref()
     }
 }
 impl DeleteSimulationApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSimulationApplicationInput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationInput).
-    pub fn builder() -> crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationInputBuilder{
+    pub fn builder() -> crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationInputBuilder {
         crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSimulationApplicationInput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSimulationApplicationInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,
@@ -44,37 +42,35 @@ impl DeleteSimulationApplicationInputBuilder {
     }
     /// <p>The application information for the simulation application to delete.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
+    }
+    /// <p>The application information for the simulation application to delete.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
     }
     /// <p>The version of the simulation application to delete.</p>
-    pub fn application_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the simulation application to delete.</p>
-    pub fn set_application_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_version = input;
-        self
+    pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_version = input; self
+    }
+    /// <p>The version of the simulation application to delete.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_version
     }
     /// Consumes the builder and constructs a [`DeleteSimulationApplicationInput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_simulation_application::DeleteSimulationApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_simulation_application::DeleteSimulationApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_simulation_application::DeleteSimulationApplicationInput {
-                application: self.application,
-                application_version: self.application_version,
-            },
+                application: self.application
+                ,
+                application_version: self.application_version
+                ,
+            }
         )
     }
 }
+

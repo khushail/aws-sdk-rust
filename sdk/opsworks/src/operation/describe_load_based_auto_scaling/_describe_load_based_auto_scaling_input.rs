@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoadBasedAutoScalingInput {
+pub struct DescribeLoadBasedAutoScalingInput  {
     /// <p>An array of layer IDs.</p>
     #[doc(hidden)]
     pub layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeLoadBasedAutoScalingInput {
     /// <p>An array of layer IDs.</p>
-    pub fn layer_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn layer_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.layer_ids.as_deref()
     }
 }
 impl DescribeLoadBasedAutoScalingInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBasedAutoScalingInput`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingInput).
-    pub fn builder() -> crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingInputBuilder{
+    pub fn builder() -> crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingInputBuilder {
         crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBasedAutoScalingInput`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBasedAutoScalingInputBuilder {
     pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,29 +34,26 @@ impl DescribeLoadBasedAutoScalingInputBuilder {
     /// <p>An array of layer IDs.</p>
     pub fn layer_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.layer_ids.unwrap_or_default();
-        v.push(input.into());
-        self.layer_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.layer_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of layer IDs.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.layer_ids = input;
-        self
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.layer_ids = input; self
+    }
+    /// <p>An array of layer IDs.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_ids
     }
     /// Consumes the builder and constructs a [`DescribeLoadBasedAutoScalingInput`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingInput {
-                layer_ids: self.layer_ids,
-            },
+                layer_ids: self.layer_ids
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Recommendations that are provided to make an application more recovery resilient.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Recommendation {
+pub struct Recommendation  {
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
     #[doc(hidden)]
     pub recommendation_text: ::std::option::Option<::std::string::String>,
 }
 impl Recommendation {
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
-    pub fn recommendation_text(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_text(&self) -> ::std::option::Option<& str> {
         self.recommendation_text.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl Recommendation {
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationBuilder {
     pub(crate) recommendation_text: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationBuilder {
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
-    pub fn recommendation_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
-    pub fn set_recommendation_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.recommendation_text = input;
-        self
+    pub fn set_recommendation_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommendation_text = input; self
+    }
+    /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
+    pub fn get_recommendation_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_text
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
-            recommendation_text: self.recommendation_text,
+            recommendation_text: self.recommendation_text
+            ,
         }
     }
 }
+

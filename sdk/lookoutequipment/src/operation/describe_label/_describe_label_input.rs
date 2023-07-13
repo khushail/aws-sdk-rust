@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLabelInput {
+pub struct DescribeLabelInput  {
     /// <p> Returns the name of the group containing the label. </p>
     #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeLabelInput {
 }
 impl DescribeLabelInput {
     /// <p> Returns the name of the group containing the label. </p>
-    pub fn label_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn label_group_name(&self) -> ::std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p> Returns the ID of the label. </p>
-    pub fn label_id(&self) -> ::std::option::Option<&str> {
+    pub fn label_id(&self) -> ::std::option::Option<& str> {
         self.label_id.as_deref()
     }
 }
@@ -29,29 +29,24 @@ impl DescribeLabelInput {
 
 /// A builder for [`DescribeLabelInput`](crate::operation::describe_label::DescribeLabelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLabelInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLabelInputBuilder {
     /// <p> Returns the name of the group containing the label. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Returns the name of the group containing the label. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.label_group_name = input;
-        self
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.label_group_name = input; self
+    }
+    /// <p> Returns the name of the group containing the label. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_name
     }
     /// <p> Returns the ID of the label. </p>
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,19 +55,22 @@ impl DescribeLabelInputBuilder {
     }
     /// <p> Returns the ID of the label. </p>
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_id = input;
-        self
+        self.label_id = input; self
+    }
+    /// <p> Returns the ID of the label. </p>
+    pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_id
     }
     /// Consumes the builder and constructs a [`DescribeLabelInput`](crate::operation::describe_label::DescribeLabelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_label::DescribeLabelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_label::DescribeLabelInput {
-            label_group_name: self.label_group_name,
-            label_id: self.label_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_label::DescribeLabelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_label::DescribeLabelInput {
+                label_group_name: self.label_group_name
+                ,
+                label_id: self.label_id
+                ,
+            }
+        )
     }
 }
+

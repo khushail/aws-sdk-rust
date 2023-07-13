@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLaunchOutput {
+pub struct UpdateLaunchOutput  {
     /// <p>A structure that contains the new configuration of the launch that was updated.</p>
     #[doc(hidden)]
     pub launch: ::std::option::Option<crate::types::Launch>,
@@ -10,15 +10,15 @@ pub struct UpdateLaunchOutput {
 }
 impl UpdateLaunchOutput {
     /// <p>A structure that contains the new configuration of the launch that was updated.</p>
-    pub fn launch(&self) -> ::std::option::Option<&crate::types::Launch> {
+    pub fn launch(&self) -> ::std::option::Option<& crate::types::Launch> {
         self.launch.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateLaunchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateLaunchOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchOutput`](crate::operation::update_launch::UpdateLaunchOutput).
     pub fn builder() -> crate::operation::update_launch::builders::UpdateLaunchOutputBuilder {
@@ -28,9 +28,7 @@ impl UpdateLaunchOutput {
 
 /// A builder for [`UpdateLaunchOutput`](crate::operation::update_launch::UpdateLaunchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLaunchOutputBuilder {
     pub(crate) launch: ::std::option::Option<crate::types::Launch>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl UpdateLaunchOutputBuilder {
     }
     /// <p>A structure that contains the new configuration of the launch that was updated.</p>
     pub fn set_launch(mut self, input: ::std::option::Option<crate::types::Launch>) -> Self {
-        self.launch = input;
-        self
+        self.launch = input; self
+    }
+    /// <p>A structure that contains the new configuration of the launch that was updated.</p>
+    pub fn get_launch(&self) -> &::std::option::Option<crate::types::Launch> {
+        &self.launch
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateLaunchOutput`](crate::operation::update_launch::UpdateLaunchOutput).
     pub fn build(self) -> crate::operation::update_launch::UpdateLaunchOutput {
         crate::operation::update_launch::UpdateLaunchOutput {
-            launch: self.launch,
+            launch: self.launch
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

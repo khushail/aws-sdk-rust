@@ -3,95 +3,88 @@ pub use crate::operation::submit_feedback::_submit_feedback_output::SubmitFeedba
 
 pub use crate::operation::submit_feedback::_submit_feedback_input::SubmitFeedbackInputBuilder;
 
+impl SubmitFeedbackInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::submit_feedback::SubmitFeedbackOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::submit_feedback::SubmitFeedbackError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.submit_feedback();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SubmitFeedback`.
-///
-/// <p>Enables you to provide feedback to Amazon Kendra to improve the performance of your index.</p>
+/// 
+/// <p>Enables you to provide feedback to Amazon Kendra to improve the performance of your index.</p> 
 /// <p> <code>SubmitFeedback</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubmitFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder,
+                    inner: crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder,
 }
-impl SubmitFeedbackFluentBuilder {
+impl SubmitFeedbackFluentBuilder  {
     /// Creates a new `SubmitFeedback`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::submit_feedback::SubmitFeedback,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SubmitFeedback as a reference.
+    pub fn as_input(&self) -> &crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::submit_feedback::SubmitFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::submit_feedback::SubmitFeedback, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::submit_feedback::SubmitFeedbackOutput, ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::submit_feedback::SubmitFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::submit_feedback::SubmitFeedback,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::submit_feedback::SubmitFeedbackOutput, ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::submit_feedback::SubmitFeedback, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the index that was queried.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -101,6 +94,10 @@ impl SubmitFeedbackFluentBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
+    }
+    /// <p>The identifier of the index that was queried.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
     }
     /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,6 +109,10 @@ impl SubmitFeedbackFluentBuilder {
         self.inner = self.inner.set_query_id(input);
         self
     }
+    /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_id()
+    }
     /// Appends an item to `ClickFeedbackItems`.
     ///
     /// To override the contents of this collection use [`set_click_feedback_items`](Self::set_click_feedback_items).
@@ -122,12 +123,13 @@ impl SubmitFeedbackFluentBuilder {
         self
     }
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
-    pub fn set_click_feedback_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>>,
-    ) -> Self {
+    pub fn set_click_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>>) -> Self {
         self.inner = self.inner.set_click_feedback_items(input);
         self
+    }
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
+    pub fn get_click_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>> {
+        self.inner.get_click_feedback_items()
     }
     /// Appends an item to `RelevanceFeedbackItems`.
     ///
@@ -139,11 +141,13 @@ impl SubmitFeedbackFluentBuilder {
         self
     }
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    pub fn set_relevance_feedback_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>>,
-    ) -> Self {
+    pub fn set_relevance_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>>) -> Self {
         self.inner = self.inner.set_relevance_feedback_items(input);
         self
     }
+    /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
+    pub fn get_relevance_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>> {
+        self.inner.get_relevance_feedback_items()
+    }
 }
+

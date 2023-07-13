@@ -3,129 +3,106 @@ pub use crate::operation::list_pipeline_executions::_list_pipeline_executions_ou
 
 pub use crate::operation::list_pipeline_executions::_list_pipeline_executions_input::ListPipelineExecutionsInputBuilder;
 
+impl ListPipelineExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_pipeline_executions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListPipelineExecutions`.
-///
+/// 
 /// <p>Gets a list of the pipeline executions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder,
+                    inner: crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder,
 }
-impl ListPipelineExecutionsFluentBuilder {
+impl ListPipelineExecutionsFluentBuilder  {
     /// Creates a new `ListPipelineExecutions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_pipeline_executions::ListPipelineExecutions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListPipelineExecutions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_pipeline_executions::ListPipelineExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_executions::ListPipelineExecutionsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_executions::ListPipelineExecutionsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_pipeline_executions::ListPipelineExecutions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_executions::ListPipelineExecutionsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_pipeline_executions::ListPipelineExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_executions::ListPipelineExecutionsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator
-    {
-        crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator {
+                                crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator::new(self.handle, self.inner)
+                            }
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
-    /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
     }
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -133,12 +110,13 @@ impl ListPipelineExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
+    }
+    /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_after()
     }
     /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -146,12 +124,13 @@ impl ListPipelineExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
+    }
+    /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_before()
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortPipelineExecutionsBy) -> Self {
@@ -159,12 +138,13 @@ impl ListPipelineExecutionsFluentBuilder {
         self
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortPipelineExecutionsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortPipelineExecutionsBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
+    }
+    /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortPipelineExecutionsBy> {
+        self.inner.get_sort_by()
     }
     /// <p>The sort order for results.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -176,6 +156,10 @@ impl ListPipelineExecutionsFluentBuilder {
         self.inner = self.inner.set_sort_order(input);
         self
     }
+    /// <p>The sort order for results.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
+    }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -185,6 +169,10 @@ impl ListPipelineExecutionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of pipeline executions to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -196,4 +184,9 @@ impl ListPipelineExecutionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of pipeline executions to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
 }
+

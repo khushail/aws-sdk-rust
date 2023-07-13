@@ -3,7 +3,7 @@
 /// <p> Describes Compute Optimizer's integration status with your chosen external metric provider. For example, Datadog. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalMetricStatus {
+pub struct ExternalMetricStatus  {
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
     #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
@@ -13,11 +13,11 @@ pub struct ExternalMetricStatus {
 }
 impl ExternalMetricStatus {
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::ExternalMetricStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::ExternalMetricStatusCode> {
         self.status_code.as_ref()
     }
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ExternalMetricStatus {
 
 /// A builder for [`ExternalMetricStatus`](crate::types::ExternalMetricStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalMetricStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -44,34 +42,34 @@ impl ExternalMetricStatusBuilder {
         self
     }
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
-    ) -> Self {
-        self.status_code = input;
-        self
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ExternalMetricStatusCode>) -> Self {
+        self.status_code = input; self
+    }
+    /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ExternalMetricStatusCode> {
+        &self.status_code
     }
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_reason = input;
-        self
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input; self
+    }
+    /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// Consumes the builder and constructs a [`ExternalMetricStatus`](crate::types::ExternalMetricStatus).
     pub fn build(self) -> crate::types::ExternalMetricStatus {
         crate::types::ExternalMetricStatus {
-            status_code: self.status_code,
-            status_reason: self.status_reason,
+            status_code: self.status_code
+            ,
+            status_reason: self.status_reason
+            ,
         }
     }
 }
+

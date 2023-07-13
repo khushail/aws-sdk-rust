@@ -3,7 +3,7 @@
 /// <p>Provides information about the block public access settings for an S3 bucket. These settings can apply to a bucket at the account or bucket level. For detailed information about each setting, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking public access to your Amazon S3 storage</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlockPublicAccess {
+pub struct BlockPublicAccess  {
     /// <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the bucket and objects in the bucket.</p>
     #[doc(hidden)]
     pub block_public_acls: ::std::option::Option<bool>,
@@ -44,9 +44,7 @@ impl BlockPublicAccess {
 
 /// A builder for [`BlockPublicAccess`](crate::types::BlockPublicAccess).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockPublicAccessBuilder {
     pub(crate) block_public_acls: ::std::option::Option<bool>,
     pub(crate) block_public_policy: ::std::option::Option<bool>,
@@ -61,8 +59,11 @@ impl BlockPublicAccessBuilder {
     }
     /// <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the bucket and objects in the bucket.</p>
     pub fn set_block_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.block_public_acls = input;
-        self
+        self.block_public_acls = input; self
+    }
+    /// <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the bucket and objects in the bucket.</p>
+    pub fn get_block_public_acls(&self) -> &::std::option::Option<bool> {
+        &self.block_public_acls
     }
     /// <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
     pub fn block_public_policy(mut self, input: bool) -> Self {
@@ -71,8 +72,11 @@ impl BlockPublicAccessBuilder {
     }
     /// <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
     pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.block_public_policy = input;
-        self
+        self.block_public_policy = input; self
+    }
+    /// <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
+    pub fn get_block_public_policy(&self) -> &::std::option::Option<bool> {
+        &self.block_public_policy
     }
     /// <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in the bucket.</p>
     pub fn ignore_public_acls(mut self, input: bool) -> Self {
@@ -81,8 +85,11 @@ impl BlockPublicAccessBuilder {
     }
     /// <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in the bucket.</p>
     pub fn set_ignore_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_public_acls = input;
-        self
+        self.ignore_public_acls = input; self
+    }
+    /// <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in the bucket.</p>
+    pub fn get_ignore_public_acls(&self) -> &::std::option::Option<bool> {
+        &self.ignore_public_acls
     }
     /// <p>Specifies whether Amazon S3 restricts public bucket policies for the bucket.</p>
     pub fn restrict_public_buckets(mut self, input: bool) -> Self {
@@ -91,16 +98,24 @@ impl BlockPublicAccessBuilder {
     }
     /// <p>Specifies whether Amazon S3 restricts public bucket policies for the bucket.</p>
     pub fn set_restrict_public_buckets(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.restrict_public_buckets = input;
-        self
+        self.restrict_public_buckets = input; self
+    }
+    /// <p>Specifies whether Amazon S3 restricts public bucket policies for the bucket.</p>
+    pub fn get_restrict_public_buckets(&self) -> &::std::option::Option<bool> {
+        &self.restrict_public_buckets
     }
     /// Consumes the builder and constructs a [`BlockPublicAccess`](crate::types::BlockPublicAccess).
     pub fn build(self) -> crate::types::BlockPublicAccess {
         crate::types::BlockPublicAccess {
-            block_public_acls: self.block_public_acls,
-            block_public_policy: self.block_public_policy,
-            ignore_public_acls: self.ignore_public_acls,
-            restrict_public_buckets: self.restrict_public_buckets,
+            block_public_acls: self.block_public_acls
+            ,
+            block_public_policy: self.block_public_policy
+            ,
+            ignore_public_acls: self.ignore_public_acls
+            ,
+            restrict_public_buckets: self.restrict_public_buckets
+            ,
         }
     }
 }
+

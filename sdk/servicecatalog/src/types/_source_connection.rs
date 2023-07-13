@@ -3,7 +3,7 @@
 /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceConnection {
+pub struct SourceConnection  {
     /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SourceType>,
@@ -13,13 +13,11 @@ pub struct SourceConnection {
 }
 impl SourceConnection {
     /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.r#type.as_ref()
     }
     /// <p>The connection details based on the connection <code>Type</code>. </p>
-    pub fn connection_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceConnectionParameters> {
+    pub fn connection_parameters(&self) -> ::std::option::Option<& crate::types::SourceConnectionParameters> {
         self.connection_parameters.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl SourceConnection {
 
 /// A builder for [`SourceConnection`](crate::types::SourceConnection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceConnectionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceType>,
-    pub(crate) connection_parameters:
-        ::std::option::Option<crate::types::SourceConnectionParameters>,
+    pub(crate) connection_parameters: ::std::option::Option<crate::types::SourceConnectionParameters>,
 }
 impl SourceConnectionBuilder {
     /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
@@ -48,30 +43,33 @@ impl SourceConnectionBuilder {
     }
     /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.r#type
     }
     /// <p>The connection details based on the connection <code>Type</code>. </p>
-    pub fn connection_parameters(
-        mut self,
-        input: crate::types::SourceConnectionParameters,
-    ) -> Self {
+    pub fn connection_parameters(mut self, input: crate::types::SourceConnectionParameters) -> Self {
         self.connection_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connection details based on the connection <code>Type</code>. </p>
-    pub fn set_connection_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConnectionParameters>,
-    ) -> Self {
-        self.connection_parameters = input;
-        self
+    pub fn set_connection_parameters(mut self, input: ::std::option::Option<crate::types::SourceConnectionParameters>) -> Self {
+        self.connection_parameters = input; self
+    }
+    /// <p>The connection details based on the connection <code>Type</code>. </p>
+    pub fn get_connection_parameters(&self) -> &::std::option::Option<crate::types::SourceConnectionParameters> {
+        &self.connection_parameters
     }
     /// Consumes the builder and constructs a [`SourceConnection`](crate::types::SourceConnection).
     pub fn build(self) -> crate::types::SourceConnection {
         crate::types::SourceConnection {
-            r#type: self.r#type,
-            connection_parameters: self.connection_parameters,
+            r#type: self.r#type
+            ,
+            connection_parameters: self.connection_parameters
+            ,
         }
     }
 }
+

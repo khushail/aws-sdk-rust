@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateWebsiteCertificateAuthorityInput {
+pub struct DisassociateWebsiteCertificateAuthorityInput  {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DisassociateWebsiteCertificateAuthorityInput {
 }
 impl DisassociateWebsiteCertificateAuthorityInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>A unique identifier for the CA.</p>
-    pub fn website_ca_id(&self) -> ::std::option::Option<&str> {
+    pub fn website_ca_id(&self) -> ::std::option::Option<& str> {
         self.website_ca_id.as_deref()
     }
 }
 impl DisassociateWebsiteCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebsiteCertificateAuthorityInput`](crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityInput).
-    pub fn builder() -> crate::operation::disassociate_website_certificate_authority::builders::DisassociateWebsiteCertificateAuthorityInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_website_certificate_authority::builders::DisassociateWebsiteCertificateAuthorityInputBuilder {
         crate::operation::disassociate_website_certificate_authority::builders::DisassociateWebsiteCertificateAuthorityInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWebsiteCertificateAuthorityInput`](crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWebsiteCertificateAuthorityInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) website_ca_id: ::std::option::Option<::std::string::String>,
@@ -44,27 +42,27 @@ impl DisassociateWebsiteCertificateAuthorityInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
+    }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
     }
     /// <p>A unique identifier for the CA.</p>
-    pub fn website_ca_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn website_ca_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.website_ca_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the CA.</p>
-    pub fn set_website_ca_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.website_ca_id = input;
-        self
+    pub fn set_website_ca_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.website_ca_id = input; self
+    }
+    /// <p>A unique identifier for the CA.</p>
+    pub fn get_website_ca_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.website_ca_id
     }
     /// Consumes the builder and constructs a [`DisassociateWebsiteCertificateAuthorityInput`](crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityInput {
                 fleet_arn: self.fleet_arn
@@ -75,3 +73,4 @@ impl DisassociateWebsiteCertificateAuthorityInputBuilder {
         )
     }
 }
+

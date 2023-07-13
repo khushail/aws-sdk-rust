@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteObjectOutput {
+pub struct DeleteObjectOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteObjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteObjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput).
     pub fn builder() -> crate::operation::delete_object::builders::DeleteObjectOutputBuilder {
@@ -19,22 +19,20 @@ impl DeleteObjectOutput {
 
 /// A builder for [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteObjectOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteObjectOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput).
     pub fn build(self) -> crate::operation::delete_object::DeleteObjectOutput {
         crate::operation::delete_object::DeleteObjectOutput {
@@ -42,3 +40,4 @@ impl DeleteObjectOutputBuilder {
         }
     }
 }
+

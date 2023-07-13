@@ -181,6 +181,10 @@ pub use crate::types::_file_system_config::FileSystemConfigBuilder;
 
 pub use crate::types::_kernel_spec::KernelSpecBuilder;
 
+pub use crate::types::_selective_execution_config::SelectiveExecutionConfigBuilder;
+
+pub use crate::types::_selected_step::SelectedStepBuilder;
+
 pub use crate::types::_parameter::ParameterBuilder;
 
 pub use crate::types::_output_parameter::OutputParameterBuilder;
@@ -230,6 +234,10 @@ pub use crate::types::_model_client_config::ModelClientConfigBuilder;
 pub use crate::types::_model_dashboard_endpoint::ModelDashboardEndpointBuilder;
 
 pub use crate::types::_model::ModelBuilder;
+
+pub use crate::types::_deployment_recommendation::DeploymentRecommendationBuilder;
+
+pub use crate::types::_real_time_inference_recommendation::RealTimeInferenceRecommendationBuilder;
 
 pub use crate::types::_inference_execution_config::InferenceExecutionConfigBuilder;
 
@@ -292,6 +300,8 @@ pub use crate::types::_hyper_parameter_algorithm_specification::HyperParameterAl
 pub use crate::types::_metric_definition::MetricDefinitionBuilder;
 
 pub use crate::types::_parameter_ranges::ParameterRangesBuilder;
+
+pub use crate::types::_auto_parameter::AutoParameterBuilder;
 
 pub use crate::types::_categorical_parameter_range::CategoricalParameterRangeBuilder;
 
@@ -522,6 +532,8 @@ pub use crate::types::_processing_job_summary::ProcessingJobSummaryBuilder;
 pub use crate::types::_pipeline_summary::PipelineSummaryBuilder;
 
 pub use crate::types::_pipeline_execution_step::PipelineExecutionStepBuilder;
+
+pub use crate::types::_selective_execution_result::SelectiveExecutionResultBuilder;
 
 pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMetadataBuilder;
 
@@ -801,6 +813,8 @@ pub use crate::types::_model_variant_config_summary::ModelVariantConfigSummaryBu
 
 pub use crate::types::_endpoint_metadata::EndpointMetadataBuilder;
 
+pub use crate::types::_autotune::AutotuneBuilder;
+
 pub use crate::types::_ui_template_info::UiTemplateInfoBuilder;
 
 pub use crate::types::_hub_content_dependency::HubContentDependencyBuilder;
@@ -954,3 +968,4 @@ pub use crate::types::_deployment_stage::DeploymentStageBuilder;
 pub use crate::types::_batch_describe_model_package_error::BatchDescribeModelPackageErrorBuilder;
 
 pub use crate::types::_batch_describe_model_package_summary::BatchDescribeModelPackageSummaryBuilder;
+

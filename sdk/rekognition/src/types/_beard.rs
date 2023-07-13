@@ -3,7 +3,7 @@
 /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Beard {
+pub struct Beard  {
     /// <p>Boolean value that indicates whether the face has beard or not.</p>
     #[doc(hidden)]
     pub value: bool,
@@ -30,9 +30,7 @@ impl Beard {
 
 /// A builder for [`Beard`](crate::types::Beard).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BeardBuilder {
     pub(crate) value: ::std::option::Option<bool>,
     pub(crate) confidence: ::std::option::Option<f32>,
@@ -45,8 +43,11 @@ impl BeardBuilder {
     }
     /// <p>Boolean value that indicates whether the face has beard or not.</p>
     pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>Boolean value that indicates whether the face has beard or not.</p>
+    pub fn get_value(&self) -> &::std::option::Option<bool> {
+        &self.value
     }
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -55,14 +56,21 @@ impl BeardBuilder {
     }
     /// <p>Level of confidence in the determination.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`Beard`](crate::types::Beard).
     pub fn build(self) -> crate::types::Beard {
         crate::types::Beard {
-            value: self.value.unwrap_or_default(),
-            confidence: self.confidence,
+            value: self.value
+                .unwrap_or_default()
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

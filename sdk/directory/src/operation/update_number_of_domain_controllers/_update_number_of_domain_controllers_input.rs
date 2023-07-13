@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNumberOfDomainControllersInput {
+pub struct UpdateNumberOfDomainControllersInput  {
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
     #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct UpdateNumberOfDomainControllersInput {
 }
 impl UpdateNumberOfDomainControllersInput {
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The number of domain controllers desired in the directory.</p>
@@ -22,16 +22,14 @@ impl UpdateNumberOfDomainControllersInput {
 }
 impl UpdateNumberOfDomainControllersInput {
     /// Creates a new builder-style object to manufacture [`UpdateNumberOfDomainControllersInput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput).
-    pub fn builder() -> crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder{
+    pub fn builder() -> crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder {
         crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNumberOfDomainControllersInput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNumberOfDomainControllersInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_number: ::std::option::Option<i32>,
@@ -44,8 +42,11 @@ impl UpdateNumberOfDomainControllersInputBuilder {
     }
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
+    }
+    /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>The number of domain controllers desired in the directory.</p>
     pub fn desired_number(mut self, input: i32) -> Self {
@@ -54,16 +55,14 @@ impl UpdateNumberOfDomainControllersInputBuilder {
     }
     /// <p>The number of domain controllers desired in the directory.</p>
     pub fn set_desired_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_number = input;
-        self
+        self.desired_number = input; self
+    }
+    /// <p>The number of domain controllers desired in the directory.</p>
+    pub fn get_desired_number(&self) -> &::std::option::Option<i32> {
+        &self.desired_number
     }
     /// Consumes the builder and constructs a [`UpdateNumberOfDomainControllersInput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput {
                 directory_id: self.directory_id
@@ -74,3 +73,4 @@ impl UpdateNumberOfDomainControllersInputBuilder {
         )
     }
 }
+

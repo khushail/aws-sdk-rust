@@ -3,7 +3,7 @@
 /// <p>Describes a grant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Grant {
+pub struct Grant  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
     pub grant_arn: ::std::option::Option<::std::string::String>,
@@ -40,47 +40,47 @@ pub struct Grant {
 }
 impl Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> ::std::option::Option<&str> {
+    pub fn grant_arn(&self) -> ::std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant name.</p>
-    pub fn grant_name(&self) -> ::std::option::Option<&str> {
+    pub fn grant_name(&self) -> ::std::option::Option<& str> {
         self.grant_name.as_deref()
     }
     /// <p>Parent ARN.</p>
-    pub fn parent_arn(&self) -> ::std::option::Option<&str> {
+    pub fn parent_arn(&self) -> ::std::option::Option<& str> {
         self.parent_arn.as_deref()
     }
     /// <p>License ARN.</p>
-    pub fn license_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_arn(&self) -> ::std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>The grantee principal ARN.</p>
-    pub fn grantee_principal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn grantee_principal_arn(&self) -> ::std::option::Option<& str> {
         self.grantee_principal_arn.as_deref()
     }
     /// <p>Home Region of the grant.</p>
-    pub fn home_region(&self) -> ::std::option::Option<&str> {
+    pub fn home_region(&self) -> ::std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>Grant status.</p>
-    pub fn grant_status(&self) -> ::std::option::Option<&crate::types::GrantStatus> {
+    pub fn grant_status(&self) -> ::std::option::Option<& crate::types::GrantStatus> {
         self.grant_status.as_ref()
     }
     /// <p>Grant status reason.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Granted operations.</p>
-    pub fn granted_operations(&self) -> ::std::option::Option<&[crate::types::AllowedOperation]> {
+    pub fn granted_operations(&self) -> ::std::option::Option<& [crate::types::AllowedOperation]> {
         self.granted_operations.as_deref()
     }
     /// <p>The options specified for the grant.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::Options> {
         self.options.as_ref()
     }
 }
@@ -93,9 +93,7 @@ impl Grant {
 
 /// A builder for [`Grant`](crate::types::Grant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) grant_name: ::std::option::Option<::std::string::String>,
@@ -106,8 +104,7 @@ pub struct GrantBuilder {
     pub(crate) grant_status: ::std::option::Option<crate::types::GrantStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) granted_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub(crate) granted_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
     pub(crate) options: ::std::option::Option<crate::types::Options>,
 }
 impl GrantBuilder {
@@ -118,8 +115,11 @@ impl GrantBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn set_grant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_arn = input;
-        self
+        self.grant_arn = input; self
+    }
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_arn
     }
     /// <p>Grant name.</p>
     pub fn grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,8 +128,11 @@ impl GrantBuilder {
     }
     /// <p>Grant name.</p>
     pub fn set_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_name = input;
-        self
+        self.grant_name = input; self
+    }
+    /// <p>Grant name.</p>
+    pub fn get_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_name
     }
     /// <p>Parent ARN.</p>
     pub fn parent_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,8 +141,11 @@ impl GrantBuilder {
     }
     /// <p>Parent ARN.</p>
     pub fn set_parent_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_arn = input;
-        self
+        self.parent_arn = input; self
+    }
+    /// <p>Parent ARN.</p>
+    pub fn get_parent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_arn
     }
     /// <p>License ARN.</p>
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,24 +154,24 @@ impl GrantBuilder {
     }
     /// <p>License ARN.</p>
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
+    }
+    /// <p>License ARN.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
     }
     /// <p>The grantee principal ARN.</p>
-    pub fn grantee_principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grantee_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The grantee principal ARN.</p>
-    pub fn set_grantee_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.grantee_principal_arn = input;
-        self
+    pub fn set_grantee_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.grantee_principal_arn = input; self
+    }
+    /// <p>The grantee principal ARN.</p>
+    pub fn get_grantee_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grantee_principal_arn
     }
     /// <p>Home Region of the grant.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,8 +180,11 @@ impl GrantBuilder {
     }
     /// <p>Home Region of the grant.</p>
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_region = input;
-        self
+        self.home_region = input; self
+    }
+    /// <p>Home Region of the grant.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
     }
     /// <p>Grant status.</p>
     pub fn grant_status(mut self, input: crate::types::GrantStatus) -> Self {
@@ -183,28 +192,25 @@ impl GrantBuilder {
         self
     }
     /// <p>Grant status.</p>
-    pub fn set_grant_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GrantStatus>,
-    ) -> Self {
-        self.grant_status = input;
-        self
+    pub fn set_grant_status(mut self, input: ::std::option::Option<crate::types::GrantStatus>) -> Self {
+        self.grant_status = input; self
+    }
+    /// <p>Grant status.</p>
+    pub fn get_grant_status(&self) -> &::std::option::Option<crate::types::GrantStatus> {
+        &self.grant_status
     }
     /// <p>Grant status reason.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Grant status reason.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_reason = input;
-        self
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input; self
+    }
+    /// <p>Grant status reason.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// <p>Grant version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,8 +219,11 @@ impl GrantBuilder {
     }
     /// <p>Grant version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>Grant version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `granted_operations`.
     ///
@@ -223,17 +232,17 @@ impl GrantBuilder {
     /// <p>Granted operations.</p>
     pub fn granted_operations(mut self, input: crate::types::AllowedOperation) -> Self {
         let mut v = self.granted_operations.unwrap_or_default();
-        v.push(input);
-        self.granted_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.granted_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Granted operations.</p>
-    pub fn set_granted_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
-    ) -> Self {
-        self.granted_operations = input;
-        self
+    pub fn set_granted_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>) -> Self {
+        self.granted_operations = input; self
+    }
+    /// <p>Granted operations.</p>
+    pub fn get_granted_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+        &self.granted_operations
     }
     /// <p>The options specified for the grant.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
@@ -242,23 +251,38 @@ impl GrantBuilder {
     }
     /// <p>The options specified for the grant.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
+    }
+    /// <p>The options specified for the grant.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
+        &self.options
     }
     /// Consumes the builder and constructs a [`Grant`](crate::types::Grant).
     pub fn build(self) -> crate::types::Grant {
         crate::types::Grant {
-            grant_arn: self.grant_arn,
-            grant_name: self.grant_name,
-            parent_arn: self.parent_arn,
-            license_arn: self.license_arn,
-            grantee_principal_arn: self.grantee_principal_arn,
-            home_region: self.home_region,
-            grant_status: self.grant_status,
-            status_reason: self.status_reason,
-            version: self.version,
-            granted_operations: self.granted_operations,
-            options: self.options,
+            grant_arn: self.grant_arn
+            ,
+            grant_name: self.grant_name
+            ,
+            parent_arn: self.parent_arn
+            ,
+            license_arn: self.license_arn
+            ,
+            grantee_principal_arn: self.grantee_principal_arn
+            ,
+            home_region: self.home_region
+            ,
+            grant_status: self.grant_status
+            ,
+            status_reason: self.status_reason
+            ,
+            version: self.version
+            ,
+            granted_operations: self.granted_operations
+            ,
+            options: self.options
+            ,
         }
     }
 }
+

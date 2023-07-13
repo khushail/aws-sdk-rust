@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCrawlerScheduleInput {
+pub struct UpdateCrawlerScheduleInput  {
     /// <p>The name of the crawler whose schedule to update.</p>
     #[doc(hidden)]
     pub crawler_name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct UpdateCrawlerScheduleInput {
 }
 impl UpdateCrawlerScheduleInput {
     /// <p>The name of the crawler whose schedule to update.</p>
-    pub fn crawler_name(&self) -> ::std::option::Option<&str> {
+    pub fn crawler_name(&self) -> ::std::option::Option<& str> {
         self.crawler_name.as_deref()
     }
     /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&str> {
+    pub fn schedule(&self) -> ::std::option::Option<& str> {
         self.schedule.as_deref()
     }
 }
 impl UpdateCrawlerScheduleInput {
     /// Creates a new builder-style object to manufacture [`UpdateCrawlerScheduleInput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleInputBuilder {
         crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCrawlerScheduleInput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCrawlerScheduleInputBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl UpdateCrawlerScheduleInputBuilder {
     }
     /// <p>The name of the crawler whose schedule to update.</p>
     pub fn set_crawler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crawler_name = input;
-        self
+        self.crawler_name = input; self
+    }
+    /// <p>The name of the crawler whose schedule to update.</p>
+    pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.crawler_name
     }
     /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl UpdateCrawlerScheduleInputBuilder {
     }
     /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
+    }
+    /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule
     }
     /// Consumes the builder and constructs a [`UpdateCrawlerScheduleInput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput {
-                crawler_name: self.crawler_name,
-                schedule: self.schedule,
-            },
+                crawler_name: self.crawler_name
+                ,
+                schedule: self.schedule
+                ,
+            }
         )
     }
 }
+

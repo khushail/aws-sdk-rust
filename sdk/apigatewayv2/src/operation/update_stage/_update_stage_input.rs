@@ -3,7 +3,7 @@
 /// <p>Updates a Stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStageInput {
+pub struct UpdateStageInput  {
     /// <p>Settings for logging access in this stage.</p>
     #[doc(hidden)]
     pub access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
@@ -27,25 +27,21 @@ pub struct UpdateStageInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Route settings for the stage.</p>
     #[doc(hidden)]
-    pub route_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>,
-    >,
+    pub route_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>>,
     /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
     #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
     #[doc(hidden)]
-    pub stage_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateStageInput {
     /// <p>Settings for logging access in this stage.</p>
-    pub fn access_log_settings(&self) -> ::std::option::Option<&crate::types::AccessLogSettings> {
+    pub fn access_log_settings(&self) -> ::std::option::Option<& crate::types::AccessLogSettings> {
         self.access_log_settings.as_ref()
     }
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
@@ -53,39 +49,31 @@ impl UpdateStageInput {
         self.auto_deploy
     }
     /// <p>The identifier of a client certificate for a Stage.</p>
-    pub fn client_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_certificate_id(&self) -> ::std::option::Option<& str> {
         self.client_certificate_id.as_deref()
     }
     /// <p>The default route settings for the stage.</p>
-    pub fn default_route_settings(&self) -> ::std::option::Option<&crate::types::RouteSettings> {
+    pub fn default_route_settings(&self) -> ::std::option::Option<& crate::types::RouteSettings> {
         self.default_route_settings.as_ref()
     }
     /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The description for the API stage.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Route settings for the stage.</p>
-    pub fn route_settings(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>,
-    > {
+    pub fn route_settings(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>> {
         self.route_settings.as_ref()
     }
     /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub fn stage_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn stage_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.stage_variables.as_ref()
     }
 }
@@ -98,9 +86,7 @@ impl UpdateStageInput {
 
 /// A builder for [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStageInputBuilder {
     pub(crate) access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
@@ -109,13 +95,9 @@ pub struct UpdateStageInputBuilder {
     pub(crate) default_route_settings: ::std::option::Option<crate::types::RouteSettings>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) route_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>,
-    >,
+    pub(crate) route_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
-    pub(crate) stage_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateStageInputBuilder {
     /// <p>Settings for logging access in this stage.</p>
@@ -124,12 +106,12 @@ impl UpdateStageInputBuilder {
         self
     }
     /// <p>Settings for logging access in this stage.</p>
-    pub fn set_access_log_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessLogSettings>,
-    ) -> Self {
-        self.access_log_settings = input;
-        self
+    pub fn set_access_log_settings(mut self, input: ::std::option::Option<crate::types::AccessLogSettings>) -> Self {
+        self.access_log_settings = input; self
+    }
+    /// <p>Settings for logging access in this stage.</p>
+    pub fn get_access_log_settings(&self) -> &::std::option::Option<crate::types::AccessLogSettings> {
+        &self.access_log_settings
     }
     /// <p>The API identifier.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,8 +120,11 @@ impl UpdateStageInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
+    }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
     pub fn auto_deploy(mut self, input: bool) -> Self {
@@ -148,24 +133,24 @@ impl UpdateStageInputBuilder {
     }
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
     pub fn set_auto_deploy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_deploy = input;
-        self
+        self.auto_deploy = input; self
+    }
+    /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
+    pub fn get_auto_deploy(&self) -> &::std::option::Option<bool> {
+        &self.auto_deploy
     }
     /// <p>The identifier of a client certificate for a Stage.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a client certificate for a Stage.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_certificate_id = input;
-        self
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_certificate_id = input; self
+    }
+    /// <p>The identifier of a client certificate for a Stage.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_certificate_id
     }
     /// <p>The default route settings for the stage.</p>
     pub fn default_route_settings(mut self, input: crate::types::RouteSettings) -> Self {
@@ -173,28 +158,25 @@ impl UpdateStageInputBuilder {
         self
     }
     /// <p>The default route settings for the stage.</p>
-    pub fn set_default_route_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteSettings>,
-    ) -> Self {
-        self.default_route_settings = input;
-        self
+    pub fn set_default_route_settings(mut self, input: ::std::option::Option<crate::types::RouteSettings>) -> Self {
+        self.default_route_settings = input; self
+    }
+    /// <p>The default route settings for the stage.</p>
+    pub fn get_default_route_settings(&self) -> &::std::option::Option<crate::types::RouteSettings> {
+        &self.default_route_settings
     }
     /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.deployment_id = input;
-        self
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_id = input; self
+    }
+    /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// <p>The description for the API stage.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -203,33 +185,30 @@ impl UpdateStageInputBuilder {
     }
     /// <p>The description for the API stage.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description for the API stage.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `route_settings`.
     ///
     /// To override the contents of this collection use [`set_route_settings`](Self::set_route_settings).
     ///
     /// <p>Route settings for the stage.</p>
-    pub fn route_settings(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::RouteSettings,
-    ) -> Self {
+    pub fn route_settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RouteSettings) -> Self {
         let mut hash_map = self.route_settings.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.route_settings = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.route_settings = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Route settings for the stage.</p>
-    pub fn set_route_settings(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>,
-        >,
-    ) -> Self {
-        self.route_settings = input;
-        self
+    pub fn set_route_settings(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>>) -> Self {
+        self.route_settings = input; self
+    }
+    /// <p>Route settings for the stage.</p>
+    pub fn get_route_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>> {
+        &self.route_settings
     }
     /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -238,52 +217,57 @@ impl UpdateStageInputBuilder {
     }
     /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
+    }
+    /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Adds a key-value pair to `stage_variables`.
     ///
     /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
     ///
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub fn stage_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stage_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.stage_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.stage_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.stage_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub fn set_stage_variables(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.stage_variables = input;
-        self
+    pub fn set_stage_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.stage_variables = input; self
+    }
+    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.stage_variables
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_stage::UpdateStageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_stage::UpdateStageInput {
-            access_log_settings: self.access_log_settings,
-            api_id: self.api_id,
-            auto_deploy: self.auto_deploy,
-            client_certificate_id: self.client_certificate_id,
-            default_route_settings: self.default_route_settings,
-            deployment_id: self.deployment_id,
-            description: self.description,
-            route_settings: self.route_settings,
-            stage_name: self.stage_name,
-            stage_variables: self.stage_variables,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_stage::UpdateStageInput {
+                access_log_settings: self.access_log_settings
+                ,
+                api_id: self.api_id
+                ,
+                auto_deploy: self.auto_deploy
+                ,
+                client_certificate_id: self.client_certificate_id
+                ,
+                default_route_settings: self.default_route_settings
+                ,
+                deployment_id: self.deployment_id
+                ,
+                description: self.description
+                ,
+                route_settings: self.route_settings
+                ,
+                stage_name: self.stage_name
+                ,
+                stage_variables: self.stage_variables
+                ,
+            }
+        )
     }
 }
+

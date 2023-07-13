@@ -3,24 +3,21 @@
 /// Nielsen Configuration
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NielsenConfiguration {
+pub struct NielsenConfiguration  {
     /// Enter the Distributor ID assigned to your organization by Nielsen.
     #[doc(hidden)]
     pub distributor_id: ::std::option::Option<::std::string::String>,
     /// Enables Nielsen PCM to ID3 tagging
     #[doc(hidden)]
-    pub nielsen_pcm_to_id3_tagging:
-        ::std::option::Option<crate::types::NielsenPcmToId3TaggingState>,
+    pub nielsen_pcm_to_id3_tagging: ::std::option::Option<crate::types::NielsenPcmToId3TaggingState>,
 }
 impl NielsenConfiguration {
     /// Enter the Distributor ID assigned to your organization by Nielsen.
-    pub fn distributor_id(&self) -> ::std::option::Option<&str> {
+    pub fn distributor_id(&self) -> ::std::option::Option<& str> {
         self.distributor_id.as_deref()
     }
     /// Enables Nielsen PCM to ID3 tagging
-    pub fn nielsen_pcm_to_id3_tagging(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NielsenPcmToId3TaggingState> {
+    pub fn nielsen_pcm_to_id3_tagging(&self) -> ::std::option::Option<& crate::types::NielsenPcmToId3TaggingState> {
         self.nielsen_pcm_to_id3_tagging.as_ref()
     }
 }
@@ -33,52 +30,46 @@ impl NielsenConfiguration {
 
 /// A builder for [`NielsenConfiguration`](crate::types::NielsenConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NielsenConfigurationBuilder {
     pub(crate) distributor_id: ::std::option::Option<::std::string::String>,
-    pub(crate) nielsen_pcm_to_id3_tagging:
-        ::std::option::Option<crate::types::NielsenPcmToId3TaggingState>,
+    pub(crate) nielsen_pcm_to_id3_tagging: ::std::option::Option<crate::types::NielsenPcmToId3TaggingState>,
 }
 impl NielsenConfigurationBuilder {
     /// Enter the Distributor ID assigned to your organization by Nielsen.
-    pub fn distributor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distributor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distributor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Enter the Distributor ID assigned to your organization by Nielsen.
-    pub fn set_distributor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.distributor_id = input;
-        self
+    pub fn set_distributor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.distributor_id = input; self
+    }
+    /// Enter the Distributor ID assigned to your organization by Nielsen.
+    pub fn get_distributor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distributor_id
     }
     /// Enables Nielsen PCM to ID3 tagging
-    pub fn nielsen_pcm_to_id3_tagging(
-        mut self,
-        input: crate::types::NielsenPcmToId3TaggingState,
-    ) -> Self {
+    pub fn nielsen_pcm_to_id3_tagging(mut self, input: crate::types::NielsenPcmToId3TaggingState) -> Self {
         self.nielsen_pcm_to_id3_tagging = ::std::option::Option::Some(input);
         self
     }
     /// Enables Nielsen PCM to ID3 tagging
-    pub fn set_nielsen_pcm_to_id3_tagging(
-        mut self,
-        input: ::std::option::Option<crate::types::NielsenPcmToId3TaggingState>,
-    ) -> Self {
-        self.nielsen_pcm_to_id3_tagging = input;
-        self
+    pub fn set_nielsen_pcm_to_id3_tagging(mut self, input: ::std::option::Option<crate::types::NielsenPcmToId3TaggingState>) -> Self {
+        self.nielsen_pcm_to_id3_tagging = input; self
+    }
+    /// Enables Nielsen PCM to ID3 tagging
+    pub fn get_nielsen_pcm_to_id3_tagging(&self) -> &::std::option::Option<crate::types::NielsenPcmToId3TaggingState> {
+        &self.nielsen_pcm_to_id3_tagging
     }
     /// Consumes the builder and constructs a [`NielsenConfiguration`](crate::types::NielsenConfiguration).
     pub fn build(self) -> crate::types::NielsenConfiguration {
         crate::types::NielsenConfiguration {
-            distributor_id: self.distributor_id,
-            nielsen_pcm_to_id3_tagging: self.nielsen_pcm_to_id3_tagging,
+            distributor_id: self.distributor_id
+            ,
+            nielsen_pcm_to_id3_tagging: self.nielsen_pcm_to_id3_tagging
+            ,
         }
     }
 }
+

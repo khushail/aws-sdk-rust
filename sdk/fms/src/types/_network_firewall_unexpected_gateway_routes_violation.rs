@@ -3,7 +3,7 @@
 /// <p>Violation detail for an unexpected gateway route that’s present in a route table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkFirewallUnexpectedGatewayRoutesViolation {
+pub struct NetworkFirewallUnexpectedGatewayRoutesViolation  {
     /// <p>Information about the gateway ID.</p>
     #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
@@ -19,35 +19,32 @@ pub struct NetworkFirewallUnexpectedGatewayRoutesViolation {
 }
 impl NetworkFirewallUnexpectedGatewayRoutesViolation {
     /// <p>Information about the gateway ID.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The routes that are in violation.</p>
-    pub fn violating_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
+    pub fn violating_routes(&self) -> ::std::option::Option<& [crate::types::Route]> {
         self.violating_routes.as_deref()
     }
     /// <p>Information about the route table.</p>
-    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<& str> {
         self.route_table_id.as_deref()
     }
     /// <p>Information about the VPC ID.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 impl NetworkFirewallUnexpectedGatewayRoutesViolation {
     /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation).
-    pub fn builder(
-    ) -> crate::types::builders::NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
+    pub fn builder() -> crate::types::builders::NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
         crate::types::builders::NetworkFirewallUnexpectedGatewayRoutesViolationBuilder::default()
     }
 }
 
 /// A builder for [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
@@ -62,8 +59,11 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
     }
     /// <p>Information about the gateway ID.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
+    }
+    /// <p>Information about the gateway ID.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
     }
     /// Appends an item to `violating_routes`.
     ///
@@ -72,33 +72,30 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
     /// <p>The routes that are in violation.</p>
     pub fn violating_routes(mut self, input: crate::types::Route) -> Self {
         let mut v = self.violating_routes.unwrap_or_default();
-        v.push(input);
-        self.violating_routes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.violating_routes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The routes that are in violation.</p>
-    pub fn set_violating_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
-    ) -> Self {
-        self.violating_routes = input;
-        self
+    pub fn set_violating_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>) -> Self {
+        self.violating_routes = input; self
+    }
+    /// <p>The routes that are in violation.</p>
+    pub fn get_violating_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+        &self.violating_routes
     }
     /// <p>Information about the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.route_table_id = input;
-        self
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.route_table_id = input; self
+    }
+    /// <p>Information about the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
     }
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,16 +104,24 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
     }
     /// <p>Information about the VPC ID.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>Information about the VPC ID.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation).
     pub fn build(self) -> crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation {
         crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation {
-            gateway_id: self.gateway_id,
-            violating_routes: self.violating_routes,
-            route_table_id: self.route_table_id,
-            vpc_id: self.vpc_id,
+            gateway_id: self.gateway_id
+            ,
+            violating_routes: self.violating_routes
+            ,
+            route_table_id: self.route_table_id
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

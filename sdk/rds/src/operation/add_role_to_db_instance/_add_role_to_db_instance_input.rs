@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddRoleToDbInstanceInput {
+pub struct AddRoleToDbInstanceInput  {
     /// <p>The name of the DB instance to associate the IAM role with.</p>
     #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct AddRoleToDbInstanceInput {
 }
 impl AddRoleToDbInstanceInput {
     /// <p>The name of the DB instance to associate the IAM role with.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the feature for the DB instance that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
-    pub fn feature_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_name(&self) -> ::std::option::Option<& str> {
         self.feature_name.as_deref()
     }
 }
 impl AddRoleToDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceInputBuilder {
+    pub fn builder() -> crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceInputBuilder {
         crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddRoleToDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -47,20 +44,17 @@ pub struct AddRoleToDbInstanceInputBuilder {
 }
 impl AddRoleToDbInstanceInputBuilder {
     /// <p>The name of the DB instance to associate the IAM role with.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB instance to associate the IAM role with.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.db_instance_identifier = input;
-        self
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_instance_identifier = input; self
+    }
+    /// <p>The name of the DB instance to associate the IAM role with.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +63,11 @@ impl AddRoleToDbInstanceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The name of the feature for the DB instance that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,22 +76,24 @@ impl AddRoleToDbInstanceInputBuilder {
     }
     /// <p>The name of the feature for the DB instance that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_name = input;
-        self
+        self.feature_name = input; self
+    }
+    /// <p>The name of the feature for the DB instance that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_name
     }
     /// Consumes the builder and constructs a [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput {
-                db_instance_identifier: self.db_instance_identifier,
-                role_arn: self.role_arn,
-                feature_name: self.feature_name,
-            },
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                role_arn: self.role_arn
+                ,
+                feature_name: self.feature_name
+                ,
+            }
         )
     }
 }
+

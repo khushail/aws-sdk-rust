@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct BatchDetectEntitiesInput {
+pub struct BatchDetectEntitiesInput  {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     #[doc(hidden)]
     pub text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,15 +12,15 @@ pub struct BatchDetectEntitiesInput {
 }
 impl BatchDetectEntitiesInput {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub fn text_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn text_list(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.text_list.as_deref()
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
 }
-impl ::std::fmt::Debug for BatchDetectEntitiesInput {
+impl  ::std::fmt::Debug for BatchDetectEntitiesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectEntitiesInput");
         formatter.field("text_list", &"*** Sensitive Data Redacted ***");
@@ -30,10 +30,8 @@ impl ::std::fmt::Debug for BatchDetectEntitiesInput {
 }
 impl BatchDetectEntitiesInput {
     /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesInput`](crate::operation::batch_detect_entities::BatchDetectEntitiesInput).
-    pub fn builder(
-    ) -> crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder {
-        crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder {
+        crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder::default()
     }
 }
 
@@ -52,17 +50,17 @@ impl BatchDetectEntitiesInputBuilder {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     pub fn text_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.text_list.unwrap_or_default();
-        v.push(input.into());
-        self.text_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.text_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.text_list = input;
-        self
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.text_list = input; self
+    }
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.text_list
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -70,25 +68,22 @@ impl BatchDetectEntitiesInputBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
+        self.language_code = input; self
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`BatchDetectEntitiesInput`](crate::operation::batch_detect_entities::BatchDetectEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_detect_entities::BatchDetectEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_detect_entities::BatchDetectEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_detect_entities::BatchDetectEntitiesInput {
-                text_list: self.text_list,
-                language_code: self.language_code,
-            },
+                text_list: self.text_list
+                ,
+                language_code: self.language_code
+                ,
+            }
         )
     }
 }
@@ -100,3 +95,4 @@ impl ::std::fmt::Debug for BatchDetectEntitiesInputBuilder {
         formatter.finish()
     }
 }
+

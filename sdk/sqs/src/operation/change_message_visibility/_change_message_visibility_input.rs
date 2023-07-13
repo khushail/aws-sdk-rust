@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangeMessageVisibilityInput {
-    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
+pub struct ChangeMessageVisibilityInput  {
+    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
     #[doc(hidden)]
     pub receipt_handle: ::std::option::Option<::std::string::String>,
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
@@ -15,13 +15,13 @@ pub struct ChangeMessageVisibilityInput {
     pub visibility_timeout: ::std::option::Option<i32>,
 }
 impl ChangeMessageVisibilityInput {
-    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
+    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<& str> {
         self.queue_url.as_deref()
     }
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
-    pub fn receipt_handle(&self) -> ::std::option::Option<&str> {
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    pub fn receipt_handle(&self) -> ::std::option::Option<& str> {
         self.receipt_handle.as_deref()
     }
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
@@ -31,51 +31,48 @@ impl ChangeMessageVisibilityInput {
 }
 impl ChangeMessageVisibilityInput {
     /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityInput`](crate::operation::change_message_visibility::ChangeMessageVisibilityInput).
-    pub fn builder(
-    ) -> crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder
-    {
+    pub fn builder() -> crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder {
         crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder::default()
     }
 }
 
 /// A builder for [`ChangeMessageVisibilityInput`](crate::operation::change_message_visibility::ChangeMessageVisibilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) receipt_handle: ::std::option::Option<::std::string::String>,
     pub(crate) visibility_timeout: ::std::option::Option<i32>,
 }
 impl ChangeMessageVisibilityInputBuilder {
-    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
+    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
+    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
-    pub fn receipt_handle(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p> 
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    pub fn receipt_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.receipt_handle = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
-    pub fn set_receipt_handle(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.receipt_handle = input;
-        self
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    pub fn set_receipt_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.receipt_handle = input; self
+    }
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    pub fn get_receipt_handle(&self) -> &::std::option::Option<::std::string::String> {
+        &self.receipt_handle
     }
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
     pub fn visibility_timeout(mut self, input: i32) -> Self {
@@ -84,22 +81,24 @@ impl ChangeMessageVisibilityInputBuilder {
     }
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
     pub fn set_visibility_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.visibility_timeout = input;
-        self
+        self.visibility_timeout = input; self
+    }
+    /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
+    pub fn get_visibility_timeout(&self) -> &::std::option::Option<i32> {
+        &self.visibility_timeout
     }
     /// Consumes the builder and constructs a [`ChangeMessageVisibilityInput`](crate::operation::change_message_visibility::ChangeMessageVisibilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::change_message_visibility::ChangeMessageVisibilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::change_message_visibility::ChangeMessageVisibilityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::change_message_visibility::ChangeMessageVisibilityInput {
-                queue_url: self.queue_url,
-                receipt_handle: self.receipt_handle,
-                visibility_timeout: self.visibility_timeout,
-            },
+                queue_url: self.queue_url
+                ,
+                receipt_handle: self.receipt_handle
+                ,
+                visibility_timeout: self.visibility_timeout
+                ,
+            }
         )
     }
 }
+

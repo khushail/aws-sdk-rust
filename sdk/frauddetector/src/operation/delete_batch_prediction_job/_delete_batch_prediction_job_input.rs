@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBatchPredictionJobInput {
+pub struct DeleteBatchPredictionJobInput  {
     /// <p>The ID of the batch prediction job to delete.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job to delete.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl DeleteBatchPredictionJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionJobInput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput).
-    pub fn builder(
-    ) -> crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder {
         crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBatchPredictionJobInput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBatchPredictionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DeleteBatchPredictionJobInputBuilder {
     }
     /// <p>The ID of the batch prediction job to delete.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The ID of the batch prediction job to delete.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`DeleteBatchPredictionJobInput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobInput {
-                job_id: self.job_id,
-            },
+                job_id: self.job_id
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>A multicast group that is associated with a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MulticastGroupByFuotaTask {
+pub struct MulticastGroupByFuotaTask  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl MulticastGroupByFuotaTask {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl MulticastGroupByFuotaTask {
 
 /// A builder for [`MulticastGroupByFuotaTask`](crate::types::MulticastGroupByFuotaTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MulticastGroupByFuotaTaskBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl MulticastGroupByFuotaTaskBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`MulticastGroupByFuotaTask`](crate::types::MulticastGroupByFuotaTask).
     pub fn build(self) -> crate::types::MulticastGroupByFuotaTask {
-        crate::types::MulticastGroupByFuotaTask { id: self.id }
+        crate::types::MulticastGroupByFuotaTask {
+            id: self.id
+            ,
+        }
     }
 }
+

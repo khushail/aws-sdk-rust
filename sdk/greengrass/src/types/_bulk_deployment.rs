@@ -3,7 +3,7 @@
 /// Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in a non-terminal state.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BulkDeployment {
+pub struct BulkDeployment  {
     /// The ARN of the bulk deployment.
     #[doc(hidden)]
     pub bulk_deployment_arn: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct BulkDeployment {
 }
 impl BulkDeployment {
     /// The ARN of the bulk deployment.
-    pub fn bulk_deployment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bulk_deployment_arn(&self) -> ::std::option::Option<& str> {
         self.bulk_deployment_arn.as_deref()
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn bulk_deployment_id(&self) -> ::std::option::Option<& str> {
         self.bulk_deployment_id.as_deref()
     }
     /// The time, in ISO format, when the deployment was created.
-    pub fn created_at(&self) -> ::std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<& str> {
         self.created_at.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl BulkDeployment {
 
 /// A builder for [`BulkDeployment`](crate::types::BulkDeployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BulkDeploymentBuilder {
     pub(crate) bulk_deployment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bulk_deployment_id: ::std::option::Option<::std::string::String>,
@@ -47,36 +45,30 @@ pub struct BulkDeploymentBuilder {
 }
 impl BulkDeploymentBuilder {
     /// The ARN of the bulk deployment.
-    pub fn bulk_deployment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the bulk deployment.
-    pub fn set_bulk_deployment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.bulk_deployment_arn = input;
-        self
+    pub fn set_bulk_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bulk_deployment_arn = input; self
+    }
+    /// The ARN of the bulk deployment.
+    pub fn get_bulk_deployment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bulk_deployment_arn
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the bulk deployment.
-    pub fn set_bulk_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.bulk_deployment_id = input;
-        self
+    pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bulk_deployment_id = input; self
+    }
+    /// The ID of the bulk deployment.
+    pub fn get_bulk_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bulk_deployment_id
     }
     /// The time, in ISO format, when the deployment was created.
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,15 +77,22 @@ impl BulkDeploymentBuilder {
     }
     /// The time, in ISO format, when the deployment was created.
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
+    }
+    /// The time, in ISO format, when the deployment was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`BulkDeployment`](crate::types::BulkDeployment).
     pub fn build(self) -> crate::types::BulkDeployment {
         crate::types::BulkDeployment {
-            bulk_deployment_arn: self.bulk_deployment_arn,
-            bulk_deployment_id: self.bulk_deployment_id,
-            created_at: self.created_at,
+            bulk_deployment_arn: self.bulk_deployment_arn
+            ,
+            bulk_deployment_id: self.bulk_deployment_id
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

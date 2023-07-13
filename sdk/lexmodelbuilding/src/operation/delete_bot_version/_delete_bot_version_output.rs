@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBotVersionOutput {
+pub struct DeleteBotVersionOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteBotVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotVersionOutput`](crate::operation::delete_bot_version::DeleteBotVersionOutput).
-    pub fn builder() -> crate::operation::delete_bot_version::builders::DeleteBotVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bot_version::builders::DeleteBotVersionOutputBuilder {
         crate::operation::delete_bot_version::builders::DeleteBotVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBotVersionOutput`](crate::operation::delete_bot_version::DeleteBotVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBotVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteBotVersionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteBotVersionOutput`](crate::operation::delete_bot_version::DeleteBotVersionOutput).
     pub fn build(self) -> crate::operation::delete_bot_version::DeleteBotVersionOutput {
         crate::operation::delete_bot_version::DeleteBotVersionOutput {
@@ -43,3 +40,4 @@ impl DeleteBotVersionOutputBuilder {
         }
     }
 }
+

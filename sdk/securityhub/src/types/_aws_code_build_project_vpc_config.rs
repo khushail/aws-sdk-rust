@@ -3,7 +3,7 @@
 /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCodeBuildProjectVpcConfig {
+pub struct AwsCodeBuildProjectVpcConfig  {
     /// <p>The ID of the VPC.</p>
     #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct AwsCodeBuildProjectVpcConfig {
 }
 impl AwsCodeBuildProjectVpcConfig {
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn subnets(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>A list of one or more security group IDs in your VPC.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn security_group_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl AwsCodeBuildProjectVpcConfig {
 
 /// A builder for [`AwsCodeBuildProjectVpcConfig`](crate::types::AwsCodeBuildProjectVpcConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectVpcConfigBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,8 +51,11 @@ impl AwsCodeBuildProjectVpcConfigBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnets`.
     ///
@@ -63,46 +64,47 @@ impl AwsCodeBuildProjectVpcConfigBuilder {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnets = input; self
+    }
+    /// <p>A list of one or more subnet IDs in your VPC.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
     }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of one or more security group IDs in your VPC.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more security group IDs in your VPC.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
+    }
+    /// <p>A list of one or more security group IDs in your VPC.</p>
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectVpcConfig`](crate::types::AwsCodeBuildProjectVpcConfig).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectVpcConfig {
         crate::types::AwsCodeBuildProjectVpcConfig {
-            vpc_id: self.vpc_id,
-            subnets: self.subnets,
-            security_group_ids: self.security_group_ids,
+            vpc_id: self.vpc_id
+            ,
+            subnets: self.subnets
+            ,
+            security_group_ids: self.security_group_ids
+            ,
         }
     }
 }
+

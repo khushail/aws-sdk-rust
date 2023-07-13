@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFraudsterRegistrationJobsInput {
+pub struct ListFraudsterRegistrationJobsInput  {
     /// <p>The identifier of the domain that contains the fraudster registration Jobs.</p>
     #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
@@ -18,13 +18,11 @@ pub struct ListFraudsterRegistrationJobsInput {
 }
 impl ListFraudsterRegistrationJobsInput {
     /// <p>The identifier of the domain that contains the fraudster registration Jobs.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>Provides the status of your fraudster registration job.</p>
-    pub fn job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::FraudsterRegistrationJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
@@ -32,22 +30,20 @@ impl ListFraudsterRegistrationJobsInput {
         self.max_results
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListFraudsterRegistrationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListFraudsterRegistrationJobsInput`](crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput).
-    pub fn builder() -> crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder {
         crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFraudsterRegistrationJobsInput`](crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFraudsterRegistrationJobsInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
@@ -62,8 +58,11 @@ impl ListFraudsterRegistrationJobsInputBuilder {
     }
     /// <p>The identifier of the domain that contains the fraudster registration Jobs.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
+    }
+    /// <p>The identifier of the domain that contains the fraudster registration Jobs.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
     }
     /// <p>Provides the status of your fraudster registration job.</p>
     pub fn job_status(mut self, input: crate::types::FraudsterRegistrationJobStatus) -> Self {
@@ -71,12 +70,12 @@ impl ListFraudsterRegistrationJobsInputBuilder {
         self
     }
     /// <p>Provides the status of your fraudster registration job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
-    ) -> Self {
-        self.job_status = input;
-        self
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>) -> Self {
+        self.job_status = input; self
+    }
+    /// <p>Provides the status of your fraudster registration job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
+        &self.job_status
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,8 +84,11 @@ impl ListFraudsterRegistrationJobsInputBuilder {
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,16 +97,14 @@ impl ListFraudsterRegistrationJobsInputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFraudsterRegistrationJobsInput`](crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput {
                 domain_id: self.domain_id
@@ -119,3 +119,4 @@ impl ListFraudsterRegistrationJobsInputBuilder {
         )
     }
 }
+

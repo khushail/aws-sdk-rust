@@ -3,7 +3,7 @@
 /// <p>Behavior graphs that could not be processed in the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnprocessedGraph {
+pub struct UnprocessedGraph  {
     /// <p>The ARN of the organization behavior graph.</p>
     #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct UnprocessedGraph {
 }
 impl UnprocessedGraph {
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The reason data source package information could not be processed for a behavior graph.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl UnprocessedGraph {
 
 /// A builder for [`UnprocessedGraph`](crate::types::UnprocessedGraph).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnprocessedGraphBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl UnprocessedGraphBuilder {
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
+    }
+    /// <p>The ARN of the organization behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
     }
     /// <p>The reason data source package information could not be processed for a behavior graph.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl UnprocessedGraphBuilder {
     }
     /// <p>The reason data source package information could not be processed for a behavior graph.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
+    }
+    /// <p>The reason data source package information could not be processed for a behavior graph.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`UnprocessedGraph`](crate::types::UnprocessedGraph).
     pub fn build(self) -> crate::types::UnprocessedGraph {
         crate::types::UnprocessedGraph {
-            graph_arn: self.graph_arn,
-            reason: self.reason,
+            graph_arn: self.graph_arn
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

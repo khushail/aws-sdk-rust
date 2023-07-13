@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportAppCatalogOutput {
+pub struct ImportAppCatalogOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for ImportAppCatalogOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportAppCatalogOutput {
     /// Creates a new builder-style object to manufacture [`ImportAppCatalogOutput`](crate::operation::import_app_catalog::ImportAppCatalogOutput).
-    pub fn builder() -> crate::operation::import_app_catalog::builders::ImportAppCatalogOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_app_catalog::builders::ImportAppCatalogOutputBuilder {
         crate::operation::import_app_catalog::builders::ImportAppCatalogOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportAppCatalogOutput`](crate::operation::import_app_catalog::ImportAppCatalogOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAppCatalogOutputBuilder {
     _request_id: Option<String>,
 }
 impl ImportAppCatalogOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportAppCatalogOutput`](crate::operation::import_app_catalog::ImportAppCatalogOutput).
     pub fn build(self) -> crate::operation::import_app_catalog::ImportAppCatalogOutput {
         crate::operation::import_app_catalog::ImportAppCatalogOutput {
@@ -43,3 +40,4 @@ impl ImportAppCatalogOutputBuilder {
         }
     }
 }
+

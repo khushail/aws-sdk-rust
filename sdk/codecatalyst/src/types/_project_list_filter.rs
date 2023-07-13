@@ -3,7 +3,7 @@
 /// <p>nformation about the filter used to narrow the results returned in a list of projects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectListFilter {
+pub struct ProjectListFilter  {
     /// <p>A key that can be used to sort results.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::FilterKey>,
@@ -16,15 +16,15 @@ pub struct ProjectListFilter {
 }
 impl ProjectListFilter {
     /// <p>A key that can be used to sort results.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::FilterKey> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::FilterKey> {
         self.key.as_ref()
     }
     /// <p>The value of the key.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator used to compare the fields.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl ProjectListFilter {
 
 /// A builder for [`ProjectListFilter`](crate::types::ProjectListFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectListFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::FilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,8 +51,11 @@ impl ProjectListFilterBuilder {
     }
     /// <p>A key that can be used to sort results.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::FilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>A key that can be used to sort results.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::FilterKey> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -63,17 +64,17 @@ impl ProjectListFilterBuilder {
     /// <p>The value of the key.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value of the key.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>The value of the key.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// <p>The operator used to compare the fields.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
@@ -81,19 +82,23 @@ impl ProjectListFilterBuilder {
         self
     }
     /// <p>The operator used to compare the fields.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
-        self.comparison_operator = input;
-        self
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
+        self.comparison_operator = input; self
+    }
+    /// <p>The operator used to compare the fields.</p>
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
     }
     /// Consumes the builder and constructs a [`ProjectListFilter`](crate::types::ProjectListFilter).
     pub fn build(self) -> crate::types::ProjectListFilter {
         crate::types::ProjectListFilter {
-            key: self.key,
-            values: self.values,
-            comparison_operator: self.comparison_operator,
+            key: self.key
+            ,
+            values: self.values
+            ,
+            comparison_operator: self.comparison_operator
+            ,
         }
     }
 }
+

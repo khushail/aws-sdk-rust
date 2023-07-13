@@ -3,7 +3,7 @@
 /// <p> The request structure for the list backend environments request. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBackendEnvironmentsInput {
+pub struct ListBackendEnvironmentsInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -19,15 +19,15 @@ pub struct ListBackendEnvironmentsInput {
 }
 impl ListBackendEnvironmentsInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name of the backend environment </p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -37,18 +37,14 @@ impl ListBackendEnvironmentsInput {
 }
 impl ListBackendEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`ListBackendEnvironmentsInput`](crate::operation::list_backend_environments::ListBackendEnvironmentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder {
         crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackendEnvironmentsInput`](crate::operation::list_backend_environments::ListBackendEnvironmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackendEnvironmentsInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -63,24 +59,24 @@ impl ListBackendEnvironmentsInputBuilder {
     }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p> The name of the backend environment </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the backend environment </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_name = input;
-        self
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_name = input; self
+    }
+    /// <p> The name of the backend environment </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +85,11 @@ impl ListBackendEnvironmentsInputBuilder {
     }
     /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> The maximum number of records to list in a single response. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -99,23 +98,27 @@ impl ListBackendEnvironmentsInputBuilder {
     }
     /// <p> The maximum number of records to list in a single response. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> The maximum number of records to list in a single response. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListBackendEnvironmentsInput`](crate::operation::list_backend_environments::ListBackendEnvironmentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_backend_environments::ListBackendEnvironmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_backend_environments::ListBackendEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_backend_environments::ListBackendEnvironmentsInput {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

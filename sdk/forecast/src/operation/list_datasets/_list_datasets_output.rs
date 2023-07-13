@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDatasetsOutput {
+pub struct ListDatasetsOutput  {
     /// <p>An array of objects that summarize each dataset's properties.</p>
     #[doc(hidden)]
     pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
@@ -13,19 +13,19 @@ pub struct ListDatasetsOutput {
 }
 impl ListDatasetsOutput {
     /// <p>An array of objects that summarize each dataset's properties.</p>
-    pub fn datasets(&self) -> ::std::option::Option<&[crate::types::DatasetSummary]> {
+    pub fn datasets(&self) -> ::std::option::Option<& [crate::types::DatasetSummary]> {
         self.datasets.as_deref()
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDatasetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDatasetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
     pub fn builder() -> crate::operation::list_datasets::builders::ListDatasetsOutputBuilder {
@@ -35,9 +35,7 @@ impl ListDatasetsOutput {
 
 /// A builder for [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetsOutputBuilder {
     pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,17 @@ impl ListDatasetsOutputBuilder {
     /// <p>An array of objects that summarize each dataset's properties.</p>
     pub fn datasets(mut self, input: crate::types::DatasetSummary) -> Self {
         let mut v = self.datasets.unwrap_or_default();
-        v.push(input);
-        self.datasets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.datasets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that summarize each dataset's properties.</p>
-    pub fn set_datasets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
-    ) -> Self {
-        self.datasets = input;
-        self
+    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>) -> Self {
+        self.datasets = input; self
+    }
+    /// <p>An array of objects that summarize each dataset's properties.</p>
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
+        &self.datasets
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,24 +68,30 @@ impl ListDatasetsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
     pub fn build(self) -> crate::operation::list_datasets::ListDatasetsOutput {
         crate::operation::list_datasets::ListDatasetsOutput {
-            datasets: self.datasets,
-            next_token: self.next_token,
+            datasets: self.datasets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

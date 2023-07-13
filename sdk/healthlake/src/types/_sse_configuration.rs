@@ -3,16 +3,14 @@
 /// <p> The server-side encryption key configuration for a customer provided encryption key. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SseConfiguration {
+pub struct SseConfiguration  {
     /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
     #[doc(hidden)]
     pub kms_encryption_config: ::std::option::Option<crate::types::KmsEncryptionConfig>,
 }
 impl SseConfiguration {
     /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
-    pub fn kms_encryption_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KmsEncryptionConfig> {
+    pub fn kms_encryption_config(&self) -> ::std::option::Option<& crate::types::KmsEncryptionConfig> {
         self.kms_encryption_config.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl SseConfiguration {
 
 /// A builder for [`SseConfiguration`](crate::types::SseConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SseConfigurationBuilder {
     pub(crate) kms_encryption_config: ::std::option::Option<crate::types::KmsEncryptionConfig>,
 }
@@ -38,17 +34,19 @@ impl SseConfigurationBuilder {
         self
     }
     /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
-    pub fn set_kms_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KmsEncryptionConfig>,
-    ) -> Self {
-        self.kms_encryption_config = input;
-        self
+    pub fn set_kms_encryption_config(mut self, input: ::std::option::Option<crate::types::KmsEncryptionConfig>) -> Self {
+        self.kms_encryption_config = input; self
+    }
+    /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
+    pub fn get_kms_encryption_config(&self) -> &::std::option::Option<crate::types::KmsEncryptionConfig> {
+        &self.kms_encryption_config
     }
     /// Consumes the builder and constructs a [`SseConfiguration`](crate::types::SseConfiguration).
     pub fn build(self) -> crate::types::SseConfiguration {
         crate::types::SseConfiguration {
-            kms_encryption_config: self.kms_encryption_config,
+            kms_encryption_config: self.kms_encryption_config
+            ,
         }
     }
 }
+

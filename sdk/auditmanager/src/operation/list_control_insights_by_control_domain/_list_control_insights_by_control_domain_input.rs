@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListControlInsightsByControlDomainInput {
+pub struct ListControlInsightsByControlDomainInput  {
     /// <p>The unique identifier for the control domain. </p>
     #[doc(hidden)]
     pub control_domain_id: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListControlInsightsByControlDomainInput {
 }
 impl ListControlInsightsByControlDomainInput {
     /// <p>The unique identifier for the control domain. </p>
-    pub fn control_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_domain_id(&self) -> ::std::option::Option<& str> {
         self.control_domain_id.as_deref()
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -29,16 +29,14 @@ impl ListControlInsightsByControlDomainInput {
 }
 impl ListControlInsightsByControlDomainInput {
     /// Creates a new builder-style object to manufacture [`ListControlInsightsByControlDomainInput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput).
-    pub fn builder() -> crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainInputBuilder{
+    pub fn builder() -> crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainInputBuilder {
         crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`ListControlInsightsByControlDomainInput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListControlInsightsByControlDomainInputBuilder {
     pub(crate) control_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct ListControlInsightsByControlDomainInputBuilder {
 }
 impl ListControlInsightsByControlDomainInputBuilder {
     /// <p>The unique identifier for the control domain. </p>
-    pub fn control_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the control domain. </p>
-    pub fn set_control_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.control_domain_id = input;
-        self
+    pub fn set_control_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.control_domain_id = input; self
+    }
+    /// <p>The unique identifier for the control domain. </p>
+    pub fn get_control_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_domain_id
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl ListControlInsightsByControlDomainInputBuilder {
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,11 +76,14 @@ impl ListControlInsightsByControlDomainInputBuilder {
     }
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListControlInsightsByControlDomainInput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput {
                 control_domain_id: self.control_domain_id
@@ -95,3 +96,4 @@ impl ListControlInsightsByControlDomainInputBuilder {
         )
     }
 }
+

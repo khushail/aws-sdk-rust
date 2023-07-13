@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPricesOutput {
+pub struct ListPricesOutput  {
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
     #[doc(hidden)]
     pub prices: ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>>,
-    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p> 
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
     #[doc(hidden)]
     pub next_page_marker: ::std::option::Option<::std::string::String>,
@@ -14,20 +14,20 @@ pub struct ListPricesOutput {
 }
 impl ListPricesOutput {
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
-    pub fn prices(&self) -> ::std::option::Option<&[crate::types::DomainPrice]> {
+    pub fn prices(&self) -> ::std::option::Option<& [crate::types::DomainPrice]> {
         self.prices.as_deref()
     }
-    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p> 
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
-    pub fn next_page_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_marker(&self) -> ::std::option::Option<& str> {
         self.next_page_marker.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPricesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPricesOutput {
     /// Creates a new builder-style object to manufacture [`ListPricesOutput`](crate::operation::list_prices::ListPricesOutput).
     pub fn builder() -> crate::operation::list_prices::builders::ListPricesOutputBuilder {
@@ -37,9 +37,7 @@ impl ListPricesOutput {
 
 /// A builder for [`ListPricesOutput`](crate::operation::list_prices::ListPricesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricesOutputBuilder {
     pub(crate) prices: ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>>,
     pub(crate) next_page_marker: ::std::option::Option<::std::string::String>,
@@ -53,51 +51,52 @@ impl ListPricesOutputBuilder {
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
     pub fn prices(mut self, input: crate::types::DomainPrice) -> Self {
         let mut v = self.prices.unwrap_or_default();
-        v.push(input);
-        self.prices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.prices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
-    pub fn set_prices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>>,
-    ) -> Self {
-        self.prices = input;
-        self
+    pub fn set_prices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>>) -> Self {
+        self.prices = input; self
     }
-    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
+    pub fn get_prices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>> {
+        &self.prices
+    }
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p> 
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
-    pub fn next_page_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p> 
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
-    pub fn set_next_page_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_page_marker = input;
-        self
+    pub fn set_next_page_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_page_marker = input; self
+    }
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p> 
+    /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
+    pub fn get_next_page_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPricesOutput`](crate::operation::list_prices::ListPricesOutput).
     pub fn build(self) -> crate::operation::list_prices::ListPricesOutput {
         crate::operation::list_prices::ListPricesOutput {
-            prices: self.prices,
-            next_page_marker: self.next_page_marker,
+            prices: self.prices
+            ,
+            next_page_marker: self.next_page_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

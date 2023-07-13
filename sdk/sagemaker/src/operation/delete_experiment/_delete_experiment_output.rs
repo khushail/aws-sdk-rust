@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExperimentOutput {
+pub struct DeleteExperimentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
     #[doc(hidden)]
     pub experiment_arn: ::std::option::Option<::std::string::String>,
@@ -10,63 +10,59 @@ pub struct DeleteExperimentOutput {
 }
 impl DeleteExperimentOutput {
     /// <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
-    pub fn experiment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_arn(&self) -> ::std::option::Option<& str> {
         self.experiment_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteExperimentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteExperimentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput).
-    pub fn builder() -> crate::operation::delete_experiment::builders::DeleteExperimentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_experiment::builders::DeleteExperimentOutputBuilder {
         crate::operation::delete_experiment::builders::DeleteExperimentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExperimentOutputBuilder {
     pub(crate) experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteExperimentOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
-    pub fn experiment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
-    pub fn set_experiment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.experiment_arn = input;
-        self
+    pub fn set_experiment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.experiment_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
+    pub fn get_experiment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput).
     pub fn build(self) -> crate::operation::delete_experiment::DeleteExperimentOutput {
         crate::operation::delete_experiment::DeleteExperimentOutput {
-            experiment_arn: self.experiment_arn,
+            experiment_arn: self.experiment_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

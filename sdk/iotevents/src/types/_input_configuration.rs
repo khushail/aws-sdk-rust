@@ -3,7 +3,7 @@
 /// <p>Information about the configuration of an input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputConfiguration {
+pub struct InputConfiguration  {
     /// <p>The name of the input.</p>
     #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct InputConfiguration {
 }
 impl InputConfiguration {
     /// <p>The name of the input.</p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
+    pub fn input_name(&self) -> ::std::option::Option<& str> {
         self.input_name.as_deref()
     }
     /// <p>A brief description of the input.</p>
-    pub fn input_description(&self) -> ::std::option::Option<&str> {
+    pub fn input_description(&self) -> ::std::option::Option<& str> {
         self.input_description.as_deref()
     }
     /// <p>The ARN of the input.</p>
-    pub fn input_arn(&self) -> ::std::option::Option<&str> {
+    pub fn input_arn(&self) -> ::std::option::Option<& str> {
         self.input_arn.as_deref()
     }
     /// <p>The time the input was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the input was updated.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The status of the input.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InputStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InputStatus> {
         self.status.as_ref()
     }
 }
@@ -58,9 +58,7 @@ impl InputConfiguration {
 
 /// A builder for [`InputConfiguration`](crate::types::InputConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputConfigurationBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
     pub(crate) input_description: ::std::option::Option<::std::string::String>,
@@ -77,24 +75,24 @@ impl InputConfigurationBuilder {
     }
     /// <p>The name of the input.</p>
     pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
+    }
+    /// <p>The name of the input.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
     }
     /// <p>A brief description of the input.</p>
-    pub fn input_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the input.</p>
-    pub fn set_input_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.input_description = input;
-        self
+    pub fn set_input_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.input_description = input; self
+    }
+    /// <p>A brief description of the input.</p>
+    pub fn get_input_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_description
     }
     /// <p>The ARN of the input.</p>
     pub fn input_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +101,11 @@ impl InputConfigurationBuilder {
     }
     /// <p>The ARN of the input.</p>
     pub fn set_input_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_arn = input;
-        self
+        self.input_arn = input; self
+    }
+    /// <p>The ARN of the input.</p>
+    pub fn get_input_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_arn
     }
     /// <p>The time the input was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -112,12 +113,12 @@ impl InputConfigurationBuilder {
         self
     }
     /// <p>The time the input was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time the input was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The last time the input was updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -125,12 +126,12 @@ impl InputConfigurationBuilder {
         self
     }
     /// <p>The last time the input was updated.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_update_time = input;
-        self
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_update_time = input; self
+    }
+    /// <p>The last time the input was updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// <p>The status of the input.</p>
     pub fn status(mut self, input: crate::types::InputStatus) -> Self {
@@ -139,18 +140,28 @@ impl InputConfigurationBuilder {
     }
     /// <p>The status of the input.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InputStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the input.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InputStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`InputConfiguration`](crate::types::InputConfiguration).
     pub fn build(self) -> crate::types::InputConfiguration {
         crate::types::InputConfiguration {
-            input_name: self.input_name,
-            input_description: self.input_description,
-            input_arn: self.input_arn,
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
-            status: self.status,
+            input_name: self.input_name
+            ,
+            input_description: self.input_description
+            ,
+            input_arn: self.input_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            last_update_time: self.last_update_time
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

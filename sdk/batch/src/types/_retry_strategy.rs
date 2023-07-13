@@ -3,7 +3,7 @@
 /// <p>The retry strategy that's associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetryStrategy {
+pub struct RetryStrategy  {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
     #[doc(hidden)]
     pub attempts: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl RetryStrategy {
         self.attempts
     }
     /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
-    pub fn evaluate_on_exit(&self) -> ::std::option::Option<&[crate::types::EvaluateOnExit]> {
+    pub fn evaluate_on_exit(&self) -> ::std::option::Option<& [crate::types::EvaluateOnExit]> {
         self.evaluate_on_exit.as_deref()
     }
 }
@@ -30,13 +30,10 @@ impl RetryStrategy {
 
 /// A builder for [`RetryStrategy`](crate::types::RetryStrategy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetryStrategyBuilder {
     pub(crate) attempts: ::std::option::Option<i32>,
-    pub(crate) evaluate_on_exit:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluateOnExit>>,
+    pub(crate) evaluate_on_exit: ::std::option::Option<::std::vec::Vec<crate::types::EvaluateOnExit>>,
 }
 impl RetryStrategyBuilder {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
@@ -46,8 +43,11 @@ impl RetryStrategyBuilder {
     }
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
     pub fn set_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.attempts = input;
-        self
+        self.attempts = input; self
+    }
+    /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
+    pub fn get_attempts(&self) -> &::std::option::Option<i32> {
+        &self.attempts
     }
     /// Appends an item to `evaluate_on_exit`.
     ///
@@ -56,23 +56,26 @@ impl RetryStrategyBuilder {
     /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
     pub fn evaluate_on_exit(mut self, input: crate::types::EvaluateOnExit) -> Self {
         let mut v = self.evaluate_on_exit.unwrap_or_default();
-        v.push(input);
-        self.evaluate_on_exit = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.evaluate_on_exit = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
-    pub fn set_evaluate_on_exit(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluateOnExit>>,
-    ) -> Self {
-        self.evaluate_on_exit = input;
-        self
+    pub fn set_evaluate_on_exit(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluateOnExit>>) -> Self {
+        self.evaluate_on_exit = input; self
+    }
+    /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
+    pub fn get_evaluate_on_exit(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluateOnExit>> {
+        &self.evaluate_on_exit
     }
     /// Consumes the builder and constructs a [`RetryStrategy`](crate::types::RetryStrategy).
     pub fn build(self) -> crate::types::RetryStrategy {
         crate::types::RetryStrategy {
-            attempts: self.attempts,
-            evaluate_on_exit: self.evaluate_on_exit,
+            attempts: self.attempts
+            ,
+            evaluate_on_exit: self.evaluate_on_exit
+            ,
         }
     }
 }
+

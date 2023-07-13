@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-migrationhub = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-migrationhub = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -30,8 +30,8 @@ use aws_sdk_migrationhub as migrationhub;
 
 #[::tokio::main]
 async fn main() -> Result<(), migrationhub::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = migrationhub::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_migrationhub::Client::new(&config);
 
     // ... make some calls with the client
 

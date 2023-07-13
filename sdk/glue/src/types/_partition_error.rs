@@ -3,7 +3,7 @@
 /// <p>Contains information about a partition error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartitionError {
+pub struct PartitionError  {
     /// <p>The values that define the partition.</p>
     #[doc(hidden)]
     pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,11 +13,11 @@ pub struct PartitionError {
 }
 impl PartitionError {
     /// <p>The values that define the partition.</p>
-    pub fn partition_values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn partition_values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.partition_values.as_deref()
     }
     /// <p>The details about the partition error.</p>
-    pub fn error_detail(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error_detail(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error_detail.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl PartitionError {
 
 /// A builder for [`PartitionError`](crate::types::PartitionError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionErrorBuilder {
     pub(crate) partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) error_detail: ::std::option::Option<crate::types::ErrorDetail>,
@@ -43,22 +41,19 @@ impl PartitionErrorBuilder {
     /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
     ///
     /// <p>The values that define the partition.</p>
-    pub fn partition_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_values.unwrap_or_default();
-        v.push(input.into());
-        self.partition_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.partition_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values that define the partition.</p>
-    pub fn set_partition_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.partition_values = input;
-        self
+    pub fn set_partition_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.partition_values = input; self
+    }
+    /// <p>The values that define the partition.</p>
+    pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_values
     }
     /// <p>The details about the partition error.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
@@ -66,18 +61,21 @@ impl PartitionErrorBuilder {
         self
     }
     /// <p>The details about the partition error.</p>
-    pub fn set_error_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDetail>,
-    ) -> Self {
-        self.error_detail = input;
-        self
+    pub fn set_error_detail(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
+        self.error_detail = input; self
+    }
+    /// <p>The details about the partition error.</p>
+    pub fn get_error_detail(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
+        &self.error_detail
     }
     /// Consumes the builder and constructs a [`PartitionError`](crate::types::PartitionError).
     pub fn build(self) -> crate::types::PartitionError {
         crate::types::PartitionError {
-            partition_values: self.partition_values,
-            error_detail: self.error_detail,
+            partition_values: self.partition_values
+            ,
+            error_detail: self.error_detail
+            ,
         }
     }
 }
+

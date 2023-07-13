@@ -2,60 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNotebookExecutionInput {
+pub struct DescribeNotebookExecutionInput  {
     /// <p>The unique identifier of the notebook execution.</p>
     #[doc(hidden)]
     pub notebook_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNotebookExecutionInput {
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn notebook_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_execution_id(&self) -> ::std::option::Option<& str> {
         self.notebook_execution_id.as_deref()
     }
 }
 impl DescribeNotebookExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeNotebookExecutionInput`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionInput).
-    pub fn builder() -> crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionInputBuilder{
+    pub fn builder() -> crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionInputBuilder {
         crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotebookExecutionInput`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotebookExecutionInputBuilder {
     pub(crate) notebook_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNotebookExecutionInputBuilder {
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn notebook_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn set_notebook_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.notebook_execution_id = input;
-        self
+    pub fn set_notebook_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.notebook_execution_id = input; self
+    }
+    /// <p>The unique identifier of the notebook execution.</p>
+    pub fn get_notebook_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_execution_id
     }
     /// Consumes the builder and constructs a [`DescribeNotebookExecutionInput`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_notebook_execution::DescribeNotebookExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_notebook_execution::DescribeNotebookExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_notebook_execution::DescribeNotebookExecutionInput {
-                notebook_execution_id: self.notebook_execution_id,
-            },
+                notebook_execution_id: self.notebook_execution_id
+                ,
+            }
         )
     }
 }
+

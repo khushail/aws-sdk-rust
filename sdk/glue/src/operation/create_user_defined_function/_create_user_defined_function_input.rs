@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserDefinedFunctionInput {
+pub struct CreateUserDefinedFunctionInput  {
     /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct CreateUserDefinedFunctionInput {
 }
 impl CreateUserDefinedFunctionInput {
     /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database in which to create the function.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
-    pub fn function_input(&self) -> ::std::option::Option<&crate::types::UserDefinedFunctionInput> {
+    pub fn function_input(&self) -> ::std::option::Option<& crate::types::UserDefinedFunctionInput> {
         self.function_input.as_ref()
     }
 }
 impl CreateUserDefinedFunctionInput {
     /// Creates a new builder-style object to manufacture [`CreateUserDefinedFunctionInput`](crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput).
-    pub fn builder() -> crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionInputBuilder{
+    pub fn builder() -> crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionInputBuilder {
         crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserDefinedFunctionInput`](crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserDefinedFunctionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -52,24 +50,24 @@ impl CreateUserDefinedFunctionInputBuilder {
     }
     /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
+    }
+    /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// <p>The name of the catalog database in which to create the function.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database in which to create the function.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_name = input;
-        self
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_name = input; self
+    }
+    /// <p>The name of the catalog database in which to create the function.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
     pub fn function_input(mut self, input: crate::types::UserDefinedFunctionInput) -> Self {
@@ -77,26 +75,25 @@ impl CreateUserDefinedFunctionInputBuilder {
         self
     }
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
-    pub fn set_function_input(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDefinedFunctionInput>,
-    ) -> Self {
-        self.function_input = input;
-        self
+    pub fn set_function_input(mut self, input: ::std::option::Option<crate::types::UserDefinedFunctionInput>) -> Self {
+        self.function_input = input; self
+    }
+    /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
+    pub fn get_function_input(&self) -> &::std::option::Option<crate::types::UserDefinedFunctionInput> {
+        &self.function_input
     }
     /// Consumes the builder and constructs a [`CreateUserDefinedFunctionInput`](crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                function_input: self.function_input,
-            },
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                function_input: self.function_input
+                ,
+            }
         )
     }
 }
+

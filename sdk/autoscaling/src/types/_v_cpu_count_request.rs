@@ -3,7 +3,7 @@
 /// <p>Specifies the minimum and maximum for the <code>VCpuCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VCpuCountRequest {
+pub struct VCpuCountRequest  {
     /// <p>The minimum number of vCPUs.</p>
     #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl VCpuCountRequest {
 
 /// A builder for [`VCpuCountRequest`](crate::types::VCpuCountRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VCpuCountRequestBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl VCpuCountRequestBuilder {
     }
     /// <p>The minimum number of vCPUs.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
+    }
+    /// <p>The minimum number of vCPUs.</p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
     }
     /// <p>The maximum number of vCPUs.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl VCpuCountRequestBuilder {
     }
     /// <p>The maximum number of vCPUs.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
+    }
+    /// <p>The maximum number of vCPUs.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`VCpuCountRequest`](crate::types::VCpuCountRequest).
     pub fn build(self) -> crate::types::VCpuCountRequest {
         crate::types::VCpuCountRequest {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

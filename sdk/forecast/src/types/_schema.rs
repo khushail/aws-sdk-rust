@@ -3,14 +3,14 @@
 /// <p>Defines the fields of a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Schema {
+pub struct Schema  {
     /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
     #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttribute>>,
 }
 impl Schema {
     /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::SchemaAttribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<& [crate::types::SchemaAttribute]> {
         self.attributes.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Schema {
 
 /// A builder for [`Schema`](crate::types::Schema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttribute>>,
 }
@@ -37,22 +35,24 @@ impl SchemaBuilder {
     /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
     pub fn attributes(mut self, input: crate::types::SchemaAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttribute>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttribute>>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`Schema`](crate::types::Schema).
     pub fn build(self) -> crate::types::Schema {
         crate::types::Schema {
-            attributes: self.attributes,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

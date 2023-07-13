@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminUpdateAuthEventFeedbackInput {
+pub struct AdminUpdateAuthEventFeedbackInput  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
@@ -18,23 +18,23 @@ pub struct AdminUpdateAuthEventFeedbackInput {
 }
 impl AdminUpdateAuthEventFeedbackInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user pool username.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The authentication event ID.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The authentication event feedback value.</p>
-    pub fn feedback_value(&self) -> ::std::option::Option<&crate::types::FeedbackValueType> {
+    pub fn feedback_value(&self) -> ::std::option::Option<& crate::types::FeedbackValueType> {
         self.feedback_value.as_ref()
     }
 }
-impl ::std::fmt::Debug for AdminUpdateAuthEventFeedbackInput {
+impl  ::std::fmt::Debug for AdminUpdateAuthEventFeedbackInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminUpdateAuthEventFeedbackInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -46,7 +46,7 @@ impl ::std::fmt::Debug for AdminUpdateAuthEventFeedbackInput {
 }
 impl AdminUpdateAuthEventFeedbackInput {
     /// Creates a new builder-style object to manufacture [`AdminUpdateAuthEventFeedbackInput`](crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput).
-    pub fn builder() -> crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackInputBuilder{
+    pub fn builder() -> crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackInputBuilder {
         crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackInputBuilder::default()
     }
 }
@@ -68,8 +68,11 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
+    }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// <p>The user pool username.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,8 +81,11 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The user pool username.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// <p>The user pool username.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The authentication event ID.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +94,11 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The authentication event ID.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
+    }
+    /// <p>The authentication event ID.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// <p>The authentication event feedback value.</p>
     pub fn feedback_value(mut self, input: crate::types::FeedbackValueType) -> Self {
@@ -97,27 +106,26 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
         self
     }
     /// <p>The authentication event feedback value.</p>
-    pub fn set_feedback_value(
-        mut self,
-        input: ::std::option::Option<crate::types::FeedbackValueType>,
-    ) -> Self {
-        self.feedback_value = input;
-        self
+    pub fn set_feedback_value(mut self, input: ::std::option::Option<crate::types::FeedbackValueType>) -> Self {
+        self.feedback_value = input; self
+    }
+    /// <p>The authentication event feedback value.</p>
+    pub fn get_feedback_value(&self) -> &::std::option::Option<crate::types::FeedbackValueType> {
+        &self.feedback_value
     }
     /// Consumes the builder and constructs a [`AdminUpdateAuthEventFeedbackInput`](crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                event_id: self.event_id,
-                feedback_value: self.feedback_value,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                event_id: self.event_id
+                ,
+                feedback_value: self.feedback_value
+                ,
+            }
         )
     }
 }
@@ -131,3 +139,4 @@ impl ::std::fmt::Debug for AdminUpdateAuthEventFeedbackInputBuilder {
         formatter.finish()
     }
 }
+

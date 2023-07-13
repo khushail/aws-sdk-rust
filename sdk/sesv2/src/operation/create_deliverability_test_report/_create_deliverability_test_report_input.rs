@@ -3,7 +3,7 @@
 /// <p>A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. We send that message to special email addresses spread across several major email providers around the world. The test takes about 24 hours to complete. When the test is complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDeliverabilityTestReportInput {
+pub struct CreateDeliverabilityTestReportInput  {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
     #[doc(hidden)]
     pub report_name: ::std::option::Option<::std::string::String>,
@@ -19,34 +19,32 @@ pub struct CreateDeliverabilityTestReportInput {
 }
 impl CreateDeliverabilityTestReportInput {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    pub fn report_name(&self) -> ::std::option::Option<&str> {
+    pub fn report_name(&self) -> ::std::option::Option<& str> {
         self.report_name.as_deref()
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-    pub fn from_email_address(&self) -> ::std::option::Option<&str> {
+    pub fn from_email_address(&self) -> ::std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::EmailContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::EmailContent> {
         self.content.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateDeliverabilityTestReportInput {
     /// Creates a new builder-style object to manufacture [`CreateDeliverabilityTestReportInput`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput).
-    pub fn builder() -> crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportInputBuilder{
+    pub fn builder() -> crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportInputBuilder {
         crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeliverabilityTestReportInput`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReportInputBuilder {
     pub(crate) report_name: ::std::option::Option<::std::string::String>,
     pub(crate) from_email_address: ::std::option::Option<::std::string::String>,
@@ -61,24 +59,24 @@ impl CreateDeliverabilityTestReportInputBuilder {
     }
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
     pub fn set_report_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_name = input;
-        self
+        self.report_name = input; self
+    }
+    /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_name
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-    pub fn from_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-    pub fn set_from_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.from_email_address = input;
-        self
+    pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.from_email_address = input; self
+    }
+    /// <p>The email address that the predictive inbox placement test email was sent from.</p>
+    pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_email_address
     }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
     pub fn content(mut self, input: crate::types::EmailContent) -> Self {
@@ -87,8 +85,11 @@ impl CreateDeliverabilityTestReportInputBuilder {
     }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
+    }
+    /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
+        &self.content
     }
     /// Appends an item to `tags`.
     ///
@@ -97,25 +98,20 @@ impl CreateDeliverabilityTestReportInputBuilder {
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDeliverabilityTestReportInput`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput {
                 report_name: self.report_name
@@ -130,3 +126,4 @@ impl CreateDeliverabilityTestReportInputBuilder {
         )
     }
 }
+

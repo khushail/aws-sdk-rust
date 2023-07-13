@@ -3,117 +3,100 @@ pub use crate::operation::put_backup_policy::_put_backup_policy_output::PutBacku
 
 pub use crate::operation::put_backup_policy::_put_backup_policy_input::PutBackupPolicyInputBuilder;
 
+impl PutBackupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_backup_policy::PutBackupPolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_backup_policy::PutBackupPolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_backup_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutBackupPolicy`.
-///
+/// 
 /// <p>Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBackupPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_backup_policy::builders::PutBackupPolicyInputBuilder,
+                    inner: crate::operation::put_backup_policy::builders::PutBackupPolicyInputBuilder,
 }
-impl PutBackupPolicyFluentBuilder {
+impl PutBackupPolicyFluentBuilder  {
     /// Creates a new `PutBackupPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_backup_policy::PutBackupPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_policy::PutBackupPolicyError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutBackupPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_backup_policy::builders::PutBackupPolicyInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_backup_policy::PutBackupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_policy::PutBackupPolicyError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_backup_policy::PutBackupPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_backup_policy::PutBackupPolicyError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_backup_policy::PutBackupPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_backup_policy::PutBackupPolicyError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_backup_policy::PutBackupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_policy::PutBackupPolicyError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_backup_policy::PutBackupPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_policy::PutBackupPolicyError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_backup_policy::PutBackupPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_backup_policy::PutBackupPolicyError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_backup_policy::PutBackupPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_backup_policy::PutBackupPolicyError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Specifies which EFS file system to update the backup policy for.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>Specifies which EFS file system to update the backup policy for.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
+    }
+    /// <p>Specifies which EFS file system to update the backup policy for.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
     }
     /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
     pub fn backup_policy(mut self, input: crate::types::BackupPolicy) -> Self {
@@ -121,11 +104,13 @@ impl PutBackupPolicyFluentBuilder {
         self
     }
     /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-    pub fn set_backup_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupPolicy>,
-    ) -> Self {
+    pub fn set_backup_policy(mut self, input: ::std::option::Option<crate::types::BackupPolicy>) -> Self {
         self.inner = self.inner.set_backup_policy(input);
         self
     }
+    /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
+    pub fn get_backup_policy(&self) -> &::std::option::Option<crate::types::BackupPolicy> {
+        self.inner.get_backup_policy()
+    }
 }
+

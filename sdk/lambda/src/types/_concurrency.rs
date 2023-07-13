@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Concurrency {
+pub struct Concurrency  {
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     #[doc(hidden)]
     pub reserved_concurrent_executions: ::std::option::Option<i32>,
@@ -22,9 +22,7 @@ impl Concurrency {
 
 /// A builder for [`Concurrency`](crate::types::Concurrency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConcurrencyBuilder {
     pub(crate) reserved_concurrent_executions: ::std::option::Option<i32>,
 }
@@ -36,13 +34,18 @@ impl ConcurrencyBuilder {
     }
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     pub fn set_reserved_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reserved_concurrent_executions = input;
-        self
+        self.reserved_concurrent_executions = input; self
+    }
+    /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
+    pub fn get_reserved_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.reserved_concurrent_executions
     }
     /// Consumes the builder and constructs a [`Concurrency`](crate::types::Concurrency).
     pub fn build(self) -> crate::types::Concurrency {
         crate::types::Concurrency {
-            reserved_concurrent_executions: self.reserved_concurrent_executions,
+            reserved_concurrent_executions: self.reserved_concurrent_executions
+            ,
         }
     }
 }
+

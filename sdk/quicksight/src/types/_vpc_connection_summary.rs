@@ -3,7 +3,7 @@
 /// <p>The summary metadata that describes a VPC connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConnectionSummary {
+pub struct VpcConnectionSummary  {
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub vpc_connection_id: ::std::option::Option<::std::string::String>,
@@ -43,53 +43,51 @@ pub struct VpcConnectionSummary {
 }
 impl VpcConnectionSummary {
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn vpc_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpc_connection_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The display name for the VPC connection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon EC2 VPC ID associated with the VPC connection.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The Amazon EC2 security group IDs associated with the VPC connection.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn security_group_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn dns_resolvers(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn dns_resolvers(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.dns_resolvers.as_deref()
     }
     /// <p>The status of the VPC connection.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcConnectionResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VpcConnectionResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The availability status of the VPC connection.</p>
-    pub fn availability_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcConnectionAvailabilityStatus> {
+    pub fn availability_status(&self) -> ::std::option::Option<& crate::types::VpcConnectionAvailabilityStatus> {
         self.availability_status.as_ref()
     }
     /// <p>A list of network interfaces.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> ::std::option::Option<& [crate::types::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
     /// <p>The ARN of the IAM role associated with the VPC connection.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The time that the VPC connection was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time that the VPC connection was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -102,9 +100,7 @@ impl VpcConnectionSummary {
 
 /// A builder for [`VpcConnectionSummary`](crate::types::VpcConnectionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConnectionSummaryBuilder {
     pub(crate) vpc_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -113,30 +109,25 @@ pub struct VpcConnectionSummaryBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dns_resolvers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::VpcConnectionResourceStatus>,
-    pub(crate) availability_status:
-        ::std::option::Option<crate::types::VpcConnectionAvailabilityStatus>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) availability_status: ::std::option::Option<crate::types::VpcConnectionAvailabilityStatus>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VpcConnectionSummaryBuilder {
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn vpc_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn set_vpc_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_connection_id = input;
-        self
+    pub fn set_vpc_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_connection_id = input; self
+    }
+    /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
+    pub fn get_vpc_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_id
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,8 +136,11 @@ impl VpcConnectionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The display name for the VPC connection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,8 +149,11 @@ impl VpcConnectionSummaryBuilder {
     }
     /// <p>The display name for the VPC connection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The display name for the VPC connection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon EC2 VPC ID associated with the VPC connection.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,52 +162,49 @@ impl VpcConnectionSummaryBuilder {
     }
     /// <p>The Amazon EC2 VPC ID associated with the VPC connection.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The Amazon EC2 VPC ID associated with the VPC connection.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The Amazon EC2 security group IDs associated with the VPC connection.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon EC2 security group IDs associated with the VPC connection.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
+    }
+    /// <p>The Amazon EC2 security group IDs associated with the VPC connection.</p>
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Appends an item to `dns_resolvers`.
     ///
     /// To override the contents of this collection use [`set_dns_resolvers`](Self::set_dns_resolvers).
     ///
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn dns_resolvers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dns_resolvers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_resolvers.unwrap_or_default();
-        v.push(input.into());
-        self.dns_resolvers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dns_resolvers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn set_dns_resolvers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.dns_resolvers = input;
-        self
+    pub fn set_dns_resolvers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.dns_resolvers = input; self
+    }
+    /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
+    pub fn get_dns_resolvers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_resolvers
     }
     /// <p>The status of the VPC connection.</p>
     pub fn status(mut self, input: crate::types::VpcConnectionResourceStatus) -> Self {
@@ -218,28 +212,25 @@ impl VpcConnectionSummaryBuilder {
         self
     }
     /// <p>The status of the VPC connection.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectionResourceStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcConnectionResourceStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the VPC connection.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcConnectionResourceStatus> {
+        &self.status
     }
     /// <p>The availability status of the VPC connection.</p>
-    pub fn availability_status(
-        mut self,
-        input: crate::types::VpcConnectionAvailabilityStatus,
-    ) -> Self {
+    pub fn availability_status(mut self, input: crate::types::VpcConnectionAvailabilityStatus) -> Self {
         self.availability_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The availability status of the VPC connection.</p>
-    pub fn set_availability_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectionAvailabilityStatus>,
-    ) -> Self {
-        self.availability_status = input;
-        self
+    pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::VpcConnectionAvailabilityStatus>) -> Self {
+        self.availability_status = input; self
+    }
+    /// <p>The availability status of the VPC connection.</p>
+    pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::VpcConnectionAvailabilityStatus> {
+        &self.availability_status
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -248,17 +239,17 @@ impl VpcConnectionSummaryBuilder {
     /// <p>A list of network interfaces.</p>
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
-        v.push(input);
-        self.network_interfaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_interfaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of network interfaces.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
-        self.network_interfaces = input;
-        self
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
+        self.network_interfaces = input; self
+    }
+    /// <p>A list of network interfaces.</p>
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces
     }
     /// <p>The ARN of the IAM role associated with the VPC connection.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -267,8 +258,11 @@ impl VpcConnectionSummaryBuilder {
     }
     /// <p>The ARN of the IAM role associated with the VPC connection.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The ARN of the IAM role associated with the VPC connection.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The time that the VPC connection was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -276,12 +270,12 @@ impl VpcConnectionSummaryBuilder {
         self
     }
     /// <p>The time that the VPC connection was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
+    }
+    /// <p>The time that the VPC connection was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The time that the VPC connection was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -289,28 +283,41 @@ impl VpcConnectionSummaryBuilder {
         self
     }
     /// <p>The time that the VPC connection was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
+    }
+    /// <p>The time that the VPC connection was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`VpcConnectionSummary`](crate::types::VpcConnectionSummary).
     pub fn build(self) -> crate::types::VpcConnectionSummary {
         crate::types::VpcConnectionSummary {
-            vpc_connection_id: self.vpc_connection_id,
-            arn: self.arn,
-            name: self.name,
-            vpc_id: self.vpc_id,
-            security_group_ids: self.security_group_ids,
-            dns_resolvers: self.dns_resolvers,
-            status: self.status,
-            availability_status: self.availability_status,
-            network_interfaces: self.network_interfaces,
-            role_arn: self.role_arn,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
+            vpc_connection_id: self.vpc_connection_id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            vpc_id: self.vpc_id
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            dns_resolvers: self.dns_resolvers
+            ,
+            status: self.status
+            ,
+            availability_status: self.availability_status
+            ,
+            network_interfaces: self.network_interfaces
+            ,
+            role_arn: self.role_arn
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

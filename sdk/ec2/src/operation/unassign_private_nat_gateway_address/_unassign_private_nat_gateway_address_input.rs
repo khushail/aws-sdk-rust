@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnassignPrivateNatGatewayAddressInput {
+pub struct UnassignPrivateNatGatewayAddressInput  {
     /// <p>The NAT gateway ID.</p>
     #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct UnassignPrivateNatGatewayAddressInput {
 }
 impl UnassignPrivateNatGatewayAddressInput {
     /// <p>The NAT gateway ID.</p>
-    pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn nat_gateway_id(&self) -> ::std::option::Option<& str> {
         self.nat_gateway_id.as_deref()
     }
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn private_ip_addresses(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
@@ -36,16 +36,14 @@ impl UnassignPrivateNatGatewayAddressInput {
 }
 impl UnassignPrivateNatGatewayAddressInput {
     /// Creates a new builder-style object to manufacture [`UnassignPrivateNatGatewayAddressInput`](crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput).
-    pub fn builder() -> crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder{
+    pub fn builder() -> crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder {
         crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder::default()
     }
 }
 
 /// A builder for [`UnassignPrivateNatGatewayAddressInput`](crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnassignPrivateNatGatewayAddressInputBuilder {
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,42 +52,36 @@ pub struct UnassignPrivateNatGatewayAddressInputBuilder {
 }
 impl UnassignPrivateNatGatewayAddressInputBuilder {
     /// <p>The NAT gateway ID.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The NAT gateway ID.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.nat_gateway_id = input;
-        self
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.nat_gateway_id = input; self
+    }
+    /// <p>The NAT gateway ID.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nat_gateway_id
     }
     /// Appends an item to `private_ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
     ///
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn private_ip_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.private_ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.private_ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.private_ip_addresses = input;
-        self
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.private_ip_addresses = input; self
+    }
+    /// <p>The private IPv4 addresses you want to unassign.</p>
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.private_ip_addresses
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
     pub fn max_drain_duration_seconds(mut self, input: i32) -> Self {
@@ -98,8 +90,11 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
     pub fn set_max_drain_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_drain_duration_seconds = input;
-        self
+        self.max_drain_duration_seconds = input; self
+    }
+    /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
+    pub fn get_max_drain_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.max_drain_duration_seconds
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -108,11 +103,14 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`UnassignPrivateNatGatewayAddressInput`](crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput {
                 nat_gateway_id: self.nat_gateway_id
@@ -127,3 +125,4 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
         )
     }
 }
+

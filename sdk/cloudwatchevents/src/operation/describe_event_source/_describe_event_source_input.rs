@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventSourceInput {
+pub struct DescribeEventSourceInput  {
     /// <p>The name of the partner event source to display the details of.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventSourceInput {
     /// <p>The name of the partner event source to display the details of.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DescribeEventSourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSourceInput`](crate::operation::describe_event_source::DescribeEventSourceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder {
-        crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder {
+        crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventSourceInput`](crate::operation::describe_event_source::DescribeEventSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -38,18 +34,20 @@ impl DescribeEventSourceInputBuilder {
     }
     /// <p>The name of the partner event source to display the details of.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the partner event source to display the details of.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DescribeEventSourceInput`](crate::operation::describe_event_source::DescribeEventSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_source::DescribeEventSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_event_source::DescribeEventSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_event_source::DescribeEventSourceInput { name: self.name },
+            crate::operation::describe_event_source::DescribeEventSourceInput {
+                name: self.name
+                ,
+            }
         )
     }
 }
+

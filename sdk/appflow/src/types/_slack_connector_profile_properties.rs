@@ -3,14 +3,14 @@
 /// <p> The connector-specific profile properties required when using Slack. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlackConnectorProfileProperties {
+pub struct SlackConnectorProfileProperties  {
     /// <p> The location of the Slack resource. </p>
     #[doc(hidden)]
     pub instance_url: ::std::option::Option<::std::string::String>,
 }
 impl SlackConnectorProfileProperties {
     /// <p> The location of the Slack resource. </p>
-    pub fn instance_url(&self) -> ::std::option::Option<&str> {
+    pub fn instance_url(&self) -> ::std::option::Option<& str> {
         self.instance_url.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl SlackConnectorProfileProperties {
 
 /// A builder for [`SlackConnectorProfileProperties`](crate::types::SlackConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlackConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl SlackConnectorProfilePropertiesBuilder {
     }
     /// <p> The location of the Slack resource. </p>
     pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_url = input;
-        self
+        self.instance_url = input; self
+    }
+    /// <p> The location of the Slack resource. </p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
     }
     /// Consumes the builder and constructs a [`SlackConnectorProfileProperties`](crate::types::SlackConnectorProfileProperties).
     pub fn build(self) -> crate::types::SlackConnectorProfileProperties {
         crate::types::SlackConnectorProfileProperties {
-            instance_url: self.instance_url,
+            instance_url: self.instance_url
+            ,
         }
     }
 }
+

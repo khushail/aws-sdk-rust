@@ -3,7 +3,7 @@
 /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidCrossAccountRoleException {
+pub struct InvalidCrossAccountRoleException  {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -17,9 +17,7 @@ pub struct InvalidCrossAccountRoleException {
 }
 impl InvalidCrossAccountRoleException {
     /// <p>Code that indicates the type of error that is generated.</p>
-    pub fn error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InvalidCrossAccountRoleErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::InvalidCrossAccountRoleErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>You can immediately retry your request.</p>
@@ -29,15 +27,13 @@ impl InvalidCrossAccountRoleException {
 }
 impl InvalidCrossAccountRoleException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidCrossAccountRoleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidCrossAccountRoleException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -51,12 +47,8 @@ impl ::aws_http::request_id::RequestId for crate::types::error::InvalidCrossAcco
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidCrossAccountRoleException
-{
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidCrossAccountRoleException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidCrossAccountRoleException {
     /// Creates a new builder-style object to manufacture [`InvalidCrossAccountRoleException`](crate::types::error::InvalidCrossAccountRoleException).
@@ -67,9 +59,7 @@ impl InvalidCrossAccountRoleException {
 
 /// A builder for [`InvalidCrossAccountRoleException`](crate::types::error::InvalidCrossAccountRoleException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidCrossAccountRoleExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::InvalidCrossAccountRoleErrorCode>,
@@ -84,8 +74,11 @@ impl InvalidCrossAccountRoleExceptionBuilder {
     }
     /// <p>Details of the exception error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>Details of the exception error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>Code that indicates the type of error that is generated.</p>
     pub fn error_code(mut self, input: crate::types::InvalidCrossAccountRoleErrorCode) -> Self {
@@ -93,12 +86,12 @@ impl InvalidCrossAccountRoleExceptionBuilder {
         self
     }
     /// <p>Code that indicates the type of error that is generated.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::InvalidCrossAccountRoleErrorCode>,
-    ) -> Self {
-        self.error_code = input;
-        self
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::InvalidCrossAccountRoleErrorCode>) -> Self {
+        self.error_code = input; self
+    }
+    /// <p>Code that indicates the type of error that is generated.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::InvalidCrossAccountRoleErrorCode> {
+        &self.error_code
     }
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(mut self, input: bool) -> Self {
@@ -107,30 +100,34 @@ impl InvalidCrossAccountRoleExceptionBuilder {
     }
     /// <p>You can immediately retry your request.</p>
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_retry = input;
-        self
+        self.can_retry = input; self
+    }
+    /// <p>You can immediately retry your request.</p>
+    pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
+        &self.can_retry
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidCrossAccountRoleException`](crate::types::error::InvalidCrossAccountRoleException).
     pub fn build(self) -> crate::types::error::InvalidCrossAccountRoleException {
         crate::types::error::InvalidCrossAccountRoleException {
-            message: self.message,
-            error_code: self.error_code,
-            can_retry: self.can_retry,
+            message: self.message
+            ,
+            error_code: self.error_code
+            ,
+            can_retry: self.can_retry
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

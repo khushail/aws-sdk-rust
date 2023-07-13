@@ -3,12 +3,12 @@
 /// <p>Describes the configuration settings for the modified Reserved Instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservedInstancesConfiguration {
+pub struct ReservedInstancesConfiguration  {
     /// <p>The Availability Zone for the modified Reserved Instances.</p>
     #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>The number of modified Reserved Instances.</p> <note>
-    /// <p>This is a required field for a request.</p>
+    /// <p>The number of modified Reserved Instances.</p> <note> 
+    /// <p>This is a required field for a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
@@ -24,25 +24,25 @@ pub struct ReservedInstancesConfiguration {
 }
 impl ReservedInstancesConfiguration {
     /// <p>The Availability Zone for the modified Reserved Instances.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The number of modified Reserved Instances.</p> <note>
-    /// <p>This is a required field for a request.</p>
+    /// <p>The number of modified Reserved Instances.</p> <note> 
+    /// <p>This is a required field for a request.</p> 
     /// </note>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>The instance type for the modified Reserved Instances.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The network platform of the modified Reserved Instances.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.</p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
 }
@@ -55,9 +55,7 @@ impl ReservedInstancesConfiguration {
 
 /// A builder for [`ReservedInstancesConfiguration`](crate::types::ReservedInstancesConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedInstancesConfigurationBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,
@@ -67,34 +65,36 @@ pub struct ReservedInstancesConfigurationBuilder {
 }
 impl ReservedInstancesConfigurationBuilder {
     /// <p>The Availability Zone for the modified Reserved Instances.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the modified Reserved Instances.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input; self
     }
-    /// <p>The number of modified Reserved Instances.</p> <note>
-    /// <p>This is a required field for a request.</p>
+    /// <p>The Availability Zone for the modified Reserved Instances.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
+    /// <p>The number of modified Reserved Instances.</p> <note> 
+    /// <p>This is a required field for a request.</p> 
     /// </note>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of modified Reserved Instances.</p> <note>
-    /// <p>This is a required field for a request.</p>
+    /// <p>The number of modified Reserved Instances.</p> <note> 
+    /// <p>This is a required field for a request.</p> 
     /// </note>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
+    }
+    /// <p>The number of modified Reserved Instances.</p> <note> 
+    /// <p>This is a required field for a request.</p> 
+    /// </note>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// <p>The instance type for the modified Reserved Instances.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -102,12 +102,12 @@ impl ReservedInstancesConfigurationBuilder {
         self
     }
     /// <p>The instance type for the modified Reserved Instances.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
-        self.instance_type = input;
-        self
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
+        self.instance_type = input; self
+    }
+    /// <p>The instance type for the modified Reserved Instances.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
     }
     /// <p>The network platform of the modified Reserved Instances.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,8 +116,11 @@ impl ReservedInstancesConfigurationBuilder {
     }
     /// <p>The network platform of the modified Reserved Instances.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
+    }
+    /// <p>The network platform of the modified Reserved Instances.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
@@ -126,17 +129,26 @@ impl ReservedInstancesConfigurationBuilder {
     }
     /// <p>Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
+    }
+    /// <p>Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
     }
     /// Consumes the builder and constructs a [`ReservedInstancesConfiguration`](crate::types::ReservedInstancesConfiguration).
     pub fn build(self) -> crate::types::ReservedInstancesConfiguration {
         crate::types::ReservedInstancesConfiguration {
-            availability_zone: self.availability_zone,
-            instance_count: self.instance_count,
-            instance_type: self.instance_type,
-            platform: self.platform,
-            scope: self.scope,
+            availability_zone: self.availability_zone
+            ,
+            instance_count: self.instance_count
+            ,
+            instance_type: self.instance_type
+            ,
+            platform: self.platform
+            ,
+            scope: self.scope
+            ,
         }
     }
 }
+

@@ -3,113 +3,93 @@ pub use crate::operation::list_ground_stations::_list_ground_stations_output::Li
 
 pub use crate::operation::list_ground_stations::_list_ground_stations_input::ListGroundStationsInputBuilder;
 
+impl ListGroundStationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_ground_stations::ListGroundStationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_ground_stations::ListGroundStationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_ground_stations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListGroundStations`.
-///
+/// 
 /// <p>Returns a list of ground stations. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGroundStationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder,
+                    inner: crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder,
 }
-impl ListGroundStationsFluentBuilder {
+impl ListGroundStationsFluentBuilder  {
     /// Creates a new `ListGroundStations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_ground_stations::ListGroundStations,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ground_stations::ListGroundStationsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListGroundStations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ground_stations::ListGroundStationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ground_stations::ListGroundStationsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_ground_stations::ListGroundStations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_ground_stations::ListGroundStationsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_ground_stations::ListGroundStationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_ground_stations::ListGroundStationsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ground_stations::ListGroundStationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ground_stations::ListGroundStationsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_ground_stations::ListGroundStations,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ground_stations::ListGroundStationsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_ground_stations::ListGroundStationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_ground_stations::ListGroundStationsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_ground_stations::ListGroundStations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_ground_stations::ListGroundStationsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_ground_stations::paginator::ListGroundStationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ground_stations::paginator::ListGroundStationsPaginator {
-        crate::operation::list_ground_stations::paginator::ListGroundStationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_ground_stations::paginator::ListGroundStationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_ground_stations::paginator::ListGroundStationsPaginator {
+                                crate::operation::list_ground_stations::paginator::ListGroundStationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
     pub fn satellite_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.satellite_id(input.into());
@@ -119,6 +99,10 @@ impl ListGroundStationsFluentBuilder {
     pub fn set_satellite_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_satellite_id(input);
         self
+    }
+    /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
+    pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_satellite_id()
     }
     /// <p>Maximum number of ground stations returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -130,6 +114,10 @@ impl ListGroundStationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of ground stations returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -140,4 +128,9 @@ impl ListGroundStationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

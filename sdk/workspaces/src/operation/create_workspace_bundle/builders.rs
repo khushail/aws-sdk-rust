@@ -3,102 +3,87 @@ pub use crate::operation::create_workspace_bundle::_create_workspace_bundle_outp
 
 pub use crate::operation::create_workspace_bundle::_create_workspace_bundle_input::CreateWorkspaceBundleInputBuilder;
 
+impl CreateWorkspaceBundleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_workspace_bundle();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateWorkspaceBundle`.
-///
+/// 
 /// <p>Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html"> Create a Custom WorkSpaces Image and Bundle</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkspaceBundleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder,
+                    inner: crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder,
 }
-impl CreateWorkspaceBundleFluentBuilder {
+impl CreateWorkspaceBundleFluentBuilder  {
     /// Creates a new `CreateWorkspaceBundle`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundle,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateWorkspaceBundle as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_workspace_bundle::CreateWorkspaceBundle, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_bundle::CreateWorkspaceBundleError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_bundle::CreateWorkspaceBundleError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundle,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_bundle::CreateWorkspaceBundleError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_workspace_bundle::CreateWorkspaceBundle, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_bundle::CreateWorkspaceBundleError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the bundle.</p>
     pub fn bundle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_name(input.into());
@@ -109,21 +94,23 @@ impl CreateWorkspaceBundleFluentBuilder {
         self.inner = self.inner.set_bundle_name(input);
         self
     }
+    /// <p>The name of the bundle.</p>
+    pub fn get_bundle_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_name()
+    }
     /// <p>The description of the bundle.</p>
-    pub fn bundle_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bundle_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_description(input.into());
         self
     }
     /// <p>The description of the bundle.</p>
-    pub fn set_bundle_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bundle_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_description(input);
         self
+    }
+    /// <p>The description of the bundle.</p>
+    pub fn get_bundle_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_description()
     }
     /// <p>The identifier of the image that is used to create the bundle.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,18 +122,23 @@ impl CreateWorkspaceBundleFluentBuilder {
         self.inner = self.inner.set_image_id(input);
         self
     }
+    /// <p>The identifier of the image that is used to create the bundle.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_id()
+    }
     /// <p>Describes the compute type of the bundle.</p>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.inner = self.inner.compute_type(input);
         self
     }
     /// <p>Describes the compute type of the bundle.</p>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.inner = self.inner.set_compute_type(input);
         self
+    }
+    /// <p>Describes the compute type of the bundle.</p>
+    pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        self.inner.get_compute_type()
     }
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
     pub fn user_storage(mut self, input: crate::types::UserStorage) -> Self {
@@ -154,12 +146,13 @@ impl CreateWorkspaceBundleFluentBuilder {
         self
     }
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
-    pub fn set_user_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStorage>,
-    ) -> Self {
+    pub fn set_user_storage(mut self, input: ::std::option::Option<crate::types::UserStorage>) -> Self {
         self.inner = self.inner.set_user_storage(input);
         self
+    }
+    /// <p>Describes the user volume for a WorkSpace bundle.</p>
+    pub fn get_user_storage(&self) -> &::std::option::Option<crate::types::UserStorage> {
+        self.inner.get_user_storage()
     }
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
     pub fn root_storage(mut self, input: crate::types::RootStorage) -> Self {
@@ -167,32 +160,37 @@ impl CreateWorkspaceBundleFluentBuilder {
         self
     }
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
-    pub fn set_root_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::RootStorage>,
-    ) -> Self {
+    pub fn set_root_storage(mut self, input: ::std::option::Option<crate::types::RootStorage>) -> Self {
         self.inner = self.inner.set_root_storage(input);
         self
+    }
+    /// <p>Describes the root volume for a WorkSpace bundle.</p>
+    pub fn get_root_storage(&self) -> &::std::option::Option<crate::types::RootStorage> {
+        self.inner.get_root_storage()
     }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags associated with the bundle.</p> <note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags associated with the bundle.</p> <note> 
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The tags associated with the bundle.</p> <note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags associated with the bundle.</p> <note> 
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags associated with the bundle.</p> <note> 
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

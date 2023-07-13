@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyTargetGroupInput {
+pub struct ModifyTargetGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: ::std::option::Option<::std::string::String>,
@@ -12,8 +12,8 @@ pub struct ModifyTargetGroupInput {
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
     #[doc(hidden)]
     pub health_check_port: ::std::option::Option<::std::string::String>,
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     #[doc(hidden)]
     pub health_check_path: ::std::option::Option<::std::string::String>,
@@ -38,21 +38,21 @@ pub struct ModifyTargetGroupInput {
 }
 impl ModifyTargetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> ::std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn health_check_protocol(&self) -> ::std::option::Option<&crate::types::ProtocolEnum> {
+    pub fn health_check_protocol(&self) -> ::std::option::Option<& crate::types::ProtocolEnum> {
         self.health_check_protocol.as_ref()
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn health_check_port(&self) -> ::std::option::Option<&str> {
+    pub fn health_check_port(&self) -> ::std::option::Option<& str> {
         self.health_check_port.as_deref()
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn health_check_path(&self) -> ::std::option::Option<&str> {
+    pub fn health_check_path(&self) -> ::std::option::Option<& str> {
         self.health_check_path.as_deref()
     }
     /// <p>Indicates whether health checks are enabled.</p>
@@ -76,23 +76,20 @@ impl ModifyTargetGroupInput {
         self.unhealthy_threshold_count
     }
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
-    pub fn matcher(&self) -> ::std::option::Option<&crate::types::Matcher> {
+    pub fn matcher(&self) -> ::std::option::Option<& crate::types::Matcher> {
         self.matcher.as_ref()
     }
 }
 impl ModifyTargetGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyTargetGroupInput`](crate::operation::modify_target_group::ModifyTargetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder {
+    pub fn builder() -> crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder {
         crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyTargetGroupInput`](crate::operation::modify_target_group::ModifyTargetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,
@@ -107,20 +104,17 @@ pub struct ModifyTargetGroupInputBuilder {
 }
 impl ModifyTargetGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_group_arn = input;
-        self
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_group_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     pub fn health_check_protocol(mut self, input: crate::types::ProtocolEnum) -> Self {
@@ -128,48 +122,44 @@ impl ModifyTargetGroupInputBuilder {
         self
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn set_health_check_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
-        self.health_check_protocol = input;
-        self
+    pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
+        self.health_check_protocol = input; self
+    }
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    pub fn get_health_check_protocol(&self) -> &::std::option::Option<crate::types::ProtocolEnum> {
+        &self.health_check_protocol
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn health_check_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_port = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn set_health_check_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.health_check_port = input;
-        self
+    pub fn set_health_check_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.health_check_port = input; self
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+    /// <p>The port the load balancer uses when performing health checks on targets.</p>
+    pub fn get_health_check_port(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_port
+    }
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.health_check_path = input;
-        self
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.health_check_path = input; self
+    }
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
+    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_path
     }
     /// <p>Indicates whether health checks are enabled.</p>
     pub fn health_check_enabled(mut self, input: bool) -> Self {
@@ -178,8 +168,11 @@ impl ModifyTargetGroupInputBuilder {
     }
     /// <p>Indicates whether health checks are enabled.</p>
     pub fn set_health_check_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.health_check_enabled = input;
-        self
+        self.health_check_enabled = input; self
+    }
+    /// <p>Indicates whether health checks are enabled.</p>
+    pub fn get_health_check_enabled(&self) -> &::std::option::Option<bool> {
+        &self.health_check_enabled
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
     pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
@@ -188,8 +181,11 @@ impl ModifyTargetGroupInputBuilder {
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
     pub fn set_health_check_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.health_check_interval_seconds = input;
-        self
+        self.health_check_interval_seconds = input; self
+    }
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
+    pub fn get_health_check_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.health_check_interval_seconds
     }
     /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
     pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
@@ -198,8 +194,11 @@ impl ModifyTargetGroupInputBuilder {
     }
     /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
     pub fn set_health_check_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.health_check_timeout_seconds = input;
-        self
+        self.health_check_timeout_seconds = input; self
+    }
+    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
+    pub fn get_health_check_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.health_check_timeout_seconds
     }
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     pub fn healthy_threshold_count(mut self, input: i32) -> Self {
@@ -208,8 +207,11 @@ impl ModifyTargetGroupInputBuilder {
     }
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     pub fn set_healthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.healthy_threshold_count = input;
-        self
+        self.healthy_threshold_count = input; self
+    }
+    /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
+    pub fn get_healthy_threshold_count(&self) -> &::std::option::Option<i32> {
+        &self.healthy_threshold_count
     }
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
     pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
@@ -218,8 +220,11 @@ impl ModifyTargetGroupInputBuilder {
     }
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
     pub fn set_unhealthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unhealthy_threshold_count = input;
-        self
+        self.unhealthy_threshold_count = input; self
+    }
+    /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
+    pub fn get_unhealthy_threshold_count(&self) -> &::std::option::Option<i32> {
+        &self.unhealthy_threshold_count
     }
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn matcher(mut self, input: crate::types::Matcher) -> Self {
@@ -228,29 +233,38 @@ impl ModifyTargetGroupInputBuilder {
     }
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn set_matcher(mut self, input: ::std::option::Option<crate::types::Matcher>) -> Self {
-        self.matcher = input;
-        self
+        self.matcher = input; self
+    }
+    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    pub fn get_matcher(&self) -> &::std::option::Option<crate::types::Matcher> {
+        &self.matcher
     }
     /// Consumes the builder and constructs a [`ModifyTargetGroupInput`](crate::operation::modify_target_group::ModifyTargetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_target_group::ModifyTargetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_target_group::ModifyTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_target_group::ModifyTargetGroupInput {
-                target_group_arn: self.target_group_arn,
-                health_check_protocol: self.health_check_protocol,
-                health_check_port: self.health_check_port,
-                health_check_path: self.health_check_path,
-                health_check_enabled: self.health_check_enabled,
-                health_check_interval_seconds: self.health_check_interval_seconds,
-                health_check_timeout_seconds: self.health_check_timeout_seconds,
-                healthy_threshold_count: self.healthy_threshold_count,
-                unhealthy_threshold_count: self.unhealthy_threshold_count,
-                matcher: self.matcher,
-            },
+                target_group_arn: self.target_group_arn
+                ,
+                health_check_protocol: self.health_check_protocol
+                ,
+                health_check_port: self.health_check_port
+                ,
+                health_check_path: self.health_check_path
+                ,
+                health_check_enabled: self.health_check_enabled
+                ,
+                health_check_interval_seconds: self.health_check_interval_seconds
+                ,
+                health_check_timeout_seconds: self.health_check_timeout_seconds
+                ,
+                healthy_threshold_count: self.healthy_threshold_count
+                ,
+                unhealthy_threshold_count: self.unhealthy_threshold_count
+                ,
+                matcher: self.matcher
+                ,
+            }
         )
     }
 }
+

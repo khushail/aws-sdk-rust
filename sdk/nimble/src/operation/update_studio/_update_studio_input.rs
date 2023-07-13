@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateStudioInput {
+pub struct UpdateStudioInput  {
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     #[doc(hidden)]
     pub admin_role_arn: ::std::option::Option<::std::string::String>,
@@ -21,27 +21,27 @@ pub struct UpdateStudioInput {
 }
 impl UpdateStudioInput {
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn admin_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn admin_role_arn(&self) -> ::std::option::Option<& str> {
         self.admin_role_arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A friendly name for the studio.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn user_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_role_arn(&self) -> ::std::option::Option<& str> {
         self.user_role_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateStudioInput {
+impl  ::std::fmt::Debug for UpdateStudioInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStudioInput");
         formatter.field("admin_role_arn", &self.admin_role_arn);
@@ -71,20 +71,17 @@ pub struct UpdateStudioInputBuilder {
 }
 impl UpdateStudioInputBuilder {
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn admin_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_admin_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.admin_role_arn = input;
-        self
+    pub fn set_admin_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_role_arn = input; self
+    }
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+    pub fn get_admin_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_role_arn
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +90,11 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>A friendly name for the studio.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +103,11 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>A friendly name for the studio.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
+    }
+    /// <p>A friendly name for the studio.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,39 +116,41 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn user_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_user_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.user_role_arn = input;
-        self
+    pub fn set_user_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_role_arn = input; self
+    }
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+    pub fn get_user_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_studio::UpdateStudioInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_studio::UpdateStudioInput {
-            admin_role_arn: self.admin_role_arn,
-            client_token: self.client_token,
-            display_name: self.display_name,
-            studio_id: self.studio_id,
-            user_role_arn: self.user_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_studio::UpdateStudioInput {
+                admin_role_arn: self.admin_role_arn
+                ,
+                client_token: self.client_token
+                ,
+                display_name: self.display_name
+                ,
+                studio_id: self.studio_id
+                ,
+                user_role_arn: self.user_role_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateStudioInputBuilder {
@@ -159,3 +164,4 @@ impl ::std::fmt::Debug for UpdateStudioInputBuilder {
         formatter.finish()
     }
 }
+

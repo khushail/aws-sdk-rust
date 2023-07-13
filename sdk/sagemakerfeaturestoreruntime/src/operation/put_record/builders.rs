@@ -3,136 +3,133 @@ pub use crate::operation::put_record::_put_record_output::PutRecordOutputBuilder
 
 pub use crate::operation::put_record::_put_record_input::PutRecordInputBuilder;
 
+impl PutRecordInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_record::PutRecordOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_record::PutRecordError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_record();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutRecord`.
-///
+/// 
 /// <p>Used for data ingestion into the <code>FeatureStore</code>. The <code>PutRecord</code> API writes to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is the latest record for the <code>recordIdentifier</code>, the record is written to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is a historic record, it is written only to the <code>OfflineStore</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_record::builders::PutRecordInputBuilder,
+                    inner: crate::operation::put_record::builders::PutRecordInputBuilder,
 }
-impl PutRecordFluentBuilder {
+impl PutRecordFluentBuilder  {
     /// Creates a new `PutRecord`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_record::PutRecord,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutRecord as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_record::builders::PutRecordInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_record::PutRecordOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_record::PutRecord, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_record::PutRecordOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_record::PutRecordOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_record::PutRecord,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_record::PutRecordOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_record::PutRecord, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the feature group that you want to insert the record into.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
     /// <p>The name of the feature group that you want to insert the record into.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
+    }
+    /// <p>The name of the feature group that you want to insert the record into.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_group_name()
     }
     /// Appends an item to `Record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).
     ///
-    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
-    /// <ul>
-    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
-    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
-    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li> 
+    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li> 
+    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li> 
     /// </ul>
     pub fn record(mut self, input: crate::types::FeatureValue) -> Self {
         self.inner = self.inner.record(input);
         self
     }
-    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
-    /// <ul>
-    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
-    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
-    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li> 
+    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li> 
+    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li> 
     /// </ul>
-    pub fn set_record(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
-    ) -> Self {
+    pub fn set_record(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>) -> Self {
         self.inner = self.inner.set_record(input);
         self
+    }
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li> 
+    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li> 
+    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li> 
+    /// </ul>
+    pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
+        self.inner.get_record()
     }
     /// Appends an item to `TargetStores`.
     ///
@@ -144,11 +141,13 @@ impl PutRecordFluentBuilder {
         self
     }
     /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn set_target_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>,
-    ) -> Self {
+    pub fn set_target_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>) -> Self {
         self.inner = self.inner.set_target_stores(input);
         self
     }
+    /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+    pub fn get_target_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
+        self.inner.get_target_stores()
+    }
 }
+

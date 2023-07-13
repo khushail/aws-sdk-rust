@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDevicePolicyConfigurationInput {
+pub struct DescribeDevicePolicyConfigurationInput  {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDevicePolicyConfigurationInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 impl DescribeDevicePolicyConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeDevicePolicyConfigurationInput`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationInput).
-    pub fn builder() -> crate::operation::describe_device_policy_configuration::builders::DescribeDevicePolicyConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_device_policy_configuration::builders::DescribeDevicePolicyConfigurationInputBuilder {
         crate::operation::describe_device_policy_configuration::builders::DescribeDevicePolicyConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDevicePolicyConfigurationInput`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDevicePolicyConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,11 +34,14 @@ impl DescribeDevicePolicyConfigurationInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
+    }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
     }
     /// Consumes the builder and constructs a [`DescribeDevicePolicyConfigurationInput`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationInput {
                 fleet_arn: self.fleet_arn
@@ -49,3 +50,4 @@ impl DescribeDevicePolicyConfigurationInputBuilder {
         )
     }
 }
+

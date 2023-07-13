@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBuildsInput {
-    /// <p>The order to list build IDs. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
+pub struct ListBuildsInput  {
+    /// <p>The order to list build IDs. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
@@ -15,16 +15,16 @@ pub struct ListBuildsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListBuildsInput {
-    /// <p>The order to list build IDs. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
+    /// <p>The order to list build IDs. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li> 
     /// </ul>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -37,34 +37,36 @@ impl ListBuildsInput {
 
 /// A builder for [`ListBuildsInput`](crate::operation::list_builds::ListBuildsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuildsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListBuildsInputBuilder {
-    /// <p>The order to list build IDs. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
+    /// <p>The order to list build IDs. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li> 
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The order to list build IDs. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
+    /// <p>The order to list build IDs. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li> 
     /// </ul>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
-        self.sort_order = input;
-        self
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
+        self.sort_order = input; self
+    }
+    /// <p>The order to list build IDs. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li> 
+    /// </ul>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        &self.sort_order
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,19 +75,22 @@ impl ListBuildsInputBuilder {
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBuildsInput`](crate::operation::list_builds::ListBuildsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_builds::ListBuildsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_builds::ListBuildsInput {
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_builds::ListBuildsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_builds::ListBuildsInput {
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

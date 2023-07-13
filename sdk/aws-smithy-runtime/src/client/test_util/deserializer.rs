@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::interceptors::context::{Error, Output};
-use aws_smithy_runtime_api::client::interceptors::InterceptorRegistrar;
 use aws_smithy_runtime_api::client::orchestrator::{
-    ConfigBagAccessors, HttpResponse, OrchestratorError, ResponseDeserializer,
+    DynResponseDeserializer, HttpResponse, OrchestratorError, ResponseDeserializer,
 };
-use aws_smithy_runtime_api::client::runtime_plugin::{BoxError, RuntimePlugin};
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+use aws_smithy_types::config_bag::{FrozenLayer, Layer};
 use std::sync::Mutex;
 
 #[derive(Default, Debug)]
@@ -44,15 +44,11 @@ impl ResponseDeserializer for CannedResponseDeserializer {
 }
 
 impl RuntimePlugin for CannedResponseDeserializer {
-    fn configure(
-        &self,
-        cfg: &mut ConfigBag,
-        _interceptors: &mut InterceptorRegistrar,
-    ) -> Result<(), BoxError> {
-        cfg.set_response_deserializer(Self {
+    fn config(&self) -> Option<FrozenLayer> {
+        let mut cfg = Layer::new("CannedResponse");
+        cfg.set_response_deserializer(DynResponseDeserializer::new(Self {
             inner: Mutex::new(self.take()),
-        });
-
-        Ok(())
+        }));
+        Some(cfg.freeze())
     }
 }

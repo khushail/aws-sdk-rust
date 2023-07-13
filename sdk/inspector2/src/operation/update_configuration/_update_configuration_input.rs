@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfigurationInput {
+pub struct UpdateConfigurationInput  {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     #[doc(hidden)]
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
 }
 impl UpdateConfigurationInput {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
-    pub fn ecr_configuration(&self) -> ::std::option::Option<&crate::types::EcrConfiguration> {
+    pub fn ecr_configuration(&self) -> ::std::option::Option<& crate::types::EcrConfiguration> {
         self.ecr_configuration.as_ref()
     }
 }
 impl UpdateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
         crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationInputBuilder {
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
 }
@@ -36,24 +33,21 @@ impl UpdateConfigurationInputBuilder {
         self
     }
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
-    pub fn set_ecr_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EcrConfiguration>,
-    ) -> Self {
-        self.ecr_configuration = input;
-        self
+    pub fn set_ecr_configuration(mut self, input: ::std::option::Option<crate::types::EcrConfiguration>) -> Self {
+        self.ecr_configuration = input; self
+    }
+    /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+    pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfiguration> {
+        &self.ecr_configuration
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configuration::UpdateConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_configuration::UpdateConfigurationInput {
-                ecr_configuration: self.ecr_configuration,
-            },
+                ecr_configuration: self.ecr_configuration
+                ,
+            }
         )
     }
 }
+

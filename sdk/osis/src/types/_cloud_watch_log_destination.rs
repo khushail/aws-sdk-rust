@@ -3,14 +3,14 @@
 /// <p>The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLogDestination {
+pub struct CloudWatchLogDestination  {
     /// <p>The name of the CloudWatch Logs group to send pipeline logs to. You can specify an existing log group or create a new one. For example, <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
     #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogDestination {
     /// <p>The name of the CloudWatch Logs group to send pipeline logs to. You can specify an existing log group or create a new one. For example, <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-    pub fn log_group(&self) -> ::std::option::Option<&str> {
+    pub fn log_group(&self) -> ::std::option::Option<& str> {
         self.log_group.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl CloudWatchLogDestination {
 
 /// A builder for [`CloudWatchLogDestination`](crate::types::CloudWatchLogDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogDestinationBuilder {
     pub(crate) log_group: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl CloudWatchLogDestinationBuilder {
     }
     /// <p>The name of the CloudWatch Logs group to send pipeline logs to. You can specify an existing log group or create a new one. For example, <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
     pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group = input;
-        self
+        self.log_group = input; self
+    }
+    /// <p>The name of the CloudWatch Logs group to send pipeline logs to. You can specify an existing log group or create a new one. For example, <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
     }
     /// Consumes the builder and constructs a [`CloudWatchLogDestination`](crate::types::CloudWatchLogDestination).
     pub fn build(self) -> crate::types::CloudWatchLogDestination {
         crate::types::CloudWatchLogDestination {
-            log_group: self.log_group,
+            log_group: self.log_group
+            ,
         }
     }
 }
+

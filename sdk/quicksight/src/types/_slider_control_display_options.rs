@@ -3,14 +3,14 @@
 /// <p>The display options of a control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SliderControlDisplayOptions {
+pub struct SliderControlDisplayOptions  {
     /// <p>The options to configure the title visibility, name, and font size.</p>
     #[doc(hidden)]
     pub title_options: ::std::option::Option<crate::types::LabelOptions>,
 }
 impl SliderControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn title_options(&self) -> ::std::option::Option<&crate::types::LabelOptions> {
+    pub fn title_options(&self) -> ::std::option::Option<& crate::types::LabelOptions> {
         self.title_options.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl SliderControlDisplayOptions {
 
 /// A builder for [`SliderControlDisplayOptions`](crate::types::SliderControlDisplayOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SliderControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
 }
@@ -36,17 +34,19 @@ impl SliderControlDisplayOptionsBuilder {
         self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn set_title_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelOptions>,
-    ) -> Self {
-        self.title_options = input;
-        self
+    pub fn set_title_options(mut self, input: ::std::option::Option<crate::types::LabelOptions>) -> Self {
+        self.title_options = input; self
+    }
+    /// <p>The options to configure the title visibility, name, and font size.</p>
+    pub fn get_title_options(&self) -> &::std::option::Option<crate::types::LabelOptions> {
+        &self.title_options
     }
     /// Consumes the builder and constructs a [`SliderControlDisplayOptions`](crate::types::SliderControlDisplayOptions).
     pub fn build(self) -> crate::types::SliderControlDisplayOptions {
         crate::types::SliderControlDisplayOptions {
-            title_options: self.title_options,
+            title_options: self.title_options
+            ,
         }
     }
 }
+

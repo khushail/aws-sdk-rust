@@ -3,16 +3,16 @@
 /// <p>The constraints that the administrator has put on the parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterConstraints {
+pub struct ParameterConstraints  {
     /// <p>The values that the administrator has allowed for the parameter.</p>
     #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
     #[doc(hidden)]
     pub allowed_pattern: ::std::option::Option<::std::string::String>,
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
-    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p> 
+    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p> 
+    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p> 
     /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
     #[doc(hidden)]
     pub constraint_description: ::std::option::Option<::std::string::String>,
@@ -31,34 +31,34 @@ pub struct ParameterConstraints {
 }
 impl ParameterConstraints {
     /// <p>The values that the administrator has allowed for the parameter.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn allowed_values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.allowed_values.as_deref()
     }
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
-    pub fn allowed_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn allowed_pattern(&self) -> ::std::option::Option<& str> {
         self.allowed_pattern.as_deref()
     }
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
-    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p> 
+    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p> 
+    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p> 
     /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
-    pub fn constraint_description(&self) -> ::std::option::Option<&str> {
+    pub fn constraint_description(&self) -> ::std::option::Option<& str> {
         self.constraint_description.as_deref()
     }
     /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
-    pub fn max_length(&self) -> ::std::option::Option<&str> {
+    pub fn max_length(&self) -> ::std::option::Option<& str> {
         self.max_length.as_deref()
     }
     /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
-    pub fn min_length(&self) -> ::std::option::Option<&str> {
+    pub fn min_length(&self) -> ::std::option::Option<& str> {
         self.min_length.as_deref()
     }
     /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
-    pub fn max_value(&self) -> ::std::option::Option<&str> {
+    pub fn max_value(&self) -> ::std::option::Option<& str> {
         self.max_value.as_deref()
     }
     /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
-    pub fn min_value(&self) -> ::std::option::Option<&str> {
+    pub fn min_value(&self) -> ::std::option::Option<& str> {
         self.min_value.as_deref()
     }
 }
@@ -71,9 +71,7 @@ impl ParameterConstraints {
 
 /// A builder for [`ParameterConstraints`](crate::types::ParameterConstraints).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterConstraintsBuilder {
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_pattern: ::std::option::Option<::std::string::String>,
@@ -89,60 +87,54 @@ impl ParameterConstraintsBuilder {
     /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
     ///
     /// <p>The values that the administrator has allowed for the parameter.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values that the administrator has allowed for the parameter.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.allowed_values = input;
-        self
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allowed_values = input; self
+    }
+    /// <p>The values that the administrator has allowed for the parameter.</p>
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_values
     }
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
-    pub fn allowed_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
-    pub fn set_allowed_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.allowed_pattern = input;
-        self
+    pub fn set_allowed_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.allowed_pattern = input; self
     }
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
-    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
+    /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
+    pub fn get_allowed_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_pattern
+    }
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p> 
+    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p> 
+    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p> 
     /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
-    pub fn constraint_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn constraint_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.constraint_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
-    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p> 
+    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p> 
+    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p> 
     /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
-    pub fn set_constraint_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.constraint_description = input;
-        self
+    pub fn set_constraint_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.constraint_description = input; self
+    }
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p> 
+    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p> 
+    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p> 
+    /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
+    pub fn get_constraint_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.constraint_description
     }
     /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
     pub fn max_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,8 +143,11 @@ impl ParameterConstraintsBuilder {
     }
     /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
     pub fn set_max_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_length = input;
-        self
+        self.max_length = input; self
+    }
+    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
+    pub fn get_max_length(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_length
     }
     /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
     pub fn min_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,8 +156,11 @@ impl ParameterConstraintsBuilder {
     }
     /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
     pub fn set_min_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.min_length = input;
-        self
+        self.min_length = input; self
+    }
+    /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
+    pub fn get_min_length(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min_length
     }
     /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
     pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,8 +169,11 @@ impl ParameterConstraintsBuilder {
     }
     /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
     pub fn set_max_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_value = input;
-        self
+        self.max_value = input; self
+    }
+    /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_value
     }
     /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
     pub fn min_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,19 +182,30 @@ impl ParameterConstraintsBuilder {
     }
     /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
     pub fn set_min_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.min_value = input;
-        self
+        self.min_value = input; self
+    }
+    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
+    pub fn get_min_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min_value
     }
     /// Consumes the builder and constructs a [`ParameterConstraints`](crate::types::ParameterConstraints).
     pub fn build(self) -> crate::types::ParameterConstraints {
         crate::types::ParameterConstraints {
-            allowed_values: self.allowed_values,
-            allowed_pattern: self.allowed_pattern,
-            constraint_description: self.constraint_description,
-            max_length: self.max_length,
-            min_length: self.min_length,
-            max_value: self.max_value,
-            min_value: self.min_value,
+            allowed_values: self.allowed_values
+            ,
+            allowed_pattern: self.allowed_pattern
+            ,
+            constraint_description: self.constraint_description
+            ,
+            max_length: self.max_length
+            ,
+            min_length: self.min_length
+            ,
+            max_value: self.max_value
+            ,
+            min_value: self.min_value
+            ,
         }
     }
 }
+

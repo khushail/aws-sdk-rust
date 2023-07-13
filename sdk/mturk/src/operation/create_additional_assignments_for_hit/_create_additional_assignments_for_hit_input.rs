@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAdditionalAssignmentsForHitInput {
+pub struct CreateAdditionalAssignmentsForHitInput  {
     /// <p>The ID of the HIT to extend.</p>
     #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateAdditionalAssignmentsForHitInput {
 }
 impl CreateAdditionalAssignmentsForHitInput {
     /// <p>The ID of the HIT to extend.</p>
-    pub fn hit_id(&self) -> ::std::option::Option<&str> {
+    pub fn hit_id(&self) -> ::std::option::Option<& str> {
         self.hit_id.as_deref()
     }
     /// <p>The number of additional assignments to request for this HIT.</p>
@@ -23,22 +23,20 @@ impl CreateAdditionalAssignmentsForHitInput {
         self.number_of_additional_assignments
     }
     /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
-    pub fn unique_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn unique_request_token(&self) -> ::std::option::Option<& str> {
         self.unique_request_token.as_deref()
     }
 }
 impl CreateAdditionalAssignmentsForHitInput {
     /// Creates a new builder-style object to manufacture [`CreateAdditionalAssignmentsForHitInput`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitInput).
-    pub fn builder() -> crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitInputBuilder{
+    pub fn builder() -> crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitInputBuilder {
         crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAdditionalAssignmentsForHitInput`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAdditionalAssignmentsForHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_additional_assignments: ::std::option::Option<i32>,
@@ -52,8 +50,11 @@ impl CreateAdditionalAssignmentsForHitInputBuilder {
     }
     /// <p>The ID of the HIT to extend.</p>
     pub fn set_hit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hit_id = input;
-        self
+        self.hit_id = input; self
+    }
+    /// <p>The ID of the HIT to extend.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
     }
     /// <p>The number of additional assignments to request for this HIT.</p>
     pub fn number_of_additional_assignments(mut self, input: i32) -> Self {
@@ -61,31 +62,28 @@ impl CreateAdditionalAssignmentsForHitInputBuilder {
         self
     }
     /// <p>The number of additional assignments to request for this HIT.</p>
-    pub fn set_number_of_additional_assignments(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.number_of_additional_assignments = input;
-        self
+    pub fn set_number_of_additional_assignments(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.number_of_additional_assignments = input; self
+    }
+    /// <p>The number of additional assignments to request for this HIT.</p>
+    pub fn get_number_of_additional_assignments(&self) -> &::std::option::Option<i32> {
+        &self.number_of_additional_assignments
     }
     /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
-    pub fn unique_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unique_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unique_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
-    pub fn set_unique_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.unique_request_token = input;
-        self
+    pub fn set_unique_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.unique_request_token = input; self
+    }
+    /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
+    pub fn get_unique_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unique_request_token
     }
     /// Consumes the builder and constructs a [`CreateAdditionalAssignmentsForHitInput`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitInput {
                 hit_id: self.hit_id
@@ -98,3 +96,4 @@ impl CreateAdditionalAssignmentsForHitInputBuilder {
         )
     }
 }
+

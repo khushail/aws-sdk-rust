@@ -3,7 +3,7 @@
 /// <p>Information about a deployment application configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentApplicationConfig {
+pub struct DeploymentApplicationConfig  {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct DeploymentApplicationConfig {
 }
 impl DeploymentApplicationConfig {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn application_version(&self) -> ::std::option::Option<&str> {
+    pub fn application_version(&self) -> ::std::option::Option<& str> {
         self.application_version.as_deref()
     }
     /// <p>The launch configuration.</p>
-    pub fn launch_config(&self) -> ::std::option::Option<&crate::types::DeploymentLaunchConfig> {
+    pub fn launch_config(&self) -> ::std::option::Option<& crate::types::DeploymentLaunchConfig> {
         self.launch_config.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl DeploymentApplicationConfig {
 
 /// A builder for [`DeploymentApplicationConfig`](crate::types::DeploymentApplicationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentApplicationConfigBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,
@@ -53,24 +51,24 @@ impl DeploymentApplicationConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
     }
     /// <p>The version of the application.</p>
-    pub fn application_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the application.</p>
-    pub fn set_application_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_version = input;
-        self
+    pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_version = input; self
+    }
+    /// <p>The version of the application.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_version
     }
     /// <p>The launch configuration.</p>
     pub fn launch_config(mut self, input: crate::types::DeploymentLaunchConfig) -> Self {
@@ -78,19 +76,23 @@ impl DeploymentApplicationConfigBuilder {
         self
     }
     /// <p>The launch configuration.</p>
-    pub fn set_launch_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentLaunchConfig>,
-    ) -> Self {
-        self.launch_config = input;
-        self
+    pub fn set_launch_config(mut self, input: ::std::option::Option<crate::types::DeploymentLaunchConfig>) -> Self {
+        self.launch_config = input; self
+    }
+    /// <p>The launch configuration.</p>
+    pub fn get_launch_config(&self) -> &::std::option::Option<crate::types::DeploymentLaunchConfig> {
+        &self.launch_config
     }
     /// Consumes the builder and constructs a [`DeploymentApplicationConfig`](crate::types::DeploymentApplicationConfig).
     pub fn build(self) -> crate::types::DeploymentApplicationConfig {
         crate::types::DeploymentApplicationConfig {
-            application: self.application,
-            application_version: self.application_version,
-            launch_config: self.launch_config,
+            application: self.application
+            ,
+            application_version: self.application_version
+            ,
+            launch_config: self.launch_config
+            ,
         }
     }
 }
+

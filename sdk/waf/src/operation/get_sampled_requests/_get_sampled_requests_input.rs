@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSampledRequestsInput {
+pub struct GetSampledRequestsInput  {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
     #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
-    /// <p> <code>RuleId</code> is one of three values:</p>
-    /// <ul>
-    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
-    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
+    /// <p> <code>RuleId</code> is one of three values:</p> 
+    /// <ul> 
+    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li> 
+    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
@@ -22,19 +22,19 @@ pub struct GetSampledRequestsInput {
 }
 impl GetSampledRequestsInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
-    pub fn web_acl_id(&self) -> ::std::option::Option<&str> {
+    pub fn web_acl_id(&self) -> ::std::option::Option<& str> {
         self.web_acl_id.as_deref()
     }
-    /// <p> <code>RuleId</code> is one of three values:</p>
-    /// <ul>
-    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
-    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
+    /// <p> <code>RuleId</code> is one of three values:</p> 
+    /// <ul> 
+    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li> 
+    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li> 
     /// </ul>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-    pub fn time_window(&self) -> ::std::option::Option<&crate::types::TimeWindow> {
+    pub fn time_window(&self) -> ::std::option::Option<& crate::types::TimeWindow> {
         self.time_window.as_ref()
     }
     /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
@@ -44,17 +44,14 @@ impl GetSampledRequestsInput {
 }
 impl GetSampledRequestsInput {
     /// Creates a new builder-style object to manufacture [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
-    pub fn builder(
-    ) -> crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder {
+    pub fn builder() -> crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder {
         crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSampledRequestsInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
@@ -69,26 +66,36 @@ impl GetSampledRequestsInputBuilder {
     }
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_acl_id = input;
-        self
+        self.web_acl_id = input; self
     }
-    /// <p> <code>RuleId</code> is one of three values:</p>
-    /// <ul>
-    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
-    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
+    }
+    /// <p> <code>RuleId</code> is one of three values:</p> 
+    /// <ul> 
+    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li> 
+    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li> 
     /// </ul>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <code>RuleId</code> is one of three values:</p>
-    /// <ul>
-    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
-    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
+    /// <p> <code>RuleId</code> is one of three values:</p> 
+    /// <ul> 
+    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li> 
+    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li> 
     /// </ul>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
+    }
+    /// <p> <code>RuleId</code> is one of three values:</p> 
+    /// <ul> 
+    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li> 
+    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li> 
+    /// </ul>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub fn time_window(mut self, input: crate::types::TimeWindow) -> Self {
@@ -96,12 +103,12 @@ impl GetSampledRequestsInputBuilder {
         self
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-    pub fn set_time_window(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeWindow>,
-    ) -> Self {
-        self.time_window = input;
-        self
+    pub fn set_time_window(mut self, input: ::std::option::Option<crate::types::TimeWindow>) -> Self {
+        self.time_window = input; self
+    }
+    /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    pub fn get_time_window(&self) -> &::std::option::Option<crate::types::TimeWindow> {
+        &self.time_window
     }
     /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
     pub fn max_items(mut self, input: i64) -> Self {
@@ -110,23 +117,27 @@ impl GetSampledRequestsInputBuilder {
     }
     /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
+    }
+    /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i64> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sampled_requests::GetSampledRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sampled_requests::GetSampledRequestsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_sampled_requests::GetSampledRequestsInput {
-                web_acl_id: self.web_acl_id,
-                rule_id: self.rule_id,
-                time_window: self.time_window,
-                max_items: self.max_items.unwrap_or_default(),
-            },
+                web_acl_id: self.web_acl_id
+                ,
+                rule_id: self.rule_id
+                ,
+                time_window: self.time_window
+                ,
+                max_items: self.max_items
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

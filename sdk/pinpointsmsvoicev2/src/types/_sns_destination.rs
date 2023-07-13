@@ -3,14 +3,14 @@
 /// <p>An object that defines an Amazon SNS destination for events. You can use Amazon SNS to send notification when certain events occur.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnsDestination {
+pub struct SnsDestination  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
     #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl SnsDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl SnsDestination {
 
 /// A builder for [`SnsDestination`](crate::types::SnsDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnsDestinationBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl SnsDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
     }
     /// Consumes the builder and constructs a [`SnsDestination`](crate::types::SnsDestination).
     pub fn build(self) -> crate::types::SnsDestination {
         crate::types::SnsDestination {
-            topic_arn: self.topic_arn,
+            topic_arn: self.topic_arn
+            ,
         }
     }
 }
+

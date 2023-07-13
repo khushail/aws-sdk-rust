@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRescoreExecutionPlanInput {
+pub struct DescribeRescoreExecutionPlanInput  {
     /// <p>The identifier of the rescore execution plan that you want to get information on.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRescoreExecutionPlanInput {
     /// <p>The identifier of the rescore execution plan that you want to get information on.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DescribeRescoreExecutionPlanInput {
     /// Creates a new builder-style object to manufacture [`DescribeRescoreExecutionPlanInput`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanInput).
-    pub fn builder() -> crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanInputBuilder{
+    pub fn builder() -> crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanInputBuilder {
         crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRescoreExecutionPlanInput`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRescoreExecutionPlanInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl DescribeRescoreExecutionPlanInputBuilder {
     }
     /// <p>The identifier of the rescore execution plan that you want to get information on.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the rescore execution plan that you want to get information on.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DescribeRescoreExecutionPlanInput`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details of the Amazon EC2 instance involved in a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2InstanceDetails {
+pub struct AwsEc2InstanceDetails  {
     /// <p>The type of the Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -37,43 +37,43 @@ pub struct AwsEc2InstanceDetails {
 }
 impl AwsEc2InstanceDetails {
     /// <p>The type of the Amazon EC2 instance.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The image ID of the Amazon EC2 instance.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The IPv4 addresses of the Amazon EC2 instance.</p>
-    pub fn ip_v4_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn ip_v4_addresses(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.ip_v4_addresses.as_deref()
     }
     /// <p>The IPv6 addresses of the Amazon EC2 instance.</p>
-    pub fn ip_v6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn ip_v6_addresses(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.ip_v6_addresses.as_deref()
     }
     /// <p>The name of the key pair used to launch the Amazon EC2 instance.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The IAM instance profile ARN of the Amazon EC2 instance.</p>
-    pub fn iam_instance_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_instance_profile_arn(&self) -> ::std::option::Option<& str> {
         self.iam_instance_profile_arn.as_deref()
     }
     /// <p>The VPC ID of the Amazon EC2 instance.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The subnet ID of the Amazon EC2 instance.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The date and time the Amazon EC2 instance was launched at.</p>
-    pub fn launched_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn launched_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.launched_at.as_ref()
     }
     /// <p>The platform of the Amazon EC2 instance.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
 }
@@ -86,9 +86,7 @@ impl AwsEc2InstanceDetails {
 
 /// A builder for [`AwsEc2InstanceDetails`](crate::types::AwsEc2InstanceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
@@ -109,8 +107,11 @@ impl AwsEc2InstanceDetailsBuilder {
     }
     /// <p>The type of the Amazon EC2 instance.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the Amazon EC2 instance.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The image ID of the Amazon EC2 instance.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,52 +120,49 @@ impl AwsEc2InstanceDetailsBuilder {
     }
     /// <p>The image ID of the Amazon EC2 instance.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
+    }
+    /// <p>The image ID of the Amazon EC2 instance.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// Appends an item to `ip_v4_addresses`.
     ///
     /// To override the contents of this collection use [`set_ip_v4_addresses`](Self::set_ip_v4_addresses).
     ///
     /// <p>The IPv4 addresses of the Amazon EC2 instance.</p>
-    pub fn ip_v4_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_v4_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ip_v4_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.ip_v4_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ip_v4_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv4 addresses of the Amazon EC2 instance.</p>
-    pub fn set_ip_v4_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.ip_v4_addresses = input;
-        self
+    pub fn set_ip_v4_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ip_v4_addresses = input; self
+    }
+    /// <p>The IPv4 addresses of the Amazon EC2 instance.</p>
+    pub fn get_ip_v4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ip_v4_addresses
     }
     /// Appends an item to `ip_v6_addresses`.
     ///
     /// To override the contents of this collection use [`set_ip_v6_addresses`](Self::set_ip_v6_addresses).
     ///
     /// <p>The IPv6 addresses of the Amazon EC2 instance.</p>
-    pub fn ip_v6_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_v6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ip_v6_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.ip_v6_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ip_v6_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv6 addresses of the Amazon EC2 instance.</p>
-    pub fn set_ip_v6_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.ip_v6_addresses = input;
-        self
+    pub fn set_ip_v6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ip_v6_addresses = input; self
+    }
+    /// <p>The IPv6 addresses of the Amazon EC2 instance.</p>
+    pub fn get_ip_v6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ip_v6_addresses
     }
     /// <p>The name of the key pair used to launch the Amazon EC2 instance.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,24 +171,24 @@ impl AwsEc2InstanceDetailsBuilder {
     }
     /// <p>The name of the key pair used to launch the Amazon EC2 instance.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
+    }
+    /// <p>The name of the key pair used to launch the Amazon EC2 instance.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// <p>The IAM instance profile ARN of the Amazon EC2 instance.</p>
-    pub fn iam_instance_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_instance_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM instance profile ARN of the Amazon EC2 instance.</p>
-    pub fn set_iam_instance_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.iam_instance_profile_arn = input;
-        self
+    pub fn set_iam_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_instance_profile_arn = input; self
+    }
+    /// <p>The IAM instance profile ARN of the Amazon EC2 instance.</p>
+    pub fn get_iam_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_instance_profile_arn
     }
     /// <p>The VPC ID of the Amazon EC2 instance.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -199,8 +197,11 @@ impl AwsEc2InstanceDetailsBuilder {
     }
     /// <p>The VPC ID of the Amazon EC2 instance.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The VPC ID of the Amazon EC2 instance.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The subnet ID of the Amazon EC2 instance.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -209,8 +210,11 @@ impl AwsEc2InstanceDetailsBuilder {
     }
     /// <p>The subnet ID of the Amazon EC2 instance.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
+    }
+    /// <p>The subnet ID of the Amazon EC2 instance.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The date and time the Amazon EC2 instance was launched at.</p>
     pub fn launched_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -218,12 +222,12 @@ impl AwsEc2InstanceDetailsBuilder {
         self
     }
     /// <p>The date and time the Amazon EC2 instance was launched at.</p>
-    pub fn set_launched_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.launched_at = input;
-        self
+    pub fn set_launched_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.launched_at = input; self
+    }
+    /// <p>The date and time the Amazon EC2 instance was launched at.</p>
+    pub fn get_launched_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.launched_at
     }
     /// <p>The platform of the Amazon EC2 instance.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -232,22 +236,36 @@ impl AwsEc2InstanceDetailsBuilder {
     }
     /// <p>The platform of the Amazon EC2 instance.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
+    }
+    /// <p>The platform of the Amazon EC2 instance.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// Consumes the builder and constructs a [`AwsEc2InstanceDetails`](crate::types::AwsEc2InstanceDetails).
     pub fn build(self) -> crate::types::AwsEc2InstanceDetails {
         crate::types::AwsEc2InstanceDetails {
-            r#type: self.r#type,
-            image_id: self.image_id,
-            ip_v4_addresses: self.ip_v4_addresses,
-            ip_v6_addresses: self.ip_v6_addresses,
-            key_name: self.key_name,
-            iam_instance_profile_arn: self.iam_instance_profile_arn,
-            vpc_id: self.vpc_id,
-            subnet_id: self.subnet_id,
-            launched_at: self.launched_at,
-            platform: self.platform,
+            r#type: self.r#type
+            ,
+            image_id: self.image_id
+            ,
+            ip_v4_addresses: self.ip_v4_addresses
+            ,
+            ip_v6_addresses: self.ip_v6_addresses
+            ,
+            key_name: self.key_name
+            ,
+            iam_instance_profile_arn: self.iam_instance_profile_arn
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnet_id: self.subnet_id
+            ,
+            launched_at: self.launched_at
+            ,
+            platform: self.platform
+            ,
         }
     }
 }
+

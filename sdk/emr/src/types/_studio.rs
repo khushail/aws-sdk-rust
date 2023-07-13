@@ -3,7 +3,7 @@
 /// <p>Details for an Amazon EMR Studio including ID, creation time, name, and so on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Studio {
+pub struct Studio  {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
@@ -58,71 +58,71 @@ pub struct Studio {
 }
 impl Studio {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
-    pub fn studio_arn(&self) -> ::std::option::Option<&str> {
+    pub fn studio_arn(&self) -> ::std::option::Option<& str> {
         self.studio_arn.as_deref()
     }
     /// <p>The name of the Amazon EMR Studio.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM Identity Center.</p>
-    pub fn auth_mode(&self) -> ::std::option::Option<&crate::types::AuthMode> {
+    pub fn auth_mode(&self) -> ::std::option::Option<& crate::types::AuthMode> {
         self.auth_mode.as_ref()
     }
     /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The list of IDs of the subnets associated with the Amazon EMR Studio.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
-    pub fn service_role(&self) -> ::std::option::Option<&str> {
+    pub fn service_role(&self) -> ::std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
-    pub fn user_role(&self) -> ::std::option::Option<&str> {
+    pub fn user_role(&self) -> ::std::option::Option<& str> {
         self.user_role.as_deref()
     }
     /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The Workspace security group allows outbound network traffic to resources in the Engine security group and to the internet.</p>
-    pub fn workspace_security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_security_group_id(&self) -> ::std::option::Option<& str> {
         self.workspace_security_group_id.as_deref()
     }
     /// <p>The ID of the Engine security group associated with the Amazon EMR Studio. The Engine security group allows inbound network traffic from resources in the Workspace security group.</p>
-    pub fn engine_security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn engine_security_group_id(&self) -> ::std::option::Option<& str> {
         self.engine_security_group_id.as_deref()
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The time the Amazon EMR Studio was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-    pub fn default_s3_location(&self) -> ::std::option::Option<&str> {
+    pub fn default_s3_location(&self) -> ::std::option::Option<& str> {
         self.default_s3_location.as_deref()
     }
     /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
-    pub fn idp_auth_url(&self) -> ::std::option::Option<&str> {
+    pub fn idp_auth_url(&self) -> ::std::option::Option<& str> {
         self.idp_auth_url.as_deref()
     }
     /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
-    pub fn idp_relay_state_parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn idp_relay_state_parameter_name(&self) -> ::std::option::Option<& str> {
         self.idp_relay_state_parameter_name.as_deref()
     }
     /// <p>A list of tags associated with the Amazon EMR Studio.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -135,9 +135,7 @@ impl Studio {
 
 /// A builder for [`Studio`](crate::types::Studio).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StudioBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_arn: ::std::option::Option<::std::string::String>,
@@ -165,8 +163,11 @@ impl StudioBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
+    }
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
     pub fn studio_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,8 +176,11 @@ impl StudioBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
     pub fn set_studio_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_arn = input;
-        self
+        self.studio_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
+    pub fn get_studio_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_arn
     }
     /// <p>The name of the Amazon EMR Studio.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,8 +189,11 @@ impl StudioBuilder {
     }
     /// <p>The name of the Amazon EMR Studio.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the Amazon EMR Studio.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,8 +202,11 @@ impl StudioBuilder {
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The detailed description of the Amazon EMR Studio.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM Identity Center.</p>
     pub fn auth_mode(mut self, input: crate::types::AuthMode) -> Self {
@@ -205,8 +215,11 @@ impl StudioBuilder {
     }
     /// <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM Identity Center.</p>
     pub fn set_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
-        self.auth_mode = input;
-        self
+        self.auth_mode = input; self
+    }
+    /// <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM Identity Center.</p>
+    pub fn get_auth_mode(&self) -> &::std::option::Option<crate::types::AuthMode> {
+        &self.auth_mode
     }
     /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -215,8 +228,11 @@ impl StudioBuilder {
     }
     /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -225,17 +241,17 @@ impl StudioBuilder {
     /// <p>The list of IDs of the subnets associated with the Amazon EMR Studio.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of IDs of the subnets associated with the Amazon EMR Studio.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
+    }
+    /// <p>The list of IDs of the subnets associated with the Amazon EMR Studio.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -244,8 +260,11 @@ impl StudioBuilder {
     }
     /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role = input;
-        self
+        self.service_role = input; self
+    }
+    /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
     }
     /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
     pub fn user_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -254,40 +273,37 @@ impl StudioBuilder {
     }
     /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
     pub fn set_user_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_role = input;
-        self
+        self.user_role = input; self
+    }
+    /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
+    pub fn get_user_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_role
     }
     /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The Workspace security group allows outbound network traffic to resources in the Engine security group and to the internet.</p>
-    pub fn workspace_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workspace_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The Workspace security group allows outbound network traffic to resources in the Engine security group and to the internet.</p>
-    pub fn set_workspace_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.workspace_security_group_id = input;
-        self
+    pub fn set_workspace_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_security_group_id = input; self
+    }
+    /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The Workspace security group allows outbound network traffic to resources in the Engine security group and to the internet.</p>
+    pub fn get_workspace_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_security_group_id
     }
     /// <p>The ID of the Engine security group associated with the Amazon EMR Studio. The Engine security group allows inbound network traffic from resources in the Workspace security group.</p>
-    pub fn engine_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Engine security group associated with the Amazon EMR Studio. The Engine security group allows inbound network traffic from resources in the Workspace security group.</p>
-    pub fn set_engine_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.engine_security_group_id = input;
-        self
+    pub fn set_engine_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_security_group_id = input; self
+    }
+    /// <p>The ID of the Engine security group associated with the Amazon EMR Studio. The Engine security group allows inbound network traffic from resources in the Workspace security group.</p>
+    pub fn get_engine_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_security_group_id
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -296,8 +312,11 @@ impl StudioBuilder {
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// <p>The unique access URL of the Amazon EMR Studio.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The time the Amazon EMR Studio was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -305,28 +324,25 @@ impl StudioBuilder {
         self
     }
     /// <p>The time the Amazon EMR Studio was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time the Amazon EMR Studio was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-    pub fn default_s3_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_s3_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-    pub fn set_default_s3_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.default_s3_location = input;
-        self
+    pub fn set_default_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_s3_location = input; self
+    }
+    /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
+    pub fn get_default_s3_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_s3_location
     }
     /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
     pub fn idp_auth_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -335,24 +351,24 @@ impl StudioBuilder {
     }
     /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
     pub fn set_idp_auth_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idp_auth_url = input;
-        self
+        self.idp_auth_url = input; self
+    }
+    /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
+    pub fn get_idp_auth_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idp_auth_url
     }
     /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
-    pub fn idp_relay_state_parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idp_relay_state_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idp_relay_state_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
-    pub fn set_idp_relay_state_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.idp_relay_state_parameter_name = input;
-        self
+    pub fn set_idp_relay_state_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.idp_relay_state_parameter_name = input; self
+    }
+    /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+    pub fn get_idp_relay_state_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idp_relay_state_parameter_name
     }
     /// Appends an item to `tags`.
     ///
@@ -361,38 +377,56 @@ impl StudioBuilder {
     /// <p>A list of tags associated with the Amazon EMR Studio.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags associated with the Amazon EMR Studio.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of tags associated with the Amazon EMR Studio.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Studio`](crate::types::Studio).
     pub fn build(self) -> crate::types::Studio {
         crate::types::Studio {
-            studio_id: self.studio_id,
-            studio_arn: self.studio_arn,
-            name: self.name,
-            description: self.description,
-            auth_mode: self.auth_mode,
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
-            service_role: self.service_role,
-            user_role: self.user_role,
-            workspace_security_group_id: self.workspace_security_group_id,
-            engine_security_group_id: self.engine_security_group_id,
-            url: self.url,
-            creation_time: self.creation_time,
-            default_s3_location: self.default_s3_location,
-            idp_auth_url: self.idp_auth_url,
-            idp_relay_state_parameter_name: self.idp_relay_state_parameter_name,
-            tags: self.tags,
+            studio_id: self.studio_id
+            ,
+            studio_arn: self.studio_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            auth_mode: self.auth_mode
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            service_role: self.service_role
+            ,
+            user_role: self.user_role
+            ,
+            workspace_security_group_id: self.workspace_security_group_id
+            ,
+            engine_security_group_id: self.engine_security_group_id
+            ,
+            url: self.url
+            ,
+            creation_time: self.creation_time
+            ,
+            default_s3_location: self.default_s3_location
+            ,
+            idp_auth_url: self.idp_auth_url
+            ,
+            idp_relay_state_parameter_name: self.idp_relay_state_parameter_name
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClassificationScopeInput {
+pub struct UpdateClassificationScopeInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct UpdateClassificationScopeInput {
 }
 impl UpdateClassificationScopeInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3ClassificationScopeUpdate> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3ClassificationScopeUpdate> {
         self.s3.as_ref()
     }
 }
 impl UpdateClassificationScopeInput {
     /// Creates a new builder-style object to manufacture [`UpdateClassificationScopeInput`](crate::operation::update_classification_scope::UpdateClassificationScopeInput).
-    pub fn builder() -> crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder{
+    pub fn builder() -> crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder {
         crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClassificationScopeInput`](crate::operation::update_classification_scope::UpdateClassificationScopeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClassificationScopeInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) s3: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>,
@@ -44,8 +42,11 @@ impl UpdateClassificationScopeInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
     pub fn s3(mut self, input: crate::types::S3ClassificationScopeUpdate) -> Self {
@@ -53,25 +54,23 @@ impl UpdateClassificationScopeInputBuilder {
         self
     }
     /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>,
-    ) -> Self {
-        self.s3 = input;
-        self
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>) -> Self {
+        self.s3 = input; self
+    }
+    /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3ClassificationScopeUpdate> {
+        &self.s3
     }
     /// Consumes the builder and constructs a [`UpdateClassificationScopeInput`](crate::operation::update_classification_scope::UpdateClassificationScopeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_classification_scope::UpdateClassificationScopeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_classification_scope::UpdateClassificationScopeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_classification_scope::UpdateClassificationScopeInput {
-                id: self.id,
-                s3: self.s3,
-            },
+                id: self.id
+                ,
+                s3: self.s3
+                ,
+            }
         )
     }
 }
+

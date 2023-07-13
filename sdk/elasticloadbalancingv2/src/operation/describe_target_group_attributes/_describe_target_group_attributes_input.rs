@@ -2,56 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTargetGroupAttributesInput {
+pub struct DescribeTargetGroupAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTargetGroupAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> ::std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
 }
 impl DescribeTargetGroupAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetGroupAttributesInput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput).
-    pub fn builder() -> crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder{
+    pub fn builder() -> crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder {
         crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTargetGroupAttributesInput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTargetGroupAttributesInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTargetGroupAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_group_arn = input;
-        self
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_group_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
     }
     /// Consumes the builder and constructs a [`DescribeTargetGroupAttributesInput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput {
                 target_group_arn: self.target_group_arn
@@ -60,3 +50,4 @@ impl DescribeTargetGroupAttributesInputBuilder {
         )
     }
 }
+

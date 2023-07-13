@@ -3,7 +3,7 @@
 /// <p> Provides details about the market (purchasing) options for Spot Instances. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
+pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails  {
     /// <p> Deprecated. </p>
     #[doc(hidden)]
     pub block_duration_minutes: i32,
@@ -26,34 +26,32 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
         self.block_duration_minutes
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
-    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&str> {
+    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<& str> {
         self.instance_interruption_behavior.as_deref()
     }
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
-    pub fn max_price(&self) -> ::std::option::Option<&str> {
+    pub fn max_price(&self) -> ::std::option::Option<& str> {
         self.max_price.as_deref()
     }
     /// <p> The Spot Instance request type. </p>
-    pub fn spot_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn spot_instance_type(&self) -> ::std::option::Option<& str> {
         self.spot_instance_type.as_deref()
     }
     /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
-    pub fn valid_until(&self) -> ::std::option::Option<&str> {
+    pub fn valid_until(&self) -> ::std::option::Option<& str> {
         self.valid_until.as_deref()
     }
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     pub(crate) block_duration_minutes: ::std::option::Option<i32>,
     pub(crate) instance_interruption_behavior: ::std::option::Option<::std::string::String>,
@@ -69,24 +67,24 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     }
     /// <p> Deprecated. </p>
     pub fn set_block_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.block_duration_minutes = input;
-        self
+        self.block_duration_minutes = input; self
+    }
+    /// <p> Deprecated. </p>
+    pub fn get_block_duration_minutes(&self) -> &::std::option::Option<i32> {
+        &self.block_duration_minutes
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
-    pub fn instance_interruption_behavior(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_interruption_behavior(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_interruption_behavior = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
-    pub fn set_instance_interruption_behavior(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.instance_interruption_behavior = input;
-        self
+    pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_interruption_behavior = input; self
+    }
+    /// <p> The behavior when a Spot Instance is interrupted. </p>
+    pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_interruption_behavior
     }
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
     pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,24 +93,24 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     }
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
     pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_price = input;
-        self
+        self.max_price = input; self
+    }
+    /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
+    pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_price
     }
     /// <p> The Spot Instance request type. </p>
-    pub fn spot_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Spot Instance request type. </p>
-    pub fn set_spot_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.spot_instance_type = input;
-        self
+    pub fn set_spot_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.spot_instance_type = input; self
+    }
+    /// <p> The Spot Instance request type. </p>
+    pub fn get_spot_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spot_instance_type
     }
     /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
     pub fn valid_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,19 +119,27 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     }
     /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
     pub fn set_valid_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.valid_until = input;
-        self
+        self.valid_until = input; self
+    }
+    /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
+    pub fn get_valid_until(&self) -> &::std::option::Option<::std::string::String> {
+        &self.valid_until
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
-            block_duration_minutes: self.block_duration_minutes.unwrap_or_default(),
-            instance_interruption_behavior: self.instance_interruption_behavior,
-            max_price: self.max_price,
-            spot_instance_type: self.spot_instance_type,
-            valid_until: self.valid_until,
+            block_duration_minutes: self.block_duration_minutes
+                .unwrap_or_default()
+            ,
+            instance_interruption_behavior: self.instance_interruption_behavior
+            ,
+            max_price: self.max_price
+            ,
+            spot_instance_type: self.spot_instance_type
+            ,
+            valid_until: self.valid_until
+            ,
         }
     }
 }
+

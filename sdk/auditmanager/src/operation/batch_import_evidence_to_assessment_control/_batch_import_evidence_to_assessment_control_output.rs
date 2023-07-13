@@ -2,43 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchImportEvidenceToAssessmentControlOutput {
+pub struct BatchImportEvidenceToAssessmentControlOutput  {
     /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     #[doc(hidden)]
-    pub errors: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>,
-    >,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>>,
     _request_id: Option<String>,
 }
 impl BatchImportEvidenceToAssessmentControlOutput {
     /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchImportEvidenceToAssessmentControlError]> {
+    pub fn errors(&self) -> ::std::option::Option<& [crate::types::BatchImportEvidenceToAssessmentControlError]> {
         self.errors.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchImportEvidenceToAssessmentControlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchImportEvidenceToAssessmentControlOutput {
     /// Creates a new builder-style object to manufacture [`BatchImportEvidenceToAssessmentControlOutput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput).
-    pub fn builder() -> crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlOutputBuilder{
+    pub fn builder() -> crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlOutputBuilder {
         crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchImportEvidenceToAssessmentControlOutput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlOutputBuilder {
-    pub(crate) errors: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>,
-    >,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>>,
     _request_id: Option<String>,
 }
 impl BatchImportEvidenceToAssessmentControlOutputBuilder {
@@ -47,36 +39,31 @@ impl BatchImportEvidenceToAssessmentControlOutputBuilder {
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
     /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn errors(
-        mut self,
-        input: crate::types::BatchImportEvidenceToAssessmentControlError,
-    ) -> Self {
+    pub fn errors(mut self, input: crate::types::BatchImportEvidenceToAssessmentControlError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>,
-        >,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>>) -> Self {
+        self.errors = input; self
+    }
+    /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchImportEvidenceToAssessmentControlOutput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput).
-    pub fn build(self) -> crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput{
+    pub fn build(self) -> crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput {
         crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput {
             errors: self.errors
             ,
@@ -84,3 +71,4 @@ impl BatchImportEvidenceToAssessmentControlOutputBuilder {
         }
     }
 }
+

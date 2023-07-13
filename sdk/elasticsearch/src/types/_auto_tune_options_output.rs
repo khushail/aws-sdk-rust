@@ -3,7 +3,7 @@
 /// <p>Specifies the Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoTuneOptionsOutput {
+pub struct AutoTuneOptionsOutput  {
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AutoTuneState>,
@@ -13,11 +13,11 @@ pub struct AutoTuneOptionsOutput {
 }
 impl AutoTuneOptionsOutput {
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AutoTuneState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AutoTuneState> {
         self.state.as_ref()
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AutoTuneOptionsOutput {
 
 /// A builder for [`AutoTuneOptionsOutput`](crate::types::AutoTuneOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoTuneOptionsOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::AutoTuneState>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl AutoTuneOptionsOutputBuilder {
     }
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AutoTuneState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AutoTuneState> {
+        &self.state
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`AutoTuneOptionsOutput`](crate::types::AutoTuneOptionsOutput).
     pub fn build(self) -> crate::types::AutoTuneOptionsOutput {
         crate::types::AutoTuneOptionsOutput {
-            state: self.state,
-            error_message: self.error_message,
+            state: self.state
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

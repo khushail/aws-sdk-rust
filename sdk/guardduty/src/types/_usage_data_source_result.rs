@@ -3,7 +3,7 @@
 /// <p>Contains information on the result of usage based on data source type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageDataSourceResult {
+pub struct UsageDataSourceResult  {
     /// <p>The data source type that generated usage.</p>
     #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
@@ -13,11 +13,11 @@ pub struct UsageDataSourceResult {
 }
 impl UsageDataSourceResult {
     /// <p>The data source type that generated usage.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>Represents the total of usage for the specified data source.</p>
-    pub fn total(&self) -> ::std::option::Option<&crate::types::Total> {
+    pub fn total(&self) -> ::std::option::Option<& crate::types::Total> {
         self.total.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl UsageDataSourceResult {
 
 /// A builder for [`UsageDataSourceResult`](crate::types::UsageDataSourceResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageDataSourceResultBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) total: ::std::option::Option<crate::types::Total>,
@@ -44,12 +42,12 @@ impl UsageDataSourceResultBuilder {
         self
     }
     /// <p>The data source type that generated usage.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
-        self.data_source = input;
-        self
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
+        self.data_source = input; self
+    }
+    /// <p>The data source type that generated usage.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
     }
     /// <p>Represents the total of usage for the specified data source.</p>
     pub fn total(mut self, input: crate::types::Total) -> Self {
@@ -58,14 +56,20 @@ impl UsageDataSourceResultBuilder {
     }
     /// <p>Represents the total of usage for the specified data source.</p>
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Total>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
+    }
+    /// <p>Represents the total of usage for the specified data source.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::Total> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`UsageDataSourceResult`](crate::types::UsageDataSourceResult).
     pub fn build(self) -> crate::types::UsageDataSourceResult {
         crate::types::UsageDataSourceResult {
-            data_source: self.data_source,
-            total: self.total,
+            data_source: self.data_source
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

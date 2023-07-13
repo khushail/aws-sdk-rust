@@ -3,14 +3,14 @@
 /// <p>An attribute of an attachment, such as the attachment name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachmentInformation {
+pub struct AttachmentInformation  {
     /// <p>The name of the attachment.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentInformation {
     /// <p>The name of the attachment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl AttachmentInformation {
 
 /// A builder for [`AttachmentInformation`](crate::types::AttachmentInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachmentInformationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl AttachmentInformationBuilder {
     }
     /// <p>The name of the attachment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the attachment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AttachmentInformation`](crate::types::AttachmentInformation).
     pub fn build(self) -> crate::types::AttachmentInformation {
-        crate::types::AttachmentInformation { name: self.name }
+        crate::types::AttachmentInformation {
+            name: self.name
+            ,
+        }
     }
 }
+

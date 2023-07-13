@@ -3,7 +3,7 @@
 /// <p>Additional options for streaming.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KafkaStreamingSourceOptions {
+pub struct KafkaStreamingSourceOptions  {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
     #[doc(hidden)]
     pub bootstrap_servers: ::std::option::Option<::std::string::String>,
@@ -61,43 +61,43 @@ pub struct KafkaStreamingSourceOptions {
 }
 impl KafkaStreamingSourceOptions {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
-    pub fn bootstrap_servers(&self) -> ::std::option::Option<&str> {
+    pub fn bootstrap_servers(&self) -> ::std::option::Option<& str> {
         self.bootstrap_servers.as_deref()
     }
     /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
-    pub fn security_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn security_protocol(&self) -> ::std::option::Option<& str> {
         self.security_protocol.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
+    pub fn topic_name(&self) -> ::std::option::Option<& str> {
         self.topic_name.as_deref()
     }
     /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
-    pub fn assign(&self) -> ::std::option::Option<&str> {
+    pub fn assign(&self) -> ::std::option::Option<& str> {
         self.assign.as_deref()
     }
     /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
-    pub fn subscribe_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn subscribe_pattern(&self) -> ::std::option::Option<& str> {
         self.subscribe_pattern.as_deref()
     }
     /// <p>An optional classification.</p>
-    pub fn classification(&self) -> ::std::option::Option<&str> {
+    pub fn classification(&self) -> ::std::option::Option<& str> {
         self.classification.as_deref()
     }
     /// <p>Specifies the delimiter character.</p>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
-    pub fn starting_offsets(&self) -> ::std::option::Option<&str> {
+    pub fn starting_offsets(&self) -> ::std::option::Option<& str> {
         self.starting_offsets.as_deref()
     }
     /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
-    pub fn ending_offsets(&self) -> ::std::option::Option<&str> {
+    pub fn ending_offsets(&self) -> ::std::option::Option<& str> {
         self.ending_offsets.as_deref()
     }
     /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
@@ -125,11 +125,11 @@ impl KafkaStreamingSourceOptions {
         self.include_headers
     }
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn add_record_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn add_record_timestamp(&self) -> ::std::option::Option<& str> {
         self.add_record_timestamp.as_deref()
     }
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn emit_consumer_lag_metrics(&self) -> ::std::option::Option<&str> {
+    pub fn emit_consumer_lag_metrics(&self) -> ::std::option::Option<& str> {
         self.emit_consumer_lag_metrics.as_deref()
     }
 }
@@ -142,9 +142,7 @@ impl KafkaStreamingSourceOptions {
 
 /// A builder for [`KafkaStreamingSourceOptions`](crate::types::KafkaStreamingSourceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KafkaStreamingSourceOptionsBuilder {
     pub(crate) bootstrap_servers: ::std::option::Option<::std::string::String>,
     pub(crate) security_protocol: ::std::option::Option<::std::string::String>,
@@ -167,52 +165,43 @@ pub struct KafkaStreamingSourceOptionsBuilder {
 }
 impl KafkaStreamingSourceOptionsBuilder {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
-    pub fn bootstrap_servers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bootstrap_servers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bootstrap_servers = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
-    pub fn set_bootstrap_servers(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.bootstrap_servers = input;
-        self
+    pub fn set_bootstrap_servers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bootstrap_servers = input; self
+    }
+    /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
+    pub fn get_bootstrap_servers(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bootstrap_servers
     }
     /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
-    pub fn security_protocol(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
-    pub fn set_security_protocol(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.security_protocol = input;
-        self
+    pub fn set_security_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_protocol = input; self
+    }
+    /// <p>The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.</p>
+    pub fn get_security_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_protocol
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_name = input;
-        self
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_name = input; self
+    }
+    /// <p>The name of the connection.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -221,8 +210,11 @@ impl KafkaStreamingSourceOptionsBuilder {
     }
     /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
+    }
+    /// <p>The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_name
     }
     /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
     pub fn assign(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -231,40 +223,37 @@ impl KafkaStreamingSourceOptionsBuilder {
     }
     /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
     pub fn set_assign(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assign = input;
-        self
+        self.assign = input; self
+    }
+    /// <p>The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    pub fn get_assign(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assign
     }
     /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
-    pub fn subscribe_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscribe_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscribe_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
-    pub fn set_subscribe_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.subscribe_pattern = input;
-        self
+    pub fn set_subscribe_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subscribe_pattern = input; self
+    }
+    /// <p>A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.</p>
+    pub fn get_subscribe_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscribe_pattern
     }
     /// <p>An optional classification.</p>
-    pub fn classification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional classification.</p>
-    pub fn set_classification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.classification = input;
-        self
+    pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.classification = input; self
+    }
+    /// <p>An optional classification.</p>
+    pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
+        &self.classification
     }
     /// <p>Specifies the delimiter character.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -273,40 +262,37 @@ impl KafkaStreamingSourceOptionsBuilder {
     }
     /// <p>Specifies the delimiter character.</p>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
+    }
+    /// <p>Specifies the delimiter character.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
     }
     /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
-    pub fn starting_offsets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_offsets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_offsets = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
-    pub fn set_starting_offsets(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.starting_offsets = input;
-        self
+    pub fn set_starting_offsets(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.starting_offsets = input; self
+    }
+    /// <p>The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.</p>
+    pub fn get_starting_offsets(&self) -> &::std::option::Option<::std::string::String> {
+        &self.starting_offsets
     }
     /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
-    pub fn ending_offsets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ending_offsets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ending_offsets = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
-    pub fn set_ending_offsets(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ending_offsets = input;
-        self
+    pub fn set_ending_offsets(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ending_offsets = input; self
+    }
+    /// <p>The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.</p>
+    pub fn get_ending_offsets(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ending_offsets
     }
     /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
     pub fn poll_timeout_ms(mut self, input: i64) -> Self {
@@ -315,8 +301,11 @@ impl KafkaStreamingSourceOptionsBuilder {
     }
     /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
     pub fn set_poll_timeout_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.poll_timeout_ms = input;
-        self
+        self.poll_timeout_ms = input; self
+    }
+    /// <p>The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.</p>
+    pub fn get_poll_timeout_ms(&self) -> &::std::option::Option<i64> {
+        &self.poll_timeout_ms
     }
     /// <p>The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.</p>
     pub fn num_retries(mut self, input: i32) -> Self {
@@ -325,8 +314,11 @@ impl KafkaStreamingSourceOptionsBuilder {
     }
     /// <p>The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.</p>
     pub fn set_num_retries(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_retries = input;
-        self
+        self.num_retries = input; self
+    }
+    /// <p>The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.</p>
+    pub fn get_num_retries(&self) -> &::std::option::Option<i32> {
+        &self.num_retries
     }
     /// <p>The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.</p>
     pub fn retry_interval_ms(mut self, input: i64) -> Self {
@@ -335,8 +327,11 @@ impl KafkaStreamingSourceOptionsBuilder {
     }
     /// <p>The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.</p>
     pub fn set_retry_interval_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.retry_interval_ms = input;
-        self
+        self.retry_interval_ms = input; self
+    }
+    /// <p>The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.</p>
+    pub fn get_retry_interval_ms(&self) -> &::std::option::Option<i64> {
+        &self.retry_interval_ms
     }
     /// <p>The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.</p>
     pub fn max_offsets_per_trigger(mut self, input: i64) -> Self {
@@ -345,8 +340,11 @@ impl KafkaStreamingSourceOptionsBuilder {
     }
     /// <p>The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.</p>
     pub fn set_max_offsets_per_trigger(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_offsets_per_trigger = input;
-        self
+        self.max_offsets_per_trigger = input; self
+    }
+    /// <p>The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.</p>
+    pub fn get_max_offsets_per_trigger(&self) -> &::std::option::Option<i64> {
+        &self.max_offsets_per_trigger
     }
     /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
     pub fn min_partitions(mut self, input: i32) -> Self {
@@ -355,8 +353,11 @@ impl KafkaStreamingSourceOptionsBuilder {
     }
     /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
     pub fn set_min_partitions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_partitions = input;
-        self
+        self.min_partitions = input; self
+    }
+    /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
+    pub fn get_min_partitions(&self) -> &::std::option::Option<i32> {
+        &self.min_partitions
     }
     /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
     pub fn include_headers(mut self, input: bool) -> Self {
@@ -365,62 +366,78 @@ impl KafkaStreamingSourceOptionsBuilder {
     }
     /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
     pub fn set_include_headers(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_headers = input;
-        self
+        self.include_headers = input; self
+    }
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    pub fn get_include_headers(&self) -> &::std::option::Option<bool> {
+        &self.include_headers
     }
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn add_record_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_record_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.add_record_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn set_add_record_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.add_record_timestamp = input;
-        self
+    pub fn set_add_record_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.add_record_timestamp = input; self
+    }
+    /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn get_add_record_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.add_record_timestamp
     }
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn emit_consumer_lag_metrics(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn emit_consumer_lag_metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.emit_consumer_lag_metrics = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn set_emit_consumer_lag_metrics(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.emit_consumer_lag_metrics = input;
-        self
+    pub fn set_emit_consumer_lag_metrics(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.emit_consumer_lag_metrics = input; self
+    }
+    /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
+    pub fn get_emit_consumer_lag_metrics(&self) -> &::std::option::Option<::std::string::String> {
+        &self.emit_consumer_lag_metrics
     }
     /// Consumes the builder and constructs a [`KafkaStreamingSourceOptions`](crate::types::KafkaStreamingSourceOptions).
     pub fn build(self) -> crate::types::KafkaStreamingSourceOptions {
         crate::types::KafkaStreamingSourceOptions {
-            bootstrap_servers: self.bootstrap_servers,
-            security_protocol: self.security_protocol,
-            connection_name: self.connection_name,
-            topic_name: self.topic_name,
-            assign: self.assign,
-            subscribe_pattern: self.subscribe_pattern,
-            classification: self.classification,
-            delimiter: self.delimiter,
-            starting_offsets: self.starting_offsets,
-            ending_offsets: self.ending_offsets,
-            poll_timeout_ms: self.poll_timeout_ms,
-            num_retries: self.num_retries,
-            retry_interval_ms: self.retry_interval_ms,
-            max_offsets_per_trigger: self.max_offsets_per_trigger,
-            min_partitions: self.min_partitions,
-            include_headers: self.include_headers,
-            add_record_timestamp: self.add_record_timestamp,
-            emit_consumer_lag_metrics: self.emit_consumer_lag_metrics,
+            bootstrap_servers: self.bootstrap_servers
+            ,
+            security_protocol: self.security_protocol
+            ,
+            connection_name: self.connection_name
+            ,
+            topic_name: self.topic_name
+            ,
+            assign: self.assign
+            ,
+            subscribe_pattern: self.subscribe_pattern
+            ,
+            classification: self.classification
+            ,
+            delimiter: self.delimiter
+            ,
+            starting_offsets: self.starting_offsets
+            ,
+            ending_offsets: self.ending_offsets
+            ,
+            poll_timeout_ms: self.poll_timeout_ms
+            ,
+            num_retries: self.num_retries
+            ,
+            retry_interval_ms: self.retry_interval_ms
+            ,
+            max_offsets_per_trigger: self.max_offsets_per_trigger
+            ,
+            min_partitions: self.min_partitions
+            ,
+            include_headers: self.include_headers
+            ,
+            add_record_timestamp: self.add_record_timestamp
+            ,
+            emit_consumer_lag_metrics: self.emit_consumer_lag_metrics
+            ,
         }
     }
 }
+

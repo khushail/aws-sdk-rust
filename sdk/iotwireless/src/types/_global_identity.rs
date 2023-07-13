@@ -3,7 +3,7 @@
 /// <p>Global identity information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlobalIdentity {
+pub struct GlobalIdentity  {
     /// <p>Location area code of the global identity.</p>
     #[doc(hidden)]
     pub lac: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl GlobalIdentity {
 
 /// A builder for [`GlobalIdentity`](crate::types::GlobalIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlobalIdentityBuilder {
     pub(crate) lac: ::std::option::Option<i32>,
     pub(crate) geran_cid: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl GlobalIdentityBuilder {
     }
     /// <p>Location area code of the global identity.</p>
     pub fn set_lac(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lac = input;
-        self
+        self.lac = input; self
+    }
+    /// <p>Location area code of the global identity.</p>
+    pub fn get_lac(&self) -> &::std::option::Option<i32> {
+        &self.lac
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
     pub fn geran_cid(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl GlobalIdentityBuilder {
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
     pub fn set_geran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.geran_cid = input;
-        self
+        self.geran_cid = input; self
+    }
+    /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
+    pub fn get_geran_cid(&self) -> &::std::option::Option<i32> {
+        &self.geran_cid
     }
     /// Consumes the builder and constructs a [`GlobalIdentity`](crate::types::GlobalIdentity).
     pub fn build(self) -> crate::types::GlobalIdentity {
         crate::types::GlobalIdentity {
-            lac: self.lac,
-            geran_cid: self.geran_cid,
+            lac: self.lac
+            ,
+            geran_cid: self.geran_cid
+            ,
         }
     }
 }
+

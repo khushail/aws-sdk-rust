@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceRoleForAccountOutput {
+pub struct GetServiceRoleForAccountOutput  {
     /// The time when the service role was associated with the account.
     #[doc(hidden)]
     pub associated_at: ::std::option::Option<::std::string::String>,
@@ -13,31 +13,29 @@ pub struct GetServiceRoleForAccountOutput {
 }
 impl GetServiceRoleForAccountOutput {
     /// The time when the service role was associated with the account.
-    pub fn associated_at(&self) -> ::std::option::Option<&str> {
+    pub fn associated_at(&self) -> ::std::option::Option<& str> {
         self.associated_at.as_deref()
     }
     /// The ARN of the role which is associated with the account.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetServiceRoleForAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetServiceRoleForAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceRoleForAccountOutput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput).
-    pub fn builder() -> crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountOutputBuilder{
+    pub fn builder() -> crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountOutputBuilder {
         crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceRoleForAccountOutput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceRoleForAccountOutputBuilder {
     pub(crate) associated_at: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -45,20 +43,17 @@ pub struct GetServiceRoleForAccountOutputBuilder {
 }
 impl GetServiceRoleForAccountOutputBuilder {
     /// The time when the service role was associated with the account.
-    pub fn associated_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_at = ::std::option::Option::Some(input.into());
         self
     }
     /// The time when the service role was associated with the account.
-    pub fn set_associated_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.associated_at = input;
-        self
+    pub fn set_associated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.associated_at = input; self
+    }
+    /// The time when the service role was associated with the account.
+    pub fn get_associated_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_at
     }
     /// The ARN of the role which is associated with the account.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,26 +62,30 @@ impl GetServiceRoleForAccountOutputBuilder {
     }
     /// The ARN of the role which is associated with the account.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// The ARN of the role which is associated with the account.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetServiceRoleForAccountOutput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput {
+    pub fn build(self) -> crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput {
         crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput {
-            associated_at: self.associated_at,
-            role_arn: self.role_arn,
+            associated_at: self.associated_at
+            ,
+            role_arn: self.role_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

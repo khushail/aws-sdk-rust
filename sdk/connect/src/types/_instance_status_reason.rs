@@ -3,14 +3,14 @@
 /// <p>Relevant details why the instance was not successfully created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceStatusReason {
+pub struct InstanceStatusReason  {
     /// <p>The message.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl InstanceStatusReason {
     /// <p>The message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl InstanceStatusReason {
 
 /// A builder for [`InstanceStatusReason`](crate::types::InstanceStatusReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceStatusReasonBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl InstanceStatusReasonBuilder {
     }
     /// <p>The message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`InstanceStatusReason`](crate::types::InstanceStatusReason).
     pub fn build(self) -> crate::types::InstanceStatusReason {
         crate::types::InstanceStatusReason {
-            message: self.message,
+            message: self.message
+            ,
         }
     }
 }
+

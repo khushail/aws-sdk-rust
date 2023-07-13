@@ -3,7 +3,7 @@
 /// <p>Represents the result of a get run request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRunOutput {
+pub struct GetRunOutput  {
     /// <p>The run to get results from.</p>
     #[doc(hidden)]
     pub run: ::std::option::Option<crate::types::Run>,
@@ -11,15 +11,15 @@ pub struct GetRunOutput {
 }
 impl GetRunOutput {
     /// <p>The run to get results from.</p>
-    pub fn run(&self) -> ::std::option::Option<&crate::types::Run> {
+    pub fn run(&self) -> ::std::option::Option<& crate::types::Run> {
         self.run.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRunOutput {
     /// Creates a new builder-style object to manufacture [`GetRunOutput`](crate::operation::get_run::GetRunOutput).
     pub fn builder() -> crate::operation::get_run::builders::GetRunOutputBuilder {
@@ -29,9 +29,7 @@ impl GetRunOutput {
 
 /// A builder for [`GetRunOutput`](crate::operation::get_run::GetRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRunOutputBuilder {
     pub(crate) run: ::std::option::Option<crate::types::Run>,
     _request_id: Option<String>,
@@ -44,23 +42,28 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run to get results from.</p>
     pub fn set_run(mut self, input: ::std::option::Option<crate::types::Run>) -> Self {
-        self.run = input;
-        self
+        self.run = input; self
+    }
+    /// <p>The run to get results from.</p>
+    pub fn get_run(&self) -> &::std::option::Option<crate::types::Run> {
+        &self.run
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRunOutput`](crate::operation::get_run::GetRunOutput).
     pub fn build(self) -> crate::operation::get_run::GetRunOutput {
         crate::operation::get_run::GetRunOutput {
-            run: self.run,
+            run: self.run
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

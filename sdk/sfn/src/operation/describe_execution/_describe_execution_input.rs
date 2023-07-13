@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExecutionInput {
+pub struct DescribeExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
     #[doc(hidden)]
     pub execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
-    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_arn(&self) -> ::std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
 }
 impl DescribeExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
-    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionInputBuilder {
         crate::operation::describe_execution::builders::DescribeExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExecutionInputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
-    pub fn execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
-    pub fn set_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.execution_arn = input;
-        self
+    pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
+    pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_arn
     }
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_execution::DescribeExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_execution::DescribeExecutionInput {
-                execution_arn: self.execution_arn,
-            },
+                execution_arn: self.execution_arn
+                ,
+            }
         )
     }
 }
+

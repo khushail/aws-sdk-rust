@@ -3,7 +3,7 @@
 /// Placeholder documentation for CreateInputResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInputOutput {
+pub struct CreateInputOutput  {
     /// Placeholder documentation for Input
     #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::Input>,
@@ -11,15 +11,15 @@ pub struct CreateInputOutput {
 }
 impl CreateInputOutput {
     /// Placeholder documentation for Input
-    pub fn input(&self) -> ::std::option::Option<&crate::types::Input> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::Input> {
         self.input.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateInputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateInputOutput {
     /// Creates a new builder-style object to manufacture [`CreateInputOutput`](crate::operation::create_input::CreateInputOutput).
     pub fn builder() -> crate::operation::create_input::builders::CreateInputOutputBuilder {
@@ -29,9 +29,7 @@ impl CreateInputOutput {
 
 /// A builder for [`CreateInputOutput`](crate::operation::create_input::CreateInputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInputOutputBuilder {
     pub(crate) input: ::std::option::Option<crate::types::Input>,
     _request_id: Option<String>,
@@ -44,23 +42,28 @@ impl CreateInputOutputBuilder {
     }
     /// Placeholder documentation for Input
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
+    }
+    /// Placeholder documentation for Input
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
+        &self.input
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateInputOutput`](crate::operation::create_input::CreateInputOutput).
     pub fn build(self) -> crate::operation::create_input::CreateInputOutput {
         crate::operation::create_input::CreateInputOutput {
-            input: self.input,
+            input: self.input
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

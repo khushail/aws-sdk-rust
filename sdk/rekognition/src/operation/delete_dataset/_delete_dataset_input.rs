@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDatasetInput {
+pub struct DeleteDatasetInput  {
     /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
     #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDatasetInput {
     /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteDatasetInput {
 
 /// A builder for [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatasetInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteDatasetInputBuilder {
     }
     /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
+    }
+    /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dataset::DeleteDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_dataset::DeleteDatasetInput {
-            dataset_arn: self.dataset_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_dataset::DeleteDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_dataset::DeleteDatasetInput {
+                dataset_arn: self.dataset_arn
+                ,
+            }
+        )
     }
 }
+

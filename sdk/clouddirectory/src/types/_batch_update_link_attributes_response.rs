@@ -3,7 +3,8 @@
 /// <p>Represents the output of a <code>UpdateLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateLinkAttributesResponse {}
+pub struct BatchUpdateLinkAttributesResponse  {
+}
 impl BatchUpdateLinkAttributesResponse {
     /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributesResponse`](crate::types::BatchUpdateLinkAttributesResponse).
     pub fn builder() -> crate::types::builders::BatchUpdateLinkAttributesResponseBuilder {
@@ -13,13 +14,14 @@ impl BatchUpdateLinkAttributesResponse {
 
 /// A builder for [`BatchUpdateLinkAttributesResponse`](crate::types::BatchUpdateLinkAttributesResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct BatchUpdateLinkAttributesResponseBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct BatchUpdateLinkAttributesResponseBuilder {
+}
 impl BatchUpdateLinkAttributesResponseBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateLinkAttributesResponse`](crate::types::BatchUpdateLinkAttributesResponse).
     pub fn build(self) -> crate::types::BatchUpdateLinkAttributesResponse {
-        crate::types::BatchUpdateLinkAttributesResponse {}
+        crate::types::BatchUpdateLinkAttributesResponse {
+        }
     }
 }
+

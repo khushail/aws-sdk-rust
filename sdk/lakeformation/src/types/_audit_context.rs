@@ -3,14 +3,14 @@
 /// <p>A structure used to include auditing information on the privileged API. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditContext {
+pub struct AuditContext  {
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
     #[doc(hidden)]
     pub additional_audit_context: ::std::option::Option<::std::string::String>,
 }
 impl AuditContext {
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
-    pub fn additional_audit_context(&self) -> ::std::option::Option<&str> {
+    pub fn additional_audit_context(&self) -> ::std::option::Option<& str> {
         self.additional_audit_context.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl AuditContext {
 
 /// A builder for [`AuditContext`](crate::types::AuditContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditContextBuilder {
     pub(crate) additional_audit_context: ::std::option::Option<::std::string::String>,
 }
 impl AuditContextBuilder {
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
-    pub fn additional_audit_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_audit_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_audit_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
-    pub fn set_additional_audit_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.additional_audit_context = input;
-        self
+    pub fn set_additional_audit_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.additional_audit_context = input; self
+    }
+    /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn get_additional_audit_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_audit_context
     }
     /// Consumes the builder and constructs a [`AuditContext`](crate::types::AuditContext).
     pub fn build(self) -> crate::types::AuditContext {
         crate::types::AuditContext {
-            additional_audit_context: self.additional_audit_context,
+            additional_audit_context: self.additional_audit_context
+            ,
         }
     }
 }
+

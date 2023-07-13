@@ -3,7 +3,7 @@
 /// <p>Details about a custom plugin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomPluginDescription {
+pub struct CustomPluginDescription  {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     #[doc(hidden)]
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CustomPluginDescription {
 }
 impl CustomPluginDescription {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> ::std::option::Option<& str> {
         self.custom_plugin_arn.as_deref()
     }
     /// <p>The revision of the custom plugin.</p>
@@ -30,29 +30,24 @@ impl CustomPluginDescription {
 
 /// A builder for [`CustomPluginDescription`](crate::types::CustomPluginDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomPluginDescriptionBuilder {
     pub(crate) custom_plugin_arn: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<i64>,
 }
 impl CustomPluginDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn set_custom_plugin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.custom_plugin_arn = input;
-        self
+    pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_plugin_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_plugin_arn
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn revision(mut self, input: i64) -> Self {
@@ -61,14 +56,21 @@ impl CustomPluginDescriptionBuilder {
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
+    }
+    /// <p>The revision of the custom plugin.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`CustomPluginDescription`](crate::types::CustomPluginDescription).
     pub fn build(self) -> crate::types::CustomPluginDescription {
         crate::types::CustomPluginDescription {
-            custom_plugin_arn: self.custom_plugin_arn,
-            revision: self.revision.unwrap_or_default(),
+            custom_plugin_arn: self.custom_plugin_arn
+            ,
+            revision: self.revision
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

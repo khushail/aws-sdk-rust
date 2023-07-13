@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEarthObservationJobOutput {
+pub struct GetEarthObservationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -44,22 +44,20 @@ pub struct GetEarthObservationJobOutput {
     pub export_error_details: ::std::option::Option<crate::types::ExportErrorDetails>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEarthObservationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Earth Observation job.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The creation time of the initiated Earth Observation job.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The duration of Earth Observation job, in seconds.</p>
@@ -67,73 +65,61 @@ impl GetEarthObservationJobOutput {
         self.duration_in_seconds
     }
     /// <p>The status of a previously initiated Earth Observation job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EarthObservationJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EarthObservationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Input data for the Earth Observation job.</p>
-    pub fn input_config(&self) -> ::std::option::Option<&crate::types::InputConfigOutput> {
+    pub fn input_config(&self) -> ::std::option::Option<& crate::types::InputConfigOutput> {
         self.input_config.as_ref()
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn job_config(&self) -> ::std::option::Option<&crate::types::JobConfigInput> {
+    pub fn job_config(&self) -> ::std::option::Option<& crate::types::JobConfigInput> {
         self.job_config.as_ref()
     }
     /// <p>Bands available in the output of an operation.</p>
-    pub fn output_bands(&self) -> ::std::option::Option<&[crate::types::OutputBand]> {
+    pub fn output_bands(&self) -> ::std::option::Option<& [crate::types::OutputBand]> {
         self.output_bands.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Details about the errors generated during the Earth Observation job.</p>
-    pub fn error_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EarthObservationJobErrorDetails> {
+    pub fn error_details(&self) -> ::std::option::Option<& crate::types::EarthObservationJobErrorDetails> {
         self.error_details.as_ref()
     }
     /// <p>The status of the Earth Observation job.</p>
-    pub fn export_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EarthObservationJobExportStatus> {
+    pub fn export_status(&self) -> ::std::option::Option<& crate::types::EarthObservationJobExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>Details about the errors generated during ExportEarthObservationJob.</p>
-    pub fn export_error_details(&self) -> ::std::option::Option<&crate::types::ExportErrorDetails> {
+    pub fn export_error_details(&self) -> ::std::option::Option<& crate::types::ExportErrorDetails> {
         self.export_error_details.as_ref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEarthObservationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`GetEarthObservationJobOutput`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::get_earth_observation_job::builders::GetEarthObservationJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_earth_observation_job::builders::GetEarthObservationJobOutputBuilder {
         crate::operation::get_earth_observation_job::builders::GetEarthObservationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEarthObservationJobOutput`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEarthObservationJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -148,9 +134,7 @@ pub struct GetEarthObservationJobOutputBuilder {
     pub(crate) error_details: ::std::option::Option<crate::types::EarthObservationJobErrorDetails>,
     pub(crate) export_status: ::std::option::Option<crate::types::EarthObservationJobExportStatus>,
     pub(crate) export_error_details: ::std::option::Option<crate::types::ExportErrorDetails>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEarthObservationJobOutputBuilder {
@@ -161,8 +145,11 @@ impl GetEarthObservationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the Earth Observation job.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,8 +158,11 @@ impl GetEarthObservationJobOutputBuilder {
     }
     /// <p>The name of the Earth Observation job.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the Earth Observation job.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The creation time of the initiated Earth Observation job.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -180,12 +170,12 @@ impl GetEarthObservationJobOutputBuilder {
         self
     }
     /// <p>The creation time of the initiated Earth Observation job.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The creation time of the initiated Earth Observation job.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The duration of Earth Observation job, in seconds.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -194,8 +184,11 @@ impl GetEarthObservationJobOutputBuilder {
     }
     /// <p>The duration of Earth Observation job, in seconds.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
+    }
+    /// <p>The duration of Earth Observation job, in seconds.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_seconds
     }
     /// <p>The status of a previously initiated Earth Observation job.</p>
     pub fn status(mut self, input: crate::types::EarthObservationJobStatus) -> Self {
@@ -203,12 +196,12 @@ impl GetEarthObservationJobOutputBuilder {
         self
     }
     /// <p>The status of a previously initiated Earth Observation job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EarthObservationJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EarthObservationJobStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of a previously initiated Earth Observation job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EarthObservationJobStatus> {
+        &self.status
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -217,8 +210,11 @@ impl GetEarthObservationJobOutputBuilder {
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
+    }
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>Input data for the Earth Observation job.</p>
     pub fn input_config(mut self, input: crate::types::InputConfigOutput) -> Self {
@@ -226,12 +222,12 @@ impl GetEarthObservationJobOutputBuilder {
         self
     }
     /// <p>Input data for the Earth Observation job.</p>
-    pub fn set_input_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputConfigOutput>,
-    ) -> Self {
-        self.input_config = input;
-        self
+    pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::InputConfigOutput>) -> Self {
+        self.input_config = input; self
+    }
+    /// <p>Input data for the Earth Observation job.</p>
+    pub fn get_input_config(&self) -> &::std::option::Option<crate::types::InputConfigOutput> {
+        &self.input_config
     }
     /// <p>An object containing information about the job configuration.</p>
     pub fn job_config(mut self, input: crate::types::JobConfigInput) -> Self {
@@ -239,12 +235,12 @@ impl GetEarthObservationJobOutputBuilder {
         self
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn set_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobConfigInput>,
-    ) -> Self {
-        self.job_config = input;
-        self
+    pub fn set_job_config(mut self, input: ::std::option::Option<crate::types::JobConfigInput>) -> Self {
+        self.job_config = input; self
+    }
+    /// <p>An object containing information about the job configuration.</p>
+    pub fn get_job_config(&self) -> &::std::option::Option<crate::types::JobConfigInput> {
+        &self.job_config
     }
     /// Appends an item to `output_bands`.
     ///
@@ -253,33 +249,30 @@ impl GetEarthObservationJobOutputBuilder {
     /// <p>Bands available in the output of an operation.</p>
     pub fn output_bands(mut self, input: crate::types::OutputBand) -> Self {
         let mut v = self.output_bands.unwrap_or_default();
-        v.push(input);
-        self.output_bands = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_bands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Bands available in the output of an operation.</p>
-    pub fn set_output_bands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputBand>>,
-    ) -> Self {
-        self.output_bands = input;
-        self
+    pub fn set_output_bands(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputBand>>) -> Self {
+        self.output_bands = input; self
+    }
+    /// <p>Bands available in the output of an operation.</p>
+    pub fn get_output_bands(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputBand>> {
+        &self.output_bands
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// <p>Details about the errors generated during the Earth Observation job.</p>
     pub fn error_details(mut self, input: crate::types::EarthObservationJobErrorDetails) -> Self {
@@ -287,12 +280,12 @@ impl GetEarthObservationJobOutputBuilder {
         self
     }
     /// <p>Details about the errors generated during the Earth Observation job.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::EarthObservationJobErrorDetails>,
-    ) -> Self {
-        self.error_details = input;
-        self
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::EarthObservationJobErrorDetails>) -> Self {
+        self.error_details = input; self
+    }
+    /// <p>Details about the errors generated during the Earth Observation job.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::EarthObservationJobErrorDetails> {
+        &self.error_details
     }
     /// <p>The status of the Earth Observation job.</p>
     pub fn export_status(mut self, input: crate::types::EarthObservationJobExportStatus) -> Self {
@@ -300,12 +293,12 @@ impl GetEarthObservationJobOutputBuilder {
         self
     }
     /// <p>The status of the Earth Observation job.</p>
-    pub fn set_export_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EarthObservationJobExportStatus>,
-    ) -> Self {
-        self.export_status = input;
-        self
+    pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::EarthObservationJobExportStatus>) -> Self {
+        self.export_status = input; self
+    }
+    /// <p>The status of the Earth Observation job.</p>
+    pub fn get_export_status(&self) -> &::std::option::Option<crate::types::EarthObservationJobExportStatus> {
+        &self.export_status
     }
     /// <p>Details about the errors generated during ExportEarthObservationJob.</p>
     pub fn export_error_details(mut self, input: crate::types::ExportErrorDetails) -> Self {
@@ -313,67 +306,74 @@ impl GetEarthObservationJobOutputBuilder {
         self
     }
     /// <p>Details about the errors generated during ExportEarthObservationJob.</p>
-    pub fn set_export_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportErrorDetails>,
-    ) -> Self {
-        self.export_error_details = input;
-        self
+    pub fn set_export_error_details(mut self, input: ::std::option::Option<crate::types::ExportErrorDetails>) -> Self {
+        self.export_error_details = input; self
+    }
+    /// <p>Details about the errors generated during ExportEarthObservationJob.</p>
+    pub fn get_export_error_details(&self) -> &::std::option::Option<crate::types::ExportErrorDetails> {
+        &self.export_error_details
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Each tag consists of a key and a value.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetEarthObservationJobOutput`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_earth_observation_job::GetEarthObservationJobOutput {
+    pub fn build(self) -> crate::operation::get_earth_observation_job::GetEarthObservationJobOutput {
         crate::operation::get_earth_observation_job::GetEarthObservationJobOutput {
-            arn: self.arn,
-            name: self.name,
-            creation_time: self.creation_time,
-            duration_in_seconds: self.duration_in_seconds,
-            status: self.status,
-            kms_key_id: self.kms_key_id,
-            input_config: self.input_config,
-            job_config: self.job_config,
-            output_bands: self.output_bands,
-            execution_role_arn: self.execution_role_arn,
-            error_details: self.error_details,
-            export_status: self.export_status,
-            export_error_details: self.export_error_details,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            creation_time: self.creation_time
+            ,
+            duration_in_seconds: self.duration_in_seconds
+            ,
+            status: self.status
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            input_config: self.input_config
+            ,
+            job_config: self.job_config
+            ,
+            output_bands: self.output_bands
+            ,
+            execution_role_arn: self.execution_role_arn
+            ,
+            error_details: self.error_details
+            ,
+            export_status: self.export_status
+            ,
+            export_error_details: self.export_error_details
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

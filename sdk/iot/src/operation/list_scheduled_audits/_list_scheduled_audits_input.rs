@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListScheduledAuditsInput {
+pub struct ListScheduledAuditsInput  {
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListScheduledAuditsInput {
 }
 impl ListScheduledAuditsInput {
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -22,18 +22,14 @@ impl ListScheduledAuditsInput {
 }
 impl ListScheduledAuditsInput {
     /// Creates a new builder-style object to manufacture [`ListScheduledAuditsInput`](crate::operation::list_scheduled_audits::ListScheduledAuditsInput).
-    pub fn builder(
-    ) -> crate::operation::list_scheduled_audits::builders::ListScheduledAuditsInputBuilder {
-        crate::operation::list_scheduled_audits::builders::ListScheduledAuditsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_scheduled_audits::builders::ListScheduledAuditsInputBuilder {
+        crate::operation::list_scheduled_audits::builders::ListScheduledAuditsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListScheduledAuditsInput`](crate::operation::list_scheduled_audits::ListScheduledAuditsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduledAuditsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,8 +42,11 @@ impl ListScheduledAuditsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -56,21 +55,22 @@ impl ListScheduledAuditsInputBuilder {
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListScheduledAuditsInput`](crate::operation::list_scheduled_audits::ListScheduledAuditsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_scheduled_audits::ListScheduledAuditsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_scheduled_audits::ListScheduledAuditsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_scheduled_audits::ListScheduledAuditsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -2,210 +2,58 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAwsLogSourceInput {
-    /// <p>Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.</p>
+pub struct CreateAwsLogSourceInput  {
+    /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
     #[doc(hidden)]
-    pub input_order: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    /// <p>Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.</p>
-    #[doc(hidden)]
-    pub enable_all_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
-    /// <p>Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.</p>
-    #[doc(hidden)]
-    pub enable_two_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    /// <p>Enables data collection from all Amazon Web Services sources in specific accounts or Regions.</p>
-    #[doc(hidden)]
-    pub enable_single_dimension: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
 }
 impl CreateAwsLogSourceInput {
-    /// <p>Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.</p>
-    pub fn input_order(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.input_order.as_deref()
-    }
-    /// <p>Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.</p>
-    pub fn enable_all_dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    > {
-        self.enable_all_dimensions.as_ref()
-    }
-    /// <p>Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.</p>
-    pub fn enable_two_dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
-        self.enable_two_dimensions.as_ref()
-    }
-    /// <p>Enables data collection from all Amazon Web Services sources in specific accounts or Regions.</p>
-    pub fn enable_single_dimension(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enable_single_dimension.as_deref()
+    /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
+    pub fn sources(&self) -> ::std::option::Option<& [crate::types::AwsLogSourceConfiguration]> {
+        self.sources.as_deref()
     }
 }
 impl CreateAwsLogSourceInput {
     /// Creates a new builder-style object to manufacture [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
-    pub fn builder(
-    ) -> crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder {
+    pub fn builder() -> crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder {
         crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAwsLogSourceInputBuilder {
-    pub(crate) input_order: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    pub(crate) enable_all_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
-    pub(crate) enable_two_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    pub(crate) enable_single_dimension:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
 }
 impl CreateAwsLogSourceInputBuilder {
-    /// Appends an item to `input_order`.
+    /// Appends an item to `sources`.
     ///
-    /// To override the contents of this collection use [`set_input_order`](Self::set_input_order).
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.</p>
-    pub fn input_order(mut self, input: crate::types::Dimension) -> Self {
-        let mut v = self.input_order.unwrap_or_default();
-        v.push(input);
-        self.input_order = ::std::option::Option::Some(v);
-        self
+    /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
+    pub fn sources(mut self, input: crate::types::AwsLogSourceConfiguration) -> Self {
+        let mut v = self.sources.unwrap_or_default();
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.</p>
-    pub fn set_input_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
-        self.input_order = input;
-        self
+    /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>) -> Self {
+        self.sources = input; self
     }
-    /// Adds a key-value pair to `enable_all_dimensions`.
-    ///
-    /// To override the contents of this collection use [`set_enable_all_dimensions`](Self::set_enable_all_dimensions).
-    ///
-    /// <p>Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.</p>
-    pub fn enable_all_dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    ) -> Self {
-        let mut hash_map = self.enable_all_dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.enable_all_dimensions = ::std::option::Option::Some(hash_map);
-        self
-    }
-    /// <p>Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.</p>
-    pub fn set_enable_all_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
-    ) -> Self {
-        self.enable_all_dimensions = input;
-        self
-    }
-    /// Adds a key-value pair to `enable_two_dimensions`.
-    ///
-    /// To override the contents of this collection use [`set_enable_two_dimensions`](Self::set_enable_two_dimensions).
-    ///
-    /// <p>Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.</p>
-    pub fn enable_two_dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
-        let mut hash_map = self.enable_two_dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.enable_two_dimensions = ::std::option::Option::Some(hash_map);
-        self
-    }
-    /// <p>Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.</p>
-    pub fn set_enable_two_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    ) -> Self {
-        self.enable_two_dimensions = input;
-        self
-    }
-    /// Appends an item to `enable_single_dimension`.
-    ///
-    /// To override the contents of this collection use [`set_enable_single_dimension`](Self::set_enable_single_dimension).
-    ///
-    /// <p>Enables data collection from all Amazon Web Services sources in specific accounts or Regions.</p>
-    pub fn enable_single_dimension(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self.enable_single_dimension.unwrap_or_default();
-        v.push(input.into());
-        self.enable_single_dimension = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>Enables data collection from all Amazon Web Services sources in specific accounts or Regions.</p>
-    pub fn set_enable_single_dimension(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.enable_single_dimension = input;
-        self
+    /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_aws_log_source::CreateAwsLogSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_aws_log_source::CreateAwsLogSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_aws_log_source::CreateAwsLogSourceInput {
-                input_order: self.input_order,
-                enable_all_dimensions: self.enable_all_dimensions,
-                enable_two_dimensions: self.enable_two_dimensions,
-                enable_single_dimension: self.enable_single_dimension,
-            },
+                sources: self.sources
+                ,
+            }
         )
     }
 }
+

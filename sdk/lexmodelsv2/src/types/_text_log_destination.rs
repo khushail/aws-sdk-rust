@@ -3,16 +3,14 @@
 /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextLogDestination {
+pub struct TextLogDestination  {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
     #[doc(hidden)]
     pub cloud_watch: ::std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
 }
 impl TextLogDestination {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
-    pub fn cloud_watch(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogGroupLogDestination> {
+    pub fn cloud_watch(&self) -> ::std::option::Option<& crate::types::CloudWatchLogGroupLogDestination> {
         self.cloud_watch.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl TextLogDestination {
 
 /// A builder for [`TextLogDestination`](crate::types::TextLogDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextLogDestinationBuilder {
     pub(crate) cloud_watch: ::std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
 }
@@ -38,17 +34,19 @@ impl TextLogDestinationBuilder {
         self
     }
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
-    pub fn set_cloud_watch(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
-    ) -> Self {
-        self.cloud_watch = input;
-        self
+    pub fn set_cloud_watch(mut self, input: ::std::option::Option<crate::types::CloudWatchLogGroupLogDestination>) -> Self {
+        self.cloud_watch = input; self
+    }
+    /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
+    pub fn get_cloud_watch(&self) -> &::std::option::Option<crate::types::CloudWatchLogGroupLogDestination> {
+        &self.cloud_watch
     }
     /// Consumes the builder and constructs a [`TextLogDestination`](crate::types::TextLogDestination).
     pub fn build(self) -> crate::types::TextLogDestination {
         crate::types::TextLogDestination {
-            cloud_watch: self.cloud_watch,
+            cloud_watch: self.cloud_watch
+            ,
         }
     }
 }
+

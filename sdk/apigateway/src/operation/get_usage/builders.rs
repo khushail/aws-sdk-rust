@@ -3,115 +3,106 @@ pub use crate::operation::get_usage::_get_usage_output::GetUsageOutputBuilder;
 
 pub use crate::operation::get_usage::_get_usage_input::GetUsageInputBuilder;
 
+impl GetUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_usage::GetUsageOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_usage::GetUsageError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_usage();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetUsage`.
-///
+/// 
 /// <p>Gets the usage data of a usage plan in a specified time interval.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_usage::builders::GetUsageInputBuilder,
+                    inner: crate::operation::get_usage::builders::GetUsageInputBuilder,
 }
-impl GetUsageFluentBuilder {
+impl GetUsageFluentBuilder  {
     /// Creates a new `GetUsage`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_usage::GetUsage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetUsage as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_usage::builders::GetUsageInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage::GetUsageOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_usage::GetUsage, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_usage::GetUsageOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage::GetUsageOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_usage::GetUsage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_usage::GetUsageOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_usage::GetUsage, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_usage::GetUsageError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_usage::paginator::GetUsagePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_usage::paginator::GetUsagePaginator {
-        crate::operation::get_usage::paginator::GetUsagePaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_usage::paginator::GetUsagePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_usage::paginator::GetUsagePaginator {
+                                crate::operation::get_usage::paginator::GetUsagePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Id of the usage plan associated with the usage data.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_plan_id(input.into());
         self
     }
     /// <p>The Id of the usage plan associated with the usage data.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_plan_id(input);
         self
+    }
+    /// <p>The Id of the usage plan associated with the usage data.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_plan_id()
     }
     /// <p>The Id of the API key associated with the resultant usage data.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +114,10 @@ impl GetUsageFluentBuilder {
         self.inner = self.inner.set_key_id(input);
         self
     }
+    /// <p>The Id of the API key associated with the resultant usage data.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_id()
+    }
     /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_date(input.into());
@@ -132,6 +127,10 @@ impl GetUsageFluentBuilder {
     pub fn set_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
+    }
+    /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_date()
     }
     /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,6 +142,10 @@ impl GetUsageFluentBuilder {
         self.inner = self.inner.set_end_date(input);
         self
     }
+    /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_end_date()
+    }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.position(input.into());
@@ -152,6 +155,10 @@ impl GetUsageFluentBuilder {
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_position(input);
         self
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_position()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -163,4 +170,9 @@ impl GetUsageFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
 }
+

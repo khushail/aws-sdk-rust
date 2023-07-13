@@ -3,7 +3,7 @@
 /// <p>A required parameter is missing from the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MissingRequiredParameterException {
+pub struct MissingRequiredParameterException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -14,21 +14,19 @@ pub struct MissingRequiredParameterException {
 }
 impl MissingRequiredParameterException {
     /// <p>The name of the exception.</p>
-    pub fn amzn_error_type(&self) -> ::std::option::Option<&str> {
+    pub fn amzn_error_type(&self) -> ::std::option::Option<& str> {
         self.amzn_error_type.as_deref()
     }
 }
 impl MissingRequiredParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for MissingRequiredParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "MissingRequiredParameterException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -42,12 +40,8 @@ impl ::aws_http::request_id::RequestId for crate::types::error::MissingRequiredP
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MissingRequiredParameterException
-{
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MissingRequiredParameterException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl MissingRequiredParameterException {
     /// Creates a new builder-style object to manufacture [`MissingRequiredParameterException`](crate::types::error::MissingRequiredParameterException).
@@ -58,9 +52,7 @@ impl MissingRequiredParameterException {
 
 /// A builder for [`MissingRequiredParameterException`](crate::types::error::MissingRequiredParameterException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MissingRequiredParameterExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) amzn_error_type: ::std::option::Option<::std::string::String>,
@@ -74,45 +66,45 @@ impl MissingRequiredParameterExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The name of the exception.</p>
-    pub fn amzn_error_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_error_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the exception.</p>
-    pub fn set_amzn_error_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.amzn_error_type = input;
-        self
+    pub fn set_amzn_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.amzn_error_type = input; self
+    }
+    /// <p>The name of the exception.</p>
+    pub fn get_amzn_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_error_type
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`MissingRequiredParameterException`](crate::types::error::MissingRequiredParameterException).
     pub fn build(self) -> crate::types::error::MissingRequiredParameterException {
         crate::types::error::MissingRequiredParameterException {
-            message: self.message,
-            amzn_error_type: self.amzn_error_type,
+            message: self.message
+            ,
+            amzn_error_type: self.amzn_error_type
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

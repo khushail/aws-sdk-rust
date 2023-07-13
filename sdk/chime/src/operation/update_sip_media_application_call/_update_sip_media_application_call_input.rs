@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSipMediaApplicationCallInput {
+pub struct UpdateSipMediaApplicationCallInput  {
     /// <p>The ID of the SIP media application handling the call.</p>
     #[doc(hidden)]
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
@@ -11,112 +11,85 @@ pub struct UpdateSipMediaApplicationCallInput {
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
     #[doc(hidden)]
-    pub arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateSipMediaApplicationCallInput {
     /// <p>The ID of the SIP media application handling the call.</p>
-    pub fn sip_media_application_id(&self) -> ::std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> ::std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
     /// <p>The ID of the call transaction.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
-    pub fn arguments(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn arguments(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.arguments.as_ref()
     }
 }
 impl UpdateSipMediaApplicationCallInput {
     /// Creates a new builder-style object to manufacture [`UpdateSipMediaApplicationCallInput`](crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallInput).
-    pub fn builder() -> crate::operation::update_sip_media_application_call::builders::UpdateSipMediaApplicationCallInputBuilder{
+    pub fn builder() -> crate::operation::update_sip_media_application_call::builders::UpdateSipMediaApplicationCallInputBuilder {
         crate::operation::update_sip_media_application_call::builders::UpdateSipMediaApplicationCallInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSipMediaApplicationCallInput`](crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationCallInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
-    pub(crate) arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateSipMediaApplicationCallInputBuilder {
     /// <p>The ID of the SIP media application handling the call.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SIP media application handling the call.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sip_media_application_id = input;
-        self
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sip_media_application_id = input; self
+    }
+    /// <p>The ID of the SIP media application handling the call.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
     }
     /// <p>The ID of the call transaction.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the call transaction.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transaction_id = input;
-        self
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transaction_id = input; self
+    }
+    /// <p>The ID of the call transaction.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Adds a key-value pair to `arguments`.
     ///
     /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
     ///
     /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
-    pub fn arguments(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn arguments(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.arguments.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.arguments = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.arguments = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
-    pub fn set_arguments(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.arguments = input;
-        self
+    pub fn set_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.arguments = input; self
+    }
+    /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
+    pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.arguments
     }
     /// Consumes the builder and constructs a [`UpdateSipMediaApplicationCallInput`](crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallInput {
                 sip_media_application_id: self.sip_media_application_id
@@ -129,3 +102,4 @@ impl UpdateSipMediaApplicationCallInputBuilder {
         )
     }
 }
+

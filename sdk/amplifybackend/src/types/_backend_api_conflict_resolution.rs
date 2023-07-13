@@ -3,14 +3,14 @@
 /// <p>Describes the conflict resolution configuration for your data model configured in your Amplify project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackendApiConflictResolution {
+pub struct BackendApiConflictResolution  {
     /// <p>The strategy for conflict resolution.</p>
     #[doc(hidden)]
     pub resolution_strategy: ::std::option::Option<crate::types::ResolutionStrategy>,
 }
 impl BackendApiConflictResolution {
     /// <p>The strategy for conflict resolution.</p>
-    pub fn resolution_strategy(&self) -> ::std::option::Option<&crate::types::ResolutionStrategy> {
+    pub fn resolution_strategy(&self) -> ::std::option::Option<& crate::types::ResolutionStrategy> {
         self.resolution_strategy.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl BackendApiConflictResolution {
 
 /// A builder for [`BackendApiConflictResolution`](crate::types::BackendApiConflictResolution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendApiConflictResolutionBuilder {
     pub(crate) resolution_strategy: ::std::option::Option<crate::types::ResolutionStrategy>,
 }
@@ -36,17 +34,19 @@ impl BackendApiConflictResolutionBuilder {
         self
     }
     /// <p>The strategy for conflict resolution.</p>
-    pub fn set_resolution_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolutionStrategy>,
-    ) -> Self {
-        self.resolution_strategy = input;
-        self
+    pub fn set_resolution_strategy(mut self, input: ::std::option::Option<crate::types::ResolutionStrategy>) -> Self {
+        self.resolution_strategy = input; self
+    }
+    /// <p>The strategy for conflict resolution.</p>
+    pub fn get_resolution_strategy(&self) -> &::std::option::Option<crate::types::ResolutionStrategy> {
+        &self.resolution_strategy
     }
     /// Consumes the builder and constructs a [`BackendApiConflictResolution`](crate::types::BackendApiConflictResolution).
     pub fn build(self) -> crate::types::BackendApiConflictResolution {
         crate::types::BackendApiConflictResolution {
-            resolution_strategy: self.resolution_strategy,
+            resolution_strategy: self.resolution_strategy
+            ,
         }
     }
 }
+

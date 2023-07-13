@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVerifiedAccessInstanceInput {
+pub struct ModifyVerifiedAccessInstanceInput  {
     /// <p>The ID of the Verified Access instance.</p>
     #[doc(hidden)]
     pub verified_access_instance_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct ModifyVerifiedAccessInstanceInput {
 }
 impl ModifyVerifiedAccessInstanceInput {
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_access_instance_id(&self) -> ::std::option::Option<& str> {
         self.verified_access_instance_id.as_deref()
     }
     /// <p>A description for the Verified Access instance.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -30,22 +30,20 @@ impl ModifyVerifiedAccessInstanceInput {
         self.dry_run
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ModifyVerifiedAccessInstanceInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceInput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput).
-    pub fn builder() -> crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceInputBuilder{
+    pub fn builder() -> crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceInputBuilder {
         crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVerifiedAccessInstanceInput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessInstanceInputBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -54,20 +52,17 @@ pub struct ModifyVerifiedAccessInstanceInputBuilder {
 }
 impl ModifyVerifiedAccessInstanceInputBuilder {
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.verified_access_instance_id = input;
-        self
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.verified_access_instance_id = input; self
+    }
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn get_verified_access_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_instance_id
     }
     /// <p>A description for the Verified Access instance.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,8 +71,11 @@ impl ModifyVerifiedAccessInstanceInputBuilder {
     }
     /// <p>A description for the Verified Access instance.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description for the Verified Access instance.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -86,8 +84,11 @@ impl ModifyVerifiedAccessInstanceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,23 +97,26 @@ impl ModifyVerifiedAccessInstanceInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceInput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput {
-                verified_access_instance_id: self.verified_access_instance_id,
-                description: self.description,
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-            },
+                verified_access_instance_id: self.verified_access_instance_id
+                ,
+                description: self.description
+                ,
+                dry_run: self.dry_run
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

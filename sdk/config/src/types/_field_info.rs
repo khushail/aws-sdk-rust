@@ -3,14 +3,14 @@
 /// <p>Details about the fields such as name of the field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldInfo {
+pub struct FieldInfo  {
     /// <p>Name of the field.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl FieldInfo {
     /// <p>Name of the field.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl FieldInfo {
 
 /// A builder for [`FieldInfo`](crate::types::FieldInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl FieldInfoBuilder {
     }
     /// <p>Name of the field.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Name of the field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`FieldInfo`](crate::types::FieldInfo).
     pub fn build(self) -> crate::types::FieldInfo {
-        crate::types::FieldInfo { name: self.name }
+        crate::types::FieldInfo {
+            name: self.name
+            ,
+        }
     }
 }
+

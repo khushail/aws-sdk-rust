@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNamespaceOutput {
+pub struct DescribeNamespaceOutput  {
     /// <p>The ARN of the namespace.</p>
     #[doc(hidden)]
     pub namespace_arn: ::std::option::Option<::std::string::String>,
@@ -22,15 +22,15 @@ pub struct DescribeNamespaceOutput {
 }
 impl DescribeNamespaceOutput {
     /// <p>The ARN of the namespace.</p>
-    pub fn namespace_arn(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> ::std::option::Option<& str> {
         self.namespace_arn.as_deref()
     }
     /// <p>The name of the namespace.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
-    pub fn tracking_namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn tracking_namespace_name(&self) -> ::std::option::Option<& str> {
         self.tracking_namespace_name.as_deref()
     }
     /// <p>The version of the public namespace that the latest version is tracking.</p>
@@ -43,23 +43,20 @@ impl DescribeNamespaceOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeNamespaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder {
         crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNamespaceOutputBuilder {
     pub(crate) namespace_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
@@ -70,52 +67,43 @@ pub struct DescribeNamespaceOutputBuilder {
 }
 impl DescribeNamespaceOutputBuilder {
     /// <p>The ARN of the namespace.</p>
-    pub fn namespace_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the namespace.</p>
-    pub fn set_namespace_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.namespace_arn = input;
-        self
+    pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_arn = input; self
+    }
+    /// <p>The ARN of the namespace.</p>
+    pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_arn
     }
     /// <p>The name of the namespace.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.namespace_name = input;
-        self
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_name = input; self
+    }
+    /// <p>The name of the namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
     }
     /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
-    pub fn tracking_namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tracking_namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracking_namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
-    pub fn set_tracking_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.tracking_namespace_name = input;
-        self
+    pub fn set_tracking_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tracking_namespace_name = input; self
+    }
+    /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
+    pub fn get_tracking_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracking_namespace_name
     }
     /// <p>The version of the public namespace that the latest version is tracking.</p>
     pub fn tracking_namespace_version(mut self, input: i64) -> Self {
@@ -124,8 +112,11 @@ impl DescribeNamespaceOutputBuilder {
     }
     /// <p>The version of the public namespace that the latest version is tracking.</p>
     pub fn set_tracking_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.tracking_namespace_version = input;
-        self
+        self.tracking_namespace_version = input; self
+    }
+    /// <p>The version of the public namespace that the latest version is tracking.</p>
+    pub fn get_tracking_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.tracking_namespace_version
     }
     /// <p>The version of the user's namespace to describe.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
@@ -134,27 +125,36 @@ impl DescribeNamespaceOutputBuilder {
     }
     /// <p>The version of the user's namespace to describe.</p>
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.namespace_version = input;
-        self
+        self.namespace_version = input; self
+    }
+    /// <p>The version of the user's namespace to describe.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.namespace_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
     pub fn build(self) -> crate::operation::describe_namespace::DescribeNamespaceOutput {
         crate::operation::describe_namespace::DescribeNamespaceOutput {
-            namespace_arn: self.namespace_arn,
-            namespace_name: self.namespace_name,
-            tracking_namespace_name: self.tracking_namespace_name,
-            tracking_namespace_version: self.tracking_namespace_version,
-            namespace_version: self.namespace_version,
+            namespace_arn: self.namespace_arn
+            ,
+            namespace_name: self.namespace_name
+            ,
+            tracking_namespace_name: self.tracking_namespace_name
+            ,
+            tracking_namespace_version: self.tracking_namespace_version
+            ,
+            namespace_version: self.namespace_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

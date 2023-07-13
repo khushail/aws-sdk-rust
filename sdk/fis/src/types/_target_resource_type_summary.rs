@@ -3,7 +3,7 @@
 /// <p>Describes a resource type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetResourceTypeSummary {
+pub struct TargetResourceTypeSummary  {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct TargetResourceTypeSummary {
 }
 impl TargetResourceTypeSummary {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>A description of the resource type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl TargetResourceTypeSummary {
 
 /// A builder for [`TargetResourceTypeSummary`](crate::types::TargetResourceTypeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetResourceTypeSummaryBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl TargetResourceTypeSummaryBuilder {
     /// <p>The resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_type = input; self
+    }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// <p>A description of the resource type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl TargetResourceTypeSummaryBuilder {
     }
     /// <p>A description of the resource type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the resource type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`TargetResourceTypeSummary`](crate::types::TargetResourceTypeSummary).
     pub fn build(self) -> crate::types::TargetResourceTypeSummary {
         crate::types::TargetResourceTypeSummary {
-            resource_type: self.resource_type,
-            description: self.description,
+            resource_type: self.resource_type
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

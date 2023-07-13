@@ -3,18 +3,18 @@
 /// <p>Provides information about the endpoint of the model deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelDeployResult {
-    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
-    /// <p>If model deployment fails, this field is omitted from the response.</p>
+pub struct ModelDeployResult  {
+    /// <p>The name of the endpoint to which the model has been deployed.</p> <note> 
+    /// <p>If model deployment fails, this field is omitted from the response.</p> 
     /// </note>
     #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelDeployResult {
-    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
-    /// <p>If model deployment fails, this field is omitted from the response.</p>
+    /// <p>The name of the endpoint to which the model has been deployed.</p> <note> 
+    /// <p>If model deployment fails, this field is omitted from the response.</p> 
     /// </note>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
 }
@@ -27,37 +27,36 @@ impl ModelDeployResult {
 
 /// A builder for [`ModelDeployResult`](crate::types::ModelDeployResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelDeployResultBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelDeployResultBuilder {
-    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
-    /// <p>If model deployment fails, this field is omitted from the response.</p>
+    /// <p>The name of the endpoint to which the model has been deployed.</p> <note> 
+    /// <p>If model deployment fails, this field is omitted from the response.</p> 
     /// </note>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
-    /// <p>If model deployment fails, this field is omitted from the response.</p>
+    /// <p>The name of the endpoint to which the model has been deployed.</p> <note> 
+    /// <p>If model deployment fails, this field is omitted from the response.</p> 
     /// </note>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.endpoint_name = input;
-        self
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_name = input; self
+    }
+    /// <p>The name of the endpoint to which the model has been deployed.</p> <note> 
+    /// <p>If model deployment fails, this field is omitted from the response.</p> 
+    /// </note>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
     }
     /// Consumes the builder and constructs a [`ModelDeployResult`](crate::types::ModelDeployResult).
     pub fn build(self) -> crate::types::ModelDeployResult {
         crate::types::ModelDeployResult {
-            endpoint_name: self.endpoint_name,
+            endpoint_name: self.endpoint_name
+            ,
         }
     }
 }
+

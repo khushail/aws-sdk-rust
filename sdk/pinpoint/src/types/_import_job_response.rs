@@ -3,7 +3,7 @@
 /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportJobResponse {
+pub struct ImportJobResponse  {
     /// <p>The unique identifier for the application that's associated with the import job.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -46,7 +46,7 @@ pub struct ImportJobResponse {
 }
 impl ImportJobResponse {
     /// <p>The unique identifier for the application that's associated with the import job.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The number of pieces that were processed successfully (completed) by the import job, as of the time of the request.</p>
@@ -54,15 +54,15 @@ impl ImportJobResponse {
         self.completed_pieces
     }
     /// <p>The date, in ISO 8601 format, when the import job was completed.</p>
-    pub fn completion_date(&self) -> ::std::option::Option<&str> {
+    pub fn completion_date(&self) -> ::std::option::Option<& str> {
         self.completion_date.as_deref()
     }
     /// <p>The date, in ISO 8601 format, when the import job was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The resource settings that apply to the import job.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::ImportJobResource> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::ImportJobResource> {
         self.definition.as_ref()
     }
     /// <p>The number of pieces that weren't processed successfully (failed) by the import job, as of the time of the request.</p>
@@ -70,15 +70,15 @@ impl ImportJobResponse {
         self.failed_pieces
     }
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the import job, if any.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn failures(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.failures.as_deref()
     }
     /// <p>The unique identifier for the import job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the import job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the import job, typically because an error, such as a syntax error, occurred.</p>
@@ -94,7 +94,7 @@ impl ImportJobResponse {
         self.total_processed
     }
     /// <p>The job type. This value is IMPORT for import jobs.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -107,9 +107,7 @@ impl ImportJobResponse {
 
 /// A builder for [`ImportJobResponse`](crate::types::ImportJobResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportJobResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) completed_pieces: ::std::option::Option<i32>,
@@ -127,20 +125,17 @@ pub struct ImportJobResponseBuilder {
 }
 impl ImportJobResponseBuilder {
     /// <p>The unique identifier for the application that's associated with the import job.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that's associated with the import job.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier for the application that's associated with the import job.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The number of pieces that were processed successfully (completed) by the import job, as of the time of the request.</p>
     pub fn completed_pieces(mut self, input: i32) -> Self {
@@ -149,40 +144,37 @@ impl ImportJobResponseBuilder {
     }
     /// <p>The number of pieces that were processed successfully (completed) by the import job, as of the time of the request.</p>
     pub fn set_completed_pieces(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.completed_pieces = input;
-        self
+        self.completed_pieces = input; self
+    }
+    /// <p>The number of pieces that were processed successfully (completed) by the import job, as of the time of the request.</p>
+    pub fn get_completed_pieces(&self) -> &::std::option::Option<i32> {
+        &self.completed_pieces
     }
     /// <p>The date, in ISO 8601 format, when the import job was completed.</p>
-    pub fn completion_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn completion_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completion_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the import job was completed.</p>
-    pub fn set_completion_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.completion_date = input;
-        self
+    pub fn set_completion_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.completion_date = input; self
+    }
+    /// <p>The date, in ISO 8601 format, when the import job was completed.</p>
+    pub fn get_completion_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completion_date
     }
     /// <p>The date, in ISO 8601 format, when the import job was created.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the import job was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>The date, in ISO 8601 format, when the import job was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// <p>The resource settings that apply to the import job.</p>
     pub fn definition(mut self, input: crate::types::ImportJobResource) -> Self {
@@ -190,12 +182,12 @@ impl ImportJobResponseBuilder {
         self
     }
     /// <p>The resource settings that apply to the import job.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportJobResource>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::ImportJobResource>) -> Self {
+        self.definition = input; self
+    }
+    /// <p>The resource settings that apply to the import job.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::ImportJobResource> {
+        &self.definition
     }
     /// <p>The number of pieces that weren't processed successfully (failed) by the import job, as of the time of the request.</p>
     pub fn failed_pieces(mut self, input: i32) -> Self {
@@ -204,8 +196,11 @@ impl ImportJobResponseBuilder {
     }
     /// <p>The number of pieces that weren't processed successfully (failed) by the import job, as of the time of the request.</p>
     pub fn set_failed_pieces(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_pieces = input;
-        self
+        self.failed_pieces = input; self
+    }
+    /// <p>The number of pieces that weren't processed successfully (failed) by the import job, as of the time of the request.</p>
+    pub fn get_failed_pieces(&self) -> &::std::option::Option<i32> {
+        &self.failed_pieces
     }
     /// Appends an item to `failures`.
     ///
@@ -214,17 +209,17 @@ impl ImportJobResponseBuilder {
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the import job, if any.</p>
     pub fn failures(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input.into());
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the import job, if any.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.failures = input; self
+    }
+    /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the import job, if any.</p>
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failures
     }
     /// <p>The unique identifier for the import job.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -233,8 +228,11 @@ impl ImportJobResponseBuilder {
     }
     /// <p>The unique identifier for the import job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier for the import job.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The status of the import job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -243,8 +241,11 @@ impl ImportJobResponseBuilder {
     }
     /// <p>The status of the import job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
+    }
+    /// <p>The status of the import job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the import job, typically because an error, such as a syntax error, occurred.</p>
     pub fn total_failures(mut self, input: i32) -> Self {
@@ -253,8 +254,11 @@ impl ImportJobResponseBuilder {
     }
     /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the import job, typically because an error, such as a syntax error, occurred.</p>
     pub fn set_total_failures(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_failures = input;
-        self
+        self.total_failures = input; self
+    }
+    /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the import job, typically because an error, such as a syntax error, occurred.</p>
+    pub fn get_total_failures(&self) -> &::std::option::Option<i32> {
+        &self.total_failures
     }
     /// <p>The total number of pieces that must be processed to complete the import job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the import job.</p>
     pub fn total_pieces(mut self, input: i32) -> Self {
@@ -263,8 +267,11 @@ impl ImportJobResponseBuilder {
     }
     /// <p>The total number of pieces that must be processed to complete the import job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the import job.</p>
     pub fn set_total_pieces(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_pieces = input;
-        self
+        self.total_pieces = input; self
+    }
+    /// <p>The total number of pieces that must be processed to complete the import job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the import job.</p>
+    pub fn get_total_pieces(&self) -> &::std::option::Option<i32> {
+        &self.total_pieces
     }
     /// <p>The total number of endpoint definitions that were processed by the import job.</p>
     pub fn total_processed(mut self, input: i32) -> Self {
@@ -273,8 +280,11 @@ impl ImportJobResponseBuilder {
     }
     /// <p>The total number of endpoint definitions that were processed by the import job.</p>
     pub fn set_total_processed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_processed = input;
-        self
+        self.total_processed = input; self
+    }
+    /// <p>The total number of endpoint definitions that were processed by the import job.</p>
+    pub fn get_total_processed(&self) -> &::std::option::Option<i32> {
+        &self.total_processed
     }
     /// <p>The job type. This value is IMPORT for import jobs.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -283,25 +293,42 @@ impl ImportJobResponseBuilder {
     }
     /// <p>The job type. This value is IMPORT for import jobs.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The job type. This value is IMPORT for import jobs.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ImportJobResponse`](crate::types::ImportJobResponse).
     pub fn build(self) -> crate::types::ImportJobResponse {
         crate::types::ImportJobResponse {
-            application_id: self.application_id,
-            completed_pieces: self.completed_pieces,
-            completion_date: self.completion_date,
-            creation_date: self.creation_date,
-            definition: self.definition,
-            failed_pieces: self.failed_pieces,
-            failures: self.failures,
-            id: self.id,
-            job_status: self.job_status,
-            total_failures: self.total_failures,
-            total_pieces: self.total_pieces,
-            total_processed: self.total_processed,
-            r#type: self.r#type,
+            application_id: self.application_id
+            ,
+            completed_pieces: self.completed_pieces
+            ,
+            completion_date: self.completion_date
+            ,
+            creation_date: self.creation_date
+            ,
+            definition: self.definition
+            ,
+            failed_pieces: self.failed_pieces
+            ,
+            failures: self.failures
+            ,
+            id: self.id
+            ,
+            job_status: self.job_status
+            ,
+            total_failures: self.total_failures
+            ,
+            total_pieces: self.total_pieces
+            ,
+            total_processed: self.total_processed
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The Locale data structure represents a geographical region or location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Locale {
+pub struct Locale  {
     /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
     #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Locale {
 }
 impl Locale {
     /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
-    pub fn subdivision(&self) -> ::std::option::Option<&str> {
+    pub fn subdivision(&self) -> ::std::option::Option<& str> {
         self.subdivision.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Locale {
 
 /// A builder for [`Locale`](crate::types::Locale).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocaleBuilder {
     pub(crate) country: ::std::option::Option<::std::string::String>,
     pub(crate) subdivision: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl LocaleBuilder {
     }
     /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
+    }
+    /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub fn subdivision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl LocaleBuilder {
     }
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub fn set_subdivision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdivision = input;
-        self
+        self.subdivision = input; self
+    }
+    /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
+    pub fn get_subdivision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdivision
     }
     /// Consumes the builder and constructs a [`Locale`](crate::types::Locale).
     pub fn build(self) -> crate::types::Locale {
         crate::types::Locale {
-            country: self.country,
-            subdivision: self.subdivision,
+            country: self.country
+            ,
+            subdivision: self.subdivision
+            ,
         }
     }
 }
+

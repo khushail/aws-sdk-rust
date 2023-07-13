@@ -3,149 +3,129 @@ pub use crate::operation::update_assessment_target::_update_assessment_target_ou
 
 pub use crate::operation::update_assessment_target::_update_assessment_target_input::UpdateAssessmentTargetInputBuilder;
 
+impl UpdateAssessmentTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_assessment_target::UpdateAssessmentTargetOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_assessment_target::UpdateAssessmentTargetError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_assessment_target();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateAssessmentTarget`.
-///
-/// <p>Updates the assessment target that is specified by the ARN of the assessment target.</p>
+/// 
+/// <p>Updates the assessment target that is specified by the ARN of the assessment target.</p> 
 /// <p>If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssessmentTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_assessment_target::builders::UpdateAssessmentTargetInputBuilder,
+                    inner: crate::operation::update_assessment_target::builders::UpdateAssessmentTargetInputBuilder,
 }
-impl UpdateAssessmentTargetFluentBuilder {
+impl UpdateAssessmentTargetFluentBuilder  {
     /// Creates a new `UpdateAssessmentTarget`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_assessment_target::UpdateAssessmentTarget,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_target::UpdateAssessmentTargetError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateAssessmentTarget as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_assessment_target::builders::UpdateAssessmentTargetInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_assessment_target::UpdateAssessmentTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_target::UpdateAssessmentTargetError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_assessment_target::UpdateAssessmentTarget, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_target::UpdateAssessmentTargetError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_assessment_target::UpdateAssessmentTargetOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_target::UpdateAssessmentTargetError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_assessment_target::UpdateAssessmentTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_target::UpdateAssessmentTargetError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_assessment_target::UpdateAssessmentTarget,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_target::UpdateAssessmentTargetError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_assessment_target::UpdateAssessmentTargetOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_target::UpdateAssessmentTargetError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_assessment_target::UpdateAssessmentTarget, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_target::UpdateAssessmentTargetError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ARN of the assessment target that you want to update.</p>
-    pub fn assessment_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_arn(input.into());
         self
     }
     /// <p>The ARN of the assessment target that you want to update.</p>
-    pub fn set_assessment_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_target_arn(input);
         self
     }
+    /// <p>The ARN of the assessment target that you want to update.</p>
+    pub fn get_assessment_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_target_arn()
+    }
     /// <p>The name of the assessment target that you want to update.</p>
-    pub fn assessment_target_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_name(input.into());
         self
     }
     /// <p>The name of the assessment target that you want to update.</p>
-    pub fn set_assessment_target_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_target_name(input);
         self
     }
+    /// <p>The name of the assessment target that you want to update.</p>
+    pub fn get_assessment_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_target_name()
+    }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
-    pub fn resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_arn(input.into());
         self
     }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
-    pub fn set_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_arn(input);
         self
     }
+    /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
+    pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_arn()
+    }
 }
+

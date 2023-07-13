@@ -3,12 +3,12 @@
 /// <p>The comparison display configuration of a KPI or gauge chart.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComparisonConfiguration {
-    /// <p>The method of the comparison. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT</code> </p> </li>
+pub struct ComparisonConfiguration  {
+    /// <p>The method of the comparison. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub comparison_method: ::std::option::Option<crate::types::ComparisonMethod>,
@@ -17,19 +17,17 @@ pub struct ComparisonConfiguration {
     pub comparison_format: ::std::option::Option<crate::types::ComparisonFormatConfiguration>,
 }
 impl ComparisonConfiguration {
-    /// <p>The method of the comparison. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT</code> </p> </li>
+    /// <p>The method of the comparison. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT</code> </p> </li> 
     /// </ul>
-    pub fn comparison_method(&self) -> ::std::option::Option<&crate::types::ComparisonMethod> {
+    pub fn comparison_method(&self) -> ::std::option::Option<& crate::types::ComparisonMethod> {
         self.comparison_method.as_ref()
     }
     /// <p>The format of the comparison.</p>
-    pub fn comparison_format(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComparisonFormatConfiguration> {
+    pub fn comparison_format(&self) -> ::std::option::Option<& crate::types::ComparisonFormatConfiguration> {
         self.comparison_format.as_ref()
     }
 }
@@ -42,37 +40,39 @@ impl ComparisonConfiguration {
 
 /// A builder for [`ComparisonConfiguration`](crate::types::ComparisonConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComparisonConfigurationBuilder {
     pub(crate) comparison_method: ::std::option::Option<crate::types::ComparisonMethod>,
-    pub(crate) comparison_format:
-        ::std::option::Option<crate::types::ComparisonFormatConfiguration>,
+    pub(crate) comparison_format: ::std::option::Option<crate::types::ComparisonFormatConfiguration>,
 }
 impl ComparisonConfigurationBuilder {
-    /// <p>The method of the comparison. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT</code> </p> </li>
+    /// <p>The method of the comparison. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT</code> </p> </li> 
     /// </ul>
     pub fn comparison_method(mut self, input: crate::types::ComparisonMethod) -> Self {
         self.comparison_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The method of the comparison. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
-    /// <li> <p> <code>PERCENT</code> </p> </li>
+    /// <p>The method of the comparison. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT</code> </p> </li> 
     /// </ul>
-    pub fn set_comparison_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonMethod>,
-    ) -> Self {
-        self.comparison_method = input;
-        self
+    pub fn set_comparison_method(mut self, input: ::std::option::Option<crate::types::ComparisonMethod>) -> Self {
+        self.comparison_method = input; self
+    }
+    /// <p>The method of the comparison. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li> 
+    /// <li> <p> <code>PERCENT</code> </p> </li> 
+    /// </ul>
+    pub fn get_comparison_method(&self) -> &::std::option::Option<crate::types::ComparisonMethod> {
+        &self.comparison_method
     }
     /// <p>The format of the comparison.</p>
     pub fn comparison_format(mut self, input: crate::types::ComparisonFormatConfiguration) -> Self {
@@ -80,18 +80,21 @@ impl ComparisonConfigurationBuilder {
         self
     }
     /// <p>The format of the comparison.</p>
-    pub fn set_comparison_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonFormatConfiguration>,
-    ) -> Self {
-        self.comparison_format = input;
-        self
+    pub fn set_comparison_format(mut self, input: ::std::option::Option<crate::types::ComparisonFormatConfiguration>) -> Self {
+        self.comparison_format = input; self
+    }
+    /// <p>The format of the comparison.</p>
+    pub fn get_comparison_format(&self) -> &::std::option::Option<crate::types::ComparisonFormatConfiguration> {
+        &self.comparison_format
     }
     /// Consumes the builder and constructs a [`ComparisonConfiguration`](crate::types::ComparisonConfiguration).
     pub fn build(self) -> crate::types::ComparisonConfiguration {
         crate::types::ComparisonConfiguration {
-            comparison_method: self.comparison_method,
-            comparison_format: self.comparison_format,
+            comparison_method: self.comparison_method
+            ,
+            comparison_format: self.comparison_format
+            ,
         }
     }
 }
+

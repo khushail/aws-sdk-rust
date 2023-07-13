@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagQueueOutput {
+pub struct UntagQueueOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UntagQueueOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UntagQueueOutput {
     /// Creates a new builder-style object to manufacture [`UntagQueueOutput`](crate::operation::untag_queue::UntagQueueOutput).
     pub fn builder() -> crate::operation::untag_queue::builders::UntagQueueOutputBuilder {
@@ -19,22 +19,20 @@ impl UntagQueueOutput {
 
 /// A builder for [`UntagQueueOutput`](crate::operation::untag_queue::UntagQueueOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagQueueOutputBuilder {
     _request_id: Option<String>,
 }
 impl UntagQueueOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UntagQueueOutput`](crate::operation::untag_queue::UntagQueueOutput).
     pub fn build(self) -> crate::operation::untag_queue::UntagQueueOutput {
         crate::operation::untag_queue::UntagQueueOutput {
@@ -42,3 +40,4 @@ impl UntagQueueOutputBuilder {
         }
     }
 }
+

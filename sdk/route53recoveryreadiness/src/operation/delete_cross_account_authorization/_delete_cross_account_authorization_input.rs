@@ -2,56 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCrossAccountAuthorizationInput {
+pub struct DeleteCrossAccountAuthorizationInput  {
     /// <p>The cross-account authorization.</p>
     #[doc(hidden)]
     pub cross_account_authorization: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCrossAccountAuthorizationInput {
     /// <p>The cross-account authorization.</p>
-    pub fn cross_account_authorization(&self) -> ::std::option::Option<&str> {
+    pub fn cross_account_authorization(&self) -> ::std::option::Option<& str> {
         self.cross_account_authorization.as_deref()
     }
 }
 impl DeleteCrossAccountAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`DeleteCrossAccountAuthorizationInput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput).
-    pub fn builder() -> crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationInputBuilder{
+    pub fn builder() -> crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationInputBuilder {
         crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCrossAccountAuthorizationInput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCrossAccountAuthorizationInputBuilder {
     pub(crate) cross_account_authorization: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCrossAccountAuthorizationInputBuilder {
     /// <p>The cross-account authorization.</p>
-    pub fn cross_account_authorization(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cross_account_authorization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cross_account_authorization = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cross-account authorization.</p>
-    pub fn set_cross_account_authorization(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.cross_account_authorization = input;
-        self
+    pub fn set_cross_account_authorization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cross_account_authorization = input; self
+    }
+    /// <p>The cross-account authorization.</p>
+    pub fn get_cross_account_authorization(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cross_account_authorization
     }
     /// Consumes the builder and constructs a [`DeleteCrossAccountAuthorizationInput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput {
                 cross_account_authorization: self.cross_account_authorization
@@ -60,3 +50,4 @@ impl DeleteCrossAccountAuthorizationInputBuilder {
         )
     }
 }
+

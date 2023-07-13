@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateRuleVersionInput {
+pub struct UpdateRuleVersionInput  {
     /// <p>The rule to update.</p>
     #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::Rule>,
@@ -24,31 +24,31 @@ pub struct UpdateRuleVersionInput {
 }
 impl UpdateRuleVersionInput {
     /// <p>The rule to update.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::Rule> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::Rule> {
         self.rule.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The rule expression.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The language.</p>
-    pub fn language(&self) -> ::std::option::Option<&crate::types::Language> {
+    pub fn language(&self) -> ::std::option::Option<& crate::types::Language> {
         self.language.as_ref()
     }
     /// <p>The outcomes.</p>
-    pub fn outcomes(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn outcomes(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.outcomes.as_deref()
     }
     /// <p>The tags to assign to the rule version.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateRuleVersionInput {
+impl  ::std::fmt::Debug for UpdateRuleVersionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleVersionInput");
         formatter.field("rule", &self.rule);
@@ -62,8 +62,7 @@ impl ::std::fmt::Debug for UpdateRuleVersionInput {
 }
 impl UpdateRuleVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleVersionInput`](crate::operation::update_rule_version::UpdateRuleVersionInput).
-    pub fn builder(
-    ) -> crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder {
+    pub fn builder() -> crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder {
         crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder::default()
     }
 }
@@ -87,8 +86,11 @@ impl UpdateRuleVersionInputBuilder {
     }
     /// <p>The rule to update.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::Rule>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
+    }
+    /// <p>The rule to update.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
+        &self.rule
     }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,8 +99,11 @@ impl UpdateRuleVersionInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The rule expression.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,8 +112,11 @@ impl UpdateRuleVersionInputBuilder {
     }
     /// <p>The rule expression.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
+    }
+    /// <p>The rule expression.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// <p>The language.</p>
     pub fn language(mut self, input: crate::types::Language) -> Self {
@@ -117,8 +125,11 @@ impl UpdateRuleVersionInputBuilder {
     }
     /// <p>The language.</p>
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
+    }
+    /// <p>The language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::Language> {
+        &self.language
     }
     /// Appends an item to `outcomes`.
     ///
@@ -127,17 +138,17 @@ impl UpdateRuleVersionInputBuilder {
     /// <p>The outcomes.</p>
     pub fn outcomes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
-        v.push(input.into());
-        self.outcomes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.outcomes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The outcomes.</p>
-    pub fn set_outcomes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.outcomes = input;
-        self
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.outcomes = input; self
+    }
+    /// <p>The outcomes.</p>
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.outcomes
     }
     /// Appends an item to `tags`.
     ///
@@ -146,34 +157,35 @@ impl UpdateRuleVersionInputBuilder {
     /// <p>The tags to assign to the rule version.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to assign to the rule version.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags to assign to the rule version.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateRuleVersionInput`](crate::operation::update_rule_version::UpdateRuleVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rule_version::UpdateRuleVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule_version::UpdateRuleVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_rule_version::UpdateRuleVersionInput {
-                rule: self.rule,
-                description: self.description,
-                expression: self.expression,
-                language: self.language,
-                outcomes: self.outcomes,
-                tags: self.tags,
-            },
+                rule: self.rule
+                ,
+                description: self.description
+                ,
+                expression: self.expression
+                ,
+                language: self.language
+                ,
+                outcomes: self.outcomes
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
@@ -189,3 +201,4 @@ impl ::std::fmt::Debug for UpdateRuleVersionInputBuilder {
         formatter.finish()
     }
 }
+

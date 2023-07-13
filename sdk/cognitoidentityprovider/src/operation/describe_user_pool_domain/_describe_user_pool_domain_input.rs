@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserPoolDomainInput {
+pub struct DescribeUserPoolDomainInput  {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUserPoolDomainInput {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
 impl DescribeUserPoolDomainInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserPoolDomainInput`](crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput).
-    pub fn builder(
-    ) -> crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainInputBuilder {
         crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserPoolDomainInput`](crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserPoolDomainInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DescribeUserPoolDomainInputBuilder {
     }
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`DescribeUserPoolDomainInput`](crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput {
-                domain: self.domain,
-            },
+                domain: self.domain
+                ,
+            }
         )
     }
 }
+

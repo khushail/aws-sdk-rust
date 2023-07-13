@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpgradeLensReviewOutput {
+pub struct UpgradeLensReviewOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UpgradeLensReviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpgradeLensReviewOutput {
     /// Creates a new builder-style object to manufacture [`UpgradeLensReviewOutput`](crate::operation::upgrade_lens_review::UpgradeLensReviewOutput).
-    pub fn builder(
-    ) -> crate::operation::upgrade_lens_review::builders::UpgradeLensReviewOutputBuilder {
+    pub fn builder() -> crate::operation::upgrade_lens_review::builders::UpgradeLensReviewOutputBuilder {
         crate::operation::upgrade_lens_review::builders::UpgradeLensReviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpgradeLensReviewOutput`](crate::operation::upgrade_lens_review::UpgradeLensReviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeLensReviewOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpgradeLensReviewOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpgradeLensReviewOutput`](crate::operation::upgrade_lens_review::UpgradeLensReviewOutput).
     pub fn build(self) -> crate::operation::upgrade_lens_review::UpgradeLensReviewOutput {
         crate::operation::upgrade_lens_review::UpgradeLensReviewOutput {
@@ -43,3 +40,4 @@ impl UpgradeLensReviewOutputBuilder {
         }
     }
 }
+

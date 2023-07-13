@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceSetOutput {
+pub struct GetResourceSetOutput  {
     /// <p>Information about the specified resource set.</p>
     #[doc(hidden)]
     pub resource_set: ::std::option::Option<crate::types::ResourceSet>,
@@ -13,19 +13,19 @@ pub struct GetResourceSetOutput {
 }
 impl GetResourceSetOutput {
     /// <p>Information about the specified resource set.</p>
-    pub fn resource_set(&self) -> ::std::option::Option<&crate::types::ResourceSet> {
+    pub fn resource_set(&self) -> ::std::option::Option<& crate::types::ResourceSet> {
         self.resource_set.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-    pub fn resource_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_set_arn(&self) -> ::std::option::Option<& str> {
         self.resource_set_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetResourceSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceSetOutput`](crate::operation::get_resource_set::GetResourceSetOutput).
     pub fn builder() -> crate::operation::get_resource_set::builders::GetResourceSetOutputBuilder {
@@ -35,9 +35,7 @@ impl GetResourceSetOutput {
 
 /// A builder for [`GetResourceSetOutput`](crate::operation::get_resource_set::GetResourceSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceSetOutputBuilder {
     pub(crate) resource_set: ::std::option::Option<crate::types::ResourceSet>,
     pub(crate) resource_set_arn: ::std::option::Option<::std::string::String>,
@@ -50,44 +48,44 @@ impl GetResourceSetOutputBuilder {
         self
     }
     /// <p>Information about the specified resource set.</p>
-    pub fn set_resource_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSet>,
-    ) -> Self {
-        self.resource_set = input;
-        self
+    pub fn set_resource_set(mut self, input: ::std::option::Option<crate::types::ResourceSet>) -> Self {
+        self.resource_set = input; self
+    }
+    /// <p>Information about the specified resource set.</p>
+    pub fn get_resource_set(&self) -> &::std::option::Option<crate::types::ResourceSet> {
+        &self.resource_set
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-    pub fn resource_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-    pub fn set_resource_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_set_arn = input;
-        self
+    pub fn set_resource_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_set_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
+    pub fn get_resource_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetResourceSetOutput`](crate::operation::get_resource_set::GetResourceSetOutput).
     pub fn build(self) -> crate::operation::get_resource_set::GetResourceSetOutput {
         crate::operation::get_resource_set::GetResourceSetOutput {
-            resource_set: self.resource_set,
-            resource_set_arn: self.resource_set_arn,
+            resource_set: self.resource_set
+            ,
+            resource_set_arn: self.resource_set_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

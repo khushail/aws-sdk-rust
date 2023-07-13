@@ -3,26 +3,14 @@
 /// <p>Specifies, as a map, one or more property-based conditions that filter the results of a query for findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingCriteria {
+pub struct FindingCriteria  {
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
     #[doc(hidden)]
-    pub criterion: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::CriterionAdditionalProperties,
-        >,
-    >,
+    pub criterion: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CriterionAdditionalProperties>>,
 }
 impl FindingCriteria {
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
-    pub fn criterion(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::CriterionAdditionalProperties,
-        >,
-    > {
+    pub fn criterion(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, crate::types::CriterionAdditionalProperties>> {
         self.criterion.as_ref()
     }
 }
@@ -35,16 +23,9 @@ impl FindingCriteria {
 
 /// A builder for [`FindingCriteria`](crate::types::FindingCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingCriteriaBuilder {
-    pub(crate) criterion: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::CriterionAdditionalProperties,
-        >,
-    >,
+    pub(crate) criterion: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CriterionAdditionalProperties>>,
 }
 impl FindingCriteriaBuilder {
     /// Adds a key-value pair to `criterion`.
@@ -52,33 +33,26 @@ impl FindingCriteriaBuilder {
     /// To override the contents of this collection use [`set_criterion`](Self::set_criterion).
     ///
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
-    pub fn criterion(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::CriterionAdditionalProperties,
-    ) -> Self {
+    pub fn criterion(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CriterionAdditionalProperties) -> Self {
         let mut hash_map = self.criterion.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.criterion = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.criterion = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
-    pub fn set_criterion(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::CriterionAdditionalProperties,
-            >,
-        >,
-    ) -> Self {
-        self.criterion = input;
-        self
+    pub fn set_criterion(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CriterionAdditionalProperties>>) -> Self {
+        self.criterion = input; self
+    }
+    /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
+    pub fn get_criterion(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CriterionAdditionalProperties>> {
+        &self.criterion
     }
     /// Consumes the builder and constructs a [`FindingCriteria`](crate::types::FindingCriteria).
     pub fn build(self) -> crate::types::FindingCriteria {
         crate::types::FindingCriteria {
-            criterion: self.criterion,
+            criterion: self.criterion
+            ,
         }
     }
 }
+

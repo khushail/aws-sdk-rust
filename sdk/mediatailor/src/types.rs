@@ -228,3 +228,4 @@ pub mod builders;
 
 /// Error types that AWS MediaTailor can respond with.
 pub mod error;
+

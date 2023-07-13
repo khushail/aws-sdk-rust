@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccountAuditConfigurationInput {
+pub struct DeleteAccountAuditConfigurationInput  {
     /// <p>If true, all scheduled audits are deleted.</p>
     #[doc(hidden)]
     pub delete_scheduled_audits: ::std::option::Option<bool>,
@@ -15,16 +15,14 @@ impl DeleteAccountAuditConfigurationInput {
 }
 impl DeleteAccountAuditConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountAuditConfigurationInput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput).
-    pub fn builder() -> crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationInputBuilder {
         crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountAuditConfigurationInput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountAuditConfigurationInputBuilder {
     pub(crate) delete_scheduled_audits: ::std::option::Option<bool>,
 }
@@ -36,16 +34,14 @@ impl DeleteAccountAuditConfigurationInputBuilder {
     }
     /// <p>If true, all scheduled audits are deleted.</p>
     pub fn set_delete_scheduled_audits(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_scheduled_audits = input;
-        self
+        self.delete_scheduled_audits = input; self
+    }
+    /// <p>If true, all scheduled audits are deleted.</p>
+    pub fn get_delete_scheduled_audits(&self) -> &::std::option::Option<bool> {
+        &self.delete_scheduled_audits
     }
     /// Consumes the builder and constructs a [`DeleteAccountAuditConfigurationInput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput {
                 delete_scheduled_audits: self.delete_scheduled_audits
@@ -54,3 +50,4 @@ impl DeleteAccountAuditConfigurationInputBuilder {
         )
     }
 }
+

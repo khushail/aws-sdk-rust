@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCellInput {
+pub struct DeleteCellInput  {
     /// <p>The name of the cell.</p>
     #[doc(hidden)]
     pub cell_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCellInput {
     /// <p>The name of the cell.</p>
-    pub fn cell_name(&self) -> ::std::option::Option<&str> {
+    pub fn cell_name(&self) -> ::std::option::Option<& str> {
         self.cell_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteCellInput {
 
 /// A builder for [`DeleteCellInput`](crate::operation::delete_cell::DeleteCellInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCellInputBuilder {
     pub(crate) cell_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteCellInputBuilder {
     }
     /// <p>The name of the cell.</p>
     pub fn set_cell_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cell_name = input;
-        self
+        self.cell_name = input; self
+    }
+    /// <p>The name of the cell.</p>
+    pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cell_name
     }
     /// Consumes the builder and constructs a [`DeleteCellInput`](crate::operation::delete_cell::DeleteCellInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cell::DeleteCellInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_cell::DeleteCellInput {
-            cell_name: self.cell_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cell::DeleteCellInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cell::DeleteCellInput {
+                cell_name: self.cell_name
+                ,
+            }
+        )
     }
 }
+

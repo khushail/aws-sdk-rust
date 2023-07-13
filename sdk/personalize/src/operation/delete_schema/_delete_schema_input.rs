@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSchemaInput {
+pub struct DeleteSchemaInput  {
     /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
     #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteSchemaInput {
 
 /// A builder for [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSchemaInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteSchemaInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// Consumes the builder and constructs a [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_schema::DeleteSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_schema::DeleteSchemaInput {
-            schema_arn: self.schema_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_schema::DeleteSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_schema::DeleteSchemaInput {
+                schema_arn: self.schema_arn
+                ,
+            }
+        )
     }
 }
+

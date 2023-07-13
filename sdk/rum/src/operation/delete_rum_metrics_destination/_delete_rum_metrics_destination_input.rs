@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRumMetricsDestinationInput {
+pub struct DeleteRumMetricsDestinationInput  {
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
     #[doc(hidden)]
     pub app_monitor_name: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct DeleteRumMetricsDestinationInput {
 }
 impl DeleteRumMetricsDestinationInput {
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
-    pub fn app_monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_monitor_name(&self) -> ::std::option::Option<& str> {
         self.app_monitor_name.as_deref()
     }
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::MetricDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::MetricDestination> {
         self.destination.as_ref()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
 }
 impl DeleteRumMetricsDestinationInput {
     /// Creates a new builder-style object to manufacture [`DeleteRumMetricsDestinationInput`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput).
-    pub fn builder() -> crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder{
+    pub fn builder() -> crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder {
         crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRumMetricsDestinationInput`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRumMetricsDestinationInputBuilder {
     pub(crate) app_monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::MetricDestination>,
@@ -46,20 +44,17 @@ pub struct DeleteRumMetricsDestinationInputBuilder {
 }
 impl DeleteRumMetricsDestinationInputBuilder {
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
-    pub fn app_monitor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
-    pub fn set_app_monitor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.app_monitor_name = input;
-        self
+    pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_monitor_name = input; self
+    }
+    /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
+    pub fn get_app_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_monitor_name
     }
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
@@ -67,42 +62,38 @@ impl DeleteRumMetricsDestinationInputBuilder {
         self
     }
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDestination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
+        self.destination = input; self
+    }
+    /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
+        &self.destination
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_arn = input;
-        self
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_arn = input; self
+    }
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
     }
     /// Consumes the builder and constructs a [`DeleteRumMetricsDestinationInput`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput {
-                app_monitor_name: self.app_monitor_name,
-                destination: self.destination,
-                destination_arn: self.destination_arn,
-            },
+                app_monitor_name: self.app_monitor_name
+                ,
+                destination: self.destination
+                ,
+                destination_arn: self.destination_arn
+                ,
+            }
         )
     }
 }
+

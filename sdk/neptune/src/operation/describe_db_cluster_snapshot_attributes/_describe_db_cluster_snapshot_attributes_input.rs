@@ -2,51 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbClusterSnapshotAttributesInput {
+pub struct DescribeDbClusterSnapshotAttributesInput  {
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbClusterSnapshotAttributesInput {
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
-    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
 }
 impl DescribeDbClusterSnapshotAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesInput`](crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput).
-    pub fn builder() -> crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder {
         crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterSnapshotAttributesInput`](crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterSnapshotAttributesInputBuilder {
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbClusterSnapshotAttributesInputBuilder {
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
-    pub fn db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
-    pub fn set_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.db_cluster_snapshot_identifier = input;
-        self
+    pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_snapshot_identifier = input; self
+    }
+    /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
+    pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotAttributesInput`](crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput {
                 db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier
@@ -55,3 +50,4 @@ impl DescribeDbClusterSnapshotAttributesInputBuilder {
         )
     }
 }
+

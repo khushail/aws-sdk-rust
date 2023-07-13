@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClusterTracksOutput {
+pub struct DescribeClusterTracksOutput  {
     /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
     #[doc(hidden)]
     pub maintenance_tracks: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>,
@@ -13,36 +13,31 @@ pub struct DescribeClusterTracksOutput {
 }
 impl DescribeClusterTracksOutput {
     /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
-    pub fn maintenance_tracks(&self) -> ::std::option::Option<&[crate::types::MaintenanceTrack]> {
+    pub fn maintenance_tracks(&self) -> ::std::option::Option<& [crate::types::MaintenanceTrack]> {
         self.maintenance_tracks.as_deref()
     }
     /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeClusterTracksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeClusterTracksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterTracksOutput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksOutputBuilder {
         crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterTracksOutput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterTracksOutputBuilder {
-    pub(crate) maintenance_tracks:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>,
+    pub(crate) maintenance_tracks: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,17 +49,17 @@ impl DescribeClusterTracksOutputBuilder {
     /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
     pub fn maintenance_tracks(mut self, input: crate::types::MaintenanceTrack) -> Self {
         let mut v = self.maintenance_tracks.unwrap_or_default();
-        v.push(input);
-        self.maintenance_tracks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.maintenance_tracks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
-    pub fn set_maintenance_tracks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>,
-    ) -> Self {
-        self.maintenance_tracks = input;
-        self
+    pub fn set_maintenance_tracks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>) -> Self {
+        self.maintenance_tracks = input; self
+    }
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+    pub fn get_maintenance_tracks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>> {
+        &self.maintenance_tracks
     }
     /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,24 +68,30 @@ impl DescribeClusterTracksOutputBuilder {
     }
     /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeClusterTracksOutput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksOutput).
     pub fn build(self) -> crate::operation::describe_cluster_tracks::DescribeClusterTracksOutput {
         crate::operation::describe_cluster_tracks::DescribeClusterTracksOutput {
-            maintenance_tracks: self.maintenance_tracks,
-            marker: self.marker,
+            maintenance_tracks: self.maintenance_tracks
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

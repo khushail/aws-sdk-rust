@@ -3,11 +3,10 @@
 /// <p>Detailed information about a device's status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceStatusInfo {
+pub struct DeviceStatusInfo  {
     /// <p>One or more device status detail descriptions.</p>
     #[doc(hidden)]
-    pub device_status_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>>,
+    pub device_status_details: ::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>>,
     /// <p>The latest available information about the connection status of a device. </p>
     #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
@@ -17,19 +16,15 @@ pub struct DeviceStatusInfo {
 }
 impl DeviceStatusInfo {
     /// <p>One or more device status detail descriptions.</p>
-    pub fn device_status_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeviceStatusDetail]> {
+    pub fn device_status_details(&self) -> ::std::option::Option<& [crate::types::DeviceStatusDetail]> {
         self.device_status_details.as_deref()
     }
     /// <p>The latest available information about the connection status of a device. </p>
-    pub fn connection_status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {
+    pub fn connection_status(&self) -> ::std::option::Option<& crate::types::ConnectionStatus> {
         self.connection_status.as_ref()
     }
     /// <p>The time (in epoch) when the device connection status changed.</p>
-    pub fn connection_status_updated_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn connection_status_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.connection_status_updated_time.as_ref()
     }
 }
@@ -42,12 +37,9 @@ impl DeviceStatusInfo {
 
 /// A builder for [`DeviceStatusInfo`](crate::types::DeviceStatusInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceStatusInfoBuilder {
-    pub(crate) device_status_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>>,
+    pub(crate) device_status_details: ::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>>,
     pub(crate) connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     pub(crate) connection_status_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -59,17 +51,17 @@ impl DeviceStatusInfoBuilder {
     /// <p>One or more device status detail descriptions.</p>
     pub fn device_status_details(mut self, input: crate::types::DeviceStatusDetail) -> Self {
         let mut v = self.device_status_details.unwrap_or_default();
-        v.push(input);
-        self.device_status_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.device_status_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more device status detail descriptions.</p>
-    pub fn set_device_status_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>>,
-    ) -> Self {
-        self.device_status_details = input;
-        self
+    pub fn set_device_status_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>>) -> Self {
+        self.device_status_details = input; self
+    }
+    /// <p>One or more device status detail descriptions.</p>
+    pub fn get_device_status_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>> {
+        &self.device_status_details
     }
     /// <p>The latest available information about the connection status of a device. </p>
     pub fn connection_status(mut self, input: crate::types::ConnectionStatus) -> Self {
@@ -77,12 +69,12 @@ impl DeviceStatusInfoBuilder {
         self
     }
     /// <p>The latest available information about the connection status of a device. </p>
-    pub fn set_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStatus>,
-    ) -> Self {
-        self.connection_status = input;
-        self
+    pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
+        self.connection_status = input; self
+    }
+    /// <p>The latest available information about the connection status of a device. </p>
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
+        &self.connection_status
     }
     /// <p>The time (in epoch) when the device connection status changed.</p>
     pub fn connection_status_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,19 +82,23 @@ impl DeviceStatusInfoBuilder {
         self
     }
     /// <p>The time (in epoch) when the device connection status changed.</p>
-    pub fn set_connection_status_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.connection_status_updated_time = input;
-        self
+    pub fn set_connection_status_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.connection_status_updated_time = input; self
+    }
+    /// <p>The time (in epoch) when the device connection status changed.</p>
+    pub fn get_connection_status_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.connection_status_updated_time
     }
     /// Consumes the builder and constructs a [`DeviceStatusInfo`](crate::types::DeviceStatusInfo).
     pub fn build(self) -> crate::types::DeviceStatusInfo {
         crate::types::DeviceStatusInfo {
-            device_status_details: self.device_status_details,
-            connection_status: self.connection_status,
-            connection_status_updated_time: self.connection_status_updated_time,
+            device_status_details: self.device_status_details
+            ,
+            connection_status: self.connection_status
+            ,
+            connection_status_updated_time: self.connection_status_updated_time
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about an integrated development environment (IDE) used in a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ide {
+pub struct Ide  {
     /// <p>A link to the IDE runtime image.</p>
     #[doc(hidden)]
     pub runtime: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Ide {
 }
 impl Ide {
     /// <p>A link to the IDE runtime image.</p>
-    pub fn runtime(&self) -> ::std::option::Option<&str> {
+    pub fn runtime(&self) -> ::std::option::Option<& str> {
         self.runtime.as_deref()
     }
     /// <p>The name of the IDE.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Ide {
 
 /// A builder for [`Ide`](crate::types::Ide).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdeBuilder {
     pub(crate) runtime: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl IdeBuilder {
     }
     /// <p>A link to the IDE runtime image.</p>
     pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.runtime = input;
-        self
+        self.runtime = input; self
+    }
+    /// <p>A link to the IDE runtime image.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime
     }
     /// <p>The name of the IDE.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl IdeBuilder {
     }
     /// <p>The name of the IDE.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the IDE.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`Ide`](crate::types::Ide).
     pub fn build(self) -> crate::types::Ide {
         crate::types::Ide {
-            runtime: self.runtime,
-            name: self.name,
+            runtime: self.runtime
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

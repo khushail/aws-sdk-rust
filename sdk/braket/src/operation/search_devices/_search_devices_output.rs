@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchDevicesOutput {
+pub struct SearchDevicesOutput  {
     /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
     #[doc(hidden)]
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
@@ -13,19 +13,19 @@ pub struct SearchDevicesOutput {
 }
 impl SearchDevicesOutput {
     /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::DeviceSummary]> {
+    pub fn devices(&self) -> ::std::option::Option<& [crate::types::DeviceSummary]> {
         self.devices.as_deref()
     }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchDevicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchDevicesOutput {
     /// Creates a new builder-style object to manufacture [`SearchDevicesOutput`](crate::operation::search_devices::SearchDevicesOutput).
     pub fn builder() -> crate::operation::search_devices::builders::SearchDevicesOutputBuilder {
@@ -35,9 +35,7 @@ impl SearchDevicesOutput {
 
 /// A builder for [`SearchDevicesOutput`](crate::operation::search_devices::SearchDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDevicesOutputBuilder {
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,17 @@ impl SearchDevicesOutputBuilder {
     /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
     pub fn devices(mut self, input: crate::types::DeviceSummary) -> Self {
         let mut v = self.devices.unwrap_or_default();
-        v.push(input);
-        self.devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
-    ) -> Self {
-        self.devices = input;
-        self
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>) -> Self {
+        self.devices = input; self
+    }
+    /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
+        &self.devices
     }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,24 +68,30 @@ impl SearchDevicesOutputBuilder {
     }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchDevicesOutput`](crate::operation::search_devices::SearchDevicesOutput).
     pub fn build(self) -> crate::operation::search_devices::SearchDevicesOutput {
         crate::operation::search_devices::SearchDevicesOutput {
-            devices: self.devices,
-            next_token: self.next_token,
+            devices: self.devices
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

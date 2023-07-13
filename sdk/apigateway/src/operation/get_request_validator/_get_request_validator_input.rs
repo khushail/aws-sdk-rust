@@ -3,7 +3,7 @@
 /// <p>Gets a RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRequestValidatorInput {
+pub struct GetRequestValidatorInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
@@ -13,28 +13,24 @@ pub struct GetRequestValidatorInput {
 }
 impl GetRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The identifier of the RequestValidator to be retrieved.</p>
-    pub fn request_validator_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_validator_id(&self) -> ::std::option::Option<& str> {
         self.request_validator_id.as_deref()
     }
 }
 impl GetRequestValidatorInput {
     /// Creates a new builder-style object to manufacture [`GetRequestValidatorInput`](crate::operation::get_request_validator::GetRequestValidatorInput).
-    pub fn builder(
-    ) -> crate::operation::get_request_validator::builders::GetRequestValidatorInputBuilder {
-        crate::operation::get_request_validator::builders::GetRequestValidatorInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_request_validator::builders::GetRequestValidatorInputBuilder {
+        crate::operation::get_request_validator::builders::GetRequestValidatorInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRequestValidatorInput`](crate::operation::get_request_validator::GetRequestValidatorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRequestValidatorInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_validator_id: ::std::option::Option<::std::string::String>,
@@ -47,37 +43,35 @@ impl GetRequestValidatorInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
     }
     /// <p>The identifier of the RequestValidator to be retrieved.</p>
-    pub fn request_validator_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_validator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_validator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the RequestValidator to be retrieved.</p>
-    pub fn set_request_validator_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.request_validator_id = input;
-        self
+    pub fn set_request_validator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_validator_id = input; self
+    }
+    /// <p>The identifier of the RequestValidator to be retrieved.</p>
+    pub fn get_request_validator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_validator_id
     }
     /// Consumes the builder and constructs a [`GetRequestValidatorInput`](crate::operation::get_request_validator::GetRequestValidatorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_request_validator::GetRequestValidatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_request_validator::GetRequestValidatorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_request_validator::GetRequestValidatorInput {
-                rest_api_id: self.rest_api_id,
-                request_validator_id: self.request_validator_id,
-            },
+                rest_api_id: self.rest_api_id
+                ,
+                request_validator_id: self.request_validator_id
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The container element for a bucket's policy status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyStatus {
+pub struct PolicyStatus  {
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     #[doc(hidden)]
     pub is_public: bool,
@@ -23,9 +23,7 @@ impl PolicyStatus {
 
 /// A builder for [`PolicyStatus`](crate::types::PolicyStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyStatusBuilder {
     pub(crate) is_public: ::std::option::Option<bool>,
 }
@@ -37,13 +35,19 @@ impl PolicyStatusBuilder {
     }
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     pub fn set_is_public(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_public = input;
-        self
+        self.is_public = input; self
+    }
+    /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
+    pub fn get_is_public(&self) -> &::std::option::Option<bool> {
+        &self.is_public
     }
     /// Consumes the builder and constructs a [`PolicyStatus`](crate::types::PolicyStatus).
     pub fn build(self) -> crate::types::PolicyStatus {
         crate::types::PolicyStatus {
-            is_public: self.is_public.unwrap_or_default(),
+            is_public: self.is_public
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

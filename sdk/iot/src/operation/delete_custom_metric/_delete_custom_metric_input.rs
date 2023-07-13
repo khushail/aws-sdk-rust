@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomMetricInput {
+pub struct DeleteCustomMetricInput  {
     /// <p> The name of the custom metric. </p>
     #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomMetricInput {
     /// <p> The name of the custom metric. </p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
 }
 impl DeleteCustomMetricInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomMetricInput`](crate::operation::delete_custom_metric::DeleteCustomMetricInput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_metric::builders::DeleteCustomMetricInputBuilder {
+    pub fn builder() -> crate::operation::delete_custom_metric::builders::DeleteCustomMetricInputBuilder {
         crate::operation::delete_custom_metric::builders::DeleteCustomMetricInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomMetricInput`](crate::operation::delete_custom_metric::DeleteCustomMetricInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl DeleteCustomMetricInputBuilder {
     }
     /// <p> The name of the custom metric. </p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
+    }
+    /// <p> The name of the custom metric. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// Consumes the builder and constructs a [`DeleteCustomMetricInput`](crate::operation::delete_custom_metric::DeleteCustomMetricInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_custom_metric::DeleteCustomMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_metric::DeleteCustomMetricInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_custom_metric::DeleteCustomMetricInput {
-                metric_name: self.metric_name,
-            },
+                metric_name: self.metric_name
+                ,
+            }
         )
     }
 }
+

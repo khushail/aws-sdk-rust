@@ -3,17 +3,14 @@
 /// <p>The matching criteria to be used during the auto-merging process. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Consolidation {
+pub struct Consolidation  {
     /// <p>A list of matching criteria.</p>
     #[doc(hidden)]
-    pub matching_attributes_list:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub matching_attributes_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl Consolidation {
     /// <p>A list of matching criteria.</p>
-    pub fn matching_attributes_list(
-        &self,
-    ) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
+    pub fn matching_attributes_list(&self) -> ::std::option::Option<& [::std::vec::Vec<::std::string::String>]> {
         self.matching_attributes_list.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl Consolidation {
 
 /// A builder for [`Consolidation`](crate::types::Consolidation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConsolidationBuilder {
-    pub(crate) matching_attributes_list:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) matching_attributes_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl ConsolidationBuilder {
     /// Appends an item to `matching_attributes_list`.
@@ -39,27 +33,26 @@ impl ConsolidationBuilder {
     /// To override the contents of this collection use [`set_matching_attributes_list`](Self::set_matching_attributes_list).
     ///
     /// <p>A list of matching criteria.</p>
-    pub fn matching_attributes_list(
-        mut self,
-        input: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn matching_attributes_list(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut v = self.matching_attributes_list.unwrap_or_default();
-        v.push(input);
-        self.matching_attributes_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.matching_attributes_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of matching criteria.</p>
-    pub fn set_matching_attributes_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.matching_attributes_list = input;
-        self
+    pub fn set_matching_attributes_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
+        self.matching_attributes_list = input; self
+    }
+    /// <p>A list of matching criteria.</p>
+    pub fn get_matching_attributes_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.matching_attributes_list
     }
     /// Consumes the builder and constructs a [`Consolidation`](crate::types::Consolidation).
     pub fn build(self) -> crate::types::Consolidation {
         crate::types::Consolidation {
-            matching_attributes_list: self.matching_attributes_list,
+            matching_attributes_list: self.matching_attributes_list
+            ,
         }
     }
 }
+

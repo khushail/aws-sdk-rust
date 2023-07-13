@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRunOutput {
+pub struct GetRunOutput  {
     /// <p>The run's ARN.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -53,9 +53,7 @@ pub struct GetRunOutput {
     pub log_level: ::std::option::Option<crate::types::RunLogLevel>,
     /// <p>The run's resource digests.</p>
     #[doc(hidden)]
-    pub resource_digests: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub resource_digests: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Who started the run.</p>
     #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
@@ -73,9 +71,7 @@ pub struct GetRunOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The run's tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The computational accelerator used to run the workflow. </p>
     #[doc(hidden)]
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
@@ -83,39 +79,39 @@ pub struct GetRunOutput {
 }
 impl GetRunOutput {
     /// <p>The run's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The run's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The run's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RunStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RunStatus> {
         self.status.as_ref()
     }
     /// <p>The run's workflow ID.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The run's workflow type.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The run's ID.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The run's service role ARN.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The run's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The run's group ID.</p>
-    pub fn run_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_group_id(&self) -> ::std::option::Option<& str> {
         self.run_group_id.as_deref()
     }
     /// <p>The run's priority.</p>
@@ -123,15 +119,15 @@ impl GetRunOutput {
         self.priority
     }
     /// <p>The run's definition.</p>
-    pub fn definition(&self) -> ::std::option::Option<&str> {
+    pub fn definition(&self) -> ::std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The run's digest.</p>
-    pub fn digest(&self) -> ::std::option::Option<&str> {
+    pub fn digest(&self) -> ::std::option::Option<& str> {
         self.digest.as_deref()
     }
     /// <p>The run's parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.parameters.as_ref()
     }
     /// <p>The run's storage capacity in gigabytes.</p>
@@ -139,59 +135,51 @@ impl GetRunOutput {
         self.storage_capacity
     }
     /// <p>The run's output URI.</p>
-    pub fn output_uri(&self) -> ::std::option::Option<&str> {
+    pub fn output_uri(&self) -> ::std::option::Option<& str> {
         self.output_uri.as_deref()
     }
     /// <p>The run's log level.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::RunLogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::RunLogLevel> {
         self.log_level.as_ref()
     }
     /// <p>The run's resource digests.</p>
-    pub fn resource_digests(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn resource_digests(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.resource_digests.as_ref()
     }
     /// <p>Who started the run.</p>
-    pub fn started_by(&self) -> ::std::option::Option<&str> {
+    pub fn started_by(&self) -> ::std::option::Option<& str> {
         self.started_by.as_deref()
     }
     /// <p>When the run was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the run started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The run's stop time.</p>
-    pub fn stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
     /// <p>The run's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The run's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The computational accelerator used to run the workflow. </p>
-    pub fn accelerators(&self) -> ::std::option::Option<&crate::types::Accelerators> {
+    pub fn accelerators(&self) -> ::std::option::Option<& crate::types::Accelerators> {
         self.accelerators.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRunOutput {
     /// Creates a new builder-style object to manufacture [`GetRunOutput`](crate::operation::get_run::GetRunOutput).
     pub fn builder() -> crate::operation::get_run::builders::GetRunOutputBuilder {
@@ -201,9 +189,7 @@ impl GetRunOutput {
 
 /// A builder for [`GetRunOutput`](crate::operation::get_run::GetRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRunOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -221,17 +207,13 @@ pub struct GetRunOutputBuilder {
     pub(crate) storage_capacity: ::std::option::Option<i32>,
     pub(crate) output_uri: ::std::option::Option<::std::string::String>,
     pub(crate) log_level: ::std::option::Option<crate::types::RunLogLevel>,
-    pub(crate) resource_digests: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) resource_digests: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) started_by: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) accelerators: ::std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }
@@ -243,8 +225,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The run's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The run's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -253,8 +238,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The run's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The run's status.</p>
     pub fn status(mut self, input: crate::types::RunStatus) -> Self {
@@ -263,8 +251,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RunStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The run's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RunStatus> {
+        &self.status
     }
     /// <p>The run's workflow ID.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -273,8 +264,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's workflow ID.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
+    }
+    /// <p>The run's workflow ID.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// <p>The run's workflow type.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -282,12 +276,12 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>The run's workflow type.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
-        self.workflow_type = input;
-        self
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
+        self.workflow_type = input; self
+    }
+    /// <p>The run's workflow type.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
     }
     /// <p>The run's ID.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -296,8 +290,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's ID.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
+    }
+    /// <p>The run's ID.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// <p>The run's service role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -306,8 +303,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's service role ARN.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The run's service role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The run's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -316,8 +316,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The run's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The run's group ID.</p>
     pub fn run_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -326,8 +329,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's group ID.</p>
     pub fn set_run_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_group_id = input;
-        self
+        self.run_group_id = input; self
+    }
+    /// <p>The run's group ID.</p>
+    pub fn get_run_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_group_id
     }
     /// <p>The run's priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -336,8 +342,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's priority.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
+    }
+    /// <p>The run's priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The run's definition.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -346,8 +355,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's definition.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
+    }
+    /// <p>The run's definition.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
     }
     /// <p>The run's digest.</p>
     pub fn digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -356,8 +368,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's digest.</p>
     pub fn set_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.digest = input;
-        self
+        self.digest = input; self
+    }
+    /// <p>The run's digest.</p>
+    pub fn get_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.digest
     }
     /// <p>The run's parameters.</p>
     pub fn parameters(mut self, input: ::aws_smithy_types::Document) -> Self {
@@ -365,12 +380,12 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>The run's parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Document>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.parameters = input; self
+    }
+    /// <p>The run's parameters.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.parameters
     }
     /// <p>The run's storage capacity in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
@@ -379,8 +394,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's storage capacity in gigabytes.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity = input;
-        self
+        self.storage_capacity = input; self
+    }
+    /// <p>The run's storage capacity in gigabytes.</p>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity
     }
     /// <p>The run's output URI.</p>
     pub fn output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -389,8 +407,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>The run's output URI.</p>
     pub fn set_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_uri = input;
-        self
+        self.output_uri = input; self
+    }
+    /// <p>The run's output URI.</p>
+    pub fn get_output_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_uri
     }
     /// <p>The run's log level.</p>
     pub fn log_level(mut self, input: crate::types::RunLogLevel) -> Self {
@@ -398,37 +419,31 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>The run's log level.</p>
-    pub fn set_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::RunLogLevel>,
-    ) -> Self {
-        self.log_level = input;
-        self
+    pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::RunLogLevel>) -> Self {
+        self.log_level = input; self
+    }
+    /// <p>The run's log level.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::RunLogLevel> {
+        &self.log_level
     }
     /// Adds a key-value pair to `resource_digests`.
     ///
     /// To override the contents of this collection use [`set_resource_digests`](Self::set_resource_digests).
     ///
     /// <p>The run's resource digests.</p>
-    pub fn resource_digests(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_digests(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.resource_digests.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.resource_digests = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.resource_digests = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The run's resource digests.</p>
-    pub fn set_resource_digests(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.resource_digests = input;
-        self
+    pub fn set_resource_digests(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.resource_digests = input; self
+    }
+    /// <p>The run's resource digests.</p>
+    pub fn get_resource_digests(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.resource_digests
     }
     /// <p>Who started the run.</p>
     pub fn started_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -437,8 +452,11 @@ impl GetRunOutputBuilder {
     }
     /// <p>Who started the run.</p>
     pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.started_by = input;
-        self
+        self.started_by = input; self
+    }
+    /// <p>Who started the run.</p>
+    pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.started_by
     }
     /// <p>When the run was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -446,12 +464,12 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>When the run was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>When the run was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>When the run started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -459,12 +477,12 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>When the run started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>When the run started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The run's stop time.</p>
     pub fn stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -472,53 +490,44 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>The run's stop time.</p>
-    pub fn set_stop_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.stop_time = input;
-        self
+    pub fn set_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.stop_time = input; self
+    }
+    /// <p>The run's stop time.</p>
+    pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_time
     }
     /// <p>The run's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The run's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>The run's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The run's tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The run's tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The run's tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// <p> The computational accelerator used to run the workflow. </p>
     pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
@@ -526,50 +535,75 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p> The computational accelerator used to run the workflow. </p>
-    pub fn set_accelerators(
-        mut self,
-        input: ::std::option::Option<crate::types::Accelerators>,
-    ) -> Self {
-        self.accelerators = input;
-        self
+    pub fn set_accelerators(mut self, input: ::std::option::Option<crate::types::Accelerators>) -> Self {
+        self.accelerators = input; self
+    }
+    /// <p> The computational accelerator used to run the workflow. </p>
+    pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
+        &self.accelerators
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRunOutput`](crate::operation::get_run::GetRunOutput).
     pub fn build(self) -> crate::operation::get_run::GetRunOutput {
         crate::operation::get_run::GetRunOutput {
-            arn: self.arn,
-            id: self.id,
-            status: self.status,
-            workflow_id: self.workflow_id,
-            workflow_type: self.workflow_type,
-            run_id: self.run_id,
-            role_arn: self.role_arn,
-            name: self.name,
-            run_group_id: self.run_group_id,
-            priority: self.priority,
-            definition: self.definition,
-            digest: self.digest,
-            parameters: self.parameters,
-            storage_capacity: self.storage_capacity,
-            output_uri: self.output_uri,
-            log_level: self.log_level,
-            resource_digests: self.resource_digests,
-            started_by: self.started_by,
-            creation_time: self.creation_time,
-            start_time: self.start_time,
-            stop_time: self.stop_time,
-            status_message: self.status_message,
-            tags: self.tags,
-            accelerators: self.accelerators,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            workflow_id: self.workflow_id
+            ,
+            workflow_type: self.workflow_type
+            ,
+            run_id: self.run_id
+            ,
+            role_arn: self.role_arn
+            ,
+            name: self.name
+            ,
+            run_group_id: self.run_group_id
+            ,
+            priority: self.priority
+            ,
+            definition: self.definition
+            ,
+            digest: self.digest
+            ,
+            parameters: self.parameters
+            ,
+            storage_capacity: self.storage_capacity
+            ,
+            output_uri: self.output_uri
+            ,
+            log_level: self.log_level
+            ,
+            resource_digests: self.resource_digests
+            ,
+            started_by: self.started_by
+            ,
+            creation_time: self.creation_time
+            ,
+            start_time: self.start_time
+            ,
+            stop_time: self.stop_time
+            ,
+            status_message: self.status_message
+            ,
+            tags: self.tags
+            ,
+            accelerators: self.accelerators
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

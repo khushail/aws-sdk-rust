@@ -3,7 +3,7 @@
 /// <p>Summary object describing a participant that has joined a stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParticipantSummary {
+pub struct ParticipantSummary  {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
     #[doc(hidden)]
     pub participant_id: ::std::option::Option<::std::string::String>,
@@ -22,19 +22,19 @@ pub struct ParticipantSummary {
 }
 impl ParticipantSummary {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Whether the participant is connected to or disconnected from the stage.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ParticipantState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ParticipantState> {
         self.state.as_ref()
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
-    pub fn first_join_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn first_join_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.first_join_time.as_ref()
     }
     /// <p>Whether the participant ever published to the stage session.</p>
@@ -51,9 +51,7 @@ impl ParticipantSummary {
 
 /// A builder for [`ParticipantSummary`](crate::types::ParticipantSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParticipantSummaryBuilder {
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -63,20 +61,17 @@ pub struct ParticipantSummaryBuilder {
 }
 impl ParticipantSummaryBuilder {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.participant_id = input;
-        self
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.participant_id = input; self
+    }
+    /// <p>Unique identifier for this participant, assigned by IVS.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_id
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,8 +80,11 @@ impl ParticipantSummaryBuilder {
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>Whether the participant is connected to or disconnected from the stage.</p>
     pub fn state(mut self, input: crate::types::ParticipantState) -> Self {
@@ -94,12 +92,12 @@ impl ParticipantSummaryBuilder {
         self
     }
     /// <p>Whether the participant is connected to or disconnected from the stage.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ParticipantState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>Whether the participant is connected to or disconnected from the stage.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ParticipantState> {
+        &self.state
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
     pub fn first_join_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -107,12 +105,12 @@ impl ParticipantSummaryBuilder {
         self
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
-    pub fn set_first_join_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.first_join_time = input;
-        self
+    pub fn set_first_join_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.first_join_time = input; self
+    }
+    /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
+    pub fn get_first_join_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_join_time
     }
     /// <p>Whether the participant ever published to the stage session.</p>
     pub fn published(mut self, input: bool) -> Self {
@@ -121,17 +119,27 @@ impl ParticipantSummaryBuilder {
     }
     /// <p>Whether the participant ever published to the stage session.</p>
     pub fn set_published(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.published = input;
-        self
+        self.published = input; self
+    }
+    /// <p>Whether the participant ever published to the stage session.</p>
+    pub fn get_published(&self) -> &::std::option::Option<bool> {
+        &self.published
     }
     /// Consumes the builder and constructs a [`ParticipantSummary`](crate::types::ParticipantSummary).
     pub fn build(self) -> crate::types::ParticipantSummary {
         crate::types::ParticipantSummary {
-            participant_id: self.participant_id,
-            user_id: self.user_id,
-            state: self.state,
-            first_join_time: self.first_join_time,
-            published: self.published.unwrap_or_default(),
+            participant_id: self.participant_id
+            ,
+            user_id: self.user_id
+            ,
+            state: self.state
+            ,
+            first_join_time: self.first_join_time
+            ,
+            published: self.published
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

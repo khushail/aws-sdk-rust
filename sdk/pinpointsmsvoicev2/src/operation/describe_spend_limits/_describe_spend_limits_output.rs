@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSpendLimitsOutput {
+pub struct DescribeSpendLimitsOutput  {
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
     #[doc(hidden)]
     pub spend_limits: ::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>>,
@@ -13,33 +13,29 @@ pub struct DescribeSpendLimitsOutput {
 }
 impl DescribeSpendLimitsOutput {
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
-    pub fn spend_limits(&self) -> ::std::option::Option<&[crate::types::SpendLimit]> {
+    pub fn spend_limits(&self) -> ::std::option::Option<& [crate::types::SpendLimit]> {
         self.spend_limits.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSpendLimitsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSpendLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpendLimitsOutput`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsOutputBuilder {
-        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsOutputBuilder {
+        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpendLimitsOutput`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpendLimitsOutputBuilder {
     pub(crate) spend_limits: ::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,17 @@ impl DescribeSpendLimitsOutputBuilder {
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
     pub fn spend_limits(mut self, input: crate::types::SpendLimit) -> Self {
         let mut v = self.spend_limits.unwrap_or_default();
-        v.push(input);
-        self.spend_limits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.spend_limits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
-    pub fn set_spend_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>>,
-    ) -> Self {
-        self.spend_limits = input;
-        self
+    pub fn set_spend_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>>) -> Self {
+        self.spend_limits = input; self
+    }
+    /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
+    pub fn get_spend_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>> {
+        &self.spend_limits
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +68,30 @@ impl DescribeSpendLimitsOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSpendLimitsOutput`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput).
     pub fn build(self) -> crate::operation::describe_spend_limits::DescribeSpendLimitsOutput {
         crate::operation::describe_spend_limits::DescribeSpendLimitsOutput {
-            spend_limits: self.spend_limits,
-            next_token: self.next_token,
+            spend_limits: self.spend_limits
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

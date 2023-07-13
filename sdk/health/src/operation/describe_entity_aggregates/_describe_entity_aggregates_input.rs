@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEntityAggregatesInput {
+pub struct DescribeEntityAggregatesInput  {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     #[doc(hidden)]
     pub event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeEntityAggregatesInput {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub fn event_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn event_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.event_arns.as_deref()
     }
 }
 impl DescribeEntityAggregatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesInput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder {
         crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEntityAggregatesInput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntityAggregatesInputBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -38,29 +34,26 @@ impl DescribeEntityAggregatesInputBuilder {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub fn event_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_arns.unwrap_or_default();
-        v.push(input.into());
-        self.event_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub fn set_event_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.event_arns = input;
-        self
+    pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.event_arns = input; self
+    }
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+    pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_arns
     }
     /// Consumes the builder and constructs a [`DescribeEntityAggregatesInput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput {
-                event_arns: self.event_arns,
-            },
+                event_arns: self.event_arns
+                ,
+            }
         )
     }
 }
+

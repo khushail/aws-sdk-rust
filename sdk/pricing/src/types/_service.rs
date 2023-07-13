@@ -3,7 +3,7 @@
 /// <p>The metadata for a service, such as the service code and available attribute names.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Service {
+pub struct Service  {
     /// <p>The code for the Amazon Web Services service.</p>
     #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Service {
 }
 impl Service {
     /// <p>The code for the Amazon Web Services service.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The attributes that are available for this service.</p>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn attribute_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.attribute_names.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Service {
 
 /// A builder for [`Service`](crate::types::Service).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,36 +43,39 @@ impl ServiceBuilder {
     }
     /// <p>The code for the Amazon Web Services service.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
+    }
+    /// <p>The code for the Amazon Web Services service.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// Appends an item to `attribute_names`.
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
     ///
     /// <p>The attributes that are available for this service.</p>
-    pub fn attribute_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes that are available for this service.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.attribute_names = input; self
+    }
+    /// <p>The attributes that are available for this service.</p>
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_names
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {
         crate::types::Service {
-            service_code: self.service_code,
-            attribute_names: self.attribute_names,
+            service_code: self.service_code
+            ,
+            attribute_names: self.attribute_names
+            ,
         }
     }
 }
+

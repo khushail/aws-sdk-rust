@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReportGroupOutput {
+pub struct DeleteReportGroupOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteReportGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteReportGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReportGroupOutput`](crate::operation::delete_report_group::DeleteReportGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_report_group::builders::DeleteReportGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_report_group::builders::DeleteReportGroupOutputBuilder {
         crate::operation::delete_report_group::builders::DeleteReportGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReportGroupOutput`](crate::operation::delete_report_group::DeleteReportGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReportGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteReportGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteReportGroupOutput`](crate::operation::delete_report_group::DeleteReportGroupOutput).
     pub fn build(self) -> crate::operation::delete_report_group::DeleteReportGroupOutput {
         crate::operation::delete_report_group::DeleteReportGroupOutput {
@@ -43,3 +40,4 @@ impl DeleteReportGroupOutputBuilder {
         }
     }
 }
+

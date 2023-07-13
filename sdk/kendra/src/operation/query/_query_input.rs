@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryInput {
+pub struct QueryInput  {
     /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
     #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     #[doc(hidden)]
     pub query_text: ::std::option::Option<::std::string::String>,
-    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p> 
     /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     #[doc(hidden)]
     pub attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
@@ -18,25 +18,23 @@ pub struct QueryInput {
     pub facets: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
     /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
     #[doc(hidden)]
-    pub requested_document_attributes:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub requested_document_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
     #[doc(hidden)]
     pub query_result_type_filter: ::std::option::Option<crate::types::QueryResultType>,
-    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
-    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
+    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p> 
+    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p> 
+    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p> 
     /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
     #[doc(hidden)]
-    pub document_relevance_override_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
+    pub document_relevance_override_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
     /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     #[doc(hidden)]
     pub page_number: ::std::option::Option<i32>,
     /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
     #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
-    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p> 
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
     #[doc(hidden)]
     pub sorting_configuration: ::std::option::Option<crate::types::SortingConfiguration>,
@@ -48,44 +46,39 @@ pub struct QueryInput {
     pub visitor_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables suggested spell corrections for queries.</p>
     #[doc(hidden)]
-    pub spell_correction_configuration:
-        ::std::option::Option<crate::types::SpellCorrectionConfiguration>,
+    pub spell_correction_configuration: ::std::option::Option<crate::types::SpellCorrectionConfiguration>,
 }
 impl QueryInput {
     /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
-    pub fn query_text(&self) -> ::std::option::Option<&str> {
+    pub fn query_text(&self) -> ::std::option::Option<& str> {
         self.query_text.as_deref()
     }
-    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p> 
     /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
-    pub fn attribute_filter(&self) -> ::std::option::Option<&crate::types::AttributeFilter> {
+    pub fn attribute_filter(&self) -> ::std::option::Option<& crate::types::AttributeFilter> {
         self.attribute_filter.as_ref()
     }
     /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
-    pub fn facets(&self) -> ::std::option::Option<&[crate::types::Facet]> {
+    pub fn facets(&self) -> ::std::option::Option<& [crate::types::Facet]> {
         self.facets.as_deref()
     }
     /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
-    pub fn requested_document_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn requested_document_attributes(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.requested_document_attributes.as_deref()
     }
     /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
-    pub fn query_result_type_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QueryResultType> {
+    pub fn query_result_type_filter(&self) -> ::std::option::Option<& crate::types::QueryResultType> {
         self.query_result_type_filter.as_ref()
     }
-    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
-    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
+    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p> 
+    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p> 
+    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p> 
     /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn document_relevance_override_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DocumentRelevanceConfiguration]> {
+    pub fn document_relevance_override_configurations(&self) -> ::std::option::Option<& [crate::types::DocumentRelevanceConfiguration]> {
         self.document_relevance_override_configurations.as_deref()
     }
     /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
@@ -96,25 +89,21 @@ impl QueryInput {
     pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
-    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p> 
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
-    pub fn sorting_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SortingConfiguration> {
+    pub fn sorting_configuration(&self) -> ::std::option::Option<& crate::types::SortingConfiguration> {
         self.sorting_configuration.as_ref()
     }
     /// <p>The user context token or user and group information.</p>
-    pub fn user_context(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn user_context(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.user_context.as_ref()
     }
     /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
-    pub fn visitor_id(&self) -> ::std::option::Option<&str> {
+    pub fn visitor_id(&self) -> ::std::option::Option<& str> {
         self.visitor_id.as_deref()
     }
     /// <p>Enables suggested spell corrections for queries.</p>
-    pub fn spell_correction_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SpellCorrectionConfiguration> {
+    pub fn spell_correction_configuration(&self) -> ::std::option::Option<& crate::types::SpellCorrectionConfiguration> {
         self.spell_correction_configuration.as_ref()
     }
 }
@@ -127,26 +116,21 @@ impl QueryInput {
 
 /// A builder for [`QueryInput`](crate::operation::query::QueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_text: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
     pub(crate) facets: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
-    pub(crate) requested_document_attributes:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) requested_document_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) query_result_type_filter: ::std::option::Option<crate::types::QueryResultType>,
-    pub(crate) document_relevance_override_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
+    pub(crate) document_relevance_override_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
     pub(crate) page_number: ::std::option::Option<i32>,
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) sorting_configuration: ::std::option::Option<crate::types::SortingConfiguration>,
     pub(crate) user_context: ::std::option::Option<crate::types::UserContext>,
     pub(crate) visitor_id: ::std::option::Option<::std::string::String>,
-    pub(crate) spell_correction_configuration:
-        ::std::option::Option<crate::types::SpellCorrectionConfiguration>,
+    pub(crate) spell_correction_configuration: ::std::option::Option<crate::types::SpellCorrectionConfiguration>,
 }
 impl QueryInputBuilder {
     /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
@@ -156,8 +140,11 @@ impl QueryInputBuilder {
     }
     /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
+    }
+    /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,23 +153,27 @@ impl QueryInputBuilder {
     }
     /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_text = input;
-        self
+        self.query_text = input; self
     }
-    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
+    pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_text
+    }
+    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p> 
     /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     pub fn attribute_filter(mut self, input: crate::types::AttributeFilter) -> Self {
         self.attribute_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p> 
     /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
-    pub fn set_attribute_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeFilter>,
-    ) -> Self {
-        self.attribute_filter = input;
-        self
+    pub fn set_attribute_filter(mut self, input: ::std::option::Option<crate::types::AttributeFilter>) -> Self {
+        self.attribute_filter = input; self
+    }
+    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p> 
+    /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
+    pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
+        &self.attribute_filter
     }
     /// Appends an item to `facets`.
     ///
@@ -191,39 +182,36 @@ impl QueryInputBuilder {
     /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
     pub fn facets(mut self, input: crate::types::Facet) -> Self {
         let mut v = self.facets.unwrap_or_default();
-        v.push(input);
-        self.facets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.facets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
-    pub fn set_facets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
-    ) -> Self {
-        self.facets = input;
-        self
+    pub fn set_facets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>) -> Self {
+        self.facets = input; self
+    }
+    /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
+    pub fn get_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Facet>> {
+        &self.facets
     }
     /// Appends an item to `requested_document_attributes`.
     ///
     /// To override the contents of this collection use [`set_requested_document_attributes`](Self::set_requested_document_attributes).
     ///
     /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
-    pub fn requested_document_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requested_document_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requested_document_attributes.unwrap_or_default();
-        v.push(input.into());
-        self.requested_document_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.requested_document_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
-    pub fn set_requested_document_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.requested_document_attributes = input;
-        self
+    pub fn set_requested_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.requested_document_attributes = input; self
+    }
+    /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
+    pub fn get_requested_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.requested_document_attributes
     }
     /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
     pub fn query_result_type_filter(mut self, input: crate::types::QueryResultType) -> Self {
@@ -231,42 +219,40 @@ impl QueryInputBuilder {
         self
     }
     /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
-    pub fn set_query_result_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryResultType>,
-    ) -> Self {
-        self.query_result_type_filter = input;
-        self
+    pub fn set_query_result_type_filter(mut self, input: ::std::option::Option<crate::types::QueryResultType>) -> Self {
+        self.query_result_type_filter = input; self
+    }
+    /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
+    pub fn get_query_result_type_filter(&self) -> &::std::option::Option<crate::types::QueryResultType> {
+        &self.query_result_type_filter
     }
     /// Appends an item to `document_relevance_override_configurations`.
     ///
     /// To override the contents of this collection use [`set_document_relevance_override_configurations`](Self::set_document_relevance_override_configurations).
     ///
-    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
-    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
+    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p> 
+    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p> 
+    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p> 
     /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn document_relevance_override_configurations(
-        mut self,
-        input: crate::types::DocumentRelevanceConfiguration,
-    ) -> Self {
-        let mut v = self
-            .document_relevance_override_configurations
-            .unwrap_or_default();
-        v.push(input);
-        self.document_relevance_override_configurations = ::std::option::Option::Some(v);
-        self
+    pub fn document_relevance_override_configurations(mut self, input: crate::types::DocumentRelevanceConfiguration) -> Self {
+        let mut v = self.document_relevance_override_configurations.unwrap_or_default();
+                        v.push(input);
+                        self.document_relevance_override_configurations = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
-    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
+    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p> 
+    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p> 
+    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p> 
     /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn set_document_relevance_override_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
-    ) -> Self {
-        self.document_relevance_override_configurations = input;
-        self
+    pub fn set_document_relevance_override_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>) -> Self {
+        self.document_relevance_override_configurations = input; self
+    }
+    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p> 
+    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p> 
+    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p> 
+    /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
+    pub fn get_document_relevance_override_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>> {
+        &self.document_relevance_override_configurations
     }
     /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn page_number(mut self, input: i32) -> Self {
@@ -275,8 +261,11 @@ impl QueryInputBuilder {
     }
     /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn set_page_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_number = input;
-        self
+        self.page_number = input; self
+    }
+    /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
+    pub fn get_page_number(&self) -> &::std::option::Option<i32> {
+        &self.page_number
     }
     /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -285,23 +274,27 @@ impl QueryInputBuilder {
     }
     /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
-    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
+    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p> 
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
     pub fn sorting_configuration(mut self, input: crate::types::SortingConfiguration) -> Self {
         self.sorting_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p> 
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
-    pub fn set_sorting_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SortingConfiguration>,
-    ) -> Self {
-        self.sorting_configuration = input;
-        self
+    pub fn set_sorting_configuration(mut self, input: ::std::option::Option<crate::types::SortingConfiguration>) -> Self {
+        self.sorting_configuration = input; self
+    }
+    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p> 
+    /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
+    pub fn get_sorting_configuration(&self) -> &::std::option::Option<crate::types::SortingConfiguration> {
+        &self.sorting_configuration
     }
     /// <p>The user context token or user and group information.</p>
     pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
@@ -309,12 +302,12 @@ impl QueryInputBuilder {
         self
     }
     /// <p>The user context token or user and group information.</p>
-    pub fn set_user_context(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
-        self.user_context = input;
-        self
+    pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.user_context = input; self
+    }
+    /// <p>The user context token or user and group information.</p>
+    pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.user_context
     }
     /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
     pub fn visitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -323,47 +316,57 @@ impl QueryInputBuilder {
     }
     /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
     pub fn set_visitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.visitor_id = input;
-        self
+        self.visitor_id = input; self
+    }
+    /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
+    pub fn get_visitor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visitor_id
     }
     /// <p>Enables suggested spell corrections for queries.</p>
-    pub fn spell_correction_configuration(
-        mut self,
-        input: crate::types::SpellCorrectionConfiguration,
-    ) -> Self {
+    pub fn spell_correction_configuration(mut self, input: crate::types::SpellCorrectionConfiguration) -> Self {
         self.spell_correction_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables suggested spell corrections for queries.</p>
-    pub fn set_spell_correction_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SpellCorrectionConfiguration>,
-    ) -> Self {
-        self.spell_correction_configuration = input;
-        self
+    pub fn set_spell_correction_configuration(mut self, input: ::std::option::Option<crate::types::SpellCorrectionConfiguration>) -> Self {
+        self.spell_correction_configuration = input; self
+    }
+    /// <p>Enables suggested spell corrections for queries.</p>
+    pub fn get_spell_correction_configuration(&self) -> &::std::option::Option<crate::types::SpellCorrectionConfiguration> {
+        &self.spell_correction_configuration
     }
     /// Consumes the builder and constructs a [`QueryInput`](crate::operation::query::QueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::query::QueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::query::QueryInput {
-            index_id: self.index_id,
-            query_text: self.query_text,
-            attribute_filter: self.attribute_filter,
-            facets: self.facets,
-            requested_document_attributes: self.requested_document_attributes,
-            query_result_type_filter: self.query_result_type_filter,
-            document_relevance_override_configurations: self
-                .document_relevance_override_configurations,
-            page_number: self.page_number,
-            page_size: self.page_size,
-            sorting_configuration: self.sorting_configuration,
-            user_context: self.user_context,
-            visitor_id: self.visitor_id,
-            spell_correction_configuration: self.spell_correction_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::query::QueryInput {
+                index_id: self.index_id
+                ,
+                query_text: self.query_text
+                ,
+                attribute_filter: self.attribute_filter
+                ,
+                facets: self.facets
+                ,
+                requested_document_attributes: self.requested_document_attributes
+                ,
+                query_result_type_filter: self.query_result_type_filter
+                ,
+                document_relevance_override_configurations: self.document_relevance_override_configurations
+                ,
+                page_number: self.page_number
+                ,
+                page_size: self.page_size
+                ,
+                sorting_configuration: self.sorting_configuration
+                ,
+                user_context: self.user_context
+                ,
+                visitor_id: self.visitor_id
+                ,
+                spell_correction_configuration: self.spell_correction_configuration
+                ,
+            }
+        )
     }
 }
+

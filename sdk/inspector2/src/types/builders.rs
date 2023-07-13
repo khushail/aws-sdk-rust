@@ -137,6 +137,8 @@ pub use crate::types::_counts::CountsBuilder;
 
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteriaBuilder;
 
+pub use crate::types::_coverage_date_filter::CoverageDateFilterBuilder;
+
 pub use crate::types::_coverage_string_filter::CoverageStringFilterBuilder;
 
 pub use crate::types::_coverage_map_filter::CoverageMapFilterBuilder;
@@ -188,3 +190,4 @@ pub use crate::types::_account_state::AccountStateBuilder;
 pub use crate::types::_resource_state::ResourceStateBuilder;
 
 pub use crate::types::_state::StateBuilder;
+

@@ -3,14 +3,14 @@
 /// <p> The connector-specific profile properties required when using ServiceNow. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceNowConnectorProfileProperties {
+pub struct ServiceNowConnectorProfileProperties  {
     /// <p> The location of the ServiceNow resource. </p>
     #[doc(hidden)]
     pub instance_url: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNowConnectorProfileProperties {
     /// <p> The location of the ServiceNow resource. </p>
-    pub fn instance_url(&self) -> ::std::option::Option<&str> {
+    pub fn instance_url(&self) -> ::std::option::Option<& str> {
         self.instance_url.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ServiceNowConnectorProfileProperties {
 
 /// A builder for [`ServiceNowConnectorProfileProperties`](crate::types::ServiceNowConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceNowConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ServiceNowConnectorProfilePropertiesBuilder {
     }
     /// <p> The location of the ServiceNow resource. </p>
     pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_url = input;
-        self
+        self.instance_url = input; self
+    }
+    /// <p> The location of the ServiceNow resource. </p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
     }
     /// Consumes the builder and constructs a [`ServiceNowConnectorProfileProperties`](crate::types::ServiceNowConnectorProfileProperties).
     pub fn build(self) -> crate::types::ServiceNowConnectorProfileProperties {
         crate::types::ServiceNowConnectorProfileProperties {
-            instance_url: self.instance_url,
+            instance_url: self.instance_url
+            ,
         }
     }
 }
+

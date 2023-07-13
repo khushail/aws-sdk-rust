@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCorsPolicyInput {
+pub struct GetCorsPolicyInput  {
     /// <p>The name of the container that the policy is assigned to.</p>
     #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCorsPolicyInput {
     /// <p>The name of the container that the policy is assigned to.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl GetCorsPolicyInput {
 
 /// A builder for [`GetCorsPolicyInput`](crate::operation::get_cors_policy::GetCorsPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCorsPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCorsPolicyInputBuilder {
     /// <p>The name of the container that the policy is assigned to.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container that the policy is assigned to.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.container_name = input;
-        self
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.container_name = input; self
+    }
+    /// <p>The name of the container that the policy is assigned to.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
     }
     /// Consumes the builder and constructs a [`GetCorsPolicyInput`](crate::operation::get_cors_policy::GetCorsPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cors_policy::GetCorsPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_cors_policy::GetCorsPolicyInput {
-            container_name: self.container_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cors_policy::GetCorsPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cors_policy::GetCorsPolicyInput {
+                container_name: self.container_name
+                ,
+            }
+        )
     }
 }
+

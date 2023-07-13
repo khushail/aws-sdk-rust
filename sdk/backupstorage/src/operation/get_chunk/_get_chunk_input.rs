@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetChunkInput {
+pub struct GetChunkInput  {
     /// Storage job id
     #[doc(hidden)]
     pub storage_job_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetChunkInput {
 }
 impl GetChunkInput {
     /// Storage job id
-    pub fn storage_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn storage_job_id(&self) -> ::std::option::Option<& str> {
         self.storage_job_id.as_deref()
     }
     /// Chunk token
-    pub fn chunk_token(&self) -> ::std::option::Option<&str> {
+    pub fn chunk_token(&self) -> ::std::option::Option<& str> {
         self.chunk_token.as_deref()
     }
 }
@@ -29,29 +29,24 @@ impl GetChunkInput {
 
 /// A builder for [`GetChunkInput`](crate::operation::get_chunk::GetChunkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChunkInputBuilder {
     pub(crate) storage_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) chunk_token: ::std::option::Option<::std::string::String>,
 }
 impl GetChunkInputBuilder {
     /// Storage job id
-    pub fn storage_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Storage job id
-    pub fn set_storage_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.storage_job_id = input;
-        self
+    pub fn set_storage_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_job_id = input; self
+    }
+    /// Storage job id
+    pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_job_id
     }
     /// Chunk token
     pub fn chunk_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,19 +55,22 @@ impl GetChunkInputBuilder {
     }
     /// Chunk token
     pub fn set_chunk_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chunk_token = input;
-        self
+        self.chunk_token = input; self
+    }
+    /// Chunk token
+    pub fn get_chunk_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chunk_token
     }
     /// Consumes the builder and constructs a [`GetChunkInput`](crate::operation::get_chunk::GetChunkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_chunk::GetChunkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_chunk::GetChunkInput {
-            storage_job_id: self.storage_job_id,
-            chunk_token: self.chunk_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_chunk::GetChunkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_chunk::GetChunkInput {
+                storage_job_id: self.storage_job_id
+                ,
+                chunk_token: self.chunk_token
+                ,
+            }
+        )
     }
 }
+

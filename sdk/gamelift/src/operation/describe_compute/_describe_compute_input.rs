@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeComputeInput {
+pub struct DescribeComputeInput  {
     /// <p>A unique identifier for the fleet the compute is registered to.</p>
     #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeComputeInput {
 }
 impl DescribeComputeInput {
     /// <p>A unique identifier for the fleet the compute is registered to.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
-    pub fn compute_name(&self) -> ::std::option::Option<&str> {
+    pub fn compute_name(&self) -> ::std::option::Option<& str> {
         self.compute_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DescribeComputeInput {
 
 /// A builder for [`DescribeComputeInput`](crate::operation::describe_compute::DescribeComputeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComputeInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DescribeComputeInputBuilder {
     }
     /// <p>A unique identifier for the fleet the compute is registered to.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
+    }
+    /// <p>A unique identifier for the fleet the compute is registered to.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl DescribeComputeInputBuilder {
     }
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compute_name = input;
-        self
+        self.compute_name = input; self
+    }
+    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_name
     }
     /// Consumes the builder and constructs a [`DescribeComputeInput`](crate::operation::describe_compute::DescribeComputeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_compute::DescribeComputeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_compute::DescribeComputeInput {
-            fleet_id: self.fleet_id,
-            compute_name: self.compute_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_compute::DescribeComputeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_compute::DescribeComputeInput {
+                fleet_id: self.fleet_id
+                ,
+                compute_name: self.compute_name
+                ,
+            }
+        )
     }
 }
+

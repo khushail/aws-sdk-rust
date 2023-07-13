@@ -3,24 +3,21 @@
 /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceIntegrationConfig {
+pub struct ServiceIntegrationConfig  {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
     #[doc(hidden)]
     pub ops_center: ::std::option::Option<crate::types::OpsCenterIntegration>,
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
     #[doc(hidden)]
-    pub logs_anomaly_detection:
-        ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
+    pub logs_anomaly_detection: ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
 }
 impl ServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
-    pub fn ops_center(&self) -> ::std::option::Option<&crate::types::OpsCenterIntegration> {
+    pub fn ops_center(&self) -> ::std::option::Option<& crate::types::OpsCenterIntegration> {
         self.ops_center.as_ref()
     }
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
-    pub fn logs_anomaly_detection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LogsAnomalyDetectionIntegration> {
+    pub fn logs_anomaly_detection(&self) -> ::std::option::Option<& crate::types::LogsAnomalyDetectionIntegration> {
         self.logs_anomaly_detection.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl ServiceIntegrationConfig {
 
 /// A builder for [`ServiceIntegrationConfig`](crate::types::ServiceIntegrationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceIntegrationConfigBuilder {
     pub(crate) ops_center: ::std::option::Option<crate::types::OpsCenterIntegration>,
-    pub(crate) logs_anomaly_detection:
-        ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
+    pub(crate) logs_anomaly_detection: ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
 }
 impl ServiceIntegrationConfigBuilder {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
@@ -48,34 +42,34 @@ impl ServiceIntegrationConfigBuilder {
         self
     }
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
-    pub fn set_ops_center(
-        mut self,
-        input: ::std::option::Option<crate::types::OpsCenterIntegration>,
-    ) -> Self {
-        self.ops_center = input;
-        self
+    pub fn set_ops_center(mut self, input: ::std::option::Option<crate::types::OpsCenterIntegration>) -> Self {
+        self.ops_center = input; self
+    }
+    /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
+    pub fn get_ops_center(&self) -> &::std::option::Option<crate::types::OpsCenterIntegration> {
+        &self.ops_center
     }
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
-    pub fn logs_anomaly_detection(
-        mut self,
-        input: crate::types::LogsAnomalyDetectionIntegration,
-    ) -> Self {
+    pub fn logs_anomaly_detection(mut self, input: crate::types::LogsAnomalyDetectionIntegration) -> Self {
         self.logs_anomaly_detection = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
-    pub fn set_logs_anomaly_detection(
-        mut self,
-        input: ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
-    ) -> Self {
-        self.logs_anomaly_detection = input;
-        self
+    pub fn set_logs_anomaly_detection(mut self, input: ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>) -> Self {
+        self.logs_anomaly_detection = input; self
+    }
+    /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+    pub fn get_logs_anomaly_detection(&self) -> &::std::option::Option<crate::types::LogsAnomalyDetectionIntegration> {
+        &self.logs_anomaly_detection
     }
     /// Consumes the builder and constructs a [`ServiceIntegrationConfig`](crate::types::ServiceIntegrationConfig).
     pub fn build(self) -> crate::types::ServiceIntegrationConfig {
         crate::types::ServiceIntegrationConfig {
-            ops_center: self.ops_center,
-            logs_anomaly_detection: self.logs_anomaly_detection,
+            ops_center: self.ops_center
+            ,
+            logs_anomaly_detection: self.logs_anomaly_detection
+            ,
         }
     }
 }
+

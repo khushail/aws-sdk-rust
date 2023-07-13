@@ -3,7 +3,7 @@
 /// <p>Defines the monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringJobDefinition {
+pub struct MonitoringJobDefinition  {
     /// <p>Baseline configuration used to validate that the data conforms to the specified constraints and statistics</p>
     #[doc(hidden)]
     pub baseline_config: ::std::option::Option<crate::types::MonitoringBaselineConfig>,
@@ -18,16 +18,13 @@ pub struct MonitoringJobDefinition {
     pub monitoring_resources: ::std::option::Option<crate::types::MonitoringResources>,
     /// <p>Configures the monitoring job to run a specified Docker container image.</p>
     #[doc(hidden)]
-    pub monitoring_app_specification:
-        ::std::option::Option<crate::types::MonitoringAppSpecification>,
+    pub monitoring_app_specification: ::std::option::Option<crate::types::MonitoringAppSpecification>,
     /// <p>Specifies a time limit for how long the monitoring job is allowed to run.</p>
     #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
     /// <p>Sets the environment variables in the Docker container.</p>
     #[doc(hidden)]
-    pub environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies networking options for an monitoring job.</p>
     #[doc(hidden)]
     pub network_config: ::std::option::Option<crate::types::NetworkConfig>,
@@ -37,53 +34,39 @@ pub struct MonitoringJobDefinition {
 }
 impl MonitoringJobDefinition {
     /// <p>Baseline configuration used to validate that the data conforms to the specified constraints and statistics</p>
-    pub fn baseline_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringBaselineConfig> {
+    pub fn baseline_config(&self) -> ::std::option::Option<& crate::types::MonitoringBaselineConfig> {
         self.baseline_config.as_ref()
     }
     /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
-    pub fn monitoring_inputs(&self) -> ::std::option::Option<&[crate::types::MonitoringInput]> {
+    pub fn monitoring_inputs(&self) -> ::std::option::Option<& [crate::types::MonitoringInput]> {
         self.monitoring_inputs.as_deref()
     }
     /// <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn monitoring_output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringOutputConfig> {
+    pub fn monitoring_output_config(&self) -> ::std::option::Option<& crate::types::MonitoringOutputConfig> {
         self.monitoring_output_config.as_ref()
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a monitoring job. In distributed processing, you specify more than one instance.</p>
-    pub fn monitoring_resources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringResources> {
+    pub fn monitoring_resources(&self) -> ::std::option::Option<& crate::types::MonitoringResources> {
         self.monitoring_resources.as_ref()
     }
     /// <p>Configures the monitoring job to run a specified Docker container image.</p>
-    pub fn monitoring_app_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringAppSpecification> {
+    pub fn monitoring_app_specification(&self) -> ::std::option::Option<& crate::types::MonitoringAppSpecification> {
         self.monitoring_app_specification.as_ref()
     }
     /// <p>Specifies a time limit for how long the monitoring job is allowed to run.</p>
-    pub fn stopping_condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringStoppingCondition> {
+    pub fn stopping_condition(&self) -> ::std::option::Option<& crate::types::MonitoringStoppingCondition> {
         self.stopping_condition.as_ref()
     }
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>Specifies networking options for an monitoring job.</p>
-    pub fn network_config(&self) -> ::std::option::Option<&crate::types::NetworkConfig> {
+    pub fn network_config(&self) -> ::std::option::Option<& crate::types::NetworkConfig> {
         self.network_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -96,22 +79,15 @@ impl MonitoringJobDefinition {
 
 /// A builder for [`MonitoringJobDefinition`](crate::types::MonitoringJobDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringJobDefinitionBuilder {
     pub(crate) baseline_config: ::std::option::Option<crate::types::MonitoringBaselineConfig>,
-    pub(crate) monitoring_inputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>>,
-    pub(crate) monitoring_output_config:
-        ::std::option::Option<crate::types::MonitoringOutputConfig>,
+    pub(crate) monitoring_inputs: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>>,
+    pub(crate) monitoring_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     pub(crate) monitoring_resources: ::std::option::Option<crate::types::MonitoringResources>,
-    pub(crate) monitoring_app_specification:
-        ::std::option::Option<crate::types::MonitoringAppSpecification>,
+    pub(crate) monitoring_app_specification: ::std::option::Option<crate::types::MonitoringAppSpecification>,
     pub(crate) stopping_condition: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
-    pub(crate) environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) network_config: ::std::option::Option<crate::types::NetworkConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -122,12 +98,12 @@ impl MonitoringJobDefinitionBuilder {
         self
     }
     /// <p>Baseline configuration used to validate that the data conforms to the specified constraints and statistics</p>
-    pub fn set_baseline_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringBaselineConfig>,
-    ) -> Self {
-        self.baseline_config = input;
-        self
+    pub fn set_baseline_config(mut self, input: ::std::option::Option<crate::types::MonitoringBaselineConfig>) -> Self {
+        self.baseline_config = input; self
+    }
+    /// <p>Baseline configuration used to validate that the data conforms to the specified constraints and statistics</p>
+    pub fn get_baseline_config(&self) -> &::std::option::Option<crate::types::MonitoringBaselineConfig> {
+        &self.baseline_config
     }
     /// Appends an item to `monitoring_inputs`.
     ///
@@ -136,17 +112,17 @@ impl MonitoringJobDefinitionBuilder {
     /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
     pub fn monitoring_inputs(mut self, input: crate::types::MonitoringInput) -> Self {
         let mut v = self.monitoring_inputs.unwrap_or_default();
-        v.push(input);
-        self.monitoring_inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.monitoring_inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
-    pub fn set_monitoring_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>>,
-    ) -> Self {
-        self.monitoring_inputs = input;
-        self
+    pub fn set_monitoring_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>>) -> Self {
+        self.monitoring_inputs = input; self
+    }
+    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
+    pub fn get_monitoring_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>> {
+        &self.monitoring_inputs
     }
     /// <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).</p>
     pub fn monitoring_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
@@ -154,12 +130,12 @@ impl MonitoringJobDefinitionBuilder {
         self
     }
     /// <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn set_monitoring_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringOutputConfig>,
-    ) -> Self {
-        self.monitoring_output_config = input;
-        self
+    pub fn set_monitoring_output_config(mut self, input: ::std::option::Option<crate::types::MonitoringOutputConfig>) -> Self {
+        self.monitoring_output_config = input; self
+    }
+    /// <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).</p>
+    pub fn get_monitoring_output_config(&self) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
+        &self.monitoring_output_config
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a monitoring job. In distributed processing, you specify more than one instance.</p>
     pub fn monitoring_resources(mut self, input: crate::types::MonitoringResources) -> Self {
@@ -167,28 +143,25 @@ impl MonitoringJobDefinitionBuilder {
         self
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a monitoring job. In distributed processing, you specify more than one instance.</p>
-    pub fn set_monitoring_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringResources>,
-    ) -> Self {
-        self.monitoring_resources = input;
-        self
+    pub fn set_monitoring_resources(mut self, input: ::std::option::Option<crate::types::MonitoringResources>) -> Self {
+        self.monitoring_resources = input; self
+    }
+    /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a monitoring job. In distributed processing, you specify more than one instance.</p>
+    pub fn get_monitoring_resources(&self) -> &::std::option::Option<crate::types::MonitoringResources> {
+        &self.monitoring_resources
     }
     /// <p>Configures the monitoring job to run a specified Docker container image.</p>
-    pub fn monitoring_app_specification(
-        mut self,
-        input: crate::types::MonitoringAppSpecification,
-    ) -> Self {
+    pub fn monitoring_app_specification(mut self, input: crate::types::MonitoringAppSpecification) -> Self {
         self.monitoring_app_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures the monitoring job to run a specified Docker container image.</p>
-    pub fn set_monitoring_app_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringAppSpecification>,
-    ) -> Self {
-        self.monitoring_app_specification = input;
-        self
+    pub fn set_monitoring_app_specification(mut self, input: ::std::option::Option<crate::types::MonitoringAppSpecification>) -> Self {
+        self.monitoring_app_specification = input; self
+    }
+    /// <p>Configures the monitoring job to run a specified Docker container image.</p>
+    pub fn get_monitoring_app_specification(&self) -> &::std::option::Option<crate::types::MonitoringAppSpecification> {
+        &self.monitoring_app_specification
     }
     /// <p>Specifies a time limit for how long the monitoring job is allowed to run.</p>
     pub fn stopping_condition(mut self, input: crate::types::MonitoringStoppingCondition) -> Self {
@@ -196,37 +169,31 @@ impl MonitoringJobDefinitionBuilder {
         self
     }
     /// <p>Specifies a time limit for how long the monitoring job is allowed to run.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
-    ) -> Self {
-        self.stopping_condition = input;
-        self
+    pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::MonitoringStoppingCondition>) -> Self {
+        self.stopping_condition = input; self
+    }
+    /// <p>Specifies a time limit for how long the monitoring job is allowed to run.</p>
+    pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
+        &self.stopping_condition
     }
     /// Adds a key-value pair to `environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn environment(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
+    }
+    /// <p>Sets the environment variables in the Docker container.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.environment
     }
     /// <p>Specifies networking options for an monitoring job.</p>
     pub fn network_config(mut self, input: crate::types::NetworkConfig) -> Self {
@@ -234,12 +201,12 @@ impl MonitoringJobDefinitionBuilder {
         self
     }
     /// <p>Specifies networking options for an monitoring job.</p>
-    pub fn set_network_config(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConfig>,
-    ) -> Self {
-        self.network_config = input;
-        self
+    pub fn set_network_config(mut self, input: ::std::option::Option<crate::types::NetworkConfig>) -> Self {
+        self.network_config = input; self
+    }
+    /// <p>Specifies networking options for an monitoring job.</p>
+    pub fn get_network_config(&self) -> &::std::option::Option<crate::types::NetworkConfig> {
+        &self.network_config
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -248,21 +215,34 @@ impl MonitoringJobDefinitionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`MonitoringJobDefinition`](crate::types::MonitoringJobDefinition).
     pub fn build(self) -> crate::types::MonitoringJobDefinition {
         crate::types::MonitoringJobDefinition {
-            baseline_config: self.baseline_config,
-            monitoring_inputs: self.monitoring_inputs,
-            monitoring_output_config: self.monitoring_output_config,
-            monitoring_resources: self.monitoring_resources,
-            monitoring_app_specification: self.monitoring_app_specification,
-            stopping_condition: self.stopping_condition,
-            environment: self.environment,
-            network_config: self.network_config,
-            role_arn: self.role_arn,
+            baseline_config: self.baseline_config
+            ,
+            monitoring_inputs: self.monitoring_inputs
+            ,
+            monitoring_output_config: self.monitoring_output_config
+            ,
+            monitoring_resources: self.monitoring_resources
+            ,
+            monitoring_app_specification: self.monitoring_app_specification
+            ,
+            stopping_condition: self.stopping_condition
+            ,
+            environment: self.environment
+            ,
+            network_config: self.network_config
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

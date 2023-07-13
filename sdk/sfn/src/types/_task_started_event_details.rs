@@ -3,7 +3,7 @@
 /// <p>Contains details about the start of a task during an execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskStartedEventDetails {
+pub struct TaskStartedEventDetails  {
     /// <p>The service name of the resource in a task state.</p>
     #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct TaskStartedEventDetails {
 }
 impl TaskStartedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl TaskStartedEventDetails {
 
 /// A builder for [`TaskStartedEventDetails`](crate::types::TaskStartedEventDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskStartedEventDetailsBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
 }
 impl TaskStartedEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service name of the resource in a task state.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_type = input; self
+    }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// <p>The action of the resource called by a task state.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl TaskStartedEventDetailsBuilder {
     }
     /// <p>The action of the resource called by a task state.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
+    }
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// Consumes the builder and constructs a [`TaskStartedEventDetails`](crate::types::TaskStartedEventDetails).
     pub fn build(self) -> crate::types::TaskStartedEventDetails {
         crate::types::TaskStartedEventDetails {
-            resource_type: self.resource_type,
-            resource: self.resource,
+            resource_type: self.resource_type
+            ,
+            resource: self.resource
+            ,
         }
     }
 }
+

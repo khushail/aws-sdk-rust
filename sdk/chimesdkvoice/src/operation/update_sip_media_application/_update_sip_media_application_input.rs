@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSipMediaApplicationInput {
+pub struct UpdateSipMediaApplicationInput  {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
@@ -11,57 +11,50 @@ pub struct UpdateSipMediaApplicationInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new set of endpoints for the specified SIP media application.</p>
     #[doc(hidden)]
-    pub endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
 }
 impl UpdateSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(&self) -> ::std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> ::std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
     /// <p>The new name for the specified SIP media application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The new set of endpoints for the specified SIP media application.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
+    pub fn endpoints(&self) -> ::std::option::Option<& [crate::types::SipMediaApplicationEndpoint]> {
         self.endpoints.as_deref()
     }
 }
 impl UpdateSipMediaApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateSipMediaApplicationInput`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationInput).
-    pub fn builder() -> crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationInputBuilder{
+    pub fn builder() -> crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationInputBuilder {
         crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSipMediaApplicationInput`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
 }
 impl UpdateSipMediaApplicationInputBuilder {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sip_media_application_id = input;
-        self
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sip_media_application_id = input; self
+    }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
     }
     /// <p>The new name for the specified SIP media application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +63,11 @@ impl UpdateSipMediaApplicationInputBuilder {
     }
     /// <p>The new name for the specified SIP media application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The new name for the specified SIP media application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `endpoints`.
     ///
@@ -80,31 +76,30 @@ impl UpdateSipMediaApplicationInputBuilder {
     /// <p>The new set of endpoints for the specified SIP media application.</p>
     pub fn endpoints(mut self, input: crate::types::SipMediaApplicationEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-        v.push(input);
-        self.endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The new set of endpoints for the specified SIP media application.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
-    ) -> Self {
-        self.endpoints = input;
-        self
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>) -> Self {
+        self.endpoints = input; self
+    }
+    /// <p>The new set of endpoints for the specified SIP media application.</p>
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+        &self.endpoints
     }
     /// Consumes the builder and constructs a [`UpdateSipMediaApplicationInput`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_sip_media_application::UpdateSipMediaApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sip_media_application::UpdateSipMediaApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_sip_media_application::UpdateSipMediaApplicationInput {
-                sip_media_application_id: self.sip_media_application_id,
-                name: self.name,
-                endpoints: self.endpoints,
-            },
+                sip_media_application_id: self.sip_media_application_id
+                ,
+                name: self.name
+                ,
+                endpoints: self.endpoints
+                ,
+            }
         )
     }
 }
+

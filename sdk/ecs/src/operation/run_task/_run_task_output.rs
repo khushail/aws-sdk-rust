@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunTaskOutput {
+pub struct RunTaskOutput  {
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
     #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
@@ -13,19 +13,19 @@ pub struct RunTaskOutput {
 }
 impl RunTaskOutput {
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::Task]> {
+    pub fn tasks(&self) -> ::std::option::Option<& [crate::types::Task]> {
         self.tasks.as_deref()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::Failure]> {
+    pub fn failures(&self) -> ::std::option::Option<& [crate::types::Failure]> {
         self.failures.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RunTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RunTaskOutput {
     /// Creates a new builder-style object to manufacture [`RunTaskOutput`](crate::operation::run_task::RunTaskOutput).
     pub fn builder() -> crate::operation::run_task::builders::RunTaskOutputBuilder {
@@ -35,9 +35,7 @@ impl RunTaskOutput {
 
 /// A builder for [`RunTaskOutput`](crate::operation::run_task::RunTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunTaskOutputBuilder {
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
@@ -51,17 +49,17 @@ impl RunTaskOutputBuilder {
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input);
-        self.tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    ) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
+        self.tasks = input; self
+    }
+    /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
+        &self.tasks
     }
     /// Appends an item to `failures`.
     ///
@@ -70,33 +68,36 @@ impl RunTaskOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
+        self.failures = input; self
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+        &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RunTaskOutput`](crate::operation::run_task::RunTaskOutput).
     pub fn build(self) -> crate::operation::run_task::RunTaskOutput {
         crate::operation::run_task::RunTaskOutput {
-            tasks: self.tasks,
-            failures: self.failures,
+            tasks: self.tasks
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

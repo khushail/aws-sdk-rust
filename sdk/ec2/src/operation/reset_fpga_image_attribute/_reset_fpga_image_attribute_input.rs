@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetFpgaImageAttributeInput {
+pub struct ResetFpgaImageAttributeInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -19,28 +19,24 @@ impl ResetFpgaImageAttributeInput {
         self.dry_run
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn fpga_image_id(&self) -> ::std::option::Option<& str> {
         self.fpga_image_id.as_deref()
     }
     /// <p>The attribute.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::ResetFpgaImageAttributeName> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::ResetFpgaImageAttributeName> {
         self.attribute.as_ref()
     }
 }
 impl ResetFpgaImageAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetFpgaImageAttributeInput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder {
         crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetFpgaImageAttributeInput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetFpgaImageAttributeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
@@ -54,24 +50,24 @@ impl ResetFpgaImageAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AFI.</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.fpga_image_id = input;
-        self
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.fpga_image_id = input; self
+    }
+    /// <p>The ID of the AFI.</p>
+    pub fn get_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fpga_image_id
     }
     /// <p>The attribute.</p>
     pub fn attribute(mut self, input: crate::types::ResetFpgaImageAttributeName) -> Self {
@@ -79,26 +75,25 @@ impl ResetFpgaImageAttributeInputBuilder {
         self
     }
     /// <p>The attribute.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ResetFpgaImageAttributeName>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ResetFpgaImageAttributeName>) -> Self {
+        self.attribute = input; self
+    }
+    /// <p>The attribute.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ResetFpgaImageAttributeName> {
+        &self.attribute
     }
     /// Consumes the builder and constructs a [`ResetFpgaImageAttributeInput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput {
-                dry_run: self.dry_run,
-                fpga_image_id: self.fpga_image_id,
-                attribute: self.attribute,
-            },
+                dry_run: self.dry_run
+                ,
+                fpga_image_id: self.fpga_image_id
+                ,
+                attribute: self.attribute
+                ,
+            }
         )
     }
 }
+

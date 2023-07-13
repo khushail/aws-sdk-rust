@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectionsInput {
+pub struct GetConnectionsInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
@@ -21,15 +21,15 @@ pub struct GetConnectionsInput {
 }
 impl GetConnectionsInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>One or more connection IDs.</p>
-    pub fn connection_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn connection_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.connection_ids.as_deref()
     }
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -37,7 +37,7 @@ impl GetConnectionsInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -50,9 +50,7 @@ impl GetConnectionsInput {
 
 /// A builder for [`GetConnectionsInput`](crate::operation::get_connections::GetConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectionsInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -62,42 +60,36 @@ pub struct GetConnectionsInputBuilder {
 }
 impl GetConnectionsInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_network_id = input; self
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
     }
     /// Appends an item to `connection_ids`.
     ///
     /// To override the contents of this collection use [`set_connection_ids`](Self::set_connection_ids).
     ///
     /// <p>One or more connection IDs.</p>
-    pub fn connection_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connection_ids.unwrap_or_default();
-        v.push(input.into());
-        self.connection_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.connection_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more connection IDs.</p>
-    pub fn set_connection_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.connection_ids = input;
-        self
+    pub fn set_connection_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.connection_ids = input; self
+    }
+    /// <p>One or more connection IDs.</p>
+    pub fn get_connection_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connection_ids
     }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +98,11 @@ impl GetConnectionsInputBuilder {
     }
     /// <p>The ID of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
+    }
+    /// <p>The ID of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -116,8 +111,11 @@ impl GetConnectionsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,22 +124,28 @@ impl GetConnectionsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetConnectionsInput`](crate::operation::get_connections::GetConnectionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_connections::GetConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_connections::GetConnectionsInput {
-            global_network_id: self.global_network_id,
-            connection_ids: self.connection_ids,
-            device_id: self.device_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_connections::GetConnectionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_connections::GetConnectionsInput {
+                global_network_id: self.global_network_id
+                ,
+                connection_ids: self.connection_ids
+                ,
+                device_id: self.device_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

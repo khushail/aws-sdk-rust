@@ -3,7 +3,7 @@
 /// <p>The feature configuration for an embedded dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisteredUserDashboardFeatureConfigurations {
+pub struct RegisteredUserDashboardFeatureConfigurations  {
     /// <p>The state persistence settings of an embedded dashboard.</p>
     #[doc(hidden)]
     pub state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
@@ -13,50 +13,41 @@ pub struct RegisteredUserDashboardFeatureConfigurations {
 }
 impl RegisteredUserDashboardFeatureConfigurations {
     /// <p>The state persistence settings of an embedded dashboard.</p>
-    pub fn state_persistence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StatePersistenceConfigurations> {
+    pub fn state_persistence(&self) -> ::std::option::Option<& crate::types::StatePersistenceConfigurations> {
         self.state_persistence.as_ref()
     }
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon QuickSight.</p>
-    pub fn bookmarks(&self) -> ::std::option::Option<&crate::types::BookmarksConfigurations> {
+    pub fn bookmarks(&self) -> ::std::option::Option<& crate::types::BookmarksConfigurations> {
         self.bookmarks.as_ref()
     }
 }
 impl RegisteredUserDashboardFeatureConfigurations {
     /// Creates a new builder-style object to manufacture [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
-    pub fn builder() -> crate::types::builders::RegisteredUserDashboardFeatureConfigurationsBuilder
-    {
+    pub fn builder() -> crate::types::builders::RegisteredUserDashboardFeatureConfigurationsBuilder {
         crate::types::builders::RegisteredUserDashboardFeatureConfigurationsBuilder::default()
     }
 }
 
 /// A builder for [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisteredUserDashboardFeatureConfigurationsBuilder {
-    pub(crate) state_persistence:
-        ::std::option::Option<crate::types::StatePersistenceConfigurations>,
+    pub(crate) state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
     pub(crate) bookmarks: ::std::option::Option<crate::types::BookmarksConfigurations>,
 }
 impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     /// <p>The state persistence settings of an embedded dashboard.</p>
-    pub fn state_persistence(
-        mut self,
-        input: crate::types::StatePersistenceConfigurations,
-    ) -> Self {
+    pub fn state_persistence(mut self, input: crate::types::StatePersistenceConfigurations) -> Self {
         self.state_persistence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state persistence settings of an embedded dashboard.</p>
-    pub fn set_state_persistence(
-        mut self,
-        input: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
-    ) -> Self {
-        self.state_persistence = input;
-        self
+    pub fn set_state_persistence(mut self, input: ::std::option::Option<crate::types::StatePersistenceConfigurations>) -> Self {
+        self.state_persistence = input; self
+    }
+    /// <p>The state persistence settings of an embedded dashboard.</p>
+    pub fn get_state_persistence(&self) -> &::std::option::Option<crate::types::StatePersistenceConfigurations> {
+        &self.state_persistence
     }
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon QuickSight.</p>
     pub fn bookmarks(mut self, input: crate::types::BookmarksConfigurations) -> Self {
@@ -64,18 +55,21 @@ impl RegisteredUserDashboardFeatureConfigurationsBuilder {
         self
     }
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon QuickSight.</p>
-    pub fn set_bookmarks(
-        mut self,
-        input: ::std::option::Option<crate::types::BookmarksConfigurations>,
-    ) -> Self {
-        self.bookmarks = input;
-        self
+    pub fn set_bookmarks(mut self, input: ::std::option::Option<crate::types::BookmarksConfigurations>) -> Self {
+        self.bookmarks = input; self
+    }
+    /// <p>The bookmarks configuration for an embedded dashboard in Amazon QuickSight.</p>
+    pub fn get_bookmarks(&self) -> &::std::option::Option<crate::types::BookmarksConfigurations> {
+        &self.bookmarks
     }
     /// Consumes the builder and constructs a [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
     pub fn build(self) -> crate::types::RegisteredUserDashboardFeatureConfigurations {
         crate::types::RegisteredUserDashboardFeatureConfigurations {
-            state_persistence: self.state_persistence,
-            bookmarks: self.bookmarks,
+            state_persistence: self.state_persistence
+            ,
+            bookmarks: self.bookmarks
+            ,
         }
     }
 }
+

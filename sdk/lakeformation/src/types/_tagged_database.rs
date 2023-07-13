@@ -3,7 +3,7 @@
 /// <p>A structure describing a database resource with LF-tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaggedDatabase {
+pub struct TaggedDatabase  {
     /// <p>A database that has LF-tags attached to it.</p>
     #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::DatabaseResource>,
@@ -13,11 +13,11 @@ pub struct TaggedDatabase {
 }
 impl TaggedDatabase {
     /// <p>A database that has LF-tags attached to it.</p>
-    pub fn database(&self) -> ::std::option::Option<&crate::types::DatabaseResource> {
+    pub fn database(&self) -> ::std::option::Option<& crate::types::DatabaseResource> {
         self.database.as_ref()
     }
     /// <p>A list of LF-tags attached to the database.</p>
-    pub fn lf_tags(&self) -> ::std::option::Option<&[crate::types::LfTagPair]> {
+    pub fn lf_tags(&self) -> ::std::option::Option<& [crate::types::LfTagPair]> {
         self.lf_tags.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl TaggedDatabase {
 
 /// A builder for [`TaggedDatabase`](crate::types::TaggedDatabase).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaggedDatabaseBuilder {
     pub(crate) database: ::std::option::Option<crate::types::DatabaseResource>,
     pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
@@ -44,12 +42,12 @@ impl TaggedDatabaseBuilder {
         self
     }
     /// <p>A database that has LF-tags attached to it.</p>
-    pub fn set_database(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseResource>,
-    ) -> Self {
-        self.database = input;
-        self
+    pub fn set_database(mut self, input: ::std::option::Option<crate::types::DatabaseResource>) -> Self {
+        self.database = input; self
+    }
+    /// <p>A database that has LF-tags attached to it.</p>
+    pub fn get_database(&self) -> &::std::option::Option<crate::types::DatabaseResource> {
+        &self.database
     }
     /// Appends an item to `lf_tags`.
     ///
@@ -58,23 +56,26 @@ impl TaggedDatabaseBuilder {
     /// <p>A list of LF-tags attached to the database.</p>
     pub fn lf_tags(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tags.unwrap_or_default();
-        v.push(input);
-        self.lf_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lf_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of LF-tags attached to the database.</p>
-    pub fn set_lf_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
-        self.lf_tags = input;
-        self
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
+        self.lf_tags = input; self
+    }
+    /// <p>A list of LF-tags attached to the database.</p>
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        &self.lf_tags
     }
     /// Consumes the builder and constructs a [`TaggedDatabase`](crate::types::TaggedDatabase).
     pub fn build(self) -> crate::types::TaggedDatabase {
         crate::types::TaggedDatabase {
-            database: self.database,
-            lf_tags: self.lf_tags,
+            database: self.database
+            ,
+            lf_tags: self.lf_tags
+            ,
         }
     }
 }
+

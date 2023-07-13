@@ -3,7 +3,7 @@
 /// <p>Information about a failed create simulation job request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedCreateSimulationJobRequest {
+pub struct FailedCreateSimulationJobRequest  {
     /// <p>The simulation job request.</p>
     #[doc(hidden)]
     pub request: ::std::option::Option<crate::types::SimulationJobRequest>,
@@ -19,19 +19,19 @@ pub struct FailedCreateSimulationJobRequest {
 }
 impl FailedCreateSimulationJobRequest {
     /// <p>The simulation job request.</p>
-    pub fn request(&self) -> ::std::option::Option<&crate::types::SimulationJobRequest> {
+    pub fn request(&self) -> ::std::option::Option<& crate::types::SimulationJobRequest> {
         self.request.as_ref()
     }
     /// <p>The failure reason of the simulation job request.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::SimulationJobErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<& crate::types::SimulationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
-    pub fn failed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn failed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.failed_at.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl FailedCreateSimulationJobRequest {
 
 /// A builder for [`FailedCreateSimulationJobRequest`](crate::types::FailedCreateSimulationJobRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedCreateSimulationJobRequestBuilder {
     pub(crate) request: ::std::option::Option<crate::types::SimulationJobRequest>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -60,28 +58,25 @@ impl FailedCreateSimulationJobRequestBuilder {
         self
     }
     /// <p>The simulation job request.</p>
-    pub fn set_request(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationJobRequest>,
-    ) -> Self {
-        self.request = input;
-        self
+    pub fn set_request(mut self, input: ::std::option::Option<crate::types::SimulationJobRequest>) -> Self {
+        self.request = input; self
+    }
+    /// <p>The simulation job request.</p>
+    pub fn get_request(&self) -> &::std::option::Option<crate::types::SimulationJobRequest> {
+        &self.request
     }
     /// <p>The failure reason of the simulation job request.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason of the simulation job request.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input; self
+    }
+    /// <p>The failure reason of the simulation job request.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>The failure code.</p>
     pub fn failure_code(mut self, input: crate::types::SimulationJobErrorCode) -> Self {
@@ -89,12 +84,12 @@ impl FailedCreateSimulationJobRequestBuilder {
         self
     }
     /// <p>The failure code.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationJobErrorCode>,
-    ) -> Self {
-        self.failure_code = input;
-        self
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::SimulationJobErrorCode>) -> Self {
+        self.failure_code = input; self
+    }
+    /// <p>The failure code.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::SimulationJobErrorCode> {
+        &self.failure_code
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
     pub fn failed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,20 +97,25 @@ impl FailedCreateSimulationJobRequestBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
-    pub fn set_failed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.failed_at = input;
-        self
+    pub fn set_failed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.failed_at = input; self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
+    pub fn get_failed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.failed_at
     }
     /// Consumes the builder and constructs a [`FailedCreateSimulationJobRequest`](crate::types::FailedCreateSimulationJobRequest).
     pub fn build(self) -> crate::types::FailedCreateSimulationJobRequest {
         crate::types::FailedCreateSimulationJobRequest {
-            request: self.request,
-            failure_reason: self.failure_reason,
-            failure_code: self.failure_code,
-            failed_at: self.failed_at,
+            request: self.request
+            ,
+            failure_reason: self.failure_reason
+            ,
+            failure_code: self.failure_code
+            ,
+            failed_at: self.failed_at
+            ,
         }
     }
 }
+

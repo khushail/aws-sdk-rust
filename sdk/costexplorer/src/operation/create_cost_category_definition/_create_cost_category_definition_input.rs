@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCostCategoryDefinitionInput {
+pub struct CreateCostCategoryDefinitionInput  {
     /// <p>The unique name of the Cost Category.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -20,84 +20,78 @@ pub struct CreateCostCategoryDefinitionInput {
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
     #[doc(hidden)]
-    pub split_charge_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
-    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
-    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
-    /// <ul>
-    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
-    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
-    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
-    /// <li> <p>Keys and values are case sensitive</p> </li>
-    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
-    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+    pub split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p> 
+    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p> 
+    /// <ul> 
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li> 
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li> 
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li> 
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li> 
+    /// <li> <p>Keys and values are case sensitive</p> </li> 
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li> 
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateCostCategoryDefinitionInput {
     /// <p>The unique name of the Cost Category.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    pub fn effective_start(&self) -> ::std::option::Option<&str> {
+    pub fn effective_start(&self) -> ::std::option::Option<& str> {
         self.effective_start.as_deref()
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn rule_version(&self) -> ::std::option::Option<&crate::types::CostCategoryRuleVersion> {
+    pub fn rule_version(&self) -> ::std::option::Option<& crate::types::CostCategoryRuleVersion> {
         self.rule_version.as_ref()
     }
     /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::CostCategoryRule]> {
+    pub fn rules(&self) -> ::std::option::Option<& [crate::types::CostCategoryRule]> {
         self.rules.as_deref()
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn split_charge_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRule]> {
+    pub fn split_charge_rules(&self) -> ::std::option::Option<& [crate::types::CostCategorySplitChargeRule]> {
         self.split_charge_rules.as_deref()
     }
-    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
-    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
-    /// <ul>
-    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
-    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
-    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
-    /// <li> <p>Keys and values are case sensitive</p> </li>
-    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
-    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p> 
+    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p> 
+    /// <ul> 
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li> 
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li> 
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li> 
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li> 
+    /// <li> <p>Keys and values are case sensitive</p> </li> 
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li> 
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li> 
     /// </ul>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
+    pub fn resource_tags(&self) -> ::std::option::Option<& [crate::types::ResourceTag]> {
         self.resource_tags.as_deref()
     }
 }
 impl CreateCostCategoryDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateCostCategoryDefinitionInput`](crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput).
-    pub fn builder() -> crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionInputBuilder {
         crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCostCategoryDefinitionInput`](crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCostCategoryDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) effective_start: ::std::option::Option<::std::string::String>,
     pub(crate) rule_version: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
-    pub(crate) split_charge_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+    pub(crate) split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateCostCategoryDefinitionInputBuilder {
@@ -108,24 +102,24 @@ impl CreateCostCategoryDefinitionInputBuilder {
     }
     /// <p>The unique name of the Cost Category.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The unique name of the Cost Category.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    pub fn effective_start(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn effective_start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_start = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    pub fn set_effective_start(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.effective_start = input;
-        self
+    pub fn set_effective_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.effective_start = input; self
+    }
+    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+    pub fn get_effective_start(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_start
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub fn rule_version(mut self, input: crate::types::CostCategoryRuleVersion) -> Self {
@@ -133,12 +127,12 @@ impl CreateCostCategoryDefinitionInputBuilder {
         self
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn set_rule_version(
-        mut self,
-        input: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
-    ) -> Self {
-        self.rule_version = input;
-        self
+    pub fn set_rule_version(mut self, input: ::std::option::Option<crate::types::CostCategoryRuleVersion>) -> Self {
+        self.rule_version = input; self
+    }
+    /// <p>The rule schema version in this particular Cost Category.</p>
+    pub fn get_rule_version(&self) -> &::std::option::Option<crate::types::CostCategoryRuleVersion> {
+        &self.rule_version
     }
     /// Appends an item to `rules`.
     ///
@@ -147,33 +141,30 @@ impl CreateCostCategoryDefinitionInputBuilder {
     /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     pub fn rules(mut self, input: crate::types::CostCategoryRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>) -> Self {
+        self.rules = input; self
+    }
+    /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>> {
+        &self.rules
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value for the cost category.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.default_value = input;
-        self
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_value = input; self
+    }
+    /// <p>The default value for the cost category.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// Appends an item to `split_charge_rules`.
     ///
@@ -182,74 +173,87 @@ impl CreateCostCategoryDefinitionInputBuilder {
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
     pub fn split_charge_rules(mut self, input: crate::types::CostCategorySplitChargeRule) -> Self {
         let mut v = self.split_charge_rules.unwrap_or_default();
-        v.push(input);
-        self.split_charge_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.split_charge_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn set_split_charge_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
-    ) -> Self {
-        self.split_charge_rules = input;
-        self
+    pub fn set_split_charge_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
+        self.split_charge_rules = input; self
+    }
+    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    pub fn get_split_charge_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
+        &self.split_charge_rules
     }
     /// Appends an item to `resource_tags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
-    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
-    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
-    /// <ul>
-    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
-    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
-    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
-    /// <li> <p>Keys and values are case sensitive</p> </li>
-    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
-    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p> 
+    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p> 
+    /// <ul> 
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li> 
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li> 
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li> 
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li> 
+    /// <li> <p>Keys and values are case sensitive</p> </li> 
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li> 
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li> 
     /// </ul>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
-    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
-    /// <ul>
-    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
-    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
-    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
-    /// <li> <p>Keys and values are case sensitive</p> </li>
-    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
-    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p> 
+    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p> 
+    /// <ul> 
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li> 
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li> 
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li> 
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li> 
+    /// <li> <p>Keys and values are case sensitive</p> </li> 
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li> 
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li> 
     /// </ul>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input; self
+    }
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p> 
+    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p> 
+    /// <ul> 
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li> 
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li> 
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li> 
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li> 
+    /// <li> <p>Keys and values are case sensitive</p> </li> 
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li> 
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li> 
+    /// </ul>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        &self.resource_tags
     }
     /// Consumes the builder and constructs a [`CreateCostCategoryDefinitionInput`](crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput {
-                name: self.name,
-                effective_start: self.effective_start,
-                rule_version: self.rule_version,
-                rules: self.rules,
-                default_value: self.default_value,
-                split_charge_rules: self.split_charge_rules,
-                resource_tags: self.resource_tags,
-            },
+                name: self.name
+                ,
+                effective_start: self.effective_start
+                ,
+                rule_version: self.rule_version
+                ,
+                rules: self.rules
+                ,
+                default_value: self.default_value
+                ,
+                split_charge_rules: self.split_charge_rules
+                ,
+                resource_tags: self.resource_tags
+                ,
+            }
         )
     }
 }
+

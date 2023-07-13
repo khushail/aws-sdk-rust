@@ -3,7 +3,7 @@
 /// <p>Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceLimits {
+pub struct ResourceLimits  {
     /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
     #[doc(hidden)]
     pub max_number_of_training_jobs: ::std::option::Option<i32>,
@@ -37,9 +37,7 @@ impl ResourceLimits {
 
 /// A builder for [`ResourceLimits`](crate::types::ResourceLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceLimitsBuilder {
     pub(crate) max_number_of_training_jobs: ::std::option::Option<i32>,
     pub(crate) max_parallel_training_jobs: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl ResourceLimitsBuilder {
     }
     /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
     pub fn set_max_number_of_training_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_number_of_training_jobs = input;
-        self
+        self.max_number_of_training_jobs = input; self
+    }
+    /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
+    pub fn get_max_number_of_training_jobs(&self) -> &::std::option::Option<i32> {
+        &self.max_number_of_training_jobs
     }
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
     pub fn max_parallel_training_jobs(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl ResourceLimitsBuilder {
     }
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
     pub fn set_max_parallel_training_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_parallel_training_jobs = input;
-        self
+        self.max_parallel_training_jobs = input; self
+    }
+    /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
+    pub fn get_max_parallel_training_jobs(&self) -> &::std::option::Option<i32> {
+        &self.max_parallel_training_jobs
     }
     /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
     pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
@@ -73,15 +77,23 @@ impl ResourceLimitsBuilder {
     }
     /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
     pub fn set_max_runtime_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_runtime_in_seconds = input;
-        self
+        self.max_runtime_in_seconds = input; self
+    }
+    /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
+    pub fn get_max_runtime_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.max_runtime_in_seconds
     }
     /// Consumes the builder and constructs a [`ResourceLimits`](crate::types::ResourceLimits).
     pub fn build(self) -> crate::types::ResourceLimits {
         crate::types::ResourceLimits {
-            max_number_of_training_jobs: self.max_number_of_training_jobs,
-            max_parallel_training_jobs: self.max_parallel_training_jobs.unwrap_or_default(),
-            max_runtime_in_seconds: self.max_runtime_in_seconds,
+            max_number_of_training_jobs: self.max_number_of_training_jobs
+            ,
+            max_parallel_training_jobs: self.max_parallel_training_jobs
+                .unwrap_or_default()
+            ,
+            max_runtime_in_seconds: self.max_runtime_in_seconds
+            ,
         }
     }
 }
+

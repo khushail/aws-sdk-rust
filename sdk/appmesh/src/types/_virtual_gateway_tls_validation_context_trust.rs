@@ -23,15 +23,8 @@ pub enum VirtualGatewayTlsValidationContextTrust {
 impl VirtualGatewayTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`Acm`](crate::types::VirtualGatewayTlsValidationContextTrust::Acm), extracting the inner [`VirtualGatewayTlsValidationContextAcmTrust`](crate::types::VirtualGatewayTlsValidationContextAcmTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_acm(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextAcmTrust, &Self>
-    {
-        if let VirtualGatewayTlsValidationContextTrust::Acm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_acm(&self) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextAcmTrust, &Self> {
+        if let VirtualGatewayTlsValidationContextTrust::Acm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Acm`](crate::types::VirtualGatewayTlsValidationContextTrust::Acm).
     pub fn is_acm(&self) -> bool {
@@ -39,15 +32,8 @@ impl VirtualGatewayTlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`File`](crate::types::VirtualGatewayTlsValidationContextTrust::File), extracting the inner [`VirtualGatewayTlsValidationContextFileTrust`](crate::types::VirtualGatewayTlsValidationContextFileTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self>
-    {
-        if let VirtualGatewayTlsValidationContextTrust::File(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_file(&self) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self> {
+        if let VirtualGatewayTlsValidationContextTrust::File(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`File`](crate::types::VirtualGatewayTlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
@@ -55,15 +41,8 @@ impl VirtualGatewayTlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::types::VirtualGatewayTlsValidationContextTrust::Sds), extracting the inner [`VirtualGatewayTlsValidationContextSdsTrust`](crate::types::VirtualGatewayTlsValidationContextSdsTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self>
-    {
-        if let VirtualGatewayTlsValidationContextTrust::Sds(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_sds(&self) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
+        if let VirtualGatewayTlsValidationContextTrust::Sds(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::types::VirtualGatewayTlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
@@ -74,3 +53,4 @@ impl VirtualGatewayTlsValidationContextTrust {
         matches!(self, Self::Unknown)
     }
 }
+

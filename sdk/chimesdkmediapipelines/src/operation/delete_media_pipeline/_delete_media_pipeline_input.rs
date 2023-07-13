@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMediaPipelineInput {
+pub struct DeleteMediaPipelineInput  {
     /// <p>The ID of the media pipeline to delete.</p>
     #[doc(hidden)]
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMediaPipelineInput {
     /// <p>The ID of the media pipeline to delete.</p>
-    pub fn media_pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn media_pipeline_id(&self) -> ::std::option::Option<& str> {
         self.media_pipeline_id.as_deref()
     }
 }
 impl DeleteMediaPipelineInput {
     /// Creates a new builder-style object to manufacture [`DeleteMediaPipelineInput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineInput).
-    pub fn builder(
-    ) -> crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineInputBuilder {
-        crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineInputBuilder {
+        crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMediaPipelineInput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMediaPipelineInputBuilder {
     pub(crate) media_pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMediaPipelineInputBuilder {
     /// <p>The ID of the media pipeline to delete.</p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the media pipeline to delete.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.media_pipeline_id = input;
-        self
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.media_pipeline_id = input; self
+    }
+    /// <p>The ID of the media pipeline to delete.</p>
+    pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_id
     }
     /// Consumes the builder and constructs a [`DeleteMediaPipelineInput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_media_pipeline::DeleteMediaPipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_media_pipeline::DeleteMediaPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_media_pipeline::DeleteMediaPipelineInput {
-                media_pipeline_id: self.media_pipeline_id,
-            },
+                media_pipeline_id: self.media_pipeline_id
+                ,
+            }
         )
     }
 }
+

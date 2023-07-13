@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>CreatePipeline</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePipelineInput {
+pub struct CreatePipelineInput  {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     #[doc(hidden)]
     pub pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
@@ -13,11 +13,11 @@ pub struct CreatePipelineInput {
 }
 impl CreatePipelineInput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    pub fn pipeline(&self) -> ::std::option::Option<&crate::types::PipelineDeclaration> {
+    pub fn pipeline(&self) -> ::std::option::Option<& crate::types::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
     /// <p>The tags for the pipeline.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl CreatePipelineInput {
 
 /// A builder for [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePipelineInputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -44,12 +42,12 @@ impl CreatePipelineInputBuilder {
         self
     }
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    pub fn set_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineDeclaration>,
-    ) -> Self {
-        self.pipeline = input;
-        self
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
+        self.pipeline = input; self
+    }
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
+        &self.pipeline
     }
     /// Appends an item to `tags`.
     ///
@@ -58,28 +56,28 @@ impl CreatePipelineInputBuilder {
     /// <p>The tags for the pipeline.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags for the pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_pipeline::CreatePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_pipeline::CreatePipelineInput {
-            pipeline: self.pipeline,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_pipeline::CreatePipelineInput {
+                pipeline: self.pipeline
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

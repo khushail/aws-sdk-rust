@@ -22,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-resourceexplorer2 = "0.6.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-resourceexplorer2 = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -34,8 +34,8 @@ use aws_sdk_resourceexplorer2 as resourceexplorer2;
 
 #[::tokio::main]
 async fn main() -> Result<(), resourceexplorer2::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = resourceexplorer2::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_resourceexplorer2::Client::new(&config);
 
     // ... make some calls with the client
 

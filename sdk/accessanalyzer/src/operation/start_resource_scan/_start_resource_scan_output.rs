@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartResourceScanOutput {
+pub struct StartResourceScanOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for StartResourceScanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartResourceScanOutput {
     /// Creates a new builder-style object to manufacture [`StartResourceScanOutput`](crate::operation::start_resource_scan::StartResourceScanOutput).
-    pub fn builder(
-    ) -> crate::operation::start_resource_scan::builders::StartResourceScanOutputBuilder {
+    pub fn builder() -> crate::operation::start_resource_scan::builders::StartResourceScanOutputBuilder {
         crate::operation::start_resource_scan::builders::StartResourceScanOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartResourceScanOutput`](crate::operation::start_resource_scan::StartResourceScanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartResourceScanOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartResourceScanOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartResourceScanOutput`](crate::operation::start_resource_scan::StartResourceScanOutput).
     pub fn build(self) -> crate::operation::start_resource_scan::StartResourceScanOutput {
         crate::operation::start_resource_scan::StartResourceScanOutput {
@@ -43,3 +40,4 @@ impl StartResourceScanOutputBuilder {
         }
     }
 }
+

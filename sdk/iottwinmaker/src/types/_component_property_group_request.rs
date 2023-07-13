@@ -3,7 +3,7 @@
 /// <p>The component property group request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentPropertyGroupRequest {
+pub struct ComponentPropertyGroupRequest  {
     /// <p>The group type.</p>
     #[doc(hidden)]
     pub group_type: ::std::option::Option<crate::types::GroupType>,
@@ -16,15 +16,15 @@ pub struct ComponentPropertyGroupRequest {
 }
 impl ComponentPropertyGroupRequest {
     /// <p>The group type.</p>
-    pub fn group_type(&self) -> ::std::option::Option<&crate::types::GroupType> {
+    pub fn group_type(&self) -> ::std::option::Option<& crate::types::GroupType> {
         self.group_type.as_ref()
     }
     /// <p>The property names.</p>
-    pub fn property_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn property_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.property_names.as_deref()
     }
     /// <p>The update type.</p>
-    pub fn update_type(&self) -> ::std::option::Option<&crate::types::PropertyGroupUpdateType> {
+    pub fn update_type(&self) -> ::std::option::Option<& crate::types::PropertyGroupUpdateType> {
         self.update_type.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl ComponentPropertyGroupRequest {
 
 /// A builder for [`ComponentPropertyGroupRequest`](crate::types::ComponentPropertyGroupRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentPropertyGroupRequestBuilder {
     pub(crate) group_type: ::std::option::Option<crate::types::GroupType>,
     pub(crate) property_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,30 +51,30 @@ impl ComponentPropertyGroupRequestBuilder {
     }
     /// <p>The group type.</p>
     pub fn set_group_type(mut self, input: ::std::option::Option<crate::types::GroupType>) -> Self {
-        self.group_type = input;
-        self
+        self.group_type = input; self
+    }
+    /// <p>The group type.</p>
+    pub fn get_group_type(&self) -> &::std::option::Option<crate::types::GroupType> {
+        &self.group_type
     }
     /// Appends an item to `property_names`.
     ///
     /// To override the contents of this collection use [`set_property_names`](Self::set_property_names).
     ///
     /// <p>The property names.</p>
-    pub fn property_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.property_names.unwrap_or_default();
-        v.push(input.into());
-        self.property_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.property_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The property names.</p>
-    pub fn set_property_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.property_names = input;
-        self
+    pub fn set_property_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.property_names = input; self
+    }
+    /// <p>The property names.</p>
+    pub fn get_property_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.property_names
     }
     /// <p>The update type.</p>
     pub fn update_type(mut self, input: crate::types::PropertyGroupUpdateType) -> Self {
@@ -84,19 +82,23 @@ impl ComponentPropertyGroupRequestBuilder {
         self
     }
     /// <p>The update type.</p>
-    pub fn set_update_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyGroupUpdateType>,
-    ) -> Self {
-        self.update_type = input;
-        self
+    pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::PropertyGroupUpdateType>) -> Self {
+        self.update_type = input; self
+    }
+    /// <p>The update type.</p>
+    pub fn get_update_type(&self) -> &::std::option::Option<crate::types::PropertyGroupUpdateType> {
+        &self.update_type
     }
     /// Consumes the builder and constructs a [`ComponentPropertyGroupRequest`](crate::types::ComponentPropertyGroupRequest).
     pub fn build(self) -> crate::types::ComponentPropertyGroupRequest {
         crate::types::ComponentPropertyGroupRequest {
-            group_type: self.group_type,
-            property_names: self.property_names,
-            update_type: self.update_type,
+            group_type: self.group_type
+            ,
+            property_names: self.property_names
+            ,
+            update_type: self.update_type
+            ,
         }
     }
 }
+

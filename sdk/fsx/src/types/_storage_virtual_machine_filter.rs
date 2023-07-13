@@ -3,7 +3,7 @@
 /// <p>A filter used to restrict the results of describe calls for Amazon FSx for NetApp ONTAP storage virtual machines (SVMs). You can use multiple filters to return results that meet all applied filter requirements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageVirtualMachineFilter {
+pub struct StorageVirtualMachineFilter  {
     /// <p>The name for this filter.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::StorageVirtualMachineFilterName>,
@@ -13,11 +13,11 @@ pub struct StorageVirtualMachineFilter {
 }
 impl StorageVirtualMachineFilter {
     /// <p>The name for this filter.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::StorageVirtualMachineFilterName> {
         self.name.as_ref()
     }
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl StorageVirtualMachineFilter {
 
 /// A builder for [`StorageVirtualMachineFilter`](crate::types::StorageVirtualMachineFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageVirtualMachineFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::StorageVirtualMachineFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,12 +42,12 @@ impl StorageVirtualMachineFilterBuilder {
         self
     }
     /// <p>The name for this filter.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageVirtualMachineFilterName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::StorageVirtualMachineFilterName>) -> Self {
+        self.name = input; self
+    }
+    /// <p>The name for this filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineFilterName> {
+        &self.name
     }
     /// Appends an item to `values`.
     ///
@@ -58,23 +56,26 @@ impl StorageVirtualMachineFilterBuilder {
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`StorageVirtualMachineFilter`](crate::types::StorageVirtualMachineFilter).
     pub fn build(self) -> crate::types::StorageVirtualMachineFilter {
         crate::types::StorageVirtualMachineFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

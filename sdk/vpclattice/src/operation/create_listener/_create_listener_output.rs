@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateListenerOutput {
+pub struct CreateListenerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -31,19 +31,19 @@ pub struct CreateListenerOutput {
 }
 impl CreateListenerOutput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the listener.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the listener.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The protocol of the listener.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::ListenerProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::ListenerProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The port number of the listener.</p>
@@ -51,23 +51,23 @@ impl CreateListenerOutput {
         self.port
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<& str> {
         self.service_arn.as_deref()
     }
     /// <p>The ID of the service.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The action for the default rule.</p>
-    pub fn default_action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
+    pub fn default_action(&self) -> ::std::option::Option<& crate::types::RuleAction> {
         self.default_action.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateListenerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateListenerOutput {
     /// Creates a new builder-style object to manufacture [`CreateListenerOutput`](crate::operation::create_listener::CreateListenerOutput).
     pub fn builder() -> crate::operation::create_listener::builders::CreateListenerOutputBuilder {
@@ -77,9 +77,7 @@ impl CreateListenerOutput {
 
 /// A builder for [`CreateListenerOutput`](crate::operation::create_listener::CreateListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateListenerOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -99,8 +97,11 @@ impl CreateListenerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ID of the listener.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,8 +110,11 @@ impl CreateListenerOutputBuilder {
     }
     /// <p>The ID of the listener.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the listener.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the listener.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,8 +123,11 @@ impl CreateListenerOutputBuilder {
     }
     /// <p>The name of the listener.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the listener.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The protocol of the listener.</p>
     pub fn protocol(mut self, input: crate::types::ListenerProtocol) -> Self {
@@ -128,12 +135,12 @@ impl CreateListenerOutputBuilder {
         self
     }
     /// <p>The protocol of the listener.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ListenerProtocol>,
-    ) -> Self {
-        self.protocol = input;
-        self
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ListenerProtocol>) -> Self {
+        self.protocol = input; self
+    }
+    /// <p>The protocol of the listener.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ListenerProtocol> {
+        &self.protocol
     }
     /// <p>The port number of the listener.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -142,8 +149,11 @@ impl CreateListenerOutputBuilder {
     }
     /// <p>The port number of the listener.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
+    }
+    /// <p>The port number of the listener.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,8 +162,11 @@ impl CreateListenerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
     }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,8 +175,11 @@ impl CreateListenerOutputBuilder {
     }
     /// <p>The ID of the service.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// <p>The action for the default rule.</p>
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
@@ -171,34 +187,43 @@ impl CreateListenerOutputBuilder {
         self
     }
     /// <p>The action for the default rule.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleAction>,
-    ) -> Self {
-        self.default_action = input;
-        self
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
+        self.default_action = input; self
+    }
+    /// <p>The action for the default rule.</p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.default_action
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateListenerOutput`](crate::operation::create_listener::CreateListenerOutput).
     pub fn build(self) -> crate::operation::create_listener::CreateListenerOutput {
         crate::operation::create_listener::CreateListenerOutput {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            protocol: self.protocol,
-            port: self.port,
-            service_arn: self.service_arn,
-            service_id: self.service_id,
-            default_action: self.default_action,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            protocol: self.protocol
+            ,
+            port: self.port
+            ,
+            service_arn: self.service_arn
+            ,
+            service_id: self.service_id
+            ,
+            default_action: self.default_action
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

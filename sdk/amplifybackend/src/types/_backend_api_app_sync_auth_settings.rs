@@ -3,7 +3,7 @@
 /// <p>The authentication settings for accessing provisioned data models in your Amplify project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackendApiAppSyncAuthSettings {
+pub struct BackendApiAppSyncAuthSettings  {
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
     #[doc(hidden)]
     pub cognito_user_pool_id: ::std::option::Option<::std::string::String>,
@@ -31,11 +31,11 @@ pub struct BackendApiAppSyncAuthSettings {
 }
 impl BackendApiAppSyncAuthSettings {
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
-    pub fn cognito_user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn cognito_user_pool_id(&self) -> ::std::option::Option<& str> {
         self.cognito_user_pool_id.as_deref()
     }
     /// <p>The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
@@ -43,23 +43,23 @@ impl BackendApiAppSyncAuthSettings {
         self.expiration_time
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn open_id_auth_ttl(&self) -> ::std::option::Option<&str> {
+    pub fn open_id_auth_ttl(&self) -> ::std::option::Option<& str> {
         self.open_id_auth_ttl.as_deref()
     }
     /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
-    pub fn open_id_client_id(&self) -> ::std::option::Option<&str> {
+    pub fn open_id_client_id(&self) -> ::std::option::Option<& str> {
         self.open_id_client_id.as_deref()
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn open_id_iat_ttl(&self) -> ::std::option::Option<&str> {
+    pub fn open_id_iat_ttl(&self) -> ::std::option::Option<& str> {
         self.open_id_iat_ttl.as_deref()
     }
     /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
-    pub fn open_id_issue_url(&self) -> ::std::option::Option<&str> {
+    pub fn open_id_issue_url(&self) -> ::std::option::Option<& str> {
         self.open_id_issue_url.as_deref()
     }
     /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
-    pub fn open_id_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn open_id_provider_name(&self) -> ::std::option::Option<& str> {
         self.open_id_provider_name.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl BackendApiAppSyncAuthSettings {
 
 /// A builder for [`BackendApiAppSyncAuthSettings`](crate::types::BackendApiAppSyncAuthSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendApiAppSyncAuthSettingsBuilder {
     pub(crate) cognito_user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -87,20 +85,17 @@ pub struct BackendApiAppSyncAuthSettingsBuilder {
 }
 impl BackendApiAppSyncAuthSettingsBuilder {
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
-    pub fn cognito_user_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cognito_user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cognito_user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
-    pub fn set_cognito_user_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.cognito_user_pool_id = input;
-        self
+    pub fn set_cognito_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cognito_user_pool_id = input; self
+    }
+    /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
+    pub fn get_cognito_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cognito_user_pool_id
     }
     /// <p>The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,8 +104,11 @@ impl BackendApiAppSyncAuthSettingsBuilder {
     }
     /// <p>The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
     pub fn expiration_time(mut self, input: f64) -> Self {
@@ -119,100 +117,97 @@ impl BackendApiAppSyncAuthSettingsBuilder {
     }
     /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.expiration_time = input;
-        self
+        self.expiration_time = input; self
+    }
+    /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<f64> {
+        &self.expiration_time
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn open_id_auth_ttl(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_auth_ttl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_auth_ttl = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn set_open_id_auth_ttl(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.open_id_auth_ttl = input;
-        self
+    pub fn set_open_id_auth_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.open_id_auth_ttl = input; self
+    }
+    /// <p>The expiry time for the OpenID authentication mechanism.</p>
+    pub fn get_open_id_auth_ttl(&self) -> &::std::option::Option<::std::string::String> {
+        &self.open_id_auth_ttl
     }
     /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
-    pub fn open_id_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
-    pub fn set_open_id_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.open_id_client_id = input;
-        self
+    pub fn set_open_id_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.open_id_client_id = input; self
+    }
+    /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
+    pub fn get_open_id_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.open_id_client_id
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn open_id_iat_ttl(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_iat_ttl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_iat_ttl = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    pub fn set_open_id_iat_ttl(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.open_id_iat_ttl = input;
-        self
+    pub fn set_open_id_iat_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.open_id_iat_ttl = input; self
+    }
+    /// <p>The expiry time for the OpenID authentication mechanism.</p>
+    pub fn get_open_id_iat_ttl(&self) -> &::std::option::Option<::std::string::String> {
+        &self.open_id_iat_ttl
     }
     /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
-    pub fn open_id_issue_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_issue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_issue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
-    pub fn set_open_id_issue_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.open_id_issue_url = input;
-        self
+    pub fn set_open_id_issue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.open_id_issue_url = input; self
+    }
+    /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
+    pub fn get_open_id_issue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.open_id_issue_url
     }
     /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
-    pub fn open_id_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
-    pub fn set_open_id_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.open_id_provider_name = input;
-        self
+    pub fn set_open_id_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.open_id_provider_name = input; self
+    }
+    /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
+    pub fn get_open_id_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.open_id_provider_name
     }
     /// Consumes the builder and constructs a [`BackendApiAppSyncAuthSettings`](crate::types::BackendApiAppSyncAuthSettings).
     pub fn build(self) -> crate::types::BackendApiAppSyncAuthSettings {
         crate::types::BackendApiAppSyncAuthSettings {
-            cognito_user_pool_id: self.cognito_user_pool_id,
-            description: self.description,
-            expiration_time: self.expiration_time,
-            open_id_auth_ttl: self.open_id_auth_ttl,
-            open_id_client_id: self.open_id_client_id,
-            open_id_iat_ttl: self.open_id_iat_ttl,
-            open_id_issue_url: self.open_id_issue_url,
-            open_id_provider_name: self.open_id_provider_name,
+            cognito_user_pool_id: self.cognito_user_pool_id
+            ,
+            description: self.description
+            ,
+            expiration_time: self.expiration_time
+            ,
+            open_id_auth_ttl: self.open_id_auth_ttl
+            ,
+            open_id_client_id: self.open_id_client_id
+            ,
+            open_id_iat_ttl: self.open_id_iat_ttl
+            ,
+            open_id_issue_url: self.open_id_issue_url
+            ,
+            open_id_provider_name: self.open_id_provider_name
+            ,
         }
     }
 }
+

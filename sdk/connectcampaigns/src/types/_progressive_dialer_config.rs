@@ -3,7 +3,7 @@
 /// Progressive Dialer config
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProgressiveDialerConfig {
+pub struct ProgressiveDialerConfig  {
     /// The bandwidth allocation of a queue resource.
     #[doc(hidden)]
     pub bandwidth_allocation: ::std::option::Option<f64>,
@@ -23,9 +23,7 @@ impl ProgressiveDialerConfig {
 
 /// A builder for [`ProgressiveDialerConfig`](crate::types::ProgressiveDialerConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProgressiveDialerConfigBuilder {
     pub(crate) bandwidth_allocation: ::std::option::Option<f64>,
 }
@@ -37,13 +35,18 @@ impl ProgressiveDialerConfigBuilder {
     }
     /// The bandwidth allocation of a queue resource.
     pub fn set_bandwidth_allocation(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.bandwidth_allocation = input;
-        self
+        self.bandwidth_allocation = input; self
+    }
+    /// The bandwidth allocation of a queue resource.
+    pub fn get_bandwidth_allocation(&self) -> &::std::option::Option<f64> {
+        &self.bandwidth_allocation
     }
     /// Consumes the builder and constructs a [`ProgressiveDialerConfig`](crate::types::ProgressiveDialerConfig).
     pub fn build(self) -> crate::types::ProgressiveDialerConfig {
         crate::types::ProgressiveDialerConfig {
-            bandwidth_allocation: self.bandwidth_allocation,
+            bandwidth_allocation: self.bandwidth_allocation
+            ,
         }
     }
 }
+

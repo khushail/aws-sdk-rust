@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivateTypeOutput {
-    /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and region.</p>
+pub struct ActivateTypeOutput  {
+    /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and Region.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ActivateTypeOutput {
-    /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and region.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and Region.</p>
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ActivateTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ActivateTypeOutput {
     /// Creates a new builder-style object to manufacture [`ActivateTypeOutput`](crate::operation::activate_type::ActivateTypeOutput).
     pub fn builder() -> crate::operation::activate_type::builders::ActivateTypeOutputBuilder {
@@ -28,38 +28,41 @@ impl ActivateTypeOutput {
 
 /// A builder for [`ActivateTypeOutput`](crate::operation::activate_type::ActivateTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateTypeOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ActivateTypeOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and region.</p>
+    /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and Region.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and region.</p>
+    /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and Region.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and Region.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ActivateTypeOutput`](crate::operation::activate_type::ActivateTypeOutput).
     pub fn build(self) -> crate::operation::activate_type::ActivateTypeOutput {
         crate::operation::activate_type::ActivateTypeOutput {
-            arn: self.arn,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

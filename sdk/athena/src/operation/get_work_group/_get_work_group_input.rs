@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkGroupInput {
+pub struct GetWorkGroupInput  {
     /// <p>The name of the workgroup.</p>
     #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkGroupInput {
     /// <p>The name of the workgroup.</p>
-    pub fn work_group(&self) -> ::std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<& str> {
         self.work_group.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetWorkGroupInput {
 
 /// A builder for [`GetWorkGroupInput`](crate::operation::get_work_group::GetWorkGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkGroupInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetWorkGroupInputBuilder {
     }
     /// <p>The name of the workgroup.</p>
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
+    }
+    /// <p>The name of the workgroup.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// Consumes the builder and constructs a [`GetWorkGroupInput`](crate::operation::get_work_group::GetWorkGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_work_group::GetWorkGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_work_group::GetWorkGroupInput {
-            work_group: self.work_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_work_group::GetWorkGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_work_group::GetWorkGroupInput {
+                work_group: self.work_group
+                ,
+            }
+        )
     }
 }
+

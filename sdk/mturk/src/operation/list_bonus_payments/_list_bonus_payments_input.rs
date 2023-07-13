@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBonusPaymentsInput {
+pub struct ListBonusPaymentsInput  {
     /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListBonusPaymentsInput {
 }
 impl ListBonusPaymentsInput {
     /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
-    pub fn hit_id(&self) -> ::std::option::Option<&str> {
+    pub fn hit_id(&self) -> ::std::option::Option<& str> {
         self.hit_id.as_deref()
     }
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
-    pub fn assignment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assignment_id(&self) -> ::std::option::Option<& str> {
         self.assignment_id.as_deref()
     }
     /// <p>Pagination token</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -36,17 +36,14 @@ impl ListBonusPaymentsInput {
 }
 impl ListBonusPaymentsInput {
     /// Creates a new builder-style object to manufacture [`ListBonusPaymentsInput`](crate::operation::list_bonus_payments::ListBonusPaymentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsInputBuilder {
+    pub fn builder() -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsInputBuilder {
         crate::operation::list_bonus_payments::builders::ListBonusPaymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBonusPaymentsInput`](crate::operation::list_bonus_payments::ListBonusPaymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBonusPaymentsInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
@@ -61,24 +58,24 @@ impl ListBonusPaymentsInputBuilder {
     }
     /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     pub fn set_hit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hit_id = input;
-        self
+        self.hit_id = input; self
+    }
+    /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
     }
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.assignment_id = input;
-        self
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.assignment_id = input; self
+    }
+    /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
     }
     /// <p>Pagination token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +84,11 @@ impl ListBonusPaymentsInputBuilder {
     }
     /// <p>Pagination token</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Pagination token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn max_results(mut self, input: i32) -> Self {
@@ -97,23 +97,26 @@ impl ListBonusPaymentsInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListBonusPaymentsInput`](crate::operation::list_bonus_payments::ListBonusPaymentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bonus_payments::ListBonusPaymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bonus_payments::ListBonusPaymentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_bonus_payments::ListBonusPaymentsInput {
-                hit_id: self.hit_id,
-                assignment_id: self.assignment_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                hit_id: self.hit_id
+                ,
+                assignment_id: self.assignment_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

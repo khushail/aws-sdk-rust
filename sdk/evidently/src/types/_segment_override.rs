@@ -3,7 +3,7 @@
 /// <p>This structure specifies a segment that you have already created, and defines the traffic split for that segment to be used in a launch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentOverride {
+pub struct SegmentOverride  {
     /// <p>The ARN of the segment to use.</p>
     #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct SegmentOverride {
 }
 impl SegmentOverride {
     /// <p>The ARN of the segment to use.</p>
-    pub fn segment(&self) -> ::std::option::Option<&str> {
+    pub fn segment(&self) -> ::std::option::Option<& str> {
         self.segment.as_deref()
     }
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
@@ -24,9 +24,7 @@ impl SegmentOverride {
         self.evaluation_order
     }
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub fn weights(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn weights(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, i64>> {
         self.weights.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl SegmentOverride {
 
 /// A builder for [`SegmentOverride`](crate::types::SegmentOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentOverrideBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_order: ::std::option::Option<i64>,
-    pub(crate) weights:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub(crate) weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
 }
 impl SegmentOverrideBuilder {
     /// <p>The ARN of the segment to use.</p>
@@ -56,8 +51,11 @@ impl SegmentOverrideBuilder {
     }
     /// <p>The ARN of the segment to use.</p>
     pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment = input;
-        self
+        self.segment = input; self
+    }
+    /// <p>The ARN of the segment to use.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
     }
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
     pub fn evaluation_order(mut self, input: i64) -> Self {
@@ -66,8 +64,11 @@ impl SegmentOverrideBuilder {
     }
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
     pub fn set_evaluation_order(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.evaluation_order = input;
-        self
+        self.evaluation_order = input; self
+    }
+    /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
+    pub fn get_evaluation_order(&self) -> &::std::option::Option<i64> {
+        &self.evaluation_order
     }
     /// Adds a key-value pair to `weights`.
     ///
@@ -76,24 +77,28 @@ impl SegmentOverrideBuilder {
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
     pub fn weights(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i64) -> Self {
         let mut hash_map = self.weights.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.weights = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.weights = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub fn set_weights(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
-    ) -> Self {
-        self.weights = input;
-        self
+    pub fn set_weights(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>) -> Self {
+        self.weights = input; self
+    }
+    /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
+    pub fn get_weights(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+        &self.weights
     }
     /// Consumes the builder and constructs a [`SegmentOverride`](crate::types::SegmentOverride).
     pub fn build(self) -> crate::types::SegmentOverride {
         crate::types::SegmentOverride {
-            segment: self.segment,
-            evaluation_order: self.evaluation_order,
-            weights: self.weights,
+            segment: self.segment
+            ,
+            evaluation_order: self.evaluation_order
+            ,
+            weights: self.weights
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The currently active data capture configuration used by your Endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataCaptureConfigSummary {
+pub struct DataCaptureConfigSummary  {
     /// <p>Whether data capture is enabled or disabled.</p>
     #[doc(hidden)]
     pub enable_capture: bool,
@@ -26,7 +26,7 @@ impl DataCaptureConfigSummary {
         self.enable_capture
     }
     /// <p>Whether data capture is currently functional.</p>
-    pub fn capture_status(&self) -> ::std::option::Option<&crate::types::CaptureStatus> {
+    pub fn capture_status(&self) -> ::std::option::Option<& crate::types::CaptureStatus> {
         self.capture_status.as_ref()
     }
     /// <p>The percentage of requests being captured by your Endpoint.</p>
@@ -34,11 +34,11 @@ impl DataCaptureConfigSummary {
         self.current_sampling_percentage
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn destination_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn destination_s3_uri(&self) -> ::std::option::Option<& str> {
         self.destination_s3_uri.as_deref()
     }
     /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl DataCaptureConfigSummary {
 
 /// A builder for [`DataCaptureConfigSummary`](crate::types::DataCaptureConfigSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataCaptureConfigSummaryBuilder {
     pub(crate) enable_capture: ::std::option::Option<bool>,
     pub(crate) capture_status: ::std::option::Option<crate::types::CaptureStatus>,
@@ -69,8 +67,11 @@ impl DataCaptureConfigSummaryBuilder {
     }
     /// <p>Whether data capture is enabled or disabled.</p>
     pub fn set_enable_capture(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_capture = input;
-        self
+        self.enable_capture = input; self
+    }
+    /// <p>Whether data capture is enabled or disabled.</p>
+    pub fn get_enable_capture(&self) -> &::std::option::Option<bool> {
+        &self.enable_capture
     }
     /// <p>Whether data capture is currently functional.</p>
     pub fn capture_status(mut self, input: crate::types::CaptureStatus) -> Self {
@@ -78,12 +79,12 @@ impl DataCaptureConfigSummaryBuilder {
         self
     }
     /// <p>Whether data capture is currently functional.</p>
-    pub fn set_capture_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptureStatus>,
-    ) -> Self {
-        self.capture_status = input;
-        self
+    pub fn set_capture_status(mut self, input: ::std::option::Option<crate::types::CaptureStatus>) -> Self {
+        self.capture_status = input; self
+    }
+    /// <p>Whether data capture is currently functional.</p>
+    pub fn get_capture_status(&self) -> &::std::option::Option<crate::types::CaptureStatus> {
+        &self.capture_status
     }
     /// <p>The percentage of requests being captured by your Endpoint.</p>
     pub fn current_sampling_percentage(mut self, input: i32) -> Self {
@@ -92,24 +93,24 @@ impl DataCaptureConfigSummaryBuilder {
     }
     /// <p>The percentage of requests being captured by your Endpoint.</p>
     pub fn set_current_sampling_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.current_sampling_percentage = input;
-        self
+        self.current_sampling_percentage = input; self
+    }
+    /// <p>The percentage of requests being captured by your Endpoint.</p>
+    pub fn get_current_sampling_percentage(&self) -> &::std::option::Option<i32> {
+        &self.current_sampling_percentage
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn destination_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn set_destination_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_s3_uri = input;
-        self
+    pub fn set_destination_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_s3_uri = input; self
+    }
+    /// <p>The Amazon S3 location being used to capture the data.</p>
+    pub fn get_destination_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_s3_uri
     }
     /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,17 +119,27 @@ impl DataCaptureConfigSummaryBuilder {
     }
     /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
+    }
+    /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`DataCaptureConfigSummary`](crate::types::DataCaptureConfigSummary).
     pub fn build(self) -> crate::types::DataCaptureConfigSummary {
         crate::types::DataCaptureConfigSummary {
-            enable_capture: self.enable_capture.unwrap_or_default(),
-            capture_status: self.capture_status,
-            current_sampling_percentage: self.current_sampling_percentage,
-            destination_s3_uri: self.destination_s3_uri,
-            kms_key_id: self.kms_key_id,
+            enable_capture: self.enable_capture
+                .unwrap_or_default()
+            ,
+            capture_status: self.capture_status
+            ,
+            current_sampling_percentage: self.current_sampling_percentage
+            ,
+            destination_s3_uri: self.destination_s3_uri
+            ,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

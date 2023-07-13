@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMailboxDetailsOutput {
+pub struct GetMailboxDetailsOutput  {
     /// <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
     #[doc(hidden)]
     pub mailbox_quota: ::std::option::Option<i32>,
@@ -22,23 +22,20 @@ impl GetMailboxDetailsOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for GetMailboxDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMailboxDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetMailboxDetailsOutput`](crate::operation::get_mailbox_details::GetMailboxDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_mailbox_details::builders::GetMailboxDetailsOutputBuilder {
+    pub fn builder() -> crate::operation::get_mailbox_details::builders::GetMailboxDetailsOutputBuilder {
         crate::operation::get_mailbox_details::builders::GetMailboxDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMailboxDetailsOutput`](crate::operation::get_mailbox_details::GetMailboxDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMailboxDetailsOutputBuilder {
     pub(crate) mailbox_quota: ::std::option::Option<i32>,
     pub(crate) mailbox_size: ::std::option::Option<f64>,
@@ -52,8 +49,11 @@ impl GetMailboxDetailsOutputBuilder {
     }
     /// <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
     pub fn set_mailbox_quota(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mailbox_quota = input;
-        self
+        self.mailbox_quota = input; self
+    }
+    /// <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
+    pub fn get_mailbox_quota(&self) -> &::std::option::Option<i32> {
+        &self.mailbox_quota
     }
     /// <p>The current mailbox size, in MB, for the specified user.</p>
     pub fn mailbox_size(mut self, input: f64) -> Self {
@@ -62,24 +62,31 @@ impl GetMailboxDetailsOutputBuilder {
     }
     /// <p>The current mailbox size, in MB, for the specified user.</p>
     pub fn set_mailbox_size(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.mailbox_size = input;
-        self
+        self.mailbox_size = input; self
+    }
+    /// <p>The current mailbox size, in MB, for the specified user.</p>
+    pub fn get_mailbox_size(&self) -> &::std::option::Option<f64> {
+        &self.mailbox_size
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMailboxDetailsOutput`](crate::operation::get_mailbox_details::GetMailboxDetailsOutput).
     pub fn build(self) -> crate::operation::get_mailbox_details::GetMailboxDetailsOutput {
         crate::operation::get_mailbox_details::GetMailboxDetailsOutput {
-            mailbox_quota: self.mailbox_quota,
-            mailbox_size: self.mailbox_size.unwrap_or_default(),
+            mailbox_quota: self.mailbox_quota
+            ,
+            mailbox_size: self.mailbox_size
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateTagOptionWithResourceInput {
+pub struct AssociateTagOptionWithResourceInput  {
     /// <p>The resource identifier.</p>
     #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct AssociateTagOptionWithResourceInput {
 }
 impl AssociateTagOptionWithResourceInput {
     /// <p>The resource identifier.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The TagOption identifier.</p>
-    pub fn tag_option_id(&self) -> ::std::option::Option<&str> {
+    pub fn tag_option_id(&self) -> ::std::option::Option<& str> {
         self.tag_option_id.as_deref()
     }
 }
 impl AssociateTagOptionWithResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateTagOptionWithResourceInput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput).
-    pub fn builder() -> crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceInputBuilder{
+    pub fn builder() -> crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceInputBuilder {
         crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTagOptionWithResourceInput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTagOptionWithResourceInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_option_id: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,27 @@ impl AssociateTagOptionWithResourceInputBuilder {
     }
     /// <p>The resource identifier.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The resource identifier.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The TagOption identifier.</p>
-    pub fn tag_option_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_option_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The TagOption identifier.</p>
-    pub fn set_tag_option_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.tag_option_id = input;
-        self
+    pub fn set_tag_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tag_option_id = input; self
+    }
+    /// <p>The TagOption identifier.</p>
+    pub fn get_tag_option_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_option_id
     }
     /// Consumes the builder and constructs a [`AssociateTagOptionWithResourceInput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput {
                 resource_id: self.resource_id
@@ -80,3 +73,4 @@ impl AssociateTagOptionWithResourceInputBuilder {
         )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachDiskInput {
+pub struct DetachDiskInput  {
     /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
     #[doc(hidden)]
     pub disk_name: ::std::option::Option<::std::string::String>,
 }
 impl DetachDiskInput {
     /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
-    pub fn disk_name(&self) -> ::std::option::Option<&str> {
+    pub fn disk_name(&self) -> ::std::option::Option<& str> {
         self.disk_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DetachDiskInput {
 
 /// A builder for [`DetachDiskInput`](crate::operation::detach_disk::DetachDiskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachDiskInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DetachDiskInputBuilder {
     }
     /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.disk_name = input;
-        self
+        self.disk_name = input; self
+    }
+    /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_name
     }
     /// Consumes the builder and constructs a [`DetachDiskInput`](crate::operation::detach_disk::DetachDiskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_disk::DetachDiskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detach_disk::DetachDiskInput {
-            disk_name: self.disk_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_disk::DetachDiskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_disk::DetachDiskInput {
+                disk_name: self.disk_name
+                ,
+            }
+        )
     }
 }
+

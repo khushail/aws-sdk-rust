@@ -3,7 +3,7 @@
 /// <p>The configuration settings for a stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamConfiguration {
+pub struct StreamConfiguration  {
     /// <p>The ARN of the stream.</p>
     #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,15 @@ pub struct StreamConfiguration {
 }
 impl StreamConfiguration {
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The unique identifier of the fragment to begin processing.</p>
-    pub fn fragment_number(&self) -> ::std::option::Option<&str> {
+    pub fn fragment_number(&self) -> ::std::option::Option<& str> {
         self.fragment_number.as_deref()
     }
     /// <p>The streaming channel definition in the stream configuration.</p>
-    pub fn stream_channel_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamChannelDefinition> {
+    pub fn stream_channel_definition(&self) -> ::std::option::Option<& crate::types::StreamChannelDefinition> {
         self.stream_channel_definition.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl StreamConfiguration {
 
 /// A builder for [`StreamConfiguration`](crate::types::StreamConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamConfigurationBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) fragment_number: ::std::option::Option<::std::string::String>,
-    pub(crate) stream_channel_definition:
-        ::std::option::Option<crate::types::StreamChannelDefinition>,
+    pub(crate) stream_channel_definition: ::std::option::Option<crate::types::StreamChannelDefinition>,
 }
 impl StreamConfigurationBuilder {
     /// <p>The ARN of the stream.</p>
@@ -56,47 +51,48 @@ impl StreamConfigurationBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>The unique identifier of the fragment to begin processing.</p>
-    pub fn fragment_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fragment_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fragment_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the fragment to begin processing.</p>
-    pub fn set_fragment_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.fragment_number = input;
-        self
+    pub fn set_fragment_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.fragment_number = input; self
+    }
+    /// <p>The unique identifier of the fragment to begin processing.</p>
+    pub fn get_fragment_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fragment_number
     }
     /// <p>The streaming channel definition in the stream configuration.</p>
-    pub fn stream_channel_definition(
-        mut self,
-        input: crate::types::StreamChannelDefinition,
-    ) -> Self {
+    pub fn stream_channel_definition(mut self, input: crate::types::StreamChannelDefinition) -> Self {
         self.stream_channel_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The streaming channel definition in the stream configuration.</p>
-    pub fn set_stream_channel_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamChannelDefinition>,
-    ) -> Self {
-        self.stream_channel_definition = input;
-        self
+    pub fn set_stream_channel_definition(mut self, input: ::std::option::Option<crate::types::StreamChannelDefinition>) -> Self {
+        self.stream_channel_definition = input; self
+    }
+    /// <p>The streaming channel definition in the stream configuration.</p>
+    pub fn get_stream_channel_definition(&self) -> &::std::option::Option<crate::types::StreamChannelDefinition> {
+        &self.stream_channel_definition
     }
     /// Consumes the builder and constructs a [`StreamConfiguration`](crate::types::StreamConfiguration).
     pub fn build(self) -> crate::types::StreamConfiguration {
         crate::types::StreamConfiguration {
-            stream_arn: self.stream_arn,
-            fragment_number: self.fragment_number,
-            stream_channel_definition: self.stream_channel_definition,
+            stream_arn: self.stream_arn
+            ,
+            fragment_number: self.fragment_number
+            ,
+            stream_channel_definition: self.stream_channel_definition
+            ,
         }
     }
 }
+

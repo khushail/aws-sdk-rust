@@ -3,7 +3,7 @@
 /// <p>Details about the latest launch of an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchDetails {
+pub struct LaunchDetails  {
     /// <p>The latest time that this application was launched successfully.</p>
     #[doc(hidden)]
     pub latest_launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -16,15 +16,15 @@ pub struct LaunchDetails {
 }
 impl LaunchDetails {
     /// <p>The latest time that this application was launched successfully.</p>
-    pub fn latest_launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_launch_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_launch_time.as_ref()
     }
     /// <p>The name of the latest stack launched for this application.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The ID of the latest stack launched for this application.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl LaunchDetails {
 
 /// A builder for [`LaunchDetails`](crate::types::LaunchDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchDetailsBuilder {
     pub(crate) latest_launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl LaunchDetailsBuilder {
         self
     }
     /// <p>The latest time that this application was launched successfully.</p>
-    pub fn set_latest_launch_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.latest_launch_time = input;
-        self
+    pub fn set_latest_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.latest_launch_time = input; self
+    }
+    /// <p>The latest time that this application was launched successfully.</p>
+    pub fn get_latest_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_launch_time
     }
     /// <p>The name of the latest stack launched for this application.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +64,11 @@ impl LaunchDetailsBuilder {
     }
     /// <p>The name of the latest stack launched for this application.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
+    }
+    /// <p>The name of the latest stack launched for this application.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// <p>The ID of the latest stack launched for this application.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,15 +77,22 @@ impl LaunchDetailsBuilder {
     }
     /// <p>The ID of the latest stack launched for this application.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
+    }
+    /// <p>The ID of the latest stack launched for this application.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Consumes the builder and constructs a [`LaunchDetails`](crate::types::LaunchDetails).
     pub fn build(self) -> crate::types::LaunchDetails {
         crate::types::LaunchDetails {
-            latest_launch_time: self.latest_launch_time,
-            stack_name: self.stack_name,
-            stack_id: self.stack_id,
+            latest_launch_time: self.latest_launch_time
+            ,
+            stack_name: self.stack_name
+            ,
+            stack_id: self.stack_id
+            ,
         }
     }
 }
+

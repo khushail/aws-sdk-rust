@@ -3,14 +3,14 @@
 /// <p>Represents the request to stop a specific run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopRunInput {
+pub struct StopRunInput  {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl StopRunInput {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl StopRunInput {
 
 /// A builder for [`StopRunInput`](crate::operation::stop_run::StopRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopRunInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,16 +35,20 @@ impl StopRunInputBuilder {
     }
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`StopRunInput`](crate::operation::stop_run::StopRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_run::StopRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_run::StopRunInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_run::StopRunInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_run::StopRunInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

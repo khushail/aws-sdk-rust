@@ -3,14 +3,14 @@
 /// <p> The control entity attributes that uniquely identify an existing control to be added to a framework in Audit Manager. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssessmentFrameworkControl {
+pub struct CreateAssessmentFrameworkControl  {
     /// <p> The unique identifier of the control. </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl CreateAssessmentFrameworkControl {
     /// <p> The unique identifier of the control. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl CreateAssessmentFrameworkControl {
 
 /// A builder for [`CreateAssessmentFrameworkControl`](crate::types::CreateAssessmentFrameworkControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkControlBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl CreateAssessmentFrameworkControlBuilder {
     }
     /// <p> The unique identifier of the control. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p> The unique identifier of the control. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`CreateAssessmentFrameworkControl`](crate::types::CreateAssessmentFrameworkControl).
     pub fn build(self) -> crate::types::CreateAssessmentFrameworkControl {
-        crate::types::CreateAssessmentFrameworkControl { id: self.id }
+        crate::types::CreateAssessmentFrameworkControl {
+            id: self.id
+            ,
+        }
     }
 }
+

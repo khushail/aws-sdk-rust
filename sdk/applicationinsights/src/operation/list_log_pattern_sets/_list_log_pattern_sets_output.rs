@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLogPatternSetsOutput {
+pub struct ListLogPatternSetsOutput  {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
@@ -16,37 +16,33 @@ pub struct ListLogPatternSetsOutput {
 }
 impl ListLogPatternSetsOutput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The list of log pattern sets.</p>
-    pub fn log_pattern_sets(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn log_pattern_sets(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.log_pattern_sets.as_deref()
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListLogPatternSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListLogPatternSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListLogPatternSetsOutput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsOutputBuilder {
-        crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsOutputBuilder {
+        crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLogPatternSetsOutput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogPatternSetsOutputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_pattern_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -55,42 +51,36 @@ pub struct ListLogPatternSetsOutputBuilder {
 }
 impl ListLogPatternSetsOutputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_group_name = input;
-        self
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_group_name = input; self
+    }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
     }
     /// Appends an item to `log_pattern_sets`.
     ///
     /// To override the contents of this collection use [`set_log_pattern_sets`](Self::set_log_pattern_sets).
     ///
     /// <p>The list of log pattern sets.</p>
-    pub fn log_pattern_sets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_pattern_sets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_pattern_sets.unwrap_or_default();
-        v.push(input.into());
-        self.log_pattern_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_pattern_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of log pattern sets.</p>
-    pub fn set_log_pattern_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.log_pattern_sets = input;
-        self
+    pub fn set_log_pattern_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.log_pattern_sets = input; self
+    }
+    /// <p>The list of log pattern sets.</p>
+    pub fn get_log_pattern_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_pattern_sets
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,25 +89,32 @@ impl ListLogPatternSetsOutputBuilder {
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListLogPatternSetsOutput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput).
     pub fn build(self) -> crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput {
         crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput {
-            resource_group_name: self.resource_group_name,
-            log_pattern_sets: self.log_pattern_sets,
-            next_token: self.next_token,
+            resource_group_name: self.resource_group_name
+            ,
+            log_pattern_sets: self.log_pattern_sets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

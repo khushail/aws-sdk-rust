@@ -3,7 +3,7 @@
 /// <p>Details about a connector's provisioned capacity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionedCapacity {
+pub struct ProvisionedCapacity  {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     #[doc(hidden)]
     pub mcu_count: i32,
@@ -30,9 +30,7 @@ impl ProvisionedCapacity {
 
 /// A builder for [`ProvisionedCapacity`](crate::types::ProvisionedCapacity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedCapacityBuilder {
     pub(crate) mcu_count: ::std::option::Option<i32>,
     pub(crate) worker_count: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl ProvisionedCapacityBuilder {
     }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn set_mcu_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mcu_count = input;
-        self
+        self.mcu_count = input; self
+    }
+    /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    pub fn get_mcu_count(&self) -> &::std::option::Option<i32> {
+        &self.mcu_count
     }
     /// <p>The number of workers that are allocated to the connector.</p>
     pub fn worker_count(mut self, input: i32) -> Self {
@@ -55,14 +56,22 @@ impl ProvisionedCapacityBuilder {
     }
     /// <p>The number of workers that are allocated to the connector.</p>
     pub fn set_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.worker_count = input;
-        self
+        self.worker_count = input; self
+    }
+    /// <p>The number of workers that are allocated to the connector.</p>
+    pub fn get_worker_count(&self) -> &::std::option::Option<i32> {
+        &self.worker_count
     }
     /// Consumes the builder and constructs a [`ProvisionedCapacity`](crate::types::ProvisionedCapacity).
     pub fn build(self) -> crate::types::ProvisionedCapacity {
         crate::types::ProvisionedCapacity {
-            mcu_count: self.mcu_count.unwrap_or_default(),
-            worker_count: self.worker_count.unwrap_or_default(),
+            mcu_count: self.mcu_count
+                .unwrap_or_default()
+            ,
+            worker_count: self.worker_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

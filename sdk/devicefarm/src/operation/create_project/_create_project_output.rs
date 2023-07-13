@@ -3,7 +3,7 @@
 /// <p>Represents the result of a create project request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProjectOutput {
+pub struct CreateProjectOutput  {
     /// <p>The newly created project.</p>
     #[doc(hidden)]
     pub project: ::std::option::Option<crate::types::Project>,
@@ -11,15 +11,15 @@ pub struct CreateProjectOutput {
 }
 impl CreateProjectOutput {
     /// <p>The newly created project.</p>
-    pub fn project(&self) -> ::std::option::Option<&crate::types::Project> {
+    pub fn project(&self) -> ::std::option::Option<& crate::types::Project> {
         self.project.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateProjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
     pub fn builder() -> crate::operation::create_project::builders::CreateProjectOutputBuilder {
@@ -29,9 +29,7 @@ impl CreateProjectOutput {
 
 /// A builder for [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProjectOutputBuilder {
     pub(crate) project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,
@@ -44,23 +42,28 @@ impl CreateProjectOutputBuilder {
     }
     /// <p>The newly created project.</p>
     pub fn set_project(mut self, input: ::std::option::Option<crate::types::Project>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
+    }
+    /// <p>The newly created project.</p>
+    pub fn get_project(&self) -> &::std::option::Option<crate::types::Project> {
+        &self.project
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
     pub fn build(self) -> crate::operation::create_project::CreateProjectOutput {
         crate::operation::create_project::CreateProjectOutput {
-            project: self.project,
+            project: self.project
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

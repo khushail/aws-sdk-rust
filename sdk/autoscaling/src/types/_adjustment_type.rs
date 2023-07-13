@@ -3,14 +3,14 @@
 /// <p>Describes a policy adjustment type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdjustmentType {
+pub struct AdjustmentType  {
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     #[doc(hidden)]
     pub adjustment_type: ::std::option::Option<::std::string::String>,
 }
 impl AdjustmentType {
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn adjustment_type(&self) -> ::std::option::Option<&str> {
+    pub fn adjustment_type(&self) -> ::std::option::Option<& str> {
         self.adjustment_type.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl AdjustmentType {
 
 /// A builder for [`AdjustmentType`](crate::types::AdjustmentType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdjustmentTypeBuilder {
     pub(crate) adjustment_type: ::std::option::Option<::std::string::String>,
 }
 impl AdjustmentTypeBuilder {
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn adjustment_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn adjustment_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adjustment_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn set_adjustment_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.adjustment_type = input;
-        self
+    pub fn set_adjustment_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.adjustment_type = input; self
+    }
+    /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+    pub fn get_adjustment_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.adjustment_type
     }
     /// Consumes the builder and constructs a [`AdjustmentType`](crate::types::AdjustmentType).
     pub fn build(self) -> crate::types::AdjustmentType {
         crate::types::AdjustmentType {
-            adjustment_type: self.adjustment_type,
+            adjustment_type: self.adjustment_type
+            ,
         }
     }
 }
+

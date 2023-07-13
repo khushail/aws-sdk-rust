@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStoredQueryInput {
+pub struct DeleteStoredQueryInput  {
     /// <p>The name of the query that you want to delete.</p>
     #[doc(hidden)]
     pub query_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStoredQueryInput {
     /// <p>The name of the query that you want to delete.</p>
-    pub fn query_name(&self) -> ::std::option::Option<&str> {
+    pub fn query_name(&self) -> ::std::option::Option<& str> {
         self.query_name.as_deref()
     }
 }
 impl DeleteStoredQueryInput {
     /// Creates a new builder-style object to manufacture [`DeleteStoredQueryInput`](crate::operation::delete_stored_query::DeleteStoredQueryInput).
-    pub fn builder(
-    ) -> crate::operation::delete_stored_query::builders::DeleteStoredQueryInputBuilder {
+    pub fn builder() -> crate::operation::delete_stored_query::builders::DeleteStoredQueryInputBuilder {
         crate::operation::delete_stored_query::builders::DeleteStoredQueryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStoredQueryInput`](crate::operation::delete_stored_query::DeleteStoredQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStoredQueryInputBuilder {
     pub(crate) query_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl DeleteStoredQueryInputBuilder {
     }
     /// <p>The name of the query that you want to delete.</p>
     pub fn set_query_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_name = input;
-        self
+        self.query_name = input; self
+    }
+    /// <p>The name of the query that you want to delete.</p>
+    pub fn get_query_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_name
     }
     /// Consumes the builder and constructs a [`DeleteStoredQueryInput`](crate::operation::delete_stored_query::DeleteStoredQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_stored_query::DeleteStoredQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stored_query::DeleteStoredQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_stored_query::DeleteStoredQueryInput {
-                query_name: self.query_name,
-            },
+                query_name: self.query_name
+                ,
+            }
         )
     }
 }
+

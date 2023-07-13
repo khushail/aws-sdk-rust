@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrustStoreOutput {
+pub struct GetTrustStoreOutput  {
     /// <p>The trust store.</p>
     #[doc(hidden)]
     pub trust_store: ::std::option::Option<crate::types::TrustStore>,
@@ -10,15 +10,15 @@ pub struct GetTrustStoreOutput {
 }
 impl GetTrustStoreOutput {
     /// <p>The trust store.</p>
-    pub fn trust_store(&self) -> ::std::option::Option<&crate::types::TrustStore> {
+    pub fn trust_store(&self) -> ::std::option::Option<& crate::types::TrustStore> {
         self.trust_store.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTrustStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetTrustStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetTrustStoreOutput`](crate::operation::get_trust_store::GetTrustStoreOutput).
     pub fn builder() -> crate::operation::get_trust_store::builders::GetTrustStoreOutputBuilder {
@@ -28,9 +28,7 @@ impl GetTrustStoreOutput {
 
 /// A builder for [`GetTrustStoreOutput`](crate::operation::get_trust_store::GetTrustStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrustStoreOutputBuilder {
     pub(crate) trust_store: ::std::option::Option<crate::types::TrustStore>,
     _request_id: Option<String>,
@@ -42,27 +40,29 @@ impl GetTrustStoreOutputBuilder {
         self
     }
     /// <p>The trust store.</p>
-    pub fn set_trust_store(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustStore>,
-    ) -> Self {
-        self.trust_store = input;
-        self
+    pub fn set_trust_store(mut self, input: ::std::option::Option<crate::types::TrustStore>) -> Self {
+        self.trust_store = input; self
+    }
+    /// <p>The trust store.</p>
+    pub fn get_trust_store(&self) -> &::std::option::Option<crate::types::TrustStore> {
+        &self.trust_store
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetTrustStoreOutput`](crate::operation::get_trust_store::GetTrustStoreOutput).
     pub fn build(self) -> crate::operation::get_trust_store::GetTrustStoreOutput {
         crate::operation::get_trust_store::GetTrustStoreOutput {
-            trust_store: self.trust_store,
+            trust_store: self.trust_store
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

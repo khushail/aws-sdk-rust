@@ -3,146 +3,128 @@ pub use crate::operation::create_node_from_template_job::_create_node_from_templ
 
 pub use crate::operation::create_node_from_template_job::_create_node_from_template_job_input::CreateNodeFromTemplateJobInputBuilder;
 
+impl CreateNodeFromTemplateJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_node_from_template_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateNodeFromTemplateJob`.
-///
+/// 
 /// <p>Creates a camera stream node.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNodeFromTemplateJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder,
 }
-impl CreateNodeFromTemplateJobFluentBuilder {
+impl CreateNodeFromTemplateJobFluentBuilder  {
     /// Creates a new `CreateNodeFromTemplateJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateNodeFromTemplateJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The type of node.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.inner = self.inner.template_type(input);
         self
     }
     /// <p>The type of node.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateType>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
     }
+    /// <p>The type of node.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        self.inner.get_template_type()
+    }
     /// <p>An output package name for the node.</p>
-    pub fn output_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_package_name(input.into());
         self
     }
     /// <p>An output package name for the node.</p>
-    pub fn set_output_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_package_name(input);
         self
     }
+    /// <p>An output package name for the node.</p>
+    pub fn get_output_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_package_name()
+    }
     /// <p>An output package version for the node.</p>
-    pub fn output_package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_package_version(input.into());
         self
     }
     /// <p>An output package version for the node.</p>
-    pub fn set_output_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_package_version(input);
         self
+    }
+    /// <p>An output package version for the node.</p>
+    pub fn get_output_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_package_version()
     }
     /// <p>A name for the node.</p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,44 +136,41 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         self.inner = self.inner.set_node_name(input);
         self
     }
+    /// <p>A name for the node.</p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_name()
+    }
     /// <p>A description for the node.</p>
-    pub fn node_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_description(input.into());
         self
     }
     /// <p>A description for the node.</p>
-    pub fn set_node_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_node_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_description(input);
         self
+    }
+    /// <p>A description for the node.</p>
+    pub fn get_node_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_description()
     }
     /// Adds a key-value pair to `TemplateParameters`.
     ///
     /// To override the contents of this collection use [`set_template_parameters`](Self::set_template_parameters).
     ///
     /// <p>Template parameters for the node.</p>
-    pub fn template_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_parameters(k.into(), v.into());
         self
     }
     /// <p>Template parameters for the node.</p>
-    pub fn set_template_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_template_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_template_parameters(input);
         self
+    }
+    /// <p>Template parameters for the node.</p>
+    pub fn get_template_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_template_parameters()
     }
     /// Appends an item to `JobTags`.
     ///
@@ -203,11 +182,13 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         self
     }
     /// <p>Tags for the job.</p>
-    pub fn set_job_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
-    ) -> Self {
+    pub fn set_job_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>) -> Self {
         self.inner = self.inner.set_job_tags(input);
         self
     }
+    /// <p>Tags for the job.</p>
+    pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+        self.inner.get_job_tags()
+    }
 }
+

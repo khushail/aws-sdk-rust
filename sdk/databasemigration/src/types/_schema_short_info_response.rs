@@ -3,7 +3,7 @@
 /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaShortInfoResponse {
+pub struct SchemaShortInfoResponse  {
     /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
     pub schema_id: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct SchemaShortInfoResponse {
 }
 impl SchemaShortInfoResponse {
     /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
-    pub fn schema_id(&self) -> ::std::option::Option<&str> {
+    pub fn schema_id(&self) -> ::std::option::Option<& str> {
         self.schema_id.as_deref()
     }
     /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_id(&self) -> ::std::option::Option<&str> {
+    pub fn database_id(&self) -> ::std::option::Option<& str> {
         self.database_id.as_deref()
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn database_ip_address(&self) -> ::std::option::Option<& str> {
         self.database_ip_address.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl SchemaShortInfoResponse {
 
 /// A builder for [`SchemaShortInfoResponse`](crate::types::SchemaShortInfoResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaShortInfoResponseBuilder {
     pub(crate) schema_id: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl SchemaShortInfoResponseBuilder {
     }
     /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
     pub fn set_schema_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_id = input;
-        self
+        self.schema_id = input; self
+    }
+    /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_id
     }
     /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl SchemaShortInfoResponseBuilder {
     }
     /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
+    }
+    /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
     pub fn database_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,49 +93,52 @@ impl SchemaShortInfoResponseBuilder {
     }
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
     pub fn set_database_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_id = input;
-        self
+        self.database_id = input; self
+    }
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_name = input;
-        self
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_name = input; self
+    }
+    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
-    pub fn set_database_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_ip_address = input;
-        self
+    pub fn set_database_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_ip_address = input; self
+    }
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_ip_address
     }
     /// Consumes the builder and constructs a [`SchemaShortInfoResponse`](crate::types::SchemaShortInfoResponse).
     pub fn build(self) -> crate::types::SchemaShortInfoResponse {
         crate::types::SchemaShortInfoResponse {
-            schema_id: self.schema_id,
-            schema_name: self.schema_name,
-            database_id: self.database_id,
-            database_name: self.database_name,
-            database_ip_address: self.database_ip_address,
+            schema_id: self.schema_id
+            ,
+            schema_name: self.schema_name
+            ,
+            database_id: self.database_id
+            ,
+            database_name: self.database_name
+            ,
+            database_ip_address: self.database_ip_address
+            ,
         }
     }
 }
+

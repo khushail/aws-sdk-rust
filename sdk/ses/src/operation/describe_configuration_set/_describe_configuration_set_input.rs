@@ -3,97 +3,81 @@
 /// <p>Represents a request to return the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationSetInput {
+pub struct DescribeConfigurationSetInput  {
     /// <p>The name of the configuration set to describe.</p>
     #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of configuration set attributes to return.</p>
     #[doc(hidden)]
-    pub configuration_set_attribute_names:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>>,
+    pub configuration_set_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>>,
 }
 impl DescribeConfigurationSetInput {
     /// <p>The name of the configuration set to describe.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>A list of configuration set attributes to return.</p>
-    pub fn configuration_set_attribute_names(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfigurationSetAttribute]> {
+    pub fn configuration_set_attribute_names(&self) -> ::std::option::Option<& [crate::types::ConfigurationSetAttribute]> {
         self.configuration_set_attribute_names.as_deref()
     }
 }
 impl DescribeConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationSetInput`](crate::operation::describe_configuration_set::DescribeConfigurationSetInput).
-    pub fn builder(
-    ) -> crate::operation::describe_configuration_set::builders::DescribeConfigurationSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_configuration_set::builders::DescribeConfigurationSetInputBuilder {
         crate::operation::describe_configuration_set::builders::DescribeConfigurationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationSetInput`](crate::operation::describe_configuration_set::DescribeConfigurationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSetInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_set_attribute_names:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>>,
+    pub(crate) configuration_set_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>>,
 }
 impl DescribeConfigurationSetInputBuilder {
     /// <p>The name of the configuration set to describe.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set to describe.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configuration_set_name = input; self
+    }
+    /// <p>The name of the configuration set to describe.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// Appends an item to `configuration_set_attribute_names`.
     ///
     /// To override the contents of this collection use [`set_configuration_set_attribute_names`](Self::set_configuration_set_attribute_names).
     ///
     /// <p>A list of configuration set attributes to return.</p>
-    pub fn configuration_set_attribute_names(
-        mut self,
-        input: crate::types::ConfigurationSetAttribute,
-    ) -> Self {
+    pub fn configuration_set_attribute_names(mut self, input: crate::types::ConfigurationSetAttribute) -> Self {
         let mut v = self.configuration_set_attribute_names.unwrap_or_default();
-        v.push(input);
-        self.configuration_set_attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.configuration_set_attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of configuration set attributes to return.</p>
-    pub fn set_configuration_set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>>,
-    ) -> Self {
-        self.configuration_set_attribute_names = input;
-        self
+    pub fn set_configuration_set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>>) -> Self {
+        self.configuration_set_attribute_names = input; self
+    }
+    /// <p>A list of configuration set attributes to return.</p>
+    pub fn get_configuration_set_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>> {
+        &self.configuration_set_attribute_names
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationSetInput`](crate::operation::describe_configuration_set::DescribeConfigurationSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_configuration_set::DescribeConfigurationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration_set::DescribeConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_configuration_set::DescribeConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-                configuration_set_attribute_names: self.configuration_set_attribute_names,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                configuration_set_attribute_names: self.configuration_set_attribute_names
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateDataSourceInput {
+pub struct CreateDataSourceInput  {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct CreateDataSourceInput {
     /// <p>A display name for the data source.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
+    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p> 
     /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
@@ -37,52 +37,48 @@ pub struct CreateDataSourceInput {
 }
 impl CreateDataSourceInput {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A display name for the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
+    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p> 
     /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DataSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
-    pub fn data_source_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceParameters> {
+    pub fn data_source_parameters(&self) -> ::std::option::Option<& crate::types::DataSourceParameters> {
         self.data_source_parameters.as_ref()
     }
     /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&crate::types::DataSourceCredentials> {
+    pub fn credentials(&self) -> ::std::option::Option<& crate::types::DataSourceCredentials> {
         self.credentials.as_ref()
     }
     /// <p>A list of resource permissions on the data source.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn permissions(&self) -> ::std::option::Option<& [crate::types::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn vpc_connection_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {
+    pub fn vpc_connection_properties(&self) -> ::std::option::Option<& crate::types::VpcConnectionProperties> {
         self.vpc_connection_properties.as_ref()
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
-    pub fn ssl_properties(&self) -> ::std::option::Option<&crate::types::SslProperties> {
+    pub fn ssl_properties(&self) -> ::std::option::Option<& crate::types::SslProperties> {
         self.ssl_properties.as_ref()
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateDataSourceInput {
+impl  ::std::fmt::Debug for CreateDataSourceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceInput");
         formatter.field("aws_account_id", &self.aws_account_id);
@@ -100,8 +96,7 @@ impl ::std::fmt::Debug for CreateDataSourceInput {
 }
 impl CreateDataSourceInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
-    pub fn builder() -> crate::operation::create_data_source::builders::CreateDataSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_source::builders::CreateDataSourceInputBuilder {
         crate::operation::create_data_source::builders::CreateDataSourceInputBuilder::default()
     }
 }
@@ -116,45 +111,37 @@ pub struct CreateDataSourceInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DataSourceType>,
     pub(crate) data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
     pub(crate) credentials: ::std::option::Option<crate::types::DataSourceCredentials>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) vpc_connection_properties:
-        ::std::option::Option<crate::types::VpcConnectionProperties>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
     pub(crate) ssl_properties: ::std::option::Option<crate::types::SslProperties>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDataSourceInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_source_id = input;
-        self
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_id = input; self
+    }
+    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
     }
     /// <p>A display name for the data source.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,20 +150,27 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>A display name for the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
+    /// <p>A display name for the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
+    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p> 
     /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
+    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p> 
     /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p> 
+    /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
+        &self.r#type
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
     pub fn data_source_parameters(mut self, input: crate::types::DataSourceParameters) -> Self {
@@ -184,12 +178,12 @@ impl CreateDataSourceInputBuilder {
         self
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
-    pub fn set_data_source_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceParameters>,
-    ) -> Self {
-        self.data_source_parameters = input;
-        self
+    pub fn set_data_source_parameters(mut self, input: ::std::option::Option<crate::types::DataSourceParameters>) -> Self {
+        self.data_source_parameters = input; self
+    }
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
+    pub fn get_data_source_parameters(&self) -> &::std::option::Option<crate::types::DataSourceParameters> {
+        &self.data_source_parameters
     }
     /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn credentials(mut self, input: crate::types::DataSourceCredentials) -> Self {
@@ -197,12 +191,12 @@ impl CreateDataSourceInputBuilder {
         self
     }
     /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceCredentials>,
-    ) -> Self {
-        self.credentials = input;
-        self
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::DataSourceCredentials>) -> Self {
+        self.credentials = input; self
+    }
+    /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::DataSourceCredentials> {
+        &self.credentials
     }
     /// Appends an item to `permissions`.
     ///
@@ -211,33 +205,30 @@ impl CreateDataSourceInputBuilder {
     /// <p>A list of resource permissions on the data source.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of resource permissions on the data source.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.permissions = input; self
+    }
+    /// <p>A list of resource permissions on the data source.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.permissions
     }
     /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn vpc_connection_properties(
-        mut self,
-        input: crate::types::VpcConnectionProperties,
-    ) -> Self {
+    pub fn vpc_connection_properties(mut self, input: crate::types::VpcConnectionProperties) -> Self {
         self.vpc_connection_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn set_vpc_connection_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectionProperties>,
-    ) -> Self {
-        self.vpc_connection_properties = input;
-        self
+    pub fn set_vpc_connection_properties(mut self, input: ::std::option::Option<crate::types::VpcConnectionProperties>) -> Self {
+        self.vpc_connection_properties = input; self
+    }
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    pub fn get_vpc_connection_properties(&self) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
+        &self.vpc_connection_properties
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     pub fn ssl_properties(mut self, input: crate::types::SslProperties) -> Self {
@@ -245,12 +236,12 @@ impl CreateDataSourceInputBuilder {
         self
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
-    pub fn set_ssl_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SslProperties>,
-    ) -> Self {
-        self.ssl_properties = input;
-        self
+    pub fn set_ssl_properties(mut self, input: ::std::option::Option<crate::types::SslProperties>) -> Self {
+        self.ssl_properties = input; self
+    }
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
+    pub fn get_ssl_properties(&self) -> &::std::option::Option<crate::types::SslProperties> {
+        &self.ssl_properties
     }
     /// Appends an item to `tags`.
     ///
@@ -259,38 +250,43 @@ impl CreateDataSourceInputBuilder {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_source::CreateDataSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_data_source::CreateDataSourceInput {
-                aws_account_id: self.aws_account_id,
-                data_source_id: self.data_source_id,
-                name: self.name,
-                r#type: self.r#type,
-                data_source_parameters: self.data_source_parameters,
-                credentials: self.credentials,
-                permissions: self.permissions,
-                vpc_connection_properties: self.vpc_connection_properties,
-                ssl_properties: self.ssl_properties,
-                tags: self.tags,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                data_source_id: self.data_source_id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                data_source_parameters: self.data_source_parameters
+                ,
+                credentials: self.credentials
+                ,
+                permissions: self.permissions
+                ,
+                vpc_connection_properties: self.vpc_connection_properties
+                ,
+                ssl_properties: self.ssl_properties
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
@@ -310,3 +306,4 @@ impl ::std::fmt::Debug for CreateDataSourceInputBuilder {
         formatter.finish()
     }
 }
+

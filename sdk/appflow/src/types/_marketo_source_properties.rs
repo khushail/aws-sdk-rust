@@ -3,14 +3,14 @@
 /// <p> The properties that are applied when Marketo is being used as a source. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MarketoSourceProperties {
+pub struct MarketoSourceProperties  {
     /// <p> The object specified in the Marketo flow source. </p>
     #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
 }
 impl MarketoSourceProperties {
     /// <p> The object specified in the Marketo flow source. </p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<& str> {
         self.object.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl MarketoSourceProperties {
 
 /// A builder for [`MarketoSourceProperties`](crate::types::MarketoSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MarketoSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl MarketoSourcePropertiesBuilder {
     }
     /// <p> The object specified in the Marketo flow source. </p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
+    }
+    /// <p> The object specified in the Marketo flow source. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
     }
     /// Consumes the builder and constructs a [`MarketoSourceProperties`](crate::types::MarketoSourceProperties).
     pub fn build(self) -> crate::types::MarketoSourceProperties {
         crate::types::MarketoSourceProperties {
-            object: self.object,
+            object: self.object
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDisassociateResourceOutput {
+pub struct BatchDisassociateResourceOutput  {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
     #[doc(hidden)]
     pub resource_set_identifier: ::std::option::Option<::std::string::String>,
@@ -13,31 +13,29 @@ pub struct BatchDisassociateResourceOutput {
 }
 impl BatchDisassociateResourceOutput {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub fn resource_set_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_set_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_set_identifier.as_deref()
     }
     /// <p>The resources that failed to disassociate from the resource set.</p>
-    pub fn failed_items(&self) -> ::std::option::Option<&[crate::types::FailedItem]> {
+    pub fn failed_items(&self) -> ::std::option::Option<& [crate::types::FailedItem]> {
         self.failed_items.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDisassociateResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchDisassociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateResourceOutput`](crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput).
-    pub fn builder() -> crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceOutputBuilder{
+    pub fn builder() -> crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceOutputBuilder {
         crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDisassociateResourceOutput`](crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateResourceOutputBuilder {
     pub(crate) resource_set_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) failed_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedItem>>,
@@ -45,20 +43,17 @@ pub struct BatchDisassociateResourceOutputBuilder {
 }
 impl BatchDisassociateResourceOutputBuilder {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub fn resource_set_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub fn set_resource_set_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_set_identifier = input;
-        self
+    pub fn set_resource_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_set_identifier = input; self
+    }
+    /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    pub fn get_resource_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_identifier
     }
     /// Appends an item to `failed_items`.
     ///
@@ -67,35 +62,36 @@ impl BatchDisassociateResourceOutputBuilder {
     /// <p>The resources that failed to disassociate from the resource set.</p>
     pub fn failed_items(mut self, input: crate::types::FailedItem) -> Self {
         let mut v = self.failed_items.unwrap_or_default();
-        v.push(input);
-        self.failed_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources that failed to disassociate from the resource set.</p>
-    pub fn set_failed_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedItem>>,
-    ) -> Self {
-        self.failed_items = input;
-        self
+    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedItem>>) -> Self {
+        self.failed_items = input; self
+    }
+    /// <p>The resources that failed to disassociate from the resource set.</p>
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedItem>> {
+        &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchDisassociateResourceOutput`](crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput {
+    pub fn build(self) -> crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput {
         crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput {
-            resource_set_identifier: self.resource_set_identifier,
-            failed_items: self.failed_items,
+            resource_set_identifier: self.resource_set_identifier
+            ,
+            failed_items: self.failed_items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

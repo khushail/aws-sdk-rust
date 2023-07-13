@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetProjectsInput {
+pub struct BatchGetProjectsInput  {
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
     #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetProjectsInput {
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.names.as_deref()
     }
 }
 impl BatchGetProjectsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetProjectsInput`](crate::operation::batch_get_projects::BatchGetProjectsInput).
-    pub fn builder() -> crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder {
         crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetProjectsInput`](crate::operation::batch_get_projects::BatchGetProjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetProjectsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -37,27 +34,26 @@ impl BatchGetProjectsInputBuilder {
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.names = input; self
+    }
+    /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
     }
     /// Consumes the builder and constructs a [`BatchGetProjectsInput`](crate::operation::batch_get_projects::BatchGetProjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_projects::BatchGetProjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_projects::BatchGetProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::batch_get_projects::BatchGetProjectsInput { names: self.names },
+            crate::operation::batch_get_projects::BatchGetProjectsInput {
+                names: self.names
+                ,
+            }
         )
     }
 }
+

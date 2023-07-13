@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServerNeighborsInput {
+pub struct ListServerNeighborsInput  {
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
     #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ pub struct ListServerNeighborsInput {
 }
 impl ListServerNeighborsInput {
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
-    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_id(&self) -> ::std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
     /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
@@ -29,7 +29,7 @@ impl ListServerNeighborsInput {
         self.port_information_needed
     }
     /// <p>List of configuration IDs to test for one-hop-away.</p>
-    pub fn neighbor_configuration_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn neighbor_configuration_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.neighbor_configuration_ids.as_deref()
     }
     /// <p>Maximum number of results to return in a single page of output.</p>
@@ -37,48 +37,40 @@ impl ListServerNeighborsInput {
         self.max_results
     }
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListServerNeighborsInput {
     /// Creates a new builder-style object to manufacture [`ListServerNeighborsInput`](crate::operation::list_server_neighbors::ListServerNeighborsInput).
-    pub fn builder(
-    ) -> crate::operation::list_server_neighbors::builders::ListServerNeighborsInputBuilder {
-        crate::operation::list_server_neighbors::builders::ListServerNeighborsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_server_neighbors::builders::ListServerNeighborsInputBuilder {
+        crate::operation::list_server_neighbors::builders::ListServerNeighborsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServerNeighborsInput`](crate::operation::list_server_neighbors::ListServerNeighborsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServerNeighborsInputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) port_information_needed: ::std::option::Option<bool>,
-    pub(crate) neighbor_configuration_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) neighbor_configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListServerNeighborsInputBuilder {
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.configuration_id = input;
-        self
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configuration_id = input; self
+    }
+    /// <p>Configuration ID of the server for which neighbors are being listed.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_id
     }
     /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
     pub fn port_information_needed(mut self, input: bool) -> Self {
@@ -87,30 +79,30 @@ impl ListServerNeighborsInputBuilder {
     }
     /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
     pub fn set_port_information_needed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.port_information_needed = input;
-        self
+        self.port_information_needed = input; self
+    }
+    /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
+    pub fn get_port_information_needed(&self) -> &::std::option::Option<bool> {
+        &self.port_information_needed
     }
     /// Appends an item to `neighbor_configuration_ids`.
     ///
     /// To override the contents of this collection use [`set_neighbor_configuration_ids`](Self::set_neighbor_configuration_ids).
     ///
     /// <p>List of configuration IDs to test for one-hop-away.</p>
-    pub fn neighbor_configuration_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn neighbor_configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.neighbor_configuration_ids.unwrap_or_default();
-        v.push(input.into());
-        self.neighbor_configuration_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.neighbor_configuration_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of configuration IDs to test for one-hop-away.</p>
-    pub fn set_neighbor_configuration_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.neighbor_configuration_ids = input;
-        self
+    pub fn set_neighbor_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.neighbor_configuration_ids = input; self
+    }
+    /// <p>List of configuration IDs to test for one-hop-away.</p>
+    pub fn get_neighbor_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.neighbor_configuration_ids
     }
     /// <p>Maximum number of results to return in a single page of output.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -119,8 +111,11 @@ impl ListServerNeighborsInputBuilder {
     }
     /// <p>Maximum number of results to return in a single page of output.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Maximum number of results to return in a single page of output.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,24 +124,28 @@ impl ListServerNeighborsInputBuilder {
     }
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListServerNeighborsInput`](crate::operation::list_server_neighbors::ListServerNeighborsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_server_neighbors::ListServerNeighborsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_server_neighbors::ListServerNeighborsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_server_neighbors::ListServerNeighborsInput {
-                configuration_id: self.configuration_id,
-                port_information_needed: self.port_information_needed,
-                neighbor_configuration_ids: self.neighbor_configuration_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                configuration_id: self.configuration_id
+                ,
+                port_information_needed: self.port_information_needed
+                ,
+                neighbor_configuration_ids: self.neighbor_configuration_ids
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

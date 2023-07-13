@@ -2,41 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMessagingStreamingConfigurationsOutput {
+pub struct PutMessagingStreamingConfigurationsOutput  {
     /// <p>The requested streaming configurations.</p>
     #[doc(hidden)]
-    pub streaming_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
+    pub streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
     _request_id: Option<String>,
 }
 impl PutMessagingStreamingConfigurationsOutput {
     /// <p>The requested streaming configurations.</p>
-    pub fn streaming_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StreamingConfiguration]> {
+    pub fn streaming_configurations(&self) -> ::std::option::Option<& [crate::types::StreamingConfiguration]> {
         self.streaming_configurations.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for PutMessagingStreamingConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutMessagingStreamingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`PutMessagingStreamingConfigurationsOutput`](crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput).
-    pub fn builder() -> crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsOutputBuilder {
         crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutMessagingStreamingConfigurationsOutput`](crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMessagingStreamingConfigurationsOutputBuilder {
-    pub(crate) streaming_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
+    pub(crate) streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
     _request_id: Option<String>,
 }
 impl PutMessagingStreamingConfigurationsOutputBuilder {
@@ -47,29 +41,29 @@ impl PutMessagingStreamingConfigurationsOutputBuilder {
     /// <p>The requested streaming configurations.</p>
     pub fn streaming_configurations(mut self, input: crate::types::StreamingConfiguration) -> Self {
         let mut v = self.streaming_configurations.unwrap_or_default();
-        v.push(input);
-        self.streaming_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.streaming_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The requested streaming configurations.</p>
-    pub fn set_streaming_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
-    ) -> Self {
-        self.streaming_configurations = input;
-        self
+    pub fn set_streaming_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>) -> Self {
+        self.streaming_configurations = input; self
+    }
+    /// <p>The requested streaming configurations.</p>
+    pub fn get_streaming_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>> {
+        &self.streaming_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutMessagingStreamingConfigurationsOutput`](crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput).
-    pub fn build(self) -> crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput{
+    pub fn build(self) -> crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput {
         crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput {
             streaming_configurations: self.streaming_configurations
             ,
@@ -77,3 +71,4 @@ impl PutMessagingStreamingConfigurationsOutputBuilder {
         }
     }
 }
+

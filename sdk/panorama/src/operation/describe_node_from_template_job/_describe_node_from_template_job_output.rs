@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNodeFromTemplateJobOutput {
+pub struct DescribeNodeFromTemplateJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -35,9 +35,7 @@ pub struct DescribeNodeFromTemplateJobOutput {
     pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>The job's template parameters.</p>
     #[doc(hidden)]
-    pub template_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub template_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The job's tags.</p>
     #[doc(hidden)]
     pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
@@ -45,75 +43,69 @@ pub struct DescribeNodeFromTemplateJobOutput {
 }
 impl DescribeNodeFromTemplateJobOutput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::NodeFromTemplateJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::NodeFromTemplateJobStatus> {
         self.status.as_ref()
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>When the job was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The job's output package name.</p>
-    pub fn output_package_name(&self) -> ::std::option::Option<&str> {
+    pub fn output_package_name(&self) -> ::std::option::Option<& str> {
         self.output_package_name.as_deref()
     }
     /// <p>The job's output package version.</p>
-    pub fn output_package_version(&self) -> ::std::option::Option<&str> {
+    pub fn output_package_version(&self) -> ::std::option::Option<& str> {
         self.output_package_version.as_deref()
     }
     /// <p>The node's name.</p>
-    pub fn node_name(&self) -> ::std::option::Option<&str> {
+    pub fn node_name(&self) -> ::std::option::Option<& str> {
         self.node_name.as_deref()
     }
     /// <p>The node's description.</p>
-    pub fn node_description(&self) -> ::std::option::Option<&str> {
+    pub fn node_description(&self) -> ::std::option::Option<& str> {
         self.node_description.as_deref()
     }
     /// <p>The job's template type.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
+    pub fn template_type(&self) -> ::std::option::Option<& crate::types::TemplateType> {
         self.template_type.as_ref()
     }
     /// <p>The job's template parameters.</p>
-    pub fn template_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn template_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.template_parameters.as_ref()
     }
     /// <p>The job's tags.</p>
-    pub fn job_tags(&self) -> ::std::option::Option<&[crate::types::JobResourceTags]> {
+    pub fn job_tags(&self) -> ::std::option::Option<& [crate::types::JobResourceTags]> {
         self.job_tags.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeNodeFromTemplateJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeNodeFromTemplateJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNodeFromTemplateJobOutput`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput).
-    pub fn builder() -> crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder {
         crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNodeFromTemplateJobOutput`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNodeFromTemplateJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::NodeFromTemplateJobStatus>,
@@ -125,9 +117,7 @@ pub struct DescribeNodeFromTemplateJobOutputBuilder {
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_description: ::std::option::Option<::std::string::String>,
     pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,
-    pub(crate) template_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) template_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
     _request_id: Option<String>,
 }
@@ -139,8 +129,11 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The job's ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::NodeFromTemplateJobStatus) -> Self {
@@ -148,28 +141,25 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeFromTemplateJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::NodeFromTemplateJobStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The job's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NodeFromTemplateJobStatus> {
+        &self.status
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>The job's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>When the job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -177,12 +167,12 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
+    }
+    /// <p>When the job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>When the job was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -190,44 +180,38 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self
     }
     /// <p>When the job was updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
+    }
+    /// <p>When the job was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>The job's output package name.</p>
-    pub fn output_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's output package name.</p>
-    pub fn set_output_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.output_package_name = input;
-        self
+    pub fn set_output_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output_package_name = input; self
+    }
+    /// <p>The job's output package name.</p>
+    pub fn get_output_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_package_name
     }
     /// <p>The job's output package version.</p>
-    pub fn output_package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's output package version.</p>
-    pub fn set_output_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.output_package_version = input;
-        self
+    pub fn set_output_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output_package_version = input; self
+    }
+    /// <p>The job's output package version.</p>
+    pub fn get_output_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_package_version
     }
     /// <p>The node's name.</p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -236,24 +220,24 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
     }
     /// <p>The node's name.</p>
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_name = input;
-        self
+        self.node_name = input; self
+    }
+    /// <p>The node's name.</p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_name
     }
     /// <p>The node's description.</p>
-    pub fn node_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's description.</p>
-    pub fn set_node_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.node_description = input;
-        self
+    pub fn set_node_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.node_description = input; self
+    }
+    /// <p>The node's description.</p>
+    pub fn get_node_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_description
     }
     /// <p>The job's template type.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
@@ -261,37 +245,31 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self
     }
     /// <p>The job's template type.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateType>,
-    ) -> Self {
-        self.template_type = input;
-        self
+    pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
+        self.template_type = input; self
+    }
+    /// <p>The job's template type.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
     }
     /// Adds a key-value pair to `template_parameters`.
     ///
     /// To override the contents of this collection use [`set_template_parameters`](Self::set_template_parameters).
     ///
     /// <p>The job's template parameters.</p>
-    pub fn template_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.template_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.template_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.template_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The job's template parameters.</p>
-    pub fn set_template_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.template_parameters = input;
-        self
+    pub fn set_template_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.template_parameters = input; self
+    }
+    /// <p>The job's template parameters.</p>
+    pub fn get_template_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.template_parameters
     }
     /// Appends an item to `job_tags`.
     ///
@@ -300,45 +278,56 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
     /// <p>The job's tags.</p>
     pub fn job_tags(mut self, input: crate::types::JobResourceTags) -> Self {
         let mut v = self.job_tags.unwrap_or_default();
-        v.push(input);
-        self.job_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The job's tags.</p>
-    pub fn set_job_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
-    ) -> Self {
-        self.job_tags = input;
-        self
+    pub fn set_job_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>) -> Self {
+        self.job_tags = input; self
+    }
+    /// <p>The job's tags.</p>
+    pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+        &self.job_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeNodeFromTemplateJobOutput`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput {
+    pub fn build(self) -> crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput {
         crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput {
-            job_id: self.job_id,
-            status: self.status,
-            status_message: self.status_message,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            output_package_name: self.output_package_name,
-            output_package_version: self.output_package_version,
-            node_name: self.node_name,
-            node_description: self.node_description,
-            template_type: self.template_type,
-            template_parameters: self.template_parameters,
-            job_tags: self.job_tags,
+            job_id: self.job_id
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            output_package_name: self.output_package_name
+            ,
+            output_package_version: self.output_package_version
+            ,
+            node_name: self.node_name
+            ,
+            node_description: self.node_description
+            ,
+            template_type: self.template_type
+            ,
+            template_parameters: self.template_parameters
+            ,
+            job_tags: self.job_tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

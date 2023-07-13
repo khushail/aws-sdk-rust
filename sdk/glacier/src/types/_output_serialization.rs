@@ -3,14 +3,14 @@
 /// <p>Describes how the select output is serialized.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputSerialization {
+pub struct OutputSerialization  {
     /// <p>Describes the serialization of CSV-encoded query results.</p>
     #[doc(hidden)]
     pub csv: ::std::option::Option<crate::types::CsvOutput>,
 }
 impl OutputSerialization {
     /// <p>Describes the serialization of CSV-encoded query results.</p>
-    pub fn csv(&self) -> ::std::option::Option<&crate::types::CsvOutput> {
+    pub fn csv(&self) -> ::std::option::Option<& crate::types::CsvOutput> {
         self.csv.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl OutputSerialization {
 
 /// A builder for [`OutputSerialization`](crate::types::OutputSerialization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputSerializationBuilder {
     pub(crate) csv: ::std::option::Option<crate::types::CsvOutput>,
 }
@@ -37,11 +35,18 @@ impl OutputSerializationBuilder {
     }
     /// <p>Describes the serialization of CSV-encoded query results.</p>
     pub fn set_csv(mut self, input: ::std::option::Option<crate::types::CsvOutput>) -> Self {
-        self.csv = input;
-        self
+        self.csv = input; self
+    }
+    /// <p>Describes the serialization of CSV-encoded query results.</p>
+    pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvOutput> {
+        &self.csv
     }
     /// Consumes the builder and constructs a [`OutputSerialization`](crate::types::OutputSerialization).
     pub fn build(self) -> crate::types::OutputSerialization {
-        crate::types::OutputSerialization { csv: self.csv }
+        crate::types::OutputSerialization {
+            csv: self.csv
+            ,
+        }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>DescribeAgent</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAgentInput {
+pub struct DescribeAgentInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     #[doc(hidden)]
     pub agent_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAgentInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
-    pub fn agent_arn(&self) -> ::std::option::Option<&str> {
+    pub fn agent_arn(&self) -> ::std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DescribeAgentInput {
 
 /// A builder for [`DescribeAgentInput`](crate::operation::describe_agent::DescribeAgentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgentInputBuilder {
     pub(crate) agent_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +35,20 @@ impl DescribeAgentInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     pub fn set_agent_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_arn = input;
-        self
+        self.agent_arn = input; self
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
+    pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_arn
     }
     /// Consumes the builder and constructs a [`DescribeAgentInput`](crate::operation::describe_agent::DescribeAgentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_agent::DescribeAgentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_agent::DescribeAgentInput {
-            agent_arn: self.agent_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_agent::DescribeAgentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_agent::DescribeAgentInput {
+                agent_arn: self.agent_arn
+                ,
+            }
+        )
     }
 }
+

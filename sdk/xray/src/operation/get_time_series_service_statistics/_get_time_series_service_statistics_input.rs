@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTimeSeriesServiceStatisticsInput {
+pub struct GetTimeSeriesServiceStatisticsInput  {
     /// <p>The start of the time frame for which to aggregate statistics.</p>
     #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -30,23 +30,23 @@ pub struct GetTimeSeriesServiceStatisticsInput {
 }
 impl GetTimeSeriesServiceStatisticsInput {
     /// <p>The start of the time frame for which to aggregate statistics.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time frame for which to aggregate statistics.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
-    pub fn group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn group_arn(&self) -> ::std::option::Option<& str> {
         self.group_arn.as_deref()
     }
     /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
-    pub fn entity_selector_expression(&self) -> ::std::option::Option<&str> {
+    pub fn entity_selector_expression(&self) -> ::std::option::Option<& str> {
         self.entity_selector_expression.as_deref()
     }
     /// <p>Aggregation period in seconds.</p>
@@ -58,22 +58,20 @@ impl GetTimeSeriesServiceStatisticsInput {
         self.forecast_statistics
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetTimeSeriesServiceStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetTimeSeriesServiceStatisticsInput`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput).
-    pub fn builder() -> crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsInputBuilder{
+    pub fn builder() -> crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsInputBuilder {
         crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTimeSeriesServiceStatisticsInput`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTimeSeriesServiceStatisticsInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -91,12 +89,12 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
         self
     }
     /// <p>The start of the time frame for which to aggregate statistics.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>The start of the time frame for which to aggregate statistics.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The end of the time frame for which to aggregate statistics.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -104,12 +102,12 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
         self
     }
     /// <p>The end of the time frame for which to aggregate statistics.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p>The end of the time frame for which to aggregate statistics.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,8 +116,11 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
     }
     /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
+    }
+    /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,24 +129,24 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_arn = input;
-        self
+        self.group_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
     }
     /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
-    pub fn entity_selector_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_selector_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_selector_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
-    pub fn set_entity_selector_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.entity_selector_expression = input;
-        self
+    pub fn set_entity_selector_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.entity_selector_expression = input; self
+    }
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
+    pub fn get_entity_selector_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_selector_expression
     }
     /// <p>Aggregation period in seconds.</p>
     pub fn period(mut self, input: i32) -> Self {
@@ -154,8 +155,11 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
     }
     /// <p>Aggregation period in seconds.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
+    }
+    /// <p>Aggregation period in seconds.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
     }
     /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
     pub fn forecast_statistics(mut self, input: bool) -> Self {
@@ -164,8 +168,11 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
     }
     /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
     pub fn set_forecast_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.forecast_statistics = input;
-        self
+        self.forecast_statistics = input; self
+    }
+    /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
+    pub fn get_forecast_statistics(&self) -> &::std::option::Option<bool> {
+        &self.forecast_statistics
     }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,16 +181,14 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetTimeSeriesServiceStatisticsInput`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput {
                 start_time: self.start_time
@@ -206,3 +211,4 @@ impl GetTimeSeriesServiceStatisticsInputBuilder {
         )
     }
 }
+

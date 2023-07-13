@@ -3,7 +3,7 @@
 /// <p>Requests API Gateway to get information about a Stage resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStageInput {
+pub struct GetStageInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct GetStageInput {
 }
 impl GetStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the Stage resource to get information about.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl GetStageInput {
 
 /// A builder for [`GetStageInput`](crate::operation::get_stage::GetStageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStageInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl GetStageInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
     }
     /// <p>The name of the Stage resource to get information about.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,19 +56,22 @@ impl GetStageInputBuilder {
     }
     /// <p>The name of the Stage resource to get information about.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
+    }
+    /// <p>The name of the Stage resource to get information about.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`GetStageInput`](crate::operation::get_stage::GetStageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_stage::GetStageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_stage::GetStageInput {
-            rest_api_id: self.rest_api_id,
-            stage_name: self.stage_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stage::GetStageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_stage::GetStageInput {
+                rest_api_id: self.rest_api_id
+                ,
+                stage_name: self.stage_name
+                ,
+            }
+        )
     }
 }
+

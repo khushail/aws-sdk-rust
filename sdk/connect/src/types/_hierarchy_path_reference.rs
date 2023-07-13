@@ -3,7 +3,7 @@
 /// <p>Information about the levels in the hierarchy group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HierarchyPathReference {
+pub struct HierarchyPathReference  {
     /// <p>Information about level one.</p>
     #[doc(hidden)]
     pub level_one: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
@@ -22,33 +22,23 @@ pub struct HierarchyPathReference {
 }
 impl HierarchyPathReference {
     /// <p>Information about level one.</p>
-    pub fn level_one(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HierarchyGroupSummaryReference> {
+    pub fn level_one(&self) -> ::std::option::Option<& crate::types::HierarchyGroupSummaryReference> {
         self.level_one.as_ref()
     }
     /// <p>Information about level two.</p>
-    pub fn level_two(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HierarchyGroupSummaryReference> {
+    pub fn level_two(&self) -> ::std::option::Option<& crate::types::HierarchyGroupSummaryReference> {
         self.level_two.as_ref()
     }
     /// <p>Information about level three.</p>
-    pub fn level_three(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HierarchyGroupSummaryReference> {
+    pub fn level_three(&self) -> ::std::option::Option<& crate::types::HierarchyGroupSummaryReference> {
         self.level_three.as_ref()
     }
     /// <p>Information about level four.</p>
-    pub fn level_four(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HierarchyGroupSummaryReference> {
+    pub fn level_four(&self) -> ::std::option::Option<& crate::types::HierarchyGroupSummaryReference> {
         self.level_four.as_ref()
     }
     /// <p>Information about level five.</p>
-    pub fn level_five(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HierarchyGroupSummaryReference> {
+    pub fn level_five(&self) -> ::std::option::Option<& crate::types::HierarchyGroupSummaryReference> {
         self.level_five.as_ref()
     }
 }
@@ -61,9 +51,7 @@ impl HierarchyPathReference {
 
 /// A builder for [`HierarchyPathReference`](crate::types::HierarchyPathReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HierarchyPathReferenceBuilder {
     pub(crate) level_one: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
     pub(crate) level_two: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
@@ -78,12 +66,12 @@ impl HierarchyPathReferenceBuilder {
         self
     }
     /// <p>Information about level one.</p>
-    pub fn set_level_one(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
-    ) -> Self {
-        self.level_one = input;
-        self
+    pub fn set_level_one(mut self, input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>) -> Self {
+        self.level_one = input; self
+    }
+    /// <p>Information about level one.</p>
+    pub fn get_level_one(&self) -> &::std::option::Option<crate::types::HierarchyGroupSummaryReference> {
+        &self.level_one
     }
     /// <p>Information about level two.</p>
     pub fn level_two(mut self, input: crate::types::HierarchyGroupSummaryReference) -> Self {
@@ -91,12 +79,12 @@ impl HierarchyPathReferenceBuilder {
         self
     }
     /// <p>Information about level two.</p>
-    pub fn set_level_two(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
-    ) -> Self {
-        self.level_two = input;
-        self
+    pub fn set_level_two(mut self, input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>) -> Self {
+        self.level_two = input; self
+    }
+    /// <p>Information about level two.</p>
+    pub fn get_level_two(&self) -> &::std::option::Option<crate::types::HierarchyGroupSummaryReference> {
+        &self.level_two
     }
     /// <p>Information about level three.</p>
     pub fn level_three(mut self, input: crate::types::HierarchyGroupSummaryReference) -> Self {
@@ -104,12 +92,12 @@ impl HierarchyPathReferenceBuilder {
         self
     }
     /// <p>Information about level three.</p>
-    pub fn set_level_three(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
-    ) -> Self {
-        self.level_three = input;
-        self
+    pub fn set_level_three(mut self, input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>) -> Self {
+        self.level_three = input; self
+    }
+    /// <p>Information about level three.</p>
+    pub fn get_level_three(&self) -> &::std::option::Option<crate::types::HierarchyGroupSummaryReference> {
+        &self.level_three
     }
     /// <p>Information about level four.</p>
     pub fn level_four(mut self, input: crate::types::HierarchyGroupSummaryReference) -> Self {
@@ -117,12 +105,12 @@ impl HierarchyPathReferenceBuilder {
         self
     }
     /// <p>Information about level four.</p>
-    pub fn set_level_four(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
-    ) -> Self {
-        self.level_four = input;
-        self
+    pub fn set_level_four(mut self, input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>) -> Self {
+        self.level_four = input; self
+    }
+    /// <p>Information about level four.</p>
+    pub fn get_level_four(&self) -> &::std::option::Option<crate::types::HierarchyGroupSummaryReference> {
+        &self.level_four
     }
     /// <p>Information about level five.</p>
     pub fn level_five(mut self, input: crate::types::HierarchyGroupSummaryReference) -> Self {
@@ -130,21 +118,27 @@ impl HierarchyPathReferenceBuilder {
         self
     }
     /// <p>Information about level five.</p>
-    pub fn set_level_five(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
-    ) -> Self {
-        self.level_five = input;
-        self
+    pub fn set_level_five(mut self, input: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>) -> Self {
+        self.level_five = input; self
+    }
+    /// <p>Information about level five.</p>
+    pub fn get_level_five(&self) -> &::std::option::Option<crate::types::HierarchyGroupSummaryReference> {
+        &self.level_five
     }
     /// Consumes the builder and constructs a [`HierarchyPathReference`](crate::types::HierarchyPathReference).
     pub fn build(self) -> crate::types::HierarchyPathReference {
         crate::types::HierarchyPathReference {
-            level_one: self.level_one,
-            level_two: self.level_two,
-            level_three: self.level_three,
-            level_four: self.level_four,
-            level_five: self.level_five,
+            level_one: self.level_one
+            ,
+            level_two: self.level_two
+            ,
+            level_three: self.level_three
+            ,
+            level_four: self.level_four
+            ,
+            level_five: self.level_five
+            ,
         }
     }
 }
+

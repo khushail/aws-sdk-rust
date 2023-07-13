@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInferenceExperimentInput {
+pub struct DeleteInferenceExperimentInput  {
     /// <p>The name of the inference experiment you want to delete.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInferenceExperimentInput {
     /// <p>The name of the inference experiment you want to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteInferenceExperimentInput {
     /// Creates a new builder-style object to manufacture [`DeleteInferenceExperimentInput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentInput).
-    pub fn builder() -> crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentInputBuilder{
+    pub fn builder() -> crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentInputBuilder {
         crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInferenceExperimentInput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInferenceExperimentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl DeleteInferenceExperimentInputBuilder {
     }
     /// <p>The name of the inference experiment you want to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the inference experiment you want to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DeleteInferenceExperimentInput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_inference_experiment::DeleteInferenceExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_inference_experiment::DeleteInferenceExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_inference_experiment::DeleteInferenceExperimentInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

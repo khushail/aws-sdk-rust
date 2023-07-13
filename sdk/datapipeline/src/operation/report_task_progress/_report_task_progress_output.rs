@@ -3,7 +3,7 @@
 /// <p>Contains the output of ReportTaskProgress.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportTaskProgressOutput {
+pub struct ReportTaskProgressOutput  {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     #[doc(hidden)]
     pub canceled: bool,
@@ -16,23 +16,20 @@ impl ReportTaskProgressOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for ReportTaskProgressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ReportTaskProgressOutput {
     /// Creates a new builder-style object to manufacture [`ReportTaskProgressOutput`](crate::operation::report_task_progress::ReportTaskProgressOutput).
-    pub fn builder(
-    ) -> crate::operation::report_task_progress::builders::ReportTaskProgressOutputBuilder {
+    pub fn builder() -> crate::operation::report_task_progress::builders::ReportTaskProgressOutputBuilder {
         crate::operation::report_task_progress::builders::ReportTaskProgressOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReportTaskProgressOutput`](crate::operation::report_task_progress::ReportTaskProgressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportTaskProgressOutputBuilder {
     pub(crate) canceled: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -45,23 +42,29 @@ impl ReportTaskProgressOutputBuilder {
     }
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     pub fn set_canceled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.canceled = input;
-        self
+        self.canceled = input; self
+    }
+    /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
+    pub fn get_canceled(&self) -> &::std::option::Option<bool> {
+        &self.canceled
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ReportTaskProgressOutput`](crate::operation::report_task_progress::ReportTaskProgressOutput).
     pub fn build(self) -> crate::operation::report_task_progress::ReportTaskProgressOutput {
         crate::operation::report_task_progress::ReportTaskProgressOutput {
-            canceled: self.canceled.unwrap_or_default(),
+            canceled: self.canceled
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

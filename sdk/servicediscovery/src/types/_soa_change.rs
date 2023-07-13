@@ -3,7 +3,7 @@
 /// <p>Updated Start of Authority (SOA) properties for a public or private DNS namespace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SoaChange {
+pub struct SoaChange  {
     /// <p>The updated time to live (TTL) for purposes of negative caching.</p>
     #[doc(hidden)]
     pub ttl: ::std::option::Option<i64>,
@@ -23,9 +23,7 @@ impl SoaChange {
 
 /// A builder for [`SoaChange`](crate::types::SoaChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SoaChangeBuilder {
     pub(crate) ttl: ::std::option::Option<i64>,
 }
@@ -37,11 +35,18 @@ impl SoaChangeBuilder {
     }
     /// <p>The updated time to live (TTL) for purposes of negative caching.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
+    }
+    /// <p>The updated time to live (TTL) for purposes of negative caching.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<i64> {
+        &self.ttl
     }
     /// Consumes the builder and constructs a [`SoaChange`](crate::types::SoaChange).
     pub fn build(self) -> crate::types::SoaChange {
-        crate::types::SoaChange { ttl: self.ttl }
+        crate::types::SoaChange {
+            ttl: self.ttl
+            ,
+        }
     }
 }
+

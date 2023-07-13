@@ -3,7 +3,7 @@
 /// <p>Details about the extension version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExtensionVersionDetails {
+pub struct ExtensionVersionDetails  {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct ExtensionVersionDetails {
 }
 impl ExtensionVersionDetails {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The model that defines the interface for this extension version.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The version of the extension.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl ExtensionVersionDetails {
 
 /// A builder for [`ExtensionVersionDetails`](crate::types::ExtensionVersionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExtensionVersionDetailsBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl ExtensionVersionDetailsBuilder {
     }
     /// <p>The namespace (qualifier) of the extension.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
+    }
+    /// <p>The namespace (qualifier) of the extension.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl ExtensionVersionDetailsBuilder {
     }
     /// <p>The name of the extension.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the extension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The model that defines the interface for this extension version.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl ExtensionVersionDetailsBuilder {
     }
     /// <p>The model that defines the interface for this extension version.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
+    }
+    /// <p>The model that defines the interface for this extension version.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// <p>The version of the extension.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl ExtensionVersionDetailsBuilder {
     }
     /// <p>The version of the extension.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version of the extension.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ExtensionVersionDetails`](crate::types::ExtensionVersionDetails).
     pub fn build(self) -> crate::types::ExtensionVersionDetails {
         crate::types::ExtensionVersionDetails {
-            namespace: self.namespace,
-            name: self.name,
-            schema: self.schema,
-            version: self.version,
+            namespace: self.namespace
+            ,
+            name: self.name
+            ,
+            schema: self.schema
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

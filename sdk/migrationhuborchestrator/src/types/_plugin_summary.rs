@@ -3,7 +3,7 @@
 /// <p>The summary of the Migration Hub Orchestrator plugin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PluginSummary {
+pub struct PluginSummary  {
     /// <p>The ID of the plugin.</p>
     #[doc(hidden)]
     pub plugin_id: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct PluginSummary {
 }
 impl PluginSummary {
     /// <p>The ID of the plugin.</p>
-    pub fn plugin_id(&self) -> ::std::option::Option<&str> {
+    pub fn plugin_id(&self) -> ::std::option::Option<& str> {
         self.plugin_id.as_deref()
     }
     /// <p>The name of the host.</p>
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The status of the plugin.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PluginHealth> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PluginHealth> {
         self.status.as_ref()
     }
     /// <p>The IP address at which the plugin is located.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The version of the plugin.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The time at which the plugin was registered.</p>
-    pub fn registered_time(&self) -> ::std::option::Option<&str> {
+    pub fn registered_time(&self) -> ::std::option::Option<& str> {
         self.registered_time.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl PluginSummary {
 
 /// A builder for [`PluginSummary`](crate::types::PluginSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PluginSummaryBuilder {
     pub(crate) plugin_id: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
@@ -77,8 +75,11 @@ impl PluginSummaryBuilder {
     }
     /// <p>The ID of the plugin.</p>
     pub fn set_plugin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plugin_id = input;
-        self
+        self.plugin_id = input; self
+    }
+    /// <p>The ID of the plugin.</p>
+    pub fn get_plugin_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plugin_id
     }
     /// <p>The name of the host.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +88,11 @@ impl PluginSummaryBuilder {
     }
     /// <p>The name of the host.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
+    }
+    /// <p>The name of the host.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
     }
     /// <p>The status of the plugin.</p>
     pub fn status(mut self, input: crate::types::PluginHealth) -> Self {
@@ -97,8 +101,11 @@ impl PluginSummaryBuilder {
     }
     /// <p>The status of the plugin.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PluginHealth>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the plugin.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PluginHealth> {
+        &self.status
     }
     /// <p>The IP address at which the plugin is located.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,8 +114,11 @@ impl PluginSummaryBuilder {
     }
     /// <p>The IP address at which the plugin is located.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
+    }
+    /// <p>The IP address at which the plugin is located.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The version of the plugin.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,34 +127,41 @@ impl PluginSummaryBuilder {
     }
     /// <p>The version of the plugin.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version of the plugin.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The time at which the plugin was registered.</p>
-    pub fn registered_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time at which the plugin was registered.</p>
-    pub fn set_registered_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.registered_time = input;
-        self
+    pub fn set_registered_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.registered_time = input; self
+    }
+    /// <p>The time at which the plugin was registered.</p>
+    pub fn get_registered_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_time
     }
     /// Consumes the builder and constructs a [`PluginSummary`](crate::types::PluginSummary).
     pub fn build(self) -> crate::types::PluginSummary {
         crate::types::PluginSummary {
-            plugin_id: self.plugin_id,
-            hostname: self.hostname,
-            status: self.status,
-            ip_address: self.ip_address,
-            version: self.version,
-            registered_time: self.registered_time,
+            plugin_id: self.plugin_id
+            ,
+            hostname: self.hostname
+            ,
+            status: self.status
+            ,
+            ip_address: self.ip_address
+            ,
+            version: self.version
+            ,
+            registered_time: self.registered_time
+            ,
         }
     }
 }
+

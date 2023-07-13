@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateContactFromAddressBookInput {
+pub struct DisassociateContactFromAddressBookInput  {
     /// <p>The ARN of the contact to disassociate from an address book.</p>
     #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DisassociateContactFromAddressBookInput {
 }
 impl DisassociateContactFromAddressBookInput {
     /// <p>The ARN of the contact to disassociate from an address book.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The ARN of the address from which to disassociate the contact.</p>
-    pub fn address_book_arn(&self) -> ::std::option::Option<&str> {
+    pub fn address_book_arn(&self) -> ::std::option::Option<& str> {
         self.address_book_arn.as_deref()
     }
 }
 impl DisassociateContactFromAddressBookInput {
     /// Creates a new builder-style object to manufacture [`DisassociateContactFromAddressBookInput`](crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput).
-    pub fn builder() -> crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookInputBuilder {
         crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateContactFromAddressBookInput`](crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateContactFromAddressBookInputBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) address_book_arn: ::std::option::Option<::std::string::String>,
@@ -44,27 +42,27 @@ impl DisassociateContactFromAddressBookInputBuilder {
     }
     /// <p>The ARN of the contact to disassociate from an address book.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
+    }
+    /// <p>The ARN of the contact to disassociate from an address book.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
     }
     /// <p>The ARN of the address from which to disassociate the contact.</p>
-    pub fn address_book_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_book_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the address from which to disassociate the contact.</p>
-    pub fn set_address_book_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.address_book_arn = input;
-        self
+    pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.address_book_arn = input; self
+    }
+    /// <p>The ARN of the address from which to disassociate the contact.</p>
+    pub fn get_address_book_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_book_arn
     }
     /// Consumes the builder and constructs a [`DisassociateContactFromAddressBookInput`](crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput {
                 contact_arn: self.contact_arn
@@ -75,3 +73,4 @@ impl DisassociateContactFromAddressBookInputBuilder {
         )
     }
 }
+

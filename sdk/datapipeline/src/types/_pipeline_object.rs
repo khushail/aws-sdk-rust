@@ -3,7 +3,7 @@
 /// <p>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineObject {
+pub struct PipelineObject  {
     /// <p>The ID of the object.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct PipelineObject {
 }
 impl PipelineObject {
     /// <p>The ID of the object.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the object.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Key-value pairs that define the properties of the object.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
+    pub fn fields(&self) -> ::std::option::Option<& [crate::types::Field]> {
         self.fields.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl PipelineObject {
 
 /// A builder for [`PipelineObject`](crate::types::PipelineObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineObjectBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl PipelineObjectBuilder {
     }
     /// <p>The ID of the object.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the object.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the object.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl PipelineObjectBuilder {
     }
     /// <p>The name of the object.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the object.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `fields`.
     ///
@@ -73,24 +77,28 @@ impl PipelineObjectBuilder {
     /// <p>Key-value pairs that define the properties of the object.</p>
     pub fn fields(mut self, input: crate::types::Field) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that define the properties of the object.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
-    ) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
+        self.fields = input; self
+    }
+    /// <p>Key-value pairs that define the properties of the object.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.fields
     }
     /// Consumes the builder and constructs a [`PipelineObject`](crate::types::PipelineObject).
     pub fn build(self) -> crate::types::PipelineObject {
         crate::types::PipelineObject {
-            id: self.id,
-            name: self.name,
-            fields: self.fields,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            fields: self.fields
+            ,
         }
     }
 }
+

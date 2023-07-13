@@ -3,94 +3,87 @@ pub use crate::operation::put_event_type::_put_event_type_output::PutEventTypeOu
 
 pub use crate::operation::put_event_type::_put_event_type_input::PutEventTypeInputBuilder;
 
+impl PutEventTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_event_type::PutEventTypeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_event_type::PutEventTypeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_event_type();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutEventType`.
-///
+/// 
 /// <p>Creates or updates an event type. An event is a business activity that is evaluated for fraud risk. With Amazon Fraud Detector, you generate fraud predictions for events. An event type defines the structure for an event sent to Amazon Fraud Detector. This includes the variables sent as part of the event, the entity performing the event (such as a customer), and the labels that classify the event. Example event types include online payment transactions, account registrations, and authentications.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEventTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_event_type::builders::PutEventTypeInputBuilder,
+                    inner: crate::operation::put_event_type::builders::PutEventTypeInputBuilder,
 }
-impl PutEventTypeFluentBuilder {
+impl PutEventTypeFluentBuilder  {
     /// Creates a new `PutEventType`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_event_type::PutEventType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_event_type::PutEventTypeError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutEventType as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_event_type::builders::PutEventTypeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_event_type::PutEventTypeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_event_type::PutEventTypeError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_event_type::PutEventType, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_event_type::PutEventTypeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_event_type::PutEventTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_event_type::PutEventTypeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_event_type::PutEventTypeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_event_type::PutEventTypeError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_event_type::PutEventType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_event_type::PutEventTypeError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_event_type::PutEventTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_event_type::PutEventTypeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_event_type::PutEventType, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_event_type::PutEventTypeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -100,6 +93,10 @@ impl PutEventTypeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The description of the event type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,25 +108,27 @@ impl PutEventTypeFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the event type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `eventVariables`.
     ///
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
     ///
     /// <p>The event type variables.</p>
-    pub fn event_variables(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_variables(input.into());
         self
     }
     /// <p>The event type variables.</p>
-    pub fn set_event_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_variables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_variables(input);
         self
+    }
+    /// <p>The event type variables.</p>
+    pub fn get_event_variables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_event_variables()
     }
     /// Appends an item to `labels`.
     ///
@@ -141,12 +140,13 @@ impl PutEventTypeFluentBuilder {
         self
     }
     /// <p>The event type labels.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_labels(input);
         self
+    }
+    /// <p>The event type labels.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_labels()
     }
     /// Appends an item to `entityTypes`.
     ///
@@ -158,25 +158,27 @@ impl PutEventTypeFluentBuilder {
         self
     }
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-    pub fn set_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_entity_types(input);
         self
     }
-    /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_entity_types()
+    }
+    /// <p>Specifies if ingestion is enabled or disabled.</p>
     pub fn event_ingestion(mut self, input: crate::types::EventIngestion) -> Self {
         self.inner = self.inner.event_ingestion(input);
         self
     }
-    /// <p>Specifies if ingenstion is enabled or disabled.</p>
-    pub fn set_event_ingestion(
-        mut self,
-        input: ::std::option::Option<crate::types::EventIngestion>,
-    ) -> Self {
+    /// <p>Specifies if ingestion is enabled or disabled.</p>
+    pub fn set_event_ingestion(mut self, input: ::std::option::Option<crate::types::EventIngestion>) -> Self {
         self.inner = self.inner.set_event_ingestion(input);
         self
+    }
+    /// <p>Specifies if ingestion is enabled or disabled.</p>
+    pub fn get_event_ingestion(&self) -> &::std::option::Option<crate::types::EventIngestion> {
+        self.inner.get_event_ingestion()
     }
     /// Appends an item to `tags`.
     ///
@@ -188,11 +190,27 @@ impl PutEventTypeFluentBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
+    /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
+    pub fn event_orchestration(mut self, input: crate::types::EventOrchestration) -> Self {
+        self.inner = self.inner.event_orchestration(input);
+        self
+    }
+    /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
+    pub fn set_event_orchestration(mut self, input: ::std::option::Option<crate::types::EventOrchestration>) -> Self {
+        self.inner = self.inner.set_event_orchestration(input);
+        self
+    }
+    /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
+    pub fn get_event_orchestration(&self) -> &::std::option::Option<crate::types::EventOrchestration> {
+        self.inner.get_event_orchestration()
+    }
 }
+

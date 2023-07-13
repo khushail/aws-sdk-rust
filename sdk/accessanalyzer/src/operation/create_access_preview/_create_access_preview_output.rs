@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPreviewOutput {
+pub struct CreateAccessPreviewOutput  {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -10,29 +10,25 @@ pub struct CreateAccessPreviewOutput {
 }
 impl CreateAccessPreviewOutput {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAccessPreviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateAccessPreviewOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput).
-    pub fn builder(
-    ) -> crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder {
-        crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder {
+        crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPreviewOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -45,23 +41,28 @@ impl CreateAccessPreviewOutputBuilder {
     }
     /// <p>The unique ID for the access preview.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique ID for the access preview.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput).
     pub fn build(self) -> crate::operation::create_access_preview::CreateAccessPreviewOutput {
         crate::operation::create_access_preview::CreateAccessPreviewOutput {
-            id: self.id,
+            id: self.id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

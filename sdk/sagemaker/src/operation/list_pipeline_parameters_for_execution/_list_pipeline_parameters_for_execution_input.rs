@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPipelineParametersForExecutionInput {
+pub struct ListPipelineParametersForExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     #[doc(hidden)]
     pub pipeline_execution_arn: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListPipelineParametersForExecutionInput {
 }
 impl ListPipelineParametersForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_arn.as_deref()
     }
     /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of parameters to return in the response.</p>
@@ -29,16 +29,14 @@ impl ListPipelineParametersForExecutionInput {
 }
 impl ListPipelineParametersForExecutionInput {
     /// Creates a new builder-style object to manufacture [`ListPipelineParametersForExecutionInput`](crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput).
-    pub fn builder() -> crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionInputBuilder{
+    pub fn builder() -> crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionInputBuilder {
         crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineParametersForExecutionInput`](crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineParametersForExecutionInputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct ListPipelineParametersForExecutionInputBuilder {
 }
 impl ListPipelineParametersForExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.pipeline_execution_arn = input;
-        self
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_execution_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_arn
     }
     /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl ListPipelineParametersForExecutionInputBuilder {
     }
     /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of parameters to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,11 +76,14 @@ impl ListPipelineParametersForExecutionInputBuilder {
     }
     /// <p>The maximum number of parameters to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of parameters to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPipelineParametersForExecutionInput`](crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput {
                 pipeline_execution_arn: self.pipeline_execution_arn
@@ -95,3 +96,4 @@ impl ListPipelineParametersForExecutionInputBuilder {
         )
     }
 }
+

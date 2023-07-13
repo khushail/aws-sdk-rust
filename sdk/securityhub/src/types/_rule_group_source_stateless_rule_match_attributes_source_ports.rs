@@ -3,7 +3,7 @@
 /// <p>A port range to specify the source ports to inspect for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
+pub struct RuleGroupSourceStatelessRuleMatchAttributesSourcePorts  {
     /// <p>The starting port value for the port range.</p>
     #[doc(hidden)]
     pub from_port: i32,
@@ -23,17 +23,14 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
     /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
-    pub fn builder(
-    ) -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder {
+    pub fn builder() -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder {
         crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder::default()
     }
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,
@@ -46,8 +43,11 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder {
     }
     /// <p>The starting port value for the port range.</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
+    }
+    /// <p>The starting port value for the port range.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        &self.from_port
     }
     /// <p>The ending port value for the port range.</p>
     pub fn to_port(mut self, input: i32) -> Self {
@@ -56,14 +56,22 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder {
     }
     /// <p>The ending port value for the port range.</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
+    }
+    /// <p>The ending port value for the port range.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        &self.to_port
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
         crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
-            from_port: self.from_port.unwrap_or_default(),
-            to_port: self.to_port.unwrap_or_default(),
+            from_port: self.from_port
+                .unwrap_or_default()
+            ,
+            to_port: self.to_port
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

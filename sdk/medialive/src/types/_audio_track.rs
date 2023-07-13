@@ -3,7 +3,7 @@
 /// Audio Track
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioTrack {
+pub struct AudioTrack  {
     /// 1-based integer value that maps to a specific audio track
     #[doc(hidden)]
     pub track: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl AudioTrack {
 
 /// A builder for [`AudioTrack`](crate::types::AudioTrack).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioTrackBuilder {
     pub(crate) track: ::std::option::Option<i32>,
 }
@@ -37,11 +35,18 @@ impl AudioTrackBuilder {
     }
     /// 1-based integer value that maps to a specific audio track
     pub fn set_track(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.track = input;
-        self
+        self.track = input; self
+    }
+    /// 1-based integer value that maps to a specific audio track
+    pub fn get_track(&self) -> &::std::option::Option<i32> {
+        &self.track
     }
     /// Consumes the builder and constructs a [`AudioTrack`](crate::types::AudioTrack).
     pub fn build(self) -> crate::types::AudioTrack {
-        crate::types::AudioTrack { track: self.track }
+        crate::types::AudioTrack {
+            track: self.track
+            ,
+        }
     }
 }
+

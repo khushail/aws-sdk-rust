@@ -3,7 +3,7 @@
 /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompatibleVersionsMap {
+pub struct CompatibleVersionsMap  {
     /// <p>The current version that the OpenSearch Service domain is running.</p>
     #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct CompatibleVersionsMap {
 }
 impl CompatibleVersionsMap {
     /// <p>The current version that the OpenSearch Service domain is running.</p>
-    pub fn source_version(&self) -> ::std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<& str> {
         self.source_version.as_deref()
     }
     /// <p>The possible versions that you can upgrade the domain to.</p>
-    pub fn target_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn target_versions(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.target_versions.as_deref()
     }
 }
@@ -30,57 +30,52 @@ impl CompatibleVersionsMap {
 
 /// A builder for [`CompatibleVersionsMap`](crate::types::CompatibleVersionsMap).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompatibleVersionsMapBuilder {
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
     pub(crate) target_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CompatibleVersionsMapBuilder {
     /// <p>The current version that the OpenSearch Service domain is running.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version that the OpenSearch Service domain is running.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_version = input;
-        self
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_version = input; self
+    }
+    /// <p>The current version that the OpenSearch Service domain is running.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
     }
     /// Appends an item to `target_versions`.
     ///
     /// To override the contents of this collection use [`set_target_versions`](Self::set_target_versions).
     ///
     /// <p>The possible versions that you can upgrade the domain to.</p>
-    pub fn target_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_versions.unwrap_or_default();
-        v.push(input.into());
-        self.target_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The possible versions that you can upgrade the domain to.</p>
-    pub fn set_target_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.target_versions = input;
-        self
+    pub fn set_target_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.target_versions = input; self
+    }
+    /// <p>The possible versions that you can upgrade the domain to.</p>
+    pub fn get_target_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_versions
     }
     /// Consumes the builder and constructs a [`CompatibleVersionsMap`](crate::types::CompatibleVersionsMap).
     pub fn build(self) -> crate::types::CompatibleVersionsMap {
         crate::types::CompatibleVersionsMap {
-            source_version: self.source_version,
-            target_versions: self.target_versions,
+            source_version: self.source_version
+            ,
+            target_versions: self.target_versions
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Details from a successful operation
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchSuccessfulResultModel {
+pub struct BatchSuccessfulResultModel  {
     /// ARN of the resource
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct BatchSuccessfulResultModel {
 }
 impl BatchSuccessfulResultModel {
     /// ARN of the resource
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// ID of the resource
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Current state of the resource
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl BatchSuccessfulResultModel {
 
 /// A builder for [`BatchSuccessfulResultModel`](crate::types::BatchSuccessfulResultModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchSuccessfulResultModelBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl BatchSuccessfulResultModelBuilder {
     }
     /// ARN of the resource
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// ARN of the resource
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// ID of the resource
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl BatchSuccessfulResultModelBuilder {
     }
     /// ID of the resource
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// ID of the resource
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Current state of the resource
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl BatchSuccessfulResultModelBuilder {
     }
     /// Current state of the resource
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// Current state of the resource
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`BatchSuccessfulResultModel`](crate::types::BatchSuccessfulResultModel).
     pub fn build(self) -> crate::types::BatchSuccessfulResultModel {
         crate::types::BatchSuccessfulResultModel {
-            arn: self.arn,
-            id: self.id,
-            state: self.state,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

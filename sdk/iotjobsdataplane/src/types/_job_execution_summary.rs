@@ -3,7 +3,7 @@
 /// <p>Contains a subset of information about a job execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobExecutionSummary {
+pub struct JobExecutionSummary  {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ pub struct JobExecutionSummary {
 }
 impl JobExecutionSummary {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
@@ -58,9 +58,7 @@ impl JobExecutionSummary {
 
 /// A builder for [`JobExecutionSummary`](crate::types::JobExecutionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobExecutionSummaryBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) queued_at: ::std::option::Option<i64>,
@@ -77,8 +75,11 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
     pub fn queued_at(mut self, input: i64) -> Self {
@@ -87,8 +88,11 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
     pub fn set_queued_at(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.queued_at = input;
-        self
+        self.queued_at = input; self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    pub fn get_queued_at(&self) -> &::std::option::Option<i64> {
+        &self.queued_at
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
     pub fn started_at(mut self, input: i64) -> Self {
@@ -97,8 +101,11 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<i64> {
+        &self.started_at
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
     pub fn last_updated_at(mut self, input: i64) -> Self {
@@ -107,8 +114,11 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<i64> {
+        &self.last_updated_at
     }
     /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -117,8 +127,11 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
+    }
+    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>A number that identifies a particular job execution on a particular device.</p>
     pub fn execution_number(mut self, input: i64) -> Self {
@@ -127,18 +140,31 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>A number that identifies a particular job execution on a particular device.</p>
     pub fn set_execution_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.execution_number = input;
-        self
+        self.execution_number = input; self
+    }
+    /// <p>A number that identifies a particular job execution on a particular device.</p>
+    pub fn get_execution_number(&self) -> &::std::option::Option<i64> {
+        &self.execution_number
     }
     /// Consumes the builder and constructs a [`JobExecutionSummary`](crate::types::JobExecutionSummary).
     pub fn build(self) -> crate::types::JobExecutionSummary {
         crate::types::JobExecutionSummary {
-            job_id: self.job_id,
-            queued_at: self.queued_at.unwrap_or_default(),
-            started_at: self.started_at,
-            last_updated_at: self.last_updated_at.unwrap_or_default(),
-            version_number: self.version_number.unwrap_or_default(),
-            execution_number: self.execution_number,
+            job_id: self.job_id
+            ,
+            queued_at: self.queued_at
+                .unwrap_or_default()
+            ,
+            started_at: self.started_at
+            ,
+            last_updated_at: self.last_updated_at
+                .unwrap_or_default()
+            ,
+            version_number: self.version_number
+                .unwrap_or_default()
+            ,
+            execution_number: self.execution_number
+            ,
         }
     }
 }
+

@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGameSessionQueueInput {
+pub struct DeleteGameSessionQueueInput  {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGameSessionQueueInput {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteGameSessionQueueInput {
     /// Creates a new builder-style object to manufacture [`DeleteGameSessionQueueInput`](crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput).
-    pub fn builder(
-    ) -> crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder {
         crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGameSessionQueueInput`](crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGameSessionQueueInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DeleteGameSessionQueueInputBuilder {
     }
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DeleteGameSessionQueueInput`](crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

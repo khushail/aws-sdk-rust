@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorkspacesInput {
+pub struct CreateWorkspacesInput  {
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
     pub workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>>,
 }
 impl CreateWorkspacesInput {
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-    pub fn workspaces(&self) -> ::std::option::Option<&[crate::types::WorkspaceRequest]> {
+    pub fn workspaces(&self) -> ::std::option::Option<& [crate::types::WorkspaceRequest]> {
         self.workspaces.as_deref()
     }
 }
 impl CreateWorkspacesInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspacesInput`](crate::operation::create_workspaces::CreateWorkspacesInput).
-    pub fn builder() -> crate::operation::create_workspaces::builders::CreateWorkspacesInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_workspaces::builders::CreateWorkspacesInputBuilder {
         crate::operation::create_workspaces::builders::CreateWorkspacesInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkspacesInput`](crate::operation::create_workspaces::CreateWorkspacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkspacesInputBuilder {
     pub(crate) workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>>,
 }
@@ -37,27 +34,26 @@ impl CreateWorkspacesInputBuilder {
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
     pub fn workspaces(mut self, input: crate::types::WorkspaceRequest) -> Self {
         let mut v = self.workspaces.unwrap_or_default();
-        v.push(input);
-        self.workspaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.workspaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_workspaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>>,
-    ) -> Self {
-        self.workspaces = input;
-        self
+    pub fn set_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>>) -> Self {
+        self.workspaces = input; self
+    }
+    /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>> {
+        &self.workspaces
     }
     /// Consumes the builder and constructs a [`CreateWorkspacesInput`](crate::operation::create_workspaces::CreateWorkspacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workspaces::CreateWorkspacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_workspaces::CreateWorkspacesInput {
-            workspaces: self.workspaces,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_workspaces::CreateWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_workspaces::CreateWorkspacesInput {
+                workspaces: self.workspaces
+                ,
+            }
+        )
     }
 }
+

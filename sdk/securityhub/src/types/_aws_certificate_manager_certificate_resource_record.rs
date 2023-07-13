@@ -3,7 +3,7 @@
 /// <p>Provides details about the CNAME record that is added to the DNS database for domain validation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCertificateManagerCertificateResourceRecord {
+pub struct AwsCertificateManagerCertificateResourceRecord  {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,31 +16,28 @@ pub struct AwsCertificateManagerCertificateResourceRecord {
 }
 impl AwsCertificateManagerCertificateResourceRecord {
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of resource.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The value of the resource.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 impl AwsCertificateManagerCertificateResourceRecord {
     /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateResourceRecord`](crate::types::AwsCertificateManagerCertificateResourceRecord).
-    pub fn builder() -> crate::types::builders::AwsCertificateManagerCertificateResourceRecordBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsCertificateManagerCertificateResourceRecordBuilder {
         crate::types::builders::AwsCertificateManagerCertificateResourceRecordBuilder::default()
     }
 }
 
 /// A builder for [`AwsCertificateManagerCertificateResourceRecord`](crate::types::AwsCertificateManagerCertificateResourceRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateResourceRecordBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -54,8 +51,11 @@ impl AwsCertificateManagerCertificateResourceRecordBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of resource.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,8 +64,11 @@ impl AwsCertificateManagerCertificateResourceRecordBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of resource.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The value of the resource.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,15 +77,22 @@ impl AwsCertificateManagerCertificateResourceRecordBuilder {
     }
     /// <p>The value of the resource.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the resource.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateResourceRecord`](crate::types::AwsCertificateManagerCertificateResourceRecord).
     pub fn build(self) -> crate::types::AwsCertificateManagerCertificateResourceRecord {
         crate::types::AwsCertificateManagerCertificateResourceRecord {
-            name: self.name,
-            r#type: self.r#type,
-            value: self.value,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

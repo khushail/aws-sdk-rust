@@ -3,7 +3,7 @@
 /// Input Location
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputLocation {
+pub struct InputLocation  {
     /// key used to extract the password from EC2 Parameter store
     #[doc(hidden)]
     pub password_param: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct InputLocation {
 }
 impl InputLocation {
     /// key used to extract the password from EC2 Parameter store
-    pub fn password_param(&self) -> ::std::option::Option<&str> {
+    pub fn password_param(&self) -> ::std::option::Option<& str> {
         self.password_param.as_deref()
     }
     /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// Documentation update needed
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl InputLocation {
 
 /// A builder for [`InputLocation`](crate::types::InputLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputLocationBuilder {
     pub(crate) password_param: ::std::option::Option<::std::string::String>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct InputLocationBuilder {
 }
 impl InputLocationBuilder {
     /// key used to extract the password from EC2 Parameter store
-    pub fn password_param(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn password_param(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password_param = ::std::option::Option::Some(input.into());
         self
     }
     /// key used to extract the password from EC2 Parameter store
-    pub fn set_password_param(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.password_param = input;
-        self
+    pub fn set_password_param(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.password_param = input; self
+    }
+    /// key used to extract the password from EC2 Parameter store
+    pub fn get_password_param(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password_param
     }
     /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +64,11 @@ impl InputLocationBuilder {
     }
     /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
+    }
+    /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// Documentation update needed
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl InputLocationBuilder {
     }
     /// Documentation update needed
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// Documentation update needed
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`InputLocation`](crate::types::InputLocation).
     pub fn build(self) -> crate::types::InputLocation {
         crate::types::InputLocation {
-            password_param: self.password_param,
-            uri: self.uri,
-            username: self.username,
+            password_param: self.password_param
+            ,
+            uri: self.uri
+            ,
+            username: self.username
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Hls Output Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HlsOutputSettings {
+pub struct HlsOutputSettings  {
     /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
     #[doc(hidden)]
     pub h265_packaging_type: ::std::option::Option<crate::types::HlsH265PackagingType>,
@@ -19,21 +19,19 @@ pub struct HlsOutputSettings {
 }
 impl HlsOutputSettings {
     /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
-    pub fn h265_packaging_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsH265PackagingType> {
+    pub fn h265_packaging_type(&self) -> ::std::option::Option<& crate::types::HlsH265PackagingType> {
         self.h265_packaging_type.as_ref()
     }
     /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
-    pub fn hls_settings(&self) -> ::std::option::Option<&crate::types::HlsSettings> {
+    pub fn hls_settings(&self) -> ::std::option::Option<& crate::types::HlsSettings> {
         self.hls_settings.as_ref()
     }
     /// String concatenated to the end of the destination filename. Accepts \"Format Identifiers\":#formatIdentifierParameters.
-    pub fn name_modifier(&self) -> ::std::option::Option<&str> {
+    pub fn name_modifier(&self) -> ::std::option::Option<& str> {
         self.name_modifier.as_deref()
     }
     /// String concatenated to end of segment filenames.
-    pub fn segment_modifier(&self) -> ::std::option::Option<&str> {
+    pub fn segment_modifier(&self) -> ::std::option::Option<& str> {
         self.segment_modifier.as_deref()
     }
 }
@@ -46,9 +44,7 @@ impl HlsOutputSettings {
 
 /// A builder for [`HlsOutputSettings`](crate::types::HlsOutputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsOutputSettingsBuilder {
     pub(crate) h265_packaging_type: ::std::option::Option<crate::types::HlsH265PackagingType>,
     pub(crate) hls_settings: ::std::option::Option<crate::types::HlsSettings>,
@@ -62,12 +58,12 @@ impl HlsOutputSettingsBuilder {
         self
     }
     /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
-    pub fn set_h265_packaging_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsH265PackagingType>,
-    ) -> Self {
-        self.h265_packaging_type = input;
-        self
+    pub fn set_h265_packaging_type(mut self, input: ::std::option::Option<crate::types::HlsH265PackagingType>) -> Self {
+        self.h265_packaging_type = input; self
+    }
+    /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+    pub fn get_h265_packaging_type(&self) -> &::std::option::Option<crate::types::HlsH265PackagingType> {
+        &self.h265_packaging_type
     }
     /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
     pub fn hls_settings(mut self, input: crate::types::HlsSettings) -> Self {
@@ -75,52 +71,51 @@ impl HlsOutputSettingsBuilder {
         self
     }
     /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
-    pub fn set_hls_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsSettings>,
-    ) -> Self {
-        self.hls_settings = input;
-        self
+    pub fn set_hls_settings(mut self, input: ::std::option::Option<crate::types::HlsSettings>) -> Self {
+        self.hls_settings = input; self
+    }
+    /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
+    pub fn get_hls_settings(&self) -> &::std::option::Option<crate::types::HlsSettings> {
+        &self.hls_settings
     }
     /// String concatenated to the end of the destination filename. Accepts \"Format Identifiers\":#formatIdentifierParameters.
-    pub fn name_modifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_modifier = ::std::option::Option::Some(input.into());
         self
     }
     /// String concatenated to the end of the destination filename. Accepts \"Format Identifiers\":#formatIdentifierParameters.
-    pub fn set_name_modifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.name_modifier = input;
-        self
+    pub fn set_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name_modifier = input; self
+    }
+    /// String concatenated to the end of the destination filename. Accepts \"Format Identifiers\":#formatIdentifierParameters.
+    pub fn get_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_modifier
     }
     /// String concatenated to end of segment filenames.
-    pub fn segment_modifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn segment_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_modifier = ::std::option::Option::Some(input.into());
         self
     }
     /// String concatenated to end of segment filenames.
-    pub fn set_segment_modifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.segment_modifier = input;
-        self
+    pub fn set_segment_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment_modifier = input; self
+    }
+    /// String concatenated to end of segment filenames.
+    pub fn get_segment_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_modifier
     }
     /// Consumes the builder and constructs a [`HlsOutputSettings`](crate::types::HlsOutputSettings).
     pub fn build(self) -> crate::types::HlsOutputSettings {
         crate::types::HlsOutputSettings {
-            h265_packaging_type: self.h265_packaging_type,
-            hls_settings: self.hls_settings,
-            name_modifier: self.name_modifier,
-            segment_modifier: self.segment_modifier,
+            h265_packaging_type: self.h265_packaging_type
+            ,
+            hls_settings: self.hls_settings
+            ,
+            name_modifier: self.name_modifier
+            ,
+            segment_modifier: self.segment_modifier
+            ,
         }
     }
 }
+

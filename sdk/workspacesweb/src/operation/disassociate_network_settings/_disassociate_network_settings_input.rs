@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateNetworkSettingsInput {
+pub struct DisassociateNetworkSettingsInput  {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateNetworkSettingsInput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
 }
 impl DisassociateNetworkSettingsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateNetworkSettingsInput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput).
-    pub fn builder() -> crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsInputBuilder {
         crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateNetworkSettingsInput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateNetworkSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl DisassociateNetworkSettingsInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
+    }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
     }
     /// Consumes the builder and constructs a [`DisassociateNetworkSettingsInput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput {
-                portal_arn: self.portal_arn,
-            },
+                portal_arn: self.portal_arn
+                ,
+            }
         )
     }
 }
+

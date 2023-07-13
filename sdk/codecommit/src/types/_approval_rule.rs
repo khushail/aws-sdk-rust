@@ -3,7 +3,7 @@
 /// <p>Returns information about an approval rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApprovalRule {
+pub struct ApprovalRule  {
     /// <p>The system-generated ID of the approval rule.</p>
     #[doc(hidden)]
     pub approval_rule_id: ::std::option::Option<::std::string::String>,
@@ -27,42 +27,39 @@ pub struct ApprovalRule {
     pub last_modified_user: ::std::option::Option<::std::string::String>,
     /// <p>The approval rule template used to create the rule.</p>
     #[doc(hidden)]
-    pub origin_approval_rule_template:
-        ::std::option::Option<crate::types::OriginApprovalRuleTemplate>,
+    pub origin_approval_rule_template: ::std::option::Option<crate::types::OriginApprovalRuleTemplate>,
 }
 impl ApprovalRule {
     /// <p>The system-generated ID of the approval rule.</p>
-    pub fn approval_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_id(&self) -> ::std::option::Option<& str> {
         self.approval_rule_id.as_deref()
     }
     /// <p>The name of the approval rule.</p>
-    pub fn approval_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_name(&self) -> ::std::option::Option<& str> {
         self.approval_rule_name.as_deref()
     }
     /// <p>The content of the approval rule.</p>
-    pub fn approval_rule_content(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_content(&self) -> ::std::option::Option<& str> {
         self.approval_rule_content.as_deref()
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
-    pub fn rule_content_sha256(&self) -> ::std::option::Option<&str> {
+    pub fn rule_content_sha256(&self) -> ::std::option::Option<& str> {
         self.rule_content_sha256.as_deref()
     }
     /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the approval rule was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
-    pub fn last_modified_user(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_user(&self) -> ::std::option::Option<& str> {
         self.last_modified_user.as_deref()
     }
     /// <p>The approval rule template used to create the rule.</p>
-    pub fn origin_approval_rule_template(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginApprovalRuleTemplate> {
+    pub fn origin_approval_rule_template(&self) -> ::std::option::Option<& crate::types::OriginApprovalRuleTemplate> {
         self.origin_approval_rule_template.as_ref()
     }
 }
@@ -75,9 +72,7 @@ impl ApprovalRule {
 
 /// A builder for [`ApprovalRule`](crate::types::ApprovalRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalRuleBuilder {
     pub(crate) approval_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) approval_rule_name: ::std::option::Option<::std::string::String>,
@@ -86,73 +81,60 @@ pub struct ApprovalRuleBuilder {
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_user: ::std::option::Option<::std::string::String>,
-    pub(crate) origin_approval_rule_template:
-        ::std::option::Option<crate::types::OriginApprovalRuleTemplate>,
+    pub(crate) origin_approval_rule_template: ::std::option::Option<crate::types::OriginApprovalRuleTemplate>,
 }
 impl ApprovalRuleBuilder {
     /// <p>The system-generated ID of the approval rule.</p>
-    pub fn approval_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the approval rule.</p>
-    pub fn set_approval_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.approval_rule_id = input;
-        self
+    pub fn set_approval_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.approval_rule_id = input; self
+    }
+    /// <p>The system-generated ID of the approval rule.</p>
+    pub fn get_approval_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_id
     }
     /// <p>The name of the approval rule.</p>
-    pub fn approval_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the approval rule.</p>
-    pub fn set_approval_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.approval_rule_name = input;
-        self
+    pub fn set_approval_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.approval_rule_name = input; self
+    }
+    /// <p>The name of the approval rule.</p>
+    pub fn get_approval_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_name
     }
     /// <p>The content of the approval rule.</p>
-    pub fn approval_rule_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the approval rule.</p>
-    pub fn set_approval_rule_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.approval_rule_content = input;
-        self
+    pub fn set_approval_rule_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.approval_rule_content = input; self
+    }
+    /// <p>The content of the approval rule.</p>
+    pub fn get_approval_rule_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_content
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
-    pub fn rule_content_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_content_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_content_sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
-    pub fn set_rule_content_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.rule_content_sha256 = input;
-        self
+    pub fn set_rule_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rule_content_sha256 = input; self
+    }
+    /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
+    pub fn get_rule_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_content_sha256
     }
     /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -160,12 +142,12 @@ impl ApprovalRuleBuilder {
         self
     }
     /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_date = input; self
+    }
+    /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>The date the approval rule was created, in timestamp format.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,56 +155,59 @@ impl ApprovalRuleBuilder {
         self
     }
     /// <p>The date the approval rule was created, in timestamp format.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>The date the approval rule was created, in timestamp format.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
-    pub fn last_modified_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
-    pub fn set_last_modified_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_modified_user = input;
-        self
+    pub fn set_last_modified_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_user = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
+    pub fn get_last_modified_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_user
     }
     /// <p>The approval rule template used to create the rule.</p>
-    pub fn origin_approval_rule_template(
-        mut self,
-        input: crate::types::OriginApprovalRuleTemplate,
-    ) -> Self {
+    pub fn origin_approval_rule_template(mut self, input: crate::types::OriginApprovalRuleTemplate) -> Self {
         self.origin_approval_rule_template = ::std::option::Option::Some(input);
         self
     }
     /// <p>The approval rule template used to create the rule.</p>
-    pub fn set_origin_approval_rule_template(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginApprovalRuleTemplate>,
-    ) -> Self {
-        self.origin_approval_rule_template = input;
-        self
+    pub fn set_origin_approval_rule_template(mut self, input: ::std::option::Option<crate::types::OriginApprovalRuleTemplate>) -> Self {
+        self.origin_approval_rule_template = input; self
+    }
+    /// <p>The approval rule template used to create the rule.</p>
+    pub fn get_origin_approval_rule_template(&self) -> &::std::option::Option<crate::types::OriginApprovalRuleTemplate> {
+        &self.origin_approval_rule_template
     }
     /// Consumes the builder and constructs a [`ApprovalRule`](crate::types::ApprovalRule).
     pub fn build(self) -> crate::types::ApprovalRule {
         crate::types::ApprovalRule {
-            approval_rule_id: self.approval_rule_id,
-            approval_rule_name: self.approval_rule_name,
-            approval_rule_content: self.approval_rule_content,
-            rule_content_sha256: self.rule_content_sha256,
-            last_modified_date: self.last_modified_date,
-            creation_date: self.creation_date,
-            last_modified_user: self.last_modified_user,
-            origin_approval_rule_template: self.origin_approval_rule_template,
+            approval_rule_id: self.approval_rule_id
+            ,
+            approval_rule_name: self.approval_rule_name
+            ,
+            approval_rule_content: self.approval_rule_content
+            ,
+            rule_content_sha256: self.rule_content_sha256
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_user: self.last_modified_user
+            ,
+            origin_approval_rule_template: self.origin_approval_rule_template
+            ,
         }
     }
 }
+

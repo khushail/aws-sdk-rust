@@ -3,14 +3,14 @@
 /// <p>The event buses the endpoint is associated with.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointEventBus {
+pub struct EndpointEventBus  {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
     #[doc(hidden)]
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
 }
 impl EndpointEventBus {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
-    pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_bus_arn(&self) -> ::std::option::Option<& str> {
         self.event_bus_arn.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl EndpointEventBus {
 
 /// A builder for [`EndpointEventBus`](crate::types::EndpointEventBus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointEventBusBuilder {
     pub(crate) event_bus_arn: ::std::option::Option<::std::string::String>,
 }
 impl EndpointEventBusBuilder {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
-    pub fn event_bus_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
-    pub fn set_event_bus_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_bus_arn = input;
-        self
+    pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_bus_arn = input; self
+    }
+    /// <p>The ARN of the event bus the endpoint is associated with.</p>
+    pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bus_arn
     }
     /// Consumes the builder and constructs a [`EndpointEventBus`](crate::types::EndpointEventBus).
     pub fn build(self) -> crate::types::EndpointEventBus {
         crate::types::EndpointEventBus {
-            event_bus_arn: self.event_bus_arn,
+            event_bus_arn: self.event_bus_arn
+            ,
         }
     }
 }
+

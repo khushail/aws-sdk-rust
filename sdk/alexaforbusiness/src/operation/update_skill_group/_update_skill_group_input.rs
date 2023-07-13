@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSkillGroupInput {
+pub struct UpdateSkillGroupInput  {
     /// <p>The ARN of the skill group to update. </p>
     #[doc(hidden)]
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct UpdateSkillGroupInput {
 }
 impl UpdateSkillGroupInput {
     /// <p>The ARN of the skill group to update. </p>
-    pub fn skill_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn skill_group_arn(&self) -> ::std::option::Option<& str> {
         self.skill_group_arn.as_deref()
     }
     /// <p>The updated name for the skill group.</p>
-    pub fn skill_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn skill_group_name(&self) -> ::std::option::Option<& str> {
         self.skill_group_name.as_deref()
     }
     /// <p>The updated description for the skill group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateSkillGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateSkillGroupInput`](crate::operation::update_skill_group::UpdateSkillGroupInput).
-    pub fn builder() -> crate::operation::update_skill_group::builders::UpdateSkillGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_skill_group::builders::UpdateSkillGroupInputBuilder {
         crate::operation::update_skill_group::builders::UpdateSkillGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSkillGroupInput`](crate::operation::update_skill_group::UpdateSkillGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSkillGroupInputBuilder {
     pub(crate) skill_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) skill_group_name: ::std::option::Option<::std::string::String>,
@@ -47,36 +44,30 @@ pub struct UpdateSkillGroupInputBuilder {
 }
 impl UpdateSkillGroupInputBuilder {
     /// <p>The ARN of the skill group to update. </p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the skill group to update. </p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.skill_group_arn = input;
-        self
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.skill_group_arn = input; self
+    }
+    /// <p>The ARN of the skill group to update. </p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_group_arn
     }
     /// <p>The updated name for the skill group.</p>
-    pub fn skill_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated name for the skill group.</p>
-    pub fn set_skill_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.skill_group_name = input;
-        self
+    pub fn set_skill_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.skill_group_name = input; self
+    }
+    /// <p>The updated name for the skill group.</p>
+    pub fn get_skill_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_group_name
     }
     /// <p>The updated description for the skill group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,22 +76,24 @@ impl UpdateSkillGroupInputBuilder {
     }
     /// <p>The updated description for the skill group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The updated description for the skill group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateSkillGroupInput`](crate::operation::update_skill_group::UpdateSkillGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_skill_group::UpdateSkillGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_skill_group::UpdateSkillGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_skill_group::UpdateSkillGroupInput {
-                skill_group_arn: self.skill_group_arn,
-                skill_group_name: self.skill_group_name,
-                description: self.description,
-            },
+                skill_group_arn: self.skill_group_arn
+                ,
+                skill_group_name: self.skill_group_name
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

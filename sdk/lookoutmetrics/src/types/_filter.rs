@@ -3,7 +3,7 @@
 /// <p>Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The value that you want to include in the filter.</p>
     #[doc(hidden)]
     pub dimension_value: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The value that you want to include in the filter.</p>
-    pub fn dimension_value(&self) -> ::std::option::Option<&str> {
+    pub fn dimension_value(&self) -> ::std::option::Option<& str> {
         self.dimension_value.as_deref()
     }
     /// <p>The condition to apply.</p>
-    pub fn filter_operation(&self) -> ::std::option::Option<&crate::types::FilterOperation> {
+    pub fn filter_operation(&self) -> ::std::option::Option<& crate::types::FilterOperation> {
         self.filter_operation.as_ref()
     }
 }
@@ -30,29 +30,24 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) dimension_value: ::std::option::Option<::std::string::String>,
     pub(crate) filter_operation: ::std::option::Option<crate::types::FilterOperation>,
 }
 impl FilterBuilder {
     /// <p>The value that you want to include in the filter.</p>
-    pub fn dimension_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that you want to include in the filter.</p>
-    pub fn set_dimension_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dimension_value = input;
-        self
+    pub fn set_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dimension_value = input; self
+    }
+    /// <p>The value that you want to include in the filter.</p>
+    pub fn get_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_value
     }
     /// <p>The condition to apply.</p>
     pub fn filter_operation(mut self, input: crate::types::FilterOperation) -> Self {
@@ -60,18 +55,21 @@ impl FilterBuilder {
         self
     }
     /// <p>The condition to apply.</p>
-    pub fn set_filter_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterOperation>,
-    ) -> Self {
-        self.filter_operation = input;
-        self
+    pub fn set_filter_operation(mut self, input: ::std::option::Option<crate::types::FilterOperation>) -> Self {
+        self.filter_operation = input; self
+    }
+    /// <p>The condition to apply.</p>
+    pub fn get_filter_operation(&self) -> &::std::option::Option<crate::types::FilterOperation> {
+        &self.filter_operation
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            dimension_value: self.dimension_value,
-            filter_operation: self.filter_operation,
+            dimension_value: self.dimension_value
+            ,
+            filter_operation: self.filter_operation
+            ,
         }
     }
 }
+

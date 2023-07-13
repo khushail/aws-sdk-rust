@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RescoreInput {
+pub struct RescoreInput  {
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
     #[doc(hidden)]
     pub rescore_execution_plan_id: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct RescoreInput {
 }
 impl RescoreInput {
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    pub fn rescore_execution_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn rescore_execution_plan_id(&self) -> ::std::option::Option<& str> {
         self.rescore_execution_plan_id.as_deref()
     }
     /// <p>The input query from the search service.</p>
-    pub fn search_query(&self) -> ::std::option::Option<&str> {
+    pub fn search_query(&self) -> ::std::option::Option<& str> {
         self.search_query.as_deref()
     }
     /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
-    pub fn documents(&self) -> ::std::option::Option<&[crate::types::Document]> {
+    pub fn documents(&self) -> ::std::option::Option<& [crate::types::Document]> {
         self.documents.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl RescoreInput {
 
 /// A builder for [`RescoreInput`](crate::operation::rescore::RescoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RescoreInputBuilder {
     pub(crate) rescore_execution_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) search_query: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct RescoreInputBuilder {
 }
 impl RescoreInputBuilder {
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    pub fn rescore_execution_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rescore_execution_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rescore_execution_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    pub fn set_rescore_execution_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.rescore_execution_plan_id = input;
-        self
+    pub fn set_rescore_execution_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rescore_execution_plan_id = input; self
+    }
+    /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
+    pub fn get_rescore_execution_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rescore_execution_plan_id
     }
     /// <p>The input query from the search service.</p>
     pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl RescoreInputBuilder {
     }
     /// <p>The input query from the search service.</p>
     pub fn set_search_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_query = input;
-        self
+        self.search_query = input; self
+    }
+    /// <p>The input query from the search service.</p>
+    pub fn get_search_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.search_query
     }
     /// Appends an item to `documents`.
     ///
@@ -78,29 +76,30 @@ impl RescoreInputBuilder {
     /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
     pub fn documents(mut self, input: crate::types::Document) -> Self {
         let mut v = self.documents.unwrap_or_default();
-        v.push(input);
-        self.documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
-    pub fn set_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
-    ) -> Self {
-        self.documents = input;
-        self
+    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
+        self.documents = input; self
+    }
+    /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
+    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+        &self.documents
     }
     /// Consumes the builder and constructs a [`RescoreInput`](crate::operation::rescore::RescoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::rescore::RescoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::rescore::RescoreInput {
-            rescore_execution_plan_id: self.rescore_execution_plan_id,
-            search_query: self.search_query,
-            documents: self.documents,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::rescore::RescoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::rescore::RescoreInput {
+                rescore_execution_plan_id: self.rescore_execution_plan_id
+                ,
+                search_query: self.search_query
+                ,
+                documents: self.documents
+                ,
+            }
+        )
     }
 }
+

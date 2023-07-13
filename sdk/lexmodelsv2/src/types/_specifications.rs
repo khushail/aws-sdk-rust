@@ -3,24 +3,21 @@
 /// <p>Subslot specifications.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Specifications {
+pub struct Specifications  {
     /// <p>The unique identifier assigned to the slot type.</p>
     #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
     #[doc(hidden)]
-    pub value_elicitation_setting:
-        ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
+    pub value_elicitation_setting: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
 }
 impl Specifications {
     /// <p>The unique identifier assigned to the slot type.</p>
-    pub fn slot_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> ::std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SubSlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> ::std::option::Option<& crate::types::SubSlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl Specifications {
 
 /// A builder for [`Specifications`](crate::types::Specifications).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpecificationsBuilder {
     pub(crate) slot_type_id: ::std::option::Option<::std::string::String>,
-    pub(crate) value_elicitation_setting:
-        ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
+    pub(crate) value_elicitation_setting: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
 }
 impl SpecificationsBuilder {
     /// <p>The unique identifier assigned to the slot type.</p>
@@ -49,30 +43,33 @@ impl SpecificationsBuilder {
     }
     /// <p>The unique identifier assigned to the slot type.</p>
     pub fn set_slot_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_type_id = input;
-        self
+        self.slot_type_id = input; self
+    }
+    /// <p>The unique identifier assigned to the slot type.</p>
+    pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_id
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-    pub fn value_elicitation_setting(
-        mut self,
-        input: crate::types::SubSlotValueElicitationSetting,
-    ) -> Self {
+    pub fn value_elicitation_setting(mut self, input: crate::types::SubSlotValueElicitationSetting) -> Self {
         self.value_elicitation_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-    pub fn set_value_elicitation_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
-    ) -> Self {
-        self.value_elicitation_setting = input;
-        self
+    pub fn set_value_elicitation_setting(mut self, input: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>) -> Self {
+        self.value_elicitation_setting = input; self
+    }
+    /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
+    pub fn get_value_elicitation_setting(&self) -> &::std::option::Option<crate::types::SubSlotValueElicitationSetting> {
+        &self.value_elicitation_setting
     }
     /// Consumes the builder and constructs a [`Specifications`](crate::types::Specifications).
     pub fn build(self) -> crate::types::Specifications {
         crate::types::Specifications {
-            slot_type_id: self.slot_type_id,
-            value_elicitation_setting: self.value_elicitation_setting,
+            slot_type_id: self.slot_type_id
+            ,
+            value_elicitation_setting: self.value_elicitation_setting
+            ,
         }
     }
 }
+

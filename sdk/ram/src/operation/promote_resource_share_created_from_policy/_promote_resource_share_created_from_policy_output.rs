@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PromoteResourceShareCreatedFromPolicyOutput {
+pub struct PromoteResourceShareCreatedFromPolicyOutput  {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     #[doc(hidden)]
     pub return_value: ::std::option::Option<bool>,
@@ -15,22 +15,20 @@ impl PromoteResourceShareCreatedFromPolicyOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for PromoteResourceShareCreatedFromPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PromoteResourceShareCreatedFromPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyOutput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput).
-    pub fn builder() -> crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyOutputBuilder {
         crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PromoteResourceShareCreatedFromPolicyOutput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromoteResourceShareCreatedFromPolicyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -43,20 +41,23 @@ impl PromoteResourceShareCreatedFromPolicyOutputBuilder {
     }
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn set_return_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.return_value = input;
-        self
+        self.return_value = input; self
+    }
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    pub fn get_return_value(&self) -> &::std::option::Option<bool> {
+        &self.return_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PromoteResourceShareCreatedFromPolicyOutput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput).
-    pub fn build(self) -> crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput{
+    pub fn build(self) -> crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput {
         crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput {
             return_value: self.return_value
             ,
@@ -64,3 +65,4 @@ impl PromoteResourceShareCreatedFromPolicyOutputBuilder {
         }
     }
 }
+

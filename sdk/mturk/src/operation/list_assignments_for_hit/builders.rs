@@ -3,117 +3,97 @@ pub use crate::operation::list_assignments_for_hit::_list_assignments_for_hit_ou
 
 pub use crate::operation::list_assignments_for_hit::_list_assignments_for_hit_input::ListAssignmentsForHitInputBuilder;
 
+impl ListAssignmentsForHitInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_assignments_for_hit::ListAssignmentsForHITError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_assignments_for_hit();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListAssignmentsForHIT`.
-///
-/// <p> The <code>ListAssignmentsForHIT</code> operation retrieves completed assignments for a HIT. You can use this operation to retrieve the results for a HIT. </p>
-/// <p> You can get assignments for a HIT at any time, even if the HIT is not yet Reviewable. If a HIT requested multiple assignments, and has received some results but has not yet become Reviewable, you can still retrieve the partial results with this operation. </p>
-/// <p> Use the AssignmentStatus parameter to control which set of assignments for a HIT are returned. The ListAssignmentsForHIT operation can return submitted assignments awaiting approval, or it can return assignments that have already been approved or rejected. You can set AssignmentStatus=Approved,Rejected to get assignments that have already been approved and rejected together in one result set. </p>
-/// <p> Only the Requester who created the HIT can retrieve the assignments for that HIT. </p>
+/// 
+/// <p> The <code>ListAssignmentsForHIT</code> operation retrieves completed assignments for a HIT. You can use this operation to retrieve the results for a HIT. </p> 
+/// <p> You can get assignments for a HIT at any time, even if the HIT is not yet Reviewable. If a HIT requested multiple assignments, and has received some results but has not yet become Reviewable, you can still retrieve the partial results with this operation. </p> 
+/// <p> Use the AssignmentStatus parameter to control which set of assignments for a HIT are returned. The ListAssignmentsForHIT operation can return submitted assignments awaiting approval, or it can return assignments that have already been approved or rejected. You can set AssignmentStatus=Approved,Rejected to get assignments that have already been approved and rejected together in one result set. </p> 
+/// <p> Only the Requester who created the HIT can retrieve the assignments for that HIT. </p> 
 /// <p> Results are sorted and divided into numbered pages and the operation returns a single page of results. You can use the parameters of the operation to control sorting and pagination. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssignmentsForHITFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder,
+                    inner: crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder,
 }
-impl ListAssignmentsForHITFluentBuilder {
+impl ListAssignmentsForHITFluentBuilder  {
     /// Creates a new `ListAssignmentsForHIT`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHIT,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHITError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListAssignmentsForHIT as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHITError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_assignments_for_hit::ListAssignmentsForHIT, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_assignments_for_hit::ListAssignmentsForHITError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_assignments_for_hit::ListAssignmentsForHITError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHITError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHIT,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assignments_for_hit::ListAssignmentsForHITError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_assignments_for_hit::ListAssignmentsForHITError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_assignments_for_hit::ListAssignmentsForHIT, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_assignments_for_hit::ListAssignmentsForHITError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator {
-        crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator {
+                                crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the HIT.</p>
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hit_id(input.into());
@@ -123,6 +103,10 @@ impl ListAssignmentsForHITFluentBuilder {
     pub fn set_hit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hit_id(input);
         self
+    }
+    /// <p>The ID of the HIT.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hit_id()
     }
     /// <p>Pagination token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,6 +118,10 @@ impl ListAssignmentsForHITFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Pagination token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -143,6 +131,10 @@ impl ListAssignmentsForHITFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `AssignmentStatuses`.
     ///
@@ -154,11 +146,13 @@ impl ListAssignmentsForHITFluentBuilder {
         self
     }
     /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
-    pub fn set_assignment_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>>,
-    ) -> Self {
+    pub fn set_assignment_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>>) -> Self {
         self.inner = self.inner.set_assignment_statuses(input);
         self
     }
+    /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
+    pub fn get_assignment_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>> {
+        self.inner.get_assignment_statuses()
+    }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The growth rate computation configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrowthRateComputation {
+pub struct GrowthRateComputation  {
     /// <p>The ID for a computation.</p>
     #[doc(hidden)]
     pub computation_id: ::std::option::Option<::std::string::String>,
@@ -22,19 +22,19 @@ pub struct GrowthRateComputation {
 }
 impl GrowthRateComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> ::std::option::Option<&str> {
+    pub fn computation_id(&self) -> ::std::option::Option<& str> {
         self.computation_id.as_deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time field that is used in a computation.</p>
-    pub fn time(&self) -> ::std::option::Option<&crate::types::DimensionField> {
+    pub fn time(&self) -> ::std::option::Option<& crate::types::DimensionField> {
         self.time.as_ref()
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::MeasureField> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::MeasureField> {
         self.value.as_ref()
     }
     /// <p>The period size setup of a growth rate computation.</p>
@@ -51,9 +51,7 @@ impl GrowthRateComputation {
 
 /// A builder for [`GrowthRateComputation`](crate::types::GrowthRateComputation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrowthRateComputationBuilder {
     pub(crate) computation_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -63,20 +61,17 @@ pub struct GrowthRateComputationBuilder {
 }
 impl GrowthRateComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.computation_id = input;
-        self
+    pub fn set_computation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.computation_id = input; self
+    }
+    /// <p>The ID for a computation.</p>
+    pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_id
     }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,8 +80,11 @@ impl GrowthRateComputationBuilder {
     }
     /// <p>The name of a computation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of a computation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
@@ -95,8 +93,11 @@ impl GrowthRateComputationBuilder {
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn set_time(mut self, input: ::std::option::Option<crate::types::DimensionField>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
+    }
+    /// <p>The time field that is used in a computation.</p>
+    pub fn get_time(&self) -> &::std::option::Option<crate::types::DimensionField> {
+        &self.time
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
@@ -105,8 +106,11 @@ impl GrowthRateComputationBuilder {
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::MeasureField>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value field that is used in a computation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::MeasureField> {
+        &self.value
     }
     /// <p>The period size setup of a growth rate computation.</p>
     pub fn period_size(mut self, input: i32) -> Self {
@@ -115,17 +119,27 @@ impl GrowthRateComputationBuilder {
     }
     /// <p>The period size setup of a growth rate computation.</p>
     pub fn set_period_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period_size = input;
-        self
+        self.period_size = input; self
+    }
+    /// <p>The period size setup of a growth rate computation.</p>
+    pub fn get_period_size(&self) -> &::std::option::Option<i32> {
+        &self.period_size
     }
     /// Consumes the builder and constructs a [`GrowthRateComputation`](crate::types::GrowthRateComputation).
     pub fn build(self) -> crate::types::GrowthRateComputation {
         crate::types::GrowthRateComputation {
-            computation_id: self.computation_id,
-            name: self.name,
-            time: self.time,
-            value: self.value,
-            period_size: self.period_size.unwrap_or_default(),
+            computation_id: self.computation_id
+            ,
+            name: self.name
+            ,
+            time: self.time
+            ,
+            value: self.value
+            ,
+            period_size: self.period_size
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSolFunctionPackageInput {
+pub struct UpdateSolFunctionPackageInput  {
     /// <p>ID of the function package.</p>
     #[doc(hidden)]
     pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct UpdateSolFunctionPackageInput {
 }
 impl UpdateSolFunctionPackageInput {
     /// <p>ID of the function package.</p>
-    pub fn vnf_pkg_id(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_pkg_id(&self) -> ::std::option::Option<& str> {
         self.vnf_pkg_id.as_deref()
     }
     /// <p>Operational state of the function package.</p>
-    pub fn operational_state(&self) -> ::std::option::Option<&crate::types::OperationalState> {
+    pub fn operational_state(&self) -> ::std::option::Option<& crate::types::OperationalState> {
         self.operational_state.as_ref()
     }
 }
 impl UpdateSolFunctionPackageInput {
     /// Creates a new builder-style object to manufacture [`UpdateSolFunctionPackageInput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageInput).
-    pub fn builder(
-    ) -> crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageInputBuilder {
         crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSolFunctionPackageInput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSolFunctionPackageInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) operational_state: ::std::option::Option<crate::types::OperationalState>,
@@ -46,8 +42,11 @@ impl UpdateSolFunctionPackageInputBuilder {
     }
     /// <p>ID of the function package.</p>
     pub fn set_vnf_pkg_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_pkg_id = input;
-        self
+        self.vnf_pkg_id = input; self
+    }
+    /// <p>ID of the function package.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_id
     }
     /// <p>Operational state of the function package.</p>
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
@@ -55,25 +54,23 @@ impl UpdateSolFunctionPackageInputBuilder {
         self
     }
     /// <p>Operational state of the function package.</p>
-    pub fn set_operational_state(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationalState>,
-    ) -> Self {
-        self.operational_state = input;
-        self
+    pub fn set_operational_state(mut self, input: ::std::option::Option<crate::types::OperationalState>) -> Self {
+        self.operational_state = input; self
+    }
+    /// <p>Operational state of the function package.</p>
+    pub fn get_operational_state(&self) -> &::std::option::Option<crate::types::OperationalState> {
+        &self.operational_state
     }
     /// Consumes the builder and constructs a [`UpdateSolFunctionPackageInput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_sol_function_package::UpdateSolFunctionPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sol_function_package::UpdateSolFunctionPackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_sol_function_package::UpdateSolFunctionPackageInput {
-                vnf_pkg_id: self.vnf_pkg_id,
-                operational_state: self.operational_state,
-            },
+                vnf_pkg_id: self.vnf_pkg_id
+                ,
+                operational_state: self.operational_state
+                ,
+            }
         )
     }
 }
+

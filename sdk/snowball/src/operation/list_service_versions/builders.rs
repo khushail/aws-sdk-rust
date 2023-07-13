@@ -3,114 +3,100 @@ pub use crate::operation::list_service_versions::_list_service_versions_output::
 
 pub use crate::operation::list_service_versions::_list_service_versions_input::ListServiceVersionsInputBuilder;
 
+impl ListServiceVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_service_versions::ListServiceVersionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_service_versions::ListServiceVersionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_service_versions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListServiceVersions`.
-///
+/// 
 /// <p>Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code> object containing the supported versions for a particular service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder,
+                    inner: crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder,
 }
-impl ListServiceVersionsFluentBuilder {
+impl ListServiceVersionsFluentBuilder  {
     /// Creates a new `ListServiceVersions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_service_versions::ListServiceVersions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListServiceVersions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_service_versions::ListServiceVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_service_versions::ListServiceVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_service_versions::ListServiceVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_service_versions::ListServiceVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_service_versions::ListServiceVersions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_service_versions::ListServiceVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_service_versions::ListServiceVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the service for which you're requesting supported versions.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.inner = self.inner.service_name(input);
         self
     }
     /// <p>The name of the service for which you're requesting supported versions.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
+    }
+    /// <p>The name of the service for which you're requesting supported versions.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
+        self.inner.get_service_name()
     }
     /// Appends an item to `DependentServices`.
     ///
@@ -122,12 +108,13 @@ impl ListServiceVersionsFluentBuilder {
         self
     }
     /// <p>A list of names and versions of dependant services of the requested service.</p>
-    pub fn set_dependent_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
-    ) -> Self {
+    pub fn set_dependent_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>) -> Self {
         self.inner = self.inner.set_dependent_services(input);
         self
+    }
+    /// <p>A list of names and versions of dependant services of the requested service.</p>
+    pub fn get_dependent_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
+        self.inner.get_dependent_services()
     }
     /// <p>The maximum number of <code>ListServiceVersions</code> objects to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -139,6 +126,10 @@ impl ListServiceVersionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of <code>ListServiceVersions</code> objects to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Because HTTP requests are stateless, this is the starting point for the next list of returned <code>ListServiceVersionsRequest</code> versions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -149,4 +140,9 @@ impl ListServiceVersionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Because HTTP requests are stateless, this is the starting point for the next list of returned <code>ListServiceVersionsRequest</code> versions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

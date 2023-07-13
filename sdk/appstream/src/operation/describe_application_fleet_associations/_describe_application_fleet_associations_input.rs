@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationFleetAssociationsInput {
+pub struct DescribeApplicationFleetAssociationsInput  {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
     pub fleet_name: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeApplicationFleetAssociationsInput {
 }
 impl DescribeApplicationFleetAssociationsInput {
     /// <p>The name of the fleet.</p>
-    pub fn fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_name(&self) -> ::std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The maximum size of each page of results.</p>
@@ -30,22 +30,20 @@ impl DescribeApplicationFleetAssociationsInput {
         self.max_results
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeApplicationFleetAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationFleetAssociationsInput`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput).
-    pub fn builder() -> crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsInputBuilder {
         crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationFleetAssociationsInput`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationFleetAssociationsInputBuilder {
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
@@ -60,24 +58,24 @@ impl DescribeApplicationFleetAssociationsInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_name
     }
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_arn = input;
-        self
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_arn = input; self
+    }
+    /// <p>The ARN of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -86,8 +84,11 @@ impl DescribeApplicationFleetAssociationsInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,11 +97,14 @@ impl DescribeApplicationFleetAssociationsInputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeApplicationFleetAssociationsInput`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsInput {
                 fleet_name: self.fleet_name
@@ -115,3 +119,4 @@ impl DescribeApplicationFleetAssociationsInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Thing group properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThingGroupProperties {
+pub struct ThingGroupProperties  {
     /// <p>The thing group description.</p>
     #[doc(hidden)]
     pub thing_group_description: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ThingGroupProperties {
 }
 impl ThingGroupProperties {
     /// <p>The thing group description.</p>
-    pub fn thing_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn thing_group_description(&self) -> ::std::option::Option<& str> {
         self.thing_group_description.as_deref()
     }
     /// <p>The thing group attributes in JSON format.</p>
-    pub fn attribute_payload(&self) -> ::std::option::Option<&crate::types::AttributePayload> {
+    pub fn attribute_payload(&self) -> ::std::option::Option<& crate::types::AttributePayload> {
         self.attribute_payload.as_ref()
     }
 }
@@ -30,29 +30,24 @@ impl ThingGroupProperties {
 
 /// A builder for [`ThingGroupProperties`](crate::types::ThingGroupProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThingGroupPropertiesBuilder {
     pub(crate) thing_group_description: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_payload: ::std::option::Option<crate::types::AttributePayload>,
 }
 impl ThingGroupPropertiesBuilder {
     /// <p>The thing group description.</p>
-    pub fn thing_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing group description.</p>
-    pub fn set_thing_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.thing_group_description = input;
-        self
+    pub fn set_thing_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.thing_group_description = input; self
+    }
+    /// <p>The thing group description.</p>
+    pub fn get_thing_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_description
     }
     /// <p>The thing group attributes in JSON format.</p>
     pub fn attribute_payload(mut self, input: crate::types::AttributePayload) -> Self {
@@ -60,18 +55,21 @@ impl ThingGroupPropertiesBuilder {
         self
     }
     /// <p>The thing group attributes in JSON format.</p>
-    pub fn set_attribute_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributePayload>,
-    ) -> Self {
-        self.attribute_payload = input;
-        self
+    pub fn set_attribute_payload(mut self, input: ::std::option::Option<crate::types::AttributePayload>) -> Self {
+        self.attribute_payload = input; self
+    }
+    /// <p>The thing group attributes in JSON format.</p>
+    pub fn get_attribute_payload(&self) -> &::std::option::Option<crate::types::AttributePayload> {
+        &self.attribute_payload
     }
     /// Consumes the builder and constructs a [`ThingGroupProperties`](crate::types::ThingGroupProperties).
     pub fn build(self) -> crate::types::ThingGroupProperties {
         crate::types::ThingGroupProperties {
-            thing_group_description: self.thing_group_description,
-            attribute_payload: self.attribute_payload,
+            thing_group_description: self.thing_group_description
+            ,
+            attribute_payload: self.attribute_payload
+            ,
         }
     }
 }
+

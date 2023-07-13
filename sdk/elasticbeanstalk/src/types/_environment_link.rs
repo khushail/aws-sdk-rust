@@ -3,7 +3,7 @@
 /// <p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentLink {
+pub struct EnvironmentLink  {
     /// <p>The name of the link.</p>
     #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct EnvironmentLink {
 }
 impl EnvironmentLink {
     /// <p>The name of the link.</p>
-    pub fn link_name(&self) -> ::std::option::Option<&str> {
+    pub fn link_name(&self) -> ::std::option::Option<& str> {
         self.link_name.as_deref()
     }
     /// <p>The name of the linked environment (the dependency).</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl EnvironmentLink {
 
 /// A builder for [`EnvironmentLink`](crate::types::EnvironmentLink).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentLinkBuilder {
     pub(crate) link_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl EnvironmentLinkBuilder {
     }
     /// <p>The name of the link.</p>
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link_name = input;
-        self
+        self.link_name = input; self
+    }
+    /// <p>The name of the link.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_name
     }
     /// <p>The name of the linked environment (the dependency).</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the linked environment (the dependency).</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_name = input;
-        self
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_name = input; self
+    }
+    /// <p>The name of the linked environment (the dependency).</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Consumes the builder and constructs a [`EnvironmentLink`](crate::types::EnvironmentLink).
     pub fn build(self) -> crate::types::EnvironmentLink {
         crate::types::EnvironmentLink {
-            link_name: self.link_name,
-            environment_name: self.environment_name,
+            link_name: self.link_name
+            ,
+            environment_name: self.environment_name
+            ,
         }
     }
 }
+

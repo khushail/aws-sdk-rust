@@ -3,7 +3,7 @@
 /// These settings relate to your MXF output container.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MxfSettings {
+pub struct MxfSettings  {
     /// Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
     #[doc(hidden)]
     pub afd_signaling: ::std::option::Option<crate::types::MxfAfdSignaling>,
@@ -16,17 +16,15 @@ pub struct MxfSettings {
 }
 impl MxfSettings {
     /// Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
-    pub fn afd_signaling(&self) -> ::std::option::Option<&crate::types::MxfAfdSignaling> {
+    pub fn afd_signaling(&self) -> ::std::option::Option<& crate::types::MxfAfdSignaling> {
         self.afd_signaling.as_ref()
     }
     /// Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
-    pub fn profile(&self) -> ::std::option::Option<&crate::types::MxfProfile> {
+    pub fn profile(&self) -> ::std::option::Option<& crate::types::MxfProfile> {
         self.profile.as_ref()
     }
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
-    pub fn xavc_profile_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MxfXavcProfileSettings> {
+    pub fn xavc_profile_settings(&self) -> ::std::option::Option<& crate::types::MxfXavcProfileSettings> {
         self.xavc_profile_settings.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl MxfSettings {
 
 /// A builder for [`MxfSettings`](crate::types::MxfSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MxfSettingsBuilder {
     pub(crate) afd_signaling: ::std::option::Option<crate::types::MxfAfdSignaling>,
     pub(crate) profile: ::std::option::Option<crate::types::MxfProfile>,
@@ -54,12 +50,12 @@ impl MxfSettingsBuilder {
         self
     }
     /// Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
-    pub fn set_afd_signaling(
-        mut self,
-        input: ::std::option::Option<crate::types::MxfAfdSignaling>,
-    ) -> Self {
-        self.afd_signaling = input;
-        self
+    pub fn set_afd_signaling(mut self, input: ::std::option::Option<crate::types::MxfAfdSignaling>) -> Self {
+        self.afd_signaling = input; self
+    }
+    /// Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
+    pub fn get_afd_signaling(&self) -> &::std::option::Option<crate::types::MxfAfdSignaling> {
+        &self.afd_signaling
     }
     /// Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
     pub fn profile(mut self, input: crate::types::MxfProfile) -> Self {
@@ -68,8 +64,11 @@ impl MxfSettingsBuilder {
     }
     /// Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
     pub fn set_profile(mut self, input: ::std::option::Option<crate::types::MxfProfile>) -> Self {
-        self.profile = input;
-        self
+        self.profile = input; self
+    }
+    /// Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+    pub fn get_profile(&self) -> &::std::option::Option<crate::types::MxfProfile> {
+        &self.profile
     }
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
     pub fn xavc_profile_settings(mut self, input: crate::types::MxfXavcProfileSettings) -> Self {
@@ -77,19 +76,23 @@ impl MxfSettingsBuilder {
         self
     }
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
-    pub fn set_xavc_profile_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MxfXavcProfileSettings>,
-    ) -> Self {
-        self.xavc_profile_settings = input;
-        self
+    pub fn set_xavc_profile_settings(mut self, input: ::std::option::Option<crate::types::MxfXavcProfileSettings>) -> Self {
+        self.xavc_profile_settings = input; self
+    }
+    /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
+    pub fn get_xavc_profile_settings(&self) -> &::std::option::Option<crate::types::MxfXavcProfileSettings> {
+        &self.xavc_profile_settings
     }
     /// Consumes the builder and constructs a [`MxfSettings`](crate::types::MxfSettings).
     pub fn build(self) -> crate::types::MxfSettings {
         crate::types::MxfSettings {
-            afd_signaling: self.afd_signaling,
-            profile: self.profile,
-            xavc_profile_settings: self.xavc_profile_settings,
+            afd_signaling: self.afd_signaling
+            ,
+            profile: self.profile
+            ,
+            xavc_profile_settings: self.xavc_profile_settings
+            ,
         }
     }
 }
+

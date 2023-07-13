@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTopicRuleDestinationInput {
+pub struct DeleteTopicRuleDestinationInput  {
     /// <p>The ARN of the topic rule destination to delete.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTopicRuleDestinationInput {
     /// <p>The ARN of the topic rule destination to delete.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeleteTopicRuleDestinationInput {
     /// Creates a new builder-style object to manufacture [`DeleteTopicRuleDestinationInput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput).
-    pub fn builder() -> crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationInputBuilder{
+    pub fn builder() -> crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationInputBuilder {
         crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTopicRuleDestinationInput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTopicRuleDestinationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl DeleteTopicRuleDestinationInputBuilder {
     }
     /// <p>The ARN of the topic rule destination to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of the topic rule destination to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteTopicRuleDestinationInput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFlowOutput {
+pub struct CreateFlowOutput  {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct CreateFlowOutput {
 }
 impl CreateFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn flow_status(&self) -> ::std::option::Option<&crate::types::FlowStatus> {
+    pub fn flow_status(&self) -> ::std::option::Option<& crate::types::FlowStatus> {
         self.flow_status.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateFlowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateFlowOutput {
     /// Creates a new builder-style object to manufacture [`CreateFlowOutput`](crate::operation::create_flow::CreateFlowOutput).
     pub fn builder() -> crate::operation::create_flow::builders::CreateFlowOutputBuilder {
@@ -35,9 +35,7 @@ impl CreateFlowOutput {
 
 /// A builder for [`CreateFlowOutput`](crate::operation::create_flow::CreateFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFlowOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_status: ::std::option::Option<crate::types::FlowStatus>,
@@ -51,8 +49,11 @@ impl CreateFlowOutputBuilder {
     }
     /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
+    }
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     /// <p> Indicates the current status of the flow. </p>
     pub fn flow_status(mut self, input: crate::types::FlowStatus) -> Self {
@@ -60,28 +61,31 @@ impl CreateFlowOutputBuilder {
         self
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn set_flow_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowStatus>,
-    ) -> Self {
-        self.flow_status = input;
-        self
+    pub fn set_flow_status(mut self, input: ::std::option::Option<crate::types::FlowStatus>) -> Self {
+        self.flow_status = input; self
+    }
+    /// <p> Indicates the current status of the flow. </p>
+    pub fn get_flow_status(&self) -> &::std::option::Option<crate::types::FlowStatus> {
+        &self.flow_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateFlowOutput`](crate::operation::create_flow::CreateFlowOutput).
     pub fn build(self) -> crate::operation::create_flow::CreateFlowOutput {
         crate::operation::create_flow::CreateFlowOutput {
-            flow_arn: self.flow_arn,
-            flow_status: self.flow_status,
+            flow_arn: self.flow_arn
+            ,
+            flow_status: self.flow_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

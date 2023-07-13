@@ -3,7 +3,7 @@
 /// <p>Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultContinuousHyperParameterRange {
+pub struct DefaultContinuousHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct DefaultContinuousHyperParameterRange {
 }
 impl DefaultContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -44,9 +44,7 @@ impl DefaultContinuousHyperParameterRange {
 
 /// A builder for [`DefaultContinuousHyperParameterRange`](crate::types::DefaultContinuousHyperParameterRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultContinuousHyperParameterRangeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) min_value: ::std::option::Option<f64>,
@@ -61,8 +59,11 @@ impl DefaultContinuousHyperParameterRangeBuilder {
     }
     /// <p>The name of the hyperparameter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the hyperparameter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn min_value(mut self, input: f64) -> Self {
@@ -71,8 +72,11 @@ impl DefaultContinuousHyperParameterRangeBuilder {
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn set_min_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min_value = input;
-        self
+        self.min_value = input; self
+    }
+    /// <p>The minimum allowable value for the hyperparameter.</p>
+    pub fn get_min_value(&self) -> &::std::option::Option<f64> {
+        &self.min_value
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn max_value(mut self, input: f64) -> Self {
@@ -81,8 +85,11 @@ impl DefaultContinuousHyperParameterRangeBuilder {
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn set_max_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_value = input;
-        self
+        self.max_value = input; self
+    }
+    /// <p>The maximum allowable value for the hyperparameter.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<f64> {
+        &self.max_value
     }
     /// <p>Whether the hyperparameter is tunable.</p>
     pub fn is_tunable(mut self, input: bool) -> Self {
@@ -91,16 +98,27 @@ impl DefaultContinuousHyperParameterRangeBuilder {
     }
     /// <p>Whether the hyperparameter is tunable.</p>
     pub fn set_is_tunable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_tunable = input;
-        self
+        self.is_tunable = input; self
+    }
+    /// <p>Whether the hyperparameter is tunable.</p>
+    pub fn get_is_tunable(&self) -> &::std::option::Option<bool> {
+        &self.is_tunable
     }
     /// Consumes the builder and constructs a [`DefaultContinuousHyperParameterRange`](crate::types::DefaultContinuousHyperParameterRange).
     pub fn build(self) -> crate::types::DefaultContinuousHyperParameterRange {
         crate::types::DefaultContinuousHyperParameterRange {
-            name: self.name,
-            min_value: self.min_value.unwrap_or_default(),
-            max_value: self.max_value.unwrap_or_default(),
-            is_tunable: self.is_tunable.unwrap_or_default(),
+            name: self.name
+            ,
+            min_value: self.min_value
+                .unwrap_or_default()
+            ,
+            max_value: self.max_value
+                .unwrap_or_default()
+            ,
+            is_tunable: self.is_tunable
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportKeyPairOutput {
-    /// <ul>
-    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+pub struct ImportKeyPairOutput  {
+    /// <ul> 
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li> 
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub key_fingerprint: ::std::option::Option<::std::string::String>,
@@ -21,31 +21,31 @@ pub struct ImportKeyPairOutput {
     _request_id: Option<String>,
 }
 impl ImportKeyPairOutput {
-    /// <ul>
-    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// <ul> 
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li> 
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
     /// </ul>
-    pub fn key_fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn key_fingerprint(&self) -> ::std::option::Option<& str> {
         self.key_fingerprint.as_deref()
     }
     /// <p>The key pair name that you provided.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The ID of the resulting key pair.</p>
-    pub fn key_pair_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_pair_id(&self) -> ::std::option::Option<& str> {
         self.key_pair_id.as_deref()
     }
     /// <p>The tags applied to the imported key pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ImportKeyPairOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`ImportKeyPairOutput`](crate::operation::import_key_pair::ImportKeyPairOutput).
     pub fn builder() -> crate::operation::import_key_pair::builders::ImportKeyPairOutputBuilder {
@@ -55,9 +55,7 @@ impl ImportKeyPairOutput {
 
 /// A builder for [`ImportKeyPairOutput`](crate::operation::import_key_pair::ImportKeyPairOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportKeyPairOutputBuilder {
     pub(crate) key_fingerprint: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
@@ -66,27 +64,27 @@ pub struct ImportKeyPairOutputBuilder {
     _request_id: Option<String>,
 }
 impl ImportKeyPairOutputBuilder {
-    /// <ul>
-    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// <ul> 
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li> 
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
     /// </ul>
-    pub fn key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <ul>
-    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// <ul> 
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li> 
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
     /// </ul>
-    pub fn set_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.key_fingerprint = input;
-        self
+    pub fn set_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_fingerprint = input; self
+    }
+    /// <ul> 
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li> 
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
+    /// </ul>
+    pub fn get_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_fingerprint
     }
     /// <p>The key pair name that you provided.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +93,11 @@ impl ImportKeyPairOutputBuilder {
     }
     /// <p>The key pair name that you provided.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
+    }
+    /// <p>The key pair name that you provided.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// <p>The ID of the resulting key pair.</p>
     pub fn key_pair_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,8 +106,11 @@ impl ImportKeyPairOutputBuilder {
     }
     /// <p>The ID of the resulting key pair.</p>
     pub fn set_key_pair_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pair_id = input;
-        self
+        self.key_pair_id = input; self
+    }
+    /// <p>The ID of the resulting key pair.</p>
+    pub fn get_key_pair_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_id
     }
     /// Appends an item to `tags`.
     ///
@@ -115,35 +119,40 @@ impl ImportKeyPairOutputBuilder {
     /// <p>The tags applied to the imported key pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags applied to the imported key pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags applied to the imported key pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportKeyPairOutput`](crate::operation::import_key_pair::ImportKeyPairOutput).
     pub fn build(self) -> crate::operation::import_key_pair::ImportKeyPairOutput {
         crate::operation::import_key_pair::ImportKeyPairOutput {
-            key_fingerprint: self.key_fingerprint,
-            key_name: self.key_name,
-            key_pair_id: self.key_pair_id,
-            tags: self.tags,
+            key_fingerprint: self.key_fingerprint
+            ,
+            key_name: self.key_name
+            ,
+            key_pair_id: self.key_pair_id
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

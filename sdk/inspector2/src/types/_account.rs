@@ -3,7 +3,7 @@
 /// <p>An Amazon Web Services account within your environment that Amazon Inspector has been enabled for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Account {
+pub struct Account  {
     /// <p>The ID of the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct Account {
 }
 impl Account {
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The status of Amazon Inspector for the account.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
-    pub fn resource_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn resource_status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.resource_status.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl Account {
 
 /// A builder for [`Account`](crate::types::Account).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
@@ -53,8 +51,11 @@ impl AccountBuilder {
     }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -63,8 +64,11 @@ impl AccountBuilder {
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of Amazon Inspector for the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
     pub fn resource_status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -72,19 +76,23 @@ impl AccountBuilder {
         self
     }
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
-    pub fn set_resource_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
-        self.resource_status = input;
-        self
+    pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
+        self.resource_status = input; self
+    }
+    /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
+    pub fn get_resource_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.resource_status
     }
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).
     pub fn build(self) -> crate::types::Account {
         crate::types::Account {
-            account_id: self.account_id,
-            status: self.status,
-            resource_status: self.resource_status,
+            account_id: self.account_id
+            ,
+            status: self.status
+            ,
+            resource_status: self.resource_status
+            ,
         }
     }
 }
+

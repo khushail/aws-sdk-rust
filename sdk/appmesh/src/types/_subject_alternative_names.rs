@@ -3,14 +3,14 @@
 /// <p>An object that represents the subject alternative names secured by the certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubjectAlternativeNames {
+pub struct SubjectAlternativeNames  {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
     #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::SubjectAlternativeNameMatchers>,
 }
 impl SubjectAlternativeNames {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
-    pub fn r#match(&self) -> ::std::option::Option<&crate::types::SubjectAlternativeNameMatchers> {
+    pub fn r#match(&self) -> ::std::option::Option<& crate::types::SubjectAlternativeNameMatchers> {
         self.r#match.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl SubjectAlternativeNames {
 
 /// A builder for [`SubjectAlternativeNames`](crate::types::SubjectAlternativeNames).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubjectAlternativeNamesBuilder {
     pub(crate) r#match: ::std::option::Option<crate::types::SubjectAlternativeNameMatchers>,
 }
@@ -36,17 +34,19 @@ impl SubjectAlternativeNamesBuilder {
         self
     }
     /// <p>An object that represents the criteria for determining a SANs match.</p>
-    pub fn set_match(
-        mut self,
-        input: ::std::option::Option<crate::types::SubjectAlternativeNameMatchers>,
-    ) -> Self {
-        self.r#match = input;
-        self
+    pub fn set_match(mut self, input: ::std::option::Option<crate::types::SubjectAlternativeNameMatchers>) -> Self {
+        self.r#match = input; self
+    }
+    /// <p>An object that represents the criteria for determining a SANs match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::SubjectAlternativeNameMatchers> {
+        &self.r#match
     }
     /// Consumes the builder and constructs a [`SubjectAlternativeNames`](crate::types::SubjectAlternativeNames).
     pub fn build(self) -> crate::types::SubjectAlternativeNames {
         crate::types::SubjectAlternativeNames {
-            r#match: self.r#match,
+            r#match: self.r#match
+            ,
         }
     }
 }
+

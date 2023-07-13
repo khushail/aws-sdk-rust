@@ -3,7 +3,7 @@
 /// <p>The properties (metadata) of a column. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnMetadata {
+pub struct ColumnMetadata  {
     /// <p>A value that indicates whether the column is case-sensitive. </p>
     #[doc(hidden)]
     pub is_case_sensitive: bool,
@@ -58,11 +58,11 @@ impl ColumnMetadata {
         self.is_signed
     }
     /// <p>The label for the column. </p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The name of the column. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A value that indicates whether the column is nullable. </p>
@@ -78,15 +78,15 @@ impl ColumnMetadata {
         self.scale
     }
     /// <p>The name of the schema that contains the table that includes the column.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The name of the table that includes the column. </p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The database-specific data type of the column. </p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The length of the column.</p>
@@ -94,7 +94,7 @@ impl ColumnMetadata {
         self.length
     }
     /// <p>The default value of the column. </p>
-    pub fn column_default(&self) -> ::std::option::Option<&str> {
+    pub fn column_default(&self) -> ::std::option::Option<& str> {
         self.column_default.as_deref()
     }
 }
@@ -107,9 +107,7 @@ impl ColumnMetadata {
 
 /// A builder for [`ColumnMetadata`](crate::types::ColumnMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnMetadataBuilder {
     pub(crate) is_case_sensitive: ::std::option::Option<bool>,
     pub(crate) is_currency: ::std::option::Option<bool>,
@@ -133,8 +131,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>A value that indicates whether the column is case-sensitive. </p>
     pub fn set_is_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_case_sensitive = input;
-        self
+        self.is_case_sensitive = input; self
+    }
+    /// <p>A value that indicates whether the column is case-sensitive. </p>
+    pub fn get_is_case_sensitive(&self) -> &::std::option::Option<bool> {
+        &self.is_case_sensitive
     }
     /// <p>A value that indicates whether the column contains currency values.</p>
     pub fn is_currency(mut self, input: bool) -> Self {
@@ -143,8 +144,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>A value that indicates whether the column contains currency values.</p>
     pub fn set_is_currency(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_currency = input;
-        self
+        self.is_currency = input; self
+    }
+    /// <p>A value that indicates whether the column contains currency values.</p>
+    pub fn get_is_currency(&self) -> &::std::option::Option<bool> {
+        &self.is_currency
     }
     /// <p>A value that indicates whether an integer column is signed.</p>
     pub fn is_signed(mut self, input: bool) -> Self {
@@ -153,8 +157,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>A value that indicates whether an integer column is signed.</p>
     pub fn set_is_signed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_signed = input;
-        self
+        self.is_signed = input; self
+    }
+    /// <p>A value that indicates whether an integer column is signed.</p>
+    pub fn get_is_signed(&self) -> &::std::option::Option<bool> {
+        &self.is_signed
     }
     /// <p>The label for the column. </p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,8 +170,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The label for the column. </p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
+    }
+    /// <p>The label for the column. </p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>The name of the column. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,8 +183,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The name of the column. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the column. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A value that indicates whether the column is nullable. </p>
     pub fn nullable(mut self, input: i32) -> Self {
@@ -183,8 +196,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>A value that indicates whether the column is nullable. </p>
     pub fn set_nullable(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.nullable = input;
-        self
+        self.nullable = input; self
+    }
+    /// <p>A value that indicates whether the column is nullable. </p>
+    pub fn get_nullable(&self) -> &::std::option::Option<i32> {
+        &self.nullable
     }
     /// <p>The precision value of a decimal number column. </p>
     pub fn precision(mut self, input: i32) -> Self {
@@ -193,8 +209,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The precision value of a decimal number column. </p>
     pub fn set_precision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.precision = input;
-        self
+        self.precision = input; self
+    }
+    /// <p>The precision value of a decimal number column. </p>
+    pub fn get_precision(&self) -> &::std::option::Option<i32> {
+        &self.precision
     }
     /// <p>The scale value of a decimal number column. </p>
     pub fn scale(mut self, input: i32) -> Self {
@@ -203,8 +222,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The scale value of a decimal number column. </p>
     pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scale = input;
-        self
+        self.scale = input; self
+    }
+    /// <p>The scale value of a decimal number column. </p>
+    pub fn get_scale(&self) -> &::std::option::Option<i32> {
+        &self.scale
     }
     /// <p>The name of the schema that contains the table that includes the column.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,8 +235,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The name of the schema that contains the table that includes the column.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
+    }
+    /// <p>The name of the schema that contains the table that includes the column.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>The name of the table that includes the column. </p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -223,8 +248,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The name of the table that includes the column. </p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
+    }
+    /// <p>The name of the table that includes the column. </p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The database-specific data type of the column. </p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -233,8 +261,11 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The database-specific data type of the column. </p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
+    }
+    /// <p>The database-specific data type of the column. </p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// <p>The length of the column.</p>
     pub fn length(mut self, input: i32) -> Self {
@@ -243,41 +274,62 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The length of the column.</p>
     pub fn set_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
+    }
+    /// <p>The length of the column.</p>
+    pub fn get_length(&self) -> &::std::option::Option<i32> {
+        &self.length
     }
     /// <p>The default value of the column. </p>
-    pub fn column_default(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn column_default(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_default = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the column. </p>
-    pub fn set_column_default(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.column_default = input;
-        self
+    pub fn set_column_default(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.column_default = input; self
+    }
+    /// <p>The default value of the column. </p>
+    pub fn get_column_default(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_default
     }
     /// Consumes the builder and constructs a [`ColumnMetadata`](crate::types::ColumnMetadata).
     pub fn build(self) -> crate::types::ColumnMetadata {
         crate::types::ColumnMetadata {
-            is_case_sensitive: self.is_case_sensitive.unwrap_or_default(),
-            is_currency: self.is_currency.unwrap_or_default(),
-            is_signed: self.is_signed.unwrap_or_default(),
-            label: self.label,
-            name: self.name,
-            nullable: self.nullable.unwrap_or_default(),
-            precision: self.precision.unwrap_or_default(),
-            scale: self.scale.unwrap_or_default(),
-            schema_name: self.schema_name,
-            table_name: self.table_name,
-            type_name: self.type_name,
-            length: self.length.unwrap_or_default(),
-            column_default: self.column_default,
+            is_case_sensitive: self.is_case_sensitive
+                .unwrap_or_default()
+            ,
+            is_currency: self.is_currency
+                .unwrap_or_default()
+            ,
+            is_signed: self.is_signed
+                .unwrap_or_default()
+            ,
+            label: self.label
+            ,
+            name: self.name
+            ,
+            nullable: self.nullable
+                .unwrap_or_default()
+            ,
+            precision: self.precision
+                .unwrap_or_default()
+            ,
+            scale: self.scale
+                .unwrap_or_default()
+            ,
+            schema_name: self.schema_name
+            ,
+            table_name: self.table_name
+            ,
+            type_name: self.type_name
+            ,
+            length: self.length
+                .unwrap_or_default()
+            ,
+            column_default: self.column_default
+            ,
         }
     }
 }
+

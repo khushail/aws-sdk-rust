@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRevealConfigurationInput {
+pub struct UpdateRevealConfigurationInput  {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
     #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::RevealConfiguration>,
 }
 impl UpdateRevealConfigurationInput {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RevealConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::RevealConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl UpdateRevealConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationInput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput).
-    pub fn builder() -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder {
         crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRevealConfigurationInput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRevealConfigurationInputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RevealConfiguration>,
 }
@@ -35,24 +33,21 @@ impl UpdateRevealConfigurationInputBuilder {
         self
     }
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RevealConfiguration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
+        self.configuration = input; self
+    }
+    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`UpdateRevealConfigurationInput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput {
-                configuration: self.configuration,
-            },
+                configuration: self.configuration
+                ,
+            }
         )
     }
 }
+

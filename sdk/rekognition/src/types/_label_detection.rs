@@ -3,7 +3,7 @@
 /// <p>Information about a label detected in a video analysis request and the time the label was detected in the video. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelDetection {
+pub struct LabelDetection  {
     /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -26,7 +26,7 @@ impl LabelDetection {
         self.timestamp
     }
     /// <p>Details about the detected label.</p>
-    pub fn label(&self) -> ::std::option::Option<&crate::types::Label> {
+    pub fn label(&self) -> ::std::option::Option<& crate::types::Label> {
         self.label.as_ref()
     }
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
@@ -51,9 +51,7 @@ impl LabelDetection {
 
 /// A builder for [`LabelDetection`](crate::types::LabelDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelDetectionBuilder {
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) label: ::std::option::Option<crate::types::Label>,
@@ -69,8 +67,11 @@ impl LabelDetectionBuilder {
     }
     /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
+    }
+    /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
     }
     /// <p>Details about the detected label.</p>
     pub fn label(mut self, input: crate::types::Label) -> Self {
@@ -79,8 +80,11 @@ impl LabelDetectionBuilder {
     }
     /// <p>Details about the detected label.</p>
     pub fn set_label(mut self, input: ::std::option::Option<crate::types::Label>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
+    }
+    /// <p>Details about the detected label.</p>
+    pub fn get_label(&self) -> &::std::option::Option<crate::types::Label> {
+        &self.label
     }
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
     pub fn start_timestamp_millis(mut self, input: i64) -> Self {
@@ -89,8 +93,11 @@ impl LabelDetectionBuilder {
     }
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
     pub fn set_start_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start_timestamp_millis = input;
-        self
+        self.start_timestamp_millis = input; self
+    }
+    /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
+    pub fn get_start_timestamp_millis(&self) -> &::std::option::Option<i64> {
+        &self.start_timestamp_millis
     }
     /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
     pub fn end_timestamp_millis(mut self, input: i64) -> Self {
@@ -99,8 +106,11 @@ impl LabelDetectionBuilder {
     }
     /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
     pub fn set_end_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end_timestamp_millis = input;
-        self
+        self.end_timestamp_millis = input; self
+    }
+    /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
+    pub fn get_end_timestamp_millis(&self) -> &::std::option::Option<i64> {
+        &self.end_timestamp_millis
     }
     /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
@@ -109,17 +119,27 @@ impl LabelDetectionBuilder {
     }
     /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_millis = input;
-        self
+        self.duration_millis = input; self
+    }
+    /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
+    pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.duration_millis
     }
     /// Consumes the builder and constructs a [`LabelDetection`](crate::types::LabelDetection).
     pub fn build(self) -> crate::types::LabelDetection {
         crate::types::LabelDetection {
-            timestamp: self.timestamp.unwrap_or_default(),
-            label: self.label,
-            start_timestamp_millis: self.start_timestamp_millis,
-            end_timestamp_millis: self.end_timestamp_millis,
-            duration_millis: self.duration_millis,
+            timestamp: self.timestamp
+                .unwrap_or_default()
+            ,
+            label: self.label
+            ,
+            start_timestamp_millis: self.start_timestamp_millis
+            ,
+            end_timestamp_millis: self.end_timestamp_millis
+            ,
+            duration_millis: self.duration_millis
+            ,
         }
     }
 }
+

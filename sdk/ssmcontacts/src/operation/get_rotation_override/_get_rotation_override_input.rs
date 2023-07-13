@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRotationOverrideInput {
+pub struct GetRotationOverrideInput  {
     /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
     #[doc(hidden)]
     pub rotation_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct GetRotationOverrideInput {
 }
 impl GetRotationOverrideInput {
     /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
-    pub fn rotation_id(&self) -> ::std::option::Option<&str> {
+    pub fn rotation_id(&self) -> ::std::option::Option<& str> {
         self.rotation_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    pub fn rotation_override_id(&self) -> ::std::option::Option<&str> {
+    pub fn rotation_override_id(&self) -> ::std::option::Option<& str> {
         self.rotation_override_id.as_deref()
     }
 }
 impl GetRotationOverrideInput {
     /// Creates a new builder-style object to manufacture [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
-    pub fn builder(
-    ) -> crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder {
-        crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder {
+        crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRotationOverrideInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotation_override_id: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl GetRotationOverrideInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
     pub fn set_rotation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_id = input;
-        self
+        self.rotation_id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_id
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    pub fn rotation_override_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rotation_override_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_override_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    pub fn set_rotation_override_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.rotation_override_id = input;
-        self
+    pub fn set_rotation_override_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rotation_override_id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
+    pub fn get_rotation_override_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_override_id
     }
     /// Consumes the builder and constructs a [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rotation_override::GetRotationOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation_override::GetRotationOverrideInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_rotation_override::GetRotationOverrideInput {
-                rotation_id: self.rotation_id,
-                rotation_override_id: self.rotation_override_id,
-            },
+                rotation_id: self.rotation_id
+                ,
+                rotation_override_id: self.rotation_override_id
+                ,
+            }
         )
     }
 }
+

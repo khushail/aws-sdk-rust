@@ -3,150 +3,128 @@ pub use crate::operation::revoke_client_vpn_ingress::_revoke_client_vpn_ingress_
 
 pub use crate::operation::revoke_client_vpn_ingress::_revoke_client_vpn_ingress_input::RevokeClientVpnIngressInputBuilder;
 
+impl RevokeClientVpnIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.revoke_client_vpn_ingress();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `RevokeClientVpnIngress`.
-///
+/// 
 /// <p>Removes an ingress authorization rule from a Client VPN endpoint. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeClientVpnIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder,
+                    inner: crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder,
 }
-impl RevokeClientVpnIngressFluentBuilder {
+impl RevokeClientVpnIngressFluentBuilder  {
     /// Creates a new `RevokeClientVpnIngress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngress,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the RevokeClientVpnIngress as a reference.
+    pub fn as_input(&self) -> &crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngress,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
+    /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_vpn_endpoint_id()
+    }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
-    pub fn target_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_network_cidr(input.into());
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
-    pub fn set_target_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_network_cidr(input);
         self
     }
+    /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
+    pub fn get_target_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_network_cidr()
+    }
     /// <p>The ID of the Active Directory group for which to revoke access. </p>
-    pub fn access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_group_id(input.into());
         self
     }
     /// <p>The ID of the Active Directory group for which to revoke access. </p>
-    pub fn set_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_group_id(input);
         self
+    }
+    /// <p>The ID of the Active Directory group for which to revoke access. </p>
+    pub fn get_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_group_id()
     }
     /// <p>Indicates whether access should be revoked for all clients.</p>
     pub fn revoke_all_groups(mut self, input: bool) -> Self {
@@ -158,6 +136,10 @@ impl RevokeClientVpnIngressFluentBuilder {
         self.inner = self.inner.set_revoke_all_groups(input);
         self
     }
+    /// <p>Indicates whether access should be revoked for all clients.</p>
+    pub fn get_revoke_all_groups(&self) -> &::std::option::Option<bool> {
+        self.inner.get_revoke_all_groups()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -168,4 +150,9 @@ impl RevokeClientVpnIngressFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
 }
+

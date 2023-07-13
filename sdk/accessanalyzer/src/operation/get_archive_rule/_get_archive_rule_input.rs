@@ -3,7 +3,7 @@
 /// <p>Retrieves an archive rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetArchiveRuleInput {
+pub struct GetArchiveRuleInput  {
     /// <p>The name of the analyzer to retrieve rules from.</p>
     #[doc(hidden)]
     pub analyzer_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct GetArchiveRuleInput {
 }
 impl GetArchiveRuleInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
+    pub fn analyzer_name(&self) -> ::std::option::Option<& str> {
         self.analyzer_name.as_deref()
     }
     /// <p>The name of the rule to retrieve.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl GetArchiveRuleInput {
 
 /// A builder for [`GetArchiveRuleInput`](crate::operation::get_archive_rule::GetArchiveRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetArchiveRuleInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }
 impl GetArchiveRuleInputBuilder {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.analyzer_name = input;
-        self
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.analyzer_name = input; self
+    }
+    /// <p>The name of the analyzer to retrieve rules from.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_name
     }
     /// <p>The name of the rule to retrieve.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,19 +56,22 @@ impl GetArchiveRuleInputBuilder {
     }
     /// <p>The name of the rule to retrieve.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
+    }
+    /// <p>The name of the rule to retrieve.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
     }
     /// Consumes the builder and constructs a [`GetArchiveRuleInput`](crate::operation::get_archive_rule::GetArchiveRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_archive_rule::GetArchiveRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_archive_rule::GetArchiveRuleInput {
-            analyzer_name: self.analyzer_name,
-            rule_name: self.rule_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_archive_rule::GetArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_archive_rule::GetArchiveRuleInput {
+                analyzer_name: self.analyzer_name
+                ,
+                rule_name: self.rule_name
+                ,
+            }
+        )
     }
 }
+

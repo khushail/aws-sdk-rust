@@ -2,59 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartReplicationInput {
+pub struct StartReplicationInput  {
     /// <p>ID of source server on which to start replication.</p>
     #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl StartReplicationInput {
     /// <p>ID of source server on which to start replication.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
 }
 impl StartReplicationInput {
     /// Creates a new builder-style object to manufacture [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
-    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationInputBuilder {
         crate::operation::start_replication::builders::StartReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReplicationInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl StartReplicationInputBuilder {
     /// <p>ID of source server on which to start replication.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of source server on which to start replication.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_server_id = input;
-        self
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_server_id = input; self
+    }
+    /// <p>ID of source server on which to start replication.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
     }
     /// Consumes the builder and constructs a [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_replication::StartReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_replication::StartReplicationInput {
-            source_server_id: self.source_server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_replication::StartReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_replication::StartReplicationInput {
+                source_server_id: self.source_server_id
+                ,
+            }
+        )
     }
 }
+

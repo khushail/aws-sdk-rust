@@ -3,7 +3,7 @@
 /// <p>Returns information about an error state of the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorInfo {
+pub struct ErrorInfo  {
     /// <p>A number describing the error programmatically.</p>
     #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ErrorInfo {
 }
 impl ErrorInfo {
     /// <p>A number describing the error programmatically.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>An optional field to provide more details about the error.</p>
-    pub fn error_string(&self) -> ::std::option::Option<&str> {
+    pub fn error_string(&self) -> ::std::option::Option<& str> {
         self.error_string.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ErrorInfo {
 
 /// A builder for [`ErrorInfo`](crate::types::ErrorInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorInfoBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) error_string: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ErrorInfoBuilder {
     }
     /// <p>A number describing the error programmatically.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
+    }
+    /// <p>A number describing the error programmatically.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>An optional field to provide more details about the error.</p>
     pub fn error_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ErrorInfoBuilder {
     }
     /// <p>An optional field to provide more details about the error.</p>
     pub fn set_error_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_string = input;
-        self
+        self.error_string = input; self
+    }
+    /// <p>An optional field to provide more details about the error.</p>
+    pub fn get_error_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_string
     }
     /// Consumes the builder and constructs a [`ErrorInfo`](crate::types::ErrorInfo).
     pub fn build(self) -> crate::types::ErrorInfo {
         crate::types::ErrorInfo {
-            error_code: self.error_code,
-            error_string: self.error_string,
+            error_code: self.error_code
+            ,
+            error_string: self.error_string
+            ,
         }
     }
 }
+

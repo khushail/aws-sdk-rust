@@ -3,123 +3,116 @@ pub use crate::operation::list_targets::_list_targets_output::ListTargetsOutputB
 
 pub use crate::operation::list_targets::_list_targets_input::ListTargetsInputBuilder;
 
+impl ListTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_targets::ListTargetsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_targets::ListTargetsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_targets();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListTargets`.
-///
+/// 
 /// <p>Returns a list of the notification rule targets for an Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_targets::builders::ListTargetsInputBuilder,
+                    inner: crate::operation::list_targets::builders::ListTargetsInputBuilder,
 }
-impl ListTargetsFluentBuilder {
+impl ListTargetsFluentBuilder  {
     /// Creates a new `ListTargets`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_targets::ListTargets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_targets::ListTargetsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListTargets as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_targets::builders::ListTargetsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_targets::ListTargetsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_targets::ListTargetsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_targets::ListTargets, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_targets::ListTargetsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_targets::ListTargetsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_targets::ListTargetsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_targets::ListTargetsError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_targets::ListTargets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_targets::ListTargetsError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_targets::ListTargetsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_targets::ListTargets, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_targets::ListTargetsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_targets::paginator::ListTargetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_targets::paginator::ListTargetsPaginator {
-        crate::operation::list_targets::paginator::ListTargetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_targets::paginator::ListTargetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_targets::paginator::ListTargetsPaginator {
+                                crate::operation::list_targets::paginator::ListTargetsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
-    /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
+    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note> 
+    /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> 
     /// </note>
     pub fn filters(mut self, input: crate::types::ListTargetsFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
-    /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
+    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note> 
+    /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> 
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note> 
+    /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> 
+    /// </note>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListTargetsFilter>> {
+        self.inner.get_filters()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +124,10 @@ impl ListTargetsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -141,4 +138,9 @@ impl ListTargetsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
 }
+

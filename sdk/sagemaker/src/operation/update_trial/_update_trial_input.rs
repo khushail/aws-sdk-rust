@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTrialInput {
+pub struct UpdateTrialInput  {
     /// <p>The name of the trial to update.</p>
     #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateTrialInput {
 }
 impl UpdateTrialInput {
     /// <p>The name of the trial to update.</p>
-    pub fn trial_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_name(&self) -> ::std::option::Option<& str> {
         self.trial_name.as_deref()
     }
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl UpdateTrialInput {
 
 /// A builder for [`UpdateTrialInput`](crate::operation::update_trial::UpdateTrialInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrialInputBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl UpdateTrialInputBuilder {
     }
     /// <p>The name of the trial to update.</p>
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_name = input;
-        self
+        self.trial_name = input; self
+    }
+    /// <p>The name of the trial to update.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
     }
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl UpdateTrialInputBuilder {
     }
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
+    }
+    /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`UpdateTrialInput`](crate::operation::update_trial::UpdateTrialInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_trial::UpdateTrialInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_trial::UpdateTrialInput {
-            trial_name: self.trial_name,
-            display_name: self.display_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_trial::UpdateTrialInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_trial::UpdateTrialInput {
+                trial_name: self.trial_name
+                ,
+                display_name: self.display_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyUserInput {
+pub struct ModifyUserInput  {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -24,19 +24,19 @@ pub struct ModifyUserInput {
 }
 impl ModifyUserInput {
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(&self) -> ::std::option::Option<&str> {
+    pub fn access_string(&self) -> ::std::option::Option<& str> {
         self.access_string.as_deref()
     }
     /// <p>Adds additional user permissions to the access string.</p>
-    pub fn append_access_string(&self) -> ::std::option::Option<&str> {
+    pub fn append_access_string(&self) -> ::std::option::Option<& str> {
         self.append_access_string.as_deref()
     }
     /// <p>The passwords belonging to the user. You are allowed up to two.</p>
-    pub fn passwords(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn passwords(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.passwords.as_deref()
     }
     /// <p>Indicates no password is required for the user.</p>
@@ -44,7 +44,7 @@ impl ModifyUserInput {
         self.no_password_required
     }
     /// <p>Specifies how to authenticate the user.</p>
-    pub fn authentication_mode(&self) -> ::std::option::Option<&crate::types::AuthenticationMode> {
+    pub fn authentication_mode(&self) -> ::std::option::Option<& crate::types::AuthenticationMode> {
         self.authentication_mode.as_ref()
     }
 }
@@ -57,9 +57,7 @@ impl ModifyUserInput {
 
 /// A builder for [`ModifyUserInput`](crate::operation::modify_user::ModifyUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyUserInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_string: ::std::option::Option<::std::string::String>,
@@ -76,40 +74,37 @@ impl ModifyUserInputBuilder {
     }
     /// <p>The ID of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.access_string = input;
-        self
+    pub fn set_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_string = input; self
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_string
     }
     /// <p>Adds additional user permissions to the access string.</p>
-    pub fn append_access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn append_access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.append_access_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Adds additional user permissions to the access string.</p>
-    pub fn set_append_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.append_access_string = input;
-        self
+    pub fn set_append_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.append_access_string = input; self
+    }
+    /// <p>Adds additional user permissions to the access string.</p>
+    pub fn get_append_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.append_access_string
     }
     /// Appends an item to `passwords`.
     ///
@@ -118,17 +113,17 @@ impl ModifyUserInputBuilder {
     /// <p>The passwords belonging to the user. You are allowed up to two.</p>
     pub fn passwords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.passwords.unwrap_or_default();
-        v.push(input.into());
-        self.passwords = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.passwords = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The passwords belonging to the user. You are allowed up to two.</p>
-    pub fn set_passwords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.passwords = input;
-        self
+    pub fn set_passwords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.passwords = input; self
+    }
+    /// <p>The passwords belonging to the user. You are allowed up to two.</p>
+    pub fn get_passwords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.passwords
     }
     /// <p>Indicates no password is required for the user.</p>
     pub fn no_password_required(mut self, input: bool) -> Self {
@@ -137,8 +132,11 @@ impl ModifyUserInputBuilder {
     }
     /// <p>Indicates no password is required for the user.</p>
     pub fn set_no_password_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_password_required = input;
-        self
+        self.no_password_required = input; self
+    }
+    /// <p>Indicates no password is required for the user.</p>
+    pub fn get_no_password_required(&self) -> &::std::option::Option<bool> {
+        &self.no_password_required
     }
     /// <p>Specifies how to authenticate the user.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
@@ -146,27 +144,31 @@ impl ModifyUserInputBuilder {
         self
     }
     /// <p>Specifies how to authenticate the user.</p>
-    pub fn set_authentication_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationMode>,
-    ) -> Self {
-        self.authentication_mode = input;
-        self
+    pub fn set_authentication_mode(mut self, input: ::std::option::Option<crate::types::AuthenticationMode>) -> Self {
+        self.authentication_mode = input; self
+    }
+    /// <p>Specifies how to authenticate the user.</p>
+    pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        &self.authentication_mode
     }
     /// Consumes the builder and constructs a [`ModifyUserInput`](crate::operation::modify_user::ModifyUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_user::ModifyUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_user::ModifyUserInput {
-            user_id: self.user_id,
-            access_string: self.access_string,
-            append_access_string: self.append_access_string,
-            passwords: self.passwords,
-            no_password_required: self.no_password_required,
-            authentication_mode: self.authentication_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_user::ModifyUserInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_user::ModifyUserInput {
+                user_id: self.user_id
+                ,
+                access_string: self.access_string
+                ,
+                append_access_string: self.append_access_string
+                ,
+                passwords: self.passwords
+                ,
+                no_password_required: self.no_password_required
+                ,
+                authentication_mode: self.authentication_mode
+                ,
+            }
+        )
     }
 }
+

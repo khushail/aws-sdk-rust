@@ -3,7 +3,7 @@
 /// <p> Information about a customer-owned IP address range. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoipCidr {
+pub struct CoipCidr  {
     /// <p> An address range in a customer-owned IP address space. </p>
     #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct CoipCidr {
 }
 impl CoipCidr {
     /// <p> An address range in a customer-owned IP address space. </p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p> The ID of the address pool. </p>
-    pub fn coip_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn coip_pool_id(&self) -> ::std::option::Option<& str> {
         self.coip_pool_id.as_deref()
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.local_gateway_route_table_id.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl CoipCidr {
 
 /// A builder for [`CoipCidr`](crate::types::CoipCidr).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoipCidrBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) coip_pool_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl CoipCidrBuilder {
     }
     /// <p> An address range in a customer-owned IP address space. </p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
+    }
+    /// <p> An address range in a customer-owned IP address space. </p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// <p> The ID of the address pool. </p>
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,31 +64,35 @@ impl CoipCidrBuilder {
     }
     /// <p> The ID of the address pool. </p>
     pub fn set_coip_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.coip_pool_id = input;
-        self
+        self.coip_pool_id = input; self
+    }
+    /// <p> The ID of the address pool. </p>
+    pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.coip_pool_id
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.local_gateway_route_table_id = input;
-        self
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.local_gateway_route_table_id = input; self
+    }
+    /// <p> The ID of the local gateway route table. </p>
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
     }
     /// Consumes the builder and constructs a [`CoipCidr`](crate::types::CoipCidr).
     pub fn build(self) -> crate::types::CoipCidr {
         crate::types::CoipCidr {
-            cidr: self.cidr,
-            coip_pool_id: self.coip_pool_id,
-            local_gateway_route_table_id: self.local_gateway_route_table_id,
+            cidr: self.cidr
+            ,
+            coip_pool_id: self.coip_pool_id
+            ,
+            local_gateway_route_table_id: self.local_gateway_route_table_id
+            ,
         }
     }
 }
+

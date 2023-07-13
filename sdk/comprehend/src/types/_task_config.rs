@@ -3,33 +3,28 @@
 /// <p>Configuration about the custom classifier associated with the flywheel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskConfig {
+pub struct TaskConfig  {
     /// <p>Language code for the language that the model supports.</p>
     #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Configuration required for a classification model.</p>
     #[doc(hidden)]
-    pub document_classification_config:
-        ::std::option::Option<crate::types::DocumentClassificationConfig>,
+    pub document_classification_config: ::std::option::Option<crate::types::DocumentClassificationConfig>,
     /// <p>Configuration required for an entity recognition model.</p>
     #[doc(hidden)]
     pub entity_recognition_config: ::std::option::Option<crate::types::EntityRecognitionConfig>,
 }
 impl TaskConfig {
     /// <p>Language code for the language that the model supports.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Configuration required for a classification model.</p>
-    pub fn document_classification_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentClassificationConfig> {
+    pub fn document_classification_config(&self) -> ::std::option::Option<& crate::types::DocumentClassificationConfig> {
         self.document_classification_config.as_ref()
     }
     /// <p>Configuration required for an entity recognition model.</p>
-    pub fn entity_recognition_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntityRecognitionConfig> {
+    pub fn entity_recognition_config(&self) -> ::std::option::Option<& crate::types::EntityRecognitionConfig> {
         self.entity_recognition_config.as_ref()
     }
 }
@@ -42,15 +37,11 @@ impl TaskConfig {
 
 /// A builder for [`TaskConfig`](crate::types::TaskConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskConfigBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
-    pub(crate) document_classification_config:
-        ::std::option::Option<crate::types::DocumentClassificationConfig>,
-    pub(crate) entity_recognition_config:
-        ::std::option::Option<crate::types::EntityRecognitionConfig>,
+    pub(crate) document_classification_config: ::std::option::Option<crate::types::DocumentClassificationConfig>,
+    pub(crate) entity_recognition_config: ::std::option::Option<crate::types::EntityRecognitionConfig>,
 }
 impl TaskConfigBuilder {
     /// <p>Language code for the language that the model supports.</p>
@@ -59,51 +50,49 @@ impl TaskConfigBuilder {
         self
     }
     /// <p>Language code for the language that the model supports.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
+        self.language_code = input; self
+    }
+    /// <p>Language code for the language that the model supports.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>Configuration required for a classification model.</p>
-    pub fn document_classification_config(
-        mut self,
-        input: crate::types::DocumentClassificationConfig,
-    ) -> Self {
+    pub fn document_classification_config(mut self, input: crate::types::DocumentClassificationConfig) -> Self {
         self.document_classification_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration required for a classification model.</p>
-    pub fn set_document_classification_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassificationConfig>,
-    ) -> Self {
-        self.document_classification_config = input;
-        self
+    pub fn set_document_classification_config(mut self, input: ::std::option::Option<crate::types::DocumentClassificationConfig>) -> Self {
+        self.document_classification_config = input; self
+    }
+    /// <p>Configuration required for a classification model.</p>
+    pub fn get_document_classification_config(&self) -> &::std::option::Option<crate::types::DocumentClassificationConfig> {
+        &self.document_classification_config
     }
     /// <p>Configuration required for an entity recognition model.</p>
-    pub fn entity_recognition_config(
-        mut self,
-        input: crate::types::EntityRecognitionConfig,
-    ) -> Self {
+    pub fn entity_recognition_config(mut self, input: crate::types::EntityRecognitionConfig) -> Self {
         self.entity_recognition_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration required for an entity recognition model.</p>
-    pub fn set_entity_recognition_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityRecognitionConfig>,
-    ) -> Self {
-        self.entity_recognition_config = input;
-        self
+    pub fn set_entity_recognition_config(mut self, input: ::std::option::Option<crate::types::EntityRecognitionConfig>) -> Self {
+        self.entity_recognition_config = input; self
+    }
+    /// <p>Configuration required for an entity recognition model.</p>
+    pub fn get_entity_recognition_config(&self) -> &::std::option::Option<crate::types::EntityRecognitionConfig> {
+        &self.entity_recognition_config
     }
     /// Consumes the builder and constructs a [`TaskConfig`](crate::types::TaskConfig).
     pub fn build(self) -> crate::types::TaskConfig {
         crate::types::TaskConfig {
-            language_code: self.language_code,
-            document_classification_config: self.document_classification_config,
-            entity_recognition_config: self.entity_recognition_config,
+            language_code: self.language_code
+            ,
+            document_classification_config: self.document_classification_config
+            ,
+            entity_recognition_config: self.entity_recognition_config
+            ,
         }
     }
 }
+

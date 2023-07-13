@@ -3,14 +3,14 @@
 /// <p>Represents the input of a <code>DeleteApiCache</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApiCacheInput {
+pub struct DeleteApiCacheInput  {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApiCacheInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DeleteApiCacheInput {
 
 /// A builder for [`DeleteApiCacheInput`](crate::operation::delete_api_cache::DeleteApiCacheInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApiCacheInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +35,20 @@ impl DeleteApiCacheInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
+    }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// Consumes the builder and constructs a [`DeleteApiCacheInput`](crate::operation::delete_api_cache::DeleteApiCacheInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_api_cache::DeleteApiCacheInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_api_cache::DeleteApiCacheInput {
-            api_id: self.api_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_api_cache::DeleteApiCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_api_cache::DeleteApiCacheInput {
+                api_id: self.api_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Deletes an existing documentation version of an API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDocumentationVersionInput {
+pub struct DeleteDocumentationVersionInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
@@ -13,26 +13,24 @@ pub struct DeleteDocumentationVersionInput {
 }
 impl DeleteDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
-    pub fn documentation_version(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_version(&self) -> ::std::option::Option<& str> {
         self.documentation_version.as_deref()
     }
 }
 impl DeleteDocumentationVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentationVersionInput`](crate::operation::delete_documentation_version::DeleteDocumentationVersionInput).
-    pub fn builder() -> crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionInputBuilder{
+    pub fn builder() -> crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionInputBuilder {
         crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDocumentationVersionInput`](crate::operation::delete_documentation_version::DeleteDocumentationVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDocumentationVersionInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_version: ::std::option::Option<::std::string::String>,
@@ -45,37 +43,35 @@ impl DeleteDocumentationVersionInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
     }
     /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
-    pub fn documentation_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documentation_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
-    pub fn set_documentation_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.documentation_version = input;
-        self
+    pub fn set_documentation_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.documentation_version = input; self
+    }
+    /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
+    pub fn get_documentation_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documentation_version
     }
     /// Consumes the builder and constructs a [`DeleteDocumentationVersionInput`](crate::operation::delete_documentation_version::DeleteDocumentationVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_documentation_version::DeleteDocumentationVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_documentation_version::DeleteDocumentationVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_documentation_version::DeleteDocumentationVersionInput {
-                rest_api_id: self.rest_api_id,
-                documentation_version: self.documentation_version,
-            },
+                rest_api_id: self.rest_api_id
+                ,
+                documentation_version: self.documentation_version
+                ,
+            }
         )
     }
 }
+

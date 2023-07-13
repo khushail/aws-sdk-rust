@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about a configuration for DNS query logging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryLoggingConfig {
+pub struct QueryLoggingConfig  {
     /// <p>The ID for a configuration for DNS query logging.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct QueryLoggingConfig {
 }
 impl QueryLoggingConfig {
     /// <p>The ID for a configuration for DNS query logging.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl QueryLoggingConfig {
 
 /// A builder for [`QueryLoggingConfig`](crate::types::QueryLoggingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryLoggingConfigBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
@@ -53,47 +51,48 @@ impl QueryLoggingConfigBuilder {
     }
     /// <p>The ID for a configuration for DNS query logging.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID for a configuration for DNS query logging.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hosted_zone_id = input;
-        self
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hosted_zone_id = input; self
+    }
+    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logs_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
-    pub fn set_cloud_watch_logs_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.cloud_watch_logs_log_group_arn = input;
-        self
+    pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_watch_logs_log_group_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
+    pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logs_log_group_arn
     }
     /// Consumes the builder and constructs a [`QueryLoggingConfig`](crate::types::QueryLoggingConfig).
     pub fn build(self) -> crate::types::QueryLoggingConfig {
         crate::types::QueryLoggingConfig {
-            id: self.id,
-            hosted_zone_id: self.hosted_zone_id,
-            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
+            id: self.id
+            ,
+            hosted_zone_id: self.hosted_zone_id
+            ,
+            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn
+            ,
         }
     }
 }
+

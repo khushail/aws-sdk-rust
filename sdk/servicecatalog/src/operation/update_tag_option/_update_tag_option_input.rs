@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTagOptionInput {
+pub struct UpdateTagOptionInput  {
     /// <p>The TagOption identifier.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpdateTagOptionInput {
 }
 impl UpdateTagOptionInput {
     /// <p>The TagOption identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The updated value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The updated active state.</p>
@@ -36,9 +36,7 @@ impl UpdateTagOptionInput {
 
 /// A builder for [`UpdateTagOptionInput`](crate::operation::update_tag_option::UpdateTagOptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTagOptionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl UpdateTagOptionInputBuilder {
     }
     /// <p>The TagOption identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The TagOption identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The updated value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl UpdateTagOptionInputBuilder {
     }
     /// <p>The updated value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The updated value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The updated active state.</p>
     pub fn active(mut self, input: bool) -> Self {
@@ -72,20 +76,24 @@ impl UpdateTagOptionInputBuilder {
     }
     /// <p>The updated active state.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
+    }
+    /// <p>The updated active state.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// Consumes the builder and constructs a [`UpdateTagOptionInput`](crate::operation::update_tag_option::UpdateTagOptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_tag_option::UpdateTagOptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_tag_option::UpdateTagOptionInput {
-            id: self.id,
-            value: self.value,
-            active: self.active,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_tag_option::UpdateTagOptionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_tag_option::UpdateTagOptionInput {
+                id: self.id
+                ,
+                value: self.value
+                ,
+                active: self.active
+                ,
+            }
+        )
     }
 }
+

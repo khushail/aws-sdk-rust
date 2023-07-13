@@ -3,7 +3,7 @@
 /// <p>Describes a group of files that can be streamed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Stream {
+pub struct Stream  {
     /// <p>The stream ID.</p>
     #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct Stream {
 }
 impl Stream {
     /// <p>The stream ID.</p>
-    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+    pub fn stream_id(&self) -> ::std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>The ID of a file associated with a stream.</p>
@@ -30,9 +30,7 @@ impl Stream {
 
 /// A builder for [`Stream`](crate::types::Stream).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_id: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl StreamBuilder {
     }
     /// <p>The stream ID.</p>
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
+    }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// <p>The ID of a file associated with a stream.</p>
     pub fn file_id(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl StreamBuilder {
     }
     /// <p>The ID of a file associated with a stream.</p>
     pub fn set_file_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.file_id = input;
-        self
+        self.file_id = input; self
+    }
+    /// <p>The ID of a file associated with a stream.</p>
+    pub fn get_file_id(&self) -> &::std::option::Option<i32> {
+        &self.file_id
     }
     /// Consumes the builder and constructs a [`Stream`](crate::types::Stream).
     pub fn build(self) -> crate::types::Stream {
         crate::types::Stream {
-            stream_id: self.stream_id,
-            file_id: self.file_id,
+            stream_id: self.stream_id
+            ,
+            file_id: self.file_id
+            ,
         }
     }
 }
+

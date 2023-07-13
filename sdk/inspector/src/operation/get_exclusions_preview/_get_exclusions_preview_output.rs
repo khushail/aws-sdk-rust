@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExclusionsPreviewOutput {
+pub struct GetExclusionsPreviewOutput  {
     /// <p>Specifies the status of the request to generate an exclusions preview.</p>
     #[doc(hidden)]
     pub preview_status: ::std::option::Option<crate::types::PreviewStatus>,
@@ -16,40 +16,36 @@ pub struct GetExclusionsPreviewOutput {
 }
 impl GetExclusionsPreviewOutput {
     /// <p>Specifies the status of the request to generate an exclusions preview.</p>
-    pub fn preview_status(&self) -> ::std::option::Option<&crate::types::PreviewStatus> {
+    pub fn preview_status(&self) -> ::std::option::Option<& crate::types::PreviewStatus> {
         self.preview_status.as_ref()
     }
     /// <p>Information about the exclusions included in the preview.</p>
-    pub fn exclusion_previews(&self) -> ::std::option::Option<&[crate::types::ExclusionPreview]> {
+    pub fn exclusion_previews(&self) -> ::std::option::Option<& [crate::types::ExclusionPreview]> {
         self.exclusion_previews.as_deref()
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetExclusionsPreviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetExclusionsPreviewOutput {
     /// Creates a new builder-style object to manufacture [`GetExclusionsPreviewOutput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput).
-    pub fn builder(
-    ) -> crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewOutputBuilder {
+    pub fn builder() -> crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewOutputBuilder {
         crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetExclusionsPreviewOutput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExclusionsPreviewOutputBuilder {
     pub(crate) preview_status: ::std::option::Option<crate::types::PreviewStatus>,
-    pub(crate) exclusion_previews:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExclusionPreview>>,
+    pub(crate) exclusion_previews: ::std::option::Option<::std::vec::Vec<crate::types::ExclusionPreview>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,12 +56,12 @@ impl GetExclusionsPreviewOutputBuilder {
         self
     }
     /// <p>Specifies the status of the request to generate an exclusions preview.</p>
-    pub fn set_preview_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PreviewStatus>,
-    ) -> Self {
-        self.preview_status = input;
-        self
+    pub fn set_preview_status(mut self, input: ::std::option::Option<crate::types::PreviewStatus>) -> Self {
+        self.preview_status = input; self
+    }
+    /// <p>Specifies the status of the request to generate an exclusions preview.</p>
+    pub fn get_preview_status(&self) -> &::std::option::Option<crate::types::PreviewStatus> {
+        &self.preview_status
     }
     /// Appends an item to `exclusion_previews`.
     ///
@@ -74,17 +70,17 @@ impl GetExclusionsPreviewOutputBuilder {
     /// <p>Information about the exclusions included in the preview.</p>
     pub fn exclusion_previews(mut self, input: crate::types::ExclusionPreview) -> Self {
         let mut v = self.exclusion_previews.unwrap_or_default();
-        v.push(input);
-        self.exclusion_previews = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.exclusion_previews = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the exclusions included in the preview.</p>
-    pub fn set_exclusion_previews(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExclusionPreview>>,
-    ) -> Self {
-        self.exclusion_previews = input;
-        self
+    pub fn set_exclusion_previews(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExclusionPreview>>) -> Self {
+        self.exclusion_previews = input; self
+    }
+    /// <p>Information about the exclusions included in the preview.</p>
+    pub fn get_exclusion_previews(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExclusionPreview>> {
+        &self.exclusion_previews
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,25 +89,32 @@ impl GetExclusionsPreviewOutputBuilder {
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetExclusionsPreviewOutput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput).
     pub fn build(self) -> crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput {
         crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput {
-            preview_status: self.preview_status,
-            exclusion_previews: self.exclusion_previews,
-            next_token: self.next_token,
+            preview_status: self.preview_status
+            ,
+            exclusion_previews: self.exclusion_previews
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

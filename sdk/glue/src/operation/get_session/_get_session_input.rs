@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSessionInput {
+pub struct GetSessionInput  {
     /// <p>The ID of the session. </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetSessionInput {
 }
 impl GetSessionInput {
     /// <p>The ID of the session. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The origin of the request. </p>
-    pub fn request_origin(&self) -> ::std::option::Option<&str> {
+    pub fn request_origin(&self) -> ::std::option::Option<& str> {
         self.request_origin.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl GetSessionInput {
 
 /// A builder for [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) request_origin: ::std::option::Option<::std::string::String>,
@@ -44,35 +42,35 @@ impl GetSessionInputBuilder {
     }
     /// <p>The ID of the session. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the session. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The origin of the request. </p>
-    pub fn request_origin(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origin of the request. </p>
-    pub fn set_request_origin(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.request_origin = input;
-        self
+    pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_origin = input; self
+    }
+    /// <p>The origin of the request. </p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_origin
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_session::GetSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_session::GetSessionInput {
-            id: self.id,
-            request_origin: self.request_origin,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_session::GetSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_session::GetSessionInput {
+                id: self.id
+                ,
+                request_origin: self.request_origin
+                ,
+            }
+        )
     }
 }
+

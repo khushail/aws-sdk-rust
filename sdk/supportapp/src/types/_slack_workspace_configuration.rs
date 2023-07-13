@@ -3,7 +3,7 @@
 /// <p>The configuration for a Slack workspace that you added to an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlackWorkspaceConfiguration {
+pub struct SlackWorkspaceConfiguration  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct SlackWorkspaceConfiguration {
 }
 impl SlackWorkspaceConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<& str> {
         self.team_id.as_deref()
     }
     /// <p>The name of the Slack workspace.</p>
-    pub fn team_name(&self) -> ::std::option::Option<&str> {
+    pub fn team_name(&self) -> ::std::option::Option<& str> {
         self.team_name.as_deref()
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
@@ -37,9 +37,7 @@ impl SlackWorkspaceConfiguration {
 
 /// A builder for [`SlackWorkspaceConfiguration`](crate::types::SlackWorkspaceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlackWorkspaceConfigurationBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) team_name: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl SlackWorkspaceConfigurationBuilder {
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
+    }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
     }
     /// <p>The name of the Slack workspace.</p>
     pub fn team_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl SlackWorkspaceConfigurationBuilder {
     }
     /// <p>The name of the Slack workspace.</p>
     pub fn set_team_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_name = input;
-        self
+        self.team_name = input; self
+    }
+    /// <p>The name of the Slack workspace.</p>
+    pub fn get_team_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_name
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
     pub fn allow_organization_member_account(mut self, input: bool) -> Self {
@@ -72,19 +76,23 @@ impl SlackWorkspaceConfigurationBuilder {
         self
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
-    pub fn set_allow_organization_member_account(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.allow_organization_member_account = input;
-        self
+    pub fn set_allow_organization_member_account(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_organization_member_account = input; self
+    }
+    /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
+    pub fn get_allow_organization_member_account(&self) -> &::std::option::Option<bool> {
+        &self.allow_organization_member_account
     }
     /// Consumes the builder and constructs a [`SlackWorkspaceConfiguration`](crate::types::SlackWorkspaceConfiguration).
     pub fn build(self) -> crate::types::SlackWorkspaceConfiguration {
         crate::types::SlackWorkspaceConfiguration {
-            team_id: self.team_id,
-            team_name: self.team_name,
-            allow_organization_member_account: self.allow_organization_member_account,
+            team_id: self.team_id
+            ,
+            team_name: self.team_name
+            ,
+            allow_organization_member_account: self.allow_organization_member_account
+            ,
         }
     }
 }
+

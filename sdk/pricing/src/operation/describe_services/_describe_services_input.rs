@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServicesInput {
+pub struct DescribeServicesInput  {
     /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
     #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
-    /// <p>The format version that you want the response to be in.</p>
+    /// <p>The format version that you want the response to be in.</p> 
     /// <p>Valid values are: <code>aws_v1</code> </p>
     #[doc(hidden)]
     pub format_version: ::std::option::Option<::std::string::String>,
@@ -19,16 +19,16 @@ pub struct DescribeServicesInput {
 }
 impl DescribeServicesInput {
     /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
-    /// <p>The format version that you want the response to be in.</p>
+    /// <p>The format version that you want the response to be in.</p> 
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn format_version(&self) -> ::std::option::Option<&str> {
+    pub fn format_version(&self) -> ::std::option::Option<& str> {
         self.format_version.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that you want returned in the response.</p>
@@ -38,17 +38,14 @@ impl DescribeServicesInput {
 }
 impl DescribeServicesInput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
-    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesInputBuilder {
         crate::operation::describe_services::builders::DescribeServicesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServicesInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) format_version: ::std::option::Option<::std::string::String>,
@@ -63,26 +60,27 @@ impl DescribeServicesInputBuilder {
     }
     /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
-    /// <p>The format version that you want the response to be in.</p>
+    /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
+    /// <p>The format version that you want the response to be in.</p> 
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn format_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The format version that you want the response to be in.</p>
+    /// <p>The format version that you want the response to be in.</p> 
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn set_format_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.format_version = input;
-        self
+    pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.format_version = input; self
+    }
+    /// <p>The format version that you want the response to be in.</p> 
+    /// <p>Valid values are: <code>aws_v1</code> </p>
+    pub fn get_format_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format_version
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,8 +89,11 @@ impl DescribeServicesInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results that you want returned in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -101,21 +102,26 @@ impl DescribeServicesInputBuilder {
     }
     /// <p>The maximum number of results that you want returned in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results that you want returned in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_services::DescribeServicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_services::DescribeServicesInput {
-            service_code: self.service_code,
-            format_version: self.format_version,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_services::DescribeServicesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_services::DescribeServicesInput {
+                service_code: self.service_code
+                ,
+                format_version: self.format_version
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

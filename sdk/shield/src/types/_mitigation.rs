@@ -3,14 +3,14 @@
 /// <p>The mitigation applied to a DDoS attack.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Mitigation {
+pub struct Mitigation  {
     /// <p>The name of the mitigation taken for this attack.</p>
     #[doc(hidden)]
     pub mitigation_name: ::std::option::Option<::std::string::String>,
 }
 impl Mitigation {
     /// <p>The name of the mitigation taken for this attack.</p>
-    pub fn mitigation_name(&self) -> ::std::option::Option<&str> {
+    pub fn mitigation_name(&self) -> ::std::option::Option<& str> {
         self.mitigation_name.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl Mitigation {
 
 /// A builder for [`Mitigation`](crate::types::Mitigation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MitigationBuilder {
     pub(crate) mitigation_name: ::std::option::Option<::std::string::String>,
 }
 impl MitigationBuilder {
     /// <p>The name of the mitigation taken for this attack.</p>
-    pub fn mitigation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mitigation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mitigation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the mitigation taken for this attack.</p>
-    pub fn set_mitigation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.mitigation_name = input;
-        self
+    pub fn set_mitigation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mitigation_name = input; self
+    }
+    /// <p>The name of the mitigation taken for this attack.</p>
+    pub fn get_mitigation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mitigation_name
     }
     /// Consumes the builder and constructs a [`Mitigation`](crate::types::Mitigation).
     pub fn build(self) -> crate::types::Mitigation {
         crate::types::Mitigation {
-            mitigation_name: self.mitigation_name,
+            mitigation_name: self.mitigation_name
+            ,
         }
     }
 }
+

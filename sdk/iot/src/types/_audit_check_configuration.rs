@@ -3,7 +3,7 @@
 /// <p>Which audit checks are enabled and disabled for this account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditCheckConfiguration {
+pub struct AuditCheckConfiguration  {
     /// <p>True if this audit check is enabled for this account.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -23,9 +23,7 @@ impl AuditCheckConfiguration {
 
 /// A builder for [`AuditCheckConfiguration`](crate::types::AuditCheckConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditCheckConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -37,13 +35,19 @@ impl AuditCheckConfigurationBuilder {
     }
     /// <p>True if this audit check is enabled for this account.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>True if this audit check is enabled for this account.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`AuditCheckConfiguration`](crate::types::AuditCheckConfiguration).
     pub fn build(self) -> crate::types::AuditCheckConfiguration {
         crate::types::AuditCheckConfiguration {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

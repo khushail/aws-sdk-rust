@@ -3,14 +3,13 @@
 /// <p>Defines a streaming channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamChannelDefinition {
+pub struct StreamChannelDefinition  {
     /// <p>The number of channels in a streaming channel.</p>
     #[doc(hidden)]
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>The definitions of the channels in a streaming channel.</p>
     #[doc(hidden)]
-    pub channel_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl StreamChannelDefinition {
     /// <p>The number of channels in a streaming channel.</p>
@@ -18,7 +17,7 @@ impl StreamChannelDefinition {
         self.number_of_channels
     }
     /// <p>The definitions of the channels in a streaming channel.</p>
-    pub fn channel_definitions(&self) -> ::std::option::Option<&[crate::types::ChannelDefinition]> {
+    pub fn channel_definitions(&self) -> ::std::option::Option<& [crate::types::ChannelDefinition]> {
         self.channel_definitions.as_deref()
     }
 }
@@ -31,13 +30,10 @@ impl StreamChannelDefinition {
 
 /// A builder for [`StreamChannelDefinition`](crate::types::StreamChannelDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamChannelDefinitionBuilder {
     pub(crate) number_of_channels: ::std::option::Option<i32>,
-    pub(crate) channel_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl StreamChannelDefinitionBuilder {
     /// <p>The number of channels in a streaming channel.</p>
@@ -47,8 +43,11 @@ impl StreamChannelDefinitionBuilder {
     }
     /// <p>The number of channels in a streaming channel.</p>
     pub fn set_number_of_channels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_channels = input;
-        self
+        self.number_of_channels = input; self
+    }
+    /// <p>The number of channels in a streaming channel.</p>
+    pub fn get_number_of_channels(&self) -> &::std::option::Option<i32> {
+        &self.number_of_channels
     }
     /// Appends an item to `channel_definitions`.
     ///
@@ -57,23 +56,26 @@ impl StreamChannelDefinitionBuilder {
     /// <p>The definitions of the channels in a streaming channel.</p>
     pub fn channel_definitions(mut self, input: crate::types::ChannelDefinition) -> Self {
         let mut v = self.channel_definitions.unwrap_or_default();
-        v.push(input);
-        self.channel_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channel_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The definitions of the channels in a streaming channel.</p>
-    pub fn set_channel_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
-    ) -> Self {
-        self.channel_definitions = input;
-        self
+    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>) -> Self {
+        self.channel_definitions = input; self
+    }
+    /// <p>The definitions of the channels in a streaming channel.</p>
+    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+        &self.channel_definitions
     }
     /// Consumes the builder and constructs a [`StreamChannelDefinition`](crate::types::StreamChannelDefinition).
     pub fn build(self) -> crate::types::StreamChannelDefinition {
         crate::types::StreamChannelDefinition {
-            number_of_channels: self.number_of_channels,
-            channel_definitions: self.channel_definitions,
+            number_of_channels: self.number_of_channels
+            ,
+            channel_definitions: self.channel_definitions
+            ,
         }
     }
 }
+

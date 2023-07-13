@@ -3,7 +3,7 @@
 /// <p>The resource utilization for memory, storage, and vCPU for jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceUtilization {
+pub struct ResourceUtilization  {
     /// <p>The aggregated vCPU used per hour from the time the job starts executing until the job is terminated.</p>
     #[doc(hidden)]
     pub v_cpu_hour: ::std::option::Option<f64>,
@@ -37,9 +37,7 @@ impl ResourceUtilization {
 
 /// A builder for [`ResourceUtilization`](crate::types::ResourceUtilization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceUtilizationBuilder {
     pub(crate) v_cpu_hour: ::std::option::Option<f64>,
     pub(crate) memory_gb_hour: ::std::option::Option<f64>,
@@ -53,8 +51,11 @@ impl ResourceUtilizationBuilder {
     }
     /// <p>The aggregated vCPU used per hour from the time the job starts executing until the job is terminated.</p>
     pub fn set_v_cpu_hour(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.v_cpu_hour = input;
-        self
+        self.v_cpu_hour = input; self
+    }
+    /// <p>The aggregated vCPU used per hour from the time the job starts executing until the job is terminated.</p>
+    pub fn get_v_cpu_hour(&self) -> &::std::option::Option<f64> {
+        &self.v_cpu_hour
     }
     /// <p>The aggregated memory used per hour from the time the job starts executing until the job is terminated.</p>
     pub fn memory_gb_hour(mut self, input: f64) -> Self {
@@ -63,8 +64,11 @@ impl ResourceUtilizationBuilder {
     }
     /// <p>The aggregated memory used per hour from the time the job starts executing until the job is terminated.</p>
     pub fn set_memory_gb_hour(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.memory_gb_hour = input;
-        self
+        self.memory_gb_hour = input; self
+    }
+    /// <p>The aggregated memory used per hour from the time the job starts executing until the job is terminated.</p>
+    pub fn get_memory_gb_hour(&self) -> &::std::option::Option<f64> {
+        &self.memory_gb_hour
     }
     /// <p>The aggregated storage used per hour from the time the job starts executing until the job is terminated.</p>
     pub fn storage_gb_hour(mut self, input: f64) -> Self {
@@ -73,15 +77,22 @@ impl ResourceUtilizationBuilder {
     }
     /// <p>The aggregated storage used per hour from the time the job starts executing until the job is terminated.</p>
     pub fn set_storage_gb_hour(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.storage_gb_hour = input;
-        self
+        self.storage_gb_hour = input; self
+    }
+    /// <p>The aggregated storage used per hour from the time the job starts executing until the job is terminated.</p>
+    pub fn get_storage_gb_hour(&self) -> &::std::option::Option<f64> {
+        &self.storage_gb_hour
     }
     /// Consumes the builder and constructs a [`ResourceUtilization`](crate::types::ResourceUtilization).
     pub fn build(self) -> crate::types::ResourceUtilization {
         crate::types::ResourceUtilization {
-            v_cpu_hour: self.v_cpu_hour,
-            memory_gb_hour: self.memory_gb_hour,
-            storage_gb_hour: self.storage_gb_hour,
+            v_cpu_hour: self.v_cpu_hour
+            ,
+            memory_gb_hour: self.memory_gb_hour
+            ,
+            storage_gb_hour: self.storage_gb_hour
+            ,
         }
     }
 }
+

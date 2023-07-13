@@ -3,14 +3,14 @@
 /// <p>Updates to the monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ZeppelinMonitoringConfigurationUpdate {
+pub struct ZeppelinMonitoringConfigurationUpdate  {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
     pub log_level_update: ::std::option::Option<crate::types::LogLevel>,
 }
 impl ZeppelinMonitoringConfigurationUpdate {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
-    pub fn log_level_update(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level_update(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level_update.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ZeppelinMonitoringConfigurationUpdate {
 
 /// A builder for [`ZeppelinMonitoringConfigurationUpdate`](crate::types::ZeppelinMonitoringConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfigurationUpdateBuilder {
     pub(crate) log_level_update: ::std::option::Option<crate::types::LogLevel>,
 }
@@ -36,17 +34,19 @@ impl ZeppelinMonitoringConfigurationUpdateBuilder {
         self
     }
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
-    pub fn set_log_level_update(
-        mut self,
-        input: ::std::option::Option<crate::types::LogLevel>,
-    ) -> Self {
-        self.log_level_update = input;
-        self
+    pub fn set_log_level_update(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
+        self.log_level_update = input; self
+    }
+    /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
+    pub fn get_log_level_update(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level_update
     }
     /// Consumes the builder and constructs a [`ZeppelinMonitoringConfigurationUpdate`](crate::types::ZeppelinMonitoringConfigurationUpdate).
     pub fn build(self) -> crate::types::ZeppelinMonitoringConfigurationUpdate {
         crate::types::ZeppelinMonitoringConfigurationUpdate {
-            log_level_update: self.log_level_update,
+            log_level_update: self.log_level_update
+            ,
         }
     }
 }
+

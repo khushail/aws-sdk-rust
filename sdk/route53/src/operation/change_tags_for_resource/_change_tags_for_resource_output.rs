@@ -3,41 +3,37 @@
 /// <p>Empty response for the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangeTagsForResourceOutput {
+pub struct ChangeTagsForResourceOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for ChangeTagsForResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ChangeTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ChangeTagsForResourceOutput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceOutputBuilder {
         crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ChangeTagsForResourceOutput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeTagsForResourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl ChangeTagsForResourceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ChangeTagsForResourceOutput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput).
     pub fn build(self) -> crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput {
         crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput {
@@ -45,3 +41,4 @@ impl ChangeTagsForResourceOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Nested block contained within a block.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChildBlock {
+pub struct ChildBlock  {
     /// <p>Unique identifier for the child block.</p>
     #[doc(hidden)]
     pub child_block_id: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct ChildBlock {
 }
 impl ChildBlock {
     /// <p>Unique identifier for the child block.</p>
-    pub fn child_block_id(&self) -> ::std::option::Option<&str> {
+    pub fn child_block_id(&self) -> ::std::option::Option<& str> {
         self.child_block_id.as_deref()
     }
     /// <p>Offset of the start of the child block within its parent block.</p>
@@ -37,9 +37,7 @@ impl ChildBlock {
 
 /// A builder for [`ChildBlock`](crate::types::ChildBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChildBlockBuilder {
     pub(crate) child_block_id: ::std::option::Option<::std::string::String>,
     pub(crate) begin_offset: ::std::option::Option<i32>,
@@ -47,20 +45,17 @@ pub struct ChildBlockBuilder {
 }
 impl ChildBlockBuilder {
     /// <p>Unique identifier for the child block.</p>
-    pub fn child_block_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_block_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_block_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for the child block.</p>
-    pub fn set_child_block_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.child_block_id = input;
-        self
+    pub fn set_child_block_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.child_block_id = input; self
+    }
+    /// <p>Unique identifier for the child block.</p>
+    pub fn get_child_block_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.child_block_id
     }
     /// <p>Offset of the start of the child block within its parent block.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -69,8 +64,11 @@ impl ChildBlockBuilder {
     }
     /// <p>Offset of the start of the child block within its parent block.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
+    }
+    /// <p>Offset of the start of the child block within its parent block.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
     }
     /// <p>Offset of the end of the child block within its parent block.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
@@ -79,15 +77,22 @@ impl ChildBlockBuilder {
     }
     /// <p>Offset of the end of the child block within its parent block.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
+    }
+    /// <p>Offset of the end of the child block within its parent block.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// Consumes the builder and constructs a [`ChildBlock`](crate::types::ChildBlock).
     pub fn build(self) -> crate::types::ChildBlock {
         crate::types::ChildBlock {
-            child_block_id: self.child_block_id,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
+            child_block_id: self.child_block_id
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the permissions for a connection alias. Connection aliases are used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionAliasPermission {
+pub struct ConnectionAliasPermission  {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
     #[doc(hidden)]
     pub shared_account_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ConnectionAliasPermission {
 }
 impl ConnectionAliasPermission {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
-    pub fn shared_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn shared_account_id(&self) -> ::std::option::Option<& str> {
         self.shared_account_id.as_deref()
     }
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
@@ -30,29 +30,24 @@ impl ConnectionAliasPermission {
 
 /// A builder for [`ConnectionAliasPermission`](crate::types::ConnectionAliasPermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionAliasPermissionBuilder {
     pub(crate) shared_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) allow_association: ::std::option::Option<bool>,
 }
 impl ConnectionAliasPermissionBuilder {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
-    pub fn shared_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
-    pub fn set_shared_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.shared_account_id = input;
-        self
+    pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.shared_account_id = input; self
+    }
+    /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_account_id
     }
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub fn allow_association(mut self, input: bool) -> Self {
@@ -61,14 +56,20 @@ impl ConnectionAliasPermissionBuilder {
     }
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub fn set_allow_association(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_association = input;
-        self
+        self.allow_association = input; self
+    }
+    /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
+    pub fn get_allow_association(&self) -> &::std::option::Option<bool> {
+        &self.allow_association
     }
     /// Consumes the builder and constructs a [`ConnectionAliasPermission`](crate::types::ConnectionAliasPermission).
     pub fn build(self) -> crate::types::ConnectionAliasPermission {
         crate::types::ConnectionAliasPermission {
-            shared_account_id: self.shared_account_id,
-            allow_association: self.allow_association,
+            shared_account_id: self.shared_account_id
+            ,
+            allow_association: self.allow_association
+            ,
         }
     }
 }
+

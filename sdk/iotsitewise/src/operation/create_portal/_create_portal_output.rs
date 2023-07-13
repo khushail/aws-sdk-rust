@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePortalOutput {
+pub struct CreatePortalOutput  {
     /// <p>The ID of the created portal.</p>
     #[doc(hidden)]
     pub portal_id: ::std::option::Option<::std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
@@ -23,32 +23,32 @@ pub struct CreatePortalOutput {
 }
 impl CreatePortalOutput {
     /// <p>The ID of the created portal.</p>
-    pub fn portal_id(&self) -> ::std::option::Option<&str> {
+    pub fn portal_id(&self) -> ::std::option::Option<& str> {
         self.portal_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn portal_start_url(&self) -> ::std::option::Option<&str> {
+    pub fn portal_start_url(&self) -> ::std::option::Option<& str> {
         self.portal_start_url.as_deref()
     }
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn portal_status(&self) -> ::std::option::Option<&crate::types::PortalStatus> {
+    pub fn portal_status(&self) -> ::std::option::Option<& crate::types::PortalStatus> {
         self.portal_status.as_ref()
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
-    pub fn sso_application_id(&self) -> ::std::option::Option<&str> {
+    pub fn sso_application_id(&self) -> ::std::option::Option<& str> {
         self.sso_application_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreatePortalOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreatePortalOutput {
     /// Creates a new builder-style object to manufacture [`CreatePortalOutput`](crate::operation::create_portal::CreatePortalOutput).
     pub fn builder() -> crate::operation::create_portal::builders::CreatePortalOutputBuilder {
@@ -58,9 +58,7 @@ impl CreatePortalOutput {
 
 /// A builder for [`CreatePortalOutput`](crate::operation::create_portal::CreatePortalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePortalOutputBuilder {
     pub(crate) portal_id: ::std::option::Option<::std::string::String>,
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
@@ -77,36 +75,40 @@ impl CreatePortalOutputBuilder {
     }
     /// <p>The ID of the created portal.</p>
     pub fn set_portal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_id = input;
-        self
+        self.portal_id = input; self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p>The ID of the created portal.</p>
+    pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_id
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn portal_start_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portal_start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_start_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn set_portal_start_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.portal_start_url = input;
-        self
+    pub fn set_portal_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.portal_start_url = input; self
+    }
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    pub fn get_portal_start_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_start_url
     }
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn portal_status(mut self, input: crate::types::PortalStatus) -> Self {
@@ -114,47 +116,50 @@ impl CreatePortalOutputBuilder {
         self
     }
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn set_portal_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PortalStatus>,
-    ) -> Self {
-        self.portal_status = input;
-        self
+    pub fn set_portal_status(mut self, input: ::std::option::Option<crate::types::PortalStatus>) -> Self {
+        self.portal_status = input; self
+    }
+    /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
+    pub fn get_portal_status(&self) -> &::std::option::Option<crate::types::PortalStatus> {
+        &self.portal_status
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
-    pub fn sso_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sso_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sso_application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
-    pub fn set_sso_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sso_application_id = input;
-        self
+    pub fn set_sso_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sso_application_id = input; self
+    }
+    /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
+    pub fn get_sso_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sso_application_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreatePortalOutput`](crate::operation::create_portal::CreatePortalOutput).
     pub fn build(self) -> crate::operation::create_portal::CreatePortalOutput {
         crate::operation::create_portal::CreatePortalOutput {
-            portal_id: self.portal_id,
-            portal_arn: self.portal_arn,
-            portal_start_url: self.portal_start_url,
-            portal_status: self.portal_status,
-            sso_application_id: self.sso_application_id,
+            portal_id: self.portal_id
+            ,
+            portal_arn: self.portal_arn
+            ,
+            portal_start_url: self.portal_start_url
+            ,
+            portal_status: self.portal_status
+            ,
+            sso_application_id: self.sso_application_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

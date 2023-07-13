@@ -3,14 +3,14 @@
 /// <p>The code execution output in JSON format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatementOutputData {
+pub struct StatementOutputData  {
     /// <p>The code execution output in text format.</p>
     #[doc(hidden)]
     pub text_plain: ::std::option::Option<::std::string::String>,
 }
 impl StatementOutputData {
     /// <p>The code execution output in text format.</p>
-    pub fn text_plain(&self) -> ::std::option::Option<&str> {
+    pub fn text_plain(&self) -> ::std::option::Option<& str> {
         self.text_plain.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl StatementOutputData {
 
 /// A builder for [`StatementOutputData`](crate::types::StatementOutputData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatementOutputDataBuilder {
     pub(crate) text_plain: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl StatementOutputDataBuilder {
     }
     /// <p>The code execution output in text format.</p>
     pub fn set_text_plain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_plain = input;
-        self
+        self.text_plain = input; self
+    }
+    /// <p>The code execution output in text format.</p>
+    pub fn get_text_plain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_plain
     }
     /// Consumes the builder and constructs a [`StatementOutputData`](crate::types::StatementOutputData).
     pub fn build(self) -> crate::types::StatementOutputData {
         crate::types::StatementOutputData {
-            text_plain: self.text_plain,
+            text_plain: self.text_plain
+            ,
         }
     }
 }
+

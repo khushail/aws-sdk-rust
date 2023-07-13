@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLagsInput {
+pub struct DescribeLagsInput  {
     /// <p>The ID of the LAG.</p>
     #[doc(hidden)]
     pub lag_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLagsInput {
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> ::std::option::Option<&str> {
+    pub fn lag_id(&self) -> ::std::option::Option<& str> {
         self.lag_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeLagsInput {
 
 /// A builder for [`DescribeLagsInput`](crate::operation::describe_lags::DescribeLagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLagsInputBuilder {
     pub(crate) lag_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeLagsInputBuilder {
     }
     /// <p>The ID of the LAG.</p>
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lag_id = input;
-        self
+        self.lag_id = input; self
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_id
     }
     /// Consumes the builder and constructs a [`DescribeLagsInput`](crate::operation::describe_lags::DescribeLagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_lags::DescribeLagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_lags::DescribeLagsInput {
-            lag_id: self.lag_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_lags::DescribeLagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_lags::DescribeLagsInput {
+                lag_id: self.lag_id
+                ,
+            }
+        )
     }
 }
+

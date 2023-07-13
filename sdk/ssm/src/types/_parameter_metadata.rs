@@ -3,7 +3,7 @@
 /// <p>Metadata includes information like the ARN of the last user and the date/time the parameter was last used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterMetadata {
+pub struct ParameterMetadata  {
     /// <p>The parameter name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct ParameterMetadata {
     /// <p>Description of the parameter actions.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A parameter name can include only the following letters and symbols.</p>
+    /// <p>A parameter name can include only the following letters and symbols.</p> 
     /// <p>a-zA-Z0-9_.-</p>
     #[doc(hidden)]
     pub allowed_pattern: ::std::option::Option<::std::string::String>,
@@ -41,32 +41,32 @@ pub struct ParameterMetadata {
 }
 impl ParameterMetadata {
     /// <p>The parameter name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ParameterType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ParameterType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of the query key used for this parameter.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>Date the parameter was last changed or updated.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    pub fn last_modified_user(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_user(&self) -> ::std::option::Option<& str> {
         self.last_modified_user.as_deref()
     }
     /// <p>Description of the parameter actions.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>A parameter name can include only the following letters and symbols.</p>
+    /// <p>A parameter name can include only the following letters and symbols.</p> 
     /// <p>a-zA-Z0-9_.-</p>
-    pub fn allowed_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn allowed_pattern(&self) -> ::std::option::Option<& str> {
         self.allowed_pattern.as_deref()
     }
     /// <p>The parameter version.</p>
@@ -74,15 +74,15 @@ impl ParameterMetadata {
         self.version
     }
     /// <p>The parameter tier.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::ParameterTier> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::ParameterTier> {
         self.tier.as_ref()
     }
     /// <p>A list of policies associated with a parameter.</p>
-    pub fn policies(&self) -> ::std::option::Option<&[crate::types::ParameterInlinePolicy]> {
+    pub fn policies(&self) -> ::std::option::Option<& [crate::types::ParameterInlinePolicy]> {
         self.policies.as_deref()
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&str> {
+    pub fn data_type(&self) -> ::std::option::Option<& str> {
         self.data_type.as_deref()
     }
 }
@@ -95,9 +95,7 @@ impl ParameterMetadata {
 
 /// A builder for [`ParameterMetadata`](crate::types::ParameterMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ParameterType>,
@@ -108,8 +106,7 @@ pub struct ParameterMetadataBuilder {
     pub(crate) allowed_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) tier: ::std::option::Option<crate::types::ParameterTier>,
-    pub(crate) policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
     pub(crate) data_type: ::std::option::Option<::std::string::String>,
 }
 impl ParameterMetadataBuilder {
@@ -120,8 +117,11 @@ impl ParameterMetadataBuilder {
     }
     /// <p>The parameter name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The parameter name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
@@ -130,8 +130,11 @@ impl ParameterMetadataBuilder {
     }
     /// <p>The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ParameterType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
+        &self.r#type
     }
     /// <p>The ID of the query key used for this parameter.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,8 +143,11 @@ impl ParameterMetadataBuilder {
     }
     /// <p>The ID of the query key used for this parameter.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
+    }
+    /// <p>The ID of the query key used for this parameter.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>Date the parameter was last changed or updated.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -149,28 +155,25 @@ impl ParameterMetadataBuilder {
         self
     }
     /// <p>Date the parameter was last changed or updated.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_date = input; self
+    }
+    /// <p>Date the parameter was last changed or updated.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    pub fn last_modified_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    pub fn set_last_modified_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_modified_user = input;
-        self
+    pub fn set_last_modified_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_user = input; self
+    }
+    /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
+    pub fn get_last_modified_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_user
     }
     /// <p>Description of the parameter actions.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,26 +182,27 @@ impl ParameterMetadataBuilder {
     }
     /// <p>Description of the parameter actions.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// <p>A parameter name can include only the following letters and symbols.</p>
+    /// <p>Description of the parameter actions.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>A parameter name can include only the following letters and symbols.</p> 
     /// <p>a-zA-Z0-9_.-</p>
-    pub fn allowed_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_pattern = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A parameter name can include only the following letters and symbols.</p>
+    /// <p>A parameter name can include only the following letters and symbols.</p> 
     /// <p>a-zA-Z0-9_.-</p>
-    pub fn set_allowed_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.allowed_pattern = input;
-        self
+    pub fn set_allowed_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.allowed_pattern = input; self
+    }
+    /// <p>A parameter name can include only the following letters and symbols.</p> 
+    /// <p>a-zA-Z0-9_.-</p>
+    pub fn get_allowed_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_pattern
     }
     /// <p>The parameter version.</p>
     pub fn version(mut self, input: i64) -> Self {
@@ -207,8 +211,11 @@ impl ParameterMetadataBuilder {
     }
     /// <p>The parameter version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The parameter version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// <p>The parameter tier.</p>
     pub fn tier(mut self, input: crate::types::ParameterTier) -> Self {
@@ -217,8 +224,11 @@ impl ParameterMetadataBuilder {
     }
     /// <p>The parameter tier.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::ParameterTier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
+    }
+    /// <p>The parameter tier.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::ParameterTier> {
+        &self.tier
     }
     /// Appends an item to `policies`.
     ///
@@ -227,17 +237,17 @@ impl ParameterMetadataBuilder {
     /// <p>A list of policies associated with a parameter.</p>
     pub fn policies(mut self, input: crate::types::ParameterInlinePolicy) -> Self {
         let mut v = self.policies.unwrap_or_default();
-        v.push(input);
-        self.policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of policies associated with a parameter.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
-    ) -> Self {
-        self.policies = input;
-        self
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>) -> Self {
+        self.policies = input; self
+    }
+    /// <p>A list of policies associated with a parameter.</p>
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>> {
+        &self.policies
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -246,23 +256,39 @@ impl ParameterMetadataBuilder {
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
+    }
+    /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// Consumes the builder and constructs a [`ParameterMetadata`](crate::types::ParameterMetadata).
     pub fn build(self) -> crate::types::ParameterMetadata {
         crate::types::ParameterMetadata {
-            name: self.name,
-            r#type: self.r#type,
-            key_id: self.key_id,
-            last_modified_date: self.last_modified_date,
-            last_modified_user: self.last_modified_user,
-            description: self.description,
-            allowed_pattern: self.allowed_pattern,
-            version: self.version.unwrap_or_default(),
-            tier: self.tier,
-            policies: self.policies,
-            data_type: self.data_type,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            key_id: self.key_id
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            last_modified_user: self.last_modified_user
+            ,
+            description: self.description
+            ,
+            allowed_pattern: self.allowed_pattern
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
+            tier: self.tier
+            ,
+            policies: self.policies
+            ,
+            data_type: self.data_type
+            ,
         }
     }
 }
+

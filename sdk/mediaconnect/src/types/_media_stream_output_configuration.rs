@@ -3,11 +3,10 @@
 /// The media stream that is associated with the output, and the parameters for that association.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaStreamOutputConfiguration {
+pub struct MediaStreamOutputConfiguration  {
     /// The transport parameters that are associated with each outbound media stream.
     #[doc(hidden)]
-    pub destination_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>,
+    pub destination_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>,
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
     #[doc(hidden)]
     pub encoding_name: ::std::option::Option<crate::types::EncodingName>,
@@ -20,21 +19,19 @@ pub struct MediaStreamOutputConfiguration {
 }
 impl MediaStreamOutputConfiguration {
     /// The transport parameters that are associated with each outbound media stream.
-    pub fn destination_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DestinationConfiguration]> {
+    pub fn destination_configurations(&self) -> ::std::option::Option<& [crate::types::DestinationConfiguration]> {
         self.destination_configurations.as_deref()
     }
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-    pub fn encoding_name(&self) -> ::std::option::Option<&crate::types::EncodingName> {
+    pub fn encoding_name(&self) -> ::std::option::Option<& crate::types::EncodingName> {
         self.encoding_name.as_ref()
     }
     /// Encoding parameters
-    pub fn encoding_parameters(&self) -> ::std::option::Option<&crate::types::EncodingParameters> {
+    pub fn encoding_parameters(&self) -> ::std::option::Option<& crate::types::EncodingParameters> {
         self.encoding_parameters.as_ref()
     }
     /// The name of the media stream.
-    pub fn media_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn media_stream_name(&self) -> ::std::option::Option<& str> {
         self.media_stream_name.as_deref()
     }
 }
@@ -47,12 +44,9 @@ impl MediaStreamOutputConfiguration {
 
 /// A builder for [`MediaStreamOutputConfiguration`](crate::types::MediaStreamOutputConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaStreamOutputConfigurationBuilder {
-    pub(crate) destination_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>,
+    pub(crate) destination_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>,
     pub(crate) encoding_name: ::std::option::Option<crate::types::EncodingName>,
     pub(crate) encoding_parameters: ::std::option::Option<crate::types::EncodingParameters>,
     pub(crate) media_stream_name: ::std::option::Option<::std::string::String>,
@@ -63,22 +57,19 @@ impl MediaStreamOutputConfigurationBuilder {
     /// To override the contents of this collection use [`set_destination_configurations`](Self::set_destination_configurations).
     ///
     /// The transport parameters that are associated with each outbound media stream.
-    pub fn destination_configurations(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configurations(mut self, input: crate::types::DestinationConfiguration) -> Self {
         let mut v = self.destination_configurations.unwrap_or_default();
-        v.push(input);
-        self.destination_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destination_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// The transport parameters that are associated with each outbound media stream.
-    pub fn set_destination_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>,
-    ) -> Self {
-        self.destination_configurations = input;
-        self
+    pub fn set_destination_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>) -> Self {
+        self.destination_configurations = input; self
+    }
+    /// The transport parameters that are associated with each outbound media stream.
+    pub fn get_destination_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>> {
+        &self.destination_configurations
     }
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
     pub fn encoding_name(mut self, input: crate::types::EncodingName) -> Self {
@@ -86,12 +77,12 @@ impl MediaStreamOutputConfigurationBuilder {
         self
     }
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-    pub fn set_encoding_name(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingName>,
-    ) -> Self {
-        self.encoding_name = input;
-        self
+    pub fn set_encoding_name(mut self, input: ::std::option::Option<crate::types::EncodingName>) -> Self {
+        self.encoding_name = input; self
+    }
+    /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    pub fn get_encoding_name(&self) -> &::std::option::Option<crate::types::EncodingName> {
+        &self.encoding_name
     }
     /// Encoding parameters
     pub fn encoding_parameters(mut self, input: crate::types::EncodingParameters) -> Self {
@@ -99,36 +90,38 @@ impl MediaStreamOutputConfigurationBuilder {
         self
     }
     /// Encoding parameters
-    pub fn set_encoding_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingParameters>,
-    ) -> Self {
-        self.encoding_parameters = input;
-        self
+    pub fn set_encoding_parameters(mut self, input: ::std::option::Option<crate::types::EncodingParameters>) -> Self {
+        self.encoding_parameters = input; self
+    }
+    /// Encoding parameters
+    pub fn get_encoding_parameters(&self) -> &::std::option::Option<crate::types::EncodingParameters> {
+        &self.encoding_parameters
     }
     /// The name of the media stream.
-    pub fn media_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the media stream.
-    pub fn set_media_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.media_stream_name = input;
-        self
+    pub fn set_media_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.media_stream_name = input; self
+    }
+    /// The name of the media stream.
+    pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_stream_name
     }
     /// Consumes the builder and constructs a [`MediaStreamOutputConfiguration`](crate::types::MediaStreamOutputConfiguration).
     pub fn build(self) -> crate::types::MediaStreamOutputConfiguration {
         crate::types::MediaStreamOutputConfiguration {
-            destination_configurations: self.destination_configurations,
-            encoding_name: self.encoding_name,
-            encoding_parameters: self.encoding_parameters,
-            media_stream_name: self.media_stream_name,
+            destination_configurations: self.destination_configurations
+            ,
+            encoding_name: self.encoding_name
+            ,
+            encoding_parameters: self.encoding_parameters
+            ,
+            media_stream_name: self.media_stream_name
+            ,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCrawlerOutput {
+pub struct UpdateCrawlerOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UpdateCrawlerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateCrawlerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCrawlerOutput`](crate::operation::update_crawler::UpdateCrawlerOutput).
     pub fn builder() -> crate::operation::update_crawler::builders::UpdateCrawlerOutputBuilder {
@@ -19,22 +19,20 @@ impl UpdateCrawlerOutput {
 
 /// A builder for [`UpdateCrawlerOutput`](crate::operation::update_crawler::UpdateCrawlerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCrawlerOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateCrawlerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateCrawlerOutput`](crate::operation::update_crawler::UpdateCrawlerOutput).
     pub fn build(self) -> crate::operation::update_crawler::UpdateCrawlerOutput {
         crate::operation::update_crawler::UpdateCrawlerOutput {
@@ -42,3 +40,4 @@ impl UpdateCrawlerOutputBuilder {
         }
     }
 }
+

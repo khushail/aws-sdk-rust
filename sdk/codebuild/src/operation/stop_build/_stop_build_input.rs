@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopBuildInput {
+pub struct StopBuildInput  {
     /// <p>The ID of the build.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl StopBuildInput {
     /// <p>The ID of the build.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl StopBuildInput {
 
 /// A builder for [`StopBuildInput`](crate::operation::stop_build::StopBuildInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopBuildInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,20 @@ impl StopBuildInputBuilder {
     }
     /// <p>The ID of the build.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the build.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`StopBuildInput`](crate::operation::stop_build::StopBuildInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_build::StopBuildInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_build::StopBuildInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_build::StopBuildInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_build::StopBuildInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

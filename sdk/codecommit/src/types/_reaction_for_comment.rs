@@ -3,7 +3,7 @@
 /// <p>Information about the reaction values provided by users on a comment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReactionForComment {
+pub struct ReactionForComment  {
     /// <p>The reaction for a specified comment.</p>
     #[doc(hidden)]
     pub reaction: ::std::option::Option<crate::types::ReactionValueFormats>,
@@ -16,11 +16,11 @@ pub struct ReactionForComment {
 }
 impl ReactionForComment {
     /// <p>The reaction for a specified comment.</p>
-    pub fn reaction(&self) -> ::std::option::Option<&crate::types::ReactionValueFormats> {
+    pub fn reaction(&self) -> ::std::option::Option<& crate::types::ReactionValueFormats> {
         self.reaction.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn reaction_users(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn reaction_users(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.reaction_users.as_deref()
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
@@ -37,9 +37,7 @@ impl ReactionForComment {
 
 /// A builder for [`ReactionForComment`](crate::types::ReactionForComment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReactionForCommentBuilder {
     pub(crate) reaction: ::std::option::Option<crate::types::ReactionValueFormats>,
     pub(crate) reaction_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,34 +50,31 @@ impl ReactionForCommentBuilder {
         self
     }
     /// <p>The reaction for a specified comment.</p>
-    pub fn set_reaction(
-        mut self,
-        input: ::std::option::Option<crate::types::ReactionValueFormats>,
-    ) -> Self {
-        self.reaction = input;
-        self
+    pub fn set_reaction(mut self, input: ::std::option::Option<crate::types::ReactionValueFormats>) -> Self {
+        self.reaction = input; self
+    }
+    /// <p>The reaction for a specified comment.</p>
+    pub fn get_reaction(&self) -> &::std::option::Option<crate::types::ReactionValueFormats> {
+        &self.reaction
     }
     /// Appends an item to `reaction_users`.
     ///
     /// To override the contents of this collection use [`set_reaction_users`](Self::set_reaction_users).
     ///
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn reaction_users(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reaction_users(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reaction_users.unwrap_or_default();
-        v.push(input.into());
-        self.reaction_users = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reaction_users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn set_reaction_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.reaction_users = input;
-        self
+    pub fn set_reaction_users(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.reaction_users = input; self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
+    pub fn get_reaction_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reaction_users
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
     pub fn reactions_from_deleted_users_count(mut self, input: i32) -> Self {
@@ -87,19 +82,23 @@ impl ReactionForCommentBuilder {
         self
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
-    pub fn set_reactions_from_deleted_users_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.reactions_from_deleted_users_count = input;
-        self
+    pub fn set_reactions_from_deleted_users_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.reactions_from_deleted_users_count = input; self
+    }
+    /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
+    pub fn get_reactions_from_deleted_users_count(&self) -> &::std::option::Option<i32> {
+        &self.reactions_from_deleted_users_count
     }
     /// Consumes the builder and constructs a [`ReactionForComment`](crate::types::ReactionForComment).
     pub fn build(self) -> crate::types::ReactionForComment {
         crate::types::ReactionForComment {
-            reaction: self.reaction,
-            reaction_users: self.reaction_users,
-            reactions_from_deleted_users_count: self.reactions_from_deleted_users_count,
+            reaction: self.reaction
+            ,
+            reaction_users: self.reaction_users
+            ,
+            reactions_from_deleted_users_count: self.reactions_from_deleted_users_count
+            ,
         }
     }
 }
+

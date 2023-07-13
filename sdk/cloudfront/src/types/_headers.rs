@@ -3,7 +3,7 @@
 /// <p>Contains a list of HTTP header names.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Headers {
+pub struct Headers  {
     /// <p>The number of header names in the <code>Items</code> list.</p>
     #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl Headers {
         self.quantity
     }
     /// <p>A list of HTTP header names.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn items(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.items.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Headers {
 
 /// A builder for [`Headers`](crate::types::Headers).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeadersBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl HeadersBuilder {
     }
     /// <p>The number of header names in the <code>Items</code> list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
+    }
+    /// <p>The number of header names in the <code>Items</code> list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -55,23 +56,26 @@ impl HeadersBuilder {
     /// <p>A list of HTTP header names.</p>
     pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of HTTP header names.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.items = input; self
+    }
+    /// <p>A list of HTTP header names.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`Headers`](crate::types::Headers).
     pub fn build(self) -> crate::types::Headers {
         crate::types::Headers {
-            quantity: self.quantity,
-            items: self.items,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

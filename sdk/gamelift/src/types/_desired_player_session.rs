@@ -3,7 +3,7 @@
 /// <p>Player information for use when creating player sessions using a game session placement request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DesiredPlayerSession {
+pub struct DesiredPlayerSession  {
     /// <p>A unique identifier for a player to associate with the player session.</p>
     #[doc(hidden)]
     pub player_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DesiredPlayerSession {
 }
 impl DesiredPlayerSession {
     /// <p>A unique identifier for a player to associate with the player session.</p>
-    pub fn player_id(&self) -> ::std::option::Option<&str> {
+    pub fn player_id(&self) -> ::std::option::Option<& str> {
         self.player_id.as_deref()
     }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
-    pub fn player_data(&self) -> ::std::option::Option<&str> {
+    pub fn player_data(&self) -> ::std::option::Option<& str> {
         self.player_data.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DesiredPlayerSession {
 
 /// A builder for [`DesiredPlayerSession`](crate::types::DesiredPlayerSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DesiredPlayerSessionBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_data: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DesiredPlayerSessionBuilder {
     }
     /// <p>A unique identifier for a player to associate with the player session.</p>
     pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.player_id = input;
-        self
+        self.player_id = input; self
+    }
+    /// <p>A unique identifier for a player to associate with the player session.</p>
+    pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_id
     }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn player_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl DesiredPlayerSessionBuilder {
     }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn set_player_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.player_data = input;
-        self
+        self.player_data = input; self
+    }
+    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    pub fn get_player_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_data
     }
     /// Consumes the builder and constructs a [`DesiredPlayerSession`](crate::types::DesiredPlayerSession).
     pub fn build(self) -> crate::types::DesiredPlayerSession {
         crate::types::DesiredPlayerSession {
-            player_id: self.player_id,
-            player_data: self.player_data,
+            player_id: self.player_id
+            ,
+            player_data: self.player_data
+            ,
         }
     }
 }
+

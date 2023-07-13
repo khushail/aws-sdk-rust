@@ -3,7 +3,7 @@
 /// The specified resource was not found.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -14,21 +14,19 @@ pub struct ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// A header that defines the error encountered while processing the request.
-    pub fn x_amz_error_type(&self) -> ::std::option::Option<&str> {
+    pub fn x_amz_error_type(&self) -> ::std::option::Option<& str> {
         self.x_amz_error_type.as_deref()
     }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ResourceNotFoundException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +41,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::ResourceNotFound
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceNotFoundException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
@@ -56,9 +52,7 @@ impl ResourceNotFoundException {
 
 /// A builder for [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceNotFoundExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) x_amz_error_type: ::std::option::Option<::std::string::String>,
@@ -72,45 +66,45 @@ impl ResourceNotFoundExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// A header that defines the error encountered while processing the request.
-    pub fn x_amz_error_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn x_amz_error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_amz_error_type = ::std::option::Option::Some(input.into());
         self
     }
     /// A header that defines the error encountered while processing the request.
-    pub fn set_x_amz_error_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.x_amz_error_type = input;
-        self
+    pub fn set_x_amz_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.x_amz_error_type = input; self
+    }
+    /// A header that defines the error encountered while processing the request.
+    pub fn get_x_amz_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_amz_error_type
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
     pub fn build(self) -> crate::types::error::ResourceNotFoundException {
         crate::types::error::ResourceNotFoundException {
-            message: self.message,
-            x_amz_error_type: self.x_amz_error_type,
+            message: self.message
+            ,
+            x_amz_error_type: self.x_amz_error_type
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

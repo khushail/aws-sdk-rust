@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventCategoriesInput {
-    /// <p>The type of source that is generating the events.</p>
+pub struct DescribeEventCategoriesInput  {
+    /// <p>The type of source that is generating the events.</p> 
     /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
     #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
@@ -12,46 +12,46 @@ pub struct DescribeEventCategoriesInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeEventCategoriesInput {
-    /// <p>The type of source that is generating the events.</p>
+    /// <p>The type of source that is generating the events.</p> 
     /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
-    pub fn source_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
 }
 impl DescribeEventCategoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesInput`](crate::operation::describe_event_categories::DescribeEventCategoriesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder {
         crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventCategoriesInput`](crate::operation::describe_event_categories::DescribeEventCategoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventCategoriesInputBuilder {
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeEventCategoriesInputBuilder {
-    /// <p>The type of source that is generating the events.</p>
+    /// <p>The type of source that is generating the events.</p> 
     /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of source that is generating the events.</p>
+    /// <p>The type of source that is generating the events.</p> 
     /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
+    }
+    /// <p>The type of source that is generating the events.</p> 
+    /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
     }
     /// Appends an item to `filters`.
     ///
@@ -60,30 +60,28 @@ impl DescribeEventCategoriesInputBuilder {
     /// <p>This parameter is not currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeEventCategoriesInput`](crate::operation::describe_event_categories::DescribeEventCategoriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_categories::DescribeEventCategoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_event_categories::DescribeEventCategoriesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_event_categories::DescribeEventCategoriesInput {
-                source_type: self.source_type,
-                filters: self.filters,
-            },
+                source_type: self.source_type
+                ,
+                filters: self.filters
+                ,
+            }
         )
     }
 }
+

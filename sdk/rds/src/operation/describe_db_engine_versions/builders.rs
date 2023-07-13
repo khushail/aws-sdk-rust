@@ -3,265 +3,295 @@ pub use crate::operation::describe_db_engine_versions::_describe_db_engine_versi
 
 pub use crate::operation::describe_db_engine_versions::_describe_db_engine_versions_input::DescribeDbEngineVersionsInputBuilder;
 
+impl DescribeDbEngineVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_db_engine_versions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeDBEngineVersions`.
-///
+/// 
 /// <p>Returns a list of the available DB engines.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBEngineVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder,
 }
-impl DescribeDBEngineVersionsFluentBuilder {
+impl DescribeDBEngineVersionsFluentBuilder  {
     /// Creates a new `DescribeDBEngineVersions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeDBEngineVersions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_db_engine_versions::DescribeDBEngineVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_db_engine_versions::DescribeDBEngineVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator
-    {
-        crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::new(self.handle, self.inner)
-    }
-    /// <p>The database engine to return.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> </p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator {
+                                crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::new(self.handle, self.inner)
+                            }
+    /// <p>The database engine to return.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aurora-mysql</code> </p> </li> 
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li> 
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The database engine to return.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> </p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <p>The database engine to return.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aurora-mysql</code> </p> </li> 
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li> 
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The database engine version to return.</p>
+    /// <p>The database engine to return.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aurora-mysql</code> </p> </li> 
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li> 
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
+    /// </ul>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
+    }
+    /// <p>The database engine version to return.</p> 
     /// <p>Example: <code>5.1.49</code> </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The database engine version to return.</p>
+    /// <p>The database engine version to return.</p> 
     /// <p>Example: <code>5.1.49</code> </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The name of a specific DB parameter group family to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// <p>The database engine version to return.</p> 
+    /// <p>Example: <code>5.1.49</code> </p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
+    /// <p>The name of a specific DB parameter group family to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li> 
     /// </ul>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_family(input.into());
         self
     }
-    /// <p>The name of a specific DB parameter group family to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// <p>The name of a specific DB parameter group family to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li> 
     /// </ul>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_family(input);
         self
+    }
+    /// <p>The name of a specific DB parameter group family to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li> 
+    /// </ul>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_parameter_group_family()
     }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A filter that specifies one or more DB engine versions to describe.</p>
-    /// <p>Supported filters:</p>
-    /// <ul>
-    /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines.</p> </li>
-    /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>global</code> </p> </li>
-    /// <li> <p> <code>multimaster</code> </p> </li>
-    /// <li> <p> <code>parallelquery</code> </p> </li>
-    /// <li> <p> <code>provisioned</code> </p> </li>
-    /// <li> <p> <code>serverless</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions.</p> </li>
-    /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>deprecated</code> </p> </li>
-    /// </ul> </li>
+    /// <p>A filter that specifies one or more DB engine versions to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines.</p> </li> 
+    /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>global</code> </p> </li> 
+    /// <li> <p> <code>multimaster</code> </p> </li> 
+    /// <li> <p> <code>parallelquery</code> </p> </li> 
+    /// <li> <p> <code>provisioned</code> </p> </li> 
+    /// <li> <p> <code>serverless</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions.</p> </li> 
+    /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>available</code> </p> </li> 
+    /// <li> <p> <code>deprecated</code> </p> </li> 
+    /// </ul> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A filter that specifies one or more DB engine versions to describe.</p>
-    /// <p>Supported filters:</p>
-    /// <ul>
-    /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines.</p> </li>
-    /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>global</code> </p> </li>
-    /// <li> <p> <code>multimaster</code> </p> </li>
-    /// <li> <p> <code>parallelquery</code> </p> </li>
-    /// <li> <p> <code>provisioned</code> </p> </li>
-    /// <li> <p> <code>serverless</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions.</p> </li>
-    /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>deprecated</code> </p> </li>
-    /// </ul> </li>
+    /// <p>A filter that specifies one or more DB engine versions to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines.</p> </li> 
+    /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>global</code> </p> </li> 
+    /// <li> <p> <code>multimaster</code> </p> </li> 
+    /// <li> <p> <code>parallelquery</code> </p> </li> 
+    /// <li> <p> <code>provisioned</code> </p> </li> 
+    /// <li> <p> <code>serverless</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions.</p> </li> 
+    /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>available</code> </p> </li> 
+    /// <li> <p> <code>deprecated</code> </p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>A filter that specifies one or more DB engine versions to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines.</p> </li> 
+    /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>global</code> </p> </li> 
+    /// <li> <p> <code>multimaster</code> </p> </li> 
+    /// <li> <p> <code>parallelquery</code> </p> </li> 
+    /// <li> <p> <code>provisioned</code> </p> </li> 
+    /// <li> <p> <code>serverless</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions.</p> </li> 
+    /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>available</code> </p> </li> 
+    /// <li> <p> <code>deprecated</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
+    /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -273,6 +303,10 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
     pub fn default_only(mut self, input: bool) -> Self {
         self.inner = self.inner.default_only(input);
@@ -283,33 +317,49 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_default_only(input);
         self
     }
-    /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
-    /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
+    /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
+    pub fn get_default_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_default_only()
+    }
+    /// <p>A value that indicates whether to list the supported character sets for each engine version.</p> 
+    /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p> 
     /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.</p>
     pub fn list_supported_character_sets(mut self, input: bool) -> Self {
         self.inner = self.inner.list_supported_character_sets(input);
         self
     }
-    /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
-    /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
+    /// <p>A value that indicates whether to list the supported character sets for each engine version.</p> 
+    /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p> 
     /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.</p>
     pub fn set_list_supported_character_sets(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_list_supported_character_sets(input);
         self
     }
-    /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
-    /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
+    /// <p>A value that indicates whether to list the supported character sets for each engine version.</p> 
+    /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p> 
+    /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.</p>
+    pub fn get_list_supported_character_sets(&self) -> &::std::option::Option<bool> {
+        self.inner.get_list_supported_character_sets()
+    }
+    /// <p>A value that indicates whether to list the supported time zones for each engine version.</p> 
+    /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p> 
     /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.</p>
     pub fn list_supported_timezones(mut self, input: bool) -> Self {
         self.inner = self.inner.list_supported_timezones(input);
         self
     }
-    /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
-    /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
+    /// <p>A value that indicates whether to list the supported time zones for each engine version.</p> 
+    /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p> 
     /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.</p>
     pub fn set_list_supported_timezones(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_list_supported_timezones(input);
         self
+    }
+    /// <p>A value that indicates whether to list the supported time zones for each engine version.</p> 
+    /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p> 
+    /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.</p>
+    pub fn get_list_supported_timezones(&self) -> &::std::option::Option<bool> {
+        self.inner.get_list_supported_timezones()
     }
     /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
     pub fn include_all(mut self, input: bool) -> Self {
@@ -321,4 +371,9 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_include_all(input);
         self
     }
+    /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
+    pub fn get_include_all(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_all()
+    }
 }
+

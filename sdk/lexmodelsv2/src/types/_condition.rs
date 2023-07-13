@@ -3,14 +3,14 @@
 /// <p>Provides an expression that evaluates to true or false. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Condition {
+pub struct Condition  {
     /// <p>The expression string that is evaluated. </p>
     #[doc(hidden)]
     pub expression_string: ::std::option::Option<::std::string::String>,
 }
 impl Condition {
     /// <p>The expression string that is evaluated. </p>
-    pub fn expression_string(&self) -> ::std::option::Option<&str> {
+    pub fn expression_string(&self) -> ::std::option::Option<& str> {
         self.expression_string.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl Condition {
 
 /// A builder for [`Condition`](crate::types::Condition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionBuilder {
     pub(crate) expression_string: ::std::option::Option<::std::string::String>,
 }
 impl ConditionBuilder {
     /// <p>The expression string that is evaluated. </p>
-    pub fn expression_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expression_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression string that is evaluated. </p>
-    pub fn set_expression_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.expression_string = input;
-        self
+    pub fn set_expression_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expression_string = input; self
+    }
+    /// <p>The expression string that is evaluated. </p>
+    pub fn get_expression_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression_string
     }
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
     pub fn build(self) -> crate::types::Condition {
         crate::types::Condition {
-            expression_string: self.expression_string,
+            expression_string: self.expression_string
+            ,
         }
     }
 }
+

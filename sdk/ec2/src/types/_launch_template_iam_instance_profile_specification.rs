@@ -3,7 +3,7 @@
 /// <p>Describes an IAM instance profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateIamInstanceProfileSpecification {
+pub struct LaunchTemplateIamInstanceProfileSpecification  {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -13,27 +13,24 @@ pub struct LaunchTemplateIamInstanceProfileSpecification {
 }
 impl LaunchTemplateIamInstanceProfileSpecification {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the instance profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl LaunchTemplateIamInstanceProfileSpecification {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateIamInstanceProfileSpecification`](crate::types::LaunchTemplateIamInstanceProfileSpecification).
-    pub fn builder() -> crate::types::builders::LaunchTemplateIamInstanceProfileSpecificationBuilder
-    {
+    pub fn builder() -> crate::types::builders::LaunchTemplateIamInstanceProfileSpecificationBuilder {
         crate::types::builders::LaunchTemplateIamInstanceProfileSpecificationBuilder::default()
     }
 }
 
 /// A builder for [`LaunchTemplateIamInstanceProfileSpecification`](crate::types::LaunchTemplateIamInstanceProfileSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateIamInstanceProfileSpecificationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -46,8 +43,11 @@ impl LaunchTemplateIamInstanceProfileSpecificationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the instance profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,14 +56,20 @@ impl LaunchTemplateIamInstanceProfileSpecificationBuilder {
     }
     /// <p>The name of the instance profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the instance profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`LaunchTemplateIamInstanceProfileSpecification`](crate::types::LaunchTemplateIamInstanceProfileSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateIamInstanceProfileSpecification {
         crate::types::LaunchTemplateIamInstanceProfileSpecification {
-            arn: self.arn,
-            name: self.name,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> Entity that comprises information on sensors that have sensor data completely missing. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MissingCompleteSensorData {
+pub struct MissingCompleteSensorData  {
     /// <p> Indicates the number of sensors that have data missing completely. </p>
     #[doc(hidden)]
     pub affected_sensor_count: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl MissingCompleteSensorData {
 
 /// A builder for [`MissingCompleteSensorData`](crate::types::MissingCompleteSensorData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MissingCompleteSensorDataBuilder {
     pub(crate) affected_sensor_count: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl MissingCompleteSensorDataBuilder {
     }
     /// <p> Indicates the number of sensors that have data missing completely. </p>
     pub fn set_affected_sensor_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.affected_sensor_count = input;
-        self
+        self.affected_sensor_count = input; self
+    }
+    /// <p> Indicates the number of sensors that have data missing completely. </p>
+    pub fn get_affected_sensor_count(&self) -> &::std::option::Option<i32> {
+        &self.affected_sensor_count
     }
     /// Consumes the builder and constructs a [`MissingCompleteSensorData`](crate::types::MissingCompleteSensorData).
     pub fn build(self) -> crate::types::MissingCompleteSensorData {
         crate::types::MissingCompleteSensorData {
-            affected_sensor_count: self.affected_sensor_count,
+            affected_sensor_count: self.affected_sensor_count
+            ,
         }
     }
 }
+

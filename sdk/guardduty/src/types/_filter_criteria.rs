@@ -3,14 +3,14 @@
 /// <p>Represents the criteria to be used in the filter for describing scan entries.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterCriteria {
+pub struct FilterCriteria  {
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
     #[doc(hidden)]
     pub filter_criterion: ::std::option::Option<::std::vec::Vec<crate::types::FilterCriterion>>,
 }
 impl FilterCriteria {
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
-    pub fn filter_criterion(&self) -> ::std::option::Option<&[crate::types::FilterCriterion]> {
+    pub fn filter_criterion(&self) -> ::std::option::Option<& [crate::types::FilterCriterion]> {
         self.filter_criterion.as_deref()
     }
 }
@@ -23,12 +23,9 @@ impl FilterCriteria {
 
 /// A builder for [`FilterCriteria`](crate::types::FilterCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterCriteriaBuilder {
-    pub(crate) filter_criterion:
-        ::std::option::Option<::std::vec::Vec<crate::types::FilterCriterion>>,
+    pub(crate) filter_criterion: ::std::option::Option<::std::vec::Vec<crate::types::FilterCriterion>>,
 }
 impl FilterCriteriaBuilder {
     /// Appends an item to `filter_criterion`.
@@ -38,22 +35,24 @@ impl FilterCriteriaBuilder {
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
     pub fn filter_criterion(mut self, input: crate::types::FilterCriterion) -> Self {
         let mut v = self.filter_criterion.unwrap_or_default();
-        v.push(input);
-        self.filter_criterion = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_criterion = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
-    pub fn set_filter_criterion(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCriterion>>,
-    ) -> Self {
-        self.filter_criterion = input;
-        self
+    pub fn set_filter_criterion(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCriterion>>) -> Self {
+        self.filter_criterion = input; self
+    }
+    /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
+    pub fn get_filter_criterion(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCriterion>> {
+        &self.filter_criterion
     }
     /// Consumes the builder and constructs a [`FilterCriteria`](crate::types::FilterCriteria).
     pub fn build(self) -> crate::types::FilterCriteria {
         crate::types::FilterCriteria {
-            filter_criterion: self.filter_criterion,
+            filter_criterion: self.filter_criterion
+            ,
         }
     }
 }
+

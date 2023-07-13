@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTileInput {
+pub struct GetTileInput  {
     /// <p>The x coordinate of the tile input.</p>
     #[doc(hidden)]
     pub x: ::std::option::Option<i32>,
@@ -54,15 +54,15 @@ impl GetTileInput {
         self.z
     }
     /// <p>The particular assets or bands to tile.</p>
-    pub fn image_assets(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn image_assets(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.image_assets.as_deref()
     }
     /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::TargetOptions> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::TargetOptions> {
         self.target.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the tile operation.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Determines whether or not to return a valid data mask.</p>
@@ -70,23 +70,23 @@ impl GetTileInput {
         self.image_mask
     }
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    pub fn output_format(&self) -> ::std::option::Option<&str> {
+    pub fn output_format(&self) -> ::std::option::Option<& str> {
         self.output_format.as_deref()
     }
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
-    pub fn time_range_filter(&self) -> ::std::option::Option<&str> {
+    pub fn time_range_filter(&self) -> ::std::option::Option<& str> {
         self.time_range_filter.as_deref()
     }
     /// <p>Property filters for the imagery to tile.</p>
-    pub fn property_filters(&self) -> ::std::option::Option<&str> {
+    pub fn property_filters(&self) -> ::std::option::Option<& str> {
         self.property_filters.as_deref()
     }
     /// <p>The output data type of the tile operation.</p>
-    pub fn output_data_type(&self) -> ::std::option::Option<&crate::types::OutputType> {
+    pub fn output_data_type(&self) -> ::std::option::Option<& crate::types::OutputType> {
         self.output_data_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
 }
@@ -99,9 +99,7 @@ impl GetTileInput {
 
 /// A builder for [`GetTileInput`](crate::operation::get_tile::GetTileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTileInputBuilder {
     pub(crate) x: ::std::option::Option<i32>,
     pub(crate) y: ::std::option::Option<i32>,
@@ -124,8 +122,11 @@ impl GetTileInputBuilder {
     }
     /// <p>The x coordinate of the tile input.</p>
     pub fn set_x(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.x = input;
-        self
+        self.x = input; self
+    }
+    /// <p>The x coordinate of the tile input.</p>
+    pub fn get_x(&self) -> &::std::option::Option<i32> {
+        &self.x
     }
     /// <p>The y coordinate of the tile input.</p>
     pub fn y(mut self, input: i32) -> Self {
@@ -134,8 +135,11 @@ impl GetTileInputBuilder {
     }
     /// <p>The y coordinate of the tile input.</p>
     pub fn set_y(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.y = input;
-        self
+        self.y = input; self
+    }
+    /// <p>The y coordinate of the tile input.</p>
+    pub fn get_y(&self) -> &::std::option::Option<i32> {
+        &self.y
     }
     /// <p>The z coordinate of the tile input.</p>
     pub fn z(mut self, input: i32) -> Self {
@@ -144,8 +148,11 @@ impl GetTileInputBuilder {
     }
     /// <p>The z coordinate of the tile input.</p>
     pub fn set_z(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.z = input;
-        self
+        self.z = input; self
+    }
+    /// <p>The z coordinate of the tile input.</p>
+    pub fn get_z(&self) -> &::std::option::Option<i32> {
+        &self.z
     }
     /// Appends an item to `image_assets`.
     ///
@@ -154,17 +161,17 @@ impl GetTileInputBuilder {
     /// <p>The particular assets or bands to tile.</p>
     pub fn image_assets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_assets.unwrap_or_default();
-        v.push(input.into());
-        self.image_assets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.image_assets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The particular assets or bands to tile.</p>
-    pub fn set_image_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.image_assets = input;
-        self
+    pub fn set_image_assets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.image_assets = input; self
+    }
+    /// <p>The particular assets or bands to tile.</p>
+    pub fn get_image_assets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_assets
     }
     /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
     pub fn target(mut self, input: crate::types::TargetOptions) -> Self {
@@ -173,8 +180,11 @@ impl GetTileInputBuilder {
     }
     /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::TargetOptions>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
+    }
+    /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::TargetOptions> {
+        &self.target
     }
     /// <p>The Amazon Resource Name (ARN) of the tile operation.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,8 +193,11 @@ impl GetTileInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the tile operation.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the tile operation.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Determines whether or not to return a valid data mask.</p>
     pub fn image_mask(mut self, input: bool) -> Self {
@@ -193,56 +206,50 @@ impl GetTileInputBuilder {
     }
     /// <p>Determines whether or not to return a valid data mask.</p>
     pub fn set_image_mask(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.image_mask = input;
-        self
+        self.image_mask = input; self
+    }
+    /// <p>Determines whether or not to return a valid data mask.</p>
+    pub fn get_image_mask(&self) -> &::std::option::Option<bool> {
+        &self.image_mask
     }
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    pub fn output_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.output_format = input;
-        self
+    pub fn set_output_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output_format = input; self
+    }
+    /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
+    pub fn get_output_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_format
     }
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
-    pub fn time_range_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_range_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_range_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
-    pub fn set_time_range_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.time_range_filter = input;
-        self
+    pub fn set_time_range_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.time_range_filter = input; self
+    }
+    /// <p>Time range filter applied to imagery to find the images to tile.</p>
+    pub fn get_time_range_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_range_filter
     }
     /// <p>Property filters for the imagery to tile.</p>
-    pub fn property_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_filters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Property filters for the imagery to tile.</p>
-    pub fn set_property_filters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.property_filters = input;
-        self
+    pub fn set_property_filters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.property_filters = input; self
+    }
+    /// <p>Property filters for the imagery to tile.</p>
+    pub fn get_property_filters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_filters
     }
     /// <p>The output data type of the tile operation.</p>
     pub fn output_data_type(mut self, input: crate::types::OutputType) -> Self {
@@ -250,49 +257,56 @@ impl GetTileInputBuilder {
         self
     }
     /// <p>The output data type of the tile operation.</p>
-    pub fn set_output_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputType>,
-    ) -> Self {
-        self.output_data_type = input;
-        self
+    pub fn set_output_data_type(mut self, input: ::std::option::Option<crate::types::OutputType>) -> Self {
+        self.output_data_type = input; self
+    }
+    /// <p>The output data type of the tile operation.</p>
+    pub fn get_output_data_type(&self) -> &::std::option::Option<crate::types::OutputType> {
+        &self.output_data_type
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// Consumes the builder and constructs a [`GetTileInput`](crate::operation::get_tile::GetTileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_tile::GetTileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_tile::GetTileInput {
-            x: self.x,
-            y: self.y,
-            z: self.z,
-            image_assets: self.image_assets,
-            target: self.target,
-            arn: self.arn,
-            image_mask: self.image_mask,
-            output_format: self.output_format,
-            time_range_filter: self.time_range_filter,
-            property_filters: self.property_filters,
-            output_data_type: self.output_data_type,
-            execution_role_arn: self.execution_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tile::GetTileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_tile::GetTileInput {
+                x: self.x
+                ,
+                y: self.y
+                ,
+                z: self.z
+                ,
+                image_assets: self.image_assets
+                ,
+                target: self.target
+                ,
+                arn: self.arn
+                ,
+                image_mask: self.image_mask
+                ,
+                output_format: self.output_format
+                ,
+                time_range_filter: self.time_range_filter
+                ,
+                property_filters: self.property_filters
+                ,
+                output_data_type: self.output_data_type
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The minimum and maximum amount of memory, in MiB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemoryMiBRequest {
+pub struct MemoryMiBRequest  {
     /// <p>The minimum amount of memory, in MiB. To specify no minimum limit, specify <code>0</code>.</p>
     #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl MemoryMiBRequest {
 
 /// A builder for [`MemoryMiBRequest`](crate::types::MemoryMiBRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemoryMiBRequestBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl MemoryMiBRequestBuilder {
     }
     /// <p>The minimum amount of memory, in MiB. To specify no minimum limit, specify <code>0</code>.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
+    }
+    /// <p>The minimum amount of memory, in MiB. To specify no minimum limit, specify <code>0</code>.</p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
     }
     /// <p>The maximum amount of memory, in MiB. To specify no maximum limit, omit this parameter.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl MemoryMiBRequestBuilder {
     }
     /// <p>The maximum amount of memory, in MiB. To specify no maximum limit, omit this parameter.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
+    }
+    /// <p>The maximum amount of memory, in MiB. To specify no maximum limit, omit this parameter.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`MemoryMiBRequest`](crate::types::MemoryMiBRequest).
     pub fn build(self) -> crate::types::MemoryMiBRequest {
         crate::types::MemoryMiBRequest {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

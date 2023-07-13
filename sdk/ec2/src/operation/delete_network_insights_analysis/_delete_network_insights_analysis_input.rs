@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNetworkInsightsAnalysisInput {
+pub struct DeleteNetworkInsightsAnalysisInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -16,22 +16,20 @@ impl DeleteNetworkInsightsAnalysisInput {
         self.dry_run
     }
     /// <p>The ID of the network insights analysis.</p>
-    pub fn network_insights_analysis_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_analysis_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_analysis_id.as_deref()
     }
 }
 impl DeleteNetworkInsightsAnalysisInput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAnalysisInput`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisInput).
-    pub fn builder() -> crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisInputBuilder{
+    pub fn builder() -> crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisInputBuilder {
         crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkInsightsAnalysisInput`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkInsightsAnalysisInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) network_insights_analysis_id: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,27 @@ impl DeleteNetworkInsightsAnalysisInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The ID of the network insights analysis.</p>
-    pub fn network_insights_analysis_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_analysis_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network insights analysis.</p>
-    pub fn set_network_insights_analysis_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_insights_analysis_id = input;
-        self
+    pub fn set_network_insights_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_insights_analysis_id = input; self
+    }
+    /// <p>The ID of the network insights analysis.</p>
+    pub fn get_network_insights_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_analysis_id
     }
     /// Consumes the builder and constructs a [`DeleteNetworkInsightsAnalysisInput`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisInput {
                 dry_run: self.dry_run
@@ -80,3 +73,4 @@ impl DeleteNetworkInsightsAnalysisInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDirectoryConfigOutput {
+pub struct UpdateDirectoryConfigOutput  {
     /// <p>Information about the Directory Config object.</p>
     #[doc(hidden)]
     pub directory_config: ::std::option::Option<crate::types::DirectoryConfig>,
@@ -10,29 +10,25 @@ pub struct UpdateDirectoryConfigOutput {
 }
 impl UpdateDirectoryConfigOutput {
     /// <p>Information about the Directory Config object.</p>
-    pub fn directory_config(&self) -> ::std::option::Option<&crate::types::DirectoryConfig> {
+    pub fn directory_config(&self) -> ::std::option::Option<& crate::types::DirectoryConfig> {
         self.directory_config.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateDirectoryConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateDirectoryConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectoryConfigOutput`](crate::operation::update_directory_config::UpdateDirectoryConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_directory_config::builders::UpdateDirectoryConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_directory_config::builders::UpdateDirectoryConfigOutputBuilder {
         crate::operation::update_directory_config::builders::UpdateDirectoryConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDirectoryConfigOutput`](crate::operation::update_directory_config::UpdateDirectoryConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDirectoryConfigOutputBuilder {
     pub(crate) directory_config: ::std::option::Option<crate::types::DirectoryConfig>,
     _request_id: Option<String>,
@@ -44,27 +40,29 @@ impl UpdateDirectoryConfigOutputBuilder {
         self
     }
     /// <p>Information about the Directory Config object.</p>
-    pub fn set_directory_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryConfig>,
-    ) -> Self {
-        self.directory_config = input;
-        self
+    pub fn set_directory_config(mut self, input: ::std::option::Option<crate::types::DirectoryConfig>) -> Self {
+        self.directory_config = input; self
+    }
+    /// <p>Information about the Directory Config object.</p>
+    pub fn get_directory_config(&self) -> &::std::option::Option<crate::types::DirectoryConfig> {
+        &self.directory_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateDirectoryConfigOutput`](crate::operation::update_directory_config::UpdateDirectoryConfigOutput).
     pub fn build(self) -> crate::operation::update_directory_config::UpdateDirectoryConfigOutput {
         crate::operation::update_directory_config::UpdateDirectoryConfigOutput {
-            directory_config: self.directory_config,
+            directory_config: self.directory_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

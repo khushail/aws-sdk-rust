@@ -3,7 +3,7 @@
 /// <p> The request structure for the list domain associations request. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainAssociationsInput {
+pub struct ListDomainAssociationsInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct ListDomainAssociationsInput {
 }
 impl ListDomainAssociationsInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -30,18 +30,14 @@ impl ListDomainAssociationsInput {
 }
 impl ListDomainAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListDomainAssociationsInput`](crate::operation::list_domain_associations::ListDomainAssociationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_domain_associations::builders::ListDomainAssociationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_domain_associations::builders::ListDomainAssociationsInputBuilder {
         crate::operation::list_domain_associations::builders::ListDomainAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDomainAssociationsInput`](crate::operation::list_domain_associations::ListDomainAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainAssociationsInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -55,8 +51,11 @@ impl ListDomainAssociationsInputBuilder {
     }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,8 +64,11 @@ impl ListDomainAssociationsInputBuilder {
     }
     /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> The maximum number of records to list in a single response. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,22 +77,25 @@ impl ListDomainAssociationsInputBuilder {
     }
     /// <p> The maximum number of records to list in a single response. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> The maximum number of records to list in a single response. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDomainAssociationsInput`](crate::operation::list_domain_associations::ListDomainAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_domain_associations::ListDomainAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domain_associations::ListDomainAssociationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_domain_associations::ListDomainAssociationsInput {
-                app_id: self.app_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
+                app_id: self.app_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

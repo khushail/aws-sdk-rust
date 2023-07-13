@@ -3,7 +3,7 @@
 /// <p>A workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowListItem {
+pub struct WorkflowListItem  {
     /// <p>The workflow's ARN.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -27,45 +27,39 @@ pub struct WorkflowListItem {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WorkflowListItem {
     /// <p>The workflow's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The workflow's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The workflow's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The workflow's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkflowStatus> {
         self.status.as_ref()
     }
     /// <p>The workflow's type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
     /// <p>The workflow's digest.</p>
-    pub fn digest(&self) -> ::std::option::Option<&str> {
+    pub fn digest(&self) -> ::std::option::Option<& str> {
         self.digest.as_deref()
     }
     /// <p>When the workflow was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
 }
@@ -78,9 +72,7 @@ impl WorkflowListItem {
 
 /// A builder for [`WorkflowListItem`](crate::types::WorkflowListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowListItemBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -89,9 +81,7 @@ pub struct WorkflowListItemBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WorkflowType>,
     pub(crate) digest: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WorkflowListItemBuilder {
     /// <p>The workflow's ARN.</p>
@@ -101,8 +91,11 @@ impl WorkflowListItemBuilder {
     }
     /// <p>The workflow's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The workflow's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The workflow's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,8 +104,11 @@ impl WorkflowListItemBuilder {
     }
     /// <p>The workflow's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The workflow's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The workflow's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,8 +117,11 @@ impl WorkflowListItemBuilder {
     }
     /// <p>The workflow's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The workflow's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The workflow's status.</p>
     pub fn status(mut self, input: crate::types::WorkflowStatus) -> Self {
@@ -130,12 +129,12 @@ impl WorkflowListItemBuilder {
         self
     }
     /// <p>The workflow's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The workflow's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStatus> {
+        &self.status
     }
     /// <p>The workflow's type.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -144,8 +143,11 @@ impl WorkflowListItemBuilder {
     }
     /// <p>The workflow's type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The workflow's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.r#type
     }
     /// <p>The workflow's digest.</p>
     pub fn digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,8 +156,11 @@ impl WorkflowListItemBuilder {
     }
     /// <p>The workflow's digest.</p>
     pub fn set_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.digest = input;
-        self
+        self.digest = input; self
+    }
+    /// <p>The workflow's digest.</p>
+    pub fn get_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.digest
     }
     /// <p>When the workflow was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -163,49 +168,52 @@ impl WorkflowListItemBuilder {
         self
     }
     /// <p>When the workflow was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>When the workflow was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
+    }
+    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`WorkflowListItem`](crate::types::WorkflowListItem).
     pub fn build(self) -> crate::types::WorkflowListItem {
         crate::types::WorkflowListItem {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            status: self.status,
-            r#type: self.r#type,
-            digest: self.digest,
-            creation_time: self.creation_time,
-            metadata: self.metadata,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            r#type: self.r#type
+            ,
+            digest: self.digest
+            ,
+            creation_time: self.creation_time
+            ,
+            metadata: self.metadata
+            ,
         }
     }
 }
+

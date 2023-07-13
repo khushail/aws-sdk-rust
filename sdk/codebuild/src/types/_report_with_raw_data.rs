@@ -3,7 +3,7 @@
 /// <p>Contains the unmodified data for the report. For more information, see .</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportWithRawData {
+pub struct ReportWithRawData  {
     /// <p>The ARN of the report.</p>
     #[doc(hidden)]
     pub report_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReportWithRawData {
 }
 impl ReportWithRawData {
     /// <p>The ARN of the report.</p>
-    pub fn report_arn(&self) -> ::std::option::Option<&str> {
+    pub fn report_arn(&self) -> ::std::option::Option<& str> {
         self.report_arn.as_deref()
     }
     /// <p>The value of the requested data field from the report.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ReportWithRawData {
 
 /// A builder for [`ReportWithRawData`](crate::types::ReportWithRawData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportWithRawDataBuilder {
     pub(crate) report_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ReportWithRawDataBuilder {
     }
     /// <p>The ARN of the report.</p>
     pub fn set_report_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_arn = input;
-        self
+        self.report_arn = input; self
+    }
+    /// <p>The ARN of the report.</p>
+    pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_arn
     }
     /// <p>The value of the requested data field from the report.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ReportWithRawDataBuilder {
     }
     /// <p>The value of the requested data field from the report.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
+    }
+    /// <p>The value of the requested data field from the report.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
     }
     /// Consumes the builder and constructs a [`ReportWithRawData`](crate::types::ReportWithRawData).
     pub fn build(self) -> crate::types::ReportWithRawData {
         crate::types::ReportWithRawData {
-            report_arn: self.report_arn,
-            data: self.data,
+            report_arn: self.report_arn
+            ,
+            data: self.data
+            ,
         }
     }
 }
+

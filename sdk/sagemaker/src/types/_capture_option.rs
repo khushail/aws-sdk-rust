@@ -3,14 +3,14 @@
 /// <p>Specifies data Model Monitor will capture.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CaptureOption {
+pub struct CaptureOption  {
     /// <p>Specify the boundary of data to capture.</p>
     #[doc(hidden)]
     pub capture_mode: ::std::option::Option<crate::types::CaptureMode>,
 }
 impl CaptureOption {
     /// <p>Specify the boundary of data to capture.</p>
-    pub fn capture_mode(&self) -> ::std::option::Option<&crate::types::CaptureMode> {
+    pub fn capture_mode(&self) -> ::std::option::Option<& crate::types::CaptureMode> {
         self.capture_mode.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl CaptureOption {
 
 /// A builder for [`CaptureOption`](crate::types::CaptureOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptureOptionBuilder {
     pub(crate) capture_mode: ::std::option::Option<crate::types::CaptureMode>,
 }
@@ -36,17 +34,19 @@ impl CaptureOptionBuilder {
         self
     }
     /// <p>Specify the boundary of data to capture.</p>
-    pub fn set_capture_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptureMode>,
-    ) -> Self {
-        self.capture_mode = input;
-        self
+    pub fn set_capture_mode(mut self, input: ::std::option::Option<crate::types::CaptureMode>) -> Self {
+        self.capture_mode = input; self
+    }
+    /// <p>Specify the boundary of data to capture.</p>
+    pub fn get_capture_mode(&self) -> &::std::option::Option<crate::types::CaptureMode> {
+        &self.capture_mode
     }
     /// Consumes the builder and constructs a [`CaptureOption`](crate::types::CaptureOption).
     pub fn build(self) -> crate::types::CaptureOption {
         crate::types::CaptureOption {
-            capture_mode: self.capture_mode,
+            capture_mode: self.capture_mode
+            ,
         }
     }
 }
+

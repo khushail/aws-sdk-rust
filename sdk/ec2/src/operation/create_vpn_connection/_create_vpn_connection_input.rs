@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for CreateVpnConnection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpnConnectionInput {
+pub struct CreateVpnConnectionInput  {
     /// <p>The ID of the customer gateway.</p>
     #[doc(hidden)]
     pub customer_gateway_id: ::std::option::Option<::std::string::String>,
@@ -28,19 +28,19 @@ pub struct CreateVpnConnectionInput {
 }
 impl CreateVpnConnectionInput {
     /// <p>The ID of the customer gateway.</p>
-    pub fn customer_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn customer_gateway_id(&self) -> ::std::option::Option<& str> {
         self.customer_gateway_id.as_deref()
     }
     /// <p>The type of VPN connection (<code>ipsec.1</code>).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</p>
-    pub fn vpn_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_gateway_id(&self) -> ::std::option::Option<& str> {
         self.vpn_gateway_id.as_deref()
     }
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,30 +48,24 @@ impl CreateVpnConnectionInput {
         self.dry_run
     }
     /// <p>The options for the VPN connection.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpnConnectionOptionsSpecification> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::VpnConnectionOptionsSpecification> {
         self.options.as_ref()
     }
     /// <p>The tags to apply to the VPN connection.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> ::std::option::Option<& [crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
 }
 impl CreateVpnConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateVpnConnectionInput`](crate::operation::create_vpn_connection::CreateVpnConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::create_vpn_connection::builders::CreateVpnConnectionInputBuilder {
-        crate::operation::create_vpn_connection::builders::CreateVpnConnectionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_vpn_connection::builders::CreateVpnConnectionInputBuilder {
+        crate::operation::create_vpn_connection::builders::CreateVpnConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpnConnectionInput`](crate::operation::create_vpn_connection::CreateVpnConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpnConnectionInputBuilder {
     pub(crate) customer_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -79,25 +73,21 @@ pub struct CreateVpnConnectionInputBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) options: ::std::option::Option<crate::types::VpnConnectionOptionsSpecification>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateVpnConnectionInputBuilder {
     /// <p>The ID of the customer gateway.</p>
-    pub fn customer_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn set_customer_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.customer_gateway_id = input;
-        self
+    pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_gateway_id = input; self
+    }
+    /// <p>The ID of the customer gateway.</p>
+    pub fn get_customer_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_gateway_id
     }
     /// <p>The type of VPN connection (<code>ipsec.1</code>).</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,40 +96,37 @@ impl CreateVpnConnectionInputBuilder {
     }
     /// <p>The type of VPN connection (<code>ipsec.1</code>).</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</p>
-    pub fn vpn_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</p>
-    pub fn set_vpn_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpn_gateway_id = input;
-        self
+    pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpn_gateway_id = input; self
+    }
+    /// <p>The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</p>
+    pub fn get_vpn_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_gateway_id
     }
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transit_gateway_id = input;
-        self
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_id = input; self
+    }
+    /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -148,8 +135,11 @@ impl CreateVpnConnectionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The options for the VPN connection.</p>
     pub fn options(mut self, input: crate::types::VpnConnectionOptionsSpecification) -> Self {
@@ -157,12 +147,12 @@ impl CreateVpnConnectionInputBuilder {
         self
     }
     /// <p>The options for the VPN connection.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnConnectionOptionsSpecification>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpnConnectionOptionsSpecification>) -> Self {
+        self.options = input; self
+    }
+    /// <p>The options for the VPN connection.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::VpnConnectionOptionsSpecification> {
+        &self.options
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -171,35 +161,38 @@ impl CreateVpnConnectionInputBuilder {
     /// <p>The tags to apply to the VPN connection.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the VPN connection.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
+    }
+    /// <p>The tags to apply to the VPN connection.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateVpnConnectionInput`](crate::operation::create_vpn_connection::CreateVpnConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpn_connection::CreateVpnConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpn_connection::CreateVpnConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_vpn_connection::CreateVpnConnectionInput {
-                customer_gateway_id: self.customer_gateway_id,
-                r#type: self.r#type,
-                vpn_gateway_id: self.vpn_gateway_id,
-                transit_gateway_id: self.transit_gateway_id,
-                dry_run: self.dry_run,
-                options: self.options,
-                tag_specifications: self.tag_specifications,
-            },
+                customer_gateway_id: self.customer_gateway_id
+                ,
+                r#type: self.r#type
+                ,
+                vpn_gateway_id: self.vpn_gateway_id
+                ,
+                transit_gateway_id: self.transit_gateway_id
+                ,
+                dry_run: self.dry_run
+                ,
+                options: self.options
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+            }
         )
     }
 }
+

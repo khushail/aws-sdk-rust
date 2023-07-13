@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDeviceOutput {
+pub struct DescribeDeviceOutput  {
     /// <p>The device's ID.</p>
     #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
@@ -38,9 +38,7 @@ pub struct DescribeDeviceOutput {
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The device's tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The device's networking configuration.</p>
     #[doc(hidden)]
     pub networking_configuration: ::std::option::Option<crate::types::NetworkPayload>,
@@ -52,8 +50,7 @@ pub struct DescribeDeviceOutput {
     pub lease_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Beta software releases available for the device.</p>
     #[doc(hidden)]
-    pub alternate_softwares:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlternateSoftwareMetadata>>,
+    pub alternate_softwares: ::std::option::Option<::std::vec::Vec<crate::types::AlternateSoftwareMetadata>>,
     /// <p>The most recent beta software release.</p>
     #[doc(hidden)]
     pub latest_alternate_software: ::std::option::Option<::std::string::String>,
@@ -70,101 +67,91 @@ pub struct DescribeDeviceOutput {
 }
 impl DescribeDeviceOutput {
     /// <p>The device's ID.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The device's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The device's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The device's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The device's type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DeviceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DeviceType> {
         self.r#type.as_ref()
     }
     /// <p>The device's connection status.</p>
-    pub fn device_connection_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeviceConnectionStatus> {
+    pub fn device_connection_status(&self) -> ::std::option::Option<& crate::types::DeviceConnectionStatus> {
         self.device_connection_status.as_ref()
     }
     /// <p>When the device was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The device's provisioning status.</p>
-    pub fn provisioning_status(&self) -> ::std::option::Option<&crate::types::DeviceStatus> {
+    pub fn provisioning_status(&self) -> ::std::option::Option<& crate::types::DeviceStatus> {
         self.provisioning_status.as_ref()
     }
     /// <p>The latest software version available for the device.</p>
-    pub fn latest_software(&self) -> ::std::option::Option<&str> {
+    pub fn latest_software(&self) -> ::std::option::Option<& str> {
         self.latest_software.as_deref()
     }
     /// <p>The device's current software version.</p>
-    pub fn current_software(&self) -> ::std::option::Option<&str> {
+    pub fn current_software(&self) -> ::std::option::Option<& str> {
         self.current_software.as_deref()
     }
     /// <p>The device's serial number.</p>
-    pub fn serial_number(&self) -> ::std::option::Option<&str> {
+    pub fn serial_number(&self) -> ::std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>The device's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The device's networking configuration.</p>
-    pub fn networking_configuration(&self) -> ::std::option::Option<&crate::types::NetworkPayload> {
+    pub fn networking_configuration(&self) -> ::std::option::Option<& crate::types::NetworkPayload> {
         self.networking_configuration.as_ref()
     }
     /// <p>The device's networking status.</p>
-    pub fn current_networking_status(&self) -> ::std::option::Option<&crate::types::NetworkStatus> {
+    pub fn current_networking_status(&self) -> ::std::option::Option<& crate::types::NetworkStatus> {
         self.current_networking_status.as_ref()
     }
     /// <p>The device's lease expiration time.</p>
-    pub fn lease_expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn lease_expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.lease_expiration_time.as_ref()
     }
     /// <p>Beta software releases available for the device.</p>
-    pub fn alternate_softwares(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlternateSoftwareMetadata]> {
+    pub fn alternate_softwares(&self) -> ::std::option::Option<& [crate::types::AlternateSoftwareMetadata]> {
         self.alternate_softwares.as_deref()
     }
     /// <p>The most recent beta software release.</p>
-    pub fn latest_alternate_software(&self) -> ::std::option::Option<&str> {
+    pub fn latest_alternate_software(&self) -> ::std::option::Option<& str> {
         self.latest_alternate_software.as_deref()
     }
     /// <p>The device's maker.</p>
-    pub fn brand(&self) -> ::std::option::Option<&crate::types::DeviceBrand> {
+    pub fn brand(&self) -> ::std::option::Option<& crate::types::DeviceBrand> {
         self.brand.as_ref()
     }
     /// <p>A device's latest job. Includes the target image version, and the job status.</p>
-    pub fn latest_device_job(&self) -> ::std::option::Option<&crate::types::LatestDeviceJob> {
+    pub fn latest_device_job(&self) -> ::std::option::Option<& crate::types::LatestDeviceJob> {
         self.latest_device_job.as_ref()
     }
     /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
-    pub fn device_aggregated_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeviceAggregatedStatus> {
+    pub fn device_aggregated_status(&self) -> ::std::option::Option<& crate::types::DeviceAggregatedStatus> {
         self.device_aggregated_status.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
     pub fn builder() -> crate::operation::describe_device::builders::DescribeDeviceOutputBuilder {
@@ -174,35 +161,28 @@ impl DescribeDeviceOutput {
 
 /// A builder for [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceOutputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DeviceType>,
-    pub(crate) device_connection_status:
-        ::std::option::Option<crate::types::DeviceConnectionStatus>,
+    pub(crate) device_connection_status: ::std::option::Option<crate::types::DeviceConnectionStatus>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) provisioning_status: ::std::option::Option<crate::types::DeviceStatus>,
     pub(crate) latest_software: ::std::option::Option<::std::string::String>,
     pub(crate) current_software: ::std::option::Option<::std::string::String>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) networking_configuration: ::std::option::Option<crate::types::NetworkPayload>,
     pub(crate) current_networking_status: ::std::option::Option<crate::types::NetworkStatus>,
     pub(crate) lease_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) alternate_softwares:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlternateSoftwareMetadata>>,
+    pub(crate) alternate_softwares: ::std::option::Option<::std::vec::Vec<crate::types::AlternateSoftwareMetadata>>,
     pub(crate) latest_alternate_software: ::std::option::Option<::std::string::String>,
     pub(crate) brand: ::std::option::Option<crate::types::DeviceBrand>,
     pub(crate) latest_device_job: ::std::option::Option<crate::types::LatestDeviceJob>,
-    pub(crate) device_aggregated_status:
-        ::std::option::Option<crate::types::DeviceAggregatedStatus>,
+    pub(crate) device_aggregated_status: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
     _request_id: Option<String>,
 }
 impl DescribeDeviceOutputBuilder {
@@ -213,8 +193,11 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The device's ID.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
+    }
+    /// <p>The device's ID.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>The device's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -223,8 +206,11 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The device's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The device's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The device's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -233,8 +219,11 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The device's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The device's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The device's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -243,8 +232,11 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The device's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The device's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The device's type.</p>
     pub fn r#type(mut self, input: crate::types::DeviceType) -> Self {
@@ -253,8 +245,11 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The device's type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeviceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The device's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DeviceType> {
+        &self.r#type
     }
     /// <p>The device's connection status.</p>
     pub fn device_connection_status(mut self, input: crate::types::DeviceConnectionStatus) -> Self {
@@ -262,12 +257,12 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>The device's connection status.</p>
-    pub fn set_device_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceConnectionStatus>,
-    ) -> Self {
-        self.device_connection_status = input;
-        self
+    pub fn set_device_connection_status(mut self, input: ::std::option::Option<crate::types::DeviceConnectionStatus>) -> Self {
+        self.device_connection_status = input; self
+    }
+    /// <p>The device's connection status.</p>
+    pub fn get_device_connection_status(&self) -> &::std::option::Option<crate::types::DeviceConnectionStatus> {
+        &self.device_connection_status
     }
     /// <p>When the device was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -275,12 +270,12 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>When the device was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
+    }
+    /// <p>When the device was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The device's provisioning status.</p>
     pub fn provisioning_status(mut self, input: crate::types::DeviceStatus) -> Self {
@@ -288,85 +283,70 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>The device's provisioning status.</p>
-    pub fn set_provisioning_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatus>,
-    ) -> Self {
-        self.provisioning_status = input;
-        self
+    pub fn set_provisioning_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
+        self.provisioning_status = input; self
+    }
+    /// <p>The device's provisioning status.</p>
+    pub fn get_provisioning_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
+        &self.provisioning_status
     }
     /// <p>The latest software version available for the device.</p>
-    pub fn latest_software(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_software(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_software = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The latest software version available for the device.</p>
-    pub fn set_latest_software(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.latest_software = input;
-        self
+    pub fn set_latest_software(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.latest_software = input; self
+    }
+    /// <p>The latest software version available for the device.</p>
+    pub fn get_latest_software(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_software
     }
     /// <p>The device's current software version.</p>
-    pub fn current_software(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_software(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_software = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device's current software version.</p>
-    pub fn set_current_software(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.current_software = input;
-        self
+    pub fn set_current_software(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.current_software = input; self
+    }
+    /// <p>The device's current software version.</p>
+    pub fn get_current_software(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_software
     }
     /// <p>The device's serial number.</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device's serial number.</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.serial_number = input;
-        self
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.serial_number = input; self
+    }
+    /// <p>The device's serial number.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The device's tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The device's tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The device's tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// <p>The device's networking configuration.</p>
     pub fn networking_configuration(mut self, input: crate::types::NetworkPayload) -> Self {
@@ -374,12 +354,12 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>The device's networking configuration.</p>
-    pub fn set_networking_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkPayload>,
-    ) -> Self {
-        self.networking_configuration = input;
-        self
+    pub fn set_networking_configuration(mut self, input: ::std::option::Option<crate::types::NetworkPayload>) -> Self {
+        self.networking_configuration = input; self
+    }
+    /// <p>The device's networking configuration.</p>
+    pub fn get_networking_configuration(&self) -> &::std::option::Option<crate::types::NetworkPayload> {
+        &self.networking_configuration
     }
     /// <p>The device's networking status.</p>
     pub fn current_networking_status(mut self, input: crate::types::NetworkStatus) -> Self {
@@ -387,12 +367,12 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>The device's networking status.</p>
-    pub fn set_current_networking_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkStatus>,
-    ) -> Self {
-        self.current_networking_status = input;
-        self
+    pub fn set_current_networking_status(mut self, input: ::std::option::Option<crate::types::NetworkStatus>) -> Self {
+        self.current_networking_status = input; self
+    }
+    /// <p>The device's networking status.</p>
+    pub fn get_current_networking_status(&self) -> &::std::option::Option<crate::types::NetworkStatus> {
+        &self.current_networking_status
     }
     /// <p>The device's lease expiration time.</p>
     pub fn lease_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -400,12 +380,12 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>The device's lease expiration time.</p>
-    pub fn set_lease_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.lease_expiration_time = input;
-        self
+    pub fn set_lease_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.lease_expiration_time = input; self
+    }
+    /// <p>The device's lease expiration time.</p>
+    pub fn get_lease_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.lease_expiration_time
     }
     /// Appends an item to `alternate_softwares`.
     ///
@@ -414,33 +394,30 @@ impl DescribeDeviceOutputBuilder {
     /// <p>Beta software releases available for the device.</p>
     pub fn alternate_softwares(mut self, input: crate::types::AlternateSoftwareMetadata) -> Self {
         let mut v = self.alternate_softwares.unwrap_or_default();
-        v.push(input);
-        self.alternate_softwares = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alternate_softwares = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Beta software releases available for the device.</p>
-    pub fn set_alternate_softwares(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlternateSoftwareMetadata>>,
-    ) -> Self {
-        self.alternate_softwares = input;
-        self
+    pub fn set_alternate_softwares(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlternateSoftwareMetadata>>) -> Self {
+        self.alternate_softwares = input; self
+    }
+    /// <p>Beta software releases available for the device.</p>
+    pub fn get_alternate_softwares(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlternateSoftwareMetadata>> {
+        &self.alternate_softwares
     }
     /// <p>The most recent beta software release.</p>
-    pub fn latest_alternate_software(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_alternate_software(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_alternate_software = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The most recent beta software release.</p>
-    pub fn set_latest_alternate_software(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.latest_alternate_software = input;
-        self
+    pub fn set_latest_alternate_software(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.latest_alternate_software = input; self
+    }
+    /// <p>The most recent beta software release.</p>
+    pub fn get_latest_alternate_software(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_alternate_software
     }
     /// <p>The device's maker.</p>
     pub fn brand(mut self, input: crate::types::DeviceBrand) -> Self {
@@ -449,8 +426,11 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The device's maker.</p>
     pub fn set_brand(mut self, input: ::std::option::Option<crate::types::DeviceBrand>) -> Self {
-        self.brand = input;
-        self
+        self.brand = input; self
+    }
+    /// <p>The device's maker.</p>
+    pub fn get_brand(&self) -> &::std::option::Option<crate::types::DeviceBrand> {
+        &self.brand
     }
     /// <p>A device's latest job. Includes the target image version, and the job status.</p>
     pub fn latest_device_job(mut self, input: crate::types::LatestDeviceJob) -> Self {
@@ -458,12 +438,12 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>A device's latest job. Includes the target image version, and the job status.</p>
-    pub fn set_latest_device_job(
-        mut self,
-        input: ::std::option::Option<crate::types::LatestDeviceJob>,
-    ) -> Self {
-        self.latest_device_job = input;
-        self
+    pub fn set_latest_device_job(mut self, input: ::std::option::Option<crate::types::LatestDeviceJob>) -> Self {
+        self.latest_device_job = input; self
+    }
+    /// <p>A device's latest job. Includes the target image version, and the job status.</p>
+    pub fn get_latest_device_job(&self) -> &::std::option::Option<crate::types::LatestDeviceJob> {
+        &self.latest_device_job
     }
     /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
     pub fn device_aggregated_status(mut self, input: crate::types::DeviceAggregatedStatus) -> Self {
@@ -471,46 +451,67 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
-    pub fn set_device_aggregated_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
-    ) -> Self {
-        self.device_aggregated_status = input;
-        self
+    pub fn set_device_aggregated_status(mut self, input: ::std::option::Option<crate::types::DeviceAggregatedStatus>) -> Self {
+        self.device_aggregated_status = input; self
+    }
+    /// <p>A device's aggregated status. Including the device's connection status, provisioning status, and lease status.</p>
+    pub fn get_device_aggregated_status(&self) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
+        &self.device_aggregated_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
     pub fn build(self) -> crate::operation::describe_device::DescribeDeviceOutput {
         crate::operation::describe_device::DescribeDeviceOutput {
-            device_id: self.device_id,
-            name: self.name,
-            arn: self.arn,
-            description: self.description,
-            r#type: self.r#type,
-            device_connection_status: self.device_connection_status,
-            created_time: self.created_time,
-            provisioning_status: self.provisioning_status,
-            latest_software: self.latest_software,
-            current_software: self.current_software,
-            serial_number: self.serial_number,
-            tags: self.tags,
-            networking_configuration: self.networking_configuration,
-            current_networking_status: self.current_networking_status,
-            lease_expiration_time: self.lease_expiration_time,
-            alternate_softwares: self.alternate_softwares,
-            latest_alternate_software: self.latest_alternate_software,
-            brand: self.brand,
-            latest_device_job: self.latest_device_job,
-            device_aggregated_status: self.device_aggregated_status,
+            device_id: self.device_id
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            device_connection_status: self.device_connection_status
+            ,
+            created_time: self.created_time
+            ,
+            provisioning_status: self.provisioning_status
+            ,
+            latest_software: self.latest_software
+            ,
+            current_software: self.current_software
+            ,
+            serial_number: self.serial_number
+            ,
+            tags: self.tags
+            ,
+            networking_configuration: self.networking_configuration
+            ,
+            current_networking_status: self.current_networking_status
+            ,
+            lease_expiration_time: self.lease_expiration_time
+            ,
+            alternate_softwares: self.alternate_softwares
+            ,
+            latest_alternate_software: self.latest_alternate_software
+            ,
+            brand: self.brand
+            ,
+            latest_device_job: self.latest_device_job
+            ,
+            device_aggregated_status: self.device_aggregated_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

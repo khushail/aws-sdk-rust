@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTasksInput {
+pub struct ListTasksInput  {
     /// <p>A structure used to filter the list of tasks.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TaskState>,
@@ -15,7 +15,7 @@ pub struct ListTasksInput {
 }
 impl ListTasksInput {
     /// <p>A structure used to filter the list of tasks.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TaskState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TaskState> {
         self.state.as_ref()
     }
     /// <p>The maximum number of tasks per page.</p>
@@ -23,7 +23,7 @@ impl ListTasksInput {
         self.max_results
     }
     /// <p>A pagination token to continue to the next page of tasks.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl ListTasksInput {
 
 /// A builder for [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTasksInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::TaskState>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,8 +50,11 @@ impl ListTasksInputBuilder {
     }
     /// <p>A structure used to filter the list of tasks.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TaskState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>A structure used to filter the list of tasks.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TaskState> {
+        &self.state
     }
     /// <p>The maximum number of tasks per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,8 +63,11 @@ impl ListTasksInputBuilder {
     }
     /// <p>The maximum number of tasks per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of tasks per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A pagination token to continue to the next page of tasks.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,20 +76,24 @@ impl ListTasksInputBuilder {
     }
     /// <p>A pagination token to continue to the next page of tasks.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A pagination token to continue to the next page of tasks.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tasks::ListTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_tasks::ListTasksInput {
-            state: self.state,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_tasks::ListTasksInput {
+                state: self.state
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

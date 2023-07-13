@@ -3,7 +3,7 @@
 /// <p>Provides information about the number of objects that are in an S3 bucket and use certain types of server-side encryption, use client-side encryption, or aren't encrypted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ObjectCountByEncryptionType {
+pub struct ObjectCountByEncryptionType  {
     /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
     #[doc(hidden)]
     pub customer_managed: ::std::option::Option<i64>,
@@ -51,9 +51,7 @@ impl ObjectCountByEncryptionType {
 
 /// A builder for [`ObjectCountByEncryptionType`](crate::types::ObjectCountByEncryptionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectCountByEncryptionTypeBuilder {
     pub(crate) customer_managed: ::std::option::Option<i64>,
     pub(crate) kms_managed: ::std::option::Option<i64>,
@@ -69,8 +67,11 @@ impl ObjectCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
     pub fn set_customer_managed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.customer_managed = input;
-        self
+        self.customer_managed = input; self
+    }
+    /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
+    pub fn get_customer_managed(&self) -> &::std::option::Option<i64> {
+        &self.customer_managed
     }
     /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
     pub fn kms_managed(mut self, input: i64) -> Self {
@@ -79,8 +80,11 @@ impl ObjectCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
     pub fn set_kms_managed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.kms_managed = input;
-        self
+        self.kms_managed = input; self
+    }
+    /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
+    pub fn get_kms_managed(&self) -> &::std::option::Option<i64> {
+        &self.kms_managed
     }
     /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
     pub fn s3_managed(mut self, input: i64) -> Self {
@@ -89,8 +93,11 @@ impl ObjectCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
     pub fn set_s3_managed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.s3_managed = input;
-        self
+        self.s3_managed = input; self
+    }
+    /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
+    pub fn get_s3_managed(&self) -> &::std::option::Option<i64> {
+        &self.s3_managed
     }
     /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
     pub fn unencrypted(mut self, input: i64) -> Self {
@@ -99,8 +106,11 @@ impl ObjectCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
     pub fn set_unencrypted(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.unencrypted = input;
-        self
+        self.unencrypted = input; self
+    }
+    /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
+    pub fn get_unencrypted(&self) -> &::std::option::Option<i64> {
+        &self.unencrypted
     }
     /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
     pub fn unknown(mut self, input: i64) -> Self {
@@ -109,17 +119,26 @@ impl ObjectCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
     pub fn set_unknown(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.unknown = input;
-        self
+        self.unknown = input; self
+    }
+    /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
+    pub fn get_unknown(&self) -> &::std::option::Option<i64> {
+        &self.unknown
     }
     /// Consumes the builder and constructs a [`ObjectCountByEncryptionType`](crate::types::ObjectCountByEncryptionType).
     pub fn build(self) -> crate::types::ObjectCountByEncryptionType {
         crate::types::ObjectCountByEncryptionType {
-            customer_managed: self.customer_managed,
-            kms_managed: self.kms_managed,
-            s3_managed: self.s3_managed,
-            unencrypted: self.unencrypted,
-            unknown: self.unknown,
+            customer_managed: self.customer_managed
+            ,
+            kms_managed: self.kms_managed
+            ,
+            s3_managed: self.s3_managed
+            ,
+            unencrypted: self.unencrypted
+            ,
+            unknown: self.unknown
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateRoleToGroupInput {
+pub struct AssociateRoleToGroupInput  {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct AssociateRoleToGroupInput {
 }
 impl AssociateRoleToGroupInput {
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 impl AssociateRoleToGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
-    pub fn builder(
-    ) -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder {
+    pub fn builder() -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder {
         crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateRoleToGroupInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl AssociateRoleToGroupInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
+    }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl AssociateRoleToGroupInputBuilder {
     }
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_role_to_group::AssociateRoleToGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_role_to_group::AssociateRoleToGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_role_to_group::AssociateRoleToGroupInput {
-                group_id: self.group_id,
-                role_arn: self.role_arn,
-            },
+                group_id: self.group_id
+                ,
+                role_arn: self.role_arn
+                ,
+            }
         )
     }
 }
+

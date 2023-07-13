@@ -3,7 +3,7 @@
 /// <p>The required parameters for connecting to an Exasol data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExasolParameters {
+pub struct ExasolParameters  {
     /// <p>The hostname or IP address of the Exasol data source.</p>
     #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ExasolParameters {
 }
 impl ExasolParameters {
     /// <p>The hostname or IP address of the Exasol data source.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The port for the Exasol data source.</p>
@@ -30,9 +30,7 @@ impl ExasolParameters {
 
 /// A builder for [`ExasolParameters`](crate::types::ExasolParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExasolParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl ExasolParametersBuilder {
     }
     /// <p>The hostname or IP address of the Exasol data source.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
+    }
+    /// <p>The hostname or IP address of the Exasol data source.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
     }
     /// <p>The port for the Exasol data source.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -55,14 +56,21 @@ impl ExasolParametersBuilder {
     }
     /// <p>The port for the Exasol data source.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
+    }
+    /// <p>The port for the Exasol data source.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`ExasolParameters`](crate::types::ExasolParameters).
     pub fn build(self) -> crate::types::ExasolParameters {
         crate::types::ExasolParameters {
-            host: self.host,
-            port: self.port.unwrap_or_default(),
+            host: self.host
+            ,
+            port: self.port
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

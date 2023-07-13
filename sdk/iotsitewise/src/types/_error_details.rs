@@ -3,7 +3,7 @@
 /// <p>Contains the details of an IoT SiteWise error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorDetails {
+pub struct ErrorDetails  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ErrorCode>,
@@ -16,15 +16,15 @@ pub struct ErrorDetails {
 }
 impl ErrorDetails {
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p> A list of detailed errors. </p>
-    pub fn details(&self) -> ::std::option::Option<&[crate::types::DetailedError]> {
+    pub fn details(&self) -> ::std::option::Option<& [crate::types::DetailedError]> {
         self.details.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ErrorDetails {
 
 /// A builder for [`ErrorDetails`](crate::types::ErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorDetailsBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl ErrorDetailsBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>The error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.code
     }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl ErrorDetailsBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `details`.
     ///
@@ -73,24 +77,28 @@ impl ErrorDetailsBuilder {
     /// <p> A list of detailed errors. </p>
     pub fn details(mut self, input: crate::types::DetailedError) -> Self {
         let mut v = self.details.unwrap_or_default();
-        v.push(input);
-        self.details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list of detailed errors. </p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedError>>,
-    ) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedError>>) -> Self {
+        self.details = input; self
+    }
+    /// <p> A list of detailed errors. </p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedError>> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
     pub fn build(self) -> crate::types::ErrorDetails {
         crate::types::ErrorDetails {
-            code: self.code,
-            message: self.message,
-            details: self.details,
+            code: self.code
+            ,
+            message: self.message
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

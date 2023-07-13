@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateGatewayFromServerInput {
+pub struct DisassociateGatewayFromServerInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
     #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateGatewayFromServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 impl DisassociateGatewayFromServerInput {
     /// Creates a new builder-style object to manufacture [`DisassociateGatewayFromServerInput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput).
-    pub fn builder() -> crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder {
         crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateGatewayFromServerInput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateGatewayFromServerInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,14 @@ impl DisassociateGatewayFromServerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`DisassociateGatewayFromServerInput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput {
                 gateway_arn: self.gateway_arn
@@ -54,3 +50,4 @@ impl DisassociateGatewayFromServerInputBuilder {
         )
     }
 }
+

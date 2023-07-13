@@ -3,7 +3,7 @@
 /// <p>The result from the inspection of the web request for a valid challenge token. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChallengeResponse {
+pub struct ChallengeResponse  {
     /// <p>The HTTP response code indicating the status of the challenge token in the web request. If the token is missing, invalid, or expired, this code is <code>202 Request Accepted</code>.</p>
     #[doc(hidden)]
     pub response_code: ::std::option::Option<i32>,
@@ -24,7 +24,7 @@ impl ChallengeResponse {
         self.solve_timestamp
     }
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&crate::types::FailureReason> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& crate::types::FailureReason> {
         self.failure_reason.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl ChallengeResponse {
 
 /// A builder for [`ChallengeResponse`](crate::types::ChallengeResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChallengeResponseBuilder {
     pub(crate) response_code: ::std::option::Option<i32>,
     pub(crate) solve_timestamp: ::std::option::Option<i64>,
@@ -53,8 +51,11 @@ impl ChallengeResponseBuilder {
     }
     /// <p>The HTTP response code indicating the status of the challenge token in the web request. If the token is missing, invalid, or expired, this code is <code>202 Request Accepted</code>.</p>
     pub fn set_response_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.response_code = input;
-        self
+        self.response_code = input; self
+    }
+    /// <p>The HTTP response code indicating the status of the challenge token in the web request. If the token is missing, invalid, or expired, this code is <code>202 Request Accepted</code>.</p>
+    pub fn get_response_code(&self) -> &::std::option::Option<i32> {
+        &self.response_code
     }
     /// <p>The time that the challenge was last solved for the supplied token. </p>
     pub fn solve_timestamp(mut self, input: i64) -> Self {
@@ -63,8 +64,11 @@ impl ChallengeResponseBuilder {
     }
     /// <p>The time that the challenge was last solved for the supplied token. </p>
     pub fn set_solve_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.solve_timestamp = input;
-        self
+        self.solve_timestamp = input; self
+    }
+    /// <p>The time that the challenge was last solved for the supplied token. </p>
+    pub fn get_solve_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.solve_timestamp
     }
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
     pub fn failure_reason(mut self, input: crate::types::FailureReason) -> Self {
@@ -72,19 +76,23 @@ impl ChallengeResponseBuilder {
         self
     }
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureReason>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::FailureReason>) -> Self {
+        self.failure_reason = input; self
+    }
+    /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<crate::types::FailureReason> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`ChallengeResponse`](crate::types::ChallengeResponse).
     pub fn build(self) -> crate::types::ChallengeResponse {
         crate::types::ChallengeResponse {
-            response_code: self.response_code,
-            solve_timestamp: self.solve_timestamp,
-            failure_reason: self.failure_reason,
+            response_code: self.response_code
+            ,
+            solve_timestamp: self.solve_timestamp
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

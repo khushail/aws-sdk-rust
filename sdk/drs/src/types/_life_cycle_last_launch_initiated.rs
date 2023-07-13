@@ -3,7 +3,7 @@
 /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifeCycleLastLaunchInitiated {
+pub struct LifeCycleLastLaunchInitiated  {
     /// <p>The date and time the last Source Server launch was initiated.</p>
     #[doc(hidden)]
     pub api_call_date_time: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct LifeCycleLastLaunchInitiated {
 }
 impl LifeCycleLastLaunchInitiated {
     /// <p>The date and time the last Source Server launch was initiated.</p>
-    pub fn api_call_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> ::std::option::Option<& str> {
         self.api_call_date_time.as_deref()
     }
     /// <p>The ID of the Job that was used to last launch the Source Server.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The Job type that was used to last launch the Source Server.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LastLaunchType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LastLaunchType> {
         self.r#type.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl LifeCycleLastLaunchInitiated {
 
 /// A builder for [`LifeCycleLastLaunchInitiated`](crate::types::LifeCycleLastLaunchInitiated).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifeCycleLastLaunchInitiatedBuilder {
     pub(crate) api_call_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct LifeCycleLastLaunchInitiatedBuilder {
 }
 impl LifeCycleLastLaunchInitiatedBuilder {
     /// <p>The date and time the last Source Server launch was initiated.</p>
-    pub fn api_call_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_call_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_call_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the last Source Server launch was initiated.</p>
-    pub fn set_api_call_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.api_call_date_time = input;
-        self
+    pub fn set_api_call_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.api_call_date_time = input; self
+    }
+    /// <p>The date and time the last Source Server launch was initiated.</p>
+    pub fn get_api_call_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_call_date_time
     }
     /// <p>The ID of the Job that was used to last launch the Source Server.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +64,11 @@ impl LifeCycleLastLaunchInitiatedBuilder {
     }
     /// <p>The ID of the Job that was used to last launch the Source Server.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The ID of the Job that was used to last launch the Source Server.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The Job type that was used to last launch the Source Server.</p>
     pub fn r#type(mut self, input: crate::types::LastLaunchType) -> Self {
@@ -79,15 +77,22 @@ impl LifeCycleLastLaunchInitiatedBuilder {
     }
     /// <p>The Job type that was used to last launch the Source Server.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LastLaunchType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The Job type that was used to last launch the Source Server.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LastLaunchType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`LifeCycleLastLaunchInitiated`](crate::types::LifeCycleLastLaunchInitiated).
     pub fn build(self) -> crate::types::LifeCycleLastLaunchInitiated {
         crate::types::LifeCycleLastLaunchInitiated {
-            api_call_date_time: self.api_call_date_time,
-            job_id: self.job_id,
-            r#type: self.r#type,
+            api_call_date_time: self.api_call_date_time
+            ,
+            job_id: self.job_id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

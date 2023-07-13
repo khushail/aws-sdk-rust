@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveThingFromThingGroupInput {
+pub struct RemoveThingFromThingGroupInput  {
     /// <p>The group name.</p>
     #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
@@ -18,34 +18,32 @@ pub struct RemoveThingFromThingGroupInput {
 }
 impl RemoveThingFromThingGroupInput {
     /// <p>The group name.</p>
-    pub fn thing_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> ::std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The group ARN.</p>
-    pub fn thing_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn thing_group_arn(&self) -> ::std::option::Option<& str> {
         self.thing_group_arn.as_deref()
     }
     /// <p>The name of the thing to remove from the group.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the thing to remove from the group.</p>
-    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
 }
 impl RemoveThingFromThingGroupInput {
     /// Creates a new builder-style object to manufacture [`RemoveThingFromThingGroupInput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput).
-    pub fn builder() -> crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder{
+    pub fn builder() -> crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder {
         crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveThingFromThingGroupInput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveThingFromThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_arn: ::std::option::Option<::std::string::String>,
@@ -54,36 +52,30 @@ pub struct RemoveThingFromThingGroupInputBuilder {
 }
 impl RemoveThingFromThingGroupInputBuilder {
     /// <p>The group name.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group name.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.thing_group_name = input;
-        self
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.thing_group_name = input; self
+    }
+    /// <p>The group name.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
     }
     /// <p>The group ARN.</p>
-    pub fn thing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group ARN.</p>
-    pub fn set_thing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.thing_group_arn = input;
-        self
+    pub fn set_thing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.thing_group_arn = input; self
+    }
+    /// <p>The group ARN.</p>
+    pub fn get_thing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_arn
     }
     /// <p>The name of the thing to remove from the group.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,8 +84,11 @@ impl RemoveThingFromThingGroupInputBuilder {
     }
     /// <p>The name of the thing to remove from the group.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
+    }
+    /// <p>The name of the thing to remove from the group.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// <p>The ARN of the thing to remove from the group.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,23 +97,26 @@ impl RemoveThingFromThingGroupInputBuilder {
     }
     /// <p>The ARN of the thing to remove from the group.</p>
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_arn = input;
-        self
+        self.thing_arn = input; self
+    }
+    /// <p>The ARN of the thing to remove from the group.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
     }
     /// Consumes the builder and constructs a [`RemoveThingFromThingGroupInput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                thing_group_arn: self.thing_group_arn,
-                thing_name: self.thing_name,
-                thing_arn: self.thing_arn,
-            },
+                thing_group_name: self.thing_group_name
+                ,
+                thing_group_arn: self.thing_group_arn
+                ,
+                thing_name: self.thing_name
+                ,
+                thing_arn: self.thing_arn
+                ,
+            }
         )
     }
 }
+

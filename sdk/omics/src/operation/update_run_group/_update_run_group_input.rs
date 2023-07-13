@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRunGroupInput {
+pub struct UpdateRunGroupInput  {
     /// <p>The group's ID.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -24,11 +24,11 @@ pub struct UpdateRunGroupInput {
 }
 impl UpdateRunGroupInput {
     /// <p>The group's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A name for the group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum number of CPUs to use.</p>
@@ -57,9 +57,7 @@ impl UpdateRunGroupInput {
 
 /// A builder for [`UpdateRunGroupInput`](crate::operation::update_run_group::UpdateRunGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRunGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -76,8 +74,11 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>The group's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The group's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A name for the group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +87,11 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>A name for the group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A name for the group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The maximum number of CPUs to use.</p>
     pub fn max_cpus(mut self, input: i32) -> Self {
@@ -96,8 +100,11 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>The maximum number of CPUs to use.</p>
     pub fn set_max_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_cpus = input;
-        self
+        self.max_cpus = input; self
+    }
+    /// <p>The maximum number of CPUs to use.</p>
+    pub fn get_max_cpus(&self) -> &::std::option::Option<i32> {
+        &self.max_cpus
     }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn max_runs(mut self, input: i32) -> Self {
@@ -106,8 +113,11 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn set_max_runs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_runs = input;
-        self
+        self.max_runs = input; self
+    }
+    /// <p>The maximum number of concurrent runs for the group.</p>
+    pub fn get_max_runs(&self) -> &::std::option::Option<i32> {
+        &self.max_runs
     }
     /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
@@ -116,8 +126,11 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>A maximum run time for the group in minutes.</p>
     pub fn set_max_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_duration = input;
-        self
+        self.max_duration = input; self
+    }
+    /// <p>A maximum run time for the group in minutes.</p>
+    pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
+        &self.max_duration
     }
     /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn max_gpus(mut self, input: i32) -> Self {
@@ -126,23 +139,30 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_gpus = input;
-        self
+        self.max_gpus = input; self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
+        &self.max_gpus
     }
     /// Consumes the builder and constructs a [`UpdateRunGroupInput`](crate::operation::update_run_group::UpdateRunGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_run_group::UpdateRunGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_run_group::UpdateRunGroupInput {
-            id: self.id,
-            name: self.name,
-            max_cpus: self.max_cpus,
-            max_runs: self.max_runs,
-            max_duration: self.max_duration,
-            max_gpus: self.max_gpus,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_run_group::UpdateRunGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_run_group::UpdateRunGroupInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                max_cpus: self.max_cpus
+                ,
+                max_runs: self.max_runs
+                ,
+                max_duration: self.max_duration
+                ,
+                max_gpus: self.max_gpus
+                ,
+            }
+        )
     }
 }
+

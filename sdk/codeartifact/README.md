@@ -73,8 +73,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-codeartifact = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-codeartifact = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -85,8 +85,8 @@ use aws_sdk_codeartifact as codeartifact;
 
 #[::tokio::main]
 async fn main() -> Result<(), codeartifact::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = codeartifact::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_codeartifact::Client::new(&config);
 
     // ... make some calls with the client
 

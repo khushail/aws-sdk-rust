@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePullRequestEventsInput {
+pub struct DescribePullRequestEventsInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
@@ -21,21 +21,19 @@ pub struct DescribePullRequestEventsInput {
 }
 impl DescribePullRequestEventsInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>Optional. The pull request event type about which you want to return information.</p>
-    pub fn pull_request_event_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PullRequestEventType> {
+    pub fn pull_request_event_type(&self) -> ::std::option::Option<& crate::types::PullRequestEventType> {
         self.pull_request_event_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
-    pub fn actor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn actor_arn(&self) -> ::std::option::Option<& str> {
         self.actor_arn.as_deref()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
@@ -45,16 +43,14 @@ impl DescribePullRequestEventsInput {
 }
 impl DescribePullRequestEventsInput {
     /// Creates a new builder-style object to manufacture [`DescribePullRequestEventsInput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsInput).
-    pub fn builder() -> crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder{
+    pub fn builder() -> crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder {
         crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePullRequestEventsInput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePullRequestEventsInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) pull_request_event_type: ::std::option::Option<crate::types::PullRequestEventType>,
@@ -64,20 +60,17 @@ pub struct DescribePullRequestEventsInputBuilder {
 }
 impl DescribePullRequestEventsInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.pull_request_id = input;
-        self
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pull_request_id = input; self
+    }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
     }
     /// <p>Optional. The pull request event type about which you want to return information.</p>
     pub fn pull_request_event_type(mut self, input: crate::types::PullRequestEventType) -> Self {
@@ -85,12 +78,12 @@ impl DescribePullRequestEventsInputBuilder {
         self
     }
     /// <p>Optional. The pull request event type about which you want to return information.</p>
-    pub fn set_pull_request_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestEventType>,
-    ) -> Self {
-        self.pull_request_event_type = input;
-        self
+    pub fn set_pull_request_event_type(mut self, input: ::std::option::Option<crate::types::PullRequestEventType>) -> Self {
+        self.pull_request_event_type = input; self
+    }
+    /// <p>Optional. The pull request event type about which you want to return information.</p>
+    pub fn get_pull_request_event_type(&self) -> &::std::option::Option<crate::types::PullRequestEventType> {
+        &self.pull_request_event_type
     }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
     pub fn actor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,8 +92,11 @@ impl DescribePullRequestEventsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
     pub fn set_actor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.actor_arn = input;
-        self
+        self.actor_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
+    pub fn get_actor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.actor_arn
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,8 +105,11 @@ impl DescribePullRequestEventsInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -119,24 +118,28 @@ impl DescribePullRequestEventsInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribePullRequestEventsInput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_pull_request_events::DescribePullRequestEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pull_request_events::DescribePullRequestEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_pull_request_events::DescribePullRequestEventsInput {
-                pull_request_id: self.pull_request_id,
-                pull_request_event_type: self.pull_request_event_type,
-                actor_arn: self.actor_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                pull_request_id: self.pull_request_id
+                ,
+                pull_request_event_type: self.pull_request_event_type
+                ,
+                actor_arn: self.actor_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
     #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct Message {
 }
 impl Message {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The name of the input into which the message payload is transformed.</p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
+    pub fn input_name(&self) -> ::std::option::Option<& str> {
         self.input_name.as_deref()
     }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
     /// <p>The timestamp associated with the message.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&crate::types::TimestampValue> {
+    pub fn timestamp(&self) -> ::std::option::Option<& crate::types::TimestampValue> {
         self.timestamp.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl Message {
 
 /// A builder for [`Message`](crate::types::Message).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl MessageBuilder {
     }
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
+    }
+    /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// <p>The name of the input into which the message payload is transformed.</p>
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl MessageBuilder {
     }
     /// <p>The name of the input into which the message payload is transformed.</p>
     pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
+    }
+    /// <p>The name of the input into which the message payload is transformed.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
     }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -81,8 +85,11 @@ impl MessageBuilder {
     }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
+    }
+    /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
     }
     /// <p>The timestamp associated with the message.</p>
     pub fn timestamp(mut self, input: crate::types::TimestampValue) -> Self {
@@ -90,20 +97,25 @@ impl MessageBuilder {
         self
     }
     /// <p>The timestamp associated with the message.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestampValue>,
-    ) -> Self {
-        self.timestamp = input;
-        self
+    pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::TimestampValue>) -> Self {
+        self.timestamp = input; self
+    }
+    /// <p>The timestamp associated with the message.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<crate::types::TimestampValue> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {
         crate::types::Message {
-            message_id: self.message_id,
-            input_name: self.input_name,
-            payload: self.payload,
-            timestamp: self.timestamp,
+            message_id: self.message_id
+            ,
+            input_name: self.input_name
+            ,
+            payload: self.payload
+            ,
+            timestamp: self.timestamp
+            ,
         }
     }
 }
+

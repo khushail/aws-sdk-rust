@@ -3,8 +3,8 @@
 /// <p>A structure that specifies one user or group in the workspace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct User {
-    /// <p>The ID of the user or group.</p>
+pub struct User  {
+    /// <p>The ID of the user or group.</p> 
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,13 +13,13 @@ pub struct User {
     pub r#type: ::std::option::Option<crate::types::UserType>,
 }
 impl User {
-    /// <p>The ID of the user or group.</p>
+    /// <p>The ID of the user or group.</p> 
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Specifies whether this is a single user or a group.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UserType> {
         self.r#type.as_ref()
     }
 }
@@ -32,25 +32,27 @@ impl User {
 
 /// A builder for [`User`](crate::types::User).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::UserType>,
 }
 impl UserBuilder {
-    /// <p>The ID of the user or group.</p>
+    /// <p>The ID of the user or group.</p> 
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user or group.</p>
+    /// <p>The ID of the user or group.</p> 
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the user or group.</p> 
+    /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Specifies whether this is a single user or a group.</p>
     pub fn r#type(mut self, input: crate::types::UserType) -> Self {
@@ -59,14 +61,20 @@ impl UserBuilder {
     }
     /// <p>Specifies whether this is a single user or a group.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>Specifies whether this is a single user or a group.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {
         crate::types::User {
-            id: self.id,
-            r#type: self.r#type,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

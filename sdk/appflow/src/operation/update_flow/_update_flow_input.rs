@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFlowInput {
+pub struct UpdateFlowInput  {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
@@ -17,57 +17,52 @@ pub struct UpdateFlowInput {
     pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     #[doc(hidden)]
-    pub destination_flow_config_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    pub destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     #[doc(hidden)]
     pub metadata_catalog_config: ::std::option::Option<crate::types::MetadataCatalogConfig>,
-    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
-    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> 
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> 
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> ::std::option::Option<&str> {
+    pub fn flow_name(&self) -> ::std::option::Option<& str> {
         self.flow_name.as_deref()
     }
     /// <p> A description of the flow. </p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn trigger_config(&self) -> ::std::option::Option<&crate::types::TriggerConfig> {
+    pub fn trigger_config(&self) -> ::std::option::Option<& crate::types::TriggerConfig> {
         self.trigger_config.as_ref()
     }
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
-    pub fn source_flow_config(&self) -> ::std::option::Option<&crate::types::SourceFlowConfig> {
+    pub fn source_flow_config(&self) -> ::std::option::Option<& crate::types::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DestinationFlowConfig]> {
+    pub fn destination_flow_config_list(&self) -> ::std::option::Option<& [crate::types::DestinationFlowConfig]> {
         self.destination_flow_config_list.as_deref()
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::Task]> {
+    pub fn tasks(&self) -> ::std::option::Option<& [crate::types::Task]> {
         self.tasks.as_deref()
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn metadata_catalog_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetadataCatalogConfig> {
+    pub fn metadata_catalog_config(&self) -> ::std::option::Option<& crate::types::MetadataCatalogConfig> {
         self.metadata_catalog_config.as_ref()
     }
-    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
-    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> 
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> 
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -80,16 +75,13 @@ impl UpdateFlowInput {
 
 /// A builder for [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
     pub(crate) source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
-    pub(crate) destination_flow_config_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    pub(crate) destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     pub(crate) metadata_catalog_config: ::std::option::Option<crate::types::MetadataCatalogConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -102,8 +94,11 @@ impl UpdateFlowInputBuilder {
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_name = input;
-        self
+        self.flow_name = input; self
+    }
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_name
     }
     /// <p> A description of the flow. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,8 +107,11 @@ impl UpdateFlowInputBuilder {
     }
     /// <p> A description of the flow. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p> A description of the flow. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
@@ -121,12 +119,12 @@ impl UpdateFlowInputBuilder {
         self
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn set_trigger_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerConfig>,
-    ) -> Self {
-        self.trigger_config = input;
-        self
+    pub fn set_trigger_config(mut self, input: ::std::option::Option<crate::types::TriggerConfig>) -> Self {
+        self.trigger_config = input; self
+    }
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
+    pub fn get_trigger_config(&self) -> &::std::option::Option<crate::types::TriggerConfig> {
+        &self.trigger_config
     }
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
@@ -134,34 +132,31 @@ impl UpdateFlowInputBuilder {
         self
     }
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
-    pub fn set_source_flow_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceFlowConfig>,
-    ) -> Self {
-        self.source_flow_config = input;
-        self
+    pub fn set_source_flow_config(mut self, input: ::std::option::Option<crate::types::SourceFlowConfig>) -> Self {
+        self.source_flow_config = input; self
+    }
+    /// <p> Contains information about the configuration of the source connector used in the flow. </p>
+    pub fn get_source_flow_config(&self) -> &::std::option::Option<crate::types::SourceFlowConfig> {
+        &self.source_flow_config
     }
     /// Appends an item to `destination_flow_config_list`.
     ///
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
     ///
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(
-        mut self,
-        input: crate::types::DestinationFlowConfig,
-    ) -> Self {
+    pub fn destination_flow_config_list(mut self, input: crate::types::DestinationFlowConfig) -> Self {
         let mut v = self.destination_flow_config_list.unwrap_or_default();
-        v.push(input);
-        self.destination_flow_config_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destination_flow_config_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn set_destination_flow_config_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
-    ) -> Self {
-        self.destination_flow_config_list = input;
-        self
+    pub fn set_destination_flow_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
+        self.destination_flow_config_list = input; self
+    }
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
+    pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
+        &self.destination_flow_config_list
     }
     /// Appends an item to `tasks`.
     ///
@@ -170,17 +165,17 @@ impl UpdateFlowInputBuilder {
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input);
-        self.tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    ) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
+        self.tasks = input; self
+    }
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
+        &self.tasks
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     pub fn metadata_catalog_config(mut self, input: crate::types::MetadataCatalogConfig) -> Self {
@@ -188,43 +183,54 @@ impl UpdateFlowInputBuilder {
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn set_metadata_catalog_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataCatalogConfig>,
-    ) -> Self {
-        self.metadata_catalog_config = input;
-        self
+    pub fn set_metadata_catalog_config(mut self, input: ::std::option::Option<crate::types::MetadataCatalogConfig>) -> Self {
+        self.metadata_catalog_config = input; self
     }
-    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
-    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
+    /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+    pub fn get_metadata_catalog_config(&self) -> &::std::option::Option<crate::types::MetadataCatalogConfig> {
+        &self.metadata_catalog_config
+    }
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> 
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> 
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
-    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> 
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> 
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> 
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> 
+    /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_flow::UpdateFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_flow::UpdateFlowInput {
-            flow_name: self.flow_name,
-            description: self.description,
-            trigger_config: self.trigger_config,
-            source_flow_config: self.source_flow_config,
-            destination_flow_config_list: self.destination_flow_config_list,
-            tasks: self.tasks,
-            metadata_catalog_config: self.metadata_catalog_config,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_flow::UpdateFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_flow::UpdateFlowInput {
+                flow_name: self.flow_name
+                ,
+                description: self.description
+                ,
+                trigger_config: self.trigger_config
+                ,
+                source_flow_config: self.source_flow_config
+                ,
+                destination_flow_config_list: self.destination_flow_config_list
+                ,
+                tasks: self.tasks
+                ,
+                metadata_catalog_config: self.metadata_catalog_config
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> Entity that comprises information abount unsupported timestamps in the dataset. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnsupportedTimestamps {
+pub struct UnsupportedTimestamps  {
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
     #[doc(hidden)]
     pub total_number_of_unsupported_timestamps: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl UnsupportedTimestamps {
 
 /// A builder for [`UnsupportedTimestamps`](crate::types::UnsupportedTimestamps).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsupportedTimestampsBuilder {
     pub(crate) total_number_of_unsupported_timestamps: ::std::option::Option<i32>,
 }
@@ -36,17 +34,19 @@ impl UnsupportedTimestampsBuilder {
         self
     }
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
-    pub fn set_total_number_of_unsupported_timestamps(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.total_number_of_unsupported_timestamps = input;
-        self
+    pub fn set_total_number_of_unsupported_timestamps(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_number_of_unsupported_timestamps = input; self
+    }
+    /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
+    pub fn get_total_number_of_unsupported_timestamps(&self) -> &::std::option::Option<i32> {
+        &self.total_number_of_unsupported_timestamps
     }
     /// Consumes the builder and constructs a [`UnsupportedTimestamps`](crate::types::UnsupportedTimestamps).
     pub fn build(self) -> crate::types::UnsupportedTimestamps {
         crate::types::UnsupportedTimestamps {
-            total_number_of_unsupported_timestamps: self.total_number_of_unsupported_timestamps,
+            total_number_of_unsupported_timestamps: self.total_number_of_unsupported_timestamps
+            ,
         }
     }
 }
+

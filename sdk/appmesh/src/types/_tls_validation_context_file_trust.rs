@@ -3,14 +3,14 @@
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TlsValidationContextFileTrust {
+pub struct TlsValidationContextFileTrust  {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl TlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> ::std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl TlsValidationContextFileTrust {
 
 /// A builder for [`TlsValidationContextFileTrust`](crate::types::TlsValidationContextFileTrust).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TlsValidationContextFileTrustBuilder {
     pub(crate) certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl TlsValidationContextFileTrustBuilder {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn certificate_chain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.certificate_chain = input;
-        self
+    pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_chain = input; self
+    }
+    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_chain
     }
     /// Consumes the builder and constructs a [`TlsValidationContextFileTrust`](crate::types::TlsValidationContextFileTrust).
     pub fn build(self) -> crate::types::TlsValidationContextFileTrust {
         crate::types::TlsValidationContextFileTrust {
-            certificate_chain: self.certificate_chain,
+            certificate_chain: self.certificate_chain
+            ,
         }
     }
 }
+

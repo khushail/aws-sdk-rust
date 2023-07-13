@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSlotTypeVersionInput {
+pub struct DeleteSlotTypeVersionInput  {
     /// <p>The name of the slot type.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DeleteSlotTypeVersionInput {
 }
 impl DeleteSlotTypeVersionInput {
     /// <p>The name of the slot type.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 impl DeleteSlotTypeVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteSlotTypeVersionInput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionInputBuilder {
         crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSlotTypeVersionInput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSlotTypeVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl DeleteSlotTypeVersionInputBuilder {
     }
     /// <p>The name of the slot type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the slot type.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl DeleteSlotTypeVersionInputBuilder {
     }
     /// <p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`DeleteSlotTypeVersionInput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput {
-                name: self.name,
-                version: self.version,
-            },
+                name: self.name
+                ,
+                version: self.version
+                ,
+            }
         )
     }
 }
+

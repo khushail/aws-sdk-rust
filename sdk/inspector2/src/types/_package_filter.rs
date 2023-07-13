@@ -3,7 +3,7 @@
 /// <p>Contains information on the details of a package filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageFilter {
+pub struct PackageFilter  {
     /// <p>An object that contains details on the name of the package to filter on.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::StringFilter>,
@@ -28,31 +28,31 @@ pub struct PackageFilter {
 }
 impl PackageFilter {
     /// <p>An object that contains details on the name of the package to filter on.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.name.as_ref()
     }
     /// <p>The package version to filter on.</p>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn version(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.version.as_ref()
     }
     /// <p>An object that contains details on the package epoch to filter on.</p>
-    pub fn epoch(&self) -> ::std::option::Option<&crate::types::NumberFilter> {
+    pub fn epoch(&self) -> ::std::option::Option<& crate::types::NumberFilter> {
         self.epoch.as_ref()
     }
     /// <p>An object that contains details on the package release to filter on.</p>
-    pub fn release(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn release(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.release.as_ref()
     }
     /// <p>An object that contains details on the package architecture type to filter on.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn architecture(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.architecture.as_ref()
     }
     /// <p>An object that contains details on the source layer hash to filter on.</p>
-    pub fn source_layer_hash(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn source_layer_hash(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.source_layer_hash.as_ref()
     }
     /// <p>An object that describes the details of a string filter.</p>
-    pub fn source_lambda_layer_arn(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn source_lambda_layer_arn(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.source_lambda_layer_arn.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl PackageFilter {
 
 /// A builder for [`PackageFilter`](crate::types::PackageFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::StringFilter>,
     pub(crate) version: ::std::option::Option<crate::types::StringFilter>,
@@ -85,8 +83,11 @@ impl PackageFilterBuilder {
     }
     /// <p>An object that contains details on the name of the package to filter on.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>An object that contains details on the name of the package to filter on.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::StringFilter> {
+        &self.name
     }
     /// <p>The package version to filter on.</p>
     pub fn version(mut self, input: crate::types::StringFilter) -> Self {
@@ -95,8 +96,11 @@ impl PackageFilterBuilder {
     }
     /// <p>The package version to filter on.</p>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The package version to filter on.</p>
+    pub fn get_version(&self) -> &::std::option::Option<crate::types::StringFilter> {
+        &self.version
     }
     /// <p>An object that contains details on the package epoch to filter on.</p>
     pub fn epoch(mut self, input: crate::types::NumberFilter) -> Self {
@@ -105,8 +109,11 @@ impl PackageFilterBuilder {
     }
     /// <p>An object that contains details on the package epoch to filter on.</p>
     pub fn set_epoch(mut self, input: ::std::option::Option<crate::types::NumberFilter>) -> Self {
-        self.epoch = input;
-        self
+        self.epoch = input; self
+    }
+    /// <p>An object that contains details on the package epoch to filter on.</p>
+    pub fn get_epoch(&self) -> &::std::option::Option<crate::types::NumberFilter> {
+        &self.epoch
     }
     /// <p>An object that contains details on the package release to filter on.</p>
     pub fn release(mut self, input: crate::types::StringFilter) -> Self {
@@ -115,8 +122,11 @@ impl PackageFilterBuilder {
     }
     /// <p>An object that contains details on the package release to filter on.</p>
     pub fn set_release(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
-        self.release = input;
-        self
+        self.release = input; self
+    }
+    /// <p>An object that contains details on the package release to filter on.</p>
+    pub fn get_release(&self) -> &::std::option::Option<crate::types::StringFilter> {
+        &self.release
     }
     /// <p>An object that contains details on the package architecture type to filter on.</p>
     pub fn architecture(mut self, input: crate::types::StringFilter) -> Self {
@@ -124,12 +134,12 @@ impl PackageFilterBuilder {
         self
     }
     /// <p>An object that contains details on the package architecture type to filter on.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::StringFilter>,
-    ) -> Self {
-        self.architecture = input;
-        self
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
+        self.architecture = input; self
+    }
+    /// <p>An object that contains details on the package architecture type to filter on.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::StringFilter> {
+        &self.architecture
     }
     /// <p>An object that contains details on the source layer hash to filter on.</p>
     pub fn source_layer_hash(mut self, input: crate::types::StringFilter) -> Self {
@@ -137,12 +147,12 @@ impl PackageFilterBuilder {
         self
     }
     /// <p>An object that contains details on the source layer hash to filter on.</p>
-    pub fn set_source_layer_hash(
-        mut self,
-        input: ::std::option::Option<crate::types::StringFilter>,
-    ) -> Self {
-        self.source_layer_hash = input;
-        self
+    pub fn set_source_layer_hash(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
+        self.source_layer_hash = input; self
+    }
+    /// <p>An object that contains details on the source layer hash to filter on.</p>
+    pub fn get_source_layer_hash(&self) -> &::std::option::Option<crate::types::StringFilter> {
+        &self.source_layer_hash
     }
     /// <p>An object that describes the details of a string filter.</p>
     pub fn source_lambda_layer_arn(mut self, input: crate::types::StringFilter) -> Self {
@@ -150,23 +160,31 @@ impl PackageFilterBuilder {
         self
     }
     /// <p>An object that describes the details of a string filter.</p>
-    pub fn set_source_lambda_layer_arn(
-        mut self,
-        input: ::std::option::Option<crate::types::StringFilter>,
-    ) -> Self {
-        self.source_lambda_layer_arn = input;
-        self
+    pub fn set_source_lambda_layer_arn(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
+        self.source_lambda_layer_arn = input; self
+    }
+    /// <p>An object that describes the details of a string filter.</p>
+    pub fn get_source_lambda_layer_arn(&self) -> &::std::option::Option<crate::types::StringFilter> {
+        &self.source_lambda_layer_arn
     }
     /// Consumes the builder and constructs a [`PackageFilter`](crate::types::PackageFilter).
     pub fn build(self) -> crate::types::PackageFilter {
         crate::types::PackageFilter {
-            name: self.name,
-            version: self.version,
-            epoch: self.epoch,
-            release: self.release,
-            architecture: self.architecture,
-            source_layer_hash: self.source_layer_hash,
-            source_lambda_layer_arn: self.source_lambda_layer_arn,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            epoch: self.epoch
+            ,
+            release: self.release
+            ,
+            architecture: self.architecture
+            ,
+            source_layer_hash: self.source_layer_hash
+            ,
+            source_lambda_layer_arn: self.source_lambda_layer_arn
+            ,
         }
     }
 }
+

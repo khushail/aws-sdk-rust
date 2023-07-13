@@ -3,24 +3,21 @@
 /// <p>Specifies configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlgorithmValidationSpecification {
+pub struct AlgorithmValidationSpecification  {
     /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
     #[doc(hidden)]
     pub validation_role: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
     #[doc(hidden)]
-    pub validation_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmValidationProfile>>,
+    pub validation_profiles: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmValidationProfile>>,
 }
 impl AlgorithmValidationSpecification {
     /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-    pub fn validation_role(&self) -> ::std::option::Option<&str> {
+    pub fn validation_role(&self) -> ::std::option::Option<& str> {
         self.validation_role.as_deref()
     }
     /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
-    pub fn validation_profiles(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlgorithmValidationProfile]> {
+    pub fn validation_profiles(&self) -> ::std::option::Option<& [crate::types::AlgorithmValidationProfile]> {
         self.validation_profiles.as_deref()
     }
 }
@@ -33,30 +30,24 @@ impl AlgorithmValidationSpecification {
 
 /// A builder for [`AlgorithmValidationSpecification`](crate::types::AlgorithmValidationSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlgorithmValidationSpecificationBuilder {
     pub(crate) validation_role: ::std::option::Option<::std::string::String>,
-    pub(crate) validation_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmValidationProfile>>,
+    pub(crate) validation_profiles: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmValidationProfile>>,
 }
 impl AlgorithmValidationSpecificationBuilder {
     /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-    pub fn validation_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-    pub fn set_validation_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.validation_role = input;
-        self
+    pub fn set_validation_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.validation_role = input; self
+    }
+    /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
+    pub fn get_validation_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_role
     }
     /// Appends an item to `validation_profiles`.
     ///
@@ -65,23 +56,26 @@ impl AlgorithmValidationSpecificationBuilder {
     /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
     pub fn validation_profiles(mut self, input: crate::types::AlgorithmValidationProfile) -> Self {
         let mut v = self.validation_profiles.unwrap_or_default();
-        v.push(input);
-        self.validation_profiles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_profiles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
-    pub fn set_validation_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmValidationProfile>>,
-    ) -> Self {
-        self.validation_profiles = input;
-        self
+    pub fn set_validation_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmValidationProfile>>) -> Self {
+        self.validation_profiles = input; self
+    }
+    /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
+    pub fn get_validation_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlgorithmValidationProfile>> {
+        &self.validation_profiles
     }
     /// Consumes the builder and constructs a [`AlgorithmValidationSpecification`](crate::types::AlgorithmValidationSpecification).
     pub fn build(self) -> crate::types::AlgorithmValidationSpecification {
         crate::types::AlgorithmValidationSpecification {
-            validation_role: self.validation_role,
-            validation_profiles: self.validation_profiles,
+            validation_role: self.validation_role
+            ,
+            validation_profiles: self.validation_profiles
+            ,
         }
     }
 }
+

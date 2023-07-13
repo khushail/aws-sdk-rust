@@ -3,7 +3,7 @@
 /// Placeholder documentation for OutputDestinationSettings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputDestinationSettings {
+pub struct OutputDestinationSettings  {
     /// key used to extract the password from EC2 Parameter store
     #[doc(hidden)]
     pub password_param: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct OutputDestinationSettings {
 }
 impl OutputDestinationSettings {
     /// key used to extract the password from EC2 Parameter store
-    pub fn password_param(&self) -> ::std::option::Option<&str> {
+    pub fn password_param(&self) -> ::std::option::Option<& str> {
         self.password_param.as_deref()
     }
     /// Stream name for RTMP destinations (URLs of type rtmp://)
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// A URL specifying a destination
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// username for destination
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl OutputDestinationSettings {
 
 /// A builder for [`OutputDestinationSettings`](crate::types::OutputDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputDestinationSettingsBuilder {
     pub(crate) password_param: ::std::option::Option<::std::string::String>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
@@ -55,20 +53,17 @@ pub struct OutputDestinationSettingsBuilder {
 }
 impl OutputDestinationSettingsBuilder {
     /// key used to extract the password from EC2 Parameter store
-    pub fn password_param(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn password_param(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password_param = ::std::option::Option::Some(input.into());
         self
     }
     /// key used to extract the password from EC2 Parameter store
-    pub fn set_password_param(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.password_param = input;
-        self
+    pub fn set_password_param(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.password_param = input; self
+    }
+    /// key used to extract the password from EC2 Parameter store
+    pub fn get_password_param(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password_param
     }
     /// Stream name for RTMP destinations (URLs of type rtmp://)
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,8 +72,11 @@ impl OutputDestinationSettingsBuilder {
     }
     /// Stream name for RTMP destinations (URLs of type rtmp://)
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
+    }
+    /// Stream name for RTMP destinations (URLs of type rtmp://)
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// A URL specifying a destination
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +85,11 @@ impl OutputDestinationSettingsBuilder {
     }
     /// A URL specifying a destination
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// A URL specifying a destination
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// username for destination
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,16 +98,24 @@ impl OutputDestinationSettingsBuilder {
     }
     /// username for destination
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// username for destination
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`OutputDestinationSettings`](crate::types::OutputDestinationSettings).
     pub fn build(self) -> crate::types::OutputDestinationSettings {
         crate::types::OutputDestinationSettings {
-            password_param: self.password_param,
-            stream_name: self.stream_name,
-            url: self.url,
-            username: self.username,
+            password_param: self.password_param
+            ,
+            stream_name: self.stream_name
+            ,
+            url: self.url
+            ,
+            username: self.username
+            ,
         }
     }
 }
+

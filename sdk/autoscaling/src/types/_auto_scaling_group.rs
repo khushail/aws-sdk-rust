@@ -3,7 +3,7 @@
 /// <p>Describes an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoScalingGroup {
+pub struct AutoScalingGroup  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -82,7 +82,7 @@ pub struct AutoScalingGroup {
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf.</p>
     #[doc(hidden)]
     pub service_linked_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p>
+    /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p> 
     /// <p>Valid Range: Minimum value of 0.</p>
     #[doc(hidden)]
     pub max_instance_lifetime: ::std::option::Option<i32>,
@@ -106,32 +106,27 @@ pub struct AutoScalingGroup {
     pub default_instance_warmup: ::std::option::Option<i32>,
     /// <p>The traffic sources associated with this Auto Scaling group.</p>
     #[doc(hidden)]
-    pub traffic_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    pub traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
 }
 impl AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_arn(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_arn.as_deref()
     }
     /// <p>The name of the associated launch configuration.</p>
-    pub fn launch_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn launch_configuration_name(&self) -> ::std::option::Option<& str> {
         self.launch_configuration_name.as_deref()
     }
     /// <p>The launch template for the group.</p>
-    pub fn launch_template(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
+    pub fn launch_template(&self) -> ::std::option::Option<& crate::types::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
     /// <p>The mixed instances policy for the group.</p>
-    pub fn mixed_instances_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MixedInstancesPolicy> {
+    pub fn mixed_instances_policy(&self) -> ::std::option::Option<& crate::types::MixedInstancesPolicy> {
         self.mixed_instances_policy.as_ref()
     }
     /// <p>The minimum size of the group.</p>
@@ -155,19 +150,19 @@ impl AutoScalingGroup {
         self.default_cooldown
     }
     /// <p>One or more Availability Zones for the group.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>One or more load balancers associated with the group.</p>
-    pub fn load_balancer_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn load_balancer_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.load_balancer_names.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
-    pub fn target_group_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn target_group_ar_ns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.target_group_ar_ns.as_deref()
     }
     /// <p>A comma-separated value string of one or more health check types.</p>
-    pub fn health_check_type(&self) -> ::std::option::Option<&str> {
+    pub fn health_check_type(&self) -> ::std::option::Option<& str> {
         self.health_check_type.as_deref()
     }
     /// <p>The duration of the health check grace period, in seconds.</p>
@@ -175,39 +170,39 @@ impl AutoScalingGroup {
         self.health_check_grace_period
     }
     /// <p>The EC2 instances associated with the group.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> ::std::option::Option<& [crate::types::Instance]> {
         self.instances.as_deref()
     }
     /// <p>The date and time the group was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The suspended processes associated with the group.</p>
-    pub fn suspended_processes(&self) -> ::std::option::Option<&[crate::types::SuspendedProcess]> {
+    pub fn suspended_processes(&self) -> ::std::option::Option<& [crate::types::SuspendedProcess]> {
         self.suspended_processes.as_deref()
     }
     /// <p>The name of the placement group into which to launch your instances, if any.</p>
-    pub fn placement_group(&self) -> ::std::option::Option<&str> {
+    pub fn placement_group(&self) -> ::std::option::Option<& str> {
         self.placement_group.as_deref()
     }
     /// <p>One or more subnet IDs, if applicable, separated by commas.</p>
-    pub fn vpc_zone_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_zone_identifier(&self) -> ::std::option::Option<& str> {
         self.vpc_zone_identifier.as_deref()
     }
     /// <p>The metrics enabled for the group.</p>
-    pub fn enabled_metrics(&self) -> ::std::option::Option<&[crate::types::EnabledMetric]> {
+    pub fn enabled_metrics(&self) -> ::std::option::Option<& [crate::types::EnabledMetric]> {
         self.enabled_metrics.as_deref()
     }
     /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The tags for the group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagDescription]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::TagDescription]> {
         self.tags.as_deref()
     }
     /// <p>The termination policies for the group.</p>
-    pub fn termination_policies(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn termination_policies(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.termination_policies.as_deref()
     }
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
@@ -215,10 +210,10 @@ impl AutoScalingGroup {
         self.new_instances_protected_from_scale_in
     }
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf.</p>
-    pub fn service_linked_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_linked_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_linked_role_arn.as_deref()
     }
-    /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p>
+    /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p> 
     /// <p>Valid Range: Minimum value of 0.</p>
     pub fn max_instance_lifetime(&self) -> ::std::option::Option<i32> {
         self.max_instance_lifetime
@@ -228,9 +223,7 @@ impl AutoScalingGroup {
         self.capacity_rebalance
     }
     /// <p>The warm pool for the group.</p>
-    pub fn warm_pool_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WarmPoolConfiguration> {
+    pub fn warm_pool_configuration(&self) -> ::std::option::Option<& crate::types::WarmPoolConfiguration> {
         self.warm_pool_configuration.as_ref()
     }
     /// <p>The current size of the warm pool.</p>
@@ -238,11 +231,11 @@ impl AutoScalingGroup {
         self.warm_pool_size
     }
     /// <p>Reserved.</p>
-    pub fn context(&self) -> ::std::option::Option<&str> {
+    pub fn context(&self) -> ::std::option::Option<& str> {
         self.context.as_deref()
     }
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
-    pub fn desired_capacity_type(&self) -> ::std::option::Option<&str> {
+    pub fn desired_capacity_type(&self) -> ::std::option::Option<& str> {
         self.desired_capacity_type.as_deref()
     }
     /// <p>The duration of the default instance warmup, in seconds.</p>
@@ -250,9 +243,7 @@ impl AutoScalingGroup {
         self.default_instance_warmup
     }
     /// <p>The traffic sources associated with this Auto Scaling group.</p>
-    pub fn traffic_sources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficSourceIdentifier]> {
+    pub fn traffic_sources(&self) -> ::std::option::Option<& [crate::types::TrafficSourceIdentifier]> {
         self.traffic_sources.as_deref()
     }
 }
@@ -265,9 +256,7 @@ impl AutoScalingGroup {
 
 /// A builder for [`AutoScalingGroup`](crate::types::AutoScalingGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingGroupBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
@@ -286,8 +275,7 @@ pub struct AutoScalingGroupBuilder {
     pub(crate) health_check_grace_period: ::std::option::Option<i32>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) suspended_processes:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuspendedProcess>>,
+    pub(crate) suspended_processes: ::std::option::Option<::std::vec::Vec<crate::types::SuspendedProcess>>,
     pub(crate) placement_group: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_zone_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) enabled_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EnabledMetric>>,
@@ -303,57 +291,47 @@ pub struct AutoScalingGroupBuilder {
     pub(crate) context: ::std::option::Option<::std::string::String>,
     pub(crate) desired_capacity_type: ::std::option::Option<::std::string::String>,
     pub(crate) default_instance_warmup: ::std::option::Option<i32>,
-    pub(crate) traffic_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
 }
 impl AutoScalingGroupBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_arn = input;
-        self
+    pub fn set_auto_scaling_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auto_scaling_group_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_arn
     }
     /// <p>The name of the associated launch configuration.</p>
-    pub fn launch_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the associated launch configuration.</p>
-    pub fn set_launch_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.launch_configuration_name = input;
-        self
+    pub fn set_launch_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.launch_configuration_name = input; self
+    }
+    /// <p>The name of the associated launch configuration.</p>
+    pub fn get_launch_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_configuration_name
     }
     /// <p>The launch template for the group.</p>
     pub fn launch_template(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
@@ -361,12 +339,12 @@ impl AutoScalingGroupBuilder {
         self
     }
     /// <p>The launch template for the group.</p>
-    pub fn set_launch_template(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
-    ) -> Self {
-        self.launch_template = input;
-        self
+    pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
+        self.launch_template = input; self
+    }
+    /// <p>The launch template for the group.</p>
+    pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
+        &self.launch_template
     }
     /// <p>The mixed instances policy for the group.</p>
     pub fn mixed_instances_policy(mut self, input: crate::types::MixedInstancesPolicy) -> Self {
@@ -374,12 +352,12 @@ impl AutoScalingGroupBuilder {
         self
     }
     /// <p>The mixed instances policy for the group.</p>
-    pub fn set_mixed_instances_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::MixedInstancesPolicy>,
-    ) -> Self {
-        self.mixed_instances_policy = input;
-        self
+    pub fn set_mixed_instances_policy(mut self, input: ::std::option::Option<crate::types::MixedInstancesPolicy>) -> Self {
+        self.mixed_instances_policy = input; self
+    }
+    /// <p>The mixed instances policy for the group.</p>
+    pub fn get_mixed_instances_policy(&self) -> &::std::option::Option<crate::types::MixedInstancesPolicy> {
+        &self.mixed_instances_policy
     }
     /// <p>The minimum size of the group.</p>
     pub fn min_size(mut self, input: i32) -> Self {
@@ -388,8 +366,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The minimum size of the group.</p>
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_size = input;
-        self
+        self.min_size = input; self
+    }
+    /// <p>The minimum size of the group.</p>
+    pub fn get_min_size(&self) -> &::std::option::Option<i32> {
+        &self.min_size
     }
     /// <p>The maximum size of the group.</p>
     pub fn max_size(mut self, input: i32) -> Self {
@@ -398,8 +379,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The maximum size of the group.</p>
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_size = input;
-        self
+        self.max_size = input; self
+    }
+    /// <p>The maximum size of the group.</p>
+    pub fn get_max_size(&self) -> &::std::option::Option<i32> {
+        &self.max_size
     }
     /// <p>The desired size of the group.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
@@ -408,8 +392,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The desired size of the group.</p>
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_capacity = input;
-        self
+        self.desired_capacity = input; self
+    }
+    /// <p>The desired size of the group.</p>
+    pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
+        &self.desired_capacity
     }
     /// <p>The predicted capacity of the group when it has a predictive scaling policy.</p>
     pub fn predicted_capacity(mut self, input: i32) -> Self {
@@ -418,8 +405,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The predicted capacity of the group when it has a predictive scaling policy.</p>
     pub fn set_predicted_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.predicted_capacity = input;
-        self
+        self.predicted_capacity = input; self
+    }
+    /// <p>The predicted capacity of the group when it has a predictive scaling policy.</p>
+    pub fn get_predicted_capacity(&self) -> &::std::option::Option<i32> {
+        &self.predicted_capacity
     }
     /// <p>The duration of the default cooldown period, in seconds.</p>
     pub fn default_cooldown(mut self, input: i32) -> Self {
@@ -428,90 +418,81 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The duration of the default cooldown period, in seconds.</p>
     pub fn set_default_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_cooldown = input;
-        self
+        self.default_cooldown = input; self
+    }
+    /// <p>The duration of the default cooldown period, in seconds.</p>
+    pub fn get_default_cooldown(&self) -> &::std::option::Option<i32> {
+        &self.default_cooldown
     }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>One or more Availability Zones for the group.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more Availability Zones for the group.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
+    }
+    /// <p>One or more Availability Zones for the group.</p>
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
     }
     /// Appends an item to `load_balancer_names`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
     ///
     /// <p>One or more load balancers associated with the group.</p>
-    pub fn load_balancer_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
-        v.push(input.into());
-        self.load_balancer_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.load_balancer_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more load balancers associated with the group.</p>
-    pub fn set_load_balancer_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.load_balancer_names = input;
-        self
+    pub fn set_load_balancer_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.load_balancer_names = input; self
+    }
+    /// <p>One or more load balancers associated with the group.</p>
+    pub fn get_load_balancer_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.load_balancer_names
     }
     /// Appends an item to `target_group_ar_ns`.
     ///
     /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
-    pub fn target_group_ar_ns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_group_ar_ns.unwrap_or_default();
-        v.push(input.into());
-        self.target_group_ar_ns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_group_ar_ns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
-    pub fn set_target_group_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.target_group_ar_ns = input;
-        self
+    pub fn set_target_group_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.target_group_ar_ns = input; self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
+    pub fn get_target_group_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_group_ar_ns
     }
     /// <p>A comma-separated value string of one or more health check types.</p>
-    pub fn health_check_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A comma-separated value string of one or more health check types.</p>
-    pub fn set_health_check_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.health_check_type = input;
-        self
+    pub fn set_health_check_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.health_check_type = input; self
+    }
+    /// <p>A comma-separated value string of one or more health check types.</p>
+    pub fn get_health_check_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_type
     }
     /// <p>The duration of the health check grace period, in seconds.</p>
     pub fn health_check_grace_period(mut self, input: i32) -> Self {
@@ -520,8 +501,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The duration of the health check grace period, in seconds.</p>
     pub fn set_health_check_grace_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.health_check_grace_period = input;
-        self
+        self.health_check_grace_period = input; self
+    }
+    /// <p>The duration of the health check grace period, in seconds.</p>
+    pub fn get_health_check_grace_period(&self) -> &::std::option::Option<i32> {
+        &self.health_check_grace_period
     }
     /// Appends an item to `instances`.
     ///
@@ -530,17 +514,17 @@ impl AutoScalingGroupBuilder {
     /// <p>The EC2 instances associated with the group.</p>
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EC2 instances associated with the group.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
+        self.instances = input; self
+    }
+    /// <p>The EC2 instances associated with the group.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        &self.instances
     }
     /// <p>The date and time the group was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -548,12 +532,12 @@ impl AutoScalingGroupBuilder {
         self
     }
     /// <p>The date and time the group was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
+    }
+    /// <p>The date and time the group was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Appends an item to `suspended_processes`.
     ///
@@ -562,49 +546,43 @@ impl AutoScalingGroupBuilder {
     /// <p>The suspended processes associated with the group.</p>
     pub fn suspended_processes(mut self, input: crate::types::SuspendedProcess) -> Self {
         let mut v = self.suspended_processes.unwrap_or_default();
-        v.push(input);
-        self.suspended_processes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suspended_processes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The suspended processes associated with the group.</p>
-    pub fn set_suspended_processes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuspendedProcess>>,
-    ) -> Self {
-        self.suspended_processes = input;
-        self
+    pub fn set_suspended_processes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuspendedProcess>>) -> Self {
+        self.suspended_processes = input; self
+    }
+    /// <p>The suspended processes associated with the group.</p>
+    pub fn get_suspended_processes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuspendedProcess>> {
+        &self.suspended_processes
     }
     /// <p>The name of the placement group into which to launch your instances, if any.</p>
-    pub fn placement_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the placement group into which to launch your instances, if any.</p>
-    pub fn set_placement_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.placement_group = input;
-        self
+    pub fn set_placement_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.placement_group = input; self
+    }
+    /// <p>The name of the placement group into which to launch your instances, if any.</p>
+    pub fn get_placement_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_group
     }
     /// <p>One or more subnet IDs, if applicable, separated by commas.</p>
-    pub fn vpc_zone_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_zone_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_zone_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One or more subnet IDs, if applicable, separated by commas.</p>
-    pub fn set_vpc_zone_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_zone_identifier = input;
-        self
+    pub fn set_vpc_zone_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_zone_identifier = input; self
+    }
+    /// <p>One or more subnet IDs, if applicable, separated by commas.</p>
+    pub fn get_vpc_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_zone_identifier
     }
     /// Appends an item to `enabled_metrics`.
     ///
@@ -613,17 +591,17 @@ impl AutoScalingGroupBuilder {
     /// <p>The metrics enabled for the group.</p>
     pub fn enabled_metrics(mut self, input: crate::types::EnabledMetric) -> Self {
         let mut v = self.enabled_metrics.unwrap_or_default();
-        v.push(input);
-        self.enabled_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.enabled_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metrics enabled for the group.</p>
-    pub fn set_enabled_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledMetric>>,
-    ) -> Self {
-        self.enabled_metrics = input;
-        self
+    pub fn set_enabled_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledMetric>>) -> Self {
+        self.enabled_metrics = input; self
+    }
+    /// <p>The metrics enabled for the group.</p>
+    pub fn get_enabled_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledMetric>> {
+        &self.enabled_metrics
     }
     /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -632,8 +610,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Appends an item to `tags`.
     ///
@@ -642,39 +623,36 @@ impl AutoScalingGroupBuilder {
     /// <p>The tags for the group.</p>
     pub fn tags(mut self, input: crate::types::TagDescription) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags for the group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagDescription>> {
+        &self.tags
     }
     /// Appends an item to `termination_policies`.
     ///
     /// To override the contents of this collection use [`set_termination_policies`](Self::set_termination_policies).
     ///
     /// <p>The termination policies for the group.</p>
-    pub fn termination_policies(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn termination_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.termination_policies.unwrap_or_default();
-        v.push(input.into());
-        self.termination_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.termination_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The termination policies for the group.</p>
-    pub fn set_termination_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.termination_policies = input;
-        self
+    pub fn set_termination_policies(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.termination_policies = input; self
+    }
+    /// <p>The termination policies for the group.</p>
+    pub fn get_termination_policies(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.termination_policies
     }
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     pub fn new_instances_protected_from_scale_in(mut self, input: bool) -> Self {
@@ -682,40 +660,41 @@ impl AutoScalingGroupBuilder {
         self
     }
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
-    pub fn set_new_instances_protected_from_scale_in(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.new_instances_protected_from_scale_in = input;
-        self
+    pub fn set_new_instances_protected_from_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.new_instances_protected_from_scale_in = input; self
+    }
+    /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
+    pub fn get_new_instances_protected_from_scale_in(&self) -> &::std::option::Option<bool> {
+        &self.new_instances_protected_from_scale_in
     }
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf.</p>
-    pub fn service_linked_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_linked_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_linked_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf.</p>
-    pub fn set_service_linked_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.service_linked_role_arn = input;
-        self
+    pub fn set_service_linked_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_linked_role_arn = input; self
     }
-    /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf.</p>
+    pub fn get_service_linked_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_linked_role_arn
+    }
+    /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p> 
     /// <p>Valid Range: Minimum value of 0.</p>
     pub fn max_instance_lifetime(mut self, input: i32) -> Self {
         self.max_instance_lifetime = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p>
+    /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p> 
     /// <p>Valid Range: Minimum value of 0.</p>
     pub fn set_max_instance_lifetime(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_instance_lifetime = input;
-        self
+        self.max_instance_lifetime = input; self
+    }
+    /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p> 
+    /// <p>Valid Range: Minimum value of 0.</p>
+    pub fn get_max_instance_lifetime(&self) -> &::std::option::Option<i32> {
+        &self.max_instance_lifetime
     }
     /// <p>Indicates whether Capacity Rebalancing is enabled.</p>
     pub fn capacity_rebalance(mut self, input: bool) -> Self {
@@ -724,8 +703,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>Indicates whether Capacity Rebalancing is enabled.</p>
     pub fn set_capacity_rebalance(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.capacity_rebalance = input;
-        self
+        self.capacity_rebalance = input; self
+    }
+    /// <p>Indicates whether Capacity Rebalancing is enabled.</p>
+    pub fn get_capacity_rebalance(&self) -> &::std::option::Option<bool> {
+        &self.capacity_rebalance
     }
     /// <p>The warm pool for the group.</p>
     pub fn warm_pool_configuration(mut self, input: crate::types::WarmPoolConfiguration) -> Self {
@@ -733,12 +715,12 @@ impl AutoScalingGroupBuilder {
         self
     }
     /// <p>The warm pool for the group.</p>
-    pub fn set_warm_pool_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WarmPoolConfiguration>,
-    ) -> Self {
-        self.warm_pool_configuration = input;
-        self
+    pub fn set_warm_pool_configuration(mut self, input: ::std::option::Option<crate::types::WarmPoolConfiguration>) -> Self {
+        self.warm_pool_configuration = input; self
+    }
+    /// <p>The warm pool for the group.</p>
+    pub fn get_warm_pool_configuration(&self) -> &::std::option::Option<crate::types::WarmPoolConfiguration> {
+        &self.warm_pool_configuration
     }
     /// <p>The current size of the warm pool.</p>
     pub fn warm_pool_size(mut self, input: i32) -> Self {
@@ -747,8 +729,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The current size of the warm pool.</p>
     pub fn set_warm_pool_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.warm_pool_size = input;
-        self
+        self.warm_pool_size = input; self
+    }
+    /// <p>The current size of the warm pool.</p>
+    pub fn get_warm_pool_size(&self) -> &::std::option::Option<i32> {
+        &self.warm_pool_size
     }
     /// <p>Reserved.</p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -757,24 +742,24 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>Reserved.</p>
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
     }
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
-    pub fn desired_capacity_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_capacity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_capacity_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
-    pub fn set_desired_capacity_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.desired_capacity_type = input;
-        self
+    pub fn set_desired_capacity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.desired_capacity_type = input; self
+    }
+    /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
+    pub fn get_desired_capacity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.desired_capacity_type
     }
     /// <p>The duration of the default instance warmup, in seconds.</p>
     pub fn default_instance_warmup(mut self, input: i32) -> Self {
@@ -783,8 +768,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The duration of the default instance warmup, in seconds.</p>
     pub fn set_default_instance_warmup(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_instance_warmup = input;
-        self
+        self.default_instance_warmup = input; self
+    }
+    /// <p>The duration of the default instance warmup, in seconds.</p>
+    pub fn get_default_instance_warmup(&self) -> &::std::option::Option<i32> {
+        &self.default_instance_warmup
     }
     /// Appends an item to `traffic_sources`.
     ///
@@ -793,55 +781,90 @@ impl AutoScalingGroupBuilder {
     /// <p>The traffic sources associated with this Auto Scaling group.</p>
     pub fn traffic_sources(mut self, input: crate::types::TrafficSourceIdentifier) -> Self {
         let mut v = self.traffic_sources.unwrap_or_default();
-        v.push(input);
-        self.traffic_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.traffic_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The traffic sources associated with this Auto Scaling group.</p>
-    pub fn set_traffic_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
-    ) -> Self {
-        self.traffic_sources = input;
-        self
+    pub fn set_traffic_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>) -> Self {
+        self.traffic_sources = input; self
+    }
+    /// <p>The traffic sources associated with this Auto Scaling group.</p>
+    pub fn get_traffic_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>> {
+        &self.traffic_sources
     }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {
         crate::types::AutoScalingGroup {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            auto_scaling_group_arn: self.auto_scaling_group_arn,
-            launch_configuration_name: self.launch_configuration_name,
-            launch_template: self.launch_template,
-            mixed_instances_policy: self.mixed_instances_policy,
-            min_size: self.min_size,
-            max_size: self.max_size,
-            desired_capacity: self.desired_capacity,
-            predicted_capacity: self.predicted_capacity,
-            default_cooldown: self.default_cooldown,
-            availability_zones: self.availability_zones,
-            load_balancer_names: self.load_balancer_names,
-            target_group_ar_ns: self.target_group_ar_ns,
-            health_check_type: self.health_check_type,
-            health_check_grace_period: self.health_check_grace_period,
-            instances: self.instances,
-            created_time: self.created_time,
-            suspended_processes: self.suspended_processes,
-            placement_group: self.placement_group,
-            vpc_zone_identifier: self.vpc_zone_identifier,
-            enabled_metrics: self.enabled_metrics,
-            status: self.status,
-            tags: self.tags,
-            termination_policies: self.termination_policies,
-            new_instances_protected_from_scale_in: self.new_instances_protected_from_scale_in,
-            service_linked_role_arn: self.service_linked_role_arn,
-            max_instance_lifetime: self.max_instance_lifetime,
-            capacity_rebalance: self.capacity_rebalance,
-            warm_pool_configuration: self.warm_pool_configuration,
-            warm_pool_size: self.warm_pool_size,
-            context: self.context,
-            desired_capacity_type: self.desired_capacity_type,
-            default_instance_warmup: self.default_instance_warmup,
-            traffic_sources: self.traffic_sources,
+            auto_scaling_group_name: self.auto_scaling_group_name
+            ,
+            auto_scaling_group_arn: self.auto_scaling_group_arn
+            ,
+            launch_configuration_name: self.launch_configuration_name
+            ,
+            launch_template: self.launch_template
+            ,
+            mixed_instances_policy: self.mixed_instances_policy
+            ,
+            min_size: self.min_size
+            ,
+            max_size: self.max_size
+            ,
+            desired_capacity: self.desired_capacity
+            ,
+            predicted_capacity: self.predicted_capacity
+            ,
+            default_cooldown: self.default_cooldown
+            ,
+            availability_zones: self.availability_zones
+            ,
+            load_balancer_names: self.load_balancer_names
+            ,
+            target_group_ar_ns: self.target_group_ar_ns
+            ,
+            health_check_type: self.health_check_type
+            ,
+            health_check_grace_period: self.health_check_grace_period
+            ,
+            instances: self.instances
+            ,
+            created_time: self.created_time
+            ,
+            suspended_processes: self.suspended_processes
+            ,
+            placement_group: self.placement_group
+            ,
+            vpc_zone_identifier: self.vpc_zone_identifier
+            ,
+            enabled_metrics: self.enabled_metrics
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
+            termination_policies: self.termination_policies
+            ,
+            new_instances_protected_from_scale_in: self.new_instances_protected_from_scale_in
+            ,
+            service_linked_role_arn: self.service_linked_role_arn
+            ,
+            max_instance_lifetime: self.max_instance_lifetime
+            ,
+            capacity_rebalance: self.capacity_rebalance
+            ,
+            warm_pool_configuration: self.warm_pool_configuration
+            ,
+            warm_pool_size: self.warm_pool_size
+            ,
+            context: self.context
+            ,
+            desired_capacity_type: self.desired_capacity_type
+            ,
+            default_instance_warmup: self.default_instance_warmup
+            ,
+            traffic_sources: self.traffic_sources
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidateSolNetworkPackageContentOutput {
+pub struct ValidateSolNetworkPackageContentOutput  {
     /// <p>Network package ID.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -28,53 +28,49 @@ pub struct ValidateSolNetworkPackageContentOutput {
 }
 impl ValidateSolNetworkPackageContentOutput {
     /// <p>Network package ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Network package ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Network service descriptor ID.</p>
-    pub fn nsd_id(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_id(&self) -> ::std::option::Option<& str> {
         self.nsd_id.as_deref()
     }
     /// <p>Network service descriptor name.</p>
-    pub fn nsd_name(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_name(&self) -> ::std::option::Option<& str> {
         self.nsd_name.as_deref()
     }
     /// <p>Network service descriptor version.</p>
-    pub fn nsd_version(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_version(&self) -> ::std::option::Option<& str> {
         self.nsd_version.as_deref()
     }
     /// <p>Function package IDs.</p>
-    pub fn vnf_pkg_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn vnf_pkg_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.vnf_pkg_ids.as_deref()
     }
     /// <p>Network package metadata.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ValidateSolNetworkPackageContentMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::ValidateSolNetworkPackageContentMetadata> {
         self.metadata.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for ValidateSolNetworkPackageContentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ValidateSolNetworkPackageContentOutput {
     /// Creates a new builder-style object to manufacture [`ValidateSolNetworkPackageContentOutput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput).
-    pub fn builder() -> crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder{
+    pub fn builder() -> crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder {
         crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateSolNetworkPackageContentOutput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateSolNetworkPackageContentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -82,8 +78,7 @@ pub struct ValidateSolNetworkPackageContentOutputBuilder {
     pub(crate) nsd_name: ::std::option::Option<::std::string::String>,
     pub(crate) nsd_version: ::std::option::Option<::std::string::String>,
     pub(crate) vnf_pkg_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) metadata:
-        ::std::option::Option<crate::types::ValidateSolNetworkPackageContentMetadata>,
+    pub(crate) metadata: ::std::option::Option<crate::types::ValidateSolNetworkPackageContentMetadata>,
     _request_id: Option<String>,
 }
 impl ValidateSolNetworkPackageContentOutputBuilder {
@@ -94,8 +89,11 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network package ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>Network package ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Network package ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,8 +102,11 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network package ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>Network package ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Network service descriptor ID.</p>
     pub fn nsd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,8 +115,11 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network service descriptor ID.</p>
     pub fn set_nsd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_id = input;
-        self
+        self.nsd_id = input; self
+    }
+    /// <p>Network service descriptor ID.</p>
+    pub fn get_nsd_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_id
     }
     /// <p>Network service descriptor name.</p>
     pub fn nsd_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,8 +128,11 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network service descriptor name.</p>
     pub fn set_nsd_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_name = input;
-        self
+        self.nsd_name = input; self
+    }
+    /// <p>Network service descriptor name.</p>
+    pub fn get_nsd_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_name
     }
     /// <p>Network service descriptor version.</p>
     pub fn nsd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,8 +141,11 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network service descriptor version.</p>
     pub fn set_nsd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_version = input;
-        self
+        self.nsd_version = input; self
+    }
+    /// <p>Network service descriptor version.</p>
+    pub fn get_nsd_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_version
     }
     /// Appends an item to `vnf_pkg_ids`.
     ///
@@ -144,45 +154,42 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
     /// <p>Function package IDs.</p>
     pub fn vnf_pkg_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vnf_pkg_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vnf_pkg_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vnf_pkg_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Function package IDs.</p>
-    pub fn set_vnf_pkg_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.vnf_pkg_ids = input;
-        self
+    pub fn set_vnf_pkg_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.vnf_pkg_ids = input; self
+    }
+    /// <p>Function package IDs.</p>
+    pub fn get_vnf_pkg_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vnf_pkg_ids
     }
     /// <p>Network package metadata.</p>
-    pub fn metadata(
-        mut self,
-        input: crate::types::ValidateSolNetworkPackageContentMetadata,
-    ) -> Self {
+    pub fn metadata(mut self, input: crate::types::ValidateSolNetworkPackageContentMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Network package metadata.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidateSolNetworkPackageContentMetadata>,
-    ) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ValidateSolNetworkPackageContentMetadata>) -> Self {
+        self.metadata = input; self
+    }
+    /// <p>Network package metadata.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ValidateSolNetworkPackageContentMetadata> {
+        &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ValidateSolNetworkPackageContentOutput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput).
-    pub fn build(self) -> crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput{
+    pub fn build(self) -> crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput {
         crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput {
             id: self.id
             ,
@@ -202,3 +209,4 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         }
     }
 }
+

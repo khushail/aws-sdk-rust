@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProgramInput {
+pub struct DeleteProgramInput  {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteProgramInput {
 }
 impl DeleteProgramInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The name of the program.</p>
-    pub fn program_name(&self) -> ::std::option::Option<&str> {
+    pub fn program_name(&self) -> ::std::option::Option<& str> {
         self.program_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DeleteProgramInput {
 
 /// A builder for [`DeleteProgramInput`](crate::operation::delete_program::DeleteProgramInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProgramInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeleteProgramInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
+    }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>The name of the program.</p>
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl DeleteProgramInputBuilder {
     }
     /// <p>The name of the program.</p>
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.program_name = input;
-        self
+        self.program_name = input; self
+    }
+    /// <p>The name of the program.</p>
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// Consumes the builder and constructs a [`DeleteProgramInput`](crate::operation::delete_program::DeleteProgramInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_program::DeleteProgramInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_program::DeleteProgramInput {
-            channel_name: self.channel_name,
-            program_name: self.program_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_program::DeleteProgramInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_program::DeleteProgramInput {
+                channel_name: self.channel_name
+                ,
+                program_name: self.program_name
+                ,
+            }
+        )
     }
 }
+

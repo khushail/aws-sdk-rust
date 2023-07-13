@@ -3,22 +3,29 @@
 /// <p>An object representing an Glue table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityTargetTable {
+pub struct DataQualityTargetTable  {
     /// <p>The name of the Glue table.</p>
     #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database where the Glue table exists.</p>
     #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
+    /// <p>The catalog id where the Glue table exists.</p>
+    #[doc(hidden)]
+    pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityTargetTable {
     /// <p>The name of the Glue table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the database where the Glue table exists.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
+    }
+    /// <p>The catalog id where the Glue table exists.</p>
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
+        self.catalog_id.as_deref()
     }
 }
 impl DataQualityTargetTable {
@@ -30,12 +37,11 @@ impl DataQualityTargetTable {
 
 /// A builder for [`DataQualityTargetTable`](crate::types::DataQualityTargetTable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQualityTargetTableBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityTargetTableBuilder {
     /// <p>The name of the Glue table.</p>
@@ -45,30 +51,48 @@ impl DataQualityTargetTableBuilder {
     }
     /// <p>The name of the Glue table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
+    }
+    /// <p>The name of the Glue table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The name of the database where the Glue table exists.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database where the Glue table exists.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_name = input;
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_name = input; self
+    }
+    /// <p>The name of the database where the Glue table exists.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
+    /// <p>The catalog id where the Glue table exists.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
         self
+    }
+    /// <p>The catalog id where the Glue table exists.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_id = input; self
+    }
+    /// <p>The catalog id where the Glue table exists.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// Consumes the builder and constructs a [`DataQualityTargetTable`](crate::types::DataQualityTargetTable).
     pub fn build(self) -> crate::types::DataQualityTargetTable {
         crate::types::DataQualityTargetTable {
-            table_name: self.table_name,
-            database_name: self.database_name,
+            table_name: self.table_name
+            ,
+            database_name: self.database_name
+            ,
+            catalog_id: self.catalog_id
+            ,
         }
     }
 }
+

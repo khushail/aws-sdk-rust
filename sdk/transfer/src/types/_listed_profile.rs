@@ -3,7 +3,7 @@
 /// <p>Returns the properties of the profile that was specified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListedProfile {
+pub struct ListedProfile  {
     /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct ListedProfile {
 }
 impl ListedProfile {
     /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
-    pub fn as2_id(&self) -> ::std::option::Option<&str> {
+    pub fn as2_id(&self) -> ::std::option::Option<& str> {
         self.as2_id.as_deref()
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
-    pub fn profile_type(&self) -> ::std::option::Option<&crate::types::ProfileType> {
+    pub fn profile_type(&self) -> ::std::option::Option<& crate::types::ProfileType> {
         self.profile_type.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl ListedProfile {
 
 /// A builder for [`ListedProfile`](crate::types::ListedProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListedProfileBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl ListedProfileBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl ListedProfileBuilder {
     }
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
+    }
+    /// <p>A unique identifier for the local or partner AS2 profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
     }
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub fn as2_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl ListedProfileBuilder {
     }
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub fn set_as2_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.as2_id = input;
-        self
+        self.as2_id = input; self
+    }
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+    pub fn get_as2_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.as2_id
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
@@ -90,20 +97,25 @@ impl ListedProfileBuilder {
         self
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
-    pub fn set_profile_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileType>,
-    ) -> Self {
-        self.profile_type = input;
-        self
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
+        self.profile_type = input; self
+    }
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
+        &self.profile_type
     }
     /// Consumes the builder and constructs a [`ListedProfile`](crate::types::ListedProfile).
     pub fn build(self) -> crate::types::ListedProfile {
         crate::types::ListedProfile {
-            arn: self.arn,
-            profile_id: self.profile_id,
-            as2_id: self.as2_id,
-            profile_type: self.profile_type,
+            arn: self.arn
+            ,
+            profile_id: self.profile_id
+            ,
+            as2_id: self.as2_id
+            ,
+            profile_type: self.profile_type
+            ,
         }
     }
 }
+

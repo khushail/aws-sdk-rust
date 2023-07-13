@@ -3,7 +3,7 @@
 /// <p>A request to add an email destination to the suppression list for your account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSuppressedDestinationInput {
+pub struct PutSuppressedDestinationInput  {
     /// <p>The email address that should be added to the suppression list for your account.</p>
     #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
@@ -13,48 +13,41 @@ pub struct PutSuppressedDestinationInput {
 }
 impl PutSuppressedDestinationInput {
     /// <p>The email address that should be added to the suppression list for your account.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::SuppressionListReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::SuppressionListReason> {
         self.reason.as_ref()
     }
 }
 impl PutSuppressedDestinationInput {
     /// Creates a new builder-style object to manufacture [`PutSuppressedDestinationInput`](crate::operation::put_suppressed_destination::PutSuppressedDestinationInput).
-    pub fn builder(
-    ) -> crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationInputBuilder {
         crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutSuppressedDestinationInput`](crate::operation::put_suppressed_destination::PutSuppressedDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSuppressedDestinationInputBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::SuppressionListReason>,
 }
 impl PutSuppressedDestinationInputBuilder {
     /// <p>The email address that should be added to the suppression list for your account.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that should be added to the suppression list for your account.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.email_address = input;
-        self
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.email_address = input; self
+    }
+    /// <p>The email address that should be added to the suppression list for your account.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
     pub fn reason(mut self, input: crate::types::SuppressionListReason) -> Self {
@@ -62,25 +55,23 @@ impl PutSuppressedDestinationInputBuilder {
         self
     }
     /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::SuppressionListReason>,
-    ) -> Self {
-        self.reason = input;
-        self
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::SuppressionListReason>) -> Self {
+        self.reason = input; self
+    }
+    /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::SuppressionListReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`PutSuppressedDestinationInput`](crate::operation::put_suppressed_destination::PutSuppressedDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_suppressed_destination::PutSuppressedDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_suppressed_destination::PutSuppressedDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_suppressed_destination::PutSuppressedDestinationInput {
-                email_address: self.email_address,
-                reason: self.reason,
-            },
+                email_address: self.email_address
+                ,
+                reason: self.reason
+                ,
+            }
         )
     }
 }
+

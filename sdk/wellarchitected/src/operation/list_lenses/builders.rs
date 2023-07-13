@@ -3,100 +3,93 @@ pub use crate::operation::list_lenses::_list_lenses_output::ListLensesOutputBuil
 
 pub use crate::operation::list_lenses::_list_lenses_input::ListLensesInputBuilder;
 
+impl ListLensesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_lenses::ListLensesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_lenses::ListLensesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_lenses();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListLenses`.
-///
+/// 
 /// <p>List the available lenses.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLensesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_lenses::builders::ListLensesInputBuilder,
+                    inner: crate::operation::list_lenses::builders::ListLensesInputBuilder,
 }
-impl ListLensesFluentBuilder {
+impl ListLensesFluentBuilder  {
     /// Creates a new `ListLenses`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_lenses::ListLenses,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_lenses::ListLensesError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListLenses as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_lenses::builders::ListLensesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lenses::ListLensesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_lenses::ListLensesError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_lenses::ListLenses, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_lenses::ListLensesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_lenses::ListLensesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_lenses::ListLensesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lenses::ListLensesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_lenses::ListLensesError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_lenses::ListLenses,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_lenses::ListLensesError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_lenses::ListLensesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_lenses::ListLensesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_lenses::ListLenses, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_lenses::ListLensesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_lenses::paginator::ListLensesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_lenses::paginator::ListLensesPaginator {
-        crate::operation::list_lenses::paginator::ListLensesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_lenses::paginator::ListLensesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_lenses::paginator::ListLensesPaginator {
+                                crate::operation::list_lenses::paginator::ListLensesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -106,6 +99,10 @@ impl ListLensesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -117,6 +114,10 @@ impl ListLensesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The type of lenses to be returned.</p>
     pub fn lens_type(mut self, input: crate::types::LensType) -> Self {
         self.inner = self.inner.lens_type(input);
@@ -127,18 +128,23 @@ impl ListLensesFluentBuilder {
         self.inner = self.inner.set_lens_type(input);
         self
     }
+    /// <p>The type of lenses to be returned.</p>
+    pub fn get_lens_type(&self) -> &::std::option::Option<crate::types::LensType> {
+        self.inner.get_lens_type()
+    }
     /// <p>The status of lenses to be returned.</p>
     pub fn lens_status(mut self, input: crate::types::LensStatusType) -> Self {
         self.inner = self.inner.lens_status(input);
         self
     }
     /// <p>The status of lenses to be returned.</p>
-    pub fn set_lens_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LensStatusType>,
-    ) -> Self {
+    pub fn set_lens_status(mut self, input: ::std::option::Option<crate::types::LensStatusType>) -> Self {
         self.inner = self.inner.set_lens_status(input);
         self
+    }
+    /// <p>The status of lenses to be returned.</p>
+    pub fn get_lens_status(&self) -> &::std::option::Option<crate::types::LensStatusType> {
+        self.inner.get_lens_status()
     }
     /// <p>The full name of the lens.</p>
     pub fn lens_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,4 +156,9 @@ impl ListLensesFluentBuilder {
         self.inner = self.inner.set_lens_name(input);
         self
     }
+    /// <p>The full name of the lens.</p>
+    pub fn get_lens_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lens_name()
+    }
 }
+

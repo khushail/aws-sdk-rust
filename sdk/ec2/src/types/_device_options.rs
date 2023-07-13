@@ -3,14 +3,14 @@
 /// <p>Describes the options for an Amazon Web Services Verified Access device-identity based trust provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceOptions {
+pub struct DeviceOptions  {
     /// <p>The ID of the tenant application with the device-identity provider.</p>
     #[doc(hidden)]
     pub tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl DeviceOptions {
     /// <p>The ID of the tenant application with the device-identity provider.</p>
-    pub fn tenant_id(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_id(&self) -> ::std::option::Option<& str> {
         self.tenant_id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DeviceOptions {
 
 /// A builder for [`DeviceOptions`](crate::types::DeviceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceOptionsBuilder {
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl DeviceOptionsBuilder {
     }
     /// <p>The ID of the tenant application with the device-identity provider.</p>
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_id = input;
-        self
+        self.tenant_id = input; self
+    }
+    /// <p>The ID of the tenant application with the device-identity provider.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
     }
     /// Consumes the builder and constructs a [`DeviceOptions`](crate::types::DeviceOptions).
     pub fn build(self) -> crate::types::DeviceOptions {
         crate::types::DeviceOptions {
-            tenant_id: self.tenant_id,
+            tenant_id: self.tenant_id
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The required attributes for a generation data group data set. A generation data set is one of a collection of successive, historically related, catalogued data sets that together are known as a generation data group (GDG). Use this structure when you want to import a GDG. For more information on GDG, see <a href="https://www.ibm.com/docs/en/zos/2.3.0?topic=guide-generation-data-sets">Generation data sets</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GdgAttributes {
+pub struct GdgAttributes  {
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
     #[doc(hidden)]
     pub limit: i32,
@@ -17,7 +17,7 @@ impl GdgAttributes {
         self.limit
     }
     /// <p>The disposition of the data set in the catalog.</p>
-    pub fn roll_disposition(&self) -> ::std::option::Option<&str> {
+    pub fn roll_disposition(&self) -> ::std::option::Option<& str> {
         self.roll_disposition.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl GdgAttributes {
 
 /// A builder for [`GdgAttributes`](crate::types::GdgAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GdgAttributesBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) roll_disposition: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,34 @@ impl GdgAttributesBuilder {
     }
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The disposition of the data set in the catalog.</p>
-    pub fn roll_disposition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn roll_disposition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.roll_disposition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The disposition of the data set in the catalog.</p>
-    pub fn set_roll_disposition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.roll_disposition = input;
-        self
+    pub fn set_roll_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.roll_disposition = input; self
+    }
+    /// <p>The disposition of the data set in the catalog.</p>
+    pub fn get_roll_disposition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.roll_disposition
     }
     /// Consumes the builder and constructs a [`GdgAttributes`](crate::types::GdgAttributes).
     pub fn build(self) -> crate::types::GdgAttributes {
         crate::types::GdgAttributes {
-            limit: self.limit.unwrap_or_default(),
-            roll_disposition: self.roll_disposition,
+            limit: self.limit
+                .unwrap_or_default()
+            ,
+            roll_disposition: self.roll_disposition
+            ,
         }
     }
 }
+

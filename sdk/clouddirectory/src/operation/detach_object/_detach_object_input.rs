@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachObjectInput {
+pub struct DetachObjectInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct DetachObjectInput {
 }
 impl DetachObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The parent reference from which the object with the specified link name is detached.</p>
-    pub fn parent_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn parent_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The link name associated with the object that needs to be detached.</p>
-    pub fn link_name(&self) -> ::std::option::Option<&str> {
+    pub fn link_name(&self) -> ::std::option::Option<& str> {
         self.link_name.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl DetachObjectInput {
 
 /// A builder for [`DetachObjectInput`](crate::operation::detach_object::DetachObjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachObjectInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -46,20 +44,17 @@ pub struct DetachObjectInputBuilder {
 }
 impl DetachObjectInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.directory_arn = input;
-        self
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.directory_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
     }
     /// <p>The parent reference from which the object with the specified link name is detached.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -67,12 +62,12 @@ impl DetachObjectInputBuilder {
         self
     }
     /// <p>The parent reference from which the object with the specified link name is detached.</p>
-    pub fn set_parent_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.parent_reference = input;
-        self
+    pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.parent_reference = input; self
+    }
+    /// <p>The parent reference from which the object with the specified link name is detached.</p>
+    pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.parent_reference
     }
     /// <p>The link name associated with the object that needs to be detached.</p>
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,20 +76,24 @@ impl DetachObjectInputBuilder {
     }
     /// <p>The link name associated with the object that needs to be detached.</p>
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link_name = input;
-        self
+        self.link_name = input; self
+    }
+    /// <p>The link name associated with the object that needs to be detached.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_name
     }
     /// Consumes the builder and constructs a [`DetachObjectInput`](crate::operation::detach_object::DetachObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_object::DetachObjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detach_object::DetachObjectInput {
-            directory_arn: self.directory_arn,
-            parent_reference: self.parent_reference,
-            link_name: self.link_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_object::DetachObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_object::DetachObjectInput {
+                directory_arn: self.directory_arn
+                ,
+                parent_reference: self.parent_reference
+                ,
+                link_name: self.link_name
+                ,
+            }
+        )
     }
 }
+

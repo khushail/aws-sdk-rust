@@ -3,14 +3,14 @@
 /// <p>An object that represents the methods by which a subject alternative name on a peer Transport Layer Security (TLS) certificate can be matched.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubjectAlternativeNameMatchers {
+pub struct SubjectAlternativeNameMatchers  {
     /// <p>The values sent must match the specified values exactly.</p>
     #[doc(hidden)]
     pub exact: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
-    pub fn exact(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn exact(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.exact.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl SubjectAlternativeNameMatchers {
 
 /// A builder for [`SubjectAlternativeNameMatchers`](crate::types::SubjectAlternativeNameMatchers).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubjectAlternativeNameMatchersBuilder {
     pub(crate) exact: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -37,20 +35,24 @@ impl SubjectAlternativeNameMatchersBuilder {
     /// <p>The values sent must match the specified values exactly.</p>
     pub fn exact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exact.unwrap_or_default();
-        v.push(input.into());
-        self.exact = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exact = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values sent must match the specified values exactly.</p>
-    pub fn set_exact(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.exact = input;
-        self
+    pub fn set_exact(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.exact = input; self
+    }
+    /// <p>The values sent must match the specified values exactly.</p>
+    pub fn get_exact(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exact
     }
     /// Consumes the builder and constructs a [`SubjectAlternativeNameMatchers`](crate::types::SubjectAlternativeNameMatchers).
     pub fn build(self) -> crate::types::SubjectAlternativeNameMatchers {
-        crate::types::SubjectAlternativeNameMatchers { exact: self.exact }
+        crate::types::SubjectAlternativeNameMatchers {
+            exact: self.exact
+            ,
+        }
     }
 }
+

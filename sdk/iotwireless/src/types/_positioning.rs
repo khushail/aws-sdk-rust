@@ -3,7 +3,7 @@
 /// <p>The FPorts for the position information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Positioning {
+pub struct Positioning  {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
     pub clock_sync: ::std::option::Option<i32>,
@@ -37,9 +37,7 @@ impl Positioning {
 
 /// A builder for [`Positioning`](crate::types::Positioning).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PositioningBuilder {
     pub(crate) clock_sync: ::std::option::Option<i32>,
     pub(crate) stream: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl PositioningBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_clock_sync(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.clock_sync = input;
-        self
+        self.clock_sync = input; self
+    }
+    /// <p>The Fport value.</p>
+    pub fn get_clock_sync(&self) -> &::std::option::Option<i32> {
+        &self.clock_sync
     }
     /// <p>The Fport value.</p>
     pub fn stream(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl PositioningBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_stream(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.stream = input;
-        self
+        self.stream = input; self
+    }
+    /// <p>The Fport value.</p>
+    pub fn get_stream(&self) -> &::std::option::Option<i32> {
+        &self.stream
     }
     /// <p>The Fport value.</p>
     pub fn gnss(mut self, input: i32) -> Self {
@@ -73,15 +77,22 @@ impl PositioningBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_gnss(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gnss = input;
-        self
+        self.gnss = input; self
+    }
+    /// <p>The Fport value.</p>
+    pub fn get_gnss(&self) -> &::std::option::Option<i32> {
+        &self.gnss
     }
     /// Consumes the builder and constructs a [`Positioning`](crate::types::Positioning).
     pub fn build(self) -> crate::types::Positioning {
         crate::types::Positioning {
-            clock_sync: self.clock_sync,
-            stream: self.stream,
-            gnss: self.gnss,
+            clock_sync: self.clock_sync
+            ,
+            stream: self.stream
+            ,
+            gnss: self.gnss
+            ,
         }
     }
 }
+

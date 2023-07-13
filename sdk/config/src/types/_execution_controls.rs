@@ -3,14 +3,14 @@
 /// <p>The controls that Config uses for executing remediations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionControls {
+pub struct ExecutionControls  {
     /// <p>A SsmControls object.</p>
     #[doc(hidden)]
     pub ssm_controls: ::std::option::Option<crate::types::SsmControls>,
 }
 impl ExecutionControls {
     /// <p>A SsmControls object.</p>
-    pub fn ssm_controls(&self) -> ::std::option::Option<&crate::types::SsmControls> {
+    pub fn ssm_controls(&self) -> ::std::option::Option<& crate::types::SsmControls> {
         self.ssm_controls.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ExecutionControls {
 
 /// A builder for [`ExecutionControls`](crate::types::ExecutionControls).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionControlsBuilder {
     pub(crate) ssm_controls: ::std::option::Option<crate::types::SsmControls>,
 }
@@ -36,17 +34,19 @@ impl ExecutionControlsBuilder {
         self
     }
     /// <p>A SsmControls object.</p>
-    pub fn set_ssm_controls(
-        mut self,
-        input: ::std::option::Option<crate::types::SsmControls>,
-    ) -> Self {
-        self.ssm_controls = input;
-        self
+    pub fn set_ssm_controls(mut self, input: ::std::option::Option<crate::types::SsmControls>) -> Self {
+        self.ssm_controls = input; self
+    }
+    /// <p>A SsmControls object.</p>
+    pub fn get_ssm_controls(&self) -> &::std::option::Option<crate::types::SsmControls> {
+        &self.ssm_controls
     }
     /// Consumes the builder and constructs a [`ExecutionControls`](crate::types::ExecutionControls).
     pub fn build(self) -> crate::types::ExecutionControls {
         crate::types::ExecutionControls {
-            ssm_controls: self.ssm_controls,
+            ssm_controls: self.ssm_controls
+            ,
         }
     }
 }
+

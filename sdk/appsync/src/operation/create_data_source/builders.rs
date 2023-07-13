@@ -3,102 +3,87 @@ pub use crate::operation::create_data_source::_create_data_source_output::Create
 
 pub use crate::operation::create_data_source::_create_data_source_input::CreateDataSourceInputBuilder;
 
+impl CreateDataSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_data_source::CreateDataSourceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_data_source::CreateDataSourceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_data_source();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateDataSource`.
-///
+/// 
 /// <p>Creates a <code>DataSource</code> object.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_data_source::builders::CreateDataSourceInputBuilder,
+                    inner: crate::operation::create_data_source::builders::CreateDataSourceInputBuilder,
 }
-impl CreateDataSourceFluentBuilder {
+impl CreateDataSourceFluentBuilder  {
     /// Creates a new `CreateDataSource`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_data_source::CreateDataSource,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source::CreateDataSourceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateDataSource as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_data_source::builders::CreateDataSourceInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_source::CreateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source::CreateDataSourceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_data_source::CreateDataSource, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_data_source::CreateDataSourceError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_source::CreateDataSourceError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_source::CreateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source::CreateDataSourceError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_data_source::CreateDataSource,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_source::CreateDataSourceError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_source::CreateDataSourceError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_data_source::CreateDataSource, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_data_source::CreateDataSourceError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
@@ -108,6 +93,10 @@ impl CreateDataSourceFluentBuilder {
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_id(input);
         self
+    }
+    /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
     }
     /// <p>A user-supplied name for the <code>DataSource</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +108,10 @@ impl CreateDataSourceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A user-supplied name for the <code>DataSource</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the <code>DataSource</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +121,10 @@ impl CreateDataSourceFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the <code>DataSource</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The type of the <code>DataSource</code>.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
@@ -139,21 +136,23 @@ impl CreateDataSourceFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of the <code>DataSource</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
+        self.inner.get_type()
+    }
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
-    pub fn service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
-    pub fn set_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
+    }
+    /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
+    pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_role_arn()
     }
     /// <p>Amazon DynamoDB settings.</p>
     pub fn dynamodb_config(mut self, input: crate::types::DynamodbDataSourceConfig) -> Self {
@@ -161,12 +160,13 @@ impl CreateDataSourceFluentBuilder {
         self
     }
     /// <p>Amazon DynamoDB settings.</p>
-    pub fn set_dynamodb_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DynamodbDataSourceConfig>,
-    ) -> Self {
+    pub fn set_dynamodb_config(mut self, input: ::std::option::Option<crate::types::DynamodbDataSourceConfig>) -> Self {
         self.inner = self.inner.set_dynamodb_config(input);
         self
+    }
+    /// <p>Amazon DynamoDB settings.</p>
+    pub fn get_dynamodb_config(&self) -> &::std::option::Option<crate::types::DynamodbDataSourceConfig> {
+        self.inner.get_dynamodb_config()
     }
     /// <p>Lambda settings.</p>
     pub fn lambda_config(mut self, input: crate::types::LambdaDataSourceConfig) -> Self {
@@ -174,46 +174,44 @@ impl CreateDataSourceFluentBuilder {
         self
     }
     /// <p>Lambda settings.</p>
-    pub fn set_lambda_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaDataSourceConfig>,
-    ) -> Self {
+    pub fn set_lambda_config(mut self, input: ::std::option::Option<crate::types::LambdaDataSourceConfig>) -> Self {
         self.inner = self.inner.set_lambda_config(input);
         self
     }
-    /// <p>Amazon OpenSearch Service settings.</p>
+    /// <p>Lambda settings.</p>
+    pub fn get_lambda_config(&self) -> &::std::option::Option<crate::types::LambdaDataSourceConfig> {
+        self.inner.get_lambda_config()
+    }
+    /// <p>Amazon OpenSearch Service settings.</p> 
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
-    pub fn elasticsearch_config(
-        mut self,
-        input: crate::types::ElasticsearchDataSourceConfig,
-    ) -> Self {
+    pub fn elasticsearch_config(mut self, input: crate::types::ElasticsearchDataSourceConfig) -> Self {
         self.inner = self.inner.elasticsearch_config(input);
         self
     }
-    /// <p>Amazon OpenSearch Service settings.</p>
+    /// <p>Amazon OpenSearch Service settings.</p> 
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
-    pub fn set_elasticsearch_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
-    ) -> Self {
+    pub fn set_elasticsearch_config(mut self, input: ::std::option::Option<crate::types::ElasticsearchDataSourceConfig>) -> Self {
         self.inner = self.inner.set_elasticsearch_config(input);
         self
     }
+    /// <p>Amazon OpenSearch Service settings.</p> 
+    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
+    pub fn get_elasticsearch_config(&self) -> &::std::option::Option<crate::types::ElasticsearchDataSourceConfig> {
+        self.inner.get_elasticsearch_config()
+    }
     /// <p>Amazon OpenSearch Service settings.</p>
-    pub fn open_search_service_config(
-        mut self,
-        input: crate::types::OpenSearchServiceDataSourceConfig,
-    ) -> Self {
+    pub fn open_search_service_config(mut self, input: crate::types::OpenSearchServiceDataSourceConfig) -> Self {
         self.inner = self.inner.open_search_service_config(input);
         self
     }
     /// <p>Amazon OpenSearch Service settings.</p>
-    pub fn set_open_search_service_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
-    ) -> Self {
+    pub fn set_open_search_service_config(mut self, input: ::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>) -> Self {
         self.inner = self.inner.set_open_search_service_config(input);
         self
+    }
+    /// <p>Amazon OpenSearch Service settings.</p>
+    pub fn get_open_search_service_config(&self) -> &::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig> {
+        self.inner.get_open_search_service_config()
     }
     /// <p>HTTP endpoint settings.</p>
     pub fn http_config(mut self, input: crate::types::HttpDataSourceConfig) -> Self {
@@ -221,28 +219,27 @@ impl CreateDataSourceFluentBuilder {
         self
     }
     /// <p>HTTP endpoint settings.</p>
-    pub fn set_http_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpDataSourceConfig>,
-    ) -> Self {
+    pub fn set_http_config(mut self, input: ::std::option::Option<crate::types::HttpDataSourceConfig>) -> Self {
         self.inner = self.inner.set_http_config(input);
         self
     }
+    /// <p>HTTP endpoint settings.</p>
+    pub fn get_http_config(&self) -> &::std::option::Option<crate::types::HttpDataSourceConfig> {
+        self.inner.get_http_config()
+    }
     /// <p>Relational database settings.</p>
-    pub fn relational_database_config(
-        mut self,
-        input: crate::types::RelationalDatabaseDataSourceConfig,
-    ) -> Self {
+    pub fn relational_database_config(mut self, input: crate::types::RelationalDatabaseDataSourceConfig) -> Self {
         self.inner = self.inner.relational_database_config(input);
         self
     }
     /// <p>Relational database settings.</p>
-    pub fn set_relational_database_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
-    ) -> Self {
+    pub fn set_relational_database_config(mut self, input: ::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>) -> Self {
         self.inner = self.inner.set_relational_database_config(input);
         self
+    }
+    /// <p>Relational database settings.</p>
+    pub fn get_relational_database_config(&self) -> &::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig> {
+        self.inner.get_relational_database_config()
     }
     /// <p>Amazon EventBridge settings.</p>
     pub fn event_bridge_config(mut self, input: crate::types::EventBridgeDataSourceConfig) -> Self {
@@ -250,11 +247,13 @@ impl CreateDataSourceFluentBuilder {
         self
     }
     /// <p>Amazon EventBridge settings.</p>
-    pub fn set_event_bridge_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EventBridgeDataSourceConfig>,
-    ) -> Self {
+    pub fn set_event_bridge_config(mut self, input: ::std::option::Option<crate::types::EventBridgeDataSourceConfig>) -> Self {
         self.inner = self.inner.set_event_bridge_config(input);
         self
     }
+    /// <p>Amazon EventBridge settings.</p>
+    pub fn get_event_bridge_config(&self) -> &::std::option::Option<crate::types::EventBridgeDataSourceConfig> {
+        self.inner.get_event_bridge_config()
+    }
 }
+

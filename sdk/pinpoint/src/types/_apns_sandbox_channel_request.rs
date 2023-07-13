@@ -3,7 +3,7 @@
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApnsSandboxChannelRequest {
+pub struct ApnsSandboxChannelRequest  {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
@@ -31,15 +31,15 @@ pub struct ApnsSandboxChannelRequest {
 }
 impl ApnsSandboxChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment, key or certificate.</p>
-    pub fn default_authentication_method(&self) -> ::std::option::Option<&str> {
+    pub fn default_authentication_method(&self) -> ::std::option::Option<& str> {
         self.default_authentication_method.as_deref()
     }
     /// <p>Specifies whether to enable the APNs sandbox channel for the application.</p>
@@ -47,19 +47,19 @@ impl ApnsSandboxChannelRequest {
         self.enabled
     }
     /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.</p>
-    pub fn private_key(&self) -> ::std::option::Option<&str> {
+    pub fn private_key(&self) -> ::std::option::Option<& str> {
         self.private_key.as_deref()
     }
     /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<& str> {
         self.team_id.as_deref()
     }
     /// <p>The authentication key to use for APNs tokens.</p>
-    pub fn token_key(&self) -> ::std::option::Option<&str> {
+    pub fn token_key(&self) -> ::std::option::Option<& str> {
         self.token_key.as_deref()
     }
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
-    pub fn token_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn token_key_id(&self) -> ::std::option::Option<& str> {
         self.token_key_id.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl ApnsSandboxChannelRequest {
 
 /// A builder for [`ApnsSandboxChannelRequest`](crate::types::ApnsSandboxChannelRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApnsSandboxChannelRequestBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
@@ -93,8 +91,11 @@ impl ApnsSandboxChannelRequestBuilder {
     }
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
+    }
+    /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
     }
     /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,24 +104,24 @@ impl ApnsSandboxChannelRequestBuilder {
     }
     /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
+    }
+    /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
     }
     /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment, key or certificate.</p>
-    pub fn default_authentication_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_authentication_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_authentication_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment, key or certificate.</p>
-    pub fn set_default_authentication_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.default_authentication_method = input;
-        self
+    pub fn set_default_authentication_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_authentication_method = input; self
+    }
+    /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment, key or certificate.</p>
+    pub fn get_default_authentication_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_authentication_method
     }
     /// <p>Specifies whether to enable the APNs sandbox channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -129,8 +130,11 @@ impl ApnsSandboxChannelRequestBuilder {
     }
     /// <p>Specifies whether to enable the APNs sandbox channel for the application.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Specifies whether to enable the APNs sandbox channel for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.</p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,8 +143,11 @@ impl ApnsSandboxChannelRequestBuilder {
     }
     /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.</p>
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
+    }
+    /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key
     }
     /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,8 +156,11 @@ impl ApnsSandboxChannelRequestBuilder {
     }
     /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
+    }
+    /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
     }
     /// <p>The authentication key to use for APNs tokens.</p>
     pub fn token_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,8 +169,11 @@ impl ApnsSandboxChannelRequestBuilder {
     }
     /// <p>The authentication key to use for APNs tokens.</p>
     pub fn set_token_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_key = input;
-        self
+        self.token_key = input; self
+    }
+    /// <p>The authentication key to use for APNs tokens.</p>
+    pub fn get_token_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_key
     }
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
     pub fn token_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,20 +182,32 @@ impl ApnsSandboxChannelRequestBuilder {
     }
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
     pub fn set_token_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_key_id = input;
-        self
+        self.token_key_id = input; self
+    }
+    /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
+    pub fn get_token_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_key_id
     }
     /// Consumes the builder and constructs a [`ApnsSandboxChannelRequest`](crate::types::ApnsSandboxChannelRequest).
     pub fn build(self) -> crate::types::ApnsSandboxChannelRequest {
         crate::types::ApnsSandboxChannelRequest {
-            bundle_id: self.bundle_id,
-            certificate: self.certificate,
-            default_authentication_method: self.default_authentication_method,
-            enabled: self.enabled,
-            private_key: self.private_key,
-            team_id: self.team_id,
-            token_key: self.token_key,
-            token_key_id: self.token_key_id,
+            bundle_id: self.bundle_id
+            ,
+            certificate: self.certificate
+            ,
+            default_authentication_method: self.default_authentication_method
+            ,
+            enabled: self.enabled
+            ,
+            private_key: self.private_key
+            ,
+            team_id: self.team_id
+            ,
+            token_key: self.token_key
+            ,
+            token_key_id: self.token_key_id
+            ,
         }
     }
 }
+

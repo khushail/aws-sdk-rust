@@ -5,81 +5,43 @@ impl DeleteVpcAssociationAuthorizationInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(mut self, _config: &crate::config::Config) -> ::std::result::Result<::aws_smithy_http::operation::Operation<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorization, ::aws_http::retry::AwsResponseRetryClassifier>, ::aws_smithy_http::operation::error::BuildError>{
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
-        };
-        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.hosted_zone_id);
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> ::std::result::Result<::aws_smithy_http::operation::Operation<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorization, ::aws_http::retry::AwsResponseRetryClassifier>, ::aws_smithy_http::operation::error::BuildError> {
+        assert_ne!(_config.retry_config().map(|rc| rc.mode()), ::std::option::Option::Some(::aws_smithy_types::retry::RetryMode::Adaptive), "Adaptive retry mode is unsupported, please use Standard mode or disable retries.");
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
+                                let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+                                    ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None)
+                                };
+        crate::route53_resource_id_preprocessor_middleware::trim_resource_id(&mut self.hosted_zone_id);
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_base(_input: &crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationInput, output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.hosted_zone_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "hosted_zone_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let hosted_zone_id = ::aws_smithy_http::label::fmt_string(
-                    input_1,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("hosted_zone_id", "cannot be empty or unset"))?;
+                let hosted_zone_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if hosted_zone_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "hosted_zone_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                ::std::write!(
-                    output,
-                    "/2013-04-01/hostedzone/{HostedZoneId}/deauthorizevpcassociation",
-                    HostedZoneId = hosted_zone_id
-                )
-                .expect("formatting should succeed");
+                                return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field("hosted_zone_id", "cannot be empty or unset"))
+                            }
+                ::std::write!(output, "/2013-04-01/hostedzone/{HostedZoneId}/deauthorizevpcassociation", HostedZoneId = hosted_zone_id).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationInput,
+                            builder: ::http::request::Builder
+                        ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/xml",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/xml");
             builder
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -88,55 +50,39 @@ impl DeleteVpcAssociationAuthorizationInput {
             crate::protocol_serde::shape_delete_vpc_association_authorization::ser_delete_vpc_association_authorization_op_input(&self)?
         );
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let ::std::option::Option::Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let ::std::option::Option::Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(_config.time_source.clone());
         let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                ::aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = ::aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(::aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
+                                request.properties_mut().insert(region.clone());
+                            }
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
         let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorization::new())
                             .with_metadata(::aws_smithy_http::operation::Metadata::new("DeleteVPCAssociationAuthorization", "route53"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVPCAssociationAuthorization`.
+/// Orchestration and serialization glue logic for `DeleteVPCAssociationAuthorization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]
@@ -148,27 +94,26 @@ impl DeleteVPCAssociationAuthorization {
     }
 }
 impl ::aws_smithy_http::response::ParseStrictResponse for DeleteVPCAssociationAuthorization {
-    type Output = ::std::result::Result<crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput, crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>;
-    fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
-        let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
-        let body = response.body().as_ref();
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
-        if !success && status != 200 {
-            crate::protocol_serde::shape_delete_vpc_association_authorization::de_delete_vpc_association_authorization_http_error(status, headers, body)
-        } else {
-            crate::protocol_serde::shape_delete_vpc_association_authorization::de_delete_vpc_association_authorization_http_response_with_props(status, headers, body)
-        }
-    }
-}
+                type Output = ::std::result::Result<crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput, crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>;
+                fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
+                     ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_delete_vpc_association_authorization::de_delete_vpc_association_authorization_http_error(status, headers, body)
+                     } else {
+                        crate::protocol_serde::shape_delete_vpc_association_authorization::de_delete_vpc_association_authorization_http_response_with_props(status, headers, body)
+                     }
+                }
+                
+            }
 
 /// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type DeleteVPCAssociationAuthorizationErrorKind = DeleteVPCAssociationAuthorizationError;
+            ///
+            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
+            pub type DeleteVPCAssociationAuthorizationErrorKind = DeleteVPCAssociationAuthorizationError;
 /// Error type for the `DeleteVPCAssociationAuthorizationError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -184,54 +129,62 @@ pub enum DeleteVPCAssociationAuthorizationError {
     /// <p>The VPC that you specified is not authorized to be associated with the hosted zone.</p>
     VpcAssociationAuthorizationNotFound(crate::types::error::VpcAssociationAuthorizationNotFound),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+                    Unhandled(::aws_smithy_types::error::Unhandled),
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for DeleteVPCAssociationAuthorizationError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
         Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
+                                let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
+                                builder.set_meta(meta);
+                                builder.build()
+                            })
     }
 }
 impl ::std::fmt::Display for DeleteVPCAssociationAuthorizationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::ConcurrentModification(_inner) => _inner.fmt(f),
-            Self::InvalidInput(_inner) => _inner.fmt(f),
-            Self::InvalidVpcId(_inner) => _inner.fmt(f),
-            Self::NoSuchHostedZone(_inner) => _inner.fmt(f),
-            Self::VpcAssociationAuthorizationNotFound(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::ConcurrentModification(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidVpcId(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::NoSuchHostedZone(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::VpcAssociationAuthorizationNotFound(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DeleteVPCAssociationAuthorizationError
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteVPCAssociationAuthorizationError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ConcurrentModification(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidInput(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidVpcId(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NoSuchHostedZone(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::VpcAssociationAuthorizationNotFound(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::ConcurrentModification(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidInput(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidVpcId(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::NoSuchHostedZone(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::VpcAssociationAuthorizationNotFound(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
             Self::Unhandled(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -253,33 +206,18 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteVPCAssociationAuthori
 }
 impl DeleteVPCAssociationAuthorizationError {
     /// Creates the `DeleteVPCAssociationAuthorizationError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
-    ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
-    }
-
-    /// Creates the `DeleteVPCAssociationAuthorizationError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+                    }
+    
+                    /// Creates the `DeleteVPCAssociationAuthorizationError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -315,14 +253,24 @@ impl DeleteVPCAssociationAuthorizationError {
 impl ::std::error::Error for DeleteVPCAssociationAuthorizationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ConcurrentModification(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidInput(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidVpcId(_inner) => ::std::option::Option::Some(_inner),
-            Self::NoSuchHostedZone(_inner) => ::std::option::Option::Some(_inner),
-            Self::VpcAssociationAuthorizationNotFound(_inner) => {
+            Self::ConcurrentModification(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidInput(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidVpcId(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::NoSuchHostedZone(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::VpcAssociationAuthorizationNotFound(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
                 ::std::option::Option::Some(_inner)
             }
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }
 }
@@ -337,3 +285,4 @@ mod _delete_vpc_association_authorization_output;
 
 /// Builders
 pub mod builders;
+

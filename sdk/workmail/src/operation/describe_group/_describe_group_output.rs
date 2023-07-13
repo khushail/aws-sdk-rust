@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGroupOutput {
+pub struct DescribeGroupOutput  {
     /// <p>The identifier of the described group.</p>
     #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
@@ -25,35 +25,35 @@ pub struct DescribeGroupOutput {
 }
 impl DescribeGroupOutput {
     /// <p>The identifier of the described group.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The name of the described group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The email of the described group.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EntityState> {
         self.state.as_ref()
     }
     /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
-    pub fn enabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
-    pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupOutput`](crate::operation::describe_group::DescribeGroupOutput).
     pub fn builder() -> crate::operation::describe_group::builders::DescribeGroupOutputBuilder {
@@ -63,9 +63,7 @@ impl DescribeGroupOutput {
 
 /// A builder for [`DescribeGroupOutput`](crate::operation::describe_group::DescribeGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGroupOutputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -83,8 +81,11 @@ impl DescribeGroupOutputBuilder {
     }
     /// <p>The identifier of the described group.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
+    }
+    /// <p>The identifier of the described group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// <p>The name of the described group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +94,11 @@ impl DescribeGroupOutputBuilder {
     }
     /// <p>The name of the described group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the described group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The email of the described group.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +107,11 @@ impl DescribeGroupOutputBuilder {
     }
     /// <p>The email of the described group.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
+    }
+    /// <p>The email of the described group.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn state(mut self, input: crate::types::EntityState) -> Self {
@@ -113,8 +120,11 @@ impl DescribeGroupOutputBuilder {
     }
     /// <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
+        &self.state
     }
     /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
     pub fn enabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -122,12 +132,12 @@ impl DescribeGroupOutputBuilder {
         self
     }
     /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
-    pub fn set_enabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.enabled_date = input;
-        self
+    pub fn set_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.enabled_date = input; self
+    }
+    /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
+    pub fn get_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.enabled_date
     }
     /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
     pub fn disabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,32 +145,39 @@ impl DescribeGroupOutputBuilder {
         self
     }
     /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
-    pub fn set_disabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.disabled_date = input;
-        self
+    pub fn set_disabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.disabled_date = input; self
+    }
+    /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
+    pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.disabled_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeGroupOutput`](crate::operation::describe_group::DescribeGroupOutput).
     pub fn build(self) -> crate::operation::describe_group::DescribeGroupOutput {
         crate::operation::describe_group::DescribeGroupOutput {
-            group_id: self.group_id,
-            name: self.name,
-            email: self.email,
-            state: self.state,
-            enabled_date: self.enabled_date,
-            disabled_date: self.disabled_date,
+            group_id: self.group_id
+            ,
+            name: self.name
+            ,
+            email: self.email
+            ,
+            state: self.state
+            ,
+            enabled_date: self.enabled_date
+            ,
+            disabled_date: self.disabled_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

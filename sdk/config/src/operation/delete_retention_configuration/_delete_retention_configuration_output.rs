@@ -2,45 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRetentionConfigurationOutput {
+pub struct DeleteRetentionConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteRetentionConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteRetentionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRetentionConfigurationOutput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationOutputBuilder {
         crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRetentionConfigurationOutput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRetentionConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteRetentionConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteRetentionConfigurationOutput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput {
         crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput {
             _request_id: self._request_id,
         }
     }
 }
+

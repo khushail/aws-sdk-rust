@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFhirImportJobInput {
+pub struct DescribeFhirImportJobInput  {
     /// <p>The AWS-generated ID of the Data Store.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DescribeFhirImportJobInput {
 }
 impl DescribeFhirImportJobInput {
     /// <p>The AWS-generated ID of the Data Store.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The AWS-generated job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl DescribeFhirImportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobInput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobInputBuilder {
         crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFhirImportJobInput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFhirImportJobInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl DescribeFhirImportJobInputBuilder {
     }
     /// <p>The AWS-generated ID of the Data Store.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
+    }
+    /// <p>The AWS-generated ID of the Data Store.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
     }
     /// <p>The AWS-generated job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl DescribeFhirImportJobInputBuilder {
     }
     /// <p>The AWS-generated job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The AWS-generated job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeFhirImportJobInput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput {
-                datastore_id: self.datastore_id,
-                job_id: self.job_id,
-            },
+                datastore_id: self.datastore_id
+                ,
+                job_id: self.job_id
+                ,
+            }
         )
     }
 }
+

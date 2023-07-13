@@ -2,21 +2,21 @@
 
 /// <p>Contains a list of geofences stored in a given geofence collection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGeofenceResponseEntry {
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+pub struct ListGeofenceResponseEntry  {
     /// <p>The geofence identifier.</p>
     #[doc(hidden)]
     pub geofence_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
@@ -26,34 +26,53 @@ pub struct ListGeofenceResponseEntry {
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Contains additional user-defined properties stored with the geofence. An array of key-value pairs.</p>
+    #[doc(hidden)]
+    pub geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
-    pub fn geofence_id(&self) -> ::std::option::Option<&str> {
+    pub fn geofence_id(&self) -> ::std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    pub fn geometry(&self) -> ::std::option::Option<&crate::types::GeofenceGeometry> {
+    pub fn geometry(&self) -> ::std::option::Option<& crate::types::GeofenceGeometry> {
         self.geometry.as_ref()
     }
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
+    }
+    /// <p>Contains additional user-defined properties stored with the geofence. An array of key-value pairs.</p>
+    pub fn geofence_properties(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.geofence_properties.as_ref()
+    }
+}
+impl  ::std::fmt::Debug for ListGeofenceResponseEntry  {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListGeofenceResponseEntry");
+        formatter.field("geofence_id", &self.geofence_id);
+        formatter.field("geometry", &self.geometry);
+        formatter.field("status", &self.status);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("update_time", &self.update_time);
+        formatter.field("geofence_properties", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl ListGeofenceResponseEntry {
@@ -65,15 +84,14 @@ impl ListGeofenceResponseEntry {
 
 /// A builder for [`ListGeofenceResponseEntry`](crate::types::ListGeofenceResponseEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListGeofenceResponseEntryBuilder {
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
     pub(crate) geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListGeofenceResponseEntryBuilder {
     /// <p>The geofence identifier.</p>
@@ -83,8 +101,11 @@ impl ListGeofenceResponseEntryBuilder {
     }
     /// <p>The geofence identifier.</p>
     pub fn set_geofence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.geofence_id = input;
-        self
+        self.geofence_id = input; self
+    }
+    /// <p>The geofence identifier.</p>
+    pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geofence_id
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     pub fn geometry(mut self, input: crate::types::GeofenceGeometry) -> Self {
@@ -92,36 +113,46 @@ impl ListGeofenceResponseEntryBuilder {
         self
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    pub fn set_geometry(
-        mut self,
-        input: ::std::option::Option<crate::types::GeofenceGeometry>,
-    ) -> Self {
-        self.geometry = input;
-        self
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::GeofenceGeometry>) -> Self {
+        self.geometry = input; self
     }
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::GeofenceGeometry> {
+        &self.geometry
+    }
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,12 +160,12 @@ impl ListGeofenceResponseEntryBuilder {
         self
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
+    }
+    /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -142,21 +173,60 @@ impl ListGeofenceResponseEntryBuilder {
         self
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_time = input;
-        self
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input; self
+    }
+    /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
+    /// Adds a key-value pair to `geofence_properties`.
+    ///
+    /// To override the contents of this collection use [`set_geofence_properties`](Self::set_geofence_properties).
+    ///
+    /// <p>Contains additional user-defined properties stored with the geofence. An array of key-value pairs.</p>
+    pub fn geofence_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.geofence_properties.unwrap_or_default();
+                        hash_map.insert(k.into(), v.into());
+                        self.geofence_properties = ::std::option::Option::Some(hash_map);
+                        self
+    }
+    /// <p>Contains additional user-defined properties stored with the geofence. An array of key-value pairs.</p>
+    pub fn set_geofence_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.geofence_properties = input; self
+    }
+    /// <p>Contains additional user-defined properties stored with the geofence. An array of key-value pairs.</p>
+    pub fn get_geofence_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.geofence_properties
     }
     /// Consumes the builder and constructs a [`ListGeofenceResponseEntry`](crate::types::ListGeofenceResponseEntry).
     pub fn build(self) -> crate::types::ListGeofenceResponseEntry {
         crate::types::ListGeofenceResponseEntry {
-            geofence_id: self.geofence_id,
-            geometry: self.geometry,
-            status: self.status,
-            create_time: self.create_time,
-            update_time: self.update_time,
+            geofence_id: self.geofence_id
+            ,
+            geometry: self.geometry
+            ,
+            status: self.status
+            ,
+            create_time: self.create_time
+            ,
+            update_time: self.update_time
+            ,
+            geofence_properties: self.geofence_properties
+            ,
         }
     }
 }
+impl ::std::fmt::Debug for ListGeofenceResponseEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListGeofenceResponseEntryBuilder");
+        formatter.field("geofence_id", &self.geofence_id);
+        formatter.field("geometry", &self.geometry);
+        formatter.field("status", &self.status);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("update_time", &self.update_time);
+        formatter.field("geofence_properties", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+

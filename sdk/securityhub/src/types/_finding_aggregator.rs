@@ -3,14 +3,14 @@
 /// <p>A finding aggregator. A finding aggregator contains the configuration for finding aggregation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingAggregator {
+pub struct FindingAggregator  {
     /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
     #[doc(hidden)]
     pub finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }
 impl FindingAggregator {
     /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
-    pub fn finding_aggregator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn finding_aggregator_arn(&self) -> ::std::option::Option<& str> {
         self.finding_aggregator_arn.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl FindingAggregator {
 
 /// A builder for [`FindingAggregator`](crate::types::FindingAggregator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingAggregatorBuilder {
     pub(crate) finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }
 impl FindingAggregatorBuilder {
     /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
-    pub fn finding_aggregator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_aggregator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
-    pub fn set_finding_aggregator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.finding_aggregator_arn = input;
-        self
+    pub fn set_finding_aggregator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.finding_aggregator_arn = input; self
+    }
+    /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
+    pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_aggregator_arn
     }
     /// Consumes the builder and constructs a [`FindingAggregator`](crate::types::FindingAggregator).
     pub fn build(self) -> crate::types::FindingAggregator {
         crate::types::FindingAggregator {
-            finding_aggregator_arn: self.finding_aggregator_arn,
+            finding_aggregator_arn: self.finding_aggregator_arn
+            ,
         }
     }
 }
+

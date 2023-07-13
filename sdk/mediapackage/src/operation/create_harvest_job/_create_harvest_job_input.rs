@@ -3,7 +3,7 @@
 /// Configuration parameters used to create a new HarvestJob.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHarvestJobInput {
+pub struct CreateHarvestJobInput  {
     /// The end of the time-window which will be harvested
     #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
@@ -22,39 +22,36 @@ pub struct CreateHarvestJobInput {
 }
 impl CreateHarvestJobInput {
     /// The end of the time-window which will be harvested
-    pub fn end_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn origin_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn origin_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.origin_endpoint_id.as_deref()
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<& crate::types::S3Destination> {
         self.s3_destination.as_ref()
     }
     /// The start of the time-window which will be harvested
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
 }
 impl CreateHarvestJobInput {
     /// Creates a new builder-style object to manufacture [`CreateHarvestJobInput`](crate::operation::create_harvest_job::CreateHarvestJobInput).
-    pub fn builder() -> crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder {
         crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHarvestJobInput`](crate::operation::create_harvest_job::CreateHarvestJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHarvestJobInputBuilder {
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -70,8 +67,11 @@ impl CreateHarvestJobInputBuilder {
     }
     /// The end of the time-window which will be harvested
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
+    }
+    /// The end of the time-window which will be harvested
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,24 +80,24 @@ impl CreateHarvestJobInputBuilder {
     }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn origin_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn set_origin_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.origin_endpoint_id = input;
-        self
+    pub fn set_origin_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.origin_endpoint_id = input; self
+    }
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
+    pub fn get_origin_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_endpoint_id
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
@@ -105,12 +105,12 @@ impl CreateHarvestJobInputBuilder {
         self
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
-        self.s3_destination = input;
-        self
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
+        self.s3_destination = input; self
+    }
+    /// Configuration parameters for where in an S3 bucket to place the harvested content
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.s3_destination
     }
     /// The start of the time-window which will be harvested
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,24 +119,28 @@ impl CreateHarvestJobInputBuilder {
     }
     /// The start of the time-window which will be harvested
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
+    }
+    /// The start of the time-window which will be harvested
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
     }
     /// Consumes the builder and constructs a [`CreateHarvestJobInput`](crate::operation::create_harvest_job::CreateHarvestJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_harvest_job::CreateHarvestJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_harvest_job::CreateHarvestJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_harvest_job::CreateHarvestJobInput {
-                end_time: self.end_time,
-                id: self.id,
-                origin_endpoint_id: self.origin_endpoint_id,
-                s3_destination: self.s3_destination,
-                start_time: self.start_time,
-            },
+                end_time: self.end_time
+                ,
+                id: self.id
+                ,
+                origin_endpoint_id: self.origin_endpoint_id
+                ,
+                s3_destination: self.s3_destination
+                ,
+                start_time: self.start_time
+                ,
+            }
         )
     }
 }
+

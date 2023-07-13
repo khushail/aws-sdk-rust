@@ -3,14 +3,14 @@
 /// <p>The statistics resource for a monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringStatisticsResource {
+pub struct MonitoringStatisticsResource  {
     /// <p>The Amazon S3 URI for the statistics resource.</p>
     #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl MonitoringStatisticsResource {
     /// <p>The Amazon S3 URI for the statistics resource.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl MonitoringStatisticsResource {
 
 /// A builder for [`MonitoringStatisticsResource`](crate::types::MonitoringStatisticsResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringStatisticsResourceBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl MonitoringStatisticsResourceBuilder {
     }
     /// <p>The Amazon S3 URI for the statistics resource.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
+    }
+    /// <p>The Amazon S3 URI for the statistics resource.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Consumes the builder and constructs a [`MonitoringStatisticsResource`](crate::types::MonitoringStatisticsResource).
     pub fn build(self) -> crate::types::MonitoringStatisticsResource {
         crate::types::MonitoringStatisticsResource {
-            s3_uri: self.s3_uri,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
+

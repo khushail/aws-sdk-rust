@@ -3,7 +3,7 @@
 /// Details about the error.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorDetail {
+pub struct ErrorDetail  {
     /// A detailed error code.
     #[doc(hidden)]
     pub detailed_error_code: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ErrorDetail {
 }
 impl ErrorDetail {
     /// A detailed error code.
-    pub fn detailed_error_code(&self) -> ::std::option::Option<&str> {
+    pub fn detailed_error_code(&self) -> ::std::option::Option<& str> {
         self.detailed_error_code.as_deref()
     }
     /// A detailed error message.
-    pub fn detailed_error_message(&self) -> ::std::option::Option<&str> {
+    pub fn detailed_error_message(&self) -> ::std::option::Option<& str> {
         self.detailed_error_message.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl ErrorDetail {
 
 /// A builder for [`ErrorDetail`](crate::types::ErrorDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorDetailBuilder {
     pub(crate) detailed_error_code: ::std::option::Option<::std::string::String>,
     pub(crate) detailed_error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorDetailBuilder {
     /// A detailed error code.
-    pub fn detailed_error_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// A detailed error code.
-    pub fn set_detailed_error_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.detailed_error_code = input;
-        self
+    pub fn set_detailed_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.detailed_error_code = input; self
+    }
+    /// A detailed error code.
+    pub fn get_detailed_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_error_code
     }
     /// A detailed error message.
-    pub fn detailed_error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// A detailed error message.
-    pub fn set_detailed_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.detailed_error_message = input;
-        self
+    pub fn set_detailed_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.detailed_error_message = input; self
+    }
+    /// A detailed error message.
+    pub fn get_detailed_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_error_message
     }
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).
     pub fn build(self) -> crate::types::ErrorDetail {
         crate::types::ErrorDetail {
-            detailed_error_code: self.detailed_error_code,
-            detailed_error_message: self.detailed_error_message,
+            detailed_error_code: self.detailed_error_code
+            ,
+            detailed_error_message: self.detailed_error_message
+            ,
         }
     }
 }
+

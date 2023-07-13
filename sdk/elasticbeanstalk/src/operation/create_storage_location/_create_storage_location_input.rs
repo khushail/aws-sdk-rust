@@ -2,32 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStorageLocationInput {}
+pub struct CreateStorageLocationInput  {
+}
 impl CreateStorageLocationInput {
     /// Creates a new builder-style object to manufacture [`CreateStorageLocationInput`](crate::operation::create_storage_location::CreateStorageLocationInput).
-    pub fn builder(
-    ) -> crate::operation::create_storage_location::builders::CreateStorageLocationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_storage_location::builders::CreateStorageLocationInputBuilder {
         crate::operation::create_storage_location::builders::CreateStorageLocationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStorageLocationInput`](crate::operation::create_storage_location::CreateStorageLocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct CreateStorageLocationInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct CreateStorageLocationInputBuilder {
+}
 impl CreateStorageLocationInputBuilder {
     /// Consumes the builder and constructs a [`CreateStorageLocationInput`](crate::operation::create_storage_location::CreateStorageLocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_storage_location::CreateStorageLocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_storage_location::CreateStorageLocationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::create_storage_location::CreateStorageLocationInput {},
+            crate::operation::create_storage_location::CreateStorageLocationInput {
+            }
         )
     }
 }
+

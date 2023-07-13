@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDashboardDefinitionInput {
+pub struct DescribeDashboardDefinitionInput  {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeDashboardDefinitionInput {
 }
 impl DescribeDashboardDefinitionInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
@@ -30,22 +30,20 @@ impl DescribeDashboardDefinitionInput {
         self.version_number
     }
     /// <p>The alias name.</p>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
 }
 impl DescribeDashboardDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardDefinitionInput`](crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput).
-    pub fn builder() -> crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder {
         crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDashboardDefinitionInput`](crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDashboardDefinitionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
@@ -54,20 +52,17 @@ pub struct DescribeDashboardDefinitionInputBuilder {
 }
 impl DescribeDashboardDefinitionInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,8 +71,11 @@ impl DescribeDashboardDefinitionInputBuilder {
     }
     /// <p>The ID for the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
     }
     /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -86,8 +84,11 @@ impl DescribeDashboardDefinitionInputBuilder {
     }
     /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
+    }
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>The alias name.</p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,23 +97,26 @@ impl DescribeDashboardDefinitionInputBuilder {
     }
     /// <p>The alias name.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
+    }
+    /// <p>The alias name.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
     }
     /// Consumes the builder and constructs a [`DescribeDashboardDefinitionInput`](crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput {
-                aws_account_id: self.aws_account_id,
-                dashboard_id: self.dashboard_id,
-                version_number: self.version_number,
-                alias_name: self.alias_name,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                dashboard_id: self.dashboard_id
+                ,
+                version_number: self.version_number
+                ,
+                alias_name: self.alias_name
+                ,
+            }
         )
     }
 }
+

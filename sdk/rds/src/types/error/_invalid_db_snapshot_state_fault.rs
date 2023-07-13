@@ -3,7 +3,7 @@
 /// <p>The state of the DB snapshot doesn't allow deletion.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidDbSnapshotStateFault {
+pub struct InvalidDbSnapshotStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -11,18 +11,13 @@ pub struct InvalidDbSnapshotStateFault {
 }
 impl InvalidDbSnapshotStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidDbSnapshotStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "InvalidDbSnapshotStateFault [InvalidDBSnapshotStateFault]"
-        )?;
+        ::std::write!(f, "InvalidDbSnapshotStateFault [InvalidDBSnapshotStateFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -37,9 +32,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::InvalidDbSnapsho
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidDbSnapshotStateFault {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidDbSnapshotStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidDbSnapshotStateFault`](crate::types::error::InvalidDbSnapshotStateFault).
@@ -50,9 +43,7 @@ impl InvalidDbSnapshotStateFault {
 
 /// A builder for [`InvalidDbSnapshotStateFault`](crate::types::error::InvalidDbSnapshotStateFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidDbSnapshotStateFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -65,28 +56,30 @@ impl InvalidDbSnapshotStateFaultBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidDbSnapshotStateFault`](crate::types::error::InvalidDbSnapshotStateFault).
     pub fn build(self) -> crate::types::error::InvalidDbSnapshotStateFault {
         crate::types::error::InvalidDbSnapshotStateFault {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

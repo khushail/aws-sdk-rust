@@ -3,7 +3,7 @@
 /// <p>An HTTP error resulting from updating the description for a vehicle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVehicleError {
+pub struct UpdateVehicleError  {
     /// <p>The ID of the vehicle with the error.</p>
     #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct UpdateVehicleError {
 }
 impl UpdateVehicleError {
     /// <p>The ID of the vehicle with the error.</p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The relevant HTTP error code (400+).</p>
@@ -24,7 +24,7 @@ impl UpdateVehicleError {
         self.code
     }
     /// <p>A message associated with the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl UpdateVehicleError {
 
 /// A builder for [`UpdateVehicleError`](crate::types::UpdateVehicleError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVehicleErrorBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl UpdateVehicleErrorBuilder {
     }
     /// <p>The ID of the vehicle with the error.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
+    }
+    /// <p>The ID of the vehicle with the error.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
     }
     /// <p>The relevant HTTP error code (400+).</p>
     pub fn code(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl UpdateVehicleErrorBuilder {
     }
     /// <p>The relevant HTTP error code (400+).</p>
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>The relevant HTTP error code (400+).</p>
+    pub fn get_code(&self) -> &::std::option::Option<i32> {
+        &self.code
     }
     /// <p>A message associated with the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,23 @@ impl UpdateVehicleErrorBuilder {
     }
     /// <p>A message associated with the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A message associated with the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`UpdateVehicleError`](crate::types::UpdateVehicleError).
     pub fn build(self) -> crate::types::UpdateVehicleError {
         crate::types::UpdateVehicleError {
-            vehicle_name: self.vehicle_name,
-            code: self.code.unwrap_or_default(),
-            message: self.message,
+            vehicle_name: self.vehicle_name
+            ,
+            code: self.code
+                .unwrap_or_default()
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

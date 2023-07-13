@@ -3,7 +3,7 @@
 /// <p>Information about the option range used for scoring in numeric questions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationFormNumericQuestionOption {
+pub struct EvaluationFormNumericQuestionOption  {
     /// <p>The minimum answer value of the range option.</p>
     #[doc(hidden)]
     pub min_value: i32,
@@ -44,9 +44,7 @@ impl EvaluationFormNumericQuestionOption {
 
 /// A builder for [`EvaluationFormNumericQuestionOption`](crate::types::EvaluationFormNumericQuestionOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormNumericQuestionOptionBuilder {
     pub(crate) min_value: ::std::option::Option<i32>,
     pub(crate) max_value: ::std::option::Option<i32>,
@@ -61,8 +59,11 @@ impl EvaluationFormNumericQuestionOptionBuilder {
     }
     /// <p>The minimum answer value of the range option.</p>
     pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_value = input;
-        self
+        self.min_value = input; self
+    }
+    /// <p>The minimum answer value of the range option.</p>
+    pub fn get_min_value(&self) -> &::std::option::Option<i32> {
+        &self.min_value
     }
     /// <p>The maximum answer value of the range option.</p>
     pub fn max_value(mut self, input: i32) -> Self {
@@ -71,8 +72,11 @@ impl EvaluationFormNumericQuestionOptionBuilder {
     }
     /// <p>The maximum answer value of the range option.</p>
     pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_value = input;
-        self
+        self.max_value = input; self
+    }
+    /// <p>The maximum answer value of the range option.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<i32> {
+        &self.max_value
     }
     /// <p>The score assigned to answer values within the range option.</p>
     pub fn score(mut self, input: i32) -> Self {
@@ -81,8 +85,11 @@ impl EvaluationFormNumericQuestionOptionBuilder {
     }
     /// <p>The score assigned to answer values within the range option.</p>
     pub fn set_score(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
+    }
+    /// <p>The score assigned to answer values within the range option.</p>
+    pub fn get_score(&self) -> &::std::option::Option<i32> {
+        &self.score
     }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub fn automatic_fail(mut self, input: bool) -> Self {
@@ -91,16 +98,28 @@ impl EvaluationFormNumericQuestionOptionBuilder {
     }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.automatic_fail = input;
-        self
+        self.automatic_fail = input; self
+    }
+    /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
+    pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
+        &self.automatic_fail
     }
     /// Consumes the builder and constructs a [`EvaluationFormNumericQuestionOption`](crate::types::EvaluationFormNumericQuestionOption).
     pub fn build(self) -> crate::types::EvaluationFormNumericQuestionOption {
         crate::types::EvaluationFormNumericQuestionOption {
-            min_value: self.min_value.unwrap_or_default(),
-            max_value: self.max_value.unwrap_or_default(),
-            score: self.score.unwrap_or_default(),
-            automatic_fail: self.automatic_fail.unwrap_or_default(),
+            min_value: self.min_value
+                .unwrap_or_default()
+            ,
+            max_value: self.max_value
+                .unwrap_or_default()
+            ,
+            score: self.score
+                .unwrap_or_default()
+            ,
+            automatic_fail: self.automatic_fail
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

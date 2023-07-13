@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMembersInput {
+pub struct DeleteMembersInput  {
     /// <p>The list of account IDs for the member accounts to delete.</p>
     #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteMembersInput {
     /// <p>The list of account IDs for the member accounts to delete.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn account_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.account_ids.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteMembersInput {
 
 /// A builder for [`DeleteMembersInput`](crate::operation::delete_members::DeleteMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMembersInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,27 +34,26 @@ impl DeleteMembersInputBuilder {
     /// <p>The list of account IDs for the member accounts to delete.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of account IDs for the member accounts to delete.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_ids = input; self
+    }
+    /// <p>The list of account IDs for the member accounts to delete.</p>
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`DeleteMembersInput`](crate::operation::delete_members::DeleteMembersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_members::DeleteMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_members::DeleteMembersInput {
-            account_ids: self.account_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_members::DeleteMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_members::DeleteMembersInput {
+                account_ids: self.account_ids
+                ,
+            }
+        )
     }
 }
+

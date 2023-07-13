@@ -3,7 +3,7 @@
 /// <p>Contains status information for a DB cluster option group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbClusterOptionGroupStatus {
+pub struct DbClusterOptionGroupStatus  {
     /// <p>Specifies the name of the DB cluster option group.</p>
     #[doc(hidden)]
     pub db_cluster_option_group_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DbClusterOptionGroupStatus {
 }
 impl DbClusterOptionGroupStatus {
     /// <p>Specifies the name of the DB cluster option group.</p>
-    pub fn db_cluster_option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_option_group_name(&self) -> ::std::option::Option<& str> {
         self.db_cluster_option_group_name.as_deref()
     }
     /// <p>Specifies the status of the DB cluster option group.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl DbClusterOptionGroupStatus {
 
 /// A builder for [`DbClusterOptionGroupStatus`](crate::types::DbClusterOptionGroupStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbClusterOptionGroupStatusBuilder {
     pub(crate) db_cluster_option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterOptionGroupStatusBuilder {
     /// <p>Specifies the name of the DB cluster option group.</p>
-    pub fn db_cluster_option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the DB cluster option group.</p>
-    pub fn set_db_cluster_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.db_cluster_option_group_name = input;
-        self
+    pub fn set_db_cluster_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_option_group_name = input; self
+    }
+    /// <p>Specifies the name of the DB cluster option group.</p>
+    pub fn get_db_cluster_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_option_group_name
     }
     /// <p>Specifies the status of the DB cluster option group.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl DbClusterOptionGroupStatusBuilder {
     }
     /// <p>Specifies the status of the DB cluster option group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Specifies the status of the DB cluster option group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DbClusterOptionGroupStatus`](crate::types::DbClusterOptionGroupStatus).
     pub fn build(self) -> crate::types::DbClusterOptionGroupStatus {
         crate::types::DbClusterOptionGroupStatus {
-            db_cluster_option_group_name: self.db_cluster_option_group_name,
-            status: self.status,
+            db_cluster_option_group_name: self.db_cluster_option_group_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

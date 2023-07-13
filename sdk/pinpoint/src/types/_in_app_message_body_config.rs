@@ -3,7 +3,7 @@
 /// <p>Text config for Message Body.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InAppMessageBodyConfig {
+pub struct InAppMessageBodyConfig  {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     #[doc(hidden)]
     pub alignment: ::std::option::Option<crate::types::Alignment>,
@@ -16,15 +16,15 @@ pub struct InAppMessageBodyConfig {
 }
 impl InAppMessageBodyConfig {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-    pub fn alignment(&self) -> ::std::option::Option<&crate::types::Alignment> {
+    pub fn alignment(&self) -> ::std::option::Option<& crate::types::Alignment> {
         self.alignment.as_ref()
     }
     /// <p>Message Body.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The text color.</p>
-    pub fn text_color(&self) -> ::std::option::Option<&str> {
+    pub fn text_color(&self) -> ::std::option::Option<& str> {
         self.text_color.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl InAppMessageBodyConfig {
 
 /// A builder for [`InAppMessageBodyConfig`](crate::types::InAppMessageBodyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InAppMessageBodyConfigBuilder {
     pub(crate) alignment: ::std::option::Option<crate::types::Alignment>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl InAppMessageBodyConfigBuilder {
     }
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     pub fn set_alignment(mut self, input: ::std::option::Option<crate::types::Alignment>) -> Self {
-        self.alignment = input;
-        self
+        self.alignment = input; self
+    }
+    /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
+    pub fn get_alignment(&self) -> &::std::option::Option<crate::types::Alignment> {
+        &self.alignment
     }
     /// <p>Message Body.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl InAppMessageBodyConfigBuilder {
     }
     /// <p>Message Body.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
+    }
+    /// <p>Message Body.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// <p>The text color.</p>
     pub fn text_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl InAppMessageBodyConfigBuilder {
     }
     /// <p>The text color.</p>
     pub fn set_text_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_color = input;
-        self
+        self.text_color = input; self
+    }
+    /// <p>The text color.</p>
+    pub fn get_text_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_color
     }
     /// Consumes the builder and constructs a [`InAppMessageBodyConfig`](crate::types::InAppMessageBodyConfig).
     pub fn build(self) -> crate::types::InAppMessageBodyConfig {
         crate::types::InAppMessageBodyConfig {
-            alignment: self.alignment,
-            body: self.body,
-            text_color: self.text_color,
+            alignment: self.alignment
+            ,
+            body: self.body
+            ,
+            text_color: self.text_color
+            ,
         }
     }
 }
+

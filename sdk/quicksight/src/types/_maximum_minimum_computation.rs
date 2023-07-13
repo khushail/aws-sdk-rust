@@ -3,7 +3,7 @@
 /// <p>The maximum and minimum computation configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MaximumMinimumComputation {
+pub struct MaximumMinimumComputation  {
     /// <p>The ID for a computation.</p>
     #[doc(hidden)]
     pub computation_id: ::std::option::Option<::std::string::String>,
@@ -16,37 +16,37 @@ pub struct MaximumMinimumComputation {
     /// <p>The value field that is used in a computation.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::MeasureField>,
-    /// <p>The type of computation. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
-    /// <li> <p>MINIMUM: A minimum computation.</p> </li>
+    /// <p>The type of computation. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p>MAXIMUM: A maximum computation.</p> </li> 
+    /// <li> <p>MINIMUM: A minimum computation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MaximumMinimumComputationType>,
 }
 impl MaximumMinimumComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> ::std::option::Option<&str> {
+    pub fn computation_id(&self) -> ::std::option::Option<& str> {
         self.computation_id.as_deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time field that is used in a computation.</p>
-    pub fn time(&self) -> ::std::option::Option<&crate::types::DimensionField> {
+    pub fn time(&self) -> ::std::option::Option<& crate::types::DimensionField> {
         self.time.as_ref()
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::MeasureField> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::MeasureField> {
         self.value.as_ref()
     }
-    /// <p>The type of computation. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
-    /// <li> <p>MINIMUM: A minimum computation.</p> </li>
+    /// <p>The type of computation. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p>MAXIMUM: A maximum computation.</p> </li> 
+    /// <li> <p>MINIMUM: A minimum computation.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MaximumMinimumComputationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MaximumMinimumComputationType> {
         self.r#type.as_ref()
     }
 }
@@ -59,9 +59,7 @@ impl MaximumMinimumComputation {
 
 /// A builder for [`MaximumMinimumComputation`](crate::types::MaximumMinimumComputation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaximumMinimumComputationBuilder {
     pub(crate) computation_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -71,20 +69,17 @@ pub struct MaximumMinimumComputationBuilder {
 }
 impl MaximumMinimumComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.computation_id = input;
-        self
+    pub fn set_computation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.computation_id = input; self
+    }
+    /// <p>The ID for a computation.</p>
+    pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_id
     }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +88,11 @@ impl MaximumMinimumComputationBuilder {
     }
     /// <p>The name of a computation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of a computation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
@@ -103,8 +101,11 @@ impl MaximumMinimumComputationBuilder {
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn set_time(mut self, input: ::std::option::Option<crate::types::DimensionField>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
+    }
+    /// <p>The time field that is used in a computation.</p>
+    pub fn get_time(&self) -> &::std::option::Option<crate::types::DimensionField> {
+        &self.time
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
@@ -113,38 +114,51 @@ impl MaximumMinimumComputationBuilder {
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::MeasureField>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
-    /// <p>The type of computation. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
-    /// <li> <p>MINIMUM: A minimum computation.</p> </li>
+    /// <p>The value field that is used in a computation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::MeasureField> {
+        &self.value
+    }
+    /// <p>The type of computation. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p>MAXIMUM: A maximum computation.</p> </li> 
+    /// <li> <p>MINIMUM: A minimum computation.</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::MaximumMinimumComputationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of computation. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
-    /// <li> <p>MINIMUM: A minimum computation.</p> </li>
+    /// <p>The type of computation. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p>MAXIMUM: A maximum computation.</p> </li> 
+    /// <li> <p>MINIMUM: A minimum computation.</p> </li> 
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaximumMinimumComputationType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::MaximumMinimumComputationType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of computation. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p>MAXIMUM: A maximum computation.</p> </li> 
+    /// <li> <p>MINIMUM: A minimum computation.</p> </li> 
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MaximumMinimumComputationType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`MaximumMinimumComputation`](crate::types::MaximumMinimumComputation).
     pub fn build(self) -> crate::types::MaximumMinimumComputation {
         crate::types::MaximumMinimumComputation {
-            computation_id: self.computation_id,
-            name: self.name,
-            time: self.time,
-            value: self.value,
-            r#type: self.r#type,
+            computation_id: self.computation_id
+            ,
+            name: self.name
+            ,
+            time: self.time
+            ,
+            value: self.value
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

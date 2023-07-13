@@ -3,7 +3,7 @@
 /// <p>A single controller area network (CAN) device interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CanInterface {
+pub struct CanInterface  {
     /// <p>The unique name of the interface.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct CanInterface {
 }
 impl CanInterface {
     /// <p>The unique name of the interface.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the communication protocol for the interface.</p>
-    pub fn protocol_name(&self) -> ::std::option::Option<&str> {
+    pub fn protocol_name(&self) -> ::std::option::Option<& str> {
         self.protocol_name.as_deref()
     }
     /// <p>The version of the communication protocol for the interface.</p>
-    pub fn protocol_version(&self) -> ::std::option::Option<&str> {
+    pub fn protocol_version(&self) -> ::std::option::Option<& str> {
         self.protocol_version.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl CanInterface {
 
 /// A builder for [`CanInterface`](crate::types::CanInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanInterfaceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol_name: ::std::option::Option<::std::string::String>,
@@ -53,47 +51,48 @@ impl CanInterfaceBuilder {
     }
     /// <p>The unique name of the interface.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The unique name of the interface.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the communication protocol for the interface.</p>
-    pub fn protocol_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocol_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the communication protocol for the interface.</p>
-    pub fn set_protocol_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.protocol_name = input;
-        self
+    pub fn set_protocol_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.protocol_name = input; self
+    }
+    /// <p>The name of the communication protocol for the interface.</p>
+    pub fn get_protocol_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol_name
     }
     /// <p>The version of the communication protocol for the interface.</p>
-    pub fn protocol_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocol_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the communication protocol for the interface.</p>
-    pub fn set_protocol_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.protocol_version = input;
-        self
+    pub fn set_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.protocol_version = input; self
+    }
+    /// <p>The version of the communication protocol for the interface.</p>
+    pub fn get_protocol_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol_version
     }
     /// Consumes the builder and constructs a [`CanInterface`](crate::types::CanInterface).
     pub fn build(self) -> crate::types::CanInterface {
         crate::types::CanInterface {
-            name: self.name,
-            protocol_name: self.protocol_name,
-            protocol_version: self.protocol_version,
+            name: self.name
+            ,
+            protocol_name: self.protocol_name
+            ,
+            protocol_version: self.protocol_version
+            ,
         }
     }
 }
+

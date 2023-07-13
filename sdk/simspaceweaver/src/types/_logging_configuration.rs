@@ -3,14 +3,14 @@
 /// <p>The logging configuration for a simulation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoggingConfiguration {
+pub struct LoggingConfiguration  {
     /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
     #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDestination>>,
 }
 impl LoggingConfiguration {
     /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::LogDestination]> {
+    pub fn destinations(&self) -> ::std::option::Option<& [crate::types::LogDestination]> {
         self.destinations.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl LoggingConfiguration {
 
 /// A builder for [`LoggingConfiguration`](crate::types::LoggingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDestination>>,
 }
@@ -37,22 +35,24 @@ impl LoggingConfigurationBuilder {
     /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
     pub fn destinations(mut self, input: crate::types::LogDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDestination>>,
-    ) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogDestination>>) -> Self {
+        self.destinations = input; self
+    }
+    /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDestination>> {
+        &self.destinations
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {
         crate::types::LoggingConfiguration {
-            destinations: self.destinations,
+            destinations: self.destinations
+            ,
         }
     }
 }
+

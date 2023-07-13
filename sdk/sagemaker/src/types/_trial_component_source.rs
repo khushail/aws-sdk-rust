@@ -3,7 +3,7 @@
 /// <p>The Amazon Resource Name (ARN) and job type of the source of a trial component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrialComponentSource {
+pub struct TrialComponentSource  {
     /// <p>The source Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct TrialComponentSource {
 }
 impl TrialComponentSource {
     /// <p>The source Amazon Resource Name (ARN).</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The source job type.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<& str> {
         self.source_type.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl TrialComponentSource {
 
 /// A builder for [`TrialComponentSource`](crate::types::TrialComponentSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrialComponentSourceBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl TrialComponentSourceBuilder {
     }
     /// <p>The source Amazon Resource Name (ARN).</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
+    }
+    /// <p>The source Amazon Resource Name (ARN).</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// <p>The source job type.</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl TrialComponentSourceBuilder {
     }
     /// <p>The source job type.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
+    }
+    /// <p>The source job type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
     }
     /// Consumes the builder and constructs a [`TrialComponentSource`](crate::types::TrialComponentSource).
     pub fn build(self) -> crate::types::TrialComponentSource {
         crate::types::TrialComponentSource {
-            source_arn: self.source_arn,
-            source_type: self.source_type,
+            source_arn: self.source_arn
+            ,
+            source_type: self.source_type
+            ,
         }
     }
 }
+

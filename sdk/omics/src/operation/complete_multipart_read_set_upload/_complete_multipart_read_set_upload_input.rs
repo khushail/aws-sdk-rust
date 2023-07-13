@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompleteMultipartReadSetUploadInput {
+pub struct CompleteMultipartReadSetUploadInput  {
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
     #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
@@ -11,59 +11,50 @@ pub struct CompleteMultipartReadSetUploadInput {
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p> The individual uploads or parts of a multipart upload. </p>
     #[doc(hidden)]
-    pub parts:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>,
+    pub parts: ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>,
 }
 impl CompleteMultipartReadSetUploadInput {
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p> The ID for the multipart upload. </p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p> The individual uploads or parts of a multipart upload. </p>
-    pub fn parts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CompleteReadSetUploadPartListItem]> {
+    pub fn parts(&self) -> ::std::option::Option<& [crate::types::CompleteReadSetUploadPartListItem]> {
         self.parts.as_deref()
     }
 }
 impl CompleteMultipartReadSetUploadInput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartReadSetUploadInput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput).
-    pub fn builder() -> crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadInputBuilder{
+    pub fn builder() -> crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadInputBuilder {
         crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadInputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteMultipartReadSetUploadInput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteMultipartReadSetUploadInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
-    pub(crate) parts:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>,
+    pub(crate) parts: ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>,
 }
 impl CompleteMultipartReadSetUploadInputBuilder {
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sequence_store_id = input;
-        self
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sequence_store_id = input; self
+    }
+    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
     }
     /// <p> The ID for the multipart upload. </p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +63,11 @@ impl CompleteMultipartReadSetUploadInputBuilder {
     }
     /// <p> The ID for the multipart upload. </p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
+    }
+    /// <p> The ID for the multipart upload. </p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// Appends an item to `parts`.
     ///
@@ -82,27 +76,20 @@ impl CompleteMultipartReadSetUploadInputBuilder {
     /// <p> The individual uploads or parts of a multipart upload. </p>
     pub fn parts(mut self, input: crate::types::CompleteReadSetUploadPartListItem) -> Self {
         let mut v = self.parts.unwrap_or_default();
-        v.push(input);
-        self.parts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The individual uploads or parts of a multipart upload. </p>
-    pub fn set_parts(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>,
-        >,
-    ) -> Self {
-        self.parts = input;
-        self
+    pub fn set_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>) -> Self {
+        self.parts = input; self
+    }
+    /// <p> The individual uploads or parts of a multipart upload. </p>
+    pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>> {
+        &self.parts
     }
     /// Consumes the builder and constructs a [`CompleteMultipartReadSetUploadInput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput {
                 sequence_store_id: self.sequence_store_id
@@ -115,3 +102,4 @@ impl CompleteMultipartReadSetUploadInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdminListUserAuthEventsOutput {
+pub struct AdminListUserAuthEventsOutput  {
     /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
     #[doc(hidden)]
     pub auth_events: ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>>,
@@ -13,33 +13,29 @@ pub struct AdminListUserAuthEventsOutput {
 }
 impl AdminListUserAuthEventsOutput {
     /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
-    pub fn auth_events(&self) -> ::std::option::Option<&[crate::types::AuthEventType]> {
+    pub fn auth_events(&self) -> ::std::option::Option<& [crate::types::AuthEventType]> {
         self.auth_events.as_deref()
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AdminListUserAuthEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AdminListUserAuthEventsOutput {
     /// Creates a new builder-style object to manufacture [`AdminListUserAuthEventsOutput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsOutputBuilder {
         crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminListUserAuthEventsOutput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminListUserAuthEventsOutputBuilder {
     pub(crate) auth_events: ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,17 @@ impl AdminListUserAuthEventsOutputBuilder {
     /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
     pub fn auth_events(mut self, input: crate::types::AuthEventType) -> Self {
         let mut v = self.auth_events.unwrap_or_default();
-        v.push(input);
-        self.auth_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auth_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
-    pub fn set_auth_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>>,
-    ) -> Self {
-        self.auth_events = input;
-        self
+    pub fn set_auth_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>>) -> Self {
+        self.auth_events = input; self
+    }
+    /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
+    pub fn get_auth_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>> {
+        &self.auth_events
     }
     /// <p>A pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,26 +68,30 @@ impl AdminListUserAuthEventsOutputBuilder {
     }
     /// <p>A pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AdminListUserAuthEventsOutput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput {
+    pub fn build(self) -> crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput {
         crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput {
-            auth_events: self.auth_events,
-            next_token: self.next_token,
+            auth_events: self.auth_events
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

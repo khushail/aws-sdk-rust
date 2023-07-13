@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCampaignVersionOutput {
+pub struct GetCampaignVersionOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: ::std::option::Option<crate::types::CampaignResponse>,
@@ -10,28 +10,25 @@ pub struct GetCampaignVersionOutput {
 }
 impl GetCampaignVersionOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-    pub fn campaign_response(&self) -> ::std::option::Option<&crate::types::CampaignResponse> {
+    pub fn campaign_response(&self) -> ::std::option::Option<& crate::types::CampaignResponse> {
         self.campaign_response.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCampaignVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCampaignVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignVersionOutput`](crate::operation::get_campaign_version::GetCampaignVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_campaign_version::builders::GetCampaignVersionOutputBuilder {
+    pub fn builder() -> crate::operation::get_campaign_version::builders::GetCampaignVersionOutputBuilder {
         crate::operation::get_campaign_version::builders::GetCampaignVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignVersionOutput`](crate::operation::get_campaign_version::GetCampaignVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignVersionOutputBuilder {
     pub(crate) campaign_response: ::std::option::Option<crate::types::CampaignResponse>,
     _request_id: Option<String>,
@@ -43,27 +40,29 @@ impl GetCampaignVersionOutputBuilder {
         self
     }
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-    pub fn set_campaign_response(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignResponse>,
-    ) -> Self {
-        self.campaign_response = input;
-        self
+    pub fn set_campaign_response(mut self, input: ::std::option::Option<crate::types::CampaignResponse>) -> Self {
+        self.campaign_response = input; self
+    }
+    /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    pub fn get_campaign_response(&self) -> &::std::option::Option<crate::types::CampaignResponse> {
+        &self.campaign_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCampaignVersionOutput`](crate::operation::get_campaign_version::GetCampaignVersionOutput).
     pub fn build(self) -> crate::operation::get_campaign_version::GetCampaignVersionOutput {
         crate::operation::get_campaign_version::GetCampaignVersionOutput {
-            campaign_response: self.campaign_response,
+            campaign_response: self.campaign_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

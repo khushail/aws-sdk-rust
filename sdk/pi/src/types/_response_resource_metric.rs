@@ -3,7 +3,7 @@
 /// <p>An object that contains the full name, description, and unit of a metric. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseResourceMetric {
+pub struct ResponseResourceMetric  {
     /// <p>The full name of the metric.</p>
     #[doc(hidden)]
     pub metric: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResponseResourceMetric {
 }
 impl ResponseResourceMetric {
     /// <p>The full name of the metric.</p>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<& str> {
         self.metric.as_deref()
     }
     /// <p>The description of the metric.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unit of the metric.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ResponseResourceMetric {
 
 /// A builder for [`ResponseResourceMetric`](crate::types::ResponseResourceMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseResourceMetricBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl ResponseResourceMetricBuilder {
     }
     /// <p>The full name of the metric.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
+    }
+    /// <p>The full name of the metric.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric
     }
     /// <p>The description of the metric.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl ResponseResourceMetricBuilder {
     }
     /// <p>The description of the metric.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the metric.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The unit of the metric.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl ResponseResourceMetricBuilder {
     }
     /// <p>The unit of the metric.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
+    }
+    /// <p>The unit of the metric.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`ResponseResourceMetric`](crate::types::ResponseResourceMetric).
     pub fn build(self) -> crate::types::ResponseResourceMetric {
         crate::types::ResponseResourceMetric {
-            metric: self.metric,
-            description: self.description,
-            unit: self.unit,
+            metric: self.metric
+            ,
+            description: self.description
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

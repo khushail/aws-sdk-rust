@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRunTasksInput {
+pub struct ListRunTasksInput  {
     /// <p>The run's ID.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListRunTasksInput {
 }
 impl ListRunTasksInput {
     /// <p>The run's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Filter the list by status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskStatus> {
         self.status.as_ref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn starting_token(&self) -> ::std::option::Option<&str> {
+    pub fn starting_token(&self) -> ::std::option::Option<& str> {
         self.starting_token.as_deref()
     }
     /// <p>The maximum number of run tasks to return in one page of results.</p>
@@ -43,9 +43,7 @@ impl ListRunTasksInput {
 
 /// A builder for [`ListRunTasksInput`](crate::operation::list_run_tasks::ListRunTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRunTasksInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatus>,
@@ -60,8 +58,11 @@ impl ListRunTasksInputBuilder {
     }
     /// <p>The run's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The run's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Filter the list by status.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
@@ -70,24 +71,24 @@ impl ListRunTasksInputBuilder {
     }
     /// <p>Filter the list by status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Filter the list by status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        &self.status
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn starting_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn set_starting_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.starting_token = input;
-        self
+    pub fn set_starting_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.starting_token = input; self
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_starting_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.starting_token
     }
     /// <p>The maximum number of run tasks to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -96,21 +97,26 @@ impl ListRunTasksInputBuilder {
     }
     /// <p>The maximum number of run tasks to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of run tasks to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRunTasksInput`](crate::operation::list_run_tasks::ListRunTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_run_tasks::ListRunTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_run_tasks::ListRunTasksInput {
-            id: self.id,
-            status: self.status,
-            starting_token: self.starting_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_run_tasks::ListRunTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_run_tasks::ListRunTasksInput {
+                id: self.id
+                ,
+                status: self.status
+                ,
+                starting_token: self.starting_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

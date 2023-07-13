@@ -3,14 +3,14 @@
 /// <p>Describes a Lambda based availability provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaAvailabilityProvider {
+pub struct LambdaAvailabilityProvider  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
     #[doc(hidden)]
     pub lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
-    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl LambdaAvailabilityProvider {
 
 /// A builder for [`LambdaAvailabilityProvider`](crate::types::LambdaAvailabilityProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaAvailabilityProviderBuilder {
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl LambdaAvailabilityProviderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_arn = input;
-        self
+        self.lambda_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
     }
     /// Consumes the builder and constructs a [`LambdaAvailabilityProvider`](crate::types::LambdaAvailabilityProvider).
     pub fn build(self) -> crate::types::LambdaAvailabilityProvider {
         crate::types::LambdaAvailabilityProvider {
-            lambda_arn: self.lambda_arn,
+            lambda_arn: self.lambda_arn
+            ,
         }
     }
 }
+

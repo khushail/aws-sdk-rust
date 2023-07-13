@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBillingGroupInput {
+pub struct DeleteBillingGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeleteBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteBillingGroupInput`](crate::operation::delete_billing_group::DeleteBillingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder {
         crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBillingGroupInput`](crate::operation::delete_billing_group::DeleteBillingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBillingGroupInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DeleteBillingGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteBillingGroupInput`](crate::operation::delete_billing_group::DeleteBillingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_billing_group::DeleteBillingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_billing_group::DeleteBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_billing_group::DeleteBillingGroupInput { arn: self.arn },
+            crate::operation::delete_billing_group::DeleteBillingGroupInput {
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

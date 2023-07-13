@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointConfigInput {
+pub struct DescribeEndpointConfigInput  {
     /// <p>The name of the endpoint configuration.</p>
     #[doc(hidden)]
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointConfigInput {
     /// <p>The name of the endpoint configuration.</p>
-    pub fn endpoint_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_config_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_config_name.as_deref()
     }
 }
 impl DescribeEndpointConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointConfigInput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigInput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigInputBuilder {
         crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointConfigInput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointConfigInputBuilder {
     pub(crate) endpoint_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointConfigInputBuilder {
     /// <p>The name of the endpoint configuration.</p>
-    pub fn endpoint_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint configuration.</p>
-    pub fn set_endpoint_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.endpoint_config_name = input;
-        self
+    pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_config_name = input; self
+    }
+    /// <p>The name of the endpoint configuration.</p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_name
     }
     /// Consumes the builder and constructs a [`DescribeEndpointConfigInput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoint_config::DescribeEndpointConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_endpoint_config::DescribeEndpointConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_endpoint_config::DescribeEndpointConfigInput {
-                endpoint_config_name: self.endpoint_config_name,
-            },
+                endpoint_config_name: self.endpoint_config_name
+                ,
+            }
         )
     }
 }
+

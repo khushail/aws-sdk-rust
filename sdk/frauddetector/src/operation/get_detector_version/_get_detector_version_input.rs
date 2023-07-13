@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDetectorVersionInput {
+pub struct GetDetectorVersionInput  {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct GetDetectorVersionInput {
 }
 impl GetDetectorVersionInput {
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The detector version ID.</p>
-    pub fn detector_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> ::std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
 }
 impl GetDetectorVersionInput {
     /// Creates a new builder-style object to manufacture [`GetDetectorVersionInput`](crate::operation::get_detector_version::GetDetectorVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_detector_version::builders::GetDetectorVersionInputBuilder {
+    pub fn builder() -> crate::operation::get_detector_version::builders::GetDetectorVersionInputBuilder {
         crate::operation::get_detector_version::builders::GetDetectorVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDetectorVersionInput`](crate::operation::get_detector_version::GetDetectorVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDetectorVersionInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,
@@ -45,37 +42,35 @@ impl GetDetectorVersionInputBuilder {
     }
     /// <p>The detector ID.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
+    }
+    /// <p>The detector ID.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// <p>The detector version ID.</p>
-    pub fn detector_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector version ID.</p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.detector_version_id = input;
-        self
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.detector_version_id = input; self
+    }
+    /// <p>The detector version ID.</p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version_id
     }
     /// Consumes the builder and constructs a [`GetDetectorVersionInput`](crate::operation::get_detector_version::GetDetectorVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_detector_version::GetDetectorVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_detector_version::GetDetectorVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_detector_version::GetDetectorVersionInput {
-                detector_id: self.detector_id,
-                detector_version_id: self.detector_version_id,
-            },
+                detector_id: self.detector_id
+                ,
+                detector_version_id: self.detector_version_id
+                ,
+            }
         )
     }
 }
+

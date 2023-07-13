@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about a Resolver configuration for a VPC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolverConfig {
+pub struct ResolverConfig  {
     /// <p>ID for the Resolver configuration.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,39 +13,37 @@ pub struct ResolverConfig {
     /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
     #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
-    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p>
-    /// <ul>
-    /// <li> <p> <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being enabled but are not complete.</p> </li>
-    /// <li> <p> <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are enabled.</p> </li>
-    /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li>
-    /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li>
+    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being enabled but are not complete.</p> </li> 
+    /// <li> <p> <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are enabled.</p> </li> 
+    /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li> 
+    /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub autodefined_reverse: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>,
 }
 impl ResolverConfig {
     /// <p>ID for the Resolver configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
-    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p>
-    /// <ul>
-    /// <li> <p> <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being enabled but are not complete.</p> </li>
-    /// <li> <p> <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are enabled.</p> </li>
-    /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li>
-    /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li>
+    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being enabled but are not complete.</p> </li> 
+    /// <li> <p> <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are enabled.</p> </li> 
+    /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li> 
+    /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li> 
     /// </ul>
-    pub fn autodefined_reverse(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResolverAutodefinedReverseStatus> {
+    pub fn autodefined_reverse(&self) -> ::std::option::Option<& crate::types::ResolverAutodefinedReverseStatus> {
         self.autodefined_reverse.as_ref()
     }
 }
@@ -58,15 +56,12 @@ impl ResolverConfig {
 
 /// A builder for [`ResolverConfig`](crate::types::ResolverConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolverConfigBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
-    pub(crate) autodefined_reverse:
-        ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>,
+    pub(crate) autodefined_reverse: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>,
 }
 impl ResolverConfigBuilder {
     /// <p>ID for the Resolver configuration.</p>
@@ -76,8 +71,11 @@ impl ResolverConfigBuilder {
     }
     /// <p>ID for the Resolver configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>ID for the Resolver configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +84,11 @@ impl ResolverConfigBuilder {
     }
     /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,44 +97,55 @@ impl ResolverConfigBuilder {
     }
     /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
-    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p>
-    /// <ul>
-    /// <li> <p> <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being enabled but are not complete.</p> </li>
-    /// <li> <p> <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are enabled.</p> </li>
-    /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li>
-    /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li>
+    /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
+    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being enabled but are not complete.</p> </li> 
+    /// <li> <p> <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are enabled.</p> </li> 
+    /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li> 
+    /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li> 
     /// </ul>
-    pub fn autodefined_reverse(
-        mut self,
-        input: crate::types::ResolverAutodefinedReverseStatus,
-    ) -> Self {
+    pub fn autodefined_reverse(mut self, input: crate::types::ResolverAutodefinedReverseStatus) -> Self {
         self.autodefined_reverse = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p>
-    /// <ul>
-    /// <li> <p> <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being enabled but are not complete.</p> </li>
-    /// <li> <p> <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are enabled.</p> </li>
-    /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li>
-    /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li>
+    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being enabled but are not complete.</p> </li> 
+    /// <li> <p> <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are enabled.</p> </li> 
+    /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li> 
+    /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li> 
     /// </ul>
-    pub fn set_autodefined_reverse(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>,
-    ) -> Self {
-        self.autodefined_reverse = input;
-        self
+    pub fn set_autodefined_reverse(mut self, input: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>) -> Self {
+        self.autodefined_reverse = input; self
+    }
+    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being enabled but are not complete.</p> </li> 
+    /// <li> <p> <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are enabled.</p> </li> 
+    /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li> 
+    /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li> 
+    /// </ul>
+    pub fn get_autodefined_reverse(&self) -> &::std::option::Option<crate::types::ResolverAutodefinedReverseStatus> {
+        &self.autodefined_reverse
     }
     /// Consumes the builder and constructs a [`ResolverConfig`](crate::types::ResolverConfig).
     pub fn build(self) -> crate::types::ResolverConfig {
         crate::types::ResolverConfig {
-            id: self.id,
-            resource_id: self.resource_id,
-            owner_id: self.owner_id,
-            autodefined_reverse: self.autodefined_reverse,
+            id: self.id
+            ,
+            resource_id: self.resource_id
+            ,
+            owner_id: self.owner_id
+            ,
+            autodefined_reverse: self.autodefined_reverse
+            ,
         }
     }
 }
+

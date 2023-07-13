@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseLogStreamsOutput {
+pub struct GetRelationalDatabaseLogStreamsOutput  {
     /// <p>An object describing the result of your get relational database log streams request.</p>
     #[doc(hidden)]
     pub log_streams: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -10,27 +10,25 @@ pub struct GetRelationalDatabaseLogStreamsOutput {
 }
 impl GetRelationalDatabaseLogStreamsOutput {
     /// <p>An object describing the result of your get relational database log streams request.</p>
-    pub fn log_streams(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn log_streams(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.log_streams.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRelationalDatabaseLogStreamsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRelationalDatabaseLogStreamsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogStreamsOutput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput).
-    pub fn builder() -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsOutputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsOutputBuilder {
         crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseLogStreamsOutput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogStreamsOutputBuilder {
     pub(crate) log_streams: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -43,32 +41,29 @@ impl GetRelationalDatabaseLogStreamsOutputBuilder {
     /// <p>An object describing the result of your get relational database log streams request.</p>
     pub fn log_streams(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_streams.unwrap_or_default();
-        v.push(input.into());
-        self.log_streams = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_streams = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object describing the result of your get relational database log streams request.</p>
-    pub fn set_log_streams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.log_streams = input;
-        self
+    pub fn set_log_streams(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.log_streams = input; self
+    }
+    /// <p>An object describing the result of your get relational database log streams request.</p>
+    pub fn get_log_streams(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_streams
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseLogStreamsOutput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput
-    {
+    pub fn build(self) -> crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput {
         crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput {
             log_streams: self.log_streams
             ,
@@ -76,3 +71,4 @@ impl GetRelationalDatabaseLogStreamsOutputBuilder {
         }
     }
 }
+

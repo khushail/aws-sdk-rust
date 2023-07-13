@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeModelInput {
+pub struct DescribeModelInput  {
     /// <p>The name of the ML model to be described. </p>
     #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelInput {
     /// <p>The name of the ML model to be described. </p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeModelInput {
 
 /// A builder for [`DescribeModelInput`](crate::operation::describe_model::DescribeModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeModelInputBuilder {
     }
     /// <p>The name of the ML model to be described. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
+    }
+    /// <p>The name of the ML model to be described. </p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// Consumes the builder and constructs a [`DescribeModelInput`](crate::operation::describe_model::DescribeModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_model::DescribeModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_model::DescribeModelInput {
-            model_name: self.model_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_model::DescribeModelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_model::DescribeModelInput {
+                model_name: self.model_name
+                ,
+            }
+        )
     }
 }
+

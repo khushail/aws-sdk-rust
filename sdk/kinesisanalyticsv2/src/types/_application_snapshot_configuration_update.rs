@@ -3,7 +3,7 @@
 /// <p>Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSnapshotConfigurationUpdate {
+pub struct ApplicationSnapshotConfigurationUpdate  {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     #[doc(hidden)]
     pub snapshots_enabled_update: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl ApplicationSnapshotConfigurationUpdate {
 
 /// A builder for [`ApplicationSnapshotConfigurationUpdate`](crate::types::ApplicationSnapshotConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationSnapshotConfigurationUpdateBuilder {
     pub(crate) snapshots_enabled_update: ::std::option::Option<bool>,
 }
@@ -37,13 +35,18 @@ impl ApplicationSnapshotConfigurationUpdateBuilder {
     }
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub fn set_snapshots_enabled_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.snapshots_enabled_update = input;
-        self
+        self.snapshots_enabled_update = input; self
+    }
+    /// <p>Describes updates to whether snapshots are enabled for an application.</p>
+    pub fn get_snapshots_enabled_update(&self) -> &::std::option::Option<bool> {
+        &self.snapshots_enabled_update
     }
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfigurationUpdate`](crate::types::ApplicationSnapshotConfigurationUpdate).
     pub fn build(self) -> crate::types::ApplicationSnapshotConfigurationUpdate {
         crate::types::ApplicationSnapshotConfigurationUpdate {
-            snapshots_enabled_update: self.snapshots_enabled_update,
+            snapshots_enabled_update: self.snapshots_enabled_update
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendDataPoint {
+pub struct SendDataPoint  {
     /// <p>Time of the data point.</p>
     #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -22,7 +22,7 @@ pub struct SendDataPoint {
 }
 impl SendDataPoint {
     /// <p>Time of the data point.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Number of emails that have been sent.</p>
@@ -51,9 +51,7 @@ impl SendDataPoint {
 
 /// A builder for [`SendDataPoint`](crate::types::SendDataPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendDataPointBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delivery_attempts: ::std::option::Option<i64>,
@@ -68,12 +66,12 @@ impl SendDataPointBuilder {
         self
     }
     /// <p>Time of the data point.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.timestamp = input;
-        self
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.timestamp = input; self
+    }
+    /// <p>Time of the data point.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// <p>Number of emails that have been sent.</p>
     pub fn delivery_attempts(mut self, input: i64) -> Self {
@@ -82,8 +80,11 @@ impl SendDataPointBuilder {
     }
     /// <p>Number of emails that have been sent.</p>
     pub fn set_delivery_attempts(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.delivery_attempts = input;
-        self
+        self.delivery_attempts = input; self
+    }
+    /// <p>Number of emails that have been sent.</p>
+    pub fn get_delivery_attempts(&self) -> &::std::option::Option<i64> {
+        &self.delivery_attempts
     }
     /// <p>Number of emails that have bounced.</p>
     pub fn bounces(mut self, input: i64) -> Self {
@@ -92,8 +93,11 @@ impl SendDataPointBuilder {
     }
     /// <p>Number of emails that have bounced.</p>
     pub fn set_bounces(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bounces = input;
-        self
+        self.bounces = input; self
+    }
+    /// <p>Number of emails that have bounced.</p>
+    pub fn get_bounces(&self) -> &::std::option::Option<i64> {
+        &self.bounces
     }
     /// <p>Number of unwanted emails that were rejected by recipients.</p>
     pub fn complaints(mut self, input: i64) -> Self {
@@ -102,8 +106,11 @@ impl SendDataPointBuilder {
     }
     /// <p>Number of unwanted emails that were rejected by recipients.</p>
     pub fn set_complaints(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.complaints = input;
-        self
+        self.complaints = input; self
+    }
+    /// <p>Number of unwanted emails that were rejected by recipients.</p>
+    pub fn get_complaints(&self) -> &::std::option::Option<i64> {
+        &self.complaints
     }
     /// <p>Number of emails rejected by Amazon SES.</p>
     pub fn rejects(mut self, input: i64) -> Self {
@@ -112,17 +119,30 @@ impl SendDataPointBuilder {
     }
     /// <p>Number of emails rejected by Amazon SES.</p>
     pub fn set_rejects(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.rejects = input;
-        self
+        self.rejects = input; self
+    }
+    /// <p>Number of emails rejected by Amazon SES.</p>
+    pub fn get_rejects(&self) -> &::std::option::Option<i64> {
+        &self.rejects
     }
     /// Consumes the builder and constructs a [`SendDataPoint`](crate::types::SendDataPoint).
     pub fn build(self) -> crate::types::SendDataPoint {
         crate::types::SendDataPoint {
-            timestamp: self.timestamp,
-            delivery_attempts: self.delivery_attempts.unwrap_or_default(),
-            bounces: self.bounces.unwrap_or_default(),
-            complaints: self.complaints.unwrap_or_default(),
-            rejects: self.rejects.unwrap_or_default(),
+            timestamp: self.timestamp
+            ,
+            delivery_attempts: self.delivery_attempts
+                .unwrap_or_default()
+            ,
+            bounces: self.bounces
+                .unwrap_or_default()
+            ,
+            complaints: self.complaints
+                .unwrap_or_default()
+            ,
+            rejects: self.rejects
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

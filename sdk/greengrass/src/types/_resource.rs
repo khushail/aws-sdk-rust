@@ -3,7 +3,7 @@
 /// Information about a resource.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,15 @@ pub struct Resource {
 }
 impl Resource {
     /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// A container of data for all resource types.
-    pub fn resource_data_container(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceDataContainer> {
+    pub fn resource_data_container(&self) -> ::std::option::Option<& crate::types::ResourceDataContainer> {
         self.resource_data_container.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -55,8 +51,11 @@ impl ResourceBuilder {
     }
     /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,8 +64,11 @@ impl ResourceBuilder {
     }
     /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// A container of data for all resource types.
     pub fn resource_data_container(mut self, input: crate::types::ResourceDataContainer) -> Self {
@@ -74,19 +76,23 @@ impl ResourceBuilder {
         self
     }
     /// A container of data for all resource types.
-    pub fn set_resource_data_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataContainer>,
-    ) -> Self {
-        self.resource_data_container = input;
-        self
+    pub fn set_resource_data_container(mut self, input: ::std::option::Option<crate::types::ResourceDataContainer>) -> Self {
+        self.resource_data_container = input; self
+    }
+    /// A container of data for all resource types.
+    pub fn get_resource_data_container(&self) -> &::std::option::Option<crate::types::ResourceDataContainer> {
+        &self.resource_data_container
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            id: self.id,
-            name: self.name,
-            resource_data_container: self.resource_data_container,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            resource_data_container: self.resource_data_container
+            ,
         }
     }
 }
+

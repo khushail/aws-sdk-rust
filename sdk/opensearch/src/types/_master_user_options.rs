@@ -3,7 +3,7 @@
 /// <p>Credentials for the master user for a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MasterUserOptions {
+pub struct MasterUserOptions  {
     /// <p>Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
     #[doc(hidden)]
     pub master_user_arn: ::std::option::Option<::std::string::String>,
@@ -16,19 +16,19 @@ pub struct MasterUserOptions {
 }
 impl MasterUserOptions {
     /// <p>Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-    pub fn master_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_arn(&self) -> ::std::option::Option<& str> {
         self.master_user_arn.as_deref()
     }
     /// <p>User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn master_user_name(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_name(&self) -> ::std::option::Option<& str> {
         self.master_user_name.as_deref()
     }
     /// <p>Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for MasterUserOptions {
+impl  ::std::fmt::Debug for MasterUserOptions  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MasterUserOptions");
         formatter.field("master_user_arn", &self.master_user_arn);
@@ -54,59 +54,53 @@ pub struct MasterUserOptionsBuilder {
 }
 impl MasterUserOptionsBuilder {
     /// <p>Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-    pub fn master_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-    pub fn set_master_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.master_user_arn = input;
-        self
+    pub fn set_master_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_user_arn = input; self
+    }
+    /// <p>Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
+    pub fn get_master_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_arn
     }
     /// <p>User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn master_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn set_master_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.master_user_name = input;
-        self
+    pub fn set_master_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_user_name = input; self
+    }
+    /// <p>User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
+    pub fn get_master_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_name
     }
     /// <p>Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.master_user_password = input;
-        self
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_user_password = input; self
+    }
+    /// <p>Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
     }
     /// Consumes the builder and constructs a [`MasterUserOptions`](crate::types::MasterUserOptions).
     pub fn build(self) -> crate::types::MasterUserOptions {
         crate::types::MasterUserOptions {
-            master_user_arn: self.master_user_arn,
-            master_user_name: self.master_user_name,
-            master_user_password: self.master_user_password,
+            master_user_arn: self.master_user_arn
+            ,
+            master_user_name: self.master_user_name
+            ,
+            master_user_password: self.master_user_password
+            ,
         }
     }
 }
@@ -119,3 +113,4 @@ impl ::std::fmt::Debug for MasterUserOptionsBuilder {
         formatter.finish()
     }
 }
+

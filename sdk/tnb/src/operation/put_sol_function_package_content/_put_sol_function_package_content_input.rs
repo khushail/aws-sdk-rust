@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSolFunctionPackageContentInput {
+pub struct PutSolFunctionPackageContentInput  {
     /// <p>Function package ID.</p>
     #[doc(hidden)]
     pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct PutSolFunctionPackageContentInput {
 }
 impl PutSolFunctionPackageContentInput {
     /// <p>Function package ID.</p>
-    pub fn vnf_pkg_id(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_pkg_id(&self) -> ::std::option::Option<& str> {
         self.vnf_pkg_id.as_deref()
     }
     /// <p>Function package content type.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::PackageContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<& crate::types::PackageContentType> {
         self.content_type.as_ref()
     }
     /// <p>Function package file.</p>
-    pub fn file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn file(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.file.as_ref()
     }
 }
 impl PutSolFunctionPackageContentInput {
     /// Creates a new builder-style object to manufacture [`PutSolFunctionPackageContentInput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput).
-    pub fn builder() -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentInputBuilder{
+    pub fn builder() -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentInputBuilder {
         crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`PutSolFunctionPackageContentInput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSolFunctionPackageContentInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,
@@ -52,8 +50,11 @@ impl PutSolFunctionPackageContentInputBuilder {
     }
     /// <p>Function package ID.</p>
     pub fn set_vnf_pkg_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_pkg_id = input;
-        self
+        self.vnf_pkg_id = input; self
+    }
+    /// <p>Function package ID.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_pkg_id
     }
     /// <p>Function package content type.</p>
     pub fn content_type(mut self, input: crate::types::PackageContentType) -> Self {
@@ -61,12 +62,12 @@ impl PutSolFunctionPackageContentInputBuilder {
         self
     }
     /// <p>Function package content type.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
-        self.content_type = input;
-        self
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
+        self.content_type = input; self
+    }
+    /// <p>Function package content type.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        &self.content_type
     }
     /// <p>Function package file.</p>
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -75,22 +76,24 @@ impl PutSolFunctionPackageContentInputBuilder {
     }
     /// <p>Function package file.</p>
     pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.file = input;
-        self
+        self.file = input; self
+    }
+    /// <p>Function package file.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.file
     }
     /// Consumes the builder and constructs a [`PutSolFunctionPackageContentInput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput {
-                vnf_pkg_id: self.vnf_pkg_id,
-                content_type: self.content_type,
-                file: self.file,
-            },
+                vnf_pkg_id: self.vnf_pkg_id
+                ,
+                content_type: self.content_type
+                ,
+                file: self.file
+                ,
+            }
         )
     }
 }
+

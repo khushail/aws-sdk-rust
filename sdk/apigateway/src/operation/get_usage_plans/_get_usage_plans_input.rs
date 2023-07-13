@@ -3,7 +3,7 @@
 /// <p>The GET request to get all the usage plans of the caller's account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUsagePlansInput {
+pub struct GetUsagePlansInput  {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
     pub position: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct GetUsagePlansInput {
 }
 impl GetUsagePlansInput {
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
     /// <p>The identifier of the API key associated with the usage plans.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -37,9 +37,7 @@ impl GetUsagePlansInput {
 
 /// A builder for [`GetUsagePlansInput`](crate::operation::get_usage_plans::GetUsagePlansInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsagePlansInputBuilder {
     pub(crate) position: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl GetUsagePlansInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
     }
     /// <p>The identifier of the API key associated with the usage plans.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl GetUsagePlansInputBuilder {
     }
     /// <p>The identifier of the API key associated with the usage plans.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
+    }
+    /// <p>The identifier of the API key associated with the usage plans.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -73,20 +77,24 @@ impl GetUsagePlansInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`GetUsagePlansInput`](crate::operation::get_usage_plans::GetUsagePlansInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage_plans::GetUsagePlansInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_usage_plans::GetUsagePlansInput {
-            position: self.position,
-            key_id: self.key_id,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_usage_plans::GetUsagePlansInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_usage_plans::GetUsagePlansInput {
+                position: self.position
+                ,
+                key_id: self.key_id
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

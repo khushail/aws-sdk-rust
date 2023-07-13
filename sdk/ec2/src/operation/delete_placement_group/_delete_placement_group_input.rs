@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePlacementGroupInput {
+pub struct DeletePlacementGroupInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -16,23 +16,20 @@ impl DeletePlacementGroupInput {
         self.dry_run
     }
     /// <p>The name of the placement group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
 impl DeletePlacementGroupInput {
     /// Creates a new builder-style object to manufacture [`DeletePlacementGroupInput`](crate::operation::delete_placement_group::DeletePlacementGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_placement_group::builders::DeletePlacementGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_placement_group::builders::DeletePlacementGroupInputBuilder {
         crate::operation::delete_placement_group::builders::DeletePlacementGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlacementGroupInput`](crate::operation::delete_placement_group::DeletePlacementGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlacementGroupInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl DeletePlacementGroupInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The name of the placement group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl DeletePlacementGroupInputBuilder {
     }
     /// <p>The name of the placement group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
+    }
+    /// <p>The name of the placement group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Consumes the builder and constructs a [`DeletePlacementGroupInput`](crate::operation::delete_placement_group::DeletePlacementGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_placement_group::DeletePlacementGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_placement_group::DeletePlacementGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_placement_group::DeletePlacementGroupInput {
-                dry_run: self.dry_run,
-                group_name: self.group_name,
-            },
+                dry_run: self.dry_run
+                ,
+                group_name: self.group_name
+                ,
+            }
         )
     }
 }
+

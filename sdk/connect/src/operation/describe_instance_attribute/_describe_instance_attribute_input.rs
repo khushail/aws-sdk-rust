@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstanceAttributeInput {
+pub struct DescribeInstanceAttributeInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DescribeInstanceAttributeInput {
 }
 impl DescribeInstanceAttributeInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The type of attribute.</p>
-    pub fn attribute_type(&self) -> ::std::option::Option<&crate::types::InstanceAttributeType> {
+    pub fn attribute_type(&self) -> ::std::option::Option<& crate::types::InstanceAttributeType> {
         self.attribute_type.as_ref()
     }
 }
 impl DescribeInstanceAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAttributeInput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput).
-    pub fn builder() -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder {
         crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceAttributeInput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
@@ -44,8 +42,11 @@ impl DescribeInstanceAttributeInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The type of attribute.</p>
     pub fn attribute_type(mut self, input: crate::types::InstanceAttributeType) -> Self {
@@ -53,25 +54,23 @@ impl DescribeInstanceAttributeInputBuilder {
         self
     }
     /// <p>The type of attribute.</p>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAttributeType>,
-    ) -> Self {
-        self.attribute_type = input;
-        self
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
+        self.attribute_type = input; self
+    }
+    /// <p>The type of attribute.</p>
+    pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
+        &self.attribute_type
     }
     /// Consumes the builder and constructs a [`DescribeInstanceAttributeInput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput {
-                instance_id: self.instance_id,
-                attribute_type: self.attribute_type,
-            },
+                instance_id: self.instance_id
+                ,
+                attribute_type: self.attribute_type
+                ,
+            }
         )
     }
 }
+

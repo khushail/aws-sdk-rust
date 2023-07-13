@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>BatchGetApplications</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetApplicationsOutput {
+pub struct BatchGetApplicationsOutput  {
     /// <p>Information about the applications.</p>
     #[doc(hidden)]
     pub applications_info: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
@@ -11,31 +11,27 @@ pub struct BatchGetApplicationsOutput {
 }
 impl BatchGetApplicationsOutput {
     /// <p>Information about the applications.</p>
-    pub fn applications_info(&self) -> ::std::option::Option<&[crate::types::ApplicationInfo]> {
+    pub fn applications_info(&self) -> ::std::option::Option<& [crate::types::ApplicationInfo]> {
         self.applications_info.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetApplicationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetApplicationsOutput`](crate::operation::batch_get_applications::BatchGetApplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_applications::builders::BatchGetApplicationsOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_applications::builders::BatchGetApplicationsOutputBuilder {
         crate::operation::batch_get_applications::builders::BatchGetApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetApplicationsOutput`](crate::operation::batch_get_applications::BatchGetApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetApplicationsOutputBuilder {
-    pub(crate) applications_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
+    pub(crate) applications_info: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
     _request_id: Option<String>,
 }
 impl BatchGetApplicationsOutputBuilder {
@@ -46,32 +42,34 @@ impl BatchGetApplicationsOutputBuilder {
     /// <p>Information about the applications.</p>
     pub fn applications_info(mut self, input: crate::types::ApplicationInfo) -> Self {
         let mut v = self.applications_info.unwrap_or_default();
-        v.push(input);
-        self.applications_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.applications_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the applications.</p>
-    pub fn set_applications_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
-    ) -> Self {
-        self.applications_info = input;
-        self
+    pub fn set_applications_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>) -> Self {
+        self.applications_info = input; self
+    }
+    /// <p>Information about the applications.</p>
+    pub fn get_applications_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>> {
+        &self.applications_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetApplicationsOutput`](crate::operation::batch_get_applications::BatchGetApplicationsOutput).
     pub fn build(self) -> crate::operation::batch_get_applications::BatchGetApplicationsOutput {
         crate::operation::batch_get_applications::BatchGetApplicationsOutput {
-            applications_info: self.applications_info,
+            applications_info: self.applications_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

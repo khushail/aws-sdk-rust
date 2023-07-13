@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingsFilterInput {
+pub struct GetFindingsFilterInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetFindingsFilterInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetFindingsFilterInput {
     /// Creates a new builder-style object to manufacture [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::get_findings_filter::builders::GetFindingsFilterInputBuilder {
+    pub fn builder() -> crate::operation::get_findings_filter::builders::GetFindingsFilterInputBuilder {
         crate::operation::get_findings_filter::builders::GetFindingsFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsFilterInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl GetFindingsFilterInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_findings_filter::GetFindingsFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_findings_filter::GetFindingsFilterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_findings_filter::GetFindingsFilterInput { id: self.id },
+            crate::operation::get_findings_filter::GetFindingsFilterInput {
+                id: self.id
+                ,
+            }
         )
     }
 }
+

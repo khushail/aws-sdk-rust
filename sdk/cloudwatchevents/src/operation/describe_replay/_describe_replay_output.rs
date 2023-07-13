@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplayOutput {
+pub struct DescribeReplayOutput  {
     /// <p>The name of the replay.</p>
     #[doc(hidden)]
     pub replay_name: ::std::option::Option<::std::string::String>,
@@ -43,59 +43,59 @@ pub struct DescribeReplayOutput {
 }
 impl DescribeReplayOutput {
     /// <p>The name of the replay.</p>
-    pub fn replay_name(&self) -> ::std::option::Option<&str> {
+    pub fn replay_name(&self) -> ::std::option::Option<& str> {
         self.replay_name.as_deref()
     }
     /// <p>The ARN of the replay.</p>
-    pub fn replay_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replay_arn(&self) -> ::std::option::Option<& str> {
         self.replay_arn.as_deref()
     }
     /// <p>The description of the replay.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current state of the replay.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ReplayState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ReplayState> {
         self.state.as_ref()
     }
     /// <p>The reason that the replay is in the current state.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The ARN of the archive events were replayed from.</p>
-    pub fn event_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> ::std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::ReplayDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::ReplayDestination> {
         self.destination.as_ref()
     }
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
-    pub fn event_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_start_time.as_ref()
     }
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
-    pub fn event_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_end_time.as_ref()
     }
     /// <p>The time that the event was last replayed.</p>
-    pub fn event_last_replayed_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_last_replayed_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_last_replayed_time.as_ref()
     }
     /// <p>A time stamp for the time that the replay started.</p>
-    pub fn replay_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replay_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.replay_start_time.as_ref()
     }
     /// <p>A time stamp for the time that the replay stopped.</p>
-    pub fn replay_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replay_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.replay_end_time.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReplayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeReplayOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplayOutput`](crate::operation::describe_replay::DescribeReplayOutput).
     pub fn builder() -> crate::operation::describe_replay::builders::DescribeReplayOutputBuilder {
@@ -105,9 +105,7 @@ impl DescribeReplayOutput {
 
 /// A builder for [`DescribeReplayOutput`](crate::operation::describe_replay::DescribeReplayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplayOutputBuilder {
     pub(crate) replay_name: ::std::option::Option<::std::string::String>,
     pub(crate) replay_arn: ::std::option::Option<::std::string::String>,
@@ -131,8 +129,11 @@ impl DescribeReplayOutputBuilder {
     }
     /// <p>The name of the replay.</p>
     pub fn set_replay_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replay_name = input;
-        self
+        self.replay_name = input; self
+    }
+    /// <p>The name of the replay.</p>
+    pub fn get_replay_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replay_name
     }
     /// <p>The ARN of the replay.</p>
     pub fn replay_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,8 +142,11 @@ impl DescribeReplayOutputBuilder {
     }
     /// <p>The ARN of the replay.</p>
     pub fn set_replay_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replay_arn = input;
-        self
+        self.replay_arn = input; self
+    }
+    /// <p>The ARN of the replay.</p>
+    pub fn get_replay_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replay_arn
     }
     /// <p>The description of the replay.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,8 +155,11 @@ impl DescribeReplayOutputBuilder {
     }
     /// <p>The description of the replay.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the replay.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The current state of the replay.</p>
     pub fn state(mut self, input: crate::types::ReplayState) -> Self {
@@ -161,8 +168,11 @@ impl DescribeReplayOutputBuilder {
     }
     /// <p>The current state of the replay.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReplayState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The current state of the replay.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplayState> {
+        &self.state
     }
     /// <p>The reason that the replay is in the current state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,24 +181,24 @@ impl DescribeReplayOutputBuilder {
     }
     /// <p>The reason that the replay is in the current state.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
+    }
+    /// <p>The reason that the replay is in the current state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     /// <p>The ARN of the archive events were replayed from.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the archive events were replayed from.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_source_arn = input;
-        self
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_source_arn = input; self
+    }
+    /// <p>The ARN of the archive events were replayed from.</p>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_arn
     }
     /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
     pub fn destination(mut self, input: crate::types::ReplayDestination) -> Self {
@@ -196,12 +206,12 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplayDestination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::ReplayDestination>) -> Self {
+        self.destination = input; self
+    }
+    /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::ReplayDestination> {
+        &self.destination
     }
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
     pub fn event_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -209,12 +219,12 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
-    pub fn set_event_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.event_start_time = input;
-        self
+    pub fn set_event_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.event_start_time = input; self
+    }
+    /// <p>The time stamp of the first event that was last replayed from the archive.</p>
+    pub fn get_event_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_start_time
     }
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
     pub fn event_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -222,12 +232,12 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
-    pub fn set_event_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.event_end_time = input;
-        self
+    pub fn set_event_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.event_end_time = input; self
+    }
+    /// <p>The time stamp for the last event that was replayed from the archive.</p>
+    pub fn get_event_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_end_time
     }
     /// <p>The time that the event was last replayed.</p>
     pub fn event_last_replayed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -235,12 +245,12 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>The time that the event was last replayed.</p>
-    pub fn set_event_last_replayed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.event_last_replayed_time = input;
-        self
+    pub fn set_event_last_replayed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.event_last_replayed_time = input; self
+    }
+    /// <p>The time that the event was last replayed.</p>
+    pub fn get_event_last_replayed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_last_replayed_time
     }
     /// <p>A time stamp for the time that the replay started.</p>
     pub fn replay_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -248,12 +258,12 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the replay started.</p>
-    pub fn set_replay_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.replay_start_time = input;
-        self
+    pub fn set_replay_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.replay_start_time = input; self
+    }
+    /// <p>A time stamp for the time that the replay started.</p>
+    pub fn get_replay_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.replay_start_time
     }
     /// <p>A time stamp for the time that the replay stopped.</p>
     pub fn replay_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -261,38 +271,51 @@ impl DescribeReplayOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the replay stopped.</p>
-    pub fn set_replay_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.replay_end_time = input;
-        self
+    pub fn set_replay_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.replay_end_time = input; self
+    }
+    /// <p>A time stamp for the time that the replay stopped.</p>
+    pub fn get_replay_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.replay_end_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeReplayOutput`](crate::operation::describe_replay::DescribeReplayOutput).
     pub fn build(self) -> crate::operation::describe_replay::DescribeReplayOutput {
         crate::operation::describe_replay::DescribeReplayOutput {
-            replay_name: self.replay_name,
-            replay_arn: self.replay_arn,
-            description: self.description,
-            state: self.state,
-            state_reason: self.state_reason,
-            event_source_arn: self.event_source_arn,
-            destination: self.destination,
-            event_start_time: self.event_start_time,
-            event_end_time: self.event_end_time,
-            event_last_replayed_time: self.event_last_replayed_time,
-            replay_start_time: self.replay_start_time,
-            replay_end_time: self.replay_end_time,
+            replay_name: self.replay_name
+            ,
+            replay_arn: self.replay_arn
+            ,
+            description: self.description
+            ,
+            state: self.state
+            ,
+            state_reason: self.state_reason
+            ,
+            event_source_arn: self.event_source_arn
+            ,
+            destination: self.destination
+            ,
+            event_start_time: self.event_start_time
+            ,
+            event_end_time: self.event_end_time
+            ,
+            event_last_replayed_time: self.event_last_replayed_time
+            ,
+            replay_start_time: self.replay_start_time
+            ,
+            replay_end_time: self.replay_end_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

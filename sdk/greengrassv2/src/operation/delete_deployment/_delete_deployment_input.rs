@@ -2,59 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeploymentInput {
+pub struct DeleteDeploymentInput  {
     /// <p>The ID of the deployment.</p>
     #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeploymentInput {
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
 impl DeleteDeploymentInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
-    pub fn builder() -> crate::operation::delete_deployment::builders::DeleteDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_deployment::builders::DeleteDeploymentInputBuilder {
         crate::operation::delete_deployment::builders::DeleteDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeploymentInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeploymentInputBuilder {
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.deployment_id = input;
-        self
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_id = input; self
+    }
+    /// <p>The ID of the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_deployment::DeleteDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_deployment::DeleteDeploymentInput {
-            deployment_id: self.deployment_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_deployment::DeleteDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_deployment::DeleteDeploymentInput {
+                deployment_id: self.deployment_id
+                ,
+            }
+        )
     }
 }
+

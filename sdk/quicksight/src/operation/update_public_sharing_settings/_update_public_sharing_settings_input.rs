@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePublicSharingSettingsInput {
+pub struct UpdatePublicSharingSettingsInput  {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct UpdatePublicSharingSettingsInput {
 }
 impl UpdatePublicSharingSettingsInput {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
@@ -22,36 +22,31 @@ impl UpdatePublicSharingSettingsInput {
 }
 impl UpdatePublicSharingSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdatePublicSharingSettingsInput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput).
-    pub fn builder() -> crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder{
+    pub fn builder() -> crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder {
         crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePublicSharingSettingsInput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePublicSharingSettingsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_sharing_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePublicSharingSettingsInputBuilder {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
     pub fn public_sharing_enabled(mut self, input: bool) -> Self {
@@ -60,21 +55,22 @@ impl UpdatePublicSharingSettingsInputBuilder {
     }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
     pub fn set_public_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.public_sharing_enabled = input;
-        self
+        self.public_sharing_enabled = input; self
+    }
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
+    pub fn get_public_sharing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.public_sharing_enabled
     }
     /// Consumes the builder and constructs a [`UpdatePublicSharingSettingsInput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput {
-                aws_account_id: self.aws_account_id,
-                public_sharing_enabled: self.public_sharing_enabled,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                public_sharing_enabled: self.public_sharing_enabled
+                ,
+            }
         )
     }
 }
+

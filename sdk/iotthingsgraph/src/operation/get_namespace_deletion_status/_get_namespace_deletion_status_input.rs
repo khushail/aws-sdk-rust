@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNamespaceDeletionStatusInput {}
+pub struct GetNamespaceDeletionStatusInput  {
+}
 impl GetNamespaceDeletionStatusInput {
     /// Creates a new builder-style object to manufacture [`GetNamespaceDeletionStatusInput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusInput).
-    pub fn builder() -> crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusInputBuilder {
         crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetNamespaceDeletionStatusInput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct GetNamespaceDeletionStatusInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct GetNamespaceDeletionStatusInputBuilder {
+}
 impl GetNamespaceDeletionStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetNamespaceDeletionStatusInput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusInput {},
+            crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusInput {
+            }
         )
     }
 }
+

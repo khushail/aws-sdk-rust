@@ -3,7 +3,7 @@
 /// <p>Indicates the direction the eyes are gazing in (independent of the head pose) as determined by its pitch and yaw. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EyeDirection {
+pub struct EyeDirection  {
     /// <p>Value representing eye direction on the yaw axis.</p>
     #[doc(hidden)]
     pub yaw: ::std::option::Option<f32>,
@@ -37,9 +37,7 @@ impl EyeDirection {
 
 /// A builder for [`EyeDirection`](crate::types::EyeDirection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EyeDirectionBuilder {
     pub(crate) yaw: ::std::option::Option<f32>,
     pub(crate) pitch: ::std::option::Option<f32>,
@@ -53,8 +51,11 @@ impl EyeDirectionBuilder {
     }
     /// <p>Value representing eye direction on the yaw axis.</p>
     pub fn set_yaw(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.yaw = input;
-        self
+        self.yaw = input; self
+    }
+    /// <p>Value representing eye direction on the yaw axis.</p>
+    pub fn get_yaw(&self) -> &::std::option::Option<f32> {
+        &self.yaw
     }
     /// <p>Value representing eye direction on the pitch axis.</p>
     pub fn pitch(mut self, input: f32) -> Self {
@@ -63,8 +64,11 @@ impl EyeDirectionBuilder {
     }
     /// <p>Value representing eye direction on the pitch axis.</p>
     pub fn set_pitch(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.pitch = input;
-        self
+        self.pitch = input; self
+    }
+    /// <p>Value representing eye direction on the pitch axis.</p>
+    pub fn get_pitch(&self) -> &::std::option::Option<f32> {
+        &self.pitch
     }
     /// <p>The confidence that the service has in its predicted eye direction.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -73,15 +77,22 @@ impl EyeDirectionBuilder {
     }
     /// <p>The confidence that the service has in its predicted eye direction.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
+    }
+    /// <p>The confidence that the service has in its predicted eye direction.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`EyeDirection`](crate::types::EyeDirection).
     pub fn build(self) -> crate::types::EyeDirection {
         crate::types::EyeDirection {
-            yaw: self.yaw,
-            pitch: self.pitch,
-            confidence: self.confidence,
+            yaw: self.yaw
+            ,
+            pitch: self.pitch
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

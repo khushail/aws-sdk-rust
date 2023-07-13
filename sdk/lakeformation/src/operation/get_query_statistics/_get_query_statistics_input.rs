@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryStatisticsInput {
+pub struct GetQueryStatisticsInput  {
     /// <p>The ID of the plan query operation.</p>
     #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueryStatisticsInput {
     /// <p>The ID of the plan query operation.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
 impl GetQueryStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetQueryStatisticsInput`](crate::operation::get_query_statistics::GetQueryStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::get_query_statistics::builders::GetQueryStatisticsInputBuilder {
+    pub fn builder() -> crate::operation::get_query_statistics::builders::GetQueryStatisticsInputBuilder {
         crate::operation::get_query_statistics::builders::GetQueryStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetQueryStatisticsInput`](crate::operation::get_query_statistics::GetQueryStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryStatisticsInputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl GetQueryStatisticsInputBuilder {
     }
     /// <p>The ID of the plan query operation.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
+    }
+    /// <p>The ID of the plan query operation.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
     }
     /// Consumes the builder and constructs a [`GetQueryStatisticsInput`](crate::operation::get_query_statistics::GetQueryStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_query_statistics::GetQueryStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_query_statistics::GetQueryStatisticsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_query_statistics::GetQueryStatisticsInput {
-                query_id: self.query_id,
-            },
+                query_id: self.query_id
+                ,
+            }
         )
     }
 }
+

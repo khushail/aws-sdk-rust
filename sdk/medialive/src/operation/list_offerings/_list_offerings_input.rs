@@ -3,7 +3,7 @@
 /// Placeholder documentation for ListOfferingsRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOfferingsInput {
+pub struct ListOfferingsInput  {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
     #[doc(hidden)]
     pub channel_class: ::std::option::Option<::std::string::String>,
@@ -43,19 +43,19 @@ pub struct ListOfferingsInput {
 }
 impl ListOfferingsInput {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-    pub fn channel_class(&self) -> ::std::option::Option<&str> {
+    pub fn channel_class(&self) -> ::std::option::Option<& str> {
         self.channel_class.as_deref()
     }
     /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
-    pub fn channel_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn channel_configuration(&self) -> ::std::option::Option<& str> {
         self.channel_configuration.as_deref()
     }
     /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
-    pub fn codec(&self) -> ::std::option::Option<&str> {
+    pub fn codec(&self) -> ::std::option::Option<& str> {
         self.codec.as_deref()
     }
     /// Filter by offering duration, e.g. '12'
-    pub fn duration(&self) -> ::std::option::Option<&str> {
+    pub fn duration(&self) -> ::std::option::Option<& str> {
         self.duration.as_deref()
     }
     /// Placeholder documentation for MaxResults
@@ -63,31 +63,31 @@ impl ListOfferingsInput {
         self.max_results
     }
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-    pub fn maximum_bitrate(&self) -> ::std::option::Option<&str> {
+    pub fn maximum_bitrate(&self) -> ::std::option::Option<& str> {
         self.maximum_bitrate.as_deref()
     }
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-    pub fn maximum_framerate(&self) -> ::std::option::Option<&str> {
+    pub fn maximum_framerate(&self) -> ::std::option::Option<& str> {
         self.maximum_framerate.as_deref()
     }
     /// Placeholder documentation for __string
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
-    pub fn resolution(&self) -> ::std::option::Option<&str> {
+    pub fn resolution(&self) -> ::std::option::Option<& str> {
         self.resolution.as_deref()
     }
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-    pub fn special_feature(&self) -> ::std::option::Option<&str> {
+    pub fn special_feature(&self) -> ::std::option::Option<& str> {
         self.special_feature.as_deref()
     }
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-    pub fn video_quality(&self) -> ::std::option::Option<&str> {
+    pub fn video_quality(&self) -> ::std::option::Option<& str> {
         self.video_quality.as_deref()
     }
 }
@@ -100,9 +100,7 @@ impl ListOfferingsInput {
 
 /// A builder for [`ListOfferingsInput`](crate::operation::list_offerings::ListOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingsInputBuilder {
     pub(crate) channel_class: ::std::option::Option<::std::string::String>,
     pub(crate) channel_configuration: ::std::option::Option<::std::string::String>,
@@ -119,36 +117,30 @@ pub struct ListOfferingsInputBuilder {
 }
 impl ListOfferingsInputBuilder {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-    pub fn channel_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_class = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-    pub fn set_channel_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.channel_class = input;
-        self
+    pub fn set_channel_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel_class = input; self
+    }
+    /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+    pub fn get_channel_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_class
     }
     /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
-    pub fn channel_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
-    pub fn set_channel_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.channel_configuration = input;
-        self
+    pub fn set_channel_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel_configuration = input; self
+    }
+    /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
+    pub fn get_channel_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_configuration
     }
     /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
     pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,8 +149,11 @@ impl ListOfferingsInputBuilder {
     }
     /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
     pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.codec = input;
-        self
+        self.codec = input; self
+    }
+    /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.codec
     }
     /// Filter by offering duration, e.g. '12'
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,8 +162,11 @@ impl ListOfferingsInputBuilder {
     }
     /// Filter by offering duration, e.g. '12'
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
+    }
+    /// Filter by offering duration, e.g. '12'
+    pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.duration
     }
     /// Placeholder documentation for MaxResults
     pub fn max_results(mut self, input: i32) -> Self {
@@ -177,40 +175,37 @@ impl ListOfferingsInputBuilder {
     }
     /// Placeholder documentation for MaxResults
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// Placeholder documentation for MaxResults
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-    pub fn maximum_bitrate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_bitrate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maximum_bitrate = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-    pub fn set_maximum_bitrate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.maximum_bitrate = input;
-        self
+    pub fn set_maximum_bitrate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.maximum_bitrate = input; self
+    }
+    /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
+    pub fn get_maximum_bitrate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maximum_bitrate
     }
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-    pub fn maximum_framerate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_framerate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maximum_framerate = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-    pub fn set_maximum_framerate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.maximum_framerate = input;
-        self
+    pub fn set_maximum_framerate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.maximum_framerate = input; self
+    }
+    /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
+    pub fn get_maximum_framerate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maximum_framerate
     }
     /// Placeholder documentation for __string
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -219,8 +214,11 @@ impl ListOfferingsInputBuilder {
     }
     /// Placeholder documentation for __string
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// Placeholder documentation for __string
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
     pub fn resolution(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -229,77 +227,81 @@ impl ListOfferingsInputBuilder {
     }
     /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
     pub fn set_resolution(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolution = input;
-        self
+        self.resolution = input; self
+    }
+    /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
+    pub fn get_resolution(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolution
     }
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_type = input; self
+    }
+    /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-    pub fn special_feature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn special_feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.special_feature = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-    pub fn set_special_feature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.special_feature = input;
-        self
+    pub fn set_special_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.special_feature = input; self
+    }
+    /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+    pub fn get_special_feature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.special_feature
     }
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-    pub fn video_quality(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn video_quality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.video_quality = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-    pub fn set_video_quality(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.video_quality = input;
-        self
+    pub fn set_video_quality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.video_quality = input; self
+    }
+    /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
+    pub fn get_video_quality(&self) -> &::std::option::Option<::std::string::String> {
+        &self.video_quality
     }
     /// Consumes the builder and constructs a [`ListOfferingsInput`](crate::operation::list_offerings::ListOfferingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_offerings::ListOfferingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_offerings::ListOfferingsInput {
-            channel_class: self.channel_class,
-            channel_configuration: self.channel_configuration,
-            codec: self.codec,
-            duration: self.duration,
-            max_results: self.max_results,
-            maximum_bitrate: self.maximum_bitrate,
-            maximum_framerate: self.maximum_framerate,
-            next_token: self.next_token,
-            resolution: self.resolution,
-            resource_type: self.resource_type,
-            special_feature: self.special_feature,
-            video_quality: self.video_quality,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_offerings::ListOfferingsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_offerings::ListOfferingsInput {
+                channel_class: self.channel_class
+                ,
+                channel_configuration: self.channel_configuration
+                ,
+                codec: self.codec
+                ,
+                duration: self.duration
+                ,
+                max_results: self.max_results
+                ,
+                maximum_bitrate: self.maximum_bitrate
+                ,
+                maximum_framerate: self.maximum_framerate
+                ,
+                next_token: self.next_token
+                ,
+                resolution: self.resolution
+                ,
+                resource_type: self.resource_type
+                ,
+                special_feature: self.special_feature
+                ,
+                video_quality: self.video_quality
+                ,
+            }
+        )
     }
 }
+

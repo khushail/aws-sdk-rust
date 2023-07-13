@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDomainNameInput {
+pub struct UpdateDomainNameInput  {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct UpdateDomainNameInput {
 }
 impl UpdateDomainNameInput {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A description of the <code>DomainName</code>.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateDomainNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
-    pub fn builder() -> crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder {
         crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainNameInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl UpdateDomainNameInputBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>A description of the <code>DomainName</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl UpdateDomainNameInputBuilder {
     }
     /// <p>A description of the <code>DomainName</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the <code>DomainName</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_domain_name::UpdateDomainNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain_name::UpdateDomainNameInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_domain_name::UpdateDomainNameInput {
-                domain_name: self.domain_name,
-                description: self.description,
-            },
+                domain_name: self.domain_name
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

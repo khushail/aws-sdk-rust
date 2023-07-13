@@ -3,7 +3,7 @@
 /// <p>The sampling parameters that are associated with the machine learning transform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskRun {
+pub struct TaskRun  {
     /// <p>The unique identifier for the transform.</p>
     #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
@@ -37,39 +37,39 @@ pub struct TaskRun {
 }
 impl TaskRun {
     /// <p>The unique identifier for the transform.</p>
-    pub fn transform_id(&self) -> ::std::option::Option<&str> {
+    pub fn transform_id(&self) -> ::std::option::Option<& str> {
         self.transform_id.as_deref()
     }
     /// <p>The unique identifier for this task run.</p>
-    pub fn task_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_run_id(&self) -> ::std::option::Option<& str> {
         self.task_run_id.as_deref()
     }
     /// <p>The current status of the requested task run.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskStatusType> {
         self.status.as_ref()
     }
     /// <p>The names of the log group for secure logging, associated with this task run.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>Specifies configuration properties associated with this task run.</p>
-    pub fn properties(&self) -> ::std::option::Option<&crate::types::TaskRunProperties> {
+    pub fn properties(&self) -> ::std::option::Option<& crate::types::TaskRunProperties> {
         self.properties.as_ref()
     }
     /// <p>The list of error strings associated with this task run.</p>
-    pub fn error_string(&self) -> ::std::option::Option<&str> {
+    pub fn error_string(&self) -> ::std::option::Option<& str> {
         self.error_string.as_deref()
     }
     /// <p>The date and time that this task run started.</p>
-    pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>The last point in time that the requested task run was updated.</p>
-    pub fn last_modified_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>The last point in time that the requested task run was completed.</p>
-    pub fn completed_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
@@ -86,9 +86,7 @@ impl TaskRun {
 
 /// A builder for [`TaskRun`](crate::types::TaskRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskRunBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
@@ -109,8 +107,11 @@ impl TaskRunBuilder {
     }
     /// <p>The unique identifier for the transform.</p>
     pub fn set_transform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
+    }
+    /// <p>The unique identifier for the transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
     }
     /// <p>The unique identifier for this task run.</p>
     pub fn task_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,8 +120,11 @@ impl TaskRunBuilder {
     }
     /// <p>The unique identifier for this task run.</p>
     pub fn set_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_run_id = input;
-        self
+        self.task_run_id = input; self
+    }
+    /// <p>The unique identifier for this task run.</p>
+    pub fn get_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_run_id
     }
     /// <p>The current status of the requested task run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
@@ -128,28 +132,25 @@ impl TaskRunBuilder {
         self
     }
     /// <p>The current status of the requested task run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatusType>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatusType>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The current status of the requested task run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatusType> {
+        &self.status
     }
     /// <p>The names of the log group for secure logging, associated with this task run.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The names of the log group for secure logging, associated with this task run.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.log_group_name = input;
-        self
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.log_group_name = input; self
+    }
+    /// <p>The names of the log group for secure logging, associated with this task run.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
     }
     /// <p>Specifies configuration properties associated with this task run.</p>
     pub fn properties(mut self, input: crate::types::TaskRunProperties) -> Self {
@@ -157,12 +158,12 @@ impl TaskRunBuilder {
         self
     }
     /// <p>Specifies configuration properties associated with this task run.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskRunProperties>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::TaskRunProperties>) -> Self {
+        self.properties = input; self
+    }
+    /// <p>Specifies configuration properties associated with this task run.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<crate::types::TaskRunProperties> {
+        &self.properties
     }
     /// <p>The list of error strings associated with this task run.</p>
     pub fn error_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,8 +172,11 @@ impl TaskRunBuilder {
     }
     /// <p>The list of error strings associated with this task run.</p>
     pub fn set_error_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_string = input;
-        self
+        self.error_string = input; self
+    }
+    /// <p>The list of error strings associated with this task run.</p>
+    pub fn get_error_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_string
     }
     /// <p>The date and time that this task run started.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -180,12 +184,12 @@ impl TaskRunBuilder {
         self
     }
     /// <p>The date and time that this task run started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_on = input;
-        self
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.started_on = input; self
+    }
+    /// <p>The date and time that this task run started.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
     }
     /// <p>The last point in time that the requested task run was updated.</p>
     pub fn last_modified_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -193,12 +197,12 @@ impl TaskRunBuilder {
         self
     }
     /// <p>The last point in time that the requested task run was updated.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_on = input;
-        self
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_on = input; self
+    }
+    /// <p>The last point in time that the requested task run was updated.</p>
+    pub fn get_last_modified_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_on
     }
     /// <p>The last point in time that the requested task run was completed.</p>
     pub fn completed_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -206,12 +210,12 @@ impl TaskRunBuilder {
         self
     }
     /// <p>The last point in time that the requested task run was completed.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.completed_on = input;
-        self
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.completed_on = input; self
+    }
+    /// <p>The last point in time that the requested task run was completed.</p>
+    pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_on
     }
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
     pub fn execution_time(mut self, input: i32) -> Self {
@@ -220,22 +224,37 @@ impl TaskRunBuilder {
     }
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
     pub fn set_execution_time(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.execution_time = input;
-        self
+        self.execution_time = input; self
+    }
+    /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
+    pub fn get_execution_time(&self) -> &::std::option::Option<i32> {
+        &self.execution_time
     }
     /// Consumes the builder and constructs a [`TaskRun`](crate::types::TaskRun).
     pub fn build(self) -> crate::types::TaskRun {
         crate::types::TaskRun {
-            transform_id: self.transform_id,
-            task_run_id: self.task_run_id,
-            status: self.status,
-            log_group_name: self.log_group_name,
-            properties: self.properties,
-            error_string: self.error_string,
-            started_on: self.started_on,
-            last_modified_on: self.last_modified_on,
-            completed_on: self.completed_on,
-            execution_time: self.execution_time.unwrap_or_default(),
+            transform_id: self.transform_id
+            ,
+            task_run_id: self.task_run_id
+            ,
+            status: self.status
+            ,
+            log_group_name: self.log_group_name
+            ,
+            properties: self.properties
+            ,
+            error_string: self.error_string
+            ,
+            started_on: self.started_on
+            ,
+            last_modified_on: self.last_modified_on
+            ,
+            completed_on: self.completed_on
+            ,
+            execution_time: self.execution_time
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

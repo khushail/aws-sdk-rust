@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateExperienceInput {
+pub struct UpdateExperienceInput  {
     /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -24,43 +24,40 @@ pub struct UpdateExperienceInput {
 }
 impl UpdateExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A new name for your Amazon Kendra experience.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ExperienceConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ExperienceConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>A new description for your Amazon Kendra experience.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateExperienceInput {
     /// Creates a new builder-style object to manufacture [`UpdateExperienceInput`](crate::operation::update_experience::UpdateExperienceInput).
-    pub fn builder() -> crate::operation::update_experience::builders::UpdateExperienceInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_experience::builders::UpdateExperienceInputBuilder {
         crate::operation::update_experience::builders::UpdateExperienceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateExperienceInput`](crate::operation::update_experience::UpdateExperienceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExperienceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -77,8 +74,11 @@ impl UpdateExperienceInputBuilder {
     }
     /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A new name for your Amazon Kendra experience.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +87,11 @@ impl UpdateExperienceInputBuilder {
     }
     /// <p>A new name for your Amazon Kendra experience.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A new name for your Amazon Kendra experience.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,8 +100,11 @@ impl UpdateExperienceInputBuilder {
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
+    }
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,8 +113,11 @@ impl UpdateExperienceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
     pub fn configuration(mut self, input: crate::types::ExperienceConfiguration) -> Self {
@@ -116,12 +125,12 @@ impl UpdateExperienceInputBuilder {
         self
     }
     /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperienceConfiguration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ExperienceConfiguration>) -> Self {
+        self.configuration = input; self
+    }
+    /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
+        &self.configuration
     }
     /// <p>A new description for your Amazon Kendra experience.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,23 +139,30 @@ impl UpdateExperienceInputBuilder {
     }
     /// <p>A new description for your Amazon Kendra experience.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A new description for your Amazon Kendra experience.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateExperienceInput`](crate::operation::update_experience::UpdateExperienceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_experience::UpdateExperienceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_experience::UpdateExperienceInput {
-            id: self.id,
-            name: self.name,
-            index_id: self.index_id,
-            role_arn: self.role_arn,
-            configuration: self.configuration,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_experience::UpdateExperienceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_experience::UpdateExperienceInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                index_id: self.index_id
+                ,
+                role_arn: self.role_arn
+                ,
+                configuration: self.configuration
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

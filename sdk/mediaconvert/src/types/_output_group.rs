@@ -3,7 +3,7 @@
 /// Group of outputs
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputGroup {
+pub struct OutputGroup  {
     /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
     #[doc(hidden)]
     pub automated_encoding_settings: ::std::option::Option<crate::types::AutomatedEncodingSettings>,
@@ -22,27 +22,23 @@ pub struct OutputGroup {
 }
 impl OutputGroup {
     /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
-    pub fn automated_encoding_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutomatedEncodingSettings> {
+    pub fn automated_encoding_settings(&self) -> ::std::option::Option<& crate::types::AutomatedEncodingSettings> {
         self.automated_encoding_settings.as_ref()
     }
     /// Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
-    pub fn custom_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_name(&self) -> ::std::option::Option<& str> {
         self.custom_name.as_deref()
     }
     /// Name of the output group
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Output Group settings, including type
-    pub fn output_group_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutputGroupSettings> {
+    pub fn output_group_settings(&self) -> ::std::option::Option<& crate::types::OutputGroupSettings> {
         self.output_group_settings.as_ref()
     }
     /// This object holds groups of encoding settings, one group of settings per output.
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
+    pub fn outputs(&self) -> ::std::option::Option<& [crate::types::Output]> {
         self.outputs.as_deref()
     }
 }
@@ -55,12 +51,9 @@ impl OutputGroup {
 
 /// A builder for [`OutputGroup`](crate::types::OutputGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputGroupBuilder {
-    pub(crate) automated_encoding_settings:
-        ::std::option::Option<crate::types::AutomatedEncodingSettings>,
+    pub(crate) automated_encoding_settings: ::std::option::Option<crate::types::AutomatedEncodingSettings>,
     pub(crate) custom_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) output_group_settings: ::std::option::Option<crate::types::OutputGroupSettings>,
@@ -68,20 +61,17 @@ pub struct OutputGroupBuilder {
 }
 impl OutputGroupBuilder {
     /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
-    pub fn automated_encoding_settings(
-        mut self,
-        input: crate::types::AutomatedEncodingSettings,
-    ) -> Self {
+    pub fn automated_encoding_settings(mut self, input: crate::types::AutomatedEncodingSettings) -> Self {
         self.automated_encoding_settings = ::std::option::Option::Some(input);
         self
     }
     /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
-    pub fn set_automated_encoding_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomatedEncodingSettings>,
-    ) -> Self {
-        self.automated_encoding_settings = input;
-        self
+    pub fn set_automated_encoding_settings(mut self, input: ::std::option::Option<crate::types::AutomatedEncodingSettings>) -> Self {
+        self.automated_encoding_settings = input; self
+    }
+    /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
+    pub fn get_automated_encoding_settings(&self) -> &::std::option::Option<crate::types::AutomatedEncodingSettings> {
+        &self.automated_encoding_settings
     }
     /// Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
     pub fn custom_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,8 +80,11 @@ impl OutputGroupBuilder {
     }
     /// Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
     pub fn set_custom_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_name = input;
-        self
+        self.custom_name = input; self
+    }
+    /// Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
+    pub fn get_custom_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_name
     }
     /// Name of the output group
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,8 +93,11 @@ impl OutputGroupBuilder {
     }
     /// Name of the output group
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// Name of the output group
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Output Group settings, including type
     pub fn output_group_settings(mut self, input: crate::types::OutputGroupSettings) -> Self {
@@ -109,12 +105,12 @@ impl OutputGroupBuilder {
         self
     }
     /// Output Group settings, including type
-    pub fn set_output_group_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputGroupSettings>,
-    ) -> Self {
-        self.output_group_settings = input;
-        self
+    pub fn set_output_group_settings(mut self, input: ::std::option::Option<crate::types::OutputGroupSettings>) -> Self {
+        self.output_group_settings = input; self
+    }
+    /// Output Group settings, including type
+    pub fn get_output_group_settings(&self) -> &::std::option::Option<crate::types::OutputGroupSettings> {
+        &self.output_group_settings
     }
     /// Appends an item to `outputs`.
     ///
@@ -123,26 +119,32 @@ impl OutputGroupBuilder {
     /// This object holds groups of encoding settings, one group of settings per output.
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// This object holds groups of encoding settings, one group of settings per output.
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
+        self.outputs = input; self
+    }
+    /// This object holds groups of encoding settings, one group of settings per output.
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+        &self.outputs
     }
     /// Consumes the builder and constructs a [`OutputGroup`](crate::types::OutputGroup).
     pub fn build(self) -> crate::types::OutputGroup {
         crate::types::OutputGroup {
-            automated_encoding_settings: self.automated_encoding_settings,
-            custom_name: self.custom_name,
-            name: self.name,
-            output_group_settings: self.output_group_settings,
-            outputs: self.outputs,
+            automated_encoding_settings: self.automated_encoding_settings
+            ,
+            custom_name: self.custom_name
+            ,
+            name: self.name
+            ,
+            output_group_settings: self.output_group_settings
+            ,
+            outputs: self.outputs
+            ,
         }
     }
 }
+

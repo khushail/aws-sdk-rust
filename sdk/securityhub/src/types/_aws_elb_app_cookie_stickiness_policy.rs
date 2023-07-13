@@ -3,7 +3,7 @@
 /// <p>Contains information about a stickiness policy that was created using <code>CreateAppCookieStickinessPolicy</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElbAppCookieStickinessPolicy {
+pub struct AwsElbAppCookieStickinessPolicy  {
     /// <p>The name of the application cookie used for stickiness.</p>
     #[doc(hidden)]
     pub cookie_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsElbAppCookieStickinessPolicy {
 }
 impl AwsElbAppCookieStickinessPolicy {
     /// <p>The name of the application cookie used for stickiness.</p>
-    pub fn cookie_name(&self) -> ::std::option::Option<&str> {
+    pub fn cookie_name(&self) -> ::std::option::Option<& str> {
         self.cookie_name.as_deref()
     }
     /// <p>The mnemonic name for the policy being created. The name must be unique within the set of policies for the load balancer.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AwsElbAppCookieStickinessPolicy {
 
 /// A builder for [`AwsElbAppCookieStickinessPolicy`](crate::types::AwsElbAppCookieStickinessPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbAppCookieStickinessPolicyBuilder {
     pub(crate) cookie_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AwsElbAppCookieStickinessPolicyBuilder {
     }
     /// <p>The name of the application cookie used for stickiness.</p>
     pub fn set_cookie_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cookie_name = input;
-        self
+        self.cookie_name = input; self
+    }
+    /// <p>The name of the application cookie used for stickiness.</p>
+    pub fn get_cookie_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cookie_name
     }
     /// <p>The mnemonic name for the policy being created. The name must be unique within the set of policies for the load balancer.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl AwsElbAppCookieStickinessPolicyBuilder {
     }
     /// <p>The mnemonic name for the policy being created. The name must be unique within the set of policies for the load balancer.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
+    }
+    /// <p>The mnemonic name for the policy being created. The name must be unique within the set of policies for the load balancer.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// Consumes the builder and constructs a [`AwsElbAppCookieStickinessPolicy`](crate::types::AwsElbAppCookieStickinessPolicy).
     pub fn build(self) -> crate::types::AwsElbAppCookieStickinessPolicy {
         crate::types::AwsElbAppCookieStickinessPolicy {
-            cookie_name: self.cookie_name,
-            policy_name: self.policy_name,
+            cookie_name: self.cookie_name
+            ,
+            policy_name: self.policy_name
+            ,
         }
     }
 }
+

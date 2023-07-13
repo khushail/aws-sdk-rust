@@ -3,7 +3,7 @@
 /// <p>Contains I/O usage metrics for a command that was invoked.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IoUsage {
+pub struct IoUsage  {
     /// <p>The number of read I/O requests that the command made.</p>
     #[doc(hidden)]
     pub read_i_os: i64,
@@ -30,9 +30,7 @@ impl IoUsage {
 
 /// A builder for [`IoUsage`](crate::types::IoUsage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IoUsageBuilder {
     pub(crate) read_i_os: ::std::option::Option<i64>,
     pub(crate) write_i_os: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl IoUsageBuilder {
     }
     /// <p>The number of read I/O requests that the command made.</p>
     pub fn set_read_i_os(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.read_i_os = input;
-        self
+        self.read_i_os = input; self
+    }
+    /// <p>The number of read I/O requests that the command made.</p>
+    pub fn get_read_i_os(&self) -> &::std::option::Option<i64> {
+        &self.read_i_os
     }
     /// <p>The number of write I/O requests that the command made.</p>
     pub fn write_i_os(mut self, input: i64) -> Self {
@@ -55,14 +56,22 @@ impl IoUsageBuilder {
     }
     /// <p>The number of write I/O requests that the command made.</p>
     pub fn set_write_i_os(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.write_i_os = input;
-        self
+        self.write_i_os = input; self
+    }
+    /// <p>The number of write I/O requests that the command made.</p>
+    pub fn get_write_i_os(&self) -> &::std::option::Option<i64> {
+        &self.write_i_os
     }
     /// Consumes the builder and constructs a [`IoUsage`](crate::types::IoUsage).
     pub fn build(self) -> crate::types::IoUsage {
         crate::types::IoUsage {
-            read_i_os: self.read_i_os.unwrap_or_default(),
-            write_i_os: self.write_i_os.unwrap_or_default(),
+            read_i_os: self.read_i_os
+                .unwrap_or_default()
+            ,
+            write_i_os: self.write_i_os
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

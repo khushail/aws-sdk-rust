@@ -3,7 +3,7 @@
 /// Scte20 Source Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Scte20SourceSettings {
+pub struct Scte20SourceSettings  {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
     #[doc(hidden)]
     pub convert608_to708: ::std::option::Option<crate::types::Scte20Convert608To708>,
@@ -13,7 +13,7 @@ pub struct Scte20SourceSettings {
 }
 impl Scte20SourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    pub fn convert608_to708(&self) -> ::std::option::Option<&crate::types::Scte20Convert608To708> {
+    pub fn convert608_to708(&self) -> ::std::option::Option<& crate::types::Scte20Convert608To708> {
         self.convert608_to708.as_ref()
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
@@ -30,9 +30,7 @@ impl Scte20SourceSettings {
 
 /// A builder for [`Scte20SourceSettings`](crate::types::Scte20SourceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Scte20SourceSettingsBuilder {
     pub(crate) convert608_to708: ::std::option::Option<crate::types::Scte20Convert608To708>,
     pub(crate) source608_channel_number: ::std::option::Option<i32>,
@@ -44,12 +42,12 @@ impl Scte20SourceSettingsBuilder {
         self
     }
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    pub fn set_convert608_to708(
-        mut self,
-        input: ::std::option::Option<crate::types::Scte20Convert608To708>,
-    ) -> Self {
-        self.convert608_to708 = input;
-        self
+    pub fn set_convert608_to708(mut self, input: ::std::option::Option<crate::types::Scte20Convert608To708>) -> Self {
+        self.convert608_to708 = input; self
+    }
+    /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+    pub fn get_convert608_to708(&self) -> &::std::option::Option<crate::types::Scte20Convert608To708> {
+        &self.convert608_to708
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn source608_channel_number(mut self, input: i32) -> Self {
@@ -58,14 +56,20 @@ impl Scte20SourceSettingsBuilder {
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn set_source608_channel_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.source608_channel_number = input;
-        self
+        self.source608_channel_number = input; self
+    }
+    /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
+    pub fn get_source608_channel_number(&self) -> &::std::option::Option<i32> {
+        &self.source608_channel_number
     }
     /// Consumes the builder and constructs a [`Scte20SourceSettings`](crate::types::Scte20SourceSettings).
     pub fn build(self) -> crate::types::Scte20SourceSettings {
         crate::types::Scte20SourceSettings {
-            convert608_to708: self.convert608_to708,
-            source608_channel_number: self.source608_channel_number,
+            convert608_to708: self.convert608_to708
+            ,
+            source608_channel_number: self.source608_channel_number
+            ,
         }
     }
 }
+

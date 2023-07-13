@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAgreementInput {
+pub struct UpdateAgreementInput  {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     #[doc(hidden)]
     pub agreement_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct UpdateAgreementInput {
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AgreementStatusType>,
-    /// <p>A unique identifier for the AS2 local profile.</p>
+    /// <p>A unique identifier for the AS2 local profile.</p> 
     /// <p>To change the local profile identifier, provide a new value here.</p>
     #[doc(hidden)]
     pub local_profile_id: ::std::option::Option<::std::string::String>,
@@ -31,36 +31,36 @@ pub struct UpdateAgreementInput {
 }
 impl UpdateAgreementInput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    pub fn agreement_id(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_id(&self) -> ::std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>To replace the existing description, provide a short description for the agreement. </p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AgreementStatusType> {
         self.status.as_ref()
     }
-    /// <p>A unique identifier for the AS2 local profile.</p>
+    /// <p>A unique identifier for the AS2 local profile.</p> 
     /// <p>To change the local profile identifier, provide a new value here.</p>
-    pub fn local_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_profile_id(&self) -> ::std::option::Option<& str> {
         self.local_profile_id.as_deref()
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
-    pub fn partner_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn partner_profile_id(&self) -> ::std::option::Option<& str> {
         self.partner_profile_id.as_deref()
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
-    pub fn base_directory(&self) -> ::std::option::Option<&str> {
+    pub fn base_directory(&self) -> ::std::option::Option<& str> {
         self.base_directory.as_deref()
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
-    pub fn access_role(&self) -> ::std::option::Option<&str> {
+    pub fn access_role(&self) -> ::std::option::Option<& str> {
         self.access_role.as_deref()
     }
 }
@@ -73,9 +73,7 @@ impl UpdateAgreementInput {
 
 /// A builder for [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAgreementInputBuilder {
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
@@ -94,8 +92,11 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
+    }
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agreement_id
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,8 +105,11 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
+    }
+    /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
     }
     /// <p>To replace the existing description, provide a short description for the agreement. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,8 +118,11 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>To replace the existing description, provide a short description for the agreement. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>To replace the existing description, provide a short description for the agreement. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
     pub fn status(mut self, input: crate::types::AgreementStatusType) -> Self {
@@ -123,62 +130,54 @@ impl UpdateAgreementInputBuilder {
         self
     }
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AgreementStatusType>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatusType>) -> Self {
+        self.status = input; self
     }
-    /// <p>A unique identifier for the AS2 local profile.</p>
+    /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatusType> {
+        &self.status
+    }
+    /// <p>A unique identifier for the AS2 local profile.</p> 
     /// <p>To change the local profile identifier, provide a new value here.</p>
-    pub fn local_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the AS2 local profile.</p>
+    /// <p>A unique identifier for the AS2 local profile.</p> 
     /// <p>To change the local profile identifier, provide a new value here.</p>
-    pub fn set_local_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.local_profile_id = input;
-        self
+    pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.local_profile_id = input; self
+    }
+    /// <p>A unique identifier for the AS2 local profile.</p> 
+    /// <p>To change the local profile identifier, provide a new value here.</p>
+    pub fn get_local_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_profile_id
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
-    pub fn partner_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
-    pub fn set_partner_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.partner_profile_id = input;
-        self
+    pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.partner_profile_id = input; self
+    }
+    /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
+    pub fn get_partner_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_profile_id
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
-    pub fn base_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
-    pub fn set_base_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.base_directory = input;
-        self
+    pub fn set_base_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.base_directory = input; self
+    }
+    /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+    pub fn get_base_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_directory
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     pub fn access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,25 +186,34 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_role = input;
-        self
+        self.access_role = input; self
+    }
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    pub fn get_access_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_role
     }
     /// Consumes the builder and constructs a [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_agreement::UpdateAgreementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_agreement::UpdateAgreementInput {
-            agreement_id: self.agreement_id,
-            server_id: self.server_id,
-            description: self.description,
-            status: self.status,
-            local_profile_id: self.local_profile_id,
-            partner_profile_id: self.partner_profile_id,
-            base_directory: self.base_directory,
-            access_role: self.access_role,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_agreement::UpdateAgreementInput {
+                agreement_id: self.agreement_id
+                ,
+                server_id: self.server_id
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                local_profile_id: self.local_profile_id
+                ,
+                partner_profile_id: self.partner_profile_id
+                ,
+                base_directory: self.base_directory
+                ,
+                access_role: self.access_role
+                ,
+            }
+        )
     }
 }
+

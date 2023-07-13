@@ -3,14 +3,14 @@
 /// <p>Provides information about a pending maintenance action for a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PendingMaintenanceAction {
+pub struct PendingMaintenanceAction  {
     /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
     #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
     #[doc(hidden)]
     pub auto_applied_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date when the maintenance action is automatically applied.</p>
+    /// <p>The date when the maintenance action is automatically applied.</p> 
     /// <p>On this date, the maintenance action is applied to the resource as soon as possible, regardless of the maintenance window for the resource. There might be a delay of one or more days from this date before the maintenance action is applied.</p>
     #[doc(hidden)]
     pub forced_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -26,28 +26,28 @@ pub struct PendingMaintenanceAction {
 }
 impl PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
-    pub fn auto_applied_after_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn auto_applied_after_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.auto_applied_after_date.as_ref()
     }
-    /// <p>The date when the maintenance action is automatically applied.</p>
+    /// <p>The date when the maintenance action is automatically applied.</p> 
     /// <p>On this date, the maintenance action is applied to the resource as soon as possible, regardless of the maintenance window for the resource. There might be a delay of one or more days from this date before the maintenance action is applied.</p>
-    pub fn forced_apply_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn forced_apply_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.forced_apply_date.as_ref()
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    pub fn opt_in_status(&self) -> ::std::option::Option<&str> {
+    pub fn opt_in_status(&self) -> ::std::option::Option<& str> {
         self.opt_in_status.as_deref()
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource. This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-    pub fn current_apply_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn current_apply_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.current_apply_date.as_ref()
     }
     /// <p>A description providing more detail about the maintenance action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -60,9 +60,7 @@ impl PendingMaintenanceAction {
 
 /// A builder for [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingMaintenanceActionBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) auto_applied_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -79,8 +77,11 @@ impl PendingMaintenanceActionBuilder {
     }
     /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
+    }
+    /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
     pub fn auto_applied_after_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -88,43 +89,41 @@ impl PendingMaintenanceActionBuilder {
         self
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
-    pub fn set_auto_applied_after_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.auto_applied_after_date = input;
-        self
+    pub fn set_auto_applied_after_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.auto_applied_after_date = input; self
     }
-    /// <p>The date when the maintenance action is automatically applied.</p>
+    /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
+    pub fn get_auto_applied_after_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.auto_applied_after_date
+    }
+    /// <p>The date when the maintenance action is automatically applied.</p> 
     /// <p>On this date, the maintenance action is applied to the resource as soon as possible, regardless of the maintenance window for the resource. There might be a delay of one or more days from this date before the maintenance action is applied.</p>
     pub fn forced_apply_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.forced_apply_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date when the maintenance action is automatically applied.</p>
+    /// <p>The date when the maintenance action is automatically applied.</p> 
     /// <p>On this date, the maintenance action is applied to the resource as soon as possible, regardless of the maintenance window for the resource. There might be a delay of one or more days from this date before the maintenance action is applied.</p>
-    pub fn set_forced_apply_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.forced_apply_date = input;
-        self
+    pub fn set_forced_apply_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.forced_apply_date = input; self
+    }
+    /// <p>The date when the maintenance action is automatically applied.</p> 
+    /// <p>On this date, the maintenance action is applied to the resource as soon as possible, regardless of the maintenance window for the resource. There might be a delay of one or more days from this date before the maintenance action is applied.</p>
+    pub fn get_forced_apply_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.forced_apply_date
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    pub fn opt_in_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_in_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_in_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    pub fn set_opt_in_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.opt_in_status = input;
-        self
+    pub fn set_opt_in_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.opt_in_status = input; self
+    }
+    /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
+    pub fn get_opt_in_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_in_status
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource. This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
     pub fn current_apply_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,12 +131,12 @@ impl PendingMaintenanceActionBuilder {
         self
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource. This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-    pub fn set_current_apply_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.current_apply_date = input;
-        self
+    pub fn set_current_apply_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.current_apply_date = input; self
+    }
+    /// <p>The effective date when the pending maintenance action is applied to the resource. This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
+    pub fn get_current_apply_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.current_apply_date
     }
     /// <p>A description providing more detail about the maintenance action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,18 +145,28 @@ impl PendingMaintenanceActionBuilder {
     }
     /// <p>A description providing more detail about the maintenance action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description providing more detail about the maintenance action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
     pub fn build(self) -> crate::types::PendingMaintenanceAction {
         crate::types::PendingMaintenanceAction {
-            action: self.action,
-            auto_applied_after_date: self.auto_applied_after_date,
-            forced_apply_date: self.forced_apply_date,
-            opt_in_status: self.opt_in_status,
-            current_apply_date: self.current_apply_date,
-            description: self.description,
+            action: self.action
+            ,
+            auto_applied_after_date: self.auto_applied_after_date
+            ,
+            forced_apply_date: self.forced_apply_date
+            ,
+            opt_in_status: self.opt_in_status
+            ,
+            current_apply_date: self.current_apply_date
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

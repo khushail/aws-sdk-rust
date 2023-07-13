@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGrantPermissionsInput {
+pub struct BatchGrantPermissionsInput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
@@ -12,32 +12,27 @@ pub struct BatchGrantPermissionsInput {
 }
 impl BatchGrantPermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::BatchPermissionsRequestEntry]> {
+    pub fn entries(&self) -> ::std::option::Option<& [crate::types::BatchPermissionsRequestEntry]> {
         self.entries.as_deref()
     }
 }
 impl BatchGrantPermissionsInput {
     /// Creates a new builder-style object to manufacture [`BatchGrantPermissionsInput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder {
         crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGrantPermissionsInput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGrantPermissionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
 }
 impl BatchGrantPermissionsInputBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -47,8 +42,11 @@ impl BatchGrantPermissionsInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
+    }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// Appends an item to `entries`.
     ///
@@ -57,30 +55,28 @@ impl BatchGrantPermissionsInputBuilder {
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
     pub fn entries(mut self, input: crate::types::BatchPermissionsRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>) -> Self {
+        self.entries = input; self
+    }
+    /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>> {
+        &self.entries
     }
     /// Consumes the builder and constructs a [`BatchGrantPermissionsInput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_grant_permissions::BatchGrantPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_grant_permissions::BatchGrantPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_grant_permissions::BatchGrantPermissionsInput {
-                catalog_id: self.catalog_id,
-                entries: self.entries,
-            },
+                catalog_id: self.catalog_id
+                ,
+                entries: self.entries
+                ,
+            }
         )
     }
 }
+

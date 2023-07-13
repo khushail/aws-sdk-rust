@@ -3,117 +3,100 @@ pub use crate::operation::update_resolver_endpoint::_update_resolver_endpoint_ou
 
 pub use crate::operation::update_resolver_endpoint::_update_resolver_endpoint_input::UpdateResolverEndpointInputBuilder;
 
+impl UpdateResolverEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_resolver_endpoint();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateResolverEndpoint`.
-///
+/// 
 /// <p>Updates the name, or enpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResolverEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder,
+                    inner: crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder,
 }
-impl UpdateResolverEndpointFluentBuilder {
+impl UpdateResolverEndpointFluentBuilder  {
     /// Creates a new `UpdateResolverEndpoint`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpoint,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateResolverEndpoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_resolver_endpoint::UpdateResolverEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpoint,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_resolver_endpoint::UpdateResolverEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_id(input);
         self
+    }
+    /// <p>The ID of the Resolver endpoint that you want to update.</p>
+    pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolver_endpoint_id()
     }
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,18 +108,23 @@ impl UpdateResolverEndpointFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Resolver endpoint that you want to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.inner = self.inner.resolver_endpoint_type(input);
         self
     }
     /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
-    pub fn set_resolver_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpointType>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_type(input);
         self
+    }
+    /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+    pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
+        self.inner.get_resolver_endpoint_type()
     }
     /// Appends an item to `UpdateIpAddresses`.
     ///
@@ -148,11 +136,13 @@ impl UpdateResolverEndpointFluentBuilder {
         self
     }
     /// <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
-    pub fn set_update_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
-    ) -> Self {
+    pub fn set_update_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>) -> Self {
         self.inner = self.inner.set_update_ip_addresses(input);
         self
     }
+    /// <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+    pub fn get_update_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
+        self.inner.get_update_ip_addresses()
+    }
 }
+

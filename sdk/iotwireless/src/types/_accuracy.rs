@@ -3,7 +3,7 @@
 /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Accuracy {
+pub struct Accuracy  {
     /// <p>The horizontal accuracy of the estimated position, which is the difference between the estimated location and the actual device location.</p>
     #[doc(hidden)]
     pub horizontal_accuracy: ::std::option::Option<f32>,
@@ -30,9 +30,7 @@ impl Accuracy {
 
 /// A builder for [`Accuracy`](crate::types::Accuracy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccuracyBuilder {
     pub(crate) horizontal_accuracy: ::std::option::Option<f32>,
     pub(crate) vertical_accuracy: ::std::option::Option<f32>,
@@ -45,8 +43,11 @@ impl AccuracyBuilder {
     }
     /// <p>The horizontal accuracy of the estimated position, which is the difference between the estimated location and the actual device location.</p>
     pub fn set_horizontal_accuracy(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.horizontal_accuracy = input;
-        self
+        self.horizontal_accuracy = input; self
+    }
+    /// <p>The horizontal accuracy of the estimated position, which is the difference between the estimated location and the actual device location.</p>
+    pub fn get_horizontal_accuracy(&self) -> &::std::option::Option<f32> {
+        &self.horizontal_accuracy
     }
     /// <p>The vertical accuracy of the estimated position, which is the difference between the estimated altitude and actual device latitude in meters.</p>
     pub fn vertical_accuracy(mut self, input: f32) -> Self {
@@ -55,14 +56,20 @@ impl AccuracyBuilder {
     }
     /// <p>The vertical accuracy of the estimated position, which is the difference between the estimated altitude and actual device latitude in meters.</p>
     pub fn set_vertical_accuracy(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.vertical_accuracy = input;
-        self
+        self.vertical_accuracy = input; self
+    }
+    /// <p>The vertical accuracy of the estimated position, which is the difference between the estimated altitude and actual device latitude in meters.</p>
+    pub fn get_vertical_accuracy(&self) -> &::std::option::Option<f32> {
+        &self.vertical_accuracy
     }
     /// Consumes the builder and constructs a [`Accuracy`](crate::types::Accuracy).
     pub fn build(self) -> crate::types::Accuracy {
         crate::types::Accuracy {
-            horizontal_accuracy: self.horizontal_accuracy,
-            vertical_accuracy: self.vertical_accuracy,
+            horizontal_accuracy: self.horizontal_accuracy
+            ,
+            vertical_accuracy: self.vertical_accuracy
+            ,
         }
     }
 }
+

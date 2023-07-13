@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePromptInput {
+pub struct DescribePromptInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribePromptInput {
 }
 impl DescribePromptInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>A unique identifier for the prompt.</p>
-    pub fn prompt_id(&self) -> ::std::option::Option<&str> {
+    pub fn prompt_id(&self) -> ::std::option::Option<& str> {
         self.prompt_id.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DescribePromptInput {
 
 /// A builder for [`DescribePromptInput`](crate::operation::describe_prompt::DescribePromptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePromptInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_id: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DescribePromptInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>A unique identifier for the prompt.</p>
     pub fn prompt_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl DescribePromptInputBuilder {
     }
     /// <p>A unique identifier for the prompt.</p>
     pub fn set_prompt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prompt_id = input;
-        self
+        self.prompt_id = input; self
+    }
+    /// <p>A unique identifier for the prompt.</p>
+    pub fn get_prompt_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prompt_id
     }
     /// Consumes the builder and constructs a [`DescribePromptInput`](crate::operation::describe_prompt::DescribePromptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_prompt::DescribePromptInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_prompt::DescribePromptInput {
-            instance_id: self.instance_id,
-            prompt_id: self.prompt_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_prompt::DescribePromptInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_prompt::DescribePromptInput {
+                instance_id: self.instance_id
+                ,
+                prompt_id: self.prompt_id
+                ,
+            }
+        )
     }
 }
+

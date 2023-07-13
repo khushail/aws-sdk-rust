@@ -3,7 +3,7 @@
 /// <p>A package object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageObject {
+pub struct PackageObject  {
     /// <p>The object's name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct PackageObject {
 }
 impl PackageObject {
     /// <p>The object's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The object's package version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The object's patch version.</p>
-    pub fn patch_version(&self) -> ::std::option::Option<&str> {
+    pub fn patch_version(&self) -> ::std::option::Option<& str> {
         self.patch_version.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl PackageObject {
 
 /// A builder for [`PackageObject`](crate::types::PackageObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageObjectBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) package_version: ::std::option::Option<::std::string::String>,
@@ -53,47 +51,48 @@ impl PackageObjectBuilder {
     }
     /// <p>The object's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The object's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The object's package version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object's package version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.package_version = input;
-        self
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.package_version = input; self
+    }
+    /// <p>The object's package version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
     }
     /// <p>The object's patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object's patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.patch_version = input;
-        self
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.patch_version = input; self
+    }
+    /// <p>The object's patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
     }
     /// Consumes the builder and constructs a [`PackageObject`](crate::types::PackageObject).
     pub fn build(self) -> crate::types::PackageObject {
         crate::types::PackageObject {
-            name: self.name,
-            package_version: self.package_version,
-            patch_version: self.patch_version,
+            name: self.name
+            ,
+            package_version: self.package_version
+            ,
+            patch_version: self.patch_version
+            ,
         }
     }
 }
+

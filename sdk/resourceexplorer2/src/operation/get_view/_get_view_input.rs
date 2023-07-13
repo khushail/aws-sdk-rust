@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetViewInput {
+pub struct GetViewInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want information about.</p>
     #[doc(hidden)]
     pub view_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want information about.</p>
-    pub fn view_arn(&self) -> ::std::option::Option<&str> {
+    pub fn view_arn(&self) -> ::std::option::Option<& str> {
         self.view_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetViewInput {
 
 /// A builder for [`GetViewInput`](crate::operation::get_view::GetViewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetViewInputBuilder {
     pub(crate) view_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetViewInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want information about.</p>
     pub fn set_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.view_arn = input;
-        self
+        self.view_arn = input; self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want information about.</p>
+    pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_arn
     }
     /// Consumes the builder and constructs a [`GetViewInput`](crate::operation::get_view::GetViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_view::GetViewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_view::GetViewInput {
-            view_arn: self.view_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_view::GetViewInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_view::GetViewInput {
+                view_arn: self.view_arn
+                ,
+            }
+        )
     }
 }
+

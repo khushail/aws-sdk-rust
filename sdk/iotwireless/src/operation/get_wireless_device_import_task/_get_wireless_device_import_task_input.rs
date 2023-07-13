@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessDeviceImportTaskInput {
+pub struct GetWirelessDeviceImportTaskInput  {
     /// <p>The identifier of the import task for which information is requested.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetWirelessDeviceImportTaskInput {
     /// <p>The identifier of the import task for which information is requested.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetWirelessDeviceImportTaskInput {
     /// Creates a new builder-style object to manufacture [`GetWirelessDeviceImportTaskInput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput).
-    pub fn builder() -> crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskInputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskInputBuilder {
         crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessDeviceImportTaskInput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessDeviceImportTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl GetWirelessDeviceImportTaskInputBuilder {
     }
     /// <p>The identifier of the import task for which information is requested.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the import task for which information is requested.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetWirelessDeviceImportTaskInput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

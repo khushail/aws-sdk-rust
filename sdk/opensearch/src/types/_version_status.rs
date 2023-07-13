@@ -3,7 +3,7 @@
 /// <p>The status of the the OpenSearch or Elasticsearch version options for the specified Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersionStatus {
+pub struct VersionStatus  {
     /// <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
     #[doc(hidden)]
     pub options: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct VersionStatus {
 }
 impl VersionStatus {
     /// <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
-    pub fn options(&self) -> ::std::option::Option<&str> {
+    pub fn options(&self) -> ::std::option::Option<& str> {
         self.options.as_deref()
     }
     /// <p>The status of the version options for the specified domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl VersionStatus {
 
 /// A builder for [`VersionStatus`](crate::types::VersionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VersionStatusBuilder {
     pub(crate) options: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -45,8 +43,11 @@ impl VersionStatusBuilder {
     }
     /// <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
     pub fn set_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
+    }
+    /// <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<::std::string::String> {
+        &self.options
     }
     /// <p>The status of the version options for the specified domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -55,14 +56,20 @@ impl VersionStatusBuilder {
     }
     /// <p>The status of the version options for the specified domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the version options for the specified domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VersionStatus`](crate::types::VersionStatus).
     pub fn build(self) -> crate::types::VersionStatus {
         crate::types::VersionStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

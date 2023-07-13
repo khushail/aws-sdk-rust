@@ -3,109 +3,100 @@ pub use crate::operation::put_object::_put_object_output::PutObjectOutputBuilder
 
 pub use crate::operation::put_object::_put_object_input::PutObjectInputBuilder;
 
+impl PutObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_object::PutObjectOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_object::PutObjectError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_object();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutObject`.
-///
+/// 
 /// Upload object that can store object metadata String and data blob in single API call using inline chunk field.
 #[derive(::std::fmt::Debug)]
 pub struct PutObjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_object::builders::PutObjectInputBuilder,
+                    inner: crate::operation::put_object::builders::PutObjectInputBuilder,
 }
-impl PutObjectFluentBuilder {
+impl PutObjectFluentBuilder  {
     /// Creates a new `PutObject`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_object::PutObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_object::PutObjectError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutObject as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_object::builders::PutObjectInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_object::PutObjectOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_object::PutObjectError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_object::PutObject, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_object::PutObjectError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_object::PutObjectOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_object::PutObjectError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_object::PutObjectOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_object::PutObjectError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_object::PutObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_object::PutObjectError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_object::PutObjectOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_object::PutObjectError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_object::PutObject, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_object::PutObjectError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_job_id(input.into());
         self
     }
     /// Backup job Id for the in-progress backup.
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_job_id(input);
         self
+    }
+    /// Backup job Id for the in-progress backup.
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_job_id()
     }
     /// The name of the Object to be uploaded.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,21 +108,23 @@ impl PutObjectFluentBuilder {
         self.inner = self.inner.set_object_name(input);
         self
     }
+    /// The name of the Object to be uploaded.
+    pub fn get_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_name()
+    }
     /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
-    pub fn metadata_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata_string(input.into());
         self
     }
     /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
-    pub fn set_metadata_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata_string(input);
         self
+    }
+    /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
+    pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata_string()
     }
     /// Inline chunk data to be uploaded.
     pub fn inline_chunk(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -139,12 +132,13 @@ impl PutObjectFluentBuilder {
         self
     }
     /// Inline chunk data to be uploaded.
-    pub fn set_inline_chunk(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_inline_chunk(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_inline_chunk(input);
         self
+    }
+    /// Inline chunk data to be uploaded.
+    pub fn get_inline_chunk(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_inline_chunk()
     }
     /// Length of the inline chunk data.
     pub fn inline_chunk_length(mut self, input: i64) -> Self {
@@ -156,69 +150,65 @@ impl PutObjectFluentBuilder {
         self.inner = self.inner.set_inline_chunk_length(input);
         self
     }
+    /// Length of the inline chunk data.
+    pub fn get_inline_chunk_length(&self) -> &::std::option::Option<i64> {
+        self.inner.get_inline_chunk_length()
+    }
     /// Inline chunk checksum
-    pub fn inline_chunk_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inline_chunk_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inline_chunk_checksum(input.into());
         self
     }
     /// Inline chunk checksum
-    pub fn set_inline_chunk_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inline_chunk_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inline_chunk_checksum(input);
         self
     }
+    /// Inline chunk checksum
+    pub fn get_inline_chunk_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_inline_chunk_checksum()
+    }
     /// Inline chunk checksum algorithm
-    pub fn inline_chunk_checksum_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inline_chunk_checksum_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inline_chunk_checksum_algorithm(input.into());
         self
     }
     /// Inline chunk checksum algorithm
-    pub fn set_inline_chunk_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inline_chunk_checksum_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inline_chunk_checksum_algorithm(input);
         self
     }
+    /// Inline chunk checksum algorithm
+    pub fn get_inline_chunk_checksum_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_inline_chunk_checksum_algorithm()
+    }
     /// object checksum
-    pub fn object_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_checksum(input.into());
         self
     }
     /// object checksum
-    pub fn set_object_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_checksum(input);
         self
     }
+    /// object checksum
+    pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_checksum()
+    }
     /// object checksum algorithm
-    pub fn object_checksum_algorithm(
-        mut self,
-        input: crate::types::SummaryChecksumAlgorithm,
-    ) -> Self {
+    pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
         self.inner = self.inner.object_checksum_algorithm(input);
         self
     }
     /// object checksum algorithm
-    pub fn set_object_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_object_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_object_checksum_algorithm(input);
         self
+    }
+    /// object checksum algorithm
+    pub fn get_object_checksum_algorithm(&self) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+        self.inner.get_object_checksum_algorithm()
     }
     /// Throw an exception if Object name is already exist.
     pub fn throw_on_duplicate(mut self, input: bool) -> Self {
@@ -230,4 +220,9 @@ impl PutObjectFluentBuilder {
         self.inner = self.inner.set_throw_on_duplicate(input);
         self
     }
+    /// Throw an exception if Object name is already exist.
+    pub fn get_throw_on_duplicate(&self) -> &::std::option::Option<bool> {
+        self.inner.get_throw_on_duplicate()
+    }
 }
+

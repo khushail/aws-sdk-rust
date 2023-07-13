@@ -3,7 +3,7 @@
 /// <p>Specifies a severity level for findings that a custom data identifier produces. A severity level determines which severity is assigned to the findings, based on the number of occurrences of text that matches the custom data identifier's detection criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SeverityLevel {
+pub struct SeverityLevel  {
     /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
     #[doc(hidden)]
     pub occurrences_threshold: ::std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl SeverityLevel {
         self.occurrences_threshold
     }
     /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::DataIdentifierSeverity> {
+    pub fn severity(&self) -> ::std::option::Option<& crate::types::DataIdentifierSeverity> {
         self.severity.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl SeverityLevel {
 
 /// A builder for [`SeverityLevel`](crate::types::SeverityLevel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SeverityLevelBuilder {
     pub(crate) occurrences_threshold: ::std::option::Option<i64>,
     pub(crate) severity: ::std::option::Option<crate::types::DataIdentifierSeverity>,
@@ -45,8 +43,11 @@ impl SeverityLevelBuilder {
     }
     /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
     pub fn set_occurrences_threshold(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.occurrences_threshold = input;
-        self
+        self.occurrences_threshold = input; self
+    }
+    /// <p>The minimum number of occurrences of text that must match the custom data identifier's detection criteria in order to produce a finding with the specified severity (severity).</p>
+    pub fn get_occurrences_threshold(&self) -> &::std::option::Option<i64> {
+        &self.occurrences_threshold
     }
     /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
     pub fn severity(mut self, input: crate::types::DataIdentifierSeverity) -> Self {
@@ -54,18 +55,21 @@ impl SeverityLevelBuilder {
         self
     }
     /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::DataIdentifierSeverity>,
-    ) -> Self {
-        self.severity = input;
-        self
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::DataIdentifierSeverity>) -> Self {
+        self.severity = input; self
+    }
+    /// <p>The severity to assign to a finding: if the number of occurrences is greater than or equal to the specified threshold (occurrencesThreshold); and, if applicable, the number of occurrences is less than the threshold for the next consecutive severity level for the custom data identifier, moving from LOW to HIGH.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::DataIdentifierSeverity> {
+        &self.severity
     }
     /// Consumes the builder and constructs a [`SeverityLevel`](crate::types::SeverityLevel).
     pub fn build(self) -> crate::types::SeverityLevel {
         crate::types::SeverityLevel {
-            occurrences_threshold: self.occurrences_threshold,
-            severity: self.severity,
+            occurrences_threshold: self.occurrences_threshold
+            ,
+            severity: self.severity
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about a sequence.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SequenceInformation {
+pub struct SequenceInformation  {
     /// <p>The sequence's total read count.</p>
     #[doc(hidden)]
     pub total_read_count: ::std::option::Option<i64>,
@@ -27,11 +27,11 @@ impl SequenceInformation {
         self.total_base_count
     }
     /// <p>Where the sequence originated.</p>
-    pub fn generated_from(&self) -> ::std::option::Option<&str> {
+    pub fn generated_from(&self) -> ::std::option::Option<& str> {
         self.generated_from.as_deref()
     }
     /// <p>The sequence's alignment setting.</p>
-    pub fn alignment(&self) -> ::std::option::Option<&str> {
+    pub fn alignment(&self) -> ::std::option::Option<& str> {
         self.alignment.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl SequenceInformation {
 
 /// A builder for [`SequenceInformation`](crate::types::SequenceInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SequenceInformationBuilder {
     pub(crate) total_read_count: ::std::option::Option<i64>,
     pub(crate) total_base_count: ::std::option::Option<i64>,
@@ -61,8 +59,11 @@ impl SequenceInformationBuilder {
     }
     /// <p>The sequence's total read count.</p>
     pub fn set_total_read_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_read_count = input;
-        self
+        self.total_read_count = input; self
+    }
+    /// <p>The sequence's total read count.</p>
+    pub fn get_total_read_count(&self) -> &::std::option::Option<i64> {
+        &self.total_read_count
     }
     /// <p>The sequence's total base count.</p>
     pub fn total_base_count(mut self, input: i64) -> Self {
@@ -71,24 +72,24 @@ impl SequenceInformationBuilder {
     }
     /// <p>The sequence's total base count.</p>
     pub fn set_total_base_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_base_count = input;
-        self
+        self.total_base_count = input; self
+    }
+    /// <p>The sequence's total base count.</p>
+    pub fn get_total_base_count(&self) -> &::std::option::Option<i64> {
+        &self.total_base_count
     }
     /// <p>Where the sequence originated.</p>
-    pub fn generated_from(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_from = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Where the sequence originated.</p>
-    pub fn set_generated_from(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.generated_from = input;
-        self
+    pub fn set_generated_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.generated_from = input; self
+    }
+    /// <p>Where the sequence originated.</p>
+    pub fn get_generated_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_from
     }
     /// <p>The sequence's alignment setting.</p>
     pub fn alignment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,16 +98,24 @@ impl SequenceInformationBuilder {
     }
     /// <p>The sequence's alignment setting.</p>
     pub fn set_alignment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alignment = input;
-        self
+        self.alignment = input; self
+    }
+    /// <p>The sequence's alignment setting.</p>
+    pub fn get_alignment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alignment
     }
     /// Consumes the builder and constructs a [`SequenceInformation`](crate::types::SequenceInformation).
     pub fn build(self) -> crate::types::SequenceInformation {
         crate::types::SequenceInformation {
-            total_read_count: self.total_read_count,
-            total_base_count: self.total_base_count,
-            generated_from: self.generated_from,
-            alignment: self.alignment,
+            total_read_count: self.total_read_count
+            ,
+            total_base_count: self.total_base_count
+            ,
+            generated_from: self.generated_from
+            ,
+            alignment: self.alignment
+            ,
         }
     }
 }
+

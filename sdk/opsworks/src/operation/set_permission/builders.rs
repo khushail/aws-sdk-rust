@@ -3,95 +3,88 @@ pub use crate::operation::set_permission::_set_permission_output::SetPermissionO
 
 pub use crate::operation::set_permission::_set_permission_input::SetPermissionInputBuilder;
 
+impl SetPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::set_permission::SetPermissionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::set_permission::SetPermissionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.set_permission();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SetPermission`.
-///
-/// <p>Specifies a user's permissions. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p>
+/// 
+/// <p>Specifies a user's permissions. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p> 
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_permission::builders::SetPermissionInputBuilder,
+                    inner: crate::operation::set_permission::builders::SetPermissionInputBuilder,
 }
-impl SetPermissionFluentBuilder {
+impl SetPermissionFluentBuilder  {
     /// Creates a new `SetPermission`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_permission::SetPermission,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::set_permission::SetPermissionError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SetPermission as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_permission::builders::SetPermissionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_permission::SetPermissionOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::set_permission::SetPermissionError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::set_permission::SetPermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::set_permission::SetPermissionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::set_permission::SetPermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_permission::SetPermissionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_permission::SetPermissionOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::set_permission::SetPermissionError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_permission::SetPermission,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::set_permission::SetPermissionError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::set_permission::SetPermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_permission::SetPermissionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::set_permission::SetPermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::set_permission::SetPermissionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -101,6 +94,10 @@ impl SetPermissionFluentBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,6 +109,10 @@ impl SetPermissionFluentBuilder {
         self.inner = self.inner.set_iam_user_arn(input);
         self
     }
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_user_arn()
+    }
     /// <p>The user is allowed to use SSH to communicate with the instance.</p>
     pub fn allow_ssh(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_ssh(input);
@@ -121,6 +122,10 @@ impl SetPermissionFluentBuilder {
     pub fn set_allow_ssh(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_ssh(input);
         self
+    }
+    /// <p>The user is allowed to use SSH to communicate with the instance.</p>
+    pub fn get_allow_ssh(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_ssh()
     }
     /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
     pub fn allow_sudo(mut self, input: bool) -> Self {
@@ -132,30 +137,47 @@ impl SetPermissionFluentBuilder {
         self.inner = self.inner.set_allow_sudo(input);
         self
     }
-    /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
-    /// <ul>
-    /// <li> <p> <code>deny</code> </p> </li>
-    /// <li> <p> <code>show</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>manage</code> </p> </li>
-    /// <li> <p> <code>iam_only</code> </p> </li>
-    /// </ul>
+    /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
+    pub fn get_allow_sudo(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_sudo()
+    }
+    /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> 
+    /// <ul> 
+    /// <li> <p> <code>deny</code> </p> </li> 
+    /// <li> <p> <code>show</code> </p> </li> 
+    /// <li> <p> <code>deploy</code> </p> </li> 
+    /// <li> <p> <code>manage</code> </p> </li> 
+    /// <li> <p> <code>iam_only</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.level(input.into());
         self
     }
-    /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
-    /// <ul>
-    /// <li> <p> <code>deny</code> </p> </li>
-    /// <li> <p> <code>show</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>manage</code> </p> </li>
-    /// <li> <p> <code>iam_only</code> </p> </li>
-    /// </ul>
+    /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> 
+    /// <ul> 
+    /// <li> <p> <code>deny</code> </p> </li> 
+    /// <li> <p> <code>show</code> </p> </li> 
+    /// <li> <p> <code>deploy</code> </p> </li> 
+    /// <li> <p> <code>manage</code> </p> </li> 
+    /// <li> <p> <code>iam_only</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_level(input);
         self
     }
+    /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p> 
+    /// <ul> 
+    /// <li> <p> <code>deny</code> </p> </li> 
+    /// <li> <p> <code>show</code> </p> </li> 
+    /// <li> <p> <code>deploy</code> </p> </li> 
+    /// <li> <p> <code>manage</code> </p> </li> 
+    /// <li> <p> <code>iam_only</code> </p> </li> 
+    /// </ul> 
+    /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    pub fn get_level(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_level()
+    }
 }
+

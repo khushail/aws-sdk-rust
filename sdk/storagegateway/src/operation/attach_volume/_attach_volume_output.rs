@@ -3,7 +3,7 @@
 /// <p>AttachVolumeOutput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachVolumeOutput {
+pub struct AttachVolumeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the volume that was attached to the gateway.</p>
     #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
@@ -14,19 +14,19 @@ pub struct AttachVolumeOutput {
 }
 impl AttachVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was attached to the gateway.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name for the initiator that was used to connect to the target.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AttachVolumeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AttachVolumeOutput {
     /// Creates a new builder-style object to manufacture [`AttachVolumeOutput`](crate::operation::attach_volume::AttachVolumeOutput).
     pub fn builder() -> crate::operation::attach_volume::builders::AttachVolumeOutputBuilder {
@@ -36,9 +36,7 @@ impl AttachVolumeOutput {
 
 /// A builder for [`AttachVolumeOutput`](crate::operation::attach_volume::AttachVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachVolumeOutputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl AttachVolumeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume that was attached to the gateway.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the volume that was attached to the gateway.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name for the initiator that was used to connect to the target.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,24 +63,30 @@ impl AttachVolumeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name for the initiator that was used to connect to the target.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name for the initiator that was used to connect to the target.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AttachVolumeOutput`](crate::operation::attach_volume::AttachVolumeOutput).
     pub fn build(self) -> crate::operation::attach_volume::AttachVolumeOutput {
         crate::operation::attach_volume::AttachVolumeOutput {
-            volume_arn: self.volume_arn,
-            target_arn: self.target_arn,
+            volume_arn: self.volume_arn
+            ,
+            target_arn: self.target_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

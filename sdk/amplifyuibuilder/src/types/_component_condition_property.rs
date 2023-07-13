@@ -3,7 +3,7 @@
 /// <p>Represents a conditional expression to set a component property. Use <code>ComponentConditionProperty</code> to set a property to different values conditionally, based on the value of another property.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentConditionProperty {
+pub struct ComponentConditionProperty  {
     /// <p>The name of the conditional property.</p>
     #[doc(hidden)]
     pub property: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct ComponentConditionProperty {
 }
 impl ComponentConditionProperty {
     /// <p>The name of the conditional property.</p>
-    pub fn property(&self) -> ::std::option::Option<&str> {
+    pub fn property(&self) -> ::std::option::Option<& str> {
         self.property.as_deref()
     }
     /// <p>The name of a field. Specify this when the property is a data model.</p>
-    pub fn field(&self) -> ::std::option::Option<&str> {
+    pub fn field(&self) -> ::std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
-    pub fn operator(&self) -> ::std::option::Option<&str> {
+    pub fn operator(&self) -> ::std::option::Option<& str> {
         self.operator.as_deref()
     }
     /// <p>The value of the property to evaluate.</p>
-    pub fn operand(&self) -> ::std::option::Option<&str> {
+    pub fn operand(&self) -> ::std::option::Option<& str> {
         self.operand.as_deref()
     }
     /// <p>The value to assign to the property if the condition is met.</p>
-    pub fn then(&self) -> ::std::option::Option<&crate::types::ComponentProperty> {
+    pub fn then(&self) -> ::std::option::Option<& crate::types::ComponentProperty> {
         self.then.as_deref()
     }
     /// <p>The value to assign to the property if the condition is not met.</p>
-    pub fn r#else(&self) -> ::std::option::Option<&crate::types::ComponentProperty> {
+    pub fn r#else(&self) -> ::std::option::Option<& crate::types::ComponentProperty> {
         self.r#else.as_deref()
     }
     /// <p>The type of the property to evaluate.</p>
-    pub fn operand_type(&self) -> ::std::option::Option<&str> {
+    pub fn operand_type(&self) -> ::std::option::Option<& str> {
         self.operand_type.as_deref()
     }
 }
@@ -65,9 +65,7 @@ impl ComponentConditionProperty {
 
 /// A builder for [`ComponentConditionProperty`](crate::types::ComponentConditionProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentConditionPropertyBuilder {
     pub(crate) property: ::std::option::Option<::std::string::String>,
     pub(crate) field: ::std::option::Option<::std::string::String>,
@@ -85,8 +83,11 @@ impl ComponentConditionPropertyBuilder {
     }
     /// <p>The name of the conditional property.</p>
     pub fn set_property(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property = input;
-        self
+        self.property = input; self
+    }
+    /// <p>The name of the conditional property.</p>
+    pub fn get_property(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property
     }
     /// <p>The name of a field. Specify this when the property is a data model.</p>
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +96,11 @@ impl ComponentConditionPropertyBuilder {
     }
     /// <p>The name of a field. Specify this when the property is a data model.</p>
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
+    }
+    /// <p>The name of a field. Specify this when the property is a data model.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
     }
     /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
     pub fn operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,8 +109,11 @@ impl ComponentConditionPropertyBuilder {
     }
     /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
+    }
+    /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operator
     }
     /// <p>The value of the property to evaluate.</p>
     pub fn operand(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,40 +122,37 @@ impl ComponentConditionPropertyBuilder {
     }
     /// <p>The value of the property to evaluate.</p>
     pub fn set_operand(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operand = input;
-        self
+        self.operand = input; self
+    }
+    /// <p>The value of the property to evaluate.</p>
+    pub fn get_operand(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operand
     }
     /// <p>The value to assign to the property if the condition is met.</p>
-    pub fn then(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ComponentProperty>>,
-    ) -> Self {
+    pub fn then(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ComponentProperty>>) -> Self {
         self.then = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to assign to the property if the condition is met.</p>
-    pub fn set_then(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>,
-    ) -> Self {
-        self.then = input;
-        self
+    pub fn set_then(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>) -> Self {
+        self.then = input; self
+    }
+    /// <p>The value to assign to the property if the condition is met.</p>
+    pub fn get_then(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>> {
+        &self.then
     }
     /// <p>The value to assign to the property if the condition is not met.</p>
-    pub fn r#else(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ComponentProperty>>,
-    ) -> Self {
+    pub fn r#else(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ComponentProperty>>) -> Self {
         self.r#else = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to assign to the property if the condition is not met.</p>
-    pub fn set_else(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>,
-    ) -> Self {
-        self.r#else = input;
-        self
+    pub fn set_else(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>) -> Self {
+        self.r#else = input; self
+    }
+    /// <p>The value to assign to the property if the condition is not met.</p>
+    pub fn get_else(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>> {
+        &self.r#else
     }
     /// <p>The type of the property to evaluate.</p>
     pub fn operand_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,19 +161,30 @@ impl ComponentConditionPropertyBuilder {
     }
     /// <p>The type of the property to evaluate.</p>
     pub fn set_operand_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operand_type = input;
-        self
+        self.operand_type = input; self
+    }
+    /// <p>The type of the property to evaluate.</p>
+    pub fn get_operand_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operand_type
     }
     /// Consumes the builder and constructs a [`ComponentConditionProperty`](crate::types::ComponentConditionProperty).
     pub fn build(self) -> crate::types::ComponentConditionProperty {
         crate::types::ComponentConditionProperty {
-            property: self.property,
-            field: self.field,
-            operator: self.operator,
-            operand: self.operand,
-            then: self.then,
-            r#else: self.r#else,
-            operand_type: self.operand_type,
+            property: self.property
+            ,
+            field: self.field
+            ,
+            operator: self.operator
+            ,
+            operand: self.operand
+            ,
+            then: self.then
+            ,
+            r#else: self.r#else
+            ,
+            operand_type: self.operand_type
+            ,
         }
     }
 }
+

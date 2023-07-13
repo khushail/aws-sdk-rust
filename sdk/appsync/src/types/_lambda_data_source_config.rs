@@ -3,14 +3,14 @@
 /// <p>Describes an Lambda data source configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaDataSourceConfig {
+pub struct LambdaDataSourceConfig  {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
     #[doc(hidden)]
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaDataSourceConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl LambdaDataSourceConfig {
 
 /// A builder for [`LambdaDataSourceConfig`](crate::types::LambdaDataSourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaDataSourceConfigBuilder {
     pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaDataSourceConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
-    pub fn lambda_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
-    pub fn set_lambda_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.lambda_function_arn = input;
-        self
+    pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lambda_function_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_arn
     }
     /// Consumes the builder and constructs a [`LambdaDataSourceConfig`](crate::types::LambdaDataSourceConfig).
     pub fn build(self) -> crate::types::LambdaDataSourceConfig {
         crate::types::LambdaDataSourceConfig {
-            lambda_function_arn: self.lambda_function_arn,
+            lambda_function_arn: self.lambda_function_arn
+            ,
         }
     }
 }
+

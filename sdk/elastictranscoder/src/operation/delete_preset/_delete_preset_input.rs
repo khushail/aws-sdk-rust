@@ -3,14 +3,14 @@
 /// <p>The <code>DeletePresetRequest</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePresetInput {
+pub struct DeletePresetInput  {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePresetInput {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DeletePresetInput {
 
 /// A builder for [`DeletePresetInput`](crate::operation::delete_preset::DeletePresetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePresetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +35,20 @@ impl DeletePresetInputBuilder {
     }
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the preset for which you want to get detailed information.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeletePresetInput`](crate::operation::delete_preset::DeletePresetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_preset::DeletePresetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_preset::DeletePresetInput {
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_preset::DeletePresetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_preset::DeletePresetInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

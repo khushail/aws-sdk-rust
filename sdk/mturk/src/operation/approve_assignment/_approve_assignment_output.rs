@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApproveAssignmentOutput {
+pub struct ApproveAssignmentOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for ApproveAssignmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ApproveAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`ApproveAssignmentOutput`](crate::operation::approve_assignment::ApproveAssignmentOutput).
-    pub fn builder(
-    ) -> crate::operation::approve_assignment::builders::ApproveAssignmentOutputBuilder {
+    pub fn builder() -> crate::operation::approve_assignment::builders::ApproveAssignmentOutputBuilder {
         crate::operation::approve_assignment::builders::ApproveAssignmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`ApproveAssignmentOutput`](crate::operation::approve_assignment::ApproveAssignmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApproveAssignmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl ApproveAssignmentOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ApproveAssignmentOutput`](crate::operation::approve_assignment::ApproveAssignmentOutput).
     pub fn build(self) -> crate::operation::approve_assignment::ApproveAssignmentOutput {
         crate::operation::approve_assignment::ApproveAssignmentOutput {
@@ -43,3 +40,4 @@ impl ApproveAssignmentOutputBuilder {
         }
     }
 }
+

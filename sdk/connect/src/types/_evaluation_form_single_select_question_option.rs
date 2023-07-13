@@ -3,7 +3,7 @@
 /// <p>Information about the automation configuration in single select questions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationFormSingleSelectQuestionOption {
+pub struct EvaluationFormSingleSelectQuestionOption  {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
     #[doc(hidden)]
     pub ref_id: ::std::option::Option<::std::string::String>,
@@ -19,11 +19,11 @@ pub struct EvaluationFormSingleSelectQuestionOption {
 }
 impl EvaluationFormSingleSelectQuestionOption {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
-    pub fn ref_id(&self) -> ::std::option::Option<&str> {
+    pub fn ref_id(&self) -> ::std::option::Option<& str> {
         self.ref_id.as_deref()
     }
     /// <p>The title of the answer option.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The score assigned to the answer option.</p>
@@ -44,9 +44,7 @@ impl EvaluationFormSingleSelectQuestionOption {
 
 /// A builder for [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormSingleSelectQuestionOptionBuilder {
     pub(crate) ref_id: ::std::option::Option<::std::string::String>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
     }
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
     pub fn set_ref_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ref_id = input;
-        self
+        self.ref_id = input; self
+    }
+    /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
+    pub fn get_ref_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ref_id
     }
     /// <p>The title of the answer option.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
     }
     /// <p>The title of the answer option.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p>The title of the answer option.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The score assigned to the answer option.</p>
     pub fn score(mut self, input: i32) -> Self {
@@ -81,8 +85,11 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
     }
     /// <p>The score assigned to the answer option.</p>
     pub fn set_score(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
+    }
+    /// <p>The score assigned to the answer option.</p>
+    pub fn get_score(&self) -> &::std::option::Option<i32> {
+        &self.score
     }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub fn automatic_fail(mut self, input: bool) -> Self {
@@ -91,16 +98,26 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
     }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.automatic_fail = input;
-        self
+        self.automatic_fail = input; self
+    }
+    /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
+    pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
+        &self.automatic_fail
     }
     /// Consumes the builder and constructs a [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
     pub fn build(self) -> crate::types::EvaluationFormSingleSelectQuestionOption {
         crate::types::EvaluationFormSingleSelectQuestionOption {
-            ref_id: self.ref_id,
-            text: self.text,
-            score: self.score.unwrap_or_default(),
-            automatic_fail: self.automatic_fail.unwrap_or_default(),
+            ref_id: self.ref_id
+            ,
+            text: self.text
+            ,
+            score: self.score
+                .unwrap_or_default()
+            ,
+            automatic_fail: self.automatic_fail
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

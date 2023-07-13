@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClusterConfigurationInput {
+pub struct UpdateClusterConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct UpdateClusterConfigurationInput {
 }
 impl UpdateClusterConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    pub fn configuration_info(&self) -> ::std::option::Option<&crate::types::ConfigurationInfo> {
+    pub fn configuration_info(&self) -> ::std::option::Option<& crate::types::ConfigurationInfo> {
         self.configuration_info.as_ref()
     }
     /// <p>The version of the cluster that needs to be updated.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
 }
 impl UpdateClusterConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigurationInput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput).
-    pub fn builder() -> crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationInputBuilder {
         crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClusterConfigurationInput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterConfigurationInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,
@@ -52,8 +50,11 @@ impl UpdateClusterConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
     pub fn configuration_info(mut self, input: crate::types::ConfigurationInfo) -> Self {
@@ -61,42 +62,38 @@ impl UpdateClusterConfigurationInputBuilder {
         self
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    pub fn set_configuration_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationInfo>,
-    ) -> Self {
-        self.configuration_info = input;
-        self
+    pub fn set_configuration_info(mut self, input: ::std::option::Option<crate::types::ConfigurationInfo>) -> Self {
+        self.configuration_info = input; self
+    }
+    /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    pub fn get_configuration_info(&self) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+        &self.configuration_info
     }
     /// <p>The version of the cluster that needs to be updated.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the cluster that needs to be updated.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.current_version = input;
-        self
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.current_version = input; self
+    }
+    /// <p>The version of the cluster that needs to be updated.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
     }
     /// Consumes the builder and constructs a [`UpdateClusterConfigurationInput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput {
-                cluster_arn: self.cluster_arn,
-                configuration_info: self.configuration_info,
-                current_version: self.current_version,
-            },
+                cluster_arn: self.cluster_arn
+                ,
+                configuration_info: self.configuration_info
+                ,
+                current_version: self.current_version
+                ,
+            }
         )
     }
 }
+

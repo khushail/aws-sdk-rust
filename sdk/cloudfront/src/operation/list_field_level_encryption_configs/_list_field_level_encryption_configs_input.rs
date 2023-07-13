@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFieldLevelEncryptionConfigsInput {
+pub struct ListFieldLevelEncryptionConfigsInput  {
     /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListFieldLevelEncryptionConfigsInput {
 }
 impl ListFieldLevelEncryptionConfigsInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
@@ -22,16 +22,14 @@ impl ListFieldLevelEncryptionConfigsInput {
 }
 impl ListFieldLevelEncryptionConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListFieldLevelEncryptionConfigsInput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput).
-    pub fn builder() -> crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsInputBuilder{
+    pub fn builder() -> crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsInputBuilder {
         crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFieldLevelEncryptionConfigsInput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionConfigsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -44,8 +42,11 @@ impl ListFieldLevelEncryptionConfigsInputBuilder {
     }
     /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -54,16 +55,14 @@ impl ListFieldLevelEncryptionConfigsInputBuilder {
     }
     /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
+    }
+    /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListFieldLevelEncryptionConfigsInput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput {
                 marker: self.marker
@@ -74,3 +73,4 @@ impl ListFieldLevelEncryptionConfigsInputBuilder {
         )
     }
 }
+

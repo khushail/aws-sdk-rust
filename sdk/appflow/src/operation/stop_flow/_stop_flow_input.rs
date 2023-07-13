@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopFlowInput {
+pub struct StopFlowInput  {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
 }
 impl StopFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> ::std::option::Option<&str> {
+    pub fn flow_name(&self) -> ::std::option::Option<& str> {
         self.flow_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl StopFlowInput {
 
 /// A builder for [`StopFlowInput`](crate::operation::stop_flow::StopFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopFlowInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl StopFlowInputBuilder {
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_name = input;
-        self
+        self.flow_name = input; self
+    }
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_name
     }
     /// Consumes the builder and constructs a [`StopFlowInput`](crate::operation::stop_flow::StopFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_flow::StopFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_flow::StopFlowInput {
-            flow_name: self.flow_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_flow::StopFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_flow::StopFlowInput {
+                flow_name: self.flow_name
+                ,
+            }
+        )
     }
 }
+

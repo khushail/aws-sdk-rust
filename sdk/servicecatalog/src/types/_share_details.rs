@@ -3,7 +3,7 @@
 /// <p>Information about the portfolio share operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShareDetails {
+pub struct ShareDetails  {
     /// <p>List of accounts for whom the operation succeeded.</p>
     #[doc(hidden)]
     pub successful_shares: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,11 +13,11 @@ pub struct ShareDetails {
 }
 impl ShareDetails {
     /// <p>List of accounts for whom the operation succeeded.</p>
-    pub fn successful_shares(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn successful_shares(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.successful_shares.as_deref()
     }
     /// <p>List of errors.</p>
-    pub fn share_errors(&self) -> ::std::option::Option<&[crate::types::ShareError]> {
+    pub fn share_errors(&self) -> ::std::option::Option<& [crate::types::ShareError]> {
         self.share_errors.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ShareDetails {
 
 /// A builder for [`ShareDetails`](crate::types::ShareDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShareDetailsBuilder {
     pub(crate) successful_shares: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) share_errors: ::std::option::Option<::std::vec::Vec<crate::types::ShareError>>,
@@ -43,22 +41,19 @@ impl ShareDetailsBuilder {
     /// To override the contents of this collection use [`set_successful_shares`](Self::set_successful_shares).
     ///
     /// <p>List of accounts for whom the operation succeeded.</p>
-    pub fn successful_shares(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn successful_shares(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.successful_shares.unwrap_or_default();
-        v.push(input.into());
-        self.successful_shares = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.successful_shares = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of accounts for whom the operation succeeded.</p>
-    pub fn set_successful_shares(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.successful_shares = input;
-        self
+    pub fn set_successful_shares(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.successful_shares = input; self
+    }
+    /// <p>List of accounts for whom the operation succeeded.</p>
+    pub fn get_successful_shares(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.successful_shares
     }
     /// Appends an item to `share_errors`.
     ///
@@ -67,23 +62,26 @@ impl ShareDetailsBuilder {
     /// <p>List of errors.</p>
     pub fn share_errors(mut self, input: crate::types::ShareError) -> Self {
         let mut v = self.share_errors.unwrap_or_default();
-        v.push(input);
-        self.share_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.share_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of errors.</p>
-    pub fn set_share_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ShareError>>,
-    ) -> Self {
-        self.share_errors = input;
-        self
+    pub fn set_share_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShareError>>) -> Self {
+        self.share_errors = input; self
+    }
+    /// <p>List of errors.</p>
+    pub fn get_share_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareError>> {
+        &self.share_errors
     }
     /// Consumes the builder and constructs a [`ShareDetails`](crate::types::ShareDetails).
     pub fn build(self) -> crate::types::ShareDetails {
         crate::types::ShareDetails {
-            successful_shares: self.successful_shares,
-            share_errors: self.share_errors,
+            successful_shares: self.successful_shares
+            ,
+            share_errors: self.share_errors
+            ,
         }
     }
 }
+

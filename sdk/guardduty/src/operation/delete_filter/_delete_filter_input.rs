@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFilterInput {
+pub struct DeleteFilterInput  {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
     #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteFilterInput {
 }
 impl DeleteFilterInput {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The name of the filter that you want to delete.</p>
-    pub fn filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn filter_name(&self) -> ::std::option::Option<& str> {
         self.filter_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DeleteFilterInput {
 
 /// A builder for [`DeleteFilterInput`](crate::operation::delete_filter::DeleteFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFilterInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) filter_name: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeleteFilterInputBuilder {
     }
     /// <p>The unique ID of the detector that the filter is associated with.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
+    }
+    /// <p>The unique ID of the detector that the filter is associated with.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// <p>The name of the filter that you want to delete.</p>
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl DeleteFilterInputBuilder {
     }
     /// <p>The name of the filter that you want to delete.</p>
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_name = input;
-        self
+        self.filter_name = input; self
+    }
+    /// <p>The name of the filter that you want to delete.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name
     }
     /// Consumes the builder and constructs a [`DeleteFilterInput`](crate::operation::delete_filter::DeleteFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_filter::DeleteFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_filter::DeleteFilterInput {
-            detector_id: self.detector_id,
-            filter_name: self.filter_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_filter::DeleteFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_filter::DeleteFilterInput {
+                detector_id: self.detector_id
+                ,
+                filter_name: self.filter_name
+                ,
+            }
+        )
     }
 }
+

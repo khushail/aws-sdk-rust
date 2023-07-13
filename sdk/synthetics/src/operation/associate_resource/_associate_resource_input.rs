@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateResourceInput {
+pub struct AssociateResourceInput  {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     #[doc(hidden)]
     pub group_identifier: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct AssociateResourceInput {
 }
 impl AssociateResourceInput {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn group_identifier(&self) -> ::std::option::Option<& str> {
         self.group_identifier.as_deref()
     }
     /// <p>The ARN of the canary that you want to associate with the specified group.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl AssociateResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
-    pub fn builder() -> crate::operation::associate_resource::builders::AssociateResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_resource::builders::AssociateResourceInputBuilder {
         crate::operation::associate_resource::builders::AssociateResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateResourceInputBuilder {
     pub(crate) group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateResourceInputBuilder {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn set_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.group_identifier = input;
-        self
+    pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_identifier = input; self
+    }
+    /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_identifier
     }
     /// <p>The ARN of the canary that you want to associate with the specified group.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,21 +55,22 @@ impl AssociateResourceInputBuilder {
     }
     /// <p>The ARN of the canary that you want to associate with the specified group.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The ARN of the canary that you want to associate with the specified group.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_resource::AssociateResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_resource::AssociateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_resource::AssociateResourceInput {
-                group_identifier: self.group_identifier,
-                resource_arn: self.resource_arn,
-            },
+                group_identifier: self.group_identifier
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

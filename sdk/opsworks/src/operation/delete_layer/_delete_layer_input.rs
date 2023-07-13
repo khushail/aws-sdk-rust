@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLayerInput {
+pub struct DeleteLayerInput  {
     /// <p>The layer ID.</p>
     #[doc(hidden)]
     pub layer_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLayerInput {
     /// <p>The layer ID.</p>
-    pub fn layer_id(&self) -> ::std::option::Option<&str> {
+    pub fn layer_id(&self) -> ::std::option::Option<& str> {
         self.layer_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteLayerInput {
 
 /// A builder for [`DeleteLayerInput`](crate::operation::delete_layer::DeleteLayerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLayerInputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteLayerInputBuilder {
     }
     /// <p>The layer ID.</p>
     pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_id = input;
-        self
+        self.layer_id = input; self
+    }
+    /// <p>The layer ID.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_id
     }
     /// Consumes the builder and constructs a [`DeleteLayerInput`](crate::operation::delete_layer::DeleteLayerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_layer::DeleteLayerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_layer::DeleteLayerInput {
-            layer_id: self.layer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_layer::DeleteLayerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_layer::DeleteLayerInput {
+                layer_id: self.layer_id
+                ,
+            }
+        )
     }
 }
+

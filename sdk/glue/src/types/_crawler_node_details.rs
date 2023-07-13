@@ -3,14 +3,14 @@
 /// <p>The details of a Crawler node present in the workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrawlerNodeDetails {
+pub struct CrawlerNodeDetails  {
     /// <p>A list of crawls represented by the crawl node.</p>
     #[doc(hidden)]
     pub crawls: ::std::option::Option<::std::vec::Vec<crate::types::Crawl>>,
 }
 impl CrawlerNodeDetails {
     /// <p>A list of crawls represented by the crawl node.</p>
-    pub fn crawls(&self) -> ::std::option::Option<&[crate::types::Crawl]> {
+    pub fn crawls(&self) -> ::std::option::Option<& [crate::types::Crawl]> {
         self.crawls.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl CrawlerNodeDetails {
 
 /// A builder for [`CrawlerNodeDetails`](crate::types::CrawlerNodeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrawlerNodeDetailsBuilder {
     pub(crate) crawls: ::std::option::Option<::std::vec::Vec<crate::types::Crawl>>,
 }
@@ -37,22 +35,24 @@ impl CrawlerNodeDetailsBuilder {
     /// <p>A list of crawls represented by the crawl node.</p>
     pub fn crawls(mut self, input: crate::types::Crawl) -> Self {
         let mut v = self.crawls.unwrap_or_default();
-        v.push(input);
-        self.crawls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.crawls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of crawls represented by the crawl node.</p>
-    pub fn set_crawls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Crawl>>,
-    ) -> Self {
-        self.crawls = input;
-        self
+    pub fn set_crawls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Crawl>>) -> Self {
+        self.crawls = input; self
+    }
+    /// <p>A list of crawls represented by the crawl node.</p>
+    pub fn get_crawls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Crawl>> {
+        &self.crawls
     }
     /// Consumes the builder and constructs a [`CrawlerNodeDetails`](crate::types::CrawlerNodeDetails).
     pub fn build(self) -> crate::types::CrawlerNodeDetails {
         crate::types::CrawlerNodeDetails {
-            crawls: self.crawls,
+            crawls: self.crawls
+            ,
         }
     }
 }
+

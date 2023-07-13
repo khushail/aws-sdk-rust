@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbProxyInput {
+pub struct DeleteDbProxyInput  {
     /// <p>The name of the DB proxy to delete.</p>
     #[doc(hidden)]
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbProxyInput {
     /// <p>The name of the DB proxy to delete.</p>
-    pub fn db_proxy_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_proxy_name(&self) -> ::std::option::Option<& str> {
         self.db_proxy_name.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl DeleteDbProxyInput {
 
 /// A builder for [`DeleteDbProxyInput`](crate::operation::delete_db_proxy::DeleteDbProxyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbProxyInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbProxyInputBuilder {
     /// <p>The name of the DB proxy to delete.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB proxy to delete.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.db_proxy_name = input;
-        self
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_proxy_name = input; self
+    }
+    /// <p>The name of the DB proxy to delete.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_proxy_name
     }
     /// Consumes the builder and constructs a [`DeleteDbProxyInput`](crate::operation::delete_db_proxy::DeleteDbProxyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_proxy::DeleteDbProxyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_db_proxy::DeleteDbProxyInput {
-            db_proxy_name: self.db_proxy_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_proxy::DeleteDbProxyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_proxy::DeleteDbProxyInput {
+                db_proxy_name: self.db_proxy_name
+                ,
+            }
+        )
     }
 }
+

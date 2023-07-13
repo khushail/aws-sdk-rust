@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateJourneyStateOutput {
+pub struct UpdateJourneyStateOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: ::std::option::Option<crate::types::JourneyResponse>,
@@ -10,28 +10,25 @@ pub struct UpdateJourneyStateOutput {
 }
 impl UpdateJourneyStateOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    pub fn journey_response(&self) -> ::std::option::Option<&crate::types::JourneyResponse> {
+    pub fn journey_response(&self) -> ::std::option::Option<& crate::types::JourneyResponse> {
         self.journey_response.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateJourneyStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateJourneyStateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJourneyStateOutput`](crate::operation::update_journey_state::UpdateJourneyStateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_journey_state::builders::UpdateJourneyStateOutputBuilder {
+    pub fn builder() -> crate::operation::update_journey_state::builders::UpdateJourneyStateOutputBuilder {
         crate::operation::update_journey_state::builders::UpdateJourneyStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJourneyStateOutput`](crate::operation::update_journey_state::UpdateJourneyStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJourneyStateOutputBuilder {
     pub(crate) journey_response: ::std::option::Option<crate::types::JourneyResponse>,
     _request_id: Option<String>,
@@ -43,27 +40,29 @@ impl UpdateJourneyStateOutputBuilder {
         self
     }
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    pub fn set_journey_response(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyResponse>,
-    ) -> Self {
-        self.journey_response = input;
-        self
+    pub fn set_journey_response(mut self, input: ::std::option::Option<crate::types::JourneyResponse>) -> Self {
+        self.journey_response = input; self
+    }
+    /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    pub fn get_journey_response(&self) -> &::std::option::Option<crate::types::JourneyResponse> {
+        &self.journey_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateJourneyStateOutput`](crate::operation::update_journey_state::UpdateJourneyStateOutput).
     pub fn build(self) -> crate::operation::update_journey_state::UpdateJourneyStateOutput {
         crate::operation::update_journey_state::UpdateJourneyStateOutput {
-            journey_response: self.journey_response,
+            journey_response: self.journey_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

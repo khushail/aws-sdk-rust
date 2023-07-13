@@ -3,7 +3,7 @@
 /// <p>Information about a technical cue segment. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TechnicalCueSegment {
+pub struct TechnicalCueSegment  {
     /// <p>The type of the technical cue.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TechnicalCueType>,
@@ -13,7 +13,7 @@ pub struct TechnicalCueSegment {
 }
 impl TechnicalCueSegment {
     /// <p>The type of the technical cue.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TechnicalCueType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TechnicalCueType> {
         self.r#type.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
@@ -30,9 +30,7 @@ impl TechnicalCueSegment {
 
 /// A builder for [`TechnicalCueSegment`](crate::types::TechnicalCueSegment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TechnicalCueSegmentBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TechnicalCueType>,
     pub(crate) confidence: ::std::option::Option<f32>,
@@ -44,12 +42,12 @@ impl TechnicalCueSegmentBuilder {
         self
     }
     /// <p>The type of the technical cue.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TechnicalCueType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TechnicalCueType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of the technical cue.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TechnicalCueType> {
+        &self.r#type
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -58,14 +56,20 @@ impl TechnicalCueSegmentBuilder {
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
+    }
+    /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`TechnicalCueSegment`](crate::types::TechnicalCueSegment).
     pub fn build(self) -> crate::types::TechnicalCueSegment {
         crate::types::TechnicalCueSegment {
-            r#type: self.r#type,
-            confidence: self.confidence,
+            r#type: self.r#type
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

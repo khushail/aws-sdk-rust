@@ -3,7 +3,7 @@
 /// <p>The input for the DeleteThingShadow operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteThingShadowInput {
+pub struct DeleteThingShadowInput  {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
@@ -13,27 +13,24 @@ pub struct DeleteThingShadowInput {
 }
 impl DeleteThingShadowInput {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the shadow.</p>
-    pub fn shadow_name(&self) -> ::std::option::Option<&str> {
+    pub fn shadow_name(&self) -> ::std::option::Option<& str> {
         self.shadow_name.as_deref()
     }
 }
 impl DeleteThingShadowInput {
     /// Creates a new builder-style object to manufacture [`DeleteThingShadowInput`](crate::operation::delete_thing_shadow::DeleteThingShadowInput).
-    pub fn builder(
-    ) -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowInputBuilder {
+    pub fn builder() -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowInputBuilder {
         crate::operation::delete_thing_shadow::builders::DeleteThingShadowInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteThingShadowInput`](crate::operation::delete_thing_shadow::DeleteThingShadowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThingShadowInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) shadow_name: ::std::option::Option<::std::string::String>,
@@ -46,8 +43,11 @@ impl DeleteThingShadowInputBuilder {
     }
     /// <p>The name of the thing.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
+    }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// <p>The name of the shadow.</p>
     pub fn shadow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +56,22 @@ impl DeleteThingShadowInputBuilder {
     }
     /// <p>The name of the shadow.</p>
     pub fn set_shadow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shadow_name = input;
-        self
+        self.shadow_name = input; self
+    }
+    /// <p>The name of the shadow.</p>
+    pub fn get_shadow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shadow_name
     }
     /// Consumes the builder and constructs a [`DeleteThingShadowInput`](crate::operation::delete_thing_shadow::DeleteThingShadowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_thing_shadow::DeleteThingShadowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_thing_shadow::DeleteThingShadowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_thing_shadow::DeleteThingShadowInput {
-                thing_name: self.thing_name,
-                shadow_name: self.shadow_name,
-            },
+                thing_name: self.thing_name
+                ,
+                shadow_name: self.shadow_name
+                ,
+            }
         )
     }
 }
+

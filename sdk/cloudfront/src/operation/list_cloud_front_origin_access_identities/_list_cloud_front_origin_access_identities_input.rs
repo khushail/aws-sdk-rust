@@ -3,7 +3,7 @@
 /// <p>The request to list origin access identities.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCloudFrontOriginAccessIdentitiesInput {
+pub struct ListCloudFrontOriginAccessIdentitiesInput  {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ListCloudFrontOriginAccessIdentitiesInput {
 }
 impl ListCloudFrontOriginAccessIdentitiesInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of origin access identities you want in the response body.</p>
@@ -23,16 +23,14 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
 }
 impl ListCloudFrontOriginAccessIdentitiesInput {
     /// Creates a new builder-style object to manufacture [`ListCloudFrontOriginAccessIdentitiesInput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput).
-    pub fn builder() -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesInputBuilder{
+    pub fn builder() -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesInputBuilder {
         crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCloudFrontOriginAccessIdentitiesInput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCloudFrontOriginAccessIdentitiesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl ListCloudFrontOriginAccessIdentitiesInputBuilder {
     }
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of origin access identities you want in the response body.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -55,11 +56,14 @@ impl ListCloudFrontOriginAccessIdentitiesInputBuilder {
     }
     /// <p>The maximum number of origin access identities you want in the response body.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
+    }
+    /// <p>The maximum number of origin access identities you want in the response body.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListCloudFrontOriginAccessIdentitiesInput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput {
                 marker: self.marker
@@ -70,3 +74,4 @@ impl ListCloudFrontOriginAccessIdentitiesInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TypedAttributeValueRange {
+pub struct TypedAttributeValueRange  {
     /// <p>The inclusive or exclusive range start.</p>
     #[doc(hidden)]
     pub start_mode: ::std::option::Option<crate::types::RangeMode>,
@@ -19,19 +19,19 @@ pub struct TypedAttributeValueRange {
 }
 impl TypedAttributeValueRange {
     /// <p>The inclusive or exclusive range start.</p>
-    pub fn start_mode(&self) -> ::std::option::Option<&crate::types::RangeMode> {
+    pub fn start_mode(&self) -> ::std::option::Option<& crate::types::RangeMode> {
         self.start_mode.as_ref()
     }
     /// <p>The value to start the range at.</p>
-    pub fn start_value(&self) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
+    pub fn start_value(&self) -> ::std::option::Option<& crate::types::TypedAttributeValue> {
         self.start_value.as_ref()
     }
     /// <p>The inclusive or exclusive range end.</p>
-    pub fn end_mode(&self) -> ::std::option::Option<&crate::types::RangeMode> {
+    pub fn end_mode(&self) -> ::std::option::Option<& crate::types::RangeMode> {
         self.end_mode.as_ref()
     }
     /// <p>The attribute value to terminate the range at.</p>
-    pub fn end_value(&self) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
+    pub fn end_value(&self) -> ::std::option::Option<& crate::types::TypedAttributeValue> {
         self.end_value.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl TypedAttributeValueRange {
 
 /// A builder for [`TypedAttributeValueRange`](crate::types::TypedAttributeValueRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypedAttributeValueRangeBuilder {
     pub(crate) start_mode: ::std::option::Option<crate::types::RangeMode>,
     pub(crate) start_value: ::std::option::Option<crate::types::TypedAttributeValue>,
@@ -61,8 +59,11 @@ impl TypedAttributeValueRangeBuilder {
     }
     /// <p>The inclusive or exclusive range start.</p>
     pub fn set_start_mode(mut self, input: ::std::option::Option<crate::types::RangeMode>) -> Self {
-        self.start_mode = input;
-        self
+        self.start_mode = input; self
+    }
+    /// <p>The inclusive or exclusive range start.</p>
+    pub fn get_start_mode(&self) -> &::std::option::Option<crate::types::RangeMode> {
+        &self.start_mode
     }
     /// <p>The value to start the range at.</p>
     pub fn start_value(mut self, input: crate::types::TypedAttributeValue) -> Self {
@@ -70,12 +71,12 @@ impl TypedAttributeValueRangeBuilder {
         self
     }
     /// <p>The value to start the range at.</p>
-    pub fn set_start_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedAttributeValue>,
-    ) -> Self {
-        self.start_value = input;
-        self
+    pub fn set_start_value(mut self, input: ::std::option::Option<crate::types::TypedAttributeValue>) -> Self {
+        self.start_value = input; self
+    }
+    /// <p>The value to start the range at.</p>
+    pub fn get_start_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
+        &self.start_value
     }
     /// <p>The inclusive or exclusive range end.</p>
     pub fn end_mode(mut self, input: crate::types::RangeMode) -> Self {
@@ -84,8 +85,11 @@ impl TypedAttributeValueRangeBuilder {
     }
     /// <p>The inclusive or exclusive range end.</p>
     pub fn set_end_mode(mut self, input: ::std::option::Option<crate::types::RangeMode>) -> Self {
-        self.end_mode = input;
-        self
+        self.end_mode = input; self
+    }
+    /// <p>The inclusive or exclusive range end.</p>
+    pub fn get_end_mode(&self) -> &::std::option::Option<crate::types::RangeMode> {
+        &self.end_mode
     }
     /// <p>The attribute value to terminate the range at.</p>
     pub fn end_value(mut self, input: crate::types::TypedAttributeValue) -> Self {
@@ -93,20 +97,25 @@ impl TypedAttributeValueRangeBuilder {
         self
     }
     /// <p>The attribute value to terminate the range at.</p>
-    pub fn set_end_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedAttributeValue>,
-    ) -> Self {
-        self.end_value = input;
-        self
+    pub fn set_end_value(mut self, input: ::std::option::Option<crate::types::TypedAttributeValue>) -> Self {
+        self.end_value = input; self
+    }
+    /// <p>The attribute value to terminate the range at.</p>
+    pub fn get_end_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
+        &self.end_value
     }
     /// Consumes the builder and constructs a [`TypedAttributeValueRange`](crate::types::TypedAttributeValueRange).
     pub fn build(self) -> crate::types::TypedAttributeValueRange {
         crate::types::TypedAttributeValueRange {
-            start_mode: self.start_mode,
-            start_value: self.start_value,
-            end_mode: self.end_mode,
-            end_value: self.end_value,
+            start_mode: self.start_mode
+            ,
+            start_value: self.start_value
+            ,
+            end_mode: self.end_mode
+            ,
+            end_value: self.end_value
+            ,
         }
     }
 }
+

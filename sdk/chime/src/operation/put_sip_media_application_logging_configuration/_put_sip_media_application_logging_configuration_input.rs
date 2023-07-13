@@ -2,79 +2,67 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSipMediaApplicationLoggingConfigurationInput {
+pub struct PutSipMediaApplicationLoggingConfigurationInput  {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual logging configuration.</p>
     #[doc(hidden)]
-    pub sip_media_application_logging_configuration:
-        ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
+    pub sip_media_application_logging_configuration: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
 }
 impl PutSipMediaApplicationLoggingConfigurationInput {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(&self) -> ::std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> ::std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
     /// <p>The actual logging configuration.</p>
-    pub fn sip_media_application_logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SipMediaApplicationLoggingConfiguration> {
+    pub fn sip_media_application_logging_configuration(&self) -> ::std::option::Option<& crate::types::SipMediaApplicationLoggingConfiguration> {
         self.sip_media_application_logging_configuration.as_ref()
     }
 }
 impl PutSipMediaApplicationLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutSipMediaApplicationLoggingConfigurationInput`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationInputBuilder {
         crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutSipMediaApplicationLoggingConfigurationInput`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSipMediaApplicationLoggingConfigurationInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) sip_media_application_logging_configuration:
-        ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
+    pub(crate) sip_media_application_logging_configuration: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
 }
 impl PutSipMediaApplicationLoggingConfigurationInputBuilder {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sip_media_application_id = input;
-        self
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sip_media_application_id = input; self
+    }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
     }
     /// <p>The actual logging configuration.</p>
-    pub fn sip_media_application_logging_configuration(
-        mut self,
-        input: crate::types::SipMediaApplicationLoggingConfiguration,
-    ) -> Self {
+    pub fn sip_media_application_logging_configuration(mut self, input: crate::types::SipMediaApplicationLoggingConfiguration) -> Self {
         self.sip_media_application_logging_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The actual logging configuration.</p>
-    pub fn set_sip_media_application_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
-    ) -> Self {
-        self.sip_media_application_logging_configuration = input;
-        self
+    pub fn set_sip_media_application_logging_configuration(mut self, input: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>) -> Self {
+        self.sip_media_application_logging_configuration = input; self
+    }
+    /// <p>The actual logging configuration.</p>
+    pub fn get_sip_media_application_logging_configuration(&self) -> &::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration> {
+        &self.sip_media_application_logging_configuration
     }
     /// Consumes the builder and constructs a [`PutSipMediaApplicationLoggingConfigurationInput`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationInput {
                 sip_media_application_id: self.sip_media_application_id
@@ -85,3 +73,4 @@ impl PutSipMediaApplicationLoggingConfigurationInputBuilder {
         )
     }
 }
+

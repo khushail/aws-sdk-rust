@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIndexInput {
+pub struct DescribeIndexInput  {
     /// <p>The index name.</p>
     #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIndexInput {
     /// <p>The index name.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeIndexInput {
 
 /// A builder for [`DescribeIndexInput`](crate::operation::describe_index::DescribeIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIndexInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeIndexInputBuilder {
     }
     /// <p>The index name.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
+    }
+    /// <p>The index name.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// Consumes the builder and constructs a [`DescribeIndexInput`](crate::operation::describe_index::DescribeIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_index::DescribeIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_index::DescribeIndexInput {
-            index_name: self.index_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_index::DescribeIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_index::DescribeIndexInput {
+                index_name: self.index_name
+                ,
+            }
+        )
     }
 }
+

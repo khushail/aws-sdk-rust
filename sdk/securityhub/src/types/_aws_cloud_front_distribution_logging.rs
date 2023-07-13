@@ -3,7 +3,7 @@
 /// <p>A complex type that controls whether access logs are written for the CloudFront distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionLogging {
+pub struct AwsCloudFrontDistributionLogging  {
     /// <p>The S3 bucket to store the access logs in.</p>
     #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct AwsCloudFrontDistributionLogging {
 }
 impl AwsCloudFrontDistributionLogging {
     /// <p>The S3 bucket to store the access logs in.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>With this field, you can enable or disable the selected distribution.</p>
@@ -31,7 +31,7 @@ impl AwsCloudFrontDistributionLogging {
         self.include_cookies
     }
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl AwsCloudFrontDistributionLogging {
 
 /// A builder for [`AwsCloudFrontDistributionLogging`](crate::types::AwsCloudFrontDistributionLogging).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionLoggingBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -61,8 +59,11 @@ impl AwsCloudFrontDistributionLoggingBuilder {
     }
     /// <p>The S3 bucket to store the access logs in.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
+    }
+    /// <p>The S3 bucket to store the access logs in.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>With this field, you can enable or disable the selected distribution.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -71,8 +72,11 @@ impl AwsCloudFrontDistributionLoggingBuilder {
     }
     /// <p>With this field, you can enable or disable the selected distribution.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>With this field, you can enable or disable the selected distribution.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
     pub fn include_cookies(mut self, input: bool) -> Self {
@@ -81,8 +85,11 @@ impl AwsCloudFrontDistributionLoggingBuilder {
     }
     /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
     pub fn set_include_cookies(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_cookies = input;
-        self
+        self.include_cookies = input; self
+    }
+    /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
+    pub fn get_include_cookies(&self) -> &::std::option::Option<bool> {
+        &self.include_cookies
     }
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,26 @@ impl AwsCloudFrontDistributionLoggingBuilder {
     }
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
+    }
+    /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionLogging`](crate::types::AwsCloudFrontDistributionLogging).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionLogging {
         crate::types::AwsCloudFrontDistributionLogging {
-            bucket: self.bucket,
-            enabled: self.enabled.unwrap_or_default(),
-            include_cookies: self.include_cookies.unwrap_or_default(),
-            prefix: self.prefix,
+            bucket: self.bucket
+            ,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            include_cookies: self.include_cookies
+                .unwrap_or_default()
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

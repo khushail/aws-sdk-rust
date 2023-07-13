@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectionInput {
+pub struct DeleteConnectionInput  {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
@@ -13,27 +13,24 @@ pub struct DeleteConnectionInput {
 }
 impl DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_instance_arn(&self) -> ::std::option::Option<& str> {
         self.replication_instance_arn.as_deref()
     }
 }
 impl DeleteConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionInputBuilder {
         crate::operation::delete_connection::builders::DeleteConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectionInputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
@@ -46,35 +43,35 @@ impl DeleteConnectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.replication_instance_arn = input;
-        self
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.replication_instance_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
     }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_connection::DeleteConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_connection::DeleteConnectionInput {
-            endpoint_arn: self.endpoint_arn,
-            replication_instance_arn: self.replication_instance_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_connection::DeleteConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_connection::DeleteConnectionInput {
+                endpoint_arn: self.endpoint_arn
+                ,
+                replication_instance_arn: self.replication_instance_arn
+                ,
+            }
+        )
     }
 }
+

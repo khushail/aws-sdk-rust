@@ -3,14 +3,14 @@
 /// <p>An object that represents the current status of a route.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteStatus {
+pub struct RouteStatus  {
     /// <p>The current status for the route.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RouteStatusCode>,
 }
 impl RouteStatus {
     /// <p>The current status for the route.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RouteStatusCode> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RouteStatusCode> {
         self.status.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl RouteStatus {
 
 /// A builder for [`RouteStatus`](crate::types::RouteStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RouteStatusCode>,
 }
@@ -36,17 +34,19 @@ impl RouteStatusBuilder {
         self
     }
     /// <p>The current status for the route.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteStatusCode>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RouteStatusCode>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The current status for the route.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RouteStatusCode> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RouteStatus`](crate::types::RouteStatus).
     pub fn build(self) -> crate::types::RouteStatus {
         crate::types::RouteStatus {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

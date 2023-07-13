@@ -3,7 +3,7 @@
 /// <p>The number of functions and amount of storage in use.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountUsage {
+pub struct AccountUsage  {
     /// <p>The amount of storage space, in bytes, that's being used by deployment packages and layer archives.</p>
     #[doc(hidden)]
     pub total_code_size: i64,
@@ -30,9 +30,7 @@ impl AccountUsage {
 
 /// A builder for [`AccountUsage`](crate::types::AccountUsage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountUsageBuilder {
     pub(crate) total_code_size: ::std::option::Option<i64>,
     pub(crate) function_count: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl AccountUsageBuilder {
     }
     /// <p>The amount of storage space, in bytes, that's being used by deployment packages and layer archives.</p>
     pub fn set_total_code_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_code_size = input;
-        self
+        self.total_code_size = input; self
+    }
+    /// <p>The amount of storage space, in bytes, that's being used by deployment packages and layer archives.</p>
+    pub fn get_total_code_size(&self) -> &::std::option::Option<i64> {
+        &self.total_code_size
     }
     /// <p>The number of Lambda functions.</p>
     pub fn function_count(mut self, input: i64) -> Self {
@@ -55,14 +56,22 @@ impl AccountUsageBuilder {
     }
     /// <p>The number of Lambda functions.</p>
     pub fn set_function_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.function_count = input;
-        self
+        self.function_count = input; self
+    }
+    /// <p>The number of Lambda functions.</p>
+    pub fn get_function_count(&self) -> &::std::option::Option<i64> {
+        &self.function_count
     }
     /// Consumes the builder and constructs a [`AccountUsage`](crate::types::AccountUsage).
     pub fn build(self) -> crate::types::AccountUsage {
         crate::types::AccountUsage {
-            total_code_size: self.total_code_size.unwrap_or_default(),
-            function_count: self.function_count.unwrap_or_default(),
+            total_code_size: self.total_code_size
+                .unwrap_or_default()
+            ,
+            function_count: self.function_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

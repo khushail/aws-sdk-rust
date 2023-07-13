@@ -3,7 +3,7 @@
 /// <p>Configuration options for zone awareness.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
+pub struct AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails  {
     /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
     #[doc(hidden)]
     pub availability_zone_count: i32,
@@ -16,16 +16,14 @@ impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
 }
 impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
-    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsBuilder {
         crate::types::builders::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsBuilder {
     pub(crate) availability_zone_count: ::std::option::Option<i32>,
 }
@@ -37,15 +35,19 @@ impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsBuilder {
     }
     /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
     pub fn set_availability_zone_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.availability_zone_count = input;
-        self
+        self.availability_zone_count = input; self
+    }
+    /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
+    pub fn get_availability_zone_count(&self) -> &::std::option::Option<i32> {
+        &self.availability_zone_count
     }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
+    pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
         crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
-            availability_zone_count: self.availability_zone_count.unwrap_or_default(),
+            availability_zone_count: self.availability_zone_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

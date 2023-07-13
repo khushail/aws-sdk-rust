@@ -2,56 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCalculationExecutionStatusInput {
+pub struct GetCalculationExecutionStatusInput  {
     /// <p>The calculation execution UUID.</p>
     #[doc(hidden)]
     pub calculation_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCalculationExecutionStatusInput {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn calculation_execution_id(&self) -> ::std::option::Option<& str> {
         self.calculation_execution_id.as_deref()
     }
 }
 impl GetCalculationExecutionStatusInput {
     /// Creates a new builder-style object to manufacture [`GetCalculationExecutionStatusInput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusInput).
-    pub fn builder() -> crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusInputBuilder {
         crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCalculationExecutionStatusInput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionStatusInputBuilder {
     pub(crate) calculation_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCalculationExecutionStatusInputBuilder {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.calculation_execution_id = input;
-        self
+    pub fn set_calculation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.calculation_execution_id = input; self
+    }
+    /// <p>The calculation execution UUID.</p>
+    pub fn get_calculation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculation_execution_id
     }
     /// Consumes the builder and constructs a [`GetCalculationExecutionStatusInput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusInput {
                 calculation_execution_id: self.calculation_execution_id
@@ -60,3 +50,4 @@ impl GetCalculationExecutionStatusInputBuilder {
         )
     }
 }
+

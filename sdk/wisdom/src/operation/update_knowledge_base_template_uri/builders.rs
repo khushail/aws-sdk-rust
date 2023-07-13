@@ -3,91 +3,100 @@ pub use crate::operation::update_knowledge_base_template_uri::_update_knowledge_
 
 pub use crate::operation::update_knowledge_base_template_uri::_update_knowledge_base_template_uri_input::UpdateKnowledgeBaseTemplateUriInputBuilder;
 
+impl UpdateKnowledgeBaseTemplateUriInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_knowledge_base_template_uri();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateKnowledgeBaseTemplateUri`.
-///
+/// 
 /// <p>Updates the template URI of a knowledge base. This is only supported for knowledge bases of type EXTERNAL. Include a single variable in <code>${variable}</code> format; this interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce article, it has an <code>Id</code> value, and you can set the template URI to <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKnowledgeBaseTemplateUriFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder,
 }
-impl UpdateKnowledgeBaseTemplateUriFluentBuilder {
+impl UpdateKnowledgeBaseTemplateUriFluentBuilder  {
     /// Creates a new `UpdateKnowledgeBaseTemplateUri`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateKnowledgeBaseTemplateUri as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUri, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUri, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUri, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
+    }
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_knowledge_base_id()
     }
     /// <p>The template URI to update.</p>
     pub fn template_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,4 +108,9 @@ impl UpdateKnowledgeBaseTemplateUriFluentBuilder {
         self.inner = self.inner.set_template_uri(input);
         self
     }
+    /// <p>The template URI to update.</p>
+    pub fn get_template_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_uri()
+    }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Device attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceData {
+pub struct DeviceData  {
     /// <p>The ARN of a device.</p>
     #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
@@ -46,55 +46,55 @@ pub struct DeviceData {
 }
 impl DeviceData {
     /// <p>The ARN of a device.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The serial number of a device.</p>
-    pub fn device_serial_number(&self) -> ::std::option::Option<&str> {
+    pub fn device_serial_number(&self) -> ::std::option::Option<& str> {
         self.device_serial_number.as_deref()
     }
     /// <p>The type of a device.</p>
-    pub fn device_type(&self) -> ::std::option::Option<&str> {
+    pub fn device_type(&self) -> ::std::option::Option<& str> {
         self.device_type.as_deref()
     }
     /// <p>The name of a device.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The software version of a device.</p>
-    pub fn software_version(&self) -> ::std::option::Option<&str> {
+    pub fn software_version(&self) -> ::std::option::Option<& str> {
         self.software_version.as_deref()
     }
     /// <p>The MAC address of a device.</p>
-    pub fn mac_address(&self) -> ::std::option::Option<&str> {
+    pub fn mac_address(&self) -> ::std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>The status of a device.</p>
-    pub fn device_status(&self) -> ::std::option::Option<&crate::types::DeviceStatus> {
+    pub fn device_status(&self) -> ::std::option::Option<& crate::types::DeviceStatus> {
         self.device_status.as_ref()
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> ::std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn network_profile_name(&self) -> ::std::option::Option<& str> {
         self.network_profile_name.as_deref()
     }
     /// <p>The room ARN associated with a device.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The name of the room associated with a device.</p>
-    pub fn room_name(&self) -> ::std::option::Option<&str> {
+    pub fn room_name(&self) -> ::std::option::Option<& str> {
         self.room_name.as_deref()
     }
     /// <p>Detailed information about a device's status.</p>
-    pub fn device_status_info(&self) -> ::std::option::Option<&crate::types::DeviceStatusInfo> {
+    pub fn device_status_info(&self) -> ::std::option::Option<& crate::types::DeviceStatusInfo> {
         self.device_status_info.as_ref()
     }
     /// <p>The time (in epoch) when the device data was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -107,9 +107,7 @@ impl DeviceData {
 
 /// A builder for [`DeviceData`](crate::types::DeviceData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceDataBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_serial_number: ::std::option::Option<::std::string::String>,
@@ -133,24 +131,24 @@ impl DeviceDataBuilder {
     }
     /// <p>The ARN of a device.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
+    }
+    /// <p>The ARN of a device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
     }
     /// <p>The serial number of a device.</p>
-    pub fn device_serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number of a device.</p>
-    pub fn set_device_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.device_serial_number = input;
-        self
+    pub fn set_device_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.device_serial_number = input; self
+    }
+    /// <p>The serial number of a device.</p>
+    pub fn get_device_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_serial_number
     }
     /// <p>The type of a device.</p>
     pub fn device_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,8 +157,11 @@ impl DeviceDataBuilder {
     }
     /// <p>The type of a device.</p>
     pub fn set_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_type = input;
-        self
+        self.device_type = input; self
+    }
+    /// <p>The type of a device.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_type
     }
     /// <p>The name of a device.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,24 +170,24 @@ impl DeviceDataBuilder {
     }
     /// <p>The name of a device.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
+    }
+    /// <p>The name of a device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>The software version of a device.</p>
-    pub fn software_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn software_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.software_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The software version of a device.</p>
-    pub fn set_software_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.software_version = input;
-        self
+    pub fn set_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.software_version = input; self
+    }
+    /// <p>The software version of a device.</p>
+    pub fn get_software_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software_version
     }
     /// <p>The MAC address of a device.</p>
     pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,8 +196,11 @@ impl DeviceDataBuilder {
     }
     /// <p>The MAC address of a device.</p>
     pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
+    }
+    /// <p>The MAC address of a device.</p>
+    pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_address
     }
     /// <p>The status of a device.</p>
     pub fn device_status(mut self, input: crate::types::DeviceStatus) -> Self {
@@ -204,44 +208,38 @@ impl DeviceDataBuilder {
         self
     }
     /// <p>The status of a device.</p>
-    pub fn set_device_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatus>,
-    ) -> Self {
-        self.device_status = input;
-        self
+    pub fn set_device_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
+        self.device_status = input; self
+    }
+    /// <p>The status of a device.</p>
+    pub fn get_device_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
+        &self.device_status
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn set_network_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_profile_arn = input;
-        self
+    pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_profile_arn = input; self
+    }
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_profile_arn
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn set_network_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_profile_name = input;
-        self
+    pub fn set_network_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_profile_name = input; self
+    }
+    /// <p>The name of the network profile associated with a device.</p>
+    pub fn get_network_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_profile_name
     }
     /// <p>The room ARN associated with a device.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -250,8 +248,11 @@ impl DeviceDataBuilder {
     }
     /// <p>The room ARN associated with a device.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
+    }
+    /// <p>The room ARN associated with a device.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
     }
     /// <p>The name of the room associated with a device.</p>
     pub fn room_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -260,8 +261,11 @@ impl DeviceDataBuilder {
     }
     /// <p>The name of the room associated with a device.</p>
     pub fn set_room_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_name = input;
-        self
+        self.room_name = input; self
+    }
+    /// <p>The name of the room associated with a device.</p>
+    pub fn get_room_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_name
     }
     /// <p>Detailed information about a device's status.</p>
     pub fn device_status_info(mut self, input: crate::types::DeviceStatusInfo) -> Self {
@@ -269,12 +273,12 @@ impl DeviceDataBuilder {
         self
     }
     /// <p>Detailed information about a device's status.</p>
-    pub fn set_device_status_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatusInfo>,
-    ) -> Self {
-        self.device_status_info = input;
-        self
+    pub fn set_device_status_info(mut self, input: ::std::option::Option<crate::types::DeviceStatusInfo>) -> Self {
+        self.device_status_info = input; self
+    }
+    /// <p>Detailed information about a device's status.</p>
+    pub fn get_device_status_info(&self) -> &::std::option::Option<crate::types::DeviceStatusInfo> {
+        &self.device_status_info
     }
     /// <p>The time (in epoch) when the device data was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -282,29 +286,43 @@ impl DeviceDataBuilder {
         self
     }
     /// <p>The time (in epoch) when the device data was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
+    }
+    /// <p>The time (in epoch) when the device data was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`DeviceData`](crate::types::DeviceData).
     pub fn build(self) -> crate::types::DeviceData {
         crate::types::DeviceData {
-            device_arn: self.device_arn,
-            device_serial_number: self.device_serial_number,
-            device_type: self.device_type,
-            device_name: self.device_name,
-            software_version: self.software_version,
-            mac_address: self.mac_address,
-            device_status: self.device_status,
-            network_profile_arn: self.network_profile_arn,
-            network_profile_name: self.network_profile_name,
-            room_arn: self.room_arn,
-            room_name: self.room_name,
-            device_status_info: self.device_status_info,
-            created_time: self.created_time,
+            device_arn: self.device_arn
+            ,
+            device_serial_number: self.device_serial_number
+            ,
+            device_type: self.device_type
+            ,
+            device_name: self.device_name
+            ,
+            software_version: self.software_version
+            ,
+            mac_address: self.mac_address
+            ,
+            device_status: self.device_status
+            ,
+            network_profile_arn: self.network_profile_arn
+            ,
+            network_profile_name: self.network_profile_name
+            ,
+            room_arn: self.room_arn
+            ,
+            room_name: self.room_name
+            ,
+            device_status_info: self.device_status_info
+            ,
+            created_time: self.created_time
+            ,
         }
     }
 }
+

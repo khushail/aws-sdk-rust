@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSkillAuthorizationInput {
+pub struct DeleteSkillAuthorizationInput  {
     /// <p>The unique identifier of a skill.</p>
     #[doc(hidden)]
     pub skill_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DeleteSkillAuthorizationInput {
 }
 impl DeleteSkillAuthorizationInput {
     /// <p>The unique identifier of a skill.</p>
-    pub fn skill_id(&self) -> ::std::option::Option<&str> {
+    pub fn skill_id(&self) -> ::std::option::Option<& str> {
         self.skill_id.as_deref()
     }
     /// <p>The room that the skill is authorized for.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
 }
 impl DeleteSkillAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSkillAuthorizationInput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder {
         crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSkillAuthorizationInput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSkillAuthorizationInputBuilder {
     pub(crate) skill_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl DeleteSkillAuthorizationInputBuilder {
     }
     /// <p>The unique identifier of a skill.</p>
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_id = input;
-        self
+        self.skill_id = input; self
+    }
+    /// <p>The unique identifier of a skill.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
     }
     /// <p>The room that the skill is authorized for.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl DeleteSkillAuthorizationInputBuilder {
     }
     /// <p>The room that the skill is authorized for.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
+    }
+    /// <p>The room that the skill is authorized for.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
     }
     /// Consumes the builder and constructs a [`DeleteSkillAuthorizationInput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput {
-                skill_id: self.skill_id,
-                room_arn: self.room_arn,
-            },
+                skill_id: self.skill_id
+                ,
+                room_arn: self.room_arn
+                ,
+            }
         )
     }
 }
+

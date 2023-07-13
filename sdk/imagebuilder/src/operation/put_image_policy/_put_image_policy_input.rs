@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutImagePolicyInput {
+pub struct PutImagePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
     #[doc(hidden)]
     pub image_arn: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct PutImagePolicyInput {
 }
 impl PutImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
-    pub fn image_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_arn(&self) -> ::std::option::Option<& str> {
         self.image_arn.as_deref()
     }
     /// <p>The policy to apply.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl PutImagePolicyInput {
 
 /// A builder for [`PutImagePolicyInput`](crate::operation::put_image_policy::PutImagePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutImagePolicyInputBuilder {
     pub(crate) image_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl PutImagePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_arn = input;
-        self
+        self.image_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
     }
     /// <p>The policy to apply.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl PutImagePolicyInputBuilder {
     }
     /// <p>The policy to apply.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
+    }
+    /// <p>The policy to apply.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutImagePolicyInput`](crate::operation::put_image_policy::PutImagePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_image_policy::PutImagePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_image_policy::PutImagePolicyInput {
-            image_arn: self.image_arn,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_image_policy::PutImagePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_image_policy::PutImagePolicyInput {
+                image_arn: self.image_arn
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

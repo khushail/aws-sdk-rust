@@ -3,14 +3,14 @@
 /// <p>Represents the output of a <code>CreateIndex</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateIndexResponse {
+pub struct BatchCreateIndexResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn object_identifier(&self) -> ::std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl BatchCreateIndexResponse {
 
 /// A builder for [`BatchCreateIndexResponse`](crate::types::BatchCreateIndexResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateIndexResponseBuilder {
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateIndexResponseBuilder {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-    pub fn object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.object_identifier = input;
-        self
+    pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.object_identifier = input; self
+    }
+    /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
     }
     /// Consumes the builder and constructs a [`BatchCreateIndexResponse`](crate::types::BatchCreateIndexResponse).
     pub fn build(self) -> crate::types::BatchCreateIndexResponse {
         crate::types::BatchCreateIndexResponse {
-            object_identifier: self.object_identifier,
+            object_identifier: self.object_identifier
+            ,
         }
     }
 }
+

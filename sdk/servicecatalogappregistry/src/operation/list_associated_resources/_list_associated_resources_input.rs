@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssociatedResourcesInput {
+pub struct ListAssociatedResourcesInput  {
     /// <p> The name, ID, or ARN of the application. </p>
     #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListAssociatedResourcesInput {
 }
 impl ListAssociatedResourcesInput {
     /// <p> The name, ID, or ARN of the application. </p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
@@ -29,18 +29,14 @@ impl ListAssociatedResourcesInput {
 }
 impl ListAssociatedResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedResourcesInput`](crate::operation::list_associated_resources::ListAssociatedResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder {
         crate::operation::list_associated_resources::builders::ListAssociatedResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedResourcesInput`](crate::operation::list_associated_resources::ListAssociatedResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedResourcesInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -54,8 +50,11 @@ impl ListAssociatedResourcesInputBuilder {
     }
     /// <p> The name, ID, or ARN of the application. </p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
+    }
+    /// <p> The name, ID, or ARN of the application. </p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,8 +63,11 @@ impl ListAssociatedResourcesInputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -74,22 +76,24 @@ impl ListAssociatedResourcesInputBuilder {
     }
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssociatedResourcesInput`](crate::operation::list_associated_resources::ListAssociatedResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_associated_resources::ListAssociatedResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_associated_resources::ListAssociatedResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_associated_resources::ListAssociatedResourcesInput {
-                application: self.application,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                application: self.application
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

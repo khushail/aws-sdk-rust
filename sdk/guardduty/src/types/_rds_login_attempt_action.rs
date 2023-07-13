@@ -3,7 +3,7 @@
 /// <p>Indicates that a login attempt was made to the potentially compromised database from a remote IP address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdsLoginAttemptAction {
+pub struct RdsLoginAttemptAction  {
     /// <p>Contains information about the remote IP address of the connection.</p>
     #[doc(hidden)]
     pub remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
@@ -13,11 +13,11 @@ pub struct RdsLoginAttemptAction {
 }
 impl RdsLoginAttemptAction {
     /// <p>Contains information about the remote IP address of the connection.</p>
-    pub fn remote_ip_details(&self) -> ::std::option::Option<&crate::types::RemoteIpDetails> {
+    pub fn remote_ip_details(&self) -> ::std::option::Option<& crate::types::RemoteIpDetails> {
         self.remote_ip_details.as_ref()
     }
     /// <p>Indicates the login attributes used in the login attempt.</p>
-    pub fn login_attributes(&self) -> ::std::option::Option<&[crate::types::LoginAttribute]> {
+    pub fn login_attributes(&self) -> ::std::option::Option<& [crate::types::LoginAttribute]> {
         self.login_attributes.as_deref()
     }
 }
@@ -30,13 +30,10 @@ impl RdsLoginAttemptAction {
 
 /// A builder for [`RdsLoginAttemptAction`](crate::types::RdsLoginAttemptAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsLoginAttemptActionBuilder {
     pub(crate) remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
-    pub(crate) login_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>,
+    pub(crate) login_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>,
 }
 impl RdsLoginAttemptActionBuilder {
     /// <p>Contains information about the remote IP address of the connection.</p>
@@ -45,12 +42,12 @@ impl RdsLoginAttemptActionBuilder {
         self
     }
     /// <p>Contains information about the remote IP address of the connection.</p>
-    pub fn set_remote_ip_details(
-        mut self,
-        input: ::std::option::Option<crate::types::RemoteIpDetails>,
-    ) -> Self {
-        self.remote_ip_details = input;
-        self
+    pub fn set_remote_ip_details(mut self, input: ::std::option::Option<crate::types::RemoteIpDetails>) -> Self {
+        self.remote_ip_details = input; self
+    }
+    /// <p>Contains information about the remote IP address of the connection.</p>
+    pub fn get_remote_ip_details(&self) -> &::std::option::Option<crate::types::RemoteIpDetails> {
+        &self.remote_ip_details
     }
     /// Appends an item to `login_attributes`.
     ///
@@ -59,23 +56,26 @@ impl RdsLoginAttemptActionBuilder {
     /// <p>Indicates the login attributes used in the login attempt.</p>
     pub fn login_attributes(mut self, input: crate::types::LoginAttribute) -> Self {
         let mut v = self.login_attributes.unwrap_or_default();
-        v.push(input);
-        self.login_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.login_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates the login attributes used in the login attempt.</p>
-    pub fn set_login_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>,
-    ) -> Self {
-        self.login_attributes = input;
-        self
+    pub fn set_login_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>) -> Self {
+        self.login_attributes = input; self
+    }
+    /// <p>Indicates the login attributes used in the login attempt.</p>
+    pub fn get_login_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>> {
+        &self.login_attributes
     }
     /// Consumes the builder and constructs a [`RdsLoginAttemptAction`](crate::types::RdsLoginAttemptAction).
     pub fn build(self) -> crate::types::RdsLoginAttemptAction {
         crate::types::RdsLoginAttemptAction {
-            remote_ip_details: self.remote_ip_details,
-            login_attributes: self.login_attributes,
+            remote_ip_details: self.remote_ip_details
+            ,
+            login_attributes: self.login_attributes
+            ,
         }
     }
 }
+

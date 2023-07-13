@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>ChildWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChildWorkflowExecutionFailedEventAttributes {
+pub struct ChildWorkflowExecutionFailedEventAttributes  {
     /// <p>The child workflow execution that failed.</p>
     #[doc(hidden)]
     pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
@@ -25,19 +25,19 @@ pub struct ChildWorkflowExecutionFailedEventAttributes {
 }
 impl ChildWorkflowExecutionFailedEventAttributes {
     /// <p>The child workflow execution that failed.</p>
-    pub fn workflow_execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> ::std::option::Option<& crate::types::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The type of the child workflow execution.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The reason for the failure (if provided).</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The details of the failure (if provided).</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -58,9 +58,7 @@ impl ChildWorkflowExecutionFailedEventAttributes {
 
 /// A builder for [`ChildWorkflowExecutionFailedEventAttributes`](crate::types::ChildWorkflowExecutionFailedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChildWorkflowExecutionFailedEventAttributesBuilder {
     pub(crate) workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -76,12 +74,12 @@ impl ChildWorkflowExecutionFailedEventAttributesBuilder {
         self
     }
     /// <p>The child workflow execution that failed.</p>
-    pub fn set_workflow_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
-        self.workflow_execution = input;
-        self
+    pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
+        self.workflow_execution = input; self
+    }
+    /// <p>The child workflow execution that failed.</p>
+    pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        &self.workflow_execution
     }
     /// <p>The type of the child workflow execution.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -89,12 +87,12 @@ impl ChildWorkflowExecutionFailedEventAttributesBuilder {
         self
     }
     /// <p>The type of the child workflow execution.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
-        self.workflow_type = input;
-        self
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
+        self.workflow_type = input; self
+    }
+    /// <p>The type of the child workflow execution.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
     }
     /// <p>The reason for the failure (if provided).</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +101,11 @@ impl ChildWorkflowExecutionFailedEventAttributesBuilder {
     }
     /// <p>The reason for the failure (if provided).</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
+    }
+    /// <p>The reason for the failure (if provided).</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// <p>The details of the failure (if provided).</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,8 +114,11 @@ impl ChildWorkflowExecutionFailedEventAttributesBuilder {
     }
     /// <p>The details of the failure (if provided).</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
+    }
+    /// <p>The details of the failure (if provided).</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(mut self, input: i64) -> Self {
@@ -123,8 +127,11 @@ impl ChildWorkflowExecutionFailedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_initiated_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.initiated_event_id = input;
-        self
+        self.initiated_event_id = input; self
+    }
+    /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_initiated_event_id(&self) -> &::std::option::Option<i64> {
+        &self.initiated_event_id
     }
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
@@ -133,18 +140,30 @@ impl ChildWorkflowExecutionFailedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
+    }
+    /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// Consumes the builder and constructs a [`ChildWorkflowExecutionFailedEventAttributes`](crate::types::ChildWorkflowExecutionFailedEventAttributes).
     pub fn build(self) -> crate::types::ChildWorkflowExecutionFailedEventAttributes {
         crate::types::ChildWorkflowExecutionFailedEventAttributes {
-            workflow_execution: self.workflow_execution,
-            workflow_type: self.workflow_type,
-            reason: self.reason,
-            details: self.details,
-            initiated_event_id: self.initiated_event_id.unwrap_or_default(),
-            started_event_id: self.started_event_id.unwrap_or_default(),
+            workflow_execution: self.workflow_execution
+            ,
+            workflow_type: self.workflow_type
+            ,
+            reason: self.reason
+            ,
+            details: self.details
+            ,
+            initiated_event_id: self.initiated_event_id
+                .unwrap_or_default()
+            ,
+            started_event_id: self.started_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

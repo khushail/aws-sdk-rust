@@ -3,7 +3,7 @@
 /// <p>A proposed grant configuration for a KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KmsGrantConfiguration {
+pub struct KmsGrantConfiguration  {
     /// <p>A list of operations that the grant permits.</p>
     #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantOperation>>,
@@ -22,23 +22,23 @@ pub struct KmsGrantConfiguration {
 }
 impl KmsGrantConfiguration {
     /// <p>A list of operations that the grant permits.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::KmsGrantOperation]> {
+    pub fn operations(&self) -> ::std::option::Option<& [crate::types::KmsGrantOperation]> {
         self.operations.as_deref()
     }
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
-    pub fn grantee_principal(&self) -> ::std::option::Option<&str> {
+    pub fn grantee_principal(&self) -> ::std::option::Option<& str> {
         self.grantee_principal.as_deref()
     }
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
-    pub fn retiring_principal(&self) -> ::std::option::Option<&str> {
+    pub fn retiring_principal(&self) -> ::std::option::Option<& str> {
         self.retiring_principal.as_deref()
     }
     /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
-    pub fn constraints(&self) -> ::std::option::Option<&crate::types::KmsGrantConstraints> {
+    pub fn constraints(&self) -> ::std::option::Option<& crate::types::KmsGrantConstraints> {
         self.constraints.as_ref()
     }
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
-    pub fn issuing_account(&self) -> ::std::option::Option<&str> {
+    pub fn issuing_account(&self) -> ::std::option::Option<& str> {
         self.issuing_account.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl KmsGrantConfiguration {
 
 /// A builder for [`KmsGrantConfiguration`](crate::types::KmsGrantConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KmsGrantConfigurationBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantOperation>>,
     pub(crate) grantee_principal: ::std::option::Option<::std::string::String>,
@@ -69,49 +67,43 @@ impl KmsGrantConfigurationBuilder {
     /// <p>A list of operations that the grant permits.</p>
     pub fn operations(mut self, input: crate::types::KmsGrantOperation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of operations that the grant permits.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantOperation>>,
-    ) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantOperation>>) -> Self {
+        self.operations = input; self
+    }
+    /// <p>A list of operations that the grant permits.</p>
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KmsGrantOperation>> {
+        &self.operations
     }
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
-    pub fn grantee_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grantee_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
-    pub fn set_grantee_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.grantee_principal = input;
-        self
+    pub fn set_grantee_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.grantee_principal = input; self
+    }
+    /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
+    pub fn get_grantee_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grantee_principal
     }
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
-    pub fn retiring_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retiring_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retiring_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
-    pub fn set_retiring_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.retiring_principal = input;
-        self
+    pub fn set_retiring_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.retiring_principal = input; self
+    }
+    /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
+    pub fn get_retiring_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retiring_principal
     }
     /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
     pub fn constraints(mut self, input: crate::types::KmsGrantConstraints) -> Self {
@@ -119,37 +111,40 @@ impl KmsGrantConfigurationBuilder {
         self
     }
     /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
-    pub fn set_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::KmsGrantConstraints>,
-    ) -> Self {
-        self.constraints = input;
-        self
+    pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::KmsGrantConstraints>) -> Self {
+        self.constraints = input; self
+    }
+    /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::KmsGrantConstraints> {
+        &self.constraints
     }
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
-    pub fn issuing_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn issuing_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuing_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
-    pub fn set_issuing_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.issuing_account = input;
-        self
+    pub fn set_issuing_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.issuing_account = input; self
+    }
+    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
+    pub fn get_issuing_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuing_account
     }
     /// Consumes the builder and constructs a [`KmsGrantConfiguration`](crate::types::KmsGrantConfiguration).
     pub fn build(self) -> crate::types::KmsGrantConfiguration {
         crate::types::KmsGrantConfiguration {
-            operations: self.operations,
-            grantee_principal: self.grantee_principal,
-            retiring_principal: self.retiring_principal,
-            constraints: self.constraints,
-            issuing_account: self.issuing_account,
+            operations: self.operations
+            ,
+            grantee_principal: self.grantee_principal
+            ,
+            retiring_principal: self.retiring_principal
+            ,
+            constraints: self.constraints
+            ,
+            issuing_account: self.issuing_account
+            ,
         }
     }
 }
+

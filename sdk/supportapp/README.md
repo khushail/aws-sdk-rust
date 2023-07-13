@@ -27,8 +27,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-supportapp = "0.11.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-supportapp = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -39,8 +39,8 @@ use aws_sdk_supportapp as supportapp;
 
 #[::tokio::main]
 async fn main() -> Result<(), supportapp::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = supportapp::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_supportapp::Client::new(&config);
 
     // ... make some calls with the client
 

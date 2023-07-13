@@ -3,7 +3,7 @@
 /// <p>Provides error information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorInfo {
+pub struct ErrorInfo  {
     /// <p>Error cause.</p>
     #[doc(hidden)]
     pub cause: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ErrorInfo {
 }
 impl ErrorInfo {
     /// <p>Error cause.</p>
-    pub fn cause(&self) -> ::std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<& str> {
         self.cause.as_deref()
     }
     /// <p>Error details.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ErrorInfo {
 
 /// A builder for [`ErrorInfo`](crate::types::ErrorInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorInfoBuilder {
     pub(crate) cause: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ErrorInfoBuilder {
     }
     /// <p>Error cause.</p>
     pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
+    }
+    /// <p>Error cause.</p>
+    pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cause
     }
     /// <p>Error details.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ErrorInfoBuilder {
     }
     /// <p>Error details.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
+    }
+    /// <p>Error details.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`ErrorInfo`](crate::types::ErrorInfo).
     pub fn build(self) -> crate::types::ErrorInfo {
         crate::types::ErrorInfo {
-            cause: self.cause,
-            details: self.details,
+            cause: self.cause
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

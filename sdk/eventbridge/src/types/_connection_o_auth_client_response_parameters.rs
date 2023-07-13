@@ -3,14 +3,14 @@
 /// <p>Contains the client response parameters for the connection when OAuth is specified as the authorization type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionOAuthClientResponseParameters {
+pub struct ConnectionOAuthClientResponseParameters  {
     /// <p>The client ID associated with the response to the connection request.</p>
     #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionOAuthClientResponseParameters {
     /// <p>The client ID associated with the response to the connection request.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ConnectionOAuthClientResponseParameters {
 
 /// A builder for [`ConnectionOAuthClientResponseParameters`](crate::types::ConnectionOAuthClientResponseParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionOAuthClientResponseParametersBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ConnectionOAuthClientResponseParametersBuilder {
     }
     /// <p>The client ID associated with the response to the connection request.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
+    }
+    /// <p>The client ID associated with the response to the connection request.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// Consumes the builder and constructs a [`ConnectionOAuthClientResponseParameters`](crate::types::ConnectionOAuthClientResponseParameters).
     pub fn build(self) -> crate::types::ConnectionOAuthClientResponseParameters {
         crate::types::ConnectionOAuthClientResponseParameters {
-            client_id: self.client_id,
+            client_id: self.client_id
+            ,
         }
     }
 }
+

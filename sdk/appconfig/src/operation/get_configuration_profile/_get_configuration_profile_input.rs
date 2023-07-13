@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfigurationProfileInput {
+pub struct GetConfigurationProfileInput  {
     /// <p>The ID of the application that includes the configuration profile you want to get.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -12,77 +12,65 @@ pub struct GetConfigurationProfileInput {
 }
 impl GetConfigurationProfileInput {
     /// <p>The ID of the application that includes the configuration profile you want to get.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the configuration profile that you want to get.</p>
-    pub fn configuration_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_profile_id(&self) -> ::std::option::Option<& str> {
         self.configuration_profile_id.as_deref()
     }
 }
 impl GetConfigurationProfileInput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationProfileInput`](crate::operation::get_configuration_profile::GetConfigurationProfileInput).
-    pub fn builder(
-    ) -> crate::operation::get_configuration_profile::builders::GetConfigurationProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_configuration_profile::builders::GetConfigurationProfileInputBuilder {
         crate::operation::get_configuration_profile::builders::GetConfigurationProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConfigurationProfileInput`](crate::operation::get_configuration_profile::GetConfigurationProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfigurationProfileInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetConfigurationProfileInputBuilder {
     /// <p>The ID of the application that includes the configuration profile you want to get.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application that includes the configuration profile you want to get.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The ID of the application that includes the configuration profile you want to get.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The ID of the configuration profile that you want to get.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the configuration profile that you want to get.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.configuration_profile_id = input;
-        self
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configuration_profile_id = input; self
+    }
+    /// <p>The ID of the configuration profile that you want to get.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
     }
     /// Consumes the builder and constructs a [`GetConfigurationProfileInput`](crate::operation::get_configuration_profile::GetConfigurationProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configuration_profile::GetConfigurationProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_configuration_profile::GetConfigurationProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_configuration_profile::GetConfigurationProfileInput {
-                application_id: self.application_id,
-                configuration_profile_id: self.configuration_profile_id,
-            },
+                application_id: self.application_id
+                ,
+                configuration_profile_id: self.configuration_profile_id
+                ,
+            }
         )
     }
 }
+

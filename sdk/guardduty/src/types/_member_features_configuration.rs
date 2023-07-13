@@ -3,7 +3,7 @@
 /// <p>Contains information about the features for the member account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemberFeaturesConfiguration {
+pub struct MemberFeaturesConfiguration  {
     /// <p>The name of the feature.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OrgFeature>,
@@ -12,22 +12,19 @@ pub struct MemberFeaturesConfiguration {
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>Additional configuration of the feature for the member account.</p>
     #[doc(hidden)]
-    pub additional_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfiguration>>,
+    pub additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfiguration>>,
 }
 impl MemberFeaturesConfiguration {
     /// <p>The name of the feature.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::OrgFeature> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::OrgFeature> {
         self.name.as_ref()
     }
     /// <p>The status of the feature.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FeatureStatus> {
         self.status.as_ref()
     }
     /// <p>Additional configuration of the feature for the member account.</p>
-    pub fn additional_configuration(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MemberAdditionalConfiguration]> {
+    pub fn additional_configuration(&self) -> ::std::option::Option<& [crate::types::MemberAdditionalConfiguration]> {
         self.additional_configuration.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl MemberFeaturesConfiguration {
 
 /// A builder for [`MemberFeaturesConfiguration`](crate::types::MemberFeaturesConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberFeaturesConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeature>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
-    pub(crate) additional_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfiguration>>,
+    pub(crate) additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfiguration>>,
 }
 impl MemberFeaturesConfigurationBuilder {
     /// <p>The name of the feature.</p>
@@ -57,8 +51,11 @@ impl MemberFeaturesConfigurationBuilder {
     }
     /// <p>The name of the feature.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeature>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the feature.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeature> {
+        &self.name
     }
     /// <p>The status of the feature.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
@@ -67,37 +64,41 @@ impl MemberFeaturesConfigurationBuilder {
     }
     /// <p>The status of the feature.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the feature.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.status
     }
     /// Appends an item to `additional_configuration`.
     ///
     /// To override the contents of this collection use [`set_additional_configuration`](Self::set_additional_configuration).
     ///
     /// <p>Additional configuration of the feature for the member account.</p>
-    pub fn additional_configuration(
-        mut self,
-        input: crate::types::MemberAdditionalConfiguration,
-    ) -> Self {
+    pub fn additional_configuration(mut self, input: crate::types::MemberAdditionalConfiguration) -> Self {
         let mut v = self.additional_configuration.unwrap_or_default();
-        v.push(input);
-        self.additional_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.additional_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional configuration of the feature for the member account.</p>
-    pub fn set_additional_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfiguration>>,
-    ) -> Self {
-        self.additional_configuration = input;
-        self
+    pub fn set_additional_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfiguration>>) -> Self {
+        self.additional_configuration = input; self
+    }
+    /// <p>Additional configuration of the feature for the member account.</p>
+    pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfiguration>> {
+        &self.additional_configuration
     }
     /// Consumes the builder and constructs a [`MemberFeaturesConfiguration`](crate::types::MemberFeaturesConfiguration).
     pub fn build(self) -> crate::types::MemberFeaturesConfiguration {
         crate::types::MemberFeaturesConfiguration {
-            name: self.name,
-            status: self.status,
-            additional_configuration: self.additional_configuration,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            additional_configuration: self.additional_configuration
+            ,
         }
     }
 }
+

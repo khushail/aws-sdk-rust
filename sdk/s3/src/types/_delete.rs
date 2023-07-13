@@ -3,8 +3,8 @@
 /// <p>Container for the objects to delete.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Delete {
-    /// <p>The objects to delete.</p>
+pub struct Delete  {
+    /// <p>The object to delete.</p>
     #[doc(hidden)]
     pub objects: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>,
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
@@ -12,8 +12,8 @@ pub struct Delete {
     pub quiet: bool,
 }
 impl Delete {
-    /// <p>The objects to delete.</p>
-    pub fn objects(&self) -> ::std::option::Option<&[crate::types::ObjectIdentifier]> {
+    /// <p>The object to delete.</p>
+    pub fn objects(&self) -> ::std::option::Option<& [crate::types::ObjectIdentifier]> {
         self.objects.as_deref()
     }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
@@ -30,9 +30,7 @@ impl Delete {
 
 /// A builder for [`Delete`](crate::types::Delete).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBuilder {
     pub(crate) objects: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>,
     pub(crate) quiet: ::std::option::Option<bool>,
@@ -42,20 +40,20 @@ impl DeleteBuilder {
     ///
     /// To override the contents of this collection use [`set_objects`](Self::set_objects).
     ///
-    /// <p>The objects to delete.</p>
+    /// <p>The object to delete.</p>
     pub fn objects(mut self, input: crate::types::ObjectIdentifier) -> Self {
         let mut v = self.objects.unwrap_or_default();
-        v.push(input);
-        self.objects = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.objects = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The objects to delete.</p>
-    pub fn set_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>,
-    ) -> Self {
-        self.objects = input;
-        self
+    /// <p>The object to delete.</p>
+    pub fn set_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>) -> Self {
+        self.objects = input; self
+    }
+    /// <p>The object to delete.</p>
+    pub fn get_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>> {
+        &self.objects
     }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub fn quiet(mut self, input: bool) -> Self {
@@ -64,14 +62,21 @@ impl DeleteBuilder {
     }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub fn set_quiet(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.quiet = input;
-        self
+        self.quiet = input; self
+    }
+    /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
+    pub fn get_quiet(&self) -> &::std::option::Option<bool> {
+        &self.quiet
     }
     /// Consumes the builder and constructs a [`Delete`](crate::types::Delete).
     pub fn build(self) -> crate::types::Delete {
         crate::types::Delete {
-            objects: self.objects,
-            quiet: self.quiet.unwrap_or_default(),
+            objects: self.objects
+            ,
+            quiet: self.quiet
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

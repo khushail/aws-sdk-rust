@@ -3,14 +3,14 @@
 /// <p>Displays the properties of the import job, including the ID, Arn, Name, and the status of the Data Store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportJobProperties {
+pub struct ImportJobProperties  {
     /// <p>The AWS-generated id number for the Import job.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-generated name for an Import job.</p>
     #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
-    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
+    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
     #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The time that the Import job was submitted for processing.</p>
@@ -37,43 +37,43 @@ pub struct ImportJobProperties {
 }
 impl ImportJobProperties {
     /// <p>The AWS-generated id number for the Import job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The user-generated name for an Import job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
-    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The time that the Import job was submitted for processing.</p>
-    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the Import job was completed.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The datastore id used when the Import job was created. </p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<& crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn job_output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn job_output_data_config(&self) -> ::std::option::Option<& crate::types::OutputDataConfig> {
         self.job_output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -86,9 +86,7 @@ impl ImportJobProperties {
 
 /// A builder for [`ImportJobProperties`](crate::types::ImportJobProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportJobPropertiesBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -109,8 +107,11 @@ impl ImportJobPropertiesBuilder {
     }
     /// <p>The AWS-generated id number for the Import job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The AWS-generated id number for the Import job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The user-generated name for an Import job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,18 +120,24 @@ impl ImportJobPropertiesBuilder {
     }
     /// <p>The user-generated name for an Import job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
-    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
+    /// <p>The user-generated name for an Import job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
+    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
+    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
+    }
+    /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// <p>The time that the Import job was submitted for processing.</p>
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,12 +145,12 @@ impl ImportJobPropertiesBuilder {
         self
     }
     /// <p>The time that the Import job was submitted for processing.</p>
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.submit_time = input;
-        self
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.submit_time = input; self
+    }
+    /// <p>The time that the Import job was submitted for processing.</p>
+    pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time
     }
     /// <p>The time that the Import job was completed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -151,12 +158,12 @@ impl ImportJobPropertiesBuilder {
         self
     }
     /// <p>The time that the Import job was completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p>The time that the Import job was completed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The datastore id used when the Import job was created. </p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,8 +172,11 @@ impl ImportJobPropertiesBuilder {
     }
     /// <p>The datastore id used when the Import job was created. </p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
+    }
+    /// <p>The datastore id used when the Import job was created. </p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
     }
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
@@ -174,12 +184,12 @@ impl ImportJobPropertiesBuilder {
         self
     }
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
-        self.input_data_config = input;
-        self
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
+        self.input_data_config = input; self
+    }
+    /// <p>The input data configuration that was supplied when the Import job was created.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     pub fn job_output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
@@ -187,28 +197,25 @@ impl ImportJobPropertiesBuilder {
         self
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn set_job_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
-        self.job_output_data_config = input;
-        self
+    pub fn set_job_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
+        self.job_output_data_config = input; self
+    }
+    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    pub fn get_job_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.job_output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_access_role_arn = input;
-        self
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_access_role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
     }
     /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -217,22 +224,36 @@ impl ImportJobPropertiesBuilder {
     }
     /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ImportJobProperties`](crate::types::ImportJobProperties).
     pub fn build(self) -> crate::types::ImportJobProperties {
         crate::types::ImportJobProperties {
-            job_id: self.job_id,
-            job_name: self.job_name,
-            job_status: self.job_status,
-            submit_time: self.submit_time,
-            end_time: self.end_time,
-            datastore_id: self.datastore_id,
-            input_data_config: self.input_data_config,
-            job_output_data_config: self.job_output_data_config,
-            data_access_role_arn: self.data_access_role_arn,
-            message: self.message,
+            job_id: self.job_id
+            ,
+            job_name: self.job_name
+            ,
+            job_status: self.job_status
+            ,
+            submit_time: self.submit_time
+            ,
+            end_time: self.end_time
+            ,
+            datastore_id: self.datastore_id
+            ,
+            input_data_config: self.input_data_config
+            ,
+            job_output_data_config: self.job_output_data_config
+            ,
+            data_access_role_arn: self.data_access_role_arn
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

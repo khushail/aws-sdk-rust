@@ -3,7 +3,7 @@
 /// <p>Used for filtering by a specific topic preference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TopicFilter {
+pub struct TopicFilter  {
     /// <p>The name of a topic on which you wish to apply the filter.</p>
     #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct TopicFilter {
 }
 impl TopicFilter {
     /// <p>The name of a topic on which you wish to apply the filter.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
+    pub fn topic_name(&self) -> ::std::option::Option<& str> {
         self.topic_name.as_deref()
     }
     /// <p>Notes that the default subscription status should be applied to a contact because the contact has not noted their preference for subscribing to a topic.</p>
@@ -30,9 +30,7 @@ impl TopicFilter {
 
 /// A builder for [`TopicFilter`](crate::types::TopicFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicFilterBuilder {
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
     pub(crate) use_default_if_preference_unavailable: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl TopicFilterBuilder {
     }
     /// <p>The name of a topic on which you wish to apply the filter.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
+    }
+    /// <p>The name of a topic on which you wish to apply the filter.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_name
     }
     /// <p>Notes that the default subscription status should be applied to a contact because the contact has not noted their preference for subscribing to a topic.</p>
     pub fn use_default_if_preference_unavailable(mut self, input: bool) -> Self {
@@ -54,20 +55,22 @@ impl TopicFilterBuilder {
         self
     }
     /// <p>Notes that the default subscription status should be applied to a contact because the contact has not noted their preference for subscribing to a topic.</p>
-    pub fn set_use_default_if_preference_unavailable(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.use_default_if_preference_unavailable = input;
-        self
+    pub fn set_use_default_if_preference_unavailable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_default_if_preference_unavailable = input; self
+    }
+    /// <p>Notes that the default subscription status should be applied to a contact because the contact has not noted their preference for subscribing to a topic.</p>
+    pub fn get_use_default_if_preference_unavailable(&self) -> &::std::option::Option<bool> {
+        &self.use_default_if_preference_unavailable
     }
     /// Consumes the builder and constructs a [`TopicFilter`](crate::types::TopicFilter).
     pub fn build(self) -> crate::types::TopicFilter {
         crate::types::TopicFilter {
-            topic_name: self.topic_name,
-            use_default_if_preference_unavailable: self
-                .use_default_if_preference_unavailable
-                .unwrap_or_default(),
+            topic_name: self.topic_name
+            ,
+            use_default_if_preference_unavailable: self.use_default_if_preference_unavailable
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

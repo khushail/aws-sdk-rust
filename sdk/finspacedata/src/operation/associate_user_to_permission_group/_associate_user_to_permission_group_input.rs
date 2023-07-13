@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateUserToPermissionGroupInput {
+pub struct AssociateUserToPermissionGroupInput  {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
     pub permission_group_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct AssociateUserToPermissionGroupInput {
 }
 impl AssociateUserToPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> ::std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
     /// <p>The unique identifier for the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl AssociateUserToPermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupInput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupInput).
-    pub fn builder() -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupInputBuilder{
+    pub fn builder() -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupInputBuilder {
         crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateUserToPermissionGroupInput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateUserToPermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct AssociateUserToPermissionGroupInputBuilder {
 }
 impl AssociateUserToPermissionGroupInputBuilder {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.permission_group_id = input;
-        self
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.permission_group_id = input; self
+    }
+    /// <p>The unique identifier for the permission group.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_group_id
     }
     /// <p>The unique identifier for the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl AssociateUserToPermissionGroupInputBuilder {
     }
     /// <p>The unique identifier for the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The unique identifier for the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,16 +76,14 @@ impl AssociateUserToPermissionGroupInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`AssociateUserToPermissionGroupInput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupInput {
                 permission_group_id: self.permission_group_id
@@ -100,3 +96,4 @@ impl AssociateUserToPermissionGroupInputBuilder {
         )
     }
 }
+

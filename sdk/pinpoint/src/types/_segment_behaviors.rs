@@ -3,14 +3,14 @@
 /// <p>Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentBehaviors {
+pub struct SegmentBehaviors  {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
     #[doc(hidden)]
     pub recency: ::std::option::Option<crate::types::RecencyDimension>,
 }
 impl SegmentBehaviors {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
-    pub fn recency(&self) -> ::std::option::Option<&crate::types::RecencyDimension> {
+    pub fn recency(&self) -> ::std::option::Option<& crate::types::RecencyDimension> {
         self.recency.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl SegmentBehaviors {
 
 /// A builder for [`SegmentBehaviors`](crate::types::SegmentBehaviors).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentBehaviorsBuilder {
     pub(crate) recency: ::std::option::Option<crate::types::RecencyDimension>,
 }
@@ -36,17 +34,19 @@ impl SegmentBehaviorsBuilder {
         self
     }
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
-    pub fn set_recency(
-        mut self,
-        input: ::std::option::Option<crate::types::RecencyDimension>,
-    ) -> Self {
-        self.recency = input;
-        self
+    pub fn set_recency(mut self, input: ::std::option::Option<crate::types::RecencyDimension>) -> Self {
+        self.recency = input; self
+    }
+    /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
+    pub fn get_recency(&self) -> &::std::option::Option<crate::types::RecencyDimension> {
+        &self.recency
     }
     /// Consumes the builder and constructs a [`SegmentBehaviors`](crate::types::SegmentBehaviors).
     pub fn build(self) -> crate::types::SegmentBehaviors {
         crate::types::SegmentBehaviors {
-            recency: self.recency,
+            recency: self.recency
+            ,
         }
     }
 }
+

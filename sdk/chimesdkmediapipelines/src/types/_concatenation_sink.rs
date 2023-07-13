@@ -3,24 +3,21 @@
 /// <p>The data sink of the configuration object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConcatenationSink {
+pub struct ConcatenationSink  {
     /// <p>The type of data sink in the configuration object.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ConcatenationSinkType>,
     /// <p>The configuration settings for an Amazon S3 bucket sink.</p>
     #[doc(hidden)]
-    pub s3_bucket_sink_configuration:
-        ::std::option::Option<crate::types::S3BucketSinkConfiguration>,
+    pub s3_bucket_sink_configuration: ::std::option::Option<crate::types::S3BucketSinkConfiguration>,
 }
 impl ConcatenationSink {
     /// <p>The type of data sink in the configuration object.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConcatenationSinkType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ConcatenationSinkType> {
         self.r#type.as_ref()
     }
     /// <p>The configuration settings for an Amazon S3 bucket sink.</p>
-    pub fn s3_bucket_sink_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3BucketSinkConfiguration> {
+    pub fn s3_bucket_sink_configuration(&self) -> ::std::option::Option<& crate::types::S3BucketSinkConfiguration> {
         self.s3_bucket_sink_configuration.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl ConcatenationSink {
 
 /// A builder for [`ConcatenationSink`](crate::types::ConcatenationSink).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConcatenationSinkBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ConcatenationSinkType>,
-    pub(crate) s3_bucket_sink_configuration:
-        ::std::option::Option<crate::types::S3BucketSinkConfiguration>,
+    pub(crate) s3_bucket_sink_configuration: ::std::option::Option<crate::types::S3BucketSinkConfiguration>,
 }
 impl ConcatenationSinkBuilder {
     /// <p>The type of data sink in the configuration object.</p>
@@ -48,34 +42,34 @@ impl ConcatenationSinkBuilder {
         self
     }
     /// <p>The type of data sink in the configuration object.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConcatenationSinkType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ConcatenationSinkType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of data sink in the configuration object.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ConcatenationSinkType> {
+        &self.r#type
     }
     /// <p>The configuration settings for an Amazon S3 bucket sink.</p>
-    pub fn s3_bucket_sink_configuration(
-        mut self,
-        input: crate::types::S3BucketSinkConfiguration,
-    ) -> Self {
+    pub fn s3_bucket_sink_configuration(mut self, input: crate::types::S3BucketSinkConfiguration) -> Self {
         self.s3_bucket_sink_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings for an Amazon S3 bucket sink.</p>
-    pub fn set_s3_bucket_sink_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3BucketSinkConfiguration>,
-    ) -> Self {
-        self.s3_bucket_sink_configuration = input;
-        self
+    pub fn set_s3_bucket_sink_configuration(mut self, input: ::std::option::Option<crate::types::S3BucketSinkConfiguration>) -> Self {
+        self.s3_bucket_sink_configuration = input; self
+    }
+    /// <p>The configuration settings for an Amazon S3 bucket sink.</p>
+    pub fn get_s3_bucket_sink_configuration(&self) -> &::std::option::Option<crate::types::S3BucketSinkConfiguration> {
+        &self.s3_bucket_sink_configuration
     }
     /// Consumes the builder and constructs a [`ConcatenationSink`](crate::types::ConcatenationSink).
     pub fn build(self) -> crate::types::ConcatenationSink {
         crate::types::ConcatenationSink {
-            r#type: self.r#type,
-            s3_bucket_sink_configuration: self.s3_bucket_sink_configuration,
+            r#type: self.r#type
+            ,
+            s3_bucket_sink_configuration: self.s3_bucket_sink_configuration
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferIcd10CmOutput {
+pub struct InferIcd10CmOutput  {
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmEntity>>,
@@ -16,23 +16,23 @@ pub struct InferIcd10CmOutput {
 }
 impl InferIcd10CmOutput {
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Icd10CmEntity]> {
+    pub fn entities(&self) -> ::std::option::Option<& [crate::types::Icd10CmEntity]> {
         self.entities.as_deref()
     }
     /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
-    pub fn pagination_token(&self) -> ::std::option::Option<&str> {
+    pub fn pagination_token(&self) -> ::std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> ::std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for InferIcd10CmOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl InferIcd10CmOutput {
     /// Creates a new builder-style object to manufacture [`InferIcd10CmOutput`](crate::operation::infer_icd10_cm::InferIcd10CmOutput).
     pub fn builder() -> crate::operation::infer_icd10_cm::builders::InferIcd10CmOutputBuilder {
@@ -42,9 +42,7 @@ impl InferIcd10CmOutput {
 
 /// A builder for [`InferIcd10CmOutput`](crate::operation::infer_icd10_cm::InferIcd10CmOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferIcd10CmOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmEntity>>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
@@ -59,66 +57,64 @@ impl InferIcd10CmOutputBuilder {
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     pub fn entities(mut self, input: crate::types::Icd10CmEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmEntity>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmEntity>>) -> Self {
+        self.entities = input; self
+    }
+    /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmEntity>> {
+        &self.entities
     }
     /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.pagination_token = input;
-        self
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pagination_token = input; self
+    }
+    /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
     }
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.model_version = input;
-        self
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_version = input; self
+    }
+    /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`InferIcd10CmOutput`](crate::operation::infer_icd10_cm::InferIcd10CmOutput).
     pub fn build(self) -> crate::operation::infer_icd10_cm::InferIcd10CmOutput {
         crate::operation::infer_icd10_cm::InferIcd10CmOutput {
-            entities: self.entities,
-            pagination_token: self.pagination_token,
-            model_version: self.model_version,
+            entities: self.entities
+            ,
+            pagination_token: self.pagination_token
+            ,
+            model_version: self.model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

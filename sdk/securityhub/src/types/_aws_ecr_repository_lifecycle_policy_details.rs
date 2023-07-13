@@ -3,7 +3,7 @@
 /// <p>Information about the lifecycle policy for the repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcrRepositoryLifecyclePolicyDetails {
+pub struct AwsEcrRepositoryLifecyclePolicyDetails  {
     /// <p>The text of the lifecycle policy.</p>
     #[doc(hidden)]
     pub lifecycle_policy_text: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsEcrRepositoryLifecyclePolicyDetails {
 }
 impl AwsEcrRepositoryLifecyclePolicyDetails {
     /// <p>The text of the lifecycle policy.</p>
-    pub fn lifecycle_policy_text(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_policy_text(&self) -> ::std::option::Option<& str> {
         self.lifecycle_policy_text.as_deref()
     }
     /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl AwsEcrRepositoryLifecyclePolicyDetails {
 
 /// A builder for [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::types::AwsEcrRepositoryLifecyclePolicyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
     pub(crate) lifecycle_policy_text: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
     /// <p>The text of the lifecycle policy.</p>
-    pub fn lifecycle_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the lifecycle policy.</p>
-    pub fn set_lifecycle_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.lifecycle_policy_text = input;
-        self
+    pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lifecycle_policy_text = input; self
+    }
+    /// <p>The text of the lifecycle policy.</p>
+    pub fn get_lifecycle_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_policy_text
     }
     /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
     }
     /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
+    }
+    /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// Consumes the builder and constructs a [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::types::AwsEcrRepositoryLifecyclePolicyDetails).
     pub fn build(self) -> crate::types::AwsEcrRepositoryLifecyclePolicyDetails {
         crate::types::AwsEcrRepositoryLifecyclePolicyDetails {
-            lifecycle_policy_text: self.lifecycle_policy_text,
-            registry_id: self.registry_id,
+            lifecycle_policy_text: self.lifecycle_policy_text
+            ,
+            registry_id: self.registry_id
+            ,
         }
     }
 }
+

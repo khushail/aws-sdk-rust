@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWarmPoolInput {
+pub struct DescribeWarmPoolInput  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeWarmPoolInput {
 }
 impl DescribeWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
@@ -23,23 +23,20 @@ impl DescribeWarmPoolInput {
         self.max_records
     }
     /// <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeWarmPoolInput {
     /// Creates a new builder-style object to manufacture [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
-    pub fn builder() -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolInputBuilder {
         crate::operation::describe_warm_pool::builders::DescribeWarmPoolInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWarmPoolInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -47,20 +44,17 @@ pub struct DescribeWarmPoolInputBuilder {
 }
 impl DescribeWarmPoolInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
     }
     /// <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -69,8 +63,11 @@ impl DescribeWarmPoolInputBuilder {
     }
     /// <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
+    }
+    /// <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,22 +76,24 @@ impl DescribeWarmPoolInputBuilder {
     }
     /// <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_warm_pool::DescribeWarmPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_warm_pool::DescribeWarmPoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_warm_pool::DescribeWarmPoolInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                max_records: self.max_records
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

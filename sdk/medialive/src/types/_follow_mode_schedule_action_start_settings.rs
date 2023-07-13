@@ -3,7 +3,7 @@
 /// Settings to specify if an action follows another.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FollowModeScheduleActionStartSettings {
+pub struct FollowModeScheduleActionStartSettings  {
     /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
     #[doc(hidden)]
     pub follow_point: ::std::option::Option<crate::types::FollowPoint>,
@@ -13,11 +13,11 @@ pub struct FollowModeScheduleActionStartSettings {
 }
 impl FollowModeScheduleActionStartSettings {
     /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
-    pub fn follow_point(&self) -> ::std::option::Option<&crate::types::FollowPoint> {
+    pub fn follow_point(&self) -> ::std::option::Option<& crate::types::FollowPoint> {
         self.follow_point.as_ref()
     }
     /// The action name of another action that this one refers to.
-    pub fn reference_action_name(&self) -> ::std::option::Option<&str> {
+    pub fn reference_action_name(&self) -> ::std::option::Option<& str> {
         self.reference_action_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl FollowModeScheduleActionStartSettings {
 
 /// A builder for [`FollowModeScheduleActionStartSettings`](crate::types::FollowModeScheduleActionStartSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FollowModeScheduleActionStartSettingsBuilder {
     pub(crate) follow_point: ::std::option::Option<crate::types::FollowPoint>,
     pub(crate) reference_action_name: ::std::option::Option<::std::string::String>,
@@ -44,34 +42,34 @@ impl FollowModeScheduleActionStartSettingsBuilder {
         self
     }
     /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
-    pub fn set_follow_point(
-        mut self,
-        input: ::std::option::Option<crate::types::FollowPoint>,
-    ) -> Self {
-        self.follow_point = input;
-        self
+    pub fn set_follow_point(mut self, input: ::std::option::Option<crate::types::FollowPoint>) -> Self {
+        self.follow_point = input; self
+    }
+    /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
+    pub fn get_follow_point(&self) -> &::std::option::Option<crate::types::FollowPoint> {
+        &self.follow_point
     }
     /// The action name of another action that this one refers to.
-    pub fn reference_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The action name of another action that this one refers to.
-    pub fn set_reference_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reference_action_name = input;
-        self
+    pub fn set_reference_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reference_action_name = input; self
+    }
+    /// The action name of another action that this one refers to.
+    pub fn get_reference_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_action_name
     }
     /// Consumes the builder and constructs a [`FollowModeScheduleActionStartSettings`](crate::types::FollowModeScheduleActionStartSettings).
     pub fn build(self) -> crate::types::FollowModeScheduleActionStartSettings {
         crate::types::FollowModeScheduleActionStartSettings {
-            follow_point: self.follow_point,
-            reference_action_name: self.reference_action_name,
+            follow_point: self.follow_point
+            ,
+            reference_action_name: self.reference_action_name
+            ,
         }
     }
 }
+

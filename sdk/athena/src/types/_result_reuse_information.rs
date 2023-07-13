@@ -3,7 +3,7 @@
 /// <p>Contains information about whether the result of a previous query was reused.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultReuseInformation {
+pub struct ResultReuseInformation  {
     /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
     #[doc(hidden)]
     pub reused_previous_result: bool,
@@ -23,9 +23,7 @@ impl ResultReuseInformation {
 
 /// A builder for [`ResultReuseInformation`](crate::types::ResultReuseInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultReuseInformationBuilder {
     pub(crate) reused_previous_result: ::std::option::Option<bool>,
 }
@@ -37,13 +35,19 @@ impl ResultReuseInformationBuilder {
     }
     /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
     pub fn set_reused_previous_result(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reused_previous_result = input;
-        self
+        self.reused_previous_result = input; self
+    }
+    /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
+    pub fn get_reused_previous_result(&self) -> &::std::option::Option<bool> {
+        &self.reused_previous_result
     }
     /// Consumes the builder and constructs a [`ResultReuseInformation`](crate::types::ResultReuseInformation).
     pub fn build(self) -> crate::types::ResultReuseInformation {
         crate::types::ResultReuseInformation {
-            reused_previous_result: self.reused_previous_result.unwrap_or_default(),
+            reused_previous_result: self.reused_previous_result
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a data quality result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityResultDescription {
+pub struct DataQualityResultDescription  {
     /// <p>The unique result ID for this data quality result.</p>
     #[doc(hidden)]
     pub result_id: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct DataQualityResultDescription {
 }
 impl DataQualityResultDescription {
     /// <p>The unique result ID for this data quality result.</p>
-    pub fn result_id(&self) -> ::std::option::Option<&str> {
+    pub fn result_id(&self) -> ::std::option::Option<& str> {
         self.result_id.as_deref()
     }
     /// <p>The table name associated with the data quality result.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The job name associated with the data quality result.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The job run ID associated with the data quality result.</p>
-    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_run_id(&self) -> ::std::option::Option<& str> {
         self.job_run_id.as_deref()
     }
     /// <p>The time that the run started for this data quality result.</p>
-    pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
 }
@@ -51,9 +51,7 @@ impl DataQualityResultDescription {
 
 /// A builder for [`DataQualityResultDescription`](crate::types::DataQualityResultDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQualityResultDescriptionBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
@@ -69,8 +67,11 @@ impl DataQualityResultDescriptionBuilder {
     }
     /// <p>The unique result ID for this data quality result.</p>
     pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result_id = input;
-        self
+        self.result_id = input; self
+    }
+    /// <p>The unique result ID for this data quality result.</p>
+    pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_id
     }
     /// <p>The table name associated with the data quality result.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -78,12 +79,12 @@ impl DataQualityResultDescriptionBuilder {
         self
     }
     /// <p>The table name associated with the data quality result.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
-        self.data_source = input;
-        self
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
+        self.data_source = input; self
+    }
+    /// <p>The table name associated with the data quality result.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
     }
     /// <p>The job name associated with the data quality result.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,8 +93,11 @@ impl DataQualityResultDescriptionBuilder {
     }
     /// <p>The job name associated with the data quality result.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The job name associated with the data quality result.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The job run ID associated with the data quality result.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,8 +106,11 @@ impl DataQualityResultDescriptionBuilder {
     }
     /// <p>The job run ID associated with the data quality result.</p>
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_run_id = input;
-        self
+        self.job_run_id = input; self
+    }
+    /// <p>The job run ID associated with the data quality result.</p>
+    pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_run_id
     }
     /// <p>The time that the run started for this data quality result.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,21 +118,27 @@ impl DataQualityResultDescriptionBuilder {
         self
     }
     /// <p>The time that the run started for this data quality result.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_on = input;
-        self
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.started_on = input; self
+    }
+    /// <p>The time that the run started for this data quality result.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
     }
     /// Consumes the builder and constructs a [`DataQualityResultDescription`](crate::types::DataQualityResultDescription).
     pub fn build(self) -> crate::types::DataQualityResultDescription {
         crate::types::DataQualityResultDescription {
-            result_id: self.result_id,
-            data_source: self.data_source,
-            job_name: self.job_name,
-            job_run_id: self.job_run_id,
-            started_on: self.started_on,
+            result_id: self.result_id
+            ,
+            data_source: self.data_source
+            ,
+            job_name: self.job_name
+            ,
+            job_run_id: self.job_run_id
+            ,
+            started_on: self.started_on
+            ,
         }
     }
 }
+

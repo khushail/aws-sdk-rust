@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGameConfigurationInput {
+pub struct UpdateGameConfigurationInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
@@ -12,32 +12,27 @@ pub struct UpdateGameConfigurationInput {
 }
 impl UpdateGameConfigurationInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_name(&self) -> ::std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The list of modifications to make.</p>
-    pub fn modifications(&self) -> ::std::option::Option<&[crate::types::SectionModification]> {
+    pub fn modifications(&self) -> ::std::option::Option<& [crate::types::SectionModification]> {
         self.modifications.as_deref()
     }
 }
 impl UpdateGameConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateGameConfigurationInput`](crate::operation::update_game_configuration::UpdateGameConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::update_game_configuration::builders::UpdateGameConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_game_configuration::builders::UpdateGameConfigurationInputBuilder {
         crate::operation::update_game_configuration::builders::UpdateGameConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGameConfigurationInput`](crate::operation::update_game_configuration::UpdateGameConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGameConfigurationInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
-    pub(crate) modifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SectionModification>>,
+    pub(crate) modifications: ::std::option::Option<::std::vec::Vec<crate::types::SectionModification>>,
 }
 impl UpdateGameConfigurationInputBuilder {
     /// <p>The name of the game.</p>
@@ -47,8 +42,11 @@ impl UpdateGameConfigurationInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
+    }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
     }
     /// Appends an item to `modifications`.
     ///
@@ -57,30 +55,28 @@ impl UpdateGameConfigurationInputBuilder {
     /// <p>The list of modifications to make.</p>
     pub fn modifications(mut self, input: crate::types::SectionModification) -> Self {
         let mut v = self.modifications.unwrap_or_default();
-        v.push(input);
-        self.modifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.modifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of modifications to make.</p>
-    pub fn set_modifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SectionModification>>,
-    ) -> Self {
-        self.modifications = input;
-        self
+    pub fn set_modifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SectionModification>>) -> Self {
+        self.modifications = input; self
+    }
+    /// <p>The list of modifications to make.</p>
+    pub fn get_modifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SectionModification>> {
+        &self.modifications
     }
     /// Consumes the builder and constructs a [`UpdateGameConfigurationInput`](crate::operation::update_game_configuration::UpdateGameConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_game_configuration::UpdateGameConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_game_configuration::UpdateGameConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_game_configuration::UpdateGameConfigurationInput {
-                game_name: self.game_name,
-                modifications: self.modifications,
-            },
+                game_name: self.game_name
+                ,
+                modifications: self.modifications
+                ,
+            }
         )
     }
 }
+

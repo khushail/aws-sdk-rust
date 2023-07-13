@@ -27,6 +27,8 @@ pub use crate::types::_table_summary::TableSummary;
 
 pub use crate::types::_keyspace_summary::KeyspaceSummary;
 
+pub use crate::types::_rs::Rs;
+
 pub use crate::types::_comment::Comment;
 
 pub use crate::types::_point_in_time_recovery_summary::PointInTimeRecoverySummary;
@@ -44,6 +46,8 @@ pub use crate::types::_sort_order::SortOrder;
 pub use crate::types::_partition_key::PartitionKey;
 
 pub use crate::types::_table_status::TableStatus;
+
+pub use crate::types::_replication_specification::ReplicationSpecification;
 
 mod _capacity_specification;
 
@@ -73,6 +77,10 @@ mod _point_in_time_recovery_status;
 
 mod _point_in_time_recovery_summary;
 
+mod _replication_specification;
+
+mod _rs;
+
 mod _schema_definition;
 
 mod _sort_order;
@@ -96,3 +104,4 @@ pub mod builders;
 
 /// Error types that Amazon Keyspaces can respond with.
 pub mod error;
+

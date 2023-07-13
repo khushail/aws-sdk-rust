@@ -3,7 +3,7 @@
 /// <p>Provides information about settings that define whether one or more objects in an S3 bucket are replicated to S3 buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationDetails {
+pub struct ReplicationDetails  {
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
     #[doc(hidden)]
     pub replicated: ::std::option::Option<bool>,
@@ -24,7 +24,7 @@ impl ReplicationDetails {
         self.replicated_externally
     }
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    pub fn replication_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn replication_accounts(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.replication_accounts.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ReplicationDetails {
 
 /// A builder for [`ReplicationDetails`](crate::types::ReplicationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationDetailsBuilder {
     pub(crate) replicated: ::std::option::Option<bool>,
     pub(crate) replicated_externally: ::std::option::Option<bool>,
@@ -53,8 +51,11 @@ impl ReplicationDetailsBuilder {
     }
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
     pub fn set_replicated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.replicated = input;
-        self
+        self.replicated = input; self
+    }
+    /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
+    pub fn get_replicated(&self) -> &::std::option::Option<bool> {
+        &self.replicated
     }
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
     pub fn replicated_externally(mut self, input: bool) -> Self {
@@ -63,37 +64,41 @@ impl ReplicationDetailsBuilder {
     }
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
     pub fn set_replicated_externally(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.replicated_externally = input;
-        self
+        self.replicated_externally = input; self
+    }
+    /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
+    pub fn get_replicated_externally(&self) -> &::std::option::Option<bool> {
+        &self.replicated_externally
     }
     /// Appends an item to `replication_accounts`.
     ///
     /// To override the contents of this collection use [`set_replication_accounts`](Self::set_replication_accounts).
     ///
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    pub fn replication_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.replication_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.replication_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    pub fn set_replication_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.replication_accounts = input;
-        self
+    pub fn set_replication_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.replication_accounts = input; self
+    }
+    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
+    pub fn get_replication_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_accounts
     }
     /// Consumes the builder and constructs a [`ReplicationDetails`](crate::types::ReplicationDetails).
     pub fn build(self) -> crate::types::ReplicationDetails {
         crate::types::ReplicationDetails {
-            replicated: self.replicated,
-            replicated_externally: self.replicated_externally,
-            replication_accounts: self.replication_accounts,
+            replicated: self.replicated
+            ,
+            replicated_externally: self.replicated_externally
+            ,
+            replication_accounts: self.replication_accounts
+            ,
         }
     }
 }
+

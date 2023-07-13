@@ -3,7 +3,7 @@
 /// <p>Information about a service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceInfo {
+pub struct ServiceInfo  {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ServiceInfo {
 }
 impl ServiceInfo {
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The service name.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ServiceInfo {
 
 /// A builder for [`ServiceInfo`](crate::types::ServiceInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceInfoBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ServiceInfoBuilder {
     }
     /// <p>The service identifier.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
+    }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>The service name.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ServiceInfoBuilder {
     }
     /// <p>The service name.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
+    }
+    /// <p>The service name.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`ServiceInfo`](crate::types::ServiceInfo).
     pub fn build(self) -> crate::types::ServiceInfo {
         crate::types::ServiceInfo {
-            service_code: self.service_code,
-            service_name: self.service_name,
+            service_code: self.service_code
+            ,
+            service_name: self.service_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTargetsForPolicyInput {
+pub struct ListTargetsForPolicyInput  {
     /// <p>The policy name.</p>
     #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListTargetsForPolicyInput {
 }
 impl ListTargetsForPolicyInput {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>A marker used to get the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -29,17 +29,14 @@ impl ListTargetsForPolicyInput {
 }
 impl ListTargetsForPolicyInput {
     /// Creates a new builder-style object to manufacture [`ListTargetsForPolicyInput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyInputBuilder {
+    pub fn builder() -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyInputBuilder {
         crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetsForPolicyInput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsForPolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -53,8 +50,11 @@ impl ListTargetsForPolicyInputBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
+    }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +63,11 @@ impl ListTargetsForPolicyInputBuilder {
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>A marker used to get the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -73,22 +76,24 @@ impl ListTargetsForPolicyInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListTargetsForPolicyInput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_targets_for_policy::ListTargetsForPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets_for_policy::ListTargetsForPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_targets_for_policy::ListTargetsForPolicyInput {
-                policy_name: self.policy_name,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
+                policy_name: self.policy_name
+                ,
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+            }
         )
     }
 }
+

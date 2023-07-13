@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBackupSelectionInput {
+pub struct GetBackupSelectionInput  {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct GetBackupSelectionInput {
 }
 impl GetBackupSelectionInput {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_plan_id(&self) -> ::std::option::Option<& str> {
         self.backup_plan_id.as_deref()
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
-    pub fn selection_id(&self) -> ::std::option::Option<&str> {
+    pub fn selection_id(&self) -> ::std::option::Option<& str> {
         self.selection_id.as_deref()
     }
 }
 impl GetBackupSelectionInput {
     /// Creates a new builder-style object to manufacture [`GetBackupSelectionInput`](crate::operation::get_backup_selection::GetBackupSelectionInput).
-    pub fn builder(
-    ) -> crate::operation::get_backup_selection::builders::GetBackupSelectionInputBuilder {
+    pub fn builder() -> crate::operation::get_backup_selection::builders::GetBackupSelectionInputBuilder {
         crate::operation::get_backup_selection::builders::GetBackupSelectionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackupSelectionInput`](crate::operation::get_backup_selection::GetBackupSelectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackupSelectionInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) selection_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBackupSelectionInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.backup_plan_id = input;
-        self
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_plan_id = input; self
+    }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn selection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,21 +55,22 @@ impl GetBackupSelectionInputBuilder {
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn set_selection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_id = input;
-        self
+        self.selection_id = input; self
+    }
+    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    pub fn get_selection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selection_id
     }
     /// Consumes the builder and constructs a [`GetBackupSelectionInput`](crate::operation::get_backup_selection::GetBackupSelectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_backup_selection::GetBackupSelectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_backup_selection::GetBackupSelectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_backup_selection::GetBackupSelectionInput {
-                backup_plan_id: self.backup_plan_id,
-                selection_id: self.selection_id,
-            },
+                backup_plan_id: self.backup_plan_id
+                ,
+                selection_id: self.selection_id
+                ,
+            }
         )
     }
 }
+

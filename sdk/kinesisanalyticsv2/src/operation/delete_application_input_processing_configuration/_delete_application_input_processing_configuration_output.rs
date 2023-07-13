@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationInputProcessingConfigurationOutput {
+pub struct DeleteApplicationInputProcessingConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct DeleteApplicationInputProcessingConfigurationOutput {
 }
 impl DeleteApplicationInputProcessingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The current application version ID.</p>
@@ -22,22 +22,20 @@ impl DeleteApplicationInputProcessingConfigurationOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteApplicationInputProcessingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteApplicationInputProcessingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder {
         crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationInputProcessingConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
@@ -45,20 +43,17 @@ pub struct DeleteApplicationInputProcessingConfigurationOutputBuilder {
 }
 impl DeleteApplicationInputProcessingConfigurationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_arn = input;
-        self
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
     }
     /// <p>The current application version ID.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
@@ -67,20 +62,23 @@ impl DeleteApplicationInputProcessingConfigurationOutputBuilder {
     }
     /// <p>The current application version ID.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
+    }
+    /// <p>The current application version ID.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput {
         crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput {
             application_arn: self.application_arn
             ,
@@ -90,3 +88,4 @@ impl DeleteApplicationInputProcessingConfigurationOutputBuilder {
         }
     }
 }
+

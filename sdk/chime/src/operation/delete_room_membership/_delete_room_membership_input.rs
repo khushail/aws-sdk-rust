@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRoomMembershipInput {
+pub struct DeleteRoomMembershipInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct DeleteRoomMembershipInput {
 }
 impl DeleteRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The room ID.</p>
-    pub fn room_id(&self) -> ::std::option::Option<&str> {
+    pub fn room_id(&self) -> ::std::option::Option<& str> {
         self.room_id.as_deref()
     }
     /// <p>The member ID (user ID or bot ID).</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
 }
 impl DeleteRoomMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteRoomMembershipInput`](crate::operation::delete_room_membership::DeleteRoomMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::delete_room_membership::builders::DeleteRoomMembershipInputBuilder {
+    pub fn builder() -> crate::operation::delete_room_membership::builders::DeleteRoomMembershipInputBuilder {
         crate::operation::delete_room_membership::builders::DeleteRoomMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRoomMembershipInput`](crate::operation::delete_room_membership::DeleteRoomMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoomMembershipInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +50,11 @@ impl DeleteRoomMembershipInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +63,11 @@ impl DeleteRoomMembershipInputBuilder {
     }
     /// <p>The room ID.</p>
     pub fn set_room_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_id = input;
-        self
+        self.room_id = input; self
+    }
+    /// <p>The room ID.</p>
+    pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_id
     }
     /// <p>The member ID (user ID or bot ID).</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,22 +76,24 @@ impl DeleteRoomMembershipInputBuilder {
     }
     /// <p>The member ID (user ID or bot ID).</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
+    }
+    /// <p>The member ID (user ID or bot ID).</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// Consumes the builder and constructs a [`DeleteRoomMembershipInput`](crate::operation::delete_room_membership::DeleteRoomMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_room_membership::DeleteRoomMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_room_membership::DeleteRoomMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_room_membership::DeleteRoomMembershipInput {
-                account_id: self.account_id,
-                room_id: self.room_id,
-                member_id: self.member_id,
-            },
+                account_id: self.account_id
+                ,
+                room_id: self.room_id
+                ,
+                member_id: self.member_id
+                ,
+            }
         )
     }
 }
+

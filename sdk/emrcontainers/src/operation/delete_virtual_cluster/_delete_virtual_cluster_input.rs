@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVirtualClusterInput {
+pub struct DeleteVirtualClusterInput  {
     /// <p>The ID of the virtual cluster that will be deleted.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be deleted.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteVirtualClusterInput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualClusterInput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterInputBuilder {
+    pub fn builder() -> crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterInputBuilder {
         crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualClusterInput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualClusterInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DeleteVirtualClusterInputBuilder {
     }
     /// <p>The ID of the virtual cluster that will be deleted.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the virtual cluster that will be deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeleteVirtualClusterInput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput { id: self.id },
+            crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput {
+                id: self.id
+                ,
+            }
         )
     }
 }
+

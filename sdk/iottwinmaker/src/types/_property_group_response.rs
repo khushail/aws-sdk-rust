@@ -3,7 +3,7 @@
 /// <p>The property group response</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertyGroupResponse {
+pub struct PropertyGroupResponse  {
     /// <p>The group types.</p>
     #[doc(hidden)]
     pub group_type: ::std::option::Option<crate::types::GroupType>,
@@ -16,11 +16,11 @@ pub struct PropertyGroupResponse {
 }
 impl PropertyGroupResponse {
     /// <p>The group types.</p>
-    pub fn group_type(&self) -> ::std::option::Option<&crate::types::GroupType> {
+    pub fn group_type(&self) -> ::std::option::Option<& crate::types::GroupType> {
         self.group_type.as_ref()
     }
     /// <p>The names of properties.</p>
-    pub fn property_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn property_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.property_names.as_deref()
     }
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
@@ -37,9 +37,7 @@ impl PropertyGroupResponse {
 
 /// A builder for [`PropertyGroupResponse`](crate::types::PropertyGroupResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyGroupResponseBuilder {
     pub(crate) group_type: ::std::option::Option<crate::types::GroupType>,
     pub(crate) property_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,30 +51,30 @@ impl PropertyGroupResponseBuilder {
     }
     /// <p>The group types.</p>
     pub fn set_group_type(mut self, input: ::std::option::Option<crate::types::GroupType>) -> Self {
-        self.group_type = input;
-        self
+        self.group_type = input; self
+    }
+    /// <p>The group types.</p>
+    pub fn get_group_type(&self) -> &::std::option::Option<crate::types::GroupType> {
+        &self.group_type
     }
     /// Appends an item to `property_names`.
     ///
     /// To override the contents of this collection use [`set_property_names`](Self::set_property_names).
     ///
     /// <p>The names of properties.</p>
-    pub fn property_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.property_names.unwrap_or_default();
-        v.push(input.into());
-        self.property_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.property_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of properties.</p>
-    pub fn set_property_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.property_names = input;
-        self
+    pub fn set_property_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.property_names = input; self
+    }
+    /// <p>The names of properties.</p>
+    pub fn get_property_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.property_names
     }
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
     pub fn is_inherited(mut self, input: bool) -> Self {
@@ -85,15 +83,22 @@ impl PropertyGroupResponseBuilder {
     }
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
     pub fn set_is_inherited(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_inherited = input;
-        self
+        self.is_inherited = input; self
+    }
+    /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
+    pub fn get_is_inherited(&self) -> &::std::option::Option<bool> {
+        &self.is_inherited
     }
     /// Consumes the builder and constructs a [`PropertyGroupResponse`](crate::types::PropertyGroupResponse).
     pub fn build(self) -> crate::types::PropertyGroupResponse {
         crate::types::PropertyGroupResponse {
-            group_type: self.group_type,
-            property_names: self.property_names,
-            is_inherited: self.is_inherited,
+            group_type: self.group_type
+            ,
+            property_names: self.property_names
+            ,
+            is_inherited: self.is_inherited
+            ,
         }
     }
 }
+

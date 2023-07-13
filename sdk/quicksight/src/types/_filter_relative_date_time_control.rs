@@ -3,7 +3,7 @@
 /// <p>A control from a date filter that is used to specify the relative date.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterRelativeDateTimeControl {
+pub struct FilterRelativeDateTimeControl  {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
     #[doc(hidden)]
     pub filter_control_id: ::std::option::Option<::std::string::String>,
@@ -19,21 +19,19 @@ pub struct FilterRelativeDateTimeControl {
 }
 impl FilterRelativeDateTimeControl {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn filter_control_id(&self) -> ::std::option::Option<&str> {
+    pub fn filter_control_id(&self) -> ::std::option::Option<& str> {
         self.filter_control_id.as_deref()
     }
     /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The source filter ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn source_filter_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_filter_id(&self) -> ::std::option::Option<& str> {
         self.source_filter_id.as_deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RelativeDateTimeControlDisplayOptions> {
+    pub fn display_options(&self) -> ::std::option::Option<& crate::types::RelativeDateTimeControlDisplayOptions> {
         self.display_options.as_ref()
     }
 }
@@ -46,32 +44,26 @@ impl FilterRelativeDateTimeControl {
 
 /// A builder for [`FilterRelativeDateTimeControl`](crate::types::FilterRelativeDateTimeControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterRelativeDateTimeControlBuilder {
     pub(crate) filter_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) source_filter_id: ::std::option::Option<::std::string::String>,
-    pub(crate) display_options:
-        ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
+    pub(crate) display_options: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
 }
 impl FilterRelativeDateTimeControlBuilder {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn filter_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn set_filter_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.filter_control_id = input;
-        self
+    pub fn set_filter_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.filter_control_id = input; self
+    }
+    /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
+    pub fn get_filter_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_control_id
     }
     /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,48 +72,50 @@ impl FilterRelativeDateTimeControlBuilder {
     }
     /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
+    }
+    /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The source filter ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn source_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source filter ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn set_source_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_filter_id = input;
-        self
+    pub fn set_source_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_filter_id = input; self
+    }
+    /// <p>The source filter ID of the <code>FilterTextAreaControl</code>.</p>
+    pub fn get_source_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_filter_id
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(
-        mut self,
-        input: crate::types::RelativeDateTimeControlDisplayOptions,
-    ) -> Self {
+    pub fn display_options(mut self, input: crate::types::RelativeDateTimeControlDisplayOptions) -> Self {
         self.display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn set_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
-    ) -> Self {
-        self.display_options = input;
-        self
+    pub fn set_display_options(mut self, input: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>) -> Self {
+        self.display_options = input; self
+    }
+    /// <p>The display options of a control.</p>
+    pub fn get_display_options(&self) -> &::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions> {
+        &self.display_options
     }
     /// Consumes the builder and constructs a [`FilterRelativeDateTimeControl`](crate::types::FilterRelativeDateTimeControl).
     pub fn build(self) -> crate::types::FilterRelativeDateTimeControl {
         crate::types::FilterRelativeDateTimeControl {
-            filter_control_id: self.filter_control_id,
-            title: self.title,
-            source_filter_id: self.source_filter_id,
-            display_options: self.display_options,
+            filter_control_id: self.filter_control_id
+            ,
+            title: self.title
+            ,
+            source_filter_id: self.source_filter_id
+            ,
+            display_options: self.display_options
+            ,
         }
     }
 }
+

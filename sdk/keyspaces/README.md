@@ -24,8 +24,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-keyspaces = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-keyspaces = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -36,8 +36,8 @@ use aws_sdk_keyspaces as keyspaces;
 
 #[::tokio::main]
 async fn main() -> Result<(), keyspaces::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = keyspaces::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_keyspaces::Client::new(&config);
 
     // ... make some calls with the client
 

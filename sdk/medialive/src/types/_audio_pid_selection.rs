@@ -3,7 +3,7 @@
 /// Audio Pid Selection
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioPidSelection {
+pub struct AudioPidSelection  {
     /// Selects a specific PID from within a source.
     #[doc(hidden)]
     pub pid: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl AudioPidSelection {
 
 /// A builder for [`AudioPidSelection`](crate::types::AudioPidSelection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioPidSelectionBuilder {
     pub(crate) pid: ::std::option::Option<i32>,
 }
@@ -37,11 +35,18 @@ impl AudioPidSelectionBuilder {
     }
     /// Selects a specific PID from within a source.
     pub fn set_pid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pid = input;
-        self
+        self.pid = input; self
+    }
+    /// Selects a specific PID from within a source.
+    pub fn get_pid(&self) -> &::std::option::Option<i32> {
+        &self.pid
     }
     /// Consumes the builder and constructs a [`AudioPidSelection`](crate::types::AudioPidSelection).
     pub fn build(self) -> crate::types::AudioPidSelection {
-        crate::types::AudioPidSelection { pid: self.pid }
+        crate::types::AudioPidSelection {
+            pid: self.pid
+            ,
+        }
     }
 }
+

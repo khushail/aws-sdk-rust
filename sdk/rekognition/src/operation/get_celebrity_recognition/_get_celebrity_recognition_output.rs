@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCelebrityRecognitionOutput {
+pub struct GetCelebrityRecognitionOutput  {
     /// <p>The current status of the celebrity recognition job.</p>
     #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::VideoJobStatus>,
@@ -31,64 +31,59 @@ pub struct GetCelebrityRecognitionOutput {
 }
 impl GetCelebrityRecognitionOutput {
     /// <p>The current status of the celebrity recognition job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::VideoJobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::VideoJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
-    pub fn video_metadata(&self) -> ::std::option::Option<&crate::types::VideoMetadata> {
+    pub fn video_metadata(&self) -> ::std::option::Option<& crate::types::VideoMetadata> {
         self.video_metadata.as_ref()
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Array of celebrities recognized in the video.</p>
-    pub fn celebrities(&self) -> ::std::option::Option<&[crate::types::CelebrityRecognition]> {
+    pub fn celebrities(&self) -> ::std::option::Option<& [crate::types::CelebrityRecognition]> {
         self.celebrities.as_deref()
     }
     /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::Video> {
+    pub fn video(&self) -> ::std::option::Option<& crate::types::Video> {
         self.video.as_ref()
     }
     /// <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    pub fn job_tag(&self) -> ::std::option::Option<&str> {
+    pub fn job_tag(&self) -> ::std::option::Option<& str> {
         self.job_tag.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCelebrityRecognitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCelebrityRecognitionOutput {
     /// Creates a new builder-style object to manufacture [`GetCelebrityRecognitionOutput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionOutputBuilder {
         crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCelebrityRecognitionOutput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCelebrityRecognitionOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) celebrities:
-        ::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>>,
+    pub(crate) celebrities: ::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) job_tag: ::std::option::Option<::std::string::String>,
@@ -101,28 +96,25 @@ impl GetCelebrityRecognitionOutputBuilder {
         self
     }
     /// <p>The current status of the celebrity recognition job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoJobStatus>,
-    ) -> Self {
-        self.job_status = input;
-        self
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::VideoJobStatus>) -> Self {
+        self.job_status = input; self
+    }
+    /// <p>The current status of the celebrity recognition job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::VideoJobStatus> {
+        &self.job_status
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
     pub fn video_metadata(mut self, input: crate::types::VideoMetadata) -> Self {
@@ -130,12 +122,12 @@ impl GetCelebrityRecognitionOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
-    pub fn set_video_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoMetadata>,
-    ) -> Self {
-        self.video_metadata = input;
-        self
+    pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
+        self.video_metadata = input; self
+    }
+    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
+    pub fn get_video_metadata(&self) -> &::std::option::Option<crate::types::VideoMetadata> {
+        &self.video_metadata
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,8 +136,11 @@ impl GetCelebrityRecognitionOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `celebrities`.
     ///
@@ -154,17 +149,17 @@ impl GetCelebrityRecognitionOutputBuilder {
     /// <p>Array of celebrities recognized in the video.</p>
     pub fn celebrities(mut self, input: crate::types::CelebrityRecognition) -> Self {
         let mut v = self.celebrities.unwrap_or_default();
-        v.push(input);
-        self.celebrities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.celebrities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of celebrities recognized in the video.</p>
-    pub fn set_celebrities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>>,
-    ) -> Self {
-        self.celebrities = input;
-        self
+    pub fn set_celebrities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>>) -> Self {
+        self.celebrities = input; self
+    }
+    /// <p>Array of celebrities recognized in the video.</p>
+    pub fn get_celebrities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>> {
+        &self.celebrities
     }
     /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,8 +168,11 @@ impl GetCelebrityRecognitionOutputBuilder {
     }
     /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     pub fn video(mut self, input: crate::types::Video) -> Self {
@@ -183,8 +181,11 @@ impl GetCelebrityRecognitionOutputBuilder {
     }
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     pub fn set_video(mut self, input: ::std::option::Option<crate::types::Video>) -> Self {
-        self.video = input;
-        self
+        self.video = input; self
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
+        &self.video
     }
     /// <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     pub fn job_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -193,32 +194,42 @@ impl GetCelebrityRecognitionOutputBuilder {
     }
     /// <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_tag = input;
-        self
+        self.job_tag = input; self
+    }
+    /// <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCelebrityRecognitionOutput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput {
+    pub fn build(self) -> crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput {
         crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput {
-            job_status: self.job_status,
-            status_message: self.status_message,
-            video_metadata: self.video_metadata,
-            next_token: self.next_token,
-            celebrities: self.celebrities,
-            job_id: self.job_id,
-            video: self.video,
-            job_tag: self.job_tag,
+            job_status: self.job_status
+            ,
+            status_message: self.status_message
+            ,
+            video_metadata: self.video_metadata
+            ,
+            next_token: self.next_token
+            ,
+            celebrities: self.celebrities
+            ,
+            job_id: self.job_id
+            ,
+            video: self.video
+            ,
+            job_tag: self.job_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

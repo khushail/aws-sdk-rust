@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInsightInput {
+pub struct GetInsightInput  {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     #[doc(hidden)]
     pub insight_id: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-    pub fn insight_id(&self) -> ::std::option::Option<&str> {
+    pub fn insight_id(&self) -> ::std::option::Option<& str> {
         self.insight_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetInsightInput {
 
 /// A builder for [`GetInsightInput`](crate::operation::get_insight::GetInsightInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightInputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetInsightInputBuilder {
     }
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insight_id = input;
-        self
+        self.insight_id = input; self
+    }
+    /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
     }
     /// Consumes the builder and constructs a [`GetInsightInput`](crate::operation::get_insight::GetInsightInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_insight::GetInsightInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_insight::GetInsightInput {
-            insight_id: self.insight_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_insight::GetInsightInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_insight::GetInsightInput {
+                insight_id: self.insight_id
+                ,
+            }
+        )
     }
 }
+

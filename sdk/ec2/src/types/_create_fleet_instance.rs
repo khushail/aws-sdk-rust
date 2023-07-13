@@ -3,11 +3,10 @@
 /// <p>Describes the instances that were launched by the fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFleetInstance {
+pub struct CreateFleetInstance  {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
     #[doc(hidden)]
-    pub launch_template_and_overrides:
-        ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
+    pub launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
     #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,
@@ -23,25 +22,23 @@ pub struct CreateFleetInstance {
 }
 impl CreateFleetInstance {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn launch_template_and_overrides(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateAndOverridesResponse> {
+    pub fn launch_template_and_overrides(&self) -> ::std::option::Option<& crate::types::LaunchTemplateAndOverridesResponse> {
         self.launch_template_and_overrides.as_ref()
     }
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::InstanceLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::InstanceLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The IDs of the instances.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn instance_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.instance_ids.as_deref()
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformValues> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::PlatformValues> {
         self.platform.as_ref()
     }
 }
@@ -54,12 +51,9 @@ impl CreateFleetInstance {
 
 /// A builder for [`CreateFleetInstance`](crate::types::CreateFleetInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFleetInstanceBuilder {
-    pub(crate) launch_template_and_overrides:
-        ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
+    pub(crate) launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -67,20 +61,17 @@ pub struct CreateFleetInstanceBuilder {
 }
 impl CreateFleetInstanceBuilder {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn launch_template_and_overrides(
-        mut self,
-        input: crate::types::LaunchTemplateAndOverridesResponse,
-    ) -> Self {
+    pub fn launch_template_and_overrides(mut self, input: crate::types::LaunchTemplateAndOverridesResponse) -> Self {
         self.launch_template_and_overrides = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn set_launch_template_and_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
-    ) -> Self {
-        self.launch_template_and_overrides = input;
-        self
+    pub fn set_launch_template_and_overrides(mut self, input: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>) -> Self {
+        self.launch_template_and_overrides = input; self
+    }
+    /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
+    pub fn get_launch_template_and_overrides(&self) -> &::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse> {
+        &self.launch_template_and_overrides
     }
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
     pub fn lifecycle(mut self, input: crate::types::InstanceLifecycle) -> Self {
@@ -88,12 +79,12 @@ impl CreateFleetInstanceBuilder {
         self
     }
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceLifecycle>,
-    ) -> Self {
-        self.lifecycle = input;
-        self
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::InstanceLifecycle>) -> Self {
+        self.lifecycle = input; self
+    }
+    /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::InstanceLifecycle> {
+        &self.lifecycle
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -102,17 +93,17 @@ impl CreateFleetInstanceBuilder {
     /// <p>The IDs of the instances.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.instance_ids = input; self
+    }
+    /// <p>The IDs of the instances.</p>
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
     }
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -120,12 +111,12 @@ impl CreateFleetInstanceBuilder {
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
-        self.instance_type = input;
-        self
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
+        self.instance_type = input; self
+    }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
     }
     /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
@@ -133,21 +124,27 @@ impl CreateFleetInstanceBuilder {
         self
     }
     /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformValues>,
-    ) -> Self {
-        self.platform = input;
-        self
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformValues>) -> Self {
+        self.platform = input; self
+    }
+    /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
+        &self.platform
     }
     /// Consumes the builder and constructs a [`CreateFleetInstance`](crate::types::CreateFleetInstance).
     pub fn build(self) -> crate::types::CreateFleetInstance {
         crate::types::CreateFleetInstance {
-            launch_template_and_overrides: self.launch_template_and_overrides,
-            lifecycle: self.lifecycle,
-            instance_ids: self.instance_ids,
-            instance_type: self.instance_type,
-            platform: self.platform,
+            launch_template_and_overrides: self.launch_template_and_overrides
+            ,
+            lifecycle: self.lifecycle
+            ,
+            instance_ids: self.instance_ids
+            ,
+            instance_type: self.instance_type
+            ,
+            platform: self.platform
+            ,
         }
     }
 }
+

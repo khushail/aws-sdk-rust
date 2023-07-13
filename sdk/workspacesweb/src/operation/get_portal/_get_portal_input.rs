@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPortalInput {
+pub struct GetPortalInput  {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetPortalInput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetPortalInput {
 
 /// A builder for [`GetPortalInput`](crate::operation::get_portal::GetPortalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPortalInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetPortalInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
+    }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
     }
     /// Consumes the builder and constructs a [`GetPortalInput`](crate::operation::get_portal::GetPortalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_portal::GetPortalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_portal::GetPortalInput {
-            portal_arn: self.portal_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_portal::GetPortalInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_portal::GetPortalInput {
+                portal_arn: self.portal_arn
+                ,
+            }
+        )
     }
 }
+

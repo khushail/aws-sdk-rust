@@ -3,14 +3,14 @@
 /// <p>Provides information about the account-level permissions settings that apply to an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountLevelPermissions {
+pub struct AccountLevelPermissions  {
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
     #[doc(hidden)]
     pub block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
 }
 impl AccountLevelPermissions {
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
-    pub fn block_public_access(&self) -> ::std::option::Option<&crate::types::BlockPublicAccess> {
+    pub fn block_public_access(&self) -> ::std::option::Option<& crate::types::BlockPublicAccess> {
         self.block_public_access.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl AccountLevelPermissions {
 
 /// A builder for [`AccountLevelPermissions`](crate::types::AccountLevelPermissions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountLevelPermissionsBuilder {
     pub(crate) block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
 }
@@ -36,17 +34,19 @@ impl AccountLevelPermissionsBuilder {
         self
     }
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
-    pub fn set_block_public_access(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockPublicAccess>,
-    ) -> Self {
-        self.block_public_access = input;
-        self
+    pub fn set_block_public_access(mut self, input: ::std::option::Option<crate::types::BlockPublicAccess>) -> Self {
+        self.block_public_access = input; self
+    }
+    /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
+    pub fn get_block_public_access(&self) -> &::std::option::Option<crate::types::BlockPublicAccess> {
+        &self.block_public_access
     }
     /// Consumes the builder and constructs a [`AccountLevelPermissions`](crate::types::AccountLevelPermissions).
     pub fn build(self) -> crate::types::AccountLevelPermissions {
         crate::types::AccountLevelPermissions {
-            block_public_access: self.block_public_access,
+            block_public_access: self.block_public_access
+            ,
         }
     }
 }
+

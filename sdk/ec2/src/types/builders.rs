@@ -1089,6 +1089,8 @@ pub use crate::types::_reservation::ReservationBuilder;
 
 pub use crate::types::_instance_credit_specification::InstanceCreditSpecificationBuilder;
 
+pub use crate::types::_ec2_instance_connect_endpoint::Ec2InstanceConnectEndpointBuilder;
+
 pub use crate::types::_import_snapshot_task::ImportSnapshotTaskBuilder;
 
 pub use crate::types::_import_image_task::ImportImageTaskBuilder;
@@ -1404,3 +1406,4 @@ pub use crate::types::_capacity_reservation_fleet_cancellation_state::CapacityRe
 pub use crate::types::_instance_event_window_association_request::InstanceEventWindowAssociationRequestBuilder;
 
 pub use crate::types::_assigned_private_ip_address::AssignedPrivateIpAddressBuilder;
+

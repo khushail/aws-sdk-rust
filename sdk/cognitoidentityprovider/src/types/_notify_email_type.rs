@@ -3,7 +3,7 @@
 /// <p>The notify email type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyEmailType {
+pub struct NotifyEmailType  {
     /// <p>The email subject.</p>
     #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct NotifyEmailType {
 }
 impl NotifyEmailType {
     /// <p>The email subject.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The email HTML body.</p>
-    pub fn html_body(&self) -> ::std::option::Option<&str> {
+    pub fn html_body(&self) -> ::std::option::Option<& str> {
         self.html_body.as_deref()
     }
     /// <p>The email text body.</p>
-    pub fn text_body(&self) -> ::std::option::Option<&str> {
+    pub fn text_body(&self) -> ::std::option::Option<& str> {
         self.text_body.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl NotifyEmailType {
 
 /// A builder for [`NotifyEmailType`](crate::types::NotifyEmailType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyEmailTypeBuilder {
     pub(crate) subject: ::std::option::Option<::std::string::String>,
     pub(crate) html_body: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl NotifyEmailTypeBuilder {
     }
     /// <p>The email subject.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
+    }
+    /// <p>The email subject.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
     }
     /// <p>The email HTML body.</p>
     pub fn html_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl NotifyEmailTypeBuilder {
     }
     /// <p>The email HTML body.</p>
     pub fn set_html_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.html_body = input;
-        self
+        self.html_body = input; self
+    }
+    /// <p>The email HTML body.</p>
+    pub fn get_html_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.html_body
     }
     /// <p>The email text body.</p>
     pub fn text_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl NotifyEmailTypeBuilder {
     }
     /// <p>The email text body.</p>
     pub fn set_text_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_body = input;
-        self
+        self.text_body = input; self
+    }
+    /// <p>The email text body.</p>
+    pub fn get_text_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_body
     }
     /// Consumes the builder and constructs a [`NotifyEmailType`](crate::types::NotifyEmailType).
     pub fn build(self) -> crate::types::NotifyEmailType {
         crate::types::NotifyEmailType {
-            subject: self.subject,
-            html_body: self.html_body,
-            text_body: self.text_body,
+            subject: self.subject
+            ,
+            html_body: self.html_body
+            ,
+            text_body: self.text_body
+            ,
         }
     }
 }
+

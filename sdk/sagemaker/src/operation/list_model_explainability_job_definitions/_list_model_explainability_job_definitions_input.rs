@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListModelExplainabilityJobDefinitionsInput {
+pub struct ListModelExplainabilityJobDefinitionsInput  {
     /// <p>Name of the endpoint to monitor for model explainability.</p>
     #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
@@ -30,19 +30,19 @@ pub struct ListModelExplainabilityJobDefinitionsInput {
 }
 impl ListModelExplainabilityJobDefinitionsInput {
     /// <p>Name of the endpoint to monitor for model explainability.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::MonitoringJobDefinitionSortKey> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::MonitoringJobDefinitionSortKey> {
         self.sort_by.as_ref()
     }
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
@@ -50,30 +50,28 @@ impl ListModelExplainabilityJobDefinitionsInput {
         self.max_results
     }
     /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>A filter that returns only model explainability jobs created before a specified time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter that returns only model explainability jobs created after a specified time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
 }
 impl ListModelExplainabilityJobDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListModelExplainabilityJobDefinitionsInput`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput).
-    pub fn builder() -> crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsInputBuilder {
         crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelExplainabilityJobDefinitionsInput`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelExplainabilityJobDefinitionsInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,
@@ -86,20 +84,17 @@ pub struct ListModelExplainabilityJobDefinitionsInputBuilder {
 }
 impl ListModelExplainabilityJobDefinitionsInputBuilder {
     /// <p>Name of the endpoint to monitor for model explainability.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the endpoint to monitor for model explainability.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.endpoint_name = input;
-        self
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_name = input; self
+    }
+    /// <p>Name of the endpoint to monitor for model explainability.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
     }
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::MonitoringJobDefinitionSortKey) -> Self {
@@ -107,12 +102,12 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
         self
     }
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>) -> Self {
+        self.sort_by = input; self
+    }
+    /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
+        &self.sort_by
     }
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -121,8 +116,11 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
     }
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
+    }
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,8 +129,11 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -141,24 +142,24 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
     }
     /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.name_contains = input;
-        self
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name_contains = input; self
+    }
+    /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
     }
     /// <p>A filter that returns only model explainability jobs created before a specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -166,12 +167,12 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
         self
     }
     /// <p>A filter that returns only model explainability jobs created before a specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_before = input;
-        self
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_before = input; self
+    }
+    /// <p>A filter that returns only model explainability jobs created before a specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>A filter that returns only model explainability jobs created after a specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -179,15 +180,15 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
         self
     }
     /// <p>A filter that returns only model explainability jobs created after a specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_after = input;
-        self
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_after = input; self
+    }
+    /// <p>A filter that returns only model explainability jobs created after a specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
     }
     /// Consumes the builder and constructs a [`ListModelExplainabilityJobDefinitionsInput`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput {
                 endpoint_name: self.endpoint_name
@@ -210,3 +211,4 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
         )
     }
 }
+

@@ -3,161 +3,151 @@ pub use crate::operation::start_pipeline_reprocessing::_start_pipeline_reprocess
 
 pub use crate::operation::start_pipeline_reprocessing::_start_pipeline_reprocessing_input::StartPipelineReprocessingInputBuilder;
 
+impl StartPipelineReprocessingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.start_pipeline_reprocessing();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `StartPipelineReprocessing`.
-///
+/// 
 /// <p>Starts the reprocessing of raw message data through the pipeline.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartPipelineReprocessingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder,
 }
-impl StartPipelineReprocessingFluentBuilder {
+impl StartPipelineReprocessingFluentBuilder  {
     /// Creates a new `StartPipelineReprocessing`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessing,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the StartPipelineReprocessing as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessing, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessing,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessing, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the pipeline on which to start reprocessing.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline on which to start reprocessing.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
-    /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
+    /// <p>The name of the pipeline on which to start reprocessing.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
+    /// <p>The start time (inclusive) of raw message data that is reprocessed.</p> 
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
+    /// <p>The start time (inclusive) of raw message data that is reprocessed.</p> 
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
+    /// <p>The start time (inclusive) of raw message data that is reprocessed.</p> 
+    /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
+    /// <p>The end time (exclusive) of raw message data that is reprocessed.</p> 
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
+    /// <p>The end time (exclusive) of raw message data that is reprocessed.</p> 
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
+    /// <p>The end time (exclusive) of raw message data that is reprocessed.</p> 
+    /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
+    /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p> 
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
     pub fn channel_messages(mut self, input: crate::types::ChannelMessages) -> Self {
         self.inner = self.inner.channel_messages(input);
         self
     }
-    /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
+    /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p> 
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn set_channel_messages(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessages>,
-    ) -> Self {
+    pub fn set_channel_messages(mut self, input: ::std::option::Option<crate::types::ChannelMessages>) -> Self {
         self.inner = self.inner.set_channel_messages(input);
         self
     }
+    /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p> 
+    /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
+    pub fn get_channel_messages(&self) -> &::std::option::Option<crate::types::ChannelMessages> {
+        self.inner.get_channel_messages()
+    }
 }
+

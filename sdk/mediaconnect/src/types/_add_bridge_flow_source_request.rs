@@ -3,7 +3,7 @@
 /// Add a flow source to an existing bridge.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddBridgeFlowSourceRequest {
+pub struct AddBridgeFlowSourceRequest  {
     /// The Amazon Resource Number (ARN) of the cloud flow to use as a source of this bridge.
     #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,15 @@ pub struct AddBridgeFlowSourceRequest {
 }
 impl AddBridgeFlowSourceRequest {
     /// The Amazon Resource Number (ARN) of the cloud flow to use as a source of this bridge.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The name of the VPC interface attachment to use for this source.
-    pub fn flow_vpc_interface_attachment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcInterfaceAttachment> {
+    pub fn flow_vpc_interface_attachment(&self) -> ::std::option::Option<& crate::types::VpcInterfaceAttachment> {
         self.flow_vpc_interface_attachment.as_ref()
     }
     /// The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -39,13 +37,10 @@ impl AddBridgeFlowSourceRequest {
 
 /// A builder for [`AddBridgeFlowSourceRequest`](crate::types::AddBridgeFlowSourceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddBridgeFlowSourceRequestBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) flow_vpc_interface_attachment:
-        ::std::option::Option<crate::types::VpcInterfaceAttachment>,
+    pub(crate) flow_vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl AddBridgeFlowSourceRequestBuilder {
@@ -56,24 +51,24 @@ impl AddBridgeFlowSourceRequestBuilder {
     }
     /// The Amazon Resource Number (ARN) of the cloud flow to use as a source of this bridge.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
+    }
+    /// The Amazon Resource Number (ARN) of the cloud flow to use as a source of this bridge.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     /// The name of the VPC interface attachment to use for this source.
-    pub fn flow_vpc_interface_attachment(
-        mut self,
-        input: crate::types::VpcInterfaceAttachment,
-    ) -> Self {
+    pub fn flow_vpc_interface_attachment(mut self, input: crate::types::VpcInterfaceAttachment) -> Self {
         self.flow_vpc_interface_attachment = ::std::option::Option::Some(input);
         self
     }
     /// The name of the VPC interface attachment to use for this source.
-    pub fn set_flow_vpc_interface_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
-    ) -> Self {
-        self.flow_vpc_interface_attachment = input;
-        self
+    pub fn set_flow_vpc_interface_attachment(mut self, input: ::std::option::Option<crate::types::VpcInterfaceAttachment>) -> Self {
+        self.flow_vpc_interface_attachment = input; self
+    }
+    /// The name of the VPC interface attachment to use for this source.
+    pub fn get_flow_vpc_interface_attachment(&self) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
+        &self.flow_vpc_interface_attachment
     }
     /// The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,15 +77,22 @@ impl AddBridgeFlowSourceRequestBuilder {
     }
     /// The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AddBridgeFlowSourceRequest`](crate::types::AddBridgeFlowSourceRequest).
     pub fn build(self) -> crate::types::AddBridgeFlowSourceRequest {
         crate::types::AddBridgeFlowSourceRequest {
-            flow_arn: self.flow_arn,
-            flow_vpc_interface_attachment: self.flow_vpc_interface_attachment,
-            name: self.name,
+            flow_arn: self.flow_arn
+            ,
+            flow_vpc_interface_attachment: self.flow_vpc_interface_attachment
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

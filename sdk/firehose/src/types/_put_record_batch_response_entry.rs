@@ -3,7 +3,7 @@
 /// <p>Contains the result for an individual record from a <code>PutRecordBatch</code> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRecordBatchResponseEntry {
+pub struct PutRecordBatchResponseEntry  {
     /// <p>The ID of the record.</p>
     #[doc(hidden)]
     pub record_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct PutRecordBatchResponseEntry {
 }
 impl PutRecordBatchResponseEntry {
     /// <p>The ID of the record.</p>
-    pub fn record_id(&self) -> ::std::option::Option<&str> {
+    pub fn record_id(&self) -> ::std::option::Option<& str> {
         self.record_id.as_deref()
     }
     /// <p>The error code for an individual record result.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message for an individual record result.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl PutRecordBatchResponseEntry {
 
 /// A builder for [`PutRecordBatchResponseEntry`](crate::types::PutRecordBatchResponseEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordBatchResponseEntryBuilder {
     pub(crate) record_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl PutRecordBatchResponseEntryBuilder {
     }
     /// <p>The ID of the record.</p>
     pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_id = input;
-        self
+        self.record_id = input; self
+    }
+    /// <p>The ID of the record.</p>
+    pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_id
     }
     /// <p>The error code for an individual record result.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,31 +64,35 @@ impl PutRecordBatchResponseEntryBuilder {
     }
     /// <p>The error code for an individual record result.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
+    }
+    /// <p>The error code for an individual record result.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message for an individual record result.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message for an individual record result.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>The error message for an individual record result.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`PutRecordBatchResponseEntry`](crate::types::PutRecordBatchResponseEntry).
     pub fn build(self) -> crate::types::PutRecordBatchResponseEntry {
         crate::types::PutRecordBatchResponseEntry {
-            record_id: self.record_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            record_id: self.record_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

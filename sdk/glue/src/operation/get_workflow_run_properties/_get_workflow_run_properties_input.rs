@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowRunPropertiesInput {
+pub struct GetWorkflowRunPropertiesInput  {
     /// <p>Name of the workflow which was run.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct GetWorkflowRunPropertiesInput {
 }
 impl GetWorkflowRunPropertiesInput {
     /// <p>Name of the workflow which was run.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
 impl GetWorkflowRunPropertiesInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowRunPropertiesInput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder {
         crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowRunPropertiesInput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowRunPropertiesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl GetWorkflowRunPropertiesInputBuilder {
     }
     /// <p>Name of the workflow which was run.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Name of the workflow which was run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl GetWorkflowRunPropertiesInputBuilder {
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
+    }
+    /// <p>The ID of the workflow run whose run properties should be returned.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Consumes the builder and constructs a [`GetWorkflowRunPropertiesInput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput {
-                name: self.name,
-                run_id: self.run_id,
-            },
+                name: self.name
+                ,
+                run_id: self.run_id
+                ,
+            }
         )
     }
 }
+

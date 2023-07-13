@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGameInput {
+pub struct UpdateGameInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateGameInput {
 }
 impl UpdateGameInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_name(&self) -> ::std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The description of the game.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl UpdateGameInput {
 
 /// A builder for [`UpdateGameInput`](crate::operation::update_game::UpdateGameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGameInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl UpdateGameInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
+    }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
     }
     /// <p>The description of the game.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl UpdateGameInputBuilder {
     }
     /// <p>The description of the game.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the game.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateGameInput`](crate::operation::update_game::UpdateGameInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_game::UpdateGameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_game::UpdateGameInput {
-            game_name: self.game_name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_game::UpdateGameInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_game::UpdateGameInput {
+                game_name: self.game_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

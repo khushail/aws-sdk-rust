@@ -2,45 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptQualificationRequestOutput {
+pub struct AcceptQualificationRequestOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for AcceptQualificationRequestOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AcceptQualificationRequestOutput {
     /// Creates a new builder-style object to manufacture [`AcceptQualificationRequestOutput`](crate::operation::accept_qualification_request::AcceptQualificationRequestOutput).
-    pub fn builder() -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestOutputBuilder{
+    pub fn builder() -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestOutputBuilder {
         crate::operation::accept_qualification_request::builders::AcceptQualificationRequestOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptQualificationRequestOutput`](crate::operation::accept_qualification_request::AcceptQualificationRequestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptQualificationRequestOutputBuilder {
     _request_id: Option<String>,
 }
 impl AcceptQualificationRequestOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AcceptQualificationRequestOutput`](crate::operation::accept_qualification_request::AcceptQualificationRequestOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::accept_qualification_request::AcceptQualificationRequestOutput {
+    pub fn build(self) -> crate::operation::accept_qualification_request::AcceptQualificationRequestOutput {
         crate::operation::accept_qualification_request::AcceptQualificationRequestOutput {
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The operating system that the image is running.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OperatingSystem {
+pub struct OperatingSystem  {
     /// <p>The operating system.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OperatingSystemType>,
 }
 impl OperatingSystem {
     /// <p>The operating system.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OperatingSystemType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::OperatingSystemType> {
         self.r#type.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl OperatingSystem {
 
 /// A builder for [`OperatingSystem`](crate::types::OperatingSystem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperatingSystemBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OperatingSystemType>,
 }
@@ -36,17 +34,19 @@ impl OperatingSystemBuilder {
         self
     }
     /// <p>The operating system.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystemType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperatingSystemType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The operating system.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OperatingSystemType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`OperatingSystem`](crate::types::OperatingSystem).
     pub fn build(self) -> crate::types::OperatingSystem {
         crate::types::OperatingSystem {
-            r#type: self.r#type,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

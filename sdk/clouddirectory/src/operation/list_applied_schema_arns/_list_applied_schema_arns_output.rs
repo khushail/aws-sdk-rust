@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppliedSchemaArnsOutput {
+pub struct ListAppliedSchemaArnsOutput  {
     /// <p>The ARNs of schemas that are applied to the directory.</p>
     #[doc(hidden)]
     pub schema_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,33 +13,29 @@ pub struct ListAppliedSchemaArnsOutput {
 }
 impl ListAppliedSchemaArnsOutput {
     /// <p>The ARNs of schemas that are applied to the directory.</p>
-    pub fn schema_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn schema_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.schema_arns.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAppliedSchemaArnsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAppliedSchemaArnsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppliedSchemaArnsOutput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsOutputBuilder {
         crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppliedSchemaArnsOutput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppliedSchemaArnsOutputBuilder {
     pub(crate) schema_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,17 @@ impl ListAppliedSchemaArnsOutputBuilder {
     /// <p>The ARNs of schemas that are applied to the directory.</p>
     pub fn schema_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.schema_arns.unwrap_or_default();
-        v.push(input.into());
-        self.schema_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.schema_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of schemas that are applied to the directory.</p>
-    pub fn set_schema_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.schema_arns = input;
-        self
+    pub fn set_schema_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.schema_arns = input; self
+    }
+    /// <p>The ARNs of schemas that are applied to the directory.</p>
+    pub fn get_schema_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.schema_arns
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +68,30 @@ impl ListAppliedSchemaArnsOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAppliedSchemaArnsOutput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput).
     pub fn build(self) -> crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput {
         crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput {
-            schema_arns: self.schema_arns,
-            next_token: self.next_token,
+            schema_arns: self.schema_arns
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains details about an activity scheduled during an execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ActivityScheduledEventDetails {
+pub struct ActivityScheduledEventDetails  {
     /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
     #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
@@ -22,17 +22,15 @@ pub struct ActivityScheduledEventDetails {
 }
 impl ActivityScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn input_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn input_details(&self) -> ::std::option::Option<& crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
     /// <p>The maximum allowed duration of the activity task.</p>
@@ -44,7 +42,7 @@ impl ActivityScheduledEventDetails {
         self.heartbeat_in_seconds
     }
 }
-impl ::std::fmt::Debug for ActivityScheduledEventDetails {
+impl  ::std::fmt::Debug for ActivityScheduledEventDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActivityScheduledEventDetails");
         formatter.field("resource", &self.resource);
@@ -80,8 +78,11 @@ impl ActivityScheduledEventDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,8 +91,11 @@ impl ActivityScheduledEventDetailsBuilder {
     }
     /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
+    }
+    /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn input_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
@@ -99,12 +103,12 @@ impl ActivityScheduledEventDetailsBuilder {
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn set_input_details(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    ) -> Self {
-        self.input_details = input;
-        self
+    pub fn set_input_details(mut self, input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
+        self.input_details = input; self
+    }
+    /// <p>Contains details about the input for an execution history event.</p>
+    pub fn get_input_details(&self) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+        &self.input_details
     }
     /// <p>The maximum allowed duration of the activity task.</p>
     pub fn timeout_in_seconds(mut self, input: i64) -> Self {
@@ -113,8 +117,11 @@ impl ActivityScheduledEventDetailsBuilder {
     }
     /// <p>The maximum allowed duration of the activity task.</p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.timeout_in_seconds = input;
-        self
+        self.timeout_in_seconds = input; self
+    }
+    /// <p>The maximum allowed duration of the activity task.</p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.timeout_in_seconds
     }
     /// <p>The maximum allowed duration between two heartbeats for the activity task.</p>
     pub fn heartbeat_in_seconds(mut self, input: i64) -> Self {
@@ -123,17 +130,25 @@ impl ActivityScheduledEventDetailsBuilder {
     }
     /// <p>The maximum allowed duration between two heartbeats for the activity task.</p>
     pub fn set_heartbeat_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.heartbeat_in_seconds = input;
-        self
+        self.heartbeat_in_seconds = input; self
+    }
+    /// <p>The maximum allowed duration between two heartbeats for the activity task.</p>
+    pub fn get_heartbeat_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.heartbeat_in_seconds
     }
     /// Consumes the builder and constructs a [`ActivityScheduledEventDetails`](crate::types::ActivityScheduledEventDetails).
     pub fn build(self) -> crate::types::ActivityScheduledEventDetails {
         crate::types::ActivityScheduledEventDetails {
-            resource: self.resource,
-            input: self.input,
-            input_details: self.input_details,
-            timeout_in_seconds: self.timeout_in_seconds,
-            heartbeat_in_seconds: self.heartbeat_in_seconds,
+            resource: self.resource
+            ,
+            input: self.input
+            ,
+            input_details: self.input_details
+            ,
+            timeout_in_seconds: self.timeout_in_seconds
+            ,
+            heartbeat_in_seconds: self.heartbeat_in_seconds
+            ,
         }
     }
 }
@@ -148,3 +163,4 @@ impl ::std::fmt::Debug for ActivityScheduledEventDetailsBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DescribeNetworkInterfaceAttribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNetworkInterfaceAttributeInput {
+pub struct DescribeNetworkInterfaceAttributeInput  {
     /// <p>The attribute of the network interface. This parameter is required.</p>
     #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::NetworkInterfaceAttribute>,
@@ -16,7 +16,7 @@ pub struct DescribeNetworkInterfaceAttributeInput {
 }
 impl DescribeNetworkInterfaceAttributeInput {
     /// <p>The attribute of the network interface. This parameter is required.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::NetworkInterfaceAttribute> {
         self.attribute.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -24,22 +24,20 @@ impl DescribeNetworkInterfaceAttributeInput {
         self.dry_run
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
 }
 impl DescribeNetworkInterfaceAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInterfaceAttributeInput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput).
-    pub fn builder() -> crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder{
+    pub fn builder() -> crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder {
         crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInterfaceAttributeInput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfaceAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::NetworkInterfaceAttribute>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -52,12 +50,12 @@ impl DescribeNetworkInterfaceAttributeInputBuilder {
         self
     }
     /// <p>The attribute of the network interface. This parameter is required.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceAttribute>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceAttribute>) -> Self {
+        self.attribute = input; self
+    }
+    /// <p>The attribute of the network interface. This parameter is required.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::NetworkInterfaceAttribute> {
+        &self.attribute
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -66,27 +64,27 @@ impl DescribeNetworkInterfaceAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_interface_id = input; self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInterfaceAttributeInput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput {
                 attribute: self.attribute
@@ -99,3 +97,4 @@ impl DescribeNetworkInterfaceAttributeInputBuilder {
         )
     }
 }
+

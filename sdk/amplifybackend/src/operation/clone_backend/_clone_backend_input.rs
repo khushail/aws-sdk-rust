@@ -3,7 +3,7 @@
 /// <p>The request body for CloneBackend.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloneBackendInput {
+pub struct CloneBackendInput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct CloneBackendInput {
 }
 impl CloneBackendInput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> ::std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The name of the destination backend environment to be created.</p>
-    pub fn target_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_environment_name(&self) -> ::std::option::Option<& str> {
         self.target_environment_name.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl CloneBackendInput {
 
 /// A builder for [`CloneBackendInput`](crate::operation::clone_backend::CloneBackendInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloneBackendInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -53,52 +51,50 @@ impl CloneBackendInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.backend_environment_name = input;
-        self
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backend_environment_name = input; self
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
     }
     /// <p>The name of the destination backend environment to be created.</p>
-    pub fn target_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination backend environment to be created.</p>
-    pub fn set_target_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_environment_name = input;
-        self
+    pub fn set_target_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_environment_name = input; self
+    }
+    /// <p>The name of the destination backend environment to be created.</p>
+    pub fn get_target_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_environment_name
     }
     /// Consumes the builder and constructs a [`CloneBackendInput`](crate::operation::clone_backend::CloneBackendInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::clone_backend::CloneBackendInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::clone_backend::CloneBackendInput {
-            app_id: self.app_id,
-            backend_environment_name: self.backend_environment_name,
-            target_environment_name: self.target_environment_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::clone_backend::CloneBackendInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::clone_backend::CloneBackendInput {
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                target_environment_name: self.target_environment_name
+                ,
+            }
+        )
     }
 }
+

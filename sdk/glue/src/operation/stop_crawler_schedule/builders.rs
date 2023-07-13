@@ -3,102 +3,87 @@ pub use crate::operation::stop_crawler_schedule::_stop_crawler_schedule_output::
 
 pub use crate::operation::stop_crawler_schedule::_stop_crawler_schedule_input::StopCrawlerScheduleInputBuilder;
 
+impl StopCrawlerScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::stop_crawler_schedule::StopCrawlerScheduleError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.stop_crawler_schedule();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `StopCrawlerSchedule`.
-///
+/// 
 /// <p>Sets the schedule state of the specified crawler to <code>NOT_SCHEDULED</code>, but does not stop the crawler if it is already running.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopCrawlerScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder,
+                    inner: crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder,
 }
-impl StopCrawlerScheduleFluentBuilder {
+impl StopCrawlerScheduleFluentBuilder  {
     /// Creates a new `StopCrawlerSchedule`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_crawler_schedule::StopCrawlerSchedule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_crawler_schedule::StopCrawlerScheduleError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the StopCrawlerSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_crawler_schedule::StopCrawlerScheduleError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::stop_crawler_schedule::StopCrawlerSchedule, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_crawler_schedule::StopCrawlerScheduleError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_crawler_schedule::StopCrawlerSchedule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_crawler_schedule::StopCrawlerScheduleError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::stop_crawler_schedule::StopCrawlerSchedule, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Name of the crawler whose schedule state to set.</p>
     pub fn crawler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.crawler_name(input.into());
@@ -109,4 +94,9 @@ impl StopCrawlerScheduleFluentBuilder {
         self.inner = self.inner.set_crawler_name(input);
         self
     }
+    /// <p>Name of the crawler whose schedule state to set.</p>
+    pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_crawler_name()
+    }
 }
+

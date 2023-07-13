@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendWorkflowStepStateInput {
+pub struct SendWorkflowStepStateInput  {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct SendWorkflowStepStateInput {
 }
 impl SendWorkflowStepStateInput {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p>Indicates whether the specified step succeeded or failed.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CustomStepStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CustomStepStatus> {
         self.status.as_ref()
     }
 }
 impl SendWorkflowStepStateInput {
     /// Creates a new builder-style object to manufacture [`SendWorkflowStepStateInput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateInput).
-    pub fn builder(
-    ) -> crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder {
         crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder::default()
     }
 }
 
 /// A builder for [`SendWorkflowStepStateInput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendWorkflowStepStateInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
@@ -62,8 +58,11 @@ impl SendWorkflowStepStateInputBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +71,11 @@ impl SendWorkflowStepStateInputBuilder {
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
+    }
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,8 +84,11 @@ impl SendWorkflowStepStateInputBuilder {
     }
     /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
+    }
+    /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// <p>Indicates whether the specified step succeeded or failed.</p>
     pub fn status(mut self, input: crate::types::CustomStepStatus) -> Self {
@@ -91,27 +96,27 @@ impl SendWorkflowStepStateInputBuilder {
         self
     }
     /// <p>Indicates whether the specified step succeeded or failed.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomStepStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomStepStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>Indicates whether the specified step succeeded or failed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomStepStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SendWorkflowStepStateInput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_workflow_step_state::SendWorkflowStepStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_workflow_step_state::SendWorkflowStepStateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::send_workflow_step_state::SendWorkflowStepStateInput {
-                workflow_id: self.workflow_id,
-                execution_id: self.execution_id,
-                token: self.token,
-                status: self.status,
-            },
+                workflow_id: self.workflow_id
+                ,
+                execution_id: self.execution_id
+                ,
+                token: self.token
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

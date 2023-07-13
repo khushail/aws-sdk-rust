@@ -3,7 +3,7 @@
 /// <p>The request object for <code>DescribeFileSystems</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFileSystemsInput {
+pub struct DescribeFileSystemsInput  {
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
     #[doc(hidden)]
     pub file_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,7 +16,7 @@ pub struct DescribeFileSystemsInput {
 }
 impl DescribeFileSystemsInput {
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
-    pub fn file_system_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn file_system_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.file_system_ids.as_deref()
     }
     /// <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
@@ -24,24 +24,20 @@ impl DescribeFileSystemsInput {
         self.max_results
     }
     /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the operation continues the list from where the returning call left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeFileSystemsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
-        crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
+        crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileSystemsInputBuilder {
     pub(crate) file_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -53,22 +49,19 @@ impl DescribeFileSystemsInputBuilder {
     /// To override the contents of this collection use [`set_file_system_ids`](Self::set_file_system_ids).
     ///
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
-    pub fn file_system_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.file_system_ids.unwrap_or_default();
-        v.push(input.into());
-        self.file_system_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.file_system_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
-    pub fn set_file_system_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.file_system_ids = input;
-        self
+    pub fn set_file_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.file_system_ids = input; self
+    }
+    /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
+    pub fn get_file_system_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.file_system_ids
     }
     /// <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -77,8 +70,11 @@ impl DescribeFileSystemsInputBuilder {
     }
     /// <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the operation continues the list from where the returning call left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,22 +83,24 @@ impl DescribeFileSystemsInputBuilder {
     }
     /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the operation continues the list from where the returning call left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the operation continues the list from where the returning call left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_file_systems::DescribeFileSystemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_file_systems::DescribeFileSystemsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_file_systems::DescribeFileSystemsInput {
-                file_system_ids: self.file_system_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                file_system_ids: self.file_system_ids
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

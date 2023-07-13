@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateCertificateInput {
+pub struct DisassociateCertificateInput  {
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateCertificateInput {
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DisassociateCertificateInput {
     /// Creates a new builder-style object to manufacture [`DisassociateCertificateInput`](crate::operation::disassociate_certificate::DisassociateCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_certificate::builders::DisassociateCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_certificate::builders::DisassociateCertificateInputBuilder {
         crate::operation::disassociate_certificate::builders::DisassociateCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateCertificateInput`](crate::operation::disassociate_certificate::DisassociateCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateCertificateInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DisassociateCertificateInputBuilder {
     }
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DisassociateCertificateInput`](crate::operation::disassociate_certificate::DisassociateCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_certificate::DisassociateCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_certificate::DisassociateCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_certificate::DisassociateCertificateInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

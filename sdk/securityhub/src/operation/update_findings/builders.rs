@@ -3,107 +3,101 @@ pub use crate::operation::update_findings::_update_findings_output::UpdateFindin
 
 pub use crate::operation::update_findings::_update_findings_input::UpdateFindingsInputBuilder;
 
+impl UpdateFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_findings::UpdateFindingsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_findings::UpdateFindingsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_findings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateFindings`.
-///
-/// <p> <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>, use <code>BatchUpdateFindings</code>.</p>
+/// 
+/// <p> <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>, use <code>BatchUpdateFindings</code>.</p> 
 /// <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated findings that the filter attributes specify. Any member account that can view the finding also sees the update to the finding.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_findings::builders::UpdateFindingsInputBuilder,
+                    inner: crate::operation::update_findings::builders::UpdateFindingsInputBuilder,
 }
-impl UpdateFindingsFluentBuilder {
+impl UpdateFindingsFluentBuilder  {
     /// Creates a new `UpdateFindings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_findings::UpdateFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_findings::UpdateFindingsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateFindings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_findings::builders::UpdateFindingsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_findings::UpdateFindingsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_findings::UpdateFindingsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_findings::UpdateFindings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_findings::UpdateFindingsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_findings::UpdateFindingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_findings::UpdateFindingsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_findings::UpdateFindingsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_findings::UpdateFindingsError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_findings::UpdateFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_findings::UpdateFindingsError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_findings::UpdateFindingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_findings::UpdateFindingsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_findings::UpdateFindings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_findings::UpdateFindingsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>A collection of attributes that specify which findings you want to update.</p>
     pub fn filters(mut self, input: crate::types::AwsSecurityFindingFilters) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p>A collection of attributes that specify which findings you want to update.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>A collection of attributes that specify which findings you want to update.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingFilters> {
+        self.inner.get_filters()
     }
     /// <p>The updated note for the finding.</p>
     pub fn note(mut self, input: crate::types::NoteUpdate) -> Self {
@@ -115,17 +109,23 @@ impl UpdateFindingsFluentBuilder {
         self.inner = self.inner.set_note(input);
         self
     }
+    /// <p>The updated note for the finding.</p>
+    pub fn get_note(&self) -> &::std::option::Option<crate::types::NoteUpdate> {
+        self.inner.get_note()
+    }
     /// <p>The updated record state for the finding.</p>
     pub fn record_state(mut self, input: crate::types::RecordState) -> Self {
         self.inner = self.inner.record_state(input);
         self
     }
     /// <p>The updated record state for the finding.</p>
-    pub fn set_record_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordState>,
-    ) -> Self {
+    pub fn set_record_state(mut self, input: ::std::option::Option<crate::types::RecordState>) -> Self {
         self.inner = self.inner.set_record_state(input);
         self
     }
+    /// <p>The updated record state for the finding.</p>
+    pub fn get_record_state(&self) -> &::std::option::Option<crate::types::RecordState> {
+        self.inner.get_record_state()
+    }
 }
+

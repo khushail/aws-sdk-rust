@@ -3,7 +3,7 @@
 /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesUserDetails {
+pub struct KubernetesUserDetails  {
     /// <p>The username of the user who called the Kubernetes API.</p>
     #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct KubernetesUserDetails {
 }
 impl KubernetesUserDetails {
     /// <p>The username of the user who called the Kubernetes API.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
-    pub fn uid(&self) -> ::std::option::Option<&str> {
+    pub fn uid(&self) -> ::std::option::Option<& str> {
         self.uid.as_deref()
     }
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn groups(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.groups.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl KubernetesUserDetails {
 
 /// A builder for [`KubernetesUserDetails`](crate::types::KubernetesUserDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesUserDetailsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) uid: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl KubernetesUserDetailsBuilder {
     }
     /// <p>The username of the user who called the Kubernetes API.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// <p>The username of the user who called the Kubernetes API.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
     pub fn uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl KubernetesUserDetailsBuilder {
     }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
     pub fn set_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
+    }
+    /// <p>The user ID of the user who called the Kubernetes API.</p>
+    pub fn get_uid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uid
     }
     /// Appends an item to `groups`.
     ///
@@ -73,24 +77,28 @@ impl KubernetesUserDetailsBuilder {
     /// <p>The groups that include the user who called the Kubernetes API.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.groups = input; self
+    }
+    /// <p>The groups that include the user who called the Kubernetes API.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
     }
     /// Consumes the builder and constructs a [`KubernetesUserDetails`](crate::types::KubernetesUserDetails).
     pub fn build(self) -> crate::types::KubernetesUserDetails {
         crate::types::KubernetesUserDetails {
-            username: self.username,
-            uid: self.uid,
-            groups: self.groups,
+            username: self.username
+            ,
+            uid: self.uid
+            ,
+            groups: self.groups
+            ,
         }
     }
 }
+

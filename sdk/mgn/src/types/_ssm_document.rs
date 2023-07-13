@@ -3,7 +3,7 @@
 /// <p>AWS Systems Manager Document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SsmDocument {
+pub struct SsmDocument  {
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
     #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
@@ -18,25 +18,18 @@ pub struct SsmDocument {
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>AWS Systems Manager Document parameters.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     /// <p>AWS Systems Manager Document external parameters.</p>
     #[doc(hidden)]
-    pub external_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    >,
+    pub external_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
 }
 impl SsmDocument {
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>AWS Systems Manager Document name or full ARN.</p>
-    pub fn ssm_document_name(&self) -> ::std::option::Option<&str> {
+    pub fn ssm_document_name(&self) -> ::std::option::Option<& str> {
         self.ssm_document_name.as_deref()
     }
     /// <p>AWS Systems Manager Document timeout seconds.</p>
@@ -48,22 +41,11 @@ impl SsmDocument {
         self.must_succeed_for_cutover
     }
     /// <p>AWS Systems Manager Document parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
         self.parameters.as_ref()
     }
     /// <p>AWS Systems Manager Document external parameters.</p>
-    pub fn external_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    > {
+    pub fn external_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
         self.external_parameters.as_ref()
     }
 }
@@ -76,23 +58,14 @@ impl SsmDocument {
 
 /// A builder for [`SsmDocument`](crate::types::SsmDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SsmDocumentBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) ssm_document_name: ::std::option::Option<::std::string::String>,
     pub(crate) timeout_seconds: ::std::option::Option<i32>,
     pub(crate) must_succeed_for_cutover: ::std::option::Option<bool>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    >,
-    pub(crate) external_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
+    pub(crate) external_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
 }
 impl SsmDocumentBuilder {
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
@@ -102,24 +75,24 @@ impl SsmDocumentBuilder {
     }
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
+    }
+    /// <p>User-friendly name for the AWS Systems Manager Document.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p>AWS Systems Manager Document name or full ARN.</p>
-    pub fn ssm_document_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssm_document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssm_document_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>AWS Systems Manager Document name or full ARN.</p>
-    pub fn set_ssm_document_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ssm_document_name = input;
-        self
+    pub fn set_ssm_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ssm_document_name = input; self
+    }
+    /// <p>AWS Systems Manager Document name or full ARN.</p>
+    pub fn get_ssm_document_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssm_document_name
     }
     /// <p>AWS Systems Manager Document timeout seconds.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -128,8 +101,11 @@ impl SsmDocumentBuilder {
     }
     /// <p>AWS Systems Manager Document timeout seconds.</p>
     pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_seconds = input;
-        self
+        self.timeout_seconds = input; self
+    }
+    /// <p>AWS Systems Manager Document timeout seconds.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_seconds
     }
     /// <p>If true, Cutover will not be enabled if the document has failed.</p>
     pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
@@ -138,71 +114,67 @@ impl SsmDocumentBuilder {
     }
     /// <p>If true, Cutover will not be enabled if the document has failed.</p>
     pub fn set_must_succeed_for_cutover(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.must_succeed_for_cutover = input;
-        self
+        self.must_succeed_for_cutover = input; self
+    }
+    /// <p>If true, Cutover will not be enabled if the document has failed.</p>
+    pub fn get_must_succeed_for_cutover(&self) -> &::std::option::Option<bool> {
+        &self.must_succeed_for_cutover
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>AWS Systems Manager Document parameters.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::SsmParameterStoreParameter>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>AWS Systems Manager Document parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-            >,
-        >,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>) -> Self {
+        self.parameters = input; self
+    }
+    /// <p>AWS Systems Manager Document parameters.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
+        &self.parameters
     }
     /// Adds a key-value pair to `external_parameters`.
     ///
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
     ///
     /// <p>AWS Systems Manager Document external parameters.</p>
-    pub fn external_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::SsmExternalParameter,
-    ) -> Self {
+    pub fn external_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SsmExternalParameter) -> Self {
         let mut hash_map = self.external_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.external_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.external_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>AWS Systems Manager Document external parameters.</p>
-    pub fn set_external_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-        >,
-    ) -> Self {
-        self.external_parameters = input;
-        self
+    pub fn set_external_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>) -> Self {
+        self.external_parameters = input; self
+    }
+    /// <p>AWS Systems Manager Document external parameters.</p>
+    pub fn get_external_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
+        &self.external_parameters
     }
     /// Consumes the builder and constructs a [`SsmDocument`](crate::types::SsmDocument).
     pub fn build(self) -> crate::types::SsmDocument {
         crate::types::SsmDocument {
-            action_name: self.action_name,
-            ssm_document_name: self.ssm_document_name,
-            timeout_seconds: self.timeout_seconds.unwrap_or_default(),
-            must_succeed_for_cutover: self.must_succeed_for_cutover,
-            parameters: self.parameters,
-            external_parameters: self.external_parameters,
+            action_name: self.action_name
+            ,
+            ssm_document_name: self.ssm_document_name
+            ,
+            timeout_seconds: self.timeout_seconds
+                .unwrap_or_default()
+            ,
+            must_succeed_for_cutover: self.must_succeed_for_cutover
+            ,
+            parameters: self.parameters
+            ,
+            external_parameters: self.external_parameters
+            ,
         }
     }
 }
+

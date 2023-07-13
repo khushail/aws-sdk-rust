@@ -3,7 +3,7 @@
 /// <p>Describes the reason why the last image builder state change occurred.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageBuilderStateChangeReason {
+pub struct ImageBuilderStateChangeReason  {
     /// <p>The state change reason code.</p>
     #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ImageBuilderStateChangeReasonCode>,
@@ -13,11 +13,11 @@ pub struct ImageBuilderStateChangeReason {
 }
 impl ImageBuilderStateChangeReason {
     /// <p>The state change reason code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ImageBuilderStateChangeReasonCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::ImageBuilderStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The state change reason message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ImageBuilderStateChangeReason {
 
 /// A builder for [`ImageBuilderStateChangeReason`](crate::types::ImageBuilderStateChangeReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageBuilderStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ImageBuilderStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl ImageBuilderStateChangeReasonBuilder {
         self
     }
     /// <p>The state change reason code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageBuilderStateChangeReasonCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ImageBuilderStateChangeReasonCode>) -> Self {
+        self.code = input; self
+    }
+    /// <p>The state change reason code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ImageBuilderStateChangeReasonCode> {
+        &self.code
     }
     /// <p>The state change reason message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl ImageBuilderStateChangeReasonBuilder {
     }
     /// <p>The state change reason message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The state change reason message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ImageBuilderStateChangeReason`](crate::types::ImageBuilderStateChangeReason).
     pub fn build(self) -> crate::types::ImageBuilderStateChangeReason {
         crate::types::ImageBuilderStateChangeReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

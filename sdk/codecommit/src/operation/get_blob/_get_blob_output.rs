@@ -3,7 +3,7 @@
 /// <p>Represents the output of a get blob operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBlobOutput {
+pub struct GetBlobOutput  {
     /// <p>The content of the blob, usually a file.</p>
     #[doc(hidden)]
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -11,15 +11,15 @@ pub struct GetBlobOutput {
 }
 impl GetBlobOutput {
     /// <p>The content of the blob, usually a file.</p>
-    pub fn content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn content(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.content.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBlobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBlobOutput {
     /// Creates a new builder-style object to manufacture [`GetBlobOutput`](crate::operation::get_blob::GetBlobOutput).
     pub fn builder() -> crate::operation::get_blob::builders::GetBlobOutputBuilder {
@@ -29,9 +29,7 @@ impl GetBlobOutput {
 
 /// A builder for [`GetBlobOutput`](crate::operation::get_blob::GetBlobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBlobOutputBuilder {
     pub(crate) content: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
@@ -44,23 +42,28 @@ impl GetBlobOutputBuilder {
     }
     /// <p>The content of the blob, usually a file.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
+    }
+    /// <p>The content of the blob, usually a file.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBlobOutput`](crate::operation::get_blob::GetBlobOutput).
     pub fn build(self) -> crate::operation::get_blob::GetBlobOutput {
         crate::operation::get_blob::GetBlobOutput {
-            content: self.content,
+            content: self.content
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

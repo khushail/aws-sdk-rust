@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPreparedStatementInput {
+pub struct GetPreparedStatementInput  {
     /// <p>The name of the prepared statement to retrieve.</p>
     #[doc(hidden)]
     pub statement_name: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct GetPreparedStatementInput {
 }
 impl GetPreparedStatementInput {
     /// <p>The name of the prepared statement to retrieve.</p>
-    pub fn statement_name(&self) -> ::std::option::Option<&str> {
+    pub fn statement_name(&self) -> ::std::option::Option<& str> {
         self.statement_name.as_deref()
     }
     /// <p>The workgroup to which the statement to be retrieved belongs.</p>
-    pub fn work_group(&self) -> ::std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<& str> {
         self.work_group.as_deref()
     }
 }
 impl GetPreparedStatementInput {
     /// Creates a new builder-style object to manufacture [`GetPreparedStatementInput`](crate::operation::get_prepared_statement::GetPreparedStatementInput).
-    pub fn builder(
-    ) -> crate::operation::get_prepared_statement::builders::GetPreparedStatementInputBuilder {
+    pub fn builder() -> crate::operation::get_prepared_statement::builders::GetPreparedStatementInputBuilder {
         crate::operation::get_prepared_statement::builders::GetPreparedStatementInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPreparedStatementInput`](crate::operation::get_prepared_statement::GetPreparedStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPreparedStatementInputBuilder {
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
 }
 impl GetPreparedStatementInputBuilder {
     /// <p>The name of the prepared statement to retrieve.</p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the prepared statement to retrieve.</p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.statement_name = input;
-        self
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.statement_name = input; self
+    }
+    /// <p>The name of the prepared statement to retrieve.</p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_name
     }
     /// <p>The workgroup to which the statement to be retrieved belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,21 +55,22 @@ impl GetPreparedStatementInputBuilder {
     }
     /// <p>The workgroup to which the statement to be retrieved belongs.</p>
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
+    }
+    /// <p>The workgroup to which the statement to be retrieved belongs.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// Consumes the builder and constructs a [`GetPreparedStatementInput`](crate::operation::get_prepared_statement::GetPreparedStatementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_prepared_statement::GetPreparedStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_prepared_statement::GetPreparedStatementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_prepared_statement::GetPreparedStatementInput {
-                statement_name: self.statement_name,
-                work_group: self.work_group,
-            },
+                statement_name: self.statement_name
+                ,
+                work_group: self.work_group
+                ,
+            }
         )
     }
 }
+

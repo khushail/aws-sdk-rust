@@ -3,7 +3,7 @@
 /// <p>Contains the count of workflow executions returned from <code>CountOpenWorkflowExecutions</code> or <code>CountClosedWorkflowExecutions</code> </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CountOpenWorkflowExecutionsOutput {
+pub struct CountOpenWorkflowExecutionsOutput  {
     /// <p>The number of workflow executions.</p>
     #[doc(hidden)]
     pub count: i32,
@@ -23,22 +23,20 @@ impl CountOpenWorkflowExecutionsOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for CountOpenWorkflowExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CountOpenWorkflowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsOutput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput).
-    pub fn builder() -> crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsOutputBuilder {
         crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CountOpenWorkflowExecutionsOutput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CountOpenWorkflowExecutionsOutputBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) truncated: ::std::option::Option<bool>,
@@ -52,8 +50,11 @@ impl CountOpenWorkflowExecutionsOutputBuilder {
     }
     /// <p>The number of workflow executions.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
+    }
+    /// <p>The number of workflow executions.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub fn truncated(mut self, input: bool) -> Self {
@@ -62,26 +63,32 @@ impl CountOpenWorkflowExecutionsOutputBuilder {
     }
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.truncated = input;
-        self
+        self.truncated = input; self
+    }
+    /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
+    pub fn get_truncated(&self) -> &::std::option::Option<bool> {
+        &self.truncated
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CountOpenWorkflowExecutionsOutput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput {
+    pub fn build(self) -> crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput {
         crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput {
-            count: self.count.unwrap_or_default(),
-            truncated: self.truncated.unwrap_or_default(),
+            count: self.count
+                .unwrap_or_default()
+            ,
+            truncated: self.truncated
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

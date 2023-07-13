@@ -2,56 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVoiceConnectorTerminationInput {
+pub struct DeleteVoiceConnectorTerminationInput  {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceConnectorTerminationInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
 }
 impl DeleteVoiceConnectorTerminationInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorTerminationInput`](crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationInput).
-    pub fn builder() -> crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationInputBuilder{
+    pub fn builder() -> crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationInputBuilder {
         crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceConnectorTerminationInput`](crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceConnectorTerminationInputBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voice_connector_id = input; self
+    }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorTerminationInput`](crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationInput {
                 voice_connector_id: self.voice_connector_id
@@ -60,3 +50,4 @@ impl DeleteVoiceConnectorTerminationInputBuilder {
         )
     }
 }
+

@@ -3,29 +3,27 @@
 /// <p>Represents the input of a <code>DeleteGitHubAccount</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGitHubAccountTokenInput {
+pub struct DeleteGitHubAccountTokenInput  {
     /// <p>The name of the GitHub account connection to delete.</p>
     #[doc(hidden)]
     pub token_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGitHubAccountTokenInput {
     /// <p>The name of the GitHub account connection to delete.</p>
-    pub fn token_name(&self) -> ::std::option::Option<&str> {
+    pub fn token_name(&self) -> ::std::option::Option<& str> {
         self.token_name.as_deref()
     }
 }
 impl DeleteGitHubAccountTokenInput {
     /// Creates a new builder-style object to manufacture [`DeleteGitHubAccountTokenInput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput).
-    pub fn builder() -> crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenInputBuilder{
+    pub fn builder() -> crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenInputBuilder {
         crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGitHubAccountTokenInput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGitHubAccountTokenInputBuilder {
     pub(crate) token_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +35,20 @@ impl DeleteGitHubAccountTokenInputBuilder {
     }
     /// <p>The name of the GitHub account connection to delete.</p>
     pub fn set_token_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_name = input;
-        self
+        self.token_name = input; self
+    }
+    /// <p>The name of the GitHub account connection to delete.</p>
+    pub fn get_token_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_name
     }
     /// Consumes the builder and constructs a [`DeleteGitHubAccountTokenInput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput {
-                token_name: self.token_name,
-            },
+                token_name: self.token_name
+                ,
+            }
         )
     }
 }
+

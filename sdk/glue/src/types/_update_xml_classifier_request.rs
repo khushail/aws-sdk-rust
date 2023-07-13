@@ -3,7 +3,7 @@
 /// <p>Specifies an XML classifier to be updated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateXmlClassifierRequest {
+pub struct UpdateXmlClassifierRequest  {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -18,17 +18,17 @@ pub struct UpdateXmlClassifierRequest {
 }
 impl UpdateXmlClassifierRequest {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub fn classification(&self) -> ::std::option::Option<&str> {
+    pub fn classification(&self) -> ::std::option::Option<& str> {
         self.classification.as_deref()
     }
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
     /// <row item_a="A" item_b="B" /></code> is not).</p>
-    pub fn row_tag(&self) -> ::std::option::Option<&str> {
+    pub fn row_tag(&self) -> ::std::option::Option<& str> {
         self.row_tag.as_deref()
     }
 }
@@ -41,9 +41,7 @@ impl UpdateXmlClassifierRequest {
 
 /// A builder for [`UpdateXmlClassifierRequest`](crate::types::UpdateXmlClassifierRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateXmlClassifierRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) classification: ::std::option::Option<::std::string::String>,
@@ -57,24 +55,24 @@ impl UpdateXmlClassifierRequestBuilder {
     }
     /// <p>The name of the classifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the classifier.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub fn classification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub fn set_classification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.classification = input;
-        self
+    pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.classification = input; self
+    }
+    /// <p>An identifier of the data format that the classifier matches.</p>
+    pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
+        &self.classification
     }
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
@@ -87,15 +85,24 @@ impl UpdateXmlClassifierRequestBuilder {
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
     /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub fn set_row_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.row_tag = input;
-        self
+        self.row_tag = input; self
+    }
+    /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+    /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+    /// <row item_a="A" item_b="B" /></code> is not).</p>
+    pub fn get_row_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.row_tag
     }
     /// Consumes the builder and constructs a [`UpdateXmlClassifierRequest`](crate::types::UpdateXmlClassifierRequest).
     pub fn build(self) -> crate::types::UpdateXmlClassifierRequest {
         crate::types::UpdateXmlClassifierRequest {
-            name: self.name,
-            classification: self.classification,
-            row_tag: self.row_tag,
+            name: self.name
+            ,
+            classification: self.classification
+            ,
+            row_tag: self.row_tag
+            ,
         }
     }
 }
+

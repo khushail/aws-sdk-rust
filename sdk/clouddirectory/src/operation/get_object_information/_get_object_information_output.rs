@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetObjectInformationOutput {
+pub struct GetObjectInformationOutput  {
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
     #[doc(hidden)]
     pub schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
@@ -13,32 +13,29 @@ pub struct GetObjectInformationOutput {
 }
 impl GetObjectInformationOutput {
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
-    pub fn schema_facets(&self) -> ::std::option::Option<&[crate::types::SchemaFacet]> {
+    pub fn schema_facets(&self) -> ::std::option::Option<& [crate::types::SchemaFacet]> {
         self.schema_facets.as_deref()
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn object_identifier(&self) -> ::std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetObjectInformationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetObjectInformationOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectInformationOutput`](crate::operation::get_object_information::GetObjectInformationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_object_information::builders::GetObjectInformationOutputBuilder {
+    pub fn builder() -> crate::operation::get_object_information::builders::GetObjectInformationOutputBuilder {
         crate::operation::get_object_information::builders::GetObjectInformationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetObjectInformationOutput`](crate::operation::get_object_information::GetObjectInformationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetObjectInformationOutputBuilder {
     pub(crate) schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
@@ -52,49 +49,49 @@ impl GetObjectInformationOutputBuilder {
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
     pub fn schema_facets(mut self, input: crate::types::SchemaFacet) -> Self {
         let mut v = self.schema_facets.unwrap_or_default();
-        v.push(input);
-        self.schema_facets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schema_facets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
-    pub fn set_schema_facets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
-    ) -> Self {
-        self.schema_facets = input;
-        self
+    pub fn set_schema_facets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>) -> Self {
+        self.schema_facets = input; self
+    }
+    /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
+    pub fn get_schema_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+        &self.schema_facets
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    pub fn object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.object_identifier = input;
-        self
+    pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.object_identifier = input; self
+    }
+    /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetObjectInformationOutput`](crate::operation::get_object_information::GetObjectInformationOutput).
     pub fn build(self) -> crate::operation::get_object_information::GetObjectInformationOutput {
         crate::operation::get_object_information::GetObjectInformationOutput {
-            schema_facets: self.schema_facets,
-            object_identifier: self.object_identifier,
+            schema_facets: self.schema_facets
+            ,
+            object_identifier: self.object_identifier
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

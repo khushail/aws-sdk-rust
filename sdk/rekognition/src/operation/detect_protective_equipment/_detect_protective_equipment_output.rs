@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectProtectiveEquipmentOutput {
+pub struct DetectProtectiveEquipmentOutput  {
     /// <p>The version number of the PPE detection model used to detect PPE in the image.</p>
     #[doc(hidden)]
     pub protective_equipment_model_version: ::std::option::Option<::std::string::String>,
@@ -16,58 +16,52 @@ pub struct DetectProtectiveEquipmentOutput {
 }
 impl DetectProtectiveEquipmentOutput {
     /// <p>The version number of the PPE detection model used to detect PPE in the image.</p>
-    pub fn protective_equipment_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn protective_equipment_model_version(&self) -> ::std::option::Option<& str> {
         self.protective_equipment_model_version.as_deref()
     }
     /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
-    pub fn persons(&self) -> ::std::option::Option<&[crate::types::ProtectiveEquipmentPerson]> {
+    pub fn persons(&self) -> ::std::option::Option<& [crate::types::ProtectiveEquipmentPerson]> {
         self.persons.as_deref()
     }
     /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::ProtectiveEquipmentSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::ProtectiveEquipmentSummary> {
         self.summary.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DetectProtectiveEquipmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetectProtectiveEquipmentOutput {
     /// Creates a new builder-style object to manufacture [`DetectProtectiveEquipmentOutput`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput).
-    pub fn builder() -> crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentOutputBuilder{
+    pub fn builder() -> crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentOutputBuilder {
         crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetectProtectiveEquipmentOutput`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectProtectiveEquipmentOutputBuilder {
     pub(crate) protective_equipment_model_version: ::std::option::Option<::std::string::String>,
-    pub(crate) persons:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentPerson>>,
+    pub(crate) persons: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentPerson>>,
     pub(crate) summary: ::std::option::Option<crate::types::ProtectiveEquipmentSummary>,
     _request_id: Option<String>,
 }
 impl DetectProtectiveEquipmentOutputBuilder {
     /// <p>The version number of the PPE detection model used to detect PPE in the image.</p>
-    pub fn protective_equipment_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protective_equipment_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protective_equipment_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the PPE detection model used to detect PPE in the image.</p>
-    pub fn set_protective_equipment_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.protective_equipment_model_version = input;
-        self
+    pub fn set_protective_equipment_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.protective_equipment_model_version = input; self
+    }
+    /// <p>The version number of the PPE detection model used to detect PPE in the image.</p>
+    pub fn get_protective_equipment_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protective_equipment_model_version
     }
     /// Appends an item to `persons`.
     ///
@@ -76,17 +70,17 @@ impl DetectProtectiveEquipmentOutputBuilder {
     /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
     pub fn persons(mut self, input: crate::types::ProtectiveEquipmentPerson) -> Self {
         let mut v = self.persons.unwrap_or_default();
-        v.push(input);
-        self.persons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.persons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
-    pub fn set_persons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentPerson>>,
-    ) -> Self {
-        self.persons = input;
-        self
+    pub fn set_persons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentPerson>>) -> Self {
+        self.persons = input; self
+    }
+    /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
+    pub fn get_persons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentPerson>> {
+        &self.persons
     }
     /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
     pub fn summary(mut self, input: crate::types::ProtectiveEquipmentSummary) -> Self {
@@ -94,31 +88,33 @@ impl DetectProtectiveEquipmentOutputBuilder {
         self
     }
     /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectiveEquipmentSummary>,
-    ) -> Self {
-        self.summary = input;
-        self
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::ProtectiveEquipmentSummary>) -> Self {
+        self.summary = input; self
+    }
+    /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::ProtectiveEquipmentSummary> {
+        &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetectProtectiveEquipmentOutput`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput {
+    pub fn build(self) -> crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput {
         crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput {
-            protective_equipment_model_version: self.protective_equipment_model_version,
-            persons: self.persons,
-            summary: self.summary,
+            protective_equipment_model_version: self.protective_equipment_model_version
+            ,
+            persons: self.persons
+            ,
+            summary: self.summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

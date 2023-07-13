@@ -43,6 +43,9 @@ pub mod create_slot;
 /// Types for the `CreateSlotType` operation.
 pub mod create_slot_type;
 
+/// Types for the `CreateTestSetDiscrepancyReport` operation.
+pub mod create_test_set_discrepancy_report;
+
 /// Types for the `CreateUploadUrl` operation.
 pub mod create_upload_url;
 
@@ -82,6 +85,9 @@ pub mod delete_slot;
 /// Types for the `DeleteSlotType` operation.
 pub mod delete_slot_type;
 
+/// Types for the `DeleteTestSet` operation.
+pub mod delete_test_set;
+
 /// Types for the `DeleteUtterances` operation.
 pub mod delete_utterances;
 
@@ -120,6 +126,21 @@ pub mod describe_slot;
 
 /// Types for the `DescribeSlotType` operation.
 pub mod describe_slot_type;
+
+/// Types for the `DescribeTestExecution` operation.
+pub mod describe_test_execution;
+
+/// Types for the `DescribeTestSet` operation.
+pub mod describe_test_set;
+
+/// Types for the `DescribeTestSetDiscrepancyReport` operation.
+pub mod describe_test_set_discrepancy_report;
+
+/// Types for the `DescribeTestSetGeneration` operation.
+pub mod describe_test_set_generation;
+
+/// Types for the `GetTestExecutionArtifactsUrl` operation.
+pub mod get_test_execution_artifacts_url;
 
 /// Types for the `ListAggregatedUtterances` operation.
 pub mod list_aggregated_utterances;
@@ -169,6 +190,18 @@ pub mod list_slots;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListTestExecutionResultItems` operation.
+pub mod list_test_execution_result_items;
+
+/// Types for the `ListTestExecutions` operation.
+pub mod list_test_executions;
+
+/// Types for the `ListTestSetRecords` operation.
+pub mod list_test_set_records;
+
+/// Types for the `ListTestSets` operation.
+pub mod list_test_sets;
+
 /// Types for the `SearchAssociatedTranscripts` operation.
 pub mod search_associated_transcripts;
 
@@ -177,6 +210,12 @@ pub mod start_bot_recommendation;
 
 /// Types for the `StartImport` operation.
 pub mod start_import;
+
+/// Types for the `StartTestExecution` operation.
+pub mod start_test_execution;
+
+/// Types for the `StartTestSetGeneration` operation.
+pub mod start_test_set_generation;
 
 /// Types for the `StopBotRecommendation` operation.
 pub mod stop_bot_recommendation;
@@ -213,3 +252,7 @@ pub mod update_slot;
 
 /// Types for the `UpdateSlotType` operation.
 pub mod update_slot_type;
+
+/// Types for the `UpdateTestSet` operation.
+pub mod update_test_set;
+

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for accepting the quote.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptReservedInstancesExchangeQuoteInput {
+pub struct AcceptReservedInstancesExchangeQuoteInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -12,8 +12,7 @@ pub struct AcceptReservedInstancesExchangeQuoteInput {
     pub reserved_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved Instances.</p>
     #[doc(hidden)]
-    pub target_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>>,
+    pub target_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>>,
 }
 impl AcceptReservedInstancesExchangeQuoteInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -21,33 +20,28 @@ impl AcceptReservedInstancesExchangeQuoteInput {
         self.dry_run
     }
     /// <p>The IDs of the Convertible Reserved Instances to exchange for another Convertible Reserved Instance of the same or higher value.</p>
-    pub fn reserved_instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn reserved_instance_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.reserved_instance_ids.as_deref()
     }
     /// <p>The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved Instances.</p>
-    pub fn target_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TargetConfigurationRequest]> {
+    pub fn target_configurations(&self) -> ::std::option::Option<& [crate::types::TargetConfigurationRequest]> {
         self.target_configurations.as_deref()
     }
 }
 impl AcceptReservedInstancesExchangeQuoteInput {
     /// Creates a new builder-style object to manufacture [`AcceptReservedInstancesExchangeQuoteInput`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteInput).
-    pub fn builder() -> crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteInputBuilder{
+    pub fn builder() -> crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteInputBuilder {
         crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptReservedInstancesExchangeQuoteInput`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptReservedInstancesExchangeQuoteInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) reserved_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) target_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>>,
+    pub(crate) target_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>>,
 }
 impl AcceptReservedInstancesExchangeQuoteInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -57,55 +51,52 @@ impl AcceptReservedInstancesExchangeQuoteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `reserved_instance_ids`.
     ///
     /// To override the contents of this collection use [`set_reserved_instance_ids`](Self::set_reserved_instance_ids).
     ///
     /// <p>The IDs of the Convertible Reserved Instances to exchange for another Convertible Reserved Instance of the same or higher value.</p>
-    pub fn reserved_instance_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reserved_instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.reserved_instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reserved_instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Convertible Reserved Instances to exchange for another Convertible Reserved Instance of the same or higher value.</p>
-    pub fn set_reserved_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.reserved_instance_ids = input;
-        self
+    pub fn set_reserved_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.reserved_instance_ids = input; self
+    }
+    /// <p>The IDs of the Convertible Reserved Instances to exchange for another Convertible Reserved Instance of the same or higher value.</p>
+    pub fn get_reserved_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reserved_instance_ids
     }
     /// Appends an item to `target_configurations`.
     ///
     /// To override the contents of this collection use [`set_target_configurations`](Self::set_target_configurations).
     ///
     /// <p>The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved Instances.</p>
-    pub fn target_configurations(
-        mut self,
-        input: crate::types::TargetConfigurationRequest,
-    ) -> Self {
+    pub fn target_configurations(mut self, input: crate::types::TargetConfigurationRequest) -> Self {
         let mut v = self.target_configurations.unwrap_or_default();
-        v.push(input);
-        self.target_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved Instances.</p>
-    pub fn set_target_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>>,
-    ) -> Self {
-        self.target_configurations = input;
-        self
+    pub fn set_target_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>>) -> Self {
+        self.target_configurations = input; self
+    }
+    /// <p>The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved Instances.</p>
+    pub fn get_target_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>> {
+        &self.target_configurations
     }
     /// Consumes the builder and constructs a [`AcceptReservedInstancesExchangeQuoteInput`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteInput {
                 dry_run: self.dry_run
@@ -118,3 +109,4 @@ impl AcceptReservedInstancesExchangeQuoteInputBuilder {
         )
     }
 }
+

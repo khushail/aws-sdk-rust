@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnarchiveFindingsInput {
+pub struct UnarchiveFindingsInput  {
     /// <p>The ID of the detector associated with the findings to unarchive.</p>
     #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct UnarchiveFindingsInput {
 }
 impl UnarchiveFindingsInput {
     /// <p>The ID of the detector associated with the findings to unarchive.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The IDs of the findings to unarchive.</p>
-    pub fn finding_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn finding_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.finding_ids.as_deref()
     }
 }
 impl UnarchiveFindingsInput {
     /// Creates a new builder-style object to manufacture [`UnarchiveFindingsInput`](crate::operation::unarchive_findings::UnarchiveFindingsInput).
-    pub fn builder() -> crate::operation::unarchive_findings::builders::UnarchiveFindingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::unarchive_findings::builders::UnarchiveFindingsInputBuilder {
         crate::operation::unarchive_findings::builders::UnarchiveFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UnarchiveFindingsInput`](crate::operation::unarchive_findings::UnarchiveFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnarchiveFindingsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +42,11 @@ impl UnarchiveFindingsInputBuilder {
     }
     /// <p>The ID of the detector associated with the findings to unarchive.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
+    }
+    /// <p>The ID of the detector associated with the findings to unarchive.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// Appends an item to `finding_ids`.
     ///
@@ -55,30 +55,28 @@ impl UnarchiveFindingsInputBuilder {
     /// <p>The IDs of the findings to unarchive.</p>
     pub fn finding_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.finding_ids.unwrap_or_default();
-        v.push(input.into());
-        self.finding_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.finding_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the findings to unarchive.</p>
-    pub fn set_finding_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.finding_ids = input;
-        self
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.finding_ids = input; self
+    }
+    /// <p>The IDs of the findings to unarchive.</p>
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_ids
     }
     /// Consumes the builder and constructs a [`UnarchiveFindingsInput`](crate::operation::unarchive_findings::UnarchiveFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unarchive_findings::UnarchiveFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unarchive_findings::UnarchiveFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::unarchive_findings::UnarchiveFindingsInput {
-                detector_id: self.detector_id,
-                finding_ids: self.finding_ids,
-            },
+                detector_id: self.detector_id
+                ,
+                finding_ids: self.finding_ids
+                ,
+            }
         )
     }
 }
+

@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartOrganizationServiceAccessUpdateInput {
+pub struct StartOrganizationServiceAccessUpdateInput  {
     /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
     #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
 }
 impl StartOrganizationServiceAccessUpdateInput {
     /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
 }
 impl StartOrganizationServiceAccessUpdateInput {
     /// Creates a new builder-style object to manufacture [`StartOrganizationServiceAccessUpdateInput`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput).
-    pub fn builder() -> crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateInputBuilder{
+    pub fn builder() -> crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateInputBuilder {
         crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateInputBuilder::default()
     }
 }
 
 /// A builder for [`StartOrganizationServiceAccessUpdateInput`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartOrganizationServiceAccessUpdateInputBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
 }
@@ -36,11 +34,14 @@ impl StartOrganizationServiceAccessUpdateInputBuilder {
     }
     /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
+    }
+    /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`StartOrganizationServiceAccessUpdateInput`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput {
                 action: self.action
@@ -49,3 +50,4 @@ impl StartOrganizationServiceAccessUpdateInputBuilder {
         )
     }
 }
+

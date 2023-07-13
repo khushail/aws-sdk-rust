@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartEdgeDeploymentStageInput {
+pub struct StartEdgeDeploymentStageInput  {
     /// <p>The name of the edge deployment plan to start.</p>
     #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct StartEdgeDeploymentStageInput {
 }
 impl StartEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan to start.</p>
-    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<& str> {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>The name of the stage to start.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
 impl StartEdgeDeploymentStageInput {
     /// Creates a new builder-style object to manufacture [`StartEdgeDeploymentStageInput`](crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput).
-    pub fn builder(
-    ) -> crate::operation::start_edge_deployment_stage::builders::StartEdgeDeploymentStageInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_edge_deployment_stage::builders::StartEdgeDeploymentStageInputBuilder {
         crate::operation::start_edge_deployment_stage::builders::StartEdgeDeploymentStageInputBuilder::default()
     }
 }
 
 /// A builder for [`StartEdgeDeploymentStageInput`](crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEdgeDeploymentStageInputBuilder {
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
 }
 impl StartEdgeDeploymentStageInputBuilder {
     /// <p>The name of the edge deployment plan to start.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge deployment plan to start.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.edge_deployment_plan_name = input;
-        self
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.edge_deployment_plan_name = input; self
+    }
+    /// <p>The name of the edge deployment plan to start.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_deployment_plan_name
     }
     /// <p>The name of the stage to start.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,21 +55,22 @@ impl StartEdgeDeploymentStageInputBuilder {
     }
     /// <p>The name of the stage to start.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
+    }
+    /// <p>The name of the stage to start.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`StartEdgeDeploymentStageInput`](crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput {
-                edge_deployment_plan_name: self.edge_deployment_plan_name,
-                stage_name: self.stage_name,
-            },
+                edge_deployment_plan_name: self.edge_deployment_plan_name
+                ,
+                stage_name: self.stage_name
+                ,
+            }
         )
     }
 }
+

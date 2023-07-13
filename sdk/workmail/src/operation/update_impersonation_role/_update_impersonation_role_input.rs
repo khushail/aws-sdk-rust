@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateImpersonationRoleInput {
+pub struct UpdateImpersonationRoleInput  {
     /// <p>The WorkMail organization that contains the impersonation role to update.</p>
     #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
@@ -24,44 +24,40 @@ pub struct UpdateImpersonationRoleInput {
 }
 impl UpdateImpersonationRoleInput {
     /// <p>The WorkMail organization that contains the impersonation role to update.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The ID of the impersonation role to update.</p>
-    pub fn impersonation_role_id(&self) -> ::std::option::Option<&str> {
+    pub fn impersonation_role_id(&self) -> ::std::option::Option<& str> {
         self.impersonation_role_id.as_deref()
     }
     /// <p>The updated impersonation role name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated impersonation role type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImpersonationRoleType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ImpersonationRoleType> {
         self.r#type.as_ref()
     }
     /// <p>The updated impersonation role description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated list of rules.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ImpersonationRule]> {
+    pub fn rules(&self) -> ::std::option::Option<& [crate::types::ImpersonationRule]> {
         self.rules.as_deref()
     }
 }
 impl UpdateImpersonationRoleInput {
     /// Creates a new builder-style object to manufacture [`UpdateImpersonationRoleInput`](crate::operation::update_impersonation_role::UpdateImpersonationRoleInput).
-    pub fn builder(
-    ) -> crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleInputBuilder {
         crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateImpersonationRoleInput`](crate::operation::update_impersonation_role::UpdateImpersonationRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateImpersonationRoleInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) impersonation_role_id: ::std::option::Option<::std::string::String>,
@@ -72,36 +68,30 @@ pub struct UpdateImpersonationRoleInputBuilder {
 }
 impl UpdateImpersonationRoleInputBuilder {
     /// <p>The WorkMail organization that contains the impersonation role to update.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization that contains the impersonation role to update.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
+    }
+    /// <p>The WorkMail organization that contains the impersonation role to update.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// <p>The ID of the impersonation role to update.</p>
-    pub fn impersonation_role_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the impersonation role to update.</p>
-    pub fn set_impersonation_role_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.impersonation_role_id = input;
-        self
+    pub fn set_impersonation_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.impersonation_role_id = input; self
+    }
+    /// <p>The ID of the impersonation role to update.</p>
+    pub fn get_impersonation_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.impersonation_role_id
     }
     /// <p>The updated impersonation role name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,8 +100,11 @@ impl UpdateImpersonationRoleInputBuilder {
     }
     /// <p>The updated impersonation role name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The updated impersonation role name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The updated impersonation role type.</p>
     pub fn r#type(mut self, input: crate::types::ImpersonationRoleType) -> Self {
@@ -119,12 +112,12 @@ impl UpdateImpersonationRoleInputBuilder {
         self
     }
     /// <p>The updated impersonation role type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ImpersonationRoleType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImpersonationRoleType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The updated impersonation role type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ImpersonationRoleType> {
+        &self.r#type
     }
     /// <p>The updated impersonation role description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,8 +126,11 @@ impl UpdateImpersonationRoleInputBuilder {
     }
     /// <p>The updated impersonation role description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The updated impersonation role description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `rules`.
     ///
@@ -143,34 +139,36 @@ impl UpdateImpersonationRoleInputBuilder {
     /// <p>The updated list of rules.</p>
     pub fn rules(mut self, input: crate::types::ImpersonationRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The updated list of rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>>) -> Self {
+        self.rules = input; self
+    }
+    /// <p>The updated list of rules.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`UpdateImpersonationRoleInput`](crate::operation::update_impersonation_role::UpdateImpersonationRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_impersonation_role::UpdateImpersonationRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_impersonation_role::UpdateImpersonationRoleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_impersonation_role::UpdateImpersonationRoleInput {
-                organization_id: self.organization_id,
-                impersonation_role_id: self.impersonation_role_id,
-                name: self.name,
-                r#type: self.r#type,
-                description: self.description,
-                rules: self.rules,
-            },
+                organization_id: self.organization_id
+                ,
+                impersonation_role_id: self.impersonation_role_id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                rules: self.rules
+                ,
+            }
         )
     }
 }
+

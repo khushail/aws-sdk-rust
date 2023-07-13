@@ -3,102 +3,88 @@ pub use crate::operation::get_room_skill_parameter::_get_room_skill_parameter_ou
 
 pub use crate::operation::get_room_skill_parameter::_get_room_skill_parameter_input::GetRoomSkillParameterInputBuilder;
 
+impl GetRoomSkillParameterInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_room_skill_parameter::GetRoomSkillParameterError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_room_skill_parameter();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetRoomSkillParameter`.
-///
+/// 
 /// <p>Gets room skill parameter details by room, skill, and parameter key ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRoomSkillParameterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder,
+                    inner: crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder,
 }
-impl GetRoomSkillParameterFluentBuilder {
+impl GetRoomSkillParameterFluentBuilder  {
     /// Creates a new `GetRoomSkillParameter`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_room_skill_parameter::GetRoomSkillParameter,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_room_skill_parameter::GetRoomSkillParameterError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetRoomSkillParameter as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_room_skill_parameter::GetRoomSkillParameterError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_room_skill_parameter::GetRoomSkillParameter, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_room_skill_parameter::GetRoomSkillParameterError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_room_skill_parameter::GetRoomSkillParameterError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_room_skill_parameter::GetRoomSkillParameterError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_room_skill_parameter::GetRoomSkillParameter,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_room_skill_parameter::GetRoomSkillParameterError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_room_skill_parameter::GetRoomSkillParameterError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_room_skill_parameter::GetRoomSkillParameter, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_room_skill_parameter::GetRoomSkillParameterError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
@@ -108,6 +94,10 @@ impl GetRoomSkillParameterFluentBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
+    }
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
     }
     /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,20 +109,23 @@ impl GetRoomSkillParameterFluentBuilder {
         self.inner = self.inner.set_skill_id(input);
         self
     }
+    /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_id()
+    }
     /// <p>The room skill parameter key for which to get details. Required.</p>
-    pub fn parameter_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_key(input.into());
         self
     }
     /// <p>The room skill parameter key for which to get details. Required.</p>
-    pub fn set_parameter_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_key(input);
         self
     }
+    /// <p>The room skill parameter key for which to get details. Required.</p>
+    pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_key()
+    }
 }
+

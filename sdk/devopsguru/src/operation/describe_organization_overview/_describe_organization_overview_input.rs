@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationOverviewInput {
+pub struct DescribeOrganizationOverviewInput  {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     #[doc(hidden)]
     pub from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,40 +18,37 @@ pub struct DescribeOrganizationOverviewInput {
 }
 impl DescribeOrganizationOverviewInput {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    pub fn from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn from_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
-    pub fn to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn to_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn account_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn organizational_unit_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.organizational_unit_ids.as_deref()
     }
 }
 impl DescribeOrganizationOverviewInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationOverviewInput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput).
-    pub fn builder() -> crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewInputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewInputBuilder {
         crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationOverviewInput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOverviewInputBuilder {
     pub(crate) from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) organizational_unit_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeOrganizationOverviewInputBuilder {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
@@ -60,12 +57,12 @@ impl DescribeOrganizationOverviewInputBuilder {
         self
     }
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    pub fn set_from_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.from_time = input;
-        self
+    pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.from_time = input; self
+    }
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from_time
     }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -73,12 +70,12 @@ impl DescribeOrganizationOverviewInputBuilder {
         self
     }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
-    pub fn set_to_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.to_time = input;
-        self
+    pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.to_time = input; self
+    }
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+    pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.to_time
     }
     /// Appends an item to `account_ids`.
     ///
@@ -87,54 +84,51 @@ impl DescribeOrganizationOverviewInputBuilder {
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_ids = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Appends an item to `organizational_unit_ids`.
     ///
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organizational_unit_ids.unwrap_or_default();
-        v.push(input.into());
-        self.organizational_unit_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.organizational_unit_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn set_organizational_unit_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.organizational_unit_ids = input;
-        self
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.organizational_unit_ids = input; self
+    }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_ids
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationOverviewInput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput {
-                from_time: self.from_time,
-                to_time: self.to_time,
-                account_ids: self.account_ids,
-                organizational_unit_ids: self.organizational_unit_ids,
-            },
+                from_time: self.from_time
+                ,
+                to_time: self.to_time
+                ,
+                account_ids: self.account_ids
+                ,
+                organizational_unit_ids: self.organizational_unit_ids
+                ,
+            }
         )
     }
 }
+

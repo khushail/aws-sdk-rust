@@ -3,7 +3,7 @@
 /// <p>An asset property timestamp entry containing the following information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetPropertyTimestamp {
+pub struct AssetPropertyTimestamp  {
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
     #[doc(hidden)]
     pub time_in_seconds: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AssetPropertyTimestamp {
 }
 impl AssetPropertyTimestamp {
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
-    pub fn time_in_seconds(&self) -> ::std::option::Option<&str> {
+    pub fn time_in_seconds(&self) -> ::std::option::Option<& str> {
         self.time_in_seconds.as_deref()
     }
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
-    pub fn offset_in_nanos(&self) -> ::std::option::Option<&str> {
+    pub fn offset_in_nanos(&self) -> ::std::option::Option<& str> {
         self.offset_in_nanos.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl AssetPropertyTimestamp {
 
 /// A builder for [`AssetPropertyTimestamp`](crate::types::AssetPropertyTimestamp).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetPropertyTimestampBuilder {
     pub(crate) time_in_seconds: ::std::option::Option<::std::string::String>,
     pub(crate) offset_in_nanos: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyTimestampBuilder {
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
-    pub fn time_in_seconds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_in_seconds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_in_seconds = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
-    pub fn set_time_in_seconds(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.time_in_seconds = input;
-        self
+    pub fn set_time_in_seconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.time_in_seconds = input; self
+    }
+    /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
+    pub fn get_time_in_seconds(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_in_seconds
     }
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
-    pub fn offset_in_nanos(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offset_in_nanos(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offset_in_nanos = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
-    pub fn set_offset_in_nanos(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.offset_in_nanos = input;
-        self
+    pub fn set_offset_in_nanos(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.offset_in_nanos = input; self
+    }
+    /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
+    pub fn get_offset_in_nanos(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offset_in_nanos
     }
     /// Consumes the builder and constructs a [`AssetPropertyTimestamp`](crate::types::AssetPropertyTimestamp).
     pub fn build(self) -> crate::types::AssetPropertyTimestamp {
         crate::types::AssetPropertyTimestamp {
-            time_in_seconds: self.time_in_seconds,
-            offset_in_nanos: self.offset_in_nanos,
+            time_in_seconds: self.time_in_seconds
+            ,
+            offset_in_nanos: self.offset_in_nanos
+            ,
         }
     }
 }
+

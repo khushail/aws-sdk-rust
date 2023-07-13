@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDeviceProfileInput {
+pub struct CreateDeviceProfileInput  {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -21,40 +21,36 @@ pub struct CreateDeviceProfileInput {
 }
 impl CreateDeviceProfileInput {
     /// <p>The name of the new resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The device profile information to use to create the device profile.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanDeviceProfile> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanDeviceProfile> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
-    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkCreateDeviceProfile> {
+    pub fn sidewalk(&self) -> ::std::option::Option<& crate::types::SidewalkCreateDeviceProfile> {
         self.sidewalk.as_ref()
     }
 }
 impl CreateDeviceProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateDeviceProfileInput`](crate::operation::create_device_profile::CreateDeviceProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_device_profile::builders::CreateDeviceProfileInputBuilder {
-        crate::operation::create_device_profile::builders::CreateDeviceProfileInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_device_profile::builders::CreateDeviceProfileInputBuilder {
+        crate::operation::create_device_profile::builders::CreateDeviceProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeviceProfileInput`](crate::operation::create_device_profile::CreateDeviceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeviceProfileInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDeviceProfile>,
@@ -70,8 +66,11 @@ impl CreateDeviceProfileInputBuilder {
     }
     /// <p>The name of the new resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The device profile information to use to create the device profile.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanDeviceProfile) -> Self {
@@ -79,12 +78,12 @@ impl CreateDeviceProfileInputBuilder {
         self
     }
     /// <p>The device profile information to use to create the device profile.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanDeviceProfile>,
-    ) -> Self {
-        self.lo_ra_wan = input;
-        self
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanDeviceProfile>) -> Self {
+        self.lo_ra_wan = input; self
+    }
+    /// <p>The device profile information to use to create the device profile.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanDeviceProfile> {
+        &self.lo_ra_wan
     }
     /// Appends an item to `tags`.
     ///
@@ -93,33 +92,30 @@ impl CreateDeviceProfileInputBuilder {
     /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkCreateDeviceProfile) -> Self {
@@ -127,28 +123,29 @@ impl CreateDeviceProfileInputBuilder {
         self
     }
     /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkCreateDeviceProfile>,
-    ) -> Self {
-        self.sidewalk = input;
-        self
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkCreateDeviceProfile>) -> Self {
+        self.sidewalk = input; self
+    }
+    /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkCreateDeviceProfile> {
+        &self.sidewalk
     }
     /// Consumes the builder and constructs a [`CreateDeviceProfileInput`](crate::operation::create_device_profile::CreateDeviceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_device_profile::CreateDeviceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_device_profile::CreateDeviceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_device_profile::CreateDeviceProfileInput {
-                name: self.name,
-                lo_ra_wan: self.lo_ra_wan,
-                tags: self.tags,
-                client_request_token: self.client_request_token,
-                sidewalk: self.sidewalk,
-            },
+                name: self.name
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                tags: self.tags
+                ,
+                client_request_token: self.client_request_token
+                ,
+                sidewalk: self.sidewalk
+                ,
+            }
         )
     }
 }
+

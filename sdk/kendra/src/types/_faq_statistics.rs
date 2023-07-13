@@ -3,7 +3,7 @@
 /// <p>Provides statistical information about the FAQ questions and answers contained in an index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FaqStatistics {
+pub struct FaqStatistics  {
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
     #[doc(hidden)]
     pub indexed_question_answers_count: i32,
@@ -23,9 +23,7 @@ impl FaqStatistics {
 
 /// A builder for [`FaqStatistics`](crate::types::FaqStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FaqStatisticsBuilder {
     pub(crate) indexed_question_answers_count: ::std::option::Option<i32>,
 }
@@ -37,13 +35,19 @@ impl FaqStatisticsBuilder {
     }
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
     pub fn set_indexed_question_answers_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.indexed_question_answers_count = input;
-        self
+        self.indexed_question_answers_count = input; self
+    }
+    /// <p>The total number of FAQ questions and answers contained in the index.</p>
+    pub fn get_indexed_question_answers_count(&self) -> &::std::option::Option<i32> {
+        &self.indexed_question_answers_count
     }
     /// Consumes the builder and constructs a [`FaqStatistics`](crate::types::FaqStatistics).
     pub fn build(self) -> crate::types::FaqStatistics {
         crate::types::FaqStatistics {
-            indexed_question_answers_count: self.indexed_question_answers_count.unwrap_or_default(),
+            indexed_question_answers_count: self.indexed_question_answers_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The trial that a trial component is associated with and the experiment the trial is part of. A component might not be associated with a trial. A component can be associated with multiple trials.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Parent {
+pub struct Parent  {
     /// <p>The name of the trial.</p>
     #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Parent {
 }
 impl Parent {
     /// <p>The name of the trial.</p>
-    pub fn trial_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_name(&self) -> ::std::option::Option<& str> {
         self.trial_name.as_deref()
     }
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Parent {
 
 /// A builder for [`Parent`](crate::types::Parent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParentBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ParentBuilder {
     }
     /// <p>The name of the trial.</p>
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_name = input;
-        self
+        self.trial_name = input; self
+    }
+    /// <p>The name of the trial.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
     }
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.experiment_name = input;
-        self
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.experiment_name = input; self
+    }
+    /// <p>The name of the experiment.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
     }
     /// Consumes the builder and constructs a [`Parent`](crate::types::Parent).
     pub fn build(self) -> crate::types::Parent {
         crate::types::Parent {
-            trial_name: self.trial_name,
-            experiment_name: self.experiment_name,
+            trial_name: self.trial_name
+            ,
+            experiment_name: self.experiment_name
+            ,
         }
     }
 }
+

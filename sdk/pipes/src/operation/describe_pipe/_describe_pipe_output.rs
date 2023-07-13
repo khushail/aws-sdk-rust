@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribePipeOutput {
+pub struct DescribePipeOutput  {
     /// <p>The ARN of the pipe.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -44,9 +44,7 @@ pub struct DescribePipeOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value pairs to associate with the pipe.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The time the pipe was created.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -57,79 +55,71 @@ pub struct DescribePipeOutput {
 }
 impl DescribePipeOutput {
     /// <p>The ARN of the pipe.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the pipe.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the pipe.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RequestedPipeStateDescribeResponse> {
+    pub fn desired_state(&self) -> ::std::option::Option<& crate::types::RequestedPipeStateDescribeResponse> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
-    pub fn current_state(&self) -> ::std::option::Option<&crate::types::PipeState> {
+    pub fn current_state(&self) -> ::std::option::Option<& crate::types::PipeState> {
         self.current_state.as_ref()
     }
     /// <p>The reason the pipe is in its current state.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The ARN of the source resource.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn source_parameters(&self) -> ::std::option::Option<&crate::types::PipeSourceParameters> {
+    pub fn source_parameters(&self) -> ::std::option::Option<& crate::types::PipeSourceParameters> {
         self.source_parameters.as_ref()
     }
     /// <p>The ARN of the enrichment resource.</p>
-    pub fn enrichment(&self) -> ::std::option::Option<&str> {
+    pub fn enrichment(&self) -> ::std::option::Option<& str> {
         self.enrichment.as_deref()
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn enrichment_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PipeEnrichmentParameters> {
+    pub fn enrichment_parameters(&self) -> ::std::option::Option<& crate::types::PipeEnrichmentParameters> {
         self.enrichment_parameters.as_ref()
     }
     /// <p>The ARN of the target resource.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
-    pub fn target_parameters(&self) -> ::std::option::Option<&crate::types::PipeTargetParameters> {
+    pub fn target_parameters(&self) -> ::std::option::Option<& crate::types::PipeTargetParameters> {
         self.target_parameters.as_ref()
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The time the pipe was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
-impl ::std::fmt::Debug for DescribePipeOutput {
+impl  ::std::fmt::Debug for DescribePipeOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePipeOutput");
         formatter.field("arn", &self.arn);
@@ -153,10 +143,10 @@ impl ::std::fmt::Debug for DescribePipeOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for DescribePipeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribePipeOutput {
     /// Creates a new builder-style object to manufacture [`DescribePipeOutput`](crate::operation::describe_pipe::DescribePipeOutput).
     pub fn builder() -> crate::operation::describe_pipe::builders::DescribePipeOutputBuilder {
@@ -171,8 +161,7 @@ pub struct DescribePipeOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) desired_state:
-        ::std::option::Option<crate::types::RequestedPipeStateDescribeResponse>,
+    pub(crate) desired_state: ::std::option::Option<crate::types::RequestedPipeStateDescribeResponse>,
     pub(crate) current_state: ::std::option::Option<crate::types::PipeState>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -182,9 +171,7 @@ pub struct DescribePipeOutputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) target_parameters: ::std::option::Option<crate::types::PipeTargetParameters>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -197,8 +184,11 @@ impl DescribePipeOutputBuilder {
     }
     /// <p>The ARN of the pipe.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of the pipe.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the pipe.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -207,8 +197,11 @@ impl DescribePipeOutputBuilder {
     }
     /// <p>The name of the pipe.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the pipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A description of the pipe.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -217,24 +210,24 @@ impl DescribePipeOutputBuilder {
     }
     /// <p>A description of the pipe.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the pipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(
-        mut self,
-        input: crate::types::RequestedPipeStateDescribeResponse,
-    ) -> Self {
+    pub fn desired_state(mut self, input: crate::types::RequestedPipeStateDescribeResponse) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestedPipeStateDescribeResponse>,
-    ) -> Self {
-        self.desired_state = input;
-        self
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::RequestedPipeStateDescribeResponse>) -> Self {
+        self.desired_state = input; self
+    }
+    /// <p>The state the pipe should be in.</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::RequestedPipeStateDescribeResponse> {
+        &self.desired_state
     }
     /// <p>The state the pipe is in.</p>
     pub fn current_state(mut self, input: crate::types::PipeState) -> Self {
@@ -242,12 +235,12 @@ impl DescribePipeOutputBuilder {
         self
     }
     /// <p>The state the pipe is in.</p>
-    pub fn set_current_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeState>,
-    ) -> Self {
-        self.current_state = input;
-        self
+    pub fn set_current_state(mut self, input: ::std::option::Option<crate::types::PipeState>) -> Self {
+        self.current_state = input; self
+    }
+    /// <p>The state the pipe is in.</p>
+    pub fn get_current_state(&self) -> &::std::option::Option<crate::types::PipeState> {
+        &self.current_state
     }
     /// <p>The reason the pipe is in its current state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -256,8 +249,11 @@ impl DescribePipeOutputBuilder {
     }
     /// <p>The reason the pipe is in its current state.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
+    }
+    /// <p>The reason the pipe is in its current state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     /// <p>The ARN of the source resource.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -266,8 +262,11 @@ impl DescribePipeOutputBuilder {
     }
     /// <p>The ARN of the source resource.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The ARN of the source resource.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
     pub fn source_parameters(mut self, input: crate::types::PipeSourceParameters) -> Self {
@@ -275,12 +274,12 @@ impl DescribePipeOutputBuilder {
         self
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn set_source_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeSourceParameters>,
-    ) -> Self {
-        self.source_parameters = input;
-        self
+    pub fn set_source_parameters(mut self, input: ::std::option::Option<crate::types::PipeSourceParameters>) -> Self {
+        self.source_parameters = input; self
+    }
+    /// <p>The parameters required to set up a source for your pipe.</p>
+    pub fn get_source_parameters(&self) -> &::std::option::Option<crate::types::PipeSourceParameters> {
+        &self.source_parameters
     }
     /// <p>The ARN of the enrichment resource.</p>
     pub fn enrichment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -289,8 +288,11 @@ impl DescribePipeOutputBuilder {
     }
     /// <p>The ARN of the enrichment resource.</p>
     pub fn set_enrichment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enrichment = input;
-        self
+        self.enrichment = input; self
+    }
+    /// <p>The ARN of the enrichment resource.</p>
+    pub fn get_enrichment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.enrichment
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
     pub fn enrichment_parameters(mut self, input: crate::types::PipeEnrichmentParameters) -> Self {
@@ -298,12 +300,12 @@ impl DescribePipeOutputBuilder {
         self
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn set_enrichment_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeEnrichmentParameters>,
-    ) -> Self {
-        self.enrichment_parameters = input;
-        self
+    pub fn set_enrichment_parameters(mut self, input: ::std::option::Option<crate::types::PipeEnrichmentParameters>) -> Self {
+        self.enrichment_parameters = input; self
+    }
+    /// <p>The parameters required to set up enrichment on your pipe.</p>
+    pub fn get_enrichment_parameters(&self) -> &::std::option::Option<crate::types::PipeEnrichmentParameters> {
+        &self.enrichment_parameters
     }
     /// <p>The ARN of the target resource.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -312,8 +314,11 @@ impl DescribePipeOutputBuilder {
     }
     /// <p>The ARN of the target resource.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
+    }
+    /// <p>The ARN of the target resource.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
     pub fn target_parameters(mut self, input: crate::types::PipeTargetParameters) -> Self {
@@ -321,12 +326,12 @@ impl DescribePipeOutputBuilder {
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
-    pub fn set_target_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeTargetParameters>,
-    ) -> Self {
-        self.target_parameters = input;
-        self
+    pub fn set_target_parameters(mut self, input: ::std::option::Option<crate::types::PipeTargetParameters>) -> Self {
+        self.target_parameters = input; self
+    }
+    /// <p>The parameters required to set up a target for your pipe.</p>
+    pub fn get_target_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetParameters> {
+        &self.target_parameters
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -335,33 +340,30 @@ impl DescribePipeOutputBuilder {
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The list of key-value pairs to associate with the pipe.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// <p>The time the pipe was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -369,12 +371,12 @@ impl DescribePipeOutputBuilder {
         self
     }
     /// <p>The time the pipe was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time the pipe was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -382,41 +384,57 @@ impl DescribePipeOutputBuilder {
         self
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
+    }
+    /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribePipeOutput`](crate::operation::describe_pipe::DescribePipeOutput).
     pub fn build(self) -> crate::operation::describe_pipe::DescribePipeOutput {
         crate::operation::describe_pipe::DescribePipeOutput {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            desired_state: self.desired_state,
-            current_state: self.current_state,
-            state_reason: self.state_reason,
-            source: self.source,
-            source_parameters: self.source_parameters,
-            enrichment: self.enrichment,
-            enrichment_parameters: self.enrichment_parameters,
-            target: self.target,
-            target_parameters: self.target_parameters,
-            role_arn: self.role_arn,
-            tags: self.tags,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            desired_state: self.desired_state
+            ,
+            current_state: self.current_state
+            ,
+            state_reason: self.state_reason
+            ,
+            source: self.source
+            ,
+            source_parameters: self.source_parameters
+            ,
+            enrichment: self.enrichment
+            ,
+            enrichment_parameters: self.enrichment_parameters
+            ,
+            target: self.target
+            ,
+            target_parameters: self.target_parameters
+            ,
+            role_arn: self.role_arn
+            ,
+            tags: self.tags
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
             _request_id: self._request_id,
         }
     }
@@ -444,3 +462,4 @@ impl ::std::fmt::Debug for DescribePipeOutputBuilder {
         formatter.finish()
     }
 }
+

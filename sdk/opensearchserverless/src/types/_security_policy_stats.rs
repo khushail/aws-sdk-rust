@@ -3,7 +3,7 @@
 /// <p>Statistics for an OpenSearch Serverless security policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityPolicyStats {
+pub struct SecurityPolicyStats  {
     /// <p>The number of encryption policies in the current account.</p>
     #[doc(hidden)]
     pub encryption_policy_count: ::std::option::Option<i64>,
@@ -30,9 +30,7 @@ impl SecurityPolicyStats {
 
 /// A builder for [`SecurityPolicyStats`](crate::types::SecurityPolicyStats).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityPolicyStatsBuilder {
     pub(crate) encryption_policy_count: ::std::option::Option<i64>,
     pub(crate) network_policy_count: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl SecurityPolicyStatsBuilder {
     }
     /// <p>The number of encryption policies in the current account.</p>
     pub fn set_encryption_policy_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.encryption_policy_count = input;
-        self
+        self.encryption_policy_count = input; self
+    }
+    /// <p>The number of encryption policies in the current account.</p>
+    pub fn get_encryption_policy_count(&self) -> &::std::option::Option<i64> {
+        &self.encryption_policy_count
     }
     /// <p>The number of network policies in the current account.</p>
     pub fn network_policy_count(mut self, input: i64) -> Self {
@@ -55,14 +56,20 @@ impl SecurityPolicyStatsBuilder {
     }
     /// <p>The number of network policies in the current account.</p>
     pub fn set_network_policy_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.network_policy_count = input;
-        self
+        self.network_policy_count = input; self
+    }
+    /// <p>The number of network policies in the current account.</p>
+    pub fn get_network_policy_count(&self) -> &::std::option::Option<i64> {
+        &self.network_policy_count
     }
     /// Consumes the builder and constructs a [`SecurityPolicyStats`](crate::types::SecurityPolicyStats).
     pub fn build(self) -> crate::types::SecurityPolicyStats {
         crate::types::SecurityPolicyStats {
-            encryption_policy_count: self.encryption_policy_count,
-            network_policy_count: self.network_policy_count,
+            encryption_policy_count: self.encryption_policy_count
+            ,
+            network_policy_count: self.network_policy_count
+            ,
         }
     }
 }
+

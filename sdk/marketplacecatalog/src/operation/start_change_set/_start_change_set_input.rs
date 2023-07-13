@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartChangeSetInput {
+pub struct StartChangeSetInput  {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
@@ -21,23 +21,23 @@ pub struct StartChangeSetInput {
 }
 impl StartChangeSetInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<& str> {
         self.catalog.as_deref()
     }
     /// <p>Array of <code>change</code> object.</p>
-    pub fn change_set(&self) -> ::std::option::Option<&[crate::types::Change]> {
+    pub fn change_set(&self) -> ::std::option::Option<& [crate::types::Change]> {
         self.change_set.as_deref()
     }
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    pub fn change_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn change_set_name(&self) -> ::std::option::Option<& str> {
         self.change_set_name.as_deref()
     }
     /// <p>A unique token to identify the request to ensure idempotency.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
-    pub fn change_set_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn change_set_tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.change_set_tags.as_deref()
     }
 }
@@ -50,9 +50,7 @@ impl StartChangeSetInput {
 
 /// A builder for [`StartChangeSetInput`](crate::operation::start_change_set::StartChangeSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartChangeSetInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) change_set: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
@@ -68,8 +66,11 @@ impl StartChangeSetInputBuilder {
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
+    }
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
     }
     /// Appends an item to `change_set`.
     ///
@@ -78,49 +79,43 @@ impl StartChangeSetInputBuilder {
     /// <p>Array of <code>change</code> object.</p>
     pub fn change_set(mut self, input: crate::types::Change) -> Self {
         let mut v = self.change_set.unwrap_or_default();
-        v.push(input);
-        self.change_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.change_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of <code>change</code> object.</p>
-    pub fn set_change_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
-    ) -> Self {
-        self.change_set = input;
-        self
+    pub fn set_change_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Change>>) -> Self {
+        self.change_set = input; self
+    }
+    /// <p>Array of <code>change</code> object.</p>
+    pub fn get_change_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Change>> {
+        &self.change_set
     }
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.change_set_name = input;
-        self
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.change_set_name = input; self
+    }
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
     }
     /// <p>A unique token to identify the request to ensure idempotency.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique token to identify the request to ensure idempotency.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>A unique token to identify the request to ensure idempotency.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `change_set_tags`.
     ///
@@ -129,31 +124,34 @@ impl StartChangeSetInputBuilder {
     /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
     pub fn change_set_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.change_set_tags.unwrap_or_default();
-        v.push(input);
-        self.change_set_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.change_set_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
-    pub fn set_change_set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.change_set_tags = input;
-        self
+    pub fn set_change_set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.change_set_tags = input; self
+    }
+    /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
+    pub fn get_change_set_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.change_set_tags
     }
     /// Consumes the builder and constructs a [`StartChangeSetInput`](crate::operation::start_change_set::StartChangeSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_change_set::StartChangeSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_change_set::StartChangeSetInput {
-            catalog: self.catalog,
-            change_set: self.change_set,
-            change_set_name: self.change_set_name,
-            client_request_token: self.client_request_token,
-            change_set_tags: self.change_set_tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_change_set::StartChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_change_set::StartChangeSetInput {
+                catalog: self.catalog
+                ,
+                change_set: self.change_set
+                ,
+                change_set_name: self.change_set_name
+                ,
+                client_request_token: self.client_request_token
+                ,
+                change_set_tags: self.change_set_tags
+                ,
+            }
+        )
     }
 }
+

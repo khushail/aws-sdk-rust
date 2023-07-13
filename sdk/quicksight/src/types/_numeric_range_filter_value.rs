@@ -3,7 +3,7 @@
 /// <p>The value input pf the numeric range filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NumericRangeFilterValue {
+pub struct NumericRangeFilterValue  {
     /// <p>The static value of the numeric range filter.</p>
     #[doc(hidden)]
     pub static_value: ::std::option::Option<f64>,
@@ -17,7 +17,7 @@ impl NumericRangeFilterValue {
         self.static_value
     }
     /// <p>The parameter that is used in the numeric range.</p>
-    pub fn parameter(&self) -> ::std::option::Option<&str> {
+    pub fn parameter(&self) -> ::std::option::Option<& str> {
         self.parameter.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl NumericRangeFilterValue {
 
 /// A builder for [`NumericRangeFilterValue`](crate::types::NumericRangeFilterValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumericRangeFilterValueBuilder {
     pub(crate) static_value: ::std::option::Option<f64>,
     pub(crate) parameter: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl NumericRangeFilterValueBuilder {
     }
     /// <p>The static value of the numeric range filter.</p>
     pub fn set_static_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.static_value = input;
-        self
+        self.static_value = input; self
+    }
+    /// <p>The static value of the numeric range filter.</p>
+    pub fn get_static_value(&self) -> &::std::option::Option<f64> {
+        &self.static_value
     }
     /// <p>The parameter that is used in the numeric range.</p>
     pub fn parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl NumericRangeFilterValueBuilder {
     }
     /// <p>The parameter that is used in the numeric range.</p>
     pub fn set_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter = input;
-        self
+        self.parameter = input; self
+    }
+    /// <p>The parameter that is used in the numeric range.</p>
+    pub fn get_parameter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter
     }
     /// Consumes the builder and constructs a [`NumericRangeFilterValue`](crate::types::NumericRangeFilterValue).
     pub fn build(self) -> crate::types::NumericRangeFilterValue {
         crate::types::NumericRangeFilterValue {
-            static_value: self.static_value,
-            parameter: self.parameter,
+            static_value: self.static_value
+            ,
+            parameter: self.parameter
+            ,
         }
     }
 }
+

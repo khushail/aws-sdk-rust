@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCoipCidrInput {
+pub struct DeleteCoipCidrInput  {
     /// <p> A customer-owned IP address range that you want to delete. </p>
     #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteCoipCidrInput {
 }
 impl DeleteCoipCidrInput {
     /// <p> A customer-owned IP address range that you want to delete. </p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p> The ID of the customer-owned address pool. </p>
-    pub fn coip_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn coip_pool_id(&self) -> ::std::option::Option<& str> {
         self.coip_pool_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,9 +36,7 @@ impl DeleteCoipCidrInput {
 
 /// A builder for [`DeleteCoipCidrInput`](crate::operation::delete_coip_cidr::DeleteCoipCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCoipCidrInputBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) coip_pool_id: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl DeleteCoipCidrInputBuilder {
     }
     /// <p> A customer-owned IP address range that you want to delete. </p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
+    }
+    /// <p> A customer-owned IP address range that you want to delete. </p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// <p> The ID of the customer-owned address pool. </p>
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl DeleteCoipCidrInputBuilder {
     }
     /// <p> The ID of the customer-owned address pool. </p>
     pub fn set_coip_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.coip_pool_id = input;
-        self
+        self.coip_pool_id = input; self
+    }
+    /// <p> The ID of the customer-owned address pool. </p>
+    pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.coip_pool_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -72,20 +76,24 @@ impl DeleteCoipCidrInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteCoipCidrInput`](crate::operation::delete_coip_cidr::DeleteCoipCidrInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_coip_cidr::DeleteCoipCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_coip_cidr::DeleteCoipCidrInput {
-            cidr: self.cidr,
-            coip_pool_id: self.coip_pool_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_coip_cidr::DeleteCoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_coip_cidr::DeleteCoipCidrInput {
+                cidr: self.cidr
+                ,
+                coip_pool_id: self.coip_pool_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

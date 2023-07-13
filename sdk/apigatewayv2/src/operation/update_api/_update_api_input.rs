@@ -3,7 +3,7 @@
 /// <p>Updates an Api.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApiInput {
+pub struct UpdateApiInput  {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
@@ -43,23 +43,23 @@ pub struct UpdateApiInput {
 }
 impl UpdateApiInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn api_key_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn api_key_selection_expression(&self) -> ::std::option::Option<& str> {
         self.api_key_selection_expression.as_deref()
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
-    pub fn cors_configuration(&self) -> ::std::option::Option<&crate::types::Cors> {
+    pub fn cors_configuration(&self) -> ::std::option::Option<& crate::types::Cors> {
         self.cors_configuration.as_ref()
     }
     /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
-    pub fn credentials_arn(&self) -> ::std::option::Option<&str> {
+    pub fn credentials_arn(&self) -> ::std::option::Option<& str> {
         self.credentials_arn.as_deref()
     }
     /// <p>The description of the API.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -71,23 +71,23 @@ impl UpdateApiInput {
         self.disable_execute_api_endpoint
     }
     /// <p>The name of the API.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
-    pub fn route_key(&self) -> ::std::option::Option<&str> {
+    pub fn route_key(&self) -> ::std::option::Option<& str> {
         self.route_key.as_deref()
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    pub fn route_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn route_selection_expression(&self) -> ::std::option::Option<& str> {
         self.route_selection_expression.as_deref()
     }
     /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>A version identifier for the API.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -100,9 +100,7 @@ impl UpdateApiInput {
 
 /// A builder for [`UpdateApiInput`](crate::operation::update_api::UpdateApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_selection_expression: ::std::option::Option<::std::string::String>,
@@ -125,24 +123,24 @@ impl UpdateApiInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
+    }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn api_key_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_key_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn set_api_key_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.api_key_selection_expression = input;
-        self
+    pub fn set_api_key_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.api_key_selection_expression = input; self
+    }
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    pub fn get_api_key_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key_selection_expression
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub fn cors_configuration(mut self, input: crate::types::Cors) -> Self {
@@ -150,28 +148,25 @@ impl UpdateApiInputBuilder {
         self
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
-    pub fn set_cors_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::Cors>,
-    ) -> Self {
-        self.cors_configuration = input;
-        self
+    pub fn set_cors_configuration(mut self, input: ::std::option::Option<crate::types::Cors>) -> Self {
+        self.cors_configuration = input; self
+    }
+    /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    pub fn get_cors_configuration(&self) -> &::std::option::Option<crate::types::Cors> {
+        &self.cors_configuration
     }
     /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
-    pub fn credentials_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credentials_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
-    pub fn set_credentials_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.credentials_arn = input;
-        self
+    pub fn set_credentials_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.credentials_arn = input; self
+    }
+    /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
+    pub fn get_credentials_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credentials_arn
     }
     /// <p>The description of the API.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,8 +175,11 @@ impl UpdateApiInputBuilder {
     }
     /// <p>The description of the API.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the API.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     pub fn disable_schema_validation(mut self, input: bool) -> Self {
@@ -190,8 +188,11 @@ impl UpdateApiInputBuilder {
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     pub fn set_disable_schema_validation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_schema_validation = input;
-        self
+        self.disable_schema_validation = input; self
+    }
+    /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    pub fn get_disable_schema_validation(&self) -> &::std::option::Option<bool> {
+        &self.disable_schema_validation
     }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
@@ -200,8 +201,11 @@ impl UpdateApiInputBuilder {
     }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn set_disable_execute_api_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_execute_api_endpoint = input;
-        self
+        self.disable_execute_api_endpoint = input; self
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.disable_execute_api_endpoint
     }
     /// <p>The name of the API.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -210,8 +214,11 @@ impl UpdateApiInputBuilder {
     }
     /// <p>The name of the API.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the API.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
     pub fn route_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -220,24 +227,24 @@ impl UpdateApiInputBuilder {
     }
     /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
     pub fn set_route_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_key = input;
-        self
+        self.route_key = input; self
+    }
+    /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
+    pub fn get_route_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_key
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    pub fn route_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    pub fn set_route_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.route_selection_expression = input;
-        self
+    pub fn set_route_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.route_selection_expression = input; self
+    }
+    /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    pub fn get_route_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_selection_expression
     }
     /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -246,8 +253,11 @@ impl UpdateApiInputBuilder {
     }
     /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
+    }
+    /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// <p>A version identifier for the API.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -256,29 +266,42 @@ impl UpdateApiInputBuilder {
     }
     /// <p>A version identifier for the API.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`UpdateApiInput`](crate::operation::update_api::UpdateApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_api::UpdateApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_api::UpdateApiInput {
-            api_id: self.api_id,
-            api_key_selection_expression: self.api_key_selection_expression,
-            cors_configuration: self.cors_configuration,
-            credentials_arn: self.credentials_arn,
-            description: self.description,
-            disable_schema_validation: self.disable_schema_validation,
-            disable_execute_api_endpoint: self.disable_execute_api_endpoint,
-            name: self.name,
-            route_key: self.route_key,
-            route_selection_expression: self.route_selection_expression,
-            target: self.target,
-            version: self.version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_api::UpdateApiInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_api::UpdateApiInput {
+                api_id: self.api_id
+                ,
+                api_key_selection_expression: self.api_key_selection_expression
+                ,
+                cors_configuration: self.cors_configuration
+                ,
+                credentials_arn: self.credentials_arn
+                ,
+                description: self.description
+                ,
+                disable_schema_validation: self.disable_schema_validation
+                ,
+                disable_execute_api_endpoint: self.disable_execute_api_endpoint
+                ,
+                name: self.name
+                ,
+                route_key: self.route_key
+                ,
+                route_selection_expression: self.route_selection_expression
+                ,
+                target: self.target
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

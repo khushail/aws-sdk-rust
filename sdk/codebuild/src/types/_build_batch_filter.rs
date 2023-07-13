@@ -3,14 +3,14 @@
 /// <p>Specifies filters when retrieving batch builds.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuildBatchFilter {
+pub struct BuildBatchFilter  {
     /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will be retrieved.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
 }
 impl BuildBatchFilter {
     /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will be retrieved.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StatusType> {
         self.status.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl BuildBatchFilter {
 
 /// A builder for [`BuildBatchFilter`](crate::types::BuildBatchFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildBatchFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatusType>,
 }
@@ -37,13 +35,18 @@ impl BuildBatchFilterBuilder {
     }
     /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will be retrieved.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will be retrieved.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`BuildBatchFilter`](crate::types::BuildBatchFilter).
     pub fn build(self) -> crate::types::BuildBatchFilter {
         crate::types::BuildBatchFilter {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

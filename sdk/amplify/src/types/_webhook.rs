@@ -3,7 +3,7 @@
 /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Webhook {
+pub struct Webhook  {
     /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
     #[doc(hidden)]
     pub webhook_arn: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct Webhook {
 }
 impl Webhook {
     /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
-    pub fn webhook_arn(&self) -> ::std::option::Option<&str> {
+    pub fn webhook_arn(&self) -> ::std::option::Option<& str> {
         self.webhook_arn.as_deref()
     }
     /// <p> The ID of the webhook. </p>
-    pub fn webhook_id(&self) -> ::std::option::Option<&str> {
+    pub fn webhook_id(&self) -> ::std::option::Option<& str> {
         self.webhook_id.as_deref()
     }
     /// <p> The URL of the webhook. </p>
-    pub fn webhook_url(&self) -> ::std::option::Option<&str> {
+    pub fn webhook_url(&self) -> ::std::option::Option<& str> {
         self.webhook_url.as_deref()
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The description for a webhook. </p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The create date and time for a webhook. </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p> Updates the date and time for a webhook. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl Webhook {
 
 /// A builder for [`Webhook`](crate::types::Webhook).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebhookBuilder {
     pub(crate) webhook_arn: ::std::option::Option<::std::string::String>,
     pub(crate) webhook_id: ::std::option::Option<::std::string::String>,
@@ -85,8 +83,11 @@ impl WebhookBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
     pub fn set_webhook_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.webhook_arn = input;
-        self
+        self.webhook_arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
+    pub fn get_webhook_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.webhook_arn
     }
     /// <p> The ID of the webhook. </p>
     pub fn webhook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +96,11 @@ impl WebhookBuilder {
     }
     /// <p> The ID of the webhook. </p>
     pub fn set_webhook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.webhook_id = input;
-        self
+        self.webhook_id = input; self
+    }
+    /// <p> The ID of the webhook. </p>
+    pub fn get_webhook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.webhook_id
     }
     /// <p> The URL of the webhook. </p>
     pub fn webhook_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,8 +109,11 @@ impl WebhookBuilder {
     }
     /// <p> The URL of the webhook. </p>
     pub fn set_webhook_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.webhook_url = input;
-        self
+        self.webhook_url = input; self
+    }
+    /// <p> The URL of the webhook. </p>
+    pub fn get_webhook_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.webhook_url
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,8 +122,11 @@ impl WebhookBuilder {
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
+    }
+    /// <p> The name for a branch that is part of an Amplify app. </p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// <p> The description for a webhook. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,8 +135,11 @@ impl WebhookBuilder {
     }
     /// <p> The description for a webhook. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p> The description for a webhook. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The create date and time for a webhook. </p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -134,12 +147,12 @@ impl WebhookBuilder {
         self
     }
     /// <p> The create date and time for a webhook. </p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
+    }
+    /// <p> The create date and time for a webhook. </p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p> Updates the date and time for a webhook. </p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -147,23 +160,31 @@ impl WebhookBuilder {
         self
     }
     /// <p> Updates the date and time for a webhook. </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_time = input;
-        self
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input; self
+    }
+    /// <p> Updates the date and time for a webhook. </p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// Consumes the builder and constructs a [`Webhook`](crate::types::Webhook).
     pub fn build(self) -> crate::types::Webhook {
         crate::types::Webhook {
-            webhook_arn: self.webhook_arn,
-            webhook_id: self.webhook_id,
-            webhook_url: self.webhook_url,
-            branch_name: self.branch_name,
-            description: self.description,
-            create_time: self.create_time,
-            update_time: self.update_time,
+            webhook_arn: self.webhook_arn
+            ,
+            webhook_id: self.webhook_id
+            ,
+            webhook_url: self.webhook_url
+            ,
+            branch_name: self.branch_name
+            ,
+            description: self.description
+            ,
+            create_time: self.create_time
+            ,
+            update_time: self.update_time
+            ,
         }
     }
 }
+

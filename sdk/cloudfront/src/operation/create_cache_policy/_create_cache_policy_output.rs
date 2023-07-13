@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCachePolicyOutput {
+pub struct CreateCachePolicyOutput  {
     /// <p>A cache policy.</p>
     #[doc(hidden)]
     pub cache_policy: ::std::option::Option<crate::types::CachePolicy>,
@@ -16,36 +16,33 @@ pub struct CreateCachePolicyOutput {
 }
 impl CreateCachePolicyOutput {
     /// <p>A cache policy.</p>
-    pub fn cache_policy(&self) -> ::std::option::Option<&crate::types::CachePolicy> {
+    pub fn cache_policy(&self) -> ::std::option::Option<& crate::types::CachePolicy> {
         self.cache_policy.as_ref()
     }
     /// <p>The fully qualified URI of the cache policy just created.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The current version of the cache policy.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateCachePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateCachePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateCachePolicyOutput`](crate::operation::create_cache_policy::CreateCachePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_cache_policy::builders::CreateCachePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::create_cache_policy::builders::CreateCachePolicyOutputBuilder {
         crate::operation::create_cache_policy::builders::CreateCachePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCachePolicyOutput`](crate::operation::create_cache_policy::CreateCachePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCachePolicyOutputBuilder {
     pub(crate) cache_policy: ::std::option::Option<crate::types::CachePolicy>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -59,12 +56,12 @@ impl CreateCachePolicyOutputBuilder {
         self
     }
     /// <p>A cache policy.</p>
-    pub fn set_cache_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicy>,
-    ) -> Self {
-        self.cache_policy = input;
-        self
+    pub fn set_cache_policy(mut self, input: ::std::option::Option<crate::types::CachePolicy>) -> Self {
+        self.cache_policy = input; self
+    }
+    /// <p>A cache policy.</p>
+    pub fn get_cache_policy(&self) -> &::std::option::Option<crate::types::CachePolicy> {
+        &self.cache_policy
     }
     /// <p>The fully qualified URI of the cache policy just created.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,8 +70,11 @@ impl CreateCachePolicyOutputBuilder {
     }
     /// <p>The fully qualified URI of the cache policy just created.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
+    }
+    /// <p>The fully qualified URI of the cache policy just created.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// <p>The current version of the cache policy.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,25 +83,32 @@ impl CreateCachePolicyOutputBuilder {
     }
     /// <p>The current version of the cache policy.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
+    }
+    /// <p>The current version of the cache policy.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateCachePolicyOutput`](crate::operation::create_cache_policy::CreateCachePolicyOutput).
     pub fn build(self) -> crate::operation::create_cache_policy::CreateCachePolicyOutput {
         crate::operation::create_cache_policy::CreateCachePolicyOutput {
-            cache_policy: self.cache_policy,
-            location: self.location,
-            e_tag: self.e_tag,
+            cache_policy: self.cache_policy
+            ,
+            location: self.location
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

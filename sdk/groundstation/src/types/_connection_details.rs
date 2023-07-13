@@ -3,7 +3,7 @@
 /// <p>Egress address of AgentEndpoint with an optional mtu.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionDetails {
+pub struct ConnectionDetails  {
     /// <p>A socket address.</p>
     #[doc(hidden)]
     pub socket_address: ::std::option::Option<crate::types::SocketAddress>,
@@ -13,7 +13,7 @@ pub struct ConnectionDetails {
 }
 impl ConnectionDetails {
     /// <p>A socket address.</p>
-    pub fn socket_address(&self) -> ::std::option::Option<&crate::types::SocketAddress> {
+    pub fn socket_address(&self) -> ::std::option::Option<& crate::types::SocketAddress> {
         self.socket_address.as_ref()
     }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
@@ -30,9 +30,7 @@ impl ConnectionDetails {
 
 /// A builder for [`ConnectionDetails`](crate::types::ConnectionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionDetailsBuilder {
     pub(crate) socket_address: ::std::option::Option<crate::types::SocketAddress>,
     pub(crate) mtu: ::std::option::Option<i32>,
@@ -44,12 +42,12 @@ impl ConnectionDetailsBuilder {
         self
     }
     /// <p>A socket address.</p>
-    pub fn set_socket_address(
-        mut self,
-        input: ::std::option::Option<crate::types::SocketAddress>,
-    ) -> Self {
-        self.socket_address = input;
-        self
+    pub fn set_socket_address(mut self, input: ::std::option::Option<crate::types::SocketAddress>) -> Self {
+        self.socket_address = input; self
+    }
+    /// <p>A socket address.</p>
+    pub fn get_socket_address(&self) -> &::std::option::Option<crate::types::SocketAddress> {
+        &self.socket_address
     }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
     pub fn mtu(mut self, input: i32) -> Self {
@@ -58,14 +56,20 @@ impl ConnectionDetailsBuilder {
     }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
     pub fn set_mtu(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mtu = input;
-        self
+        self.mtu = input; self
+    }
+    /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+    pub fn get_mtu(&self) -> &::std::option::Option<i32> {
+        &self.mtu
     }
     /// Consumes the builder and constructs a [`ConnectionDetails`](crate::types::ConnectionDetails).
     pub fn build(self) -> crate::types::ConnectionDetails {
         crate::types::ConnectionDetails {
-            socket_address: self.socket_address,
-            mtu: self.mtu,
+            socket_address: self.socket_address
+            ,
+            mtu: self.mtu
+            ,
         }
     }
 }
+

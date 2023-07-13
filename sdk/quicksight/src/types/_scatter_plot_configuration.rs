@@ -3,7 +3,7 @@
 /// <p>The configuration of a scatter plot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScatterPlotConfiguration {
+pub struct ScatterPlotConfiguration  {
     /// <p>The field wells of the visual.</p>
     #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::ScatterPlotFieldWells>,
@@ -34,47 +34,39 @@ pub struct ScatterPlotConfiguration {
 }
 impl ScatterPlotConfiguration {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::ScatterPlotFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<& crate::types::ScatterPlotFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's x-axis.</p>
-    pub fn x_axis_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn x_axis_label_options(&self) -> ::std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.x_axis_label_options.as_ref()
     }
     /// <p>The label display options (grid line, range, scale, and axis step) of the scatter plot's x-axis.</p>
-    pub fn x_axis_display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn x_axis_display_options(&self) -> ::std::option::Option<& crate::types::AxisDisplayOptions> {
         self.x_axis_display_options.as_ref()
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's y-axis.</p>
-    pub fn y_axis_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn y_axis_label_options(&self) -> ::std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.y_axis_label_options.as_ref()
     }
     /// <p>The label display options (grid line, range, scale, and axis step) of the scatter plot's y-axis.</p>
-    pub fn y_axis_display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn y_axis_display_options(&self) -> ::std::option::Option<& crate::types::AxisDisplayOptions> {
         self.y_axis_display_options.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> ::std::option::Option<& crate::types::LegendOptions> {
         self.legend.as_ref()
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn data_labels(&self) -> ::std::option::Option<&crate::types::DataLabelOptions> {
+    pub fn data_labels(&self) -> ::std::option::Option<& crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> ::std::option::Option<& crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
-    pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
+    pub fn visual_palette(&self) -> ::std::option::Option<& crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
 }
@@ -87,9 +79,7 @@ impl ScatterPlotConfiguration {
 
 /// A builder for [`ScatterPlotConfiguration`](crate::types::ScatterPlotConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScatterPlotConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::ScatterPlotFieldWells>,
     pub(crate) x_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
@@ -108,12 +98,12 @@ impl ScatterPlotConfigurationBuilder {
         self
     }
     /// <p>The field wells of the visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::ScatterPlotFieldWells>,
-    ) -> Self {
-        self.field_wells = input;
-        self
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::ScatterPlotFieldWells>) -> Self {
+        self.field_wells = input; self
+    }
+    /// <p>The field wells of the visual.</p>
+    pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::ScatterPlotFieldWells> {
+        &self.field_wells
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's x-axis.</p>
     pub fn x_axis_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -121,12 +111,12 @@ impl ScatterPlotConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's x-axis.</p>
-    pub fn set_x_axis_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
-        self.x_axis_label_options = input;
-        self
+    pub fn set_x_axis_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
+        self.x_axis_label_options = input; self
+    }
+    /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's x-axis.</p>
+    pub fn get_x_axis_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+        &self.x_axis_label_options
     }
     /// <p>The label display options (grid line, range, scale, and axis step) of the scatter plot's x-axis.</p>
     pub fn x_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
@@ -134,12 +124,12 @@ impl ScatterPlotConfigurationBuilder {
         self
     }
     /// <p>The label display options (grid line, range, scale, and axis step) of the scatter plot's x-axis.</p>
-    pub fn set_x_axis_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
-        self.x_axis_display_options = input;
-        self
+    pub fn set_x_axis_display_options(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
+        self.x_axis_display_options = input; self
+    }
+    /// <p>The label display options (grid line, range, scale, and axis step) of the scatter plot's x-axis.</p>
+    pub fn get_x_axis_display_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
+        &self.x_axis_display_options
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's y-axis.</p>
     pub fn y_axis_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -147,12 +137,12 @@ impl ScatterPlotConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's y-axis.</p>
-    pub fn set_y_axis_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
-        self.y_axis_label_options = input;
-        self
+    pub fn set_y_axis_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
+        self.y_axis_label_options = input; self
+    }
+    /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's y-axis.</p>
+    pub fn get_y_axis_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+        &self.y_axis_label_options
     }
     /// <p>The label display options (grid line, range, scale, and axis step) of the scatter plot's y-axis.</p>
     pub fn y_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
@@ -160,12 +150,12 @@ impl ScatterPlotConfigurationBuilder {
         self
     }
     /// <p>The label display options (grid line, range, scale, and axis step) of the scatter plot's y-axis.</p>
-    pub fn set_y_axis_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
-        self.y_axis_display_options = input;
-        self
+    pub fn set_y_axis_display_options(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
+        self.y_axis_display_options = input; self
+    }
+    /// <p>The label display options (grid line, range, scale, and axis step) of the scatter plot's y-axis.</p>
+    pub fn get_y_axis_display_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
+        &self.y_axis_display_options
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
@@ -174,8 +164,11 @@ impl ScatterPlotConfigurationBuilder {
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn set_legend(mut self, input: ::std::option::Option<crate::types::LegendOptions>) -> Self {
-        self.legend = input;
-        self
+        self.legend = input; self
+    }
+    /// <p>The legend display setup of the visual.</p>
+    pub fn get_legend(&self) -> &::std::option::Option<crate::types::LegendOptions> {
+        &self.legend
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
     pub fn data_labels(mut self, input: crate::types::DataLabelOptions) -> Self {
@@ -183,12 +176,12 @@ impl ScatterPlotConfigurationBuilder {
         self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn set_data_labels(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLabelOptions>,
-    ) -> Self {
-        self.data_labels = input;
-        self
+    pub fn set_data_labels(mut self, input: ::std::option::Option<crate::types::DataLabelOptions>) -> Self {
+        self.data_labels = input; self
+    }
+    /// <p>The options that determine if visual data labels are displayed.</p>
+    pub fn get_data_labels(&self) -> &::std::option::Option<crate::types::DataLabelOptions> {
+        &self.data_labels
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn tooltip(mut self, input: crate::types::TooltipOptions) -> Self {
@@ -196,12 +189,12 @@ impl ScatterPlotConfigurationBuilder {
         self
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn set_tooltip(
-        mut self,
-        input: ::std::option::Option<crate::types::TooltipOptions>,
-    ) -> Self {
-        self.tooltip = input;
-        self
+    pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
+        self.tooltip = input; self
+    }
+    /// <p>The legend display setup of the visual.</p>
+    pub fn get_tooltip(&self) -> &::std::option::Option<crate::types::TooltipOptions> {
+        &self.tooltip
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
     pub fn visual_palette(mut self, input: crate::types::VisualPalette) -> Self {
@@ -209,25 +202,35 @@ impl ScatterPlotConfigurationBuilder {
         self
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
-    pub fn set_visual_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualPalette>,
-    ) -> Self {
-        self.visual_palette = input;
-        self
+    pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
+        self.visual_palette = input; self
+    }
+    /// <p>The palette (chart color) display setup of the visual.</p>
+    pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
+        &self.visual_palette
     }
     /// Consumes the builder and constructs a [`ScatterPlotConfiguration`](crate::types::ScatterPlotConfiguration).
     pub fn build(self) -> crate::types::ScatterPlotConfiguration {
         crate::types::ScatterPlotConfiguration {
-            field_wells: self.field_wells,
-            x_axis_label_options: self.x_axis_label_options,
-            x_axis_display_options: self.x_axis_display_options,
-            y_axis_label_options: self.y_axis_label_options,
-            y_axis_display_options: self.y_axis_display_options,
-            legend: self.legend,
-            data_labels: self.data_labels,
-            tooltip: self.tooltip,
-            visual_palette: self.visual_palette,
+            field_wells: self.field_wells
+            ,
+            x_axis_label_options: self.x_axis_label_options
+            ,
+            x_axis_display_options: self.x_axis_display_options
+            ,
+            y_axis_label_options: self.y_axis_label_options
+            ,
+            y_axis_display_options: self.y_axis_display_options
+            ,
+            legend: self.legend
+            ,
+            data_labels: self.data_labels
+            ,
+            tooltip: self.tooltip
+            ,
+            visual_palette: self.visual_palette
+            ,
         }
     }
 }
+

@@ -3,133 +3,115 @@ pub use crate::operation::create_private_virtual_interface::_create_private_virt
 
 pub use crate::operation::create_private_virtual_interface::_create_private_virtual_interface_input::CreatePrivateVirtualInterfaceInputBuilder;
 
+impl CreatePrivateVirtualInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_private_virtual_interface();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreatePrivateVirtualInterface`.
-///
-/// <p>Creates a private virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic. A private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for connecting to multiple VPCs, including VPCs in different Amazon Web Services Regions. Connecting the private virtual interface to a VGW only provides access to a single VPC within the same Region.</p>
+/// 
+/// <p>Creates a private virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic. A private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for connecting to multiple VPCs, including VPCs in different Amazon Web Services Regions. Connecting the private virtual interface to a VGW only provides access to a single VPC within the same Region.</p> 
 /// <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <code>DescribeConnections</code>. To check whether your virtual interface supports jumbo frames, call <code>DescribeVirtualInterfaces</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder,
 }
-impl CreatePrivateVirtualInterfaceFluentBuilder {
+impl CreatePrivateVirtualInterfaceFluentBuilder  {
     /// Creates a new `CreatePrivateVirtualInterface`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreatePrivateVirtualInterface as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>Information about the private virtual interface.</p>
-    pub fn new_private_virtual_interface(
-        mut self,
-        input: crate::types::NewPrivateVirtualInterface,
-    ) -> Self {
+    pub fn new_private_virtual_interface(mut self, input: crate::types::NewPrivateVirtualInterface) -> Self {
         self.inner = self.inner.new_private_virtual_interface(input);
         self
     }
     /// <p>Information about the private virtual interface.</p>
-    pub fn set_new_private_virtual_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::NewPrivateVirtualInterface>,
-    ) -> Self {
+    pub fn set_new_private_virtual_interface(mut self, input: ::std::option::Option<crate::types::NewPrivateVirtualInterface>) -> Self {
         self.inner = self.inner.set_new_private_virtual_interface(input);
         self
     }
+    /// <p>Information about the private virtual interface.</p>
+    pub fn get_new_private_virtual_interface(&self) -> &::std::option::Option<crate::types::NewPrivateVirtualInterface> {
+        self.inner.get_new_private_virtual_interface()
+    }
 }
+

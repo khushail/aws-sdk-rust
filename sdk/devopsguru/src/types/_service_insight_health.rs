@@ -3,7 +3,7 @@
 /// <p>Contains the number of open proactive and reactive insights in an analyzed Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceInsightHealth {
+pub struct ServiceInsightHealth  {
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
     #[doc(hidden)]
     pub open_proactive_insights: i32,
@@ -30,9 +30,7 @@ impl ServiceInsightHealth {
 
 /// A builder for [`ServiceInsightHealth`](crate::types::ServiceInsightHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceInsightHealthBuilder {
     pub(crate) open_proactive_insights: ::std::option::Option<i32>,
     pub(crate) open_reactive_insights: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl ServiceInsightHealthBuilder {
     }
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
     pub fn set_open_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.open_proactive_insights = input;
-        self
+        self.open_proactive_insights = input; self
+    }
+    /// <p>The number of open proactive insights in the Amazon Web Services service</p>
+    pub fn get_open_proactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.open_proactive_insights
     }
     /// <p>The number of open reactive insights in the Amazon Web Services service</p>
     pub fn open_reactive_insights(mut self, input: i32) -> Self {
@@ -55,14 +56,22 @@ impl ServiceInsightHealthBuilder {
     }
     /// <p>The number of open reactive insights in the Amazon Web Services service</p>
     pub fn set_open_reactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.open_reactive_insights = input;
-        self
+        self.open_reactive_insights = input; self
+    }
+    /// <p>The number of open reactive insights in the Amazon Web Services service</p>
+    pub fn get_open_reactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.open_reactive_insights
     }
     /// Consumes the builder and constructs a [`ServiceInsightHealth`](crate::types::ServiceInsightHealth).
     pub fn build(self) -> crate::types::ServiceInsightHealth {
         crate::types::ServiceInsightHealth {
-            open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),
-            open_reactive_insights: self.open_reactive_insights.unwrap_or_default(),
+            open_proactive_insights: self.open_proactive_insights
+                .unwrap_or_default()
+            ,
+            open_reactive_insights: self.open_reactive_insights
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

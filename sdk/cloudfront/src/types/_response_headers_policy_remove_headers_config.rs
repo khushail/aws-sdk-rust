@@ -3,14 +3,13 @@
 /// <p>A list of HTTP header names that CloudFront removes from HTTP responses to requests that match the cache behavior that this response headers policy is attached to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyRemoveHeadersConfig {
+pub struct ResponseHeadersPolicyRemoveHeadersConfig  {
     /// <p>The number of HTTP header names in the list.</p>
     #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The list of HTTP header names.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>,
 }
 impl ResponseHeadersPolicyRemoveHeadersConfig {
     /// <p>The number of HTTP header names in the list.</p>
@@ -18,9 +17,7 @@ impl ResponseHeadersPolicyRemoveHeadersConfig {
         self.quantity
     }
     /// <p>The list of HTTP header names.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResponseHeadersPolicyRemoveHeader]> {
+    pub fn items(&self) -> ::std::option::Option<& [crate::types::ResponseHeadersPolicyRemoveHeader]> {
         self.items.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl ResponseHeadersPolicyRemoveHeadersConfig {
 
 /// A builder for [`ResponseHeadersPolicyRemoveHeadersConfig`](crate::types::ResponseHeadersPolicyRemoveHeadersConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyRemoveHeadersConfigBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>,
 }
 impl ResponseHeadersPolicyRemoveHeadersConfigBuilder {
     /// <p>The number of HTTP header names in the list.</p>
@@ -49,8 +43,11 @@ impl ResponseHeadersPolicyRemoveHeadersConfigBuilder {
     }
     /// <p>The number of HTTP header names in the list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
+    }
+    /// <p>The number of HTTP header names in the list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -59,25 +56,26 @@ impl ResponseHeadersPolicyRemoveHeadersConfigBuilder {
     /// <p>The list of HTTP header names.</p>
     pub fn items(mut self, input: crate::types::ResponseHeadersPolicyRemoveHeader) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of HTTP header names.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>,
-        >,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>) -> Self {
+        self.items = input; self
+    }
+    /// <p>The list of HTTP header names.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyRemoveHeadersConfig`](crate::types::ResponseHeadersPolicyRemoveHeadersConfig).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyRemoveHeadersConfig {
         crate::types::ResponseHeadersPolicyRemoveHeadersConfig {
-            quantity: self.quantity,
-            items: self.items,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

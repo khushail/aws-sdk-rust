@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMapRunOutput {
+pub struct DescribeMapRunOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
     #[doc(hidden)]
     pub map_run_arn: ::std::option::Option<::std::string::String>,
@@ -37,23 +37,23 @@ pub struct DescribeMapRunOutput {
 }
 impl DescribeMapRunOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-    pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> ::std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
-    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_arn(&self) -> ::std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
     /// <p>The current status of the Map Run.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MapRunStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MapRunStatus> {
         self.status.as_ref()
     }
     /// <p>The date when the Map Run was started.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date when the Map Run was stopped.</p>
-    pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
@@ -69,19 +69,19 @@ impl DescribeMapRunOutput {
         self.tolerated_failure_count
     }
     /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
-    pub fn item_counts(&self) -> ::std::option::Option<&crate::types::MapRunItemCounts> {
+    pub fn item_counts(&self) -> ::std::option::Option<& crate::types::MapRunItemCounts> {
         self.item_counts.as_ref()
     }
     /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
-    pub fn execution_counts(&self) -> ::std::option::Option<&crate::types::MapRunExecutionCounts> {
+    pub fn execution_counts(&self) -> ::std::option::Option<& crate::types::MapRunExecutionCounts> {
         self.execution_counts.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeMapRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeMapRunOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMapRunOutput`](crate::operation::describe_map_run::DescribeMapRunOutput).
     pub fn builder() -> crate::operation::describe_map_run::builders::DescribeMapRunOutputBuilder {
@@ -91,9 +91,7 @@ impl DescribeMapRunOutput {
 
 /// A builder for [`DescribeMapRunOutput`](crate::operation::describe_map_run::DescribeMapRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMapRunOutputBuilder {
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
@@ -115,24 +113,24 @@ impl DescribeMapRunOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
     pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_run_arn = input;
-        self
+        self.map_run_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+    pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_run_arn
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
-    pub fn execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
-    pub fn set_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.execution_arn = input;
-        self
+    pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
+    pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_arn
     }
     /// <p>The current status of the Map Run.</p>
     pub fn status(mut self, input: crate::types::MapRunStatus) -> Self {
@@ -141,8 +139,11 @@ impl DescribeMapRunOutputBuilder {
     }
     /// <p>The current status of the Map Run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MapRunStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The current status of the Map Run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MapRunStatus> {
+        &self.status
     }
     /// <p>The date when the Map Run was started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,12 +151,12 @@ impl DescribeMapRunOutputBuilder {
         self
     }
     /// <p>The date when the Map Run was started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_date = input;
-        self
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input; self
+    }
+    /// <p>The date when the Map Run was started.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
     }
     /// <p>The date when the Map Run was stopped.</p>
     pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -163,12 +164,12 @@ impl DescribeMapRunOutputBuilder {
         self
     }
     /// <p>The date when the Map Run was stopped.</p>
-    pub fn set_stop_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.stop_date = input;
-        self
+    pub fn set_stop_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.stop_date = input; self
+    }
+    /// <p>The date when the Map Run was stopped.</p>
+    pub fn get_stop_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_date
     }
     /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
     pub fn max_concurrency(mut self, input: i32) -> Self {
@@ -177,8 +178,11 @@ impl DescribeMapRunOutputBuilder {
     }
     /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_concurrency = input;
-        self
+        self.max_concurrency = input; self
+    }
+    /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrency
     }
     /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
     pub fn tolerated_failure_percentage(mut self, input: f32) -> Self {
@@ -187,8 +191,11 @@ impl DescribeMapRunOutputBuilder {
     }
     /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
     pub fn set_tolerated_failure_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.tolerated_failure_percentage = input;
-        self
+        self.tolerated_failure_percentage = input; self
+    }
+    /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
+    pub fn get_tolerated_failure_percentage(&self) -> &::std::option::Option<f32> {
+        &self.tolerated_failure_percentage
     }
     /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
     pub fn tolerated_failure_count(mut self, input: i64) -> Self {
@@ -197,8 +204,11 @@ impl DescribeMapRunOutputBuilder {
     }
     /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
     pub fn set_tolerated_failure_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.tolerated_failure_count = input;
-        self
+        self.tolerated_failure_count = input; self
+    }
+    /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
+    pub fn get_tolerated_failure_count(&self) -> &::std::option::Option<i64> {
+        &self.tolerated_failure_count
     }
     /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
     pub fn item_counts(mut self, input: crate::types::MapRunItemCounts) -> Self {
@@ -206,12 +216,12 @@ impl DescribeMapRunOutputBuilder {
         self
     }
     /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
-    pub fn set_item_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::MapRunItemCounts>,
-    ) -> Self {
-        self.item_counts = input;
-        self
+    pub fn set_item_counts(mut self, input: ::std::option::Option<crate::types::MapRunItemCounts>) -> Self {
+        self.item_counts = input; self
+    }
+    /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
+    pub fn get_item_counts(&self) -> &::std::option::Option<crate::types::MapRunItemCounts> {
+        &self.item_counts
     }
     /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
     pub fn execution_counts(mut self, input: crate::types::MapRunExecutionCounts) -> Self {
@@ -219,36 +229,50 @@ impl DescribeMapRunOutputBuilder {
         self
     }
     /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
-    pub fn set_execution_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::MapRunExecutionCounts>,
-    ) -> Self {
-        self.execution_counts = input;
-        self
+    pub fn set_execution_counts(mut self, input: ::std::option::Option<crate::types::MapRunExecutionCounts>) -> Self {
+        self.execution_counts = input; self
+    }
+    /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
+    pub fn get_execution_counts(&self) -> &::std::option::Option<crate::types::MapRunExecutionCounts> {
+        &self.execution_counts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeMapRunOutput`](crate::operation::describe_map_run::DescribeMapRunOutput).
     pub fn build(self) -> crate::operation::describe_map_run::DescribeMapRunOutput {
         crate::operation::describe_map_run::DescribeMapRunOutput {
-            map_run_arn: self.map_run_arn,
-            execution_arn: self.execution_arn,
-            status: self.status,
-            start_date: self.start_date,
-            stop_date: self.stop_date,
-            max_concurrency: self.max_concurrency.unwrap_or_default(),
-            tolerated_failure_percentage: self.tolerated_failure_percentage.unwrap_or_default(),
-            tolerated_failure_count: self.tolerated_failure_count.unwrap_or_default(),
-            item_counts: self.item_counts,
-            execution_counts: self.execution_counts,
+            map_run_arn: self.map_run_arn
+            ,
+            execution_arn: self.execution_arn
+            ,
+            status: self.status
+            ,
+            start_date: self.start_date
+            ,
+            stop_date: self.stop_date
+            ,
+            max_concurrency: self.max_concurrency
+                .unwrap_or_default()
+            ,
+            tolerated_failure_percentage: self.tolerated_failure_percentage
+                .unwrap_or_default()
+            ,
+            tolerated_failure_count: self.tolerated_failure_count
+                .unwrap_or_default()
+            ,
+            item_counts: self.item_counts
+            ,
+            execution_counts: self.execution_counts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

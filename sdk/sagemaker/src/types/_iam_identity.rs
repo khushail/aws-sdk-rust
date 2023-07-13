@@ -3,7 +3,7 @@
 /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages and project entities only.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IamIdentity {
+pub struct IamIdentity  {
     /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct IamIdentity {
 }
 impl IamIdentity {
     /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the principal that assumes the IAM identity.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The person or application which assumes the IAM identity.</p>
-    pub fn source_identity(&self) -> ::std::option::Option<&str> {
+    pub fn source_identity(&self) -> ::std::option::Option<& str> {
         self.source_identity.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl IamIdentity {
 
 /// A builder for [`IamIdentity`](crate::types::IamIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamIdentityBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl IamIdentityBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ID of the principal that assumes the IAM identity.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,31 +64,35 @@ impl IamIdentityBuilder {
     }
     /// <p>The ID of the principal that assumes the IAM identity.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
+    }
+    /// <p>The ID of the principal that assumes the IAM identity.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// <p>The person or application which assumes the IAM identity.</p>
-    pub fn source_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The person or application which assumes the IAM identity.</p>
-    pub fn set_source_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_identity = input;
-        self
+    pub fn set_source_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_identity = input; self
+    }
+    /// <p>The person or application which assumes the IAM identity.</p>
+    pub fn get_source_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_identity
     }
     /// Consumes the builder and constructs a [`IamIdentity`](crate::types::IamIdentity).
     pub fn build(self) -> crate::types::IamIdentity {
         crate::types::IamIdentity {
-            arn: self.arn,
-            principal_id: self.principal_id,
-            source_identity: self.source_identity,
+            arn: self.arn
+            ,
+            principal_id: self.principal_id
+            ,
+            source_identity: self.source_identity
+            ,
         }
     }
 }
+

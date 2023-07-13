@@ -3,7 +3,7 @@
 /// <p>A list of environment parameters suggested by the Amazon SageMaker Inference Recommender.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentParameter {
+pub struct EnvironmentParameter  {
     /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct EnvironmentParameter {
 }
 impl EnvironmentParameter {
     /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn value_type(&self) -> ::std::option::Option<&str> {
+    pub fn value_type(&self) -> ::std::option::Option<& str> {
         self.value_type.as_deref()
     }
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl EnvironmentParameter {
 
 /// A builder for [`EnvironmentParameter`](crate::types::EnvironmentParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value_type: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl EnvironmentParameterBuilder {
     }
     /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
     pub fn value_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl EnvironmentParameterBuilder {
     }
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
     pub fn set_value_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value_type = input;
-        self
+        self.value_type = input; self
+    }
+    /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub fn get_value_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_type
     }
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl EnvironmentParameterBuilder {
     }
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`EnvironmentParameter`](crate::types::EnvironmentParameter).
     pub fn build(self) -> crate::types::EnvironmentParameter {
         crate::types::EnvironmentParameter {
-            key: self.key,
-            value_type: self.value_type,
-            value: self.value,
+            key: self.key
+            ,
+            value_type: self.value_type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

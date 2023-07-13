@@ -3,31 +3,27 @@
 /// <p>A request to submit new account VDM attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountVdmAttributesInput {
+pub struct PutAccountVdmAttributesInput  {
     /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
     #[doc(hidden)]
     pub vdm_attributes: ::std::option::Option<crate::types::VdmAttributes>,
 }
 impl PutAccountVdmAttributesInput {
     /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
-    pub fn vdm_attributes(&self) -> ::std::option::Option<&crate::types::VdmAttributes> {
+    pub fn vdm_attributes(&self) -> ::std::option::Option<& crate::types::VdmAttributes> {
         self.vdm_attributes.as_ref()
     }
 }
 impl PutAccountVdmAttributesInput {
     /// Creates a new builder-style object to manufacture [`PutAccountVdmAttributesInput`](crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder {
         crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountVdmAttributesInput`](crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountVdmAttributesInputBuilder {
     pub(crate) vdm_attributes: ::std::option::Option<crate::types::VdmAttributes>,
 }
@@ -38,24 +34,21 @@ impl PutAccountVdmAttributesInputBuilder {
         self
     }
     /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
-    pub fn set_vdm_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::VdmAttributes>,
-    ) -> Self {
-        self.vdm_attributes = input;
-        self
+    pub fn set_vdm_attributes(mut self, input: ::std::option::Option<crate::types::VdmAttributes>) -> Self {
+        self.vdm_attributes = input; self
+    }
+    /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
+    pub fn get_vdm_attributes(&self) -> &::std::option::Option<crate::types::VdmAttributes> {
+        &self.vdm_attributes
     }
     /// Consumes the builder and constructs a [`PutAccountVdmAttributesInput`](crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput {
-                vdm_attributes: self.vdm_attributes,
-            },
+                vdm_attributes: self.vdm_attributes
+                ,
+            }
         )
     }
 }
+

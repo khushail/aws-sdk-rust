@@ -3,14 +3,14 @@
 /// <p>The output configuration parameters of a dataset export job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetExportJobOutput {
+pub struct DatasetExportJobOutput  {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
     pub s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
 }
 impl DatasetExportJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_destination(&self) -> ::std::option::Option<&crate::types::S3DataConfig> {
+    pub fn s3_data_destination(&self) -> ::std::option::Option<& crate::types::S3DataConfig> {
         self.s3_data_destination.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl DatasetExportJobOutput {
 
 /// A builder for [`DatasetExportJobOutput`](crate::types::DatasetExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetExportJobOutputBuilder {
     pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
 }
@@ -36,17 +34,19 @@ impl DatasetExportJobOutputBuilder {
         self
     }
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn set_s3_data_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataConfig>,
-    ) -> Self {
-        self.s3_data_destination = input;
-        self
+    pub fn set_s3_data_destination(mut self, input: ::std::option::Option<crate::types::S3DataConfig>) -> Self {
+        self.s3_data_destination = input; self
+    }
+    /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    pub fn get_s3_data_destination(&self) -> &::std::option::Option<crate::types::S3DataConfig> {
+        &self.s3_data_destination
     }
     /// Consumes the builder and constructs a [`DatasetExportJobOutput`](crate::types::DatasetExportJobOutput).
     pub fn build(self) -> crate::types::DatasetExportJobOutput {
         crate::types::DatasetExportJobOutput {
-            s3_data_destination: self.s3_data_destination,
+            s3_data_destination: self.s3_data_destination
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRunTaskOutput {
+pub struct GetRunTaskOutput  {
     /// <p>The task's ID.</p>
     #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
@@ -40,15 +40,15 @@ pub struct GetRunTaskOutput {
 }
 impl GetRunTaskOutput {
     /// <p>The task's ID.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The task's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskStatus> {
         self.status.as_ref()
     }
     /// <p>The task's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The task's CPU usage.</p>
@@ -60,23 +60,23 @@ impl GetRunTaskOutput {
         self.memory
     }
     /// <p>When the task was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The task's start time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The task's stop time.</p>
-    pub fn stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
     /// <p>The task's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The task's log stream.</p>
-    pub fn log_stream(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream(&self) -> ::std::option::Option<& str> {
         self.log_stream.as_deref()
     }
     /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
@@ -85,10 +85,10 @@ impl GetRunTaskOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for GetRunTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRunTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetRunTaskOutput`](crate::operation::get_run_task::GetRunTaskOutput).
     pub fn builder() -> crate::operation::get_run_task::builders::GetRunTaskOutputBuilder {
@@ -98,9 +98,7 @@ impl GetRunTaskOutput {
 
 /// A builder for [`GetRunTaskOutput`](crate::operation::get_run_task::GetRunTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRunTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatus>,
@@ -123,8 +121,11 @@ impl GetRunTaskOutputBuilder {
     }
     /// <p>The task's ID.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
+    }
+    /// <p>The task's ID.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// <p>The task's status.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
@@ -133,8 +134,11 @@ impl GetRunTaskOutputBuilder {
     }
     /// <p>The task's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The task's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        &self.status
     }
     /// <p>The task's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,8 +147,11 @@ impl GetRunTaskOutputBuilder {
     }
     /// <p>The task's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The task's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The task's CPU usage.</p>
     pub fn cpus(mut self, input: i32) -> Self {
@@ -153,8 +160,11 @@ impl GetRunTaskOutputBuilder {
     }
     /// <p>The task's CPU usage.</p>
     pub fn set_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cpus = input;
-        self
+        self.cpus = input; self
+    }
+    /// <p>The task's CPU usage.</p>
+    pub fn get_cpus(&self) -> &::std::option::Option<i32> {
+        &self.cpus
     }
     /// <p>The task's memory use in gigabytes.</p>
     pub fn memory(mut self, input: i32) -> Self {
@@ -163,8 +173,11 @@ impl GetRunTaskOutputBuilder {
     }
     /// <p>The task's memory use in gigabytes.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
+    }
+    /// <p>The task's memory use in gigabytes.</p>
+    pub fn get_memory(&self) -> &::std::option::Option<i32> {
+        &self.memory
     }
     /// <p>When the task was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -172,12 +185,12 @@ impl GetRunTaskOutputBuilder {
         self
     }
     /// <p>When the task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>When the task was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The task's start time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -185,12 +198,12 @@ impl GetRunTaskOutputBuilder {
         self
     }
     /// <p>The task's start time.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>The task's start time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The task's stop time.</p>
     pub fn stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -198,28 +211,25 @@ impl GetRunTaskOutputBuilder {
         self
     }
     /// <p>The task's stop time.</p>
-    pub fn set_stop_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.stop_time = input;
-        self
+    pub fn set_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.stop_time = input; self
+    }
+    /// <p>The task's stop time.</p>
+    pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_time
     }
     /// <p>The task's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The task's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>The task's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>The task's log stream.</p>
     pub fn log_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -228,8 +238,11 @@ impl GetRunTaskOutputBuilder {
     }
     /// <p>The task's log stream.</p>
     pub fn set_log_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream = input;
-        self
+        self.log_stream = input; self
+    }
+    /// <p>The task's log stream.</p>
+    pub fn get_log_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream
     }
     /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
     pub fn gpus(mut self, input: i32) -> Self {
@@ -238,33 +251,48 @@ impl GetRunTaskOutputBuilder {
     }
     /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
     pub fn set_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gpus = input;
-        self
+        self.gpus = input; self
+    }
+    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    pub fn get_gpus(&self) -> &::std::option::Option<i32> {
+        &self.gpus
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRunTaskOutput`](crate::operation::get_run_task::GetRunTaskOutput).
     pub fn build(self) -> crate::operation::get_run_task::GetRunTaskOutput {
         crate::operation::get_run_task::GetRunTaskOutput {
-            task_id: self.task_id,
-            status: self.status,
-            name: self.name,
-            cpus: self.cpus,
-            memory: self.memory,
-            creation_time: self.creation_time,
-            start_time: self.start_time,
-            stop_time: self.stop_time,
-            status_message: self.status_message,
-            log_stream: self.log_stream,
-            gpus: self.gpus,
+            task_id: self.task_id
+            ,
+            status: self.status
+            ,
+            name: self.name
+            ,
+            cpus: self.cpus
+            ,
+            memory: self.memory
+            ,
+            creation_time: self.creation_time
+            ,
+            start_time: self.start_time
+            ,
+            stop_time: self.stop_time
+            ,
+            status_message: self.status_message
+            ,
+            log_stream: self.log_stream
+            ,
+            gpus: self.gpus
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

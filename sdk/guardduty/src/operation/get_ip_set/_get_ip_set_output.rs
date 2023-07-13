@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIpSetOutput {
+pub struct GetIpSetOutput  {
     /// <p>The user-friendly name for the IPSet.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -17,42 +17,36 @@ pub struct GetIpSetOutput {
     pub status: ::std::option::Option<crate::types::IpSetStatus>,
     /// <p>The tags of the IPSet resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIpSetOutput {
     /// <p>The user-friendly name for the IPSet.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The format of the file that contains the IPSet.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::IpSetFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::IpSetFormat> {
         self.format.as_ref()
     }
     /// <p>The URI of the file that contains the IPSet.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The status of IPSet file that was uploaded.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IpSetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::IpSetStatus> {
         self.status.as_ref()
     }
     /// <p>The tags of the IPSet resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetIpSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetIpSetOutput {
     /// Creates a new builder-style object to manufacture [`GetIpSetOutput`](crate::operation::get_ip_set::GetIpSetOutput).
     pub fn builder() -> crate::operation::get_ip_set::builders::GetIpSetOutputBuilder {
@@ -62,17 +56,13 @@ impl GetIpSetOutput {
 
 /// A builder for [`GetIpSetOutput`](crate::operation::get_ip_set::GetIpSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpSetOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::IpSetFormat>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::IpSetStatus>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIpSetOutputBuilder {
@@ -83,8 +73,11 @@ impl GetIpSetOutputBuilder {
     }
     /// <p>The user-friendly name for the IPSet.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The user-friendly name for the IPSet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The format of the file that contains the IPSet.</p>
     pub fn format(mut self, input: crate::types::IpSetFormat) -> Self {
@@ -93,8 +86,11 @@ impl GetIpSetOutputBuilder {
     }
     /// <p>The format of the file that contains the IPSet.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::IpSetFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
+    }
+    /// <p>The format of the file that contains the IPSet.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::IpSetFormat> {
+        &self.format
     }
     /// <p>The URI of the file that contains the IPSet.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +99,11 @@ impl GetIpSetOutputBuilder {
     }
     /// <p>The URI of the file that contains the IPSet.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
+    }
+    /// <p>The URI of the file that contains the IPSet.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// <p>The status of IPSet file that was uploaded.</p>
     pub fn status(mut self, input: crate::types::IpSetStatus) -> Self {
@@ -113,52 +112,55 @@ impl GetIpSetOutputBuilder {
     }
     /// <p>The status of IPSet file that was uploaded.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IpSetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of IPSet file that was uploaded.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IpSetStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the IPSet resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags of the IPSet resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags of the IPSet resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetIpSetOutput`](crate::operation::get_ip_set::GetIpSetOutput).
     pub fn build(self) -> crate::operation::get_ip_set::GetIpSetOutput {
         crate::operation::get_ip_set::GetIpSetOutput {
-            name: self.name,
-            format: self.format,
-            location: self.location,
-            status: self.status,
-            tags: self.tags,
+            name: self.name
+            ,
+            format: self.format
+            ,
+            location: self.location
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyApplicationStateInput {
+pub struct NotifyApplicationStateInput  {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct NotifyApplicationStateInput {
 }
 impl NotifyApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ApplicationStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the application state changed.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
@@ -36,18 +36,14 @@ impl NotifyApplicationStateInput {
 }
 impl NotifyApplicationStateInput {
     /// Creates a new builder-style object to manufacture [`NotifyApplicationStateInput`](crate::operation::notify_application_state::NotifyApplicationStateInput).
-    pub fn builder(
-    ) -> crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder {
         crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyApplicationStateInput`](crate::operation::notify_application_state::NotifyApplicationStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyApplicationStateInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
@@ -56,20 +52,17 @@ pub struct NotifyApplicationStateInputBuilder {
 }
 impl NotifyApplicationStateInputBuilder {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
     pub fn status(mut self, input: crate::types::ApplicationStatus) -> Self {
@@ -77,12 +70,12 @@ impl NotifyApplicationStateInputBuilder {
         self
     }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
+        &self.status
     }
     /// <p>The timestamp when the application state changed.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,12 +83,12 @@ impl NotifyApplicationStateInputBuilder {
         self
     }
     /// <p>The timestamp when the application state changed.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_date_time = input;
-        self
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.update_date_time = input; self
+    }
+    /// <p>The timestamp when the application state changed.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -104,23 +97,27 @@ impl NotifyApplicationStateInputBuilder {
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`NotifyApplicationStateInput`](crate::operation::notify_application_state::NotifyApplicationStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_application_state::NotifyApplicationStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::notify_application_state::NotifyApplicationStateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::notify_application_state::NotifyApplicationStateInput {
-                application_id: self.application_id,
-                status: self.status,
-                update_date_time: self.update_date_time,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
+                application_id: self.application_id
+                ,
+                status: self.status
+                ,
+                update_date_time: self.update_date_time
+                ,
+                dry_run: self.dry_run
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

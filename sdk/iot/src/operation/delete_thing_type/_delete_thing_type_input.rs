@@ -3,14 +3,14 @@
 /// <p>The input for the DeleteThingType operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteThingTypeInput {
+pub struct DeleteThingTypeInput  {
     /// <p>The name of the thing type.</p>
     #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteThingTypeInput {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> ::std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
 }
@@ -23,38 +23,32 @@ impl DeleteThingTypeInput {
 
 /// A builder for [`DeleteThingTypeInput`](crate::operation::delete_thing_type::DeleteThingTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThingTypeInputBuilder {
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteThingTypeInputBuilder {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.thing_type_name = input;
-        self
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.thing_type_name = input; self
+    }
+    /// <p>The name of the thing type.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
     }
     /// Consumes the builder and constructs a [`DeleteThingTypeInput`](crate::operation::delete_thing_type::DeleteThingTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_thing_type::DeleteThingTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_thing_type::DeleteThingTypeInput {
-            thing_type_name: self.thing_type_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_thing_type::DeleteThingTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_thing_type::DeleteThingTypeInput {
+                thing_type_name: self.thing_type_name
+                ,
+            }
+        )
     }
 }
+

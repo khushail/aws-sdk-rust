@@ -3,7 +3,7 @@
 /// <p>A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataPoint {
+pub struct DataPoint  {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
     #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -13,7 +13,7 @@ pub struct DataPoint {
 }
 impl DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
@@ -30,9 +30,7 @@ impl DataPoint {
 
 /// A builder for [`DataPoint`](crate::types::DataPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataPointBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) value: ::std::option::Option<f64>,
@@ -44,12 +42,12 @@ impl DataPointBuilder {
         self
     }
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.timestamp = input;
-        self
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.timestamp = input; self
+    }
+    /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -58,14 +56,20 @@ impl DataPointBuilder {
     }
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`DataPoint`](crate::types::DataPoint).
     pub fn build(self) -> crate::types::DataPoint {
         crate::types::DataPoint {
-            timestamp: self.timestamp,
-            value: self.value,
+            timestamp: self.timestamp
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

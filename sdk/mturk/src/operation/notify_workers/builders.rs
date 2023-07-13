@@ -3,94 +3,87 @@ pub use crate::operation::notify_workers::_notify_workers_output::NotifyWorkersO
 
 pub use crate::operation::notify_workers::_notify_workers_input::NotifyWorkersInputBuilder;
 
+impl NotifyWorkersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::notify_workers::NotifyWorkersOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::notify_workers::NotifyWorkersError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.notify_workers();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `NotifyWorkers`.
-///
+/// 
 /// <p> The <code>NotifyWorkers</code> operation sends an email to one or more Workers that you specify with the Worker ID. You can specify up to 100 Worker IDs to send the same message with a single call to the NotifyWorkers operation. The NotifyWorkers operation will send a notification email to a Worker only if you have previously approved or rejected work from the Worker. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyWorkersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::notify_workers::builders::NotifyWorkersInputBuilder,
+                    inner: crate::operation::notify_workers::builders::NotifyWorkersInputBuilder,
 }
-impl NotifyWorkersFluentBuilder {
+impl NotifyWorkersFluentBuilder  {
     /// Creates a new `NotifyWorkers`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::notify_workers::NotifyWorkers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::notify_workers::NotifyWorkersError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the NotifyWorkers as a reference.
+    pub fn as_input(&self) -> &crate::operation::notify_workers::builders::NotifyWorkersInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_workers::NotifyWorkersOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::notify_workers::NotifyWorkersError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::notify_workers::NotifyWorkers, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::notify_workers::NotifyWorkersError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::notify_workers::NotifyWorkersOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_workers::NotifyWorkersError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_workers::NotifyWorkersOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::notify_workers::NotifyWorkersError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::notify_workers::NotifyWorkers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::notify_workers::NotifyWorkersError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::notify_workers::NotifyWorkersOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_workers::NotifyWorkersError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::notify_workers::NotifyWorkers, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::notify_workers::NotifyWorkersError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subject(input.into());
@@ -100,6 +93,10 @@ impl NotifyWorkersFluentBuilder {
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subject(input);
         self
+    }
+    /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subject()
     }
     /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
     pub fn message_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +108,10 @@ impl NotifyWorkersFluentBuilder {
         self.inner = self.inner.set_message_text(input);
         self
     }
+    /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
+    pub fn get_message_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_text()
+    }
     /// Appends an item to `WorkerIds`.
     ///
     /// To override the contents of this collection use [`set_worker_ids`](Self::set_worker_ids).
@@ -121,11 +122,13 @@ impl NotifyWorkersFluentBuilder {
         self
     }
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
-    pub fn set_worker_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_worker_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_worker_ids(input);
         self
     }
+    /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
+    pub fn get_worker_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_worker_ids()
+    }
 }
+

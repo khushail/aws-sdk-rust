@@ -3,7 +3,7 @@
 /// <p>A list of parameters that specify the input channels, type of input data, and where it is located.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputFileConfig {
+pub struct InputFileConfig  {
     /// <p>A named input source that an Amazon Braket job can consume.</p>
     #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct InputFileConfig {
 }
 impl InputFileConfig {
     /// <p>A named input source that an Amazon Braket job can consume.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The MIME type of the data.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The location of the channel data.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl InputFileConfig {
 
 /// A builder for [`InputFileConfig`](crate::types::InputFileConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputFileConfigBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl InputFileConfigBuilder {
     }
     /// <p>A named input source that an Amazon Braket job can consume.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
+    }
+    /// <p>A named input source that an Amazon Braket job can consume.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>The MIME type of the data.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl InputFileConfigBuilder {
     }
     /// <p>The MIME type of the data.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
+    }
+    /// <p>The MIME type of the data.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The location of the channel data.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -72,19 +76,23 @@ impl InputFileConfigBuilder {
         self
     }
     /// <p>The location of the channel data.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
-        self.data_source = input;
-        self
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
+        self.data_source = input; self
+    }
+    /// <p>The location of the channel data.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
     }
     /// Consumes the builder and constructs a [`InputFileConfig`](crate::types::InputFileConfig).
     pub fn build(self) -> crate::types::InputFileConfig {
         crate::types::InputFileConfig {
-            channel_name: self.channel_name,
-            content_type: self.content_type,
-            data_source: self.data_source,
+            channel_name: self.channel_name
+            ,
+            content_type: self.content_type
+            ,
+            data_source: self.data_source
+            ,
         }
     }
 }
+

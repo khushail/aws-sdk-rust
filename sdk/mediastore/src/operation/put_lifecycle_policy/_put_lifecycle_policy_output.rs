@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLifecyclePolicyOutput {
+pub struct PutLifecyclePolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for PutLifecyclePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyOutput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyOutputBuilder {
         crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutLifecyclePolicyOutput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLifecyclePolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutLifecyclePolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutLifecyclePolicyOutput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput).
     pub fn build(self) -> crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput {
         crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput {
@@ -43,3 +40,4 @@ impl PutLifecyclePolicyOutputBuilder {
         }
     }
 }
+

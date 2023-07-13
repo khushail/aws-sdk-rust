@@ -3,7 +3,7 @@
 /// <p>Represents a request to update a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReceiptRuleInput {
+pub struct UpdateReceiptRuleInput  {
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
     #[doc(hidden)]
     pub rule_set_name: ::std::option::Option<::std::string::String>,
@@ -13,47 +13,41 @@ pub struct UpdateReceiptRuleInput {
 }
 impl UpdateReceiptRuleInput {
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
-    pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> ::std::option::Option<& str> {
         self.rule_set_name.as_deref()
     }
     /// <p>A data structure that contains the updated receipt rule information.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::ReceiptRule> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::ReceiptRule> {
         self.rule.as_ref()
     }
 }
 impl UpdateReceiptRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateReceiptRuleInput`](crate::operation::update_receipt_rule::UpdateReceiptRuleInput).
-    pub fn builder(
-    ) -> crate::operation::update_receipt_rule::builders::UpdateReceiptRuleInputBuilder {
+    pub fn builder() -> crate::operation::update_receipt_rule::builders::UpdateReceiptRuleInputBuilder {
         crate::operation::update_receipt_rule::builders::UpdateReceiptRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReceiptRuleInput`](crate::operation::update_receipt_rule::UpdateReceiptRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReceiptRuleInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule: ::std::option::Option<crate::types::ReceiptRule>,
 }
 impl UpdateReceiptRuleInputBuilder {
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.rule_set_name = input;
-        self
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rule_set_name = input; self
+    }
+    /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_name
     }
     /// <p>A data structure that contains the updated receipt rule information.</p>
     pub fn rule(mut self, input: crate::types::ReceiptRule) -> Self {
@@ -62,21 +56,22 @@ impl UpdateReceiptRuleInputBuilder {
     }
     /// <p>A data structure that contains the updated receipt rule information.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::ReceiptRule>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
+    }
+    /// <p>A data structure that contains the updated receipt rule information.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::ReceiptRule> {
+        &self.rule
     }
     /// Consumes the builder and constructs a [`UpdateReceiptRuleInput`](crate::operation::update_receipt_rule::UpdateReceiptRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_receipt_rule::UpdateReceiptRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_receipt_rule::UpdateReceiptRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_receipt_rule::UpdateReceiptRuleInput {
-                rule_set_name: self.rule_set_name,
-                rule: self.rule,
-            },
+                rule_set_name: self.rule_set_name
+                ,
+                rule: self.rule
+                ,
+            }
         )
     }
 }
+

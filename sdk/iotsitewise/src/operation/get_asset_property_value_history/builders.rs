@@ -3,113 +3,98 @@ pub use crate::operation::get_asset_property_value_history::_get_asset_property_
 
 pub use crate::operation::get_asset_property_value_history::_get_asset_property_value_history_input::GetAssetPropertyValueHistoryInputBuilder;
 
+impl GetAssetPropertyValueHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_asset_property_value_history();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetAssetPropertyValueHistory`.
-///
-/// <p>Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.</p>
-/// <p>To identify an asset property, you must specify one of the following:</p>
-/// <ul>
-/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
-/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+/// 
+/// <p>Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.</p> 
+/// <p>To identify an asset property, you must specify one of the following:</p> 
+/// <ul> 
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li> 
+/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li> 
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssetPropertyValueHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryInputBuilder,
 }
-impl GetAssetPropertyValueHistoryFluentBuilder {
+impl GetAssetPropertyValueHistoryFluentBuilder  {
     /// Creates a new `GetAssetPropertyValueHistory`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetAssetPropertyValueHistory as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_asset_property_value_history::paginator::GetAssetPropertyValueHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_asset_property_value_history::paginator::GetAssetPropertyValueHistoryPaginator{
-        crate::operation::get_asset_property_value_history::paginator::GetAssetPropertyValueHistoryPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_asset_property_value_history::paginator::GetAssetPropertyValueHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_asset_property_value_history::paginator::GetAssetPropertyValueHistoryPaginator {
+                                crate::operation::get_asset_property_value_history::paginator::GetAssetPropertyValueHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the asset.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());
@@ -119,6 +104,10 @@ impl GetAssetPropertyValueHistoryFluentBuilder {
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_id(input);
         self
+    }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
     }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,21 +119,23 @@ impl GetAssetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_property_id(input);
         self
     }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_property_id()
+    }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_alias(input.into());
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_alias(input);
         self
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_property_alias()
     }
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,12 +143,13 @@ impl GetAssetPropertyValueHistoryFluentBuilder {
         self
     }
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
+    }
+    /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date()
     }
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,12 +157,13 @@ impl GetAssetPropertyValueHistoryFluentBuilder {
         self
     }
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
+    }
+    /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date()
     }
     /// Appends an item to `qualities`.
     ///
@@ -182,27 +175,30 @@ impl GetAssetPropertyValueHistoryFluentBuilder {
         self
     }
     /// <p>The quality by which to filter asset data.</p>
-    pub fn set_qualities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>,
-    ) -> Self {
+    pub fn set_qualities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>) -> Self {
         self.inner = self.inner.set_qualities(input);
         self
     }
-    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>The quality by which to filter asset data.</p>
+    pub fn get_qualities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Quality>> {
+        self.inner.get_qualities()
+    }
+    /// <p>The chronological sorting order of the requested information.</p> 
     /// <p>Default: <code>ASCENDING</code> </p>
     pub fn time_ordering(mut self, input: crate::types::TimeOrdering) -> Self {
         self.inner = self.inner.time_ordering(input);
         self
     }
-    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>The chronological sorting order of the requested information.</p> 
     /// <p>Default: <code>ASCENDING</code> </p>
-    pub fn set_time_ordering(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeOrdering>,
-    ) -> Self {
+    pub fn set_time_ordering(mut self, input: ::std::option::Option<crate::types::TimeOrdering>) -> Self {
         self.inner = self.inner.set_time_ordering(input);
         self
+    }
+    /// <p>The chronological sorting order of the requested information.</p> 
+    /// <p>Default: <code>ASCENDING</code> </p>
+    pub fn get_time_ordering(&self) -> &::std::option::Option<crate::types::TimeOrdering> {
+        self.inner.get_time_ordering()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -214,22 +210,35 @@ impl GetAssetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
-    /// <ul>
-    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> 
+    /// <ul> 
+    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li> 
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li> 
     /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
-    /// <ul>
-    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> 
+    /// <ul> 
+    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li> 
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li> 
     /// </ul>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> 
+    /// <ul> 
+    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li> 
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li> 
+    /// </ul>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
 }
+

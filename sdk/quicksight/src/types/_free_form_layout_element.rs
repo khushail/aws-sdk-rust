@@ -3,7 +3,7 @@
 /// <p>An element within a free-form layout.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FreeFormLayoutElement {
+pub struct FreeFormLayoutElement  {
     /// <p>A unique identifier for an element within a free-form layout.</p>
     #[doc(hidden)]
     pub element_id: ::std::option::Option<::std::string::String>,
@@ -27,15 +27,13 @@ pub struct FreeFormLayoutElement {
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The rendering rules that determine when an element should be displayed within a free-form layout.</p>
     #[doc(hidden)]
-    pub rendering_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::SheetElementRenderingRule>>,
+    pub rendering_rules: ::std::option::Option<::std::vec::Vec<crate::types::SheetElementRenderingRule>>,
     /// <p>The border style configuration of a free-form layout element.</p>
     #[doc(hidden)]
     pub border_style: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
     /// <p>The border style configuration of a free-form layout element. This border style is used when the element is selected.</p>
     #[doc(hidden)]
-    pub selected_border_style:
-        ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
+    pub selected_border_style: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
     /// <p>The background style configuration of a free-form layout element.</p>
     #[doc(hidden)]
     pub background_style: ::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle>,
@@ -45,59 +43,51 @@ pub struct FreeFormLayoutElement {
 }
 impl FreeFormLayoutElement {
     /// <p>A unique identifier for an element within a free-form layout.</p>
-    pub fn element_id(&self) -> ::std::option::Option<&str> {
+    pub fn element_id(&self) -> ::std::option::Option<& str> {
         self.element_id.as_deref()
     }
     /// <p>The type of element.</p>
-    pub fn element_type(&self) -> ::std::option::Option<&crate::types::LayoutElementType> {
+    pub fn element_type(&self) -> ::std::option::Option<& crate::types::LayoutElementType> {
         self.element_type.as_ref()
     }
     /// <p>The x-axis coordinate of the element.</p>
-    pub fn x_axis_location(&self) -> ::std::option::Option<&str> {
+    pub fn x_axis_location(&self) -> ::std::option::Option<& str> {
         self.x_axis_location.as_deref()
     }
     /// <p>The y-axis coordinate of the element.</p>
-    pub fn y_axis_location(&self) -> ::std::option::Option<&str> {
+    pub fn y_axis_location(&self) -> ::std::option::Option<& str> {
         self.y_axis_location.as_deref()
     }
     /// <p>The width of an element within a free-form layout.</p>
-    pub fn width(&self) -> ::std::option::Option<&str> {
+    pub fn width(&self) -> ::std::option::Option<& str> {
         self.width.as_deref()
     }
     /// <p>The height of an element within a free-form layout.</p>
-    pub fn height(&self) -> ::std::option::Option<&str> {
+    pub fn height(&self) -> ::std::option::Option<& str> {
         self.height.as_deref()
     }
     /// <p>The visibility of an element within a free-form layout.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The rendering rules that determine when an element should be displayed within a free-form layout.</p>
-    pub fn rendering_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SheetElementRenderingRule]> {
+    pub fn rendering_rules(&self) -> ::std::option::Option<& [crate::types::SheetElementRenderingRule]> {
         self.rendering_rules.as_deref()
     }
     /// <p>The border style configuration of a free-form layout element.</p>
-    pub fn border_style(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FreeFormLayoutElementBorderStyle> {
+    pub fn border_style(&self) -> ::std::option::Option<& crate::types::FreeFormLayoutElementBorderStyle> {
         self.border_style.as_ref()
     }
     /// <p>The border style configuration of a free-form layout element. This border style is used when the element is selected.</p>
-    pub fn selected_border_style(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FreeFormLayoutElementBorderStyle> {
+    pub fn selected_border_style(&self) -> ::std::option::Option<& crate::types::FreeFormLayoutElementBorderStyle> {
         self.selected_border_style.as_ref()
     }
     /// <p>The background style configuration of a free-form layout element.</p>
-    pub fn background_style(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FreeFormLayoutElementBackgroundStyle> {
+    pub fn background_style(&self) -> ::std::option::Option<& crate::types::FreeFormLayoutElementBackgroundStyle> {
         self.background_style.as_ref()
     }
     /// <p>The loading animation configuration of a free-form layout element.</p>
-    pub fn loading_animation(&self) -> ::std::option::Option<&crate::types::LoadingAnimation> {
+    pub fn loading_animation(&self) -> ::std::option::Option<& crate::types::LoadingAnimation> {
         self.loading_animation.as_ref()
     }
 }
@@ -110,9 +100,7 @@ impl FreeFormLayoutElement {
 
 /// A builder for [`FreeFormLayoutElement`](crate::types::FreeFormLayoutElement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FreeFormLayoutElementBuilder {
     pub(crate) element_id: ::std::option::Option<::std::string::String>,
     pub(crate) element_type: ::std::option::Option<crate::types::LayoutElementType>,
@@ -121,13 +109,10 @@ pub struct FreeFormLayoutElementBuilder {
     pub(crate) width: ::std::option::Option<::std::string::String>,
     pub(crate) height: ::std::option::Option<::std::string::String>,
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
-    pub(crate) rendering_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::SheetElementRenderingRule>>,
+    pub(crate) rendering_rules: ::std::option::Option<::std::vec::Vec<crate::types::SheetElementRenderingRule>>,
     pub(crate) border_style: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
-    pub(crate) selected_border_style:
-        ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
-    pub(crate) background_style:
-        ::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle>,
+    pub(crate) selected_border_style: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
+    pub(crate) background_style: ::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle>,
     pub(crate) loading_animation: ::std::option::Option<crate::types::LoadingAnimation>,
 }
 impl FreeFormLayoutElementBuilder {
@@ -138,8 +123,11 @@ impl FreeFormLayoutElementBuilder {
     }
     /// <p>A unique identifier for an element within a free-form layout.</p>
     pub fn set_element_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.element_id = input;
-        self
+        self.element_id = input; self
+    }
+    /// <p>A unique identifier for an element within a free-form layout.</p>
+    pub fn get_element_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.element_id
     }
     /// <p>The type of element.</p>
     pub fn element_type(mut self, input: crate::types::LayoutElementType) -> Self {
@@ -147,44 +135,38 @@ impl FreeFormLayoutElementBuilder {
         self
     }
     /// <p>The type of element.</p>
-    pub fn set_element_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutElementType>,
-    ) -> Self {
-        self.element_type = input;
-        self
+    pub fn set_element_type(mut self, input: ::std::option::Option<crate::types::LayoutElementType>) -> Self {
+        self.element_type = input; self
+    }
+    /// <p>The type of element.</p>
+    pub fn get_element_type(&self) -> &::std::option::Option<crate::types::LayoutElementType> {
+        &self.element_type
     }
     /// <p>The x-axis coordinate of the element.</p>
-    pub fn x_axis_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn x_axis_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_axis_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The x-axis coordinate of the element.</p>
-    pub fn set_x_axis_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.x_axis_location = input;
-        self
+    pub fn set_x_axis_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.x_axis_location = input; self
+    }
+    /// <p>The x-axis coordinate of the element.</p>
+    pub fn get_x_axis_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_axis_location
     }
     /// <p>The y-axis coordinate of the element.</p>
-    pub fn y_axis_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn y_axis_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.y_axis_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The y-axis coordinate of the element.</p>
-    pub fn set_y_axis_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.y_axis_location = input;
-        self
+    pub fn set_y_axis_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.y_axis_location = input; self
+    }
+    /// <p>The y-axis coordinate of the element.</p>
+    pub fn get_y_axis_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.y_axis_location
     }
     /// <p>The width of an element within a free-form layout.</p>
     pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -193,8 +175,11 @@ impl FreeFormLayoutElementBuilder {
     }
     /// <p>The width of an element within a free-form layout.</p>
     pub fn set_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
+    }
+    /// <p>The width of an element within a free-form layout.</p>
+    pub fn get_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.width
     }
     /// <p>The height of an element within a free-form layout.</p>
     pub fn height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -203,8 +188,11 @@ impl FreeFormLayoutElementBuilder {
     }
     /// <p>The height of an element within a free-form layout.</p>
     pub fn set_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
+    }
+    /// <p>The height of an element within a free-form layout.</p>
+    pub fn get_height(&self) -> &::std::option::Option<::std::string::String> {
+        &self.height
     }
     /// <p>The visibility of an element within a free-form layout.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -212,12 +200,12 @@ impl FreeFormLayoutElementBuilder {
         self
     }
     /// <p>The visibility of an element within a free-form layout.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.visibility = input;
-        self
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.visibility = input; self
+    }
+    /// <p>The visibility of an element within a free-form layout.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Appends an item to `rendering_rules`.
     ///
@@ -226,17 +214,17 @@ impl FreeFormLayoutElementBuilder {
     /// <p>The rendering rules that determine when an element should be displayed within a free-form layout.</p>
     pub fn rendering_rules(mut self, input: crate::types::SheetElementRenderingRule) -> Self {
         let mut v = self.rendering_rules.unwrap_or_default();
-        v.push(input);
-        self.rendering_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rendering_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rendering rules that determine when an element should be displayed within a free-form layout.</p>
-    pub fn set_rendering_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SheetElementRenderingRule>>,
-    ) -> Self {
-        self.rendering_rules = input;
-        self
+    pub fn set_rendering_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SheetElementRenderingRule>>) -> Self {
+        self.rendering_rules = input; self
+    }
+    /// <p>The rendering rules that determine when an element should be displayed within a free-form layout.</p>
+    pub fn get_rendering_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetElementRenderingRule>> {
+        &self.rendering_rules
     }
     /// <p>The border style configuration of a free-form layout element.</p>
     pub fn border_style(mut self, input: crate::types::FreeFormLayoutElementBorderStyle) -> Self {
@@ -244,44 +232,38 @@ impl FreeFormLayoutElementBuilder {
         self
     }
     /// <p>The border style configuration of a free-form layout element.</p>
-    pub fn set_border_style(
-        mut self,
-        input: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
-    ) -> Self {
-        self.border_style = input;
-        self
+    pub fn set_border_style(mut self, input: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>) -> Self {
+        self.border_style = input; self
+    }
+    /// <p>The border style configuration of a free-form layout element.</p>
+    pub fn get_border_style(&self) -> &::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle> {
+        &self.border_style
     }
     /// <p>The border style configuration of a free-form layout element. This border style is used when the element is selected.</p>
-    pub fn selected_border_style(
-        mut self,
-        input: crate::types::FreeFormLayoutElementBorderStyle,
-    ) -> Self {
+    pub fn selected_border_style(mut self, input: crate::types::FreeFormLayoutElementBorderStyle) -> Self {
         self.selected_border_style = ::std::option::Option::Some(input);
         self
     }
     /// <p>The border style configuration of a free-form layout element. This border style is used when the element is selected.</p>
-    pub fn set_selected_border_style(
-        mut self,
-        input: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
-    ) -> Self {
-        self.selected_border_style = input;
-        self
+    pub fn set_selected_border_style(mut self, input: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>) -> Self {
+        self.selected_border_style = input; self
+    }
+    /// <p>The border style configuration of a free-form layout element. This border style is used when the element is selected.</p>
+    pub fn get_selected_border_style(&self) -> &::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle> {
+        &self.selected_border_style
     }
     /// <p>The background style configuration of a free-form layout element.</p>
-    pub fn background_style(
-        mut self,
-        input: crate::types::FreeFormLayoutElementBackgroundStyle,
-    ) -> Self {
+    pub fn background_style(mut self, input: crate::types::FreeFormLayoutElementBackgroundStyle) -> Self {
         self.background_style = ::std::option::Option::Some(input);
         self
     }
     /// <p>The background style configuration of a free-form layout element.</p>
-    pub fn set_background_style(
-        mut self,
-        input: ::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle>,
-    ) -> Self {
-        self.background_style = input;
-        self
+    pub fn set_background_style(mut self, input: ::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle>) -> Self {
+        self.background_style = input; self
+    }
+    /// <p>The background style configuration of a free-form layout element.</p>
+    pub fn get_background_style(&self) -> &::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle> {
+        &self.background_style
     }
     /// <p>The loading animation configuration of a free-form layout element.</p>
     pub fn loading_animation(mut self, input: crate::types::LoadingAnimation) -> Self {
@@ -289,28 +271,41 @@ impl FreeFormLayoutElementBuilder {
         self
     }
     /// <p>The loading animation configuration of a free-form layout element.</p>
-    pub fn set_loading_animation(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadingAnimation>,
-    ) -> Self {
-        self.loading_animation = input;
-        self
+    pub fn set_loading_animation(mut self, input: ::std::option::Option<crate::types::LoadingAnimation>) -> Self {
+        self.loading_animation = input; self
+    }
+    /// <p>The loading animation configuration of a free-form layout element.</p>
+    pub fn get_loading_animation(&self) -> &::std::option::Option<crate::types::LoadingAnimation> {
+        &self.loading_animation
     }
     /// Consumes the builder and constructs a [`FreeFormLayoutElement`](crate::types::FreeFormLayoutElement).
     pub fn build(self) -> crate::types::FreeFormLayoutElement {
         crate::types::FreeFormLayoutElement {
-            element_id: self.element_id,
-            element_type: self.element_type,
-            x_axis_location: self.x_axis_location,
-            y_axis_location: self.y_axis_location,
-            width: self.width,
-            height: self.height,
-            visibility: self.visibility,
-            rendering_rules: self.rendering_rules,
-            border_style: self.border_style,
-            selected_border_style: self.selected_border_style,
-            background_style: self.background_style,
-            loading_animation: self.loading_animation,
+            element_id: self.element_id
+            ,
+            element_type: self.element_type
+            ,
+            x_axis_location: self.x_axis_location
+            ,
+            y_axis_location: self.y_axis_location
+            ,
+            width: self.width
+            ,
+            height: self.height
+            ,
+            visibility: self.visibility
+            ,
+            rendering_rules: self.rendering_rules
+            ,
+            border_style: self.border_style
+            ,
+            selected_border_style: self.selected_border_style
+            ,
+            background_style: self.background_style
+            ,
+            loading_animation: self.loading_animation
+            ,
         }
     }
 }
+

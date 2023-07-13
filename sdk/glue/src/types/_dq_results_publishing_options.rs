@@ -3,7 +3,7 @@
 /// <p>Options to configure how your data quality evaluation results are published.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DqResultsPublishingOptions {
+pub struct DqResultsPublishingOptions  {
     /// <p>The context of the evaluation.</p>
     #[doc(hidden)]
     pub evaluation_context: ::std::option::Option<::std::string::String>,
@@ -19,11 +19,11 @@ pub struct DqResultsPublishingOptions {
 }
 impl DqResultsPublishingOptions {
     /// <p>The context of the evaluation.</p>
-    pub fn evaluation_context(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_context(&self) -> ::std::option::Option<& str> {
         self.evaluation_context.as_deref()
     }
     /// <p>The Amazon S3 prefix prepended to the results.</p>
-    pub fn results_s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn results_s3_prefix(&self) -> ::std::option::Option<& str> {
         self.results_s3_prefix.as_deref()
     }
     /// <p>Enable metrics for your data quality results.</p>
@@ -44,9 +44,7 @@ impl DqResultsPublishingOptions {
 
 /// A builder for [`DqResultsPublishingOptions`](crate::types::DqResultsPublishingOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DqResultsPublishingOptionsBuilder {
     pub(crate) evaluation_context: ::std::option::Option<::std::string::String>,
     pub(crate) results_s3_prefix: ::std::option::Option<::std::string::String>,
@@ -55,36 +53,30 @@ pub struct DqResultsPublishingOptionsBuilder {
 }
 impl DqResultsPublishingOptionsBuilder {
     /// <p>The context of the evaluation.</p>
-    pub fn evaluation_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The context of the evaluation.</p>
-    pub fn set_evaluation_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.evaluation_context = input;
-        self
+    pub fn set_evaluation_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_context = input; self
+    }
+    /// <p>The context of the evaluation.</p>
+    pub fn get_evaluation_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_context
     }
     /// <p>The Amazon S3 prefix prepended to the results.</p>
-    pub fn results_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn results_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.results_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 prefix prepended to the results.</p>
-    pub fn set_results_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.results_s3_prefix = input;
-        self
+    pub fn set_results_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.results_s3_prefix = input; self
+    }
+    /// <p>The Amazon S3 prefix prepended to the results.</p>
+    pub fn get_results_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.results_s3_prefix
     }
     /// <p>Enable metrics for your data quality results.</p>
     pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
@@ -93,8 +85,11 @@ impl DqResultsPublishingOptionsBuilder {
     }
     /// <p>Enable metrics for your data quality results.</p>
     pub fn set_cloud_watch_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cloud_watch_metrics_enabled = input;
-        self
+        self.cloud_watch_metrics_enabled = input; self
+    }
+    /// <p>Enable metrics for your data quality results.</p>
+    pub fn get_cloud_watch_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cloud_watch_metrics_enabled
     }
     /// <p>Enable publishing for your data quality results.</p>
     pub fn results_publishing_enabled(mut self, input: bool) -> Self {
@@ -103,16 +98,24 @@ impl DqResultsPublishingOptionsBuilder {
     }
     /// <p>Enable publishing for your data quality results.</p>
     pub fn set_results_publishing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.results_publishing_enabled = input;
-        self
+        self.results_publishing_enabled = input; self
+    }
+    /// <p>Enable publishing for your data quality results.</p>
+    pub fn get_results_publishing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.results_publishing_enabled
     }
     /// Consumes the builder and constructs a [`DqResultsPublishingOptions`](crate::types::DqResultsPublishingOptions).
     pub fn build(self) -> crate::types::DqResultsPublishingOptions {
         crate::types::DqResultsPublishingOptions {
-            evaluation_context: self.evaluation_context,
-            results_s3_prefix: self.results_s3_prefix,
-            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled,
-            results_publishing_enabled: self.results_publishing_enabled,
+            evaluation_context: self.evaluation_context
+            ,
+            results_s3_prefix: self.results_s3_prefix
+            ,
+            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled
+            ,
+            results_publishing_enabled: self.results_publishing_enabled
+            ,
         }
     }
 }
+

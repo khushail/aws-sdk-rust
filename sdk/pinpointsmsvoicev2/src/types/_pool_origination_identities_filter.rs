@@ -3,7 +3,7 @@
 /// <p>Information about origination identities associated with a pool that meets a specified criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PoolOriginationIdentitiesFilter {
+pub struct PoolOriginationIdentitiesFilter  {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName>,
@@ -13,13 +13,11 @@ pub struct PoolOriginationIdentitiesFilter {
 }
 impl PoolOriginationIdentitiesFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PoolOriginationIdentitiesFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::PoolOriginationIdentitiesFilterName> {
         self.name.as_ref()
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -32,9 +30,7 @@ impl PoolOriginationIdentitiesFilter {
 
 /// A builder for [`PoolOriginationIdentitiesFilter`](crate::types::PoolOriginationIdentitiesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PoolOriginationIdentitiesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,12 +42,12 @@ impl PoolOriginationIdentitiesFilterBuilder {
         self
     }
     /// <p>The name of the attribute to filter on.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName>) -> Self {
+        self.name = input; self
+    }
+    /// <p>The name of the attribute to filter on.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName> {
+        &self.name
     }
     /// Appends an item to `values`.
     ///
@@ -60,23 +56,26 @@ impl PoolOriginationIdentitiesFilterBuilder {
     /// <p>An array values to filter for.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array values to filter for.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>An array values to filter for.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`PoolOriginationIdentitiesFilter`](crate::types::PoolOriginationIdentitiesFilter).
     pub fn build(self) -> crate::types::PoolOriginationIdentitiesFilter {
         crate::types::PoolOriginationIdentitiesFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> Entity that comprises information abount duplicate timestamps in the dataset. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DuplicateTimestamps {
+pub struct DuplicateTimestamps  {
     /// <p> Indicates the total number of duplicate timestamps. </p>
     #[doc(hidden)]
     pub total_number_of_duplicate_timestamps: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl DuplicateTimestamps {
 
 /// A builder for [`DuplicateTimestamps`](crate::types::DuplicateTimestamps).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DuplicateTimestampsBuilder {
     pub(crate) total_number_of_duplicate_timestamps: ::std::option::Option<i32>,
 }
@@ -36,17 +34,19 @@ impl DuplicateTimestampsBuilder {
         self
     }
     /// <p> Indicates the total number of duplicate timestamps. </p>
-    pub fn set_total_number_of_duplicate_timestamps(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.total_number_of_duplicate_timestamps = input;
-        self
+    pub fn set_total_number_of_duplicate_timestamps(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_number_of_duplicate_timestamps = input; self
+    }
+    /// <p> Indicates the total number of duplicate timestamps. </p>
+    pub fn get_total_number_of_duplicate_timestamps(&self) -> &::std::option::Option<i32> {
+        &self.total_number_of_duplicate_timestamps
     }
     /// Consumes the builder and constructs a [`DuplicateTimestamps`](crate::types::DuplicateTimestamps).
     pub fn build(self) -> crate::types::DuplicateTimestamps {
         crate::types::DuplicateTimestamps {
-            total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps,
+            total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps
+            ,
         }
     }
 }
+

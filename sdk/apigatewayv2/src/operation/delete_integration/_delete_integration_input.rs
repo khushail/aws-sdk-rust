@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIntegrationInput {
+pub struct DeleteIntegrationInput  {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct DeleteIntegrationInput {
 }
 impl DeleteIntegrationInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(&self) -> ::std::option::Option<&str> {
+    pub fn integration_id(&self) -> ::std::option::Option<& str> {
         self.integration_id.as_deref()
     }
 }
 impl DeleteIntegrationInput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
-    pub fn builder() -> crate::operation::delete_integration::builders::DeleteIntegrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_integration::builders::DeleteIntegrationInputBuilder {
         crate::operation::delete_integration::builders::DeleteIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntegrationInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_id: ::std::option::Option<::std::string::String>,
@@ -45,37 +42,35 @@ impl DeleteIntegrationInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
+    }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The integration ID.</p>
-    pub fn set_integration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.integration_id = input;
-        self
+    pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.integration_id = input; self
+    }
+    /// <p>The integration ID.</p>
+    pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_id
     }
     /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_integration::DeleteIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_integration::DeleteIntegrationInput {
-                api_id: self.api_id,
-                integration_id: self.integration_id,
-            },
+                api_id: self.api_id
+                ,
+                integration_id: self.integration_id
+                ,
+            }
         )
     }
 }
+

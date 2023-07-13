@@ -3,7 +3,7 @@
 /// <p>Describes a registered Amazon ECS cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsCluster {
+pub struct EcsCluster  {
     /// <p>The cluster's ARN.</p>
     #[doc(hidden)]
     pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct EcsCluster {
 }
 impl EcsCluster {
     /// <p>The cluster's ARN.</p>
-    pub fn ecs_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ecs_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.ecs_cluster_arn.as_deref()
     }
     /// <p>The cluster name.</p>
-    pub fn ecs_cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn ecs_cluster_name(&self) -> ::std::option::Option<& str> {
         self.ecs_cluster_name.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The time and date that the cluster was registered with the stack.</p>
-    pub fn registered_at(&self) -> ::std::option::Option<&str> {
+    pub fn registered_at(&self) -> ::std::option::Option<& str> {
         self.registered_at.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl EcsCluster {
 
 /// A builder for [`EcsCluster`](crate::types::EcsCluster).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsClusterBuilder {
     pub(crate) ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ecs_cluster_name: ::std::option::Option<::std::string::String>,
@@ -55,36 +53,30 @@ pub struct EcsClusterBuilder {
 }
 impl EcsClusterBuilder {
     /// <p>The cluster's ARN.</p>
-    pub fn ecs_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecs_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster's ARN.</p>
-    pub fn set_ecs_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ecs_cluster_arn = input;
-        self
+    pub fn set_ecs_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ecs_cluster_arn = input; self
+    }
+    /// <p>The cluster's ARN.</p>
+    pub fn get_ecs_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ecs_cluster_arn
     }
     /// <p>The cluster name.</p>
-    pub fn ecs_cluster_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecs_cluster_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster name.</p>
-    pub fn set_ecs_cluster_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ecs_cluster_name = input;
-        self
+    pub fn set_ecs_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ecs_cluster_name = input; self
+    }
+    /// <p>The cluster name.</p>
+    pub fn get_ecs_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ecs_cluster_name
     }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,32 +85,37 @@ impl EcsClusterBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// <p>The time and date that the cluster was registered with the stack.</p>
-    pub fn registered_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time and date that the cluster was registered with the stack.</p>
-    pub fn set_registered_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.registered_at = input;
-        self
+    pub fn set_registered_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.registered_at = input; self
+    }
+    /// <p>The time and date that the cluster was registered with the stack.</p>
+    pub fn get_registered_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_at
     }
     /// Consumes the builder and constructs a [`EcsCluster`](crate::types::EcsCluster).
     pub fn build(self) -> crate::types::EcsCluster {
         crate::types::EcsCluster {
-            ecs_cluster_arn: self.ecs_cluster_arn,
-            ecs_cluster_name: self.ecs_cluster_name,
-            stack_id: self.stack_id,
-            registered_at: self.registered_at,
+            ecs_cluster_arn: self.ecs_cluster_arn
+            ,
+            ecs_cluster_name: self.ecs_cluster_name
+            ,
+            stack_id: self.stack_id
+            ,
+            registered_at: self.registered_at
+            ,
         }
     }
 }
+

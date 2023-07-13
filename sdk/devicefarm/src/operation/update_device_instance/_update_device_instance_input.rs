@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDeviceInstanceInput {
+pub struct UpdateDeviceInstanceInput  {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct UpdateDeviceInstanceInput {
 }
 impl UpdateDeviceInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the profile that you want to associate with the device instance.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>An array of strings that you want to associate with the device instance.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn labels(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.labels.as_deref()
     }
 }
 impl UpdateDeviceInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceInstanceInput`](crate::operation::update_device_instance::UpdateDeviceInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::update_device_instance::builders::UpdateDeviceInstanceInputBuilder {
+    pub fn builder() -> crate::operation::update_device_instance::builders::UpdateDeviceInstanceInputBuilder {
         crate::operation::update_device_instance::builders::UpdateDeviceInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeviceInstanceInput`](crate::operation::update_device_instance::UpdateDeviceInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeviceInstanceInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
@@ -53,8 +50,11 @@ impl UpdateDeviceInstanceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ARN of the profile that you want to associate with the device instance.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +63,11 @@ impl UpdateDeviceInstanceInputBuilder {
     }
     /// <p>The ARN of the profile that you want to associate with the device instance.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
+    }
+    /// <p>The ARN of the profile that you want to associate with the device instance.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
     }
     /// Appends an item to `labels`.
     ///
@@ -73,31 +76,30 @@ impl UpdateDeviceInstanceInputBuilder {
     /// <p>An array of strings that you want to associate with the device instance.</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings that you want to associate with the device instance.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.labels = input; self
+    }
+    /// <p>An array of strings that you want to associate with the device instance.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// Consumes the builder and constructs a [`UpdateDeviceInstanceInput`](crate::operation::update_device_instance::UpdateDeviceInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_device_instance::UpdateDeviceInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_device_instance::UpdateDeviceInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_device_instance::UpdateDeviceInstanceInput {
-                arn: self.arn,
-                profile_arn: self.profile_arn,
-                labels: self.labels,
-            },
+                arn: self.arn
+                ,
+                profile_arn: self.profile_arn
+                ,
+                labels: self.labels
+                ,
+            }
         )
     }
 }
+

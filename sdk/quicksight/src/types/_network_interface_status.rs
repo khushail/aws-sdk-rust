@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkinterfacestatus = unimplemented!();
 /// match networkinterfacestatus {
@@ -38,22 +38,14 @@
 /// Specifically, when `networkinterfacestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkInterfaceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum NetworkInterfaceStatus {
     #[allow(missing_docs)] // documentation missing in model
     AttachmentFailedRollbackFailed,
@@ -76,73 +68,57 @@ pub enum NetworkInterfaceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for NetworkInterfaceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ATTACHMENT_FAILED_ROLLBACK_FAILED" => {
-                NetworkInterfaceStatus::AttachmentFailedRollbackFailed
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ATTACHMENT_FAILED_ROLLBACK_FAILED" => NetworkInterfaceStatus::AttachmentFailedRollbackFailed,
+"AVAILABLE" => NetworkInterfaceStatus::Available,
+"CREATING" => NetworkInterfaceStatus::Creating,
+"CREATION_FAILED" => NetworkInterfaceStatus::CreationFailed,
+"DELETED" => NetworkInterfaceStatus::Deleted,
+"DELETING" => NetworkInterfaceStatus::Deleting,
+"DELETION_FAILED" => NetworkInterfaceStatus::DeletionFailed,
+"DELETION_SCHEDULED" => NetworkInterfaceStatus::DeletionScheduled,
+"UPDATE_FAILED" => NetworkInterfaceStatus::UpdateFailed,
+"UPDATING" => NetworkInterfaceStatus::Updating,
+other => NetworkInterfaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "AVAILABLE" => NetworkInterfaceStatus::Available,
-            "CREATING" => NetworkInterfaceStatus::Creating,
-            "CREATION_FAILED" => NetworkInterfaceStatus::CreationFailed,
-            "DELETED" => NetworkInterfaceStatus::Deleted,
-            "DELETING" => NetworkInterfaceStatus::Deleting,
-            "DELETION_FAILED" => NetworkInterfaceStatus::DeletionFailed,
-            "DELETION_SCHEDULED" => NetworkInterfaceStatus::DeletionScheduled,
-            "UPDATE_FAILED" => NetworkInterfaceStatus::UpdateFailed,
-            "UPDATING" => NetworkInterfaceStatus::Updating,
-            other => NetworkInterfaceStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl ::std::str::FromStr for NetworkInterfaceStatus {
-    type Err = ::std::convert::Infallible;
+                type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(NetworkInterfaceStatus::from(s))
-    }
-}
-impl NetworkInterfaceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NetworkInterfaceStatus::AttachmentFailedRollbackFailed => {
-                "ATTACHMENT_FAILED_ROLLBACK_FAILED"
+                fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                    ::std::result::Result::Ok(NetworkInterfaceStatus::from(s))
+                }
             }
-            NetworkInterfaceStatus::Available => "AVAILABLE",
-            NetworkInterfaceStatus::Creating => "CREATING",
-            NetworkInterfaceStatus::CreationFailed => "CREATION_FAILED",
-            NetworkInterfaceStatus::Deleted => "DELETED",
-            NetworkInterfaceStatus::Deleting => "DELETING",
-            NetworkInterfaceStatus::DeletionFailed => "DELETION_FAILED",
-            NetworkInterfaceStatus::DeletionScheduled => "DELETION_SCHEDULED",
-            NetworkInterfaceStatus::UpdateFailed => "UPDATE_FAILED",
-            NetworkInterfaceStatus::Updating => "UPDATING",
-            NetworkInterfaceStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ATTACHMENT_FAILED_ROLLBACK_FAILED",
-            "AVAILABLE",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETED",
-            "DELETING",
-            "DELETION_FAILED",
-            "DELETION_SCHEDULED",
-            "UPDATE_FAILED",
-            "UPDATING",
-        ]
-    }
+impl NetworkInterfaceStatus {
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NetworkInterfaceStatus::AttachmentFailedRollbackFailed => "ATTACHMENT_FAILED_ROLLBACK_FAILED",
+    NetworkInterfaceStatus::Available => "AVAILABLE",
+    NetworkInterfaceStatus::Creating => "CREATING",
+    NetworkInterfaceStatus::CreationFailed => "CREATION_FAILED",
+    NetworkInterfaceStatus::Deleted => "DELETED",
+    NetworkInterfaceStatus::Deleting => "DELETING",
+    NetworkInterfaceStatus::DeletionFailed => "DELETION_FAILED",
+    NetworkInterfaceStatus::DeletionScheduled => "DELETION_SCHEDULED",
+    NetworkInterfaceStatus::UpdateFailed => "UPDATE_FAILED",
+    NetworkInterfaceStatus::Updating => "UPDATING",
+    NetworkInterfaceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ATTACHMENT_FAILED_ROLLBACK_FAILED", "AVAILABLE", "CREATING", "CREATION_FAILED", "DELETED", "DELETING", "DELETION_FAILED", "DELETION_SCHEDULED", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for NetworkInterfaceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

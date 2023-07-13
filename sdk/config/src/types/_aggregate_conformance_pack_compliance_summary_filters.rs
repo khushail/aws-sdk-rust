@@ -3,7 +3,7 @@
 /// <p>Filters the results based on account ID and region. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregateConformancePackComplianceSummaryFilters {
+pub struct AggregateConformancePackComplianceSummaryFilters  {
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -13,27 +13,24 @@ pub struct AggregateConformancePackComplianceSummaryFilters {
 }
 impl AggregateConformancePackComplianceSummaryFilters {
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
 impl AggregateConformancePackComplianceSummaryFilters {
     /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceSummaryFilters`](crate::types::AggregateConformancePackComplianceSummaryFilters).
-    pub fn builder(
-    ) -> crate::types::builders::AggregateConformancePackComplianceSummaryFiltersBuilder {
+    pub fn builder() -> crate::types::builders::AggregateConformancePackComplianceSummaryFiltersBuilder {
         crate::types::builders::AggregateConformancePackComplianceSummaryFiltersBuilder::default()
     }
 }
 
 /// A builder for [`AggregateConformancePackComplianceSummaryFilters`](crate::types::AggregateConformancePackComplianceSummaryFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceSummaryFiltersBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
@@ -46,8 +43,11 @@ impl AggregateConformancePackComplianceSummaryFiltersBuilder {
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,14 +56,20 @@ impl AggregateConformancePackComplianceSummaryFiltersBuilder {
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
+    }
+    /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// Consumes the builder and constructs a [`AggregateConformancePackComplianceSummaryFilters`](crate::types::AggregateConformancePackComplianceSummaryFilters).
     pub fn build(self) -> crate::types::AggregateConformancePackComplianceSummaryFilters {
         crate::types::AggregateConformancePackComplianceSummaryFilters {
-            account_id: self.account_id,
-            aws_region: self.aws_region,
+            account_id: self.account_id
+            ,
+            aws_region: self.aws_region
+            ,
         }
     }
 }
+

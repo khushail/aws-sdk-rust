@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolFunctionInstanceInput {
+pub struct GetSolFunctionInstanceInput  {
     /// <p>ID of the network function.</p>
     #[doc(hidden)]
     pub vnf_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSolFunctionInstanceInput {
     /// <p>ID of the network function.</p>
-    pub fn vnf_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_instance_id(&self) -> ::std::option::Option<& str> {
         self.vnf_instance_id.as_deref()
     }
 }
 impl GetSolFunctionInstanceInput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionInstanceInput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceInputBuilder {
         crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolFunctionInstanceInput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolFunctionInstanceInputBuilder {
     pub(crate) vnf_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSolFunctionInstanceInputBuilder {
     /// <p>ID of the network function.</p>
-    pub fn vnf_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vnf_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the network function.</p>
-    pub fn set_vnf_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vnf_instance_id = input;
-        self
+    pub fn set_vnf_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vnf_instance_id = input; self
+    }
+    /// <p>ID of the network function.</p>
+    pub fn get_vnf_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_instance_id
     }
     /// Consumes the builder and constructs a [`GetSolFunctionInstanceInput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput {
-                vnf_instance_id: self.vnf_instance_id,
-            },
+                vnf_instance_id: self.vnf_instance_id
+                ,
+            }
         )
     }
 }
+

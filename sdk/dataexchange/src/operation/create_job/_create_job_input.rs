@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateJobInput {
+pub struct CreateJobInput  {
     /// <p>The details for the CreateJob request.</p>
     #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::RequestDetails>,
@@ -12,11 +12,11 @@ pub struct CreateJobInput {
 }
 impl CreateJobInput {
     /// <p>The details for the CreateJob request.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::RequestDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::RequestDetails> {
         self.details.as_ref()
     }
     /// <p>The type of job to be created.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -29,9 +29,7 @@ impl CreateJobInput {
 
 /// A builder for [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobInputBuilder {
     pub(crate) details: ::std::option::Option<crate::types::RequestDetails>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
@@ -43,12 +41,12 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>The details for the CreateJob request.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestDetails>,
-    ) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::RequestDetails>) -> Self {
+        self.details = input; self
+    }
+    /// <p>The details for the CreateJob request.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::RequestDetails> {
+        &self.details
     }
     /// <p>The type of job to be created.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
@@ -57,19 +55,22 @@ impl CreateJobInputBuilder {
     }
     /// <p>The type of job to be created.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of job to be created.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_job::CreateJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
-            details: self.details,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_job::CreateJobInput {
+                details: self.details
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

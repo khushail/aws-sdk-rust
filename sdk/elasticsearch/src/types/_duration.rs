@@ -3,7 +3,7 @@
 /// <p>Specifies maintenance schedule duration: duration value and duration unit. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Duration {
+pub struct Duration  {
     /// <p> Integer to specify the value of a maintenance schedule duration. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     #[doc(hidden)]
     pub value: i64,
@@ -17,7 +17,7 @@ impl Duration {
         self.value
     }
     /// <p>Specifies the unit of a maintenance schedule duration. Valid value is HOURS. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::TimeUnit> {
         self.unit.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Duration {
 
 /// A builder for [`Duration`](crate::types::Duration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DurationBuilder {
     pub(crate) value: ::std::option::Option<i64>,
     pub(crate) unit: ::std::option::Option<crate::types::TimeUnit>,
@@ -45,8 +43,11 @@ impl DurationBuilder {
     }
     /// <p> Integer to specify the value of a maintenance schedule duration. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p> Integer to specify the value of a maintenance schedule duration. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i64> {
+        &self.value
     }
     /// <p>Specifies the unit of a maintenance schedule duration. Valid value is HOURS. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     pub fn unit(mut self, input: crate::types::TimeUnit) -> Self {
@@ -55,14 +56,21 @@ impl DurationBuilder {
     }
     /// <p>Specifies the unit of a maintenance schedule duration. Valid value is HOURS. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::TimeUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
+    }
+    /// <p>Specifies the unit of a maintenance schedule duration. Valid value is HOURS. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`Duration`](crate::types::Duration).
     pub fn build(self) -> crate::types::Duration {
         crate::types::Duration {
-            value: self.value.unwrap_or_default(),
-            unit: self.unit,
+            value: self.value
+                .unwrap_or_default()
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

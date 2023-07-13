@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRepositoryPolicyInput {
+pub struct GetRepositoryPolicyInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct GetRepositoryPolicyInput {
 }
 impl GetRepositoryPolicyInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository with the policy to retrieve.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
 impl GetRepositoryPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryPolicyInput`](crate::operation::get_repository_policy::GetRepositoryPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder {
-        crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder {
+        crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRepositoryPolicyInput`](crate::operation::get_repository_policy::GetRepositoryPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositoryPolicyInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl GetRepositoryPolicyInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// <p>The name of the repository with the policy to retrieve.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository with the policy to retrieve.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.repository_name = input;
-        self
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.repository_name = input; self
+    }
+    /// <p>The name of the repository with the policy to retrieve.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Consumes the builder and constructs a [`GetRepositoryPolicyInput`](crate::operation::get_repository_policy::GetRepositoryPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_repository_policy::GetRepositoryPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_repository_policy::GetRepositoryPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_repository_policy::GetRepositoryPolicyInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-            },
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+            }
         )
     }
 }
+

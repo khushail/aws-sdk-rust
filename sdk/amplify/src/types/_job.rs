@@ -3,7 +3,7 @@
 /// <p> Describes an execution job for an Amplify app. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Job {
+pub struct Job  {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::JobSummary>,
@@ -13,11 +13,11 @@ pub struct Job {
 }
 impl Job {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::JobSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::JobSummary> {
         self.summary.as_ref()
     }
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::Step]> {
+    pub fn steps(&self) -> ::std::option::Option<& [crate::types::Step]> {
         self.steps.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Job {
 
 /// A builder for [`Job`](crate::types::Job).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::JobSummary>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
@@ -45,8 +43,11 @@ impl JobBuilder {
     }
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::JobSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
+    }
+    /// <p> Describes the summary for an execution job for an Amplify app. </p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::JobSummary> {
+        &self.summary
     }
     /// Appends an item to `steps`.
     ///
@@ -55,23 +56,26 @@ impl JobBuilder {
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
     pub fn steps(mut self, input: crate::types::Step) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
-    ) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>) -> Self {
+        self.steps = input; self
+    }
+    /// <p> The execution steps for an execution job, for an Amplify app. </p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Step>> {
+        &self.steps
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
-            summary: self.summary,
-            steps: self.steps,
+            summary: self.summary
+            ,
+            steps: self.steps
+            ,
         }
     }
 }
+

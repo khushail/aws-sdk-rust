@@ -3,107 +3,92 @@ pub use crate::operation::set_visible_to_all_users::_set_visible_to_all_users_ou
 
 pub use crate::operation::set_visible_to_all_users::_set_visible_to_all_users_input::SetVisibleToAllUsersInputBuilder;
 
+impl SetVisibleToAllUsersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.set_visible_to_all_users();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SetVisibleToAllUsers`.
-///
-/// <important>
-/// <p>The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity and Access Management for Amazon EMR</a>. </p>
-/// </important>
-/// <p>Sets the <code>Cluster$VisibleToAllUsers</code> value for an Amazon EMR cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
-/// <p>This action works on running clusters. When you create a cluster, use the <code>RunJobFlowInput$VisibleToAllUsers</code> parameter.</p>
+/// 
+/// <important> 
+/// <p>The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity and Access Management for Amazon EMR</a>. </p> 
+/// </important> 
+/// <p>Sets the <code>Cluster$VisibleToAllUsers</code> value for an Amazon EMR cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p> 
+/// <p>This action works on running clusters. When you create a cluster, use the <code>RunJobFlowInput$VisibleToAllUsers</code> parameter.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_IAM_emr-with-IAM.html#security_set_visible_to_all_users">Understanding the Amazon EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetVisibleToAllUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder,
+                    inner: crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder,
 }
-impl SetVisibleToAllUsersFluentBuilder {
+impl SetVisibleToAllUsersFluentBuilder  {
     /// Creates a new `SetVisibleToAllUsers`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SetVisibleToAllUsers as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::set_visible_to_all_users::SetVisibleToAllUsers, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::set_visible_to_all_users::SetVisibleToAllUsers, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Appends an item to `JobFlowIds`.
     ///
     /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
@@ -114,12 +99,13 @@ impl SetVisibleToAllUsersFluentBuilder {
         self
     }
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn set_job_flow_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
+    }
+    /// <p>The unique identifier of the job flow (cluster).</p>
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_flow_ids()
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn visible_to_all_users(mut self, input: bool) -> Self {
@@ -131,4 +117,9 @@ impl SetVisibleToAllUsersFluentBuilder {
         self.inner = self.inner.set_visible_to_all_users(input);
         self
     }
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
+    pub fn get_visible_to_all_users(&self) -> &::std::option::Option<bool> {
+        self.inner.get_visible_to_all_users()
+    }
 }
+

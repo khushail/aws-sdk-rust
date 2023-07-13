@@ -3,7 +3,7 @@
 /// <p>Contains information about a composite model in an asset model. This object contains the asset property definitions that you define in the composite model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetModelCompositeModel {
+pub struct AssetModelCompositeModel  {
     /// <p>The name of the composite model.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct AssetModelCompositeModel {
 }
 impl AssetModelCompositeModel {
     /// <p>The name of the composite model.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the composite model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The asset property definitions for this composite model.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetModelProperty]> {
+    pub fn properties(&self) -> ::std::option::Option<& [crate::types::AssetModelProperty]> {
         self.properties.as_deref()
     }
     /// <p> The ID of the asset model composite model. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl AssetModelCompositeModel {
 
 /// A builder for [`AssetModelCompositeModel`](crate::types::AssetModelCompositeModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetModelCompositeModelBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl AssetModelCompositeModelBuilder {
     }
     /// <p>The name of the composite model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the composite model.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the composite model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl AssetModelCompositeModelBuilder {
     }
     /// <p>The description of the composite model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the composite model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl AssetModelCompositeModelBuilder {
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Appends an item to `properties`.
     ///
@@ -99,17 +106,17 @@ impl AssetModelCompositeModelBuilder {
     /// <p>The asset property definitions for this composite model.</p>
     pub fn properties(mut self, input: crate::types::AssetModelProperty) -> Self {
         let mut v = self.properties.unwrap_or_default();
-        v.push(input);
-        self.properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The asset property definitions for this composite model.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>) -> Self {
+        self.properties = input; self
+    }
+    /// <p>The asset property definitions for this composite model.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
+        &self.properties
     }
     /// <p> The ID of the asset model composite model. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,17 +125,26 @@ impl AssetModelCompositeModelBuilder {
     }
     /// <p> The ID of the asset model composite model. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p> The ID of the asset model composite model. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`AssetModelCompositeModel`](crate::types::AssetModelCompositeModel).
     pub fn build(self) -> crate::types::AssetModelCompositeModel {
         crate::types::AssetModelCompositeModel {
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
-            properties: self.properties,
-            id: self.id,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            properties: self.properties
+            ,
+            id: self.id
+            ,
         }
     }
 }
+

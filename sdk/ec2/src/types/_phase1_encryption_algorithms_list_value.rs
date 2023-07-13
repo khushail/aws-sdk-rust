@@ -3,14 +3,14 @@
 /// <p>The encryption algorithm for phase 1 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Phase1EncryptionAlgorithmsListValue {
+pub struct Phase1EncryptionAlgorithmsListValue  {
     /// <p>The value for the encryption algorithm.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Phase1EncryptionAlgorithmsListValue {
     /// <p>The value for the encryption algorithm.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Phase1EncryptionAlgorithmsListValue {
 
 /// A builder for [`Phase1EncryptionAlgorithmsListValue`](crate::types::Phase1EncryptionAlgorithmsListValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Phase1EncryptionAlgorithmsListValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl Phase1EncryptionAlgorithmsListValueBuilder {
     }
     /// <p>The value for the encryption algorithm.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value for the encryption algorithm.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Phase1EncryptionAlgorithmsListValue`](crate::types::Phase1EncryptionAlgorithmsListValue).
     pub fn build(self) -> crate::types::Phase1EncryptionAlgorithmsListValue {
-        crate::types::Phase1EncryptionAlgorithmsListValue { value: self.value }
+        crate::types::Phase1EncryptionAlgorithmsListValue {
+            value: self.value
+            ,
+        }
     }
 }
+

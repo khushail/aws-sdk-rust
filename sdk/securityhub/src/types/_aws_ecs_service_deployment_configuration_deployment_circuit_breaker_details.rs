@@ -3,7 +3,7 @@
 /// <p>Determines whether a service deployment fails if a service cannot reach a steady state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails  {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
     #[doc(hidden)]
     pub enable: bool,
@@ -23,16 +23,14 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
 }
 impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder {
         crate::types::builders::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder {
     pub(crate) enable: ::std::option::Option<bool>,
     pub(crate) rollback: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder 
     }
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable = input;
-        self
+        self.enable = input; self
+    }
+    /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        &self.enable
     }
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(mut self, input: bool) -> Self {
@@ -55,16 +56,22 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder 
     }
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn set_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.rollback = input;
-        self
+        self.rollback = input; self
+    }
+    /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    pub fn get_rollback(&self) -> &::std::option::Option<bool> {
+        &self.rollback
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+    pub fn build(self) -> crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
         crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
-            enable: self.enable.unwrap_or_default(),
-            rollback: self.rollback.unwrap_or_default(),
+            enable: self.enable
+                .unwrap_or_default()
+            ,
+            rollback: self.rollback
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

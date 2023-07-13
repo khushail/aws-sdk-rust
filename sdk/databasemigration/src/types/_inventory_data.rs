@@ -3,7 +3,7 @@
 /// <p>Describes a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryData {
+pub struct InventoryData  {
     /// <p>The number of databases in the Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
     pub number_of_databases: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl InventoryData {
 
 /// A builder for [`InventoryData`](crate::types::InventoryData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryDataBuilder {
     pub(crate) number_of_databases: ::std::option::Option<i32>,
     pub(crate) number_of_schemas: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl InventoryDataBuilder {
     }
     /// <p>The number of databases in the Fleet Advisor collector inventory.</p>
     pub fn set_number_of_databases(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_databases = input;
-        self
+        self.number_of_databases = input; self
+    }
+    /// <p>The number of databases in the Fleet Advisor collector inventory.</p>
+    pub fn get_number_of_databases(&self) -> &::std::option::Option<i32> {
+        &self.number_of_databases
     }
     /// <p>The number of schemas in the Fleet Advisor collector inventory.</p>
     pub fn number_of_schemas(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl InventoryDataBuilder {
     }
     /// <p>The number of schemas in the Fleet Advisor collector inventory.</p>
     pub fn set_number_of_schemas(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_schemas = input;
-        self
+        self.number_of_schemas = input; self
+    }
+    /// <p>The number of schemas in the Fleet Advisor collector inventory.</p>
+    pub fn get_number_of_schemas(&self) -> &::std::option::Option<i32> {
+        &self.number_of_schemas
     }
     /// Consumes the builder and constructs a [`InventoryData`](crate::types::InventoryData).
     pub fn build(self) -> crate::types::InventoryData {
         crate::types::InventoryData {
-            number_of_databases: self.number_of_databases,
-            number_of_schemas: self.number_of_schemas,
+            number_of_databases: self.number_of_databases
+            ,
+            number_of_schemas: self.number_of_schemas
+            ,
         }
     }
 }
+

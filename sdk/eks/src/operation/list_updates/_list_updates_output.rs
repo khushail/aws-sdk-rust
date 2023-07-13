@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUpdatesOutput {
+pub struct ListUpdatesOutput  {
     /// <p>A list of all the updates for the specified cluster and Region.</p>
     #[doc(hidden)]
     pub update_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,19 +13,19 @@ pub struct ListUpdatesOutput {
 }
 impl ListUpdatesOutput {
     /// <p>A list of all the updates for the specified cluster and Region.</p>
-    pub fn update_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn update_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.update_ids.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListUpdatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListUpdatesOutput {
     /// Creates a new builder-style object to manufacture [`ListUpdatesOutput`](crate::operation::list_updates::ListUpdatesOutput).
     pub fn builder() -> crate::operation::list_updates::builders::ListUpdatesOutputBuilder {
@@ -35,9 +35,7 @@ impl ListUpdatesOutput {
 
 /// A builder for [`ListUpdatesOutput`](crate::operation::list_updates::ListUpdatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUpdatesOutputBuilder {
     pub(crate) update_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,17 @@ impl ListUpdatesOutputBuilder {
     /// <p>A list of all the updates for the specified cluster and Region.</p>
     pub fn update_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.update_ids.unwrap_or_default();
-        v.push(input.into());
-        self.update_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.update_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all the updates for the specified cluster and Region.</p>
-    pub fn set_update_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.update_ids = input;
-        self
+    pub fn set_update_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.update_ids = input; self
+    }
+    /// <p>A list of all the updates for the specified cluster and Region.</p>
+    pub fn get_update_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.update_ids
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,24 +68,30 @@ impl ListUpdatesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListUpdatesOutput`](crate::operation::list_updates::ListUpdatesOutput).
     pub fn build(self) -> crate::operation::list_updates::ListUpdatesOutput {
         crate::operation::list_updates::ListUpdatesOutput {
-            update_ids: self.update_ids,
-            next_token: self.next_token,
+            update_ids: self.update_ids
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

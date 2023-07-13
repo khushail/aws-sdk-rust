@@ -3,7 +3,7 @@
 /// <p>A job is an asynchronous workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Job {
+pub struct Job  {
     /// <p>The ID of the Job.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -27,59 +27,57 @@ pub struct Job {
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>A list of servers that the Job is acting upon.</p>
     #[doc(hidden)]
-    pub participating_servers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
+    pub participating_servers: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
     /// <p>A list of tags associated with the Job.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A list of resources that the Job is acting upon.</p>
+    #[doc(hidden)]
+    pub participating_resources: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingResource>>,
 }
 impl Job {
     /// <p>The ID of the Job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The ARN of a Job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of the Job.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::JobType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::JobType> {
         self.r#type.as_ref()
     }
     /// <p>A string representing who initiated the Job.</p>
-    pub fn initiated_by(&self) -> ::std::option::Option<&crate::types::InitiatedBy> {
+    pub fn initiated_by(&self) -> ::std::option::Option<& crate::types::InitiatedBy> {
         self.initiated_by.as_ref()
     }
     /// <p>The date and time of when the Job was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>The date and time of when the Job ended.</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_date_time(&self) -> ::std::option::Option<& str> {
         self.end_date_time.as_deref()
     }
     /// <p>The status of the Job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p>A list of servers that the Job is acting upon.</p>
-    pub fn participating_servers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ParticipatingServer]> {
+    pub fn participating_servers(&self) -> ::std::option::Option<& [crate::types::ParticipatingServer]> {
         self.participating_servers.as_deref()
     }
     /// <p>A list of tags associated with the Job.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>A list of resources that the Job is acting upon.</p>
+    pub fn participating_resources(&self) -> ::std::option::Option<& [crate::types::ParticipatingResource]> {
+        self.participating_resources.as_deref()
+    }
 }
-impl ::std::fmt::Debug for Job {
+impl  ::std::fmt::Debug for Job  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Job");
         formatter.field("job_id", &self.job_id);
@@ -91,6 +89,7 @@ impl ::std::fmt::Debug for Job {
         formatter.field("status", &self.status);
         formatter.field("participating_servers", &self.participating_servers);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("participating_resources", &self.participating_resources);
         formatter.finish()
     }
 }
@@ -112,11 +111,9 @@ pub struct JobBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
-    pub(crate) participating_servers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) participating_servers: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) participating_resources: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingResource>>,
 }
 impl JobBuilder {
     /// <p>The ID of the Job.</p>
@@ -126,8 +123,11 @@ impl JobBuilder {
     }
     /// <p>The ID of the Job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The ID of the Job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The ARN of a Job.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,8 +136,11 @@ impl JobBuilder {
     }
     /// <p>The ARN of a Job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of a Job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The type of the Job.</p>
     pub fn r#type(mut self, input: crate::types::JobType) -> Self {
@@ -146,8 +149,11 @@ impl JobBuilder {
     }
     /// <p>The type of the Job.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the Job.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.r#type
     }
     /// <p>A string representing who initiated the Job.</p>
     pub fn initiated_by(mut self, input: crate::types::InitiatedBy) -> Self {
@@ -155,44 +161,38 @@ impl JobBuilder {
         self
     }
     /// <p>A string representing who initiated the Job.</p>
-    pub fn set_initiated_by(
-        mut self,
-        input: ::std::option::Option<crate::types::InitiatedBy>,
-    ) -> Self {
-        self.initiated_by = input;
-        self
+    pub fn set_initiated_by(mut self, input: ::std::option::Option<crate::types::InitiatedBy>) -> Self {
+        self.initiated_by = input; self
+    }
+    /// <p>A string representing who initiated the Job.</p>
+    pub fn get_initiated_by(&self) -> &::std::option::Option<crate::types::InitiatedBy> {
+        &self.initiated_by
     }
     /// <p>The date and time of when the Job was created.</p>
-    pub fn creation_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of when the Job was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.creation_date_time = input; self
+    }
+    /// <p>The date and time of when the Job was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date_time
     }
     /// <p>The date and time of when the Job ended.</p>
-    pub fn end_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of when the Job ended.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.end_date_time = input;
-        self
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.end_date_time = input; self
+    }
+    /// <p>The date and time of when the Job ended.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_date_time
     }
     /// <p>The status of the Job.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
@@ -201,8 +201,11 @@ impl JobBuilder {
     }
     /// <p>The status of the Job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the Job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// Appends an item to `participating_servers`.
     ///
@@ -211,55 +214,79 @@ impl JobBuilder {
     /// <p>A list of servers that the Job is acting upon.</p>
     pub fn participating_servers(mut self, input: crate::types::ParticipatingServer) -> Self {
         let mut v = self.participating_servers.unwrap_or_default();
-        v.push(input);
-        self.participating_servers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.participating_servers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of servers that the Job is acting upon.</p>
-    pub fn set_participating_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>,
-    ) -> Self {
-        self.participating_servers = input;
-        self
+    pub fn set_participating_servers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>>) -> Self {
+        self.participating_servers = input; self
+    }
+    /// <p>A list of servers that the Job is acting upon.</p>
+    pub fn get_participating_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipatingServer>> {
+        &self.participating_servers
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags associated with the Job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags associated with the Job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of tags associated with the Job.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
+    /// Appends an item to `participating_resources`.
+    ///
+    /// To override the contents of this collection use [`set_participating_resources`](Self::set_participating_resources).
+    ///
+    /// <p>A list of resources that the Job is acting upon.</p>
+    pub fn participating_resources(mut self, input: crate::types::ParticipatingResource) -> Self {
+        let mut v = self.participating_resources.unwrap_or_default();
+                        v.push(input);
+                        self.participating_resources = ::std::option::Option::Some(v);
+                        self
+    }
+    /// <p>A list of resources that the Job is acting upon.</p>
+    pub fn set_participating_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingResource>>) -> Self {
+        self.participating_resources = input; self
+    }
+    /// <p>A list of resources that the Job is acting upon.</p>
+    pub fn get_participating_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipatingResource>> {
+        &self.participating_resources
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
-            job_id: self.job_id,
-            arn: self.arn,
-            r#type: self.r#type,
-            initiated_by: self.initiated_by,
-            creation_date_time: self.creation_date_time,
-            end_date_time: self.end_date_time,
-            status: self.status,
-            participating_servers: self.participating_servers,
-            tags: self.tags,
+            job_id: self.job_id
+            ,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            initiated_by: self.initiated_by
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            end_date_time: self.end_date_time
+            ,
+            status: self.status
+            ,
+            participating_servers: self.participating_servers
+            ,
+            tags: self.tags
+            ,
+            participating_resources: self.participating_resources
+            ,
         }
     }
 }
@@ -275,6 +302,8 @@ impl ::std::fmt::Debug for JobBuilder {
         formatter.field("status", &self.status);
         formatter.field("participating_servers", &self.participating_servers);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("participating_resources", &self.participating_resources);
         formatter.finish()
     }
 }
+

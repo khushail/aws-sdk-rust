@@ -3,7 +3,7 @@
 /// <p>Status of the node-to-node encryption options for the specified domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeToNodeEncryptionOptionsStatus {
+pub struct NodeToNodeEncryptionOptionsStatus  {
     /// <p>The node-to-node encryption options for the specified domain.</p>
     #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
@@ -13,11 +13,11 @@ pub struct NodeToNodeEncryptionOptionsStatus {
 }
 impl NodeToNodeEncryptionOptionsStatus {
     /// <p>The node-to-node encryption options for the specified domain.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::NodeToNodeEncryptionOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::NodeToNodeEncryptionOptions> {
         self.options.as_ref()
     }
     /// <p>The status of the node-to-node encryption options for the specified domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl NodeToNodeEncryptionOptionsStatus {
 
 /// A builder for [`NodeToNodeEncryptionOptionsStatus`](crate::types::NodeToNodeEncryptionOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeToNodeEncryptionOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,12 +42,12 @@ impl NodeToNodeEncryptionOptionsStatusBuilder {
         self
     }
     /// <p>The node-to-node encryption options for the specified domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>) -> Self {
+        self.options = input; self
+    }
+    /// <p>The node-to-node encryption options for the specified domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::NodeToNodeEncryptionOptions> {
+        &self.options
     }
     /// <p>The status of the node-to-node encryption options for the specified domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -58,14 +56,20 @@ impl NodeToNodeEncryptionOptionsStatusBuilder {
     }
     /// <p>The status of the node-to-node encryption options for the specified domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the node-to-node encryption options for the specified domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`NodeToNodeEncryptionOptionsStatus`](crate::types::NodeToNodeEncryptionOptionsStatus).
     pub fn build(self) -> crate::types::NodeToNodeEncryptionOptionsStatus {
         crate::types::NodeToNodeEncryptionOptionsStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

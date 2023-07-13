@@ -3,14 +3,14 @@
 /// <p>A parent label for a label. A label can have 0, 1, or more parents. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Parent {
+pub struct Parent  {
     /// <p>The name of the parent label.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl Parent {
     /// <p>The name of the parent label.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Parent {
 
 /// A builder for [`Parent`](crate::types::Parent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParentBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl ParentBuilder {
     }
     /// <p>The name of the parent label.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the parent label.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`Parent`](crate::types::Parent).
     pub fn build(self) -> crate::types::Parent {
-        crate::types::Parent { name: self.name }
+        crate::types::Parent {
+            name: self.name
+            ,
+        }
     }
 }
+

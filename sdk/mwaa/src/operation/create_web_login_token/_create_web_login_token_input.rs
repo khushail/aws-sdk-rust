@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWebLoginTokenInput {
+pub struct CreateWebLoginTokenInput  {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl CreateWebLoginTokenInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl CreateWebLoginTokenInput {
     /// Creates a new builder-style object to manufacture [`CreateWebLoginTokenInput`](crate::operation::create_web_login_token::CreateWebLoginTokenInput).
-    pub fn builder(
-    ) -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder {
-        crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder {
+        crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWebLoginTokenInput`](crate::operation::create_web_login_token::CreateWebLoginTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWebLoginTokenInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -38,18 +34,20 @@ impl CreateWebLoginTokenInputBuilder {
     }
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`CreateWebLoginTokenInput`](crate::operation::create_web_login_token::CreateWebLoginTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_web_login_token::CreateWebLoginTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_web_login_token::CreateWebLoginTokenInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::create_web_login_token::CreateWebLoginTokenInput { name: self.name },
+            crate::operation::create_web_login_token::CreateWebLoginTokenInput {
+                name: self.name
+                ,
+            }
         )
     }
 }
+

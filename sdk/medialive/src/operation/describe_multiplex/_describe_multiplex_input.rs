@@ -3,30 +3,27 @@
 /// Placeholder documentation for DescribeMultiplexRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMultiplexInput {
+pub struct DescribeMultiplexInput  {
     /// The ID of the multiplex.
     #[doc(hidden)]
     pub multiplex_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMultiplexInput {
     /// The ID of the multiplex.
-    pub fn multiplex_id(&self) -> ::std::option::Option<&str> {
+    pub fn multiplex_id(&self) -> ::std::option::Option<& str> {
         self.multiplex_id.as_deref()
     }
 }
 impl DescribeMultiplexInput {
     /// Creates a new builder-style object to manufacture [`DescribeMultiplexInput`](crate::operation::describe_multiplex::DescribeMultiplexInput).
-    pub fn builder() -> crate::operation::describe_multiplex::builders::DescribeMultiplexInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_multiplex::builders::DescribeMultiplexInputBuilder {
         crate::operation::describe_multiplex::builders::DescribeMultiplexInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMultiplexInput`](crate::operation::describe_multiplex::DescribeMultiplexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMultiplexInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +35,20 @@ impl DescribeMultiplexInputBuilder {
     }
     /// The ID of the multiplex.
     pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.multiplex_id = input;
-        self
+        self.multiplex_id = input; self
+    }
+    /// The ID of the multiplex.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
     }
     /// Consumes the builder and constructs a [`DescribeMultiplexInput`](crate::operation::describe_multiplex::DescribeMultiplexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_multiplex::DescribeMultiplexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_multiplex::DescribeMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_multiplex::DescribeMultiplexInput {
-                multiplex_id: self.multiplex_id,
-            },
+                multiplex_id: self.multiplex_id
+                ,
+            }
         )
     }
 }
+

@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClassifierOutput {
+pub struct CreateClassifierOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for CreateClassifierOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateClassifierOutput {
     /// Creates a new builder-style object to manufacture [`CreateClassifierOutput`](crate::operation::create_classifier::CreateClassifierOutput).
-    pub fn builder() -> crate::operation::create_classifier::builders::CreateClassifierOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_classifier::builders::CreateClassifierOutputBuilder {
         crate::operation::create_classifier::builders::CreateClassifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClassifierOutput`](crate::operation::create_classifier::CreateClassifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClassifierOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateClassifierOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateClassifierOutput`](crate::operation::create_classifier::CreateClassifierOutput).
     pub fn build(self) -> crate::operation::create_classifier::CreateClassifierOutput {
         crate::operation::create_classifier::CreateClassifierOutput {
@@ -43,3 +40,4 @@ impl CreateClassifierOutputBuilder {
         }
     }
 }
+

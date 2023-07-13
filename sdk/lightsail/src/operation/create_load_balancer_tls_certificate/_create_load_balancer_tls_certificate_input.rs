@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLoadBalancerTlsCertificateInput {
+pub struct CreateLoadBalancerTlsCertificateInput  {
     /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
     #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
-    /// <p>The SSL/TLS certificate name.</p>
+    /// <p>The SSL/TLS certificate name.</p> 
     /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
     #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
@@ -15,153 +15,139 @@ pub struct CreateLoadBalancerTlsCertificateInput {
     pub certificate_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
     #[doc(hidden)]
-    pub certificate_alternative_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    pub certificate_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The tag keys and optional values to add to the resource during create.</p> 
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateLoadBalancerTlsCertificateInput {
     /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
-    /// <p>The SSL/TLS certificate name.</p>
+    /// <p>The SSL/TLS certificate name.</p> 
     /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
-    pub fn certificate_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_name(&self) -> ::std::option::Option<& str> {
         self.certificate_name.as_deref()
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
-    pub fn certificate_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_domain_name(&self) -> ::std::option::Option<& str> {
         self.certificate_domain_name.as_deref()
     }
     /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
-    pub fn certificate_alternative_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn certificate_alternative_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.certificate_alternative_names.as_deref()
     }
-    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>The tag keys and optional values to add to the resource during create.</p> 
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateLoadBalancerTlsCertificateInput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerTlsCertificateInput`](crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput).
-    pub fn builder() -> crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder{
+    pub fn builder() -> crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder {
         crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoadBalancerTlsCertificateInput`](crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerTlsCertificateInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_alternative_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificate_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateLoadBalancerTlsCertificateInputBuilder {
     /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.load_balancer_name = input; self
     }
-    /// <p>The SSL/TLS certificate name.</p>
+    /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
+    /// <p>The SSL/TLS certificate name.</p> 
     /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The SSL/TLS certificate name.</p>
+    /// <p>The SSL/TLS certificate name.</p> 
     /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.certificate_name = input;
-        self
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_name = input; self
+    }
+    /// <p>The SSL/TLS certificate name.</p> 
+    /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
-    pub fn certificate_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
-    pub fn set_certificate_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.certificate_domain_name = input;
-        self
+    pub fn set_certificate_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_domain_name = input; self
+    }
+    /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
+    pub fn get_certificate_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_domain_name
     }
     /// Appends an item to `certificate_alternative_names`.
     ///
     /// To override the contents of this collection use [`set_certificate_alternative_names`](Self::set_certificate_alternative_names).
     ///
     /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
-    pub fn certificate_alternative_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_alternative_names.unwrap_or_default();
-        v.push(input.into());
-        self.certificate_alternative_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.certificate_alternative_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
-    pub fn set_certificate_alternative_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.certificate_alternative_names = input;
-        self
+    pub fn set_certificate_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.certificate_alternative_names = input; self
+    }
+    /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
+    pub fn get_certificate_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.certificate_alternative_names
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>The tag keys and optional values to add to the resource during create.</p> 
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>The tag keys and optional values to add to the resource during create.</p> 
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p> 
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLoadBalancerTlsCertificateInput`](crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput {
                 load_balancer_name: self.load_balancer_name
@@ -178,3 +164,4 @@ impl CreateLoadBalancerTlsCertificateInputBuilder {
         )
     }
 }
+

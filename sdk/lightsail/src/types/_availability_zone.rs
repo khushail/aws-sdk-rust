@@ -3,7 +3,7 @@
 /// <p>Describes an Availability Zone. This is returned only as part of a <code>GetRegions</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvailabilityZone {
+pub struct AvailabilityZone  {
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
     #[doc(hidden)]
     pub zone_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AvailabilityZone {
 }
 impl AvailabilityZone {
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn zone_name(&self) -> ::std::option::Option<&str> {
+    pub fn zone_name(&self) -> ::std::option::Option<& str> {
         self.zone_name.as_deref()
     }
     /// <p>The state of the Availability Zone.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AvailabilityZone {
 
 /// A builder for [`AvailabilityZone`](crate::types::AvailabilityZone).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailabilityZoneBuilder {
     pub(crate) zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
     pub fn set_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zone_name = input;
-        self
+        self.zone_name = input; self
+    }
+    /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
+    pub fn get_zone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone_name
     }
     /// <p>The state of the Availability Zone.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>The state of the Availability Zone.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The state of the Availability Zone.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {
         crate::types::AvailabilityZone {
-            zone_name: self.zone_name,
-            state: self.state,
+            zone_name: self.zone_name
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

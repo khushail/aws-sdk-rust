@@ -3,7 +3,7 @@
 /// <p>Describes a set of permissions for a security group rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityGroupRuleDescription {
+pub struct SecurityGroupRuleDescription  {
     /// <p>The IPv4 ranges for the security group rule.</p>
     #[doc(hidden)]
     pub ipv4_range: ::std::option::Option<::std::string::String>,
@@ -25,19 +25,19 @@ pub struct SecurityGroupRuleDescription {
 }
 impl SecurityGroupRuleDescription {
     /// <p>The IPv4 ranges for the security group rule.</p>
-    pub fn ipv4_range(&self) -> ::std::option::Option<&str> {
+    pub fn ipv4_range(&self) -> ::std::option::Option<& str> {
         self.ipv4_range.as_deref()
     }
     /// <p>The IPv6 ranges for the security group rule.</p>
-    pub fn ipv6_range(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_range(&self) -> ::std::option::Option<& str> {
         self.ipv6_range.as_deref()
     }
     /// <p>The ID of the prefix list for the security group rule.</p>
-    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
@@ -58,9 +58,7 @@ impl SecurityGroupRuleDescription {
 
 /// A builder for [`SecurityGroupRuleDescription`](crate::types::SecurityGroupRuleDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityGroupRuleDescriptionBuilder {
     pub(crate) ipv4_range: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_range: ::std::option::Option<::std::string::String>,
@@ -77,8 +75,11 @@ impl SecurityGroupRuleDescriptionBuilder {
     }
     /// <p>The IPv4 ranges for the security group rule.</p>
     pub fn set_ipv4_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv4_range = input;
-        self
+        self.ipv4_range = input; self
+    }
+    /// <p>The IPv4 ranges for the security group rule.</p>
+    pub fn get_ipv4_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_range
     }
     /// <p>The IPv6 ranges for the security group rule.</p>
     pub fn ipv6_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,24 +88,24 @@ impl SecurityGroupRuleDescriptionBuilder {
     }
     /// <p>The IPv6 ranges for the security group rule.</p>
     pub fn set_ipv6_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_range = input;
-        self
+        self.ipv6_range = input; self
+    }
+    /// <p>The IPv6 ranges for the security group rule.</p>
+    pub fn get_ipv6_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_range
     }
     /// <p>The ID of the prefix list for the security group rule.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list for the security group rule.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.prefix_list_id = input;
-        self
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.prefix_list_id = input; self
+    }
+    /// <p>The ID of the prefix list for the security group rule.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,8 +114,11 @@ impl SecurityGroupRuleDescriptionBuilder {
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
+    }
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
     pub fn from_port(mut self, input: i64) -> Self {
@@ -123,8 +127,11 @@ impl SecurityGroupRuleDescriptionBuilder {
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
+    }
+    /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i64> {
+        &self.from_port
     }
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes.</p>
     pub fn to_port(mut self, input: i64) -> Self {
@@ -133,18 +140,28 @@ impl SecurityGroupRuleDescriptionBuilder {
     }
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes.</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
+    }
+    /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i64> {
+        &self.to_port
     }
     /// Consumes the builder and constructs a [`SecurityGroupRuleDescription`](crate::types::SecurityGroupRuleDescription).
     pub fn build(self) -> crate::types::SecurityGroupRuleDescription {
         crate::types::SecurityGroupRuleDescription {
-            ipv4_range: self.ipv4_range,
-            ipv6_range: self.ipv6_range,
-            prefix_list_id: self.prefix_list_id,
-            protocol: self.protocol,
-            from_port: self.from_port,
-            to_port: self.to_port,
+            ipv4_range: self.ipv4_range
+            ,
+            ipv6_range: self.ipv6_range
+            ,
+            prefix_list_id: self.prefix_list_id
+            ,
+            protocol: self.protocol
+            ,
+            from_port: self.from_port
+            ,
+            to_port: self.to_port
+            ,
         }
     }
 }
+

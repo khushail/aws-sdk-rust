@@ -3,7 +3,7 @@
 /// <p>Describes the storage parameters for Amazon S3 and Amazon S3 buckets for an instance store-backed AMI.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Storage {
+pub struct S3Storage  {
     /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
     #[doc(hidden)]
     pub aws_access_key_id: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct S3Storage {
 }
 impl S3Storage {
     /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
-    pub fn aws_access_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_access_key_id(&self) -> ::std::option::Option<& str> {
         self.aws_access_key_id.as_deref()
     }
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The beginning of the file name of the AMI.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.</p>
-    pub fn upload_policy(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn upload_policy(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.upload_policy.as_ref()
     }
     /// <p>The signature of the JSON document.</p>
-    pub fn upload_policy_signature(&self) -> ::std::option::Option<&str> {
+    pub fn upload_policy_signature(&self) -> ::std::option::Option<& str> {
         self.upload_policy_signature.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl S3Storage {
 
 /// A builder for [`S3Storage`](crate::types::S3Storage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3StorageBuilder {
     pub(crate) aws_access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -63,20 +61,17 @@ pub struct S3StorageBuilder {
 }
 impl S3StorageBuilder {
     /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
-    pub fn aws_access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
-    pub fn set_aws_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_access_key_id = input;
-        self
+    pub fn set_aws_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_access_key_id = input; self
+    }
+    /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
+    pub fn get_aws_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_access_key_id
     }
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,8 +80,11 @@ impl S3StorageBuilder {
     }
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
+    }
+    /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>The beginning of the file name of the AMI.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +93,11 @@ impl S3StorageBuilder {
     }
     /// <p>The beginning of the file name of the AMI.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
+    }
+    /// <p>The beginning of the file name of the AMI.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.</p>
     pub fn upload_policy(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -104,37 +105,40 @@ impl S3StorageBuilder {
         self
     }
     /// <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.</p>
-    pub fn set_upload_policy(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
-        self.upload_policy = input;
-        self
+    pub fn set_upload_policy(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.upload_policy = input; self
+    }
+    /// <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.</p>
+    pub fn get_upload_policy(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.upload_policy
     }
     /// <p>The signature of the JSON document.</p>
-    pub fn upload_policy_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upload_policy_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_policy_signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signature of the JSON document.</p>
-    pub fn set_upload_policy_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.upload_policy_signature = input;
-        self
+    pub fn set_upload_policy_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.upload_policy_signature = input; self
+    }
+    /// <p>The signature of the JSON document.</p>
+    pub fn get_upload_policy_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_policy_signature
     }
     /// Consumes the builder and constructs a [`S3Storage`](crate::types::S3Storage).
     pub fn build(self) -> crate::types::S3Storage {
         crate::types::S3Storage {
-            aws_access_key_id: self.aws_access_key_id,
-            bucket: self.bucket,
-            prefix: self.prefix,
-            upload_policy: self.upload_policy,
-            upload_policy_signature: self.upload_policy_signature,
+            aws_access_key_id: self.aws_access_key_id
+            ,
+            bucket: self.bucket
+            ,
+            prefix: self.prefix
+            ,
+            upload_policy: self.upload_policy
+            ,
+            upload_policy_signature: self.upload_policy_signature
+            ,
         }
     }
 }
+

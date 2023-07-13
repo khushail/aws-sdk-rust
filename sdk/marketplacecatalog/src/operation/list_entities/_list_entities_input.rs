@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEntitiesInput {
+pub struct ListEntitiesInput  {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
@@ -27,23 +27,23 @@ pub struct ListEntitiesInput {
 }
 impl ListEntitiesInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<& str> {
         self.catalog.as_deref()
     }
     /// <p>The type of entities to retrieve.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn entity_type(&self) -> ::std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    pub fn filter_list(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filter_list(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filter_list.as_deref()
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::Sort> {
         self.sort.as_ref()
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
@@ -51,7 +51,7 @@ impl ListEntitiesInput {
         self.max_results
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn ownership_type(&self) -> ::std::option::Option<&crate::types::OwnershipType> {
+    pub fn ownership_type(&self) -> ::std::option::Option<& crate::types::OwnershipType> {
         self.ownership_type.as_ref()
     }
 }
@@ -64,9 +64,7 @@ impl ListEntitiesInput {
 
 /// A builder for [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitiesInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,
@@ -84,8 +82,11 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
+    }
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
     }
     /// <p>The type of entities to retrieve.</p>
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,8 +95,11 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>The type of entities to retrieve.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
+    }
+    /// <p>The type of entities to retrieve.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_type
     }
     /// Appends an item to `filter_list`.
     ///
@@ -104,17 +108,17 @@ impl ListEntitiesInputBuilder {
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
     pub fn filter_list(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filter_list.unwrap_or_default();
-        v.push(input);
-        self.filter_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    pub fn set_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filter_list = input;
-        self
+    pub fn set_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filter_list = input; self
+    }
+    /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
+    pub fn get_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filter_list
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub fn sort(mut self, input: crate::types::Sort) -> Self {
@@ -123,8 +127,11 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
+    }
+    /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
+        &self.sort
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,8 +140,11 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -143,8 +153,11 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn ownership_type(mut self, input: crate::types::OwnershipType) -> Self {
@@ -152,28 +165,33 @@ impl ListEntitiesInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_ownership_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnershipType>,
-    ) -> Self {
-        self.ownership_type = input;
-        self
+    pub fn set_ownership_type(mut self, input: ::std::option::Option<crate::types::OwnershipType>) -> Self {
+        self.ownership_type = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_ownership_type(&self) -> &::std::option::Option<crate::types::OwnershipType> {
+        &self.ownership_type
     }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_entities::ListEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_entities::ListEntitiesInput {
-            catalog: self.catalog,
-            entity_type: self.entity_type,
-            filter_list: self.filter_list,
-            sort: self.sort,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            ownership_type: self.ownership_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_entities::ListEntitiesInput {
+                catalog: self.catalog
+                ,
+                entity_type: self.entity_type
+                ,
+                filter_list: self.filter_list
+                ,
+                sort: self.sort
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                ownership_type: self.ownership_type
+                ,
+            }
+        )
     }
 }
+

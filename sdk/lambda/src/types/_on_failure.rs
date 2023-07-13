@@ -3,14 +3,14 @@
 /// <p>A destination for events that failed processing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnFailure {
+pub struct OnFailure  {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
 }
 impl OnFailure {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl OnFailure {
 
 /// A builder for [`OnFailure`](crate::types::OnFailure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnFailureBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl OnFailureBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`OnFailure`](crate::types::OnFailure).
     pub fn build(self) -> crate::types::OnFailure {
         crate::types::OnFailure {
-            destination: self.destination,
+            destination: self.destination
+            ,
         }
     }
 }
+

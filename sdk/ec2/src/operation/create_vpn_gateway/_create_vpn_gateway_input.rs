@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for CreateVpnGateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpnGatewayInput {
+pub struct CreateVpnGatewayInput  {
     /// <p>The Availability Zone for the virtual private gateway.</p>
     #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateVpnGatewayInput {
     /// <p>The tags to apply to the virtual private gateway.</p>
     #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
+    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p> 
     /// <p>Default: 64512</p>
     #[doc(hidden)]
     pub amazon_side_asn: ::std::option::Option<i64>,
@@ -23,18 +23,18 @@ pub struct CreateVpnGatewayInput {
 }
 impl CreateVpnGatewayInput {
     /// <p>The Availability Zone for the virtual private gateway.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The type of VPN connection this virtual private gateway supports.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::GatewayType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::GatewayType> {
         self.r#type.as_ref()
     }
     /// <p>The tags to apply to the virtual private gateway.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> ::std::option::Option<& [crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
-    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
+    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p> 
     /// <p>Default: 64512</p>
     pub fn amazon_side_asn(&self) -> ::std::option::Option<i64> {
         self.amazon_side_asn
@@ -46,41 +46,34 @@ impl CreateVpnGatewayInput {
 }
 impl CreateVpnGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateVpnGatewayInput`](crate::operation::create_vpn_gateway::CreateVpnGatewayInput).
-    pub fn builder() -> crate::operation::create_vpn_gateway::builders::CreateVpnGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_vpn_gateway::builders::CreateVpnGatewayInputBuilder {
         crate::operation::create_vpn_gateway::builders::CreateVpnGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpnGatewayInput`](crate::operation::create_vpn_gateway::CreateVpnGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpnGatewayInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::GatewayType>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateVpnGatewayInputBuilder {
     /// <p>The Availability Zone for the virtual private gateway.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the virtual private gateway.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input; self
+    }
+    /// <p>The Availability Zone for the virtual private gateway.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// <p>The type of VPN connection this virtual private gateway supports.</p>
     pub fn r#type(mut self, input: crate::types::GatewayType) -> Self {
@@ -89,8 +82,11 @@ impl CreateVpnGatewayInputBuilder {
     }
     /// <p>The type of VPN connection this virtual private gateway supports.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of VPN connection this virtual private gateway supports.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
+        &self.r#type
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -99,29 +95,33 @@ impl CreateVpnGatewayInputBuilder {
     /// <p>The tags to apply to the virtual private gateway.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the virtual private gateway.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
-    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
+    /// <p>The tags to apply to the virtual private gateway.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
+    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p> 
     /// <p>Default: 64512</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
         self.amazon_side_asn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
+    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p> 
     /// <p>Default: 64512</p>
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.amazon_side_asn = input;
-        self
+        self.amazon_side_asn = input; self
+    }
+    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p> 
+    /// <p>Default: 64512</p>
+    pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
+        &self.amazon_side_asn
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -130,24 +130,28 @@ impl CreateVpnGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateVpnGatewayInput`](crate::operation::create_vpn_gateway::CreateVpnGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpn_gateway::CreateVpnGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpn_gateway::CreateVpnGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_vpn_gateway::CreateVpnGatewayInput {
-                availability_zone: self.availability_zone,
-                r#type: self.r#type,
-                tag_specifications: self.tag_specifications,
-                amazon_side_asn: self.amazon_side_asn,
-                dry_run: self.dry_run,
-            },
+                availability_zone: self.availability_zone
+                ,
+                r#type: self.r#type
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                amazon_side_asn: self.amazon_side_asn
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

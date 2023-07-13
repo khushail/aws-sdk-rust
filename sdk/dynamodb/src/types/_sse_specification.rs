@@ -3,13 +3,13 @@
 /// <p>Represents the settings used to enable server-side encryption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SseSpecification {
+pub struct SseSpecification  {
     /// <p>Indicates whether server-side encryption is done using an Amazon Web Services managed key or an Amazon Web Services owned key. If enabled (true), server-side encryption type is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS charges apply). If disabled (false) or not specified, server-side encryption is set to Amazon Web Services owned key.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
-    /// <p>Server-side encryption type. The only supported value is:</p>
-    /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <p>Server-side encryption type. The only supported value is:</p> 
+    /// <ul> 
+    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub sse_type: ::std::option::Option<crate::types::SseType>,
@@ -22,15 +22,15 @@ impl SseSpecification {
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
-    /// <p>Server-side encryption type. The only supported value is:</p>
-    /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <p>Server-side encryption type. The only supported value is:</p> 
+    /// <ul> 
+    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li> 
     /// </ul>
-    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+    pub fn sse_type(&self) -> ::std::option::Option<& crate::types::SseType> {
         self.sse_type.as_ref()
     }
     /// <p>The KMS key that should be used for the KMS encryption. To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
-    pub fn kms_master_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_master_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_master_key_id.as_deref()
     }
 }
@@ -43,9 +43,7 @@ impl SseSpecification {
 
 /// A builder for [`SseSpecification`](crate::types::SseSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SseSpecificationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
@@ -59,47 +57,57 @@ impl SseSpecificationBuilder {
     }
     /// <p>Indicates whether server-side encryption is done using an Amazon Web Services managed key or an Amazon Web Services owned key. If enabled (true), server-side encryption type is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS charges apply). If disabled (false) or not specified, server-side encryption is set to Amazon Web Services owned key.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
-    /// <p>Server-side encryption type. The only supported value is:</p>
-    /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <p>Indicates whether server-side encryption is done using an Amazon Web Services managed key or an Amazon Web Services owned key. If enabled (true), server-side encryption type is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS charges apply). If disabled (false) or not specified, server-side encryption is set to Amazon Web Services owned key.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
+    /// <p>Server-side encryption type. The only supported value is:</p> 
+    /// <ul> 
+    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li> 
     /// </ul>
     pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
         self.sse_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Server-side encryption type. The only supported value is:</p>
-    /// <ul>
-    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// <p>Server-side encryption type. The only supported value is:</p> 
+    /// <ul> 
+    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li> 
     /// </ul>
     pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
-        self.sse_type = input;
-        self
+        self.sse_type = input; self
+    }
+    /// <p>Server-side encryption type. The only supported value is:</p> 
+    /// <ul> 
+    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li> 
+    /// </ul>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
     }
     /// <p>The KMS key that should be used for the KMS encryption. To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
-    pub fn kms_master_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_master_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_master_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key that should be used for the KMS encryption. To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
-    pub fn set_kms_master_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.kms_master_key_id = input;
-        self
+    pub fn set_kms_master_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_master_key_id = input; self
+    }
+    /// <p>The KMS key that should be used for the KMS encryption. To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB key <code>alias/aws/dynamodb</code>.</p>
+    pub fn get_kms_master_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_master_key_id
     }
     /// Consumes the builder and constructs a [`SseSpecification`](crate::types::SseSpecification).
     pub fn build(self) -> crate::types::SseSpecification {
         crate::types::SseSpecification {
-            enabled: self.enabled,
-            sse_type: self.sse_type,
-            kms_master_key_id: self.kms_master_key_id,
+            enabled: self.enabled
+            ,
+            sse_type: self.sse_type
+            ,
+            kms_master_key_id: self.kms_master_key_id
+            ,
         }
     }
 }
+

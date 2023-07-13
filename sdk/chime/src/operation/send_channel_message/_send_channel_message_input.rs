@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SendChannelMessageInput {
+pub struct SendChannelMessageInput  {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
@@ -27,37 +27,35 @@ pub struct SendChannelMessageInput {
 }
 impl SendChannelMessageInput {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The content of the message.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelMessageType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ChannelMessageType> {
         self.r#type.as_ref()
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn persistence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChannelMessagePersistenceType> {
+    pub fn persistence(&self) -> ::std::option::Option<& crate::types::ChannelMessagePersistenceType> {
         self.persistence.as_ref()
     }
     /// <p>The optional metadata for each message.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
-impl ::std::fmt::Debug for SendChannelMessageInput {
+impl  ::std::fmt::Debug for SendChannelMessageInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SendChannelMessageInput");
         formatter.field("channel_arn", &self.channel_arn);
@@ -72,8 +70,7 @@ impl ::std::fmt::Debug for SendChannelMessageInput {
 }
 impl SendChannelMessageInput {
     /// Creates a new builder-style object to manufacture [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
-    pub fn builder(
-    ) -> crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
+    pub fn builder() -> crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
         crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder::default()
     }
 }
@@ -98,8 +95,11 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The content of the message.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,8 +108,11 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The content of the message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
+    }
+    /// <p>The content of the message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
@@ -117,12 +120,12 @@ impl SendChannelMessageInputBuilder {
         self
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMessageType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMessageType> {
+        &self.r#type
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
     pub fn persistence(mut self, input: crate::types::ChannelMessagePersistenceType) -> Self {
@@ -130,12 +133,12 @@ impl SendChannelMessageInputBuilder {
         self
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn set_persistence(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
-    ) -> Self {
-        self.persistence = input;
-        self
+    pub fn set_persistence(mut self, input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>) -> Self {
+        self.persistence = input; self
+    }
+    /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    pub fn get_persistence(&self) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
+        &self.persistence
     }
     /// <p>The optional metadata for each message.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,24 +147,24 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The optional metadata for each message.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
+    }
+    /// <p>The optional metadata for each message.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>The <code>Idempotency</code> token for each client request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -170,26 +173,31 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_channel_message::SendChannelMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_channel_message::SendChannelMessageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::send_channel_message::SendChannelMessageInput {
-                channel_arn: self.channel_arn,
-                content: self.content,
-                r#type: self.r#type,
-                persistence: self.persistence,
-                metadata: self.metadata,
-                client_request_token: self.client_request_token,
-                chime_bearer: self.chime_bearer,
-            },
+                channel_arn: self.channel_arn
+                ,
+                content: self.content
+                ,
+                r#type: self.r#type
+                ,
+                persistence: self.persistence
+                ,
+                metadata: self.metadata
+                ,
+                client_request_token: self.client_request_token
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
         )
     }
 }
@@ -206,3 +214,4 @@ impl ::std::fmt::Debug for SendChannelMessageInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Lifecycle last Test.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifeCycleLastTest {
+pub struct LifeCycleLastTest  {
     /// <p>Lifecycle last Test initiated.</p>
     #[doc(hidden)]
     pub initiated: ::std::option::Option<crate::types::LifeCycleLastTestInitiated>,
@@ -16,15 +16,15 @@ pub struct LifeCycleLastTest {
 }
 impl LifeCycleLastTest {
     /// <p>Lifecycle last Test initiated.</p>
-    pub fn initiated(&self) -> ::std::option::Option<&crate::types::LifeCycleLastTestInitiated> {
+    pub fn initiated(&self) -> ::std::option::Option<& crate::types::LifeCycleLastTestInitiated> {
         self.initiated.as_ref()
     }
     /// <p>Lifecycle last Test reverted.</p>
-    pub fn reverted(&self) -> ::std::option::Option<&crate::types::LifeCycleLastTestReverted> {
+    pub fn reverted(&self) -> ::std::option::Option<& crate::types::LifeCycleLastTestReverted> {
         self.reverted.as_ref()
     }
     /// <p>Lifecycle last Test finalized.</p>
-    pub fn finalized(&self) -> ::std::option::Option<&crate::types::LifeCycleLastTestFinalized> {
+    pub fn finalized(&self) -> ::std::option::Option<& crate::types::LifeCycleLastTestFinalized> {
         self.finalized.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl LifeCycleLastTest {
 
 /// A builder for [`LifeCycleLastTest`](crate::types::LifeCycleLastTest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifeCycleLastTestBuilder {
     pub(crate) initiated: ::std::option::Option<crate::types::LifeCycleLastTestInitiated>,
     pub(crate) reverted: ::std::option::Option<crate::types::LifeCycleLastTestReverted>,
@@ -52,12 +50,12 @@ impl LifeCycleLastTestBuilder {
         self
     }
     /// <p>Lifecycle last Test initiated.</p>
-    pub fn set_initiated(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleLastTestInitiated>,
-    ) -> Self {
-        self.initiated = input;
-        self
+    pub fn set_initiated(mut self, input: ::std::option::Option<crate::types::LifeCycleLastTestInitiated>) -> Self {
+        self.initiated = input; self
+    }
+    /// <p>Lifecycle last Test initiated.</p>
+    pub fn get_initiated(&self) -> &::std::option::Option<crate::types::LifeCycleLastTestInitiated> {
+        &self.initiated
     }
     /// <p>Lifecycle last Test reverted.</p>
     pub fn reverted(mut self, input: crate::types::LifeCycleLastTestReverted) -> Self {
@@ -65,12 +63,12 @@ impl LifeCycleLastTestBuilder {
         self
     }
     /// <p>Lifecycle last Test reverted.</p>
-    pub fn set_reverted(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleLastTestReverted>,
-    ) -> Self {
-        self.reverted = input;
-        self
+    pub fn set_reverted(mut self, input: ::std::option::Option<crate::types::LifeCycleLastTestReverted>) -> Self {
+        self.reverted = input; self
+    }
+    /// <p>Lifecycle last Test reverted.</p>
+    pub fn get_reverted(&self) -> &::std::option::Option<crate::types::LifeCycleLastTestReverted> {
+        &self.reverted
     }
     /// <p>Lifecycle last Test finalized.</p>
     pub fn finalized(mut self, input: crate::types::LifeCycleLastTestFinalized) -> Self {
@@ -78,19 +76,23 @@ impl LifeCycleLastTestBuilder {
         self
     }
     /// <p>Lifecycle last Test finalized.</p>
-    pub fn set_finalized(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleLastTestFinalized>,
-    ) -> Self {
-        self.finalized = input;
-        self
+    pub fn set_finalized(mut self, input: ::std::option::Option<crate::types::LifeCycleLastTestFinalized>) -> Self {
+        self.finalized = input; self
+    }
+    /// <p>Lifecycle last Test finalized.</p>
+    pub fn get_finalized(&self) -> &::std::option::Option<crate::types::LifeCycleLastTestFinalized> {
+        &self.finalized
     }
     /// Consumes the builder and constructs a [`LifeCycleLastTest`](crate::types::LifeCycleLastTest).
     pub fn build(self) -> crate::types::LifeCycleLastTest {
         crate::types::LifeCycleLastTest {
-            initiated: self.initiated,
-            reverted: self.reverted,
-            finalized: self.finalized,
+            initiated: self.initiated
+            ,
+            reverted: self.reverted
+            ,
+            finalized: self.finalized
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImageScanFindingsOutput {
+pub struct ListImageScanFindingsOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -16,37 +16,33 @@ pub struct ListImageScanFindingsOutput {
 }
 impl ListImageScanFindingsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The image scan findings for your account that meet your request filter criteria.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::ImageScanFinding]> {
+    pub fn findings(&self) -> ::std::option::Option<& [crate::types::ImageScanFinding]> {
         self.findings.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListImageScanFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListImageScanFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListImageScanFindingsOutput`](crate::operation::list_image_scan_findings::ListImageScanFindingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_image_scan_findings::builders::ListImageScanFindingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_image_scan_findings::builders::ListImageScanFindingsOutputBuilder {
         crate::operation::list_image_scan_findings::builders::ListImageScanFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageScanFindingsOutput`](crate::operation::list_image_scan_findings::ListImageScanFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageScanFindingsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>,
@@ -61,8 +57,11 @@ impl ListImageScanFindingsOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
+    }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// Appends an item to `findings`.
     ///
@@ -71,17 +70,17 @@ impl ListImageScanFindingsOutputBuilder {
     /// <p>The image scan findings for your account that meet your request filter criteria.</p>
     pub fn findings(mut self, input: crate::types::ImageScanFinding) -> Self {
         let mut v = self.findings.unwrap_or_default();
-        v.push(input);
-        self.findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The image scan findings for your account that meet your request filter criteria.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>,
-    ) -> Self {
-        self.findings = input;
-        self
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>) -> Self {
+        self.findings = input; self
+    }
+    /// <p>The image scan findings for your account that meet your request filter criteria.</p>
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>> {
+        &self.findings
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,25 +89,32 @@ impl ListImageScanFindingsOutputBuilder {
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListImageScanFindingsOutput`](crate::operation::list_image_scan_findings::ListImageScanFindingsOutput).
     pub fn build(self) -> crate::operation::list_image_scan_findings::ListImageScanFindingsOutput {
         crate::operation::list_image_scan_findings::ListImageScanFindingsOutput {
-            request_id: self.request_id,
-            findings: self.findings,
-            next_token: self.next_token,
+            request_id: self.request_id
+            ,
+            findings: self.findings
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

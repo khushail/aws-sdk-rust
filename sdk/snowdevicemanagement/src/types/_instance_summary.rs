@@ -3,7 +3,7 @@
 /// <p>The details about the instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceSummary {
+pub struct InstanceSummary  {
     /// <p>A structure containing details about the instance.</p>
     #[doc(hidden)]
     pub instance: ::std::option::Option<crate::types::Instance>,
@@ -13,11 +13,11 @@ pub struct InstanceSummary {
 }
 impl InstanceSummary {
     /// <p>A structure containing details about the instance.</p>
-    pub fn instance(&self) -> ::std::option::Option<&crate::types::Instance> {
+    pub fn instance(&self) -> ::std::option::Option<& crate::types::Instance> {
         self.instance.as_ref()
     }
     /// <p>When the instance summary was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl InstanceSummary {
 
 /// A builder for [`InstanceSummary`](crate::types::InstanceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceSummaryBuilder {
     pub(crate) instance: ::std::option::Option<crate::types::Instance>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,8 +43,11 @@ impl InstanceSummaryBuilder {
     }
     /// <p>A structure containing details about the instance.</p>
     pub fn set_instance(mut self, input: ::std::option::Option<crate::types::Instance>) -> Self {
-        self.instance = input;
-        self
+        self.instance = input; self
+    }
+    /// <p>A structure containing details about the instance.</p>
+    pub fn get_instance(&self) -> &::std::option::Option<crate::types::Instance> {
+        &self.instance
     }
     /// <p>When the instance summary was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -54,18 +55,21 @@ impl InstanceSummaryBuilder {
         self
     }
     /// <p>When the instance summary was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
+    }
+    /// <p>When the instance summary was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`InstanceSummary`](crate::types::InstanceSummary).
     pub fn build(self) -> crate::types::InstanceSummary {
         crate::types::InstanceSummary {
-            instance: self.instance,
-            last_updated_at: self.last_updated_at,
+            instance: self.instance
+            ,
+            last_updated_at: self.last_updated_at
+            ,
         }
     }
 }
+

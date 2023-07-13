@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListThingRegistrationTaskReportsInput {
+pub struct ListThingRegistrationTaskReportsInput  {
     /// <p>The id of the task.</p>
     #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListThingRegistrationTaskReportsInput {
 }
 impl ListThingRegistrationTaskReportsInput {
     /// <p>The id of the task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The type of task report.</p>
-    pub fn report_type(&self) -> ::std::option::Option<&crate::types::ReportType> {
+    pub fn report_type(&self) -> ::std::option::Option<& crate::types::ReportType> {
         self.report_type.as_ref()
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per request.</p>
@@ -36,16 +36,14 @@ impl ListThingRegistrationTaskReportsInput {
 }
 impl ListThingRegistrationTaskReportsInput {
     /// Creates a new builder-style object to manufacture [`ListThingRegistrationTaskReportsInput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput).
-    pub fn builder() -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder{
+    pub fn builder() -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder {
         crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingRegistrationTaskReportsInput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingRegistrationTaskReportsInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) report_type: ::std::option::Option<crate::types::ReportType>,
@@ -60,8 +58,11 @@ impl ListThingRegistrationTaskReportsInputBuilder {
     }
     /// <p>The id of the task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
+    }
+    /// <p>The id of the task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// <p>The type of task report.</p>
     pub fn report_type(mut self, input: crate::types::ReportType) -> Self {
@@ -69,12 +70,12 @@ impl ListThingRegistrationTaskReportsInputBuilder {
         self
     }
     /// <p>The type of task report.</p>
-    pub fn set_report_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportType>,
-    ) -> Self {
-        self.report_type = input;
-        self
+    pub fn set_report_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
+        self.report_type = input; self
+    }
+    /// <p>The type of task report.</p>
+    pub fn get_report_type(&self) -> &::std::option::Option<crate::types::ReportType> {
+        &self.report_type
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,8 +84,11 @@ impl ListThingRegistrationTaskReportsInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -93,11 +97,14 @@ impl ListThingRegistrationTaskReportsInputBuilder {
     }
     /// <p>The maximum number of results to return per request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListThingRegistrationTaskReportsInput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput {
                 task_id: self.task_id
@@ -112,3 +119,4 @@ impl ListThingRegistrationTaskReportsInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationVersionsInput {
+pub struct ListApplicationVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListApplicationVersionsInput {
 }
 impl ListApplicationVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The total number of items to return.</p>
@@ -23,24 +23,20 @@ impl ListApplicationVersionsInput {
         self.max_items
     }
     /// <p>A token to specify where to start paginating.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListApplicationVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::operation::list_application_versions::ListApplicationVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_application_versions::builders::ListApplicationVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_versions::builders::ListApplicationVersionsInputBuilder {
         crate::operation::list_application_versions::builders::ListApplicationVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationVersionsInput`](crate::operation::list_application_versions::ListApplicationVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationVersionsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -48,20 +44,17 @@ pub struct ListApplicationVersionsInputBuilder {
 }
 impl ListApplicationVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The total number of items to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -70,8 +63,11 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>The total number of items to return.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
+    }
+    /// <p>The total number of items to return.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// <p>A token to specify where to start paginating.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,22 +76,24 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>A token to specify where to start paginating.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token to specify where to start paginating.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListApplicationVersionsInput`](crate::operation::list_application_versions::ListApplicationVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_application_versions::ListApplicationVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_application_versions::ListApplicationVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_application_versions::ListApplicationVersionsInput {
-                application_id: self.application_id,
-                max_items: self.max_items,
-                next_token: self.next_token,
-            },
+                application_id: self.application_id
+                ,
+                max_items: self.max_items
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

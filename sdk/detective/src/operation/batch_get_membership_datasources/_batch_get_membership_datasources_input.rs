@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetMembershipDatasourcesInput {
+pub struct BatchGetMembershipDatasourcesInput  {
     /// <p>The ARN of the behavior graph.</p>
     #[doc(hidden)]
     pub graph_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetMembershipDatasourcesInput {
     /// <p>The ARN of the behavior graph.</p>
-    pub fn graph_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn graph_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.graph_arns.as_deref()
     }
 }
 impl BatchGetMembershipDatasourcesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetMembershipDatasourcesInput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput).
-    pub fn builder() -> crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesInputBuilder {
         crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetMembershipDatasourcesInput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetMembershipDatasourcesInputBuilder {
     pub(crate) graph_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,25 +34,20 @@ impl BatchGetMembershipDatasourcesInputBuilder {
     /// <p>The ARN of the behavior graph.</p>
     pub fn graph_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.graph_arns.unwrap_or_default();
-        v.push(input.into());
-        self.graph_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.graph_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN of the behavior graph.</p>
-    pub fn set_graph_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.graph_arns = input;
-        self
+    pub fn set_graph_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.graph_arns = input; self
+    }
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn get_graph_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.graph_arns
     }
     /// Consumes the builder and constructs a [`BatchGetMembershipDatasourcesInput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput {
                 graph_arns: self.graph_arns
@@ -63,3 +56,4 @@ impl BatchGetMembershipDatasourcesInputBuilder {
         )
     }
 }
+

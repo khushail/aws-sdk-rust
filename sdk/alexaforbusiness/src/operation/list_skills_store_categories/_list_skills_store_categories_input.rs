@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSkillsStoreCategoriesInput {
+pub struct ListSkillsStoreCategoriesInput  {
     /// <p>The tokens used for pagination.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListSkillsStoreCategoriesInput {
 }
 impl ListSkillsStoreCategoriesInput {
     /// <p>The tokens used for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of categories returned, per paginated calls.</p>
@@ -22,16 +22,14 @@ impl ListSkillsStoreCategoriesInput {
 }
 impl ListSkillsStoreCategoriesInput {
     /// Creates a new builder-style object to manufacture [`ListSkillsStoreCategoriesInput`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesInput).
-    pub fn builder() -> crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesInputBuilder{
+    pub fn builder() -> crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesInputBuilder {
         crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSkillsStoreCategoriesInput`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSkillsStoreCategoriesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -44,8 +42,11 @@ impl ListSkillsStoreCategoriesInputBuilder {
     }
     /// <p>The tokens used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The tokens used for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of categories returned, per paginated calls.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -54,21 +55,22 @@ impl ListSkillsStoreCategoriesInputBuilder {
     }
     /// <p>The maximum number of categories returned, per paginated calls.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of categories returned, per paginated calls.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSkillsStoreCategoriesInput`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

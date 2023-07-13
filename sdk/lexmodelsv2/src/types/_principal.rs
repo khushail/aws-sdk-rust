@@ -3,8 +3,8 @@
 /// <p>The IAM principal that you allowing or denying access to an Amazon Lex action. You must provide a <code>service</code> or an <code>arn</code>, but not both in the same statement. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html"> AWS JSON policy elements: Principal </a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Principal {
-    /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
+pub struct Principal  {
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
     #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
@@ -12,12 +12,12 @@ pub struct Principal {
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Principal {
-    /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -30,23 +30,24 @@ impl Principal {
 
 /// A builder for [`Principal`](crate::types::Principal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrincipalBuilder {
     pub(crate) service: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl PrincipalBuilder {
-    /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
+    }
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl PrincipalBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the principal.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).
     pub fn build(self) -> crate::types::Principal {
         crate::types::Principal {
-            service: self.service,
-            arn: self.arn,
+            service: self.service
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

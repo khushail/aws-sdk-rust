@@ -3,7 +3,7 @@
 /// <p>The response to a <code>DataQuery</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataResponse {
+pub struct DataResponse  {
     /// <p>The ID passed in the <code>DataQuery</code>.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct DataResponse {
 }
 impl DataResponse {
     /// <p>The ID passed in the <code>DataQuery</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Region or Availability Zone that's the destination for the data query. For example, <code>eu-west-1</code>.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::MetricType> {
+    pub fn metric(&self) -> ::std::option::Option<& crate::types::MetricType> {
         self.metric.as_ref()
     }
     /// <p>The statistic used for the network performance request.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::StatisticType> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::StatisticType> {
         self.statistic.as_ref()
     }
     /// <p>The period used for the network performance request.</p>
-    pub fn period(&self) -> ::std::option::Option<&crate::types::PeriodType> {
+    pub fn period(&self) -> ::std::option::Option<& crate::types::PeriodType> {
         self.period.as_ref()
     }
     /// <p>A list of <code>MetricPoint</code> objects.</p>
-    pub fn metric_points(&self) -> ::std::option::Option<&[crate::types::MetricPoint]> {
+    pub fn metric_points(&self) -> ::std::option::Option<& [crate::types::MetricPoint]> {
         self.metric_points.as_deref()
     }
 }
@@ -65,9 +65,7 @@ impl DataResponse {
 
 /// A builder for [`DataResponse`](crate::types::DataResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataResponseBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -85,8 +83,11 @@ impl DataResponseBuilder {
     }
     /// <p>The ID passed in the <code>DataQuery</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID passed in the <code>DataQuery</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +96,11 @@ impl DataResponseBuilder {
     }
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The Region or Availability Zone that's the destination for the data query. For example, <code>eu-west-1</code>.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,8 +109,11 @@ impl DataResponseBuilder {
     }
     /// <p>The Region or Availability Zone that's the destination for the data query. For example, <code>eu-west-1</code>.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
+    }
+    /// <p>The Region or Availability Zone that's the destination for the data query. For example, <code>eu-west-1</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
@@ -115,8 +122,11 @@ impl DataResponseBuilder {
     }
     /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
+    }
+    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
+        &self.metric
     }
     /// <p>The statistic used for the network performance request.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
@@ -124,12 +134,12 @@ impl DataResponseBuilder {
         self
     }
     /// <p>The statistic used for the network performance request.</p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticType>,
-    ) -> Self {
-        self.statistic = input;
-        self
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
+        self.statistic = input; self
+    }
+    /// <p>The statistic used for the network performance request.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::StatisticType> {
+        &self.statistic
     }
     /// <p>The period used for the network performance request.</p>
     pub fn period(mut self, input: crate::types::PeriodType) -> Self {
@@ -138,8 +148,11 @@ impl DataResponseBuilder {
     }
     /// <p>The period used for the network performance request.</p>
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::PeriodType>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
+    }
+    /// <p>The period used for the network performance request.</p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::PeriodType> {
+        &self.period
     }
     /// Appends an item to `metric_points`.
     ///
@@ -148,28 +161,36 @@ impl DataResponseBuilder {
     /// <p>A list of <code>MetricPoint</code> objects.</p>
     pub fn metric_points(mut self, input: crate::types::MetricPoint) -> Self {
         let mut v = self.metric_points.unwrap_or_default();
-        v.push(input);
-        self.metric_points = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_points = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>MetricPoint</code> objects.</p>
-    pub fn set_metric_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricPoint>>,
-    ) -> Self {
-        self.metric_points = input;
-        self
+    pub fn set_metric_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricPoint>>) -> Self {
+        self.metric_points = input; self
+    }
+    /// <p>A list of <code>MetricPoint</code> objects.</p>
+    pub fn get_metric_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricPoint>> {
+        &self.metric_points
     }
     /// Consumes the builder and constructs a [`DataResponse`](crate::types::DataResponse).
     pub fn build(self) -> crate::types::DataResponse {
         crate::types::DataResponse {
-            id: self.id,
-            source: self.source,
-            destination: self.destination,
-            metric: self.metric,
-            statistic: self.statistic,
-            period: self.period,
-            metric_points: self.metric_points,
+            id: self.id
+            ,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            metric: self.metric
+            ,
+            statistic: self.statistic
+            ,
+            period: self.period
+            ,
+            metric_points: self.metric_points
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the request to get the device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetDeviceInput {
+pub struct GetDeviceInput  {
     /// <p>The device key.</p>
     #[doc(hidden)]
     pub device_key: ::std::option::Option<::std::string::String>,
@@ -13,15 +13,15 @@ pub struct GetDeviceInput {
 }
 impl GetDeviceInput {
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> ::std::option::Option<&str> {
+    pub fn device_key(&self) -> ::std::option::Option<& str> {
         self.device_key.as_deref()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetDeviceInput {
+impl  ::std::fmt::Debug for GetDeviceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceInput");
         formatter.field("device_key", &self.device_key);
@@ -51,8 +51,11 @@ impl GetDeviceInputBuilder {
     }
     /// <p>The device key.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_key = input;
-        self
+        self.device_key = input; self
+    }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,20 +64,22 @@ impl GetDeviceInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
     }
     /// Consumes the builder and constructs a [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device::GetDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_device::GetDeviceInput {
-            device_key: self.device_key,
-            access_token: self.access_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device::GetDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_device::GetDeviceInput {
+                device_key: self.device_key
+                ,
+                access_token: self.access_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetDeviceInputBuilder {
@@ -85,3 +90,4 @@ impl ::std::fmt::Debug for GetDeviceInputBuilder {
         formatter.finish()
     }
 }
+

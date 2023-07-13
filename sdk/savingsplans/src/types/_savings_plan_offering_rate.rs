@@ -3,7 +3,7 @@
 /// <p>Information about a Savings Plan offering rate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SavingsPlanOfferingRate {
+pub struct SavingsPlanOfferingRate  {
     /// <p>The Savings Plan offering.</p>
     #[doc(hidden)]
     pub savings_plan_offering: ::std::option::Option<crate::types::ParentSavingsPlanOffering>,
@@ -27,44 +27,39 @@ pub struct SavingsPlanOfferingRate {
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The properties.</p>
     #[doc(hidden)]
-    pub properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateProperty>>,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateProperty>>,
 }
 impl SavingsPlanOfferingRate {
     /// <p>The Savings Plan offering.</p>
-    pub fn savings_plan_offering(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParentSavingsPlanOffering> {
+    pub fn savings_plan_offering(&self) -> ::std::option::Option<& crate::types::ParentSavingsPlanOffering> {
         self.savings_plan_offering.as_ref()
     }
     /// <p>The Savings Plan rate.</p>
-    pub fn rate(&self) -> ::std::option::Option<&str> {
+    pub fn rate(&self) -> ::std::option::Option<& str> {
         self.rate.as_deref()
     }
     /// <p>The unit.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::SavingsPlanRateUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::SavingsPlanRateUnit> {
         self.unit.as_ref()
     }
     /// <p>The product type.</p>
-    pub fn product_type(&self) -> ::std::option::Option<&crate::types::SavingsPlanProductType> {
+    pub fn product_type(&self) -> ::std::option::Option<& crate::types::SavingsPlanProductType> {
         self.product_type.as_ref()
     }
     /// <p>The service.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&crate::types::SavingsPlanRateServiceCode> {
+    pub fn service_code(&self) -> ::std::option::Option<& crate::types::SavingsPlanRateServiceCode> {
         self.service_code.as_ref()
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn usage_type(&self) -> ::std::option::Option<&str> {
+    pub fn usage_type(&self) -> ::std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The properties.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SavingsPlanOfferingRateProperty]> {
+    pub fn properties(&self) -> ::std::option::Option<& [crate::types::SavingsPlanOfferingRateProperty]> {
         self.properties.as_deref()
     }
 }
@@ -77,20 +72,16 @@ impl SavingsPlanOfferingRate {
 
 /// A builder for [`SavingsPlanOfferingRate`](crate::types::SavingsPlanOfferingRate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlanOfferingRateBuilder {
-    pub(crate) savings_plan_offering:
-        ::std::option::Option<crate::types::ParentSavingsPlanOffering>,
+    pub(crate) savings_plan_offering: ::std::option::Option<crate::types::ParentSavingsPlanOffering>,
     pub(crate) rate: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<crate::types::SavingsPlanRateUnit>,
     pub(crate) product_type: ::std::option::Option<crate::types::SavingsPlanProductType>,
     pub(crate) service_code: ::std::option::Option<crate::types::SavingsPlanRateServiceCode>,
     pub(crate) usage_type: ::std::option::Option<::std::string::String>,
     pub(crate) operation: ::std::option::Option<::std::string::String>,
-    pub(crate) properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateProperty>>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateProperty>>,
 }
 impl SavingsPlanOfferingRateBuilder {
     /// <p>The Savings Plan offering.</p>
@@ -99,12 +90,12 @@ impl SavingsPlanOfferingRateBuilder {
         self
     }
     /// <p>The Savings Plan offering.</p>
-    pub fn set_savings_plan_offering(
-        mut self,
-        input: ::std::option::Option<crate::types::ParentSavingsPlanOffering>,
-    ) -> Self {
-        self.savings_plan_offering = input;
-        self
+    pub fn set_savings_plan_offering(mut self, input: ::std::option::Option<crate::types::ParentSavingsPlanOffering>) -> Self {
+        self.savings_plan_offering = input; self
+    }
+    /// <p>The Savings Plan offering.</p>
+    pub fn get_savings_plan_offering(&self) -> &::std::option::Option<crate::types::ParentSavingsPlanOffering> {
+        &self.savings_plan_offering
     }
     /// <p>The Savings Plan rate.</p>
     pub fn rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,8 +104,11 @@ impl SavingsPlanOfferingRateBuilder {
     }
     /// <p>The Savings Plan rate.</p>
     pub fn set_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rate = input;
-        self
+        self.rate = input; self
+    }
+    /// <p>The Savings Plan rate.</p>
+    pub fn get_rate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rate
     }
     /// <p>The unit.</p>
     pub fn unit(mut self, input: crate::types::SavingsPlanRateUnit) -> Self {
@@ -122,12 +116,12 @@ impl SavingsPlanOfferingRateBuilder {
         self
     }
     /// <p>The unit.</p>
-    pub fn set_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanRateUnit>,
-    ) -> Self {
-        self.unit = input;
-        self
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::SavingsPlanRateUnit>) -> Self {
+        self.unit = input; self
+    }
+    /// <p>The unit.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::SavingsPlanRateUnit> {
+        &self.unit
     }
     /// <p>The product type.</p>
     pub fn product_type(mut self, input: crate::types::SavingsPlanProductType) -> Self {
@@ -135,12 +129,12 @@ impl SavingsPlanOfferingRateBuilder {
         self
     }
     /// <p>The product type.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanProductType>,
-    ) -> Self {
-        self.product_type = input;
-        self
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::SavingsPlanProductType>) -> Self {
+        self.product_type = input; self
+    }
+    /// <p>The product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::SavingsPlanProductType> {
+        &self.product_type
     }
     /// <p>The service.</p>
     pub fn service_code(mut self, input: crate::types::SavingsPlanRateServiceCode) -> Self {
@@ -148,12 +142,12 @@ impl SavingsPlanOfferingRateBuilder {
         self
     }
     /// <p>The service.</p>
-    pub fn set_service_code(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanRateServiceCode>,
-    ) -> Self {
-        self.service_code = input;
-        self
+    pub fn set_service_code(mut self, input: ::std::option::Option<crate::types::SavingsPlanRateServiceCode>) -> Self {
+        self.service_code = input; self
+    }
+    /// <p>The service.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<crate::types::SavingsPlanRateServiceCode> {
+        &self.service_code
     }
     /// <p>The usage details of the line item in the billing report.</p>
     pub fn usage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,8 +156,11 @@ impl SavingsPlanOfferingRateBuilder {
     }
     /// <p>The usage details of the line item in the billing report.</p>
     pub fn set_usage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_type = input;
-        self
+        self.usage_type = input; self
+    }
+    /// <p>The usage details of the line item in the billing report.</p>
+    pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_type
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,8 +169,11 @@ impl SavingsPlanOfferingRateBuilder {
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
+    }
+    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
     }
     /// Appends an item to `properties`.
     ///
@@ -182,31 +182,38 @@ impl SavingsPlanOfferingRateBuilder {
     /// <p>The properties.</p>
     pub fn properties(mut self, input: crate::types::SavingsPlanOfferingRateProperty) -> Self {
         let mut v = self.properties.unwrap_or_default();
-        v.push(input);
-        self.properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::SavingsPlanOfferingRateProperty>,
-        >,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateProperty>>) -> Self {
+        self.properties = input; self
+    }
+    /// <p>The properties.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateProperty>> {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`SavingsPlanOfferingRate`](crate::types::SavingsPlanOfferingRate).
     pub fn build(self) -> crate::types::SavingsPlanOfferingRate {
         crate::types::SavingsPlanOfferingRate {
-            savings_plan_offering: self.savings_plan_offering,
-            rate: self.rate,
-            unit: self.unit,
-            product_type: self.product_type,
-            service_code: self.service_code,
-            usage_type: self.usage_type,
-            operation: self.operation,
-            properties: self.properties,
+            savings_plan_offering: self.savings_plan_offering
+            ,
+            rate: self.rate
+            ,
+            unit: self.unit
+            ,
+            product_type: self.product_type
+            ,
+            service_code: self.service_code
+            ,
+            usage_type: self.usage_type
+            ,
+            operation: self.operation
+            ,
+            properties: self.properties
+            ,
         }
     }
 }
+

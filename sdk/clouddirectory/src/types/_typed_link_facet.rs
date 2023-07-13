@@ -3,31 +3,28 @@
 /// <p>Defines the typed links structure and its attributes. To create a typed link facet, use the <code>CreateTypedLinkFacet</code> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TypedLinkFacet {
+pub struct TypedLinkFacet  {
     /// <p>The unique name of the typed link facet.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
     #[doc(hidden)]
-    pub attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
     #[doc(hidden)]
     pub identity_attribute_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TypedLinkFacet {
     /// <p>The unique name of the typed link facet.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TypedLinkAttributeDefinition]> {
+    pub fn attributes(&self) -> ::std::option::Option<& [crate::types::TypedLinkAttributeDefinition]> {
         self.attributes.as_deref()
     }
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
-    pub fn identity_attribute_order(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn identity_attribute_order(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.identity_attribute_order.as_deref()
     }
 }
@@ -40,15 +37,11 @@ impl TypedLinkFacet {
 
 /// A builder for [`TypedLinkFacet`](crate::types::TypedLinkFacet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypedLinkFacetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
-    pub(crate) identity_attribute_order:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
+    pub(crate) identity_attribute_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TypedLinkFacetBuilder {
     /// <p>The unique name of the typed link facet.</p>
@@ -58,8 +51,11 @@ impl TypedLinkFacetBuilder {
     }
     /// <p>The unique name of the typed link facet.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `attributes`.
     ///
@@ -68,46 +64,47 @@ impl TypedLinkFacetBuilder {
     /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
     pub fn attributes(mut self, input: crate::types::TypedLinkAttributeDefinition) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>> {
+        &self.attributes
     }
     /// Appends an item to `identity_attribute_order`.
     ///
     /// To override the contents of this collection use [`set_identity_attribute_order`](Self::set_identity_attribute_order).
     ///
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
-    pub fn identity_attribute_order(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_attribute_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identity_attribute_order.unwrap_or_default();
-        v.push(input.into());
-        self.identity_attribute_order = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.identity_attribute_order = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
-    pub fn set_identity_attribute_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.identity_attribute_order = input;
-        self
+    pub fn set_identity_attribute_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.identity_attribute_order = input; self
+    }
+    /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
+    pub fn get_identity_attribute_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.identity_attribute_order
     }
     /// Consumes the builder and constructs a [`TypedLinkFacet`](crate::types::TypedLinkFacet).
     pub fn build(self) -> crate::types::TypedLinkFacet {
         crate::types::TypedLinkFacet {
-            name: self.name,
-            attributes: self.attributes,
-            identity_attribute_order: self.identity_attribute_order,
+            name: self.name
+            ,
+            attributes: self.attributes
+            ,
+            identity_attribute_order: self.identity_attribute_order
+            ,
         }
     }
 }
+

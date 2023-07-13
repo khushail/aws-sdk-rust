@@ -3,102 +3,87 @@ pub use crate::operation::update_smb_file_share_visibility::_update_smb_file_sha
 
 pub use crate::operation::update_smb_file_share_visibility::_update_smb_file_share_visibility_input::UpdateSmbFileShareVisibilityInputBuilder;
 
+impl UpdateSmbFileShareVisibilityInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_smb_file_share_visibility();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateSMBFileShareVisibility`.
-///
+/// 
 /// <p>Controls whether the shares on an S3 File Gateway are visible in a net view or browse list. The operation is only supported for S3 File Gateways.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSMBFileShareVisibilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder,
 }
-impl UpdateSMBFileShareVisibilityFluentBuilder {
+impl UpdateSMBFileShareVisibilityFluentBuilder  {
     /// Creates a new `UpdateSMBFileShareVisibility`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibility,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateSMBFileShareVisibility as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibility, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibility,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibility, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -108,6 +93,10 @@ impl UpdateSMBFileShareVisibilityFluentBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
     }
     /// <p>The shares on this gateway appear when listing shares.</p>
     pub fn file_shares_visible(mut self, input: bool) -> Self {
@@ -119,4 +108,9 @@ impl UpdateSMBFileShareVisibilityFluentBuilder {
         self.inner = self.inner.set_file_shares_visible(input);
         self
     }
+    /// <p>The shares on this gateway appear when listing shares.</p>
+    pub fn get_file_shares_visible(&self) -> &::std::option::Option<bool> {
+        self.inner.get_file_shares_visible()
+    }
 }
+

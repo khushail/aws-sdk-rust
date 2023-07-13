@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateActionTypeInput {
+pub struct UpdateActionTypeInput  {
     /// <p>The action type definition for the action type to be updated.</p>
     #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionTypeDeclaration>,
 }
 impl UpdateActionTypeInput {
     /// <p>The action type definition for the action type to be updated.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ActionTypeDeclaration> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::ActionTypeDeclaration> {
         self.action_type.as_ref()
     }
 }
 impl UpdateActionTypeInput {
     /// Creates a new builder-style object to manufacture [`UpdateActionTypeInput`](crate::operation::update_action_type::UpdateActionTypeInput).
-    pub fn builder() -> crate::operation::update_action_type::builders::UpdateActionTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_action_type::builders::UpdateActionTypeInputBuilder {
         crate::operation::update_action_type::builders::UpdateActionTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateActionTypeInput`](crate::operation::update_action_type::UpdateActionTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateActionTypeInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionTypeDeclaration>,
 }
@@ -36,24 +33,21 @@ impl UpdateActionTypeInputBuilder {
         self
     }
     /// <p>The action type definition for the action type to be updated.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeDeclaration>,
-    ) -> Self {
-        self.action_type = input;
-        self
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionTypeDeclaration>) -> Self {
+        self.action_type = input; self
+    }
+    /// <p>The action type definition for the action type to be updated.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionTypeDeclaration> {
+        &self.action_type
     }
     /// Consumes the builder and constructs a [`UpdateActionTypeInput`](crate::operation::update_action_type::UpdateActionTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_action_type::UpdateActionTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_action_type::UpdateActionTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_action_type::UpdateActionTypeInput {
-                action_type: self.action_type,
-            },
+                action_type: self.action_type
+                ,
+            }
         )
     }
 }
+

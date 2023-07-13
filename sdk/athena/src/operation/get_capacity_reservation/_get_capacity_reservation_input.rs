@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCapacityReservationInput {
+pub struct GetCapacityReservationInput  {
     /// <p>The name of the capacity reservation.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetCapacityReservationInput {
     /// <p>The name of the capacity reservation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`GetCapacityReservationInput`](crate::operation::get_capacity_reservation::GetCapacityReservationInput).
-    pub fn builder(
-    ) -> crate::operation::get_capacity_reservation::builders::GetCapacityReservationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_capacity_reservation::builders::GetCapacityReservationInputBuilder {
         crate::operation::get_capacity_reservation::builders::GetCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCapacityReservationInput`](crate::operation::get_capacity_reservation::GetCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCapacityReservationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetCapacityReservationInputBuilder {
     }
     /// <p>The name of the capacity reservation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the capacity reservation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`GetCapacityReservationInput`](crate::operation::get_capacity_reservation::GetCapacityReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_capacity_reservation::GetCapacityReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_capacity_reservation::GetCapacityReservationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_capacity_reservation::GetCapacityReservationInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

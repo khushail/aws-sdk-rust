@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserInput {
+pub struct UpdateUserInput  {
     /// <p>The name of the user</p>
     #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateUserInput {
 }
 impl UpdateUserInput {
     /// <p>The name of the user</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    pub fn authentication_mode(&self) -> ::std::option::Option<&crate::types::AuthenticationMode> {
+    pub fn authentication_mode(&self) -> ::std::option::Option<& crate::types::AuthenticationMode> {
         self.authentication_mode.as_ref()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(&self) -> ::std::option::Option<&str> {
+    pub fn access_string(&self) -> ::std::option::Option<& str> {
         self.access_string.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl UpdateUserInput {
 
 /// A builder for [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
@@ -52,8 +50,11 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The name of the user</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
+    }
+    /// <p>The name of the user</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
@@ -61,40 +62,38 @@ impl UpdateUserInputBuilder {
         self
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    pub fn set_authentication_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationMode>,
-    ) -> Self {
-        self.authentication_mode = input;
-        self
+    pub fn set_authentication_mode(mut self, input: ::std::option::Option<crate::types::AuthenticationMode>) -> Self {
+        self.authentication_mode = input; self
+    }
+    /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
+    pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        &self.authentication_mode
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.access_string = input;
-        self
+    pub fn set_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_string = input; self
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_string
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user::UpdateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
-            user_name: self.user_name,
-            authentication_mode: self.authentication_mode,
-            access_string: self.access_string,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_user::UpdateUserInput {
+                user_name: self.user_name
+                ,
+                authentication_mode: self.authentication_mode
+                ,
+                access_string: self.access_string
+                ,
+            }
+        )
     }
 }
+

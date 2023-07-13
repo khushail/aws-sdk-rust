@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEvaluationInput {
+pub struct UpdateEvaluationInput  {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
     #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
@@ -12,74 +12,65 @@ pub struct UpdateEvaluationInput {
 }
 impl UpdateEvaluationInput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> ::std::option::Option<& str> {
         self.evaluation_id.as_deref()
     }
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-    pub fn evaluation_name(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_name(&self) -> ::std::option::Option<& str> {
         self.evaluation_name.as_deref()
     }
 }
 impl UpdateEvaluationInput {
     /// Creates a new builder-style object to manufacture [`UpdateEvaluationInput`](crate::operation::update_evaluation::UpdateEvaluationInput).
-    pub fn builder() -> crate::operation::update_evaluation::builders::UpdateEvaluationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_evaluation::builders::UpdateEvaluationInputBuilder {
         crate::operation::update_evaluation::builders::UpdateEvaluationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEvaluationInput`](crate::operation::update_evaluation::UpdateEvaluationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEvaluationInputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEvaluationInputBuilder {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.evaluation_id = input;
-        self
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_id = input; self
+    }
+    /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
     }
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-    pub fn evaluation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-    pub fn set_evaluation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.evaluation_name = input;
-        self
+    pub fn set_evaluation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_name = input; self
+    }
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    pub fn get_evaluation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_name
     }
     /// Consumes the builder and constructs a [`UpdateEvaluationInput`](crate::operation::update_evaluation::UpdateEvaluationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_evaluation::UpdateEvaluationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_evaluation::UpdateEvaluationInput {
-            evaluation_id: self.evaluation_id,
-            evaluation_name: self.evaluation_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_evaluation::UpdateEvaluationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_evaluation::UpdateEvaluationInput {
+                evaluation_id: self.evaluation_id
+                ,
+                evaluation_name: self.evaluation_name
+                ,
+            }
+        )
     }
 }
+

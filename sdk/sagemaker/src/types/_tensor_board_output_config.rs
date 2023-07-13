@@ -3,7 +3,7 @@
 /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TensorBoardOutputConfig {
+pub struct TensorBoardOutputConfig  {
     /// <p>Path to local storage location for tensorBoard output. Defaults to <code>/opt/ml/output/tensorboard</code>.</p>
     #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct TensorBoardOutputConfig {
 }
 impl TensorBoardOutputConfig {
     /// <p>Path to local storage location for tensorBoard output. Defaults to <code>/opt/ml/output/tensorboard</code>.</p>
-    pub fn local_path(&self) -> ::std::option::Option<&str> {
+    pub fn local_path(&self) -> ::std::option::Option<& str> {
         self.local_path.as_deref()
     }
     /// <p>Path to Amazon S3 storage location for TensorBoard output.</p>
-    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<& str> {
         self.s3_output_path.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl TensorBoardOutputConfig {
 
 /// A builder for [`TensorBoardOutputConfig`](crate::types::TensorBoardOutputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TensorBoardOutputConfigBuilder {
     pub(crate) local_path: ::std::option::Option<::std::string::String>,
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl TensorBoardOutputConfigBuilder {
     }
     /// <p>Path to local storage location for tensorBoard output. Defaults to <code>/opt/ml/output/tensorboard</code>.</p>
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_path = input;
-        self
+        self.local_path = input; self
+    }
+    /// <p>Path to local storage location for tensorBoard output. Defaults to <code>/opt/ml/output/tensorboard</code>.</p>
+    pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_path
     }
     /// <p>Path to Amazon S3 storage location for TensorBoard output.</p>
-    pub fn s3_output_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Path to Amazon S3 storage location for TensorBoard output.</p>
-    pub fn set_s3_output_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.s3_output_path = input;
-        self
+    pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_output_path = input; self
+    }
+    /// <p>Path to Amazon S3 storage location for TensorBoard output.</p>
+    pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_path
     }
     /// Consumes the builder and constructs a [`TensorBoardOutputConfig`](crate::types::TensorBoardOutputConfig).
     pub fn build(self) -> crate::types::TensorBoardOutputConfig {
         crate::types::TensorBoardOutputConfig {
-            local_path: self.local_path,
-            s3_output_path: self.s3_output_path,
+            local_path: self.local_path
+            ,
+            s3_output_path: self.s3_output_path
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConnectionAliasPermissionsInput {
+pub struct DescribeConnectionAliasPermissionsInput  {
     /// <p>The identifier of the connection alias.</p>
     #[doc(hidden)]
     pub alias_id: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct DescribeConnectionAliasPermissionsInput {
 }
 impl DescribeConnectionAliasPermissionsInput {
     /// <p>The identifier of the connection alias.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -29,16 +29,14 @@ impl DescribeConnectionAliasPermissionsInput {
 }
 impl DescribeConnectionAliasPermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasPermissionsInput`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput).
-    pub fn builder() -> crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsInputBuilder {
         crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionAliasPermissionsInput`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionAliasPermissionsInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl DescribeConnectionAliasPermissionsInputBuilder {
     }
     /// <p>The identifier of the connection alias.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
+    }
+    /// <p>The identifier of the connection alias.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl DescribeConnectionAliasPermissionsInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,11 +76,14 @@ impl DescribeConnectionAliasPermissionsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeConnectionAliasPermissionsInput`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput {
                 alias_id: self.alias_id
@@ -89,3 +96,4 @@ impl DescribeConnectionAliasPermissionsInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MinTopRenditionSize {
+pub struct MinTopRenditionSize  {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     #[doc(hidden)]
     pub height: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl MinTopRenditionSize {
 
 /// A builder for [`MinTopRenditionSize`](crate::types::MinTopRenditionSize).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MinTopRenditionSizeBuilder {
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) width: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl MinTopRenditionSizeBuilder {
     }
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
+    }
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn width(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl MinTopRenditionSizeBuilder {
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
+    }
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
     }
     /// Consumes the builder and constructs a [`MinTopRenditionSize`](crate::types::MinTopRenditionSize).
     pub fn build(self) -> crate::types::MinTopRenditionSize {
         crate::types::MinTopRenditionSize {
-            height: self.height,
-            width: self.width,
+            height: self.height
+            ,
+            width: self.width
+            ,
         }
     }
 }
+

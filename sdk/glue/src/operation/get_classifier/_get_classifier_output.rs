@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetClassifierOutput {
+pub struct GetClassifierOutput  {
     /// <p>The requested classifier.</p>
     #[doc(hidden)]
     pub classifier: ::std::option::Option<crate::types::Classifier>,
@@ -10,15 +10,15 @@ pub struct GetClassifierOutput {
 }
 impl GetClassifierOutput {
     /// <p>The requested classifier.</p>
-    pub fn classifier(&self) -> ::std::option::Option<&crate::types::Classifier> {
+    pub fn classifier(&self) -> ::std::option::Option<& crate::types::Classifier> {
         self.classifier.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetClassifierOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetClassifierOutput {
     /// Creates a new builder-style object to manufacture [`GetClassifierOutput`](crate::operation::get_classifier::GetClassifierOutput).
     pub fn builder() -> crate::operation::get_classifier::builders::GetClassifierOutputBuilder {
@@ -28,9 +28,7 @@ impl GetClassifierOutput {
 
 /// A builder for [`GetClassifierOutput`](crate::operation::get_classifier::GetClassifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClassifierOutputBuilder {
     pub(crate) classifier: ::std::option::Option<crate::types::Classifier>,
     _request_id: Option<String>,
@@ -42,27 +40,29 @@ impl GetClassifierOutputBuilder {
         self
     }
     /// <p>The requested classifier.</p>
-    pub fn set_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::Classifier>,
-    ) -> Self {
-        self.classifier = input;
-        self
+    pub fn set_classifier(mut self, input: ::std::option::Option<crate::types::Classifier>) -> Self {
+        self.classifier = input; self
+    }
+    /// <p>The requested classifier.</p>
+    pub fn get_classifier(&self) -> &::std::option::Option<crate::types::Classifier> {
+        &self.classifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetClassifierOutput`](crate::operation::get_classifier::GetClassifierOutput).
     pub fn build(self) -> crate::operation::get_classifier::GetClassifierOutput {
         crate::operation::get_classifier::GetClassifierOutput {
-            classifier: self.classifier,
+            classifier: self.classifier
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

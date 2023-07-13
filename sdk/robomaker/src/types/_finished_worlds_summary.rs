@@ -3,7 +3,7 @@
 /// <p>Information about worlds that finished.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FinishedWorldsSummary {
+pub struct FinishedWorldsSummary  {
     /// <p>The total number of finished worlds.</p>
     #[doc(hidden)]
     pub finished_count: i32,
@@ -20,11 +20,11 @@ impl FinishedWorldsSummary {
         self.finished_count
     }
     /// <p>A list of worlds that succeeded.</p>
-    pub fn succeeded_worlds(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn succeeded_worlds(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.succeeded_worlds.as_deref()
     }
     /// <p>Information about worlds that failed.</p>
-    pub fn failure_summary(&self) -> ::std::option::Option<&crate::types::FailureSummary> {
+    pub fn failure_summary(&self) -> ::std::option::Option<& crate::types::FailureSummary> {
         self.failure_summary.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl FinishedWorldsSummary {
 
 /// A builder for [`FinishedWorldsSummary`](crate::types::FinishedWorldsSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FinishedWorldsSummaryBuilder {
     pub(crate) finished_count: ::std::option::Option<i32>,
     pub(crate) succeeded_worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,30 +51,30 @@ impl FinishedWorldsSummaryBuilder {
     }
     /// <p>The total number of finished worlds.</p>
     pub fn set_finished_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.finished_count = input;
-        self
+        self.finished_count = input; self
+    }
+    /// <p>The total number of finished worlds.</p>
+    pub fn get_finished_count(&self) -> &::std::option::Option<i32> {
+        &self.finished_count
     }
     /// Appends an item to `succeeded_worlds`.
     ///
     /// To override the contents of this collection use [`set_succeeded_worlds`](Self::set_succeeded_worlds).
     ///
     /// <p>A list of worlds that succeeded.</p>
-    pub fn succeeded_worlds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn succeeded_worlds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.succeeded_worlds.unwrap_or_default();
-        v.push(input.into());
-        self.succeeded_worlds = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.succeeded_worlds = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of worlds that succeeded.</p>
-    pub fn set_succeeded_worlds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.succeeded_worlds = input;
-        self
+    pub fn set_succeeded_worlds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.succeeded_worlds = input; self
+    }
+    /// <p>A list of worlds that succeeded.</p>
+    pub fn get_succeeded_worlds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.succeeded_worlds
     }
     /// <p>Information about worlds that failed.</p>
     pub fn failure_summary(mut self, input: crate::types::FailureSummary) -> Self {
@@ -84,19 +82,24 @@ impl FinishedWorldsSummaryBuilder {
         self
     }
     /// <p>Information about worlds that failed.</p>
-    pub fn set_failure_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureSummary>,
-    ) -> Self {
-        self.failure_summary = input;
-        self
+    pub fn set_failure_summary(mut self, input: ::std::option::Option<crate::types::FailureSummary>) -> Self {
+        self.failure_summary = input; self
+    }
+    /// <p>Information about worlds that failed.</p>
+    pub fn get_failure_summary(&self) -> &::std::option::Option<crate::types::FailureSummary> {
+        &self.failure_summary
     }
     /// Consumes the builder and constructs a [`FinishedWorldsSummary`](crate::types::FinishedWorldsSummary).
     pub fn build(self) -> crate::types::FinishedWorldsSummary {
         crate::types::FinishedWorldsSummary {
-            finished_count: self.finished_count.unwrap_or_default(),
-            succeeded_worlds: self.succeeded_worlds,
-            failure_summary: self.failure_summary,
+            finished_count: self.finished_count
+                .unwrap_or_default()
+            ,
+            succeeded_worlds: self.succeeded_worlds
+            ,
+            failure_summary: self.failure_summary
+            ,
         }
     }
 }
+

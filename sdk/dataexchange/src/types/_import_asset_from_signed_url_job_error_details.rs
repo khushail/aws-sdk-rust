@@ -3,14 +3,14 @@
 /// <p>Details about the job error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportAssetFromSignedUrlJobErrorDetails {
+pub struct ImportAssetFromSignedUrlJobErrorDetails  {
     /// <p>Details about the job error.</p>
     #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Details about the job error.</p>
-    pub fn asset_name(&self) -> ::std::option::Option<&str> {
+    pub fn asset_name(&self) -> ::std::option::Option<& str> {
         self.asset_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ImportAssetFromSignedUrlJobErrorDetails {
 
 /// A builder for [`ImportAssetFromSignedUrlJobErrorDetails`](crate::types::ImportAssetFromSignedUrlJobErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlJobErrorDetailsBuilder {
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ImportAssetFromSignedUrlJobErrorDetailsBuilder {
     }
     /// <p>Details about the job error.</p>
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_name = input;
-        self
+        self.asset_name = input; self
+    }
+    /// <p>Details about the job error.</p>
+    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_name
     }
     /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlJobErrorDetails`](crate::types::ImportAssetFromSignedUrlJobErrorDetails).
     pub fn build(self) -> crate::types::ImportAssetFromSignedUrlJobErrorDetails {
         crate::types::ImportAssetFromSignedUrlJobErrorDetails {
-            asset_name: self.asset_name,
+            asset_name: self.asset_name
+            ,
         }
     }
 }
+

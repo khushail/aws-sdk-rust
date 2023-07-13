@@ -3,14 +3,14 @@
 /// <p>Defines when your alarm is invoked.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlarmRule {
+pub struct AlarmRule  {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
     #[doc(hidden)]
     pub simple_rule: ::std::option::Option<crate::types::SimpleRule>,
 }
 impl AlarmRule {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
-    pub fn simple_rule(&self) -> ::std::option::Option<&crate::types::SimpleRule> {
+    pub fn simple_rule(&self) -> ::std::option::Option<& crate::types::SimpleRule> {
         self.simple_rule.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl AlarmRule {
 
 /// A builder for [`AlarmRule`](crate::types::AlarmRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmRuleBuilder {
     pub(crate) simple_rule: ::std::option::Option<crate::types::SimpleRule>,
 }
@@ -36,17 +34,19 @@ impl AlarmRuleBuilder {
         self
     }
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
-    pub fn set_simple_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::SimpleRule>,
-    ) -> Self {
-        self.simple_rule = input;
-        self
+    pub fn set_simple_rule(mut self, input: ::std::option::Option<crate::types::SimpleRule>) -> Self {
+        self.simple_rule = input; self
+    }
+    /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
+    pub fn get_simple_rule(&self) -> &::std::option::Option<crate::types::SimpleRule> {
+        &self.simple_rule
     }
     /// Consumes the builder and constructs a [`AlarmRule`](crate::types::AlarmRule).
     pub fn build(self) -> crate::types::AlarmRule {
         crate::types::AlarmRule {
-            simple_rule: self.simple_rule,
+            simple_rule: self.simple_rule
+            ,
         }
     }
 }
+

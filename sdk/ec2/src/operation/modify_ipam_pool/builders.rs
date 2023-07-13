@@ -3,103 +3,88 @@ pub use crate::operation::modify_ipam_pool::_modify_ipam_pool_output::ModifyIpam
 
 pub use crate::operation::modify_ipam_pool::_modify_ipam_pool_input::ModifyIpamPoolInputBuilder;
 
+impl ModifyIpamPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::modify_ipam_pool::ModifyIpamPoolOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.modify_ipam_pool();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ModifyIpamPool`.
-///
-/// <p>Modify the configurations of an IPAM pool.</p>
+/// 
+/// <p>Modify the configurations of an IPAM pool.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/mod-pool-ipam.html">Modify a pool</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyIpamPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_ipam_pool::builders::ModifyIpamPoolInputBuilder,
+                    inner: crate::operation::modify_ipam_pool::builders::ModifyIpamPoolInputBuilder,
 }
-impl ModifyIpamPoolFluentBuilder {
+impl ModifyIpamPoolFluentBuilder  {
     /// Creates a new `ModifyIpamPool`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_ipam_pool::ModifyIpamPool,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ModifyIpamPool as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_ipam_pool::builders::ModifyIpamPoolInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_ipam_pool::ModifyIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::modify_ipam_pool::ModifyIpamPool, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_pool::ModifyIpamPoolError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_ipam_pool::ModifyIpamPoolOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_pool::ModifyIpamPoolError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_ipam_pool::ModifyIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_ipam_pool::ModifyIpamPool,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_pool::ModifyIpamPoolError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_ipam_pool::ModifyIpamPoolOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_pool::ModifyIpamPoolError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::modify_ipam_pool::ModifyIpamPool, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_pool::ModifyIpamPoolError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -109,6 +94,10 @@ impl ModifyIpamPoolFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The ID of the IPAM pool you want to modify.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +109,10 @@ impl ModifyIpamPoolFluentBuilder {
         self.inner = self.inner.set_ipam_pool_id(input);
         self
     }
+    /// <p>The ID of the IPAM pool you want to modify.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_pool_id()
+    }
     /// <p>The description of the IPAM pool you want to modify.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -130,17 +123,26 @@ impl ModifyIpamPoolFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>If true, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p>
+    /// <p>The description of the IPAM pool you want to modify.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
+    /// <p>If true, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p> 
     /// <p>A locale must be set on the pool for this feature to work.</p>
     pub fn auto_import(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_import(input);
         self
     }
-    /// <p>If true, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p>
+    /// <p>If true, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p> 
     /// <p>A locale must be set on the pool for this feature to work.</p>
     pub fn set_auto_import(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_import(input);
         self
+    }
+    /// <p>If true, IPAM will continuously look for resources within the CIDR range of this pool and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only. </p> 
+    /// <p>A locale must be set on the pool for this feature to work.</p>
+    pub fn get_auto_import(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_import()
     }
     /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128. The minimum netmask length must be less than the maximum netmask length.</p>
     pub fn allocation_min_netmask_length(mut self, input: i32) -> Self {
@@ -152,6 +154,10 @@ impl ModifyIpamPoolFluentBuilder {
         self.inner = self.inner.set_allocation_min_netmask_length(input);
         self
     }
+    /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128. The minimum netmask length must be less than the maximum netmask length.</p>
+    pub fn get_allocation_min_netmask_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_allocation_min_netmask_length()
+    }
     /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.The maximum netmask length must be greater than the minimum netmask length.</p>
     pub fn allocation_max_netmask_length(mut self, input: i32) -> Self {
         self.inner = self.inner.allocation_max_netmask_length(input);
@@ -162,18 +168,23 @@ impl ModifyIpamPoolFluentBuilder {
         self.inner = self.inner.set_allocation_max_netmask_length(input);
         self
     }
+    /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.The maximum netmask length must be greater than the minimum netmask length.</p>
+    pub fn get_allocation_max_netmask_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_allocation_max_netmask_length()
+    }
     /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
     pub fn allocation_default_netmask_length(mut self, input: i32) -> Self {
         self.inner = self.inner.allocation_default_netmask_length(input);
         self
     }
     /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
-    pub fn set_allocation_default_netmask_length(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_allocation_default_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocation_default_netmask_length(input);
         self
+    }
+    /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
+    pub fn get_allocation_default_netmask_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_allocation_default_netmask_length()
     }
     /// <p>Clear the default netmask length allocation rule for this pool.</p>
     pub fn clear_allocation_default_netmask_length(mut self, input: bool) -> Self {
@@ -181,53 +192,49 @@ impl ModifyIpamPoolFluentBuilder {
         self
     }
     /// <p>Clear the default netmask length allocation rule for this pool.</p>
-    pub fn set_clear_allocation_default_netmask_length(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_clear_allocation_default_netmask_length(input);
+    pub fn set_clear_allocation_default_netmask_length(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_clear_allocation_default_netmask_length(input);
         self
+    }
+    /// <p>Clear the default netmask length allocation rule for this pool.</p>
+    pub fn get_clear_allocation_default_netmask_length(&self) -> &::std::option::Option<bool> {
+        self.inner.get_clear_allocation_default_netmask_length()
     }
     /// Appends an item to `AddAllocationResourceTags`.
     ///
     /// To override the contents of this collection use [`set_add_allocation_resource_tags`](Self::set_add_allocation_resource_tags).
     ///
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn add_allocation_resource_tags(
-        mut self,
-        input: crate::types::RequestIpamResourceTag,
-    ) -> Self {
+    pub fn add_allocation_resource_tags(mut self, input: crate::types::RequestIpamResourceTag) -> Self {
         self.inner = self.inner.add_allocation_resource_tags(input);
         self
     }
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_add_allocation_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
-    ) -> Self {
+    pub fn set_add_allocation_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>) -> Self {
         self.inner = self.inner.set_add_allocation_resource_tags(input);
         self
+    }
+    /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_add_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+        self.inner.get_add_allocation_resource_tags()
     }
     /// Appends an item to `RemoveAllocationResourceTags`.
     ///
     /// To override the contents of this collection use [`set_remove_allocation_resource_tags`](Self::set_remove_allocation_resource_tags).
     ///
     /// <p>Remove tag allocation rules from a pool.</p>
-    pub fn remove_allocation_resource_tags(
-        mut self,
-        input: crate::types::RequestIpamResourceTag,
-    ) -> Self {
+    pub fn remove_allocation_resource_tags(mut self, input: crate::types::RequestIpamResourceTag) -> Self {
         self.inner = self.inner.remove_allocation_resource_tags(input);
         self
     }
     /// <p>Remove tag allocation rules from a pool.</p>
-    pub fn set_remove_allocation_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
-    ) -> Self {
+    pub fn set_remove_allocation_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>) -> Self {
         self.inner = self.inner.set_remove_allocation_resource_tags(input);
         self
     }
+    /// <p>Remove tag allocation rules from a pool.</p>
+    pub fn get_remove_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+        self.inner.get_remove_allocation_resource_tags()
+    }
 }
+

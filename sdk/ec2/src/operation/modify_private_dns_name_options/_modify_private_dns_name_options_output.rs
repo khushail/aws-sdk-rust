@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyPrivateDnsNameOptionsOutput {
+pub struct ModifyPrivateDnsNameOptionsOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     #[doc(hidden)]
     pub r#return: ::std::option::Option<bool>,
@@ -15,22 +15,20 @@ impl ModifyPrivateDnsNameOptionsOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for ModifyPrivateDnsNameOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyPrivateDnsNameOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyPrivateDnsNameOptionsOutput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput).
-    pub fn builder() -> crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder {
         crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyPrivateDnsNameOptionsOutput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyPrivateDnsNameOptionsOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -43,25 +41,28 @@ impl ModifyPrivateDnsNameOptionsOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#return = input;
-        self
+        self.r#return = input; self
+    }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyPrivateDnsNameOptionsOutput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput {
+    pub fn build(self) -> crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput {
         crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput {
-            r#return: self.r#return,
+            r#return: self.r#return
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

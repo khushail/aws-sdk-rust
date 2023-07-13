@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeListenerCertificatesInput {
+pub struct DescribeListenerCertificatesInput  {
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct DescribeListenerCertificatesInput {
 }
 impl DescribeListenerCertificatesInput {
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> ::std::option::Option<&str> {
+    pub fn listener_arn(&self) -> ::std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -29,16 +29,14 @@ impl DescribeListenerCertificatesInput {
 }
 impl DescribeListenerCertificatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeListenerCertificatesInput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput).
-    pub fn builder() -> crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder{
+    pub fn builder() -> crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder {
         crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeListenerCertificatesInput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenerCertificatesInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl DescribeListenerCertificatesInputBuilder {
     }
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl DescribeListenerCertificatesInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -72,22 +76,24 @@ impl DescribeListenerCertificatesInputBuilder {
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
+    }
+    /// <p>The maximum number of results to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`DescribeListenerCertificatesInput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput {
-                listener_arn: self.listener_arn,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
+                listener_arn: self.listener_arn
+                ,
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+            }
         )
     }
 }
+

@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateServiceQuotaTemplateInput {}
+pub struct AssociateServiceQuotaTemplateInput  {
+}
 impl AssociateServiceQuotaTemplateInput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceQuotaTemplateInput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateInput).
-    pub fn builder() -> crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateInputBuilder{
+    pub fn builder() -> crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateInputBuilder {
         crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateServiceQuotaTemplateInput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct AssociateServiceQuotaTemplateInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct AssociateServiceQuotaTemplateInputBuilder {
+}
 impl AssociateServiceQuotaTemplateInputBuilder {
     /// Consumes the builder and constructs a [`AssociateServiceQuotaTemplateInput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateInput {
             }
         )
     }
 }
+

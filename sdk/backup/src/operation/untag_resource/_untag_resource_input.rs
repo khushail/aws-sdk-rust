@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -12,15 +12,15 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
-    pub fn tag_key_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn tag_key_list(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.tag_key_list.as_deref()
     }
 }
-impl ::std::fmt::Debug for UntagResourceInput {
+impl  ::std::fmt::Debug for UntagResourceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -50,8 +50,11 @@ impl UntagResourceInputBuilder {
     }
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `tag_key_list`.
     ///
@@ -60,29 +63,28 @@ impl UntagResourceInputBuilder {
     /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
     pub fn tag_key_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_key_list.unwrap_or_default();
-        v.push(input.into());
-        self.tag_key_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_key_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
-    pub fn set_tag_key_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.tag_key_list = input;
-        self
+    pub fn set_tag_key_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tag_key_list = input; self
+    }
+    /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
+    pub fn get_tag_key_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_resource::UntagResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
-            resource_arn: self.resource_arn,
-            tag_key_list: self.tag_key_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::untag_resource::UntagResourceInput {
+                resource_arn: self.resource_arn
+                ,
+                tag_key_list: self.tag_key_list
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UntagResourceInputBuilder {
@@ -93,3 +95,4 @@ impl ::std::fmt::Debug for UntagResourceInputBuilder {
         formatter.finish()
     }
 }
+

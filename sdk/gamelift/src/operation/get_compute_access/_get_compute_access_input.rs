@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetComputeAccessInput {
+pub struct GetComputeAccessInput  {
     /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
     #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct GetComputeAccessInput {
 }
 impl GetComputeAccessInput {
     /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The name of the compute resource you are requesting credentials for.</p>
-    pub fn compute_name(&self) -> ::std::option::Option<&str> {
+    pub fn compute_name(&self) -> ::std::option::Option<& str> {
         self.compute_name.as_deref()
     }
 }
 impl GetComputeAccessInput {
     /// Creates a new builder-style object to manufacture [`GetComputeAccessInput`](crate::operation::get_compute_access::GetComputeAccessInput).
-    pub fn builder() -> crate::operation::get_compute_access::builders::GetComputeAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_compute_access::builders::GetComputeAccessInputBuilder {
         crate::operation::get_compute_access::builders::GetComputeAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`GetComputeAccessInput`](crate::operation::get_compute_access::GetComputeAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComputeAccessInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl GetComputeAccessInputBuilder {
     }
     /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
+    }
+    /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// <p>The name of the compute resource you are requesting credentials for.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl GetComputeAccessInputBuilder {
     }
     /// <p>The name of the compute resource you are requesting credentials for.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compute_name = input;
-        self
+        self.compute_name = input; self
+    }
+    /// <p>The name of the compute resource you are requesting credentials for.</p>
+    pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_name
     }
     /// Consumes the builder and constructs a [`GetComputeAccessInput`](crate::operation::get_compute_access::GetComputeAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compute_access::GetComputeAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_compute_access::GetComputeAccessInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_compute_access::GetComputeAccessInput {
-                fleet_id: self.fleet_id,
-                compute_name: self.compute_name,
-            },
+                fleet_id: self.fleet_id
+                ,
+                compute_name: self.compute_name
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGatewayRouteInput {
+pub struct CreateGatewayRouteInput  {
     /// <p>The name to use for the gateway route.</p>
     #[doc(hidden)]
     pub gateway_route_name: ::std::option::Option<::std::string::String>,
@@ -27,47 +27,44 @@ pub struct CreateGatewayRouteInput {
 }
 impl CreateGatewayRouteInput {
     /// <p>The name to use for the gateway route.</p>
-    pub fn gateway_route_name(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_route_name(&self) -> ::std::option::Option<& str> {
         self.gateway_route_name.as_deref()
     }
     /// <p>The name of the service mesh to create the gateway route in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
+    pub fn mesh_name(&self) -> ::std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_gateway_name(&self) -> ::std::option::Option<& str> {
         self.virtual_gateway_name.as_deref()
     }
     /// <p>The gateway route specification to apply.</p>
-    pub fn spec(&self) -> ::std::option::Option<&crate::types::GatewayRouteSpec> {
+    pub fn spec(&self) -> ::std::option::Option<& crate::types::GatewayRouteSpec> {
         self.spec.as_ref()
     }
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagRef]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::TagRef]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> ::std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
 }
 impl CreateGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`CreateGatewayRouteInput`](crate::operation::create_gateway_route::CreateGatewayRouteInput).
-    pub fn builder(
-    ) -> crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder {
+    pub fn builder() -> crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder {
         crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGatewayRouteInput`](crate::operation::create_gateway_route::CreateGatewayRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGatewayRouteInputBuilder {
     pub(crate) gateway_route_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -79,20 +76,17 @@ pub struct CreateGatewayRouteInputBuilder {
 }
 impl CreateGatewayRouteInputBuilder {
     /// <p>The name to use for the gateway route.</p>
-    pub fn gateway_route_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_route_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to use for the gateway route.</p>
-    pub fn set_gateway_route_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.gateway_route_name = input;
-        self
+    pub fn set_gateway_route_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.gateway_route_name = input; self
+    }
+    /// <p>The name to use for the gateway route.</p>
+    pub fn get_gateway_route_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_route_name
     }
     /// <p>The name of the service mesh to create the gateway route in.</p>
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,24 +95,24 @@ impl CreateGatewayRouteInputBuilder {
     }
     /// <p>The name of the service mesh to create the gateway route in.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
+    }
+    /// <p>The name of the service mesh to create the gateway route in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_gateway_name = input;
-        self
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_gateway_name = input; self
+    }
+    /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
+    pub fn get_virtual_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_name
     }
     /// <p>The gateway route specification to apply.</p>
     pub fn spec(mut self, input: crate::types::GatewayRouteSpec) -> Self {
@@ -126,12 +120,12 @@ impl CreateGatewayRouteInputBuilder {
         self
     }
     /// <p>The gateway route specification to apply.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteSpec>,
-    ) -> Self {
-        self.spec = input;
-        self
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::GatewayRouteSpec>) -> Self {
+        self.spec = input; self
+    }
+    /// <p>The gateway route specification to apply.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::GatewayRouteSpec> {
+        &self.spec
     }
     /// Appends an item to `tags`.
     ///
@@ -140,17 +134,17 @@ impl CreateGatewayRouteInputBuilder {
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::TagRef) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagRef>> {
+        &self.tags
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,8 +153,11 @@ impl CreateGatewayRouteInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,26 +166,32 @@ impl CreateGatewayRouteInputBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_owner = input;
-        self
+        self.mesh_owner = input; self
+    }
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn get_mesh_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`CreateGatewayRouteInput`](crate::operation::create_gateway_route::CreateGatewayRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_gateway_route::CreateGatewayRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_gateway_route::CreateGatewayRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_gateway_route::CreateGatewayRouteInput {
-                gateway_route_name: self.gateway_route_name,
-                mesh_name: self.mesh_name,
-                virtual_gateway_name: self.virtual_gateway_name,
-                spec: self.spec,
-                tags: self.tags,
-                client_token: self.client_token,
-                mesh_owner: self.mesh_owner,
-            },
+                gateway_route_name: self.gateway_route_name
+                ,
+                mesh_name: self.mesh_name
+                ,
+                virtual_gateway_name: self.virtual_gateway_name
+                ,
+                spec: self.spec
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+            }
         )
     }
 }
+

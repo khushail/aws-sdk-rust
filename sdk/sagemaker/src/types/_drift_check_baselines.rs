@@ -3,7 +3,7 @@
 /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DriftCheckBaselines {
+pub struct DriftCheckBaselines  {
     /// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the model package. </p>
     #[doc(hidden)]
     pub bias: ::std::option::Option<crate::types::DriftCheckBias>,
@@ -19,21 +19,19 @@ pub struct DriftCheckBaselines {
 }
 impl DriftCheckBaselines {
     /// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the model package. </p>
-    pub fn bias(&self) -> ::std::option::Option<&crate::types::DriftCheckBias> {
+    pub fn bias(&self) -> ::std::option::Option<& crate::types::DriftCheckBias> {
         self.bias.as_ref()
     }
     /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using the model package. </p>
-    pub fn explainability(&self) -> ::std::option::Option<&crate::types::DriftCheckExplainability> {
+    pub fn explainability(&self) -> ::std::option::Option<& crate::types::DriftCheckExplainability> {
         self.explainability.as_ref()
     }
     /// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using the model package.</p>
-    pub fn model_quality(&self) -> ::std::option::Option<&crate::types::DriftCheckModelQuality> {
+    pub fn model_quality(&self) -> ::std::option::Option<& crate::types::DriftCheckModelQuality> {
         self.model_quality.as_ref()
     }
     /// <p>Represents the drift check model data quality baselines that can be used when the model monitor is set using the model package.</p>
-    pub fn model_data_quality(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DriftCheckModelDataQuality> {
+    pub fn model_data_quality(&self) -> ::std::option::Option<& crate::types::DriftCheckModelDataQuality> {
         self.model_data_quality.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl DriftCheckBaselines {
 
 /// A builder for [`DriftCheckBaselines`](crate::types::DriftCheckBaselines).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DriftCheckBaselinesBuilder {
     pub(crate) bias: ::std::option::Option<crate::types::DriftCheckBias>,
     pub(crate) explainability: ::std::option::Option<crate::types::DriftCheckExplainability>,
@@ -63,8 +59,11 @@ impl DriftCheckBaselinesBuilder {
     }
     /// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the model package. </p>
     pub fn set_bias(mut self, input: ::std::option::Option<crate::types::DriftCheckBias>) -> Self {
-        self.bias = input;
-        self
+        self.bias = input; self
+    }
+    /// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the model package. </p>
+    pub fn get_bias(&self) -> &::std::option::Option<crate::types::DriftCheckBias> {
+        &self.bias
     }
     /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using the model package. </p>
     pub fn explainability(mut self, input: crate::types::DriftCheckExplainability) -> Self {
@@ -72,12 +71,12 @@ impl DriftCheckBaselinesBuilder {
         self
     }
     /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using the model package. </p>
-    pub fn set_explainability(
-        mut self,
-        input: ::std::option::Option<crate::types::DriftCheckExplainability>,
-    ) -> Self {
-        self.explainability = input;
-        self
+    pub fn set_explainability(mut self, input: ::std::option::Option<crate::types::DriftCheckExplainability>) -> Self {
+        self.explainability = input; self
+    }
+    /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using the model package. </p>
+    pub fn get_explainability(&self) -> &::std::option::Option<crate::types::DriftCheckExplainability> {
+        &self.explainability
     }
     /// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using the model package.</p>
     pub fn model_quality(mut self, input: crate::types::DriftCheckModelQuality) -> Self {
@@ -85,12 +84,12 @@ impl DriftCheckBaselinesBuilder {
         self
     }
     /// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using the model package.</p>
-    pub fn set_model_quality(
-        mut self,
-        input: ::std::option::Option<crate::types::DriftCheckModelQuality>,
-    ) -> Self {
-        self.model_quality = input;
-        self
+    pub fn set_model_quality(mut self, input: ::std::option::Option<crate::types::DriftCheckModelQuality>) -> Self {
+        self.model_quality = input; self
+    }
+    /// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using the model package.</p>
+    pub fn get_model_quality(&self) -> &::std::option::Option<crate::types::DriftCheckModelQuality> {
+        &self.model_quality
     }
     /// <p>Represents the drift check model data quality baselines that can be used when the model monitor is set using the model package.</p>
     pub fn model_data_quality(mut self, input: crate::types::DriftCheckModelDataQuality) -> Self {
@@ -98,20 +97,25 @@ impl DriftCheckBaselinesBuilder {
         self
     }
     /// <p>Represents the drift check model data quality baselines that can be used when the model monitor is set using the model package.</p>
-    pub fn set_model_data_quality(
-        mut self,
-        input: ::std::option::Option<crate::types::DriftCheckModelDataQuality>,
-    ) -> Self {
-        self.model_data_quality = input;
-        self
+    pub fn set_model_data_quality(mut self, input: ::std::option::Option<crate::types::DriftCheckModelDataQuality>) -> Self {
+        self.model_data_quality = input; self
+    }
+    /// <p>Represents the drift check model data quality baselines that can be used when the model monitor is set using the model package.</p>
+    pub fn get_model_data_quality(&self) -> &::std::option::Option<crate::types::DriftCheckModelDataQuality> {
+        &self.model_data_quality
     }
     /// Consumes the builder and constructs a [`DriftCheckBaselines`](crate::types::DriftCheckBaselines).
     pub fn build(self) -> crate::types::DriftCheckBaselines {
         crate::types::DriftCheckBaselines {
-            bias: self.bias,
-            explainability: self.explainability,
-            model_quality: self.model_quality,
-            model_data_quality: self.model_data_quality,
+            bias: self.bias
+            ,
+            explainability: self.explainability
+            ,
+            model_quality: self.model_quality
+            ,
+            model_data_quality: self.model_data_quality
+            ,
         }
     }
 }
+

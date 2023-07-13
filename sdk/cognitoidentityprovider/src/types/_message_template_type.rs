@@ -3,7 +3,7 @@
 /// <p>The message template structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageTemplateType {
+pub struct MessageTemplateType  {
     /// <p>The message template for SMS messages.</p>
     #[doc(hidden)]
     pub sms_message: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct MessageTemplateType {
 }
 impl MessageTemplateType {
     /// <p>The message template for SMS messages.</p>
-    pub fn sms_message(&self) -> ::std::option::Option<&str> {
+    pub fn sms_message(&self) -> ::std::option::Option<& str> {
         self.sms_message.as_deref()
     }
     /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn email_message(&self) -> ::std::option::Option<&str> {
+    pub fn email_message(&self) -> ::std::option::Option<& str> {
         self.email_message.as_deref()
     }
     /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn email_subject(&self) -> ::std::option::Option<&str> {
+    pub fn email_subject(&self) -> ::std::option::Option<& str> {
         self.email_subject.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl MessageTemplateType {
 
 /// A builder for [`MessageTemplateType`](crate::types::MessageTemplateType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageTemplateTypeBuilder {
     pub(crate) sms_message: ::std::option::Option<::std::string::String>,
     pub(crate) email_message: ::std::option::Option<::std::string::String>,
@@ -53,47 +51,48 @@ impl MessageTemplateTypeBuilder {
     }
     /// <p>The message template for SMS messages.</p>
     pub fn set_sms_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sms_message = input;
-        self
+        self.sms_message = input; self
+    }
+    /// <p>The message template for SMS messages.</p>
+    pub fn get_sms_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sms_message
     }
     /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn email_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn set_email_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.email_message = input;
-        self
+    pub fn set_email_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.email_message = input; self
+    }
+    /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn get_email_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_message
     }
     /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn email_subject(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn set_email_subject(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.email_subject = input;
-        self
+    pub fn set_email_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.email_subject = input; self
+    }
+    /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn get_email_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_subject
     }
     /// Consumes the builder and constructs a [`MessageTemplateType`](crate::types::MessageTemplateType).
     pub fn build(self) -> crate::types::MessageTemplateType {
         crate::types::MessageTemplateType {
-            sms_message: self.sms_message,
-            email_message: self.email_message,
-            email_subject: self.email_subject,
+            sms_message: self.sms_message
+            ,
+            email_message: self.email_message
+            ,
+            email_subject: self.email_subject
+            ,
         }
     }
 }
+

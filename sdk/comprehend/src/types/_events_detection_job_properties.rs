@@ -3,11 +3,11 @@
 /// <p>Provides information about an events detection job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventsDetectionJobProperties {
+pub struct EventsDetectionJobProperties  {
     /// <p>The identifier assigned to the events detection job.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -18,8 +18,8 @@ pub struct EventsDetectionJobProperties {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
@@ -56,10 +56,10 @@ pub struct EventsDetectionJobProperties {
 }
 impl EventsDetectionJobProperties {
     /// <p>The identifier assigned to the events detection job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -70,50 +70,50 @@ impl EventsDetectionJobProperties {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The name you assigned the events detection job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The current status of the events detection job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>A description of the status of the events detection job.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time that the events detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the events detection job completed.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input data configuration that you supplied when you created the events detection job.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<& crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output data configuration that you supplied when you created the events detection job.</p>
-    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<& crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The language code of the input documents.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The types of events that are detected by the job.</p>
-    pub fn target_event_types(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn target_event_types(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.target_event_types.as_deref()
     }
 }
@@ -126,9 +126,7 @@ impl EventsDetectionJobProperties {
 
 /// A builder for [`EventsDetectionJobProperties`](crate::types::EventsDetectionJobProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventsDetectionJobPropertiesBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -151,10 +149,13 @@ impl EventsDetectionJobPropertiesBuilder {
     }
     /// <p>The identifier assigned to the events detection job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The identifier assigned to the events detection job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -165,14 +166,14 @@ impl EventsDetectionJobPropertiesBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -183,12 +184,28 @@ impl EventsDetectionJobPropertiesBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p> 
+    /// <p> <code>arn:
+    /// <partition>
+    /// :comprehend:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :events-detection-job/
+    /// <job-id></job-id>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
     }
     /// <p>The name you assigned the events detection job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -197,8 +214,11 @@ impl EventsDetectionJobPropertiesBuilder {
     }
     /// <p>The name you assigned the events detection job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The name you assigned the events detection job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The current status of the events detection job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -207,8 +227,11 @@ impl EventsDetectionJobPropertiesBuilder {
     }
     /// <p>The current status of the events detection job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
+    }
+    /// <p>The current status of the events detection job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// <p>A description of the status of the events detection job.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -217,8 +240,11 @@ impl EventsDetectionJobPropertiesBuilder {
     }
     /// <p>A description of the status of the events detection job.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A description of the status of the events detection job.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The time that the events detection job was submitted for processing.</p>
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -226,12 +252,12 @@ impl EventsDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The time that the events detection job was submitted for processing.</p>
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.submit_time = input;
-        self
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.submit_time = input; self
+    }
+    /// <p>The time that the events detection job was submitted for processing.</p>
+    pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time
     }
     /// <p>The time that the events detection job completed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -239,12 +265,12 @@ impl EventsDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The time that the events detection job completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p>The time that the events detection job completed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The input data configuration that you supplied when you created the events detection job.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
@@ -252,12 +278,12 @@ impl EventsDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The input data configuration that you supplied when you created the events detection job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
-        self.input_data_config = input;
-        self
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
+        self.input_data_config = input; self
+    }
+    /// <p>The input data configuration that you supplied when you created the events detection job.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
     }
     /// <p>The output data configuration that you supplied when you created the events detection job.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
@@ -265,12 +291,12 @@ impl EventsDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The output data configuration that you supplied when you created the events detection job.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
-        self.output_data_config = input;
-        self
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
+        self.output_data_config = input; self
+    }
+    /// <p>The output data configuration that you supplied when you created the events detection job.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
     }
     /// <p>The language code of the input documents.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -278,66 +304,73 @@ impl EventsDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The language code of the input documents.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
+        self.language_code = input; self
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_access_role_arn = input;
-        self
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_access_role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
     }
     /// Appends an item to `target_event_types`.
     ///
     /// To override the contents of this collection use [`set_target_event_types`](Self::set_target_event_types).
     ///
     /// <p>The types of events that are detected by the job.</p>
-    pub fn target_event_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_event_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_event_types.unwrap_or_default();
-        v.push(input.into());
-        self.target_event_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_event_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of events that are detected by the job.</p>
-    pub fn set_target_event_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.target_event_types = input;
-        self
+    pub fn set_target_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.target_event_types = input; self
+    }
+    /// <p>The types of events that are detected by the job.</p>
+    pub fn get_target_event_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_event_types
     }
     /// Consumes the builder and constructs a [`EventsDetectionJobProperties`](crate::types::EventsDetectionJobProperties).
     pub fn build(self) -> crate::types::EventsDetectionJobProperties {
         crate::types::EventsDetectionJobProperties {
-            job_id: self.job_id,
-            job_arn: self.job_arn,
-            job_name: self.job_name,
-            job_status: self.job_status,
-            message: self.message,
-            submit_time: self.submit_time,
-            end_time: self.end_time,
-            input_data_config: self.input_data_config,
-            output_data_config: self.output_data_config,
-            language_code: self.language_code,
-            data_access_role_arn: self.data_access_role_arn,
-            target_event_types: self.target_event_types,
+            job_id: self.job_id
+            ,
+            job_arn: self.job_arn
+            ,
+            job_name: self.job_name
+            ,
+            job_status: self.job_status
+            ,
+            message: self.message
+            ,
+            submit_time: self.submit_time
+            ,
+            end_time: self.end_time
+            ,
+            input_data_config: self.input_data_config
+            ,
+            output_data_config: self.output_data_config
+            ,
+            language_code: self.language_code
+            ,
+            data_access_role_arn: self.data_access_role_arn
+            ,
+            target_event_types: self.target_event_types
+            ,
         }
     }
 }
+

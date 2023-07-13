@@ -3,7 +3,7 @@
 /// <p>Information about the agent who accepted the contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentInfo {
+pub struct AgentInfo  {
     /// <p>The identifier of the agent who accepted the contact.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,13 +13,11 @@ pub struct AgentInfo {
 }
 impl AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The timestamp when the contact was connected to the agent.</p>
-    pub fn connected_to_agent_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn connected_to_agent_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.connected_to_agent_timestamp.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl AgentInfo {
 
 /// A builder for [`AgentInfo`](crate::types::AgentInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -47,8 +43,11 @@ impl AgentInfoBuilder {
     }
     /// <p>The identifier of the agent who accepted the contact.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the agent who accepted the contact.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub fn connected_to_agent_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -56,18 +55,21 @@ impl AgentInfoBuilder {
         self
     }
     /// <p>The timestamp when the contact was connected to the agent.</p>
-    pub fn set_connected_to_agent_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.connected_to_agent_timestamp = input;
-        self
+    pub fn set_connected_to_agent_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.connected_to_agent_timestamp = input; self
+    }
+    /// <p>The timestamp when the contact was connected to the agent.</p>
+    pub fn get_connected_to_agent_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.connected_to_agent_timestamp
     }
     /// Consumes the builder and constructs a [`AgentInfo`](crate::types::AgentInfo).
     pub fn build(self) -> crate::types::AgentInfo {
         crate::types::AgentInfo {
-            id: self.id,
-            connected_to_agent_timestamp: self.connected_to_agent_timestamp,
+            id: self.id
+            ,
+            connected_to_agent_timestamp: self.connected_to_agent_timestamp
+            ,
         }
     }
 }
+

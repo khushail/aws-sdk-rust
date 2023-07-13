@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFindingAggregatorInput {
+pub struct DeleteFindingAggregatorInput  {
     /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     #[doc(hidden)]
     pub finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFindingAggregatorInput {
     /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn finding_aggregator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn finding_aggregator_arn(&self) -> ::std::option::Option<& str> {
         self.finding_aggregator_arn.as_deref()
     }
 }
 impl DeleteFindingAggregatorInput {
     /// Creates a new builder-style object to manufacture [`DeleteFindingAggregatorInput`](crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput).
-    pub fn builder(
-    ) -> crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorInputBuilder {
         crate::operation::delete_finding_aggregator::builders::DeleteFindingAggregatorInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFindingAggregatorInput`](crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFindingAggregatorInputBuilder {
     pub(crate) finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFindingAggregatorInputBuilder {
     /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn finding_aggregator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_aggregator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn set_finding_aggregator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.finding_aggregator_arn = input;
-        self
+    pub fn set_finding_aggregator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.finding_aggregator_arn = input; self
+    }
+    /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_aggregator_arn
     }
     /// Consumes the builder and constructs a [`DeleteFindingAggregatorInput`](crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput {
-                finding_aggregator_arn: self.finding_aggregator_arn,
-            },
+                finding_aggregator_arn: self.finding_aggregator_arn
+                ,
+            }
         )
     }
 }
+

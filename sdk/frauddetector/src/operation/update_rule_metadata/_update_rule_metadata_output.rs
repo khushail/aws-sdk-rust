@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRuleMetadataOutput {
+pub struct UpdateRuleMetadataOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UpdateRuleMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateRuleMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleMetadataOutput`](crate::operation::update_rule_metadata::UpdateRuleMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_rule_metadata::builders::UpdateRuleMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::update_rule_metadata::builders::UpdateRuleMetadataOutputBuilder {
         crate::operation::update_rule_metadata::builders::UpdateRuleMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRuleMetadataOutput`](crate::operation::update_rule_metadata::UpdateRuleMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleMetadataOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateRuleMetadataOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateRuleMetadataOutput`](crate::operation::update_rule_metadata::UpdateRuleMetadataOutput).
     pub fn build(self) -> crate::operation::update_rule_metadata::UpdateRuleMetadataOutput {
         crate::operation::update_rule_metadata::UpdateRuleMetadataOutput {
@@ -43,3 +40,4 @@ impl UpdateRuleMetadataOutputBuilder {
         }
     }
 }
+

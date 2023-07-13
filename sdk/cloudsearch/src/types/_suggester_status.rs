@@ -3,7 +3,7 @@
 /// <p>The value of a <code>Suggester</code> and its current status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuggesterStatus {
+pub struct SuggesterStatus  {
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
     #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::Suggester>,
@@ -13,11 +13,11 @@ pub struct SuggesterStatus {
 }
 impl SuggesterStatus {
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::Suggester> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::Suggester> {
         self.options.as_ref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl SuggesterStatus {
 
 /// A builder for [`SuggesterStatus`](crate::types::SuggesterStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggesterStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::Suggester>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -45,8 +43,11 @@ impl SuggesterStatusBuilder {
     }
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Suggester>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
+    }
+    /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Suggester> {
+        &self.options
     }
     /// <p>The status of domain configuration option.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -55,14 +56,20 @@ impl SuggesterStatusBuilder {
     }
     /// <p>The status of domain configuration option.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of domain configuration option.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SuggesterStatus`](crate::types::SuggesterStatus).
     pub fn build(self) -> crate::types::SuggesterStatus {
         crate::types::SuggesterStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

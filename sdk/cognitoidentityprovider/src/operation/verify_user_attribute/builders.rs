@@ -3,103 +3,88 @@ pub use crate::operation::verify_user_attribute::_verify_user_attribute_output::
 
 pub use crate::operation::verify_user_attribute::_verify_user_attribute_input::VerifyUserAttributeInputBuilder;
 
+impl VerifyUserAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::verify_user_attribute::VerifyUserAttributeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::verify_user_attribute::VerifyUserAttributeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.verify_user_attribute();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `VerifyUserAttribute`.
-///
-/// <p>Verifies the specified user attributes in the user pool.</p>
+/// 
+/// <p>Verifies the specified user attributes in the user pool.</p> 
 /// <p> If your user pool requires verification before Amazon Cognito updates the attribute value, VerifyUserAttribute updates the affected attribute to its pending value. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html"> UserAttributeUpdateSettingsType</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VerifyUserAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder,
+                    inner: crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder,
 }
-impl VerifyUserAttributeFluentBuilder {
+impl VerifyUserAttributeFluentBuilder  {
     /// Creates a new `VerifyUserAttribute`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::verify_user_attribute::VerifyUserAttribute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_user_attribute::VerifyUserAttributeError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the VerifyUserAttribute as a reference.
+    pub fn as_input(&self) -> &crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_user_attribute::VerifyUserAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_user_attribute::VerifyUserAttributeError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::verify_user_attribute::VerifyUserAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::verify_user_attribute::VerifyUserAttributeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::verify_user_attribute::VerifyUserAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::verify_user_attribute::VerifyUserAttributeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_user_attribute::VerifyUserAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_user_attribute::VerifyUserAttributeError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::verify_user_attribute::VerifyUserAttribute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_user_attribute::VerifyUserAttributeError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::verify_user_attribute::VerifyUserAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::verify_user_attribute::VerifyUserAttributeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::verify_user_attribute::VerifyUserAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::verify_user_attribute::VerifyUserAttributeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
@@ -110,21 +95,23 @@ impl VerifyUserAttributeFluentBuilder {
         self.inner = self.inner.set_access_token(input);
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
+    }
     /// <p>The attribute name in the request to verify user attributes.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
         self
     }
     /// <p>The attribute name in the request to verify user attributes.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
+    }
+    /// <p>The attribute name in the request to verify user attributes.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_name()
     }
     /// <p>The verification code in the request to verify user attributes.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,4 +123,9 @@ impl VerifyUserAttributeFluentBuilder {
         self.inner = self.inner.set_code(input);
         self
     }
+    /// <p>The verification code in the request to verify user attributes.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code()
+    }
 }
+

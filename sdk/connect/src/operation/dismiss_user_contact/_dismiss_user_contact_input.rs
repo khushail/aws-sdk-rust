@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DismissUserContactInput {
+pub struct DismissUserContactInput  {
     /// <p>The identifier of the user account.</p>
     #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct DismissUserContactInput {
 }
 impl DismissUserContactInput {
     /// <p>The identifier of the user account.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
 }
 impl DismissUserContactInput {
     /// Creates a new builder-style object to manufacture [`DismissUserContactInput`](crate::operation::dismiss_user_contact::DismissUserContactInput).
-    pub fn builder(
-    ) -> crate::operation::dismiss_user_contact::builders::DismissUserContactInputBuilder {
+    pub fn builder() -> crate::operation::dismiss_user_contact::builders::DismissUserContactInputBuilder {
         crate::operation::dismiss_user_contact::builders::DismissUserContactInputBuilder::default()
     }
 }
 
 /// A builder for [`DismissUserContactInput`](crate::operation::dismiss_user_contact::DismissUserContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DismissUserContactInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +50,11 @@ impl DismissUserContactInputBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The identifier of the user account.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +63,11 @@ impl DismissUserContactInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The identifier of the contact.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,22 +76,24 @@ impl DismissUserContactInputBuilder {
     }
     /// <p>The identifier of the contact.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
     }
     /// Consumes the builder and constructs a [`DismissUserContactInput`](crate::operation::dismiss_user_contact::DismissUserContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::dismiss_user_contact::DismissUserContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::dismiss_user_contact::DismissUserContactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::dismiss_user_contact::DismissUserContactInput {
-                user_id: self.user_id,
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-            },
+                user_id: self.user_id
+                ,
+                instance_id: self.instance_id
+                ,
+                contact_id: self.contact_id
+                ,
+            }
         )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteActivityInput {
+pub struct DeleteActivityInput  {
     /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
     #[doc(hidden)]
     pub activity_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteActivityInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
-    pub fn activity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn activity_arn(&self) -> ::std::option::Option<& str> {
         self.activity_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteActivityInput {
 
 /// A builder for [`DeleteActivityInput`](crate::operation::delete_activity::DeleteActivityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteActivityInputBuilder {
     pub(crate) activity_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteActivityInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
     pub fn set_activity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activity_arn = input;
-        self
+        self.activity_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
+    pub fn get_activity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_arn
     }
     /// Consumes the builder and constructs a [`DeleteActivityInput`](crate::operation::delete_activity::DeleteActivityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_activity::DeleteActivityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_activity::DeleteActivityInput {
-            activity_arn: self.activity_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_activity::DeleteActivityInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_activity::DeleteActivityInput {
+                activity_arn: self.activity_arn
+                ,
+            }
+        )
     }
 }
+

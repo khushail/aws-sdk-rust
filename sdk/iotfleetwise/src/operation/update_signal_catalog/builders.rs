@@ -3,102 +3,87 @@ pub use crate::operation::update_signal_catalog::_update_signal_catalog_output::
 
 pub use crate::operation::update_signal_catalog::_update_signal_catalog_input::UpdateSignalCatalogInputBuilder;
 
+impl UpdateSignalCatalogInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_signal_catalog::UpdateSignalCatalogOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_signal_catalog();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateSignalCatalog`.
-///
+/// 
 /// <p> Updates a signal catalog. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSignalCatalogFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder,
+                    inner: crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder,
 }
-impl UpdateSignalCatalogFluentBuilder {
+impl UpdateSignalCatalogFluentBuilder  {
     /// Creates a new `UpdateSignalCatalog`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_signal_catalog::UpdateSignalCatalog,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateSignalCatalog as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_signal_catalog::UpdateSignalCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_signal_catalog::UpdateSignalCatalog, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_signal_catalog::UpdateSignalCatalogError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_signal_catalog::UpdateSignalCatalogError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_signal_catalog::UpdateSignalCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_signal_catalog::UpdateSignalCatalog,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_signal_catalog::UpdateSignalCatalogError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_signal_catalog::UpdateSignalCatalog, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_signal_catalog::UpdateSignalCatalogError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The name of the signal catalog to update. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -108,6 +93,10 @@ impl UpdateSignalCatalogFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p> The name of the signal catalog to update. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p> A brief description of the signal catalog to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +108,10 @@ impl UpdateSignalCatalogFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p> A brief description of the signal catalog to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `nodesToAdd`.
     ///
     /// To override the contents of this collection use [`set_nodes_to_add`](Self::set_nodes_to_add).
@@ -129,12 +122,13 @@ impl UpdateSignalCatalogFluentBuilder {
         self
     }
     /// <p> A list of information about nodes to add to the signal catalog. </p>
-    pub fn set_nodes_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.inner = self.inner.set_nodes_to_add(input);
         self
+    }
+    /// <p> A list of information about nodes to add to the signal catalog. </p>
+    pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+        self.inner.get_nodes_to_add()
     }
     /// Appends an item to `nodesToUpdate`.
     ///
@@ -146,31 +140,31 @@ impl UpdateSignalCatalogFluentBuilder {
         self
     }
     /// <p> A list of information about nodes to update in the signal catalog. </p>
-    pub fn set_nodes_to_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.inner = self.inner.set_nodes_to_update(input);
         self
+    }
+    /// <p> A list of information about nodes to update in the signal catalog. </p>
+    pub fn get_nodes_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+        self.inner.get_nodes_to_update()
     }
     /// Appends an item to `nodesToRemove`.
     ///
     /// To override the contents of this collection use [`set_nodes_to_remove`](Self::set_nodes_to_remove).
     ///
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn nodes_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodes_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodes_to_remove(input.into());
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn set_nodes_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nodes_to_remove(input);
         self
     }
+    /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
+    pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_nodes_to_remove()
+    }
 }
+

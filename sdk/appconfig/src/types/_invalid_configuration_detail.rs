@@ -3,7 +3,7 @@
 /// <p>Detailed information about the bad request exception error when creating a hosted configuration version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidConfigurationDetail {
+pub struct InvalidConfigurationDetail  {
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
     #[doc(hidden)]
     pub constraint: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct InvalidConfigurationDetail {
 }
 impl InvalidConfigurationDetail {
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
-    pub fn constraint(&self) -> ::std::option::Option<&str> {
+    pub fn constraint(&self) -> ::std::option::Option<& str> {
         self.constraint.as_deref()
     }
     /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The reason for an invalid configuration error.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The type of error for an invalid configuration.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl InvalidConfigurationDetail {
 
 /// A builder for [`InvalidConfigurationDetail`](crate::types::InvalidConfigurationDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidConfigurationDetailBuilder {
     pub(crate) constraint: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl InvalidConfigurationDetailBuilder {
     }
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
     pub fn set_constraint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.constraint = input;
-        self
+        self.constraint = input; self
+    }
+    /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
+    pub fn get_constraint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.constraint
     }
     /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl InvalidConfigurationDetailBuilder {
     }
     /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
+    }
+    /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// <p>The reason for an invalid configuration error.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl InvalidConfigurationDetailBuilder {
     }
     /// <p>The reason for an invalid configuration error.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
+    }
+    /// <p>The reason for an invalid configuration error.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// <p>The type of error for an invalid configuration.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,8 +106,11 @@ impl InvalidConfigurationDetailBuilder {
     }
     /// <p>The type of error for an invalid configuration.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of error for an invalid configuration.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,17 +119,26 @@ impl InvalidConfigurationDetailBuilder {
     }
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`InvalidConfigurationDetail`](crate::types::InvalidConfigurationDetail).
     pub fn build(self) -> crate::types::InvalidConfigurationDetail {
         crate::types::InvalidConfigurationDetail {
-            constraint: self.constraint,
-            location: self.location,
-            reason: self.reason,
-            r#type: self.r#type,
-            value: self.value,
+            constraint: self.constraint
+            ,
+            location: self.location
+            ,
+            reason: self.reason
+            ,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The GetDomainDetail request includes the following element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainDetailInput {
+pub struct GetDomainDetailInput  {
     /// <p>The name of the domain that you want to get detailed information about.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDomainDetailInput {
     /// <p>The name of the domain that you want to get detailed information about.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl GetDomainDetailInput {
 
 /// A builder for [`GetDomainDetailInput`](crate::operation::get_domain_detail::GetDomainDetailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainDetailInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +35,20 @@ impl GetDomainDetailInputBuilder {
     }
     /// <p>The name of the domain that you want to get detailed information about.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The name of the domain that you want to get detailed information about.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`GetDomainDetailInput`](crate::operation::get_domain_detail::GetDomainDetailInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain_detail::GetDomainDetailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_domain_detail::GetDomainDetailInput {
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain_detail::GetDomainDetailInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_domain_detail::GetDomainDetailInput {
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

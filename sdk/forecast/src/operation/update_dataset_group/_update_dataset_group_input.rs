@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDatasetGroupInput {
+pub struct UpdateDatasetGroupInput  {
     /// <p>The ARN of the dataset group.</p>
     #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct UpdateDatasetGroupInput {
 }
 impl UpdateDatasetGroupInput {
     /// <p>The ARN of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
-    pub fn dataset_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn dataset_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.dataset_arns.as_deref()
     }
 }
 impl UpdateDatasetGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasetGroupInput`](crate::operation::update_dataset_group::UpdateDatasetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_dataset_group::builders::UpdateDatasetGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_dataset_group::builders::UpdateDatasetGroupInputBuilder {
         crate::operation::update_dataset_group::builders::UpdateDatasetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDatasetGroupInput`](crate::operation::update_dataset_group::UpdateDatasetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasetGroupInputBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateDatasetGroupInputBuilder {
     /// <p>The ARN of the dataset group.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset group.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dataset_group_arn = input;
-        self
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataset_group_arn = input; self
+    }
+    /// <p>The ARN of the dataset group.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// Appends an item to `dataset_arns`.
     ///
@@ -61,30 +55,28 @@ impl UpdateDatasetGroupInputBuilder {
     /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
     pub fn dataset_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dataset_arns.unwrap_or_default();
-        v.push(input.into());
-        self.dataset_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dataset_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
-    pub fn set_dataset_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.dataset_arns = input;
-        self
+    pub fn set_dataset_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.dataset_arns = input; self
+    }
+    /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
+    pub fn get_dataset_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dataset_arns
     }
     /// Consumes the builder and constructs a [`UpdateDatasetGroupInput`](crate::operation::update_dataset_group::UpdateDatasetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dataset_group::UpdateDatasetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_dataset_group::UpdateDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_dataset_group::UpdateDatasetGroupInput {
-                dataset_group_arn: self.dataset_group_arn,
-                dataset_arns: self.dataset_arns,
-            },
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                dataset_arns: self.dataset_arns
+                ,
+            }
         )
     }
 }
+

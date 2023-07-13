@@ -3,7 +3,7 @@
 /// <p>Describes an action to publish data to an Amazon SQS queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqsAction {
+pub struct SqsAction  {
     /// <p>The ARN of the IAM role that grants access.</p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct SqsAction {
 }
 impl SqsAction {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The URL of the Amazon SQS queue.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<& str> {
         self.queue_url.as_deref()
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
@@ -37,9 +37,7 @@ impl SqsAction {
 
 /// A builder for [`SqsAction`](crate::types::SqsAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqsActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl SqsActionBuilder {
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The URL of the Amazon SQS queue.</p>
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl SqsActionBuilder {
     }
     /// <p>The URL of the Amazon SQS queue.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
+    }
+    /// <p>The URL of the Amazon SQS queue.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub fn use_base64(mut self, input: bool) -> Self {
@@ -73,15 +77,22 @@ impl SqsActionBuilder {
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub fn set_use_base64(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_base64 = input;
-        self
+        self.use_base64 = input; self
+    }
+    /// <p>Specifies whether to use Base64 encoding.</p>
+    pub fn get_use_base64(&self) -> &::std::option::Option<bool> {
+        &self.use_base64
     }
     /// Consumes the builder and constructs a [`SqsAction`](crate::types::SqsAction).
     pub fn build(self) -> crate::types::SqsAction {
         crate::types::SqsAction {
-            role_arn: self.role_arn,
-            queue_url: self.queue_url,
-            use_base64: self.use_base64,
+            role_arn: self.role_arn
+            ,
+            queue_url: self.queue_url
+            ,
+            use_base64: self.use_base64
+            ,
         }
     }
 }
+

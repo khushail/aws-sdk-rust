@@ -3,7 +3,7 @@
 /// <p>Currency-specific price information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PriceWithCurrency {
+pub struct PriceWithCurrency  {
     /// <p>The price of a domain, in a specific currency.</p>
     #[doc(hidden)]
     pub price: f64,
@@ -17,7 +17,7 @@ impl PriceWithCurrency {
         self.price
     }
     /// <p>The currency specifier.</p>
-    pub fn currency(&self) -> ::std::option::Option<&str> {
+    pub fn currency(&self) -> ::std::option::Option<& str> {
         self.currency.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl PriceWithCurrency {
 
 /// A builder for [`PriceWithCurrency`](crate::types::PriceWithCurrency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PriceWithCurrencyBuilder {
     pub(crate) price: ::std::option::Option<f64>,
     pub(crate) currency: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl PriceWithCurrencyBuilder {
     }
     /// <p>The price of a domain, in a specific currency.</p>
     pub fn set_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
+    }
+    /// <p>The price of a domain, in a specific currency.</p>
+    pub fn get_price(&self) -> &::std::option::Option<f64> {
+        &self.price
     }
     /// <p>The currency specifier.</p>
     pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,21 @@ impl PriceWithCurrencyBuilder {
     }
     /// <p>The currency specifier.</p>
     pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
+    }
+    /// <p>The currency specifier.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency
     }
     /// Consumes the builder and constructs a [`PriceWithCurrency`](crate::types::PriceWithCurrency).
     pub fn build(self) -> crate::types::PriceWithCurrency {
         crate::types::PriceWithCurrency {
-            price: self.price.unwrap_or_default(),
-            currency: self.currency,
+            price: self.price
+                .unwrap_or_default()
+            ,
+            currency: self.currency
+            ,
         }
     }
 }
+

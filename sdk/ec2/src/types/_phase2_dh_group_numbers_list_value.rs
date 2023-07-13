@@ -3,7 +3,7 @@
 /// <p>The Diffie-Hellmann group number for phase 2 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Phase2DhGroupNumbersListValue {
+pub struct Phase2DhGroupNumbersListValue  {
     /// <p>The Diffie-Hellmann group number.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl Phase2DhGroupNumbersListValue {
 
 /// A builder for [`Phase2DhGroupNumbersListValue`](crate::types::Phase2DhGroupNumbersListValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Phase2DhGroupNumbersListValueBuilder {
     pub(crate) value: ::std::option::Option<i32>,
 }
@@ -37,11 +35,18 @@ impl Phase2DhGroupNumbersListValueBuilder {
     }
     /// <p>The Diffie-Hellmann group number.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The Diffie-Hellmann group number.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Phase2DhGroupNumbersListValue`](crate::types::Phase2DhGroupNumbersListValue).
     pub fn build(self) -> crate::types::Phase2DhGroupNumbersListValue {
-        crate::types::Phase2DhGroupNumbersListValue { value: self.value }
+        crate::types::Phase2DhGroupNumbersListValue {
+            value: self.value
+            ,
+        }
     }
 }
+

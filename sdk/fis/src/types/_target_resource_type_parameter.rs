@@ -3,7 +3,7 @@
 /// <p>Describes the parameters for a resource type. Use parameters to determine which tasks are identified during target resolution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetResourceTypeParameter {
+pub struct TargetResourceTypeParameter  {
     /// <p>A description of the parameter.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct TargetResourceTypeParameter {
 }
 impl TargetResourceTypeParameter {
     /// <p>A description of the parameter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the parameter is required.</p>
@@ -30,9 +30,7 @@ impl TargetResourceTypeParameter {
 
 /// A builder for [`TargetResourceTypeParameter`](crate::types::TargetResourceTypeParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetResourceTypeParameterBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) required: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl TargetResourceTypeParameterBuilder {
     }
     /// <p>A description of the parameter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Indicates whether the parameter is required.</p>
     pub fn required(mut self, input: bool) -> Self {
@@ -55,14 +56,20 @@ impl TargetResourceTypeParameterBuilder {
     }
     /// <p>Indicates whether the parameter is required.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
+    }
+    /// <p>Indicates whether the parameter is required.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
     }
     /// Consumes the builder and constructs a [`TargetResourceTypeParameter`](crate::types::TargetResourceTypeParameter).
     pub fn build(self) -> crate::types::TargetResourceTypeParameter {
         crate::types::TargetResourceTypeParameter {
-            description: self.description,
-            required: self.required,
+            description: self.description
+            ,
+            required: self.required
+            ,
         }
     }
 }
+

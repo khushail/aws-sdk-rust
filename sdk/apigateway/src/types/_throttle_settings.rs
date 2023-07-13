@@ -3,7 +3,7 @@
 /// <p> The API request rate limits.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThrottleSettings {
+pub struct ThrottleSettings  {
     /// <p>The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.</p>
     #[doc(hidden)]
     pub burst_limit: i32,
@@ -30,9 +30,7 @@ impl ThrottleSettings {
 
 /// A builder for [`ThrottleSettings`](crate::types::ThrottleSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThrottleSettingsBuilder {
     pub(crate) burst_limit: ::std::option::Option<i32>,
     pub(crate) rate_limit: ::std::option::Option<f64>,
@@ -45,8 +43,11 @@ impl ThrottleSettingsBuilder {
     }
     /// <p>The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.</p>
     pub fn set_burst_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.burst_limit = input;
-        self
+        self.burst_limit = input; self
+    }
+    /// <p>The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.</p>
+    pub fn get_burst_limit(&self) -> &::std::option::Option<i32> {
+        &self.burst_limit
     }
     /// <p>The API target request rate limit.</p>
     pub fn rate_limit(mut self, input: f64) -> Self {
@@ -55,14 +56,22 @@ impl ThrottleSettingsBuilder {
     }
     /// <p>The API target request rate limit.</p>
     pub fn set_rate_limit(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.rate_limit = input;
-        self
+        self.rate_limit = input; self
+    }
+    /// <p>The API target request rate limit.</p>
+    pub fn get_rate_limit(&self) -> &::std::option::Option<f64> {
+        &self.rate_limit
     }
     /// Consumes the builder and constructs a [`ThrottleSettings`](crate::types::ThrottleSettings).
     pub fn build(self) -> crate::types::ThrottleSettings {
         crate::types::ThrottleSettings {
-            burst_limit: self.burst_limit.unwrap_or_default(),
-            rate_limit: self.rate_limit.unwrap_or_default(),
+            burst_limit: self.burst_limit
+                .unwrap_or_default()
+            ,
+            rate_limit: self.rate_limit
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

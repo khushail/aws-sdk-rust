@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociatePhoneNumberFromUserInput {
+pub struct DisassociatePhoneNumberFromUserInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DisassociatePhoneNumberFromUserInput {
 }
 impl DisassociatePhoneNumberFromUserInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
 impl DisassociatePhoneNumberFromUserInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumberFromUserInput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput).
-    pub fn builder() -> crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserInputBuilder {
         crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePhoneNumberFromUserInput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumberFromUserInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DisassociatePhoneNumberFromUserInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The user ID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,16 +55,14 @@ impl DisassociatePhoneNumberFromUserInputBuilder {
     }
     /// <p>The user ID.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The user ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumberFromUserInput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput {
                 account_id: self.account_id
@@ -74,3 +73,4 @@ impl DisassociatePhoneNumberFromUserInputBuilder {
         )
     }
 }
+

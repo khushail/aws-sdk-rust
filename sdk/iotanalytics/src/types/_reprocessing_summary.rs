@@ -3,7 +3,7 @@
 /// <p>Information about pipeline reprocessing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReprocessingSummary {
+pub struct ReprocessingSummary  {
     /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ReprocessingSummary {
 }
 impl ReprocessingSummary {
     /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the pipeline reprocessing.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReprocessingStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReprocessingStatus> {
         self.status.as_ref()
     }
     /// <p>The time the pipeline reprocessing was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl ReprocessingSummary {
 
 /// A builder for [`ReprocessingSummary`](crate::types::ReprocessingSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReprocessingSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ReprocessingStatus>,
@@ -53,8 +51,11 @@ impl ReprocessingSummaryBuilder {
     }
     /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The status of the pipeline reprocessing.</p>
     pub fn status(mut self, input: crate::types::ReprocessingStatus) -> Self {
@@ -62,12 +63,12 @@ impl ReprocessingSummaryBuilder {
         self
     }
     /// <p>The status of the pipeline reprocessing.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReprocessingStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReprocessingStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the pipeline reprocessing.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReprocessingStatus> {
+        &self.status
     }
     /// <p>The time the pipeline reprocessing was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -75,19 +76,23 @@ impl ReprocessingSummaryBuilder {
         self
     }
     /// <p>The time the pipeline reprocessing was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time the pipeline reprocessing was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`ReprocessingSummary`](crate::types::ReprocessingSummary).
     pub fn build(self) -> crate::types::ReprocessingSummary {
         crate::types::ReprocessingSummary {
-            id: self.id,
-            status: self.status,
-            creation_time: self.creation_time,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

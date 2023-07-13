@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMultiRegionAccessPointPolicyInput {
+pub struct PutMultiRegionAccessPointPolicyInput  {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct PutMultiRegionAccessPointPolicyInput {
 }
 impl PutMultiRegionAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
-    pub fn details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PutMultiRegionAccessPointPolicyInput> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::PutMultiRegionAccessPointPolicyInput> {
         self.details.as_ref()
     }
 }
 impl PutMultiRegionAccessPointPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyInput).
-    pub fn builder() -> crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyInputBuilder{
+    pub fn builder() -> crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyInputBuilder {
         crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutMultiRegionAccessPointPolicyInput`](crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMultiRegionAccessPointPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -54,8 +50,11 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,8 +63,11 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
     }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
     pub fn details(mut self, input: crate::types::PutMultiRegionAccessPointPolicyInput) -> Self {
@@ -73,15 +75,15 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
         self
     }
     /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PutMultiRegionAccessPointPolicyInput>,
-    ) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::PutMultiRegionAccessPointPolicyInput>) -> Self {
+        self.details = input; self
+    }
+    /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::PutMultiRegionAccessPointPolicyInput> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyInput`](crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyInput {
                 account_id: self.account_id
@@ -94,3 +96,4 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
         )
     }
 }
+

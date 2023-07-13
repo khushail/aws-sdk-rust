@@ -3,7 +3,7 @@
 /// <p>General information about the IP set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpSetMetadata {
+pub struct IpSetMetadata  {
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
     #[doc(hidden)]
     pub resolved_cidr_count: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl IpSetMetadata {
 
 /// A builder for [`IpSetMetadata`](crate::types::IpSetMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpSetMetadataBuilder {
     pub(crate) resolved_cidr_count: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl IpSetMetadataBuilder {
     }
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
     pub fn set_resolved_cidr_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.resolved_cidr_count = input;
-        self
+        self.resolved_cidr_count = input; self
+    }
+    /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
+    pub fn get_resolved_cidr_count(&self) -> &::std::option::Option<i32> {
+        &self.resolved_cidr_count
     }
     /// Consumes the builder and constructs a [`IpSetMetadata`](crate::types::IpSetMetadata).
     pub fn build(self) -> crate::types::IpSetMetadata {
         crate::types::IpSetMetadata {
-            resolved_cidr_count: self.resolved_cidr_count,
+            resolved_cidr_count: self.resolved_cidr_count
+            ,
         }
     }
 }
+

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaByDefinitionInput {
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+pub struct GetSchemaByDefinitionInput  {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
@@ -15,84 +15,82 @@ pub struct GetSchemaByDefinitionInput {
     pub schema_definition: ::std::option::Option<::std::string::String>,
 }
 impl GetSchemaByDefinitionInput {
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
     /// </ul>
-    pub fn schema_id(&self) -> ::std::option::Option<&crate::types::SchemaId> {
+    pub fn schema_id(&self) -> ::std::option::Option<& crate::types::SchemaId> {
         self.schema_id.as_ref()
     }
     /// <p>The definition of the schema for which schema details are required.</p>
-    pub fn schema_definition(&self) -> ::std::option::Option<&str> {
+    pub fn schema_definition(&self) -> ::std::option::Option<& str> {
         self.schema_definition.as_deref()
     }
 }
 impl GetSchemaByDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaByDefinitionInput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionInputBuilder {
         crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaByDefinitionInput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaByDefinitionInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_definition: ::std::option::Option<::std::string::String>,
 }
 impl GetSchemaByDefinitionInputBuilder {
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
     /// </ul>
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
     /// </ul>
     pub fn set_schema_id(mut self, input: ::std::option::Option<crate::types::SchemaId>) -> Self {
-        self.schema_id = input;
-        self
+        self.schema_id = input; self
+    }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        &self.schema_id
     }
     /// <p>The definition of the schema for which schema details are required.</p>
-    pub fn schema_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The definition of the schema for which schema details are required.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.schema_definition = input;
-        self
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schema_definition = input; self
+    }
+    /// <p>The definition of the schema for which schema details are required.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_definition
     }
     /// Consumes the builder and constructs a [`GetSchemaByDefinitionInput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput {
-                schema_id: self.schema_id,
-                schema_definition: self.schema_definition,
-            },
+                schema_id: self.schema_id
+                ,
+                schema_definition: self.schema_definition
+                ,
+            }
         )
     }
 }
+

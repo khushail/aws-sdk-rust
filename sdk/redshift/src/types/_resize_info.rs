@@ -3,7 +3,7 @@
 /// <p>Describes a resize operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResizeInfo {
+pub struct ResizeInfo  {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
     #[doc(hidden)]
     pub resize_type: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ResizeInfo {
 }
 impl ResizeInfo {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
-    pub fn resize_type(&self) -> ::std::option::Option<&str> {
+    pub fn resize_type(&self) -> ::std::option::Option<& str> {
         self.resize_type.as_deref()
     }
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
@@ -30,9 +30,7 @@ impl ResizeInfo {
 
 /// A builder for [`ResizeInfo`](crate::types::ResizeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResizeInfoBuilder {
     pub(crate) resize_type: ::std::option::Option<::std::string::String>,
     pub(crate) allow_cancel_resize: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl ResizeInfoBuilder {
     }
     /// <p>Returns the value <code>ClassicResize</code>.</p>
     pub fn set_resize_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resize_type = input;
-        self
+        self.resize_type = input; self
+    }
+    /// <p>Returns the value <code>ClassicResize</code>.</p>
+    pub fn get_resize_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resize_type
     }
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
     pub fn allow_cancel_resize(mut self, input: bool) -> Self {
@@ -55,14 +56,21 @@ impl ResizeInfoBuilder {
     }
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
     pub fn set_allow_cancel_resize(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_cancel_resize = input;
-        self
+        self.allow_cancel_resize = input; self
+    }
+    /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
+    pub fn get_allow_cancel_resize(&self) -> &::std::option::Option<bool> {
+        &self.allow_cancel_resize
     }
     /// Consumes the builder and constructs a [`ResizeInfo`](crate::types::ResizeInfo).
     pub fn build(self) -> crate::types::ResizeInfo {
         crate::types::ResizeInfo {
-            resize_type: self.resize_type,
-            allow_cancel_resize: self.allow_cancel_resize.unwrap_or_default(),
+            resize_type: self.resize_type
+            ,
+            allow_cancel_resize: self.allow_cancel_resize
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

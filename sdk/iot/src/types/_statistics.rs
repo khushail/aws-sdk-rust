@@ -3,7 +3,7 @@
 /// <p>A map of key-value pairs for all supported statistics. For issues with missing or unexpected values for this API, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-indexing-troubleshooting.html"> Fleet indexing troubleshooting guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Statistics {
+pub struct Statistics  {
     /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
     #[doc(hidden)]
     pub count: i32,
@@ -72,9 +72,7 @@ impl Statistics {
 
 /// A builder for [`Statistics`](crate::types::Statistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatisticsBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) average: ::std::option::Option<f64>,
@@ -93,8 +91,11 @@ impl StatisticsBuilder {
     }
     /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
+    }
+    /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// <p>The average of the aggregated field values.</p>
     pub fn average(mut self, input: f64) -> Self {
@@ -103,8 +104,11 @@ impl StatisticsBuilder {
     }
     /// <p>The average of the aggregated field values.</p>
     pub fn set_average(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.average = input;
-        self
+        self.average = input; self
+    }
+    /// <p>The average of the aggregated field values.</p>
+    pub fn get_average(&self) -> &::std::option::Option<f64> {
+        &self.average
     }
     /// <p>The sum of the aggregated field values.</p>
     pub fn sum(mut self, input: f64) -> Self {
@@ -113,8 +117,11 @@ impl StatisticsBuilder {
     }
     /// <p>The sum of the aggregated field values.</p>
     pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sum = input;
-        self
+        self.sum = input; self
+    }
+    /// <p>The sum of the aggregated field values.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<f64> {
+        &self.sum
     }
     /// <p>The minimum aggregated field value.</p>
     pub fn minimum(mut self, input: f64) -> Self {
@@ -123,8 +130,11 @@ impl StatisticsBuilder {
     }
     /// <p>The minimum aggregated field value.</p>
     pub fn set_minimum(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.minimum = input;
-        self
+        self.minimum = input; self
+    }
+    /// <p>The minimum aggregated field value.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<f64> {
+        &self.minimum
     }
     /// <p>The maximum aggregated field value.</p>
     pub fn maximum(mut self, input: f64) -> Self {
@@ -133,8 +143,11 @@ impl StatisticsBuilder {
     }
     /// <p>The maximum aggregated field value.</p>
     pub fn set_maximum(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.maximum = input;
-        self
+        self.maximum = input; self
+    }
+    /// <p>The maximum aggregated field value.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<f64> {
+        &self.maximum
     }
     /// <p>The sum of the squares of the aggregated field values.</p>
     pub fn sum_of_squares(mut self, input: f64) -> Self {
@@ -143,8 +156,11 @@ impl StatisticsBuilder {
     }
     /// <p>The sum of the squares of the aggregated field values.</p>
     pub fn set_sum_of_squares(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sum_of_squares = input;
-        self
+        self.sum_of_squares = input; self
+    }
+    /// <p>The sum of the squares of the aggregated field values.</p>
+    pub fn get_sum_of_squares(&self) -> &::std::option::Option<f64> {
+        &self.sum_of_squares
     }
     /// <p>The variance of the aggregated field values.</p>
     pub fn variance(mut self, input: f64) -> Self {
@@ -153,8 +169,11 @@ impl StatisticsBuilder {
     }
     /// <p>The variance of the aggregated field values.</p>
     pub fn set_variance(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.variance = input;
-        self
+        self.variance = input; self
+    }
+    /// <p>The variance of the aggregated field values.</p>
+    pub fn get_variance(&self) -> &::std::option::Option<f64> {
+        &self.variance
     }
     /// <p>The standard deviation of the aggregated field values.</p>
     pub fn std_deviation(mut self, input: f64) -> Self {
@@ -163,20 +182,33 @@ impl StatisticsBuilder {
     }
     /// <p>The standard deviation of the aggregated field values.</p>
     pub fn set_std_deviation(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.std_deviation = input;
-        self
+        self.std_deviation = input; self
+    }
+    /// <p>The standard deviation of the aggregated field values.</p>
+    pub fn get_std_deviation(&self) -> &::std::option::Option<f64> {
+        &self.std_deviation
     }
     /// Consumes the builder and constructs a [`Statistics`](crate::types::Statistics).
     pub fn build(self) -> crate::types::Statistics {
         crate::types::Statistics {
-            count: self.count.unwrap_or_default(),
-            average: self.average,
-            sum: self.sum,
-            minimum: self.minimum,
-            maximum: self.maximum,
-            sum_of_squares: self.sum_of_squares,
-            variance: self.variance,
-            std_deviation: self.std_deviation,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            average: self.average
+            ,
+            sum: self.sum
+            ,
+            minimum: self.minimum
+            ,
+            maximum: self.maximum
+            ,
+            sum_of_squares: self.sum_of_squares
+            ,
+            variance: self.variance
+            ,
+            std_deviation: self.std_deviation
+            ,
         }
     }
 }
+

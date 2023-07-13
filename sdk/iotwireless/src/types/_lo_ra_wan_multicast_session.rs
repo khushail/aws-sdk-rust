@@ -3,7 +3,7 @@
 /// <p>The LoRaWAN information used with the multicast session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanMulticastSession {
+pub struct LoRaWanMulticastSession  {
     /// <p>Downlink data rate.</p>
     #[doc(hidden)]
     pub dl_dr: ::std::option::Option<i32>,
@@ -30,7 +30,7 @@ impl LoRaWanMulticastSession {
         self.dl_freq
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
-    pub fn session_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn session_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.session_start_time.as_ref()
     }
     /// <p>How long before a multicast group session is to timeout.</p>
@@ -51,9 +51,7 @@ impl LoRaWanMulticastSession {
 
 /// A builder for [`LoRaWanMulticastSession`](crate::types::LoRaWanMulticastSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanMulticastSessionBuilder {
     pub(crate) dl_dr: ::std::option::Option<i32>,
     pub(crate) dl_freq: ::std::option::Option<i32>,
@@ -69,8 +67,11 @@ impl LoRaWanMulticastSessionBuilder {
     }
     /// <p>Downlink data rate.</p>
     pub fn set_dl_dr(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dl_dr = input;
-        self
+        self.dl_dr = input; self
+    }
+    /// <p>Downlink data rate.</p>
+    pub fn get_dl_dr(&self) -> &::std::option::Option<i32> {
+        &self.dl_dr
     }
     /// <p>Downlink frequency.</p>
     pub fn dl_freq(mut self, input: i32) -> Self {
@@ -79,8 +80,11 @@ impl LoRaWanMulticastSessionBuilder {
     }
     /// <p>Downlink frequency.</p>
     pub fn set_dl_freq(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dl_freq = input;
-        self
+        self.dl_freq = input; self
+    }
+    /// <p>Downlink frequency.</p>
+    pub fn get_dl_freq(&self) -> &::std::option::Option<i32> {
+        &self.dl_freq
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
     pub fn session_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -88,12 +92,12 @@ impl LoRaWanMulticastSessionBuilder {
         self
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
-    pub fn set_session_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.session_start_time = input;
-        self
+    pub fn set_session_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.session_start_time = input; self
+    }
+    /// <p>Timestamp of when the multicast group session is to start.</p>
+    pub fn get_session_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.session_start_time
     }
     /// <p>How long before a multicast group session is to timeout.</p>
     pub fn session_timeout(mut self, input: i32) -> Self {
@@ -102,8 +106,11 @@ impl LoRaWanMulticastSessionBuilder {
     }
     /// <p>How long before a multicast group session is to timeout.</p>
     pub fn set_session_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_timeout = input;
-        self
+        self.session_timeout = input; self
+    }
+    /// <p>How long before a multicast group session is to timeout.</p>
+    pub fn get_session_timeout(&self) -> &::std::option::Option<i32> {
+        &self.session_timeout
     }
     /// <p>The PingSlotPeriod value.</p>
     pub fn ping_slot_period(mut self, input: i32) -> Self {
@@ -112,17 +119,26 @@ impl LoRaWanMulticastSessionBuilder {
     }
     /// <p>The PingSlotPeriod value.</p>
     pub fn set_ping_slot_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ping_slot_period = input;
-        self
+        self.ping_slot_period = input; self
+    }
+    /// <p>The PingSlotPeriod value.</p>
+    pub fn get_ping_slot_period(&self) -> &::std::option::Option<i32> {
+        &self.ping_slot_period
     }
     /// Consumes the builder and constructs a [`LoRaWanMulticastSession`](crate::types::LoRaWanMulticastSession).
     pub fn build(self) -> crate::types::LoRaWanMulticastSession {
         crate::types::LoRaWanMulticastSession {
-            dl_dr: self.dl_dr,
-            dl_freq: self.dl_freq,
-            session_start_time: self.session_start_time,
-            session_timeout: self.session_timeout,
-            ping_slot_period: self.ping_slot_period,
+            dl_dr: self.dl_dr
+            ,
+            dl_freq: self.dl_freq
+            ,
+            session_start_time: self.session_start_time
+            ,
+            session_timeout: self.session_timeout
+            ,
+            ping_slot_period: self.ping_slot_period
+            ,
         }
     }
 }
+

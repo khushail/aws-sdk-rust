@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVolumeOutput {
+pub struct DeleteVolumeOutput  {
     /// <p>The ID of the volume that's being deleted.</p>
     #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
@@ -16,25 +16,23 @@ pub struct DeleteVolumeOutput {
 }
 impl DeleteVolumeOutput {
     /// <p>The ID of the volume that's being deleted.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::VolumeLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::VolumeLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
-    pub fn ontap_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeleteVolumeOntapResponse> {
+    pub fn ontap_response(&self) -> ::std::option::Option<& crate::types::DeleteVolumeOntapResponse> {
         self.ontap_response.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteVolumeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteVolumeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVolumeOutput`](crate::operation::delete_volume::DeleteVolumeOutput).
     pub fn builder() -> crate::operation::delete_volume::builders::DeleteVolumeOutputBuilder {
@@ -44,9 +42,7 @@ impl DeleteVolumeOutput {
 
 /// A builder for [`DeleteVolumeOutput`](crate::operation::delete_volume::DeleteVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVolumeOutputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::VolumeLifecycle>,
@@ -61,8 +57,11 @@ impl DeleteVolumeOutputBuilder {
     }
     /// <p>The ID of the volume that's being deleted.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
+    }
+    /// <p>The ID of the volume that's being deleted.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
     pub fn lifecycle(mut self, input: crate::types::VolumeLifecycle) -> Self {
@@ -70,12 +69,12 @@ impl DeleteVolumeOutputBuilder {
         self
     }
     /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeLifecycle>,
-    ) -> Self {
-        self.lifecycle = input;
-        self
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::VolumeLifecycle>) -> Self {
+        self.lifecycle = input; self
+    }
+    /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::VolumeLifecycle> {
+        &self.lifecycle
     }
     /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
     pub fn ontap_response(mut self, input: crate::types::DeleteVolumeOntapResponse) -> Self {
@@ -83,29 +82,33 @@ impl DeleteVolumeOutputBuilder {
         self
     }
     /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
-    pub fn set_ontap_response(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteVolumeOntapResponse>,
-    ) -> Self {
-        self.ontap_response = input;
-        self
+    pub fn set_ontap_response(mut self, input: ::std::option::Option<crate::types::DeleteVolumeOntapResponse>) -> Self {
+        self.ontap_response = input; self
+    }
+    /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
+    pub fn get_ontap_response(&self) -> &::std::option::Option<crate::types::DeleteVolumeOntapResponse> {
+        &self.ontap_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteVolumeOutput`](crate::operation::delete_volume::DeleteVolumeOutput).
     pub fn build(self) -> crate::operation::delete_volume::DeleteVolumeOutput {
         crate::operation::delete_volume::DeleteVolumeOutput {
-            volume_id: self.volume_id,
-            lifecycle: self.lifecycle,
-            ontap_response: self.ontap_response,
+            volume_id: self.volume_id
+            ,
+            lifecycle: self.lifecycle
+            ,
+            ontap_response: self.ontap_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

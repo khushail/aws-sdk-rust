@@ -3,7 +3,7 @@
 /// Represents the output of a CreateLoggingConfiguration operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLoggingConfigurationOutput {
+pub struct CreateLoggingConfigurationOutput  {
     /// The status of the logging configuration.
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
@@ -11,27 +11,25 @@ pub struct CreateLoggingConfigurationOutput {
 }
 impl CreateLoggingConfigurationOutput {
     /// The status of the logging configuration.
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LoggingConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LoggingConfigurationStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateLoggingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoggingConfigurationOutput`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput).
-    pub fn builder() -> crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder {
         crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoggingConfigurationOutput`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoggingConfigurationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     _request_id: Option<String>,
@@ -43,29 +41,29 @@ impl CreateLoggingConfigurationOutputBuilder {
         self
     }
     /// The status of the logging configuration.
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LoggingConfigurationStatus>) -> Self {
+        self.status = input; self
+    }
+    /// The status of the logging configuration.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LoggingConfigurationStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateLoggingConfigurationOutput`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput {
+    pub fn build(self) -> crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput {
         crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

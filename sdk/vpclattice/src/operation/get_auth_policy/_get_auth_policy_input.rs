@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAuthPolicyInput {
+pub struct GetAuthPolicyInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
     #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl GetAuthPolicyInput {
 
 /// A builder for [`GetAuthPolicyInput`](crate::operation::get_auth_policy::GetAuthPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthPolicyInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetAuthPolicyInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_identifier = input;
-        self
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_identifier = input; self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`GetAuthPolicyInput`](crate::operation::get_auth_policy::GetAuthPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_auth_policy::GetAuthPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_auth_policy::GetAuthPolicyInput {
-            resource_identifier: self.resource_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_auth_policy::GetAuthPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_auth_policy::GetAuthPolicyInput {
+                resource_identifier: self.resource_identifier
+                ,
+            }
+        )
     }
 }
+

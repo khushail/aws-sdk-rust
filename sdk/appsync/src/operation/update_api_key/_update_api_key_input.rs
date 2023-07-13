@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApiKeyInput {
+pub struct UpdateApiKeyInput  {
     /// <p>The ID for the GraphQL API.</p>
     #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct UpdateApiKeyInput {
 }
 impl UpdateApiKeyInput {
     /// <p>The ID for the GraphQL API.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The API key ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the purpose of the API key.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
@@ -43,9 +43,7 @@ impl UpdateApiKeyInput {
 
 /// A builder for [`UpdateApiKeyInput`](crate::operation::update_api_key::UpdateApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiKeyInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -60,8 +58,11 @@ impl UpdateApiKeyInputBuilder {
     }
     /// <p>The ID for the GraphQL API.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
+    }
+    /// <p>The ID for the GraphQL API.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>The API key ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +71,11 @@ impl UpdateApiKeyInputBuilder {
     }
     /// <p>The API key ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The API key ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A description of the purpose of the API key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,8 +84,11 @@ impl UpdateApiKeyInputBuilder {
     }
     /// <p>A description of the purpose of the API key.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the purpose of the API key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
     pub fn expires(mut self, input: i64) -> Self {
@@ -90,21 +97,26 @@ impl UpdateApiKeyInputBuilder {
     }
     /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
     pub fn set_expires(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.expires = input;
-        self
+        self.expires = input; self
+    }
+    /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
+    pub fn get_expires(&self) -> &::std::option::Option<i64> {
+        &self.expires
     }
     /// Consumes the builder and constructs a [`UpdateApiKeyInput`](crate::operation::update_api_key::UpdateApiKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_api_key::UpdateApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_api_key::UpdateApiKeyInput {
-            api_id: self.api_id,
-            id: self.id,
-            description: self.description,
-            expires: self.expires,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_api_key::UpdateApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_api_key::UpdateApiKeyInput {
+                api_id: self.api_id
+                ,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                expires: self.expires
+                ,
+            }
+        )
     }
 }
+

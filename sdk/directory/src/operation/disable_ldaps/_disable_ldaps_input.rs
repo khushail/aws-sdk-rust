@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableLdapsInput {
+pub struct DisableLdapsInput  {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DisableLdapsInput {
 }
 impl DisableLdapsInput {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LdapsType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LdapsType> {
         self.r#type.as_ref()
     }
 }
@@ -29,9 +29,7 @@ impl DisableLdapsInput {
 
 /// A builder for [`DisableLdapsInput`](crate::operation::disable_ldaps::DisableLdapsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableLdapsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LdapsType>,
@@ -44,8 +42,11 @@ impl DisableLdapsInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
+    }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn r#type(mut self, input: crate::types::LdapsType) -> Self {
@@ -54,19 +55,22 @@ impl DisableLdapsInputBuilder {
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LdapsType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LdapsType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`DisableLdapsInput`](crate::operation::disable_ldaps::DisableLdapsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_ldaps::DisableLdapsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_ldaps::DisableLdapsInput {
-            directory_id: self.directory_id,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_ldaps::DisableLdapsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_ldaps::DisableLdapsInput {
+                directory_id: self.directory_id
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

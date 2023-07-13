@@ -3,7 +3,7 @@
 /// <p>Information about the updated vehicle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVehicleResponseItem {
+pub struct UpdateVehicleResponseItem  {
     /// <p>The unique ID of the updated vehicle.</p>
     #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct UpdateVehicleResponseItem {
 }
 impl UpdateVehicleResponseItem {
     /// <p>The unique ID of the updated vehicle.</p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl UpdateVehicleResponseItem {
 
 /// A builder for [`UpdateVehicleResponseItem`](crate::types::UpdateVehicleResponseItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVehicleResponseItemBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl UpdateVehicleResponseItemBuilder {
     }
     /// <p>The unique ID of the updated vehicle.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
+    }
+    /// <p>The unique ID of the updated vehicle.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl UpdateVehicleResponseItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`UpdateVehicleResponseItem`](crate::types::UpdateVehicleResponseItem).
     pub fn build(self) -> crate::types::UpdateVehicleResponseItem {
         crate::types::UpdateVehicleResponseItem {
-            vehicle_name: self.vehicle_name,
-            arn: self.arn,
+            vehicle_name: self.vehicle_name
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

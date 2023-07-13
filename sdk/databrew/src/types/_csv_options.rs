@@ -3,7 +3,7 @@
 /// <p>Represents a set of options that define how DataBrew will read a comma-separated value (CSV) file when creating a dataset from that file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CsvOptions {
+pub struct CsvOptions  {
     /// <p>A single character that specifies the delimiter being used in the CSV file.</p>
     #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CsvOptions {
 }
 impl CsvOptions {
     /// <p>A single character that specifies the delimiter being used in the CSV file.</p>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
@@ -30,9 +30,7 @@ impl CsvOptions {
 
 /// A builder for [`CsvOptions`](crate::types::CsvOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsvOptionsBuilder {
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
     pub(crate) header_row: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl CsvOptionsBuilder {
     }
     /// <p>A single character that specifies the delimiter being used in the CSV file.</p>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
+    }
+    /// <p>A single character that specifies the delimiter being used in the CSV file.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
     }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
     pub fn header_row(mut self, input: bool) -> Self {
@@ -55,14 +56,20 @@ impl CsvOptionsBuilder {
     }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
     pub fn set_header_row(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.header_row = input;
-        self
+        self.header_row = input; self
+    }
+    /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
+    pub fn get_header_row(&self) -> &::std::option::Option<bool> {
+        &self.header_row
     }
     /// Consumes the builder and constructs a [`CsvOptions`](crate::types::CsvOptions).
     pub fn build(self) -> crate::types::CsvOptions {
         crate::types::CsvOptions {
-            delimiter: self.delimiter,
-            header_row: self.header_row,
+            delimiter: self.delimiter
+            ,
+            header_row: self.header_row
+            ,
         }
     }
 }
+

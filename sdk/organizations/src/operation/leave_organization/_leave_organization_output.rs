@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LeaveOrganizationOutput {
+pub struct LeaveOrganizationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for LeaveOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl LeaveOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`LeaveOrganizationOutput`](crate::operation::leave_organization::LeaveOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::leave_organization::builders::LeaveOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::leave_organization::builders::LeaveOrganizationOutputBuilder {
         crate::operation::leave_organization::builders::LeaveOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`LeaveOrganizationOutput`](crate::operation::leave_organization::LeaveOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LeaveOrganizationOutputBuilder {
     _request_id: Option<String>,
 }
 impl LeaveOrganizationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`LeaveOrganizationOutput`](crate::operation::leave_organization::LeaveOrganizationOutput).
     pub fn build(self) -> crate::operation::leave_organization::LeaveOrganizationOutput {
         crate::operation::leave_organization::LeaveOrganizationOutput {
@@ -43,3 +40,4 @@ impl LeaveOrganizationOutputBuilder {
         }
     }
 }
+

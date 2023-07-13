@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEarthObservationJobInput {
+pub struct GetEarthObservationJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetEarthObservationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl GetEarthObservationJobInput {
     /// Creates a new builder-style object to manufacture [`GetEarthObservationJobInput`](crate::operation::get_earth_observation_job::GetEarthObservationJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_earth_observation_job::builders::GetEarthObservationJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_earth_observation_job::builders::GetEarthObservationJobInputBuilder {
         crate::operation::get_earth_observation_job::builders::GetEarthObservationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEarthObservationJobInput`](crate::operation::get_earth_observation_job::GetEarthObservationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEarthObservationJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetEarthObservationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`GetEarthObservationJobInput`](crate::operation::get_earth_observation_job::GetEarthObservationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_earth_observation_job::GetEarthObservationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_earth_observation_job::GetEarthObservationJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_earth_observation_job::GetEarthObservationJobInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

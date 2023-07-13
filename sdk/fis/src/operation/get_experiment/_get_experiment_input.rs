@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExperimentInput {
+pub struct GetExperimentInput  {
     /// <p>The ID of the experiment.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetExperimentInput {
     /// <p>The ID of the experiment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetExperimentInput {
 
 /// A builder for [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExperimentInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetExperimentInputBuilder {
     }
     /// <p>The ID of the experiment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the experiment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_experiment::GetExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_experiment::GetExperimentInput {
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_experiment::GetExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_experiment::GetExperimentInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

@@ -3,60 +3,52 @@
 /// Placeholder documentation for CancelInputDeviceTransferRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelInputDeviceTransferInput {
+pub struct CancelInputDeviceTransferInput  {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
     #[doc(hidden)]
     pub input_device_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelInputDeviceTransferInput {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_device_id(&self) -> ::std::option::Option<& str> {
         self.input_device_id.as_deref()
     }
 }
 impl CancelInputDeviceTransferInput {
     /// Creates a new builder-style object to manufacture [`CancelInputDeviceTransferInput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput).
-    pub fn builder() -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder{
+    pub fn builder() -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder {
         crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelInputDeviceTransferInput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelInputDeviceTransferInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelInputDeviceTransferInputBuilder {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.input_device_id = input;
-        self
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.input_device_id = input; self
+    }
+    /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_device_id
     }
     /// Consumes the builder and constructs a [`CancelInputDeviceTransferInput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput {
-                input_device_id: self.input_device_id,
-            },
+                input_device_id: self.input_device_id
+                ,
+            }
         )
     }
 }
+

@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEnvironmentInput {
+pub struct DeleteEnvironmentInput  {
     /// <p>The identifier for the FinSpace environment.</p>
     #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentInput {
     /// <p>The identifier for the FinSpace environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
 }
 impl DeleteEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentInputBuilder {
     /// <p>The identifier for the FinSpace environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the FinSpace environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_id = input;
-        self
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_id = input; self
+    }
+    /// <p>The identifier for the FinSpace environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_environment::DeleteEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_environment::DeleteEnvironmentInput {
-                environment_id: self.environment_id,
-            },
+                environment_id: self.environment_id
+                ,
+            }
         )
     }
 }
+

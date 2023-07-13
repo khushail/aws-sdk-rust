@@ -3,7 +3,7 @@
 /// <p>Provides information about the general settings and status of a channel for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelResponse {
+pub struct ChannelResponse  {
     /// <p>The unique identifier for the application.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -34,11 +34,11 @@ pub struct ChannelResponse {
 }
 impl ChannelResponse {
     /// <p>The unique identifier for the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format, when the channel was enabled.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>Specifies whether the channel is enabled for the application.</p>
@@ -50,7 +50,7 @@ impl ChannelResponse {
         self.has_credential
     }
     /// <p>(Deprecated) An identifier for the channel. This property is retained only for backward compatibility.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Specifies whether the channel is archived.</p>
@@ -58,11 +58,11 @@ impl ChannelResponse {
         self.is_archived
     }
     /// <p>The user who last modified the channel.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format, when the channel was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The current version of the channel.</p>
@@ -79,9 +79,7 @@ impl ChannelResponse {
 
 /// A builder for [`ChannelResponse`](crate::types::ChannelResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
@@ -95,36 +93,30 @@ pub struct ChannelResponseBuilder {
 }
 impl ChannelResponseBuilder {
     /// <p>The unique identifier for the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier for the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The date and time, in ISO 8601 format, when the channel was enabled.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the channel was enabled.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>The date and time, in ISO 8601 format, when the channel was enabled.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// <p>Specifies whether the channel is enabled for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -133,8 +125,11 @@ impl ChannelResponseBuilder {
     }
     /// <p>Specifies whether the channel is enabled for the application.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Specifies whether the channel is enabled for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn has_credential(mut self, input: bool) -> Self {
@@ -143,8 +138,11 @@ impl ChannelResponseBuilder {
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn set_has_credential(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_credential = input;
-        self
+        self.has_credential = input; self
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn get_has_credential(&self) -> &::std::option::Option<bool> {
+        &self.has_credential
     }
     /// <p>(Deprecated) An identifier for the channel. This property is retained only for backward compatibility.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,8 +151,11 @@ impl ChannelResponseBuilder {
     }
     /// <p>(Deprecated) An identifier for the channel. This property is retained only for backward compatibility.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>(Deprecated) An identifier for the channel. This property is retained only for backward compatibility.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Specifies whether the channel is archived.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
@@ -163,40 +164,37 @@ impl ChannelResponseBuilder {
     }
     /// <p>Specifies whether the channel is archived.</p>
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_archived = input;
-        self
+        self.is_archived = input; self
+    }
+    /// <p>Specifies whether the channel is archived.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// <p>The user who last modified the channel.</p>
-    pub fn last_modified_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user who last modified the channel.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_modified_by = input;
-        self
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_by = input; self
+    }
+    /// <p>The user who last modified the channel.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
     }
     /// <p>The date and time, in ISO 8601 format, when the channel was last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the channel was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_date = input; self
+    }
+    /// <p>The date and time, in ISO 8601 format, when the channel was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
     }
     /// <p>The current version of the channel.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -205,21 +203,34 @@ impl ChannelResponseBuilder {
     }
     /// <p>The current version of the channel.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The current version of the channel.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ChannelResponse`](crate::types::ChannelResponse).
     pub fn build(self) -> crate::types::ChannelResponse {
         crate::types::ChannelResponse {
-            application_id: self.application_id,
-            creation_date: self.creation_date,
-            enabled: self.enabled,
-            has_credential: self.has_credential,
-            id: self.id,
-            is_archived: self.is_archived,
-            last_modified_by: self.last_modified_by,
-            last_modified_date: self.last_modified_date,
-            version: self.version,
+            application_id: self.application_id
+            ,
+            creation_date: self.creation_date
+            ,
+            enabled: self.enabled
+            ,
+            has_credential: self.has_credential
+            ,
+            id: self.id
+            ,
+            is_archived: self.is_archived
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

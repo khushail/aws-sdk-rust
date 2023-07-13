@@ -3,14 +3,14 @@
 /// <p> Identifies a Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisStreamsInput {
+pub struct KinesisStreamsInput  {
     /// <p>The ARN of the input Kinesis data stream to read.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamsInput {
     /// <p>The ARN of the input Kinesis data stream to read.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl KinesisStreamsInput {
 
 /// A builder for [`KinesisStreamsInput`](crate::types::KinesisStreamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisStreamsInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl KinesisStreamsInputBuilder {
     }
     /// <p>The ARN of the input Kinesis data stream to read.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The ARN of the input Kinesis data stream to read.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`KinesisStreamsInput`](crate::types::KinesisStreamsInput).
     pub fn build(self) -> crate::types::KinesisStreamsInput {
         crate::types::KinesisStreamsInput {
-            resource_arn: self.resource_arn,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

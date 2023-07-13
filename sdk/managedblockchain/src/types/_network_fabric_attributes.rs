@@ -3,7 +3,7 @@
 /// <p>Attributes of Hyperledger Fabric for a network.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkFabricAttributes {
+pub struct NetworkFabricAttributes  {
     /// <p>The endpoint of the ordering service for the network.</p>
     #[doc(hidden)]
     pub ordering_service_endpoint: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct NetworkFabricAttributes {
 }
 impl NetworkFabricAttributes {
     /// <p>The endpoint of the ordering service for the network.</p>
-    pub fn ordering_service_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn ordering_service_endpoint(&self) -> ::std::option::Option<& str> {
         self.ordering_service_endpoint.as_deref()
     }
     /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
-    pub fn edition(&self) -> ::std::option::Option<&crate::types::Edition> {
+    pub fn edition(&self) -> ::std::option::Option<& crate::types::Edition> {
         self.edition.as_ref()
     }
 }
@@ -30,29 +30,24 @@ impl NetworkFabricAttributes {
 
 /// A builder for [`NetworkFabricAttributes`](crate::types::NetworkFabricAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFabricAttributesBuilder {
     pub(crate) ordering_service_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) edition: ::std::option::Option<crate::types::Edition>,
 }
 impl NetworkFabricAttributesBuilder {
     /// <p>The endpoint of the ordering service for the network.</p>
-    pub fn ordering_service_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ordering_service_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ordering_service_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the ordering service for the network.</p>
-    pub fn set_ordering_service_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ordering_service_endpoint = input;
-        self
+    pub fn set_ordering_service_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ordering_service_endpoint = input; self
+    }
+    /// <p>The endpoint of the ordering service for the network.</p>
+    pub fn get_ordering_service_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ordering_service_endpoint
     }
     /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
     pub fn edition(mut self, input: crate::types::Edition) -> Self {
@@ -61,14 +56,20 @@ impl NetworkFabricAttributesBuilder {
     }
     /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
     pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
-        self.edition = input;
-        self
+        self.edition = input; self
+    }
+    /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
+        &self.edition
     }
     /// Consumes the builder and constructs a [`NetworkFabricAttributes`](crate::types::NetworkFabricAttributes).
     pub fn build(self) -> crate::types::NetworkFabricAttributes {
         crate::types::NetworkFabricAttributes {
-            ordering_service_endpoint: self.ordering_service_endpoint,
-            edition: self.edition,
+            ordering_service_endpoint: self.ordering_service_endpoint
+            ,
+            edition: self.edition
+            ,
         }
     }
 }
+

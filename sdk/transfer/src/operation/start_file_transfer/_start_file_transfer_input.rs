@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFileTransferInput {
+pub struct StartFileTransferInput  {
     /// <p>The unique identifier for the connector. </p>
     #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct StartFileTransferInput {
 }
 impl StartFileTransferInput {
     /// <p>The unique identifier for the connector. </p>
-    pub fn connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_id(&self) -> ::std::option::Option<& str> {
         self.connector_id.as_deref()
     }
     /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
-    pub fn send_file_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn send_file_paths(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.send_file_paths.as_deref()
     }
 }
 impl StartFileTransferInput {
     /// Creates a new builder-style object to manufacture [`StartFileTransferInput`](crate::operation::start_file_transfer::StartFileTransferInput).
-    pub fn builder(
-    ) -> crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder {
+    pub fn builder() -> crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder {
         crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder::default()
     }
 }
 
 /// A builder for [`StartFileTransferInput`](crate::operation::start_file_transfer::StartFileTransferInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFileTransferInputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) send_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,43 +42,41 @@ impl StartFileTransferInputBuilder {
     }
     /// <p>The unique identifier for the connector. </p>
     pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_id = input;
-        self
+        self.connector_id = input; self
+    }
+    /// <p>The unique identifier for the connector. </p>
+    pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_id
     }
     /// Appends an item to `send_file_paths`.
     ///
     /// To override the contents of this collection use [`set_send_file_paths`](Self::set_send_file_paths).
     ///
     /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
-    pub fn send_file_paths(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn send_file_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.send_file_paths.unwrap_or_default();
-        v.push(input.into());
-        self.send_file_paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.send_file_paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
-    pub fn set_send_file_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.send_file_paths = input;
-        self
+    pub fn set_send_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.send_file_paths = input; self
+    }
+    /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+    pub fn get_send_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.send_file_paths
     }
     /// Consumes the builder and constructs a [`StartFileTransferInput`](crate::operation::start_file_transfer::StartFileTransferInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_file_transfer::StartFileTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_file_transfer::StartFileTransferInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_file_transfer::StartFileTransferInput {
-                connector_id: self.connector_id,
-                send_file_paths: self.send_file_paths,
-            },
+                connector_id: self.connector_id
+                ,
+                send_file_paths: self.send_file_paths
+                ,
+            }
         )
     }
 }
+

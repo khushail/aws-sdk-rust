@@ -3,109 +3,94 @@ pub use crate::operation::put_permission_policy::_put_permission_policy_output::
 
 pub use crate::operation::put_permission_policy::_put_permission_policy_input::PutPermissionPolicyInputBuilder;
 
+impl PutPermissionPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_permission_policy::PutPermissionPolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_permission_policy::PutPermissionPolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_permission_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutPermissionPolicy`.
-///
-/// <p>Attaches an IAM policy to the specified resource. Use this to share a rule group across accounts.</p>
-/// <p>You must be the owner of the rule group to perform this operation.</p>
-/// <p>This action is subject to the following restrictions:</p>
-/// <ul>
-/// <li> <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p> </li>
-/// <li> <p>The ARN in the request must be a valid WAF <code>RuleGroup</code> ARN and the rule group must exist in the same Region.</p> </li>
-/// <li> <p>The user making the request must be the owner of the rule group.</p> </li>
+/// 
+/// <p>Attaches an IAM policy to the specified resource. Use this to share a rule group across accounts.</p> 
+/// <p>You must be the owner of the rule group to perform this operation.</p> 
+/// <p>This action is subject to the following restrictions:</p> 
+/// <ul> 
+/// <li> <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p> </li> 
+/// <li> <p>The ARN in the request must be a valid WAF <code>RuleGroup</code> ARN and the rule group must exist in the same Region.</p> </li> 
+/// <li> <p>The user making the request must be the owner of the rule group.</p> </li> 
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPermissionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder,
+                    inner: crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder,
 }
-impl PutPermissionPolicyFluentBuilder {
+impl PutPermissionPolicyFluentBuilder  {
     /// Creates a new `PutPermissionPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_permission_policy::PutPermissionPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_permission_policy::PutPermissionPolicyError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutPermissionPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_permission_policy::PutPermissionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_permission_policy::PutPermissionPolicyError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_permission_policy::PutPermissionPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_permission_policy::PutPermissionPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_permission_policy::PutPermissionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_permission_policy::PutPermissionPolicyError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_permission_policy::PutPermissionPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_permission_policy::PutPermissionPolicyError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_permission_policy::PutPermissionPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_permission_policy::PutPermissionPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -116,32 +101,50 @@ impl PutPermissionPolicyFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The policy to attach to the specified rule group. </p>
-    /// <p>The policy specifications must conform to the following:</p>
-    /// <ul>
-    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li>
-    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
-    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
-    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
+    /// <p>The policy to attach to the specified rule group. </p> 
+    /// <p>The policy specifications must conform to the following:</p> 
+    /// <ul> 
+    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li> 
+    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li> 
+    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li> 
+    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li> 
+    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
-    /// <p>The policy to attach to the specified rule group. </p>
-    /// <p>The policy specifications must conform to the following:</p>
-    /// <ul>
-    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li>
-    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
-    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
-    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
-    /// </ul>
+    /// <p>The policy to attach to the specified rule group. </p> 
+    /// <p>The policy specifications must conform to the following:</p> 
+    /// <ul> 
+    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li> 
+    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li> 
+    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li> 
+    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li> 
+    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }
+    /// <p>The policy to attach to the specified rule group. </p> 
+    /// <p>The policy specifications must conform to the following:</p> 
+    /// <ul> 
+    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li> 
+    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li> 
+    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li> 
+    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li> 
+    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li> 
+    /// </ul> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
+    }
 }
+

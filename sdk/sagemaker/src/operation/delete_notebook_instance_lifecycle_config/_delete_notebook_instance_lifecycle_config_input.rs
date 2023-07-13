@@ -2,52 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNotebookInstanceLifecycleConfigInput {
+pub struct DeleteNotebookInstanceLifecycleConfigInput  {
     /// <p>The name of the lifecycle configuration to delete.</p>
     #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration to delete.</p>
-    pub fn notebook_instance_lifecycle_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_instance_lifecycle_config_name(&self) -> ::std::option::Option<& str> {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
 }
 impl DeleteNotebookInstanceLifecycleConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteNotebookInstanceLifecycleConfigInput`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput).
-    pub fn builder() -> crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigInputBuilder{
+    pub fn builder() -> crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigInputBuilder {
         crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotebookInstanceLifecycleConfigInput`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotebookInstanceLifecycleConfigInputBuilder {
-    pub(crate) notebook_instance_lifecycle_config_name:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNotebookInstanceLifecycleConfigInputBuilder {
     /// <p>The name of the lifecycle configuration to delete.</p>
-    pub fn notebook_instance_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the lifecycle configuration to delete.</p>
-    pub fn set_notebook_instance_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.notebook_instance_lifecycle_config_name = input;
-        self
+    pub fn set_notebook_instance_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.notebook_instance_lifecycle_config_name = input; self
+    }
+    /// <p>The name of the lifecycle configuration to delete.</p>
+    pub fn get_notebook_instance_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_name
     }
     /// Consumes the builder and constructs a [`DeleteNotebookInstanceLifecycleConfigInput`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput {
                 notebook_instance_lifecycle_config_name: self.notebook_instance_lifecycle_config_name
@@ -56,3 +50,4 @@ impl DeleteNotebookInstanceLifecycleConfigInputBuilder {
         )
     }
 }
+

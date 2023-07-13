@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFleetMetricInput {
+pub struct DeleteFleetMetricInput  {
     /// <p>The name of the fleet metric to delete.</p>
     #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteFleetMetricInput {
 }
 impl DeleteFleetMetricInput {
     /// <p>The name of the fleet metric to delete.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The expected version of the fleet metric to delete.</p>
@@ -22,17 +22,14 @@ impl DeleteFleetMetricInput {
 }
 impl DeleteFleetMetricInput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetMetricInput`](crate::operation::delete_fleet_metric::DeleteFleetMetricInput).
-    pub fn builder(
-    ) -> crate::operation::delete_fleet_metric::builders::DeleteFleetMetricInputBuilder {
+    pub fn builder() -> crate::operation::delete_fleet_metric::builders::DeleteFleetMetricInputBuilder {
         crate::operation::delete_fleet_metric::builders::DeleteFleetMetricInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFleetMetricInput`](crate::operation::delete_fleet_metric::DeleteFleetMetricInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) expected_version: ::std::option::Option<i64>,
@@ -45,8 +42,11 @@ impl DeleteFleetMetricInputBuilder {
     }
     /// <p>The name of the fleet metric to delete.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
+    }
+    /// <p>The name of the fleet metric to delete.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// <p>The expected version of the fleet metric to delete.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
@@ -55,21 +55,22 @@ impl DeleteFleetMetricInputBuilder {
     }
     /// <p>The expected version of the fleet metric to delete.</p>
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.expected_version = input;
-        self
+        self.expected_version = input; self
+    }
+    /// <p>The expected version of the fleet metric to delete.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        &self.expected_version
     }
     /// Consumes the builder and constructs a [`DeleteFleetMetricInput`](crate::operation::delete_fleet_metric::DeleteFleetMetricInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fleet_metric::DeleteFleetMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleet_metric::DeleteFleetMetricInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_fleet_metric::DeleteFleetMetricInput {
-                metric_name: self.metric_name,
-                expected_version: self.expected_version,
-            },
+                metric_name: self.metric_name
+                ,
+                expected_version: self.expected_version
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Hyperledger Fabric configuration properties for the network.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkFabricConfiguration {
+pub struct NetworkFabricConfiguration  {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
     #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::Edition>,
 }
 impl NetworkFabricConfiguration {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
-    pub fn edition(&self) -> ::std::option::Option<&crate::types::Edition> {
+    pub fn edition(&self) -> ::std::option::Option<& crate::types::Edition> {
         self.edition.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl NetworkFabricConfiguration {
 
 /// A builder for [`NetworkFabricConfiguration`](crate::types::NetworkFabricConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFabricConfigurationBuilder {
     pub(crate) edition: ::std::option::Option<crate::types::Edition>,
 }
@@ -37,13 +35,18 @@ impl NetworkFabricConfigurationBuilder {
     }
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
     pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
-        self.edition = input;
-        self
+        self.edition = input; self
+    }
+    /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
+        &self.edition
     }
     /// Consumes the builder and constructs a [`NetworkFabricConfiguration`](crate::types::NetworkFabricConfiguration).
     pub fn build(self) -> crate::types::NetworkFabricConfiguration {
         crate::types::NetworkFabricConfiguration {
-            edition: self.edition,
+            edition: self.edition
+            ,
         }
     }
 }
+

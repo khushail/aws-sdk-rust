@@ -2,33 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPartnerEventsInput {
+pub struct PutPartnerEventsInput  {
     /// <p>The list of events to write to the event bus.</p>
     #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>,
 }
 impl PutPartnerEventsInput {
     /// <p>The list of events to write to the event bus.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::PutPartnerEventsRequestEntry]> {
+    pub fn entries(&self) -> ::std::option::Option<& [crate::types::PutPartnerEventsRequestEntry]> {
         self.entries.as_deref()
     }
 }
 impl PutPartnerEventsInput {
     /// Creates a new builder-style object to manufacture [`PutPartnerEventsInput`](crate::operation::put_partner_events::PutPartnerEventsInput).
-    pub fn builder() -> crate::operation::put_partner_events::builders::PutPartnerEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_partner_events::builders::PutPartnerEventsInputBuilder {
         crate::operation::put_partner_events::builders::PutPartnerEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutPartnerEventsInput`](crate::operation::put_partner_events::PutPartnerEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPartnerEventsInputBuilder {
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>,
 }
 impl PutPartnerEventsInputBuilder {
     /// Appends an item to `entries`.
@@ -38,29 +34,26 @@ impl PutPartnerEventsInputBuilder {
     /// <p>The list of events to write to the event bus.</p>
     pub fn entries(mut self, input: crate::types::PutPartnerEventsRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of events to write to the event bus.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>) -> Self {
+        self.entries = input; self
+    }
+    /// <p>The list of events to write to the event bus.</p>
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>> {
+        &self.entries
     }
     /// Consumes the builder and constructs a [`PutPartnerEventsInput`](crate::operation::put_partner_events::PutPartnerEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_partner_events::PutPartnerEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_partner_events::PutPartnerEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_partner_events::PutPartnerEventsInput {
-                entries: self.entries,
-            },
+                entries: self.entries
+                ,
+            }
         )
     }
 }
+

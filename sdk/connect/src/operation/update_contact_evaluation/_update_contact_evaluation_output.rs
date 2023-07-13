@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContactEvaluationOutput {
+pub struct UpdateContactEvaluationOutput  {
     /// <p>A unique identifier for the contact evaluation.</p>
     #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
@@ -13,33 +13,29 @@ pub struct UpdateContactEvaluationOutput {
 }
 impl UpdateContactEvaluationOutput {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> ::std::option::Option<& str> {
         self.evaluation_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_arn(&self) -> ::std::option::Option<& str> {
         self.evaluation_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateContactEvaluationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateContactEvaluationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactEvaluationOutput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder {
         crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactEvaluationOutput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactEvaluationOutputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_arn: ::std::option::Option<::std::string::String>,
@@ -47,54 +43,49 @@ pub struct UpdateContactEvaluationOutputBuilder {
 }
 impl UpdateContactEvaluationOutputBuilder {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.evaluation_id = input;
-        self
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_id = input; self
+    }
+    /// <p>A unique identifier for the contact evaluation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn set_evaluation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.evaluation_arn = input;
-        self
+    pub fn set_evaluation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
+    pub fn get_evaluation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateContactEvaluationOutput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
+    pub fn build(self) -> crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
         crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
-            evaluation_id: self.evaluation_id,
-            evaluation_arn: self.evaluation_arn,
+            evaluation_id: self.evaluation_id
+            ,
+            evaluation_arn: self.evaluation_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

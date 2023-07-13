@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelMailboxExportJobInput {
+pub struct CancelMailboxExportJobInput  {
     /// <p>The idempotency token for the client request.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct CancelMailboxExportJobInput {
 }
 impl CancelMailboxExportJobInput {
     /// <p>The idempotency token for the client request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The organization ID.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
 }
 impl CancelMailboxExportJobInput {
     /// Creates a new builder-style object to manufacture [`CancelMailboxExportJobInput`](crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobInputBuilder {
         crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelMailboxExportJobInput`](crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelMailboxExportJobInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -54,8 +50,11 @@ impl CancelMailboxExportJobInputBuilder {
     }
     /// <p>The idempotency token for the client request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The idempotency token for the client request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,38 +63,37 @@ impl CancelMailboxExportJobInputBuilder {
     }
     /// <p>The job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The organization ID.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization ID.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
+    }
+    /// <p>The organization ID.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// Consumes the builder and constructs a [`CancelMailboxExportJobInput`](crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobInput {
-                client_token: self.client_token,
-                job_id: self.job_id,
-                organization_id: self.organization_id,
-            },
+                client_token: self.client_token
+                ,
+                job_id: self.job_id
+                ,
+                organization_id: self.organization_id
+                ,
+            }
         )
     }
 }
+

@@ -82,6 +82,9 @@ pub mod get_evidence;
 /// Types for the `GetEvidenceByEvidenceFolder` operation.
 pub mod get_evidence_by_evidence_folder;
 
+/// Types for the `GetEvidenceFileUploadUrl` operation.
+pub mod get_evidence_file_upload_url;
+
 /// Types for the `GetEvidenceFolder` operation.
 pub mod get_evidence_folder;
 
@@ -183,3 +186,4 @@ pub mod update_settings;
 
 /// Types for the `ValidateAssessmentReportIntegrity` operation.
 pub mod validate_assessment_report_integrity;
+

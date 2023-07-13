@@ -3,14 +3,14 @@
 /// <p>Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisVideoStream {
+pub struct KinesisVideoStream  {
     /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisVideoStream {
     /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl KinesisVideoStream {
 
 /// A builder for [`KinesisVideoStream`](crate::types::KinesisVideoStream).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl KinesisVideoStreamBuilder {
     }
     /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`KinesisVideoStream`](crate::types::KinesisVideoStream).
     pub fn build(self) -> crate::types::KinesisVideoStream {
-        crate::types::KinesisVideoStream { arn: self.arn }
+        crate::types::KinesisVideoStream {
+            arn: self.arn
+            ,
+        }
     }
 }
+

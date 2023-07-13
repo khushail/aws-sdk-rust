@@ -3,7 +3,7 @@
 /// <p>Describes the primary or replica key in a multi-Region key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiRegionKey {
+pub struct MultiRegionKey  {
     /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct MultiRegionKey {
 }
 impl MultiRegionKey {
     /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl MultiRegionKey {
 
 /// A builder for [`MultiRegionKey`](crate::types::MultiRegionKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiRegionKeyBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl MultiRegionKeyBuilder {
     }
     /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl MultiRegionKeyBuilder {
     }
     /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
+    }
+    /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`MultiRegionKey`](crate::types::MultiRegionKey).
     pub fn build(self) -> crate::types::MultiRegionKey {
         crate::types::MultiRegionKey {
-            arn: self.arn,
-            region: self.region,
+            arn: self.arn
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

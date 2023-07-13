@@ -3,7 +3,7 @@
 /// <p>Details about the origin restrictions set on the package. The package origin restrictions determine how new versions of a package can be added to a specific repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageOriginRestrictions {
+pub struct PackageOriginRestrictions  {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
     #[doc(hidden)]
     pub publish: ::std::option::Option<crate::types::AllowPublish>,
@@ -13,11 +13,11 @@ pub struct PackageOriginRestrictions {
 }
 impl PackageOriginRestrictions {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
-    pub fn publish(&self) -> ::std::option::Option<&crate::types::AllowPublish> {
+    pub fn publish(&self) -> ::std::option::Option<& crate::types::AllowPublish> {
         self.publish.as_ref()
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
-    pub fn upstream(&self) -> ::std::option::Option<&crate::types::AllowUpstream> {
+    pub fn upstream(&self) -> ::std::option::Option<& crate::types::AllowUpstream> {
         self.upstream.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl PackageOriginRestrictions {
 
 /// A builder for [`PackageOriginRestrictions`](crate::types::PackageOriginRestrictions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageOriginRestrictionsBuilder {
     pub(crate) publish: ::std::option::Option<crate::types::AllowPublish>,
     pub(crate) upstream: ::std::option::Option<crate::types::AllowUpstream>,
@@ -45,8 +43,11 @@ impl PackageOriginRestrictionsBuilder {
     }
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
     pub fn set_publish(mut self, input: ::std::option::Option<crate::types::AllowPublish>) -> Self {
-        self.publish = input;
-        self
+        self.publish = input; self
+    }
+    /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
+    pub fn get_publish(&self) -> &::std::option::Option<crate::types::AllowPublish> {
+        &self.publish
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
     pub fn upstream(mut self, input: crate::types::AllowUpstream) -> Self {
@@ -54,18 +55,21 @@ impl PackageOriginRestrictionsBuilder {
         self
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
-    pub fn set_upstream(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowUpstream>,
-    ) -> Self {
-        self.upstream = input;
-        self
+    pub fn set_upstream(mut self, input: ::std::option::Option<crate::types::AllowUpstream>) -> Self {
+        self.upstream = input; self
+    }
+    /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
+    pub fn get_upstream(&self) -> &::std::option::Option<crate::types::AllowUpstream> {
+        &self.upstream
     }
     /// Consumes the builder and constructs a [`PackageOriginRestrictions`](crate::types::PackageOriginRestrictions).
     pub fn build(self) -> crate::types::PackageOriginRestrictions {
         crate::types::PackageOriginRestrictions {
-            publish: self.publish,
-            upstream: self.upstream,
+            publish: self.publish
+            ,
+            upstream: self.upstream
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Verify OTP message request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyOtpMessageRequestParameters {
+pub struct VerifyOtpMessageRequestParameters  {
     /// <p>The destination identity to send OTP to.</p>
     #[doc(hidden)]
     pub destination_identity: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct VerifyOtpMessageRequestParameters {
 }
 impl VerifyOtpMessageRequestParameters {
     /// <p>The destination identity to send OTP to.</p>
-    pub fn destination_identity(&self) -> ::std::option::Option<&str> {
+    pub fn destination_identity(&self) -> ::std::option::Option<& str> {
         self.destination_identity.as_deref()
     }
     /// <p>The OTP the end user provided for verification.</p>
-    pub fn otp(&self) -> ::std::option::Option<&str> {
+    pub fn otp(&self) -> ::std::option::Option<& str> {
         self.otp.as_deref()
     }
     /// <p>The reference identifier provided when the OTP was previously sent.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
+    pub fn reference_id(&self) -> ::std::option::Option<& str> {
         self.reference_id.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl VerifyOtpMessageRequestParameters {
 
 /// A builder for [`VerifyOtpMessageRequestParameters`](crate::types::VerifyOtpMessageRequestParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyOtpMessageRequestParametersBuilder {
     pub(crate) destination_identity: ::std::option::Option<::std::string::String>,
     pub(crate) otp: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct VerifyOtpMessageRequestParametersBuilder {
 }
 impl VerifyOtpMessageRequestParametersBuilder {
     /// <p>The destination identity to send OTP to.</p>
-    pub fn destination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination identity to send OTP to.</p>
-    pub fn set_destination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_identity = input;
-        self
+    pub fn set_destination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_identity = input; self
+    }
+    /// <p>The destination identity to send OTP to.</p>
+    pub fn get_destination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_identity
     }
     /// <p>The OTP the end user provided for verification.</p>
     pub fn otp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +64,11 @@ impl VerifyOtpMessageRequestParametersBuilder {
     }
     /// <p>The OTP the end user provided for verification.</p>
     pub fn set_otp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.otp = input;
-        self
+        self.otp = input; self
+    }
+    /// <p>The OTP the end user provided for verification.</p>
+    pub fn get_otp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.otp
     }
     /// <p>The reference identifier provided when the OTP was previously sent.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl VerifyOtpMessageRequestParametersBuilder {
     }
     /// <p>The reference identifier provided when the OTP was previously sent.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
+    }
+    /// <p>The reference identifier provided when the OTP was previously sent.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_id
     }
     /// Consumes the builder and constructs a [`VerifyOtpMessageRequestParameters`](crate::types::VerifyOtpMessageRequestParameters).
     pub fn build(self) -> crate::types::VerifyOtpMessageRequestParameters {
         crate::types::VerifyOtpMessageRequestParameters {
-            destination_identity: self.destination_identity,
-            otp: self.otp,
-            reference_id: self.reference_id,
+            destination_identity: self.destination_identity
+            ,
+            otp: self.otp
+            ,
+            reference_id: self.reference_id
+            ,
         }
     }
 }
+

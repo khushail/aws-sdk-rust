@@ -3,7 +3,7 @@
 /// <p>Describes the content of the lexicon.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LexiconDescription {
+pub struct LexiconDescription  {
     /// <p>Name of the lexicon.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct LexiconDescription {
 }
 impl LexiconDescription {
     /// <p>Name of the lexicon.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Provides lexicon metadata.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&crate::types::LexiconAttributes> {
+    pub fn attributes(&self) -> ::std::option::Option<& crate::types::LexiconAttributes> {
         self.attributes.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl LexiconDescription {
 
 /// A builder for [`LexiconDescription`](crate::types::LexiconDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LexiconDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<crate::types::LexiconAttributes>,
@@ -45,8 +43,11 @@ impl LexiconDescriptionBuilder {
     }
     /// <p>Name of the lexicon.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Name of the lexicon.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Provides lexicon metadata.</p>
     pub fn attributes(mut self, input: crate::types::LexiconAttributes) -> Self {
@@ -54,18 +55,21 @@ impl LexiconDescriptionBuilder {
         self
     }
     /// <p>Provides lexicon metadata.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::LexiconAttributes>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::LexiconAttributes>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>Provides lexicon metadata.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::LexiconAttributes> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`LexiconDescription`](crate::types::LexiconDescription).
     pub fn build(self) -> crate::types::LexiconDescription {
         crate::types::LexiconDescription {
-            name: self.name,
-            attributes: self.attributes,
+            name: self.name
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

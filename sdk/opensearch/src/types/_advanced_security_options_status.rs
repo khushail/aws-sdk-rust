@@ -3,7 +3,7 @@
 /// <p>The status of fine-grained access control settings for a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdvancedSecurityOptionsStatus {
+pub struct AdvancedSecurityOptionsStatus  {
     /// <p>Container for fine-grained access control settings.</p>
     #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
@@ -13,11 +13,11 @@ pub struct AdvancedSecurityOptionsStatus {
 }
 impl AdvancedSecurityOptionsStatus {
     /// <p>Container for fine-grained access control settings.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::AdvancedSecurityOptions> {
         self.options.as_ref()
     }
     /// <p>Status of the fine-grained access control settings for a domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl AdvancedSecurityOptionsStatus {
 
 /// A builder for [`AdvancedSecurityOptionsStatus`](crate::types::AdvancedSecurityOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,12 +42,12 @@ impl AdvancedSecurityOptionsStatusBuilder {
         self
     }
     /// <p>Container for fine-grained access control settings.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AdvancedSecurityOptions>) -> Self {
+        self.options = input; self
+    }
+    /// <p>Container for fine-grained access control settings.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptions> {
+        &self.options
     }
     /// <p>Status of the fine-grained access control settings for a domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -58,14 +56,20 @@ impl AdvancedSecurityOptionsStatusBuilder {
     }
     /// <p>Status of the fine-grained access control settings for a domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Status of the fine-grained access control settings for a domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AdvancedSecurityOptionsStatus`](crate::types::AdvancedSecurityOptionsStatus).
     pub fn build(self) -> crate::types::AdvancedSecurityOptionsStatus {
         crate::types::AdvancedSecurityOptionsStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

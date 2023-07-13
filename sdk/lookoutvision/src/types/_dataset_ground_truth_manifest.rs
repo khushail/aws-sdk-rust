@@ -3,14 +3,14 @@
 /// <p>Location information about a manifest file. You can use a manifest file to create a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetGroundTruthManifest {
+pub struct DatasetGroundTruthManifest  {
     /// <p>The S3 bucket location for the manifest file.</p>
     #[doc(hidden)]
     pub s3_object: ::std::option::Option<crate::types::InputS3Object>,
 }
 impl DatasetGroundTruthManifest {
     /// <p>The S3 bucket location for the manifest file.</p>
-    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::InputS3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<& crate::types::InputS3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl DatasetGroundTruthManifest {
 
 /// A builder for [`DatasetGroundTruthManifest`](crate::types::DatasetGroundTruthManifest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetGroundTruthManifestBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::InputS3Object>,
 }
@@ -36,17 +34,19 @@ impl DatasetGroundTruthManifestBuilder {
         self
     }
     /// <p>The S3 bucket location for the manifest file.</p>
-    pub fn set_s3_object(
-        mut self,
-        input: ::std::option::Option<crate::types::InputS3Object>,
-    ) -> Self {
-        self.s3_object = input;
-        self
+    pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::InputS3Object>) -> Self {
+        self.s3_object = input; self
+    }
+    /// <p>The S3 bucket location for the manifest file.</p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::InputS3Object> {
+        &self.s3_object
     }
     /// Consumes the builder and constructs a [`DatasetGroundTruthManifest`](crate::types::DatasetGroundTruthManifest).
     pub fn build(self) -> crate::types::DatasetGroundTruthManifest {
         crate::types::DatasetGroundTruthManifest {
-            s3_object: self.s3_object,
+            s3_object: self.s3_object
+            ,
         }
     }
 }
+

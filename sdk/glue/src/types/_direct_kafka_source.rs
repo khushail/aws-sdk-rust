@@ -3,7 +3,7 @@
 /// <p>Specifies an Apache Kafka data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectKafkaSource {
+pub struct DirectKafkaSource  {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -22,13 +22,11 @@ pub struct DirectKafkaSource {
 }
 impl DirectKafkaSource {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the streaming options.</p>
-    pub fn streaming_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KafkaStreamingSourceOptions> {
+    pub fn streaming_options(&self) -> ::std::option::Option<& crate::types::KafkaStreamingSourceOptions> {
         self.streaming_options.as_ref()
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
@@ -40,9 +38,7 @@ impl DirectKafkaSource {
         self.detect_schema
     }
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
-    pub fn data_preview_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingDataPreviewOptions> {
+    pub fn data_preview_options(&self) -> ::std::option::Option<& crate::types::StreamingDataPreviewOptions> {
         self.data_preview_options.as_ref()
     }
 }
@@ -55,16 +51,13 @@ impl DirectKafkaSource {
 
 /// A builder for [`DirectKafkaSource`](crate::types::DirectKafkaSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectKafkaSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_options: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
     pub(crate) window_size: ::std::option::Option<i32>,
     pub(crate) detect_schema: ::std::option::Option<bool>,
-    pub(crate) data_preview_options:
-        ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
+    pub(crate) data_preview_options: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
 }
 impl DirectKafkaSourceBuilder {
     /// <p>The name of the data store.</p>
@@ -74,8 +67,11 @@ impl DirectKafkaSourceBuilder {
     }
     /// <p>The name of the data store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the data store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Specifies the streaming options.</p>
     pub fn streaming_options(mut self, input: crate::types::KafkaStreamingSourceOptions) -> Self {
@@ -83,12 +79,12 @@ impl DirectKafkaSourceBuilder {
         self
     }
     /// <p>Specifies the streaming options.</p>
-    pub fn set_streaming_options(
-        mut self,
-        input: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
-    ) -> Self {
-        self.streaming_options = input;
-        self
+    pub fn set_streaming_options(mut self, input: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>) -> Self {
+        self.streaming_options = input; self
+    }
+    /// <p>Specifies the streaming options.</p>
+    pub fn get_streaming_options(&self) -> &::std::option::Option<crate::types::KafkaStreamingSourceOptions> {
+        &self.streaming_options
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub fn window_size(mut self, input: i32) -> Self {
@@ -97,8 +93,11 @@ impl DirectKafkaSourceBuilder {
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub fn set_window_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.window_size = input;
-        self
+        self.window_size = input; self
+    }
+    /// <p>The amount of time to spend processing each micro batch.</p>
+    pub fn get_window_size(&self) -> &::std::option::Option<i32> {
+        &self.window_size
     }
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
     pub fn detect_schema(mut self, input: bool) -> Self {
@@ -107,33 +106,39 @@ impl DirectKafkaSourceBuilder {
     }
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
     pub fn set_detect_schema(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.detect_schema = input;
-        self
+        self.detect_schema = input; self
+    }
+    /// <p>Whether to automatically determine the schema from the incoming data.</p>
+    pub fn get_detect_schema(&self) -> &::std::option::Option<bool> {
+        &self.detect_schema
     }
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
-    pub fn data_preview_options(
-        mut self,
-        input: crate::types::StreamingDataPreviewOptions,
-    ) -> Self {
+    pub fn data_preview_options(mut self, input: crate::types::StreamingDataPreviewOptions) -> Self {
         self.data_preview_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
-    pub fn set_data_preview_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
-    ) -> Self {
-        self.data_preview_options = input;
-        self
+    pub fn set_data_preview_options(mut self, input: ::std::option::Option<crate::types::StreamingDataPreviewOptions>) -> Self {
+        self.data_preview_options = input; self
+    }
+    /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
+    pub fn get_data_preview_options(&self) -> &::std::option::Option<crate::types::StreamingDataPreviewOptions> {
+        &self.data_preview_options
     }
     /// Consumes the builder and constructs a [`DirectKafkaSource`](crate::types::DirectKafkaSource).
     pub fn build(self) -> crate::types::DirectKafkaSource {
         crate::types::DirectKafkaSource {
-            name: self.name,
-            streaming_options: self.streaming_options,
-            window_size: self.window_size,
-            detect_schema: self.detect_schema,
-            data_preview_options: self.data_preview_options,
+            name: self.name
+            ,
+            streaming_options: self.streaming_options
+            ,
+            window_size: self.window_size
+            ,
+            detect_schema: self.detect_schema
+            ,
+            data_preview_options: self.data_preview_options
+            ,
         }
     }
 }
+

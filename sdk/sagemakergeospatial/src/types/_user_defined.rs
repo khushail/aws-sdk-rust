@@ -3,7 +3,7 @@
 /// <p>The output resolution (in target georeferenced units) of the result of the operation</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserDefined {
+pub struct UserDefined  {
     /// <p>The value for output resolution of the result.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<f32>,
@@ -17,7 +17,7 @@ impl UserDefined {
         self.value
     }
     /// <p>The units for output resolution of the result.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::Unit> {
         self.unit.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl UserDefined {
 
 /// A builder for [`UserDefined`](crate::types::UserDefined).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserDefinedBuilder {
     pub(crate) value: ::std::option::Option<f32>,
     pub(crate) unit: ::std::option::Option<crate::types::Unit>,
@@ -45,8 +43,11 @@ impl UserDefinedBuilder {
     }
     /// <p>The value for output resolution of the result.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value for output resolution of the result.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f32> {
+        &self.value
     }
     /// <p>The units for output resolution of the result.</p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
@@ -55,14 +56,20 @@ impl UserDefinedBuilder {
     }
     /// <p>The units for output resolution of the result.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
+    }
+    /// <p>The units for output resolution of the result.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`UserDefined`](crate::types::UserDefined).
     pub fn build(self) -> crate::types::UserDefined {
         crate::types::UserDefined {
-            value: self.value,
-            unit: self.unit,
+            value: self.value
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

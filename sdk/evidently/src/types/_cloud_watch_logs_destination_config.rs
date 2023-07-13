@@ -3,14 +3,14 @@
 /// <p>A structure containing the CloudWatch Logs log group where the project stores evaluation events.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLogsDestinationConfig {
+pub struct CloudWatchLogsDestinationConfig  {
     /// <p>The name of the log group where the project stores evaluation events.</p>
     #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogsDestinationConfig {
     /// <p>The name of the log group where the project stores evaluation events.</p>
-    pub fn log_group(&self) -> ::std::option::Option<&str> {
+    pub fn log_group(&self) -> ::std::option::Option<& str> {
         self.log_group.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl CloudWatchLogsDestinationConfig {
 
 /// A builder for [`CloudWatchLogsDestinationConfig`](crate::types::CloudWatchLogsDestinationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogsDestinationConfigBuilder {
     pub(crate) log_group: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl CloudWatchLogsDestinationConfigBuilder {
     }
     /// <p>The name of the log group where the project stores evaluation events.</p>
     pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group = input;
-        self
+        self.log_group = input; self
+    }
+    /// <p>The name of the log group where the project stores evaluation events.</p>
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsDestinationConfig`](crate::types::CloudWatchLogsDestinationConfig).
     pub fn build(self) -> crate::types::CloudWatchLogsDestinationConfig {
         crate::types::CloudWatchLogsDestinationConfig {
-            log_group: self.log_group,
+            log_group: self.log_group
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3 {
+pub struct S3  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct S3 {
 }
 impl S3 {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -23,7 +23,7 @@ impl S3 {
         self.enabled
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl S3 {
 
 /// A builder for [`S3`](crate::types::S3).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3Builder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -52,8 +50,11 @@ impl S3Builder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn enabled(mut self, input: bool) -> Self {
@@ -62,8 +63,11 @@ impl S3Builder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,15 +76,22 @@ impl S3Builder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`S3`](crate::types::S3).
     pub fn build(self) -> crate::types::S3 {
         crate::types::S3 {
-            bucket: self.bucket,
-            enabled: self.enabled,
-            prefix: self.prefix,
+            bucket: self.bucket
+            ,
+            enabled: self.enabled
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

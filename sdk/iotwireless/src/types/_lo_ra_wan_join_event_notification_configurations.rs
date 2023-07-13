@@ -3,16 +3,14 @@
 /// <p>Object for LoRaWAN join resource type event configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanJoinEventNotificationConfigurations {
+pub struct LoRaWanJoinEventNotificationConfigurations  {
     /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
     #[doc(hidden)]
     pub dev_eui_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl LoRaWanJoinEventNotificationConfigurations {
     /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-    pub fn dev_eui_event_topic(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    pub fn dev_eui_event_topic(&self) -> ::std::option::Option<& crate::types::EventNotificationTopicStatus> {
         self.dev_eui_event_topic.as_ref()
     }
 }
@@ -25,34 +23,30 @@ impl LoRaWanJoinEventNotificationConfigurations {
 
 /// A builder for [`LoRaWanJoinEventNotificationConfigurations`](crate::types::LoRaWanJoinEventNotificationConfigurations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanJoinEventNotificationConfigurationsBuilder {
-    pub(crate) dev_eui_event_topic:
-        ::std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub(crate) dev_eui_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl LoRaWanJoinEventNotificationConfigurationsBuilder {
     /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-    pub fn dev_eui_event_topic(
-        mut self,
-        input: crate::types::EventNotificationTopicStatus,
-    ) -> Self {
+    pub fn dev_eui_event_topic(mut self, input: crate::types::EventNotificationTopicStatus) -> Self {
         self.dev_eui_event_topic = ::std::option::Option::Some(input);
         self
     }
     /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-    pub fn set_dev_eui_event_topic(
-        mut self,
-        input: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
-    ) -> Self {
-        self.dev_eui_event_topic = input;
-        self
+    pub fn set_dev_eui_event_topic(mut self, input: ::std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
+        self.dev_eui_event_topic = input; self
+    }
+    /// <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
+    pub fn get_dev_eui_event_topic(&self) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
+        &self.dev_eui_event_topic
     }
     /// Consumes the builder and constructs a [`LoRaWanJoinEventNotificationConfigurations`](crate::types::LoRaWanJoinEventNotificationConfigurations).
     pub fn build(self) -> crate::types::LoRaWanJoinEventNotificationConfigurations {
         crate::types::LoRaWanJoinEventNotificationConfigurations {
-            dev_eui_event_topic: self.dev_eui_event_topic,
+            dev_eui_event_topic: self.dev_eui_event_topic
+            ,
         }
     }
 }
+

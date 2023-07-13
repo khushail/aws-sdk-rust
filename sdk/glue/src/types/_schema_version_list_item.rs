@@ -3,7 +3,7 @@
 /// <p>An object containing the details about a schema version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaVersionListItem {
+pub struct SchemaVersionListItem  {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
@@ -22,11 +22,11 @@ pub struct SchemaVersionListItem {
 }
 impl SchemaVersionListItem {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The unique identifier of the schema version.</p>
-    pub fn schema_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version_id(&self) -> ::std::option::Option<& str> {
         self.schema_version_id.as_deref()
     }
     /// <p>The version number of the schema.</p>
@@ -34,11 +34,11 @@ impl SchemaVersionListItem {
         self.version_number
     }
     /// <p>The status of the schema version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SchemaVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SchemaVersionStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time the schema version was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl SchemaVersionListItem {
 
 /// A builder for [`SchemaVersionListItem`](crate::types::SchemaVersionListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaVersionListItemBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
@@ -69,24 +67,24 @@ impl SchemaVersionListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// <p>The unique identifier of the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.schema_version_id = input;
-        self
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schema_version_id = input; self
+    }
+    /// <p>The unique identifier of the schema version.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
     }
     /// <p>The version number of the schema.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -95,8 +93,11 @@ impl SchemaVersionListItemBuilder {
     }
     /// <p>The version number of the schema.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>The status of the schema version.</p>
     pub fn status(mut self, input: crate::types::SchemaVersionStatus) -> Self {
@@ -104,12 +105,12 @@ impl SchemaVersionListItemBuilder {
         self
     }
     /// <p>The status of the schema version.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaVersionStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the schema version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
+        &self.status
     }
     /// <p>The date and time the schema version was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,17 +119,27 @@ impl SchemaVersionListItemBuilder {
     }
     /// <p>The date and time the schema version was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
+    }
+    /// <p>The date and time the schema version was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`SchemaVersionListItem`](crate::types::SchemaVersionListItem).
     pub fn build(self) -> crate::types::SchemaVersionListItem {
         crate::types::SchemaVersionListItem {
-            schema_arn: self.schema_arn,
-            schema_version_id: self.schema_version_id,
-            version_number: self.version_number.unwrap_or_default(),
-            status: self.status,
-            created_time: self.created_time,
+            schema_arn: self.schema_arn
+            ,
+            schema_version_id: self.schema_version_id
+            ,
+            version_number: self.version_number
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
+            created_time: self.created_time
+            ,
         }
     }
 }
+

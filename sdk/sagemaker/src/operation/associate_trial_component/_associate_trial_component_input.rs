@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateTrialComponentInput {
+pub struct AssociateTrialComponentInput  {
     /// <p>The name of the component to associated with the trial.</p>
     #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct AssociateTrialComponentInput {
 }
 impl AssociateTrialComponentInput {
     /// <p>The name of the component to associated with the trial.</p>
-    pub fn trial_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_component_name(&self) -> ::std::option::Option<& str> {
         self.trial_component_name.as_deref()
     }
     /// <p>The name of the trial to associate with.</p>
-    pub fn trial_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_name(&self) -> ::std::option::Option<& str> {
         self.trial_name.as_deref()
     }
 }
 impl AssociateTrialComponentInput {
     /// Creates a new builder-style object to manufacture [`AssociateTrialComponentInput`](crate::operation::associate_trial_component::AssociateTrialComponentInput).
-    pub fn builder(
-    ) -> crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder {
         crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTrialComponentInput`](crate::operation::associate_trial_component::AssociateTrialComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTrialComponentInputBuilder {
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateTrialComponentInputBuilder {
     /// <p>The name of the component to associated with the trial.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component to associated with the trial.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.trial_component_name = input;
-        self
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trial_component_name = input; self
+    }
+    /// <p>The name of the component to associated with the trial.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
     }
     /// <p>The name of the trial to associate with.</p>
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,21 +55,22 @@ impl AssociateTrialComponentInputBuilder {
     }
     /// <p>The name of the trial to associate with.</p>
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_name = input;
-        self
+        self.trial_name = input; self
+    }
+    /// <p>The name of the trial to associate with.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
     }
     /// Consumes the builder and constructs a [`AssociateTrialComponentInput`](crate::operation::associate_trial_component::AssociateTrialComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_trial_component::AssociateTrialComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_trial_component::AssociateTrialComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_trial_component::AssociateTrialComponentInput {
-                trial_component_name: self.trial_component_name,
-                trial_name: self.trial_name,
-            },
+                trial_component_name: self.trial_component_name
+                ,
+                trial_name: self.trial_name
+                ,
+            }
         )
     }
 }
+

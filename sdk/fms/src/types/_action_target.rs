@@ -3,7 +3,7 @@
 /// <p>Describes a remediation action target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionTarget {
+pub struct ActionTarget  {
     /// <p>The ID of the remediation target.</p>
     #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ActionTarget {
 }
 impl ActionTarget {
     /// <p>The ID of the remediation target.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>A description of the remediation action target.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ActionTarget {
 
 /// A builder for [`ActionTarget`](crate::types::ActionTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionTargetBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ActionTargetBuilder {
     }
     /// <p>The ID of the remediation target.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The ID of the remediation target.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>A description of the remediation action target.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ActionTargetBuilder {
     }
     /// <p>A description of the remediation action target.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the remediation action target.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ActionTarget`](crate::types::ActionTarget).
     pub fn build(self) -> crate::types::ActionTarget {
         crate::types::ActionTarget {
-            resource_id: self.resource_id,
-            description: self.description,
+            resource_id: self.resource_id
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

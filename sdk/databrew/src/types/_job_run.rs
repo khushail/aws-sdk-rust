@@ -3,7 +3,7 @@
 /// <p>Represents one run of a DataBrew job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobRun {
+pub struct JobRun  {
     /// <p>The number of times that DataBrew has attempted to run the job.</p>
     #[doc(hidden)]
     pub attempt: i32,
@@ -39,8 +39,7 @@ pub struct JobRun {
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     #[doc(hidden)]
-    pub data_catalog_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
+    pub data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     #[doc(hidden)]
     pub database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
@@ -58,8 +57,7 @@ pub struct JobRun {
     pub job_sample: ::std::option::Option<crate::types::JobSample>,
     /// <p>List of validation configurations that are applied to the profile job run.</p>
     #[doc(hidden)]
-    pub validation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
+    pub validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
 }
 impl JobRun {
     /// <p>The number of times that DataBrew has attempted to run the job.</p>
@@ -67,15 +65,15 @@ impl JobRun {
         self.attempt
     }
     /// <p>The date and time when the job completed processing.</p>
-    pub fn completed_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The name of the dataset for the job to process.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The amount of time, in seconds, during which a job run consumed resources.</p>
@@ -83,59 +81,55 @@ impl JobRun {
         self.execution_time
     }
     /// <p>The name of the job being processed during this run.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The unique identifier of the job run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The current state of the job run entity itself.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::JobRunState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::JobRunState> {
         self.state.as_ref()
     }
     /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
-    pub fn log_subscription(&self) -> ::std::option::Option<&crate::types::LogSubscription> {
+    pub fn log_subscription(&self) -> ::std::option::Option<& crate::types::LogSubscription> {
         self.log_subscription.as_ref()
     }
     /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>One or more output artifacts from a job run.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
+    pub fn outputs(&self) -> ::std::option::Option<& [crate::types::Output]> {
         self.outputs.as_deref()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
+    pub fn data_catalog_outputs(&self) -> ::std::option::Option<& [crate::types::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn database_outputs(&self) -> ::std::option::Option<&[crate::types::DatabaseOutput]> {
+    pub fn database_outputs(&self) -> ::std::option::Option<& [crate::types::DatabaseOutput]> {
         self.database_outputs.as_deref()
     }
     /// <p>The set of steps processed by the job.</p>
-    pub fn recipe_reference(&self) -> ::std::option::Option<&crate::types::RecipeReference> {
+    pub fn recipe_reference(&self) -> ::std::option::Option<& crate::types::RecipeReference> {
         self.recipe_reference.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
-    pub fn started_by(&self) -> ::std::option::Option<&str> {
+    pub fn started_by(&self) -> ::std::option::Option<& str> {
         self.started_by.as_deref()
     }
     /// <p>The date and time when the job run began. </p>
-    pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
-    pub fn job_sample(&self) -> ::std::option::Option<&crate::types::JobSample> {
+    pub fn job_sample(&self) -> ::std::option::Option<& crate::types::JobSample> {
         self.job_sample.as_ref()
     }
     /// <p>List of validation configurations that are applied to the profile job run.</p>
-    pub fn validation_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ValidationConfiguration]> {
+    pub fn validation_configurations(&self) -> ::std::option::Option<& [crate::types::ValidationConfiguration]> {
         self.validation_configurations.as_deref()
     }
 }
@@ -148,9 +142,7 @@ impl JobRun {
 
 /// A builder for [`JobRun`](crate::types::JobRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobRunBuilder {
     pub(crate) attempt: ::std::option::Option<i32>,
     pub(crate) completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -163,16 +155,13 @@ pub struct JobRunBuilder {
     pub(crate) log_subscription: ::std::option::Option<crate::types::LogSubscription>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    pub(crate) data_catalog_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
-    pub(crate) database_outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
+    pub(crate) data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
+    pub(crate) database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
     pub(crate) recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
     pub(crate) started_by: ::std::option::Option<::std::string::String>,
     pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_sample: ::std::option::Option<crate::types::JobSample>,
-    pub(crate) validation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
+    pub(crate) validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
 }
 impl JobRunBuilder {
     /// <p>The number of times that DataBrew has attempted to run the job.</p>
@@ -182,8 +171,11 @@ impl JobRunBuilder {
     }
     /// <p>The number of times that DataBrew has attempted to run the job.</p>
     pub fn set_attempt(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.attempt = input;
-        self
+        self.attempt = input; self
+    }
+    /// <p>The number of times that DataBrew has attempted to run the job.</p>
+    pub fn get_attempt(&self) -> &::std::option::Option<i32> {
+        &self.attempt
     }
     /// <p>The date and time when the job completed processing.</p>
     pub fn completed_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -191,12 +183,12 @@ impl JobRunBuilder {
         self
     }
     /// <p>The date and time when the job completed processing.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.completed_on = input;
-        self
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.completed_on = input; self
+    }
+    /// <p>The date and time when the job completed processing.</p>
+    pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_on
     }
     /// <p>The name of the dataset for the job to process.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -205,24 +197,24 @@ impl JobRunBuilder {
     }
     /// <p>The name of the dataset for the job to process.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
+    }
+    /// <p>The name of the dataset for the job to process.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// <p>The amount of time, in seconds, during which a job run consumed resources.</p>
     pub fn execution_time(mut self, input: i32) -> Self {
@@ -231,8 +223,11 @@ impl JobRunBuilder {
     }
     /// <p>The amount of time, in seconds, during which a job run consumed resources.</p>
     pub fn set_execution_time(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.execution_time = input;
-        self
+        self.execution_time = input; self
+    }
+    /// <p>The amount of time, in seconds, during which a job run consumed resources.</p>
+    pub fn get_execution_time(&self) -> &::std::option::Option<i32> {
+        &self.execution_time
     }
     /// <p>The name of the job being processed during this run.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -241,8 +236,11 @@ impl JobRunBuilder {
     }
     /// <p>The name of the job being processed during this run.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The name of the job being processed during this run.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The unique identifier of the job run.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -251,8 +249,11 @@ impl JobRunBuilder {
     }
     /// <p>The unique identifier of the job run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
+    }
+    /// <p>The unique identifier of the job run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// <p>The current state of the job run entity itself.</p>
     pub fn state(mut self, input: crate::types::JobRunState) -> Self {
@@ -261,8 +262,11 @@ impl JobRunBuilder {
     }
     /// <p>The current state of the job run entity itself.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::JobRunState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The current state of the job run entity itself.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::JobRunState> {
+        &self.state
     }
     /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
     pub fn log_subscription(mut self, input: crate::types::LogSubscription) -> Self {
@@ -270,28 +274,25 @@ impl JobRunBuilder {
         self
     }
     /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
-    pub fn set_log_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::LogSubscription>,
-    ) -> Self {
-        self.log_subscription = input;
-        self
+    pub fn set_log_subscription(mut self, input: ::std::option::Option<crate::types::LogSubscription>) -> Self {
+        self.log_subscription = input; self
+    }
+    /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
+    pub fn get_log_subscription(&self) -> &::std::option::Option<crate::types::LogSubscription> {
+        &self.log_subscription
     }
     /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.log_group_name = input;
-        self
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.log_group_name = input; self
+    }
+    /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
     }
     /// Appends an item to `outputs`.
     ///
@@ -300,17 +301,17 @@ impl JobRunBuilder {
     /// <p>One or more output artifacts from a job run.</p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more output artifacts from a job run.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
+        self.outputs = input; self
+    }
+    /// <p>One or more output artifacts from a job run.</p>
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+        &self.outputs
     }
     /// Appends an item to `data_catalog_outputs`.
     ///
@@ -319,17 +320,17 @@ impl JobRunBuilder {
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub fn data_catalog_outputs(mut self, input: crate::types::DataCatalogOutput) -> Self {
         let mut v = self.data_catalog_outputs.unwrap_or_default();
-        v.push(input);
-        self.data_catalog_outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_catalog_outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn set_data_catalog_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
-    ) -> Self {
-        self.data_catalog_outputs = input;
-        self
+    pub fn set_data_catalog_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>) -> Self {
+        self.data_catalog_outputs = input; self
+    }
+    /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    pub fn get_data_catalog_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
+        &self.data_catalog_outputs
     }
     /// Appends an item to `database_outputs`.
     ///
@@ -338,17 +339,17 @@ impl JobRunBuilder {
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     pub fn database_outputs(mut self, input: crate::types::DatabaseOutput) -> Self {
         let mut v = self.database_outputs.unwrap_or_default();
-        v.push(input);
-        self.database_outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.database_outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn set_database_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
-    ) -> Self {
-        self.database_outputs = input;
-        self
+    pub fn set_database_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>) -> Self {
+        self.database_outputs = input; self
+    }
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+    pub fn get_database_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
+        &self.database_outputs
     }
     /// <p>The set of steps processed by the job.</p>
     pub fn recipe_reference(mut self, input: crate::types::RecipeReference) -> Self {
@@ -356,12 +357,12 @@ impl JobRunBuilder {
         self
     }
     /// <p>The set of steps processed by the job.</p>
-    pub fn set_recipe_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipeReference>,
-    ) -> Self {
-        self.recipe_reference = input;
-        self
+    pub fn set_recipe_reference(mut self, input: ::std::option::Option<crate::types::RecipeReference>) -> Self {
+        self.recipe_reference = input; self
+    }
+    /// <p>The set of steps processed by the job.</p>
+    pub fn get_recipe_reference(&self) -> &::std::option::Option<crate::types::RecipeReference> {
+        &self.recipe_reference
     }
     /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
     pub fn started_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -370,8 +371,11 @@ impl JobRunBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
     pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.started_by = input;
-        self
+        self.started_by = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
+    pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.started_by
     }
     /// <p>The date and time when the job run began. </p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -379,12 +383,12 @@ impl JobRunBuilder {
         self
     }
     /// <p>The date and time when the job run began. </p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_on = input;
-        self
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.started_on = input; self
+    }
+    /// <p>The date and time when the job run began. </p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
     }
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
     pub fn job_sample(mut self, input: crate::types::JobSample) -> Self {
@@ -393,52 +397,73 @@ impl JobRunBuilder {
     }
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
     pub fn set_job_sample(mut self, input: ::std::option::Option<crate::types::JobSample>) -> Self {
-        self.job_sample = input;
-        self
+        self.job_sample = input; self
+    }
+    /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
+    pub fn get_job_sample(&self) -> &::std::option::Option<crate::types::JobSample> {
+        &self.job_sample
     }
     /// Appends an item to `validation_configurations`.
     ///
     /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
     ///
     /// <p>List of validation configurations that are applied to the profile job run.</p>
-    pub fn validation_configurations(
-        mut self,
-        input: crate::types::ValidationConfiguration,
-    ) -> Self {
+    pub fn validation_configurations(mut self, input: crate::types::ValidationConfiguration) -> Self {
         let mut v = self.validation_configurations.unwrap_or_default();
-        v.push(input);
-        self.validation_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of validation configurations that are applied to the profile job run.</p>
-    pub fn set_validation_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
-    ) -> Self {
-        self.validation_configurations = input;
-        self
+    pub fn set_validation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>) -> Self {
+        self.validation_configurations = input; self
+    }
+    /// <p>List of validation configurations that are applied to the profile job run.</p>
+    pub fn get_validation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>> {
+        &self.validation_configurations
     }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     pub fn build(self) -> crate::types::JobRun {
         crate::types::JobRun {
-            attempt: self.attempt.unwrap_or_default(),
-            completed_on: self.completed_on,
-            dataset_name: self.dataset_name,
-            error_message: self.error_message,
-            execution_time: self.execution_time.unwrap_or_default(),
-            job_name: self.job_name,
-            run_id: self.run_id,
-            state: self.state,
-            log_subscription: self.log_subscription,
-            log_group_name: self.log_group_name,
-            outputs: self.outputs,
-            data_catalog_outputs: self.data_catalog_outputs,
-            database_outputs: self.database_outputs,
-            recipe_reference: self.recipe_reference,
-            started_by: self.started_by,
-            started_on: self.started_on,
-            job_sample: self.job_sample,
-            validation_configurations: self.validation_configurations,
+            attempt: self.attempt
+                .unwrap_or_default()
+            ,
+            completed_on: self.completed_on
+            ,
+            dataset_name: self.dataset_name
+            ,
+            error_message: self.error_message
+            ,
+            execution_time: self.execution_time
+                .unwrap_or_default()
+            ,
+            job_name: self.job_name
+            ,
+            run_id: self.run_id
+            ,
+            state: self.state
+            ,
+            log_subscription: self.log_subscription
+            ,
+            log_group_name: self.log_group_name
+            ,
+            outputs: self.outputs
+            ,
+            data_catalog_outputs: self.data_catalog_outputs
+            ,
+            database_outputs: self.database_outputs
+            ,
+            recipe_reference: self.recipe_reference
+            ,
+            started_by: self.started_by
+            ,
+            started_on: self.started_on
+            ,
+            job_sample: self.job_sample
+            ,
+            validation_configurations: self.validation_configurations
+            ,
         }
     }
 }
+

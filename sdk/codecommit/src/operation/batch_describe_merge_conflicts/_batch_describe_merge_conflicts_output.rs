@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeMergeConflictsOutput {
+pub struct BatchDescribeMergeConflictsOutput  {
     /// <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
     #[doc(hidden)]
     pub conflicts: ::std::option::Option<::std::vec::Vec<crate::types::Conflict>>,
@@ -11,8 +11,7 @@ pub struct BatchDescribeMergeConflictsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of any errors returned while describing the merge conflicts for each file.</p>
     #[doc(hidden)]
-    pub errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDescribeMergeConflictsError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDescribeMergeConflictsError>>,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     #[doc(hidden)]
     pub destination_commit_id: ::std::option::Option<::std::string::String>,
@@ -26,54 +25,49 @@ pub struct BatchDescribeMergeConflictsOutput {
 }
 impl BatchDescribeMergeConflictsOutput {
     /// <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
-    pub fn conflicts(&self) -> ::std::option::Option<&[crate::types::Conflict]> {
+    pub fn conflicts(&self) -> ::std::option::Option<& [crate::types::Conflict]> {
         self.conflicts.as_deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of any errors returned while describing the merge conflicts for each file.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchDescribeMergeConflictsError]> {
+    pub fn errors(&self) -> ::std::option::Option<& [crate::types::BatchDescribeMergeConflictsError]> {
         self.errors.as_deref()
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn destination_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_commit_id(&self) -> ::std::option::Option<& str> {
         self.destination_commit_id.as_deref()
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn source_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_commit_id(&self) -> ::std::option::Option<& str> {
         self.source_commit_id.as_deref()
     }
     /// <p>The commit ID of the merge base.</p>
-    pub fn base_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn base_commit_id(&self) -> ::std::option::Option<& str> {
         self.base_commit_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDescribeMergeConflictsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchDescribeMergeConflictsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsOutput`](crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput).
-    pub fn builder() -> crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsOutputBuilder {
         crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDescribeMergeConflictsOutput`](crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDescribeMergeConflictsOutputBuilder {
     pub(crate) conflicts: ::std::option::Option<::std::vec::Vec<crate::types::Conflict>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDescribeMergeConflictsError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDescribeMergeConflictsError>>,
     pub(crate) destination_commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) base_commit_id: ::std::option::Option<::std::string::String>,
@@ -87,17 +81,17 @@ impl BatchDescribeMergeConflictsOutputBuilder {
     /// <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
     pub fn conflicts(mut self, input: crate::types::Conflict) -> Self {
         let mut v = self.conflicts.unwrap_or_default();
-        v.push(input);
-        self.conflicts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conflicts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
-    pub fn set_conflicts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Conflict>>,
-    ) -> Self {
-        self.conflicts = input;
-        self
+    pub fn set_conflicts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Conflict>>) -> Self {
+        self.conflicts = input; self
+    }
+    /// <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
+    pub fn get_conflicts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Conflict>> {
+        &self.conflicts
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +100,11 @@ impl BatchDescribeMergeConflictsOutputBuilder {
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `errors`.
     ///
@@ -116,89 +113,83 @@ impl BatchDescribeMergeConflictsOutputBuilder {
     /// <p>A list of any errors returned while describing the merge conflicts for each file.</p>
     pub fn errors(mut self, input: crate::types::BatchDescribeMergeConflictsError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of any errors returned while describing the merge conflicts for each file.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchDescribeMergeConflictsError>,
-        >,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDescribeMergeConflictsError>>) -> Self {
+        self.errors = input; self
+    }
+    /// <p>A list of any errors returned while describing the merge conflicts for each file.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDescribeMergeConflictsError>> {
+        &self.errors
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn destination_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn set_destination_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_commit_id = input;
-        self
+    pub fn set_destination_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_commit_id = input; self
+    }
+    /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    pub fn get_destination_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_commit_id
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn source_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn set_source_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_commit_id = input;
-        self
+    pub fn set_source_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_commit_id = input; self
+    }
+    /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    pub fn get_source_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit_id
     }
     /// <p>The commit ID of the merge base.</p>
-    pub fn base_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID of the merge base.</p>
-    pub fn set_base_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.base_commit_id = input;
-        self
+    pub fn set_base_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.base_commit_id = input; self
+    }
+    /// <p>The commit ID of the merge base.</p>
+    pub fn get_base_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_commit_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchDescribeMergeConflictsOutput`](crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput {
+    pub fn build(self) -> crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput {
         crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput {
-            conflicts: self.conflicts,
-            next_token: self.next_token,
-            errors: self.errors,
-            destination_commit_id: self.destination_commit_id,
-            source_commit_id: self.source_commit_id,
-            base_commit_id: self.base_commit_id,
+            conflicts: self.conflicts
+            ,
+            next_token: self.next_token
+            ,
+            errors: self.errors
+            ,
+            destination_commit_id: self.destination_commit_id
+            ,
+            source_commit_id: self.source_commit_id
+            ,
+            base_commit_id: self.base_commit_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

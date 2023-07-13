@@ -3,14 +3,14 @@
 /// <p>A complex type that describes an S3 location where recorded videos will be stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DestinationConfiguration {
+pub struct S3DestinationConfiguration  {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl S3DestinationConfiguration {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl S3DestinationConfiguration {
 
 /// A builder for [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DestinationConfigurationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl S3DestinationConfigurationBuilder {
     }
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
+    }
+    /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
     pub fn build(self) -> crate::types::S3DestinationConfiguration {
         crate::types::S3DestinationConfiguration {
-            bucket_name: self.bucket_name,
+            bucket_name: self.bucket_name
+            ,
         }
     }
 }
+

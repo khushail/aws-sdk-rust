@@ -3,7 +3,7 @@
 /// <p>An argument or property of a node.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeGenNodeArg {
+pub struct CodeGenNodeArg  {
     /// <p>The name of the argument or property.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct CodeGenNodeArg {
 }
 impl CodeGenNodeArg {
     /// <p>The name of the argument or property.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the argument or property.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>True if the value is used as a parameter.</p>
@@ -37,9 +37,7 @@ impl CodeGenNodeArg {
 
 /// A builder for [`CodeGenNodeArg`](crate::types::CodeGenNodeArg).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeGenNodeArgBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl CodeGenNodeArgBuilder {
     }
     /// <p>The name of the argument or property.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the argument or property.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The value of the argument or property.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl CodeGenNodeArgBuilder {
     }
     /// <p>The value of the argument or property.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the argument or property.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>True if the value is used as a parameter.</p>
     pub fn param(mut self, input: bool) -> Self {
@@ -73,15 +77,23 @@ impl CodeGenNodeArgBuilder {
     }
     /// <p>True if the value is used as a parameter.</p>
     pub fn set_param(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.param = input;
-        self
+        self.param = input; self
+    }
+    /// <p>True if the value is used as a parameter.</p>
+    pub fn get_param(&self) -> &::std::option::Option<bool> {
+        &self.param
     }
     /// Consumes the builder and constructs a [`CodeGenNodeArg`](crate::types::CodeGenNodeArg).
     pub fn build(self) -> crate::types::CodeGenNodeArg {
         crate::types::CodeGenNodeArg {
-            name: self.name,
-            value: self.value,
-            param: self.param.unwrap_or_default(),
+            name: self.name
+            ,
+            value: self.value
+            ,
+            param: self.param
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

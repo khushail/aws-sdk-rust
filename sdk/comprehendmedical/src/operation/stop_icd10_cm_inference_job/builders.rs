@@ -3,102 +3,87 @@ pub use crate::operation::stop_icd10_cm_inference_job::_stop_icd10_cm_inference_
 
 pub use crate::operation::stop_icd10_cm_inference_job::_stop_icd10_cm_inference_job_input::StopIcd10CmInferenceJobInputBuilder;
 
+impl StopIcd10CmInferenceJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.stop_icd10_cm_inference_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `StopICD10CMInferenceJob`.
-///
+/// 
 /// <p>Stops an InferICD10CM inference job in progress.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopICD10CMInferenceJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobInputBuilder,
 }
-impl StopICD10CMInferenceJobFluentBuilder {
+impl StopICD10CMInferenceJobFluentBuilder  {
     /// Creates a new `StopICD10CMInferenceJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the StopICD10CMInferenceJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -109,4 +94,9 @@ impl StopICD10CMInferenceJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The identifier of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
 }
+

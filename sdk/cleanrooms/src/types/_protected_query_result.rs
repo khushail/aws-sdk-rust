@@ -3,14 +3,14 @@
 /// <p>Details about the query results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectedQueryResult {
+pub struct ProtectedQueryResult  {
     /// <p>The output of the protected query.</p>
     #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::ProtectedQueryOutput>,
 }
 impl ProtectedQueryResult {
     /// <p>The output of the protected query.</p>
-    pub fn output(&self) -> ::std::option::Option<&crate::types::ProtectedQueryOutput> {
+    pub fn output(&self) -> ::std::option::Option<& crate::types::ProtectedQueryOutput> {
         self.output.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ProtectedQueryResult {
 
 /// A builder for [`ProtectedQueryResult`](crate::types::ProtectedQueryResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectedQueryResultBuilder {
     pub(crate) output: ::std::option::Option<crate::types::ProtectedQueryOutput>,
 }
@@ -36,17 +34,19 @@ impl ProtectedQueryResultBuilder {
         self
     }
     /// <p>The output of the protected query.</p>
-    pub fn set_output(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryOutput>,
-    ) -> Self {
-        self.output = input;
-        self
+    pub fn set_output(mut self, input: ::std::option::Option<crate::types::ProtectedQueryOutput>) -> Self {
+        self.output = input; self
+    }
+    /// <p>The output of the protected query.</p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::ProtectedQueryOutput> {
+        &self.output
     }
     /// Consumes the builder and constructs a [`ProtectedQueryResult`](crate::types::ProtectedQueryResult).
     pub fn build(self) -> crate::types::ProtectedQueryResult {
         crate::types::ProtectedQueryResult {
-            output: self.output,
+            output: self.output
+            ,
         }
     }
 }
+

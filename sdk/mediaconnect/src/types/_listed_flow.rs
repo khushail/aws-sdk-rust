@@ -3,7 +3,7 @@
 /// Provides a summary of a flow, including its ARN, Availability Zone, and source type.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListedFlow {
+pub struct ListedFlow  {
     /// The Availability Zone that the flow was created in.
     #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct ListedFlow {
 }
 impl ListedFlow {
     /// The Availability Zone that the flow was created in.
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// A description of the flow.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The ARN of the flow.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The name of the flow.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// The current status of the flow.
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// The maintenance setting of a flow
-    pub fn maintenance(&self) -> ::std::option::Option<&crate::types::Maintenance> {
+    pub fn maintenance(&self) -> ::std::option::Option<& crate::types::Maintenance> {
         self.maintenance.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl ListedFlow {
 
 /// A builder for [`ListedFlow`](crate::types::ListedFlow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListedFlowBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -79,20 +77,17 @@ pub struct ListedFlowBuilder {
 }
 impl ListedFlowBuilder {
     /// The Availability Zone that the flow was created in.
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// The Availability Zone that the flow was created in.
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input; self
+    }
+    /// The Availability Zone that the flow was created in.
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// A description of the flow.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,8 +96,11 @@ impl ListedFlowBuilder {
     }
     /// A description of the flow.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// A description of the flow.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// The ARN of the flow.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,8 +109,11 @@ impl ListedFlowBuilder {
     }
     /// The ARN of the flow.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
+    }
+    /// The ARN of the flow.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     /// The name of the flow.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,8 +122,11 @@ impl ListedFlowBuilder {
     }
     /// The name of the flow.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// The name of the flow.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
@@ -130,12 +134,12 @@ impl ListedFlowBuilder {
         self
     }
     /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
-        self.source_type = input;
-        self
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
+        self.source_type = input; self
+    }
+    /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
     }
     /// The current status of the flow.
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -144,8 +148,11 @@ impl ListedFlowBuilder {
     }
     /// The current status of the flow.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// The current status of the flow.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// The maintenance setting of a flow
     pub fn maintenance(mut self, input: crate::types::Maintenance) -> Self {
@@ -153,23 +160,31 @@ impl ListedFlowBuilder {
         self
     }
     /// The maintenance setting of a flow
-    pub fn set_maintenance(
-        mut self,
-        input: ::std::option::Option<crate::types::Maintenance>,
-    ) -> Self {
-        self.maintenance = input;
-        self
+    pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::Maintenance>) -> Self {
+        self.maintenance = input; self
+    }
+    /// The maintenance setting of a flow
+    pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::Maintenance> {
+        &self.maintenance
     }
     /// Consumes the builder and constructs a [`ListedFlow`](crate::types::ListedFlow).
     pub fn build(self) -> crate::types::ListedFlow {
         crate::types::ListedFlow {
-            availability_zone: self.availability_zone,
-            description: self.description,
-            flow_arn: self.flow_arn,
-            name: self.name,
-            source_type: self.source_type,
-            status: self.status,
-            maintenance: self.maintenance,
+            availability_zone: self.availability_zone
+            ,
+            description: self.description
+            ,
+            flow_arn: self.flow_arn
+            ,
+            name: self.name
+            ,
+            source_type: self.source_type
+            ,
+            status: self.status
+            ,
+            maintenance: self.maintenance
+            ,
         }
     }
 }
+

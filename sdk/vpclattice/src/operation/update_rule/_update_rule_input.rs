@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRuleInput {
+pub struct UpdateRuleInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     #[doc(hidden)]
     pub service_identifier: ::std::option::Option<::std::string::String>,
@@ -24,19 +24,19 @@ pub struct UpdateRuleInput {
 }
 impl UpdateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_identifier(&self) -> ::std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn listener_identifier(&self) -> ::std::option::Option<& str> {
         self.listener_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn rule_identifier(&self) -> ::std::option::Option<& str> {
         self.rule_identifier.as_deref()
     }
     /// <p>The rule match.</p>
-    pub fn r#match(&self) -> ::std::option::Option<&crate::types::RuleMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<& crate::types::RuleMatch> {
         self.r#match.as_ref()
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
@@ -44,7 +44,7 @@ impl UpdateRuleInput {
         self.priority
     }
     /// <p>Information about the action for the specified listener rule.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::RuleAction> {
         self.action.as_ref()
     }
 }
@@ -57,9 +57,7 @@ impl UpdateRuleInput {
 
 /// A builder for [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleInputBuilder {
     pub(crate) service_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) listener_identifier: ::std::option::Option<::std::string::String>,
@@ -70,52 +68,43 @@ pub struct UpdateRuleInputBuilder {
 }
 impl UpdateRuleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.service_identifier = input;
-        self
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_identifier = input; self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.listener_identifier = input;
-        self
+    pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.listener_identifier = input; self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn set_rule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.rule_identifier = input;
-        self
+    pub fn set_rule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rule_identifier = input; self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_identifier
     }
     /// <p>The rule match.</p>
     pub fn r#match(mut self, input: crate::types::RuleMatch) -> Self {
@@ -124,8 +113,11 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The rule match.</p>
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::RuleMatch>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
+    }
+    /// <p>The rule match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::RuleMatch> {
+        &self.r#match
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -134,8 +126,11 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
+    }
+    /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>Information about the action for the specified listener rule.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
@@ -144,23 +139,30 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>Information about the action for the specified listener rule.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
+    }
+    /// <p>Information about the action for the specified listener rule.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rule::UpdateRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
-            service_identifier: self.service_identifier,
-            listener_identifier: self.listener_identifier,
-            rule_identifier: self.rule_identifier,
-            r#match: self.r#match,
-            priority: self.priority,
-            action: self.action,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_rule::UpdateRuleInput {
+                service_identifier: self.service_identifier
+                ,
+                listener_identifier: self.listener_identifier
+                ,
+                rule_identifier: self.rule_identifier
+                ,
+                r#match: self.r#match
+                ,
+                priority: self.priority
+                ,
+                action: self.action
+                ,
+            }
+        )
     }
 }
+

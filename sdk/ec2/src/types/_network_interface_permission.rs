@@ -3,7 +3,7 @@
 /// <p>Describes a permission for a network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInterfacePermission {
+pub struct NetworkInterfacePermission  {
     /// <p>The ID of the network interface permission.</p>
     #[doc(hidden)]
     pub network_interface_permission_id: ::std::option::Option<::std::string::String>,
@@ -25,29 +25,27 @@ pub struct NetworkInterfacePermission {
 }
 impl NetworkInterfacePermission {
     /// <p>The ID of the network interface permission.</p>
-    pub fn network_interface_permission_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_permission_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_permission_id.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Service.</p>
-    pub fn aws_service(&self) -> ::std::option::Option<&str> {
+    pub fn aws_service(&self) -> ::std::option::Option<& str> {
         self.aws_service.as_deref()
     }
     /// <p>The type of permission.</p>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::InterfacePermissionType> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::InterfacePermissionType> {
         self.permission.as_ref()
     }
     /// <p>Information about the state of the permission.</p>
-    pub fn permission_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInterfacePermissionState> {
+    pub fn permission_state(&self) -> ::std::option::Option<& crate::types::NetworkInterfacePermissionState> {
         self.permission_state.as_ref()
     }
 }
@@ -60,66 +58,54 @@ impl NetworkInterfacePermission {
 
 /// A builder for [`NetworkInterfacePermission`](crate::types::NetworkInterfacePermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInterfacePermissionBuilder {
     pub(crate) network_interface_permission_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_service: ::std::option::Option<::std::string::String>,
     pub(crate) permission: ::std::option::Option<crate::types::InterfacePermissionType>,
-    pub(crate) permission_state:
-        ::std::option::Option<crate::types::NetworkInterfacePermissionState>,
+    pub(crate) permission_state: ::std::option::Option<crate::types::NetworkInterfacePermissionState>,
 }
 impl NetworkInterfacePermissionBuilder {
     /// <p>The ID of the network interface permission.</p>
-    pub fn network_interface_permission_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_permission_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_permission_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface permission.</p>
-    pub fn set_network_interface_permission_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_interface_permission_id = input;
-        self
+    pub fn set_network_interface_permission_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_interface_permission_id = input; self
+    }
+    /// <p>The ID of the network interface permission.</p>
+    pub fn get_network_interface_permission_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_permission_id
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_interface_id = input; self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The Amazon Web Service.</p>
     pub fn aws_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,8 +114,11 @@ impl NetworkInterfacePermissionBuilder {
     }
     /// <p>The Amazon Web Service.</p>
     pub fn set_aws_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_service = input;
-        self
+        self.aws_service = input; self
+    }
+    /// <p>The Amazon Web Service.</p>
+    pub fn get_aws_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_service
     }
     /// <p>The type of permission.</p>
     pub fn permission(mut self, input: crate::types::InterfacePermissionType) -> Self {
@@ -137,38 +126,42 @@ impl NetworkInterfacePermissionBuilder {
         self
     }
     /// <p>The type of permission.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::InterfacePermissionType>,
-    ) -> Self {
-        self.permission = input;
-        self
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::InterfacePermissionType>) -> Self {
+        self.permission = input; self
+    }
+    /// <p>The type of permission.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::InterfacePermissionType> {
+        &self.permission
     }
     /// <p>Information about the state of the permission.</p>
-    pub fn permission_state(
-        mut self,
-        input: crate::types::NetworkInterfacePermissionState,
-    ) -> Self {
+    pub fn permission_state(mut self, input: crate::types::NetworkInterfacePermissionState) -> Self {
         self.permission_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the state of the permission.</p>
-    pub fn set_permission_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfacePermissionState>,
-    ) -> Self {
-        self.permission_state = input;
-        self
+    pub fn set_permission_state(mut self, input: ::std::option::Option<crate::types::NetworkInterfacePermissionState>) -> Self {
+        self.permission_state = input; self
+    }
+    /// <p>Information about the state of the permission.</p>
+    pub fn get_permission_state(&self) -> &::std::option::Option<crate::types::NetworkInterfacePermissionState> {
+        &self.permission_state
     }
     /// Consumes the builder and constructs a [`NetworkInterfacePermission`](crate::types::NetworkInterfacePermission).
     pub fn build(self) -> crate::types::NetworkInterfacePermission {
         crate::types::NetworkInterfacePermission {
-            network_interface_permission_id: self.network_interface_permission_id,
-            network_interface_id: self.network_interface_id,
-            aws_account_id: self.aws_account_id,
-            aws_service: self.aws_service,
-            permission: self.permission,
-            permission_state: self.permission_state,
+            network_interface_permission_id: self.network_interface_permission_id
+            ,
+            network_interface_id: self.network_interface_id
+            ,
+            aws_account_id: self.aws_account_id
+            ,
+            aws_service: self.aws_service
+            ,
+            permission: self.permission
+            ,
+            permission_state: self.permission_state
+            ,
         }
     }
 }
+

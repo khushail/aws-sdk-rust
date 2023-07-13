@@ -3,7 +3,7 @@
 /// <p>A physical table type built from the results of the custom SQL query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomSql {
+pub struct CustomSql  {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     #[doc(hidden)]
     pub data_source_arn: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct CustomSql {
 }
 impl CustomSql {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_arn(&self) -> ::std::option::Option<& str> {
         self.data_source_arn.as_deref()
     }
     /// <p>A display name for the SQL query result.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The SQL query.</p>
-    pub fn sql_query(&self) -> ::std::option::Option<&str> {
+    pub fn sql_query(&self) -> ::std::option::Option<& str> {
         self.sql_query.as_deref()
     }
     /// <p>The column schema from the SQL query result set.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::InputColumn]> {
+    pub fn columns(&self) -> ::std::option::Option<& [crate::types::InputColumn]> {
         self.columns.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl CustomSql {
 
 /// A builder for [`CustomSql`](crate::types::CustomSql).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomSqlBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -55,20 +53,17 @@ pub struct CustomSqlBuilder {
 }
 impl CustomSqlBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn set_data_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_source_arn = input;
-        self
+    pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_arn
     }
     /// <p>A display name for the SQL query result.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,8 +72,11 @@ impl CustomSqlBuilder {
     }
     /// <p>A display name for the SQL query result.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A display name for the SQL query result.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The SQL query.</p>
     pub fn sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +85,11 @@ impl CustomSqlBuilder {
     }
     /// <p>The SQL query.</p>
     pub fn set_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql_query = input;
-        self
+        self.sql_query = input; self
+    }
+    /// <p>The SQL query.</p>
+    pub fn get_sql_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_query
     }
     /// Appends an item to `columns`.
     ///
@@ -97,25 +98,30 @@ impl CustomSqlBuilder {
     /// <p>The column schema from the SQL query result set.</p>
     pub fn columns(mut self, input: crate::types::InputColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input);
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The column schema from the SQL query result set.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
-    ) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>) -> Self {
+        self.columns = input; self
+    }
+    /// <p>The column schema from the SQL query result set.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
+        &self.columns
     }
     /// Consumes the builder and constructs a [`CustomSql`](crate::types::CustomSql).
     pub fn build(self) -> crate::types::CustomSql {
         crate::types::CustomSql {
-            data_source_arn: self.data_source_arn,
-            name: self.name,
-            sql_query: self.sql_query,
-            columns: self.columns,
+            data_source_arn: self.data_source_arn
+            ,
+            name: self.name
+            ,
+            sql_query: self.sql_query
+            ,
+            columns: self.columns
+            ,
         }
     }
 }
+

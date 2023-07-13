@@ -3,7 +3,7 @@
 /// <p>The request parameters represent the input of a commit transaction request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CommitTransactionInput {
+pub struct CommitTransactionInput  {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -16,31 +16,28 @@ pub struct CommitTransactionInput {
 }
 impl CommitTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The identifier of the transaction to end and commit.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
 impl CommitTransactionInput {
     /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
-    pub fn builder() -> crate::operation::commit_transaction::builders::CommitTransactionInputBuilder
-    {
+    pub fn builder() -> crate::operation::commit_transaction::builders::CommitTransactionInputBuilder {
         crate::operation::commit_transaction::builders::CommitTransactionInputBuilder::default()
     }
 }
 
 /// A builder for [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommitTransactionInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -54,8 +51,11 @@ impl CommitTransactionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,38 +64,37 @@ impl CommitTransactionInputBuilder {
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
+    }
+    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// <p>The identifier of the transaction to end and commit.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the transaction to end and commit.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transaction_id = input;
-        self
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transaction_id = input; self
+    }
+    /// <p>The identifier of the transaction to end and commit.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::commit_transaction::CommitTransactionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::commit_transaction::CommitTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::commit_transaction::CommitTransactionInput {
-                resource_arn: self.resource_arn,
-                secret_arn: self.secret_arn,
-                transaction_id: self.transaction_id,
-            },
+                resource_arn: self.resource_arn
+                ,
+                secret_arn: self.secret_arn
+                ,
+                transaction_id: self.transaction_id
+                ,
+            }
         )
     }
 }
+

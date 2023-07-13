@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBgpPeerOutput {
+pub struct CreateBgpPeerOutput  {
     /// <p>The virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: ::std::option::Option<crate::types::VirtualInterface>,
@@ -10,15 +10,15 @@ pub struct CreateBgpPeerOutput {
 }
 impl CreateBgpPeerOutput {
     /// <p>The virtual interface.</p>
-    pub fn virtual_interface(&self) -> ::std::option::Option<&crate::types::VirtualInterface> {
+    pub fn virtual_interface(&self) -> ::std::option::Option<& crate::types::VirtualInterface> {
         self.virtual_interface.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateBgpPeerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateBgpPeerOutput {
     /// Creates a new builder-style object to manufacture [`CreateBgpPeerOutput`](crate::operation::create_bgp_peer::CreateBgpPeerOutput).
     pub fn builder() -> crate::operation::create_bgp_peer::builders::CreateBgpPeerOutputBuilder {
@@ -28,9 +28,7 @@ impl CreateBgpPeerOutput {
 
 /// A builder for [`CreateBgpPeerOutput`](crate::operation::create_bgp_peer::CreateBgpPeerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBgpPeerOutputBuilder {
     pub(crate) virtual_interface: ::std::option::Option<crate::types::VirtualInterface>,
     _request_id: Option<String>,
@@ -42,27 +40,29 @@ impl CreateBgpPeerOutputBuilder {
         self
     }
     /// <p>The virtual interface.</p>
-    pub fn set_virtual_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualInterface>,
-    ) -> Self {
-        self.virtual_interface = input;
-        self
+    pub fn set_virtual_interface(mut self, input: ::std::option::Option<crate::types::VirtualInterface>) -> Self {
+        self.virtual_interface = input; self
+    }
+    /// <p>The virtual interface.</p>
+    pub fn get_virtual_interface(&self) -> &::std::option::Option<crate::types::VirtualInterface> {
+        &self.virtual_interface
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateBgpPeerOutput`](crate::operation::create_bgp_peer::CreateBgpPeerOutput).
     pub fn build(self) -> crate::operation::create_bgp_peer::CreateBgpPeerOutput {
         crate::operation::create_bgp_peer::CreateBgpPeerOutput {
-            virtual_interface: self.virtual_interface,
+            virtual_interface: self.virtual_interface
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

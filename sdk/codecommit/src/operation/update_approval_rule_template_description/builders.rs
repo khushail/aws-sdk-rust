@@ -3,106 +3,114 @@ pub use crate::operation::update_approval_rule_template_description::_update_app
 
 pub use crate::operation::update_approval_rule_template_description::_update_approval_rule_template_description_input::UpdateApprovalRuleTemplateDescriptionInputBuilder;
 
+impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_approval_rule_template_description();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateApprovalRuleTemplateDescription`.
-///
+/// 
 /// <p>Updates the description for a specified approval rule template.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateDescriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_approval_rule_template_description::builders::UpdateApprovalRuleTemplateDescriptionInputBuilder,
 }
-impl UpdateApprovalRuleTemplateDescriptionFluentBuilder {
+impl UpdateApprovalRuleTemplateDescriptionFluentBuilder  {
     /// Creates a new `UpdateApprovalRuleTemplateDescription`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApprovalRuleTemplateDescription as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_approval_rule_template_description::builders::UpdateApprovalRuleTemplateDescriptionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescription, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescription, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescription, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the template for which you want to update the description.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_name(input.into());
         self
     }
     /// <p>The name of the template for which you want to update the description.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }
+    /// <p>The name of the template for which you want to update the description.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_approval_rule_template_name()
+    }
     /// <p>The updated description of the approval rule template.</p>
-    pub fn approval_rule_template_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_description(input.into());
         self
     }
     /// <p>The updated description of the approval rule template.</p>
-    pub fn set_approval_rule_template_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_template_description(input);
         self
     }
+    /// <p>The updated description of the approval rule template.</p>
+    pub fn get_approval_rule_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_approval_rule_template_description()
+    }
 }
+

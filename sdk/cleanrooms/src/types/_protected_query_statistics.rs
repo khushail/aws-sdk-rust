@@ -3,7 +3,7 @@
 /// <p>Contains statistics about the execution of the protected query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectedQueryStatistics {
+pub struct ProtectedQueryStatistics  {
     /// <p>The duration of the Protected Query, from creation until query completion.</p>
     #[doc(hidden)]
     pub total_duration_in_millis: ::std::option::Option<i64>,
@@ -23,9 +23,7 @@ impl ProtectedQueryStatistics {
 
 /// A builder for [`ProtectedQueryStatistics`](crate::types::ProtectedQueryStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectedQueryStatisticsBuilder {
     pub(crate) total_duration_in_millis: ::std::option::Option<i64>,
 }
@@ -37,13 +35,18 @@ impl ProtectedQueryStatisticsBuilder {
     }
     /// <p>The duration of the Protected Query, from creation until query completion.</p>
     pub fn set_total_duration_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_duration_in_millis = input;
-        self
+        self.total_duration_in_millis = input; self
+    }
+    /// <p>The duration of the Protected Query, from creation until query completion.</p>
+    pub fn get_total_duration_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.total_duration_in_millis
     }
     /// Consumes the builder and constructs a [`ProtectedQueryStatistics`](crate::types::ProtectedQueryStatistics).
     pub fn build(self) -> crate::types::ProtectedQueryStatistics {
         crate::types::ProtectedQueryStatistics {
-            total_duration_in_millis: self.total_duration_in_millis,
+            total_duration_in_millis: self.total_duration_in_millis
+            ,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Describes the reason for an activity that isn't scaled (<i>not scaled activity</i>), in machine-readable format. For help interpreting the not scaled reason details, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotScaledReason {
-    /// <p>A code that represents the reason for not scaling.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
-    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
-    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
-    /// <li> <p>AlreadyAtMinCapacity</p> </li>
-    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
+pub struct NotScaledReason  {
+    /// <p>A code that represents the reason for not scaling.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li> 
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li> 
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li> 
+    /// <li> <p>AlreadyAtMinCapacity</p> </li> 
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
@@ -26,16 +26,16 @@ pub struct NotScaledReason {
     pub current_capacity: ::std::option::Option<i32>,
 }
 impl NotScaledReason {
-    /// <p>A code that represents the reason for not scaling.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
-    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
-    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
-    /// <li> <p>AlreadyAtMinCapacity</p> </li>
-    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
+    /// <p>A code that represents the reason for not scaling.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li> 
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li> 
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li> 
+    /// <li> <p>AlreadyAtMinCapacity</p> </li> 
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li> 
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The maximum capacity.</p>
@@ -60,9 +60,7 @@ impl NotScaledReason {
 
 /// A builder for [`NotScaledReason`](crate::types::NotScaledReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotScaledReasonBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
@@ -70,31 +68,42 @@ pub struct NotScaledReasonBuilder {
     pub(crate) current_capacity: ::std::option::Option<i32>,
 }
 impl NotScaledReasonBuilder {
-    /// <p>A code that represents the reason for not scaling.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
-    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
-    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
-    /// <li> <p>AlreadyAtMinCapacity</p> </li>
-    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
+    /// <p>A code that represents the reason for not scaling.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li> 
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li> 
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li> 
+    /// <li> <p>AlreadyAtMinCapacity</p> </li> 
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li> 
     /// </ul>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A code that represents the reason for not scaling.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li>
-    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li>
-    /// <li> <p>AlreadyAtMaxCapacity</p> </li>
-    /// <li> <p>AlreadyAtMinCapacity</p> </li>
-    /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
+    /// <p>A code that represents the reason for not scaling.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li> 
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li> 
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li> 
+    /// <li> <p>AlreadyAtMinCapacity</p> </li> 
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li> 
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>A code that represents the reason for not scaling.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>AutoScalingAnticipatedFlapping</p> </li> 
+    /// <li> <p>TargetServicePutResourceAsUnscalable</p> </li> 
+    /// <li> <p>AlreadyAtMaxCapacity</p> </li> 
+    /// <li> <p>AlreadyAtMinCapacity</p> </li> 
+    /// <li> <p>AlreadyAtDesiredCapacity</p> </li> 
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>The maximum capacity.</p>
     pub fn max_capacity(mut self, input: i32) -> Self {
@@ -103,8 +112,11 @@ impl NotScaledReasonBuilder {
     }
     /// <p>The maximum capacity.</p>
     pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_capacity = input;
-        self
+        self.max_capacity = input; self
+    }
+    /// <p>The maximum capacity.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity
     }
     /// <p>The minimum capacity.</p>
     pub fn min_capacity(mut self, input: i32) -> Self {
@@ -113,8 +125,11 @@ impl NotScaledReasonBuilder {
     }
     /// <p>The minimum capacity.</p>
     pub fn set_min_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_capacity = input;
-        self
+        self.min_capacity = input; self
+    }
+    /// <p>The minimum capacity.</p>
+    pub fn get_min_capacity(&self) -> &::std::option::Option<i32> {
+        &self.min_capacity
     }
     /// <p>The current capacity.</p>
     pub fn current_capacity(mut self, input: i32) -> Self {
@@ -123,16 +138,24 @@ impl NotScaledReasonBuilder {
     }
     /// <p>The current capacity.</p>
     pub fn set_current_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.current_capacity = input;
-        self
+        self.current_capacity = input; self
+    }
+    /// <p>The current capacity.</p>
+    pub fn get_current_capacity(&self) -> &::std::option::Option<i32> {
+        &self.current_capacity
     }
     /// Consumes the builder and constructs a [`NotScaledReason`](crate::types::NotScaledReason).
     pub fn build(self) -> crate::types::NotScaledReason {
         crate::types::NotScaledReason {
-            code: self.code,
-            max_capacity: self.max_capacity,
-            min_capacity: self.min_capacity,
-            current_capacity: self.current_capacity,
+            code: self.code
+            ,
+            max_capacity: self.max_capacity
+            ,
+            min_capacity: self.min_capacity
+            ,
+            current_capacity: self.current_capacity
+            ,
         }
     }
 }
+

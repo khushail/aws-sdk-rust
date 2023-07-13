@@ -3,102 +3,87 @@ pub use crate::operation::put_auto_scaling_policy::_put_auto_scaling_policy_outp
 
 pub use crate::operation::put_auto_scaling_policy::_put_auto_scaling_policy_input::PutAutoScalingPolicyInputBuilder;
 
+impl PutAutoScalingPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_auto_scaling_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutAutoScalingPolicy`.
-///
+/// 
 /// <p>Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAutoScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder,
+                    inner: crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder,
 }
-impl PutAutoScalingPolicyFluentBuilder {
+impl PutAutoScalingPolicyFluentBuilder  {
     /// Creates a new `PutAutoScalingPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutAutoScalingPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
@@ -109,21 +94,23 @@ impl PutAutoScalingPolicyFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_group_id(input.into());
         self
     }
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_group_id(input);
         self
+    }
+    /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
+    pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_group_id()
     }
     /// <p>Specifies the definition of the automatic scaling policy.</p>
     pub fn auto_scaling_policy(mut self, input: crate::types::AutoScalingPolicy) -> Self {
@@ -131,11 +118,13 @@ impl PutAutoScalingPolicyFluentBuilder {
         self
     }
     /// <p>Specifies the definition of the automatic scaling policy.</p>
-    pub fn set_auto_scaling_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingPolicy>,
-    ) -> Self {
+    pub fn set_auto_scaling_policy(mut self, input: ::std::option::Option<crate::types::AutoScalingPolicy>) -> Self {
         self.inner = self.inner.set_auto_scaling_policy(input);
         self
     }
+    /// <p>Specifies the definition of the automatic scaling policy.</p>
+    pub fn get_auto_scaling_policy(&self) -> &::std::option::Option<crate::types::AutoScalingPolicy> {
+        self.inner.get_auto_scaling_policy()
+    }
 }
+

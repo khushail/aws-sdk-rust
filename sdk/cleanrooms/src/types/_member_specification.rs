@@ -3,7 +3,7 @@
 /// <p>Basic metadata used to construct a new member.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemberSpecification {
+pub struct MemberSpecification  {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct MemberSpecification {
 }
 impl MemberSpecification {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn member_abilities(&self) -> ::std::option::Option<&[crate::types::MemberAbility]> {
+    pub fn member_abilities(&self) -> ::std::option::Option<& [crate::types::MemberAbility]> {
         self.member_abilities.as_deref()
     }
     /// <p>The member's display name.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -37,13 +37,10 @@ impl MemberSpecification {
 
 /// A builder for [`MemberSpecification`](crate::types::MemberSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberSpecificationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) member_abilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl MemberSpecificationBuilder {
@@ -54,8 +51,11 @@ impl MemberSpecificationBuilder {
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Appends an item to `member_abilities`.
     ///
@@ -64,17 +64,17 @@ impl MemberSpecificationBuilder {
     /// <p>The abilities granted to the collaboration member.</p>
     pub fn member_abilities(mut self, input: crate::types::MemberAbility) -> Self {
         let mut v = self.member_abilities.unwrap_or_default();
-        v.push(input);
-        self.member_abilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_abilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn set_member_abilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
-    ) -> Self {
-        self.member_abilities = input;
-        self
+    pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
+        self.member_abilities = input; self
+    }
+    /// <p>The abilities granted to the collaboration member.</p>
+    pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+        &self.member_abilities
     }
     /// <p>The member's display name.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,15 +83,22 @@ impl MemberSpecificationBuilder {
     }
     /// <p>The member's display name.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
+    }
+    /// <p>The member's display name.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`MemberSpecification`](crate::types::MemberSpecification).
     pub fn build(self) -> crate::types::MemberSpecification {
         crate::types::MemberSpecification {
-            account_id: self.account_id,
-            member_abilities: self.member_abilities,
-            display_name: self.display_name,
+            account_id: self.account_id
+            ,
+            member_abilities: self.member_abilities
+            ,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

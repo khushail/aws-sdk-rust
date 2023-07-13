@@ -2,53 +2,51 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIdentityProviderSettingsInput {
+pub struct UpdateIdentityProviderSettingsInput  {
     /// <p>Details about an identity provider.</p>
     #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
     #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
-    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
-    /// <ul>
-    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
-    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
-    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p> 
+    /// <ul> 
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li> 
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li> 
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub update_settings: ::std::option::Option<crate::types::UpdateSettings>,
 }
 impl UpdateIdentityProviderSettingsInput {
     /// <p>Details about an identity provider.</p>
-    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<& crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> ::std::option::Option<&str> {
+    pub fn product(&self) -> ::std::option::Option<& str> {
         self.product.as_deref()
     }
-    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
-    /// <ul>
-    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
-    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
-    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p> 
+    /// <ul> 
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li> 
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li> 
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li> 
     /// </ul>
-    pub fn update_settings(&self) -> ::std::option::Option<&crate::types::UpdateSettings> {
+    pub fn update_settings(&self) -> ::std::option::Option<& crate::types::UpdateSettings> {
         self.update_settings.as_ref()
     }
 }
 impl UpdateIdentityProviderSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderSettingsInput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput).
-    pub fn builder() -> crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder{
+    pub fn builder() -> crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder {
         crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIdentityProviderSettingsInput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderSettingsInputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     pub(crate) product: ::std::option::Option<::std::string::String>,
@@ -61,12 +59,12 @@ impl UpdateIdentityProviderSettingsInputBuilder {
         self
     }
     /// <p>Details about an identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
-        self.identity_provider = input;
-        self
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
+        self.identity_provider = input; self
+    }
+    /// <p>Details about an identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,39 +73,42 @@ impl UpdateIdentityProviderSettingsInputBuilder {
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
     }
-    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
-    /// <ul>
-    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
-    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
-    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
+    }
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p> 
+    /// <ul> 
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li> 
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li> 
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li> 
     /// </ul>
     pub fn update_settings(mut self, input: crate::types::UpdateSettings) -> Self {
         self.update_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
-    /// <ul>
-    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
-    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
-    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p> 
+    /// <ul> 
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li> 
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li> 
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li> 
     /// </ul>
-    pub fn set_update_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateSettings>,
-    ) -> Self {
-        self.update_settings = input;
-        self
+    pub fn set_update_settings(mut self, input: ::std::option::Option<crate::types::UpdateSettings>) -> Self {
+        self.update_settings = input; self
+    }
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p> 
+    /// <ul> 
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li> 
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li> 
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li> 
+    /// </ul>
+    pub fn get_update_settings(&self) -> &::std::option::Option<crate::types::UpdateSettings> {
+        &self.update_settings
     }
     /// Consumes the builder and constructs a [`UpdateIdentityProviderSettingsInput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput {
                 identity_provider: self.identity_provider
@@ -120,3 +121,4 @@ impl UpdateIdentityProviderSettingsInputBuilder {
         )
     }
 }
+

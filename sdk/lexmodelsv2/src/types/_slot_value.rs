@@ -3,14 +3,14 @@
 /// <p>The value to set in a slot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotValue {
+pub struct SlotValue  {
     /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
     #[doc(hidden)]
     pub interpreted_value: ::std::option::Option<::std::string::String>,
 }
 impl SlotValue {
     /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
-    pub fn interpreted_value(&self) -> ::std::option::Option<&str> {
+    pub fn interpreted_value(&self) -> ::std::option::Option<& str> {
         self.interpreted_value.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl SlotValue {
 
 /// A builder for [`SlotValue`](crate::types::SlotValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotValueBuilder {
     pub(crate) interpreted_value: ::std::option::Option<::std::string::String>,
 }
 impl SlotValueBuilder {
     /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
-    pub fn interpreted_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interpreted_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interpreted_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
-    pub fn set_interpreted_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.interpreted_value = input;
-        self
+    pub fn set_interpreted_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.interpreted_value = input; self
+    }
+    /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
+    pub fn get_interpreted_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interpreted_value
     }
     /// Consumes the builder and constructs a [`SlotValue`](crate::types::SlotValue).
     pub fn build(self) -> crate::types::SlotValue {
         crate::types::SlotValue {
-            interpreted_value: self.interpreted_value,
+            interpreted_value: self.interpreted_value
+            ,
         }
     }
 }
+

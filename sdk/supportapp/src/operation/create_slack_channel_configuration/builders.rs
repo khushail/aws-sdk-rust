@@ -3,84 +3,95 @@ pub use crate::operation::create_slack_channel_configuration::_create_slack_chan
 
 pub use crate::operation::create_slack_channel_configuration::_create_slack_channel_configuration_input::CreateSlackChannelConfigurationInputBuilder;
 
+impl CreateSlackChannelConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_slack_channel_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateSlackChannelConfiguration`.
-///
-/// <p>Creates a Slack channel configuration for your Amazon Web Services account.</p> <note>
-/// <ul>
-/// <li> <p>You can add up to 5 Slack workspaces for your account.</p> </li>
-/// <li> <p>You can add up to 20 Slack channels for your account.</p> </li>
-/// </ul>
-/// </note>
-/// <p>A Slack channel can have up to 100 Amazon Web Services accounts. This means that only 100 accounts can add the same Slack channel to the Amazon Web Services Support App. We recommend that you only add the accounts that you need to manage support cases for your organization. This can reduce the notifications about case updates that you receive in the Slack channel.</p> <note>
-/// <p>We recommend that you choose a private Slack channel so that only members in that channel have read and write access to your support cases. Anyone in your Slack channel can create, update, or resolve support cases for your account. Users require an invitation to join private channels. </p>
+/// 
+/// <p>Creates a Slack channel configuration for your Amazon Web Services account.</p> <note> 
+/// <ul> 
+/// <li> <p>You can add up to 5 Slack workspaces for your account.</p> </li> 
+/// <li> <p>You can add up to 20 Slack channels for your account.</p> </li> 
+/// </ul> 
+/// </note> 
+/// <p>A Slack channel can have up to 100 Amazon Web Services accounts. This means that only 100 accounts can add the same Slack channel to the Amazon Web Services Support App. We recommend that you only add the accounts that you need to manage support cases for your organization. This can reduce the notifications about case updates that you receive in the Slack channel.</p> <note> 
+/// <p>We recommend that you choose a private Slack channel so that only members in that channel have read and write access to your support cases. Anyone in your Slack channel can create, update, or resolve support cases for your account. Users require an invitation to join private channels. </p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSlackChannelConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationInputBuilder,
 }
-impl CreateSlackChannelConfigurationFluentBuilder {
+impl CreateSlackChannelConfigurationFluentBuilder  {
     /// Creates a new `CreateSlackChannelConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSlackChannelConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.team_id(input.into());
@@ -90,6 +101,10 @@ impl CreateSlackChannelConfigurationFluentBuilder {
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_team_id(input);
         self
+    }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_team_id()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +116,10 @@ impl CreateSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_channel_id(input);
         self
     }
+    /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
+    }
     /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
@@ -111,18 +130,23 @@ impl CreateSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
     pub fn notify_on_create_or_reopen_case(mut self, input: bool) -> Self {
         self.inner = self.inner.notify_on_create_or_reopen_case(input);
         self
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
-    pub fn set_notify_on_create_or_reopen_case(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_notify_on_create_or_reopen_case(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_notify_on_create_or_reopen_case(input);
         self
+    }
+    /// <p>Whether you want to get notified when a support case is created or reopened.</p>
+    pub fn get_notify_on_create_or_reopen_case(&self) -> &::std::option::Option<bool> {
+        self.inner.get_notify_on_create_or_reopen_case()
     }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
     pub fn notify_on_add_correspondence_to_case(mut self, input: bool) -> Self {
@@ -130,12 +154,13 @@ impl CreateSlackChannelConfigurationFluentBuilder {
         self
     }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
-    pub fn set_notify_on_add_correspondence_to_case(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_notify_on_add_correspondence_to_case(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_notify_on_add_correspondence_to_case(input);
         self
+    }
+    /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
+    pub fn get_notify_on_add_correspondence_to_case(&self) -> &::std::option::Option<bool> {
+        self.inner.get_notify_on_add_correspondence_to_case()
     }
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     pub fn notify_on_resolve_case(mut self, input: bool) -> Self {
@@ -147,64 +172,79 @@ impl CreateSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_notify_on_resolve_case(input);
         self
     }
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
+    /// <p>Whether you want to get notified when a support case is resolved.</p>
+    pub fn get_notify_on_resolve_case(&self) -> &::std::option::Option<bool> {
+        self.inner.get_notify_on_resolve_case()
+    }
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p> 
     /// </note>
-    pub fn notify_on_case_severity(
-        mut self,
-        input: crate::types::NotificationSeverityLevel,
-    ) -> Self {
+    pub fn notify_on_case_severity(mut self, input: crate::types::NotificationSeverityLevel) -> Self {
         self.inner = self.inner.notify_on_case_severity(input);
         self
     }
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p> 
     /// </note>
-    pub fn set_notify_on_case_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationSeverityLevel>,
-    ) -> Self {
+    pub fn set_notify_on_case_severity(mut self, input: ::std::option::Option<crate::types::NotificationSeverityLevel>) -> Self {
         self.inner = self.inner.set_notify_on_case_severity(input);
         self
     }
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p> 
+    /// </note>
+    pub fn get_notify_on_case_severity(&self) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {
+        self.inner.get_notify_on_case_severity()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn channel_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn set_channel_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
+    pub fn get_channel_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_role_arn()
+    }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides information about an WAF rule group. A rule group is a collection of rules for inspecting and controlling web requests. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafRuleGroupDetails {
+pub struct AwsWafRuleGroupDetails  {
     /// <p>The name of the metrics for this rule group. </p>
     #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct AwsWafRuleGroupDetails {
 }
 impl AwsWafRuleGroupDetails {
     /// <p>The name of the metrics for this rule group. </p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The name of the rule group. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the rule group. </p>
-    pub fn rule_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_id(&self) -> ::std::option::Option<& str> {
         self.rule_group_id.as_deref()
     }
     /// <p>Provides information about the rules attached to the rule group. These rules identify the web requests that you want to allow, block, or count. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AwsWafRuleGroupRulesDetails]> {
+    pub fn rules(&self) -> ::std::option::Option<& [crate::types::AwsWafRuleGroupRulesDetails]> {
         self.rules.as_deref()
     }
 }
@@ -44,15 +44,12 @@ impl AwsWafRuleGroupDetails {
 
 /// A builder for [`AwsWafRuleGroupDetails`](crate::types::AwsWafRuleGroupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRuleGroupDetailsBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRuleGroupRulesDetails>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRuleGroupRulesDetails>>,
 }
 impl AwsWafRuleGroupDetailsBuilder {
     /// <p>The name of the metrics for this rule group. </p>
@@ -62,8 +59,11 @@ impl AwsWafRuleGroupDetailsBuilder {
     }
     /// <p>The name of the metrics for this rule group. </p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
+    }
+    /// <p>The name of the metrics for this rule group. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// <p>The name of the rule group. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +72,24 @@ impl AwsWafRuleGroupDetailsBuilder {
     }
     /// <p>The name of the rule group. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the rule group. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ID of the rule group. </p>
-    pub fn rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the rule group. </p>
-    pub fn set_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.rule_group_id = input;
-        self
+    pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rule_group_id = input; self
+    }
+    /// <p>The ID of the rule group. </p>
+    pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_id
     }
     /// Appends an item to `rules`.
     ///
@@ -98,25 +98,30 @@ impl AwsWafRuleGroupDetailsBuilder {
     /// <p>Provides information about the rules attached to the rule group. These rules identify the web requests that you want to allow, block, or count. </p>
     pub fn rules(mut self, input: crate::types::AwsWafRuleGroupRulesDetails) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information about the rules attached to the rule group. These rules identify the web requests that you want to allow, block, or count. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRuleGroupRulesDetails>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRuleGroupRulesDetails>>) -> Self {
+        self.rules = input; self
+    }
+    /// <p>Provides information about the rules attached to the rule group. These rules identify the web requests that you want to allow, block, or count. </p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRuleGroupRulesDetails>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`AwsWafRuleGroupDetails`](crate::types::AwsWafRuleGroupDetails).
     pub fn build(self) -> crate::types::AwsWafRuleGroupDetails {
         crate::types::AwsWafRuleGroupDetails {
-            metric_name: self.metric_name,
-            name: self.name,
-            rule_group_id: self.rule_group_id,
-            rules: self.rules,
+            metric_name: self.metric_name
+            ,
+            name: self.name
+            ,
+            rule_group_id: self.rule_group_id
+            ,
+            rules: self.rules
+            ,
         }
     }
 }
+

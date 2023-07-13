@@ -3,25 +3,25 @@
 /// <p>Describes a tag.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tag {
-    /// <p>The key of the tag.</p>
+pub struct Tag  {
+    /// <p>The key of the tag.</p> 
     /// <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p>The value of the tag.</p>
+    /// <p>The value of the tag.</p> 
     /// <p>Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {
-    /// <p>The key of the tag.</p>
+    /// <p>The key of the tag.</p> 
     /// <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
-    /// <p>The value of the tag.</p>
+    /// <p>The value of the tag.</p> 
     /// <p>Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -34,43 +34,52 @@ impl Tag {
 
 /// A builder for [`Tag`](crate::types::Tag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl TagBuilder {
-    /// <p>The key of the tag.</p>
+    /// <p>The key of the tag.</p> 
     /// <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The key of the tag.</p>
+    /// <p>The key of the tag.</p> 
     /// <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
-    /// <p>The value of the tag.</p>
+    /// <p>The key of the tag.</p> 
+    /// <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
+    /// <p>The value of the tag.</p> 
     /// <p>Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of the tag.</p>
+    /// <p>The value of the tag.</p> 
     /// <p>Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the tag.</p> 
+    /// <p>Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {
         crate::types::Tag {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

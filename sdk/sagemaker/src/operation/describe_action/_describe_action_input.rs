@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeActionInput {
+pub struct DescribeActionInput  {
     /// <p>The name of the action to describe.</p>
     #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeActionInput {
     /// <p>The name of the action to describe.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeActionInput {
 
 /// A builder for [`DescribeActionInput`](crate::operation::describe_action::DescribeActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeActionInputBuilder {
     }
     /// <p>The name of the action to describe.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
+    }
+    /// <p>The name of the action to describe.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// Consumes the builder and constructs a [`DescribeActionInput`](crate::operation::describe_action::DescribeActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_action::DescribeActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_action::DescribeActionInput {
-            action_name: self.action_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_action::DescribeActionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_action::DescribeActionInput {
+                action_name: self.action_name
+                ,
+            }
+        )
     }
 }
+

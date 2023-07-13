@@ -3,7 +3,7 @@
 /// <p>Represents a resolved build artifact. A resolved artifact is an artifact that is built and deployed to the destination, such as Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolvedArtifact {
+pub struct ResolvedArtifact  {
     /// <p>Specifies the type of artifact.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ArtifactsType>,
@@ -16,15 +16,15 @@ pub struct ResolvedArtifact {
 }
 impl ResolvedArtifact {
     /// <p>Specifies the type of artifact.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ArtifactsType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ArtifactsType> {
         self.r#type.as_ref()
     }
     /// <p>The location of the artifact.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The identifier of the artifact.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ResolvedArtifact {
 
 /// A builder for [`ResolvedArtifact`](crate::types::ResolvedArtifact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolvedArtifactBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ArtifactsType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl ResolvedArtifactBuilder {
     }
     /// <p>Specifies the type of artifact.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactsType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>Specifies the type of artifact.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ArtifactsType> {
+        &self.r#type
     }
     /// <p>The location of the artifact.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl ResolvedArtifactBuilder {
     }
     /// <p>The location of the artifact.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
+    }
+    /// <p>The location of the artifact.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// <p>The identifier of the artifact.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl ResolvedArtifactBuilder {
     }
     /// <p>The identifier of the artifact.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
+    }
+    /// <p>The identifier of the artifact.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Consumes the builder and constructs a [`ResolvedArtifact`](crate::types::ResolvedArtifact).
     pub fn build(self) -> crate::types::ResolvedArtifact {
         crate::types::ResolvedArtifact {
-            r#type: self.r#type,
-            location: self.location,
-            identifier: self.identifier,
+            r#type: self.r#type
+            ,
+            location: self.location
+            ,
+            identifier: self.identifier
+            ,
         }
     }
 }
+

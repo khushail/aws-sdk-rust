@@ -3,7 +3,7 @@
 /// <p>Specifies how many protections of a given type you can create.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Limit {
+pub struct Limit  {
     /// <p>The type of protection.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct Limit {
 }
 impl Limit {
     /// <p>The type of protection.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
@@ -30,9 +30,7 @@ impl Limit {
 
 /// A builder for [`Limit`](crate::types::Limit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LimitBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) max: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl LimitBuilder {
     }
     /// <p>The type of protection.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of protection.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
     pub fn max(mut self, input: i64) -> Self {
@@ -55,14 +56,21 @@ impl LimitBuilder {
     }
     /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
+    }
+    /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i64> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`Limit`](crate::types::Limit).
     pub fn build(self) -> crate::types::Limit {
         crate::types::Limit {
-            r#type: self.r#type,
-            max: self.max.unwrap_or_default(),
+            r#type: self.r#type
+            ,
+            max: self.max
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

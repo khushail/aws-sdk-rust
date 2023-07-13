@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEphemeridesOutput {
+pub struct ListEphemeridesOutput  {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListEphemeridesOutput {
 }
 impl ListEphemeridesOutput {
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of ephemerides.</p>
-    pub fn ephemerides(&self) -> ::std::option::Option<&[crate::types::EphemerisItem]> {
+    pub fn ephemerides(&self) -> ::std::option::Option<& [crate::types::EphemerisItem]> {
         self.ephemerides.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEphemeridesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListEphemeridesOutput {
     /// Creates a new builder-style object to manufacture [`ListEphemeridesOutput`](crate::operation::list_ephemerides::ListEphemeridesOutput).
     pub fn builder() -> crate::operation::list_ephemerides::builders::ListEphemeridesOutputBuilder {
@@ -35,9 +35,7 @@ impl ListEphemeridesOutput {
 
 /// A builder for [`ListEphemeridesOutput`](crate::operation::list_ephemerides::ListEphemeridesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEphemeridesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ephemerides: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>>,
@@ -51,8 +49,11 @@ impl ListEphemeridesOutputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `ephemerides`.
     ///
@@ -61,33 +62,36 @@ impl ListEphemeridesOutputBuilder {
     /// <p>List of ephemerides.</p>
     pub fn ephemerides(mut self, input: crate::types::EphemerisItem) -> Self {
         let mut v = self.ephemerides.unwrap_or_default();
-        v.push(input);
-        self.ephemerides = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ephemerides = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of ephemerides.</p>
-    pub fn set_ephemerides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>>,
-    ) -> Self {
-        self.ephemerides = input;
-        self
+    pub fn set_ephemerides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>>) -> Self {
+        self.ephemerides = input; self
+    }
+    /// <p>List of ephemerides.</p>
+    pub fn get_ephemerides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>> {
+        &self.ephemerides
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListEphemeridesOutput`](crate::operation::list_ephemerides::ListEphemeridesOutput).
     pub fn build(self) -> crate::operation::list_ephemerides::ListEphemeridesOutput {
         crate::operation::list_ephemerides::ListEphemeridesOutput {
-            next_token: self.next_token,
-            ephemerides: self.ephemerides,
+            next_token: self.next_token
+            ,
+            ephemerides: self.ephemerides
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateAuthEventFeedbackInput {
+pub struct UpdateAuthEventFeedbackInput  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
@@ -21,27 +21,27 @@ pub struct UpdateAuthEventFeedbackInput {
 }
 impl UpdateAuthEventFeedbackInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user pool username.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The event ID.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The feedback token.</p>
-    pub fn feedback_token(&self) -> ::std::option::Option<&str> {
+    pub fn feedback_token(&self) -> ::std::option::Option<& str> {
         self.feedback_token.as_deref()
     }
     /// <p>The authentication event feedback value.</p>
-    pub fn feedback_value(&self) -> ::std::option::Option<&crate::types::FeedbackValueType> {
+    pub fn feedback_value(&self) -> ::std::option::Option<& crate::types::FeedbackValueType> {
         self.feedback_value.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateAuthEventFeedbackInput {
+impl  ::std::fmt::Debug for UpdateAuthEventFeedbackInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAuthEventFeedbackInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -54,9 +54,7 @@ impl ::std::fmt::Debug for UpdateAuthEventFeedbackInput {
 }
 impl UpdateAuthEventFeedbackInput {
     /// Creates a new builder-style object to manufacture [`UpdateAuthEventFeedbackInput`](crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput).
-    pub fn builder(
-    ) -> crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder {
         crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder::default()
     }
 }
@@ -79,8 +77,11 @@ impl UpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
+    }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// <p>The user pool username.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +90,11 @@ impl UpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The user pool username.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// <p>The user pool username.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The event ID.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,24 +103,24 @@ impl UpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The event ID.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
+    }
+    /// <p>The event ID.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// <p>The feedback token.</p>
-    pub fn feedback_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feedback_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feedback_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The feedback token.</p>
-    pub fn set_feedback_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.feedback_token = input;
-        self
+    pub fn set_feedback_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.feedback_token = input; self
+    }
+    /// <p>The feedback token.</p>
+    pub fn get_feedback_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feedback_token
     }
     /// <p>The authentication event feedback value.</p>
     pub fn feedback_value(mut self, input: crate::types::FeedbackValueType) -> Self {
@@ -124,28 +128,28 @@ impl UpdateAuthEventFeedbackInputBuilder {
         self
     }
     /// <p>The authentication event feedback value.</p>
-    pub fn set_feedback_value(
-        mut self,
-        input: ::std::option::Option<crate::types::FeedbackValueType>,
-    ) -> Self {
-        self.feedback_value = input;
-        self
+    pub fn set_feedback_value(mut self, input: ::std::option::Option<crate::types::FeedbackValueType>) -> Self {
+        self.feedback_value = input; self
+    }
+    /// <p>The authentication event feedback value.</p>
+    pub fn get_feedback_value(&self) -> &::std::option::Option<crate::types::FeedbackValueType> {
+        &self.feedback_value
     }
     /// Consumes the builder and constructs a [`UpdateAuthEventFeedbackInput`](crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                event_id: self.event_id,
-                feedback_token: self.feedback_token,
-                feedback_value: self.feedback_value,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                event_id: self.event_id
+                ,
+                feedback_token: self.feedback_token
+                ,
+                feedback_value: self.feedback_value
+                ,
+            }
         )
     }
 }
@@ -160,3 +164,4 @@ impl ::std::fmt::Debug for UpdateAuthEventFeedbackInputBuilder {
         formatter.finish()
     }
 }
+

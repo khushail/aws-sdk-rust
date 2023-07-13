@@ -3,7 +3,7 @@
 /// <p>Filter based on UserIds or GroupIds.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchPrincipalType {
+pub struct SearchPrincipalType  {
     /// <p>UserIds or GroupIds.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct SearchPrincipalType {
 }
 impl SearchPrincipalType {
     /// <p>UserIds or GroupIds.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Role of a User or Group.</p>
-    pub fn roles(&self) -> ::std::option::Option<&[crate::types::PrincipalRoleType]> {
+    pub fn roles(&self) -> ::std::option::Option<& [crate::types::PrincipalRoleType]> {
         self.roles.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl SearchPrincipalType {
 
 /// A builder for [`SearchPrincipalType`](crate::types::SearchPrincipalType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchPrincipalTypeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>>,
@@ -45,8 +43,11 @@ impl SearchPrincipalTypeBuilder {
     }
     /// <p>UserIds or GroupIds.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>UserIds or GroupIds.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Appends an item to `roles`.
     ///
@@ -55,23 +56,26 @@ impl SearchPrincipalTypeBuilder {
     /// <p>The Role of a User or Group.</p>
     pub fn roles(mut self, input: crate::types::PrincipalRoleType) -> Self {
         let mut v = self.roles.unwrap_or_default();
-        v.push(input);
-        self.roles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.roles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Role of a User or Group.</p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>>,
-    ) -> Self {
-        self.roles = input;
-        self
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>>) -> Self {
+        self.roles = input; self
+    }
+    /// <p>The Role of a User or Group.</p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>> {
+        &self.roles
     }
     /// Consumes the builder and constructs a [`SearchPrincipalType`](crate::types::SearchPrincipalType).
     pub fn build(self) -> crate::types::SearchPrincipalType {
         crate::types::SearchPrincipalType {
-            id: self.id,
-            roles: self.roles,
+            id: self.id
+            ,
+            roles: self.roles
+            ,
         }
     }
 }
+

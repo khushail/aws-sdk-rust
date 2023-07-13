@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNotificationRuleOutput {
+pub struct DeleteNotificationRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -10,29 +10,25 @@ pub struct DeleteNotificationRuleOutput {
 }
 impl DeleteNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteNotificationRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteNotificationRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationRuleOutput`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleOutputBuilder {
         crate::operation::delete_notification_rule::builders::DeleteNotificationRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotificationRuleOutput`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotificationRuleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -45,23 +41,28 @@ impl DeleteNotificationRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteNotificationRuleOutput`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput).
     pub fn build(self) -> crate::operation::delete_notification_rule::DeleteNotificationRuleOutput {
         crate::operation::delete_notification_rule::DeleteNotificationRuleOutput {
-            arn: self.arn,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>An object that represents the details of a registered consumer. This type of object is returned by <code>DescribeStreamConsumer</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConsumerDescription {
+pub struct ConsumerDescription  {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
     #[doc(hidden)]
     pub consumer_name: ::std::option::Option<::std::string::String>,
-    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
     #[doc(hidden)]
     pub consumer_arn: ::std::option::Option<::std::string::String>,
@@ -23,26 +23,24 @@ pub struct ConsumerDescription {
 }
 impl ConsumerDescription {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-    pub fn consumer_name(&self) -> ::std::option::Option<&str> {
+    pub fn consumer_name(&self) -> ::std::option::Option<& str> {
         self.consumer_name.as_deref()
     }
-    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
-    pub fn consumer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn consumer_arn(&self) -> ::std::option::Option<& str> {
         self.consumer_arn.as_deref()
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
-    pub fn consumer_status(&self) -> ::std::option::Option<&crate::types::ConsumerStatus> {
+    pub fn consumer_status(&self) -> ::std::option::Option<& crate::types::ConsumerStatus> {
         self.consumer_status.as_ref()
     }
     /// <p></p>
-    pub fn consumer_creation_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn consumer_creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.consumer_creation_timestamp.as_ref()
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -55,9 +53,7 @@ impl ConsumerDescription {
 
 /// A builder for [`ConsumerDescription`](crate::types::ConsumerDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConsumerDescriptionBuilder {
     pub(crate) consumer_name: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_arn: ::std::option::Option<::std::string::String>,
@@ -67,32 +63,33 @@ pub struct ConsumerDescriptionBuilder {
 }
 impl ConsumerDescriptionBuilder {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-    pub fn consumer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-    pub fn set_consumer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.consumer_name = input;
-        self
+    pub fn set_consumer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.consumer_name = input; self
     }
-    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+    /// <p>The name of the consumer is something you choose when you register the consumer.</p>
+    pub fn get_consumer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_name
+    }
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.consumer_arn = input;
-        self
+        self.consumer_arn = input; self
+    }
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
+    /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
+    pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_arn
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
     pub fn consumer_status(mut self, input: crate::types::ConsumerStatus) -> Self {
@@ -100,12 +97,12 @@ impl ConsumerDescriptionBuilder {
         self
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
-    pub fn set_consumer_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsumerStatus>,
-    ) -> Self {
-        self.consumer_status = input;
-        self
+    pub fn set_consumer_status(mut self, input: ::std::option::Option<crate::types::ConsumerStatus>) -> Self {
+        self.consumer_status = input; self
+    }
+    /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
+    pub fn get_consumer_status(&self) -> &::std::option::Option<crate::types::ConsumerStatus> {
+        &self.consumer_status
     }
     /// <p></p>
     pub fn consumer_creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,12 +110,12 @@ impl ConsumerDescriptionBuilder {
         self
     }
     /// <p></p>
-    pub fn set_consumer_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.consumer_creation_timestamp = input;
-        self
+    pub fn set_consumer_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.consumer_creation_timestamp = input; self
+    }
+    /// <p></p>
+    pub fn get_consumer_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.consumer_creation_timestamp
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,17 +124,26 @@ impl ConsumerDescriptionBuilder {
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
+    }
+    /// <p>The ARN of the stream with which you registered the consumer.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Consumes the builder and constructs a [`ConsumerDescription`](crate::types::ConsumerDescription).
     pub fn build(self) -> crate::types::ConsumerDescription {
         crate::types::ConsumerDescription {
-            consumer_name: self.consumer_name,
-            consumer_arn: self.consumer_arn,
-            consumer_status: self.consumer_status,
-            consumer_creation_timestamp: self.consumer_creation_timestamp,
-            stream_arn: self.stream_arn,
+            consumer_name: self.consumer_name
+            ,
+            consumer_arn: self.consumer_arn
+            ,
+            consumer_status: self.consumer_status
+            ,
+            consumer_creation_timestamp: self.consumer_creation_timestamp
+            ,
+            stream_arn: self.stream_arn
+            ,
         }
     }
 }
+

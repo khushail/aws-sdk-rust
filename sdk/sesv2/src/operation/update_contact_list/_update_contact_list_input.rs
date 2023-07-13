@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContactListInput {
+pub struct UpdateContactListInput  {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct UpdateContactListInput {
 }
 impl UpdateContactListInput {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> ::std::option::Option<& str> {
         self.contact_list_name.as_deref()
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub fn topics(&self) -> ::std::option::Option<&[crate::types::Topic]> {
+    pub fn topics(&self) -> ::std::option::Option<& [crate::types::Topic]> {
         self.topics.as_deref()
     }
     /// <p>A description of what the contact list is about.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateContactListInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactListInput`](crate::operation::update_contact_list::UpdateContactListInput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_list::builders::UpdateContactListInputBuilder {
+    pub fn builder() -> crate::operation::update_contact_list::builders::UpdateContactListInputBuilder {
         crate::operation::update_contact_list::builders::UpdateContactListInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactListInput`](crate::operation::update_contact_list::UpdateContactListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactListInputBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
@@ -47,20 +44,17 @@ pub struct UpdateContactListInputBuilder {
 }
 impl UpdateContactListInputBuilder {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the contact list.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.contact_list_name = input;
-        self
+    pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.contact_list_name = input; self
+    }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_list_name
     }
     /// Appends an item to `topics`.
     ///
@@ -69,17 +63,17 @@ impl UpdateContactListInputBuilder {
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
     pub fn topics(mut self, input: crate::types::Topic) -> Self {
         let mut v = self.topics.unwrap_or_default();
-        v.push(input);
-        self.topics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.topics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub fn set_topics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
-    ) -> Self {
-        self.topics = input;
-        self
+    pub fn set_topics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>) -> Self {
+        self.topics = input; self
+    }
+    /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
+    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Topic>> {
+        &self.topics
     }
     /// <p>A description of what the contact list is about.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,22 +82,24 @@ impl UpdateContactListInputBuilder {
     }
     /// <p>A description of what the contact list is about.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of what the contact list is about.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateContactListInput`](crate::operation::update_contact_list::UpdateContactListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_contact_list::UpdateContactListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_contact_list::UpdateContactListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_contact_list::UpdateContactListInput {
-                contact_list_name: self.contact_list_name,
-                topics: self.topics,
-                description: self.description,
-            },
+                contact_list_name: self.contact_list_name
+                ,
+                topics: self.topics
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

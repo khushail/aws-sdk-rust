@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Identity {
+pub struct Identity  {
     /// <p>The source IP address of the TCP connection making the request to API Gateway.</p>
     #[doc(hidden)]
     pub source_ip: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct Identity {
 }
 impl Identity {
     /// <p>The source IP address of the TCP connection making the request to API Gateway.</p>
-    pub fn source_ip(&self) -> ::std::option::Option<&str> {
+    pub fn source_ip(&self) -> ::std::option::Option<& str> {
         self.source_ip.as_deref()
     }
     /// <p>The User Agent of the API caller.</p>
-    pub fn user_agent(&self) -> ::std::option::Option<&str> {
+    pub fn user_agent(&self) -> ::std::option::Option<& str> {
         self.user_agent.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl Identity {
 
 /// A builder for [`Identity`](crate::types::Identity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityBuilder {
     pub(crate) source_ip: ::std::option::Option<::std::string::String>,
     pub(crate) user_agent: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl IdentityBuilder {
     }
     /// <p>The source IP address of the TCP connection making the request to API Gateway.</p>
     pub fn set_source_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_ip = input;
-        self
+        self.source_ip = input; self
+    }
+    /// <p>The source IP address of the TCP connection making the request to API Gateway.</p>
+    pub fn get_source_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_ip
     }
     /// <p>The User Agent of the API caller.</p>
     pub fn user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,14 +55,20 @@ impl IdentityBuilder {
     }
     /// <p>The User Agent of the API caller.</p>
     pub fn set_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_agent = input;
-        self
+        self.user_agent = input; self
+    }
+    /// <p>The User Agent of the API caller.</p>
+    pub fn get_user_agent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_agent
     }
     /// Consumes the builder and constructs a [`Identity`](crate::types::Identity).
     pub fn build(self) -> crate::types::Identity {
         crate::types::Identity {
-            source_ip: self.source_ip,
-            user_agent: self.user_agent,
+            source_ip: self.source_ip
+            ,
+            user_agent: self.user_agent
+            ,
         }
     }
 }
+

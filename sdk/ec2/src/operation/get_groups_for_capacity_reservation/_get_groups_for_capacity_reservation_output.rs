@@ -2,49 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGroupsForCapacityReservationOutput {
+pub struct GetGroupsForCapacityReservationOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
     #[doc(hidden)]
-    pub capacity_reservation_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>>,
+    pub capacity_reservation_groups: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>>,
     _request_id: Option<String>,
 }
 impl GetGroupsForCapacityReservationOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
-    pub fn capacity_reservation_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CapacityReservationGroup]> {
+    pub fn capacity_reservation_groups(&self) -> ::std::option::Option<& [crate::types::CapacityReservationGroup]> {
         self.capacity_reservation_groups.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetGroupsForCapacityReservationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetGroupsForCapacityReservationOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupsForCapacityReservationOutput`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput).
-    pub fn builder() -> crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationOutputBuilder{
+    pub fn builder() -> crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationOutputBuilder {
         crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetGroupsForCapacityReservationOutput`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupsForCapacityReservationOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_reservation_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>>,
+    pub(crate) capacity_reservation_groups: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>>,
     _request_id: Option<String>,
 }
 impl GetGroupsForCapacityReservationOutputBuilder {
@@ -55,45 +49,42 @@ impl GetGroupsForCapacityReservationOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `capacity_reservation_groups`.
     ///
     /// To override the contents of this collection use [`set_capacity_reservation_groups`](Self::set_capacity_reservation_groups).
     ///
     /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
-    pub fn capacity_reservation_groups(
-        mut self,
-        input: crate::types::CapacityReservationGroup,
-    ) -> Self {
+    pub fn capacity_reservation_groups(mut self, input: crate::types::CapacityReservationGroup) -> Self {
         let mut v = self.capacity_reservation_groups.unwrap_or_default();
-        v.push(input);
-        self.capacity_reservation_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capacity_reservation_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
-    pub fn set_capacity_reservation_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>>,
-    ) -> Self {
-        self.capacity_reservation_groups = input;
-        self
+    pub fn set_capacity_reservation_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>>) -> Self {
+        self.capacity_reservation_groups = input; self
+    }
+    /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
+    pub fn get_capacity_reservation_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>> {
+        &self.capacity_reservation_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetGroupsForCapacityReservationOutput`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput
-    {
+    pub fn build(self) -> crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput {
         crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput {
             next_token: self.next_token
             ,
@@ -103,3 +94,4 @@ impl GetGroupsForCapacityReservationOutputBuilder {
         }
     }
 }
+

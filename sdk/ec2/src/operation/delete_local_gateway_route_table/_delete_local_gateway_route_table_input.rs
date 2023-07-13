@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLocalGatewayRouteTableInput {
+pub struct DeleteLocalGatewayRouteTableInput  {
     /// <p> The ID of the local gateway route table. </p>
     #[doc(hidden)]
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteLocalGatewayRouteTableInput {
 }
 impl DeleteLocalGatewayRouteTableInput {
     /// <p> The ID of the local gateway route table. </p>
-    pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.local_gateway_route_table_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,36 +22,31 @@ impl DeleteLocalGatewayRouteTableInput {
 }
 impl DeleteLocalGatewayRouteTableInput {
     /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteTableInput`](crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput).
-    pub fn builder() -> crate::operation::delete_local_gateway_route_table::builders::DeleteLocalGatewayRouteTableInputBuilder{
+    pub fn builder() -> crate::operation::delete_local_gateway_route_table::builders::DeleteLocalGatewayRouteTableInputBuilder {
         crate::operation::delete_local_gateway_route_table::builders::DeleteLocalGatewayRouteTableInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLocalGatewayRouteTableInput`](crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableInputBuilder {
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteLocalGatewayRouteTableInputBuilder {
     /// <p> The ID of the local gateway route table. </p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.local_gateway_route_table_id = input;
-        self
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.local_gateway_route_table_id = input; self
+    }
+    /// <p> The ID of the local gateway route table. </p>
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -60,21 +55,22 @@ impl DeleteLocalGatewayRouteTableInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteTableInput`](crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput {
-                local_gateway_route_table_id: self.local_gateway_route_table_id,
-                dry_run: self.dry_run,
-            },
+                local_gateway_route_table_id: self.local_gateway_route_table_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

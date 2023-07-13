@@ -3,7 +3,7 @@
 /// Relevant metrics on input records processed during bulk deployment.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BulkDeploymentMetrics {
+pub struct BulkDeploymentMetrics  {
     /// The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version.
     #[doc(hidden)]
     pub invalid_input_records: ::std::option::Option<i32>,
@@ -37,9 +37,7 @@ impl BulkDeploymentMetrics {
 
 /// A builder for [`BulkDeploymentMetrics`](crate::types::BulkDeploymentMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BulkDeploymentMetricsBuilder {
     pub(crate) invalid_input_records: ::std::option::Option<i32>,
     pub(crate) records_processed: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl BulkDeploymentMetricsBuilder {
     }
     /// The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version.
     pub fn set_invalid_input_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.invalid_input_records = input;
-        self
+        self.invalid_input_records = input; self
+    }
+    /// The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version.
+    pub fn get_invalid_input_records(&self) -> &::std::option::Option<i32> {
+        &self.invalid_input_records
     }
     /// The total number of group records from the input file that have been processed so far, or attempted.
     pub fn records_processed(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl BulkDeploymentMetricsBuilder {
     }
     /// The total number of group records from the input file that have been processed so far, or attempted.
     pub fn set_records_processed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.records_processed = input;
-        self
+        self.records_processed = input; self
+    }
+    /// The total number of group records from the input file that have been processed so far, or attempted.
+    pub fn get_records_processed(&self) -> &::std::option::Option<i32> {
+        &self.records_processed
     }
     /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
     pub fn retry_attempts(mut self, input: i32) -> Self {
@@ -73,15 +77,22 @@ impl BulkDeploymentMetricsBuilder {
     }
     /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
     pub fn set_retry_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retry_attempts = input;
-        self
+        self.retry_attempts = input; self
+    }
+    /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
+    pub fn get_retry_attempts(&self) -> &::std::option::Option<i32> {
+        &self.retry_attempts
     }
     /// Consumes the builder and constructs a [`BulkDeploymentMetrics`](crate::types::BulkDeploymentMetrics).
     pub fn build(self) -> crate::types::BulkDeploymentMetrics {
         crate::types::BulkDeploymentMetrics {
-            invalid_input_records: self.invalid_input_records,
-            records_processed: self.records_processed,
-            retry_attempts: self.retry_attempts,
+            invalid_input_records: self.invalid_input_records
+            ,
+            records_processed: self.records_processed
+            ,
+            retry_attempts: self.retry_attempts
+            ,
         }
     }
 }
+

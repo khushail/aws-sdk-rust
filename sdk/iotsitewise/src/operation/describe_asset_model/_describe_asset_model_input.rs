@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAssetModelInput {
+pub struct DescribeAssetModelInput  {
     /// <p>The ID of the asset model.</p>
     #[doc(hidden)]
     pub asset_model_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeAssetModelInput {
 }
 impl DescribeAssetModelInput {
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> ::std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
     /// <p> Whether or not to exclude asset model properties from the response. </p>
@@ -22,37 +22,31 @@ impl DescribeAssetModelInput {
 }
 impl DescribeAssetModelInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetModelInput`](crate::operation::describe_asset_model::DescribeAssetModelInput).
-    pub fn builder(
-    ) -> crate::operation::describe_asset_model::builders::DescribeAssetModelInputBuilder {
+    pub fn builder() -> crate::operation::describe_asset_model::builders::DescribeAssetModelInputBuilder {
         crate::operation::describe_asset_model::builders::DescribeAssetModelInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssetModelInput`](crate::operation::describe_asset_model::DescribeAssetModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssetModelInputBuilder {
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) exclude_properties: ::std::option::Option<bool>,
 }
 impl DescribeAssetModelInputBuilder {
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset model.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.asset_model_id = input;
-        self
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_model_id = input; self
+    }
+    /// <p>The ID of the asset model.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
     }
     /// <p> Whether or not to exclude asset model properties from the response. </p>
     pub fn exclude_properties(mut self, input: bool) -> Self {
@@ -61,21 +55,22 @@ impl DescribeAssetModelInputBuilder {
     }
     /// <p> Whether or not to exclude asset model properties from the response. </p>
     pub fn set_exclude_properties(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exclude_properties = input;
-        self
+        self.exclude_properties = input; self
+    }
+    /// <p> Whether or not to exclude asset model properties from the response. </p>
+    pub fn get_exclude_properties(&self) -> &::std::option::Option<bool> {
+        &self.exclude_properties
     }
     /// Consumes the builder and constructs a [`DescribeAssetModelInput`](crate::operation::describe_asset_model::DescribeAssetModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_asset_model::DescribeAssetModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_asset_model::DescribeAssetModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_asset_model::DescribeAssetModelInput {
-                asset_model_id: self.asset_model_id,
-                exclude_properties: self.exclude_properties,
-            },
+                asset_model_id: self.asset_model_id
+                ,
+                exclude_properties: self.exclude_properties
+                ,
+            }
         )
     }
 }
+

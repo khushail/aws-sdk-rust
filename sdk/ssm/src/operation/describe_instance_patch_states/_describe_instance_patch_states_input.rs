@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstancePatchStatesInput {
+pub struct DescribeInstancePatchStatesInput  {
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
     #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,11 +15,11 @@ pub struct DescribeInstancePatchStatesInput {
 }
 impl DescribeInstancePatchStatesInput {
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn instance_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.instance_ids.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of managed nodes to return (per page).</p>
@@ -29,16 +29,14 @@ impl DescribeInstancePatchStatesInput {
 }
 impl DescribeInstancePatchStatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchStatesInput`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput).
-    pub fn builder() -> crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder {
         crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancePatchStatesInput`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +50,17 @@ impl DescribeInstancePatchStatesInputBuilder {
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.instance_ids = input; self
+    }
+    /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +69,11 @@ impl DescribeInstancePatchStatesInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of managed nodes to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -81,22 +82,24 @@ impl DescribeInstancePatchStatesInputBuilder {
     }
     /// <p>The maximum number of managed nodes to return (per page).</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of managed nodes to return (per page).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeInstancePatchStatesInput`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput {
-                instance_ids: self.instance_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                instance_ids: self.instance_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

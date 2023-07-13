@@ -3,7 +3,7 @@
 /// <p>The summary of the certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateSummary {
+pub struct CertificateSummary  {
     /// <p>A hexadecimal identifier for the certificate.</p>
     #[doc(hidden)]
     pub thumbprint: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct CertificateSummary {
 }
 impl CertificateSummary {
     /// <p>A hexadecimal identifier for the certificate.</p>
-    pub fn thumbprint(&self) -> ::std::option::Option<&str> {
+    pub fn thumbprint(&self) -> ::std::option::Option<& str> {
         self.thumbprint.as_deref()
     }
     /// <p>The entity the certificate belongs to.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The entity that issued the certificate.</p>
-    pub fn issuer(&self) -> ::std::option::Option<&str> {
+    pub fn issuer(&self) -> ::std::option::Option<& str> {
         self.issuer.as_deref()
     }
     /// <p>The certificate is not valid before this date.</p>
-    pub fn not_valid_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_valid_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_valid_before.as_ref()
     }
     /// <p>The certificate is not valid after this date.</p>
-    pub fn not_valid_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_valid_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_valid_after.as_ref()
     }
 }
@@ -51,9 +51,7 @@ impl CertificateSummary {
 
 /// A builder for [`CertificateSummary`](crate::types::CertificateSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateSummaryBuilder {
     pub(crate) thumbprint: ::std::option::Option<::std::string::String>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl CertificateSummaryBuilder {
     }
     /// <p>A hexadecimal identifier for the certificate.</p>
     pub fn set_thumbprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thumbprint = input;
-        self
+        self.thumbprint = input; self
+    }
+    /// <p>A hexadecimal identifier for the certificate.</p>
+    pub fn get_thumbprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thumbprint
     }
     /// <p>The entity the certificate belongs to.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +80,11 @@ impl CertificateSummaryBuilder {
     }
     /// <p>The entity the certificate belongs to.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
+    }
+    /// <p>The entity the certificate belongs to.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
     }
     /// <p>The entity that issued the certificate.</p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl CertificateSummaryBuilder {
     }
     /// <p>The entity that issued the certificate.</p>
     pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issuer = input;
-        self
+        self.issuer = input; self
+    }
+    /// <p>The entity that issued the certificate.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
     }
     /// <p>The certificate is not valid before this date.</p>
     pub fn not_valid_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -98,12 +105,12 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>The certificate is not valid before this date.</p>
-    pub fn set_not_valid_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.not_valid_before = input;
-        self
+    pub fn set_not_valid_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.not_valid_before = input; self
+    }
+    /// <p>The certificate is not valid before this date.</p>
+    pub fn get_not_valid_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_valid_before
     }
     /// <p>The certificate is not valid after this date.</p>
     pub fn not_valid_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,21 +118,27 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>The certificate is not valid after this date.</p>
-    pub fn set_not_valid_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.not_valid_after = input;
-        self
+    pub fn set_not_valid_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.not_valid_after = input; self
+    }
+    /// <p>The certificate is not valid after this date.</p>
+    pub fn get_not_valid_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_valid_after
     }
     /// Consumes the builder and constructs a [`CertificateSummary`](crate::types::CertificateSummary).
     pub fn build(self) -> crate::types::CertificateSummary {
         crate::types::CertificateSummary {
-            thumbprint: self.thumbprint,
-            subject: self.subject,
-            issuer: self.issuer,
-            not_valid_before: self.not_valid_before,
-            not_valid_after: self.not_valid_after,
+            thumbprint: self.thumbprint
+            ,
+            subject: self.subject
+            ,
+            issuer: self.issuer
+            ,
+            not_valid_before: self.not_valid_before
+            ,
+            not_valid_after: self.not_valid_after
+            ,
         }
     }
 }
+

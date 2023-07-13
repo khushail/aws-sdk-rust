@@ -3,7 +3,7 @@
 /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceResizePolicy {
+pub struct InstanceResizePolicy  {
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
     #[doc(hidden)]
     pub instances_to_terminate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,11 +16,11 @@ pub struct InstanceResizePolicy {
 }
 impl InstanceResizePolicy {
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
-    pub fn instances_to_terminate(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn instances_to_terminate(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.instances_to_terminate.as_deref()
     }
     /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
-    pub fn instances_to_protect(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn instances_to_protect(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.instances_to_protect.as_deref()
     }
     /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
@@ -37,12 +37,9 @@ impl InstanceResizePolicy {
 
 /// A builder for [`InstanceResizePolicy`](crate::types::InstanceResizePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceResizePolicyBuilder {
-    pub(crate) instances_to_terminate:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instances_to_terminate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instances_to_protect: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_termination_timeout: ::std::option::Option<i32>,
 }
@@ -52,44 +49,38 @@ impl InstanceResizePolicyBuilder {
     /// To override the contents of this collection use [`set_instances_to_terminate`](Self::set_instances_to_terminate).
     ///
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
-    pub fn instances_to_terminate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instances_to_terminate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instances_to_terminate.unwrap_or_default();
-        v.push(input.into());
-        self.instances_to_terminate = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instances_to_terminate = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
-    pub fn set_instances_to_terminate(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.instances_to_terminate = input;
-        self
+    pub fn set_instances_to_terminate(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.instances_to_terminate = input; self
+    }
+    /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
+    pub fn get_instances_to_terminate(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instances_to_terminate
     }
     /// Appends an item to `instances_to_protect`.
     ///
     /// To override the contents of this collection use [`set_instances_to_protect`](Self::set_instances_to_protect).
     ///
     /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
-    pub fn instances_to_protect(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instances_to_protect(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instances_to_protect.unwrap_or_default();
-        v.push(input.into());
-        self.instances_to_protect = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instances_to_protect = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
-    pub fn set_instances_to_protect(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.instances_to_protect = input;
-        self
+    pub fn set_instances_to_protect(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.instances_to_protect = input; self
+    }
+    /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
+    pub fn get_instances_to_protect(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instances_to_protect
     }
     /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
     pub fn instance_termination_timeout(mut self, input: i32) -> Self {
@@ -98,15 +89,22 @@ impl InstanceResizePolicyBuilder {
     }
     /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
     pub fn set_instance_termination_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_termination_timeout = input;
-        self
+        self.instance_termination_timeout = input; self
+    }
+    /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
+    pub fn get_instance_termination_timeout(&self) -> &::std::option::Option<i32> {
+        &self.instance_termination_timeout
     }
     /// Consumes the builder and constructs a [`InstanceResizePolicy`](crate::types::InstanceResizePolicy).
     pub fn build(self) -> crate::types::InstanceResizePolicy {
         crate::types::InstanceResizePolicy {
-            instances_to_terminate: self.instances_to_terminate,
-            instances_to_protect: self.instances_to_protect,
-            instance_termination_timeout: self.instance_termination_timeout,
+            instances_to_terminate: self.instances_to_terminate
+            ,
+            instances_to_protect: self.instances_to_protect
+            ,
+            instance_termination_timeout: self.instance_termination_timeout
+            ,
         }
     }
 }
+

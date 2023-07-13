@@ -3,7 +3,7 @@
 /// Represents the input of a DeleteAlertManagerDefinition operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAlertManagerDefinitionInput {
+pub struct DeleteAlertManagerDefinitionInput  {
     /// The ID of the workspace in which to delete the alert manager definition.
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
@@ -13,26 +13,24 @@ pub struct DeleteAlertManagerDefinitionInput {
 }
 impl DeleteAlertManagerDefinitionInput {
     /// The ID of the workspace in which to delete the alert manager definition.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteAlertManagerDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteAlertManagerDefinitionInput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput).
-    pub fn builder() -> crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder {
         crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAlertManagerDefinitionInput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinitionInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DeleteAlertManagerDefinitionInputBuilder {
     }
     /// The ID of the workspace in which to delete the alert manager definition.
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
+    }
+    /// The ID of the workspace in which to delete the alert manager definition.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +56,22 @@ impl DeleteAlertManagerDefinitionInputBuilder {
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteAlertManagerDefinitionInput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput {
-                workspace_id: self.workspace_id,
-                client_token: self.client_token,
-            },
+                workspace_id: self.workspace_id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetClassificationExportConfigurationOutput {
+pub struct GetClassificationExportConfigurationOutput  {
     /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
     #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ClassificationExportConfiguration>,
@@ -10,32 +10,27 @@ pub struct GetClassificationExportConfigurationOutput {
 }
 impl GetClassificationExportConfigurationOutput {
     /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClassificationExportConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ClassificationExportConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetClassificationExportConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetClassificationExportConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetClassificationExportConfigurationOutput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationOutput).
-    pub fn builder() -> crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationOutputBuilder {
         crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetClassificationExportConfigurationOutput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClassificationExportConfigurationOutputBuilder {
-    pub(crate) configuration:
-        ::std::option::Option<crate::types::ClassificationExportConfiguration>,
+    pub(crate) configuration: ::std::option::Option<crate::types::ClassificationExportConfiguration>,
     _request_id: Option<String>,
 }
 impl GetClassificationExportConfigurationOutputBuilder {
@@ -45,24 +40,24 @@ impl GetClassificationExportConfigurationOutputBuilder {
         self
     }
     /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassificationExportConfiguration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ClassificationExportConfiguration>) -> Self {
+        self.configuration = input; self
+    }
+    /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ClassificationExportConfiguration> {
+        &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetClassificationExportConfigurationOutput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationOutput{
+    pub fn build(self) -> crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationOutput {
         crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationOutput {
             configuration: self.configuration
             ,
@@ -70,3 +65,4 @@ impl GetClassificationExportConfigurationOutputBuilder {
         }
     }
 }
+

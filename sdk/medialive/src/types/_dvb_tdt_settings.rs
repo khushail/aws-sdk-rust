@@ -3,7 +3,7 @@
 /// DVB Time and Date Table (SDT)
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DvbTdtSettings {
+pub struct DvbTdtSettings  {
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
     pub rep_interval: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl DvbTdtSettings {
 
 /// A builder for [`DvbTdtSettings`](crate::types::DvbTdtSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DvbTdtSettingsBuilder {
     pub(crate) rep_interval: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl DvbTdtSettingsBuilder {
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn set_rep_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rep_interval = input;
-        self
+        self.rep_interval = input; self
+    }
+    /// The number of milliseconds between instances of this table in the output transport stream.
+    pub fn get_rep_interval(&self) -> &::std::option::Option<i32> {
+        &self.rep_interval
     }
     /// Consumes the builder and constructs a [`DvbTdtSettings`](crate::types::DvbTdtSettings).
     pub fn build(self) -> crate::types::DvbTdtSettings {
         crate::types::DvbTdtSettings {
-            rep_interval: self.rep_interval,
+            rep_interval: self.rep_interval
+            ,
         }
     }
 }
+

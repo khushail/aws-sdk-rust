@@ -3,7 +3,7 @@
 /// <p>Describes an action that captures a CloudWatch metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudwatchMetricAction {
+pub struct CloudwatchMetricAction  {
     /// <p>The IAM role that allows access to the CloudWatch metric.</p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct CloudwatchMetricAction {
 }
 impl CloudwatchMetricAction {
     /// <p>The IAM role that allows access to the CloudWatch metric.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The CloudWatch metric namespace name.</p>
-    pub fn metric_namespace(&self) -> ::std::option::Option<&str> {
+    pub fn metric_namespace(&self) -> ::std::option::Option<& str> {
         self.metric_namespace.as_deref()
     }
     /// <p>The CloudWatch metric name.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The CloudWatch metric value.</p>
-    pub fn metric_value(&self) -> ::std::option::Option<&str> {
+    pub fn metric_value(&self) -> ::std::option::Option<& str> {
         self.metric_value.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
-    pub fn metric_unit(&self) -> ::std::option::Option<&str> {
+    pub fn metric_unit(&self) -> ::std::option::Option<& str> {
         self.metric_unit.as_deref()
     }
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
-    pub fn metric_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn metric_timestamp(&self) -> ::std::option::Option<& str> {
         self.metric_timestamp.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl CloudwatchMetricAction {
 
 /// A builder for [`CloudwatchMetricAction`](crate::types::CloudwatchMetricAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudwatchMetricActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metric_namespace: ::std::option::Option<::std::string::String>,
@@ -77,24 +75,24 @@ impl CloudwatchMetricActionBuilder {
     }
     /// <p>The IAM role that allows access to the CloudWatch metric.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The IAM role that allows access to the CloudWatch metric.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The CloudWatch metric namespace name.</p>
-    pub fn metric_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CloudWatch metric namespace name.</p>
-    pub fn set_metric_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metric_namespace = input;
-        self
+    pub fn set_metric_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metric_namespace = input; self
+    }
+    /// <p>The CloudWatch metric namespace name.</p>
+    pub fn get_metric_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_namespace
     }
     /// <p>The CloudWatch metric name.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +101,11 @@ impl CloudwatchMetricActionBuilder {
     }
     /// <p>The CloudWatch metric name.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
+    }
+    /// <p>The CloudWatch metric name.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// <p>The CloudWatch metric value.</p>
     pub fn metric_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,8 +114,11 @@ impl CloudwatchMetricActionBuilder {
     }
     /// <p>The CloudWatch metric value.</p>
     pub fn set_metric_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_value = input;
-        self
+        self.metric_value = input; self
+    }
+    /// <p>The CloudWatch metric value.</p>
+    pub fn get_metric_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_value
     }
     /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
     pub fn metric_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,34 +127,41 @@ impl CloudwatchMetricActionBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
     pub fn set_metric_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_unit = input;
-        self
+        self.metric_unit = input; self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
+    pub fn get_metric_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_unit
     }
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
-    pub fn metric_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
-    pub fn set_metric_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metric_timestamp = input;
-        self
+    pub fn set_metric_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metric_timestamp = input; self
+    }
+    /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
+    pub fn get_metric_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_timestamp
     }
     /// Consumes the builder and constructs a [`CloudwatchMetricAction`](crate::types::CloudwatchMetricAction).
     pub fn build(self) -> crate::types::CloudwatchMetricAction {
         crate::types::CloudwatchMetricAction {
-            role_arn: self.role_arn,
-            metric_namespace: self.metric_namespace,
-            metric_name: self.metric_name,
-            metric_value: self.metric_value,
-            metric_unit: self.metric_unit,
-            metric_timestamp: self.metric_timestamp,
+            role_arn: self.role_arn
+            ,
+            metric_namespace: self.metric_namespace
+            ,
+            metric_name: self.metric_name
+            ,
+            metric_value: self.metric_value
+            ,
+            metric_unit: self.metric_unit
+            ,
+            metric_timestamp: self.metric_timestamp
+            ,
         }
     }
 }
+

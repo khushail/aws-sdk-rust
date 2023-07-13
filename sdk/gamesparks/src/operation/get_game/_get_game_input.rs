@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGameInput {
+pub struct GetGameInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
 }
 impl GetGameInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_name(&self) -> ::std::option::Option<& str> {
         self.game_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetGameInput {
 
 /// A builder for [`GetGameInput`](crate::operation::get_game::GetGameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGameInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetGameInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
+    }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
     }
     /// Consumes the builder and constructs a [`GetGameInput`](crate::operation::get_game::GetGameInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_game::GetGameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_game::GetGameInput {
-            game_name: self.game_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_game::GetGameInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_game::GetGameInput {
+                game_name: self.game_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCertificateAuthorityInput {
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
+pub struct DeleteCertificateAuthorityInput  {
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p> 
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
@@ -12,9 +12,9 @@ pub struct DeleteCertificateAuthorityInput {
     pub permanent_deletion_time_in_days: ::std::option::Option<i32>,
 }
 impl DeleteCertificateAuthorityInput {
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p> 
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
@@ -24,38 +24,34 @@ impl DeleteCertificateAuthorityInput {
 }
 impl DeleteCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateAuthorityInput`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput).
-    pub fn builder() -> crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityInputBuilder{
+    pub fn builder() -> crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityInputBuilder {
         crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCertificateAuthorityInput`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCertificateAuthorityInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permanent_deletion_time_in_days: ::std::option::Option<i32>,
 }
 impl DeleteCertificateAuthorityInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p> 
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p> 
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.certificate_authority_arn = input;
-        self
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_authority_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p> 
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
     }
     /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
     pub fn permanent_deletion_time_in_days(mut self, input: i32) -> Self {
@@ -63,25 +59,23 @@ impl DeleteCertificateAuthorityInputBuilder {
         self
     }
     /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
-    pub fn set_permanent_deletion_time_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.permanent_deletion_time_in_days = input;
-        self
+    pub fn set_permanent_deletion_time_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.permanent_deletion_time_in_days = input; self
+    }
+    /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
+    pub fn get_permanent_deletion_time_in_days(&self) -> &::std::option::Option<i32> {
+        &self.permanent_deletion_time_in_days
     }
     /// Consumes the builder and constructs a [`DeleteCertificateAuthorityInput`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput {
-                certificate_authority_arn: self.certificate_authority_arn,
-                permanent_deletion_time_in_days: self.permanent_deletion_time_in_days,
-            },
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
+                permanent_deletion_time_in_days: self.permanent_deletion_time_in_days
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MedicalAlternative {
+pub struct MedicalAlternative  {
     /// <p>Contains transcribed text.</p>
     #[doc(hidden)]
     pub transcript: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct MedicalAlternative {
 }
 impl MedicalAlternative {
     /// <p>Contains transcribed text.</p>
-    pub fn transcript(&self) -> ::std::option::Option<&str> {
+    pub fn transcript(&self) -> ::std::option::Option<& str> {
         self.transcript.as_deref()
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::MedicalItem]> {
+    pub fn items(&self) -> ::std::option::Option<& [crate::types::MedicalItem]> {
         self.items.as_deref()
     }
     /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::MedicalEntity]> {
+    pub fn entities(&self) -> ::std::option::Option<& [crate::types::MedicalEntity]> {
         self.entities.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl MedicalAlternative {
 
 /// A builder for [`MedicalAlternative`](crate::types::MedicalAlternative).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MedicalAlternativeBuilder {
     pub(crate) transcript: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::MedicalItem>>,
@@ -53,8 +51,11 @@ impl MedicalAlternativeBuilder {
     }
     /// <p>Contains transcribed text.</p>
     pub fn set_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
+    }
+    /// <p>Contains transcribed text.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcript
     }
     /// Appends an item to `items`.
     ///
@@ -63,17 +64,17 @@ impl MedicalAlternativeBuilder {
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
     pub fn items(mut self, input: crate::types::MedicalItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalItem>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalItem>>) -> Self {
+        self.items = input; self
+    }
+    /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalItem>> {
+        &self.items
     }
     /// Appends an item to `entities`.
     ///
@@ -82,24 +83,28 @@ impl MedicalAlternativeBuilder {
     /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
     pub fn entities(mut self, input: crate::types::MedicalEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalEntity>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalEntity>>) -> Self {
+        self.entities = input; self
+    }
+    /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalEntity>> {
+        &self.entities
     }
     /// Consumes the builder and constructs a [`MedicalAlternative`](crate::types::MedicalAlternative).
     pub fn build(self) -> crate::types::MedicalAlternative {
         crate::types::MedicalAlternative {
-            transcript: self.transcript,
-            items: self.items,
-            entities: self.entities,
+            transcript: self.transcript
+            ,
+            items: self.items
+            ,
+            entities: self.entities
+            ,
         }
     }
 }
+

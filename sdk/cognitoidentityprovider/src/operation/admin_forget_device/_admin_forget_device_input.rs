@@ -3,7 +3,7 @@
 /// <p>Sends the forgot device request, as an administrator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminForgetDeviceInput {
+pub struct AdminForgetDeviceInput  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
@@ -16,19 +16,19 @@ pub struct AdminForgetDeviceInput {
 }
 impl AdminForgetDeviceInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> ::std::option::Option<&str> {
+    pub fn device_key(&self) -> ::std::option::Option<& str> {
         self.device_key.as_deref()
     }
 }
-impl ::std::fmt::Debug for AdminForgetDeviceInput {
+impl  ::std::fmt::Debug for AdminForgetDeviceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminForgetDeviceInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -39,8 +39,7 @@ impl ::std::fmt::Debug for AdminForgetDeviceInput {
 }
 impl AdminForgetDeviceInput {
     /// Creates a new builder-style object to manufacture [`AdminForgetDeviceInput`](crate::operation::admin_forget_device::AdminForgetDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::admin_forget_device::builders::AdminForgetDeviceInputBuilder {
+    pub fn builder() -> crate::operation::admin_forget_device::builders::AdminForgetDeviceInputBuilder {
         crate::operation::admin_forget_device::builders::AdminForgetDeviceInputBuilder::default()
     }
 }
@@ -61,8 +60,11 @@ impl AdminForgetDeviceInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
+    }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +73,11 @@ impl AdminForgetDeviceInputBuilder {
     }
     /// <p>The user name.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// <p>The user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The device key.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,22 +86,23 @@ impl AdminForgetDeviceInputBuilder {
     }
     /// <p>The device key.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_key = input;
-        self
+        self.device_key = input; self
+    }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
     }
     /// Consumes the builder and constructs a [`AdminForgetDeviceInput`](crate::operation::admin_forget_device::AdminForgetDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_forget_device::AdminForgetDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_forget_device::AdminForgetDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::admin_forget_device::AdminForgetDeviceInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                device_key: self.device_key,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                device_key: self.device_key
+                ,
+            }
         )
     }
 }
@@ -109,3 +115,4 @@ impl ::std::fmt::Debug for AdminForgetDeviceInputBuilder {
         formatter.finish()
     }
 }
+

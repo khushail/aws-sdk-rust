@@ -3,7 +3,7 @@
 /// <p>Data replication initiation step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataReplicationInitiationStep {
+pub struct DataReplicationInitiationStep  {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::DataReplicationInitiationStepName>,
@@ -13,13 +13,11 @@ pub struct DataReplicationInitiationStep {
 }
 impl DataReplicationInitiationStep {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::DataReplicationInitiationStepName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::DataReplicationInitiationStepName> {
         self.name.as_ref()
     }
     /// <p>The status of the step.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataReplicationInitiationStepStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DataReplicationInitiationStepStatus> {
         self.status.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl DataReplicationInitiationStep {
 
 /// A builder for [`DataReplicationInitiationStep`](crate::types::DataReplicationInitiationStep).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataReplicationInitiationStepBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DataReplicationInitiationStepName>,
     pub(crate) status: ::std::option::Option<crate::types::DataReplicationInitiationStepStatus>,
@@ -46,12 +42,12 @@ impl DataReplicationInitiationStepBuilder {
         self
     }
     /// <p>The name of the step.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::DataReplicationInitiationStepName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::DataReplicationInitiationStepName>) -> Self {
+        self.name = input; self
+    }
+    /// <p>The name of the step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::DataReplicationInitiationStepName> {
+        &self.name
     }
     /// <p>The status of the step.</p>
     pub fn status(mut self, input: crate::types::DataReplicationInitiationStepStatus) -> Self {
@@ -59,18 +55,21 @@ impl DataReplicationInitiationStepBuilder {
         self
     }
     /// <p>The status of the step.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataReplicationInitiationStepStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataReplicationInitiationStepStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the step.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataReplicationInitiationStepStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DataReplicationInitiationStep`](crate::types::DataReplicationInitiationStep).
     pub fn build(self) -> crate::types::DataReplicationInitiationStep {
         crate::types::DataReplicationInitiationStep {
-            name: self.name,
-            status: self.status,
+            name: self.name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

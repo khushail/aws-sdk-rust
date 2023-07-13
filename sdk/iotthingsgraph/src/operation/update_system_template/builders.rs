@@ -3,116 +3,107 @@ pub use crate::operation::update_system_template::_update_system_template_output
 
 pub use crate::operation::update_system_template::_update_system_template_input::UpdateSystemTemplateInputBuilder;
 
+impl UpdateSystemTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_system_template::UpdateSystemTemplateOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_system_template::UpdateSystemTemplateError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_system_template();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateSystemTemplate`.
-///
+/// 
 /// <p>Updates the specified system. You don't need to run this action after updating a workflow. Any deployment that uses the system will see the changes in the system when it is redeployed.</p>
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSystemTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_system_template::builders::UpdateSystemTemplateInputBuilder,
+                    inner: crate::operation::update_system_template::builders::UpdateSystemTemplateInputBuilder,
 }
-impl UpdateSystemTemplateFluentBuilder {
+impl UpdateSystemTemplateFluentBuilder  {
     /// Creates a new `UpdateSystemTemplate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_system_template::UpdateSystemTemplate,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_system_template::UpdateSystemTemplateError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateSystemTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_system_template::builders::UpdateSystemTemplateInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_system_template::UpdateSystemTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_system_template::UpdateSystemTemplateError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_system_template::UpdateSystemTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_system_template::UpdateSystemTemplateError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_system_template::UpdateSystemTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_system_template::UpdateSystemTemplateError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_system_template::UpdateSystemTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_system_template::UpdateSystemTemplateError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_system_template::UpdateSystemTemplate,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_system_template::UpdateSystemTemplateError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>The ID of the system to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_system_template::UpdateSystemTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_system_template::UpdateSystemTemplateError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_system_template::UpdateSystemTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_system_template::UpdateSystemTemplateError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>The ID of the system to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The ID of the system to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the system to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID of the system to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
@@ -120,23 +111,30 @@ impl UpdateSystemTemplateFluentBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
-    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        self.inner.get_definition()
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn compatible_namespace_version(mut self, input: i64) -> Self {
         self.inner = self.inner.compatible_namespace_version(input);
         self
     }
-    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn set_compatible_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_compatible_namespace_version(input);
         self
     }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p> 
+    /// <p>If no value is specified, the latest version is used by default.</p>
+    pub fn get_compatible_namespace_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_compatible_namespace_version()
+    }
 }
+

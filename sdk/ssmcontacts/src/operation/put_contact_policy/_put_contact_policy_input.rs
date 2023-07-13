@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutContactPolicyInput {
+pub struct PutContactPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct PutContactPolicyInput {
 }
 impl PutContactPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>Details of the resource policy.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl PutContactPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutContactPolicyInput`](crate::operation::put_contact_policy::PutContactPolicyInput).
-    pub fn builder() -> crate::operation::put_contact_policy::builders::PutContactPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_contact_policy::builders::PutContactPolicyInputBuilder {
         crate::operation::put_contact_policy::builders::PutContactPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutContactPolicyInput`](crate::operation::put_contact_policy::PutContactPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutContactPolicyInputBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl PutContactPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
     }
     /// <p>Details of the resource policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl PutContactPolicyInputBuilder {
     }
     /// <p>Details of the resource policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
+    }
+    /// <p>Details of the resource policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutContactPolicyInput`](crate::operation::put_contact_policy::PutContactPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_contact_policy::PutContactPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_contact_policy::PutContactPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_contact_policy::PutContactPolicyInput {
-                contact_arn: self.contact_arn,
-                policy: self.policy,
-            },
+                contact_arn: self.contact_arn
+                ,
+                policy: self.policy
+                ,
+            }
         )
     }
 }
+

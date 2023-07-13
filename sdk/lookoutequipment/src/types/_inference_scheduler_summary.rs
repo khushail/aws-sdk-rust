@@ -3,7 +3,7 @@
 /// <p>Contains information about the specific inference scheduler, including data delay offset, model name and ARN, status, and so on. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceSchedulerSummary {
+pub struct InferenceSchedulerSummary  {
     /// <p>The name of the ML model used for the inference scheduler. </p>
     #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
@@ -31,23 +31,23 @@ pub struct InferenceSchedulerSummary {
 }
 impl InferenceSchedulerSummary {
     /// <p>The name of the ML model used for the inference scheduler. </p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the inference scheduler. </p>
-    pub fn inference_scheduler_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
-    pub fn inference_scheduler_arn(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>Indicates the status of the inference scheduler. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InferenceSchedulerStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InferenceSchedulerStatus> {
         self.status.as_ref()
     }
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if an offset delay time of five minutes was selected, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
@@ -55,15 +55,11 @@ impl InferenceSchedulerSummary {
         self.data_delay_offset_in_minutes
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn data_upload_frequency(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataUploadFrequency> {
+    pub fn data_upload_frequency(&self) -> ::std::option::Option<& crate::types::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-    pub fn latest_inference_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LatestInferenceResult> {
+    pub fn latest_inference_result(&self) -> ::std::option::Option<& crate::types::LatestInferenceResult> {
         self.latest_inference_result.as_ref()
     }
 }
@@ -76,9 +72,7 @@ impl InferenceSchedulerSummary {
 
 /// A builder for [`InferenceSchedulerSummary`](crate::types::InferenceSchedulerSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceSchedulerSummaryBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
@@ -97,8 +91,11 @@ impl InferenceSchedulerSummaryBuilder {
     }
     /// <p>The name of the ML model used for the inference scheduler. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
+    }
+    /// <p>The name of the ML model used for the inference scheduler. </p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,40 +104,37 @@ impl InferenceSchedulerSummaryBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
     }
     /// <p>The name of the inference scheduler. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inference_scheduler_name = input;
-        self
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inference_scheduler_name = input; self
+    }
+    /// <p>The name of the inference scheduler. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
     }
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
-    pub fn inference_scheduler_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
-    pub fn set_inference_scheduler_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inference_scheduler_arn = input;
-        self
+    pub fn set_inference_scheduler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inference_scheduler_arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
+    pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_arn
     }
     /// <p>Indicates the status of the inference scheduler. </p>
     pub fn status(mut self, input: crate::types::InferenceSchedulerStatus) -> Self {
@@ -148,12 +142,12 @@ impl InferenceSchedulerSummaryBuilder {
         self
     }
     /// <p>Indicates the status of the inference scheduler. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceSchedulerStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>Indicates the status of the inference scheduler. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceSchedulerStatus> {
+        &self.status
     }
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if an offset delay time of five minutes was selected, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
     pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
@@ -162,8 +156,11 @@ impl InferenceSchedulerSummaryBuilder {
     }
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if an offset delay time of five minutes was selected, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
     pub fn set_data_delay_offset_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.data_delay_offset_in_minutes = input;
-        self
+        self.data_delay_offset_in_minutes = input; self
+    }
+    /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if an offset delay time of five minutes was selected, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+    pub fn get_data_delay_offset_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.data_delay_offset_in_minutes
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
     pub fn data_upload_frequency(mut self, input: crate::types::DataUploadFrequency) -> Self {
@@ -171,12 +168,12 @@ impl InferenceSchedulerSummaryBuilder {
         self
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn set_data_upload_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::DataUploadFrequency>,
-    ) -> Self {
-        self.data_upload_frequency = input;
-        self
+    pub fn set_data_upload_frequency(mut self, input: ::std::option::Option<crate::types::DataUploadFrequency>) -> Self {
+        self.data_upload_frequency = input; self
+    }
+    /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    pub fn get_data_upload_frequency(&self) -> &::std::option::Option<crate::types::DataUploadFrequency> {
+        &self.data_upload_frequency
     }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
     pub fn latest_inference_result(mut self, input: crate::types::LatestInferenceResult) -> Self {
@@ -184,24 +181,33 @@ impl InferenceSchedulerSummaryBuilder {
         self
     }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-    pub fn set_latest_inference_result(
-        mut self,
-        input: ::std::option::Option<crate::types::LatestInferenceResult>,
-    ) -> Self {
-        self.latest_inference_result = input;
-        self
+    pub fn set_latest_inference_result(mut self, input: ::std::option::Option<crate::types::LatestInferenceResult>) -> Self {
+        self.latest_inference_result = input; self
+    }
+    /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+    pub fn get_latest_inference_result(&self) -> &::std::option::Option<crate::types::LatestInferenceResult> {
+        &self.latest_inference_result
     }
     /// Consumes the builder and constructs a [`InferenceSchedulerSummary`](crate::types::InferenceSchedulerSummary).
     pub fn build(self) -> crate::types::InferenceSchedulerSummary {
         crate::types::InferenceSchedulerSummary {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            inference_scheduler_name: self.inference_scheduler_name,
-            inference_scheduler_arn: self.inference_scheduler_arn,
-            status: self.status,
-            data_delay_offset_in_minutes: self.data_delay_offset_in_minutes,
-            data_upload_frequency: self.data_upload_frequency,
-            latest_inference_result: self.latest_inference_result,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            inference_scheduler_name: self.inference_scheduler_name
+            ,
+            inference_scheduler_arn: self.inference_scheduler_arn
+            ,
+            status: self.status
+            ,
+            data_delay_offset_in_minutes: self.data_delay_offset_in_minutes
+            ,
+            data_upload_frequency: self.data_upload_frequency
+            ,
+            latest_inference_result: self.latest_inference_result
+            ,
         }
     }
 }
+

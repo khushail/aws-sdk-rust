@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteV2LoggingLevelInput {
+pub struct DeleteV2LoggingLevelInput  {
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::LogTargetType>,
@@ -12,27 +12,24 @@ pub struct DeleteV2LoggingLevelInput {
 }
 impl DeleteV2LoggingLevelInput {
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
-    pub fn target_type(&self) -> ::std::option::Option<&crate::types::LogTargetType> {
+    pub fn target_type(&self) -> ::std::option::Option<& crate::types::LogTargetType> {
         self.target_type.as_ref()
     }
     /// <p>The name of the resource for which you are configuring logging.</p>
-    pub fn target_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_name(&self) -> ::std::option::Option<& str> {
         self.target_name.as_deref()
     }
 }
 impl DeleteV2LoggingLevelInput {
     /// Creates a new builder-style object to manufacture [`DeleteV2LoggingLevelInput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput).
-    pub fn builder(
-    ) -> crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelInputBuilder {
+    pub fn builder() -> crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelInputBuilder {
         crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteV2LoggingLevelInput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteV2LoggingLevelInputBuilder {
     pub(crate) target_type: ::std::option::Option<crate::types::LogTargetType>,
     pub(crate) target_name: ::std::option::Option<::std::string::String>,
@@ -44,12 +41,12 @@ impl DeleteV2LoggingLevelInputBuilder {
         self
     }
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogTargetType>,
-    ) -> Self {
-        self.target_type = input;
-        self
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::LogTargetType>) -> Self {
+        self.target_type = input; self
+    }
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::LogTargetType> {
+        &self.target_type
     }
     /// <p>The name of the resource for which you are configuring logging.</p>
     pub fn target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,21 +55,22 @@ impl DeleteV2LoggingLevelInputBuilder {
     }
     /// <p>The name of the resource for which you are configuring logging.</p>
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_name = input;
-        self
+        self.target_name = input; self
+    }
+    /// <p>The name of the resource for which you are configuring logging.</p>
+    pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_name
     }
     /// Consumes the builder and constructs a [`DeleteV2LoggingLevelInput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput {
-                target_type: self.target_type,
-                target_name: self.target_name,
-            },
+                target_type: self.target_type
+                ,
+                target_name: self.target_name
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// Video Selector Color Space Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoSelectorColorSpaceSettings {
+pub struct VideoSelectorColorSpaceSettings  {
     /// Hdr10 Settings
     #[doc(hidden)]
     pub hdr10_settings: ::std::option::Option<crate::types::Hdr10Settings>,
 }
 impl VideoSelectorColorSpaceSettings {
     /// Hdr10 Settings
-    pub fn hdr10_settings(&self) -> ::std::option::Option<&crate::types::Hdr10Settings> {
+    pub fn hdr10_settings(&self) -> ::std::option::Option<& crate::types::Hdr10Settings> {
         self.hdr10_settings.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl VideoSelectorColorSpaceSettings {
 
 /// A builder for [`VideoSelectorColorSpaceSettings`](crate::types::VideoSelectorColorSpaceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoSelectorColorSpaceSettingsBuilder {
     pub(crate) hdr10_settings: ::std::option::Option<crate::types::Hdr10Settings>,
 }
@@ -36,17 +34,19 @@ impl VideoSelectorColorSpaceSettingsBuilder {
         self
     }
     /// Hdr10 Settings
-    pub fn set_hdr10_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Hdr10Settings>,
-    ) -> Self {
-        self.hdr10_settings = input;
-        self
+    pub fn set_hdr10_settings(mut self, input: ::std::option::Option<crate::types::Hdr10Settings>) -> Self {
+        self.hdr10_settings = input; self
+    }
+    /// Hdr10 Settings
+    pub fn get_hdr10_settings(&self) -> &::std::option::Option<crate::types::Hdr10Settings> {
+        &self.hdr10_settings
     }
     /// Consumes the builder and constructs a [`VideoSelectorColorSpaceSettings`](crate::types::VideoSelectorColorSpaceSettings).
     pub fn build(self) -> crate::types::VideoSelectorColorSpaceSettings {
         crate::types::VideoSelectorColorSpaceSettings {
-            hdr10_settings: self.hdr10_settings,
+            hdr10_settings: self.hdr10_settings
+            ,
         }
     }
 }
+

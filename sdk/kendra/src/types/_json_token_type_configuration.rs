@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information for the JSON token type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JsonTokenTypeConfiguration {
+pub struct JsonTokenTypeConfiguration  {
     /// <p>The user name attribute field.</p>
     #[doc(hidden)]
     pub user_name_attribute_field: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct JsonTokenTypeConfiguration {
 }
 impl JsonTokenTypeConfiguration {
     /// <p>The user name attribute field.</p>
-    pub fn user_name_attribute_field(&self) -> ::std::option::Option<&str> {
+    pub fn user_name_attribute_field(&self) -> ::std::option::Option<& str> {
         self.user_name_attribute_field.as_deref()
     }
     /// <p>The group attribute field.</p>
-    pub fn group_attribute_field(&self) -> ::std::option::Option<&str> {
+    pub fn group_attribute_field(&self) -> ::std::option::Option<& str> {
         self.group_attribute_field.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl JsonTokenTypeConfiguration {
 
 /// A builder for [`JsonTokenTypeConfiguration`](crate::types::JsonTokenTypeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JsonTokenTypeConfigurationBuilder {
     pub(crate) user_name_attribute_field: ::std::option::Option<::std::string::String>,
     pub(crate) group_attribute_field: ::std::option::Option<::std::string::String>,
 }
 impl JsonTokenTypeConfigurationBuilder {
     /// <p>The user name attribute field.</p>
-    pub fn user_name_attribute_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_name_attribute_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name_attribute_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name attribute field.</p>
-    pub fn set_user_name_attribute_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.user_name_attribute_field = input;
-        self
+    pub fn set_user_name_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_name_attribute_field = input; self
+    }
+    /// <p>The user name attribute field.</p>
+    pub fn get_user_name_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name_attribute_field
     }
     /// <p>The group attribute field.</p>
-    pub fn group_attribute_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_attribute_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_attribute_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group attribute field.</p>
-    pub fn set_group_attribute_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.group_attribute_field = input;
-        self
+    pub fn set_group_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_attribute_field = input; self
+    }
+    /// <p>The group attribute field.</p>
+    pub fn get_group_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_attribute_field
     }
     /// Consumes the builder and constructs a [`JsonTokenTypeConfiguration`](crate::types::JsonTokenTypeConfiguration).
     pub fn build(self) -> crate::types::JsonTokenTypeConfiguration {
         crate::types::JsonTokenTypeConfiguration {
-            user_name_attribute_field: self.user_name_attribute_field,
-            group_attribute_field: self.group_attribute_field,
+            user_name_attribute_field: self.user_name_attribute_field
+            ,
+            group_attribute_field: self.group_attribute_field
+            ,
         }
     }
 }
+

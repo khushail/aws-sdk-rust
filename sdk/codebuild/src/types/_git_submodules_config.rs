@@ -3,7 +3,7 @@
 /// <p> Information about the Git submodules configuration for an CodeBuild build project. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GitSubmodulesConfig {
+pub struct GitSubmodulesConfig  {
     /// <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
     #[doc(hidden)]
     pub fetch_submodules: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl GitSubmodulesConfig {
 
 /// A builder for [`GitSubmodulesConfig`](crate::types::GitSubmodulesConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GitSubmodulesConfigBuilder {
     pub(crate) fetch_submodules: ::std::option::Option<bool>,
 }
@@ -37,13 +35,18 @@ impl GitSubmodulesConfigBuilder {
     }
     /// <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
     pub fn set_fetch_submodules(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fetch_submodules = input;
-        self
+        self.fetch_submodules = input; self
+    }
+    /// <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
+    pub fn get_fetch_submodules(&self) -> &::std::option::Option<bool> {
+        &self.fetch_submodules
     }
     /// Consumes the builder and constructs a [`GitSubmodulesConfig`](crate::types::GitSubmodulesConfig).
     pub fn build(self) -> crate::types::GitSubmodulesConfig {
         crate::types::GitSubmodulesConfig {
-            fetch_submodules: self.fetch_submodules,
+            fetch_submodules: self.fetch_submodules
+            ,
         }
     }
 }
+

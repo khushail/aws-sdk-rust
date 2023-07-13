@@ -3,7 +3,7 @@
 /// <p>Contains information about a data set import task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSetImportTask {
+pub struct DataSetImportTask  {
     /// <p>The identifier of the data set import task.</p>
     #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct DataSetImportTask {
 }
 impl DataSetImportTask {
     /// <p>The identifier of the data set import task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The status of the data set import task.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSetTaskLifecycle> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DataSetTaskLifecycle> {
         self.status.as_ref()
     }
     /// <p>A summary of the data set import task.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::DataSetImportSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::DataSetImportSummary> {
         self.summary.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl DataSetImportTask {
 
 /// A builder for [`DataSetImportTask`](crate::types::DataSetImportTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetImportTaskBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataSetTaskLifecycle>,
@@ -53,8 +51,11 @@ impl DataSetImportTaskBuilder {
     }
     /// <p>The identifier of the data set import task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
+    }
+    /// <p>The identifier of the data set import task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// <p>The status of the data set import task.</p>
     pub fn status(mut self, input: crate::types::DataSetTaskLifecycle) -> Self {
@@ -62,12 +63,12 @@ impl DataSetImportTaskBuilder {
         self
     }
     /// <p>The status of the data set import task.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetTaskLifecycle>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSetTaskLifecycle>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the data set import task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSetTaskLifecycle> {
+        &self.status
     }
     /// <p>A summary of the data set import task.</p>
     pub fn summary(mut self, input: crate::types::DataSetImportSummary) -> Self {
@@ -75,19 +76,23 @@ impl DataSetImportTaskBuilder {
         self
     }
     /// <p>A summary of the data set import task.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetImportSummary>,
-    ) -> Self {
-        self.summary = input;
-        self
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::DataSetImportSummary>) -> Self {
+        self.summary = input; self
+    }
+    /// <p>A summary of the data set import task.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::DataSetImportSummary> {
+        &self.summary
     }
     /// Consumes the builder and constructs a [`DataSetImportTask`](crate::types::DataSetImportTask).
     pub fn build(self) -> crate::types::DataSetImportTask {
         crate::types::DataSetImportTask {
-            task_id: self.task_id,
-            status: self.status,
-            summary: self.summary,
+            task_id: self.task_id
+            ,
+            status: self.status
+            ,
+            summary: self.summary
+            ,
         }
     }
 }
+

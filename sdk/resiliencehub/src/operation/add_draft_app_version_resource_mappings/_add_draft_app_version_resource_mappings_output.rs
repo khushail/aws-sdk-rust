@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddDraftAppVersionResourceMappingsOutput {
+pub struct AddDraftAppVersionResourceMappingsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
@@ -16,40 +16,37 @@ pub struct AddDraftAppVersionResourceMappingsOutput {
 }
 impl AddDraftAppVersionResourceMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> ::std::option::Option<&str> {
+    pub fn app_version(&self) -> ::std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn resource_mappings(&self) -> ::std::option::Option<&[crate::types::ResourceMapping]> {
+    pub fn resource_mappings(&self) -> ::std::option::Option<& [crate::types::ResourceMapping]> {
         self.resource_mappings.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AddDraftAppVersionResourceMappingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AddDraftAppVersionResourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`AddDraftAppVersionResourceMappingsOutput`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput).
-    pub fn builder() -> crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsOutputBuilder{
+    pub fn builder() -> crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsOutputBuilder {
         crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddDraftAppVersionResourceMappingsOutput`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddDraftAppVersionResourceMappingsOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
+    pub(crate) resource_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
     _request_id: Option<String>,
 }
 impl AddDraftAppVersionResourceMappingsOutputBuilder {
@@ -60,8 +57,11 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
     }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +70,11 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
+    }
+    /// <p>The version of the application.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
     }
     /// Appends an item to `resource_mappings`.
     ///
@@ -80,29 +83,29 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     pub fn resource_mappings(mut self, input: crate::types::ResourceMapping) -> Self {
         let mut v = self.resource_mappings.unwrap_or_default();
-        v.push(input);
-        self.resource_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn set_resource_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
-    ) -> Self {
-        self.resource_mappings = input;
-        self
+    pub fn set_resource_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>) -> Self {
+        self.resource_mappings = input; self
+    }
+    /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
+    pub fn get_resource_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
+        &self.resource_mappings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AddDraftAppVersionResourceMappingsOutput`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput).
-    pub fn build(self) -> crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput{
+    pub fn build(self) -> crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput {
         crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput {
             app_arn: self.app_arn
             ,
@@ -114,3 +117,4 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
         }
     }
 }
+

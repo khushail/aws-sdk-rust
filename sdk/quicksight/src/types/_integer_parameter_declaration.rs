@@ -3,7 +3,7 @@
 /// <p>A parameter declaration for the <code>Integer</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegerParameterDeclaration {
+pub struct IntegerParameterDeclaration  {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
     #[doc(hidden)]
     pub parameter_value_type: ::std::option::Option<crate::types::ParameterValueType>,
@@ -18,32 +18,27 @@ pub struct IntegerParameterDeclaration {
     pub value_when_unset: ::std::option::Option<crate::types::IntegerValueWhenUnsetConfiguration>,
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
     #[doc(hidden)]
-    pub mapped_data_set_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    pub mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl IntegerParameterDeclaration {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub fn parameter_value_type(&self) -> ::std::option::Option<&crate::types::ParameterValueType> {
+    pub fn parameter_value_type(&self) -> ::std::option::Option<& crate::types::ParameterValueType> {
         self.parameter_value_type.as_ref()
     }
     /// <p>The name of the parameter that is being declared.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn default_values(&self) -> ::std::option::Option<&crate::types::IntegerDefaultValues> {
+    pub fn default_values(&self) -> ::std::option::Option<& crate::types::IntegerDefaultValues> {
         self.default_values.as_ref()
     }
     /// <p>A parameter declaration for the <code>Integer</code> data type.</p>
-    pub fn value_when_unset(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IntegerValueWhenUnsetConfiguration> {
+    pub fn value_when_unset(&self) -> ::std::option::Option<& crate::types::IntegerValueWhenUnsetConfiguration> {
         self.value_when_unset.as_ref()
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn mapped_data_set_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MappedDataSetParameter]> {
+    pub fn mapped_data_set_parameters(&self) -> ::std::option::Option<& [crate::types::MappedDataSetParameter]> {
         self.mapped_data_set_parameters.as_deref()
     }
 }
@@ -56,17 +51,13 @@ impl IntegerParameterDeclaration {
 
 /// A builder for [`IntegerParameterDeclaration`](crate::types::IntegerParameterDeclaration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegerParameterDeclarationBuilder {
     pub(crate) parameter_value_type: ::std::option::Option<crate::types::ParameterValueType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_values: ::std::option::Option<crate::types::IntegerDefaultValues>,
-    pub(crate) value_when_unset:
-        ::std::option::Option<crate::types::IntegerValueWhenUnsetConfiguration>,
-    pub(crate) mapped_data_set_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    pub(crate) value_when_unset: ::std::option::Option<crate::types::IntegerValueWhenUnsetConfiguration>,
+    pub(crate) mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl IntegerParameterDeclarationBuilder {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
@@ -75,12 +66,12 @@ impl IntegerParameterDeclarationBuilder {
         self
     }
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub fn set_parameter_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterValueType>,
-    ) -> Self {
-        self.parameter_value_type = input;
-        self
+    pub fn set_parameter_value_type(mut self, input: ::std::option::Option<crate::types::ParameterValueType>) -> Self {
+        self.parameter_value_type = input; self
+    }
+    /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
+    pub fn get_parameter_value_type(&self) -> &::std::option::Option<crate::types::ParameterValueType> {
+        &self.parameter_value_type
     }
     /// <p>The name of the parameter that is being declared.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +80,11 @@ impl IntegerParameterDeclarationBuilder {
     }
     /// <p>The name of the parameter that is being declared.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the parameter that is being declared.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub fn default_values(mut self, input: crate::types::IntegerDefaultValues) -> Self {
@@ -98,59 +92,59 @@ impl IntegerParameterDeclarationBuilder {
         self
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn set_default_values(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegerDefaultValues>,
-    ) -> Self {
-        self.default_values = input;
-        self
+    pub fn set_default_values(mut self, input: ::std::option::Option<crate::types::IntegerDefaultValues>) -> Self {
+        self.default_values = input; self
+    }
+    /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
+    pub fn get_default_values(&self) -> &::std::option::Option<crate::types::IntegerDefaultValues> {
+        &self.default_values
     }
     /// <p>A parameter declaration for the <code>Integer</code> data type.</p>
-    pub fn value_when_unset(
-        mut self,
-        input: crate::types::IntegerValueWhenUnsetConfiguration,
-    ) -> Self {
+    pub fn value_when_unset(mut self, input: crate::types::IntegerValueWhenUnsetConfiguration) -> Self {
         self.value_when_unset = ::std::option::Option::Some(input);
         self
     }
     /// <p>A parameter declaration for the <code>Integer</code> data type.</p>
-    pub fn set_value_when_unset(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegerValueWhenUnsetConfiguration>,
-    ) -> Self {
-        self.value_when_unset = input;
-        self
+    pub fn set_value_when_unset(mut self, input: ::std::option::Option<crate::types::IntegerValueWhenUnsetConfiguration>) -> Self {
+        self.value_when_unset = input; self
+    }
+    /// <p>A parameter declaration for the <code>Integer</code> data type.</p>
+    pub fn get_value_when_unset(&self) -> &::std::option::Option<crate::types::IntegerValueWhenUnsetConfiguration> {
+        &self.value_when_unset
     }
     /// Appends an item to `mapped_data_set_parameters`.
     ///
     /// To override the contents of this collection use [`set_mapped_data_set_parameters`](Self::set_mapped_data_set_parameters).
     ///
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn mapped_data_set_parameters(
-        mut self,
-        input: crate::types::MappedDataSetParameter,
-    ) -> Self {
+    pub fn mapped_data_set_parameters(mut self, input: crate::types::MappedDataSetParameter) -> Self {
         let mut v = self.mapped_data_set_parameters.unwrap_or_default();
-        v.push(input);
-        self.mapped_data_set_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mapped_data_set_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn set_mapped_data_set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
-    ) -> Self {
-        self.mapped_data_set_parameters = input;
-        self
+    pub fn set_mapped_data_set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>) -> Self {
+        self.mapped_data_set_parameters = input; self
+    }
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    pub fn get_mapped_data_set_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>> {
+        &self.mapped_data_set_parameters
     }
     /// Consumes the builder and constructs a [`IntegerParameterDeclaration`](crate::types::IntegerParameterDeclaration).
     pub fn build(self) -> crate::types::IntegerParameterDeclaration {
         crate::types::IntegerParameterDeclaration {
-            parameter_value_type: self.parameter_value_type,
-            name: self.name,
-            default_values: self.default_values,
-            value_when_unset: self.value_when_unset,
-            mapped_data_set_parameters: self.mapped_data_set_parameters,
+            parameter_value_type: self.parameter_value_type
+            ,
+            name: self.name
+            ,
+            default_values: self.default_values
+            ,
+            value_when_unset: self.value_when_unset
+            ,
+            mapped_data_set_parameters: self.mapped_data_set_parameters
+            ,
         }
     }
 }
+

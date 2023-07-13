@@ -3,117 +3,100 @@ pub use crate::operation::get_recommendations::_get_recommendations_output::GetR
 
 pub use crate::operation::get_recommendations::_get_recommendations_input::GetRecommendationsInputBuilder;
 
+impl GetRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_recommendations::GetRecommendationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_recommendations::GetRecommendationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_recommendations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetRecommendations`.
-///
+/// 
 /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html"> <code>Recommendation</code> </a> objects that contain recommendations for a profiling group for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html"> <code>Anomaly</code> </a> objects that contains details about anomalies detected in the profiling group for the same time period is also returned. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder,
+                    inner: crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder,
 }
-impl GetRecommendationsFluentBuilder {
+impl GetRecommendationsFluentBuilder  {
     /// Creates a new `GetRecommendations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_recommendations::GetRecommendations,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendations::GetRecommendationsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetRecommendations as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recommendations::GetRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendations::GetRecommendationsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_recommendations::GetRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_recommendations::GetRecommendationsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_recommendations::GetRecommendationsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recommendations::GetRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendations::GetRecommendationsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_recommendations::GetRecommendations,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendations::GetRecommendationsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_recommendations::GetRecommendationsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_recommendations::GetRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_recommendations::GetRecommendationsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The name of the profiling group to get analysis data about. </p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p> The name of the profiling group to get analysis data about. </p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
+    }
+    /// <p> The name of the profiling group to get analysis data about. </p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profiling_group_name()
     }
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -121,12 +104,13 @@ impl GetRecommendationsFluentBuilder {
         self
     }
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -134,47 +118,66 @@ impl GetRecommendationsFluentBuilder {
         self
     }
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
-    /// <ul>
-    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
-    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
-    /// <li> <p> <code>en-US</code> - English, United States </p> </li>
-    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
-    /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
-    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
-    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
-    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
-    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
-    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
-    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
+    /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p> 
+    /// <ul> 
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li> 
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li> 
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li> 
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li> 
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li> 
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li> 
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li> 
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li> 
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li> 
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li> 
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li> 
     /// </ul>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
         self
     }
-    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
-    /// <ul>
-    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
-    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
-    /// <li> <p> <code>en-US</code> - English, United States </p> </li>
-    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
-    /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
-    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
-    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
-    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
-    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
-    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
-    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p> 
+    /// <ul> 
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li> 
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li> 
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li> 
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li> 
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li> 
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li> 
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li> 
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li> 
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li> 
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li> 
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li> 
     /// </ul>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p> 
+    /// <ul> 
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li> 
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li> 
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li> 
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li> 
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li> 
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li> 
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li> 
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li> 
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li> 
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li> 
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li> 
+    /// </ul>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale()
+    }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateBudgetWithResourceInput {
+pub struct AssociateBudgetWithResourceInput  {
     /// <p>The name of the budget you want to associate.</p>
     #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct AssociateBudgetWithResourceInput {
 }
 impl AssociateBudgetWithResourceInput {
     /// <p>The name of the budget you want to associate.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 impl AssociateBudgetWithResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateBudgetWithResourceInput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput).
-    pub fn builder() -> crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceInputBuilder{
+    pub fn builder() -> crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceInputBuilder {
         crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateBudgetWithResourceInput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateBudgetWithResourceInputBuilder {
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl AssociateBudgetWithResourceInputBuilder {
     }
     /// <p>The name of the budget you want to associate.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
+    }
+    /// <p>The name of the budget you want to associate.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,21 +55,22 @@ impl AssociateBudgetWithResourceInputBuilder {
     }
     /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`AssociateBudgetWithResourceInput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput {
-                budget_name: self.budget_name,
-                resource_id: self.resource_id,
-            },
+                budget_name: self.budget_name
+                ,
+                resource_id: self.resource_id
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>A batch job identifier in which the batch job to run is identified by the script name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScriptBatchJobIdentifier {
+pub struct ScriptBatchJobIdentifier  {
     /// <p>The name of the script containing the batch job definition.</p>
     #[doc(hidden)]
     pub script_name: ::std::option::Option<::std::string::String>,
 }
 impl ScriptBatchJobIdentifier {
     /// <p>The name of the script containing the batch job definition.</p>
-    pub fn script_name(&self) -> ::std::option::Option<&str> {
+    pub fn script_name(&self) -> ::std::option::Option<& str> {
         self.script_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ScriptBatchJobIdentifier {
 
 /// A builder for [`ScriptBatchJobIdentifier`](crate::types::ScriptBatchJobIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScriptBatchJobIdentifierBuilder {
     pub(crate) script_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ScriptBatchJobIdentifierBuilder {
     }
     /// <p>The name of the script containing the batch job definition.</p>
     pub fn set_script_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.script_name = input;
-        self
+        self.script_name = input; self
+    }
+    /// <p>The name of the script containing the batch job definition.</p>
+    pub fn get_script_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_name
     }
     /// Consumes the builder and constructs a [`ScriptBatchJobIdentifier`](crate::types::ScriptBatchJobIdentifier).
     pub fn build(self) -> crate::types::ScriptBatchJobIdentifier {
         crate::types::ScriptBatchJobIdentifier {
-            script_name: self.script_name,
+            script_name: self.script_name
+            ,
         }
     }
 }
+

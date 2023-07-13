@@ -3,122 +3,146 @@ pub use crate::operation::get_savings_plans_utilization_details::_get_savings_pl
 
 pub use crate::operation::get_savings_plans_utilization_details::_get_savings_plans_utilization_details_input::GetSavingsPlansUtilizationDetailsInputBuilder;
 
+impl GetSavingsPlansUtilizationDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_savings_plans_utilization_details();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetSavingsPlansUtilizationDetails`.
-///
-/// <p>Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn't support granular or grouped data (daily/monthly) in response. You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>, but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code> by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p> <note>
-/// <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.</p>
+/// 
+/// <p>Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn't support granular or grouped data (daily/monthly) in response. You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>, but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code> by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p> <note> 
+/// <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.</p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder,
 }
-impl GetSavingsPlansUtilizationDetailsFluentBuilder {
+impl GetSavingsPlansUtilizationDetailsFluentBuilder  {
     /// Creates a new `GetSavingsPlansUtilizationDetails`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSavingsPlansUtilizationDetails as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator{
-        crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator {
+                                crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.inner = self.inner.time_period(input);
         self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
-    /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
-    /// <ul>
-    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
-    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
-    /// <li> <p> <code>REGION</code> </p> </li>
-    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
-    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
-    /// </ul>
+    /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        self.inner.get_time_period()
+    }
+    /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> 
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> 
+    /// <li> <p> <code>REGION</code> </p> </li> 
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li> 
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> 
+    /// </ul> 
     /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub fn filter(mut self, input: crate::types::Expression) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
-    /// <ul>
-    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
-    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
-    /// <li> <p> <code>REGION</code> </p> </li>
-    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
-    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
-    /// </ul>
+    /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> 
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> 
+    /// <li> <p> <code>REGION</code> </p> </li> 
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li> 
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> 
+    /// </ul> 
     /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> 
+    /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> 
+    /// <li> <p> <code>REGION</code> </p> </li> 
+    /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li> 
+    /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> 
+    /// </ul> 
+    /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
+        self.inner.get_filter()
     }
     /// Appends an item to `DataType`.
     ///
@@ -130,12 +154,13 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
         self
     }
     /// <p>The data type.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>) -> Self {
         self.inner = self.inner.set_data_type(input);
         self
+    }
+    /// <p>The data type.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>> {
+        self.inner.get_data_type()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +172,10 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -157,39 +186,56 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The value that you want to sort the data by.</p>
-    /// <p>The following values are supported for <code>Key</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
-    /// <li> <p> <code>TotalCommitment</code> </p> </li>
-    /// <li> <p> <code>UsedCommitment</code> </p> </li>
-    /// <li> <p> <code>UnusedCommitment</code> </p> </li>
-    /// <li> <p> <code>NetSavings</code> </p> </li>
-    /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li>
-    /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
-    /// </ul>
+    /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
+    /// <p>The value that you want to sort the data by.</p> 
+    /// <p>The following values are supported for <code>Key</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li> 
+    /// <li> <p> <code>TotalCommitment</code> </p> </li> 
+    /// <li> <p> <code>UsedCommitment</code> </p> </li> 
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li> 
+    /// <li> <p> <code>NetSavings</code> </p> </li> 
+    /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li> 
+    /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li> 
+    /// </ul> 
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortDefinition) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p>The value that you want to sort the data by.</p>
-    /// <p>The following values are supported for <code>Key</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
-    /// <li> <p> <code>TotalCommitment</code> </p> </li>
-    /// <li> <p> <code>UsedCommitment</code> </p> </li>
-    /// <li> <p> <code>UnusedCommitment</code> </p> </li>
-    /// <li> <p> <code>NetSavings</code> </p> </li>
-    /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li>
-    /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
-    /// </ul>
+    /// <p>The value that you want to sort the data by.</p> 
+    /// <p>The following values are supported for <code>Key</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li> 
+    /// <li> <p> <code>TotalCommitment</code> </p> </li> 
+    /// <li> <p> <code>UsedCommitment</code> </p> </li> 
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li> 
+    /// <li> <p> <code>NetSavings</code> </p> </li> 
+    /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li> 
+    /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li> 
+    /// </ul> 
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The value that you want to sort the data by.</p> 
+    /// <p>The following values are supported for <code>Key</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>UtilizationPercentage</code> </p> </li> 
+    /// <li> <p> <code>TotalCommitment</code> </p> </li> 
+    /// <li> <p> <code>UsedCommitment</code> </p> </li> 
+    /// <li> <p> <code>UnusedCommitment</code> </p> </li> 
+    /// <li> <p> <code>NetSavings</code> </p> </li> 
+    /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li> 
+    /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li> 
+    /// </ul> 
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {
+        self.inner.get_sort_by()
+    }
 }
+

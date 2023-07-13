@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkersOutput {
+pub struct ListWorkersOutput  {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListWorkersOutput {
 }
 impl ListWorkersOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of workers.
-    pub fn workers(&self) -> ::std::option::Option<&[crate::types::Worker]> {
+    pub fn workers(&self) -> ::std::option::Option<& [crate::types::Worker]> {
         self.workers.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListWorkersOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkersOutput`](crate::operation::list_workers::ListWorkersOutput).
     pub fn builder() -> crate::operation::list_workers::builders::ListWorkersOutputBuilder {
@@ -35,9 +35,7 @@ impl ListWorkersOutput {
 
 /// A builder for [`ListWorkersOutput`](crate::operation::list_workers::ListWorkersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) workers: ::std::option::Option<::std::vec::Vec<crate::types::Worker>>,
@@ -51,8 +49,11 @@ impl ListWorkersOutputBuilder {
     }
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `workers`.
     ///
@@ -61,33 +62,36 @@ impl ListWorkersOutputBuilder {
     /// List of workers.
     pub fn workers(mut self, input: crate::types::Worker) -> Self {
         let mut v = self.workers.unwrap_or_default();
-        v.push(input);
-        self.workers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.workers = ::std::option::Option::Some(v);
+                        self
     }
     /// List of workers.
-    pub fn set_workers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Worker>>,
-    ) -> Self {
-        self.workers = input;
-        self
+    pub fn set_workers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Worker>>) -> Self {
+        self.workers = input; self
+    }
+    /// List of workers.
+    pub fn get_workers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Worker>> {
+        &self.workers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListWorkersOutput`](crate::operation::list_workers::ListWorkersOutput).
     pub fn build(self) -> crate::operation::list_workers::ListWorkersOutput {
         crate::operation::list_workers::ListWorkersOutput {
-            next_token: self.next_token,
-            workers: self.workers,
+            next_token: self.next_token
+            ,
+            workers: self.workers
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

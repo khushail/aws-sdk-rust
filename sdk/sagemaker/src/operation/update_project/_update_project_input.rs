@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProjectInput {
+pub struct UpdateProjectInput  {
     /// <p>The name of the project.</p>
     #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
@@ -11,29 +11,26 @@ pub struct UpdateProjectInput {
     pub project_description: ::std::option::Option<::std::string::String>,
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
     #[doc(hidden)]
-    pub service_catalog_provisioning_update_details:
-        ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
+    pub service_catalog_provisioning_update_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UpdateProjectInput {
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The description for the project.</p>
-    pub fn project_description(&self) -> ::std::option::Option<&str> {
+    pub fn project_description(&self) -> ::std::option::Option<& str> {
         self.project_description.as_deref()
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
-    pub fn service_catalog_provisioning_update_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceCatalogProvisioningUpdateDetails> {
+    pub fn service_catalog_provisioning_update_details(&self) -> ::std::option::Option<& crate::types::ServiceCatalogProvisioningUpdateDetails> {
         self.service_catalog_provisioning_update_details.as_ref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -46,14 +43,11 @@ impl UpdateProjectInput {
 
 /// A builder for [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_description: ::std::option::Option<::std::string::String>,
-    pub(crate) service_catalog_provisioning_update_details:
-        ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
+    pub(crate) service_catalog_provisioning_update_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UpdateProjectInputBuilder {
@@ -64,40 +58,37 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
+    }
+    /// <p>The name of the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>The description for the project.</p>
-    pub fn project_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the project.</p>
-    pub fn set_project_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.project_description = input;
-        self
+    pub fn set_project_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_description = input; self
+    }
+    /// <p>The description for the project.</p>
+    pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_description
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
-    pub fn service_catalog_provisioning_update_details(
-        mut self,
-        input: crate::types::ServiceCatalogProvisioningUpdateDetails,
-    ) -> Self {
+    pub fn service_catalog_provisioning_update_details(mut self, input: crate::types::ServiceCatalogProvisioningUpdateDetails) -> Self {
         self.service_catalog_provisioning_update_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
-    pub fn set_service_catalog_provisioning_update_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
-    ) -> Self {
-        self.service_catalog_provisioning_update_details = input;
-        self
+    pub fn set_service_catalog_provisioning_update_details(mut self, input: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>) -> Self {
+        self.service_catalog_provisioning_update_details = input; self
+    }
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
+    pub fn get_service_catalog_provisioning_update_details(&self) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails> {
+        &self.service_catalog_provisioning_update_details
     }
     /// Appends an item to `tags`.
     ///
@@ -106,31 +97,32 @@ impl UpdateProjectInputBuilder {
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_project::UpdateProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
-            project_name: self.project_name,
-            project_description: self.project_description,
-            service_catalog_provisioning_update_details: self
-                .service_catalog_provisioning_update_details,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_project::UpdateProjectInput {
+                project_name: self.project_name
+                ,
+                project_description: self.project_description
+                ,
+                service_catalog_provisioning_update_details: self.service_catalog_provisioning_update_details
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,103 +3,87 @@ pub use crate::operation::stop_inference_experiment::_stop_inference_experiment_
 
 pub use crate::operation::stop_inference_experiment::_stop_inference_experiment_input::StopInferenceExperimentInputBuilder;
 
+impl StopInferenceExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::stop_inference_experiment::StopInferenceExperimentOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::stop_inference_experiment::StopInferenceExperimentError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.stop_inference_experiment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `StopInferenceExperiment`.
-///
+/// 
 /// <p>Stops an inference experiment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopInferenceExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::stop_inference_experiment::builders::StopInferenceExperimentInputBuilder,
+                    inner: crate::operation::stop_inference_experiment::builders::StopInferenceExperimentInputBuilder,
 }
-impl StopInferenceExperimentFluentBuilder {
+impl StopInferenceExperimentFluentBuilder  {
     /// Creates a new `StopInferenceExperiment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_inference_experiment::StopInferenceExperiment,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_experiment::StopInferenceExperimentError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the StopInferenceExperiment as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_inference_experiment::builders::StopInferenceExperimentInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_inference_experiment::StopInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_experiment::StopInferenceExperimentError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::stop_inference_experiment::StopInferenceExperiment, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_experiment::StopInferenceExperimentError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::stop_inference_experiment::StopInferenceExperimentOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_experiment::StopInferenceExperimentError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_inference_experiment::StopInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_experiment::StopInferenceExperimentError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_inference_experiment::StopInferenceExperiment,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_experiment::StopInferenceExperimentError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::stop_inference_experiment::StopInferenceExperimentOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_experiment::StopInferenceExperimentError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::stop_inference_experiment::StopInferenceExperiment, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_experiment::StopInferenceExperimentError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the inference experiment to stop.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -110,38 +94,42 @@ impl StopInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the inference experiment to stop.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Adds a key-value pair to `ModelVariantActions`.
     ///
     /// To override the contents of this collection use [`set_model_variant_actions`](Self::set_model_variant_actions).
     ///
-    /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>
-    /// <ul>
-    /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li>
-    /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
-    /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
+    /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p> 
+    /// <ul> 
+    /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li> 
+    /// <li> <p> <code>Remove</code> - Delete the variant</p> </li> 
+    /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li> 
     /// </ul>
-    pub fn model_variant_actions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ModelVariantAction,
-    ) -> Self {
+    pub fn model_variant_actions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ModelVariantAction) -> Self {
         self.inner = self.inner.model_variant_actions(k.into(), v);
         self
     }
-    /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>
-    /// <ul>
-    /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li>
-    /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
-    /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
+    /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p> 
+    /// <ul> 
+    /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li> 
+    /// <li> <p> <code>Remove</code> - Delete the variant</p> </li> 
+    /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li> 
     /// </ul>
-    pub fn set_model_variant_actions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>,
-        >,
-    ) -> Self {
+    pub fn set_model_variant_actions(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>>) -> Self {
         self.inner = self.inner.set_model_variant_actions(input);
         self
+    }
+    /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p> 
+    /// <ul> 
+    /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li> 
+    /// <li> <p> <code>Remove</code> - Delete the variant</p> </li> 
+    /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li> 
+    /// </ul>
+    pub fn get_model_variant_actions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>> {
+        self.inner.get_model_variant_actions()
     }
     /// Appends an item to `DesiredModelVariants`.
     ///
@@ -153,36 +141,39 @@ impl StopInferenceExperimentFluentBuilder {
         self
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
-    pub fn set_desired_model_variants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
-    ) -> Self {
+    pub fn set_desired_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>) -> Self {
         self.inner = self.inner.set_desired_model_variants(input);
         self
     }
-    /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
-    /// <ul>
-    /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
-    /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
+    pub fn get_desired_model_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
+        self.inner.get_desired_model_variants()
+    }
+    /// <p> The desired state of the experiment after stopping. The possible states are the following: </p> 
+    /// <ul> 
+    /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li> 
+    /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li> 
     /// </ul>
-    pub fn desired_state(
-        mut self,
-        input: crate::types::InferenceExperimentStopDesiredState,
-    ) -> Self {
+    pub fn desired_state(mut self, input: crate::types::InferenceExperimentStopDesiredState) -> Self {
         self.inner = self.inner.desired_state(input);
         self
     }
-    /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
-    /// <ul>
-    /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
-    /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
+    /// <p> The desired state of the experiment after stopping. The possible states are the following: </p> 
+    /// <ul> 
+    /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li> 
+    /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li> 
     /// </ul>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentStopDesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStopDesiredState>) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
+    }
+    /// <p> The desired state of the experiment after stopping. The possible states are the following: </p> 
+    /// <ul> 
+    /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li> 
+    /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li> 
+    /// </ul>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::InferenceExperimentStopDesiredState> {
+        self.inner.get_desired_state()
     }
     /// <p>The reason for stopping the experiment.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,4 +185,9 @@ impl StopInferenceExperimentFluentBuilder {
         self.inner = self.inner.set_reason(input);
         self
     }
+    /// <p>The reason for stopping the experiment.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
+    }
 }
+

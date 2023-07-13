@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDigestInput {
+pub struct GetDigestInput  {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetDigestInput {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetDigestInput {
 
 /// A builder for [`GetDigestInput`](crate::operation::get_digest::GetDigestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDigestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,20 @@ impl GetDigestInputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`GetDigestInput`](crate::operation::get_digest::GetDigestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_digest::GetDigestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_digest::GetDigestInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_digest::GetDigestInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_digest::GetDigestInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

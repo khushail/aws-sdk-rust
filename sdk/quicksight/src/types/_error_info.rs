@@ -3,7 +3,7 @@
 /// <p>Error information for the SPICE ingestion of a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorInfo {
+pub struct ErrorInfo  {
     /// <p>Error type.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::IngestionErrorType>,
@@ -13,11 +13,11 @@ pub struct ErrorInfo {
 }
 impl ErrorInfo {
     /// <p>Error type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IngestionErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::IngestionErrorType> {
         self.r#type.as_ref()
     }
     /// <p>Error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ErrorInfo {
 
 /// A builder for [`ErrorInfo`](crate::types::ErrorInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorInfoBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::IngestionErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl ErrorInfoBuilder {
         self
     }
     /// <p>Error type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionErrorType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::IngestionErrorType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>Error type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IngestionErrorType> {
+        &self.r#type
     }
     /// <p>Error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl ErrorInfoBuilder {
     }
     /// <p>Error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>Error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ErrorInfo`](crate::types::ErrorInfo).
     pub fn build(self) -> crate::types::ErrorInfo {
         crate::types::ErrorInfo {
-            r#type: self.r#type,
-            message: self.message,
+            r#type: self.r#type
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPermissionsBoundaryToPermissionSetInput {
+pub struct PutPermissionsBoundaryToPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct PutPermissionsBoundaryToPermissionSetInput {
 }
 impl PutPermissionsBoundaryToPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> ::std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
-    pub fn permissions_boundary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PermissionsBoundary> {
+    pub fn permissions_boundary(&self) -> ::std::option::Option<& crate::types::PermissionsBoundary> {
         self.permissions_boundary.as_ref()
     }
 }
 impl PutPermissionsBoundaryToPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`PutPermissionsBoundaryToPermissionSetInput`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput).
-    pub fn builder() -> crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetInputBuilder {
         crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`PutPermissionsBoundaryToPermissionSetInput`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPermissionsBoundaryToPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -54,24 +50,24 @@ impl PutPermissionsBoundaryToPermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
+    }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.permission_set_arn = input;
-        self
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.permission_set_arn = input; self
+    }
+    /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_set_arn
     }
     /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
     pub fn permissions_boundary(mut self, input: crate::types::PermissionsBoundary) -> Self {
@@ -79,15 +75,15 @@ impl PutPermissionsBoundaryToPermissionSetInputBuilder {
         self
     }
     /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
-    pub fn set_permissions_boundary(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionsBoundary>,
-    ) -> Self {
-        self.permissions_boundary = input;
-        self
+    pub fn set_permissions_boundary(mut self, input: ::std::option::Option<crate::types::PermissionsBoundary>) -> Self {
+        self.permissions_boundary = input; self
+    }
+    /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
+    pub fn get_permissions_boundary(&self) -> &::std::option::Option<crate::types::PermissionsBoundary> {
+        &self.permissions_boundary
     }
     /// Consumes the builder and constructs a [`PutPermissionsBoundaryToPermissionSetInput`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput {
                 instance_arn: self.instance_arn
@@ -100,3 +96,4 @@ impl PutPermissionsBoundaryToPermissionSetInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSlotTypeVersionInput {
+pub struct CreateSlotTypeVersionInput  {
     /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct CreateSlotTypeVersionInput {
 }
 impl CreateSlotTypeVersionInput {
     /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
 }
 impl CreateSlotTypeVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateSlotTypeVersionInput`](crate::operation::create_slot_type_version::CreateSlotTypeVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder {
         crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSlotTypeVersionInput`](crate::operation::create_slot_type_version::CreateSlotTypeVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSlotTypeVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl CreateSlotTypeVersionInputBuilder {
     }
     /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl CreateSlotTypeVersionInputBuilder {
     }
     /// <p>Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
+    }
+    /// <p>Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// Consumes the builder and constructs a [`CreateSlotTypeVersionInput`](crate::operation::create_slot_type_version::CreateSlotTypeVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_slot_type_version::CreateSlotTypeVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_slot_type_version::CreateSlotTypeVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_slot_type_version::CreateSlotTypeVersionInput {
-                name: self.name,
-                checksum: self.checksum,
-            },
+                name: self.name
+                ,
+                checksum: self.checksum
+                ,
+            }
         )
     }
 }
+

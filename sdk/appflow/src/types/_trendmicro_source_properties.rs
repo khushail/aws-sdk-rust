@@ -3,14 +3,14 @@
 /// <p> The properties that are applied when using Trend Micro as a flow source. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrendmicroSourceProperties {
+pub struct TrendmicroSourceProperties  {
     /// <p> The object specified in the Trend Micro flow source. </p>
     #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
 }
 impl TrendmicroSourceProperties {
     /// <p> The object specified in the Trend Micro flow source. </p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<& str> {
         self.object.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl TrendmicroSourceProperties {
 
 /// A builder for [`TrendmicroSourceProperties`](crate::types::TrendmicroSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrendmicroSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl TrendmicroSourcePropertiesBuilder {
     }
     /// <p> The object specified in the Trend Micro flow source. </p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
+    }
+    /// <p> The object specified in the Trend Micro flow source. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
     }
     /// Consumes the builder and constructs a [`TrendmicroSourceProperties`](crate::types::TrendmicroSourceProperties).
     pub fn build(self) -> crate::types::TrendmicroSourceProperties {
         crate::types::TrendmicroSourceProperties {
-            object: self.object,
+            object: self.object
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UploadReadSetPartOutput {
+pub struct UploadReadSetPartOutput  {
     /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
     #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
@@ -10,28 +10,25 @@ pub struct UploadReadSetPartOutput {
 }
 impl UploadReadSetPartOutput {
     /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UploadReadSetPartOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UploadReadSetPartOutput {
     /// Creates a new builder-style object to manufacture [`UploadReadSetPartOutput`](crate::operation::upload_read_set_part::UploadReadSetPartOutput).
-    pub fn builder(
-    ) -> crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder {
+    pub fn builder() -> crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder {
         crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder::default()
     }
 }
 
 /// A builder for [`UploadReadSetPartOutput`](crate::operation::upload_read_set_part::UploadReadSetPartOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadReadSetPartOutputBuilder {
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -44,23 +41,28 @@ impl UploadReadSetPartOutputBuilder {
     }
     /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
+    }
+    /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UploadReadSetPartOutput`](crate::operation::upload_read_set_part::UploadReadSetPartOutput).
     pub fn build(self) -> crate::operation::upload_read_set_part::UploadReadSetPartOutput {
         crate::operation::upload_read_set_part::UploadReadSetPartOutput {
-            checksum: self.checksum,
+            checksum: self.checksum
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

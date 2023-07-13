@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateMediaConcatenationPipelineInput {
+pub struct CreateMediaConcatenationPipelineInput  {
     /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
     #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>,
@@ -18,23 +18,23 @@ pub struct CreateMediaConcatenationPipelineInput {
 }
 impl CreateMediaConcatenationPipelineInput {
     /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::ConcatenationSource]> {
+    pub fn sources(&self) -> ::std::option::Option<& [crate::types::ConcatenationSource]> {
         self.sources.as_deref()
     }
     /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
-    pub fn sinks(&self) -> ::std::option::Option<&[crate::types::ConcatenationSink]> {
+    pub fn sinks(&self) -> ::std::option::Option<& [crate::types::ConcatenationSink]> {
         self.sinks.as_deref()
     }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags associated with the media concatenation pipeline.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateMediaConcatenationPipelineInput {
+impl  ::std::fmt::Debug for CreateMediaConcatenationPipelineInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMediaConcatenationPipelineInput");
         formatter.field("sources", &self.sources);
@@ -46,7 +46,7 @@ impl ::std::fmt::Debug for CreateMediaConcatenationPipelineInput {
 }
 impl CreateMediaConcatenationPipelineInput {
     /// Creates a new builder-style object to manufacture [`CreateMediaConcatenationPipelineInput`](crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineInput).
-    pub fn builder() -> crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineInputBuilder{
+    pub fn builder() -> crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineInputBuilder {
         crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineInputBuilder::default()
     }
 }
@@ -68,17 +68,17 @@ impl CreateMediaConcatenationPipelineInputBuilder {
     /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
     pub fn sources(mut self, input: crate::types::ConcatenationSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>,
-    ) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>) -> Self {
+        self.sources = input; self
+    }
+    /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>> {
+        &self.sources
     }
     /// Appends an item to `sinks`.
     ///
@@ -87,33 +87,30 @@ impl CreateMediaConcatenationPipelineInputBuilder {
     /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
     pub fn sinks(mut self, input: crate::types::ConcatenationSink) -> Self {
         let mut v = self.sinks.unwrap_or_default();
-        v.push(input);
-        self.sinks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sinks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
-    pub fn set_sinks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>>,
-    ) -> Self {
-        self.sinks = input;
-        self
+    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>>) -> Self {
+        self.sinks = input; self
+    }
+    /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
+    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>> {
+        &self.sinks
     }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -122,20 +119,20 @@ impl CreateMediaConcatenationPipelineInputBuilder {
     /// <p>The tags associated with the media concatenation pipeline.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the media concatenation pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags associated with the media concatenation pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMediaConcatenationPipelineInput`](crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineInput {
                 sources: self.sources
@@ -160,3 +157,4 @@ impl ::std::fmt::Debug for CreateMediaConcatenationPipelineInputBuilder {
         formatter.finish()
     }
 }
+

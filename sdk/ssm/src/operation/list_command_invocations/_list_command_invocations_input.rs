@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCommandInvocationsInput {
+pub struct ListCommandInvocationsInput  {
     /// <p>(Optional) The invocations for a specific command ID.</p>
     #[doc(hidden)]
     pub command_id: ::std::option::Option<::std::string::String>,
@@ -24,11 +24,11 @@ pub struct ListCommandInvocationsInput {
 }
 impl ListCommandInvocationsInput {
     /// <p>(Optional) The invocations for a specific command ID.</p>
-    pub fn command_id(&self) -> ::std::option::Option<&str> {
+    pub fn command_id(&self) -> ::std::option::Option<& str> {
         self.command_id.as_deref()
     }
     /// <p>(Optional) The command execution details for a specific managed node ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -36,11 +36,11 @@ impl ListCommandInvocationsInput {
         self.max_results
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::CommandFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::CommandFilter]> {
         self.filters.as_deref()
     }
     /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
@@ -50,18 +50,14 @@ impl ListCommandInvocationsInput {
 }
 impl ListCommandInvocationsInput {
     /// Creates a new builder-style object to manufacture [`ListCommandInvocationsInput`](crate::operation::list_command_invocations::ListCommandInvocationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder {
         crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCommandInvocationsInput`](crate::operation::list_command_invocations::ListCommandInvocationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCommandInvocationsInputBuilder {
     pub(crate) command_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -78,8 +74,11 @@ impl ListCommandInvocationsInputBuilder {
     }
     /// <p>(Optional) The invocations for a specific command ID.</p>
     pub fn set_command_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.command_id = input;
-        self
+        self.command_id = input; self
+    }
+    /// <p>(Optional) The invocations for a specific command ID.</p>
+    pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command_id
     }
     /// <p>(Optional) The command execution details for a specific managed node ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +87,11 @@ impl ListCommandInvocationsInputBuilder {
     }
     /// <p>(Optional) The command execution details for a specific managed node ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>(Optional) The command execution details for a specific managed node ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -98,8 +100,11 @@ impl ListCommandInvocationsInputBuilder {
     }
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,8 +113,11 @@ impl ListCommandInvocationsInputBuilder {
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `filters`.
     ///
@@ -118,17 +126,17 @@ impl ListCommandInvocationsInputBuilder {
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn filters(mut self, input: crate::types::CommandFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
+        &self.filters
     }
     /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn details(mut self, input: bool) -> Self {
@@ -137,25 +145,30 @@ impl ListCommandInvocationsInputBuilder {
     }
     /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
     pub fn set_details(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
+    }
+    /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
+    pub fn get_details(&self) -> &::std::option::Option<bool> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`ListCommandInvocationsInput`](crate::operation::list_command_invocations::ListCommandInvocationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_command_invocations::ListCommandInvocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_command_invocations::ListCommandInvocationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_command_invocations::ListCommandInvocationsInput {
-                command_id: self.command_id,
-                instance_id: self.instance_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-                details: self.details,
-            },
+                command_id: self.command_id
+                ,
+                instance_id: self.instance_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filters: self.filters
+                ,
+                details: self.details
+                ,
+            }
         )
     }
 }
+

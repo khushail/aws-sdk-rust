@@ -3,7 +3,7 @@
 /// <p>A collection of authorization information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthInfo {
+pub struct AuthInfo  {
     /// <p>The type of action for which the principal is being authorized.</p>
     #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionType>,
@@ -13,11 +13,11 @@ pub struct AuthInfo {
 }
 impl AuthInfo {
     /// <p>The type of action for which the principal is being authorized.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn resources(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.resources.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AuthInfo {
 
 /// A builder for [`AuthInfo`](crate::types::AuthInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthInfoBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,12 +42,12 @@ impl AuthInfoBuilder {
         self
     }
     /// <p>The type of action for which the principal is being authorized.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionType>,
-    ) -> Self {
-        self.action_type = input;
-        self
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
+        self.action_type = input; self
+    }
+    /// <p>The type of action for which the principal is being authorized.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.action_type
     }
     /// Appends an item to `resources`.
     ///
@@ -58,23 +56,26 @@ impl AuthInfoBuilder {
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input.into());
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.resources = input; self
+    }
+    /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
     }
     /// Consumes the builder and constructs a [`AuthInfo`](crate::types::AuthInfo).
     pub fn build(self) -> crate::types::AuthInfo {
         crate::types::AuthInfo {
-            action_type: self.action_type,
-            resources: self.resources,
+            action_type: self.action_type
+            ,
+            resources: self.resources
+            ,
         }
     }
 }
+

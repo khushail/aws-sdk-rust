@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateTargetInstancesOutput {
+pub struct TerminateTargetInstancesOutput  {
     /// <p>Terminate Target instance Job response.</p>
     #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::Job>,
@@ -10,29 +10,25 @@ pub struct TerminateTargetInstancesOutput {
 }
 impl TerminateTargetInstancesOutput {
     /// <p>Terminate Target instance Job response.</p>
-    pub fn job(&self) -> ::std::option::Option<&crate::types::Job> {
+    pub fn job(&self) -> ::std::option::Option<& crate::types::Job> {
         self.job.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for TerminateTargetInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl TerminateTargetInstancesOutput {
     /// Creates a new builder-style object to manufacture [`TerminateTargetInstancesOutput`](crate::operation::terminate_target_instances::TerminateTargetInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::terminate_target_instances::builders::TerminateTargetInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::terminate_target_instances::builders::TerminateTargetInstancesOutputBuilder {
         crate::operation::terminate_target_instances::builders::TerminateTargetInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateTargetInstancesOutput`](crate::operation::terminate_target_instances::TerminateTargetInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateTargetInstancesOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
@@ -45,25 +41,28 @@ impl TerminateTargetInstancesOutputBuilder {
     }
     /// <p>Terminate Target instance Job response.</p>
     pub fn set_job(mut self, input: ::std::option::Option<crate::types::Job>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
+    }
+    /// <p>Terminate Target instance Job response.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::Job> {
+        &self.job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`TerminateTargetInstancesOutput`](crate::operation::terminate_target_instances::TerminateTargetInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::terminate_target_instances::TerminateTargetInstancesOutput {
+    pub fn build(self) -> crate::operation::terminate_target_instances::TerminateTargetInstancesOutput {
         crate::operation::terminate_target_instances::TerminateTargetInstancesOutput {
-            job: self.job,
+            job: self.job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

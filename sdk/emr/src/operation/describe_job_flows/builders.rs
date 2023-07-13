@@ -3,123 +3,109 @@ pub use crate::operation::describe_job_flows::_describe_job_flows_output::Descri
 
 pub use crate::operation::describe_job_flows::_describe_job_flows_input::DescribeJobFlowsInputBuilder;
 
+impl DescribeJobFlowsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_job_flows::DescribeJobFlowsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_job_flows();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeJobFlows`.
-///
-/// <p>This API is no longer supported and will eventually be removed. We recommend you use <code>ListClusters</code>, <code>DescribeCluster</code>, <code>ListSteps</code>, <code>ListInstanceGroups</code> and <code>ListBootstrapActions</code> instead.</p>
-/// <p>DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow IDs, job flow states, and restrictions on job flow creation date and time.</p>
-/// <p>Regardless of supplied parameters, only job flows created within the last two months are returned.</p>
-/// <p>If no parameters are supplied, then job flows matching either of the following criteria are returned:</p>
-/// <ul>
-/// <li> <p>Job flows created and completed in the last two weeks</p> </li>
-/// <li> <p> Job flows created within the last two months that are in one of the following states: <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </p> </li>
-/// </ul>
+/// 
+/// <p>This API is no longer supported and will eventually be removed. We recommend you use <code>ListClusters</code>, <code>DescribeCluster</code>, <code>ListSteps</code>, <code>ListInstanceGroups</code> and <code>ListBootstrapActions</code> instead.</p> 
+/// <p>DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow IDs, job flow states, and restrictions on job flow creation date and time.</p> 
+/// <p>Regardless of supplied parameters, only job flows created within the last two months are returned.</p> 
+/// <p>If no parameters are supplied, then job flows matching either of the following criteria are returned:</p> 
+/// <ul> 
+/// <li> <p>Job flows created and completed in the last two weeks</p> </li> 
+/// <li> <p> Job flows created within the last two months that are in one of the following states: <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </p> </li> 
+/// </ul> 
 /// <p>Amazon EMR can return a maximum of 512 job flow descriptions.</p>
 #[deprecated]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeJobFlowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder,
+                    inner: crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder,
 }
-impl DescribeJobFlowsFluentBuilder {
+impl DescribeJobFlowsFluentBuilder  {
     /// Creates a new `DescribeJobFlows`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_job_flows::DescribeJobFlows,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeJobFlows as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_job_flows::DescribeJobFlows, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_job_flows::DescribeJobFlowsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_job_flows::DescribeJobFlows,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_job_flows::DescribeJobFlowsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_job_flows::DescribeJobFlows, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Return only job flows created after this date and time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);
         self
     }
     /// <p>Return only job flows created after this date and time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
+    }
+    /// <p>Return only job flows created after this date and time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_after()
     }
     /// <p>Return only job flows created before this date and time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -127,12 +113,13 @@ impl DescribeJobFlowsFluentBuilder {
         self
     }
     /// <p>Return only job flows created before this date and time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
+    }
+    /// <p>Return only job flows created before this date and time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_before()
     }
     /// Appends an item to `JobFlowIds`.
     ///
@@ -144,12 +131,13 @@ impl DescribeJobFlowsFluentBuilder {
         self
     }
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-    pub fn set_job_flow_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
+    }
+    /// <p>Return only job flows whose job flow ID is contained in this list.</p>
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_flow_ids()
     }
     /// Appends an item to `JobFlowStates`.
     ///
@@ -161,11 +149,13 @@ impl DescribeJobFlowsFluentBuilder {
         self
     }
     /// <p>Return only job flows whose state is contained in this list.</p>
-    pub fn set_job_flow_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>,
-    ) -> Self {
+    pub fn set_job_flow_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>) -> Self {
         self.inner = self.inner.set_job_flow_states(input);
         self
     }
+    /// <p>Return only job flows whose state is contained in this list.</p>
+    pub fn get_job_flow_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>> {
+        self.inner.get_job_flow_states()
+    }
 }
+

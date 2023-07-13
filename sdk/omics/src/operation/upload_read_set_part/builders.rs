@@ -3,117 +3,100 @@ pub use crate::operation::upload_read_set_part::_upload_read_set_part_output::Up
 
 pub use crate::operation::upload_read_set_part::_upload_read_set_part_input::UploadReadSetPartInputBuilder;
 
+impl UploadReadSetPartInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::upload_read_set_part::UploadReadSetPartOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::upload_read_set_part::UploadReadSetPartError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.upload_read_set_part();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UploadReadSetPart`.
-///
+/// 
 /// <p> This operation uploads a specific part of a read set. If you upload a new part using a previously used part number, the previously uploaded part will be overwritten. </p>
 #[derive(::std::fmt::Debug)]
 pub struct UploadReadSetPartFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::upload_read_set_part::builders::UploadReadSetPartInputBuilder,
+                    inner: crate::operation::upload_read_set_part::builders::UploadReadSetPartInputBuilder,
 }
-impl UploadReadSetPartFluentBuilder {
+impl UploadReadSetPartFluentBuilder  {
     /// Creates a new `UploadReadSetPart`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::upload_read_set_part::UploadReadSetPart,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_read_set_part::UploadReadSetPartError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UploadReadSetPart as a reference.
+    pub fn as_input(&self) -> &crate::operation::upload_read_set_part::builders::UploadReadSetPartInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_read_set_part::UploadReadSetPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_read_set_part::UploadReadSetPartError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::upload_read_set_part::UploadReadSetPart, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::upload_read_set_part::UploadReadSetPartError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::upload_read_set_part::UploadReadSetPartOutput, ::aws_smithy_http::result::SdkError<crate::operation::upload_read_set_part::UploadReadSetPartError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_read_set_part::UploadReadSetPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_read_set_part::UploadReadSetPartError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::upload_read_set_part::UploadReadSetPart,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_read_set_part::UploadReadSetPartError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::upload_read_set_part::UploadReadSetPartOutput, ::aws_smithy_http::result::SdkError<crate::operation::upload_read_set_part::UploadReadSetPartError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::upload_read_set_part::UploadReadSetPart, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::upload_read_set_part::UploadReadSetPartError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The Sequence Store ID used for the multipart upload. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p> The Sequence Store ID used for the multipart upload. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
+    }
+    /// <p> The Sequence Store ID used for the multipart upload. </p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sequence_store_id()
     }
     /// <p> The ID for the initiated multipart upload. </p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,18 +108,23 @@ impl UploadReadSetPartFluentBuilder {
         self.inner = self.inner.set_upload_id(input);
         self
     }
+    /// <p> The ID for the initiated multipart upload. </p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upload_id()
+    }
     /// <p> The source file for an upload part. </p>
     pub fn part_source(mut self, input: crate::types::ReadSetPartSource) -> Self {
         self.inner = self.inner.part_source(input);
         self
     }
     /// <p> The source file for an upload part. </p>
-    pub fn set_part_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetPartSource>,
-    ) -> Self {
+    pub fn set_part_source(mut self, input: ::std::option::Option<crate::types::ReadSetPartSource>) -> Self {
         self.inner = self.inner.set_part_source(input);
         self
+    }
+    /// <p> The source file for an upload part. </p>
+    pub fn get_part_source(&self) -> &::std::option::Option<crate::types::ReadSetPartSource> {
+        self.inner.get_part_source()
     }
     /// <p> The number of the part being uploaded. </p>
     pub fn part_number(mut self, input: i32) -> Self {
@@ -148,17 +136,23 @@ impl UploadReadSetPartFluentBuilder {
         self.inner = self.inner.set_part_number(input);
         self
     }
+    /// <p> The number of the part being uploaded. </p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_part_number()
+    }
     /// <p> The read set data to upload for a part. </p>
     pub fn payload(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.payload(input);
         self
     }
     /// <p> The read set data to upload for a part. </p>
-    pub fn set_payload(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
+    /// <p> The read set data to upload for a part. </p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_payload()
+    }
 }
+

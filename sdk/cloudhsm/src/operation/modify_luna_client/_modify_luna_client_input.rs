@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyLunaClientInput {
+pub struct ModifyLunaClientInput  {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
     pub client_arn: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct ModifyLunaClientInput {
 }
 impl ModifyLunaClientInput {
     /// <p>The ARN of the client.</p>
-    pub fn client_arn(&self) -> ::std::option::Option<&str> {
+    pub fn client_arn(&self) -> ::std::option::Option<& str> {
         self.client_arn.as_deref()
     }
     /// <p>The new certificate for the client.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
 }
 impl ModifyLunaClientInput {
     /// Creates a new builder-style object to manufacture [`ModifyLunaClientInput`](crate::operation::modify_luna_client::ModifyLunaClientInput).
-    pub fn builder() -> crate::operation::modify_luna_client::builders::ModifyLunaClientInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_luna_client::builders::ModifyLunaClientInputBuilder {
         crate::operation::modify_luna_client::builders::ModifyLunaClientInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyLunaClientInput`](crate::operation::modify_luna_client::ModifyLunaClientInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyLunaClientInputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl ModifyLunaClientInputBuilder {
     }
     /// <p>The ARN of the client.</p>
     pub fn set_client_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_arn = input;
-        self
+        self.client_arn = input; self
+    }
+    /// <p>The ARN of the client.</p>
+    pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_arn
     }
     /// <p>The new certificate for the client.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl ModifyLunaClientInputBuilder {
     }
     /// <p>The new certificate for the client.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
+    }
+    /// <p>The new certificate for the client.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
     }
     /// Consumes the builder and constructs a [`ModifyLunaClientInput`](crate::operation::modify_luna_client::ModifyLunaClientInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_luna_client::ModifyLunaClientInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_luna_client::ModifyLunaClientInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_luna_client::ModifyLunaClientInput {
-                client_arn: self.client_arn,
-                certificate: self.certificate,
-            },
+                client_arn: self.client_arn
+                ,
+                certificate: self.certificate
+                ,
+            }
         )
     }
 }
+

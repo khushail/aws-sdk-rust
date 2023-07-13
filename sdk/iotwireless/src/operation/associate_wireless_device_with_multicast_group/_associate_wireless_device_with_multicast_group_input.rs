@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateWirelessDeviceWithMulticastGroupInput {
+pub struct AssociateWirelessDeviceWithMulticastGroupInput  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct AssociateWirelessDeviceWithMulticastGroupInput {
 }
 impl AssociateWirelessDeviceWithMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the wireless device.</p>
-    pub fn wireless_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn wireless_device_id(&self) -> ::std::option::Option<& str> {
         self.wireless_device_id.as_deref()
     }
 }
 impl AssociateWirelessDeviceWithMulticastGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupInput).
-    pub fn builder() -> crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupInputBuilder{
+    pub fn builder() -> crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupInputBuilder {
         crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithMulticastGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) wireless_device_id: ::std::option::Option<::std::string::String>,
@@ -44,27 +42,27 @@ impl AssociateWirelessDeviceWithMulticastGroupInputBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The ID of the wireless device.</p>
-    pub fn wireless_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the wireless device.</p>
-    pub fn set_wireless_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.wireless_device_id = input;
-        self
+    pub fn set_wireless_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.wireless_device_id = input; self
+    }
+    /// <p>The ID of the wireless device.</p>
+    pub fn get_wireless_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wireless_device_id
     }
     /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupInput {
                 id: self.id
@@ -75,3 +73,4 @@ impl AssociateWirelessDeviceWithMulticastGroupInputBuilder {
         )
     }
 }
+

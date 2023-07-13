@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePlaybackKeyPairInput {
+pub struct DeletePlaybackKeyPairInput  {
     /// <p>ARN of the key pair to be deleted.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePlaybackKeyPairInput {
     /// <p>ARN of the key pair to be deleted.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeletePlaybackKeyPairInput {
     /// Creates a new builder-style object to manufacture [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
-    pub fn builder(
-    ) -> crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairInputBuilder {
         crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlaybackKeyPairInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DeletePlaybackKeyPairInputBuilder {
     }
     /// <p>ARN of the key pair to be deleted.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>ARN of the key pair to be deleted.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

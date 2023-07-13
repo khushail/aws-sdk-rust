@@ -3,7 +3,7 @@
 /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutpostConfigResponse {
+pub struct OutpostConfigResponse  {
     /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
     #[doc(hidden)]
     pub outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,17 +16,15 @@ pub struct OutpostConfigResponse {
 }
 impl OutpostConfigResponse {
     /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
-    pub fn outpost_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn outpost_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.outpost_arns.as_deref()
     }
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
-    pub fn control_plane_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn control_plane_instance_type(&self) -> ::std::option::Option<& str> {
         self.control_plane_instance_type.as_deref()
     }
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn control_plane_placement(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ControlPlanePlacementResponse> {
+    pub fn control_plane_placement(&self) -> ::std::option::Option<& crate::types::ControlPlanePlacementResponse> {
         self.control_plane_placement.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl OutpostConfigResponse {
 
 /// A builder for [`OutpostConfigResponse`](crate::types::OutpostConfigResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutpostConfigResponseBuilder {
     pub(crate) outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) control_plane_instance_type: ::std::option::Option<::std::string::String>,
-    pub(crate) control_plane_placement:
-        ::std::option::Option<crate::types::ControlPlanePlacementResponse>,
+    pub(crate) control_plane_placement: ::std::option::Option<crate::types::ControlPlanePlacementResponse>,
 }
 impl OutpostConfigResponseBuilder {
     /// Appends an item to `outpost_arns`.
@@ -56,56 +51,54 @@ impl OutpostConfigResponseBuilder {
     /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
     pub fn outpost_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.outpost_arns.unwrap_or_default();
-        v.push(input.into());
-        self.outpost_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.outpost_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
-    pub fn set_outpost_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.outpost_arns = input;
-        self
+    pub fn set_outpost_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.outpost_arns = input; self
+    }
+    /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
+    pub fn get_outpost_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.outpost_arns
     }
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
-    pub fn control_plane_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_plane_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_plane_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
-    pub fn set_control_plane_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.control_plane_instance_type = input;
-        self
+    pub fn set_control_plane_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.control_plane_instance_type = input; self
+    }
+    /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
+    pub fn get_control_plane_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_plane_instance_type
     }
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn control_plane_placement(
-        mut self,
-        input: crate::types::ControlPlanePlacementResponse,
-    ) -> Self {
+    pub fn control_plane_placement(mut self, input: crate::types::ControlPlanePlacementResponse) -> Self {
         self.control_plane_placement = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn set_control_plane_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlPlanePlacementResponse>,
-    ) -> Self {
-        self.control_plane_placement = input;
-        self
+    pub fn set_control_plane_placement(mut self, input: ::std::option::Option<crate::types::ControlPlanePlacementResponse>) -> Self {
+        self.control_plane_placement = input; self
+    }
+    /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn get_control_plane_placement(&self) -> &::std::option::Option<crate::types::ControlPlanePlacementResponse> {
+        &self.control_plane_placement
     }
     /// Consumes the builder and constructs a [`OutpostConfigResponse`](crate::types::OutpostConfigResponse).
     pub fn build(self) -> crate::types::OutpostConfigResponse {
         crate::types::OutpostConfigResponse {
-            outpost_arns: self.outpost_arns,
-            control_plane_instance_type: self.control_plane_instance_type,
-            control_plane_placement: self.control_plane_placement,
+            outpost_arns: self.outpost_arns
+            ,
+            control_plane_instance_type: self.control_plane_instance_type
+            ,
+            control_plane_placement: self.control_plane_placement
+            ,
         }
     }
 }
+

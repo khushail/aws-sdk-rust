@@ -3,7 +3,7 @@
 /// <p>The location of the OTA update.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileLocation {
+pub struct FileLocation  {
     /// <p>The stream that contains the OTA update.</p>
     #[doc(hidden)]
     pub stream: ::std::option::Option<crate::types::Stream>,
@@ -13,11 +13,11 @@ pub struct FileLocation {
 }
 impl FileLocation {
     /// <p>The stream that contains the OTA update.</p>
-    pub fn stream(&self) -> ::std::option::Option<&crate::types::Stream> {
+    pub fn stream(&self) -> ::std::option::Option<& crate::types::Stream> {
         self.stream.as_ref()
     }
     /// <p>The location of the updated firmware in S3.</p>
-    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl FileLocation {
 
 /// A builder for [`FileLocation`](crate::types::FileLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileLocationBuilder {
     pub(crate) stream: ::std::option::Option<crate::types::Stream>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
@@ -45,8 +43,11 @@ impl FileLocationBuilder {
     }
     /// <p>The stream that contains the OTA update.</p>
     pub fn set_stream(mut self, input: ::std::option::Option<crate::types::Stream>) -> Self {
-        self.stream = input;
-        self
+        self.stream = input; self
+    }
+    /// <p>The stream that contains the OTA update.</p>
+    pub fn get_stream(&self) -> &::std::option::Option<crate::types::Stream> {
+        &self.stream
     }
     /// <p>The location of the updated firmware in S3.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -54,18 +55,21 @@ impl FileLocationBuilder {
         self
     }
     /// <p>The location of the updated firmware in S3.</p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
-        self.s3_location = input;
-        self
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
+        self.s3_location = input; self
+    }
+    /// <p>The location of the updated firmware in S3.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
     }
     /// Consumes the builder and constructs a [`FileLocation`](crate::types::FileLocation).
     pub fn build(self) -> crate::types::FileLocation {
         crate::types::FileLocation {
-            stream: self.stream,
-            s3_location: self.s3_location,
+            stream: self.stream
+            ,
+            s3_location: self.s3_location
+            ,
         }
     }
 }
+

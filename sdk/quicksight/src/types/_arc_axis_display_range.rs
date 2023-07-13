@@ -3,7 +3,7 @@
 /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArcAxisDisplayRange {
+pub struct ArcAxisDisplayRange  {
     /// <p>The minimum value of the arc axis range.</p>
     #[doc(hidden)]
     pub min: ::std::option::Option<f64>,
@@ -30,9 +30,7 @@ impl ArcAxisDisplayRange {
 
 /// A builder for [`ArcAxisDisplayRange`](crate::types::ArcAxisDisplayRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArcAxisDisplayRangeBuilder {
     pub(crate) min: ::std::option::Option<f64>,
     pub(crate) max: ::std::option::Option<f64>,
@@ -45,8 +43,11 @@ impl ArcAxisDisplayRangeBuilder {
     }
     /// <p>The minimum value of the arc axis range.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
+    }
+    /// <p>The minimum value of the arc axis range.</p>
+    pub fn get_min(&self) -> &::std::option::Option<f64> {
+        &self.min
     }
     /// <p>The maximum value of the arc axis range.</p>
     pub fn max(mut self, input: f64) -> Self {
@@ -55,14 +56,20 @@ impl ArcAxisDisplayRangeBuilder {
     }
     /// <p>The maximum value of the arc axis range.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
+    }
+    /// <p>The maximum value of the arc axis range.</p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`ArcAxisDisplayRange`](crate::types::ArcAxisDisplayRange).
     pub fn build(self) -> crate::types::ArcAxisDisplayRange {
         crate::types::ArcAxisDisplayRange {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

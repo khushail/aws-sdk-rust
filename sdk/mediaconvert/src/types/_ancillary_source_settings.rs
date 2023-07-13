@@ -3,7 +3,7 @@
 /// Settings for ancillary captions source.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AncillarySourceSettings {
+pub struct AncillarySourceSettings  {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     #[doc(hidden)]
     pub convert608_to708: ::std::option::Option<crate::types::AncillaryConvert608To708>,
@@ -16,9 +16,7 @@ pub struct AncillarySourceSettings {
 }
 impl AncillarySourceSettings {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
-    pub fn convert608_to708(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AncillaryConvert608To708> {
+    pub fn convert608_to708(&self) -> ::std::option::Option<& crate::types::AncillaryConvert608To708> {
         self.convert608_to708.as_ref()
     }
     /// Specifies the 608 channel number in the ancillary data track from which to extract captions. Unused for passthrough.
@@ -26,9 +24,7 @@ impl AncillarySourceSettings {
         self.source_ancillary_channel_number
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
-    pub fn terminate_captions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AncillaryTerminateCaptions> {
+    pub fn terminate_captions(&self) -> ::std::option::Option<& crate::types::AncillaryTerminateCaptions> {
         self.terminate_captions.as_ref()
     }
 }
@@ -41,9 +37,7 @@ impl AncillarySourceSettings {
 
 /// A builder for [`AncillarySourceSettings`](crate::types::AncillarySourceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AncillarySourceSettingsBuilder {
     pub(crate) convert608_to708: ::std::option::Option<crate::types::AncillaryConvert608To708>,
     pub(crate) source_ancillary_channel_number: ::std::option::Option<i32>,
@@ -56,12 +50,12 @@ impl AncillarySourceSettingsBuilder {
         self
     }
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
-    pub fn set_convert608_to708(
-        mut self,
-        input: ::std::option::Option<crate::types::AncillaryConvert608To708>,
-    ) -> Self {
-        self.convert608_to708 = input;
-        self
+    pub fn set_convert608_to708(mut self, input: ::std::option::Option<crate::types::AncillaryConvert608To708>) -> Self {
+        self.convert608_to708 = input; self
+    }
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    pub fn get_convert608_to708(&self) -> &::std::option::Option<crate::types::AncillaryConvert608To708> {
+        &self.convert608_to708
     }
     /// Specifies the 608 channel number in the ancillary data track from which to extract captions. Unused for passthrough.
     pub fn source_ancillary_channel_number(mut self, input: i32) -> Self {
@@ -69,12 +63,12 @@ impl AncillarySourceSettingsBuilder {
         self
     }
     /// Specifies the 608 channel number in the ancillary data track from which to extract captions. Unused for passthrough.
-    pub fn set_source_ancillary_channel_number(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.source_ancillary_channel_number = input;
-        self
+    pub fn set_source_ancillary_channel_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.source_ancillary_channel_number = input; self
+    }
+    /// Specifies the 608 channel number in the ancillary data track from which to extract captions. Unused for passthrough.
+    pub fn get_source_ancillary_channel_number(&self) -> &::std::option::Option<i32> {
+        &self.source_ancillary_channel_number
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub fn terminate_captions(mut self, input: crate::types::AncillaryTerminateCaptions) -> Self {
@@ -82,19 +76,23 @@ impl AncillarySourceSettingsBuilder {
         self
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
-    pub fn set_terminate_captions(
-        mut self,
-        input: ::std::option::Option<crate::types::AncillaryTerminateCaptions>,
-    ) -> Self {
-        self.terminate_captions = input;
-        self
+    pub fn set_terminate_captions(mut self, input: ::std::option::Option<crate::types::AncillaryTerminateCaptions>) -> Self {
+        self.terminate_captions = input; self
+    }
+    /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
+    pub fn get_terminate_captions(&self) -> &::std::option::Option<crate::types::AncillaryTerminateCaptions> {
+        &self.terminate_captions
     }
     /// Consumes the builder and constructs a [`AncillarySourceSettings`](crate::types::AncillarySourceSettings).
     pub fn build(self) -> crate::types::AncillarySourceSettings {
         crate::types::AncillarySourceSettings {
-            convert608_to708: self.convert608_to708,
-            source_ancillary_channel_number: self.source_ancillary_channel_number,
-            terminate_captions: self.terminate_captions,
+            convert608_to708: self.convert608_to708
+            ,
+            source_ancillary_channel_number: self.source_ancillary_channel_number
+            ,
+            terminate_captions: self.terminate_captions
+            ,
         }
     }
 }
+

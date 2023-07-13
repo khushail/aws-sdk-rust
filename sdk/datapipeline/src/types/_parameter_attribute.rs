@@ -3,7 +3,7 @@
 /// <p>The attributes allowed or specified with a parameter object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterAttribute {
+pub struct ParameterAttribute  {
     /// <p>The field identifier.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ParameterAttribute {
 }
 impl ParameterAttribute {
     /// <p>The field identifier.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The field value, expressed as a String.</p>
-    pub fn string_value(&self) -> ::std::option::Option<&str> {
+    pub fn string_value(&self) -> ::std::option::Option<& str> {
         self.string_value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ParameterAttribute {
 
 /// A builder for [`ParameterAttribute`](crate::types::ParameterAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterAttributeBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) string_value: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ParameterAttributeBuilder {
     }
     /// <p>The field identifier.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The field identifier.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ParameterAttributeBuilder {
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
+    }
+    /// <p>The field value, expressed as a String.</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
     }
     /// Consumes the builder and constructs a [`ParameterAttribute`](crate::types::ParameterAttribute).
     pub fn build(self) -> crate::types::ParameterAttribute {
         crate::types::ParameterAttribute {
-            key: self.key,
-            string_value: self.string_value,
+            key: self.key
+            ,
+            string_value: self.string_value
+            ,
         }
     }
 }
+

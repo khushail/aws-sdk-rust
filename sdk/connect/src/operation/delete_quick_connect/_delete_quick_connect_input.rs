@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQuickConnectInput {
+pub struct DeleteQuickConnectInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct DeleteQuickConnectInput {
 }
 impl DeleteQuickConnectInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn quick_connect_id(&self) -> ::std::option::Option<&str> {
+    pub fn quick_connect_id(&self) -> ::std::option::Option<& str> {
         self.quick_connect_id.as_deref()
     }
 }
 impl DeleteQuickConnectInput {
     /// Creates a new builder-style object to manufacture [`DeleteQuickConnectInput`](crate::operation::delete_quick_connect::DeleteQuickConnectInput).
-    pub fn builder(
-    ) -> crate::operation::delete_quick_connect::builders::DeleteQuickConnectInputBuilder {
+    pub fn builder() -> crate::operation::delete_quick_connect::builders::DeleteQuickConnectInputBuilder {
         crate::operation::delete_quick_connect::builders::DeleteQuickConnectInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQuickConnectInput`](crate::operation::delete_quick_connect::DeleteQuickConnectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQuickConnectInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_id: ::std::option::Option<::std::string::String>,
@@ -45,37 +42,35 @@ impl DeleteQuickConnectInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn quick_connect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quick_connect_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn set_quick_connect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.quick_connect_id = input;
-        self
+    pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quick_connect_id = input; self
+    }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn get_quick_connect_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quick_connect_id
     }
     /// Consumes the builder and constructs a [`DeleteQuickConnectInput`](crate::operation::delete_quick_connect::DeleteQuickConnectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_quick_connect::DeleteQuickConnectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_quick_connect::DeleteQuickConnectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_quick_connect::DeleteQuickConnectInput {
-                instance_id: self.instance_id,
-                quick_connect_id: self.quick_connect_id,
-            },
+                instance_id: self.instance_id
+                ,
+                quick_connect_id: self.quick_connect_id
+                ,
+            }
         )
     }
 }
+

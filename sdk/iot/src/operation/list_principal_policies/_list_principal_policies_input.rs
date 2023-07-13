@@ -3,7 +3,7 @@
 /// <p>The input for the ListPrincipalPolicies operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPrincipalPoliciesInput {
+pub struct ListPrincipalPoliciesInput  {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
@@ -19,11 +19,11 @@ pub struct ListPrincipalPoliciesInput {
 }
 impl ListPrincipalPoliciesInput {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The result page size.</p>
@@ -37,18 +37,14 @@ impl ListPrincipalPoliciesInput {
 }
 impl ListPrincipalPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListPrincipalPoliciesInput`](crate::operation::list_principal_policies::ListPrincipalPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_principal_policies::builders::ListPrincipalPoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_principal_policies::builders::ListPrincipalPoliciesInputBuilder {
         crate::operation::list_principal_policies::builders::ListPrincipalPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPrincipalPoliciesInput`](crate::operation::list_principal_policies::ListPrincipalPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrincipalPoliciesInputBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -63,8 +59,11 @@ impl ListPrincipalPoliciesInputBuilder {
     }
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
+    }
+    /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
     }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,8 +72,11 @@ impl ListPrincipalPoliciesInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The result page size.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -83,8 +85,11 @@ impl ListPrincipalPoliciesInputBuilder {
     }
     /// <p>The result page size.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
+    }
+    /// <p>The result page size.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
@@ -93,23 +98,26 @@ impl ListPrincipalPoliciesInputBuilder {
     }
     /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ascending_order = input;
-        self
+        self.ascending_order = input; self
+    }
+    /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListPrincipalPoliciesInput`](crate::operation::list_principal_policies::ListPrincipalPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_principal_policies::ListPrincipalPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_principal_policies::ListPrincipalPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_principal_policies::ListPrincipalPoliciesInput {
-                principal: self.principal,
-                marker: self.marker,
-                page_size: self.page_size,
-                ascending_order: self.ascending_order,
-            },
+                principal: self.principal
+                ,
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+                ascending_order: self.ascending_order
+                ,
+            }
         )
     }
 }
+

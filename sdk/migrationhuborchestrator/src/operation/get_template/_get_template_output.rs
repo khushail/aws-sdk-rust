@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateOutput {
+pub struct GetTemplateOutput  {
     /// <p>The ID of the template.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -28,39 +28,39 @@ pub struct GetTemplateOutput {
 }
 impl GetTemplateOutput {
     /// <p>The ID of the template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time at which the template was last created.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[crate::types::TemplateInput]> {
+    pub fn inputs(&self) -> ::std::option::Option<& [crate::types::TemplateInput]> {
         self.inputs.as_deref()
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn tools(&self) -> ::std::option::Option<&[crate::types::Tool]> {
+    pub fn tools(&self) -> ::std::option::Option<& [crate::types::Tool]> {
         self.tools.as_deref()
     }
     /// <p>The status of the template.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TemplateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TemplateStatus> {
         self.status.as_ref()
     }
     /// <p>The time at which the template was last created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
     pub fn builder() -> crate::operation::get_template::builders::GetTemplateOutputBuilder {
@@ -70,9 +70,7 @@ impl GetTemplateOutput {
 
 /// A builder for [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -91,8 +89,11 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,8 +102,11 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time at which the template was last created.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,8 +115,11 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The time at which the template was last created.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The time at which the template was last created.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `inputs`.
     ///
@@ -121,17 +128,17 @@ impl GetTemplateOutputBuilder {
     /// <p>The inputs provided for the creation of the migration workflow.</p>
     pub fn inputs(mut self, input: crate::types::TemplateInput) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input);
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>>) -> Self {
+        self.inputs = input; self
+    }
+    /// <p>The inputs provided for the creation of the migration workflow.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>> {
+        &self.inputs
     }
     /// Appends an item to `tools`.
     ///
@@ -140,17 +147,17 @@ impl GetTemplateOutputBuilder {
     /// <p>List of AWS services utilized in a migration workflow.</p>
     pub fn tools(mut self, input: crate::types::Tool) -> Self {
         let mut v = self.tools.unwrap_or_default();
-        v.push(input);
-        self.tools = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tools = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn set_tools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
-    ) -> Self {
-        self.tools = input;
-        self
+    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>) -> Self {
+        self.tools = input; self
+    }
+    /// <p>List of AWS services utilized in a migration workflow.</p>
+    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tool>> {
+        &self.tools
     }
     /// <p>The status of the template.</p>
     pub fn status(mut self, input: crate::types::TemplateStatus) -> Self {
@@ -158,12 +165,12 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>The status of the template.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the template.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
+        &self.status
     }
     /// <p>The time at which the template was last created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -171,33 +178,41 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>The time at which the template was last created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time at which the template was last created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
     pub fn build(self) -> crate::operation::get_template::GetTemplateOutput {
         crate::operation::get_template::GetTemplateOutput {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            inputs: self.inputs,
-            tools: self.tools,
-            status: self.status,
-            creation_time: self.creation_time,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            inputs: self.inputs
+            ,
+            tools: self.tools
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConnectorDefinitionVersionsInput {
+pub struct ListConnectorDefinitionVersionsInput  {
     /// The ID of the connector definition.
     #[doc(hidden)]
     pub connector_definition_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct ListConnectorDefinitionVersionsInput {
 }
 impl ListConnectorDefinitionVersionsInput {
     /// The ID of the connector definition.
-    pub fn connector_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_definition_id(&self) -> ::std::option::Option<& str> {
         self.connector_definition_id.as_deref()
     }
     /// The maximum number of results to be returned per request.
-    pub fn max_results(&self) -> ::std::option::Option<&str> {
+    pub fn max_results(&self) -> ::std::option::Option<& str> {
         self.max_results.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListConnectorDefinitionVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListConnectorDefinitionVersionsInput`](crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput).
-    pub fn builder() -> crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsInputBuilder {
         crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConnectorDefinitionVersionsInput`](crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorDefinitionVersionsInputBuilder {
     pub(crate) connector_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct ListConnectorDefinitionVersionsInputBuilder {
 }
 impl ListConnectorDefinitionVersionsInputBuilder {
     /// The ID of the connector definition.
-    pub fn connector_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the connector definition.
-    pub fn set_connector_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connector_definition_id = input;
-        self
+    pub fn set_connector_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_definition_id = input; self
+    }
+    /// The ID of the connector definition.
+    pub fn get_connector_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_id
     }
     /// The maximum number of results to be returned per request.
     pub fn max_results(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl ListConnectorDefinitionVersionsInputBuilder {
     }
     /// The maximum number of results to be returned per request.
     pub fn set_max_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_results
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,16 +76,14 @@ impl ListConnectorDefinitionVersionsInputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConnectorDefinitionVersionsInput`](crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput {
                 connector_definition_id: self.connector_definition_id
@@ -100,3 +96,4 @@ impl ListConnectorDefinitionVersionsInputBuilder {
         )
     }
 }
+

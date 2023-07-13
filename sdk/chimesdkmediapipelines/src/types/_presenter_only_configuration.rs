@@ -3,14 +3,14 @@
 /// <p>Defines the configuration for a presenter-only video tile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PresenterOnlyConfiguration {
+pub struct PresenterOnlyConfiguration  {
     /// <p>Defines the position of the presenter video tile. Default: <code>TopRight</code>.</p>
     #[doc(hidden)]
     pub presenter_position: ::std::option::Option<crate::types::PresenterPosition>,
 }
 impl PresenterOnlyConfiguration {
     /// <p>Defines the position of the presenter video tile. Default: <code>TopRight</code>.</p>
-    pub fn presenter_position(&self) -> ::std::option::Option<&crate::types::PresenterPosition> {
+    pub fn presenter_position(&self) -> ::std::option::Option<& crate::types::PresenterPosition> {
         self.presenter_position.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl PresenterOnlyConfiguration {
 
 /// A builder for [`PresenterOnlyConfiguration`](crate::types::PresenterOnlyConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PresenterOnlyConfigurationBuilder {
     pub(crate) presenter_position: ::std::option::Option<crate::types::PresenterPosition>,
 }
@@ -36,17 +34,19 @@ impl PresenterOnlyConfigurationBuilder {
         self
     }
     /// <p>Defines the position of the presenter video tile. Default: <code>TopRight</code>.</p>
-    pub fn set_presenter_position(
-        mut self,
-        input: ::std::option::Option<crate::types::PresenterPosition>,
-    ) -> Self {
-        self.presenter_position = input;
-        self
+    pub fn set_presenter_position(mut self, input: ::std::option::Option<crate::types::PresenterPosition>) -> Self {
+        self.presenter_position = input; self
+    }
+    /// <p>Defines the position of the presenter video tile. Default: <code>TopRight</code>.</p>
+    pub fn get_presenter_position(&self) -> &::std::option::Option<crate::types::PresenterPosition> {
+        &self.presenter_position
     }
     /// Consumes the builder and constructs a [`PresenterOnlyConfiguration`](crate::types::PresenterOnlyConfiguration).
     pub fn build(self) -> crate::types::PresenterOnlyConfiguration {
         crate::types::PresenterOnlyConfiguration {
-            presenter_position: self.presenter_position,
+            presenter_position: self.presenter_position
+            ,
         }
     }
 }
+

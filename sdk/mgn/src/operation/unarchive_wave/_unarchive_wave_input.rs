@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnarchiveWaveInput {
+pub struct UnarchiveWaveInput  {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: ::std::option::Option<::std::string::String>,
 }
 impl UnarchiveWaveInput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> ::std::option::Option<&str> {
+    pub fn wave_id(&self) -> ::std::option::Option<& str> {
         self.wave_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl UnarchiveWaveInput {
 
 /// A builder for [`UnarchiveWaveInput`](crate::operation::unarchive_wave::UnarchiveWaveInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnarchiveWaveInputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl UnarchiveWaveInputBuilder {
     }
     /// <p>Wave ID.</p>
     pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wave_id = input;
-        self
+        self.wave_id = input; self
+    }
+    /// <p>Wave ID.</p>
+    pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wave_id
     }
     /// Consumes the builder and constructs a [`UnarchiveWaveInput`](crate::operation::unarchive_wave::UnarchiveWaveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unarchive_wave::UnarchiveWaveInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::unarchive_wave::UnarchiveWaveInput {
-            wave_id: self.wave_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unarchive_wave::UnarchiveWaveInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unarchive_wave::UnarchiveWaveInput {
+                wave_id: self.wave_id
+                ,
+            }
+        )
     }
 }
+

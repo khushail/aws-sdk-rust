@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApiDestinationInput {
+pub struct DeleteApiDestinationInput  {
     /// <p>The name of the destination to delete.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApiDestinationInput {
     /// <p>The name of the destination to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteApiDestinationInput {
     /// Creates a new builder-style object to manufacture [`DeleteApiDestinationInput`](crate::operation::delete_api_destination::DeleteApiDestinationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_api_destination::builders::DeleteApiDestinationInputBuilder {
+    pub fn builder() -> crate::operation::delete_api_destination::builders::DeleteApiDestinationInputBuilder {
         crate::operation::delete_api_destination::builders::DeleteApiDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApiDestinationInput`](crate::operation::delete_api_destination::DeleteApiDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApiDestinationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DeleteApiDestinationInputBuilder {
     }
     /// <p>The name of the destination to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the destination to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DeleteApiDestinationInput`](crate::operation::delete_api_destination::DeleteApiDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_api_destination::DeleteApiDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_api_destination::DeleteApiDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_api_destination::DeleteApiDestinationInput { name: self.name },
+            crate::operation::delete_api_destination::DeleteApiDestinationInput {
+                name: self.name
+                ,
+            }
         )
     }
 }
+

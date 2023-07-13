@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStorageSystemInput {
+pub struct DescribeStorageSystemInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
     #[doc(hidden)]
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStorageSystemInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
-    pub fn storage_system_arn(&self) -> ::std::option::Option<&str> {
+    pub fn storage_system_arn(&self) -> ::std::option::Option<& str> {
         self.storage_system_arn.as_deref()
     }
 }
 impl DescribeStorageSystemInput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageSystemInput`](crate::operation::describe_storage_system::DescribeStorageSystemInput).
-    pub fn builder(
-    ) -> crate::operation::describe_storage_system::builders::DescribeStorageSystemInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_storage_system::builders::DescribeStorageSystemInputBuilder {
         crate::operation::describe_storage_system::builders::DescribeStorageSystemInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStorageSystemInput`](crate::operation::describe_storage_system::DescribeStorageSystemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemInputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStorageSystemInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.storage_system_arn = input;
-        self
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_system_arn = input; self
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
+    pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_system_arn
     }
     /// Consumes the builder and constructs a [`DescribeStorageSystemInput`](crate::operation::describe_storage_system::DescribeStorageSystemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_storage_system::DescribeStorageSystemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_storage_system::DescribeStorageSystemInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_storage_system::DescribeStorageSystemInput {
-                storage_system_arn: self.storage_system_arn,
-            },
+                storage_system_arn: self.storage_system_arn
+                ,
+            }
         )
     }
 }
+

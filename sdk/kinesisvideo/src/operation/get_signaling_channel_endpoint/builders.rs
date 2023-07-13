@@ -3,104 +3,89 @@ pub use crate::operation::get_signaling_channel_endpoint::_get_signaling_channel
 
 pub use crate::operation::get_signaling_channel_endpoint::_get_signaling_channel_endpoint_input::GetSignalingChannelEndpointInputBuilder;
 
+impl GetSignalingChannelEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_signaling_channel_endpoint();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetSignalingChannelEndpoint`.
-///
-/// <p>Provides an endpoint for the specified signaling channel to send and receive messages. This API uses the <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which consists of the <code>Protocols</code> and <code>Role</code> properties.</p>
-/// <p> <code>Protocols</code> is used to determine the communication mechanism. For example, if you specify <code>WSS</code> as the protocol, this API produces a secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol, this API generates an HTTPS endpoint. </p>
+/// 
+/// <p>Provides an endpoint for the specified signaling channel to send and receive messages. This API uses the <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which consists of the <code>Protocols</code> and <code>Role</code> properties.</p> 
+/// <p> <code>Protocols</code> is used to determine the communication mechanism. For example, if you specify <code>WSS</code> as the protocol, this API produces a secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol, this API generates an HTTPS endpoint. </p> 
 /// <p> <code>Role</code> determines the messaging permissions. A <code>MASTER</code> role results in this API generating an endpoint that a client can use to communicate with any of the viewers on the channel. A <code>VIEWER</code> role results in this API generating an endpoint that a client can use to communicate only with a <code>MASTER</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSignalingChannelEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder,
 }
-impl GetSignalingChannelEndpointFluentBuilder {
+impl GetSignalingChannelEndpointFluentBuilder  {
     /// Creates a new `GetSignalingChannelEndpoint`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetSignalingChannelEndpoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -111,24 +96,23 @@ impl GetSignalingChannelEndpointFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn single_master_channel_endpoint_configuration(
-        mut self,
-        input: crate::types::SingleMasterChannelEndpointConfiguration,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .single_master_channel_endpoint_configuration(input);
+    pub fn single_master_channel_endpoint_configuration(mut self, input: crate::types::SingleMasterChannelEndpointConfiguration) -> Self {
+        self.inner = self.inner.single_master_channel_endpoint_configuration(input);
         self
     }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn set_single_master_channel_endpoint_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_single_master_channel_endpoint_configuration(input);
+    pub fn set_single_master_channel_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration>) -> Self {
+        self.inner = self.inner.set_single_master_channel_endpoint_configuration(input);
         self
+    }
+    /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    pub fn get_single_master_channel_endpoint_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration> {
+        self.inner.get_single_master_channel_endpoint_configuration()
     }
 }
+

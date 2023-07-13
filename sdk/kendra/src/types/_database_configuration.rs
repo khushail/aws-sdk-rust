@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information to connect to a index. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatabaseConfiguration {
+pub struct DatabaseConfiguration  {
     /// <p>The type of database engine that runs the database.</p>
     #[doc(hidden)]
     pub database_engine_type: ::std::option::Option<crate::types::DatabaseEngineType>,
@@ -25,33 +25,27 @@ pub struct DatabaseConfiguration {
 }
 impl DatabaseConfiguration {
     /// <p>The type of database engine that runs the database.</p>
-    pub fn database_engine_type(&self) -> ::std::option::Option<&crate::types::DatabaseEngineType> {
+    pub fn database_engine_type(&self) -> ::std::option::Option<& crate::types::DatabaseEngineType> {
         self.database_engine_type.as_ref()
     }
     /// <p>Configuration information that's required to connect to a database.</p>
-    pub fn connection_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectionConfiguration> {
+    pub fn connection_configuration(&self) -> ::std::option::Option<& crate::types::ConnectionConfiguration> {
         self.connection_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
-    pub fn vpc_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>Information about where the index should get the document information from the database.</p>
-    pub fn column_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ColumnConfiguration> {
+    pub fn column_configuration(&self) -> ::std::option::Option<& crate::types::ColumnConfiguration> {
         self.column_configuration.as_ref()
     }
     /// <p>Information about the database column that provides information for user context filtering.</p>
-    pub fn acl_configuration(&self) -> ::std::option::Option<&crate::types::AclConfiguration> {
+    pub fn acl_configuration(&self) -> ::std::option::Option<& crate::types::AclConfiguration> {
         self.acl_configuration.as_ref()
     }
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
-    pub fn sql_configuration(&self) -> ::std::option::Option<&crate::types::SqlConfiguration> {
+    pub fn sql_configuration(&self) -> ::std::option::Option<& crate::types::SqlConfiguration> {
         self.sql_configuration.as_ref()
     }
 }
@@ -64,13 +58,10 @@ impl DatabaseConfiguration {
 
 /// A builder for [`DatabaseConfiguration`](crate::types::DatabaseConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseConfigurationBuilder {
     pub(crate) database_engine_type: ::std::option::Option<crate::types::DatabaseEngineType>,
-    pub(crate) connection_configuration:
-        ::std::option::Option<crate::types::ConnectionConfiguration>,
+    pub(crate) connection_configuration: ::std::option::Option<crate::types::ConnectionConfiguration>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     pub(crate) column_configuration: ::std::option::Option<crate::types::ColumnConfiguration>,
     pub(crate) acl_configuration: ::std::option::Option<crate::types::AclConfiguration>,
@@ -83,28 +74,25 @@ impl DatabaseConfigurationBuilder {
         self
     }
     /// <p>The type of database engine that runs the database.</p>
-    pub fn set_database_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseEngineType>,
-    ) -> Self {
-        self.database_engine_type = input;
-        self
+    pub fn set_database_engine_type(mut self, input: ::std::option::Option<crate::types::DatabaseEngineType>) -> Self {
+        self.database_engine_type = input; self
+    }
+    /// <p>The type of database engine that runs the database.</p>
+    pub fn get_database_engine_type(&self) -> &::std::option::Option<crate::types::DatabaseEngineType> {
+        &self.database_engine_type
     }
     /// <p>Configuration information that's required to connect to a database.</p>
-    pub fn connection_configuration(
-        mut self,
-        input: crate::types::ConnectionConfiguration,
-    ) -> Self {
+    pub fn connection_configuration(mut self, input: crate::types::ConnectionConfiguration) -> Self {
         self.connection_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information that's required to connect to a database.</p>
-    pub fn set_connection_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionConfiguration>,
-    ) -> Self {
-        self.connection_configuration = input;
-        self
+    pub fn set_connection_configuration(mut self, input: ::std::option::Option<crate::types::ConnectionConfiguration>) -> Self {
+        self.connection_configuration = input; self
+    }
+    /// <p>Configuration information that's required to connect to a database.</p>
+    pub fn get_connection_configuration(&self) -> &::std::option::Option<crate::types::ConnectionConfiguration> {
+        &self.connection_configuration
     }
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
@@ -112,12 +100,12 @@ impl DatabaseConfigurationBuilder {
         self
     }
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
-    ) -> Self {
-        self.vpc_configuration = input;
-        self
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
+        self.vpc_configuration = input; self
+    }
+    /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        &self.vpc_configuration
     }
     /// <p>Information about where the index should get the document information from the database.</p>
     pub fn column_configuration(mut self, input: crate::types::ColumnConfiguration) -> Self {
@@ -125,12 +113,12 @@ impl DatabaseConfigurationBuilder {
         self
     }
     /// <p>Information about where the index should get the document information from the database.</p>
-    pub fn set_column_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnConfiguration>,
-    ) -> Self {
-        self.column_configuration = input;
-        self
+    pub fn set_column_configuration(mut self, input: ::std::option::Option<crate::types::ColumnConfiguration>) -> Self {
+        self.column_configuration = input; self
+    }
+    /// <p>Information about where the index should get the document information from the database.</p>
+    pub fn get_column_configuration(&self) -> &::std::option::Option<crate::types::ColumnConfiguration> {
+        &self.column_configuration
     }
     /// <p>Information about the database column that provides information for user context filtering.</p>
     pub fn acl_configuration(mut self, input: crate::types::AclConfiguration) -> Self {
@@ -138,12 +126,12 @@ impl DatabaseConfigurationBuilder {
         self
     }
     /// <p>Information about the database column that provides information for user context filtering.</p>
-    pub fn set_acl_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AclConfiguration>,
-    ) -> Self {
-        self.acl_configuration = input;
-        self
+    pub fn set_acl_configuration(mut self, input: ::std::option::Option<crate::types::AclConfiguration>) -> Self {
+        self.acl_configuration = input; self
+    }
+    /// <p>Information about the database column that provides information for user context filtering.</p>
+    pub fn get_acl_configuration(&self) -> &::std::option::Option<crate::types::AclConfiguration> {
+        &self.acl_configuration
     }
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
     pub fn sql_configuration(mut self, input: crate::types::SqlConfiguration) -> Self {
@@ -151,22 +139,29 @@ impl DatabaseConfigurationBuilder {
         self
     }
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
-    pub fn set_sql_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SqlConfiguration>,
-    ) -> Self {
-        self.sql_configuration = input;
-        self
+    pub fn set_sql_configuration(mut self, input: ::std::option::Option<crate::types::SqlConfiguration>) -> Self {
+        self.sql_configuration = input; self
+    }
+    /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
+    pub fn get_sql_configuration(&self) -> &::std::option::Option<crate::types::SqlConfiguration> {
+        &self.sql_configuration
     }
     /// Consumes the builder and constructs a [`DatabaseConfiguration`](crate::types::DatabaseConfiguration).
     pub fn build(self) -> crate::types::DatabaseConfiguration {
         crate::types::DatabaseConfiguration {
-            database_engine_type: self.database_engine_type,
-            connection_configuration: self.connection_configuration,
-            vpc_configuration: self.vpc_configuration,
-            column_configuration: self.column_configuration,
-            acl_configuration: self.acl_configuration,
-            sql_configuration: self.sql_configuration,
+            database_engine_type: self.database_engine_type
+            ,
+            connection_configuration: self.connection_configuration
+            ,
+            vpc_configuration: self.vpc_configuration
+            ,
+            column_configuration: self.column_configuration
+            ,
+            acl_configuration: self.acl_configuration
+            ,
+            sql_configuration: self.sql_configuration
+            ,
         }
     }
 }
+

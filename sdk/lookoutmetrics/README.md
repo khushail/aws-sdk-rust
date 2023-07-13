@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-lookoutmetrics = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-lookoutmetrics = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -28,8 +28,8 @@ use aws_sdk_lookoutmetrics as lookoutmetrics;
 
 #[::tokio::main]
 async fn main() -> Result<(), lookoutmetrics::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = lookoutmetrics::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_lookoutmetrics::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -3,7 +3,7 @@
 /// <p>Creates a RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRequestValidatorInput {
+pub struct CreateRequestValidatorInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
@@ -19,11 +19,11 @@ pub struct CreateRequestValidatorInput {
 }
 impl CreateRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the to-be-created RequestValidator.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
@@ -37,18 +37,14 @@ impl CreateRequestValidatorInput {
 }
 impl CreateRequestValidatorInput {
     /// Creates a new builder-style object to manufacture [`CreateRequestValidatorInput`](crate::operation::create_request_validator::CreateRequestValidatorInput).
-    pub fn builder(
-    ) -> crate::operation::create_request_validator::builders::CreateRequestValidatorInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_request_validator::builders::CreateRequestValidatorInputBuilder {
         crate::operation::create_request_validator::builders::CreateRequestValidatorInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRequestValidatorInput`](crate::operation::create_request_validator::CreateRequestValidatorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRequestValidatorInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -63,8 +59,11 @@ impl CreateRequestValidatorInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
     }
     /// <p>The name of the to-be-created RequestValidator.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,8 +72,11 @@ impl CreateRequestValidatorInputBuilder {
     }
     /// <p>The name of the to-be-created RequestValidator.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the to-be-created RequestValidator.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
     pub fn validate_request_body(mut self, input: bool) -> Self {
@@ -83,8 +85,11 @@ impl CreateRequestValidatorInputBuilder {
     }
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
     pub fn set_validate_request_body(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.validate_request_body = input;
-        self
+        self.validate_request_body = input; self
+    }
+    /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
+    pub fn get_validate_request_body(&self) -> &::std::option::Option<bool> {
+        &self.validate_request_body
     }
     /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
     pub fn validate_request_parameters(mut self, input: bool) -> Self {
@@ -93,23 +98,28 @@ impl CreateRequestValidatorInputBuilder {
     }
     /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
     pub fn set_validate_request_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.validate_request_parameters = input;
-        self
+        self.validate_request_parameters = input; self
+    }
+    /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
+    pub fn get_validate_request_parameters(&self) -> &::std::option::Option<bool> {
+        &self.validate_request_parameters
     }
     /// Consumes the builder and constructs a [`CreateRequestValidatorInput`](crate::operation::create_request_validator::CreateRequestValidatorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_request_validator::CreateRequestValidatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_request_validator::CreateRequestValidatorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_request_validator::CreateRequestValidatorInput {
-                rest_api_id: self.rest_api_id,
-                name: self.name,
-                validate_request_body: self.validate_request_body.unwrap_or_default(),
-                validate_request_parameters: self.validate_request_parameters.unwrap_or_default(),
-            },
+                rest_api_id: self.rest_api_id
+                ,
+                name: self.name
+                ,
+                validate_request_body: self.validate_request_body
+                    .unwrap_or_default()
+                ,
+                validate_request_parameters: self.validate_request_parameters
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

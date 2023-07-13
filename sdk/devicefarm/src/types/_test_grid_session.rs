@@ -3,7 +3,7 @@
 /// <p>A <code>TestGridSession</code> is a single instance of a browser launched from the URL provided by a call to <code>CreateTestGridUrl</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestGridSession {
+pub struct TestGridSession  {
     /// <p>The ARN of the session.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -25,19 +25,19 @@ pub struct TestGridSession {
 }
 impl TestGridSession {
     /// <p>The ARN of the session.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The state of the session.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TestGridSessionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TestGridSessionStatus> {
         self.status.as_ref()
     }
     /// <p>The time that the session was started.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The time the session ended.</p>
-    pub fn ended(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ended(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ended.as_ref()
     }
     /// <p>The number of billed minutes that were used for this session. </p>
@@ -45,7 +45,7 @@ impl TestGridSession {
         self.billing_minutes
     }
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
-    pub fn selenium_properties(&self) -> ::std::option::Option<&str> {
+    pub fn selenium_properties(&self) -> ::std::option::Option<& str> {
         self.selenium_properties.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl TestGridSession {
 
 /// A builder for [`TestGridSession`](crate::types::TestGridSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestGridSessionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TestGridSessionStatus>,
@@ -77,8 +75,11 @@ impl TestGridSessionBuilder {
     }
     /// <p>The ARN of the session.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of the session.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The state of the session.</p>
     pub fn status(mut self, input: crate::types::TestGridSessionStatus) -> Self {
@@ -86,12 +87,12 @@ impl TestGridSessionBuilder {
         self
     }
     /// <p>The state of the session.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridSessionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestGridSessionStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The state of the session.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TestGridSessionStatus> {
+        &self.status
     }
     /// <p>The time that the session was started.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,12 +100,12 @@ impl TestGridSessionBuilder {
         self
     }
     /// <p>The time that the session was started.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created = input;
-        self
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created = input; self
+    }
+    /// <p>The time that the session was started.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The time the session ended.</p>
     pub fn ended(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,8 +114,11 @@ impl TestGridSessionBuilder {
     }
     /// <p>The time the session ended.</p>
     pub fn set_ended(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.ended = input;
-        self
+        self.ended = input; self
+    }
+    /// <p>The time the session ended.</p>
+    pub fn get_ended(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended
     }
     /// <p>The number of billed minutes that were used for this session. </p>
     pub fn billing_minutes(mut self, input: f64) -> Self {
@@ -123,34 +127,41 @@ impl TestGridSessionBuilder {
     }
     /// <p>The number of billed minutes that were used for this session. </p>
     pub fn set_billing_minutes(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.billing_minutes = input;
-        self
+        self.billing_minutes = input; self
+    }
+    /// <p>The number of billed minutes that were used for this session. </p>
+    pub fn get_billing_minutes(&self) -> &::std::option::Option<f64> {
+        &self.billing_minutes
     }
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
-    pub fn selenium_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selenium_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selenium_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
-    pub fn set_selenium_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.selenium_properties = input;
-        self
+    pub fn set_selenium_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.selenium_properties = input; self
+    }
+    /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
+    pub fn get_selenium_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selenium_properties
     }
     /// Consumes the builder and constructs a [`TestGridSession`](crate::types::TestGridSession).
     pub fn build(self) -> crate::types::TestGridSession {
         crate::types::TestGridSession {
-            arn: self.arn,
-            status: self.status,
-            created: self.created,
-            ended: self.ended,
-            billing_minutes: self.billing_minutes,
-            selenium_properties: self.selenium_properties,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            created: self.created
+            ,
+            ended: self.ended
+            ,
+            billing_minutes: self.billing_minutes
+            ,
+            selenium_properties: self.selenium_properties
+            ,
         }
     }
 }
+

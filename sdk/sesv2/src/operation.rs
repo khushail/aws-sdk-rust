@@ -199,6 +199,9 @@ pub mod put_configuration_set_vdm_options;
 /// Types for the `PutDedicatedIpInPool` operation.
 pub mod put_dedicated_ip_in_pool;
 
+/// Types for the `PutDedicatedIpPoolScalingAttributes` operation.
+pub mod put_dedicated_ip_pool_scaling_attributes;
+
 /// Types for the `PutDedicatedIpWarmupAttributes` operation.
 pub mod put_dedicated_ip_warmup_attributes;
 
@@ -258,3 +261,4 @@ pub mod update_email_identity_policy;
 
 /// Types for the `UpdateEmailTemplate` operation.
 pub mod update_email_template;
+

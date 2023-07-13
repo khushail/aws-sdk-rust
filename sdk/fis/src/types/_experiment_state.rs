@@ -3,7 +3,7 @@
 /// <p>Describes the state of an experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentState {
+pub struct ExperimentState  {
     /// <p>The state of the experiment.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExperimentStatus>,
@@ -13,11 +13,11 @@ pub struct ExperimentState {
 }
 impl ExperimentState {
     /// <p>The state of the experiment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExperimentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ExperimentStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the state.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ExperimentState {
 
 /// A builder for [`ExperimentState`](crate::types::ExperimentState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ExperimentStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl ExperimentStateBuilder {
         self
     }
     /// <p>The state of the experiment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExperimentStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The state of the experiment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExperimentStatus> {
+        &self.status
     }
     /// <p>The reason for the state.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl ExperimentStateBuilder {
     }
     /// <p>The reason for the state.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
+    }
+    /// <p>The reason for the state.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`ExperimentState`](crate::types::ExperimentState).
     pub fn build(self) -> crate::types::ExperimentState {
         crate::types::ExperimentState {
-            status: self.status,
-            reason: self.reason,
+            status: self.status
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Represents a request to the delete run operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRunInput {
+pub struct DeleteRunInput  {
     /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRunInput {
     /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DeleteRunInput {
 
 /// A builder for [`DeleteRunInput`](crate::operation::delete_run::DeleteRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRunInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,16 +35,20 @@ impl DeleteRunInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteRunInput`](crate::operation::delete_run::DeleteRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_run::DeleteRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_run::DeleteRunInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_run::DeleteRunInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_run::DeleteRunInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

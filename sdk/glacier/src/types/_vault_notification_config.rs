@@ -3,7 +3,7 @@
 /// <p>Represents a vault's notification configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VaultNotificationConfig {
+pub struct VaultNotificationConfig  {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub sns_topic: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct VaultNotificationConfig {
 }
 impl VaultNotificationConfig {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
-    pub fn sns_topic(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic(&self) -> ::std::option::Option<& str> {
         self.sns_topic.as_deref()
     }
     /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
-    pub fn events(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn events(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.events.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl VaultNotificationConfig {
 
 /// A builder for [`VaultNotificationConfig`](crate::types::VaultNotificationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VaultNotificationConfigBuilder {
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl VaultNotificationConfigBuilder {
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
     pub fn set_sns_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic = input;
-        self
+        self.sns_topic = input; self
+    }
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
+    pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic
     }
     /// Appends an item to `events`.
     ///
@@ -55,23 +56,26 @@ impl VaultNotificationConfigBuilder {
     /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
     pub fn events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input.into());
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.events = input; self
+    }
+    /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`VaultNotificationConfig`](crate::types::VaultNotificationConfig).
     pub fn build(self) -> crate::types::VaultNotificationConfig {
         crate::types::VaultNotificationConfig {
-            sns_topic: self.sns_topic,
-            events: self.events,
+            sns_topic: self.sns_topic
+            ,
+            events: self.events
+            ,
         }
     }
 }
+

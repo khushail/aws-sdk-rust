@@ -3,7 +3,7 @@
 /// <p>WCDMA.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WcdmaObj {
+pub struct WcdmaObj  {
     /// <p>Mobile Country Code.</p>
     #[doc(hidden)]
     pub mcc: ::std::option::Option<i32>,
@@ -47,7 +47,7 @@ impl WcdmaObj {
         self.utran_cid
     }
     /// <p>WCDMA local ID information.</p>
-    pub fn wcdma_local_id(&self) -> ::std::option::Option<&crate::types::WcdmaLocalId> {
+    pub fn wcdma_local_id(&self) -> ::std::option::Option<& crate::types::WcdmaLocalId> {
         self.wcdma_local_id.as_ref()
     }
     /// <p>Received Signal Code Power (signal power) (dBm).</p>
@@ -59,7 +59,7 @@ impl WcdmaObj {
         self.path_loss
     }
     /// <p>WCDMA object for network measurement reports.</p>
-    pub fn wcdma_nmr(&self) -> ::std::option::Option<&[crate::types::WcdmaNmrObj]> {
+    pub fn wcdma_nmr(&self) -> ::std::option::Option<& [crate::types::WcdmaNmrObj]> {
         self.wcdma_nmr.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl WcdmaObj {
 
 /// A builder for [`WcdmaObj`](crate::types::WcdmaObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WcdmaObjBuilder {
     pub(crate) mcc: ::std::option::Option<i32>,
     pub(crate) mnc: ::std::option::Option<i32>,
@@ -93,8 +91,11 @@ impl WcdmaObjBuilder {
     }
     /// <p>Mobile Country Code.</p>
     pub fn set_mcc(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mcc = input;
-        self
+        self.mcc = input; self
+    }
+    /// <p>Mobile Country Code.</p>
+    pub fn get_mcc(&self) -> &::std::option::Option<i32> {
+        &self.mcc
     }
     /// <p>Mobile Network Code.</p>
     pub fn mnc(mut self, input: i32) -> Self {
@@ -103,8 +104,11 @@ impl WcdmaObjBuilder {
     }
     /// <p>Mobile Network Code.</p>
     pub fn set_mnc(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mnc = input;
-        self
+        self.mnc = input; self
+    }
+    /// <p>Mobile Network Code.</p>
+    pub fn get_mnc(&self) -> &::std::option::Option<i32> {
+        &self.mnc
     }
     /// <p>Location Area Code.</p>
     pub fn lac(mut self, input: i32) -> Self {
@@ -113,8 +117,11 @@ impl WcdmaObjBuilder {
     }
     /// <p>Location Area Code.</p>
     pub fn set_lac(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lac = input;
-        self
+        self.lac = input; self
+    }
+    /// <p>Location Area Code.</p>
+    pub fn get_lac(&self) -> &::std::option::Option<i32> {
+        &self.lac
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn utran_cid(mut self, input: i32) -> Self {
@@ -123,8 +130,11 @@ impl WcdmaObjBuilder {
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn set_utran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.utran_cid = input;
-        self
+        self.utran_cid = input; self
+    }
+    /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
+    pub fn get_utran_cid(&self) -> &::std::option::Option<i32> {
+        &self.utran_cid
     }
     /// <p>WCDMA local ID information.</p>
     pub fn wcdma_local_id(mut self, input: crate::types::WcdmaLocalId) -> Self {
@@ -132,12 +142,12 @@ impl WcdmaObjBuilder {
         self
     }
     /// <p>WCDMA local ID information.</p>
-    pub fn set_wcdma_local_id(
-        mut self,
-        input: ::std::option::Option<crate::types::WcdmaLocalId>,
-    ) -> Self {
-        self.wcdma_local_id = input;
-        self
+    pub fn set_wcdma_local_id(mut self, input: ::std::option::Option<crate::types::WcdmaLocalId>) -> Self {
+        self.wcdma_local_id = input; self
+    }
+    /// <p>WCDMA local ID information.</p>
+    pub fn get_wcdma_local_id(&self) -> &::std::option::Option<crate::types::WcdmaLocalId> {
+        &self.wcdma_local_id
     }
     /// <p>Received Signal Code Power (signal power) (dBm).</p>
     pub fn rscp(mut self, input: i32) -> Self {
@@ -146,8 +156,11 @@ impl WcdmaObjBuilder {
     }
     /// <p>Received Signal Code Power (signal power) (dBm).</p>
     pub fn set_rscp(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rscp = input;
-        self
+        self.rscp = input; self
+    }
+    /// <p>Received Signal Code Power (signal power) (dBm).</p>
+    pub fn get_rscp(&self) -> &::std::option::Option<i32> {
+        &self.rscp
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn path_loss(mut self, input: i32) -> Self {
@@ -156,8 +169,11 @@ impl WcdmaObjBuilder {
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn set_path_loss(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.path_loss = input;
-        self
+        self.path_loss = input; self
+    }
+    /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
+    pub fn get_path_loss(&self) -> &::std::option::Option<i32> {
+        &self.path_loss
     }
     /// Appends an item to `wcdma_nmr`.
     ///
@@ -166,29 +182,38 @@ impl WcdmaObjBuilder {
     /// <p>WCDMA object for network measurement reports.</p>
     pub fn wcdma_nmr(mut self, input: crate::types::WcdmaNmrObj) -> Self {
         let mut v = self.wcdma_nmr.unwrap_or_default();
-        v.push(input);
-        self.wcdma_nmr = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.wcdma_nmr = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>WCDMA object for network measurement reports.</p>
-    pub fn set_wcdma_nmr(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaNmrObj>>,
-    ) -> Self {
-        self.wcdma_nmr = input;
-        self
+    pub fn set_wcdma_nmr(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaNmrObj>>) -> Self {
+        self.wcdma_nmr = input; self
+    }
+    /// <p>WCDMA object for network measurement reports.</p>
+    pub fn get_wcdma_nmr(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WcdmaNmrObj>> {
+        &self.wcdma_nmr
     }
     /// Consumes the builder and constructs a [`WcdmaObj`](crate::types::WcdmaObj).
     pub fn build(self) -> crate::types::WcdmaObj {
         crate::types::WcdmaObj {
-            mcc: self.mcc,
-            mnc: self.mnc,
-            lac: self.lac,
-            utran_cid: self.utran_cid,
-            wcdma_local_id: self.wcdma_local_id,
-            rscp: self.rscp,
-            path_loss: self.path_loss,
-            wcdma_nmr: self.wcdma_nmr,
+            mcc: self.mcc
+            ,
+            mnc: self.mnc
+            ,
+            lac: self.lac
+            ,
+            utran_cid: self.utran_cid
+            ,
+            wcdma_local_id: self.wcdma_local_id
+            ,
+            rscp: self.rscp
+            ,
+            path_loss: self.path_loss
+            ,
+            wcdma_nmr: self.wcdma_nmr
+            ,
         }
     }
 }
+

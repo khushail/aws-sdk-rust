@@ -3,7 +3,7 @@
 /// <p>Contains information about each entry in the key list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyListEntry {
+pub struct KeyListEntry  {
     /// <p>Unique identifier of the key.</p>
     #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct KeyListEntry {
 }
 impl KeyListEntry {
     /// <p>Unique identifier of the key.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>ARN of the key.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<& str> {
         self.key_arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl KeyListEntry {
 
 /// A builder for [`KeyListEntry`](crate::types::KeyListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyListEntryBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl KeyListEntryBuilder {
     }
     /// <p>Unique identifier of the key.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
+    }
+    /// <p>Unique identifier of the key.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>ARN of the key.</p>
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl KeyListEntryBuilder {
     }
     /// <p>ARN of the key.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
+    }
+    /// <p>ARN of the key.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
     }
     /// Consumes the builder and constructs a [`KeyListEntry`](crate::types::KeyListEntry).
     pub fn build(self) -> crate::types::KeyListEntry {
         crate::types::KeyListEntry {
-            key_id: self.key_id,
-            key_arn: self.key_arn,
+            key_id: self.key_id
+            ,
+            key_arn: self.key_arn
+            ,
         }
     }
 }
+

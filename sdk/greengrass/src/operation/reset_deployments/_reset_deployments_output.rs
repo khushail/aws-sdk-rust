@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetDeploymentsOutput {
+pub struct ResetDeploymentsOutput  {
     /// The ARN of the deployment.
     #[doc(hidden)]
     pub deployment_arn: ::std::option::Option<::std::string::String>,
@@ -13,32 +13,29 @@ pub struct ResetDeploymentsOutput {
 }
 impl ResetDeploymentsOutput {
     /// The ARN of the deployment.
-    pub fn deployment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_arn(&self) -> ::std::option::Option<& str> {
         self.deployment_arn.as_deref()
     }
     /// The ID of the deployment.
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ResetDeploymentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ResetDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ResetDeploymentsOutput`](crate::operation::reset_deployments::ResetDeploymentsOutput).
-    pub fn builder() -> crate::operation::reset_deployments::builders::ResetDeploymentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_deployments::builders::ResetDeploymentsOutputBuilder {
         crate::operation::reset_deployments::builders::ResetDeploymentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetDeploymentsOutput`](crate::operation::reset_deployments::ResetDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetDeploymentsOutputBuilder {
     pub(crate) deployment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
@@ -46,52 +43,49 @@ pub struct ResetDeploymentsOutputBuilder {
 }
 impl ResetDeploymentsOutputBuilder {
     /// The ARN of the deployment.
-    pub fn deployment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the deployment.
-    pub fn set_deployment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.deployment_arn = input;
-        self
+    pub fn set_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_arn = input; self
+    }
+    /// The ARN of the deployment.
+    pub fn get_deployment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_arn
     }
     /// The ID of the deployment.
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the deployment.
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.deployment_id = input;
-        self
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_id = input; self
+    }
+    /// The ID of the deployment.
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ResetDeploymentsOutput`](crate::operation::reset_deployments::ResetDeploymentsOutput).
     pub fn build(self) -> crate::operation::reset_deployments::ResetDeploymentsOutput {
         crate::operation::reset_deployments::ResetDeploymentsOutput {
-            deployment_arn: self.deployment_arn,
-            deployment_id: self.deployment_id,
+            deployment_arn: self.deployment_arn
+            ,
+            deployment_id: self.deployment_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

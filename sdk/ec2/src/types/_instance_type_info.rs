@@ -3,7 +3,7 @@
 /// <p>Describes the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceTypeInfo {
+pub struct InstanceTypeInfo  {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -15,16 +15,13 @@ pub struct InstanceTypeInfo {
     pub free_tier_eligible: ::std::option::Option<bool>,
     /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
     #[doc(hidden)]
-    pub supported_usage_classes:
-        ::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>>,
+    pub supported_usage_classes: ::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>>,
     /// <p>The supported root device types.</p>
     #[doc(hidden)]
-    pub supported_root_device_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::RootDeviceType>>,
+    pub supported_root_device_types: ::std::option::Option<::std::vec::Vec<crate::types::RootDeviceType>>,
     /// <p>The supported virtualization types.</p>
     #[doc(hidden)]
-    pub supported_virtualization_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
+    pub supported_virtualization_types: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
     /// <p>Indicates whether the instance is a bare metal instance type.</p>
     #[doc(hidden)]
     pub bare_metal: ::std::option::Option<bool>,
@@ -82,7 +79,7 @@ pub struct InstanceTypeInfo {
 }
 impl InstanceTypeInfo {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Indicates whether the instance type is current generation.</p>
@@ -94,21 +91,15 @@ impl InstanceTypeInfo {
         self.free_tier_eligible
     }
     /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
-    pub fn supported_usage_classes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UsageClassType]> {
+    pub fn supported_usage_classes(&self) -> ::std::option::Option<& [crate::types::UsageClassType]> {
         self.supported_usage_classes.as_deref()
     }
     /// <p>The supported root device types.</p>
-    pub fn supported_root_device_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RootDeviceType]> {
+    pub fn supported_root_device_types(&self) -> ::std::option::Option<& [crate::types::RootDeviceType]> {
         self.supported_root_device_types.as_deref()
     }
     /// <p>The supported virtualization types.</p>
-    pub fn supported_virtualization_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VirtualizationType]> {
+    pub fn supported_virtualization_types(&self) -> ::std::option::Option<& [crate::types::VirtualizationType]> {
         self.supported_virtualization_types.as_deref()
     }
     /// <p>Indicates whether the instance is a bare metal instance type.</p>
@@ -116,19 +107,19 @@ impl InstanceTypeInfo {
         self.bare_metal
     }
     /// <p>The hypervisor for the instance type.</p>
-    pub fn hypervisor(&self) -> ::std::option::Option<&crate::types::InstanceTypeHypervisor> {
+    pub fn hypervisor(&self) -> ::std::option::Option<& crate::types::InstanceTypeHypervisor> {
         self.hypervisor.as_ref()
     }
     /// <p>Describes the processor.</p>
-    pub fn processor_info(&self) -> ::std::option::Option<&crate::types::ProcessorInfo> {
+    pub fn processor_info(&self) -> ::std::option::Option<& crate::types::ProcessorInfo> {
         self.processor_info.as_ref()
     }
     /// <p>Describes the vCPU configurations for the instance type.</p>
-    pub fn v_cpu_info(&self) -> ::std::option::Option<&crate::types::VCpuInfo> {
+    pub fn v_cpu_info(&self) -> ::std::option::Option<& crate::types::VCpuInfo> {
         self.v_cpu_info.as_ref()
     }
     /// <p>Describes the memory for the instance type.</p>
-    pub fn memory_info(&self) -> ::std::option::Option<&crate::types::MemoryInfo> {
+    pub fn memory_info(&self) -> ::std::option::Option<& crate::types::MemoryInfo> {
         self.memory_info.as_ref()
     }
     /// <p>Indicates whether instance storage is supported.</p>
@@ -136,35 +127,31 @@ impl InstanceTypeInfo {
         self.instance_storage_supported
     }
     /// <p>Describes the instance storage for the instance type.</p>
-    pub fn instance_storage_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceStorageInfo> {
+    pub fn instance_storage_info(&self) -> ::std::option::Option<& crate::types::InstanceStorageInfo> {
         self.instance_storage_info.as_ref()
     }
     /// <p>Describes the Amazon EBS settings for the instance type.</p>
-    pub fn ebs_info(&self) -> ::std::option::Option<&crate::types::EbsInfo> {
+    pub fn ebs_info(&self) -> ::std::option::Option<& crate::types::EbsInfo> {
         self.ebs_info.as_ref()
     }
     /// <p>Describes the network settings for the instance type.</p>
-    pub fn network_info(&self) -> ::std::option::Option<&crate::types::NetworkInfo> {
+    pub fn network_info(&self) -> ::std::option::Option<& crate::types::NetworkInfo> {
         self.network_info.as_ref()
     }
     /// <p>Describes the GPU accelerator settings for the instance type.</p>
-    pub fn gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
+    pub fn gpu_info(&self) -> ::std::option::Option<& crate::types::GpuInfo> {
         self.gpu_info.as_ref()
     }
     /// <p>Describes the FPGA accelerator settings for the instance type.</p>
-    pub fn fpga_info(&self) -> ::std::option::Option<&crate::types::FpgaInfo> {
+    pub fn fpga_info(&self) -> ::std::option::Option<& crate::types::FpgaInfo> {
         self.fpga_info.as_ref()
     }
     /// <p>Describes the placement group settings for the instance type.</p>
-    pub fn placement_group_info(&self) -> ::std::option::Option<&crate::types::PlacementGroupInfo> {
+    pub fn placement_group_info(&self) -> ::std::option::Option<& crate::types::PlacementGroupInfo> {
         self.placement_group_info.as_ref()
     }
     /// <p>Describes the Inference accelerator settings for the instance type.</p>
-    pub fn inference_accelerator_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceAcceleratorInfo> {
+    pub fn inference_accelerator_info(&self) -> ::std::option::Option<& crate::types::InferenceAcceleratorInfo> {
         self.inference_accelerator_info.as_ref()
     }
     /// <p>Indicates whether On-Demand hibernation is supported.</p>
@@ -184,7 +171,7 @@ impl InstanceTypeInfo {
         self.auto_recovery_supported
     }
     /// <p>The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn supported_boot_modes(&self) -> ::std::option::Option<&[crate::types::BootModeType]> {
+    pub fn supported_boot_modes(&self) -> ::std::option::Option<& [crate::types::BootModeType]> {
         self.supported_boot_modes.as_deref()
     }
 }
@@ -197,19 +184,14 @@ impl InstanceTypeInfo {
 
 /// A builder for [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceTypeInfoBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) current_generation: ::std::option::Option<bool>,
     pub(crate) free_tier_eligible: ::std::option::Option<bool>,
-    pub(crate) supported_usage_classes:
-        ::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>>,
-    pub(crate) supported_root_device_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::RootDeviceType>>,
-    pub(crate) supported_virtualization_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
+    pub(crate) supported_usage_classes: ::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>>,
+    pub(crate) supported_root_device_types: ::std::option::Option<::std::vec::Vec<crate::types::RootDeviceType>>,
+    pub(crate) supported_virtualization_types: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
     pub(crate) bare_metal: ::std::option::Option<bool>,
     pub(crate) hypervisor: ::std::option::Option<crate::types::InstanceTypeHypervisor>,
     pub(crate) processor_info: ::std::option::Option<crate::types::ProcessorInfo>,
@@ -222,14 +204,12 @@ pub struct InstanceTypeInfoBuilder {
     pub(crate) gpu_info: ::std::option::Option<crate::types::GpuInfo>,
     pub(crate) fpga_info: ::std::option::Option<crate::types::FpgaInfo>,
     pub(crate) placement_group_info: ::std::option::Option<crate::types::PlacementGroupInfo>,
-    pub(crate) inference_accelerator_info:
-        ::std::option::Option<crate::types::InferenceAcceleratorInfo>,
+    pub(crate) inference_accelerator_info: ::std::option::Option<crate::types::InferenceAcceleratorInfo>,
     pub(crate) hibernation_supported: ::std::option::Option<bool>,
     pub(crate) burstable_performance_supported: ::std::option::Option<bool>,
     pub(crate) dedicated_hosts_supported: ::std::option::Option<bool>,
     pub(crate) auto_recovery_supported: ::std::option::Option<bool>,
-    pub(crate) supported_boot_modes:
-        ::std::option::Option<::std::vec::Vec<crate::types::BootModeType>>,
+    pub(crate) supported_boot_modes: ::std::option::Option<::std::vec::Vec<crate::types::BootModeType>>,
 }
 impl InstanceTypeInfoBuilder {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -238,12 +218,12 @@ impl InstanceTypeInfoBuilder {
         self
     }
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
-        self.instance_type = input;
-        self
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
+        self.instance_type = input; self
+    }
+    /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
     }
     /// <p>Indicates whether the instance type is current generation.</p>
     pub fn current_generation(mut self, input: bool) -> Self {
@@ -252,8 +232,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Indicates whether the instance type is current generation.</p>
     pub fn set_current_generation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.current_generation = input;
-        self
+        self.current_generation = input; self
+    }
+    /// <p>Indicates whether the instance type is current generation.</p>
+    pub fn get_current_generation(&self) -> &::std::option::Option<bool> {
+        &self.current_generation
     }
     /// <p>Indicates whether the instance type is eligible for the free tier.</p>
     pub fn free_tier_eligible(mut self, input: bool) -> Self {
@@ -262,8 +245,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Indicates whether the instance type is eligible for the free tier.</p>
     pub fn set_free_tier_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.free_tier_eligible = input;
-        self
+        self.free_tier_eligible = input; self
+    }
+    /// <p>Indicates whether the instance type is eligible for the free tier.</p>
+    pub fn get_free_tier_eligible(&self) -> &::std::option::Option<bool> {
+        &self.free_tier_eligible
     }
     /// Appends an item to `supported_usage_classes`.
     ///
@@ -272,17 +258,17 @@ impl InstanceTypeInfoBuilder {
     /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
     pub fn supported_usage_classes(mut self, input: crate::types::UsageClassType) -> Self {
         let mut v = self.supported_usage_classes.unwrap_or_default();
-        v.push(input);
-        self.supported_usage_classes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_usage_classes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
-    pub fn set_supported_usage_classes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>>,
-    ) -> Self {
-        self.supported_usage_classes = input;
-        self
+    pub fn set_supported_usage_classes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>>) -> Self {
+        self.supported_usage_classes = input; self
+    }
+    /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
+    pub fn get_supported_usage_classes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageClassType>> {
+        &self.supported_usage_classes
     }
     /// Appends an item to `supported_root_device_types`.
     ///
@@ -291,39 +277,36 @@ impl InstanceTypeInfoBuilder {
     /// <p>The supported root device types.</p>
     pub fn supported_root_device_types(mut self, input: crate::types::RootDeviceType) -> Self {
         let mut v = self.supported_root_device_types.unwrap_or_default();
-        v.push(input);
-        self.supported_root_device_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_root_device_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported root device types.</p>
-    pub fn set_supported_root_device_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RootDeviceType>>,
-    ) -> Self {
-        self.supported_root_device_types = input;
-        self
+    pub fn set_supported_root_device_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RootDeviceType>>) -> Self {
+        self.supported_root_device_types = input; self
+    }
+    /// <p>The supported root device types.</p>
+    pub fn get_supported_root_device_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RootDeviceType>> {
+        &self.supported_root_device_types
     }
     /// Appends an item to `supported_virtualization_types`.
     ///
     /// To override the contents of this collection use [`set_supported_virtualization_types`](Self::set_supported_virtualization_types).
     ///
     /// <p>The supported virtualization types.</p>
-    pub fn supported_virtualization_types(
-        mut self,
-        input: crate::types::VirtualizationType,
-    ) -> Self {
+    pub fn supported_virtualization_types(mut self, input: crate::types::VirtualizationType) -> Self {
         let mut v = self.supported_virtualization_types.unwrap_or_default();
-        v.push(input);
-        self.supported_virtualization_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_virtualization_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported virtualization types.</p>
-    pub fn set_supported_virtualization_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
-    ) -> Self {
-        self.supported_virtualization_types = input;
-        self
+    pub fn set_supported_virtualization_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>) -> Self {
+        self.supported_virtualization_types = input; self
+    }
+    /// <p>The supported virtualization types.</p>
+    pub fn get_supported_virtualization_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>> {
+        &self.supported_virtualization_types
     }
     /// <p>Indicates whether the instance is a bare metal instance type.</p>
     pub fn bare_metal(mut self, input: bool) -> Self {
@@ -332,8 +315,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Indicates whether the instance is a bare metal instance type.</p>
     pub fn set_bare_metal(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.bare_metal = input;
-        self
+        self.bare_metal = input; self
+    }
+    /// <p>Indicates whether the instance is a bare metal instance type.</p>
+    pub fn get_bare_metal(&self) -> &::std::option::Option<bool> {
+        &self.bare_metal
     }
     /// <p>The hypervisor for the instance type.</p>
     pub fn hypervisor(mut self, input: crate::types::InstanceTypeHypervisor) -> Self {
@@ -341,12 +327,12 @@ impl InstanceTypeInfoBuilder {
         self
     }
     /// <p>The hypervisor for the instance type.</p>
-    pub fn set_hypervisor(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceTypeHypervisor>,
-    ) -> Self {
-        self.hypervisor = input;
-        self
+    pub fn set_hypervisor(mut self, input: ::std::option::Option<crate::types::InstanceTypeHypervisor>) -> Self {
+        self.hypervisor = input; self
+    }
+    /// <p>The hypervisor for the instance type.</p>
+    pub fn get_hypervisor(&self) -> &::std::option::Option<crate::types::InstanceTypeHypervisor> {
+        &self.hypervisor
     }
     /// <p>Describes the processor.</p>
     pub fn processor_info(mut self, input: crate::types::ProcessorInfo) -> Self {
@@ -354,12 +340,12 @@ impl InstanceTypeInfoBuilder {
         self
     }
     /// <p>Describes the processor.</p>
-    pub fn set_processor_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessorInfo>,
-    ) -> Self {
-        self.processor_info = input;
-        self
+    pub fn set_processor_info(mut self, input: ::std::option::Option<crate::types::ProcessorInfo>) -> Self {
+        self.processor_info = input; self
+    }
+    /// <p>Describes the processor.</p>
+    pub fn get_processor_info(&self) -> &::std::option::Option<crate::types::ProcessorInfo> {
+        &self.processor_info
     }
     /// <p>Describes the vCPU configurations for the instance type.</p>
     pub fn v_cpu_info(mut self, input: crate::types::VCpuInfo) -> Self {
@@ -368,8 +354,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Describes the vCPU configurations for the instance type.</p>
     pub fn set_v_cpu_info(mut self, input: ::std::option::Option<crate::types::VCpuInfo>) -> Self {
-        self.v_cpu_info = input;
-        self
+        self.v_cpu_info = input; self
+    }
+    /// <p>Describes the vCPU configurations for the instance type.</p>
+    pub fn get_v_cpu_info(&self) -> &::std::option::Option<crate::types::VCpuInfo> {
+        &self.v_cpu_info
     }
     /// <p>Describes the memory for the instance type.</p>
     pub fn memory_info(mut self, input: crate::types::MemoryInfo) -> Self {
@@ -377,12 +366,12 @@ impl InstanceTypeInfoBuilder {
         self
     }
     /// <p>Describes the memory for the instance type.</p>
-    pub fn set_memory_info(
-        mut self,
-        input: ::std::option::Option<crate::types::MemoryInfo>,
-    ) -> Self {
-        self.memory_info = input;
-        self
+    pub fn set_memory_info(mut self, input: ::std::option::Option<crate::types::MemoryInfo>) -> Self {
+        self.memory_info = input; self
+    }
+    /// <p>Describes the memory for the instance type.</p>
+    pub fn get_memory_info(&self) -> &::std::option::Option<crate::types::MemoryInfo> {
+        &self.memory_info
     }
     /// <p>Indicates whether instance storage is supported.</p>
     pub fn instance_storage_supported(mut self, input: bool) -> Self {
@@ -391,8 +380,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Indicates whether instance storage is supported.</p>
     pub fn set_instance_storage_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.instance_storage_supported = input;
-        self
+        self.instance_storage_supported = input; self
+    }
+    /// <p>Indicates whether instance storage is supported.</p>
+    pub fn get_instance_storage_supported(&self) -> &::std::option::Option<bool> {
+        &self.instance_storage_supported
     }
     /// <p>Describes the instance storage for the instance type.</p>
     pub fn instance_storage_info(mut self, input: crate::types::InstanceStorageInfo) -> Self {
@@ -400,12 +392,12 @@ impl InstanceTypeInfoBuilder {
         self
     }
     /// <p>Describes the instance storage for the instance type.</p>
-    pub fn set_instance_storage_info(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageInfo>,
-    ) -> Self {
-        self.instance_storage_info = input;
-        self
+    pub fn set_instance_storage_info(mut self, input: ::std::option::Option<crate::types::InstanceStorageInfo>) -> Self {
+        self.instance_storage_info = input; self
+    }
+    /// <p>Describes the instance storage for the instance type.</p>
+    pub fn get_instance_storage_info(&self) -> &::std::option::Option<crate::types::InstanceStorageInfo> {
+        &self.instance_storage_info
     }
     /// <p>Describes the Amazon EBS settings for the instance type.</p>
     pub fn ebs_info(mut self, input: crate::types::EbsInfo) -> Self {
@@ -414,8 +406,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Describes the Amazon EBS settings for the instance type.</p>
     pub fn set_ebs_info(mut self, input: ::std::option::Option<crate::types::EbsInfo>) -> Self {
-        self.ebs_info = input;
-        self
+        self.ebs_info = input; self
+    }
+    /// <p>Describes the Amazon EBS settings for the instance type.</p>
+    pub fn get_ebs_info(&self) -> &::std::option::Option<crate::types::EbsInfo> {
+        &self.ebs_info
     }
     /// <p>Describes the network settings for the instance type.</p>
     pub fn network_info(mut self, input: crate::types::NetworkInfo) -> Self {
@@ -423,12 +418,12 @@ impl InstanceTypeInfoBuilder {
         self
     }
     /// <p>Describes the network settings for the instance type.</p>
-    pub fn set_network_info(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInfo>,
-    ) -> Self {
-        self.network_info = input;
-        self
+    pub fn set_network_info(mut self, input: ::std::option::Option<crate::types::NetworkInfo>) -> Self {
+        self.network_info = input; self
+    }
+    /// <p>Describes the network settings for the instance type.</p>
+    pub fn get_network_info(&self) -> &::std::option::Option<crate::types::NetworkInfo> {
+        &self.network_info
     }
     /// <p>Describes the GPU accelerator settings for the instance type.</p>
     pub fn gpu_info(mut self, input: crate::types::GpuInfo) -> Self {
@@ -437,8 +432,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Describes the GPU accelerator settings for the instance type.</p>
     pub fn set_gpu_info(mut self, input: ::std::option::Option<crate::types::GpuInfo>) -> Self {
-        self.gpu_info = input;
-        self
+        self.gpu_info = input; self
+    }
+    /// <p>Describes the GPU accelerator settings for the instance type.</p>
+    pub fn get_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
+        &self.gpu_info
     }
     /// <p>Describes the FPGA accelerator settings for the instance type.</p>
     pub fn fpga_info(mut self, input: crate::types::FpgaInfo) -> Self {
@@ -447,8 +445,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Describes the FPGA accelerator settings for the instance type.</p>
     pub fn set_fpga_info(mut self, input: ::std::option::Option<crate::types::FpgaInfo>) -> Self {
-        self.fpga_info = input;
-        self
+        self.fpga_info = input; self
+    }
+    /// <p>Describes the FPGA accelerator settings for the instance type.</p>
+    pub fn get_fpga_info(&self) -> &::std::option::Option<crate::types::FpgaInfo> {
+        &self.fpga_info
     }
     /// <p>Describes the placement group settings for the instance type.</p>
     pub fn placement_group_info(mut self, input: crate::types::PlacementGroupInfo) -> Self {
@@ -456,28 +457,25 @@ impl InstanceTypeInfoBuilder {
         self
     }
     /// <p>Describes the placement group settings for the instance type.</p>
-    pub fn set_placement_group_info(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementGroupInfo>,
-    ) -> Self {
-        self.placement_group_info = input;
-        self
+    pub fn set_placement_group_info(mut self, input: ::std::option::Option<crate::types::PlacementGroupInfo>) -> Self {
+        self.placement_group_info = input; self
+    }
+    /// <p>Describes the placement group settings for the instance type.</p>
+    pub fn get_placement_group_info(&self) -> &::std::option::Option<crate::types::PlacementGroupInfo> {
+        &self.placement_group_info
     }
     /// <p>Describes the Inference accelerator settings for the instance type.</p>
-    pub fn inference_accelerator_info(
-        mut self,
-        input: crate::types::InferenceAcceleratorInfo,
-    ) -> Self {
+    pub fn inference_accelerator_info(mut self, input: crate::types::InferenceAcceleratorInfo) -> Self {
         self.inference_accelerator_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the Inference accelerator settings for the instance type.</p>
-    pub fn set_inference_accelerator_info(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceAcceleratorInfo>,
-    ) -> Self {
-        self.inference_accelerator_info = input;
-        self
+    pub fn set_inference_accelerator_info(mut self, input: ::std::option::Option<crate::types::InferenceAcceleratorInfo>) -> Self {
+        self.inference_accelerator_info = input; self
+    }
+    /// <p>Describes the Inference accelerator settings for the instance type.</p>
+    pub fn get_inference_accelerator_info(&self) -> &::std::option::Option<crate::types::InferenceAcceleratorInfo> {
+        &self.inference_accelerator_info
     }
     /// <p>Indicates whether On-Demand hibernation is supported.</p>
     pub fn hibernation_supported(mut self, input: bool) -> Self {
@@ -486,8 +484,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Indicates whether On-Demand hibernation is supported.</p>
     pub fn set_hibernation_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hibernation_supported = input;
-        self
+        self.hibernation_supported = input; self
+    }
+    /// <p>Indicates whether On-Demand hibernation is supported.</p>
+    pub fn get_hibernation_supported(&self) -> &::std::option::Option<bool> {
+        &self.hibernation_supported
     }
     /// <p>Indicates whether the instance type is a burstable performance instance type.</p>
     pub fn burstable_performance_supported(mut self, input: bool) -> Self {
@@ -495,12 +496,12 @@ impl InstanceTypeInfoBuilder {
         self
     }
     /// <p>Indicates whether the instance type is a burstable performance instance type.</p>
-    pub fn set_burstable_performance_supported(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.burstable_performance_supported = input;
-        self
+    pub fn set_burstable_performance_supported(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.burstable_performance_supported = input; self
+    }
+    /// <p>Indicates whether the instance type is a burstable performance instance type.</p>
+    pub fn get_burstable_performance_supported(&self) -> &::std::option::Option<bool> {
+        &self.burstable_performance_supported
     }
     /// <p>Indicates whether Dedicated Hosts are supported on the instance type.</p>
     pub fn dedicated_hosts_supported(mut self, input: bool) -> Self {
@@ -509,8 +510,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Indicates whether Dedicated Hosts are supported on the instance type.</p>
     pub fn set_dedicated_hosts_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dedicated_hosts_supported = input;
-        self
+        self.dedicated_hosts_supported = input; self
+    }
+    /// <p>Indicates whether Dedicated Hosts are supported on the instance type.</p>
+    pub fn get_dedicated_hosts_supported(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_hosts_supported
     }
     /// <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
     pub fn auto_recovery_supported(mut self, input: bool) -> Self {
@@ -519,8 +523,11 @@ impl InstanceTypeInfoBuilder {
     }
     /// <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
     pub fn set_auto_recovery_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_recovery_supported = input;
-        self
+        self.auto_recovery_supported = input; self
+    }
+    /// <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
+    pub fn get_auto_recovery_supported(&self) -> &::std::option::Option<bool> {
+        &self.auto_recovery_supported
     }
     /// Appends an item to `supported_boot_modes`.
     ///
@@ -529,45 +536,70 @@ impl InstanceTypeInfoBuilder {
     /// <p>The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn supported_boot_modes(mut self, input: crate::types::BootModeType) -> Self {
         let mut v = self.supported_boot_modes.unwrap_or_default();
-        v.push(input);
-        self.supported_boot_modes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_boot_modes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_supported_boot_modes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BootModeType>>,
-    ) -> Self {
-        self.supported_boot_modes = input;
-        self
+    pub fn set_supported_boot_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BootModeType>>) -> Self {
+        self.supported_boot_modes = input; self
+    }
+    /// <p>The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_supported_boot_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BootModeType>> {
+        &self.supported_boot_modes
     }
     /// Consumes the builder and constructs a [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
     pub fn build(self) -> crate::types::InstanceTypeInfo {
         crate::types::InstanceTypeInfo {
-            instance_type: self.instance_type,
-            current_generation: self.current_generation,
-            free_tier_eligible: self.free_tier_eligible,
-            supported_usage_classes: self.supported_usage_classes,
-            supported_root_device_types: self.supported_root_device_types,
-            supported_virtualization_types: self.supported_virtualization_types,
-            bare_metal: self.bare_metal,
-            hypervisor: self.hypervisor,
-            processor_info: self.processor_info,
-            v_cpu_info: self.v_cpu_info,
-            memory_info: self.memory_info,
-            instance_storage_supported: self.instance_storage_supported,
-            instance_storage_info: self.instance_storage_info,
-            ebs_info: self.ebs_info,
-            network_info: self.network_info,
-            gpu_info: self.gpu_info,
-            fpga_info: self.fpga_info,
-            placement_group_info: self.placement_group_info,
-            inference_accelerator_info: self.inference_accelerator_info,
-            hibernation_supported: self.hibernation_supported,
-            burstable_performance_supported: self.burstable_performance_supported,
-            dedicated_hosts_supported: self.dedicated_hosts_supported,
-            auto_recovery_supported: self.auto_recovery_supported,
-            supported_boot_modes: self.supported_boot_modes,
+            instance_type: self.instance_type
+            ,
+            current_generation: self.current_generation
+            ,
+            free_tier_eligible: self.free_tier_eligible
+            ,
+            supported_usage_classes: self.supported_usage_classes
+            ,
+            supported_root_device_types: self.supported_root_device_types
+            ,
+            supported_virtualization_types: self.supported_virtualization_types
+            ,
+            bare_metal: self.bare_metal
+            ,
+            hypervisor: self.hypervisor
+            ,
+            processor_info: self.processor_info
+            ,
+            v_cpu_info: self.v_cpu_info
+            ,
+            memory_info: self.memory_info
+            ,
+            instance_storage_supported: self.instance_storage_supported
+            ,
+            instance_storage_info: self.instance_storage_info
+            ,
+            ebs_info: self.ebs_info
+            ,
+            network_info: self.network_info
+            ,
+            gpu_info: self.gpu_info
+            ,
+            fpga_info: self.fpga_info
+            ,
+            placement_group_info: self.placement_group_info
+            ,
+            inference_accelerator_info: self.inference_accelerator_info
+            ,
+            hibernation_supported: self.hibernation_supported
+            ,
+            burstable_performance_supported: self.burstable_performance_supported
+            ,
+            dedicated_hosts_supported: self.dedicated_hosts_supported
+            ,
+            auto_recovery_supported: self.auto_recovery_supported
+            ,
+            supported_boot_modes: self.supported_boot_modes
+            ,
         }
     }
 }
+

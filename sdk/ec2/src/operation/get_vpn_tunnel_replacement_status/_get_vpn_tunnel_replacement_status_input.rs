@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVpnTunnelReplacementStatusInput {
+pub struct GetVpnTunnelReplacementStatusInput  {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
     #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetVpnTunnelReplacementStatusInput {
 }
 impl GetVpnTunnelReplacementStatusInput {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpn_connection_id.as_deref()
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_tunnel_outside_ip_address(&self) -> ::std::option::Option<& str> {
         self.vpn_tunnel_outside_ip_address.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,16 +29,14 @@ impl GetVpnTunnelReplacementStatusInput {
 }
 impl GetVpnTunnelReplacementStatusInput {
     /// Creates a new builder-style object to manufacture [`GetVpnTunnelReplacementStatusInput`](crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusInput).
-    pub fn builder() -> crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusInputBuilder {
         crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVpnTunnelReplacementStatusInput`](crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVpnTunnelReplacementStatusInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_tunnel_outside_ip_address: ::std::option::Option<::std::string::String>,
@@ -46,36 +44,30 @@ pub struct GetVpnTunnelReplacementStatusInputBuilder {
 }
 impl GetVpnTunnelReplacementStatusInputBuilder {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpn_connection_id = input;
-        self
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpn_connection_id = input; self
+    }
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_id
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_tunnel_outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_tunnel_outside_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_vpn_tunnel_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpn_tunnel_outside_ip_address = input;
-        self
+    pub fn set_vpn_tunnel_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpn_tunnel_outside_ip_address = input; self
+    }
+    /// <p>The external IP address of the VPN tunnel.</p>
+    pub fn get_vpn_tunnel_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_tunnel_outside_ip_address
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -84,16 +76,14 @@ impl GetVpnTunnelReplacementStatusInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetVpnTunnelReplacementStatusInput`](crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusInput {
                 vpn_connection_id: self.vpn_connection_id
@@ -106,3 +96,4 @@ impl GetVpnTunnelReplacementStatusInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DelegationSet {
+pub struct DelegationSet  {
     /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct DelegationSet {
 }
 impl DelegationSet {
     /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
+    pub fn caller_reference(&self) -> ::std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub fn name_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn name_servers(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.name_servers.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl DelegationSet {
 
 /// A builder for [`DelegationSet`](crate::types::DelegationSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DelegationSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
@@ -53,24 +51,24 @@ impl DelegationSetBuilder {
     }
     /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.caller_reference = input;
-        self
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.caller_reference = input; self
+    }
+    /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
     }
     /// Appends an item to `name_servers`.
     ///
@@ -79,24 +77,28 @@ impl DelegationSetBuilder {
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
     pub fn name_servers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.name_servers.unwrap_or_default();
-        v.push(input.into());
-        self.name_servers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.name_servers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub fn set_name_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.name_servers = input;
-        self
+    pub fn set_name_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.name_servers = input; self
+    }
+    /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
+    pub fn get_name_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.name_servers
     }
     /// Consumes the builder and constructs a [`DelegationSet`](crate::types::DelegationSet).
     pub fn build(self) -> crate::types::DelegationSet {
         crate::types::DelegationSet {
-            id: self.id,
-            caller_reference: self.caller_reference,
-            name_servers: self.name_servers,
+            id: self.id
+            ,
+            caller_reference: self.caller_reference
+            ,
+            name_servers: self.name_servers
+            ,
         }
     }
 }
+

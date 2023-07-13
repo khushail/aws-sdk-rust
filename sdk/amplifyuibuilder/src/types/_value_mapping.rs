@@ -3,7 +3,7 @@
 /// <p>Associates a complex object with a display value. Use <code>ValueMapping</code> to store how to represent complex objects when they are displayed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValueMapping {
+pub struct ValueMapping  {
     /// <p>The value to display for the complex object.</p>
     #[doc(hidden)]
     pub display_value: ::std::option::Option<crate::types::FormInputValueProperty>,
@@ -13,11 +13,11 @@ pub struct ValueMapping {
 }
 impl ValueMapping {
     /// <p>The value to display for the complex object.</p>
-    pub fn display_value(&self) -> ::std::option::Option<&crate::types::FormInputValueProperty> {
+    pub fn display_value(&self) -> ::std::option::Option<& crate::types::FormInputValueProperty> {
         self.display_value.as_ref()
     }
     /// <p>The complex object.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::FormInputValueProperty> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::FormInputValueProperty> {
         self.value.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl ValueMapping {
 
 /// A builder for [`ValueMapping`](crate::types::ValueMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValueMappingBuilder {
     pub(crate) display_value: ::std::option::Option<crate::types::FormInputValueProperty>,
     pub(crate) value: ::std::option::Option<crate::types::FormInputValueProperty>,
@@ -44,12 +42,12 @@ impl ValueMappingBuilder {
         self
     }
     /// <p>The value to display for the complex object.</p>
-    pub fn set_display_value(
-        mut self,
-        input: ::std::option::Option<crate::types::FormInputValueProperty>,
-    ) -> Self {
-        self.display_value = input;
-        self
+    pub fn set_display_value(mut self, input: ::std::option::Option<crate::types::FormInputValueProperty>) -> Self {
+        self.display_value = input; self
+    }
+    /// <p>The value to display for the complex object.</p>
+    pub fn get_display_value(&self) -> &::std::option::Option<crate::types::FormInputValueProperty> {
+        &self.display_value
     }
     /// <p>The complex object.</p>
     pub fn value(mut self, input: crate::types::FormInputValueProperty) -> Self {
@@ -57,18 +55,21 @@ impl ValueMappingBuilder {
         self
     }
     /// <p>The complex object.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::FormInputValueProperty>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::FormInputValueProperty>) -> Self {
+        self.value = input; self
+    }
+    /// <p>The complex object.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::FormInputValueProperty> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ValueMapping`](crate::types::ValueMapping).
     pub fn build(self) -> crate::types::ValueMapping {
         crate::types::ValueMapping {
-            display_value: self.display_value,
-            value: self.value,
+            display_value: self.display_value
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

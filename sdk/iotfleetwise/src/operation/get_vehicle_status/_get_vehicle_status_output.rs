@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVehicleStatusOutput {
+pub struct GetVehicleStatusOutput  {
     /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
     #[doc(hidden)]
     pub campaigns: ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>>,
@@ -13,32 +13,29 @@ pub struct GetVehicleStatusOutput {
 }
 impl GetVehicleStatusOutput {
     /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
-    pub fn campaigns(&self) -> ::std::option::Option<&[crate::types::VehicleStatus]> {
+    pub fn campaigns(&self) -> ::std::option::Option<& [crate::types::VehicleStatus]> {
         self.campaigns.as_deref()
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetVehicleStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetVehicleStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetVehicleStatusOutput`](crate::operation::get_vehicle_status::GetVehicleStatusOutput).
-    pub fn builder() -> crate::operation::get_vehicle_status::builders::GetVehicleStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vehicle_status::builders::GetVehicleStatusOutputBuilder {
         crate::operation::get_vehicle_status::builders::GetVehicleStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVehicleStatusOutput`](crate::operation::get_vehicle_status::GetVehicleStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVehicleStatusOutputBuilder {
     pub(crate) campaigns: ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,17 @@ impl GetVehicleStatusOutputBuilder {
     /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
     pub fn campaigns(mut self, input: crate::types::VehicleStatus) -> Self {
         let mut v = self.campaigns.unwrap_or_default();
-        v.push(input);
-        self.campaigns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.campaigns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
-    pub fn set_campaigns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>>,
-    ) -> Self {
-        self.campaigns = input;
-        self
+    pub fn set_campaigns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>>) -> Self {
+        self.campaigns = input; self
+    }
+    /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
+    pub fn get_campaigns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>> {
+        &self.campaigns
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +68,30 @@ impl GetVehicleStatusOutputBuilder {
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetVehicleStatusOutput`](crate::operation::get_vehicle_status::GetVehicleStatusOutput).
     pub fn build(self) -> crate::operation::get_vehicle_status::GetVehicleStatusOutput {
         crate::operation::get_vehicle_status::GetVehicleStatusOutput {
-            campaigns: self.campaigns,
-            next_token: self.next_token,
+            campaigns: self.campaigns
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

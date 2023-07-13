@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InviteUsersInput {
+pub struct InviteUsersInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct InviteUsersInput {
 }
 impl InviteUsersInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The user email addresses to which to send the email invitation.</p>
-    pub fn user_email_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn user_email_list(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.user_email_list.as_deref()
     }
     /// <p>The user type.</p>
-    pub fn user_type(&self) -> ::std::option::Option<&crate::types::UserType> {
+    pub fn user_type(&self) -> ::std::option::Option<& crate::types::UserType> {
         self.user_type.as_ref()
     }
 }
@@ -36,9 +36,7 @@ impl InviteUsersInput {
 
 /// A builder for [`InviteUsersInput`](crate::operation::invite_users::InviteUsersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InviteUsersInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_email_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,30 +50,30 @@ impl InviteUsersInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Appends an item to `user_email_list`.
     ///
     /// To override the contents of this collection use [`set_user_email_list`](Self::set_user_email_list).
     ///
     /// <p>The user email addresses to which to send the email invitation.</p>
-    pub fn user_email_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_email_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_email_list.unwrap_or_default();
-        v.push(input.into());
-        self.user_email_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_email_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user email addresses to which to send the email invitation.</p>
-    pub fn set_user_email_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.user_email_list = input;
-        self
+    pub fn set_user_email_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.user_email_list = input; self
+    }
+    /// <p>The user email addresses to which to send the email invitation.</p>
+    pub fn get_user_email_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_email_list
     }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
@@ -84,20 +82,24 @@ impl InviteUsersInputBuilder {
     }
     /// <p>The user type.</p>
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
+    }
+    /// <p>The user type.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.user_type
     }
     /// Consumes the builder and constructs a [`InviteUsersInput`](crate::operation::invite_users::InviteUsersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::invite_users::InviteUsersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::invite_users::InviteUsersInput {
-            account_id: self.account_id,
-            user_email_list: self.user_email_list,
-            user_type: self.user_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::invite_users::InviteUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::invite_users::InviteUsersInput {
+                account_id: self.account_id
+                ,
+                user_email_list: self.user_email_list
+                ,
+                user_type: self.user_type
+                ,
+            }
+        )
     }
 }
+

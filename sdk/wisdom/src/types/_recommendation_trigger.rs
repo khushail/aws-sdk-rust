@@ -3,17 +3,17 @@
 /// <p>A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationTrigger {
+pub struct RecommendationTrigger  {
     /// <p>The identifier of the recommendation trigger.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of recommendation trigger.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RecommendationTriggerType>,
-    /// <p>The source of the recommendation trigger.</p>
-    /// <ul>
-    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
-    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+    /// <p>The source of the recommendation trigger.</p> 
+    /// <ul> 
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> 
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::RecommendationSourceType>,
@@ -26,27 +26,27 @@ pub struct RecommendationTrigger {
 }
 impl RecommendationTrigger {
     /// <p>The identifier of the recommendation trigger.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of recommendation trigger.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecommendationTriggerType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RecommendationTriggerType> {
         self.r#type.as_ref()
     }
-    /// <p>The source of the recommendation trigger.</p>
-    /// <ul>
-    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
-    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+    /// <p>The source of the recommendation trigger.</p> 
+    /// <ul> 
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> 
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> 
     /// </ul>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::RecommendationSourceType> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::RecommendationSourceType> {
         self.source.as_ref()
     }
     /// <p>A union type containing information related to the trigger.</p>
-    pub fn data(&self) -> ::std::option::Option<&crate::types::RecommendationTriggerData> {
+    pub fn data(&self) -> ::std::option::Option<& crate::types::RecommendationTriggerData> {
         self.data.as_ref()
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn recommendation_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.recommendation_ids.as_deref()
     }
 }
@@ -59,9 +59,7 @@ impl RecommendationTrigger {
 
 /// A builder for [`RecommendationTrigger`](crate::types::RecommendationTrigger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationTriggerBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RecommendationTriggerType>,
@@ -77,8 +75,11 @@ impl RecommendationTriggerBuilder {
     }
     /// <p>The identifier of the recommendation trigger.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the recommendation trigger.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The type of recommendation trigger.</p>
     pub fn r#type(mut self, input: crate::types::RecommendationTriggerType) -> Self {
@@ -86,33 +87,37 @@ impl RecommendationTriggerBuilder {
         self
     }
     /// <p>The type of recommendation trigger.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationTriggerType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecommendationTriggerType>) -> Self {
+        self.r#type = input; self
     }
-    /// <p>The source of the recommendation trigger.</p>
-    /// <ul>
-    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
-    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+    /// <p>The type of recommendation trigger.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationTriggerType> {
+        &self.r#type
+    }
+    /// <p>The source of the recommendation trigger.</p> 
+    /// <ul> 
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> 
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> 
     /// </ul>
     pub fn source(mut self, input: crate::types::RecommendationSourceType) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The source of the recommendation trigger.</p>
-    /// <ul>
-    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
-    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+    /// <p>The source of the recommendation trigger.</p> 
+    /// <ul> 
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> 
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> 
     /// </ul>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSourceType>,
-    ) -> Self {
-        self.source = input;
-        self
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::RecommendationSourceType>) -> Self {
+        self.source = input; self
+    }
+    /// <p>The source of the recommendation trigger.</p> 
+    /// <ul> 
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> 
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> 
+    /// </ul>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::RecommendationSourceType> {
+        &self.source
     }
     /// <p>A union type containing information related to the trigger.</p>
     pub fn data(mut self, input: crate::types::RecommendationTriggerData) -> Self {
@@ -120,43 +125,46 @@ impl RecommendationTriggerBuilder {
         self
     }
     /// <p>A union type containing information related to the trigger.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationTriggerData>,
-    ) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: ::std::option::Option<crate::types::RecommendationTriggerData>) -> Self {
+        self.data = input; self
+    }
+    /// <p>A union type containing information related to the trigger.</p>
+    pub fn get_data(&self) -> &::std::option::Option<crate::types::RecommendationTriggerData> {
+        &self.data
     }
     /// Appends an item to `recommendation_ids`.
     ///
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
     ///
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.recommendation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recommendation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.recommendation_ids = input;
-        self
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.recommendation_ids = input; self
+    }
+    /// <p>The identifiers of the recommendations.</p>
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recommendation_ids
     }
     /// Consumes the builder and constructs a [`RecommendationTrigger`](crate::types::RecommendationTrigger).
     pub fn build(self) -> crate::types::RecommendationTrigger {
         crate::types::RecommendationTrigger {
-            id: self.id,
-            r#type: self.r#type,
-            source: self.source,
-            data: self.data,
-            recommendation_ids: self.recommendation_ids,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            source: self.source
+            ,
+            data: self.data
+            ,
+            recommendation_ids: self.recommendation_ids
+            ,
         }
     }
 }
+

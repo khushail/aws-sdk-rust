@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartEngagementInput {
+pub struct StartEngagementInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
     #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
@@ -30,35 +30,35 @@ pub struct StartEngagementInput {
 }
 impl StartEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> ::std::option::Option<&str> {
+    pub fn sender(&self) -> ::std::option::Option<& str> {
         self.sender.as_deref()
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(&self) -> ::std::option::Option<&str> {
+    pub fn public_subject(&self) -> ::std::option::Option<& str> {
         self.public_subject.as_deref()
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(&self) -> ::std::option::Option<&str> {
+    pub fn public_content(&self) -> ::std::option::Option<& str> {
         self.public_content.as_deref()
     }
     /// <p>The ARN of the incident that the engagement is part of.</p>
-    pub fn incident_id(&self) -> ::std::option::Option<&str> {
+    pub fn incident_id(&self) -> ::std::option::Option<& str> {
         self.incident_id.as_deref()
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -71,9 +71,7 @@ impl StartEngagementInput {
 
 /// A builder for [`StartEngagementInput`](crate::operation::start_engagement::StartEngagementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEngagementInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) sender: ::std::option::Option<::std::string::String>,
@@ -92,8 +90,11 @@ impl StartEngagementInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
     }
     /// <p>The user that started the engagement.</p>
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,8 +103,11 @@ impl StartEngagementInputBuilder {
     }
     /// <p>The user that started the engagement.</p>
     pub fn set_sender(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender = input;
-        self
+        self.sender = input; self
+    }
+    /// <p>The user that started the engagement.</p>
+    pub fn get_sender(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,8 +116,11 @@ impl StartEngagementInputBuilder {
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
+    }
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,40 +129,37 @@ impl StartEngagementInputBuilder {
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
+    }
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_subject(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.public_subject = input;
-        self
+    pub fn set_public_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_subject = input; self
+    }
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    pub fn get_public_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_subject
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.public_content = input;
-        self
+    pub fn set_public_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_content = input; self
+    }
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    pub fn get_public_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_content
     }
     /// <p>The ARN of the incident that the engagement is part of.</p>
     pub fn incident_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,41 +168,47 @@ impl StartEngagementInputBuilder {
     }
     /// <p>The ARN of the incident that the engagement is part of.</p>
     pub fn set_incident_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incident_id = input;
-        self
+        self.incident_id = input; self
+    }
+    /// <p>The ARN of the incident that the engagement is part of.</p>
+    pub fn get_incident_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.incident_id
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.idempotency_token = input;
-        self
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.idempotency_token = input; self
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`StartEngagementInput`](crate::operation::start_engagement::StartEngagementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_engagement::StartEngagementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_engagement::StartEngagementInput {
-            contact_id: self.contact_id,
-            sender: self.sender,
-            subject: self.subject,
-            content: self.content,
-            public_subject: self.public_subject,
-            public_content: self.public_content,
-            incident_id: self.incident_id,
-            idempotency_token: self.idempotency_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_engagement::StartEngagementInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_engagement::StartEngagementInput {
+                contact_id: self.contact_id
+                ,
+                sender: self.sender
+                ,
+                subject: self.subject
+                ,
+                content: self.content
+                ,
+                public_subject: self.public_subject
+                ,
+                public_content: self.public_content
+                ,
+                incident_id: self.incident_id
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
+        )
     }
 }
+

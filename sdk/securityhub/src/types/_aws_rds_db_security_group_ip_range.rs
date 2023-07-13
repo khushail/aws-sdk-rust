@@ -3,7 +3,7 @@
 /// <p>IP range information for an RDS DB security group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbSecurityGroupIpRange {
+pub struct AwsRdsDbSecurityGroupIpRange  {
     /// <p>Specifies the IP range.</p>
     #[doc(hidden)]
     pub cidr_ip: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsRdsDbSecurityGroupIpRange {
 }
 impl AwsRdsDbSecurityGroupIpRange {
     /// <p>Specifies the IP range.</p>
-    pub fn cidr_ip(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_ip(&self) -> ::std::option::Option<& str> {
         self.cidr_ip.as_deref()
     }
     /// <p>Specifies the status of the IP range.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AwsRdsDbSecurityGroupIpRange {
 
 /// A builder for [`AwsRdsDbSecurityGroupIpRange`](crate::types::AwsRdsDbSecurityGroupIpRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbSecurityGroupIpRangeBuilder {
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AwsRdsDbSecurityGroupIpRangeBuilder {
     }
     /// <p>Specifies the IP range.</p>
     pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_ip = input;
-        self
+        self.cidr_ip = input; self
+    }
+    /// <p>Specifies the IP range.</p>
+    pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ip
     }
     /// <p>Specifies the status of the IP range.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl AwsRdsDbSecurityGroupIpRangeBuilder {
     }
     /// <p>Specifies the status of the IP range.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Specifies the status of the IP range.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupIpRange`](crate::types::AwsRdsDbSecurityGroupIpRange).
     pub fn build(self) -> crate::types::AwsRdsDbSecurityGroupIpRange {
         crate::types::AwsRdsDbSecurityGroupIpRange {
-            cidr_ip: self.cidr_ip,
-            status: self.status,
+            cidr_ip: self.cidr_ip
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

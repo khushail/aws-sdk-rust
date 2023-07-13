@@ -3,115 +3,106 @@ pub use crate::operation::list_servers::_list_servers_output::ListServersOutputB
 
 pub use crate::operation::list_servers::_list_servers_input::ListServersInputBuilder;
 
+impl ListServersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_servers::ListServersOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_servers::ListServersError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_servers();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListServers`.
-///
+/// 
 /// <p> Returns a list of all the servers. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_servers::builders::ListServersInputBuilder,
+                    inner: crate::operation::list_servers::builders::ListServersInputBuilder,
 }
-impl ListServersFluentBuilder {
+impl ListServersFluentBuilder  {
     /// Creates a new `ListServers`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_servers::ListServers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListServers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_servers::builders::ListServersInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_servers::ListServersOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_servers::ListServers, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_servers::ListServersOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_servers::ListServersOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_servers::ListServers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_servers::ListServersOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_servers::ListServers, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_servers::paginator::ListServersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_servers::paginator::ListServersPaginator {
-        crate::operation::list_servers::paginator::ListServersPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_servers::paginator::ListServersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_servers::paginator::ListServersPaginator {
+                                crate::operation::list_servers::paginator::ListServersPaginator::new(self.handle, self.inner)
+                            }
     /// <p> Criteria for filtering servers. </p>
     pub fn server_criteria(mut self, input: crate::types::ServerCriteria) -> Self {
         self.inner = self.inner.server_criteria(input);
         self
     }
     /// <p> Criteria for filtering servers. </p>
-    pub fn set_server_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerCriteria>,
-    ) -> Self {
+    pub fn set_server_criteria(mut self, input: ::std::option::Option<crate::types::ServerCriteria>) -> Self {
         self.inner = self.inner.set_server_criteria(input);
         self
+    }
+    /// <p> Criteria for filtering servers. </p>
+    pub fn get_server_criteria(&self) -> &::std::option::Option<crate::types::ServerCriteria> {
+        self.inner.get_server_criteria()
     }
     /// <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
     pub fn filter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +114,10 @@ impl ListServersFluentBuilder {
         self.inner = self.inner.set_filter_value(input);
         self
     }
+    /// <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
+    pub fn get_filter_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_value()
+    }
     /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
     pub fn sort(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort(input);
@@ -132,6 +127,10 @@ impl ListServersFluentBuilder {
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
+    }
+    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort()
     }
     /// Appends an item to `groupIdFilter`.
     ///
@@ -143,12 +142,13 @@ impl ListServersFluentBuilder {
         self
     }
     /// <p> Specifies the group ID to filter on. </p>
-    pub fn set_group_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.inner = self.inner.set_group_id_filter(input);
         self
+    }
+    /// <p> Specifies the group ID to filter on. </p>
+    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+        self.inner.get_group_id_filter()
     }
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +160,10 @@ impl ListServersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -170,4 +174,9 @@ impl ListServersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
 }
+

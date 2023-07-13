@@ -17,6 +17,8 @@ pub use crate::types::_model_output_configuration::ModelOutputConfigurationBuild
 
 pub use crate::types::_model_input_configuration::ModelInputConfigurationBuilder;
 
+pub use crate::types::_event_orchestration::EventOrchestrationBuilder;
+
 pub use crate::types::_event_prediction_summary::EventPredictionSummaryBuilder;
 
 pub use crate::types::_prediction_time_range::PredictionTimeRangeBuilder;
@@ -136,3 +138,4 @@ pub use crate::types::_batch_get_variable_error::BatchGetVariableErrorBuilder;
 pub use crate::types::_batch_create_variable_error::BatchCreateVariableErrorBuilder;
 
 pub use crate::types::_variable_entry::VariableEntryBuilder;
+

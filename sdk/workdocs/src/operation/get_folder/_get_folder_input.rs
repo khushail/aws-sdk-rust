@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetFolderInput {
+pub struct GetFolderInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetFolderInput {
 }
 impl GetFolderInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>Set to TRUE to include custom metadata in the response.</p>
@@ -27,7 +27,7 @@ impl GetFolderInput {
         self.include_custom_metadata
     }
 }
-impl ::std::fmt::Debug for GetFolderInput {
+impl  ::std::fmt::Debug for GetFolderInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetFolderInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -53,20 +53,17 @@ pub struct GetFolderInputBuilder {
 }
 impl GetFolderInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.authentication_token = input;
-        self
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.authentication_token = input; self
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
     }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,8 +72,11 @@ impl GetFolderInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
     }
     /// <p>Set to TRUE to include custom metadata in the response.</p>
     pub fn include_custom_metadata(mut self, input: bool) -> Self {
@@ -85,21 +85,24 @@ impl GetFolderInputBuilder {
     }
     /// <p>Set to TRUE to include custom metadata in the response.</p>
     pub fn set_include_custom_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_custom_metadata = input;
-        self
+        self.include_custom_metadata = input; self
+    }
+    /// <p>Set to TRUE to include custom metadata in the response.</p>
+    pub fn get_include_custom_metadata(&self) -> &::std::option::Option<bool> {
+        &self.include_custom_metadata
     }
     /// Consumes the builder and constructs a [`GetFolderInput`](crate::operation::get_folder::GetFolderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_folder::GetFolderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_folder::GetFolderInput {
-            authentication_token: self.authentication_token,
-            folder_id: self.folder_id,
-            include_custom_metadata: self.include_custom_metadata,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_folder::GetFolderInput {
+                authentication_token: self.authentication_token
+                ,
+                folder_id: self.folder_id
+                ,
+                include_custom_metadata: self.include_custom_metadata
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetFolderInputBuilder {
@@ -111,3 +114,4 @@ impl ::std::fmt::Debug for GetFolderInputBuilder {
         formatter.finish()
     }
 }
+

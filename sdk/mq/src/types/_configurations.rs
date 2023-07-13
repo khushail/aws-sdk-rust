@@ -3,7 +3,7 @@
 /// <p>Broker configuration information</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Configurations {
+pub struct Configurations  {
     /// <p>The broker's current configuration.</p>
     #[doc(hidden)]
     pub current: ::std::option::Option<crate::types::ConfigurationId>,
@@ -16,15 +16,15 @@ pub struct Configurations {
 }
 impl Configurations {
     /// <p>The broker's current configuration.</p>
-    pub fn current(&self) -> ::std::option::Option<&crate::types::ConfigurationId> {
+    pub fn current(&self) -> ::std::option::Option<& crate::types::ConfigurationId> {
         self.current.as_ref()
     }
     /// <p>The history of configurations applied to the broker.</p>
-    pub fn history(&self) -> ::std::option::Option<&[crate::types::ConfigurationId]> {
+    pub fn history(&self) -> ::std::option::Option<& [crate::types::ConfigurationId]> {
         self.history.as_deref()
     }
     /// <p>The broker's pending configuration.</p>
-    pub fn pending(&self) -> ::std::option::Option<&crate::types::ConfigurationId> {
+    pub fn pending(&self) -> ::std::option::Option<& crate::types::ConfigurationId> {
         self.pending.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl Configurations {
 
 /// A builder for [`Configurations`](crate::types::Configurations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationsBuilder {
     pub(crate) current: ::std::option::Option<crate::types::ConfigurationId>,
     pub(crate) history: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationId>>,
@@ -52,12 +50,12 @@ impl ConfigurationsBuilder {
         self
     }
     /// <p>The broker's current configuration.</p>
-    pub fn set_current(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationId>,
-    ) -> Self {
-        self.current = input;
-        self
+    pub fn set_current(mut self, input: ::std::option::Option<crate::types::ConfigurationId>) -> Self {
+        self.current = input; self
+    }
+    /// <p>The broker's current configuration.</p>
+    pub fn get_current(&self) -> &::std::option::Option<crate::types::ConfigurationId> {
+        &self.current
     }
     /// Appends an item to `history`.
     ///
@@ -66,17 +64,17 @@ impl ConfigurationsBuilder {
     /// <p>The history of configurations applied to the broker.</p>
     pub fn history(mut self, input: crate::types::ConfigurationId) -> Self {
         let mut v = self.history.unwrap_or_default();
-        v.push(input);
-        self.history = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.history = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The history of configurations applied to the broker.</p>
-    pub fn set_history(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationId>>,
-    ) -> Self {
-        self.history = input;
-        self
+    pub fn set_history(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationId>>) -> Self {
+        self.history = input; self
+    }
+    /// <p>The history of configurations applied to the broker.</p>
+    pub fn get_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationId>> {
+        &self.history
     }
     /// <p>The broker's pending configuration.</p>
     pub fn pending(mut self, input: crate::types::ConfigurationId) -> Self {
@@ -84,19 +82,23 @@ impl ConfigurationsBuilder {
         self
     }
     /// <p>The broker's pending configuration.</p>
-    pub fn set_pending(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationId>,
-    ) -> Self {
-        self.pending = input;
-        self
+    pub fn set_pending(mut self, input: ::std::option::Option<crate::types::ConfigurationId>) -> Self {
+        self.pending = input; self
+    }
+    /// <p>The broker's pending configuration.</p>
+    pub fn get_pending(&self) -> &::std::option::Option<crate::types::ConfigurationId> {
+        &self.pending
     }
     /// Consumes the builder and constructs a [`Configurations`](crate::types::Configurations).
     pub fn build(self) -> crate::types::Configurations {
         crate::types::Configurations {
-            current: self.current,
-            history: self.history,
-            pending: self.pending,
+            current: self.current
+            ,
+            history: self.history
+            ,
+            pending: self.pending
+            ,
         }
     }
 }
+

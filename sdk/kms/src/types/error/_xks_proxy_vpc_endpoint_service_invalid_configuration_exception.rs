@@ -3,7 +3,7 @@
 /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review the requirements</a> for Amazon VPC endpoint service connectivity for an external key store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct XksProxyVpcEndpointServiceInvalidConfigurationException {
+pub struct XksProxyVpcEndpointServiceInvalidConfigurationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,13 @@ pub struct XksProxyVpcEndpointServiceInvalidConfigurationException {
 }
 impl XksProxyVpcEndpointServiceInvalidConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for XksProxyVpcEndpointServiceInvalidConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "XksProxyVpcEndpointServiceInvalidConfigurationException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,35 +25,25 @@ impl ::std::fmt::Display for XksProxyVpcEndpointServiceInvalidConfigurationExcep
     }
 }
 impl ::std::error::Error for XksProxyVpcEndpointServiceInvalidConfigurationException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for XksProxyVpcEndpointServiceInvalidConfigurationException
-{
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for XksProxyVpcEndpointServiceInvalidConfigurationException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl XksProxyVpcEndpointServiceInvalidConfigurationException {
     /// Creates a new builder-style object to manufacture [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
-    pub fn builder(
-    ) -> crate::types::error::builders::XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder {
         crate::types::error::builders::XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder::default()
     }
 }
 
 /// A builder for [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -68,30 +56,30 @@ impl XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
-    pub fn build(
-        self,
-    ) -> crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
+    pub fn build(self) -> crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
         crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

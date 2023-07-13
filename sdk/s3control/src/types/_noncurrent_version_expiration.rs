@@ -3,7 +3,7 @@
 /// <p>The container of the noncurrent version expiration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoncurrentVersionExpiration {
+pub struct NoncurrentVersionExpiration  {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub noncurrent_days: i32,
@@ -30,9 +30,7 @@ impl NoncurrentVersionExpiration {
 
 /// A builder for [`NoncurrentVersionExpiration`](crate::types::NoncurrentVersionExpiration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoncurrentVersionExpirationBuilder {
     pub(crate) noncurrent_days: ::std::option::Option<i32>,
     pub(crate) newer_noncurrent_versions: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl NoncurrentVersionExpirationBuilder {
     }
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_noncurrent_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.noncurrent_days = input;
-        self
+        self.noncurrent_days = input; self
+    }
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_noncurrent_days(&self) -> &::std::option::Option<i32> {
+        &self.noncurrent_days
     }
     /// <p>Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn newer_noncurrent_versions(mut self, input: i32) -> Self {
@@ -55,14 +56,21 @@ impl NoncurrentVersionExpirationBuilder {
     }
     /// <p>Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_newer_noncurrent_versions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.newer_noncurrent_versions = input;
-        self
+        self.newer_noncurrent_versions = input; self
+    }
+    /// <p>Specifies how many noncurrent versions S3 on Outposts will retain. If there are this many more recent noncurrent versions, S3 on Outposts will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_newer_noncurrent_versions(&self) -> &::std::option::Option<i32> {
+        &self.newer_noncurrent_versions
     }
     /// Consumes the builder and constructs a [`NoncurrentVersionExpiration`](crate::types::NoncurrentVersionExpiration).
     pub fn build(self) -> crate::types::NoncurrentVersionExpiration {
         crate::types::NoncurrentVersionExpiration {
-            noncurrent_days: self.noncurrent_days.unwrap_or_default(),
-            newer_noncurrent_versions: self.newer_noncurrent_versions,
+            noncurrent_days: self.noncurrent_days
+                .unwrap_or_default()
+            ,
+            newer_noncurrent_versions: self.newer_noncurrent_versions
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Information about an IPv4 prefix.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceIpv4Prefix {
+pub struct InstanceIpv4Prefix  {
     /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
     #[doc(hidden)]
     pub ipv4_prefix: ::std::option::Option<::std::string::String>,
 }
 impl InstanceIpv4Prefix {
     /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
-    pub fn ipv4_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn ipv4_prefix(&self) -> ::std::option::Option<& str> {
         self.ipv4_prefix.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl InstanceIpv4Prefix {
 
 /// A builder for [`InstanceIpv4Prefix`](crate::types::InstanceIpv4Prefix).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceIpv4PrefixBuilder {
     pub(crate) ipv4_prefix: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl InstanceIpv4PrefixBuilder {
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
     pub fn set_ipv4_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv4_prefix = input;
-        self
+        self.ipv4_prefix = input; self
+    }
+    /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
+    pub fn get_ipv4_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_prefix
     }
     /// Consumes the builder and constructs a [`InstanceIpv4Prefix`](crate::types::InstanceIpv4Prefix).
     pub fn build(self) -> crate::types::InstanceIpv4Prefix {
         crate::types::InstanceIpv4Prefix {
-            ipv4_prefix: self.ipv4_prefix,
+            ipv4_prefix: self.ipv4_prefix
+            ,
         }
     }
 }
+

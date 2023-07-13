@@ -3,7 +3,7 @@
 /// <p>One or more content items isn't valid.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidItemContentException {
+pub struct InvalidItemContentException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
@@ -14,21 +14,19 @@ pub struct InvalidItemContentException {
 }
 impl InvalidItemContentException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
 }
 impl InvalidItemContentException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidItemContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidItemContentException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +41,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::InvalidItemConte
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidItemContentException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidItemContentException {
     /// Creates a new builder-style object to manufacture [`InvalidItemContentException`](crate::types::error::InvalidItemContentException).
@@ -56,9 +52,7 @@ impl InvalidItemContentException {
 
 /// A builder for [`InvalidItemContentException`](crate::types::error::InvalidItemContentException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidItemContentExceptionBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -72,8 +66,11 @@ impl InvalidItemContentExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,29 +79,32 @@ impl InvalidItemContentExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidItemContentException`](crate::types::error::InvalidItemContentException).
     pub fn build(self) -> crate::types::error::InvalidItemContentException {
         crate::types::error::InvalidItemContentException {
-            type_name: self.type_name,
-            message: self.message,
+            type_name: self.type_name
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

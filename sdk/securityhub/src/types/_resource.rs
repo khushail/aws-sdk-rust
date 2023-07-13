@@ -3,8 +3,8 @@
 /// <p>A resource related to a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
-    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
+pub struct Resource  {
+    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p> 
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -22,9 +22,7 @@ pub struct Resource {
     pub resource_role: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains information about sensitive data that was detected on the resource.</p>
     #[doc(hidden)]
     pub data_classification: ::std::option::Option<crate::types::DataClassificationDetails>,
@@ -33,43 +31,37 @@ pub struct Resource {
     pub details: ::std::option::Option<crate::types::ResourceDetails>,
 }
 impl Resource {
-    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
+    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p> 
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The canonical identifier for the given resource type.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
-    pub fn partition(&self) -> ::std::option::Option<&crate::types::Partition> {
+    pub fn partition(&self) -> ::std::option::Option<& crate::types::Partition> {
         self.partition.as_ref()
     }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
-    pub fn resource_role(&self) -> ::std::option::Option<&str> {
+    pub fn resource_role(&self) -> ::std::option::Option<& str> {
         self.resource_role.as_deref()
     }
     /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Contains information about sensitive data that was detected on the resource.</p>
-    pub fn data_classification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataClassificationDetails> {
+    pub fn data_classification(&self) -> ::std::option::Option<& crate::types::DataClassificationDetails> {
         self.data_classification.as_ref()
     }
     /// <p>Additional details about the resource related to a finding.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::ResourceDetails> {
         self.details.as_ref()
     }
 }
@@ -82,33 +74,33 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) partition: ::std::option::Option<crate::types::Partition>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) resource_role: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) data_classification: ::std::option::Option<crate::types::DataClassificationDetails>,
     pub(crate) details: ::std::option::Option<crate::types::ResourceDetails>,
 }
 impl ResourceBuilder {
-    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
+    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p> 
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
+    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p> 
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p> 
+    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The canonical identifier for the given resource type.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,8 +109,11 @@ impl ResourceBuilder {
     }
     /// <p>The canonical identifier for the given resource type.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The canonical identifier for the given resource type.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
     pub fn partition(mut self, input: crate::types::Partition) -> Self {
@@ -127,8 +122,11 @@ impl ResourceBuilder {
     }
     /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
     pub fn set_partition(mut self, input: ::std::option::Option<crate::types::Partition>) -> Self {
-        self.partition = input;
-        self
+        self.partition = input; self
+    }
+    /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
+    pub fn get_partition(&self) -> &::std::option::Option<crate::types::Partition> {
+        &self.partition
     }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,49 +135,43 @@ impl ResourceBuilder {
     }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
+    }
+    /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
-    pub fn resource_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
-    pub fn set_resource_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_role = input;
-        self
+    pub fn set_resource_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_role = input; self
+    }
+    /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
+    pub fn get_resource_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_role
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// <p>Contains information about sensitive data that was detected on the resource.</p>
     pub fn data_classification(mut self, input: crate::types::DataClassificationDetails) -> Self {
@@ -187,12 +179,12 @@ impl ResourceBuilder {
         self
     }
     /// <p>Contains information about sensitive data that was detected on the resource.</p>
-    pub fn set_data_classification(
-        mut self,
-        input: ::std::option::Option<crate::types::DataClassificationDetails>,
-    ) -> Self {
-        self.data_classification = input;
-        self
+    pub fn set_data_classification(mut self, input: ::std::option::Option<crate::types::DataClassificationDetails>) -> Self {
+        self.data_classification = input; self
+    }
+    /// <p>Contains information about sensitive data that was detected on the resource.</p>
+    pub fn get_data_classification(&self) -> &::std::option::Option<crate::types::DataClassificationDetails> {
+        &self.data_classification
     }
     /// <p>Additional details about the resource related to a finding.</p>
     pub fn details(mut self, input: crate::types::ResourceDetails) -> Self {
@@ -200,24 +192,33 @@ impl ResourceBuilder {
         self
     }
     /// <p>Additional details about the resource related to a finding.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDetails>,
-    ) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
+        self.details = input; self
+    }
+    /// <p>Additional details about the resource related to a finding.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            r#type: self.r#type,
-            id: self.id,
-            partition: self.partition,
-            region: self.region,
-            resource_role: self.resource_role,
-            tags: self.tags,
-            data_classification: self.data_classification,
-            details: self.details,
+            r#type: self.r#type
+            ,
+            id: self.id
+            ,
+            partition: self.partition
+            ,
+            region: self.region
+            ,
+            resource_role: self.resource_role
+            ,
+            tags: self.tags
+            ,
+            data_classification: self.data_classification
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

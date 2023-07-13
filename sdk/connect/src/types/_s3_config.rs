@@ -3,7 +3,7 @@
 /// <p>Information about the Amazon Simple Storage Service (Amazon S3) storage type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Config {
+pub struct S3Config  {
     /// <p>The S3 bucket name.</p>
     #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct S3Config {
 }
 impl S3Config {
     /// <p>The S3 bucket name.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The S3 bucket prefix.</p>
-    pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_prefix(&self) -> ::std::option::Option<& str> {
         self.bucket_prefix.as_deref()
     }
     /// <p>The Amazon S3 encryption configuration.</p>
-    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> ::std::option::Option<& crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl S3Config {
 
 /// A builder for [`S3Config`](crate::types::S3Config).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ConfigBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,
@@ -53,24 +51,24 @@ impl S3ConfigBuilder {
     }
     /// <p>The S3 bucket name.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
+    }
+    /// <p>The S3 bucket name.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// <p>The S3 bucket prefix.</p>
-    pub fn bucket_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket prefix.</p>
-    pub fn set_bucket_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.bucket_prefix = input;
-        self
+    pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bucket_prefix = input; self
+    }
+    /// <p>The S3 bucket prefix.</p>
+    pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_prefix
     }
     /// <p>The Amazon S3 encryption configuration.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
@@ -78,19 +76,23 @@ impl S3ConfigBuilder {
         self
     }
     /// <p>The Amazon S3 encryption configuration.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
-        self.encryption_config = input;
-        self
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
+        self.encryption_config = input; self
+    }
+    /// <p>The Amazon S3 encryption configuration.</p>
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        &self.encryption_config
     }
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
     pub fn build(self) -> crate::types::S3Config {
         crate::types::S3Config {
-            bucket_name: self.bucket_name,
-            bucket_prefix: self.bucket_prefix,
-            encryption_config: self.encryption_config,
+            bucket_name: self.bucket_name
+            ,
+            bucket_prefix: self.bucket_prefix
+            ,
+            encryption_config: self.encryption_config
+            ,
         }
     }
 }
+

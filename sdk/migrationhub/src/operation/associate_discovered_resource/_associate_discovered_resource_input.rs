@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateDiscoveredResourceInput {
+pub struct AssociateDiscoveredResourceInput  {
     /// <p>The name of the ProgressUpdateStream.</p>
     #[doc(hidden)]
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct AssociateDiscoveredResourceInput {
 }
 impl AssociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(&self) -> ::std::option::Option<&str> {
+    pub fn progress_update_stream(&self) -> ::std::option::Option<& str> {
         self.progress_update_stream.as_deref()
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(&self) -> ::std::option::Option<&str> {
+    pub fn migration_task_name(&self) -> ::std::option::Option<& str> {
         self.migration_task_name.as_deref()
     }
     /// <p>Object representing a Resource.</p>
-    pub fn discovered_resource(&self) -> ::std::option::Option<&crate::types::DiscoveredResource> {
+    pub fn discovered_resource(&self) -> ::std::option::Option<& crate::types::DiscoveredResource> {
         self.discovered_resource.as_ref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
@@ -36,16 +36,14 @@ impl AssociateDiscoveredResourceInput {
 }
 impl AssociateDiscoveredResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateDiscoveredResourceInput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput).
-    pub fn builder() -> crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder{
+    pub fn builder() -> crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder {
         crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDiscoveredResourceInput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDiscoveredResourceInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
@@ -54,36 +52,30 @@ pub struct AssociateDiscoveredResourceInputBuilder {
 }
 impl AssociateDiscoveredResourceInputBuilder {
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.progress_update_stream = input;
-        self
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.progress_update_stream = input; self
+    }
+    /// <p>The name of the ProgressUpdateStream.</p>
+    pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.migration_task_name = input;
-        self
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.migration_task_name = input; self
+    }
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_task_name
     }
     /// <p>Object representing a Resource.</p>
     pub fn discovered_resource(mut self, input: crate::types::DiscoveredResource) -> Self {
@@ -91,12 +83,12 @@ impl AssociateDiscoveredResourceInputBuilder {
         self
     }
     /// <p>Object representing a Resource.</p>
-    pub fn set_discovered_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveredResource>,
-    ) -> Self {
-        self.discovered_resource = input;
-        self
+    pub fn set_discovered_resource(mut self, input: ::std::option::Option<crate::types::DiscoveredResource>) -> Self {
+        self.discovered_resource = input; self
+    }
+    /// <p>Object representing a Resource.</p>
+    pub fn get_discovered_resource(&self) -> &::std::option::Option<crate::types::DiscoveredResource> {
+        &self.discovered_resource
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -105,23 +97,27 @@ impl AssociateDiscoveredResourceInputBuilder {
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateDiscoveredResourceInput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-                discovered_resource: self.discovered_resource,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
+                progress_update_stream: self.progress_update_stream
+                ,
+                migration_task_name: self.migration_task_name
+                ,
+                discovered_resource: self.discovered_resource
+                ,
+                dry_run: self.dry_run
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

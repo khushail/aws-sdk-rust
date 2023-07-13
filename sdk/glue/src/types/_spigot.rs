@@ -3,7 +3,7 @@
 /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Spigot {
+pub struct Spigot  {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -22,15 +22,15 @@ pub struct Spigot {
 }
 impl Spigot {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
@@ -51,9 +51,7 @@ impl Spigot {
 
 /// A builder for [`Spigot`](crate::types::Spigot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpigotBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -69,8 +67,11 @@ impl SpigotBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `inputs`.
     ///
@@ -79,17 +80,17 @@ impl SpigotBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inputs = input; self
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,8 +99,11 @@ impl SpigotBuilder {
     }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
+    }
+    /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
     pub fn topk(mut self, input: i32) -> Self {
@@ -108,8 +112,11 @@ impl SpigotBuilder {
     }
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
     pub fn set_topk(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.topk = input;
-        self
+        self.topk = input; self
+    }
+    /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
+    pub fn get_topk(&self) -> &::std::option::Option<i32> {
+        &self.topk
     }
     /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
     pub fn prob(mut self, input: f64) -> Self {
@@ -118,17 +125,26 @@ impl SpigotBuilder {
     }
     /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
     pub fn set_prob(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.prob = input;
-        self
+        self.prob = input; self
+    }
+    /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
+    pub fn get_prob(&self) -> &::std::option::Option<f64> {
+        &self.prob
     }
     /// Consumes the builder and constructs a [`Spigot`](crate::types::Spigot).
     pub fn build(self) -> crate::types::Spigot {
         crate::types::Spigot {
-            name: self.name,
-            inputs: self.inputs,
-            path: self.path,
-            topk: self.topk,
-            prob: self.prob,
+            name: self.name
+            ,
+            inputs: self.inputs
+            ,
+            path: self.path
+            ,
+            topk: self.topk
+            ,
+            prob: self.prob
+            ,
         }
     }
 }
+

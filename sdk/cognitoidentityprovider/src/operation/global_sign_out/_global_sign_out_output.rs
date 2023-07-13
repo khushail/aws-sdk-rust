@@ -3,14 +3,14 @@
 /// <p>The response to the request to sign out all devices.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlobalSignOutOutput {
+pub struct GlobalSignOutOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for GlobalSignOutOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GlobalSignOutOutput {
     /// Creates a new builder-style object to manufacture [`GlobalSignOutOutput`](crate::operation::global_sign_out::GlobalSignOutOutput).
     pub fn builder() -> crate::operation::global_sign_out::builders::GlobalSignOutOutputBuilder {
@@ -20,22 +20,20 @@ impl GlobalSignOutOutput {
 
 /// A builder for [`GlobalSignOutOutput`](crate::operation::global_sign_out::GlobalSignOutOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlobalSignOutOutputBuilder {
     _request_id: Option<String>,
 }
 impl GlobalSignOutOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GlobalSignOutOutput`](crate::operation::global_sign_out::GlobalSignOutOutput).
     pub fn build(self) -> crate::operation::global_sign_out::GlobalSignOutOutput {
         crate::operation::global_sign_out::GlobalSignOutOutput {
@@ -43,3 +41,4 @@ impl GlobalSignOutOutputBuilder {
         }
     }
 }
+

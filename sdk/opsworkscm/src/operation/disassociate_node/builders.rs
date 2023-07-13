@@ -3,103 +3,88 @@ pub use crate::operation::disassociate_node::_disassociate_node_output::Disassoc
 
 pub use crate::operation::disassociate_node::_disassociate_node_input::DisassociateNodeInputBuilder;
 
+impl DisassociateNodeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_node::DisassociateNodeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_node::DisassociateNodeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.disassociate_node();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DisassociateNode`.
-///
-/// <p> Disassociates a node from an AWS OpsWorks CM server, and removes the node from the server's managed nodes. After a node is disassociated, the node key pair is no longer valid for accessing the configuration manager's API. For more information about how to associate a node, see <code>AssociateNode</code>. </p>
+/// 
+/// <p> Disassociates a node from an AWS OpsWorks CM server, and removes the node from the server's managed nodes. After a node is disassociated, the node key pair is no longer valid for accessing the configuration manager's API. For more information about how to associate a node, see <code>AssociateNode</code>. </p> 
 /// <p>A node can can only be disassociated from a server that is in a <code>HEALTHY</code> state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateNodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::disassociate_node::builders::DisassociateNodeInputBuilder,
+                    inner: crate::operation::disassociate_node::builders::DisassociateNodeInputBuilder,
 }
-impl DisassociateNodeFluentBuilder {
+impl DisassociateNodeFluentBuilder  {
     /// Creates a new `DisassociateNode`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disassociate_node::DisassociateNode,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_node::DisassociateNodeError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DisassociateNode as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_node::builders::DisassociateNodeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_node::DisassociateNodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_node::DisassociateNodeError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_node::DisassociateNode, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_node::DisassociateNodeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_node::DisassociateNodeOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_node::DisassociateNodeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_node::DisassociateNodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_node::DisassociateNodeError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disassociate_node::DisassociateNode,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_node::DisassociateNodeError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_node::DisassociateNodeOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_node::DisassociateNodeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_node::DisassociateNode, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_node::DisassociateNodeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the server from which to disassociate the node. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
@@ -109,6 +94,10 @@ impl DisassociateNodeFluentBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
+    }
+    /// <p>The name of the server from which to disassociate the node. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_name()
     }
     /// <p>The name of the client node. </p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,29 +109,39 @@ impl DisassociateNodeFluentBuilder {
         self.inner = self.inner.set_node_name(input);
         self
     }
+    /// <p>The name of the client node. </p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_name()
+    }
     /// Appends an item to `EngineAttributes`.
     ///
     /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
     ///
-    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
-    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
-    /// <ul>
-    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p> 
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li> 
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         self.inner = self.inner.engine_attributes(input);
         self
     }
-    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
-    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
-    /// <ul>
-    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p> 
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li> 
     /// </ul>
-    pub fn set_engine_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
-    ) -> Self {
+    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
         self
     }
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p> 
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li> 
+    /// </ul>
+    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+        self.inner.get_engine_attributes()
+    }
 }
+

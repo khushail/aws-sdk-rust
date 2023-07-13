@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBridgeInput {
+pub struct DescribeBridgeInput  {
     /// The ARN of the bridge that you want to describe.
     #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBridgeInput {
     /// The ARN of the bridge that you want to describe.
-    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<& str> {
         self.bridge_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeBridgeInput {
 
 /// A builder for [`DescribeBridgeInput`](crate::operation::describe_bridge::DescribeBridgeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBridgeInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeBridgeInputBuilder {
     }
     /// The ARN of the bridge that you want to describe.
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bridge_arn = input;
-        self
+        self.bridge_arn = input; self
+    }
+    /// The ARN of the bridge that you want to describe.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
     }
     /// Consumes the builder and constructs a [`DescribeBridgeInput`](crate::operation::describe_bridge::DescribeBridgeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bridge::DescribeBridgeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_bridge::DescribeBridgeInput {
-            bridge_arn: self.bridge_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bridge::DescribeBridgeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_bridge::DescribeBridgeInput {
+                bridge_arn: self.bridge_arn
+                ,
+            }
+        )
     }
 }
+

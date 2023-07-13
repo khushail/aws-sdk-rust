@@ -3,7 +3,7 @@
 /// Answering Machine Detection config
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnswerMachineDetectionConfig {
+pub struct AnswerMachineDetectionConfig  {
     /// Enable or disable answering machine detection
     #[doc(hidden)]
     pub enable_answer_machine_detection: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl AnswerMachineDetectionConfig {
 
 /// A builder for [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfigBuilder {
     pub(crate) enable_answer_machine_detection: ::std::option::Option<bool>,
 }
@@ -36,17 +34,19 @@ impl AnswerMachineDetectionConfigBuilder {
         self
     }
     /// Enable or disable answering machine detection
-    pub fn set_enable_answer_machine_detection(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.enable_answer_machine_detection = input;
-        self
+    pub fn set_enable_answer_machine_detection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_answer_machine_detection = input; self
+    }
+    /// Enable or disable answering machine detection
+    pub fn get_enable_answer_machine_detection(&self) -> &::std::option::Option<bool> {
+        &self.enable_answer_machine_detection
     }
     /// Consumes the builder and constructs a [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
     pub fn build(self) -> crate::types::AnswerMachineDetectionConfig {
         crate::types::AnswerMachineDetectionConfig {
-            enable_answer_machine_detection: self.enable_answer_machine_detection,
+            enable_answer_machine_detection: self.enable_answer_machine_detection
+            ,
         }
     }
 }
+

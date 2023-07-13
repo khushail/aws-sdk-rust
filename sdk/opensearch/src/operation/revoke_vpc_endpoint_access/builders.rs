@@ -3,103 +3,87 @@ pub use crate::operation::revoke_vpc_endpoint_access::_revoke_vpc_endpoint_acces
 
 pub use crate::operation::revoke_vpc_endpoint_access::_revoke_vpc_endpoint_access_input::RevokeVpcEndpointAccessInputBuilder;
 
+impl RevokeVpcEndpointAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.revoke_vpc_endpoint_access();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `RevokeVpcEndpointAccess`.
-///
+/// 
 /// <p>Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeVpcEndpointAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder,
+                    inner: crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder,
 }
-impl RevokeVpcEndpointAccessFluentBuilder {
+impl RevokeVpcEndpointAccessFluentBuilder  {
     /// Creates a new `RevokeVpcEndpointAccess`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccess,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the RevokeVpcEndpointAccess as a reference.
+    pub fn as_input(&self) -> &crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccess,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the OpenSearch Service domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -109,6 +93,10 @@ impl RevokeVpcEndpointAccessFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The name of the OpenSearch Service domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
     /// <p>The account ID to revoke access from.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,4 +108,9 @@ impl RevokeVpcEndpointAccessFluentBuilder {
         self.inner = self.inner.set_account(input);
         self
     }
+    /// <p>The account ID to revoke access from.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account()
+    }
 }
+

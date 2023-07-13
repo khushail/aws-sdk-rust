@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryResultsInput {
+pub struct GetQueryResultsInput  {
     /// <p>The ID number of the query.</p>
     #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueryResultsInput {
     /// <p>The ID number of the query.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetQueryResultsInput {
 
 /// A builder for [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryResultsInputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetQueryResultsInputBuilder {
     }
     /// <p>The ID number of the query.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
+    }
+    /// <p>The ID number of the query.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
     }
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_query_results::GetQueryResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_query_results::GetQueryResultsInput {
-            query_id: self.query_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_query_results::GetQueryResultsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_query_results::GetQueryResultsInput {
+                query_id: self.query_id
+                ,
+            }
+        )
     }
 }
+

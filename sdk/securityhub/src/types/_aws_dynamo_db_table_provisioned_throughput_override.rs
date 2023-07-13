@@ -3,7 +3,7 @@
 /// <p>Replica-specific configuration for the provisioned throughput.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDynamoDbTableProvisionedThroughputOverride {
+pub struct AwsDynamoDbTableProvisionedThroughputOverride  {
     /// <p>The read capacity units for the replica.</p>
     #[doc(hidden)]
     pub read_capacity_units: i32,
@@ -16,17 +16,14 @@ impl AwsDynamoDbTableProvisionedThroughputOverride {
 }
 impl AwsDynamoDbTableProvisionedThroughputOverride {
     /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::types::AwsDynamoDbTableProvisionedThroughputOverride).
-    pub fn builder() -> crate::types::builders::AwsDynamoDbTableProvisionedThroughputOverrideBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
         crate::types::builders::AwsDynamoDbTableProvisionedThroughputOverrideBuilder::default()
     }
 }
 
 /// A builder for [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::types::AwsDynamoDbTableProvisionedThroughputOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
     pub(crate) read_capacity_units: ::std::option::Option<i32>,
 }
@@ -38,13 +35,19 @@ impl AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
     }
     /// <p>The read capacity units for the replica.</p>
     pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.read_capacity_units = input;
-        self
+        self.read_capacity_units = input; self
+    }
+    /// <p>The read capacity units for the replica.</p>
+    pub fn get_read_capacity_units(&self) -> &::std::option::Option<i32> {
+        &self.read_capacity_units
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::types::AwsDynamoDbTableProvisionedThroughputOverride).
     pub fn build(self) -> crate::types::AwsDynamoDbTableProvisionedThroughputOverride {
         crate::types::AwsDynamoDbTableProvisionedThroughputOverride {
-            read_capacity_units: self.read_capacity_units.unwrap_or_default(),
+            read_capacity_units: self.read_capacity_units
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

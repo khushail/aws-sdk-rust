@@ -3,7 +3,7 @@
 /// <p>The client VPC connection object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClientVpcConnection {
+pub struct ClientVpcConnection  {
     /// <p>Information about the auth scheme of Vpc Connection.</p>
     #[doc(hidden)]
     pub authentication: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct ClientVpcConnection {
 }
 impl ClientVpcConnection {
     /// <p>Information about the auth scheme of Vpc Connection.</p>
-    pub fn authentication(&self) -> ::std::option::Option<&str> {
+    pub fn authentication(&self) -> ::std::option::Option<& str> {
         self.authentication.as_deref()
     }
     /// <p>Creation time of the Vpc Connection.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>State of the Vpc Connection.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::VpcConnectionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::VpcConnectionState> {
         self.state.as_ref()
     }
     /// <p>The ARN that identifies the Vpc Connection.</p>
-    pub fn vpc_connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connection_arn(&self) -> ::std::option::Option<& str> {
         self.vpc_connection_arn.as_deref()
     }
     /// <p>The Owner of the Vpc Connection.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl ClientVpcConnection {
 
 /// A builder for [`ClientVpcConnection`](crate::types::ClientVpcConnection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientVpcConnectionBuilder {
     pub(crate) authentication: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -63,20 +61,17 @@ pub struct ClientVpcConnectionBuilder {
 }
 impl ClientVpcConnectionBuilder {
     /// <p>Information about the auth scheme of Vpc Connection.</p>
-    pub fn authentication(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the auth scheme of Vpc Connection.</p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.authentication = input;
-        self
+    pub fn set_authentication(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.authentication = input; self
+    }
+    /// <p>Information about the auth scheme of Vpc Connection.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication
     }
     /// <p>Creation time of the Vpc Connection.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,12 +79,12 @@ impl ClientVpcConnectionBuilder {
         self
     }
     /// <p>Creation time of the Vpc Connection.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>Creation time of the Vpc Connection.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>State of the Vpc Connection.</p>
     pub fn state(mut self, input: crate::types::VpcConnectionState) -> Self {
@@ -97,28 +92,25 @@ impl ClientVpcConnectionBuilder {
         self
     }
     /// <p>State of the Vpc Connection.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectionState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VpcConnectionState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>State of the Vpc Connection.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcConnectionState> {
+        &self.state
     }
     /// <p>The ARN that identifies the Vpc Connection.</p>
-    pub fn vpc_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that identifies the Vpc Connection.</p>
-    pub fn set_vpc_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_connection_arn = input;
-        self
+    pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_connection_arn = input; self
+    }
+    /// <p>The ARN that identifies the Vpc Connection.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
     }
     /// <p>The Owner of the Vpc Connection.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,17 +119,26 @@ impl ClientVpcConnectionBuilder {
     }
     /// <p>The Owner of the Vpc Connection.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
+    }
+    /// <p>The Owner of the Vpc Connection.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// Consumes the builder and constructs a [`ClientVpcConnection`](crate::types::ClientVpcConnection).
     pub fn build(self) -> crate::types::ClientVpcConnection {
         crate::types::ClientVpcConnection {
-            authentication: self.authentication,
-            creation_time: self.creation_time,
-            state: self.state,
-            vpc_connection_arn: self.vpc_connection_arn,
-            owner: self.owner,
+            authentication: self.authentication
+            ,
+            creation_time: self.creation_time
+            ,
+            state: self.state
+            ,
+            vpc_connection_arn: self.vpc_connection_arn
+            ,
+            owner: self.owner
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details associated with the issuer of a license.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IssuerDetails {
+pub struct IssuerDetails  {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct IssuerDetails {
 }
 impl IssuerDetails {
     /// <p>Issuer name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn sign_key(&self) -> ::std::option::Option<&str> {
+    pub fn sign_key(&self) -> ::std::option::Option<& str> {
         self.sign_key.as_deref()
     }
     /// <p>Issuer key fingerprint.</p>
-    pub fn key_fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn key_fingerprint(&self) -> ::std::option::Option<& str> {
         self.key_fingerprint.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl IssuerDetails {
 
 /// A builder for [`IssuerDetails`](crate::types::IssuerDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IssuerDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) sign_key: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl IssuerDetailsBuilder {
     }
     /// <p>Issuer name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Issuer name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn sign_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,31 +64,35 @@ impl IssuerDetailsBuilder {
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn set_sign_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sign_key = input;
-        self
+        self.sign_key = input; self
+    }
+    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    pub fn get_sign_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sign_key
     }
     /// <p>Issuer key fingerprint.</p>
-    pub fn key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Issuer key fingerprint.</p>
-    pub fn set_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.key_fingerprint = input;
-        self
+    pub fn set_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_fingerprint = input; self
+    }
+    /// <p>Issuer key fingerprint.</p>
+    pub fn get_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_fingerprint
     }
     /// Consumes the builder and constructs a [`IssuerDetails`](crate::types::IssuerDetails).
     pub fn build(self) -> crate::types::IssuerDetails {
         crate::types::IssuerDetails {
-            name: self.name,
-            sign_key: self.sign_key,
-            key_fingerprint: self.key_fingerprint,
+            name: self.name
+            ,
+            sign_key: self.sign_key
+            ,
+            key_fingerprint: self.key_fingerprint
+            ,
         }
     }
 }
+

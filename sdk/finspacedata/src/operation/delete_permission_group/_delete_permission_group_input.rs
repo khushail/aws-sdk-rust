@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePermissionGroupInput {
+pub struct DeletePermissionGroupInput  {
     /// <p>The unique identifier for the permission group that you want to delete.</p>
     #[doc(hidden)]
     pub permission_group_id: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct DeletePermissionGroupInput {
 }
 impl DeletePermissionGroupInput {
     /// <p>The unique identifier for the permission group that you want to delete.</p>
-    pub fn permission_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> ::std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DeletePermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionGroupInput`](crate::operation::delete_permission_group::DeletePermissionGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_permission_group::builders::DeletePermissionGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_permission_group::builders::DeletePermissionGroupInputBuilder {
         crate::operation::delete_permission_group::builders::DeletePermissionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePermissionGroupInput`](crate::operation::delete_permission_group::DeletePermissionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeletePermissionGroupInputBuilder {
     /// <p>The unique identifier for the permission group that you want to delete.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the permission group that you want to delete.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.permission_group_id = input;
-        self
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.permission_group_id = input; self
+    }
+    /// <p>The unique identifier for the permission group that you want to delete.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_group_id
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,21 +55,22 @@ impl DeletePermissionGroupInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeletePermissionGroupInput`](crate::operation::delete_permission_group::DeletePermissionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_permission_group::DeletePermissionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_permission_group::DeletePermissionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_permission_group::DeletePermissionGroupInput {
-                permission_group_id: self.permission_group_id,
-                client_token: self.client_token,
-            },
+                permission_group_id: self.permission_group_id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

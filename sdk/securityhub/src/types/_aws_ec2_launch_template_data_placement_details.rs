@@ -3,7 +3,7 @@
 /// <p> Provides details about the placement of an Amazon EC2 instance. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataPlacementDetails {
+pub struct AwsEc2LaunchTemplateDataPlacementDetails  {
     /// <p> The affinity setting for an instance on an EC2 Dedicated Host. </p>
     #[doc(hidden)]
     pub affinity: ::std::option::Option<::std::string::String>,
@@ -31,23 +31,23 @@ pub struct AwsEc2LaunchTemplateDataPlacementDetails {
 }
 impl AwsEc2LaunchTemplateDataPlacementDetails {
     /// <p> The affinity setting for an instance on an EC2 Dedicated Host. </p>
-    pub fn affinity(&self) -> ::std::option::Option<&str> {
+    pub fn affinity(&self) -> ::std::option::Option<& str> {
         self.affinity.as_deref()
     }
     /// <p> The Availability Zone for the instance. </p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p> The name of the placement group for the instance. </p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p> The ID of the Dedicated Host for the instance. </p>
-    pub fn host_id(&self) -> ::std::option::Option<&str> {
+    pub fn host_id(&self) -> ::std::option::Option<& str> {
         self.host_id.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
-    pub fn host_resource_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn host_resource_group_arn(&self) -> ::std::option::Option<& str> {
         self.host_resource_group_arn.as_deref()
     }
     /// <p> The number of the partition the instance should launch in. </p>
@@ -55,11 +55,11 @@ impl AwsEc2LaunchTemplateDataPlacementDetails {
         self.partition_number
     }
     /// <p> Reserved for future use. </p>
-    pub fn spread_domain(&self) -> ::std::option::Option<&str> {
+    pub fn spread_domain(&self) -> ::std::option::Option<& str> {
         self.spread_domain.as_deref()
     }
     /// <p> The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. </p>
-    pub fn tenancy(&self) -> ::std::option::Option<&str> {
+    pub fn tenancy(&self) -> ::std::option::Option<& str> {
         self.tenancy.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl AwsEc2LaunchTemplateDataPlacementDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataPlacementDetails`](crate::types::AwsEc2LaunchTemplateDataPlacementDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     pub(crate) affinity: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -93,24 +91,24 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     }
     /// <p> The affinity setting for an instance on an EC2 Dedicated Host. </p>
     pub fn set_affinity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.affinity = input;
-        self
+        self.affinity = input; self
+    }
+    /// <p> The affinity setting for an instance on an EC2 Dedicated Host. </p>
+    pub fn get_affinity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.affinity
     }
     /// <p> The Availability Zone for the instance. </p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Availability Zone for the instance. </p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input; self
+    }
+    /// <p> The Availability Zone for the instance. </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// <p> The name of the placement group for the instance. </p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,8 +117,11 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     }
     /// <p> The name of the placement group for the instance. </p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
+    }
+    /// <p> The name of the placement group for the instance. </p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// <p> The ID of the Dedicated Host for the instance. </p>
     pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,24 +130,24 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     }
     /// <p> The ID of the Dedicated Host for the instance. </p>
     pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_id = input;
-        self
+        self.host_id = input; self
+    }
+    /// <p> The ID of the Dedicated Host for the instance. </p>
+    pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_id
     }
     /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
-    pub fn host_resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
-    pub fn set_host_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.host_resource_group_arn = input;
-        self
+    pub fn set_host_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.host_resource_group_arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
+    pub fn get_host_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_resource_group_arn
     }
     /// <p> The number of the partition the instance should launch in. </p>
     pub fn partition_number(mut self, input: i32) -> Self {
@@ -155,24 +156,24 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     }
     /// <p> The number of the partition the instance should launch in. </p>
     pub fn set_partition_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.partition_number = input;
-        self
+        self.partition_number = input; self
+    }
+    /// <p> The number of the partition the instance should launch in. </p>
+    pub fn get_partition_number(&self) -> &::std::option::Option<i32> {
+        &self.partition_number
     }
     /// <p> Reserved for future use. </p>
-    pub fn spread_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spread_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spread_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Reserved for future use. </p>
-    pub fn set_spread_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.spread_domain = input;
-        self
+    pub fn set_spread_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.spread_domain = input; self
+    }
+    /// <p> Reserved for future use. </p>
+    pub fn get_spread_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spread_domain
     }
     /// <p> The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. </p>
     pub fn tenancy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,20 +182,33 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     }
     /// <p> The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. </p>
     pub fn set_tenancy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenancy = input;
-        self
+        self.tenancy = input; self
+    }
+    /// <p> The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. </p>
+    pub fn get_tenancy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenancy
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataPlacementDetails`](crate::types::AwsEc2LaunchTemplateDataPlacementDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataPlacementDetails {
         crate::types::AwsEc2LaunchTemplateDataPlacementDetails {
-            affinity: self.affinity,
-            availability_zone: self.availability_zone,
-            group_name: self.group_name,
-            host_id: self.host_id,
-            host_resource_group_arn: self.host_resource_group_arn,
-            partition_number: self.partition_number.unwrap_or_default(),
-            spread_domain: self.spread_domain,
-            tenancy: self.tenancy,
+            affinity: self.affinity
+            ,
+            availability_zone: self.availability_zone
+            ,
+            group_name: self.group_name
+            ,
+            host_id: self.host_id
+            ,
+            host_resource_group_arn: self.host_resource_group_arn
+            ,
+            partition_number: self.partition_number
+                .unwrap_or_default()
+            ,
+            spread_domain: self.spread_domain
+            ,
+            tenancy: self.tenancy
+            ,
         }
     }
 }
+

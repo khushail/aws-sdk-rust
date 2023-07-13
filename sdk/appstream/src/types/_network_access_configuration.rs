@@ -3,7 +3,7 @@
 /// <p>Describes the network details of the fleet or image builder instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkAccessConfiguration {
+pub struct NetworkAccessConfiguration  {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
     #[doc(hidden)]
     pub eni_private_ip_address: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct NetworkAccessConfiguration {
 }
 impl NetworkAccessConfiguration {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
-    pub fn eni_private_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn eni_private_ip_address(&self) -> ::std::option::Option<& str> {
         self.eni_private_ip_address.as_deref()
     }
     /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
-    pub fn eni_id(&self) -> ::std::option::Option<&str> {
+    pub fn eni_id(&self) -> ::std::option::Option<& str> {
         self.eni_id.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl NetworkAccessConfiguration {
 
 /// A builder for [`NetworkAccessConfiguration`](crate::types::NetworkAccessConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkAccessConfigurationBuilder {
     pub(crate) eni_private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) eni_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkAccessConfigurationBuilder {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
-    pub fn eni_private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn eni_private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eni_private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
-    pub fn set_eni_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.eni_private_ip_address = input;
-        self
+    pub fn set_eni_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.eni_private_ip_address = input; self
+    }
+    /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
+    pub fn get_eni_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eni_private_ip_address
     }
     /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
     pub fn eni_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl NetworkAccessConfigurationBuilder {
     }
     /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
     pub fn set_eni_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eni_id = input;
-        self
+        self.eni_id = input; self
+    }
+    /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
+    pub fn get_eni_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eni_id
     }
     /// Consumes the builder and constructs a [`NetworkAccessConfiguration`](crate::types::NetworkAccessConfiguration).
     pub fn build(self) -> crate::types::NetworkAccessConfiguration {
         crate::types::NetworkAccessConfiguration {
-            eni_private_ip_address: self.eni_private_ip_address,
-            eni_id: self.eni_id,
+            eni_private_ip_address: self.eni_private_ip_address
+            ,
+            eni_id: self.eni_id
+            ,
         }
     }
 }
+

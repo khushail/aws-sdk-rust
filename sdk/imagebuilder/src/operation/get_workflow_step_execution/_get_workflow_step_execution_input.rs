@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowStepExecutionInput {
+pub struct GetWorkflowStepExecutionInput  {
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
     #[doc(hidden)]
     pub step_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowStepExecutionInput {
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
-    pub fn step_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_execution_id(&self) -> ::std::option::Option<& str> {
         self.step_execution_id.as_deref()
     }
 }
 impl GetWorkflowStepExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowStepExecutionInput`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder {
         crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowStepExecutionInput`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowStepExecutionInputBuilder {
     pub(crate) step_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowStepExecutionInputBuilder {
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
-    pub fn step_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
-    pub fn set_step_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.step_execution_id = input;
-        self
+    pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.step_execution_id = input; self
+    }
+    /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
+    pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_execution_id
     }
     /// Consumes the builder and constructs a [`GetWorkflowStepExecutionInput`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput {
-                step_execution_id: self.step_execution_id,
-            },
+                step_execution_id: self.step_execution_id
+                ,
+            }
         )
     }
 }
+

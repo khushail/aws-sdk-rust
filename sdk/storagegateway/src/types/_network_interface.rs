@@ -3,12 +3,12 @@
 /// <p>Describes a gateway's network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
     #[doc(hidden)]
     pub ipv4_address: ::std::option::Option<::std::string::String>,
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
-    /// <p>This is currently unsupported and will not be returned in output.</p>
+    /// <p>The Media Access Control (MAC) address of the interface.</p> <note> 
+    /// <p>This is currently unsupported and will not be returned in output.</p> 
     /// </note>
     #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
@@ -18,17 +18,17 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
-    pub fn ipv4_address(&self) -> ::std::option::Option<&str> {
+    pub fn ipv4_address(&self) -> ::std::option::Option<& str> {
         self.ipv4_address.as_deref()
     }
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
-    /// <p>This is currently unsupported and will not be returned in output.</p>
+    /// <p>The Media Access Control (MAC) address of the interface.</p> <note> 
+    /// <p>This is currently unsupported and will not be returned in output.</p> 
     /// </note>
-    pub fn mac_address(&self) -> ::std::option::Option<&str> {
+    pub fn mac_address(&self) -> ::std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
-    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> ::std::option::Option<& str> {
         self.ipv6_address.as_deref()
     }
 }
@@ -41,9 +41,7 @@ impl NetworkInterface {
 
 /// A builder for [`NetworkInterface`](crate::types::NetworkInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInterfaceBuilder {
     pub(crate) ipv4_address: ::std::option::Option<::std::string::String>,
     pub(crate) mac_address: ::std::option::Option<::std::string::String>,
@@ -57,22 +55,30 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
     pub fn set_ipv4_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv4_address = input;
-        self
+        self.ipv4_address = input; self
     }
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
-    /// <p>This is currently unsupported and will not be returned in output.</p>
+    /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
+    pub fn get_ipv4_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_address
+    }
+    /// <p>The Media Access Control (MAC) address of the interface.</p> <note> 
+    /// <p>This is currently unsupported and will not be returned in output.</p> 
     /// </note>
     pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mac_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
-    /// <p>This is currently unsupported and will not be returned in output.</p>
+    /// <p>The Media Access Control (MAC) address of the interface.</p> <note> 
+    /// <p>This is currently unsupported and will not be returned in output.</p> 
     /// </note>
     pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
+    }
+    /// <p>The Media Access Control (MAC) address of the interface.</p> <note> 
+    /// <p>This is currently unsupported and will not be returned in output.</p> 
+    /// </note>
+    pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_address
     }
     /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
     pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,15 +87,22 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
     pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_address = input;
-        self
+        self.ipv6_address = input; self
+    }
+    /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
-            ipv4_address: self.ipv4_address,
-            mac_address: self.mac_address,
-            ipv6_address: self.ipv6_address,
+            ipv4_address: self.ipv4_address
+            ,
+            mac_address: self.mac_address
+            ,
+            ipv6_address: self.ipv6_address
+            ,
         }
     }
 }
+

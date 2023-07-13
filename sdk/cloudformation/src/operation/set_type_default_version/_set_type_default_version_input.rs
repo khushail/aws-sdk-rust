@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetTypeDefaultVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
+pub struct SetTypeDefaultVersionInput  {
+    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The kind of extension.</p>
+    /// <p>The kind of extension.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
-    /// <p>The name of the extension.</p>
+    /// <p>The name of the extension.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
@@ -20,40 +20,36 @@ pub struct SetTypeDefaultVersionInput {
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl SetTypeDefaultVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The kind of extension.</p>
+    /// <p>The kind of extension.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RegistryType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RegistryType> {
         self.r#type.as_ref()
     }
-    /// <p>The name of the extension.</p>
+    /// <p>The name of the extension.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
 impl SetTypeDefaultVersionInput {
     /// Creates a new builder-style object to manufacture [`SetTypeDefaultVersionInput`](crate::operation::set_type_default_version::SetTypeDefaultVersionInput).
-    pub fn builder(
-    ) -> crate::operation::set_type_default_version::builders::SetTypeDefaultVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_type_default_version::builders::SetTypeDefaultVersionInputBuilder {
         crate::operation::set_type_default_version::builders::SetTypeDefaultVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`SetTypeDefaultVersionInput`](crate::operation::set_type_default_version::SetTypeDefaultVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTypeDefaultVersionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RegistryType>,
@@ -61,41 +57,53 @@ pub struct SetTypeDefaultVersionInputBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
 }
 impl SetTypeDefaultVersionInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
-    /// <p>The kind of extension.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p> 
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
+    /// <p>The kind of extension.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn r#type(mut self, input: crate::types::RegistryType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The kind of extension.</p>
+    /// <p>The kind of extension.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RegistryType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
-    /// <p>The name of the extension.</p>
+    /// <p>The kind of extension.</p> 
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RegistryType> {
+        &self.r#type
+    }
+    /// <p>The name of the extension.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the extension.</p>
+    /// <p>The name of the extension.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
+    }
+    /// <p>The name of the extension.</p> 
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,23 +112,26 @@ impl SetTypeDefaultVersionInputBuilder {
     }
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
+    }
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`SetTypeDefaultVersionInput`](crate::operation::set_type_default_version::SetTypeDefaultVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_type_default_version::SetTypeDefaultVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_type_default_version::SetTypeDefaultVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_type_default_version::SetTypeDefaultVersionInput {
-                arn: self.arn,
-                r#type: self.r#type,
-                type_name: self.type_name,
-                version_id: self.version_id,
-            },
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                type_name: self.type_name
+                ,
+                version_id: self.version_id
+                ,
+            }
         )
     }
 }
+

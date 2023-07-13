@@ -3,14 +3,14 @@
 /// <p>A mapping between one or more workgroups and a capacity reservation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityAssignment {
+pub struct CapacityAssignment  {
     /// <p>The list of workgroup names for the capacity assignment.</p>
     #[doc(hidden)]
     pub work_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CapacityAssignment {
     /// <p>The list of workgroup names for the capacity assignment.</p>
-    pub fn work_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn work_group_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.work_group_names.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl CapacityAssignment {
 
 /// A builder for [`CapacityAssignment`](crate::types::CapacityAssignment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityAssignmentBuilder {
     pub(crate) work_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,27 +33,26 @@ impl CapacityAssignmentBuilder {
     /// To override the contents of this collection use [`set_work_group_names`](Self::set_work_group_names).
     ///
     /// <p>The list of workgroup names for the capacity assignment.</p>
-    pub fn work_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn work_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.work_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.work_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.work_group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of workgroup names for the capacity assignment.</p>
-    pub fn set_work_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.work_group_names = input;
-        self
+    pub fn set_work_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.work_group_names = input; self
+    }
+    /// <p>The list of workgroup names for the capacity assignment.</p>
+    pub fn get_work_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.work_group_names
     }
     /// Consumes the builder and constructs a [`CapacityAssignment`](crate::types::CapacityAssignment).
     pub fn build(self) -> crate::types::CapacityAssignment {
         crate::types::CapacityAssignment {
-            work_group_names: self.work_group_names,
+            work_group_names: self.work_group_names
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A complex data type for the origin groups specified for a distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginGroups {
+pub struct OriginGroups  {
     /// <p>The number of origin groups.</p>
     #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl OriginGroups {
         self.quantity
     }
     /// <p>The items (origin groups) in a distribution.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::OriginGroup]> {
+    pub fn items(&self) -> ::std::option::Option<& [crate::types::OriginGroup]> {
         self.items.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl OriginGroups {
 
 /// A builder for [`OriginGroups`](crate::types::OriginGroups).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginGroupsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroup>>,
@@ -45,8 +43,11 @@ impl OriginGroupsBuilder {
     }
     /// <p>The number of origin groups.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
+    }
+    /// <p>The number of origin groups.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -55,23 +56,26 @@ impl OriginGroupsBuilder {
     /// <p>The items (origin groups) in a distribution.</p>
     pub fn items(mut self, input: crate::types::OriginGroup) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The items (origin groups) in a distribution.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroup>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroup>>) -> Self {
+        self.items = input; self
+    }
+    /// <p>The items (origin groups) in a distribution.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginGroup>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`OriginGroups`](crate::types::OriginGroups).
     pub fn build(self) -> crate::types::OriginGroups {
         crate::types::OriginGroups {
-            quantity: self.quantity,
-            items: self.items,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

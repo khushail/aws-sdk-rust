@@ -3,7 +3,7 @@
 /// <p>Describes a path component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PathComponent {
+pub struct PathComponent  {
     /// <p>The sequence number in the path. The destination is 0.</p>
     #[doc(hidden)]
     pub sequence: ::std::option::Option<i32>,
@@ -20,11 +20,11 @@ impl PathComponent {
         self.sequence
     }
     /// <p>The resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::NetworkResourceSummary> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::NetworkResourceSummary> {
         self.resource.as_ref()
     }
     /// <p>The destination CIDR block in the route table.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl PathComponent {
 
 /// A builder for [`PathComponent`](crate::types::PathComponent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PathComponentBuilder {
     pub(crate) sequence: ::std::option::Option<i32>,
     pub(crate) resource: ::std::option::Option<crate::types::NetworkResourceSummary>,
@@ -53,8 +51,11 @@ impl PathComponentBuilder {
     }
     /// <p>The sequence number in the path. The destination is 0.</p>
     pub fn set_sequence(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sequence = input;
-        self
+        self.sequence = input; self
+    }
+    /// <p>The sequence number in the path. The destination is 0.</p>
+    pub fn get_sequence(&self) -> &::std::option::Option<i32> {
+        &self.sequence
     }
     /// <p>The resource.</p>
     pub fn resource(mut self, input: crate::types::NetworkResourceSummary) -> Self {
@@ -62,35 +63,36 @@ impl PathComponentBuilder {
         self
     }
     /// <p>The resource.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkResourceSummary>,
-    ) -> Self {
-        self.resource = input;
-        self
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::NetworkResourceSummary>) -> Self {
+        self.resource = input; self
+    }
+    /// <p>The resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::NetworkResourceSummary> {
+        &self.resource
     }
     /// <p>The destination CIDR block in the route table.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination CIDR block in the route table.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_cidr_block = input;
-        self
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_cidr_block = input; self
+    }
+    /// <p>The destination CIDR block in the route table.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
     }
     /// Consumes the builder and constructs a [`PathComponent`](crate::types::PathComponent).
     pub fn build(self) -> crate::types::PathComponent {
         crate::types::PathComponent {
-            sequence: self.sequence,
-            resource: self.resource,
-            destination_cidr_block: self.destination_cidr_block,
+            sequence: self.sequence
+            ,
+            resource: self.resource
+            ,
+            destination_cidr_block: self.destination_cidr_block
+            ,
         }
     }
 }
+

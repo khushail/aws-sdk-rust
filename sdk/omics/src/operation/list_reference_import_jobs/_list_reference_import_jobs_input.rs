@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReferenceImportJobsInput {
+pub struct ListReferenceImportJobsInput  {
     /// <p>The maximum number of jobs to return in one page of results.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -22,32 +22,28 @@ impl ListReferenceImportJobsInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn reference_store_id(&self) -> ::std::option::Option<& str> {
         self.reference_store_id.as_deref()
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ImportReferenceFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ImportReferenceFilter> {
         self.filter.as_ref()
     }
 }
 impl ListReferenceImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListReferenceImportJobsInput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder {
         crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReferenceImportJobsInput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReferenceImportJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -62,8 +58,11 @@ impl ListReferenceImportJobsInputBuilder {
     }
     /// <p>The maximum number of jobs to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of jobs to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +71,24 @@ impl ListReferenceImportJobsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's reference store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reference_store_id = input;
-        self
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reference_store_id = input; self
+    }
+    /// <p>The job's reference store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_store_id
     }
     /// <p>A filter to apply to the list.</p>
     pub fn filter(mut self, input: crate::types::ImportReferenceFilter) -> Self {
@@ -97,27 +96,27 @@ impl ListReferenceImportJobsInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportReferenceFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ImportReferenceFilter>) -> Self {
+        self.filter = input; self
+    }
+    /// <p>A filter to apply to the list.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ImportReferenceFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ListReferenceImportJobsInput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                reference_store_id: self.reference_store_id,
-                filter: self.filter,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                reference_store_id: self.reference_store_id
+                ,
+                filter: self.filter
+                ,
+            }
         )
     }
 }
+

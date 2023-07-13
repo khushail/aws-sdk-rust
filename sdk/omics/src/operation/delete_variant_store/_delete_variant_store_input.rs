@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVariantStoreInput {
+pub struct DeleteVariantStoreInput  {
     /// <p>The store's name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteVariantStoreInput {
 }
 impl DeleteVariantStoreInput {
     /// <p>The store's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Whether to force deletion.</p>
@@ -22,17 +22,14 @@ impl DeleteVariantStoreInput {
 }
 impl DeleteVariantStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
-    pub fn builder(
-    ) -> crate::operation::delete_variant_store::builders::DeleteVariantStoreInputBuilder {
+    pub fn builder() -> crate::operation::delete_variant_store::builders::DeleteVariantStoreInputBuilder {
         crate::operation::delete_variant_store::builders::DeleteVariantStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVariantStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
@@ -45,8 +42,11 @@ impl DeleteVariantStoreInputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The store's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Whether to force deletion.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -55,21 +55,22 @@ impl DeleteVariantStoreInputBuilder {
     }
     /// <p>Whether to force deletion.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
+    }
+    /// <p>Whether to force deletion.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_variant_store::DeleteVariantStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_variant_store::DeleteVariantStoreInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_variant_store::DeleteVariantStoreInput {
-                name: self.name,
-                force: self.force,
-            },
+                name: self.name
+                ,
+                force: self.force
+                ,
+            }
         )
     }
 }
+

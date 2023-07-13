@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMetricCollectionTypesInput {}
+pub struct DescribeMetricCollectionTypesInput  {
+}
 impl DescribeMetricCollectionTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricCollectionTypesInput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesInput).
-    pub fn builder() -> crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesInputBuilder{
+    pub fn builder() -> crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesInputBuilder {
         crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMetricCollectionTypesInput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct DescribeMetricCollectionTypesInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct DescribeMetricCollectionTypesInputBuilder {
+}
 impl DescribeMetricCollectionTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMetricCollectionTypesInput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesInput {
             }
         )
     }
 }
+

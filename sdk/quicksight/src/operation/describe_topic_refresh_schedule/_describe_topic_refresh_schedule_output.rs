@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTopicRefreshScheduleOutput {
+pub struct DescribeTopicRefreshScheduleOutput  {
     /// <p>The ID of the topic that contains the refresh schedule that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     #[doc(hidden)]
     pub topic_id: ::std::option::Option<::std::string::String>,
@@ -25,19 +25,19 @@ pub struct DescribeTopicRefreshScheduleOutput {
 }
 impl DescribeTopicRefreshScheduleOutput {
     /// <p>The ID of the topic that contains the refresh schedule that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn refresh_schedule(&self) -> ::std::option::Option<&crate::types::TopicRefreshSchedule> {
+    pub fn refresh_schedule(&self) -> ::std::option::Option<& crate::types::TopicRefreshSchedule> {
         self.refresh_schedule.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -45,27 +45,25 @@ impl DescribeTopicRefreshScheduleOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTopicRefreshScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeTopicRefreshScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicRefreshScheduleOutput`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput).
-    pub fn builder() -> crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder {
         crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTopicRefreshScheduleOutput`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTopicRefreshScheduleOutputBuilder {
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
@@ -83,8 +81,11 @@ impl DescribeTopicRefreshScheduleOutputBuilder {
     }
     /// <p>The ID of the topic that contains the refresh schedule that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
+    }
+    /// <p>The ID of the topic that contains the refresh schedule that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_id
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +94,11 @@ impl DescribeTopicRefreshScheduleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the topic.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +107,11 @@ impl DescribeTopicRefreshScheduleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn refresh_schedule(mut self, input: crate::types::TopicRefreshSchedule) -> Self {
@@ -112,12 +119,12 @@ impl DescribeTopicRefreshScheduleOutputBuilder {
         self
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn set_refresh_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRefreshSchedule>,
-    ) -> Self {
-        self.refresh_schedule = input;
-        self
+    pub fn set_refresh_schedule(mut self, input: ::std::option::Option<crate::types::TopicRefreshSchedule>) -> Self {
+        self.refresh_schedule = input; self
+    }
+    /// <p>The definition of a refresh schedule.</p>
+    pub fn get_refresh_schedule(&self) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
+        &self.refresh_schedule
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -126,8 +133,11 @@ impl DescribeTopicRefreshScheduleOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,30 +146,39 @@ impl DescribeTopicRefreshScheduleOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeTopicRefreshScheduleOutput`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput {
+    pub fn build(self) -> crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput {
         crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput {
-            topic_id: self.topic_id,
-            topic_arn: self.topic_arn,
-            dataset_arn: self.dataset_arn,
-            refresh_schedule: self.refresh_schedule,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
+            topic_id: self.topic_id
+            ,
+            topic_arn: self.topic_arn
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            refresh_schedule: self.refresh_schedule
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

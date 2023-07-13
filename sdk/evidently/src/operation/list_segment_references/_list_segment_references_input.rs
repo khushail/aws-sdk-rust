@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSegmentReferencesInput {
+pub struct ListSegmentReferencesInput  {
     /// <p>The ARN of the segment that you want to view information for.</p>
     #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListSegmentReferencesInput {
 }
 impl ListSegmentReferencesInput {
     /// <p>The ARN of the segment that you want to view information for.</p>
-    pub fn segment(&self) -> ::std::option::Option<&str> {
+    pub fn segment(&self) -> ::std::option::Option<& str> {
         self.segment.as_deref()
     }
     /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
@@ -26,28 +26,24 @@ impl ListSegmentReferencesInput {
         self.max_results
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SegmentReferenceResourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SegmentReferenceResourceType> {
         self.r#type.as_ref()
     }
 }
 impl ListSegmentReferencesInput {
     /// Creates a new builder-style object to manufacture [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
-    pub fn builder(
-    ) -> crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder {
         crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSegmentReferencesInputBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -62,8 +58,11 @@ impl ListSegmentReferencesInputBuilder {
     }
     /// <p>The ARN of the segment that you want to view information for.</p>
     pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment = input;
-        self
+        self.segment = input; self
+    }
+    /// <p>The ARN of the segment that you want to view information for.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
     }
     /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,8 +71,11 @@ impl ListSegmentReferencesInputBuilder {
     }
     /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,8 +84,11 @@ impl ListSegmentReferencesInputBuilder {
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
     pub fn r#type(mut self, input: crate::types::SegmentReferenceResourceType) -> Self {
@@ -91,27 +96,27 @@ impl ListSegmentReferencesInputBuilder {
         self
     }
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentReferenceResourceType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SegmentReferenceResourceType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SegmentReferenceResourceType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_segment_references::ListSegmentReferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_segment_references::ListSegmentReferencesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_segment_references::ListSegmentReferencesInput {
-                segment: self.segment,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                r#type: self.r#type,
-            },
+                segment: self.segment
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                r#type: self.r#type
+                ,
+            }
         )
     }
 }
+

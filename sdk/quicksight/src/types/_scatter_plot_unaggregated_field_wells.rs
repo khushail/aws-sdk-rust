@@ -3,12 +3,12 @@
 /// <p>The unaggregated field wells of a scatter plot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScatterPlotUnaggregatedFieldWells {
-    /// <p>The x-axis field well of a scatter plot.</p>
+pub struct ScatterPlotUnaggregatedFieldWells  {
+    /// <p>The x-axis field well of a scatter plot.</p> 
     /// <p>The x-axis is a dimension field and cannot be aggregated.</p>
     #[doc(hidden)]
     pub x_axis: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    /// <p>The y-axis field well of a scatter plot.</p>
+    /// <p>The y-axis field well of a scatter plot.</p> 
     /// <p>The y-axis is a dimension field and cannot be aggregated.</p>
     #[doc(hidden)]
     pub y_axis: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
@@ -23,26 +23,26 @@ pub struct ScatterPlotUnaggregatedFieldWells {
     pub label: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl ScatterPlotUnaggregatedFieldWells {
-    /// <p>The x-axis field well of a scatter plot.</p>
+    /// <p>The x-axis field well of a scatter plot.</p> 
     /// <p>The x-axis is a dimension field and cannot be aggregated.</p>
-    pub fn x_axis(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
+    pub fn x_axis(&self) -> ::std::option::Option<& [crate::types::DimensionField]> {
         self.x_axis.as_deref()
     }
-    /// <p>The y-axis field well of a scatter plot.</p>
+    /// <p>The y-axis field well of a scatter plot.</p> 
     /// <p>The y-axis is a dimension field and cannot be aggregated.</p>
-    pub fn y_axis(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
+    pub fn y_axis(&self) -> ::std::option::Option<& [crate::types::DimensionField]> {
         self.y_axis.as_deref()
     }
     /// <p>The size field well of a scatter plot.</p>
-    pub fn size(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
+    pub fn size(&self) -> ::std::option::Option<& [crate::types::MeasureField]> {
         self.size.as_deref()
     }
     /// <p>The category field well of a scatter plot.</p>
-    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
+    pub fn category(&self) -> ::std::option::Option<& [crate::types::DimensionField]> {
         self.category.as_deref()
     }
     /// <p>The label field well of a scatter plot.</p>
-    pub fn label(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
+    pub fn label(&self) -> ::std::option::Option<& [crate::types::DimensionField]> {
         self.label.as_deref()
     }
 }
@@ -55,9 +55,7 @@ impl ScatterPlotUnaggregatedFieldWells {
 
 /// A builder for [`ScatterPlotUnaggregatedFieldWells`](crate::types::ScatterPlotUnaggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScatterPlotUnaggregatedFieldWellsBuilder {
     pub(crate) x_axis: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) y_axis: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
@@ -70,43 +68,45 @@ impl ScatterPlotUnaggregatedFieldWellsBuilder {
     ///
     /// To override the contents of this collection use [`set_x_axis`](Self::set_x_axis).
     ///
-    /// <p>The x-axis field well of a scatter plot.</p>
+    /// <p>The x-axis field well of a scatter plot.</p> 
     /// <p>The x-axis is a dimension field and cannot be aggregated.</p>
     pub fn x_axis(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.x_axis.unwrap_or_default();
-        v.push(input);
-        self.x_axis = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.x_axis = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The x-axis field well of a scatter plot.</p>
+    /// <p>The x-axis field well of a scatter plot.</p> 
     /// <p>The x-axis is a dimension field and cannot be aggregated.</p>
-    pub fn set_x_axis(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.x_axis = input;
-        self
+    pub fn set_x_axis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.x_axis = input; self
+    }
+    /// <p>The x-axis field well of a scatter plot.</p> 
+    /// <p>The x-axis is a dimension field and cannot be aggregated.</p>
+    pub fn get_x_axis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.x_axis
     }
     /// Appends an item to `y_axis`.
     ///
     /// To override the contents of this collection use [`set_y_axis`](Self::set_y_axis).
     ///
-    /// <p>The y-axis field well of a scatter plot.</p>
+    /// <p>The y-axis field well of a scatter plot.</p> 
     /// <p>The y-axis is a dimension field and cannot be aggregated.</p>
     pub fn y_axis(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.y_axis.unwrap_or_default();
-        v.push(input);
-        self.y_axis = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.y_axis = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The y-axis field well of a scatter plot.</p>
+    /// <p>The y-axis field well of a scatter plot.</p> 
     /// <p>The y-axis is a dimension field and cannot be aggregated.</p>
-    pub fn set_y_axis(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.y_axis = input;
-        self
+    pub fn set_y_axis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.y_axis = input; self
+    }
+    /// <p>The y-axis field well of a scatter plot.</p> 
+    /// <p>The y-axis is a dimension field and cannot be aggregated.</p>
+    pub fn get_y_axis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.y_axis
     }
     /// Appends an item to `size`.
     ///
@@ -115,17 +115,17 @@ impl ScatterPlotUnaggregatedFieldWellsBuilder {
     /// <p>The size field well of a scatter plot.</p>
     pub fn size(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.size.unwrap_or_default();
-        v.push(input);
-        self.size = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.size = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The size field well of a scatter plot.</p>
-    pub fn set_size(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
-        self.size = input;
-        self
+    pub fn set_size(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
+        self.size = input; self
+    }
+    /// <p>The size field well of a scatter plot.</p>
+    pub fn get_size(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.size
     }
     /// Appends an item to `category`.
     ///
@@ -134,17 +134,17 @@ impl ScatterPlotUnaggregatedFieldWellsBuilder {
     /// <p>The category field well of a scatter plot.</p>
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.category.unwrap_or_default();
-        v.push(input);
-        self.category = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.category = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The category field well of a scatter plot.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.category = input;
-        self
+    pub fn set_category(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.category = input; self
+    }
+    /// <p>The category field well of a scatter plot.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.category
     }
     /// Appends an item to `label`.
     ///
@@ -153,26 +153,32 @@ impl ScatterPlotUnaggregatedFieldWellsBuilder {
     /// <p>The label field well of a scatter plot.</p>
     pub fn label(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.label.unwrap_or_default();
-        v.push(input);
-        self.label = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.label = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The label field well of a scatter plot.</p>
-    pub fn set_label(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.label = input;
-        self
+    pub fn set_label(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.label = input; self
+    }
+    /// <p>The label field well of a scatter plot.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.label
     }
     /// Consumes the builder and constructs a [`ScatterPlotUnaggregatedFieldWells`](crate::types::ScatterPlotUnaggregatedFieldWells).
     pub fn build(self) -> crate::types::ScatterPlotUnaggregatedFieldWells {
         crate::types::ScatterPlotUnaggregatedFieldWells {
-            x_axis: self.x_axis,
-            y_axis: self.y_axis,
-            size: self.size,
-            category: self.category,
-            label: self.label,
+            x_axis: self.x_axis
+            ,
+            y_axis: self.y_axis
+            ,
+            size: self.size
+            ,
+            category: self.category
+            ,
+            label: self.label
+            ,
         }
     }
 }
+

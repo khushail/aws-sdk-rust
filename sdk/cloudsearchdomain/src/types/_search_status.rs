@@ -3,7 +3,7 @@
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchStatus {
+pub struct SearchStatus  {
     /// <p>How long it took to process the request, in milliseconds.</p>
     #[doc(hidden)]
     pub timems: i64,
@@ -17,7 +17,7 @@ impl SearchStatus {
         self.timems
     }
     /// <p>The encrypted resource ID for the request.</p>
-    pub fn rid(&self) -> ::std::option::Option<&str> {
+    pub fn rid(&self) -> ::std::option::Option<& str> {
         self.rid.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl SearchStatus {
 
 /// A builder for [`SearchStatus`](crate::types::SearchStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchStatusBuilder {
     pub(crate) timems: ::std::option::Option<i64>,
     pub(crate) rid: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl SearchStatusBuilder {
     }
     /// <p>How long it took to process the request, in milliseconds.</p>
     pub fn set_timems(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.timems = input;
-        self
+        self.timems = input; self
+    }
+    /// <p>How long it took to process the request, in milliseconds.</p>
+    pub fn get_timems(&self) -> &::std::option::Option<i64> {
+        &self.timems
     }
     /// <p>The encrypted resource ID for the request.</p>
     pub fn rid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,21 @@ impl SearchStatusBuilder {
     }
     /// <p>The encrypted resource ID for the request.</p>
     pub fn set_rid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rid = input;
-        self
+        self.rid = input; self
+    }
+    /// <p>The encrypted resource ID for the request.</p>
+    pub fn get_rid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rid
     }
     /// Consumes the builder and constructs a [`SearchStatus`](crate::types::SearchStatus).
     pub fn build(self) -> crate::types::SearchStatus {
         crate::types::SearchStatus {
-            timems: self.timems.unwrap_or_default(),
-            rid: self.rid,
+            timems: self.timems
+                .unwrap_or_default()
+            ,
+            rid: self.rid
+            ,
         }
     }
 }
+

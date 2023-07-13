@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListChannelsModeratedByAppInstanceUserInput {
+pub struct ListChannelsModeratedByAppInstanceUserInput  {
     /// <p>The ARN of the user in the moderated channel.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListChannelsModeratedByAppInstanceUserInput {
 }
 impl ListChannelsModeratedByAppInstanceUserInput {
     /// <p>The ARN of the user in the moderated channel.</p>
-    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The maximum number of channels in the request.</p>
@@ -26,15 +26,15 @@ impl ListChannelsModeratedByAppInstanceUserInput {
         self.max_results
     }
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput {
+impl  ::std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsModeratedByAppInstanceUserInput");
         formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
@@ -46,7 +46,7 @@ impl ::std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput {
 }
 impl ListChannelsModeratedByAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`ListChannelsModeratedByAppInstanceUserInput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput).
-    pub fn builder() -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserInputBuilder{
+    pub fn builder() -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserInputBuilder {
         crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserInputBuilder::default()
     }
 }
@@ -62,20 +62,17 @@ pub struct ListChannelsModeratedByAppInstanceUserInputBuilder {
 }
 impl ListChannelsModeratedByAppInstanceUserInputBuilder {
     /// <p>The ARN of the user in the moderated channel.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user in the moderated channel.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.app_instance_user_arn = input;
-        self
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_instance_user_arn = input; self
+    }
+    /// <p>The ARN of the user in the moderated channel.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
     }
     /// <p>The maximum number of channels in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,8 +81,11 @@ impl ListChannelsModeratedByAppInstanceUserInputBuilder {
     }
     /// <p>The maximum number of channels in the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of channels in the request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,8 +94,11 @@ impl ListChannelsModeratedByAppInstanceUserInputBuilder {
     }
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,11 +107,14 @@ impl ListChannelsModeratedByAppInstanceUserInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`ListChannelsModeratedByAppInstanceUserInput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput {
                 app_instance_user_arn: self.app_instance_user_arn
@@ -133,3 +139,4 @@ impl ::std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInputBuilder {
         formatter.finish()
     }
 }
+

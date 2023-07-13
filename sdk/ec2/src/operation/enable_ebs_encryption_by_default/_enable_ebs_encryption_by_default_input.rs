@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableEbsEncryptionByDefaultInput {
+pub struct EnableEbsEncryptionByDefaultInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -15,16 +15,14 @@ impl EnableEbsEncryptionByDefaultInput {
 }
 impl EnableEbsEncryptionByDefaultInput {
     /// Creates a new builder-style object to manufacture [`EnableEbsEncryptionByDefaultInput`](crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultInput).
-    pub fn builder() -> crate::operation::enable_ebs_encryption_by_default::builders::EnableEbsEncryptionByDefaultInputBuilder{
+    pub fn builder() -> crate::operation::enable_ebs_encryption_by_default::builders::EnableEbsEncryptionByDefaultInputBuilder {
         crate::operation::enable_ebs_encryption_by_default::builders::EnableEbsEncryptionByDefaultInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableEbsEncryptionByDefaultInput`](crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableEbsEncryptionByDefaultInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -36,20 +34,20 @@ impl EnableEbsEncryptionByDefaultInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`EnableEbsEncryptionByDefaultInput`](crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultInput {
-                dry_run: self.dry_run,
-            },
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

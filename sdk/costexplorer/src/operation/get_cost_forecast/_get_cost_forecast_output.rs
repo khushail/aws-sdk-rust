@@ -2,50 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCostForecastOutput {
+pub struct GetCostForecastOutput  {
     /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
     #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::MetricValue>,
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     #[doc(hidden)]
-    pub forecast_results_by_time:
-        ::std::option::Option<::std::vec::Vec<crate::types::ForecastResult>>,
+    pub forecast_results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::ForecastResult>>,
     _request_id: Option<String>,
 }
 impl GetCostForecastOutput {
     /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
-    pub fn total(&self) -> ::std::option::Option<&crate::types::MetricValue> {
+    pub fn total(&self) -> ::std::option::Option<& crate::types::MetricValue> {
         self.total.as_ref()
     }
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
-    pub fn forecast_results_by_time(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ForecastResult]> {
+    pub fn forecast_results_by_time(&self) -> ::std::option::Option<& [crate::types::ForecastResult]> {
         self.forecast_results_by_time.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCostForecastOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCostForecastOutput {
     /// Creates a new builder-style object to manufacture [`GetCostForecastOutput`](crate::operation::get_cost_forecast::GetCostForecastOutput).
-    pub fn builder() -> crate::operation::get_cost_forecast::builders::GetCostForecastOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cost_forecast::builders::GetCostForecastOutputBuilder {
         crate::operation::get_cost_forecast::builders::GetCostForecastOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCostForecastOutput`](crate::operation::get_cost_forecast::GetCostForecastOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostForecastOutputBuilder {
     pub(crate) total: ::std::option::Option<crate::types::MetricValue>,
-    pub(crate) forecast_results_by_time:
-        ::std::option::Option<::std::vec::Vec<crate::types::ForecastResult>>,
+    pub(crate) forecast_results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::ForecastResult>>,
     _request_id: Option<String>,
 }
 impl GetCostForecastOutputBuilder {
@@ -56,8 +49,11 @@ impl GetCostForecastOutputBuilder {
     }
     /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::MetricValue>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
+    }
+    /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::MetricValue> {
+        &self.total
     }
     /// Appends an item to `forecast_results_by_time`.
     ///
@@ -66,33 +62,36 @@ impl GetCostForecastOutputBuilder {
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     pub fn forecast_results_by_time(mut self, input: crate::types::ForecastResult) -> Self {
         let mut v = self.forecast_results_by_time.unwrap_or_default();
-        v.push(input);
-        self.forecast_results_by_time = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.forecast_results_by_time = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
-    pub fn set_forecast_results_by_time(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ForecastResult>>,
-    ) -> Self {
-        self.forecast_results_by_time = input;
-        self
+    pub fn set_forecast_results_by_time(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ForecastResult>>) -> Self {
+        self.forecast_results_by_time = input; self
+    }
+    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
+    pub fn get_forecast_results_by_time(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ForecastResult>> {
+        &self.forecast_results_by_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCostForecastOutput`](crate::operation::get_cost_forecast::GetCostForecastOutput).
     pub fn build(self) -> crate::operation::get_cost_forecast::GetCostForecastOutput {
         crate::operation::get_cost_forecast::GetCostForecastOutput {
-            total: self.total,
-            forecast_results_by_time: self.forecast_results_by_time,
+            total: self.total
+            ,
+            forecast_results_by_time: self.forecast_results_by_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

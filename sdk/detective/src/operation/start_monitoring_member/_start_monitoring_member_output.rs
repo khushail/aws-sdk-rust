@@ -2,41 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMonitoringMemberOutput {
+pub struct StartMonitoringMemberOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for StartMonitoringMemberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartMonitoringMemberOutput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringMemberOutput`](crate::operation::start_monitoring_member::StartMonitoringMemberOutput).
-    pub fn builder(
-    ) -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberOutputBuilder {
         crate::operation::start_monitoring_member::builders::StartMonitoringMemberOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMonitoringMemberOutput`](crate::operation::start_monitoring_member::StartMonitoringMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMonitoringMemberOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartMonitoringMemberOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartMonitoringMemberOutput`](crate::operation::start_monitoring_member::StartMonitoringMemberOutput).
     pub fn build(self) -> crate::operation::start_monitoring_member::StartMonitoringMemberOutput {
         crate::operation::start_monitoring_member::StartMonitoringMemberOutput {
@@ -44,3 +40,4 @@ impl StartMonitoringMemberOutputBuilder {
         }
     }
 }
+

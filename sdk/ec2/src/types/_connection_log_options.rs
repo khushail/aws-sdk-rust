@@ -3,7 +3,7 @@
 /// <p>Describes the client connection logging options for the Client VPN endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionLogOptions {
+pub struct ConnectionLogOptions  {
     /// <p>Indicates whether connection logging is enabled.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
@@ -20,11 +20,11 @@ impl ConnectionLogOptions {
         self.enabled
     }
     /// <p>The name of the CloudWatch Logs log group. Required if connection logging is enabled.</p>
-    pub fn cloudwatch_log_group(&self) -> ::std::option::Option<&str> {
+    pub fn cloudwatch_log_group(&self) -> ::std::option::Option<& str> {
         self.cloudwatch_log_group.as_deref()
     }
     /// <p>The name of the CloudWatch Logs log stream to which the connection data is published.</p>
-    pub fn cloudwatch_log_stream(&self) -> ::std::option::Option<&str> {
+    pub fn cloudwatch_log_stream(&self) -> ::std::option::Option<& str> {
         self.cloudwatch_log_stream.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ConnectionLogOptions {
 
 /// A builder for [`ConnectionLogOptions`](crate::types::ConnectionLogOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionLogOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) cloudwatch_log_group: ::std::option::Option<::std::string::String>,
@@ -53,47 +51,48 @@ impl ConnectionLogOptionsBuilder {
     }
     /// <p>Indicates whether connection logging is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Indicates whether connection logging is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The name of the CloudWatch Logs log group. Required if connection logging is enabled.</p>
-    pub fn cloudwatch_log_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloudwatch_log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloudwatch_log_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch Logs log group. Required if connection logging is enabled.</p>
-    pub fn set_cloudwatch_log_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.cloudwatch_log_group = input;
-        self
+    pub fn set_cloudwatch_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloudwatch_log_group = input; self
+    }
+    /// <p>The name of the CloudWatch Logs log group. Required if connection logging is enabled.</p>
+    pub fn get_cloudwatch_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloudwatch_log_group
     }
     /// <p>The name of the CloudWatch Logs log stream to which the connection data is published.</p>
-    pub fn cloudwatch_log_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloudwatch_log_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloudwatch_log_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch Logs log stream to which the connection data is published.</p>
-    pub fn set_cloudwatch_log_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.cloudwatch_log_stream = input;
-        self
+    pub fn set_cloudwatch_log_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloudwatch_log_stream = input; self
+    }
+    /// <p>The name of the CloudWatch Logs log stream to which the connection data is published.</p>
+    pub fn get_cloudwatch_log_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloudwatch_log_stream
     }
     /// Consumes the builder and constructs a [`ConnectionLogOptions`](crate::types::ConnectionLogOptions).
     pub fn build(self) -> crate::types::ConnectionLogOptions {
         crate::types::ConnectionLogOptions {
-            enabled: self.enabled,
-            cloudwatch_log_group: self.cloudwatch_log_group,
-            cloudwatch_log_stream: self.cloudwatch_log_stream,
+            enabled: self.enabled
+            ,
+            cloudwatch_log_group: self.cloudwatch_log_group
+            ,
+            cloudwatch_log_stream: self.cloudwatch_log_stream
+            ,
         }
     }
 }
+

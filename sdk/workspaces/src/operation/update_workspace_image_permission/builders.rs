@@ -3,85 +3,96 @@ pub use crate::operation::update_workspace_image_permission::_update_workspace_i
 
 pub use crate::operation::update_workspace_image_permission::_update_workspace_image_permission_input::UpdateWorkspaceImagePermissionInputBuilder;
 
+impl UpdateWorkspaceImagePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_workspace_image_permission();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateWorkspaceImagePermission`.
-///
-/// <p>Shares or unshares an image with one account in the same Amazon Web Services Region by specifying whether that account has permission to copy the image. If the copy image permission is granted, the image is shared with that account. If the copy image permission is revoked, the image is unshared with the account.</p>
-/// <p>After an image has been shared, the recipient account can copy the image to other Regions as needed.</p>
-/// <p>In the China (Ningxia) Region, you can copy images only within the same Region.</p>
-/// <p>In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.</p>
-/// <p>For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html"> Share or Unshare a Custom WorkSpaces Image</a>.</p> <note>
-/// <ul>
-/// <li> <p>To delete an image that has been shared, you must unshare the image before you delete it.</p> </li>
-/// <li> <p>Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't supported at this time in Amazon Web Services GovCloud (US). To share BYOL images across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services Support.</p> </li>
-/// </ul>
+/// 
+/// <p>Shares or unshares an image with one account in the same Amazon Web Services Region by specifying whether that account has permission to copy the image. If the copy image permission is granted, the image is shared with that account. If the copy image permission is revoked, the image is unshared with the account.</p> 
+/// <p>After an image has been shared, the recipient account can copy the image to other Regions as needed.</p> 
+/// <p>In the China (Ningxia) Region, you can copy images only within the same Region.</p> 
+/// <p>In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.</p> 
+/// <p>For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html"> Share or Unshare a Custom WorkSpaces Image</a>.</p> <note> 
+/// <ul> 
+/// <li> <p>To delete an image that has been shared, you must unshare the image before you delete it.</p> </li> 
+/// <li> <p>Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't supported at this time in Amazon Web Services GovCloud (US). To share BYOL images across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services Support.</p> </li> 
+/// </ul> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceImagePermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionInputBuilder,
 }
-impl UpdateWorkspaceImagePermissionFluentBuilder {
+impl UpdateWorkspaceImagePermissionFluentBuilder  {
     /// Creates a new `UpdateWorkspaceImagePermission`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkspaceImagePermission as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the image.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_id(input.into());
@@ -91,6 +102,10 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_id(input);
         self
+    }
+    /// <p>The identifier of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_id()
     }
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub fn allow_copy_image(mut self, input: bool) -> Self {
@@ -102,24 +117,29 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
         self.inner = self.inner.set_allow_copy_image(input);
         self
     }
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
-    /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
+    /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
+    pub fn get_allow_copy_image(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_copy_image()
+    }
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important> 
+    /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p> 
     /// </important>
-    pub fn shared_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_account_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
-    /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important> 
+    /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p> 
     /// </important>
-    pub fn set_shared_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shared_account_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important> 
+    /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p> 
+    /// </important>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shared_account_id()
+    }
 }
+

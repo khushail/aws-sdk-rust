@@ -3,59 +3,52 @@
 /// <p>Represents the input of a delete repository operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRepositoryInput {
+pub struct DeleteRepositoryInput  {
     /// <p>The name of the repository to delete.</p>
     #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRepositoryInput {
     /// <p>The name of the repository to delete.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
 impl DeleteRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder {
         crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRepositoryInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRepositoryInputBuilder {
     /// <p>The name of the repository to delete.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to delete.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.repository_name = input;
-        self
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.repository_name = input; self
+    }
+    /// <p>The name of the repository to delete.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_repository::DeleteRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_repository::DeleteRepositoryInput {
-            repository_name: self.repository_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_repository::DeleteRepositoryInput {
+                repository_name: self.repository_name
+                ,
+            }
+        )
     }
 }
+

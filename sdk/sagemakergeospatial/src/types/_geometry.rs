@@ -3,7 +3,7 @@
 /// <p>The structure representing a Geometry in terms of Type and Coordinates as per GeoJson spec.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Geometry {
+pub struct Geometry  {
     /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Geometry {
 }
 impl Geometry {
     /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The coordinates of the GeoJson Geometry.</p>
-    pub fn coordinates(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::vec::Vec<f64>>]> {
+    pub fn coordinates(&self) -> ::std::option::Option<& [::std::vec::Vec<::std::vec::Vec<f64>>]> {
         self.coordinates.as_deref()
     }
 }
@@ -30,13 +30,10 @@ impl Geometry {
 
 /// A builder for [`Geometry`](crate::types::Geometry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeometryBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) coordinates:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
+    pub(crate) coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
 }
 impl GeometryBuilder {
     /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
@@ -46,8 +43,11 @@ impl GeometryBuilder {
     }
     /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Appends an item to `coordinates`.
     ///
@@ -56,23 +56,26 @@ impl GeometryBuilder {
     /// <p>The coordinates of the GeoJson Geometry.</p>
     pub fn coordinates(mut self, input: ::std::vec::Vec<::std::vec::Vec<f64>>) -> Self {
         let mut v = self.coordinates.unwrap_or_default();
-        v.push(input);
-        self.coordinates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.coordinates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The coordinates of the GeoJson Geometry.</p>
-    pub fn set_coordinates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
-    ) -> Self {
-        self.coordinates = input;
-        self
+    pub fn set_coordinates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>) -> Self {
+        self.coordinates = input; self
+    }
+    /// <p>The coordinates of the GeoJson Geometry.</p>
+    pub fn get_coordinates(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>> {
+        &self.coordinates
     }
     /// Consumes the builder and constructs a [`Geometry`](crate::types::Geometry).
     pub fn build(self) -> crate::types::Geometry {
         crate::types::Geometry {
-            r#type: self.r#type,
-            coordinates: self.coordinates,
+            r#type: self.r#type
+            ,
+            coordinates: self.coordinates
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// Media Package Group Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaPackageGroupSettings {
+pub struct MediaPackageGroupSettings  {
     /// MediaPackage channel destination.
     #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
 }
 impl MediaPackageGroupSettings {
     /// MediaPackage channel destination.
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::OutputLocationRef> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::OutputLocationRef> {
         self.destination.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl MediaPackageGroupSettings {
 
 /// A builder for [`MediaPackageGroupSettings`](crate::types::MediaPackageGroupSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaPackageGroupSettingsBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,
 }
@@ -36,17 +34,19 @@ impl MediaPackageGroupSettingsBuilder {
         self
     }
     /// MediaPackage channel destination.
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocationRef>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
+        self.destination = input; self
+    }
+    /// MediaPackage channel destination.
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`MediaPackageGroupSettings`](crate::types::MediaPackageGroupSettings).
     pub fn build(self) -> crate::types::MediaPackageGroupSettings {
         crate::types::MediaPackageGroupSettings {
-            destination: self.destination,
+            destination: self.destination
+            ,
         }
     }
 }
+

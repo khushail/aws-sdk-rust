@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterPackageVersionInput {
+pub struct DeregisterPackageVersionInput  {
     /// <p>An owner account.</p>
     #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
@@ -21,40 +21,36 @@ pub struct DeregisterPackageVersionInput {
 }
 impl DeregisterPackageVersionInput {
     /// <p>An owner account.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>A package ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>A package version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>A patch version.</p>
-    pub fn patch_version(&self) -> ::std::option::Option<&str> {
+    pub fn patch_version(&self) -> ::std::option::Option<& str> {
         self.patch_version.as_deref()
     }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
-    pub fn updated_latest_patch_version(&self) -> ::std::option::Option<&str> {
+    pub fn updated_latest_patch_version(&self) -> ::std::option::Option<& str> {
         self.updated_latest_patch_version.as_deref()
     }
 }
 impl DeregisterPackageVersionInput {
     /// Creates a new builder-style object to manufacture [`DeregisterPackageVersionInput`](crate::operation::deregister_package_version::DeregisterPackageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder {
         crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterPackageVersionInput`](crate::operation::deregister_package_version::DeregisterPackageVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterPackageVersionInputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
@@ -64,20 +60,17 @@ pub struct DeregisterPackageVersionInputBuilder {
 }
 impl DeregisterPackageVersionInputBuilder {
     /// <p>An owner account.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An owner account.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.owner_account = input;
-        self
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account = input; self
+    }
+    /// <p>An owner account.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
     }
     /// <p>A package ID.</p>
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,72 +79,67 @@ impl DeregisterPackageVersionInputBuilder {
     }
     /// <p>A package ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
+    }
+    /// <p>A package ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
     }
     /// <p>A package version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A package version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.package_version = input;
-        self
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.package_version = input; self
+    }
+    /// <p>A package version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
     }
     /// <p>A patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.patch_version = input;
-        self
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.patch_version = input; self
+    }
+    /// <p>A patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
     }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
-    pub fn updated_latest_patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn updated_latest_patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_latest_patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
-    pub fn set_updated_latest_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.updated_latest_patch_version = input;
-        self
+    pub fn set_updated_latest_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.updated_latest_patch_version = input; self
+    }
+    /// <p>If the version was marked latest, the new version to maker as latest.</p>
+    pub fn get_updated_latest_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_latest_patch_version
     }
     /// Consumes the builder and constructs a [`DeregisterPackageVersionInput`](crate::operation::deregister_package_version::DeregisterPackageVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_package_version::DeregisterPackageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_package_version::DeregisterPackageVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_package_version::DeregisterPackageVersionInput {
-                owner_account: self.owner_account,
-                package_id: self.package_id,
-                package_version: self.package_version,
-                patch_version: self.patch_version,
-                updated_latest_patch_version: self.updated_latest_patch_version,
-            },
+                owner_account: self.owner_account
+                ,
+                package_id: self.package_id
+                ,
+                package_version: self.package_version
+                ,
+                patch_version: self.patch_version
+                ,
+                updated_latest_patch_version: self.updated_latest_patch_version
+                ,
+            }
         )
     }
 }
+

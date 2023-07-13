@@ -3,14 +3,14 @@
 /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageInfo {
+pub struct StorageInfo  {
     /// <p>EBS volume information.</p>
     #[doc(hidden)]
     pub ebs_storage_info: ::std::option::Option<crate::types::EbsStorageInfo>,
 }
 impl StorageInfo {
     /// <p>EBS volume information.</p>
-    pub fn ebs_storage_info(&self) -> ::std::option::Option<&crate::types::EbsStorageInfo> {
+    pub fn ebs_storage_info(&self) -> ::std::option::Option<& crate::types::EbsStorageInfo> {
         self.ebs_storage_info.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl StorageInfo {
 
 /// A builder for [`StorageInfo`](crate::types::StorageInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageInfoBuilder {
     pub(crate) ebs_storage_info: ::std::option::Option<crate::types::EbsStorageInfo>,
 }
@@ -36,17 +34,19 @@ impl StorageInfoBuilder {
         self
     }
     /// <p>EBS volume information.</p>
-    pub fn set_ebs_storage_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsStorageInfo>,
-    ) -> Self {
-        self.ebs_storage_info = input;
-        self
+    pub fn set_ebs_storage_info(mut self, input: ::std::option::Option<crate::types::EbsStorageInfo>) -> Self {
+        self.ebs_storage_info = input; self
+    }
+    /// <p>EBS volume information.</p>
+    pub fn get_ebs_storage_info(&self) -> &::std::option::Option<crate::types::EbsStorageInfo> {
+        &self.ebs_storage_info
     }
     /// Consumes the builder and constructs a [`StorageInfo`](crate::types::StorageInfo).
     pub fn build(self) -> crate::types::StorageInfo {
         crate::types::StorageInfo {
-            ebs_storage_info: self.ebs_storage_info,
+            ebs_storage_info: self.ebs_storage_info
+            ,
         }
     }
 }
+

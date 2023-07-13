@@ -3,14 +3,14 @@
 /// <p>Represents the result of a delete project request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectOutput {
+pub struct DeleteProjectOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteProjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
     pub fn builder() -> crate::operation::delete_project::builders::DeleteProjectOutputBuilder {
@@ -20,22 +20,20 @@ impl DeleteProjectOutput {
 
 /// A builder for [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProjectOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteProjectOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
     pub fn build(self) -> crate::operation::delete_project::DeleteProjectOutput {
         crate::operation::delete_project::DeleteProjectOutput {
@@ -43,3 +41,4 @@ impl DeleteProjectOutputBuilder {
         }
     }
 }
+

@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectionInput {
+pub struct DeleteConnectionInput  {
     /// <p>The name of the connection to delete.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectionInput {
     /// <p>The name of the connection to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionInputBuilder {
         crate::operation::delete_connection::builders::DeleteConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DeleteConnectionInputBuilder {
     }
     /// <p>The name of the connection to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the connection to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_connection::DeleteConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_connection::DeleteConnectionInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_connection::DeleteConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_connection::DeleteConnectionInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

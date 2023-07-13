@@ -2,36 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSamplingTargetsInput {
+pub struct GetSamplingTargetsInput  {
     /// <p>Information about rules that the service is using to sample requests.</p>
     #[doc(hidden)]
-    pub sampling_statistics_documents:
-        ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>,
+    pub sampling_statistics_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>,
 }
 impl GetSamplingTargetsInput {
     /// <p>Information about rules that the service is using to sample requests.</p>
-    pub fn sampling_statistics_documents(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SamplingStatisticsDocument]> {
+    pub fn sampling_statistics_documents(&self) -> ::std::option::Option<& [crate::types::SamplingStatisticsDocument]> {
         self.sampling_statistics_documents.as_deref()
     }
 }
 impl GetSamplingTargetsInput {
     /// Creates a new builder-style object to manufacture [`GetSamplingTargetsInput`](crate::operation::get_sampling_targets::GetSamplingTargetsInput).
-    pub fn builder(
-    ) -> crate::operation::get_sampling_targets::builders::GetSamplingTargetsInputBuilder {
+    pub fn builder() -> crate::operation::get_sampling_targets::builders::GetSamplingTargetsInputBuilder {
         crate::operation::get_sampling_targets::builders::GetSamplingTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSamplingTargetsInput`](crate::operation::get_sampling_targets::GetSamplingTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSamplingTargetsInputBuilder {
-    pub(crate) sampling_statistics_documents:
-        ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>,
+    pub(crate) sampling_statistics_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>,
 }
 impl GetSamplingTargetsInputBuilder {
     /// Appends an item to `sampling_statistics_documents`.
@@ -39,34 +32,28 @@ impl GetSamplingTargetsInputBuilder {
     /// To override the contents of this collection use [`set_sampling_statistics_documents`](Self::set_sampling_statistics_documents).
     ///
     /// <p>Information about rules that the service is using to sample requests.</p>
-    pub fn sampling_statistics_documents(
-        mut self,
-        input: crate::types::SamplingStatisticsDocument,
-    ) -> Self {
+    pub fn sampling_statistics_documents(mut self, input: crate::types::SamplingStatisticsDocument) -> Self {
         let mut v = self.sampling_statistics_documents.unwrap_or_default();
-        v.push(input);
-        self.sampling_statistics_documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sampling_statistics_documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about rules that the service is using to sample requests.</p>
-    pub fn set_sampling_statistics_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>,
-    ) -> Self {
-        self.sampling_statistics_documents = input;
-        self
+    pub fn set_sampling_statistics_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>) -> Self {
+        self.sampling_statistics_documents = input; self
+    }
+    /// <p>Information about rules that the service is using to sample requests.</p>
+    pub fn get_sampling_statistics_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>> {
+        &self.sampling_statistics_documents
     }
     /// Consumes the builder and constructs a [`GetSamplingTargetsInput`](crate::operation::get_sampling_targets::GetSamplingTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sampling_targets::GetSamplingTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sampling_targets::GetSamplingTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_sampling_targets::GetSamplingTargetsInput {
-                sampling_statistics_documents: self.sampling_statistics_documents,
-            },
+                sampling_statistics_documents: self.sampling_statistics_documents
+                ,
+            }
         )
     }
 }
+

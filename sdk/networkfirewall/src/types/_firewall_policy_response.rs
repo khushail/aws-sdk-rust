@@ -3,12 +3,12 @@
 /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallPolicyResponse {
+pub struct FirewallPolicyResponse  {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     #[doc(hidden)]
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
-    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note> 
+    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p> 
     /// </note>
     #[doc(hidden)]
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
@@ -42,29 +42,29 @@ pub struct FirewallPolicyResponse {
 }
 impl FirewallPolicyResponse {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub fn firewall_policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_policy_name(&self) -> ::std::option::Option<& str> {
         self.firewall_policy_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
-    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note> 
+    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p> 
     /// </note>
-    pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_policy_arn(&self) -> ::std::option::Option<& str> {
         self.firewall_policy_arn.as_deref()
     }
     /// <p>The unique identifier for the firewall policy. </p>
-    pub fn firewall_policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_policy_id(&self) -> ::std::option::Option<& str> {
         self.firewall_policy_id.as_deref()
     }
     /// <p>A description of the firewall policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy by calling <code>DescribeFirewallPolicy</code> and providing the firewall policy's name or ARN.</p>
-    pub fn firewall_policy_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn firewall_policy_status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.firewall_policy_status.as_ref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
@@ -80,13 +80,11 @@ impl FirewallPolicyResponse {
         self.number_of_associations
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The last time that the firewall policy was changed.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -99,9 +97,7 @@ impl FirewallPolicyResponse {
 
 /// A builder for [`FirewallPolicyResponse`](crate::types::FirewallPolicyResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallPolicyResponseBuilder {
     pub(crate) firewall_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,
@@ -112,62 +108,54 @@ pub struct FirewallPolicyResponseBuilder {
     pub(crate) consumed_stateless_rule_capacity: ::std::option::Option<i32>,
     pub(crate) consumed_stateful_rule_capacity: ::std::option::Option<i32>,
     pub(crate) number_of_associations: ::std::option::Option<i32>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FirewallPolicyResponseBuilder {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub fn firewall_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub fn set_firewall_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.firewall_policy_name = input;
-        self
+    pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.firewall_policy_name = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
-    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_policy_name
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note> 
+    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p> 
     /// </note>
-    pub fn firewall_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
-    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note> 
+    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p> 
     /// </note>
-    pub fn set_firewall_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.firewall_policy_arn = input;
-        self
+    pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.firewall_policy_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note> 
+    /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p> 
+    /// </note>
+    pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_policy_arn
     }
     /// <p>The unique identifier for the firewall policy. </p>
-    pub fn firewall_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the firewall policy. </p>
-    pub fn set_firewall_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.firewall_policy_id = input;
-        self
+    pub fn set_firewall_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.firewall_policy_id = input; self
+    }
+    /// <p>The unique identifier for the firewall policy. </p>
+    pub fn get_firewall_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_policy_id
     }
     /// <p>A description of the firewall policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -176,8 +164,11 @@ impl FirewallPolicyResponseBuilder {
     }
     /// <p>A description of the firewall policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the firewall policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy by calling <code>DescribeFirewallPolicy</code> and providing the firewall policy's name or ARN.</p>
     pub fn firewall_policy_status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -185,12 +176,12 @@ impl FirewallPolicyResponseBuilder {
         self
     }
     /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy by calling <code>DescribeFirewallPolicy</code> and providing the firewall policy's name or ARN.</p>
-    pub fn set_firewall_policy_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
-        self.firewall_policy_status = input;
-        self
+    pub fn set_firewall_policy_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
+        self.firewall_policy_status = input; self
+    }
+    /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy by calling <code>DescribeFirewallPolicy</code> and providing the firewall policy's name or ARN.</p>
+    pub fn get_firewall_policy_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.firewall_policy_status
     }
     /// Appends an item to `tags`.
     ///
@@ -199,17 +190,17 @@ impl FirewallPolicyResponseBuilder {
     /// <p>The key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
     pub fn consumed_stateless_rule_capacity(mut self, input: i32) -> Self {
@@ -217,12 +208,12 @@ impl FirewallPolicyResponseBuilder {
         self
     }
     /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
-    pub fn set_consumed_stateless_rule_capacity(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.consumed_stateless_rule_capacity = input;
-        self
+    pub fn set_consumed_stateless_rule_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.consumed_stateless_rule_capacity = input; self
+    }
+    /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
+    pub fn get_consumed_stateless_rule_capacity(&self) -> &::std::option::Option<i32> {
+        &self.consumed_stateless_rule_capacity
     }
     /// <p>The number of capacity units currently consumed by the policy's stateful rules.</p>
     pub fn consumed_stateful_rule_capacity(mut self, input: i32) -> Self {
@@ -230,12 +221,12 @@ impl FirewallPolicyResponseBuilder {
         self
     }
     /// <p>The number of capacity units currently consumed by the policy's stateful rules.</p>
-    pub fn set_consumed_stateful_rule_capacity(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.consumed_stateful_rule_capacity = input;
-        self
+    pub fn set_consumed_stateful_rule_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.consumed_stateful_rule_capacity = input; self
+    }
+    /// <p>The number of capacity units currently consumed by the policy's stateful rules.</p>
+    pub fn get_consumed_stateful_rule_capacity(&self) -> &::std::option::Option<i32> {
+        &self.consumed_stateful_rule_capacity
     }
     /// <p>The number of firewalls that are associated with this firewall policy.</p>
     pub fn number_of_associations(mut self, input: i32) -> Self {
@@ -244,24 +235,24 @@ impl FirewallPolicyResponseBuilder {
     }
     /// <p>The number of firewalls that are associated with this firewall policy.</p>
     pub fn set_number_of_associations(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_associations = input;
-        self
+        self.number_of_associations = input; self
+    }
+    /// <p>The number of firewalls that are associated with this firewall policy.</p>
+    pub fn get_number_of_associations(&self) -> &::std::option::Option<i32> {
+        &self.number_of_associations
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
-        self.encryption_configuration = input;
-        self
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input; self
+    }
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
     }
     /// <p>The last time that the firewall policy was changed.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -269,27 +260,39 @@ impl FirewallPolicyResponseBuilder {
         self
     }
     /// <p>The last time that the firewall policy was changed.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
+    }
+    /// <p>The last time that the firewall policy was changed.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`FirewallPolicyResponse`](crate::types::FirewallPolicyResponse).
     pub fn build(self) -> crate::types::FirewallPolicyResponse {
         crate::types::FirewallPolicyResponse {
-            firewall_policy_name: self.firewall_policy_name,
-            firewall_policy_arn: self.firewall_policy_arn,
-            firewall_policy_id: self.firewall_policy_id,
-            description: self.description,
-            firewall_policy_status: self.firewall_policy_status,
-            tags: self.tags,
-            consumed_stateless_rule_capacity: self.consumed_stateless_rule_capacity,
-            consumed_stateful_rule_capacity: self.consumed_stateful_rule_capacity,
-            number_of_associations: self.number_of_associations,
-            encryption_configuration: self.encryption_configuration,
-            last_modified_time: self.last_modified_time,
+            firewall_policy_name: self.firewall_policy_name
+            ,
+            firewall_policy_arn: self.firewall_policy_arn
+            ,
+            firewall_policy_id: self.firewall_policy_id
+            ,
+            description: self.description
+            ,
+            firewall_policy_status: self.firewall_policy_status
+            ,
+            tags: self.tags
+            ,
+            consumed_stateless_rule_capacity: self.consumed_stateless_rule_capacity
+            ,
+            consumed_stateful_rule_capacity: self.consumed_stateful_rule_capacity
+            ,
+            number_of_associations: self.number_of_associations
+            ,
+            encryption_configuration: self.encryption_configuration
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

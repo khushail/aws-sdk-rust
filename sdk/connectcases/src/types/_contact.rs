@@ -3,14 +3,14 @@
 /// <p>An object that represents an Amazon Connect contact object. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Contact {
+pub struct Contact  {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
 }
 impl Contact {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Contact {
 
 /// A builder for [`Contact`](crate::types::Contact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ContactBuilder {
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
+    }
+    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
     }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
-            contact_arn: self.contact_arn,
+            contact_arn: self.contact_arn
+            ,
         }
     }
 }
+

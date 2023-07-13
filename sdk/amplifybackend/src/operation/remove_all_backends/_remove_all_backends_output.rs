@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveAllBackendsOutput {
+pub struct RemoveAllBackendsOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -22,44 +22,41 @@ pub struct RemoveAllBackendsOutput {
 }
 impl RemoveAllBackendsOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RemoveAllBackendsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RemoveAllBackendsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAllBackendsOutput`](crate::operation::remove_all_backends::RemoveAllBackendsOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_all_backends::builders::RemoveAllBackendsOutputBuilder {
+    pub fn builder() -> crate::operation::remove_all_backends::builders::RemoveAllBackendsOutputBuilder {
         crate::operation::remove_all_backends::builders::RemoveAllBackendsOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAllBackendsOutput`](crate::operation::remove_all_backends::RemoveAllBackendsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAllBackendsOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
@@ -76,8 +73,11 @@ impl RemoveAllBackendsOutputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>If the request fails, this error is returned.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +86,11 @@ impl RemoveAllBackendsOutputBuilder {
     }
     /// <p>If the request fails, this error is returned.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// <p>The ID for the job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,8 +99,11 @@ impl RemoveAllBackendsOutputBuilder {
     }
     /// <p>The ID for the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The ID for the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The name of the operation.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +112,11 @@ impl RemoveAllBackendsOutputBuilder {
     }
     /// <p>The name of the operation.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
+    }
+    /// <p>The name of the operation.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
     }
     /// <p>The current status of the request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,27 +125,36 @@ impl RemoveAllBackendsOutputBuilder {
     }
     /// <p>The current status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The current status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RemoveAllBackendsOutput`](crate::operation::remove_all_backends::RemoveAllBackendsOutput).
     pub fn build(self) -> crate::operation::remove_all_backends::RemoveAllBackendsOutput {
         crate::operation::remove_all_backends::RemoveAllBackendsOutput {
-            app_id: self.app_id,
-            error: self.error,
-            job_id: self.job_id,
-            operation: self.operation,
-            status: self.status,
+            app_id: self.app_id
+            ,
+            error: self.error
+            ,
+            job_id: self.job_id
+            ,
+            operation: self.operation
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

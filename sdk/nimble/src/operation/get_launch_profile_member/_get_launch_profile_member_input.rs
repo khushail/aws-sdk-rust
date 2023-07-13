@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLaunchProfileMemberInput {
+pub struct GetLaunchProfileMemberInput  {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct GetLaunchProfileMemberInput {
 }
 impl GetLaunchProfileMemberInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_profile_id(&self) -> ::std::option::Option<& str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
 impl GetLaunchProfileMemberInput {
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileMemberInput`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberInput).
-    pub fn builder(
-    ) -> crate::operation::get_launch_profile_member::builders::GetLaunchProfileMemberInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_launch_profile_member::builders::GetLaunchProfileMemberInputBuilder {
         crate::operation::get_launch_profile_member::builders::GetLaunchProfileMemberInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLaunchProfileMemberInput`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLaunchProfileMemberInputBuilder {
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -48,20 +44,17 @@ pub struct GetLaunchProfileMemberInputBuilder {
 }
 impl GetLaunchProfileMemberInputBuilder {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.launch_profile_id = input;
-        self
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.launch_profile_id = input; self
+    }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_id
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +63,11 @@ impl GetLaunchProfileMemberInputBuilder {
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
+    }
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,22 +76,24 @@ impl GetLaunchProfileMemberInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetLaunchProfileMemberInput`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_launch_profile_member::GetLaunchProfileMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_launch_profile_member::GetLaunchProfileMemberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_launch_profile_member::GetLaunchProfileMemberInput {
-                launch_profile_id: self.launch_profile_id,
-                principal_id: self.principal_id,
-                studio_id: self.studio_id,
-            },
+                launch_profile_id: self.launch_profile_id
+                ,
+                principal_id: self.principal_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
         )
     }
 }
+

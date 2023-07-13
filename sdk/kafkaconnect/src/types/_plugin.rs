@@ -3,14 +3,14 @@
 /// <p>A plugin is an AWS resource that contains the code that defines your connector logic. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Plugin {
+pub struct Plugin  {
     /// <p>Details about a custom plugin.</p>
     #[doc(hidden)]
     pub custom_plugin: ::std::option::Option<crate::types::CustomPlugin>,
 }
 impl Plugin {
     /// <p>Details about a custom plugin.</p>
-    pub fn custom_plugin(&self) -> ::std::option::Option<&crate::types::CustomPlugin> {
+    pub fn custom_plugin(&self) -> ::std::option::Option<& crate::types::CustomPlugin> {
         self.custom_plugin.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl Plugin {
 
 /// A builder for [`Plugin`](crate::types::Plugin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PluginBuilder {
     pub(crate) custom_plugin: ::std::option::Option<crate::types::CustomPlugin>,
 }
@@ -36,17 +34,19 @@ impl PluginBuilder {
         self
     }
     /// <p>Details about a custom plugin.</p>
-    pub fn set_custom_plugin(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomPlugin>,
-    ) -> Self {
-        self.custom_plugin = input;
-        self
+    pub fn set_custom_plugin(mut self, input: ::std::option::Option<crate::types::CustomPlugin>) -> Self {
+        self.custom_plugin = input; self
+    }
+    /// <p>Details about a custom plugin.</p>
+    pub fn get_custom_plugin(&self) -> &::std::option::Option<crate::types::CustomPlugin> {
+        &self.custom_plugin
     }
     /// Consumes the builder and constructs a [`Plugin`](crate::types::Plugin).
     pub fn build(self) -> crate::types::Plugin {
         crate::types::Plugin {
-            custom_plugin: self.custom_plugin,
+            custom_plugin: self.custom_plugin
+            ,
         }
     }
 }
+

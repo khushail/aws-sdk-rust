@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateBrowserSettingsInput {
+pub struct AssociateBrowserSettingsInput  {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct AssociateBrowserSettingsInput {
 }
 impl AssociateBrowserSettingsInput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn browser_settings_arn(&self) -> ::std::option::Option<& str> {
         self.browser_settings_arn.as_deref()
     }
 }
 impl AssociateBrowserSettingsInput {
     /// Creates a new builder-style object to manufacture [`AssociateBrowserSettingsInput`](crate::operation::associate_browser_settings::AssociateBrowserSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsInputBuilder {
         crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateBrowserSettingsInput`](crate::operation::associate_browser_settings::AssociateBrowserSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateBrowserSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl AssociateBrowserSettingsInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
+    }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn set_browser_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.browser_settings_arn = input;
-        self
+    pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.browser_settings_arn = input; self
+    }
+    /// <p>The ARN of the browser settings.</p>
+    pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.browser_settings_arn
     }
     /// Consumes the builder and constructs a [`AssociateBrowserSettingsInput`](crate::operation::associate_browser_settings::AssociateBrowserSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_browser_settings::AssociateBrowserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_browser_settings::AssociateBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_browser_settings::AssociateBrowserSettingsInput {
-                portal_arn: self.portal_arn,
-                browser_settings_arn: self.browser_settings_arn,
-            },
+                portal_arn: self.portal_arn
+                ,
+                browser_settings_arn: self.browser_settings_arn
+                ,
+            }
         )
     }
 }
+

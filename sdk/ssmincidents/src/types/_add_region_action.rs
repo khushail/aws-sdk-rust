@@ -3,7 +3,7 @@
 /// <p>Defines the Amazon Web Services Region and KMS key to add to the replication set. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddRegionAction {
+pub struct AddRegionAction  {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
     #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AddRegionAction {
 }
 impl AddRegionAction {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
-    pub fn sse_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn sse_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.sse_kms_key_id.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AddRegionAction {
 
 /// A builder for [`AddRegionAction`](crate::types::AddRegionAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddRegionActionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) sse_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl AddRegionActionBuilder {
     }
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
+    }
+    /// <p>The Amazon Web Services Region name to add to the replication set.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
     }
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
-    pub fn sse_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
-    pub fn set_sse_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sse_kms_key_id = input;
-        self
+    pub fn set_sse_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sse_kms_key_id = input; self
+    }
+    /// <p>The KMS key ID to use to encrypt your replication set.</p>
+    pub fn get_sse_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_kms_key_id
     }
     /// Consumes the builder and constructs a [`AddRegionAction`](crate::types::AddRegionAction).
     pub fn build(self) -> crate::types::AddRegionAction {
         crate::types::AddRegionAction {
-            region_name: self.region_name,
-            sse_kms_key_id: self.sse_kms_key_id,
+            region_name: self.region_name
+            ,
+            sse_kms_key_id: self.sse_kms_key_id
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The retention settings that determine how long to retain conversation messages for an Amazon Chime Enterprise account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversationRetentionSettings {
+pub struct ConversationRetentionSettings  {
     /// <p>The number of days for which to retain conversation messages.</p>
     #[doc(hidden)]
     pub retention_days: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl ConversationRetentionSettings {
 
 /// A builder for [`ConversationRetentionSettings`](crate::types::ConversationRetentionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationRetentionSettingsBuilder {
     pub(crate) retention_days: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl ConversationRetentionSettingsBuilder {
     }
     /// <p>The number of days for which to retain conversation messages.</p>
     pub fn set_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_days = input;
-        self
+        self.retention_days = input; self
+    }
+    /// <p>The number of days for which to retain conversation messages.</p>
+    pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
+        &self.retention_days
     }
     /// Consumes the builder and constructs a [`ConversationRetentionSettings`](crate::types::ConversationRetentionSettings).
     pub fn build(self) -> crate::types::ConversationRetentionSettings {
         crate::types::ConversationRetentionSettings {
-            retention_days: self.retention_days,
+            retention_days: self.retention_days
+            ,
         }
     }
 }
+

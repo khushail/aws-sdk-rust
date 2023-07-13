@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRecoveryInstancesInput {
+pub struct DescribeRecoveryInstancesInput  {
     /// <p>A set of filters by which to return Recovery Instances.</p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
@@ -15,9 +15,7 @@ pub struct DescribeRecoveryInstancesInput {
 }
 impl DescribeRecoveryInstancesInput {
     /// <p>A set of filters by which to return Recovery Instances.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DescribeRecoveryInstancesRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::DescribeRecoveryInstancesRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
@@ -25,25 +23,22 @@ impl DescribeRecoveryInstancesInput {
         self.max_results
     }
     /// <p>The token of the next Recovery Instance to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeRecoveryInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecoveryInstancesInput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput).
-    pub fn builder() -> crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder {
         crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecoveryInstancesInput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
+    pub(crate) filters: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -54,12 +49,12 @@ impl DescribeRecoveryInstancesInputBuilder {
         self
     }
     /// <p>A set of filters by which to return Recovery Instances.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>A set of filters by which to return Recovery Instances.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters> {
+        &self.filters
     }
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,8 +63,11 @@ impl DescribeRecoveryInstancesInputBuilder {
     }
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Maximum number of Recovery Instances to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token of the next Recovery Instance to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,22 +76,25 @@ impl DescribeRecoveryInstancesInputBuilder {
     }
     /// <p>The token of the next Recovery Instance to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token of the next Recovery Instance to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRecoveryInstancesInput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput {
-                filters: self.filters,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

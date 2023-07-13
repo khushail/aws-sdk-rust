@@ -3,7 +3,7 @@
 /// <p>Summary information about one domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainSummary {
+pub struct DomainSummary  {
     /// <p>The name of the domain that the summary information applies to.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct DomainSummary {
 }
 impl DomainSummary {
     /// <p>The name of the domain that the summary information applies to.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
@@ -31,7 +31,7 @@ impl DomainSummary {
         self.transfer_lock
     }
     /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn expiry(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiry(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiry.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl DomainSummary {
 
 /// A builder for [`DomainSummary`](crate::types::DomainSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainSummaryBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_renew: ::std::option::Option<bool>,
@@ -61,8 +59,11 @@ impl DomainSummaryBuilder {
     }
     /// <p>The name of the domain that the summary information applies to.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The name of the domain that the summary information applies to.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
     pub fn auto_renew(mut self, input: bool) -> Self {
@@ -71,8 +72,11 @@ impl DomainSummaryBuilder {
     }
     /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
     pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_renew = input;
-        self
+        self.auto_renew = input; self
+    }
+    /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
+    pub fn get_auto_renew(&self) -> &::std::option::Option<bool> {
+        &self.auto_renew
     }
     /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
     pub fn transfer_lock(mut self, input: bool) -> Self {
@@ -81,8 +85,11 @@ impl DomainSummaryBuilder {
     }
     /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
     pub fn set_transfer_lock(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.transfer_lock = input;
-        self
+        self.transfer_lock = input; self
+    }
+    /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
+    pub fn get_transfer_lock(&self) -> &::std::option::Option<bool> {
+        &self.transfer_lock
     }
     /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn expiry(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,20 +97,25 @@ impl DomainSummaryBuilder {
         self
     }
     /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_expiry(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiry = input;
-        self
+    pub fn set_expiry(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.expiry = input; self
+    }
+    /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_expiry(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiry
     }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
     pub fn build(self) -> crate::types::DomainSummary {
         crate::types::DomainSummary {
-            domain_name: self.domain_name,
-            auto_renew: self.auto_renew,
-            transfer_lock: self.transfer_lock,
-            expiry: self.expiry,
+            domain_name: self.domain_name
+            ,
+            auto_renew: self.auto_renew
+            ,
+            transfer_lock: self.transfer_lock
+            ,
+            expiry: self.expiry
+            ,
         }
     }
 }
+

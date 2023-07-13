@@ -3,22 +3,22 @@
 /// <p>Represents the input for <code>EnableEnhancedMonitoring</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableEnhancedMonitoringInput {
+pub struct EnableEnhancedMonitoringInput  {
     /// <p>The name of the stream for which to enable enhanced monitoring.</p>
     #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
-    /// <p>List of shard-level metrics to enable.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p>
-    /// <ul>
-    /// <li> <p> <code>IncomingBytes</code> </p> </li>
-    /// <li> <p> <code>IncomingRecords</code> </p> </li>
-    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
-    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
-    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// </ul>
+    /// <p>List of shard-level metrics to enable.</p> 
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p> 
+    /// <ul> 
+    /// <li> <p> <code>IncomingBytes</code> </p> </li> 
+    /// <li> <p> <code>IncomingRecords</code> </p> </li> 
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
+    /// <li> <p> <code>ALL</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     #[doc(hidden)]
     pub shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
@@ -28,48 +28,43 @@ pub struct EnableEnhancedMonitoringInput {
 }
 impl EnableEnhancedMonitoringInput {
     /// <p>The name of the stream for which to enable enhanced monitoring.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
-    /// <p>List of shard-level metrics to enable.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p>
-    /// <ul>
-    /// <li> <p> <code>IncomingBytes</code> </p> </li>
-    /// <li> <p> <code>IncomingRecords</code> </p> </li>
-    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
-    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
-    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// </ul>
+    /// <p>List of shard-level metrics to enable.</p> 
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p> 
+    /// <ul> 
+    /// <li> <p> <code>IncomingBytes</code> </p> </li> 
+    /// <li> <p> <code>IncomingRecords</code> </p> </li> 
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
+    /// <li> <p> <code>ALL</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn shard_level_metrics(&self) -> ::std::option::Option<&[crate::types::MetricsName]> {
+    pub fn shard_level_metrics(&self) -> ::std::option::Option<& [crate::types::MetricsName]> {
         self.shard_level_metrics.as_deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
 impl EnableEnhancedMonitoringInput {
     /// Creates a new builder-style object to manufacture [`EnableEnhancedMonitoringInput`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput).
-    pub fn builder(
-    ) -> crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder {
         crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableEnhancedMonitoringInput`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableEnhancedMonitoringInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
-    pub(crate) shard_level_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub(crate) shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl EnableEnhancedMonitoringInputBuilder {
@@ -80,51 +75,66 @@ impl EnableEnhancedMonitoringInputBuilder {
     }
     /// <p>The name of the stream for which to enable enhanced monitoring.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
+    }
+    /// <p>The name of the stream for which to enable enhanced monitoring.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// Appends an item to `shard_level_metrics`.
     ///
     /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
     ///
-    /// <p>List of shard-level metrics to enable.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p>
-    /// <ul>
-    /// <li> <p> <code>IncomingBytes</code> </p> </li>
-    /// <li> <p> <code>IncomingRecords</code> </p> </li>
-    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
-    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
-    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// </ul>
+    /// <p>List of shard-level metrics to enable.</p> 
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p> 
+    /// <ul> 
+    /// <li> <p> <code>IncomingBytes</code> </p> </li> 
+    /// <li> <p> <code>IncomingRecords</code> </p> </li> 
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
+    /// <li> <p> <code>ALL</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn shard_level_metrics(mut self, input: crate::types::MetricsName) -> Self {
         let mut v = self.shard_level_metrics.unwrap_or_default();
-        v.push(input);
-        self.shard_level_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shard_level_metrics = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>List of shard-level metrics to enable.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p>
-    /// <ul>
-    /// <li> <p> <code>IncomingBytes</code> </p> </li>
-    /// <li> <p> <code>IncomingRecords</code> </p> </li>
-    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
-    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
-    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// </ul>
+    /// <p>List of shard-level metrics to enable.</p> 
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p> 
+    /// <ul> 
+    /// <li> <p> <code>IncomingBytes</code> </p> </li> 
+    /// <li> <p> <code>IncomingRecords</code> </p> </li> 
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
+    /// <li> <p> <code>ALL</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn set_shard_level_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
-    ) -> Self {
-        self.shard_level_metrics = input;
-        self
+    pub fn set_shard_level_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>) -> Self {
+        self.shard_level_metrics = input; self
+    }
+    /// <p>List of shard-level metrics to enable.</p> 
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p> 
+    /// <ul> 
+    /// <li> <p> <code>IncomingBytes</code> </p> </li> 
+    /// <li> <p> <code>IncomingRecords</code> </p> </li> 
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
+    /// <li> <p> <code>ALL</code> </p> </li> 
+    /// </ul> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+    pub fn get_shard_level_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+        &self.shard_level_metrics
     }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,22 +143,24 @@ impl EnableEnhancedMonitoringInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Consumes the builder and constructs a [`EnableEnhancedMonitoringInput`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput {
-                stream_name: self.stream_name,
-                shard_level_metrics: self.shard_level_metrics,
-                stream_arn: self.stream_arn,
-            },
+                stream_name: self.stream_name
+                ,
+                shard_level_metrics: self.shard_level_metrics
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
         )
     }
 }
+

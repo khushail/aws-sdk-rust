@@ -3,7 +3,7 @@
 /// <p>The Amazon Relational Database Service (Amazon RDS) HTTP endpoint configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdsHttpEndpointConfig {
+pub struct RdsHttpEndpointConfig  {
     /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
     #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct RdsHttpEndpointConfig {
 }
 impl RdsHttpEndpointConfig {
     /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Logical database name.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>Logical schema name.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
-    pub fn aws_secret_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn aws_secret_store_arn(&self) -> ::std::option::Option<& str> {
         self.aws_secret_store_arn.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl RdsHttpEndpointConfig {
 
 /// A builder for [`RdsHttpEndpointConfig`](crate::types::RdsHttpEndpointConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsHttpEndpointConfigBuilder {
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -69,40 +67,37 @@ impl RdsHttpEndpointConfigBuilder {
     }
     /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
+    }
+    /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.db_cluster_identifier = input;
-        self
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_identifier = input; self
+    }
+    /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
     }
     /// <p>Logical database name.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Logical database name.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_name = input;
-        self
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_name = input; self
+    }
+    /// <p>Logical database name.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// <p>Logical schema name.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,33 +106,39 @@ impl RdsHttpEndpointConfigBuilder {
     }
     /// <p>Logical schema name.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
+    }
+    /// <p>Logical schema name.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
-    pub fn aws_secret_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_secret_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_secret_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
-    pub fn set_aws_secret_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_secret_store_arn = input;
-        self
+    pub fn set_aws_secret_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_secret_store_arn = input; self
+    }
+    /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
+    pub fn get_aws_secret_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_secret_store_arn
     }
     /// Consumes the builder and constructs a [`RdsHttpEndpointConfig`](crate::types::RdsHttpEndpointConfig).
     pub fn build(self) -> crate::types::RdsHttpEndpointConfig {
         crate::types::RdsHttpEndpointConfig {
-            aws_region: self.aws_region,
-            db_cluster_identifier: self.db_cluster_identifier,
-            database_name: self.database_name,
-            schema: self.schema,
-            aws_secret_store_arn: self.aws_secret_store_arn,
+            aws_region: self.aws_region
+            ,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            database_name: self.database_name
+            ,
+            schema: self.schema
+            ,
+            aws_secret_store_arn: self.aws_secret_store_arn
+            ,
         }
     }
 }
+

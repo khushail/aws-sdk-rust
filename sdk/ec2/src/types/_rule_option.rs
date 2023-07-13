@@ -3,7 +3,7 @@
 /// <p>Describes additional settings for a stateful rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleOption {
+pub struct RuleOption  {
     /// <p>The Suricata keyword.</p>
     #[doc(hidden)]
     pub keyword: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct RuleOption {
 }
 impl RuleOption {
     /// <p>The Suricata keyword.</p>
-    pub fn keyword(&self) -> ::std::option::Option<&str> {
+    pub fn keyword(&self) -> ::std::option::Option<& str> {
         self.keyword.as_deref()
     }
     /// <p>The settings for the keyword.</p>
-    pub fn settings(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn settings(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.settings.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl RuleOption {
 
 /// A builder for [`RuleOption`](crate::types::RuleOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleOptionBuilder {
     pub(crate) keyword: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl RuleOptionBuilder {
     }
     /// <p>The Suricata keyword.</p>
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyword = input;
-        self
+        self.keyword = input; self
+    }
+    /// <p>The Suricata keyword.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword
     }
     /// Appends an item to `settings`.
     ///
@@ -55,23 +56,26 @@ impl RuleOptionBuilder {
     /// <p>The settings for the keyword.</p>
     pub fn settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.settings.unwrap_or_default();
-        v.push(input.into());
-        self.settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The settings for the keyword.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.settings = input; self
+    }
+    /// <p>The settings for the keyword.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`RuleOption`](crate::types::RuleOption).
     pub fn build(self) -> crate::types::RuleOption {
         crate::types::RuleOption {
-            keyword: self.keyword,
-            settings: self.settings,
+            keyword: self.keyword
+            ,
+            settings: self.settings
+            ,
         }
     }
 }
+

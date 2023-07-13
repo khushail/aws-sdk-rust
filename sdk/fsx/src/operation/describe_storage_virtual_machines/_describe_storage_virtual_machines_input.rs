@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStorageVirtualMachinesInput {
+pub struct DescribeStorageVirtualMachinesInput  {
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
     #[doc(hidden)]
     pub storage_virtual_machine_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -18,11 +18,11 @@ pub struct DescribeStorageVirtualMachinesInput {
 }
 impl DescribeStorageVirtualMachinesInput {
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
-    pub fn storage_virtual_machine_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn storage_virtual_machine_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.storage_virtual_machine_ids.as_deref()
     }
     /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::StorageVirtualMachineFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::StorageVirtualMachineFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -30,27 +30,23 @@ impl DescribeStorageVirtualMachinesInput {
         self.max_results
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeStorageVirtualMachinesInput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageVirtualMachinesInput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput).
-    pub fn builder() -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesInputBuilder{
+    pub fn builder() -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesInputBuilder {
         crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStorageVirtualMachinesInput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorageVirtualMachinesInputBuilder {
-    pub(crate) storage_virtual_machine_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>>,
+    pub(crate) storage_virtual_machine_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -60,22 +56,19 @@ impl DescribeStorageVirtualMachinesInputBuilder {
     /// To override the contents of this collection use [`set_storage_virtual_machine_ids`](Self::set_storage_virtual_machine_ids).
     ///
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
-    pub fn storage_virtual_machine_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_virtual_machine_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.storage_virtual_machine_ids.unwrap_or_default();
-        v.push(input.into());
-        self.storage_virtual_machine_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.storage_virtual_machine_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
-    pub fn set_storage_virtual_machine_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.storage_virtual_machine_ids = input;
-        self
+    pub fn set_storage_virtual_machine_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.storage_virtual_machine_ids = input; self
+    }
+    /// <p>Enter the ID of one or more SVMs that you want to view.</p>
+    pub fn get_storage_virtual_machine_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.storage_virtual_machine_ids
     }
     /// Appends an item to `filters`.
     ///
@@ -84,17 +77,17 @@ impl DescribeStorageVirtualMachinesInputBuilder {
     /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
     pub fn filters(mut self, input: crate::types::StorageVirtualMachineFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>> {
+        &self.filters
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -103,8 +96,11 @@ impl DescribeStorageVirtualMachinesInputBuilder {
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,16 +109,14 @@ impl DescribeStorageVirtualMachinesInputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeStorageVirtualMachinesInput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput {
                 storage_virtual_machine_ids: self.storage_virtual_machine_ids
@@ -137,3 +131,4 @@ impl DescribeStorageVirtualMachinesInputBuilder {
         )
     }
 }
+

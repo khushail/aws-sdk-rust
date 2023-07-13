@@ -3,7 +3,7 @@
 /// <p>Defines a mapping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MappingEntry {
+pub struct MappingEntry  {
     /// <p>The name of the source table.</p>
     #[doc(hidden)]
     pub source_table: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct MappingEntry {
 }
 impl MappingEntry {
     /// <p>The name of the source table.</p>
-    pub fn source_table(&self) -> ::std::option::Option<&str> {
+    pub fn source_table(&self) -> ::std::option::Option<& str> {
         self.source_table.as_deref()
     }
     /// <p>The source path.</p>
-    pub fn source_path(&self) -> ::std::option::Option<&str> {
+    pub fn source_path(&self) -> ::std::option::Option<& str> {
         self.source_path.as_deref()
     }
     /// <p>The source type.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>The target table.</p>
-    pub fn target_table(&self) -> ::std::option::Option<&str> {
+    pub fn target_table(&self) -> ::std::option::Option<& str> {
         self.target_table.as_deref()
     }
     /// <p>The target path.</p>
-    pub fn target_path(&self) -> ::std::option::Option<&str> {
+    pub fn target_path(&self) -> ::std::option::Option<& str> {
         self.target_path.as_deref()
     }
     /// <p>The target type.</p>
-    pub fn target_type(&self) -> ::std::option::Option<&str> {
+    pub fn target_type(&self) -> ::std::option::Option<& str> {
         self.target_type.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl MappingEntry {
 
 /// A builder for [`MappingEntry`](crate::types::MappingEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MappingEntryBuilder {
     pub(crate) source_table: ::std::option::Option<::std::string::String>,
     pub(crate) source_path: ::std::option::Option<::std::string::String>,
@@ -77,8 +75,11 @@ impl MappingEntryBuilder {
     }
     /// <p>The name of the source table.</p>
     pub fn set_source_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_table = input;
-        self
+        self.source_table = input; self
+    }
+    /// <p>The name of the source table.</p>
+    pub fn get_source_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_table
     }
     /// <p>The source path.</p>
     pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +88,11 @@ impl MappingEntryBuilder {
     }
     /// <p>The source path.</p>
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_path = input;
-        self
+        self.source_path = input; self
+    }
+    /// <p>The source path.</p>
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_path
     }
     /// <p>The source type.</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,8 +101,11 @@ impl MappingEntryBuilder {
     }
     /// <p>The source type.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
+    }
+    /// <p>The source type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
     }
     /// <p>The target table.</p>
     pub fn target_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,8 +114,11 @@ impl MappingEntryBuilder {
     }
     /// <p>The target table.</p>
     pub fn set_target_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_table = input;
-        self
+        self.target_table = input; self
+    }
+    /// <p>The target table.</p>
+    pub fn get_target_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_table
     }
     /// <p>The target path.</p>
     pub fn target_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,8 +127,11 @@ impl MappingEntryBuilder {
     }
     /// <p>The target path.</p>
     pub fn set_target_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_path = input;
-        self
+        self.target_path = input; self
+    }
+    /// <p>The target path.</p>
+    pub fn get_target_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_path
     }
     /// <p>The target type.</p>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,18 +140,28 @@ impl MappingEntryBuilder {
     }
     /// <p>The target type.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
+    }
+    /// <p>The target type.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_type
     }
     /// Consumes the builder and constructs a [`MappingEntry`](crate::types::MappingEntry).
     pub fn build(self) -> crate::types::MappingEntry {
         crate::types::MappingEntry {
-            source_table: self.source_table,
-            source_path: self.source_path,
-            source_type: self.source_type,
-            target_table: self.target_table,
-            target_path: self.target_path,
-            target_type: self.target_type,
+            source_table: self.source_table
+            ,
+            source_path: self.source_path
+            ,
+            source_type: self.source_type
+            ,
+            target_table: self.target_table
+            ,
+            target_path: self.target_path
+            ,
+            target_type: self.target_type
+            ,
         }
     }
 }
+

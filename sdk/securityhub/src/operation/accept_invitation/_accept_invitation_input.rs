@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptInvitationInput {
+pub struct AcceptInvitationInput  {
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
     #[doc(hidden)]
     pub master_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct AcceptInvitationInput {
 }
 impl AcceptInvitationInput {
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-    pub fn master_id(&self) -> ::std::option::Option<&str> {
+    pub fn master_id(&self) -> ::std::option::Option<& str> {
         self.master_id.as_deref()
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-    pub fn invitation_id(&self) -> ::std::option::Option<&str> {
+    pub fn invitation_id(&self) -> ::std::option::Option<& str> {
         self.invitation_id.as_deref()
     }
 }
 impl AcceptInvitationInput {
     /// Creates a new builder-style object to manufacture [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
-    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder {
         crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptInvitationInputBuilder {
     pub(crate) master_id: ::std::option::Option<::std::string::String>,
     pub(crate) invitation_id: ::std::option::Option<::std::string::String>,
@@ -45,35 +42,35 @@ impl AcceptInvitationInputBuilder {
     }
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
     pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_id = input;
-        self
+        self.master_id = input; self
+    }
+    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    pub fn get_master_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_id
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.invitation_id = input;
-        self
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.invitation_id = input; self
+    }
+    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_id
     }
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_invitation::AcceptInvitationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::accept_invitation::AcceptInvitationInput {
-            master_id: self.master_id,
-            invitation_id: self.invitation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_invitation::AcceptInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::accept_invitation::AcceptInvitationInput {
+                master_id: self.master_id
+                ,
+                invitation_id: self.invitation_id
+                ,
+            }
+        )
     }
 }
+

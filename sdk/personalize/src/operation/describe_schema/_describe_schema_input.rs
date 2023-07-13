@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSchemaInput {
+pub struct DescribeSchemaInput  {
     /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
     #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeSchemaInput {
 
 /// A builder for [`DescribeSchemaInput`](crate::operation::describe_schema::DescribeSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSchemaInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeSchemaInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// Consumes the builder and constructs a [`DescribeSchemaInput`](crate::operation::describe_schema::DescribeSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_schema::DescribeSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_schema::DescribeSchemaInput {
-            schema_arn: self.schema_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_schema::DescribeSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_schema::DescribeSchemaInput {
+                schema_arn: self.schema_arn
+                ,
+            }
+        )
     }
 }
+

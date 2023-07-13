@@ -3,14 +3,14 @@
 /// <p>The parameters for IoT Analytics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsIotAnalyticsParameters {
+pub struct AwsIotAnalyticsParameters  {
     /// <p>Dataset name.</p>
     #[doc(hidden)]
     pub data_set_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsIotAnalyticsParameters {
     /// <p>Dataset name.</p>
-    pub fn data_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_name(&self) -> ::std::option::Option<& str> {
         self.data_set_name.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl AwsIotAnalyticsParameters {
 
 /// A builder for [`AwsIotAnalyticsParameters`](crate::types::AwsIotAnalyticsParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIotAnalyticsParametersBuilder {
     pub(crate) data_set_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsIotAnalyticsParametersBuilder {
     /// <p>Dataset name.</p>
-    pub fn data_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Dataset name.</p>
-    pub fn set_data_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_set_name = input;
-        self
+    pub fn set_data_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_set_name = input; self
+    }
+    /// <p>Dataset name.</p>
+    pub fn get_data_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_name
     }
     /// Consumes the builder and constructs a [`AwsIotAnalyticsParameters`](crate::types::AwsIotAnalyticsParameters).
     pub fn build(self) -> crate::types::AwsIotAnalyticsParameters {
         crate::types::AwsIotAnalyticsParameters {
-            data_set_name: self.data_set_name,
+            data_set_name: self.data_set_name
+            ,
         }
     }
 }
+

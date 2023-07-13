@@ -3,8 +3,8 @@
 /// <p>Contains information about the DNS_REQUEST action described in this finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DnsRequestAction {
-    /// <p>The domain information for the API request.</p>
+pub struct DnsRequestAction  {
+    /// <p>The domain information for the DNS query.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
@@ -15,12 +15,12 @@ pub struct DnsRequestAction {
     pub blocked: bool,
 }
 impl DnsRequestAction {
-    /// <p>The domain information for the API request.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    /// <p>The domain information for the DNS query.</p>
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>Indicates whether the targeted port is blocked.</p>
@@ -37,24 +37,25 @@ impl DnsRequestAction {
 
 /// A builder for [`DnsRequestAction`](crate::types::DnsRequestAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DnsRequestActionBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) blocked: ::std::option::Option<bool>,
 }
 impl DnsRequestActionBuilder {
-    /// <p>The domain information for the API request.</p>
+    /// <p>The domain information for the DNS query.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The domain information for the API request.</p>
+    /// <p>The domain information for the DNS query.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The domain information for the DNS query.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl DnsRequestActionBuilder {
     }
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
+    }
+    /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>Indicates whether the targeted port is blocked.</p>
     pub fn blocked(mut self, input: bool) -> Self {
@@ -73,15 +77,23 @@ impl DnsRequestActionBuilder {
     }
     /// <p>Indicates whether the targeted port is blocked.</p>
     pub fn set_blocked(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.blocked = input;
-        self
+        self.blocked = input; self
+    }
+    /// <p>Indicates whether the targeted port is blocked.</p>
+    pub fn get_blocked(&self) -> &::std::option::Option<bool> {
+        &self.blocked
     }
     /// Consumes the builder and constructs a [`DnsRequestAction`](crate::types::DnsRequestAction).
     pub fn build(self) -> crate::types::DnsRequestAction {
         crate::types::DnsRequestAction {
-            domain: self.domain,
-            protocol: self.protocol,
-            blocked: self.blocked.unwrap_or_default(),
+            domain: self.domain
+            ,
+            protocol: self.protocol
+            ,
+            blocked: self.blocked
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

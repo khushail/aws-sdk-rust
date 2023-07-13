@@ -3,108 +3,93 @@ pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_outp
 
 pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_input::CreateDecoderManifestInputBuilder;
 
+impl CreateDecoderManifestInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_decoder_manifest::CreateDecoderManifestOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_decoder_manifest();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateDecoderManifest`.
-///
-/// <p>Creates the decoder manifest associated with a model manifest. To create a decoder manifest, the following must be true:</p>
-/// <ul>
-/// <li> <p>Every signal decoder has a unique name.</p> </li>
-/// <li> <p>Each signal decoder is associated with a network interface.</p> </li>
-/// <li> <p>Each network interface has a unique ID.</p> </li>
-/// <li> <p>The signal decoders are specified in the model manifest.</p> </li>
+/// 
+/// <p>Creates the decoder manifest associated with a model manifest. To create a decoder manifest, the following must be true:</p> 
+/// <ul> 
+/// <li> <p>Every signal decoder has a unique name.</p> </li> 
+/// <li> <p>Each signal decoder is associated with a network interface.</p> </li> 
+/// <li> <p>Each network interface has a unique ID.</p> </li> 
+/// <li> <p>The signal decoders are specified in the model manifest.</p> </li> 
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDecoderManifestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder,
+                    inner: crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder,
 }
-impl CreateDecoderManifestFluentBuilder {
+impl CreateDecoderManifestFluentBuilder  {
     /// Creates a new `CreateDecoderManifest`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_decoder_manifest::CreateDecoderManifest,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateDecoderManifest as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_decoder_manifest::CreateDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_decoder_manifest::CreateDecoderManifest, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_decoder_manifest::CreateDecoderManifestError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_decoder_manifest::CreateDecoderManifestOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_decoder_manifest::CreateDecoderManifestError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_decoder_manifest::CreateDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_decoder_manifest::CreateDecoderManifest,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_decoder_manifest::CreateDecoderManifestOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_decoder_manifest::CreateDecoderManifestError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_decoder_manifest::CreateDecoderManifest, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_decoder_manifest::CreateDecoderManifestError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The unique name of the decoder manifest to create.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -114,6 +99,10 @@ impl CreateDecoderManifestFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p> The unique name of the decoder manifest to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p> A brief description of the decoder manifest. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,21 +114,23 @@ impl CreateDecoderManifestFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p> A brief description of the decoder manifest. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
-    pub fn model_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_manifest_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
-    pub fn set_model_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_manifest_arn(input);
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
+    pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_manifest_arn()
     }
     /// Appends an item to `signalDecoders`.
     ///
@@ -151,12 +142,13 @@ impl CreateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of information about signal decoders. </p>
-    pub fn set_signal_decoders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
-    ) -> Self {
+    pub fn set_signal_decoders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>) -> Self {
         self.inner = self.inner.set_signal_decoders(input);
         self
+    }
+    /// <p> A list of information about signal decoders. </p>
+    pub fn get_signal_decoders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
+        self.inner.get_signal_decoders()
     }
     /// Appends an item to `networkInterfaces`.
     ///
@@ -168,12 +160,13 @@ impl CreateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of information about available network interfaces. </p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.inner = self.inner.set_network_interfaces(input);
         self
+    }
+    /// <p> A list of information about available network interfaces. </p>
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        self.inner.get_network_interfaces()
     }
     /// Appends an item to `tags`.
     ///
@@ -185,11 +178,13 @@ impl CreateDecoderManifestFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata that can be used to manage the decoder manifest.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

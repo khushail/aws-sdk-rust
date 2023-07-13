@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomRoutingListenerInput {
+pub struct DeleteCustomRoutingListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
     #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
-    pub fn listener_arn(&self) -> ::std::option::Option<&str> {
+    pub fn listener_arn(&self) -> ::std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
 }
 impl DeleteCustomRoutingListenerInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingListenerInput`](crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput).
-    pub fn builder() -> crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerInputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerInputBuilder {
         crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomRoutingListenerInput`](crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomRoutingListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl DeleteCustomRoutingListenerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
     }
     /// Consumes the builder and constructs a [`DeleteCustomRoutingListenerInput`](crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput {
-                listener_arn: self.listener_arn,
-            },
+                listener_arn: self.listener_arn
+                ,
+            }
         )
     }
 }
+

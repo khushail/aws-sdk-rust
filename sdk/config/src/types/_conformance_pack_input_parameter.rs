@@ -3,7 +3,7 @@
 /// <p>Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 255 characters, and values can have a maximum length of 4096 characters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConformancePackInputParameter {
+pub struct ConformancePackInputParameter  {
     /// <p>One part of a key-value pair.</p>
     #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ConformancePackInputParameter {
 }
 impl ConformancePackInputParameter {
     /// <p>One part of a key-value pair.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
     /// <p>Another part of the key-value pair. </p>
-    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_value(&self) -> ::std::option::Option<& str> {
         self.parameter_value.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl ConformancePackInputParameter {
 
 /// A builder for [`ConformancePackInputParameter`](crate::types::ConformancePackInputParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConformancePackInputParameterBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl ConformancePackInputParameterBuilder {
     /// <p>One part of a key-value pair.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One part of a key-value pair.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.parameter_name = input;
-        self
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parameter_name = input; self
+    }
+    /// <p>One part of a key-value pair.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
     }
     /// <p>Another part of the key-value pair. </p>
-    pub fn parameter_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Another part of the key-value pair. </p>
-    pub fn set_parameter_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.parameter_value = input;
-        self
+    pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parameter_value = input; self
+    }
+    /// <p>Another part of the key-value pair. </p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
     }
     /// Consumes the builder and constructs a [`ConformancePackInputParameter`](crate::types::ConformancePackInputParameter).
     pub fn build(self) -> crate::types::ConformancePackInputParameter {
         crate::types::ConformancePackInputParameter {
-            parameter_name: self.parameter_name,
-            parameter_value: self.parameter_value,
+            parameter_name: self.parameter_name
+            ,
+            parameter_value: self.parameter_value
+            ,
         }
     }
 }
+

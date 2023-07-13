@@ -3,7 +3,7 @@
 /// <p>Contains the results of a successful invocation of the <code>DescribeEventCategories</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventCategoriesMap {
+pub struct EventCategoriesMap  {
     /// <p>The source type that the returned categories belong to</p>
     #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct EventCategoriesMap {
 }
 impl EventCategoriesMap {
     /// <p>The source type that the returned categories belong to</p>
-    pub fn source_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>The event categories for the specified source type</p>
-    pub fn event_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn event_categories(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.event_categories.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl EventCategoriesMap {
 
 /// A builder for [`EventCategoriesMap`](crate::types::EventCategoriesMap).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventCategoriesMapBuilder {
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
     pub(crate) event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,36 +43,39 @@ impl EventCategoriesMapBuilder {
     }
     /// <p>The source type that the returned categories belong to</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
+    }
+    /// <p>The source type that the returned categories belong to</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
     }
     /// Appends an item to `event_categories`.
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
     /// <p>The event categories for the specified source type</p>
-    pub fn event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
-        v.push(input.into());
-        self.event_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The event categories for the specified source type</p>
-    pub fn set_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.event_categories = input;
-        self
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.event_categories = input; self
+    }
+    /// <p>The event categories for the specified source type</p>
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_categories
     }
     /// Consumes the builder and constructs a [`EventCategoriesMap`](crate::types::EventCategoriesMap).
     pub fn build(self) -> crate::types::EventCategoriesMap {
         crate::types::EventCategoriesMap {
-            source_type: self.source_type,
-            event_categories: self.event_categories,
+            source_type: self.source_type
+            ,
+            event_categories: self.event_categories
+            ,
         }
     }
 }
+

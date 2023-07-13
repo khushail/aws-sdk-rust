@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectPhiInput {
+pub struct DetectPhiInput  {
     /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl DetectPhiInput {
     /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DetectPhiInput {
 
 /// A builder for [`DetectPhiInput`](crate::operation::detect_phi::DetectPhiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectPhiInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,20 @@ impl DetectPhiInputBuilder {
     }
     /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// Consumes the builder and constructs a [`DetectPhiInput`](crate::operation::detect_phi::DetectPhiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_phi::DetectPhiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detect_phi::DetectPhiInput { text: self.text })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_phi::DetectPhiInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_phi::DetectPhiInput {
+                text: self.text
+                ,
+            }
+        )
     }
 }
+

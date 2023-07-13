@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportComponentOutput {
+pub struct ImportComponentOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -16,23 +16,23 @@ pub struct ImportComponentOutput {
 }
 impl ImportComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the imported component.</p>
-    pub fn component_build_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn component_build_version_arn(&self) -> ::std::option::Option<& str> {
         self.component_build_version_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ImportComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportComponentOutput {
     /// Creates a new builder-style object to manufacture [`ImportComponentOutput`](crate::operation::import_component::ImportComponentOutput).
     pub fn builder() -> crate::operation::import_component::builders::ImportComponentOutputBuilder {
@@ -42,9 +42,7 @@ impl ImportComponentOutput {
 
 /// A builder for [`ImportComponentOutput`](crate::operation::import_component::ImportComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportComponentOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -59,8 +57,11 @@ impl ImportComponentOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
+    }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,41 +70,45 @@ impl ImportComponentOutputBuilder {
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the imported component.</p>
-    pub fn component_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the imported component.</p>
-    pub fn set_component_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.component_build_version_arn = input;
-        self
+    pub fn set_component_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_build_version_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the imported component.</p>
+    pub fn get_component_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_build_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportComponentOutput`](crate::operation::import_component::ImportComponentOutput).
     pub fn build(self) -> crate::operation::import_component::ImportComponentOutput {
         crate::operation::import_component::ImportComponentOutput {
-            request_id: self.request_id,
-            client_token: self.client_token,
-            component_build_version_arn: self.component_build_version_arn,
+            request_id: self.request_id
+            ,
+            client_token: self.client_token
+            ,
+            component_build_version_arn: self.component_build_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

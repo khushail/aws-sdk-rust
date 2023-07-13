@@ -3,7 +3,7 @@
 /// <p>A <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingRule.html">SamplingRule</a> and its metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SamplingRuleRecord {
+pub struct SamplingRuleRecord  {
     /// <p>The sampling rule.</p>
     #[doc(hidden)]
     pub sampling_rule: ::std::option::Option<crate::types::SamplingRule>,
@@ -16,15 +16,15 @@ pub struct SamplingRuleRecord {
 }
 impl SamplingRuleRecord {
     /// <p>The sampling rule.</p>
-    pub fn sampling_rule(&self) -> ::std::option::Option<&crate::types::SamplingRule> {
+    pub fn sampling_rule(&self) -> ::std::option::Option<& crate::types::SamplingRule> {
         self.sampling_rule.as_ref()
     }
     /// <p>When the rule was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>When the rule was last modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl SamplingRuleRecord {
 
 /// A builder for [`SamplingRuleRecord`](crate::types::SamplingRuleRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SamplingRuleRecordBuilder {
     pub(crate) sampling_rule: ::std::option::Option<crate::types::SamplingRule>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,12 +50,12 @@ impl SamplingRuleRecordBuilder {
         self
     }
     /// <p>The sampling rule.</p>
-    pub fn set_sampling_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::SamplingRule>,
-    ) -> Self {
-        self.sampling_rule = input;
-        self
+    pub fn set_sampling_rule(mut self, input: ::std::option::Option<crate::types::SamplingRule>) -> Self {
+        self.sampling_rule = input; self
+    }
+    /// <p>The sampling rule.</p>
+    pub fn get_sampling_rule(&self) -> &::std::option::Option<crate::types::SamplingRule> {
+        &self.sampling_rule
     }
     /// <p>When the rule was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -65,12 +63,12 @@ impl SamplingRuleRecordBuilder {
         self
     }
     /// <p>When the rule was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>When the rule was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>When the rule was last modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,19 +76,23 @@ impl SamplingRuleRecordBuilder {
         self
     }
     /// <p>When the rule was last modified.</p>
-    pub fn set_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.modified_at = input;
-        self
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input; self
+    }
+    /// <p>When the rule was last modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
     }
     /// Consumes the builder and constructs a [`SamplingRuleRecord`](crate::types::SamplingRuleRecord).
     pub fn build(self) -> crate::types::SamplingRuleRecord {
         crate::types::SamplingRuleRecord {
-            sampling_rule: self.sampling_rule,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
+            sampling_rule: self.sampling_rule
+            ,
+            created_at: self.created_at
+            ,
+            modified_at: self.modified_at
+            ,
         }
     }
 }
+

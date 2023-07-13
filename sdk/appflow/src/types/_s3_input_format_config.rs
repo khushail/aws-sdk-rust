@@ -3,14 +3,14 @@
 /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3InputFormatConfig {
+pub struct S3InputFormatConfig  {
     /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
     #[doc(hidden)]
     pub s3_input_file_type: ::std::option::Option<crate::types::S3InputFileType>,
 }
 impl S3InputFormatConfig {
     /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
-    pub fn s3_input_file_type(&self) -> ::std::option::Option<&crate::types::S3InputFileType> {
+    pub fn s3_input_file_type(&self) -> ::std::option::Option<& crate::types::S3InputFileType> {
         self.s3_input_file_type.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl S3InputFormatConfig {
 
 /// A builder for [`S3InputFormatConfig`](crate::types::S3InputFormatConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3InputFormatConfigBuilder {
     pub(crate) s3_input_file_type: ::std::option::Option<crate::types::S3InputFileType>,
 }
@@ -36,17 +34,19 @@ impl S3InputFormatConfigBuilder {
         self
     }
     /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
-    pub fn set_s3_input_file_type(
-        mut self,
-        input: ::std::option::Option<crate::types::S3InputFileType>,
-    ) -> Self {
-        self.s3_input_file_type = input;
-        self
+    pub fn set_s3_input_file_type(mut self, input: ::std::option::Option<crate::types::S3InputFileType>) -> Self {
+        self.s3_input_file_type = input; self
+    }
+    /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
+    pub fn get_s3_input_file_type(&self) -> &::std::option::Option<crate::types::S3InputFileType> {
+        &self.s3_input_file_type
     }
     /// Consumes the builder and constructs a [`S3InputFormatConfig`](crate::types::S3InputFormatConfig).
     pub fn build(self) -> crate::types::S3InputFormatConfig {
         crate::types::S3InputFormatConfig {
-            s3_input_file_type: self.s3_input_file_type,
+            s3_input_file_type: self.s3_input_file_type
+            ,
         }
     }
 }
+

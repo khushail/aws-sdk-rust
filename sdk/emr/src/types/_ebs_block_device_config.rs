@@ -3,7 +3,7 @@
 /// <p>Configuration of requested EBS block device associated with the instance group with count of volumes that are associated to every instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsBlockDeviceConfig {
+pub struct EbsBlockDeviceConfig  {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     #[doc(hidden)]
     pub volume_specification: ::std::option::Option<crate::types::VolumeSpecification>,
@@ -13,9 +13,7 @@ pub struct EbsBlockDeviceConfig {
 }
 impl EbsBlockDeviceConfig {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
-    pub fn volume_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VolumeSpecification> {
+    pub fn volume_specification(&self) -> ::std::option::Option<& crate::types::VolumeSpecification> {
         self.volume_specification.as_ref()
     }
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
@@ -32,9 +30,7 @@ impl EbsBlockDeviceConfig {
 
 /// A builder for [`EbsBlockDeviceConfig`](crate::types::EbsBlockDeviceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsBlockDeviceConfigBuilder {
     pub(crate) volume_specification: ::std::option::Option<crate::types::VolumeSpecification>,
     pub(crate) volumes_per_instance: ::std::option::Option<i32>,
@@ -46,12 +42,12 @@ impl EbsBlockDeviceConfigBuilder {
         self
     }
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
-    pub fn set_volume_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeSpecification>,
-    ) -> Self {
-        self.volume_specification = input;
-        self
+    pub fn set_volume_specification(mut self, input: ::std::option::Option<crate::types::VolumeSpecification>) -> Self {
+        self.volume_specification = input; self
+    }
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
+    pub fn get_volume_specification(&self) -> &::std::option::Option<crate::types::VolumeSpecification> {
+        &self.volume_specification
     }
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
     pub fn volumes_per_instance(mut self, input: i32) -> Self {
@@ -60,14 +56,20 @@ impl EbsBlockDeviceConfigBuilder {
     }
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
     pub fn set_volumes_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volumes_per_instance = input;
-        self
+        self.volumes_per_instance = input; self
+    }
+    /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
+    pub fn get_volumes_per_instance(&self) -> &::std::option::Option<i32> {
+        &self.volumes_per_instance
     }
     /// Consumes the builder and constructs a [`EbsBlockDeviceConfig`](crate::types::EbsBlockDeviceConfig).
     pub fn build(self) -> crate::types::EbsBlockDeviceConfig {
         crate::types::EbsBlockDeviceConfig {
-            volume_specification: self.volume_specification,
-            volumes_per_instance: self.volumes_per_instance,
+            volume_specification: self.volume_specification
+            ,
+            volumes_per_instance: self.volumes_per_instance
+            ,
         }
     }
 }
+

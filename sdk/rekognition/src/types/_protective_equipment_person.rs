@@ -3,11 +3,10 @@
 /// <p>A person detected by a call to <code>DetectProtectiveEquipment</code>. The API returns all persons detected in the input image in an array of <code>ProtectiveEquipmentPerson</code> objects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectiveEquipmentPerson {
+pub struct ProtectiveEquipmentPerson  {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     #[doc(hidden)]
-    pub body_parts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
+    pub body_parts: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
     /// <p>A bounding box around the detected person.</p>
     #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
@@ -20,13 +19,11 @@ pub struct ProtectiveEquipmentPerson {
 }
 impl ProtectiveEquipmentPerson {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-    pub fn body_parts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProtectiveEquipmentBodyPart]> {
+    pub fn body_parts(&self) -> ::std::option::Option<& [crate::types::ProtectiveEquipmentBodyPart]> {
         self.body_parts.as_deref()
     }
     /// <p>A bounding box around the detected person.</p>
-    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<& crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
@@ -47,12 +44,9 @@ impl ProtectiveEquipmentPerson {
 
 /// A builder for [`ProtectiveEquipmentPerson`](crate::types::ProtectiveEquipmentPerson).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentPersonBuilder {
-    pub(crate) body_parts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
+    pub(crate) body_parts: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) confidence: ::std::option::Option<f32>,
     pub(crate) id: ::std::option::Option<i32>,
@@ -65,17 +59,17 @@ impl ProtectiveEquipmentPersonBuilder {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     pub fn body_parts(mut self, input: crate::types::ProtectiveEquipmentBodyPart) -> Self {
         let mut v = self.body_parts.unwrap_or_default();
-        v.push(input);
-        self.body_parts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.body_parts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-    pub fn set_body_parts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
-    ) -> Self {
-        self.body_parts = input;
-        self
+    pub fn set_body_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>) -> Self {
+        self.body_parts = input; self
+    }
+    /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
+    pub fn get_body_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>> {
+        &self.body_parts
     }
     /// <p>A bounding box around the detected person.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
@@ -83,12 +77,12 @@ impl ProtectiveEquipmentPersonBuilder {
         self
     }
     /// <p>A bounding box around the detected person.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
-        self.bounding_box = input;
-        self
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
+        self.bounding_box = input; self
+    }
+    /// <p>A bounding box around the detected person.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -97,8 +91,11 @@ impl ProtectiveEquipmentPersonBuilder {
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
+    }
+    /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
     pub fn id(mut self, input: i32) -> Self {
@@ -107,16 +104,24 @@ impl ProtectiveEquipmentPersonBuilder {
     }
     /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentPerson`](crate::types::ProtectiveEquipmentPerson).
     pub fn build(self) -> crate::types::ProtectiveEquipmentPerson {
         crate::types::ProtectiveEquipmentPerson {
-            body_parts: self.body_parts,
-            bounding_box: self.bounding_box,
-            confidence: self.confidence,
-            id: self.id,
+            body_parts: self.body_parts
+            ,
+            bounding_box: self.bounding_box
+            ,
+            confidence: self.confidence
+            ,
+            id: self.id
+            ,
         }
     }
 }
+

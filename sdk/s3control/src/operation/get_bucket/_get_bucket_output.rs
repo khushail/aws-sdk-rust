@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketOutput {
+pub struct GetBucketOutput  {
     /// <p>The Outposts bucket requested.</p>
     #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct GetBucketOutput {
 }
 impl GetBucketOutput {
     /// <p>The Outposts bucket requested.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p></p>
@@ -24,15 +24,15 @@ impl GetBucketOutput {
         self.public_access_block_enabled
     }
     /// <p>The creation date of the Outposts bucket.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBucketOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBucketOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketOutput`](crate::operation::get_bucket::GetBucketOutput).
     pub fn builder() -> crate::operation::get_bucket::builders::GetBucketOutputBuilder {
@@ -42,9 +42,7 @@ impl GetBucketOutput {
 
 /// A builder for [`GetBucketOutput`](crate::operation::get_bucket::GetBucketOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketOutputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) public_access_block_enabled: ::std::option::Option<bool>,
@@ -59,8 +57,11 @@ impl GetBucketOutputBuilder {
     }
     /// <p>The Outposts bucket requested.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
+    }
+    /// <p>The Outposts bucket requested.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p></p>
     pub fn public_access_block_enabled(mut self, input: bool) -> Self {
@@ -69,8 +70,11 @@ impl GetBucketOutputBuilder {
     }
     /// <p></p>
     pub fn set_public_access_block_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.public_access_block_enabled = input;
-        self
+        self.public_access_block_enabled = input; self
+    }
+    /// <p></p>
+    pub fn get_public_access_block_enabled(&self) -> &::std::option::Option<bool> {
+        &self.public_access_block_enabled
     }
     /// <p>The creation date of the Outposts bucket.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,29 +82,34 @@ impl GetBucketOutputBuilder {
         self
     }
     /// <p>The creation date of the Outposts bucket.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>The creation date of the Outposts bucket.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBucketOutput`](crate::operation::get_bucket::GetBucketOutput).
     pub fn build(self) -> crate::operation::get_bucket::GetBucketOutput {
         crate::operation::get_bucket::GetBucketOutput {
-            bucket: self.bucket,
-            public_access_block_enabled: self.public_access_block_enabled.unwrap_or_default(),
-            creation_date: self.creation_date,
+            bucket: self.bucket
+            ,
+            public_access_block_enabled: self.public_access_block_enabled
+                .unwrap_or_default()
+            ,
+            creation_date: self.creation_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

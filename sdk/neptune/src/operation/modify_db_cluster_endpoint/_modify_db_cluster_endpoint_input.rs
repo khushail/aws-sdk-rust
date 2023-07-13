@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbClusterEndpointInput {
+pub struct ModifyDbClusterEndpointInput  {
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
     pub db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct ModifyDbClusterEndpointInput {
 }
 impl ModifyDbClusterEndpointInput {
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_endpoint_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn endpoint_type(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<& str> {
         self.endpoint_type.as_deref()
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn static_members(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn static_members(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.static_members.as_deref()
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn excluded_members(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn excluded_members(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.excluded_members.as_deref()
     }
 }
 impl ModifyDbClusterEndpointInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterEndpointInput`](crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointInputBuilder {
         crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbClusterEndpointInput`](crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbClusterEndpointInputBuilder {
     pub(crate) db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_type: ::std::option::Option<::std::string::String>,
@@ -56,95 +52,83 @@ pub struct ModifyDbClusterEndpointInputBuilder {
 }
 impl ModifyDbClusterEndpointInputBuilder {
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_endpoint_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_endpoint_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.db_cluster_endpoint_identifier = input;
-        self
+    pub fn set_db_cluster_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_endpoint_identifier = input; self
+    }
+    /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_endpoint_identifier
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn endpoint_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.endpoint_type = input;
-        self
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_type = input; self
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_type
     }
     /// Appends an item to `static_members`.
     ///
     /// To override the contents of this collection use [`set_static_members`](Self::set_static_members).
     ///
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn static_members(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.static_members.unwrap_or_default();
-        v.push(input.into());
-        self.static_members = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.static_members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn set_static_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.static_members = input;
-        self
+    pub fn set_static_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.static_members = input; self
+    }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn get_static_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.static_members
     }
     /// Appends an item to `excluded_members`.
     ///
     /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
     ///
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn excluded_members(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn excluded_members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_members.unwrap_or_default();
-        v.push(input.into());
-        self.excluded_members = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.excluded_members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn set_excluded_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.excluded_members = input;
-        self
+    pub fn set_excluded_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.excluded_members = input; self
+    }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    pub fn get_excluded_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_members
     }
     /// Consumes the builder and constructs a [`ModifyDbClusterEndpointInput`](crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput {
-                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
-                endpoint_type: self.endpoint_type,
-                static_members: self.static_members,
-                excluded_members: self.excluded_members,
-            },
+                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                static_members: self.static_members
+                ,
+                excluded_members: self.excluded_members
+                ,
+            }
         )
     }
 }
+

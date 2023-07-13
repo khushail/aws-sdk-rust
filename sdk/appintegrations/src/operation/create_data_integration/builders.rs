@@ -3,104 +3,89 @@ pub use crate::operation::create_data_integration::_create_data_integration_outp
 
 pub use crate::operation::create_data_integration::_create_data_integration_input::CreateDataIntegrationInputBuilder;
 
+impl CreateDataIntegrationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_data_integration::CreateDataIntegrationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_data_integration::CreateDataIntegrationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_data_integration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateDataIntegration`.
-///
-/// <p>Creates and persists a DataIntegration resource.</p> <note>
-/// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <code>CreateDataIntegration</code> API.</p>
+/// 
+/// <p>Creates and persists a DataIntegration resource.</p> <note> 
+/// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <code>CreateDataIntegration</code> API.</p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder,
+                    inner: crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder,
 }
-impl CreateDataIntegrationFluentBuilder {
+impl CreateDataIntegrationFluentBuilder  {
     /// Creates a new `CreateDataIntegration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_data_integration::CreateDataIntegration,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateDataIntegration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_integration::CreateDataIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_data_integration::CreateDataIntegration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_data_integration::CreateDataIntegrationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_integration::CreateDataIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_data_integration::CreateDataIntegration,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_data_integration::CreateDataIntegrationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_data_integration::CreateDataIntegration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the DataIntegration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -110,6 +95,10 @@ impl CreateDataIntegrationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A description of the DataIntegration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,6 +110,10 @@ impl CreateDataIntegrationFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the DataIntegration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The KMS key for the DataIntegration.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key(input.into());
@@ -130,6 +123,10 @@ impl CreateDataIntegrationFluentBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key(input);
         self
+    }
+    /// <p>The KMS key for the DataIntegration.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key()
     }
     /// <p>The URI of the data source.</p>
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,41 +138,41 @@ impl CreateDataIntegrationFluentBuilder {
         self.inner = self.inner.set_source_uri(input);
         self
     }
+    /// <p>The URI of the data source.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_uri()
+    }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
     pub fn schedule_config(mut self, input: crate::types::ScheduleConfiguration) -> Self {
         self.inner = self.inner.schedule_config(input);
         self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn set_schedule_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_config(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
         self.inner = self.inner.set_schedule_config(input);
         self
+    }
+    /// <p>The name of the data and how often it should be pulled from the source.</p>
+    pub fn get_schedule_config(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+        self.inner.get_schedule_config()
     }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_tags()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,49 +184,41 @@ impl CreateDataIntegrationFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The configuration for what files should be pulled from the source.</p>
     pub fn file_configuration(mut self, input: crate::types::FileConfiguration) -> Self {
         self.inner = self.inner.file_configuration(input);
         self
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
-    pub fn set_file_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FileConfiguration>,
-    ) -> Self {
+    pub fn set_file_configuration(mut self, input: ::std::option::Option<crate::types::FileConfiguration>) -> Self {
         self.inner = self.inner.set_file_configuration(input);
         self
+    }
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    pub fn get_file_configuration(&self) -> &::std::option::Option<crate::types::FileConfiguration> {
+        self.inner.get_file_configuration()
     }
     /// Adds a key-value pair to `ObjectConfiguration`.
     ///
     /// To override the contents of this collection use [`set_object_configuration`](Self::set_object_configuration).
     ///
     /// <p>The configuration for what data should be pulled from the source.</p>
-    pub fn object_configuration(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn object_configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.object_configuration(k.into(), v);
         self
     }
     /// <p>The configuration for what data should be pulled from the source.</p>
-    pub fn set_object_configuration(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
-    ) -> Self {
+    pub fn set_object_configuration(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>) -> Self {
         self.inner = self.inner.set_object_configuration(input);
         self
     }
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    pub fn get_object_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>> {
+        self.inner.get_object_configuration()
+    }
 }
+

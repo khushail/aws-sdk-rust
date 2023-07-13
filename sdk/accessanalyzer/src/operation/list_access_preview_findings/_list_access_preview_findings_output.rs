@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessPreviewFindingsOutput {
+pub struct ListAccessPreviewFindingsOutput  {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
     #[doc(hidden)]
     pub findings: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>,
@@ -13,31 +13,29 @@ pub struct ListAccessPreviewFindingsOutput {
 }
 impl ListAccessPreviewFindingsOutput {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::AccessPreviewFinding]> {
+    pub fn findings(&self) -> ::std::option::Option<& [crate::types::AccessPreviewFinding]> {
         self.findings.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAccessPreviewFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAccessPreviewFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput).
-    pub fn builder() -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder{
+    pub fn builder() -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder {
         crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPreviewFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,17 @@ impl ListAccessPreviewFindingsOutputBuilder {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
     pub fn findings(mut self, input: crate::types::AccessPreviewFinding) -> Self {
         let mut v = self.findings.unwrap_or_default();
-        v.push(input);
-        self.findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>,
-    ) -> Self {
-        self.findings = input;
-        self
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>) -> Self {
+        self.findings = input; self
+    }
+    /// <p>A list of access preview findings that match the specified filter criteria.</p>
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>> {
+        &self.findings
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,26 +68,30 @@ impl ListAccessPreviewFindingsOutputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
+    pub fn build(self) -> crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
         crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
-            findings: self.findings,
-            next_token: self.next_token,
+            findings: self.findings
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

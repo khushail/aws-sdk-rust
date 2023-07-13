@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationOverviewOutput {
+pub struct DescribeOrganizationOverviewOutput  {
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub reactive_insights: i32,
@@ -22,22 +22,20 @@ impl DescribeOrganizationOverviewOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeOrganizationOverviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeOrganizationOverviewOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationOverviewOutput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput).
-    pub fn builder() -> crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewOutputBuilder {
         crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationOverviewOutput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOverviewOutputBuilder {
     pub(crate) reactive_insights: ::std::option::Option<i32>,
     pub(crate) proactive_insights: ::std::option::Option<i32>,
@@ -51,8 +49,11 @@ impl DescribeOrganizationOverviewOutputBuilder {
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub fn set_reactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reactive_insights = input;
-        self
+        self.reactive_insights = input; self
+    }
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    pub fn get_reactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.reactive_insights
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn proactive_insights(mut self, input: i32) -> Self {
@@ -61,26 +62,32 @@ impl DescribeOrganizationOverviewOutputBuilder {
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn set_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.proactive_insights = input;
-        self
+        self.proactive_insights = input; self
+    }
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    pub fn get_proactive_insights(&self) -> &::std::option::Option<i32> {
+        &self.proactive_insights
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeOrganizationOverviewOutput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput {
+    pub fn build(self) -> crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput {
         crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput {
-            reactive_insights: self.reactive_insights.unwrap_or_default(),
-            proactive_insights: self.proactive_insights.unwrap_or_default(),
+            reactive_insights: self.reactive_insights
+                .unwrap_or_default()
+            ,
+            proactive_insights: self.proactive_insights
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

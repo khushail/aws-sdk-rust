@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopSentimentDetectionJobInput {
+pub struct StopSentimentDetectionJobInput  {
     /// <p>The identifier of the sentiment detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl StopSentimentDetectionJobInput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl StopSentimentDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobInput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput).
-    pub fn builder() -> crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder {
         crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopSentimentDetectionJobInput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSentimentDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl StopSentimentDetectionJobInputBuilder {
     }
     /// <p>The identifier of the sentiment detection job to stop.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The identifier of the sentiment detection job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`StopSentimentDetectionJobInput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput {
-                job_id: self.job_id,
-            },
+                job_id: self.job_id
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Contains information about the condition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScanCondition {
+pub struct ScanCondition  {
     /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
     #[doc(hidden)]
     pub map_equals: ::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>>,
 }
 impl ScanCondition {
     /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
-    pub fn map_equals(&self) -> ::std::option::Option<&[crate::types::ScanConditionPair]> {
+    pub fn map_equals(&self) -> ::std::option::Option<& [crate::types::ScanConditionPair]> {
         self.map_equals.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ScanCondition {
 
 /// A builder for [`ScanCondition`](crate::types::ScanCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanConditionBuilder {
     pub(crate) map_equals: ::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>>,
 }
@@ -37,22 +35,24 @@ impl ScanConditionBuilder {
     /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
     pub fn map_equals(mut self, input: crate::types::ScanConditionPair) -> Self {
         let mut v = self.map_equals.unwrap_or_default();
-        v.push(input);
-        self.map_equals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.map_equals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
-    pub fn set_map_equals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>>,
-    ) -> Self {
-        self.map_equals = input;
-        self
+    pub fn set_map_equals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>>) -> Self {
+        self.map_equals = input; self
+    }
+    /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
+    pub fn get_map_equals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>> {
+        &self.map_equals
     }
     /// Consumes the builder and constructs a [`ScanCondition`](crate::types::ScanCondition).
     pub fn build(self) -> crate::types::ScanCondition {
         crate::types::ScanCondition {
-            map_equals: self.map_equals,
+            map_equals: self.map_equals
+            ,
         }
     }
 }
+

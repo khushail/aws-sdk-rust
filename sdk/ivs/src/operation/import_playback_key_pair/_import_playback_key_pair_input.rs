@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportPlaybackKeyPairInput {
+pub struct ImportPlaybackKeyPairInput  {
     /// <p>The public portion of a customer-generated key pair.</p>
     #[doc(hidden)]
     pub public_key_material: ::std::option::Option<::std::string::String>,
@@ -11,65 +11,50 @@ pub struct ImportPlaybackKeyPairInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImportPlaybackKeyPairInput {
     /// <p>The public portion of a customer-generated key pair.</p>
-    pub fn public_key_material(&self) -> ::std::option::Option<&str> {
+    pub fn public_key_material(&self) -> ::std::option::Option<& str> {
         self.public_key_material.as_deref()
     }
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ImportPlaybackKeyPairInput {
     /// Creates a new builder-style object to manufacture [`ImportPlaybackKeyPairInput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput).
-    pub fn builder(
-    ) -> crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairInputBuilder {
         crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportPlaybackKeyPairInput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportPlaybackKeyPairInputBuilder {
     pub(crate) public_key_material: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImportPlaybackKeyPairInputBuilder {
     /// <p>The public portion of a customer-generated key pair.</p>
-    pub fn public_key_material(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_key_material(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_material = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public portion of a customer-generated key pair.</p>
-    pub fn set_public_key_material(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.public_key_material = input;
-        self
+    pub fn set_public_key_material(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_key_material = input; self
+    }
+    /// <p>The public portion of a customer-generated key pair.</p>
+    pub fn get_public_key_material(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key_material
     }
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,47 +63,43 @@ impl ImportPlaybackKeyPairInputBuilder {
     }
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Playback-key-pair name. The value does not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportPlaybackKeyPairInput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput {
-                public_key_material: self.public_key_material,
-                name: self.name,
-                tags: self.tags,
-            },
+                public_key_material: self.public_key_material
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

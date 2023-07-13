@@ -3,14 +3,14 @@
 /// <p>A field that is invisible to an agent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvisibleFieldInfo {
+pub struct InvisibleFieldInfo  {
     /// <p>Identifier of the invisible field.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
 }
 impl InvisibleFieldInfo {
     /// <p>Identifier of the invisible field.</p>
-    pub fn id(&self) -> ::std::option::Option<&crate::types::TaskTemplateFieldIdentifier> {
+    pub fn id(&self) -> ::std::option::Option<& crate::types::TaskTemplateFieldIdentifier> {
         self.id.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl InvisibleFieldInfo {
 
 /// A builder for [`InvisibleFieldInfo`](crate::types::InvisibleFieldInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvisibleFieldInfoBuilder {
     pub(crate) id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
 }
@@ -36,15 +34,19 @@ impl InvisibleFieldInfoBuilder {
         self
     }
     /// <p>Identifier of the invisible field.</p>
-    pub fn set_id(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
-    ) -> Self {
-        self.id = input;
-        self
+    pub fn set_id(mut self, input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>) -> Self {
+        self.id = input; self
+    }
+    /// <p>Identifier of the invisible field.</p>
+    pub fn get_id(&self) -> &::std::option::Option<crate::types::TaskTemplateFieldIdentifier> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`InvisibleFieldInfo`](crate::types::InvisibleFieldInfo).
     pub fn build(self) -> crate::types::InvisibleFieldInfo {
-        crate::types::InvisibleFieldInfo { id: self.id }
+        crate::types::InvisibleFieldInfo {
+            id: self.id
+            ,
+        }
     }
 }
+

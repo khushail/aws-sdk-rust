@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservedNode {
+pub struct ReservedNode  {
     /// <p>A customer-specified identifier to track this reservation.</p>
     #[doc(hidden)]
     pub reservation_id: ::std::option::Option<::std::string::String>,
@@ -40,19 +40,19 @@ pub struct ReservedNode {
 }
 impl ReservedNode {
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_id(&self) -> ::std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
     /// <p>The ID of the reserved node offering to purchase.</p>
-    pub fn reserved_nodes_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_nodes_offering_id(&self) -> ::std::option::Option<& str> {
         self.reserved_nodes_offering_id.as_deref()
     }
     /// <p>The node type for the reserved nodes.</p>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The time the reservation started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The duration of the reservation in seconds.</p>
@@ -68,19 +68,19 @@ impl ReservedNode {
         self.node_count
     }
     /// <p>The offering type of this reserved node.</p>
-    pub fn offering_type(&self) -> ::std::option::Option<&str> {
+    pub fn offering_type(&self) -> ::std::option::Option<& str> {
         self.offering_type.as_deref()
     }
     /// <p>The state of the reserved node.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The recurring price charged to run this reserved node.</p>
-    pub fn recurring_charges(&self) -> ::std::option::Option<&[crate::types::RecurringCharge]> {
+    pub fn recurring_charges(&self) -> ::std::option::Option<& [crate::types::RecurringCharge]> {
         self.recurring_charges.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -93,9 +93,7 @@ impl ReservedNode {
 
 /// A builder for [`ReservedNode`](crate::types::ReservedNode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedNodeBuilder {
     pub(crate) reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_nodes_offering_id: ::std::option::Option<::std::string::String>,
@@ -106,42 +104,35 @@ pub struct ReservedNodeBuilder {
     pub(crate) node_count: ::std::option::Option<i32>,
     pub(crate) offering_type: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
-    pub(crate) recurring_charges:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ReservedNodeBuilder {
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reservation_id = input;
-        self
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reservation_id = input; self
+    }
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_id
     }
     /// <p>The ID of the reserved node offering to purchase.</p>
-    pub fn reserved_nodes_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_nodes_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the reserved node offering to purchase.</p>
-    pub fn set_reserved_nodes_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reserved_nodes_offering_id = input;
-        self
+    pub fn set_reserved_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reserved_nodes_offering_id = input; self
+    }
+    /// <p>The ID of the reserved node offering to purchase.</p>
+    pub fn get_reserved_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_nodes_offering_id
     }
     /// <p>The node type for the reserved nodes.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,8 +141,11 @@ impl ReservedNodeBuilder {
     }
     /// <p>The node type for the reserved nodes.</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
+    }
+    /// <p>The node type for the reserved nodes.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
     }
     /// <p>The time the reservation started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -159,12 +153,12 @@ impl ReservedNodeBuilder {
         self
     }
     /// <p>The time the reservation started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>The time the reservation started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The duration of the reservation in seconds.</p>
     pub fn duration(mut self, input: i32) -> Self {
@@ -173,8 +167,11 @@ impl ReservedNodeBuilder {
     }
     /// <p>The duration of the reservation in seconds.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
+    }
+    /// <p>The duration of the reservation in seconds.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// <p>The fixed price charged for this reserved node.</p>
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -183,8 +180,11 @@ impl ReservedNodeBuilder {
     }
     /// <p>The fixed price charged for this reserved node.</p>
     pub fn set_fixed_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.fixed_price = input;
-        self
+        self.fixed_price = input; self
+    }
+    /// <p>The fixed price charged for this reserved node.</p>
+    pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
+        &self.fixed_price
     }
     /// <p>The number of nodes that have been reserved.</p>
     pub fn node_count(mut self, input: i32) -> Self {
@@ -193,24 +193,24 @@ impl ReservedNodeBuilder {
     }
     /// <p>The number of nodes that have been reserved.</p>
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.node_count = input;
-        self
+        self.node_count = input; self
+    }
+    /// <p>The number of nodes that have been reserved.</p>
+    pub fn get_node_count(&self) -> &::std::option::Option<i32> {
+        &self.node_count
     }
     /// <p>The offering type of this reserved node.</p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering type of this reserved node.</p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.offering_type = input;
-        self
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.offering_type = input; self
+    }
+    /// <p>The offering type of this reserved node.</p>
+    pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_type
     }
     /// <p>The state of the reserved node.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -219,8 +219,11 @@ impl ReservedNodeBuilder {
     }
     /// <p>The state of the reserved node.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The state of the reserved node.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -229,17 +232,17 @@ impl ReservedNodeBuilder {
     /// <p>The recurring price charged to run this reserved node.</p>
     pub fn recurring_charges(mut self, input: crate::types::RecurringCharge) -> Self {
         let mut v = self.recurring_charges.unwrap_or_default();
-        v.push(input);
-        self.recurring_charges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recurring_charges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The recurring price charged to run this reserved node.</p>
-    pub fn set_recurring_charges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
-    ) -> Self {
-        self.recurring_charges = input;
-        self
+    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
+        self.recurring_charges = input; self
+    }
+    /// <p>The recurring price charged to run this reserved node.</p>
+    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+        &self.recurring_charges
     }
     /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -248,23 +251,41 @@ impl ReservedNodeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`ReservedNode`](crate::types::ReservedNode).
     pub fn build(self) -> crate::types::ReservedNode {
         crate::types::ReservedNode {
-            reservation_id: self.reservation_id,
-            reserved_nodes_offering_id: self.reserved_nodes_offering_id,
-            node_type: self.node_type,
-            start_time: self.start_time,
-            duration: self.duration.unwrap_or_default(),
-            fixed_price: self.fixed_price.unwrap_or_default(),
-            node_count: self.node_count.unwrap_or_default(),
-            offering_type: self.offering_type,
-            state: self.state,
-            recurring_charges: self.recurring_charges,
-            arn: self.arn,
+            reservation_id: self.reservation_id
+            ,
+            reserved_nodes_offering_id: self.reserved_nodes_offering_id
+            ,
+            node_type: self.node_type
+            ,
+            start_time: self.start_time
+            ,
+            duration: self.duration
+                .unwrap_or_default()
+            ,
+            fixed_price: self.fixed_price
+                .unwrap_or_default()
+            ,
+            node_count: self.node_count
+                .unwrap_or_default()
+            ,
+            offering_type: self.offering_type
+            ,
+            state: self.state
+            ,
+            recurring_charges: self.recurring_charges
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

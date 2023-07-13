@@ -3,7 +3,7 @@
 /// <p>Provides information about additional attributes for the load balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElbLoadBalancerAdditionalAttribute {
+pub struct AwsElbLoadBalancerAdditionalAttribute  {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsElbLoadBalancerAdditionalAttribute {
 }
 impl AwsElbLoadBalancerAdditionalAttribute {
     /// <p>The name of the attribute.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AwsElbLoadBalancerAdditionalAttribute {
 
 /// A builder for [`AwsElbLoadBalancerAdditionalAttribute`](crate::types::AwsElbLoadBalancerAdditionalAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerAdditionalAttributeBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AwsElbLoadBalancerAdditionalAttributeBuilder {
     }
     /// <p>The name of the attribute.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The name of the attribute.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The value of the attribute.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl AwsElbLoadBalancerAdditionalAttributeBuilder {
     }
     /// <p>The value of the attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerAdditionalAttribute`](crate::types::AwsElbLoadBalancerAdditionalAttribute).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerAdditionalAttribute {
         crate::types::AwsElbLoadBalancerAdditionalAttribute {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

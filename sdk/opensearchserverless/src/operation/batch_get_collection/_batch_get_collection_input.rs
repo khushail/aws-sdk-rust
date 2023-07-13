@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCollectionInput {
+pub struct BatchGetCollectionInput  {
     /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
     #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,27 +12,24 @@ pub struct BatchGetCollectionInput {
 }
 impl BatchGetCollectionInput {
     /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>A list of collection names. You can't provide names and IDs in the same request.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.names.as_deref()
     }
 }
 impl BatchGetCollectionInput {
     /// Creates a new builder-style object to manufacture [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_collection::builders::BatchGetCollectionInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_collection::builders::BatchGetCollectionInputBuilder {
         crate::operation::batch_get_collection::builders::BatchGetCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCollectionInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,17 +42,17 @@ impl BatchGetCollectionInputBuilder {
     /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ids = input; self
+    }
+    /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
     }
     /// Appends an item to `names`.
     ///
@@ -64,30 +61,28 @@ impl BatchGetCollectionInputBuilder {
     /// <p>A list of collection names. You can't provide names and IDs in the same request.</p>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of collection names. You can't provide names and IDs in the same request.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.names = input; self
+    }
+    /// <p>A list of collection names. You can't provide names and IDs in the same request.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
     }
     /// Consumes the builder and constructs a [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_collection::BatchGetCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_collection::BatchGetCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_collection::BatchGetCollectionInput {
-                ids: self.ids,
-                names: self.names,
-            },
+                ids: self.ids
+                ,
+                names: self.names
+                ,
+            }
         )
     }
 }
+

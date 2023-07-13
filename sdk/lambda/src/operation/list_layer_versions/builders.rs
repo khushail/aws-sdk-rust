@@ -3,125 +3,109 @@ pub use crate::operation::list_layer_versions::_list_layer_versions_output::List
 
 pub use crate::operation::list_layer_versions::_list_layer_versions_input::ListLayerVersionsInputBuilder;
 
+impl ListLayerVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_layer_versions::ListLayerVersionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_layer_versions::ListLayerVersionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_layer_versions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListLayerVersions`.
-///
+/// 
 /// <p>Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only versions that indicate that they're compatible with that runtime. Specify a compatible architecture to include only layer versions that are compatible with that architecture.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLayerVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_layer_versions::builders::ListLayerVersionsInputBuilder,
+                    inner: crate::operation::list_layer_versions::builders::ListLayerVersionsInputBuilder,
 }
-impl ListLayerVersionsFluentBuilder {
+impl ListLayerVersionsFluentBuilder  {
     /// Creates a new `ListLayerVersions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_layer_versions::ListLayerVersions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_layer_versions::ListLayerVersionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListLayerVersions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_layer_versions::builders::ListLayerVersionsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_layer_versions::ListLayerVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_layer_versions::ListLayerVersionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_layer_versions::ListLayerVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_layer_versions::ListLayerVersionsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_layer_versions::ListLayerVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_layer_versions::ListLayerVersionsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_layer_versions::ListLayerVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_layer_versions::ListLayerVersionsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_layer_versions::ListLayerVersions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_layer_versions::ListLayerVersionsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_layer_versions::ListLayerVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_layer_versions::ListLayerVersionsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_layer_versions::ListLayerVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_layer_versions::ListLayerVersionsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator {
-        crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator {
+                                crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::new(self.handle, self.inner)
+                            }
+    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p> 
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn compatible_runtime(mut self, input: crate::types::Runtime) -> Self {
         self.inner = self.inner.compatible_runtime(input);
         self
     }
-    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
-    pub fn set_compatible_runtime(
-        mut self,
-        input: ::std::option::Option<crate::types::Runtime>,
-    ) -> Self {
+    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p> 
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    pub fn set_compatible_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
         self.inner = self.inner.set_compatible_runtime(input);
         self
+    }
+    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p> 
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    pub fn get_compatible_runtime(&self) -> &::std::option::Option<crate::types::Runtime> {
+        self.inner.get_compatible_runtime()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +117,10 @@ impl ListLayerVersionsFluentBuilder {
         self.inner = self.inner.set_layer_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layer_name()
+    }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -142,6 +130,10 @@ impl ListLayerVersionsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>A pagination token returned by a previous call.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>The maximum number of versions to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -153,17 +145,23 @@ impl ListLayerVersionsFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>The maximum number of versions to return.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub fn compatible_architecture(mut self, input: crate::types::Architecture) -> Self {
         self.inner = self.inner.compatible_architecture(input);
         self
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    pub fn set_compatible_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_compatible_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.inner = self.inner.set_compatible_architecture(input);
         self
     }
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    pub fn get_compatible_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        self.inner.get_compatible_architecture()
+    }
 }
+

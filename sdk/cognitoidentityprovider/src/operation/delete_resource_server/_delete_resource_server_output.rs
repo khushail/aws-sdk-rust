@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourceServerOutput {
+pub struct DeleteResourceServerOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteResourceServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteResourceServerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceServerOutput`](crate::operation::delete_resource_server::DeleteResourceServerOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_server::builders::DeleteResourceServerOutputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_server::builders::DeleteResourceServerOutputBuilder {
         crate::operation::delete_resource_server::builders::DeleteResourceServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceServerOutput`](crate::operation::delete_resource_server::DeleteResourceServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceServerOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteResourceServerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteResourceServerOutput`](crate::operation::delete_resource_server::DeleteResourceServerOutput).
     pub fn build(self) -> crate::operation::delete_resource_server::DeleteResourceServerOutput {
         crate::operation::delete_resource_server::DeleteResourceServerOutput {
@@ -43,3 +40,4 @@ impl DeleteResourceServerOutputBuilder {
         }
     }
 }
+

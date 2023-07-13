@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGlobalClusterInput {
+pub struct DeleteGlobalClusterInput  {
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
     #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGlobalClusterInput {
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
 }
 impl DeleteGlobalClusterInput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
-    pub fn builder(
-    ) -> crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder {
-        crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder {
+        crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGlobalClusterInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGlobalClusterInputBuilder {
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.global_cluster_identifier = input;
-        self
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_cluster_identifier = input; self
+    }
+    /// <p>The cluster identifier of the global database cluster being deleted.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
     }
     /// Consumes the builder and constructs a [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_global_cluster::DeleteGlobalClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_global_cluster::DeleteGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_global_cluster::DeleteGlobalClusterInput {
-                global_cluster_identifier: self.global_cluster_identifier,
-            },
+                global_cluster_identifier: self.global_cluster_identifier
+                ,
+            }
         )
     }
 }
+

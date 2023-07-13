@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnvironmentAccountConnectionInput {
+pub struct GetEnvironmentAccountConnectionInput  {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetEnvironmentAccountConnectionInput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentAccountConnectionInput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput).
-    pub fn builder() -> crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionInputBuilder{
+    pub fn builder() -> crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionInputBuilder {
         crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnvironmentAccountConnectionInput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnvironmentAccountConnectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,14 @@ impl GetEnvironmentAccountConnectionInputBuilder {
     }
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetEnvironmentAccountConnectionInput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput {
                 id: self.id
@@ -54,3 +50,4 @@ impl GetEnvironmentAccountConnectionInputBuilder {
         )
     }
 }
+

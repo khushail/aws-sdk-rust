@@ -3,7 +3,7 @@
 /// <p>The total resources consumed by your hyperparameter tuning job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HyperParameterTuningJobConsumedResources {
+pub struct HyperParameterTuningJobConsumedResources  {
     /// <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
     #[doc(hidden)]
     pub runtime_in_seconds: i32,
@@ -23,9 +23,7 @@ impl HyperParameterTuningJobConsumedResources {
 
 /// A builder for [`HyperParameterTuningJobConsumedResources`](crate::types::HyperParameterTuningJobConsumedResources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobConsumedResourcesBuilder {
     pub(crate) runtime_in_seconds: ::std::option::Option<i32>,
 }
@@ -37,13 +35,19 @@ impl HyperParameterTuningJobConsumedResourcesBuilder {
     }
     /// <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
     pub fn set_runtime_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.runtime_in_seconds = input;
-        self
+        self.runtime_in_seconds = input; self
+    }
+    /// <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
+    pub fn get_runtime_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.runtime_in_seconds
     }
     /// Consumes the builder and constructs a [`HyperParameterTuningJobConsumedResources`](crate::types::HyperParameterTuningJobConsumedResources).
     pub fn build(self) -> crate::types::HyperParameterTuningJobConsumedResources {
         crate::types::HyperParameterTuningJobConsumedResources {
-            runtime_in_seconds: self.runtime_in_seconds.unwrap_or_default(),
+            runtime_in_seconds: self.runtime_in_seconds
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

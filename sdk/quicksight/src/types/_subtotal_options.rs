@@ -3,7 +3,7 @@
 /// <p>The subtotal options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubtotalOptions {
+pub struct SubtotalOptions  {
     /// <p>The visibility configuration for the subtotal cells.</p>
     #[doc(hidden)]
     pub totals_visibility: ::std::option::Option<crate::types::Visibility>,
@@ -15,8 +15,7 @@ pub struct SubtotalOptions {
     pub field_level: ::std::option::Option<crate::types::PivotTableSubtotalLevel>,
     /// <p>The optional configuration of subtotal cells.</p>
     #[doc(hidden)]
-    pub field_level_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldSubtotalOptions>>,
+    pub field_level_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldSubtotalOptions>>,
     /// <p>The cell styling options for the subtotal cells.</p>
     #[doc(hidden)]
     pub total_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
@@ -29,33 +28,31 @@ pub struct SubtotalOptions {
 }
 impl SubtotalOptions {
     /// <p>The visibility configuration for the subtotal cells.</p>
-    pub fn totals_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn totals_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.totals_visibility.as_ref()
     }
     /// <p>The custom label string for the subtotal cells.</p>
-    pub fn custom_label(&self) -> ::std::option::Option<&str> {
+    pub fn custom_label(&self) -> ::std::option::Option<& str> {
         self.custom_label.as_deref()
     }
     /// <p>The field level (all, custom, last) for the subtotal cells.</p>
-    pub fn field_level(&self) -> ::std::option::Option<&crate::types::PivotTableSubtotalLevel> {
+    pub fn field_level(&self) -> ::std::option::Option<& crate::types::PivotTableSubtotalLevel> {
         self.field_level.as_ref()
     }
     /// <p>The optional configuration of subtotal cells.</p>
-    pub fn field_level_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PivotTableFieldSubtotalOptions]> {
+    pub fn field_level_options(&self) -> ::std::option::Option<& [crate::types::PivotTableFieldSubtotalOptions]> {
         self.field_level_options.as_deref()
     }
     /// <p>The cell styling options for the subtotal cells.</p>
-    pub fn total_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn total_cell_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.total_cell_style.as_ref()
     }
     /// <p>The cell styling options for the subtotals of value cells.</p>
-    pub fn value_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn value_cell_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.value_cell_style.as_ref()
     }
     /// <p>The cell styling options for the subtotals of header cells.</p>
-    pub fn metric_header_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn metric_header_cell_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.metric_header_cell_style.as_ref()
     }
 }
@@ -68,15 +65,12 @@ impl SubtotalOptions {
 
 /// A builder for [`SubtotalOptions`](crate::types::SubtotalOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubtotalOptionsBuilder {
     pub(crate) totals_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) custom_label: ::std::option::Option<::std::string::String>,
     pub(crate) field_level: ::std::option::Option<crate::types::PivotTableSubtotalLevel>,
-    pub(crate) field_level_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldSubtotalOptions>>,
+    pub(crate) field_level_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldSubtotalOptions>>,
     pub(crate) total_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     pub(crate) value_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     pub(crate) metric_header_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
@@ -88,12 +82,12 @@ impl SubtotalOptionsBuilder {
         self
     }
     /// <p>The visibility configuration for the subtotal cells.</p>
-    pub fn set_totals_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.totals_visibility = input;
-        self
+    pub fn set_totals_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.totals_visibility = input; self
+    }
+    /// <p>The visibility configuration for the subtotal cells.</p>
+    pub fn get_totals_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.totals_visibility
     }
     /// <p>The custom label string for the subtotal cells.</p>
     pub fn custom_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,8 +96,11 @@ impl SubtotalOptionsBuilder {
     }
     /// <p>The custom label string for the subtotal cells.</p>
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_label = input;
-        self
+        self.custom_label = input; self
+    }
+    /// <p>The custom label string for the subtotal cells.</p>
+    pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_label
     }
     /// <p>The field level (all, custom, last) for the subtotal cells.</p>
     pub fn field_level(mut self, input: crate::types::PivotTableSubtotalLevel) -> Self {
@@ -111,34 +108,31 @@ impl SubtotalOptionsBuilder {
         self
     }
     /// <p>The field level (all, custom, last) for the subtotal cells.</p>
-    pub fn set_field_level(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableSubtotalLevel>,
-    ) -> Self {
-        self.field_level = input;
-        self
+    pub fn set_field_level(mut self, input: ::std::option::Option<crate::types::PivotTableSubtotalLevel>) -> Self {
+        self.field_level = input; self
+    }
+    /// <p>The field level (all, custom, last) for the subtotal cells.</p>
+    pub fn get_field_level(&self) -> &::std::option::Option<crate::types::PivotTableSubtotalLevel> {
+        &self.field_level
     }
     /// Appends an item to `field_level_options`.
     ///
     /// To override the contents of this collection use [`set_field_level_options`](Self::set_field_level_options).
     ///
     /// <p>The optional configuration of subtotal cells.</p>
-    pub fn field_level_options(
-        mut self,
-        input: crate::types::PivotTableFieldSubtotalOptions,
-    ) -> Self {
+    pub fn field_level_options(mut self, input: crate::types::PivotTableFieldSubtotalOptions) -> Self {
         let mut v = self.field_level_options.unwrap_or_default();
-        v.push(input);
-        self.field_level_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.field_level_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The optional configuration of subtotal cells.</p>
-    pub fn set_field_level_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldSubtotalOptions>>,
-    ) -> Self {
-        self.field_level_options = input;
-        self
+    pub fn set_field_level_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldSubtotalOptions>>) -> Self {
+        self.field_level_options = input; self
+    }
+    /// <p>The optional configuration of subtotal cells.</p>
+    pub fn get_field_level_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldSubtotalOptions>> {
+        &self.field_level_options
     }
     /// <p>The cell styling options for the subtotal cells.</p>
     pub fn total_cell_style(mut self, input: crate::types::TableCellStyle) -> Self {
@@ -146,12 +140,12 @@ impl SubtotalOptionsBuilder {
         self
     }
     /// <p>The cell styling options for the subtotal cells.</p>
-    pub fn set_total_cell_style(
-        mut self,
-        input: ::std::option::Option<crate::types::TableCellStyle>,
-    ) -> Self {
-        self.total_cell_style = input;
-        self
+    pub fn set_total_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
+        self.total_cell_style = input; self
+    }
+    /// <p>The cell styling options for the subtotal cells.</p>
+    pub fn get_total_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
+        &self.total_cell_style
     }
     /// <p>The cell styling options for the subtotals of value cells.</p>
     pub fn value_cell_style(mut self, input: crate::types::TableCellStyle) -> Self {
@@ -159,12 +153,12 @@ impl SubtotalOptionsBuilder {
         self
     }
     /// <p>The cell styling options for the subtotals of value cells.</p>
-    pub fn set_value_cell_style(
-        mut self,
-        input: ::std::option::Option<crate::types::TableCellStyle>,
-    ) -> Self {
-        self.value_cell_style = input;
-        self
+    pub fn set_value_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
+        self.value_cell_style = input; self
+    }
+    /// <p>The cell styling options for the subtotals of value cells.</p>
+    pub fn get_value_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
+        &self.value_cell_style
     }
     /// <p>The cell styling options for the subtotals of header cells.</p>
     pub fn metric_header_cell_style(mut self, input: crate::types::TableCellStyle) -> Self {
@@ -172,23 +166,31 @@ impl SubtotalOptionsBuilder {
         self
     }
     /// <p>The cell styling options for the subtotals of header cells.</p>
-    pub fn set_metric_header_cell_style(
-        mut self,
-        input: ::std::option::Option<crate::types::TableCellStyle>,
-    ) -> Self {
-        self.metric_header_cell_style = input;
-        self
+    pub fn set_metric_header_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
+        self.metric_header_cell_style = input; self
+    }
+    /// <p>The cell styling options for the subtotals of header cells.</p>
+    pub fn get_metric_header_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
+        &self.metric_header_cell_style
     }
     /// Consumes the builder and constructs a [`SubtotalOptions`](crate::types::SubtotalOptions).
     pub fn build(self) -> crate::types::SubtotalOptions {
         crate::types::SubtotalOptions {
-            totals_visibility: self.totals_visibility,
-            custom_label: self.custom_label,
-            field_level: self.field_level,
-            field_level_options: self.field_level_options,
-            total_cell_style: self.total_cell_style,
-            value_cell_style: self.value_cell_style,
-            metric_header_cell_style: self.metric_header_cell_style,
+            totals_visibility: self.totals_visibility
+            ,
+            custom_label: self.custom_label
+            ,
+            field_level: self.field_level
+            ,
+            field_level_options: self.field_level_options
+            ,
+            total_cell_style: self.total_cell_style
+            ,
+            value_cell_style: self.value_cell_style
+            ,
+            metric_header_cell_style: self.metric_header_cell_style
+            ,
         }
     }
 }
+

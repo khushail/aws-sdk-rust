@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnarchiveApplicationInput {
+pub struct UnarchiveApplicationInput  {
     /// <p>Application ID.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl UnarchiveApplicationInput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
 impl UnarchiveApplicationInput {
     /// Creates a new builder-style object to manufacture [`UnarchiveApplicationInput`](crate::operation::unarchive_application::UnarchiveApplicationInput).
-    pub fn builder(
-    ) -> crate::operation::unarchive_application::builders::UnarchiveApplicationInputBuilder {
-        crate::operation::unarchive_application::builders::UnarchiveApplicationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::unarchive_application::builders::UnarchiveApplicationInputBuilder {
+        crate::operation::unarchive_application::builders::UnarchiveApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`UnarchiveApplicationInput`](crate::operation::unarchive_application::UnarchiveApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnarchiveApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }
 impl UnarchiveApplicationInputBuilder {
     /// <p>Application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>Application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// Consumes the builder and constructs a [`UnarchiveApplicationInput`](crate::operation::unarchive_application::UnarchiveApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unarchive_application::UnarchiveApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unarchive_application::UnarchiveApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::unarchive_application::UnarchiveApplicationInput {
-                application_id: self.application_id,
-            },
+                application_id: self.application_id
+                ,
+            }
         )
     }
 }
+

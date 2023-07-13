@@ -3,102 +3,87 @@ pub use crate::operation::update_report_group::_update_report_group_output::Upda
 
 pub use crate::operation::update_report_group::_update_report_group_input::UpdateReportGroupInputBuilder;
 
+impl UpdateReportGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_report_group::UpdateReportGroupOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_report_group::UpdateReportGroupError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_report_group();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateReportGroup`.
-///
+/// 
 /// <p> Updates a report group. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateReportGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_report_group::builders::UpdateReportGroupInputBuilder,
+                    inner: crate::operation::update_report_group::builders::UpdateReportGroupInputBuilder,
 }
-impl UpdateReportGroupFluentBuilder {
+impl UpdateReportGroupFluentBuilder  {
     /// Creates a new `UpdateReportGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_report_group::UpdateReportGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_report_group::UpdateReportGroupError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateReportGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_report_group::builders::UpdateReportGroupInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_report_group::UpdateReportGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_report_group::UpdateReportGroupError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_report_group::UpdateReportGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_report_group::UpdateReportGroupError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_report_group::UpdateReportGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_report_group::UpdateReportGroupError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_report_group::UpdateReportGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_report_group::UpdateReportGroupError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_report_group::UpdateReportGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_report_group::UpdateReportGroupError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_report_group::UpdateReportGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_report_group::UpdateReportGroupError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_report_group::UpdateReportGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_report_group::UpdateReportGroupError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The ARN of the report group to update. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
@@ -109,44 +94,56 @@ impl UpdateReportGroupFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p> Used to specify an updated export type. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
-    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
+    /// <p> The ARN of the report group to update. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
+    /// <p> Used to specify an updated export type. Valid values are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li> 
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li> 
     /// </ul>
     pub fn export_config(mut self, input: crate::types::ReportExportConfig) -> Self {
         self.inner = self.inner.export_config(input);
         self
     }
-    /// <p> Used to specify an updated export type. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
-    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
+    /// <p> Used to specify an updated export type. Valid values are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li> 
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li> 
     /// </ul>
-    pub fn set_export_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportExportConfig>,
-    ) -> Self {
+    pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
         self.inner = self.inner.set_export_config(input);
         self
+    }
+    /// <p> Used to specify an updated export type. Valid values are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li> 
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li> 
+    /// </ul>
+    pub fn get_export_config(&self) -> &::std::option::Option<crate::types::ReportExportConfig> {
+        self.inner.get_export_config()
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> An updated list of tag key and value pairs associated with this report group. </p>
+    /// <p> An updated list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p> An updated list of tag key and value pairs associated with this report group. </p>
+    /// <p> An updated list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p> An updated list of tag key and value pairs associated with this report group. </p> 
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

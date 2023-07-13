@@ -3,7 +3,7 @@
 /// <p>Describes the status of a Verified Access endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifiedAccessEndpointStatus {
+pub struct VerifiedAccessEndpointStatus  {
     /// <p>The status code of the Verified Access endpoint.</p>
     #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::VerifiedAccessEndpointStatusCode>,
@@ -13,11 +13,11 @@ pub struct VerifiedAccessEndpointStatus {
 }
 impl VerifiedAccessEndpointStatus {
     /// <p>The status code of the Verified Access endpoint.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::VerifiedAccessEndpointStatusCode> {
         self.code.as_ref()
     }
     /// <p>The status message of the Verified Access endpoint.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl VerifiedAccessEndpointStatus {
 
 /// A builder for [`VerifiedAccessEndpointStatus`](crate::types::VerifiedAccessEndpointStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifiedAccessEndpointStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::VerifiedAccessEndpointStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl VerifiedAccessEndpointStatusBuilder {
         self
     }
     /// <p>The status code of the Verified Access endpoint.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessEndpointStatusCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpointStatusCode>) -> Self {
+        self.code = input; self
+    }
+    /// <p>The status code of the Verified Access endpoint.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpointStatusCode> {
+        &self.code
     }
     /// <p>The status message of the Verified Access endpoint.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl VerifiedAccessEndpointStatusBuilder {
     }
     /// <p>The status message of the Verified Access endpoint.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The status message of the Verified Access endpoint.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`VerifiedAccessEndpointStatus`](crate::types::VerifiedAccessEndpointStatus).
     pub fn build(self) -> crate::types::VerifiedAccessEndpointStatus {
         crate::types::VerifiedAccessEndpointStatus {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

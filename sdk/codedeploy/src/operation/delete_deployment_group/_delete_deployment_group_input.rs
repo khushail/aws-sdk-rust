@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>DeleteDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeploymentGroupInput {
+pub struct DeleteDeploymentGroupInput  {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
@@ -13,77 +13,65 @@ pub struct DeleteDeploymentGroupInput {
 }
 impl DeleteDeploymentGroupInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The name of a deployment group for the specified application.</p>
-    pub fn deployment_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_group_name(&self) -> ::std::option::Option<& str> {
         self.deployment_group_name.as_deref()
     }
 }
 impl DeleteDeploymentGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentGroupInput`](crate::operation::delete_deployment_group::DeleteDeploymentGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupInputBuilder {
         crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeploymentGroupInput`](crate::operation::delete_deployment_group::DeleteDeploymentGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeploymentGroupInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeploymentGroupInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_name = input;
-        self
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_name = input; self
+    }
+    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
     }
     /// <p>The name of a deployment group for the specified application.</p>
-    pub fn deployment_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a deployment group for the specified application.</p>
-    pub fn set_deployment_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.deployment_group_name = input;
-        self
+    pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_group_name = input; self
+    }
+    /// <p>The name of a deployment group for the specified application.</p>
+    pub fn get_deployment_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_group_name
     }
     /// Consumes the builder and constructs a [`DeleteDeploymentGroupInput`](crate::operation::delete_deployment_group::DeleteDeploymentGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_deployment_group::DeleteDeploymentGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_deployment_group::DeleteDeploymentGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_deployment_group::DeleteDeploymentGroupInput {
-                application_name: self.application_name,
-                deployment_group_name: self.deployment_group_name,
-            },
+                application_name: self.application_name
+                ,
+                deployment_group_name: self.deployment_group_name
+                ,
+            }
         )
     }
 }
+

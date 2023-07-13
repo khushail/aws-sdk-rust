@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInsightResultsOutput {
+pub struct GetInsightResultsOutput  {
     /// <p>The insight results returned by the operation.</p>
     #[doc(hidden)]
     pub insight_results: ::std::option::Option<crate::types::InsightResults>,
@@ -10,28 +10,25 @@ pub struct GetInsightResultsOutput {
 }
 impl GetInsightResultsOutput {
     /// <p>The insight results returned by the operation.</p>
-    pub fn insight_results(&self) -> ::std::option::Option<&crate::types::InsightResults> {
+    pub fn insight_results(&self) -> ::std::option::Option<& crate::types::InsightResults> {
         self.insight_results.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetInsightResultsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetInsightResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightResultsOutput`](crate::operation::get_insight_results::GetInsightResultsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder {
+    pub fn builder() -> crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder {
         crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightResultsOutput`](crate::operation::get_insight_results::GetInsightResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightResultsOutputBuilder {
     pub(crate) insight_results: ::std::option::Option<crate::types::InsightResults>,
     _request_id: Option<String>,
@@ -43,27 +40,29 @@ impl GetInsightResultsOutputBuilder {
         self
     }
     /// <p>The insight results returned by the operation.</p>
-    pub fn set_insight_results(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightResults>,
-    ) -> Self {
-        self.insight_results = input;
-        self
+    pub fn set_insight_results(mut self, input: ::std::option::Option<crate::types::InsightResults>) -> Self {
+        self.insight_results = input; self
+    }
+    /// <p>The insight results returned by the operation.</p>
+    pub fn get_insight_results(&self) -> &::std::option::Option<crate::types::InsightResults> {
+        &self.insight_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetInsightResultsOutput`](crate::operation::get_insight_results::GetInsightResultsOutput).
     pub fn build(self) -> crate::operation::get_insight_results::GetInsightResultsOutput {
         crate::operation::get_insight_results::GetInsightResultsOutput {
-            insight_results: self.insight_results,
+            insight_results: self.insight_results
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the settings used to enable point in time recovery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PointInTimeRecoverySpecification {
+pub struct PointInTimeRecoverySpecification  {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     #[doc(hidden)]
     pub point_in_time_recovery_enabled: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl PointInTimeRecoverySpecification {
 
 /// A builder for [`PointInTimeRecoverySpecification`](crate::types::PointInTimeRecoverySpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PointInTimeRecoverySpecificationBuilder {
     pub(crate) point_in_time_recovery_enabled: ::std::option::Option<bool>,
 }
@@ -36,17 +34,19 @@ impl PointInTimeRecoverySpecificationBuilder {
         self
     }
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
-    pub fn set_point_in_time_recovery_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.point_in_time_recovery_enabled = input;
-        self
+    pub fn set_point_in_time_recovery_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.point_in_time_recovery_enabled = input; self
+    }
+    /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
+    pub fn get_point_in_time_recovery_enabled(&self) -> &::std::option::Option<bool> {
+        &self.point_in_time_recovery_enabled
     }
     /// Consumes the builder and constructs a [`PointInTimeRecoverySpecification`](crate::types::PointInTimeRecoverySpecification).
     pub fn build(self) -> crate::types::PointInTimeRecoverySpecification {
         crate::types::PointInTimeRecoverySpecification {
-            point_in_time_recovery_enabled: self.point_in_time_recovery_enabled,
+            point_in_time_recovery_enabled: self.point_in_time_recovery_enabled
+            ,
         }
     }
 }
+

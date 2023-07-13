@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSatelliteOutput {
+pub struct GetSatelliteOutput  {
     /// <p>UUID of a satellite.</p>
     #[doc(hidden)]
     pub satellite_id: ::std::option::Option<::std::string::String>,
@@ -23,11 +23,11 @@ pub struct GetSatelliteOutput {
 }
 impl GetSatelliteOutput {
     /// <p>UUID of a satellite.</p>
-    pub fn satellite_id(&self) -> ::std::option::Option<&str> {
+    pub fn satellite_id(&self) -> ::std::option::Option<& str> {
         self.satellite_id.as_deref()
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(&self) -> ::std::option::Option<&str> {
+    pub fn satellite_arn(&self) -> ::std::option::Option<& str> {
         self.satellite_arn.as_deref()
     }
     /// <p>NORAD satellite ID number.</p>
@@ -35,19 +35,19 @@ impl GetSatelliteOutput {
         self.norad_satellite_id
     }
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn ground_stations(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn ground_stations(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.ground_stations.as_deref()
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
-    pub fn current_ephemeris(&self) -> ::std::option::Option<&crate::types::EphemerisMetaData> {
+    pub fn current_ephemeris(&self) -> ::std::option::Option<& crate::types::EphemerisMetaData> {
         self.current_ephemeris.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSatelliteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSatelliteOutput {
     /// Creates a new builder-style object to manufacture [`GetSatelliteOutput`](crate::operation::get_satellite::GetSatelliteOutput).
     pub fn builder() -> crate::operation::get_satellite::builders::GetSatelliteOutputBuilder {
@@ -57,9 +57,7 @@ impl GetSatelliteOutput {
 
 /// A builder for [`GetSatelliteOutput`](crate::operation::get_satellite::GetSatelliteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSatelliteOutputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
     pub(crate) satellite_arn: ::std::option::Option<::std::string::String>,
@@ -76,24 +74,24 @@ impl GetSatelliteOutputBuilder {
     }
     /// <p>UUID of a satellite.</p>
     pub fn set_satellite_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.satellite_id = input;
-        self
+        self.satellite_id = input; self
+    }
+    /// <p>UUID of a satellite.</p>
+    pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_id
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn satellite_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a satellite.</p>
-    pub fn set_satellite_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.satellite_arn = input;
-        self
+    pub fn set_satellite_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.satellite_arn = input; self
+    }
+    /// <p>ARN of a satellite.</p>
+    pub fn get_satellite_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_arn
     }
     /// <p>NORAD satellite ID number.</p>
     pub fn norad_satellite_id(mut self, input: i32) -> Self {
@@ -102,30 +100,30 @@ impl GetSatelliteOutputBuilder {
     }
     /// <p>NORAD satellite ID number.</p>
     pub fn set_norad_satellite_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.norad_satellite_id = input;
-        self
+        self.norad_satellite_id = input; self
+    }
+    /// <p>NORAD satellite ID number.</p>
+    pub fn get_norad_satellite_id(&self) -> &::std::option::Option<i32> {
+        &self.norad_satellite_id
     }
     /// Appends an item to `ground_stations`.
     ///
     /// To override the contents of this collection use [`set_ground_stations`](Self::set_ground_stations).
     ///
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn ground_stations(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ground_stations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ground_stations.unwrap_or_default();
-        v.push(input.into());
-        self.ground_stations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ground_stations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn set_ground_stations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.ground_stations = input;
-        self
+    pub fn set_ground_stations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ground_stations = input; self
+    }
+    /// <p>A list of ground stations to which the satellite is on-boarded.</p>
+    pub fn get_ground_stations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ground_stations
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
     pub fn current_ephemeris(mut self, input: crate::types::EphemerisMetaData) -> Self {
@@ -133,31 +131,38 @@ impl GetSatelliteOutputBuilder {
         self
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
-    pub fn set_current_ephemeris(
-        mut self,
-        input: ::std::option::Option<crate::types::EphemerisMetaData>,
-    ) -> Self {
-        self.current_ephemeris = input;
-        self
+    pub fn set_current_ephemeris(mut self, input: ::std::option::Option<crate::types::EphemerisMetaData>) -> Self {
+        self.current_ephemeris = input; self
+    }
+    /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+    pub fn get_current_ephemeris(&self) -> &::std::option::Option<crate::types::EphemerisMetaData> {
+        &self.current_ephemeris
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSatelliteOutput`](crate::operation::get_satellite::GetSatelliteOutput).
     pub fn build(self) -> crate::operation::get_satellite::GetSatelliteOutput {
         crate::operation::get_satellite::GetSatelliteOutput {
-            satellite_id: self.satellite_id,
-            satellite_arn: self.satellite_arn,
-            norad_satellite_id: self.norad_satellite_id.unwrap_or_default(),
-            ground_stations: self.ground_stations,
-            current_ephemeris: self.current_ephemeris,
+            satellite_id: self.satellite_id
+            ,
+            satellite_arn: self.satellite_arn
+            ,
+            norad_satellite_id: self.norad_satellite_id
+                .unwrap_or_default()
+            ,
+            ground_stations: self.ground_stations
+            ,
+            current_ephemeris: self.current_ephemeris
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

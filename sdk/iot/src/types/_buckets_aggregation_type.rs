@@ -3,14 +3,14 @@
 /// <p>The type of bucketed aggregation performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BucketsAggregationType {
+pub struct BucketsAggregationType  {
     /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
     #[doc(hidden)]
     pub terms_aggregation: ::std::option::Option<crate::types::TermsAggregation>,
 }
 impl BucketsAggregationType {
     /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
-    pub fn terms_aggregation(&self) -> ::std::option::Option<&crate::types::TermsAggregation> {
+    pub fn terms_aggregation(&self) -> ::std::option::Option<& crate::types::TermsAggregation> {
         self.terms_aggregation.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl BucketsAggregationType {
 
 /// A builder for [`BucketsAggregationType`](crate::types::BucketsAggregationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketsAggregationTypeBuilder {
     pub(crate) terms_aggregation: ::std::option::Option<crate::types::TermsAggregation>,
 }
@@ -36,17 +34,19 @@ impl BucketsAggregationTypeBuilder {
         self
     }
     /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
-    pub fn set_terms_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::TermsAggregation>,
-    ) -> Self {
-        self.terms_aggregation = input;
-        self
+    pub fn set_terms_aggregation(mut self, input: ::std::option::Option<crate::types::TermsAggregation>) -> Self {
+        self.terms_aggregation = input; self
+    }
+    /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
+    pub fn get_terms_aggregation(&self) -> &::std::option::Option<crate::types::TermsAggregation> {
+        &self.terms_aggregation
     }
     /// Consumes the builder and constructs a [`BucketsAggregationType`](crate::types::BucketsAggregationType).
     pub fn build(self) -> crate::types::BucketsAggregationType {
         crate::types::BucketsAggregationType {
-            terms_aggregation: self.terms_aggregation,
+            terms_aggregation: self.terms_aggregation
+            ,
         }
     }
 }
+

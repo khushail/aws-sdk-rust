@@ -3,96 +3,89 @@ pub use crate::operation::get_blueprints::_get_blueprints_output::GetBlueprintsO
 
 pub use crate::operation::get_blueprints::_get_blueprints_input::GetBlueprintsInputBuilder;
 
+impl GetBlueprintsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_blueprints::GetBlueprintsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_blueprints::GetBlueprintsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_blueprints();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetBlueprints`.
-///
-/// <p>Returns the list of available instance images, or <i>blueprints</i>. You can use a blueprint to create a new instance already running a specific operating system, as well as a preinstalled app or development stack. The software each instance is running depends on the blueprint image you choose.</p> <note>
-/// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
+/// 
+/// <p>Returns the list of available instance images, or <i>blueprints</i>. You can use a blueprint to create a new instance already running a specific operating system, as well as a preinstalled app or development stack. The software each instance is running depends on the blueprint image you choose.</p> <note> 
+/// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBlueprintsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_blueprints::builders::GetBlueprintsInputBuilder,
+                    inner: crate::operation::get_blueprints::builders::GetBlueprintsInputBuilder,
 }
-impl GetBlueprintsFluentBuilder {
+impl GetBlueprintsFluentBuilder  {
     /// Creates a new `GetBlueprints`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_blueprints::GetBlueprints,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetBlueprints as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_blueprints::builders::GetBlueprintsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_blueprints::GetBlueprintsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_blueprints::GetBlueprints, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_blueprints::GetBlueprintsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_blueprints::GetBlueprintsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_blueprints::GetBlueprints,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_blueprints::GetBlueprintsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_blueprints::GetBlueprints, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
     pub fn include_inactive(mut self, input: bool) -> Self {
         self.inner = self.inner.include_inactive(input);
@@ -103,33 +96,46 @@ impl GetBlueprintsFluentBuilder {
         self.inner = self.inner.set_include_inactive(input);
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
+    pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_inactive()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_token(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
     }
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
-    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
+    }
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important> 
+    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p> 
     /// </important>
     pub fn app_category(mut self, input: crate::types::AppCategory) -> Self {
         self.inner = self.inner.app_category(input);
         self
     }
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
-    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important> 
+    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p> 
     /// </important>
-    pub fn set_app_category(
-        mut self,
-        input: ::std::option::Option<crate::types::AppCategory>,
-    ) -> Self {
+    pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
         self.inner = self.inner.set_app_category(input);
         self
     }
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important> 
+    /// <p>You must use this parameter to view Lightsail for Research blueprints.</p> 
+    /// </important>
+    pub fn get_app_category(&self) -> &::std::option::Option<crate::types::AppCategory> {
+        self.inner.get_app_category()
+    }
 }
+

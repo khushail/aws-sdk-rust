@@ -3,90 +3,100 @@ pub use crate::operation::register_organization_admin_account::_register_organiz
 
 pub use crate::operation::register_organization_admin_account::_register_organization_admin_account_input::RegisterOrganizationAdminAccountInputBuilder;
 
+impl RegisterOrganizationAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.register_organization_admin_account();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `RegisterOrganizationAdminAccount`.
-///
+/// 
 /// <p> Enables an Amazon Web Services account within the organization as the delegated administrator for Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterOrganizationAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountInputBuilder,
 }
-impl RegisterOrganizationAdminAccountFluentBuilder {
+impl RegisterOrganizationAdminAccountFluentBuilder  {
     /// Creates a new `RegisterOrganizationAdminAccount`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterOrganizationAdminAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The identifier for the delegated administrator account. </p>
-    pub fn admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_account_id(input.into());
         self
     }
     /// <p> The identifier for the delegated administrator account. </p>
-    pub fn set_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_account_id(input);
         self
     }
+    /// <p> The identifier for the delegated administrator account. </p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_account_id()
+    }
 }
+

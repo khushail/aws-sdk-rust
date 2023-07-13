@@ -3,7 +3,7 @@
 /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Latency {
+pub struct Latency  {
     /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
     #[doc(hidden)]
     pub p999: ::std::option::Option<f64>,
@@ -72,9 +72,7 @@ impl Latency {
 
 /// A builder for [`Latency`](crate::types::Latency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LatencyBuilder {
     pub(crate) p999: ::std::option::Option<f64>,
     pub(crate) p99: ::std::option::Option<f64>,
@@ -93,8 +91,11 @@ impl LatencyBuilder {
     }
     /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
     pub fn set_p999(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.p999 = input;
-        self
+        self.p999 = input; self
+    }
+    /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
+    pub fn get_p999(&self) -> &::std::option::Option<f64> {
+        &self.p999
     }
     /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
     pub fn p99(mut self, input: f64) -> Self {
@@ -103,8 +104,11 @@ impl LatencyBuilder {
     }
     /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
     pub fn set_p99(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.p99 = input;
-        self
+        self.p99 = input; self
+    }
+    /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
+    pub fn get_p99(&self) -> &::std::option::Option<f64> {
+        &self.p99
     }
     /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
     pub fn p95(mut self, input: f64) -> Self {
@@ -113,8 +117,11 @@ impl LatencyBuilder {
     }
     /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
     pub fn set_p95(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.p95 = input;
-        self
+        self.p95 = input; self
+    }
+    /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
+    pub fn get_p95(&self) -> &::std::option::Option<f64> {
+        &self.p95
     }
     /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
     pub fn p90(mut self, input: f64) -> Self {
@@ -123,8 +130,11 @@ impl LatencyBuilder {
     }
     /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
     pub fn set_p90(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.p90 = input;
-        self
+        self.p90 = input; self
+    }
+    /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
+    pub fn get_p90(&self) -> &::std::option::Option<f64> {
+        &self.p90
     }
     /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
     pub fn p85(mut self, input: f64) -> Self {
@@ -133,8 +143,11 @@ impl LatencyBuilder {
     }
     /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
     pub fn set_p85(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.p85 = input;
-        self
+        self.p85 = input; self
+    }
+    /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
+    pub fn get_p85(&self) -> &::std::option::Option<f64> {
+        &self.p85
     }
     /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
     pub fn p75(mut self, input: f64) -> Self {
@@ -143,8 +156,11 @@ impl LatencyBuilder {
     }
     /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
     pub fn set_p75(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.p75 = input;
-        self
+        self.p75 = input; self
+    }
+    /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
+    pub fn get_p75(&self) -> &::std::option::Option<f64> {
+        &self.p75
     }
     /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
     pub fn p50(mut self, input: f64) -> Self {
@@ -153,8 +169,11 @@ impl LatencyBuilder {
     }
     /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
     pub fn set_p50(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.p50 = input;
-        self
+        self.p50 = input; self
+    }
+    /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
+    pub fn get_p50(&self) -> &::std::option::Option<f64> {
+        &self.p50
     }
     /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
     pub fn p10(mut self, input: f64) -> Self {
@@ -163,20 +182,32 @@ impl LatencyBuilder {
     }
     /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
     pub fn set_p10(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.p10 = input;
-        self
+        self.p10 = input; self
+    }
+    /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
+    pub fn get_p10(&self) -> &::std::option::Option<f64> {
+        &self.p10
     }
     /// Consumes the builder and constructs a [`Latency`](crate::types::Latency).
     pub fn build(self) -> crate::types::Latency {
         crate::types::Latency {
-            p999: self.p999,
-            p99: self.p99,
-            p95: self.p95,
-            p90: self.p90,
-            p85: self.p85,
-            p75: self.p75,
-            p50: self.p50,
-            p10: self.p10,
+            p999: self.p999
+            ,
+            p99: self.p99
+            ,
+            p95: self.p95
+            ,
+            p90: self.p90
+            ,
+            p85: self.p85
+            ,
+            p75: self.p75
+            ,
+            p50: self.p50
+            ,
+            p10: self.p10
+            ,
         }
     }
 }
+

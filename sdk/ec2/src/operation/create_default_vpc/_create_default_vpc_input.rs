@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDefaultVpcInput {
+pub struct CreateDefaultVpcInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -15,17 +15,14 @@ impl CreateDefaultVpcInput {
 }
 impl CreateDefaultVpcInput {
     /// Creates a new builder-style object to manufacture [`CreateDefaultVpcInput`](crate::operation::create_default_vpc::CreateDefaultVpcInput).
-    pub fn builder() -> crate::operation::create_default_vpc::builders::CreateDefaultVpcInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_default_vpc::builders::CreateDefaultVpcInputBuilder {
         crate::operation::create_default_vpc::builders::CreateDefaultVpcInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDefaultVpcInput`](crate::operation::create_default_vpc::CreateDefaultVpcInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDefaultVpcInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -37,20 +34,20 @@ impl CreateDefaultVpcInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateDefaultVpcInput`](crate::operation::create_default_vpc::CreateDefaultVpcInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_default_vpc::CreateDefaultVpcInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_default_vpc::CreateDefaultVpcInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_default_vpc::CreateDefaultVpcInput {
-                dry_run: self.dry_run,
-            },
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

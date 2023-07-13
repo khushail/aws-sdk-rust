@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchReadInput {
+pub struct BatchReadInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct BatchReadInput {
 }
 impl BatchReadInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>A list of operations that are part of the batch.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::BatchReadOperation]> {
+    pub fn operations(&self) -> ::std::option::Option<& [crate::types::BatchReadOperation]> {
         self.operations.as_deref()
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn consistency_level(&self) -> ::std::option::Option<&crate::types::ConsistencyLevel> {
+    pub fn consistency_level(&self) -> ::std::option::Option<& crate::types::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
 }
@@ -36,9 +36,7 @@ impl BatchReadInput {
 
 /// A builder for [`BatchReadInput`](crate::operation::batch_read::BatchReadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchReadInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>>,
@@ -46,20 +44,17 @@ pub struct BatchReadInputBuilder {
 }
 impl BatchReadInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.directory_arn = input;
-        self
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.directory_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
     }
     /// Appends an item to `operations`.
     ///
@@ -68,17 +63,17 @@ impl BatchReadInputBuilder {
     /// <p>A list of operations that are part of the batch.</p>
     pub fn operations(mut self, input: crate::types::BatchReadOperation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of operations that are part of the batch.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>>,
-    ) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>>) -> Self {
+        self.operations = input; self
+    }
+    /// <p>A list of operations that are part of the batch.</p>
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>> {
+        &self.operations
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -86,24 +81,25 @@ impl BatchReadInputBuilder {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
-        self.consistency_level = input;
-        self
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
+        self.consistency_level = input; self
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        &self.consistency_level
     }
     /// Consumes the builder and constructs a [`BatchReadInput`](crate::operation::batch_read::BatchReadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_read::BatchReadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_read::BatchReadInput {
-            directory_arn: self.directory_arn,
-            operations: self.operations,
-            consistency_level: self.consistency_level,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_read::BatchReadInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_read::BatchReadInput {
+                directory_arn: self.directory_arn
+                ,
+                operations: self.operations
+                ,
+                consistency_level: self.consistency_level
+                ,
+            }
+        )
     }
 }
+

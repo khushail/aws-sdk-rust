@@ -3,7 +3,7 @@
 /// <p>An inferred dataset configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectedMetricSetConfig {
+pub struct DetectedMetricSetConfig  {
     /// <p>The dataset's offset.</p>
     #[doc(hidden)]
     pub offset: ::std::option::Option<crate::types::DetectedField>,
@@ -16,15 +16,15 @@ pub struct DetectedMetricSetConfig {
 }
 impl DetectedMetricSetConfig {
     /// <p>The dataset's offset.</p>
-    pub fn offset(&self) -> ::std::option::Option<&crate::types::DetectedField> {
+    pub fn offset(&self) -> ::std::option::Option<& crate::types::DetectedField> {
         self.offset.as_ref()
     }
     /// <p>The dataset's interval.</p>
-    pub fn metric_set_frequency(&self) -> ::std::option::Option<&crate::types::DetectedField> {
+    pub fn metric_set_frequency(&self) -> ::std::option::Option<& crate::types::DetectedField> {
         self.metric_set_frequency.as_ref()
     }
     /// <p>The dataset's data source.</p>
-    pub fn metric_source(&self) -> ::std::option::Option<&crate::types::DetectedMetricSource> {
+    pub fn metric_source(&self) -> ::std::option::Option<& crate::types::DetectedMetricSource> {
         self.metric_source.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl DetectedMetricSetConfig {
 
 /// A builder for [`DetectedMetricSetConfig`](crate::types::DetectedMetricSetConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectedMetricSetConfigBuilder {
     pub(crate) offset: ::std::option::Option<crate::types::DetectedField>,
     pub(crate) metric_set_frequency: ::std::option::Option<crate::types::DetectedField>,
@@ -53,8 +51,11 @@ impl DetectedMetricSetConfigBuilder {
     }
     /// <p>The dataset's offset.</p>
     pub fn set_offset(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
+    }
+    /// <p>The dataset's offset.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.offset
     }
     /// <p>The dataset's interval.</p>
     pub fn metric_set_frequency(mut self, input: crate::types::DetectedField) -> Self {
@@ -62,12 +63,12 @@ impl DetectedMetricSetConfigBuilder {
         self
     }
     /// <p>The dataset's interval.</p>
-    pub fn set_metric_set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedField>,
-    ) -> Self {
-        self.metric_set_frequency = input;
-        self
+    pub fn set_metric_set_frequency(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
+        self.metric_set_frequency = input; self
+    }
+    /// <p>The dataset's interval.</p>
+    pub fn get_metric_set_frequency(&self) -> &::std::option::Option<crate::types::DetectedField> {
+        &self.metric_set_frequency
     }
     /// <p>The dataset's data source.</p>
     pub fn metric_source(mut self, input: crate::types::DetectedMetricSource) -> Self {
@@ -75,19 +76,23 @@ impl DetectedMetricSetConfigBuilder {
         self
     }
     /// <p>The dataset's data source.</p>
-    pub fn set_metric_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedMetricSource>,
-    ) -> Self {
-        self.metric_source = input;
-        self
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::DetectedMetricSource>) -> Self {
+        self.metric_source = input; self
+    }
+    /// <p>The dataset's data source.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::DetectedMetricSource> {
+        &self.metric_source
     }
     /// Consumes the builder and constructs a [`DetectedMetricSetConfig`](crate::types::DetectedMetricSetConfig).
     pub fn build(self) -> crate::types::DetectedMetricSetConfig {
         crate::types::DetectedMetricSetConfig {
-            offset: self.offset,
-            metric_set_frequency: self.metric_set_frequency,
-            metric_source: self.metric_source,
+            offset: self.offset
+            ,
+            metric_set_frequency: self.metric_set_frequency
+            ,
+            metric_source: self.metric_source
+            ,
         }
     }
 }
+

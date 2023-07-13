@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetParameterInput {
-    /// <p>The name of the parameter you want to query.</p>
+pub struct GetParameterInput  {
+    /// <p>The name of the parameter you want to query.</p> 
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,9 +12,9 @@ pub struct GetParameterInput {
     pub with_decryption: ::std::option::Option<bool>,
 }
 impl GetParameterInput {
-    /// <p>The name of the parameter you want to query.</p>
+    /// <p>The name of the parameter you want to query.</p> 
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
@@ -31,25 +31,27 @@ impl GetParameterInput {
 
 /// A builder for [`GetParameterInput`](crate::operation::get_parameter::GetParameterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParameterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) with_decryption: ::std::option::Option<bool>,
 }
 impl GetParameterInputBuilder {
-    /// <p>The name of the parameter you want to query.</p>
+    /// <p>The name of the parameter you want to query.</p> 
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the parameter you want to query.</p>
+    /// <p>The name of the parameter you want to query.</p> 
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the parameter you want to query.</p> 
+    /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub fn with_decryption(mut self, input: bool) -> Self {
@@ -58,19 +60,22 @@ impl GetParameterInputBuilder {
     }
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub fn set_with_decryption(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.with_decryption = input;
-        self
+        self.with_decryption = input; self
+    }
+    /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    pub fn get_with_decryption(&self) -> &::std::option::Option<bool> {
+        &self.with_decryption
     }
     /// Consumes the builder and constructs a [`GetParameterInput`](crate::operation::get_parameter::GetParameterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_parameter::GetParameterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_parameter::GetParameterInput {
-            name: self.name,
-            with_decryption: self.with_decryption,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_parameter::GetParameterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_parameter::GetParameterInput {
+                name: self.name
+                ,
+                with_decryption: self.with_decryption
+                ,
+            }
+        )
     }
 }
+

@@ -397,8 +397,17 @@ pub mod resume_contact_recording;
 /// Types for the `SearchAvailablePhoneNumbers` operation.
 pub mod search_available_phone_numbers;
 
+/// Types for the `SearchHoursOfOperations` operation.
+pub mod search_hours_of_operations;
+
+/// Types for the `SearchPrompts` operation.
+pub mod search_prompts;
+
 /// Types for the `SearchQueues` operation.
 pub mod search_queues;
+
+/// Types for the `SearchQuickConnects` operation.
+pub mod search_quick_connects;
 
 /// Types for the `SearchRoutingProfiles` operation.
 pub mod search_routing_profiles;
@@ -570,3 +579,4 @@ pub mod update_user_routing_profile;
 
 /// Types for the `UpdateUserSecurityProfiles` operation.
 pub mod update_user_security_profiles;
+

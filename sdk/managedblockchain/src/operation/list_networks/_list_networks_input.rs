@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNetworksInput {
+pub struct ListNetworksInput  {
     /// <p>The name of the network.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
     #[doc(hidden)]
     pub framework: ::std::option::Option<crate::types::Framework>,
-    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
+    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NetworkStatus>,
@@ -22,16 +22,16 @@ pub struct ListNetworksInput {
 }
 impl ListNetworksInput {
     /// <p>The name of the network.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
-    pub fn framework(&self) -> ::std::option::Option<&crate::types::Framework> {
+    pub fn framework(&self) -> ::std::option::Option<& crate::types::Framework> {
         self.framework.as_ref()
     }
-    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
+    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::NetworkStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::NetworkStatus> {
         self.status.as_ref()
     }
     /// <p>The maximum number of networks to list.</p>
@@ -39,7 +39,7 @@ impl ListNetworksInput {
         self.max_results
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -52,9 +52,7 @@ impl ListNetworksInput {
 
 /// A builder for [`ListNetworksInput`](crate::operation::list_networks::ListNetworksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworksInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) framework: ::std::option::Option<crate::types::Framework>,
@@ -70,8 +68,11 @@ impl ListNetworksInputBuilder {
     }
     /// <p>The name of the network.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the network.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
     pub fn framework(mut self, input: crate::types::Framework) -> Self {
@@ -80,20 +81,27 @@ impl ListNetworksInputBuilder {
     }
     /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
     pub fn set_framework(mut self, input: ::std::option::Option<crate::types::Framework>) -> Self {
-        self.framework = input;
-        self
+        self.framework = input; self
     }
-    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
+    /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
+    pub fn get_framework(&self) -> &::std::option::Option<crate::types::Framework> {
+        &self.framework
+    }
+    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn status(mut self, input: crate::types::NetworkStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
+    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NetworkStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p> 
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NetworkStatus> {
+        &self.status
     }
     /// <p>The maximum number of networks to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,8 +110,11 @@ impl ListNetworksInputBuilder {
     }
     /// <p>The maximum number of networks to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of networks to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,22 +123,28 @@ impl ListNetworksInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNetworksInput`](crate::operation::list_networks::ListNetworksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_networks::ListNetworksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_networks::ListNetworksInput {
-            name: self.name,
-            framework: self.framework,
-            status: self.status,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_networks::ListNetworksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_networks::ListNetworksInput {
+                name: self.name
+                ,
+                framework: self.framework
+                ,
+                status: self.status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelSimulationJobInput {
+pub struct CancelSimulationJobInput  {
     /// <p>The simulation job ARN to cancel.</p>
     #[doc(hidden)]
     pub job: ::std::option::Option<::std::string::String>,
 }
 impl CancelSimulationJobInput {
     /// <p>The simulation job ARN to cancel.</p>
-    pub fn job(&self) -> ::std::option::Option<&str> {
+    pub fn job(&self) -> ::std::option::Option<& str> {
         self.job.as_deref()
     }
 }
 impl CancelSimulationJobInput {
     /// Creates a new builder-style object to manufacture [`CancelSimulationJobInput`](crate::operation::cancel_simulation_job::CancelSimulationJobInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_simulation_job::builders::CancelSimulationJobInputBuilder {
-        crate::operation::cancel_simulation_job::builders::CancelSimulationJobInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::cancel_simulation_job::builders::CancelSimulationJobInputBuilder {
+        crate::operation::cancel_simulation_job::builders::CancelSimulationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSimulationJobInput`](crate::operation::cancel_simulation_job::CancelSimulationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSimulationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }
@@ -38,18 +34,20 @@ impl CancelSimulationJobInputBuilder {
     }
     /// <p>The simulation job ARN to cancel.</p>
     pub fn set_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
+    }
+    /// <p>The simulation job ARN to cancel.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
     }
     /// Consumes the builder and constructs a [`CancelSimulationJobInput`](crate::operation::cancel_simulation_job::CancelSimulationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_simulation_job::CancelSimulationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_simulation_job::CancelSimulationJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::cancel_simulation_job::CancelSimulationJobInput { job: self.job },
+            crate::operation::cancel_simulation_job::CancelSimulationJobInput {
+                job: self.job
+                ,
+            }
         )
     }
 }
+

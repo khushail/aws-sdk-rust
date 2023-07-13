@@ -3,7 +3,7 @@
 /// <p>Specifies a tag-based condition that determines whether an S3 object is included or excluded from a classification job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagScopeTerm {
+pub struct TagScopeTerm  {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
     #[doc(hidden)]
     pub comparator: ::std::option::Option<crate::types::JobComparator>,
@@ -19,19 +19,19 @@ pub struct TagScopeTerm {
 }
 impl TagScopeTerm {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
-    pub fn comparator(&self) -> ::std::option::Option<&crate::types::JobComparator> {
+    pub fn comparator(&self) -> ::std::option::Option<& crate::types::JobComparator> {
         self.comparator.as_ref()
     }
     /// <p>The object property to use in the condition. The only valid value is TAG.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
-    pub fn tag_values(&self) -> ::std::option::Option<&[crate::types::TagValuePair]> {
+    pub fn tag_values(&self) -> ::std::option::Option<& [crate::types::TagValuePair]> {
         self.tag_values.as_deref()
     }
     /// <p>The type of object to apply the condition to.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::TagTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::TagTarget> {
         self.target.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl TagScopeTerm {
 
 /// A builder for [`TagScopeTerm`](crate::types::TagScopeTerm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagScopeTermBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -60,12 +58,12 @@ impl TagScopeTermBuilder {
         self
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
-    pub fn set_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::JobComparator>,
-    ) -> Self {
-        self.comparator = input;
-        self
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::JobComparator>) -> Self {
+        self.comparator = input; self
+    }
+    /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::JobComparator> {
+        &self.comparator
     }
     /// <p>The object property to use in the condition. The only valid value is TAG.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,8 +72,11 @@ impl TagScopeTermBuilder {
     }
     /// <p>The object property to use in the condition. The only valid value is TAG.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p>The object property to use in the condition. The only valid value is TAG.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Appends an item to `tag_values`.
     ///
@@ -84,17 +85,17 @@ impl TagScopeTermBuilder {
     /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
     pub fn tag_values(mut self, input: crate::types::TagValuePair) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-        v.push(input);
-        self.tag_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagValuePair>>,
-    ) -> Self {
-        self.tag_values = input;
-        self
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagValuePair>>) -> Self {
+        self.tag_values = input; self
+    }
+    /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagValuePair>> {
+        &self.tag_values
     }
     /// <p>The type of object to apply the condition to.</p>
     pub fn target(mut self, input: crate::types::TagTarget) -> Self {
@@ -103,16 +104,24 @@ impl TagScopeTermBuilder {
     }
     /// <p>The type of object to apply the condition to.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::TagTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
+    }
+    /// <p>The type of object to apply the condition to.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::TagTarget> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`TagScopeTerm`](crate::types::TagScopeTerm).
     pub fn build(self) -> crate::types::TagScopeTerm {
         crate::types::TagScopeTerm {
-            comparator: self.comparator,
-            key: self.key,
-            tag_values: self.tag_values,
-            target: self.target,
+            comparator: self.comparator
+            ,
+            key: self.key
+            ,
+            tag_values: self.tag_values
+            ,
+            target: self.target
+            ,
         }
     }
 }
+

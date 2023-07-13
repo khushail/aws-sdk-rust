@@ -3,31 +3,28 @@
 /// <p>Contains detailed information about all of the controls of a framework. Each framework must contain at least one control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FrameworkControl {
+pub struct FrameworkControl  {
     /// <p>The name of a control. This name is between 1 and 256 characters.</p>
     #[doc(hidden)]
     pub control_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
     #[doc(hidden)]
-    pub control_input_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
+    pub control_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
     #[doc(hidden)]
     pub control_scope: ::std::option::Option<crate::types::ControlScope>,
 }
 impl FrameworkControl {
     /// <p>The name of a control. This name is between 1 and 256 characters.</p>
-    pub fn control_name(&self) -> ::std::option::Option<&str> {
+    pub fn control_name(&self) -> ::std::option::Option<& str> {
         self.control_name.as_deref()
     }
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
-    pub fn control_input_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ControlInputParameter]> {
+    pub fn control_input_parameters(&self) -> ::std::option::Option<& [crate::types::ControlInputParameter]> {
         self.control_input_parameters.as_deref()
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
-    pub fn control_scope(&self) -> ::std::option::Option<&crate::types::ControlScope> {
+    pub fn control_scope(&self) -> ::std::option::Option<& crate::types::ControlScope> {
         self.control_scope.as_ref()
     }
 }
@@ -40,13 +37,10 @@ impl FrameworkControl {
 
 /// A builder for [`FrameworkControl`](crate::types::FrameworkControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameworkControlBuilder {
     pub(crate) control_name: ::std::option::Option<::std::string::String>,
-    pub(crate) control_input_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
+    pub(crate) control_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
     pub(crate) control_scope: ::std::option::Option<crate::types::ControlScope>,
 }
 impl FrameworkControlBuilder {
@@ -57,8 +51,11 @@ impl FrameworkControlBuilder {
     }
     /// <p>The name of a control. This name is between 1 and 256 characters.</p>
     pub fn set_control_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_name = input;
-        self
+        self.control_name = input; self
+    }
+    /// <p>The name of a control. This name is between 1 and 256 characters.</p>
+    pub fn get_control_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_name
     }
     /// Appends an item to `control_input_parameters`.
     ///
@@ -67,17 +64,17 @@ impl FrameworkControlBuilder {
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
     pub fn control_input_parameters(mut self, input: crate::types::ControlInputParameter) -> Self {
         let mut v = self.control_input_parameters.unwrap_or_default();
-        v.push(input);
-        self.control_input_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.control_input_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
-    pub fn set_control_input_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
-    ) -> Self {
-        self.control_input_parameters = input;
-        self
+    pub fn set_control_input_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>) -> Self {
+        self.control_input_parameters = input; self
+    }
+    /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
+    pub fn get_control_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>> {
+        &self.control_input_parameters
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
     pub fn control_scope(mut self, input: crate::types::ControlScope) -> Self {
@@ -85,19 +82,23 @@ impl FrameworkControlBuilder {
         self
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
-    pub fn set_control_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlScope>,
-    ) -> Self {
-        self.control_scope = input;
-        self
+    pub fn set_control_scope(mut self, input: ::std::option::Option<crate::types::ControlScope>) -> Self {
+        self.control_scope = input; self
+    }
+    /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
+    pub fn get_control_scope(&self) -> &::std::option::Option<crate::types::ControlScope> {
+        &self.control_scope
     }
     /// Consumes the builder and constructs a [`FrameworkControl`](crate::types::FrameworkControl).
     pub fn build(self) -> crate::types::FrameworkControl {
         crate::types::FrameworkControl {
-            control_name: self.control_name,
-            control_input_parameters: self.control_input_parameters,
-            control_scope: self.control_scope,
+            control_name: self.control_name
+            ,
+            control_input_parameters: self.control_input_parameters
+            ,
+            control_scope: self.control_scope
+            ,
         }
     }
 }
+

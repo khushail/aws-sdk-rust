@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTableOutput {
+pub struct DescribeTableOutput  {
     /// <p>The table name. </p>
     #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
@@ -16,23 +16,23 @@ pub struct DescribeTableOutput {
 }
 impl DescribeTableOutput {
     /// <p>The table name. </p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A list of columns in the table. </p>
-    pub fn column_list(&self) -> ::std::option::Option<&[crate::types::ColumnMetadata]> {
+    pub fn column_list(&self) -> ::std::option::Option<& [crate::types::ColumnMetadata]> {
         self.column_list.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeTableOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableOutput`](crate::operation::describe_table::DescribeTableOutput).
     pub fn builder() -> crate::operation::describe_table::builders::DescribeTableOutputBuilder {
@@ -42,9 +42,7 @@ impl DescribeTableOutput {
 
 /// A builder for [`DescribeTableOutput`](crate::operation::describe_table::DescribeTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) column_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
@@ -59,8 +57,11 @@ impl DescribeTableOutputBuilder {
     }
     /// <p>The table name. </p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
+    }
+    /// <p>The table name. </p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Appends an item to `column_list`.
     ///
@@ -69,17 +70,17 @@ impl DescribeTableOutputBuilder {
     /// <p>A list of columns in the table. </p>
     pub fn column_list(mut self, input: crate::types::ColumnMetadata) -> Self {
         let mut v = self.column_list.unwrap_or_default();
-        v.push(input);
-        self.column_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of columns in the table. </p>
-    pub fn set_column_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
-    ) -> Self {
-        self.column_list = input;
-        self
+    pub fn set_column_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
+        self.column_list = input; self
+    }
+    /// <p>A list of columns in the table. </p>
+    pub fn get_column_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+        &self.column_list
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,25 +89,32 @@ impl DescribeTableOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeTableOutput`](crate::operation::describe_table::DescribeTableOutput).
     pub fn build(self) -> crate::operation::describe_table::DescribeTableOutput {
         crate::operation::describe_table::DescribeTableOutput {
-            table_name: self.table_name,
-            column_list: self.column_list,
-            next_token: self.next_token,
+            table_name: self.table_name
+            ,
+            column_list: self.column_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

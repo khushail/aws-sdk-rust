@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartImagePipelineExecutionInput {
+pub struct StartImagePipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
@@ -12,46 +12,41 @@ pub struct StartImagePipelineExecutionInput {
 }
 impl StartImagePipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-    pub fn image_pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl StartImagePipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartImagePipelineExecutionInput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput).
-    pub fn builder() -> crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder{
+    pub fn builder() -> crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder {
         crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartImagePipelineExecutionInput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImagePipelineExecutionInputBuilder {
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartImagePipelineExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-    pub fn image_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.image_pipeline_arn = input;
-        self
+    pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_pipeline_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
+    pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_pipeline_arn
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,21 +55,22 @@ impl StartImagePipelineExecutionInputBuilder {
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`StartImagePipelineExecutionInput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-                client_token: self.client_token,
-            },
+                image_pipeline_arn: self.image_pipeline_arn
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

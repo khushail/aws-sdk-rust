@@ -3,30 +3,27 @@
 /// <p>ListVolumeInitiatorsInput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVolumeInitiatorsInput {
+pub struct ListVolumeInitiatorsInput  {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p>
     #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListVolumeInitiatorsInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
 }
 impl ListVolumeInitiatorsInput {
     /// Creates a new builder-style object to manufacture [`ListVolumeInitiatorsInput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsInput).
-    pub fn builder(
-    ) -> crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsInputBuilder {
+    pub fn builder() -> crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsInputBuilder {
         crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVolumeInitiatorsInput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVolumeInitiatorsInputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +35,20 @@ impl ListVolumeInitiatorsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
     }
     /// Consumes the builder and constructs a [`ListVolumeInitiatorsInput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_volume_initiators::ListVolumeInitiatorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_volume_initiators::ListVolumeInitiatorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_volume_initiators::ListVolumeInitiatorsInput {
-                volume_arn: self.volume_arn,
-            },
+                volume_arn: self.volume_arn
+                ,
+            }
         )
     }
 }
+

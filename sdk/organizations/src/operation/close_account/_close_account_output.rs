@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloseAccountOutput {
+pub struct CloseAccountOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for CloseAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CloseAccountOutput {
     /// Creates a new builder-style object to manufacture [`CloseAccountOutput`](crate::operation::close_account::CloseAccountOutput).
     pub fn builder() -> crate::operation::close_account::builders::CloseAccountOutputBuilder {
@@ -19,22 +19,20 @@ impl CloseAccountOutput {
 
 /// A builder for [`CloseAccountOutput`](crate::operation::close_account::CloseAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloseAccountOutputBuilder {
     _request_id: Option<String>,
 }
 impl CloseAccountOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CloseAccountOutput`](crate::operation::close_account::CloseAccountOutput).
     pub fn build(self) -> crate::operation::close_account::CloseAccountOutput {
         crate::operation::close_account::CloseAccountOutput {
@@ -42,3 +40,4 @@ impl CloseAccountOutputBuilder {
         }
     }
 }
+

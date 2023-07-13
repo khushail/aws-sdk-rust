@@ -3,7 +3,7 @@
 /// <p>A device's Ethernet status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EthernetStatus {
+pub struct EthernetStatus  {
     /// <p>The device's IP address.</p>
     #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,15 @@ pub struct EthernetStatus {
 }
 impl EthernetStatus {
     /// <p>The device's IP address.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The device's connection status.</p>
-    pub fn connection_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkConnectionStatus> {
+    pub fn connection_status(&self) -> ::std::option::Option<& crate::types::NetworkConnectionStatus> {
         self.connection_status.as_ref()
     }
     /// <p>The device's physical address.</p>
-    pub fn hw_address(&self) -> ::std::option::Option<&str> {
+    pub fn hw_address(&self) -> ::std::option::Option<& str> {
         self.hw_address.as_deref()
     }
 }
@@ -39,9 +37,7 @@ impl EthernetStatus {
 
 /// A builder for [`EthernetStatus`](crate::types::EthernetStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EthernetStatusBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) connection_status: ::std::option::Option<crate::types::NetworkConnectionStatus>,
@@ -55,8 +51,11 @@ impl EthernetStatusBuilder {
     }
     /// <p>The device's IP address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
+    }
+    /// <p>The device's IP address.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The device's connection status.</p>
     pub fn connection_status(mut self, input: crate::types::NetworkConnectionStatus) -> Self {
@@ -64,12 +63,12 @@ impl EthernetStatusBuilder {
         self
     }
     /// <p>The device's connection status.</p>
-    pub fn set_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConnectionStatus>,
-    ) -> Self {
-        self.connection_status = input;
-        self
+    pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::NetworkConnectionStatus>) -> Self {
+        self.connection_status = input; self
+    }
+    /// <p>The device's connection status.</p>
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::NetworkConnectionStatus> {
+        &self.connection_status
     }
     /// <p>The device's physical address.</p>
     pub fn hw_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,15 +77,22 @@ impl EthernetStatusBuilder {
     }
     /// <p>The device's physical address.</p>
     pub fn set_hw_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hw_address = input;
-        self
+        self.hw_address = input; self
+    }
+    /// <p>The device's physical address.</p>
+    pub fn get_hw_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hw_address
     }
     /// Consumes the builder and constructs a [`EthernetStatus`](crate::types::EthernetStatus).
     pub fn build(self) -> crate::types::EthernetStatus {
         crate::types::EthernetStatus {
-            ip_address: self.ip_address,
-            connection_status: self.connection_status,
-            hw_address: self.hw_address,
+            ip_address: self.ip_address
+            ,
+            connection_status: self.connection_status
+            ,
+            hw_address: self.hw_address
+            ,
         }
     }
 }
+

@@ -2,41 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPipelineChangeProgressOutput {
+pub struct GetPipelineChangeProgressOutput  {
     /// <p>The current status of the change happening on the pipeline.</p>
     #[doc(hidden)]
-    pub change_progress_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>>,
+    pub change_progress_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>>,
     _request_id: Option<String>,
 }
 impl GetPipelineChangeProgressOutput {
     /// <p>The current status of the change happening on the pipeline.</p>
-    pub fn change_progress_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChangeProgressStatus]> {
+    pub fn change_progress_statuses(&self) -> ::std::option::Option<& [crate::types::ChangeProgressStatus]> {
         self.change_progress_statuses.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetPipelineChangeProgressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetPipelineChangeProgressOutput {
     /// Creates a new builder-style object to manufacture [`GetPipelineChangeProgressOutput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput).
-    pub fn builder() -> crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressOutputBuilder{
+    pub fn builder() -> crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressOutputBuilder {
         crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPipelineChangeProgressOutput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPipelineChangeProgressOutputBuilder {
-    pub(crate) change_progress_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>>,
+    pub(crate) change_progress_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>>,
     _request_id: Option<String>,
 }
 impl GetPipelineChangeProgressOutputBuilder {
@@ -47,34 +41,34 @@ impl GetPipelineChangeProgressOutputBuilder {
     /// <p>The current status of the change happening on the pipeline.</p>
     pub fn change_progress_statuses(mut self, input: crate::types::ChangeProgressStatus) -> Self {
         let mut v = self.change_progress_statuses.unwrap_or_default();
-        v.push(input);
-        self.change_progress_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.change_progress_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current status of the change happening on the pipeline.</p>
-    pub fn set_change_progress_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>>,
-    ) -> Self {
-        self.change_progress_statuses = input;
-        self
+    pub fn set_change_progress_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>>) -> Self {
+        self.change_progress_statuses = input; self
+    }
+    /// <p>The current status of the change happening on the pipeline.</p>
+    pub fn get_change_progress_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>> {
+        &self.change_progress_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetPipelineChangeProgressOutput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput {
+    pub fn build(self) -> crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput {
         crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput {
-            change_progress_statuses: self.change_progress_statuses,
+            change_progress_statuses: self.change_progress_statuses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

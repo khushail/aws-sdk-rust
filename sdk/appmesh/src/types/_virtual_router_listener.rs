@@ -3,14 +3,14 @@
 /// <p>An object that represents a virtual router listener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualRouterListener {
+pub struct VirtualRouterListener  {
     /// <p>An object that represents a port mapping.</p>
     #[doc(hidden)]
     pub port_mapping: ::std::option::Option<crate::types::PortMapping>,
 }
 impl VirtualRouterListener {
     /// <p>An object that represents a port mapping.</p>
-    pub fn port_mapping(&self) -> ::std::option::Option<&crate::types::PortMapping> {
+    pub fn port_mapping(&self) -> ::std::option::Option<& crate::types::PortMapping> {
         self.port_mapping.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl VirtualRouterListener {
 
 /// A builder for [`VirtualRouterListener`](crate::types::VirtualRouterListener).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualRouterListenerBuilder {
     pub(crate) port_mapping: ::std::option::Option<crate::types::PortMapping>,
 }
@@ -36,17 +34,19 @@ impl VirtualRouterListenerBuilder {
         self
     }
     /// <p>An object that represents a port mapping.</p>
-    pub fn set_port_mapping(
-        mut self,
-        input: ::std::option::Option<crate::types::PortMapping>,
-    ) -> Self {
-        self.port_mapping = input;
-        self
+    pub fn set_port_mapping(mut self, input: ::std::option::Option<crate::types::PortMapping>) -> Self {
+        self.port_mapping = input; self
+    }
+    /// <p>An object that represents a port mapping.</p>
+    pub fn get_port_mapping(&self) -> &::std::option::Option<crate::types::PortMapping> {
+        &self.port_mapping
     }
     /// Consumes the builder and constructs a [`VirtualRouterListener`](crate::types::VirtualRouterListener).
     pub fn build(self) -> crate::types::VirtualRouterListener {
         crate::types::VirtualRouterListener {
-            port_mapping: self.port_mapping,
+            port_mapping: self.port_mapping
+            ,
         }
     }
 }
+

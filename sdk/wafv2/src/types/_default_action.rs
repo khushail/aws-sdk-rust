@@ -3,7 +3,7 @@
 /// <p>In a <code>WebACL</code>, this is the action that you want WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultAction {
+pub struct DefaultAction  {
     /// <p>Specifies that WAF should block requests by default. </p>
     #[doc(hidden)]
     pub block: ::std::option::Option<crate::types::BlockAction>,
@@ -13,11 +13,11 @@ pub struct DefaultAction {
 }
 impl DefaultAction {
     /// <p>Specifies that WAF should block requests by default. </p>
-    pub fn block(&self) -> ::std::option::Option<&crate::types::BlockAction> {
+    pub fn block(&self) -> ::std::option::Option<& crate::types::BlockAction> {
         self.block.as_ref()
     }
     /// <p>Specifies that WAF should allow requests by default.</p>
-    pub fn allow(&self) -> ::std::option::Option<&crate::types::AllowAction> {
+    pub fn allow(&self) -> ::std::option::Option<& crate::types::AllowAction> {
         self.allow.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl DefaultAction {
 
 /// A builder for [`DefaultAction`](crate::types::DefaultAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultActionBuilder {
     pub(crate) block: ::std::option::Option<crate::types::BlockAction>,
     pub(crate) allow: ::std::option::Option<crate::types::AllowAction>,
@@ -45,8 +43,11 @@ impl DefaultActionBuilder {
     }
     /// <p>Specifies that WAF should block requests by default. </p>
     pub fn set_block(mut self, input: ::std::option::Option<crate::types::BlockAction>) -> Self {
-        self.block = input;
-        self
+        self.block = input; self
+    }
+    /// <p>Specifies that WAF should block requests by default. </p>
+    pub fn get_block(&self) -> &::std::option::Option<crate::types::BlockAction> {
+        &self.block
     }
     /// <p>Specifies that WAF should allow requests by default.</p>
     pub fn allow(mut self, input: crate::types::AllowAction) -> Self {
@@ -55,14 +56,20 @@ impl DefaultActionBuilder {
     }
     /// <p>Specifies that WAF should allow requests by default.</p>
     pub fn set_allow(mut self, input: ::std::option::Option<crate::types::AllowAction>) -> Self {
-        self.allow = input;
-        self
+        self.allow = input; self
+    }
+    /// <p>Specifies that WAF should allow requests by default.</p>
+    pub fn get_allow(&self) -> &::std::option::Option<crate::types::AllowAction> {
+        &self.allow
     }
     /// Consumes the builder and constructs a [`DefaultAction`](crate::types::DefaultAction).
     pub fn build(self) -> crate::types::DefaultAction {
         crate::types::DefaultAction {
-            block: self.block,
-            allow: self.allow,
+            block: self.block
+            ,
+            allow: self.allow
+            ,
         }
     }
 }
+

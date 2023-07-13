@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserHierarchyGroupNameInput {
+pub struct UpdateUserHierarchyGroupNameInput  {
     /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct UpdateUserHierarchyGroupNameInput {
 }
 impl UpdateUserHierarchyGroupNameInput {
     /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn hierarchy_group_id(&self) -> ::std::option::Option<& str> {
         self.hierarchy_group_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 impl UpdateUserHierarchyGroupNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserHierarchyGroupNameInput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput).
-    pub fn builder() -> crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder{
+    pub fn builder() -> crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder {
         crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserHierarchyGroupNameInput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserHierarchyGroupNameInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_group_id: ::std::option::Option<::std::string::String>,
@@ -52,24 +50,24 @@ impl UpdateUserHierarchyGroupNameInputBuilder {
     }
     /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hierarchy_group_id = input;
-        self
+    pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hierarchy_group_id = input; self
+    }
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn get_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_group_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,22 +76,24 @@ impl UpdateUserHierarchyGroupNameInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`UpdateUserHierarchyGroupNameInput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput {
-                name: self.name,
-                hierarchy_group_id: self.hierarchy_group_id,
-                instance_id: self.instance_id,
-            },
+                name: self.name
+                ,
+                hierarchy_group_id: self.hierarchy_group_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
         )
     }
 }
+

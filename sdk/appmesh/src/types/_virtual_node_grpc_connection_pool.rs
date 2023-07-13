@@ -3,7 +3,7 @@
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualNodeGrpcConnectionPool {
+pub struct VirtualNodeGrpcConnectionPool  {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_requests: i32,
@@ -23,9 +23,7 @@ impl VirtualNodeGrpcConnectionPool {
 
 /// A builder for [`VirtualNodeGrpcConnectionPool`](crate::types::VirtualNodeGrpcConnectionPool).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualNodeGrpcConnectionPoolBuilder {
     pub(crate) max_requests: ::std::option::Option<i32>,
 }
@@ -37,13 +35,19 @@ impl VirtualNodeGrpcConnectionPoolBuilder {
     }
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn set_max_requests(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_requests = input;
-        self
+        self.max_requests = input; self
+    }
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
+    pub fn get_max_requests(&self) -> &::std::option::Option<i32> {
+        &self.max_requests
     }
     /// Consumes the builder and constructs a [`VirtualNodeGrpcConnectionPool`](crate::types::VirtualNodeGrpcConnectionPool).
     pub fn build(self) -> crate::types::VirtualNodeGrpcConnectionPool {
         crate::types::VirtualNodeGrpcConnectionPool {
-            max_requests: self.max_requests.unwrap_or_default(),
+            max_requests: self.max_requests
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

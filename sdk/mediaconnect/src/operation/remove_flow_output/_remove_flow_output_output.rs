@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveFlowOutputOutput {
+pub struct RemoveFlowOutputOutput  {
     /// The ARN of the flow that is associated with the output you removed.
     #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
@@ -13,32 +13,29 @@ pub struct RemoveFlowOutputOutput {
 }
 impl RemoveFlowOutputOutput {
     /// The ARN of the flow that is associated with the output you removed.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The ARN of the output that was removed.
-    pub fn output_arn(&self) -> ::std::option::Option<&str> {
+    pub fn output_arn(&self) -> ::std::option::Option<& str> {
         self.output_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RemoveFlowOutputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RemoveFlowOutputOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowOutputOutput`](crate::operation::remove_flow_output::RemoveFlowOutputOutput).
-    pub fn builder() -> crate::operation::remove_flow_output::builders::RemoveFlowOutputOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_flow_output::builders::RemoveFlowOutputOutputBuilder {
         crate::operation::remove_flow_output::builders::RemoveFlowOutputOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveFlowOutputOutput`](crate::operation::remove_flow_output::RemoveFlowOutputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFlowOutputOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output_arn: ::std::option::Option<::std::string::String>,
@@ -52,8 +49,11 @@ impl RemoveFlowOutputOutputBuilder {
     }
     /// The ARN of the flow that is associated with the output you removed.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
+    }
+    /// The ARN of the flow that is associated with the output you removed.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     /// The ARN of the output that was removed.
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,24 +62,30 @@ impl RemoveFlowOutputOutputBuilder {
     }
     /// The ARN of the output that was removed.
     pub fn set_output_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_arn = input;
-        self
+        self.output_arn = input; self
+    }
+    /// The ARN of the output that was removed.
+    pub fn get_output_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RemoveFlowOutputOutput`](crate::operation::remove_flow_output::RemoveFlowOutputOutput).
     pub fn build(self) -> crate::operation::remove_flow_output::RemoveFlowOutputOutput {
         crate::operation::remove_flow_output::RemoveFlowOutputOutput {
-            flow_arn: self.flow_arn,
-            output_arn: self.output_arn,
+            flow_arn: self.flow_arn
+            ,
+            output_arn: self.output_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

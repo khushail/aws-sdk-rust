@@ -3,7 +3,7 @@
 /// <p>The result of the sort operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchSortResult {
+pub struct SearchSortResult  {
     /// <p>Sort search results based on this field name.</p>
     #[doc(hidden)]
     pub field: ::std::option::Option<crate::types::OrderByFieldType>,
@@ -13,11 +13,11 @@ pub struct SearchSortResult {
 }
 impl SearchSortResult {
     /// <p>Sort search results based on this field name.</p>
-    pub fn field(&self) -> ::std::option::Option<&crate::types::OrderByFieldType> {
+    pub fn field(&self) -> ::std::option::Option<& crate::types::OrderByFieldType> {
         self.field.as_ref()
     }
     /// <p>Sort direction.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl SearchSortResult {
 
 /// A builder for [`SearchSortResult`](crate::types::SearchSortResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSortResultBuilder {
     pub(crate) field: ::std::option::Option<crate::types::OrderByFieldType>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,12 +42,12 @@ impl SearchSortResultBuilder {
         self
     }
     /// <p>Sort search results based on this field name.</p>
-    pub fn set_field(
-        mut self,
-        input: ::std::option::Option<crate::types::OrderByFieldType>,
-    ) -> Self {
-        self.field = input;
-        self
+    pub fn set_field(mut self, input: ::std::option::Option<crate::types::OrderByFieldType>) -> Self {
+        self.field = input; self
+    }
+    /// <p>Sort search results based on this field name.</p>
+    pub fn get_field(&self) -> &::std::option::Option<crate::types::OrderByFieldType> {
+        &self.field
     }
     /// <p>Sort direction.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
@@ -58,14 +56,20 @@ impl SearchSortResultBuilder {
     }
     /// <p>Sort direction.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
+    }
+    /// <p>Sort direction.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`SearchSortResult`](crate::types::SearchSortResult).
     pub fn build(self) -> crate::types::SearchSortResult {
         crate::types::SearchSortResult {
-            field: self.field,
-            order: self.order,
+            field: self.field
+            ,
+            order: self.order
+            ,
         }
     }
 }
+

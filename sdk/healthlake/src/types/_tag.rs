@@ -3,21 +3,21 @@
 /// <p> A tag is a label consisting of a user-defined key and value. The form for tags is {"Key", "Value"} </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p> The key portion of a tag. Tag keys are case sensitive. </p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p> The value portion of tag. Tag values are case sensitive. </p>
+    /// <p> The value portion of a tag. Tag values are case sensitive. </p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {
     /// <p> The key portion of a tag. Tag keys are case sensitive. </p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
-    /// <p> The value portion of tag. Tag values are case sensitive. </p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    /// <p> The value portion of a tag. Tag values are case sensitive. </p>
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Tag {
 
 /// A builder for [`Tag`](crate::types::Tag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -45,24 +43,33 @@ impl TagBuilder {
     }
     /// <p> The key portion of a tag. Tag keys are case sensitive. </p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
-    /// <p> The value portion of tag. Tag values are case sensitive. </p>
+    /// <p> The key portion of a tag. Tag keys are case sensitive. </p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
+    /// <p> The value portion of a tag. Tag values are case sensitive. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The value portion of tag. Tag values are case sensitive. </p>
+    /// <p> The value portion of a tag. Tag values are case sensitive. </p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p> The value portion of a tag. Tag values are case sensitive. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {
         crate::types::Tag {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

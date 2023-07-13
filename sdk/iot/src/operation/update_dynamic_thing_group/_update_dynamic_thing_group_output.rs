@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDynamicThingGroupOutput {
+pub struct UpdateDynamicThingGroupOutput  {
     /// <p>The dynamic thing group version.</p>
     #[doc(hidden)]
     pub version: i64,
@@ -15,24 +15,20 @@ impl UpdateDynamicThingGroupOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateDynamicThingGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateDynamicThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDynamicThingGroupOutput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupOutputBuilder {
         crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDynamicThingGroupOutput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDynamicThingGroupOutputBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -45,25 +41,29 @@ impl UpdateDynamicThingGroupOutputBuilder {
     }
     /// <p>The dynamic thing group version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The dynamic thing group version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateDynamicThingGroupOutput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput {
+    pub fn build(self) -> crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput {
         crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput {
-            version: self.version.unwrap_or_default(),
+            version: self.version
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

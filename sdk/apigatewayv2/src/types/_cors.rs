@@ -3,7 +3,7 @@
 /// <p>Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Cors {
+pub struct Cors  {
     /// <p>Specifies whether credentials are included in the CORS request. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
     pub allow_credentials: ::std::option::Option<bool>,
@@ -29,19 +29,19 @@ impl Cors {
         self.allow_credentials
     }
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
-    pub fn allow_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn allow_headers(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.allow_headers.as_deref()
     }
     /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
-    pub fn allow_methods(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn allow_methods(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.allow_methods.as_deref()
     }
     /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
-    pub fn allow_origins(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn allow_origins(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.allow_origins.as_deref()
     }
     /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
-    pub fn expose_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn expose_headers(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.expose_headers.as_deref()
     }
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
@@ -58,9 +58,7 @@ impl Cors {
 
 /// A builder for [`Cors`](crate::types::Cors).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CorsBuilder {
     pub(crate) allow_credentials: ::std::option::Option<bool>,
     pub(crate) allow_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -77,96 +75,87 @@ impl CorsBuilder {
     }
     /// <p>Specifies whether credentials are included in the CORS request. Supported only for HTTP APIs.</p>
     pub fn set_allow_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_credentials = input;
-        self
+        self.allow_credentials = input; self
+    }
+    /// <p>Specifies whether credentials are included in the CORS request. Supported only for HTTP APIs.</p>
+    pub fn get_allow_credentials(&self) -> &::std::option::Option<bool> {
+        &self.allow_credentials
     }
     /// Appends an item to `allow_headers`.
     ///
     /// To override the contents of this collection use [`set_allow_headers`](Self::set_allow_headers).
     ///
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
-    pub fn allow_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_headers.unwrap_or_default();
-        v.push(input.into());
-        self.allow_headers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allow_headers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
-    pub fn set_allow_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.allow_headers = input;
-        self
+    pub fn set_allow_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allow_headers = input; self
+    }
+    /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
+    pub fn get_allow_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_headers
     }
     /// Appends an item to `allow_methods`.
     ///
     /// To override the contents of this collection use [`set_allow_methods`](Self::set_allow_methods).
     ///
     /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
-    pub fn allow_methods(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_methods(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_methods.unwrap_or_default();
-        v.push(input.into());
-        self.allow_methods = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allow_methods = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
-    pub fn set_allow_methods(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.allow_methods = input;
-        self
+    pub fn set_allow_methods(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allow_methods = input; self
+    }
+    /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
+    pub fn get_allow_methods(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_methods
     }
     /// Appends an item to `allow_origins`.
     ///
     /// To override the contents of this collection use [`set_allow_origins`](Self::set_allow_origins).
     ///
     /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
-    pub fn allow_origins(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_origins.unwrap_or_default();
-        v.push(input.into());
-        self.allow_origins = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allow_origins = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
-    pub fn set_allow_origins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.allow_origins = input;
-        self
+    pub fn set_allow_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allow_origins = input; self
+    }
+    /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
+    pub fn get_allow_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allow_origins
     }
     /// Appends an item to `expose_headers`.
     ///
     /// To override the contents of this collection use [`set_expose_headers`](Self::set_expose_headers).
     ///
     /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
-    pub fn expose_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expose_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.expose_headers.unwrap_or_default();
-        v.push(input.into());
-        self.expose_headers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.expose_headers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
-    pub fn set_expose_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.expose_headers = input;
-        self
+    pub fn set_expose_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.expose_headers = input; self
+    }
+    /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
+    pub fn get_expose_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.expose_headers
     }
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
     pub fn max_age(mut self, input: i32) -> Self {
@@ -175,18 +164,28 @@ impl CorsBuilder {
     }
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
     pub fn set_max_age(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_age = input;
-        self
+        self.max_age = input; self
+    }
+    /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
+    pub fn get_max_age(&self) -> &::std::option::Option<i32> {
+        &self.max_age
     }
     /// Consumes the builder and constructs a [`Cors`](crate::types::Cors).
     pub fn build(self) -> crate::types::Cors {
         crate::types::Cors {
-            allow_credentials: self.allow_credentials,
-            allow_headers: self.allow_headers,
-            allow_methods: self.allow_methods,
-            allow_origins: self.allow_origins,
-            expose_headers: self.expose_headers,
-            max_age: self.max_age,
+            allow_credentials: self.allow_credentials
+            ,
+            allow_headers: self.allow_headers
+            ,
+            allow_methods: self.allow_methods
+            ,
+            allow_origins: self.allow_origins
+            ,
+            expose_headers: self.expose_headers
+            ,
+            max_age: self.max_age
+            ,
         }
     }
 }
+

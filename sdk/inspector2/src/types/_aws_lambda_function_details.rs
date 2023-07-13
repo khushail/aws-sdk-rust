@@ -3,7 +3,7 @@
 /// <p> A summary of information about the AWS Lambda function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsLambdaFunctionDetails {
+pub struct AwsLambdaFunctionDetails  {
     /// <p>The name of the AWS Lambda function.</p>
     #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
@@ -37,43 +37,43 @@ pub struct AwsLambdaFunctionDetails {
 }
 impl AwsLambdaFunctionDetails {
     /// <p>The name of the AWS Lambda function.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The runtime environment for the AWS Lambda function.</p>
-    pub fn runtime(&self) -> ::std::option::Option<&crate::types::Runtime> {
+    pub fn runtime(&self) -> ::std::option::Option<& crate::types::Runtime> {
         self.runtime.as_ref()
     }
     /// <p>The SHA256 hash of the AWS Lambda function's deployment package.</p>
-    pub fn code_sha256(&self) -> ::std::option::Option<&str> {
+    pub fn code_sha256(&self) -> ::std::option::Option<& str> {
         self.code_sha256.as_deref()
     }
     /// <p>The version of the AWS Lambda function.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The AWS Lambda function's execution role.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The AWS Lambda function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
-    pub fn layers(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn layers(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.layers.as_deref()
     }
     /// <p>The AWS Lambda function's networking configuration.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::LambdaVpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::LambdaVpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(&self) -> ::std::option::Option<&crate::types::PackageType> {
+    pub fn package_type(&self) -> ::std::option::Option<& crate::types::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>The instruction set architecture that the AWS Lambda function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> ::std::option::Option<&[crate::types::Architecture]> {
+    pub fn architectures(&self) -> ::std::option::Option<& [crate::types::Architecture]> {
         self.architectures.as_deref()
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
-    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
 }
@@ -86,9 +86,7 @@ impl AwsLambdaFunctionDetails {
 
 /// A builder for [`AwsLambdaFunctionDetails`](crate::types::AwsLambdaFunctionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionDetailsBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) runtime: ::std::option::Option<crate::types::Runtime>,
@@ -103,20 +101,17 @@ pub struct AwsLambdaFunctionDetailsBuilder {
 }
 impl AwsLambdaFunctionDetailsBuilder {
     /// <p>The name of the AWS Lambda function.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the AWS Lambda function.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.function_name = input;
-        self
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.function_name = input; self
+    }
+    /// <p>The name of the AWS Lambda function.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
     }
     /// <p>The runtime environment for the AWS Lambda function.</p>
     pub fn runtime(mut self, input: crate::types::Runtime) -> Self {
@@ -125,8 +120,11 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The runtime environment for the AWS Lambda function.</p>
     pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
-        self.runtime = input;
-        self
+        self.runtime = input; self
+    }
+    /// <p>The runtime environment for the AWS Lambda function.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::Runtime> {
+        &self.runtime
     }
     /// <p>The SHA256 hash of the AWS Lambda function's deployment package.</p>
     pub fn code_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,8 +133,11 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The SHA256 hash of the AWS Lambda function's deployment package.</p>
     pub fn set_code_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_sha256 = input;
-        self
+        self.code_sha256 = input; self
+    }
+    /// <p>The SHA256 hash of the AWS Lambda function's deployment package.</p>
+    pub fn get_code_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_sha256
     }
     /// <p>The version of the AWS Lambda function.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,24 +146,24 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The version of the AWS Lambda function.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version of the AWS Lambda function.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The AWS Lambda function's execution role.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Lambda function's execution role.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input; self
+    }
+    /// <p>The AWS Lambda function's execution role.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// Appends an item to `layers`.
     ///
@@ -171,17 +172,17 @@ impl AwsLambdaFunctionDetailsBuilder {
     /// <p>The AWS Lambda function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
     pub fn layers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.layers.unwrap_or_default();
-        v.push(input.into());
-        self.layers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.layers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The AWS Lambda function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
-    pub fn set_layers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.layers = input;
-        self
+    pub fn set_layers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.layers = input; self
+    }
+    /// <p>The AWS Lambda function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
+    pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layers
     }
     /// <p>The AWS Lambda function's networking configuration.</p>
     pub fn vpc_config(mut self, input: crate::types::LambdaVpcConfig) -> Self {
@@ -189,12 +190,12 @@ impl AwsLambdaFunctionDetailsBuilder {
         self
     }
     /// <p>The AWS Lambda function's networking configuration.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaVpcConfig>,
-    ) -> Self {
-        self.vpc_config = input;
-        self
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::LambdaVpcConfig>) -> Self {
+        self.vpc_config = input; self
+    }
+    /// <p>The AWS Lambda function's networking configuration.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::LambdaVpcConfig> {
+        &self.vpc_config
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
@@ -202,12 +203,12 @@ impl AwsLambdaFunctionDetailsBuilder {
         self
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn set_package_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageType>,
-    ) -> Self {
-        self.package_type = input;
-        self
+    pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
+        self.package_type = input; self
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
+        &self.package_type
     }
     /// Appends an item to `architectures`.
     ///
@@ -216,17 +217,17 @@ impl AwsLambdaFunctionDetailsBuilder {
     /// <p>The instruction set architecture that the AWS Lambda function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub fn architectures(mut self, input: crate::types::Architecture) -> Self {
         let mut v = self.architectures.unwrap_or_default();
-        v.push(input);
-        self.architectures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.architectures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instruction set architecture that the AWS Lambda function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    pub fn set_architectures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
-    ) -> Self {
-        self.architectures = input;
-        self
+    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
+        self.architectures = input; self
+    }
+    /// <p>The instruction set architecture that the AWS Lambda function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+        &self.architectures
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -234,26 +235,37 @@ impl AwsLambdaFunctionDetailsBuilder {
         self
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_at = input;
-        self
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_at = input; self
+    }
+    /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
     }
     /// Consumes the builder and constructs a [`AwsLambdaFunctionDetails`](crate::types::AwsLambdaFunctionDetails).
     pub fn build(self) -> crate::types::AwsLambdaFunctionDetails {
         crate::types::AwsLambdaFunctionDetails {
-            function_name: self.function_name,
-            runtime: self.runtime,
-            code_sha256: self.code_sha256,
-            version: self.version,
-            execution_role_arn: self.execution_role_arn,
-            layers: self.layers,
-            vpc_config: self.vpc_config,
-            package_type: self.package_type,
-            architectures: self.architectures,
-            last_modified_at: self.last_modified_at,
+            function_name: self.function_name
+            ,
+            runtime: self.runtime
+            ,
+            code_sha256: self.code_sha256
+            ,
+            version: self.version
+            ,
+            execution_role_arn: self.execution_role_arn
+            ,
+            layers: self.layers
+            ,
+            vpc_config: self.vpc_config
+            ,
+            package_type: self.package_type
+            ,
+            architectures: self.architectures
+            ,
+            last_modified_at: self.last_modified_at
+            ,
         }
     }
 }
+

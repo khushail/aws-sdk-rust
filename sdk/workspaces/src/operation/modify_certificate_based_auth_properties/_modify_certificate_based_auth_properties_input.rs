@@ -2,55 +2,45 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyCertificateBasedAuthPropertiesInput {
+pub struct ModifyCertificateBasedAuthPropertiesInput  {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
     #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the certificate-based authentication.</p>
     #[doc(hidden)]
-    pub certificate_based_auth_properties:
-        ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
     /// <p>The properties of the certificate-based authentication you want to delete.</p>
     #[doc(hidden)]
-    pub properties_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>>,
+    pub properties_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>>,
 }
 impl ModifyCertificateBasedAuthPropertiesInput {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The properties of the certificate-based authentication.</p>
-    pub fn certificate_based_auth_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateBasedAuthProperties> {
+    pub fn certificate_based_auth_properties(&self) -> ::std::option::Option<& crate::types::CertificateBasedAuthProperties> {
         self.certificate_based_auth_properties.as_ref()
     }
     /// <p>The properties of the certificate-based authentication you want to delete.</p>
-    pub fn properties_to_delete(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeletableCertificateBasedAuthProperty]> {
+    pub fn properties_to_delete(&self) -> ::std::option::Option<& [crate::types::DeletableCertificateBasedAuthProperty]> {
         self.properties_to_delete.as_deref()
     }
 }
 impl ModifyCertificateBasedAuthPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ModifyCertificateBasedAuthPropertiesInput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesInput).
-    pub fn builder() -> crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesInputBuilder{
+    pub fn builder() -> crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesInputBuilder {
         crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyCertificateBasedAuthPropertiesInput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyCertificateBasedAuthPropertiesInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_based_auth_properties:
-        ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
-    pub(crate) properties_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>>,
+    pub(crate) certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub(crate) properties_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>>,
 }
 impl ModifyCertificateBasedAuthPropertiesInputBuilder {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
@@ -60,51 +50,46 @@ impl ModifyCertificateBasedAuthPropertiesInputBuilder {
     }
     /// <p>The resource identifiers, in the form of directory IDs.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The resource identifiers, in the form of directory IDs.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The properties of the certificate-based authentication.</p>
-    pub fn certificate_based_auth_properties(
-        mut self,
-        input: crate::types::CertificateBasedAuthProperties,
-    ) -> Self {
+    pub fn certificate_based_auth_properties(mut self, input: crate::types::CertificateBasedAuthProperties) -> Self {
         self.certificate_based_auth_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The properties of the certificate-based authentication.</p>
-    pub fn set_certificate_based_auth_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
-    ) -> Self {
-        self.certificate_based_auth_properties = input;
-        self
+    pub fn set_certificate_based_auth_properties(mut self, input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>) -> Self {
+        self.certificate_based_auth_properties = input; self
+    }
+    /// <p>The properties of the certificate-based authentication.</p>
+    pub fn get_certificate_based_auth_properties(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
+        &self.certificate_based_auth_properties
     }
     /// Appends an item to `properties_to_delete`.
     ///
     /// To override the contents of this collection use [`set_properties_to_delete`](Self::set_properties_to_delete).
     ///
     /// <p>The properties of the certificate-based authentication you want to delete.</p>
-    pub fn properties_to_delete(
-        mut self,
-        input: crate::types::DeletableCertificateBasedAuthProperty,
-    ) -> Self {
+    pub fn properties_to_delete(mut self, input: crate::types::DeletableCertificateBasedAuthProperty) -> Self {
         let mut v = self.properties_to_delete.unwrap_or_default();
-        v.push(input);
-        self.properties_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties of the certificate-based authentication you want to delete.</p>
-    pub fn set_properties_to_delete(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>,
-        >,
-    ) -> Self {
-        self.properties_to_delete = input;
-        self
+    pub fn set_properties_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>>) -> Self {
+        self.properties_to_delete = input; self
+    }
+    /// <p>The properties of the certificate-based authentication you want to delete.</p>
+    pub fn get_properties_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>> {
+        &self.properties_to_delete
     }
     /// Consumes the builder and constructs a [`ModifyCertificateBasedAuthPropertiesInput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesInput {
                 resource_id: self.resource_id
@@ -117,3 +102,4 @@ impl ModifyCertificateBasedAuthPropertiesInputBuilder {
         )
     }
 }
+

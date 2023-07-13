@@ -3,14 +3,14 @@
 /// <p>Statistical information about the data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatastoreStatistics {
+pub struct DatastoreStatistics  {
     /// <p>The estimated size of the data store.</p>
     #[doc(hidden)]
     pub size: ::std::option::Option<crate::types::EstimatedResourceSize>,
 }
 impl DatastoreStatistics {
     /// <p>The estimated size of the data store.</p>
-    pub fn size(&self) -> ::std::option::Option<&crate::types::EstimatedResourceSize> {
+    pub fn size(&self) -> ::std::option::Option<& crate::types::EstimatedResourceSize> {
         self.size.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl DatastoreStatistics {
 
 /// A builder for [`DatastoreStatistics`](crate::types::DatastoreStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatastoreStatisticsBuilder {
     pub(crate) size: ::std::option::Option<crate::types::EstimatedResourceSize>,
 }
@@ -36,15 +34,19 @@ impl DatastoreStatisticsBuilder {
         self
     }
     /// <p>The estimated size of the data store.</p>
-    pub fn set_size(
-        mut self,
-        input: ::std::option::Option<crate::types::EstimatedResourceSize>,
-    ) -> Self {
-        self.size = input;
-        self
+    pub fn set_size(mut self, input: ::std::option::Option<crate::types::EstimatedResourceSize>) -> Self {
+        self.size = input; self
+    }
+    /// <p>The estimated size of the data store.</p>
+    pub fn get_size(&self) -> &::std::option::Option<crate::types::EstimatedResourceSize> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`DatastoreStatistics`](crate::types::DatastoreStatistics).
     pub fn build(self) -> crate::types::DatastoreStatistics {
-        crate::types::DatastoreStatistics { size: self.size }
+        crate::types::DatastoreStatistics {
+            size: self.size
+            ,
+        }
     }
 }
+

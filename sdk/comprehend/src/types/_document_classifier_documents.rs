@@ -3,7 +3,7 @@
 /// <p>The location of the training documents. This parameter is required in a request to create a native classifier model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentClassifierDocuments {
+pub struct DocumentClassifierDocuments  {
     /// <p>The S3 URI location of the training documents specified in the S3Uri CSV file.</p>
     #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DocumentClassifierDocuments {
 }
 impl DocumentClassifierDocuments {
     /// <p>The S3 URI location of the training documents specified in the S3Uri CSV file.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>The S3 URI location of the test documents included in the TestS3Uri CSV file. This field is not required if you do not specify a test CSV file.</p>
-    pub fn test_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn test_s3_uri(&self) -> ::std::option::Option<& str> {
         self.test_s3_uri.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DocumentClassifierDocuments {
 
 /// A builder for [`DocumentClassifierDocuments`](crate::types::DocumentClassifierDocuments).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentClassifierDocumentsBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) test_s3_uri: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DocumentClassifierDocumentsBuilder {
     }
     /// <p>The S3 URI location of the training documents specified in the S3Uri CSV file.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
+    }
+    /// <p>The S3 URI location of the training documents specified in the S3Uri CSV file.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// <p>The S3 URI location of the test documents included in the TestS3Uri CSV file. This field is not required if you do not specify a test CSV file.</p>
     pub fn test_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl DocumentClassifierDocumentsBuilder {
     }
     /// <p>The S3 URI location of the test documents included in the TestS3Uri CSV file. This field is not required if you do not specify a test CSV file.</p>
     pub fn set_test_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_s3_uri = input;
-        self
+        self.test_s3_uri = input; self
+    }
+    /// <p>The S3 URI location of the test documents included in the TestS3Uri CSV file. This field is not required if you do not specify a test CSV file.</p>
+    pub fn get_test_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_s3_uri
     }
     /// Consumes the builder and constructs a [`DocumentClassifierDocuments`](crate::types::DocumentClassifierDocuments).
     pub fn build(self) -> crate::types::DocumentClassifierDocuments {
         crate::types::DocumentClassifierDocuments {
-            s3_uri: self.s3_uri,
-            test_s3_uri: self.test_s3_uri,
+            s3_uri: self.s3_uri
+            ,
+            test_s3_uri: self.test_s3_uri
+            ,
         }
     }
 }
+

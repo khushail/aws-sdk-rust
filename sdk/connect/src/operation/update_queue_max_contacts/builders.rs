@@ -3,104 +3,88 @@ pub use crate::operation::update_queue_max_contacts::_update_queue_max_contacts_
 
 pub use crate::operation::update_queue_max_contacts::_update_queue_max_contacts_input::UpdateQueueMaxContactsInputBuilder;
 
+impl UpdateQueueMaxContactsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_queue_max_contacts();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateQueueMaxContacts`.
-///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// 
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p> 
 /// <p>Updates the maximum number of contacts allowed in a queue before it is considered full.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQueueMaxContactsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsInputBuilder,
+                    inner: crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsInputBuilder,
 }
-impl UpdateQueueMaxContactsFluentBuilder {
+impl UpdateQueueMaxContactsFluentBuilder  {
     /// Creates a new `UpdateQueueMaxContacts`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_queue_max_contacts::UpdateQueueMaxContacts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateQueueMaxContacts as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_queue_max_contacts::UpdateQueueMaxContacts, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_queue_max_contacts::UpdateQueueMaxContacts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_queue_max_contacts::UpdateQueueMaxContacts, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -110,6 +94,10 @@ impl UpdateQueueMaxContactsFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>The identifier for the queue.</p>
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,6 +109,10 @@ impl UpdateQueueMaxContactsFluentBuilder {
         self.inner = self.inner.set_queue_id(input);
         self
     }
+    /// <p>The identifier for the queue.</p>
+    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_id()
+    }
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     pub fn max_contacts(mut self, input: i32) -> Self {
         self.inner = self.inner.max_contacts(input);
@@ -131,4 +123,9 @@ impl UpdateQueueMaxContactsFluentBuilder {
         self.inner = self.inner.set_max_contacts(input);
         self
     }
+    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    pub fn get_max_contacts(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_contacts()
+    }
 }
+

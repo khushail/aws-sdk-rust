@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVoiceProfileDomainInput {
+pub struct GetVoiceProfileDomainInput  {
     /// <p>The voice profile domain ID.</p>
     #[doc(hidden)]
     pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
 }
 impl GetVoiceProfileDomainInput {
     /// <p>The voice profile domain ID.</p>
-    pub fn voice_profile_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_profile_domain_id(&self) -> ::std::option::Option<& str> {
         self.voice_profile_domain_id.as_deref()
     }
 }
 impl GetVoiceProfileDomainInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceProfileDomainInput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput).
-    pub fn builder(
-    ) -> crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainInputBuilder {
         crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceProfileDomainInput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceProfileDomainInputBuilder {
     pub(crate) voice_profile_domain_id: ::std::option::Option<::std::string::String>,
 }
 impl GetVoiceProfileDomainInputBuilder {
     /// <p>The voice profile domain ID.</p>
-    pub fn voice_profile_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The voice profile domain ID.</p>
-    pub fn set_voice_profile_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voice_profile_domain_id = input;
-        self
+    pub fn set_voice_profile_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voice_profile_domain_id = input; self
+    }
+    /// <p>The voice profile domain ID.</p>
+    pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_id
     }
     /// Consumes the builder and constructs a [`GetVoiceProfileDomainInput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput {
-                voice_profile_domain_id: self.voice_profile_domain_id,
-            },
+                voice_profile_domain_id: self.voice_profile_domain_id
+                ,
+            }
         )
     }
 }
+

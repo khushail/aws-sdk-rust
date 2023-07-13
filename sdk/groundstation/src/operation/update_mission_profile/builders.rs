@@ -3,118 +3,101 @@ pub use crate::operation::update_mission_profile::_update_mission_profile_output
 
 pub use crate::operation::update_mission_profile::_update_mission_profile_input::UpdateMissionProfileInputBuilder;
 
+impl UpdateMissionProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_mission_profile::UpdateMissionProfileOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_mission_profile::UpdateMissionProfileError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_mission_profile();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateMissionProfile`.
-///
-/// <p>Updates a mission profile.</p>
+/// 
+/// <p>Updates a mission profile.</p> 
 /// <p>Updating a mission profile will not update the execution parameters for existing future contacts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMissionProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_mission_profile::builders::UpdateMissionProfileInputBuilder,
+                    inner: crate::operation::update_mission_profile::builders::UpdateMissionProfileInputBuilder,
 }
-impl UpdateMissionProfileFluentBuilder {
+impl UpdateMissionProfileFluentBuilder  {
     /// Creates a new `UpdateMissionProfile`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_mission_profile::UpdateMissionProfile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mission_profile::UpdateMissionProfileError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateMissionProfile as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_mission_profile::builders::UpdateMissionProfileInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_mission_profile::UpdateMissionProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mission_profile::UpdateMissionProfileError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_mission_profile::UpdateMissionProfile, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_mission_profile::UpdateMissionProfileError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_mission_profile::UpdateMissionProfileOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_mission_profile::UpdateMissionProfileError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_mission_profile::UpdateMissionProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mission_profile::UpdateMissionProfileError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_mission_profile::UpdateMissionProfile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mission_profile::UpdateMissionProfileError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_mission_profile::UpdateMissionProfileOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_mission_profile::UpdateMissionProfileError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_mission_profile::UpdateMissionProfile, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_mission_profile::UpdateMissionProfileError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mission_profile_id(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mission_profile_id(input);
         self
+    }
+    /// <p>UUID of a mission profile.</p>
+    pub fn get_mission_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mission_profile_id()
     }
     /// <p>Name of a mission profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,18 +109,23 @@ impl UpdateMissionProfileFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of a mission profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.contact_pre_pass_duration_seconds(input);
         self
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn set_contact_pre_pass_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_contact_pre_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_contact_pre_pass_duration_seconds(input);
         self
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn get_contact_pre_pass_duration_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_contact_pre_pass_duration_seconds()
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
@@ -145,12 +133,13 @@ impl UpdateMissionProfileFluentBuilder {
         self
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn set_contact_post_pass_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_contact_post_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_contact_post_pass_duration_seconds(input);
         self
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn get_contact_post_pass_duration_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_contact_post_pass_duration_seconds()
     }
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub fn minimum_viable_contact_duration_seconds(mut self, input: i32) -> Self {
@@ -158,14 +147,13 @@ impl UpdateMissionProfileFluentBuilder {
         self
     }
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    pub fn set_minimum_viable_contact_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_minimum_viable_contact_duration_seconds(input);
+    pub fn set_minimum_viable_contact_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_minimum_viable_contact_duration_seconds(input);
         self
+    }
+    /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    pub fn get_minimum_viable_contact_duration_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_minimum_viable_contact_duration_seconds()
     }
     /// Appends an item to `dataflowEdges`.
     ///
@@ -177,28 +165,27 @@ impl UpdateMissionProfileFluentBuilder {
         self
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn set_dataflow_edges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_dataflow_edges(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_dataflow_edges(input);
         self
     }
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    pub fn get_dataflow_edges(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        self.inner.get_dataflow_edges()
+    }
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub fn tracking_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tracking_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tracking_config_arn(input.into());
         self
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub fn set_tracking_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tracking_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tracking_config_arn(input);
         self
+    }
+    /// <p>ARN of a tracking <code>Config</code>.</p>
+    pub fn get_tracking_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tracking_config_arn()
     }
     /// <p>KMS key to use for encrypting streams.</p>
     pub fn streams_kms_key(mut self, input: crate::types::KmsKey) -> Self {
@@ -206,27 +193,27 @@ impl UpdateMissionProfileFluentBuilder {
         self
     }
     /// <p>KMS key to use for encrypting streams.</p>
-    pub fn set_streams_kms_key(
-        mut self,
-        input: ::std::option::Option<crate::types::KmsKey>,
-    ) -> Self {
+    pub fn set_streams_kms_key(mut self, input: ::std::option::Option<crate::types::KmsKey>) -> Self {
         self.inner = self.inner.set_streams_kms_key(input);
         self
     }
+    /// <p>KMS key to use for encrypting streams.</p>
+    pub fn get_streams_kms_key(&self) -> &::std::option::Option<crate::types::KmsKey> {
+        self.inner.get_streams_kms_key()
+    }
     /// <p>Role to use for encrypting streams with KMS key.</p>
-    pub fn streams_kms_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streams_kms_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.streams_kms_role(input.into());
         self
     }
     /// <p>Role to use for encrypting streams with KMS key.</p>
-    pub fn set_streams_kms_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streams_kms_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_streams_kms_role(input);
         self
     }
+    /// <p>Role to use for encrypting streams with KMS key.</p>
+    pub fn get_streams_kms_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_streams_kms_role()
+    }
 }
+

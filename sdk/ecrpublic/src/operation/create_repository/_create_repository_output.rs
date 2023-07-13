@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRepositoryOutput {
+pub struct CreateRepositoryOutput  {
     /// <p>The repository that was created.</p>
     #[doc(hidden)]
     pub repository: ::std::option::Option<crate::types::Repository>,
@@ -13,32 +13,29 @@ pub struct CreateRepositoryOutput {
 }
 impl CreateRepositoryOutput {
     /// <p>The repository that was created.</p>
-    pub fn repository(&self) -> ::std::option::Option<&crate::types::Repository> {
+    pub fn repository(&self) -> ::std::option::Option<& crate::types::Repository> {
         self.repository.as_ref()
     }
     /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn catalog_data(&self) -> ::std::option::Option<&crate::types::RepositoryCatalogData> {
+    pub fn catalog_data(&self) -> ::std::option::Option<& crate::types::RepositoryCatalogData> {
         self.catalog_data.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateRepositoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput).
-    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryOutputBuilder {
         crate::operation::create_repository::builders::CreateRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRepositoryOutputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::Repository>,
     pub(crate) catalog_data: ::std::option::Option<crate::types::RepositoryCatalogData>,
@@ -51,12 +48,12 @@ impl CreateRepositoryOutputBuilder {
         self
     }
     /// <p>The repository that was created.</p>
-    pub fn set_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::Repository>,
-    ) -> Self {
-        self.repository = input;
-        self
+    pub fn set_repository(mut self, input: ::std::option::Option<crate::types::Repository>) -> Self {
+        self.repository = input; self
+    }
+    /// <p>The repository that was created.</p>
+    pub fn get_repository(&self) -> &::std::option::Option<crate::types::Repository> {
+        &self.repository
     }
     /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
     pub fn catalog_data(mut self, input: crate::types::RepositoryCatalogData) -> Self {
@@ -64,28 +61,31 @@ impl CreateRepositoryOutputBuilder {
         self
     }
     /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn set_catalog_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryCatalogData>,
-    ) -> Self {
-        self.catalog_data = input;
-        self
+    pub fn set_catalog_data(mut self, input: ::std::option::Option<crate::types::RepositoryCatalogData>) -> Self {
+        self.catalog_data = input; self
+    }
+    /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
+    pub fn get_catalog_data(&self) -> &::std::option::Option<crate::types::RepositoryCatalogData> {
+        &self.catalog_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput).
     pub fn build(self) -> crate::operation::create_repository::CreateRepositoryOutput {
         crate::operation::create_repository::CreateRepositoryOutput {
-            repository: self.repository,
-            catalog_data: self.catalog_data,
+            repository: self.repository
+            ,
+            catalog_data: self.catalog_data
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCreateCaseOptionsInput {
+pub struct DescribeCreateCaseOptionsInput  {
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
     #[doc(hidden)]
     pub issue_type: ::std::option::Option<::std::string::String>,
@@ -18,34 +18,32 @@ pub struct DescribeCreateCaseOptionsInput {
 }
 impl DescribeCreateCaseOptionsInput {
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
-    pub fn issue_type(&self) -> ::std::option::Option<&str> {
+    pub fn issue_type(&self) -> ::std::option::Option<& str> {
         self.issue_type.as_deref()
     }
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn category_code(&self) -> ::std::option::Option<&str> {
+    pub fn category_code(&self) -> ::std::option::Option<& str> {
         self.category_code.as_deref()
     }
 }
 impl DescribeCreateCaseOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCreateCaseOptionsInput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput).
-    pub fn builder() -> crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder {
         crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCreateCaseOptionsInput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCreateCaseOptionsInputBuilder {
     pub(crate) issue_type: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
@@ -60,8 +58,11 @@ impl DescribeCreateCaseOptionsInputBuilder {
     }
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
     pub fn set_issue_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issue_type = input;
-        self
+        self.issue_type = input; self
+    }
+    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
+    pub fn get_issue_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issue_type
     }
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +71,11 @@ impl DescribeCreateCaseOptionsInputBuilder {
     }
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
+    }
+    /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,39 +84,39 @@ impl DescribeCreateCaseOptionsInputBuilder {
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
+    }
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn category_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn set_category_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.category_code = input;
-        self
+    pub fn set_category_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.category_code = input; self
+    }
+    /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
+    pub fn get_category_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_code
     }
     /// Consumes the builder and constructs a [`DescribeCreateCaseOptionsInput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput {
-                issue_type: self.issue_type,
-                service_code: self.service_code,
-                language: self.language,
-                category_code: self.category_code,
-            },
+                issue_type: self.issue_type
+                ,
+                service_code: self.service_code
+                ,
+                language: self.language
+                ,
+                category_code: self.category_code
+                ,
+            }
         )
     }
 }
+

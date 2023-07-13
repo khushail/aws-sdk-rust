@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableReachabilityAnalyzerOrganizationSharingOutput {
+pub struct EnableReachabilityAnalyzerOrganizationSharingOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     #[doc(hidden)]
     pub return_value: ::std::option::Option<bool>,
@@ -15,22 +15,20 @@ impl EnableReachabilityAnalyzerOrganizationSharingOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for EnableReachabilityAnalyzerOrganizationSharingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl EnableReachabilityAnalyzerOrganizationSharingOutput {
     /// Creates a new builder-style object to manufacture [`EnableReachabilityAnalyzerOrganizationSharingOutput`](crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput).
-    pub fn builder() -> crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingOutputBuilder{
+    pub fn builder() -> crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingOutputBuilder {
         crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableReachabilityAnalyzerOrganizationSharingOutput`](crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableReachabilityAnalyzerOrganizationSharingOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -43,20 +41,23 @@ impl EnableReachabilityAnalyzerOrganizationSharingOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub fn set_return_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.return_value = input;
-        self
+        self.return_value = input; self
+    }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn get_return_value(&self) -> &::std::option::Option<bool> {
+        &self.return_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`EnableReachabilityAnalyzerOrganizationSharingOutput`](crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput).
-    pub fn build(self) -> crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput{
+    pub fn build(self) -> crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput {
         crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput {
             return_value: self.return_value
             ,
@@ -64,3 +65,4 @@ impl EnableReachabilityAnalyzerOrganizationSharingOutputBuilder {
         }
     }
 }
+

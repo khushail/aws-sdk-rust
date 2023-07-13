@@ -3,142 +3,134 @@ pub use crate::operation::get_geo_location::_get_geo_location_output::GetGeoLoca
 
 pub use crate::operation::get_geo_location::_get_geo_location_input::GetGeoLocationInputBuilder;
 
+impl GetGeoLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_geo_location::GetGeoLocationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_geo_location::GetGeoLocationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_geo_location();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetGeoLocation`.
-///
-/// <p>Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.</p>
-/// <p>Route 53 does not perform authorization for this API because it retrieves information that is already available to the public.</p>
-/// <p>Use the following syntax to determine whether a continent is supported for geolocation:</p>
-/// <p> <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a continent</i> </code> </p>
-/// <p>Use the following syntax to determine whether a country is supported for geolocation:</p>
-/// <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code> </p>
-/// <p>Use the following syntax to determine whether a subdivision of a country is supported for geolocation:</p>
+/// 
+/// <p>Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.</p> 
+/// <p>Route 53 does not perform authorization for this API because it retrieves information that is already available to the public.</p> 
+/// <p>Use the following syntax to determine whether a continent is supported for geolocation:</p> 
+/// <p> <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a continent</i> </code> </p> 
+/// <p>Use the following syntax to determine whether a country is supported for geolocation:</p> 
+/// <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code> </p> 
+/// <p>Use the following syntax to determine whether a subdivision of a country is supported for geolocation:</p> 
 /// <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision code</i> </code> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGeoLocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_geo_location::builders::GetGeoLocationInputBuilder,
+                    inner: crate::operation::get_geo_location::builders::GetGeoLocationInputBuilder,
 }
-impl GetGeoLocationFluentBuilder {
+impl GetGeoLocationFluentBuilder  {
     /// Creates a new `GetGeoLocation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_geo_location::GetGeoLocation,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geo_location::GetGeoLocationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetGeoLocation as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_geo_location::builders::GetGeoLocationInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_geo_location::GetGeoLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geo_location::GetGeoLocationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_geo_location::GetGeoLocation, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_geo_location::GetGeoLocationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_geo_location::GetGeoLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geo_location::GetGeoLocationError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_geo_location::GetGeoLocation,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geo_location::GetGeoLocationError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>
-    /// <ul>
-    /// <li> <p> <b>AF</b>: Africa</p> </li>
-    /// <li> <p> <b>AN</b>: Antarctica</p> </li>
-    /// <li> <p> <b>AS</b>: Asia</p> </li>
-    /// <li> <p> <b>EU</b>: Europe</p> </li>
-    /// <li> <p> <b>OC</b>: Oceania</p> </li>
-    /// <li> <p> <b>NA</b>: North America</p> </li>
-    /// <li> <p> <b>SA</b>: South America</p> </li>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_geo_location::GetGeoLocationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_geo_location::GetGeoLocation, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p> 
+    /// <ul> 
+    /// <li> <p> <b>AF</b>: Africa</p> </li> 
+    /// <li> <p> <b>AN</b>: Antarctica</p> </li> 
+    /// <li> <p> <b>AS</b>: Asia</p> </li> 
+    /// <li> <p> <b>EU</b>: Europe</p> </li> 
+    /// <li> <p> <b>OC</b>: Oceania</p> </li> 
+    /// <li> <p> <b>NA</b>: North America</p> </li> 
+    /// <li> <p> <b>SA</b>: South America</p> </li> 
     /// </ul>
-    pub fn continent_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.continent_code(input.into());
         self
     }
-    /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>
-    /// <ul>
-    /// <li> <p> <b>AF</b>: Africa</p> </li>
-    /// <li> <p> <b>AN</b>: Antarctica</p> </li>
-    /// <li> <p> <b>AS</b>: Asia</p> </li>
-    /// <li> <p> <b>EU</b>: Europe</p> </li>
-    /// <li> <p> <b>OC</b>: Oceania</p> </li>
-    /// <li> <p> <b>NA</b>: North America</p> </li>
-    /// <li> <p> <b>SA</b>: South America</p> </li>
+    /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p> 
+    /// <ul> 
+    /// <li> <p> <b>AF</b>: Africa</p> </li> 
+    /// <li> <p> <b>AN</b>: Antarctica</p> </li> 
+    /// <li> <p> <b>AS</b>: Asia</p> </li> 
+    /// <li> <p> <b>EU</b>: Europe</p> </li> 
+    /// <li> <p> <b>OC</b>: Oceania</p> </li> 
+    /// <li> <p> <b>NA</b>: North America</p> </li> 
+    /// <li> <p> <b>SA</b>: South America</p> </li> 
     /// </ul>
-    pub fn set_continent_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_continent_code(input);
         self
+    }
+    /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p> 
+    /// <ul> 
+    /// <li> <p> <b>AF</b>: Africa</p> </li> 
+    /// <li> <p> <b>AN</b>: Antarctica</p> </li> 
+    /// <li> <p> <b>AS</b>: Asia</p> </li> 
+    /// <li> <p> <b>EU</b>: Europe</p> </li> 
+    /// <li> <p> <b>OC</b>: Oceania</p> </li> 
+    /// <li> <p> <b>NA</b>: North America</p> </li> 
+    /// <li> <p> <b>SA</b>: South America</p> </li> 
+    /// </ul>
+    pub fn get_continent_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_continent_code()
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,20 +142,23 @@ impl GetGeoLocationFluentBuilder {
         self.inner = self.inner.set_country_code(input);
         self
     }
+    /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_country_code()
+    }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn subdivision_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subdivision_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdivision_code(input.into());
         self
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn set_subdivision_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdivision_code(input);
         self
     }
+    /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
+    pub fn get_subdivision_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subdivision_code()
+    }
 }
+

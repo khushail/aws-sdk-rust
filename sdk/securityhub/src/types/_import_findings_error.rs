@@ -3,7 +3,7 @@
 /// <p>The list of the findings that cannot be imported. For each finding, the list provides the error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportFindingsError {
+pub struct ImportFindingsError  {
     /// <p>The identifier of the finding that could not be updated.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ImportFindingsError {
 }
 impl ImportFindingsError {
     /// <p>The identifier of the finding that could not be updated.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The code of the error returned by the <code>BatchImportFindings</code> operation.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The message of the error returned by the <code>BatchImportFindings</code> operation.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ImportFindingsError {
 
 /// A builder for [`ImportFindingsError`](crate::types::ImportFindingsError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportFindingsErrorBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl ImportFindingsErrorBuilder {
     }
     /// <p>The identifier of the finding that could not be updated.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the finding that could not be updated.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The code of the error returned by the <code>BatchImportFindings</code> operation.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,31 +64,35 @@ impl ImportFindingsErrorBuilder {
     }
     /// <p>The code of the error returned by the <code>BatchImportFindings</code> operation.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
+    }
+    /// <p>The code of the error returned by the <code>BatchImportFindings</code> operation.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The message of the error returned by the <code>BatchImportFindings</code> operation.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message of the error returned by the <code>BatchImportFindings</code> operation.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>The message of the error returned by the <code>BatchImportFindings</code> operation.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ImportFindingsError`](crate::types::ImportFindingsError).
     pub fn build(self) -> crate::types::ImportFindingsError {
         crate::types::ImportFindingsError {
-            id: self.id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            id: self.id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

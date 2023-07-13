@@ -3,7 +3,7 @@
 /// <p>The status of the offering.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferingStatus {
+pub struct OfferingStatus  {
     /// <p>The type specified for the offering status.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OfferingTransactionType>,
@@ -19,11 +19,11 @@ pub struct OfferingStatus {
 }
 impl OfferingStatus {
     /// <p>The type specified for the offering status.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OfferingTransactionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::OfferingTransactionType> {
         self.r#type.as_ref()
     }
     /// <p>Represents the metadata of an offering status.</p>
-    pub fn offering(&self) -> ::std::option::Option<&crate::types::Offering> {
+    pub fn offering(&self) -> ::std::option::Option<& crate::types::Offering> {
         self.offering.as_ref()
     }
     /// <p>The number of available devices in the offering.</p>
@@ -31,7 +31,7 @@ impl OfferingStatus {
         self.quantity
     }
     /// <p>The date on which the offering is effective.</p>
-    pub fn effective_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn effective_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.effective_on.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl OfferingStatus {
 
 /// A builder for [`OfferingStatus`](crate::types::OfferingStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OfferingStatusBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OfferingTransactionType>,
     pub(crate) offering: ::std::option::Option<crate::types::Offering>,
@@ -60,12 +58,12 @@ impl OfferingStatusBuilder {
         self
     }
     /// <p>The type specified for the offering status.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingTransactionType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OfferingTransactionType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type specified for the offering status.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OfferingTransactionType> {
+        &self.r#type
     }
     /// <p>Represents the metadata of an offering status.</p>
     pub fn offering(mut self, input: crate::types::Offering) -> Self {
@@ -74,8 +72,11 @@ impl OfferingStatusBuilder {
     }
     /// <p>Represents the metadata of an offering status.</p>
     pub fn set_offering(mut self, input: ::std::option::Option<crate::types::Offering>) -> Self {
-        self.offering = input;
-        self
+        self.offering = input; self
+    }
+    /// <p>Represents the metadata of an offering status.</p>
+    pub fn get_offering(&self) -> &::std::option::Option<crate::types::Offering> {
+        &self.offering
     }
     /// <p>The number of available devices in the offering.</p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -84,8 +85,11 @@ impl OfferingStatusBuilder {
     }
     /// <p>The number of available devices in the offering.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
+    }
+    /// <p>The number of available devices in the offering.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// <p>The date on which the offering is effective.</p>
     pub fn effective_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -93,20 +97,25 @@ impl OfferingStatusBuilder {
         self
     }
     /// <p>The date on which the offering is effective.</p>
-    pub fn set_effective_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.effective_on = input;
-        self
+    pub fn set_effective_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.effective_on = input; self
+    }
+    /// <p>The date on which the offering is effective.</p>
+    pub fn get_effective_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.effective_on
     }
     /// Consumes the builder and constructs a [`OfferingStatus`](crate::types::OfferingStatus).
     pub fn build(self) -> crate::types::OfferingStatus {
         crate::types::OfferingStatus {
-            r#type: self.r#type,
-            offering: self.offering,
-            quantity: self.quantity,
-            effective_on: self.effective_on,
+            r#type: self.r#type
+            ,
+            offering: self.offering
+            ,
+            quantity: self.quantity
+            ,
+            effective_on: self.effective_on
+            ,
         }
     }
 }
+

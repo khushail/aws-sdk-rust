@@ -3,7 +3,7 @@
 /// <p> The offering for an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceleratorTypeOffering {
+pub struct AcceleratorTypeOffering  {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
     pub accelerator_type: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct AcceleratorTypeOffering {
 }
 impl AcceleratorTypeOffering {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
-    pub fn accelerator_type(&self) -> ::std::option::Option<&str> {
+    pub fn accelerator_type(&self) -> ::std::option::Option<& str> {
         self.accelerator_type.as_deref()
     }
     /// <p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>
-    pub fn location_type(&self) -> ::std::option::Option<&crate::types::LocationType> {
+    pub fn location_type(&self) -> ::std::option::Option<& crate::types::LocationType> {
         self.location_type.as_ref()
     }
     /// <p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl AcceleratorTypeOffering {
 
 /// A builder for [`AcceleratorTypeOffering`](crate::types::AcceleratorTypeOffering).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceleratorTypeOfferingBuilder {
     pub(crate) accelerator_type: ::std::option::Option<::std::string::String>,
     pub(crate) location_type: ::std::option::Option<crate::types::LocationType>,
@@ -47,20 +45,17 @@ pub struct AcceleratorTypeOfferingBuilder {
 }
 impl AcceleratorTypeOfferingBuilder {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
-    pub fn accelerator_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the Elastic Inference Accelerator type. </p>
-    pub fn set_accelerator_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.accelerator_type = input;
-        self
+    pub fn set_accelerator_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.accelerator_type = input; self
+    }
+    /// <p> The name of the Elastic Inference Accelerator type. </p>
+    pub fn get_accelerator_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_type
     }
     /// <p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>
     pub fn location_type(mut self, input: crate::types::LocationType) -> Self {
@@ -68,12 +63,12 @@ impl AcceleratorTypeOfferingBuilder {
         self
     }
     /// <p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>
-    pub fn set_location_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationType>,
-    ) -> Self {
-        self.location_type = input;
-        self
+    pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
+        self.location_type = input; self
+    }
+    /// <p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>
+    pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
+        &self.location_type
     }
     /// <p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,15 +77,22 @@ impl AcceleratorTypeOfferingBuilder {
     }
     /// <p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
+    }
+    /// <p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`AcceleratorTypeOffering`](crate::types::AcceleratorTypeOffering).
     pub fn build(self) -> crate::types::AcceleratorTypeOffering {
         crate::types::AcceleratorTypeOffering {
-            accelerator_type: self.accelerator_type,
-            location_type: self.location_type,
-            location: self.location,
+            accelerator_type: self.accelerator_type
+            ,
+            location_type: self.location_type
+            ,
+            location: self.location
+            ,
         }
     }
 }
+

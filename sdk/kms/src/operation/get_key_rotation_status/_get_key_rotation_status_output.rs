@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyRotationStatusOutput {
+pub struct GetKeyRotationStatusOutput  {
     /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
     #[doc(hidden)]
     pub key_rotation_enabled: bool,
@@ -15,24 +15,20 @@ impl GetKeyRotationStatusOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for GetKeyRotationStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetKeyRotationStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyRotationStatusOutput`](crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusOutputBuilder {
         crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetKeyRotationStatusOutput`](crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyRotationStatusOutputBuilder {
     pub(crate) key_rotation_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -45,23 +41,29 @@ impl GetKeyRotationStatusOutputBuilder {
     }
     /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
     pub fn set_key_rotation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.key_rotation_enabled = input;
-        self
+        self.key_rotation_enabled = input; self
+    }
+    /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
+    pub fn get_key_rotation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.key_rotation_enabled
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetKeyRotationStatusOutput`](crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput).
     pub fn build(self) -> crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput {
         crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput {
-            key_rotation_enabled: self.key_rotation_enabled.unwrap_or_default(),
+            key_rotation_enabled: self.key_rotation_enabled
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

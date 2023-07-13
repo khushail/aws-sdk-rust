@@ -3,14 +3,14 @@
 /// <p>Information about Amazon Connect Wisdom.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WisdomInfo {
+pub struct WisdomInfo  {
     /// <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
     #[doc(hidden)]
     pub session_arn: ::std::option::Option<::std::string::String>,
 }
 impl WisdomInfo {
     /// <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
-    pub fn session_arn(&self) -> ::std::option::Option<&str> {
+    pub fn session_arn(&self) -> ::std::option::Option<& str> {
         self.session_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl WisdomInfo {
 
 /// A builder for [`WisdomInfo`](crate::types::WisdomInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WisdomInfoBuilder {
     pub(crate) session_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl WisdomInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
     pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_arn = input;
-        self
+        self.session_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
+    pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_arn
     }
     /// Consumes the builder and constructs a [`WisdomInfo`](crate::types::WisdomInfo).
     pub fn build(self) -> crate::types::WisdomInfo {
         crate::types::WisdomInfo {
-            session_arn: self.session_arn,
+            session_arn: self.session_arn
+            ,
         }
     }
 }
+

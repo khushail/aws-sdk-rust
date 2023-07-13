@@ -3,7 +3,7 @@
 /// <p>An object that contains information about a flow event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlowExecutionMessage {
+pub struct FlowExecutionMessage  {
     /// <p>The unique identifier of the message.</p>
     #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct FlowExecutionMessage {
 }
 impl FlowExecutionMessage {
     /// <p>The unique identifier of the message.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The type of flow event .</p>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::FlowExecutionEventType> {
+    pub fn event_type(&self) -> ::std::option::Option<& crate::types::FlowExecutionEventType> {
         self.event_type.as_ref()
     }
     /// <p>The date and time when the message was last updated.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>A string containing information about the flow event.</p>
-    pub fn payload(&self) -> ::std::option::Option<&str> {
+    pub fn payload(&self) -> ::std::option::Option<& str> {
         self.payload.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl FlowExecutionMessage {
 
 /// A builder for [`FlowExecutionMessage`](crate::types::FlowExecutionMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlowExecutionMessageBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<crate::types::FlowExecutionEventType>,
@@ -61,8 +59,11 @@ impl FlowExecutionMessageBuilder {
     }
     /// <p>The unique identifier of the message.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
+    }
+    /// <p>The unique identifier of the message.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// <p>The type of flow event .</p>
     pub fn event_type(mut self, input: crate::types::FlowExecutionEventType) -> Self {
@@ -70,12 +71,12 @@ impl FlowExecutionMessageBuilder {
         self
     }
     /// <p>The type of flow event .</p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowExecutionEventType>,
-    ) -> Self {
-        self.event_type = input;
-        self
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::FlowExecutionEventType>) -> Self {
+        self.event_type = input; self
+    }
+    /// <p>The type of flow event .</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::FlowExecutionEventType> {
+        &self.event_type
     }
     /// <p>The date and time when the message was last updated.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -83,12 +84,12 @@ impl FlowExecutionMessageBuilder {
         self
     }
     /// <p>The date and time when the message was last updated.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.timestamp = input;
-        self
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.timestamp = input; self
+    }
+    /// <p>The date and time when the message was last updated.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// <p>A string containing information about the flow event.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,16 +98,24 @@ impl FlowExecutionMessageBuilder {
     }
     /// <p>A string containing information about the flow event.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
+    }
+    /// <p>A string containing information about the flow event.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`FlowExecutionMessage`](crate::types::FlowExecutionMessage).
     pub fn build(self) -> crate::types::FlowExecutionMessage {
         crate::types::FlowExecutionMessage {
-            message_id: self.message_id,
-            event_type: self.event_type,
-            timestamp: self.timestamp,
-            payload: self.payload,
+            message_id: self.message_id
+            ,
+            event_type: self.event_type
+            ,
+            timestamp: self.timestamp
+            ,
+            payload: self.payload
+            ,
         }
     }
 }
+

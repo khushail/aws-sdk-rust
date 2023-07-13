@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCloudFormationTemplateOutput {
+pub struct CreateCloudFormationTemplateOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -31,54 +31,52 @@ pub struct CreateCloudFormationTemplateOutput {
 }
 impl CreateCloudFormationTemplateOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-    pub fn expiration_time(&self) -> ::std::option::Option<&str> {
+    pub fn expiration_time(&self) -> ::std::option::Option<& str> {
         self.expiration_time.as_deref()
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(&self) -> ::std::option::Option<&str> {
+    pub fn semantic_version(&self) -> ::std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>Status of the template creation workflow.</p>
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
-    pub fn template_url(&self) -> ::std::option::Option<&str> {
+    pub fn template_url(&self) -> ::std::option::Option<& str> {
         self.template_url.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateCloudFormationTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateCloudFormationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateCloudFormationTemplateOutput`](crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateOutput).
-    pub fn builder() -> crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateOutputBuilder {
         crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCloudFormationTemplateOutput`](crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCloudFormationTemplateOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
@@ -91,70 +89,59 @@ pub struct CreateCloudFormationTemplateOutputBuilder {
 }
 impl CreateCloudFormationTemplateOutputBuilder {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The date and time this resource was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
     }
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-    pub fn expiration_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expiration_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiration_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.expiration_time = input;
-        self
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expiration_time = input; self
+    }
+    /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration_time
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.semantic_version = input;
-        self
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.semantic_version = input; self
+    }
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
     }
     /// <p>Status of the template creation workflow.</p>
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
@@ -165,8 +152,12 @@ impl CreateCloudFormationTemplateOutputBuilder {
     /// <p>Status of the template creation workflow.</p>
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Status of the template creation workflow.</p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
@@ -177,8 +168,12 @@ impl CreateCloudFormationTemplateOutputBuilder {
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
+    }
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
     pub fn template_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,31 +182,40 @@ impl CreateCloudFormationTemplateOutputBuilder {
     }
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_url = input;
-        self
+        self.template_url = input; self
+    }
+    /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
+    pub fn get_template_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateCloudFormationTemplateOutput`](crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateOutput {
+    pub fn build(self) -> crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateOutput {
         crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateOutput {
-            application_id: self.application_id,
-            creation_time: self.creation_time,
-            expiration_time: self.expiration_time,
-            semantic_version: self.semantic_version,
-            status: self.status,
-            template_id: self.template_id,
-            template_url: self.template_url,
+            application_id: self.application_id
+            ,
+            creation_time: self.creation_time
+            ,
+            expiration_time: self.expiration_time
+            ,
+            semantic_version: self.semantic_version
+            ,
+            status: self.status
+            ,
+            template_id: self.template_id
+            ,
+            template_url: self.template_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateModelInput {
+pub struct CreateModelInput  {
     /// <p>The name for the ML model to be created.</p>
     #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
@@ -33,11 +33,10 @@ pub struct CreateModelInput {
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     #[doc(hidden)]
-    pub data_pre_processing_configuration:
-        ::std::option::Option<crate::types::DataPreProcessingConfiguration>,
+    pub data_pre_processing_configuration: ::std::option::Option<crate::types::DataPreProcessingConfiguration>,
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
     #[doc(hidden)]
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -50,66 +49,60 @@ pub struct CreateModelInput {
 }
 impl CreateModelInput {
     /// <p>The name for the ML model to be created.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The name of the dataset for the ML model being created. </p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The data schema for the ML model being created. </p>
-    pub fn dataset_schema(&self) -> ::std::option::Option<&crate::types::DatasetSchema> {
+    pub fn dataset_schema(&self) -> ::std::option::Option<& crate::types::DatasetSchema> {
         self.dataset_schema.as_ref()
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    pub fn labels_input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LabelsInputConfiguration> {
+    pub fn labels_input_configuration(&self) -> ::std::option::Option<& crate::types::LabelsInputConfiguration> {
         self.labels_input_configuration.as_ref()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
-    pub fn training_data_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_data_start_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
-    pub fn training_data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_data_end_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
-    pub fn evaluation_data_start_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn evaluation_data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.evaluation_data_start_time.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
-    pub fn evaluation_data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn evaluation_data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.evaluation_data_end_time.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn data_pre_processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataPreProcessingConfiguration> {
+    pub fn data_pre_processing_configuration(&self) -> ::std::option::Option<& crate::types::DataPreProcessingConfiguration> {
         self.data_pre_processing_configuration.as_ref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p> Any tags associated with the ML model being created. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    pub fn off_condition(&self) -> ::std::option::Option<&str> {
+    pub fn off_condition(&self) -> ::std::option::Option<& str> {
         self.off_condition.as_deref()
     }
 }
@@ -122,23 +115,19 @@ impl CreateModelInput {
 
 /// A builder for [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_schema: ::std::option::Option<crate::types::DatasetSchema>,
-    pub(crate) labels_input_configuration:
-        ::std::option::Option<crate::types::LabelsInputConfiguration>,
+    pub(crate) labels_input_configuration: ::std::option::Option<crate::types::LabelsInputConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) training_data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) training_data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) evaluation_data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) evaluation_data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) data_pre_processing_configuration:
-        ::std::option::Option<crate::types::DataPreProcessingConfiguration>,
+    pub(crate) data_pre_processing_configuration: ::std::option::Option<crate::types::DataPreProcessingConfiguration>,
     pub(crate) server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) off_condition: ::std::option::Option<::std::string::String>,
@@ -151,8 +140,11 @@ impl CreateModelInputBuilder {
     }
     /// <p>The name for the ML model to be created.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
+    }
+    /// <p>The name for the ML model to be created.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p>The name of the dataset for the ML model being created. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,8 +153,11 @@ impl CreateModelInputBuilder {
     }
     /// <p>The name of the dataset for the ML model being created. </p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
+    }
+    /// <p>The name of the dataset for the ML model being created. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>The data schema for the ML model being created. </p>
     pub fn dataset_schema(mut self, input: crate::types::DatasetSchema) -> Self {
@@ -170,28 +165,25 @@ impl CreateModelInputBuilder {
         self
     }
     /// <p>The data schema for the ML model being created. </p>
-    pub fn set_dataset_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetSchema>,
-    ) -> Self {
-        self.dataset_schema = input;
-        self
+    pub fn set_dataset_schema(mut self, input: ::std::option::Option<crate::types::DatasetSchema>) -> Self {
+        self.dataset_schema = input; self
+    }
+    /// <p>The data schema for the ML model being created. </p>
+    pub fn get_dataset_schema(&self) -> &::std::option::Option<crate::types::DatasetSchema> {
+        &self.dataset_schema
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    pub fn labels_input_configuration(
-        mut self,
-        input: crate::types::LabelsInputConfiguration,
-    ) -> Self {
+    pub fn labels_input_configuration(mut self, input: crate::types::LabelsInputConfiguration) -> Self {
         self.labels_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    pub fn set_labels_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelsInputConfiguration>,
-    ) -> Self {
-        self.labels_input_configuration = input;
-        self
+    pub fn set_labels_input_configuration(mut self, input: ::std::option::Option<crate::types::LabelsInputConfiguration>) -> Self {
+        self.labels_input_configuration = input; self
+    }
+    /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
+    pub fn get_labels_input_configuration(&self) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
+        &self.labels_input_configuration
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -200,8 +192,11 @@ impl CreateModelInputBuilder {
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
     pub fn training_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -209,12 +204,12 @@ impl CreateModelInputBuilder {
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
-    pub fn set_training_data_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.training_data_start_time = input;
-        self
+    pub fn set_training_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.training_data_start_time = input; self
+    }
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
+    pub fn get_training_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.training_data_start_time
     }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
     pub fn training_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -222,12 +217,12 @@ impl CreateModelInputBuilder {
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
-    pub fn set_training_data_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.training_data_end_time = input;
-        self
+    pub fn set_training_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.training_data_end_time = input; self
+    }
+    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
+    pub fn get_training_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.training_data_end_time
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
     pub fn evaluation_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -235,12 +230,12 @@ impl CreateModelInputBuilder {
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
-    pub fn set_evaluation_data_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.evaluation_data_start_time = input;
-        self
+    pub fn set_evaluation_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.evaluation_data_start_time = input; self
+    }
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
+    pub fn get_evaluation_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.evaluation_data_start_time
     }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
     pub fn evaluation_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -248,12 +243,12 @@ impl CreateModelInputBuilder {
         self
     }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
-    pub fn set_evaluation_data_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.evaluation_data_end_time = input;
-        self
+    pub fn set_evaluation_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.evaluation_data_end_time = input; self
+    }
+    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
+    pub fn get_evaluation_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.evaluation_data_end_time
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -262,42 +257,40 @@ impl CreateModelInputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn data_pre_processing_configuration(
-        mut self,
-        input: crate::types::DataPreProcessingConfiguration,
-    ) -> Self {
+    pub fn data_pre_processing_configuration(mut self, input: crate::types::DataPreProcessingConfiguration) -> Self {
         self.data_pre_processing_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn set_data_pre_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPreProcessingConfiguration>,
-    ) -> Self {
-        self.data_pre_processing_configuration = input;
-        self
+    pub fn set_data_pre_processing_configuration(mut self, input: ::std::option::Option<crate::types::DataPreProcessingConfiguration>) -> Self {
+        self.data_pre_processing_configuration = input; self
+    }
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    pub fn get_data_pre_processing_configuration(&self) -> &::std::option::Option<crate::types::DataPreProcessingConfiguration> {
+        &self.data_pre_processing_configuration
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_side_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    pub fn set_server_side_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.server_side_kms_key_id = input;
-        self
+    pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.server_side_kms_key_id = input; self
+    }
+    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_side_kms_key_id
     }
     /// Appends an item to `tags`.
     ///
@@ -306,56 +299,65 @@ impl CreateModelInputBuilder {
     /// <p> Any tags associated with the ML model being created. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> Any tags associated with the ML model being created. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p> Any tags associated with the ML model being created. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    pub fn off_condition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn off_condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.off_condition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    pub fn set_off_condition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.off_condition = input;
-        self
+    pub fn set_off_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.off_condition = input; self
+    }
+    /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    pub fn get_off_condition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.off_condition
     }
     /// Consumes the builder and constructs a [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_model::CreateModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_model::CreateModelInput {
-            model_name: self.model_name,
-            dataset_name: self.dataset_name,
-            dataset_schema: self.dataset_schema,
-            labels_input_configuration: self.labels_input_configuration,
-            client_token: self.client_token,
-            training_data_start_time: self.training_data_start_time,
-            training_data_end_time: self.training_data_end_time,
-            evaluation_data_start_time: self.evaluation_data_start_time,
-            evaluation_data_end_time: self.evaluation_data_end_time,
-            role_arn: self.role_arn,
-            data_pre_processing_configuration: self.data_pre_processing_configuration,
-            server_side_kms_key_id: self.server_side_kms_key_id,
-            tags: self.tags,
-            off_condition: self.off_condition,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_model::CreateModelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_model::CreateModelInput {
+                model_name: self.model_name
+                ,
+                dataset_name: self.dataset_name
+                ,
+                dataset_schema: self.dataset_schema
+                ,
+                labels_input_configuration: self.labels_input_configuration
+                ,
+                client_token: self.client_token
+                ,
+                training_data_start_time: self.training_data_start_time
+                ,
+                training_data_end_time: self.training_data_end_time
+                ,
+                evaluation_data_start_time: self.evaluation_data_start_time
+                ,
+                evaluation_data_end_time: self.evaluation_data_end_time
+                ,
+                role_arn: self.role_arn
+                ,
+                data_pre_processing_configuration: self.data_pre_processing_configuration
+                ,
+                server_side_kms_key_id: self.server_side_kms_key_id
+                ,
+                tags: self.tags
+                ,
+                off_condition: self.off_condition
+                ,
+            }
+        )
     }
 }
+

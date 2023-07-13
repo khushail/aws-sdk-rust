@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomLineItemsInput {
+pub struct ListCustomLineItemsInput  {
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
     #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListCustomLineItemsInput {
 }
 impl ListCustomLineItemsInput {
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
-    pub fn billing_period(&self) -> ::std::option::Option<&str> {
+    pub fn billing_period(&self) -> ::std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> The maximum number of billing groups to retrieve. </p>
@@ -26,28 +26,24 @@ impl ListCustomLineItemsInput {
         self.max_results
     }
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListCustomLineItemsFilter> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ListCustomLineItemsFilter> {
         self.filters.as_ref()
     }
 }
 impl ListCustomLineItemsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemsInput`](crate::operation::list_custom_line_items::ListCustomLineItemsInput).
-    pub fn builder(
-    ) -> crate::operation::list_custom_line_items::builders::ListCustomLineItemsInputBuilder {
-        crate::operation::list_custom_line_items::builders::ListCustomLineItemsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_custom_line_items::builders::ListCustomLineItemsInputBuilder {
+        crate::operation::list_custom_line_items::builders::ListCustomLineItemsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomLineItemsInput`](crate::operation::list_custom_line_items::ListCustomLineItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomLineItemsInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -56,20 +52,17 @@ pub struct ListCustomLineItemsInputBuilder {
 }
 impl ListCustomLineItemsInputBuilder {
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.billing_period = input;
-        self
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.billing_period = input; self
+    }
+    /// <p> The preferred billing period to get custom line items (FFLIs). </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_period
     }
     /// <p> The maximum number of billing groups to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,8 +71,11 @@ impl ListCustomLineItemsInputBuilder {
     }
     /// <p> The maximum number of billing groups to retrieve. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> The maximum number of billing groups to retrieve. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +84,11 @@ impl ListCustomLineItemsInputBuilder {
     }
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
     pub fn filters(mut self, input: crate::types::ListCustomLineItemsFilter) -> Self {
@@ -97,27 +96,27 @@ impl ListCustomLineItemsInputBuilder {
         self
     }
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListCustomLineItemsFilter>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListCustomLineItemsFilter>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListCustomLineItemsFilter> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListCustomLineItemsInput`](crate::operation::list_custom_line_items::ListCustomLineItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_line_items::ListCustomLineItemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_line_items::ListCustomLineItemsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_custom_line_items::ListCustomLineItemsInput {
-                billing_period: self.billing_period,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
+                billing_period: self.billing_period
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filters: self.filters
+                ,
+            }
         )
     }
 }
+

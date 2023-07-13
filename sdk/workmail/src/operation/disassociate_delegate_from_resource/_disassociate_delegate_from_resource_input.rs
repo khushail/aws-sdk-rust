@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateDelegateFromResourceInput {
+pub struct DisassociateDelegateFromResourceInput  {
     /// <p>The identifier for the organization under which the resource exists.</p>
     #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct DisassociateDelegateFromResourceInput {
 }
 impl DisassociateDelegateFromResourceInput {
     /// <p>The identifier for the organization under which the resource exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the resource from which delegates' set members are removed. </p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
 }
 impl DisassociateDelegateFromResourceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDelegateFromResourceInput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput).
-    pub fn builder() -> crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceInputBuilder {
         crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDelegateFromResourceInput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDelegateFromResourceInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct DisassociateDelegateFromResourceInputBuilder {
 }
 impl DisassociateDelegateFromResourceInputBuilder {
     /// <p>The identifier for the organization under which the resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization under which the resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
+    }
+    /// <p>The identifier for the organization under which the resource exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl DisassociateDelegateFromResourceInputBuilder {
     }
     /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,11 +76,14 @@ impl DisassociateDelegateFromResourceInputBuilder {
     }
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
+    }
+    /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`DisassociateDelegateFromResourceInput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput {
                 organization_id: self.organization_id
@@ -95,3 +96,4 @@ impl DisassociateDelegateFromResourceInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoScalingGroup {
+pub struct AutoScalingGroup  {
     /// <p>The Auto Scaling group name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AutoScalingGroup {
 }
 impl AutoScalingGroup {
     /// <p>The Auto Scaling group name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An Auto Scaling lifecycle event hook name.</p>
-    pub fn hook(&self) -> ::std::option::Option<&str> {
+    pub fn hook(&self) -> ::std::option::Option<& str> {
         self.hook.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AutoScalingGroup {
 
 /// A builder for [`AutoScalingGroup`](crate::types::AutoScalingGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) hook: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The Auto Scaling group name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The Auto Scaling group name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>An Auto Scaling lifecycle event hook name.</p>
     pub fn hook(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>An Auto Scaling lifecycle event hook name.</p>
     pub fn set_hook(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hook = input;
-        self
+        self.hook = input; self
+    }
+    /// <p>An Auto Scaling lifecycle event hook name.</p>
+    pub fn get_hook(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hook
     }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {
         crate::types::AutoScalingGroup {
-            name: self.name,
-            hook: self.hook,
+            name: self.name
+            ,
+            hook: self.hook
+            ,
         }
     }
 }
+

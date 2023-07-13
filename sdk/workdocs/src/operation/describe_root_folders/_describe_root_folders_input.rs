@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeRootFoldersInput {
+pub struct DescribeRootFoldersInput  {
     /// <p>Amazon WorkDocs authentication token.</p>
     #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeRootFoldersInput {
 }
 impl DescribeRootFoldersInput {
     /// <p>Amazon WorkDocs authentication token.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The maximum number of items to return.</p>
@@ -23,11 +23,11 @@ impl DescribeRootFoldersInput {
         self.limit
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
-impl ::std::fmt::Debug for DescribeRootFoldersInput {
+impl  ::std::fmt::Debug for DescribeRootFoldersInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRootFoldersInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -38,10 +38,8 @@ impl ::std::fmt::Debug for DescribeRootFoldersInput {
 }
 impl DescribeRootFoldersInput {
     /// Creates a new builder-style object to manufacture [`DescribeRootFoldersInput`](crate::operation::describe_root_folders::DescribeRootFoldersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder {
-        crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder {
+        crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder::default()
     }
 }
 
@@ -55,20 +53,17 @@ pub struct DescribeRootFoldersInputBuilder {
 }
 impl DescribeRootFoldersInputBuilder {
     /// <p>Amazon WorkDocs authentication token.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.authentication_token = input;
-        self
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.authentication_token = input; self
+    }
+    /// <p>Amazon WorkDocs authentication token.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
     }
     /// <p>The maximum number of items to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -77,8 +72,11 @@ impl DescribeRootFoldersInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,22 +85,23 @@ impl DescribeRootFoldersInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeRootFoldersInput`](crate::operation::describe_root_folders::DescribeRootFoldersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_root_folders::DescribeRootFoldersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_root_folders::DescribeRootFoldersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_root_folders::DescribeRootFoldersInput {
-                authentication_token: self.authentication_token,
-                limit: self.limit,
-                marker: self.marker,
-            },
+                authentication_token: self.authentication_token
+                ,
+                limit: self.limit
+                ,
+                marker: self.marker
+                ,
+            }
         )
     }
 }
@@ -115,3 +114,4 @@ impl ::std::fmt::Debug for DescribeRootFoldersInputBuilder {
         formatter.finish()
     }
 }
+

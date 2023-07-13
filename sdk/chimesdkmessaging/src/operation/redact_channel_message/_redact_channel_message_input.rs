@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedactChannelMessageInput {
+pub struct RedactChannelMessageInput  {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
     #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
@@ -18,35 +18,32 @@ pub struct RedactChannelMessageInput {
 }
 impl RedactChannelMessageInput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ID of the message being redacted.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn sub_channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn sub_channel_id(&self) -> ::std::option::Option<& str> {
         self.sub_channel_id.as_deref()
     }
 }
 impl RedactChannelMessageInput {
     /// Creates a new builder-style object to manufacture [`RedactChannelMessageInput`](crate::operation::redact_channel_message::RedactChannelMessageInput).
-    pub fn builder(
-    ) -> crate::operation::redact_channel_message::builders::RedactChannelMessageInputBuilder {
+    pub fn builder() -> crate::operation::redact_channel_message::builders::RedactChannelMessageInputBuilder {
         crate::operation::redact_channel_message::builders::RedactChannelMessageInputBuilder::default()
     }
 }
 
 /// A builder for [`RedactChannelMessageInput`](crate::operation::redact_channel_message::RedactChannelMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedactChannelMessageInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
@@ -61,8 +58,11 @@ impl RedactChannelMessageInputBuilder {
     }
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The ID of the message being redacted.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +71,11 @@ impl RedactChannelMessageInputBuilder {
     }
     /// <p>The ID of the message being redacted.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
+    }
+    /// <p>The ID of the message being redacted.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,39 +84,39 @@ impl RedactChannelMessageInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sub_channel_id = input;
-        self
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sub_channel_id = input; self
+    }
+    /// <p>The ID of the SubChannel in the request.</p>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
     }
     /// Consumes the builder and constructs a [`RedactChannelMessageInput`](crate::operation::redact_channel_message::RedactChannelMessageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::redact_channel_message::RedactChannelMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::redact_channel_message::RedactChannelMessageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::redact_channel_message::RedactChannelMessageInput {
-                channel_arn: self.channel_arn,
-                message_id: self.message_id,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-            },
+                channel_arn: self.channel_arn
+                ,
+                message_id: self.message_id
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+                sub_channel_id: self.sub_channel_id
+                ,
+            }
         )
     }
 }
+

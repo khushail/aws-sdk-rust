@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutProjectEventsInput {
+pub struct PutProjectEventsInput  {
     /// <p>The name or ARN of the project to write the events to.</p>
     #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct PutProjectEventsInput {
 }
 impl PutProjectEventsInput {
     /// <p>The name or ARN of the project to write the events to.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
+    pub fn events(&self) -> ::std::option::Option<& [crate::types::Event]> {
         self.events.as_deref()
     }
 }
 impl PutProjectEventsInput {
     /// Creates a new builder-style object to manufacture [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
-    pub fn builder() -> crate::operation::put_project_events::builders::PutProjectEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_project_events::builders::PutProjectEventsInputBuilder {
         crate::operation::put_project_events::builders::PutProjectEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutProjectEventsInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
@@ -45,8 +42,11 @@ impl PutProjectEventsInputBuilder {
     }
     /// <p>The name or ARN of the project to write the events to.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
+    }
+    /// <p>The name or ARN of the project to write the events to.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
     }
     /// Appends an item to `events`.
     ///
@@ -55,30 +55,28 @@ impl PutProjectEventsInputBuilder {
     /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
+        self.events = input; self
+    }
+    /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_project_events::PutProjectEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_project_events::PutProjectEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_project_events::PutProjectEventsInput {
-                project: self.project,
-                events: self.events,
-            },
+                project: self.project
+                ,
+                events: self.events
+                ,
+            }
         )
     }
 }
+

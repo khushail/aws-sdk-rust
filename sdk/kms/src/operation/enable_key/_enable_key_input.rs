@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableKeyInput {
-    /// <p>Identifies the KMS key to enable.</p>
-    /// <p>Specify the key ID or key ARN of the KMS key.</p>
-    /// <p>For example:</p>
-    /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// </ul>
+pub struct EnableKeyInput  {
+    /// <p>Identifies the KMS key to enable.</p> 
+    /// <p>Specify the key ID or key ARN of the KMS key.</p> 
+    /// <p>For example:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// </ul> 
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl EnableKeyInput {
-    /// <p>Identifies the KMS key to enable.</p>
-    /// <p>Specify the key ID or key ARN of the KMS key.</p>
-    /// <p>For example:</p>
-    /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// </ul>
+    /// <p>Identifies the KMS key to enable.</p> 
+    /// <p>Specify the key ID or key ARN of the KMS key.</p> 
+    /// <p>For example:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// </ul> 
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
 }
@@ -36,46 +36,53 @@ impl EnableKeyInput {
 
 /// A builder for [`EnableKeyInput`](crate::operation::enable_key::EnableKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableKeyInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
 impl EnableKeyInputBuilder {
-    /// <p>Identifies the KMS key to enable.</p>
-    /// <p>Specify the key ID or key ARN of the KMS key.</p>
-    /// <p>For example:</p>
-    /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// </ul>
+    /// <p>Identifies the KMS key to enable.</p> 
+    /// <p>Specify the key ID or key ARN of the KMS key.</p> 
+    /// <p>For example:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// </ul> 
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the KMS key to enable.</p>
-    /// <p>Specify the key ID or key ARN of the KMS key.</p>
-    /// <p>For example:</p>
-    /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// </ul>
+    /// <p>Identifies the KMS key to enable.</p> 
+    /// <p>Specify the key ID or key ARN of the KMS key.</p> 
+    /// <p>For example:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// </ul> 
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
+    }
+    /// <p>Identifies the KMS key to enable.</p> 
+    /// <p>Specify the key ID or key ARN of the KMS key.</p> 
+    /// <p>For example:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// </ul> 
+    /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// Consumes the builder and constructs a [`EnableKeyInput`](crate::operation::enable_key::EnableKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_key::EnableKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable_key::EnableKeyInput {
-            key_id: self.key_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_key::EnableKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_key::EnableKeyInput {
+                key_id: self.key_id
+                ,
+            }
+        )
     }
 }
+

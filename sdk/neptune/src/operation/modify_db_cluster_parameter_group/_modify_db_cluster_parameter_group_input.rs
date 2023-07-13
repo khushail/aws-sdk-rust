@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbClusterParameterGroupInput {
+pub struct ModifyDbClusterParameterGroupInput  {
     /// <p>The name of the DB cluster parameter group to modify.</p>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -12,46 +12,41 @@ pub struct ModifyDbClusterParameterGroupInput {
 }
 impl ModifyDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to modify.</p>
-    pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<& [crate::types::Parameter]> {
         self.parameters.as_deref()
     }
 }
 impl ModifyDbClusterParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupInput`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput).
-    pub fn builder() -> crate::operation::modify_db_cluster_parameter_group::builders::ModifyDbClusterParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::modify_db_cluster_parameter_group::builders::ModifyDbClusterParameterGroupInputBuilder {
         crate::operation::modify_db_cluster_parameter_group::builders::ModifyDbClusterParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbClusterParameterGroupInput`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbClusterParameterGroupInputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ModifyDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group to modify.</p>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB cluster parameter group to modify.</p>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.db_cluster_parameter_group_name = input;
-        self
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_parameter_group_name = input; self
+    }
+    /// <p>The name of the DB cluster parameter group to modify.</p>
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_parameter_group_name
     }
     /// Appends an item to `parameters`.
     ///
@@ -60,25 +55,20 @@ impl ModifyDbClusterParameterGroupInputBuilder {
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
+    }
+    /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ModifyDbClusterParameterGroupInput`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
@@ -89,3 +79,4 @@ impl ModifyDbClusterParameterGroupInputBuilder {
         )
     }
 }
+

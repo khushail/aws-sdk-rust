@@ -3,14 +3,14 @@
 /// <p>Describes why a resource lifecycle state changed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecycleTransitionReason {
+pub struct LifecycleTransitionReason  {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl LifecycleTransitionReason {
     /// <p>A detailed error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl LifecycleTransitionReason {
 
 /// A builder for [`LifecycleTransitionReason`](crate::types::LifecycleTransitionReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecycleTransitionReasonBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl LifecycleTransitionReasonBuilder {
     }
     /// <p>A detailed error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A detailed error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`LifecycleTransitionReason`](crate::types::LifecycleTransitionReason).
     pub fn build(self) -> crate::types::LifecycleTransitionReason {
         crate::types::LifecycleTransitionReason {
-            message: self.message,
+            message: self.message
+            ,
         }
     }
 }
+

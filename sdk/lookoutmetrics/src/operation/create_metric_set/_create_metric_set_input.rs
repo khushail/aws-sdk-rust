@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMetricSetInput {
+pub struct CreateMetricSetInput  {
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
     #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
@@ -35,29 +35,26 @@ pub struct CreateMetricSetInput {
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
     #[doc(hidden)]
-    pub dimension_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
+    pub dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
 }
 impl CreateMetricSetInput {
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn metric_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_set_name(&self) -> ::std::option::Option<& str> {
         self.metric_set_name.as_deref()
     }
     /// <p>A description of the dataset you are creating.</p>
-    pub fn metric_set_description(&self) -> ::std::option::Option<&str> {
+    pub fn metric_set_description(&self) -> ::std::option::Option<& str> {
         self.metric_set_description.as_deref()
     }
     /// <p>A list of metrics that the dataset will contain.</p>
-    pub fn metric_list(&self) -> ::std::option::Option<&[crate::types::Metric]> {
+    pub fn metric_list(&self) -> ::std::option::Option<& [crate::types::Metric]> {
         self.metric_list.as_deref()
     }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
@@ -65,37 +62,31 @@ impl CreateMetricSetInput {
         self.offset
     }
     /// <p>Contains information about the column used for tracking time in your source data.</p>
-    pub fn timestamp_column(&self) -> ::std::option::Option<&crate::types::TimestampColumn> {
+    pub fn timestamp_column(&self) -> ::std::option::Option<& crate::types::TimestampColumn> {
         self.timestamp_column.as_ref()
     }
     /// <p>A list of the fields you want to treat as dimensions.</p>
-    pub fn dimension_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn dimension_list(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.dimension_list.as_deref()
     }
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
-    pub fn metric_set_frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
+    pub fn metric_set_frequency(&self) -> ::std::option::Option<& crate::types::Frequency> {
         self.metric_set_frequency.as_ref()
     }
     /// <p>Contains information about how the source data should be interpreted.</p>
-    pub fn metric_source(&self) -> ::std::option::Option<&crate::types::MetricSource> {
+    pub fn metric_source(&self) -> ::std::option::Option<& crate::types::MetricSource> {
         self.metric_source.as_ref()
     }
     /// <p>The time zone in which your source data was recorded.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
-    pub fn dimension_filter_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricSetDimensionFilter]> {
+    pub fn dimension_filter_list(&self) -> ::std::option::Option<& [crate::types::MetricSetDimensionFilter]> {
         self.dimension_filter_list.as_deref()
     }
 }
@@ -108,9 +99,7 @@ impl CreateMetricSetInput {
 
 /// A builder for [`CreateMetricSetInput`](crate::operation::create_metric_set::CreateMetricSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMetricSetInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metric_set_name: ::std::option::Option<::std::string::String>,
@@ -122,60 +111,48 @@ pub struct CreateMetricSetInputBuilder {
     pub(crate) metric_set_frequency: ::std::option::Option<crate::types::Frequency>,
     pub(crate) metric_source: ::std::option::Option<crate::types::MetricSource>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) dimension_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
 }
 impl CreateMetricSetInputBuilder {
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.anomaly_detector_arn = input; self
+    }
+    /// <p>The ARN of the anomaly detector that will use the dataset.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
     }
     /// <p>The name of the dataset.</p>
-    pub fn metric_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn set_metric_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metric_set_name = input;
-        self
+    pub fn set_metric_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metric_set_name = input; self
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn get_metric_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_name
     }
     /// <p>A description of the dataset you are creating.</p>
-    pub fn metric_set_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the dataset you are creating.</p>
-    pub fn set_metric_set_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metric_set_description = input;
-        self
+    pub fn set_metric_set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metric_set_description = input; self
+    }
+    /// <p>A description of the dataset you are creating.</p>
+    pub fn get_metric_set_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_description
     }
     /// Appends an item to `metric_list`.
     ///
@@ -184,17 +161,17 @@ impl CreateMetricSetInputBuilder {
     /// <p>A list of metrics that the dataset will contain.</p>
     pub fn metric_list(mut self, input: crate::types::Metric) -> Self {
         let mut v = self.metric_list.unwrap_or_default();
-        v.push(input);
-        self.metric_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of metrics that the dataset will contain.</p>
-    pub fn set_metric_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
-    ) -> Self {
-        self.metric_list = input;
-        self
+    pub fn set_metric_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
+        self.metric_list = input; self
+    }
+    /// <p>A list of metrics that the dataset will contain.</p>
+    pub fn get_metric_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+        &self.metric_list
     }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(mut self, input: i32) -> Self {
@@ -203,8 +180,11 @@ impl CreateMetricSetInputBuilder {
     }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
+    }
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<i32> {
+        &self.offset
     }
     /// <p>Contains information about the column used for tracking time in your source data.</p>
     pub fn timestamp_column(mut self, input: crate::types::TimestampColumn) -> Self {
@@ -212,34 +192,31 @@ impl CreateMetricSetInputBuilder {
         self
     }
     /// <p>Contains information about the column used for tracking time in your source data.</p>
-    pub fn set_timestamp_column(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestampColumn>,
-    ) -> Self {
-        self.timestamp_column = input;
-        self
+    pub fn set_timestamp_column(mut self, input: ::std::option::Option<crate::types::TimestampColumn>) -> Self {
+        self.timestamp_column = input; self
+    }
+    /// <p>Contains information about the column used for tracking time in your source data.</p>
+    pub fn get_timestamp_column(&self) -> &::std::option::Option<crate::types::TimestampColumn> {
+        &self.timestamp_column
     }
     /// Appends an item to `dimension_list`.
     ///
     /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
     ///
     /// <p>A list of the fields you want to treat as dimensions.</p>
-    pub fn dimension_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dimension_list.unwrap_or_default();
-        v.push(input.into());
-        self.dimension_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dimension_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the fields you want to treat as dimensions.</p>
-    pub fn set_dimension_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.dimension_list = input;
-        self
+    pub fn set_dimension_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.dimension_list = input; self
+    }
+    /// <p>A list of the fields you want to treat as dimensions.</p>
+    pub fn get_dimension_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dimension_list
     }
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
     pub fn metric_set_frequency(mut self, input: crate::types::Frequency) -> Self {
@@ -247,12 +224,12 @@ impl CreateMetricSetInputBuilder {
         self
     }
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
-    pub fn set_metric_set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::Frequency>,
-    ) -> Self {
-        self.metric_set_frequency = input;
-        self
+    pub fn set_metric_set_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
+        self.metric_set_frequency = input; self
+    }
+    /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
+    pub fn get_metric_set_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
+        &self.metric_set_frequency
     }
     /// <p>Contains information about how the source data should be interpreted.</p>
     pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
@@ -260,12 +237,12 @@ impl CreateMetricSetInputBuilder {
         self
     }
     /// <p>Contains information about how the source data should be interpreted.</p>
-    pub fn set_metric_source(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricSource>,
-    ) -> Self {
-        self.metric_source = input;
-        self
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::MetricSource>) -> Self {
+        self.metric_source = input; self
+    }
+    /// <p>Contains information about how the source data should be interpreted.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
+        &self.metric_source
     }
     /// <p>The time zone in which your source data was recorded.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -274,33 +251,30 @@ impl CreateMetricSetInputBuilder {
     }
     /// <p>The time zone in which your source data was recorded.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
+    }
+    /// <p>The time zone in which your source data was recorded.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// Appends an item to `dimension_filter_list`.
     ///
@@ -309,38 +283,48 @@ impl CreateMetricSetInputBuilder {
     /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
     pub fn dimension_filter_list(mut self, input: crate::types::MetricSetDimensionFilter) -> Self {
         let mut v = self.dimension_filter_list.unwrap_or_default();
-        v.push(input);
-        self.dimension_filter_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimension_filter_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
-    pub fn set_dimension_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
-    ) -> Self {
-        self.dimension_filter_list = input;
-        self
+    pub fn set_dimension_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>) -> Self {
+        self.dimension_filter_list = input; self
+    }
+    /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
+    pub fn get_dimension_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
+        &self.dimension_filter_list
     }
     /// Consumes the builder and constructs a [`CreateMetricSetInput`](crate::operation::create_metric_set::CreateMetricSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_metric_set::CreateMetricSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_metric_set::CreateMetricSetInput {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            metric_set_name: self.metric_set_name,
-            metric_set_description: self.metric_set_description,
-            metric_list: self.metric_list,
-            offset: self.offset,
-            timestamp_column: self.timestamp_column,
-            dimension_list: self.dimension_list,
-            metric_set_frequency: self.metric_set_frequency,
-            metric_source: self.metric_source,
-            timezone: self.timezone,
-            tags: self.tags,
-            dimension_filter_list: self.dimension_filter_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_metric_set::CreateMetricSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_metric_set::CreateMetricSetInput {
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                metric_set_name: self.metric_set_name
+                ,
+                metric_set_description: self.metric_set_description
+                ,
+                metric_list: self.metric_list
+                ,
+                offset: self.offset
+                ,
+                timestamp_column: self.timestamp_column
+                ,
+                dimension_list: self.dimension_list
+                ,
+                metric_set_frequency: self.metric_set_frequency
+                ,
+                metric_source: self.metric_source
+                ,
+                timezone: self.timezone
+                ,
+                tags: self.tags
+                ,
+                dimension_filter_list: self.dimension_filter_list
+                ,
+            }
+        )
     }
 }
+

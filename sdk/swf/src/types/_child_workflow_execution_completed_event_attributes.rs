@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChildWorkflowExecutionCompletedEventAttributes {
+pub struct ChildWorkflowExecutionCompletedEventAttributes  {
     /// <p>The child workflow execution that was completed.</p>
     #[doc(hidden)]
     pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
@@ -22,15 +22,15 @@ pub struct ChildWorkflowExecutionCompletedEventAttributes {
 }
 impl ChildWorkflowExecutionCompletedEventAttributes {
     /// <p>The child workflow execution that was completed.</p>
-    pub fn workflow_execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> ::std::option::Option<& crate::types::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The type of the child workflow execution.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The result of the child workflow execution.</p>
-    pub fn result(&self) -> ::std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<& str> {
         self.result.as_deref()
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -44,17 +44,14 @@ impl ChildWorkflowExecutionCompletedEventAttributes {
 }
 impl ChildWorkflowExecutionCompletedEventAttributes {
     /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCompletedEventAttributes`](crate::types::ChildWorkflowExecutionCompletedEventAttributes).
-    pub fn builder() -> crate::types::builders::ChildWorkflowExecutionCompletedEventAttributesBuilder
-    {
+    pub fn builder() -> crate::types::builders::ChildWorkflowExecutionCompletedEventAttributesBuilder {
         crate::types::builders::ChildWorkflowExecutionCompletedEventAttributesBuilder::default()
     }
 }
 
 /// A builder for [`ChildWorkflowExecutionCompletedEventAttributes`](crate::types::ChildWorkflowExecutionCompletedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChildWorkflowExecutionCompletedEventAttributesBuilder {
     pub(crate) workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -69,12 +66,12 @@ impl ChildWorkflowExecutionCompletedEventAttributesBuilder {
         self
     }
     /// <p>The child workflow execution that was completed.</p>
-    pub fn set_workflow_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
-        self.workflow_execution = input;
-        self
+    pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
+        self.workflow_execution = input; self
+    }
+    /// <p>The child workflow execution that was completed.</p>
+    pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        &self.workflow_execution
     }
     /// <p>The type of the child workflow execution.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -82,12 +79,12 @@ impl ChildWorkflowExecutionCompletedEventAttributesBuilder {
         self
     }
     /// <p>The type of the child workflow execution.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
-        self.workflow_type = input;
-        self
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
+        self.workflow_type = input; self
+    }
+    /// <p>The type of the child workflow execution.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
     }
     /// <p>The result of the child workflow execution.</p>
     pub fn result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,8 +93,11 @@ impl ChildWorkflowExecutionCompletedEventAttributesBuilder {
     }
     /// <p>The result of the child workflow execution.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
+    }
+    /// <p>The result of the child workflow execution.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(mut self, input: i64) -> Self {
@@ -106,8 +106,11 @@ impl ChildWorkflowExecutionCompletedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_initiated_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.initiated_event_id = input;
-        self
+        self.initiated_event_id = input; self
+    }
+    /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_initiated_event_id(&self) -> &::std::option::Option<i64> {
+        &self.initiated_event_id
     }
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
@@ -116,17 +119,28 @@ impl ChildWorkflowExecutionCompletedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
+    }
+    /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// Consumes the builder and constructs a [`ChildWorkflowExecutionCompletedEventAttributes`](crate::types::ChildWorkflowExecutionCompletedEventAttributes).
     pub fn build(self) -> crate::types::ChildWorkflowExecutionCompletedEventAttributes {
         crate::types::ChildWorkflowExecutionCompletedEventAttributes {
-            workflow_execution: self.workflow_execution,
-            workflow_type: self.workflow_type,
-            result: self.result,
-            initiated_event_id: self.initiated_event_id.unwrap_or_default(),
-            started_event_id: self.started_event_id.unwrap_or_default(),
+            workflow_execution: self.workflow_execution
+            ,
+            workflow_type: self.workflow_type
+            ,
+            result: self.result
+            ,
+            initiated_event_id: self.initiated_event_id
+                .unwrap_or_default()
+            ,
+            started_event_id: self.started_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchFacesByImageOutput {
+pub struct SearchFacesByImageOutput  {
     /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
     #[doc(hidden)]
     pub searched_face_bounding_box: ::std::option::Option<crate::types::BoundingBox>,
@@ -19,7 +19,7 @@ pub struct SearchFacesByImageOutput {
 }
 impl SearchFacesByImageOutput {
     /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
-    pub fn searched_face_bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
+    pub fn searched_face_bounding_box(&self) -> ::std::option::Option<& crate::types::BoundingBox> {
         self.searched_face_bounding_box.as_ref()
     }
     /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
@@ -27,33 +27,29 @@ impl SearchFacesByImageOutput {
         self.searched_face_confidence
     }
     /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
-    pub fn face_matches(&self) -> ::std::option::Option<&[crate::types::FaceMatch]> {
+    pub fn face_matches(&self) -> ::std::option::Option<& [crate::types::FaceMatch]> {
         self.face_matches.as_deref()
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn face_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn face_model_version(&self) -> ::std::option::Option<& str> {
         self.face_model_version.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchFacesByImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchFacesByImageOutput {
     /// Creates a new builder-style object to manufacture [`SearchFacesByImageOutput`](crate::operation::search_faces_by_image::SearchFacesByImageOutput).
-    pub fn builder(
-    ) -> crate::operation::search_faces_by_image::builders::SearchFacesByImageOutputBuilder {
-        crate::operation::search_faces_by_image::builders::SearchFacesByImageOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::search_faces_by_image::builders::SearchFacesByImageOutputBuilder {
+        crate::operation::search_faces_by_image::builders::SearchFacesByImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchFacesByImageOutput`](crate::operation::search_faces_by_image::SearchFacesByImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFacesByImageOutputBuilder {
     pub(crate) searched_face_bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) searched_face_confidence: ::std::option::Option<f32>,
@@ -68,12 +64,12 @@ impl SearchFacesByImageOutputBuilder {
         self
     }
     /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
-    pub fn set_searched_face_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
-        self.searched_face_bounding_box = input;
-        self
+    pub fn set_searched_face_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
+        self.searched_face_bounding_box = input; self
+    }
+    /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
+    pub fn get_searched_face_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.searched_face_bounding_box
     }
     /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
     pub fn searched_face_confidence(mut self, input: f32) -> Self {
@@ -82,8 +78,11 @@ impl SearchFacesByImageOutputBuilder {
     }
     /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
     pub fn set_searched_face_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.searched_face_confidence = input;
-        self
+        self.searched_face_confidence = input; self
+    }
+    /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
+    pub fn get_searched_face_confidence(&self) -> &::std::option::Option<f32> {
+        &self.searched_face_confidence
     }
     /// Appends an item to `face_matches`.
     ///
@@ -92,51 +91,53 @@ impl SearchFacesByImageOutputBuilder {
     /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
     pub fn face_matches(mut self, input: crate::types::FaceMatch) -> Self {
         let mut v = self.face_matches.unwrap_or_default();
-        v.push(input);
-        self.face_matches = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.face_matches = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
-    pub fn set_face_matches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>,
-    ) -> Self {
-        self.face_matches = input;
-        self
+    pub fn set_face_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>) -> Self {
+        self.face_matches = input; self
+    }
+    /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
+    pub fn get_face_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>> {
+        &self.face_matches
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn face_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn face_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn set_face_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.face_model_version = input;
-        self
+    pub fn set_face_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.face_model_version = input; self
+    }
+    /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchFacesByImageOutput`](crate::operation::search_faces_by_image::SearchFacesByImageOutput).
     pub fn build(self) -> crate::operation::search_faces_by_image::SearchFacesByImageOutput {
         crate::operation::search_faces_by_image::SearchFacesByImageOutput {
-            searched_face_bounding_box: self.searched_face_bounding_box,
-            searched_face_confidence: self.searched_face_confidence,
-            face_matches: self.face_matches,
-            face_model_version: self.face_model_version,
+            searched_face_bounding_box: self.searched_face_bounding_box
+            ,
+            searched_face_confidence: self.searched_face_confidence
+            ,
+            face_matches: self.face_matches
+            ,
+            face_model_version: self.face_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

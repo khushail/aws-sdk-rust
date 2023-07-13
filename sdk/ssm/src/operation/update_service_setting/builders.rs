@@ -3,172 +3,182 @@ pub use crate::operation::update_service_setting::_update_service_setting_output
 
 pub use crate::operation::update_service_setting::_update_service_setting_input::UpdateServiceSettingInputBuilder;
 
+impl UpdateServiceSettingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_service_setting::UpdateServiceSettingOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_service_setting::UpdateServiceSettingError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_service_setting();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateServiceSetting`.
-///
-/// <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p>
-/// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <code>GetServiceSetting</code> API operation to view the current value. Or, use the <code>ResetServiceSetting</code> to change the value back to the original value defined by the Amazon Web Services service team.</p>
+/// 
+/// <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p> 
+/// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <code>GetServiceSetting</code> API operation to view the current value. Or, use the <code>ResetServiceSetting</code> to change the value back to the original value defined by the Amazon Web Services service team.</p> 
 /// <p>Update the service setting for the account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceSettingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder,
+                    inner: crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder,
 }
-impl UpdateServiceSettingFluentBuilder {
+impl UpdateServiceSettingFluentBuilder  {
     /// Creates a new `UpdateServiceSetting`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_service_setting::UpdateServiceSetting,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_setting::UpdateServiceSettingError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateServiceSetting as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_setting::UpdateServiceSettingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_setting::UpdateServiceSettingError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_service_setting::UpdateServiceSetting, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_service_setting::UpdateServiceSettingError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_service_setting::UpdateServiceSettingOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_service_setting::UpdateServiceSettingError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_setting::UpdateServiceSettingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_setting::UpdateServiceSettingError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_service_setting::UpdateServiceSetting,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_setting::UpdateServiceSettingError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>
-    /// <ul>
-    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-    /// </ul> <note>
-    /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_service_setting::UpdateServiceSettingOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_service_setting::UpdateServiceSettingError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_service_setting::UpdateServiceSetting, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_service_setting::UpdateServiceSettingError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p> 
+    /// <ul> 
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> 
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> 
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> 
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p> 
     /// </note>
     pub fn setting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.setting_id(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>
-    /// <ul>
-    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-    /// </ul> <note>
-    /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p> 
+    /// <ul> 
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> 
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> 
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> 
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p> 
     /// </note>
     pub fn set_setting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_setting_id(input);
         self
     }
-    /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
-    /// <ul>
-    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li>
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p> 
+    /// <ul> 
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> 
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> 
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> 
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p> 
+    /// </note>
+    pub fn get_setting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_setting_id()
+    }
+    /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p> 
+    /// <ul> 
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li> 
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li> 
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li> 
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li> 
     /// </ul>
-    pub fn setting_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn setting_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.setting_value(input.into());
         self
     }
-    /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
-    /// <ul>
-    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li>
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
+    /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p> 
+    /// <ul> 
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li> 
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li> 
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li> 
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li> 
     /// </ul>
-    pub fn set_setting_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_setting_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_setting_value(input);
         self
     }
+    /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p> 
+    /// <ul> 
+    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li> 
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li> 
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li> 
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li> 
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> 
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li> 
+    /// </ul>
+    pub fn get_setting_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_setting_value()
+    }
 }
+

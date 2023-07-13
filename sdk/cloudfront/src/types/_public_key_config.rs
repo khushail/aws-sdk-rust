@@ -3,7 +3,7 @@
 /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicKeyConfig {
+pub struct PublicKeyConfig  {
     /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
     #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct PublicKeyConfig {
 }
 impl PublicKeyConfig {
     /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
+    pub fn caller_reference(&self) -> ::std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
     /// <p>A name to help identify the public key.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
-    pub fn encoded_key(&self) -> ::std::option::Option<&str> {
+    pub fn encoded_key(&self) -> ::std::option::Option<& str> {
         self.encoded_key.as_deref()
     }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl PublicKeyConfig {
 
 /// A builder for [`PublicKeyConfig`](crate::types::PublicKeyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicKeyConfigBuilder {
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -55,20 +53,17 @@ pub struct PublicKeyConfigBuilder {
 }
 impl PublicKeyConfigBuilder {
     /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.caller_reference = input;
-        self
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.caller_reference = input; self
+    }
+    /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
     }
     /// <p>A name to help identify the public key.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,8 +72,11 @@ impl PublicKeyConfigBuilder {
     }
     /// <p>A name to help identify the public key.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A name to help identify the public key.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub fn encoded_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +85,11 @@ impl PublicKeyConfigBuilder {
     }
     /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub fn set_encoded_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encoded_key = input;
-        self
+        self.encoded_key = input; self
+    }
+    /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
+    pub fn get_encoded_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoded_key
     }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,16 +98,24 @@ impl PublicKeyConfigBuilder {
     }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
+    }
+    /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`PublicKeyConfig`](crate::types::PublicKeyConfig).
     pub fn build(self) -> crate::types::PublicKeyConfig {
         crate::types::PublicKeyConfig {
-            caller_reference: self.caller_reference,
-            name: self.name,
-            encoded_key: self.encoded_key,
-            comment: self.comment,
+            caller_reference: self.caller_reference
+            ,
+            name: self.name
+            ,
+            encoded_key: self.encoded_key
+            ,
+            comment: self.comment
+            ,
         }
     }
 }
+

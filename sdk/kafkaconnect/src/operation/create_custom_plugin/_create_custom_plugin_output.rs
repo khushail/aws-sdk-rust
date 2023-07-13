@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomPluginOutput {
+pub struct CreateCustomPluginOutput  {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
     #[doc(hidden)]
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
@@ -19,15 +19,15 @@ pub struct CreateCustomPluginOutput {
 }
 impl CreateCustomPluginOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> ::std::option::Option<& str> {
         self.custom_plugin_arn.as_deref()
     }
     /// <p>The state of the custom plugin.</p>
-    pub fn custom_plugin_state(&self) -> ::std::option::Option<&crate::types::CustomPluginState> {
+    pub fn custom_plugin_state(&self) -> ::std::option::Option<& crate::types::CustomPluginState> {
         self.custom_plugin_state.as_ref()
     }
     /// <p>The name of the custom plugin.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The revision of the custom plugin.</p>
@@ -36,23 +36,20 @@ impl CreateCustomPluginOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for CreateCustomPluginOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateCustomPluginOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomPluginOutput`](crate::operation::create_custom_plugin::CreateCustomPluginOutput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_plugin::builders::CreateCustomPluginOutputBuilder {
+    pub fn builder() -> crate::operation::create_custom_plugin::builders::CreateCustomPluginOutputBuilder {
         crate::operation::create_custom_plugin::builders::CreateCustomPluginOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomPluginOutput`](crate::operation::create_custom_plugin::CreateCustomPluginOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomPluginOutputBuilder {
     pub(crate) custom_plugin_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_plugin_state: ::std::option::Option<crate::types::CustomPluginState>,
@@ -62,20 +59,17 @@ pub struct CreateCustomPluginOutputBuilder {
 }
 impl CreateCustomPluginOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
-    pub fn custom_plugin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
-    pub fn set_custom_plugin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.custom_plugin_arn = input;
-        self
+    pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_plugin_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
+    pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_plugin_arn
     }
     /// <p>The state of the custom plugin.</p>
     pub fn custom_plugin_state(mut self, input: crate::types::CustomPluginState) -> Self {
@@ -83,12 +77,12 @@ impl CreateCustomPluginOutputBuilder {
         self
     }
     /// <p>The state of the custom plugin.</p>
-    pub fn set_custom_plugin_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomPluginState>,
-    ) -> Self {
-        self.custom_plugin_state = input;
-        self
+    pub fn set_custom_plugin_state(mut self, input: ::std::option::Option<crate::types::CustomPluginState>) -> Self {
+        self.custom_plugin_state = input; self
+    }
+    /// <p>The state of the custom plugin.</p>
+    pub fn get_custom_plugin_state(&self) -> &::std::option::Option<crate::types::CustomPluginState> {
+        &self.custom_plugin_state
     }
     /// <p>The name of the custom plugin.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,8 +91,11 @@ impl CreateCustomPluginOutputBuilder {
     }
     /// <p>The name of the custom plugin.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the custom plugin.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn revision(mut self, input: i64) -> Self {
@@ -107,26 +104,35 @@ impl CreateCustomPluginOutputBuilder {
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
+    }
+    /// <p>The revision of the custom plugin.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        &self.revision
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateCustomPluginOutput`](crate::operation::create_custom_plugin::CreateCustomPluginOutput).
     pub fn build(self) -> crate::operation::create_custom_plugin::CreateCustomPluginOutput {
         crate::operation::create_custom_plugin::CreateCustomPluginOutput {
-            custom_plugin_arn: self.custom_plugin_arn,
-            custom_plugin_state: self.custom_plugin_state,
-            name: self.name,
-            revision: self.revision.unwrap_or_default(),
+            custom_plugin_arn: self.custom_plugin_arn
+            ,
+            custom_plugin_state: self.custom_plugin_state
+            ,
+            name: self.name
+            ,
+            revision: self.revision
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

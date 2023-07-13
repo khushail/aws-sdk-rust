@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContainerRecipeOutput {
+pub struct GetContainerRecipeOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -13,32 +13,29 @@ pub struct GetContainerRecipeOutput {
 }
 impl GetContainerRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The container recipe object that is returned.</p>
-    pub fn container_recipe(&self) -> ::std::option::Option<&crate::types::ContainerRecipe> {
+    pub fn container_recipe(&self) -> ::std::option::Option<& crate::types::ContainerRecipe> {
         self.container_recipe.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetContainerRecipeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetContainerRecipeOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerRecipeOutput`](crate::operation::get_container_recipe::GetContainerRecipeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_container_recipe::builders::GetContainerRecipeOutputBuilder {
+    pub fn builder() -> crate::operation::get_container_recipe::builders::GetContainerRecipeOutputBuilder {
         crate::operation::get_container_recipe::builders::GetContainerRecipeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerRecipeOutput`](crate::operation::get_container_recipe::GetContainerRecipeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerRecipeOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) container_recipe: ::std::option::Option<crate::types::ContainerRecipe>,
@@ -52,8 +49,11 @@ impl GetContainerRecipeOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
+    }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>The container recipe object that is returned.</p>
     pub fn container_recipe(mut self, input: crate::types::ContainerRecipe) -> Self {
@@ -61,28 +61,31 @@ impl GetContainerRecipeOutputBuilder {
         self
     }
     /// <p>The container recipe object that is returned.</p>
-    pub fn set_container_recipe(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerRecipe>,
-    ) -> Self {
-        self.container_recipe = input;
-        self
+    pub fn set_container_recipe(mut self, input: ::std::option::Option<crate::types::ContainerRecipe>) -> Self {
+        self.container_recipe = input; self
+    }
+    /// <p>The container recipe object that is returned.</p>
+    pub fn get_container_recipe(&self) -> &::std::option::Option<crate::types::ContainerRecipe> {
+        &self.container_recipe
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetContainerRecipeOutput`](crate::operation::get_container_recipe::GetContainerRecipeOutput).
     pub fn build(self) -> crate::operation::get_container_recipe::GetContainerRecipeOutput {
         crate::operation::get_container_recipe::GetContainerRecipeOutput {
-            request_id: self.request_id,
-            container_recipe: self.container_recipe,
+            request_id: self.request_id
+            ,
+            container_recipe: self.container_recipe
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

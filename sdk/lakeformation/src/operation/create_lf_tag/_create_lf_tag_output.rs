@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLfTagOutput {
+pub struct CreateLfTagOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for CreateLfTagOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateLfTagOutput {
     /// Creates a new builder-style object to manufacture [`CreateLfTagOutput`](crate::operation::create_lf_tag::CreateLfTagOutput).
     pub fn builder() -> crate::operation::create_lf_tag::builders::CreateLfTagOutputBuilder {
@@ -19,22 +19,20 @@ impl CreateLfTagOutput {
 
 /// A builder for [`CreateLfTagOutput`](crate::operation::create_lf_tag::CreateLfTagOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLfTagOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateLfTagOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateLfTagOutput`](crate::operation::create_lf_tag::CreateLfTagOutput).
     pub fn build(self) -> crate::operation::create_lf_tag::CreateLfTagOutput {
         crate::operation::create_lf_tag::CreateLfTagOutput {
@@ -42,3 +40,4 @@ impl CreateLfTagOutputBuilder {
         }
     }
 }
+

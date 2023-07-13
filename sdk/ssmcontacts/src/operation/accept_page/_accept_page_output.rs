@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptPageOutput {
+pub struct AcceptPageOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for AcceptPageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AcceptPageOutput {
     /// Creates a new builder-style object to manufacture [`AcceptPageOutput`](crate::operation::accept_page::AcceptPageOutput).
     pub fn builder() -> crate::operation::accept_page::builders::AcceptPageOutputBuilder {
@@ -19,22 +19,20 @@ impl AcceptPageOutput {
 
 /// A builder for [`AcceptPageOutput`](crate::operation::accept_page::AcceptPageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptPageOutputBuilder {
     _request_id: Option<String>,
 }
 impl AcceptPageOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AcceptPageOutput`](crate::operation::accept_page::AcceptPageOutput).
     pub fn build(self) -> crate::operation::accept_page::AcceptPageOutput {
         crate::operation::accept_page::AcceptPageOutput {
@@ -42,3 +40,4 @@ impl AcceptPageOutputBuilder {
         }
     }
 }
+

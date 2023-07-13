@@ -3,7 +3,7 @@
 /// <p>Request to flush authorizer cache entries on a specified stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlushStageAuthorizersCacheInput {
+pub struct FlushStageAuthorizersCacheInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
@@ -13,26 +13,24 @@ pub struct FlushStageAuthorizersCacheInput {
 }
 impl FlushStageAuthorizersCacheInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the stage to flush.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
 impl FlushStageAuthorizersCacheInput {
     /// Creates a new builder-style object to manufacture [`FlushStageAuthorizersCacheInput`](crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheInput).
-    pub fn builder() -> crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheInputBuilder{
+    pub fn builder() -> crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheInputBuilder {
         crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheInputBuilder::default()
     }
 }
 
 /// A builder for [`FlushStageAuthorizersCacheInput`](crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlushStageAuthorizersCacheInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl FlushStageAuthorizersCacheInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
     }
     /// <p>The name of the stage to flush.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +56,22 @@ impl FlushStageAuthorizersCacheInputBuilder {
     }
     /// <p>The name of the stage to flush.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
+    }
+    /// <p>The name of the stage to flush.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`FlushStageAuthorizersCacheInput`](crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheInput {
-                rest_api_id: self.rest_api_id,
-                stage_name: self.stage_name,
-            },
+                rest_api_id: self.rest_api_id
+                ,
+                stage_name: self.stage_name
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the result of the evaluation of a data quality rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityRuleResult {
+pub struct DataQualityRuleResult  {
     /// <p>The name of the data quality rule.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,23 +16,30 @@ pub struct DataQualityRuleResult {
     /// <p>A pass or fail status for the rule.</p>
     #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::DataQualityRuleResultStatus>,
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    #[doc(hidden)]
+    pub evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl DataQualityRuleResult {
     /// <p>The name of the data quality rule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the data quality rule.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An evaluation message.</p>
-    pub fn evaluation_message(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_message(&self) -> ::std::option::Option<& str> {
         self.evaluation_message.as_deref()
     }
     /// <p>A pass or fail status for the rule.</p>
-    pub fn result(&self) -> ::std::option::Option<&crate::types::DataQualityRuleResultStatus> {
+    pub fn result(&self) -> ::std::option::Option<& crate::types::DataQualityRuleResultStatus> {
         self.result.as_ref()
+    }
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    pub fn evaluated_metrics(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, f64>> {
+        self.evaluated_metrics.as_ref()
     }
 }
 impl DataQualityRuleResult {
@@ -44,14 +51,13 @@ impl DataQualityRuleResult {
 
 /// A builder for [`DataQualityRuleResult`](crate::types::DataQualityRuleResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQualityRuleResultBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_message: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<crate::types::DataQualityRuleResultStatus>,
+    pub(crate) evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl DataQualityRuleResultBuilder {
     /// <p>The name of the data quality rule.</p>
@@ -61,8 +67,11 @@ impl DataQualityRuleResultBuilder {
     }
     /// <p>The name of the data quality rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the data quality rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A description of the data quality rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +80,24 @@ impl DataQualityRuleResultBuilder {
     }
     /// <p>A description of the data quality rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the data quality rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>An evaluation message.</p>
-    pub fn evaluation_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An evaluation message.</p>
-    pub fn set_evaluation_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.evaluation_message = input;
-        self
+    pub fn set_evaluation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_message = input; self
+    }
+    /// <p>An evaluation message.</p>
+    pub fn get_evaluation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_message
     }
     /// <p>A pass or fail status for the rule.</p>
     pub fn result(mut self, input: crate::types::DataQualityRuleResultStatus) -> Self {
@@ -96,20 +105,46 @@ impl DataQualityRuleResultBuilder {
         self
     }
     /// <p>A pass or fail status for the rule.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityRuleResultStatus>,
-    ) -> Self {
-        self.result = input;
-        self
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::DataQualityRuleResultStatus>) -> Self {
+        self.result = input; self
+    }
+    /// <p>A pass or fail status for the rule.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::DataQualityRuleResultStatus> {
+        &self.result
+    }
+    /// Adds a key-value pair to `evaluated_metrics`.
+    ///
+    /// To override the contents of this collection use [`set_evaluated_metrics`](Self::set_evaluated_metrics).
+    ///
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    pub fn evaluated_metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
+        let mut hash_map = self.evaluated_metrics.unwrap_or_default();
+                        hash_map.insert(k.into(), v);
+                        self.evaluated_metrics = ::std::option::Option::Some(hash_map);
+                        self
+    }
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    pub fn set_evaluated_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>) -> Self {
+        self.evaluated_metrics = input; self
+    }
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    pub fn get_evaluated_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+        &self.evaluated_metrics
     }
     /// Consumes the builder and constructs a [`DataQualityRuleResult`](crate::types::DataQualityRuleResult).
     pub fn build(self) -> crate::types::DataQualityRuleResult {
         crate::types::DataQualityRuleResult {
-            name: self.name,
-            description: self.description,
-            evaluation_message: self.evaluation_message,
-            result: self.result,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            evaluation_message: self.evaluation_message
+            ,
+            result: self.result
+            ,
+            evaluated_metrics: self.evaluated_metrics
+            ,
         }
     }
 }
+

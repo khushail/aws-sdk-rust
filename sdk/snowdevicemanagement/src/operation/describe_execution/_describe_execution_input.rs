@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExecutionInput {
+pub struct DescribeExecutionInput  {
     /// <p>The ID of the task that the action is describing.</p>
     #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct DescribeExecutionInput {
 }
 impl DescribeExecutionInput {
     /// <p>The ID of the task that the action is describing.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The ID of the managed device.</p>
-    pub fn managed_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn managed_device_id(&self) -> ::std::option::Option<& str> {
         self.managed_device_id.as_deref()
     }
 }
 impl DescribeExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
-    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionInputBuilder {
         crate::operation::describe_execution::builders::DescribeExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExecutionInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) managed_device_id: ::std::option::Option<::std::string::String>,
@@ -45,37 +42,35 @@ impl DescribeExecutionInputBuilder {
     }
     /// <p>The ID of the task that the action is describing.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
+    }
+    /// <p>The ID of the task that the action is describing.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// <p>The ID of the managed device.</p>
-    pub fn managed_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the managed device.</p>
-    pub fn set_managed_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.managed_device_id = input;
-        self
+    pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_device_id = input; self
+    }
+    /// <p>The ID of the managed device.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_id
     }
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_execution::DescribeExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_execution::DescribeExecutionInput {
-                task_id: self.task_id,
-                managed_device_id: self.managed_device_id,
-            },
+                task_id: self.task_id
+                ,
+                managed_device_id: self.managed_device_id
+                ,
+            }
         )
     }
 }
+

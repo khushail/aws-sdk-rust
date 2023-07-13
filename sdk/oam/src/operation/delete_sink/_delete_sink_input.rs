@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSinkInput {
+pub struct DeleteSinkInput  {
     /// <p>The ARN of the sink to delete.</p>
     #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSinkInput {
     /// <p>The ARN of the sink to delete.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteSinkInput {
 
 /// A builder for [`DeleteSinkInput`](crate::operation::delete_sink::DeleteSinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSinkInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteSinkInputBuilder {
     }
     /// <p>The ARN of the sink to delete.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
+    }
+    /// <p>The ARN of the sink to delete.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteSinkInput`](crate::operation::delete_sink::DeleteSinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_sink::DeleteSinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_sink::DeleteSinkInput {
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sink::DeleteSinkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_sink::DeleteSinkInput {
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

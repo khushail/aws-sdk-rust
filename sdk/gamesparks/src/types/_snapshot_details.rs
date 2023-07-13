@@ -3,7 +3,7 @@
 /// <p>Properties that provide details of a snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotDetails {
+pub struct SnapshotDetails  {
     /// <p>The identifier of the snapshot.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,9 +12,7 @@ pub struct SnapshotDetails {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The sections in the snapshot.</p>
     #[doc(hidden)]
-    pub sections: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    >,
+    pub sections: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>,
     /// <p>The timestamp of when the snapshot was created.</p>
     #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -24,27 +22,23 @@ pub struct SnapshotDetails {
 }
 impl SnapshotDetails {
     /// <p>The identifier of the snapshot.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description of the snapshot.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The sections in the snapshot.</p>
-    pub fn sections(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    > {
+    pub fn sections(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, crate::types::Section>> {
         self.sections.as_ref()
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The timestamp of when the snapshot was last updated.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -57,15 +51,11 @@ impl SnapshotDetails {
 
 /// A builder for [`SnapshotDetails`](crate::types::SnapshotDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) sections: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    >,
+    pub(crate) sections: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -77,8 +67,11 @@ impl SnapshotDetailsBuilder {
     }
     /// <p>The identifier of the snapshot.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the snapshot.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The description of the snapshot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,33 +80,30 @@ impl SnapshotDetailsBuilder {
     }
     /// <p>The description of the snapshot.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the snapshot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `sections`.
     ///
     /// To override the contents of this collection use [`set_sections`](Self::set_sections).
     ///
     /// <p>The sections in the snapshot.</p>
-    pub fn sections(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Section,
-    ) -> Self {
+    pub fn sections(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Section) -> Self {
         let mut hash_map = self.sections.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.sections = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.sections = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The sections in the snapshot.</p>
-    pub fn set_sections(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-        >,
-    ) -> Self {
-        self.sections = input;
-        self
+    pub fn set_sections(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>) -> Self {
+        self.sections = input; self
+    }
+    /// <p>The sections in the snapshot.</p>
+    pub fn get_sections(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>> {
+        &self.sections
     }
     /// <p>The timestamp of when the snapshot was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -121,12 +111,12 @@ impl SnapshotDetailsBuilder {
         self
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created = input;
-        self
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created = input; self
+    }
+    /// <p>The timestamp of when the snapshot was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The timestamp of when the snapshot was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -134,21 +124,27 @@ impl SnapshotDetailsBuilder {
         self
     }
     /// <p>The timestamp of when the snapshot was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
+    }
+    /// <p>The timestamp of when the snapshot was last updated.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// Consumes the builder and constructs a [`SnapshotDetails`](crate::types::SnapshotDetails).
     pub fn build(self) -> crate::types::SnapshotDetails {
         crate::types::SnapshotDetails {
-            id: self.id,
-            description: self.description,
-            sections: self.sections,
-            created: self.created,
-            last_updated: self.last_updated,
+            id: self.id
+            ,
+            description: self.description
+            ,
+            sections: self.sections
+            ,
+            created: self.created
+            ,
+            last_updated: self.last_updated
+            ,
         }
     }
 }
+

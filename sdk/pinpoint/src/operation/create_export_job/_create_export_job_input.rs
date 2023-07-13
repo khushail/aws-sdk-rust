@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateExportJobInput {
+pub struct CreateExportJobInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct CreateExportJobInput {
 }
 impl CreateExportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    pub fn export_job_request(&self) -> ::std::option::Option<&crate::types::ExportJobRequest> {
+    pub fn export_job_request(&self) -> ::std::option::Option<& crate::types::ExportJobRequest> {
         self.export_job_request.as_ref()
     }
 }
@@ -29,29 +29,24 @@ impl CreateExportJobInput {
 
 /// A builder for [`CreateExportJobInput`](crate::operation::create_export_job::CreateExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExportJobInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) export_job_request: ::std::option::Option<crate::types::ExportJobRequest>,
 }
 impl CreateExportJobInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub fn export_job_request(mut self, input: crate::types::ExportJobRequest) -> Self {
@@ -59,23 +54,23 @@ impl CreateExportJobInputBuilder {
         self
     }
     /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    pub fn set_export_job_request(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportJobRequest>,
-    ) -> Self {
-        self.export_job_request = input;
-        self
+    pub fn set_export_job_request(mut self, input: ::std::option::Option<crate::types::ExportJobRequest>) -> Self {
+        self.export_job_request = input; self
+    }
+    /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    pub fn get_export_job_request(&self) -> &::std::option::Option<crate::types::ExportJobRequest> {
+        &self.export_job_request
     }
     /// Consumes the builder and constructs a [`CreateExportJobInput`](crate::operation::create_export_job::CreateExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_export_job::CreateExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_export_job::CreateExportJobInput {
-            application_id: self.application_id,
-            export_job_request: self.export_job_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_export_job::CreateExportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_export_job::CreateExportJobInput {
+                application_id: self.application_id
+                ,
+                export_job_request: self.export_job_request
+                ,
+            }
+        )
     }
 }
+

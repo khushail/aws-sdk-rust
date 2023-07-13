@@ -3,8 +3,8 @@
 /// <p>Information about the standby WorkSpace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PendingCreateStandbyWorkspacesRequest {
-    /// <p>Describes the standby WorkSpace that was created.</p>
+pub struct PendingCreateStandbyWorkspacesRequest  {
+    /// <p>Describes the standby WorkSpace that was created.</p> 
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
     #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -19,21 +19,21 @@ pub struct PendingCreateStandbyWorkspacesRequest {
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl PendingCreateStandbyWorkspacesRequest {
-    /// <p>Describes the standby WorkSpace that was created.</p>
+    /// <p>Describes the standby WorkSpace that was created.</p> 
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The operational state of the standby WorkSpace.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::WorkspaceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::WorkspaceState> {
         self.state.as_ref()
     }
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -46,9 +46,7 @@ impl PendingCreateStandbyWorkspacesRequest {
 
 /// A builder for [`PendingCreateStandbyWorkspacesRequest`](crate::types::PendingCreateStandbyWorkspacesRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingCreateStandbyWorkspacesRequestBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,21 @@ pub struct PendingCreateStandbyWorkspacesRequestBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl PendingCreateStandbyWorkspacesRequestBuilder {
-    /// <p>Describes the standby WorkSpace that was created.</p>
+    /// <p>Describes the standby WorkSpace that was created.</p> 
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Describes the standby WorkSpace that was created.</p>
+    /// <p>Describes the standby WorkSpace that was created.</p> 
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
+    }
+    /// <p>Describes the standby WorkSpace that was created.</p> 
+    /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,8 +77,11 @@ impl PendingCreateStandbyWorkspacesRequestBuilder {
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
+    }
+    /// <p>The identifier of the directory for the standby WorkSpace.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>The operational state of the standby WorkSpace.</p>
     pub fn state(mut self, input: crate::types::WorkspaceState) -> Self {
@@ -85,8 +90,11 @@ impl PendingCreateStandbyWorkspacesRequestBuilder {
     }
     /// <p>The operational state of the standby WorkSpace.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The operational state of the standby WorkSpace.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkspaceState> {
+        &self.state
     }
     /// <p>The identifier of the standby WorkSpace.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,16 +103,24 @@ impl PendingCreateStandbyWorkspacesRequestBuilder {
     }
     /// <p>The identifier of the standby WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
+    }
+    /// <p>The identifier of the standby WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Consumes the builder and constructs a [`PendingCreateStandbyWorkspacesRequest`](crate::types::PendingCreateStandbyWorkspacesRequest).
     pub fn build(self) -> crate::types::PendingCreateStandbyWorkspacesRequest {
         crate::types::PendingCreateStandbyWorkspacesRequest {
-            user_name: self.user_name,
-            directory_id: self.directory_id,
-            state: self.state,
-            workspace_id: self.workspace_id,
+            user_name: self.user_name
+            ,
+            directory_id: self.directory_id
+            ,
+            state: self.state
+            ,
+            workspace_id: self.workspace_id
+            ,
         }
     }
 }
+

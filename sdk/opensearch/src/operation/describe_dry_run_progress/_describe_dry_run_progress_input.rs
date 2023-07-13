@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDryRunProgressInput {
+pub struct DescribeDryRunProgressInput  {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct DescribeDryRunProgressInput {
 }
 impl DescribeDryRunProgressInput {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique identifier of the dry run.</p>
-    pub fn dry_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn dry_run_id(&self) -> ::std::option::Option<& str> {
         self.dry_run_id.as_deref()
     }
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
@@ -29,18 +29,14 @@ impl DescribeDryRunProgressInput {
 }
 impl DescribeDryRunProgressInput {
     /// Creates a new builder-style object to manufacture [`DescribeDryRunProgressInput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput).
-    pub fn builder(
-    ) -> crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder {
         crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDryRunProgressInput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDryRunProgressInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run_id: ::std::option::Option<::std::string::String>,
@@ -54,8 +50,11 @@ impl DescribeDryRunProgressInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>The unique identifier of the dry run.</p>
     pub fn dry_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,8 +63,11 @@ impl DescribeDryRunProgressInputBuilder {
     }
     /// <p>The unique identifier of the dry run.</p>
     pub fn set_dry_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dry_run_id = input;
-        self
+        self.dry_run_id = input; self
+    }
+    /// <p>The unique identifier of the dry run.</p>
+    pub fn get_dry_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dry_run_id
     }
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
     pub fn load_dry_run_config(mut self, input: bool) -> Self {
@@ -74,22 +76,24 @@ impl DescribeDryRunProgressInputBuilder {
     }
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
     pub fn set_load_dry_run_config(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.load_dry_run_config = input;
-        self
+        self.load_dry_run_config = input; self
+    }
+    /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
+    pub fn get_load_dry_run_config(&self) -> &::std::option::Option<bool> {
+        &self.load_dry_run_config
     }
     /// Consumes the builder and constructs a [`DescribeDryRunProgressInput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput {
-                domain_name: self.domain_name,
-                dry_run_id: self.dry_run_id,
-                load_dry_run_config: self.load_dry_run_config,
-            },
+                domain_name: self.domain_name
+                ,
+                dry_run_id: self.dry_run_id
+                ,
+                load_dry_run_config: self.load_dry_run_config
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyAddressAttributeOutput {
+pub struct ModifyAddressAttributeOutput  {
     /// <p>Information about the Elastic IP address.</p>
     #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::AddressAttribute>,
@@ -10,29 +10,25 @@ pub struct ModifyAddressAttributeOutput {
 }
 impl ModifyAddressAttributeOutput {
     /// <p>Information about the Elastic IP address.</p>
-    pub fn address(&self) -> ::std::option::Option<&crate::types::AddressAttribute> {
+    pub fn address(&self) -> ::std::option::Option<& crate::types::AddressAttribute> {
         self.address.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for ModifyAddressAttributeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyAddressAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyAddressAttributeOutput`](crate::operation::modify_address_attribute::ModifyAddressAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_address_attribute::builders::ModifyAddressAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_address_attribute::builders::ModifyAddressAttributeOutputBuilder {
         crate::operation::modify_address_attribute::builders::ModifyAddressAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyAddressAttributeOutput`](crate::operation::modify_address_attribute::ModifyAddressAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyAddressAttributeOutputBuilder {
     pub(crate) address: ::std::option::Option<crate::types::AddressAttribute>,
     _request_id: Option<String>,
@@ -44,27 +40,29 @@ impl ModifyAddressAttributeOutputBuilder {
         self
     }
     /// <p>Information about the Elastic IP address.</p>
-    pub fn set_address(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressAttribute>,
-    ) -> Self {
-        self.address = input;
-        self
+    pub fn set_address(mut self, input: ::std::option::Option<crate::types::AddressAttribute>) -> Self {
+        self.address = input; self
+    }
+    /// <p>Information about the Elastic IP address.</p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::AddressAttribute> {
+        &self.address
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyAddressAttributeOutput`](crate::operation::modify_address_attribute::ModifyAddressAttributeOutput).
     pub fn build(self) -> crate::operation::modify_address_attribute::ModifyAddressAttributeOutput {
         crate::operation::modify_address_attribute::ModifyAddressAttributeOutput {
-            address: self.address,
+            address: self.address
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

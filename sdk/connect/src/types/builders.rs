@@ -149,11 +149,29 @@ pub use crate::types::_routing_profile_search_criteria::RoutingProfileSearchCrit
 
 pub use crate::types::_routing_profile_search_filter::RoutingProfileSearchFilterBuilder;
 
+pub use crate::types::_quick_connect::QuickConnectBuilder;
+
+pub use crate::types::_quick_connect_search_criteria::QuickConnectSearchCriteriaBuilder;
+
+pub use crate::types::_quick_connect_search_filter::QuickConnectSearchFilterBuilder;
+
 pub use crate::types::_queue::QueueBuilder;
 
 pub use crate::types::_queue_search_criteria::QueueSearchCriteriaBuilder;
 
 pub use crate::types::_queue_search_filter::QueueSearchFilterBuilder;
+
+pub use crate::types::_prompt::PromptBuilder;
+
+pub use crate::types::_prompt_search_criteria::PromptSearchCriteriaBuilder;
+
+pub use crate::types::_prompt_search_filter::PromptSearchFilterBuilder;
+
+pub use crate::types::_hours_of_operation::HoursOfOperationBuilder;
+
+pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteriaBuilder;
+
+pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchFilterBuilder;
 
 pub use crate::types::_available_number_summary::AvailableNumberSummaryBuilder;
 
@@ -305,10 +323,6 @@ pub use crate::types::_rule::RuleBuilder;
 
 pub use crate::types::_rule_trigger_event_source::RuleTriggerEventSourceBuilder;
 
-pub use crate::types::_quick_connect::QuickConnectBuilder;
-
-pub use crate::types::_prompt::PromptBuilder;
-
 pub use crate::types::_claimed_phone_number_summary::ClaimedPhoneNumberSummaryBuilder;
 
 pub use crate::types::_phone_number_status::PhoneNumberStatusBuilder;
@@ -316,8 +330,6 @@ pub use crate::types::_phone_number_status::PhoneNumberStatusBuilder;
 pub use crate::types::_instance::InstanceBuilder;
 
 pub use crate::types::_instance_status_reason::InstanceStatusReasonBuilder;
-
-pub use crate::types::_hours_of_operation::HoursOfOperationBuilder;
 
 pub use crate::types::_evaluation_form::EvaluationFormBuilder;
 
@@ -346,3 +358,4 @@ pub use crate::types::_agent_status::AgentStatusBuilder;
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentialsBuilder;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAddBuilder;
+

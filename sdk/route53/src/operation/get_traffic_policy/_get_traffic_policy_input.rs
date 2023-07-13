@@ -3,7 +3,7 @@
 /// <p>Gets information about a specific traffic policy version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrafficPolicyInput {
+pub struct GetTrafficPolicyInput  {
     /// <p>The ID of the traffic policy that you want to get information about.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct GetTrafficPolicyInput {
 }
 impl GetTrafficPolicyInput {
     /// <p>The ID of the traffic policy that you want to get information about.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version number of the traffic policy that you want to get information about.</p>
@@ -23,17 +23,14 @@ impl GetTrafficPolicyInput {
 }
 impl GetTrafficPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInput`](crate::operation::get_traffic_policy::GetTrafficPolicyInput).
-    pub fn builder() -> crate::operation::get_traffic_policy::builders::GetTrafficPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_traffic_policy::builders::GetTrafficPolicyInputBuilder {
         crate::operation::get_traffic_policy::builders::GetTrafficPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTrafficPolicyInput`](crate::operation::get_traffic_policy::GetTrafficPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrafficPolicyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
@@ -46,8 +43,11 @@ impl GetTrafficPolicyInputBuilder {
     }
     /// <p>The ID of the traffic policy that you want to get information about.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the traffic policy that you want to get information about.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The version number of the traffic policy that you want to get information about.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -56,21 +56,22 @@ impl GetTrafficPolicyInputBuilder {
     }
     /// <p>The version number of the traffic policy that you want to get information about.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version number of the traffic policy that you want to get information about.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`GetTrafficPolicyInput`](crate::operation::get_traffic_policy::GetTrafficPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_traffic_policy::GetTrafficPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_traffic_policy::GetTrafficPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_traffic_policy::GetTrafficPolicyInput {
-                id: self.id,
-                version: self.version,
-            },
+                id: self.id
+                ,
+                version: self.version
+                ,
+            }
         )
     }
 }
+

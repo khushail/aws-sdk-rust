@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyAppValidationOutputInput {
+pub struct NotifyAppValidationOutputInput  {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct NotifyAppValidationOutputInput {
 }
 impl NotifyAppValidationOutputInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The notification information.</p>
-    pub fn notification_context(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationContext> {
+    pub fn notification_context(&self) -> ::std::option::Option<& crate::types::NotificationContext> {
         self.notification_context.as_ref()
     }
 }
 impl NotifyAppValidationOutputInput {
     /// Creates a new builder-style object to manufacture [`NotifyAppValidationOutputInput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput).
-    pub fn builder() -> crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder{
+    pub fn builder() -> crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder {
         crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyAppValidationOutputInput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyAppValidationOutputInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) notification_context: ::std::option::Option<crate::types::NotificationContext>,
@@ -46,8 +42,11 @@ impl NotifyAppValidationOutputInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>The notification information.</p>
     pub fn notification_context(mut self, input: crate::types::NotificationContext) -> Self {
@@ -55,25 +54,23 @@ impl NotifyAppValidationOutputInputBuilder {
         self
     }
     /// <p>The notification information.</p>
-    pub fn set_notification_context(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationContext>,
-    ) -> Self {
-        self.notification_context = input;
-        self
+    pub fn set_notification_context(mut self, input: ::std::option::Option<crate::types::NotificationContext>) -> Self {
+        self.notification_context = input; self
+    }
+    /// <p>The notification information.</p>
+    pub fn get_notification_context(&self) -> &::std::option::Option<crate::types::NotificationContext> {
+        &self.notification_context
     }
     /// Consumes the builder and constructs a [`NotifyAppValidationOutputInput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput {
-                app_id: self.app_id,
-                notification_context: self.notification_context,
-            },
+                app_id: self.app_id
+                ,
+                notification_context: self.notification_context
+                ,
+            }
         )
     }
 }
+

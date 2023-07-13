@@ -3,7 +3,7 @@
 /// <p>The conditional formatting for the primary value of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GaugeChartPrimaryValueConditionalFormatting {
+pub struct GaugeChartPrimaryValueConditionalFormatting  {
     /// <p>The conditional formatting of the primary value text color.</p>
     #[doc(hidden)]
     pub text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
@@ -13,11 +13,11 @@ pub struct GaugeChartPrimaryValueConditionalFormatting {
 }
 impl GaugeChartPrimaryValueConditionalFormatting {
     /// <p>The conditional formatting of the primary value text color.</p>
-    pub fn text_color(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingColor> {
+    pub fn text_color(&self) -> ::std::option::Option<& crate::types::ConditionalFormattingColor> {
         self.text_color.as_ref()
     }
     /// <p>The conditional formatting of the primary value icon.</p>
-    pub fn icon(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingIcon> {
+    pub fn icon(&self) -> ::std::option::Option<& crate::types::ConditionalFormattingIcon> {
         self.icon.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl GaugeChartPrimaryValueConditionalFormatting {
 
 /// A builder for [`GaugeChartPrimaryValueConditionalFormatting`](crate::types::GaugeChartPrimaryValueConditionalFormatting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GaugeChartPrimaryValueConditionalFormattingBuilder {
     pub(crate) text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     pub(crate) icon: ::std::option::Option<crate::types::ConditionalFormattingIcon>,
@@ -44,12 +42,12 @@ impl GaugeChartPrimaryValueConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting of the primary value text color.</p>
-    pub fn set_text_color(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalFormattingColor>,
-    ) -> Self {
-        self.text_color = input;
-        self
+    pub fn set_text_color(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
+        self.text_color = input; self
+    }
+    /// <p>The conditional formatting of the primary value text color.</p>
+    pub fn get_text_color(&self) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
+        &self.text_color
     }
     /// <p>The conditional formatting of the primary value icon.</p>
     pub fn icon(mut self, input: crate::types::ConditionalFormattingIcon) -> Self {
@@ -57,18 +55,21 @@ impl GaugeChartPrimaryValueConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting of the primary value icon.</p>
-    pub fn set_icon(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalFormattingIcon>,
-    ) -> Self {
-        self.icon = input;
-        self
+    pub fn set_icon(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingIcon>) -> Self {
+        self.icon = input; self
+    }
+    /// <p>The conditional formatting of the primary value icon.</p>
+    pub fn get_icon(&self) -> &::std::option::Option<crate::types::ConditionalFormattingIcon> {
+        &self.icon
     }
     /// Consumes the builder and constructs a [`GaugeChartPrimaryValueConditionalFormatting`](crate::types::GaugeChartPrimaryValueConditionalFormatting).
     pub fn build(self) -> crate::types::GaugeChartPrimaryValueConditionalFormatting {
         crate::types::GaugeChartPrimaryValueConditionalFormatting {
-            text_color: self.text_color,
-            icon: self.icon,
+            text_color: self.text_color
+            ,
+            icon: self.icon
+            ,
         }
     }
 }
+

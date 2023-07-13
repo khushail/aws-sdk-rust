@@ -3,7 +3,7 @@
 /// <p>GSM local ID information, which corresponds to the local identification parameters of a GSM cell.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GsmLocalId {
+pub struct GsmLocalId  {
     /// <p>GSM base station identity code (BSIC).</p>
     #[doc(hidden)]
     pub bsic: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl GsmLocalId {
 
 /// A builder for [`GsmLocalId`](crate::types::GsmLocalId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GsmLocalIdBuilder {
     pub(crate) bsic: ::std::option::Option<i32>,
     pub(crate) bcch: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl GsmLocalIdBuilder {
     }
     /// <p>GSM base station identity code (BSIC).</p>
     pub fn set_bsic(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bsic = input;
-        self
+        self.bsic = input; self
+    }
+    /// <p>GSM base station identity code (BSIC).</p>
+    pub fn get_bsic(&self) -> &::std::option::Option<i32> {
+        &self.bsic
     }
     /// <p>GSM broadcast control channel.</p>
     pub fn bcch(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl GsmLocalIdBuilder {
     }
     /// <p>GSM broadcast control channel.</p>
     pub fn set_bcch(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bcch = input;
-        self
+        self.bcch = input; self
+    }
+    /// <p>GSM broadcast control channel.</p>
+    pub fn get_bcch(&self) -> &::std::option::Option<i32> {
+        &self.bcch
     }
     /// Consumes the builder and constructs a [`GsmLocalId`](crate::types::GsmLocalId).
     pub fn build(self) -> crate::types::GsmLocalId {
         crate::types::GsmLocalId {
-            bsic: self.bsic,
-            bcch: self.bcch,
+            bsic: self.bsic
+            ,
+            bcch: self.bcch
+            ,
         }
     }
 }
+

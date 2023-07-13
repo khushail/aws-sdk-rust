@@ -3,7 +3,7 @@
 /// <p>An HTTP response header name and its value. CloudFront includes this header in HTTP responses that it sends for requests that match a cache behavior that's associated with this response headers policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyCustomHeader {
+pub struct ResponseHeadersPolicyCustomHeader  {
     /// <p>The HTTP response header name.</p>
     #[doc(hidden)]
     pub header: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct ResponseHeadersPolicyCustomHeader {
 }
 impl ResponseHeadersPolicyCustomHeader {
     /// <p>The HTTP response header name.</p>
-    pub fn header(&self) -> ::std::option::Option<&str> {
+    pub fn header(&self) -> ::std::option::Option<& str> {
         self.header.as_deref()
     }
     /// <p>The value for the HTTP response header.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
@@ -37,9 +37,7 @@ impl ResponseHeadersPolicyCustomHeader {
 
 /// A builder for [`ResponseHeadersPolicyCustomHeader`](crate::types::ResponseHeadersPolicyCustomHeader).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeaderBuilder {
     pub(crate) header: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
     }
     /// <p>The HTTP response header name.</p>
     pub fn set_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
+    }
+    /// <p>The HTTP response header name.</p>
+    pub fn get_header(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header
     }
     /// <p>The value for the HTTP response header.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
     }
     /// <p>The value for the HTTP response header.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value for the HTTP response header.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
     pub fn r#override(mut self, input: bool) -> Self {
@@ -73,15 +77,22 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
     }
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
     pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#override = input;
-        self
+        self.r#override = input; self
+    }
+    /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
+    pub fn get_override(&self) -> &::std::option::Option<bool> {
+        &self.r#override
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyCustomHeader`](crate::types::ResponseHeadersPolicyCustomHeader).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyCustomHeader {
         crate::types::ResponseHeadersPolicyCustomHeader {
-            header: self.header,
-            value: self.value,
-            r#override: self.r#override,
+            header: self.header
+            ,
+            value: self.value
+            ,
+            r#override: self.r#override
+            ,
         }
     }
 }
+

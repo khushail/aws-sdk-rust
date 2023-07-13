@@ -3,7 +3,7 @@
 /// <p>Describes a stateless rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallStatelessRule {
+pub struct FirewallStatelessRule  {
     /// <p>The ARN of the stateless rule group.</p>
     #[doc(hidden)]
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
@@ -31,31 +31,31 @@ pub struct FirewallStatelessRule {
 }
 impl FirewallStatelessRule {
     /// <p>The ARN of the stateless rule group.</p>
-    pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_arn(&self) -> ::std::option::Option<& str> {
         self.rule_group_arn.as_deref()
     }
     /// <p>The source IP addresses, in CIDR notation.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn sources(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.sources.as_deref()
     }
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn destinations(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.destinations.as_deref()
     }
     /// <p>The source ports.</p>
-    pub fn source_ports(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
+    pub fn source_ports(&self) -> ::std::option::Option<& [crate::types::PortRange]> {
         self.source_ports.as_deref()
     }
     /// <p>The destination ports.</p>
-    pub fn destination_ports(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
+    pub fn destination_ports(&self) -> ::std::option::Option<& [crate::types::PortRange]> {
         self.destination_ports.as_deref()
     }
     /// <p>The protocols.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[i32]> {
+    pub fn protocols(&self) -> ::std::option::Option<& [i32]> {
         self.protocols.as_deref()
     }
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>forward_to_site</code>.</p>
-    pub fn rule_action(&self) -> ::std::option::Option<&str> {
+    pub fn rule_action(&self) -> ::std::option::Option<& str> {
         self.rule_action.as_deref()
     }
     /// <p>The rule priority.</p>
@@ -72,9 +72,7 @@ impl FirewallStatelessRule {
 
 /// A builder for [`FirewallStatelessRule`](crate::types::FirewallStatelessRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallStatelessRuleBuilder {
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -87,20 +85,17 @@ pub struct FirewallStatelessRuleBuilder {
 }
 impl FirewallStatelessRuleBuilder {
     /// <p>The ARN of the stateless rule group.</p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the stateless rule group.</p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.rule_group_arn = input;
-        self
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rule_group_arn = input; self
+    }
+    /// <p>The ARN of the stateless rule group.</p>
+    pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_arn
     }
     /// Appends an item to `sources`.
     ///
@@ -109,17 +104,17 @@ impl FirewallStatelessRuleBuilder {
     /// <p>The source IP addresses, in CIDR notation.</p>
     pub fn sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input.into());
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source IP addresses, in CIDR notation.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.sources = input; self
+    }
+    /// <p>The source IP addresses, in CIDR notation.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sources
     }
     /// Appends an item to `destinations`.
     ///
@@ -128,17 +123,17 @@ impl FirewallStatelessRuleBuilder {
     /// <p>The destination IP addresses, in CIDR notation.</p>
     pub fn destinations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input.into());
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.destinations = input; self
+    }
+    /// <p>The destination IP addresses, in CIDR notation.</p>
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destinations
     }
     /// Appends an item to `source_ports`.
     ///
@@ -147,17 +142,17 @@ impl FirewallStatelessRuleBuilder {
     /// <p>The source ports.</p>
     pub fn source_ports(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.source_ports.unwrap_or_default();
-        v.push(input);
-        self.source_ports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_ports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source ports.</p>
-    pub fn set_source_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
-        self.source_ports = input;
-        self
+    pub fn set_source_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
+        self.source_ports = input; self
+    }
+    /// <p>The source ports.</p>
+    pub fn get_source_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.source_ports
     }
     /// Appends an item to `destination_ports`.
     ///
@@ -166,17 +161,17 @@ impl FirewallStatelessRuleBuilder {
     /// <p>The destination ports.</p>
     pub fn destination_ports(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.destination_ports.unwrap_or_default();
-        v.push(input);
-        self.destination_ports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destination_ports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The destination ports.</p>
-    pub fn set_destination_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
-        self.destination_ports = input;
-        self
+    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
+        self.destination_ports = input; self
+    }
+    /// <p>The destination ports.</p>
+    pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.destination_ports
     }
     /// Appends an item to `protocols`.
     ///
@@ -185,14 +180,17 @@ impl FirewallStatelessRuleBuilder {
     /// <p>The protocols.</p>
     pub fn protocols(mut self, input: i32) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocols.</p>
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.protocols = input;
-        self
+        self.protocols = input; self
+    }
+    /// <p>The protocols.</p>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.protocols
     }
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>forward_to_site</code>.</p>
     pub fn rule_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,8 +199,11 @@ impl FirewallStatelessRuleBuilder {
     }
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>forward_to_site</code>.</p>
     pub fn set_rule_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_action = input;
-        self
+        self.rule_action = input; self
+    }
+    /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>forward_to_site</code>.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_action
     }
     /// <p>The rule priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -211,20 +212,32 @@ impl FirewallStatelessRuleBuilder {
     }
     /// <p>The rule priority.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
+    }
+    /// <p>The rule priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Consumes the builder and constructs a [`FirewallStatelessRule`](crate::types::FirewallStatelessRule).
     pub fn build(self) -> crate::types::FirewallStatelessRule {
         crate::types::FirewallStatelessRule {
-            rule_group_arn: self.rule_group_arn,
-            sources: self.sources,
-            destinations: self.destinations,
-            source_ports: self.source_ports,
-            destination_ports: self.destination_ports,
-            protocols: self.protocols,
-            rule_action: self.rule_action,
-            priority: self.priority,
+            rule_group_arn: self.rule_group_arn
+            ,
+            sources: self.sources
+            ,
+            destinations: self.destinations
+            ,
+            source_ports: self.source_ports
+            ,
+            destination_ports: self.destination_ports
+            ,
+            protocols: self.protocols
+            ,
+            rule_action: self.rule_action
+            ,
+            priority: self.priority
+            ,
         }
     }
 }
+

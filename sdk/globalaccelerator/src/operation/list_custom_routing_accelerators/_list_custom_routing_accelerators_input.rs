@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomRoutingAcceleratorsInput {
+pub struct ListCustomRoutingAcceleratorsInput  {
     /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -16,22 +16,20 @@ impl ListCustomRoutingAcceleratorsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListCustomRoutingAcceleratorsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingAcceleratorsInput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput).
-    pub fn builder() -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder {
         crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomRoutingAcceleratorsInput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingAcceleratorsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl ListCustomRoutingAcceleratorsInputBuilder {
     }
     /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,16 +55,14 @@ impl ListCustomRoutingAcceleratorsInputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingAcceleratorsInput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput {
                 max_results: self.max_results
@@ -74,3 +73,4 @@ impl ListCustomRoutingAcceleratorsInputBuilder {
         )
     }
 }
+

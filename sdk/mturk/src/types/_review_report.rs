@@ -3,7 +3,7 @@
 /// <p> Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReviewReport {
+pub struct ReviewReport  {
     /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
     #[doc(hidden)]
     pub review_results: ::std::option::Option<::std::vec::Vec<crate::types::ReviewResultDetail>>,
@@ -13,11 +13,11 @@ pub struct ReviewReport {
 }
 impl ReviewReport {
     /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
-    pub fn review_results(&self) -> ::std::option::Option<&[crate::types::ReviewResultDetail]> {
+    pub fn review_results(&self) -> ::std::option::Option<& [crate::types::ReviewResultDetail]> {
         self.review_results.as_deref()
     }
     /// <p> A list of ReviewAction objects for each action specified in the Review Policy. </p>
-    pub fn review_actions(&self) -> ::std::option::Option<&[crate::types::ReviewActionDetail]> {
+    pub fn review_actions(&self) -> ::std::option::Option<& [crate::types::ReviewActionDetail]> {
         self.review_actions.as_deref()
     }
 }
@@ -30,14 +30,10 @@ impl ReviewReport {
 
 /// A builder for [`ReviewReport`](crate::types::ReviewReport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReviewReportBuilder {
-    pub(crate) review_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReviewResultDetail>>,
-    pub(crate) review_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReviewActionDetail>>,
+    pub(crate) review_results: ::std::option::Option<::std::vec::Vec<crate::types::ReviewResultDetail>>,
+    pub(crate) review_actions: ::std::option::Option<::std::vec::Vec<crate::types::ReviewActionDetail>>,
 }
 impl ReviewReportBuilder {
     /// Appends an item to `review_results`.
@@ -47,17 +43,17 @@ impl ReviewReportBuilder {
     /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
     pub fn review_results(mut self, input: crate::types::ReviewResultDetail) -> Self {
         let mut v = self.review_results.unwrap_or_default();
-        v.push(input);
-        self.review_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.review_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
-    pub fn set_review_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewResultDetail>>,
-    ) -> Self {
-        self.review_results = input;
-        self
+    pub fn set_review_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewResultDetail>>) -> Self {
+        self.review_results = input; self
+    }
+    /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
+    pub fn get_review_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewResultDetail>> {
+        &self.review_results
     }
     /// Appends an item to `review_actions`.
     ///
@@ -66,23 +62,26 @@ impl ReviewReportBuilder {
     /// <p> A list of ReviewAction objects for each action specified in the Review Policy. </p>
     pub fn review_actions(mut self, input: crate::types::ReviewActionDetail) -> Self {
         let mut v = self.review_actions.unwrap_or_default();
-        v.push(input);
-        self.review_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.review_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list of ReviewAction objects for each action specified in the Review Policy. </p>
-    pub fn set_review_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewActionDetail>>,
-    ) -> Self {
-        self.review_actions = input;
-        self
+    pub fn set_review_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewActionDetail>>) -> Self {
+        self.review_actions = input; self
+    }
+    /// <p> A list of ReviewAction objects for each action specified in the Review Policy. </p>
+    pub fn get_review_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewActionDetail>> {
+        &self.review_actions
     }
     /// Consumes the builder and constructs a [`ReviewReport`](crate::types::ReviewReport).
     pub fn build(self) -> crate::types::ReviewReport {
         crate::types::ReviewReport {
-            review_results: self.review_results,
-            review_actions: self.review_actions,
+            review_results: self.review_results
+            ,
+            review_actions: self.review_actions
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResumeGameServerGroupInput {
+pub struct ResumeGameServerGroupInput  {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
     #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
@@ -12,49 +12,41 @@ pub struct ResumeGameServerGroupInput {
 }
 impl ResumeGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_name(&self) -> ::std::option::Option<& str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>The activity to resume for this game server group.</p>
-    pub fn resume_actions(&self) -> ::std::option::Option<&[crate::types::GameServerGroupAction]> {
+    pub fn resume_actions(&self) -> ::std::option::Option<& [crate::types::GameServerGroupAction]> {
         self.resume_actions.as_deref()
     }
 }
 impl ResumeGameServerGroupInput {
     /// Creates a new builder-style object to manufacture [`ResumeGameServerGroupInput`](crate::operation::resume_game_server_group::ResumeGameServerGroupInput).
-    pub fn builder(
-    ) -> crate::operation::resume_game_server_group::builders::ResumeGameServerGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::resume_game_server_group::builders::ResumeGameServerGroupInputBuilder {
         crate::operation::resume_game_server_group::builders::ResumeGameServerGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ResumeGameServerGroupInput`](crate::operation::resume_game_server_group::ResumeGameServerGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeGameServerGroupInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resume_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
+    pub(crate) resume_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
 }
 impl ResumeGameServerGroupInputBuilder {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.game_server_group_name = input;
-        self
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.game_server_group_name = input; self
+    }
+    /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_name
     }
     /// Appends an item to `resume_actions`.
     ///
@@ -63,30 +55,28 @@ impl ResumeGameServerGroupInputBuilder {
     /// <p>The activity to resume for this game server group.</p>
     pub fn resume_actions(mut self, input: crate::types::GameServerGroupAction) -> Self {
         let mut v = self.resume_actions.unwrap_or_default();
-        v.push(input);
-        self.resume_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resume_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The activity to resume for this game server group.</p>
-    pub fn set_resume_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
-    ) -> Self {
-        self.resume_actions = input;
-        self
+    pub fn set_resume_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>) -> Self {
+        self.resume_actions = input; self
+    }
+    /// <p>The activity to resume for this game server group.</p>
+    pub fn get_resume_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+        &self.resume_actions
     }
     /// Consumes the builder and constructs a [`ResumeGameServerGroupInput`](crate::operation::resume_game_server_group::ResumeGameServerGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::resume_game_server_group::ResumeGameServerGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::resume_game_server_group::ResumeGameServerGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::resume_game_server_group::ResumeGameServerGroupInput {
-                game_server_group_name: self.game_server_group_name,
-                resume_actions: self.resume_actions,
-            },
+                game_server_group_name: self.game_server_group_name
+                ,
+                resume_actions: self.resume_actions
+                ,
+            }
         )
     }
 }
+

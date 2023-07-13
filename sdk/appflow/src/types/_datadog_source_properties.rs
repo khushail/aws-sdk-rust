@@ -3,14 +3,14 @@
 /// <p> The properties that are applied when Datadog is being used as a source. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatadogSourceProperties {
+pub struct DatadogSourceProperties  {
     /// <p> The object specified in the Datadog flow source. </p>
     #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
 }
 impl DatadogSourceProperties {
     /// <p> The object specified in the Datadog flow source. </p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<& str> {
         self.object.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DatadogSourceProperties {
 
 /// A builder for [`DatadogSourceProperties`](crate::types::DatadogSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatadogSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl DatadogSourcePropertiesBuilder {
     }
     /// <p> The object specified in the Datadog flow source. </p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
+    }
+    /// <p> The object specified in the Datadog flow source. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
     }
     /// Consumes the builder and constructs a [`DatadogSourceProperties`](crate::types::DatadogSourceProperties).
     pub fn build(self) -> crate::types::DatadogSourceProperties {
         crate::types::DatadogSourceProperties {
-            object: self.object,
+            object: self.object
+            ,
         }
     }
 }
+

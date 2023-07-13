@@ -3,7 +3,7 @@
 /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RxNormEntity {
+pub struct RxNormEntity  {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
@@ -41,15 +41,15 @@ impl RxNormEntity {
         self.id
     }
     /// <p>The segment of input text extracted from which the entity was detected.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::RxNormEntityCategory> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::RxNormEntityCategory> {
         self.category.as_ref()
     }
     /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RxNormEntityType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RxNormEntityType> {
         self.r#type.as_ref()
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
@@ -65,15 +65,15 @@ impl RxNormEntity {
         self.end_offset
     }
     /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::RxNormAttribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<& [crate::types::RxNormAttribute]> {
         self.attributes.as_deref()
     }
     /// <p> Contextual information for the entity.</p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::RxNormTrait]> {
+    pub fn traits(&self) -> ::std::option::Option<& [crate::types::RxNormTrait]> {
         self.traits.as_deref()
     }
     /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
-    pub fn rx_norm_concepts(&self) -> ::std::option::Option<&[crate::types::RxNormConcept]> {
+    pub fn rx_norm_concepts(&self) -> ::std::option::Option<& [crate::types::RxNormConcept]> {
         self.rx_norm_concepts.as_deref()
     }
 }
@@ -86,9 +86,7 @@ impl RxNormEntity {
 
 /// A builder for [`RxNormEntity`](crate::types::RxNormEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RxNormEntityBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -99,8 +97,7 @@ pub struct RxNormEntityBuilder {
     pub(crate) end_offset: ::std::option::Option<i32>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::RxNormAttribute>>,
     pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>,
-    pub(crate) rx_norm_concepts:
-        ::std::option::Option<::std::vec::Vec<crate::types::RxNormConcept>>,
+    pub(crate) rx_norm_concepts: ::std::option::Option<::std::vec::Vec<crate::types::RxNormConcept>>,
 }
 impl RxNormEntityBuilder {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
@@ -110,8 +107,11 @@ impl RxNormEntityBuilder {
     }
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
     }
     /// <p>The segment of input text extracted from which the entity was detected.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,8 +120,11 @@ impl RxNormEntityBuilder {
     }
     /// <p>The segment of input text extracted from which the entity was detected.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p>The segment of input text extracted from which the entity was detected.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
     pub fn category(mut self, input: crate::types::RxNormEntityCategory) -> Self {
@@ -129,12 +132,12 @@ impl RxNormEntityBuilder {
         self
     }
     /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::RxNormEntityCategory>,
-    ) -> Self {
-        self.category = input;
-        self
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::RxNormEntityCategory>) -> Self {
+        self.category = input; self
+    }
+    /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::RxNormEntityCategory> {
+        &self.category
     }
     /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
     pub fn r#type(mut self, input: crate::types::RxNormEntityType) -> Self {
@@ -142,12 +145,12 @@ impl RxNormEntityBuilder {
         self
     }
     /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RxNormEntityType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RxNormEntityType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RxNormEntityType> {
+        &self.r#type
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
     pub fn score(mut self, input: f32) -> Self {
@@ -156,8 +159,11 @@ impl RxNormEntityBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -166,8 +172,11 @@ impl RxNormEntityBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
+    }
+    /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
     }
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
@@ -176,8 +185,11 @@ impl RxNormEntityBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
+    }
+    /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// Appends an item to `attributes`.
     ///
@@ -186,17 +198,17 @@ impl RxNormEntityBuilder {
     /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
     pub fn attributes(mut self, input: crate::types::RxNormAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormAttribute>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormAttribute>>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RxNormAttribute>> {
+        &self.attributes
     }
     /// Appends an item to `traits`.
     ///
@@ -205,17 +217,17 @@ impl RxNormEntityBuilder {
     /// <p> Contextual information for the entity.</p>
     pub fn traits(mut self, input: crate::types::RxNormTrait) -> Self {
         let mut v = self.traits.unwrap_or_default();
-        v.push(input);
-        self.traits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.traits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> Contextual information for the entity.</p>
-    pub fn set_traits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>,
-    ) -> Self {
-        self.traits = input;
-        self
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>) -> Self {
+        self.traits = input; self
+    }
+    /// <p> Contextual information for the entity.</p>
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>> {
+        &self.traits
     }
     /// Appends an item to `rx_norm_concepts`.
     ///
@@ -224,31 +236,42 @@ impl RxNormEntityBuilder {
     /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub fn rx_norm_concepts(mut self, input: crate::types::RxNormConcept) -> Self {
         let mut v = self.rx_norm_concepts.unwrap_or_default();
-        v.push(input);
-        self.rx_norm_concepts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rx_norm_concepts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
-    pub fn set_rx_norm_concepts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormConcept>>,
-    ) -> Self {
-        self.rx_norm_concepts = input;
-        self
+    pub fn set_rx_norm_concepts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormConcept>>) -> Self {
+        self.rx_norm_concepts = input; self
+    }
+    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
+    pub fn get_rx_norm_concepts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RxNormConcept>> {
+        &self.rx_norm_concepts
     }
     /// Consumes the builder and constructs a [`RxNormEntity`](crate::types::RxNormEntity).
     pub fn build(self) -> crate::types::RxNormEntity {
         crate::types::RxNormEntity {
-            id: self.id,
-            text: self.text,
-            category: self.category,
-            r#type: self.r#type,
-            score: self.score,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
-            attributes: self.attributes,
-            traits: self.traits,
-            rx_norm_concepts: self.rx_norm_concepts,
+            id: self.id
+            ,
+            text: self.text
+            ,
+            category: self.category
+            ,
+            r#type: self.r#type
+            ,
+            score: self.score
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
+            attributes: self.attributes
+            ,
+            traits: self.traits
+            ,
+            rx_norm_concepts: self.rx_norm_concepts
+            ,
         }
     }
 }
+

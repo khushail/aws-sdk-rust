@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UnsubscribeInput {
+pub struct UnsubscribeInput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -12,15 +12,15 @@ pub struct UnsubscribeInput {
 }
 impl UnsubscribeInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
-    pub fn target_address(&self) -> ::std::option::Option<&str> {
+    pub fn target_address(&self) -> ::std::option::Option<& str> {
         self.target_address.as_deref()
     }
 }
-impl ::std::fmt::Debug for UnsubscribeInput {
+impl  ::std::fmt::Debug for UnsubscribeInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UnsubscribeInput");
         formatter.field("arn", &self.arn);
@@ -50,36 +50,35 @@ impl UnsubscribeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
-    pub fn target_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
-    pub fn set_target_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_address = input;
-        self
+    pub fn set_target_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_address = input; self
+    }
+    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_address
     }
     /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::operation::unsubscribe::UnsubscribeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unsubscribe::UnsubscribeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::unsubscribe::UnsubscribeInput {
-            arn: self.arn,
-            target_address: self.target_address,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unsubscribe::UnsubscribeInput {
+                arn: self.arn
+                ,
+                target_address: self.target_address
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UnsubscribeInputBuilder {
@@ -90,3 +89,4 @@ impl ::std::fmt::Debug for UnsubscribeInputBuilder {
         formatter.finish()
     }
 }
+

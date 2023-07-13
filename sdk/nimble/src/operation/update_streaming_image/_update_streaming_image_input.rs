@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateStreamingImageInput {
+pub struct UpdateStreamingImageInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,27 +21,27 @@ pub struct UpdateStreamingImageInput {
 }
 impl UpdateStreamingImageInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name for the streaming image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn streaming_image_id(&self) -> ::std::option::Option<& str> {
         self.streaming_image_id.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateStreamingImageInput {
+impl  ::std::fmt::Debug for UpdateStreamingImageInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStreamingImageInput");
         formatter.field("client_token", &self.client_token);
@@ -54,8 +54,7 @@ impl ::std::fmt::Debug for UpdateStreamingImageInput {
 }
 impl UpdateStreamingImageInput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamingImageInput`](crate::operation::update_streaming_image::UpdateStreamingImageInput).
-    pub fn builder(
-    ) -> crate::operation::update_streaming_image::builders::UpdateStreamingImageInputBuilder {
+    pub fn builder() -> crate::operation::update_streaming_image::builders::UpdateStreamingImageInputBuilder {
         crate::operation::update_streaming_image::builders::UpdateStreamingImageInputBuilder::default()
     }
 }
@@ -78,8 +77,11 @@ impl UpdateStreamingImageInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +90,11 @@ impl UpdateStreamingImageInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name for the streaming image.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,24 +103,24 @@ impl UpdateStreamingImageInputBuilder {
     }
     /// <p>The name for the streaming image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name for the streaming image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The streaming image ID.</p>
-    pub fn set_streaming_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.streaming_image_id = input;
-        self
+    pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.streaming_image_id = input; self
+    }
+    /// <p>The streaming image ID.</p>
+    pub fn get_streaming_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.streaming_image_id
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,24 +129,27 @@ impl UpdateStreamingImageInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`UpdateStreamingImageInput`](crate::operation::update_streaming_image::UpdateStreamingImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_streaming_image::UpdateStreamingImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_streaming_image::UpdateStreamingImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_streaming_image::UpdateStreamingImageInput {
-                client_token: self.client_token,
-                description: self.description,
-                name: self.name,
-                streaming_image_id: self.streaming_image_id,
-                studio_id: self.studio_id,
-            },
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                name: self.name
+                ,
+                streaming_image_id: self.streaming_image_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
         )
     }
 }
@@ -156,3 +164,4 @@ impl ::std::fmt::Debug for UpdateStreamingImageInputBuilder {
         formatter.finish()
     }
 }
+

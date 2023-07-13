@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRuleOutput {
+pub struct CreateRuleOutput  {
     /// <p>The created rule.</p>
     #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::Rule>,
@@ -10,15 +10,15 @@ pub struct CreateRuleOutput {
 }
 impl CreateRuleOutput {
     /// <p>The created rule.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::Rule> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::Rule> {
         self.rule.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::operation::create_rule::CreateRuleOutput).
     pub fn builder() -> crate::operation::create_rule::builders::CreateRuleOutputBuilder {
@@ -28,9 +28,7 @@ impl CreateRuleOutput {
 
 /// A builder for [`CreateRuleOutput`](crate::operation::create_rule::CreateRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleOutputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl CreateRuleOutputBuilder {
     }
     /// <p>The created rule.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::Rule>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
+    }
+    /// <p>The created rule.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
+        &self.rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateRuleOutput`](crate::operation::create_rule::CreateRuleOutput).
     pub fn build(self) -> crate::operation::create_rule::CreateRuleOutput {
         crate::operation::create_rule::CreateRuleOutput {
-            rule: self.rule,
+            rule: self.rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

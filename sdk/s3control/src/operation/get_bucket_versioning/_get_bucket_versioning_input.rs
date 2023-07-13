@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketVersioningInput {
+pub struct GetBucketVersioningInput  {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct GetBucketVersioningInput {
 }
 impl GetBucketVersioningInput {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
 }
 impl GetBucketVersioningInput {
     /// Creates a new builder-style object to manufacture [`GetBucketVersioningInput`](crate::operation::get_bucket_versioning::GetBucketVersioningInput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_versioning::builders::GetBucketVersioningInputBuilder {
-        crate::operation::get_bucket_versioning::builders::GetBucketVersioningInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_bucket_versioning::builders::GetBucketVersioningInputBuilder {
+        crate::operation::get_bucket_versioning::builders::GetBucketVersioningInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketVersioningInput`](crate::operation::get_bucket_versioning::GetBucketVersioningInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketVersioningInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl GetBucketVersioningInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl GetBucketVersioningInputBuilder {
     }
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
+    }
+    /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// Consumes the builder and constructs a [`GetBucketVersioningInput`](crate::operation::get_bucket_versioning::GetBucketVersioningInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_versioning::GetBucketVersioningInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket_versioning::GetBucketVersioningInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_bucket_versioning::GetBucketVersioningInput {
-                account_id: self.account_id,
-                bucket: self.bucket,
-            },
+                account_id: self.account_id
+                ,
+                bucket: self.bucket
+                ,
+            }
         )
     }
 }
+

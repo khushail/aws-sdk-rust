@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DeleteLoadBalancerPolicy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLoadBalancerPolicyInput {
+pub struct DeleteLoadBalancerPolicyInput  {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
@@ -13,48 +13,41 @@ pub struct DeleteLoadBalancerPolicyInput {
 }
 impl DeleteLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
 impl DeleteLoadBalancerPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerPolicyInput`](crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyInputBuilder {
         crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoadBalancerPolicyInput`](crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerPolicyInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLoadBalancerPolicyInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.load_balancer_name = input; self
+    }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
     }
     /// <p>The name of the policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,21 +56,22 @@ impl DeleteLoadBalancerPolicyInputBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
+    }
+    /// <p>The name of the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// Consumes the builder and constructs a [`DeleteLoadBalancerPolicyInput`](crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput {
-                load_balancer_name: self.load_balancer_name,
-                policy_name: self.policy_name,
-            },
+                load_balancer_name: self.load_balancer_name
+                ,
+                policy_name: self.policy_name
+                ,
+            }
         )
     }
 }
+

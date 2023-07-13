@@ -3,24 +3,20 @@
 /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EsamSettings {
+pub struct EsamSettings  {
     /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
     #[doc(hidden)]
-    pub manifest_confirm_condition_notification:
-        ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
+    pub manifest_confirm_condition_notification: ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
     #[doc(hidden)]
     pub response_signal_preroll: ::std::option::Option<i32>,
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
     #[doc(hidden)]
-    pub signal_processing_notification:
-        ::std::option::Option<crate::types::EsamSignalProcessingNotification>,
+    pub signal_processing_notification: ::std::option::Option<crate::types::EsamSignalProcessingNotification>,
 }
 impl EsamSettings {
     /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
-    pub fn manifest_confirm_condition_notification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EsamManifestConfirmConditionNotification> {
+    pub fn manifest_confirm_condition_notification(&self) -> ::std::option::Option<& crate::types::EsamManifestConfirmConditionNotification> {
         self.manifest_confirm_condition_notification.as_ref()
     }
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
@@ -28,9 +24,7 @@ impl EsamSettings {
         self.response_signal_preroll
     }
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
-    pub fn signal_processing_notification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EsamSignalProcessingNotification> {
+    pub fn signal_processing_notification(&self) -> ::std::option::Option<& crate::types::EsamSignalProcessingNotification> {
         self.signal_processing_notification.as_ref()
     }
 }
@@ -43,32 +37,25 @@ impl EsamSettings {
 
 /// A builder for [`EsamSettings`](crate::types::EsamSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EsamSettingsBuilder {
-    pub(crate) manifest_confirm_condition_notification:
-        ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
+    pub(crate) manifest_confirm_condition_notification: ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
     pub(crate) response_signal_preroll: ::std::option::Option<i32>,
-    pub(crate) signal_processing_notification:
-        ::std::option::Option<crate::types::EsamSignalProcessingNotification>,
+    pub(crate) signal_processing_notification: ::std::option::Option<crate::types::EsamSignalProcessingNotification>,
 }
 impl EsamSettingsBuilder {
     /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
-    pub fn manifest_confirm_condition_notification(
-        mut self,
-        input: crate::types::EsamManifestConfirmConditionNotification,
-    ) -> Self {
+    pub fn manifest_confirm_condition_notification(mut self, input: crate::types::EsamManifestConfirmConditionNotification) -> Self {
         self.manifest_confirm_condition_notification = ::std::option::Option::Some(input);
         self
     }
     /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
-    pub fn set_manifest_confirm_condition_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
-    ) -> Self {
-        self.manifest_confirm_condition_notification = input;
-        self
+    pub fn set_manifest_confirm_condition_notification(mut self, input: ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>) -> Self {
+        self.manifest_confirm_condition_notification = input; self
+    }
+    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+    pub fn get_manifest_confirm_condition_notification(&self) -> &::std::option::Option<crate::types::EsamManifestConfirmConditionNotification> {
+        &self.manifest_confirm_condition_notification
     }
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
     pub fn response_signal_preroll(mut self, input: i32) -> Self {
@@ -77,31 +64,35 @@ impl EsamSettingsBuilder {
     }
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
     pub fn set_response_signal_preroll(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.response_signal_preroll = input;
-        self
+        self.response_signal_preroll = input; self
+    }
+    /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
+    pub fn get_response_signal_preroll(&self) -> &::std::option::Option<i32> {
+        &self.response_signal_preroll
     }
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
-    pub fn signal_processing_notification(
-        mut self,
-        input: crate::types::EsamSignalProcessingNotification,
-    ) -> Self {
+    pub fn signal_processing_notification(mut self, input: crate::types::EsamSignalProcessingNotification) -> Self {
         self.signal_processing_notification = ::std::option::Option::Some(input);
         self
     }
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
-    pub fn set_signal_processing_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::EsamSignalProcessingNotification>,
-    ) -> Self {
-        self.signal_processing_notification = input;
-        self
+    pub fn set_signal_processing_notification(mut self, input: ::std::option::Option<crate::types::EsamSignalProcessingNotification>) -> Self {
+        self.signal_processing_notification = input; self
+    }
+    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
+    pub fn get_signal_processing_notification(&self) -> &::std::option::Option<crate::types::EsamSignalProcessingNotification> {
+        &self.signal_processing_notification
     }
     /// Consumes the builder and constructs a [`EsamSettings`](crate::types::EsamSettings).
     pub fn build(self) -> crate::types::EsamSettings {
         crate::types::EsamSettings {
-            manifest_confirm_condition_notification: self.manifest_confirm_condition_notification,
-            response_signal_preroll: self.response_signal_preroll,
-            signal_processing_notification: self.signal_processing_notification,
+            manifest_confirm_condition_notification: self.manifest_confirm_condition_notification
+            ,
+            response_signal_preroll: self.response_signal_preroll
+            ,
+            signal_processing_notification: self.signal_processing_notification
+            ,
         }
     }
 }
+

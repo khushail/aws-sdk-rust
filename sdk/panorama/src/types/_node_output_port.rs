@@ -3,7 +3,7 @@
 /// <p>A node output port.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeOutputPort {
+pub struct NodeOutputPort  {
     /// <p>The output port's name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct NodeOutputPort {
 }
 impl NodeOutputPort {
     /// <p>The output port's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The output port's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The output port's type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PortType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PortType> {
         self.r#type.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl NodeOutputPort {
 
 /// A builder for [`NodeOutputPort`](crate::types::NodeOutputPort).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeOutputPortBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl NodeOutputPortBuilder {
     }
     /// <p>The output port's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The output port's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The output port's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl NodeOutputPortBuilder {
     }
     /// <p>The output port's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The output port's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The output port's type.</p>
     pub fn r#type(mut self, input: crate::types::PortType) -> Self {
@@ -73,15 +77,22 @@ impl NodeOutputPortBuilder {
     }
     /// <p>The output port's type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PortType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The output port's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PortType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`NodeOutputPort`](crate::types::NodeOutputPort).
     pub fn build(self) -> crate::types::NodeOutputPort {
         crate::types::NodeOutputPort {
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

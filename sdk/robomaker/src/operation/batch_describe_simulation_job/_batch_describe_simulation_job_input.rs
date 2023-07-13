@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeSimulationJobInput {
+pub struct BatchDescribeSimulationJobInput  {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
     #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDescribeSimulationJobInput {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn jobs(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.jobs.as_deref()
     }
 }
 impl BatchDescribeSimulationJobInput {
     /// Creates a new builder-style object to manufacture [`BatchDescribeSimulationJobInput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput).
-    pub fn builder() -> crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder{
+    pub fn builder() -> crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder {
         crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDescribeSimulationJobInput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDescribeSimulationJobInputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,29 +34,26 @@ impl BatchDescribeSimulationJobInputBuilder {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
     pub fn jobs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input.into());
-        self.jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.jobs = input; self
+    }
+    /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.jobs
     }
     /// Consumes the builder and constructs a [`BatchDescribeSimulationJobInput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput {
-                jobs: self.jobs,
-            },
+                jobs: self.jobs
+                ,
+            }
         )
     }
 }
+

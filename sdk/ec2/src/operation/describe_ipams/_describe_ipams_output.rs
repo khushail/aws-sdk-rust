@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIpamsOutput {
+pub struct DescribeIpamsOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct DescribeIpamsOutput {
 }
 impl DescribeIpamsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the IPAMs.</p>
-    pub fn ipams(&self) -> ::std::option::Option<&[crate::types::Ipam]> {
+    pub fn ipams(&self) -> ::std::option::Option<& [crate::types::Ipam]> {
         self.ipams.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeIpamsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeIpamsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamsOutput`](crate::operation::describe_ipams::DescribeIpamsOutput).
     pub fn builder() -> crate::operation::describe_ipams::builders::DescribeIpamsOutputBuilder {
@@ -35,9 +35,7 @@ impl DescribeIpamsOutput {
 
 /// A builder for [`DescribeIpamsOutput`](crate::operation::describe_ipams::DescribeIpamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ipams: ::std::option::Option<::std::vec::Vec<crate::types::Ipam>>,
@@ -51,8 +49,11 @@ impl DescribeIpamsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `ipams`.
     ///
@@ -61,33 +62,36 @@ impl DescribeIpamsOutputBuilder {
     /// <p>Information about the IPAMs.</p>
     pub fn ipams(mut self, input: crate::types::Ipam) -> Self {
         let mut v = self.ipams.unwrap_or_default();
-        v.push(input);
-        self.ipams = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipams = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the IPAMs.</p>
-    pub fn set_ipams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipam>>,
-    ) -> Self {
-        self.ipams = input;
-        self
+    pub fn set_ipams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipam>>) -> Self {
+        self.ipams = input; self
+    }
+    /// <p>Information about the IPAMs.</p>
+    pub fn get_ipams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipam>> {
+        &self.ipams
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeIpamsOutput`](crate::operation::describe_ipams::DescribeIpamsOutput).
     pub fn build(self) -> crate::operation::describe_ipams::DescribeIpamsOutput {
         crate::operation::describe_ipams::DescribeIpamsOutput {
-            next_token: self.next_token,
-            ipams: self.ipams,
+            next_token: self.next_token
+            ,
+            ipams: self.ipams
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Detailed data of an Proton service resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Service {
+pub struct Service  {
     /// <p>The name of the service.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -46,59 +46,59 @@ pub struct Service {
 }
 impl Service {
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the service.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The time when the service was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the service.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ServiceStatus> {
         self.status.as_ref()
     }
     /// <p>A service status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The formatted specification that defines the service.</p>
-    pub fn spec(&self) -> ::std::option::Option<&str> {
+    pub fn spec(&self) -> ::std::option::Option<& str> {
         self.spec.as_deref()
     }
     /// <p>The service pipeline detail data.</p>
-    pub fn pipeline(&self) -> ::std::option::Option<&crate::types::ServicePipeline> {
+    pub fn pipeline(&self) -> ::std::option::Option<& crate::types::ServicePipeline> {
         self.pipeline.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
-    pub fn repository_connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn repository_connection_arn(&self) -> ::std::option::Option<& str> {
         self.repository_connection_arn.as_deref()
     }
     /// <p>The ID of the source code repository.</p>
-    pub fn repository_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_id(&self) -> ::std::option::Option<& str> {
         self.repository_id.as_deref()
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for Service {
+impl  ::std::fmt::Debug for Service  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Service");
         formatter.field("name", &self.name);
@@ -150,8 +150,11 @@ impl ServiceBuilder {
     }
     /// <p>The name of the service.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A description of the service.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,8 +163,11 @@ impl ServiceBuilder {
     }
     /// <p>A description of the service.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the service.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -170,24 +176,24 @@ impl ServiceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.template_name = input;
-        self
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_name = input; self
+    }
+    /// <p>The name of the service template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>The time when the service was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -195,12 +201,12 @@ impl ServiceBuilder {
         self
     }
     /// <p>The time when the service was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The time when the service was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time when the service was last modified.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -208,12 +214,12 @@ impl ServiceBuilder {
         self
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_at = input;
-        self
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_at = input; self
+    }
+    /// <p>The time when the service was last modified.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
     }
     /// <p>The status of the service.</p>
     pub fn status(mut self, input: crate::types::ServiceStatus) -> Self {
@@ -222,24 +228,24 @@ impl ServiceBuilder {
     }
     /// <p>The status of the service.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the service.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceStatus> {
+        &self.status
     }
     /// <p>A service status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A service status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>A service status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>The formatted specification that defines the service.</p>
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -248,8 +254,11 @@ impl ServiceBuilder {
     }
     /// <p>The formatted specification that defines the service.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
+    }
+    /// <p>The formatted specification that defines the service.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spec
     }
     /// <p>The service pipeline detail data.</p>
     pub fn pipeline(mut self, input: crate::types::ServicePipeline) -> Self {
@@ -257,44 +266,38 @@ impl ServiceBuilder {
         self
     }
     /// <p>The service pipeline detail data.</p>
-    pub fn set_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::ServicePipeline>,
-    ) -> Self {
-        self.pipeline = input;
-        self
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::ServicePipeline>) -> Self {
+        self.pipeline = input; self
+    }
+    /// <p>The service pipeline detail data.</p>
+    pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::ServicePipeline> {
+        &self.pipeline
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
-    pub fn repository_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_repository_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.repository_connection_arn = input;
-        self
+    pub fn set_repository_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.repository_connection_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_repository_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_connection_arn
     }
     /// <p>The ID of the source code repository.</p>
-    pub fn repository_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source code repository.</p>
-    pub fn set_repository_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.repository_id = input;
-        self
+    pub fn set_repository_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.repository_id = input; self
+    }
+    /// <p>The ID of the source code repository.</p>
+    pub fn get_repository_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_id
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -303,25 +306,41 @@ impl ServiceBuilder {
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
+    }
+    /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {
         crate::types::Service {
-            name: self.name,
-            description: self.description,
-            arn: self.arn,
-            template_name: self.template_name,
-            created_at: self.created_at,
-            last_modified_at: self.last_modified_at,
-            status: self.status,
-            status_message: self.status_message,
-            spec: self.spec,
-            pipeline: self.pipeline,
-            repository_connection_arn: self.repository_connection_arn,
-            repository_id: self.repository_id,
-            branch_name: self.branch_name,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            arn: self.arn
+            ,
+            template_name: self.template_name
+            ,
+            created_at: self.created_at
+            ,
+            last_modified_at: self.last_modified_at
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            spec: self.spec
+            ,
+            pipeline: self.pipeline
+            ,
+            repository_connection_arn: self.repository_connection_arn
+            ,
+            repository_id: self.repository_id
+            ,
+            branch_name: self.branch_name
+            ,
         }
     }
 }
@@ -344,3 +363,4 @@ impl ::std::fmt::Debug for ServiceBuilder {
         formatter.finish()
     }
 }
+

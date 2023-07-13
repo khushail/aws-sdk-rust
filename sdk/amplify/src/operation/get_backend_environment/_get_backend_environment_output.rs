@@ -3,7 +3,7 @@
 /// <p> The result structure for the get backend environment result. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBackendEnvironmentOutput {
+pub struct GetBackendEnvironmentOutput  {
     /// <p> Describes the backend environment for an Amplify app. </p>
     #[doc(hidden)]
     pub backend_environment: ::std::option::Option<crate::types::BackendEnvironment>,
@@ -11,29 +11,25 @@ pub struct GetBackendEnvironmentOutput {
 }
 impl GetBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
-    pub fn backend_environment(&self) -> ::std::option::Option<&crate::types::BackendEnvironment> {
+    pub fn backend_environment(&self) -> ::std::option::Option<& crate::types::BackendEnvironment> {
         self.backend_environment.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBackendEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBackendEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendEnvironmentOutput`](crate::operation::get_backend_environment::GetBackendEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::get_backend_environment::builders::GetBackendEnvironmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_backend_environment::builders::GetBackendEnvironmentOutputBuilder {
         crate::operation::get_backend_environment::builders::GetBackendEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackendEnvironmentOutput`](crate::operation::get_backend_environment::GetBackendEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackendEnvironmentOutputBuilder {
     pub(crate) backend_environment: ::std::option::Option<crate::types::BackendEnvironment>,
     _request_id: Option<String>,
@@ -45,27 +41,29 @@ impl GetBackendEnvironmentOutputBuilder {
         self
     }
     /// <p> Describes the backend environment for an Amplify app. </p>
-    pub fn set_backend_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendEnvironment>,
-    ) -> Self {
-        self.backend_environment = input;
-        self
+    pub fn set_backend_environment(mut self, input: ::std::option::Option<crate::types::BackendEnvironment>) -> Self {
+        self.backend_environment = input; self
+    }
+    /// <p> Describes the backend environment for an Amplify app. </p>
+    pub fn get_backend_environment(&self) -> &::std::option::Option<crate::types::BackendEnvironment> {
+        &self.backend_environment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBackendEnvironmentOutput`](crate::operation::get_backend_environment::GetBackendEnvironmentOutput).
     pub fn build(self) -> crate::operation::get_backend_environment::GetBackendEnvironmentOutput {
         crate::operation::get_backend_environment::GetBackendEnvironmentOutput {
-            backend_environment: self.backend_environment,
+            backend_environment: self.backend_environment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

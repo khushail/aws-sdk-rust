@@ -3,24 +3,22 @@
 /// <p>Specifies data lineage configuration settings for the crawler.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LineageConfiguration {
-    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
-    /// <ul>
-    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
-    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
+pub struct LineageConfiguration  {
+    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li> 
+    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub crawler_lineage_settings: ::std::option::Option<crate::types::CrawlerLineageSettings>,
 }
 impl LineageConfiguration {
-    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
-    /// <ul>
-    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
-    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
+    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li> 
+    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li> 
     /// </ul>
-    pub fn crawler_lineage_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CrawlerLineageSettings> {
+    pub fn crawler_lineage_settings(&self) -> ::std::option::Option<& crate::types::CrawlerLineageSettings> {
         self.crawler_lineage_settings.as_ref()
     }
 }
@@ -33,39 +31,42 @@ impl LineageConfiguration {
 
 /// A builder for [`LineageConfiguration`](crate::types::LineageConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineageConfigurationBuilder {
-    pub(crate) crawler_lineage_settings:
-        ::std::option::Option<crate::types::CrawlerLineageSettings>,
+    pub(crate) crawler_lineage_settings: ::std::option::Option<crate::types::CrawlerLineageSettings>,
 }
 impl LineageConfigurationBuilder {
-    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
-    /// <ul>
-    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
-    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
+    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li> 
+    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li> 
     /// </ul>
     pub fn crawler_lineage_settings(mut self, input: crate::types::CrawlerLineageSettings) -> Self {
         self.crawler_lineage_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
-    /// <ul>
-    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
-    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
+    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li> 
+    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li> 
     /// </ul>
-    pub fn set_crawler_lineage_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CrawlerLineageSettings>,
-    ) -> Self {
-        self.crawler_lineage_settings = input;
-        self
+    pub fn set_crawler_lineage_settings(mut self, input: ::std::option::Option<crate::types::CrawlerLineageSettings>) -> Self {
+        self.crawler_lineage_settings = input; self
+    }
+    /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li> 
+    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li> 
+    /// </ul>
+    pub fn get_crawler_lineage_settings(&self) -> &::std::option::Option<crate::types::CrawlerLineageSettings> {
+        &self.crawler_lineage_settings
     }
     /// Consumes the builder and constructs a [`LineageConfiguration`](crate::types::LineageConfiguration).
     pub fn build(self) -> crate::types::LineageConfiguration {
         crate::types::LineageConfiguration {
-            crawler_lineage_settings: self.crawler_lineage_settings,
+            crawler_lineage_settings: self.crawler_lineage_settings
+            ,
         }
     }
 }
+

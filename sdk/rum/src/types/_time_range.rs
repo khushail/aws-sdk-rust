@@ -3,7 +3,7 @@
 /// <p>A structure that defines the time range that you want to retrieve results from.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeRange {
+pub struct TimeRange  {
     /// <p>The beginning of the time range to retrieve performance events from.</p>
     #[doc(hidden)]
     pub after: i64,
@@ -30,9 +30,7 @@ impl TimeRange {
 
 /// A builder for [`TimeRange`](crate::types::TimeRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeRangeBuilder {
     pub(crate) after: ::std::option::Option<i64>,
     pub(crate) before: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl TimeRangeBuilder {
     }
     /// <p>The beginning of the time range to retrieve performance events from.</p>
     pub fn set_after(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.after = input;
-        self
+        self.after = input; self
+    }
+    /// <p>The beginning of the time range to retrieve performance events from.</p>
+    pub fn get_after(&self) -> &::std::option::Option<i64> {
+        &self.after
     }
     /// <p>The end of the time range to retrieve performance events from. If you omit this, the time range extends to the time that this operation is performed.</p>
     pub fn before(mut self, input: i64) -> Self {
@@ -55,14 +56,22 @@ impl TimeRangeBuilder {
     }
     /// <p>The end of the time range to retrieve performance events from. If you omit this, the time range extends to the time that this operation is performed.</p>
     pub fn set_before(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.before = input;
-        self
+        self.before = input; self
+    }
+    /// <p>The end of the time range to retrieve performance events from. If you omit this, the time range extends to the time that this operation is performed.</p>
+    pub fn get_before(&self) -> &::std::option::Option<i64> {
+        &self.before
     }
     /// Consumes the builder and constructs a [`TimeRange`](crate::types::TimeRange).
     pub fn build(self) -> crate::types::TimeRange {
         crate::types::TimeRange {
-            after: self.after.unwrap_or_default(),
-            before: self.before.unwrap_or_default(),
+            after: self.after
+                .unwrap_or_default()
+            ,
+            before: self.before
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

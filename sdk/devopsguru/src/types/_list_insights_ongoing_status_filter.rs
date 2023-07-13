@@ -3,14 +3,14 @@
 /// <p> Used to filter for insights that have the status <code>ONGOING</code>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInsightsOngoingStatusFilter {
+pub struct ListInsightsOngoingStatusFilter  {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InsightType>,
 }
 impl ListInsightsOngoingStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InsightType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::InsightType> {
         self.r#type.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ListInsightsOngoingStatusFilter {
 
 /// A builder for [`ListInsightsOngoingStatusFilter`](crate::types::ListInsightsOngoingStatusFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInsightsOngoingStatusFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InsightType>,
 }
@@ -37,13 +35,18 @@ impl ListInsightsOngoingStatusFilterBuilder {
     }
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ListInsightsOngoingStatusFilter`](crate::types::ListInsightsOngoingStatusFilter).
     pub fn build(self) -> crate::types::ListInsightsOngoingStatusFilter {
         crate::types::ListInsightsOngoingStatusFilter {
-            r#type: self.r#type,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

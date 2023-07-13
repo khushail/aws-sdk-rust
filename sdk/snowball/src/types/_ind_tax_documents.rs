@@ -3,14 +3,14 @@
 /// <p>The tax documents required in Amazon Web Services Region in India.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IndTaxDocuments {
+pub struct IndTaxDocuments  {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
     #[doc(hidden)]
     pub gstin: ::std::option::Option<::std::string::String>,
 }
 impl IndTaxDocuments {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
-    pub fn gstin(&self) -> ::std::option::Option<&str> {
+    pub fn gstin(&self) -> ::std::option::Option<& str> {
         self.gstin.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl IndTaxDocuments {
 
 /// A builder for [`IndTaxDocuments`](crate::types::IndTaxDocuments).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IndTaxDocumentsBuilder {
     pub(crate) gstin: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl IndTaxDocumentsBuilder {
     }
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
     pub fn set_gstin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gstin = input;
-        self
+        self.gstin = input; self
+    }
+    /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
+    pub fn get_gstin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gstin
     }
     /// Consumes the builder and constructs a [`IndTaxDocuments`](crate::types::IndTaxDocuments).
     pub fn build(self) -> crate::types::IndTaxDocuments {
-        crate::types::IndTaxDocuments { gstin: self.gstin }
+        crate::types::IndTaxDocuments {
+            gstin: self.gstin
+            ,
+        }
     }
 }
+

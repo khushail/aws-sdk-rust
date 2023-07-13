@@ -3,14 +3,14 @@
 /// <p>Contains the location of a validation script.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// <p>Location of an Amazon S3 object.</p>
     #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl Source {
     /// <p>Location of an Amazon S3 object.</p>
-    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl Source {
 
 /// A builder for [`Source`](crate::types::Source).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
 }
@@ -36,17 +34,19 @@ impl SourceBuilder {
         self
     }
     /// <p>Location of an Amazon S3 object.</p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
-        self.s3_location = input;
-        self
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
+        self.s3_location = input; self
+    }
+    /// <p>Location of an Amazon S3 object.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
     }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
         crate::types::Source {
-            s3_location: self.s3_location,
+            s3_location: self.s3_location
+            ,
         }
     }
 }
+

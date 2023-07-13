@@ -3,7 +3,7 @@
 /// <p>Object containing both the face metadata (stored in the backend database), and facial attributes that are detected but aren't stored in the database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FaceRecord {
+pub struct FaceRecord  {
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
     #[doc(hidden)]
     pub face: ::std::option::Option<crate::types::Face>,
@@ -13,11 +13,11 @@ pub struct FaceRecord {
 }
 impl FaceRecord {
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
-    pub fn face(&self) -> ::std::option::Option<&crate::types::Face> {
+    pub fn face(&self) -> ::std::option::Option<& crate::types::Face> {
         self.face.as_ref()
     }
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
-    pub fn face_detail(&self) -> ::std::option::Option<&crate::types::FaceDetail> {
+    pub fn face_detail(&self) -> ::std::option::Option<& crate::types::FaceDetail> {
         self.face_detail.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl FaceRecord {
 
 /// A builder for [`FaceRecord`](crate::types::FaceRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FaceRecordBuilder {
     pub(crate) face: ::std::option::Option<crate::types::Face>,
     pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,
@@ -45,8 +43,11 @@ impl FaceRecordBuilder {
     }
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
     pub fn set_face(mut self, input: ::std::option::Option<crate::types::Face>) -> Self {
-        self.face = input;
-        self
+        self.face = input; self
+    }
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
+    pub fn get_face(&self) -> &::std::option::Option<crate::types::Face> {
+        &self.face
     }
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
     pub fn face_detail(mut self, input: crate::types::FaceDetail) -> Self {
@@ -54,18 +55,21 @@ impl FaceRecordBuilder {
         self
     }
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
-    pub fn set_face_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::FaceDetail>,
-    ) -> Self {
-        self.face_detail = input;
-        self
+    pub fn set_face_detail(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
+        self.face_detail = input; self
+    }
+    /// <p>Structure containing attributes of the face that the algorithm detected.</p>
+    pub fn get_face_detail(&self) -> &::std::option::Option<crate::types::FaceDetail> {
+        &self.face_detail
     }
     /// Consumes the builder and constructs a [`FaceRecord`](crate::types::FaceRecord).
     pub fn build(self) -> crate::types::FaceRecord {
         crate::types::FaceRecord {
-            face: self.face,
-            face_detail: self.face_detail,
+            face: self.face
+            ,
+            face_detail: self.face_detail
+            ,
         }
     }
 }
+

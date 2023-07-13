@@ -3,105 +3,90 @@ pub use crate::operation::submit_task_state_change::_submit_task_state_change_ou
 
 pub use crate::operation::submit_task_state_change::_submit_task_state_change_input::SubmitTaskStateChangeInputBuilder;
 
+impl SubmitTaskStateChangeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::submit_task_state_change::SubmitTaskStateChangeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.submit_task_state_change();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SubmitTaskStateChange`.
-///
-/// <note>
-/// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
-/// </note>
+/// 
+/// <note> 
+/// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p> 
+/// </note> 
 /// <p>Sent to acknowledge that a task changed states.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubmitTaskStateChangeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeInputBuilder,
+                    inner: crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeInputBuilder,
 }
-impl SubmitTaskStateChangeFluentBuilder {
+impl SubmitTaskStateChangeFluentBuilder  {
     /// Creates a new `SubmitTaskStateChange`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::submit_task_state_change::SubmitTaskStateChange,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_task_state_change::SubmitTaskStateChangeError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SubmitTaskStateChange as a reference.
+    pub fn as_input(&self) -> &crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_task_state_change::SubmitTaskStateChangeError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::submit_task_state_change::SubmitTaskStateChange, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::submit_task_state_change::SubmitTaskStateChangeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput, ::aws_smithy_http::result::SdkError<crate::operation::submit_task_state_change::SubmitTaskStateChangeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_task_state_change::SubmitTaskStateChangeError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::submit_task_state_change::SubmitTaskStateChange,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_task_state_change::SubmitTaskStateChangeError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput, ::aws_smithy_http::result::SdkError<crate::operation::submit_task_state_change::SubmitTaskStateChangeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::submit_task_state_change::SubmitTaskStateChange, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::submit_task_state_change::SubmitTaskStateChangeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
@@ -111,6 +96,10 @@ impl SubmitTaskStateChangeFluentBuilder {
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster(input);
         self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
     }
     /// <p>The task ID or full ARN of the task in the state change request.</p>
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,6 +111,10 @@ impl SubmitTaskStateChangeFluentBuilder {
         self.inner = self.inner.set_task(input);
         self
     }
+    /// <p>The task ID or full ARN of the task in the state change request.</p>
+    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task()
+    }
     /// <p>The status of the state change request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status(input.into());
@@ -131,6 +124,10 @@ impl SubmitTaskStateChangeFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the state change request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status()
     }
     /// <p>The reason for the state change request.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +139,10 @@ impl SubmitTaskStateChangeFluentBuilder {
         self.inner = self.inner.set_reason(input);
         self
     }
+    /// <p>The reason for the state change request.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
+    }
     /// Appends an item to `containers`.
     ///
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
@@ -152,12 +153,13 @@ impl SubmitTaskStateChangeFluentBuilder {
         self
     }
     /// <p>Any containers that's associated with the state change request.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerStateChange>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerStateChange>>) -> Self {
         self.inner = self.inner.set_containers(input);
         self
+    }
+    /// <p>Any containers that's associated with the state change request.</p>
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerStateChange>> {
+        self.inner.get_containers()
     }
     /// Appends an item to `attachments`.
     ///
@@ -169,12 +171,13 @@ impl SubmitTaskStateChangeFluentBuilder {
         self
     }
     /// <p>Any attachments associated with the state change request.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>>) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
+    }
+    /// <p>Any attachments associated with the state change request.</p>
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>> {
+        self.inner.get_attachments()
     }
     /// Appends an item to `managedAgents`.
     ///
@@ -186,12 +189,13 @@ impl SubmitTaskStateChangeFluentBuilder {
         self
     }
     /// <p>The details for the managed agent that's associated with the task.</p>
-    pub fn set_managed_agents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAgentStateChange>>,
-    ) -> Self {
+    pub fn set_managed_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAgentStateChange>>) -> Self {
         self.inner = self.inner.set_managed_agents(input);
         self
+    }
+    /// <p>The details for the managed agent that's associated with the task.</p>
+    pub fn get_managed_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAgentStateChange>> {
+        self.inner.get_managed_agents()
     }
     /// <p>The Unix timestamp for the time when the container image pull started.</p>
     pub fn pull_started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -199,12 +203,13 @@ impl SubmitTaskStateChangeFluentBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull started.</p>
-    pub fn set_pull_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_pull_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_pull_started_at(input);
         self
+    }
+    /// <p>The Unix timestamp for the time when the container image pull started.</p>
+    pub fn get_pull_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_pull_started_at()
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
     pub fn pull_stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -212,12 +217,13 @@ impl SubmitTaskStateChangeFluentBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-    pub fn set_pull_stopped_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_pull_stopped_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_pull_stopped_at(input);
         self
+    }
+    /// <p>The Unix timestamp for the time when the container image pull completed.</p>
+    pub fn get_pull_stopped_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_pull_stopped_at()
     }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
     pub fn execution_stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -225,11 +231,13 @@ impl SubmitTaskStateChangeFluentBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-    pub fn set_execution_stopped_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_stopped_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_execution_stopped_at(input);
         self
     }
+    /// <p>The Unix timestamp for the time when the task execution stopped.</p>
+    pub fn get_execution_stopped_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_execution_stopped_at()
+    }
 }
+

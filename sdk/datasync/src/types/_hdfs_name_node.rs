@@ -3,7 +3,7 @@
 /// <p>The NameNode of the Hadoop Distributed File System (HDFS). The NameNode manages the file system's namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HdfsNameNode {
+pub struct HdfsNameNode  {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
     #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct HdfsNameNode {
 }
 impl HdfsNameNode {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The port that the NameNode uses to listen to client requests.</p>
@@ -30,9 +30,7 @@ impl HdfsNameNode {
 
 /// A builder for [`HdfsNameNode`](crate::types::HdfsNameNode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HdfsNameNodeBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl HdfsNameNodeBuilder {
     }
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
+    }
+    /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
     }
     /// <p>The port that the NameNode uses to listen to client requests.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl HdfsNameNodeBuilder {
     }
     /// <p>The port that the NameNode uses to listen to client requests.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
+    }
+    /// <p>The port that the NameNode uses to listen to client requests.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`HdfsNameNode`](crate::types::HdfsNameNode).
     pub fn build(self) -> crate::types::HdfsNameNode {
         crate::types::HdfsNameNode {
-            hostname: self.hostname,
-            port: self.port,
+            hostname: self.hostname
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

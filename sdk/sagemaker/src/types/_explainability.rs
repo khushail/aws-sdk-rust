@@ -3,14 +3,14 @@
 /// <p>Contains explainability metrics for a model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Explainability {
+pub struct Explainability  {
     /// <p>The explainability report for a model.</p>
     #[doc(hidden)]
     pub report: ::std::option::Option<crate::types::MetricsSource>,
 }
 impl Explainability {
     /// <p>The explainability report for a model.</p>
-    pub fn report(&self) -> ::std::option::Option<&crate::types::MetricsSource> {
+    pub fn report(&self) -> ::std::option::Option<& crate::types::MetricsSource> {
         self.report.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl Explainability {
 
 /// A builder for [`Explainability`](crate::types::Explainability).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExplainabilityBuilder {
     pub(crate) report: ::std::option::Option<crate::types::MetricsSource>,
 }
@@ -37,13 +35,18 @@ impl ExplainabilityBuilder {
     }
     /// <p>The explainability report for a model.</p>
     pub fn set_report(mut self, input: ::std::option::Option<crate::types::MetricsSource>) -> Self {
-        self.report = input;
-        self
+        self.report = input; self
+    }
+    /// <p>The explainability report for a model.</p>
+    pub fn get_report(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.report
     }
     /// Consumes the builder and constructs a [`Explainability`](crate::types::Explainability).
     pub fn build(self) -> crate::types::Explainability {
         crate::types::Explainability {
-            report: self.report,
+            report: self.report
+            ,
         }
     }
 }
+

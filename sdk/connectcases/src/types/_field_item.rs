@@ -3,14 +3,14 @@
 /// <p>Object for field related information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldItem {
+pub struct FieldItem  {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl FieldItem {
     /// <p>Unique identifier of a field.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl FieldItem {
 
 /// A builder for [`FieldItem`](crate::types::FieldItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl FieldItemBuilder {
     }
     /// <p>Unique identifier of a field.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>Unique identifier of a field.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`FieldItem`](crate::types::FieldItem).
     pub fn build(self) -> crate::types::FieldItem {
-        crate::types::FieldItem { id: self.id }
+        crate::types::FieldItem {
+            id: self.id
+            ,
+        }
     }
 }
+

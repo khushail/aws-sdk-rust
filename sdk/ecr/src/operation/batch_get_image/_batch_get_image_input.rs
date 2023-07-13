@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetImageInput {
+pub struct BatchGetImageInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,27 @@ pub struct BatchGetImageInput {
     /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     #[doc(hidden)]
     pub image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
-    /// <p>The accepted media types for the request.</p>
+    /// <p>The accepted media types for the request.</p> 
     /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
     #[doc(hidden)]
     pub accepted_media_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetImageInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository that contains the images to describe.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn image_ids(&self) -> ::std::option::Option<&[crate::types::ImageIdentifier]> {
+    pub fn image_ids(&self) -> ::std::option::Option<& [crate::types::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
-    /// <p>The accepted media types for the request.</p>
+    /// <p>The accepted media types for the request.</p> 
     /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
-    pub fn accepted_media_types(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn accepted_media_types(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.accepted_media_types.as_deref()
     }
 }
@@ -45,9 +45,7 @@ impl BatchGetImageInput {
 
 /// A builder for [`BatchGetImageInput`](crate::operation::batch_get_image::BatchGetImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetImageInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -62,24 +60,24 @@ impl BatchGetImageInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// <p>The repository that contains the images to describe.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository that contains the images to describe.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.repository_name = input;
-        self
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.repository_name = input; self
+    }
+    /// <p>The repository that contains the images to describe.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Appends an item to `image_ids`.
     ///
@@ -88,54 +86,54 @@ impl BatchGetImageInputBuilder {
     /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     pub fn image_ids(mut self, input: crate::types::ImageIdentifier) -> Self {
         let mut v = self.image_ids.unwrap_or_default();
-        v.push(input);
-        self.image_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.image_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
-    ) -> Self {
-        self.image_ids = input;
-        self
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
+        self.image_ids = input; self
+    }
+    /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+        &self.image_ids
     }
     /// Appends an item to `accepted_media_types`.
     ///
     /// To override the contents of this collection use [`set_accepted_media_types`](Self::set_accepted_media_types).
     ///
-    /// <p>The accepted media types for the request.</p>
+    /// <p>The accepted media types for the request.</p> 
     /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
-    pub fn accepted_media_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accepted_media_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accepted_media_types.unwrap_or_default();
-        v.push(input.into());
-        self.accepted_media_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accepted_media_types = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The accepted media types for the request.</p>
+    /// <p>The accepted media types for the request.</p> 
     /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
-    pub fn set_accepted_media_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.accepted_media_types = input;
-        self
+    pub fn set_accepted_media_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.accepted_media_types = input; self
+    }
+    /// <p>The accepted media types for the request.</p> 
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+    pub fn get_accepted_media_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accepted_media_types
     }
     /// Consumes the builder and constructs a [`BatchGetImageInput`](crate::operation::batch_get_image::BatchGetImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_image::BatchGetImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_image::BatchGetImageInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            image_ids: self.image_ids,
-            accepted_media_types: self.accepted_media_types,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_image::BatchGetImageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_image::BatchGetImageInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                image_ids: self.image_ids
+                ,
+                accepted_media_types: self.accepted_media_types
+                ,
+            }
+        )
     }
 }
+

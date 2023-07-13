@@ -3,7 +3,7 @@
 /// Request for creating a data view.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataViewInput {
+pub struct CreateDataViewInput  {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -28,11 +28,11 @@ pub struct CreateDataViewInput {
 }
 impl CreateDataViewInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
-    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
@@ -40,11 +40,11 @@ impl CreateDataViewInput {
         self.auto_update
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn sort_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn sort_columns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.sort_columns.as_deref()
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn partition_columns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.partition_columns.as_deref()
     }
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -52,9 +52,7 @@ impl CreateDataViewInput {
         self.as_of_timestamp
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn destination_type_params(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataViewDestinationTypeParams> {
+    pub fn destination_type_params(&self) -> ::std::option::Option<& crate::types::DataViewDestinationTypeParams> {
         self.destination_type_params.as_ref()
     }
 }
@@ -67,9 +65,7 @@ impl CreateDataViewInput {
 
 /// A builder for [`CreateDataViewInput`](crate::operation::create_data_view::CreateDataViewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataViewInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
@@ -77,8 +73,7 @@ pub struct CreateDataViewInputBuilder {
     pub(crate) sort_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) partition_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) as_of_timestamp: ::std::option::Option<i64>,
-    pub(crate) destination_type_params:
-        ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
+    pub(crate) destination_type_params: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
 }
 impl CreateDataViewInputBuilder {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -88,8 +83,11 @@ impl CreateDataViewInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,8 +96,11 @@ impl CreateDataViewInputBuilder {
     }
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_id = input;
-        self
+        self.dataset_id = input; self
+    }
+    /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
     }
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
     pub fn auto_update(mut self, input: bool) -> Self {
@@ -108,8 +109,11 @@ impl CreateDataViewInputBuilder {
     }
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
+    }
+    /// <p>Flag to indicate Dataview should be updated automatically.</p>
+    pub fn get_auto_update(&self) -> &::std::option::Option<bool> {
+        &self.auto_update
     }
     /// Appends an item to `sort_columns`.
     ///
@@ -118,39 +122,36 @@ impl CreateDataViewInputBuilder {
     /// <p>Columns to be used for sorting the data.</p>
     pub fn sort_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sort_columns.unwrap_or_default();
-        v.push(input.into());
-        self.sort_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.sort_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn set_sort_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.sort_columns = input;
-        self
+    pub fn set_sort_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.sort_columns = input; self
+    }
+    /// <p>Columns to be used for sorting the data.</p>
+    pub fn get_sort_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sort_columns
     }
     /// Appends an item to `partition_columns`.
     ///
     /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
     ///
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_columns.unwrap_or_default();
-        v.push(input.into());
-        self.partition_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.partition_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn set_partition_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.partition_columns = input;
-        self
+    pub fn set_partition_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.partition_columns = input; self
+    }
+    /// <p>Ordered set of column names used to partition data.</p>
+    pub fn get_partition_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_columns
     }
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn as_of_timestamp(mut self, input: i64) -> Self {
@@ -159,40 +160,46 @@ impl CreateDataViewInputBuilder {
     }
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_as_of_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.as_of_timestamp = input;
-        self
+        self.as_of_timestamp = input; self
+    }
+    /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_as_of_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.as_of_timestamp
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn destination_type_params(
-        mut self,
-        input: crate::types::DataViewDestinationTypeParams,
-    ) -> Self {
+    pub fn destination_type_params(mut self, input: crate::types::DataViewDestinationTypeParams) -> Self {
         self.destination_type_params = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn set_destination_type_params(
-        mut self,
-        input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
-    ) -> Self {
-        self.destination_type_params = input;
-        self
+    pub fn set_destination_type_params(mut self, input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>) -> Self {
+        self.destination_type_params = input; self
+    }
+    /// <p>Options that define the destination type for the Dataview.</p>
+    pub fn get_destination_type_params(&self) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
+        &self.destination_type_params
     }
     /// Consumes the builder and constructs a [`CreateDataViewInput`](crate::operation::create_data_view::CreateDataViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_view::CreateDataViewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_data_view::CreateDataViewInput {
-            client_token: self.client_token,
-            dataset_id: self.dataset_id,
-            auto_update: self.auto_update.unwrap_or_default(),
-            sort_columns: self.sort_columns,
-            partition_columns: self.partition_columns,
-            as_of_timestamp: self.as_of_timestamp,
-            destination_type_params: self.destination_type_params,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_view::CreateDataViewInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_data_view::CreateDataViewInput {
+                client_token: self.client_token
+                ,
+                dataset_id: self.dataset_id
+                ,
+                auto_update: self.auto_update
+                    .unwrap_or_default()
+                ,
+                sort_columns: self.sort_columns
+                ,
+                partition_columns: self.partition_columns
+                ,
+                as_of_timestamp: self.as_of_timestamp
+                ,
+                destination_type_params: self.destination_type_params
+                ,
+            }
+        )
     }
 }
+

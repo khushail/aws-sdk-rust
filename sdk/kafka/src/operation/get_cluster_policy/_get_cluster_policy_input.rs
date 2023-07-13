@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetClusterPolicyInput {
+pub struct GetClusterPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
 }
 impl GetClusterPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetClusterPolicyInput`](crate::operation::get_cluster_policy::GetClusterPolicyInput).
-    pub fn builder() -> crate::operation::get_cluster_policy::builders::GetClusterPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cluster_policy::builders::GetClusterPolicyInputBuilder {
         crate::operation::get_cluster_policy::builders::GetClusterPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetClusterPolicyInput`](crate::operation::get_cluster_policy::GetClusterPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClusterPolicyInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl GetClusterPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`GetClusterPolicyInput`](crate::operation::get_cluster_policy::GetClusterPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cluster_policy::GetClusterPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cluster_policy::GetClusterPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_cluster_policy::GetClusterPolicyInput {
-                cluster_arn: self.cluster_arn,
-            },
+                cluster_arn: self.cluster_arn
+                ,
+            }
         )
     }
 }
+

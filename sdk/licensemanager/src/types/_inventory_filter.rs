@@ -3,7 +3,7 @@
 /// <p>An inventory filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryFilter {
+pub struct InventoryFilter  {
     /// <p>Name of the filter.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct InventoryFilter {
 }
 impl InventoryFilter {
     /// <p>Name of the filter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Condition of the filter.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::InventoryFilterCondition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::InventoryFilterCondition> {
         self.condition.as_ref()
     }
     /// <p>Value of the filter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl InventoryFilter {
 
 /// A builder for [`InventoryFilter`](crate::types::InventoryFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) condition: ::std::option::Option<crate::types::InventoryFilterCondition>,
@@ -53,8 +51,11 @@ impl InventoryFilterBuilder {
     }
     /// <p>Name of the filter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Condition of the filter.</p>
     pub fn condition(mut self, input: crate::types::InventoryFilterCondition) -> Self {
@@ -62,12 +63,12 @@ impl InventoryFilterBuilder {
         self
     }
     /// <p>Condition of the filter.</p>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryFilterCondition>,
-    ) -> Self {
-        self.condition = input;
-        self
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::InventoryFilterCondition>) -> Self {
+        self.condition = input; self
+    }
+    /// <p>Condition of the filter.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::InventoryFilterCondition> {
+        &self.condition
     }
     /// <p>Value of the filter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,15 +77,22 @@ impl InventoryFilterBuilder {
     }
     /// <p>Value of the filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>Value of the filter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
     pub fn build(self) -> crate::types::InventoryFilter {
         crate::types::InventoryFilter {
-            name: self.name,
-            condition: self.condition,
-            value: self.value,
+            name: self.name
+            ,
+            condition: self.condition
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

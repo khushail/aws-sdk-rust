@@ -3,7 +3,7 @@
 /// <p>Complex data type for field-level encryption profiles that includes all of the encryption entities.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionEntities {
+pub struct EncryptionEntities  {
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping.</p>
     #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl EncryptionEntities {
         self.quantity
     }
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::EncryptionEntity]> {
+    pub fn items(&self) -> ::std::option::Option<& [crate::types::EncryptionEntity]> {
         self.items.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl EncryptionEntities {
 
 /// A builder for [`EncryptionEntities`](crate::types::EncryptionEntities).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionEntitiesBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>,
@@ -45,8 +43,11 @@ impl EncryptionEntitiesBuilder {
     }
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
+    }
+    /// <p>Number of field pattern items in a field-level encryption content type-profile mapping.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// Appends an item to `items`.
     ///
@@ -55,23 +56,26 @@ impl EncryptionEntitiesBuilder {
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
     pub fn items(mut self, input: crate::types::EncryptionEntity) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>) -> Self {
+        self.items = input; self
+    }
+    /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`EncryptionEntities`](crate::types::EncryptionEntities).
     pub fn build(self) -> crate::types::EncryptionEntities {
         crate::types::EncryptionEntities {
-            quantity: self.quantity,
-            items: self.items,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

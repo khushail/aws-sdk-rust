@@ -3,7 +3,7 @@
 /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerImage {
+pub struct ContainerImage  {
     /// <p>The name of the container image.</p>
     #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ContainerImage {
 }
 impl ContainerImage {
     /// <p>The name of the container image.</p>
-    pub fn image(&self) -> ::std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<& str> {
         self.image.as_deref()
     }
     /// <p>The digest of the container image.</p>
-    pub fn digest(&self) -> ::std::option::Option<&str> {
+    pub fn digest(&self) -> ::std::option::Option<& str> {
         self.digest.as_deref()
     }
     /// <p>The timestamp when the container image was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl ContainerImage {
 
 /// A builder for [`ContainerImage`](crate::types::ContainerImage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerImageBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) digest: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl ContainerImageBuilder {
     }
     /// <p>The name of the container image.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
+    }
+    /// <p>The name of the container image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
     }
     /// <p>The digest of the container image.</p>
     pub fn digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl ContainerImageBuilder {
     }
     /// <p>The digest of the container image.</p>
     pub fn set_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.digest = input;
-        self
+        self.digest = input; self
+    }
+    /// <p>The digest of the container image.</p>
+    pub fn get_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.digest
     }
     /// <p>The timestamp when the container image was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -72,19 +76,23 @@ impl ContainerImageBuilder {
         self
     }
     /// <p>The timestamp when the container image was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The timestamp when the container image was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`ContainerImage`](crate::types::ContainerImage).
     pub fn build(self) -> crate::types::ContainerImage {
         crate::types::ContainerImage {
-            image: self.image,
-            digest: self.digest,
-            created_at: self.created_at,
+            image: self.image
+            ,
+            digest: self.digest
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

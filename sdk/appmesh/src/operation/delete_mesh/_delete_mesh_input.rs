@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMeshInput {
+pub struct DeleteMeshInput  {
     /// <p>The name of the service mesh to delete.</p>
     #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMeshInput {
     /// <p>The name of the service mesh to delete.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
+    pub fn mesh_name(&self) -> ::std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteMeshInput {
 
 /// A builder for [`DeleteMeshInput`](crate::operation::delete_mesh::DeleteMeshInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMeshInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteMeshInputBuilder {
     }
     /// <p>The name of the service mesh to delete.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
+    }
+    /// <p>The name of the service mesh to delete.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
     }
     /// Consumes the builder and constructs a [`DeleteMeshInput`](crate::operation::delete_mesh::DeleteMeshInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_mesh::DeleteMeshInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_mesh::DeleteMeshInput {
-            mesh_name: self.mesh_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_mesh::DeleteMeshInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_mesh::DeleteMeshInput {
+                mesh_name: self.mesh_name
+                ,
+            }
+        )
     }
 }
+

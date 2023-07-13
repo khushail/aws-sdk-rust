@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedNodeExchangeStatusInput {
+pub struct DescribeReservedNodeExchangeStatusInput  {
     /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
     #[doc(hidden)]
     pub reserved_node_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeReservedNodeExchangeStatusInput {
 }
 impl DescribeReservedNodeExchangeStatusInput {
     /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
-    pub fn reserved_node_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_node_id(&self) -> ::std::option::Option<& str> {
         self.reserved_node_id.as_deref()
     }
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn reserved_node_exchange_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_node_exchange_request_id(&self) -> ::std::option::Option<& str> {
         self.reserved_node_exchange_request_id.as_deref()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -30,22 +30,20 @@ impl DescribeReservedNodeExchangeStatusInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeReservedNodeExchangeStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodeExchangeStatusInput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput).
-    pub fn builder() -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusInputBuilder {
         crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedNodeExchangeStatusInput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodeExchangeStatusInputBuilder {
     pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_node_exchange_request_id: ::std::option::Option<::std::string::String>,
@@ -54,36 +52,30 @@ pub struct DescribeReservedNodeExchangeStatusInputBuilder {
 }
 impl DescribeReservedNodeExchangeStatusInputBuilder {
     /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reserved_node_id = input;
-        self
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reserved_node_id = input; self
+    }
+    /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
+    pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_node_id
     }
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn reserved_node_exchange_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_exchange_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_exchange_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn set_reserved_node_exchange_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reserved_node_exchange_request_id = input;
-        self
+    pub fn set_reserved_node_exchange_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reserved_node_exchange_request_id = input; self
+    }
+    /// <p>The identifier of the reserved-node exchange request.</p>
+    pub fn get_reserved_node_exchange_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_node_exchange_request_id
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -92,8 +84,11 @@ impl DescribeReservedNodeExchangeStatusInputBuilder {
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,11 +97,14 @@ impl DescribeReservedNodeExchangeStatusInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReservedNodeExchangeStatusInput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusInput {
                 reserved_node_id: self.reserved_node_id
@@ -121,3 +119,4 @@ impl DescribeReservedNodeExchangeStatusInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRecordOutput {
+pub struct DescribeRecordOutput  {
     /// <p>Information about the product.</p>
     #[doc(hidden)]
     pub record_detail: ::std::option::Option<crate::types::RecordDetail>,
@@ -16,23 +16,23 @@ pub struct DescribeRecordOutput {
 }
 impl DescribeRecordOutput {
     /// <p>Information about the product.</p>
-    pub fn record_detail(&self) -> ::std::option::Option<&crate::types::RecordDetail> {
+    pub fn record_detail(&self) -> ::std::option::Option<& crate::types::RecordDetail> {
         self.record_detail.as_ref()
     }
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
-    pub fn record_outputs(&self) -> ::std::option::Option<&[crate::types::RecordOutput]> {
+    pub fn record_outputs(&self) -> ::std::option::Option<& [crate::types::RecordOutput]> {
         self.record_outputs.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeRecordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeRecordOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecordOutput`](crate::operation::describe_record::DescribeRecordOutput).
     pub fn builder() -> crate::operation::describe_record::builders::DescribeRecordOutputBuilder {
@@ -42,9 +42,7 @@ impl DescribeRecordOutput {
 
 /// A builder for [`DescribeRecordOutput`](crate::operation::describe_record::DescribeRecordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecordOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     pub(crate) record_outputs: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
@@ -58,12 +56,12 @@ impl DescribeRecordOutputBuilder {
         self
     }
     /// <p>Information about the product.</p>
-    pub fn set_record_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordDetail>,
-    ) -> Self {
-        self.record_detail = input;
-        self
+    pub fn set_record_detail(mut self, input: ::std::option::Option<crate::types::RecordDetail>) -> Self {
+        self.record_detail = input; self
+    }
+    /// <p>Information about the product.</p>
+    pub fn get_record_detail(&self) -> &::std::option::Option<crate::types::RecordDetail> {
+        &self.record_detail
     }
     /// Appends an item to `record_outputs`.
     ///
@@ -72,50 +70,51 @@ impl DescribeRecordOutputBuilder {
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
     pub fn record_outputs(mut self, input: crate::types::RecordOutput) -> Self {
         let mut v = self.record_outputs.unwrap_or_default();
-        v.push(input);
-        self.record_outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.record_outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
-    pub fn set_record_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
-    ) -> Self {
-        self.record_outputs = input;
-        self
+    pub fn set_record_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>) -> Self {
+        self.record_outputs = input; self
+    }
+    /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+    pub fn get_record_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>> {
+        &self.record_outputs
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_page_token = input;
-        self
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_page_token = input; self
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeRecordOutput`](crate::operation::describe_record::DescribeRecordOutput).
     pub fn build(self) -> crate::operation::describe_record::DescribeRecordOutput {
         crate::operation::describe_record::DescribeRecordOutput {
-            record_detail: self.record_detail,
-            record_outputs: self.record_outputs,
-            next_page_token: self.next_page_token,
+            record_detail: self.record_detail
+            ,
+            record_outputs: self.record_outputs
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

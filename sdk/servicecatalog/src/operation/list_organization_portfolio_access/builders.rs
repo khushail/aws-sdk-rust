@@ -3,106 +3,119 @@ pub use crate::operation::list_organization_portfolio_access::_list_organization
 
 pub use crate::operation::list_organization_portfolio_access::_list_organization_portfolio_access_input::ListOrganizationPortfolioAccessInputBuilder;
 
+impl ListOrganizationPortfolioAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_organization_portfolio_access();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListOrganizationPortfolioAccess`.
-///
-/// <p>Lists the organization nodes that have access to the specified portfolio. This API can only be called by the management account in the organization or by a delegated admin.</p>
+/// 
+/// <p>Lists the organization nodes that have access to the specified portfolio. This API can only be called by the management account in the organization or by a delegated admin.</p> 
 /// <p>If a delegated admin is de-registered, they can no longer perform this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOrganizationPortfolioAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder,
 }
-impl ListOrganizationPortfolioAccessFluentBuilder {
+impl ListOrganizationPortfolioAccessFluentBuilder  {
     /// Creates a new `ListOrganizationPortfolioAccess`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOrganizationPortfolioAccess as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator{
-        crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator::new(self.handle, self.inner)
-    }
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator {
+                                crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator::new(self.handle, self.inner)
+                            }
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
+    }
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
     }
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,28 +127,38 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
         self.inner = self.inner.set_portfolio_id(input);
         self
     }
-    /// <p>The organization node type that will be returned in the output.</p>
-    /// <ul>
-    /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
-    /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
-    /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
+    /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portfolio_id()
+    }
+    /// <p>The organization node type that will be returned in the output.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li> 
+    /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li> 
+    /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li> 
     /// </ul>
     pub fn organization_node_type(mut self, input: crate::types::OrganizationNodeType) -> Self {
         self.inner = self.inner.organization_node_type(input);
         self
     }
-    /// <p>The organization node type that will be returned in the output.</p>
-    /// <ul>
-    /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
-    /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
-    /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
+    /// <p>The organization node type that will be returned in the output.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li> 
+    /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li> 
+    /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li> 
     /// </ul>
-    pub fn set_organization_node_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationNodeType>,
-    ) -> Self {
+    pub fn set_organization_node_type(mut self, input: ::std::option::Option<crate::types::OrganizationNodeType>) -> Self {
         self.inner = self.inner.set_organization_node_type(input);
         self
+    }
+    /// <p>The organization node type that will be returned in the output.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li> 
+    /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li> 
+    /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li> 
+    /// </ul>
+    pub fn get_organization_node_type(&self) -> &::std::option::Option<crate::types::OrganizationNodeType> {
+        self.inner.get_organization_node_type()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +170,10 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
         self.inner = self.inner.set_page_token(input);
         self
     }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -157,4 +184,9 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
+    }
 }
+

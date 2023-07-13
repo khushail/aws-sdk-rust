@@ -219,6 +219,8 @@ pub use crate::types::_group_key::GroupKey;
 
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteria;
 
+pub use crate::types::_coverage_date_filter::CoverageDateFilter;
+
 pub use crate::types::_coverage_string_filter::CoverageStringFilter;
 
 pub use crate::types::_coverage_string_comparison::CoverageStringComparison;
@@ -358,6 +360,8 @@ mod _aws_lambda_function_details;
 mod _cisa_data;
 
 mod _counts;
+
+mod _coverage_date_filter;
 
 mod _coverage_filter_criteria;
 
@@ -628,3 +632,4 @@ pub mod builders;
 
 /// Error types that Inspector2 can respond with.
 pub mod error;
+

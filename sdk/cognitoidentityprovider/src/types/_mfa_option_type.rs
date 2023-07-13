@@ -3,7 +3,7 @@
 /// <p> <i>This data type is no longer supported.</i> Applies only to SMS multi-factor authentication (MFA) configurations. Does not apply to time-based one-time password (TOTP) software token MFA configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MfaOptionType {
+pub struct MfaOptionType  {
     /// <p>The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery medium value.</p>
     #[doc(hidden)]
     pub delivery_medium: ::std::option::Option<crate::types::DeliveryMediumType>,
@@ -13,11 +13,11 @@ pub struct MfaOptionType {
 }
 impl MfaOptionType {
     /// <p>The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery medium value.</p>
-    pub fn delivery_medium(&self) -> ::std::option::Option<&crate::types::DeliveryMediumType> {
+    pub fn delivery_medium(&self) -> ::std::option::Option<& crate::types::DeliveryMediumType> {
         self.delivery_medium.as_ref()
     }
     /// <p>The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl MfaOptionType {
 
 /// A builder for [`MfaOptionType`](crate::types::MfaOptionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MfaOptionTypeBuilder {
     pub(crate) delivery_medium: ::std::option::Option<crate::types::DeliveryMediumType>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
@@ -44,34 +42,34 @@ impl MfaOptionTypeBuilder {
         self
     }
     /// <p>The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery medium value.</p>
-    pub fn set_delivery_medium(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryMediumType>,
-    ) -> Self {
-        self.delivery_medium = input;
-        self
+    pub fn set_delivery_medium(mut self, input: ::std::option::Option<crate::types::DeliveryMediumType>) -> Self {
+        self.delivery_medium = input; self
+    }
+    /// <p>The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery medium value.</p>
+    pub fn get_delivery_medium(&self) -> &::std::option::Option<crate::types::DeliveryMediumType> {
+        &self.delivery_medium
     }
     /// <p>The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.attribute_name = input;
-        self
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attribute_name = input; self
+    }
+    /// <p>The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
     }
     /// Consumes the builder and constructs a [`MfaOptionType`](crate::types::MfaOptionType).
     pub fn build(self) -> crate::types::MfaOptionType {
         crate::types::MfaOptionType {
-            delivery_medium: self.delivery_medium,
-            attribute_name: self.attribute_name,
+            delivery_medium: self.delivery_medium
+            ,
+            attribute_name: self.attribute_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteGeofenceInput {
+pub struct BatchDeleteGeofenceInput  {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
     #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct BatchDeleteGeofenceInput {
 }
 impl BatchDeleteGeofenceInput {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+    pub fn collection_name(&self) -> ::std::option::Option<& str> {
         self.collection_name.as_deref()
     }
     /// <p>The batch of geofences to be deleted.</p>
-    pub fn geofence_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn geofence_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.geofence_ids.as_deref()
     }
 }
 impl BatchDeleteGeofenceInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceInput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceInputBuilder {
-        crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceInputBuilder {
+        crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteGeofenceInput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteGeofenceInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) geofence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteGeofenceInputBuilder {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The geofence collection storing the geofences to be deleted.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.collection_name = input;
-        self
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collection_name = input; self
+    }
+    /// <p>The geofence collection storing the geofences to be deleted.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
     }
     /// Appends an item to `geofence_ids`.
     ///
@@ -62,30 +55,28 @@ impl BatchDeleteGeofenceInputBuilder {
     /// <p>The batch of geofences to be deleted.</p>
     pub fn geofence_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.geofence_ids.unwrap_or_default();
-        v.push(input.into());
-        self.geofence_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.geofence_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The batch of geofences to be deleted.</p>
-    pub fn set_geofence_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.geofence_ids = input;
-        self
+    pub fn set_geofence_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.geofence_ids = input; self
+    }
+    /// <p>The batch of geofences to be deleted.</p>
+    pub fn get_geofence_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.geofence_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteGeofenceInput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput {
-                collection_name: self.collection_name,
-                geofence_ids: self.geofence_ids,
-            },
+                collection_name: self.collection_name
+                ,
+                geofence_ids: self.geofence_ids
+                ,
+            }
         )
     }
 }
+

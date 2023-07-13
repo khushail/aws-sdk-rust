@@ -3,112 +3,97 @@ pub use crate::operation::create_project_version::_create_project_version_output
 
 pub use crate::operation::create_project_version::_create_project_version_input::CreateProjectVersionInputBuilder;
 
+impl CreateProjectVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_project_version::CreateProjectVersionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_project_version::CreateProjectVersionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_project_version();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateProjectVersion`.
-///
-/// <p>Creates a new version of a model and begins training. Models are managed as part of an Amazon Rekognition Custom Labels project. The response from <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the version of the model. </p>
-/// <p>Training uses the training and test datasets associated with the project. For more information, see Creating training and test dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p> <note>
-/// <p>You can train a model in a project that doesn't have associated datasets by specifying manifest files in the <code>TrainingData</code> and <code>TestingData</code> fields. </p>
-/// <p>If you open the console after training a model with manifest files, Amazon Rekognition Custom Labels creates the datasets for you using the most recent manifest files. You can no longer train a model version for the project by specifying manifest files. </p>
-/// <p>Instead of training with a project without associated datasets, we recommend that you use the manifest files to create training and test datasets for the project.</p>
-/// </note>
-/// <p>Training takes a while to complete. You can get the current status by calling <code>DescribeProjectVersions</code>. Training completed successfully if the value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.</p>
-/// <p>If training fails, see Debugging a failed model training in the <i>Amazon Rekognition Custom Labels</i> developer guide. </p>
-/// <p>Once training has successfully completed, call <code>DescribeProjectVersions</code> to get the training results and evaluate the model. For more information, see Improving a trained Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom Labels</i> developers guide. </p>
-/// <p>After evaluating the model, you start the model by calling <code>StartProjectVersion</code>.</p>
+/// 
+/// <p>Creates a new version of a model and begins training. Models are managed as part of an Amazon Rekognition Custom Labels project. The response from <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the version of the model. </p> 
+/// <p>Training uses the training and test datasets associated with the project. For more information, see Creating training and test dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p> <note> 
+/// <p>You can train a model in a project that doesn't have associated datasets by specifying manifest files in the <code>TrainingData</code> and <code>TestingData</code> fields. </p> 
+/// <p>If you open the console after training a model with manifest files, Amazon Rekognition Custom Labels creates the datasets for you using the most recent manifest files. You can no longer train a model version for the project by specifying manifest files. </p> 
+/// <p>Instead of training with a project without associated datasets, we recommend that you use the manifest files to create training and test datasets for the project.</p> 
+/// </note> 
+/// <p>Training takes a while to complete. You can get the current status by calling <code>DescribeProjectVersions</code>. Training completed successfully if the value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.</p> 
+/// <p>If training fails, see Debugging a failed model training in the <i>Amazon Rekognition Custom Labels</i> developer guide. </p> 
+/// <p>Once training has successfully completed, call <code>DescribeProjectVersions</code> to get the training results and evaluate the model. For more information, see Improving a trained Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom Labels</i> developers guide. </p> 
+/// <p>After evaluating the model, you start the model by calling <code>StartProjectVersion</code>.</p> 
 /// <p>This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProjectVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_project_version::builders::CreateProjectVersionInputBuilder,
+                    inner: crate::operation::create_project_version::builders::CreateProjectVersionInputBuilder,
 }
-impl CreateProjectVersionFluentBuilder {
+impl CreateProjectVersionFluentBuilder  {
     /// Creates a new `CreateProjectVersion`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_project_version::CreateProjectVersion,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project_version::CreateProjectVersionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateProjectVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_project_version::builders::CreateProjectVersionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_project_version::CreateProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project_version::CreateProjectVersionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_project_version::CreateProjectVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_project_version::CreateProjectVersionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_project_version::CreateProjectVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_project_version::CreateProjectVersionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_project_version::CreateProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project_version::CreateProjectVersionError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_project_version::CreateProjectVersion,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project_version::CreateProjectVersionError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_project_version::CreateProjectVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_project_version::CreateProjectVersionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_project_version::CreateProjectVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_project_version::CreateProjectVersionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_arn(input.into());
@@ -118,6 +103,10 @@ impl CreateProjectVersionFluentBuilder {
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_arn(input);
         self
+    }
+    /// <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
     }
     /// <p>A name for the version of the model. This value must be unique.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,18 +118,23 @@ impl CreateProjectVersionFluentBuilder {
         self.inner = self.inner.set_version_name(input);
         self
     }
+    /// <p>A name for the version of the model. This value must be unique.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
+    }
     /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.inner = self.inner.output_config(input);
         self
     }
     /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
+    }
+    /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        self.inner.get_output_config()
     }
     /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
     pub fn training_data(mut self, input: crate::types::TrainingData) -> Self {
@@ -148,12 +142,13 @@ impl CreateProjectVersionFluentBuilder {
         self
     }
     /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
-    pub fn set_training_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingData>,
-    ) -> Self {
+    pub fn set_training_data(mut self, input: ::std::option::Option<crate::types::TrainingData>) -> Self {
         self.inner = self.inner.set_training_data(input);
         self
+    }
+    /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
+    pub fn get_training_data(&self) -> &::std::option::Option<crate::types::TrainingData> {
+        self.inner.get_training_data()
     }
     /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
     pub fn testing_data(mut self, input: crate::types::TestingData) -> Self {
@@ -161,60 +156,69 @@ impl CreateProjectVersionFluentBuilder {
         self
     }
     /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
-    pub fn set_testing_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TestingData>,
-    ) -> Self {
+    pub fn set_testing_data(mut self, input: ::std::option::Option<crate::types::TestingData>) -> Self {
         self.inner = self.inner.set_testing_data(input);
         self
+    }
+    /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
+    pub fn get_testing_data(&self) -> &::std::option::Option<crate::types::TestingData> {
+        self.inner.get_testing_data()
     }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
-    /// <ul>
-    /// <li> <p>kms:CreateGrant</p> </li>
-    /// <li> <p>kms:DescribeKey</p> </li>
-    /// <li> <p>kms:GenerateDataKey</p> </li>
-    /// <li> <p>kms:Decrypt</p> </li>
-    /// </ul>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_tags()
+    }
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> 
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>kms:CreateGrant</p> </li> 
+    /// <li> <p>kms:DescribeKey</p> </li> 
+    /// <li> <p>kms:GenerateDataKey</p> </li> 
+    /// <li> <p>kms:Decrypt</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
-    /// <ul>
-    /// <li> <p>kms:CreateGrant</p> </li>
-    /// <li> <p>kms:DescribeKey</p> </li>
-    /// <li> <p>kms:GenerateDataKey</p> </li>
-    /// <li> <p>kms:Decrypt</p> </li>
-    /// </ul>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> 
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>kms:CreateGrant</p> </li> 
+    /// <li> <p>kms:DescribeKey</p> </li> 
+    /// <li> <p>kms:GenerateDataKey</p> </li> 
+    /// <li> <p>kms:Decrypt</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> 
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>kms:CreateGrant</p> </li> 
+    /// <li> <p>kms:DescribeKey</p> </li> 
+    /// <li> <p>kms:GenerateDataKey</p> </li> 
+    /// <li> <p>kms:Decrypt</p> </li> 
+    /// </ul> 
+    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTokenOutput {
+pub struct CreateTokenOutput  {
     /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
     #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct CreateTokenOutput {
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     #[doc(hidden)]
     pub expires_in: i32,
-    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     #[doc(hidden)]
     pub refresh_token: ::std::option::Option<::std::string::String>,
-    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     #[doc(hidden)]
     pub id_token: ::std::option::Option<::std::string::String>,
@@ -24,33 +24,33 @@ pub struct CreateTokenOutput {
 }
 impl CreateTokenOutput {
     /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
-    pub fn token_type(&self) -> ::std::option::Option<&str> {
+    pub fn token_type(&self) -> ::std::option::Option<& str> {
         self.token_type.as_deref()
     }
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     pub fn expires_in(&self) -> i32 {
         self.expires_in
     }
-    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
-    pub fn refresh_token(&self) -> ::std::option::Option<&str> {
+    pub fn refresh_token(&self) -> ::std::option::Option<& str> {
         self.refresh_token.as_deref()
     }
-    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>The identifier of the user that associated with the access token, if present.</p>
-    pub fn id_token(&self) -> ::std::option::Option<&str> {
+    pub fn id_token(&self) -> ::std::option::Option<& str> {
         self.id_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::operation::create_token::CreateTokenOutput).
     pub fn builder() -> crate::operation::create_token::builders::CreateTokenOutputBuilder {
@@ -60,9 +60,7 @@ impl CreateTokenOutput {
 
 /// A builder for [`CreateTokenOutput`](crate::operation::create_token::CreateTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTokenOutputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) token_type: ::std::option::Option<::std::string::String>,
@@ -79,8 +77,11 @@ impl CreateTokenOutputBuilder {
     }
     /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
+    }
+    /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
     }
     /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
     pub fn token_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +90,11 @@ impl CreateTokenOutputBuilder {
     }
     /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
     pub fn set_token_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_type = input;
-        self
+        self.token_type = input; self
+    }
+    /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
+    pub fn get_token_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_type
     }
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     pub fn expires_in(mut self, input: i32) -> Self {
@@ -99,57 +103,69 @@ impl CreateTokenOutputBuilder {
     }
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     pub fn set_expires_in(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expires_in = input;
-        self
+        self.expires_in = input; self
     }
-    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Indicates the time in seconds when an access token will expire.</p>
+    pub fn get_expires_in(&self) -> &::std::option::Option<i32> {
+        &self.expires_in
+    }
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
-    pub fn refresh_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn refresh_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
-    pub fn set_refresh_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.refresh_token = input;
-        self
+    pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.refresh_token = input; self
     }
-    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
+    /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
+    pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_token
+    }
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     pub fn id_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     pub fn set_id_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id_token = input;
-        self
+        self.id_token = input; self
+    }
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
+    /// <p>The identifier of the user that associated with the access token, if present.</p>
+    pub fn get_id_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::operation::create_token::CreateTokenOutput).
     pub fn build(self) -> crate::operation::create_token::CreateTokenOutput {
         crate::operation::create_token::CreateTokenOutput {
-            access_token: self.access_token,
-            token_type: self.token_type,
-            expires_in: self.expires_in.unwrap_or_default(),
-            refresh_token: self.refresh_token,
-            id_token: self.id_token,
+            access_token: self.access_token
+            ,
+            token_type: self.token_type
+            ,
+            expires_in: self.expires_in
+                .unwrap_or_default()
+            ,
+            refresh_token: self.refresh_token
+            ,
+            id_token: self.id_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

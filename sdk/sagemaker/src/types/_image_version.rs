@@ -3,7 +3,7 @@
 /// <p>A version of a SageMaker <code>Image</code>. A version represents an existing container image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageVersion {
+pub struct ImageVersion  {
     /// <p>When the version was created.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -28,27 +28,27 @@ pub struct ImageVersion {
 }
 impl ImageVersion {
     /// <p>When the version was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When a create or delete operation fails, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The ARN of the image the version is based on.</p>
-    pub fn image_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_arn(&self) -> ::std::option::Option<& str> {
         self.image_arn.as_deref()
     }
     /// <p>The ARN of the version.</p>
-    pub fn image_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_version_arn(&self) -> ::std::option::Option<& str> {
         self.image_version_arn.as_deref()
     }
     /// <p>The status of the version.</p>
-    pub fn image_version_status(&self) -> ::std::option::Option<&crate::types::ImageVersionStatus> {
+    pub fn image_version_status(&self) -> ::std::option::Option<& crate::types::ImageVersionStatus> {
         self.image_version_status.as_ref()
     }
     /// <p>When the version was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The version number.</p>
@@ -65,9 +65,7 @@ impl ImageVersion {
 
 /// A builder for [`ImageVersion`](crate::types::ImageVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageVersionBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -84,28 +82,25 @@ impl ImageVersionBuilder {
         self
     }
     /// <p>When the version was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>When the version was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>When a create or delete operation fails, the reason for the failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When a create or delete operation fails, the reason for the failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input; self
+    }
+    /// <p>When a create or delete operation fails, the reason for the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>The ARN of the image the version is based on.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,24 +109,24 @@ impl ImageVersionBuilder {
     }
     /// <p>The ARN of the image the version is based on.</p>
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_arn = input;
-        self
+        self.image_arn = input; self
+    }
+    /// <p>The ARN of the image the version is based on.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
     }
     /// <p>The ARN of the version.</p>
-    pub fn image_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the version.</p>
-    pub fn set_image_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.image_version_arn = input;
-        self
+    pub fn set_image_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_version_arn = input; self
+    }
+    /// <p>The ARN of the version.</p>
+    pub fn get_image_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_version_arn
     }
     /// <p>The status of the version.</p>
     pub fn image_version_status(mut self, input: crate::types::ImageVersionStatus) -> Self {
@@ -139,12 +134,12 @@ impl ImageVersionBuilder {
         self
     }
     /// <p>The status of the version.</p>
-    pub fn set_image_version_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageVersionStatus>,
-    ) -> Self {
-        self.image_version_status = input;
-        self
+    pub fn set_image_version_status(mut self, input: ::std::option::Option<crate::types::ImageVersionStatus>) -> Self {
+        self.image_version_status = input; self
+    }
+    /// <p>The status of the version.</p>
+    pub fn get_image_version_status(&self) -> &::std::option::Option<crate::types::ImageVersionStatus> {
+        &self.image_version_status
     }
     /// <p>When the version was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,12 +147,12 @@ impl ImageVersionBuilder {
         self
     }
     /// <p>When the version was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
+    }
+    /// <p>When the version was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The version number.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -166,19 +161,30 @@ impl ImageVersionBuilder {
     }
     /// <p>The version number.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>The version number.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ImageVersion`](crate::types::ImageVersion).
     pub fn build(self) -> crate::types::ImageVersion {
         crate::types::ImageVersion {
-            creation_time: self.creation_time,
-            failure_reason: self.failure_reason,
-            image_arn: self.image_arn,
-            image_version_arn: self.image_version_arn,
-            image_version_status: self.image_version_status,
-            last_modified_time: self.last_modified_time,
-            version: self.version,
+            creation_time: self.creation_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            image_arn: self.image_arn
+            ,
+            image_version_arn: self.image_version_arn
+            ,
+            image_version_status: self.image_version_status
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

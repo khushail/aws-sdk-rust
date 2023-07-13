@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBatchImportJobsInput {
+pub struct GetBatchImportJobsInput  {
     /// <p>The ID of the batch import job to get.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct GetBatchImportJobsInput {
 }
 impl GetBatchImportJobsInput {
     /// <p>The ID of the batch import job to get.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The maximum number of objects to return for request.</p>
@@ -23,23 +23,20 @@ impl GetBatchImportJobsInput {
         self.max_results
     }
     /// <p>The next token from the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetBatchImportJobsInput {
     /// Creates a new builder-style object to manufacture [`GetBatchImportJobsInput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsInputBuilder {
+    pub fn builder() -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsInputBuilder {
         crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBatchImportJobsInput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBatchImportJobsInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -53,8 +50,11 @@ impl GetBatchImportJobsInputBuilder {
     }
     /// <p>The ID of the batch import job to get.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The ID of the batch import job to get.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The maximum number of objects to return for request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -63,8 +63,11 @@ impl GetBatchImportJobsInputBuilder {
     }
     /// <p>The maximum number of objects to return for request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of objects to return for request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The next token from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,22 +76,24 @@ impl GetBatchImportJobsInputBuilder {
     }
     /// <p>The next token from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The next token from the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetBatchImportJobsInput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_batch_import_jobs::GetBatchImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_batch_import_jobs::GetBatchImportJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_batch_import_jobs::GetBatchImportJobsInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                job_id: self.job_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

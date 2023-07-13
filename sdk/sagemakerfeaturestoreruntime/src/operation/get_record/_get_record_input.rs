@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecordInput {
+pub struct GetRecordInput  {
     /// <p>The name of the feature group from which you want to retrieve a record.</p>
     #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct GetRecordInput {
 }
 impl GetRecordInput {
     /// <p>The name of the feature group from which you want to retrieve a record.</p>
-    pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> ::std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    pub fn record_identifier_value_as_string(&self) -> ::std::option::Option<&str> {
+    pub fn record_identifier_value_as_string(&self) -> ::std::option::Option<& str> {
         self.record_identifier_value_as_string.as_deref()
     }
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn feature_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn feature_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.feature_names.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl GetRecordInput {
 
 /// A builder for [`GetRecordInput`](crate::operation::get_record::GetRecordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
@@ -46,70 +44,62 @@ pub struct GetRecordInputBuilder {
 }
 impl GetRecordInputBuilder {
     /// <p>The name of the feature group from which you want to retrieve a record.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the feature group from which you want to retrieve a record.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.feature_group_name = input;
-        self
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.feature_group_name = input; self
+    }
+    /// <p>The name of the feature group from which you want to retrieve a record.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
     }
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    pub fn record_identifier_value_as_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    pub fn set_record_identifier_value_as_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.record_identifier_value_as_string = input;
-        self
+    pub fn set_record_identifier_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.record_identifier_value_as_string = input; self
+    }
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
+    pub fn get_record_identifier_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_identifier_value_as_string
     }
     /// Appends an item to `feature_names`.
     ///
     /// To override the contents of this collection use [`set_feature_names`](Self::set_feature_names).
     ///
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn feature_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.feature_names.unwrap_or_default();
-        v.push(input.into());
-        self.feature_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.feature_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn set_feature_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.feature_names = input;
-        self
+    pub fn set_feature_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.feature_names = input; self
+    }
+    /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
+    pub fn get_feature_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.feature_names
     }
     /// Consumes the builder and constructs a [`GetRecordInput`](crate::operation::get_record::GetRecordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_record::GetRecordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_record::GetRecordInput {
-            feature_group_name: self.feature_group_name,
-            record_identifier_value_as_string: self.record_identifier_value_as_string,
-            feature_names: self.feature_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_record::GetRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_record::GetRecordInput {
+                feature_group_name: self.feature_group_name
+                ,
+                record_identifier_value_as_string: self.record_identifier_value_as_string
+                ,
+                feature_names: self.feature_names
+                ,
+            }
+        )
     }
 }
+

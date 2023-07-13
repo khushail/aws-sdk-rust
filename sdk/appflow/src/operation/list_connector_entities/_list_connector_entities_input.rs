@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConnectorEntitiesInput {
+pub struct ListConnectorEntitiesInput  {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
     #[doc(hidden)]
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
@@ -24,19 +24,19 @@ pub struct ListConnectorEntitiesInput {
 }
 impl ListConnectorEntitiesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    pub fn connector_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn connector_profile_name(&self) -> ::std::option::Option<& str> {
         self.connector_profile_name.as_deref()
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
+    pub fn connector_type(&self) -> ::std::option::Option<& crate::types::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    pub fn entities_path(&self) -> ::std::option::Option<&str> {
+    pub fn entities_path(&self) -> ::std::option::Option<& str> {
         self.entities_path.as_deref()
     }
     /// <p>The version of the API that's used by the connector.</p>
-    pub fn api_version(&self) -> ::std::option::Option<&str> {
+    pub fn api_version(&self) -> ::std::option::Option<& str> {
         self.api_version.as_deref()
     }
     /// <p>The maximum number of items that the operation returns in the response.</p>
@@ -44,24 +44,20 @@ impl ListConnectorEntitiesInput {
         self.max_results
     }
     /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListConnectorEntitiesInput {
     /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesInput`](crate::operation::list_connector_entities::ListConnectorEntitiesInput).
-    pub fn builder(
-    ) -> crate::operation::list_connector_entities::builders::ListConnectorEntitiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_connector_entities::builders::ListConnectorEntitiesInputBuilder {
         crate::operation::list_connector_entities::builders::ListConnectorEntitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConnectorEntitiesInput`](crate::operation::list_connector_entities::ListConnectorEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorEntitiesInputBuilder {
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,
@@ -72,20 +68,17 @@ pub struct ListConnectorEntitiesInputBuilder {
 }
 impl ListConnectorEntitiesInputBuilder {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connector_profile_name = input;
-        self
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_profile_name = input; self
+    }
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_profile_name
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
@@ -93,28 +86,25 @@ impl ListConnectorEntitiesInputBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
-        self.connector_type = input;
-        self
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
+        self.connector_type = input; self
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
+        &self.connector_type
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    pub fn entities_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entities_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entities_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    pub fn set_entities_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.entities_path = input;
-        self
+    pub fn set_entities_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.entities_path = input; self
+    }
+    /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
+    pub fn get_entities_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entities_path
     }
     /// <p>The version of the API that's used by the connector.</p>
     pub fn api_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,8 +113,11 @@ impl ListConnectorEntitiesInputBuilder {
     }
     /// <p>The version of the API that's used by the connector.</p>
     pub fn set_api_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_version = input;
-        self
+        self.api_version = input; self
+    }
+    /// <p>The version of the API that's used by the connector.</p>
+    pub fn get_api_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_version
     }
     /// <p>The maximum number of items that the operation returns in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -133,8 +126,11 @@ impl ListConnectorEntitiesInputBuilder {
     }
     /// <p>The maximum number of items that the operation returns in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of items that the operation returns in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,25 +139,30 @@ impl ListConnectorEntitiesInputBuilder {
     }
     /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConnectorEntitiesInput`](crate::operation::list_connector_entities::ListConnectorEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_connector_entities::ListConnectorEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_connector_entities::ListConnectorEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_connector_entities::ListConnectorEntitiesInput {
-                connector_profile_name: self.connector_profile_name,
-                connector_type: self.connector_type,
-                entities_path: self.entities_path,
-                api_version: self.api_version,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                connector_profile_name: self.connector_profile_name
+                ,
+                connector_type: self.connector_type
+                ,
+                entities_path: self.entities_path
+                ,
+                api_version: self.api_version
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A filter to apply to the <code>DescribePackage</code> response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePackagesFilter {
+pub struct DescribePackagesFilter  {
     /// <p>Any field from <code>PackageDetails</code>.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::DescribePackagesFilterName>,
@@ -13,11 +13,11 @@ pub struct DescribePackagesFilter {
 }
 impl DescribePackagesFilter {
     /// <p>Any field from <code>PackageDetails</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::DescribePackagesFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::DescribePackagesFilterName> {
         self.name.as_ref()
     }
     /// <p>A non-empty list of values for the specified filter field.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn value(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DescribePackagesFilter {
 
 /// A builder for [`DescribePackagesFilter`](crate::types::DescribePackagesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePackagesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DescribePackagesFilterName>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,12 +42,12 @@ impl DescribePackagesFilterBuilder {
         self
     }
     /// <p>Any field from <code>PackageDetails</code>.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribePackagesFilterName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::DescribePackagesFilterName>) -> Self {
+        self.name = input; self
+    }
+    /// <p>Any field from <code>PackageDetails</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::DescribePackagesFilterName> {
+        &self.name
     }
     /// Appends an item to `value`.
     ///
@@ -58,23 +56,26 @@ impl DescribePackagesFilterBuilder {
     /// <p>A non-empty list of values for the specified filter field.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
-        v.push(input.into());
-        self.value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A non-empty list of values for the specified filter field.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.value = input; self
+    }
+    /// <p>A non-empty list of values for the specified filter field.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`DescribePackagesFilter`](crate::types::DescribePackagesFilter).
     pub fn build(self) -> crate::types::DescribePackagesFilter {
         crate::types::DescribePackagesFilter {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

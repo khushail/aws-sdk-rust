@@ -3,7 +3,7 @@
 /// <p>A range of ports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortRangeFromTo {
+pub struct PortRangeFromTo  {
     /// <p>The first port in the port range.</p>
     #[doc(hidden)]
     pub from: i32,
@@ -30,9 +30,7 @@ impl PortRangeFromTo {
 
 /// A builder for [`PortRangeFromTo`](crate::types::PortRangeFromTo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortRangeFromToBuilder {
     pub(crate) from: ::std::option::Option<i32>,
     pub(crate) to: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl PortRangeFromToBuilder {
     }
     /// <p>The first port in the port range.</p>
     pub fn set_from(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
+    }
+    /// <p>The first port in the port range.</p>
+    pub fn get_from(&self) -> &::std::option::Option<i32> {
+        &self.from
     }
     /// <p>The last port in the port range.</p>
     pub fn to(mut self, input: i32) -> Self {
@@ -55,14 +56,22 @@ impl PortRangeFromToBuilder {
     }
     /// <p>The last port in the port range.</p>
     pub fn set_to(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.to = input;
-        self
+        self.to = input; self
+    }
+    /// <p>The last port in the port range.</p>
+    pub fn get_to(&self) -> &::std::option::Option<i32> {
+        &self.to
     }
     /// Consumes the builder and constructs a [`PortRangeFromTo`](crate::types::PortRangeFromTo).
     pub fn build(self) -> crate::types::PortRangeFromTo {
         crate::types::PortRangeFromTo {
-            from: self.from.unwrap_or_default(),
-            to: self.to.unwrap_or_default(),
+            from: self.from
+                .unwrap_or_default()
+            ,
+            to: self.to
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

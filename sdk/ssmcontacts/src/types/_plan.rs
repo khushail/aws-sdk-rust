@@ -3,7 +3,7 @@
 /// <p>Information about the stages and on-call rotation teams associated with an escalation plan or engagement plan. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Plan {
+pub struct Plan  {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
     #[doc(hidden)]
     pub stages: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
@@ -13,11 +13,11 @@ pub struct Plan {
 }
 impl Plan {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
-    pub fn stages(&self) -> ::std::option::Option<&[crate::types::Stage]> {
+    pub fn stages(&self) -> ::std::option::Option<& [crate::types::Stage]> {
         self.stages.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan. </p>
-    pub fn rotation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn rotation_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.rotation_ids.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Plan {
 
 /// A builder for [`Plan`](crate::types::Plan).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlanBuilder {
     pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
     pub(crate) rotation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,17 +43,17 @@ impl PlanBuilder {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
     pub fn stages(mut self, input: crate::types::Stage) -> Self {
         let mut v = self.stages.unwrap_or_default();
-        v.push(input);
-        self.stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
-    pub fn set_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
-    ) -> Self {
-        self.stages = input;
-        self
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>) -> Self {
+        self.stages = input; self
+    }
+    /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Stage>> {
+        &self.stages
     }
     /// Appends an item to `rotation_ids`.
     ///
@@ -64,23 +62,26 @@ impl PlanBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan. </p>
     pub fn rotation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rotation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.rotation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rotation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan. </p>
-    pub fn set_rotation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.rotation_ids = input;
-        self
+    pub fn set_rotation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.rotation_ids = input; self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan. </p>
+    pub fn get_rotation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rotation_ids
     }
     /// Consumes the builder and constructs a [`Plan`](crate::types::Plan).
     pub fn build(self) -> crate::types::Plan {
         crate::types::Plan {
-            stages: self.stages,
-            rotation_ids: self.rotation_ids,
+            stages: self.stages
+            ,
+            rotation_ids: self.rotation_ids
+            ,
         }
     }
 }
+

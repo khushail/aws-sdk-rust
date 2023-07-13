@@ -3,7 +3,7 @@
 /// <p>Information about the additional configuration for the member account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemberAdditionalConfigurationResult {
+pub struct MemberAdditionalConfigurationResult  {
     /// <p>Indicates the name of the additional configuration that is set for the member account.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
@@ -16,15 +16,15 @@ pub struct MemberAdditionalConfigurationResult {
 }
 impl MemberAdditionalConfigurationResult {
     /// <p>Indicates the name of the additional configuration that is set for the member account.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::OrgFeatureAdditionalConfiguration> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::OrgFeatureAdditionalConfiguration> {
         self.name.as_ref()
     }
     /// <p>Indicates the status of the additional configuration that is set for the member account.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FeatureStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp at which the additional configuration was set for the member account. This is in UTC format.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl MemberAdditionalConfigurationResult {
 
 /// A builder for [`MemberAdditionalConfigurationResult`](crate::types::MemberAdditionalConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberAdditionalConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
@@ -52,12 +50,12 @@ impl MemberAdditionalConfigurationResultBuilder {
         self
     }
     /// <p>Indicates the name of the additional configuration that is set for the member account.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
+        self.name = input; self
+    }
+    /// <p>Indicates the name of the additional configuration that is set for the member account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
+        &self.name
     }
     /// <p>Indicates the status of the additional configuration that is set for the member account.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
@@ -66,8 +64,11 @@ impl MemberAdditionalConfigurationResultBuilder {
     }
     /// <p>Indicates the status of the additional configuration that is set for the member account.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Indicates the status of the additional configuration that is set for the member account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.status
     }
     /// <p>The timestamp at which the additional configuration was set for the member account. This is in UTC format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -75,19 +76,23 @@ impl MemberAdditionalConfigurationResultBuilder {
         self
     }
     /// <p>The timestamp at which the additional configuration was set for the member account. This is in UTC format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
+    }
+    /// <p>The timestamp at which the additional configuration was set for the member account. This is in UTC format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`MemberAdditionalConfigurationResult`](crate::types::MemberAdditionalConfigurationResult).
     pub fn build(self) -> crate::types::MemberAdditionalConfigurationResult {
         crate::types::MemberAdditionalConfigurationResult {
-            name: self.name,
-            status: self.status,
-            updated_at: self.updated_at,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

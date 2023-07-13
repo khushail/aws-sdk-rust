@@ -3,91 +3,100 @@ pub use crate::operation::put_capacity_assignment_configuration::_put_capacity_a
 
 pub use crate::operation::put_capacity_assignment_configuration::_put_capacity_assignment_configuration_input::PutCapacityAssignmentConfigurationInputBuilder;
 
+impl PutCapacityAssignmentConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_capacity_assignment_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutCapacityAssignmentConfiguration`.
-///
+/// 
 /// <p>Puts a new capacity assignment configuration for a specified capacity reservation. If a capacity assignment configuration already exists for the capacity reservation, replaces the existing capacity assignment configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutCapacityAssignmentConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationInputBuilder,
 }
-impl PutCapacityAssignmentConfigurationFluentBuilder {
+impl PutCapacityAssignmentConfigurationFluentBuilder  {
     /// Creates a new `PutCapacityAssignmentConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutCapacityAssignmentConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the capacity reservation to put a capacity assignment configuration for.</p>
-    pub fn capacity_reservation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capacity_reservation_name(input.into());
         self
     }
     /// <p>The name of the capacity reservation to put a capacity assignment configuration for.</p>
-    pub fn set_capacity_reservation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_capacity_reservation_name(input);
         self
+    }
+    /// <p>The name of the capacity reservation to put a capacity assignment configuration for.</p>
+    pub fn get_capacity_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_capacity_reservation_name()
     }
     /// Appends an item to `CapacityAssignments`.
     ///
@@ -99,11 +108,13 @@ impl PutCapacityAssignmentConfigurationFluentBuilder {
         self
     }
     /// <p>The list of assignments for the capacity assignment configuration.</p>
-    pub fn set_capacity_assignments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
-    ) -> Self {
+    pub fn set_capacity_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>) -> Self {
         self.inner = self.inner.set_capacity_assignments(input);
         self
     }
+    /// <p>The list of assignments for the capacity assignment configuration.</p>
+    pub fn get_capacity_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>> {
+        self.inner.get_capacity_assignments()
+    }
 }
+

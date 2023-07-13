@@ -3,14 +3,14 @@
 /// <p>Describes the IPv6 prefix.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ipv6PrefixSpecification {
+pub struct Ipv6PrefixSpecification  {
     /// <p>The IPv6 prefix.</p>
     #[doc(hidden)]
     pub ipv6_prefix: ::std::option::Option<::std::string::String>,
 }
 impl Ipv6PrefixSpecification {
     /// <p>The IPv6 prefix.</p>
-    pub fn ipv6_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_prefix(&self) -> ::std::option::Option<& str> {
         self.ipv6_prefix.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Ipv6PrefixSpecification {
 
 /// A builder for [`Ipv6PrefixSpecification`](crate::types::Ipv6PrefixSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ipv6PrefixSpecificationBuilder {
     pub(crate) ipv6_prefix: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl Ipv6PrefixSpecificationBuilder {
     }
     /// <p>The IPv6 prefix.</p>
     pub fn set_ipv6_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_prefix = input;
-        self
+        self.ipv6_prefix = input; self
+    }
+    /// <p>The IPv6 prefix.</p>
+    pub fn get_ipv6_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_prefix
     }
     /// Consumes the builder and constructs a [`Ipv6PrefixSpecification`](crate::types::Ipv6PrefixSpecification).
     pub fn build(self) -> crate::types::Ipv6PrefixSpecification {
         crate::types::Ipv6PrefixSpecification {
-            ipv6_prefix: self.ipv6_prefix,
+            ipv6_prefix: self.ipv6_prefix
+            ,
         }
     }
 }
+

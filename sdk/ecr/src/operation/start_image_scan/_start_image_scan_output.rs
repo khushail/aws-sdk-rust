@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartImageScanOutput {
+pub struct StartImageScanOutput  {
     /// <p>The registry ID associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
@@ -19,27 +19,27 @@ pub struct StartImageScanOutput {
 }
 impl StartImageScanOutput {
     /// <p>The registry ID associated with the request.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&crate::types::ImageIdentifier> {
+    pub fn image_id(&self) -> ::std::option::Option<& crate::types::ImageIdentifier> {
         self.image_id.as_ref()
     }
     /// <p>The current state of the scan.</p>
-    pub fn image_scan_status(&self) -> ::std::option::Option<&crate::types::ImageScanStatus> {
+    pub fn image_scan_status(&self) -> ::std::option::Option<& crate::types::ImageScanStatus> {
         self.image_scan_status.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartImageScanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartImageScanOutput {
     /// Creates a new builder-style object to manufacture [`StartImageScanOutput`](crate::operation::start_image_scan::StartImageScanOutput).
     pub fn builder() -> crate::operation::start_image_scan::builders::StartImageScanOutputBuilder {
@@ -49,9 +49,7 @@ impl StartImageScanOutput {
 
 /// A builder for [`StartImageScanOutput`](crate::operation::start_image_scan::StartImageScanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImageScanOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -67,24 +65,24 @@ impl StartImageScanOutputBuilder {
     }
     /// <p>The registry ID associated with the request.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
+    }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.repository_name = input;
-        self
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.repository_name = input; self
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
@@ -92,12 +90,12 @@ impl StartImageScanOutputBuilder {
         self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn set_image_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
-        self.image_id = input;
-        self
+    pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
+        self.image_id = input; self
+    }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
+        &self.image_id
     }
     /// <p>The current state of the scan.</p>
     pub fn image_scan_status(mut self, input: crate::types::ImageScanStatus) -> Self {
@@ -105,30 +103,35 @@ impl StartImageScanOutputBuilder {
         self
     }
     /// <p>The current state of the scan.</p>
-    pub fn set_image_scan_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanStatus>,
-    ) -> Self {
-        self.image_scan_status = input;
-        self
+    pub fn set_image_scan_status(mut self, input: ::std::option::Option<crate::types::ImageScanStatus>) -> Self {
+        self.image_scan_status = input; self
+    }
+    /// <p>The current state of the scan.</p>
+    pub fn get_image_scan_status(&self) -> &::std::option::Option<crate::types::ImageScanStatus> {
+        &self.image_scan_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartImageScanOutput`](crate::operation::start_image_scan::StartImageScanOutput).
     pub fn build(self) -> crate::operation::start_image_scan::StartImageScanOutput {
         crate::operation::start_image_scan::StartImageScanOutput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            image_id: self.image_id,
-            image_scan_status: self.image_scan_status,
+            registry_id: self.registry_id
+            ,
+            repository_name: self.repository_name
+            ,
+            image_id: self.image_id
+            ,
+            image_scan_status: self.image_scan_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

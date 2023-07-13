@@ -3,7 +3,7 @@
 /// <p>Provides the error of the batch create variable API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateVariableError {
+pub struct BatchCreateVariableError  {
     /// <p>The name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct BatchCreateVariableError {
 }
 impl BatchCreateVariableError {
     /// <p>The name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The error code. </p>
@@ -24,7 +24,7 @@ impl BatchCreateVariableError {
         self.code
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl BatchCreateVariableError {
 
 /// A builder for [`BatchCreateVariableError`](crate::types::BatchCreateVariableError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateVariableErrorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl BatchCreateVariableErrorBuilder {
     }
     /// <p>The name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The error code. </p>
     pub fn code(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl BatchCreateVariableErrorBuilder {
     }
     /// <p>The error code. </p>
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>The error code. </p>
+    pub fn get_code(&self) -> &::std::option::Option<i32> {
+        &self.code
     }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,23 @@ impl BatchCreateVariableErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BatchCreateVariableError`](crate::types::BatchCreateVariableError).
     pub fn build(self) -> crate::types::BatchCreateVariableError {
         crate::types::BatchCreateVariableError {
-            name: self.name,
-            code: self.code.unwrap_or_default(),
-            message: self.message,
+            name: self.name
+            ,
+            code: self.code
+                .unwrap_or_default()
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

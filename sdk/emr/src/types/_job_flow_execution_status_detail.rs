@@ -3,7 +3,7 @@
 /// <p>Describes the status of the cluster (job flow).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobFlowExecutionStatusDetail {
+pub struct JobFlowExecutionStatusDetail  {
     /// <p>The state of the job flow.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::JobFlowExecutionState>,
@@ -25,27 +25,27 @@ pub struct JobFlowExecutionStatusDetail {
 }
 impl JobFlowExecutionStatusDetail {
     /// <p>The state of the job flow.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::JobFlowExecutionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::JobFlowExecutionState> {
         self.state.as_ref()
     }
     /// <p>The creation date and time of the job flow.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The start date and time of the job flow.</p>
-    pub fn start_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
-    pub fn ready_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The completion date and time of the job flow.</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>Description of the job flow last changed state.</p>
-    pub fn last_state_change_reason(&self) -> ::std::option::Option<&str> {
+    pub fn last_state_change_reason(&self) -> ::std::option::Option<& str> {
         self.last_state_change_reason.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl JobFlowExecutionStatusDetail {
 
 /// A builder for [`JobFlowExecutionStatusDetail`](crate::types::JobFlowExecutionStatusDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobFlowExecutionStatusDetailBuilder {
     pub(crate) state: ::std::option::Option<crate::types::JobFlowExecutionState>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -76,12 +74,12 @@ impl JobFlowExecutionStatusDetailBuilder {
         self
     }
     /// <p>The state of the job flow.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::JobFlowExecutionState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::JobFlowExecutionState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of the job flow.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::JobFlowExecutionState> {
+        &self.state
     }
     /// <p>The creation date and time of the job flow.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -89,12 +87,12 @@ impl JobFlowExecutionStatusDetailBuilder {
         self
     }
     /// <p>The creation date and time of the job flow.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
+    }
+    /// <p>The creation date and time of the job flow.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The start date and time of the job flow.</p>
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,12 +100,12 @@ impl JobFlowExecutionStatusDetailBuilder {
         self
     }
     /// <p>The start date and time of the job flow.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_date_time = input;
-        self
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_date_time = input; self
+    }
+    /// <p>The start date and time of the job flow.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date_time
     }
     /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
     pub fn ready_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -115,12 +113,12 @@ impl JobFlowExecutionStatusDetailBuilder {
         self
     }
     /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
-    pub fn set_ready_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.ready_date_time = input;
-        self
+    pub fn set_ready_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.ready_date_time = input; self
+    }
+    /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
+    pub fn get_ready_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ready_date_time
     }
     /// <p>The completion date and time of the job flow.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -128,38 +126,42 @@ impl JobFlowExecutionStatusDetailBuilder {
         self
     }
     /// <p>The completion date and time of the job flow.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_date_time = input;
-        self
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_date_time = input; self
+    }
+    /// <p>The completion date and time of the job flow.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date_time
     }
     /// <p>Description of the job flow last changed state.</p>
-    pub fn last_state_change_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_state_change_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_state_change_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the job flow last changed state.</p>
-    pub fn set_last_state_change_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_state_change_reason = input;
-        self
+    pub fn set_last_state_change_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_state_change_reason = input; self
+    }
+    /// <p>Description of the job flow last changed state.</p>
+    pub fn get_last_state_change_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_state_change_reason
     }
     /// Consumes the builder and constructs a [`JobFlowExecutionStatusDetail`](crate::types::JobFlowExecutionStatusDetail).
     pub fn build(self) -> crate::types::JobFlowExecutionStatusDetail {
         crate::types::JobFlowExecutionStatusDetail {
-            state: self.state,
-            creation_date_time: self.creation_date_time,
-            start_date_time: self.start_date_time,
-            ready_date_time: self.ready_date_time,
-            end_date_time: self.end_date_time,
-            last_state_change_reason: self.last_state_change_reason,
+            state: self.state
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            start_date_time: self.start_date_time
+            ,
+            ready_date_time: self.ready_date_time
+            ,
+            end_date_time: self.end_date_time
+            ,
+            last_state_change_reason: self.last_state_change_reason
+            ,
         }
     }
 }
+

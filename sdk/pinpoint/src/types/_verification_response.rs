@@ -3,7 +3,7 @@
 /// <p>Verify OTP Message Response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerificationResponse {
+pub struct VerificationResponse  {
     /// <p>Specifies whether the OTP is valid or not.</p>
     #[doc(hidden)]
     pub valid: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl VerificationResponse {
 
 /// A builder for [`VerificationResponse`](crate::types::VerificationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerificationResponseBuilder {
     pub(crate) valid: ::std::option::Option<bool>,
 }
@@ -37,11 +35,18 @@ impl VerificationResponseBuilder {
     }
     /// <p>Specifies whether the OTP is valid or not.</p>
     pub fn set_valid(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.valid = input;
-        self
+        self.valid = input; self
+    }
+    /// <p>Specifies whether the OTP is valid or not.</p>
+    pub fn get_valid(&self) -> &::std::option::Option<bool> {
+        &self.valid
     }
     /// Consumes the builder and constructs a [`VerificationResponse`](crate::types::VerificationResponse).
     pub fn build(self) -> crate::types::VerificationResponse {
-        crate::types::VerificationResponse { valid: self.valid }
+        crate::types::VerificationResponse {
+            valid: self.valid
+            ,
+        }
     }
 }
+

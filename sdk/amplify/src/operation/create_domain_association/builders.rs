@@ -3,103 +3,87 @@ pub use crate::operation::create_domain_association::_create_domain_association_
 
 pub use crate::operation::create_domain_association::_create_domain_association_input::CreateDomainAssociationInputBuilder;
 
+impl CreateDomainAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_domain_association::CreateDomainAssociationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_domain_association::CreateDomainAssociationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_domain_association();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateDomainAssociation`.
-///
+/// 
 /// <p> Creates a new domain association for an Amplify app. This action associates a custom domain with the Amplify app </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDomainAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_domain_association::builders::CreateDomainAssociationInputBuilder,
+                    inner: crate::operation::create_domain_association::builders::CreateDomainAssociationInputBuilder,
 }
-impl CreateDomainAssociationFluentBuilder {
+impl CreateDomainAssociationFluentBuilder  {
     /// Creates a new `CreateDomainAssociation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_domain_association::CreateDomainAssociation,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_association::CreateDomainAssociationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateDomainAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_domain_association::builders::CreateDomainAssociationInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_domain_association::CreateDomainAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_association::CreateDomainAssociationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_domain_association::CreateDomainAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_domain_association::CreateDomainAssociationError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_domain_association::CreateDomainAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_domain_association::CreateDomainAssociationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_domain_association::CreateDomainAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_association::CreateDomainAssociationError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_domain_association::CreateDomainAssociation,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_association::CreateDomainAssociationError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_domain_association::CreateDomainAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_domain_association::CreateDomainAssociationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_domain_association::CreateDomainAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_domain_association::CreateDomainAssociationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
@@ -109,6 +93,10 @@ impl CreateDomainAssociationFluentBuilder {
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
+    }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
     }
     /// <p> The domain name for the domain association. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +108,10 @@ impl CreateDomainAssociationFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p> The domain name for the domain association. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p> Enables the automated creation of subdomains for branches. </p>
     pub fn enable_auto_sub_domain(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_auto_sub_domain(input);
@@ -129,6 +121,10 @@ impl CreateDomainAssociationFluentBuilder {
     pub fn set_enable_auto_sub_domain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_auto_sub_domain(input);
         self
+    }
+    /// <p> Enables the automated creation of subdomains for branches. </p>
+    pub fn get_enable_auto_sub_domain(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_auto_sub_domain()
     }
     /// Appends an item to `subDomainSettings`.
     ///
@@ -140,47 +136,45 @@ impl CreateDomainAssociationFluentBuilder {
         self
     }
     /// <p> The setting for the subdomain. </p>
-    pub fn set_sub_domain_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>,
-    ) -> Self {
+    pub fn set_sub_domain_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>) -> Self {
         self.inner = self.inner.set_sub_domain_settings(input);
         self
+    }
+    /// <p> The setting for the subdomain. </p>
+    pub fn get_sub_domain_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>> {
+        self.inner.get_sub_domain_settings()
     }
     /// Appends an item to `autoSubDomainCreationPatterns`.
     ///
     /// To override the contents of this collection use [`set_auto_sub_domain_creation_patterns`](Self::set_auto_sub_domain_creation_patterns).
     ///
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-    pub fn auto_sub_domain_creation_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_sub_domain_creation_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_sub_domain_creation_patterns(input.into());
         self
     }
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-    pub fn set_auto_sub_domain_creation_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_sub_domain_creation_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_auto_sub_domain_creation_patterns(input);
         self
     }
+    /// <p> Sets the branch patterns for automatic subdomain creation. </p>
+    pub fn get_auto_sub_domain_creation_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_auto_sub_domain_creation_patterns()
+    }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    pub fn auto_sub_domain_iam_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_sub_domain_iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_sub_domain_iam_role(input.into());
         self
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    pub fn set_auto_sub_domain_iam_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_sub_domain_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_sub_domain_iam_role(input);
         self
     }
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
+    pub fn get_auto_sub_domain_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_sub_domain_iam_role()
+    }
 }
+

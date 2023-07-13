@@ -3,77 +3,88 @@ pub use crate::operation::list_continuous_deployment_policies::_list_continuous_
 
 pub use crate::operation::list_continuous_deployment_policies::_list_continuous_deployment_policies_input::ListContinuousDeploymentPoliciesInputBuilder;
 
+impl ListContinuousDeploymentPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_continuous_deployment_policies();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListContinuousDeploymentPolicies`.
-///
-/// <p>Gets a list of the continuous deployment policies in your Amazon Web Services account.</p>
+/// 
+/// <p>Gets a list of the continuous deployment policies in your Amazon Web Services account.</p> 
 /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContinuousDeploymentPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesInputBuilder,
 }
-impl ListContinuousDeploymentPoliciesFluentBuilder {
+impl ListContinuousDeploymentPoliciesFluentBuilder  {
     /// Creates a new `ListContinuousDeploymentPolicies`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListContinuousDeploymentPolicies as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPolicies, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPolicies, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPolicies, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -83,6 +94,10 @@ impl ListContinuousDeploymentPoliciesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -94,4 +109,9 @@ impl ListContinuousDeploymentPoliciesFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
 }
+

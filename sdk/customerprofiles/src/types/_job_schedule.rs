@@ -3,7 +3,7 @@
 /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobSchedule {
+pub struct JobSchedule  {
     /// <p>The day when the Identity Resolution Job should run every week.</p>
     #[doc(hidden)]
     pub day_of_the_week: ::std::option::Option<crate::types::JobScheduleDayOfTheWeek>,
@@ -13,11 +13,11 @@ pub struct JobSchedule {
 }
 impl JobSchedule {
     /// <p>The day when the Identity Resolution Job should run every week.</p>
-    pub fn day_of_the_week(&self) -> ::std::option::Option<&crate::types::JobScheduleDayOfTheWeek> {
+    pub fn day_of_the_week(&self) -> ::std::option::Option<& crate::types::JobScheduleDayOfTheWeek> {
         self.day_of_the_week.as_ref()
     }
     /// <p>The time when the Identity Resolution Job should run every week.</p>
-    pub fn time(&self) -> ::std::option::Option<&str> {
+    pub fn time(&self) -> ::std::option::Option<& str> {
         self.time.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl JobSchedule {
 
 /// A builder for [`JobSchedule`](crate::types::JobSchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobScheduleBuilder {
     pub(crate) day_of_the_week: ::std::option::Option<crate::types::JobScheduleDayOfTheWeek>,
     pub(crate) time: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl JobScheduleBuilder {
         self
     }
     /// <p>The day when the Identity Resolution Job should run every week.</p>
-    pub fn set_day_of_the_week(
-        mut self,
-        input: ::std::option::Option<crate::types::JobScheduleDayOfTheWeek>,
-    ) -> Self {
-        self.day_of_the_week = input;
-        self
+    pub fn set_day_of_the_week(mut self, input: ::std::option::Option<crate::types::JobScheduleDayOfTheWeek>) -> Self {
+        self.day_of_the_week = input; self
+    }
+    /// <p>The day when the Identity Resolution Job should run every week.</p>
+    pub fn get_day_of_the_week(&self) -> &::std::option::Option<crate::types::JobScheduleDayOfTheWeek> {
+        &self.day_of_the_week
     }
     /// <p>The time when the Identity Resolution Job should run every week.</p>
     pub fn time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl JobScheduleBuilder {
     }
     /// <p>The time when the Identity Resolution Job should run every week.</p>
     pub fn set_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
+    }
+    /// <p>The time when the Identity Resolution Job should run every week.</p>
+    pub fn get_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time
     }
     /// Consumes the builder and constructs a [`JobSchedule`](crate::types::JobSchedule).
     pub fn build(self) -> crate::types::JobSchedule {
         crate::types::JobSchedule {
-            day_of_the_week: self.day_of_the_week,
-            time: self.time,
+            day_of_the_week: self.day_of_the_week
+            ,
+            time: self.time
+            ,
         }
     }
 }
+

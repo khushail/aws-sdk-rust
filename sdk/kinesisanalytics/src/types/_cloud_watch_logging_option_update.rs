@@ -3,7 +3,7 @@
 /// <p>Describes CloudWatch logging option updates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLoggingOptionUpdate {
+pub struct CloudWatchLoggingOptionUpdate  {
     /// <p>ID of the CloudWatch logging option to update</p>
     #[doc(hidden)]
     pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct CloudWatchLoggingOptionUpdate {
 }
 impl CloudWatchLoggingOptionUpdate {
     /// <p>ID of the CloudWatch logging option to update</p>
-    pub fn cloud_watch_logging_option_id(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logging_option_id(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logging_option_id.as_deref()
     }
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_arn_update(&self) -> ::std::option::Option<& str> {
         self.log_stream_arn_update.as_deref()
     }
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    pub fn role_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn_update(&self) -> ::std::option::Option<& str> {
         self.role_arn_update.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl CloudWatchLoggingOptionUpdate {
 
 /// A builder for [`CloudWatchLoggingOptionUpdate`](crate::types::CloudWatchLoggingOptionUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionUpdateBuilder {
     pub(crate) cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_arn_update: ::std::option::Option<::std::string::String>,
@@ -47,59 +45,54 @@ pub struct CloudWatchLoggingOptionUpdateBuilder {
 }
 impl CloudWatchLoggingOptionUpdateBuilder {
     /// <p>ID of the CloudWatch logging option to update</p>
-    pub fn cloud_watch_logging_option_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logging_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logging_option_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the CloudWatch logging option to update</p>
-    pub fn set_cloud_watch_logging_option_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.cloud_watch_logging_option_id = input;
-        self
+    pub fn set_cloud_watch_logging_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_watch_logging_option_id = input; self
+    }
+    /// <p>ID of the CloudWatch logging option to update</p>
+    pub fn get_cloud_watch_logging_option_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logging_option_id
     }
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
-    pub fn set_log_stream_arn_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.log_stream_arn_update = input;
-        self
+    pub fn set_log_stream_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.log_stream_arn_update = input; self
+    }
+    /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    pub fn get_log_stream_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_arn_update
     }
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    pub fn role_arn_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn role_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    pub fn set_role_arn_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.role_arn_update = input;
-        self
+    pub fn set_role_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn_update = input; self
+    }
+    /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    pub fn get_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn_update
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOptionUpdate`](crate::types::CloudWatchLoggingOptionUpdate).
     pub fn build(self) -> crate::types::CloudWatchLoggingOptionUpdate {
         crate::types::CloudWatchLoggingOptionUpdate {
-            cloud_watch_logging_option_id: self.cloud_watch_logging_option_id,
-            log_stream_arn_update: self.log_stream_arn_update,
-            role_arn_update: self.role_arn_update,
+            cloud_watch_logging_option_id: self.cloud_watch_logging_option_id
+            ,
+            log_stream_arn_update: self.log_stream_arn_update
+            ,
+            role_arn_update: self.role_arn_update
+            ,
         }
     }
 }
+

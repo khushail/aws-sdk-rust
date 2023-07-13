@@ -28,8 +28,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-securityhub = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-securityhub = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -40,8 +40,8 @@ use aws_sdk_securityhub as securityhub;
 
 #[::tokio::main]
 async fn main() -> Result<(), securityhub::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = securityhub::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_securityhub::Client::new(&config);
 
     // ... make some calls with the client
 

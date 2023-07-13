@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEventDataStoreInput {
+pub struct DeleteEventDataStoreInput  {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
     #[doc(hidden)]
     pub event_data_store: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventDataStoreInput {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
-    pub fn event_data_store(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store(&self) -> ::std::option::Option<& str> {
         self.event_data_store.as_deref()
     }
 }
 impl DeleteEventDataStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventDataStoreInput`](crate::operation::delete_event_data_store::DeleteEventDataStoreInput).
-    pub fn builder(
-    ) -> crate::operation::delete_event_data_store::builders::DeleteEventDataStoreInputBuilder {
+    pub fn builder() -> crate::operation::delete_event_data_store::builders::DeleteEventDataStoreInputBuilder {
         crate::operation::delete_event_data_store::builders::DeleteEventDataStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventDataStoreInput`](crate::operation::delete_event_data_store::DeleteEventDataStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventDataStoreInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventDataStoreInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_data_store = input;
-        self
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store = input; self
+    }
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store
     }
     /// Consumes the builder and constructs a [`DeleteEventDataStoreInput`](crate::operation::delete_event_data_store::DeleteEventDataStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_event_data_store::DeleteEventDataStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_event_data_store::DeleteEventDataStoreInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_event_data_store::DeleteEventDataStoreInput {
-                event_data_store: self.event_data_store,
-            },
+                event_data_store: self.event_data_store
+                ,
+            }
         )
     }
 }
+

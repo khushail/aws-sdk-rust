@@ -3,7 +3,7 @@
 /// <p>The status of a parameter group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterGroupStatus {
+pub struct ParameterGroupStatus  {
     /// <p>The name of the parameter group.</p>
     #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ParameterGroupStatus {
 }
 impl ParameterGroupStatus {
     /// <p>The name of the parameter group.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>The status of parameter updates. </p>
-    pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_apply_status(&self) -> ::std::option::Option<& str> {
         self.parameter_apply_status.as_deref()
     }
     /// <p>The node IDs of one or more nodes to be rebooted.</p>
-    pub fn node_ids_to_reboot(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn node_ids_to_reboot(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.node_ids_to_reboot.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ParameterGroupStatus {
 
 /// A builder for [`ParameterGroupStatus`](crate::types::ParameterGroupStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterGroupStatusBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,
@@ -47,65 +45,60 @@ pub struct ParameterGroupStatusBuilder {
 }
 impl ParameterGroupStatusBuilder {
     /// <p>The name of the parameter group.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.parameter_group_name = input;
-        self
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parameter_group_name = input; self
+    }
+    /// <p>The name of the parameter group.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
     }
     /// <p>The status of parameter updates. </p>
-    pub fn parameter_apply_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of parameter updates. </p>
-    pub fn set_parameter_apply_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.parameter_apply_status = input;
-        self
+    pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parameter_apply_status = input; self
+    }
+    /// <p>The status of parameter updates. </p>
+    pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_apply_status
     }
     /// Appends an item to `node_ids_to_reboot`.
     ///
     /// To override the contents of this collection use [`set_node_ids_to_reboot`](Self::set_node_ids_to_reboot).
     ///
     /// <p>The node IDs of one or more nodes to be rebooted.</p>
-    pub fn node_ids_to_reboot(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_ids_to_reboot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_ids_to_reboot.unwrap_or_default();
-        v.push(input.into());
-        self.node_ids_to_reboot = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.node_ids_to_reboot = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The node IDs of one or more nodes to be rebooted.</p>
-    pub fn set_node_ids_to_reboot(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.node_ids_to_reboot = input;
-        self
+    pub fn set_node_ids_to_reboot(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.node_ids_to_reboot = input; self
+    }
+    /// <p>The node IDs of one or more nodes to be rebooted.</p>
+    pub fn get_node_ids_to_reboot(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.node_ids_to_reboot
     }
     /// Consumes the builder and constructs a [`ParameterGroupStatus`](crate::types::ParameterGroupStatus).
     pub fn build(self) -> crate::types::ParameterGroupStatus {
         crate::types::ParameterGroupStatus {
-            parameter_group_name: self.parameter_group_name,
-            parameter_apply_status: self.parameter_apply_status,
-            node_ids_to_reboot: self.node_ids_to_reboot,
+            parameter_group_name: self.parameter_group_name
+            ,
+            parameter_apply_status: self.parameter_apply_status
+            ,
+            node_ids_to_reboot: self.node_ids_to_reboot
+            ,
         }
     }
 }
+

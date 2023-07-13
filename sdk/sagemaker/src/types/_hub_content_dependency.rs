@@ -3,7 +3,7 @@
 /// <p>Any dependencies related to hub content, such as scripts, model artifacts, datasets, or notebooks.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HubContentDependency {
+pub struct HubContentDependency  {
     /// <p>The hub content dependency origin path.</p>
     #[doc(hidden)]
     pub dependency_origin_path: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct HubContentDependency {
 }
 impl HubContentDependency {
     /// <p>The hub content dependency origin path.</p>
-    pub fn dependency_origin_path(&self) -> ::std::option::Option<&str> {
+    pub fn dependency_origin_path(&self) -> ::std::option::Option<& str> {
         self.dependency_origin_path.as_deref()
     }
     /// <p>The hub content dependency copy path.</p>
-    pub fn dependency_copy_path(&self) -> ::std::option::Option<&str> {
+    pub fn dependency_copy_path(&self) -> ::std::option::Option<& str> {
         self.dependency_copy_path.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl HubContentDependency {
 
 /// A builder for [`HubContentDependency`](crate::types::HubContentDependency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HubContentDependencyBuilder {
     pub(crate) dependency_origin_path: ::std::option::Option<::std::string::String>,
     pub(crate) dependency_copy_path: ::std::option::Option<::std::string::String>,
 }
 impl HubContentDependencyBuilder {
     /// <p>The hub content dependency origin path.</p>
-    pub fn dependency_origin_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dependency_origin_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dependency_origin_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hub content dependency origin path.</p>
-    pub fn set_dependency_origin_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dependency_origin_path = input;
-        self
+    pub fn set_dependency_origin_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dependency_origin_path = input; self
+    }
+    /// <p>The hub content dependency origin path.</p>
+    pub fn get_dependency_origin_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dependency_origin_path
     }
     /// <p>The hub content dependency copy path.</p>
-    pub fn dependency_copy_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dependency_copy_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dependency_copy_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hub content dependency copy path.</p>
-    pub fn set_dependency_copy_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dependency_copy_path = input;
-        self
+    pub fn set_dependency_copy_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dependency_copy_path = input; self
+    }
+    /// <p>The hub content dependency copy path.</p>
+    pub fn get_dependency_copy_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dependency_copy_path
     }
     /// Consumes the builder and constructs a [`HubContentDependency`](crate::types::HubContentDependency).
     pub fn build(self) -> crate::types::HubContentDependency {
         crate::types::HubContentDependency {
-            dependency_origin_path: self.dependency_origin_path,
-            dependency_copy_path: self.dependency_copy_path,
+            dependency_origin_path: self.dependency_origin_path
+            ,
+            dependency_copy_path: self.dependency_copy_path
+            ,
         }
     }
 }
+

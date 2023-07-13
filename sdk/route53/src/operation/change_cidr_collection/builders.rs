@@ -3,111 +3,96 @@ pub use crate::operation::change_cidr_collection::_change_cidr_collection_output
 
 pub use crate::operation::change_cidr_collection::_change_cidr_collection_input::ChangeCidrCollectionInputBuilder;
 
+impl ChangeCidrCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::change_cidr_collection::ChangeCidrCollectionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.change_cidr_collection();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ChangeCidrCollection`.
-///
-/// <p>Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative IP information mapping blocks to one or multiple locations.</p>
-/// <p>A change request can update multiple locations in a collection at a time, which is helpful if you want to move one or more CIDR blocks from one location to another in one transaction, without downtime. </p>
-/// <p> <b>Limits</b> </p>
-/// <p>The max number of CIDR blocks included in the request is 1000. As a result, big updates require multiple API calls.</p>
-/// <p> <b> PUT and DELETE_IF_EXISTS</b> </p>
-/// <p>Use <code>ChangeCidrCollection</code> to perform the following actions:</p>
-/// <ul>
-/// <li> <p> <code>PUT</code>: Create a CIDR block within the specified collection.</p> </li>
-/// <li> <p> <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.</p> </li>
+/// 
+/// <p>Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative IP information mapping blocks to one or multiple locations.</p> 
+/// <p>A change request can update multiple locations in a collection at a time, which is helpful if you want to move one or more CIDR blocks from one location to another in one transaction, without downtime. </p> 
+/// <p> <b>Limits</b> </p> 
+/// <p>The max number of CIDR blocks included in the request is 1000. As a result, big updates require multiple API calls.</p> 
+/// <p> <b> PUT and DELETE_IF_EXISTS</b> </p> 
+/// <p>Use <code>ChangeCidrCollection</code> to perform the following actions:</p> 
+/// <ul> 
+/// <li> <p> <code>PUT</code>: Create a CIDR block within the specified collection.</p> </li> 
+/// <li> <p> <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.</p> </li> 
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeCidrCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder,
+                    inner: crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder,
 }
-impl ChangeCidrCollectionFluentBuilder {
+impl ChangeCidrCollectionFluentBuilder  {
     /// Creates a new `ChangeCidrCollection`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::change_cidr_collection::ChangeCidrCollection,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ChangeCidrCollection as a reference.
+    pub fn as_input(&self) -> &crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::change_cidr_collection::ChangeCidrCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::change_cidr_collection::ChangeCidrCollection, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::change_cidr_collection::ChangeCidrCollectionError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::change_cidr_collection::ChangeCidrCollectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::change_cidr_collection::ChangeCidrCollectionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::change_cidr_collection::ChangeCidrCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::change_cidr_collection::ChangeCidrCollection,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::change_cidr_collection::ChangeCidrCollectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::change_cidr_collection::ChangeCidrCollectionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::change_cidr_collection::ChangeCidrCollection, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::change_cidr_collection::ChangeCidrCollectionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The UUID of the CIDR collection to update.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -118,25 +103,38 @@ impl ChangeCidrCollectionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
-    /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>
-    /// <ul>
-    /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
-    /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
+    /// <p>The UUID of the CIDR collection to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
+    /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p> 
+    /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p> 
+    /// <ul> 
+    /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li> 
+    /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li> 
     /// </ul>
     pub fn collection_version(mut self, input: i64) -> Self {
         self.inner = self.inner.collection_version(input);
         self
     }
-    /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
-    /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>
-    /// <ul>
-    /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
-    /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
+    /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p> 
+    /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p> 
+    /// <ul> 
+    /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li> 
+    /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li> 
     /// </ul>
     pub fn set_collection_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_collection_version(input);
         self
+    }
+    /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p> 
+    /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p> 
+    /// <ul> 
+    /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li> 
+    /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li> 
+    /// </ul>
+    pub fn get_collection_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_collection_version()
     }
     /// Appends an item to `Changes`.
     ///
@@ -148,11 +146,13 @@ impl ChangeCidrCollectionFluentBuilder {
         self
     }
     /// <p> Information about changes to a CIDR collection.</p>
-    pub fn set_changes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>,
-    ) -> Self {
+    pub fn set_changes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>) -> Self {
         self.inner = self.inner.set_changes(input);
         self
     }
+    /// <p> Information about changes to a CIDR collection.</p>
+    pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>> {
+        self.inner.get_changes()
+    }
 }
+

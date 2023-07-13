@@ -3,7 +3,7 @@
 /// <p>Defines a custom ASN.1 X.400 <code>GeneralName</code> using an object identifier (OID) and value. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OtherName {
+pub struct OtherName  {
     /// <p>Specifies an OID. </p>
     #[doc(hidden)]
     pub type_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct OtherName {
 }
 impl OtherName {
     /// <p>Specifies an OID. </p>
-    pub fn type_id(&self) -> ::std::option::Option<&str> {
+    pub fn type_id(&self) -> ::std::option::Option<& str> {
         self.type_id.as_deref()
     }
     /// <p>Specifies an OID value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl OtherName {
 
 /// A builder for [`OtherName`](crate::types::OtherName).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OtherNameBuilder {
     pub(crate) type_id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl OtherNameBuilder {
     }
     /// <p>Specifies an OID. </p>
     pub fn set_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_id = input;
-        self
+        self.type_id = input; self
+    }
+    /// <p>Specifies an OID. </p>
+    pub fn get_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_id
     }
     /// <p>Specifies an OID value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl OtherNameBuilder {
     }
     /// <p>Specifies an OID value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>Specifies an OID value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`OtherName`](crate::types::OtherName).
     pub fn build(self) -> crate::types::OtherName {
         crate::types::OtherName {
-            type_id: self.type_id,
-            value: self.value,
+            type_id: self.type_id
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

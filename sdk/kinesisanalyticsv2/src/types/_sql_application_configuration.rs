@@ -3,7 +3,7 @@
 /// <p>Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqlApplicationConfiguration {
+pub struct SqlApplicationConfiguration  {
     /// <p>The array of <code>Input</code> objects describing the input streams used by the application.</p>
     #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
@@ -12,22 +12,19 @@ pub struct SqlApplicationConfiguration {
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>The array of <code>ReferenceDataSource</code> objects describing the reference data sources used by the application.</p>
     #[doc(hidden)]
-    pub reference_data_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSource>>,
+    pub reference_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSource>>,
 }
 impl SqlApplicationConfiguration {
     /// <p>The array of <code>Input</code> objects describing the input streams used by the application.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[crate::types::Input]> {
+    pub fn inputs(&self) -> ::std::option::Option<& [crate::types::Input]> {
         self.inputs.as_deref()
     }
     /// <p>The array of <code>Output</code> objects describing the destination streams used by the application.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
+    pub fn outputs(&self) -> ::std::option::Option<& [crate::types::Output]> {
         self.outputs.as_deref()
     }
     /// <p>The array of <code>ReferenceDataSource</code> objects describing the reference data sources used by the application.</p>
-    pub fn reference_data_sources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReferenceDataSource]> {
+    pub fn reference_data_sources(&self) -> ::std::option::Option<& [crate::types::ReferenceDataSource]> {
         self.reference_data_sources.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl SqlApplicationConfiguration {
 
 /// A builder for [`SqlApplicationConfiguration`](crate::types::SqlApplicationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqlApplicationConfigurationBuilder {
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    pub(crate) reference_data_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSource>>,
+    pub(crate) reference_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSource>>,
 }
 impl SqlApplicationConfigurationBuilder {
     /// Appends an item to `inputs`.
@@ -57,17 +51,17 @@ impl SqlApplicationConfigurationBuilder {
     /// <p>The array of <code>Input</code> objects describing the input streams used by the application.</p>
     pub fn inputs(mut self, input: crate::types::Input) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input);
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <code>Input</code> objects describing the input streams used by the application.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Input>>) -> Self {
+        self.inputs = input; self
+    }
+    /// <p>The array of <code>Input</code> objects describing the input streams used by the application.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Input>> {
+        &self.inputs
     }
     /// Appends an item to `outputs`.
     ///
@@ -76,17 +70,17 @@ impl SqlApplicationConfigurationBuilder {
     /// <p>The array of <code>Output</code> objects describing the destination streams used by the application.</p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <code>Output</code> objects describing the destination streams used by the application.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
+        self.outputs = input; self
+    }
+    /// <p>The array of <code>Output</code> objects describing the destination streams used by the application.</p>
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+        &self.outputs
     }
     /// Appends an item to `reference_data_sources`.
     ///
@@ -95,24 +89,28 @@ impl SqlApplicationConfigurationBuilder {
     /// <p>The array of <code>ReferenceDataSource</code> objects describing the reference data sources used by the application.</p>
     pub fn reference_data_sources(mut self, input: crate::types::ReferenceDataSource) -> Self {
         let mut v = self.reference_data_sources.unwrap_or_default();
-        v.push(input);
-        self.reference_data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reference_data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <code>ReferenceDataSource</code> objects describing the reference data sources used by the application.</p>
-    pub fn set_reference_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSource>>,
-    ) -> Self {
-        self.reference_data_sources = input;
-        self
+    pub fn set_reference_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSource>>) -> Self {
+        self.reference_data_sources = input; self
+    }
+    /// <p>The array of <code>ReferenceDataSource</code> objects describing the reference data sources used by the application.</p>
+    pub fn get_reference_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSource>> {
+        &self.reference_data_sources
     }
     /// Consumes the builder and constructs a [`SqlApplicationConfiguration`](crate::types::SqlApplicationConfiguration).
     pub fn build(self) -> crate::types::SqlApplicationConfiguration {
         crate::types::SqlApplicationConfiguration {
-            inputs: self.inputs,
-            outputs: self.outputs,
-            reference_data_sources: self.reference_data_sources,
+            inputs: self.inputs
+            ,
+            outputs: self.outputs
+            ,
+            reference_data_sources: self.reference_data_sources
+            ,
         }
     }
 }
+

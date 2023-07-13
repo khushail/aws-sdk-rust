@@ -3,14 +3,14 @@
 /// <p>The websocket endpoint used to connect to Amazon Chime SDK messaging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessagingSessionEndpoint {
+pub struct MessagingSessionEndpoint  {
     /// <p>The endpoint to which you establish a websocket connection.</p>
     #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl MessagingSessionEndpoint {
     /// <p>The endpoint to which you establish a websocket connection.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl MessagingSessionEndpoint {
 
 /// A builder for [`MessagingSessionEndpoint`](crate::types::MessagingSessionEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessagingSessionEndpointBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl MessagingSessionEndpointBuilder {
     }
     /// <p>The endpoint to which you establish a websocket connection.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// <p>The endpoint to which you establish a websocket connection.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`MessagingSessionEndpoint`](crate::types::MessagingSessionEndpoint).
     pub fn build(self) -> crate::types::MessagingSessionEndpoint {
-        crate::types::MessagingSessionEndpoint { url: self.url }
+        crate::types::MessagingSessionEndpoint {
+            url: self.url
+            ,
+        }
     }
 }
+

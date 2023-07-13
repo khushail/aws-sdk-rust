@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpcConnectionOutput {
+pub struct CreateVpcConnectionOutput  {
     /// <p>The VPC connection ARN.</p>
     #[doc(hidden)]
     pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
@@ -26,68 +26,58 @@ pub struct CreateVpcConnectionOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map of tags for the VPC connection.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateVpcConnectionOutput {
     /// <p>The VPC connection ARN.</p>
-    pub fn vpc_connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connection_arn(&self) -> ::std::option::Option<& str> {
         self.vpc_connection_arn.as_deref()
     }
     /// <p>The State of Vpc Connection.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::VpcConnectionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::VpcConnectionState> {
         self.state.as_ref()
     }
     /// <p>The authentication type of VPC connection.</p>
-    pub fn authentication(&self) -> ::std::option::Option<&str> {
+    pub fn authentication(&self) -> ::std::option::Option<& str> {
         self.authentication.as_deref()
     }
     /// <p>The VPC ID of the VPC connection.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The list of client subnets.</p>
-    pub fn client_subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn client_subnets(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.client_subnets.as_deref()
     }
     /// <p>The list of security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn security_groups(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The creation time of VPC connection.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A map of tags for the VPC connection.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateVpcConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateVpcConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcConnectionOutput`](crate::operation::create_vpc_connection::CreateVpcConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_connection::builders::CreateVpcConnectionOutputBuilder {
-        crate::operation::create_vpc_connection::builders::CreateVpcConnectionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_vpc_connection::builders::CreateVpcConnectionOutputBuilder {
+        crate::operation::create_vpc_connection::builders::CreateVpcConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcConnectionOutput`](crate::operation::create_vpc_connection::CreateVpcConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcConnectionOutputBuilder {
     pub(crate) vpc_connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::VpcConnectionState>,
@@ -96,27 +86,22 @@ pub struct CreateVpcConnectionOutputBuilder {
     pub(crate) client_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateVpcConnectionOutputBuilder {
     /// <p>The VPC connection ARN.</p>
-    pub fn vpc_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VPC connection ARN.</p>
-    pub fn set_vpc_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_connection_arn = input;
-        self
+    pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_connection_arn = input; self
+    }
+    /// <p>The VPC connection ARN.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
     }
     /// <p>The State of Vpc Connection.</p>
     pub fn state(mut self, input: crate::types::VpcConnectionState) -> Self {
@@ -124,28 +109,25 @@ impl CreateVpcConnectionOutputBuilder {
         self
     }
     /// <p>The State of Vpc Connection.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectionState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VpcConnectionState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The State of Vpc Connection.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcConnectionState> {
+        &self.state
     }
     /// <p>The authentication type of VPC connection.</p>
-    pub fn authentication(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authentication type of VPC connection.</p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.authentication = input;
-        self
+    pub fn set_authentication(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.authentication = input; self
+    }
+    /// <p>The authentication type of VPC connection.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication
     }
     /// <p>The VPC ID of the VPC connection.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,52 +136,49 @@ impl CreateVpcConnectionOutputBuilder {
     }
     /// <p>The VPC ID of the VPC connection.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The VPC ID of the VPC connection.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `client_subnets`.
     ///
     /// To override the contents of this collection use [`set_client_subnets`](Self::set_client_subnets).
     ///
     /// <p>The list of client subnets.</p>
-    pub fn client_subnets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_subnets.unwrap_or_default();
-        v.push(input.into());
-        self.client_subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.client_subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of client subnets.</p>
-    pub fn set_client_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.client_subnets = input;
-        self
+    pub fn set_client_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.client_subnets = input; self
+    }
+    /// <p>The list of client subnets.</p>
+    pub fn get_client_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.client_subnets
     }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The list of security groups.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.security_groups = input; self
+    }
+    /// <p>The list of security groups.</p>
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
     }
     /// <p>The creation time of VPC connection.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -207,59 +186,62 @@ impl CreateVpcConnectionOutputBuilder {
         self
     }
     /// <p>The creation time of VPC connection.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The creation time of VPC connection.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of tags for the VPC connection.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of tags for the VPC connection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A map of tags for the VPC connection.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateVpcConnectionOutput`](crate::operation::create_vpc_connection::CreateVpcConnectionOutput).
     pub fn build(self) -> crate::operation::create_vpc_connection::CreateVpcConnectionOutput {
         crate::operation::create_vpc_connection::CreateVpcConnectionOutput {
-            vpc_connection_arn: self.vpc_connection_arn,
-            state: self.state,
-            authentication: self.authentication,
-            vpc_id: self.vpc_id,
-            client_subnets: self.client_subnets,
-            security_groups: self.security_groups,
-            creation_time: self.creation_time,
-            tags: self.tags,
+            vpc_connection_arn: self.vpc_connection_arn
+            ,
+            state: self.state
+            ,
+            authentication: self.authentication
+            ,
+            vpc_id: self.vpc_id
+            ,
+            client_subnets: self.client_subnets
+            ,
+            security_groups: self.security_groups
+            ,
+            creation_time: self.creation_time
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

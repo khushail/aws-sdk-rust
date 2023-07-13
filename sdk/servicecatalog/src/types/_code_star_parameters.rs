@@ -3,7 +3,7 @@
 /// <p>The subtype containing details about the Codestar connection <code>Type</code>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeStarParameters {
+pub struct CodeStarParameters  {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
     #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct CodeStarParameters {
 }
 impl CodeStarParameters {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The specific branch where the artifact resides. </p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
-    pub fn artifact_path(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_path(&self) -> ::std::option::Option<& str> {
         self.artifact_path.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl CodeStarParameters {
 
 /// A builder for [`CodeStarParameters`](crate::types::CodeStarParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeStarParametersBuilder {
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,
@@ -55,20 +53,17 @@ pub struct CodeStarParametersBuilder {
 }
 impl CodeStarParametersBuilder {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_arn = input;
-        self
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_arn = input; self
+    }
+    /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
     }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,8 +72,11 @@ impl CodeStarParametersBuilder {
     }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
+    }
+    /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
     }
     /// <p>The specific branch where the artifact resides. </p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,32 +85,37 @@ impl CodeStarParametersBuilder {
     }
     /// <p>The specific branch where the artifact resides. </p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
+    }
+    /// <p>The specific branch where the artifact resides. </p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
-    pub fn artifact_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
-    pub fn set_artifact_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.artifact_path = input;
-        self
+    pub fn set_artifact_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.artifact_path = input; self
+    }
+    /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
+    pub fn get_artifact_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_path
     }
     /// Consumes the builder and constructs a [`CodeStarParameters`](crate::types::CodeStarParameters).
     pub fn build(self) -> crate::types::CodeStarParameters {
         crate::types::CodeStarParameters {
-            connection_arn: self.connection_arn,
-            repository: self.repository,
-            branch: self.branch,
-            artifact_path: self.artifact_path,
+            connection_arn: self.connection_arn
+            ,
+            repository: self.repository
+            ,
+            branch: self.branch
+            ,
+            artifact_path: self.artifact_path
+            ,
         }
     }
 }
+

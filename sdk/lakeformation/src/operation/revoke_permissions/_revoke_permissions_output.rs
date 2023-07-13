@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokePermissionsOutput {
+pub struct RevokePermissionsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for RevokePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RevokePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`RevokePermissionsOutput`](crate::operation::revoke_permissions::RevokePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::revoke_permissions::builders::RevokePermissionsOutputBuilder {
+    pub fn builder() -> crate::operation::revoke_permissions::builders::RevokePermissionsOutputBuilder {
         crate::operation::revoke_permissions::builders::RevokePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokePermissionsOutput`](crate::operation::revoke_permissions::RevokePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokePermissionsOutputBuilder {
     _request_id: Option<String>,
 }
 impl RevokePermissionsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RevokePermissionsOutput`](crate::operation::revoke_permissions::RevokePermissionsOutput).
     pub fn build(self) -> crate::operation::revoke_permissions::RevokePermissionsOutput {
         crate::operation::revoke_permissions::RevokePermissionsOutput {
@@ -43,3 +40,4 @@ impl RevokePermissionsOutputBuilder {
         }
     }
 }
+

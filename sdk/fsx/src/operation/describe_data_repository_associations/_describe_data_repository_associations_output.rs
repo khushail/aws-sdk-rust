@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDataRepositoryAssociationsOutput {
+pub struct DescribeDataRepositoryAssociationsOutput  {
     /// <p>An array of one or more data repository association descriptions.</p>
     #[doc(hidden)]
-    pub associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,36 +13,31 @@ pub struct DescribeDataRepositoryAssociationsOutput {
 }
 impl DescribeDataRepositoryAssociationsOutput {
     /// <p>An array of one or more data repository association descriptions.</p>
-    pub fn associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataRepositoryAssociation]> {
+    pub fn associations(&self) -> ::std::option::Option<& [crate::types::DataRepositoryAssociation]> {
         self.associations.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDataRepositoryAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDataRepositoryAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsOutput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsOutputBuilder {
         crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataRepositoryAssociationsOutput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryAssociationsOutputBuilder {
-    pub(crate) associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,17 @@ impl DescribeDataRepositoryAssociationsOutputBuilder {
     /// <p>An array of one or more data repository association descriptions.</p>
     pub fn associations(mut self, input: crate::types::DataRepositoryAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
-        v.push(input);
-        self.associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of one or more data repository association descriptions.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
-    ) -> Self {
-        self.associations = input;
-        self
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>) -> Self {
+        self.associations = input; self
+    }
+    /// <p>An array of one or more data repository association descriptions.</p>
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>> {
+        &self.associations
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,20 +68,23 @@ impl DescribeDataRepositoryAssociationsOutputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDataRepositoryAssociationsOutput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput{
+    pub fn build(self) -> crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput {
         crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput {
             associations: self.associations
             ,
@@ -97,3 +94,4 @@ impl DescribeDataRepositoryAssociationsOutputBuilder {
         }
     }
 }
+

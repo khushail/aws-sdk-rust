@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveAutoScalingPolicyInput {
+pub struct RemoveAutoScalingPolicyInput  {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct RemoveAutoScalingPolicyInput {
 }
 impl RemoveAutoScalingPolicyInput {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    pub fn instance_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_group_id(&self) -> ::std::option::Option<& str> {
         self.instance_group_id.as_deref()
     }
 }
 impl RemoveAutoScalingPolicyInput {
     /// Creates a new builder-style object to manufacture [`RemoveAutoScalingPolicyInput`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder {
         crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAutoScalingPolicyInput`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAutoScalingPolicyInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_group_id: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl RemoveAutoScalingPolicyInputBuilder {
     }
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
+    }
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.instance_group_id = input;
-        self
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_group_id = input; self
+    }
+    /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_group_id
     }
     /// Consumes the builder and constructs a [`RemoveAutoScalingPolicyInput`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput {
-                cluster_id: self.cluster_id,
-                instance_group_id: self.instance_group_id,
-            },
+                cluster_id: self.cluster_id
+                ,
+                instance_group_id: self.instance_group_id
+                ,
+            }
         )
     }
 }
+

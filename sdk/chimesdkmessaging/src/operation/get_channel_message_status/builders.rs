@@ -3,136 +3,120 @@ pub use crate::operation::get_channel_message_status::_get_channel_message_statu
 
 pub use crate::operation::get_channel_message_status::_get_channel_message_status_input::GetChannelMessageStatusInputBuilder;
 
+impl GetChannelMessageStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_channel_message_status::GetChannelMessageStatusOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_channel_message_status();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetChannelMessageStatus`.
-///
-/// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to retrieving message status if the event was not received because a client wasn't connected to a websocket. </p>
-/// <p>Messages can have any one of these statuses.</p>
-/// <dl>
+/// 
+/// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to retrieving message status if the event was not received because a client wasn't connected to a websocket. </p> 
+/// <p>Messages can have any one of these statuses.</p> 
+/// <dl> 
 /// <dt>
 /// SENT
-/// </dt>
-/// <dd>
-/// <p>Message processed successfully</p>
-/// </dd>
+/// </dt> 
+/// <dd> 
+/// <p>Message processed successfully</p> 
+/// </dd> 
 /// <dt>
 /// PENDING
-/// </dt>
-/// <dd>
-/// <p>Ongoing processing</p>
-/// </dd>
+/// </dt> 
+/// <dd> 
+/// <p>Ongoing processing</p> 
+/// </dd> 
 /// <dt>
 /// FAILED
-/// </dt>
-/// <dd>
-/// <p>Processing failed</p>
-/// </dd>
+/// </dt> 
+/// <dd> 
+/// <p>Processing failed</p> 
+/// </dd> 
 /// <dt>
 /// DENIED
-/// </dt>
-/// <dd>
-/// <p>Messasge denied by the processor</p>
-/// </dd>
-/// </dl> <note>
-/// <ul>
-/// <li> <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them. </p> </li>
-/// <li> <p>Only the message sender can invoke this API.</p> </li>
-/// <li> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </li>
-/// </ul>
+/// </dt> 
+/// <dd> 
+/// <p>Messasge denied by the processor</p> 
+/// </dd> 
+/// </dl> <note> 
+/// <ul> 
+/// <li> <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them. </p> </li> 
+/// <li> <p>Only the message sender can invoke this API.</p> </li> 
+/// <li> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </li> 
+/// </ul> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetChannelMessageStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder,
+                    inner: crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder,
 }
-impl GetChannelMessageStatusFluentBuilder {
+impl GetChannelMessageStatusFluentBuilder  {
     /// Creates a new `GetChannelMessageStatus`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_channel_message_status::GetChannelMessageStatus,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetChannelMessageStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_channel_message_status::GetChannelMessageStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_channel_message_status::GetChannelMessageStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message_status::GetChannelMessageStatusError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_channel_message_status::GetChannelMessageStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message_status::GetChannelMessageStatusError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_channel_message_status::GetChannelMessageStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_channel_message_status::GetChannelMessageStatus,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_channel_message_status::GetChannelMessageStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message_status::GetChannelMessageStatusError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_channel_message_status::GetChannelMessageStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message_status::GetChannelMessageStatusError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ARN of the channel</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -142,6 +126,10 @@ impl GetChannelMessageStatusFluentBuilder {
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_arn(input);
         self
+    }
+    /// <p>The ARN of the channel</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
     }
     /// <p>The ID of the message.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,6 +141,10 @@ impl GetChannelMessageStatusFluentBuilder {
         self.inner = self.inner.set_message_id(input);
         self
     }
+    /// <p>The ID of the message.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_id()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -163,24 +155,29 @@ impl GetChannelMessageStatusFluentBuilder {
         self.inner = self.inner.set_chime_bearer(input);
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note>
-    /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p>
+    /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
+    }
+    /// <p>The ID of the SubChannel in the request.</p> <note> 
+    /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p> 
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note>
-    /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p>
+    /// <p>The ID of the SubChannel in the request.</p> <note> 
+    /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p> 
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
+    /// <p>The ID of the SubChannel in the request.</p> <note> 
+    /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p> 
+    /// </note>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sub_channel_id()
+    }
 }
+

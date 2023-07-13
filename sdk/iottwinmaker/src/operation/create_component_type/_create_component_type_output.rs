@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateComponentTypeOutput {
+pub struct CreateComponentTypeOutput  {
     /// <p>The ARN of the component type.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -16,37 +16,33 @@ pub struct CreateComponentTypeOutput {
 }
 impl CreateComponentTypeOutput {
     /// <p>The ARN of the component type.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The current state of the component type.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateComponentTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateComponentTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateComponentTypeOutput`](crate::operation::create_component_type::CreateComponentTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder {
-        crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder {
+        crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateComponentTypeOutput`](crate::operation::create_component_type::CreateComponentTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateComponentTypeOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -61,8 +57,11 @@ impl CreateComponentTypeOutputBuilder {
     }
     /// <p>The ARN of the component type.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of the component type.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The date and time when the entity was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -70,12 +69,12 @@ impl CreateComponentTypeOutputBuilder {
         self
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
+    }
+    /// <p>The date and time when the entity was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// <p>The current state of the component type.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
@@ -84,25 +83,32 @@ impl CreateComponentTypeOutputBuilder {
     }
     /// <p>The current state of the component type.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The current state of the component type.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateComponentTypeOutput`](crate::operation::create_component_type::CreateComponentTypeOutput).
     pub fn build(self) -> crate::operation::create_component_type::CreateComponentTypeOutput {
         crate::operation::create_component_type::CreateComponentTypeOutput {
-            arn: self.arn,
-            creation_date_time: self.creation_date_time,
-            state: self.state,
+            arn: self.arn
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

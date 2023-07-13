@@ -3,7 +3,7 @@
 /// <p>The detected properties of the input file. Elastic Transcoder identifies these values from the input file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectedProperties {
+pub struct DetectedProperties  {
     /// <p>The detected width of the input file, in pixels.</p>
     #[doc(hidden)]
     pub width: ::std::option::Option<i32>,
@@ -30,7 +30,7 @@ impl DetectedProperties {
         self.height
     }
     /// <p>The detected frame rate of the input file, in frames per second.</p>
-    pub fn frame_rate(&self) -> ::std::option::Option<&str> {
+    pub fn frame_rate(&self) -> ::std::option::Option<& str> {
         self.frame_rate.as_deref()
     }
     /// <p>The detected file size of the input file, in bytes.</p>
@@ -51,9 +51,7 @@ impl DetectedProperties {
 
 /// A builder for [`DetectedProperties`](crate::types::DetectedProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectedPropertiesBuilder {
     pub(crate) width: ::std::option::Option<i32>,
     pub(crate) height: ::std::option::Option<i32>,
@@ -69,8 +67,11 @@ impl DetectedPropertiesBuilder {
     }
     /// <p>The detected width of the input file, in pixels.</p>
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
+    }
+    /// <p>The detected width of the input file, in pixels.</p>
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
     }
     /// <p>The detected height of the input file, in pixels.</p>
     pub fn height(mut self, input: i32) -> Self {
@@ -79,8 +80,11 @@ impl DetectedPropertiesBuilder {
     }
     /// <p>The detected height of the input file, in pixels.</p>
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
+    }
+    /// <p>The detected height of the input file, in pixels.</p>
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
     }
     /// <p>The detected frame rate of the input file, in frames per second.</p>
     pub fn frame_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,8 +93,11 @@ impl DetectedPropertiesBuilder {
     }
     /// <p>The detected frame rate of the input file, in frames per second.</p>
     pub fn set_frame_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.frame_rate = input;
-        self
+        self.frame_rate = input; self
+    }
+    /// <p>The detected frame rate of the input file, in frames per second.</p>
+    pub fn get_frame_rate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.frame_rate
     }
     /// <p>The detected file size of the input file, in bytes.</p>
     pub fn file_size(mut self, input: i64) -> Self {
@@ -99,8 +106,11 @@ impl DetectedPropertiesBuilder {
     }
     /// <p>The detected file size of the input file, in bytes.</p>
     pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.file_size = input;
-        self
+        self.file_size = input; self
+    }
+    /// <p>The detected file size of the input file, in bytes.</p>
+    pub fn get_file_size(&self) -> &::std::option::Option<i64> {
+        &self.file_size
     }
     /// <p>The detected duration of the input file, in milliseconds.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
@@ -109,17 +119,26 @@ impl DetectedPropertiesBuilder {
     }
     /// <p>The detected duration of the input file, in milliseconds.</p>
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_millis = input;
-        self
+        self.duration_millis = input; self
+    }
+    /// <p>The detected duration of the input file, in milliseconds.</p>
+    pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.duration_millis
     }
     /// Consumes the builder and constructs a [`DetectedProperties`](crate::types::DetectedProperties).
     pub fn build(self) -> crate::types::DetectedProperties {
         crate::types::DetectedProperties {
-            width: self.width,
-            height: self.height,
-            frame_rate: self.frame_rate,
-            file_size: self.file_size,
-            duration_millis: self.duration_millis,
+            width: self.width
+            ,
+            height: self.height
+            ,
+            frame_rate: self.frame_rate
+            ,
+            file_size: self.file_size
+            ,
+            duration_millis: self.duration_millis
+            ,
         }
     }
 }
+

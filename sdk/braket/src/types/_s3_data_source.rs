@@ -3,14 +3,14 @@
 /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DataSource {
+pub struct S3DataSource  {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
     #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl S3DataSource {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl S3DataSource {
 
 /// A builder for [`S3DataSource`](crate::types::S3DataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DataSourceBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl S3DataSourceBuilder {
     }
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
+    }
+    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Consumes the builder and constructs a [`S3DataSource`](crate::types::S3DataSource).
     pub fn build(self) -> crate::types::S3DataSource {
         crate::types::S3DataSource {
-            s3_uri: self.s3_uri,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
+

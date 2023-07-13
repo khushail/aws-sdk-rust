@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBackupVaultInput {
+pub struct DeleteBackupVaultInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBackupVaultInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
 }
 impl DeleteBackupVaultInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupVaultInput`](crate::operation::delete_backup_vault::DeleteBackupVaultInput).
-    pub fn builder(
-    ) -> crate::operation::delete_backup_vault::builders::DeleteBackupVaultInputBuilder {
+    pub fn builder() -> crate::operation::delete_backup_vault::builders::DeleteBackupVaultInputBuilder {
         crate::operation::delete_backup_vault::builders::DeleteBackupVaultInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackupVaultInput`](crate::operation::delete_backup_vault::DeleteBackupVaultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackupVaultInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBackupVaultInputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.backup_vault_name = input;
-        self
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_vault_name = input; self
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
     }
     /// Consumes the builder and constructs a [`DeleteBackupVaultInput`](crate::operation::delete_backup_vault::DeleteBackupVaultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_backup_vault::DeleteBackupVaultInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_backup_vault::DeleteBackupVaultInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_backup_vault::DeleteBackupVaultInput {
-                backup_vault_name: self.backup_vault_name,
-            },
+                backup_vault_name: self.backup_vault_name
+                ,
+            }
         )
     }
 }
+

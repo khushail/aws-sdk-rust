@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-iot1clickprojects = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-iot1clickprojects = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -28,8 +28,8 @@ use aws_sdk_iot1clickprojects as iot1clickprojects;
 
 #[::tokio::main]
 async fn main() -> Result<(), iot1clickprojects::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iot1clickprojects::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iot1clickprojects::Client::new(&config);
 
     // ... make some calls with the client
 

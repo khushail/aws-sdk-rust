@@ -2,34 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAddressesInput {
-    /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    /// <ul>
-    /// <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.</p> </li>
-    /// <li> <p> <code>association-id</code> - [EC2-VPC] The association ID for the address.</p> </li>
-    /// <li> <p> <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>).</p> </li>
-    /// <li> <p> <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p> </li>
-    /// <li> <p> <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p> </li>
-    /// <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated with, if any.</p> </li>
-    /// <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p> </li>
-    /// <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.</p> </li>
-    /// <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p> </li>
+pub struct DescribeAddressesInput  {
+    /// <p>One or more filters. Filter names and values are case-sensitive.</p> 
+    /// <ul> 
+    /// <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p> </li> 
+    /// <li> <p> <code>association-id</code> - The association ID for the address.</p> </li> 
+    /// <li> <p> <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p> </li> 
+    /// <li> <p> <code>network-interface-id</code> - The ID of the network interface that the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p> </li> 
+    /// <li> <p> <code>private-ip-address</code> - The private IP address associated with the Elastic IP address.</p> </li> 
+    /// <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p> </li> 
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// </key></p> </li> 
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>One or more Elastic IP addresses.</p>
+    /// <p>One or more Elastic IP addresses.</p> 
     /// <p>Default: Describes all your Elastic IP addresses.</p>
     #[doc(hidden)]
     pub public_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>[EC2-VPC] Information about the allocation IDs.</p>
+    /// <p>Information about the allocation IDs.</p>
     #[doc(hidden)]
     pub allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -37,36 +36,35 @@ pub struct DescribeAddressesInput {
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeAddressesInput {
-    /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    /// <ul>
-    /// <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.</p> </li>
-    /// <li> <p> <code>association-id</code> - [EC2-VPC] The association ID for the address.</p> </li>
-    /// <li> <p> <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>).</p> </li>
-    /// <li> <p> <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p> </li>
-    /// <li> <p> <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p> </li>
-    /// <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated with, if any.</p> </li>
-    /// <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p> </li>
-    /// <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.</p> </li>
-    /// <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p> </li>
+    /// <p>One or more filters. Filter names and values are case-sensitive.</p> 
+    /// <ul> 
+    /// <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p> </li> 
+    /// <li> <p> <code>association-id</code> - The association ID for the address.</p> </li> 
+    /// <li> <p> <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p> </li> 
+    /// <li> <p> <code>network-interface-id</code> - The ID of the network interface that the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p> </li> 
+    /// <li> <p> <code>private-ip-address</code> - The private IP address associated with the Elastic IP address.</p> </li> 
+    /// <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p> </li> 
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// </key></p> </li> 
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>One or more Elastic IP addresses.</p>
+    /// <p>One or more Elastic IP addresses.</p> 
     /// <p>Default: Describes all your Elastic IP addresses.</p>
-    pub fn public_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn public_ips(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.public_ips.as_deref()
     }
-    /// <p>[EC2-VPC] Information about the allocation IDs.</p>
-    pub fn allocation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    /// <p>Information about the allocation IDs.</p>
+    pub fn allocation_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.allocation_ids.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -76,17 +74,14 @@ impl DescribeAddressesInput {
 }
 impl DescribeAddressesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
-    pub fn builder() -> crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder {
         crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) public_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -98,101 +93,115 @@ impl DescribeAddressesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    /// <ul>
-    /// <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.</p> </li>
-    /// <li> <p> <code>association-id</code> - [EC2-VPC] The association ID for the address.</p> </li>
-    /// <li> <p> <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>).</p> </li>
-    /// <li> <p> <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p> </li>
-    /// <li> <p> <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p> </li>
-    /// <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated with, if any.</p> </li>
-    /// <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p> </li>
-    /// <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.</p> </li>
-    /// <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p> </li>
+    /// <p>One or more filters. Filter names and values are case-sensitive.</p> 
+    /// <ul> 
+    /// <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p> </li> 
+    /// <li> <p> <code>association-id</code> - The association ID for the address.</p> </li> 
+    /// <li> <p> <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p> </li> 
+    /// <li> <p> <code>network-interface-id</code> - The ID of the network interface that the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p> </li> 
+    /// <li> <p> <code>private-ip-address</code> - The private IP address associated with the Elastic IP address.</p> </li> 
+    /// <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p> </li> 
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// </key></p> </li> 
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    /// <ul>
-    /// <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.</p> </li>
-    /// <li> <p> <code>association-id</code> - [EC2-VPC] The association ID for the address.</p> </li>
-    /// <li> <p> <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) or in a VPC (<code>vpc</code>).</p> </li>
-    /// <li> <p> <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p> </li>
-    /// <li> <p> <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p> </li>
-    /// <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated with, if any.</p> </li>
-    /// <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p> </li>
-    /// <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.</p> </li>
-    /// <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p> </li>
+    /// <p>One or more filters. Filter names and values are case-sensitive.</p> 
+    /// <ul> 
+    /// <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p> </li> 
+    /// <li> <p> <code>association-id</code> - The association ID for the address.</p> </li> 
+    /// <li> <p> <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p> </li> 
+    /// <li> <p> <code>network-interface-id</code> - The ID of the network interface that the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p> </li> 
+    /// <li> <p> <code>private-ip-address</code> - The private IP address associated with the Elastic IP address.</p> </li> 
+    /// <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p> </li> 
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// </key></p> </li> 
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>One or more filters. Filter names and values are case-sensitive.</p> 
+    /// <ul> 
+    /// <li> <p> <code>allocation-id</code> - The allocation ID for the address.</p> </li> 
+    /// <li> <p> <code>association-id</code> - The association ID for the address.</p> </li> 
+    /// <li> <p> <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p> </li> 
+    /// <li> <p> <code>network-interface-id</code> - The ID of the network interface that the address is associated with, if any.</p> </li> 
+    /// <li> <p> <code>network-interface-owner-id</code> - The Amazon Web Services account ID of the owner.</p> </li> 
+    /// <li> <p> <code>private-ip-address</code> - The private IP address associated with the Elastic IP address.</p> </li> 
+    /// <li> <p> <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p> </li> 
+    /// <li> <p> <code>tag</code>:<key>
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
+    /// <code>TeamA</code> for the filter value.
+    /// </key></p> </li> 
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Appends an item to `public_ips`.
     ///
     /// To override the contents of this collection use [`set_public_ips`](Self::set_public_ips).
     ///
-    /// <p>One or more Elastic IP addresses.</p>
+    /// <p>One or more Elastic IP addresses.</p> 
     /// <p>Default: Describes all your Elastic IP addresses.</p>
     pub fn public_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.public_ips.unwrap_or_default();
-        v.push(input.into());
-        self.public_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.public_ips = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>One or more Elastic IP addresses.</p>
+    /// <p>One or more Elastic IP addresses.</p> 
     /// <p>Default: Describes all your Elastic IP addresses.</p>
-    pub fn set_public_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.public_ips = input;
-        self
+    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.public_ips = input; self
+    }
+    /// <p>One or more Elastic IP addresses.</p> 
+    /// <p>Default: Describes all your Elastic IP addresses.</p>
+    pub fn get_public_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.public_ips
     }
     /// Appends an item to `allocation_ids`.
     ///
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
     ///
-    /// <p>[EC2-VPC] Information about the allocation IDs.</p>
-    pub fn allocation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    /// <p>Information about the allocation IDs.</p>
+    pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allocation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.allocation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allocation_ids = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>[EC2-VPC] Information about the allocation IDs.</p>
-    pub fn set_allocation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.allocation_ids = input;
-        self
+    /// <p>Information about the allocation IDs.</p>
+    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allocation_ids = input; self
+    }
+    /// <p>Information about the allocation IDs.</p>
+    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allocation_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -201,23 +210,26 @@ impl DescribeAddressesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_addresses::DescribeAddressesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_addresses::DescribeAddressesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_addresses::DescribeAddressesInput {
-                filters: self.filters,
-                public_ips: self.public_ips,
-                allocation_ids: self.allocation_ids,
-                dry_run: self.dry_run,
-            },
+                filters: self.filters
+                ,
+                public_ips: self.public_ips
+                ,
+                allocation_ids: self.allocation_ids
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

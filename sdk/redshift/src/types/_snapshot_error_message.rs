@@ -3,7 +3,7 @@
 /// <p>Describes the errors returned by a snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotErrorMessage {
+pub struct SnapshotErrorMessage  {
     /// <p>A unique identifier for the snapshot returning the error.</p>
     #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct SnapshotErrorMessage {
 }
 impl SnapshotErrorMessage {
     /// <p>A unique identifier for the snapshot returning the error.</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>A unique identifier for the cluster.</p>
-    pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_cluster_identifier.as_deref()
     }
     /// <p>The failure code for the error.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>The text message describing the error.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl SnapshotErrorMessage {
 
 /// A builder for [`SnapshotErrorMessage`](crate::types::SnapshotErrorMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotErrorMessageBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -55,36 +53,30 @@ pub struct SnapshotErrorMessageBuilder {
 }
 impl SnapshotErrorMessageBuilder {
     /// <p>A unique identifier for the snapshot returning the error.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the snapshot returning the error.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.snapshot_identifier = input;
-        self
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_identifier = input; self
+    }
+    /// <p>A unique identifier for the snapshot returning the error.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_identifier
     }
     /// <p>A unique identifier for the cluster.</p>
-    pub fn snapshot_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the cluster.</p>
-    pub fn set_snapshot_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.snapshot_cluster_identifier = input;
-        self
+    pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_cluster_identifier = input; self
+    }
+    /// <p>A unique identifier for the cluster.</p>
+    pub fn get_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_cluster_identifier
     }
     /// <p>The failure code for the error.</p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,32 +85,37 @@ impl SnapshotErrorMessageBuilder {
     }
     /// <p>The failure code for the error.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
+    }
+    /// <p>The failure code for the error.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
     }
     /// <p>The text message describing the error.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text message describing the error.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input; self
+    }
+    /// <p>The text message describing the error.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`SnapshotErrorMessage`](crate::types::SnapshotErrorMessage).
     pub fn build(self) -> crate::types::SnapshotErrorMessage {
         crate::types::SnapshotErrorMessage {
-            snapshot_identifier: self.snapshot_identifier,
-            snapshot_cluster_identifier: self.snapshot_cluster_identifier,
-            failure_code: self.failure_code,
-            failure_reason: self.failure_reason,
+            snapshot_identifier: self.snapshot_identifier
+            ,
+            snapshot_cluster_identifier: self.snapshot_cluster_identifier
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

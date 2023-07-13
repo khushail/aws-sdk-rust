@@ -3,7 +3,7 @@
 /// <p>If this job failed, this element indicates why the job failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobFailure {
+pub struct JobFailure  {
     /// <p>The failure code, if any, for the specified job.</p>
     #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct JobFailure {
 }
 impl JobFailure {
     /// <p>The failure code, if any, for the specified job.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>The failure reason, if any, for the specified job.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl JobFailure {
 
 /// A builder for [`JobFailure`](crate::types::JobFailure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobFailureBuilder {
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl JobFailureBuilder {
     }
     /// <p>The failure code, if any, for the specified job.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
+    }
+    /// <p>The failure code, if any, for the specified job.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
     }
     /// <p>The failure reason, if any, for the specified job.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason, if any, for the specified job.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input; self
+    }
+    /// <p>The failure reason, if any, for the specified job.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`JobFailure`](crate::types::JobFailure).
     pub fn build(self) -> crate::types::JobFailure {
         crate::types::JobFailure {
-            failure_code: self.failure_code,
-            failure_reason: self.failure_reason,
+            failure_code: self.failure_code
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

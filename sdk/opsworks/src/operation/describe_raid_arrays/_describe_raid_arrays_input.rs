@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRaidArraysInput {
+pub struct DescribeRaidArraysInput  {
     /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct DescribeRaidArraysInput {
 }
 impl DescribeRaidArraysInput {
     /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
-    pub fn raid_array_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn raid_array_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.raid_array_ids.as_deref()
     }
 }
 impl DescribeRaidArraysInput {
     /// Creates a new builder-style object to manufacture [`DescribeRaidArraysInput`](crate::operation::describe_raid_arrays::DescribeRaidArraysInput).
-    pub fn builder(
-    ) -> crate::operation::describe_raid_arrays::builders::DescribeRaidArraysInputBuilder {
+    pub fn builder() -> crate::operation::describe_raid_arrays::builders::DescribeRaidArraysInputBuilder {
         crate::operation::describe_raid_arrays::builders::DescribeRaidArraysInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRaidArraysInput`](crate::operation::describe_raid_arrays::DescribeRaidArraysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRaidArraysInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +50,11 @@ impl DescribeRaidArraysInputBuilder {
     }
     /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,44 +63,43 @@ impl DescribeRaidArraysInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Appends an item to `raid_array_ids`.
     ///
     /// To override the contents of this collection use [`set_raid_array_ids`](Self::set_raid_array_ids).
     ///
     /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
-    pub fn raid_array_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn raid_array_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.raid_array_ids.unwrap_or_default();
-        v.push(input.into());
-        self.raid_array_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.raid_array_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
-    pub fn set_raid_array_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.raid_array_ids = input;
-        self
+    pub fn set_raid_array_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.raid_array_ids = input; self
+    }
+    /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
+    pub fn get_raid_array_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.raid_array_ids
     }
     /// Consumes the builder and constructs a [`DescribeRaidArraysInput`](crate::operation::describe_raid_arrays::DescribeRaidArraysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_raid_arrays::DescribeRaidArraysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_raid_arrays::DescribeRaidArraysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_raid_arrays::DescribeRaidArraysInput {
-                instance_id: self.instance_id,
-                stack_id: self.stack_id,
-                raid_array_ids: self.raid_array_ids,
-            },
+                instance_id: self.instance_id
+                ,
+                stack_id: self.stack_id
+                ,
+                raid_array_ids: self.raid_array_ids
+                ,
+            }
         )
     }
 }
+

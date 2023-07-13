@@ -3,7 +3,7 @@
 /// <p>Provides information about the settings that Amazon EFS uses to create the root directory when a client connects to an access point. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEfsAccessPointRootDirectoryCreationInfoDetails {
+pub struct AwsEfsAccessPointRootDirectoryCreationInfoDetails  {
     /// <p>Specifies the POSIX group ID to apply to the root directory. </p>
     #[doc(hidden)]
     pub owner_gid: ::std::option::Option<::std::string::String>,
@@ -16,31 +16,28 @@ pub struct AwsEfsAccessPointRootDirectoryCreationInfoDetails {
 }
 impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
     /// <p>Specifies the POSIX group ID to apply to the root directory. </p>
-    pub fn owner_gid(&self) -> ::std::option::Option<&str> {
+    pub fn owner_gid(&self) -> ::std::option::Option<& str> {
         self.owner_gid.as_deref()
     }
     /// <p>Specifies the POSIX user ID to apply to the root directory. </p>
-    pub fn owner_uid(&self) -> ::std::option::Option<&str> {
+    pub fn owner_uid(&self) -> ::std::option::Option<& str> {
         self.owner_uid.as_deref()
     }
     /// <p>Specifies the POSIX permissions to apply to the root directory, in the format of an octal number representing the file's mode bits. </p>
-    pub fn permissions(&self) -> ::std::option::Option<&str> {
+    pub fn permissions(&self) -> ::std::option::Option<& str> {
         self.permissions.as_deref()
     }
 }
 impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
     /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
         crate::types::builders::AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
     pub(crate) owner_gid: ::std::option::Option<::std::string::String>,
     pub(crate) owner_uid: ::std::option::Option<::std::string::String>,
@@ -54,8 +51,11 @@ impl AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
     }
     /// <p>Specifies the POSIX group ID to apply to the root directory. </p>
     pub fn set_owner_gid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_gid = input;
-        self
+        self.owner_gid = input; self
+    }
+    /// <p>Specifies the POSIX group ID to apply to the root directory. </p>
+    pub fn get_owner_gid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_gid
     }
     /// <p>Specifies the POSIX user ID to apply to the root directory. </p>
     pub fn owner_uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,8 +64,11 @@ impl AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
     }
     /// <p>Specifies the POSIX user ID to apply to the root directory. </p>
     pub fn set_owner_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_uid = input;
-        self
+        self.owner_uid = input; self
+    }
+    /// <p>Specifies the POSIX user ID to apply to the root directory. </p>
+    pub fn get_owner_uid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_uid
     }
     /// <p>Specifies the POSIX permissions to apply to the root directory, in the format of an octal number representing the file's mode bits. </p>
     pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,15 +77,22 @@ impl AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
     }
     /// <p>Specifies the POSIX permissions to apply to the root directory, in the format of an octal number representing the file's mode bits. </p>
     pub fn set_permissions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permissions = input;
-        self
+        self.permissions = input; self
+    }
+    /// <p>Specifies the POSIX permissions to apply to the root directory, in the format of an octal number representing the file's mode bits. </p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permissions
     }
     /// Consumes the builder and constructs a [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
     pub fn build(self) -> crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails {
         crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails {
-            owner_gid: self.owner_gid,
-            owner_uid: self.owner_uid,
-            permissions: self.permissions,
+            owner_gid: self.owner_gid
+            ,
+            owner_uid: self.owner_uid
+            ,
+            permissions: self.permissions
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssignmentOutput {
+pub struct GetAssignmentOutput  {
     /// <p> The assignment. The response includes one Assignment element. </p>
     #[doc(hidden)]
     pub assignment: ::std::option::Option<crate::types::Assignment>,
@@ -13,19 +13,19 @@ pub struct GetAssignmentOutput {
 }
 impl GetAssignmentOutput {
     /// <p> The assignment. The response includes one Assignment element. </p>
-    pub fn assignment(&self) -> ::std::option::Option<&crate::types::Assignment> {
+    pub fn assignment(&self) -> ::std::option::Option<& crate::types::Assignment> {
         self.assignment.as_ref()
     }
     /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
-    pub fn hit(&self) -> ::std::option::Option<&crate::types::Hit> {
+    pub fn hit(&self) -> ::std::option::Option<& crate::types::Hit> {
         self.hit.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAssignmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`GetAssignmentOutput`](crate::operation::get_assignment::GetAssignmentOutput).
     pub fn builder() -> crate::operation::get_assignment::builders::GetAssignmentOutputBuilder {
@@ -35,9 +35,7 @@ impl GetAssignmentOutput {
 
 /// A builder for [`GetAssignmentOutput`](crate::operation::get_assignment::GetAssignmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssignmentOutputBuilder {
     pub(crate) assignment: ::std::option::Option<crate::types::Assignment>,
     pub(crate) hit: ::std::option::Option<crate::types::Hit>,
@@ -50,12 +48,12 @@ impl GetAssignmentOutputBuilder {
         self
     }
     /// <p> The assignment. The response includes one Assignment element. </p>
-    pub fn set_assignment(
-        mut self,
-        input: ::std::option::Option<crate::types::Assignment>,
-    ) -> Self {
-        self.assignment = input;
-        self
+    pub fn set_assignment(mut self, input: ::std::option::Option<crate::types::Assignment>) -> Self {
+        self.assignment = input; self
+    }
+    /// <p> The assignment. The response includes one Assignment element. </p>
+    pub fn get_assignment(&self) -> &::std::option::Option<crate::types::Assignment> {
+        &self.assignment
     }
     /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub fn hit(mut self, input: crate::types::Hit) -> Self {
@@ -64,24 +62,30 @@ impl GetAssignmentOutputBuilder {
     }
     /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub fn set_hit(mut self, input: ::std::option::Option<crate::types::Hit>) -> Self {
-        self.hit = input;
-        self
+        self.hit = input; self
+    }
+    /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
+    pub fn get_hit(&self) -> &::std::option::Option<crate::types::Hit> {
+        &self.hit
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAssignmentOutput`](crate::operation::get_assignment::GetAssignmentOutput).
     pub fn build(self) -> crate::operation::get_assignment::GetAssignmentOutput {
         crate::operation::get_assignment::GetAssignmentOutput {
-            assignment: self.assignment,
-            hit: self.hit,
+            assignment: self.assignment
+            ,
+            hit: self.hit
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

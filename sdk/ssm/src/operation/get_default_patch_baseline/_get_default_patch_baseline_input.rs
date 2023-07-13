@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDefaultPatchBaselineInput {
+pub struct GetDefaultPatchBaselineInput  {
     /// <p>Returns the default patch baseline for the specified operating system.</p>
     #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
 }
 impl GetDefaultPatchBaselineInput {
     /// <p>Returns the default patch baseline for the specified operating system.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> ::std::option::Option<& crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
 }
 impl GetDefaultPatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`GetDefaultPatchBaselineInput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput).
-    pub fn builder(
-    ) -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder {
         crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDefaultPatchBaselineInput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDefaultPatchBaselineInputBuilder {
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
 }
@@ -37,24 +33,21 @@ impl GetDefaultPatchBaselineInputBuilder {
         self
     }
     /// <p>Returns the default patch baseline for the specified operating system.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
-        self.operating_system = input;
-        self
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
+        self.operating_system = input; self
+    }
+    /// <p>Returns the default patch baseline for the specified operating system.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
     }
     /// Consumes the builder and constructs a [`GetDefaultPatchBaselineInput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput {
-                operating_system: self.operating_system,
-            },
+                operating_system: self.operating_system
+                ,
+            }
         )
     }
 }
+

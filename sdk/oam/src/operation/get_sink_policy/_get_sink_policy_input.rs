@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSinkPolicyInput {
+pub struct GetSinkPolicyInput  {
     /// <p>The ARN of the sink to retrieve the policy of.</p>
     #[doc(hidden)]
     pub sink_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetSinkPolicyInput {
     /// <p>The ARN of the sink to retrieve the policy of.</p>
-    pub fn sink_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn sink_identifier(&self) -> ::std::option::Option<& str> {
         self.sink_identifier.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl GetSinkPolicyInput {
 
 /// A builder for [`GetSinkPolicyInput`](crate::operation::get_sink_policy::GetSinkPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSinkPolicyInputBuilder {
     pub(crate) sink_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetSinkPolicyInputBuilder {
     /// <p>The ARN of the sink to retrieve the policy of.</p>
-    pub fn sink_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sink_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the sink to retrieve the policy of.</p>
-    pub fn set_sink_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sink_identifier = input;
-        self
+    pub fn set_sink_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sink_identifier = input; self
+    }
+    /// <p>The ARN of the sink to retrieve the policy of.</p>
+    pub fn get_sink_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_identifier
     }
     /// Consumes the builder and constructs a [`GetSinkPolicyInput`](crate::operation::get_sink_policy::GetSinkPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sink_policy::GetSinkPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sink_policy::GetSinkPolicyInput {
-            sink_identifier: self.sink_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sink_policy::GetSinkPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sink_policy::GetSinkPolicyInput {
+                sink_identifier: self.sink_identifier
+                ,
+            }
+        )
     }
 }
+

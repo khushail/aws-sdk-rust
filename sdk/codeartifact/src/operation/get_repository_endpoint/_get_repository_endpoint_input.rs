@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRepositoryEndpointInput {
+pub struct GetRepositoryEndpointInput  {
     /// <p> The name of the domain that contains the repository. </p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct GetRepositoryEndpointInput {
 }
 impl GetRepositoryEndpointInput {
     /// <p> The name of the domain that contains the repository. </p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository. </p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
 }
 impl GetRepositoryEndpointInput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryEndpointInput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointInputBuilder {
         crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRepositoryEndpointInput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositoryEndpointInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -62,8 +58,11 @@ impl GetRepositoryEndpointInputBuilder {
     }
     /// <p> The name of the domain that contains the repository. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p> The name of the domain that contains the repository. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +71,11 @@ impl GetRepositoryEndpointInputBuilder {
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
     }
     /// <p> The name of the repository. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,8 +84,11 @@ impl GetRepositoryEndpointInputBuilder {
     }
     /// <p> The name of the repository. </p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
+    }
+    /// <p> The name of the repository. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
     }
     /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
@@ -92,23 +97,26 @@ impl GetRepositoryEndpointInputBuilder {
     }
     /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
+    }
+    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`GetRepositoryEndpointInput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_repository_endpoint::GetRepositoryEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_repository_endpoint::GetRepositoryEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_repository_endpoint::GetRepositoryEndpointInput {
-                domain: self.domain,
-                domain_owner: self.domain_owner,
-                repository: self.repository,
-                format: self.format,
-            },
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                repository: self.repository
+                ,
+                format: self.format
+                ,
+            }
         )
     }
 }
+

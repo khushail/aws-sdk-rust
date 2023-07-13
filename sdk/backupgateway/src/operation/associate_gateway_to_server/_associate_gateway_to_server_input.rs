@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateGatewayToServerInput {
+pub struct AssociateGatewayToServerInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct AssociateGatewayToServerInput {
 }
 impl AssociateGatewayToServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
-    pub fn server_arn(&self) -> ::std::option::Option<&str> {
+    pub fn server_arn(&self) -> ::std::option::Option<& str> {
         self.server_arn.as_deref()
     }
 }
 impl AssociateGatewayToServerInput {
     /// Creates a new builder-style object to manufacture [`AssociateGatewayToServerInput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput).
-    pub fn builder(
-    ) -> crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerInputBuilder {
         crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateGatewayToServerInput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateGatewayToServerInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) server_arn: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl AssociateGatewayToServerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
     pub fn server_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl AssociateGatewayToServerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
     pub fn set_server_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_arn = input;
-        self
+        self.server_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
+    pub fn get_server_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_arn
     }
     /// Consumes the builder and constructs a [`AssociateGatewayToServerInput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput {
-                gateway_arn: self.gateway_arn,
-                server_arn: self.server_arn,
-            },
+                gateway_arn: self.gateway_arn
+                ,
+                server_arn: self.server_arn
+                ,
+            }
         )
     }
 }
+

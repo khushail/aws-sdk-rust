@@ -3,7 +3,7 @@
 /// <p>Describes the state of a network interface permission.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInterfacePermissionState {
+pub struct NetworkInterfacePermissionState  {
     /// <p>The state of the permission.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::NetworkInterfacePermissionStateCode>,
@@ -13,13 +13,11 @@ pub struct NetworkInterfacePermissionState {
 }
 impl NetworkInterfacePermissionState {
     /// <p>The state of the permission.</p>
-    pub fn state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInterfacePermissionStateCode> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::NetworkInterfacePermissionStateCode> {
         self.state.as_ref()
     }
     /// <p>A status message, if applicable.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -32,9 +30,7 @@ impl NetworkInterfacePermissionState {
 
 /// A builder for [`NetworkInterfacePermissionState`](crate::types::NetworkInterfacePermissionState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInterfacePermissionStateBuilder {
     pub(crate) state: ::std::option::Option<crate::types::NetworkInterfacePermissionStateCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -46,34 +42,34 @@ impl NetworkInterfacePermissionStateBuilder {
         self
     }
     /// <p>The state of the permission.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfacePermissionStateCode>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::NetworkInterfacePermissionStateCode>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of the permission.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::NetworkInterfacePermissionStateCode> {
+        &self.state
     }
     /// <p>A status message, if applicable.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A status message, if applicable.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>A status message, if applicable.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`NetworkInterfacePermissionState`](crate::types::NetworkInterfacePermissionState).
     pub fn build(self) -> crate::types::NetworkInterfacePermissionState {
         crate::types::NetworkInterfacePermissionState {
-            state: self.state,
-            status_message: self.status_message,
+            state: self.state
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

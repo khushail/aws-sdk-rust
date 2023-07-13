@@ -3,14 +3,14 @@
 /// <p>The details of a target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetSummary {
+pub struct TargetSummary  {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl TargetSummary {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl TargetSummary {
 
 /// A builder for [`TargetSummary`](crate::types::TargetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl TargetSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`TargetSummary`](crate::types::TargetSummary).
     pub fn build(self) -> crate::types::TargetSummary {
-        crate::types::TargetSummary { arn: self.arn }
+        crate::types::TargetSummary {
+            arn: self.arn
+            ,
+        }
     }
 }
+

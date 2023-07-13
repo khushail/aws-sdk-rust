@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNetworkAnalyzerConfigurationsInput {
+pub struct ListNetworkAnalyzerConfigurationsInput  {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -16,22 +16,20 @@ impl ListNetworkAnalyzerConfigurationsInput {
         self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListNetworkAnalyzerConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsInput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput).
-    pub fn builder() -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsInputBuilder {
         crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNetworkAnalyzerConfigurationsInput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworkAnalyzerConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl ListNetworkAnalyzerConfigurationsInputBuilder {
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,11 +55,14 @@ impl ListNetworkAnalyzerConfigurationsInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNetworkAnalyzerConfigurationsInput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput {
                 max_results: self.max_results
@@ -69,3 +73,4 @@ impl ListNetworkAnalyzerConfigurationsInputBuilder {
         )
     }
 }
+

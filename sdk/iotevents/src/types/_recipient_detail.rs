@@ -3,14 +3,14 @@
 /// <p>The information that identifies the recipient.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecipientDetail {
+pub struct RecipientDetail  {
     /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
     #[doc(hidden)]
     pub sso_identity: ::std::option::Option<crate::types::SsoIdentity>,
 }
 impl RecipientDetail {
     /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
-    pub fn sso_identity(&self) -> ::std::option::Option<&crate::types::SsoIdentity> {
+    pub fn sso_identity(&self) -> ::std::option::Option<& crate::types::SsoIdentity> {
         self.sso_identity.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl RecipientDetail {
 
 /// A builder for [`RecipientDetail`](crate::types::RecipientDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipientDetailBuilder {
     pub(crate) sso_identity: ::std::option::Option<crate::types::SsoIdentity>,
 }
@@ -36,17 +34,19 @@ impl RecipientDetailBuilder {
         self
     }
     /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
-    pub fn set_sso_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::SsoIdentity>,
-    ) -> Self {
-        self.sso_identity = input;
-        self
+    pub fn set_sso_identity(mut self, input: ::std::option::Option<crate::types::SsoIdentity>) -> Self {
+        self.sso_identity = input; self
+    }
+    /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
+    pub fn get_sso_identity(&self) -> &::std::option::Option<crate::types::SsoIdentity> {
+        &self.sso_identity
     }
     /// Consumes the builder and constructs a [`RecipientDetail`](crate::types::RecipientDetail).
     pub fn build(self) -> crate::types::RecipientDetail {
         crate::types::RecipientDetail {
-            sso_identity: self.sso_identity,
+            sso_identity: self.sso_identity
+            ,
         }
     }
 }
+

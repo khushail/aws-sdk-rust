@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSourceRepositoryCloneUrlsOutput {
+pub struct GetSourceRepositoryCloneUrlsOutput  {
     /// <p>The HTTPS URL to use when cloning the source repository.</p>
     #[doc(hidden)]
     pub https: ::std::option::Option<::std::string::String>,
@@ -10,27 +10,25 @@ pub struct GetSourceRepositoryCloneUrlsOutput {
 }
 impl GetSourceRepositoryCloneUrlsOutput {
     /// <p>The HTTPS URL to use when cloning the source repository.</p>
-    pub fn https(&self) -> ::std::option::Option<&str> {
+    pub fn https(&self) -> ::std::option::Option<& str> {
         self.https.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSourceRepositoryCloneUrlsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSourceRepositoryCloneUrlsOutput {
     /// Creates a new builder-style object to manufacture [`GetSourceRepositoryCloneUrlsOutput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput).
-    pub fn builder() -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder{
+    pub fn builder() -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder {
         crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSourceRepositoryCloneUrlsOutput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryCloneUrlsOutputBuilder {
     pub(crate) https: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -43,26 +41,28 @@ impl GetSourceRepositoryCloneUrlsOutputBuilder {
     }
     /// <p>The HTTPS URL to use when cloning the source repository.</p>
     pub fn set_https(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.https = input;
-        self
+        self.https = input; self
+    }
+    /// <p>The HTTPS URL to use when cloning the source repository.</p>
+    pub fn get_https(&self) -> &::std::option::Option<::std::string::String> {
+        &self.https
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSourceRepositoryCloneUrlsOutput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput
-    {
+    pub fn build(self) -> crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput {
         crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput {
-            https: self.https,
+            https: self.https
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

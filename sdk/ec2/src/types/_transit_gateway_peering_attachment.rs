@@ -3,7 +3,7 @@
 /// <p>Describes the transit gateway peering attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayPeeringAttachment {
+pub struct TransitGatewayPeeringAttachment  {
     /// <p>The ID of the transit gateway peering attachment.</p>
     #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
@@ -34,41 +34,39 @@ pub struct TransitGatewayPeeringAttachment {
 }
 impl TransitGatewayPeeringAttachment {
     /// <p>The ID of the transit gateway peering attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The ID of the accepter transit gateway attachment.</p>
-    pub fn accepter_transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn accepter_transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.accepter_transit_gateway_attachment_id.as_deref()
     }
     /// <p>Information about the requester transit gateway.</p>
-    pub fn requester_tgw_info(&self) -> ::std::option::Option<&crate::types::PeeringTgwInfo> {
+    pub fn requester_tgw_info(&self) -> ::std::option::Option<& crate::types::PeeringTgwInfo> {
         self.requester_tgw_info.as_ref()
     }
     /// <p>Information about the accepter transit gateway.</p>
-    pub fn accepter_tgw_info(&self) -> ::std::option::Option<&crate::types::PeeringTgwInfo> {
+    pub fn accepter_tgw_info(&self) -> ::std::option::Option<& crate::types::PeeringTgwInfo> {
         self.accepter_tgw_info.as_ref()
     }
     /// <p>Details about the transit gateway peering attachment.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayPeeringAttachmentOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::TransitGatewayPeeringAttachmentOptions> {
         self.options.as_ref()
     }
     /// <p>The status of the transit gateway peering attachment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PeeringAttachmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PeeringAttachmentStatus> {
         self.status.as_ref()
     }
     /// <p>The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been deprecated.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayAttachmentState> {
         self.state.as_ref()
     }
     /// <p>The time the transit gateway peering attachment was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The tags for the transit gateway peering attachment.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -81,9 +79,7 @@ impl TransitGatewayPeeringAttachment {
 
 /// A builder for [`TransitGatewayPeeringAttachment`](crate::types::TransitGatewayPeeringAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayPeeringAttachmentBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) accepter_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
@@ -97,36 +93,30 @@ pub struct TransitGatewayPeeringAttachmentBuilder {
 }
 impl TransitGatewayPeeringAttachmentBuilder {
     /// <p>The ID of the transit gateway peering attachment.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway peering attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = input; self
+    }
+    /// <p>The ID of the transit gateway peering attachment.</p>
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
     }
     /// <p>The ID of the accepter transit gateway attachment.</p>
-    pub fn accepter_transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accepter_transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accepter_transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the accepter transit gateway attachment.</p>
-    pub fn set_accepter_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.accepter_transit_gateway_attachment_id = input;
-        self
+    pub fn set_accepter_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.accepter_transit_gateway_attachment_id = input; self
+    }
+    /// <p>The ID of the accepter transit gateway attachment.</p>
+    pub fn get_accepter_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accepter_transit_gateway_attachment_id
     }
     /// <p>Information about the requester transit gateway.</p>
     pub fn requester_tgw_info(mut self, input: crate::types::PeeringTgwInfo) -> Self {
@@ -134,12 +124,12 @@ impl TransitGatewayPeeringAttachmentBuilder {
         self
     }
     /// <p>Information about the requester transit gateway.</p>
-    pub fn set_requester_tgw_info(
-        mut self,
-        input: ::std::option::Option<crate::types::PeeringTgwInfo>,
-    ) -> Self {
-        self.requester_tgw_info = input;
-        self
+    pub fn set_requester_tgw_info(mut self, input: ::std::option::Option<crate::types::PeeringTgwInfo>) -> Self {
+        self.requester_tgw_info = input; self
+    }
+    /// <p>Information about the requester transit gateway.</p>
+    pub fn get_requester_tgw_info(&self) -> &::std::option::Option<crate::types::PeeringTgwInfo> {
+        &self.requester_tgw_info
     }
     /// <p>Information about the accepter transit gateway.</p>
     pub fn accepter_tgw_info(mut self, input: crate::types::PeeringTgwInfo) -> Self {
@@ -147,12 +137,12 @@ impl TransitGatewayPeeringAttachmentBuilder {
         self
     }
     /// <p>Information about the accepter transit gateway.</p>
-    pub fn set_accepter_tgw_info(
-        mut self,
-        input: ::std::option::Option<crate::types::PeeringTgwInfo>,
-    ) -> Self {
-        self.accepter_tgw_info = input;
-        self
+    pub fn set_accepter_tgw_info(mut self, input: ::std::option::Option<crate::types::PeeringTgwInfo>) -> Self {
+        self.accepter_tgw_info = input; self
+    }
+    /// <p>Information about the accepter transit gateway.</p>
+    pub fn get_accepter_tgw_info(&self) -> &::std::option::Option<crate::types::PeeringTgwInfo> {
+        &self.accepter_tgw_info
     }
     /// <p>Details about the transit gateway peering attachment.</p>
     pub fn options(mut self, input: crate::types::TransitGatewayPeeringAttachmentOptions) -> Self {
@@ -160,12 +150,12 @@ impl TransitGatewayPeeringAttachmentBuilder {
         self
     }
     /// <p>Details about the transit gateway peering attachment.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentOptions>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentOptions>) -> Self {
+        self.options = input; self
+    }
+    /// <p>Details about the transit gateway peering attachment.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::TransitGatewayPeeringAttachmentOptions> {
+        &self.options
     }
     /// <p>The status of the transit gateway peering attachment.</p>
     pub fn status(mut self, input: crate::types::PeeringAttachmentStatus) -> Self {
@@ -173,12 +163,12 @@ impl TransitGatewayPeeringAttachmentBuilder {
         self
     }
     /// <p>The status of the transit gateway peering attachment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PeeringAttachmentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PeeringAttachmentStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the transit gateway peering attachment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PeeringAttachmentStatus> {
+        &self.status
     }
     /// <p>The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been deprecated.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayAttachmentState) -> Self {
@@ -186,12 +176,12 @@ impl TransitGatewayPeeringAttachmentBuilder {
         self
     }
     /// <p>The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been deprecated.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayAttachmentState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayAttachmentState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been deprecated.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentState> {
+        &self.state
     }
     /// <p>The time the transit gateway peering attachment was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -199,12 +189,12 @@ impl TransitGatewayPeeringAttachmentBuilder {
         self
     }
     /// <p>The time the transit gateway peering attachment was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time the transit gateway peering attachment was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Appends an item to `tags`.
     ///
@@ -213,30 +203,40 @@ impl TransitGatewayPeeringAttachmentBuilder {
     /// <p>The tags for the transit gateway peering attachment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the transit gateway peering attachment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags for the transit gateway peering attachment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TransitGatewayPeeringAttachment`](crate::types::TransitGatewayPeeringAttachment).
     pub fn build(self) -> crate::types::TransitGatewayPeeringAttachment {
         crate::types::TransitGatewayPeeringAttachment {
-            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-            accepter_transit_gateway_attachment_id: self.accepter_transit_gateway_attachment_id,
-            requester_tgw_info: self.requester_tgw_info,
-            accepter_tgw_info: self.accepter_tgw_info,
-            options: self.options,
-            status: self.status,
-            state: self.state,
-            creation_time: self.creation_time,
-            tags: self.tags,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id
+            ,
+            accepter_transit_gateway_attachment_id: self.accepter_transit_gateway_attachment_id
+            ,
+            requester_tgw_info: self.requester_tgw_info
+            ,
+            accepter_tgw_info: self.accepter_tgw_info
+            ,
+            options: self.options
+            ,
+            status: self.status
+            ,
+            state: self.state
+            ,
+            creation_time: self.creation_time
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

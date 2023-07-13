@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConnectionInput {
+pub struct DescribeConnectionInput  {
     /// <p>The name of the connection to retrieve.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConnectionInput {
     /// <p>The name of the connection to retrieve.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DescribeConnectionInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionInput`](crate::operation::describe_connection::DescribeConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_connection::builders::DescribeConnectionInputBuilder {
+    pub fn builder() -> crate::operation::describe_connection::builders::DescribeConnectionInputBuilder {
         crate::operation::describe_connection::builders::DescribeConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionInput`](crate::operation::describe_connection::DescribeConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DescribeConnectionInputBuilder {
     }
     /// <p>The name of the connection to retrieve.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the connection to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DescribeConnectionInput`](crate::operation::describe_connection::DescribeConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_connection::DescribeConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_connection::DescribeConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_connection::DescribeConnectionInput { name: self.name },
+            crate::operation::describe_connection::DescribeConnectionInput {
+                name: self.name
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The configuration details for the predictor monitor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitorConfig {
+pub struct MonitorConfig  {
     /// <p>The name of the monitor resource.</p>
     #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
 }
 impl MonitorConfig {
     /// <p>The name of the monitor resource.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl MonitorConfig {
 
 /// A builder for [`MonitorConfig`](crate::types::MonitorConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitorConfigBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl MonitorConfigBuilder {
     }
     /// <p>The name of the monitor resource.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
+    }
+    /// <p>The name of the monitor resource.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
     }
     /// Consumes the builder and constructs a [`MonitorConfig`](crate::types::MonitorConfig).
     pub fn build(self) -> crate::types::MonitorConfig {
         crate::types::MonitorConfig {
-            monitor_name: self.monitor_name,
+            monitor_name: self.monitor_name
+            ,
         }
     }
 }
+

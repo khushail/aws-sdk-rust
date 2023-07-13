@@ -3,7 +3,7 @@
 /// <p>Represents a single entry in the list of values for <code>SqlAliases</code>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqlAlias {
+pub struct SqlAlias  {
     /// <p>A table, or a column in a table.</p>
     #[doc(hidden)]
     pub from: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct SqlAlias {
 }
 impl SqlAlias {
     /// <p>A table, or a column in a table.</p>
-    pub fn from(&self) -> ::std::option::Option<&str> {
+    pub fn from(&self) -> ::std::option::Option<& str> {
         self.from.as_deref()
     }
     /// <p>A temporary name given to a table, or a column in a table.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl SqlAlias {
 
 /// A builder for [`SqlAlias`](crate::types::SqlAlias).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqlAliasBuilder {
     pub(crate) from: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl SqlAliasBuilder {
     }
     /// <p>A table, or a column in a table.</p>
     pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
+    }
+    /// <p>A table, or a column in a table.</p>
+    pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from
     }
     /// <p>A temporary name given to a table, or a column in a table.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl SqlAliasBuilder {
     }
     /// <p>A temporary name given to a table, or a column in a table.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
+    }
+    /// <p>A temporary name given to a table, or a column in a table.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Consumes the builder and constructs a [`SqlAlias`](crate::types::SqlAlias).
     pub fn build(self) -> crate::types::SqlAlias {
         crate::types::SqlAlias {
-            from: self.from,
-            alias: self.alias,
+            from: self.from
+            ,
+            alias: self.alias
+            ,
         }
     }
 }
+

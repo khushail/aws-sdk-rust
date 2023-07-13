@@ -3,7 +3,7 @@
 /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FrameMetric {
+pub struct FrameMetric  {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
     #[doc(hidden)]
     pub frame_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct FrameMetric {
 }
 impl FrameMetric {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
-    pub fn frame_name(&self) -> ::std::option::Option<&str> {
+    pub fn frame_name(&self) -> ::std::option::Option<& str> {
         self.frame_name.as_deref()
     }
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MetricType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MetricType> {
         self.r#type.as_ref()
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn thread_states(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn thread_states(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.thread_states.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl FrameMetric {
 
 /// A builder for [`FrameMetric`](crate::types::FrameMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameMetricBuilder {
     pub(crate) frame_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::MetricType>,
@@ -53,8 +51,11 @@ impl FrameMetricBuilder {
     }
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
     pub fn set_frame_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.frame_name = input;
-        self
+        self.frame_name = input; self
+    }
+    /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
+    pub fn get_frame_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.frame_name
     }
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
     pub fn r#type(mut self, input: crate::types::MetricType) -> Self {
@@ -63,37 +64,41 @@ impl FrameMetricBuilder {
     }
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MetricType> {
+        &self.r#type
     }
     /// Appends an item to `thread_states`.
     ///
     /// To override the contents of this collection use [`set_thread_states`](Self::set_thread_states).
     ///
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn thread_states(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thread_states(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thread_states.unwrap_or_default();
-        v.push(input.into());
-        self.thread_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.thread_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn set_thread_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.thread_states = input;
-        self
+    pub fn set_thread_states(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.thread_states = input; self
+    }
+    /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
+    pub fn get_thread_states(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.thread_states
     }
     /// Consumes the builder and constructs a [`FrameMetric`](crate::types::FrameMetric).
     pub fn build(self) -> crate::types::FrameMetric {
         crate::types::FrameMetric {
-            frame_name: self.frame_name,
-            r#type: self.r#type,
-            thread_states: self.thread_states,
+            frame_name: self.frame_name
+            ,
+            r#type: self.r#type
+            ,
+            thread_states: self.thread_states
+            ,
         }
     }
 }
+

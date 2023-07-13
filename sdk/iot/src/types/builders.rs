@@ -27,6 +27,8 @@ pub use crate::types::_alert_target::AlertTargetBuilder;
 
 pub use crate::types::_provisioning_hook::ProvisioningHookBuilder;
 
+pub use crate::types::_version_update_by_jobs_config::VersionUpdateByJobsConfigBuilder;
+
 pub use crate::types::_mitigation_action_params::MitigationActionParamsBuilder;
 
 pub use crate::types::_publish_finding_to_sns_params::PublishFindingToSnsParamsBuilder;
@@ -243,6 +245,10 @@ pub use crate::types::_provisioning_template_summary::ProvisioningTemplateSummar
 
 pub use crate::types::_policy_version::PolicyVersionBuilder;
 
+pub use crate::types::_package_version_summary::PackageVersionSummaryBuilder;
+
+pub use crate::types::_package_summary::PackageSummaryBuilder;
+
 pub use crate::types::_outgoing_certificate::OutgoingCertificateBuilder;
 
 pub use crate::types::_ota_update_summary::OtaUpdateSummaryBuilder;
@@ -406,3 +412,4 @@ pub use crate::types::_aws_job_timeout_config::AwsJobTimeoutConfigBuilder;
 pub use crate::types::_aws_job_abort_config::AwsJobAbortConfigBuilder;
 
 pub use crate::types::_aws_job_abort_criteria::AwsJobAbortCriteriaBuilder;
+

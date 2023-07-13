@@ -3,7 +3,7 @@
 /// <p>Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionedThroughputOverride {
+pub struct ProvisionedThroughputOverride  {
     /// <p>Replica-specific read capacity units. If not specified, uses the source table's read capacity settings.</p>
     #[doc(hidden)]
     pub read_capacity_units: ::std::option::Option<i64>,
@@ -23,9 +23,7 @@ impl ProvisionedThroughputOverride {
 
 /// A builder for [`ProvisionedThroughputOverride`](crate::types::ProvisionedThroughputOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedThroughputOverrideBuilder {
     pub(crate) read_capacity_units: ::std::option::Option<i64>,
 }
@@ -37,13 +35,18 @@ impl ProvisionedThroughputOverrideBuilder {
     }
     /// <p>Replica-specific read capacity units. If not specified, uses the source table's read capacity settings.</p>
     pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.read_capacity_units = input;
-        self
+        self.read_capacity_units = input; self
+    }
+    /// <p>Replica-specific read capacity units. If not specified, uses the source table's read capacity settings.</p>
+    pub fn get_read_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.read_capacity_units
     }
     /// Consumes the builder and constructs a [`ProvisionedThroughputOverride`](crate::types::ProvisionedThroughputOverride).
     pub fn build(self) -> crate::types::ProvisionedThroughputOverride {
         crate::types::ProvisionedThroughputOverride {
-            read_capacity_units: self.read_capacity_units,
+            read_capacity_units: self.read_capacity_units
+            ,
         }
     }
 }
+

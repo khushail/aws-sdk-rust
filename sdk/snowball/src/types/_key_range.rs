@@ -3,7 +3,7 @@
 /// <p>Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyRange {
+pub struct KeyRange  {
     /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
     #[doc(hidden)]
     pub begin_marker: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct KeyRange {
 }
 impl KeyRange {
     /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
-    pub fn begin_marker(&self) -> ::std::option::Option<&str> {
+    pub fn begin_marker(&self) -> ::std::option::Option<& str> {
         self.begin_marker.as_deref()
     }
     /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
-    pub fn end_marker(&self) -> ::std::option::Option<&str> {
+    pub fn end_marker(&self) -> ::std::option::Option<& str> {
         self.end_marker.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl KeyRange {
 
 /// A builder for [`KeyRange`](crate::types::KeyRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyRangeBuilder {
     pub(crate) begin_marker: ::std::option::Option<::std::string::String>,
     pub(crate) end_marker: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl KeyRangeBuilder {
     }
     /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
     pub fn set_begin_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.begin_marker = input;
-        self
+        self.begin_marker = input; self
+    }
+    /// <p>The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
+    pub fn get_begin_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.begin_marker
     }
     /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
     pub fn end_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl KeyRangeBuilder {
     }
     /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
     pub fn set_end_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_marker = input;
-        self
+        self.end_marker = input; self
+    }
+    /// <p>The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.</p>
+    pub fn get_end_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_marker
     }
     /// Consumes the builder and constructs a [`KeyRange`](crate::types::KeyRange).
     pub fn build(self) -> crate::types::KeyRange {
         crate::types::KeyRange {
-            begin_marker: self.begin_marker,
-            end_marker: self.end_marker,
+            begin_marker: self.begin_marker
+            ,
+            end_marker: self.end_marker
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResolversByFunctionInput {
+pub struct ListResolversByFunctionInput  {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListResolversByFunctionInput {
 }
 impl ListResolversByFunctionInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The function ID.</p>
-    pub fn function_id(&self) -> ::std::option::Option<&str> {
+    pub fn function_id(&self) -> ::std::option::Option<& str> {
         self.function_id.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that you want the request to return.</p>
@@ -36,18 +36,14 @@ impl ListResolversByFunctionInput {
 }
 impl ListResolversByFunctionInput {
     /// Creates a new builder-style object to manufacture [`ListResolversByFunctionInput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionInput).
-    pub fn builder(
-    ) -> crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder {
         crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolversByFunctionInput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolversByFunctionInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_id: ::std::option::Option<::std::string::String>,
@@ -62,8 +58,11 @@ impl ListResolversByFunctionInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
+    }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>The function ID.</p>
     pub fn function_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +71,11 @@ impl ListResolversByFunctionInputBuilder {
     }
     /// <p>The function ID.</p>
     pub fn set_function_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_id = input;
-        self
+        self.function_id = input; self
+    }
+    /// <p>The function ID.</p>
+    pub fn get_function_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_id
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,8 +84,11 @@ impl ListResolversByFunctionInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -92,23 +97,26 @@ impl ListResolversByFunctionInputBuilder {
     }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results that you want the request to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListResolversByFunctionInput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resolvers_by_function::ListResolversByFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resolvers_by_function::ListResolversByFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_resolvers_by_function::ListResolversByFunctionInput {
-                api_id: self.api_id,
-                function_id: self.function_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                api_id: self.api_id
+                ,
+                function_id: self.function_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

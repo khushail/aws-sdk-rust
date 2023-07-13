@@ -3,23 +3,23 @@
 /// <p>Input to associate lens reviews.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateLensesInput {
+pub struct AssociateLensesInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
-    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p> 
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociateLensesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
-    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p> 
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn lens_aliases(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.lens_aliases.as_deref()
     }
 }
@@ -32,9 +32,7 @@ impl AssociateLensesInput {
 
 /// A builder for [`AssociateLensesInput`](crate::operation::associate_lenses::AssociateLensesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLensesInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -47,40 +45,44 @@ impl AssociateLensesInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
     }
     /// Appends an item to `lens_aliases`.
     ///
     /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
     ///
-    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p> 
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lens_aliases.unwrap_or_default();
-        v.push(input.into());
-        self.lens_aliases = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lens_aliases = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p> 
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lens_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.lens_aliases = input;
-        self
+    pub fn set_lens_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.lens_aliases = input; self
+    }
+    /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p> 
+    /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.lens_aliases
     }
     /// Consumes the builder and constructs a [`AssociateLensesInput`](crate::operation::associate_lenses::AssociateLensesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_lenses::AssociateLensesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_lenses::AssociateLensesInput {
-            workload_id: self.workload_id,
-            lens_aliases: self.lens_aliases,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_lenses::AssociateLensesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_lenses::AssociateLensesInput {
+                workload_id: self.workload_id
+                ,
+                lens_aliases: self.lens_aliases
+                ,
+            }
+        )
     }
 }
+

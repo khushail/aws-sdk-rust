@@ -3,29 +3,29 @@
 /// <p>Contains information about an event source for an Lambda function. The event source defines the topics on which this Lambda function subscribes to receive messages that run the function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaEventSource {
+pub struct LambdaEventSource  {
     /// <p>The topic to which to subscribe to receive event messages.</p>
     #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
-    /// <p>The type of event source. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
-    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+    /// <p>The type of event source. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
+    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LambdaEventSourceType>,
 }
 impl LambdaEventSource {
     /// <p>The topic to which to subscribe to receive event messages.</p>
-    pub fn topic(&self) -> ::std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<& str> {
         self.topic.as_deref()
     }
-    /// <p>The type of event source. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
-    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+    /// <p>The type of event source. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
+    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LambdaEventSourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LambdaEventSourceType> {
         self.r#type.as_ref()
     }
 }
@@ -38,9 +38,7 @@ impl LambdaEventSource {
 
 /// A builder for [`LambdaEventSource`](crate::types::LambdaEventSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaEventSourceBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LambdaEventSourceType>,
@@ -53,35 +51,45 @@ impl LambdaEventSourceBuilder {
     }
     /// <p>The topic to which to subscribe to receive event messages.</p>
     pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
-    /// <p>The type of event source. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
-    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+    /// <p>The topic to which to subscribe to receive event messages.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic
+    }
+    /// <p>The type of event source. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
+    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::LambdaEventSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of event source. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
-    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+    /// <p>The type of event source. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
+    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaEventSourceType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::LambdaEventSourceType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of event source. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
+    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li> 
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LambdaEventSourceType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`LambdaEventSource`](crate::types::LambdaEventSource).
     pub fn build(self) -> crate::types::LambdaEventSource {
         crate::types::LambdaEventSource {
-            topic: self.topic,
-            r#type: self.r#type,
+            topic: self.topic
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

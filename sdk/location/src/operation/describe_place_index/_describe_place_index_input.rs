@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePlaceIndexInput {
+pub struct DescribePlaceIndexInput  {
     /// <p>The name of the place index resource.</p>
     #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribePlaceIndexInput {
     /// <p>The name of the place index resource.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
 }
 impl DescribePlaceIndexInput {
     /// Creates a new builder-style object to manufacture [`DescribePlaceIndexInput`](crate::operation::describe_place_index::DescribePlaceIndexInput).
-    pub fn builder(
-    ) -> crate::operation::describe_place_index::builders::DescribePlaceIndexInputBuilder {
+    pub fn builder() -> crate::operation::describe_place_index::builders::DescribePlaceIndexInputBuilder {
         crate::operation::describe_place_index::builders::DescribePlaceIndexInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePlaceIndexInput`](crate::operation::describe_place_index::DescribePlaceIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePlaceIndexInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl DescribePlaceIndexInputBuilder {
     }
     /// <p>The name of the place index resource.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
+    }
+    /// <p>The name of the place index resource.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// Consumes the builder and constructs a [`DescribePlaceIndexInput`](crate::operation::describe_place_index::DescribePlaceIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_place_index::DescribePlaceIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_place_index::DescribePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_place_index::DescribePlaceIndexInput {
-                index_name: self.index_name,
-            },
+                index_name: self.index_name
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the name, thresholds, and metric filters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDataV2 {
+pub struct MetricDataV2  {
     /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
     #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::MetricV2>,
@@ -13,7 +13,7 @@ pub struct MetricDataV2 {
 }
 impl MetricDataV2 {
     /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::MetricV2> {
+    pub fn metric(&self) -> ::std::option::Option<& crate::types::MetricV2> {
         self.metric.as_ref()
     }
     /// <p>The corresponding value of the metric returned in the response.</p>
@@ -30,9 +30,7 @@ impl MetricDataV2 {
 
 /// A builder for [`MetricDataV2`](crate::types::MetricDataV2).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDataV2Builder {
     pub(crate) metric: ::std::option::Option<crate::types::MetricV2>,
     pub(crate) value: ::std::option::Option<f64>,
@@ -45,8 +43,11 @@ impl MetricDataV2Builder {
     }
     /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricV2>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
+    }
+    /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricV2> {
+        &self.metric
     }
     /// <p>The corresponding value of the metric returned in the response.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -55,14 +56,20 @@ impl MetricDataV2Builder {
     }
     /// <p>The corresponding value of the metric returned in the response.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The corresponding value of the metric returned in the response.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`MetricDataV2`](crate::types::MetricDataV2).
     pub fn build(self) -> crate::types::MetricDataV2 {
         crate::types::MetricDataV2 {
-            metric: self.metric,
-            value: self.value,
+            metric: self.metric
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

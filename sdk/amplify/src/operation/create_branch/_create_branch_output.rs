@@ -3,7 +3,7 @@
 /// <p> The result structure for create branch request. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBranchOutput {
+pub struct CreateBranchOutput  {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
     pub branch: ::std::option::Option<crate::types::Branch>,
@@ -11,15 +11,15 @@ pub struct CreateBranchOutput {
 }
 impl CreateBranchOutput {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
-    pub fn branch(&self) -> ::std::option::Option<&crate::types::Branch> {
+    pub fn branch(&self) -> ::std::option::Option<& crate::types::Branch> {
         self.branch.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateBranchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateBranchOutput {
     /// Creates a new builder-style object to manufacture [`CreateBranchOutput`](crate::operation::create_branch::CreateBranchOutput).
     pub fn builder() -> crate::operation::create_branch::builders::CreateBranchOutputBuilder {
@@ -29,9 +29,7 @@ impl CreateBranchOutput {
 
 /// A builder for [`CreateBranchOutput`](crate::operation::create_branch::CreateBranchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBranchOutputBuilder {
     pub(crate) branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,
@@ -44,23 +42,28 @@ impl CreateBranchOutputBuilder {
     }
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn set_branch(mut self, input: ::std::option::Option<crate::types::Branch>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
+    }
+    /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
+    pub fn get_branch(&self) -> &::std::option::Option<crate::types::Branch> {
+        &self.branch
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateBranchOutput`](crate::operation::create_branch::CreateBranchOutput).
     pub fn build(self) -> crate::operation::create_branch::CreateBranchOutput {
         crate::operation::create_branch::CreateBranchOutput {
-            branch: self.branch,
+            branch: self.branch
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

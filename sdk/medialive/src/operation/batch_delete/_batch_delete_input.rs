@@ -3,7 +3,7 @@
 /// A request to delete resources
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteInput {
+pub struct BatchDeleteInput  {
     /// List of channel IDs
     #[doc(hidden)]
     pub channel_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,19 +19,19 @@ pub struct BatchDeleteInput {
 }
 impl BatchDeleteInput {
     /// List of channel IDs
-    pub fn channel_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn channel_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.channel_ids.as_deref()
     }
     /// List of input IDs
-    pub fn input_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn input_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.input_ids.as_deref()
     }
     /// List of input security group IDs
-    pub fn input_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn input_security_group_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.input_security_group_ids.as_deref()
     }
     /// List of multiplex IDs
-    pub fn multiplex_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn multiplex_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.multiplex_ids.as_deref()
     }
 }
@@ -44,14 +44,11 @@ impl BatchDeleteInput {
 
 /// A builder for [`BatchDeleteInput`](crate::operation::batch_delete::BatchDeleteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteInputBuilder {
     pub(crate) channel_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) input_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) input_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) input_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) multiplex_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteInputBuilder {
@@ -62,17 +59,17 @@ impl BatchDeleteInputBuilder {
     /// List of channel IDs
     pub fn channel_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.channel_ids.unwrap_or_default();
-        v.push(input.into());
-        self.channel_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.channel_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// List of channel IDs
-    pub fn set_channel_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.channel_ids = input;
-        self
+    pub fn set_channel_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.channel_ids = input; self
+    }
+    /// List of channel IDs
+    pub fn get_channel_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.channel_ids
     }
     /// Appends an item to `input_ids`.
     ///
@@ -81,74 +78,70 @@ impl BatchDeleteInputBuilder {
     /// List of input IDs
     pub fn input_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.input_ids.unwrap_or_default();
-        v.push(input.into());
-        self.input_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.input_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// List of input IDs
-    pub fn set_input_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.input_ids = input;
-        self
+    pub fn set_input_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.input_ids = input; self
+    }
+    /// List of input IDs
+    pub fn get_input_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.input_ids
     }
     /// Appends an item to `input_security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_input_security_group_ids`](Self::set_input_security_group_ids).
     ///
     /// List of input security group IDs
-    pub fn input_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.input_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.input_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.input_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// List of input security group IDs
-    pub fn set_input_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.input_security_group_ids = input;
-        self
+    pub fn set_input_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.input_security_group_ids = input; self
+    }
+    /// List of input security group IDs
+    pub fn get_input_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.input_security_group_ids
     }
     /// Appends an item to `multiplex_ids`.
     ///
     /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
     ///
     /// List of multiplex IDs
-    pub fn multiplex_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multiplex_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.multiplex_ids.unwrap_or_default();
-        v.push(input.into());
-        self.multiplex_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.multiplex_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// List of multiplex IDs
-    pub fn set_multiplex_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.multiplex_ids = input;
-        self
+    pub fn set_multiplex_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.multiplex_ids = input; self
+    }
+    /// List of multiplex IDs
+    pub fn get_multiplex_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.multiplex_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteInput`](crate::operation::batch_delete::BatchDeleteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete::BatchDeleteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_delete::BatchDeleteInput {
-            channel_ids: self.channel_ids,
-            input_ids: self.input_ids,
-            input_security_group_ids: self.input_security_group_ids,
-            multiplex_ids: self.multiplex_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete::BatchDeleteInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete::BatchDeleteInput {
+                channel_ids: self.channel_ids
+                ,
+                input_ids: self.input_ids
+                ,
+                input_security_group_ids: self.input_security_group_ids
+                ,
+                multiplex_ids: self.multiplex_ids
+                ,
+            }
+        )
     }
 }
+

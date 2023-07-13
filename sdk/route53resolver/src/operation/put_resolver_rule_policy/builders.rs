@@ -3,102 +3,87 @@ pub use crate::operation::put_resolver_rule_policy::_put_resolver_rule_policy_ou
 
 pub use crate::operation::put_resolver_rule_policy::_put_resolver_rule_policy_input::PutResolverRulePolicyInputBuilder;
 
+impl PutResolverRulePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_resolver_rule_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutResolverRulePolicy`.
-///
+/// 
 /// <p>Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with, and the operations that you want the account to be able to perform on the rule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutResolverRulePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder,
+                    inner: crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder,
 }
-impl PutResolverRulePolicyFluentBuilder {
+impl PutResolverRulePolicyFluentBuilder  {
     /// Creates a new `PutResolverRulePolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutResolverRulePolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_resolver_rule_policy::PutResolverRulePolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_resolver_rule_policy::PutResolverRulePolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
@@ -109,36 +94,47 @@ impl PutResolverRulePolicyFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
-    /// <ul>
-    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li> 
+    /// </ul> 
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    pub fn resolver_rule_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_rule_policy(input.into());
         self
     }
-    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
-    /// <ul>
-    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
-    /// </ul>
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li> 
+    /// </ul> 
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    pub fn set_resolver_rule_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_rule_policy(input);
         self
     }
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p> 
+    /// <ul> 
+    /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li> 
+    /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li> 
+    /// </ul> 
+    /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
+    pub fn get_resolver_rule_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolver_rule_policy()
+    }
 }
+

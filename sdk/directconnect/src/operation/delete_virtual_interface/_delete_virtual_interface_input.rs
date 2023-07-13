@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVirtualInterfaceInput {
+pub struct DeleteVirtualInterfaceInput  {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
 }
 impl DeleteVirtualInterfaceInput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceInput`](crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_interface::builders::DeleteVirtualInterfaceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_virtual_interface::builders::DeleteVirtualInterfaceInputBuilder {
         crate::operation::delete_virtual_interface::builders::DeleteVirtualInterfaceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualInterfaceInput`](crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualInterfaceInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVirtualInterfaceInputBuilder {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_interface_id = input;
-        self
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_interface_id = input; self
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
     }
     /// Consumes the builder and constructs a [`DeleteVirtualInterfaceInput`](crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput {
-                virtual_interface_id: self.virtual_interface_id,
-            },
+                virtual_interface_id: self.virtual_interface_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamingSessionsInput {
+pub struct ListStreamingSessionsInput  {
     /// <p>Filters the request to streaming sessions created by the given user.</p>
     #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
@@ -21,40 +21,36 @@ pub struct ListStreamingSessionsInput {
 }
 impl ListStreamingSessionsInput {
     /// <p>Filters the request to streaming sessions created by the given user.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters the request to streaming session owned by the given user</p>
-    pub fn owned_by(&self) -> ::std::option::Option<&str> {
+    pub fn owned_by(&self) -> ::std::option::Option<& str> {
         self.owned_by.as_deref()
     }
     /// <p>Filters the request to only the provided session IDs.</p>
-    pub fn session_ids(&self) -> ::std::option::Option<&str> {
+    pub fn session_ids(&self) -> ::std::option::Option<& str> {
         self.session_ids.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
 impl ListStreamingSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListStreamingSessionsInput`](crate::operation::list_streaming_sessions::ListStreamingSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder {
         crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamingSessionsInput`](crate::operation::list_streaming_sessions::ListStreamingSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingSessionsInputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,8 +66,11 @@ impl ListStreamingSessionsInputBuilder {
     }
     /// <p>Filters the request to streaming sessions created by the given user.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
+    }
+    /// <p>Filters the request to streaming sessions created by the given user.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,8 +79,11 @@ impl ListStreamingSessionsInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Filters the request to streaming session owned by the given user</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,8 +92,11 @@ impl ListStreamingSessionsInputBuilder {
     }
     /// <p>Filters the request to streaming session owned by the given user</p>
     pub fn set_owned_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owned_by = input;
-        self
+        self.owned_by = input; self
+    }
+    /// <p>Filters the request to streaming session owned by the given user</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owned_by
     }
     /// <p>Filters the request to only the provided session IDs.</p>
     pub fn session_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,8 +105,11 @@ impl ListStreamingSessionsInputBuilder {
     }
     /// <p>Filters the request to only the provided session IDs.</p>
     pub fn set_session_ids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_ids = input;
-        self
+        self.session_ids = input; self
+    }
+    /// <p>Filters the request to only the provided session IDs.</p>
+    pub fn get_session_ids(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_ids
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,24 +118,28 @@ impl ListStreamingSessionsInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`ListStreamingSessionsInput`](crate::operation::list_streaming_sessions::ListStreamingSessionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_streaming_sessions::ListStreamingSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streaming_sessions::ListStreamingSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_streaming_sessions::ListStreamingSessionsInput {
-                created_by: self.created_by,
-                next_token: self.next_token,
-                owned_by: self.owned_by,
-                session_ids: self.session_ids,
-                studio_id: self.studio_id,
-            },
+                created_by: self.created_by
+                ,
+                next_token: self.next_token
+                ,
+                owned_by: self.owned_by
+                ,
+                session_ids: self.session_ids
+                ,
+                studio_id: self.studio_id
+                ,
+            }
         )
     }
 }
+

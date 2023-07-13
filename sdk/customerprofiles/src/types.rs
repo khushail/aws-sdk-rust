@@ -25,6 +25,22 @@ pub use crate::types::_job_schedule_day_of_the_week::JobScheduleDayOfTheWeek;
 
 pub use crate::types::_matching_request::MatchingRequest;
 
+pub use crate::types::_attribute_details::AttributeDetails;
+
+pub use crate::types::_attribute_item::AttributeItem;
+
+pub use crate::types::_conditions::Conditions;
+
+pub use crate::types::_threshold::Threshold;
+
+pub use crate::types::_operator::Operator;
+
+pub use crate::types::_range::Range;
+
+pub use crate::types::_unit::Unit;
+
+pub use crate::types::_statistic::Statistic;
+
 pub use crate::types::_profile::Profile;
 
 pub use crate::types::_found_by_key_value::FoundByKeyValue;
@@ -119,7 +135,19 @@ pub use crate::types::_job_stats::JobStats;
 
 pub use crate::types::_identity_resolution_job_status::IdentityResolutionJobStatus;
 
+pub use crate::types::_event_stream_summary::EventStreamSummary;
+
+pub use crate::types::_destination_summary::DestinationSummary;
+
+pub use crate::types::_event_stream_destination_status::EventStreamDestinationStatus;
+
+pub use crate::types::_event_stream_state::EventStreamState;
+
 pub use crate::types::_list_domain_item::ListDomainItem;
+
+pub use crate::types::_list_calculated_attribute_for_profile_item::ListCalculatedAttributeForProfileItem;
+
+pub use crate::types::_list_calculated_attribute_definition_item::ListCalculatedAttributeDefinitionItem;
 
 pub use crate::types::_workflow_step_item::WorkflowStepItem;
 
@@ -134,6 +162,8 @@ pub use crate::types::_workflow_attributes::WorkflowAttributes;
 pub use crate::types::_appflow_integration_workflow_attributes::AppflowIntegrationWorkflowAttributes;
 
 pub use crate::types::_match_item::MatchItem;
+
+pub use crate::types::_event_stream_destination_details::EventStreamDestinationDetails;
 
 pub use crate::types::_domain_stats::DomainStats;
 
@@ -155,9 +185,15 @@ mod _appflow_integration_workflow_metrics;
 
 mod _appflow_integration_workflow_step;
 
+mod _attribute_details;
+
+mod _attribute_item;
+
 mod _auto_merging;
 
 mod _batch;
+
+mod _conditions;
 
 mod _conflict_resolution;
 
@@ -169,7 +205,17 @@ mod _consolidation;
 
 mod _data_pull_mode;
 
+mod _destination_summary;
+
 mod _domain_stats;
+
+mod _event_stream_destination_details;
+
+mod _event_stream_destination_status;
+
+mod _event_stream_state;
+
+mod _event_stream_summary;
 
 mod _exporting_config;
 
@@ -198,6 +244,10 @@ mod _job_schedule;
 mod _job_schedule_day_of_the_week;
 
 mod _job_stats;
+
+mod _list_calculated_attribute_definition_item;
+
+mod _list_calculated_attribute_for_profile_item;
 
 mod _list_domain_item;
 
@@ -229,11 +279,15 @@ mod _object_type_field;
 
 mod _object_type_key;
 
+mod _operator;
+
 mod _operator_properties_keys;
 
 mod _party_type;
 
 mod _profile;
+
+mod _range;
 
 mod _s3_connector_operator;
 
@@ -261,17 +315,23 @@ mod _source_flow_config;
 
 mod _standard_identifier;
 
+mod _statistic;
+
 mod _status;
 
 mod _task;
 
 mod _task_type;
 
+mod _threshold;
+
 mod _trigger_config;
 
 mod _trigger_properties;
 
 mod _trigger_type;
+
+mod _unit;
 
 mod _update_address;
 
@@ -292,3 +352,4 @@ pub mod builders;
 
 /// Error types that Amazon Connect Customer Profiles can respond with.
 pub mod error;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetOutput {
+pub struct DescribeDatasetOutput  {
     /// <p>The name of the dataset being described. </p>
     #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
@@ -26,8 +26,7 @@ pub struct DescribeDatasetOutput {
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
     #[doc(hidden)]
-    pub ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
     #[doc(hidden)]
     pub data_quality_summary: ::std::option::Option<crate::types::DataQualitySummary>,
@@ -47,67 +46,63 @@ pub struct DescribeDatasetOutput {
 }
 impl DescribeDatasetOutput {
     /// <p>The name of the dataset being described. </p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Indicates the status of the dataset. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn ingestion_input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(&self) -> ::std::option::Option<& crate::types::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    pub fn data_quality_summary(&self) -> ::std::option::Option<&crate::types::DataQualitySummary> {
+    pub fn data_quality_summary(&self) -> ::std::option::Option<& crate::types::DataQualitySummary> {
         self.data_quality_summary.as_ref()
     }
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
-    pub fn ingested_files_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestedFilesSummary> {
+    pub fn ingested_files_summary(&self) -> ::std::option::Option<& crate::types::IngestedFilesSummary> {
         self.ingested_files_summary.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    pub fn data_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_start_time.as_ref()
     }
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    pub fn data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDatasetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDatasetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
     pub fn builder() -> crate::operation::describe_dataset::builders::DescribeDatasetOutputBuilder {
@@ -117,9 +112,7 @@ impl DescribeDatasetOutput {
 
 /// A builder for [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
@@ -128,8 +121,7 @@ pub struct DescribeDatasetOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DatasetStatus>,
     pub(crate) schema: ::std::option::Option<::std::string::String>,
     pub(crate) server_side_kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub(crate) ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     pub(crate) data_quality_summary: ::std::option::Option<crate::types::DataQualitySummary>,
     pub(crate) ingested_files_summary: ::std::option::Option<crate::types::IngestedFilesSummary>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -145,8 +137,11 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>The name of the dataset being described. </p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
+    }
+    /// <p>The name of the dataset being described. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,8 +150,11 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -164,12 +162,12 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -177,12 +175,12 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
+    }
+    /// <p>Specifies the time the dataset was last updated, if it was. </p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// <p>Indicates the status of the dataset. </p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
@@ -191,8 +189,11 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>Indicates the status of the dataset. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Indicates the status of the dataset. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
+        &self.status
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,40 +202,37 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
+    }
+    /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_side_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn set_server_side_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.server_side_kms_key_id = input;
-        self
+    pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.server_side_kms_key_id = input; self
+    }
+    /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+    pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_side_kms_key_id
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn ingestion_input_configuration(
-        mut self,
-        input: crate::types::IngestionInputConfiguration,
-    ) -> Self {
+    pub fn ingestion_input_configuration(mut self, input: crate::types::IngestionInputConfiguration) -> Self {
         self.ingestion_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn set_ingestion_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionInputConfiguration>,
-    ) -> Self {
-        self.ingestion_input_configuration = input;
-        self
+    pub fn set_ingestion_input_configuration(mut self, input: ::std::option::Option<crate::types::IngestionInputConfiguration>) -> Self {
+        self.ingestion_input_configuration = input; self
+    }
+    /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
+    pub fn get_ingestion_input_configuration(&self) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
+        &self.ingestion_input_configuration
     }
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
     pub fn data_quality_summary(mut self, input: crate::types::DataQualitySummary) -> Self {
@@ -242,12 +240,12 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    pub fn set_data_quality_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualitySummary>,
-    ) -> Self {
-        self.data_quality_summary = input;
-        self
+    pub fn set_data_quality_summary(mut self, input: ::std::option::Option<crate::types::DataQualitySummary>) -> Self {
+        self.data_quality_summary = input; self
+    }
+    /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
+    pub fn get_data_quality_summary(&self) -> &::std::option::Option<crate::types::DataQualitySummary> {
+        &self.data_quality_summary
     }
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
     pub fn ingested_files_summary(mut self, input: crate::types::IngestedFilesSummary) -> Self {
@@ -255,12 +253,12 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
-    pub fn set_ingested_files_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestedFilesSummary>,
-    ) -> Self {
-        self.ingested_files_summary = input;
-        self
+    pub fn set_ingested_files_summary(mut self, input: ::std::option::Option<crate::types::IngestedFilesSummary>) -> Self {
+        self.ingested_files_summary = input; self
+    }
+    /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
+    pub fn get_ingested_files_summary(&self) -> &::std::option::Option<crate::types::IngestedFilesSummary> {
+        &self.ingested_files_summary
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -269,8 +267,11 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
     pub fn data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -278,12 +279,12 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    pub fn set_data_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.data_start_time = input;
-        self
+    pub fn set_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.data_start_time = input; self
+    }
+    /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
+    pub fn get_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.data_start_time
     }
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
     pub fn data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -291,39 +292,53 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    pub fn set_data_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.data_end_time = input;
-        self
+    pub fn set_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.data_end_time = input; self
+    }
+    /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
+    pub fn get_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.data_end_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
     pub fn build(self) -> crate::operation::describe_dataset::DescribeDatasetOutput {
         crate::operation::describe_dataset::DescribeDatasetOutput {
-            dataset_name: self.dataset_name,
-            dataset_arn: self.dataset_arn,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            status: self.status,
-            schema: self.schema,
-            server_side_kms_key_id: self.server_side_kms_key_id,
-            ingestion_input_configuration: self.ingestion_input_configuration,
-            data_quality_summary: self.data_quality_summary,
-            ingested_files_summary: self.ingested_files_summary,
-            role_arn: self.role_arn,
-            data_start_time: self.data_start_time,
-            data_end_time: self.data_end_time,
+            dataset_name: self.dataset_name
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            status: self.status
+            ,
+            schema: self.schema
+            ,
+            server_side_kms_key_id: self.server_side_kms_key_id
+            ,
+            ingestion_input_configuration: self.ingestion_input_configuration
+            ,
+            data_quality_summary: self.data_quality_summary
+            ,
+            ingested_files_summary: self.ingested_files_summary
+            ,
+            role_arn: self.role_arn
+            ,
+            data_start_time: self.data_start_time
+            ,
+            data_end_time: self.data_end_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

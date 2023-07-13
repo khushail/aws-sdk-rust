@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWebsiteCertificateAuthoritiesInput {
+pub struct ListWebsiteCertificateAuthoritiesInput  {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListWebsiteCertificateAuthoritiesInput {
 }
 impl ListWebsiteCertificateAuthoritiesInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The maximum number of results to be included in the next page.</p>
@@ -23,22 +23,20 @@ impl ListWebsiteCertificateAuthoritiesInput {
         self.max_results
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListWebsiteCertificateAuthoritiesInput {
     /// Creates a new builder-style object to manufacture [`ListWebsiteCertificateAuthoritiesInput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput).
-    pub fn builder() -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder{
+    pub fn builder() -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder {
         crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWebsiteCertificateAuthoritiesInput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebsiteCertificateAuthoritiesInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,8 +50,11 @@ impl ListWebsiteCertificateAuthoritiesInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
+    }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,8 +63,11 @@ impl ListWebsiteCertificateAuthoritiesInputBuilder {
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to be included in the next page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,11 +76,14 @@ impl ListWebsiteCertificateAuthoritiesInputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListWebsiteCertificateAuthoritiesInput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesInput {
                 fleet_arn: self.fleet_arn
@@ -89,3 +96,4 @@ impl ListWebsiteCertificateAuthoritiesInputBuilder {
         )
     }
 }
+

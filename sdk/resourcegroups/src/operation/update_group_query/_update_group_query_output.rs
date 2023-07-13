@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupQueryOutput {
+pub struct UpdateGroupQueryOutput  {
     /// <p>The updated resource query associated with the resource group after the update.</p>
     #[doc(hidden)]
     pub group_query: ::std::option::Option<crate::types::GroupQuery>,
@@ -10,28 +10,25 @@ pub struct UpdateGroupQueryOutput {
 }
 impl UpdateGroupQueryOutput {
     /// <p>The updated resource query associated with the resource group after the update.</p>
-    pub fn group_query(&self) -> ::std::option::Option<&crate::types::GroupQuery> {
+    pub fn group_query(&self) -> ::std::option::Option<& crate::types::GroupQuery> {
         self.group_query.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateGroupQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateGroupQueryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupQueryOutput`](crate::operation::update_group_query::UpdateGroupQueryOutput).
-    pub fn builder() -> crate::operation::update_group_query::builders::UpdateGroupQueryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_group_query::builders::UpdateGroupQueryOutputBuilder {
         crate::operation::update_group_query::builders::UpdateGroupQueryOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGroupQueryOutput`](crate::operation::update_group_query::UpdateGroupQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGroupQueryOutputBuilder {
     pub(crate) group_query: ::std::option::Option<crate::types::GroupQuery>,
     _request_id: Option<String>,
@@ -43,27 +40,29 @@ impl UpdateGroupQueryOutputBuilder {
         self
     }
     /// <p>The updated resource query associated with the resource group after the update.</p>
-    pub fn set_group_query(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupQuery>,
-    ) -> Self {
-        self.group_query = input;
-        self
+    pub fn set_group_query(mut self, input: ::std::option::Option<crate::types::GroupQuery>) -> Self {
+        self.group_query = input; self
+    }
+    /// <p>The updated resource query associated with the resource group after the update.</p>
+    pub fn get_group_query(&self) -> &::std::option::Option<crate::types::GroupQuery> {
+        &self.group_query
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateGroupQueryOutput`](crate::operation::update_group_query::UpdateGroupQueryOutput).
     pub fn build(self) -> crate::operation::update_group_query::UpdateGroupQueryOutput {
         crate::operation::update_group_query::UpdateGroupQueryOutput {
-            group_query: self.group_query,
+            group_query: self.group_query
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

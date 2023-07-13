@@ -3,7 +3,7 @@
 /// <p>Information that defines how a detector operates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectorModelDefinition {
+pub struct DetectorModelDefinition  {
     /// <p>Information about the states of the detector.</p>
     #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::State>>,
@@ -13,11 +13,11 @@ pub struct DetectorModelDefinition {
 }
 impl DetectorModelDefinition {
     /// <p>Information about the states of the detector.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::State]> {
+    pub fn states(&self) -> ::std::option::Option<& [crate::types::State]> {
         self.states.as_deref()
     }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
-    pub fn initial_state_name(&self) -> ::std::option::Option<&str> {
+    pub fn initial_state_name(&self) -> ::std::option::Option<& str> {
         self.initial_state_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DetectorModelDefinition {
 
 /// A builder for [`DetectorModelDefinition`](crate::types::DetectorModelDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorModelDefinitionBuilder {
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::State>>,
     pub(crate) initial_state_name: ::std::option::Option<::std::string::String>,
@@ -45,39 +43,39 @@ impl DetectorModelDefinitionBuilder {
     /// <p>Information about the states of the detector.</p>
     pub fn states(mut self, input: crate::types::State) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the states of the detector.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::State>>,
-    ) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::State>>) -> Self {
+        self.states = input; self
+    }
+    /// <p>Information about the states of the detector.</p>
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::State>> {
+        &self.states
     }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
-    pub fn initial_state_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_state_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
-    pub fn set_initial_state_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.initial_state_name = input;
-        self
+    pub fn set_initial_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.initial_state_name = input; self
+    }
+    /// <p>The state that is entered at the creation of each detector (instance).</p>
+    pub fn get_initial_state_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_state_name
     }
     /// Consumes the builder and constructs a [`DetectorModelDefinition`](crate::types::DetectorModelDefinition).
     pub fn build(self) -> crate::types::DetectorModelDefinition {
         crate::types::DetectorModelDefinition {
-            states: self.states,
-            initial_state_name: self.initial_state_name,
+            states: self.states
+            ,
+            initial_state_name: self.initial_state_name
+            ,
         }
     }
 }
+

@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPartitionIndexesOutput {
+pub struct GetPartitionIndexesOutput  {
     /// <p>A list of index descriptors.</p>
     #[doc(hidden)]
-    pub partition_index_descriptor_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
+    pub partition_index_descriptor_list: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,38 +13,31 @@ pub struct GetPartitionIndexesOutput {
 }
 impl GetPartitionIndexesOutput {
     /// <p>A list of index descriptors.</p>
-    pub fn partition_index_descriptor_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PartitionIndexDescriptor]> {
+    pub fn partition_index_descriptor_list(&self) -> ::std::option::Option<& [crate::types::PartitionIndexDescriptor]> {
         self.partition_index_descriptor_list.as_deref()
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetPartitionIndexesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetPartitionIndexesOutput {
     /// Creates a new builder-style object to manufacture [`GetPartitionIndexesOutput`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesOutputBuilder {
-        crate::operation::get_partition_indexes::builders::GetPartitionIndexesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesOutputBuilder {
+        crate::operation::get_partition_indexes::builders::GetPartitionIndexesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPartitionIndexesOutput`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPartitionIndexesOutputBuilder {
-    pub(crate) partition_index_descriptor_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
+    pub(crate) partition_index_descriptor_list: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,22 +47,19 @@ impl GetPartitionIndexesOutputBuilder {
     /// To override the contents of this collection use [`set_partition_index_descriptor_list`](Self::set_partition_index_descriptor_list).
     ///
     /// <p>A list of index descriptors.</p>
-    pub fn partition_index_descriptor_list(
-        mut self,
-        input: crate::types::PartitionIndexDescriptor,
-    ) -> Self {
+    pub fn partition_index_descriptor_list(mut self, input: crate::types::PartitionIndexDescriptor) -> Self {
         let mut v = self.partition_index_descriptor_list.unwrap_or_default();
-        v.push(input);
-        self.partition_index_descriptor_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.partition_index_descriptor_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of index descriptors.</p>
-    pub fn set_partition_index_descriptor_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
-    ) -> Self {
-        self.partition_index_descriptor_list = input;
-        self
+    pub fn set_partition_index_descriptor_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>) -> Self {
+        self.partition_index_descriptor_list = input; self
+    }
+    /// <p>A list of index descriptors.</p>
+    pub fn get_partition_index_descriptor_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>> {
+        &self.partition_index_descriptor_list
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,24 +68,30 @@ impl GetPartitionIndexesOutputBuilder {
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetPartitionIndexesOutput`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput).
     pub fn build(self) -> crate::operation::get_partition_indexes::GetPartitionIndexesOutput {
         crate::operation::get_partition_indexes::GetPartitionIndexesOutput {
-            partition_index_descriptor_list: self.partition_index_descriptor_list,
-            next_token: self.next_token,
+            partition_index_descriptor_list: self.partition_index_descriptor_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

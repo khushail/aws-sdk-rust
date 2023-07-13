@@ -3,119 +3,102 @@ pub use crate::operation::initiate_document_version_upload::_initiate_document_v
 
 pub use crate::operation::initiate_document_version_upload::_initiate_document_version_upload_input::InitiateDocumentVersionUploadInputBuilder;
 
+impl InitiateDocumentVersionUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.initiate_document_version_upload();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `InitiateDocumentVersionUpload`.
-///
-/// <p>Creates a new document object and version object.</p>
-/// <p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call <code>UpdateDocumentVersion</code>.</p>
+/// 
+/// <p>Creates a new document object and version object.</p> 
+/// <p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call <code>UpdateDocumentVersion</code>.</p> 
 /// <p>To cancel the document upload, call <code>AbortDocumentVersionUpload</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InitiateDocumentVersionUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder,
 }
-impl InitiateDocumentVersionUploadFluentBuilder {
+impl InitiateDocumentVersionUploadFluentBuilder  {
     /// Creates a new `InitiateDocumentVersionUpload`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUpload,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the InitiateDocumentVersionUpload as a reference.
+    pub fn as_input(&self) -> &crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUpload, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput, ::aws_smithy_http::result::SdkError<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUpload,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput, ::aws_smithy_http::result::SdkError<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUpload, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
     }
     /// <p>The ID of the document.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,6 +110,10 @@ impl InitiateDocumentVersionUploadFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the document.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The name of the document.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,18 +124,23 @@ impl InitiateDocumentVersionUploadFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The timestamp when the content of the document was originally created.</p>
     pub fn content_created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.content_created_timestamp(input);
         self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn set_content_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_content_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_content_created_timestamp(input);
         self
+    }
+    /// <p>The timestamp when the content of the document was originally created.</p>
+    pub fn get_content_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_content_created_timestamp()
     }
     /// <p>The timestamp when the content of the document was modified.</p>
     pub fn content_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -156,12 +148,13 @@ impl InitiateDocumentVersionUploadFluentBuilder {
         self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn set_content_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_content_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_content_modified_timestamp(input);
         self
+    }
+    /// <p>The timestamp when the content of the document was modified.</p>
+    pub fn get_content_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_content_modified_timestamp()
     }
     /// <p>The content type of the document.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,6 +166,10 @@ impl InitiateDocumentVersionUploadFluentBuilder {
         self.inner = self.inner.set_content_type(input);
         self
     }
+    /// <p>The content type of the document.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
+    }
     /// <p>The size of the document, in bytes.</p>
     pub fn document_size_in_bytes(mut self, input: i64) -> Self {
         self.inner = self.inner.document_size_in_bytes(input);
@@ -183,20 +180,23 @@ impl InitiateDocumentVersionUploadFluentBuilder {
         self.inner = self.inner.set_document_size_in_bytes(input);
         self
     }
+    /// <p>The size of the document, in bytes.</p>
+    pub fn get_document_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_document_size_in_bytes()
+    }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_folder_id(input.into());
         self
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn set_parent_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_folder_id(input);
         self
     }
+    /// <p>The ID of the parent folder.</p>
+    pub fn get_parent_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_folder_id()
+    }
 }
+

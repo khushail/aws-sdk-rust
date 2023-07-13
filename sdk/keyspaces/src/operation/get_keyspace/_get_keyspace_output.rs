@@ -2,30 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyspaceOutput {
+pub struct GetKeyspaceOutput  {
     /// <p>The name of the keyspace.</p>
     #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the keyspace.</p>
+    /// <p>Returns the ARN of the keyspace.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p> Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
+    #[doc(hidden)]
+    pub replication_strategy: ::std::option::Option<crate::types::Rs>,
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
+    #[doc(hidden)]
+    pub replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetKeyspaceOutput {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
-    /// <p>The ARN of the keyspace.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    /// <p>Returns the ARN of the keyspace.</p>
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
+    }
+    /// <p> Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
+    pub fn replication_strategy(&self) -> ::std::option::Option<& crate::types::Rs> {
+        self.replication_strategy.as_ref()
+    }
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
+    pub fn replication_regions(&self) -> ::std::option::Option<& [::std::string::String]> {
+        self.replication_regions.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetKeyspaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetKeyspaceOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyspaceOutput`](crate::operation::get_keyspace::GetKeyspaceOutput).
     pub fn builder() -> crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder {
@@ -35,56 +49,95 @@ impl GetKeyspaceOutput {
 
 /// A builder for [`GetKeyspaceOutput`](crate::operation::get_keyspace::GetKeyspaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyspaceOutputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_strategy: ::std::option::Option<crate::types::Rs>,
+    pub(crate) replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetKeyspaceOutputBuilder {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.keyspace_name = input;
-        self
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.keyspace_name = input; self
     }
-    /// <p>The ARN of the keyspace.</p>
+    /// <p>The name of the keyspace.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyspace_name
+    }
+    /// <p>Returns the ARN of the keyspace.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the keyspace.</p>
+    /// <p>Returns the ARN of the keyspace.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
+        self.resource_arn = input; self
+    }
+    /// <p>Returns the ARN of the keyspace.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
+    /// <p> Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
+    pub fn replication_strategy(mut self, input: crate::types::Rs) -> Self {
+        self.replication_strategy = ::std::option::Option::Some(input);
         self
+    }
+    /// <p> Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
+    pub fn set_replication_strategy(mut self, input: ::std::option::Option<crate::types::Rs>) -> Self {
+        self.replication_strategy = input; self
+    }
+    /// <p> Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
+    pub fn get_replication_strategy(&self) -> &::std::option::Option<crate::types::Rs> {
+        &self.replication_strategy
+    }
+    /// Appends an item to `replication_regions`.
+    ///
+    /// To override the contents of this collection use [`set_replication_regions`](Self::set_replication_regions).
+    ///
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
+    pub fn replication_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_regions.unwrap_or_default();
+                        v.push(input.into());
+                        self.replication_regions = ::std::option::Option::Some(v);
+                        self
+    }
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
+    pub fn set_replication_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.replication_regions = input; self
+    }
+    /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
+    pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_regions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetKeyspaceOutput`](crate::operation::get_keyspace::GetKeyspaceOutput).
     pub fn build(self) -> crate::operation::get_keyspace::GetKeyspaceOutput {
         crate::operation::get_keyspace::GetKeyspaceOutput {
-            keyspace_name: self.keyspace_name,
-            resource_arn: self.resource_arn,
+            keyspace_name: self.keyspace_name
+            ,
+            resource_arn: self.resource_arn
+            ,
+            replication_strategy: self.replication_strategy
+            ,
+            replication_regions: self.replication_regions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,126 +3,107 @@ pub use crate::operation::list_violation_events::_list_violation_events_output::
 
 pub use crate::operation::list_violation_events::_list_violation_events_input::ListViolationEventsInputBuilder;
 
+impl ListViolationEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_violation_events::ListViolationEventsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_violation_events::ListViolationEventsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_violation_events();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListViolationEvents`.
-///
-/// <p>Lists the Device Defender security profile violations discovered during the given time period. You can use filters to limit the results to those alerts issued for a particular security profile, behavior, or thing (device).</p>
+/// 
+/// <p>Lists the Device Defender security profile violations discovered during the given time period. You can use filters to limit the results to those alerts issued for a particular security profile, behavior, or thing (device).</p> 
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListViolationEvents</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListViolationEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_violation_events::builders::ListViolationEventsInputBuilder,
+                    inner: crate::operation::list_violation_events::builders::ListViolationEventsInputBuilder,
 }
-impl ListViolationEventsFluentBuilder {
+impl ListViolationEventsFluentBuilder  {
     /// Creates a new `ListViolationEvents`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_violation_events::ListViolationEvents,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_violation_events::ListViolationEventsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListViolationEvents as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_violation_events::builders::ListViolationEventsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_violation_events::ListViolationEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_violation_events::ListViolationEventsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_violation_events::ListViolationEvents, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_violation_events::ListViolationEventsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_violation_events::ListViolationEventsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_violation_events::ListViolationEventsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_violation_events::ListViolationEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_violation_events::ListViolationEventsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_violation_events::ListViolationEvents,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_violation_events::ListViolationEventsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_violation_events::ListViolationEventsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_violation_events::ListViolationEventsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_violation_events::ListViolationEvents, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_violation_events::ListViolationEventsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_violation_events::paginator::ListViolationEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_violation_events::paginator::ListViolationEventsPaginator {
-        crate::operation::list_violation_events::paginator::ListViolationEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_violation_events::paginator::ListViolationEventsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_violation_events::paginator::ListViolationEventsPaginator {
+                                crate::operation::list_violation_events::paginator::ListViolationEventsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The start time for the alerts to be listed.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The start time for the alerts to be listed.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The start time for the alerts to be listed.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The end time for the alerts to be listed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -130,12 +111,13 @@ impl ListViolationEventsFluentBuilder {
         self
     }
     /// <p>The end time for the alerts to be listed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The end time for the alerts to be listed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// <p>A filter to limit results to those alerts caused by the specified thing.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,21 +129,23 @@ impl ListViolationEventsFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>A filter to limit results to those alerts caused by the specified thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>A filter to limit results to those alerts generated by the specified security profile.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
         self
     }
     /// <p>A filter to limit results to those alerts generated by the specified security profile.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_name(input);
         self
+    }
+    /// <p>A filter to limit results to those alerts generated by the specified security profile.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_name()
     }
     /// <p> The criteria for a behavior. </p>
     pub fn behavior_criteria_type(mut self, input: crate::types::BehaviorCriteriaType) -> Self {
@@ -169,12 +153,13 @@ impl ListViolationEventsFluentBuilder {
         self
     }
     /// <p> The criteria for a behavior. </p>
-    pub fn set_behavior_criteria_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BehaviorCriteriaType>,
-    ) -> Self {
+    pub fn set_behavior_criteria_type(mut self, input: ::std::option::Option<crate::types::BehaviorCriteriaType>) -> Self {
         self.inner = self.inner.set_behavior_criteria_type(input);
         self
+    }
+    /// <p> The criteria for a behavior. </p>
+    pub fn get_behavior_criteria_type(&self) -> &::std::option::Option<crate::types::BehaviorCriteriaType> {
+        self.inner.get_behavior_criteria_type()
     }
     /// <p> A list of all suppressed alerts. </p>
     pub fn list_suppressed_alerts(mut self, input: bool) -> Self {
@@ -186,18 +171,23 @@ impl ListViolationEventsFluentBuilder {
         self.inner = self.inner.set_list_suppressed_alerts(input);
         self
     }
+    /// <p> A list of all suppressed alerts. </p>
+    pub fn get_list_suppressed_alerts(&self) -> &::std::option::Option<bool> {
+        self.inner.get_list_suppressed_alerts()
+    }
     /// <p>The verification state of the violation (detect alarm).</p>
     pub fn verification_state(mut self, input: crate::types::VerificationState) -> Self {
         self.inner = self.inner.verification_state(input);
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.inner = self.inner.set_verification_state(input);
         self
+    }
+    /// <p>The verification state of the violation (detect alarm).</p>
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
+        self.inner.get_verification_state()
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -209,6 +199,10 @@ impl ListViolationEventsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -219,4 +213,9 @@ impl ListViolationEventsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
 }
+

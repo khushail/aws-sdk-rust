@@ -3,7 +3,7 @@
 /// <p>Specifies one of the label or labels that categorize the personally identifiable information (PII) entity being analyzed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityLabel {
+pub struct EntityLabel  {
     /// <p>The name of the label.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::PiiEntityType>,
@@ -13,7 +13,7 @@ pub struct EntityLabel {
 }
 impl EntityLabel {
     /// <p>The name of the label.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::PiiEntityType> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::PiiEntityType> {
         self.name.as_ref()
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
@@ -30,9 +30,7 @@ impl EntityLabel {
 
 /// A builder for [`EntityLabel`](crate::types::EntityLabel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityLabelBuilder {
     pub(crate) name: ::std::option::Option<crate::types::PiiEntityType>,
     pub(crate) score: ::std::option::Option<f32>,
@@ -45,8 +43,11 @@ impl EntityLabelBuilder {
     }
     /// <p>The name of the label.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::PiiEntityType>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the label.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::PiiEntityType> {
+        &self.name
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn score(mut self, input: f32) -> Self {
@@ -55,14 +56,20 @@ impl EntityLabelBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`EntityLabel`](crate::types::EntityLabel).
     pub fn build(self) -> crate::types::EntityLabel {
         crate::types::EntityLabel {
-            name: self.name,
-            score: self.score,
+            name: self.name
+            ,
+            score: self.score
+            ,
         }
     }
 }
+

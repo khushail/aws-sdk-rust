@@ -3,7 +3,7 @@
 /// <p>Request to describe an existing Method resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMethodInput {
+pub struct GetMethodInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct GetMethodInput {
 }
 impl GetMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The Resource identifier for the Method resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Specifies the method request's HTTP method type.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&str> {
+    pub fn http_method(&self) -> ::std::option::Option<& str> {
         self.http_method.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl GetMethodInput {
 
 /// A builder for [`GetMethodInput`](crate::operation::get_method::GetMethodInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMethodInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl GetMethodInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
     }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl GetMethodInputBuilder {
     }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The Resource identifier for the Method resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>Specifies the method request's HTTP method type.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,20 +77,24 @@ impl GetMethodInputBuilder {
     }
     /// <p>Specifies the method request's HTTP method type.</p>
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
+    }
+    /// <p>Specifies the method request's HTTP method type.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
     }
     /// Consumes the builder and constructs a [`GetMethodInput`](crate::operation::get_method::GetMethodInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_method::GetMethodInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_method::GetMethodInput {
-            rest_api_id: self.rest_api_id,
-            resource_id: self.resource_id,
-            http_method: self.http_method,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_method::GetMethodInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_method::GetMethodInput {
+                rest_api_id: self.rest_api_id
+                ,
+                resource_id: self.resource_id
+                ,
+                http_method: self.http_method
+                ,
+            }
+        )
     }
 }
+

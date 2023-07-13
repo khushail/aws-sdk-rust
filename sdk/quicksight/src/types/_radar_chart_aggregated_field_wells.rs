@@ -3,7 +3,7 @@
 /// <p>The aggregated field well configuration of a <code>RadarChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RadarChartAggregatedFieldWells {
+pub struct RadarChartAggregatedFieldWells  {
     /// <p>The aggregated field well categories of a radar chart.</p>
     #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
@@ -16,15 +16,15 @@ pub struct RadarChartAggregatedFieldWells {
 }
 impl RadarChartAggregatedFieldWells {
     /// <p>The aggregated field well categories of a radar chart.</p>
-    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
+    pub fn category(&self) -> ::std::option::Option<& [crate::types::DimensionField]> {
         self.category.as_deref()
     }
     /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
-    pub fn color(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
+    pub fn color(&self) -> ::std::option::Option<& [crate::types::DimensionField]> {
         self.color.as_deref()
     }
     /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> ::std::option::Option<& [crate::types::MeasureField]> {
         self.values.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl RadarChartAggregatedFieldWells {
 
 /// A builder for [`RadarChartAggregatedFieldWells`](crate::types::RadarChartAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RadarChartAggregatedFieldWellsBuilder {
     pub(crate) category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) color: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
@@ -53,17 +51,17 @@ impl RadarChartAggregatedFieldWellsBuilder {
     /// <p>The aggregated field well categories of a radar chart.</p>
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.category.unwrap_or_default();
-        v.push(input);
-        self.category = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.category = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The aggregated field well categories of a radar chart.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.category = input;
-        self
+    pub fn set_category(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.category = input; self
+    }
+    /// <p>The aggregated field well categories of a radar chart.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.category
     }
     /// Appends an item to `color`.
     ///
@@ -72,17 +70,17 @@ impl RadarChartAggregatedFieldWellsBuilder {
     /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
     pub fn color(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.color.unwrap_or_default();
-        v.push(input);
-        self.color = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.color = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
-    pub fn set_color(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.color = input;
-        self
+    pub fn set_color(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.color = input; self
+    }
+    /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.color
     }
     /// Appends an item to `values`.
     ///
@@ -91,24 +89,28 @@ impl RadarChartAggregatedFieldWellsBuilder {
     /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`RadarChartAggregatedFieldWells`](crate::types::RadarChartAggregatedFieldWells).
     pub fn build(self) -> crate::types::RadarChartAggregatedFieldWells {
         crate::types::RadarChartAggregatedFieldWells {
-            category: self.category,
-            color: self.color,
-            values: self.values,
+            category: self.category
+            ,
+            color: self.color
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

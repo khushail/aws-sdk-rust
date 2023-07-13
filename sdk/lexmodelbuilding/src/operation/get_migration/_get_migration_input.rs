@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMigrationInput {
+pub struct GetMigrationInput  {
     /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
     #[doc(hidden)]
     pub migration_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMigrationInput {
     /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
-    pub fn migration_id(&self) -> ::std::option::Option<&str> {
+    pub fn migration_id(&self) -> ::std::option::Option<& str> {
         self.migration_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetMigrationInput {
 
 /// A builder for [`GetMigrationInput`](crate::operation::get_migration::GetMigrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMigrationInputBuilder {
     pub(crate) migration_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetMigrationInputBuilder {
     }
     /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
     pub fn set_migration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_id = input;
-        self
+        self.migration_id = input; self
+    }
+    /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
+    pub fn get_migration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_id
     }
     /// Consumes the builder and constructs a [`GetMigrationInput`](crate::operation::get_migration::GetMigrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_migration::GetMigrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_migration::GetMigrationInput {
-            migration_id: self.migration_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_migration::GetMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_migration::GetMigrationInput {
+                migration_id: self.migration_id
+                ,
+            }
+        )
     }
 }
+

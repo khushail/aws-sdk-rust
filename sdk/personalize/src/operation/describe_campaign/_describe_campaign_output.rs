@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCampaignOutput {
+pub struct DescribeCampaignOutput  {
     /// <p>The properties of the campaign.</p>
     #[doc(hidden)]
     pub campaign: ::std::option::Option<crate::types::Campaign>,
@@ -10,28 +10,25 @@ pub struct DescribeCampaignOutput {
 }
 impl DescribeCampaignOutput {
     /// <p>The properties of the campaign.</p>
-    pub fn campaign(&self) -> ::std::option::Option<&crate::types::Campaign> {
+    pub fn campaign(&self) -> ::std::option::Option<& crate::types::Campaign> {
         self.campaign.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCampaignOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeCampaignOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput).
-    pub fn builder() -> crate::operation::describe_campaign::builders::DescribeCampaignOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_campaign::builders::DescribeCampaignOutputBuilder {
         crate::operation::describe_campaign::builders::DescribeCampaignOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCampaignOutputBuilder {
     pub(crate) campaign: ::std::option::Option<crate::types::Campaign>,
     _request_id: Option<String>,
@@ -44,23 +41,28 @@ impl DescribeCampaignOutputBuilder {
     }
     /// <p>The properties of the campaign.</p>
     pub fn set_campaign(mut self, input: ::std::option::Option<crate::types::Campaign>) -> Self {
-        self.campaign = input;
-        self
+        self.campaign = input; self
+    }
+    /// <p>The properties of the campaign.</p>
+    pub fn get_campaign(&self) -> &::std::option::Option<crate::types::Campaign> {
+        &self.campaign
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput).
     pub fn build(self) -> crate::operation::describe_campaign::DescribeCampaignOutput {
         crate::operation::describe_campaign::DescribeCampaignOutput {
-            campaign: self.campaign,
+            campaign: self.campaign
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

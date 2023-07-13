@@ -3,7 +3,7 @@
 /// <p>A summary representation of subjects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubjectSummary {
+pub struct SubjectSummary  {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
     pub subject_arn: ::std::option::Option<::std::string::String>,
@@ -28,11 +28,11 @@ pub struct SubjectSummary {
 }
 impl SubjectSummary {
     /// <p>The ARN of the resource.</p>
-    pub fn subject_arn(&self) -> ::std::option::Option<&str> {
+    pub fn subject_arn(&self) -> ::std::option::Option<& str> {
         self.subject_arn.as_deref()
     }
     /// <p>The id of the resource.</p>
-    pub fn subject_id(&self) -> ::std::option::Option<&str> {
+    pub fn subject_id(&self) -> ::std::option::Option<& str> {
         self.subject_id.as_deref()
     }
     /// <p>The enabled status of the subject. </p>
@@ -40,19 +40,19 @@ impl SubjectSummary {
         self.enabled
     }
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
-    pub fn x509_subject(&self) -> ::std::option::Option<&str> {
+    pub fn x509_subject(&self) -> ::std::option::Option<& str> {
         self.x509_subject.as_deref()
     }
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    pub fn last_seen_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_seen_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_seen_at.as_ref()
     }
     /// <p>The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl SubjectSummary {
 
 /// A builder for [`SubjectSummary`](crate::types::SubjectSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubjectSummaryBuilder {
     pub(crate) subject_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subject_id: ::std::option::Option<::std::string::String>,
@@ -85,8 +83,11 @@ impl SubjectSummaryBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_subject_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_arn = input;
-        self
+        self.subject_arn = input; self
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_subject_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_arn
     }
     /// <p>The id of the resource.</p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +96,11 @@ impl SubjectSummaryBuilder {
     }
     /// <p>The id of the resource.</p>
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_id = input;
-        self
+        self.subject_id = input; self
+    }
+    /// <p>The id of the resource.</p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_id
     }
     /// <p>The enabled status of the subject. </p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -105,8 +109,11 @@ impl SubjectSummaryBuilder {
     }
     /// <p>The enabled status of the subject. </p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>The enabled status of the subject. </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
     pub fn x509_subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,8 +122,11 @@ impl SubjectSummaryBuilder {
     }
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
     pub fn set_x509_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.x509_subject = input;
-        self
+        self.x509_subject = input; self
+    }
+    /// <p>The x509 principal identifier of the authenticating certificate.</p>
+    pub fn get_x509_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x509_subject
     }
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
     pub fn last_seen_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -124,12 +134,12 @@ impl SubjectSummaryBuilder {
         self
     }
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    pub fn set_last_seen_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_seen_at = input;
-        self
+    pub fn set_last_seen_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_seen_at = input; self
+    }
+    /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
+    pub fn get_last_seen_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_seen_at
     }
     /// <p>The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -137,12 +147,12 @@ impl SubjectSummaryBuilder {
         self
     }
     /// <p>The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,23 +160,31 @@ impl SubjectSummaryBuilder {
         self
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
+    }
+    /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`SubjectSummary`](crate::types::SubjectSummary).
     pub fn build(self) -> crate::types::SubjectSummary {
         crate::types::SubjectSummary {
-            subject_arn: self.subject_arn,
-            subject_id: self.subject_id,
-            enabled: self.enabled,
-            x509_subject: self.x509_subject,
-            last_seen_at: self.last_seen_at,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            subject_arn: self.subject_arn
+            ,
+            subject_id: self.subject_id
+            ,
+            enabled: self.enabled
+            ,
+            x509_subject: self.x509_subject
+            ,
+            last_seen_at: self.last_seen_at
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

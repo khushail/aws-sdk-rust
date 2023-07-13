@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessGatewayFirmwareInformationInput {
+pub struct GetWirelessGatewayFirmwareInformationInput  {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetWirelessGatewayFirmwareInformationInput {
     /// <p>The ID of the resource to get.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetWirelessGatewayFirmwareInformationInput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationInput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_firmware_information::builders::GetWirelessGatewayFirmwareInformationInputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_gateway_firmware_information::builders::GetWirelessGatewayFirmwareInformationInputBuilder {
         crate::operation::get_wireless_gateway_firmware_information::builders::GetWirelessGatewayFirmwareInformationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayFirmwareInformationInput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayFirmwareInformationInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,11 +34,14 @@ impl GetWirelessGatewayFirmwareInformationInputBuilder {
     }
     /// <p>The ID of the resource to get.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the resource to get.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayFirmwareInformationInput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput {
                 id: self.id
@@ -49,3 +50,4 @@ impl GetWirelessGatewayFirmwareInformationInputBuilder {
         )
     }
 }
+

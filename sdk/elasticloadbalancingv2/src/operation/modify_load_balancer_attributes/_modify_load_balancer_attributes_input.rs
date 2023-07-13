@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyLoadBalancerAttributesInput {
+pub struct ModifyLoadBalancerAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct ModifyLoadBalancerAttributesInput {
 }
 impl ModifyLoadBalancerAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> ::std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The load balancer attributes.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::LoadBalancerAttribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<& [crate::types::LoadBalancerAttribute]> {
         self.attributes.as_deref()
     }
 }
 impl ModifyLoadBalancerAttributesInput {
     /// Creates a new builder-style object to manufacture [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
-    pub fn builder() -> crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder{
+    pub fn builder() -> crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder {
         crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
 }
 impl ModifyLoadBalancerAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.load_balancer_arn = input;
-        self
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.load_balancer_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
     }
     /// Appends an item to `attributes`.
     ///
@@ -61,30 +55,28 @@ impl ModifyLoadBalancerAttributesInputBuilder {
     /// <p>The load balancer attributes.</p>
     pub fn attributes(mut self, input: crate::types::LoadBalancerAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The load balancer attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>The load balancer attributes.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput {
-                load_balancer_arn: self.load_balancer_arn,
-                attributes: self.attributes,
-            },
+                load_balancer_arn: self.load_balancer_arn
+                ,
+                attributes: self.attributes
+                ,
+            }
         )
     }
 }
+

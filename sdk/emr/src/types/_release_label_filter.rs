@@ -3,7 +3,7 @@
 /// <p>The release label filters by application or version prefix.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReleaseLabelFilter {
+pub struct ReleaseLabelFilter  {
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
     #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReleaseLabelFilter {
 }
 impl ReleaseLabelFilter {
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ReleaseLabelFilter {
 
 /// A builder for [`ReleaseLabelFilter`](crate::types::ReleaseLabelFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleaseLabelFilterBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) application: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ReleaseLabelFilterBuilder {
     }
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
+    }
+    /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ReleaseLabelFilterBuilder {
     }
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
+    }
+    /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
     }
     /// Consumes the builder and constructs a [`ReleaseLabelFilter`](crate::types::ReleaseLabelFilter).
     pub fn build(self) -> crate::types::ReleaseLabelFilter {
         crate::types::ReleaseLabelFilter {
-            prefix: self.prefix,
-            application: self.application,
+            prefix: self.prefix
+            ,
+            application: self.application
+            ,
         }
     }
 }
+

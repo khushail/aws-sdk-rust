@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateSyncConfigInput {
+pub struct GetTemplateSyncConfigInput  {
     /// <p>The template name.</p>
     #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct GetTemplateSyncConfigInput {
 }
 impl GetTemplateSyncConfigInput {
     /// <p>The template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The template type.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
+    pub fn template_type(&self) -> ::std::option::Option<& crate::types::TemplateType> {
         self.template_type.as_ref()
     }
 }
 impl GetTemplateSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSyncConfigInput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigInputBuilder {
         crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemplateSyncConfigInput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateSyncConfigInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,
 }
 impl GetTemplateSyncConfigInputBuilder {
     /// <p>The template name.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The template name.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.template_name = input;
-        self
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_name = input; self
+    }
+    /// <p>The template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>The template type.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
@@ -61,25 +54,23 @@ impl GetTemplateSyncConfigInputBuilder {
         self
     }
     /// <p>The template type.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateType>,
-    ) -> Self {
-        self.template_type = input;
-        self
+    pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
+        self.template_type = input; self
+    }
+    /// <p>The template type.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
     }
     /// Consumes the builder and constructs a [`GetTemplateSyncConfigInput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_template_sync_config::GetTemplateSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template_sync_config::GetTemplateSyncConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_template_sync_config::GetTemplateSyncConfigInput {
-                template_name: self.template_name,
-                template_type: self.template_type,
-            },
+                template_name: self.template_name
+                ,
+                template_type: self.template_type
+                ,
+            }
         )
     }
 }
+

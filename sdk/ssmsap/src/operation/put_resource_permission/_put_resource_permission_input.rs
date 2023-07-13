@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourcePermissionInput {
+pub struct PutResourcePermissionInput  {
     /// <p></p>
     #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::PermissionActionType>,
@@ -15,32 +15,28 @@ pub struct PutResourcePermissionInput {
 }
 impl PutResourcePermissionInput {
     /// <p></p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::PermissionActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::PermissionActionType> {
         self.action_type.as_ref()
     }
     /// <p></p>
-    pub fn source_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_resource_arn(&self) -> ::std::option::Option<& str> {
         self.source_resource_arn.as_deref()
     }
     /// <p></p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl PutResourcePermissionInput {
     /// Creates a new builder-style object to manufacture [`PutResourcePermissionInput`](crate::operation::put_resource_permission::PutResourcePermissionInput).
-    pub fn builder(
-    ) -> crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder {
         crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`PutResourcePermissionInput`](crate::operation::put_resource_permission::PutResourcePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResourcePermissionInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::PermissionActionType>,
     pub(crate) source_resource_arn: ::std::option::Option<::std::string::String>,
@@ -53,28 +49,25 @@ impl PutResourcePermissionInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionActionType>,
-    ) -> Self {
-        self.action_type = input;
-        self
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::PermissionActionType>) -> Self {
+        self.action_type = input; self
     }
     /// <p></p>
-    pub fn source_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::PermissionActionType> {
+        &self.action_type
+    }
+    /// <p></p>
+    pub fn source_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_source_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_resource_arn = input;
-        self
+    pub fn set_source_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_resource_arn = input; self
+    }
+    /// <p></p>
+    pub fn get_source_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_resource_arn
     }
     /// <p></p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,22 +76,24 @@ impl PutResourcePermissionInputBuilder {
     }
     /// <p></p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p></p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`PutResourcePermissionInput`](crate::operation::put_resource_permission::PutResourcePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_resource_permission::PutResourcePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resource_permission::PutResourcePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_resource_permission::PutResourcePermissionInput {
-                action_type: self.action_type,
-                source_resource_arn: self.source_resource_arn,
-                resource_arn: self.resource_arn,
-            },
+                action_type: self.action_type
+                ,
+                source_resource_arn: self.source_resource_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

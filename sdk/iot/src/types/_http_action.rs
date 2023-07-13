@@ -3,7 +3,7 @@
 /// <p>Send data to an HTTPS endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpAction {
+pub struct HttpAction  {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
     #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct HttpAction {
 }
 impl HttpAction {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
-    pub fn confirmation_url(&self) -> ::std::option::Option<&str> {
+    pub fn confirmation_url(&self) -> ::std::option::Option<& str> {
         self.confirmation_url.as_deref()
     }
     /// <p>The HTTP headers to send with the message data.</p>
-    pub fn headers(&self) -> ::std::option::Option<&[crate::types::HttpActionHeader]> {
+    pub fn headers(&self) -> ::std::option::Option<& [crate::types::HttpActionHeader]> {
         self.headers.as_deref()
     }
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
-    pub fn auth(&self) -> ::std::option::Option<&crate::types::HttpAuthorization> {
+    pub fn auth(&self) -> ::std::option::Option<& crate::types::HttpAuthorization> {
         self.auth.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl HttpAction {
 
 /// A builder for [`HttpAction`](crate::types::HttpAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpActionBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) confirmation_url: ::std::option::Option<::std::string::String>,
@@ -61,24 +59,24 @@ impl HttpActionBuilder {
     }
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
-    pub fn confirmation_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn confirmation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.confirmation_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
-    pub fn set_confirmation_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.confirmation_url = input;
-        self
+    pub fn set_confirmation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.confirmation_url = input; self
+    }
+    /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
+    pub fn get_confirmation_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.confirmation_url
     }
     /// Appends an item to `headers`.
     ///
@@ -87,17 +85,17 @@ impl HttpActionBuilder {
     /// <p>The HTTP headers to send with the message data.</p>
     pub fn headers(mut self, input: crate::types::HttpActionHeader) -> Self {
         let mut v = self.headers.unwrap_or_default();
-        v.push(input);
-        self.headers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.headers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The HTTP headers to send with the message data.</p>
-    pub fn set_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpActionHeader>>,
-    ) -> Self {
-        self.headers = input;
-        self
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpActionHeader>>) -> Self {
+        self.headers = input; self
+    }
+    /// <p>The HTTP headers to send with the message data.</p>
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpActionHeader>> {
+        &self.headers
     }
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
     pub fn auth(mut self, input: crate::types::HttpAuthorization) -> Self {
@@ -105,20 +103,25 @@ impl HttpActionBuilder {
         self
     }
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
-    pub fn set_auth(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpAuthorization>,
-    ) -> Self {
-        self.auth = input;
-        self
+    pub fn set_auth(mut self, input: ::std::option::Option<crate::types::HttpAuthorization>) -> Self {
+        self.auth = input; self
+    }
+    /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
+    pub fn get_auth(&self) -> &::std::option::Option<crate::types::HttpAuthorization> {
+        &self.auth
     }
     /// Consumes the builder and constructs a [`HttpAction`](crate::types::HttpAction).
     pub fn build(self) -> crate::types::HttpAction {
         crate::types::HttpAction {
-            url: self.url,
-            confirmation_url: self.confirmation_url,
-            headers: self.headers,
-            auth: self.auth,
+            url: self.url
+            ,
+            confirmation_url: self.confirmation_url
+            ,
+            headers: self.headers
+            ,
+            auth: self.auth
+            ,
         }
     }
 }
+

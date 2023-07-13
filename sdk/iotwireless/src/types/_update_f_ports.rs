@@ -3,7 +3,7 @@
 /// <p>Object for updating the FPorts information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFPorts {
+pub struct UpdateFPorts  {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
     #[doc(hidden)]
     pub positioning: ::std::option::Option<crate::types::Positioning>,
@@ -13,11 +13,11 @@ pub struct UpdateFPorts {
 }
 impl UpdateFPorts {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
-    pub fn positioning(&self) -> ::std::option::Option<&crate::types::Positioning> {
+    pub fn positioning(&self) -> ::std::option::Option<& crate::types::Positioning> {
         self.positioning.as_ref()
     }
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::ApplicationConfig]> {
+    pub fn applications(&self) -> ::std::option::Option<& [crate::types::ApplicationConfig]> {
         self.applications.as_deref()
     }
 }
@@ -30,13 +30,10 @@ impl UpdateFPorts {
 
 /// A builder for [`UpdateFPorts`](crate::types::UpdateFPorts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFPortsBuilder {
     pub(crate) positioning: ::std::option::Option<crate::types::Positioning>,
-    pub(crate) applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
 }
 impl UpdateFPortsBuilder {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
@@ -45,12 +42,12 @@ impl UpdateFPortsBuilder {
         self
     }
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
-    pub fn set_positioning(
-        mut self,
-        input: ::std::option::Option<crate::types::Positioning>,
-    ) -> Self {
-        self.positioning = input;
-        self
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::Positioning>) -> Self {
+        self.positioning = input; self
+    }
+    /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::Positioning> {
+        &self.positioning
     }
     /// Appends an item to `applications`.
     ///
@@ -59,23 +56,26 @@ impl UpdateFPortsBuilder {
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
     pub fn applications(mut self, input: crate::types::ApplicationConfig) -> Self {
         let mut v = self.applications.unwrap_or_default();
-        v.push(input);
-        self.applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
-    ) -> Self {
-        self.applications = input;
-        self
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>) -> Self {
+        self.applications = input; self
+    }
+    /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>> {
+        &self.applications
     }
     /// Consumes the builder and constructs a [`UpdateFPorts`](crate::types::UpdateFPorts).
     pub fn build(self) -> crate::types::UpdateFPorts {
         crate::types::UpdateFPorts {
-            positioning: self.positioning,
-            applications: self.applications,
+            positioning: self.positioning
+            ,
+            applications: self.applications
+            ,
         }
     }
 }
+

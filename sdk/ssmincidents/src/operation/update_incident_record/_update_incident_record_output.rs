@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIncidentRecordOutput {
+pub struct UpdateIncidentRecordOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UpdateIncidentRecordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateIncidentRecordOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIncidentRecordOutput`](crate::operation::update_incident_record::UpdateIncidentRecordOutput).
-    pub fn builder(
-    ) -> crate::operation::update_incident_record::builders::UpdateIncidentRecordOutputBuilder {
+    pub fn builder() -> crate::operation::update_incident_record::builders::UpdateIncidentRecordOutputBuilder {
         crate::operation::update_incident_record::builders::UpdateIncidentRecordOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIncidentRecordOutput`](crate::operation::update_incident_record::UpdateIncidentRecordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIncidentRecordOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateIncidentRecordOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateIncidentRecordOutput`](crate::operation::update_incident_record::UpdateIncidentRecordOutput).
     pub fn build(self) -> crate::operation::update_incident_record::UpdateIncidentRecordOutput {
         crate::operation::update_incident_record::UpdateIncidentRecordOutput {
@@ -43,3 +40,4 @@ impl UpdateIncidentRecordOutputBuilder {
         }
     }
 }
+

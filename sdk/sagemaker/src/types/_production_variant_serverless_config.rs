@@ -3,7 +3,7 @@
 /// <p>Specifies the serverless configuration for an endpoint variant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProductionVariantServerlessConfig {
+pub struct ProductionVariantServerlessConfig  {
     /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
     #[doc(hidden)]
     pub memory_size_in_mb: ::std::option::Option<i32>,
@@ -37,9 +37,7 @@ impl ProductionVariantServerlessConfig {
 
 /// A builder for [`ProductionVariantServerlessConfig`](crate::types::ProductionVariantServerlessConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductionVariantServerlessConfigBuilder {
     pub(crate) memory_size_in_mb: ::std::option::Option<i32>,
     pub(crate) max_concurrency: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl ProductionVariantServerlessConfigBuilder {
     }
     /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
     pub fn set_memory_size_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_size_in_mb = input;
-        self
+        self.memory_size_in_mb = input; self
+    }
+    /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
+    pub fn get_memory_size_in_mb(&self) -> &::std::option::Option<i32> {
+        &self.memory_size_in_mb
     }
     /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
     pub fn max_concurrency(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl ProductionVariantServerlessConfigBuilder {
     }
     /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_concurrency = input;
-        self
+        self.max_concurrency = input; self
+    }
+    /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrency
     }
     /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
     pub fn provisioned_concurrency(mut self, input: i32) -> Self {
@@ -73,15 +77,22 @@ impl ProductionVariantServerlessConfigBuilder {
     }
     /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
     pub fn set_provisioned_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.provisioned_concurrency = input;
-        self
+        self.provisioned_concurrency = input; self
+    }
+    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    pub fn get_provisioned_concurrency(&self) -> &::std::option::Option<i32> {
+        &self.provisioned_concurrency
     }
     /// Consumes the builder and constructs a [`ProductionVariantServerlessConfig`](crate::types::ProductionVariantServerlessConfig).
     pub fn build(self) -> crate::types::ProductionVariantServerlessConfig {
         crate::types::ProductionVariantServerlessConfig {
-            memory_size_in_mb: self.memory_size_in_mb,
-            max_concurrency: self.max_concurrency,
-            provisioned_concurrency: self.provisioned_concurrency,
+            memory_size_in_mb: self.memory_size_in_mb
+            ,
+            max_concurrency: self.max_concurrency
+            ,
+            provisioned_concurrency: self.provisioned_concurrency
+            ,
         }
     }
 }
+

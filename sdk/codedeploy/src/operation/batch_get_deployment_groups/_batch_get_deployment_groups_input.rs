@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>BatchGetDeploymentGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDeploymentGroupsInput {
+pub struct BatchGetDeploymentGroupsInput  {
     /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
     #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
@@ -13,84 +13,71 @@ pub struct BatchGetDeploymentGroupsInput {
 }
 impl BatchGetDeploymentGroupsInput {
     /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The names of the deployment groups.</p>
-    pub fn deployment_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn deployment_group_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.deployment_group_names.as_deref()
     }
 }
 impl BatchGetDeploymentGroupsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentGroupsInput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsInputBuilder {
         crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDeploymentGroupsInput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
-    pub(crate) deployment_group_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deployment_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDeploymentGroupsInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_name = input;
-        self
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_name = input; self
+    }
+    /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
     }
     /// Appends an item to `deployment_group_names`.
     ///
     /// To override the contents of this collection use [`set_deployment_group_names`](Self::set_deployment_group_names).
     ///
     /// <p>The names of the deployment groups.</p>
-    pub fn deployment_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deployment_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.deployment_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.deployment_group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the deployment groups.</p>
-    pub fn set_deployment_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.deployment_group_names = input;
-        self
+    pub fn set_deployment_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.deployment_group_names = input; self
+    }
+    /// <p>The names of the deployment groups.</p>
+    pub fn get_deployment_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deployment_group_names
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentGroupsInput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput {
-                application_name: self.application_name,
-                deployment_group_names: self.deployment_group_names,
-            },
+                application_name: self.application_name
+                ,
+                deployment_group_names: self.deployment_group_names
+                ,
+            }
         )
     }
 }
+

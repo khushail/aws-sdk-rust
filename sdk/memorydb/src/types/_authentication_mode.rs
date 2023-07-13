@@ -3,7 +3,7 @@
 /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate. Used in output responses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthenticationMode {
+pub struct AuthenticationMode  {
     /// <p>Indicates whether the user requires a password to authenticate. All newly-created users require a password.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InputAuthenticationType>,
@@ -13,11 +13,11 @@ pub struct AuthenticationMode {
 }
 impl AuthenticationMode {
     /// <p>Indicates whether the user requires a password to authenticate. All newly-created users require a password.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InputAuthenticationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::InputAuthenticationType> {
         self.r#type.as_ref()
     }
     /// <p>The password(s) used for authentication</p>
-    pub fn passwords(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn passwords(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.passwords.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AuthenticationMode {
 
 /// A builder for [`AuthenticationMode`](crate::types::AuthenticationMode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthenticationModeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InputAuthenticationType>,
     pub(crate) passwords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,12 +42,12 @@ impl AuthenticationModeBuilder {
         self
     }
     /// <p>Indicates whether the user requires a password to authenticate. All newly-created users require a password.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputAuthenticationType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::InputAuthenticationType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>Indicates whether the user requires a password to authenticate. All newly-created users require a password.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InputAuthenticationType> {
+        &self.r#type
     }
     /// Appends an item to `passwords`.
     ///
@@ -58,23 +56,26 @@ impl AuthenticationModeBuilder {
     /// <p>The password(s) used for authentication</p>
     pub fn passwords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.passwords.unwrap_or_default();
-        v.push(input.into());
-        self.passwords = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.passwords = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The password(s) used for authentication</p>
-    pub fn set_passwords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.passwords = input;
-        self
+    pub fn set_passwords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.passwords = input; self
+    }
+    /// <p>The password(s) used for authentication</p>
+    pub fn get_passwords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.passwords
     }
     /// Consumes the builder and constructs a [`AuthenticationMode`](crate::types::AuthenticationMode).
     pub fn build(self) -> crate::types::AuthenticationMode {
         crate::types::AuthenticationMode {
-            r#type: self.r#type,
-            passwords: self.passwords,
+            r#type: self.r#type
+            ,
+            passwords: self.passwords
+            ,
         }
     }
 }
+

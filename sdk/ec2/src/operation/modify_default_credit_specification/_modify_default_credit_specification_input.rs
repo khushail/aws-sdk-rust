@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDefaultCreditSpecificationInput {
+pub struct ModifyDefaultCreditSpecificationInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The instance family.</p>
     #[doc(hidden)]
     pub instance_family: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
-    /// <p>The credit option for CPU usage of the instance family.</p>
+    /// <p>The credit option for CPU usage of the instance family.</p> 
     /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
     #[doc(hidden)]
     pub cpu_credits: ::std::option::Option<::std::string::String>,
@@ -20,33 +20,28 @@ impl ModifyDefaultCreditSpecificationInput {
         self.dry_run
     }
     /// <p>The instance family.</p>
-    pub fn instance_family(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UnlimitedSupportedInstanceFamily> {
+    pub fn instance_family(&self) -> ::std::option::Option<& crate::types::UnlimitedSupportedInstanceFamily> {
         self.instance_family.as_ref()
     }
-    /// <p>The credit option for CPU usage of the instance family.</p>
+    /// <p>The credit option for CPU usage of the instance family.</p> 
     /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
-    pub fn cpu_credits(&self) -> ::std::option::Option<&str> {
+    pub fn cpu_credits(&self) -> ::std::option::Option<& str> {
         self.cpu_credits.as_deref()
     }
 }
 impl ModifyDefaultCreditSpecificationInput {
     /// Creates a new builder-style object to manufacture [`ModifyDefaultCreditSpecificationInput`](crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput).
-    pub fn builder() -> crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationInputBuilder{
+    pub fn builder() -> crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationInputBuilder {
         crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDefaultCreditSpecificationInput`](crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDefaultCreditSpecificationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) instance_family:
-        ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
+    pub(crate) instance_family: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
     pub(crate) cpu_credits: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDefaultCreditSpecificationInputBuilder {
@@ -57,39 +52,43 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The instance family.</p>
-    pub fn instance_family(
-        mut self,
-        input: crate::types::UnlimitedSupportedInstanceFamily,
-    ) -> Self {
+    pub fn instance_family(mut self, input: crate::types::UnlimitedSupportedInstanceFamily) -> Self {
         self.instance_family = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance family.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
-    ) -> Self {
-        self.instance_family = input;
-        self
+    pub fn set_instance_family(mut self, input: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>) -> Self {
+        self.instance_family = input; self
     }
-    /// <p>The credit option for CPU usage of the instance family.</p>
+    /// <p>The instance family.</p>
+    pub fn get_instance_family(&self) -> &::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily> {
+        &self.instance_family
+    }
+    /// <p>The credit option for CPU usage of the instance family.</p> 
     /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
     pub fn cpu_credits(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu_credits = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The credit option for CPU usage of the instance family.</p>
+    /// <p>The credit option for CPU usage of the instance family.</p> 
     /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
     pub fn set_cpu_credits(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu_credits = input;
-        self
+        self.cpu_credits = input; self
+    }
+    /// <p>The credit option for CPU usage of the instance family.</p> 
+    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
+    pub fn get_cpu_credits(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cpu_credits
     }
     /// Consumes the builder and constructs a [`ModifyDefaultCreditSpecificationInput`](crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput {
                 dry_run: self.dry_run
@@ -102,3 +101,4 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
         )
     }
 }
+

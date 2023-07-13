@@ -3,32 +3,32 @@
 /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Union {
+pub struct Union  {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The node ID inputs to the transform.</p>
     #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates the type of Union transform. </p>
-    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
+    /// <p>Indicates the type of Union transform. </p> 
+    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p> 
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
     #[doc(hidden)]
     pub union_type: ::std::option::Option<crate::types::UnionType>,
 }
 impl Union {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The node ID inputs to the transform.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.inputs.as_deref()
     }
-    /// <p>Indicates the type of Union transform. </p>
-    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
+    /// <p>Indicates the type of Union transform. </p> 
+    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p> 
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
-    pub fn union_type(&self) -> ::std::option::Option<&crate::types::UnionType> {
+    pub fn union_type(&self) -> ::std::option::Option<& crate::types::UnionType> {
         self.union_type.as_ref()
     }
 }
@@ -41,9 +41,7 @@ impl Union {
 
 /// A builder for [`Union`](crate::types::Union).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,8 +55,11 @@ impl UnionBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `inputs`.
     ///
@@ -67,38 +68,47 @@ impl UnionBuilder {
     /// <p>The node ID inputs to the transform.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The node ID inputs to the transform.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
-    /// <p>Indicates the type of Union transform. </p>
-    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
+    /// <p>The node ID inputs to the transform.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
+    /// <p>Indicates the type of Union transform. </p> 
+    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p> 
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
     pub fn union_type(mut self, input: crate::types::UnionType) -> Self {
         self.union_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the type of Union transform. </p>
-    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
+    /// <p>Indicates the type of Union transform. </p> 
+    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p> 
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
     pub fn set_union_type(mut self, input: ::std::option::Option<crate::types::UnionType>) -> Self {
-        self.union_type = input;
-        self
+        self.union_type = input; self
+    }
+    /// <p>Indicates the type of Union transform. </p> 
+    /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p> 
+    /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
+    pub fn get_union_type(&self) -> &::std::option::Option<crate::types::UnionType> {
+        &self.union_type
     }
     /// Consumes the builder and constructs a [`Union`](crate::types::Union).
     pub fn build(self) -> crate::types::Union {
         crate::types::Union {
-            name: self.name,
-            inputs: self.inputs,
-            union_type: self.union_type,
+            name: self.name
+            ,
+            inputs: self.inputs
+            ,
+            union_type: self.union_type
+            ,
         }
     }
 }
+

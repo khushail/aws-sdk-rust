@@ -3,94 +3,87 @@ pub use crate::operation::create_facet::_create_facet_output::CreateFacetOutputB
 
 pub use crate::operation::create_facet::_create_facet_input::CreateFacetInputBuilder;
 
+impl CreateFacetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_facet::CreateFacetOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_facet::CreateFacetError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_facet();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateFacet`.
-///
+/// 
 /// <p>Creates a new <code>Facet</code> in a schema. Facet creation is allowed only in development or applied schemas.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFacetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_facet::builders::CreateFacetInputBuilder,
+                    inner: crate::operation::create_facet::builders::CreateFacetInputBuilder,
 }
-impl CreateFacetFluentBuilder {
+impl CreateFacetFluentBuilder  {
     /// Creates a new `CreateFacet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_facet::CreateFacet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateFacet as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_facet::builders::CreateFacetInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_facet::CreateFacetOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_facet::CreateFacet, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_facet::CreateFacetOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_facet::CreateFacetOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_facet::CreateFacet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_facet::CreateFacetOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_facet::CreateFacet, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());
@@ -100,6 +93,10 @@ impl CreateFacetFluentBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_arn(input);
         self
+    }
+    /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +108,10 @@ impl CreateFacetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Appends an item to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -121,49 +122,63 @@ impl CreateFacetFluentBuilder {
         self
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
-    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
-    /// <ul>
-    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Index: Can be created with the Index API.</p> </li>
+    /// <p>The attributes that are associated with the <code>Facet</code>.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
+        self.inner.get_attributes()
+    }
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p> 
+    /// <ul> 
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Index: Can be created with the Index API.</p> </li> 
     /// </ul>
     pub fn object_type(mut self, input: crate::types::ObjectType) -> Self {
         self.inner = self.inner.object_type(input);
         self
     }
-    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
-    /// <ul>
-    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p> 
+    /// <ul> 
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Index: Can be created with the Index API.</p> </li> 
     /// </ul>
-    /// <ul>
-    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Index: Can be created with the Index API.</p> </li>
-    /// </ul>
-    pub fn set_object_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectType>,
-    ) -> Self {
+    pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectType>) -> Self {
         self.inner = self.inner.set_object_type(input);
         self
+    }
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p> 
+    /// <ul> 
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Index: Can be created with the Index API.</p> </li> 
+    /// </ul>
+    pub fn get_object_type(&self) -> &::std::option::Option<crate::types::ObjectType> {
+        self.inner.get_object_type()
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn facet_style(mut self, input: crate::types::FacetStyle) -> Self {
@@ -171,11 +186,13 @@ impl CreateFacetFluentBuilder {
         self
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    pub fn set_facet_style(
-        mut self,
-        input: ::std::option::Option<crate::types::FacetStyle>,
-    ) -> Self {
+    pub fn set_facet_style(mut self, input: ::std::option::Option<crate::types::FacetStyle>) -> Self {
         self.inner = self.inner.set_facet_style(input);
         self
     }
+    /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
+    pub fn get_facet_style(&self) -> &::std::option::Option<crate::types::FacetStyle> {
+        self.inner.get_facet_style()
+    }
 }
+

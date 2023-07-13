@@ -3,92 +3,101 @@ pub use crate::operation::delete_application_reference_data_source::_delete_appl
 
 pub use crate::operation::delete_application_reference_data_source::_delete_application_reference_data_source_input::DeleteApplicationReferenceDataSourceInputBuilder;
 
+impl DeleteApplicationReferenceDataSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.delete_application_reference_data_source();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DeleteApplicationReferenceDataSource`.
-///
-/// <p>Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's configuration.</p>
+/// 
+/// <p>Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's configuration.</p> 
 /// <p>If the application is running, Kinesis Data Analytics immediately removes the in-application table that you created using the <code>AddApplicationReferenceDataSource</code> operation. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationReferenceDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceInputBuilder,
 }
-impl DeleteApplicationReferenceDataSourceFluentBuilder {
+impl DeleteApplicationReferenceDataSourceFluentBuilder  {
     /// Creates a new `DeleteApplicationReferenceDataSource`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApplicationReferenceDataSource as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSource, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSource, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSource, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of an existing application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an existing application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
+    }
+    /// <p>The name of an existing application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
     }
     /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
@@ -100,6 +109,10 @@ impl DeleteApplicationReferenceDataSourceFluentBuilder {
         self.inner = self.inner.set_current_application_version_id(input);
         self
     }
+    /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_application_version_id()
+    }
     /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_id(input.into());
@@ -110,4 +123,9 @@ impl DeleteApplicationReferenceDataSourceFluentBuilder {
         self.inner = self.inner.set_reference_id(input);
         self
     }
+    /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reference_id()
+    }
 }
+

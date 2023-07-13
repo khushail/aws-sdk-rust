@@ -3,7 +3,7 @@
 /// <p>Provides the parameters required for importing a custom vocabulary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomVocabularyImportSpecification {
+pub struct CustomVocabularyImportSpecification  {
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
     #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct CustomVocabularyImportSpecification {
 }
 impl CustomVocabularyImportSpecification {
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to import the custom vocabulary to.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl CustomVocabularyImportSpecification {
 
 /// A builder for [`CustomVocabularyImportSpecification`](crate::types::CustomVocabularyImportSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomVocabularyImportSpecificationBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl CustomVocabularyImportSpecificationBuilder {
     }
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
+    }
+    /// <p>The identifier of the bot to import the custom vocabulary to.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The version of the bot to import the custom vocabulary to.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl CustomVocabularyImportSpecificationBuilder {
     }
     /// <p>The version of the bot to import the custom vocabulary to.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
+    }
+    /// <p>The version of the bot to import the custom vocabulary to.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl CustomVocabularyImportSpecificationBuilder {
     }
     /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
+    }
+    /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// Consumes the builder and constructs a [`CustomVocabularyImportSpecification`](crate::types::CustomVocabularyImportSpecification).
     pub fn build(self) -> crate::types::CustomVocabularyImportSpecification {
         crate::types::CustomVocabularyImportSpecification {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
         }
     }
 }
+

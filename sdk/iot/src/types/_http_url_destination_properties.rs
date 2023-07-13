@@ -3,14 +3,14 @@
 /// <p>HTTP URL destination properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpUrlDestinationProperties {
+pub struct HttpUrlDestinationProperties  {
     /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
     #[doc(hidden)]
     pub confirmation_url: ::std::option::Option<::std::string::String>,
 }
 impl HttpUrlDestinationProperties {
     /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
-    pub fn confirmation_url(&self) -> ::std::option::Option<&str> {
+    pub fn confirmation_url(&self) -> ::std::option::Option<& str> {
         self.confirmation_url.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl HttpUrlDestinationProperties {
 
 /// A builder for [`HttpUrlDestinationProperties`](crate::types::HttpUrlDestinationProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpUrlDestinationPropertiesBuilder {
     pub(crate) confirmation_url: ::std::option::Option<::std::string::String>,
 }
 impl HttpUrlDestinationPropertiesBuilder {
     /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
-    pub fn confirmation_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn confirmation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.confirmation_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
-    pub fn set_confirmation_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.confirmation_url = input;
-        self
+    pub fn set_confirmation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.confirmation_url = input; self
+    }
+    /// <p>The URL used to confirm the HTTP topic rule destination URL.</p>
+    pub fn get_confirmation_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.confirmation_url
     }
     /// Consumes the builder and constructs a [`HttpUrlDestinationProperties`](crate::types::HttpUrlDestinationProperties).
     pub fn build(self) -> crate::types::HttpUrlDestinationProperties {
         crate::types::HttpUrlDestinationProperties {
-            confirmation_url: self.confirmation_url,
+            confirmation_url: self.confirmation_url
+            ,
         }
     }
 }
+

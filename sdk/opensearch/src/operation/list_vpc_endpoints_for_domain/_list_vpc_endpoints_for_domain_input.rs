@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVpcEndpointsForDomainInput {
+pub struct ListVpcEndpointsForDomainInput  {
     /// <p>The name of the domain to list associated VPC endpoints for.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct ListVpcEndpointsForDomainInput {
 }
 impl ListVpcEndpointsForDomainInput {
     /// <p>The name of the domain to list associated VPC endpoints for.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>If your initial <code>ListEndpointsForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointsForDomain</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListVpcEndpointsForDomainInput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointsForDomainInput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput).
-    pub fn builder() -> crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainInputBuilder{
+    pub fn builder() -> crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainInputBuilder {
         crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcEndpointsForDomainInput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsForDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl ListVpcEndpointsForDomainInputBuilder {
     }
     /// <p>The name of the domain to list associated VPC endpoints for.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The name of the domain to list associated VPC endpoints for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>If your initial <code>ListEndpointsForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointsForDomain</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,21 +55,22 @@ impl ListVpcEndpointsForDomainInputBuilder {
     }
     /// <p>If your initial <code>ListEndpointsForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointsForDomain</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If your initial <code>ListEndpointsForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointsForDomain</code> operations, which returns results in the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListVpcEndpointsForDomainInput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput {
-                domain_name: self.domain_name,
-                next_token: self.next_token,
-            },
+                domain_name: self.domain_name
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

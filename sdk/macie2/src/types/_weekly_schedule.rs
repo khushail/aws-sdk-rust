@@ -3,14 +3,14 @@
 /// <p>Specifies a weekly recurrence pattern for running a classification job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WeeklySchedule {
+pub struct WeeklySchedule  {
     /// <p>The day of the week when Amazon Macie runs the job.</p>
     #[doc(hidden)]
     pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
 }
 impl WeeklySchedule {
     /// <p>The day of the week when Amazon Macie runs the job.</p>
-    pub fn day_of_week(&self) -> ::std::option::Option<&crate::types::DayOfWeek> {
+    pub fn day_of_week(&self) -> ::std::option::Option<& crate::types::DayOfWeek> {
         self.day_of_week.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl WeeklySchedule {
 
 /// A builder for [`WeeklySchedule`](crate::types::WeeklySchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WeeklyScheduleBuilder {
     pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
 }
@@ -36,17 +34,19 @@ impl WeeklyScheduleBuilder {
         self
     }
     /// <p>The day of the week when Amazon Macie runs the job.</p>
-    pub fn set_day_of_week(
-        mut self,
-        input: ::std::option::Option<crate::types::DayOfWeek>,
-    ) -> Self {
-        self.day_of_week = input;
-        self
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
+        self.day_of_week = input; self
+    }
+    /// <p>The day of the week when Amazon Macie runs the job.</p>
+    pub fn get_day_of_week(&self) -> &::std::option::Option<crate::types::DayOfWeek> {
+        &self.day_of_week
     }
     /// Consumes the builder and constructs a [`WeeklySchedule`](crate::types::WeeklySchedule).
     pub fn build(self) -> crate::types::WeeklySchedule {
         crate::types::WeeklySchedule {
-            day_of_week: self.day_of_week,
+            day_of_week: self.day_of_week
+            ,
         }
     }
 }
+

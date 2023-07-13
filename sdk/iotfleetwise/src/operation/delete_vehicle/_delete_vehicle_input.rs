@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVehicleInput {
+pub struct DeleteVehicleInput  {
     /// <p>The ID of the vehicle to delete. </p>
     #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVehicleInput {
     /// <p>The ID of the vehicle to delete. </p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteVehicleInput {
 
 /// A builder for [`DeleteVehicleInput`](crate::operation::delete_vehicle::DeleteVehicleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVehicleInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteVehicleInputBuilder {
     }
     /// <p>The ID of the vehicle to delete. </p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
+    }
+    /// <p>The ID of the vehicle to delete. </p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
     }
     /// Consumes the builder and constructs a [`DeleteVehicleInput`](crate::operation::delete_vehicle::DeleteVehicleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vehicle::DeleteVehicleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_vehicle::DeleteVehicleInput {
-            vehicle_name: self.vehicle_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vehicle::DeleteVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_vehicle::DeleteVehicleInput {
+                vehicle_name: self.vehicle_name
+                ,
+            }
+        )
     }
 }
+

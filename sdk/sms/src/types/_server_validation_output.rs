@@ -3,14 +3,14 @@
 /// <p>Contains output from validating an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerValidationOutput {
+pub struct ServerValidationOutput  {
     /// <p>Represents a server.</p>
     #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::Server>,
 }
 impl ServerValidationOutput {
     /// <p>Represents a server.</p>
-    pub fn server(&self) -> ::std::option::Option<&crate::types::Server> {
+    pub fn server(&self) -> ::std::option::Option<& crate::types::Server> {
         self.server.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ServerValidationOutput {
 
 /// A builder for [`ServerValidationOutput`](crate::types::ServerValidationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerValidationOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
 }
@@ -37,13 +35,18 @@ impl ServerValidationOutputBuilder {
     }
     /// <p>Represents a server.</p>
     pub fn set_server(mut self, input: ::std::option::Option<crate::types::Server>) -> Self {
-        self.server = input;
-        self
+        self.server = input; self
+    }
+    /// <p>Represents a server.</p>
+    pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
+        &self.server
     }
     /// Consumes the builder and constructs a [`ServerValidationOutput`](crate::types::ServerValidationOutput).
     pub fn build(self) -> crate::types::ServerValidationOutput {
         crate::types::ServerValidationOutput {
-            server: self.server,
+            server: self.server
+            ,
         }
     }
 }
+

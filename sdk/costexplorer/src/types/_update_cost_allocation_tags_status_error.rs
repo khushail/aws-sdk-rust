@@ -3,7 +3,7 @@
 /// <p>Gives a detailed description of the result of an action. It's on each cost allocation tag entry in the request. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCostAllocationTagsStatusError {
+pub struct UpdateCostAllocationTagsStatusError  {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct UpdateCostAllocationTagsStatusError {
 }
 impl UpdateCostAllocationTagsStatusError {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(&self) -> ::std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>An error code representing why the action failed on this entry. </p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A message explaining why the action failed on this entry. </p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl UpdateCostAllocationTagsStatusError {
 
 /// A builder for [`UpdateCostAllocationTagsStatusError`](crate::types::UpdateCostAllocationTagsStatusError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusErrorBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl UpdateCostAllocationTagsStatusErrorBuilder {
     }
     /// <p>The key for the cost allocation tag. </p>
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_key = input;
-        self
+        self.tag_key = input; self
+    }
+    /// <p>The key for the cost allocation tag. </p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
     }
     /// <p>An error code representing why the action failed on this entry. </p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl UpdateCostAllocationTagsStatusErrorBuilder {
     }
     /// <p>An error code representing why the action failed on this entry. </p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>An error code representing why the action failed on this entry. </p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>A message explaining why the action failed on this entry. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl UpdateCostAllocationTagsStatusErrorBuilder {
     }
     /// <p>A message explaining why the action failed on this entry. </p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A message explaining why the action failed on this entry. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusError`](crate::types::UpdateCostAllocationTagsStatusError).
     pub fn build(self) -> crate::types::UpdateCostAllocationTagsStatusError {
         crate::types::UpdateCostAllocationTagsStatusError {
-            tag_key: self.tag_key,
-            code: self.code,
-            message: self.message,
+            tag_key: self.tag_key
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

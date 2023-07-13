@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLaunchInput {
+pub struct DeleteLaunchInput  {
     /// <p>The name or ARN of the project that contains the launch to delete.</p>
     #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteLaunchInput {
 }
 impl DeleteLaunchInput {
     /// <p>The name or ARN of the project that contains the launch to delete.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the launch to delete.</p>
-    pub fn launch(&self) -> ::std::option::Option<&str> {
+    pub fn launch(&self) -> ::std::option::Option<& str> {
         self.launch.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DeleteLaunchInput {
 
 /// A builder for [`DeleteLaunchInput`](crate::operation::delete_launch::DeleteLaunchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLaunchInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) launch: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeleteLaunchInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the launch to delete.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
+    }
+    /// <p>The name or ARN of the project that contains the launch to delete.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
     }
     /// <p>The name of the launch to delete.</p>
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl DeleteLaunchInputBuilder {
     }
     /// <p>The name of the launch to delete.</p>
     pub fn set_launch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch = input;
-        self
+        self.launch = input; self
+    }
+    /// <p>The name of the launch to delete.</p>
+    pub fn get_launch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch
     }
     /// Consumes the builder and constructs a [`DeleteLaunchInput`](crate::operation::delete_launch::DeleteLaunchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_launch::DeleteLaunchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_launch::DeleteLaunchInput {
-            project: self.project,
-            launch: self.launch,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_launch::DeleteLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_launch::DeleteLaunchInput {
+                project: self.project
+                ,
+                launch: self.launch
+                ,
+            }
+        )
     }
 }
+

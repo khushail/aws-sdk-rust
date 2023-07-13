@@ -3,7 +3,7 @@
 /// <p>The DeleteTagsForDomainRequest includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTagsForDomainInput {
+pub struct DeleteTagsForDomainInput  {
     /// <p>The domain for which you want to delete one or more tags.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -13,28 +13,24 @@ pub struct DeleteTagsForDomainInput {
 }
 impl DeleteTagsForDomainInput {
     /// <p>The domain for which you want to delete one or more tags.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A list of tag keys to delete.</p>
-    pub fn tags_to_delete(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn tags_to_delete(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.tags_to_delete.as_deref()
     }
 }
 impl DeleteTagsForDomainInput {
     /// Creates a new builder-style object to manufacture [`DeleteTagsForDomainInput`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainInput).
-    pub fn builder(
-    ) -> crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainInputBuilder {
-        crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainInputBuilder {
+        crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTagsForDomainInput`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTagsForDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -47,43 +43,41 @@ impl DeleteTagsForDomainInputBuilder {
     }
     /// <p>The domain for which you want to delete one or more tags.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The domain for which you want to delete one or more tags.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Appends an item to `tags_to_delete`.
     ///
     /// To override the contents of this collection use [`set_tags_to_delete`](Self::set_tags_to_delete).
     ///
     /// <p>A list of tag keys to delete.</p>
-    pub fn tags_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tags_to_delete.unwrap_or_default();
-        v.push(input.into());
-        self.tags_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tags_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag keys to delete.</p>
-    pub fn set_tags_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.tags_to_delete = input;
-        self
+    pub fn set_tags_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tags_to_delete = input; self
+    }
+    /// <p>A list of tag keys to delete.</p>
+    pub fn get_tags_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tags_to_delete
     }
     /// Consumes the builder and constructs a [`DeleteTagsForDomainInput`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_tags_for_domain::DeleteTagsForDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tags_for_domain::DeleteTagsForDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_tags_for_domain::DeleteTagsForDomainInput {
-                domain_name: self.domain_name,
-                tags_to_delete: self.tags_to_delete,
-            },
+                domain_name: self.domain_name
+                ,
+                tags_to_delete: self.tags_to_delete
+                ,
+            }
         )
     }
 }
+

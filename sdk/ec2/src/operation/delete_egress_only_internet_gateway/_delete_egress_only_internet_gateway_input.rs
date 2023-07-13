@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEgressOnlyInternetGatewayInput {
+pub struct DeleteEgressOnlyInternetGatewayInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -16,22 +16,20 @@ impl DeleteEgressOnlyInternetGatewayInput {
         self.dry_run
     }
     /// <p>The ID of the egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<& str> {
         self.egress_only_internet_gateway_id.as_deref()
     }
 }
 impl DeleteEgressOnlyInternetGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteEgressOnlyInternetGatewayInput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput).
-    pub fn builder() -> crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayInputBuilder{
+    pub fn builder() -> crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayInputBuilder {
         crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEgressOnlyInternetGatewayInput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEgressOnlyInternetGatewayInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,27 @@ impl DeleteEgressOnlyInternetGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The ID of the egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn egress_only_internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.egress_only_internet_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the egress-only internet gateway.</p>
-    pub fn set_egress_only_internet_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.egress_only_internet_gateway_id = input;
-        self
+    pub fn set_egress_only_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.egress_only_internet_gateway_id = input; self
+    }
+    /// <p>The ID of the egress-only internet gateway.</p>
+    pub fn get_egress_only_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.egress_only_internet_gateway_id
     }
     /// Consumes the builder and constructs a [`DeleteEgressOnlyInternetGatewayInput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput {
                 dry_run: self.dry_run
@@ -80,3 +73,4 @@ impl DeleteEgressOnlyInternetGatewayInputBuilder {
         )
     }
 }
+

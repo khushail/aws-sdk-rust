@@ -3,94 +3,87 @@ pub use crate::operation::update_index::_update_index_output::UpdateIndexOutputB
 
 pub use crate::operation::update_index::_update_index_input::UpdateIndexInputBuilder;
 
+impl UpdateIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_index::UpdateIndexOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_index::UpdateIndexError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_index();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateIndex`.
-///
+/// 
 /// <p>Updates an existing Amazon Kendra index.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIndexFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_index::builders::UpdateIndexInputBuilder,
+                    inner: crate::operation::update_index::builders::UpdateIndexInputBuilder,
 }
-impl UpdateIndexFluentBuilder {
+impl UpdateIndexFluentBuilder  {
     /// Creates a new `UpdateIndex`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_index::UpdateIndex,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_index::UpdateIndexError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateIndex as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_index::builders::UpdateIndexInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_index::UpdateIndexOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_index::UpdateIndexError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_index::UpdateIndex, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_index::UpdateIndexError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_index::UpdateIndexOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_index::UpdateIndexError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_index::UpdateIndexOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_index::UpdateIndexError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_index::UpdateIndex,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_index::UpdateIndexError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_index::UpdateIndexOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_index::UpdateIndexError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_index::UpdateIndex, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_index::UpdateIndexError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the index you want to update.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -100,6 +93,10 @@ impl UpdateIndexFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The identifier of the index you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>The name of the index you want to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +108,10 @@ impl UpdateIndexFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the index you want to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -120,6 +121,10 @@ impl UpdateIndexFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>A new description for the index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,62 +136,62 @@ impl UpdateIndexFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A new description for the index.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `DocumentMetadataConfigurationUpdates`.
     ///
     /// To override the contents of this collection use [`set_document_metadata_configuration_updates`](Self::set_document_metadata_configuration_updates).
     ///
     /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    pub fn document_metadata_configuration_updates(
-        mut self,
-        input: crate::types::DocumentMetadataConfiguration,
-    ) -> Self {
+    pub fn document_metadata_configuration_updates(mut self, input: crate::types::DocumentMetadataConfiguration) -> Self {
         self.inner = self.inner.document_metadata_configuration_updates(input);
         self
     }
     /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    pub fn set_document_metadata_configuration_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_document_metadata_configuration_updates(input);
+    pub fn set_document_metadata_configuration_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>>) -> Self {
+        self.inner = self.inner.set_document_metadata_configuration_updates(input);
         self
     }
-    /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
+    /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
+    pub fn get_document_metadata_configuration_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>> {
+        self.inner.get_document_metadata_configuration_updates()
+    }
+    /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p> 
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
         self.inner = self.inner.capacity_units(input);
         self
     }
-    /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
+    /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p> 
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
-    pub fn set_capacity_units(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
-    ) -> Self {
+    pub fn set_capacity_units(mut self, input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>) -> Self {
         self.inner = self.inner.set_capacity_units(input);
         self
+    }
+    /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p> 
+    /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
+    pub fn get_capacity_units(&self) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+        self.inner.get_capacity_units()
     }
     /// Appends an item to `UserTokenConfigurations`.
     ///
     /// To override the contents of this collection use [`set_user_token_configurations`](Self::set_user_token_configurations).
     ///
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(
-        mut self,
-        input: crate::types::UserTokenConfiguration,
-    ) -> Self {
+    pub fn user_token_configurations(mut self, input: crate::types::UserTokenConfiguration) -> Self {
         self.inner = self.inner.user_token_configurations(input);
         self
     }
     /// <p>The user token configuration.</p>
-    pub fn set_user_token_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
-    ) -> Self {
+    pub fn set_user_token_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>) -> Self {
         self.inner = self.inner.set_user_token_configurations(input);
         self
+    }
+    /// <p>The user token configuration.</p>
+    pub fn get_user_token_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>> {
+        self.inner.get_user_token_configurations()
     }
     /// <p>The user context policy.</p>
     pub fn user_context_policy(mut self, input: crate::types::UserContextPolicy) -> Self {
@@ -194,27 +199,27 @@ impl UpdateIndexFluentBuilder {
         self
     }
     /// <p>The user context policy.</p>
-    pub fn set_user_context_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContextPolicy>,
-    ) -> Self {
+    pub fn set_user_context_policy(mut self, input: ::std::option::Option<crate::types::UserContextPolicy>) -> Self {
         self.inner = self.inner.set_user_context_policy(input);
         self
     }
+    /// <p>The user context policy.</p>
+    pub fn get_user_context_policy(&self) -> &::std::option::Option<crate::types::UserContextPolicy> {
+        self.inner.get_user_context_policy()
+    }
     /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn user_group_resolution_configuration(
-        mut self,
-        input: crate::types::UserGroupResolutionConfiguration,
-    ) -> Self {
+    pub fn user_group_resolution_configuration(mut self, input: crate::types::UserGroupResolutionConfiguration) -> Self {
         self.inner = self.inner.user_group_resolution_configuration(input);
         self
     }
     /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn set_user_group_resolution_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
-    ) -> Self {
+    pub fn set_user_group_resolution_configuration(mut self, input: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>) -> Self {
         self.inner = self.inner.set_user_group_resolution_configuration(input);
         self
     }
+    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    pub fn get_user_group_resolution_configuration(&self) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
+        self.inner.get_user_group_resolution_configuration()
+    }
 }
+

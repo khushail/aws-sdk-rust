@@ -3,7 +3,7 @@
 /// <p>A structure representing the datatype of the value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Datatype {
+pub struct Datatype  {
     /// <p>The datatype of the value.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Datatype {
 }
 impl Datatype {
     /// <p>The datatype of the value.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A label assigned to the datatype.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Datatype {
 
 /// A builder for [`Datatype`](crate::types::Datatype).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatatypeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DatatypeBuilder {
     }
     /// <p>The datatype of the value.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The datatype of the value.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A label assigned to the datatype.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl DatatypeBuilder {
     }
     /// <p>A label assigned to the datatype.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
+    }
+    /// <p>A label assigned to the datatype.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// Consumes the builder and constructs a [`Datatype`](crate::types::Datatype).
     pub fn build(self) -> crate::types::Datatype {
         crate::types::Datatype {
-            id: self.id,
-            label: self.label,
+            id: self.id
+            ,
+            label: self.label
+            ,
         }
     }
 }
+

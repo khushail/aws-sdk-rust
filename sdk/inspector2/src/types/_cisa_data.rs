@@ -3,7 +3,7 @@
 /// <p>The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisaData {
+pub struct CisaData  {
     /// <p>The date and time CISA added this vulnerability to their catalogue.</p>
     #[doc(hidden)]
     pub date_added: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -16,15 +16,15 @@ pub struct CisaData {
 }
 impl CisaData {
     /// <p>The date and time CISA added this vulnerability to their catalogue.</p>
-    pub fn date_added(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_added(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_added.as_ref()
     }
     /// <p>The date and time CISA expects a fix to have been provided vulnerability.</p>
-    pub fn date_due(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_due(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_due.as_ref()
     }
     /// <p>The remediation action recommended by CISA for this vulnerability.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl CisaData {
 
 /// A builder for [`CisaData`](crate::types::CisaData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CisaDataBuilder {
     pub(crate) date_added: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_due: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,12 +50,12 @@ impl CisaDataBuilder {
         self
     }
     /// <p>The date and time CISA added this vulnerability to their catalogue.</p>
-    pub fn set_date_added(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.date_added = input;
-        self
+    pub fn set_date_added(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.date_added = input; self
+    }
+    /// <p>The date and time CISA added this vulnerability to their catalogue.</p>
+    pub fn get_date_added(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_added
     }
     /// <p>The date and time CISA expects a fix to have been provided vulnerability.</p>
     pub fn date_due(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -65,12 +63,12 @@ impl CisaDataBuilder {
         self
     }
     /// <p>The date and time CISA expects a fix to have been provided vulnerability.</p>
-    pub fn set_date_due(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.date_due = input;
-        self
+    pub fn set_date_due(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.date_due = input; self
+    }
+    /// <p>The date and time CISA expects a fix to have been provided vulnerability.</p>
+    pub fn get_date_due(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_due
     }
     /// <p>The remediation action recommended by CISA for this vulnerability.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl CisaDataBuilder {
     }
     /// <p>The remediation action recommended by CISA for this vulnerability.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
+    }
+    /// <p>The remediation action recommended by CISA for this vulnerability.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`CisaData`](crate::types::CisaData).
     pub fn build(self) -> crate::types::CisaData {
         crate::types::CisaData {
-            date_added: self.date_added,
-            date_due: self.date_due,
-            action: self.action,
+            date_added: self.date_added
+            ,
+            date_due: self.date_due
+            ,
+            action: self.action
+            ,
         }
     }
 }
+

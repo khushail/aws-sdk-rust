@@ -3,7 +3,7 @@
 /// <p>The pagination configuration for a table visual or boxplot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PaginationConfiguration {
+pub struct PaginationConfiguration  {
     /// <p>Indicates how many items render in one page.</p>
     #[doc(hidden)]
     pub page_size: ::std::option::Option<i64>,
@@ -30,9 +30,7 @@ impl PaginationConfiguration {
 
 /// A builder for [`PaginationConfiguration`](crate::types::PaginationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PaginationConfigurationBuilder {
     pub(crate) page_size: ::std::option::Option<i64>,
     pub(crate) page_number: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl PaginationConfigurationBuilder {
     }
     /// <p>Indicates how many items render in one page.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
+    }
+    /// <p>Indicates how many items render in one page.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i64> {
+        &self.page_size
     }
     /// <p>Indicates the page number.</p>
     pub fn page_number(mut self, input: i64) -> Self {
@@ -55,14 +56,20 @@ impl PaginationConfigurationBuilder {
     }
     /// <p>Indicates the page number.</p>
     pub fn set_page_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.page_number = input;
-        self
+        self.page_number = input; self
+    }
+    /// <p>Indicates the page number.</p>
+    pub fn get_page_number(&self) -> &::std::option::Option<i64> {
+        &self.page_number
     }
     /// Consumes the builder and constructs a [`PaginationConfiguration`](crate::types::PaginationConfiguration).
     pub fn build(self) -> crate::types::PaginationConfiguration {
         crate::types::PaginationConfiguration {
-            page_size: self.page_size,
-            page_number: self.page_number,
+            page_size: self.page_size
+            ,
+            page_number: self.page_number
+            ,
         }
     }
 }
+

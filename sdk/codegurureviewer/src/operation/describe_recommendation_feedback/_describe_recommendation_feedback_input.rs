@@ -2,45 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRecommendationFeedbackInput {
+pub struct DescribeRecommendationFeedbackInput  {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
     pub code_review_arn: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
     #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
-    /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p>
+    /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRecommendationFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> ::std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> ::std::option::Option<& str> {
         self.code_review_arn.as_deref()
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p>
+    /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
 impl DescribeRecommendationFeedbackInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationFeedbackInput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput).
-    pub fn builder() -> crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder{
+    pub fn builder() -> crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder {
         crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecommendationFeedbackInput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecommendationFeedbackInputBuilder {
     pub(crate) code_review_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
@@ -48,56 +46,49 @@ pub struct DescribeRecommendationFeedbackInputBuilder {
 }
 impl DescribeRecommendationFeedbackInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.code_review_arn = input;
-        self
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.code_review_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_arn
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.recommendation_id = input;
-        self
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommendation_id = input; self
     }
-    /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p>
+    /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
+    /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p>
+    /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p> 
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`DescribeRecommendationFeedbackInput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput {
                 code_review_arn: self.code_review_arn
@@ -110,3 +101,4 @@ impl DescribeRecommendationFeedbackInputBuilder {
         )
     }
 }
+

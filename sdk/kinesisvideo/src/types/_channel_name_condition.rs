@@ -3,7 +3,7 @@
 /// <p>An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelNameCondition {
+pub struct ChannelNameCondition  {
     /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
     #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
@@ -13,11 +13,11 @@ pub struct ChannelNameCondition {
 }
 impl ChannelNameCondition {
     /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>A value to compare.</p>
-    pub fn comparison_value(&self) -> ::std::option::Option<&str> {
+    pub fn comparison_value(&self) -> ::std::option::Option<& str> {
         self.comparison_value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ChannelNameCondition {
 
 /// A builder for [`ChannelNameCondition`](crate::types::ChannelNameCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelNameConditionBuilder {
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     pub(crate) comparison_value: ::std::option::Option<::std::string::String>,
@@ -44,34 +42,34 @@ impl ChannelNameConditionBuilder {
         self
     }
     /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
-        self.comparison_operator = input;
-        self
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
+        self.comparison_operator = input; self
+    }
+    /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
     }
     /// <p>A value to compare.</p>
-    pub fn comparison_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn comparison_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comparison_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value to compare.</p>
-    pub fn set_comparison_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.comparison_value = input;
-        self
+    pub fn set_comparison_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.comparison_value = input; self
+    }
+    /// <p>A value to compare.</p>
+    pub fn get_comparison_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comparison_value
     }
     /// Consumes the builder and constructs a [`ChannelNameCondition`](crate::types::ChannelNameCondition).
     pub fn build(self) -> crate::types::ChannelNameCondition {
         crate::types::ChannelNameCondition {
-            comparison_operator: self.comparison_operator,
-            comparison_value: self.comparison_value,
+            comparison_operator: self.comparison_operator
+            ,
+            comparison_value: self.comparison_value
+            ,
         }
     }
 }
+

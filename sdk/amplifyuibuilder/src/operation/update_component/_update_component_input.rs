@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateComponentInput {
+pub struct UpdateComponentInput  {
     /// <p>The unique ID for the Amplify app.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -21,23 +21,23 @@ pub struct UpdateComponentInput {
 }
 impl UpdateComponentInput {
     /// <p>The unique ID for the Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique ID for the component.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique client token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The configuration of the updated component.</p>
-    pub fn updated_component(&self) -> ::std::option::Option<&crate::types::UpdateComponentData> {
+    pub fn updated_component(&self) -> ::std::option::Option<& crate::types::UpdateComponentData> {
         self.updated_component.as_ref()
     }
 }
@@ -50,9 +50,7 @@ impl UpdateComponentInput {
 
 /// A builder for [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateComponentInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -68,24 +66,24 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>The unique ID for the Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The unique ID for the Amplify app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_name = input;
-        self
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_name = input; self
+    }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// <p>The unique ID for the component.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,8 +92,11 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>The unique ID for the component.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique ID for the component.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The unique client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,8 +105,11 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>The unique client token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The unique client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The configuration of the updated component.</p>
     pub fn updated_component(mut self, input: crate::types::UpdateComponentData) -> Self {
@@ -113,26 +117,29 @@ impl UpdateComponentInputBuilder {
         self
     }
     /// <p>The configuration of the updated component.</p>
-    pub fn set_updated_component(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateComponentData>,
-    ) -> Self {
-        self.updated_component = input;
-        self
+    pub fn set_updated_component(mut self, input: ::std::option::Option<crate::types::UpdateComponentData>) -> Self {
+        self.updated_component = input; self
+    }
+    /// <p>The configuration of the updated component.</p>
+    pub fn get_updated_component(&self) -> &::std::option::Option<crate::types::UpdateComponentData> {
+        &self.updated_component
     }
     /// Consumes the builder and constructs a [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_component::UpdateComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_component::UpdateComponentInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
-            client_token: self.client_token,
-            updated_component: self.updated_component,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_component::UpdateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_component::UpdateComponentInput {
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                id: self.id
+                ,
+                client_token: self.client_token
+                ,
+                updated_component: self.updated_component
+                ,
+            }
+        )
     }
 }
+

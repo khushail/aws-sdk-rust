@@ -3,7 +3,7 @@
 /// <p>Stores information about a message status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelMessageStatusStructure {
+pub struct ChannelMessageStatusStructure  {
     /// <p>The message status value.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::ChannelMessageStatus>,
@@ -13,11 +13,11 @@ pub struct ChannelMessageStatusStructure {
 }
 impl ChannelMessageStatusStructure {
     /// <p>The message status value.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::ChannelMessageStatus> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::ChannelMessageStatus> {
         self.value.as_ref()
     }
     /// <p>Contains more details about the messasge status.</p>
-    pub fn detail(&self) -> ::std::option::Option<&str> {
+    pub fn detail(&self) -> ::std::option::Option<& str> {
         self.detail.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ChannelMessageStatusStructure {
 
 /// A builder for [`ChannelMessageStatusStructure`](crate::types::ChannelMessageStatusStructure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelMessageStatusStructureBuilder {
     pub(crate) value: ::std::option::Option<crate::types::ChannelMessageStatus>,
     pub(crate) detail: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl ChannelMessageStatusStructureBuilder {
         self
     }
     /// <p>The message status value.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageStatus>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::ChannelMessageStatus>) -> Self {
+        self.value = input; self
+    }
+    /// <p>The message status value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::ChannelMessageStatus> {
+        &self.value
     }
     /// <p>Contains more details about the messasge status.</p>
     pub fn detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl ChannelMessageStatusStructureBuilder {
     }
     /// <p>Contains more details about the messasge status.</p>
     pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detail = input;
-        self
+        self.detail = input; self
+    }
+    /// <p>Contains more details about the messasge status.</p>
+    pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail
     }
     /// Consumes the builder and constructs a [`ChannelMessageStatusStructure`](crate::types::ChannelMessageStatusStructure).
     pub fn build(self) -> crate::types::ChannelMessageStatusStructure {
         crate::types::ChannelMessageStatusStructure {
-            value: self.value,
-            detail: self.detail,
+            value: self.value
+            ,
+            detail: self.detail
+            ,
         }
     }
 }
+

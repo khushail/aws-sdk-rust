@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateWirelessDeviceFromThingInput {
+pub struct DisassociateWirelessDeviceFromThingInput  {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateWirelessDeviceFromThingInput {
     /// <p>The ID of the resource to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DisassociateWirelessDeviceFromThingInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromThingInput`](crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingInput).
-    pub fn builder() -> crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingInputBuilder {
         crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWirelessDeviceFromThingInput`](crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromThingInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,11 +34,14 @@ impl DisassociateWirelessDeviceFromThingInputBuilder {
     }
     /// <p>The ID of the resource to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromThingInput`](crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingInput {
                 id: self.id
@@ -49,3 +50,4 @@ impl DisassociateWirelessDeviceFromThingInputBuilder {
         )
     }
 }
+

@@ -3,94 +3,87 @@ pub use crate::operation::get_map_sprites::_get_map_sprites_output::GetMapSprite
 
 pub use crate::operation::get_map_sprites::_get_map_sprites_input::GetMapSpritesInputBuilder;
 
+impl GetMapSpritesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_map_sprites::GetMapSpritesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_map_sprites::GetMapSpritesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_map_sprites();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetMapSprites`.
-///
+/// 
 /// <p>Retrieves the sprite sheet corresponding to a map resource. The sprite sheet is a PNG image paired with a JSON document describing the offsets of individual icons that will be displayed on a rendered map.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMapSpritesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_map_sprites::builders::GetMapSpritesInputBuilder,
+                    inner: crate::operation::get_map_sprites::builders::GetMapSpritesInputBuilder,
 }
-impl GetMapSpritesFluentBuilder {
+impl GetMapSpritesFluentBuilder  {
     /// Creates a new `GetMapSprites`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_map_sprites::GetMapSprites,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetMapSprites as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_map_sprites::builders::GetMapSpritesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_map_sprites::GetMapSpritesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_map_sprites::GetMapSprites, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_map_sprites::GetMapSpritesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_map_sprites::GetMapSpritesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_map_sprites::GetMapSprites,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_map_sprites::GetMapSpritesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_map_sprites::GetMapSprites, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The map resource associated with the sprite ﬁle.</p>
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.map_name(input.into());
@@ -101,33 +94,50 @@ impl GetMapSpritesFluentBuilder {
         self.inner = self.inner.set_map_name(input);
         self
     }
-    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
-    /// <ul>
-    /// <li> <p> <code>sprites.png</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
-    /// </ul>
-    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
-    /// <ul>
-    /// <li> <p> <code>sprites.json</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// <p>The map resource associated with the sprite ﬁle.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_map_name()
+    }
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sprites.png</code> </p> </li> 
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> 
+    /// </ul> 
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sprites.json</code> </p> </li> 
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> 
     /// </ul>
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_name(input.into());
         self
     }
-    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
-    /// <ul>
-    /// <li> <p> <code>sprites.png</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
-    /// </ul>
-    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
-    /// <ul>
-    /// <li> <p> <code>sprites.json</code> </p> </li>
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sprites.png</code> </p> </li> 
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> 
+    /// </ul> 
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sprites.json</code> </p> </li> 
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> 
     /// </ul>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_name(input);
         self
+    }
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sprites.png</code> </p> </li> 
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> 
+    /// </ul> 
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sprites.json</code> </p> </li> 
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> 
+    /// </ul>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_name()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,4 +149,9 @@ impl GetMapSpritesFluentBuilder {
         self.inner = self.inner.set_key(input);
         self
     }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
+    }
 }
+

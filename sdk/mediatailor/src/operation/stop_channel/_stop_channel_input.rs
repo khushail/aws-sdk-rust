@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopChannelInput {
+pub struct StopChannelInput  {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
 }
 impl StopChannelInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl StopChannelInput {
 
 /// A builder for [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl StopChannelInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
+    }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// Consumes the builder and constructs a [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_channel::StopChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_channel::StopChannelInput {
-            channel_name: self.channel_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_channel::StopChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_channel::StopChannelInput {
+                channel_name: self.channel_name
+                ,
+            }
+        )
     }
 }
+

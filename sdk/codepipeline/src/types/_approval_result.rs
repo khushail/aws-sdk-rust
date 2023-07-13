@@ -3,7 +3,7 @@
 /// <p>Represents information about the result of an approval request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApprovalResult {
+pub struct ApprovalResult  {
     /// <p>The summary of the current status of the approval request.</p>
     #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ApprovalResult {
 }
 impl ApprovalResult {
     /// <p>The summary of the current status of the approval request.</p>
-    pub fn summary(&self) -> ::std::option::Option<&str> {
+    pub fn summary(&self) -> ::std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApprovalStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ApprovalStatus> {
         self.status.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl ApprovalResult {
 
 /// A builder for [`ApprovalResult`](crate::types::ApprovalResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalResultBuilder {
     pub(crate) summary: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApprovalStatus>,
@@ -45,8 +43,11 @@ impl ApprovalResultBuilder {
     }
     /// <p>The summary of the current status of the approval request.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
+    }
+    /// <p>The summary of the current status of the approval request.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.summary
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
     pub fn status(mut self, input: crate::types::ApprovalStatus) -> Self {
@@ -54,18 +55,21 @@ impl ApprovalResultBuilder {
         self
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApprovalStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ApprovalStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ApprovalResult`](crate::types::ApprovalResult).
     pub fn build(self) -> crate::types::ApprovalResult {
         crate::types::ApprovalResult {
-            summary: self.summary,
-            status: self.status,
+            summary: self.summary
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

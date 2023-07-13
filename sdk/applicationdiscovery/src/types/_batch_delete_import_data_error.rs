@@ -3,7 +3,7 @@
 /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteImportDataError {
+pub struct BatchDeleteImportDataError  {
     /// <p>The unique import ID associated with the error that occurred.</p>
     #[doc(hidden)]
     pub import_task_id: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,15 @@ pub struct BatchDeleteImportDataError {
 }
 impl BatchDeleteImportDataError {
     /// <p>The unique import ID associated with the error that occurred.</p>
-    pub fn import_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn import_task_id(&self) -> ::std::option::Option<& str> {
         self.import_task_id.as_deref()
     }
     /// <p>The type of error that occurred for a specific import task.</p>
-    pub fn error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchDeleteImportDataErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::BatchDeleteImportDataErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The description of the error that occurred for a specific import task.</p>
-    pub fn error_description(&self) -> ::std::option::Option<&str> {
+    pub fn error_description(&self) -> ::std::option::Option<& str> {
         self.error_description.as_deref()
     }
 }
@@ -39,9 +37,7 @@ impl BatchDeleteImportDataError {
 
 /// A builder for [`BatchDeleteImportDataError`](crate::types::BatchDeleteImportDataError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteImportDataErrorBuilder {
     pub(crate) import_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::BatchDeleteImportDataErrorCode>,
@@ -49,20 +45,17 @@ pub struct BatchDeleteImportDataErrorBuilder {
 }
 impl BatchDeleteImportDataErrorBuilder {
     /// <p>The unique import ID associated with the error that occurred.</p>
-    pub fn import_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique import ID associated with the error that occurred.</p>
-    pub fn set_import_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.import_task_id = input;
-        self
+    pub fn set_import_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.import_task_id = input; self
+    }
+    /// <p>The unique import ID associated with the error that occurred.</p>
+    pub fn get_import_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_task_id
     }
     /// <p>The type of error that occurred for a specific import task.</p>
     pub fn error_code(mut self, input: crate::types::BatchDeleteImportDataErrorCode) -> Self {
@@ -70,35 +63,36 @@ impl BatchDeleteImportDataErrorBuilder {
         self
     }
     /// <p>The type of error that occurred for a specific import task.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchDeleteImportDataErrorCode>,
-    ) -> Self {
-        self.error_code = input;
-        self
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::BatchDeleteImportDataErrorCode>) -> Self {
+        self.error_code = input; self
+    }
+    /// <p>The type of error that occurred for a specific import task.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BatchDeleteImportDataErrorCode> {
+        &self.error_code
     }
     /// <p>The description of the error that occurred for a specific import task.</p>
-    pub fn error_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the error that occurred for a specific import task.</p>
-    pub fn set_error_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_description = input;
-        self
+    pub fn set_error_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_description = input; self
+    }
+    /// <p>The description of the error that occurred for a specific import task.</p>
+    pub fn get_error_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_description
     }
     /// Consumes the builder and constructs a [`BatchDeleteImportDataError`](crate::types::BatchDeleteImportDataError).
     pub fn build(self) -> crate::types::BatchDeleteImportDataError {
         crate::types::BatchDeleteImportDataError {
-            import_task_id: self.import_task_id,
-            error_code: self.error_code,
-            error_description: self.error_description,
+            import_task_id: self.import_task_id
+            ,
+            error_code: self.error_code
+            ,
+            error_description: self.error_description
+            ,
         }
     }
 }
+

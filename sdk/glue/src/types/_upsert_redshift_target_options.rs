@@ -3,7 +3,7 @@
 /// <p>The options to configure an upsert operation when writing to a Redshift target .</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpsertRedshiftTargetOptions {
+pub struct UpsertRedshiftTargetOptions  {
     /// <p>The physical location of the Redshift table.</p>
     #[doc(hidden)]
     pub table_location: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct UpsertRedshiftTargetOptions {
 }
 impl UpsertRedshiftTargetOptions {
     /// <p>The physical location of the Redshift table.</p>
-    pub fn table_location(&self) -> ::std::option::Option<&str> {
+    pub fn table_location(&self) -> ::std::option::Option<& str> {
         self.table_location.as_deref()
     }
     /// <p>The name of the connection to use to write to Redshift.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The keys used to determine whether to perform an update or insert.</p>
-    pub fn upsert_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn upsert_keys(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.upsert_keys.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl UpsertRedshiftTargetOptions {
 
 /// A builder for [`UpsertRedshiftTargetOptions`](crate::types::UpsertRedshiftTargetOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpsertRedshiftTargetOptionsBuilder {
     pub(crate) table_location: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
@@ -47,36 +45,30 @@ pub struct UpsertRedshiftTargetOptionsBuilder {
 }
 impl UpsertRedshiftTargetOptionsBuilder {
     /// <p>The physical location of the Redshift table.</p>
-    pub fn table_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The physical location of the Redshift table.</p>
-    pub fn set_table_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.table_location = input;
-        self
+    pub fn set_table_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.table_location = input; self
+    }
+    /// <p>The physical location of the Redshift table.</p>
+    pub fn get_table_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_location
     }
     /// <p>The name of the connection to use to write to Redshift.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection to use to write to Redshift.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_name = input;
-        self
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_name = input; self
+    }
+    /// <p>The name of the connection to use to write to Redshift.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// Appends an item to `upsert_keys`.
     ///
@@ -85,24 +77,28 @@ impl UpsertRedshiftTargetOptionsBuilder {
     /// <p>The keys used to determine whether to perform an update or insert.</p>
     pub fn upsert_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.upsert_keys.unwrap_or_default();
-        v.push(input.into());
-        self.upsert_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.upsert_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The keys used to determine whether to perform an update or insert.</p>
-    pub fn set_upsert_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.upsert_keys = input;
-        self
+    pub fn set_upsert_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.upsert_keys = input; self
+    }
+    /// <p>The keys used to determine whether to perform an update or insert.</p>
+    pub fn get_upsert_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.upsert_keys
     }
     /// Consumes the builder and constructs a [`UpsertRedshiftTargetOptions`](crate::types::UpsertRedshiftTargetOptions).
     pub fn build(self) -> crate::types::UpsertRedshiftTargetOptions {
         crate::types::UpsertRedshiftTargetOptions {
-            table_location: self.table_location,
-            connection_name: self.connection_name,
-            upsert_keys: self.upsert_keys,
+            table_location: self.table_location
+            ,
+            connection_name: self.connection_name
+            ,
+            upsert_keys: self.upsert_keys
+            ,
         }
     }
 }
+

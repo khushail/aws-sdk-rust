@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartVoiceToneAnalysisTaskInput {
+pub struct StartVoiceToneAnalysisTaskInput  {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
@@ -18,34 +18,32 @@ pub struct StartVoiceToneAnalysisTaskInput {
 }
 impl StartVoiceToneAnalysisTaskInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The transaction ID.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>The language code.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
 impl StartVoiceToneAnalysisTaskInput {
     /// Creates a new builder-style object to manufacture [`StartVoiceToneAnalysisTaskInput`](crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput).
-    pub fn builder() -> crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder{
+    pub fn builder() -> crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder {
         crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`StartVoiceToneAnalysisTaskInput`](crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartVoiceToneAnalysisTaskInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
@@ -54,36 +52,30 @@ pub struct StartVoiceToneAnalysisTaskInputBuilder {
 }
 impl StartVoiceToneAnalysisTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voice_connector_id = input; self
+    }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
     }
     /// <p>The transaction ID.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transaction_id = input;
-        self
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transaction_id = input; self
+    }
+    /// <p>The transaction ID.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// <p>The language code.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -91,43 +83,40 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
         self
     }
     /// <p>The language code.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
+        self.language_code = input; self
+    }
+    /// <p>The language code.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartVoiceToneAnalysisTaskInput`](crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput {
-                voice_connector_id: self.voice_connector_id,
-                transaction_id: self.transaction_id,
-                language_code: self.language_code,
-                client_request_token: self.client_request_token,
-            },
+                voice_connector_id: self.voice_connector_id
+                ,
+                transaction_id: self.transaction_id
+                ,
+                language_code: self.language_code
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

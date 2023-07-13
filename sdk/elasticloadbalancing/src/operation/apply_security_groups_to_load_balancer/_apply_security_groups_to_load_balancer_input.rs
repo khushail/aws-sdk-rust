@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for ApplySecurityGroupsToLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplySecurityGroupsToLoadBalancerInput {
+pub struct ApplySecurityGroupsToLoadBalancerInput  {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
@@ -13,71 +13,63 @@ pub struct ApplySecurityGroupsToLoadBalancerInput {
 }
 impl ApplySecurityGroupsToLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn security_groups(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.security_groups.as_deref()
     }
 }
 impl ApplySecurityGroupsToLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`ApplySecurityGroupsToLoadBalancerInput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput).
-    pub fn builder() -> crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder{
+    pub fn builder() -> crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder {
         crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`ApplySecurityGroupsToLoadBalancerInput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplySecurityGroupsToLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ApplySecurityGroupsToLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.load_balancer_name = input; self
+    }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
     }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.security_groups = input; self
+    }
+    /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
     }
     /// Consumes the builder and constructs a [`ApplySecurityGroupsToLoadBalancerInput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name
@@ -88,3 +80,4 @@ impl ApplySecurityGroupsToLoadBalancerInputBuilder {
         )
     }
 }
+

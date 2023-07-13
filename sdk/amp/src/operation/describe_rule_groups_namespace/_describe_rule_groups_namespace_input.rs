@@ -3,7 +3,7 @@
 /// Represents the input of a DescribeRuleGroupsNamespace operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRuleGroupsNamespaceInput {
+pub struct DescribeRuleGroupsNamespaceInput  {
     /// The ID of the workspace to describe.
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
@@ -13,26 +13,24 @@ pub struct DescribeRuleGroupsNamespaceInput {
 }
 impl DescribeRuleGroupsNamespaceInput {
     /// The ID of the workspace to describe.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// The rule groups namespace.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DescribeRuleGroupsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleGroupsNamespaceInput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput).
-    pub fn builder() -> crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder{
+    pub fn builder() -> crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder {
         crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRuleGroupsNamespaceInput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
     }
     /// The ID of the workspace to describe.
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
+    }
+    /// The ID of the workspace to describe.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// The rule groups namespace.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +56,22 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
     }
     /// The rule groups namespace.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// The rule groups namespace.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DescribeRuleGroupsNamespaceInput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput {
-                workspace_id: self.workspace_id,
-                name: self.name,
-            },
+                workspace_id: self.workspace_id
+                ,
+                name: self.name
+                ,
+            }
         )
     }
 }
+

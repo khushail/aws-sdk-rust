@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImportsInput {
+pub struct ListImportsInput  {
     /// <p> The maximum number of imports to display on a single page. </p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -22,15 +22,15 @@ impl ListImportsInput {
         self.max_results
     }
     /// <p> The ARN of the destination event data store. </p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p> The status of the import. </p>
-    pub fn import_status(&self) -> ::std::option::Option<&crate::types::ImportStatus> {
+    pub fn import_status(&self) -> ::std::option::Option<& crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p> A token you can use to get the next page of import results. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -43,9 +43,7 @@ impl ListImportsInput {
 
 /// A builder for [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -60,8 +58,11 @@ impl ListImportsInputBuilder {
     }
     /// <p> The maximum number of imports to display on a single page. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> The maximum number of imports to display on a single page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p> The ARN of the destination event data store. </p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +71,11 @@ impl ListImportsInputBuilder {
     }
     /// <p> The ARN of the destination event data store. </p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
+    }
+    /// <p> The ARN of the destination event data store. </p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// <p> The status of the import. </p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -79,12 +83,12 @@ impl ListImportsInputBuilder {
         self
     }
     /// <p> The status of the import. </p>
-    pub fn set_import_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportStatus>,
-    ) -> Self {
-        self.import_status = input;
-        self
+    pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
+        self.import_status = input; self
+    }
+    /// <p> The status of the import. </p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        &self.import_status
     }
     /// <p> A token you can use to get the next page of import results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,21 +97,26 @@ impl ListImportsInputBuilder {
     }
     /// <p> A token you can use to get the next page of import results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> A token you can use to get the next page of import results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_imports::ListImportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_imports::ListImportsInput {
-            max_results: self.max_results,
-            destination: self.destination,
-            import_status: self.import_status,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_imports::ListImportsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_imports::ListImportsInput {
+                max_results: self.max_results
+                ,
+                destination: self.destination
+                ,
+                import_status: self.import_status
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

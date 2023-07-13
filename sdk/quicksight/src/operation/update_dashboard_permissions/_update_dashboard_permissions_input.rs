@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDashboardPermissionsInput {
+pub struct UpdateDashboardPermissionsInput  {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -14,87 +14,71 @@ pub struct UpdateDashboardPermissionsInput {
     pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>The permissions that you want to revoke from this resource.</p>
     #[doc(hidden)]
-    pub revoke_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>Grants link permissions to all users in a defined namespace.</p>
     #[doc(hidden)]
-    pub grant_link_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub grant_link_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>Revokes link permissions from all users in a defined namespace.</p>
     #[doc(hidden)]
-    pub revoke_link_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub revoke_link_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateDashboardPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The permissions that you want to grant on this resource.</p>
-    pub fn grant_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn grant_permissions(&self) -> ::std::option::Option<& [crate::types::ResourcePermission]> {
         self.grant_permissions.as_deref()
     }
     /// <p>The permissions that you want to revoke from this resource.</p>
-    pub fn revoke_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn revoke_permissions(&self) -> ::std::option::Option<& [crate::types::ResourcePermission]> {
         self.revoke_permissions.as_deref()
     }
     /// <p>Grants link permissions to all users in a defined namespace.</p>
-    pub fn grant_link_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn grant_link_permissions(&self) -> ::std::option::Option<& [crate::types::ResourcePermission]> {
         self.grant_link_permissions.as_deref()
     }
     /// <p>Revokes link permissions from all users in a defined namespace.</p>
-    pub fn revoke_link_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn revoke_link_permissions(&self) -> ::std::option::Option<& [crate::types::ResourcePermission]> {
         self.revoke_link_permissions.as_deref()
     }
 }
 impl UpdateDashboardPermissionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateDashboardPermissionsInput`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsInput).
-    pub fn builder() -> crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsInputBuilder{
+    pub fn builder() -> crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsInputBuilder {
         crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDashboardPermissionsInput`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDashboardPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
-    pub(crate) grant_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) revoke_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) grant_link_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) revoke_link_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) grant_link_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) revoke_link_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateDashboardPermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +87,11 @@ impl UpdateDashboardPermissionsInputBuilder {
     }
     /// <p>The ID for the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
     }
     /// Appends an item to `grant_permissions`.
     ///
@@ -113,17 +100,17 @@ impl UpdateDashboardPermissionsInputBuilder {
     /// <p>The permissions that you want to grant on this resource.</p>
     pub fn grant_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.grant_permissions.unwrap_or_default();
-        v.push(input);
-        self.grant_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.grant_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permissions that you want to grant on this resource.</p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.grant_permissions = input;
-        self
+    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.grant_permissions = input; self
+    }
+    /// <p>The permissions that you want to grant on this resource.</p>
+    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.grant_permissions
     }
     /// Appends an item to `revoke_permissions`.
     ///
@@ -132,17 +119,17 @@ impl UpdateDashboardPermissionsInputBuilder {
     /// <p>The permissions that you want to revoke from this resource.</p>
     pub fn revoke_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.revoke_permissions.unwrap_or_default();
-        v.push(input);
-        self.revoke_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.revoke_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permissions that you want to revoke from this resource.</p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.revoke_permissions = input;
-        self
+    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.revoke_permissions = input; self
+    }
+    /// <p>The permissions that you want to revoke from this resource.</p>
+    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.revoke_permissions
     }
     /// Appends an item to `grant_link_permissions`.
     ///
@@ -151,17 +138,17 @@ impl UpdateDashboardPermissionsInputBuilder {
     /// <p>Grants link permissions to all users in a defined namespace.</p>
     pub fn grant_link_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.grant_link_permissions.unwrap_or_default();
-        v.push(input);
-        self.grant_link_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.grant_link_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Grants link permissions to all users in a defined namespace.</p>
-    pub fn set_grant_link_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.grant_link_permissions = input;
-        self
+    pub fn set_grant_link_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.grant_link_permissions = input; self
+    }
+    /// <p>Grants link permissions to all users in a defined namespace.</p>
+    pub fn get_grant_link_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.grant_link_permissions
     }
     /// Appends an item to `revoke_link_permissions`.
     ///
@@ -170,34 +157,36 @@ impl UpdateDashboardPermissionsInputBuilder {
     /// <p>Revokes link permissions from all users in a defined namespace.</p>
     pub fn revoke_link_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.revoke_link_permissions.unwrap_or_default();
-        v.push(input);
-        self.revoke_link_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.revoke_link_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Revokes link permissions from all users in a defined namespace.</p>
-    pub fn set_revoke_link_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.revoke_link_permissions = input;
-        self
+    pub fn set_revoke_link_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.revoke_link_permissions = input; self
+    }
+    /// <p>Revokes link permissions from all users in a defined namespace.</p>
+    pub fn get_revoke_link_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.revoke_link_permissions
     }
     /// Consumes the builder and constructs a [`UpdateDashboardPermissionsInput`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsInput {
-                aws_account_id: self.aws_account_id,
-                dashboard_id: self.dashboard_id,
-                grant_permissions: self.grant_permissions,
-                revoke_permissions: self.revoke_permissions,
-                grant_link_permissions: self.grant_link_permissions,
-                revoke_link_permissions: self.revoke_link_permissions,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                dashboard_id: self.dashboard_id
+                ,
+                grant_permissions: self.grant_permissions
+                ,
+                revoke_permissions: self.revoke_permissions
+                ,
+                grant_link_permissions: self.grant_link_permissions
+                ,
+                revoke_link_permissions: self.revoke_link_permissions
+                ,
+            }
         )
     }
 }
+

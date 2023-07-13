@@ -3,126 +3,125 @@ pub use crate::operation::create_bucket::_create_bucket_output::CreateBucketOutp
 
 pub use crate::operation::create_bucket::_create_bucket_input::CreateBucketInputBuilder;
 
+impl CreateBucketInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_bucket::CreateBucketOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_bucket::CreateBucketError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_bucket();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateBucket`.
-///
-/// <note>
-/// <p>This action creates an Amazon S3 on Outposts bucket. To create an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create Bucket</a> in the <i>Amazon S3 API Reference</i>. </p>
-/// </note>
-/// <p>Creates a new Outposts bucket. By creating the bucket, you become the bucket owner. To create an Outposts bucket, you must have S3 on Outposts. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.</p>
-/// <p>Not every string is an acceptable bucket name. For information on bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working with Amazon S3 Buckets</a>.</p>
-/// <p>S3 on Outposts buckets support:</p>
-/// <ul>
-/// <li> <p>Tags</p> </li>
-/// <li> <p>LifecycleConfigurations for deleting expired objects</p> </li>
-/// </ul>
-/// <p>For a complete list of restrictions and Amazon S3 feature limitations on S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html"> Amazon S3 on Outposts Restrictions and Limitations</a>.</p>
-/// <p>For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and <code>x-amz-outpost-id</code> in your API request, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html#API_control_CreateBucket_Examples">Examples</a> section.</p>
-/// <p>The following actions are related to <code>CreateBucket</code> for Amazon S3 on Outposts:</p>
-/// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html">GetBucket</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html">DeleteBucket</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html">PutAccessPointPolicy</a> </p> </li>
+/// 
+/// <note> 
+/// <p>This action creates an Amazon S3 on Outposts bucket. To create an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create Bucket</a> in the <i>Amazon S3 API Reference</i>. </p> 
+/// </note> 
+/// <p>Creates a new Outposts bucket. By creating the bucket, you become the bucket owner. To create an Outposts bucket, you must have S3 on Outposts. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.</p> 
+/// <p>Not every string is an acceptable bucket name. For information on bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working with Amazon S3 Buckets</a>.</p> 
+/// <p>S3 on Outposts buckets support:</p> 
+/// <ul> 
+/// <li> <p>Tags</p> </li> 
+/// <li> <p>LifecycleConfigurations for deleting expired objects</p> </li> 
+/// </ul> 
+/// <p>For a complete list of restrictions and Amazon S3 feature limitations on S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html"> Amazon S3 on Outposts Restrictions and Limitations</a>.</p> 
+/// <p>For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and <code>x-amz-outpost-id</code> in your API request, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html#API_control_CreateBucket_Examples">Examples</a> section.</p> 
+/// <p>The following actions are related to <code>CreateBucket</code> for Amazon S3 on Outposts:</p> 
+/// <ul> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html">GetBucket</a> </p> </li> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html">DeleteBucket</a> </p> </li> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a> </p> </li> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html">PutAccessPointPolicy</a> </p> </li> 
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBucketFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_bucket::builders::CreateBucketInputBuilder,
+                    inner: crate::operation::create_bucket::builders::CreateBucketInputBuilder,
 }
-impl CreateBucketFluentBuilder {
+impl CreateBucketFluentBuilder  {
     /// Creates a new `CreateBucket`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bucket::CreateBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateBucket as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_bucket::builders::CreateBucketInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bucket::CreateBucketOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_bucket::CreateBucket, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bucket::CreateBucketOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bucket::CreateBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>The canned ACL to apply to the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_bucket::CreateBucket, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>The canned ACL to apply to the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     pub fn acl(mut self, input: crate::types::BucketCannedAcl) -> Self {
         self.inner = self.inner.acl(input);
         self
     }
-    /// <p>The canned ACL to apply to the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>The canned ACL to apply to the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::BucketCannedAcl>) -> Self {
         self.inner = self.inner.set_acl(input);
         self
+    }
+    /// <p>The canned ACL to apply to the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
+    /// </note>
+    pub fn get_acl(&self) -> &::std::option::Option<crate::types::BucketCannedAcl> {
+        self.inner.get_acl()
     }
     /// <p>The name of the bucket.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,143 +133,169 @@ impl CreateBucketFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
-    /// <p>The configuration information for the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>The name of the bucket.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
+    /// <p>The configuration information for the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn create_bucket_configuration(
-        mut self,
-        input: crate::types::CreateBucketConfiguration,
-    ) -> Self {
+    pub fn create_bucket_configuration(mut self, input: crate::types::CreateBucketConfiguration) -> Self {
         self.inner = self.inner.create_bucket_configuration(input);
         self
     }
-    /// <p>The configuration information for the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>The configuration information for the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn set_create_bucket_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateBucketConfiguration>,
-    ) -> Self {
+    pub fn set_create_bucket_configuration(mut self, input: ::std::option::Option<crate::types::CreateBucketConfiguration>) -> Self {
         self.inner = self.inner.set_create_bucket_configuration(input);
         self
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>The configuration information for the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn grant_full_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_create_bucket_configuration(&self) -> &::std::option::Option<crate::types::CreateBucketConfiguration> {
+        self.inner.get_create_bucket_configuration()
+    }
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
+    /// </note>
+    pub fn grant_full_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_full_control(input.into());
         self
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn set_grant_full_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_full_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_full_control(input);
         self
     }
-    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
+    /// </note>
+    pub fn get_grant_full_control(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_full_control()
+    }
+    /// <p>Allows grantee to list the objects in the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     pub fn grant_read(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_read(input.into());
         self
     }
-    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee to list the objects in the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_read(input);
         self
     }
-    /// <p>Allows grantee to read the bucket ACL.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee to list the objects in the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn grant_read_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_grant_read(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_read()
+    }
+    /// <p>Allows grantee to read the bucket ACL.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
+    /// </note>
+    pub fn grant_read_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_read_acp(input.into());
         self
     }
-    /// <p>Allows grantee to read the bucket ACL.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee to read the bucket ACL.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn set_grant_read_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_read_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_read_acp(input);
         self
     }
-    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee to read the bucket ACL.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
+    /// </note>
+    pub fn get_grant_read_acp(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_read_acp()
+    }
+    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     pub fn grant_write(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_write(input.into());
         self
     }
-    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     pub fn set_grant_write(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_write(input);
         self
     }
-    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn grant_write_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_grant_write(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_write()
+    }
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
+    /// </note>
+    pub fn grant_write_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_write_acp(input.into());
         self
     }
-    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn set_grant_write_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_write_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_write_acp(input);
         self
     }
-    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
+    /// </note>
+    pub fn get_grant_write_acp(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_write_acp()
+    }
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     pub fn object_lock_enabled_for_bucket(mut self, input: bool) -> Self {
         self.inner = self.inner.object_lock_enabled_for_bucket(input);
         self
     }
-    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
     /// </note>
-    pub fn set_object_lock_enabled_for_bucket(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_object_lock_enabled_for_bucket(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_object_lock_enabled_for_bucket(input);
         self
     }
-    /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
-    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note> 
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
+    /// </note>
+    pub fn get_object_lock_enabled_for_bucket(&self) -> &::std::option::Option<bool> {
+        self.inner.get_object_lock_enabled_for_bucket()
+    }
+    /// <p>The ID of the Outposts where the bucket is being created.</p> <note> 
+    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_id(input.into());
         self
     }
-    /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
-    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
+    /// <p>The ID of the Outposts where the bucket is being created.</p> <note> 
+    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p> 
     /// </note>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_id(input);
         self
     }
+    /// <p>The ID of the Outposts where the bucket is being created.</p> <note> 
+    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p> 
+    /// </note>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outpost_id()
+    }
 }
+

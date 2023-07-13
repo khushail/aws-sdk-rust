@@ -3,7 +3,7 @@
 /// Information about a logger
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Logger {
+pub struct Logger  {
     /// The component that will be subject to logging.
     #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::LoggerComponent>,
@@ -22,15 +22,15 @@ pub struct Logger {
 }
 impl Logger {
     /// The component that will be subject to logging.
-    pub fn component(&self) -> ::std::option::Option<&crate::types::LoggerComponent> {
+    pub fn component(&self) -> ::std::option::Option<& crate::types::LoggerComponent> {
         self.component.as_ref()
     }
     /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The level of the logs.
-    pub fn level(&self) -> ::std::option::Option<&crate::types::LoggerLevel> {
+    pub fn level(&self) -> ::std::option::Option<& crate::types::LoggerLevel> {
         self.level.as_ref()
     }
     /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
@@ -38,7 +38,7 @@ impl Logger {
         self.space
     }
     /// The type of log output which will be used.
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LoggerType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LoggerType> {
         self.r#type.as_ref()
     }
 }
@@ -51,9 +51,7 @@ impl Logger {
 
 /// A builder for [`Logger`](crate::types::Logger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggerBuilder {
     pub(crate) component: ::std::option::Option<crate::types::LoggerComponent>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -68,12 +66,12 @@ impl LoggerBuilder {
         self
     }
     /// The component that will be subject to logging.
-    pub fn set_component(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggerComponent>,
-    ) -> Self {
-        self.component = input;
-        self
+    pub fn set_component(mut self, input: ::std::option::Option<crate::types::LoggerComponent>) -> Self {
+        self.component = input; self
+    }
+    /// The component that will be subject to logging.
+    pub fn get_component(&self) -> &::std::option::Option<crate::types::LoggerComponent> {
+        &self.component
     }
     /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,8 +80,11 @@ impl LoggerBuilder {
     }
     /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The level of the logs.
     pub fn level(mut self, input: crate::types::LoggerLevel) -> Self {
@@ -92,8 +93,11 @@ impl LoggerBuilder {
     }
     /// The level of the logs.
     pub fn set_level(mut self, input: ::std::option::Option<crate::types::LoggerLevel>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
+    }
+    /// The level of the logs.
+    pub fn get_level(&self) -> &::std::option::Option<crate::types::LoggerLevel> {
+        &self.level
     }
     /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
     pub fn space(mut self, input: i32) -> Self {
@@ -102,8 +106,11 @@ impl LoggerBuilder {
     }
     /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
     pub fn set_space(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.space = input;
-        self
+        self.space = input; self
+    }
+    /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
+    pub fn get_space(&self) -> &::std::option::Option<i32> {
+        &self.space
     }
     /// The type of log output which will be used.
     pub fn r#type(mut self, input: crate::types::LoggerType) -> Self {
@@ -112,17 +119,26 @@ impl LoggerBuilder {
     }
     /// The type of log output which will be used.
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LoggerType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// The type of log output which will be used.
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LoggerType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Logger`](crate::types::Logger).
     pub fn build(self) -> crate::types::Logger {
         crate::types::Logger {
-            component: self.component,
-            id: self.id,
-            level: self.level,
-            space: self.space,
-            r#type: self.r#type,
+            component: self.component
+            ,
+            id: self.id
+            ,
+            level: self.level
+            ,
+            space: self.space
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

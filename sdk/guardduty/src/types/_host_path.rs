@@ -3,14 +3,14 @@
 /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HostPath {
+pub struct HostPath  {
     /// <p>Path of the file or directory on the host that the volume maps to.</p>
     #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl HostPath {
     /// <p>Path of the file or directory on the host that the volume maps to.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl HostPath {
 
 /// A builder for [`HostPath`](crate::types::HostPath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostPathBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl HostPathBuilder {
     }
     /// <p>Path of the file or directory on the host that the volume maps to.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
+    }
+    /// <p>Path of the file or directory on the host that the volume maps to.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// Consumes the builder and constructs a [`HostPath`](crate::types::HostPath).
     pub fn build(self) -> crate::types::HostPath {
-        crate::types::HostPath { path: self.path }
+        crate::types::HostPath {
+            path: self.path
+            ,
+        }
     }
 }
+

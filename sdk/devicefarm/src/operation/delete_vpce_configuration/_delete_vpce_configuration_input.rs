@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVpceConfigurationInput {
+pub struct DeleteVpceConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeleteVpceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpceConfigurationInput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder {
         crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpceConfigurationInput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpceConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DeleteVpceConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteVpceConfigurationInput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

@@ -5,7 +5,7 @@
 /// </important>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationId {
+pub struct ConfigurationId  {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ConfigurationId {
 }
 impl ConfigurationId {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision number of the configuration.</p>
@@ -32,9 +32,7 @@ impl ConfigurationId {
 
 /// A builder for [`ConfigurationId`](crate::types::ConfigurationId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationIdBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<i32>,
@@ -47,8 +45,11 @@ impl ConfigurationIdBuilder {
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The revision number of the configuration.</p>
     pub fn revision(mut self, input: i32) -> Self {
@@ -57,14 +58,20 @@ impl ConfigurationIdBuilder {
     }
     /// <p>The revision number of the configuration.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
+    }
+    /// <p>The revision number of the configuration.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i32> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`ConfigurationId`](crate::types::ConfigurationId).
     pub fn build(self) -> crate::types::ConfigurationId {
         crate::types::ConfigurationId {
-            id: self.id,
-            revision: self.revision,
+            id: self.id
+            ,
+            revision: self.revision
+            ,
         }
     }
 }
+

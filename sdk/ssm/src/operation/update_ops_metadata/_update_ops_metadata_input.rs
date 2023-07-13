@@ -2,134 +2,110 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOpsMetadataInput {
+pub struct UpdateOpsMetadataInput  {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
     #[doc(hidden)]
     pub ops_metadata_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata to add to an OpsMetadata object.</p>
     #[doc(hidden)]
-    pub metadata_to_update: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    >,
+    pub metadata_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
     #[doc(hidden)]
     pub keys_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateOpsMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
-    pub fn ops_metadata_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ops_metadata_arn(&self) -> ::std::option::Option<& str> {
         self.ops_metadata_arn.as_deref()
     }
     /// <p>Metadata to add to an OpsMetadata object.</p>
-    pub fn metadata_to_update(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    > {
+    pub fn metadata_to_update(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.metadata_to_update.as_ref()
     }
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
-    pub fn keys_to_delete(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn keys_to_delete(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.keys_to_delete.as_deref()
     }
 }
 impl UpdateOpsMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateOpsMetadataInput`](crate::operation::update_ops_metadata::UpdateOpsMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::update_ops_metadata::builders::UpdateOpsMetadataInputBuilder {
+    pub fn builder() -> crate::operation::update_ops_metadata::builders::UpdateOpsMetadataInputBuilder {
         crate::operation::update_ops_metadata::builders::UpdateOpsMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOpsMetadataInput`](crate::operation::update_ops_metadata::UpdateOpsMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOpsMetadataInputBuilder {
     pub(crate) ops_metadata_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata_to_update: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    >,
+    pub(crate) metadata_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     pub(crate) keys_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateOpsMetadataInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
-    pub fn ops_metadata_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_metadata_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_metadata_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
-    pub fn set_ops_metadata_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ops_metadata_arn = input;
-        self
+    pub fn set_ops_metadata_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ops_metadata_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
+    pub fn get_ops_metadata_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_metadata_arn
     }
     /// Adds a key-value pair to `metadata_to_update`.
     ///
     /// To override the contents of this collection use [`set_metadata_to_update`](Self::set_metadata_to_update).
     ///
     /// <p>Metadata to add to an OpsMetadata object.</p>
-    pub fn metadata_to_update(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MetadataValue,
-    ) -> Self {
+    pub fn metadata_to_update(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
         let mut hash_map = self.metadata_to_update.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.metadata_to_update = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.metadata_to_update = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata to add to an OpsMetadata object.</p>
-    pub fn set_metadata_to_update(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-        >,
-    ) -> Self {
-        self.metadata_to_update = input;
-        self
+    pub fn set_metadata_to_update(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>) -> Self {
+        self.metadata_to_update = input; self
+    }
+    /// <p>Metadata to add to an OpsMetadata object.</p>
+    pub fn get_metadata_to_update(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+        &self.metadata_to_update
     }
     /// Appends an item to `keys_to_delete`.
     ///
     /// To override the contents of this collection use [`set_keys_to_delete`](Self::set_keys_to_delete).
     ///
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
-    pub fn keys_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keys_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys_to_delete.unwrap_or_default();
-        v.push(input.into());
-        self.keys_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.keys_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
-    pub fn set_keys_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.keys_to_delete = input;
-        self
+    pub fn set_keys_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.keys_to_delete = input; self
+    }
+    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    pub fn get_keys_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keys_to_delete
     }
     /// Consumes the builder and constructs a [`UpdateOpsMetadataInput`](crate::operation::update_ops_metadata::UpdateOpsMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ops_metadata::UpdateOpsMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ops_metadata::UpdateOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_ops_metadata::UpdateOpsMetadataInput {
-                ops_metadata_arn: self.ops_metadata_arn,
-                metadata_to_update: self.metadata_to_update,
-                keys_to_delete: self.keys_to_delete,
-            },
+                ops_metadata_arn: self.ops_metadata_arn
+                ,
+                metadata_to_update: self.metadata_to_update
+                ,
+                keys_to_delete: self.keys_to_delete
+                ,
+            }
         )
     }
 }
+

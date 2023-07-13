@@ -3,116 +3,124 @@ pub use crate::operation::modify_mount_target_security_groups::_modify_mount_tar
 
 pub use crate::operation::modify_mount_target_security_groups::_modify_mount_target_security_groups_input::ModifyMountTargetSecurityGroupsInputBuilder;
 
+impl ModifyMountTargetSecurityGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.modify_mount_target_security_groups();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ModifyMountTargetSecurityGroups`.
-///
-/// <p>Modifies the set of security groups in effect for a mount target.</p>
-/// <p>When you create a mount target, Amazon EFS also creates a new network interface. For more information, see <code>CreateMountTarget</code>. This operation replaces the security groups in effect for the network interface associated with a mount target, with the <code>SecurityGroups</code> provided in the request. This operation requires that the network interface of the mount target has been created and the lifecycle state of the mount target is not <code>deleted</code>. </p>
-/// <p>The operation requires permissions for the following actions:</p>
-/// <ul>
-/// <li> <p> <code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action on the mount target's file system. </p> </li>
-/// <li> <p> <code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's network interface. </p> </li>
+/// 
+/// <p>Modifies the set of security groups in effect for a mount target.</p> 
+/// <p>When you create a mount target, Amazon EFS also creates a new network interface. For more information, see <code>CreateMountTarget</code>. This operation replaces the security groups in effect for the network interface associated with a mount target, with the <code>SecurityGroups</code> provided in the request. This operation requires that the network interface of the mount target has been created and the lifecycle state of the mount target is not <code>deleted</code>. </p> 
+/// <p>The operation requires permissions for the following actions:</p> 
+/// <ul> 
+/// <li> <p> <code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action on the mount target's file system. </p> </li> 
+/// <li> <p> <code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's network interface. </p> </li> 
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyMountTargetSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsInputBuilder,
 }
-impl ModifyMountTargetSecurityGroupsFluentBuilder {
+impl ModifyMountTargetSecurityGroupsFluentBuilder  {
     /// Creates a new `ModifyMountTargetSecurityGroups`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyMountTargetSecurityGroups as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
-    pub fn mount_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mount_target_id(input.into());
         self
     }
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
-    pub fn set_mount_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mount_target_id(input);
         self
+    }
+    /// <p>The ID of the mount target whose security groups you want to modify.</p>
+    pub fn get_mount_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mount_target_id()
     }
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>An array of up to five VPC security group IDs.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>An array of up to five VPC security group IDs.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
+    /// <p>An array of up to five VPC security group IDs.</p>
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_groups()
+    }
 }
+

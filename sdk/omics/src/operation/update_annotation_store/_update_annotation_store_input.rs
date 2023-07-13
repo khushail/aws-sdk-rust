@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnnotationStoreInput {
+pub struct UpdateAnnotationStoreInput  {
     /// <p>A name for the store.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct UpdateAnnotationStoreInput {
 }
 impl UpdateAnnotationStoreInput {
     /// <p>A name for the store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the store.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateAnnotationStoreInput {
     /// Creates a new builder-style object to manufacture [`UpdateAnnotationStoreInput`](crate::operation::update_annotation_store::UpdateAnnotationStoreInput).
-    pub fn builder(
-    ) -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreInputBuilder {
         crate::operation::update_annotation_store::builders::UpdateAnnotationStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAnnotationStoreInput`](crate::operation::update_annotation_store::UpdateAnnotationStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnnotationStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl UpdateAnnotationStoreInputBuilder {
     }
     /// <p>A name for the store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A name for the store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A description for the store.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl UpdateAnnotationStoreInputBuilder {
     }
     /// <p>A description for the store.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description for the store.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateAnnotationStoreInput`](crate::operation::update_annotation_store::UpdateAnnotationStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_annotation_store::UpdateAnnotationStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_annotation_store::UpdateAnnotationStoreInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_annotation_store::UpdateAnnotationStoreInput {
-                name: self.name,
-                description: self.description,
-            },
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

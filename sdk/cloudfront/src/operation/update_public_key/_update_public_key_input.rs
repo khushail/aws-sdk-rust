@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePublicKeyInput {
+pub struct UpdatePublicKeyInput  {
     /// <p>A public key configuration.</p>
     #[doc(hidden)]
     pub public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
@@ -15,15 +15,15 @@ pub struct UpdatePublicKeyInput {
 }
 impl UpdatePublicKeyInput {
     /// <p>A public key configuration.</p>
-    pub fn public_key_config(&self) -> ::std::option::Option<&crate::types::PublicKeyConfig> {
+    pub fn public_key_config(&self) -> ::std::option::Option<& crate::types::PublicKeyConfig> {
         self.public_key_config.as_ref()
     }
     /// <p>The identifier of the public key that you are updating.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl UpdatePublicKeyInput {
 
 /// A builder for [`UpdatePublicKeyInput`](crate::operation::update_public_key::UpdatePublicKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePublicKeyInputBuilder {
     pub(crate) public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -51,12 +49,12 @@ impl UpdatePublicKeyInputBuilder {
         self
     }
     /// <p>A public key configuration.</p>
-    pub fn set_public_key_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicKeyConfig>,
-    ) -> Self {
-        self.public_key_config = input;
-        self
+    pub fn set_public_key_config(mut self, input: ::std::option::Option<crate::types::PublicKeyConfig>) -> Self {
+        self.public_key_config = input; self
+    }
+    /// <p>A public key configuration.</p>
+    pub fn get_public_key_config(&self) -> &::std::option::Option<crate::types::PublicKeyConfig> {
+        &self.public_key_config
     }
     /// <p>The identifier of the public key that you are updating.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,8 +63,11 @@ impl UpdatePublicKeyInputBuilder {
     }
     /// <p>The identifier of the public key that you are updating.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the public key that you are updating.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,20 +76,24 @@ impl UpdatePublicKeyInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdatePublicKeyInput`](crate::operation::update_public_key::UpdatePublicKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_public_key::UpdatePublicKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_public_key::UpdatePublicKeyInput {
-            public_key_config: self.public_key_config,
-            id: self.id,
-            if_match: self.if_match,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_public_key::UpdatePublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_public_key::UpdatePublicKeyInput {
+                public_key_config: self.public_key_config
+                ,
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
+        )
     }
 }
+

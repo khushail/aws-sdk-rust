@@ -3,7 +3,7 @@
 /// <p>Analysis error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisError {
+pub struct AnalysisError  {
     /// <p>The type of the analysis error.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AnalysisErrorType>,
@@ -16,15 +16,15 @@ pub struct AnalysisError {
 }
 impl AnalysisError {
     /// <p>The type of the analysis error.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AnalysisErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AnalysisErrorType> {
         self.r#type.as_ref()
     }
     /// <p>The message associated with the analysis error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Lists the violated entities that caused the analysis error</p>
-    pub fn violated_entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
+    pub fn violated_entities(&self) -> ::std::option::Option<& [crate::types::Entity]> {
         self.violated_entities.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl AnalysisError {
 
 /// A builder for [`AnalysisError`](crate::types::AnalysisError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisErrorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AnalysisErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl AnalysisErrorBuilder {
         self
     }
     /// <p>The type of the analysis error.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisErrorType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AnalysisErrorType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of the analysis error.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AnalysisErrorType> {
+        &self.r#type
     }
     /// <p>The message associated with the analysis error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +64,11 @@ impl AnalysisErrorBuilder {
     }
     /// <p>The message associated with the analysis error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The message associated with the analysis error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `violated_entities`.
     ///
@@ -76,24 +77,28 @@ impl AnalysisErrorBuilder {
     /// <p>Lists the violated entities that caused the analysis error</p>
     pub fn violated_entities(mut self, input: crate::types::Entity) -> Self {
         let mut v = self.violated_entities.unwrap_or_default();
-        v.push(input);
-        self.violated_entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.violated_entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the violated entities that caused the analysis error</p>
-    pub fn set_violated_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
-        self.violated_entities = input;
-        self
+    pub fn set_violated_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
+        self.violated_entities = input; self
+    }
+    /// <p>Lists the violated entities that caused the analysis error</p>
+    pub fn get_violated_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        &self.violated_entities
     }
     /// Consumes the builder and constructs a [`AnalysisError`](crate::types::AnalysisError).
     pub fn build(self) -> crate::types::AnalysisError {
         crate::types::AnalysisError {
-            r#type: self.r#type,
-            message: self.message,
-            violated_entities: self.violated_entities,
+            r#type: self.r#type
+            ,
+            message: self.message
+            ,
+            violated_entities: self.violated_entities
+            ,
         }
     }
 }
+

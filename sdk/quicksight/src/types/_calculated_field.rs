@@ -3,7 +3,7 @@
 /// <p>The calculated field of an analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CalculatedField {
+pub struct CalculatedField  {
     /// <p>The data set that is used in this calculated field.</p>
     #[doc(hidden)]
     pub data_set_identifier: ::std::option::Option<::std::string::String>,
@@ -16,19 +16,19 @@ pub struct CalculatedField {
 }
 impl CalculatedField {
     /// <p>The data set that is used in this calculated field.</p>
-    pub fn data_set_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_identifier(&self) -> ::std::option::Option<& str> {
         self.data_set_identifier.as_deref()
     }
     /// <p>The name of the calculated field.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The expression of the calculated field.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
 }
-impl ::std::fmt::Debug for CalculatedField {
+impl  ::std::fmt::Debug for CalculatedField  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedField");
         formatter.field("data_set_identifier", &self.data_set_identifier);
@@ -54,20 +54,17 @@ pub struct CalculatedFieldBuilder {
 }
 impl CalculatedFieldBuilder {
     /// <p>The data set that is used in this calculated field.</p>
-    pub fn data_set_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data set that is used in this calculated field.</p>
-    pub fn set_data_set_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_set_identifier = input;
-        self
+    pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_set_identifier = input; self
+    }
+    /// <p>The data set that is used in this calculated field.</p>
+    pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_identifier
     }
     /// <p>The name of the calculated field.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,8 +73,11 @@ impl CalculatedFieldBuilder {
     }
     /// <p>The name of the calculated field.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the calculated field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The expression of the calculated field.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,15 +86,21 @@ impl CalculatedFieldBuilder {
     }
     /// <p>The expression of the calculated field.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
+    }
+    /// <p>The expression of the calculated field.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`CalculatedField`](crate::types::CalculatedField).
     pub fn build(self) -> crate::types::CalculatedField {
         crate::types::CalculatedField {
-            data_set_identifier: self.data_set_identifier,
-            name: self.name,
-            expression: self.expression,
+            data_set_identifier: self.data_set_identifier
+            ,
+            name: self.name
+            ,
+            expression: self.expression
+            ,
         }
     }
 }
@@ -107,3 +113,4 @@ impl ::std::fmt::Debug for CalculatedFieldBuilder {
         formatter.finish()
     }
 }
+

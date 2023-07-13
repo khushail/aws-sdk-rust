@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWebhookOutput {
+pub struct DeleteWebhookOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteWebhookOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteWebhookOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWebhookOutput`](crate::operation::delete_webhook::DeleteWebhookOutput).
     pub fn builder() -> crate::operation::delete_webhook::builders::DeleteWebhookOutputBuilder {
@@ -19,22 +19,20 @@ impl DeleteWebhookOutput {
 
 /// A builder for [`DeleteWebhookOutput`](crate::operation::delete_webhook::DeleteWebhookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWebhookOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteWebhookOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteWebhookOutput`](crate::operation::delete_webhook::DeleteWebhookOutput).
     pub fn build(self) -> crate::operation::delete_webhook::DeleteWebhookOutput {
         crate::operation::delete_webhook::DeleteWebhookOutput {
@@ -42,3 +40,4 @@ impl DeleteWebhookOutputBuilder {
         }
     }
 }
+

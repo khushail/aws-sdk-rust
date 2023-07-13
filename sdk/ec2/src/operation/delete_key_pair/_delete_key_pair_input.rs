@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKeyPairInput {
+pub struct DeleteKeyPairInput  {
     /// <p>The name of the key pair.</p>
     #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteKeyPairInput {
 }
 impl DeleteKeyPairInput {
     /// <p>The name of the key pair.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The ID of the key pair.</p>
-    pub fn key_pair_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_pair_id(&self) -> ::std::option::Option<& str> {
         self.key_pair_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,9 +36,7 @@ impl DeleteKeyPairInput {
 
 /// A builder for [`DeleteKeyPairInput`](crate::operation::delete_key_pair::DeleteKeyPairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKeyPairInputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_pair_id: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl DeleteKeyPairInputBuilder {
     }
     /// <p>The name of the key pair.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
+    }
+    /// <p>The name of the key pair.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// <p>The ID of the key pair.</p>
     pub fn key_pair_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl DeleteKeyPairInputBuilder {
     }
     /// <p>The ID of the key pair.</p>
     pub fn set_key_pair_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pair_id = input;
-        self
+        self.key_pair_id = input; self
+    }
+    /// <p>The ID of the key pair.</p>
+    pub fn get_key_pair_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -72,20 +76,24 @@ impl DeleteKeyPairInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteKeyPairInput`](crate::operation::delete_key_pair::DeleteKeyPairInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_key_pair::DeleteKeyPairInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_key_pair::DeleteKeyPairInput {
-            key_name: self.key_name,
-            key_pair_id: self.key_pair_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_key_pair::DeleteKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_key_pair::DeleteKeyPairInput {
+                key_name: self.key_name
+                ,
+                key_pair_id: self.key_pair_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

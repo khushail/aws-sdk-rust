@@ -3,7 +3,7 @@
 /// <p>Flywheel summary information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlywheelSummary {
+pub struct FlywheelSummary  {
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
     #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
@@ -34,39 +34,39 @@ pub struct FlywheelSummary {
 }
 impl FlywheelSummary {
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    pub fn flywheel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> ::std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
     /// <p>ARN of the active model version for the flywheel.</p>
-    pub fn active_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn active_model_arn(&self) -> ::std::option::Option<& str> {
         self.active_model_arn.as_deref()
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
-    pub fn data_lake_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn data_lake_s3_uri(&self) -> ::std::option::Option<& str> {
         self.data_lake_s3_uri.as_deref()
     }
     /// <p>The status of the flywheel.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FlywheelStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FlywheelStatus> {
         self.status.as_ref()
     }
     /// <p>Model type of the flywheel's model.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelType> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelType> {
         self.model_type.as_ref()
     }
     /// <p>A description of the status of the flywheel.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Creation time of the flywheel.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Last modified time for the flywheel.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The most recent flywheel iteration.</p>
-    pub fn latest_flywheel_iteration(&self) -> ::std::option::Option<&str> {
+    pub fn latest_flywheel_iteration(&self) -> ::std::option::Option<& str> {
         self.latest_flywheel_iteration.as_deref()
     }
 }
@@ -79,9 +79,7 @@ impl FlywheelSummary {
 
 /// A builder for [`FlywheelSummary`](crate::types::FlywheelSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlywheelSummaryBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) active_model_arn: ::std::option::Option<::std::string::String>,
@@ -101,40 +99,37 @@ impl FlywheelSummaryBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
     pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
     }
     /// <p>ARN of the active model version for the flywheel.</p>
-    pub fn active_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the active model version for the flywheel.</p>
-    pub fn set_active_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.active_model_arn = input;
-        self
+    pub fn set_active_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.active_model_arn = input; self
+    }
+    /// <p>ARN of the active model version for the flywheel.</p>
+    pub fn get_active_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_model_arn
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
-    pub fn data_lake_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_lake_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
-    pub fn set_data_lake_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_lake_s3_uri = input;
-        self
+    pub fn set_data_lake_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_lake_s3_uri = input; self
+    }
+    /// <p>Amazon S3 URI of the data lake location. </p>
+    pub fn get_data_lake_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_lake_s3_uri
     }
     /// <p>The status of the flywheel.</p>
     pub fn status(mut self, input: crate::types::FlywheelStatus) -> Self {
@@ -142,12 +137,12 @@ impl FlywheelSummaryBuilder {
         self
     }
     /// <p>The status of the flywheel.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FlywheelStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FlywheelStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the flywheel.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FlywheelStatus> {
+        &self.status
     }
     /// <p>Model type of the flywheel's model.</p>
     pub fn model_type(mut self, input: crate::types::ModelType) -> Self {
@@ -156,8 +151,11 @@ impl FlywheelSummaryBuilder {
     }
     /// <p>Model type of the flywheel's model.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelType>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
+    }
+    /// <p>Model type of the flywheel's model.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelType> {
+        &self.model_type
     }
     /// <p>A description of the status of the flywheel.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,8 +164,11 @@ impl FlywheelSummaryBuilder {
     }
     /// <p>A description of the status of the flywheel.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A description of the status of the flywheel.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>Creation time of the flywheel.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -175,12 +176,12 @@ impl FlywheelSummaryBuilder {
         self
     }
     /// <p>Creation time of the flywheel.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>Creation time of the flywheel.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Last modified time for the flywheel.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -188,41 +189,48 @@ impl FlywheelSummaryBuilder {
         self
     }
     /// <p>Last modified time for the flywheel.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
+    }
+    /// <p>Last modified time for the flywheel.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The most recent flywheel iteration.</p>
-    pub fn latest_flywheel_iteration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_flywheel_iteration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_flywheel_iteration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The most recent flywheel iteration.</p>
-    pub fn set_latest_flywheel_iteration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.latest_flywheel_iteration = input;
-        self
+    pub fn set_latest_flywheel_iteration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.latest_flywheel_iteration = input; self
+    }
+    /// <p>The most recent flywheel iteration.</p>
+    pub fn get_latest_flywheel_iteration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_flywheel_iteration
     }
     /// Consumes the builder and constructs a [`FlywheelSummary`](crate::types::FlywheelSummary).
     pub fn build(self) -> crate::types::FlywheelSummary {
         crate::types::FlywheelSummary {
-            flywheel_arn: self.flywheel_arn,
-            active_model_arn: self.active_model_arn,
-            data_lake_s3_uri: self.data_lake_s3_uri,
-            status: self.status,
-            model_type: self.model_type,
-            message: self.message,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            latest_flywheel_iteration: self.latest_flywheel_iteration,
+            flywheel_arn: self.flywheel_arn
+            ,
+            active_model_arn: self.active_model_arn
+            ,
+            data_lake_s3_uri: self.data_lake_s3_uri
+            ,
+            status: self.status
+            ,
+            model_type: self.model_type
+            ,
+            message: self.message
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            latest_flywheel_iteration: self.latest_flywheel_iteration
+            ,
         }
     }
 }
+

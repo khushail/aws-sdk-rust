@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvideAnomalyFeedbackInput {
+pub struct ProvideAnomalyFeedbackInput  {
     /// <p>A cost anomaly ID. </p>
     #[doc(hidden)]
     pub anomaly_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct ProvideAnomalyFeedbackInput {
 }
 impl ProvideAnomalyFeedbackInput {
     /// <p>A cost anomaly ID. </p>
-    pub fn anomaly_id(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_id(&self) -> ::std::option::Option<& str> {
         self.anomaly_id.as_deref()
     }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
-    pub fn feedback(&self) -> ::std::option::Option<&crate::types::AnomalyFeedbackType> {
+    pub fn feedback(&self) -> ::std::option::Option<& crate::types::AnomalyFeedbackType> {
         self.feedback.as_ref()
     }
 }
 impl ProvideAnomalyFeedbackInput {
     /// Creates a new builder-style object to manufacture [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
-    pub fn builder(
-    ) -> crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder
-    {
+    pub fn builder() -> crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder {
         crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder::default()
     }
 }
 
 /// A builder for [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackInputBuilder {
     pub(crate) anomaly_id: ::std::option::Option<::std::string::String>,
     pub(crate) feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
@@ -46,8 +42,11 @@ impl ProvideAnomalyFeedbackInputBuilder {
     }
     /// <p>A cost anomaly ID. </p>
     pub fn set_anomaly_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_id = input;
-        self
+        self.anomaly_id = input; self
+    }
+    /// <p>A cost anomaly ID. </p>
+    pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_id
     }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
     pub fn feedback(mut self, input: crate::types::AnomalyFeedbackType) -> Self {
@@ -55,25 +54,23 @@ impl ProvideAnomalyFeedbackInputBuilder {
         self
     }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
-    pub fn set_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyFeedbackType>,
-    ) -> Self {
-        self.feedback = input;
-        self
+    pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
+        self.feedback = input; self
+    }
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    pub fn get_feedback(&self) -> &::std::option::Option<crate::types::AnomalyFeedbackType> {
+        &self.feedback
     }
     /// Consumes the builder and constructs a [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput {
-                anomaly_id: self.anomaly_id,
-                feedback: self.feedback,
-            },
+                anomaly_id: self.anomaly_id
+                ,
+                feedback: self.feedback
+                ,
+            }
         )
     }
 }
+

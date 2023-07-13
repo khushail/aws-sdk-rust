@@ -3,7 +3,7 @@
 /// <p>Filter based on size (in bytes).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LongRangeType {
+pub struct LongRangeType  {
     /// <p>The size start range (in bytes).</p>
     #[doc(hidden)]
     pub start_value: ::std::option::Option<i64>,
@@ -30,9 +30,7 @@ impl LongRangeType {
 
 /// A builder for [`LongRangeType`](crate::types::LongRangeType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LongRangeTypeBuilder {
     pub(crate) start_value: ::std::option::Option<i64>,
     pub(crate) end_value: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl LongRangeTypeBuilder {
     }
     /// <p>The size start range (in bytes).</p>
     pub fn set_start_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start_value = input;
-        self
+        self.start_value = input; self
+    }
+    /// <p>The size start range (in bytes).</p>
+    pub fn get_start_value(&self) -> &::std::option::Option<i64> {
+        &self.start_value
     }
     /// <p>The size end range (in bytes).</p>
     pub fn end_value(mut self, input: i64) -> Self {
@@ -55,14 +56,20 @@ impl LongRangeTypeBuilder {
     }
     /// <p>The size end range (in bytes).</p>
     pub fn set_end_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end_value = input;
-        self
+        self.end_value = input; self
+    }
+    /// <p>The size end range (in bytes).</p>
+    pub fn get_end_value(&self) -> &::std::option::Option<i64> {
+        &self.end_value
     }
     /// Consumes the builder and constructs a [`LongRangeType`](crate::types::LongRangeType).
     pub fn build(self) -> crate::types::LongRangeType {
         crate::types::LongRangeType {
-            start_value: self.start_value,
-            end_value: self.end_value,
+            start_value: self.start_value
+            ,
+            end_value: self.end_value
+            ,
         }
     }
 }
+

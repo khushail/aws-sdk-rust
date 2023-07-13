@@ -3,7 +3,7 @@
 /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Aggregate {
+pub struct Aggregate  {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct Aggregate {
 }
 impl Aggregate {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>Specifies the fields to group by.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
+    pub fn groups(&self) -> ::std::option::Option<& [::std::vec::Vec<::std::string::String>]> {
         self.groups.as_deref()
     }
     /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
-    pub fn aggs(&self) -> ::std::option::Option<&[crate::types::AggregateOperation]> {
+    pub fn aggs(&self) -> ::std::option::Option<& [crate::types::AggregateOperation]> {
         self.aggs.as_deref()
     }
 }
@@ -44,14 +44,11 @@ impl Aggregate {
 
 /// A builder for [`Aggregate`](crate::types::Aggregate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) groups:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) aggs: ::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>>,
 }
 impl AggregateBuilder {
@@ -62,8 +59,11 @@ impl AggregateBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `inputs`.
     ///
@@ -72,17 +72,17 @@ impl AggregateBuilder {
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inputs = input; self
+    }
+    /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// Appends an item to `groups`.
     ///
@@ -91,17 +91,17 @@ impl AggregateBuilder {
     /// <p>Specifies the fields to group by.</p>
     pub fn groups(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the fields to group by.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
+        self.groups = input; self
+    }
+    /// <p>Specifies the fields to group by.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.groups
     }
     /// Appends an item to `aggs`.
     ///
@@ -110,25 +110,30 @@ impl AggregateBuilder {
     /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
     pub fn aggs(mut self, input: crate::types::AggregateOperation) -> Self {
         let mut v = self.aggs.unwrap_or_default();
-        v.push(input);
-        self.aggs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
-    pub fn set_aggs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>>,
-    ) -> Self {
-        self.aggs = input;
-        self
+    pub fn set_aggs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>>) -> Self {
+        self.aggs = input; self
+    }
+    /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    pub fn get_aggs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>> {
+        &self.aggs
     }
     /// Consumes the builder and constructs a [`Aggregate`](crate::types::Aggregate).
     pub fn build(self) -> crate::types::Aggregate {
         crate::types::Aggregate {
-            name: self.name,
-            inputs: self.inputs,
-            groups: self.groups,
-            aggs: self.aggs,
+            name: self.name
+            ,
+            inputs: self.inputs
+            ,
+            groups: self.groups
+            ,
+            aggs: self.aggs
+            ,
         }
     }
 }
+

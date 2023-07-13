@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CountPendingActivityTasksInput {
+pub struct CountPendingActivityTasksInput  {
     /// <p>The name of the domain that contains the task list.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct CountPendingActivityTasksInput {
 }
 impl CountPendingActivityTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the task list.</p>
-    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+    pub fn task_list(&self) -> ::std::option::Option<& crate::types::TaskList> {
         self.task_list.as_ref()
     }
 }
 impl CountPendingActivityTasksInput {
     /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksInput`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput).
-    pub fn builder() -> crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder{
+    pub fn builder() -> crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder {
         crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`CountPendingActivityTasksInput`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CountPendingActivityTasksInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,
@@ -44,8 +42,11 @@ impl CountPendingActivityTasksInputBuilder {
     }
     /// <p>The name of the domain that contains the task list.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The name of the domain that contains the task list.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The name of the task list.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
@@ -54,21 +55,22 @@ impl CountPendingActivityTasksInputBuilder {
     }
     /// <p>The name of the task list.</p>
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
-        self.task_list = input;
-        self
+        self.task_list = input; self
+    }
+    /// <p>The name of the task list.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
     }
     /// Consumes the builder and constructs a [`CountPendingActivityTasksInput`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput {
-                domain: self.domain,
-                task_list: self.task_list,
-            },
+                domain: self.domain
+                ,
+                task_list: self.task_list
+                ,
+            }
         )
     }
 }
+

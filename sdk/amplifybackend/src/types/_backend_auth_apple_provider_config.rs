@@ -3,7 +3,7 @@
 /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackendAuthAppleProviderConfig {
+pub struct BackendAuthAppleProviderConfig  {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
     #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct BackendAuthAppleProviderConfig {
 }
 impl BackendAuthAppleProviderConfig {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>Describes the key_id that comes from Apple.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>Describes the private_key that comes from Apple.</p>
-    pub fn private_key(&self) -> ::std::option::Option<&str> {
+    pub fn private_key(&self) -> ::std::option::Option<& str> {
         self.private_key.as_deref()
     }
     /// <p>Describes the team_id that comes from Apple.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<& str> {
         self.team_id.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl BackendAuthAppleProviderConfig {
 
 /// A builder for [`BackendAuthAppleProviderConfig`](crate::types::BackendAuthAppleProviderConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendAuthAppleProviderConfigBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl BackendAuthAppleProviderConfigBuilder {
     }
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
+    }
+    /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>Describes the key_id that comes from Apple.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl BackendAuthAppleProviderConfigBuilder {
     }
     /// <p>Describes the key_id that comes from Apple.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
+    }
+    /// <p>Describes the key_id that comes from Apple.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>Describes the private_key that comes from Apple.</p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl BackendAuthAppleProviderConfigBuilder {
     }
     /// <p>Describes the private_key that comes from Apple.</p>
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
+    }
+    /// <p>Describes the private_key that comes from Apple.</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key
     }
     /// <p>Describes the team_id that comes from Apple.</p>
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl BackendAuthAppleProviderConfigBuilder {
     }
     /// <p>Describes the team_id that comes from Apple.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
+    }
+    /// <p>Describes the team_id that comes from Apple.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
     }
     /// Consumes the builder and constructs a [`BackendAuthAppleProviderConfig`](crate::types::BackendAuthAppleProviderConfig).
     pub fn build(self) -> crate::types::BackendAuthAppleProviderConfig {
         crate::types::BackendAuthAppleProviderConfig {
-            client_id: self.client_id,
-            key_id: self.key_id,
-            private_key: self.private_key,
-            team_id: self.team_id,
+            client_id: self.client_id
+            ,
+            key_id: self.key_id
+            ,
+            private_key: self.private_key
+            ,
+            team_id: self.team_id
+            ,
         }
     }
 }
+

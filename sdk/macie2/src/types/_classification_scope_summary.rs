@@ -3,7 +3,7 @@
 /// <p>Provides information about the classification scope for an Amazon Macie account. Macie uses the scope's settings when it performs automated sensitive data discovery for the account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClassificationScopeSummary {
+pub struct ClassificationScopeSummary  {
     /// <p>The unique identifier for the classification scope.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ClassificationScopeSummary {
 }
 impl ClassificationScopeSummary {
     /// <p>The unique identifier for the classification scope.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ClassificationScopeSummary {
 
 /// A builder for [`ClassificationScopeSummary`](crate::types::ClassificationScopeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassificationScopeSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ClassificationScopeSummaryBuilder {
     }
     /// <p>The unique identifier for the classification scope.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier for the classification scope.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ClassificationScopeSummaryBuilder {
     }
     /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`ClassificationScopeSummary`](crate::types::ClassificationScopeSummary).
     pub fn build(self) -> crate::types::ClassificationScopeSummary {
         crate::types::ClassificationScopeSummary {
-            id: self.id,
-            name: self.name,
+            id: self.id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

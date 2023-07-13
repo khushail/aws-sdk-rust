@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImagePermissionsInput {
+pub struct DescribeImagePermissionsInput  {
     /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct DescribeImagePermissionsInput {
 }
 impl DescribeImagePermissionsInput {
     /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum size of each page of results.</p>
@@ -26,33 +26,28 @@ impl DescribeImagePermissionsInput {
         self.max_results
     }
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn shared_aws_account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn shared_aws_account_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.shared_aws_account_ids.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeImagePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeImagePermissionsInput`](crate::operation::describe_image_permissions::DescribeImagePermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder {
         crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImagePermissionsInput`](crate::operation::describe_image_permissions::DescribeImagePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImagePermissionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) shared_aws_account_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) shared_aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImagePermissionsInputBuilder {
@@ -63,8 +58,11 @@ impl DescribeImagePermissionsInputBuilder {
     }
     /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -73,30 +71,30 @@ impl DescribeImagePermissionsInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `shared_aws_account_ids`.
     ///
     /// To override the contents of this collection use [`set_shared_aws_account_ids`](Self::set_shared_aws_account_ids).
     ///
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn shared_aws_account_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_aws_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shared_aws_account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.shared_aws_account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.shared_aws_account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn set_shared_aws_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.shared_aws_account_ids = input;
-        self
+    pub fn set_shared_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.shared_aws_account_ids = input; self
+    }
+    /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
+    pub fn get_shared_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.shared_aws_account_ids
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,23 +103,26 @@ impl DescribeImagePermissionsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeImagePermissionsInput`](crate::operation::describe_image_permissions::DescribeImagePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_image_permissions::DescribeImagePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_image_permissions::DescribeImagePermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_image_permissions::DescribeImagePermissionsInput {
-                name: self.name,
-                max_results: self.max_results,
-                shared_aws_account_ids: self.shared_aws_account_ids,
-                next_token: self.next_token,
-            },
+                name: self.name
+                ,
+                max_results: self.max_results
+                ,
+                shared_aws_account_ids: self.shared_aws_account_ids
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

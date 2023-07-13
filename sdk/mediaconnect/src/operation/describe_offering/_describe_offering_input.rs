@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOfferingInput {
+pub struct DescribeOfferingInput  {
     /// The Amazon Resource Name (ARN) of the offering.
     #[doc(hidden)]
     pub offering_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
-    pub fn offering_arn(&self) -> ::std::option::Option<&str> {
+    pub fn offering_arn(&self) -> ::std::option::Option<& str> {
         self.offering_arn.as_deref()
     }
 }
 impl DescribeOfferingInput {
     /// Creates a new builder-style object to manufacture [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
-    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingInputBuilder {
         crate::operation::describe_offering::builders::DescribeOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOfferingInputBuilder {
     pub(crate) offering_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DescribeOfferingInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the offering.
     pub fn set_offering_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_arn = input;
-        self
+        self.offering_arn = input; self
+    }
+    /// The Amazon Resource Name (ARN) of the offering.
+    pub fn get_offering_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_arn
     }
     /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_offering::DescribeOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_offering::DescribeOfferingInput {
-            offering_arn: self.offering_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_offering::DescribeOfferingInput {
+                offering_arn: self.offering_arn
+                ,
+            }
+        )
     }
 }
+

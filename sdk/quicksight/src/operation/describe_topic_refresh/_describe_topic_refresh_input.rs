@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTopicRefreshInput {
+pub struct DescribeTopicRefreshInput  {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct DescribeTopicRefreshInput {
 }
 impl DescribeTopicRefreshInput {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The ID of the refresh, which is performed when the topic is created or updated.</p>
-    pub fn refresh_id(&self) -> ::std::option::Option<&str> {
+    pub fn refresh_id(&self) -> ::std::option::Option<& str> {
         self.refresh_id.as_deref()
     }
 }
 impl DescribeTopicRefreshInput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicRefreshInput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshInput).
-    pub fn builder(
-    ) -> crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshInputBuilder {
+    pub fn builder() -> crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshInputBuilder {
         crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTopicRefreshInput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTopicRefreshInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
@@ -47,20 +44,17 @@ pub struct DescribeTopicRefreshInputBuilder {
 }
 impl DescribeTopicRefreshInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +63,11 @@ impl DescribeTopicRefreshInputBuilder {
     }
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
+    }
+    /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_id
     }
     /// <p>The ID of the refresh, which is performed when the topic is created or updated.</p>
     pub fn refresh_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,22 +76,24 @@ impl DescribeTopicRefreshInputBuilder {
     }
     /// <p>The ID of the refresh, which is performed when the topic is created or updated.</p>
     pub fn set_refresh_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.refresh_id = input;
-        self
+        self.refresh_id = input; self
+    }
+    /// <p>The ID of the refresh, which is performed when the topic is created or updated.</p>
+    pub fn get_refresh_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_id
     }
     /// Consumes the builder and constructs a [`DescribeTopicRefreshInput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_topic_refresh::DescribeTopicRefreshInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_topic_refresh::DescribeTopicRefreshInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_topic_refresh::DescribeTopicRefreshInput {
-                aws_account_id: self.aws_account_id,
-                topic_id: self.topic_id,
-                refresh_id: self.refresh_id,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                topic_id: self.topic_id
+                ,
+                refresh_id: self.refresh_id
+                ,
+            }
         )
     }
 }
+

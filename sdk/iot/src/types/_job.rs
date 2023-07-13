@@ -3,15 +3,15 @@
 /// <p>The <code>Job</code> object contains details about a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Job {
+pub struct Job  {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
     #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
     #[doc(hidden)]
     pub target_selection: ::std::option::Option<crate::types::TargetSelection>,
@@ -38,8 +38,7 @@ pub struct Job {
     pub presigned_url_config: ::std::option::Option<crate::types::PresignedUrlConfig>,
     /// <p>Allows you to create a staged rollout of a job.</p>
     #[doc(hidden)]
-    pub job_executions_rollout_config:
-        ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
+    pub job_executions_rollout_config: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     /// <p>Configuration for criteria to abort the job.</p>
     #[doc(hidden)]
     pub abort_config: ::std::option::Option<crate::types::AbortConfig>,
@@ -58,10 +57,10 @@ pub struct Job {
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     #[doc(hidden)]
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     #[doc(hidden)]
     pub namespace_id: ::std::option::Option<::std::string::String>,
@@ -71,13 +70,11 @@ pub struct Job {
     /// <p>The configuration for the criteria to retry the job.</p>
     #[doc(hidden)]
     pub job_executions_retry_config: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
-    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note> 
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> 
     /// </note>
     #[doc(hidden)]
-    pub document_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub document_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     #[doc(hidden)]
     pub is_concurrent: ::std::option::Option<bool>,
@@ -86,26 +83,29 @@ pub struct Job {
     pub scheduling_config: ::std::option::Option<crate::types::SchedulingConfig>,
     /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
     #[doc(hidden)]
-    pub scheduled_job_rollouts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>,
+    pub scheduled_job_rollouts: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>,
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p> 
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    #[doc(hidden)]
+    pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Job {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
-    pub fn target_selection(&self) -> ::std::option::Option<&crate::types::TargetSelection> {
+    pub fn target_selection(&self) -> ::std::option::Option<& crate::types::TargetSelection> {
         self.target_selection.as_ref()
     }
     /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
@@ -113,81 +113,73 @@ impl Job {
         self.force_canceled
     }
     /// <p>If the job was updated, provides the reason code for the update.</p>
-    pub fn reason_code(&self) -> ::std::option::Option<&str> {
+    pub fn reason_code(&self) -> ::std::option::Option<& str> {
         self.reason_code.as_deref()
     }
     /// <p>If the job was updated, describes the reason for the update.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>A list of IoT things and thing groups to which the job should be sent.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn targets(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.targets.as_deref()
     }
     /// <p>A short text description of the job.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
-    pub fn presigned_url_config(&self) -> ::std::option::Option<&crate::types::PresignedUrlConfig> {
+    pub fn presigned_url_config(&self) -> ::std::option::Option<& crate::types::PresignedUrlConfig> {
         self.presigned_url_config.as_ref()
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
-    pub fn job_executions_rollout_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JobExecutionsRolloutConfig> {
+    pub fn job_executions_rollout_config(&self) -> ::std::option::Option<& crate::types::JobExecutionsRolloutConfig> {
         self.job_executions_rollout_config.as_ref()
     }
     /// <p>Configuration for criteria to abort the job.</p>
-    pub fn abort_config(&self) -> ::std::option::Option<&crate::types::AbortConfig> {
+    pub fn abort_config(&self) -> ::std::option::Option<& crate::types::AbortConfig> {
         self.abort_config.as_ref()
     }
     /// <p>The time, in seconds since the epoch, when the job was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The time, in seconds since the epoch, when the job was completed.</p>
-    pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>Details about the job process.</p>
-    pub fn job_process_details(&self) -> ::std::option::Option<&crate::types::JobProcessDetails> {
+    pub fn job_process_details(&self) -> ::std::option::Option<& crate::types::JobProcessDetails> {
         self.job_process_details.as_ref()
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    pub fn timeout_config(&self) -> ::std::option::Option<&crate::types::TimeoutConfig> {
+    pub fn timeout_config(&self) -> ::std::option::Option<& crate::types::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
-    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_id(&self) -> ::std::option::Option<& str> {
         self.namespace_id.as_deref()
     }
     /// <p>The ARN of the job template used to create the job.</p>
-    pub fn job_template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_template_arn(&self) -> ::std::option::Option<& str> {
         self.job_template_arn.as_deref()
     }
     /// <p>The configuration for the criteria to retry the job.</p>
-    pub fn job_executions_retry_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JobExecutionsRetryConfig> {
+    pub fn job_executions_retry_config(&self) -> ::std::option::Option<& crate::types::JobExecutionsRetryConfig> {
         self.job_executions_retry_config.as_ref()
     }
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
-    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note> 
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> 
     /// </note>
-    pub fn document_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn document_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.document_parameters.as_ref()
     }
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
@@ -195,14 +187,17 @@ impl Job {
         self.is_concurrent
     }
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
-    pub fn scheduling_config(&self) -> ::std::option::Option<&crate::types::SchedulingConfig> {
+    pub fn scheduling_config(&self) -> ::std::option::Option<& crate::types::SchedulingConfig> {
         self.scheduling_config.as_ref()
     }
     /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
-    pub fn scheduled_job_rollouts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScheduledJobRollout]> {
+    pub fn scheduled_job_rollouts(&self) -> ::std::option::Option<& [crate::types::ScheduledJobRollout]> {
         self.scheduled_job_rollouts.as_deref()
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p> 
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(&self) -> ::std::option::Option<& [::std::string::String]> {
+        self.destination_package_versions.as_deref()
     }
 }
 impl Job {
@@ -214,9 +209,7 @@ impl Job {
 
 /// A builder for [`Job`](crate::types::Job).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -228,8 +221,7 @@ pub struct JobBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) presigned_url_config: ::std::option::Option<crate::types::PresignedUrlConfig>,
-    pub(crate) job_executions_rollout_config:
-        ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
+    pub(crate) job_executions_rollout_config: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     pub(crate) abort_config: ::std::option::Option<crate::types::AbortConfig>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -238,15 +230,12 @@ pub struct JobBuilder {
     pub(crate) timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
     pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_template_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) job_executions_retry_config:
-        ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    pub(crate) document_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) job_executions_retry_config: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
+    pub(crate) document_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) is_concurrent: ::std::option::Option<bool>,
     pub(crate) scheduling_config: ::std::option::Option<crate::types::SchedulingConfig>,
-    pub(crate) scheduled_job_rollouts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>,
+    pub(crate) scheduled_job_rollouts: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>,
+    pub(crate) destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl JobBuilder {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -256,8 +245,11 @@ impl JobBuilder {
     }
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
+    }
+    /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -266,25 +258,30 @@ impl JobBuilder {
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
     pub fn target_selection(mut self, input: crate::types::TargetSelection) -> Self {
         self.target_selection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
-    pub fn set_target_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetSelection>,
-    ) -> Self {
-        self.target_selection = input;
-        self
+    pub fn set_target_selection(mut self, input: ::std::option::Option<crate::types::TargetSelection>) -> Self {
+        self.target_selection = input; self
+    }
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
+    /// </note>
+    pub fn get_target_selection(&self) -> &::std::option::Option<crate::types::TargetSelection> {
+        &self.target_selection
     }
     /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
@@ -293,8 +290,11 @@ impl JobBuilder {
     }
     /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
     pub fn force_canceled(mut self, input: bool) -> Self {
@@ -303,8 +303,11 @@ impl JobBuilder {
     }
     /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
     pub fn set_force_canceled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_canceled = input;
-        self
+        self.force_canceled = input; self
+    }
+    /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
+    pub fn get_force_canceled(&self) -> &::std::option::Option<bool> {
+        &self.force_canceled
     }
     /// <p>If the job was updated, provides the reason code for the update.</p>
     pub fn reason_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -313,8 +316,11 @@ impl JobBuilder {
     }
     /// <p>If the job was updated, provides the reason code for the update.</p>
     pub fn set_reason_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason_code = input;
-        self
+        self.reason_code = input; self
+    }
+    /// <p>If the job was updated, provides the reason code for the update.</p>
+    pub fn get_reason_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason_code
     }
     /// <p>If the job was updated, describes the reason for the update.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -323,8 +329,11 @@ impl JobBuilder {
     }
     /// <p>If the job was updated, describes the reason for the update.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
+    }
+    /// <p>If the job was updated, describes the reason for the update.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Appends an item to `targets`.
     ///
@@ -333,17 +342,17 @@ impl JobBuilder {
     /// <p>A list of IoT things and thing groups to which the job should be sent.</p>
     pub fn targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input.into());
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IoT things and thing groups to which the job should be sent.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.targets = input; self
+    }
+    /// <p>A list of IoT things and thing groups to which the job should be sent.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.targets
     }
     /// <p>A short text description of the job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -352,8 +361,11 @@ impl JobBuilder {
     }
     /// <p>A short text description of the job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A short text description of the job.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
     pub fn presigned_url_config(mut self, input: crate::types::PresignedUrlConfig) -> Self {
@@ -361,28 +373,25 @@ impl JobBuilder {
         self
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
-    pub fn set_presigned_url_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PresignedUrlConfig>,
-    ) -> Self {
-        self.presigned_url_config = input;
-        self
+    pub fn set_presigned_url_config(mut self, input: ::std::option::Option<crate::types::PresignedUrlConfig>) -> Self {
+        self.presigned_url_config = input; self
+    }
+    /// <p>Configuration for pre-signed S3 URLs.</p>
+    pub fn get_presigned_url_config(&self) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
+        &self.presigned_url_config
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
-    pub fn job_executions_rollout_config(
-        mut self,
-        input: crate::types::JobExecutionsRolloutConfig,
-    ) -> Self {
+    pub fn job_executions_rollout_config(mut self, input: crate::types::JobExecutionsRolloutConfig) -> Self {
         self.job_executions_rollout_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
-    pub fn set_job_executions_rollout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
-    ) -> Self {
-        self.job_executions_rollout_config = input;
-        self
+    pub fn set_job_executions_rollout_config(mut self, input: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>) -> Self {
+        self.job_executions_rollout_config = input; self
+    }
+    /// <p>Allows you to create a staged rollout of a job.</p>
+    pub fn get_job_executions_rollout_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
+        &self.job_executions_rollout_config
     }
     /// <p>Configuration for criteria to abort the job.</p>
     pub fn abort_config(mut self, input: crate::types::AbortConfig) -> Self {
@@ -390,12 +399,12 @@ impl JobBuilder {
         self
     }
     /// <p>Configuration for criteria to abort the job.</p>
-    pub fn set_abort_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AbortConfig>,
-    ) -> Self {
-        self.abort_config = input;
-        self
+    pub fn set_abort_config(mut self, input: ::std::option::Option<crate::types::AbortConfig>) -> Self {
+        self.abort_config = input; self
+    }
+    /// <p>Configuration for criteria to abort the job.</p>
+    pub fn get_abort_config(&self) -> &::std::option::Option<crate::types::AbortConfig> {
+        &self.abort_config
     }
     /// <p>The time, in seconds since the epoch, when the job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -403,12 +412,12 @@ impl JobBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The time, in seconds since the epoch, when the job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -416,12 +425,12 @@ impl JobBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
+    }
+    /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// <p>The time, in seconds since the epoch, when the job was completed.</p>
     pub fn completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -429,12 +438,12 @@ impl JobBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job was completed.</p>
-    pub fn set_completed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.completed_at = input;
-        self
+    pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.completed_at = input; self
+    }
+    /// <p>The time, in seconds since the epoch, when the job was completed.</p>
+    pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_at
     }
     /// <p>Details about the job process.</p>
     pub fn job_process_details(mut self, input: crate::types::JobProcessDetails) -> Self {
@@ -442,12 +451,12 @@ impl JobBuilder {
         self
     }
     /// <p>Details about the job process.</p>
-    pub fn set_job_process_details(
-        mut self,
-        input: ::std::option::Option<crate::types::JobProcessDetails>,
-    ) -> Self {
-        self.job_process_details = input;
-        self
+    pub fn set_job_process_details(mut self, input: ::std::option::Option<crate::types::JobProcessDetails>) -> Self {
+        self.job_process_details = input; self
+    }
+    /// <p>Details about the job process.</p>
+    pub fn get_job_process_details(&self) -> &::std::option::Option<crate::types::JobProcessDetails> {
+        &self.job_process_details
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
@@ -455,91 +464,88 @@ impl JobBuilder {
         self
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    pub fn set_timeout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeoutConfig>,
-    ) -> Self {
-        self.timeout_config = input;
-        self
+    pub fn set_timeout_config(mut self, input: ::std::option::Option<crate::types::TimeoutConfig>) -> Self {
+        self.timeout_config = input; self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
+        &self.timeout_config
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_id = input;
-        self
+        self.namespace_id = input; self
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
+    /// </note>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_id
     }
     /// <p>The ARN of the job template used to create the job.</p>
-    pub fn job_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the job template used to create the job.</p>
-    pub fn set_job_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.job_template_arn = input;
-        self
+    pub fn set_job_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_template_arn = input; self
+    }
+    /// <p>The ARN of the job template used to create the job.</p>
+    pub fn get_job_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_template_arn
     }
     /// <p>The configuration for the criteria to retry the job.</p>
-    pub fn job_executions_retry_config(
-        mut self,
-        input: crate::types::JobExecutionsRetryConfig,
-    ) -> Self {
+    pub fn job_executions_retry_config(mut self, input: crate::types::JobExecutionsRetryConfig) -> Self {
         self.job_executions_retry_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the criteria to retry the job.</p>
-    pub fn set_job_executions_retry_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    ) -> Self {
-        self.job_executions_retry_config = input;
-        self
+    pub fn set_job_executions_retry_config(mut self, input: ::std::option::Option<crate::types::JobExecutionsRetryConfig>) -> Self {
+        self.job_executions_retry_config = input; self
+    }
+    /// <p>The configuration for the criteria to retry the job.</p>
+    pub fn get_job_executions_retry_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
+        &self.job_executions_retry_config
     }
     /// Adds a key-value pair to `document_parameters`.
     ///
     /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
     ///
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
-    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note> 
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> 
     /// </note>
-    pub fn document_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.document_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.document_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.document_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
-    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note> 
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> 
     /// </note>
-    pub fn set_document_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.document_parameters = input;
-        self
+    pub fn set_document_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.document_parameters = input; self
+    }
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note> 
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> 
+    /// </note>
+    pub fn get_document_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.document_parameters
     }
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     pub fn is_concurrent(mut self, input: bool) -> Self {
@@ -548,8 +554,11 @@ impl JobBuilder {
     }
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     pub fn set_is_concurrent(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_concurrent = input;
-        self
+        self.is_concurrent = input; self
+    }
+    /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
+    pub fn get_is_concurrent(&self) -> &::std::option::Option<bool> {
+        &self.is_concurrent
     }
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
     pub fn scheduling_config(mut self, input: crate::types::SchedulingConfig) -> Self {
@@ -557,12 +566,12 @@ impl JobBuilder {
         self
     }
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
-    pub fn set_scheduling_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SchedulingConfig>,
-    ) -> Self {
-        self.scheduling_config = input;
-        self
+    pub fn set_scheduling_config(mut self, input: ::std::option::Option<crate::types::SchedulingConfig>) -> Self {
+        self.scheduling_config = input; self
+    }
+    /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
+    pub fn get_scheduling_config(&self) -> &::std::option::Option<crate::types::SchedulingConfig> {
+        &self.scheduling_config
     }
     /// Appends an item to `scheduled_job_rollouts`.
     ///
@@ -571,45 +580,94 @@ impl JobBuilder {
     /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
     pub fn scheduled_job_rollouts(mut self, input: crate::types::ScheduledJobRollout) -> Self {
         let mut v = self.scheduled_job_rollouts.unwrap_or_default();
-        v.push(input);
-        self.scheduled_job_rollouts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scheduled_job_rollouts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
-    pub fn set_scheduled_job_rollouts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>,
-    ) -> Self {
-        self.scheduled_job_rollouts = input;
-        self
+    pub fn set_scheduled_job_rollouts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>) -> Self {
+        self.scheduled_job_rollouts = input; self
+    }
+    /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
+    pub fn get_scheduled_job_rollouts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>> {
+        &self.scheduled_job_rollouts
+    }
+    /// Appends an item to `destination_package_versions`.
+    ///
+    /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
+    ///
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p> 
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.destination_package_versions.unwrap_or_default();
+                        v.push(input.into());
+                        self.destination_package_versions = ::std::option::Option::Some(v);
+                        self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p> 
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn set_destination_package_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.destination_package_versions = input; self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p> 
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn get_destination_package_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destination_package_versions
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
-            job_arn: self.job_arn,
-            job_id: self.job_id,
-            target_selection: self.target_selection,
-            status: self.status,
-            force_canceled: self.force_canceled,
-            reason_code: self.reason_code,
-            comment: self.comment,
-            targets: self.targets,
-            description: self.description,
-            presigned_url_config: self.presigned_url_config,
-            job_executions_rollout_config: self.job_executions_rollout_config,
-            abort_config: self.abort_config,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            completed_at: self.completed_at,
-            job_process_details: self.job_process_details,
-            timeout_config: self.timeout_config,
-            namespace_id: self.namespace_id,
-            job_template_arn: self.job_template_arn,
-            job_executions_retry_config: self.job_executions_retry_config,
-            document_parameters: self.document_parameters,
-            is_concurrent: self.is_concurrent,
-            scheduling_config: self.scheduling_config,
-            scheduled_job_rollouts: self.scheduled_job_rollouts,
+            job_arn: self.job_arn
+            ,
+            job_id: self.job_id
+            ,
+            target_selection: self.target_selection
+            ,
+            status: self.status
+            ,
+            force_canceled: self.force_canceled
+            ,
+            reason_code: self.reason_code
+            ,
+            comment: self.comment
+            ,
+            targets: self.targets
+            ,
+            description: self.description
+            ,
+            presigned_url_config: self.presigned_url_config
+            ,
+            job_executions_rollout_config: self.job_executions_rollout_config
+            ,
+            abort_config: self.abort_config
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            completed_at: self.completed_at
+            ,
+            job_process_details: self.job_process_details
+            ,
+            timeout_config: self.timeout_config
+            ,
+            namespace_id: self.namespace_id
+            ,
+            job_template_arn: self.job_template_arn
+            ,
+            job_executions_retry_config: self.job_executions_retry_config
+            ,
+            document_parameters: self.document_parameters
+            ,
+            is_concurrent: self.is_concurrent
+            ,
+            scheduling_config: self.scheduling_config
+            ,
+            scheduled_job_rollouts: self.scheduled_job_rollouts
+            ,
+            destination_package_versions: self.destination_package_versions
+            ,
         }
     }
 }
+

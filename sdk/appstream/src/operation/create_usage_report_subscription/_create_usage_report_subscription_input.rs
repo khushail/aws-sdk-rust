@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUsageReportSubscriptionInput {}
+pub struct CreateUsageReportSubscriptionInput  {
+}
 impl CreateUsageReportSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateUsageReportSubscriptionInput`](crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionInput).
-    pub fn builder() -> crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionInputBuilder {
         crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUsageReportSubscriptionInput`](crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct CreateUsageReportSubscriptionInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct CreateUsageReportSubscriptionInputBuilder {
+}
 impl CreateUsageReportSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`CreateUsageReportSubscriptionInput`](crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionInput {
             }
         )
     }
 }
+

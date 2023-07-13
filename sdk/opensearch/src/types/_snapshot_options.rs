@@ -3,7 +3,7 @@
 /// <p>The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotOptions {
+pub struct SnapshotOptions  {
     /// <p>The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.</p>
     #[doc(hidden)]
     pub automated_snapshot_start_hour: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl SnapshotOptions {
 
 /// A builder for [`SnapshotOptions`](crate::types::SnapshotOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotOptionsBuilder {
     pub(crate) automated_snapshot_start_hour: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl SnapshotOptionsBuilder {
     }
     /// <p>The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.</p>
     pub fn set_automated_snapshot_start_hour(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.automated_snapshot_start_hour = input;
-        self
+        self.automated_snapshot_start_hour = input; self
+    }
+    /// <p>The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.</p>
+    pub fn get_automated_snapshot_start_hour(&self) -> &::std::option::Option<i32> {
+        &self.automated_snapshot_start_hour
     }
     /// Consumes the builder and constructs a [`SnapshotOptions`](crate::types::SnapshotOptions).
     pub fn build(self) -> crate::types::SnapshotOptions {
         crate::types::SnapshotOptions {
-            automated_snapshot_start_hour: self.automated_snapshot_start_hour,
+            automated_snapshot_start_hour: self.automated_snapshot_start_hour
+            ,
         }
     }
 }
+

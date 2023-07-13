@@ -3,130 +3,107 @@ pub use crate::operation::describe_folder_contents::_describe_folder_contents_ou
 
 pub use crate::operation::describe_folder_contents::_describe_folder_contents_input::DescribeFolderContentsInputBuilder;
 
+impl DescribeFolderContentsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_folder_contents::DescribeFolderContentsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_folder_contents::DescribeFolderContentsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_folder_contents();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeFolderContents`.
-///
-/// <p>Describes the contents of the specified folder, including its documents and subfolders.</p>
+/// 
+/// <p>Describes the contents of the specified folder, including its documents and subfolders.</p> 
 /// <p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFolderContentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_folder_contents::builders::DescribeFolderContentsInputBuilder,
+                    inner: crate::operation::describe_folder_contents::builders::DescribeFolderContentsInputBuilder,
 }
-impl DescribeFolderContentsFluentBuilder {
+impl DescribeFolderContentsFluentBuilder  {
     /// Creates a new `DescribeFolderContents`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_folder_contents::DescribeFolderContents,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_folder_contents::DescribeFolderContentsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeFolderContents as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_folder_contents::builders::DescribeFolderContentsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_folder_contents::DescribeFolderContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_folder_contents::DescribeFolderContentsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_folder_contents::DescribeFolderContents, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_folder_contents::DescribeFolderContentsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_folder_contents::DescribeFolderContentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_folder_contents::DescribeFolderContentsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_folder_contents::DescribeFolderContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_folder_contents::DescribeFolderContentsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_folder_contents::DescribeFolderContents,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_folder_contents::DescribeFolderContentsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_folder_contents::DescribeFolderContentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_folder_contents::DescribeFolderContentsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_folder_contents::DescribeFolderContents, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_folder_contents::DescribeFolderContentsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator
-    {
-        crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator {
+                                crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
     }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,18 +115,23 @@ impl DescribeFolderContentsFluentBuilder {
         self.inner = self.inner.set_folder_id(input);
         self
     }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_folder_id()
+    }
     /// <p>The sorting criteria.</p>
     pub fn sort(mut self, input: crate::types::ResourceSortType) -> Self {
         self.inner = self.inner.sort(input);
         self
     }
     /// <p>The sorting criteria.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSortType>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ResourceSortType>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
+    }
+    /// <p>The sorting criteria.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::ResourceSortType> {
+        self.inner.get_sort()
     }
     /// <p>The order for the contents of the folder.</p>
     pub fn order(mut self, input: crate::types::OrderType) -> Self {
@@ -161,6 +143,10 @@ impl DescribeFolderContentsFluentBuilder {
         self.inner = self.inner.set_order(input);
         self
     }
+    /// <p>The order for the contents of the folder.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::OrderType> {
+        self.inner.get_order()
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -170,6 +156,10 @@ impl DescribeFolderContentsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,18 +171,23 @@ impl DescribeFolderContentsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The type of items.</p>
     pub fn r#type(mut self, input: crate::types::FolderContentType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
     /// <p>The type of items.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderContentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FolderContentType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of items.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FolderContentType> {
+        self.inner.get_type()
     }
     /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     pub fn include(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -204,4 +199,9 @@ impl DescribeFolderContentsFluentBuilder {
         self.inner = self.inner.set_include(input);
         self
     }
+    /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
+    pub fn get_include(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_include()
+    }
 }
+

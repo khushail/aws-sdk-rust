@@ -3,30 +3,27 @@
 /// <p>Input for the OptInPhoneNumber action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OptInPhoneNumberInput {
+pub struct OptInPhoneNumberInput  {
     /// <p>The phone number to opt in. Use E.164 format.</p>
     #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
 }
 impl OptInPhoneNumberInput {
     /// <p>The phone number to opt in. Use E.164 format.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
 }
 impl OptInPhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`OptInPhoneNumberInput`](crate::operation::opt_in_phone_number::OptInPhoneNumberInput).
-    pub fn builder() -> crate::operation::opt_in_phone_number::builders::OptInPhoneNumberInputBuilder
-    {
+    pub fn builder() -> crate::operation::opt_in_phone_number::builders::OptInPhoneNumberInputBuilder {
         crate::operation::opt_in_phone_number::builders::OptInPhoneNumberInputBuilder::default()
     }
 }
 
 /// A builder for [`OptInPhoneNumberInput`](crate::operation::opt_in_phone_number::OptInPhoneNumberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptInPhoneNumberInputBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +35,20 @@ impl OptInPhoneNumberInputBuilder {
     }
     /// <p>The phone number to opt in. Use E.164 format.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
+    }
+    /// <p>The phone number to opt in. Use E.164 format.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// Consumes the builder and constructs a [`OptInPhoneNumberInput`](crate::operation::opt_in_phone_number::OptInPhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::opt_in_phone_number::OptInPhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::opt_in_phone_number::OptInPhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::opt_in_phone_number::OptInPhoneNumberInput {
-                phone_number: self.phone_number,
-            },
+                phone_number: self.phone_number
+                ,
+            }
         )
     }
 }
+

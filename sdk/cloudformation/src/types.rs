@@ -175,6 +175,8 @@ pub use crate::types::_stack_drift_detection_status::StackDriftDetectionStatus;
 
 pub use crate::types::_publisher_status::PublisherStatus;
 
+pub use crate::types::_organization_status::OrganizationStatus;
+
 pub use crate::types::_change_set_hooks_status::ChangeSetHooksStatus;
 
 pub use crate::types::_change_set_hook::ChangeSetHook;
@@ -300,6 +302,8 @@ mod _operation_result_filter;
 mod _operation_result_filter_name;
 
 mod _operation_status;
+
+mod _organization_status;
 
 mod _output;
 
@@ -452,3 +456,4 @@ pub mod builders;
 
 /// Error types that AWS CloudFormation can respond with.
 pub mod error;
+

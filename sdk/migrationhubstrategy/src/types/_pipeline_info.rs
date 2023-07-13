@@ -3,7 +3,7 @@
 /// <p>Detailed information of the pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineInfo {
+pub struct PipelineInfo  {
     /// <p>The type of pipeline.</p>
     #[doc(hidden)]
     pub pipeline_type: ::std::option::Option<crate::types::PipelineType>,
@@ -13,11 +13,11 @@ pub struct PipelineInfo {
 }
 impl PipelineInfo {
     /// <p>The type of pipeline.</p>
-    pub fn pipeline_type(&self) -> ::std::option::Option<&crate::types::PipelineType> {
+    pub fn pipeline_type(&self) -> ::std::option::Option<& crate::types::PipelineType> {
         self.pipeline_type.as_ref()
     }
     /// <p>The time when the pipeline info was configured.</p>
-    pub fn pipeline_configuration_time_stamp(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_configuration_time_stamp(&self) -> ::std::option::Option<& str> {
         self.pipeline_configuration_time_stamp.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl PipelineInfo {
 
 /// A builder for [`PipelineInfo`](crate::types::PipelineInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineInfoBuilder {
     pub(crate) pipeline_type: ::std::option::Option<crate::types::PipelineType>,
     pub(crate) pipeline_configuration_time_stamp: ::std::option::Option<::std::string::String>,
@@ -44,34 +42,34 @@ impl PipelineInfoBuilder {
         self
     }
     /// <p>The type of pipeline.</p>
-    pub fn set_pipeline_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineType>,
-    ) -> Self {
-        self.pipeline_type = input;
-        self
+    pub fn set_pipeline_type(mut self, input: ::std::option::Option<crate::types::PipelineType>) -> Self {
+        self.pipeline_type = input; self
+    }
+    /// <p>The type of pipeline.</p>
+    pub fn get_pipeline_type(&self) -> &::std::option::Option<crate::types::PipelineType> {
+        &self.pipeline_type
     }
     /// <p>The time when the pipeline info was configured.</p>
-    pub fn pipeline_configuration_time_stamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_configuration_time_stamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_configuration_time_stamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the pipeline info was configured.</p>
-    pub fn set_pipeline_configuration_time_stamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.pipeline_configuration_time_stamp = input;
-        self
+    pub fn set_pipeline_configuration_time_stamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_configuration_time_stamp = input; self
+    }
+    /// <p>The time when the pipeline info was configured.</p>
+    pub fn get_pipeline_configuration_time_stamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_configuration_time_stamp
     }
     /// Consumes the builder and constructs a [`PipelineInfo`](crate::types::PipelineInfo).
     pub fn build(self) -> crate::types::PipelineInfo {
         crate::types::PipelineInfo {
-            pipeline_type: self.pipeline_type,
-            pipeline_configuration_time_stamp: self.pipeline_configuration_time_stamp,
+            pipeline_type: self.pipeline_type
+            ,
+            pipeline_configuration_time_stamp: self.pipeline_configuration_time_stamp
+            ,
         }
     }
 }
+

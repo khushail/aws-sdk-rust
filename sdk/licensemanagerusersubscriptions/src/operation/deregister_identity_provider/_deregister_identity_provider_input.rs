@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterIdentityProviderInput {
+pub struct DeregisterIdentityProviderInput  {
     /// <p>An object that specifies details for the identity provider.</p>
     #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
@@ -12,26 +12,24 @@ pub struct DeregisterIdentityProviderInput {
 }
 impl DeregisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<& crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> ::std::option::Option<&str> {
+    pub fn product(&self) -> ::std::option::Option<& str> {
         self.product.as_deref()
     }
 }
 impl DeregisterIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`DeregisterIdentityProviderInput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput).
-    pub fn builder() -> crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder{
+    pub fn builder() -> crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder {
         crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterIdentityProviderInput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterIdentityProviderInputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     pub(crate) product: ::std::option::Option<::std::string::String>,
@@ -43,12 +41,12 @@ impl DeregisterIdentityProviderInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
-        self.identity_provider = input;
-        self
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
+        self.identity_provider = input; self
+    }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -57,21 +55,22 @@ impl DeregisterIdentityProviderInputBuilder {
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
+    }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
     }
     /// Consumes the builder and constructs a [`DeregisterIdentityProviderInput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput {
-                identity_provider: self.identity_provider,
-                product: self.product,
-            },
+                identity_provider: self.identity_provider
+                ,
+                product: self.product
+                ,
+            }
         )
     }
 }
+

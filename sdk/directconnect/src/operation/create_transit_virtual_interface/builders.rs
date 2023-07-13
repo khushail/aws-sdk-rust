@@ -3,135 +3,117 @@ pub use crate::operation::create_transit_virtual_interface::_create_transit_virt
 
 pub use crate::operation::create_transit_virtual_interface::_create_transit_virtual_interface_input::CreateTransitVirtualInterfaceInputBuilder;
 
+impl CreateTransitVirtualInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_transit_virtual_interface();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateTransitVirtualInterface`.
-///
-/// <p>Creates a transit virtual interface. A transit virtual interface should be used to access one or more transit gateways associated with Direct Connect gateways. A transit virtual interface enables the connection of multiple VPCs attached to a transit gateway to a Direct Connect gateway.</p> <important>
-/// <p>If you associate your transit gateway with one or more Direct Connect gateways, the Autonomous System Number (ASN) used by the transit gateway and the Direct Connect gateway must be different. For example, if you use the default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.</p>
-/// </important>
+/// 
+/// <p>Creates a transit virtual interface. A transit virtual interface should be used to access one or more transit gateways associated with Direct Connect gateways. A transit virtual interface enables the connection of multiple VPCs attached to a transit gateway to a Direct Connect gateway.</p> <important> 
+/// <p>If you associate your transit gateway with one or more Direct Connect gateways, the Autonomous System Number (ASN) used by the transit gateway and the Direct Connect gateway must be different. For example, if you use the default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.</p> 
+/// </important> 
 /// <p>A jumbo MTU value must be either 1500 or 8500. No other values will be accepted. Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <code>DescribeConnections</code>. To check whether your virtual interface supports jumbo frames, call <code>DescribeVirtualInterfaces</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTransitVirtualInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder,
 }
-impl CreateTransitVirtualInterfaceFluentBuilder {
+impl CreateTransitVirtualInterfaceFluentBuilder  {
     /// Creates a new `CreateTransitVirtualInterface`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateTransitVirtualInterface as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>Information about the transit virtual interface.</p>
-    pub fn new_transit_virtual_interface(
-        mut self,
-        input: crate::types::NewTransitVirtualInterface,
-    ) -> Self {
+    pub fn new_transit_virtual_interface(mut self, input: crate::types::NewTransitVirtualInterface) -> Self {
         self.inner = self.inner.new_transit_virtual_interface(input);
         self
     }
     /// <p>Information about the transit virtual interface.</p>
-    pub fn set_new_transit_virtual_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::NewTransitVirtualInterface>,
-    ) -> Self {
+    pub fn set_new_transit_virtual_interface(mut self, input: ::std::option::Option<crate::types::NewTransitVirtualInterface>) -> Self {
         self.inner = self.inner.set_new_transit_virtual_interface(input);
         self
     }
+    /// <p>Information about the transit virtual interface.</p>
+    pub fn get_new_transit_virtual_interface(&self) -> &::std::option::Option<crate::types::NewTransitVirtualInterface> {
+        self.inner.get_new_transit_virtual_interface()
+    }
 }
+

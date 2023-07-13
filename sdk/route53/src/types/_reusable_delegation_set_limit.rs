@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReusableDelegationSetLimit {
+pub struct ReusableDelegationSetLimit  {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
@@ -13,7 +13,7 @@ pub struct ReusableDelegationSetLimit {
 }
 impl ReusableDelegationSetLimit {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ReusableDelegationSetLimitType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ReusableDelegationSetLimitType> {
         self.r#type.as_ref()
     }
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
@@ -30,9 +30,7 @@ impl ReusableDelegationSetLimit {
 
 /// A builder for [`ReusableDelegationSetLimit`](crate::types::ReusableDelegationSetLimit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReusableDelegationSetLimitBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
     pub(crate) value: ::std::option::Option<i64>,
@@ -44,12 +42,12 @@ impl ReusableDelegationSetLimitBuilder {
         self
     }
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ReusableDelegationSetLimitType> {
+        &self.r#type
     }
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
     pub fn value(mut self, input: i64) -> Self {
@@ -58,14 +56,21 @@ impl ReusableDelegationSetLimitBuilder {
     }
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ReusableDelegationSetLimit`](crate::types::ReusableDelegationSetLimit).
     pub fn build(self) -> crate::types::ReusableDelegationSetLimit {
         crate::types::ReusableDelegationSetLimit {
-            r#type: self.r#type,
-            value: self.value.unwrap_or_default(),
+            r#type: self.r#type
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

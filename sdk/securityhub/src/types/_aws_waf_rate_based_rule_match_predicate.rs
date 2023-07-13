@@ -3,48 +3,48 @@
 /// <p>A match predicate. A predicate might look for characteristics such as specific IP addresses, geographic locations, or sizes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafRateBasedRuleMatchPredicate {
+pub struct AwsWafRateBasedRuleMatchPredicate  {
     /// <p>The unique identifier for the predicate.</p>
     #[doc(hidden)]
     pub data_id: ::std::option::Option<::std::string::String>,
-    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
+    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p> 
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings. </p>
     #[doc(hidden)]
     pub negated: bool,
-    /// <p>The type of predicate. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ByteMatch</code> </p> </li>
-    /// <li> <p> <code>GeoMatch</code> </p> </li>
-    /// <li> <p> <code>IPMatch</code> </p> </li>
-    /// <li> <p> <code>RegexMatch</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
-    /// <li> <p> <code>XssMatch</code> </p> </li>
+    /// <p>The type of predicate. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ByteMatch</code> </p> </li> 
+    /// <li> <p> <code>GeoMatch</code> </p> </li> 
+    /// <li> <p> <code>IPMatch</code> </p> </li> 
+    /// <li> <p> <code>RegexMatch</code> </p> </li> 
+    /// <li> <p> <code>SizeConstraint</code> </p> </li> 
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li> 
+    /// <li> <p> <code>XssMatch</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRateBasedRuleMatchPredicate {
     /// <p>The unique identifier for the predicate.</p>
-    pub fn data_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_id(&self) -> ::std::option::Option<& str> {
         self.data_id.as_deref()
     }
-    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
+    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p> 
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings. </p>
     pub fn negated(&self) -> bool {
         self.negated
     }
-    /// <p>The type of predicate. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ByteMatch</code> </p> </li>
-    /// <li> <p> <code>GeoMatch</code> </p> </li>
-    /// <li> <p> <code>IPMatch</code> </p> </li>
-    /// <li> <p> <code>RegexMatch</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
-    /// <li> <p> <code>XssMatch</code> </p> </li>
+    /// <p>The type of predicate. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ByteMatch</code> </p> </li> 
+    /// <li> <p> <code>GeoMatch</code> </p> </li> 
+    /// <li> <p> <code>IPMatch</code> </p> </li> 
+    /// <li> <p> <code>RegexMatch</code> </p> </li> 
+    /// <li> <p> <code>SizeConstraint</code> </p> </li> 
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li> 
+    /// <li> <p> <code>XssMatch</code> </p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -57,9 +57,7 @@ impl AwsWafRateBasedRuleMatchPredicate {
 
 /// A builder for [`AwsWafRateBasedRuleMatchPredicate`](crate::types::AwsWafRateBasedRuleMatchPredicate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRateBasedRuleMatchPredicateBuilder {
     pub(crate) data_id: ::std::option::Option<::std::string::String>,
     pub(crate) negated: ::std::option::Option<bool>,
@@ -73,55 +71,79 @@ impl AwsWafRateBasedRuleMatchPredicateBuilder {
     }
     /// <p>The unique identifier for the predicate.</p>
     pub fn set_data_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_id = input;
-        self
+        self.data_id = input; self
     }
-    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
+    /// <p>The unique identifier for the predicate.</p>
+    pub fn get_data_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_id
+    }
+    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p> 
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings. </p>
     pub fn negated(mut self, input: bool) -> Self {
         self.negated = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
+    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p> 
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings. </p>
     pub fn set_negated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.negated = input;
-        self
+        self.negated = input; self
     }
-    /// <p>The type of predicate. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ByteMatch</code> </p> </li>
-    /// <li> <p> <code>GeoMatch</code> </p> </li>
-    /// <li> <p> <code>IPMatch</code> </p> </li>
-    /// <li> <p> <code>RegexMatch</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
-    /// <li> <p> <code>XssMatch</code> </p> </li>
+    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p> 
+    /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings. </p>
+    pub fn get_negated(&self) -> &::std::option::Option<bool> {
+        &self.negated
+    }
+    /// <p>The type of predicate. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ByteMatch</code> </p> </li> 
+    /// <li> <p> <code>GeoMatch</code> </p> </li> 
+    /// <li> <p> <code>IPMatch</code> </p> </li> 
+    /// <li> <p> <code>RegexMatch</code> </p> </li> 
+    /// <li> <p> <code>SizeConstraint</code> </p> </li> 
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li> 
+    /// <li> <p> <code>XssMatch</code> </p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of predicate. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ByteMatch</code> </p> </li>
-    /// <li> <p> <code>GeoMatch</code> </p> </li>
-    /// <li> <p> <code>IPMatch</code> </p> </li>
-    /// <li> <p> <code>RegexMatch</code> </p> </li>
-    /// <li> <p> <code>SizeConstraint</code> </p> </li>
-    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
-    /// <li> <p> <code>XssMatch</code> </p> </li>
+    /// <p>The type of predicate. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ByteMatch</code> </p> </li> 
+    /// <li> <p> <code>GeoMatch</code> </p> </li> 
+    /// <li> <p> <code>IPMatch</code> </p> </li> 
+    /// <li> <p> <code>RegexMatch</code> </p> </li> 
+    /// <li> <p> <code>SizeConstraint</code> </p> </li> 
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li> 
+    /// <li> <p> <code>XssMatch</code> </p> </li> 
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of predicate. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ByteMatch</code> </p> </li> 
+    /// <li> <p> <code>GeoMatch</code> </p> </li> 
+    /// <li> <p> <code>IPMatch</code> </p> </li> 
+    /// <li> <p> <code>RegexMatch</code> </p> </li> 
+    /// <li> <p> <code>SizeConstraint</code> </p> </li> 
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li> 
+    /// <li> <p> <code>XssMatch</code> </p> </li> 
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsWafRateBasedRuleMatchPredicate`](crate::types::AwsWafRateBasedRuleMatchPredicate).
     pub fn build(self) -> crate::types::AwsWafRateBasedRuleMatchPredicate {
         crate::types::AwsWafRateBasedRuleMatchPredicate {
-            data_id: self.data_id,
-            negated: self.negated.unwrap_or_default(),
-            r#type: self.r#type,
+            data_id: self.data_id
+            ,
+            negated: self.negated
+                .unwrap_or_default()
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

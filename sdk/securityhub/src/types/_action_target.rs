@@ -3,7 +3,7 @@
 /// <p>An <code>ActionTarget</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionTarget {
+pub struct ActionTarget  {
     /// <p>The ARN for the target action.</p>
     #[doc(hidden)]
     pub action_target_arn: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ActionTarget {
 }
 impl ActionTarget {
     /// <p>The ARN for the target action.</p>
-    pub fn action_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn action_target_arn(&self) -> ::std::option::Option<& str> {
         self.action_target_arn.as_deref()
     }
     /// <p>The name of the action target.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the target action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ActionTarget {
 
 /// A builder for [`ActionTarget`](crate::types::ActionTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionTargetBuilder {
     pub(crate) action_target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct ActionTargetBuilder {
 }
 impl ActionTargetBuilder {
     /// <p>The ARN for the target action.</p>
-    pub fn action_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the target action.</p>
-    pub fn set_action_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.action_target_arn = input;
-        self
+    pub fn set_action_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.action_target_arn = input; self
+    }
+    /// <p>The ARN for the target action.</p>
+    pub fn get_action_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_target_arn
     }
     /// <p>The name of the action target.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +64,11 @@ impl ActionTargetBuilder {
     }
     /// <p>The name of the action target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the action target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the target action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl ActionTargetBuilder {
     }
     /// <p>The description of the target action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the target action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ActionTarget`](crate::types::ActionTarget).
     pub fn build(self) -> crate::types::ActionTarget {
         crate::types::ActionTarget {
-            action_target_arn: self.action_target_arn,
-            name: self.name,
-            description: self.description,
+            action_target_arn: self.action_target_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

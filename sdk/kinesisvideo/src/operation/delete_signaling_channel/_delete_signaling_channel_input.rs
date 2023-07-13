@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSignalingChannelInput {
+pub struct DeleteSignalingChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
     #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DeleteSignalingChannelInput {
 }
 impl DeleteSignalingChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
 }
 impl DeleteSignalingChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteSignalingChannelInput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelInput).
-    pub fn builder(
-    ) -> crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder {
         crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSignalingChannelInput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSignalingChannelInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl DeleteSignalingChannelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.current_version = input;
-        self
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.current_version = input; self
+    }
+    /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
     }
     /// Consumes the builder and constructs a [`DeleteSignalingChannelInput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_signaling_channel::DeleteSignalingChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_signaling_channel::DeleteSignalingChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_signaling_channel::DeleteSignalingChannelInput {
-                channel_arn: self.channel_arn,
-                current_version: self.current_version,
-            },
+                channel_arn: self.channel_arn
+                ,
+                current_version: self.current_version
+                ,
+            }
         )
     }
 }
+

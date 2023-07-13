@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProvisioningArtifactsOutput {
+pub struct ListProvisioningArtifactsOutput  {
     /// <p>Information about the provisioning artifacts.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactDetail>>,
+    pub provisioning_artifact_details: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -14,36 +13,31 @@ pub struct ListProvisioningArtifactsOutput {
 }
 impl ListProvisioningArtifactsOutput {
     /// <p>Information about the provisioning artifacts.</p>
-    pub fn provisioning_artifact_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProvisioningArtifactDetail]> {
+    pub fn provisioning_artifact_details(&self) -> ::std::option::Option<& [crate::types::ProvisioningArtifactDetail]> {
         self.provisioning_artifact_details.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListProvisioningArtifactsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListProvisioningArtifactsOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisioningArtifactsOutput`](crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput).
-    pub fn builder() -> crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsOutputBuilder{
+    pub fn builder() -> crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsOutputBuilder {
         crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProvisioningArtifactsOutput`](crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProvisioningArtifactsOutputBuilder {
-    pub(crate) provisioning_artifact_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactDetail>>,
+    pub(crate) provisioning_artifact_details: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,56 +47,51 @@ impl ListProvisioningArtifactsOutputBuilder {
     /// To override the contents of this collection use [`set_provisioning_artifact_details`](Self::set_provisioning_artifact_details).
     ///
     /// <p>Information about the provisioning artifacts.</p>
-    pub fn provisioning_artifact_details(
-        mut self,
-        input: crate::types::ProvisioningArtifactDetail,
-    ) -> Self {
+    pub fn provisioning_artifact_details(mut self, input: crate::types::ProvisioningArtifactDetail) -> Self {
         let mut v = self.provisioning_artifact_details.unwrap_or_default();
-        v.push(input);
-        self.provisioning_artifact_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioning_artifact_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the provisioning artifacts.</p>
-    pub fn set_provisioning_artifact_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactDetail>>,
-    ) -> Self {
-        self.provisioning_artifact_details = input;
-        self
+    pub fn set_provisioning_artifact_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactDetail>>) -> Self {
+        self.provisioning_artifact_details = input; self
+    }
+    /// <p>Information about the provisioning artifacts.</p>
+    pub fn get_provisioning_artifact_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactDetail>> {
+        &self.provisioning_artifact_details
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_page_token = input;
-        self
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_page_token = input; self
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListProvisioningArtifactsOutput`](crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput {
+    pub fn build(self) -> crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput {
         crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput {
-            provisioning_artifact_details: self.provisioning_artifact_details,
-            next_page_token: self.next_page_token,
+            provisioning_artifact_details: self.provisioning_artifact_details
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

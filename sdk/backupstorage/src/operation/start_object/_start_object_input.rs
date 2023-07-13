@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartObjectInput {
+pub struct StartObjectInput  {
     /// Backup job Id for the in-progress backup
     #[doc(hidden)]
     pub backup_job_id: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct StartObjectInput {
 }
 impl StartObjectInput {
     /// Backup job Id for the in-progress backup
-    pub fn backup_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_job_id(&self) -> ::std::option::Option<& str> {
         self.backup_job_id.as_deref()
     }
     /// Name for the object.
-    pub fn object_name(&self) -> ::std::option::Option<&str> {
+    pub fn object_name(&self) -> ::std::option::Option<& str> {
         self.object_name.as_deref()
     }
     /// Throw an exception if Object name is already exist.
@@ -36,9 +36,7 @@ impl StartObjectInput {
 
 /// A builder for [`StartObjectInput`](crate::operation::start_object::StartObjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartObjectInputBuilder {
     pub(crate) backup_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_name: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct StartObjectInputBuilder {
 }
 impl StartObjectInputBuilder {
     /// Backup job Id for the in-progress backup
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Backup job Id for the in-progress backup
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.backup_job_id = input;
-        self
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_job_id = input; self
+    }
+    /// Backup job Id for the in-progress backup
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_job_id
     }
     /// Name for the object.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl StartObjectInputBuilder {
     }
     /// Name for the object.
     pub fn set_object_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_name = input;
-        self
+        self.object_name = input; self
+    }
+    /// Name for the object.
+    pub fn get_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_name
     }
     /// Throw an exception if Object name is already exist.
     pub fn throw_on_duplicate(mut self, input: bool) -> Self {
@@ -78,20 +76,25 @@ impl StartObjectInputBuilder {
     }
     /// Throw an exception if Object name is already exist.
     pub fn set_throw_on_duplicate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.throw_on_duplicate = input;
-        self
+        self.throw_on_duplicate = input; self
+    }
+    /// Throw an exception if Object name is already exist.
+    pub fn get_throw_on_duplicate(&self) -> &::std::option::Option<bool> {
+        &self.throw_on_duplicate
     }
     /// Consumes the builder and constructs a [`StartObjectInput`](crate::operation::start_object::StartObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_object::StartObjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_object::StartObjectInput {
-            backup_job_id: self.backup_job_id,
-            object_name: self.object_name,
-            throw_on_duplicate: self.throw_on_duplicate.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_object::StartObjectInput {
+                backup_job_id: self.backup_job_id
+                ,
+                object_name: self.object_name
+                ,
+                throw_on_duplicate: self.throw_on_duplicate
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

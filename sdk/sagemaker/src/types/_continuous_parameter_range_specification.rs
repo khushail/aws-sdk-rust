@@ -3,7 +3,7 @@
 /// <p>Defines the possible values for a continuous hyperparameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContinuousParameterRangeSpecification {
+pub struct ContinuousParameterRangeSpecification  {
     /// <p>The minimum floating-point value allowed.</p>
     #[doc(hidden)]
     pub min_value: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ContinuousParameterRangeSpecification {
 }
 impl ContinuousParameterRangeSpecification {
     /// <p>The minimum floating-point value allowed.</p>
-    pub fn min_value(&self) -> ::std::option::Option<&str> {
+    pub fn min_value(&self) -> ::std::option::Option<& str> {
         self.min_value.as_deref()
     }
     /// <p>The maximum floating-point value allowed.</p>
-    pub fn max_value(&self) -> ::std::option::Option<&str> {
+    pub fn max_value(&self) -> ::std::option::Option<& str> {
         self.max_value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ContinuousParameterRangeSpecification {
 
 /// A builder for [`ContinuousParameterRangeSpecification`](crate::types::ContinuousParameterRangeSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinuousParameterRangeSpecificationBuilder {
     pub(crate) min_value: ::std::option::Option<::std::string::String>,
     pub(crate) max_value: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ContinuousParameterRangeSpecificationBuilder {
     }
     /// <p>The minimum floating-point value allowed.</p>
     pub fn set_min_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.min_value = input;
-        self
+        self.min_value = input; self
+    }
+    /// <p>The minimum floating-point value allowed.</p>
+    pub fn get_min_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min_value
     }
     /// <p>The maximum floating-point value allowed.</p>
     pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ContinuousParameterRangeSpecificationBuilder {
     }
     /// <p>The maximum floating-point value allowed.</p>
     pub fn set_max_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_value = input;
-        self
+        self.max_value = input; self
+    }
+    /// <p>The maximum floating-point value allowed.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_value
     }
     /// Consumes the builder and constructs a [`ContinuousParameterRangeSpecification`](crate::types::ContinuousParameterRangeSpecification).
     pub fn build(self) -> crate::types::ContinuousParameterRangeSpecification {
         crate::types::ContinuousParameterRangeSpecification {
-            min_value: self.min_value,
-            max_value: self.max_value,
+            min_value: self.min_value
+            ,
+            max_value: self.max_value
+            ,
         }
     }
 }
+

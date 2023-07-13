@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListContinuousDeploymentPoliciesInput {
+pub struct ListContinuousDeploymentPoliciesInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListContinuousDeploymentPoliciesInput {
 }
 impl ListContinuousDeploymentPoliciesInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
@@ -22,16 +22,14 @@ impl ListContinuousDeploymentPoliciesInput {
 }
 impl ListContinuousDeploymentPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListContinuousDeploymentPoliciesInput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput).
-    pub fn builder() -> crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesInputBuilder {
         crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListContinuousDeploymentPoliciesInput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContinuousDeploymentPoliciesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -44,8 +42,11 @@ impl ListContinuousDeploymentPoliciesInputBuilder {
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -54,11 +55,14 @@ impl ListContinuousDeploymentPoliciesInputBuilder {
     }
     /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
+    }
+    /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListContinuousDeploymentPoliciesInput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesInput {
                 marker: self.marker
@@ -69,3 +73,4 @@ impl ListContinuousDeploymentPoliciesInputBuilder {
         )
     }
 }
+

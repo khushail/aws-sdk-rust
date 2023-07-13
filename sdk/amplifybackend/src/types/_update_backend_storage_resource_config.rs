@@ -3,7 +3,7 @@
 /// <p>The resource configuration for updating backend storage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBackendStorageResourceConfig {
+pub struct UpdateBackendStorageResourceConfig  {
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     #[doc(hidden)]
     pub permissions: ::std::option::Option<crate::types::BackendStoragePermissions>,
@@ -13,11 +13,11 @@ pub struct UpdateBackendStorageResourceConfig {
 }
 impl UpdateBackendStorageResourceConfig {
     /// <p>The authorization configuration for the storage S3 bucket.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&crate::types::BackendStoragePermissions> {
+    pub fn permissions(&self) -> ::std::option::Option<& crate::types::BackendStoragePermissions> {
         self.permissions.as_ref()
     }
     /// <p>The name of the storage service.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&crate::types::ServiceName> {
+    pub fn service_name(&self) -> ::std::option::Option<& crate::types::ServiceName> {
         self.service_name.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl UpdateBackendStorageResourceConfig {
 
 /// A builder for [`UpdateBackendStorageResourceConfig`](crate::types::UpdateBackendStorageResourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBackendStorageResourceConfigBuilder {
     pub(crate) permissions: ::std::option::Option<crate::types::BackendStoragePermissions>,
     pub(crate) service_name: ::std::option::Option<crate::types::ServiceName>,
@@ -44,12 +42,12 @@ impl UpdateBackendStorageResourceConfigBuilder {
         self
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendStoragePermissions>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::BackendStoragePermissions>) -> Self {
+        self.permissions = input; self
+    }
+    /// <p>The authorization configuration for the storage S3 bucket.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<crate::types::BackendStoragePermissions> {
+        &self.permissions
     }
     /// <p>The name of the storage service.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
@@ -57,18 +55,21 @@ impl UpdateBackendStorageResourceConfigBuilder {
         self
     }
     /// <p>The name of the storage service.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
-        self.service_name = input;
-        self
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
+        self.service_name = input; self
+    }
+    /// <p>The name of the storage service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`UpdateBackendStorageResourceConfig`](crate::types::UpdateBackendStorageResourceConfig).
     pub fn build(self) -> crate::types::UpdateBackendStorageResourceConfig {
         crate::types::UpdateBackendStorageResourceConfig {
-            permissions: self.permissions,
-            service_name: self.service_name,
+            permissions: self.permissions
+            ,
+            service_name: self.service_name
+            ,
         }
     }
 }
+

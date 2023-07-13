@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLimitsOutput {
+pub struct DescribeLimitsOutput  {
     /// <p>The maximum number of shards.</p>
     #[doc(hidden)]
     pub shard_limit: ::std::option::Option<i32>,
@@ -36,10 +36,10 @@ impl DescribeLimitsOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeLimitsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
     pub fn builder() -> crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder {
@@ -49,9 +49,7 @@ impl DescribeLimitsOutput {
 
 /// A builder for [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLimitsOutputBuilder {
     pub(crate) shard_limit: ::std::option::Option<i32>,
     pub(crate) open_shard_count: ::std::option::Option<i32>,
@@ -67,8 +65,11 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>The maximum number of shards.</p>
     pub fn set_shard_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shard_limit = input;
-        self
+        self.shard_limit = input; self
+    }
+    /// <p>The maximum number of shards.</p>
+    pub fn get_shard_limit(&self) -> &::std::option::Option<i32> {
+        &self.shard_limit
     }
     /// <p>The number of open shards.</p>
     pub fn open_shard_count(mut self, input: i32) -> Self {
@@ -77,8 +78,11 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>The number of open shards.</p>
     pub fn set_open_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.open_shard_count = input;
-        self
+        self.open_shard_count = input; self
+    }
+    /// <p>The number of open shards.</p>
+    pub fn get_open_shard_count(&self) -> &::std::option::Option<i32> {
+        &self.open_shard_count
     }
     /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
     pub fn on_demand_stream_count(mut self, input: i32) -> Self {
@@ -87,8 +91,11 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
     pub fn set_on_demand_stream_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_stream_count = input;
-        self
+        self.on_demand_stream_count = input; self
+    }
+    /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    pub fn get_on_demand_stream_count(&self) -> &::std::option::Option<i32> {
+        &self.on_demand_stream_count
     }
     /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
     pub fn on_demand_stream_count_limit(mut self, input: i32) -> Self {
@@ -97,26 +104,34 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
     pub fn set_on_demand_stream_count_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_stream_count_limit = input;
-        self
+        self.on_demand_stream_count_limit = input; self
+    }
+    /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    pub fn get_on_demand_stream_count_limit(&self) -> &::std::option::Option<i32> {
+        &self.on_demand_stream_count_limit
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
     pub fn build(self) -> crate::operation::describe_limits::DescribeLimitsOutput {
         crate::operation::describe_limits::DescribeLimitsOutput {
-            shard_limit: self.shard_limit,
-            open_shard_count: self.open_shard_count,
-            on_demand_stream_count: self.on_demand_stream_count,
-            on_demand_stream_count_limit: self.on_demand_stream_count_limit,
+            shard_limit: self.shard_limit
+            ,
+            open_shard_count: self.open_shard_count
+            ,
+            on_demand_stream_count: self.on_demand_stream_count
+            ,
+            on_demand_stream_count_limit: self.on_demand_stream_count_limit
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

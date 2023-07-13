@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInsightsOutput {
+pub struct GetInsightsOutput  {
     /// <p>The insights returned by the operation.</p>
     #[doc(hidden)]
     pub insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
@@ -13,19 +13,19 @@ pub struct GetInsightsOutput {
 }
 impl GetInsightsOutput {
     /// <p>The insights returned by the operation.</p>
-    pub fn insights(&self) -> ::std::option::Option<&[crate::types::Insight]> {
+    pub fn insights(&self) -> ::std::option::Option<& [crate::types::Insight]> {
         self.insights.as_deref()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetInsightsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetInsightsOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightsOutput`](crate::operation::get_insights::GetInsightsOutput).
     pub fn builder() -> crate::operation::get_insights::builders::GetInsightsOutputBuilder {
@@ -35,9 +35,7 @@ impl GetInsightsOutput {
 
 /// A builder for [`GetInsightsOutput`](crate::operation::get_insights::GetInsightsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightsOutputBuilder {
     pub(crate) insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,17 @@ impl GetInsightsOutputBuilder {
     /// <p>The insights returned by the operation.</p>
     pub fn insights(mut self, input: crate::types::Insight) -> Self {
         let mut v = self.insights.unwrap_or_default();
-        v.push(input);
-        self.insights = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.insights = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The insights returned by the operation.</p>
-    pub fn set_insights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
-    ) -> Self {
-        self.insights = input;
-        self
+    pub fn set_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>) -> Self {
+        self.insights = input; self
+    }
+    /// <p>The insights returned by the operation.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
+        &self.insights
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,24 +68,30 @@ impl GetInsightsOutputBuilder {
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetInsightsOutput`](crate::operation::get_insights::GetInsightsOutput).
     pub fn build(self) -> crate::operation::get_insights::GetInsightsOutput {
         crate::operation::get_insights::GetInsightsOutput {
-            insights: self.insights,
-            next_token: self.next_token,
+            insights: self.insights
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

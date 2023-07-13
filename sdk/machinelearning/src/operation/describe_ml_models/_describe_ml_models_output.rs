@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMlModelsOutput {
+pub struct DescribeMlModelsOutput  {
     /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
     #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::MlModel>>,
@@ -14,32 +14,29 @@ pub struct DescribeMlModelsOutput {
 }
 impl DescribeMlModelsOutput {
     /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::MlModel]> {
+    pub fn results(&self) -> ::std::option::Option<& [crate::types::MlModel]> {
         self.results.as_deref()
     }
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeMlModelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeMlModelsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMlModelsOutput`](crate::operation::describe_ml_models::DescribeMlModelsOutput).
-    pub fn builder() -> crate::operation::describe_ml_models::builders::DescribeMlModelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ml_models::builders::DescribeMlModelsOutputBuilder {
         crate::operation::describe_ml_models::builders::DescribeMlModelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMlModelsOutput`](crate::operation::describe_ml_models::DescribeMlModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMlModelsOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::MlModel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +50,17 @@ impl DescribeMlModelsOutputBuilder {
     /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
     pub fn results(mut self, input: crate::types::MlModel) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MlModel>>,
-    ) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MlModel>>) -> Self {
+        self.results = input; self
+    }
+    /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MlModel>> {
+        &self.results
     }
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +69,30 @@ impl DescribeMlModelsOutputBuilder {
     }
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeMlModelsOutput`](crate::operation::describe_ml_models::DescribeMlModelsOutput).
     pub fn build(self) -> crate::operation::describe_ml_models::DescribeMlModelsOutput {
         crate::operation::describe_ml_models::DescribeMlModelsOutput {
-            results: self.results,
-            next_token: self.next_token,
+            results: self.results
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,16 +3,14 @@
 /// <p>Provides details about the compliance for a patch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsSsmPatch {
+pub struct AwsSsmPatch  {
     /// <p>The compliance status details for the patch.</p>
     #[doc(hidden)]
     pub compliance_summary: ::std::option::Option<crate::types::AwsSsmComplianceSummary>,
 }
 impl AwsSsmPatch {
     /// <p>The compliance status details for the patch.</p>
-    pub fn compliance_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsSsmComplianceSummary> {
+    pub fn compliance_summary(&self) -> ::std::option::Option<& crate::types::AwsSsmComplianceSummary> {
         self.compliance_summary.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl AwsSsmPatch {
 
 /// A builder for [`AwsSsmPatch`](crate::types::AwsSsmPatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsSsmPatchBuilder {
     pub(crate) compliance_summary: ::std::option::Option<crate::types::AwsSsmComplianceSummary>,
 }
@@ -38,17 +34,19 @@ impl AwsSsmPatchBuilder {
         self
     }
     /// <p>The compliance status details for the patch.</p>
-    pub fn set_compliance_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSsmComplianceSummary>,
-    ) -> Self {
-        self.compliance_summary = input;
-        self
+    pub fn set_compliance_summary(mut self, input: ::std::option::Option<crate::types::AwsSsmComplianceSummary>) -> Self {
+        self.compliance_summary = input; self
+    }
+    /// <p>The compliance status details for the patch.</p>
+    pub fn get_compliance_summary(&self) -> &::std::option::Option<crate::types::AwsSsmComplianceSummary> {
+        &self.compliance_summary
     }
     /// Consumes the builder and constructs a [`AwsSsmPatch`](crate::types::AwsSsmPatch).
     pub fn build(self) -> crate::types::AwsSsmPatch {
         crate::types::AwsSsmPatch {
-            compliance_summary: self.compliance_summary,
+            compliance_summary: self.compliance_summary
+            ,
         }
     }
 }
+

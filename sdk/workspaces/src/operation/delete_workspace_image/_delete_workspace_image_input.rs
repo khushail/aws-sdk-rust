@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkspaceImageInput {
+pub struct DeleteWorkspaceImageInput  {
     /// <p>The identifier of the image.</p>
     #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorkspaceImageInput {
     /// <p>The identifier of the image.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
 }
 impl DeleteWorkspaceImageInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
-    pub fn builder(
-    ) -> crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageInputBuilder {
+    pub fn builder() -> crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageInputBuilder {
         crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceImageInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl DeleteWorkspaceImageInputBuilder {
     }
     /// <p>The identifier of the image.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
+    }
+    /// <p>The identifier of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// Consumes the builder and constructs a [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_workspace_image::DeleteWorkspaceImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_workspace_image::DeleteWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_workspace_image::DeleteWorkspaceImageInput {
-                image_id: self.image_id,
-            },
+                image_id: self.image_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnvironmentOutput {
+pub struct GetEnvironmentOutput  {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -41,13 +41,10 @@ pub struct GetEnvironmentOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The storage configurations defined for the runtime environment.</p>
     #[doc(hidden)]
-    pub storage_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
+    pub storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
     /// <p>The tags defined for this runtime environment.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
     #[doc(hidden)]
     pub high_availability_config: ::std::option::Option<crate::types::HighAvailabilityConfig>,
@@ -76,71 +73,63 @@ pub struct GetEnvironmentOutput {
 }
 impl GetEnvironmentOutput {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the runtime environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
-    pub fn environment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn environment_arn(&self) -> ::std::option::Option<& str> {
         self.environment_arn.as_deref()
     }
     /// <p>The unique identifier of the runtime environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The type of instance underlying the runtime environment.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The status of the runtime environment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentLifecycle> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EnvironmentLifecycle> {
         self.status.as_ref()
     }
     /// <p>The target platform for the runtime environment.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> ::std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The version of the runtime engine.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The unique identifier for the VPC used with this runtime environment.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn security_group_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The timestamp when the runtime environment was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The storage configurations defined for the runtime environment.</p>
-    pub fn storage_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StorageConfiguration]> {
+    pub fn storage_configurations(&self) -> ::std::option::Option<& [crate::types::StorageConfiguration]> {
         self.storage_configurations.as_deref()
     }
     /// <p>The tags defined for this runtime environment.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
-    pub fn high_availability_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HighAvailabilityConfig> {
+    pub fn high_availability_config(&self) -> ::std::option::Option<& crate::types::HighAvailabilityConfig> {
         self.high_availability_config.as_ref()
     }
     /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
@@ -152,31 +141,31 @@ impl GetEnvironmentOutput {
         self.actual_capacity
     }
     /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
-    pub fn load_balancer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> ::std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Indicates the pending maintenance scheduled on this environment.</p>
-    pub fn pending_maintenance(&self) -> ::std::option::Option<&crate::types::PendingMaintenance> {
+    pub fn pending_maintenance(&self) -> ::std::option::Option<& crate::types::PendingMaintenance> {
         self.pending_maintenance.as_ref()
     }
     /// <p>The identifier of a customer managed key.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
     pub fn builder() -> crate::operation::get_environment::builders::GetEnvironmentOutputBuilder {
@@ -186,9 +175,7 @@ impl GetEnvironmentOutput {
 
 /// A builder for [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnvironmentOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -202,13 +189,9 @@ pub struct GetEnvironmentOutputBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) storage_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) high_availability_config:
-        ::std::option::Option<crate::types::HighAvailabilityConfig>,
+    pub(crate) storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) high_availability_config: ::std::option::Option<crate::types::HighAvailabilityConfig>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) actual_capacity: ::std::option::Option<i32>,
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
@@ -226,8 +209,11 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the runtime environment. Must be unique within the account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the runtime environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -236,56 +222,50 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The description of the runtime environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the runtime environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
-    pub fn environment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
-    pub fn set_environment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_arn = input;
-        self
+    pub fn set_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
+    pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_arn
     }
     /// <p>The unique identifier of the runtime environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the runtime environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_id = input;
-        self
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_id = input; self
+    }
+    /// <p>The unique identifier of the runtime environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>The type of instance underlying the runtime environment.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of instance underlying the runtime environment.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.instance_type = input;
-        self
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_type = input; self
+    }
+    /// <p>The type of instance underlying the runtime environment.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// <p>The status of the runtime environment.</p>
     pub fn status(mut self, input: crate::types::EnvironmentLifecycle) -> Self {
@@ -293,12 +273,12 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>The status of the runtime environment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentLifecycle>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentLifecycle>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the runtime environment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentLifecycle> {
+        &self.status
     }
     /// <p>The target platform for the runtime environment.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
@@ -306,28 +286,25 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>The target platform for the runtime environment.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
-        self.engine_type = input;
-        self
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
+        self.engine_type = input; self
+    }
+    /// <p>The target platform for the runtime environment.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// <p>The version of the runtime engine.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the runtime engine.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.engine_version = input;
-        self
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_version = input; self
+    }
+    /// <p>The version of the runtime engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The unique identifier for the VPC used with this runtime environment.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -336,8 +313,11 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The unique identifier for the VPC used with this runtime environment.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The unique identifier for the VPC used with this runtime environment.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -346,39 +326,36 @@ impl GetEnvironmentOutputBuilder {
     /// <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
+    }
+    /// <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
+    }
+    /// <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// <p>The timestamp when the runtime environment was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -386,12 +363,12 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>The timestamp when the runtime environment was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The timestamp when the runtime environment was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Appends an item to `storage_configurations`.
     ///
@@ -400,42 +377,36 @@ impl GetEnvironmentOutputBuilder {
     /// <p>The storage configurations defined for the runtime environment.</p>
     pub fn storage_configurations(mut self, input: crate::types::StorageConfiguration) -> Self {
         let mut v = self.storage_configurations.unwrap_or_default();
-        v.push(input);
-        self.storage_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.storage_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The storage configurations defined for the runtime environment.</p>
-    pub fn set_storage_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
-    ) -> Self {
-        self.storage_configurations = input;
-        self
+    pub fn set_storage_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>) -> Self {
+        self.storage_configurations = input; self
+    }
+    /// <p>The storage configurations defined for the runtime environment.</p>
+    pub fn get_storage_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>> {
+        &self.storage_configurations
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags defined for this runtime environment.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags defined for this runtime environment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags defined for this runtime environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
     pub fn high_availability_config(mut self, input: crate::types::HighAvailabilityConfig) -> Self {
@@ -443,12 +414,12 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
-    pub fn set_high_availability_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HighAvailabilityConfig>,
-    ) -> Self {
-        self.high_availability_config = input;
-        self
+    pub fn set_high_availability_config(mut self, input: ::std::option::Option<crate::types::HighAvailabilityConfig>) -> Self {
+        self.high_availability_config = input; self
+    }
+    /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
+    pub fn get_high_availability_config(&self) -> &::std::option::Option<crate::types::HighAvailabilityConfig> {
+        &self.high_availability_config
     }
     /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -457,8 +428,11 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
+    }
+    /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
     pub fn actual_capacity(mut self, input: i32) -> Self {
@@ -467,56 +441,50 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
     pub fn set_actual_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.actual_capacity = input;
-        self
+        self.actual_capacity = input; self
+    }
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    pub fn get_actual_capacity(&self) -> &::std::option::Option<i32> {
+        &self.actual_capacity
     }
     /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.load_balancer_arn = input;
-        self
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.load_balancer_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the reported status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_reason = input;
-        self
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input; self
+    }
+    /// <p>The reason for the reported status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.preferred_maintenance_window = input; self
+    }
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
     }
     /// <p>Indicates the pending maintenance scheduled on this environment.</p>
     pub fn pending_maintenance(mut self, input: crate::types::PendingMaintenance) -> Self {
@@ -524,12 +492,12 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>Indicates the pending maintenance scheduled on this environment.</p>
-    pub fn set_pending_maintenance(
-        mut self,
-        input: ::std::option::Option<crate::types::PendingMaintenance>,
-    ) -> Self {
-        self.pending_maintenance = input;
-        self
+    pub fn set_pending_maintenance(mut self, input: ::std::option::Option<crate::types::PendingMaintenance>) -> Self {
+        self.pending_maintenance = input; self
+    }
+    /// <p>Indicates the pending maintenance scheduled on this environment.</p>
+    pub fn get_pending_maintenance(&self) -> &::std::option::Option<crate::types::PendingMaintenance> {
+        &self.pending_maintenance
     }
     /// <p>The identifier of a customer managed key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -538,44 +506,71 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The identifier of a customer managed key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
+    }
+    /// <p>The identifier of a customer managed key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
     pub fn build(self) -> crate::operation::get_environment::GetEnvironmentOutput {
         crate::operation::get_environment::GetEnvironmentOutput {
-            name: self.name,
-            description: self.description,
-            environment_arn: self.environment_arn,
-            environment_id: self.environment_id,
-            instance_type: self.instance_type,
-            status: self.status,
-            engine_type: self.engine_type,
-            engine_version: self.engine_version,
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
-            security_group_ids: self.security_group_ids,
-            creation_time: self.creation_time,
-            storage_configurations: self.storage_configurations,
-            tags: self.tags,
-            high_availability_config: self.high_availability_config,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
-            actual_capacity: self.actual_capacity,
-            load_balancer_arn: self.load_balancer_arn,
-            status_reason: self.status_reason,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            pending_maintenance: self.pending_maintenance,
-            kms_key_id: self.kms_key_id,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            environment_arn: self.environment_arn
+            ,
+            environment_id: self.environment_id
+            ,
+            instance_type: self.instance_type
+            ,
+            status: self.status
+            ,
+            engine_type: self.engine_type
+            ,
+            engine_version: self.engine_version
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            creation_time: self.creation_time
+            ,
+            storage_configurations: self.storage_configurations
+            ,
+            tags: self.tags
+            ,
+            high_availability_config: self.high_availability_config
+            ,
+            publicly_accessible: self.publicly_accessible
+                .unwrap_or_default()
+            ,
+            actual_capacity: self.actual_capacity
+            ,
+            load_balancer_arn: self.load_balancer_arn
+            ,
+            status_reason: self.status_reason
+            ,
+            preferred_maintenance_window: self.preferred_maintenance_window
+            ,
+            pending_maintenance: self.pending_maintenance
+            ,
+            kms_key_id: self.kms_key_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTaskDefinitionInput {
+pub struct DescribeTaskDefinitionInput  {
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
     #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct DescribeTaskDefinitionInput {
 }
 impl DescribeTaskDefinitionInput {
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
-    pub fn task_definition(&self) -> ::std::option::Option<&str> {
+    pub fn task_definition(&self) -> ::std::option::Option<& str> {
         self.task_definition.as_deref()
     }
     /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn include(&self) -> ::std::option::Option<&[crate::types::TaskDefinitionField]> {
+    pub fn include(&self) -> ::std::option::Option<& [crate::types::TaskDefinitionField]> {
         self.include.as_deref()
     }
 }
 impl DescribeTaskDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskDefinitionInput`](crate::operation::describe_task_definition::DescribeTaskDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_task_definition::builders::DescribeTaskDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_task_definition::builders::DescribeTaskDefinitionInputBuilder {
         crate::operation::describe_task_definition::builders::DescribeTaskDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTaskDefinitionInput`](crate::operation::describe_task_definition::DescribeTaskDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTaskDefinitionInputBuilder {
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>,
 }
 impl DescribeTaskDefinitionInputBuilder {
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
-    pub fn task_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.task_definition = input;
-        self
+    pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.task_definition = input; self
+    }
+    /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_definition
     }
     /// Appends an item to `include`.
     ///
@@ -62,30 +55,28 @@ impl DescribeTaskDefinitionInputBuilder {
     /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
     pub fn include(mut self, input: crate::types::TaskDefinitionField) -> Self {
         let mut v = self.include.unwrap_or_default();
-        v.push(input);
-        self.include = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>,
-    ) -> Self {
-        self.include = input;
-        self
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>) -> Self {
+        self.include = input; self
+    }
+    /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>> {
+        &self.include
     }
     /// Consumes the builder and constructs a [`DescribeTaskDefinitionInput`](crate::operation::describe_task_definition::DescribeTaskDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_task_definition::DescribeTaskDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_task_definition::DescribeTaskDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_task_definition::DescribeTaskDefinitionInput {
-                task_definition: self.task_definition,
-                include: self.include,
-            },
+                task_definition: self.task_definition
+                ,
+                include: self.include
+                ,
+            }
         )
     }
 }
+

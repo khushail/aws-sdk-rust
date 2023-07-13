@@ -3,11 +3,11 @@
 /// <p>The VDM attributes that apply to your Amazon SES account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VdmAttributes {
-    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+pub struct VdmAttributes  {
+    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub vdm_enabled: ::std::option::Option<crate::types::FeatureStatus>,
@@ -19,22 +19,20 @@ pub struct VdmAttributes {
     pub guardian_attributes: ::std::option::Option<crate::types::GuardianAttributes>,
 }
 impl VdmAttributes {
-    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li> 
     /// </ul>
-    pub fn vdm_enabled(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+    pub fn vdm_enabled(&self) -> ::std::option::Option<& crate::types::FeatureStatus> {
         self.vdm_enabled.as_ref()
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
-    pub fn dashboard_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DashboardAttributes> {
+    pub fn dashboard_attributes(&self) -> ::std::option::Option<& crate::types::DashboardAttributes> {
         self.dashboard_attributes.as_ref()
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
-    pub fn guardian_attributes(&self) -> ::std::option::Option<&crate::types::GuardianAttributes> {
+    pub fn guardian_attributes(&self) -> ::std::option::Option<& crate::types::GuardianAttributes> {
         self.guardian_attributes.as_ref()
     }
 }
@@ -47,35 +45,37 @@ impl VdmAttributes {
 
 /// A builder for [`VdmAttributes`](crate::types::VdmAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VdmAttributesBuilder {
     pub(crate) vdm_enabled: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) dashboard_attributes: ::std::option::Option<crate::types::DashboardAttributes>,
     pub(crate) guardian_attributes: ::std::option::Option<crate::types::GuardianAttributes>,
 }
 impl VdmAttributesBuilder {
-    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li> 
     /// </ul>
     pub fn vdm_enabled(mut self, input: crate::types::FeatureStatus) -> Self {
         self.vdm_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li> 
     /// </ul>
-    pub fn set_vdm_enabled(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureStatus>,
-    ) -> Self {
-        self.vdm_enabled = input;
-        self
+    pub fn set_vdm_enabled(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
+        self.vdm_enabled = input; self
+    }
+    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li> 
+    /// </ul>
+    pub fn get_vdm_enabled(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.vdm_enabled
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
     pub fn dashboard_attributes(mut self, input: crate::types::DashboardAttributes) -> Self {
@@ -83,12 +83,12 @@ impl VdmAttributesBuilder {
         self
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
-    pub fn set_dashboard_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::DashboardAttributes>,
-    ) -> Self {
-        self.dashboard_attributes = input;
-        self
+    pub fn set_dashboard_attributes(mut self, input: ::std::option::Option<crate::types::DashboardAttributes>) -> Self {
+        self.dashboard_attributes = input; self
+    }
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+    pub fn get_dashboard_attributes(&self) -> &::std::option::Option<crate::types::DashboardAttributes> {
+        &self.dashboard_attributes
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
     pub fn guardian_attributes(mut self, input: crate::types::GuardianAttributes) -> Self {
@@ -96,19 +96,23 @@ impl VdmAttributesBuilder {
         self
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
-    pub fn set_guardian_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::GuardianAttributes>,
-    ) -> Self {
-        self.guardian_attributes = input;
-        self
+    pub fn set_guardian_attributes(mut self, input: ::std::option::Option<crate::types::GuardianAttributes>) -> Self {
+        self.guardian_attributes = input; self
+    }
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+    pub fn get_guardian_attributes(&self) -> &::std::option::Option<crate::types::GuardianAttributes> {
+        &self.guardian_attributes
     }
     /// Consumes the builder and constructs a [`VdmAttributes`](crate::types::VdmAttributes).
     pub fn build(self) -> crate::types::VdmAttributes {
         crate::types::VdmAttributes {
-            vdm_enabled: self.vdm_enabled,
-            dashboard_attributes: self.dashboard_attributes,
-            guardian_attributes: self.guardian_attributes,
+            vdm_enabled: self.vdm_enabled
+            ,
+            dashboard_attributes: self.dashboard_attributes
+            ,
+            guardian_attributes: self.guardian_attributes
+            ,
         }
     }
 }
+

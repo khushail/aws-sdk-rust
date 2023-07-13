@@ -3,7 +3,7 @@
 /// <p>Represents an MSK Configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Configuration {
+pub struct Configuration  {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct Configuration {
 }
 impl Configuration {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
-    pub fn kafka_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn kafka_versions(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.kafka_versions.as_deref()
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn latest_revision(&self) -> ::std::option::Option<&crate::types::ConfigurationRevision> {
+    pub fn latest_revision(&self) -> ::std::option::Option<& crate::types::ConfigurationRevision> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ConfigurationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ConfigurationState> {
         self.state.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl Configuration {
 
 /// A builder for [`Configuration`](crate::types::Configuration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -85,8 +83,11 @@ impl ConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The time when the configuration was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -94,12 +95,12 @@ impl ConfigurationBuilder {
         self
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time when the configuration was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The description of the configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,30 +109,30 @@ impl ConfigurationBuilder {
     }
     /// <p>The description of the configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `kafka_versions`.
     ///
     /// To override the contents of this collection use [`set_kafka_versions`](Self::set_kafka_versions).
     ///
     /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
-    pub fn kafka_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kafka_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.kafka_versions.unwrap_or_default();
-        v.push(input.into());
-        self.kafka_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.kafka_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
-    pub fn set_kafka_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.kafka_versions = input;
-        self
+    pub fn set_kafka_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.kafka_versions = input; self
+    }
+    /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
+    pub fn get_kafka_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.kafka_versions
     }
     /// <p>Latest revision of the configuration.</p>
     pub fn latest_revision(mut self, input: crate::types::ConfigurationRevision) -> Self {
@@ -139,12 +140,12 @@ impl ConfigurationBuilder {
         self
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationRevision>,
-    ) -> Self {
-        self.latest_revision = input;
-        self
+    pub fn set_latest_revision(mut self, input: ::std::option::Option<crate::types::ConfigurationRevision>) -> Self {
+        self.latest_revision = input; self
+    }
+    /// <p>Latest revision of the configuration.</p>
+    pub fn get_latest_revision(&self) -> &::std::option::Option<crate::types::ConfigurationRevision> {
+        &self.latest_revision
     }
     /// <p>The name of the configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,8 +154,11 @@ impl ConfigurationBuilder {
     }
     /// <p>The name of the configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub fn state(mut self, input: crate::types::ConfigurationState) -> Self {
@@ -162,23 +166,31 @@ impl ConfigurationBuilder {
         self
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConfigurationState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ConfigurationState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).
     pub fn build(self) -> crate::types::Configuration {
         crate::types::Configuration {
-            arn: self.arn,
-            creation_time: self.creation_time,
-            description: self.description,
-            kafka_versions: self.kafka_versions,
-            latest_revision: self.latest_revision,
-            name: self.name,
-            state: self.state,
+            arn: self.arn
+            ,
+            creation_time: self.creation_time
+            ,
+            description: self.description
+            ,
+            kafka_versions: self.kafka_versions
+            ,
+            latest_revision: self.latest_revision
+            ,
+            name: self.name
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

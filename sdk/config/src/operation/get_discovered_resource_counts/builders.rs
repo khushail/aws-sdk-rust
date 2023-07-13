@@ -3,152 +3,138 @@ pub use crate::operation::get_discovered_resource_counts::_get_discovered_resour
 
 pub use crate::operation::get_discovered_resource_counts::_get_discovered_resource_counts_input::GetDiscoveredResourceCountsInputBuilder;
 
+impl GetDiscoveredResourceCountsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_discovered_resource_counts();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetDiscoveredResourceCounts`.
-///
-/// <p>Returns the resource types, the number of each resource type, and the total number of resources that Config is recording in this region for your Amazon Web Services account. </p>
-/// <p class="title"> <b>Example</b> </p>
-/// <ol>
-/// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.</p> </li>
-/// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify that you want all resource types. </p> </li>
-/// <li> <p>Config returns the following:</p>
-/// <ul>
-/// <li> <p>The resource types (EC2 instances, IAM users, and S3 buckets).</p> </li>
-/// <li> <p>The number of each resource type (25, 20, and 15).</p> </li>
-/// <li> <p>The total number of all resources (60).</p> </li>
-/// </ul> </li>
-/// </ol>
-/// <p>The response is paginated. By default, Config lists 100 <code>ResourceCount</code> objects on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p> <note>
-/// <p>If you make a call to the <code>GetDiscoveredResourceCounts</code> action, you might not immediately receive resource counts in the following situations:</p>
-/// <ul>
-/// <li> <p>You are a new Config customer.</p> </li>
-/// <li> <p>You just enabled resource recording.</p> </li>
-/// </ul>
-/// <p>It might take a few minutes for Config to record and count your resources. Wait a few minutes and then retry the <code>GetDiscoveredResourceCounts</code> action. </p>
+/// 
+/// <p>Returns the resource types, the number of each resource type, and the total number of resources that Config is recording in this region for your Amazon Web Services account. </p> 
+/// <p class="title"> <b>Example</b> </p> 
+/// <ol> 
+/// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.</p> </li> 
+/// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify that you want all resource types. </p> </li> 
+/// <li> <p>Config returns the following:</p> 
+/// <ul> 
+/// <li> <p>The resource types (EC2 instances, IAM users, and S3 buckets).</p> </li> 
+/// <li> <p>The number of each resource type (25, 20, and 15).</p> </li> 
+/// <li> <p>The total number of all resources (60).</p> </li> 
+/// </ul> </li> 
+/// </ol> 
+/// <p>The response is paginated. By default, Config lists 100 <code>ResourceCount</code> objects on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p> <note> 
+/// <p>If you make a call to the <code>GetDiscoveredResourceCounts</code> action, you might not immediately receive resource counts in the following situations:</p> 
+/// <ul> 
+/// <li> <p>You are a new Config customer.</p> </li> 
+/// <li> <p>You just enabled resource recording.</p> </li> 
+/// </ul> 
+/// <p>It might take a few minutes for Config to record and count your resources. Wait a few minutes and then retry the <code>GetDiscoveredResourceCounts</code> action. </p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDiscoveredResourceCountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder,
 }
-impl GetDiscoveredResourceCountsFluentBuilder {
+impl GetDiscoveredResourceCountsFluentBuilder  {
     /// Creates a new `GetDiscoveredResourceCounts`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCounts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetDiscoveredResourceCounts as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCounts, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCounts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCounts, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator{
-        crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator {
+                                crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `resourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
-    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
-    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p> 
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note> 
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p> 
     /// </note>
-    pub fn resource_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_types(input.into());
         self
     }
-    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
-    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p> 
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note> 
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p> 
     /// </note>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
+    }
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p> 
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note> 
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p> 
+    /// </note>
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_types()
     }
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -160,6 +146,10 @@ impl GetDiscoveredResourceCountsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -170,4 +160,9 @@ impl GetDiscoveredResourceCountsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

@@ -2,83 +2,77 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTlsInspectionConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+pub struct DescribeTlsInspectionConfigurationInput  {
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     #[doc(hidden)]
     pub tls_inspection_configuration_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     #[doc(hidden)]
     pub tls_inspection_configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTlsInspectionConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn tls_inspection_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn tls_inspection_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.tls_inspection_configuration_arn.as_deref()
     }
-    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn tls_inspection_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn tls_inspection_configuration_name(&self) -> ::std::option::Option<& str> {
         self.tls_inspection_configuration_name.as_deref()
     }
 }
 impl DescribeTlsInspectionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeTlsInspectionConfigurationInput`](crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationInput).
-    pub fn builder() -> crate::operation::describe_tls_inspection_configuration::builders::DescribeTlsInspectionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_tls_inspection_configuration::builders::DescribeTlsInspectionConfigurationInputBuilder {
         crate::operation::describe_tls_inspection_configuration::builders::DescribeTlsInspectionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTlsInspectionConfigurationInput`](crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTlsInspectionConfigurationInputBuilder {
     pub(crate) tls_inspection_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tls_inspection_configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTlsInspectionConfigurationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn tls_inspection_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tls_inspection_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tls_inspection_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_tls_inspection_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.tls_inspection_configuration_arn = input;
-        self
+    pub fn set_tls_inspection_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tls_inspection_configuration_arn = input; self
     }
-    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn tls_inspection_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_tls_inspection_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tls_inspection_configuration_arn
+    }
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p> 
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn tls_inspection_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tls_inspection_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_tls_inspection_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.tls_inspection_configuration_name = input;
-        self
+    pub fn set_tls_inspection_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tls_inspection_configuration_name = input; self
+    }
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p> 
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_tls_inspection_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tls_inspection_configuration_name
     }
     /// Consumes the builder and constructs a [`DescribeTlsInspectionConfigurationInput`](crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationInput {
                 tls_inspection_configuration_arn: self.tls_inspection_configuration_arn
@@ -89,3 +83,4 @@ impl DescribeTlsInspectionConfigurationInputBuilder {
         )
     }
 }
+

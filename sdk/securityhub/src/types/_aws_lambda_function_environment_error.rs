@@ -3,7 +3,7 @@
 /// <p>Error messages for environment variables that could not be applied.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsLambdaFunctionEnvironmentError {
+pub struct AwsLambdaFunctionEnvironmentError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsLambdaFunctionEnvironmentError {
 }
 impl AwsLambdaFunctionEnvironmentError {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AwsLambdaFunctionEnvironmentError {
 
 /// A builder for [`AwsLambdaFunctionEnvironmentError`](crate::types::AwsLambdaFunctionEnvironmentError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionEnvironmentErrorBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AwsLambdaFunctionEnvironmentErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
+    }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl AwsLambdaFunctionEnvironmentErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`AwsLambdaFunctionEnvironmentError`](crate::types::AwsLambdaFunctionEnvironmentError).
     pub fn build(self) -> crate::types::AwsLambdaFunctionEnvironmentError {
         crate::types::AwsLambdaFunctionEnvironmentError {
-            error_code: self.error_code,
-            message: self.message,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteImageInput {
+pub struct DeleteImageInput  {
     /// <p>The name of the image to delete.</p>
     #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImageInput {
     /// <p>The name of the image to delete.</p>
-    pub fn image_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_name(&self) -> ::std::option::Option<& str> {
         self.image_name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteImageInput {
 
 /// A builder for [`DeleteImageInput`](crate::operation::delete_image::DeleteImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImageInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteImageInputBuilder {
     }
     /// <p>The name of the image to delete.</p>
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
+    }
+    /// <p>The name of the image to delete.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
     }
     /// Consumes the builder and constructs a [`DeleteImageInput`](crate::operation::delete_image::DeleteImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_image::DeleteImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_image::DeleteImageInput {
-            image_name: self.image_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image::DeleteImageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_image::DeleteImageInput {
+                image_name: self.image_name
+                ,
+            }
+        )
     }
 }
+

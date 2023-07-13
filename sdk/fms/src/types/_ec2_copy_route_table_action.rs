@@ -3,7 +3,7 @@
 /// <p>An action that copies the EC2 route table for use in remediation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2CopyRouteTableAction {
+pub struct Ec2CopyRouteTableAction  {
     /// <p>A description of the copied EC2 route table that is associated with the remediation action.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct Ec2CopyRouteTableAction {
 }
 impl Ec2CopyRouteTableAction {
     /// <p>A description of the copied EC2 route table that is associated with the remediation action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The VPC ID of the copied EC2 route table that is associated with the remediation action.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&crate::types::ActionTarget> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& crate::types::ActionTarget> {
         self.vpc_id.as_ref()
     }
     /// <p>The ID of the copied EC2 route table that is associated with the remediation action.</p>
-    pub fn route_table_id(&self) -> ::std::option::Option<&crate::types::ActionTarget> {
+    pub fn route_table_id(&self) -> ::std::option::Option<& crate::types::ActionTarget> {
         self.route_table_id.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl Ec2CopyRouteTableAction {
 
 /// A builder for [`Ec2CopyRouteTableAction`](crate::types::Ec2CopyRouteTableAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2CopyRouteTableActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<crate::types::ActionTarget>,
@@ -53,8 +51,11 @@ impl Ec2CopyRouteTableActionBuilder {
     }
     /// <p>A description of the copied EC2 route table that is associated with the remediation action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the copied EC2 route table that is associated with the remediation action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The VPC ID of the copied EC2 route table that is associated with the remediation action.</p>
     pub fn vpc_id(mut self, input: crate::types::ActionTarget) -> Self {
@@ -63,8 +64,11 @@ impl Ec2CopyRouteTableActionBuilder {
     }
     /// <p>The VPC ID of the copied EC2 route table that is associated with the remediation action.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The VPC ID of the copied EC2 route table that is associated with the remediation action.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.vpc_id
     }
     /// <p>The ID of the copied EC2 route table that is associated with the remediation action.</p>
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
@@ -72,19 +76,23 @@ impl Ec2CopyRouteTableActionBuilder {
         self
     }
     /// <p>The ID of the copied EC2 route table that is associated with the remediation action.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
-        self.route_table_id = input;
-        self
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
+        self.route_table_id = input; self
+    }
+    /// <p>The ID of the copied EC2 route table that is associated with the remediation action.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.route_table_id
     }
     /// Consumes the builder and constructs a [`Ec2CopyRouteTableAction`](crate::types::Ec2CopyRouteTableAction).
     pub fn build(self) -> crate::types::Ec2CopyRouteTableAction {
         crate::types::Ec2CopyRouteTableAction {
-            description: self.description,
-            vpc_id: self.vpc_id,
-            route_table_id: self.route_table_id,
+            description: self.description
+            ,
+            vpc_id: self.vpc_id
+            ,
+            route_table_id: self.route_table_id
+            ,
         }
     }
 }
+

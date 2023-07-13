@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWatchlistInput {
+pub struct DeleteWatchlistInput  {
     /// <p>The identifier of the domain that contains the watchlist.</p>
     #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteWatchlistInput {
 }
 impl DeleteWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the watchlist to be deleted.</p>
-    pub fn watchlist_id(&self) -> ::std::option::Option<&str> {
+    pub fn watchlist_id(&self) -> ::std::option::Option<& str> {
         self.watchlist_id.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DeleteWatchlistInput {
 
 /// A builder for [`DeleteWatchlistInput`](crate::operation::delete_watchlist::DeleteWatchlistInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWatchlistInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) watchlist_id: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeleteWatchlistInputBuilder {
     }
     /// <p>The identifier of the domain that contains the watchlist.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
+    }
+    /// <p>The identifier of the domain that contains the watchlist.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
     }
     /// <p>The identifier of the watchlist to be deleted.</p>
     pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl DeleteWatchlistInputBuilder {
     }
     /// <p>The identifier of the watchlist to be deleted.</p>
     pub fn set_watchlist_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.watchlist_id = input;
-        self
+        self.watchlist_id = input; self
+    }
+    /// <p>The identifier of the watchlist to be deleted.</p>
+    pub fn get_watchlist_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.watchlist_id
     }
     /// Consumes the builder and constructs a [`DeleteWatchlistInput`](crate::operation::delete_watchlist::DeleteWatchlistInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_watchlist::DeleteWatchlistInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_watchlist::DeleteWatchlistInput {
-            domain_id: self.domain_id,
-            watchlist_id: self.watchlist_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_watchlist::DeleteWatchlistInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_watchlist::DeleteWatchlistInput {
+                domain_id: self.domain_id
+                ,
+                watchlist_id: self.watchlist_id
+                ,
+            }
+        )
     }
 }
+

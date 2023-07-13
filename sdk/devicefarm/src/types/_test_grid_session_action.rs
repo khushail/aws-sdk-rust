@@ -3,7 +3,7 @@
 /// <p>An action taken by a <code>TestGridSession</code> browser instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestGridSessionAction {
+pub struct TestGridSessionAction  {
     /// <p>The action taken by the session.</p>
     #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
@@ -22,11 +22,11 @@ pub struct TestGridSessionAction {
 }
 impl TestGridSessionAction {
     /// <p>The action taken by the session.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>The time that the session invoked the action.</p>
-    pub fn started(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
@@ -34,11 +34,11 @@ impl TestGridSessionAction {
         self.duration
     }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<& str> {
         self.status_code.as_deref()
     }
     /// <p>HTTP method that the browser used to make the request.</p>
-    pub fn request_method(&self) -> ::std::option::Option<&str> {
+    pub fn request_method(&self) -> ::std::option::Option<& str> {
         self.request_method.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl TestGridSessionAction {
 
 /// A builder for [`TestGridSessionAction`](crate::types::TestGridSessionAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestGridSessionActionBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) started: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -69,8 +67,11 @@ impl TestGridSessionActionBuilder {
     }
     /// <p>The action taken by the session.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
+    }
+    /// <p>The action taken by the session.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
     }
     /// <p>The time that the session invoked the action.</p>
     pub fn started(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,12 +79,12 @@ impl TestGridSessionActionBuilder {
         self
     }
     /// <p>The time that the session invoked the action.</p>
-    pub fn set_started(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started = input;
-        self
+    pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.started = input; self
+    }
+    /// <p>The time that the session invoked the action.</p>
+    pub fn get_started(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
     pub fn duration(mut self, input: i64) -> Self {
@@ -92,8 +93,11 @@ impl TestGridSessionActionBuilder {
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
+    }
+    /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i64> {
+        &self.duration
     }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,33 +106,39 @@ impl TestGridSessionActionBuilder {
     }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
+    }
+    /// <p>HTTP status code returned to the browser when the action was taken.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
     }
     /// <p>HTTP method that the browser used to make the request.</p>
-    pub fn request_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>HTTP method that the browser used to make the request.</p>
-    pub fn set_request_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.request_method = input;
-        self
+    pub fn set_request_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_method = input; self
+    }
+    /// <p>HTTP method that the browser used to make the request.</p>
+    pub fn get_request_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_method
     }
     /// Consumes the builder and constructs a [`TestGridSessionAction`](crate::types::TestGridSessionAction).
     pub fn build(self) -> crate::types::TestGridSessionAction {
         crate::types::TestGridSessionAction {
-            action: self.action,
-            started: self.started,
-            duration: self.duration,
-            status_code: self.status_code,
-            request_method: self.request_method,
+            action: self.action
+            ,
+            started: self.started
+            ,
+            duration: self.duration
+            ,
+            status_code: self.status_code
+            ,
+            request_method: self.request_method
+            ,
         }
     }
 }
+

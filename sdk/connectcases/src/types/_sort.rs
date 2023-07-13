@@ -3,7 +3,7 @@
 /// <p>A structured set of sort terms.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Sort {
+pub struct Sort  {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Sort {
 }
 impl Sort {
     /// <p>Unique identifier of a field.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>A structured set of sort terms</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::Order> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::Order> {
         self.sort_order.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Sort {
 
 /// A builder for [`Sort`](crate::types::Sort).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SortBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::Order>,
@@ -45,8 +43,11 @@ impl SortBuilder {
     }
     /// <p>Unique identifier of a field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
+    }
+    /// <p>Unique identifier of a field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
     }
     /// <p>A structured set of sort terms</p>
     pub fn sort_order(mut self, input: crate::types::Order) -> Self {
@@ -55,14 +56,20 @@ impl SortBuilder {
     }
     /// <p>A structured set of sort terms</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
+    }
+    /// <p>A structured set of sort terms</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::Order> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`Sort`](crate::types::Sort).
     pub fn build(self) -> crate::types::Sort {
         crate::types::Sort {
-            field_id: self.field_id,
-            sort_order: self.sort_order,
+            field_id: self.field_id
+            ,
+            sort_order: self.sort_order
+            ,
         }
     }
 }
+

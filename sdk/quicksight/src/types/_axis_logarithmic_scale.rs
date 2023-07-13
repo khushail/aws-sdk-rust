@@ -3,7 +3,7 @@
 /// <p>The logarithmic axis scale setup.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AxisLogarithmicScale {
+pub struct AxisLogarithmicScale  {
     /// <p>The base setup of a logarithmic axis scale.</p>
     #[doc(hidden)]
     pub base: ::std::option::Option<f64>,
@@ -23,9 +23,7 @@ impl AxisLogarithmicScale {
 
 /// A builder for [`AxisLogarithmicScale`](crate::types::AxisLogarithmicScale).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AxisLogarithmicScaleBuilder {
     pub(crate) base: ::std::option::Option<f64>,
 }
@@ -37,11 +35,18 @@ impl AxisLogarithmicScaleBuilder {
     }
     /// <p>The base setup of a logarithmic axis scale.</p>
     pub fn set_base(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.base = input;
-        self
+        self.base = input; self
+    }
+    /// <p>The base setup of a logarithmic axis scale.</p>
+    pub fn get_base(&self) -> &::std::option::Option<f64> {
+        &self.base
     }
     /// Consumes the builder and constructs a [`AxisLogarithmicScale`](crate::types::AxisLogarithmicScale).
     pub fn build(self) -> crate::types::AxisLogarithmicScale {
-        crate::types::AxisLogarithmicScale { base: self.base }
+        crate::types::AxisLogarithmicScale {
+            base: self.base
+            ,
+        }
     }
 }
+

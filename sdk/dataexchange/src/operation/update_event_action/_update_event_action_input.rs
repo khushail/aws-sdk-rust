@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEventActionInput {
+pub struct UpdateEventActionInput  {
     /// <p>What occurs after a certain event.</p>
     #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
@@ -12,27 +12,24 @@ pub struct UpdateEventActionInput {
 }
 impl UpdateEventActionInput {
     /// <p>What occurs after a certain event.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_action_id(&self) -> ::std::option::Option<& str> {
         self.event_action_id.as_deref()
     }
 }
 impl UpdateEventActionInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventActionInput`](crate::operation::update_event_action::UpdateEventActionInput).
-    pub fn builder(
-    ) -> crate::operation::update_event_action::builders::UpdateEventActionInputBuilder {
+    pub fn builder() -> crate::operation::update_event_action::builders::UpdateEventActionInputBuilder {
         crate::operation::update_event_action::builders::UpdateEventActionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventActionInput`](crate::operation::update_event_action::UpdateEventActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventActionInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) event_action_id: ::std::option::Option<::std::string::String>,
@@ -45,37 +42,35 @@ impl UpdateEventActionInputBuilder {
     }
     /// <p>What occurs after a certain event.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
+    }
+    /// <p>What occurs after a certain event.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_action_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn set_event_action_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_action_id = input;
-        self
+    pub fn set_event_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_action_id = input; self
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn get_event_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_action_id
     }
     /// Consumes the builder and constructs a [`UpdateEventActionInput`](crate::operation::update_event_action::UpdateEventActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_action::UpdateEventActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_event_action::UpdateEventActionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_event_action::UpdateEventActionInput {
-                action: self.action,
-                event_action_id: self.event_action_id,
-            },
+                action: self.action
+                ,
+                event_action_id: self.event_action_id
+                ,
+            }
         )
     }
 }
+

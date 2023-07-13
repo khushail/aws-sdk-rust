@@ -3,7 +3,7 @@
 /// <p>The estimated cost savings that might be realized if the recommended operations are taken.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustedAdvisorCostOptimizingSummary {
+pub struct TrustedAdvisorCostOptimizingSummary  {
     /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
     #[doc(hidden)]
     pub estimated_monthly_savings: f64,
@@ -30,9 +30,7 @@ impl TrustedAdvisorCostOptimizingSummary {
 
 /// A builder for [`TrustedAdvisorCostOptimizingSummary`](crate::types::TrustedAdvisorCostOptimizingSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCostOptimizingSummaryBuilder {
     pub(crate) estimated_monthly_savings: ::std::option::Option<f64>,
     pub(crate) estimated_percent_monthly_savings: ::std::option::Option<f64>,
@@ -45,8 +43,11 @@ impl TrustedAdvisorCostOptimizingSummaryBuilder {
     }
     /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
     pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_monthly_savings = input;
-        self
+        self.estimated_monthly_savings = input; self
+    }
+    /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
+    pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<f64> {
+        &self.estimated_monthly_savings
     }
     /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
     pub fn estimated_percent_monthly_savings(mut self, input: f64) -> Self {
@@ -54,20 +55,23 @@ impl TrustedAdvisorCostOptimizingSummaryBuilder {
         self
     }
     /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
-    pub fn set_estimated_percent_monthly_savings(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
-        self.estimated_percent_monthly_savings = input;
-        self
+    pub fn set_estimated_percent_monthly_savings(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.estimated_percent_monthly_savings = input; self
+    }
+    /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
+    pub fn get_estimated_percent_monthly_savings(&self) -> &::std::option::Option<f64> {
+        &self.estimated_percent_monthly_savings
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorCostOptimizingSummary`](crate::types::TrustedAdvisorCostOptimizingSummary).
     pub fn build(self) -> crate::types::TrustedAdvisorCostOptimizingSummary {
         crate::types::TrustedAdvisorCostOptimizingSummary {
-            estimated_monthly_savings: self.estimated_monthly_savings.unwrap_or_default(),
-            estimated_percent_monthly_savings: self
-                .estimated_percent_monthly_savings
-                .unwrap_or_default(),
+            estimated_monthly_savings: self.estimated_monthly_savings
+                .unwrap_or_default()
+            ,
+            estimated_percent_monthly_savings: self.estimated_percent_monthly_savings
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

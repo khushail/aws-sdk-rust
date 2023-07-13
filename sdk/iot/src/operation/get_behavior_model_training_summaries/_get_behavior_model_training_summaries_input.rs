@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBehaviorModelTrainingSummariesInput {
+pub struct GetBehaviorModelTrainingSummariesInput  {
     /// <p> The name of the security profile. </p>
     #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct GetBehaviorModelTrainingSummariesInput {
 }
 impl GetBehaviorModelTrainingSummariesInput {
     /// <p> The name of the security profile. </p>
-    pub fn security_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> ::std::option::Option<& str> {
         self.security_profile_name.as_deref()
     }
     /// <p> The maximum number of results to return at one time. The default is 10. </p>
@@ -23,22 +23,20 @@ impl GetBehaviorModelTrainingSummariesInput {
         self.max_results
     }
     /// <p> The token for the next set of results. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetBehaviorModelTrainingSummariesInput {
     /// Creates a new builder-style object to manufacture [`GetBehaviorModelTrainingSummariesInput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput).
-    pub fn builder() -> crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesInputBuilder{
+    pub fn builder() -> crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesInputBuilder {
         crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBehaviorModelTrainingSummariesInput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBehaviorModelTrainingSummariesInputBuilder {
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,20 +44,17 @@ pub struct GetBehaviorModelTrainingSummariesInputBuilder {
 }
 impl GetBehaviorModelTrainingSummariesInputBuilder {
     /// <p> The name of the security profile. </p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the security profile. </p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.security_profile_name = input;
-        self
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_profile_name = input; self
+    }
+    /// <p> The name of the security profile. </p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_name
     }
     /// <p> The maximum number of results to return at one time. The default is 10. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,8 +63,11 @@ impl GetBehaviorModelTrainingSummariesInputBuilder {
     }
     /// <p> The maximum number of results to return at one time. The default is 10. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> The maximum number of results to return at one time. The default is 10. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p> The token for the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,11 +76,14 @@ impl GetBehaviorModelTrainingSummariesInputBuilder {
     }
     /// <p> The token for the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> The token for the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetBehaviorModelTrainingSummariesInput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput {
                 security_profile_name: self.security_profile_name
@@ -95,3 +96,4 @@ impl GetBehaviorModelTrainingSummariesInputBuilder {
         )
     }
 }
+

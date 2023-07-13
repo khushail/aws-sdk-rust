@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEnvironmentOutput {
+pub struct UpdateEnvironmentOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -25,48 +25,45 @@ pub struct UpdateEnvironmentOutput {
 }
 impl UpdateEnvironmentOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The environment ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EnvironmentState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-    pub fn monitors(&self) -> ::std::option::Option<&[crate::types::Monitor]> {
+    pub fn monitors(&self) -> ::std::option::Option<& [crate::types::Monitor]> {
         self.monitors.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -78,20 +75,17 @@ pub struct UpdateEnvironmentOutputBuilder {
 }
 impl UpdateEnvironmentOutputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The environment ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,8 +94,11 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The environment ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The environment ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,8 +107,11 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,8 +120,11 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The description of the environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn state(mut self, input: crate::types::EnvironmentState) -> Self {
@@ -129,12 +132,12 @@ impl UpdateEnvironmentOutputBuilder {
         self
     }
     /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EnvironmentState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EnvironmentState> {
+        &self.state
     }
     /// Appends an item to `monitors`.
     ///
@@ -143,37 +146,44 @@ impl UpdateEnvironmentOutputBuilder {
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub fn monitors(mut self, input: crate::types::Monitor) -> Self {
         let mut v = self.monitors.unwrap_or_default();
-        v.push(input);
-        self.monitors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.monitors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-    pub fn set_monitors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
-    ) -> Self {
-        self.monitors = input;
-        self
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>) -> Self {
+        self.monitors = input; self
+    }
+    /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Monitor>> {
+        &self.monitors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
     pub fn build(self) -> crate::operation::update_environment::UpdateEnvironmentOutput {
         crate::operation::update_environment::UpdateEnvironmentOutput {
-            application_id: self.application_id,
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            state: self.state,
-            monitors: self.monitors,
+            application_id: self.application_id
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            state: self.state
+            ,
+            monitors: self.monitors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

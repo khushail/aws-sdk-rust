@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateAssetsInput {
+pub struct DisassociateAssetsInput  {
     /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
     #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
@@ -18,35 +18,32 @@ pub struct DisassociateAssetsInput {
 }
 impl DisassociateAssetsInput {
     /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn hierarchy_id(&self) -> ::std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> ::std::option::Option<& str> {
         self.hierarchy_id.as_deref()
     }
     /// <p>The ID of the child asset to disassociate.</p>
-    pub fn child_asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn child_asset_id(&self) -> ::std::option::Option<& str> {
         self.child_asset_id.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DisassociateAssetsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAssetsInput`](crate::operation::disassociate_assets::DisassociateAssetsInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_assets::builders::DisassociateAssetsInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_assets::builders::DisassociateAssetsInputBuilder {
         crate::operation::disassociate_assets::builders::DisassociateAssetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAssetsInput`](crate::operation::disassociate_assets::DisassociateAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAssetsInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
@@ -61,8 +58,11 @@ impl DisassociateAssetsInputBuilder {
     }
     /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
+    }
+    /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +71,24 @@ impl DisassociateAssetsInputBuilder {
     }
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hierarchy_id = input;
-        self
+        self.hierarchy_id = input; self
+    }
+    /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_id
     }
     /// <p>The ID of the child asset to disassociate.</p>
-    pub fn child_asset_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_asset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the child asset to disassociate.</p>
-    pub fn set_child_asset_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.child_asset_id = input;
-        self
+    pub fn set_child_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.child_asset_id = input; self
+    }
+    /// <p>The ID of the child asset to disassociate.</p>
+    pub fn get_child_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.child_asset_id
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,23 +97,26 @@ impl DisassociateAssetsInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DisassociateAssetsInput`](crate::operation::disassociate_assets::DisassociateAssetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_assets::DisassociateAssetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_assets::DisassociateAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_assets::DisassociateAssetsInput {
-                asset_id: self.asset_id,
-                hierarchy_id: self.hierarchy_id,
-                child_asset_id: self.child_asset_id,
-                client_token: self.client_token,
-            },
+                asset_id: self.asset_id
+                ,
+                hierarchy_id: self.hierarchy_id
+                ,
+                child_asset_id: self.child_asset_id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

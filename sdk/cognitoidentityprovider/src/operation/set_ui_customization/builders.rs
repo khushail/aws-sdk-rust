@@ -3,105 +3,90 @@ pub use crate::operation::set_ui_customization::_set_ui_customization_output::Se
 
 pub use crate::operation::set_ui_customization::_set_ui_customization_input::SetUiCustomizationInputBuilder;
 
+impl SetUiCustomizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::set_ui_customization::SetUiCustomizationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::set_ui_customization::SetUICustomizationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.set_ui_customization();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SetUICustomization`.
-///
-/// <p>Sets the user interface (UI) customization information for a user pool's built-in app UI.</p>
-/// <p>You can specify app UI customization settings for a single client (with a specific <code>clientId</code>) or for all clients (by setting the <code>clientId</code> to <code>ALL</code>). If you specify <code>ALL</code>, the default configuration is used for every client that has no previously set UI customization. If you specify UI customization settings for a particular client, it will no longer return to the <code>ALL</code> configuration.</p> <note>
-/// <p>To use this API, your user pool must have a domain associated with it. Otherwise, there is no place to host the app's pages, and the service will throw an error.</p>
+/// 
+/// <p>Sets the user interface (UI) customization information for a user pool's built-in app UI.</p> 
+/// <p>You can specify app UI customization settings for a single client (with a specific <code>clientId</code>) or for all clients (by setting the <code>clientId</code> to <code>ALL</code>). If you specify <code>ALL</code>, the default configuration is used for every client that has no previously set UI customization. If you specify UI customization settings for a particular client, it will no longer return to the <code>ALL</code> configuration.</p> <note> 
+/// <p>To use this API, your user pool must have a domain associated with it. Otherwise, there is no place to host the app's pages, and the service will throw an error.</p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetUICustomizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder,
+                    inner: crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder,
 }
-impl SetUICustomizationFluentBuilder {
+impl SetUICustomizationFluentBuilder  {
     /// Creates a new `SetUICustomization`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_ui_customization::SetUICustomization,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_ui_customization::SetUICustomizationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SetUICustomization as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_ui_customization::SetUiCustomizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_ui_customization::SetUICustomizationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::set_ui_customization::SetUICustomization, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::set_ui_customization::SetUICustomizationError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::set_ui_customization::SetUiCustomizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_ui_customization::SetUICustomizationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_ui_customization::SetUiCustomizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_ui_customization::SetUICustomizationError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_ui_customization::SetUICustomization,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_ui_customization::SetUICustomizationError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::set_ui_customization::SetUiCustomizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_ui_customization::SetUICustomizationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::set_ui_customization::SetUICustomization, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::set_ui_customization::SetUICustomizationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The user pool ID for the user pool.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -111,6 +96,10 @@ impl SetUICustomizationFluentBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
+    }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
     }
     /// <p>The client ID for the client app.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,6 +111,10 @@ impl SetUICustomizationFluentBuilder {
         self.inner = self.inner.set_client_id(input);
         self
     }
+    /// <p>The client ID for the client app.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
+    }
     /// <p>The CSS values in the UI customization.</p>
     pub fn css(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.css(input.into());
@@ -132,17 +125,23 @@ impl SetUICustomizationFluentBuilder {
         self.inner = self.inner.set_css(input);
         self
     }
+    /// <p>The CSS values in the UI customization.</p>
+    pub fn get_css(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_css()
+    }
     /// <p>The uploaded logo image for the UI customization.</p>
     pub fn image_file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.image_file(input);
         self
     }
     /// <p>The uploaded logo image for the UI customization.</p>
-    pub fn set_image_file(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_image_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_image_file(input);
         self
     }
+    /// <p>The uploaded logo image for the UI customization.</p>
+    pub fn get_image_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_image_file()
+    }
 }
+

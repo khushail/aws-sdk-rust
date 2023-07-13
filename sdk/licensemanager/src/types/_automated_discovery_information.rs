@@ -3,14 +3,14 @@
 /// <p>Describes automated discovery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutomatedDiscoveryInformation {
+pub struct AutomatedDiscoveryInformation  {
     /// <p>Time that automated discovery last ran.</p>
     #[doc(hidden)]
     pub last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
-    pub fn last_run_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_run_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl AutomatedDiscoveryInformation {
 
 /// A builder for [`AutomatedDiscoveryInformation`](crate::types::AutomatedDiscoveryInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomatedDiscoveryInformationBuilder {
     pub(crate) last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -36,17 +34,19 @@ impl AutomatedDiscoveryInformationBuilder {
         self
     }
     /// <p>Time that automated discovery last ran.</p>
-    pub fn set_last_run_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_run_time = input;
-        self
+    pub fn set_last_run_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_run_time = input; self
+    }
+    /// <p>Time that automated discovery last ran.</p>
+    pub fn get_last_run_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_run_time
     }
     /// Consumes the builder and constructs a [`AutomatedDiscoveryInformation`](crate::types::AutomatedDiscoveryInformation).
     pub fn build(self) -> crate::types::AutomatedDiscoveryInformation {
         crate::types::AutomatedDiscoveryInformation {
-            last_run_time: self.last_run_time,
+            last_run_time: self.last_run_time
+            ,
         }
     }
 }
+

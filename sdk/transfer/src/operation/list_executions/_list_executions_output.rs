@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListExecutionsOutput {
+pub struct ListExecutionsOutput  {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,23 +16,23 @@ pub struct ListExecutionsOutput {
 }
 impl ListExecutionsOutput {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
-    pub fn executions(&self) -> ::std::option::Option<&[crate::types::ListedExecution]> {
+    pub fn executions(&self) -> ::std::option::Option<& [crate::types::ListedExecution]> {
         self.executions.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
     pub fn builder() -> crate::operation::list_executions::builders::ListExecutionsOutputBuilder {
@@ -42,9 +42,7 @@ impl ListExecutionsOutput {
 
 /// A builder for [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExecutionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -59,8 +57,11 @@ impl ListExecutionsOutputBuilder {
     }
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +70,11 @@ impl ListExecutionsOutputBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// Appends an item to `executions`.
     ///
@@ -79,34 +83,38 @@ impl ListExecutionsOutputBuilder {
     /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
     pub fn executions(mut self, input: crate::types::ListedExecution) -> Self {
         let mut v = self.executions.unwrap_or_default();
-        v.push(input);
-        self.executions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.executions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
-    pub fn set_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>>,
-    ) -> Self {
-        self.executions = input;
-        self
+    pub fn set_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>>) -> Self {
+        self.executions = input; self
+    }
+    /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
+    pub fn get_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>> {
+        &self.executions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
     pub fn build(self) -> crate::operation::list_executions::ListExecutionsOutput {
         crate::operation::list_executions::ListExecutionsOutput {
-            next_token: self.next_token,
-            workflow_id: self.workflow_id,
-            executions: self.executions,
+            next_token: self.next_token
+            ,
+            workflow_id: self.workflow_id
+            ,
+            executions: self.executions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

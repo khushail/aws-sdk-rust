@@ -3,7 +3,7 @@
 /// <p> The file that's used to structure and automate Audit Manager assessments for a given compliance standard. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Framework {
+pub struct Framework  {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -13,10 +13,10 @@ pub struct Framework {
     /// <p> The name of the framework. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> The framework type, such as a custom framework or a standard framework. </p>
+    /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FrameworkType>,
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
     #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p> The description of the framework. </p>
@@ -25,7 +25,7 @@ pub struct Framework {
     /// <p> The logo that's associated with the framework. </p>
     #[doc(hidden)]
     pub logo: ::std::option::Option<::std::string::String>,
-    /// <p> The sources that Audit Manager collects evidence from for the control. </p>
+    /// <p> The control data sources where Audit Manager collects evidence from.</p>
     #[doc(hidden)]
     pub control_sources: ::std::option::Option<::std::string::String>,
     /// <p> The control sets that are associated with the framework. </p>
@@ -45,69 +45,63 @@ pub struct Framework {
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p> The tags that are associated with the framework. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Framework {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The unique identifier for the framework. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The name of the framework. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p> The framework type, such as a custom framework or a standard framework. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FrameworkType> {
+    /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::FrameworkType> {
         self.r#type.as_ref()
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn compliance_type(&self) -> ::std::option::Option<&str> {
+    /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
+    pub fn compliance_type(&self) -> ::std::option::Option<& str> {
         self.compliance_type.as_deref()
     }
     /// <p> The description of the framework. </p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The logo that's associated with the framework. </p>
-    pub fn logo(&self) -> ::std::option::Option<&str> {
+    pub fn logo(&self) -> ::std::option::Option<& str> {
         self.logo.as_deref()
     }
-    /// <p> The sources that Audit Manager collects evidence from for the control. </p>
-    pub fn control_sources(&self) -> ::std::option::Option<&str> {
+    /// <p> The control data sources where Audit Manager collects evidence from.</p>
+    pub fn control_sources(&self) -> ::std::option::Option<& str> {
         self.control_sources.as_deref()
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn control_sets(&self) -> ::std::option::Option<&[crate::types::ControlSet]> {
+    pub fn control_sets(&self) -> ::std::option::Option<& [crate::types::ControlSet]> {
         self.control_sets.as_deref()
     }
     /// <p> The time when the framework was created. </p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The time when the framework was most recently updated. </p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The user or role that created the framework. </p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p> The user or role that most recently updated the framework. </p>
-    pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_by(&self) -> ::std::option::Option<& str> {
         self.last_updated_by.as_deref()
     }
     /// <p> The tags that are associated with the framework. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -120,9 +114,7 @@ impl Framework {
 
 /// A builder for [`Framework`](crate::types::Framework).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameworkBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -137,9 +129,7 @@ pub struct FrameworkBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FrameworkBuilder {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
@@ -149,8 +139,11 @@ impl FrameworkBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the framework. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p> The unique identifier for the framework. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,8 +152,11 @@ impl FrameworkBuilder {
     }
     /// <p> The unique identifier for the framework. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p> The unique identifier for the framework. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p> The name of the framework. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,34 +165,37 @@ impl FrameworkBuilder {
     }
     /// <p> The name of the framework. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p> The framework type, such as a custom framework or a standard framework. </p>
+    /// <p> The name of the framework. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
+    /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
     pub fn r#type(mut self, input: crate::types::FrameworkType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The framework type, such as a custom framework or a standard framework. </p>
+    /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FrameworkType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn compliance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FrameworkType> {
+        &self.r#type
+    }
+    /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
+    pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.compliance_type = input;
-        self
+    /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.compliance_type = input; self
+    }
+    /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_type
     }
     /// <p> The description of the framework. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -205,8 +204,11 @@ impl FrameworkBuilder {
     }
     /// <p> The description of the framework. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p> The description of the framework. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The logo that's associated with the framework. </p>
     pub fn logo(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -215,24 +217,24 @@ impl FrameworkBuilder {
     }
     /// <p> The logo that's associated with the framework. </p>
     pub fn set_logo(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logo = input;
-        self
+        self.logo = input; self
     }
-    /// <p> The sources that Audit Manager collects evidence from for the control. </p>
-    pub fn control_sources(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    /// <p> The logo that's associated with the framework. </p>
+    pub fn get_logo(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logo
+    }
+    /// <p> The control data sources where Audit Manager collects evidence from.</p>
+    pub fn control_sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_sources = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The sources that Audit Manager collects evidence from for the control. </p>
-    pub fn set_control_sources(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.control_sources = input;
-        self
+    /// <p> The control data sources where Audit Manager collects evidence from.</p>
+    pub fn set_control_sources(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.control_sources = input; self
+    }
+    /// <p> The control data sources where Audit Manager collects evidence from.</p>
+    pub fn get_control_sources(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_sources
     }
     /// Appends an item to `control_sets`.
     ///
@@ -241,17 +243,17 @@ impl FrameworkBuilder {
     /// <p> The control sets that are associated with the framework. </p>
     pub fn control_sets(mut self, input: crate::types::ControlSet) -> Self {
         let mut v = self.control_sets.unwrap_or_default();
-        v.push(input);
-        self.control_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.control_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn set_control_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlSet>>,
-    ) -> Self {
-        self.control_sets = input;
-        self
+    pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlSet>>) -> Self {
+        self.control_sets = input; self
+    }
+    /// <p> The control sets that are associated with the framework. </p>
+    pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlSet>> {
+        &self.control_sets
     }
     /// <p> The time when the framework was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -259,12 +261,12 @@ impl FrameworkBuilder {
         self
     }
     /// <p> The time when the framework was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p> The time when the framework was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p> The time when the framework was most recently updated. </p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -272,12 +274,12 @@ impl FrameworkBuilder {
         self
     }
     /// <p> The time when the framework was most recently updated. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
+    }
+    /// <p> The time when the framework was most recently updated. </p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// <p> The user or role that created the framework. </p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -286,67 +288,76 @@ impl FrameworkBuilder {
     }
     /// <p> The user or role that created the framework. </p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
+    }
+    /// <p> The user or role that created the framework. </p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p> The user or role that most recently updated the framework. </p>
-    pub fn last_updated_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The user or role that most recently updated the framework. </p>
-    pub fn set_last_updated_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_updated_by = input;
-        self
+    pub fn set_last_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_updated_by = input; self
+    }
+    /// <p> The user or role that most recently updated the framework. </p>
+    pub fn get_last_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_by
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags that are associated with the framework. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p> The tags that are associated with the framework. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p> The tags that are associated with the framework. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Framework`](crate::types::Framework).
     pub fn build(self) -> crate::types::Framework {
         crate::types::Framework {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            r#type: self.r#type,
-            compliance_type: self.compliance_type,
-            description: self.description,
-            logo: self.logo,
-            control_sources: self.control_sources,
-            control_sets: self.control_sets,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            created_by: self.created_by,
-            last_updated_by: self.last_updated_by,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            compliance_type: self.compliance_type
+            ,
+            description: self.description
+            ,
+            logo: self.logo
+            ,
+            control_sources: self.control_sources
+            ,
+            control_sets: self.control_sets
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            created_by: self.created_by
+            ,
+            last_updated_by: self.last_updated_by
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

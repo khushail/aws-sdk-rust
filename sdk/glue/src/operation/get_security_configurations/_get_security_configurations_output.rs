@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSecurityConfigurationsOutput {
+pub struct GetSecurityConfigurationsOutput  {
     /// <p>A list of security configurations.</p>
     #[doc(hidden)]
-    pub security_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
+    pub security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
     /// <p>A continuation token, if there are more security configurations to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,36 +13,31 @@ pub struct GetSecurityConfigurationsOutput {
 }
 impl GetSecurityConfigurationsOutput {
     /// <p>A list of security configurations.</p>
-    pub fn security_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityConfiguration]> {
+    pub fn security_configurations(&self) -> ::std::option::Option<& [crate::types::SecurityConfiguration]> {
         self.security_configurations.as_deref()
     }
     /// <p>A continuation token, if there are more security configurations to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSecurityConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSecurityConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`GetSecurityConfigurationsOutput`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput).
-    pub fn builder() -> crate::operation::get_security_configurations::builders::GetSecurityConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_security_configurations::builders::GetSecurityConfigurationsOutputBuilder {
         crate::operation::get_security_configurations::builders::GetSecurityConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSecurityConfigurationsOutput`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSecurityConfigurationsOutputBuilder {
-    pub(crate) security_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
+    pub(crate) security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,17 @@ impl GetSecurityConfigurationsOutputBuilder {
     /// <p>A list of security configurations.</p>
     pub fn security_configurations(mut self, input: crate::types::SecurityConfiguration) -> Self {
         let mut v = self.security_configurations.unwrap_or_default();
-        v.push(input);
-        self.security_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.security_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security configurations.</p>
-    pub fn set_security_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>,
-    ) -> Self {
-        self.security_configurations = input;
-        self
+    pub fn set_security_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>>) -> Self {
+        self.security_configurations = input; self
+    }
+    /// <p>A list of security configurations.</p>
+    pub fn get_security_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>> {
+        &self.security_configurations
     }
     /// <p>A continuation token, if there are more security configurations to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,26 +68,30 @@ impl GetSecurityConfigurationsOutputBuilder {
     }
     /// <p>A continuation token, if there are more security configurations to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A continuation token, if there are more security configurations to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSecurityConfigurationsOutput`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_security_configurations::GetSecurityConfigurationsOutput {
+    pub fn build(self) -> crate::operation::get_security_configurations::GetSecurityConfigurationsOutput {
         crate::operation::get_security_configurations::GetSecurityConfigurationsOutput {
-            security_configurations: self.security_configurations,
-            next_token: self.next_token,
+            security_configurations: self.security_configurations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

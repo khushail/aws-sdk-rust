@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHarvestJobsOutput {
+pub struct ListHarvestJobsOutput  {
     /// A list of HarvestJob records.
     #[doc(hidden)]
     pub harvest_jobs: ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>>,
@@ -13,32 +13,29 @@ pub struct ListHarvestJobsOutput {
 }
 impl ListHarvestJobsOutput {
     /// A list of HarvestJob records.
-    pub fn harvest_jobs(&self) -> ::std::option::Option<&[crate::types::HarvestJob]> {
+    pub fn harvest_jobs(&self) -> ::std::option::Option<& [crate::types::HarvestJob]> {
         self.harvest_jobs.as_deref()
     }
     /// A token that can be used to resume pagination from the end of the collection.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListHarvestJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListHarvestJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListHarvestJobsOutput`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput).
-    pub fn builder() -> crate::operation::list_harvest_jobs::builders::ListHarvestJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_harvest_jobs::builders::ListHarvestJobsOutputBuilder {
         crate::operation::list_harvest_jobs::builders::ListHarvestJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHarvestJobsOutput`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHarvestJobsOutputBuilder {
     pub(crate) harvest_jobs: ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,17 @@ impl ListHarvestJobsOutputBuilder {
     /// A list of HarvestJob records.
     pub fn harvest_jobs(mut self, input: crate::types::HarvestJob) -> Self {
         let mut v = self.harvest_jobs.unwrap_or_default();
-        v.push(input);
-        self.harvest_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.harvest_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of HarvestJob records.
-    pub fn set_harvest_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>>,
-    ) -> Self {
-        self.harvest_jobs = input;
-        self
+    pub fn set_harvest_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>>) -> Self {
+        self.harvest_jobs = input; self
+    }
+    /// A list of HarvestJob records.
+    pub fn get_harvest_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>> {
+        &self.harvest_jobs
     }
     /// A token that can be used to resume pagination from the end of the collection.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +68,30 @@ impl ListHarvestJobsOutputBuilder {
     }
     /// A token that can be used to resume pagination from the end of the collection.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListHarvestJobsOutput`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput).
     pub fn build(self) -> crate::operation::list_harvest_jobs::ListHarvestJobsOutput {
         crate::operation::list_harvest_jobs::ListHarvestJobsOutput {
-            harvest_jobs: self.harvest_jobs,
-            next_token: self.next_token,
+            harvest_jobs: self.harvest_jobs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

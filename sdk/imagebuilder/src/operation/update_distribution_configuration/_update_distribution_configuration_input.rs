@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDistributionConfigurationInput {
+pub struct UpdateDistributionConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
     #[doc(hidden)]
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
@@ -18,34 +18,32 @@ pub struct UpdateDistributionConfigurationInput {
 }
 impl UpdateDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn distribution_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
     /// <p>The description of the distribution configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn distributions(&self) -> ::std::option::Option<&[crate::types::Distribution]> {
+    pub fn distributions(&self) -> ::std::option::Option<& [crate::types::Distribution]> {
         self.distributions.as_deref()
     }
     /// <p>The idempotency token of the distribution configuration.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl UpdateDistributionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionConfigurationInput`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput).
-    pub fn builder() -> crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder {
         crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDistributionConfigurationInput`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDistributionConfigurationInputBuilder {
     pub(crate) distribution_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -54,20 +52,17 @@ pub struct UpdateDistributionConfigurationInputBuilder {
 }
 impl UpdateDistributionConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.distribution_configuration_arn = input;
-        self
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.distribution_configuration_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_configuration_arn
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,8 +71,11 @@ impl UpdateDistributionConfigurationInputBuilder {
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the distribution configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `distributions`.
     ///
@@ -86,17 +84,17 @@ impl UpdateDistributionConfigurationInputBuilder {
     /// <p>The distributions of the distribution configuration.</p>
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
-        v.push(input);
-        self.distributions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.distributions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn set_distributions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
-    ) -> Self {
-        self.distributions = input;
-        self
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
+        self.distributions = input; self
+    }
+    /// <p>The distributions of the distribution configuration.</p>
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+        &self.distributions
     }
     /// <p>The idempotency token of the distribution configuration.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,16 +103,14 @@ impl UpdateDistributionConfigurationInputBuilder {
     }
     /// <p>The idempotency token of the distribution configuration.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The idempotency token of the distribution configuration.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateDistributionConfigurationInput`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput {
                 distribution_configuration_arn: self.distribution_configuration_arn
@@ -129,3 +125,4 @@ impl UpdateDistributionConfigurationInputBuilder {
         )
     }
 }
+

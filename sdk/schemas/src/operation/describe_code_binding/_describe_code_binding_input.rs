@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCodeBindingInput {
+pub struct DescribeCodeBindingInput  {
     /// <p>The language of the code binding.</p>
     #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct DescribeCodeBindingInput {
 }
 impl DescribeCodeBindingInput {
     /// <p>The language of the code binding.</p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version(&self) -> ::std::option::Option<& str> {
         self.schema_version.as_deref()
     }
 }
 impl DescribeCodeBindingInput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeBindingInput`](crate::operation::describe_code_binding::DescribeCodeBindingInput).
-    pub fn builder(
-    ) -> crate::operation::describe_code_binding::builders::DescribeCodeBindingInputBuilder {
-        crate::operation::describe_code_binding::builders::DescribeCodeBindingInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_code_binding::builders::DescribeCodeBindingInputBuilder {
+        crate::operation::describe_code_binding::builders::DescribeCodeBindingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCodeBindingInput`](crate::operation::describe_code_binding::DescribeCodeBindingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCodeBindingInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
@@ -62,24 +58,24 @@ impl DescribeCodeBindingInputBuilder {
     }
     /// <p>The language of the code binding.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
+    }
+    /// <p>The language of the code binding.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.registry_name = input;
-        self
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.registry_name = input; self
+    }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,39 +84,39 @@ impl DescribeCodeBindingInputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.schema_version = input;
-        self
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schema_version = input; self
+    }
+    /// <p>Specifying this limits the results to only this schema version.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
     }
     /// Consumes the builder and constructs a [`DescribeCodeBindingInput`](crate::operation::describe_code_binding::DescribeCodeBindingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_code_binding::DescribeCodeBindingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_code_binding::DescribeCodeBindingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_code_binding::DescribeCodeBindingInput {
-                language: self.language,
-                registry_name: self.registry_name,
-                schema_name: self.schema_name,
-                schema_version: self.schema_version,
-            },
+                language: self.language
+                ,
+                registry_name: self.registry_name
+                ,
+                schema_name: self.schema_name
+                ,
+                schema_version: self.schema_version
+                ,
+            }
         )
     }
 }
+

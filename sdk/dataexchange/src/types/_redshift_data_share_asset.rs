@@ -3,14 +3,14 @@
 /// <p>The Amazon Redshift datashare asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftDataShareAsset {
+pub struct RedshiftDataShareAsset  {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftDataShareAsset {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl RedshiftDataShareAsset {
 
 /// A builder for [`RedshiftDataShareAsset`](crate::types::RedshiftDataShareAsset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedshiftDataShareAssetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl RedshiftDataShareAssetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`RedshiftDataShareAsset`](crate::types::RedshiftDataShareAsset).
     pub fn build(self) -> crate::types::RedshiftDataShareAsset {
-        crate::types::RedshiftDataShareAsset { arn: self.arn }
+        crate::types::RedshiftDataShareAsset {
+            arn: self.arn
+            ,
+        }
     }
 }
+

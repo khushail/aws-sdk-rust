@@ -3,7 +3,7 @@
 /// <p>Summary information about the DataIntegration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataIntegrationSummary {
+pub struct DataIntegrationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct DataIntegrationSummary {
 }
 impl DataIntegrationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the DataIntegration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URI of the data source.</p>
-    pub fn source_uri(&self) -> ::std::option::Option<&str> {
+    pub fn source_uri(&self) -> ::std::option::Option<& str> {
         self.source_uri.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl DataIntegrationSummary {
 
 /// A builder for [`DataIntegrationSummary`](crate::types::DataIntegrationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataIntegrationSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl DataIntegrationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the DataIntegration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl DataIntegrationSummaryBuilder {
     }
     /// <p>The name of the DataIntegration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The URI of the data source.</p>
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl DataIntegrationSummaryBuilder {
     }
     /// <p>The URI of the data source.</p>
     pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_uri = input;
-        self
+        self.source_uri = input; self
+    }
+    /// <p>The URI of the data source.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_uri
     }
     /// Consumes the builder and constructs a [`DataIntegrationSummary`](crate::types::DataIntegrationSummary).
     pub fn build(self) -> crate::types::DataIntegrationSummary {
         crate::types::DataIntegrationSummary {
-            arn: self.arn,
-            name: self.name,
-            source_uri: self.source_uri,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            source_uri: self.source_uri
+            ,
         }
     }
 }
+

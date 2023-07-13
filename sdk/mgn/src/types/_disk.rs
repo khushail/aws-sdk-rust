@@ -3,7 +3,7 @@
 /// <p>The disk identifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Disk {
+pub struct Disk  {
     /// <p>The disk or device name.</p>
     #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct Disk {
 }
 impl Disk {
     /// <p>The disk or device name.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The amount of storage on the disk in bytes.</p>
@@ -30,9 +30,7 @@ impl Disk {
 
 /// A builder for [`Disk`](crate::types::Disk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) bytes: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl DiskBuilder {
     }
     /// <p>The disk or device name.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
+    }
+    /// <p>The disk or device name.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn bytes(mut self, input: i64) -> Self {
@@ -55,14 +56,21 @@ impl DiskBuilder {
     }
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn set_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes = input;
-        self
+        self.bytes = input; self
+    }
+    /// <p>The amount of storage on the disk in bytes.</p>
+    pub fn get_bytes(&self) -> &::std::option::Option<i64> {
+        &self.bytes
     }
     /// Consumes the builder and constructs a [`Disk`](crate::types::Disk).
     pub fn build(self) -> crate::types::Disk {
         crate::types::Disk {
-            device_name: self.device_name,
-            bytes: self.bytes.unwrap_or_default(),
+            device_name: self.device_name
+            ,
+            bytes: self.bytes
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

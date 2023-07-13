@@ -3,7 +3,7 @@
 /// <p>A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <code>DescribeServices</code> response for each Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Category {
+pub struct Category  {
     /// <p>The category code for the support case.</p>
     #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Category {
 }
 impl Category {
     /// <p>The category code for the support case.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The category name for the support case.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Category {
 
 /// A builder for [`Category`](crate::types::Category).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CategoryBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl CategoryBuilder {
     }
     /// <p>The category code for the support case.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>The category code for the support case.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>The category name for the support case.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl CategoryBuilder {
     }
     /// <p>The category name for the support case.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The category name for the support case.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`Category`](crate::types::Category).
     pub fn build(self) -> crate::types::Category {
         crate::types::Category {
-            code: self.code,
-            name: self.name,
+            code: self.code
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

@@ -3,51 +3,46 @@
 /// <p>Input for GetPlatformApplicationAttributes action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPlatformApplicationAttributesInput {
+pub struct GetPlatformApplicationAttributesInput  {
     /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
     #[doc(hidden)]
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetPlatformApplicationAttributesInput {
     /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    pub fn platform_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_application_arn(&self) -> ::std::option::Option<& str> {
         self.platform_application_arn.as_deref()
     }
 }
 impl GetPlatformApplicationAttributesInput {
     /// Creates a new builder-style object to manufacture [`GetPlatformApplicationAttributesInput`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput).
-    pub fn builder() -> crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesInputBuilder{
+    pub fn builder() -> crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesInputBuilder {
         crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPlatformApplicationAttributesInput`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPlatformApplicationAttributesInputBuilder {
     pub(crate) platform_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetPlatformApplicationAttributesInputBuilder {
     /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    pub fn platform_application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    pub fn set_platform_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.platform_application_arn = input;
-        self
+    pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.platform_application_arn = input; self
+    }
+    /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_application_arn
     }
     /// Consumes the builder and constructs a [`GetPlatformApplicationAttributesInput`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput {
                 platform_application_arn: self.platform_application_arn
@@ -56,3 +51,4 @@ impl GetPlatformApplicationAttributesInputBuilder {
         )
     }
 }
+

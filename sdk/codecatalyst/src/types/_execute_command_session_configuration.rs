@@ -3,7 +3,7 @@
 /// <p>Information about the commands that will be run on a Dev Environment when an SSH session begins.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteCommandSessionConfiguration {
+pub struct ExecuteCommandSessionConfiguration  {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
     #[doc(hidden)]
     pub command: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExecuteCommandSessionConfiguration {
 }
 impl ExecuteCommandSessionConfiguration {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
-    pub fn command(&self) -> ::std::option::Option<&str> {
+    pub fn command(&self) -> ::std::option::Option<& str> {
         self.command.as_deref()
     }
     /// <p>An array of arguments containing arguments and members.</p>
-    pub fn arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn arguments(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.arguments.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ExecuteCommandSessionConfiguration {
 
 /// A builder for [`ExecuteCommandSessionConfiguration`](crate::types::ExecuteCommandSessionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteCommandSessionConfigurationBuilder {
     pub(crate) command: ::std::option::Option<::std::string::String>,
     pub(crate) arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl ExecuteCommandSessionConfigurationBuilder {
     }
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
     pub fn set_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.command = input;
-        self
+        self.command = input; self
+    }
+    /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command
     }
     /// Appends an item to `arguments`.
     ///
@@ -55,23 +56,26 @@ impl ExecuteCommandSessionConfigurationBuilder {
     /// <p>An array of arguments containing arguments and members.</p>
     pub fn arguments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arguments.unwrap_or_default();
-        v.push(input.into());
-        self.arguments = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.arguments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of arguments containing arguments and members.</p>
-    pub fn set_arguments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.arguments = input;
-        self
+    pub fn set_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.arguments = input; self
+    }
+    /// <p>An array of arguments containing arguments and members.</p>
+    pub fn get_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arguments
     }
     /// Consumes the builder and constructs a [`ExecuteCommandSessionConfiguration`](crate::types::ExecuteCommandSessionConfiguration).
     pub fn build(self) -> crate::types::ExecuteCommandSessionConfiguration {
         crate::types::ExecuteCommandSessionConfiguration {
-            command: self.command,
-            arguments: self.arguments,
+            command: self.command
+            ,
+            arguments: self.arguments
+            ,
         }
     }
 }
+

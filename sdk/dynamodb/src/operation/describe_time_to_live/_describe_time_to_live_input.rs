@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTimeToLiveInput {
+pub struct DescribeTimeToLiveInput  {
     /// <p>The name of the table to be described.</p>
     #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTimeToLiveInput {
     /// <p>The name of the table to be described.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
 impl DescribeTimeToLiveInput {
     /// Creates a new builder-style object to manufacture [`DescribeTimeToLiveInput`](crate::operation::describe_time_to_live::DescribeTimeToLiveInput).
-    pub fn builder(
-    ) -> crate::operation::describe_time_to_live::builders::DescribeTimeToLiveInputBuilder {
+    pub fn builder() -> crate::operation::describe_time_to_live::builders::DescribeTimeToLiveInputBuilder {
         crate::operation::describe_time_to_live::builders::DescribeTimeToLiveInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTimeToLiveInput`](crate::operation::describe_time_to_live::DescribeTimeToLiveInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTimeToLiveInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl DescribeTimeToLiveInputBuilder {
     }
     /// <p>The name of the table to be described.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
+    }
+    /// <p>The name of the table to be described.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Consumes the builder and constructs a [`DescribeTimeToLiveInput`](crate::operation::describe_time_to_live::DescribeTimeToLiveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_time_to_live::DescribeTimeToLiveInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_time_to_live::DescribeTimeToLiveInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_time_to_live::DescribeTimeToLiveInput {
-                table_name: self.table_name,
-            },
+                table_name: self.table_name
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResourceInput {
+pub struct DescribeResourceInput  {
     /// <p>The identifier associated with the organization for which the resource is described.</p>
     #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct DescribeResourceInput {
 }
 impl DescribeResourceInput {
     /// <p>The identifier associated with the organization for which the resource is described.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the resource to be described.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 impl DescribeResourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
-    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceInputBuilder {
         crate::operation::describe_resource::builders::DescribeResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourceInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeResourceInputBuilder {
     /// <p>The identifier associated with the organization for which the resource is described.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier associated with the organization for which the resource is described.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
+    }
+    /// <p>The identifier associated with the organization for which the resource is described.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// <p>The identifier of the resource to be described.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,19 +55,22 @@ impl DescribeResourceInputBuilder {
     }
     /// <p>The identifier of the resource to be described.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The identifier of the resource to be described.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_resource::DescribeResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_resource::DescribeResourceInput {
-            organization_id: self.organization_id,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_resource::DescribeResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_resource::DescribeResourceInput {
+                organization_id: self.organization_id
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

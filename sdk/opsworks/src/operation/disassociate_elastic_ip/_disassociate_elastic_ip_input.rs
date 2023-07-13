@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateElasticIpInput {
+pub struct DisassociateElasticIpInput  {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
     pub elastic_ip: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateElasticIpInput {
     /// <p>The Elastic IP address.</p>
-    pub fn elastic_ip(&self) -> ::std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> ::std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
 }
 impl DisassociateElasticIpInput {
     /// Creates a new builder-style object to manufacture [`DisassociateElasticIpInput`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpInputBuilder {
         crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateElasticIpInput`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateElasticIpInputBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DisassociateElasticIpInputBuilder {
     }
     /// <p>The Elastic IP address.</p>
     pub fn set_elastic_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elastic_ip = input;
-        self
+        self.elastic_ip = input; self
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_ip
     }
     /// Consumes the builder and constructs a [`DisassociateElasticIpInput`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput {
-                elastic_ip: self.elastic_ip,
-            },
+                elastic_ip: self.elastic_ip
+                ,
+            }
         )
     }
 }
+

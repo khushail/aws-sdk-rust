@@ -3,106 +3,94 @@ pub use crate::operation::list_outposts::_list_outposts_output::ListOutpostsOutp
 
 pub use crate::operation::list_outposts::_list_outposts_input::ListOutpostsInputBuilder;
 
+impl ListOutpostsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_outposts::ListOutpostsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_outposts::ListOutpostsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_outposts();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListOutposts`.
-///
-/// <p>Lists the Outposts for your Amazon Web Services account.</p>
+/// 
+/// <p>Lists the Outposts for your Amazon Web Services account.</p> 
 /// <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOutpostsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_outposts::builders::ListOutpostsInputBuilder,
+                    inner: crate::operation::list_outposts::builders::ListOutpostsInputBuilder,
 }
-impl ListOutpostsFluentBuilder {
+impl ListOutpostsFluentBuilder  {
     /// Creates a new `ListOutposts`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_outposts::ListOutposts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListOutposts as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_outposts::builders::ListOutpostsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_outposts::ListOutpostsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_outposts::ListOutposts, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_outposts::ListOutpostsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_outposts::ListOutpostsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_outposts::ListOutposts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_outposts::ListOutpostsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_outposts::ListOutposts, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_outposts::paginator::ListOutpostsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_outposts::paginator::ListOutpostsPaginator {
-        crate::operation::list_outposts::paginator::ListOutpostsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_outposts::paginator::ListOutpostsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_outposts::paginator::ListOutpostsPaginator {
+                                crate::operation::list_outposts::paginator::ListOutpostsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -112,6 +100,10 @@ impl ListOutpostsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -123,64 +115,63 @@ impl ListOutpostsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum page size.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// Appends an item to `LifeCycleStatusFilter`.
     ///
     /// To override the contents of this collection use [`set_life_cycle_status_filter`](Self::set_life_cycle_status_filter).
     ///
     /// <p>Filters the results by the lifecycle status.</p>
-    pub fn life_cycle_status_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn life_cycle_status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.life_cycle_status_filter(input.into());
         self
     }
     /// <p>Filters the results by the lifecycle status.</p>
-    pub fn set_life_cycle_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_life_cycle_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_life_cycle_status_filter(input);
         self
+    }
+    /// <p>Filters the results by the lifecycle status.</p>
+    pub fn get_life_cycle_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_life_cycle_status_filter()
     }
     /// Appends an item to `AvailabilityZoneFilter`.
     ///
     /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
     ///
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    pub fn availability_zone_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone_filter(input.into());
         self
     }
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    pub fn set_availability_zone_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zone_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zone_filter(input);
         self
+    }
+    /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
+    pub fn get_availability_zone_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zone_filter()
     }
     /// Appends an item to `AvailabilityZoneIdFilter`.
     ///
     /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).
     ///
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    pub fn availability_zone_id_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone_id_filter(input.into());
         self
     }
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    pub fn set_availability_zone_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zone_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zone_id_filter(input);
         self
     }
+    /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
+    pub fn get_availability_zone_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zone_id_filter()
+    }
 }
+

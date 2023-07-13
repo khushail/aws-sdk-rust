@@ -3,84 +3,95 @@ pub use crate::operation::list_journal_kinesis_streams_for_ledger::_list_journal
 
 pub use crate::operation::list_journal_kinesis_streams_for_ledger::_list_journal_kinesis_streams_for_ledger_input::ListJournalKinesisStreamsForLedgerInputBuilder;
 
+impl ListJournalKinesisStreamsForLedgerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_journal_kinesis_streams_for_ledger();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListJournalKinesisStreamsForLedger`.
-///
-/// <p>Returns all Amazon QLDB journal streams for a given ledger.</p>
-/// <p>This action does not return any expired journal streams. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
+/// 
+/// <p>Returns all Amazon QLDB journal streams for a given ledger.</p> 
+/// <p>This action does not return any expired journal streams. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p> 
 /// <p>This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListJournalKinesisStreamsForLedgerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerInputBuilder,
 }
-impl ListJournalKinesisStreamsForLedgerFluentBuilder {
+impl ListJournalKinesisStreamsForLedgerFluentBuilder  {
     /// Creates a new `ListJournalKinesisStreamsForLedger`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListJournalKinesisStreamsForLedger as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedger, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedger, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedger, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator{
-        crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator {
+                                crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the ledger.</p>
     pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ledger_name(input.into());
@@ -90,6 +101,10 @@ impl ListJournalKinesisStreamsForLedgerFluentBuilder {
     pub fn set_ledger_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ledger_name(input);
         self
+    }
+    /// <p>The name of the ledger.</p>
+    pub fn get_ledger_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ledger_name()
     }
     /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -101,6 +116,10 @@ impl ListJournalKinesisStreamsForLedgerFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -111,4 +130,9 @@ impl ListJournalKinesisStreamsForLedgerFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

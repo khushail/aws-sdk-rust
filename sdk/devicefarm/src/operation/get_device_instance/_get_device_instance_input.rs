@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeviceInstanceInput {
+pub struct GetDeviceInstanceInput  {
     /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetDeviceInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl GetDeviceInstanceInput {
     /// Creates a new builder-style object to manufacture [`GetDeviceInstanceInput`](crate::operation::get_device_instance::GetDeviceInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::get_device_instance::builders::GetDeviceInstanceInputBuilder {
+    pub fn builder() -> crate::operation::get_device_instance::builders::GetDeviceInstanceInputBuilder {
         crate::operation::get_device_instance::builders::GetDeviceInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeviceInstanceInput`](crate::operation::get_device_instance::GetDeviceInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceInstanceInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl GetDeviceInstanceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`GetDeviceInstanceInput`](crate::operation::get_device_instance::GetDeviceInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device_instance::GetDeviceInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device_instance::GetDeviceInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_device_instance::GetDeviceInstanceInput { arn: self.arn },
+            crate::operation::get_device_instance::GetDeviceInstanceInput {
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

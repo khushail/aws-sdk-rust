@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBotRecommendationInput {
+pub struct UpdateBotRecommendationInput  {
     /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
     #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
@@ -21,40 +21,36 @@ pub struct UpdateBotRecommendationInput {
 }
 impl UpdateBotRecommendationInput {
     /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the bot recommendation to be updated.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn bot_recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> ::std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn encryption_setting(&self) -> ::std::option::Option<&crate::types::EncryptionSetting> {
+    pub fn encryption_setting(&self) -> ::std::option::Option<& crate::types::EncryptionSetting> {
         self.encryption_setting.as_ref()
     }
 }
 impl UpdateBotRecommendationInput {
     /// Creates a new builder-style object to manufacture [`UpdateBotRecommendationInput`](crate::operation::update_bot_recommendation::UpdateBotRecommendationInput).
-    pub fn builder(
-    ) -> crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder {
         crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBotRecommendationInput`](crate::operation::update_bot_recommendation::UpdateBotRecommendationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBotRecommendationInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -70,8 +66,11 @@ impl UpdateBotRecommendationInputBuilder {
     }
     /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
+    }
+    /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The version of the bot containing the bot recommendation to be updated.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,8 +79,11 @@ impl UpdateBotRecommendationInputBuilder {
     }
     /// <p>The version of the bot containing the bot recommendation to be updated.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
+    }
+    /// <p>The version of the bot containing the bot recommendation to be updated.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,24 +92,24 @@ impl UpdateBotRecommendationInputBuilder {
     }
     /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.bot_recommendation_id = input;
-        self
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bot_recommendation_id = input; self
+    }
+    /// <p>The unique identifier of the bot recommendation to be updated.</p>
+    pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_recommendation_id
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub fn encryption_setting(mut self, input: crate::types::EncryptionSetting) -> Self {
@@ -115,28 +117,29 @@ impl UpdateBotRecommendationInputBuilder {
         self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn set_encryption_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSetting>,
-    ) -> Self {
-        self.encryption_setting = input;
-        self
+    pub fn set_encryption_setting(mut self, input: ::std::option::Option<crate::types::EncryptionSetting>) -> Self {
+        self.encryption_setting = input; self
+    }
+    /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
+    pub fn get_encryption_setting(&self) -> &::std::option::Option<crate::types::EncryptionSetting> {
+        &self.encryption_setting
     }
     /// Consumes the builder and constructs a [`UpdateBotRecommendationInput`](crate::operation::update_bot_recommendation::UpdateBotRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bot_recommendation::UpdateBotRecommendationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_bot_recommendation::UpdateBotRecommendationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_bot_recommendation::UpdateBotRecommendationInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_id: self.bot_recommendation_id,
-                encryption_setting: self.encryption_setting,
-            },
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
+                encryption_setting: self.encryption_setting
+                ,
+            }
         )
     }
 }
+

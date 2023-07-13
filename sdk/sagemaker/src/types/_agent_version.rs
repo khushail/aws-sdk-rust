@@ -3,7 +3,7 @@
 /// <p>Edge Manager agent version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentVersion {
+pub struct AgentVersion  {
     /// <p>Version of the agent.</p>
     #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct AgentVersion {
 }
 impl AgentVersion {
     /// <p>Version of the agent.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The number of Edge Manager agents.</p>
@@ -30,9 +30,7 @@ impl AgentVersion {
 
 /// A builder for [`AgentVersion`](crate::types::AgentVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) agent_count: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl AgentVersionBuilder {
     }
     /// <p>Version of the agent.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p>Version of the agent.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The number of Edge Manager agents.</p>
     pub fn agent_count(mut self, input: i64) -> Self {
@@ -55,14 +56,21 @@ impl AgentVersionBuilder {
     }
     /// <p>The number of Edge Manager agents.</p>
     pub fn set_agent_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.agent_count = input;
-        self
+        self.agent_count = input; self
+    }
+    /// <p>The number of Edge Manager agents.</p>
+    pub fn get_agent_count(&self) -> &::std::option::Option<i64> {
+        &self.agent_count
     }
     /// Consumes the builder and constructs a [`AgentVersion`](crate::types::AgentVersion).
     pub fn build(self) -> crate::types::AgentVersion {
         crate::types::AgentVersion {
-            version: self.version,
-            agent_count: self.agent_count.unwrap_or_default(),
+            version: self.version
+            ,
+            agent_count: self.agent_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

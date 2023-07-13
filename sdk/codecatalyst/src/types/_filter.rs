@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p></p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct Filter {
 }
 impl Filter {
     /// <p></p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p></p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
     /// <p></p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&str> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& str> {
         self.comparison_operator.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,8 +51,11 @@ impl FilterBuilder {
     }
     /// <p></p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
+    }
+    /// <p></p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -63,40 +64,41 @@ impl FilterBuilder {
     /// <p></p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p></p>
-    pub fn comparison_operator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
+    /// <p></p>
+    pub fn comparison_operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.comparison_operator = input;
-        self
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.comparison_operator = input; self
+    }
+    /// <p></p>
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comparison_operator
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            key: self.key,
-            values: self.values,
-            comparison_operator: self.comparison_operator,
+            key: self.key
+            ,
+            values: self.values
+            ,
+            comparison_operator: self.comparison_operator
+            ,
         }
     }
 }
+

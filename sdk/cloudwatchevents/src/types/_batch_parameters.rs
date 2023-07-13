@@ -3,7 +3,7 @@
 /// <p>The custom parameters to be used when the target is an Batch job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchParameters {
+pub struct BatchParameters  {
     /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
     #[doc(hidden)]
     pub job_definition: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct BatchParameters {
 }
 impl BatchParameters {
     /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
-    pub fn job_definition(&self) -> ::std::option::Option<&str> {
+    pub fn job_definition(&self) -> ::std::option::Option<& str> {
         self.job_definition.as_deref()
     }
     /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
-    pub fn array_properties(&self) -> ::std::option::Option<&crate::types::BatchArrayProperties> {
+    pub fn array_properties(&self) -> ::std::option::Option<& crate::types::BatchArrayProperties> {
         self.array_properties.as_ref()
     }
     /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
-    pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::BatchRetryStrategy> {
+    pub fn retry_strategy(&self) -> ::std::option::Option<& crate::types::BatchRetryStrategy> {
         self.retry_strategy.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl BatchParameters {
 
 /// A builder for [`BatchParameters`](crate::types::BatchParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchParametersBuilder {
     pub(crate) job_definition: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -55,20 +53,17 @@ pub struct BatchParametersBuilder {
 }
 impl BatchParametersBuilder {
     /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
-    pub fn job_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
-    pub fn set_job_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.job_definition = input;
-        self
+    pub fn set_job_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_definition = input; self
+    }
+    /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
+    pub fn get_job_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition
     }
     /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,8 +72,11 @@ impl BatchParametersBuilder {
     }
     /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
     pub fn array_properties(mut self, input: crate::types::BatchArrayProperties) -> Self {
@@ -86,12 +84,12 @@ impl BatchParametersBuilder {
         self
     }
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
-    pub fn set_array_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchArrayProperties>,
-    ) -> Self {
-        self.array_properties = input;
-        self
+    pub fn set_array_properties(mut self, input: ::std::option::Option<crate::types::BatchArrayProperties>) -> Self {
+        self.array_properties = input; self
+    }
+    /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
+    pub fn get_array_properties(&self) -> &::std::option::Option<crate::types::BatchArrayProperties> {
+        &self.array_properties
     }
     /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
     pub fn retry_strategy(mut self, input: crate::types::BatchRetryStrategy) -> Self {
@@ -99,20 +97,25 @@ impl BatchParametersBuilder {
         self
     }
     /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
-    pub fn set_retry_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchRetryStrategy>,
-    ) -> Self {
-        self.retry_strategy = input;
-        self
+    pub fn set_retry_strategy(mut self, input: ::std::option::Option<crate::types::BatchRetryStrategy>) -> Self {
+        self.retry_strategy = input; self
+    }
+    /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
+    pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::BatchRetryStrategy> {
+        &self.retry_strategy
     }
     /// Consumes the builder and constructs a [`BatchParameters`](crate::types::BatchParameters).
     pub fn build(self) -> crate::types::BatchParameters {
         crate::types::BatchParameters {
-            job_definition: self.job_definition,
-            job_name: self.job_name,
-            array_properties: self.array_properties,
-            retry_strategy: self.retry_strategy,
+            job_definition: self.job_definition
+            ,
+            job_name: self.job_name
+            ,
+            array_properties: self.array_properties
+            ,
+            retry_strategy: self.retry_strategy
+            ,
         }
     }
 }
+

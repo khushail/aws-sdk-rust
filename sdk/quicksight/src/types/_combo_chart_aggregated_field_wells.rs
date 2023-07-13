@@ -3,7 +3,7 @@
 /// <p>The aggregated field wells of a combo chart.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComboChartAggregatedFieldWells {
+pub struct ComboChartAggregatedFieldWells  {
     /// <p>The aggregated category field wells of a combo chart.</p>
     #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
@@ -19,19 +19,19 @@ pub struct ComboChartAggregatedFieldWells {
 }
 impl ComboChartAggregatedFieldWells {
     /// <p>The aggregated category field wells of a combo chart.</p>
-    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
+    pub fn category(&self) -> ::std::option::Option<& [crate::types::DimensionField]> {
         self.category.as_deref()
     }
     /// <p>The aggregated <code>BarValues</code> field well of a combo chart.</p>
-    pub fn bar_values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
+    pub fn bar_values(&self) -> ::std::option::Option<& [crate::types::MeasureField]> {
         self.bar_values.as_deref()
     }
     /// <p>The aggregated colors field well of a combo chart.</p>
-    pub fn colors(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
+    pub fn colors(&self) -> ::std::option::Option<& [crate::types::DimensionField]> {
         self.colors.as_deref()
     }
     /// <p>The aggregated <code>LineValues</code> field well of a combo chart.</p>
-    pub fn line_values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
+    pub fn line_values(&self) -> ::std::option::Option<& [crate::types::MeasureField]> {
         self.line_values.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl ComboChartAggregatedFieldWells {
 
 /// A builder for [`ComboChartAggregatedFieldWells`](crate::types::ComboChartAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComboChartAggregatedFieldWellsBuilder {
     pub(crate) category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) bar_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
@@ -61,17 +59,17 @@ impl ComboChartAggregatedFieldWellsBuilder {
     /// <p>The aggregated category field wells of a combo chart.</p>
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.category.unwrap_or_default();
-        v.push(input);
-        self.category = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.category = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The aggregated category field wells of a combo chart.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.category = input;
-        self
+    pub fn set_category(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.category = input; self
+    }
+    /// <p>The aggregated category field wells of a combo chart.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.category
     }
     /// Appends an item to `bar_values`.
     ///
@@ -80,17 +78,17 @@ impl ComboChartAggregatedFieldWellsBuilder {
     /// <p>The aggregated <code>BarValues</code> field well of a combo chart.</p>
     pub fn bar_values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.bar_values.unwrap_or_default();
-        v.push(input);
-        self.bar_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bar_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The aggregated <code>BarValues</code> field well of a combo chart.</p>
-    pub fn set_bar_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
-        self.bar_values = input;
-        self
+    pub fn set_bar_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
+        self.bar_values = input; self
+    }
+    /// <p>The aggregated <code>BarValues</code> field well of a combo chart.</p>
+    pub fn get_bar_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.bar_values
     }
     /// Appends an item to `colors`.
     ///
@@ -99,17 +97,17 @@ impl ComboChartAggregatedFieldWellsBuilder {
     /// <p>The aggregated colors field well of a combo chart.</p>
     pub fn colors(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.colors.unwrap_or_default();
-        v.push(input);
-        self.colors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.colors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The aggregated colors field well of a combo chart.</p>
-    pub fn set_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.colors = input;
-        self
+    pub fn set_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.colors = input; self
+    }
+    /// <p>The aggregated colors field well of a combo chart.</p>
+    pub fn get_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.colors
     }
     /// Appends an item to `line_values`.
     ///
@@ -118,25 +116,30 @@ impl ComboChartAggregatedFieldWellsBuilder {
     /// <p>The aggregated <code>LineValues</code> field well of a combo chart.</p>
     pub fn line_values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.line_values.unwrap_or_default();
-        v.push(input);
-        self.line_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.line_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The aggregated <code>LineValues</code> field well of a combo chart.</p>
-    pub fn set_line_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
-        self.line_values = input;
-        self
+    pub fn set_line_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
+        self.line_values = input; self
+    }
+    /// <p>The aggregated <code>LineValues</code> field well of a combo chart.</p>
+    pub fn get_line_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.line_values
     }
     /// Consumes the builder and constructs a [`ComboChartAggregatedFieldWells`](crate::types::ComboChartAggregatedFieldWells).
     pub fn build(self) -> crate::types::ComboChartAggregatedFieldWells {
         crate::types::ComboChartAggregatedFieldWells {
-            category: self.category,
-            bar_values: self.bar_values,
-            colors: self.colors,
-            line_values: self.line_values,
+            category: self.category
+            ,
+            bar_values: self.bar_values
+            ,
+            colors: self.colors
+            ,
+            line_values: self.line_values
+            ,
         }
     }
 }
+

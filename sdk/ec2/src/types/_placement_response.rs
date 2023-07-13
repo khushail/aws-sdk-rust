@@ -3,14 +3,14 @@
 /// <p>Describes the placement of an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlacementResponse {
+pub struct PlacementResponse  {
     /// <p>The name of the placement group that the instance is in.</p>
     #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl PlacementResponse {
     /// <p>The name of the placement group that the instance is in.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl PlacementResponse {
 
 /// A builder for [`PlacementResponse`](crate::types::PlacementResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementResponseBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl PlacementResponseBuilder {
     }
     /// <p>The name of the placement group that the instance is in.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
+    }
+    /// <p>The name of the placement group that the instance is in.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Consumes the builder and constructs a [`PlacementResponse`](crate::types::PlacementResponse).
     pub fn build(self) -> crate::types::PlacementResponse {
         crate::types::PlacementResponse {
-            group_name: self.group_name,
+            group_name: self.group_name
+            ,
         }
     }
 }
+

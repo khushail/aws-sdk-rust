@@ -3,7 +3,7 @@
 /// Represents the input of an UpdateWorkspaceAlias operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkspaceAliasInput {
+pub struct UpdateWorkspaceAliasInput  {
     /// The ID of the workspace being updated.
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
@@ -16,31 +16,28 @@ pub struct UpdateWorkspaceAliasInput {
 }
 impl UpdateWorkspaceAliasInput {
     /// The ID of the workspace being updated.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// The new alias of the workspace.
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl UpdateWorkspaceAliasInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAliasInput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput).
-    pub fn builder(
-    ) -> crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasInputBuilder {
+    pub fn builder() -> crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasInputBuilder {
         crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceAliasInput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAliasInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -54,8 +51,11 @@ impl UpdateWorkspaceAliasInputBuilder {
     }
     /// The ID of the workspace being updated.
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
+    }
+    /// The ID of the workspace being updated.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// The new alias of the workspace.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,8 +64,11 @@ impl UpdateWorkspaceAliasInputBuilder {
     }
     /// The new alias of the workspace.
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
+    }
+    /// The new alias of the workspace.
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,22 +77,24 @@ impl UpdateWorkspaceAliasInputBuilder {
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceAliasInput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput {
-                workspace_id: self.workspace_id,
-                alias: self.alias,
-                client_token: self.client_token,
-            },
+                workspace_id: self.workspace_id
+                ,
+                alias: self.alias
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

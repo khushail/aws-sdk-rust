@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEndpointOutput {
+pub struct UpdateEndpointOutput  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct UpdateEndpointOutput {
 }
 impl UpdateEndpointOutput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointOutput`](crate::operation::update_endpoint::UpdateEndpointOutput).
     pub fn builder() -> crate::operation::update_endpoint::builders::UpdateEndpointOutputBuilder {
@@ -28,9 +28,7 @@ impl UpdateEndpointOutput {
 
 /// A builder for [`UpdateEndpointOutput`](crate::operation::update_endpoint::UpdateEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEndpointOutputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl UpdateEndpointOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateEndpointOutput`](crate::operation::update_endpoint::UpdateEndpointOutput).
     pub fn build(self) -> crate::operation::update_endpoint::UpdateEndpointOutput {
         crate::operation::update_endpoint::UpdateEndpointOutput {
-            endpoint_arn: self.endpoint_arn,
+            endpoint_arn: self.endpoint_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

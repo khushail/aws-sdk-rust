@@ -3,117 +3,101 @@ pub use crate::operation::create_conference_provider::_create_conference_provide
 
 pub use crate::operation::create_conference_provider::_create_conference_provider_input::CreateConferenceProviderInputBuilder;
 
+impl CreateConferenceProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_conference_provider::CreateConferenceProviderOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_conference_provider::CreateConferenceProviderError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_conference_provider();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateConferenceProvider`.
-///
+/// 
 /// <p>Adds a new conference provider under the user's AWS account.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConferenceProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_conference_provider::builders::CreateConferenceProviderInputBuilder,
 }
-impl CreateConferenceProviderFluentBuilder {
+impl CreateConferenceProviderFluentBuilder  {
     /// Creates a new `CreateConferenceProvider`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_conference_provider::CreateConferenceProvider,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_conference_provider::CreateConferenceProviderError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateConferenceProvider as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_conference_provider::builders::CreateConferenceProviderInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_conference_provider::CreateConferenceProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_conference_provider::CreateConferenceProviderError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_conference_provider::CreateConferenceProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_conference_provider::CreateConferenceProviderError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_conference_provider::CreateConferenceProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_conference_provider::CreateConferenceProviderError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_conference_provider::CreateConferenceProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_conference_provider::CreateConferenceProviderError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_conference_provider::CreateConferenceProvider,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_conference_provider::CreateConferenceProviderError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_conference_provider::CreateConferenceProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_conference_provider::CreateConferenceProviderError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_conference_provider::CreateConferenceProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_conference_provider::CreateConferenceProviderError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the conference provider.</p>
-    pub fn conference_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conference_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conference_provider_name(input.into());
         self
     }
     /// <p>The name of the conference provider.</p>
-    pub fn set_conference_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conference_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conference_provider_name(input);
         self
+    }
+    /// <p>The name of the conference provider.</p>
+    pub fn get_conference_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_conference_provider_name()
     }
     /// <p>Represents a type within a list of predefined types.</p>
     pub fn conference_provider_type(mut self, input: crate::types::ConferenceProviderType) -> Self {
@@ -121,12 +105,13 @@ impl CreateConferenceProviderFluentBuilder {
         self
     }
     /// <p>Represents a type within a list of predefined types.</p>
-    pub fn set_conference_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConferenceProviderType>,
-    ) -> Self {
+    pub fn set_conference_provider_type(mut self, input: ::std::option::Option<crate::types::ConferenceProviderType>) -> Self {
         self.inner = self.inner.set_conference_provider_type(input);
         self
+    }
+    /// <p>Represents a type within a list of predefined types.</p>
+    pub fn get_conference_provider_type(&self) -> &::std::option::Option<crate::types::ConferenceProviderType> {
+        self.inner.get_conference_provider_type()
     }
     /// <p>The IP endpoint and protocol for calling.</p>
     pub fn ip_dial_in(mut self, input: crate::types::IpDialIn) -> Self {
@@ -138,18 +123,23 @@ impl CreateConferenceProviderFluentBuilder {
         self.inner = self.inner.set_ip_dial_in(input);
         self
     }
+    /// <p>The IP endpoint and protocol for calling.</p>
+    pub fn get_ip_dial_in(&self) -> &::std::option::Option<crate::types::IpDialIn> {
+        self.inner.get_ip_dial_in()
+    }
     /// <p>The information for PSTN conferencing.</p>
     pub fn pstn_dial_in(mut self, input: crate::types::PstnDialIn) -> Self {
         self.inner = self.inner.pstn_dial_in(input);
         self
     }
     /// <p>The information for PSTN conferencing.</p>
-    pub fn set_pstn_dial_in(
-        mut self,
-        input: ::std::option::Option<crate::types::PstnDialIn>,
-    ) -> Self {
+    pub fn set_pstn_dial_in(mut self, input: ::std::option::Option<crate::types::PstnDialIn>) -> Self {
         self.inner = self.inner.set_pstn_dial_in(input);
         self
+    }
+    /// <p>The information for PSTN conferencing.</p>
+    pub fn get_pstn_dial_in(&self) -> &::std::option::Option<crate::types::PstnDialIn> {
+        self.inner.get_pstn_dial_in()
     }
     /// <p>The meeting settings for the conference provider.</p>
     pub fn meeting_setting(mut self, input: crate::types::MeetingSetting) -> Self {
@@ -157,28 +147,27 @@ impl CreateConferenceProviderFluentBuilder {
         self
     }
     /// <p>The meeting settings for the conference provider.</p>
-    pub fn set_meeting_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingSetting>,
-    ) -> Self {
+    pub fn set_meeting_setting(mut self, input: ::std::option::Option<crate::types::MeetingSetting>) -> Self {
         self.inner = self.inner.set_meeting_setting(input);
         self
     }
+    /// <p>The meeting settings for the conference provider.</p>
+    pub fn get_meeting_setting(&self) -> &::std::option::Option<crate::types::MeetingSetting> {
+        self.inner.get_meeting_setting()
+    }
     /// <p>The request token of the client.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The request token of the client.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>The request token of the client.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -190,11 +179,13 @@ impl CreateConferenceProviderFluentBuilder {
         self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

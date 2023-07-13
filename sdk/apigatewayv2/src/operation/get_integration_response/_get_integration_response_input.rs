@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIntegrationResponseInput {
+pub struct GetIntegrationResponseInput  {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct GetIntegrationResponseInput {
 }
 impl GetIntegrationResponseInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(&self) -> ::std::option::Option<&str> {
+    pub fn integration_id(&self) -> ::std::option::Option<& str> {
         self.integration_id.as_deref()
     }
     /// <p>The integration response ID.</p>
-    pub fn integration_response_id(&self) -> ::std::option::Option<&str> {
+    pub fn integration_response_id(&self) -> ::std::option::Option<& str> {
         self.integration_response_id.as_deref()
     }
 }
 impl GetIntegrationResponseInput {
     /// Creates a new builder-style object to manufacture [`GetIntegrationResponseInput`](crate::operation::get_integration_response::GetIntegrationResponseInput).
-    pub fn builder(
-    ) -> crate::operation::get_integration_response::builders::GetIntegrationResponseInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_integration_response::builders::GetIntegrationResponseInputBuilder {
         crate::operation::get_integration_response::builders::GetIntegrationResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIntegrationResponseInput`](crate::operation::get_integration_response::GetIntegrationResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIntegrationResponseInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_id: ::std::option::Option<::std::string::String>,
@@ -54,54 +50,50 @@ impl GetIntegrationResponseInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
+    }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The integration ID.</p>
-    pub fn set_integration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.integration_id = input;
-        self
+    pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.integration_id = input; self
+    }
+    /// <p>The integration ID.</p>
+    pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_id
     }
     /// <p>The integration response ID.</p>
-    pub fn integration_response_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_response_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The integration response ID.</p>
-    pub fn set_integration_response_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.integration_response_id = input;
-        self
+    pub fn set_integration_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.integration_response_id = input; self
+    }
+    /// <p>The integration response ID.</p>
+    pub fn get_integration_response_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_response_id
     }
     /// Consumes the builder and constructs a [`GetIntegrationResponseInput`](crate::operation::get_integration_response::GetIntegrationResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_integration_response::GetIntegrationResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_integration_response::GetIntegrationResponseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_integration_response::GetIntegrationResponseInput {
-                api_id: self.api_id,
-                integration_id: self.integration_id,
-                integration_response_id: self.integration_response_id,
-            },
+                api_id: self.api_id
+                ,
+                integration_id: self.integration_id
+                ,
+                integration_response_id: self.integration_response_id
+                ,
+            }
         )
     }
 }
+

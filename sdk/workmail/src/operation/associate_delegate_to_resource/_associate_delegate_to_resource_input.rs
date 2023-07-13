@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateDelegateToResourceInput {
+pub struct AssociateDelegateToResourceInput  {
     /// <p>The organization under which the resource exists.</p>
     #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct AssociateDelegateToResourceInput {
 }
 impl AssociateDelegateToResourceInput {
     /// <p>The organization under which the resource exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The resource for which members (users or groups) are associated.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The member (user or group) to associate to the resource.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
 }
 impl AssociateDelegateToResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateDelegateToResourceInput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput).
-    pub fn builder() -> crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder{
+    pub fn builder() -> crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder {
         crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDelegateToResourceInput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDelegateToResourceInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct AssociateDelegateToResourceInputBuilder {
 }
 impl AssociateDelegateToResourceInputBuilder {
     /// <p>The organization under which the resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization under which the resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
+    }
+    /// <p>The organization under which the resource exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// <p>The resource for which members (users or groups) are associated.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl AssociateDelegateToResourceInputBuilder {
     }
     /// <p>The resource for which members (users or groups) are associated.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The resource for which members (users or groups) are associated.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The member (user or group) to associate to the resource.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,22 +76,24 @@ impl AssociateDelegateToResourceInputBuilder {
     }
     /// <p>The member (user or group) to associate to the resource.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
+    }
+    /// <p>The member (user or group) to associate to the resource.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`AssociateDelegateToResourceInput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput {
-                organization_id: self.organization_id,
-                resource_id: self.resource_id,
-                entity_id: self.entity_id,
-            },
+                organization_id: self.organization_id
+                ,
+                resource_id: self.resource_id
+                ,
+                entity_id: self.entity_id
+                ,
+            }
         )
     }
 }
+

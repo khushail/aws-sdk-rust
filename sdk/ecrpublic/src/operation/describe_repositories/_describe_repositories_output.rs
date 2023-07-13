@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRepositoriesOutput {
+pub struct DescribeRepositoriesOutput  {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
     #[doc(hidden)]
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::Repository>>,
@@ -13,32 +13,29 @@ pub struct DescribeRepositoriesOutput {
 }
 impl DescribeRepositoriesOutput {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::Repository]> {
+    pub fn repositories(&self) -> ::std::option::Option<& [crate::types::Repository]> {
         self.repositories.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeRepositoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRepositoriesOutput`](crate::operation::describe_repositories::DescribeRepositoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_repositories::builders::DescribeRepositoriesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_repositories::builders::DescribeRepositoriesOutputBuilder {
         crate::operation::describe_repositories::builders::DescribeRepositoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRepositoriesOutput`](crate::operation::describe_repositories::DescribeRepositoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRepositoriesOutputBuilder {
     pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::Repository>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,17 @@ impl DescribeRepositoriesOutputBuilder {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
     pub fn repositories(mut self, input: crate::types::Repository) -> Self {
         let mut v = self.repositories.unwrap_or_default();
-        v.push(input);
-        self.repositories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.repositories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of repository objects corresponding to valid repositories.</p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Repository>>,
-    ) -> Self {
-        self.repositories = input;
-        self
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Repository>>) -> Self {
+        self.repositories = input; self
+    }
+    /// <p>A list of repository objects corresponding to valid repositories.</p>
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Repository>> {
+        &self.repositories
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +68,30 @@ impl DescribeRepositoriesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeRepositoriesOutput`](crate::operation::describe_repositories::DescribeRepositoriesOutput).
     pub fn build(self) -> crate::operation::describe_repositories::DescribeRepositoriesOutput {
         crate::operation::describe_repositories::DescribeRepositoriesOutput {
-            repositories: self.repositories,
-            next_token: self.next_token,
+            repositories: self.repositories
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

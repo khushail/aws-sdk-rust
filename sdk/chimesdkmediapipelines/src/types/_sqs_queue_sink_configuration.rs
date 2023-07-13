@@ -3,18 +3,18 @@
 /// <p>The configuration settings for the SQS sink.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SqsQueueSinkConfiguration {
+pub struct SqsQueueSinkConfiguration  {
     /// <p>The ARN of the SQS sink.</p>
     #[doc(hidden)]
     pub insights_target: ::std::option::Option<::std::string::String>,
 }
 impl SqsQueueSinkConfiguration {
     /// <p>The ARN of the SQS sink.</p>
-    pub fn insights_target(&self) -> ::std::option::Option<&str> {
+    pub fn insights_target(&self) -> ::std::option::Option<& str> {
         self.insights_target.as_deref()
     }
 }
-impl ::std::fmt::Debug for SqsQueueSinkConfiguration {
+impl  ::std::fmt::Debug for SqsQueueSinkConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SqsQueueSinkConfiguration");
         formatter.field("insights_target", &"*** Sensitive Data Redacted ***");
@@ -36,25 +36,23 @@ pub struct SqsQueueSinkConfigurationBuilder {
 }
 impl SqsQueueSinkConfigurationBuilder {
     /// <p>The ARN of the SQS sink.</p>
-    pub fn insights_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn insights_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insights_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SQS sink.</p>
-    pub fn set_insights_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.insights_target = input;
-        self
+    pub fn set_insights_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.insights_target = input; self
+    }
+    /// <p>The ARN of the SQS sink.</p>
+    pub fn get_insights_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insights_target
     }
     /// Consumes the builder and constructs a [`SqsQueueSinkConfiguration`](crate::types::SqsQueueSinkConfiguration).
     pub fn build(self) -> crate::types::SqsQueueSinkConfiguration {
         crate::types::SqsQueueSinkConfiguration {
-            insights_target: self.insights_target,
+            insights_target: self.insights_target
+            ,
         }
     }
 }
@@ -65,3 +63,4 @@ impl ::std::fmt::Debug for SqsQueueSinkConfigurationBuilder {
         formatter.finish()
     }
 }
+

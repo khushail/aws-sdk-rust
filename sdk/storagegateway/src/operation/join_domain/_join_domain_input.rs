@@ -3,7 +3,7 @@
 /// <p>JoinDomainInput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct JoinDomainInput {
+pub struct JoinDomainInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
@@ -28,19 +28,19 @@ pub struct JoinDomainInput {
 }
 impl JoinDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The name of the domain that you want the gateway to join.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
-    pub fn organizational_unit(&self) -> ::std::option::Option<&str> {
+    pub fn organizational_unit(&self) -> ::std::option::Option<& str> {
         self.organizational_unit.as_deref()
     }
     /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
-    pub fn domain_controllers(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn domain_controllers(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.domain_controllers.as_deref()
     }
     /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
@@ -48,15 +48,15 @@ impl JoinDomainInput {
         self.timeout_in_seconds
     }
     /// <p>Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user account should be enabled to join computers to the domain. For example, you can use the domain administrator account or an account with delegated permissions to join computers to the domain.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Sets the password of the user who has permission to add the gateway to the Active Directory domain.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl ::std::fmt::Debug for JoinDomainInput {
+impl  ::std::fmt::Debug for JoinDomainInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("JoinDomainInput");
         formatter.field("gateway_arn", &self.gateway_arn);
@@ -96,8 +96,11 @@ impl JoinDomainInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
     }
     /// <p>The name of the domain that you want the gateway to join.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,46 +109,43 @@ impl JoinDomainInputBuilder {
     }
     /// <p>The name of the domain that you want the gateway to join.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The name of the domain that you want the gateway to join.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
-    pub fn organizational_unit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
-    pub fn set_organizational_unit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organizational_unit = input;
-        self
+    pub fn set_organizational_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organizational_unit = input; self
+    }
+    /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
+    pub fn get_organizational_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit
     }
     /// Appends an item to `domain_controllers`.
     ///
     /// To override the contents of this collection use [`set_domain_controllers`](Self::set_domain_controllers).
     ///
     /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
-    pub fn domain_controllers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_controllers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_controllers.unwrap_or_default();
-        v.push(input.into());
-        self.domain_controllers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.domain_controllers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
-    pub fn set_domain_controllers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.domain_controllers = input;
-        self
+    pub fn set_domain_controllers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.domain_controllers = input; self
+    }
+    /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
+    pub fn get_domain_controllers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.domain_controllers
     }
     /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
@@ -154,8 +154,11 @@ impl JoinDomainInputBuilder {
     }
     /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_seconds = input;
-        self
+        self.timeout_in_seconds = input; self
+    }
+    /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_seconds
     }
     /// <p>Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user account should be enabled to join computers to the domain. For example, you can use the domain administrator account or an account with delegated permissions to join computers to the domain.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,8 +167,11 @@ impl JoinDomainInputBuilder {
     }
     /// <p>Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user account should be enabled to join computers to the domain. For example, you can use the domain administrator account or an account with delegated permissions to join computers to the domain.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
+    }
+    /// <p>Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user account should be enabled to join computers to the domain. For example, you can use the domain administrator account or an account with delegated permissions to join computers to the domain.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// <p>Sets the password of the user who has permission to add the gateway to the Active Directory domain.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,25 +180,32 @@ impl JoinDomainInputBuilder {
     }
     /// <p>Sets the password of the user who has permission to add the gateway to the Active Directory domain.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
+    }
+    /// <p>Sets the password of the user who has permission to add the gateway to the Active Directory domain.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Consumes the builder and constructs a [`JoinDomainInput`](crate::operation::join_domain::JoinDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::join_domain::JoinDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::join_domain::JoinDomainInput {
-            gateway_arn: self.gateway_arn,
-            domain_name: self.domain_name,
-            organizational_unit: self.organizational_unit,
-            domain_controllers: self.domain_controllers,
-            timeout_in_seconds: self.timeout_in_seconds,
-            user_name: self.user_name,
-            password: self.password,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::join_domain::JoinDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::join_domain::JoinDomainInput {
+                gateway_arn: self.gateway_arn
+                ,
+                domain_name: self.domain_name
+                ,
+                organizational_unit: self.organizational_unit
+                ,
+                domain_controllers: self.domain_controllers
+                ,
+                timeout_in_seconds: self.timeout_in_seconds
+                ,
+                user_name: self.user_name
+                ,
+                password: self.password
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for JoinDomainInputBuilder {
@@ -208,3 +221,4 @@ impl ::std::fmt::Debug for JoinDomainInputBuilder {
         formatter.finish()
     }
 }
+

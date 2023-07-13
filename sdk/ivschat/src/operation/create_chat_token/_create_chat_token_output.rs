@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateChatTokenOutput {
+pub struct CreateChatTokenOutput  {
     /// <p>The issued client token, encrypted.</p>
     #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
@@ -16,36 +16,33 @@ pub struct CreateChatTokenOutput {
 }
 impl CreateChatTokenOutput {
     /// <p>The issued client token, encrypted.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p>Time after which the token is no longer valid and cannot be used to connect to a room. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn token_expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn token_expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.token_expiration_time.as_ref()
     }
     /// <p>Time after which an end user's session is no longer valid. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn session_expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn session_expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.session_expiration_time.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateChatTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateChatTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateChatTokenOutput`](crate::operation::create_chat_token::CreateChatTokenOutput).
-    pub fn builder() -> crate::operation::create_chat_token::builders::CreateChatTokenOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_chat_token::builders::CreateChatTokenOutputBuilder {
         crate::operation::create_chat_token::builders::CreateChatTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateChatTokenOutput`](crate::operation::create_chat_token::CreateChatTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateChatTokenOutputBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
     pub(crate) token_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -60,8 +57,11 @@ impl CreateChatTokenOutputBuilder {
     }
     /// <p>The issued client token, encrypted.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
+    }
+    /// <p>The issued client token, encrypted.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// <p>Time after which the token is no longer valid and cannot be used to connect to a room. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn token_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -69,12 +69,12 @@ impl CreateChatTokenOutputBuilder {
         self
     }
     /// <p>Time after which the token is no longer valid and cannot be used to connect to a room. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn set_token_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.token_expiration_time = input;
-        self
+    pub fn set_token_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.token_expiration_time = input; self
+    }
+    /// <p>Time after which the token is no longer valid and cannot be used to connect to a room. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn get_token_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.token_expiration_time
     }
     /// <p>Time after which an end user's session is no longer valid. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn session_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -82,29 +82,33 @@ impl CreateChatTokenOutputBuilder {
         self
     }
     /// <p>Time after which an end user's session is no longer valid. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn set_session_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.session_expiration_time = input;
-        self
+    pub fn set_session_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.session_expiration_time = input; self
+    }
+    /// <p>Time after which an end user's session is no longer valid. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn get_session_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.session_expiration_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateChatTokenOutput`](crate::operation::create_chat_token::CreateChatTokenOutput).
     pub fn build(self) -> crate::operation::create_chat_token::CreateChatTokenOutput {
         crate::operation::create_chat_token::CreateChatTokenOutput {
-            token: self.token,
-            token_expiration_time: self.token_expiration_time,
-            session_expiration_time: self.session_expiration_time,
+            token: self.token
+            ,
+            token_expiration_time: self.token_expiration_time
+            ,
+            session_expiration_time: self.session_expiration_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

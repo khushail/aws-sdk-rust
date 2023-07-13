@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServiceUpdatesOutput {
+pub struct DescribeServiceUpdatesOutput  {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,33 +13,29 @@ pub struct DescribeServiceUpdatesOutput {
 }
 impl DescribeServiceUpdatesOutput {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of service updates</p>
-    pub fn service_updates(&self) -> ::std::option::Option<&[crate::types::ServiceUpdate]> {
+    pub fn service_updates(&self) -> ::std::option::Option<& [crate::types::ServiceUpdate]> {
         self.service_updates.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeServiceUpdatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeServiceUpdatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesOutput`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder {
         crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceUpdatesOutput`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceUpdatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) service_updates: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>>,
@@ -53,8 +49,11 @@ impl DescribeServiceUpdatesOutputBuilder {
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `service_updates`.
     ///
@@ -63,33 +62,36 @@ impl DescribeServiceUpdatesOutputBuilder {
     /// <p>A list of service updates</p>
     pub fn service_updates(mut self, input: crate::types::ServiceUpdate) -> Self {
         let mut v = self.service_updates.unwrap_or_default();
-        v.push(input);
-        self.service_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of service updates</p>
-    pub fn set_service_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>>,
-    ) -> Self {
-        self.service_updates = input;
-        self
+    pub fn set_service_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>>) -> Self {
+        self.service_updates = input; self
+    }
+    /// <p>A list of service updates</p>
+    pub fn get_service_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>> {
+        &self.service_updates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeServiceUpdatesOutput`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput).
     pub fn build(self) -> crate::operation::describe_service_updates::DescribeServiceUpdatesOutput {
         crate::operation::describe_service_updates::DescribeServiceUpdatesOutput {
-            next_token: self.next_token,
-            service_updates: self.service_updates,
+            next_token: self.next_token
+            ,
+            service_updates: self.service_updates
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

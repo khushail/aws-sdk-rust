@@ -5,76 +5,37 @@ impl CreateMultipartUploadInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> ::std::result::Result<
-        ::aws_smithy_http::operation::Operation<
-            crate::operation::create_multipart_upload::CreateMultipartUpload,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_fips(_config.use_fips)
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_endpoint(_config.endpoint_url.clone())
-            .set_force_path_style(_config.force_path_style)
-            .set_use_arn_region(_config.use_arn_region)
-            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
-            .set_accelerate(_config.accelerate)
-            .set_bucket(self.bucket.clone())
-            .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> ::std::result::Result<::aws_smithy_http::operation::Operation<crate::operation::create_multipart_upload::CreateMultipartUpload, ::aws_http::retry::AwsResponseRetryClassifier>, ::aws_smithy_http::operation::error::BuildError> {
+        assert_ne!(_config.retry_config().map(|rc| rc.mode()), ::std::option::Option::Some(::aws_smithy_types::retry::RetryMode::Adaptive), "Adaptive retry mode is unsupported, please use Standard mode or disable retries.");
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
+                                let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_fips(_config.use_fips)
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_endpoint(_config.endpoint_url
+        .clone())
+        .set_force_path_style(_config.force_path_style)
+        .set_use_arn_region(_config.use_arn_region)
+        .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+        .set_accelerate(_config.accelerate)
+        .set_bucket(self.bucket.clone()).build()
+                                    .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+                                    ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::create_multipart_upload::CreateMultipartUploadInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_base(_input: &crate::operation::create_multipart_upload::CreateMultipartUploadInput, output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.key;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "key",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let key = ::aws_smithy_http::label::fmt_string(
-                    input_1,
-                    ::aws_smithy_http::label::EncodingStrategy::Greedy,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "key",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
+                            }
                 ::std::write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
-            fn uri_query(
-                _input: &crate::operation::create_multipart_upload::CreateMultipartUploadInput,
-                mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_query(_input: &crate::operation::create_multipart_upload::CreateMultipartUploadInput, mut output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_v("uploads");
                 query.push_kv("x-id", "CreateMultipartUpload");
@@ -82,12 +43,9 @@ impl CreateMultipartUploadInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::create_multipart_upload::CreateMultipartUploadInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::create_multipart_upload::CreateMultipartUploadInput,
+                            builder: ::http::request::Builder
+                        ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -99,59 +57,43 @@ impl CreateMultipartUploadInput {
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let ::std::option::Option::Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let ::std::option::Option::Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(_config.time_source.clone());
         let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                ::aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = ::aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
         signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(::aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::create_multipart_upload::CreateMultipartUpload::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "CreateMultipartUpload",
-            "s3",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::create_multipart_upload::CreateMultipartUpload::new())
+                            .with_metadata(::aws_smithy_http::operation::Metadata::new("CreateMultipartUpload", "s3"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMultipartUpload`.
+/// Orchestration and serialization glue logic for `CreateMultipartUpload`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]
@@ -163,26 +105,21 @@ impl CreateMultipartUpload {
     }
 }
 impl ::aws_smithy_http::response::ParseStrictResponse for CreateMultipartUpload {
-    type Output = ::std::result::Result<
-        crate::operation::create_multipart_upload::CreateMultipartUploadOutput,
-        crate::operation::create_multipart_upload::CreateMultipartUploadError,
-    >;
-    fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
-        let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
-        let body = response.body().as_ref();
-        ::tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
-        if !success && status != 200 {
-            crate::protocol_serde::shape_create_multipart_upload::de_create_multipart_upload_http_error(status, headers, body)
-        } else {
-            crate::protocol_serde::shape_create_multipart_upload::de_create_multipart_upload_http_response_with_props(status, headers, body)
-        }
-    }
-    fn sensitive(&self) -> bool {
-        true
-    }
-}
+                type Output = ::std::result::Result<crate::operation::create_multipart_upload::CreateMultipartUploadOutput, crate::operation::create_multipart_upload::CreateMultipartUploadError>;
+                fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
+                     ::tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_create_multipart_upload::de_create_multipart_upload_http_error(status, headers, body)
+                     } else {
+                        crate::protocol_serde::shape_create_multipart_upload::de_create_multipart_upload_http_response_with_props(status, headers, body)
+                     }
+                }
+                fn sensitive(&self) -> bool { true }
+            }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
 mod create_multipart_upload_request_test {
@@ -192,67 +129,74 @@ mod create_multipart_upload_request_test {
     #[allow(unused_mut)]
     async fn create_multipart_upload_uri_construction_request() {
         let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
-        let config_builder = crate::config::Config::builder()
-            .with_test_defaults()
-            .endpoint_resolver("https://example.com");
-        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
-        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+                    let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_resolver("https://example.com");
+                    let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
         let mut config_builder = config_builder;
-        if config_builder.region.is_none() {
-            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
-        }
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+                            if config_builder.region.is_none() {
+                                config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+                            }
         let config = config_builder.http_connector(conn).build();
-        let client = crate::Client::from_conf(config);
-        let result = client
-            .create_multipart_upload()
-            .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
-            .set_key(::std::option::Option::Some("object.txt".to_owned()))
-            .send()
-            .await;
+                        let client = crate::Client::from_conf(config);
+        let result = client.create_multipart_upload()
+        .set_bucket(
+            ::std::option::Option::Some(
+                "test-bucket".to_owned()
+            )
+        )
+        .set_key(
+            ::std::option::Option::Some(
+                "object.txt".to_owned()
+            )
+        )
+        .send().await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "POST");
-        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/object.txt");
-        let expected_query_params = &["uploads", "x-id=CreateMultipartUpload"];
-        ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_query_string(
-            &http_request,
-            expected_query_params,
-        ));
+                        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/object.txt");
+        let expected_query_params =
+            &[
+                "uploads","x-id=CreateMultipartUpload"
+            ]
+        ;
+        ::aws_smithy_protocol_test::assert_ok(
+        ::aws_smithy_protocol_test::validate_query_string(&http_request, expected_query_params)
+        );
     }
+    
+    
 }
 
 /// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type CreateMultipartUploadErrorKind = CreateMultipartUploadError;
+            ///
+            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
+            pub type CreateMultipartUploadErrorKind = CreateMultipartUploadError;
 /// Error type for the `CreateMultipartUploadError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateMultipartUploadError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+                    Unhandled(::aws_smithy_types::error::Unhandled),
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for CreateMultipartUploadError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
         Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
+                                let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
+                                builder.set_meta(meta);
+                                builder.build()
+                            })
     }
 }
 impl ::std::fmt::Display for CreateMultipartUploadError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -265,20 +209,16 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateMultipa
         }
     }
 }
-impl crate::s3_request_id::RequestIdExt
-    for crate::operation::create_multipart_upload::CreateMultipartUploadError
-{
-    fn extended_request_id(&self) -> Option<&str> {
-        self.meta().extended_request_id()
-    }
-}
-impl ::aws_http::request_id::RequestId
-    for crate::operation::create_multipart_upload::CreateMultipartUploadError
-{
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+impl crate::s3_request_id::RequestIdExt for crate::operation::create_multipart_upload::CreateMultipartUploadError {
+                            fn extended_request_id(&self) -> Option<&str> {
+                                self.meta().extended_request_id()
+                            }
+                        }
+impl ::aws_http::request_id::RequestId for crate::operation::create_multipart_upload::CreateMultipartUploadError {
+                            fn request_id(&self) -> Option<&str> {
+                                self.meta().request_id()
+                            }
+                        }
 impl ::aws_smithy_types::retry::ProvideErrorKind for CreateMultipartUploadError {
     fn code(&self) -> ::std::option::Option<&str> {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -289,33 +229,18 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateMultipartUploadError 
 }
 impl CreateMultipartUploadError {
     /// Creates the `CreateMultipartUploadError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
-    ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
-    }
-
-    /// Creates the `CreateMultipartUploadError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+                    }
+    
+                    /// Creates the `CreateMultipartUploadError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -326,7 +251,9 @@ impl CreateMultipartUploadError {
 impl ::std::error::Error for CreateMultipartUploadError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => {
+                ::std::option::Option::Some(_inner)
+            }
         }
     }
 }
@@ -341,3 +268,4 @@ mod _create_multipart_upload_output;
 
 /// Builders
 pub mod builders;
+

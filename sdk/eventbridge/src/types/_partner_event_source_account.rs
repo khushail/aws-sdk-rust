@@ -3,7 +3,7 @@
 /// <p>The Amazon Web Services account that a partner event source has been offered to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartnerEventSourceAccount {
+pub struct PartnerEventSourceAccount  {
     /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
     #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct PartnerEventSourceAccount {
 }
 impl PartnerEventSourceAccount {
     /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>The date and time the event source was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
-    pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EventSourceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EventSourceState> {
         self.state.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl PartnerEventSourceAccount {
 
 /// A builder for [`PartnerEventSourceAccount`](crate::types::PartnerEventSourceAccount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartnerEventSourceAccountBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -61,8 +59,11 @@ impl PartnerEventSourceAccountBuilder {
     }
     /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
+    }
+    /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
     }
     /// <p>The date and time the event source was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -70,12 +71,12 @@ impl PartnerEventSourceAccountBuilder {
         self
     }
     /// <p>The date and time the event source was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The date and time the event source was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -83,12 +84,12 @@ impl PartnerEventSourceAccountBuilder {
         self
     }
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration_time = input;
-        self
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.expiration_time = input; self
+    }
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_time
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn state(mut self, input: crate::types::EventSourceState) -> Self {
@@ -96,20 +97,25 @@ impl PartnerEventSourceAccountBuilder {
         self
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourceState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EventSourceState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EventSourceState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`PartnerEventSourceAccount`](crate::types::PartnerEventSourceAccount).
     pub fn build(self) -> crate::types::PartnerEventSourceAccount {
         crate::types::PartnerEventSourceAccount {
-            account: self.account,
-            creation_time: self.creation_time,
-            expiration_time: self.expiration_time,
-            state: self.state,
+            account: self.account
+            ,
+            creation_time: self.creation_time
+            ,
+            expiration_time: self.expiration_time
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

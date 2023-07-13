@@ -2,47 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEdgePackagingJobOutput {
+pub struct CreateEdgePackagingJobOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for CreateEdgePackagingJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateEdgePackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateEdgePackagingJobOutput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobOutputBuilder {
         crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEdgePackagingJobOutput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEdgePackagingJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateEdgePackagingJobOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateEdgePackagingJobOutput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput {
+    pub fn build(self) -> crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput {
         crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput {
             _request_id: self._request_id,
         }
     }
 }
+

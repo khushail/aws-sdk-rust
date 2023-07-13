@@ -3,7 +3,7 @@
 /// <p>Container for the response returned by the <code>GetUpgradeStatus</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUpgradeStatusOutput {
+pub struct GetUpgradeStatusOutput  {
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
     #[doc(hidden)]
     pub upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
@@ -17,36 +17,33 @@ pub struct GetUpgradeStatusOutput {
 }
 impl GetUpgradeStatusOutput {
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
-    pub fn upgrade_step(&self) -> ::std::option::Option<&crate::types::UpgradeStep> {
+    pub fn upgrade_step(&self) -> ::std::option::Option<& crate::types::UpgradeStep> {
         self.upgrade_step.as_ref()
     }
     /// <p>The status of the current step that an upgrade is on.</p>
-    pub fn step_status(&self) -> ::std::option::Option<&crate::types::UpgradeStatus> {
+    pub fn step_status(&self) -> ::std::option::Option<& crate::types::UpgradeStatus> {
         self.step_status.as_ref()
     }
     /// <p>A string that describes the update.</p>
-    pub fn upgrade_name(&self) -> ::std::option::Option<&str> {
+    pub fn upgrade_name(&self) -> ::std::option::Option<& str> {
         self.upgrade_name.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetUpgradeStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetUpgradeStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeStatusOutput`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput).
-    pub fn builder() -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusOutputBuilder {
         crate::operation::get_upgrade_status::builders::GetUpgradeStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUpgradeStatusOutput`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUpgradeStatusOutputBuilder {
     pub(crate) upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     pub(crate) step_status: ::std::option::Option<crate::types::UpgradeStatus>,
@@ -60,12 +57,12 @@ impl GetUpgradeStatusOutputBuilder {
         self
     }
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
-    pub fn set_upgrade_step(
-        mut self,
-        input: ::std::option::Option<crate::types::UpgradeStep>,
-    ) -> Self {
-        self.upgrade_step = input;
-        self
+    pub fn set_upgrade_step(mut self, input: ::std::option::Option<crate::types::UpgradeStep>) -> Self {
+        self.upgrade_step = input; self
+    }
+    /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
+    pub fn get_upgrade_step(&self) -> &::std::option::Option<crate::types::UpgradeStep> {
+        &self.upgrade_step
     }
     /// <p>The status of the current step that an upgrade is on.</p>
     pub fn step_status(mut self, input: crate::types::UpgradeStatus) -> Self {
@@ -73,12 +70,12 @@ impl GetUpgradeStatusOutputBuilder {
         self
     }
     /// <p>The status of the current step that an upgrade is on.</p>
-    pub fn set_step_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UpgradeStatus>,
-    ) -> Self {
-        self.step_status = input;
-        self
+    pub fn set_step_status(mut self, input: ::std::option::Option<crate::types::UpgradeStatus>) -> Self {
+        self.step_status = input; self
+    }
+    /// <p>The status of the current step that an upgrade is on.</p>
+    pub fn get_step_status(&self) -> &::std::option::Option<crate::types::UpgradeStatus> {
+        &self.step_status
     }
     /// <p>A string that describes the update.</p>
     pub fn upgrade_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,25 +84,32 @@ impl GetUpgradeStatusOutputBuilder {
     }
     /// <p>A string that describes the update.</p>
     pub fn set_upgrade_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upgrade_name = input;
-        self
+        self.upgrade_name = input; self
+    }
+    /// <p>A string that describes the update.</p>
+    pub fn get_upgrade_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upgrade_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetUpgradeStatusOutput`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput).
     pub fn build(self) -> crate::operation::get_upgrade_status::GetUpgradeStatusOutput {
         crate::operation::get_upgrade_status::GetUpgradeStatusOutput {
-            upgrade_step: self.upgrade_step,
-            step_status: self.step_status,
-            upgrade_name: self.upgrade_name,
+            upgrade_step: self.upgrade_step
+            ,
+            step_status: self.step_status
+            ,
+            upgrade_name: self.upgrade_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

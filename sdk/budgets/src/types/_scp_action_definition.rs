@@ -3,7 +3,7 @@
 /// <p>The service control policies (SCP) action definition details. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScpActionDefinition {
+pub struct ScpActionDefinition  {
     /// <p>The policy ID attached. </p>
     #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ScpActionDefinition {
 }
 impl ScpActionDefinition {
     /// <p>The policy ID attached. </p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>A list of target IDs. </p>
-    pub fn target_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn target_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.target_ids.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ScpActionDefinition {
 
 /// A builder for [`ScpActionDefinition`](crate::types::ScpActionDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScpActionDefinitionBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl ScpActionDefinitionBuilder {
     }
     /// <p>The policy ID attached. </p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
+    }
+    /// <p>The policy ID attached. </p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
     }
     /// Appends an item to `target_ids`.
     ///
@@ -55,23 +56,26 @@ impl ScpActionDefinitionBuilder {
     /// <p>A list of target IDs. </p>
     pub fn target_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_ids.unwrap_or_default();
-        v.push(input.into());
-        self.target_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of target IDs. </p>
-    pub fn set_target_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.target_ids = input;
-        self
+    pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.target_ids = input; self
+    }
+    /// <p>A list of target IDs. </p>
+    pub fn get_target_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_ids
     }
     /// Consumes the builder and constructs a [`ScpActionDefinition`](crate::types::ScpActionDefinition).
     pub fn build(self) -> crate::types::ScpActionDefinition {
         crate::types::ScpActionDefinition {
-            policy_id: self.policy_id,
-            target_ids: self.target_ids,
+            policy_id: self.policy_id
+            ,
+            target_ids: self.target_ids
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i> </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ControlPlanePlacementRequest {
+pub struct ControlPlanePlacementRequest  {
     /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
     #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl ControlPlanePlacementRequest {
     /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ControlPlanePlacementRequest {
 
 /// A builder for [`ControlPlanePlacementRequest`](crate::types::ControlPlanePlacementRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ControlPlanePlacementRequestBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ControlPlanePlacementRequestBuilder {
     }
     /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
+    }
+    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Consumes the builder and constructs a [`ControlPlanePlacementRequest`](crate::types::ControlPlanePlacementRequest).
     pub fn build(self) -> crate::types::ControlPlanePlacementRequest {
         crate::types::ControlPlanePlacementRequest {
-            group_name: self.group_name,
+            group_name: self.group_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBotAliasInput {
+pub struct GetBotAliasInput  {
     /// <p>The name of the bot alias. The name is case sensitive.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetBotAliasInput {
 }
 impl GetBotAliasInput {
     /// <p>The name of the bot alias. The name is case sensitive.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the bot.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl GetBotAliasInput {
 
 /// A builder for [`GetBotAliasInput`](crate::operation::get_bot_alias::GetBotAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBotAliasInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetBotAliasInputBuilder {
     }
     /// <p>The name of the bot alias. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the bot alias. The name is case sensitive.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the bot.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl GetBotAliasInputBuilder {
     }
     /// <p>The name of the bot.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
+    }
+    /// <p>The name of the bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
     }
     /// Consumes the builder and constructs a [`GetBotAliasInput`](crate::operation::get_bot_alias::GetBotAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bot_alias::GetBotAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_bot_alias::GetBotAliasInput {
-            name: self.name,
-            bot_name: self.bot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bot_alias::GetBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_bot_alias::GetBotAliasInput {
+                name: self.name
+                ,
+                bot_name: self.bot_name
+                ,
+            }
+        )
     }
 }
+

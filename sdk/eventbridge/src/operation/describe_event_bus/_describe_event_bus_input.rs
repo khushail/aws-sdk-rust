@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventBusInput {
+pub struct DescribeEventBusInput  {
     /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventBusInput {
     /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DescribeEventBusInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventBusInput`](crate::operation::describe_event_bus::DescribeEventBusInput).
-    pub fn builder() -> crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilder {
         crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventBusInput`](crate::operation::describe_event_bus::DescribeEventBusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventBusInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DescribeEventBusInputBuilder {
     }
     /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DescribeEventBusInput`](crate::operation::describe_event_bus::DescribeEventBusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_bus::DescribeEventBusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_event_bus::DescribeEventBusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_event_bus::DescribeEventBusInput { name: self.name },
+            crate::operation::describe_event_bus::DescribeEventBusInput {
+                name: self.name
+                ,
+            }
         )
     }
 }
+

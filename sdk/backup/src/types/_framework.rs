@@ -3,7 +3,7 @@
 /// <p>Contains detailed information about a framework. Frameworks contain controls, which evaluate and report on your backup events and resources. Frameworks generate daily compliance results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Framework {
+pub struct Framework  {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
     pub framework_name: ::std::option::Option<::std::string::String>,
@@ -19,22 +19,22 @@ pub struct Framework {
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The deployment status of a framework. The statuses are:</p>
+    /// <p>The deployment status of a framework. The statuses are:</p> 
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
     #[doc(hidden)]
     pub deployment_status: ::std::option::Option<::std::string::String>,
 }
 impl Framework {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(&self) -> ::std::option::Option<&str> {
+    pub fn framework_name(&self) -> ::std::option::Option<& str> {
         self.framework_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn framework_arn(&self) -> ::std::option::Option<&str> {
+    pub fn framework_arn(&self) -> ::std::option::Option<& str> {
         self.framework_arn.as_deref()
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-    pub fn framework_description(&self) -> ::std::option::Option<&str> {
+    pub fn framework_description(&self) -> ::std::option::Option<& str> {
         self.framework_description.as_deref()
     }
     /// <p>The number of controls contained by the framework.</p>
@@ -42,12 +42,12 @@ impl Framework {
         self.number_of_controls
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The deployment status of a framework. The statuses are:</p>
+    /// <p>The deployment status of a framework. The statuses are:</p> 
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
-    pub fn deployment_status(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_status(&self) -> ::std::option::Option<& str> {
         self.deployment_status.as_deref()
     }
 }
@@ -60,9 +60,7 @@ impl Framework {
 
 /// A builder for [`Framework`](crate::types::Framework).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameworkBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_arn: ::std::option::Option<::std::string::String>,
@@ -73,52 +71,43 @@ pub struct FrameworkBuilder {
 }
 impl FrameworkBuilder {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_framework_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.framework_name = input;
-        self
+    pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.framework_name = input; self
+    }
+    /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn framework_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn set_framework_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.framework_arn = input;
-        self
+    pub fn set_framework_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.framework_arn = input; self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    pub fn get_framework_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_arn
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-    pub fn framework_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-    pub fn set_framework_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.framework_description = input;
-        self
+    pub fn set_framework_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.framework_description = input; self
+    }
+    /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
+    pub fn get_framework_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_description
     }
     /// <p>The number of controls contained by the framework.</p>
     pub fn number_of_controls(mut self, input: i32) -> Self {
@@ -127,8 +116,11 @@ impl FrameworkBuilder {
     }
     /// <p>The number of controls contained by the framework.</p>
     pub fn set_number_of_controls(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_controls = input;
-        self
+        self.number_of_controls = input; self
+    }
+    /// <p>The number of controls contained by the framework.</p>
+    pub fn get_number_of_controls(&self) -> &::std::option::Option<i32> {
+        &self.number_of_controls
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,40 +128,46 @@ impl FrameworkBuilder {
         self
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
-    /// <p>The deployment status of a framework. The statuses are:</p>
+    /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
+    /// <p>The deployment status of a framework. The statuses are:</p> 
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
-    pub fn deployment_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The deployment status of a framework. The statuses are:</p>
+    /// <p>The deployment status of a framework. The statuses are:</p> 
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.deployment_status = input;
-        self
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_status = input; self
+    }
+    /// <p>The deployment status of a framework. The statuses are:</p> 
+    /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
+    pub fn get_deployment_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_status
     }
     /// Consumes the builder and constructs a [`Framework`](crate::types::Framework).
     pub fn build(self) -> crate::types::Framework {
         crate::types::Framework {
-            framework_name: self.framework_name,
-            framework_arn: self.framework_arn,
-            framework_description: self.framework_description,
-            number_of_controls: self.number_of_controls.unwrap_or_default(),
-            creation_time: self.creation_time,
-            deployment_status: self.deployment_status,
+            framework_name: self.framework_name
+            ,
+            framework_arn: self.framework_arn
+            ,
+            framework_description: self.framework_description
+            ,
+            number_of_controls: self.number_of_controls
+                .unwrap_or_default()
+            ,
+            creation_time: self.creation_time
+            ,
+            deployment_status: self.deployment_status
+            ,
         }
     }
 }
+

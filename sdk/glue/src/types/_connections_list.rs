@@ -3,14 +3,14 @@
 /// <p>Specifies the connections used by a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionsList {
+pub struct ConnectionsList  {
     /// <p>A list of connections used by the job.</p>
     #[doc(hidden)]
     pub connections: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConnectionsList {
     /// <p>A list of connections used by the job.</p>
-    pub fn connections(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn connections(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.connections.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ConnectionsList {
 
 /// A builder for [`ConnectionsList`](crate::types::ConnectionsList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionsListBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -37,22 +35,24 @@ impl ConnectionsListBuilder {
     /// <p>A list of connections used by the job.</p>
     pub fn connections(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connections.unwrap_or_default();
-        v.push(input.into());
-        self.connections = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.connections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of connections used by the job.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.connections = input;
-        self
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.connections = input; self
+    }
+    /// <p>A list of connections used by the job.</p>
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connections
     }
     /// Consumes the builder and constructs a [`ConnectionsList`](crate::types::ConnectionsList).
     pub fn build(self) -> crate::types::ConnectionsList {
         crate::types::ConnectionsList {
-            connections: self.connections,
+            connections: self.connections
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Settings that describe the active source from the input device, and the video characteristics of that source.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDeviceHdSettings {
+pub struct InputDeviceHdSettings  {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
     #[doc(hidden)]
     pub active_input: ::std::option::Option<crate::types::InputDeviceActiveInput>,
@@ -34,17 +34,15 @@ pub struct InputDeviceHdSettings {
 }
 impl InputDeviceHdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
-    pub fn active_input(&self) -> ::std::option::Option<&crate::types::InputDeviceActiveInput> {
+    pub fn active_input(&self) -> ::std::option::Option<& crate::types::InputDeviceActiveInput> {
         self.active_input.as_ref()
     }
     /// The source at the input device that is currently active. You can specify this source.
-    pub fn configured_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputDeviceConfiguredInput> {
+    pub fn configured_input(&self) -> ::std::option::Option<& crate::types::InputDeviceConfiguredInput> {
         self.configured_input.as_ref()
     }
     /// The state of the input device.
-    pub fn device_state(&self) -> ::std::option::Option<&crate::types::InputDeviceState> {
+    pub fn device_state(&self) -> ::std::option::Option<& crate::types::InputDeviceState> {
         self.device_state.as_ref()
     }
     /// The frame rate of the video source.
@@ -60,7 +58,7 @@ impl InputDeviceHdSettings {
         self.max_bitrate
     }
     /// The scan type of the video source.
-    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::InputDeviceScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<& crate::types::InputDeviceScanType> {
         self.scan_type.as_ref()
     }
     /// The width of the video source, in pixels.
@@ -81,9 +79,7 @@ impl InputDeviceHdSettings {
 
 /// A builder for [`InputDeviceHdSettings`](crate::types::InputDeviceHdSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDeviceHdSettingsBuilder {
     pub(crate) active_input: ::std::option::Option<crate::types::InputDeviceActiveInput>,
     pub(crate) configured_input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
@@ -102,12 +98,12 @@ impl InputDeviceHdSettingsBuilder {
         self
     }
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
-    pub fn set_active_input(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceActiveInput>,
-    ) -> Self {
-        self.active_input = input;
-        self
+    pub fn set_active_input(mut self, input: ::std::option::Option<crate::types::InputDeviceActiveInput>) -> Self {
+        self.active_input = input; self
+    }
+    /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
+    pub fn get_active_input(&self) -> &::std::option::Option<crate::types::InputDeviceActiveInput> {
+        &self.active_input
     }
     /// The source at the input device that is currently active. You can specify this source.
     pub fn configured_input(mut self, input: crate::types::InputDeviceConfiguredInput) -> Self {
@@ -115,12 +111,12 @@ impl InputDeviceHdSettingsBuilder {
         self
     }
     /// The source at the input device that is currently active. You can specify this source.
-    pub fn set_configured_input(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
-    ) -> Self {
-        self.configured_input = input;
-        self
+    pub fn set_configured_input(mut self, input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>) -> Self {
+        self.configured_input = input; self
+    }
+    /// The source at the input device that is currently active. You can specify this source.
+    pub fn get_configured_input(&self) -> &::std::option::Option<crate::types::InputDeviceConfiguredInput> {
+        &self.configured_input
     }
     /// The state of the input device.
     pub fn device_state(mut self, input: crate::types::InputDeviceState) -> Self {
@@ -128,12 +124,12 @@ impl InputDeviceHdSettingsBuilder {
         self
     }
     /// The state of the input device.
-    pub fn set_device_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceState>,
-    ) -> Self {
-        self.device_state = input;
-        self
+    pub fn set_device_state(mut self, input: ::std::option::Option<crate::types::InputDeviceState>) -> Self {
+        self.device_state = input; self
+    }
+    /// The state of the input device.
+    pub fn get_device_state(&self) -> &::std::option::Option<crate::types::InputDeviceState> {
+        &self.device_state
     }
     /// The frame rate of the video source.
     pub fn framerate(mut self, input: f64) -> Self {
@@ -142,8 +138,11 @@ impl InputDeviceHdSettingsBuilder {
     }
     /// The frame rate of the video source.
     pub fn set_framerate(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.framerate = input;
-        self
+        self.framerate = input; self
+    }
+    /// The frame rate of the video source.
+    pub fn get_framerate(&self) -> &::std::option::Option<f64> {
+        &self.framerate
     }
     /// The height of the video source, in pixels.
     pub fn height(mut self, input: i32) -> Self {
@@ -152,8 +151,11 @@ impl InputDeviceHdSettingsBuilder {
     }
     /// The height of the video source, in pixels.
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
+    }
+    /// The height of the video source, in pixels.
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
     }
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
     pub fn max_bitrate(mut self, input: i32) -> Self {
@@ -162,8 +164,11 @@ impl InputDeviceHdSettingsBuilder {
     }
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_bitrate = input;
-        self
+        self.max_bitrate = input; self
+    }
+    /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
     }
     /// The scan type of the video source.
     pub fn scan_type(mut self, input: crate::types::InputDeviceScanType) -> Self {
@@ -171,12 +176,12 @@ impl InputDeviceHdSettingsBuilder {
         self
     }
     /// The scan type of the video source.
-    pub fn set_scan_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceScanType>,
-    ) -> Self {
-        self.scan_type = input;
-        self
+    pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::InputDeviceScanType>) -> Self {
+        self.scan_type = input; self
+    }
+    /// The scan type of the video source.
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::InputDeviceScanType> {
+        &self.scan_type
     }
     /// The width of the video source, in pixels.
     pub fn width(mut self, input: i32) -> Self {
@@ -185,8 +190,11 @@ impl InputDeviceHdSettingsBuilder {
     }
     /// The width of the video source, in pixels.
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
+    }
+    /// The width of the video source, in pixels.
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
     }
     /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
     pub fn latency_ms(mut self, input: i32) -> Self {
@@ -195,21 +203,34 @@ impl InputDeviceHdSettingsBuilder {
     }
     /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
     pub fn set_latency_ms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.latency_ms = input;
-        self
+        self.latency_ms = input; self
+    }
+    /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+    pub fn get_latency_ms(&self) -> &::std::option::Option<i32> {
+        &self.latency_ms
     }
     /// Consumes the builder and constructs a [`InputDeviceHdSettings`](crate::types::InputDeviceHdSettings).
     pub fn build(self) -> crate::types::InputDeviceHdSettings {
         crate::types::InputDeviceHdSettings {
-            active_input: self.active_input,
-            configured_input: self.configured_input,
-            device_state: self.device_state,
-            framerate: self.framerate,
-            height: self.height,
-            max_bitrate: self.max_bitrate,
-            scan_type: self.scan_type,
-            width: self.width,
-            latency_ms: self.latency_ms,
+            active_input: self.active_input
+            ,
+            configured_input: self.configured_input
+            ,
+            device_state: self.device_state
+            ,
+            framerate: self.framerate
+            ,
+            height: self.height
+            ,
+            max_bitrate: self.max_bitrate
+            ,
+            scan_type: self.scan_type
+            ,
+            width: self.width
+            ,
+            latency_ms: self.latency_ms
+            ,
         }
     }
 }
+

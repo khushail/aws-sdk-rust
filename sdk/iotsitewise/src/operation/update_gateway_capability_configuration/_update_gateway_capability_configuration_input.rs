@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGatewayCapabilityConfigurationInput {
+pub struct UpdateGatewayCapabilityConfigurationInput  {
     /// <p>The ID of the gateway to be updated.</p>
     #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct UpdateGatewayCapabilityConfigurationInput {
 }
 impl UpdateGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway to be updated.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn capability_namespace(&self) -> ::std::option::Option<&str> {
+    pub fn capability_namespace(&self) -> ::std::option::Option<& str> {
         self.capability_namespace.as_deref()
     }
     /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn capability_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn capability_configuration(&self) -> ::std::option::Option<& str> {
         self.capability_configuration.as_deref()
     }
 }
 impl UpdateGatewayCapabilityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayCapabilityConfigurationInput`](crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationInput).
-    pub fn builder() -> crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationInputBuilder {
         crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGatewayCapabilityConfigurationInput`](crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGatewayCapabilityConfigurationInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) capability_namespace: ::std::option::Option<::std::string::String>,
@@ -52,43 +50,40 @@ impl UpdateGatewayCapabilityConfigurationInputBuilder {
     }
     /// <p>The ID of the gateway to be updated.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
+    }
+    /// <p>The ID of the gateway to be updated.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
     }
     /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn capability_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capability_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capability_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn set_capability_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.capability_namespace = input;
-        self
+    pub fn set_capability_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.capability_namespace = input; self
+    }
+    /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    pub fn get_capability_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capability_namespace
     }
     /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn capability_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capability_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capability_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_capability_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.capability_configuration = input;
-        self
+    pub fn set_capability_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.capability_configuration = input; self
+    }
+    /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_capability_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capability_configuration
     }
     /// Consumes the builder and constructs a [`UpdateGatewayCapabilityConfigurationInput`](crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationInput {
                 gateway_id: self.gateway_id
@@ -101,3 +96,4 @@ impl UpdateGatewayCapabilityConfigurationInputBuilder {
         )
     }
 }
+

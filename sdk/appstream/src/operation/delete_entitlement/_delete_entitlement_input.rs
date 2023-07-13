@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEntitlementInput {
+pub struct DeleteEntitlementInput  {
     /// <p>The name of the entitlement.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct DeleteEntitlementInput {
 }
 impl DeleteEntitlementInput {
     /// <p>The name of the entitlement.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
 }
 impl DeleteEntitlementInput {
     /// Creates a new builder-style object to manufacture [`DeleteEntitlementInput`](crate::operation::delete_entitlement::DeleteEntitlementInput).
-    pub fn builder() -> crate::operation::delete_entitlement::builders::DeleteEntitlementInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_entitlement::builders::DeleteEntitlementInputBuilder {
         crate::operation::delete_entitlement::builders::DeleteEntitlementInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEntitlementInput`](crate::operation::delete_entitlement::DeleteEntitlementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEntitlementInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl DeleteEntitlementInputBuilder {
     }
     /// <p>The name of the entitlement.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the entitlement.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl DeleteEntitlementInputBuilder {
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
+    }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// Consumes the builder and constructs a [`DeleteEntitlementInput`](crate::operation::delete_entitlement::DeleteEntitlementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_entitlement::DeleteEntitlementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_entitlement::DeleteEntitlementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_entitlement::DeleteEntitlementInput {
-                name: self.name,
-                stack_name: self.stack_name,
-            },
+                name: self.name
+                ,
+                stack_name: self.stack_name
+                ,
+            }
         )
     }
 }
+

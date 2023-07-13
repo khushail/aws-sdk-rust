@@ -3,7 +3,7 @@
 /// Attributes that define an Amazon S3 machine learning resource.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3MachineLearningModelResourceData {
+pub struct S3MachineLearningModelResourceData  {
     /// The absolute local path of the resource inside the Lambda environment.
     #[doc(hidden)]
     pub destination_path: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,15 @@ pub struct S3MachineLearningModelResourceData {
 }
 impl S3MachineLearningModelResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn destination_path(&self) -> ::std::option::Option<&str> {
+    pub fn destination_path(&self) -> ::std::option::Option<& str> {
         self.destination_path.as_deref()
     }
     /// The owner setting for downloaded machine learning resources.
-    pub fn owner_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceDownloadOwnerSetting> {
+    pub fn owner_setting(&self) -> ::std::option::Option<& crate::types::ResourceDownloadOwnerSetting> {
         self.owner_setting.as_ref()
     }
     /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -39,9 +37,7 @@ impl S3MachineLearningModelResourceData {
 
 /// A builder for [`S3MachineLearningModelResourceData`](crate::types::S3MachineLearningModelResourceData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3MachineLearningModelResourceDataBuilder {
     pub(crate) destination_path: ::std::option::Option<::std::string::String>,
     pub(crate) owner_setting: ::std::option::Option<crate::types::ResourceDownloadOwnerSetting>,
@@ -49,20 +45,17 @@ pub struct S3MachineLearningModelResourceDataBuilder {
 }
 impl S3MachineLearningModelResourceDataBuilder {
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn destination_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_path = ::std::option::Option::Some(input.into());
         self
     }
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn set_destination_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_path = input;
-        self
+    pub fn set_destination_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_path = input; self
+    }
+    /// The absolute local path of the resource inside the Lambda environment.
+    pub fn get_destination_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_path
     }
     /// The owner setting for downloaded machine learning resources.
     pub fn owner_setting(mut self, input: crate::types::ResourceDownloadOwnerSetting) -> Self {
@@ -70,12 +63,12 @@ impl S3MachineLearningModelResourceDataBuilder {
         self
     }
     /// The owner setting for downloaded machine learning resources.
-    pub fn set_owner_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDownloadOwnerSetting>,
-    ) -> Self {
-        self.owner_setting = input;
-        self
+    pub fn set_owner_setting(mut self, input: ::std::option::Option<crate::types::ResourceDownloadOwnerSetting>) -> Self {
+        self.owner_setting = input; self
+    }
+    /// The owner setting for downloaded machine learning resources.
+    pub fn get_owner_setting(&self) -> &::std::option::Option<crate::types::ResourceDownloadOwnerSetting> {
+        &self.owner_setting
     }
     /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,15 +77,22 @@ impl S3MachineLearningModelResourceDataBuilder {
     }
     /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
+    }
+    /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Consumes the builder and constructs a [`S3MachineLearningModelResourceData`](crate::types::S3MachineLearningModelResourceData).
     pub fn build(self) -> crate::types::S3MachineLearningModelResourceData {
         crate::types::S3MachineLearningModelResourceData {
-            destination_path: self.destination_path,
-            owner_setting: self.owner_setting,
-            s3_uri: self.s3_uri,
+            destination_path: self.destination_path
+            ,
+            owner_setting: self.owner_setting
+            ,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
+

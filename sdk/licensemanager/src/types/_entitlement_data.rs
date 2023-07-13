@@ -3,7 +3,7 @@
 /// <p>Data associated with an entitlement resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntitlementData {
+pub struct EntitlementData  {
     /// <p>Entitlement data name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct EntitlementData {
 }
 impl EntitlementData {
     /// <p>Entitlement data name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Entitlement data value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Entitlement data unit.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::EntitlementDataUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::EntitlementDataUnit> {
         self.unit.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl EntitlementData {
 
 /// A builder for [`EntitlementData`](crate::types::EntitlementData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntitlementDataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl EntitlementDataBuilder {
     }
     /// <p>Entitlement data name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Entitlement data name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Entitlement data value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl EntitlementDataBuilder {
     }
     /// <p>Entitlement data value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>Entitlement data value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>Entitlement data unit.</p>
     pub fn unit(mut self, input: crate::types::EntitlementDataUnit) -> Self {
@@ -72,19 +76,23 @@ impl EntitlementDataBuilder {
         self
     }
     /// <p>Entitlement data unit.</p>
-    pub fn set_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitlementDataUnit>,
-    ) -> Self {
-        self.unit = input;
-        self
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::EntitlementDataUnit>) -> Self {
+        self.unit = input; self
+    }
+    /// <p>Entitlement data unit.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::EntitlementDataUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`EntitlementData`](crate::types::EntitlementData).
     pub fn build(self) -> crate::types::EntitlementData {
         crate::types::EntitlementData {
-            name: self.name,
-            value: self.value,
-            unit: self.unit,
+            name: self.name
+            ,
+            value: self.value
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

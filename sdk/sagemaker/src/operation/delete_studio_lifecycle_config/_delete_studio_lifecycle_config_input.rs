@@ -2,60 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStudioLifecycleConfigInput {
+pub struct DeleteStudioLifecycleConfigInput  {
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
     #[doc(hidden)]
     pub studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
-    pub fn studio_lifecycle_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn studio_lifecycle_config_name(&self) -> ::std::option::Option<& str> {
         self.studio_lifecycle_config_name.as_deref()
     }
 }
 impl DeleteStudioLifecycleConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteStudioLifecycleConfigInput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput).
-    pub fn builder() -> crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigInputBuilder{
+    pub fn builder() -> crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigInputBuilder {
         crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStudioLifecycleConfigInput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStudioLifecycleConfigInputBuilder {
     pub(crate) studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStudioLifecycleConfigInputBuilder {
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
-    pub fn studio_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
-    pub fn set_studio_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.studio_lifecycle_config_name = input;
-        self
+    pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.studio_lifecycle_config_name = input; self
+    }
+    /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
+    pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_name
     }
     /// Consumes the builder and constructs a [`DeleteStudioLifecycleConfigInput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput {
-                studio_lifecycle_config_name: self.studio_lifecycle_config_name,
-            },
+                studio_lifecycle_config_name: self.studio_lifecycle_config_name
+                ,
+            }
         )
     }
 }
+

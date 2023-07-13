@@ -3,7 +3,7 @@
 /// <p>Specifies the configuration details of a scheduled-trigger flow that you define. Currently, these settings only apply to the scheduled-trigger type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledTriggerProperties {
+pub struct ScheduledTriggerProperties  {
     /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
     #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
@@ -28,23 +28,23 @@ pub struct ScheduledTriggerProperties {
 }
 impl ScheduledTriggerProperties {
     /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> ::std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
-    pub fn data_pull_mode(&self) -> ::std::option::Option<&crate::types::DataPullMode> {
+    pub fn data_pull_mode(&self) -> ::std::option::Option<& crate::types::DataPullMode> {
         self.data_pull_mode.as_ref()
     }
     /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
-    pub fn schedule_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn schedule_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.schedule_start_time.as_ref()
     }
     /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
-    pub fn schedule_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn schedule_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.schedule_end_time.as_ref()
     }
     /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
@@ -52,7 +52,7 @@ impl ScheduledTriggerProperties {
         self.schedule_offset
     }
     /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
-    pub fn first_execution_from(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn first_execution_from(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.first_execution_from.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl ScheduledTriggerProperties {
 
 /// A builder for [`ScheduledTriggerProperties`](crate::types::ScheduledTriggerProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledTriggerPropertiesBuilder {
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) data_pull_mode: ::std::option::Option<crate::types::DataPullMode>,
@@ -79,20 +77,17 @@ pub struct ScheduledTriggerPropertiesBuilder {
 }
 impl ScheduledTriggerPropertiesBuilder {
     /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.schedule_expression = input;
-        self
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schedule_expression = input; self
+    }
+    /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
+    pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression
     }
     /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
     pub fn data_pull_mode(mut self, input: crate::types::DataPullMode) -> Self {
@@ -100,12 +95,12 @@ impl ScheduledTriggerPropertiesBuilder {
         self
     }
     /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
-    pub fn set_data_pull_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPullMode>,
-    ) -> Self {
-        self.data_pull_mode = input;
-        self
+    pub fn set_data_pull_mode(mut self, input: ::std::option::Option<crate::types::DataPullMode>) -> Self {
+        self.data_pull_mode = input; self
+    }
+    /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
+    pub fn get_data_pull_mode(&self) -> &::std::option::Option<crate::types::DataPullMode> {
+        &self.data_pull_mode
     }
     /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
     pub fn schedule_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,12 +108,12 @@ impl ScheduledTriggerPropertiesBuilder {
         self
     }
     /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
-    pub fn set_schedule_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.schedule_start_time = input;
-        self
+    pub fn set_schedule_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.schedule_start_time = input; self
+    }
+    /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
+    pub fn get_schedule_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.schedule_start_time
     }
     /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
     pub fn schedule_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -126,12 +121,12 @@ impl ScheduledTriggerPropertiesBuilder {
         self
     }
     /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
-    pub fn set_schedule_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.schedule_end_time = input;
-        self
+    pub fn set_schedule_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.schedule_end_time = input; self
+    }
+    /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
+    pub fn get_schedule_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.schedule_end_time
     }
     /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,8 +135,11 @@ impl ScheduledTriggerPropertiesBuilder {
     }
     /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
+    }
+    /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
     pub fn schedule_offset(mut self, input: i64) -> Self {
@@ -150,8 +148,11 @@ impl ScheduledTriggerPropertiesBuilder {
     }
     /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.schedule_offset = input;
-        self
+        self.schedule_offset = input; self
+    }
+    /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
+    pub fn get_schedule_offset(&self) -> &::std::option::Option<i64> {
+        &self.schedule_offset
     }
     /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
     pub fn first_execution_from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -159,23 +160,31 @@ impl ScheduledTriggerPropertiesBuilder {
         self
     }
     /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
-    pub fn set_first_execution_from(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.first_execution_from = input;
-        self
+    pub fn set_first_execution_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.first_execution_from = input; self
+    }
+    /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
+    pub fn get_first_execution_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_execution_from
     }
     /// Consumes the builder and constructs a [`ScheduledTriggerProperties`](crate::types::ScheduledTriggerProperties).
     pub fn build(self) -> crate::types::ScheduledTriggerProperties {
         crate::types::ScheduledTriggerProperties {
-            schedule_expression: self.schedule_expression,
-            data_pull_mode: self.data_pull_mode,
-            schedule_start_time: self.schedule_start_time,
-            schedule_end_time: self.schedule_end_time,
-            timezone: self.timezone,
-            schedule_offset: self.schedule_offset,
-            first_execution_from: self.first_execution_from,
+            schedule_expression: self.schedule_expression
+            ,
+            data_pull_mode: self.data_pull_mode
+            ,
+            schedule_start_time: self.schedule_start_time
+            ,
+            schedule_end_time: self.schedule_end_time
+            ,
+            timezone: self.timezone
+            ,
+            schedule_offset: self.schedule_offset
+            ,
+            first_execution_from: self.first_execution_from
+            ,
         }
     }
 }
+

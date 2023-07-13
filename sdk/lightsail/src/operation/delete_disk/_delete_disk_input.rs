@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDiskInput {
+pub struct DeleteDiskInput  {
     /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
     #[doc(hidden)]
     pub disk_name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteDiskInput {
 }
 impl DeleteDiskInput {
     /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
-    pub fn disk_name(&self) -> ::std::option::Option<&str> {
+    pub fn disk_name(&self) -> ::std::option::Option<& str> {
         self.disk_name.as_deref()
     }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
@@ -29,9 +29,7 @@ impl DeleteDiskInput {
 
 /// A builder for [`DeleteDiskInput`](crate::operation::delete_disk::DeleteDiskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDiskInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete_add_ons: ::std::option::Option<bool>,
@@ -44,8 +42,11 @@ impl DeleteDiskInputBuilder {
     }
     /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.disk_name = input;
-        self
+        self.disk_name = input; self
+    }
+    /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_name
     }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
     pub fn force_delete_add_ons(mut self, input: bool) -> Self {
@@ -54,19 +55,22 @@ impl DeleteDiskInputBuilder {
     }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
     pub fn set_force_delete_add_ons(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete_add_ons = input;
-        self
+        self.force_delete_add_ons = input; self
+    }
+    /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
+    pub fn get_force_delete_add_ons(&self) -> &::std::option::Option<bool> {
+        &self.force_delete_add_ons
     }
     /// Consumes the builder and constructs a [`DeleteDiskInput`](crate::operation::delete_disk::DeleteDiskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_disk::DeleteDiskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_disk::DeleteDiskInput {
-            disk_name: self.disk_name,
-            force_delete_add_ons: self.force_delete_add_ons,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_disk::DeleteDiskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_disk::DeleteDiskInput {
+                disk_name: self.disk_name
+                ,
+                force_delete_add_ons: self.force_delete_add_ons
+                ,
+            }
+        )
     }
 }
+

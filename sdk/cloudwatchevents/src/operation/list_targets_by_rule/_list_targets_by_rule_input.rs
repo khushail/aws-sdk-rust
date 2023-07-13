@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTargetsByRuleInput {
+pub struct ListTargetsByRuleInput  {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
     pub rule: ::std::option::Option<::std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListTargetsByRuleInput {
 }
 impl ListTargetsByRuleInput {
     /// <p>The name of the rule.</p>
-    pub fn rule(&self) -> ::std::option::Option<&str> {
+    pub fn rule(&self) -> ::std::option::Option<& str> {
         self.rule.as_deref()
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_bus_name(&self) -> ::std::option::Option<& str> {
         self.event_bus_name.as_deref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -36,17 +36,14 @@ impl ListTargetsByRuleInput {
 }
 impl ListTargetsByRuleInput {
     /// Creates a new builder-style object to manufacture [`ListTargetsByRuleInput`](crate::operation::list_targets_by_rule::ListTargetsByRuleInput).
-    pub fn builder(
-    ) -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleInputBuilder {
+    pub fn builder() -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleInputBuilder {
         crate::operation::list_targets_by_rule::builders::ListTargetsByRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetsByRuleInput`](crate::operation::list_targets_by_rule::ListTargetsByRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsByRuleInputBuilder {
     pub(crate) rule: ::std::option::Option<::std::string::String>,
     pub(crate) event_bus_name: ::std::option::Option<::std::string::String>,
@@ -61,24 +58,24 @@ impl ListTargetsByRuleInputBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
+    }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bus_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn set_event_bus_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_bus_name = input;
-        self
+    pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_bus_name = input; self
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bus_name
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +84,11 @@ impl ListTargetsByRuleInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -97,23 +97,26 @@ impl ListTargetsByRuleInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListTargetsByRuleInput`](crate::operation::list_targets_by_rule::ListTargetsByRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_targets_by_rule::ListTargetsByRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets_by_rule::ListTargetsByRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_targets_by_rule::ListTargetsByRuleInput {
-                rule: self.rule,
-                event_bus_name: self.event_bus_name,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
+                rule: self.rule
+                ,
+                event_bus_name: self.event_bus_name
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

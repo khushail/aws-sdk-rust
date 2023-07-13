@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBgpPeerInput {
+pub struct CreateBgpPeerInput  {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct CreateBgpPeerInput {
 }
 impl CreateBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>Information about the BGP peer.</p>
-    pub fn new_bgp_peer(&self) -> ::std::option::Option<&crate::types::NewBgpPeer> {
+    pub fn new_bgp_peer(&self) -> ::std::option::Option<& crate::types::NewBgpPeer> {
         self.new_bgp_peer.as_ref()
     }
 }
@@ -29,29 +29,24 @@ impl CreateBgpPeerInput {
 
 /// A builder for [`CreateBgpPeerInput`](crate::operation::create_bgp_peer::CreateBgpPeerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBgpPeerInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_bgp_peer: ::std::option::Option<crate::types::NewBgpPeer>,
 }
 impl CreateBgpPeerInputBuilder {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_interface_id = input;
-        self
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_interface_id = input; self
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
     }
     /// <p>Information about the BGP peer.</p>
     pub fn new_bgp_peer(mut self, input: crate::types::NewBgpPeer) -> Self {
@@ -59,23 +54,23 @@ impl CreateBgpPeerInputBuilder {
         self
     }
     /// <p>Information about the BGP peer.</p>
-    pub fn set_new_bgp_peer(
-        mut self,
-        input: ::std::option::Option<crate::types::NewBgpPeer>,
-    ) -> Self {
-        self.new_bgp_peer = input;
-        self
+    pub fn set_new_bgp_peer(mut self, input: ::std::option::Option<crate::types::NewBgpPeer>) -> Self {
+        self.new_bgp_peer = input; self
+    }
+    /// <p>Information about the BGP peer.</p>
+    pub fn get_new_bgp_peer(&self) -> &::std::option::Option<crate::types::NewBgpPeer> {
+        &self.new_bgp_peer
     }
     /// Consumes the builder and constructs a [`CreateBgpPeerInput`](crate::operation::create_bgp_peer::CreateBgpPeerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bgp_peer::CreateBgpPeerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_bgp_peer::CreateBgpPeerInput {
-            virtual_interface_id: self.virtual_interface_id,
-            new_bgp_peer: self.new_bgp_peer,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_bgp_peer::CreateBgpPeerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_bgp_peer::CreateBgpPeerInput {
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                new_bgp_peer: self.new_bgp_peer
+                ,
+            }
+        )
     }
 }
+

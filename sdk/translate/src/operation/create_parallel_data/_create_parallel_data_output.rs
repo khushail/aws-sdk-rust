@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateParallelDataOutput {
+pub struct CreateParallelDataOutput  {
     /// <p>The custom name that you assigned to the parallel data resource.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,32 +13,29 @@ pub struct CreateParallelDataOutput {
 }
 impl CreateParallelDataOutput {
     /// <p>The custom name that you assigned to the parallel data resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ParallelDataStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ParallelDataStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateParallelDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`CreateParallelDataOutput`](crate::operation::create_parallel_data::CreateParallelDataOutput).
-    pub fn builder(
-    ) -> crate::operation::create_parallel_data::builders::CreateParallelDataOutputBuilder {
+    pub fn builder() -> crate::operation::create_parallel_data::builders::CreateParallelDataOutputBuilder {
         crate::operation::create_parallel_data::builders::CreateParallelDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateParallelDataOutput`](crate::operation::create_parallel_data::CreateParallelDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateParallelDataOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ParallelDataStatus>,
@@ -52,8 +49,11 @@ impl CreateParallelDataOutputBuilder {
     }
     /// <p>The custom name that you assigned to the parallel data resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The custom name that you assigned to the parallel data resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::ParallelDataStatus) -> Self {
@@ -61,28 +61,31 @@ impl CreateParallelDataOutputBuilder {
         self
     }
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ParallelDataStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ParallelDataStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateParallelDataOutput`](crate::operation::create_parallel_data::CreateParallelDataOutput).
     pub fn build(self) -> crate::operation::create_parallel_data::CreateParallelDataOutput {
         crate::operation::create_parallel_data::CreateParallelDataOutput {
-            name: self.name,
-            status: self.status,
+            name: self.name
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

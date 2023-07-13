@@ -3,160 +3,134 @@ pub use crate::operation::get_network_telemetry::_get_network_telemetry_output::
 
 pub use crate::operation::get_network_telemetry::_get_network_telemetry_input::GetNetworkTelemetryInputBuilder;
 
+impl GetNetworkTelemetryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_network_telemetry::GetNetworkTelemetryOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_network_telemetry::GetNetworkTelemetryError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_network_telemetry();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetNetworkTelemetry`.
-///
+/// 
 /// <p>Gets the network telemetry of the specified global network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetNetworkTelemetryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_network_telemetry::builders::GetNetworkTelemetryInputBuilder,
+                    inner: crate::operation::get_network_telemetry::builders::GetNetworkTelemetryInputBuilder,
 }
-impl GetNetworkTelemetryFluentBuilder {
+impl GetNetworkTelemetryFluentBuilder  {
     /// Creates a new `GetNetworkTelemetry`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_network_telemetry::GetNetworkTelemetry,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_telemetry::GetNetworkTelemetryError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetNetworkTelemetry as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_network_telemetry::builders::GetNetworkTelemetryInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_network_telemetry::GetNetworkTelemetryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_telemetry::GetNetworkTelemetryError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_network_telemetry::GetNetworkTelemetry, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_network_telemetry::GetNetworkTelemetryError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_network_telemetry::GetNetworkTelemetryOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_network_telemetry::GetNetworkTelemetryError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_network_telemetry::GetNetworkTelemetryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_telemetry::GetNetworkTelemetryError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_network_telemetry::GetNetworkTelemetry,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_telemetry::GetNetworkTelemetryError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_network_telemetry::GetNetworkTelemetryOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_network_telemetry::GetNetworkTelemetryError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_network_telemetry::GetNetworkTelemetry, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_network_telemetry::GetNetworkTelemetryError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_network_telemetry::paginator::GetNetworkTelemetryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_network_telemetry::paginator::GetNetworkTelemetryPaginator {
-        crate::operation::get_network_telemetry::paginator::GetNetworkTelemetryPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_network_telemetry::paginator::GetNetworkTelemetryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_network_telemetry::paginator::GetNetworkTelemetryPaginator {
+                                crate::operation::get_network_telemetry::paginator::GetNetworkTelemetryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_core_network_id()
+    }
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registered_gateway_arn(input.into());
         self
     }
     /// <p>The ARN of the gateway.</p>
-    pub fn set_registered_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registered_gateway_arn(input);
         self
+    }
+    /// <p>The ARN of the gateway.</p>
+    pub fn get_registered_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registered_gateway_arn()
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +142,10 @@ impl GetNetworkTelemetryFluentBuilder {
         self.inner = self.inner.set_aws_region(input);
         self
     }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_region()
+    }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -178,65 +156,89 @@ impl GetNetworkTelemetryFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
-    /// <ul>
-    /// <li> <p> <code>dxcon</code> </p> </li>
-    /// <li> <p> <code>dx-gateway</code> </p> </li>
-    /// <li> <p> <code>dx-vif</code> </p> </li>
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
+    /// <p>The resource type.</p> 
+    /// <p>The following are the supported resource types for Direct Connect:</p> 
+    /// <ul> 
+    /// <li> <p> <code>dxcon</code> </p> </li> 
+    /// <li> <p> <code>dx-gateway</code> </p> </li> 
+    /// <li> <p> <code>dx-vif</code> </p> </li> 
+    /// </ul> 
+    /// <p>The following are the supported resource types for Network Manager:</p> 
+    /// <ul> 
+    /// <li> <p> <code>connection</code> </p> </li> 
+    /// <li> <p> <code>device</code> </p> </li> 
+    /// <li> <p> <code>link</code> </p> </li> 
+    /// <li> <p> <code>site</code> </p> </li> 
+    /// </ul> 
+    /// <p>The following are the supported resource types for Amazon VPC:</p> 
+    /// <ul> 
+    /// <li> <p> <code>customer-gateway</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li> 
+    /// <li> <p> <code>vpn-connection</code> </p> </li> 
     /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li> <p> <code>connection</code> </p> </li>
-    /// <li> <p> <code>device</code> </p> </li>
-    /// <li> <p> <code>link</code> </p> </li>
-    /// <li> <p> <code>site</code> </p> </li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li> <p> <code>customer-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
-    /// <li> <p> <code>vpn-connection</code> </p> </li>
-    /// </ul>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
-    /// <ul>
-    /// <li> <p> <code>dxcon</code> </p> </li>
-    /// <li> <p> <code>dx-gateway</code> </p> </li>
-    /// <li> <p> <code>dx-vif</code> </p> </li>
+    /// <p>The resource type.</p> 
+    /// <p>The following are the supported resource types for Direct Connect:</p> 
+    /// <ul> 
+    /// <li> <p> <code>dxcon</code> </p> </li> 
+    /// <li> <p> <code>dx-gateway</code> </p> </li> 
+    /// <li> <p> <code>dx-vif</code> </p> </li> 
+    /// </ul> 
+    /// <p>The following are the supported resource types for Network Manager:</p> 
+    /// <ul> 
+    /// <li> <p> <code>connection</code> </p> </li> 
+    /// <li> <p> <code>device</code> </p> </li> 
+    /// <li> <p> <code>link</code> </p> </li> 
+    /// <li> <p> <code>site</code> </p> </li> 
+    /// </ul> 
+    /// <p>The following are the supported resource types for Amazon VPC:</p> 
+    /// <ul> 
+    /// <li> <p> <code>customer-gateway</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li> 
+    /// <li> <p> <code>vpn-connection</code> </p> </li> 
     /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li> <p> <code>connection</code> </p> </li>
-    /// <li> <p> <code>device</code> </p> </li>
-    /// <li> <p> <code>link</code> </p> </li>
-    /// <li> <p> <code>site</code> </p> </li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li> <p> <code>customer-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
-    /// <li> <p> <code>vpn-connection</code> </p> </li>
-    /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The resource type.</p> 
+    /// <p>The following are the supported resource types for Direct Connect:</p> 
+    /// <ul> 
+    /// <li> <p> <code>dxcon</code> </p> </li> 
+    /// <li> <p> <code>dx-gateway</code> </p> </li> 
+    /// <li> <p> <code>dx-vif</code> </p> </li> 
+    /// </ul> 
+    /// <p>The following are the supported resource types for Network Manager:</p> 
+    /// <ul> 
+    /// <li> <p> <code>connection</code> </p> </li> 
+    /// <li> <p> <code>device</code> </p> </li> 
+    /// <li> <p> <code>link</code> </p> </li> 
+    /// <li> <p> <code>site</code> </p> </li> 
+    /// </ul> 
+    /// <p>The following are the supported resource types for Amazon VPC:</p> 
+    /// <ul> 
+    /// <li> <p> <code>customer-gateway</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> 
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li> 
+    /// <li> <p> <code>vpn-connection</code> </p> </li> 
+    /// </ul>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
     }
     /// <p>The ARN of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -248,6 +250,10 @@ impl GetNetworkTelemetryFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -257,6 +263,10 @@ impl GetNetworkTelemetryFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -268,4 +278,9 @@ impl GetNetworkTelemetryFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

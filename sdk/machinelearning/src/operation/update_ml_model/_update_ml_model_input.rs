@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMlModelInput {
+pub struct UpdateMlModelInput  {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     #[doc(hidden)]
     pub ml_model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p> 
     /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
     #[doc(hidden)]
     pub score_threshold: ::std::option::Option<f32>,
 }
 impl UpdateMlModelInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn ml_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_name(&self) -> ::std::option::Option<& str> {
         self.ml_model_name.as_deref()
     }
-    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p> 
     /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
     pub fn score_threshold(&self) -> ::std::option::Option<f32> {
         self.score_threshold
@@ -38,9 +38,7 @@ impl UpdateMlModelInput {
 
 /// A builder for [`UpdateMlModelInput`](crate::operation::update_ml_model::UpdateMlModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMlModelInputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_name: ::std::option::Option<::std::string::String>,
@@ -54,48 +52,53 @@ impl UpdateMlModelInputBuilder {
     }
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
+    }
+    /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn ml_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ml_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn set_ml_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ml_model_name = input;
-        self
+    pub fn set_ml_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ml_model_name = input; self
     }
-    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+    /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    pub fn get_ml_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_name
+    }
+    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p> 
     /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
     pub fn score_threshold(mut self, input: f32) -> Self {
         self.score_threshold = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p> 
     /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
     pub fn set_score_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score_threshold = input;
-        self
+        self.score_threshold = input; self
+    }
+    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p> 
+    /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
+    pub fn get_score_threshold(&self) -> &::std::option::Option<f32> {
+        &self.score_threshold
     }
     /// Consumes the builder and constructs a [`UpdateMlModelInput`](crate::operation::update_ml_model::UpdateMlModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ml_model::UpdateMlModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_ml_model::UpdateMlModelInput {
-            ml_model_id: self.ml_model_id,
-            ml_model_name: self.ml_model_name,
-            score_threshold: self.score_threshold,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ml_model::UpdateMlModelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_ml_model::UpdateMlModelInput {
+                ml_model_id: self.ml_model_id
+                ,
+                ml_model_name: self.ml_model_name
+                ,
+                score_threshold: self.score_threshold
+                ,
+            }
+        )
     }
 }
+

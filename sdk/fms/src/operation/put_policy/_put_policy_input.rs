@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPolicyInput {
+pub struct PutPolicyInput  {
     /// <p>The details of the Firewall Manager policy to be created.</p>
     #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::Policy>,
@@ -12,11 +12,11 @@ pub struct PutPolicyInput {
 }
 impl PutPolicyInput {
     /// <p>The details of the Firewall Manager policy to be created.</p>
-    pub fn policy(&self) -> ::std::option::Option<&crate::types::Policy> {
+    pub fn policy(&self) -> ::std::option::Option<& crate::types::Policy> {
         self.policy.as_ref()
     }
     /// <p>The tags to add to the Amazon Web Services resource.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tag_list(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tag_list.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl PutPolicyInput {
 
 /// A builder for [`PutPolicyInput`](crate::operation::put_policy::PutPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPolicyInputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::Policy>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -44,8 +42,11 @@ impl PutPolicyInputBuilder {
     }
     /// <p>The details of the Firewall Manager policy to be created.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
+    }
+    /// <p>The details of the Firewall Manager policy to be created.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::Policy> {
+        &self.policy
     }
     /// Appends an item to `tag_list`.
     ///
@@ -54,28 +55,28 @@ impl PutPolicyInputBuilder {
     /// <p>The tags to add to the Amazon Web Services resource.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to add to the Amazon Web Services resource.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
+    }
+    /// <p>The tags to add to the Amazon Web Services resource.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutPolicyInput`](crate::operation::put_policy::PutPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_policy::PutPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_policy::PutPolicyInput {
-            policy: self.policy,
-            tag_list: self.tag_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_policy::PutPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_policy::PutPolicyInput {
+                policy: self.policy
+                ,
+                tag_list: self.tag_list
+                ,
+            }
+        )
     }
 }
+

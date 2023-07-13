@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSigningJobInput {
+pub struct StartSigningJobInput  {
     /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
     #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
@@ -21,23 +21,23 @@ pub struct StartSigningJobInput {
 }
 impl StartSigningJobInput {
     /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>The name of the signing profile.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The AWS account ID of the signing profile owner.</p>
-    pub fn profile_owner(&self) -> ::std::option::Option<&str> {
+    pub fn profile_owner(&self) -> ::std::option::Option<& str> {
         self.profile_owner.as_deref()
     }
 }
@@ -50,9 +50,7 @@ impl StartSigningJobInput {
 
 /// A builder for [`StartSigningJobInput`](crate::operation::start_signing_job::StartSigningJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSigningJobInputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
@@ -68,8 +66,11 @@ impl StartSigningJobInputBuilder {
     }
     /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
     }
     /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
@@ -77,12 +78,12 @@ impl StartSigningJobInputBuilder {
         self
     }
     /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
+        self.destination = input; self
+    }
+    /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.destination
     }
     /// <p>The name of the signing profile.</p>
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,54 +92,54 @@ impl StartSigningJobInputBuilder {
     }
     /// <p>The name of the signing profile.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
+    }
+    /// <p>The name of the signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
     }
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// <p>The AWS account ID of the signing profile owner.</p>
-    pub fn profile_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS account ID of the signing profile owner.</p>
-    pub fn set_profile_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.profile_owner = input;
-        self
+    pub fn set_profile_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_owner = input; self
+    }
+    /// <p>The AWS account ID of the signing profile owner.</p>
+    pub fn get_profile_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_owner
     }
     /// Consumes the builder and constructs a [`StartSigningJobInput`](crate::operation::start_signing_job::StartSigningJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_signing_job::StartSigningJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_signing_job::StartSigningJobInput {
-            source: self.source,
-            destination: self.destination,
-            profile_name: self.profile_name,
-            client_request_token: self.client_request_token,
-            profile_owner: self.profile_owner,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_signing_job::StartSigningJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_signing_job::StartSigningJobInput {
+                source: self.source
+                ,
+                destination: self.destination
+                ,
+                profile_name: self.profile_name
+                ,
+                client_request_token: self.client_request_token
+                ,
+                profile_owner: self.profile_owner
+                ,
+            }
+        )
     }
 }
+

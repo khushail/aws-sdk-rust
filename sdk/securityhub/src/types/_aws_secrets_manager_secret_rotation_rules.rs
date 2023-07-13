@@ -3,7 +3,7 @@
 /// <p>Defines the rotation schedule for the secret.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsSecretsManagerSecretRotationRules {
+pub struct AwsSecretsManagerSecretRotationRules  {
     /// <p>The number of days after the previous rotation to rotate the secret.</p>
     #[doc(hidden)]
     pub automatically_after_days: i32,
@@ -23,9 +23,7 @@ impl AwsSecretsManagerSecretRotationRules {
 
 /// A builder for [`AwsSecretsManagerSecretRotationRules`](crate::types::AwsSecretsManagerSecretRotationRules).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsSecretsManagerSecretRotationRulesBuilder {
     pub(crate) automatically_after_days: ::std::option::Option<i32>,
 }
@@ -37,13 +35,19 @@ impl AwsSecretsManagerSecretRotationRulesBuilder {
     }
     /// <p>The number of days after the previous rotation to rotate the secret.</p>
     pub fn set_automatically_after_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.automatically_after_days = input;
-        self
+        self.automatically_after_days = input; self
+    }
+    /// <p>The number of days after the previous rotation to rotate the secret.</p>
+    pub fn get_automatically_after_days(&self) -> &::std::option::Option<i32> {
+        &self.automatically_after_days
     }
     /// Consumes the builder and constructs a [`AwsSecretsManagerSecretRotationRules`](crate::types::AwsSecretsManagerSecretRotationRules).
     pub fn build(self) -> crate::types::AwsSecretsManagerSecretRotationRules {
         crate::types::AwsSecretsManagerSecretRotationRules {
-            automatically_after_days: self.automatically_after_days.unwrap_or_default(),
+            automatically_after_days: self.automatically_after_days
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

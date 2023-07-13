@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeContainerInstancesInput {
+pub struct DescribeContainerInstancesInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
     #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
@@ -15,35 +15,32 @@ pub struct DescribeContainerInstancesInput {
 }
 impl DescribeContainerInstancesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    pub fn container_instances(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn container_instances(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.container_instances.as_deref()
     }
     /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
-    pub fn include(&self) -> ::std::option::Option<&[crate::types::ContainerInstanceField]> {
+    pub fn include(&self) -> ::std::option::Option<& [crate::types::ContainerInstanceField]> {
         self.include.as_deref()
     }
 }
 impl DescribeContainerInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeContainerInstancesInput`](crate::operation::describe_container_instances::DescribeContainerInstancesInput).
-    pub fn builder() -> crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder {
         crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeContainerInstancesInput`](crate::operation::describe_container_instances::DescribeContainerInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContainerInstancesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container_instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) include:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>>,
+    pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>>,
 }
 impl DescribeContainerInstancesInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
@@ -53,30 +50,30 @@ impl DescribeContainerInstancesInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
     }
     /// Appends an item to `container_instances`.
     ///
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
     ///
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    pub fn container_instances(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.container_instances.unwrap_or_default();
-        v.push(input.into());
-        self.container_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.container_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    pub fn set_container_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.container_instances = input;
-        self
+    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.container_instances = input; self
+    }
+    /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
+    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_instances
     }
     /// Appends an item to `include`.
     ///
@@ -85,31 +82,30 @@ impl DescribeContainerInstancesInputBuilder {
     /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
     pub fn include(mut self, input: crate::types::ContainerInstanceField) -> Self {
         let mut v = self.include.unwrap_or_default();
-        v.push(input);
-        self.include = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>>,
-    ) -> Self {
-        self.include = input;
-        self
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>>) -> Self {
+        self.include = input; self
+    }
+    /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>> {
+        &self.include
     }
     /// Consumes the builder and constructs a [`DescribeContainerInstancesInput`](crate::operation::describe_container_instances::DescribeContainerInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_container_instances::DescribeContainerInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_container_instances::DescribeContainerInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_container_instances::DescribeContainerInstancesInput {
-                cluster: self.cluster,
-                container_instances: self.container_instances,
-                include: self.include,
-            },
+                cluster: self.cluster
+                ,
+                container_instances: self.container_instances
+                ,
+                include: self.include
+                ,
+            }
         )
     }
 }
+

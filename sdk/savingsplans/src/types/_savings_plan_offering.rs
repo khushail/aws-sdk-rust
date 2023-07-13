@@ -3,7 +3,7 @@
 /// <p>Information about a Savings Plan offering.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SavingsPlanOffering {
+pub struct SavingsPlanOffering  {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
@@ -36,28 +36,27 @@ pub struct SavingsPlanOffering {
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The properties.</p>
     #[doc(hidden)]
-    pub properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingProperty>>,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingProperty>>,
 }
 impl SavingsPlanOffering {
     /// <p>The ID of the offering.</p>
-    pub fn offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// <p>The product type.</p>
-    pub fn product_types(&self) -> ::std::option::Option<&[crate::types::SavingsPlanProductType]> {
+    pub fn product_types(&self) -> ::std::option::Option<& [crate::types::SavingsPlanProductType]> {
         self.product_types.as_deref()
     }
     /// <p>The plan type.</p>
-    pub fn plan_type(&self) -> ::std::option::Option<&crate::types::SavingsPlanType> {
+    pub fn plan_type(&self) -> ::std::option::Option<& crate::types::SavingsPlanType> {
         self.plan_type.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The payment option.</p>
-    pub fn payment_option(&self) -> ::std::option::Option<&crate::types::SavingsPlanPaymentOption> {
+    pub fn payment_option(&self) -> ::std::option::Option<& crate::types::SavingsPlanPaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The duration, in seconds.</p>
@@ -65,25 +64,23 @@ impl SavingsPlanOffering {
         self.duration_seconds
     }
     /// <p>The currency.</p>
-    pub fn currency(&self) -> ::std::option::Option<&crate::types::CurrencyCode> {
+    pub fn currency(&self) -> ::std::option::Option<& crate::types::CurrencyCode> {
         self.currency.as_ref()
     }
     /// <p>The service.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn usage_type(&self) -> ::std::option::Option<&str> {
+    pub fn usage_type(&self) -> ::std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The properties.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SavingsPlanOfferingProperty]> {
+    pub fn properties(&self) -> ::std::option::Option<& [crate::types::SavingsPlanOfferingProperty]> {
         self.properties.as_deref()
     }
 }
@@ -96,13 +93,10 @@ impl SavingsPlanOffering {
 
 /// A builder for [`SavingsPlanOffering`](crate::types::SavingsPlanOffering).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlanOfferingBuilder {
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,
-    pub(crate) product_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>,
+    pub(crate) product_types: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>,
     pub(crate) plan_type: ::std::option::Option<crate::types::SavingsPlanType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) payment_option: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
@@ -111,8 +105,7 @@ pub struct SavingsPlanOfferingBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) usage_type: ::std::option::Option<::std::string::String>,
     pub(crate) operation: ::std::option::Option<::std::string::String>,
-    pub(crate) properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingProperty>>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingProperty>>,
 }
 impl SavingsPlanOfferingBuilder {
     /// <p>The ID of the offering.</p>
@@ -122,8 +115,11 @@ impl SavingsPlanOfferingBuilder {
     }
     /// <p>The ID of the offering.</p>
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
+    }
+    /// <p>The ID of the offering.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
     }
     /// Appends an item to `product_types`.
     ///
@@ -132,17 +128,17 @@ impl SavingsPlanOfferingBuilder {
     /// <p>The product type.</p>
     pub fn product_types(mut self, input: crate::types::SavingsPlanProductType) -> Self {
         let mut v = self.product_types.unwrap_or_default();
-        v.push(input);
-        self.product_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.product_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The product type.</p>
-    pub fn set_product_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>,
-    ) -> Self {
-        self.product_types = input;
-        self
+    pub fn set_product_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>) -> Self {
+        self.product_types = input; self
+    }
+    /// <p>The product type.</p>
+    pub fn get_product_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>> {
+        &self.product_types
     }
     /// <p>The plan type.</p>
     pub fn plan_type(mut self, input: crate::types::SavingsPlanType) -> Self {
@@ -150,12 +146,12 @@ impl SavingsPlanOfferingBuilder {
         self
     }
     /// <p>The plan type.</p>
-    pub fn set_plan_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanType>,
-    ) -> Self {
-        self.plan_type = input;
-        self
+    pub fn set_plan_type(mut self, input: ::std::option::Option<crate::types::SavingsPlanType>) -> Self {
+        self.plan_type = input; self
+    }
+    /// <p>The plan type.</p>
+    pub fn get_plan_type(&self) -> &::std::option::Option<crate::types::SavingsPlanType> {
+        &self.plan_type
     }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,8 +160,11 @@ impl SavingsPlanOfferingBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The payment option.</p>
     pub fn payment_option(mut self, input: crate::types::SavingsPlanPaymentOption) -> Self {
@@ -173,12 +172,12 @@ impl SavingsPlanOfferingBuilder {
         self
     }
     /// <p>The payment option.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
-    ) -> Self {
-        self.payment_option = input;
-        self
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::SavingsPlanPaymentOption>) -> Self {
+        self.payment_option = input; self
+    }
+    /// <p>The payment option.</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::SavingsPlanPaymentOption> {
+        &self.payment_option
     }
     /// <p>The duration, in seconds.</p>
     pub fn duration_seconds(mut self, input: i64) -> Self {
@@ -187,8 +186,11 @@ impl SavingsPlanOfferingBuilder {
     }
     /// <p>The duration, in seconds.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
+    }
+    /// <p>The duration, in seconds.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i64> {
+        &self.duration_seconds
     }
     /// <p>The currency.</p>
     pub fn currency(mut self, input: crate::types::CurrencyCode) -> Self {
@@ -196,12 +198,12 @@ impl SavingsPlanOfferingBuilder {
         self
     }
     /// <p>The currency.</p>
-    pub fn set_currency(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCode>,
-    ) -> Self {
-        self.currency = input;
-        self
+    pub fn set_currency(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
+        self.currency = input; self
+    }
+    /// <p>The currency.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
+        &self.currency
     }
     /// <p>The service.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -210,8 +212,11 @@ impl SavingsPlanOfferingBuilder {
     }
     /// <p>The service.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
+    }
+    /// <p>The service.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>The usage details of the line item in the billing report.</p>
     pub fn usage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -220,8 +225,11 @@ impl SavingsPlanOfferingBuilder {
     }
     /// <p>The usage details of the line item in the billing report.</p>
     pub fn set_usage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_type = input;
-        self
+        self.usage_type = input; self
+    }
+    /// <p>The usage details of the line item in the billing report.</p>
+    pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_type
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -230,8 +238,11 @@ impl SavingsPlanOfferingBuilder {
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
+    }
+    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
     }
     /// Appends an item to `properties`.
     ///
@@ -240,32 +251,45 @@ impl SavingsPlanOfferingBuilder {
     /// <p>The properties.</p>
     pub fn properties(mut self, input: crate::types::SavingsPlanOfferingProperty) -> Self {
         let mut v = self.properties.unwrap_or_default();
-        v.push(input);
-        self.properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingProperty>>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingProperty>>) -> Self {
+        self.properties = input; self
+    }
+    /// <p>The properties.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingProperty>> {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`SavingsPlanOffering`](crate::types::SavingsPlanOffering).
     pub fn build(self) -> crate::types::SavingsPlanOffering {
         crate::types::SavingsPlanOffering {
-            offering_id: self.offering_id,
-            product_types: self.product_types,
-            plan_type: self.plan_type,
-            description: self.description,
-            payment_option: self.payment_option,
-            duration_seconds: self.duration_seconds.unwrap_or_default(),
-            currency: self.currency,
-            service_code: self.service_code,
-            usage_type: self.usage_type,
-            operation: self.operation,
-            properties: self.properties,
+            offering_id: self.offering_id
+            ,
+            product_types: self.product_types
+            ,
+            plan_type: self.plan_type
+            ,
+            description: self.description
+            ,
+            payment_option: self.payment_option
+            ,
+            duration_seconds: self.duration_seconds
+                .unwrap_or_default()
+            ,
+            currency: self.currency
+            ,
+            service_code: self.service_code
+            ,
+            usage_type: self.usage_type
+            ,
+            operation: self.operation
+            ,
+            properties: self.properties
+            ,
         }
     }
 }
+

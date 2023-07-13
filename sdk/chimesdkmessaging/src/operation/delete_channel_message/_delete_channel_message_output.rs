@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteChannelMessageOutput {
+pub struct DeleteChannelMessageOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteChannelMessageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteChannelMessageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelMessageOutput`](crate::operation::delete_channel_message::DeleteChannelMessageOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_channel_message::builders::DeleteChannelMessageOutputBuilder {
+    pub fn builder() -> crate::operation::delete_channel_message::builders::DeleteChannelMessageOutputBuilder {
         crate::operation::delete_channel_message::builders::DeleteChannelMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteChannelMessageOutput`](crate::operation::delete_channel_message::DeleteChannelMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChannelMessageOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteChannelMessageOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteChannelMessageOutput`](crate::operation::delete_channel_message::DeleteChannelMessageOutput).
     pub fn build(self) -> crate::operation::delete_channel_message::DeleteChannelMessageOutput {
         crate::operation::delete_channel_message::DeleteChannelMessageOutput {
@@ -43,3 +40,4 @@ impl DeleteChannelMessageOutputBuilder {
         }
     }
 }
+

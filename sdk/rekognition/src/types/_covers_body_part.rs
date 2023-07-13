@@ -3,7 +3,7 @@
 /// <p>Information about an item of Personal Protective Equipment covering a corresponding body part. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoversBodyPart {
+pub struct CoversBodyPart  {
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
     #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
@@ -30,9 +30,7 @@ impl CoversBodyPart {
 
 /// A builder for [`CoversBodyPart`](crate::types::CoversBodyPart).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoversBodyPartBuilder {
     pub(crate) confidence: ::std::option::Option<f32>,
     pub(crate) value: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl CoversBodyPartBuilder {
     }
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
+    }
+    /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
     pub fn value(mut self, input: bool) -> Self {
@@ -55,14 +56,21 @@ impl CoversBodyPartBuilder {
     }
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
     pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
+    pub fn get_value(&self) -> &::std::option::Option<bool> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`CoversBodyPart`](crate::types::CoversBodyPart).
     pub fn build(self) -> crate::types::CoversBodyPart {
         crate::types::CoversBodyPart {
-            confidence: self.confidence,
-            value: self.value.unwrap_or_default(),
+            confidence: self.confidence
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

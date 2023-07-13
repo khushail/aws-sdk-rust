@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribeMyUserProfile</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMyUserProfileOutput {
+pub struct DescribeMyUserProfileOutput  {
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
     #[doc(hidden)]
     pub user_profile: ::std::option::Option<crate::types::SelfUserProfile>,
@@ -11,29 +11,25 @@ pub struct DescribeMyUserProfileOutput {
 }
 impl DescribeMyUserProfileOutput {
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    pub fn user_profile(&self) -> ::std::option::Option<&crate::types::SelfUserProfile> {
+    pub fn user_profile(&self) -> ::std::option::Option<& crate::types::SelfUserProfile> {
         self.user_profile.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeMyUserProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeMyUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMyUserProfileOutput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileOutputBuilder {
         crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMyUserProfileOutput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMyUserProfileOutputBuilder {
     pub(crate) user_profile: ::std::option::Option<crate::types::SelfUserProfile>,
     _request_id: Option<String>,
@@ -45,27 +41,29 @@ impl DescribeMyUserProfileOutputBuilder {
         self
     }
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    pub fn set_user_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfUserProfile>,
-    ) -> Self {
-        self.user_profile = input;
-        self
+    pub fn set_user_profile(mut self, input: ::std::option::Option<crate::types::SelfUserProfile>) -> Self {
+        self.user_profile = input; self
+    }
+    /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
+    pub fn get_user_profile(&self) -> &::std::option::Option<crate::types::SelfUserProfile> {
+        &self.user_profile
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeMyUserProfileOutput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput).
     pub fn build(self) -> crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput {
         crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput {
-            user_profile: self.user_profile,
+            user_profile: self.user_profile
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the health check configuration of an Amazon Lightsail container service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerServiceHealthCheckConfig {
+pub struct ContainerServiceHealthCheckConfig  {
     /// <p>The number of consecutive health checks successes required before moving the container to the <code>Healthy</code> state. The default value is <code>2</code>.</p>
     #[doc(hidden)]
     pub healthy_threshold: ::std::option::Option<i32>,
@@ -41,11 +41,11 @@ impl ContainerServiceHealthCheckConfig {
         self.interval_seconds
     }
     /// <p>The path on the container on which to perform the health check. The default value is <code>/</code>.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The HTTP codes to use when checking for a successful response from a container. You can specify values between <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a range of values (for example, <code>200-299</code>).</p>
-    pub fn success_codes(&self) -> ::std::option::Option<&str> {
+    pub fn success_codes(&self) -> ::std::option::Option<& str> {
         self.success_codes.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl ContainerServiceHealthCheckConfig {
 
 /// A builder for [`ContainerServiceHealthCheckConfig`](crate::types::ContainerServiceHealthCheckConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerServiceHealthCheckConfigBuilder {
     pub(crate) healthy_threshold: ::std::option::Option<i32>,
     pub(crate) unhealthy_threshold: ::std::option::Option<i32>,
@@ -77,8 +75,11 @@ impl ContainerServiceHealthCheckConfigBuilder {
     }
     /// <p>The number of consecutive health checks successes required before moving the container to the <code>Healthy</code> state. The default value is <code>2</code>.</p>
     pub fn set_healthy_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.healthy_threshold = input;
-        self
+        self.healthy_threshold = input; self
+    }
+    /// <p>The number of consecutive health checks successes required before moving the container to the <code>Healthy</code> state. The default value is <code>2</code>.</p>
+    pub fn get_healthy_threshold(&self) -> &::std::option::Option<i32> {
+        &self.healthy_threshold
     }
     /// <p>The number of consecutive health check failures required before moving the container to the <code>Unhealthy</code> state. The default value is <code>2</code>.</p>
     pub fn unhealthy_threshold(mut self, input: i32) -> Self {
@@ -87,8 +88,11 @@ impl ContainerServiceHealthCheckConfigBuilder {
     }
     /// <p>The number of consecutive health check failures required before moving the container to the <code>Unhealthy</code> state. The default value is <code>2</code>.</p>
     pub fn set_unhealthy_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unhealthy_threshold = input;
-        self
+        self.unhealthy_threshold = input; self
+    }
+    /// <p>The number of consecutive health check failures required before moving the container to the <code>Unhealthy</code> state. The default value is <code>2</code>.</p>
+    pub fn get_unhealthy_threshold(&self) -> &::std::option::Option<i32> {
+        &self.unhealthy_threshold
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check. You can specify between 2 and 60 seconds. The default value is <code>2</code>.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -97,8 +101,11 @@ impl ContainerServiceHealthCheckConfigBuilder {
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check. You can specify between 2 and 60 seconds. The default value is <code>2</code>.</p>
     pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_seconds = input;
-        self
+        self.timeout_seconds = input; self
+    }
+    /// <p>The amount of time, in seconds, during which no response means a failed health check. You can specify between 2 and 60 seconds. The default value is <code>2</code>.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_seconds
     }
     /// <p>The approximate interval, in seconds, between health checks of an individual container. You can specify between 5 and 300 seconds. The default value is <code>5</code>.</p>
     pub fn interval_seconds(mut self, input: i32) -> Self {
@@ -107,8 +114,11 @@ impl ContainerServiceHealthCheckConfigBuilder {
     }
     /// <p>The approximate interval, in seconds, between health checks of an individual container. You can specify between 5 and 300 seconds. The default value is <code>5</code>.</p>
     pub fn set_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interval_seconds = input;
-        self
+        self.interval_seconds = input; self
+    }
+    /// <p>The approximate interval, in seconds, between health checks of an individual container. You can specify between 5 and 300 seconds. The default value is <code>5</code>.</p>
+    pub fn get_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.interval_seconds
     }
     /// <p>The path on the container on which to perform the health check. The default value is <code>/</code>.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,34 +127,41 @@ impl ContainerServiceHealthCheckConfigBuilder {
     }
     /// <p>The path on the container on which to perform the health check. The default value is <code>/</code>.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
+    }
+    /// <p>The path on the container on which to perform the health check. The default value is <code>/</code>.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The HTTP codes to use when checking for a successful response from a container. You can specify values between <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a range of values (for example, <code>200-299</code>).</p>
-    pub fn success_codes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn success_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.success_codes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP codes to use when checking for a successful response from a container. You can specify values between <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a range of values (for example, <code>200-299</code>).</p>
-    pub fn set_success_codes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.success_codes = input;
-        self
+    pub fn set_success_codes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.success_codes = input; self
+    }
+    /// <p>The HTTP codes to use when checking for a successful response from a container. You can specify values between <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a range of values (for example, <code>200-299</code>).</p>
+    pub fn get_success_codes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.success_codes
     }
     /// Consumes the builder and constructs a [`ContainerServiceHealthCheckConfig`](crate::types::ContainerServiceHealthCheckConfig).
     pub fn build(self) -> crate::types::ContainerServiceHealthCheckConfig {
         crate::types::ContainerServiceHealthCheckConfig {
-            healthy_threshold: self.healthy_threshold,
-            unhealthy_threshold: self.unhealthy_threshold,
-            timeout_seconds: self.timeout_seconds,
-            interval_seconds: self.interval_seconds,
-            path: self.path,
-            success_codes: self.success_codes,
+            healthy_threshold: self.healthy_threshold
+            ,
+            unhealthy_threshold: self.unhealthy_threshold
+            ,
+            timeout_seconds: self.timeout_seconds
+            ,
+            interval_seconds: self.interval_seconds
+            ,
+            path: self.path
+            ,
+            success_codes: self.success_codes
+            ,
         }
     }
 }
+

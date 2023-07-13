@@ -3,7 +3,7 @@
 /// Noise reducer filter settings for spatial filter.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoiseReducerSpatialFilterSettings {
+pub struct NoiseReducerSpatialFilterSettings  {
     /// Specify strength of post noise reduction sharpening filter, with 0 disabling the filter and 3 enabling it at maximum strength.
     #[doc(hidden)]
     pub post_filter_sharpen_strength: ::std::option::Option<i32>,
@@ -37,9 +37,7 @@ impl NoiseReducerSpatialFilterSettings {
 
 /// A builder for [`NoiseReducerSpatialFilterSettings`](crate::types::NoiseReducerSpatialFilterSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoiseReducerSpatialFilterSettingsBuilder {
     pub(crate) post_filter_sharpen_strength: ::std::option::Option<i32>,
     pub(crate) speed: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl NoiseReducerSpatialFilterSettingsBuilder {
     }
     /// Specify strength of post noise reduction sharpening filter, with 0 disabling the filter and 3 enabling it at maximum strength.
     pub fn set_post_filter_sharpen_strength(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.post_filter_sharpen_strength = input;
-        self
+        self.post_filter_sharpen_strength = input; self
+    }
+    /// Specify strength of post noise reduction sharpening filter, with 0 disabling the filter and 3 enabling it at maximum strength.
+    pub fn get_post_filter_sharpen_strength(&self) -> &::std::option::Option<i32> {
+        &self.post_filter_sharpen_strength
     }
     /// The speed of the filter, from -2 (lower speed) to 3 (higher speed), with 0 being the nominal value.
     pub fn speed(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl NoiseReducerSpatialFilterSettingsBuilder {
     }
     /// The speed of the filter, from -2 (lower speed) to 3 (higher speed), with 0 being the nominal value.
     pub fn set_speed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.speed = input;
-        self
+        self.speed = input; self
+    }
+    /// The speed of the filter, from -2 (lower speed) to 3 (higher speed), with 0 being the nominal value.
+    pub fn get_speed(&self) -> &::std::option::Option<i32> {
+        &self.speed
     }
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
     pub fn strength(mut self, input: i32) -> Self {
@@ -73,15 +77,22 @@ impl NoiseReducerSpatialFilterSettingsBuilder {
     }
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
     pub fn set_strength(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.strength = input;
-        self
+        self.strength = input; self
+    }
+    /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
+    pub fn get_strength(&self) -> &::std::option::Option<i32> {
+        &self.strength
     }
     /// Consumes the builder and constructs a [`NoiseReducerSpatialFilterSettings`](crate::types::NoiseReducerSpatialFilterSettings).
     pub fn build(self) -> crate::types::NoiseReducerSpatialFilterSettings {
         crate::types::NoiseReducerSpatialFilterSettings {
-            post_filter_sharpen_strength: self.post_filter_sharpen_strength,
-            speed: self.speed,
-            strength: self.strength,
+            post_filter_sharpen_strength: self.post_filter_sharpen_strength
+            ,
+            speed: self.speed
+            ,
+            strength: self.strength
+            ,
         }
     }
 }
+

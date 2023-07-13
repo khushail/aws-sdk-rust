@@ -3,7 +3,7 @@
 /// <p>Contains statistics for a session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SessionStatistics {
+pub struct SessionStatistics  {
     /// <p>The data processing unit execution time for a session in milliseconds.</p>
     #[doc(hidden)]
     pub dpu_execution_in_millis: ::std::option::Option<i64>,
@@ -23,9 +23,7 @@ impl SessionStatistics {
 
 /// A builder for [`SessionStatistics`](crate::types::SessionStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionStatisticsBuilder {
     pub(crate) dpu_execution_in_millis: ::std::option::Option<i64>,
 }
@@ -37,13 +35,18 @@ impl SessionStatisticsBuilder {
     }
     /// <p>The data processing unit execution time for a session in milliseconds.</p>
     pub fn set_dpu_execution_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.dpu_execution_in_millis = input;
-        self
+        self.dpu_execution_in_millis = input; self
+    }
+    /// <p>The data processing unit execution time for a session in milliseconds.</p>
+    pub fn get_dpu_execution_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.dpu_execution_in_millis
     }
     /// Consumes the builder and constructs a [`SessionStatistics`](crate::types::SessionStatistics).
     pub fn build(self) -> crate::types::SessionStatistics {
         crate::types::SessionStatistics {
-            dpu_execution_in_millis: self.dpu_execution_in_millis,
+            dpu_execution_in_millis: self.dpu_execution_in_millis
+            ,
         }
     }
 }
+

@@ -3,14 +3,13 @@
 /// <p>The job completion criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TuningJobCompletionCriteria {
+pub struct TuningJobCompletionCriteria  {
     /// <p>The value of the objective metric.</p>
     #[doc(hidden)]
     pub target_objective_metric_value: ::std::option::Option<f32>,
     /// <p>A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an objective function.</p>
     #[doc(hidden)]
-    pub best_objective_not_improving:
-        ::std::option::Option<crate::types::BestObjectiveNotImproving>,
+    pub best_objective_not_improving: ::std::option::Option<crate::types::BestObjectiveNotImproving>,
     /// <p>A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has converged as evaluated against your objective function.</p>
     #[doc(hidden)]
     pub convergence_detected: ::std::option::Option<crate::types::ConvergenceDetected>,
@@ -21,15 +20,11 @@ impl TuningJobCompletionCriteria {
         self.target_objective_metric_value
     }
     /// <p>A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an objective function.</p>
-    pub fn best_objective_not_improving(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BestObjectiveNotImproving> {
+    pub fn best_objective_not_improving(&self) -> ::std::option::Option<& crate::types::BestObjectiveNotImproving> {
         self.best_objective_not_improving.as_ref()
     }
     /// <p>A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has converged as evaluated against your objective function.</p>
-    pub fn convergence_detected(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConvergenceDetected> {
+    pub fn convergence_detected(&self) -> ::std::option::Option<& crate::types::ConvergenceDetected> {
         self.convergence_detected.as_ref()
     }
 }
@@ -42,13 +37,10 @@ impl TuningJobCompletionCriteria {
 
 /// A builder for [`TuningJobCompletionCriteria`](crate::types::TuningJobCompletionCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TuningJobCompletionCriteriaBuilder {
     pub(crate) target_objective_metric_value: ::std::option::Option<f32>,
-    pub(crate) best_objective_not_improving:
-        ::std::option::Option<crate::types::BestObjectiveNotImproving>,
+    pub(crate) best_objective_not_improving: ::std::option::Option<crate::types::BestObjectiveNotImproving>,
     pub(crate) convergence_detected: ::std::option::Option<crate::types::ConvergenceDetected>,
 }
 impl TuningJobCompletionCriteriaBuilder {
@@ -59,24 +51,24 @@ impl TuningJobCompletionCriteriaBuilder {
     }
     /// <p>The value of the objective metric.</p>
     pub fn set_target_objective_metric_value(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.target_objective_metric_value = input;
-        self
+        self.target_objective_metric_value = input; self
+    }
+    /// <p>The value of the objective metric.</p>
+    pub fn get_target_objective_metric_value(&self) -> &::std::option::Option<f32> {
+        &self.target_objective_metric_value
     }
     /// <p>A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an objective function.</p>
-    pub fn best_objective_not_improving(
-        mut self,
-        input: crate::types::BestObjectiveNotImproving,
-    ) -> Self {
+    pub fn best_objective_not_improving(mut self, input: crate::types::BestObjectiveNotImproving) -> Self {
         self.best_objective_not_improving = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an objective function.</p>
-    pub fn set_best_objective_not_improving(
-        mut self,
-        input: ::std::option::Option<crate::types::BestObjectiveNotImproving>,
-    ) -> Self {
-        self.best_objective_not_improving = input;
-        self
+    pub fn set_best_objective_not_improving(mut self, input: ::std::option::Option<crate::types::BestObjectiveNotImproving>) -> Self {
+        self.best_objective_not_improving = input; self
+    }
+    /// <p>A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an objective function.</p>
+    pub fn get_best_objective_not_improving(&self) -> &::std::option::Option<crate::types::BestObjectiveNotImproving> {
+        &self.best_objective_not_improving
     }
     /// <p>A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has converged as evaluated against your objective function.</p>
     pub fn convergence_detected(mut self, input: crate::types::ConvergenceDetected) -> Self {
@@ -84,19 +76,23 @@ impl TuningJobCompletionCriteriaBuilder {
         self
     }
     /// <p>A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has converged as evaluated against your objective function.</p>
-    pub fn set_convergence_detected(
-        mut self,
-        input: ::std::option::Option<crate::types::ConvergenceDetected>,
-    ) -> Self {
-        self.convergence_detected = input;
-        self
+    pub fn set_convergence_detected(mut self, input: ::std::option::Option<crate::types::ConvergenceDetected>) -> Self {
+        self.convergence_detected = input; self
+    }
+    /// <p>A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has converged as evaluated against your objective function.</p>
+    pub fn get_convergence_detected(&self) -> &::std::option::Option<crate::types::ConvergenceDetected> {
+        &self.convergence_detected
     }
     /// Consumes the builder and constructs a [`TuningJobCompletionCriteria`](crate::types::TuningJobCompletionCriteria).
     pub fn build(self) -> crate::types::TuningJobCompletionCriteria {
         crate::types::TuningJobCompletionCriteria {
-            target_objective_metric_value: self.target_objective_metric_value,
-            best_objective_not_improving: self.best_objective_not_improving,
-            convergence_detected: self.convergence_detected,
+            target_objective_metric_value: self.target_objective_metric_value
+            ,
+            best_objective_not_improving: self.best_objective_not_improving
+            ,
+            convergence_detected: self.convergence_detected
+            ,
         }
     }
 }
+

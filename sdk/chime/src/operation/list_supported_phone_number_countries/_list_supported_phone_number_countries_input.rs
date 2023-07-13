@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSupportedPhoneNumberCountriesInput {
+pub struct ListSupportedPhoneNumberCountriesInput  {
     /// <p>The phone number product type.</p>
     #[doc(hidden)]
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
 }
 impl ListSupportedPhoneNumberCountriesInput {
     /// <p>The phone number product type.</p>
-    pub fn product_type(&self) -> ::std::option::Option<&crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> ::std::option::Option<& crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
 }
 impl ListSupportedPhoneNumberCountriesInput {
     /// Creates a new builder-style object to manufacture [`ListSupportedPhoneNumberCountriesInput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput).
-    pub fn builder() -> crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesInputBuilder{
+    pub fn builder() -> crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesInputBuilder {
         crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSupportedPhoneNumberCountriesInput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesInputBuilder {
     pub(crate) product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
 }
@@ -35,15 +33,15 @@ impl ListSupportedPhoneNumberCountriesInputBuilder {
         self
     }
     /// <p>The phone number product type.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberProductType>,
-    ) -> Self {
-        self.product_type = input;
-        self
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
+        self.product_type = input; self
+    }
+    /// <p>The phone number product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        &self.product_type
     }
     /// Consumes the builder and constructs a [`ListSupportedPhoneNumberCountriesInput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput {
                 product_type: self.product_type
@@ -52,3 +50,4 @@ impl ListSupportedPhoneNumberCountriesInputBuilder {
         )
     }
 }
+

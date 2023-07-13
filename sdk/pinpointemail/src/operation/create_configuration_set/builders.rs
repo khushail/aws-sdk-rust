@@ -3,117 +3,100 @@ pub use crate::operation::create_configuration_set::_create_configuration_set_ou
 
 pub use crate::operation::create_configuration_set::_create_configuration_set_input::CreateConfigurationSetInputBuilder;
 
+impl CreateConfigurationSetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_configuration_set::CreateConfigurationSetOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_configuration_set::CreateConfigurationSetError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_configuration_set();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateConfigurationSet`.
-///
+/// 
 /// <p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder,
+                    inner: crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder,
 }
-impl CreateConfigurationSetFluentBuilder {
+impl CreateConfigurationSetFluentBuilder  {
     /// Creates a new `CreateConfigurationSet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_configuration_set::CreateConfigurationSet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_set::CreateConfigurationSetError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateConfigurationSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_set::CreateConfigurationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_set::CreateConfigurationSetError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_configuration_set::CreateConfigurationSet, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_set::CreateConfigurationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_set::CreateConfigurationSetError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_configuration_set::CreateConfigurationSet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_set::CreateConfigurationSetError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_configuration_set::CreateConfigurationSet, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
+    }
+    /// <p>The name of the configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
     pub fn tracking_options(mut self, input: crate::types::TrackingOptions) -> Self {
@@ -121,12 +104,13 @@ impl CreateConfigurationSetFluentBuilder {
         self
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    pub fn set_tracking_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TrackingOptions>,
-    ) -> Self {
+    pub fn set_tracking_options(mut self, input: ::std::option::Option<crate::types::TrackingOptions>) -> Self {
         self.inner = self.inner.set_tracking_options(input);
         self
+    }
+    /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
+    pub fn get_tracking_options(&self) -> &::std::option::Option<crate::types::TrackingOptions> {
+        self.inner.get_tracking_options()
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
     pub fn delivery_options(mut self, input: crate::types::DeliveryOptions) -> Self {
@@ -134,12 +118,13 @@ impl CreateConfigurationSetFluentBuilder {
         self
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    pub fn set_delivery_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryOptions>,
-    ) -> Self {
+    pub fn set_delivery_options(mut self, input: ::std::option::Option<crate::types::DeliveryOptions>) -> Self {
         self.inner = self.inner.set_delivery_options(input);
         self
+    }
+    /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
+    pub fn get_delivery_options(&self) -> &::std::option::Option<crate::types::DeliveryOptions> {
+        self.inner.get_delivery_options()
     }
     /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
     pub fn reputation_options(mut self, input: crate::types::ReputationOptions) -> Self {
@@ -147,12 +132,13 @@ impl CreateConfigurationSetFluentBuilder {
         self
     }
     /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
-    pub fn set_reputation_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ReputationOptions>,
-    ) -> Self {
+    pub fn set_reputation_options(mut self, input: ::std::option::Option<crate::types::ReputationOptions>) -> Self {
         self.inner = self.inner.set_reputation_options(input);
         self
+    }
+    /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
+    pub fn get_reputation_options(&self) -> &::std::option::Option<crate::types::ReputationOptions> {
+        self.inner.get_reputation_options()
     }
     /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
     pub fn sending_options(mut self, input: crate::types::SendingOptions) -> Self {
@@ -160,12 +146,13 @@ impl CreateConfigurationSetFluentBuilder {
         self
     }
     /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
-    pub fn set_sending_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SendingOptions>,
-    ) -> Self {
+    pub fn set_sending_options(mut self, input: ::std::option::Option<crate::types::SendingOptions>) -> Self {
         self.inner = self.inner.set_sending_options(input);
         self
+    }
+    /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
+    pub fn get_sending_options(&self) -> &::std::option::Option<crate::types::SendingOptions> {
+        self.inner.get_sending_options()
     }
     /// Appends an item to `Tags`.
     ///
@@ -177,11 +164,13 @@ impl CreateConfigurationSetFluentBuilder {
         self
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

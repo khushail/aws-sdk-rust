@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLocationFsxOpenZfsInput {
+pub struct DescribeLocationFsxOpenZfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
     #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 impl DescribeLocationFsxOpenZfsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsInput`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput).
-    pub fn builder() -> crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsInputBuilder{
+    pub fn builder() -> crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsInputBuilder {
         crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationFsxOpenZfsInput`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxOpenZfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl DescribeLocationFsxOpenZfsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
     }
     /// Consumes the builder and constructs a [`DescribeLocationFsxOpenZfsInput`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput {
-                location_arn: self.location_arn,
-            },
+                location_arn: self.location_arn
+                ,
+            }
         )
     }
 }
+

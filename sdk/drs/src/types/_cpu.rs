@@ -3,7 +3,7 @@
 /// <p>Information about a server's CPU.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Cpu {
+pub struct Cpu  {
     /// <p>The number of CPU cores.</p>
     #[doc(hidden)]
     pub cores: i64,
@@ -17,7 +17,7 @@ impl Cpu {
         self.cores
     }
     /// <p>The model name of the CPU.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Cpu {
 
 /// A builder for [`Cpu`](crate::types::Cpu).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CpuBuilder {
     pub(crate) cores: ::std::option::Option<i64>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl CpuBuilder {
     }
     /// <p>The number of CPU cores.</p>
     pub fn set_cores(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.cores = input;
-        self
+        self.cores = input; self
+    }
+    /// <p>The number of CPU cores.</p>
+    pub fn get_cores(&self) -> &::std::option::Option<i64> {
+        &self.cores
     }
     /// <p>The model name of the CPU.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,21 @@ impl CpuBuilder {
     }
     /// <p>The model name of the CPU.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
+    }
+    /// <p>The model name of the CPU.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// Consumes the builder and constructs a [`Cpu`](crate::types::Cpu).
     pub fn build(self) -> crate::types::Cpu {
         crate::types::Cpu {
-            cores: self.cores.unwrap_or_default(),
-            model_name: self.model_name,
+            cores: self.cores
+                .unwrap_or_default()
+            ,
+            model_name: self.model_name
+            ,
         }
     }
 }
+

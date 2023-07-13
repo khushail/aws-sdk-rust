@@ -3,7 +3,7 @@
 /// <p>The configuration for a render farm that is associated with a studio resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ComputeFarmConfiguration {
+pub struct ComputeFarmConfiguration  {
     /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
     #[doc(hidden)]
     pub active_directory_user: ::std::option::Option<::std::string::String>,
@@ -13,15 +13,15 @@ pub struct ComputeFarmConfiguration {
 }
 impl ComputeFarmConfiguration {
     /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
-    pub fn active_directory_user(&self) -> ::std::option::Option<&str> {
+    pub fn active_directory_user(&self) -> ::std::option::Option<& str> {
         self.active_directory_user.as_deref()
     }
     /// <p>The endpoint of the ComputeFarm that is accessed by the studio component resource.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
 }
-impl ::std::fmt::Debug for ComputeFarmConfiguration {
+impl  ::std::fmt::Debug for ComputeFarmConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ComputeFarmConfiguration");
         formatter.field("active_directory_user", &self.active_directory_user);
@@ -45,20 +45,17 @@ pub struct ComputeFarmConfigurationBuilder {
 }
 impl ComputeFarmConfigurationBuilder {
     /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
-    pub fn active_directory_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_directory_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_directory_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
-    pub fn set_active_directory_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.active_directory_user = input;
-        self
+    pub fn set_active_directory_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.active_directory_user = input; self
+    }
+    /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
+    pub fn get_active_directory_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_directory_user
     }
     /// <p>The endpoint of the ComputeFarm that is accessed by the studio component resource.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,14 +64,19 @@ impl ComputeFarmConfigurationBuilder {
     }
     /// <p>The endpoint of the ComputeFarm that is accessed by the studio component resource.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
+    }
+    /// <p>The endpoint of the ComputeFarm that is accessed by the studio component resource.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// Consumes the builder and constructs a [`ComputeFarmConfiguration`](crate::types::ComputeFarmConfiguration).
     pub fn build(self) -> crate::types::ComputeFarmConfiguration {
         crate::types::ComputeFarmConfiguration {
-            active_directory_user: self.active_directory_user,
-            endpoint: self.endpoint,
+            active_directory_user: self.active_directory_user
+            ,
+            endpoint: self.endpoint
+            ,
         }
     }
 }
@@ -86,3 +88,4 @@ impl ::std::fmt::Debug for ComputeFarmConfigurationBuilder {
         formatter.finish()
     }
 }
+

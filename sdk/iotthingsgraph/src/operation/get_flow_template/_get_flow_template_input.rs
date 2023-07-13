@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFlowTemplateInput {
-    /// <p>The ID of the workflow.</p>
-    /// <p>The ID should be in the following format.</p>
+pub struct GetFlowTemplateInput  {
+    /// <p>The ID of the workflow.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,10 +13,10 @@ pub struct GetFlowTemplateInput {
     pub revision_number: ::std::option::Option<i64>,
 }
 impl GetFlowTemplateInput {
-    /// <p>The ID of the workflow.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the workflow.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The number of the workflow revision to retrieve.</p>
@@ -33,27 +33,30 @@ impl GetFlowTemplateInput {
 
 /// A builder for [`GetFlowTemplateInput`](crate::operation::get_flow_template::GetFlowTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFlowTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_number: ::std::option::Option<i64>,
 }
 impl GetFlowTemplateInputBuilder {
-    /// <p>The ID of the workflow.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the workflow.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the workflow.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the workflow.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the workflow.</p> 
+    /// <p>The ID should be in the following format.</p> 
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The number of the workflow revision to retrieve.</p>
     pub fn revision_number(mut self, input: i64) -> Self {
@@ -62,19 +65,22 @@ impl GetFlowTemplateInputBuilder {
     }
     /// <p>The number of the workflow revision to retrieve.</p>
     pub fn set_revision_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision_number = input;
-        self
+        self.revision_number = input; self
+    }
+    /// <p>The number of the workflow revision to retrieve.</p>
+    pub fn get_revision_number(&self) -> &::std::option::Option<i64> {
+        &self.revision_number
     }
     /// Consumes the builder and constructs a [`GetFlowTemplateInput`](crate::operation::get_flow_template::GetFlowTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_flow_template::GetFlowTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_flow_template::GetFlowTemplateInput {
-            id: self.id,
-            revision_number: self.revision_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_flow_template::GetFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_flow_template::GetFlowTemplateInput {
+                id: self.id
+                ,
+                revision_number: self.revision_number
+                ,
+            }
+        )
     }
 }
+

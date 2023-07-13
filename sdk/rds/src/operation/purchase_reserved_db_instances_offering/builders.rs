@@ -3,123 +3,137 @@ pub use crate::operation::purchase_reserved_db_instances_offering::_purchase_res
 
 pub use crate::operation::purchase_reserved_db_instances_offering::_purchase_reserved_db_instances_offering_input::PurchaseReservedDbInstancesOfferingInputBuilder;
 
+impl PurchaseReservedDbInstancesOfferingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.purchase_reserved_db_instances_offering();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PurchaseReservedDBInstancesOffering`.
-///
+/// 
 /// <p>Purchases a reserved DB instance offering.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseReservedDBInstancesOfferingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingInputBuilder,
 }
-impl PurchaseReservedDBInstancesOfferingFluentBuilder {
+impl PurchaseReservedDBInstancesOfferingFluentBuilder  {
     /// Creates a new `PurchaseReservedDBInstancesOffering`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseReservedDBInstancesOffering as a reference.
+    pub fn as_input(&self) -> &crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOffering, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOffering, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError>
-    >{
-        self.customize_middleware().await
-    }
-    /// <p>The ID of the Reserved DB instance offering to purchase.</p>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOffering, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>The ID of the Reserved DB instance offering to purchase.</p> 
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    pub fn reserved_db_instances_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_db_instances_offering_id(input.into());
         self
     }
-    /// <p>The ID of the Reserved DB instance offering to purchase.</p>
+    /// <p>The ID of the Reserved DB instance offering to purchase.</p> 
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    pub fn set_reserved_db_instances_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instances_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_db_instances_offering_id(input);
         self
     }
-    /// <p>Customer-specified identifier to track this reservation.</p>
+    /// <p>The ID of the Reserved DB instance offering to purchase.</p> 
+    /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+    pub fn get_reserved_db_instances_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_db_instances_offering_id()
+    }
+    /// <p>Customer-specified identifier to track this reservation.</p> 
     /// <p>Example: myreservationID</p>
-    pub fn reserved_db_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_db_instance_id(input.into());
         self
     }
-    /// <p>Customer-specified identifier to track this reservation.</p>
+    /// <p>Customer-specified identifier to track this reservation.</p> 
     /// <p>Example: myreservationID</p>
-    pub fn set_reserved_db_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_db_instance_id(input);
         self
     }
-    /// <p>The number of instances to reserve.</p>
+    /// <p>Customer-specified identifier to track this reservation.</p> 
+    /// <p>Example: myreservationID</p>
+    pub fn get_reserved_db_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_db_instance_id()
+    }
+    /// <p>The number of instances to reserve.</p> 
     /// <p>Default: <code>1</code> </p>
     pub fn db_instance_count(mut self, input: i32) -> Self {
         self.inner = self.inner.db_instance_count(input);
         self
     }
-    /// <p>The number of instances to reserve.</p>
+    /// <p>The number of instances to reserve.</p> 
     /// <p>Default: <code>1</code> </p>
     pub fn set_db_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_db_instance_count(input);
         self
+    }
+    /// <p>The number of instances to reserve.</p> 
+    /// <p>Default: <code>1</code> </p>
+    pub fn get_db_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_db_instance_count()
     }
     /// Appends an item to `Tags`.
     ///
@@ -131,11 +145,13 @@ impl PurchaseReservedDBInstancesOfferingFluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

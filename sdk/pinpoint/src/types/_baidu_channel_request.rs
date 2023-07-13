@@ -3,7 +3,7 @@
 /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BaiduChannelRequest {
+pub struct BaiduChannelRequest  {
     /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct BaiduChannelRequest {
 }
 impl BaiduChannelRequest {
     /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
-    pub fn api_key(&self) -> ::std::option::Option<&str> {
+    pub fn api_key(&self) -> ::std::option::Option<& str> {
         self.api_key.as_deref()
     }
     /// <p>Specifies whether to enable the Baidu channel for the application.</p>
@@ -24,7 +24,7 @@ impl BaiduChannelRequest {
         self.enabled
     }
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
-    pub fn secret_key(&self) -> ::std::option::Option<&str> {
+    pub fn secret_key(&self) -> ::std::option::Option<& str> {
         self.secret_key.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl BaiduChannelRequest {
 
 /// A builder for [`BaiduChannelRequest`](crate::types::BaiduChannelRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BaiduChannelRequestBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -53,8 +51,11 @@ impl BaiduChannelRequestBuilder {
     }
     /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
+    }
+    /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
     }
     /// <p>Specifies whether to enable the Baidu channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -63,8 +64,11 @@ impl BaiduChannelRequestBuilder {
     }
     /// <p>Specifies whether to enable the Baidu channel for the application.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Specifies whether to enable the Baidu channel for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl BaiduChannelRequestBuilder {
     }
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_key = input;
-        self
+        self.secret_key = input; self
+    }
+    /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_key
     }
     /// Consumes the builder and constructs a [`BaiduChannelRequest`](crate::types::BaiduChannelRequest).
     pub fn build(self) -> crate::types::BaiduChannelRequest {
         crate::types::BaiduChannelRequest {
-            api_key: self.api_key,
-            enabled: self.enabled,
-            secret_key: self.secret_key,
+            api_key: self.api_key
+            ,
+            enabled: self.enabled
+            ,
+            secret_key: self.secret_key
+            ,
         }
     }
 }
+

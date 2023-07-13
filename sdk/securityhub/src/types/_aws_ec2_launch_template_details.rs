@@ -3,7 +3,7 @@
 /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDetails {
+pub struct AwsEc2LaunchTemplateDetails  {
     /// <p> A name for the launch template. </p>
     #[doc(hidden)]
     pub launch_template_name: ::std::option::Option<::std::string::String>,
@@ -22,17 +22,15 @@ pub struct AwsEc2LaunchTemplateDetails {
 }
 impl AwsEc2LaunchTemplateDetails {
     /// <p> A name for the launch template. </p>
-    pub fn launch_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> ::std::option::Option<& str> {
         self.launch_template_name.as_deref()
     }
     /// <p> An ID for the launch template. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The information to include in the launch template. </p>
-    pub fn launch_template_data(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataDetails> {
+    pub fn launch_template_data(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataDetails> {
         self.launch_template_data.as_ref()
     }
     /// <p> The default version of the launch template. </p>
@@ -53,33 +51,27 @@ impl AwsEc2LaunchTemplateDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDetails`](crate::types::AwsEc2LaunchTemplateDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDetailsBuilder {
     pub(crate) launch_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) launch_template_data:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataDetails>,
+    pub(crate) launch_template_data: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataDetails>,
     pub(crate) default_version_number: ::std::option::Option<i64>,
     pub(crate) latest_version_number: ::std::option::Option<i64>,
 }
 impl AwsEc2LaunchTemplateDetailsBuilder {
     /// <p> A name for the launch template. </p>
-    pub fn launch_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A name for the launch template. </p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.launch_template_name = input;
-        self
+    pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.launch_template_name = input; self
+    }
+    /// <p> A name for the launch template. </p>
+    pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_template_name
     }
     /// <p> An ID for the launch template. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,24 +80,24 @@ impl AwsEc2LaunchTemplateDetailsBuilder {
     }
     /// <p> An ID for the launch template. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p> An ID for the launch template. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p> The information to include in the launch template. </p>
-    pub fn launch_template_data(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataDetails,
-    ) -> Self {
+    pub fn launch_template_data(mut self, input: crate::types::AwsEc2LaunchTemplateDataDetails) -> Self {
         self.launch_template_data = ::std::option::Option::Some(input);
         self
     }
     /// <p> The information to include in the launch template. </p>
-    pub fn set_launch_template_data(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataDetails>,
-    ) -> Self {
-        self.launch_template_data = input;
-        self
+    pub fn set_launch_template_data(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataDetails>) -> Self {
+        self.launch_template_data = input; self
+    }
+    /// <p> The information to include in the launch template. </p>
+    pub fn get_launch_template_data(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataDetails> {
+        &self.launch_template_data
     }
     /// <p> The default version of the launch template. </p>
     pub fn default_version_number(mut self, input: i64) -> Self {
@@ -114,8 +106,11 @@ impl AwsEc2LaunchTemplateDetailsBuilder {
     }
     /// <p> The default version of the launch template. </p>
     pub fn set_default_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.default_version_number = input;
-        self
+        self.default_version_number = input; self
+    }
+    /// <p> The default version of the launch template. </p>
+    pub fn get_default_version_number(&self) -> &::std::option::Option<i64> {
+        &self.default_version_number
     }
     /// <p> The latest version of the launch template. </p>
     pub fn latest_version_number(mut self, input: i64) -> Self {
@@ -124,17 +119,28 @@ impl AwsEc2LaunchTemplateDetailsBuilder {
     }
     /// <p> The latest version of the launch template. </p>
     pub fn set_latest_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.latest_version_number = input;
-        self
+        self.latest_version_number = input; self
+    }
+    /// <p> The latest version of the launch template. </p>
+    pub fn get_latest_version_number(&self) -> &::std::option::Option<i64> {
+        &self.latest_version_number
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDetails`](crate::types::AwsEc2LaunchTemplateDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDetails {
         crate::types::AwsEc2LaunchTemplateDetails {
-            launch_template_name: self.launch_template_name,
-            id: self.id,
-            launch_template_data: self.launch_template_data,
-            default_version_number: self.default_version_number.unwrap_or_default(),
-            latest_version_number: self.latest_version_number.unwrap_or_default(),
+            launch_template_name: self.launch_template_name
+            ,
+            id: self.id
+            ,
+            launch_template_data: self.launch_template_data
+            ,
+            default_version_number: self.default_version_number
+                .unwrap_or_default()
+            ,
+            latest_version_number: self.latest_version_number
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

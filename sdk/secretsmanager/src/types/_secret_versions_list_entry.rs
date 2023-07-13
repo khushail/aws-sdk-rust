@@ -3,7 +3,7 @@
 /// <p>A structure that contains information about one version of a secret.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecretVersionsListEntry {
+pub struct SecretVersionsListEntry  {
     /// <p>The unique version identifier of this version of the secret.</p>
     #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct SecretVersionsListEntry {
 }
 impl SecretVersionsListEntry {
     /// <p>The unique version identifier of this version of the secret.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
-    pub fn version_stages(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn version_stages(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.version_stages.as_deref()
     }
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
-    pub fn last_accessed_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_accessed_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
     /// <p>The date and time this version of the secret was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The KMS keys used to encrypt the secret version.</p>
-    pub fn kms_key_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn kms_key_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.kms_key_ids.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl SecretVersionsListEntry {
 
 /// A builder for [`SecretVersionsListEntry`](crate::types::SecretVersionsListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecretVersionsListEntryBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -69,30 +67,30 @@ impl SecretVersionsListEntryBuilder {
     }
     /// <p>The unique version identifier of this version of the secret.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
+    }
+    /// <p>The unique version identifier of this version of the secret.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Appends an item to `version_stages`.
     ///
     /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).
     ///
     /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
-    pub fn version_stages(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_stages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.version_stages.unwrap_or_default();
-        v.push(input.into());
-        self.version_stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.version_stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
-    pub fn set_version_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.version_stages = input;
-        self
+    pub fn set_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.version_stages = input; self
+    }
+    /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
+    pub fn get_version_stages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.version_stages
     }
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
     pub fn last_accessed_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -100,12 +98,12 @@ impl SecretVersionsListEntryBuilder {
         self
     }
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
-    pub fn set_last_accessed_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_accessed_date = input;
-        self
+    pub fn set_last_accessed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_accessed_date = input; self
+    }
+    /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
+    pub fn get_last_accessed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_accessed_date
     }
     /// <p>The date and time this version of the secret was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,12 +111,12 @@ impl SecretVersionsListEntryBuilder {
         self
     }
     /// <p>The date and time this version of the secret was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_date = input;
-        self
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_date = input; self
+    }
+    /// <p>The date and time this version of the secret was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     /// Appends an item to `kms_key_ids`.
     ///
@@ -127,26 +125,32 @@ impl SecretVersionsListEntryBuilder {
     /// <p>The KMS keys used to encrypt the secret version.</p>
     pub fn kms_key_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.kms_key_ids.unwrap_or_default();
-        v.push(input.into());
-        self.kms_key_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.kms_key_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The KMS keys used to encrypt the secret version.</p>
-    pub fn set_kms_key_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.kms_key_ids = input;
-        self
+    pub fn set_kms_key_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.kms_key_ids = input; self
+    }
+    /// <p>The KMS keys used to encrypt the secret version.</p>
+    pub fn get_kms_key_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.kms_key_ids
     }
     /// Consumes the builder and constructs a [`SecretVersionsListEntry`](crate::types::SecretVersionsListEntry).
     pub fn build(self) -> crate::types::SecretVersionsListEntry {
         crate::types::SecretVersionsListEntry {
-            version_id: self.version_id,
-            version_stages: self.version_stages,
-            last_accessed_date: self.last_accessed_date,
-            created_date: self.created_date,
-            kms_key_ids: self.kms_key_ids,
+            version_id: self.version_id
+            ,
+            version_stages: self.version_stages
+            ,
+            last_accessed_date: self.last_accessed_date
+            ,
+            created_date: self.created_date
+            ,
+            kms_key_ids: self.kms_key_ids
+            ,
         }
     }
 }
+

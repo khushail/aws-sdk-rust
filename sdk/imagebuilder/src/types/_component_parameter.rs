@@ -3,7 +3,7 @@
 /// <p>Contains a key/value pair that sets the named component parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentParameter {
+pub struct ComponentParameter  {
     /// <p>The name of the component parameter to set.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ComponentParameter {
 }
 impl ComponentParameter {
     /// <p>The name of the component parameter to set.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Sets the value for the named component parameter.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn value(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.value.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ComponentParameter {
 
 /// A builder for [`ComponentParameter`](crate::types::ComponentParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,8 +43,11 @@ impl ComponentParameterBuilder {
     }
     /// <p>The name of the component parameter to set.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the component parameter to set.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `value`.
     ///
@@ -55,23 +56,26 @@ impl ComponentParameterBuilder {
     /// <p>Sets the value for the named component parameter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
-        v.push(input.into());
-        self.value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Sets the value for the named component parameter.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.value = input; self
+    }
+    /// <p>Sets the value for the named component parameter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ComponentParameter`](crate::types::ComponentParameter).
     pub fn build(self) -> crate::types::ComponentParameter {
         crate::types::ComponentParameter {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

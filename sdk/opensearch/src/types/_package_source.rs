@@ -3,7 +3,7 @@
 /// <p>The Amazon S3 location to import the package from.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageSource {
+pub struct PackageSource  {
     /// <p>The name of the Amazon S3 bucket containing the package.</p>
     #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct PackageSource {
 }
 impl PackageSource {
     /// <p>The name of the Amazon S3 bucket containing the package.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>Key (file name) of the package.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl PackageSource {
 
 /// A builder for [`PackageSource`](crate::types::PackageSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageSourceBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
 }
 impl PackageSourceBuilder {
     /// <p>The name of the Amazon S3 bucket containing the package.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket containing the package.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.s3_bucket_name = input;
-        self
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_bucket_name = input; self
+    }
+    /// <p>The name of the Amazon S3 bucket containing the package.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
     }
     /// <p>Key (file name) of the package.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl PackageSourceBuilder {
     }
     /// <p>Key (file name) of the package.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
+    }
+    /// <p>Key (file name) of the package.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// Consumes the builder and constructs a [`PackageSource`](crate::types::PackageSource).
     pub fn build(self) -> crate::types::PackageSource {
         crate::types::PackageSource {
-            s3_bucket_name: self.s3_bucket_name,
-            s3_key: self.s3_key,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            s3_key: self.s3_key
+            ,
         }
     }
 }
+

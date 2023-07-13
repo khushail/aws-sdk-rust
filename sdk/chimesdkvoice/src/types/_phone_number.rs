@@ -3,7 +3,7 @@
 /// <p>A phone number used to call an Amazon Chime SDK Voice Connector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PhoneNumber {
+pub struct PhoneNumber  {
     /// <p>The phone number's ID.</p>
     #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
@@ -49,63 +49,63 @@ pub struct PhoneNumber {
 }
 impl PhoneNumber {
     /// <p>The phone number's ID.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn e164_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn e164_phone_number(&self) -> ::std::option::Option<& str> {
         self.e164_phone_number.as_deref()
     }
     /// <p>The phone number's country. Format: ISO 3166-1 alpha-2.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>The phone number's type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PhoneNumberType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PhoneNumberType> {
         self.r#type.as_ref()
     }
     /// <p>The phone number's product type.</p>
-    pub fn product_type(&self) -> ::std::option::Option<&crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> ::std::option::Option<& crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     /// <p>The phone number's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PhoneNumberStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PhoneNumberStatus> {
         self.status.as_ref()
     }
     /// <p>The phone number's capabilities.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&crate::types::PhoneNumberCapabilities> {
+    pub fn capabilities(&self) -> ::std::option::Option<& crate::types::PhoneNumberCapabilities> {
         self.capabilities.as_ref()
     }
     /// <p>The phone number's associations.</p>
-    pub fn associations(&self) -> ::std::option::Option<&[crate::types::PhoneNumberAssociation]> {
+    pub fn associations(&self) -> ::std::option::Option<& [crate::types::PhoneNumberAssociation]> {
         self.associations.as_deref()
     }
     /// <p>The outbound calling name associated with the phone number.</p>
-    pub fn calling_name(&self) -> ::std::option::Option<&str> {
+    pub fn calling_name(&self) -> ::std::option::Option<& str> {
         self.calling_name.as_deref()
     }
     /// <p>The outbound calling name status.</p>
-    pub fn calling_name_status(&self) -> ::std::option::Option<&crate::types::CallingNameStatus> {
+    pub fn calling_name_status(&self) -> ::std::option::Option<& crate::types::CallingNameStatus> {
         self.calling_name_status.as_ref()
     }
     /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
-    pub fn deletion_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deletion_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deletion_timestamp.as_ref()
     }
     /// <p>The phone number's order ID.</p>
-    pub fn order_id(&self) -> ::std::option::Option<&str> {
+    pub fn order_id(&self) -> ::std::option::Option<& str> {
         self.order_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for PhoneNumber {
+impl  ::std::fmt::Debug for PhoneNumber  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumber");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
@@ -143,8 +143,7 @@ pub struct PhoneNumberBuilder {
     pub(crate) product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     pub(crate) status: ::std::option::Option<crate::types::PhoneNumberStatus>,
     pub(crate) capabilities: ::std::option::Option<crate::types::PhoneNumberCapabilities>,
-    pub(crate) associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberAssociation>>,
     pub(crate) calling_name: ::std::option::Option<::std::string::String>,
     pub(crate) calling_name_status: ::std::option::Option<crate::types::CallingNameStatus>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -154,36 +153,30 @@ pub struct PhoneNumberBuilder {
 }
 impl PhoneNumberBuilder {
     /// <p>The phone number's ID.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number's ID.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.phone_number_id = input;
-        self
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.phone_number_id = input; self
+    }
+    /// <p>The phone number's ID.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_id
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn e164_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn e164_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e164_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn set_e164_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.e164_phone_number = input;
-        self
+    pub fn set_e164_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e164_phone_number = input; self
+    }
+    /// <p>The phone number, in E.164 format.</p>
+    pub fn get_e164_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e164_phone_number
     }
     /// <p>The phone number's country. Format: ISO 3166-1 alpha-2.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,8 +185,11 @@ impl PhoneNumberBuilder {
     }
     /// <p>The phone number's country. Format: ISO 3166-1 alpha-2.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
+    }
+    /// <p>The phone number's country. Format: ISO 3166-1 alpha-2.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// <p>The phone number's type.</p>
     pub fn r#type(mut self, input: crate::types::PhoneNumberType) -> Self {
@@ -202,8 +198,11 @@ impl PhoneNumberBuilder {
     }
     /// <p>The phone number's type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The phone number's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
+        &self.r#type
     }
     /// <p>The phone number's product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
@@ -211,12 +210,12 @@ impl PhoneNumberBuilder {
         self
     }
     /// <p>The phone number's product type.</p>
-    pub fn set_product_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberProductType>,
-    ) -> Self {
-        self.product_type = input;
-        self
+    pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
+        self.product_type = input; self
+    }
+    /// <p>The phone number's product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        &self.product_type
     }
     /// <p>The phone number's status.</p>
     pub fn status(mut self, input: crate::types::PhoneNumberStatus) -> Self {
@@ -224,12 +223,12 @@ impl PhoneNumberBuilder {
         self
     }
     /// <p>The phone number's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PhoneNumberStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The phone number's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PhoneNumberStatus> {
+        &self.status
     }
     /// <p>The phone number's capabilities.</p>
     pub fn capabilities(mut self, input: crate::types::PhoneNumberCapabilities) -> Self {
@@ -237,12 +236,12 @@ impl PhoneNumberBuilder {
         self
     }
     /// <p>The phone number's capabilities.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberCapabilities>,
-    ) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::PhoneNumberCapabilities>) -> Self {
+        self.capabilities = input; self
+    }
+    /// <p>The phone number's capabilities.</p>
+    pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::PhoneNumberCapabilities> {
+        &self.capabilities
     }
     /// Appends an item to `associations`.
     ///
@@ -251,17 +250,17 @@ impl PhoneNumberBuilder {
     /// <p>The phone number's associations.</p>
     pub fn associations(mut self, input: crate::types::PhoneNumberAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
-        v.push(input);
-        self.associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The phone number's associations.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberAssociation>>,
-    ) -> Self {
-        self.associations = input;
-        self
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberAssociation>>) -> Self {
+        self.associations = input; self
+    }
+    /// <p>The phone number's associations.</p>
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberAssociation>> {
+        &self.associations
     }
     /// <p>The outbound calling name associated with the phone number.</p>
     pub fn calling_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -270,8 +269,11 @@ impl PhoneNumberBuilder {
     }
     /// <p>The outbound calling name associated with the phone number.</p>
     pub fn set_calling_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calling_name = input;
-        self
+        self.calling_name = input; self
+    }
+    /// <p>The outbound calling name associated with the phone number.</p>
+    pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calling_name
     }
     /// <p>The outbound calling name status.</p>
     pub fn calling_name_status(mut self, input: crate::types::CallingNameStatus) -> Self {
@@ -279,12 +281,12 @@ impl PhoneNumberBuilder {
         self
     }
     /// <p>The outbound calling name status.</p>
-    pub fn set_calling_name_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CallingNameStatus>,
-    ) -> Self {
-        self.calling_name_status = input;
-        self
+    pub fn set_calling_name_status(mut self, input: ::std::option::Option<crate::types::CallingNameStatus>) -> Self {
+        self.calling_name_status = input; self
+    }
+    /// <p>The outbound calling name status.</p>
+    pub fn get_calling_name_status(&self) -> &::std::option::Option<crate::types::CallingNameStatus> {
+        &self.calling_name_status
     }
     /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -292,12 +294,12 @@ impl PhoneNumberBuilder {
         self
     }
     /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
+    }
+    /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -305,12 +307,12 @@ impl PhoneNumberBuilder {
         self
     }
     /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_timestamp = input;
-        self
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_timestamp = input; self
+    }
+    /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
     pub fn deletion_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -318,12 +320,12 @@ impl PhoneNumberBuilder {
         self
     }
     /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
-    pub fn set_deletion_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.deletion_timestamp = input;
-        self
+    pub fn set_deletion_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.deletion_timestamp = input; self
+    }
+    /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
+    pub fn get_deletion_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deletion_timestamp
     }
     /// <p>The phone number's order ID.</p>
     pub fn order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -332,26 +334,43 @@ impl PhoneNumberBuilder {
     }
     /// <p>The phone number's order ID.</p>
     pub fn set_order_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.order_id = input;
-        self
+        self.order_id = input; self
+    }
+    /// <p>The phone number's order ID.</p>
+    pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.order_id
     }
     /// Consumes the builder and constructs a [`PhoneNumber`](crate::types::PhoneNumber).
     pub fn build(self) -> crate::types::PhoneNumber {
         crate::types::PhoneNumber {
-            phone_number_id: self.phone_number_id,
-            e164_phone_number: self.e164_phone_number,
-            country: self.country,
-            r#type: self.r#type,
-            product_type: self.product_type,
-            status: self.status,
-            capabilities: self.capabilities,
-            associations: self.associations,
-            calling_name: self.calling_name,
-            calling_name_status: self.calling_name_status,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
-            deletion_timestamp: self.deletion_timestamp,
-            order_id: self.order_id,
+            phone_number_id: self.phone_number_id
+            ,
+            e164_phone_number: self.e164_phone_number
+            ,
+            country: self.country
+            ,
+            r#type: self.r#type
+            ,
+            product_type: self.product_type
+            ,
+            status: self.status
+            ,
+            capabilities: self.capabilities
+            ,
+            associations: self.associations
+            ,
+            calling_name: self.calling_name
+            ,
+            calling_name_status: self.calling_name_status
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
+            deletion_timestamp: self.deletion_timestamp
+            ,
+            order_id: self.order_id
+            ,
         }
     }
 }
@@ -375,3 +394,4 @@ impl ::std::fmt::Debug for PhoneNumberBuilder {
         formatter.finish()
     }
 }
+

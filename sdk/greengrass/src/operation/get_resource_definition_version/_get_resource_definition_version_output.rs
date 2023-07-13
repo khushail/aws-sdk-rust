@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceDefinitionVersionOutput {
+pub struct GetResourceDefinitionVersionOutput  {
     /// Arn of the resource definition version.
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -22,43 +22,41 @@ pub struct GetResourceDefinitionVersionOutput {
 }
 impl GetResourceDefinitionVersionOutput {
     /// Arn of the resource definition version.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the resource definition version was created.
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the definition.
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::ResourceDefinitionVersion> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::ResourceDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the resource definition version.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The version of the resource definition version.
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetResourceDefinitionVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetResourceDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceDefinitionVersionOutput`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionOutputBuilder {
         crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceDefinitionVersionOutput`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -75,24 +73,24 @@ impl GetResourceDefinitionVersionOutputBuilder {
     }
     /// Arn of the resource definition version.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// Arn of the resource definition version.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// The time, in milliseconds since the epoch, when the resource definition version was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the resource definition version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.creation_timestamp = input;
-        self
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.creation_timestamp = input; self
+    }
+    /// The time, in milliseconds since the epoch, when the resource definition version was created.
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_timestamp
     }
     /// Information about the definition.
     pub fn definition(mut self, input: crate::types::ResourceDefinitionVersion) -> Self {
@@ -100,12 +98,12 @@ impl GetResourceDefinitionVersionOutputBuilder {
         self
     }
     /// Information about the definition.
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDefinitionVersion>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::ResourceDefinitionVersion>) -> Self {
+        self.definition = input; self
+    }
+    /// Information about the definition.
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::ResourceDefinitionVersion> {
+        &self.definition
     }
     /// The ID of the resource definition version.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,8 +112,11 @@ impl GetResourceDefinitionVersionOutputBuilder {
     }
     /// The ID of the resource definition version.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// The ID of the resource definition version.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The version of the resource definition version.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,29 +125,36 @@ impl GetResourceDefinitionVersionOutputBuilder {
     }
     /// The version of the resource definition version.
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// The version of the resource definition version.
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetResourceDefinitionVersionOutput`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_resource_definition_version::GetResourceDefinitionVersionOutput {
+    pub fn build(self) -> crate::operation::get_resource_definition_version::GetResourceDefinitionVersionOutput {
         crate::operation::get_resource_definition_version::GetResourceDefinitionVersionOutput {
-            arn: self.arn,
-            creation_timestamp: self.creation_timestamp,
-            definition: self.definition,
-            id: self.id,
-            version: self.version,
+            arn: self.arn
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            definition: self.definition
+            ,
+            id: self.id
+            ,
+            version: self.version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

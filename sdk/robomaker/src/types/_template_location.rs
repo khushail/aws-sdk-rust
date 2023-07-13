@@ -3,7 +3,7 @@
 /// <p>Information about a template location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateLocation {
+pub struct TemplateLocation  {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct TemplateLocation {
 }
 impl TemplateLocation {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl TemplateLocation {
 
 /// A builder for [`TemplateLocation`](crate::types::TemplateLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateLocationBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl TemplateLocationBuilder {
     }
     /// <p>The Amazon S3 bucket name.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
+    }
+    /// <p>The Amazon S3 bucket name.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl TemplateLocationBuilder {
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
+    }
+    /// <p>The list of S3 keys identifying the data source files.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// Consumes the builder and constructs a [`TemplateLocation`](crate::types::TemplateLocation).
     pub fn build(self) -> crate::types::TemplateLocation {
         crate::types::TemplateLocation {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
         }
     }
 }
+

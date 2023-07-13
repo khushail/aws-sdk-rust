@@ -3,7 +3,7 @@
 /// <p>The input for the GetThingShadow operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetThingShadowInput {
+pub struct GetThingShadowInput  {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct GetThingShadowInput {
 }
 impl GetThingShadowInput {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the shadow.</p>
-    pub fn shadow_name(&self) -> ::std::option::Option<&str> {
+    pub fn shadow_name(&self) -> ::std::option::Option<& str> {
         self.shadow_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl GetThingShadowInput {
 
 /// A builder for [`GetThingShadowInput`](crate::operation::get_thing_shadow::GetThingShadowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetThingShadowInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) shadow_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl GetThingShadowInputBuilder {
     }
     /// <p>The name of the thing.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
+    }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// <p>The name of the shadow.</p>
     pub fn shadow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,19 +56,22 @@ impl GetThingShadowInputBuilder {
     }
     /// <p>The name of the shadow.</p>
     pub fn set_shadow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shadow_name = input;
-        self
+        self.shadow_name = input; self
+    }
+    /// <p>The name of the shadow.</p>
+    pub fn get_shadow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shadow_name
     }
     /// Consumes the builder and constructs a [`GetThingShadowInput`](crate::operation::get_thing_shadow::GetThingShadowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_thing_shadow::GetThingShadowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_thing_shadow::GetThingShadowInput {
-            thing_name: self.thing_name,
-            shadow_name: self.shadow_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_thing_shadow::GetThingShadowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_thing_shadow::GetThingShadowInput {
+                thing_name: self.thing_name
+                ,
+                shadow_name: self.shadow_name
+                ,
+            }
+        )
     }
 }
+

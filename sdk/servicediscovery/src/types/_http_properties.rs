@@ -3,14 +3,14 @@
 /// <p>A complex type that contains the name of an HTTP namespace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpProperties {
+pub struct HttpProperties  {
     /// <p>The name of an HTTP namespace.</p>
     #[doc(hidden)]
     pub http_name: ::std::option::Option<::std::string::String>,
 }
 impl HttpProperties {
     /// <p>The name of an HTTP namespace.</p>
-    pub fn http_name(&self) -> ::std::option::Option<&str> {
+    pub fn http_name(&self) -> ::std::option::Option<& str> {
         self.http_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl HttpProperties {
 
 /// A builder for [`HttpProperties`](crate::types::HttpProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpPropertiesBuilder {
     pub(crate) http_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl HttpPropertiesBuilder {
     }
     /// <p>The name of an HTTP namespace.</p>
     pub fn set_http_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_name = input;
-        self
+        self.http_name = input; self
+    }
+    /// <p>The name of an HTTP namespace.</p>
+    pub fn get_http_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_name
     }
     /// Consumes the builder and constructs a [`HttpProperties`](crate::types::HttpProperties).
     pub fn build(self) -> crate::types::HttpProperties {
         crate::types::HttpProperties {
-            http_name: self.http_name,
+            http_name: self.http_name
+            ,
         }
     }
 }
+

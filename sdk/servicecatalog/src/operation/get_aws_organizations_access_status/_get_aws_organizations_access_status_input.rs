@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAwsOrganizationsAccessStatusInput {}
+pub struct GetAwsOrganizationsAccessStatusInput  {
+}
 impl GetAwsOrganizationsAccessStatusInput {
     /// Creates a new builder-style object to manufacture [`GetAwsOrganizationsAccessStatusInput`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput).
-    pub fn builder() -> crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusInputBuilder {
         crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAwsOrganizationsAccessStatusInput`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct GetAwsOrganizationsAccessStatusInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct GetAwsOrganizationsAccessStatusInputBuilder {
+}
 impl GetAwsOrganizationsAccessStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetAwsOrganizationsAccessStatusInput`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput {
             }
         )
     }
 }
+

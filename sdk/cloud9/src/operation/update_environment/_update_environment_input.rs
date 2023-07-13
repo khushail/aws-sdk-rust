@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateEnvironmentInput {
+pub struct UpdateEnvironmentInput  {
     /// <p>The ID of the environment to change settings.</p>
     #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
@@ -12,59 +12,53 @@ pub struct UpdateEnvironmentInput {
     /// <p>Any new or replacement description for the environment.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLE</code> </p> </li>
-    /// <li> <p> <code>DISABLE</code> </p> </li>
-    /// </ul> <note>
-    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLE</code> </p> </li> 
+    /// <li> <p> <code>DISABLE</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p> 
     /// </note>
     #[doc(hidden)]
     pub managed_credentials_action: ::std::option::Option<crate::types::ManagedCredentialsAction>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The ID of the environment to change settings.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A replacement name for the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Any new or replacement description for the environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLE</code> </p> </li>
-    /// <li> <p> <code>DISABLE</code> </p> </li>
-    /// </ul> <note>
-    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLE</code> </p> </li> 
+    /// <li> <p> <code>DISABLE</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p> 
     /// </note>
-    pub fn managed_credentials_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ManagedCredentialsAction> {
+    pub fn managed_credentials_action(&self) -> ::std::option::Option<& crate::types::ManagedCredentialsAction> {
         self.managed_credentials_action.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateEnvironmentInput {
+impl  ::std::fmt::Debug for UpdateEnvironmentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentInput");
         formatter.field("environment_id", &self.environment_id);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "managed_credentials_action",
-            &self.managed_credentials_action,
-        );
+        formatter.field("managed_credentials_action", &self.managed_credentials_action);
         formatter.finish()
     }
 }
 impl UpdateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder::default()
     }
 }
@@ -76,25 +70,21 @@ pub struct UpdateEnvironmentInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) managed_credentials_action:
-        ::std::option::Option<crate::types::ManagedCredentialsAction>,
+    pub(crate) managed_credentials_action: ::std::option::Option<crate::types::ManagedCredentialsAction>,
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The ID of the environment to change settings.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment to change settings.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_id = input;
-        self
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_id = input; self
+    }
+    /// <p>The ID of the environment to change settings.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>A replacement name for the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +93,11 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>A replacement name for the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A replacement name for the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Any new or replacement description for the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,51 +106,56 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>Any new or replacement description for the environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLE</code> </p> </li>
-    /// <li> <p> <code>DISABLE</code> </p> </li>
-    /// </ul> <note>
-    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
+    /// <p>Any new or replacement description for the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLE</code> </p> </li> 
+    /// <li> <p> <code>DISABLE</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p> 
     /// </note>
-    pub fn managed_credentials_action(
-        mut self,
-        input: crate::types::ManagedCredentialsAction,
-    ) -> Self {
+    pub fn managed_credentials_action(mut self, input: crate::types::ManagedCredentialsAction) -> Self {
         self.managed_credentials_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLE</code> </p> </li>
-    /// <li> <p> <code>DISABLE</code> </p> </li>
-    /// </ul> <note>
-    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLE</code> </p> </li> 
+    /// <li> <p> <code>DISABLE</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p> 
     /// </note>
-    pub fn set_managed_credentials_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedCredentialsAction>,
-    ) -> Self {
-        self.managed_credentials_action = input;
-        self
+    pub fn set_managed_credentials_action(mut self, input: ::std::option::Option<crate::types::ManagedCredentialsAction>) -> Self {
+        self.managed_credentials_action = input; self
+    }
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLE</code> </p> </li> 
+    /// <li> <p> <code>DISABLE</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p> 
+    /// </note>
+    pub fn get_managed_credentials_action(&self) -> &::std::option::Option<crate::types::ManagedCredentialsAction> {
+        &self.managed_credentials_action
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_environment::UpdateEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_environment::UpdateEnvironmentInput {
-                environment_id: self.environment_id,
-                name: self.name,
-                description: self.description,
-                managed_credentials_action: self.managed_credentials_action,
-            },
+                environment_id: self.environment_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                managed_credentials_action: self.managed_credentials_action
+                ,
+            }
         )
     }
 }
@@ -167,10 +165,8 @@ impl ::std::fmt::Debug for UpdateEnvironmentInputBuilder {
         formatter.field("environment_id", &self.environment_id);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "managed_credentials_action",
-            &self.managed_credentials_action,
-        );
+        formatter.field("managed_credentials_action", &self.managed_credentials_action);
         formatter.finish()
     }
 }
+

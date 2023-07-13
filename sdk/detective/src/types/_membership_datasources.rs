@@ -3,7 +3,7 @@
 /// <p>Details on data source packages for members of the behavior graph.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MembershipDatasources {
+pub struct MembershipDatasources  {
     /// <p>The account identifier of the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -12,37 +12,19 @@ pub struct MembershipDatasources {
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>Details on when a data source package was added to a behavior graph.</p>
     #[doc(hidden)]
-    pub datasource_package_ingest_history: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackageIngestState,
-                crate::types::TimestampForCollection,
-            >,
-        >,
-    >,
+    pub datasource_package_ingest_history: ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>>>,
 }
 impl MembershipDatasources {
     /// <p>The account identifier of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>Details on when a data source package was added to a behavior graph.</p>
-    pub fn datasource_package_ingest_history(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackageIngestState,
-                crate::types::TimestampForCollection,
-            >,
-        >,
-    > {
+    pub fn datasource_package_ingest_history(&self) -> ::std::option::Option<& ::std::collections::HashMap<crate::types::DatasourcePackage, ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>>> {
         self.datasource_package_ingest_history.as_ref()
     }
 }
@@ -55,21 +37,11 @@ impl MembershipDatasources {
 
 /// A builder for [`MembershipDatasources`](crate::types::MembershipDatasources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MembershipDatasourcesBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) datasource_package_ingest_history: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackageIngestState,
-                crate::types::TimestampForCollection,
-            >,
-        >,
-    >,
+    pub(crate) datasource_package_ingest_history: ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>>>,
 }
 impl MembershipDatasourcesBuilder {
     /// <p>The account identifier of the Amazon Web Services account.</p>
@@ -79,8 +51,11 @@ impl MembershipDatasourcesBuilder {
     }
     /// <p>The account identifier of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The account identifier of the Amazon Web Services account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,49 +64,41 @@ impl MembershipDatasourcesBuilder {
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
+    }
+    /// <p>The ARN of the organization behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
     }
     /// Adds a key-value pair to `datasource_package_ingest_history`.
     ///
     /// To override the contents of this collection use [`set_datasource_package_ingest_history`](Self::set_datasource_package_ingest_history).
     ///
     /// <p>Details on when a data source package was added to a behavior graph.</p>
-    pub fn datasource_package_ingest_history(
-        mut self,
-        k: crate::types::DatasourcePackage,
-        v: ::std::collections::HashMap<
-            crate::types::DatasourcePackageIngestState,
-            crate::types::TimestampForCollection,
-        >,
-    ) -> Self {
+    pub fn datasource_package_ingest_history(mut self, k: crate::types::DatasourcePackage, v: ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>) -> Self {
         let mut hash_map = self.datasource_package_ingest_history.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.datasource_package_ingest_history = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.datasource_package_ingest_history = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Details on when a data source package was added to a behavior graph.</p>
-    pub fn set_datasource_package_ingest_history(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackage,
-                ::std::collections::HashMap<
-                    crate::types::DatasourcePackageIngestState,
-                    crate::types::TimestampForCollection,
-                >,
-            >,
-        >,
-    ) -> Self {
-        self.datasource_package_ingest_history = input;
-        self
+    pub fn set_datasource_package_ingest_history(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>>>) -> Self {
+        self.datasource_package_ingest_history = input; self
+    }
+    /// <p>Details on when a data source package was added to a behavior graph.</p>
+    pub fn get_datasource_package_ingest_history(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, ::std::collections::HashMap<crate::types::DatasourcePackageIngestState, crate::types::TimestampForCollection>>> {
+        &self.datasource_package_ingest_history
     }
     /// Consumes the builder and constructs a [`MembershipDatasources`](crate::types::MembershipDatasources).
     pub fn build(self) -> crate::types::MembershipDatasources {
         crate::types::MembershipDatasources {
-            account_id: self.account_id,
-            graph_arn: self.graph_arn,
-            datasource_package_ingest_history: self.datasource_package_ingest_history,
+            account_id: self.account_id
+            ,
+            graph_arn: self.graph_arn
+            ,
+            datasource_package_ingest_history: self.datasource_package_ingest_history
+            ,
         }
     }
 }
+

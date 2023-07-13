@@ -3,135 +3,125 @@ pub use crate::operation::create_snapshot_copy_grant::_create_snapshot_copy_gran
 
 pub use crate::operation::create_snapshot_copy_grant::_create_snapshot_copy_grant_input::CreateSnapshotCopyGrantInputBuilder;
 
+impl CreateSnapshotCopyGrantInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_snapshot_copy_grant();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateSnapshotCopyGrant`.
-///
-/// <p>Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric key from Key Management Service (KMS) to encrypt copied snapshots in a destination region.</p>
+/// 
+/// <p>Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric key from Key Management Service (KMS) to encrypt copied snapshots in a destination region.</p> 
 /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSnapshotCopyGrantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder,
+                    inner: crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder,
 }
-impl CreateSnapshotCopyGrantFluentBuilder {
+impl CreateSnapshotCopyGrantFluentBuilder  {
     /// Creates a new `CreateSnapshotCopyGrant`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrant,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateSnapshotCopyGrant as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrant, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrant,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrant, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> 
     /// </ul>
-    pub fn snapshot_copy_grant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_copy_grant_name(input.into());
         self
     }
-    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> 
     /// </ul>
-    pub fn set_snapshot_copy_grant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_copy_grant_name(input);
         self
+    }
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> 
+    /// </ul>
+    pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_copy_grant_name()
     }
     /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,6 +133,10 @@ impl CreateSnapshotCopyGrantFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -153,11 +147,13 @@ impl CreateSnapshotCopyGrantFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

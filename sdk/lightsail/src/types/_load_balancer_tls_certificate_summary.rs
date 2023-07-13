@@ -3,7 +3,7 @@
 /// <p>Provides a summary of SSL/TLS certificate metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerTlsCertificateSummary {
+pub struct LoadBalancerTlsCertificateSummary  {
     /// <p>The name of the SSL/TLS certificate.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct LoadBalancerTlsCertificateSummary {
 }
 impl LoadBalancerTlsCertificateSummary {
     /// <p>The name of the SSL/TLS certificate.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
@@ -30,9 +30,7 @@ impl LoadBalancerTlsCertificateSummary {
 
 /// A builder for [`LoadBalancerTlsCertificateSummary`](crate::types::LoadBalancerTlsCertificateSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) is_attached: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl LoadBalancerTlsCertificateSummaryBuilder {
     }
     /// <p>The name of the SSL/TLS certificate.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the SSL/TLS certificate.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
     pub fn is_attached(mut self, input: bool) -> Self {
@@ -55,14 +56,20 @@ impl LoadBalancerTlsCertificateSummaryBuilder {
     }
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
     pub fn set_is_attached(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_attached = input;
-        self
+        self.is_attached = input; self
+    }
+    /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
+    pub fn get_is_attached(&self) -> &::std::option::Option<bool> {
+        &self.is_attached
     }
     /// Consumes the builder and constructs a [`LoadBalancerTlsCertificateSummary`](crate::types::LoadBalancerTlsCertificateSummary).
     pub fn build(self) -> crate::types::LoadBalancerTlsCertificateSummary {
         crate::types::LoadBalancerTlsCertificateSummary {
-            name: self.name,
-            is_attached: self.is_attached,
+            name: self.name
+            ,
+            is_attached: self.is_attached
+            ,
         }
     }
 }
+

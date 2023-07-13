@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAlgorithmOutput {
+pub struct DeleteAlgorithmOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteAlgorithmOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteAlgorithmOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAlgorithmOutput`](crate::operation::delete_algorithm::DeleteAlgorithmOutput).
     pub fn builder() -> crate::operation::delete_algorithm::builders::DeleteAlgorithmOutputBuilder {
@@ -19,22 +19,20 @@ impl DeleteAlgorithmOutput {
 
 /// A builder for [`DeleteAlgorithmOutput`](crate::operation::delete_algorithm::DeleteAlgorithmOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlgorithmOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteAlgorithmOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteAlgorithmOutput`](crate::operation::delete_algorithm::DeleteAlgorithmOutput).
     pub fn build(self) -> crate::operation::delete_algorithm::DeleteAlgorithmOutput {
         crate::operation::delete_algorithm::DeleteAlgorithmOutput {
@@ -42,3 +40,4 @@ impl DeleteAlgorithmOutputBuilder {
         }
     }
 }
+

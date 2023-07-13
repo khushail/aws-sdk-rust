@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAppReplicationConfigurationInput {
+pub struct GetAppReplicationConfigurationInput  {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
 impl GetAppReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetAppReplicationConfigurationInput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationInputBuilder {
         crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppReplicationConfigurationInput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppReplicationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,14 @@ impl GetAppReplicationConfigurationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// Consumes the builder and constructs a [`GetAppReplicationConfigurationInput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput {
                 app_id: self.app_id
@@ -54,3 +50,4 @@ impl GetAppReplicationConfigurationInputBuilder {
         )
     }
 }
+

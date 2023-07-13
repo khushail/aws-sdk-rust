@@ -3,32 +3,29 @@
 /// <p>The input for the <code>DescribeConfigurationRecorders</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationRecordersInput {
+pub struct DescribeConfigurationRecordersInput  {
     /// <p>A list of configuration recorder names.</p>
     #[doc(hidden)]
     pub configuration_recorder_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeConfigurationRecordersInput {
     /// <p>A list of configuration recorder names.</p>
-    pub fn configuration_recorder_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn configuration_recorder_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.configuration_recorder_names.as_deref()
     }
 }
 impl DescribeConfigurationRecordersInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRecordersInput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput).
-    pub fn builder() -> crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder {
         crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationRecordersInput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersInputBuilder {
-    pub(crate) configuration_recorder_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) configuration_recorder_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeConfigurationRecordersInputBuilder {
     /// Appends an item to `configuration_recorder_names`.
@@ -36,30 +33,22 @@ impl DescribeConfigurationRecordersInputBuilder {
     /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
     ///
     /// <p>A list of configuration recorder names.</p>
-    pub fn configuration_recorder_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_recorder_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_recorder_names.unwrap_or_default();
-        v.push(input.into());
-        self.configuration_recorder_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.configuration_recorder_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of configuration recorder names.</p>
-    pub fn set_configuration_recorder_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.configuration_recorder_names = input;
-        self
+    pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.configuration_recorder_names = input; self
+    }
+    /// <p>A list of configuration recorder names.</p>
+    pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_recorder_names
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationRecordersInput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput {
                 configuration_recorder_names: self.configuration_recorder_names
@@ -68,3 +57,4 @@ impl DescribeConfigurationRecordersInputBuilder {
         )
     }
 }
+

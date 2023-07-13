@@ -3,7 +3,7 @@
 /// <p>An object representing a port mapping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortMapping {
+pub struct PortMapping  {
     /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
     #[doc(hidden)]
     pub job_port: i32,
@@ -37,9 +37,7 @@ impl PortMapping {
 
 /// A builder for [`PortMapping`](crate::types::PortMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortMappingBuilder {
     pub(crate) job_port: ::std::option::Option<i32>,
     pub(crate) application_port: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl PortMappingBuilder {
     }
     /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
     pub fn set_job_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.job_port = input;
-        self
+        self.job_port = input; self
+    }
+    /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
+    pub fn get_job_port(&self) -> &::std::option::Option<i32> {
+        &self.job_port
     }
     /// <p>The port number on the application.</p>
     pub fn application_port(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl PortMappingBuilder {
     }
     /// <p>The port number on the application.</p>
     pub fn set_application_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.application_port = input;
-        self
+        self.application_port = input; self
+    }
+    /// <p>The port number on the application.</p>
+    pub fn get_application_port(&self) -> &::std::option::Option<i32> {
+        &self.application_port
     }
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
     pub fn enable_on_public_ip(mut self, input: bool) -> Self {
@@ -73,15 +77,25 @@ impl PortMappingBuilder {
     }
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
     pub fn set_enable_on_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_on_public_ip = input;
-        self
+        self.enable_on_public_ip = input; self
+    }
+    /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
+    pub fn get_enable_on_public_ip(&self) -> &::std::option::Option<bool> {
+        &self.enable_on_public_ip
     }
     /// Consumes the builder and constructs a [`PortMapping`](crate::types::PortMapping).
     pub fn build(self) -> crate::types::PortMapping {
         crate::types::PortMapping {
-            job_port: self.job_port.unwrap_or_default(),
-            application_port: self.application_port.unwrap_or_default(),
-            enable_on_public_ip: self.enable_on_public_ip.unwrap_or_default(),
+            job_port: self.job_port
+                .unwrap_or_default()
+            ,
+            application_port: self.application_port
+                .unwrap_or_default()
+            ,
+            enable_on_public_ip: self.enable_on_public_ip
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

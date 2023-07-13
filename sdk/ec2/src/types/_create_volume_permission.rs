@@ -3,7 +3,7 @@
 /// <p>Describes the user or group to be added or removed from the list of create volume permissions for a volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVolumePermission {
+pub struct CreateVolumePermission  {
     /// <p>The group to be added or removed. The possible value is <code>all</code>.</p>
     #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::PermissionGroup>,
@@ -13,11 +13,11 @@ pub struct CreateVolumePermission {
 }
 impl CreateVolumePermission {
     /// <p>The group to be added or removed. The possible value is <code>all</code>.</p>
-    pub fn group(&self) -> ::std::option::Option<&crate::types::PermissionGroup> {
+    pub fn group(&self) -> ::std::option::Option<& crate::types::PermissionGroup> {
         self.group.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account to be added or removed.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl CreateVolumePermission {
 
 /// A builder for [`CreateVolumePermission`](crate::types::CreateVolumePermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVolumePermissionBuilder {
     pub(crate) group: ::std::option::Option<crate::types::PermissionGroup>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl CreateVolumePermissionBuilder {
         self
     }
     /// <p>The group to be added or removed. The possible value is <code>all</code>.</p>
-    pub fn set_group(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionGroup>,
-    ) -> Self {
-        self.group = input;
-        self
+    pub fn set_group(mut self, input: ::std::option::Option<crate::types::PermissionGroup>) -> Self {
+        self.group = input; self
+    }
+    /// <p>The group to be added or removed. The possible value is <code>all</code>.</p>
+    pub fn get_group(&self) -> &::std::option::Option<crate::types::PermissionGroup> {
+        &self.group
     }
     /// <p>The ID of the Amazon Web Services account to be added or removed.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl CreateVolumePermissionBuilder {
     }
     /// <p>The ID of the Amazon Web Services account to be added or removed.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account to be added or removed.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`CreateVolumePermission`](crate::types::CreateVolumePermission).
     pub fn build(self) -> crate::types::CreateVolumePermission {
         crate::types::CreateVolumePermission {
-            group: self.group,
-            user_id: self.user_id,
+            group: self.group
+            ,
+            user_id: self.user_id
+            ,
         }
     }
 }
+

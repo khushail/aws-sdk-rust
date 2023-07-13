@@ -3,7 +3,7 @@
 /// <p>Summary of details of a channel associated with channel flow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ChannelAssociatedWithFlowSummary {
+pub struct ChannelAssociatedWithFlowSummary  {
     /// <p>The name of the channel flow.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -22,27 +22,27 @@ pub struct ChannelAssociatedWithFlowSummary {
 }
 impl ChannelAssociatedWithFlowSummary {
     /// <p>The name of the channel flow.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The mode of the channel.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::ChannelMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::ChannelMode> {
         self.mode.as_ref()
     }
     /// <p>The channel's privacy setting.</p>
-    pub fn privacy(&self) -> ::std::option::Option<&crate::types::ChannelPrivacy> {
+    pub fn privacy(&self) -> ::std::option::Option<& crate::types::ChannelPrivacy> {
         self.privacy.as_ref()
     }
     /// <p>The channel's metadata.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
 }
-impl ::std::fmt::Debug for ChannelAssociatedWithFlowSummary {
+impl  ::std::fmt::Debug for ChannelAssociatedWithFlowSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelAssociatedWithFlowSummary");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -78,8 +78,11 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
     }
     /// <p>The name of the channel flow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the channel flow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +91,11 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The mode of the channel.</p>
     pub fn mode(mut self, input: crate::types::ChannelMode) -> Self {
@@ -98,8 +104,11 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
     }
     /// <p>The mode of the channel.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ChannelMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
+    }
+    /// <p>The mode of the channel.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ChannelMode> {
+        &self.mode
     }
     /// <p>The channel's privacy setting.</p>
     pub fn privacy(mut self, input: crate::types::ChannelPrivacy) -> Self {
@@ -107,12 +116,12 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
         self
     }
     /// <p>The channel's privacy setting.</p>
-    pub fn set_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelPrivacy>,
-    ) -> Self {
-        self.privacy = input;
-        self
+    pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
+        self.privacy = input; self
+    }
+    /// <p>The channel's privacy setting.</p>
+    pub fn get_privacy(&self) -> &::std::option::Option<crate::types::ChannelPrivacy> {
+        &self.privacy
     }
     /// <p>The channel's metadata.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,17 +130,25 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
     }
     /// <p>The channel's metadata.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
+    }
+    /// <p>The channel's metadata.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`ChannelAssociatedWithFlowSummary`](crate::types::ChannelAssociatedWithFlowSummary).
     pub fn build(self) -> crate::types::ChannelAssociatedWithFlowSummary {
         crate::types::ChannelAssociatedWithFlowSummary {
-            name: self.name,
-            channel_arn: self.channel_arn,
-            mode: self.mode,
-            privacy: self.privacy,
-            metadata: self.metadata,
+            name: self.name
+            ,
+            channel_arn: self.channel_arn
+            ,
+            mode: self.mode
+            ,
+            privacy: self.privacy
+            ,
+            metadata: self.metadata
+            ,
         }
     }
 }
@@ -146,3 +163,4 @@ impl ::std::fmt::Debug for ChannelAssociatedWithFlowSummaryBuilder {
         formatter.finish()
     }
 }
+

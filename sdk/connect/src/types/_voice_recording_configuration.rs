@@ -3,16 +3,14 @@
 /// <p>Contains information about the recording configuration settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoiceRecordingConfiguration {
+pub struct VoiceRecordingConfiguration  {
     /// <p>Identifies which track is being recorded.</p>
     #[doc(hidden)]
     pub voice_recording_track: ::std::option::Option<crate::types::VoiceRecordingTrack>,
 }
 impl VoiceRecordingConfiguration {
     /// <p>Identifies which track is being recorded.</p>
-    pub fn voice_recording_track(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VoiceRecordingTrack> {
+    pub fn voice_recording_track(&self) -> ::std::option::Option<& crate::types::VoiceRecordingTrack> {
         self.voice_recording_track.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl VoiceRecordingConfiguration {
 
 /// A builder for [`VoiceRecordingConfiguration`](crate::types::VoiceRecordingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceRecordingConfigurationBuilder {
     pub(crate) voice_recording_track: ::std::option::Option<crate::types::VoiceRecordingTrack>,
 }
@@ -38,17 +34,19 @@ impl VoiceRecordingConfigurationBuilder {
         self
     }
     /// <p>Identifies which track is being recorded.</p>
-    pub fn set_voice_recording_track(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceRecordingTrack>,
-    ) -> Self {
-        self.voice_recording_track = input;
-        self
+    pub fn set_voice_recording_track(mut self, input: ::std::option::Option<crate::types::VoiceRecordingTrack>) -> Self {
+        self.voice_recording_track = input; self
+    }
+    /// <p>Identifies which track is being recorded.</p>
+    pub fn get_voice_recording_track(&self) -> &::std::option::Option<crate::types::VoiceRecordingTrack> {
+        &self.voice_recording_track
     }
     /// Consumes the builder and constructs a [`VoiceRecordingConfiguration`](crate::types::VoiceRecordingConfiguration).
     pub fn build(self) -> crate::types::VoiceRecordingConfiguration {
         crate::types::VoiceRecordingConfiguration {
-            voice_recording_track: self.voice_recording_track,
+            voice_recording_track: self.voice_recording_track
+            ,
         }
     }
 }
+

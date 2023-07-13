@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDocumentPermissionInput {
+pub struct ModifyDocumentPermissionInput  {
     /// <p>The name of the document that you want to share.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -21,40 +21,36 @@ pub struct ModifyDocumentPermissionInput {
 }
 impl ModifyDocumentPermissionInput {
     /// <p>The name of the document that you want to share.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn permission_type(&self) -> ::std::option::Option<&crate::types::DocumentPermissionType> {
+    pub fn permission_type(&self) -> ::std::option::Option<& crate::types::DocumentPermissionType> {
         self.permission_type.as_ref()
     }
     /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
-    pub fn account_ids_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn account_ids_to_add(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.account_ids_to_add.as_deref()
     }
     /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
-    pub fn account_ids_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn account_ids_to_remove(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.account_ids_to_remove.as_deref()
     }
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
-    pub fn shared_document_version(&self) -> ::std::option::Option<&str> {
+    pub fn shared_document_version(&self) -> ::std::option::Option<& str> {
         self.shared_document_version.as_deref()
     }
 }
 impl ModifyDocumentPermissionInput {
     /// Creates a new builder-style object to manufacture [`ModifyDocumentPermissionInput`](crate::operation::modify_document_permission::ModifyDocumentPermissionInput).
-    pub fn builder(
-    ) -> crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder {
         crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDocumentPermissionInput`](crate::operation::modify_document_permission::ModifyDocumentPermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDocumentPermissionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) permission_type: ::std::option::Option<crate::types::DocumentPermissionType>,
@@ -70,8 +66,11 @@ impl ModifyDocumentPermissionInputBuilder {
     }
     /// <p>The name of the document that you want to share.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the document that you want to share.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
     pub fn permission_type(mut self, input: crate::types::DocumentPermissionType) -> Self {
@@ -79,88 +78,80 @@ impl ModifyDocumentPermissionInputBuilder {
         self
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentPermissionType>,
-    ) -> Self {
-        self.permission_type = input;
-        self
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::DocumentPermissionType>) -> Self {
+        self.permission_type = input; self
+    }
+    /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::DocumentPermissionType> {
+        &self.permission_type
     }
     /// Appends an item to `account_ids_to_add`.
     ///
     /// To override the contents of this collection use [`set_account_ids_to_add`](Self::set_account_ids_to_add).
     ///
     /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
-    pub fn account_ids_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_ids_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
-    pub fn set_account_ids_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.account_ids_to_add = input;
-        self
+    pub fn set_account_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_ids_to_add = input; self
+    }
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    pub fn get_account_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids_to_add
     }
     /// Appends an item to `account_ids_to_remove`.
     ///
     /// To override the contents of this collection use [`set_account_ids_to_remove`](Self::set_account_ids_to_remove).
     ///
     /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
-    pub fn account_ids_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
-    pub fn set_account_ids_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.account_ids_to_remove = input;
-        self
+    pub fn set_account_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_ids_to_remove = input; self
+    }
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
+    pub fn get_account_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids_to_remove
     }
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
-    pub fn shared_document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
-    pub fn set_shared_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.shared_document_version = input;
-        self
+    pub fn set_shared_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.shared_document_version = input; self
+    }
+    /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
+    pub fn get_shared_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_document_version
     }
     /// Consumes the builder and constructs a [`ModifyDocumentPermissionInput`](crate::operation::modify_document_permission::ModifyDocumentPermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_document_permission::ModifyDocumentPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_document_permission::ModifyDocumentPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_document_permission::ModifyDocumentPermissionInput {
-                name: self.name,
-                permission_type: self.permission_type,
-                account_ids_to_add: self.account_ids_to_add,
-                account_ids_to_remove: self.account_ids_to_remove,
-                shared_document_version: self.shared_document_version,
-            },
+                name: self.name
+                ,
+                permission_type: self.permission_type
+                ,
+                account_ids_to_add: self.account_ids_to_add
+                ,
+                account_ids_to_remove: self.account_ids_to_remove
+                ,
+                shared_document_version: self.shared_document_version
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectorDefinitionVersionInput {
+pub struct CreateConnectorDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct CreateConnectorDefinitionVersionInput {
 }
 impl CreateConnectorDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> ::std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> ::std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the connector definition.
-    pub fn connector_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_definition_id(&self) -> ::std::option::Option<& str> {
         self.connector_definition_id.as_deref()
     }
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn connectors(&self) -> ::std::option::Option<&[crate::types::Connector]> {
+    pub fn connectors(&self) -> ::std::option::Option<& [crate::types::Connector]> {
         self.connectors.as_deref()
     }
 }
 impl CreateConnectorDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorDefinitionVersionInput`](crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput).
-    pub fn builder() -> crate::operation::create_connector_definition_version::builders::CreateConnectorDefinitionVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_connector_definition_version::builders::CreateConnectorDefinitionVersionInputBuilder {
         crate::operation::create_connector_definition_version::builders::CreateConnectorDefinitionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectorDefinitionVersionInput`](crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectorDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) connector_definition_id: ::std::option::Option<::std::string::String>,
@@ -46,36 +44,30 @@ pub struct CreateConnectorDefinitionVersionInputBuilder {
 }
 impl CreateConnectorDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.amzn_client_token = input;
-        self
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.amzn_client_token = input; self
+    }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
     }
     /// The ID of the connector definition.
-    pub fn connector_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the connector definition.
-    pub fn set_connector_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connector_definition_id = input;
-        self
+    pub fn set_connector_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_definition_id = input; self
+    }
+    /// The ID of the connector definition.
+    pub fn get_connector_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_id
     }
     /// Appends an item to `connectors`.
     ///
@@ -84,20 +76,20 @@ impl CreateConnectorDefinitionVersionInputBuilder {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     pub fn connectors(mut self, input: crate::types::Connector) -> Self {
         let mut v = self.connectors.unwrap_or_default();
-        v.push(input);
-        self.connectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connectors = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn set_connectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
-    ) -> Self {
-        self.connectors = input;
-        self
+    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>) -> Self {
+        self.connectors = input; self
+    }
+    /// A list of references to connectors in this version, with their corresponding configuration settings.
+    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connector>> {
+        &self.connectors
     }
     /// Consumes the builder and constructs a [`CreateConnectorDefinitionVersionInput`](crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput {
                 amzn_client_token: self.amzn_client_token
@@ -110,3 +102,4 @@ impl CreateConnectorDefinitionVersionInputBuilder {
         )
     }
 }
+

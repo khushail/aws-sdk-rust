@@ -3,7 +3,7 @@
 /// <p>Specifies attributes for sorting a list of bot versions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotVersionSortBy {
+pub struct BotVersionSortBy  {
     /// <p>The attribute to use to sort the list of versions.</p>
     #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::BotVersionSortAttribute>,
@@ -13,11 +13,11 @@ pub struct BotVersionSortBy {
 }
 impl BotVersionSortBy {
     /// <p>The attribute to use to sort the list of versions.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::BotVersionSortAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::BotVersionSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl BotVersionSortBy {
 
 /// A builder for [`BotVersionSortBy`](crate::types::BotVersionSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotVersionSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::BotVersionSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,12 +42,12 @@ impl BotVersionSortByBuilder {
         self
     }
     /// <p>The attribute to use to sort the list of versions.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::BotVersionSortAttribute>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::BotVersionSortAttribute>) -> Self {
+        self.attribute = input; self
+    }
+    /// <p>The attribute to use to sort the list of versions.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::BotVersionSortAttribute> {
+        &self.attribute
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
@@ -58,14 +56,20 @@ impl BotVersionSortByBuilder {
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
+    }
+    /// <p>The order to sort the list. You can specify ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`BotVersionSortBy`](crate::types::BotVersionSortBy).
     pub fn build(self) -> crate::types::BotVersionSortBy {
         crate::types::BotVersionSortBy {
-            attribute: self.attribute,
-            order: self.order,
+            attribute: self.attribute
+            ,
+            order: self.order
+            ,
         }
     }
 }
+

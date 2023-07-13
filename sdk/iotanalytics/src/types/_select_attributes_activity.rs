@@ -3,7 +3,7 @@
 /// <p>Used to create a new message using only the specified attributes from the original message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectAttributesActivity {
+pub struct SelectAttributesActivity  {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct SelectAttributesActivity {
 }
 impl SelectAttributesActivity {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of the attributes to select from the message.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn attributes(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.attributes.as_deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> ::std::option::Option<&str> {
+    pub fn next(&self) -> ::std::option::Option<& str> {
         self.next.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl SelectAttributesActivity {
 
 /// A builder for [`SelectAttributesActivity`](crate::types::SelectAttributesActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectAttributesActivityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,8 +51,11 @@ impl SelectAttributesActivityBuilder {
     }
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the <code>selectAttributes</code> activity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `attributes`.
     ///
@@ -63,17 +64,17 @@ impl SelectAttributesActivityBuilder {
     /// <p>A list of the attributes to select from the message.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input.into());
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the attributes to select from the message.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>A list of the attributes to select from the message.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attributes
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,15 +83,22 @@ impl SelectAttributesActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next = input;
-        self
+        self.next = input; self
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`SelectAttributesActivity`](crate::types::SelectAttributesActivity).
     pub fn build(self) -> crate::types::SelectAttributesActivity {
         crate::types::SelectAttributesActivity {
-            name: self.name,
-            attributes: self.attributes,
-            next: self.next,
+            name: self.name
+            ,
+            attributes: self.attributes
+            ,
+            next: self.next
+            ,
         }
     }
 }
+

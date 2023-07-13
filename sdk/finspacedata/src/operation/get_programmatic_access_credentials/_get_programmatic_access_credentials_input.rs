@@ -3,7 +3,7 @@
 /// Request for GetProgrammaticAccessCredentials operation
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProgrammaticAccessCredentialsInput {
+pub struct GetProgrammaticAccessCredentialsInput  {
     /// <p>The time duration in which the credentials remain valid. </p>
     #[doc(hidden)]
     pub duration_in_minutes: i64,
@@ -17,22 +17,20 @@ impl GetProgrammaticAccessCredentialsInput {
         self.duration_in_minutes
     }
     /// <p>The FinSpace environment identifier.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
 }
 impl GetProgrammaticAccessCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetProgrammaticAccessCredentialsInput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput).
-    pub fn builder() -> crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsInputBuilder {
         crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetProgrammaticAccessCredentialsInput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsInputBuilder {
     pub(crate) duration_in_minutes: ::std::option::Option<i64>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -45,27 +43,27 @@ impl GetProgrammaticAccessCredentialsInputBuilder {
     }
     /// <p>The time duration in which the credentials remain valid. </p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_in_minutes = input;
-        self
+        self.duration_in_minutes = input; self
+    }
+    /// <p>The time duration in which the credentials remain valid. </p>
+    pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.duration_in_minutes
     }
     /// <p>The FinSpace environment identifier.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The FinSpace environment identifier.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_id = input;
-        self
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_id = input; self
+    }
+    /// <p>The FinSpace environment identifier.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Consumes the builder and constructs a [`GetProgrammaticAccessCredentialsInput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput {
                 duration_in_minutes: self.duration_in_minutes
@@ -77,3 +75,4 @@ impl GetProgrammaticAccessCredentialsInputBuilder {
         )
     }
 }
+

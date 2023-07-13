@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddInstanceFleetInput {
+pub struct AddInstanceFleetInput  {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct AddInstanceFleetInput {
 }
 impl AddInstanceFleetInput {
     /// <p>The unique identifier of the cluster.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>Specifies the configuration of the instance fleet.</p>
-    pub fn instance_fleet(&self) -> ::std::option::Option<&crate::types::InstanceFleetConfig> {
+    pub fn instance_fleet(&self) -> ::std::option::Option<& crate::types::InstanceFleetConfig> {
         self.instance_fleet.as_ref()
     }
 }
 impl AddInstanceFleetInput {
     /// Creates a new builder-style object to manufacture [`AddInstanceFleetInput`](crate::operation::add_instance_fleet::AddInstanceFleetInput).
-    pub fn builder() -> crate::operation::add_instance_fleet::builders::AddInstanceFleetInputBuilder
-    {
+    pub fn builder() -> crate::operation::add_instance_fleet::builders::AddInstanceFleetInputBuilder {
         crate::operation::add_instance_fleet::builders::AddInstanceFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`AddInstanceFleetInput`](crate::operation::add_instance_fleet::AddInstanceFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddInstanceFleetInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_fleet: ::std::option::Option<crate::types::InstanceFleetConfig>,
@@ -45,8 +42,11 @@ impl AddInstanceFleetInputBuilder {
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
+    }
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
     }
     /// <p>Specifies the configuration of the instance fleet.</p>
     pub fn instance_fleet(mut self, input: crate::types::InstanceFleetConfig) -> Self {
@@ -54,25 +54,23 @@ impl AddInstanceFleetInputBuilder {
         self
     }
     /// <p>Specifies the configuration of the instance fleet.</p>
-    pub fn set_instance_fleet(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceFleetConfig>,
-    ) -> Self {
-        self.instance_fleet = input;
-        self
+    pub fn set_instance_fleet(mut self, input: ::std::option::Option<crate::types::InstanceFleetConfig>) -> Self {
+        self.instance_fleet = input; self
+    }
+    /// <p>Specifies the configuration of the instance fleet.</p>
+    pub fn get_instance_fleet(&self) -> &::std::option::Option<crate::types::InstanceFleetConfig> {
+        &self.instance_fleet
     }
     /// Consumes the builder and constructs a [`AddInstanceFleetInput`](crate::operation::add_instance_fleet::AddInstanceFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_instance_fleet::AddInstanceFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_instance_fleet::AddInstanceFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::add_instance_fleet::AddInstanceFleetInput {
-                cluster_id: self.cluster_id,
-                instance_fleet: self.instance_fleet,
-            },
+                cluster_id: self.cluster_id
+                ,
+                instance_fleet: self.instance_fleet
+                ,
+            }
         )
     }
 }
+

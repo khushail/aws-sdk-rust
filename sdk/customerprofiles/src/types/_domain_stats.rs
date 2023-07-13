@@ -3,7 +3,7 @@
 /// <p>Usage-specific statistics about the domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainStats {
+pub struct DomainStats  {
     /// <p>The total number of profiles currently in the domain.</p>
     #[doc(hidden)]
     pub profile_count: i64,
@@ -44,9 +44,7 @@ impl DomainStats {
 
 /// A builder for [`DomainStats`](crate::types::DomainStats).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainStatsBuilder {
     pub(crate) profile_count: ::std::option::Option<i64>,
     pub(crate) metering_profile_count: ::std::option::Option<i64>,
@@ -61,8 +59,11 @@ impl DomainStatsBuilder {
     }
     /// <p>The total number of profiles currently in the domain.</p>
     pub fn set_profile_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.profile_count = input;
-        self
+        self.profile_count = input; self
+    }
+    /// <p>The total number of profiles currently in the domain.</p>
+    pub fn get_profile_count(&self) -> &::std::option::Option<i64> {
+        &self.profile_count
     }
     /// <p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>
     pub fn metering_profile_count(mut self, input: i64) -> Self {
@@ -71,8 +72,11 @@ impl DomainStatsBuilder {
     }
     /// <p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>
     pub fn set_metering_profile_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.metering_profile_count = input;
-        self
+        self.metering_profile_count = input; self
+    }
+    /// <p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>
+    pub fn get_metering_profile_count(&self) -> &::std::option::Option<i64> {
+        &self.metering_profile_count
     }
     /// <p>The total number of objects in domain.</p>
     pub fn object_count(mut self, input: i64) -> Self {
@@ -81,8 +85,11 @@ impl DomainStatsBuilder {
     }
     /// <p>The total number of objects in domain.</p>
     pub fn set_object_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.object_count = input;
-        self
+        self.object_count = input; self
+    }
+    /// <p>The total number of objects in domain.</p>
+    pub fn get_object_count(&self) -> &::std::option::Option<i64> {
+        &self.object_count
     }
     /// <p>The total size, in bytes, of all objects in the domain.</p>
     pub fn total_size(mut self, input: i64) -> Self {
@@ -91,16 +98,28 @@ impl DomainStatsBuilder {
     }
     /// <p>The total size, in bytes, of all objects in the domain.</p>
     pub fn set_total_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_size = input;
-        self
+        self.total_size = input; self
+    }
+    /// <p>The total size, in bytes, of all objects in the domain.</p>
+    pub fn get_total_size(&self) -> &::std::option::Option<i64> {
+        &self.total_size
     }
     /// Consumes the builder and constructs a [`DomainStats`](crate::types::DomainStats).
     pub fn build(self) -> crate::types::DomainStats {
         crate::types::DomainStats {
-            profile_count: self.profile_count.unwrap_or_default(),
-            metering_profile_count: self.metering_profile_count.unwrap_or_default(),
-            object_count: self.object_count.unwrap_or_default(),
-            total_size: self.total_size.unwrap_or_default(),
+            profile_count: self.profile_count
+                .unwrap_or_default()
+            ,
+            metering_profile_count: self.metering_profile_count
+                .unwrap_or_default()
+            ,
+            object_count: self.object_count
+                .unwrap_or_default()
+            ,
+            total_size: self.total_size
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,24 +3,21 @@
 /// <p>Describes an account attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountAttribute {
+pub struct AccountAttribute  {
     /// <p>The name of the account attribute.</p>
     #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The values for the account attribute.</p>
     #[doc(hidden)]
-    pub attribute_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeValue>>,
+    pub attribute_values: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeValue>>,
 }
 impl AccountAttribute {
     /// <p>The name of the account attribute.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The values for the account attribute.</p>
-    pub fn attribute_values(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccountAttributeValue]> {
+    pub fn attribute_values(&self) -> ::std::option::Option<& [crate::types::AccountAttributeValue]> {
         self.attribute_values.as_deref()
     }
 }
@@ -33,30 +30,24 @@ impl AccountAttribute {
 
 /// A builder for [`AccountAttribute`](crate::types::AccountAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountAttributeBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeValue>>,
+    pub(crate) attribute_values: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeValue>>,
 }
 impl AccountAttributeBuilder {
     /// <p>The name of the account attribute.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the account attribute.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.attribute_name = input;
-        self
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attribute_name = input; self
+    }
+    /// <p>The name of the account attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
     }
     /// Appends an item to `attribute_values`.
     ///
@@ -65,23 +56,26 @@ impl AccountAttributeBuilder {
     /// <p>The values for the account attribute.</p>
     pub fn attribute_values(mut self, input: crate::types::AccountAttributeValue) -> Self {
         let mut v = self.attribute_values.unwrap_or_default();
-        v.push(input);
-        self.attribute_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values for the account attribute.</p>
-    pub fn set_attribute_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeValue>>,
-    ) -> Self {
-        self.attribute_values = input;
-        self
+    pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeValue>>) -> Self {
+        self.attribute_values = input; self
+    }
+    /// <p>The values for the account attribute.</p>
+    pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeValue>> {
+        &self.attribute_values
     }
     /// Consumes the builder and constructs a [`AccountAttribute`](crate::types::AccountAttribute).
     pub fn build(self) -> crate::types::AccountAttribute {
         crate::types::AccountAttribute {
-            attribute_name: self.attribute_name,
-            attribute_values: self.attribute_values,
+            attribute_name: self.attribute_name
+            ,
+            attribute_values: self.attribute_values
+            ,
         }
     }
 }
+

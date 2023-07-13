@@ -3,31 +3,27 @@
 /// <p>Contains the inputs for the <code>ListAvailableZones</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAvailableZonesInput {}
+pub struct ListAvailableZonesInput  {
+}
 impl ListAvailableZonesInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableZonesInput`](crate::operation::list_available_zones::ListAvailableZonesInput).
-    pub fn builder(
-    ) -> crate::operation::list_available_zones::builders::ListAvailableZonesInputBuilder {
+    pub fn builder() -> crate::operation::list_available_zones::builders::ListAvailableZonesInputBuilder {
         crate::operation::list_available_zones::builders::ListAvailableZonesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableZonesInput`](crate::operation::list_available_zones::ListAvailableZonesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct ListAvailableZonesInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct ListAvailableZonesInputBuilder {
+}
 impl ListAvailableZonesInputBuilder {
     /// Consumes the builder and constructs a [`ListAvailableZonesInput`](crate::operation::list_available_zones::ListAvailableZonesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_available_zones::ListAvailableZonesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_available_zones::ListAvailableZonesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::list_available_zones::ListAvailableZonesInput {},
+            crate::operation::list_available_zones::ListAvailableZonesInput {
+            }
         )
     }
 }
+

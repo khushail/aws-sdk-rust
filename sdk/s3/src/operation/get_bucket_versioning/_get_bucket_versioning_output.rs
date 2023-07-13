@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketVersioningOutput {
+pub struct GetBucketVersioningOutput  {
     /// <p>The versioning state of the bucket.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BucketVersioningStatus>,
@@ -14,38 +14,34 @@ pub struct GetBucketVersioningOutput {
 }
 impl GetBucketVersioningOutput {
     /// <p>The versioning state of the bucket.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BucketVersioningStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::BucketVersioningStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
-    pub fn mfa_delete(&self) -> ::std::option::Option<&crate::types::MfaDeleteStatus> {
+    pub fn mfa_delete(&self) -> ::std::option::Option<& crate::types::MfaDeleteStatus> {
         self.mfa_delete.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetBucketVersioningOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
 impl ::aws_http::request_id::RequestId for GetBucketVersioningOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBucketVersioningOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketVersioningOutput`](crate::operation::get_bucket_versioning::GetBucketVersioningOutput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder {
-        crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder {
+        crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketVersioningOutput`](crate::operation::get_bucket_versioning::GetBucketVersioningOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketVersioningOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BucketVersioningStatus>,
     pub(crate) mfa_delete: ::std::option::Option<crate::types::MfaDeleteStatus>,
@@ -59,12 +55,12 @@ impl GetBucketVersioningOutputBuilder {
         self
     }
     /// <p>The versioning state of the bucket.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketVersioningStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BucketVersioningStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The versioning state of the bucket.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BucketVersioningStatus> {
+        &self.status
     }
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
     pub fn mfa_delete(mut self, input: crate::types::MfaDeleteStatus) -> Self {
@@ -72,41 +68,41 @@ impl GetBucketVersioningOutputBuilder {
         self
     }
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
-    pub fn set_mfa_delete(
-        mut self,
-        input: ::std::option::Option<crate::types::MfaDeleteStatus>,
-    ) -> Self {
-        self.mfa_delete = input;
-        self
+    pub fn set_mfa_delete(mut self, input: ::std::option::Option<crate::types::MfaDeleteStatus>) -> Self {
+        self.mfa_delete = input; self
+    }
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
+    pub fn get_mfa_delete(&self) -> &::std::option::Option<crate::types::MfaDeleteStatus> {
+        &self.mfa_delete
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                    self._extended_request_id = Some(extended_request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                    self._extended_request_id = extended_request_id;
+                                    self
+                                }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBucketVersioningOutput`](crate::operation::get_bucket_versioning::GetBucketVersioningOutput).
     pub fn build(self) -> crate::operation::get_bucket_versioning::GetBucketVersioningOutput {
         crate::operation::get_bucket_versioning::GetBucketVersioningOutput {
-            status: self.status,
-            mfa_delete: self.mfa_delete,
+            status: self.status
+            ,
+            mfa_delete: self.mfa_delete
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

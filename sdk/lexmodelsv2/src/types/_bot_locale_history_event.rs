@@ -3,7 +3,7 @@
 /// <p>Provides information about an event that occurred affecting the bot locale.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotLocaleHistoryEvent {
+pub struct BotLocaleHistoryEvent  {
     /// <p>A description of the event that occurred.</p>
     #[doc(hidden)]
     pub event: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct BotLocaleHistoryEvent {
 }
 impl BotLocaleHistoryEvent {
     /// <p>A description of the event that occurred.</p>
-    pub fn event(&self) -> ::std::option::Option<&str> {
+    pub fn event(&self) -> ::std::option::Option<& str> {
         self.event.as_deref()
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
-    pub fn event_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_date.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl BotLocaleHistoryEvent {
 
 /// A builder for [`BotLocaleHistoryEvent`](crate::types::BotLocaleHistoryEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotLocaleHistoryEventBuilder {
     pub(crate) event: ::std::option::Option<::std::string::String>,
     pub(crate) event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,8 +43,11 @@ impl BotLocaleHistoryEventBuilder {
     }
     /// <p>A description of the event that occurred.</p>
     pub fn set_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
+    }
+    /// <p>A description of the event that occurred.</p>
+    pub fn get_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
     pub fn event_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -54,18 +55,21 @@ impl BotLocaleHistoryEventBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
-    pub fn set_event_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.event_date = input;
-        self
+    pub fn set_event_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.event_date = input; self
+    }
+    /// <p>A timestamp of the date and time that the event occurred.</p>
+    pub fn get_event_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_date
     }
     /// Consumes the builder and constructs a [`BotLocaleHistoryEvent`](crate::types::BotLocaleHistoryEvent).
     pub fn build(self) -> crate::types::BotLocaleHistoryEvent {
         crate::types::BotLocaleHistoryEvent {
-            event: self.event,
-            event_date: self.event_date,
+            event: self.event
+            ,
+            event_date: self.event_date
+            ,
         }
     }
 }
+

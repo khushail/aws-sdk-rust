@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct UpdateApplicationInput {
 }
 impl UpdateApplicationInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
@@ -36,7 +36,7 @@ impl UpdateApplicationInput {
         self.cwe_monitor_enabled
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
     /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
@@ -50,17 +50,14 @@ impl UpdateApplicationInput {
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         crate::operation::update_application::builders::UpdateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) ops_center_enabled: ::std::option::Option<bool>,
@@ -71,20 +68,17 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_group_name = input;
-        self
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_group_name = input; self
+    }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
     }
     /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
     pub fn ops_center_enabled(mut self, input: bool) -> Self {
@@ -93,8 +87,11 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
     pub fn set_ops_center_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ops_center_enabled = input;
-        self
+        self.ops_center_enabled = input; self
+    }
+    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+    pub fn get_ops_center_enabled(&self) -> &::std::option::Option<bool> {
+        &self.ops_center_enabled
     }
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
@@ -103,24 +100,24 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     pub fn set_cwe_monitor_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cwe_monitor_enabled = input;
-        self
+        self.cwe_monitor_enabled = input; self
+    }
+    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+    pub fn get_cwe_monitor_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cwe_monitor_enabled
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    pub fn ops_item_sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_item_sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    pub fn set_ops_item_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ops_item_sns_topic_arn = input;
-        self
+    pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ops_item_sns_topic_arn = input; self
+    }
+    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
+    pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_sns_topic_arn
     }
     /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn remove_sns_topic(mut self, input: bool) -> Self {
@@ -129,8 +126,11 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn set_remove_sns_topic(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_sns_topic = input;
-        self
+        self.remove_sns_topic = input; self
+    }
+    /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    pub fn get_remove_sns_topic(&self) -> &::std::option::Option<bool> {
+        &self.remove_sns_topic
     }
     /// <p> Turns auto-configuration on or off. </p>
     pub fn auto_config_enabled(mut self, input: bool) -> Self {
@@ -139,25 +139,30 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p> Turns auto-configuration on or off. </p>
     pub fn set_auto_config_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_config_enabled = input;
-        self
+        self.auto_config_enabled = input; self
+    }
+    /// <p> Turns auto-configuration on or off. </p>
+    pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_config_enabled
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application::UpdateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_application::UpdateApplicationInput {
-                resource_group_name: self.resource_group_name,
-                ops_center_enabled: self.ops_center_enabled,
-                cwe_monitor_enabled: self.cwe_monitor_enabled,
-                ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
-                remove_sns_topic: self.remove_sns_topic,
-                auto_config_enabled: self.auto_config_enabled,
-            },
+                resource_group_name: self.resource_group_name
+                ,
+                ops_center_enabled: self.ops_center_enabled
+                ,
+                cwe_monitor_enabled: self.cwe_monitor_enabled
+                ,
+                ops_item_sns_topic_arn: self.ops_item_sns_topic_arn
+                ,
+                remove_sns_topic: self.remove_sns_topic
+                ,
+                auto_config_enabled: self.auto_config_enabled
+                ,
+            }
         )
     }
 }
+

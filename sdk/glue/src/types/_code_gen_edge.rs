@@ -3,7 +3,7 @@
 /// <p>Represents a directional edge in a directed acyclic graph (DAG).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeGenEdge {
+pub struct CodeGenEdge  {
     /// <p>The ID of the node at which the edge starts.</p>
     #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct CodeGenEdge {
 }
 impl CodeGenEdge {
     /// <p>The ID of the node at which the edge starts.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The ID of the node at which the edge ends.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The target of the edge.</p>
-    pub fn target_parameter(&self) -> ::std::option::Option<&str> {
+    pub fn target_parameter(&self) -> ::std::option::Option<& str> {
         self.target_parameter.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl CodeGenEdge {
 
 /// A builder for [`CodeGenEdge`](crate::types::CodeGenEdge).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeGenEdgeBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl CodeGenEdgeBuilder {
     }
     /// <p>The ID of the node at which the edge starts.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The ID of the node at which the edge starts.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The ID of the node at which the edge ends.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,31 +64,35 @@ impl CodeGenEdgeBuilder {
     }
     /// <p>The ID of the node at which the edge ends.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
+    }
+    /// <p>The ID of the node at which the edge ends.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// <p>The target of the edge.</p>
-    pub fn target_parameter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target of the edge.</p>
-    pub fn set_target_parameter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.target_parameter = input;
-        self
+    pub fn set_target_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_parameter = input; self
+    }
+    /// <p>The target of the edge.</p>
+    pub fn get_target_parameter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_parameter
     }
     /// Consumes the builder and constructs a [`CodeGenEdge`](crate::types::CodeGenEdge).
     pub fn build(self) -> crate::types::CodeGenEdge {
         crate::types::CodeGenEdge {
-            source: self.source,
-            target: self.target,
-            target_parameter: self.target_parameter,
+            source: self.source
+            ,
+            target: self.target
+            ,
+            target_parameter: self.target_parameter
+            ,
         }
     }
 }
+

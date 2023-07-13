@@ -3,14 +3,14 @@
 /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MeasurementProcessingConfig {
+pub struct MeasurementProcessingConfig  {
     /// <p>The forwarding configuration for the given measurement property. </p>
     #[doc(hidden)]
     pub forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
 impl MeasurementProcessingConfig {
     /// <p>The forwarding configuration for the given measurement property. </p>
-    pub fn forwarding_config(&self) -> ::std::option::Option<&crate::types::ForwardingConfig> {
+    pub fn forwarding_config(&self) -> ::std::option::Option<& crate::types::ForwardingConfig> {
         self.forwarding_config.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl MeasurementProcessingConfig {
 
 /// A builder for [`MeasurementProcessingConfig`](crate::types::MeasurementProcessingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MeasurementProcessingConfigBuilder {
     pub(crate) forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
@@ -36,17 +34,19 @@ impl MeasurementProcessingConfigBuilder {
         self
     }
     /// <p>The forwarding configuration for the given measurement property. </p>
-    pub fn set_forwarding_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ForwardingConfig>,
-    ) -> Self {
-        self.forwarding_config = input;
-        self
+    pub fn set_forwarding_config(mut self, input: ::std::option::Option<crate::types::ForwardingConfig>) -> Self {
+        self.forwarding_config = input; self
+    }
+    /// <p>The forwarding configuration for the given measurement property. </p>
+    pub fn get_forwarding_config(&self) -> &::std::option::Option<crate::types::ForwardingConfig> {
+        &self.forwarding_config
     }
     /// Consumes the builder and constructs a [`MeasurementProcessingConfig`](crate::types::MeasurementProcessingConfig).
     pub fn build(self) -> crate::types::MeasurementProcessingConfig {
         crate::types::MeasurementProcessingConfig {
-            forwarding_config: self.forwarding_config,
+            forwarding_config: self.forwarding_config
+            ,
         }
     }
 }
+

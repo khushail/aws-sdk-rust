@@ -3,7 +3,7 @@
 /// <p>Properties of the Recovery Instance machine.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoveryInstanceProperties {
+pub struct RecoveryInstanceProperties  {
     /// <p>The date and time the Recovery Instance properties were last updated on.</p>
     #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::std::string::String>,
@@ -28,25 +28,23 @@ pub struct RecoveryInstanceProperties {
 }
 impl RecoveryInstanceProperties {
     /// <p>The date and time the Recovery Instance properties were last updated on.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& str> {
         self.last_updated_date_time.as_deref()
     }
     /// <p>Hints used to uniquely identify a machine.</p>
-    pub fn identification_hints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentificationHints> {
+    pub fn identification_hints(&self) -> ::std::option::Option<& crate::types::IdentificationHints> {
         self.identification_hints.as_ref()
     }
     /// <p>An array of network interfaces.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> ::std::option::Option<& [crate::types::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
     /// <p>An array of disks.</p>
-    pub fn disks(&self) -> ::std::option::Option<&[crate::types::RecoveryInstanceDisk]> {
+    pub fn disks(&self) -> ::std::option::Option<& [crate::types::RecoveryInstanceDisk]> {
         self.disks.as_deref()
     }
     /// <p>An array of CPUs.</p>
-    pub fn cpus(&self) -> ::std::option::Option<&[crate::types::Cpu]> {
+    pub fn cpus(&self) -> ::std::option::Option<& [crate::types::Cpu]> {
         self.cpus.as_deref()
     }
     /// <p>The amount of RAM in bytes.</p>
@@ -54,7 +52,7 @@ impl RecoveryInstanceProperties {
         self.ram_bytes
     }
     /// <p>Operating system.</p>
-    pub fn os(&self) -> ::std::option::Option<&crate::types::Os> {
+    pub fn os(&self) -> ::std::option::Option<& crate::types::Os> {
         self.os.as_ref()
     }
 }
@@ -67,14 +65,11 @@ impl RecoveryInstanceProperties {
 
 /// A builder for [`RecoveryInstanceProperties`](crate::types::RecoveryInstanceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecoveryInstancePropertiesBuilder {
     pub(crate) last_updated_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) identification_hints: ::std::option::Option<crate::types::IdentificationHints>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>>,
     pub(crate) cpus: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
     pub(crate) ram_bytes: ::std::option::Option<i64>,
@@ -82,20 +77,17 @@ pub struct RecoveryInstancePropertiesBuilder {
 }
 impl RecoveryInstancePropertiesBuilder {
     /// <p>The date and time the Recovery Instance properties were last updated on.</p>
-    pub fn last_updated_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the Recovery Instance properties were last updated on.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_updated_date_time = input;
-        self
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_updated_date_time = input; self
+    }
+    /// <p>The date and time the Recovery Instance properties were last updated on.</p>
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_date_time
     }
     /// <p>Hints used to uniquely identify a machine.</p>
     pub fn identification_hints(mut self, input: crate::types::IdentificationHints) -> Self {
@@ -103,12 +95,12 @@ impl RecoveryInstancePropertiesBuilder {
         self
     }
     /// <p>Hints used to uniquely identify a machine.</p>
-    pub fn set_identification_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentificationHints>,
-    ) -> Self {
-        self.identification_hints = input;
-        self
+    pub fn set_identification_hints(mut self, input: ::std::option::Option<crate::types::IdentificationHints>) -> Self {
+        self.identification_hints = input; self
+    }
+    /// <p>Hints used to uniquely identify a machine.</p>
+    pub fn get_identification_hints(&self) -> &::std::option::Option<crate::types::IdentificationHints> {
+        &self.identification_hints
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -117,17 +109,17 @@ impl RecoveryInstancePropertiesBuilder {
     /// <p>An array of network interfaces.</p>
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
-        v.push(input);
-        self.network_interfaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_interfaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of network interfaces.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
-        self.network_interfaces = input;
-        self
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
+        self.network_interfaces = input; self
+    }
+    /// <p>An array of network interfaces.</p>
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces
     }
     /// Appends an item to `disks`.
     ///
@@ -136,17 +128,17 @@ impl RecoveryInstancePropertiesBuilder {
     /// <p>An array of disks.</p>
     pub fn disks(mut self, input: crate::types::RecoveryInstanceDisk) -> Self {
         let mut v = self.disks.unwrap_or_default();
-        v.push(input);
-        self.disks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.disks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of disks.</p>
-    pub fn set_disks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>>,
-    ) -> Self {
-        self.disks = input;
-        self
+    pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>>) -> Self {
+        self.disks = input; self
+    }
+    /// <p>An array of disks.</p>
+    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>> {
+        &self.disks
     }
     /// Appends an item to `cpus`.
     ///
@@ -155,17 +147,17 @@ impl RecoveryInstancePropertiesBuilder {
     /// <p>An array of CPUs.</p>
     pub fn cpus(mut self, input: crate::types::Cpu) -> Self {
         let mut v = self.cpus.unwrap_or_default();
-        v.push(input);
-        self.cpus = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cpus = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of CPUs.</p>
-    pub fn set_cpus(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
-    ) -> Self {
-        self.cpus = input;
-        self
+    pub fn set_cpus(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>) -> Self {
+        self.cpus = input; self
+    }
+    /// <p>An array of CPUs.</p>
+    pub fn get_cpus(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cpu>> {
+        &self.cpus
     }
     /// <p>The amount of RAM in bytes.</p>
     pub fn ram_bytes(mut self, input: i64) -> Self {
@@ -174,8 +166,11 @@ impl RecoveryInstancePropertiesBuilder {
     }
     /// <p>The amount of RAM in bytes.</p>
     pub fn set_ram_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ram_bytes = input;
-        self
+        self.ram_bytes = input; self
+    }
+    /// <p>The amount of RAM in bytes.</p>
+    pub fn get_ram_bytes(&self) -> &::std::option::Option<i64> {
+        &self.ram_bytes
     }
     /// <p>Operating system.</p>
     pub fn os(mut self, input: crate::types::Os) -> Self {
@@ -184,19 +179,31 @@ impl RecoveryInstancePropertiesBuilder {
     }
     /// <p>Operating system.</p>
     pub fn set_os(mut self, input: ::std::option::Option<crate::types::Os>) -> Self {
-        self.os = input;
-        self
+        self.os = input; self
+    }
+    /// <p>Operating system.</p>
+    pub fn get_os(&self) -> &::std::option::Option<crate::types::Os> {
+        &self.os
     }
     /// Consumes the builder and constructs a [`RecoveryInstanceProperties`](crate::types::RecoveryInstanceProperties).
     pub fn build(self) -> crate::types::RecoveryInstanceProperties {
         crate::types::RecoveryInstanceProperties {
-            last_updated_date_time: self.last_updated_date_time,
-            identification_hints: self.identification_hints,
-            network_interfaces: self.network_interfaces,
-            disks: self.disks,
-            cpus: self.cpus,
-            ram_bytes: self.ram_bytes.unwrap_or_default(),
-            os: self.os,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            identification_hints: self.identification_hints
+            ,
+            network_interfaces: self.network_interfaces
+            ,
+            disks: self.disks
+            ,
+            cpus: self.cpus
+            ,
+            ram_bytes: self.ram_bytes
+                .unwrap_or_default()
+            ,
+            os: self.os
+            ,
         }
     }
 }
+

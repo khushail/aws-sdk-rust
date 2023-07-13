@@ -3,14 +3,14 @@
 /// <p>The dataset whose latest contents are used as input to the notebook or application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetContentVersionValue {
+pub struct DatasetContentVersionValue  {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
     #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
 }
 impl DatasetContentVersionValue {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DatasetContentVersionValue {
 
 /// A builder for [`DatasetContentVersionValue`](crate::types::DatasetContentVersionValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetContentVersionValueBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl DatasetContentVersionValueBuilder {
     }
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
+    }
+    /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// Consumes the builder and constructs a [`DatasetContentVersionValue`](crate::types::DatasetContentVersionValue).
     pub fn build(self) -> crate::types::DatasetContentVersionValue {
         crate::types::DatasetContentVersionValue {
-            dataset_name: self.dataset_name,
+            dataset_name: self.dataset_name
+            ,
         }
     }
 }
+

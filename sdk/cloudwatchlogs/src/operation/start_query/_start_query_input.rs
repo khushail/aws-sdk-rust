@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartQueryInput {
-    /// <p>The log group on which to perform the query.</p> <note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+pub struct StartQueryInput  {
+    /// <p>The log group on which to perform the query.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
     /// </note>
     #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
     /// </note>
     #[doc(hidden)]
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
-    /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
-    /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
+    /// <p>The list of log groups to query. You can include up to 50 log groups.</p> 
+    /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p> 
+    /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p> 
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
     #[doc(hidden)]
     pub log_group_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -33,23 +33,23 @@ pub struct StartQueryInput {
     pub limit: ::std::option::Option<i32>,
 }
 impl StartQueryInput {
-    /// <p>The log group on which to perform the query.</p> <note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+    /// <p>The log group on which to perform the query.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
     /// </note>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
     /// </note>
-    pub fn log_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn log_group_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.log_group_names.as_deref()
     }
-    /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
-    /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
-    /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
+    /// <p>The list of log groups to query. You can include up to 50 log groups.</p> 
+    /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p> 
+    /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p> 
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
-    pub fn log_group_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn log_group_identifiers(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.log_group_identifiers.as_deref()
     }
     /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
@@ -61,7 +61,7 @@ impl StartQueryInput {
         self.end_time
     }
     /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
@@ -78,9 +78,7 @@ impl StartQueryInput {
 
 /// A builder for [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartQueryInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -91,79 +89,77 @@ pub struct StartQueryInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl StartQueryInputBuilder {
-    /// <p>The log group on which to perform the query.</p> <note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+    /// <p>The log group on which to perform the query.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
     /// </note>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The log group on which to perform the query.</p> <note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+    /// <p>The log group on which to perform the query.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
     /// </note>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.log_group_name = input;
-        self
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.log_group_name = input; self
+    }
+    /// <p>The log group on which to perform the query.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+    /// </note>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
     }
     /// Appends an item to `log_group_names`.
     ///
     /// To override the contents of this collection use [`set_log_group_names`](Self::set_log_group_names).
     ///
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
     /// </note>
-    pub fn log_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.log_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_group_names = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
     /// </note>
-    pub fn set_log_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.log_group_names = input;
-        self
+    pub fn set_log_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.log_group_names = input; self
+    }
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+    /// </note>
+    pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_group_names
     }
     /// Appends an item to `log_group_identifiers`.
     ///
     /// To override the contents of this collection use [`set_log_group_identifiers`](Self::set_log_group_identifiers).
     ///
-    /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
-    /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
-    /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
+    /// <p>The list of log groups to query. You can include up to 50 log groups.</p> 
+    /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p> 
+    /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p> 
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
-    pub fn log_group_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.log_group_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_group_identifiers = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
-    /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
-    /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
+    /// <p>The list of log groups to query. You can include up to 50 log groups.</p> 
+    /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p> 
+    /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p> 
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
-    pub fn set_log_group_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.log_group_identifiers = input;
-        self
+    pub fn set_log_group_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.log_group_identifiers = input; self
+    }
+    /// <p>The list of log groups to query. You can include up to 50 log groups.</p> 
+    /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p> 
+    /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p> 
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+    pub fn get_log_group_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_group_identifiers
     }
     /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn start_time(mut self, input: i64) -> Self {
@@ -172,8 +168,11 @@ impl StartQueryInputBuilder {
     }
     /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
+    }
+    /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<i64> {
+        &self.start_time
     }
     /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn end_time(mut self, input: i64) -> Self {
@@ -182,8 +181,11 @@ impl StartQueryInputBuilder {
     }
     /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
+    }
+    /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<i64> {
+        &self.end_time
     }
     /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,8 +194,11 @@ impl StartQueryInputBuilder {
     }
     /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
+    }
+    /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -202,24 +207,32 @@ impl StartQueryInputBuilder {
     }
     /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_query::StartQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_query::StartQueryInput {
-            log_group_name: self.log_group_name,
-            log_group_names: self.log_group_names,
-            log_group_identifiers: self.log_group_identifiers,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            query_string: self.query_string,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_query::StartQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_query::StartQueryInput {
+                log_group_name: self.log_group_name
+                ,
+                log_group_names: self.log_group_names
+                ,
+                log_group_identifiers: self.log_group_identifiers
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                query_string: self.query_string
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

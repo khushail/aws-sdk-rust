@@ -3,7 +3,7 @@
 /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/WorkingWithS3Outposts.html"> Accessing S3 on Outposts using VPC-only access points</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Endpoint {
+pub struct Endpoint  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
@@ -43,51 +43,51 @@ pub struct Endpoint {
 }
 impl Endpoint {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>The ID of the Outposts.</p>
-    pub fn outposts_id(&self) -> ::std::option::Option<&str> {
+    pub fn outposts_id(&self) -> ::std::option::Option<& str> {
         self.outposts_id.as_deref()
     }
     /// <p>The VPC CIDR committed by this endpoint.</p>
-    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_block(&self) -> ::std::option::Option<& str> {
         self.cidr_block.as_deref()
     }
     /// <p>The status of the endpoint.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EndpointStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EndpointStatus> {
         self.status.as_ref()
     }
     /// <p>The time the endpoint was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The network interface of the endpoint.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> ::std::option::Option<& [crate::types::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
     /// <p>The ID of the VPC used for the endpoint.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the subnet used for the endpoint.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the security group used for the endpoint.</p>
-    pub fn security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_group_id(&self) -> ::std::option::Option<& str> {
         self.security_group_id.as_deref()
     }
     /// <p>The type of connectivity used to access the Amazon S3 on Outposts endpoint.</p>
-    pub fn access_type(&self) -> ::std::option::Option<&crate::types::EndpointAccessType> {
+    pub fn access_type(&self) -> ::std::option::Option<& crate::types::EndpointAccessType> {
         self.access_type.as_ref()
     }
     /// <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
-    pub fn customer_owned_ipv4_pool(&self) -> ::std::option::Option<&str> {
+    pub fn customer_owned_ipv4_pool(&self) -> ::std::option::Option<& str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
     /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
-    pub fn failed_reason(&self) -> ::std::option::Option<&crate::types::FailedReason> {
+    pub fn failed_reason(&self) -> ::std::option::Option<& crate::types::FailedReason> {
         self.failed_reason.as_ref()
     }
 }
@@ -100,17 +100,14 @@ impl Endpoint {
 
 /// A builder for [`Endpoint`](crate::types::Endpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) outposts_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EndpointStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_id: ::std::option::Option<::std::string::String>,
@@ -126,8 +123,11 @@ impl EndpointBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     /// <p>The ID of the Outposts.</p>
     pub fn outposts_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,8 +136,11 @@ impl EndpointBuilder {
     }
     /// <p>The ID of the Outposts.</p>
     pub fn set_outposts_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outposts_id = input;
-        self
+        self.outposts_id = input; self
+    }
+    /// <p>The ID of the Outposts.</p>
+    pub fn get_outposts_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outposts_id
     }
     /// <p>The VPC CIDR committed by this endpoint.</p>
     pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,8 +149,11 @@ impl EndpointBuilder {
     }
     /// <p>The VPC CIDR committed by this endpoint.</p>
     pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_block = input;
-        self
+        self.cidr_block = input; self
+    }
+    /// <p>The VPC CIDR committed by this endpoint.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
     }
     /// <p>The status of the endpoint.</p>
     pub fn status(mut self, input: crate::types::EndpointStatus) -> Self {
@@ -155,12 +161,12 @@ impl EndpointBuilder {
         self
     }
     /// <p>The status of the endpoint.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of the endpoint.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
+        &self.status
     }
     /// <p>The time the endpoint was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -168,12 +174,12 @@ impl EndpointBuilder {
         self
     }
     /// <p>The time the endpoint was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time the endpoint was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -182,17 +188,17 @@ impl EndpointBuilder {
     /// <p>The network interface of the endpoint.</p>
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
-        v.push(input);
-        self.network_interfaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_interfaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The network interface of the endpoint.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
-        self.network_interfaces = input;
-        self
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
+        self.network_interfaces = input; self
+    }
+    /// <p>The network interface of the endpoint.</p>
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces
     }
     /// <p>The ID of the VPC used for the endpoint.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,8 +207,11 @@ impl EndpointBuilder {
     }
     /// <p>The ID of the VPC used for the endpoint.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The ID of the VPC used for the endpoint.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The ID of the subnet used for the endpoint.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -211,24 +220,24 @@ impl EndpointBuilder {
     }
     /// <p>The ID of the subnet used for the endpoint.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
+    }
+    /// <p>The ID of the subnet used for the endpoint.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The ID of the security group used for the endpoint.</p>
-    pub fn security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the security group used for the endpoint.</p>
-    pub fn set_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.security_group_id = input;
-        self
+    pub fn set_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_group_id = input; self
+    }
+    /// <p>The ID of the security group used for the endpoint.</p>
+    pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_id
     }
     /// <p>The type of connectivity used to access the Amazon S3 on Outposts endpoint.</p>
     pub fn access_type(mut self, input: crate::types::EndpointAccessType) -> Self {
@@ -236,28 +245,25 @@ impl EndpointBuilder {
         self
     }
     /// <p>The type of connectivity used to access the Amazon S3 on Outposts endpoint.</p>
-    pub fn set_access_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointAccessType>,
-    ) -> Self {
-        self.access_type = input;
-        self
+    pub fn set_access_type(mut self, input: ::std::option::Option<crate::types::EndpointAccessType>) -> Self {
+        self.access_type = input; self
+    }
+    /// <p>The type of connectivity used to access the Amazon S3 on Outposts endpoint.</p>
+    pub fn get_access_type(&self) -> &::std::option::Option<crate::types::EndpointAccessType> {
+        &self.access_type
     }
     /// <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
-    pub fn customer_owned_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
-    pub fn set_customer_owned_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.customer_owned_ipv4_pool = input;
-        self
+    pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_owned_ipv4_pool = input; self
+    }
+    /// <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
+    pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_owned_ipv4_pool
     }
     /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
     pub fn failed_reason(mut self, input: crate::types::FailedReason) -> Self {
@@ -265,28 +271,41 @@ impl EndpointBuilder {
         self
     }
     /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
-    pub fn set_failed_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::FailedReason>,
-    ) -> Self {
-        self.failed_reason = input;
-        self
+    pub fn set_failed_reason(mut self, input: ::std::option::Option<crate::types::FailedReason>) -> Self {
+        self.failed_reason = input; self
+    }
+    /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+    pub fn get_failed_reason(&self) -> &::std::option::Option<crate::types::FailedReason> {
+        &self.failed_reason
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
-            endpoint_arn: self.endpoint_arn,
-            outposts_id: self.outposts_id,
-            cidr_block: self.cidr_block,
-            status: self.status,
-            creation_time: self.creation_time,
-            network_interfaces: self.network_interfaces,
-            vpc_id: self.vpc_id,
-            subnet_id: self.subnet_id,
-            security_group_id: self.security_group_id,
-            access_type: self.access_type,
-            customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
-            failed_reason: self.failed_reason,
+            endpoint_arn: self.endpoint_arn
+            ,
+            outposts_id: self.outposts_id
+            ,
+            cidr_block: self.cidr_block
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            network_interfaces: self.network_interfaces
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnet_id: self.subnet_id
+            ,
+            security_group_id: self.security_group_id
+            ,
+            access_type: self.access_type
+            ,
+            customer_owned_ipv4_pool: self.customer_owned_ipv4_pool
+            ,
+            failed_reason: self.failed_reason
+            ,
         }
     }
 }
+

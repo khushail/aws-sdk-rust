@@ -3,7 +3,7 @@
 /// <p>A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Bot {
+pub struct Bot  {
     /// <p>The bot ID.</p>
     #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
@@ -34,19 +34,19 @@ pub struct Bot {
 }
 impl Bot {
     /// <p>The bot ID.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The unique ID for the bot user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The bot display name.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The bot type.</p>
-    pub fn bot_type(&self) -> ::std::option::Option<&crate::types::BotType> {
+    pub fn bot_type(&self) -> ::std::option::Option<& crate::types::BotType> {
         self.bot_type.as_ref()
     }
     /// <p>When true, the bot is stopped from running in your account.</p>
@@ -54,23 +54,23 @@ impl Bot {
         self.disabled
     }
     /// <p>The bot creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The updated bot timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The bot email address.</p>
-    pub fn bot_email(&self) -> ::std::option::Option<&str> {
+    pub fn bot_email(&self) -> ::std::option::Option<& str> {
         self.bot_email.as_deref()
     }
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
-    pub fn security_token(&self) -> ::std::option::Option<&str> {
+    pub fn security_token(&self) -> ::std::option::Option<& str> {
         self.security_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for Bot {
+impl  ::std::fmt::Debug for Bot  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Bot");
         formatter.field("bot_id", &self.bot_id);
@@ -114,8 +114,11 @@ impl BotBuilder {
     }
     /// <p>The bot ID.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
+    }
+    /// <p>The bot ID.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The unique ID for the bot user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,8 +127,11 @@ impl BotBuilder {
     }
     /// <p>The unique ID for the bot user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The unique ID for the bot user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The bot display name.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,8 +140,11 @@ impl BotBuilder {
     }
     /// <p>The bot display name.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
+    }
+    /// <p>The bot display name.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The bot type.</p>
     pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
@@ -144,8 +153,11 @@ impl BotBuilder {
     }
     /// <p>The bot type.</p>
     pub fn set_bot_type(mut self, input: ::std::option::Option<crate::types::BotType>) -> Self {
-        self.bot_type = input;
-        self
+        self.bot_type = input; self
+    }
+    /// <p>The bot type.</p>
+    pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
+        &self.bot_type
     }
     /// <p>When true, the bot is stopped from running in your account.</p>
     pub fn disabled(mut self, input: bool) -> Self {
@@ -154,8 +166,11 @@ impl BotBuilder {
     }
     /// <p>When true, the bot is stopped from running in your account.</p>
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
+    }
+    /// <p>When true, the bot is stopped from running in your account.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
     }
     /// <p>The bot creation timestamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -163,12 +178,12 @@ impl BotBuilder {
         self
     }
     /// <p>The bot creation timestamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
+    }
+    /// <p>The bot creation timestamp, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The updated bot timestamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -176,12 +191,12 @@ impl BotBuilder {
         self
     }
     /// <p>The updated bot timestamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_timestamp = input;
-        self
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_timestamp = input; self
+    }
+    /// <p>The updated bot timestamp, in ISO 8601 format.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// <p>The bot email address.</p>
     pub fn bot_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -190,37 +205,46 @@ impl BotBuilder {
     }
     /// <p>The bot email address.</p>
     pub fn set_bot_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_email = input;
-        self
+        self.bot_email = input; self
+    }
+    /// <p>The bot email address.</p>
+    pub fn get_bot_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_email
     }
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
-    pub fn security_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
-    pub fn set_security_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.security_token = input;
-        self
+    pub fn set_security_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_token = input; self
+    }
+    /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
+    pub fn get_security_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_token
     }
     /// Consumes the builder and constructs a [`Bot`](crate::types::Bot).
     pub fn build(self) -> crate::types::Bot {
         crate::types::Bot {
-            bot_id: self.bot_id,
-            user_id: self.user_id,
-            display_name: self.display_name,
-            bot_type: self.bot_type,
-            disabled: self.disabled,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
-            bot_email: self.bot_email,
-            security_token: self.security_token,
+            bot_id: self.bot_id
+            ,
+            user_id: self.user_id
+            ,
+            display_name: self.display_name
+            ,
+            bot_type: self.bot_type
+            ,
+            disabled: self.disabled
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
+            bot_email: self.bot_email
+            ,
+            security_token: self.security_token
+            ,
         }
     }
 }
@@ -239,3 +263,4 @@ impl ::std::fmt::Debug for BotBuilder {
         formatter.finish()
     }
 }
+

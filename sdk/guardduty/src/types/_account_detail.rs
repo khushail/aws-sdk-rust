@@ -3,7 +3,7 @@
 /// <p>Contains information about the account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountDetail {
+pub struct AccountDetail  {
     /// <p>The member account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AccountDetail {
 }
 impl AccountDetail {
     /// <p>The member account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The email address of the member account.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AccountDetail {
 
 /// A builder for [`AccountDetail`](crate::types::AccountDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountDetailBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AccountDetailBuilder {
     }
     /// <p>The member account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The member account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The email address of the member account.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl AccountDetailBuilder {
     }
     /// <p>The email address of the member account.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
+    }
+    /// <p>The email address of the member account.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// Consumes the builder and constructs a [`AccountDetail`](crate::types::AccountDetail).
     pub fn build(self) -> crate::types::AccountDetail {
         crate::types::AccountDetail {
-            account_id: self.account_id,
-            email: self.email,
+            account_id: self.account_id
+            ,
+            email: self.email
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Information about the demodulation <code>Config</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DemodulationConfig {
+pub struct DemodulationConfig  {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
     #[doc(hidden)]
     pub unvalidated_json: ::std::option::Option<::std::string::String>,
 }
 impl DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    pub fn unvalidated_json(&self) -> ::std::option::Option<&str> {
+    pub fn unvalidated_json(&self) -> ::std::option::Option<& str> {
         self.unvalidated_json.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl DemodulationConfig {
 
 /// A builder for [`DemodulationConfig`](crate::types::DemodulationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DemodulationConfigBuilder {
     pub(crate) unvalidated_json: ::std::option::Option<::std::string::String>,
 }
 impl DemodulationConfigBuilder {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    pub fn unvalidated_json(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unvalidated_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unvalidated_json = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    pub fn set_unvalidated_json(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.unvalidated_json = input;
-        self
+    pub fn set_unvalidated_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.unvalidated_json = input; self
+    }
+    /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
+    pub fn get_unvalidated_json(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unvalidated_json
     }
     /// Consumes the builder and constructs a [`DemodulationConfig`](crate::types::DemodulationConfig).
     pub fn build(self) -> crate::types::DemodulationConfig {
         crate::types::DemodulationConfig {
-            unvalidated_json: self.unvalidated_json,
+            unvalidated_json: self.unvalidated_json
+            ,
         }
     }
 }
+

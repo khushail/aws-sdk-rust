@@ -3,14 +3,14 @@
 /// <p>The source used to import configuration sections.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportGameConfigurationSource {
+pub struct ImportGameConfigurationSource  {
     /// <p>The JSON string containing the configuration sections.</p>
     #[doc(hidden)]
     pub file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportGameConfigurationSource {
     /// <p>The JSON string containing the configuration sections.</p>
-    pub fn file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn file(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.file.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ImportGameConfigurationSource {
 
 /// A builder for [`ImportGameConfigurationSource`](crate::types::ImportGameConfigurationSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportGameConfigurationSourceBuilder {
     pub(crate) file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
@@ -37,11 +35,18 @@ impl ImportGameConfigurationSourceBuilder {
     }
     /// <p>The JSON string containing the configuration sections.</p>
     pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.file = input;
-        self
+        self.file = input; self
+    }
+    /// <p>The JSON string containing the configuration sections.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.file
     }
     /// Consumes the builder and constructs a [`ImportGameConfigurationSource`](crate::types::ImportGameConfigurationSource).
     pub fn build(self) -> crate::types::ImportGameConfigurationSource {
-        crate::types::ImportGameConfigurationSource { file: self.file }
+        crate::types::ImportGameConfigurationSource {
+            file: self.file
+            ,
+        }
     }
 }
+

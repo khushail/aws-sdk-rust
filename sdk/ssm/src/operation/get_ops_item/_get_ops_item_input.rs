@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOpsItemInput {
+pub struct GetOpsItemInput  {
     /// <p>The ID of the OpsItem that you want to get.</p>
     #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetOpsItemInput {
 }
 impl GetOpsItemInput {
     /// <p>The ID of the OpsItem that you want to get.</p>
-    pub fn ops_item_id(&self) -> ::std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> ::std::option::Option<& str> {
         self.ops_item_id.as_deref()
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn ops_item_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ops_item_arn(&self) -> ::std::option::Option<& str> {
         self.ops_item_arn.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl GetOpsItemInput {
 
 /// A builder for [`GetOpsItemInput`](crate::operation::get_ops_item::GetOpsItemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpsItemInputBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) ops_item_arn: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetOpsItemInputBuilder {
     }
     /// <p>The ID of the OpsItem that you want to get.</p>
     pub fn set_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ops_item_id = input;
-        self
+        self.ops_item_id = input; self
+    }
+    /// <p>The ID of the OpsItem that you want to get.</p>
+    pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_id
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn ops_item_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl GetOpsItemInputBuilder {
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn set_ops_item_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ops_item_arn = input;
-        self
+        self.ops_item_arn = input; self
+    }
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    pub fn get_ops_item_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_arn
     }
     /// Consumes the builder and constructs a [`GetOpsItemInput`](crate::operation::get_ops_item::GetOpsItemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ops_item::GetOpsItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_ops_item::GetOpsItemInput {
-            ops_item_id: self.ops_item_id,
-            ops_item_arn: self.ops_item_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ops_item::GetOpsItemInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_ops_item::GetOpsItemInput {
+                ops_item_id: self.ops_item_id
+                ,
+                ops_item_arn: self.ops_item_arn
+                ,
+            }
+        )
     }
 }
+

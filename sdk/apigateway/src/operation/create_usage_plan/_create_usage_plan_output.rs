@@ -3,7 +3,7 @@
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUsagePlanOutput {
+pub struct CreateUsagePlanOutput  {
     /// <p>The identifier of a UsagePlan resource.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -27,67 +27,58 @@ pub struct CreateUsagePlanOutput {
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateUsagePlanOutput {
     /// <p>The identifier of a UsagePlan resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of a usage plan.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of a usage plan.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The associated API stages of a usage plan.</p>
-    pub fn api_stages(&self) -> ::std::option::Option<&[crate::types::ApiStage]> {
+    pub fn api_stages(&self) -> ::std::option::Option<& [crate::types::ApiStage]> {
         self.api_stages.as_deref()
     }
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
-    pub fn throttle(&self) -> ::std::option::Option<&crate::types::ThrottleSettings> {
+    pub fn throttle(&self) -> ::std::option::Option<& crate::types::ThrottleSettings> {
         self.throttle.as_ref()
     }
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
-    pub fn quota(&self) -> ::std::option::Option<&crate::types::QuotaSettings> {
+    pub fn quota(&self) -> ::std::option::Option<& crate::types::QuotaSettings> {
         self.quota.as_ref()
     }
     /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
+    pub fn product_code(&self) -> ::std::option::Option<& str> {
         self.product_code.as_deref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateUsagePlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateUsagePlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateUsagePlanOutput`](crate::operation::create_usage_plan::CreateUsagePlanOutput).
-    pub fn builder() -> crate::operation::create_usage_plan::builders::CreateUsagePlanOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_usage_plan::builders::CreateUsagePlanOutputBuilder {
         crate::operation::create_usage_plan::builders::CreateUsagePlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUsagePlanOutput`](crate::operation::create_usage_plan::CreateUsagePlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUsagePlanOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -96,9 +87,7 @@ pub struct CreateUsagePlanOutputBuilder {
     pub(crate) throttle: ::std::option::Option<crate::types::ThrottleSettings>,
     pub(crate) quota: ::std::option::Option<crate::types::QuotaSettings>,
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateUsagePlanOutputBuilder {
@@ -109,8 +98,11 @@ impl CreateUsagePlanOutputBuilder {
     }
     /// <p>The identifier of a UsagePlan resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of a UsagePlan resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of a usage plan.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,8 +111,11 @@ impl CreateUsagePlanOutputBuilder {
     }
     /// <p>The name of a usage plan.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of a usage plan.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of a usage plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,8 +124,11 @@ impl CreateUsagePlanOutputBuilder {
     }
     /// <p>The description of a usage plan.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of a usage plan.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `api_stages`.
     ///
@@ -139,17 +137,17 @@ impl CreateUsagePlanOutputBuilder {
     /// <p>The associated API stages of a usage plan.</p>
     pub fn api_stages(mut self, input: crate::types::ApiStage) -> Self {
         let mut v = self.api_stages.unwrap_or_default();
-        v.push(input);
-        self.api_stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.api_stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The associated API stages of a usage plan.</p>
-    pub fn set_api_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>,
-    ) -> Self {
-        self.api_stages = input;
-        self
+    pub fn set_api_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>) -> Self {
+        self.api_stages = input; self
+    }
+    /// <p>The associated API stages of a usage plan.</p>
+    pub fn get_api_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiStage>> {
+        &self.api_stages
     }
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
     pub fn throttle(mut self, input: crate::types::ThrottleSettings) -> Self {
@@ -157,12 +155,12 @@ impl CreateUsagePlanOutputBuilder {
         self
     }
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
-    pub fn set_throttle(
-        mut self,
-        input: ::std::option::Option<crate::types::ThrottleSettings>,
-    ) -> Self {
-        self.throttle = input;
-        self
+    pub fn set_throttle(mut self, input: ::std::option::Option<crate::types::ThrottleSettings>) -> Self {
+        self.throttle = input; self
+    }
+    /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
+    pub fn get_throttle(&self) -> &::std::option::Option<crate::types::ThrottleSettings> {
+        &self.throttle
     }
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
     pub fn quota(mut self, input: crate::types::QuotaSettings) -> Self {
@@ -171,8 +169,11 @@ impl CreateUsagePlanOutputBuilder {
     }
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
     pub fn set_quota(mut self, input: ::std::option::Option<crate::types::QuotaSettings>) -> Self {
-        self.quota = input;
-        self
+        self.quota = input; self
+    }
+    /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
+    pub fn get_quota(&self) -> &::std::option::Option<crate::types::QuotaSettings> {
+        &self.quota
     }
     /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,55 +182,61 @@ impl CreateUsagePlanOutputBuilder {
     }
     /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
-        self
+        self.product_code = input; self
+    }
+    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_code
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateUsagePlanOutput`](crate::operation::create_usage_plan::CreateUsagePlanOutput).
     pub fn build(self) -> crate::operation::create_usage_plan::CreateUsagePlanOutput {
         crate::operation::create_usage_plan::CreateUsagePlanOutput {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            api_stages: self.api_stages,
-            throttle: self.throttle,
-            quota: self.quota,
-            product_code: self.product_code,
-            tags: self.tags,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            api_stages: self.api_stages
+            ,
+            throttle: self.throttle
+            ,
+            quota: self.quota
+            ,
+            product_code: self.product_code
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

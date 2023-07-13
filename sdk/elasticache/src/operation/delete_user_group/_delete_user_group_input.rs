@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserGroupInput {
+pub struct DeleteUserGroupInput  {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
     pub user_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserGroupInput {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_group_id(&self) -> ::std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl DeleteUserGroupInput {
 
 /// A builder for [`DeleteUserGroupInput`](crate::operation::delete_user_group::DeleteUserGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserGroupInputBuilder {
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserGroupInputBuilder {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user group.</p>
-    pub fn set_user_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.user_group_id = input;
-        self
+    pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_group_id = input; self
+    }
+    /// <p>The ID of the user group.</p>
+    pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_group_id
     }
     /// Consumes the builder and constructs a [`DeleteUserGroupInput`](crate::operation::delete_user_group::DeleteUserGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_user_group::DeleteUserGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_user_group::DeleteUserGroupInput {
-            user_group_id: self.user_group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user_group::DeleteUserGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_user_group::DeleteUserGroupInput {
+                user_group_id: self.user_group_id
+                ,
+            }
+        )
     }
 }
+

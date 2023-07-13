@@ -3,7 +3,7 @@
 /// <p>Lists the properties of an <i>action</i>. An action represents an action or activity. Some examples are a workflow step and a model deployment. Generally, an action involves at least one input artifact or output artifact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionSummary {
+pub struct ActionSummary  {
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     #[doc(hidden)]
     pub action_arn: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct ActionSummary {
 }
 impl ActionSummary {
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
-    pub fn action_arn(&self) -> ::std::option::Option<&str> {
+    pub fn action_arn(&self) -> ::std::option::Option<& str> {
         self.action_arn.as_deref()
     }
     /// <p>The name of the action.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The source of the action.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::ActionSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::ActionSource> {
         self.source.as_ref()
     }
     /// <p>The type of the action.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&str> {
+    pub fn action_type(&self) -> ::std::option::Option<& str> {
         self.action_type.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ActionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ActionStatus> {
         self.status.as_ref()
     }
     /// <p>When the action was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the action was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl ActionSummary {
 
 /// A builder for [`ActionSummary`](crate::types::ActionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionSummaryBuilder {
     pub(crate) action_arn: ::std::option::Option<::std::string::String>,
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
@@ -85,8 +83,11 @@ impl ActionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     pub fn set_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_arn = input;
-        self
+        self.action_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub fn get_action_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_arn
     }
     /// <p>The name of the action.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +96,11 @@ impl ActionSummaryBuilder {
     }
     /// <p>The name of the action.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
+    }
+    /// <p>The name of the action.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p>The source of the action.</p>
     pub fn source(mut self, input: crate::types::ActionSource) -> Self {
@@ -105,8 +109,11 @@ impl ActionSummaryBuilder {
     }
     /// <p>The source of the action.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ActionSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The source of the action.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ActionSource> {
+        &self.source
     }
     /// <p>The type of the action.</p>
     pub fn action_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,8 +122,11 @@ impl ActionSummaryBuilder {
     }
     /// <p>The type of the action.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
+    }
+    /// <p>The type of the action.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_type
     }
     /// <p>The status of the action.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
@@ -125,8 +135,11 @@ impl ActionSummaryBuilder {
     }
     /// <p>The status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
+        &self.status
     }
     /// <p>When the action was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -134,12 +147,12 @@ impl ActionSummaryBuilder {
         self
     }
     /// <p>When the action was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>When the action was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>When the action was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -147,23 +160,31 @@ impl ActionSummaryBuilder {
         self
     }
     /// <p>When the action was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
+    }
+    /// <p>When the action was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`ActionSummary`](crate::types::ActionSummary).
     pub fn build(self) -> crate::types::ActionSummary {
         crate::types::ActionSummary {
-            action_arn: self.action_arn,
-            action_name: self.action_name,
-            source: self.source,
-            action_type: self.action_type,
-            status: self.status,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            action_arn: self.action_arn
+            ,
+            action_name: self.action_name
+            ,
+            source: self.source
+            ,
+            action_type: self.action_type
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

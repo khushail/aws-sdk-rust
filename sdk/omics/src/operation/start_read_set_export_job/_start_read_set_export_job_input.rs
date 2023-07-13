@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartReadSetExportJobInput {
+pub struct StartReadSetExportJobInput  {
     /// <p>The read set's sequence store ID.</p>
     #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
@@ -21,40 +21,36 @@ pub struct StartReadSetExportJobInput {
 }
 impl StartReadSetExportJobInput {
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>A location for exported files in Amazon S3.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>A service role for the job.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The job's source files.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::ExportReadSet]> {
+    pub fn sources(&self) -> ::std::option::Option<& [crate::types::ExportReadSet]> {
         self.sources.as_deref()
     }
 }
 impl StartReadSetExportJobInput {
     /// Creates a new builder-style object to manufacture [`StartReadSetExportJobInput`](crate::operation::start_read_set_export_job::StartReadSetExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_read_set_export_job::builders::StartReadSetExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_read_set_export_job::builders::StartReadSetExportJobInputBuilder {
         crate::operation::start_read_set_export_job::builders::StartReadSetExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartReadSetExportJobInput`](crate::operation::start_read_set_export_job::StartReadSetExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReadSetExportJobInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -64,20 +60,17 @@ pub struct StartReadSetExportJobInputBuilder {
 }
 impl StartReadSetExportJobInputBuilder {
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sequence_store_id = input;
-        self
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sequence_store_id = input; self
+    }
+    /// <p>The read set's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
     }
     /// <p>A location for exported files in Amazon S3.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +79,11 @@ impl StartReadSetExportJobInputBuilder {
     }
     /// <p>A location for exported files in Amazon S3.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
+    }
+    /// <p>A location for exported files in Amazon S3.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// <p>A service role for the job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,8 +92,11 @@ impl StartReadSetExportJobInputBuilder {
     }
     /// <p>A service role for the job.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>A service role for the job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +105,11 @@ impl StartReadSetExportJobInputBuilder {
     }
     /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>To ensure that jobs don't run multiple times, specify a unique token for each job.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `sources`.
     ///
@@ -116,33 +118,34 @@ impl StartReadSetExportJobInputBuilder {
     /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::ExportReadSet) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The job's source files.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>>,
-    ) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>>) -> Self {
+        self.sources = input; self
+    }
+    /// <p>The job's source files.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSet>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`StartReadSetExportJobInput`](crate::operation::start_read_set_export_job::StartReadSetExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_read_set_export_job::StartReadSetExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_read_set_export_job::StartReadSetExportJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_read_set_export_job::StartReadSetExportJobInput {
-                sequence_store_id: self.sequence_store_id,
-                destination: self.destination,
-                role_arn: self.role_arn,
-                client_token: self.client_token,
-                sources: self.sources,
-            },
+                sequence_store_id: self.sequence_store_id
+                ,
+                destination: self.destination
+                ,
+                role_arn: self.role_arn
+                ,
+                client_token: self.client_token
+                ,
+                sources: self.sources
+                ,
+            }
         )
     }
 }
+

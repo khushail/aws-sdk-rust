@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDevEnvironmentSessionInput {
+pub struct StopDevEnvironmentSessionInput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
@@ -18,34 +18,32 @@ pub struct StopDevEnvironmentSessionInput {
 }
 impl StopDevEnvironmentSessionInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
 impl StopDevEnvironmentSessionInput {
     /// Creates a new builder-style object to manufacture [`StopDevEnvironmentSessionInput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput).
-    pub fn builder() -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder{
+    pub fn builder() -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder {
         crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDevEnvironmentSessionInput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDevEnvironmentSessionInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -60,8 +58,11 @@ impl StopDevEnvironmentSessionInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
+    }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +71,11 @@ impl StopDevEnvironmentSessionInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
+    }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,8 +84,11 @@ impl StopDevEnvironmentSessionInputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,23 +97,26 @@ impl StopDevEnvironmentSessionInputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
+    }
+    /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// Consumes the builder and constructs a [`StopDevEnvironmentSessionInput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-                session_id: self.session_id,
-            },
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
+                session_id: self.session_id
+                ,
+            }
         )
     }
 }
+

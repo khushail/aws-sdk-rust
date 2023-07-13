@@ -3,23 +3,23 @@
 /// <p>The websocket for the participant's connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Websocket {
+pub struct Websocket  {
     /// <p>The URL of the websocket.</p>
     #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
-    /// <p>The URL expiration timestamp in ISO date format.</p>
+    /// <p>The URL expiration timestamp in ISO date format.</p> 
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     #[doc(hidden)]
     pub connection_expiry: ::std::option::Option<::std::string::String>,
 }
 impl Websocket {
     /// <p>The URL of the websocket.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
-    /// <p>The URL expiration timestamp in ISO date format.</p>
+    /// <p>The URL expiration timestamp in ISO date format.</p> 
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn connection_expiry(&self) -> ::std::option::Option<&str> {
+    pub fn connection_expiry(&self) -> ::std::option::Option<& str> {
         self.connection_expiry.as_deref()
     }
 }
@@ -32,9 +32,7 @@ impl Websocket {
 
 /// A builder for [`Websocket`](crate::types::Websocket).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebsocketBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) connection_expiry: ::std::option::Option<::std::string::String>,
@@ -47,32 +45,36 @@ impl WebsocketBuilder {
     }
     /// <p>The URL of the websocket.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
-    /// <p>The URL expiration timestamp in ISO date format.</p>
+    /// <p>The URL of the websocket.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
+    /// <p>The URL expiration timestamp in ISO date format.</p> 
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn connection_expiry(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_expiry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_expiry = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL expiration timestamp in ISO date format.</p>
+    /// <p>The URL expiration timestamp in ISO date format.</p> 
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn set_connection_expiry(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_expiry = input;
-        self
+    pub fn set_connection_expiry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_expiry = input; self
+    }
+    /// <p>The URL expiration timestamp in ISO date format.</p> 
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_connection_expiry(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_expiry
     }
     /// Consumes the builder and constructs a [`Websocket`](crate::types::Websocket).
     pub fn build(self) -> crate::types::Websocket {
         crate::types::Websocket {
-            url: self.url,
-            connection_expiry: self.connection_expiry,
+            url: self.url
+            ,
+            connection_expiry: self.connection_expiry
+            ,
         }
     }
 }
+

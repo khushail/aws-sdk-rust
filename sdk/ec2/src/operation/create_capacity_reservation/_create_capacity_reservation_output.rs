@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCapacityReservationOutput {
+pub struct CreateCapacityReservationOutput  {
     /// <p>Information about the Capacity Reservation.</p>
     #[doc(hidden)]
     pub capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
@@ -10,29 +10,25 @@ pub struct CreateCapacityReservationOutput {
 }
 impl CreateCapacityReservationOutput {
     /// <p>Information about the Capacity Reservation.</p>
-    pub fn capacity_reservation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservation> {
+    pub fn capacity_reservation(&self) -> ::std::option::Option<& crate::types::CapacityReservation> {
         self.capacity_reservation.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateCapacityReservationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateCapacityReservationOutput {
     /// Creates a new builder-style object to manufacture [`CreateCapacityReservationOutput`](crate::operation::create_capacity_reservation::CreateCapacityReservationOutput).
-    pub fn builder() -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder{
+    pub fn builder() -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder {
         crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCapacityReservationOutput`](crate::operation::create_capacity_reservation::CreateCapacityReservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationOutputBuilder {
     pub(crate) capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
     _request_id: Option<String>,
@@ -44,29 +40,29 @@ impl CreateCapacityReservationOutputBuilder {
         self
     }
     /// <p>Information about the Capacity Reservation.</p>
-    pub fn set_capacity_reservation(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservation>,
-    ) -> Self {
-        self.capacity_reservation = input;
-        self
+    pub fn set_capacity_reservation(mut self, input: ::std::option::Option<crate::types::CapacityReservation>) -> Self {
+        self.capacity_reservation = input; self
+    }
+    /// <p>Information about the Capacity Reservation.</p>
+    pub fn get_capacity_reservation(&self) -> &::std::option::Option<crate::types::CapacityReservation> {
+        &self.capacity_reservation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateCapacityReservationOutput`](crate::operation::create_capacity_reservation::CreateCapacityReservationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_capacity_reservation::CreateCapacityReservationOutput {
+    pub fn build(self) -> crate::operation::create_capacity_reservation::CreateCapacityReservationOutput {
         crate::operation::create_capacity_reservation::CreateCapacityReservationOutput {
-            capacity_reservation: self.capacity_reservation,
+            capacity_reservation: self.capacity_reservation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

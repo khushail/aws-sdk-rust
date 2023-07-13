@@ -3,115 +3,95 @@ pub use crate::operation::describe_alarm_history::_describe_alarm_history_output
 
 pub use crate::operation::describe_alarm_history::_describe_alarm_history_input::DescribeAlarmHistoryInputBuilder;
 
+impl DescribeAlarmHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_alarm_history::DescribeAlarmHistoryError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_alarm_history();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeAlarmHistory`.
-///
-/// <p>Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm name is not specified, the histories for either all metric alarms or all composite alarms are returned.</p>
-/// <p>CloudWatch retains the history of an alarm even if you delete the alarm.</p>
+/// 
+/// <p>Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm name is not specified, the histories for either all metric alarms or all composite alarms are returned.</p> 
+/// <p>CloudWatch retains the history of an alarm even if you delete the alarm.</p> 
 /// <p>To use this operation and return information about a composite alarm, you must be signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is scoped to <code>*</code>. You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAlarmHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryInputBuilder,
+                    inner: crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryInputBuilder,
 }
-impl DescribeAlarmHistoryFluentBuilder {
+impl DescribeAlarmHistoryFluentBuilder  {
     /// Creates a new `DescribeAlarmHistory`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_alarm_history::DescribeAlarmHistory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_alarm_history::DescribeAlarmHistoryError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeAlarmHistory as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_alarm_history::DescribeAlarmHistoryError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_alarm_history::DescribeAlarmHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_alarm_history::DescribeAlarmHistoryError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_alarm_history::DescribeAlarmHistoryError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_alarm_history::DescribeAlarmHistoryError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_alarm_history::DescribeAlarmHistory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_alarm_history::DescribeAlarmHistoryError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_alarm_history::DescribeAlarmHistoryError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_alarm_history::DescribeAlarmHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_alarm_history::DescribeAlarmHistoryError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator {
-        crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator {
+                                crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the alarm.</p>
     pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_name(input.into());
@@ -121,6 +101,10 @@ impl DescribeAlarmHistoryFluentBuilder {
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_name(input);
         self
+    }
+    /// <p>The name of the alarm.</p>
+    pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alarm_name()
     }
     /// Appends an item to `AlarmTypes`.
     ///
@@ -132,12 +116,13 @@ impl DescribeAlarmHistoryFluentBuilder {
         self
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    pub fn set_alarm_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
-    ) -> Self {
+    pub fn set_alarm_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>) -> Self {
         self.inner = self.inner.set_alarm_types(input);
         self
+    }
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    pub fn get_alarm_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
+        self.inner.get_alarm_types()
     }
     /// <p>The type of alarm histories to retrieve.</p>
     pub fn history_item_type(mut self, input: crate::types::HistoryItemType) -> Self {
@@ -145,12 +130,13 @@ impl DescribeAlarmHistoryFluentBuilder {
         self
     }
     /// <p>The type of alarm histories to retrieve.</p>
-    pub fn set_history_item_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoryItemType>,
-    ) -> Self {
+    pub fn set_history_item_type(mut self, input: ::std::option::Option<crate::types::HistoryItemType>) -> Self {
         self.inner = self.inner.set_history_item_type(input);
         self
+    }
+    /// <p>The type of alarm histories to retrieve.</p>
+    pub fn get_history_item_type(&self) -> &::std::option::Option<crate::types::HistoryItemType> {
+        self.inner.get_history_item_type()
     }
     /// <p>The starting date to retrieve alarm history.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -158,12 +144,13 @@ impl DescribeAlarmHistoryFluentBuilder {
         self
     }
     /// <p>The starting date to retrieve alarm history.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
+    }
+    /// <p>The starting date to retrieve alarm history.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date()
     }
     /// <p>The ending date to retrieve alarm history.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -171,12 +158,13 @@ impl DescribeAlarmHistoryFluentBuilder {
         self
     }
     /// <p>The ending date to retrieve alarm history.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
+    }
+    /// <p>The ending date to retrieve alarm history.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date()
     }
     /// <p>The maximum number of alarm history records to retrieve.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -188,6 +176,10 @@ impl DescribeAlarmHistoryFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of alarm history records to retrieve.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -197,6 +189,10 @@ impl DescribeAlarmHistoryFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token returned by a previous call to indicate that there is more data available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
     pub fn scan_by(mut self, input: crate::types::ScanBy) -> Self {
@@ -208,4 +204,9 @@ impl DescribeAlarmHistoryFluentBuilder {
         self.inner = self.inner.set_scan_by(input);
         self
     }
+    /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
+    pub fn get_scan_by(&self) -> &::std::option::Option<crate::types::ScanBy> {
+        self.inner.get_scan_by()
+    }
 }
+

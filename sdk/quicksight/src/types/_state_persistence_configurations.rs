@@ -3,7 +3,7 @@
 /// <p>The state perssitence configuration of an embedded dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatePersistenceConfigurations {
+pub struct StatePersistenceConfigurations  {
     /// <p>Determines if a Amazon QuickSight dashboard's state persistence settings are turned on or off.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -23,9 +23,7 @@ impl StatePersistenceConfigurations {
 
 /// A builder for [`StatePersistenceConfigurations`](crate::types::StatePersistenceConfigurations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatePersistenceConfigurationsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -37,13 +35,19 @@ impl StatePersistenceConfigurationsBuilder {
     }
     /// <p>Determines if a Amazon QuickSight dashboard's state persistence settings are turned on or off.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Determines if a Amazon QuickSight dashboard's state persistence settings are turned on or off.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`StatePersistenceConfigurations`](crate::types::StatePersistenceConfigurations).
     pub fn build(self) -> crate::types::StatePersistenceConfigurations {
         crate::types::StatePersistenceConfigurations {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

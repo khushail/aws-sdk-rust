@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokePermissionsInput {
+pub struct RevokePermissionsInput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
@@ -17,53 +17,46 @@ pub struct RevokePermissionsInput {
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
     #[doc(hidden)]
-    pub permissions_with_grant_option:
-        ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl RevokePermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The principal to be revoked permissions on the resource.</p>
-    pub fn principal(&self) -> ::std::option::Option<&crate::types::DataLakePrincipal> {
+    pub fn principal(&self) -> ::std::option::Option<& crate::types::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>The resource to which permissions are to be revoked.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::Resource> {
         self.resource.as_ref()
     }
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
+    pub fn permissions(&self) -> ::std::option::Option<& [crate::types::Permission]> {
         self.permissions.as_deref()
     }
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
-    pub fn permissions_with_grant_option(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Permission]> {
+    pub fn permissions_with_grant_option(&self) -> ::std::option::Option<& [crate::types::Permission]> {
         self.permissions_with_grant_option.as_deref()
     }
 }
 impl RevokePermissionsInput {
     /// Creates a new builder-style object to manufacture [`RevokePermissionsInput`](crate::operation::revoke_permissions::RevokePermissionsInput).
-    pub fn builder() -> crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder {
         crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokePermissionsInput`](crate::operation::revoke_permissions::RevokePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokePermissionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    pub(crate) permissions_with_grant_option:
-        ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl RevokePermissionsInputBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -73,8 +66,11 @@ impl RevokePermissionsInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
+    }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// <p>The principal to be revoked permissions on the resource.</p>
     pub fn principal(mut self, input: crate::types::DataLakePrincipal) -> Self {
@@ -82,12 +78,12 @@ impl RevokePermissionsInputBuilder {
         self
     }
     /// <p>The principal to be revoked permissions on the resource.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
-        self.principal = input;
-        self
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
+        self.principal = input; self
+    }
+    /// <p>The principal to be revoked permissions on the resource.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
+        &self.principal
     }
     /// <p>The resource to which permissions are to be revoked.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
@@ -96,8 +92,11 @@ impl RevokePermissionsInputBuilder {
     }
     /// <p>The resource to which permissions are to be revoked.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
+    }
+    /// <p>The resource to which permissions are to be revoked.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        &self.resource
     }
     /// Appends an item to `permissions`.
     ///
@@ -106,17 +105,17 @@ impl RevokePermissionsInputBuilder {
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
+        self.permissions = input; self
+    }
+    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+        &self.permissions
     }
     /// Appends an item to `permissions_with_grant_option`.
     ///
@@ -125,33 +124,34 @@ impl RevokePermissionsInputBuilder {
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
     pub fn permissions_with_grant_option(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions_with_grant_option.unwrap_or_default();
-        v.push(input);
-        self.permissions_with_grant_option = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions_with_grant_option = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
-    pub fn set_permissions_with_grant_option(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
-        self.permissions_with_grant_option = input;
-        self
+    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
+        self.permissions_with_grant_option = input; self
+    }
+    /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
+    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+        &self.permissions_with_grant_option
     }
     /// Consumes the builder and constructs a [`RevokePermissionsInput`](crate::operation::revoke_permissions::RevokePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_permissions::RevokePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_permissions::RevokePermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::revoke_permissions::RevokePermissionsInput {
-                catalog_id: self.catalog_id,
-                principal: self.principal,
-                resource: self.resource,
-                permissions: self.permissions,
-                permissions_with_grant_option: self.permissions_with_grant_option,
-            },
+                catalog_id: self.catalog_id
+                ,
+                principal: self.principal
+                ,
+                resource: self.resource
+                ,
+                permissions: self.permissions
+                ,
+                permissions_with_grant_option: self.permissions_with_grant_option
+                ,
+            }
         )
     }
 }
+

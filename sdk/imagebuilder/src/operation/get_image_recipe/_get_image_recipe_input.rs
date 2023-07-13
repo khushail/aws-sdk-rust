@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImageRecipeInput {
+pub struct GetImageRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
     #[doc(hidden)]
     pub image_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
-    pub fn image_recipe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> ::std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl GetImageRecipeInput {
 
 /// A builder for [`GetImageRecipeInput`](crate::operation::get_image_recipe::GetImageRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImageRecipeInputBuilder {
     pub(crate) image_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetImageRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
-    pub fn image_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
-    pub fn set_image_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.image_recipe_arn = input;
-        self
+    pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_recipe_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_recipe_arn
     }
     /// Consumes the builder and constructs a [`GetImageRecipeInput`](crate::operation::get_image_recipe::GetImageRecipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_image_recipe::GetImageRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_image_recipe::GetImageRecipeInput {
-            image_recipe_arn: self.image_recipe_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_image_recipe::GetImageRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_image_recipe::GetImageRecipeInput {
+                image_recipe_arn: self.image_recipe_arn
+                ,
+            }
+        )
     }
 }
+

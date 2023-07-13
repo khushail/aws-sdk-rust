@@ -3,7 +3,7 @@
 /// <p>Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Resource {
+pub struct S3Resource  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
@@ -12,22 +12,19 @@ pub struct S3Resource {
     pub key_range: ::std::option::Option<crate::types::KeyRange>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
     #[doc(hidden)]
-    pub target_on_device_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetOnDeviceService>>,
+    pub target_on_device_services: ::std::option::Option<::std::vec::Vec<crate::types::TargetOnDeviceService>>,
 }
 impl S3Resource {
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> ::std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
     /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
-    pub fn key_range(&self) -> ::std::option::Option<&crate::types::KeyRange> {
+    pub fn key_range(&self) -> ::std::option::Option<& crate::types::KeyRange> {
         self.key_range.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
-    pub fn target_on_device_services(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TargetOnDeviceService]> {
+    pub fn target_on_device_services(&self) -> ::std::option::Option<& [crate::types::TargetOnDeviceService]> {
         self.target_on_device_services.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl S3Resource {
 
 /// A builder for [`S3Resource`](crate::types::S3Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ResourceBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_range: ::std::option::Option<crate::types::KeyRange>,
-    pub(crate) target_on_device_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetOnDeviceService>>,
+    pub(crate) target_on_device_services: ::std::option::Option<::std::vec::Vec<crate::types::TargetOnDeviceService>>,
 }
 impl S3ResourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
@@ -57,8 +51,11 @@ impl S3ResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
     }
     /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
     pub fn key_range(mut self, input: crate::types::KeyRange) -> Self {
@@ -67,8 +64,11 @@ impl S3ResourceBuilder {
     }
     /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
     pub fn set_key_range(mut self, input: ::std::option::Option<crate::types::KeyRange>) -> Self {
-        self.key_range = input;
-        self
+        self.key_range = input; self
+    }
+    /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
+    pub fn get_key_range(&self) -> &::std::option::Option<crate::types::KeyRange> {
+        &self.key_range
     }
     /// Appends an item to `target_on_device_services`.
     ///
@@ -77,24 +77,28 @@ impl S3ResourceBuilder {
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
     pub fn target_on_device_services(mut self, input: crate::types::TargetOnDeviceService) -> Self {
         let mut v = self.target_on_device_services.unwrap_or_default();
-        v.push(input);
-        self.target_on_device_services = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_on_device_services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
-    pub fn set_target_on_device_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetOnDeviceService>>,
-    ) -> Self {
-        self.target_on_device_services = input;
-        self
+    pub fn set_target_on_device_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetOnDeviceService>>) -> Self {
+        self.target_on_device_services = input; self
+    }
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    pub fn get_target_on_device_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetOnDeviceService>> {
+        &self.target_on_device_services
     }
     /// Consumes the builder and constructs a [`S3Resource`](crate::types::S3Resource).
     pub fn build(self) -> crate::types::S3Resource {
         crate::types::S3Resource {
-            bucket_arn: self.bucket_arn,
-            key_range: self.key_range,
-            target_on_device_services: self.target_on_device_services,
+            bucket_arn: self.bucket_arn
+            ,
+            key_range: self.key_range
+            ,
+            target_on_device_services: self.target_on_device_services
+            ,
         }
     }
 }
+

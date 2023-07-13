@@ -3,7 +3,7 @@
 /// <p>Describes the destination for an export image task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportTaskS3LocationRequest {
+pub struct ExportTaskS3LocationRequest  {
     /// <p>The destination Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExportTaskS3LocationRequest {
 }
 impl ExportTaskS3LocationRequest {
     /// <p>The destination Amazon S3 bucket.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The prefix (logical hierarchy) in the bucket.</p>
-    pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ExportTaskS3LocationRequest {
 
 /// A builder for [`ExportTaskS3LocationRequest`](crate::types::ExportTaskS3LocationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTaskS3LocationRequestBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ExportTaskS3LocationRequestBuilder {
     }
     /// <p>The destination Amazon S3 bucket.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
+    }
+    /// <p>The destination Amazon S3 bucket.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// <p>The prefix (logical hierarchy) in the bucket.</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ExportTaskS3LocationRequestBuilder {
     }
     /// <p>The prefix (logical hierarchy) in the bucket.</p>
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_prefix = input;
-        self
+        self.s3_prefix = input; self
+    }
+    /// <p>The prefix (logical hierarchy) in the bucket.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_prefix
     }
     /// Consumes the builder and constructs a [`ExportTaskS3LocationRequest`](crate::types::ExportTaskS3LocationRequest).
     pub fn build(self) -> crate::types::ExportTaskS3LocationRequest {
         crate::types::ExportTaskS3LocationRequest {
-            s3_bucket: self.s3_bucket,
-            s3_prefix: self.s3_prefix,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_prefix: self.s3_prefix
+            ,
         }
     }
 }
+

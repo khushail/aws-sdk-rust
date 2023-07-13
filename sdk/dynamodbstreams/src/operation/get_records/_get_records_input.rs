@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>GetRecords</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecordsInput {
+pub struct GetRecordsInput  {
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
     #[doc(hidden)]
     pub shard_iterator: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct GetRecordsInput {
 }
 impl GetRecordsInput {
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
-    pub fn shard_iterator(&self) -> ::std::option::Option<&str> {
+    pub fn shard_iterator(&self) -> ::std::option::Option<& str> {
         self.shard_iterator.as_deref()
     }
     /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
@@ -30,29 +30,24 @@ impl GetRecordsInput {
 
 /// A builder for [`GetRecordsInput`](crate::operation::get_records::GetRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordsInputBuilder {
     pub(crate) shard_iterator: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl GetRecordsInputBuilder {
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
-    pub fn shard_iterator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_iterator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
-    pub fn set_shard_iterator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.shard_iterator = input;
-        self
+    pub fn set_shard_iterator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.shard_iterator = input; self
+    }
+    /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
+    pub fn get_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_iterator
     }
     /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -61,19 +56,22 @@ impl GetRecordsInputBuilder {
     }
     /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`GetRecordsInput`](crate::operation::get_records::GetRecordsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_records::GetRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_records::GetRecordsInput {
-            shard_iterator: self.shard_iterator,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_records::GetRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_records::GetRecordsInput {
+                shard_iterator: self.shard_iterator
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

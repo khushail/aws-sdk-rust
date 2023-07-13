@@ -3,7 +3,7 @@
 /// <p>A filter for annotation import jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnnotationImportJobsFilter {
+pub struct ListAnnotationImportJobsFilter  {
     /// <p>A status to filter on.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
@@ -13,11 +13,11 @@ pub struct ListAnnotationImportJobsFilter {
 }
 impl ListAnnotationImportJobsFilter {
     /// <p>A status to filter on.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p>A store name to filter on.</p>
-    pub fn store_name(&self) -> ::std::option::Option<&str> {
+    pub fn store_name(&self) -> ::std::option::Option<& str> {
         self.store_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ListAnnotationImportJobsFilter {
 
 /// A builder for [`ListAnnotationImportJobsFilter`](crate::types::ListAnnotationImportJobsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnnotationImportJobsFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) store_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl ListAnnotationImportJobsFilterBuilder {
     }
     /// <p>A status to filter on.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>A status to filter on.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>A store name to filter on.</p>
     pub fn store_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl ListAnnotationImportJobsFilterBuilder {
     }
     /// <p>A store name to filter on.</p>
     pub fn set_store_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.store_name = input;
-        self
+        self.store_name = input; self
+    }
+    /// <p>A store name to filter on.</p>
+    pub fn get_store_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.store_name
     }
     /// Consumes the builder and constructs a [`ListAnnotationImportJobsFilter`](crate::types::ListAnnotationImportJobsFilter).
     pub fn build(self) -> crate::types::ListAnnotationImportJobsFilter {
         crate::types::ListAnnotationImportJobsFilter {
-            status: self.status,
-            store_name: self.store_name,
+            status: self.status
+            ,
+            store_name: self.store_name
+            ,
         }
     }
 }
+

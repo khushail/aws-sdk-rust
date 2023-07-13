@@ -3,7 +3,7 @@
 /// <p>Provides information about text documents indexed in an index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextDocumentStatistics {
+pub struct TextDocumentStatistics  {
     /// <p>The number of text documents indexed.</p>
     #[doc(hidden)]
     pub indexed_text_documents_count: i32,
@@ -30,9 +30,7 @@ impl TextDocumentStatistics {
 
 /// A builder for [`TextDocumentStatistics`](crate::types::TextDocumentStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextDocumentStatisticsBuilder {
     pub(crate) indexed_text_documents_count: ::std::option::Option<i32>,
     pub(crate) indexed_text_bytes: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl TextDocumentStatisticsBuilder {
     }
     /// <p>The number of text documents indexed.</p>
     pub fn set_indexed_text_documents_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.indexed_text_documents_count = input;
-        self
+        self.indexed_text_documents_count = input; self
+    }
+    /// <p>The number of text documents indexed.</p>
+    pub fn get_indexed_text_documents_count(&self) -> &::std::option::Option<i32> {
+        &self.indexed_text_documents_count
     }
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn indexed_text_bytes(mut self, input: i64) -> Self {
@@ -55,14 +56,22 @@ impl TextDocumentStatisticsBuilder {
     }
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn set_indexed_text_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.indexed_text_bytes = input;
-        self
+        self.indexed_text_bytes = input; self
+    }
+    /// <p>The total size, in bytes, of the indexed documents.</p>
+    pub fn get_indexed_text_bytes(&self) -> &::std::option::Option<i64> {
+        &self.indexed_text_bytes
     }
     /// Consumes the builder and constructs a [`TextDocumentStatistics`](crate::types::TextDocumentStatistics).
     pub fn build(self) -> crate::types::TextDocumentStatistics {
         crate::types::TextDocumentStatistics {
-            indexed_text_documents_count: self.indexed_text_documents_count.unwrap_or_default(),
-            indexed_text_bytes: self.indexed_text_bytes.unwrap_or_default(),
+            indexed_text_documents_count: self.indexed_text_documents_count
+                .unwrap_or_default()
+            ,
+            indexed_text_bytes: self.indexed_text_bytes
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

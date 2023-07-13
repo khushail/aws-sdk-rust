@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResolverRuleInput {
+pub struct DeleteResolverRuleInput  {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
     #[doc(hidden)]
     pub resolver_rule_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
-    pub fn resolver_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_rule_id(&self) -> ::std::option::Option<& str> {
         self.resolver_rule_id.as_deref()
     }
 }
 impl DeleteResolverRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteResolverRuleInput`](crate::operation::delete_resolver_rule::DeleteResolverRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resolver_rule::builders::DeleteResolverRuleInputBuilder {
+    pub fn builder() -> crate::operation::delete_resolver_rule::builders::DeleteResolverRuleInputBuilder {
         crate::operation::delete_resolver_rule::builders::DeleteResolverRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResolverRuleInput`](crate::operation::delete_resolver_rule::DeleteResolverRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResolverRuleInputBuilder {
     pub(crate) resolver_rule_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResolverRuleInputBuilder {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
-    pub fn resolver_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Resolver rule that you want to delete.</p>
-    pub fn set_resolver_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resolver_rule_id = input;
-        self
+    pub fn set_resolver_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resolver_rule_id = input; self
+    }
+    /// <p>The ID of the Resolver rule that you want to delete.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_rule_id
     }
     /// Consumes the builder and constructs a [`DeleteResolverRuleInput`](crate::operation::delete_resolver_rule::DeleteResolverRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resolver_rule::DeleteResolverRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resolver_rule::DeleteResolverRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_resolver_rule::DeleteResolverRuleInput {
-                resolver_rule_id: self.resolver_rule_id,
-            },
+                resolver_rule_id: self.resolver_rule_id
+                ,
+            }
         )
     }
 }
+

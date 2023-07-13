@@ -3,7 +3,7 @@
 /// <p>The template alias.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateAlias {
+pub struct TemplateAlias  {
     /// <p>The display name of the template alias.</p>
     #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct TemplateAlias {
 }
 impl TemplateAlias {
     /// <p>The display name of the template alias.</p>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template alias.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version number of the template alias.</p>
@@ -37,9 +37,7 @@ impl TemplateAlias {
 
 /// A builder for [`TemplateAlias`](crate::types::TemplateAlias).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateAliasBuilder {
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl TemplateAliasBuilder {
     }
     /// <p>The display name of the template alias.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
+    }
+    /// <p>The display name of the template alias.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
     }
     /// <p>The Amazon Resource Name (ARN) of the template alias.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl TemplateAliasBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template alias.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the template alias.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The version number of the template alias.</p>
     pub fn template_version_number(mut self, input: i64) -> Self {
@@ -73,15 +77,22 @@ impl TemplateAliasBuilder {
     }
     /// <p>The version number of the template alias.</p>
     pub fn set_template_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.template_version_number = input;
-        self
+        self.template_version_number = input; self
+    }
+    /// <p>The version number of the template alias.</p>
+    pub fn get_template_version_number(&self) -> &::std::option::Option<i64> {
+        &self.template_version_number
     }
     /// Consumes the builder and constructs a [`TemplateAlias`](crate::types::TemplateAlias).
     pub fn build(self) -> crate::types::TemplateAlias {
         crate::types::TemplateAlias {
-            alias_name: self.alias_name,
-            arn: self.arn,
-            template_version_number: self.template_version_number,
+            alias_name: self.alias_name
+            ,
+            arn: self.arn
+            ,
+            template_version_number: self.template_version_number
+            ,
         }
     }
 }
+

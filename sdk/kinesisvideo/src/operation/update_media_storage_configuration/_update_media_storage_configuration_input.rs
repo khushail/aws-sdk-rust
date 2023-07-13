@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMediaStorageConfigurationInput {
+pub struct UpdateMediaStorageConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
@@ -12,32 +12,27 @@ pub struct UpdateMediaStorageConfigurationInput {
 }
 impl UpdateMediaStorageConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn media_storage_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MediaStorageConfiguration> {
+    pub fn media_storage_configuration(&self) -> ::std::option::Option<& crate::types::MediaStorageConfiguration> {
         self.media_storage_configuration.as_ref()
     }
 }
 impl UpdateMediaStorageConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateMediaStorageConfigurationInput`](crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput).
-    pub fn builder() -> crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationInputBuilder {
         crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMediaStorageConfigurationInput`](crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMediaStorageConfigurationInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) media_storage_configuration:
-        ::std::option::Option<crate::types::MediaStorageConfiguration>,
+    pub(crate) media_storage_configuration: ::std::option::Option<crate::types::MediaStorageConfiguration>,
 }
 impl UpdateMediaStorageConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
@@ -47,32 +42,27 @@ impl UpdateMediaStorageConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn media_storage_configuration(
-        mut self,
-        input: crate::types::MediaStorageConfiguration,
-    ) -> Self {
+    pub fn media_storage_configuration(mut self, input: crate::types::MediaStorageConfiguration) -> Self {
         self.media_storage_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn set_media_storage_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStorageConfiguration>,
-    ) -> Self {
-        self.media_storage_configuration = input;
-        self
+    pub fn set_media_storage_configuration(mut self, input: ::std::option::Option<crate::types::MediaStorageConfiguration>) -> Self {
+        self.media_storage_configuration = input; self
+    }
+    /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    pub fn get_media_storage_configuration(&self) -> &::std::option::Option<crate::types::MediaStorageConfiguration> {
+        &self.media_storage_configuration
     }
     /// Consumes the builder and constructs a [`UpdateMediaStorageConfigurationInput`](crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput {
                 channel_arn: self.channel_arn
@@ -83,3 +73,4 @@ impl UpdateMediaStorageConfigurationInputBuilder {
         )
     }
 }
+

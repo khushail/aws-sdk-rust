@@ -3,7 +3,7 @@
 /// <p>Output of a update lens review call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLensReviewOutput {
+pub struct UpdateLensReviewOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
@@ -14,32 +14,29 @@ pub struct UpdateLensReviewOutput {
 }
 impl UpdateLensReviewOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>A lens review of a question.</p>
-    pub fn lens_review(&self) -> ::std::option::Option<&crate::types::LensReview> {
+    pub fn lens_review(&self) -> ::std::option::Option<& crate::types::LensReview> {
         self.lens_review.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateLensReviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateLensReviewOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLensReviewOutput`](crate::operation::update_lens_review::UpdateLensReviewOutput).
-    pub fn builder() -> crate::operation::update_lens_review::builders::UpdateLensReviewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_lens_review::builders::UpdateLensReviewOutputBuilder {
         crate::operation::update_lens_review::builders::UpdateLensReviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLensReviewOutput`](crate::operation::update_lens_review::UpdateLensReviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLensReviewOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_review: ::std::option::Option<crate::types::LensReview>,
@@ -53,8 +50,11 @@ impl UpdateLensReviewOutputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
     }
     /// <p>A lens review of a question.</p>
     pub fn lens_review(mut self, input: crate::types::LensReview) -> Self {
@@ -62,28 +62,31 @@ impl UpdateLensReviewOutputBuilder {
         self
     }
     /// <p>A lens review of a question.</p>
-    pub fn set_lens_review(
-        mut self,
-        input: ::std::option::Option<crate::types::LensReview>,
-    ) -> Self {
-        self.lens_review = input;
-        self
+    pub fn set_lens_review(mut self, input: ::std::option::Option<crate::types::LensReview>) -> Self {
+        self.lens_review = input; self
+    }
+    /// <p>A lens review of a question.</p>
+    pub fn get_lens_review(&self) -> &::std::option::Option<crate::types::LensReview> {
+        &self.lens_review
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateLensReviewOutput`](crate::operation::update_lens_review::UpdateLensReviewOutput).
     pub fn build(self) -> crate::operation::update_lens_review::UpdateLensReviewOutput {
         crate::operation::update_lens_review::UpdateLensReviewOutput {
-            workload_id: self.workload_id,
-            lens_review: self.lens_review,
+            workload_id: self.workload_id
+            ,
+            lens_review: self.lens_review
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,133 +3,114 @@ pub use crate::operation::update_alarm_model::_update_alarm_model_output::Update
 
 pub use crate::operation::update_alarm_model::_update_alarm_model_input::UpdateAlarmModelInputBuilder;
 
+impl UpdateAlarmModelInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_alarm_model::UpdateAlarmModelOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_alarm_model::UpdateAlarmModelError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_alarm_model();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateAlarmModel`.
-///
+/// 
 /// <p>Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created again as new data arrives.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAlarmModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder,
+                    inner: crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder,
 }
-impl UpdateAlarmModelFluentBuilder {
+impl UpdateAlarmModelFluentBuilder  {
     /// Creates a new `UpdateAlarmModel`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_alarm_model::UpdateAlarmModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_alarm_model::UpdateAlarmModelError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateAlarmModel as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_alarm_model::UpdateAlarmModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_alarm_model::UpdateAlarmModelError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_alarm_model::UpdateAlarmModel, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_alarm_model::UpdateAlarmModelError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_alarm_model::UpdateAlarmModelOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_alarm_model::UpdateAlarmModelError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_alarm_model::UpdateAlarmModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_alarm_model::UpdateAlarmModelError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_alarm_model::UpdateAlarmModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_alarm_model::UpdateAlarmModelError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_alarm_model::UpdateAlarmModelOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_alarm_model::UpdateAlarmModelError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_alarm_model::UpdateAlarmModel, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_alarm_model::UpdateAlarmModelError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_model_name(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_model_name(input);
         self
     }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alarm_model_name()
+    }
     /// <p>The description of the alarm model.</p>
-    pub fn alarm_model_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_model_description(input.into());
         self
     }
     /// <p>The description of the alarm model.</p>
-    pub fn set_alarm_model_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_model_description(input);
         self
+    }
+    /// <p>The description of the alarm model.</p>
+    pub fn get_alarm_model_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alarm_model_description()
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +122,10 @@ impl UpdateAlarmModelFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
     pub fn severity(mut self, input: i32) -> Self {
         self.inner = self.inner.severity(input);
@@ -150,6 +135,10 @@ impl UpdateAlarmModelFluentBuilder {
     pub fn set_severity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_severity(input);
         self
+    }
+    /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_severity()
     }
     /// <p>Defines when your alarm is invoked.</p>
     pub fn alarm_rule(mut self, input: crate::types::AlarmRule) -> Self {
@@ -161,18 +150,23 @@ impl UpdateAlarmModelFluentBuilder {
         self.inner = self.inner.set_alarm_rule(input);
         self
     }
+    /// <p>Defines when your alarm is invoked.</p>
+    pub fn get_alarm_rule(&self) -> &::std::option::Option<crate::types::AlarmRule> {
+        self.inner.get_alarm_rule()
+    }
     /// <p>Contains information about one or more notification actions.</p>
     pub fn alarm_notification(mut self, input: crate::types::AlarmNotification) -> Self {
         self.inner = self.inner.alarm_notification(input);
         self
     }
     /// <p>Contains information about one or more notification actions.</p>
-    pub fn set_alarm_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmNotification>,
-    ) -> Self {
+    pub fn set_alarm_notification(mut self, input: ::std::option::Option<crate::types::AlarmNotification>) -> Self {
         self.inner = self.inner.set_alarm_notification(input);
         self
+    }
+    /// <p>Contains information about one or more notification actions.</p>
+    pub fn get_alarm_notification(&self) -> &::std::option::Option<crate::types::AlarmNotification> {
+        self.inner.get_alarm_notification()
     }
     /// <p>Contains information about one or more alarm actions.</p>
     pub fn alarm_event_actions(mut self, input: crate::types::AlarmEventActions) -> Self {
@@ -180,12 +174,13 @@ impl UpdateAlarmModelFluentBuilder {
         self
     }
     /// <p>Contains information about one or more alarm actions.</p>
-    pub fn set_alarm_event_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmEventActions>,
-    ) -> Self {
+    pub fn set_alarm_event_actions(mut self, input: ::std::option::Option<crate::types::AlarmEventActions>) -> Self {
         self.inner = self.inner.set_alarm_event_actions(input);
         self
+    }
+    /// <p>Contains information about one or more alarm actions.</p>
+    pub fn get_alarm_event_actions(&self) -> &::std::option::Option<crate::types::AlarmEventActions> {
+        self.inner.get_alarm_event_actions()
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub fn alarm_capabilities(mut self, input: crate::types::AlarmCapabilities) -> Self {
@@ -193,11 +188,13 @@ impl UpdateAlarmModelFluentBuilder {
         self
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn set_alarm_capabilities(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmCapabilities>,
-    ) -> Self {
+    pub fn set_alarm_capabilities(mut self, input: ::std::option::Option<crate::types::AlarmCapabilities>) -> Self {
         self.inner = self.inner.set_alarm_capabilities(input);
         self
     }
+    /// <p>Contains the configuration information of alarm state changes.</p>
+    pub fn get_alarm_capabilities(&self) -> &::std::option::Option<crate::types::AlarmCapabilities> {
+        self.inner.get_alarm_capabilities()
+    }
 }
+

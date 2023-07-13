@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectDataShareInput {
+pub struct RejectDataShareInput  {
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
     #[doc(hidden)]
     pub data_share_arn: ::std::option::Option<::std::string::String>,
 }
 impl RejectDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
-    pub fn data_share_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_share_arn(&self) -> ::std::option::Option<& str> {
         self.data_share_arn.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl RejectDataShareInput {
 
 /// A builder for [`RejectDataShareInput`](crate::operation::reject_data_share::RejectDataShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectDataShareInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
 }
 impl RejectDataShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
-    pub fn data_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
-    pub fn set_data_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.data_share_arn = input;
-        self
+    pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_share_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+    pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_share_arn
     }
     /// Consumes the builder and constructs a [`RejectDataShareInput`](crate::operation::reject_data_share::RejectDataShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_data_share::RejectDataShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reject_data_share::RejectDataShareInput {
-            data_share_arn: self.data_share_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_data_share::RejectDataShareInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reject_data_share::RejectDataShareInput {
+                data_share_arn: self.data_share_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateApprovedOriginInput {
+pub struct AssociateApprovedOriginInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct AssociateApprovedOriginInput {
 }
 impl AssociateApprovedOriginInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The domain to add to your allow list.</p>
-    pub fn origin(&self) -> ::std::option::Option<&str> {
+    pub fn origin(&self) -> ::std::option::Option<& str> {
         self.origin.as_deref()
     }
 }
 impl AssociateApprovedOriginInput {
     /// Creates a new builder-style object to manufacture [`AssociateApprovedOriginInput`](crate::operation::associate_approved_origin::AssociateApprovedOriginInput).
-    pub fn builder(
-    ) -> crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder {
         crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateApprovedOriginInput`](crate::operation::associate_approved_origin::AssociateApprovedOriginInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApprovedOriginInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl AssociateApprovedOriginInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The domain to add to your allow list.</p>
     pub fn origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl AssociateApprovedOriginInputBuilder {
     }
     /// <p>The domain to add to your allow list.</p>
     pub fn set_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
+    }
+    /// <p>The domain to add to your allow list.</p>
+    pub fn get_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin
     }
     /// Consumes the builder and constructs a [`AssociateApprovedOriginInput`](crate::operation::associate_approved_origin::AssociateApprovedOriginInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_approved_origin::AssociateApprovedOriginInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_approved_origin::AssociateApprovedOriginInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_approved_origin::AssociateApprovedOriginInput {
-                instance_id: self.instance_id,
-                origin: self.origin,
-            },
+                instance_id: self.instance_id
+                ,
+                origin: self.origin
+                ,
+            }
         )
     }
 }
+

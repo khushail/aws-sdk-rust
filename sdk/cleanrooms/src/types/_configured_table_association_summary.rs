@@ -3,7 +3,7 @@
 /// <p>The configured table association summary for the objects listed by the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfiguredTableAssociationSummary {
+pub struct ConfiguredTableAssociationSummary  {
     /// <p>The unique configured table ID that this configured table association refers to.</p>
     #[doc(hidden)]
     pub configured_table_id: ::std::option::Option<::std::string::String>,
@@ -31,35 +31,35 @@ pub struct ConfiguredTableAssociationSummary {
 }
 impl ConfiguredTableAssociationSummary {
     /// <p>The unique configured table ID that this configured table association refers to.</p>
-    pub fn configured_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn configured_table_id(&self) -> ::std::option::Option<& str> {
         self.configured_table_id.as_deref()
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn membership_id(&self) -> ::std::option::Option<&str> {
+    pub fn membership_id(&self) -> ::std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
-    pub fn membership_arn(&self) -> ::std::option::Option<&str> {
+    pub fn membership_arn(&self) -> ::std::option::Option<& str> {
         self.membership_arn.as_deref()
     }
     /// <p>The name of the configured table association. The table is identified by this name when running Protected Queries against the underlying data.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time the configured table association was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the configured table association was last updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The unique ID for the configured table association.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ARN for the configured table association.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl ConfiguredTableAssociationSummary {
 
 /// A builder for [`ConfiguredTableAssociationSummary`](crate::types::ConfiguredTableAssociationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfiguredTableAssociationSummaryBuilder {
     pub(crate) configured_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_id: ::std::option::Option<::std::string::String>,
@@ -87,52 +85,43 @@ pub struct ConfiguredTableAssociationSummaryBuilder {
 }
 impl ConfiguredTableAssociationSummaryBuilder {
     /// <p>The unique configured table ID that this configured table association refers to.</p>
-    pub fn configured_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique configured table ID that this configured table association refers to.</p>
-    pub fn set_configured_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.configured_table_id = input;
-        self
+    pub fn set_configured_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configured_table_id = input; self
+    }
+    /// <p>The unique configured table ID that this configured table association refers to.</p>
+    pub fn get_configured_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configured_table_id
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn membership_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn set_membership_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.membership_id = input;
-        self
+    pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.membership_id = input; self
+    }
+    /// <p>The unique ID for the membership that the configured table association belongs to.</p>
+    pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_id
     }
     /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
-    pub fn membership_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
-    pub fn set_membership_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.membership_arn = input;
-        self
+    pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.membership_arn = input; self
+    }
+    /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
+    pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_arn
     }
     /// <p>The name of the configured table association. The table is identified by this name when running Protected Queries against the underlying data.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,8 +130,11 @@ impl ConfiguredTableAssociationSummaryBuilder {
     }
     /// <p>The name of the configured table association. The table is identified by this name when running Protected Queries against the underlying data.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the configured table association. The table is identified by this name when running Protected Queries against the underlying data.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time the configured table association was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,12 +142,12 @@ impl ConfiguredTableAssociationSummaryBuilder {
         self
     }
     /// <p>The time the configured table association was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
+    }
+    /// <p>The time the configured table association was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The time the configured table association was last updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -163,12 +155,12 @@ impl ConfiguredTableAssociationSummaryBuilder {
         self
     }
     /// <p>The time the configured table association was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_time = input;
-        self
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input; self
+    }
+    /// <p>The time the configured table association was last updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// <p>The unique ID for the configured table association.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,8 +169,11 @@ impl ConfiguredTableAssociationSummaryBuilder {
     }
     /// <p>The unique ID for the configured table association.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique ID for the configured table association.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The unique ARN for the configured table association.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,20 +182,32 @@ impl ConfiguredTableAssociationSummaryBuilder {
     }
     /// <p>The unique ARN for the configured table association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The unique ARN for the configured table association.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`ConfiguredTableAssociationSummary`](crate::types::ConfiguredTableAssociationSummary).
     pub fn build(self) -> crate::types::ConfiguredTableAssociationSummary {
         crate::types::ConfiguredTableAssociationSummary {
-            configured_table_id: self.configured_table_id,
-            membership_id: self.membership_id,
-            membership_arn: self.membership_arn,
-            name: self.name,
-            create_time: self.create_time,
-            update_time: self.update_time,
-            id: self.id,
-            arn: self.arn,
+            configured_table_id: self.configured_table_id
+            ,
+            membership_id: self.membership_id
+            ,
+            membership_arn: self.membership_arn
+            ,
+            name: self.name
+            ,
+            create_time: self.create_time
+            ,
+            update_time: self.update_time
+            ,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

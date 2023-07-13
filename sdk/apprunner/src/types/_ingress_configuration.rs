@@ -3,7 +3,7 @@
 /// <p>Network configuration settings for inbound network traffic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngressConfiguration {
+pub struct IngressConfiguration  {
     /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
     #[doc(hidden)]
     pub is_publicly_accessible: bool,
@@ -23,9 +23,7 @@ impl IngressConfiguration {
 
 /// A builder for [`IngressConfiguration`](crate::types::IngressConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngressConfigurationBuilder {
     pub(crate) is_publicly_accessible: ::std::option::Option<bool>,
 }
@@ -37,13 +35,19 @@ impl IngressConfigurationBuilder {
     }
     /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
     pub fn set_is_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_publicly_accessible = input;
-        self
+        self.is_publicly_accessible = input; self
+    }
+    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
+    pub fn get_is_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.is_publicly_accessible
     }
     /// Consumes the builder and constructs a [`IngressConfiguration`](crate::types::IngressConfiguration).
     pub fn build(self) -> crate::types::IngressConfiguration {
         crate::types::IngressConfiguration {
-            is_publicly_accessible: self.is_publicly_accessible.unwrap_or_default(),
+            is_publicly_accessible: self.is_publicly_accessible
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

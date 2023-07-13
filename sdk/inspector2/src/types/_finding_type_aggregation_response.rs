@@ -3,7 +3,7 @@
 /// <p>A response that contains the results of a finding type aggregation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingTypeAggregationResponse {
+pub struct FindingTypeAggregationResponse  {
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct FindingTypeAggregationResponse {
 }
 impl FindingTypeAggregationResponse {
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The value to sort results by.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl FindingTypeAggregationResponse {
 
 /// A builder for [`FindingTypeAggregationResponse`](crate::types::FindingTypeAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingTypeAggregationResponseBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
@@ -45,8 +43,11 @@ impl FindingTypeAggregationResponseBuilder {
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The value to sort results by.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -54,18 +55,21 @@ impl FindingTypeAggregationResponseBuilder {
         self
     }
     /// <p>The value to sort results by.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
-        self.severity_counts = input;
-        self
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
+        self.severity_counts = input; self
+    }
+    /// <p>The value to sort results by.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
     }
     /// Consumes the builder and constructs a [`FindingTypeAggregationResponse`](crate::types::FindingTypeAggregationResponse).
     pub fn build(self) -> crate::types::FindingTypeAggregationResponse {
         crate::types::FindingTypeAggregationResponse {
-            account_id: self.account_id,
-            severity_counts: self.severity_counts,
+            account_id: self.account_id
+            ,
+            severity_counts: self.severity_counts
+            ,
         }
     }
 }
+

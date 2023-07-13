@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateVpcWithHostedZoneOutput {
+pub struct AssociateVpcWithHostedZoneOutput  {
     /// <p>A complex type that describes the changes made to your hosted zone.</p>
     #[doc(hidden)]
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
@@ -11,27 +11,25 @@ pub struct AssociateVpcWithHostedZoneOutput {
 }
 impl AssociateVpcWithHostedZoneOutput {
     /// <p>A complex type that describes the changes made to your hosted zone.</p>
-    pub fn change_info(&self) -> ::std::option::Option<&crate::types::ChangeInfo> {
+    pub fn change_info(&self) -> ::std::option::Option<& crate::types::ChangeInfo> {
         self.change_info.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateVpcWithHostedZoneOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateVpcWithHostedZoneOutput {
     /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneOutput`](crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput).
-    pub fn builder() -> crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneOutputBuilder{
+    pub fn builder() -> crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneOutputBuilder {
         crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateVpcWithHostedZoneOutput`](crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateVpcWithHostedZoneOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
@@ -43,29 +41,29 @@ impl AssociateVpcWithHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that describes the changes made to your hosted zone.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
-        self.change_info = input;
-        self
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
+        self.change_info = input; self
+    }
+    /// <p>A complex type that describes the changes made to your hosted zone.</p>
+    pub fn get_change_info(&self) -> &::std::option::Option<crate::types::ChangeInfo> {
+        &self.change_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateVpcWithHostedZoneOutput`](crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput {
+    pub fn build(self) -> crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput {
         crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput {
-            change_info: self.change_info,
+            change_info: self.change_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

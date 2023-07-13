@@ -3,14 +3,14 @@
 /// <p>Defines the query to run against an object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Query {
+pub struct Query  {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
     #[doc(hidden)]
     pub selectors: ::std::option::Option<::std::vec::Vec<crate::types::Selector>>,
 }
 impl Query {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    pub fn selectors(&self) -> ::std::option::Option<&[crate::types::Selector]> {
+    pub fn selectors(&self) -> ::std::option::Option<& [crate::types::Selector]> {
         self.selectors.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Query {
 
 /// A builder for [`Query`](crate::types::Query).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryBuilder {
     pub(crate) selectors: ::std::option::Option<::std::vec::Vec<crate::types::Selector>>,
 }
@@ -37,22 +35,24 @@ impl QueryBuilder {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
     pub fn selectors(mut self, input: crate::types::Selector) -> Self {
         let mut v = self.selectors.unwrap_or_default();
-        v.push(input);
-        self.selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    pub fn set_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Selector>>,
-    ) -> Self {
-        self.selectors = input;
-        self
+    pub fn set_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Selector>>) -> Self {
+        self.selectors = input; self
+    }
+    /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
+    pub fn get_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Selector>> {
+        &self.selectors
     }
     /// Consumes the builder and constructs a [`Query`](crate::types::Query).
     pub fn build(self) -> crate::types::Query {
         crate::types::Query {
-            selectors: self.selectors,
+            selectors: self.selectors
+            ,
         }
     }
 }
+

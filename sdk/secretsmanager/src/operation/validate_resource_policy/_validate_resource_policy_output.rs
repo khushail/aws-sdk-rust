@@ -2,14 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidateResourcePolicyOutput {
+pub struct ValidateResourcePolicyOutput  {
     /// <p>True if your policy passes validation, otherwise false.</p>
     #[doc(hidden)]
     pub policy_validation_passed: bool,
     /// <p>Validation errors if your policy didn't pass validation.</p>
     #[doc(hidden)]
-    pub validation_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
+    pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
     _request_id: Option<String>,
 }
 impl ValidateResourcePolicyOutput {
@@ -18,35 +17,28 @@ impl ValidateResourcePolicyOutput {
         self.policy_validation_passed
     }
     /// <p>Validation errors if your policy didn't pass validation.</p>
-    pub fn validation_errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ValidationErrorsEntry]> {
+    pub fn validation_errors(&self) -> ::std::option::Option<& [crate::types::ValidationErrorsEntry]> {
         self.validation_errors.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ValidateResourcePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ValidateResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyOutput`](crate::operation::validate_resource_policy::ValidateResourcePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::validate_resource_policy::builders::ValidateResourcePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::validate_resource_policy::builders::ValidateResourcePolicyOutputBuilder {
         crate::operation::validate_resource_policy::builders::ValidateResourcePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateResourcePolicyOutput`](crate::operation::validate_resource_policy::ValidateResourcePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateResourcePolicyOutputBuilder {
     pub(crate) policy_validation_passed: ::std::option::Option<bool>,
-    pub(crate) validation_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
+    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
     _request_id: Option<String>,
 }
 impl ValidateResourcePolicyOutputBuilder {
@@ -57,8 +49,11 @@ impl ValidateResourcePolicyOutputBuilder {
     }
     /// <p>True if your policy passes validation, otherwise false.</p>
     pub fn set_policy_validation_passed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.policy_validation_passed = input;
-        self
+        self.policy_validation_passed = input; self
+    }
+    /// <p>True if your policy passes validation, otherwise false.</p>
+    pub fn get_policy_validation_passed(&self) -> &::std::option::Option<bool> {
+        &self.policy_validation_passed
     }
     /// Appends an item to `validation_errors`.
     ///
@@ -67,33 +62,37 @@ impl ValidateResourcePolicyOutputBuilder {
     /// <p>Validation errors if your policy didn't pass validation.</p>
     pub fn validation_errors(mut self, input: crate::types::ValidationErrorsEntry) -> Self {
         let mut v = self.validation_errors.unwrap_or_default();
-        v.push(input);
-        self.validation_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Validation errors if your policy didn't pass validation.</p>
-    pub fn set_validation_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
-    ) -> Self {
-        self.validation_errors = input;
-        self
+    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>) -> Self {
+        self.validation_errors = input; self
+    }
+    /// <p>Validation errors if your policy didn't pass validation.</p>
+    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>> {
+        &self.validation_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ValidateResourcePolicyOutput`](crate::operation::validate_resource_policy::ValidateResourcePolicyOutput).
     pub fn build(self) -> crate::operation::validate_resource_policy::ValidateResourcePolicyOutput {
         crate::operation::validate_resource_policy::ValidateResourcePolicyOutput {
-            policy_validation_passed: self.policy_validation_passed.unwrap_or_default(),
-            validation_errors: self.validation_errors,
+            policy_validation_passed: self.policy_validation_passed
+                .unwrap_or_default()
+            ,
+            validation_errors: self.validation_errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

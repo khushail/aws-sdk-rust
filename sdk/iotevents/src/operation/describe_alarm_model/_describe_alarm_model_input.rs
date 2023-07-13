@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlarmModelInput {
+pub struct DescribeAlarmModelInput  {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
@@ -12,76 +12,65 @@ pub struct DescribeAlarmModelInput {
 }
 impl DescribeAlarmModelInput {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> ::std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_version(&self) -> ::std::option::Option<& str> {
         self.alarm_model_version.as_deref()
     }
 }
 impl DescribeAlarmModelInput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmModelInput`](crate::operation::describe_alarm_model::DescribeAlarmModelInput).
-    pub fn builder(
-    ) -> crate::operation::describe_alarm_model::builders::DescribeAlarmModelInputBuilder {
+    pub fn builder() -> crate::operation::describe_alarm_model::builders::DescribeAlarmModelInputBuilder {
         crate::operation::describe_alarm_model::builders::DescribeAlarmModelInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAlarmModelInput`](crate::operation::describe_alarm_model::DescribeAlarmModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmModelInputBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_model_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAlarmModelInputBuilder {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.alarm_model_name = input;
-        self
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alarm_model_name = input; self
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the alarm model.</p>
-    pub fn set_alarm_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.alarm_model_version = input;
-        self
+    pub fn set_alarm_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alarm_model_version = input; self
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn get_alarm_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_version
     }
     /// Consumes the builder and constructs a [`DescribeAlarmModelInput`](crate::operation::describe_alarm_model::DescribeAlarmModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alarm_model::DescribeAlarmModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_alarm_model::DescribeAlarmModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_alarm_model::DescribeAlarmModelInput {
-                alarm_model_name: self.alarm_model_name,
-                alarm_model_version: self.alarm_model_version,
-            },
+                alarm_model_name: self.alarm_model_name
+                ,
+                alarm_model_version: self.alarm_model_version
+                ,
+            }
         )
     }
 }
+

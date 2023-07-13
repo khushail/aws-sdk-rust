@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddRoleToDbInstanceOutput {
+pub struct AddRoleToDbInstanceOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for AddRoleToDbInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AddRoleToDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`AddRoleToDbInstanceOutput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceOutputBuilder {
         crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddRoleToDbInstanceOutput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddRoleToDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl AddRoleToDbInstanceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AddRoleToDbInstanceOutput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput).
     pub fn build(self) -> crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput {
         crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput {
@@ -43,3 +40,4 @@ impl AddRoleToDbInstanceOutputBuilder {
         }
     }
 }
+

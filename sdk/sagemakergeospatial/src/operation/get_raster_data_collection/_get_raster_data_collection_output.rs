@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRasterDataCollectionOutput {
+pub struct GetRasterDataCollectionOutput  {
     /// <p>The name of the raster data collection.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -26,68 +26,58 @@ pub struct GetRasterDataCollectionOutput {
     pub image_source_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRasterDataCollectionOutput {
     /// <p>The name of the raster data collection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The raster data collection type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataCollectionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DataCollectionType> {
         self.r#type.as_ref()
     }
     /// <p>A description of the raster data collection.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URL of the description page.</p>
-    pub fn description_page_url(&self) -> ::std::option::Option<&str> {
+    pub fn description_page_url(&self) -> ::std::option::Option<& str> {
         self.description_page_url.as_deref()
     }
     /// <p>The filters supported by the raster data collection.</p>
-    pub fn supported_filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn supported_filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.supported_filters.as_deref()
     }
     /// <p>The list of image source bands in the raster data collection.</p>
-    pub fn image_source_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn image_source_bands(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.image_source_bands.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRasterDataCollectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRasterDataCollectionOutput {
     /// Creates a new builder-style object to manufacture [`GetRasterDataCollectionOutput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder {
         crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRasterDataCollectionOutput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRasterDataCollectionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -96,9 +86,7 @@ pub struct GetRasterDataCollectionOutputBuilder {
     pub(crate) description_page_url: ::std::option::Option<::std::string::String>,
     pub(crate) supported_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) image_source_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRasterDataCollectionOutputBuilder {
@@ -109,8 +97,11 @@ impl GetRasterDataCollectionOutputBuilder {
     }
     /// <p>The name of the raster data collection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the raster data collection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,8 +110,11 @@ impl GetRasterDataCollectionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The raster data collection type.</p>
     pub fn r#type(mut self, input: crate::types::DataCollectionType) -> Self {
@@ -128,12 +122,12 @@ impl GetRasterDataCollectionOutputBuilder {
         self
     }
     /// <p>The raster data collection type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCollectionType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCollectionType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The raster data collection type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCollectionType> {
+        &self.r#type
     }
     /// <p>A description of the raster data collection.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,24 +136,24 @@ impl GetRasterDataCollectionOutputBuilder {
     }
     /// <p>A description of the raster data collection.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the raster data collection.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The URL of the description page.</p>
-    pub fn description_page_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn description_page_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description_page_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the description page.</p>
-    pub fn set_description_page_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.description_page_url = input;
-        self
+    pub fn set_description_page_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description_page_url = input; self
+    }
+    /// <p>The URL of the description page.</p>
+    pub fn get_description_page_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description_page_url
     }
     /// Appends an item to `supported_filters`.
     ///
@@ -168,88 +162,86 @@ impl GetRasterDataCollectionOutputBuilder {
     /// <p>The filters supported by the raster data collection.</p>
     pub fn supported_filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.supported_filters.unwrap_or_default();
-        v.push(input);
-        self.supported_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters supported by the raster data collection.</p>
-    pub fn set_supported_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.supported_filters = input;
-        self
+    pub fn set_supported_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.supported_filters = input; self
+    }
+    /// <p>The filters supported by the raster data collection.</p>
+    pub fn get_supported_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.supported_filters
     }
     /// Appends an item to `image_source_bands`.
     ///
     /// To override the contents of this collection use [`set_image_source_bands`](Self::set_image_source_bands).
     ///
     /// <p>The list of image source bands in the raster data collection.</p>
-    pub fn image_source_bands(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_source_bands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_source_bands.unwrap_or_default();
-        v.push(input.into());
-        self.image_source_bands = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.image_source_bands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of image source bands in the raster data collection.</p>
-    pub fn set_image_source_bands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.image_source_bands = input;
-        self
+    pub fn set_image_source_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.image_source_bands = input; self
+    }
+    /// <p>The list of image source bands in the raster data collection.</p>
+    pub fn get_image_source_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_source_bands
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Each tag consists of a key and a value.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRasterDataCollectionOutput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput {
+    pub fn build(self) -> crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput {
         crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput {
-            name: self.name,
-            arn: self.arn,
-            r#type: self.r#type,
-            description: self.description,
-            description_page_url: self.description_page_url,
-            supported_filters: self.supported_filters,
-            image_source_bands: self.image_source_bands,
-            tags: self.tags,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
+            description_page_url: self.description_page_url
+            ,
+            supported_filters: self.supported_filters
+            ,
+            image_source_bands: self.image_source_bands
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

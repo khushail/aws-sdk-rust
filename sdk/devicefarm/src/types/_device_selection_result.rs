@@ -3,7 +3,7 @@
 /// <p>Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceSelectionResult {
+pub struct DeviceSelectionResult  {
     /// <p>The filters in a device selection result.</p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
@@ -16,7 +16,7 @@ pub struct DeviceSelectionResult {
 }
 impl DeviceSelectionResult {
     /// <p>The filters in a device selection result.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::DeviceFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::DeviceFilter]> {
         self.filters.as_deref()
     }
     /// <p>The number of devices that matched the device filter selection criteria.</p>
@@ -37,9 +37,7 @@ impl DeviceSelectionResult {
 
 /// A builder for [`DeviceSelectionResult`](crate::types::DeviceSelectionResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceSelectionResultBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     pub(crate) matched_devices_count: ::std::option::Option<i32>,
@@ -53,17 +51,17 @@ impl DeviceSelectionResultBuilder {
     /// <p>The filters in a device selection result.</p>
     pub fn filters(mut self, input: crate::types::DeviceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters in a device selection result.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>The filters in a device selection result.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>> {
+        &self.filters
     }
     /// <p>The number of devices that matched the device filter selection criteria.</p>
     pub fn matched_devices_count(mut self, input: i32) -> Self {
@@ -72,8 +70,11 @@ impl DeviceSelectionResultBuilder {
     }
     /// <p>The number of devices that matched the device filter selection criteria.</p>
     pub fn set_matched_devices_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.matched_devices_count = input;
-        self
+        self.matched_devices_count = input; self
+    }
+    /// <p>The number of devices that matched the device filter selection criteria.</p>
+    pub fn get_matched_devices_count(&self) -> &::std::option::Option<i32> {
+        &self.matched_devices_count
     }
     /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
     pub fn max_devices(mut self, input: i32) -> Self {
@@ -82,15 +83,22 @@ impl DeviceSelectionResultBuilder {
     }
     /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
     pub fn set_max_devices(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_devices = input;
-        self
+        self.max_devices = input; self
+    }
+    /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
+    pub fn get_max_devices(&self) -> &::std::option::Option<i32> {
+        &self.max_devices
     }
     /// Consumes the builder and constructs a [`DeviceSelectionResult`](crate::types::DeviceSelectionResult).
     pub fn build(self) -> crate::types::DeviceSelectionResult {
         crate::types::DeviceSelectionResult {
-            filters: self.filters,
-            matched_devices_count: self.matched_devices_count,
-            max_devices: self.max_devices,
+            filters: self.filters
+            ,
+            matched_devices_count: self.matched_devices_count
+            ,
+            max_devices: self.max_devices
+            ,
         }
     }
 }
+

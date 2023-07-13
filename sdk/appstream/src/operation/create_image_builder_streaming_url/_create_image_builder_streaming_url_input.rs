@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateImageBuilderStreamingUrlInput {
+pub struct CreateImageBuilderStreamingUrlInput  {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct CreateImageBuilderStreamingUrlInput {
 }
 impl CreateImageBuilderStreamingUrlInput {
     /// <p>The name of the image builder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
@@ -22,16 +22,14 @@ impl CreateImageBuilderStreamingUrlInput {
 }
 impl CreateImageBuilderStreamingUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateImageBuilderStreamingUrlInput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput).
-    pub fn builder() -> crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlInputBuilder{
+    pub fn builder() -> crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlInputBuilder {
         crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImageBuilderStreamingUrlInput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImageBuilderStreamingUrlInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) validity: ::std::option::Option<i64>,
@@ -44,8 +42,11 @@ impl CreateImageBuilderStreamingUrlInputBuilder {
     }
     /// <p>The name of the image builder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the image builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub fn validity(mut self, input: i64) -> Self {
@@ -54,16 +55,14 @@ impl CreateImageBuilderStreamingUrlInputBuilder {
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub fn set_validity(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.validity = input;
-        self
+        self.validity = input; self
+    }
+    /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<i64> {
+        &self.validity
     }
     /// Consumes the builder and constructs a [`CreateImageBuilderStreamingUrlInput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput {
                 name: self.name
@@ -74,3 +73,4 @@ impl CreateImageBuilderStreamingUrlInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncreaseNodeGroupsInGlobalReplicationGroupInput {
+pub struct IncreaseNodeGroupsInGlobalReplicationGroupInput  {
     /// <p>The name of the Global datastore</p>
     #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,14 @@ pub struct IncreaseNodeGroupsInGlobalReplicationGroupInput {
     pub node_group_count: i32,
     /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
     #[doc(hidden)]
-    pub regional_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>>,
+    pub regional_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>>,
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
     #[doc(hidden)]
     pub apply_immediately: bool,
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_replication_group_id(&self) -> ::std::option::Option<& str> {
         self.global_replication_group_id.as_deref()
     }
     /// <p>The number of node groups you wish to add</p>
@@ -27,9 +26,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         self.node_group_count
     }
     /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
-    pub fn regional_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RegionalConfiguration]> {
+    pub fn regional_configurations(&self) -> ::std::option::Option<& [crate::types::RegionalConfiguration]> {
         self.regional_configurations.as_deref()
     }
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
@@ -39,39 +36,33 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`IncreaseNodeGroupsInGlobalReplicationGroupInput`](crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput).
-    pub fn builder() -> crate::operation::increase_node_groups_in_global_replication_group::builders::IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder{
+    pub fn builder() -> crate::operation::increase_node_groups_in_global_replication_group::builders::IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         crate::operation::increase_node_groups_in_global_replication_group::builders::IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`IncreaseNodeGroupsInGlobalReplicationGroupInput`](crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_group_count: ::std::option::Option<i32>,
-    pub(crate) regional_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>>,
+    pub(crate) regional_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.global_replication_group_id = input;
-        self
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_replication_group_id = input; self
+    }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_replication_group_id
     }
     /// <p>The number of node groups you wish to add</p>
     pub fn node_group_count(mut self, input: i32) -> Self {
@@ -80,8 +71,11 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     }
     /// <p>The number of node groups you wish to add</p>
     pub fn set_node_group_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.node_group_count = input;
-        self
+        self.node_group_count = input; self
+    }
+    /// <p>The number of node groups you wish to add</p>
+    pub fn get_node_group_count(&self) -> &::std::option::Option<i32> {
+        &self.node_group_count
     }
     /// Appends an item to `regional_configurations`.
     ///
@@ -90,17 +84,17 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
     pub fn regional_configurations(mut self, input: crate::types::RegionalConfiguration) -> Self {
         let mut v = self.regional_configurations.unwrap_or_default();
-        v.push(input);
-        self.regional_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regional_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
-    pub fn set_regional_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>>,
-    ) -> Self {
-        self.regional_configurations = input;
-        self
+    pub fn set_regional_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>>) -> Self {
+        self.regional_configurations = input; self
+    }
+    /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
+    pub fn get_regional_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>> {
+        &self.regional_configurations
     }
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
@@ -109,11 +103,14 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     }
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
+        self.apply_immediately = input; self
+    }
+    /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        &self.apply_immediately
     }
     /// Consumes the builder and constructs a [`IncreaseNodeGroupsInGlobalReplicationGroupInput`](crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput {
                 global_replication_group_id: self.global_replication_group_id
@@ -130,3 +127,4 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         )
     }
 }
+

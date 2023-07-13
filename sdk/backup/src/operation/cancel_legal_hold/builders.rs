@@ -3,133 +3,114 @@ pub use crate::operation::cancel_legal_hold::_cancel_legal_hold_output::CancelLe
 
 pub use crate::operation::cancel_legal_hold::_cancel_legal_hold_input::CancelLegalHoldInputBuilder;
 
+impl CancelLegalHoldInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::cancel_legal_hold::CancelLegalHoldOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::cancel_legal_hold::CancelLegalHoldError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.cancel_legal_hold();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CancelLegalHold`.
-///
+/// 
 /// <p>This action removes the specified legal hold on a recovery point. This action can only be performed by a user with sufficient permissions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelLegalHoldFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::cancel_legal_hold::builders::CancelLegalHoldInputBuilder,
+                    inner: crate::operation::cancel_legal_hold::builders::CancelLegalHoldInputBuilder,
 }
-impl CancelLegalHoldFluentBuilder {
+impl CancelLegalHoldFluentBuilder  {
     /// Creates a new `CancelLegalHold`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::cancel_legal_hold::CancelLegalHold,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_legal_hold::CancelLegalHoldError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CancelLegalHold as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_legal_hold::builders::CancelLegalHoldInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_legal_hold::CancelLegalHoldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_legal_hold::CancelLegalHoldError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::cancel_legal_hold::CancelLegalHold, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::cancel_legal_hold::CancelLegalHoldError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::cancel_legal_hold::CancelLegalHoldOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_legal_hold::CancelLegalHoldError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_legal_hold::CancelLegalHoldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_legal_hold::CancelLegalHoldError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::cancel_legal_hold::CancelLegalHold,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_legal_hold::CancelLegalHoldError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::cancel_legal_hold::CancelLegalHoldOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_legal_hold::CancelLegalHoldError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::cancel_legal_hold::CancelLegalHold, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::cancel_legal_hold::CancelLegalHoldError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
-    pub fn legal_hold_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.legal_hold_id(input.into());
         self
     }
     /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
-    pub fn set_legal_hold_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_legal_hold_id(input);
         self
     }
+    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_legal_hold_id()
+    }
     /// <p>String describing the reason for removing the legal hold.</p>
-    pub fn cancel_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cancel_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cancel_description(input.into());
         self
     }
     /// <p>String describing the reason for removing the legal hold.</p>
-    pub fn set_cancel_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cancel_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cancel_description(input);
         self
+    }
+    /// <p>String describing the reason for removing the legal hold.</p>
+    pub fn get_cancel_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cancel_description()
     }
     /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
     pub fn retain_record_in_days(mut self, input: i64) -> Self {
@@ -141,4 +122,9 @@ impl CancelLegalHoldFluentBuilder {
         self.inner = self.inner.set_retain_record_in_days(input);
         self
     }
+    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    pub fn get_retain_record_in_days(&self) -> &::std::option::Option<i64> {
+        self.inner.get_retain_record_in_days()
+    }
 }
+

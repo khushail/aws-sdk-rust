@@ -3,14 +3,14 @@
 /// <p>The options that determine the presentation of the progress bar of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProgressBarOptions {
+pub struct ProgressBarOptions  {
     /// <p>The visibility of the progress bar.</p>
     #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl ProgressBarOptions {
     /// <p>The visibility of the progress bar.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ProgressBarOptions {
 
 /// A builder for [`ProgressBarOptions`](crate::types::ProgressBarOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProgressBarOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
@@ -36,17 +34,19 @@ impl ProgressBarOptionsBuilder {
         self
     }
     /// <p>The visibility of the progress bar.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.visibility = input;
-        self
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.visibility = input; self
+    }
+    /// <p>The visibility of the progress bar.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`ProgressBarOptions`](crate::types::ProgressBarOptions).
     pub fn build(self) -> crate::types::ProgressBarOptions {
         crate::types::ProgressBarOptions {
-            visibility: self.visibility,
+            visibility: self.visibility
+            ,
         }
     }
 }
+

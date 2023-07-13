@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInputInput {
+pub struct CreateInputInput  {
     /// <p>The name you want to give to the input.</p>
     #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateInputInput {
 }
 impl CreateInputInput {
     /// <p>The name you want to give to the input.</p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
+    pub fn input_name(&self) -> ::std::option::Option<& str> {
         self.input_name.as_deref()
     }
     /// <p>A brief description of the input.</p>
-    pub fn input_description(&self) -> ::std::option::Option<&str> {
+    pub fn input_description(&self) -> ::std::option::Option<& str> {
         self.input_description.as_deref()
     }
     /// <p>The definition of the input.</p>
-    pub fn input_definition(&self) -> ::std::option::Option<&crate::types::InputDefinition> {
+    pub fn input_definition(&self) -> ::std::option::Option<& crate::types::InputDefinition> {
         self.input_definition.as_ref()
     }
     /// <p>Metadata that can be used to manage the input.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -43,9 +43,7 @@ impl CreateInputInput {
 
 /// A builder for [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInputInputBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
     pub(crate) input_description: ::std::option::Option<::std::string::String>,
@@ -60,24 +58,24 @@ impl CreateInputInputBuilder {
     }
     /// <p>The name you want to give to the input.</p>
     pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
+    }
+    /// <p>The name you want to give to the input.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
     }
     /// <p>A brief description of the input.</p>
-    pub fn input_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the input.</p>
-    pub fn set_input_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.input_description = input;
-        self
+    pub fn set_input_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.input_description = input; self
+    }
+    /// <p>A brief description of the input.</p>
+    pub fn get_input_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_description
     }
     /// <p>The definition of the input.</p>
     pub fn input_definition(mut self, input: crate::types::InputDefinition) -> Self {
@@ -85,12 +83,12 @@ impl CreateInputInputBuilder {
         self
     }
     /// <p>The definition of the input.</p>
-    pub fn set_input_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDefinition>,
-    ) -> Self {
-        self.input_definition = input;
-        self
+    pub fn set_input_definition(mut self, input: ::std::option::Option<crate::types::InputDefinition>) -> Self {
+        self.input_definition = input; self
+    }
+    /// <p>The definition of the input.</p>
+    pub fn get_input_definition(&self) -> &::std::option::Option<crate::types::InputDefinition> {
+        &self.input_definition
     }
     /// Appends an item to `tags`.
     ///
@@ -99,30 +97,32 @@ impl CreateInputInputBuilder {
     /// <p>Metadata that can be used to manage the input.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata that can be used to manage the input.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Metadata that can be used to manage the input.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_input::CreateInputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_input::CreateInputInput {
-            input_name: self.input_name,
-            input_description: self.input_description,
-            input_definition: self.input_definition,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_input::CreateInputInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_input::CreateInputInput {
+                input_name: self.input_name
+                ,
+                input_description: self.input_description
+                ,
+                input_definition: self.input_definition
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

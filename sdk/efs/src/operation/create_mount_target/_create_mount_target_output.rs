@@ -3,7 +3,7 @@
 /// <p>Provides a description of a mount target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMountTargetOutput {
+pub struct CreateMountTargetOutput  {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
     #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
@@ -38,64 +38,61 @@ pub struct CreateMountTargetOutput {
 }
 impl CreateMountTargetOutput {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>System-assigned mount target ID.</p>
-    pub fn mount_target_id(&self) -> ::std::option::Option<&str> {
+    pub fn mount_target_id(&self) -> ::std::option::Option<& str> {
         self.mount_target_id.as_deref()
     }
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The ID of the mount target's subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>Lifecycle state of the mount target.</p>
-    pub fn life_cycle_state(&self) -> ::std::option::Option<&crate::types::LifeCycleState> {
+    pub fn life_cycle_state(&self) -> ::std::option::Option<& crate::types::LifeCycleState> {
         self.life_cycle_state.as_ref()
     }
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-    pub fn availability_zone_name(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_name(&self) -> ::std::option::Option<& str> {
         self.availability_zone_name.as_deref()
     }
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateMountTargetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateMountTargetOutput {
     /// Creates a new builder-style object to manufacture [`CreateMountTargetOutput`](crate::operation::create_mount_target::CreateMountTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder {
+    pub fn builder() -> crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder {
         crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMountTargetOutput`](crate::operation::create_mount_target::CreateMountTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMountTargetOutputBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) mount_target_id: ::std::option::Option<::std::string::String>,
@@ -117,40 +114,37 @@ impl CreateMountTargetOutputBuilder {
     }
     /// <p>Amazon Web Services account ID that owns the resource.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
+    }
+    /// <p>Amazon Web Services account ID that owns the resource.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>System-assigned mount target ID.</p>
-    pub fn mount_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>System-assigned mount target ID.</p>
-    pub fn set_mount_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.mount_target_id = input;
-        self
+    pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mount_target_id = input; self
+    }
+    /// <p>System-assigned mount target ID.</p>
+    pub fn get_mount_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_target_id
     }
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.file_system_id = input;
-        self
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.file_system_id = input; self
+    }
+    /// <p>The ID of the file system for which the mount target is intended.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
     }
     /// <p>The ID of the mount target's subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,8 +153,11 @@ impl CreateMountTargetOutputBuilder {
     }
     /// <p>The ID of the mount target's subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
+    }
+    /// <p>The ID of the mount target's subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>Lifecycle state of the mount target.</p>
     pub fn life_cycle_state(mut self, input: crate::types::LifeCycleState) -> Self {
@@ -168,12 +165,12 @@ impl CreateMountTargetOutputBuilder {
         self
     }
     /// <p>Lifecycle state of the mount target.</p>
-    pub fn set_life_cycle_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleState>,
-    ) -> Self {
-        self.life_cycle_state = input;
-        self
+    pub fn set_life_cycle_state(mut self, input: ::std::option::Option<crate::types::LifeCycleState>) -> Self {
+        self.life_cycle_state = input; self
+    }
+    /// <p>Lifecycle state of the mount target.</p>
+    pub fn get_life_cycle_state(&self) -> &::std::option::Option<crate::types::LifeCycleState> {
+        &self.life_cycle_state
     }
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -182,56 +179,50 @@ impl CreateMountTargetOutputBuilder {
     }
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
+    }
+    /// <p>Address at which the file system can be mounted by using the mount target.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_interface_id = input; self
+    }
+    /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.availability_zone_id = input;
-        self
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input; self
+    }
+    /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-    pub fn availability_zone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-    pub fn set_availability_zone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.availability_zone_name = input;
-        self
+    pub fn set_availability_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_name = input; self
+    }
+    /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
+    pub fn get_availability_zone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_name
     }
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -240,32 +231,46 @@ impl CreateMountTargetOutputBuilder {
     }
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateMountTargetOutput`](crate::operation::create_mount_target::CreateMountTargetOutput).
     pub fn build(self) -> crate::operation::create_mount_target::CreateMountTargetOutput {
         crate::operation::create_mount_target::CreateMountTargetOutput {
-            owner_id: self.owner_id,
-            mount_target_id: self.mount_target_id,
-            file_system_id: self.file_system_id,
-            subnet_id: self.subnet_id,
-            life_cycle_state: self.life_cycle_state,
-            ip_address: self.ip_address,
-            network_interface_id: self.network_interface_id,
-            availability_zone_id: self.availability_zone_id,
-            availability_zone_name: self.availability_zone_name,
-            vpc_id: self.vpc_id,
+            owner_id: self.owner_id
+            ,
+            mount_target_id: self.mount_target_id
+            ,
+            file_system_id: self.file_system_id
+            ,
+            subnet_id: self.subnet_id
+            ,
+            life_cycle_state: self.life_cycle_state
+            ,
+            ip_address: self.ip_address
+            ,
+            network_interface_id: self.network_interface_id
+            ,
+            availability_zone_id: self.availability_zone_id
+            ,
+            availability_zone_name: self.availability_zone_name
+            ,
+            vpc_id: self.vpc_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

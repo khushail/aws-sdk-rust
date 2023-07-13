@@ -3,7 +3,7 @@
 /// <p>The request body for CreateBackendConfig.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBackendConfigInput {
+pub struct CreateBackendConfigInput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -13,28 +13,24 @@ pub struct CreateBackendConfigInput {
 }
 impl CreateBackendConfigInput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn backend_manager_app_id(&self) -> ::std::option::Option<&str> {
+    pub fn backend_manager_app_id(&self) -> ::std::option::Option<& str> {
         self.backend_manager_app_id.as_deref()
     }
 }
 impl CreateBackendConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateBackendConfigInput`](crate::operation::create_backend_config::CreateBackendConfigInput).
-    pub fn builder(
-    ) -> crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder {
-        crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder {
+        crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBackendConfigInput`](crate::operation::create_backend_config::CreateBackendConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendConfigInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_manager_app_id: ::std::option::Option<::std::string::String>,
@@ -47,37 +43,35 @@ impl CreateBackendConfigInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn backend_manager_app_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_manager_app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_manager_app_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn set_backend_manager_app_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.backend_manager_app_id = input;
-        self
+    pub fn set_backend_manager_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backend_manager_app_id = input; self
+    }
+    /// <p>The app ID for the backend manager.</p>
+    pub fn get_backend_manager_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_manager_app_id
     }
     /// Consumes the builder and constructs a [`CreateBackendConfigInput`](crate::operation::create_backend_config::CreateBackendConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_backend_config::CreateBackendConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_backend_config::CreateBackendConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_backend_config::CreateBackendConfigInput {
-                app_id: self.app_id,
-                backend_manager_app_id: self.backend_manager_app_id,
-            },
+                app_id: self.app_id
+                ,
+                backend_manager_app_id: self.backend_manager_app_id
+                ,
+            }
         )
     }
 }
+

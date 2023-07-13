@@ -3,7 +3,7 @@
 /// <p>Describes a VPC attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayVpcAttachment {
+pub struct TransitGatewayVpcAttachment  {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
@@ -34,41 +34,39 @@ pub struct TransitGatewayVpcAttachment {
 }
 impl TransitGatewayVpcAttachment {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
-    pub fn vpc_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_owner_id(&self) -> ::std::option::Option<& str> {
         self.vpc_owner_id.as_deref()
     }
     /// <p>The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayAttachmentState> {
         self.state.as_ref()
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The VPC attachment options.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayVpcAttachmentOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::TransitGatewayVpcAttachmentOptions> {
         self.options.as_ref()
     }
     /// <p>The tags for the VPC attachment.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -81,9 +79,7 @@ impl TransitGatewayVpcAttachment {
 
 /// A builder for [`TransitGatewayVpcAttachment`](crate::types::TransitGatewayVpcAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayVpcAttachmentBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
@@ -97,36 +93,30 @@ pub struct TransitGatewayVpcAttachmentBuilder {
 }
 impl TransitGatewayVpcAttachmentBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = input; self
+    }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transit_gateway_id = input;
-        self
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_id = input; self
+    }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,8 +125,11 @@ impl TransitGatewayVpcAttachmentBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
     pub fn vpc_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,8 +138,11 @@ impl TransitGatewayVpcAttachmentBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
     pub fn set_vpc_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_owner_id = input;
-        self
+        self.vpc_owner_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
+    pub fn get_vpc_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_owner_id
     }
     /// <p>The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayAttachmentState) -> Self {
@@ -154,12 +150,12 @@ impl TransitGatewayVpcAttachmentBuilder {
         self
     }
     /// <p>The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayAttachmentState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayAttachmentState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentState> {
+        &self.state
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -168,17 +164,17 @@ impl TransitGatewayVpcAttachmentBuilder {
     /// <p>The IDs of the subnets.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
+    }
+    /// <p>The IDs of the subnets.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -186,12 +182,12 @@ impl TransitGatewayVpcAttachmentBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The VPC attachment options.</p>
     pub fn options(mut self, input: crate::types::TransitGatewayVpcAttachmentOptions) -> Self {
@@ -199,12 +195,12 @@ impl TransitGatewayVpcAttachmentBuilder {
         self
     }
     /// <p>The VPC attachment options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayVpcAttachmentOptions>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayVpcAttachmentOptions>) -> Self {
+        self.options = input; self
+    }
+    /// <p>The VPC attachment options.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::TransitGatewayVpcAttachmentOptions> {
+        &self.options
     }
     /// Appends an item to `tags`.
     ///
@@ -213,30 +209,40 @@ impl TransitGatewayVpcAttachmentBuilder {
     /// <p>The tags for the VPC attachment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the VPC attachment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags for the VPC attachment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TransitGatewayVpcAttachment`](crate::types::TransitGatewayVpcAttachment).
     pub fn build(self) -> crate::types::TransitGatewayVpcAttachment {
         crate::types::TransitGatewayVpcAttachment {
-            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-            transit_gateway_id: self.transit_gateway_id,
-            vpc_id: self.vpc_id,
-            vpc_owner_id: self.vpc_owner_id,
-            state: self.state,
-            subnet_ids: self.subnet_ids,
-            creation_time: self.creation_time,
-            options: self.options,
-            tags: self.tags,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id
+            ,
+            transit_gateway_id: self.transit_gateway_id
+            ,
+            vpc_id: self.vpc_id
+            ,
+            vpc_owner_id: self.vpc_owner_id
+            ,
+            state: self.state
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            creation_time: self.creation_time
+            ,
+            options: self.options
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

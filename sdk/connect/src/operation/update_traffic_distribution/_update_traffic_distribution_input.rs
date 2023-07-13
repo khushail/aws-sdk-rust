@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTrafficDistributionInput {
+pub struct UpdateTrafficDistributionInput  {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct UpdateTrafficDistributionInput {
 }
 impl UpdateTrafficDistributionInput {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
-    pub fn telephony_config(&self) -> ::std::option::Option<&crate::types::TelephonyConfig> {
+    pub fn telephony_config(&self) -> ::std::option::Option<& crate::types::TelephonyConfig> {
         self.telephony_config.as_ref()
     }
 }
 impl UpdateTrafficDistributionInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrafficDistributionInput`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput).
-    pub fn builder() -> crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder{
+    pub fn builder() -> crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder {
         crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrafficDistributionInput`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrafficDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) telephony_config: ::std::option::Option<crate::types::TelephonyConfig>,
@@ -44,8 +42,11 @@ impl UpdateTrafficDistributionInputBuilder {
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
     pub fn telephony_config(mut self, input: crate::types::TelephonyConfig) -> Self {
@@ -53,25 +54,23 @@ impl UpdateTrafficDistributionInputBuilder {
         self
     }
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
-    pub fn set_telephony_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TelephonyConfig>,
-    ) -> Self {
-        self.telephony_config = input;
-        self
+    pub fn set_telephony_config(mut self, input: ::std::option::Option<crate::types::TelephonyConfig>) -> Self {
+        self.telephony_config = input; self
+    }
+    /// <p>The distribution of traffic between the instance and its replica(s).</p>
+    pub fn get_telephony_config(&self) -> &::std::option::Option<crate::types::TelephonyConfig> {
+        &self.telephony_config
     }
     /// Consumes the builder and constructs a [`UpdateTrafficDistributionInput`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput {
-                id: self.id,
-                telephony_config: self.telephony_config,
-            },
+                id: self.id
+                ,
+                telephony_config: self.telephony_config
+                ,
+            }
         )
     }
 }
+

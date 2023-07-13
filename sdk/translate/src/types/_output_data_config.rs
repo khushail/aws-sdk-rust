@@ -3,7 +3,7 @@
 /// <p>The output configuration properties for a batch translation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputDataConfig {
+pub struct OutputDataConfig  {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct OutputDataConfig {
 }
 impl OutputDataConfig {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn encryption_key(&self) -> ::std::option::Option<&crate::types::EncryptionKey> {
+    pub fn encryption_key(&self) -> ::std::option::Option<& crate::types::EncryptionKey> {
         self.encryption_key.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl OutputDataConfig {
 
 /// A builder for [`OutputDataConfig`](crate::types::OutputDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputDataConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
@@ -45,8 +43,11 @@ impl OutputDataConfigBuilder {
     }
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
+    }
+    /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// <p>The encryption key used to encrypt this object.</p>
     pub fn encryption_key(mut self, input: crate::types::EncryptionKey) -> Self {
@@ -54,18 +55,21 @@ impl OutputDataConfigBuilder {
         self
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
-        self.encryption_key = input;
-        self
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
+        self.encryption_key = input; self
+    }
+    /// <p>The encryption key used to encrypt this object.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::EncryptionKey> {
+        &self.encryption_key
     }
     /// Consumes the builder and constructs a [`OutputDataConfig`](crate::types::OutputDataConfig).
     pub fn build(self) -> crate::types::OutputDataConfig {
         crate::types::OutputDataConfig {
-            s3_uri: self.s3_uri,
-            encryption_key: self.encryption_key,
+            s3_uri: self.s3_uri
+            ,
+            encryption_key: self.encryption_key
+            ,
         }
     }
 }
+

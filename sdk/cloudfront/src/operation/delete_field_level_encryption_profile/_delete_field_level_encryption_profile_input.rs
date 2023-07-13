@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFieldLevelEncryptionProfileInput {
+pub struct DeleteFieldLevelEncryptionProfileInput  {
     /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DeleteFieldLevelEncryptionProfileInput {
 }
 impl DeleteFieldLevelEncryptionProfileInput {
     /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
 impl DeleteFieldLevelEncryptionProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteFieldLevelEncryptionProfileInput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput).
-    pub fn builder() -> crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileInputBuilder{
+    pub fn builder() -> crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileInputBuilder {
         crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFieldLevelEncryptionProfileInput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFieldLevelEncryptionProfileInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DeleteFieldLevelEncryptionProfileInputBuilder {
     }
     /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,11 +55,14 @@ impl DeleteFieldLevelEncryptionProfileInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteFieldLevelEncryptionProfileInput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput {
                 id: self.id
@@ -69,3 +73,4 @@ impl DeleteFieldLevelEncryptionProfileInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>At least one delegate must be associated to the resource to disable automatic replies from the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BookingOptions {
+pub struct BookingOptions  {
     /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
     #[doc(hidden)]
     pub auto_accept_requests: bool,
@@ -37,9 +37,7 @@ impl BookingOptions {
 
 /// A builder for [`BookingOptions`](crate::types::BookingOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BookingOptionsBuilder {
     pub(crate) auto_accept_requests: ::std::option::Option<bool>,
     pub(crate) auto_decline_recurring_requests: ::std::option::Option<bool>,
@@ -53,8 +51,11 @@ impl BookingOptionsBuilder {
     }
     /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
     pub fn set_auto_accept_requests(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_accept_requests = input;
-        self
+        self.auto_accept_requests = input; self
+    }
+    /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
+    pub fn get_auto_accept_requests(&self) -> &::std::option::Option<bool> {
+        &self.auto_accept_requests
     }
     /// <p>The resource's ability to automatically decline any recurring requests.</p>
     pub fn auto_decline_recurring_requests(mut self, input: bool) -> Self {
@@ -62,12 +63,12 @@ impl BookingOptionsBuilder {
         self
     }
     /// <p>The resource's ability to automatically decline any recurring requests.</p>
-    pub fn set_auto_decline_recurring_requests(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.auto_decline_recurring_requests = input;
-        self
+    pub fn set_auto_decline_recurring_requests(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_decline_recurring_requests = input; self
+    }
+    /// <p>The resource's ability to automatically decline any recurring requests.</p>
+    pub fn get_auto_decline_recurring_requests(&self) -> &::std::option::Option<bool> {
+        &self.auto_decline_recurring_requests
     }
     /// <p>The resource's ability to automatically decline any conflicting requests.</p>
     pub fn auto_decline_conflicting_requests(mut self, input: bool) -> Self {
@@ -75,23 +76,26 @@ impl BookingOptionsBuilder {
         self
     }
     /// <p>The resource's ability to automatically decline any conflicting requests.</p>
-    pub fn set_auto_decline_conflicting_requests(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.auto_decline_conflicting_requests = input;
-        self
+    pub fn set_auto_decline_conflicting_requests(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_decline_conflicting_requests = input; self
+    }
+    /// <p>The resource's ability to automatically decline any conflicting requests.</p>
+    pub fn get_auto_decline_conflicting_requests(&self) -> &::std::option::Option<bool> {
+        &self.auto_decline_conflicting_requests
     }
     /// Consumes the builder and constructs a [`BookingOptions`](crate::types::BookingOptions).
     pub fn build(self) -> crate::types::BookingOptions {
         crate::types::BookingOptions {
-            auto_accept_requests: self.auto_accept_requests.unwrap_or_default(),
-            auto_decline_recurring_requests: self
-                .auto_decline_recurring_requests
-                .unwrap_or_default(),
-            auto_decline_conflicting_requests: self
-                .auto_decline_conflicting_requests
-                .unwrap_or_default(),
+            auto_accept_requests: self.auto_accept_requests
+                .unwrap_or_default()
+            ,
+            auto_decline_recurring_requests: self.auto_decline_recurring_requests
+                .unwrap_or_default()
+            ,
+            auto_decline_conflicting_requests: self.auto_decline_conflicting_requests
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

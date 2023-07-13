@@ -3,7 +3,7 @@
 /// Placeholder documentation for CreatePartnerInputResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePartnerInputOutput {
+pub struct CreatePartnerInputOutput  {
     /// Placeholder documentation for Input
     #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::Input>,
@@ -11,28 +11,25 @@ pub struct CreatePartnerInputOutput {
 }
 impl CreatePartnerInputOutput {
     /// Placeholder documentation for Input
-    pub fn input(&self) -> ::std::option::Option<&crate::types::Input> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::Input> {
         self.input.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreatePartnerInputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreatePartnerInputOutput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerInputOutput`](crate::operation::create_partner_input::CreatePartnerInputOutput).
-    pub fn builder(
-    ) -> crate::operation::create_partner_input::builders::CreatePartnerInputOutputBuilder {
+    pub fn builder() -> crate::operation::create_partner_input::builders::CreatePartnerInputOutputBuilder {
         crate::operation::create_partner_input::builders::CreatePartnerInputOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePartnerInputOutput`](crate::operation::create_partner_input::CreatePartnerInputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePartnerInputOutputBuilder {
     pub(crate) input: ::std::option::Option<crate::types::Input>,
     _request_id: Option<String>,
@@ -45,23 +42,28 @@ impl CreatePartnerInputOutputBuilder {
     }
     /// Placeholder documentation for Input
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
+    }
+    /// Placeholder documentation for Input
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
+        &self.input
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreatePartnerInputOutput`](crate::operation::create_partner_input::CreatePartnerInputOutput).
     pub fn build(self) -> crate::operation::create_partner_input::CreatePartnerInputOutput {
         crate::operation::create_partner_input::CreatePartnerInputOutput {
-            input: self.input,
+            input: self.input
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

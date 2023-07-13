@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEc2DeepInspectionConfigurationOutput {
+pub struct GetEc2DeepInspectionConfigurationOutput  {
     /// <p>The Amazon Inspector deep inspection custom paths for your account.</p>
     #[doc(hidden)]
     pub package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,39 +19,37 @@ pub struct GetEc2DeepInspectionConfigurationOutput {
 }
 impl GetEc2DeepInspectionConfigurationOutput {
     /// <p>The Amazon Inspector deep inspection custom paths for your account.</p>
-    pub fn package_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn package_paths(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.package_paths.as_deref()
     }
     /// <p>The Amazon Inspector deep inspection custom paths for your organization.</p>
-    pub fn org_package_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn org_package_paths(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.org_package_paths.as_deref()
     }
     /// <p>The activation status of Amazon Inspector deep inspection in your account.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Ec2DeepInspectionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Ec2DeepInspectionStatus> {
         self.status.as_ref()
     }
     /// <p>An error message explaining why Amazon Inspector deep inspection configurations could not be retrieved for your account.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEc2DeepInspectionConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetEc2DeepInspectionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetEc2DeepInspectionConfigurationOutput`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput).
-    pub fn builder() -> crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationOutputBuilder {
         crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEc2DeepInspectionConfigurationOutput`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEc2DeepInspectionConfigurationOutputBuilder {
     pub(crate) package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) org_package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,44 +63,38 @@ impl GetEc2DeepInspectionConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_package_paths`](Self::set_package_paths).
     ///
     /// <p>The Amazon Inspector deep inspection custom paths for your account.</p>
-    pub fn package_paths(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.package_paths.unwrap_or_default();
-        v.push(input.into());
-        self.package_paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.package_paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Inspector deep inspection custom paths for your account.</p>
-    pub fn set_package_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.package_paths = input;
-        self
+    pub fn set_package_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.package_paths = input; self
+    }
+    /// <p>The Amazon Inspector deep inspection custom paths for your account.</p>
+    pub fn get_package_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.package_paths
     }
     /// Appends an item to `org_package_paths`.
     ///
     /// To override the contents of this collection use [`set_org_package_paths`](Self::set_org_package_paths).
     ///
     /// <p>The Amazon Inspector deep inspection custom paths for your organization.</p>
-    pub fn org_package_paths(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn org_package_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.org_package_paths.unwrap_or_default();
-        v.push(input.into());
-        self.org_package_paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.org_package_paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Inspector deep inspection custom paths for your organization.</p>
-    pub fn set_org_package_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.org_package_paths = input;
-        self
+    pub fn set_org_package_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.org_package_paths = input; self
+    }
+    /// <p>The Amazon Inspector deep inspection custom paths for your organization.</p>
+    pub fn get_org_package_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.org_package_paths
     }
     /// <p>The activation status of Amazon Inspector deep inspection in your account.</p>
     pub fn status(mut self, input: crate::types::Ec2DeepInspectionStatus) -> Self {
@@ -110,40 +102,37 @@ impl GetEc2DeepInspectionConfigurationOutputBuilder {
         self
     }
     /// <p>The activation status of Amazon Inspector deep inspection in your account.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2DeepInspectionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Ec2DeepInspectionStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The activation status of Amazon Inspector deep inspection in your account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Ec2DeepInspectionStatus> {
+        &self.status
     }
     /// <p>An error message explaining why Amazon Inspector deep inspection configurations could not be retrieved for your account.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error message explaining why Amazon Inspector deep inspection configurations could not be retrieved for your account.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>An error message explaining why Amazon Inspector deep inspection configurations could not be retrieved for your account.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetEc2DeepInspectionConfigurationOutput`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput{
+    pub fn build(self) -> crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput {
         crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput {
             package_paths: self.package_paths
             ,
@@ -157,3 +146,4 @@ impl GetEc2DeepInspectionConfigurationOutputBuilder {
         }
     }
 }
+

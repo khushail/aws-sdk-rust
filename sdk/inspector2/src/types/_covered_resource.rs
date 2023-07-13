@@ -3,7 +3,7 @@
 /// <p>An object that contains details about a resource covered by Amazon Inspector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoveredResource {
+pub struct CoveredResource  {
     /// <p>The type of the covered resource.</p>
     #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::CoverageResourceType>,
@@ -22,31 +22,38 @@ pub struct CoveredResource {
     /// <p>An object that contains details about the metadata.</p>
     #[doc(hidden)]
     pub resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
+    /// <p>The date and time the resource was last checked for vulnerabilities.</p>
+    #[doc(hidden)]
+    pub last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CoveredResource {
     /// <p>The type of the covered resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::CoverageResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::CoverageResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the covered resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
-    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<& crate::types::ScanType> {
         self.scan_type.as_ref()
     }
     /// <p>The status of the scan covering the resource.</p>
-    pub fn scan_status(&self) -> ::std::option::Option<&crate::types::ScanStatus> {
+    pub fn scan_status(&self) -> ::std::option::Option<& crate::types::ScanStatus> {
         self.scan_status.as_ref()
     }
     /// <p>An object that contains details about the metadata.</p>
-    pub fn resource_metadata(&self) -> ::std::option::Option<&crate::types::ResourceScanMetadata> {
+    pub fn resource_metadata(&self) -> ::std::option::Option<& crate::types::ResourceScanMetadata> {
         self.resource_metadata.as_ref()
+    }
+    /// <p>The date and time the resource was last checked for vulnerabilities.</p>
+    pub fn last_scanned_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
+        self.last_scanned_at.as_ref()
     }
 }
 impl CoveredResource {
@@ -58,9 +65,7 @@ impl CoveredResource {
 
 /// A builder for [`CoveredResource`](crate::types::CoveredResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoveredResourceBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::CoverageResourceType>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -68,6 +73,7 @@ pub struct CoveredResourceBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
     pub(crate) scan_status: ::std::option::Option<crate::types::ScanStatus>,
     pub(crate) resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
+    pub(crate) last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CoveredResourceBuilder {
     /// <p>The type of the covered resource.</p>
@@ -76,12 +82,12 @@ impl CoveredResourceBuilder {
         self
     }
     /// <p>The type of the covered resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::CoverageResourceType>) -> Self {
+        self.resource_type = input; self
+    }
+    /// <p>The type of the covered resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::CoverageResourceType> {
+        &self.resource_type
     }
     /// <p>The ID of the covered resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,8 +96,11 @@ impl CoveredResourceBuilder {
     }
     /// <p>The ID of the covered resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The ID of the covered resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,8 +109,11 @@ impl CoveredResourceBuilder {
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID of the covered resource.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
@@ -110,8 +122,11 @@ impl CoveredResourceBuilder {
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
     pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
-        self.scan_type = input;
-        self
+        self.scan_type = input; self
+    }
+    /// <p>The Amazon Inspector scan type covering the resource.</p>
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
+        &self.scan_type
     }
     /// <p>The status of the scan covering the resource.</p>
     pub fn scan_status(mut self, input: crate::types::ScanStatus) -> Self {
@@ -119,12 +134,12 @@ impl CoveredResourceBuilder {
         self
     }
     /// <p>The status of the scan covering the resource.</p>
-    pub fn set_scan_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanStatus>,
-    ) -> Self {
-        self.scan_status = input;
-        self
+    pub fn set_scan_status(mut self, input: ::std::option::Option<crate::types::ScanStatus>) -> Self {
+        self.scan_status = input; self
+    }
+    /// <p>The status of the scan covering the resource.</p>
+    pub fn get_scan_status(&self) -> &::std::option::Option<crate::types::ScanStatus> {
+        &self.scan_status
     }
     /// <p>An object that contains details about the metadata.</p>
     pub fn resource_metadata(mut self, input: crate::types::ResourceScanMetadata) -> Self {
@@ -132,22 +147,44 @@ impl CoveredResourceBuilder {
         self
     }
     /// <p>An object that contains details about the metadata.</p>
-    pub fn set_resource_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceScanMetadata>,
-    ) -> Self {
-        self.resource_metadata = input;
+    pub fn set_resource_metadata(mut self, input: ::std::option::Option<crate::types::ResourceScanMetadata>) -> Self {
+        self.resource_metadata = input; self
+    }
+    /// <p>An object that contains details about the metadata.</p>
+    pub fn get_resource_metadata(&self) -> &::std::option::Option<crate::types::ResourceScanMetadata> {
+        &self.resource_metadata
+    }
+    /// <p>The date and time the resource was last checked for vulnerabilities.</p>
+    pub fn last_scanned_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_scanned_at = ::std::option::Option::Some(input);
         self
+    }
+    /// <p>The date and time the resource was last checked for vulnerabilities.</p>
+    pub fn set_last_scanned_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_scanned_at = input; self
+    }
+    /// <p>The date and time the resource was last checked for vulnerabilities.</p>
+    pub fn get_last_scanned_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_scanned_at
     }
     /// Consumes the builder and constructs a [`CoveredResource`](crate::types::CoveredResource).
     pub fn build(self) -> crate::types::CoveredResource {
         crate::types::CoveredResource {
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            account_id: self.account_id,
-            scan_type: self.scan_type,
-            scan_status: self.scan_status,
-            resource_metadata: self.resource_metadata,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
+            account_id: self.account_id
+            ,
+            scan_type: self.scan_type
+            ,
+            scan_status: self.scan_status
+            ,
+            resource_metadata: self.resource_metadata
+            ,
+            last_scanned_at: self.last_scanned_at
+            ,
         }
     }
 }
+

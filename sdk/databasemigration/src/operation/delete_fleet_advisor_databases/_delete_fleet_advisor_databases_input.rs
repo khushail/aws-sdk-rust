@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFleetAdvisorDatabasesInput {
+pub struct DeleteFleetAdvisorDatabasesInput  {
     /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
     #[doc(hidden)]
     pub database_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteFleetAdvisorDatabasesInput {
     /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-    pub fn database_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn database_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.database_ids.as_deref()
     }
 }
 impl DeleteFleetAdvisorDatabasesInput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorDatabasesInput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesInput).
-    pub fn builder() -> crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesInputBuilder{
+    pub fn builder() -> crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesInputBuilder {
         crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFleetAdvisorDatabasesInput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetAdvisorDatabasesInputBuilder {
     pub(crate) database_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,29 +34,26 @@ impl DeleteFleetAdvisorDatabasesInputBuilder {
     /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
     pub fn database_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.database_ids.unwrap_or_default();
-        v.push(input.into());
-        self.database_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.database_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-    pub fn set_database_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.database_ids = input;
-        self
+    pub fn set_database_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.database_ids = input; self
+    }
+    /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+    pub fn get_database_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.database_ids
     }
     /// Consumes the builder and constructs a [`DeleteFleetAdvisorDatabasesInput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesInput {
-                database_ids: self.database_ids,
-            },
+                database_ids: self.database_ids
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListObjectVersionsOutput {
+pub struct ListObjectVersionsOutput  {
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
@@ -39,11 +39,14 @@ pub struct ListObjectVersionsOutput {
     /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
     #[doc(hidden)]
     pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
-    /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p> 
+    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p> 
     /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
     #[doc(hidden)]
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    #[doc(hidden)]
+    pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -53,39 +56,39 @@ impl ListObjectVersionsOutput {
         self.is_truncated
     }
     /// <p>Marks the last key returned in a truncated response.</p>
-    pub fn key_marker(&self) -> ::std::option::Option<&str> {
+    pub fn key_marker(&self) -> ::std::option::Option<& str> {
         self.key_marker.as_deref()
     }
     /// <p>Marks the last version of the key returned in a truncated response.</p>
-    pub fn version_id_marker(&self) -> ::std::option::Option<&str> {
+    pub fn version_id_marker(&self) -> ::std::option::Option<& str> {
         self.version_id_marker.as_deref()
     }
     /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextKeyMarker</code> specifies the first key not returned that satisfies the search criteria. Use this value for the key-marker request parameter in a subsequent request.</p>
-    pub fn next_key_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_key_marker(&self) -> ::std::option::Option<& str> {
         self.next_key_marker.as_deref()
     }
     /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code> specifies the first object version not returned that satisfies the search criteria. Use this value for the version-id-marker request parameter in a subsequent request.</p>
-    pub fn next_version_id_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_version_id_marker(&self) -> ::std::option::Option<& str> {
         self.next_version_id_marker.as_deref()
     }
     /// <p>Container for version information.</p>
-    pub fn versions(&self) -> ::std::option::Option<&[crate::types::ObjectVersion]> {
+    pub fn versions(&self) -> ::std::option::Option<& [crate::types::ObjectVersion]> {
         self.versions.as_deref()
     }
     /// <p>Container for an object that is a delete marker.</p>
-    pub fn delete_markers(&self) -> ::std::option::Option<&[crate::types::DeleteMarkerEntry]> {
+    pub fn delete_markers(&self) -> ::std::option::Option<& [crate::types::DeleteMarkerEntry]> {
         self.delete_markers.as_deref()
     }
     /// <p>The bucket name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Selects objects that start with the value supplied by this parameter.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>Specifies the maximum number of objects to return.</p>
@@ -93,39 +96,40 @@ impl ListObjectVersionsOutput {
         self.max_keys
     }
     /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
-    pub fn common_prefixes(&self) -> ::std::option::Option<&[crate::types::CommonPrefix]> {
+    pub fn common_prefixes(&self) -> ::std::option::Option<& [crate::types::CommonPrefix]> {
         self.common_prefixes.as_deref()
     }
-    /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p> 
+    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p> 
     /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
-    pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {
+    pub fn encoding_type(&self) -> ::std::option::Option<& crate::types::EncodingType> {
         self.encoding_type.as_ref()
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn request_charged(&self) -> ::std::option::Option<& crate::types::RequestCharged> {
+        self.request_charged.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for ListObjectVersionsOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
 impl ::aws_http::request_id::RequestId for ListObjectVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListObjectVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectVersionsOutput`](crate::operation::list_object_versions::ListObjectVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_object_versions::builders::ListObjectVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_object_versions::builders::ListObjectVersionsOutputBuilder {
         crate::operation::list_object_versions::builders::ListObjectVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListObjectVersionsOutput`](crate::operation::list_object_versions::ListObjectVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectVersionsOutputBuilder {
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) key_marker: ::std::option::Option<::std::string::String>,
@@ -133,14 +137,14 @@ pub struct ListObjectVersionsOutputBuilder {
     pub(crate) next_key_marker: ::std::option::Option<::std::string::String>,
     pub(crate) next_version_id_marker: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::ObjectVersion>>,
-    pub(crate) delete_markers:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteMarkerEntry>>,
+    pub(crate) delete_markers: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMarkerEntry>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
     pub(crate) max_keys: ::std::option::Option<i32>,
     pub(crate) common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     pub(crate) encoding_type: ::std::option::Option<crate::types::EncodingType>,
+    pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -152,8 +156,11 @@ impl ListObjectVersionsOutputBuilder {
     }
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
+    }
+    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
     }
     /// <p>Marks the last key returned in a truncated response.</p>
     pub fn key_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,56 +169,50 @@ impl ListObjectVersionsOutputBuilder {
     }
     /// <p>Marks the last key returned in a truncated response.</p>
     pub fn set_key_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_marker = input;
-        self
+        self.key_marker = input; self
+    }
+    /// <p>Marks the last key returned in a truncated response.</p>
+    pub fn get_key_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_marker
     }
     /// <p>Marks the last version of the key returned in a truncated response.</p>
-    pub fn version_id_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Marks the last version of the key returned in a truncated response.</p>
-    pub fn set_version_id_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.version_id_marker = input;
-        self
+    pub fn set_version_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_id_marker = input; self
+    }
+    /// <p>Marks the last version of the key returned in a truncated response.</p>
+    pub fn get_version_id_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id_marker
     }
     /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextKeyMarker</code> specifies the first key not returned that satisfies the search criteria. Use this value for the key-marker request parameter in a subsequent request.</p>
-    pub fn next_key_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_key_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_key_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextKeyMarker</code> specifies the first key not returned that satisfies the search criteria. Use this value for the key-marker request parameter in a subsequent request.</p>
-    pub fn set_next_key_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_key_marker = input;
-        self
+    pub fn set_next_key_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_key_marker = input; self
+    }
+    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextKeyMarker</code> specifies the first key not returned that satisfies the search criteria. Use this value for the key-marker request parameter in a subsequent request.</p>
+    pub fn get_next_key_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_key_marker
     }
     /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code> specifies the first object version not returned that satisfies the search criteria. Use this value for the version-id-marker request parameter in a subsequent request.</p>
-    pub fn next_version_id_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_version_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_version_id_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code> specifies the first object version not returned that satisfies the search criteria. Use this value for the version-id-marker request parameter in a subsequent request.</p>
-    pub fn set_next_version_id_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_version_id_marker = input;
-        self
+    pub fn set_next_version_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_version_id_marker = input; self
+    }
+    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code> specifies the first object version not returned that satisfies the search criteria. Use this value for the version-id-marker request parameter in a subsequent request.</p>
+    pub fn get_next_version_id_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_version_id_marker
     }
     /// Appends an item to `versions`.
     ///
@@ -220,17 +221,17 @@ impl ListObjectVersionsOutputBuilder {
     /// <p>Container for version information.</p>
     pub fn versions(mut self, input: crate::types::ObjectVersion) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input);
-        self.versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Container for version information.</p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectVersion>>,
-    ) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectVersion>>) -> Self {
+        self.versions = input; self
+    }
+    /// <p>Container for version information.</p>
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectVersion>> {
+        &self.versions
     }
     /// Appends an item to `delete_markers`.
     ///
@@ -239,17 +240,17 @@ impl ListObjectVersionsOutputBuilder {
     /// <p>Container for an object that is a delete marker.</p>
     pub fn delete_markers(mut self, input: crate::types::DeleteMarkerEntry) -> Self {
         let mut v = self.delete_markers.unwrap_or_default();
-        v.push(input);
-        self.delete_markers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.delete_markers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Container for an object that is a delete marker.</p>
-    pub fn set_delete_markers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMarkerEntry>>,
-    ) -> Self {
-        self.delete_markers = input;
-        self
+    pub fn set_delete_markers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMarkerEntry>>) -> Self {
+        self.delete_markers = input; self
+    }
+    /// <p>Container for an object that is a delete marker.</p>
+    pub fn get_delete_markers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteMarkerEntry>> {
+        &self.delete_markers
     }
     /// <p>The bucket name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -258,8 +259,11 @@ impl ListObjectVersionsOutputBuilder {
     }
     /// <p>The bucket name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The bucket name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Selects objects that start with the value supplied by this parameter.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -268,8 +272,11 @@ impl ListObjectVersionsOutputBuilder {
     }
     /// <p>Selects objects that start with the value supplied by this parameter.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
+    }
+    /// <p>Selects objects that start with the value supplied by this parameter.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -278,8 +285,11 @@ impl ListObjectVersionsOutputBuilder {
     }
     /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
+    }
+    /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
     }
     /// <p>Specifies the maximum number of objects to return.</p>
     pub fn max_keys(mut self, input: i32) -> Self {
@@ -288,8 +298,11 @@ impl ListObjectVersionsOutputBuilder {
     }
     /// <p>Specifies the maximum number of objects to return.</p>
     pub fn set_max_keys(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_keys = input;
-        self
+        self.max_keys = input; self
+    }
+    /// <p>Specifies the maximum number of objects to return.</p>
+    pub fn get_max_keys(&self) -> &::std::option::Option<i32> {
+        &self.max_keys
     }
     /// Appends an item to `common_prefixes`.
     ///
@@ -298,74 +311,104 @@ impl ListObjectVersionsOutputBuilder {
     /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
     pub fn common_prefixes(mut self, input: crate::types::CommonPrefix) -> Self {
         let mut v = self.common_prefixes.unwrap_or_default();
-        v.push(input);
-        self.common_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.common_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
-    pub fn set_common_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
-    ) -> Self {
-        self.common_prefixes = input;
-        self
+    pub fn set_common_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>) -> Self {
+        self.common_prefixes = input; self
     }
-    /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
+    pub fn get_common_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>> {
+        &self.common_prefixes
+    }
+    /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p> 
+    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p> 
     /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
         self.encoding_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p> 
+    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p> 
     /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
-    pub fn set_encoding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingType>,
-    ) -> Self {
-        self.encoding_type = input;
+    pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
+        self.encoding_type = input; self
+    }
+    /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p> 
+    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p> 
+    /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
+    pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
+        &self.encoding_type
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
+        self.request_charged = ::std::option::Option::Some(input);
         self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
+        self.request_charged = input; self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        &self.request_charged
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                    self._extended_request_id = Some(extended_request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                    self._extended_request_id = extended_request_id;
+                                    self
+                                }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListObjectVersionsOutput`](crate::operation::list_object_versions::ListObjectVersionsOutput).
     pub fn build(self) -> crate::operation::list_object_versions::ListObjectVersionsOutput {
         crate::operation::list_object_versions::ListObjectVersionsOutput {
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            key_marker: self.key_marker,
-            version_id_marker: self.version_id_marker,
-            next_key_marker: self.next_key_marker,
-            next_version_id_marker: self.next_version_id_marker,
-            versions: self.versions,
-            delete_markers: self.delete_markers,
-            name: self.name,
-            prefix: self.prefix,
-            delimiter: self.delimiter,
-            max_keys: self.max_keys.unwrap_or_default(),
-            common_prefixes: self.common_prefixes,
-            encoding_type: self.encoding_type,
+            is_truncated: self.is_truncated
+                .unwrap_or_default()
+            ,
+            key_marker: self.key_marker
+            ,
+            version_id_marker: self.version_id_marker
+            ,
+            next_key_marker: self.next_key_marker
+            ,
+            next_version_id_marker: self.next_version_id_marker
+            ,
+            versions: self.versions
+            ,
+            delete_markers: self.delete_markers
+            ,
+            name: self.name
+            ,
+            prefix: self.prefix
+            ,
+            delimiter: self.delimiter
+            ,
+            max_keys: self.max_keys
+                .unwrap_or_default()
+            ,
+            common_prefixes: self.common_prefixes
+            ,
+            encoding_type: self.encoding_type
+            ,
+            request_charged: self.request_charged
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

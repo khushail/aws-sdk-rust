@@ -3,7 +3,7 @@
 /// <p>The forecast value for a specific date. Part of the <code>Forecast</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataPoint {
+pub struct DataPoint  {
     /// <p>The timestamp of the specific forecast.</p>
     #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct DataPoint {
 }
 impl DataPoint {
     /// <p>The timestamp of the specific forecast.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<& str> {
         self.timestamp.as_deref()
     }
     /// <p>The forecast value.</p>
@@ -30,9 +30,7 @@ impl DataPoint {
 
 /// A builder for [`DataPoint`](crate::types::DataPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataPointBuilder {
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<f64>,
@@ -45,8 +43,11 @@ impl DataPointBuilder {
     }
     /// <p>The timestamp of the specific forecast.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
+    }
+    /// <p>The timestamp of the specific forecast.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp
     }
     /// <p>The forecast value.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -55,14 +56,20 @@ impl DataPointBuilder {
     }
     /// <p>The forecast value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The forecast value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`DataPoint`](crate::types::DataPoint).
     pub fn build(self) -> crate::types::DataPoint {
         crate::types::DataPoint {
-            timestamp: self.timestamp,
-            value: self.value,
+            timestamp: self.timestamp
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

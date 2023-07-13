@@ -3,24 +3,24 @@
 /// NextToken length limit is half of ddb accepted limit. Increase this limit if parameters in request increases.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLinuxSubscriptionInstancesInput {
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
-    /// <p>The valid names for this filter are:</p>
-    /// <ul>
-    /// <li> <p> <code>AmiID</code> </p> </li>
-    /// <li> <p> <code>InstanceID</code> </p> </li>
-    /// <li> <p> <code>AccountID</code> </p> </li>
-    /// <li> <p> <code>Status</code> </p> </li>
-    /// <li> <p> <code>Region</code> </p> </li>
-    /// <li> <p> <code>UsageOperation</code> </p> </li>
-    /// <li> <p> <code>ProductCode</code> </p> </li>
-    /// <li> <p> <code>InstanceType</code> </p> </li>
-    /// </ul>
-    /// <p>The valid Operators for this filter are:</p>
-    /// <ul>
-    /// <li> <p> <code>contains</code> </p> </li>
-    /// <li> <p> <code>equals</code> </p> </li>
-    /// <li> <p> <code>Notequal</code> </p> </li>
+pub struct ListLinuxSubscriptionInstancesInput  {
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p> 
+    /// <p>The valid names for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AmiID</code> </p> </li> 
+    /// <li> <p> <code>InstanceID</code> </p> </li> 
+    /// <li> <p> <code>AccountID</code> </p> </li> 
+    /// <li> <p> <code>Status</code> </p> </li> 
+    /// <li> <p> <code>Region</code> </p> </li> 
+    /// <li> <p> <code>UsageOperation</code> </p> </li> 
+    /// <li> <p> <code>ProductCode</code> </p> </li> 
+    /// <li> <p> <code>InstanceType</code> </p> </li> 
+    /// </ul> 
+    /// <p>The valid Operators for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>contains</code> </p> </li> 
+    /// <li> <p> <code>equals</code> </p> </li> 
+    /// <li> <p> <code>Notequal</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -32,25 +32,25 @@ pub struct ListLinuxSubscriptionInstancesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLinuxSubscriptionInstancesInput {
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
-    /// <p>The valid names for this filter are:</p>
-    /// <ul>
-    /// <li> <p> <code>AmiID</code> </p> </li>
-    /// <li> <p> <code>InstanceID</code> </p> </li>
-    /// <li> <p> <code>AccountID</code> </p> </li>
-    /// <li> <p> <code>Status</code> </p> </li>
-    /// <li> <p> <code>Region</code> </p> </li>
-    /// <li> <p> <code>UsageOperation</code> </p> </li>
-    /// <li> <p> <code>ProductCode</code> </p> </li>
-    /// <li> <p> <code>InstanceType</code> </p> </li>
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p> 
+    /// <p>The valid names for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AmiID</code> </p> </li> 
+    /// <li> <p> <code>InstanceID</code> </p> </li> 
+    /// <li> <p> <code>AccountID</code> </p> </li> 
+    /// <li> <p> <code>Status</code> </p> </li> 
+    /// <li> <p> <code>Region</code> </p> </li> 
+    /// <li> <p> <code>UsageOperation</code> </p> </li> 
+    /// <li> <p> <code>ProductCode</code> </p> </li> 
+    /// <li> <p> <code>InstanceType</code> </p> </li> 
+    /// </ul> 
+    /// <p>The valid Operators for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>contains</code> </p> </li> 
+    /// <li> <p> <code>equals</code> </p> </li> 
+    /// <li> <p> <code>Notequal</code> </p> </li> 
     /// </ul>
-    /// <p>The valid Operators for this filter are:</p>
-    /// <ul>
-    /// <li> <p> <code>contains</code> </p> </li>
-    /// <li> <p> <code>equals</code> </p> </li>
-    /// <li> <p> <code>Notequal</code> </p> </li>
-    /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -58,22 +58,20 @@ impl ListLinuxSubscriptionInstancesInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListLinuxSubscriptionInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListLinuxSubscriptionInstancesInput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput).
-    pub fn builder() -> crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesInputBuilder{
+    pub fn builder() -> crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesInputBuilder {
         crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLinuxSubscriptionInstancesInput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLinuxSubscriptionInstancesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -84,54 +82,71 @@ impl ListLinuxSubscriptionInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
-    /// <p>The valid names for this filter are:</p>
-    /// <ul>
-    /// <li> <p> <code>AmiID</code> </p> </li>
-    /// <li> <p> <code>InstanceID</code> </p> </li>
-    /// <li> <p> <code>AccountID</code> </p> </li>
-    /// <li> <p> <code>Status</code> </p> </li>
-    /// <li> <p> <code>Region</code> </p> </li>
-    /// <li> <p> <code>UsageOperation</code> </p> </li>
-    /// <li> <p> <code>ProductCode</code> </p> </li>
-    /// <li> <p> <code>InstanceType</code> </p> </li>
-    /// </ul>
-    /// <p>The valid Operators for this filter are:</p>
-    /// <ul>
-    /// <li> <p> <code>contains</code> </p> </li>
-    /// <li> <p> <code>equals</code> </p> </li>
-    /// <li> <p> <code>Notequal</code> </p> </li>
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p> 
+    /// <p>The valid names for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AmiID</code> </p> </li> 
+    /// <li> <p> <code>InstanceID</code> </p> </li> 
+    /// <li> <p> <code>AccountID</code> </p> </li> 
+    /// <li> <p> <code>Status</code> </p> </li> 
+    /// <li> <p> <code>Region</code> </p> </li> 
+    /// <li> <p> <code>UsageOperation</code> </p> </li> 
+    /// <li> <p> <code>ProductCode</code> </p> </li> 
+    /// <li> <p> <code>InstanceType</code> </p> </li> 
+    /// </ul> 
+    /// <p>The valid Operators for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>contains</code> </p> </li> 
+    /// <li> <p> <code>equals</code> </p> </li> 
+    /// <li> <p> <code>Notequal</code> </p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
-    /// <p>The valid names for this filter are:</p>
-    /// <ul>
-    /// <li> <p> <code>AmiID</code> </p> </li>
-    /// <li> <p> <code>InstanceID</code> </p> </li>
-    /// <li> <p> <code>AccountID</code> </p> </li>
-    /// <li> <p> <code>Status</code> </p> </li>
-    /// <li> <p> <code>Region</code> </p> </li>
-    /// <li> <p> <code>UsageOperation</code> </p> </li>
-    /// <li> <p> <code>ProductCode</code> </p> </li>
-    /// <li> <p> <code>InstanceType</code> </p> </li>
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p> 
+    /// <p>The valid names for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AmiID</code> </p> </li> 
+    /// <li> <p> <code>InstanceID</code> </p> </li> 
+    /// <li> <p> <code>AccountID</code> </p> </li> 
+    /// <li> <p> <code>Status</code> </p> </li> 
+    /// <li> <p> <code>Region</code> </p> </li> 
+    /// <li> <p> <code>UsageOperation</code> </p> </li> 
+    /// <li> <p> <code>ProductCode</code> </p> </li> 
+    /// <li> <p> <code>InstanceType</code> </p> </li> 
+    /// </ul> 
+    /// <p>The valid Operators for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>contains</code> </p> </li> 
+    /// <li> <p> <code>equals</code> </p> </li> 
+    /// <li> <p> <code>Notequal</code> </p> </li> 
     /// </ul>
-    /// <p>The valid Operators for this filter are:</p>
-    /// <ul>
-    /// <li> <p> <code>contains</code> </p> </li>
-    /// <li> <p> <code>equals</code> </p> </li>
-    /// <li> <p> <code>Notequal</code> </p> </li>
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p> 
+    /// <p>The valid names for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AmiID</code> </p> </li> 
+    /// <li> <p> <code>InstanceID</code> </p> </li> 
+    /// <li> <p> <code>AccountID</code> </p> </li> 
+    /// <li> <p> <code>Status</code> </p> </li> 
+    /// <li> <p> <code>Region</code> </p> </li> 
+    /// <li> <p> <code>UsageOperation</code> </p> </li> 
+    /// <li> <p> <code>ProductCode</code> </p> </li> 
+    /// <li> <p> <code>InstanceType</code> </p> </li> 
+    /// </ul> 
+    /// <p>The valid Operators for this filter are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>contains</code> </p> </li> 
+    /// <li> <p> <code>equals</code> </p> </li> 
+    /// <li> <p> <code>Notequal</code> </p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -140,8 +155,11 @@ impl ListLinuxSubscriptionInstancesInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,16 +168,14 @@ impl ListLinuxSubscriptionInstancesInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLinuxSubscriptionInstancesInput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput {
                 filters: self.filters
@@ -172,3 +188,4 @@ impl ListLinuxSubscriptionInstancesInputBuilder {
         )
     }
 }
+

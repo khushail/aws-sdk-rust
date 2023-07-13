@@ -2,66 +2,57 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceRequestStatusInput {
-    /// <p>A unique token used to track the progress of the resource operation request.</p>
+pub struct GetResourceRequestStatusInput  {
+    /// <p>A unique token used to track the progress of the resource operation request.</p> 
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
     #[doc(hidden)]
     pub request_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceRequestStatusInput {
-    /// <p>A unique token used to track the progress of the resource operation request.</p>
+    /// <p>A unique token used to track the progress of the resource operation request.</p> 
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    pub fn request_token(&self) -> ::std::option::Option<&str> {
+    pub fn request_token(&self) -> ::std::option::Option<& str> {
         self.request_token.as_deref()
     }
 }
 impl GetResourceRequestStatusInput {
     /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusInput`](crate::operation::get_resource_request_status::GetResourceRequestStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder {
         crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceRequestStatusInput`](crate::operation::get_resource_request_status::GetResourceRequestStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceRequestStatusInputBuilder {
     pub(crate) request_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceRequestStatusInputBuilder {
-    /// <p>A unique token used to track the progress of the resource operation request.</p>
+    /// <p>A unique token used to track the progress of the resource operation request.</p> 
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    pub fn request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique token used to track the progress of the resource operation request.</p>
+    /// <p>A unique token used to track the progress of the resource operation request.</p> 
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    pub fn set_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.request_token = input;
-        self
+    pub fn set_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_token = input; self
+    }
+    /// <p>A unique token used to track the progress of the resource operation request.</p> 
+    /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
+    pub fn get_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_token
     }
     /// Consumes the builder and constructs a [`GetResourceRequestStatusInput`](crate::operation::get_resource_request_status::GetResourceRequestStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_request_status::GetResourceRequestStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource_request_status::GetResourceRequestStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_resource_request_status::GetResourceRequestStatusInput {
-                request_token: self.request_token,
-            },
+                request_token: self.request_token
+                ,
+            }
         )
     }
 }
+

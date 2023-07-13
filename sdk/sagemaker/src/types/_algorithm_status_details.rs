@@ -3,27 +3,21 @@
 /// <p>Specifies the validation and image scan statuses of the algorithm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlgorithmStatusDetails {
+pub struct AlgorithmStatusDetails  {
     /// <p>The status of algorithm validation.</p>
     #[doc(hidden)]
-    pub validation_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
+    pub validation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
     /// <p>The status of the scan of the algorithm's Docker image container.</p>
     #[doc(hidden)]
-    pub image_scan_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
+    pub image_scan_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
 }
 impl AlgorithmStatusDetails {
     /// <p>The status of algorithm validation.</p>
-    pub fn validation_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlgorithmStatusItem]> {
+    pub fn validation_statuses(&self) -> ::std::option::Option<& [crate::types::AlgorithmStatusItem]> {
         self.validation_statuses.as_deref()
     }
     /// <p>The status of the scan of the algorithm's Docker image container.</p>
-    pub fn image_scan_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlgorithmStatusItem]> {
+    pub fn image_scan_statuses(&self) -> ::std::option::Option<& [crate::types::AlgorithmStatusItem]> {
         self.image_scan_statuses.as_deref()
     }
 }
@@ -36,14 +30,10 @@ impl AlgorithmStatusDetails {
 
 /// A builder for [`AlgorithmStatusDetails`](crate::types::AlgorithmStatusDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlgorithmStatusDetailsBuilder {
-    pub(crate) validation_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
-    pub(crate) image_scan_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
+    pub(crate) validation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
+    pub(crate) image_scan_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
 }
 impl AlgorithmStatusDetailsBuilder {
     /// Appends an item to `validation_statuses`.
@@ -53,17 +43,17 @@ impl AlgorithmStatusDetailsBuilder {
     /// <p>The status of algorithm validation.</p>
     pub fn validation_statuses(mut self, input: crate::types::AlgorithmStatusItem) -> Self {
         let mut v = self.validation_statuses.unwrap_or_default();
-        v.push(input);
-        self.validation_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status of algorithm validation.</p>
-    pub fn set_validation_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
-    ) -> Self {
-        self.validation_statuses = input;
-        self
+    pub fn set_validation_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>) -> Self {
+        self.validation_statuses = input; self
+    }
+    /// <p>The status of algorithm validation.</p>
+    pub fn get_validation_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>> {
+        &self.validation_statuses
     }
     /// Appends an item to `image_scan_statuses`.
     ///
@@ -72,23 +62,26 @@ impl AlgorithmStatusDetailsBuilder {
     /// <p>The status of the scan of the algorithm's Docker image container.</p>
     pub fn image_scan_statuses(mut self, input: crate::types::AlgorithmStatusItem) -> Self {
         let mut v = self.image_scan_statuses.unwrap_or_default();
-        v.push(input);
-        self.image_scan_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.image_scan_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status of the scan of the algorithm's Docker image container.</p>
-    pub fn set_image_scan_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
-    ) -> Self {
-        self.image_scan_statuses = input;
-        self
+    pub fn set_image_scan_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>) -> Self {
+        self.image_scan_statuses = input; self
+    }
+    /// <p>The status of the scan of the algorithm's Docker image container.</p>
+    pub fn get_image_scan_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>> {
+        &self.image_scan_statuses
     }
     /// Consumes the builder and constructs a [`AlgorithmStatusDetails`](crate::types::AlgorithmStatusDetails).
     pub fn build(self) -> crate::types::AlgorithmStatusDetails {
         crate::types::AlgorithmStatusDetails {
-            validation_statuses: self.validation_statuses,
-            image_scan_statuses: self.image_scan_statuses,
+            validation_statuses: self.validation_statuses
+            ,
+            image_scan_statuses: self.image_scan_statuses
+            ,
         }
     }
 }
+

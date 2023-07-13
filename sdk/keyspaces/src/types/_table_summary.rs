@@ -3,7 +3,7 @@
 /// <p>Returns the name of the specified table, the keyspace it is stored in, and the unique identifier in the format of an Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableSummary {
+pub struct TableSummary  {
     /// <p>The name of the keyspace that the table is stored in.</p>
     #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct TableSummary {
 }
 impl TableSummary {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl TableSummary {
 
 /// A builder for [`TableSummary`](crate::types::TableSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableSummaryBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct TableSummaryBuilder {
 }
 impl TableSummaryBuilder {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.keyspace_name = input;
-        self
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.keyspace_name = input; self
+    }
+    /// <p>The name of the keyspace that the table is stored in.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyspace_name
     }
     /// <p>The name of the table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +64,11 @@ impl TableSummaryBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
+    }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,15 +77,22 @@ impl TableSummaryBuilder {
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`TableSummary`](crate::types::TableSummary).
     pub fn build(self) -> crate::types::TableSummary {
         crate::types::TableSummary {
-            keyspace_name: self.keyspace_name,
-            table_name: self.table_name,
-            resource_arn: self.resource_arn,
+            keyspace_name: self.keyspace_name
+            ,
+            table_name: self.table_name
+            ,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelWorldGenerationJobInput {
+pub struct CancelWorldGenerationJobInput  {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
     #[doc(hidden)]
     pub job: ::std::option::Option<::std::string::String>,
 }
 impl CancelWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
-    pub fn job(&self) -> ::std::option::Option<&str> {
+    pub fn job(&self) -> ::std::option::Option<& str> {
         self.job.as_deref()
     }
 }
 impl CancelWorldGenerationJobInput {
     /// Creates a new builder-style object to manufacture [`CancelWorldGenerationJobInput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder {
         crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelWorldGenerationJobInput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelWorldGenerationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl CancelWorldGenerationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
     pub fn set_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
+    }
+    /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
     }
     /// Consumes the builder and constructs a [`CancelWorldGenerationJobInput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput {
-                job: self.job,
-            },
+                job: self.job
+                ,
+            }
         )
     }
 }
+

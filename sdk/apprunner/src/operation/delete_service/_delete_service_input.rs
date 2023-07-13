@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceInput {
+pub struct DeleteServiceInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
     #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<& str> {
         self.service_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteServiceInput {
 
 /// A builder for [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteServiceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
     }
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_service::DeleteServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput {
-            service_arn: self.service_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_service::DeleteServiceInput {
+                service_arn: self.service_arn
+                ,
+            }
+        )
     }
 }
+

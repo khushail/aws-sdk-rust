@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDiscoverySummaryOutput {
+pub struct GetDiscoverySummaryOutput  {
     /// <p>The number of servers discovered.</p>
     #[doc(hidden)]
     pub servers: i64,
@@ -24,10 +24,9 @@ pub struct GetDiscoverySummaryOutput {
     /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
     #[doc(hidden)]
     pub me_collector_summary: ::std::option::Option<crate::types::CustomerMeCollectorInfo>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Details about Agentless Collector collectors, including status. </p>
     #[doc(hidden)]
-    pub agentless_collector_summary:
-        ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>,
+    pub agentless_collector_summary: ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>,
     _request_id: Option<String>,
 }
 impl GetDiscoverySummaryOutput {
@@ -48,45 +47,37 @@ impl GetDiscoverySummaryOutput {
         self.servers_mappedto_tags
     }
     /// <p>Details about discovered agents, including agent status and health.</p>
-    pub fn agent_summary(&self) -> ::std::option::Option<&crate::types::CustomerAgentInfo> {
+    pub fn agent_summary(&self) -> ::std::option::Option<& crate::types::CustomerAgentInfo> {
         self.agent_summary.as_ref()
     }
     /// <p>Details about discovered connectors, including connector status and health.</p>
-    pub fn connector_summary(&self) -> ::std::option::Option<&crate::types::CustomerConnectorInfo> {
+    pub fn connector_summary(&self) -> ::std::option::Option<& crate::types::CustomerConnectorInfo> {
         self.connector_summary.as_ref()
     }
     /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
-    pub fn me_collector_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomerMeCollectorInfo> {
+    pub fn me_collector_summary(&self) -> ::std::option::Option<& crate::types::CustomerMeCollectorInfo> {
         self.me_collector_summary.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn agentless_collector_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomerAgentlessCollectorInfo> {
+    /// <p> Details about Agentless Collector collectors, including status. </p>
+    pub fn agentless_collector_summary(&self) -> ::std::option::Option<& crate::types::CustomerAgentlessCollectorInfo> {
         self.agentless_collector_summary.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDiscoverySummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDiscoverySummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetDiscoverySummaryOutput`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_discovery_summary::builders::GetDiscoverySummaryOutputBuilder {
-        crate::operation::get_discovery_summary::builders::GetDiscoverySummaryOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_discovery_summary::builders::GetDiscoverySummaryOutputBuilder {
+        crate::operation::get_discovery_summary::builders::GetDiscoverySummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDiscoverySummaryOutput`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDiscoverySummaryOutputBuilder {
     pub(crate) servers: ::std::option::Option<i64>,
     pub(crate) applications: ::std::option::Option<i64>,
@@ -95,8 +86,7 @@ pub struct GetDiscoverySummaryOutputBuilder {
     pub(crate) agent_summary: ::std::option::Option<crate::types::CustomerAgentInfo>,
     pub(crate) connector_summary: ::std::option::Option<crate::types::CustomerConnectorInfo>,
     pub(crate) me_collector_summary: ::std::option::Option<crate::types::CustomerMeCollectorInfo>,
-    pub(crate) agentless_collector_summary:
-        ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>,
+    pub(crate) agentless_collector_summary: ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>,
     _request_id: Option<String>,
 }
 impl GetDiscoverySummaryOutputBuilder {
@@ -107,8 +97,11 @@ impl GetDiscoverySummaryOutputBuilder {
     }
     /// <p>The number of servers discovered.</p>
     pub fn set_servers(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.servers = input;
-        self
+        self.servers = input; self
+    }
+    /// <p>The number of servers discovered.</p>
+    pub fn get_servers(&self) -> &::std::option::Option<i64> {
+        &self.servers
     }
     /// <p>The number of applications discovered.</p>
     pub fn applications(mut self, input: i64) -> Self {
@@ -117,8 +110,11 @@ impl GetDiscoverySummaryOutputBuilder {
     }
     /// <p>The number of applications discovered.</p>
     pub fn set_applications(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.applications = input;
-        self
+        self.applications = input; self
+    }
+    /// <p>The number of applications discovered.</p>
+    pub fn get_applications(&self) -> &::std::option::Option<i64> {
+        &self.applications
     }
     /// <p>The number of servers mapped to applications.</p>
     pub fn servers_mapped_to_applications(mut self, input: i64) -> Self {
@@ -127,8 +123,11 @@ impl GetDiscoverySummaryOutputBuilder {
     }
     /// <p>The number of servers mapped to applications.</p>
     pub fn set_servers_mapped_to_applications(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.servers_mapped_to_applications = input;
-        self
+        self.servers_mapped_to_applications = input; self
+    }
+    /// <p>The number of servers mapped to applications.</p>
+    pub fn get_servers_mapped_to_applications(&self) -> &::std::option::Option<i64> {
+        &self.servers_mapped_to_applications
     }
     /// <p>The number of servers mapped to tags.</p>
     pub fn servers_mappedto_tags(mut self, input: i64) -> Self {
@@ -137,8 +136,11 @@ impl GetDiscoverySummaryOutputBuilder {
     }
     /// <p>The number of servers mapped to tags.</p>
     pub fn set_servers_mappedto_tags(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.servers_mappedto_tags = input;
-        self
+        self.servers_mappedto_tags = input; self
+    }
+    /// <p>The number of servers mapped to tags.</p>
+    pub fn get_servers_mappedto_tags(&self) -> &::std::option::Option<i64> {
+        &self.servers_mappedto_tags
     }
     /// <p>Details about discovered agents, including agent status and health.</p>
     pub fn agent_summary(mut self, input: crate::types::CustomerAgentInfo) -> Self {
@@ -146,12 +148,12 @@ impl GetDiscoverySummaryOutputBuilder {
         self
     }
     /// <p>Details about discovered agents, including agent status and health.</p>
-    pub fn set_agent_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerAgentInfo>,
-    ) -> Self {
-        self.agent_summary = input;
-        self
+    pub fn set_agent_summary(mut self, input: ::std::option::Option<crate::types::CustomerAgentInfo>) -> Self {
+        self.agent_summary = input; self
+    }
+    /// <p>Details about discovered agents, including agent status and health.</p>
+    pub fn get_agent_summary(&self) -> &::std::option::Option<crate::types::CustomerAgentInfo> {
+        &self.agent_summary
     }
     /// <p>Details about discovered connectors, including connector status and health.</p>
     pub fn connector_summary(mut self, input: crate::types::CustomerConnectorInfo) -> Self {
@@ -159,12 +161,12 @@ impl GetDiscoverySummaryOutputBuilder {
         self
     }
     /// <p>Details about discovered connectors, including connector status and health.</p>
-    pub fn set_connector_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerConnectorInfo>,
-    ) -> Self {
-        self.connector_summary = input;
-        self
+    pub fn set_connector_summary(mut self, input: ::std::option::Option<crate::types::CustomerConnectorInfo>) -> Self {
+        self.connector_summary = input; self
+    }
+    /// <p>Details about discovered connectors, including connector status and health.</p>
+    pub fn get_connector_summary(&self) -> &::std::option::Option<crate::types::CustomerConnectorInfo> {
+        &self.connector_summary
     }
     /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
     pub fn me_collector_summary(mut self, input: crate::types::CustomerMeCollectorInfo) -> Self {
@@ -172,50 +174,60 @@ impl GetDiscoverySummaryOutputBuilder {
         self
     }
     /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
-    pub fn set_me_collector_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerMeCollectorInfo>,
-    ) -> Self {
-        self.me_collector_summary = input;
-        self
+    pub fn set_me_collector_summary(mut self, input: ::std::option::Option<crate::types::CustomerMeCollectorInfo>) -> Self {
+        self.me_collector_summary = input; self
     }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn agentless_collector_summary(
-        mut self,
-        input: crate::types::CustomerAgentlessCollectorInfo,
-    ) -> Self {
+    /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    pub fn get_me_collector_summary(&self) -> &::std::option::Option<crate::types::CustomerMeCollectorInfo> {
+        &self.me_collector_summary
+    }
+    /// <p> Details about Agentless Collector collectors, including status. </p>
+    pub fn agentless_collector_summary(mut self, input: crate::types::CustomerAgentlessCollectorInfo) -> Self {
         self.agentless_collector_summary = ::std::option::Option::Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn set_agentless_collector_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>,
-    ) -> Self {
-        self.agentless_collector_summary = input;
-        self
+    /// <p> Details about Agentless Collector collectors, including status. </p>
+    pub fn set_agentless_collector_summary(mut self, input: ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>) -> Self {
+        self.agentless_collector_summary = input; self
+    }
+    /// <p> Details about Agentless Collector collectors, including status. </p>
+    pub fn get_agentless_collector_summary(&self) -> &::std::option::Option<crate::types::CustomerAgentlessCollectorInfo> {
+        &self.agentless_collector_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDiscoverySummaryOutput`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput).
     pub fn build(self) -> crate::operation::get_discovery_summary::GetDiscoverySummaryOutput {
         crate::operation::get_discovery_summary::GetDiscoverySummaryOutput {
-            servers: self.servers.unwrap_or_default(),
-            applications: self.applications.unwrap_or_default(),
-            servers_mapped_to_applications: self.servers_mapped_to_applications.unwrap_or_default(),
-            servers_mappedto_tags: self.servers_mappedto_tags.unwrap_or_default(),
-            agent_summary: self.agent_summary,
-            connector_summary: self.connector_summary,
-            me_collector_summary: self.me_collector_summary,
-            agentless_collector_summary: self.agentless_collector_summary,
+            servers: self.servers
+                .unwrap_or_default()
+            ,
+            applications: self.applications
+                .unwrap_or_default()
+            ,
+            servers_mapped_to_applications: self.servers_mapped_to_applications
+                .unwrap_or_default()
+            ,
+            servers_mappedto_tags: self.servers_mappedto_tags
+                .unwrap_or_default()
+            ,
+            agent_summary: self.agent_summary
+            ,
+            connector_summary: self.connector_summary
+            ,
+            me_collector_summary: self.me_collector_summary
+            ,
+            agentless_collector_summary: self.agentless_collector_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

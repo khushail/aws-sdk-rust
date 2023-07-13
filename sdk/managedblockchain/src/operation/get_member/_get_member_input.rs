@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMemberInput {
+pub struct GetMemberInput  {
     /// <p>The unique identifier of the network to which the member belongs.</p>
     #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetMemberInput {
 }
 impl GetMemberInput {
     /// <p>The unique identifier of the network to which the member belongs.</p>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The unique identifier of the member.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl GetMemberInput {
 
 /// A builder for [`GetMemberInput`](crate::operation::get_member::GetMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMemberInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetMemberInputBuilder {
     }
     /// <p>The unique identifier of the network to which the member belongs.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
+    }
+    /// <p>The unique identifier of the network to which the member belongs.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
     }
     /// <p>The unique identifier of the member.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,19 +55,22 @@ impl GetMemberInputBuilder {
     }
     /// <p>The unique identifier of the member.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
+    }
+    /// <p>The unique identifier of the member.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// Consumes the builder and constructs a [`GetMemberInput`](crate::operation::get_member::GetMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_member::GetMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_member::GetMemberInput {
-            network_id: self.network_id,
-            member_id: self.member_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_member::GetMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_member::GetMemberInput {
+                network_id: self.network_id
+                ,
+                member_id: self.member_id
+                ,
+            }
+        )
     }
 }
+

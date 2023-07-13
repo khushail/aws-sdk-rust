@@ -3,7 +3,7 @@
 /// <p>Provides the current status of the entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OptionStatus {
+pub struct OptionStatus  {
     /// <p>Timestamp which tells the creation date for the entity.</p>
     #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -22,11 +22,11 @@ pub struct OptionStatus {
 }
 impl OptionStatus {
     /// <p>Timestamp which tells the creation date for the entity.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Timestamp which tells the last updated time for the entity.</p>
-    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>Specifies the latest version for the entity.</p>
@@ -34,7 +34,7 @@ impl OptionStatus {
         self.update_version
     }
     /// <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::OptionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::OptionState> {
         self.state.as_ref()
     }
     /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
@@ -51,9 +51,7 @@ impl OptionStatus {
 
 /// A builder for [`OptionStatus`](crate::types::OptionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptionStatusBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -68,12 +66,12 @@ impl OptionStatusBuilder {
         self
     }
     /// <p>Timestamp which tells the creation date for the entity.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>Timestamp which tells the creation date for the entity.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>Timestamp which tells the last updated time for the entity.</p>
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -81,12 +79,12 @@ impl OptionStatusBuilder {
         self
     }
     /// <p>Timestamp which tells the last updated time for the entity.</p>
-    pub fn set_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_date = input;
-        self
+    pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.update_date = input; self
+    }
+    /// <p>Timestamp which tells the last updated time for the entity.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date
     }
     /// <p>Specifies the latest version for the entity.</p>
     pub fn update_version(mut self, input: i32) -> Self {
@@ -95,8 +93,11 @@ impl OptionStatusBuilder {
     }
     /// <p>Specifies the latest version for the entity.</p>
     pub fn set_update_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.update_version = input;
-        self
+        self.update_version = input; self
+    }
+    /// <p>Specifies the latest version for the entity.</p>
+    pub fn get_update_version(&self) -> &::std::option::Option<i32> {
+        &self.update_version
     }
     /// <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
     pub fn state(mut self, input: crate::types::OptionState) -> Self {
@@ -105,8 +106,11 @@ impl OptionStatusBuilder {
     }
     /// <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::OptionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::OptionState> {
+        &self.state
     }
     /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
     pub fn pending_deletion(mut self, input: bool) -> Self {
@@ -115,17 +119,27 @@ impl OptionStatusBuilder {
     }
     /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
     pub fn set_pending_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.pending_deletion = input;
-        self
+        self.pending_deletion = input; self
+    }
+    /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
+    pub fn get_pending_deletion(&self) -> &::std::option::Option<bool> {
+        &self.pending_deletion
     }
     /// Consumes the builder and constructs a [`OptionStatus`](crate::types::OptionStatus).
     pub fn build(self) -> crate::types::OptionStatus {
         crate::types::OptionStatus {
-            creation_date: self.creation_date,
-            update_date: self.update_date,
-            update_version: self.update_version.unwrap_or_default(),
-            state: self.state,
-            pending_deletion: self.pending_deletion,
+            creation_date: self.creation_date
+            ,
+            update_date: self.update_date
+            ,
+            update_version: self.update_version
+                .unwrap_or_default()
+            ,
+            state: self.state
+            ,
+            pending_deletion: self.pending_deletion
+            ,
         }
     }
 }
+

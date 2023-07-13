@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolNetworkPackageContentInput {
+pub struct GetSolNetworkPackageContentInput  {
     /// <p>ID of the network service descriptor in the network package.</p>
     #[doc(hidden)]
     pub nsd_info_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct GetSolNetworkPackageContentInput {
 }
 impl GetSolNetworkPackageContentInput {
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn nsd_info_id(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_info_id(&self) -> ::std::option::Option<& str> {
         self.nsd_info_id.as_deref()
     }
     /// <p>The format of the package you want to download from the network package.</p>
-    pub fn accept(&self) -> ::std::option::Option<&crate::types::PackageContentType> {
+    pub fn accept(&self) -> ::std::option::Option<& crate::types::PackageContentType> {
         self.accept.as_ref()
     }
 }
 impl GetSolNetworkPackageContentInput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkPackageContentInput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput).
-    pub fn builder() -> crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder{
+    pub fn builder() -> crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder {
         crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolNetworkPackageContentInput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageContentInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
     pub(crate) accept: ::std::option::Option<crate::types::PackageContentType>,
@@ -44,8 +42,11 @@ impl GetSolNetworkPackageContentInputBuilder {
     }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn set_nsd_info_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_info_id = input;
-        self
+        self.nsd_info_id = input; self
+    }
+    /// <p>ID of the network service descriptor in the network package.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
     }
     /// <p>The format of the package you want to download from the network package.</p>
     pub fn accept(mut self, input: crate::types::PackageContentType) -> Self {
@@ -53,25 +54,23 @@ impl GetSolNetworkPackageContentInputBuilder {
         self
     }
     /// <p>The format of the package you want to download from the network package.</p>
-    pub fn set_accept(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
-        self.accept = input;
-        self
+    pub fn set_accept(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
+        self.accept = input; self
+    }
+    /// <p>The format of the package you want to download from the network package.</p>
+    pub fn get_accept(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        &self.accept
     }
     /// Consumes the builder and constructs a [`GetSolNetworkPackageContentInput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput {
-                nsd_info_id: self.nsd_info_id,
-                accept: self.accept,
-            },
+                nsd_info_id: self.nsd_info_id
+                ,
+                accept: self.accept
+                ,
+            }
         )
     }
 }
+

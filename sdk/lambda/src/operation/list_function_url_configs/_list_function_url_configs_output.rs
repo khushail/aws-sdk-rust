@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFunctionUrlConfigsOutput {
+pub struct ListFunctionUrlConfigsOutput  {
     /// <p>A list of function URL configurations.</p>
     #[doc(hidden)]
-    pub function_url_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
+    pub function_url_configs: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -14,38 +13,31 @@ pub struct ListFunctionUrlConfigsOutput {
 }
 impl ListFunctionUrlConfigsOutput {
     /// <p>A list of function URL configurations.</p>
-    pub fn function_url_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FunctionUrlConfig]> {
+    pub fn function_url_configs(&self) -> ::std::option::Option<& [crate::types::FunctionUrlConfig]> {
         self.function_url_configs.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFunctionUrlConfigsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListFunctionUrlConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionUrlConfigsOutput`](crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsOutputBuilder {
         crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFunctionUrlConfigsOutput`](crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionUrlConfigsOutputBuilder {
-    pub(crate) function_url_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
+    pub(crate) function_url_configs: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +49,17 @@ impl ListFunctionUrlConfigsOutputBuilder {
     /// <p>A list of function URL configurations.</p>
     pub fn function_url_configs(mut self, input: crate::types::FunctionUrlConfig) -> Self {
         let mut v = self.function_url_configs.unwrap_or_default();
-        v.push(input);
-        self.function_url_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.function_url_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of function URL configurations.</p>
-    pub fn set_function_url_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
-    ) -> Self {
-        self.function_url_configs = input;
-        self
+    pub fn set_function_url_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>) -> Self {
+        self.function_url_configs = input; self
+    }
+    /// <p>A list of function URL configurations.</p>
+    pub fn get_function_url_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>> {
+        &self.function_url_configs
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,26 +68,30 @@ impl ListFunctionUrlConfigsOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListFunctionUrlConfigsOutput`](crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput {
+    pub fn build(self) -> crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput {
         crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput {
-            function_url_configs: self.function_url_configs,
-            next_marker: self.next_marker,
+            function_url_configs: self.function_url_configs
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

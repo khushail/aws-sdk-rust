@@ -3,7 +3,7 @@
 /// <p>Information about the CreateRoute action in Amazon EC2.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2CreateRouteAction {
+pub struct Ec2CreateRouteAction  {
     /// <p>A description of CreateRoute action in Amazon EC2.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct Ec2CreateRouteAction {
 }
 impl Ec2CreateRouteAction {
     /// <p>A description of CreateRoute action in Amazon EC2.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>Information about the ID of a prefix list used for the destination match.</p>
-    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.destination_prefix_list_id.as_deref()
     }
     /// <p>Information about the IPv6 CIDR block destination.</p>
-    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_ipv6_cidr_block.as_deref()
     }
     /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&crate::types::ActionTarget> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& crate::types::ActionTarget> {
         self.vpc_endpoint_id.as_ref()
     }
     /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&crate::types::ActionTarget> {
+    pub fn gateway_id(&self) -> ::std::option::Option<& crate::types::ActionTarget> {
         self.gateway_id.as_ref()
     }
     /// <p>Information about the ID of the route table for the route.</p>
-    pub fn route_table_id(&self) -> ::std::option::Option<&crate::types::ActionTarget> {
+    pub fn route_table_id(&self) -> ::std::option::Option<& crate::types::ActionTarget> {
         self.route_table_id.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl Ec2CreateRouteAction {
 
 /// A builder for [`Ec2CreateRouteAction`](crate::types::Ec2CreateRouteAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2CreateRouteActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
@@ -85,56 +83,50 @@ impl Ec2CreateRouteActionBuilder {
     }
     /// <p>A description of CreateRoute action in Amazon EC2.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of CreateRoute action in Amazon EC2.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_cidr_block = input;
-        self
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_cidr_block = input; self
+    }
+    /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
     }
     /// <p>Information about the ID of a prefix list used for the destination match.</p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the ID of a prefix list used for the destination match.</p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_prefix_list_id = input;
-        self
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_prefix_list_id = input; self
+    }
+    /// <p>Information about the ID of a prefix list used for the destination match.</p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_prefix_list_id
     }
     /// <p>Information about the IPv6 CIDR block destination.</p>
-    pub fn destination_ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the IPv6 CIDR block destination.</p>
-    pub fn set_destination_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_ipv6_cidr_block = input;
-        self
+    pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_ipv6_cidr_block = input; self
+    }
+    /// <p>Information about the IPv6 CIDR block destination.</p>
+    pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ipv6_cidr_block
     }
     /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
     pub fn vpc_endpoint_id(mut self, input: crate::types::ActionTarget) -> Self {
@@ -142,12 +134,12 @@ impl Ec2CreateRouteActionBuilder {
         self
     }
     /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
+        self.vpc_endpoint_id = input; self
+    }
+    /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.vpc_endpoint_id
     }
     /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
     pub fn gateway_id(mut self, input: crate::types::ActionTarget) -> Self {
@@ -155,12 +147,12 @@ impl Ec2CreateRouteActionBuilder {
         self
     }
     /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
-    pub fn set_gateway_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
-        self.gateway_id = input;
-        self
+    pub fn set_gateway_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
+        self.gateway_id = input; self
+    }
+    /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.gateway_id
     }
     /// <p>Information about the ID of the route table for the route.</p>
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
@@ -168,23 +160,31 @@ impl Ec2CreateRouteActionBuilder {
         self
     }
     /// <p>Information about the ID of the route table for the route.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
-        self.route_table_id = input;
-        self
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
+        self.route_table_id = input; self
+    }
+    /// <p>Information about the ID of the route table for the route.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.route_table_id
     }
     /// Consumes the builder and constructs a [`Ec2CreateRouteAction`](crate::types::Ec2CreateRouteAction).
     pub fn build(self) -> crate::types::Ec2CreateRouteAction {
         crate::types::Ec2CreateRouteAction {
-            description: self.description,
-            destination_cidr_block: self.destination_cidr_block,
-            destination_prefix_list_id: self.destination_prefix_list_id,
-            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block,
-            vpc_endpoint_id: self.vpc_endpoint_id,
-            gateway_id: self.gateway_id,
-            route_table_id: self.route_table_id,
+            description: self.description
+            ,
+            destination_cidr_block: self.destination_cidr_block
+            ,
+            destination_prefix_list_id: self.destination_prefix_list_id
+            ,
+            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block
+            ,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
+            gateway_id: self.gateway_id
+            ,
+            route_table_id: self.route_table_id
+            ,
         }
     }
 }
+

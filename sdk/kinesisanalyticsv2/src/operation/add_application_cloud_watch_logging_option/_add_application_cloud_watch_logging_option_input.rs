@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddApplicationCloudWatchLoggingOptionInput {
+pub struct AddApplicationCloudWatchLoggingOptionInput  {
     /// <p>The Kinesis Data Analytics application name.</p>
     #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct AddApplicationCloudWatchLoggingOptionInput {
 }
 impl AddApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Data Analytics application name.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
@@ -26,51 +26,43 @@ impl AddApplicationCloudWatchLoggingOptionInput {
         self.current_application_version_id
     }
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-    pub fn cloud_watch_logging_option(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOption> {
+    pub fn cloud_watch_logging_option(&self) -> ::std::option::Option<& crate::types::CloudWatchLoggingOption> {
         self.cloud_watch_logging_option.as_ref()
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn conditional_token(&self) -> ::std::option::Option<&str> {
+    pub fn conditional_token(&self) -> ::std::option::Option<& str> {
         self.conditional_token.as_deref()
     }
 }
 impl AddApplicationCloudWatchLoggingOptionInput {
     /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionInput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput).
-    pub fn builder() -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder{
+    pub fn builder() -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder {
         crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationCloudWatchLoggingOptionInput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationCloudWatchLoggingOptionInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,
-    pub(crate) cloud_watch_logging_option:
-        ::std::option::Option<crate::types::CloudWatchLoggingOption>,
+    pub(crate) cloud_watch_logging_option: ::std::option::Option<crate::types::CloudWatchLoggingOption>,
     pub(crate) conditional_token: ::std::option::Option<::std::string::String>,
 }
 impl AddApplicationCloudWatchLoggingOptionInputBuilder {
     /// <p>The Kinesis Data Analytics application name.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Kinesis Data Analytics application name.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_name = input;
-        self
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_name = input; self
+    }
+    /// <p>The Kinesis Data Analytics application name.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
     }
     /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
@@ -79,43 +71,40 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
     }
     /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
+    }
+    /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
     }
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-    pub fn cloud_watch_logging_option(
-        mut self,
-        input: crate::types::CloudWatchLoggingOption,
-    ) -> Self {
+    pub fn cloud_watch_logging_option(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         self.cloud_watch_logging_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-    pub fn set_cloud_watch_logging_option(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOption>,
-    ) -> Self {
-        self.cloud_watch_logging_option = input;
-        self
+    pub fn set_cloud_watch_logging_option(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOption>) -> Self {
+        self.cloud_watch_logging_option = input; self
+    }
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    pub fn get_cloud_watch_logging_option(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOption> {
+        &self.cloud_watch_logging_option
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn conditional_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conditional_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conditional_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn set_conditional_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.conditional_token = input;
-        self
+    pub fn set_conditional_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.conditional_token = input; self
+    }
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    pub fn get_conditional_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conditional_token
     }
     /// Consumes the builder and constructs a [`AddApplicationCloudWatchLoggingOptionInput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput {
                 application_name: self.application_name
@@ -130,3 +119,4 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>An object containing the human loop input in JSON format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HumanLoopInput {
+pub struct HumanLoopInput  {
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
     #[doc(hidden)]
     pub input_content: ::std::option::Option<::std::string::String>,
 }
 impl HumanLoopInput {
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
-    pub fn input_content(&self) -> ::std::option::Option<&str> {
+    pub fn input_content(&self) -> ::std::option::Option<& str> {
         self.input_content.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl HumanLoopInput {
 
 /// A builder for [`HumanLoopInput`](crate::types::HumanLoopInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HumanLoopInputBuilder {
     pub(crate) input_content: ::std::option::Option<::std::string::String>,
 }
 impl HumanLoopInputBuilder {
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
-    pub fn input_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
-    pub fn set_input_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.input_content = input;
-        self
+    pub fn set_input_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.input_content = input; self
+    }
+    /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
+    pub fn get_input_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_content
     }
     /// Consumes the builder and constructs a [`HumanLoopInput`](crate::types::HumanLoopInput).
     pub fn build(self) -> crate::types::HumanLoopInput {
         crate::types::HumanLoopInput {
-            input_content: self.input_content,
+            input_content: self.input_content
+            ,
         }
     }
 }
+

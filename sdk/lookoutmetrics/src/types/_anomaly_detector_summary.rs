@@ -3,7 +3,7 @@
 /// <p>Contains information about an an anomaly detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyDetectorSummary {
+pub struct AnomalyDetectorSummary  {
     /// <p>The ARN of the detector.</p>
     #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
@@ -24,41 +24,35 @@ pub struct AnomalyDetectorSummary {
     pub status: ::std::option::Option<crate::types::AnomalyDetectorStatus>,
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AnomalyDetectorSummary {
     /// <p>The ARN of the detector.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The name of the detector.</p>
-    pub fn anomaly_detector_name(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_name(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_name.as_deref()
     }
     /// <p>A description of the detector.</p>
-    pub fn anomaly_detector_description(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_description(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_description.as_deref()
     }
     /// <p>The time at which the detector was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the detector was last modified.</p>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The status of detector.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AnomalyDetectorStatus> {
         self.status.as_ref()
     }
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl AnomalyDetectorSummary {
 
 /// A builder for [`AnomalyDetectorSummary`](crate::types::AnomalyDetectorSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyDetectorSummaryBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_detector_name: ::std::option::Option<::std::string::String>,
@@ -81,58 +73,47 @@ pub struct AnomalyDetectorSummaryBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AnomalyDetectorStatus>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AnomalyDetectorSummaryBuilder {
     /// <p>The ARN of the detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.anomaly_detector_arn = input; self
+    }
+    /// <p>The ARN of the detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
     }
     /// <p>The name of the detector.</p>
-    pub fn anomaly_detector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector.</p>
-    pub fn set_anomaly_detector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.anomaly_detector_name = input;
-        self
+    pub fn set_anomaly_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.anomaly_detector_name = input; self
+    }
+    /// <p>The name of the detector.</p>
+    pub fn get_anomaly_detector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_name
     }
     /// <p>A description of the detector.</p>
-    pub fn anomaly_detector_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the detector.</p>
-    pub fn set_anomaly_detector_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.anomaly_detector_description = input;
-        self
+    pub fn set_anomaly_detector_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.anomaly_detector_description = input; self
+    }
+    /// <p>A description of the detector.</p>
+    pub fn get_anomaly_detector_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_description
     }
     /// <p>The time at which the detector was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -140,12 +121,12 @@ impl AnomalyDetectorSummaryBuilder {
         self
     }
     /// <p>The time at which the detector was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time at which the detector was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time at which the detector was last modified.</p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -153,12 +134,12 @@ impl AnomalyDetectorSummaryBuilder {
         self
     }
     /// <p>The time at which the detector was last modified.</p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modification_time = input;
-        self
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modification_time = input; self
+    }
+    /// <p>The time at which the detector was last modified.</p>
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     /// <p>The status of detector.</p>
     pub fn status(mut self, input: crate::types::AnomalyDetectorStatus) -> Self {
@@ -166,48 +147,50 @@ impl AnomalyDetectorSummaryBuilder {
         self
     }
     /// <p>The status of detector.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDetectorStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of detector.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AnomalyDetectorStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`AnomalyDetectorSummary`](crate::types::AnomalyDetectorSummary).
     pub fn build(self) -> crate::types::AnomalyDetectorSummary {
         crate::types::AnomalyDetectorSummary {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            anomaly_detector_name: self.anomaly_detector_name,
-            anomaly_detector_description: self.anomaly_detector_description,
-            creation_time: self.creation_time,
-            last_modification_time: self.last_modification_time,
-            status: self.status,
-            tags: self.tags,
+            anomaly_detector_arn: self.anomaly_detector_arn
+            ,
+            anomaly_detector_name: self.anomaly_detector_name
+            ,
+            anomaly_detector_description: self.anomaly_detector_description
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modification_time: self.last_modification_time
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

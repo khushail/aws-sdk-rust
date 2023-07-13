@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVectorEnrichmentJobInput {
+pub struct GetVectorEnrichmentJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetVectorEnrichmentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl GetVectorEnrichmentJobInput {
     /// Creates a new builder-style object to manufacture [`GetVectorEnrichmentJobInput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobInputBuilder {
         crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVectorEnrichmentJobInput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVectorEnrichmentJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetVectorEnrichmentJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`GetVectorEnrichmentJobInput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

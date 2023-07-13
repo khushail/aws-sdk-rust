@@ -3,7 +3,7 @@
 /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchArrayProperties {
+pub struct BatchArrayProperties  {
     /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
     #[doc(hidden)]
     pub size: i32,
@@ -23,9 +23,7 @@ impl BatchArrayProperties {
 
 /// A builder for [`BatchArrayProperties`](crate::types::BatchArrayProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchArrayPropertiesBuilder {
     pub(crate) size: ::std::option::Option<i32>,
 }
@@ -37,13 +35,19 @@ impl BatchArrayPropertiesBuilder {
     }
     /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
+    }
+    /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`BatchArrayProperties`](crate::types::BatchArrayProperties).
     pub fn build(self) -> crate::types::BatchArrayProperties {
         crate::types::BatchArrayProperties {
-            size: self.size.unwrap_or_default(),
+            size: self.size
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> The result structure for the start a deployment request. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDeploymentOutput {
+pub struct StartDeploymentOutput  {
     /// <p> The summary for the job. </p>
     #[doc(hidden)]
     pub job_summary: ::std::option::Option<crate::types::JobSummary>,
@@ -11,15 +11,15 @@ pub struct StartDeploymentOutput {
 }
 impl StartDeploymentOutput {
     /// <p> The summary for the job. </p>
-    pub fn job_summary(&self) -> ::std::option::Option<&crate::types::JobSummary> {
+    pub fn job_summary(&self) -> ::std::option::Option<& crate::types::JobSummary> {
         self.job_summary.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput).
     pub fn builder() -> crate::operation::start_deployment::builders::StartDeploymentOutputBuilder {
@@ -29,9 +29,7 @@ impl StartDeploymentOutput {
 
 /// A builder for [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDeploymentOutputBuilder {
     pub(crate) job_summary: ::std::option::Option<crate::types::JobSummary>,
     _request_id: Option<String>,
@@ -43,27 +41,29 @@ impl StartDeploymentOutputBuilder {
         self
     }
     /// <p> The summary for the job. </p>
-    pub fn set_job_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::JobSummary>,
-    ) -> Self {
-        self.job_summary = input;
-        self
+    pub fn set_job_summary(mut self, input: ::std::option::Option<crate::types::JobSummary>) -> Self {
+        self.job_summary = input; self
+    }
+    /// <p> The summary for the job. </p>
+    pub fn get_job_summary(&self) -> &::std::option::Option<crate::types::JobSummary> {
+        &self.job_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput).
     pub fn build(self) -> crate::operation::start_deployment::StartDeploymentOutput {
         crate::operation::start_deployment::StartDeploymentOutput {
-            job_summary: self.job_summary,
+            job_summary: self.job_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

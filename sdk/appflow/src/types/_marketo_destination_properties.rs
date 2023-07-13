@@ -3,7 +3,7 @@
 /// <p>The properties that Amazon AppFlow applies when you use Marketo as a flow destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MarketoDestinationProperties {
+pub struct MarketoDestinationProperties  {
     /// <p>The object specified in the Marketo flow destination.</p>
     #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
@@ -13,13 +13,11 @@ pub struct MarketoDestinationProperties {
 }
 impl MarketoDestinationProperties {
     /// <p>The object specified in the Marketo flow destination.</p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<& str> {
         self.object.as_deref()
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    pub fn error_handling_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
+    pub fn error_handling_config(&self) -> ::std::option::Option<& crate::types::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl MarketoDestinationProperties {
 
 /// A builder for [`MarketoDestinationProperties`](crate::types::MarketoDestinationProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MarketoDestinationPropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
     pub(crate) error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
@@ -47,8 +43,11 @@ impl MarketoDestinationPropertiesBuilder {
     }
     /// <p>The object specified in the Marketo flow destination.</p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
+    }
+    /// <p>The object specified in the Marketo flow destination.</p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(mut self, input: crate::types::ErrorHandlingConfig) -> Self {
@@ -56,18 +55,21 @@ impl MarketoDestinationPropertiesBuilder {
         self
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    pub fn set_error_handling_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorHandlingConfig>,
-    ) -> Self {
-        self.error_handling_config = input;
-        self
+    pub fn set_error_handling_config(mut self, input: ::std::option::Option<crate::types::ErrorHandlingConfig>) -> Self {
+        self.error_handling_config = input; self
+    }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    pub fn get_error_handling_config(&self) -> &::std::option::Option<crate::types::ErrorHandlingConfig> {
+        &self.error_handling_config
     }
     /// Consumes the builder and constructs a [`MarketoDestinationProperties`](crate::types::MarketoDestinationProperties).
     pub fn build(self) -> crate::types::MarketoDestinationProperties {
         crate::types::MarketoDestinationProperties {
-            object: self.object,
-            error_handling_config: self.error_handling_config,
+            object: self.object
+            ,
+            error_handling_config: self.error_handling_config
+            ,
         }
     }
 }
+

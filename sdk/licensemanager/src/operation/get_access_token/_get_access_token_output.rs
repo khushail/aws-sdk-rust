@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccessTokenOutput {
+pub struct GetAccessTokenOutput  {
     /// <p>Temporary access token.</p>
     #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct GetAccessTokenOutput {
 }
 impl GetAccessTokenOutput {
     /// <p>Temporary access token.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAccessTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessTokenOutput`](crate::operation::get_access_token::GetAccessTokenOutput).
     pub fn builder() -> crate::operation::get_access_token::builders::GetAccessTokenOutputBuilder {
@@ -28,9 +28,7 @@ impl GetAccessTokenOutput {
 
 /// A builder for [`GetAccessTokenOutput`](crate::operation::get_access_token::GetAccessTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessTokenOutputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl GetAccessTokenOutputBuilder {
     }
     /// <p>Temporary access token.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
+    }
+    /// <p>Temporary access token.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAccessTokenOutput`](crate::operation::get_access_token::GetAccessTokenOutput).
     pub fn build(self) -> crate::operation::get_access_token::GetAccessTokenOutput {
         crate::operation::get_access_token::GetAccessTokenOutput {
-            access_token: self.access_token,
+            access_token: self.access_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

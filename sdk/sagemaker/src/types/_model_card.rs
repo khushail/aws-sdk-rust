@@ -3,7 +3,7 @@
 /// <p>An Amazon SageMaker Model Card.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ModelCard {
+pub struct ModelCard  {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
     #[doc(hidden)]
     pub model_card_arn: ::std::option::Option<::std::string::String>,
@@ -16,12 +16,12 @@ pub struct ModelCard {
     /// <p>The content of the model card. Content uses the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
-    /// <ul>
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
@@ -52,11 +52,11 @@ pub struct ModelCard {
 }
 impl ModelCard {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn model_card_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_card_arn(&self) -> ::std::option::Option<& str> {
         self.model_card_arn.as_deref()
     }
     /// <p>The unique name of the model card.</p>
-    pub fn model_card_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_card_name(&self) -> ::std::option::Option<& str> {
         self.model_card_name.as_deref()
     }
     /// <p>The version of the model card.</p>
@@ -64,53 +64,53 @@ impl ModelCard {
         self.model_card_version
     }
     /// <p>The content of the model card. Content uses the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
-    /// <ul>
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
     /// </ul>
-    pub fn model_card_status(&self) -> ::std::option::Option<&crate::types::ModelCardStatus> {
+    pub fn model_card_status(&self) -> ::std::option::Option<& crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
     }
     /// <p>The security configuration used to protect model card data.</p>
-    pub fn security_config(&self) -> ::std::option::Option<&crate::types::ModelCardSecurityConfig> {
+    pub fn security_config(&self) -> ::std::option::Option<& crate::types::ModelCardSecurityConfig> {
         self.security_config.as_ref()
     }
     /// <p>The date and time that the model card was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>The date and time that the model card was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>Key-value pairs used to manage metadata for the model card.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The unique name (ID) of the model.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The risk rating of the model. Different organizations might have different criteria for model card risk ratings. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-risk-rating.html">Risk ratings</a>.</p>
-    pub fn risk_rating(&self) -> ::std::option::Option<&str> {
+    pub fn risk_rating(&self) -> ::std::option::Option<& str> {
         self.risk_rating.as_deref()
     }
 }
-impl ::std::fmt::Debug for ModelCard {
+impl  ::std::fmt::Debug for ModelCard  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ModelCard");
         formatter.field("model_card_arn", &self.model_card_arn);
@@ -156,36 +156,30 @@ pub struct ModelCardBuilder {
 }
 impl ModelCardBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn model_card_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn set_model_card_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.model_card_arn = input;
-        self
+    pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_card_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model card.</p>
+    pub fn get_model_card_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_arn
     }
     /// <p>The unique name of the model card.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the model card.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.model_card_name = input;
-        self
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_card_name = input; self
+    }
+    /// <p>The unique name of the model card.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
     }
     /// <p>The version of the model card.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
@@ -194,8 +188,11 @@ impl ModelCardBuilder {
     }
     /// <p>The version of the model card.</p>
     pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.model_card_version = input;
-        self
+        self.model_card_version = input; self
+    }
+    /// <p>The version of the model card.</p>
+    pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
+        &self.model_card_version
     }
     /// <p>The content of the model card. Content uses the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -204,33 +201,42 @@ impl ModelCardBuilder {
     }
     /// <p>The content of the model card. Content uses the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
-    /// <ul>
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// <p>The content of the model card. Content uses the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
     /// </ul>
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
         self.model_card_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
-    /// <ul>
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
     /// </ul>
-    pub fn set_model_card_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
-        self.model_card_status = input;
-        self
+    pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
+        self.model_card_status = input; self
+    }
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
+    /// </ul>
+    pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
+        &self.model_card_status
     }
     /// <p>The security configuration used to protect model card data.</p>
     pub fn security_config(mut self, input: crate::types::ModelCardSecurityConfig) -> Self {
@@ -238,12 +244,12 @@ impl ModelCardBuilder {
         self
     }
     /// <p>The security configuration used to protect model card data.</p>
-    pub fn set_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
-    ) -> Self {
-        self.security_config = input;
-        self
+    pub fn set_security_config(mut self, input: ::std::option::Option<crate::types::ModelCardSecurityConfig>) -> Self {
+        self.security_config = input; self
+    }
+    /// <p>The security configuration used to protect model card data.</p>
+    pub fn get_security_config(&self) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
+        &self.security_config
     }
     /// <p>The date and time that the model card was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -251,12 +257,12 @@ impl ModelCardBuilder {
         self
     }
     /// <p>The date and time that the model card was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The date and time that the model card was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -264,12 +270,12 @@ impl ModelCardBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
-        self.created_by = input;
-        self
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.created_by = input; self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
     }
     /// <p>The date and time that the model card was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -277,12 +283,12 @@ impl ModelCardBuilder {
         self
     }
     /// <p>The date and time that the model card was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
+    }
+    /// <p>The date and time that the model card was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
@@ -290,12 +296,12 @@ impl ModelCardBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
-        self.last_modified_by = input;
-        self
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.last_modified_by = input; self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     /// Appends an item to `tags`.
     ///
@@ -304,17 +310,17 @@ impl ModelCardBuilder {
     /// <p>Key-value pairs used to manage metadata for the model card.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs used to manage metadata for the model card.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Key-value pairs used to manage metadata for the model card.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>The unique name (ID) of the model.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -323,8 +329,11 @@ impl ModelCardBuilder {
     }
     /// <p>The unique name (ID) of the model.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
+    }
+    /// <p>The unique name (ID) of the model.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
     }
     /// <p>The risk rating of the model. Different organizations might have different criteria for model card risk ratings. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-risk-rating.html">Risk ratings</a>.</p>
     pub fn risk_rating(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -333,25 +342,42 @@ impl ModelCardBuilder {
     }
     /// <p>The risk rating of the model. Different organizations might have different criteria for model card risk ratings. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-risk-rating.html">Risk ratings</a>.</p>
     pub fn set_risk_rating(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.risk_rating = input;
-        self
+        self.risk_rating = input; self
+    }
+    /// <p>The risk rating of the model. Different organizations might have different criteria for model card risk ratings. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-risk-rating.html">Risk ratings</a>.</p>
+    pub fn get_risk_rating(&self) -> &::std::option::Option<::std::string::String> {
+        &self.risk_rating
     }
     /// Consumes the builder and constructs a [`ModelCard`](crate::types::ModelCard).
     pub fn build(self) -> crate::types::ModelCard {
         crate::types::ModelCard {
-            model_card_arn: self.model_card_arn,
-            model_card_name: self.model_card_name,
-            model_card_version: self.model_card_version.unwrap_or_default(),
-            content: self.content,
-            model_card_status: self.model_card_status,
-            security_config: self.security_config,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
-            tags: self.tags,
-            model_id: self.model_id,
-            risk_rating: self.risk_rating,
+            model_card_arn: self.model_card_arn
+            ,
+            model_card_name: self.model_card_name
+            ,
+            model_card_version: self.model_card_version
+                .unwrap_or_default()
+            ,
+            content: self.content
+            ,
+            model_card_status: self.model_card_status
+            ,
+            security_config: self.security_config
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            tags: self.tags
+            ,
+            model_id: self.model_id
+            ,
+            risk_rating: self.risk_rating
+            ,
         }
     }
 }
@@ -374,3 +400,4 @@ impl ::std::fmt::Debug for ModelCardBuilder {
         formatter.finish()
     }
 }
+

@@ -3,94 +3,87 @@ pub use crate::operation::update_bridge::_update_bridge_output::UpdateBridgeOutp
 
 pub use crate::operation::update_bridge::_update_bridge_input::UpdateBridgeInputBuilder;
 
+impl UpdateBridgeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_bridge::UpdateBridgeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_bridge::UpdateBridgeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_bridge();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateBridge`.
-///
+/// 
 /// Updates the bridge
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBridgeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_bridge::builders::UpdateBridgeInputBuilder,
+                    inner: crate::operation::update_bridge::builders::UpdateBridgeInputBuilder,
 }
-impl UpdateBridgeFluentBuilder {
+impl UpdateBridgeFluentBuilder  {
     /// Creates a new `UpdateBridge`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_bridge::UpdateBridge,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge::UpdateBridgeError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateBridge as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_bridge::builders::UpdateBridgeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bridge::UpdateBridgeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge::UpdateBridgeError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_bridge::UpdateBridge, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_bridge::UpdateBridgeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_bridge::UpdateBridgeOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_bridge::UpdateBridgeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bridge::UpdateBridgeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge::UpdateBridgeError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_bridge::UpdateBridge,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge::UpdateBridgeError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_bridge::UpdateBridgeOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_bridge::UpdateBridgeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_bridge::UpdateBridge, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_bridge::UpdateBridgeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// The Amazon Resource Number (ARN) of the bridge that you want to update.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bridge_arn(input.into());
@@ -101,37 +94,37 @@ impl UpdateBridgeFluentBuilder {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
+    /// The Amazon Resource Number (ARN) of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bridge_arn()
+    }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn egress_gateway_bridge(
-        mut self,
-        input: crate::types::UpdateEgressGatewayBridgeRequest,
-    ) -> Self {
+    pub fn egress_gateway_bridge(mut self, input: crate::types::UpdateEgressGatewayBridgeRequest) -> Self {
         self.inner = self.inner.egress_gateway_bridge(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_egress_gateway_bridge(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest>,
-    ) -> Self {
+    pub fn set_egress_gateway_bridge(mut self, input: ::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest>) -> Self {
         self.inner = self.inner.set_egress_gateway_bridge(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn ingress_gateway_bridge(
-        mut self,
-        input: crate::types::UpdateIngressGatewayBridgeRequest,
-    ) -> Self {
+    pub fn get_egress_gateway_bridge(&self) -> &::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest> {
+        self.inner.get_egress_gateway_bridge()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn ingress_gateway_bridge(mut self, input: crate::types::UpdateIngressGatewayBridgeRequest) -> Self {
         self.inner = self.inner.ingress_gateway_bridge(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_ingress_gateway_bridge(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateIngressGatewayBridgeRequest>,
-    ) -> Self {
+    pub fn set_ingress_gateway_bridge(mut self, input: ::std::option::Option<crate::types::UpdateIngressGatewayBridgeRequest>) -> Self {
         self.inner = self.inner.set_ingress_gateway_bridge(input);
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_ingress_gateway_bridge(&self) -> &::std::option::Option<crate::types::UpdateIngressGatewayBridgeRequest> {
+        self.inner.get_ingress_gateway_bridge()
     }
     /// The settings for source failover.
     pub fn source_failover_config(mut self, input: crate::types::UpdateFailoverConfig) -> Self {
@@ -139,11 +132,13 @@ impl UpdateBridgeFluentBuilder {
         self
     }
     /// The settings for source failover.
-    pub fn set_source_failover_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateFailoverConfig>,
-    ) -> Self {
+    pub fn set_source_failover_config(mut self, input: ::std::option::Option<crate::types::UpdateFailoverConfig>) -> Self {
         self.inner = self.inner.set_source_failover_config(input);
         self
     }
+    /// The settings for source failover.
+    pub fn get_source_failover_config(&self) -> &::std::option::Option<crate::types::UpdateFailoverConfig> {
+        self.inner.get_source_failover_config()
+    }
 }
+

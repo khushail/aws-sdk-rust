@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInsightInput {
+pub struct DeleteInsightInput  {
     /// <p>The ARN of the insight to delete.</p>
     #[doc(hidden)]
     pub insight_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInsightInput {
     /// <p>The ARN of the insight to delete.</p>
-    pub fn insight_arn(&self) -> ::std::option::Option<&str> {
+    pub fn insight_arn(&self) -> ::std::option::Option<& str> {
         self.insight_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteInsightInput {
 
 /// A builder for [`DeleteInsightInput`](crate::operation::delete_insight::DeleteInsightInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInsightInputBuilder {
     pub(crate) insight_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteInsightInputBuilder {
     }
     /// <p>The ARN of the insight to delete.</p>
     pub fn set_insight_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insight_arn = input;
-        self
+        self.insight_arn = input; self
+    }
+    /// <p>The ARN of the insight to delete.</p>
+    pub fn get_insight_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_arn
     }
     /// Consumes the builder and constructs a [`DeleteInsightInput`](crate::operation::delete_insight::DeleteInsightInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_insight::DeleteInsightInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_insight::DeleteInsightInput {
-            insight_arn: self.insight_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_insight::DeleteInsightInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_insight::DeleteInsightInput {
+                insight_arn: self.insight_arn
+                ,
+            }
+        )
     }
 }
+

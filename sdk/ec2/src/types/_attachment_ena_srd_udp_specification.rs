@@ -3,7 +3,7 @@
 /// <p>Describes the ENA Express configuration for UDP traffic on the network interface that's attached to the instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachmentEnaSrdUdpSpecification {
+pub struct AttachmentEnaSrdUdpSpecification  {
     /// <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first enable ENA Express.</p>
     #[doc(hidden)]
     pub ena_srd_udp_enabled: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl AttachmentEnaSrdUdpSpecification {
 
 /// A builder for [`AttachmentEnaSrdUdpSpecification`](crate::types::AttachmentEnaSrdUdpSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachmentEnaSrdUdpSpecificationBuilder {
     pub(crate) ena_srd_udp_enabled: ::std::option::Option<bool>,
 }
@@ -37,13 +35,18 @@ impl AttachmentEnaSrdUdpSpecificationBuilder {
     }
     /// <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first enable ENA Express.</p>
     pub fn set_ena_srd_udp_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ena_srd_udp_enabled = input;
-        self
+        self.ena_srd_udp_enabled = input; self
+    }
+    /// <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first enable ENA Express.</p>
+    pub fn get_ena_srd_udp_enabled(&self) -> &::std::option::Option<bool> {
+        &self.ena_srd_udp_enabled
     }
     /// Consumes the builder and constructs a [`AttachmentEnaSrdUdpSpecification`](crate::types::AttachmentEnaSrdUdpSpecification).
     pub fn build(self) -> crate::types::AttachmentEnaSrdUdpSpecification {
         crate::types::AttachmentEnaSrdUdpSpecification {
-            ena_srd_udp_enabled: self.ena_srd_udp_enabled,
+            ena_srd_udp_enabled: self.ena_srd_udp_enabled
+            ,
         }
     }
 }
+

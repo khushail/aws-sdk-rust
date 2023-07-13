@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedactChannelMessageOutput {
+pub struct RedactChannelMessageOutput  {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
     #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
@@ -13,32 +13,29 @@ pub struct RedactChannelMessageOutput {
 }
 impl RedactChannelMessageOutput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ID of the message being redacted.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RedactChannelMessageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RedactChannelMessageOutput {
     /// Creates a new builder-style object to manufacture [`RedactChannelMessageOutput`](crate::operation::redact_channel_message::RedactChannelMessageOutput).
-    pub fn builder(
-    ) -> crate::operation::redact_channel_message::builders::RedactChannelMessageOutputBuilder {
+    pub fn builder() -> crate::operation::redact_channel_message::builders::RedactChannelMessageOutputBuilder {
         crate::operation::redact_channel_message::builders::RedactChannelMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`RedactChannelMessageOutput`](crate::operation::redact_channel_message::RedactChannelMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedactChannelMessageOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
@@ -52,8 +49,11 @@ impl RedactChannelMessageOutputBuilder {
     }
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The ID of the message being redacted.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,24 +62,30 @@ impl RedactChannelMessageOutputBuilder {
     }
     /// <p>The ID of the message being redacted.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
+    }
+    /// <p>The ID of the message being redacted.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RedactChannelMessageOutput`](crate::operation::redact_channel_message::RedactChannelMessageOutput).
     pub fn build(self) -> crate::operation::redact_channel_message::RedactChannelMessageOutput {
         crate::operation::redact_channel_message::RedactChannelMessageOutput {
-            channel_arn: self.channel_arn,
-            message_id: self.message_id,
+            channel_arn: self.channel_arn
+            ,
+            message_id: self.message_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

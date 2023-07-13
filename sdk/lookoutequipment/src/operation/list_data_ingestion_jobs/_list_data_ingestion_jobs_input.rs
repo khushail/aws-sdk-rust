@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataIngestionJobsInput {
+pub struct ListDataIngestionJobsInput  {
     /// <p>The name of the dataset being used for the data ingestion job. </p>
     #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListDataIngestionJobsInput {
 }
 impl ListDataIngestionJobsInput {
     /// <p>The name of the dataset being used for the data ingestion job. </p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
@@ -30,24 +30,20 @@ impl ListDataIngestionJobsInput {
         self.max_results
     }
     /// <p>Indicates the status of the data ingestion job. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IngestionJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::IngestionJobStatus> {
         self.status.as_ref()
     }
 }
 impl ListDataIngestionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDataIngestionJobsInput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder {
         crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataIngestionJobsInput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataIngestionJobsInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -62,8 +58,11 @@ impl ListDataIngestionJobsInputBuilder {
     }
     /// <p>The name of the dataset being used for the data ingestion job. </p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
+    }
+    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +71,11 @@ impl ListDataIngestionJobsInputBuilder {
     }
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -82,8 +84,11 @@ impl ListDataIngestionJobsInputBuilder {
     }
     /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Indicates the status of the data ingestion job. </p>
     pub fn status(mut self, input: crate::types::IngestionJobStatus) -> Self {
@@ -91,27 +96,27 @@ impl ListDataIngestionJobsInputBuilder {
         self
     }
     /// <p>Indicates the status of the data ingestion job. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>Indicates the status of the data ingestion job. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionJobStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListDataIngestionJobsInput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput {
-                dataset_name: self.dataset_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                status: self.status,
-            },
+                dataset_name: self.dataset_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

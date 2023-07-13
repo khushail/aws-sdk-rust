@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for CancelBundleTask.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelBundleTaskInput {
+pub struct CancelBundleTaskInput  {
     /// <p>The ID of the bundle task.</p>
     #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CancelBundleTaskInput {
 }
 impl CancelBundleTaskInput {
     /// <p>The ID of the bundle task.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -23,17 +23,14 @@ impl CancelBundleTaskInput {
 }
 impl CancelBundleTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelBundleTaskInput`](crate::operation::cancel_bundle_task::CancelBundleTaskInput).
-    pub fn builder() -> crate::operation::cancel_bundle_task::builders::CancelBundleTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_bundle_task::builders::CancelBundleTaskInputBuilder {
         crate::operation::cancel_bundle_task::builders::CancelBundleTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelBundleTaskInput`](crate::operation::cancel_bundle_task::CancelBundleTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelBundleTaskInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -46,8 +43,11 @@ impl CancelBundleTaskInputBuilder {
     }
     /// <p>The ID of the bundle task.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
+    }
+    /// <p>The ID of the bundle task.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -56,21 +56,22 @@ impl CancelBundleTaskInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CancelBundleTaskInput`](crate::operation::cancel_bundle_task::CancelBundleTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_bundle_task::CancelBundleTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_bundle_task::CancelBundleTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_bundle_task::CancelBundleTaskInput {
-                bundle_id: self.bundle_id,
-                dry_run: self.dry_run,
-            },
+                bundle_id: self.bundle_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

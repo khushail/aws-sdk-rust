@@ -3,7 +3,7 @@
 /// <p>An interest group, theme, or label within a list. Lists can have multiple topics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Topic {
+pub struct Topic  {
     /// <p>The name of the topic.</p>
     #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
@@ -19,21 +19,19 @@ pub struct Topic {
 }
 impl Topic {
     /// <p>The name of the topic.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
+    pub fn topic_name(&self) -> ::std::option::Option<& str> {
         self.topic_name.as_deref()
     }
     /// <p>The name of the topic the contact will see.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description of what the topic is about, which the contact will see.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
-    pub fn default_subscription_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SubscriptionStatus> {
+    pub fn default_subscription_status(&self) -> ::std::option::Option<& crate::types::SubscriptionStatus> {
         self.default_subscription_status.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl Topic {
 
 /// A builder for [`Topic`](crate::types::Topic).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicBuilder {
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -63,8 +59,11 @@ impl TopicBuilder {
     }
     /// <p>The name of the topic.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
+    }
+    /// <p>The name of the topic.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_name
     }
     /// <p>The name of the topic the contact will see.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,8 +72,11 @@ impl TopicBuilder {
     }
     /// <p>The name of the topic the contact will see.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
+    }
+    /// <p>The name of the topic the contact will see.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>A description of what the topic is about, which the contact will see.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,8 +85,11 @@ impl TopicBuilder {
     }
     /// <p>A description of what the topic is about, which the contact will see.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of what the topic is about, which the contact will see.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
     pub fn default_subscription_status(mut self, input: crate::types::SubscriptionStatus) -> Self {
@@ -92,20 +97,25 @@ impl TopicBuilder {
         self
     }
     /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
-    pub fn set_default_subscription_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionStatus>,
-    ) -> Self {
-        self.default_subscription_status = input;
-        self
+    pub fn set_default_subscription_status(mut self, input: ::std::option::Option<crate::types::SubscriptionStatus>) -> Self {
+        self.default_subscription_status = input; self
+    }
+    /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
+    pub fn get_default_subscription_status(&self) -> &::std::option::Option<crate::types::SubscriptionStatus> {
+        &self.default_subscription_status
     }
     /// Consumes the builder and constructs a [`Topic`](crate::types::Topic).
     pub fn build(self) -> crate::types::Topic {
         crate::types::Topic {
-            topic_name: self.topic_name,
-            display_name: self.display_name,
-            description: self.description,
-            default_subscription_status: self.default_subscription_status,
+            topic_name: self.topic_name
+            ,
+            display_name: self.display_name
+            ,
+            description: self.description
+            ,
+            default_subscription_status: self.default_subscription_status
+            ,
         }
     }
 }
+

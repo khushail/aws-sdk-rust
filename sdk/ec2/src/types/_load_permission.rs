@@ -3,7 +3,7 @@
 /// <p>Describes a load permission.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadPermission {
+pub struct LoadPermission  {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct LoadPermission {
 }
 impl LoadPermission {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn group(&self) -> ::std::option::Option<&crate::types::PermissionGroup> {
+    pub fn group(&self) -> ::std::option::Option<& crate::types::PermissionGroup> {
         self.group.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl LoadPermission {
 
 /// A builder for [`LoadPermission`](crate::types::LoadPermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadPermissionBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) group: ::std::option::Option<crate::types::PermissionGroup>,
@@ -45,8 +43,11 @@ impl LoadPermissionBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The name of the group.</p>
     pub fn group(mut self, input: crate::types::PermissionGroup) -> Self {
@@ -54,18 +55,21 @@ impl LoadPermissionBuilder {
         self
     }
     /// <p>The name of the group.</p>
-    pub fn set_group(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionGroup>,
-    ) -> Self {
-        self.group = input;
-        self
+    pub fn set_group(mut self, input: ::std::option::Option<crate::types::PermissionGroup>) -> Self {
+        self.group = input; self
+    }
+    /// <p>The name of the group.</p>
+    pub fn get_group(&self) -> &::std::option::Option<crate::types::PermissionGroup> {
+        &self.group
     }
     /// Consumes the builder and constructs a [`LoadPermission`](crate::types::LoadPermission).
     pub fn build(self) -> crate::types::LoadPermission {
         crate::types::LoadPermission {
-            user_id: self.user_id,
-            group: self.group,
+            user_id: self.user_id
+            ,
+            group: self.group
+            ,
         }
     }
 }
+

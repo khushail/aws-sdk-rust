@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListForecastExportJobsOutput {
+pub struct ListForecastExportJobsOutput  {
     /// <p>An array of objects that summarize each export job's properties.</p>
     #[doc(hidden)]
-    pub forecast_export_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ForecastExportJobSummary>>,
+    pub forecast_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ForecastExportJobSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,38 +13,31 @@ pub struct ListForecastExportJobsOutput {
 }
 impl ListForecastExportJobsOutput {
     /// <p>An array of objects that summarize each export job's properties.</p>
-    pub fn forecast_export_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ForecastExportJobSummary]> {
+    pub fn forecast_export_jobs(&self) -> ::std::option::Option<& [crate::types::ForecastExportJobSummary]> {
         self.forecast_export_jobs.as_deref()
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListForecastExportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListForecastExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListForecastExportJobsOutput`](crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_forecast_export_jobs::builders::ListForecastExportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_forecast_export_jobs::builders::ListForecastExportJobsOutputBuilder {
         crate::operation::list_forecast_export_jobs::builders::ListForecastExportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListForecastExportJobsOutput`](crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListForecastExportJobsOutputBuilder {
-    pub(crate) forecast_export_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ForecastExportJobSummary>>,
+    pub(crate) forecast_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ForecastExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +49,17 @@ impl ListForecastExportJobsOutputBuilder {
     /// <p>An array of objects that summarize each export job's properties.</p>
     pub fn forecast_export_jobs(mut self, input: crate::types::ForecastExportJobSummary) -> Self {
         let mut v = self.forecast_export_jobs.unwrap_or_default();
-        v.push(input);
-        self.forecast_export_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.forecast_export_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that summarize each export job's properties.</p>
-    pub fn set_forecast_export_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ForecastExportJobSummary>>,
-    ) -> Self {
-        self.forecast_export_jobs = input;
-        self
+    pub fn set_forecast_export_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ForecastExportJobSummary>>) -> Self {
+        self.forecast_export_jobs = input; self
+    }
+    /// <p>An array of objects that summarize each export job's properties.</p>
+    pub fn get_forecast_export_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ForecastExportJobSummary>> {
+        &self.forecast_export_jobs
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,26 +68,30 @@ impl ListForecastExportJobsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListForecastExportJobsOutput`](crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput {
+    pub fn build(self) -> crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput {
         crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput {
-            forecast_export_jobs: self.forecast_export_jobs,
-            next_token: self.next_token,
+            forecast_export_jobs: self.forecast_export_jobs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

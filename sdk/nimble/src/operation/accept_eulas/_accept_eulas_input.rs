@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptEulasInput {
+pub struct AcceptEulasInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -15,15 +15,15 @@ pub struct AcceptEulasInput {
 }
 impl AcceptEulasInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The EULA ID.</p>
-    pub fn eula_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn eula_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.eula_ids.as_deref()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl AcceptEulasInput {
 
 /// A builder for [`AcceptEulasInput`](crate::operation::accept_eulas::AcceptEulasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptEulasInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,8 +50,11 @@ impl AcceptEulasInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `eula_ids`.
     ///
@@ -62,17 +63,17 @@ impl AcceptEulasInputBuilder {
     /// <p>The EULA ID.</p>
     pub fn eula_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.eula_ids.unwrap_or_default();
-        v.push(input.into());
-        self.eula_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.eula_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EULA ID.</p>
-    pub fn set_eula_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.eula_ids = input;
-        self
+    pub fn set_eula_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.eula_ids = input; self
+    }
+    /// <p>The EULA ID.</p>
+    pub fn get_eula_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.eula_ids
     }
     /// <p>The studio ID.</p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,20 +82,24 @@ impl AcceptEulasInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
+    }
+    /// <p>The studio ID.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`AcceptEulasInput`](crate::operation::accept_eulas::AcceptEulasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_eulas::AcceptEulasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::accept_eulas::AcceptEulasInput {
-            client_token: self.client_token,
-            eula_ids: self.eula_ids,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_eulas::AcceptEulasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::accept_eulas::AcceptEulasInput {
+                client_token: self.client_token
+                ,
+                eula_ids: self.eula_ids
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

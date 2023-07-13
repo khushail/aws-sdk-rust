@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateTrialComponentOutput {
+pub struct DisassociateTrialComponentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     #[doc(hidden)]
     pub trial_component_arn: ::std::option::Option<::std::string::String>,
@@ -13,31 +13,29 @@ pub struct DisassociateTrialComponentOutput {
 }
 impl DisassociateTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trial_component_arn(&self) -> ::std::option::Option<& str> {
         self.trial_component_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
-    pub fn trial_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trial_arn(&self) -> ::std::option::Option<& str> {
         self.trial_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DisassociateTrialComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateTrialComponentOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTrialComponentOutput`](crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput).
-    pub fn builder() -> crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentOutputBuilder {
         crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTrialComponentOutput`](crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTrialComponentOutputBuilder {
     pub(crate) trial_component_arn: ::std::option::Option<::std::string::String>,
     pub(crate) trial_arn: ::std::option::Option<::std::string::String>,
@@ -45,20 +43,17 @@ pub struct DisassociateTrialComponentOutputBuilder {
 }
 impl DisassociateTrialComponentOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn set_trial_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.trial_component_arn = input;
-        self
+    pub fn set_trial_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trial_component_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
+    pub fn get_trial_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn trial_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,26 +62,30 @@ impl DisassociateTrialComponentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn set_trial_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_arn = input;
-        self
+        self.trial_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the trial.</p>
+    pub fn get_trial_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateTrialComponentOutput`](crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput {
+    pub fn build(self) -> crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput {
         crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput {
-            trial_component_arn: self.trial_component_arn,
-            trial_arn: self.trial_arn,
+            trial_component_arn: self.trial_component_arn
+            ,
+            trial_arn: self.trial_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

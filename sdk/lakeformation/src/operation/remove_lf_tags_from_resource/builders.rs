@@ -3,102 +3,87 @@ pub use crate::operation::remove_lf_tags_from_resource::_remove_lf_tags_from_res
 
 pub use crate::operation::remove_lf_tags_from_resource::_remove_lf_tags_from_resource_input::RemoveLfTagsFromResourceInputBuilder;
 
+impl RemoveLfTagsFromResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.remove_lf_tags_from_resource();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `RemoveLFTagsFromResource`.
-///
+/// 
 /// <p>Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code> to specify column input.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveLFTagsFromResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder,
 }
-impl RemoveLFTagsFromResourceFluentBuilder {
+impl RemoveLFTagsFromResourceFluentBuilder  {
     /// Creates a new `RemoveLFTagsFromResource`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the RemoveLFTagsFromResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -108,6 +93,10 @@ impl RemoveLFTagsFromResourceFluentBuilder {
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
+    }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
     }
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
@@ -119,6 +108,10 @@ impl RemoveLFTagsFromResourceFluentBuilder {
         self.inner = self.inner.set_resource(input);
         self
     }
+    /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        self.inner.get_resource()
+    }
     /// Appends an item to `LFTags`.
     ///
     /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
@@ -129,11 +122,13 @@ impl RemoveLFTagsFromResourceFluentBuilder {
         self
     }
     /// <p>The LF-tags to be removed from the resource.</p>
-    pub fn set_lf_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
         self.inner = self.inner.set_lf_tags(input);
         self
     }
+    /// <p>The LF-tags to be removed from the resource.</p>
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        self.inner.get_lf_tags()
+    }
 }
+

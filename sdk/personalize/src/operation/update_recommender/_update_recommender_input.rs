@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRecommenderInput {
+pub struct UpdateRecommenderInput  {
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
     #[doc(hidden)]
     pub recommender_arn: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct UpdateRecommenderInput {
 }
 impl UpdateRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
-    pub fn recommender_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> ::std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn recommender_config(&self) -> ::std::option::Option<&crate::types::RecommenderConfig> {
+    pub fn recommender_config(&self) -> ::std::option::Option<& crate::types::RecommenderConfig> {
         self.recommender_config.as_ref()
     }
 }
 impl UpdateRecommenderInput {
     /// Creates a new builder-style object to manufacture [`UpdateRecommenderInput`](crate::operation::update_recommender::UpdateRecommenderInput).
-    pub fn builder() -> crate::operation::update_recommender::builders::UpdateRecommenderInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_recommender::builders::UpdateRecommenderInputBuilder {
         crate::operation::update_recommender::builders::UpdateRecommenderInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRecommenderInput`](crate::operation::update_recommender::UpdateRecommenderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRecommenderInputBuilder {
     pub(crate) recommender_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
 }
 impl UpdateRecommenderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
-    pub fn recommender_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
-    pub fn set_recommender_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.recommender_arn = input;
-        self
+    pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
+    pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_arn
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn recommender_config(mut self, input: crate::types::RecommenderConfig) -> Self {
@@ -60,25 +54,23 @@ impl UpdateRecommenderInputBuilder {
         self
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn set_recommender_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommenderConfig>,
-    ) -> Self {
-        self.recommender_config = input;
-        self
+    pub fn set_recommender_config(mut self, input: ::std::option::Option<crate::types::RecommenderConfig>) -> Self {
+        self.recommender_config = input; self
+    }
+    /// <p>The configuration details of the recommender.</p>
+    pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
+        &self.recommender_config
     }
     /// Consumes the builder and constructs a [`UpdateRecommenderInput`](crate::operation::update_recommender::UpdateRecommenderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_recommender::UpdateRecommenderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_recommender::UpdateRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_recommender::UpdateRecommenderInput {
-                recommender_arn: self.recommender_arn,
-                recommender_config: self.recommender_config,
-            },
+                recommender_arn: self.recommender_arn
+                ,
+                recommender_config: self.recommender_config
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterFromWorkMailInput {
+pub struct DeregisterFromWorkMailInput  {
     /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
     #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct DeregisterFromWorkMailInput {
 }
 impl DeregisterFromWorkMailInput {
     /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the member (user or group) to be updated.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
 }
 impl DeregisterFromWorkMailInput {
     /// Creates a new builder-style object to manufacture [`DeregisterFromWorkMailInput`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder {
         crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterFromWorkMailInput`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterFromWorkMailInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterFromWorkMailInputBuilder {
     /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
+    }
+    /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// <p>The identifier for the member (user or group) to be updated.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,21 +55,22 @@ impl DeregisterFromWorkMailInputBuilder {
     }
     /// <p>The identifier for the member (user or group) to be updated.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
+    }
+    /// <p>The identifier for the member (user or group) to be updated.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`DeregisterFromWorkMailInput`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput {
-                organization_id: self.organization_id,
-                entity_id: self.entity_id,
-            },
+                organization_id: self.organization_id
+                ,
+                entity_id: self.entity_id
+                ,
+            }
         )
     }
 }
+

@@ -3,39 +3,35 @@
 /// <p>Information about the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorChecks</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorChecksOutput {
+pub struct DescribeTrustedAdvisorChecksOutput  {
     /// <p>Information about all available Trusted Advisor checks.</p>
     #[doc(hidden)]
-    pub checks:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>>,
+    pub checks: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorChecksOutput {
     /// <p>Information about all available Trusted Advisor checks.</p>
-    pub fn checks(&self) -> ::std::option::Option<&[crate::types::TrustedAdvisorCheckDescription]> {
+    pub fn checks(&self) -> ::std::option::Option<& [crate::types::TrustedAdvisorCheckDescription]> {
         self.checks.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTrustedAdvisorChecksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeTrustedAdvisorChecksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorChecksOutput`](crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput).
-    pub fn builder() -> crate::operation::describe_trusted_advisor_checks::builders::DescribeTrustedAdvisorChecksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_trusted_advisor_checks::builders::DescribeTrustedAdvisorChecksOutputBuilder {
         crate::operation::describe_trusted_advisor_checks::builders::DescribeTrustedAdvisorChecksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrustedAdvisorChecksOutput`](crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorChecksOutputBuilder {
-    pub(crate) checks:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>>,
+    pub(crate) checks: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorChecksOutputBuilder {
@@ -46,34 +42,34 @@ impl DescribeTrustedAdvisorChecksOutputBuilder {
     /// <p>Information about all available Trusted Advisor checks.</p>
     pub fn checks(mut self, input: crate::types::TrustedAdvisorCheckDescription) -> Self {
         let mut v = self.checks.unwrap_or_default();
-        v.push(input);
-        self.checks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.checks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about all available Trusted Advisor checks.</p>
-    pub fn set_checks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>>,
-    ) -> Self {
-        self.checks = input;
-        self
+    pub fn set_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>>) -> Self {
+        self.checks = input; self
+    }
+    /// <p>Information about all available Trusted Advisor checks.</p>
+    pub fn get_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>> {
+        &self.checks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorChecksOutput`](crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput {
+    pub fn build(self) -> crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput {
         crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput {
-            checks: self.checks,
+            checks: self.checks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

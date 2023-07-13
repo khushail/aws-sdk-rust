@@ -3,7 +3,7 @@
 /// <p>Lists the policies that are enabled for a load balancer listener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElbLoadBalancerListenerDescription {
+pub struct AwsElbLoadBalancerListenerDescription  {
     /// <p>Information about the listener.</p>
     #[doc(hidden)]
     pub listener: ::std::option::Option<crate::types::AwsElbLoadBalancerListener>,
@@ -13,11 +13,11 @@ pub struct AwsElbLoadBalancerListenerDescription {
 }
 impl AwsElbLoadBalancerListenerDescription {
     /// <p>Information about the listener.</p>
-    pub fn listener(&self) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerListener> {
+    pub fn listener(&self) -> ::std::option::Option<& crate::types::AwsElbLoadBalancerListener> {
         self.listener.as_ref()
     }
     /// <p>The policies enabled for the listener.</p>
-    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn policy_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.policy_names.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AwsElbLoadBalancerListenerDescription {
 
 /// A builder for [`AwsElbLoadBalancerListenerDescription`](crate::types::AwsElbLoadBalancerListenerDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerListenerDescriptionBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::AwsElbLoadBalancerListener>,
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,12 +42,12 @@ impl AwsElbLoadBalancerListenerDescriptionBuilder {
         self
     }
     /// <p>Information about the listener.</p>
-    pub fn set_listener(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerListener>,
-    ) -> Self {
-        self.listener = input;
-        self
+    pub fn set_listener(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerListener>) -> Self {
+        self.listener = input; self
+    }
+    /// <p>Information about the listener.</p>
+    pub fn get_listener(&self) -> &::std::option::Option<crate::types::AwsElbLoadBalancerListener> {
+        &self.listener
     }
     /// Appends an item to `policy_names`.
     ///
@@ -58,23 +56,26 @@ impl AwsElbLoadBalancerListenerDescriptionBuilder {
     /// <p>The policies enabled for the listener.</p>
     pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The policies enabled for the listener.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.policy_names = input;
-        self
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.policy_names = input; self
+    }
+    /// <p>The policies enabled for the listener.</p>
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_names
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerListenerDescription`](crate::types::AwsElbLoadBalancerListenerDescription).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerListenerDescription {
         crate::types::AwsElbLoadBalancerListenerDescription {
-            listener: self.listener,
-            policy_names: self.policy_names,
+            listener: self.listener
+            ,
+            policy_names: self.policy_names
+            ,
         }
     }
 }
+

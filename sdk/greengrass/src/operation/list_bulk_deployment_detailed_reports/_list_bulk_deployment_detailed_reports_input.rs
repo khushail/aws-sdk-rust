@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBulkDeploymentDetailedReportsInput {
+pub struct ListBulkDeploymentDetailedReportsInput  {
     /// The ID of the bulk deployment.
     #[doc(hidden)]
     pub bulk_deployment_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct ListBulkDeploymentDetailedReportsInput {
 }
 impl ListBulkDeploymentDetailedReportsInput {
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn bulk_deployment_id(&self) -> ::std::option::Option<& str> {
         self.bulk_deployment_id.as_deref()
     }
     /// The maximum number of results to be returned per request.
-    pub fn max_results(&self) -> ::std::option::Option<&str> {
+    pub fn max_results(&self) -> ::std::option::Option<& str> {
         self.max_results.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListBulkDeploymentDetailedReportsInput {
     /// Creates a new builder-style object to manufacture [`ListBulkDeploymentDetailedReportsInput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput).
-    pub fn builder() -> crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder{
+    pub fn builder() -> crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder {
         crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBulkDeploymentDetailedReportsInput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBulkDeploymentDetailedReportsInputBuilder {
     pub(crate) bulk_deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct ListBulkDeploymentDetailedReportsInputBuilder {
 }
 impl ListBulkDeploymentDetailedReportsInputBuilder {
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the bulk deployment.
-    pub fn set_bulk_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.bulk_deployment_id = input;
-        self
+    pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bulk_deployment_id = input; self
+    }
+    /// The ID of the bulk deployment.
+    pub fn get_bulk_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bulk_deployment_id
     }
     /// The maximum number of results to be returned per request.
     pub fn max_results(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl ListBulkDeploymentDetailedReportsInputBuilder {
     }
     /// The maximum number of results to be returned per request.
     pub fn set_max_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_results
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,11 +76,14 @@ impl ListBulkDeploymentDetailedReportsInputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBulkDeploymentDetailedReportsInput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput {
                 bulk_deployment_id: self.bulk_deployment_id
@@ -95,3 +96,4 @@ impl ListBulkDeploymentDetailedReportsInputBuilder {
         )
     }
 }
+

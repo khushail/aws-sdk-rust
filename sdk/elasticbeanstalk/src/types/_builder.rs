@@ -3,14 +3,14 @@
 /// <p>The builder used to build the custom platform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Builder {
+pub struct Builder  {
     /// <p>The ARN of the builder.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Builder {
     /// <p>The ARN of the builder.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Builder {
 
 /// A builder for [`Builder`](crate::types::Builder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuilderBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl BuilderBuilder {
     }
     /// <p>The ARN of the builder.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of the builder.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`Builder`](crate::types::Builder).
     pub fn build(self) -> crate::types::Builder {
-        crate::types::Builder { arn: self.arn }
+        crate::types::Builder {
+            arn: self.arn
+            ,
+        }
     }
 }
+

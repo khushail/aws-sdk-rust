@@ -3,29 +3,27 @@
 /// <p> Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeElasticsearchDomainConfigInput {
+pub struct DescribeElasticsearchDomainConfigInput  {
     /// <p>The Elasticsearch domain that you want to get information about.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeElasticsearchDomainConfigInput {
     /// <p>The Elasticsearch domain that you want to get information about.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
 impl DescribeElasticsearchDomainConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainConfigInput`](crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigInput).
-    pub fn builder() -> crate::operation::describe_elasticsearch_domain_config::builders::DescribeElasticsearchDomainConfigInputBuilder{
+    pub fn builder() -> crate::operation::describe_elasticsearch_domain_config::builders::DescribeElasticsearchDomainConfigInputBuilder {
         crate::operation::describe_elasticsearch_domain_config::builders::DescribeElasticsearchDomainConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeElasticsearchDomainConfigInput`](crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainConfigInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,14 @@ impl DescribeElasticsearchDomainConfigInputBuilder {
     }
     /// <p>The Elasticsearch domain that you want to get information about.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The Elasticsearch domain that you want to get information about.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainConfigInput`](crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigInput {
                 domain_name: self.domain_name
@@ -50,3 +51,4 @@ impl DescribeElasticsearchDomainConfigInputBuilder {
         )
     }
 }
+

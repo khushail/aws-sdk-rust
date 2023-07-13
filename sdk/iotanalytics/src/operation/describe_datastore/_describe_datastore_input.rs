@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatastoreInput {
+pub struct DescribeDatastoreInput  {
     /// <p>The name of the data store</p>
     #[doc(hidden)]
     pub datastore_name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeDatastoreInput {
 }
 impl DescribeDatastoreInput {
     /// <p>The name of the data store</p>
-    pub fn datastore_name(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_name(&self) -> ::std::option::Option<& str> {
         self.datastore_name.as_deref()
     }
     /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
@@ -22,37 +22,31 @@ impl DescribeDatastoreInput {
 }
 impl DescribeDatastoreInput {
     /// Creates a new builder-style object to manufacture [`DescribeDatastoreInput`](crate::operation::describe_datastore::DescribeDatastoreInput).
-    pub fn builder() -> crate::operation::describe_datastore::builders::DescribeDatastoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_datastore::builders::DescribeDatastoreInputBuilder {
         crate::operation::describe_datastore::builders::DescribeDatastoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatastoreInput`](crate::operation::describe_datastore::DescribeDatastoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatastoreInputBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
     pub(crate) include_statistics: ::std::option::Option<bool>,
 }
 impl DescribeDatastoreInputBuilder {
     /// <p>The name of the data store</p>
-    pub fn datastore_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data store</p>
-    pub fn set_datastore_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.datastore_name = input;
-        self
+    pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.datastore_name = input; self
+    }
+    /// <p>The name of the data store</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_name
     }
     /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
     pub fn include_statistics(mut self, input: bool) -> Self {
@@ -61,21 +55,23 @@ impl DescribeDatastoreInputBuilder {
     }
     /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
     pub fn set_include_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_statistics = input;
-        self
+        self.include_statistics = input; self
+    }
+    /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
+    pub fn get_include_statistics(&self) -> &::std::option::Option<bool> {
+        &self.include_statistics
     }
     /// Consumes the builder and constructs a [`DescribeDatastoreInput`](crate::operation::describe_datastore::DescribeDatastoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_datastore::DescribeDatastoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_datastore::DescribeDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_datastore::DescribeDatastoreInput {
-                datastore_name: self.datastore_name,
-                include_statistics: self.include_statistics.unwrap_or_default(),
-            },
+                datastore_name: self.datastore_name
+                ,
+                include_statistics: self.include_statistics
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

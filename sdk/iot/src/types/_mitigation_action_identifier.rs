@@ -3,7 +3,7 @@
 /// <p>Information that identifies a mitigation action. This information is returned by ListMitigationActions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MitigationActionIdentifier {
+pub struct MitigationActionIdentifier  {
     /// <p>The friendly name of the mitigation action.</p>
     #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct MitigationActionIdentifier {
 }
 impl MitigationActionIdentifier {
     /// <p>The friendly name of the mitigation action.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
-    pub fn action_arn(&self) -> ::std::option::Option<&str> {
+    pub fn action_arn(&self) -> ::std::option::Option<& str> {
         self.action_arn.as_deref()
     }
     /// <p>The date when this mitigation action was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl MitigationActionIdentifier {
 
 /// A builder for [`MitigationActionIdentifier`](crate::types::MitigationActionIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MitigationActionIdentifierBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) action_arn: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl MitigationActionIdentifierBuilder {
     }
     /// <p>The friendly name of the mitigation action.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
+    }
+    /// <p>The friendly name of the mitigation action.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
     pub fn action_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl MitigationActionIdentifierBuilder {
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
     pub fn set_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_arn = input;
-        self
+        self.action_arn = input; self
+    }
+    /// <p>The IAM role ARN used to apply this mitigation action.</p>
+    pub fn get_action_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_arn
     }
     /// <p>The date when this mitigation action was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -72,19 +76,23 @@ impl MitigationActionIdentifierBuilder {
         self
     }
     /// <p>The date when this mitigation action was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>The date when this mitigation action was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`MitigationActionIdentifier`](crate::types::MitigationActionIdentifier).
     pub fn build(self) -> crate::types::MitigationActionIdentifier {
         crate::types::MitigationActionIdentifier {
-            action_name: self.action_name,
-            action_arn: self.action_arn,
-            creation_date: self.creation_date,
+            action_name: self.action_name
+            ,
+            action_arn: self.action_arn
+            ,
+            creation_date: self.creation_date
+            ,
         }
     }
 }
+

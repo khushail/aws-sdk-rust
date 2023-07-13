@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConnectorDefinitionInput {
+pub struct UpdateConnectorDefinitionInput  {
     /// The ID of the connector definition.
     #[doc(hidden)]
     pub connector_definition_id: ::std::option::Option<::std::string::String>,
@@ -12,46 +12,41 @@ pub struct UpdateConnectorDefinitionInput {
 }
 impl UpdateConnectorDefinitionInput {
     /// The ID of the connector definition.
-    pub fn connector_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_definition_id(&self) -> ::std::option::Option<& str> {
         self.connector_definition_id.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl UpdateConnectorDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorDefinitionInput`](crate::operation::update_connector_definition::UpdateConnectorDefinitionInput).
-    pub fn builder() -> crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionInputBuilder {
         crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectorDefinitionInput`](crate::operation::update_connector_definition::UpdateConnectorDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectorDefinitionInputBuilder {
     pub(crate) connector_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectorDefinitionInputBuilder {
     /// The ID of the connector definition.
-    pub fn connector_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the connector definition.
-    pub fn set_connector_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connector_definition_id = input;
-        self
+    pub fn set_connector_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_definition_id = input; self
+    }
+    /// The ID of the connector definition.
+    pub fn get_connector_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_id
     }
     /// The name of the definition.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,21 +55,22 @@ impl UpdateConnectorDefinitionInputBuilder {
     }
     /// The name of the definition.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// The name of the definition.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateConnectorDefinitionInput`](crate::operation::update_connector_definition::UpdateConnectorDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connector_definition::UpdateConnectorDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_connector_definition::UpdateConnectorDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_connector_definition::UpdateConnectorDefinitionInput {
-                connector_definition_id: self.connector_definition_id,
-                name: self.name,
-            },
+                connector_definition_id: self.connector_definition_id
+                ,
+                name: self.name
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about a parent asset and a child asset that are related through an asset hierarchy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetHierarchyInfo {
+pub struct AssetHierarchyInfo  {
     /// <p>The ID of the parent asset in this asset relationship.</p>
     #[doc(hidden)]
     pub parent_asset_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AssetHierarchyInfo {
 }
 impl AssetHierarchyInfo {
     /// <p>The ID of the parent asset in this asset relationship.</p>
-    pub fn parent_asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_asset_id(&self) -> ::std::option::Option<& str> {
         self.parent_asset_id.as_deref()
     }
     /// <p>The ID of the child asset in this asset relationship.</p>
-    pub fn child_asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn child_asset_id(&self) -> ::std::option::Option<& str> {
         self.child_asset_id.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl AssetHierarchyInfo {
 
 /// A builder for [`AssetHierarchyInfo`](crate::types::AssetHierarchyInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetHierarchyInfoBuilder {
     pub(crate) parent_asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) child_asset_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetHierarchyInfoBuilder {
     /// <p>The ID of the parent asset in this asset relationship.</p>
-    pub fn parent_asset_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_asset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parent asset in this asset relationship.</p>
-    pub fn set_parent_asset_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.parent_asset_id = input;
-        self
+    pub fn set_parent_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_asset_id = input; self
+    }
+    /// <p>The ID of the parent asset in this asset relationship.</p>
+    pub fn get_parent_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_asset_id
     }
     /// <p>The ID of the child asset in this asset relationship.</p>
-    pub fn child_asset_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_asset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the child asset in this asset relationship.</p>
-    pub fn set_child_asset_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.child_asset_id = input;
-        self
+    pub fn set_child_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.child_asset_id = input; self
+    }
+    /// <p>The ID of the child asset in this asset relationship.</p>
+    pub fn get_child_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.child_asset_id
     }
     /// Consumes the builder and constructs a [`AssetHierarchyInfo`](crate::types::AssetHierarchyInfo).
     pub fn build(self) -> crate::types::AssetHierarchyInfo {
         crate::types::AssetHierarchyInfo {
-            parent_asset_id: self.parent_asset_id,
-            child_asset_id: self.child_asset_id,
+            parent_asset_id: self.parent_asset_id
+            ,
+            child_asset_id: self.child_asset_id
+            ,
         }
     }
 }
+

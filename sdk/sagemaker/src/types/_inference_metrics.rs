@@ -3,7 +3,7 @@
 /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceMetrics {
+pub struct InferenceMetrics  {
     /// <p>The expected maximum number of requests per minute for the instance.</p>
     #[doc(hidden)]
     pub max_invocations: i32,
@@ -30,9 +30,7 @@ impl InferenceMetrics {
 
 /// A builder for [`InferenceMetrics`](crate::types::InferenceMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceMetricsBuilder {
     pub(crate) max_invocations: ::std::option::Option<i32>,
     pub(crate) model_latency: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl InferenceMetricsBuilder {
     }
     /// <p>The expected maximum number of requests per minute for the instance.</p>
     pub fn set_max_invocations(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_invocations = input;
-        self
+        self.max_invocations = input; self
+    }
+    /// <p>The expected maximum number of requests per minute for the instance.</p>
+    pub fn get_max_invocations(&self) -> &::std::option::Option<i32> {
+        &self.max_invocations
     }
     /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
     pub fn model_latency(mut self, input: i32) -> Self {
@@ -55,14 +56,22 @@ impl InferenceMetricsBuilder {
     }
     /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
     pub fn set_model_latency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.model_latency = input;
-        self
+        self.model_latency = input; self
+    }
+    /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
+    pub fn get_model_latency(&self) -> &::std::option::Option<i32> {
+        &self.model_latency
     }
     /// Consumes the builder and constructs a [`InferenceMetrics`](crate::types::InferenceMetrics).
     pub fn build(self) -> crate::types::InferenceMetrics {
         crate::types::InferenceMetrics {
-            max_invocations: self.max_invocations.unwrap_or_default(),
-            model_latency: self.model_latency.unwrap_or_default(),
+            max_invocations: self.max_invocations
+                .unwrap_or_default()
+            ,
+            model_latency: self.model_latency
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

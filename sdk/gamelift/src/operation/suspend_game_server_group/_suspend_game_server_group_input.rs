@@ -2,60 +2,51 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuspendGameServerGroupInput {
+pub struct SuspendGameServerGroupInput  {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
     #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The activity to suspend for this game server group.</p>
     #[doc(hidden)]
-    pub suspend_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
+    pub suspend_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
 }
 impl SuspendGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_name(&self) -> ::std::option::Option<& str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>The activity to suspend for this game server group.</p>
-    pub fn suspend_actions(&self) -> ::std::option::Option<&[crate::types::GameServerGroupAction]> {
+    pub fn suspend_actions(&self) -> ::std::option::Option<& [crate::types::GameServerGroupAction]> {
         self.suspend_actions.as_deref()
     }
 }
 impl SuspendGameServerGroupInput {
     /// Creates a new builder-style object to manufacture [`SuspendGameServerGroupInput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupInput).
-    pub fn builder(
-    ) -> crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder {
         crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`SuspendGameServerGroupInput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuspendGameServerGroupInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) suspend_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
+    pub(crate) suspend_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
 }
 impl SuspendGameServerGroupInputBuilder {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.game_server_group_name = input;
-        self
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.game_server_group_name = input; self
+    }
+    /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_name
     }
     /// Appends an item to `suspend_actions`.
     ///
@@ -64,30 +55,28 @@ impl SuspendGameServerGroupInputBuilder {
     /// <p>The activity to suspend for this game server group.</p>
     pub fn suspend_actions(mut self, input: crate::types::GameServerGroupAction) -> Self {
         let mut v = self.suspend_actions.unwrap_or_default();
-        v.push(input);
-        self.suspend_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suspend_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The activity to suspend for this game server group.</p>
-    pub fn set_suspend_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
-    ) -> Self {
-        self.suspend_actions = input;
-        self
+    pub fn set_suspend_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>) -> Self {
+        self.suspend_actions = input; self
+    }
+    /// <p>The activity to suspend for this game server group.</p>
+    pub fn get_suspend_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+        &self.suspend_actions
     }
     /// Consumes the builder and constructs a [`SuspendGameServerGroupInput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::suspend_game_server_group::SuspendGameServerGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::suspend_game_server_group::SuspendGameServerGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::suspend_game_server_group::SuspendGameServerGroupInput {
-                game_server_group_name: self.game_server_group_name,
-                suspend_actions: self.suspend_actions,
-            },
+                game_server_group_name: self.game_server_group_name
+                ,
+                suspend_actions: self.suspend_actions
+                ,
+            }
         )
     }
 }
+

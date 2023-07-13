@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccessTokenOutput {
+pub struct DeleteAccessTokenOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteAccessTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessTokenOutput`](crate::operation::delete_access_token::DeleteAccessTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_token::builders::DeleteAccessTokenOutputBuilder {
+    pub fn builder() -> crate::operation::delete_access_token::builders::DeleteAccessTokenOutputBuilder {
         crate::operation::delete_access_token::builders::DeleteAccessTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessTokenOutput`](crate::operation::delete_access_token::DeleteAccessTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessTokenOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteAccessTokenOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteAccessTokenOutput`](crate::operation::delete_access_token::DeleteAccessTokenOutput).
     pub fn build(self) -> crate::operation::delete_access_token::DeleteAccessTokenOutput {
         crate::operation::delete_access_token::DeleteAccessTokenOutput {
@@ -43,3 +40,4 @@ impl DeleteAccessTokenOutputBuilder {
         }
     }
 }
+

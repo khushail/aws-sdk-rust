@@ -3,7 +3,7 @@
 /// <p>The bookmarks configuration of an embedded dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BookmarksConfigurations {
+pub struct BookmarksConfigurations  {
     /// <p>A Boolean value that determines whether a user can bookmark an embedded dashboard.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -23,9 +23,7 @@ impl BookmarksConfigurations {
 
 /// A builder for [`BookmarksConfigurations`](crate::types::BookmarksConfigurations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BookmarksConfigurationsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -37,13 +35,19 @@ impl BookmarksConfigurationsBuilder {
     }
     /// <p>A Boolean value that determines whether a user can bookmark an embedded dashboard.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>A Boolean value that determines whether a user can bookmark an embedded dashboard.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`BookmarksConfigurations`](crate::types::BookmarksConfigurations).
     pub fn build(self) -> crate::types::BookmarksConfigurations {
         crate::types::BookmarksConfigurations {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

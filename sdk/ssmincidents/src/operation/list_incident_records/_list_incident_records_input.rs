@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIncidentRecordsInput {
-    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p>
-    /// <ul>
-    /// <li> <p> <code>creationTime</code> </p> </li>
-    /// <li> <p> <code>impact</code> </p> </li>
-    /// <li> <p> <code>status</code> </p> </li>
-    /// <li> <p> <code>createdBy</code> </p> </li>
-    /// </ul>
-    /// <p>Note the following when when you use Filters:</p>
-    /// <ul>
-    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
-    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
-    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
+pub struct ListIncidentRecordsInput  {
+    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p> 
+    /// <ul> 
+    /// <li> <p> <code>creationTime</code> </p> </li> 
+    /// <li> <p> <code>impact</code> </p> </li> 
+    /// <li> <p> <code>status</code> </p> </li> 
+    /// <li> <p> <code>createdBy</code> </p> </li> 
+    /// </ul> 
+    /// <p>Note the following when when you use Filters:</p> 
+    /// <ul> 
+    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li> 
+    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li> 
+    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -26,20 +26,20 @@ pub struct ListIncidentRecordsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIncidentRecordsInput {
-    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p>
-    /// <ul>
-    /// <li> <p> <code>creationTime</code> </p> </li>
-    /// <li> <p> <code>impact</code> </p> </li>
-    /// <li> <p> <code>status</code> </p> </li>
-    /// <li> <p> <code>createdBy</code> </p> </li>
+    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p> 
+    /// <ul> 
+    /// <li> <p> <code>creationTime</code> </p> </li> 
+    /// <li> <p> <code>impact</code> </p> </li> 
+    /// <li> <p> <code>status</code> </p> </li> 
+    /// <li> <p> <code>createdBy</code> </p> </li> 
+    /// </ul> 
+    /// <p>Note the following when when you use Filters:</p> 
+    /// <ul> 
+    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li> 
+    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li> 
+    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li> 
     /// </ul>
-    /// <p>Note the following when when you use Filters:</p>
-    /// <ul>
-    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
-    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
-    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
-    /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of results per page.</p>
@@ -47,24 +47,20 @@ impl ListIncidentRecordsInput {
         self.max_results
     }
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListIncidentRecordsInput {
     /// Creates a new builder-style object to manufacture [`ListIncidentRecordsInput`](crate::operation::list_incident_records::ListIncidentRecordsInput).
-    pub fn builder(
-    ) -> crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder {
-        crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder {
+        crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIncidentRecordsInput`](crate::operation::list_incident_records::ListIncidentRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIncidentRecordsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -75,44 +71,56 @@ impl ListIncidentRecordsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p>
-    /// <ul>
-    /// <li> <p> <code>creationTime</code> </p> </li>
-    /// <li> <p> <code>impact</code> </p> </li>
-    /// <li> <p> <code>status</code> </p> </li>
-    /// <li> <p> <code>createdBy</code> </p> </li>
-    /// </ul>
-    /// <p>Note the following when when you use Filters:</p>
-    /// <ul>
-    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
-    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
-    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
+    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p> 
+    /// <ul> 
+    /// <li> <p> <code>creationTime</code> </p> </li> 
+    /// <li> <p> <code>impact</code> </p> </li> 
+    /// <li> <p> <code>status</code> </p> </li> 
+    /// <li> <p> <code>createdBy</code> </p> </li> 
+    /// </ul> 
+    /// <p>Note the following when when you use Filters:</p> 
+    /// <ul> 
+    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li> 
+    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li> 
+    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p>
-    /// <ul>
-    /// <li> <p> <code>creationTime</code> </p> </li>
-    /// <li> <p> <code>impact</code> </p> </li>
-    /// <li> <p> <code>status</code> </p> </li>
-    /// <li> <p> <code>createdBy</code> </p> </li>
+    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p> 
+    /// <ul> 
+    /// <li> <p> <code>creationTime</code> </p> </li> 
+    /// <li> <p> <code>impact</code> </p> </li> 
+    /// <li> <p> <code>status</code> </p> </li> 
+    /// <li> <p> <code>createdBy</code> </p> </li> 
+    /// </ul> 
+    /// <p>Note the following when when you use Filters:</p> 
+    /// <ul> 
+    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li> 
+    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li> 
+    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li> 
     /// </ul>
-    /// <p>Note the following when when you use Filters:</p>
-    /// <ul>
-    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
-    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
-    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p> 
+    /// <ul> 
+    /// <li> <p> <code>creationTime</code> </p> </li> 
+    /// <li> <p> <code>impact</code> </p> </li> 
+    /// <li> <p> <code>status</code> </p> </li> 
+    /// <li> <p> <code>createdBy</code> </p> </li> 
+    /// </ul> 
+    /// <p>Note the following when when you use Filters:</p> 
+    /// <ul> 
+    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li> 
+    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li> 
+    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// <p>The maximum number of results per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -121,8 +129,11 @@ impl ListIncidentRecordsInputBuilder {
     }
     /// <p>The maximum number of results per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,22 +142,24 @@ impl ListIncidentRecordsInputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListIncidentRecordsInput`](crate::operation::list_incident_records::ListIncidentRecordsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_incident_records::ListIncidentRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_incident_records::ListIncidentRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_incident_records::ListIncidentRecordsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

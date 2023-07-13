@@ -3,7 +3,7 @@
 /// <p>The parameters for Teradata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TeradataParameters {
+pub struct TeradataParameters  {
     /// <p>Host.</p>
     #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct TeradataParameters {
 }
 impl TeradataParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>Port.</p>
@@ -24,7 +24,7 @@ impl TeradataParameters {
         self.port
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<& str> {
         self.database.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl TeradataParameters {
 
 /// A builder for [`TeradataParameters`](crate::types::TeradataParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TeradataParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl TeradataParametersBuilder {
     }
     /// <p>Host.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
+    }
+    /// <p>Host.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
     }
     /// <p>Port.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl TeradataParametersBuilder {
     }
     /// <p>Port.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
+    }
+    /// <p>Port.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>Database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,23 @@ impl TeradataParametersBuilder {
     }
     /// <p>Database.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
+    }
+    /// <p>Database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
     }
     /// Consumes the builder and constructs a [`TeradataParameters`](crate::types::TeradataParameters).
     pub fn build(self) -> crate::types::TeradataParameters {
         crate::types::TeradataParameters {
-            host: self.host,
-            port: self.port.unwrap_or_default(),
-            database: self.database,
+            host: self.host
+            ,
+            port: self.port
+                .unwrap_or_default()
+            ,
+            database: self.database
+            ,
         }
     }
 }
+

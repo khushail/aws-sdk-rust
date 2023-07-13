@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobTemplateOutput {
+pub struct DescribeJobTemplateOutput  {
     /// <p>This output displays information about the specified job template.</p>
     #[doc(hidden)]
     pub job_template: ::std::option::Option<crate::types::JobTemplate>,
@@ -10,29 +10,25 @@ pub struct DescribeJobTemplateOutput {
 }
 impl DescribeJobTemplateOutput {
     /// <p>This output displays information about the specified job template.</p>
-    pub fn job_template(&self) -> ::std::option::Option<&crate::types::JobTemplate> {
+    pub fn job_template(&self) -> ::std::option::Option<& crate::types::JobTemplate> {
         self.job_template.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeJobTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobTemplateOutput`](crate::operation::describe_job_template::DescribeJobTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder {
-        crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder {
+        crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobTemplateOutput`](crate::operation::describe_job_template::DescribeJobTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobTemplateOutputBuilder {
     pub(crate) job_template: ::std::option::Option<crate::types::JobTemplate>,
     _request_id: Option<String>,
@@ -44,27 +40,29 @@ impl DescribeJobTemplateOutputBuilder {
         self
     }
     /// <p>This output displays information about the specified job template.</p>
-    pub fn set_job_template(
-        mut self,
-        input: ::std::option::Option<crate::types::JobTemplate>,
-    ) -> Self {
-        self.job_template = input;
-        self
+    pub fn set_job_template(mut self, input: ::std::option::Option<crate::types::JobTemplate>) -> Self {
+        self.job_template = input; self
+    }
+    /// <p>This output displays information about the specified job template.</p>
+    pub fn get_job_template(&self) -> &::std::option::Option<crate::types::JobTemplate> {
+        &self.job_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeJobTemplateOutput`](crate::operation::describe_job_template::DescribeJobTemplateOutput).
     pub fn build(self) -> crate::operation::describe_job_template::DescribeJobTemplateOutput {
         crate::operation::describe_job_template::DescribeJobTemplateOutput {
-            job_template: self.job_template,
+            job_template: self.job_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A set of genome reference files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferenceFiles {
+pub struct ReferenceFiles  {
     /// <p>The source file's location in Amazon S3.</p>
     #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::FileInformation>,
@@ -13,11 +13,11 @@ pub struct ReferenceFiles {
 }
 impl ReferenceFiles {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::FileInformation> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::FileInformation> {
         self.source.as_ref()
     }
     /// <p>The files' index.</p>
-    pub fn index(&self) -> ::std::option::Option<&crate::types::FileInformation> {
+    pub fn index(&self) -> ::std::option::Option<& crate::types::FileInformation> {
         self.index.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl ReferenceFiles {
 
 /// A builder for [`ReferenceFiles`](crate::types::ReferenceFiles).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferenceFilesBuilder {
     pub(crate) source: ::std::option::Option<crate::types::FileInformation>,
     pub(crate) index: ::std::option::Option<crate::types::FileInformation>,
@@ -44,12 +42,12 @@ impl ReferenceFilesBuilder {
         self
     }
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::FileInformation>,
-    ) -> Self {
-        self.source = input;
-        self
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
+        self.source = input; self
+    }
+    /// <p>The source file's location in Amazon S3.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::FileInformation> {
+        &self.source
     }
     /// <p>The files' index.</p>
     pub fn index(mut self, input: crate::types::FileInformation) -> Self {
@@ -57,18 +55,21 @@ impl ReferenceFilesBuilder {
         self
     }
     /// <p>The files' index.</p>
-    pub fn set_index(
-        mut self,
-        input: ::std::option::Option<crate::types::FileInformation>,
-    ) -> Self {
-        self.index = input;
-        self
+    pub fn set_index(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
+        self.index = input; self
+    }
+    /// <p>The files' index.</p>
+    pub fn get_index(&self) -> &::std::option::Option<crate::types::FileInformation> {
+        &self.index
     }
     /// Consumes the builder and constructs a [`ReferenceFiles`](crate::types::ReferenceFiles).
     pub fn build(self) -> crate::types::ReferenceFiles {
         crate::types::ReferenceFiles {
-            source: self.source,
-            index: self.index,
+            source: self.source
+            ,
+            index: self.index
+            ,
         }
     }
 }
+

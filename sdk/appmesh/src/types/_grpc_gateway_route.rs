@@ -3,7 +3,7 @@
 /// <p>An object that represents a gRPC gateway route.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrpcGatewayRoute {
+pub struct GrpcGatewayRoute  {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::GrpcGatewayRouteMatch>,
@@ -13,11 +13,11 @@ pub struct GrpcGatewayRoute {
 }
 impl GrpcGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> ::std::option::Option<&crate::types::GrpcGatewayRouteMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<& crate::types::GrpcGatewayRouteMatch> {
         self.r#match.as_ref()
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::GrpcGatewayRouteAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::GrpcGatewayRouteAction> {
         self.action.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl GrpcGatewayRoute {
 
 /// A builder for [`GrpcGatewayRoute`](crate::types::GrpcGatewayRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteBuilder {
     pub(crate) r#match: ::std::option::Option<crate::types::GrpcGatewayRouteMatch>,
     pub(crate) action: ::std::option::Option<crate::types::GrpcGatewayRouteAction>,
@@ -44,12 +42,12 @@ impl GrpcGatewayRouteBuilder {
         self
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn set_match(
-        mut self,
-        input: ::std::option::Option<crate::types::GrpcGatewayRouteMatch>,
-    ) -> Self {
-        self.r#match = input;
-        self
+    pub fn set_match(mut self, input: ::std::option::Option<crate::types::GrpcGatewayRouteMatch>) -> Self {
+        self.r#match = input; self
+    }
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::GrpcGatewayRouteMatch> {
+        &self.r#match
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn action(mut self, input: crate::types::GrpcGatewayRouteAction) -> Self {
@@ -57,18 +55,21 @@ impl GrpcGatewayRouteBuilder {
         self
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::GrpcGatewayRouteAction>,
-    ) -> Self {
-        self.action = input;
-        self
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::GrpcGatewayRouteAction>) -> Self {
+        self.action = input; self
+    }
+    /// <p>An object that represents the action to take if a match is determined.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::GrpcGatewayRouteAction> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`GrpcGatewayRoute`](crate::types::GrpcGatewayRoute).
     pub fn build(self) -> crate::types::GrpcGatewayRoute {
         crate::types::GrpcGatewayRoute {
-            r#match: self.r#match,
-            action: self.action,
+            r#match: self.r#match
+            ,
+            action: self.action
+            ,
         }
     }
 }
+

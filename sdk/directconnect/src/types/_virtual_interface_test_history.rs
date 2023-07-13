@@ -3,7 +3,7 @@
 /// <p>Information about the virtual interface failover test.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualInterfaceTestHistory {
+pub struct VirtualInterfaceTestHistory  {
     /// <p>The ID of the virtual interface failover test.</p>
     #[doc(hidden)]
     pub test_id: ::std::option::Option<::std::string::String>,
@@ -31,23 +31,23 @@ pub struct VirtualInterfaceTestHistory {
 }
 impl VirtualInterfaceTestHistory {
     /// <p>The ID of the virtual interface failover test.</p>
-    pub fn test_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_id(&self) -> ::std::option::Option<& str> {
         self.test_id.as_deref()
     }
     /// <p>The ID of the tested virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>
-    pub fn bgp_peers(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn bgp_peers(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.bgp_peers.as_deref()
     }
     /// <p>The status of the virtual interface failover test.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The owner ID of the tested virtual interface.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The time that the virtual interface failover test ran in minutes.</p>
@@ -55,11 +55,11 @@ impl VirtualInterfaceTestHistory {
         self.test_duration_in_minutes
     }
     /// <p>The time that the virtual interface moves to the DOWN state.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -72,9 +72,7 @@ impl VirtualInterfaceTestHistory {
 
 /// A builder for [`VirtualInterfaceTestHistory`](crate::types::VirtualInterfaceTestHistory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualInterfaceTestHistoryBuilder {
     pub(crate) test_id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
@@ -93,24 +91,24 @@ impl VirtualInterfaceTestHistoryBuilder {
     }
     /// <p>The ID of the virtual interface failover test.</p>
     pub fn set_test_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_id = input;
-        self
+        self.test_id = input; self
+    }
+    /// <p>The ID of the virtual interface failover test.</p>
+    pub fn get_test_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_id
     }
     /// <p>The ID of the tested virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the tested virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_interface_id = input;
-        self
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_interface_id = input; self
+    }
+    /// <p>The ID of the tested virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
     }
     /// Appends an item to `bgp_peers`.
     ///
@@ -119,17 +117,17 @@ impl VirtualInterfaceTestHistoryBuilder {
     /// <p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>
     pub fn bgp_peers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bgp_peers.unwrap_or_default();
-        v.push(input.into());
-        self.bgp_peers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bgp_peers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>
-    pub fn set_bgp_peers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.bgp_peers = input;
-        self
+    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.bgp_peers = input; self
+    }
+    /// <p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>
+    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bgp_peers
     }
     /// <p>The status of the virtual interface failover test.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,24 +136,24 @@ impl VirtualInterfaceTestHistoryBuilder {
     }
     /// <p>The status of the virtual interface failover test.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the virtual interface failover test.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The owner ID of the tested virtual interface.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner ID of the tested virtual interface.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.owner_account = input;
-        self
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account = input; self
+    }
+    /// <p>The owner ID of the tested virtual interface.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
     }
     /// <p>The time that the virtual interface failover test ran in minutes.</p>
     pub fn test_duration_in_minutes(mut self, input: i32) -> Self {
@@ -164,8 +162,11 @@ impl VirtualInterfaceTestHistoryBuilder {
     }
     /// <p>The time that the virtual interface failover test ran in minutes.</p>
     pub fn set_test_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.test_duration_in_minutes = input;
-        self
+        self.test_duration_in_minutes = input; self
+    }
+    /// <p>The time that the virtual interface failover test ran in minutes.</p>
+    pub fn get_test_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.test_duration_in_minutes
     }
     /// <p>The time that the virtual interface moves to the DOWN state.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,12 +174,12 @@ impl VirtualInterfaceTestHistoryBuilder {
         self
     }
     /// <p>The time that the virtual interface moves to the DOWN state.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>The time that the virtual interface moves to the DOWN state.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -186,24 +187,33 @@ impl VirtualInterfaceTestHistoryBuilder {
         self
     }
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p>The time that the virtual interface moves out of the DOWN state.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`VirtualInterfaceTestHistory`](crate::types::VirtualInterfaceTestHistory).
     pub fn build(self) -> crate::types::VirtualInterfaceTestHistory {
         crate::types::VirtualInterfaceTestHistory {
-            test_id: self.test_id,
-            virtual_interface_id: self.virtual_interface_id,
-            bgp_peers: self.bgp_peers,
-            status: self.status,
-            owner_account: self.owner_account,
-            test_duration_in_minutes: self.test_duration_in_minutes,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            test_id: self.test_id
+            ,
+            virtual_interface_id: self.virtual_interface_id
+            ,
+            bgp_peers: self.bgp_peers
+            ,
+            status: self.status
+            ,
+            owner_account: self.owner_account
+            ,
+            test_duration_in_minutes: self.test_duration_in_minutes
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

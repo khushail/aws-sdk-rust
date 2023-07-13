@@ -3,7 +3,7 @@
 /// <p>The rule configuration for an assertion rule. That is, the criteria that you set for specific assertion controls (routing controls) that specify how many control states must be ON after a transaction completes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleConfig {
+pub struct RuleConfig  {
     /// <p>Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.</p>
     #[doc(hidden)]
     pub inverted: ::std::option::Option<bool>,
@@ -24,7 +24,7 @@ impl RuleConfig {
         self.threshold
     }
     /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RuleType> {
         self.r#type.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl RuleConfig {
 
 /// A builder for [`RuleConfig`](crate::types::RuleConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleConfigBuilder {
     pub(crate) inverted: ::std::option::Option<bool>,
     pub(crate) threshold: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl RuleConfigBuilder {
     }
     /// <p>Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.</p>
     pub fn set_inverted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inverted = input;
-        self
+        self.inverted = input; self
+    }
+    /// <p>Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.</p>
+    pub fn get_inverted(&self) -> &::std::option::Option<bool> {
+        &self.inverted
     }
     /// <p>The value of N, when you specify an ATLEAST rule type. That is, Threshold is the number of controls that must be set when you specify an ATLEAST type.</p>
     pub fn threshold(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl RuleConfigBuilder {
     }
     /// <p>The value of N, when you specify an ATLEAST rule type. That is, Threshold is the number of controls that must be set when you specify an ATLEAST type.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
+    }
+    /// <p>The value of N, when you specify an ATLEAST rule type. That is, Threshold is the number of controls that must be set when you specify an ATLEAST type.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<i32> {
+        &self.threshold
     }
     /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
     pub fn r#type(mut self, input: crate::types::RuleType) -> Self {
@@ -73,15 +77,22 @@ impl RuleConfigBuilder {
     }
     /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`RuleConfig`](crate::types::RuleConfig).
     pub fn build(self) -> crate::types::RuleConfig {
         crate::types::RuleConfig {
-            inverted: self.inverted,
-            threshold: self.threshold,
-            r#type: self.r#type,
+            inverted: self.inverted
+            ,
+            threshold: self.threshold
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

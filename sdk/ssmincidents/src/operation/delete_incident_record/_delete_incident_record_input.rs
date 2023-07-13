@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIncidentRecordInput {
+pub struct DeleteIncidentRecordInput  {
     /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIncidentRecordInput {
     /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeleteIncidentRecordInput {
     /// Creates a new builder-style object to manufacture [`DeleteIncidentRecordInput`](crate::operation::delete_incident_record::DeleteIncidentRecordInput).
-    pub fn builder(
-    ) -> crate::operation::delete_incident_record::builders::DeleteIncidentRecordInputBuilder {
+    pub fn builder() -> crate::operation::delete_incident_record::builders::DeleteIncidentRecordInputBuilder {
         crate::operation::delete_incident_record::builders::DeleteIncidentRecordInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIncidentRecordInput`](crate::operation::delete_incident_record::DeleteIncidentRecordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIncidentRecordInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DeleteIncidentRecordInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteIncidentRecordInput`](crate::operation::delete_incident_record::DeleteIncidentRecordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_incident_record::DeleteIncidentRecordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_incident_record::DeleteIncidentRecordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_incident_record::DeleteIncidentRecordInput { arn: self.arn },
+            crate::operation::delete_incident_record::DeleteIncidentRecordInput {
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

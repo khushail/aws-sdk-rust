@@ -3,7 +3,7 @@
 /// <p> Object containing the summary of the strategy recommendations. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StrategySummary {
+pub struct StrategySummary  {
     /// <p> The name of recommended strategy. </p>
     #[doc(hidden)]
     pub strategy: ::std::option::Option<crate::types::Strategy>,
@@ -13,7 +13,7 @@ pub struct StrategySummary {
 }
 impl StrategySummary {
     /// <p> The name of recommended strategy. </p>
-    pub fn strategy(&self) -> ::std::option::Option<&crate::types::Strategy> {
+    pub fn strategy(&self) -> ::std::option::Option<& crate::types::Strategy> {
         self.strategy.as_ref()
     }
     /// <p> The count of recommendations per strategy. </p>
@@ -30,9 +30,7 @@ impl StrategySummary {
 
 /// A builder for [`StrategySummary`](crate::types::StrategySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StrategySummaryBuilder {
     pub(crate) strategy: ::std::option::Option<crate::types::Strategy>,
     pub(crate) count: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl StrategySummaryBuilder {
     }
     /// <p> The name of recommended strategy. </p>
     pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::Strategy>) -> Self {
-        self.strategy = input;
-        self
+        self.strategy = input; self
+    }
+    /// <p> The name of recommended strategy. </p>
+    pub fn get_strategy(&self) -> &::std::option::Option<crate::types::Strategy> {
+        &self.strategy
     }
     /// <p> The count of recommendations per strategy. </p>
     pub fn count(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl StrategySummaryBuilder {
     }
     /// <p> The count of recommendations per strategy. </p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
+    }
+    /// <p> The count of recommendations per strategy. </p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`StrategySummary`](crate::types::StrategySummary).
     pub fn build(self) -> crate::types::StrategySummary {
         crate::types::StrategySummary {
-            strategy: self.strategy,
-            count: self.count,
+            strategy: self.strategy
+            ,
+            count: self.count
+            ,
         }
     }
 }
+

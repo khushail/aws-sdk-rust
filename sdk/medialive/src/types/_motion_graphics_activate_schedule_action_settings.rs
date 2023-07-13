@@ -3,7 +3,7 @@
 /// Settings to specify the rendering of motion graphics into the video stream.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MotionGraphicsActivateScheduleActionSettings {
+pub struct MotionGraphicsActivateScheduleActionSettings  {
     /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
     #[doc(hidden)]
     pub duration: ::std::option::Option<i64>,
@@ -23,31 +23,28 @@ impl MotionGraphicsActivateScheduleActionSettings {
         self.duration
     }
     /// Key used to extract the password from EC2 Parameter store
-    pub fn password_param(&self) -> ::std::option::Option<&str> {
+    pub fn password_param(&self) -> ::std::option::Option<& str> {
         self.password_param.as_deref()
     }
     /// URI of the HTML5 content to be rendered into the live stream.
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// Documentation update needed
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
 impl MotionGraphicsActivateScheduleActionSettings {
     /// Creates a new builder-style object to manufacture [`MotionGraphicsActivateScheduleActionSettings`](crate::types::MotionGraphicsActivateScheduleActionSettings).
-    pub fn builder() -> crate::types::builders::MotionGraphicsActivateScheduleActionSettingsBuilder
-    {
+    pub fn builder() -> crate::types::builders::MotionGraphicsActivateScheduleActionSettingsBuilder {
         crate::types::builders::MotionGraphicsActivateScheduleActionSettingsBuilder::default()
     }
 }
 
 /// A builder for [`MotionGraphicsActivateScheduleActionSettings`](crate::types::MotionGraphicsActivateScheduleActionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MotionGraphicsActivateScheduleActionSettingsBuilder {
     pub(crate) duration: ::std::option::Option<i64>,
     pub(crate) password_param: ::std::option::Option<::std::string::String>,
@@ -62,24 +59,24 @@ impl MotionGraphicsActivateScheduleActionSettingsBuilder {
     }
     /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
     pub fn set_duration(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
+    }
+    /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
+    pub fn get_duration(&self) -> &::std::option::Option<i64> {
+        &self.duration
     }
     /// Key used to extract the password from EC2 Parameter store
-    pub fn password_param(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn password_param(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password_param = ::std::option::Option::Some(input.into());
         self
     }
     /// Key used to extract the password from EC2 Parameter store
-    pub fn set_password_param(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.password_param = input;
-        self
+    pub fn set_password_param(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.password_param = input; self
+    }
+    /// Key used to extract the password from EC2 Parameter store
+    pub fn get_password_param(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password_param
     }
     /// URI of the HTML5 content to be rendered into the live stream.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +85,11 @@ impl MotionGraphicsActivateScheduleActionSettingsBuilder {
     }
     /// URI of the HTML5 content to be rendered into the live stream.
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// URI of the HTML5 content to be rendered into the live stream.
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Documentation update needed
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,16 +98,24 @@ impl MotionGraphicsActivateScheduleActionSettingsBuilder {
     }
     /// Documentation update needed
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// Documentation update needed
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`MotionGraphicsActivateScheduleActionSettings`](crate::types::MotionGraphicsActivateScheduleActionSettings).
     pub fn build(self) -> crate::types::MotionGraphicsActivateScheduleActionSettings {
         crate::types::MotionGraphicsActivateScheduleActionSettings {
-            duration: self.duration,
-            password_param: self.password_param,
-            url: self.url,
-            username: self.username,
+            duration: self.duration
+            ,
+            password_param: self.password_param
+            ,
+            url: self.url
+            ,
+            username: self.username
+            ,
         }
     }
 }
+

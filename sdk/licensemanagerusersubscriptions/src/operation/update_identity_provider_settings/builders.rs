@@ -3,88 +3,100 @@ pub use crate::operation::update_identity_provider_settings::_update_identity_pr
 
 pub use crate::operation::update_identity_provider_settings::_update_identity_provider_settings_input::UpdateIdentityProviderSettingsInputBuilder;
 
+impl UpdateIdentityProviderSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_identity_provider_settings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateIdentityProviderSettings`.
-///
+/// 
 /// <p>Updates additional product configuration settings for the registered identity provider.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder,
 }
-impl UpdateIdentityProviderSettingsFluentBuilder {
+impl UpdateIdentityProviderSettingsFluentBuilder  {
     /// Creates a new `UpdateIdentityProviderSettings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIdentityProviderSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettings, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettings, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>Details about an identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.inner = self.inner.identity_provider(input);
         self
     }
     /// <p>Details about an identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
+    }
+    /// <p>Details about an identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        self.inner.get_identity_provider()
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,27 +108,38 @@ impl UpdateIdentityProviderSettingsFluentBuilder {
         self.inner = self.inner.set_product(input);
         self
     }
-    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
-    /// <ul>
-    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
-    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
-    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product()
+    }
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p> 
+    /// <ul> 
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li> 
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li> 
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li> 
     /// </ul>
     pub fn update_settings(mut self, input: crate::types::UpdateSettings) -> Self {
         self.inner = self.inner.update_settings(input);
         self
     }
-    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
-    /// <ul>
-    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
-    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
-    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p> 
+    /// <ul> 
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li> 
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li> 
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li> 
     /// </ul>
-    pub fn set_update_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateSettings>,
-    ) -> Self {
+    pub fn set_update_settings(mut self, input: ::std::option::Option<crate::types::UpdateSettings>) -> Self {
         self.inner = self.inner.set_update_settings(input);
         self
     }
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p> 
+    /// <ul> 
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li> 
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li> 
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li> 
+    /// </ul>
+    pub fn get_update_settings(&self) -> &::std::option::Option<crate::types::UpdateSettings> {
+        self.inner.get_update_settings()
+    }
 }
+

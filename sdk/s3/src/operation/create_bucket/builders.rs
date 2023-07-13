@@ -3,150 +3,113 @@ pub use crate::operation::create_bucket::_create_bucket_output::CreateBucketOutp
 
 pub use crate::operation::create_bucket::_create_bucket_input::CreateBucketInputBuilder;
 
+impl CreateBucketInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_bucket::CreateBucketOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_bucket::CreateBucketError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_bucket();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateBucket`.
-///
-/// <p>Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and have a valid Amazon Web Services Access Key ID to authenticate requests. Anonymous requests are never allowed to create buckets. By creating the bucket, you become the bucket owner.</p>
-/// <p>Not every string is an acceptable bucket name. For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a>.</p>
-/// <p>If you want to create an Amazon S3 on Outposts bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create Bucket</a>. </p>
-/// <p>By default, the bucket is created in the US East (N. Virginia) Region. You can optionally specify a Region in the request body. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements. For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe (Ireland) Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a bucket</a>.</p> <note>
-/// <p>If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes to the us-east-1 Region. Accordingly, the signature calculations in Signature Version 4 must use us-east-1 as the Region, even if the location constraint in the request specifies another Region where the bucket is to be created. If you create a bucket in a Region other than US East (N. Virginia), your application must be able to handle 307 redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual hosting of buckets</a>.</p>
-/// </note>
-/// <dl>
-/// <dt>
-/// Access control lists (ACLs)
-/// </dt>
-/// <dd>
-/// <p>When creating a bucket using this operation, you can optionally configure the bucket ACL to specify the accounts or groups that should be granted specific permissions on the bucket.</p> <important>
-/// <p>If your CreateBucket request sets bucket owner enforced for S3 Object Ownership and specifies a bucket ACL that provides access to an external Amazon Web Services account, your request fails with a <code>400</code> error and returns the <code>InvalidBucketAclWithObjectOwnership</code> error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling object ownership</a> in the <i>Amazon S3 User Guide</i>.</p>
-/// </important>
-/// <p>There are two ways to grant the appropriate permissions using the request headers.</p>
-/// <ul>
-/// <li> <p>Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p> </li>
-/// <li> <p>Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>, <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code> headers. These headers map to the set of permissions Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html">Access control list (ACL) overview</a>.</p> <p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
-/// <ul>
-/// <li> <p> <code>id</code> – if the value specified is the canonical user ID of an Amazon Web Services account</p> </li>
-/// <li> <p> <code>uri</code> – if you are granting permissions to a predefined group</p> </li>
-/// <li> <p> <code>emailAddress</code> – if the value specified is the email address of an Amazon Web Services account</p> <note>
-/// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
-/// <ul>
-/// <li> <p>US East (N. Virginia)</p> </li>
-/// <li> <p>US West (N. California)</p> </li>
-/// <li> <p> US West (Oregon)</p> </li>
-/// <li> <p> Asia Pacific (Singapore)</p> </li>
-/// <li> <p>Asia Pacific (Sydney)</p> </li>
-/// <li> <p>Asia Pacific (Tokyo)</p> </li>
-/// <li> <p>Europe (Ireland)</p> </li>
-/// <li> <p>South America (São Paulo)</p> </li>
-/// </ul>
-/// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
-/// </note> </li>
-/// </ul> <p>For example, the following <code>x-amz-grant-read</code> header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p> <p> <code>x-amz-grant-read: id="11112222333", id="444455556666" </code> </p> </li>
-/// </ul> <note>
-/// <p>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</p>
-/// </note>
-/// </dd>
+/// 
+/// <p>Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and have a valid Amazon Web Services Access Key ID to authenticate requests. Anonymous requests are never allowed to create buckets. By creating the bucket, you become the bucket owner.</p> 
+/// <p>Not every string is an acceptable bucket name. For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a>.</p> 
+/// <p>If you want to create an Amazon S3 on Outposts bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create Bucket</a>. </p> 
+/// <p>By default, the bucket is created in the US East (N. Virginia) Region. You can optionally specify a Region in the request body. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements. For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe (Ireland) Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a bucket</a>.</p> <note> 
+/// <p>If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes to the <code>us-east-1</code> Region. Accordingly, the signature calculations in Signature Version 4 must use <code>us-east-1</code> as the Region, even if the location constraint in the request specifies another Region where the bucket is to be created. If you create a bucket in a Region other than US East (N. Virginia), your application must be able to handle 307 redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual hosting of buckets</a>.</p> 
+/// </note> 
+/// <dl> 
 /// <dt>
 /// Permissions
-/// </dt>
-/// <dd>
-/// <p>In addition to <code>s3:CreateBucket</code>, the following permissions are required when your CreateBucket includes specific headers:</p>
-/// <ul>
-/// <li> <p> <b>ACLs</b> - If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is public-read, public-read-write, authenticated-read, or if you specify access permissions explicitly through any other ACL, both <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code> permissions are needed. If the ACL the <code>CreateBucket</code> request is private or doesn't specify any ACLs, only <code>s3:CreateBucket</code> permission is needed. </p> </li>
-/// <li> <p> <b>Object Lock</b> - If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code> request, <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code> permissions are required.</p> </li>
-/// <li> <p> <b>S3 Object Ownership</b> - If your CreateBucket request includes the <code>x-amz-object-ownership</code> header, <code>s3:PutBucketOwnershipControls</code> permission is required.</p> </li>
-/// </ul>
-/// </dd>
-/// </dl>
-/// <p>The following operations are related to <code>CreateBucket</code>:</p>
-/// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> </p> </li>
+/// </dt> 
+/// <dd> 
+/// <p>In addition to <code>s3:CreateBucket</code>, the following permissions are required when your <code>CreateBucket</code> request includes specific headers:</p> 
+/// <ul> 
+/// <li> <p> <b>Access control lists (ACLs)</b> - If your <code>CreateBucket</code> request specifies access control list (ACL) permissions and the ACL is public-read, public-read-write, authenticated-read, or if you specify access permissions explicitly through any other ACL, both <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code> permissions are needed. If the ACL for the <code>CreateBucket</code> request is private or if the request doesn't specify any ACLs, only <code>s3:CreateBucket</code> permission is needed. </p> </li> 
+/// <li> <p> <b>Object Lock</b> - If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code> request, <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code> permissions are required.</p> </li> 
+/// <li> <p> <b>S3 Object Ownership</b> - If your <code>CreateBucket</code> request includes the <code>x-amz-object-ownership</code> header, then the <code>s3:PutBucketOwnershipControls</code> permission is required. By default, <code>ObjectOwnership</code> is set to <code>BucketOWnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. If you want to change the <code>ObjectOwnership</code> setting, you can use the <code>x-amz-object-ownership</code> header in your <code>CreateBucket</code> request to set the <code>ObjectOwnership</code> setting of your choice. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling object ownership </a> in the <i>Amazon S3 User Guide</i>.</p> </li> 
+/// <li> <p> <b>S3 Block Public Access</b> - If your specific use case requires granting public access to your S3 resources, you can disable Block Public Access. You can create a new bucket with Block Public Access enabled, then separately call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html"> <code>DeletePublicAccessBlock</code> </a> API. To use this operation, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission. By default, all Block Public Access settings are enabled for new buckets. To avoid inadvertent exposure of your resources, we recommend keeping the S3 Block Public Access settings enabled. For more information about S3 Block Public Access, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Blocking public access to your Amazon S3 storage </a> in the <i>Amazon S3 User Guide</i>. </p> </li> 
+/// </ul> 
+/// </dd> 
+/// </dl> <important> 
+/// <p> If your <code>CreateBucket</code> request sets <code>BucketOwnerEnforced</code> for Amazon S3 Object Ownership and specifies a bucket ACL that provides access to an external Amazon Web Services account, your request fails with a <code>400</code> error and returns the <code>InvalidBucketAcLWithObjectOwnership</code> error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-ownership-existing-bucket.html">Setting Object Ownership on an existing bucket </a> in the <i>Amazon S3 User Guide</i>. </p> 
+/// </important> 
+/// <p>The following operations are related to <code>CreateBucket</code>:</p> 
+/// <ul> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li> 
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> </p> </li> 
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBucketFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_bucket::builders::CreateBucketInputBuilder,
+                    inner: crate::operation::create_bucket::builders::CreateBucketInputBuilder,
 }
-impl CreateBucketFluentBuilder {
+impl CreateBucketFluentBuilder  {
     /// Creates a new `CreateBucket`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bucket::CreateBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateBucket as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_bucket::builders::CreateBucketInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bucket::CreateBucketOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_bucket::CreateBucket, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bucket::CreateBucketOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bucket::CreateBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_bucket::CreateBucket, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The canned ACL to apply to the bucket.</p>
     pub fn acl(mut self, input: crate::types::BucketCannedAcl) -> Self {
         self.inner = self.inner.acl(input);
@@ -156,6 +119,10 @@ impl CreateBucketFluentBuilder {
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::BucketCannedAcl>) -> Self {
         self.inner = self.inner.set_acl(input);
         self
+    }
+    /// <p>The canned ACL to apply to the bucket.</p>
+    pub fn get_acl(&self) -> &::std::option::Option<crate::types::BucketCannedAcl> {
+        self.inner.get_acl()
     }
     /// <p>The name of the bucket to create.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,37 +134,37 @@ impl CreateBucketFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the bucket to create.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The configuration information for the bucket.</p>
-    pub fn create_bucket_configuration(
-        mut self,
-        input: crate::types::CreateBucketConfiguration,
-    ) -> Self {
+    pub fn create_bucket_configuration(mut self, input: crate::types::CreateBucketConfiguration) -> Self {
         self.inner = self.inner.create_bucket_configuration(input);
         self
     }
     /// <p>The configuration information for the bucket.</p>
-    pub fn set_create_bucket_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateBucketConfiguration>,
-    ) -> Self {
+    pub fn set_create_bucket_configuration(mut self, input: ::std::option::Option<crate::types::CreateBucketConfiguration>) -> Self {
         self.inner = self.inner.set_create_bucket_configuration(input);
         self
     }
+    /// <p>The configuration information for the bucket.</p>
+    pub fn get_create_bucket_configuration(&self) -> &::std::option::Option<crate::types::CreateBucketConfiguration> {
+        self.inner.get_create_bucket_configuration()
+    }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    pub fn grant_full_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_full_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_full_control(input.into());
         self
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    pub fn set_grant_full_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_full_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_full_control(input);
         self
+    }
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
+    pub fn get_grant_full_control(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_full_control()
     }
     /// <p>Allows grantee to list the objects in the bucket.</p>
     pub fn grant_read(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -209,49 +176,54 @@ impl CreateBucketFluentBuilder {
         self.inner = self.inner.set_grant_read(input);
         self
     }
+    /// <p>Allows grantee to list the objects in the bucket.</p>
+    pub fn get_grant_read(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_read()
+    }
     /// <p>Allows grantee to read the bucket ACL.</p>
-    pub fn grant_read_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_read_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_read_acp(input.into());
         self
     }
     /// <p>Allows grantee to read the bucket ACL.</p>
-    pub fn set_grant_read_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_read_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_read_acp(input);
         self
     }
-    /// <p>Allows grantee to create new objects in the bucket.</p>
+    /// <p>Allows grantee to read the bucket ACL.</p>
+    pub fn get_grant_read_acp(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_read_acp()
+    }
+    /// <p>Allows grantee to create new objects in the bucket.</p> 
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
     pub fn grant_write(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_write(input.into());
         self
     }
-    /// <p>Allows grantee to create new objects in the bucket.</p>
+    /// <p>Allows grantee to create new objects in the bucket.</p> 
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
     pub fn set_grant_write(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_write(input);
         self
     }
+    /// <p>Allows grantee to create new objects in the bucket.</p> 
+    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
+    pub fn get_grant_write(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_write()
+    }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    pub fn grant_write_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_write_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_write_acp(input.into());
         self
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    pub fn set_grant_write_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_write_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_write_acp(input);
         self
+    }
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
+    pub fn get_grant_write_acp(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_write_acp()
     }
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
     pub fn object_lock_enabled_for_bucket(mut self, input: bool) -> Self {
@@ -259,30 +231,36 @@ impl CreateBucketFluentBuilder {
         self
     }
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-    pub fn set_object_lock_enabled_for_bucket(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_object_lock_enabled_for_bucket(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_object_lock_enabled_for_bucket(input);
         self
     }
-    /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
-    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
+    pub fn get_object_lock_enabled_for_bucket(&self) -> &::std::option::Option<bool> {
+        self.inner.get_object_lock_enabled_for_bucket()
+    }
+    /// <p>The container element for object ownership for a bucket's ownership controls.</p> 
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p> 
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p> 
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub fn object_ownership(mut self, input: crate::types::ObjectOwnership) -> Self {
         self.inner = self.inner.object_ownership(input);
         self
     }
-    /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
-    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>The container element for object ownership for a bucket's ownership controls.</p> 
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p> 
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p> 
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
-    pub fn set_object_ownership(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectOwnership>,
-    ) -> Self {
+    pub fn set_object_ownership(mut self, input: ::std::option::Option<crate::types::ObjectOwnership>) -> Self {
         self.inner = self.inner.set_object_ownership(input);
         self
     }
+    /// <p>The container element for object ownership for a bucket's ownership controls.</p> 
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p> 
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p> 
+    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    pub fn get_object_ownership(&self) -> &::std::option::Option<crate::types::ObjectOwnership> {
+        self.inner.get_object_ownership()
+    }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImportInput {
+pub struct DescribeImportInput  {
     /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
     #[doc(hidden)]
     pub import_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImportInput {
     /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
-    pub fn import_arn(&self) -> ::std::option::Option<&str> {
+    pub fn import_arn(&self) -> ::std::option::Option<& str> {
         self.import_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeImportInput {
 
 /// A builder for [`DescribeImportInput`](crate::operation::describe_import::DescribeImportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImportInputBuilder {
     pub(crate) import_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeImportInputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
     pub fn set_import_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_arn = input;
-        self
+        self.import_arn = input; self
+    }
+    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    pub fn get_import_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_arn
     }
     /// Consumes the builder and constructs a [`DescribeImportInput`](crate::operation::describe_import::DescribeImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_import::DescribeImportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_import::DescribeImportInput {
-            import_arn: self.import_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_import::DescribeImportInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_import::DescribeImportInput {
+                import_arn: self.import_arn
+                ,
+            }
+        )
     }
 }
+

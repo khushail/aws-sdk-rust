@@ -3,14 +3,14 @@
 /// Request for the GetDataset operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDatasetInput {
+pub struct GetDatasetInput  {
     /// <p>The unique identifier for a Dataset.</p>
     #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDatasetInput {
     /// <p>The unique identifier for a Dataset.</p>
-    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl GetDatasetInput {
 
 /// A builder for [`GetDatasetInput`](crate::operation::get_dataset::GetDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDatasetInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +35,20 @@ impl GetDatasetInputBuilder {
     }
     /// <p>The unique identifier for a Dataset.</p>
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_id = input;
-        self
+        self.dataset_id = input; self
+    }
+    /// <p>The unique identifier for a Dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
     }
     /// Consumes the builder and constructs a [`GetDatasetInput`](crate::operation::get_dataset::GetDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dataset::GetDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_dataset::GetDatasetInput {
-            dataset_id: self.dataset_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dataset::GetDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_dataset::GetDatasetInput {
+                dataset_id: self.dataset_id
+                ,
+            }
+        )
     }
 }
+

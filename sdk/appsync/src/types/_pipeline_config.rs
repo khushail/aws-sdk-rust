@@ -3,14 +3,14 @@
 /// <p>The pipeline configuration for a resolver of kind <code>PIPELINE</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineConfig {
+pub struct PipelineConfig  {
     /// <p>A list of <code>Function</code> objects.</p>
     #[doc(hidden)]
     pub functions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PipelineConfig {
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn functions(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn functions(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.functions.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl PipelineConfig {
 
 /// A builder for [`PipelineConfig`](crate::types::PipelineConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineConfigBuilder {
     pub(crate) functions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -37,22 +35,24 @@ impl PipelineConfigBuilder {
     /// <p>A list of <code>Function</code> objects.</p>
     pub fn functions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.functions.unwrap_or_default();
-        v.push(input.into());
-        self.functions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.functions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn set_functions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.functions = input;
-        self
+    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.functions = input; self
+    }
+    /// <p>A list of <code>Function</code> objects.</p>
+    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.functions
     }
     /// Consumes the builder and constructs a [`PipelineConfig`](crate::types::PipelineConfig).
     pub fn build(self) -> crate::types::PipelineConfig {
         crate::types::PipelineConfig {
-            functions: self.functions,
+            functions: self.functions
+            ,
         }
     }
 }
+

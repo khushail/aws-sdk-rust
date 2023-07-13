@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifySessionInput {}
+pub struct VerifySessionInput  {
+}
 impl VerifySessionInput {
     /// Creates a new builder-style object to manufacture [`VerifySessionInput`](crate::operation::verify_session::VerifySessionInput).
     pub fn builder() -> crate::operation::verify_session::builders::VerifySessionInputBuilder {
@@ -12,18 +13,16 @@ impl VerifySessionInput {
 
 /// A builder for [`VerifySessionInput`](crate::operation::verify_session::VerifySessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct VerifySessionInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct VerifySessionInputBuilder {
+}
 impl VerifySessionInputBuilder {
     /// Consumes the builder and constructs a [`VerifySessionInput`](crate::operation::verify_session::VerifySessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_session::VerifySessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::verify_session::VerifySessionInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_session::VerifySessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::verify_session::VerifySessionInput {
+            }
+        )
     }
 }
+

@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreSecretInput {
-    /// <p>The ARN or name of the secret to restore.</p>
+pub struct RestoreSecretInput  {
+    /// <p>The ARN or name of the secret to restore.</p> 
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreSecretInput {
-    /// <p>The ARN or name of the secret to restore.</p>
+    /// <p>The ARN or name of the secret to restore.</p> 
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
-    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<& str> {
         self.secret_id.as_deref()
     }
 }
@@ -24,34 +24,35 @@ impl RestoreSecretInput {
 
 /// A builder for [`RestoreSecretInput`](crate::operation::restore_secret::RestoreSecretInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreSecretInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreSecretInputBuilder {
-    /// <p>The ARN or name of the secret to restore.</p>
+    /// <p>The ARN or name of the secret to restore.</p> 
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN or name of the secret to restore.</p>
+    /// <p>The ARN or name of the secret to restore.</p> 
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
+    }
+    /// <p>The ARN or name of the secret to restore.</p> 
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
     }
     /// Consumes the builder and constructs a [`RestoreSecretInput`](crate::operation::restore_secret::RestoreSecretInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_secret::RestoreSecretInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::restore_secret::RestoreSecretInput {
-            secret_id: self.secret_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_secret::RestoreSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_secret::RestoreSecretInput {
+                secret_id: self.secret_id
+                ,
+            }
+        )
     }
 }
+

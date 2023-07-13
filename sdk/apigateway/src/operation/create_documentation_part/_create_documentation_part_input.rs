@@ -3,7 +3,7 @@
 /// <p>Creates a new documentation part of a given API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDocumentationPartInput {
+pub struct CreateDocumentationPartInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
@@ -16,32 +16,28 @@ pub struct CreateDocumentationPartInput {
 }
 impl CreateDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::DocumentationPartLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::DocumentationPartLocation> {
         self.location.as_ref()
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
-    pub fn properties(&self) -> ::std::option::Option<&str> {
+    pub fn properties(&self) -> ::std::option::Option<& str> {
         self.properties.as_deref()
     }
 }
 impl CreateDocumentationPartInput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentationPartInput`](crate::operation::create_documentation_part::CreateDocumentationPartInput).
-    pub fn builder(
-    ) -> crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder {
         crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDocumentationPartInput`](crate::operation::create_documentation_part::CreateDocumentationPartInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDocumentationPartInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::DocumentationPartLocation>,
@@ -55,8 +51,11 @@ impl CreateDocumentationPartInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
     pub fn location(mut self, input: crate::types::DocumentationPartLocation) -> Self {
@@ -64,12 +63,12 @@ impl CreateDocumentationPartInputBuilder {
         self
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentationPartLocation>,
-    ) -> Self {
-        self.location = input;
-        self
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::DocumentationPartLocation>) -> Self {
+        self.location = input; self
+    }
+    /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::DocumentationPartLocation> {
+        &self.location
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
     pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,22 +77,24 @@ impl CreateDocumentationPartInputBuilder {
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.properties = input;
-        self
+        self.properties = input; self
+    }
+    /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`CreateDocumentationPartInput`](crate::operation::create_documentation_part::CreateDocumentationPartInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_documentation_part::CreateDocumentationPartInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_documentation_part::CreateDocumentationPartInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_documentation_part::CreateDocumentationPartInput {
-                rest_api_id: self.rest_api_id,
-                location: self.location,
-                properties: self.properties,
-            },
+                rest_api_id: self.rest_api_id
+                ,
+                location: self.location
+                ,
+                properties: self.properties
+                ,
+            }
         )
     }
 }
+

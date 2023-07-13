@@ -2,43 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAppReplicationConfigurationInput {
+pub struct PutAppReplicationConfigurationInput  {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the replication configurations for server groups in the application.</p>
     #[doc(hidden)]
-    pub server_group_replication_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
+    pub server_group_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
 }
 impl PutAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    pub fn server_group_replication_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServerGroupReplicationConfiguration]> {
+    pub fn server_group_replication_configurations(&self) -> ::std::option::Option<& [crate::types::ServerGroupReplicationConfiguration]> {
         self.server_group_replication_configurations.as_deref()
     }
 }
 impl PutAppReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutAppReplicationConfigurationInput`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationInputBuilder {
         crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAppReplicationConfigurationInput`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppReplicationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
-    pub(crate) server_group_replication_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
+    pub(crate) server_group_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
 }
 impl PutAppReplicationConfigurationInputBuilder {
     /// <p>The ID of the application.</p>
@@ -48,42 +42,33 @@ impl PutAppReplicationConfigurationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// Appends an item to `server_group_replication_configurations`.
     ///
     /// To override the contents of this collection use [`set_server_group_replication_configurations`](Self::set_server_group_replication_configurations).
     ///
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    pub fn server_group_replication_configurations(
-        mut self,
-        input: crate::types::ServerGroupReplicationConfiguration,
-    ) -> Self {
-        let mut v = self
-            .server_group_replication_configurations
-            .unwrap_or_default();
-        v.push(input);
-        self.server_group_replication_configurations = ::std::option::Option::Some(v);
-        self
+    pub fn server_group_replication_configurations(mut self, input: crate::types::ServerGroupReplicationConfiguration) -> Self {
+        let mut v = self.server_group_replication_configurations.unwrap_or_default();
+                        v.push(input);
+                        self.server_group_replication_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    pub fn set_server_group_replication_configurations(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>,
-        >,
-    ) -> Self {
-        self.server_group_replication_configurations = input;
-        self
+    pub fn set_server_group_replication_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>) -> Self {
+        self.server_group_replication_configurations = input; self
+    }
+    /// <p>Information about the replication configurations for server groups in the application.</p>
+    pub fn get_server_group_replication_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>> {
+        &self.server_group_replication_configurations
     }
     /// Consumes the builder and constructs a [`PutAppReplicationConfigurationInput`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput {
                 app_id: self.app_id
@@ -94,3 +79,4 @@ impl PutAppReplicationConfigurationInputBuilder {
         )
     }
 }
+

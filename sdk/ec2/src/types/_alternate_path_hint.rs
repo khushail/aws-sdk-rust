@@ -3,7 +3,7 @@
 /// <p>Describes an potential intermediate component of a feasible path.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlternatePathHint {
+pub struct AlternatePathHint  {
     /// <p>The ID of the component.</p>
     #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AlternatePathHint {
 }
 impl AlternatePathHint {
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_id(&self) -> ::std::option::Option<& str> {
         self.component_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_arn(&self) -> ::std::option::Option<&str> {
+    pub fn component_arn(&self) -> ::std::option::Option<& str> {
         self.component_arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AlternatePathHint {
 
 /// A builder for [`AlternatePathHint`](crate::types::AlternatePathHint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlternatePathHintBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_arn: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl AlternatePathHintBuilder {
     }
     /// <p>The ID of the component.</p>
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_id = input;
-        self
+        self.component_id = input; self
+    }
+    /// <p>The ID of the component.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn set_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.component_arn = input;
-        self
+    pub fn set_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_arn
     }
     /// Consumes the builder and constructs a [`AlternatePathHint`](crate::types::AlternatePathHint).
     pub fn build(self) -> crate::types::AlternatePathHint {
         crate::types::AlternatePathHint {
-            component_id: self.component_id,
-            component_arn: self.component_arn,
+            component_id: self.component_id
+            ,
+            component_arn: self.component_arn
+            ,
         }
     }
 }
+

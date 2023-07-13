@@ -3,14 +3,14 @@
 /// <p>Represents the resources that were scanned in the scan entry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceDetails {
+pub struct ResourceDetails  {
     /// <p>InstanceArn that was scanned in the scan entry.</p>
     #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDetails {
     /// <p>InstanceArn that was scanned in the scan entry.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDetailsBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ResourceDetailsBuilder {
     }
     /// <p>InstanceArn that was scanned in the scan entry.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
+    }
+    /// <p>InstanceArn that was scanned in the scan entry.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
-            instance_arn: self.instance_arn,
+            instance_arn: self.instance_arn
+            ,
         }
     }
 }
+

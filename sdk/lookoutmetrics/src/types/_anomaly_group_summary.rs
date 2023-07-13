@@ -3,7 +3,7 @@
 /// <p>Details about a group of anomalous metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyGroupSummary {
+pub struct AnomalyGroupSummary  {
     /// <p>The start time for the group.</p>
     #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
@@ -22,15 +22,15 @@ pub struct AnomalyGroupSummary {
 }
 impl AnomalyGroupSummary {
     /// <p>The start time for the group.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>The end time for the group.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> ::std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>The severity score of the group.</p>
@@ -38,7 +38,7 @@ impl AnomalyGroupSummary {
         self.anomaly_group_score
     }
     /// <p>The name of the primary affected measure for the group.</p>
-    pub fn primary_metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn primary_metric_name(&self) -> ::std::option::Option<& str> {
         self.primary_metric_name.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl AnomalyGroupSummary {
 
 /// A builder for [`AnomalyGroupSummary`](crate::types::AnomalyGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyGroupSummaryBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl AnomalyGroupSummaryBuilder {
     }
     /// <p>The start time for the group.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
+    }
+    /// <p>The start time for the group.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
     }
     /// <p>The end time for the group.</p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,24 +80,24 @@ impl AnomalyGroupSummaryBuilder {
     }
     /// <p>The end time for the group.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
+    }
+    /// <p>The end time for the group.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.anomaly_group_id = input;
-        self
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.anomaly_group_id = input; self
+    }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_group_id
     }
     /// <p>The severity score of the group.</p>
     pub fn anomaly_group_score(mut self, input: f64) -> Self {
@@ -105,33 +106,39 @@ impl AnomalyGroupSummaryBuilder {
     }
     /// <p>The severity score of the group.</p>
     pub fn set_anomaly_group_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.anomaly_group_score = input;
-        self
+        self.anomaly_group_score = input; self
+    }
+    /// <p>The severity score of the group.</p>
+    pub fn get_anomaly_group_score(&self) -> &::std::option::Option<f64> {
+        &self.anomaly_group_score
     }
     /// <p>The name of the primary affected measure for the group.</p>
-    pub fn primary_metric_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the primary affected measure for the group.</p>
-    pub fn set_primary_metric_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.primary_metric_name = input;
-        self
+    pub fn set_primary_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.primary_metric_name = input; self
+    }
+    /// <p>The name of the primary affected measure for the group.</p>
+    pub fn get_primary_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_metric_name
     }
     /// Consumes the builder and constructs a [`AnomalyGroupSummary`](crate::types::AnomalyGroupSummary).
     pub fn build(self) -> crate::types::AnomalyGroupSummary {
         crate::types::AnomalyGroupSummary {
-            start_time: self.start_time,
-            end_time: self.end_time,
-            anomaly_group_id: self.anomaly_group_id,
-            anomaly_group_score: self.anomaly_group_score,
-            primary_metric_name: self.primary_metric_name,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            anomaly_group_id: self.anomaly_group_id
+            ,
+            anomaly_group_score: self.anomaly_group_score
+            ,
+            primary_metric_name: self.primary_metric_name
+            ,
         }
     }
 }
+

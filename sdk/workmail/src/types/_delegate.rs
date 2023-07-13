@@ -3,7 +3,7 @@
 /// <p>The name of the attribute, which is one of the values defined in the UserAttribute enumeration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Delegate {
+pub struct Delegate  {
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Delegate {
 }
 impl Delegate {
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the delegate: user or group.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MemberType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MemberType> {
         self.r#type.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Delegate {
 
 /// A builder for [`Delegate`](crate::types::Delegate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DelegateBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::MemberType>,
@@ -45,8 +43,11 @@ impl DelegateBuilder {
     }
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier for the user or group associated as the resource's delegate.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The type of the delegate: user or group.</p>
     pub fn r#type(mut self, input: crate::types::MemberType) -> Self {
@@ -55,14 +56,20 @@ impl DelegateBuilder {
     }
     /// <p>The type of the delegate: user or group.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the delegate: user or group.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MemberType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Delegate`](crate::types::Delegate).
     pub fn build(self) -> crate::types::Delegate {
         crate::types::Delegate {
-            id: self.id,
-            r#type: self.r#type,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

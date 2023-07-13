@@ -3,7 +3,7 @@
 /// <p>Represents a request to enable or disable Amazon SES Easy DKIM signing for an identity. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetIdentityDkimEnabledInput {
+pub struct SetIdentityDkimEnabledInput  {
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
     #[doc(hidden)]
     pub identity: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct SetIdentityDkimEnabledInput {
 }
 impl SetIdentityDkimEnabledInput {
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
     /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
@@ -23,18 +23,14 @@ impl SetIdentityDkimEnabledInput {
 }
 impl SetIdentityDkimEnabledInput {
     /// Creates a new builder-style object to manufacture [`SetIdentityDkimEnabledInput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput).
-    pub fn builder(
-    ) -> crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder {
         crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityDkimEnabledInput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) dkim_enabled: ::std::option::Option<bool>,
@@ -47,8 +43,11 @@ impl SetIdentityDkimEnabledInputBuilder {
     }
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
+    }
+    /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
     }
     /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub fn dkim_enabled(mut self, input: bool) -> Self {
@@ -57,21 +56,23 @@ impl SetIdentityDkimEnabledInputBuilder {
     }
     /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub fn set_dkim_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dkim_enabled = input;
-        self
+        self.dkim_enabled = input; self
+    }
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    pub fn get_dkim_enabled(&self) -> &::std::option::Option<bool> {
+        &self.dkim_enabled
     }
     /// Consumes the builder and constructs a [`SetIdentityDkimEnabledInput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput {
-                identity: self.identity,
-                dkim_enabled: self.dkim_enabled.unwrap_or_default(),
-            },
+                identity: self.identity
+                ,
+                dkim_enabled: self.dkim_enabled
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

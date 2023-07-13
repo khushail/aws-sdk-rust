@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUploadUrlInput {}
+pub struct CreateUploadUrlInput  {
+}
 impl CreateUploadUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateUploadUrlInput`](crate::operation::create_upload_url::CreateUploadUrlInput).
     pub fn builder() -> crate::operation::create_upload_url::builders::CreateUploadUrlInputBuilder {
@@ -12,18 +13,16 @@ impl CreateUploadUrlInput {
 
 /// A builder for [`CreateUploadUrlInput`](crate::operation::create_upload_url::CreateUploadUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct CreateUploadUrlInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct CreateUploadUrlInputBuilder {
+}
 impl CreateUploadUrlInputBuilder {
     /// Consumes the builder and constructs a [`CreateUploadUrlInput`](crate::operation::create_upload_url::CreateUploadUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_upload_url::CreateUploadUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_upload_url::CreateUploadUrlInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_upload_url::CreateUploadUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_upload_url::CreateUploadUrlInput {
+            }
+        )
     }
 }
+

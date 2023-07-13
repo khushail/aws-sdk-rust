@@ -3,30 +3,27 @@
 /// <p>A request to delete the DomainName resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDomainNameInput {
+pub struct DeleteDomainNameInput  {
     /// <p>The name of the DomainName resource to be deleted.</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDomainNameInput {
     /// <p>The name of the DomainName resource to be deleted.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
 impl DeleteDomainNameInput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainNameInput`](crate::operation::delete_domain_name::DeleteDomainNameInput).
-    pub fn builder() -> crate::operation::delete_domain_name::builders::DeleteDomainNameInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_domain_name::builders::DeleteDomainNameInputBuilder {
         crate::operation::delete_domain_name::builders::DeleteDomainNameInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDomainNameInput`](crate::operation::delete_domain_name::DeleteDomainNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDomainNameInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +35,20 @@ impl DeleteDomainNameInputBuilder {
     }
     /// <p>The name of the DomainName resource to be deleted.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The name of the DomainName resource to be deleted.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`DeleteDomainNameInput`](crate::operation::delete_domain_name::DeleteDomainNameInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_domain_name::DeleteDomainNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_domain_name::DeleteDomainNameInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_domain_name::DeleteDomainNameInput {
-                domain_name: self.domain_name,
-            },
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

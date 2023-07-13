@@ -3,7 +3,7 @@
 /// <p>A subset of the possible batch job attributes. Used in the batch job list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchJobExecutionSummary {
+pub struct BatchJobExecutionSummary  {
     /// <p>The unique identifier of this execution of the batch job.</p>
     #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
@@ -28,52 +28,52 @@ pub struct BatchJobExecutionSummary {
     /// <p>The timestamp when this batch job execution ended.</p>
     #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p></p>
+    /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
     #[doc(hidden)]
     pub return_code: ::std::option::Option<::std::string::String>,
-    /// <p>Identifies a specific batch job.</p>
+    /// <p>The unique identifier of this batch job.</p>
     #[doc(hidden)]
     pub batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
 }
 impl BatchJobExecutionSummary {
     /// <p>The unique identifier of this execution of the batch job.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>The unique identifier of the application that hosts this batch job.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of a particular batch job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of a particular batch job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The type of a particular batch job execution.</p>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::BatchJobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::BatchJobType> {
         self.job_type.as_ref()
     }
     /// <p>The status of a particular batch job execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BatchJobExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::BatchJobExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when a particular batch job execution started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp when this batch job execution ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p></p>
-    pub fn return_code(&self) -> ::std::option::Option<&str> {
+    /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
+    pub fn return_code(&self) -> ::std::option::Option<& str> {
         self.return_code.as_deref()
     }
-    /// <p>Identifies a specific batch job.</p>
-    pub fn batch_job_identifier(&self) -> ::std::option::Option<&crate::types::BatchJobIdentifier> {
+    /// <p>The unique identifier of this batch job.</p>
+    pub fn batch_job_identifier(&self) -> ::std::option::Option<& crate::types::BatchJobIdentifier> {
         self.batch_job_identifier.as_ref()
     }
 }
@@ -86,9 +86,7 @@ impl BatchJobExecutionSummary {
 
 /// A builder for [`BatchJobExecutionSummary`](crate::types::BatchJobExecutionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchJobExecutionSummaryBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
@@ -109,24 +107,24 @@ impl BatchJobExecutionSummaryBuilder {
     }
     /// <p>The unique identifier of this execution of the batch job.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
+    }
+    /// <p>The unique identifier of this execution of the batch job.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// <p>The unique identifier of the application that hosts this batch job.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application that hosts this batch job.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier of the application that hosts this batch job.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The unique identifier of a particular batch job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,8 +133,11 @@ impl BatchJobExecutionSummaryBuilder {
     }
     /// <p>The unique identifier of a particular batch job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The unique identifier of a particular batch job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The name of a particular batch job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,8 +146,11 @@ impl BatchJobExecutionSummaryBuilder {
     }
     /// <p>The name of a particular batch job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The name of a particular batch job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The type of a particular batch job execution.</p>
     pub fn job_type(mut self, input: crate::types::BatchJobType) -> Self {
@@ -154,12 +158,12 @@ impl BatchJobExecutionSummaryBuilder {
         self
     }
     /// <p>The type of a particular batch job execution.</p>
-    pub fn set_job_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobType>,
-    ) -> Self {
-        self.job_type = input;
-        self
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::BatchJobType>) -> Self {
+        self.job_type = input; self
+    }
+    /// <p>The type of a particular batch job execution.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::BatchJobType> {
+        &self.job_type
     }
     /// <p>The status of a particular batch job execution.</p>
     pub fn status(mut self, input: crate::types::BatchJobExecutionStatus) -> Self {
@@ -167,12 +171,12 @@ impl BatchJobExecutionSummaryBuilder {
         self
     }
     /// <p>The status of a particular batch job execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobExecutionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BatchJobExecutionStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of a particular batch job execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BatchJobExecutionStatus> {
+        &self.status
     }
     /// <p>The timestamp when a particular batch job execution started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -180,12 +184,12 @@ impl BatchJobExecutionSummaryBuilder {
         self
     }
     /// <p>The timestamp when a particular batch job execution started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>The timestamp when a particular batch job execution started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The timestamp when this batch job execution ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -193,49 +197,63 @@ impl BatchJobExecutionSummaryBuilder {
         self
     }
     /// <p>The timestamp when this batch job execution ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
     }
-    /// <p></p>
+    /// <p>The timestamp when this batch job execution ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
+    /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
     pub fn return_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.return_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
     pub fn set_return_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.return_code = input;
-        self
+        self.return_code = input; self
     }
-    /// <p>Identifies a specific batch job.</p>
+    /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
+    pub fn get_return_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.return_code
+    }
+    /// <p>The unique identifier of this batch job.</p>
     pub fn batch_job_identifier(mut self, input: crate::types::BatchJobIdentifier) -> Self {
         self.batch_job_identifier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies a specific batch job.</p>
-    pub fn set_batch_job_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobIdentifier>,
-    ) -> Self {
-        self.batch_job_identifier = input;
-        self
+    /// <p>The unique identifier of this batch job.</p>
+    pub fn set_batch_job_identifier(mut self, input: ::std::option::Option<crate::types::BatchJobIdentifier>) -> Self {
+        self.batch_job_identifier = input; self
+    }
+    /// <p>The unique identifier of this batch job.</p>
+    pub fn get_batch_job_identifier(&self) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
+        &self.batch_job_identifier
     }
     /// Consumes the builder and constructs a [`BatchJobExecutionSummary`](crate::types::BatchJobExecutionSummary).
     pub fn build(self) -> crate::types::BatchJobExecutionSummary {
         crate::types::BatchJobExecutionSummary {
-            execution_id: self.execution_id,
-            application_id: self.application_id,
-            job_id: self.job_id,
-            job_name: self.job_name,
-            job_type: self.job_type,
-            status: self.status,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            return_code: self.return_code,
-            batch_job_identifier: self.batch_job_identifier,
+            execution_id: self.execution_id
+            ,
+            application_id: self.application_id
+            ,
+            job_id: self.job_id
+            ,
+            job_name: self.job_name
+            ,
+            job_type: self.job_type
+            ,
+            status: self.status
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            return_code: self.return_code
+            ,
+            batch_job_identifier: self.batch_job_identifier
+            ,
         }
     }
 }
+

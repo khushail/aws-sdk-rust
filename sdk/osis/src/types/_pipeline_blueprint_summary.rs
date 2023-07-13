@@ -3,14 +3,14 @@
 /// <p>A summary of an OpenSearch Ingestion blueprint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineBlueprintSummary {
+pub struct PipelineBlueprintSummary  {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
     pub blueprint_name: ::std::option::Option<::std::string::String>,
 }
 impl PipelineBlueprintSummary {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(&self) -> ::std::option::Option<&str> {
+    pub fn blueprint_name(&self) -> ::std::option::Option<& str> {
         self.blueprint_name.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl PipelineBlueprintSummary {
 
 /// A builder for [`PipelineBlueprintSummary`](crate::types::PipelineBlueprintSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineBlueprintSummaryBuilder {
     pub(crate) blueprint_name: ::std::option::Option<::std::string::String>,
 }
 impl PipelineBlueprintSummaryBuilder {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the blueprint.</p>
-    pub fn set_blueprint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.blueprint_name = input;
-        self
+    pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.blueprint_name = input; self
+    }
+    /// <p>The name of the blueprint.</p>
+    pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_name
     }
     /// Consumes the builder and constructs a [`PipelineBlueprintSummary`](crate::types::PipelineBlueprintSummary).
     pub fn build(self) -> crate::types::PipelineBlueprintSummary {
         crate::types::PipelineBlueprintSummary {
-            blueprint_name: self.blueprint_name,
+            blueprint_name: self.blueprint_name
+            ,
         }
     }
 }
+

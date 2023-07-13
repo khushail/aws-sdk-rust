@@ -3,7 +3,7 @@
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePrivateVirtualInterfaceOutput {
+pub struct CreatePrivateVirtualInterfaceOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the VLAN.</p>
     #[doc(hidden)]
     pub vlan: i32,
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     #[doc(hidden)]
     pub asn: i32,
@@ -44,17 +44,17 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     /// <p>The address family for the BGP peer.</p>
     #[doc(hidden)]
     pub address_family: ::std::option::Option<crate::types::AddressFamily>,
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: ::std::option::Option<crate::types::VirtualInterfaceState>,
@@ -64,7 +64,7 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     #[doc(hidden)]
     pub mtu: ::std::option::Option<i32>,
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     #[doc(hidden)]
     pub jumbo_frame_capable: ::std::option::Option<bool>,
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
@@ -75,8 +75,7 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
     #[doc(hidden)]
-    pub route_filter_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub route_filter_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     #[doc(hidden)]
     pub bgp_peers: ::std::option::Option<::std::vec::Vec<crate::types::BgpPeer>>,
@@ -99,34 +98,34 @@ pub struct CreatePrivateVirtualInterfaceOutput {
 }
 impl CreatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn virtual_interface_type(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_type(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_type.as_deref()
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(&self) -> i32 {
         self.vlan
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     pub fn asn(&self) -> i32 {
         self.asn
@@ -136,82 +135,78 @@ impl CreatePrivateVirtualInterfaceOutput {
         self.amazon_side_asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(&self) -> ::std::option::Option<&str> {
+    pub fn auth_key(&self) -> ::std::option::Option<& str> {
         self.auth_key.as_deref()
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(&self) -> ::std::option::Option<&str> {
+    pub fn amazon_address(&self) -> ::std::option::Option<& str> {
         self.amazon_address.as_deref()
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> ::std::option::Option<&str> {
+    pub fn customer_address(&self) -> ::std::option::Option<& str> {
         self.customer_address.as_deref()
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn address_family(&self) -> ::std::option::Option<&crate::types::AddressFamily> {
+    pub fn address_family(&self) -> ::std::option::Option<& crate::types::AddressFamily> {
         self.address_family.as_ref()
     }
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> ::std::option::Option<& crate::types::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> ::std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> ::std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn mtu(&self) -> ::std::option::Option<i32> {
         self.mtu
     }
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn jumbo_frame_capable(&self) -> ::std::option::Option<bool> {
         self.jumbo_frame_capable
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> ::std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn route_filter_prefixes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
+    pub fn route_filter_prefixes(&self) -> ::std::option::Option<& [crate::types::RouteFilterPrefix]> {
         self.route_filter_prefixes.as_deref()
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn bgp_peers(&self) -> ::std::option::Option<&[crate::types::BgpPeer]> {
+    pub fn bgp_peers(&self) -> ::std::option::Option<& [crate::types::BgpPeer]> {
         self.bgp_peers.as_deref()
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> ::std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> ::std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> ::std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
@@ -220,22 +215,20 @@ impl CreatePrivateVirtualInterfaceOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for CreatePrivateVirtualInterfaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreatePrivateVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePrivateVirtualInterfaceOutput`](crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput).
-    pub fn builder() -> crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceOutputBuilder{
+    pub fn builder() -> crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceOutputBuilder {
         crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePrivateVirtualInterfaceOutput`](crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceOutputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
@@ -256,8 +249,7 @@ pub struct CreatePrivateVirtualInterfaceOutputBuilder {
     pub(crate) jumbo_frame_capable: ::std::option::Option<bool>,
     pub(crate) virtual_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
-    pub(crate) route_filter_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub(crate) route_filter_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     pub(crate) bgp_peers: ::std::option::Option<::std::vec::Vec<crate::types::BgpPeer>>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) aws_device_v2: ::std::option::Option<::std::string::String>,
@@ -268,36 +260,30 @@ pub struct CreatePrivateVirtualInterfaceOutputBuilder {
 }
 impl CreatePrivateVirtualInterfaceOutputBuilder {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.owner_account = input;
-        self
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_interface_id = input;
-        self
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_interface_id = input; self
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
     }
     /// <p>The location of the connection.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -306,56 +292,50 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     }
     /// <p>The location of the connection.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
+    }
+    /// <p>The location of the connection.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connection_id = input;
-        self
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_id = input; self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn virtual_interface_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn set_virtual_interface_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_interface_type = input;
-        self
+    pub fn set_virtual_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_interface_type = input; self
+    }
+    /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    pub fn get_virtual_interface_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_type
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn set_virtual_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_interface_name = input;
-        self
+    pub fn set_virtual_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_interface_name = input; self
+    }
+    /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_name
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(mut self, input: i32) -> Self {
@@ -364,20 +344,27 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     }
     /// <p>The ID of the VLAN.</p>
     pub fn set_vlan(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.vlan = input;
-        self
+        self.vlan = input; self
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The ID of the VLAN.</p>
+    pub fn get_vlan(&self) -> &::std::option::Option<i32> {
+        &self.vlan
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
+    }
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
+    /// <p>The valid values are 1-2147483647.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<i32> {
+        &self.asn
     }
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -386,8 +373,11 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     }
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.amazon_side_asn = input;
-        self
+        self.amazon_side_asn = input; self
+    }
+    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
+        &self.amazon_side_asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub fn auth_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -396,40 +386,37 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub fn set_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_key = input;
-        self
+        self.auth_key = input; self
+    }
+    /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    pub fn get_auth_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_key
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amazon_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amazon_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn set_amazon_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.amazon_address = input;
-        self
+    pub fn set_amazon_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.amazon_address = input; self
+    }
+    /// <p>The IP address assigned to the Amazon interface.</p>
+    pub fn get_amazon_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amazon_address
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn set_customer_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.customer_address = input;
-        self
+    pub fn set_customer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_address = input; self
+    }
+    /// <p>The IP address assigned to the customer interface.</p>
+    pub fn get_customer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_address
     }
     /// <p>The address family for the BGP peer.</p>
     pub fn address_family(mut self, input: crate::types::AddressFamily) -> Self {
@@ -437,63 +424,71 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
         self
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressFamily>,
-    ) -> Self {
-        self.address_family = input;
-        self
+    pub fn set_address_family(mut self, input: ::std::option::Option<crate::types::AddressFamily>) -> Self {
+        self.address_family = input; self
     }
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The address family for the BGP peer.</p>
+    pub fn get_address_family(&self) -> &::std::option::Option<crate::types::AddressFamily> {
+        &self.address_family
+    }
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     pub fn virtual_interface_state(mut self, input: crate::types::VirtualInterfaceState) -> Self {
         self.virtual_interface_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn set_virtual_interface_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualInterfaceState>,
-    ) -> Self {
-        self.virtual_interface_state = input;
-        self
+    pub fn set_virtual_interface_state(mut self, input: ::std::option::Option<crate::types::VirtualInterfaceState>) -> Self {
+        self.virtual_interface_state = input; self
+    }
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
+    /// </ul>
+    pub fn get_virtual_interface_state(&self) -> &::std::option::Option<crate::types::VirtualInterfaceState> {
+        &self.virtual_interface_state
     }
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_router_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_router_config = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer router configuration.</p>
-    pub fn set_customer_router_config(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.customer_router_config = input;
-        self
+    pub fn set_customer_router_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_router_config = input; self
+    }
+    /// <p>The customer router configuration.</p>
+    pub fn get_customer_router_config(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_router_config
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn mtu(mut self, input: i32) -> Self {
@@ -502,50 +497,50 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn set_mtu(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mtu = input;
-        self
+        self.mtu = input; self
     }
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
+    pub fn get_mtu(&self) -> &::std::option::Option<i32> {
+        &self.mtu
+    }
+    /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
         self.jumbo_frame_capable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn set_jumbo_frame_capable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.jumbo_frame_capable = input;
-        self
+        self.jumbo_frame_capable = input; self
+    }
+    /// <p>Indicates whether jumbo frames are supported.</p>
+    pub fn get_jumbo_frame_capable(&self) -> &::std::option::Option<bool> {
+        &self.jumbo_frame_capable
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn set_virtual_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_gateway_id = input;
-        self
+    pub fn set_virtual_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_gateway_id = input; self
+    }
+    /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_id
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.direct_connect_gateway_id = input; self
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
     }
     /// Appends an item to `route_filter_prefixes`.
     ///
@@ -554,17 +549,17 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
     pub fn route_filter_prefixes(mut self, input: crate::types::RouteFilterPrefix) -> Self {
         let mut v = self.route_filter_prefixes.unwrap_or_default();
-        v.push(input);
-        self.route_filter_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.route_filter_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn set_route_filter_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    ) -> Self {
-        self.route_filter_prefixes = input;
-        self
+    pub fn set_route_filter_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>) -> Self {
+        self.route_filter_prefixes = input; self
+    }
+    /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    pub fn get_route_filter_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        &self.route_filter_prefixes
     }
     /// Appends an item to `bgp_peers`.
     ///
@@ -573,17 +568,17 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub fn bgp_peers(mut self, input: crate::types::BgpPeer) -> Self {
         let mut v = self.bgp_peers.unwrap_or_default();
-        v.push(input);
-        self.bgp_peers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bgp_peers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn set_bgp_peers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BgpPeer>>,
-    ) -> Self {
-        self.bgp_peers = input;
-        self
+    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BgpPeer>>) -> Self {
+        self.bgp_peers = input; self
+    }
+    /// <p>The BGP peers configured on this virtual interface.</p>
+    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BgpPeer>> {
+        &self.bgp_peers
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -592,40 +587,37 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
+    }
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_device_v2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_device_v2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn set_aws_device_v2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_device_v2 = input;
-        self
+    pub fn set_aws_device_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_device_v2 = input; self
+    }
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    pub fn get_aws_device_v2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_device_v2
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_logical_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_logical_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn set_aws_logical_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_logical_device_id = input;
-        self
+    pub fn set_aws_logical_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_logical_device_id = input; self
+    }
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    pub fn get_aws_logical_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_logical_device_id
     }
     /// Appends an item to `tags`.
     ///
@@ -634,17 +626,17 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     /// <p>The tags associated with the virtual interface.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags associated with the virtual interface.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
     pub fn site_link_enabled(mut self, input: bool) -> Self {
@@ -653,51 +645,80 @@ impl CreatePrivateVirtualInterfaceOutputBuilder {
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
     pub fn set_site_link_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.site_link_enabled = input;
-        self
+        self.site_link_enabled = input; self
+    }
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub fn get_site_link_enabled(&self) -> &::std::option::Option<bool> {
+        &self.site_link_enabled
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreatePrivateVirtualInterfaceOutput`](crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput
-    {
+    pub fn build(self) -> crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput {
         crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput {
-            owner_account: self.owner_account,
-            virtual_interface_id: self.virtual_interface_id,
-            location: self.location,
-            connection_id: self.connection_id,
-            virtual_interface_type: self.virtual_interface_type,
-            virtual_interface_name: self.virtual_interface_name,
-            vlan: self.vlan.unwrap_or_default(),
-            asn: self.asn.unwrap_or_default(),
-            amazon_side_asn: self.amazon_side_asn,
-            auth_key: self.auth_key,
-            amazon_address: self.amazon_address,
-            customer_address: self.customer_address,
-            address_family: self.address_family,
-            virtual_interface_state: self.virtual_interface_state,
-            customer_router_config: self.customer_router_config,
-            mtu: self.mtu,
-            jumbo_frame_capable: self.jumbo_frame_capable,
-            virtual_gateway_id: self.virtual_gateway_id,
-            direct_connect_gateway_id: self.direct_connect_gateway_id,
-            route_filter_prefixes: self.route_filter_prefixes,
-            bgp_peers: self.bgp_peers,
-            region: self.region,
-            aws_device_v2: self.aws_device_v2,
-            aws_logical_device_id: self.aws_logical_device_id,
-            tags: self.tags,
-            site_link_enabled: self.site_link_enabled,
+            owner_account: self.owner_account
+            ,
+            virtual_interface_id: self.virtual_interface_id
+            ,
+            location: self.location
+            ,
+            connection_id: self.connection_id
+            ,
+            virtual_interface_type: self.virtual_interface_type
+            ,
+            virtual_interface_name: self.virtual_interface_name
+            ,
+            vlan: self.vlan
+                .unwrap_or_default()
+            ,
+            asn: self.asn
+                .unwrap_or_default()
+            ,
+            amazon_side_asn: self.amazon_side_asn
+            ,
+            auth_key: self.auth_key
+            ,
+            amazon_address: self.amazon_address
+            ,
+            customer_address: self.customer_address
+            ,
+            address_family: self.address_family
+            ,
+            virtual_interface_state: self.virtual_interface_state
+            ,
+            customer_router_config: self.customer_router_config
+            ,
+            mtu: self.mtu
+            ,
+            jumbo_frame_capable: self.jumbo_frame_capable
+            ,
+            virtual_gateway_id: self.virtual_gateway_id
+            ,
+            direct_connect_gateway_id: self.direct_connect_gateway_id
+            ,
+            route_filter_prefixes: self.route_filter_prefixes
+            ,
+            bgp_peers: self.bgp_peers
+            ,
+            region: self.region
+            ,
+            aws_device_v2: self.aws_device_v2
+            ,
+            aws_logical_device_id: self.aws_logical_device_id
+            ,
+            tags: self.tags
+            ,
+            site_link_enabled: self.site_link_enabled
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

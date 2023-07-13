@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNamespacesOutput {
+pub struct ListNamespacesOutput  {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListNamespacesOutput {
 }
 impl ListNamespacesOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of returned namespaces.</p>
-    pub fn namespaces(&self) -> ::std::option::Option<&[crate::types::Namespace]> {
+    pub fn namespaces(&self) -> ::std::option::Option<& [crate::types::Namespace]> {
         self.namespaces.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListNamespacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListNamespacesOutput {
     /// Creates a new builder-style object to manufacture [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
     pub fn builder() -> crate::operation::list_namespaces::builders::ListNamespacesOutputBuilder {
@@ -35,9 +35,7 @@ impl ListNamespacesOutput {
 
 /// A builder for [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNamespacesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<crate::types::Namespace>>,
@@ -51,8 +49,11 @@ impl ListNamespacesOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `namespaces`.
     ///
@@ -61,33 +62,36 @@ impl ListNamespacesOutputBuilder {
     /// <p>The list of returned namespaces.</p>
     pub fn namespaces(mut self, input: crate::types::Namespace) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
-        v.push(input);
-        self.namespaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.namespaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of returned namespaces.</p>
-    pub fn set_namespaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Namespace>>,
-    ) -> Self {
-        self.namespaces = input;
-        self
+    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Namespace>>) -> Self {
+        self.namespaces = input; self
+    }
+    /// <p>The list of returned namespaces.</p>
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Namespace>> {
+        &self.namespaces
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
     pub fn build(self) -> crate::operation::list_namespaces::ListNamespacesOutput {
         crate::operation::list_namespaces::ListNamespacesOutput {
-            next_token: self.next_token,
-            namespaces: self.namespaces,
+            next_token: self.next_token
+            ,
+            namespaces: self.namespaces
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

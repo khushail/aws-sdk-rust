@@ -3,7 +3,7 @@
 /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedReason {
+pub struct FailedReason  {
     /// <p>The failure code, if any, for a create or delete endpoint operation.</p>
     #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct FailedReason {
 }
 impl FailedReason {
     /// <p>The failure code, if any, for a create or delete endpoint operation.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>Additional error details describing the endpoint failure and recommended action.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl FailedReason {
 
 /// A builder for [`FailedReason`](crate::types::FailedReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedReasonBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl FailedReasonBuilder {
     }
     /// <p>The failure code, if any, for a create or delete endpoint operation.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
+    }
+    /// <p>The failure code, if any, for a create or delete endpoint operation.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>Additional error details describing the endpoint failure and recommended action.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl FailedReasonBuilder {
     }
     /// <p>Additional error details describing the endpoint failure and recommended action.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>Additional error details describing the endpoint failure and recommended action.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`FailedReason`](crate::types::FailedReason).
     pub fn build(self) -> crate::types::FailedReason {
         crate::types::FailedReason {
-            error_code: self.error_code,
-            message: self.message,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

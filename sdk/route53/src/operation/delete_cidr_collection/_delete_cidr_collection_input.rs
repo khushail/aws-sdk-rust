@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCidrCollectionInput {
+pub struct DeleteCidrCollectionInput  {
     /// <p>The UUID of the collection to delete.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCidrCollectionInput {
     /// <p>The UUID of the collection to delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteCidrCollectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionInput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder {
+    pub fn builder() -> crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder {
         crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCidrCollectionInput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCidrCollectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl DeleteCidrCollectionInputBuilder {
     }
     /// <p>The UUID of the collection to delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The UUID of the collection to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeleteCidrCollectionInput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cidr_collection::DeleteCidrCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cidr_collection::DeleteCidrCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_cidr_collection::DeleteCidrCollectionInput { id: self.id },
+            crate::operation::delete_cidr_collection::DeleteCidrCollectionInput {
+                id: self.id
+                ,
+            }
         )
     }
 }
+

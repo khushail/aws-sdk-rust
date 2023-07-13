@@ -3,7 +3,7 @@
 /// <p>The specific duration in which the metric is flagged as anomalous.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyInstance {
+pub struct AnomalyInstance  {
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct AnomalyInstance {
 }
 impl AnomalyInstance {
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
-    pub fn user_feedback(&self) -> ::std::option::Option<&crate::types::UserFeedback> {
+    pub fn user_feedback(&self) -> ::std::option::Option<& crate::types::UserFeedback> {
         self.user_feedback.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl AnomalyInstance {
 
 /// A builder for [`AnomalyInstance`](crate::types::AnomalyInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyInstanceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -61,8 +59,11 @@ impl AnomalyInstanceBuilder {
     }
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -70,12 +71,12 @@ impl AnomalyInstanceBuilder {
         self
     }
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -83,12 +84,12 @@ impl AnomalyInstanceBuilder {
         self
     }
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
     pub fn user_feedback(mut self, input: crate::types::UserFeedback) -> Self {
@@ -96,20 +97,25 @@ impl AnomalyInstanceBuilder {
         self
     }
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
-    pub fn set_user_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::UserFeedback>,
-    ) -> Self {
-        self.user_feedback = input;
-        self
+    pub fn set_user_feedback(mut self, input: ::std::option::Option<crate::types::UserFeedback>) -> Self {
+        self.user_feedback = input; self
+    }
+    /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
+    pub fn get_user_feedback(&self) -> &::std::option::Option<crate::types::UserFeedback> {
+        &self.user_feedback
     }
     /// Consumes the builder and constructs a [`AnomalyInstance`](crate::types::AnomalyInstance).
     pub fn build(self) -> crate::types::AnomalyInstance {
         crate::types::AnomalyInstance {
-            id: self.id,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            user_feedback: self.user_feedback,
+            id: self.id
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            user_feedback: self.user_feedback
+            ,
         }
     }
 }
+

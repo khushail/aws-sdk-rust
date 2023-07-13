@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfigurationInput {
+pub struct CreateConfigurationInput  {
     /// <p>The description of the configuration.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -22,15 +22,15 @@ pub struct CreateConfigurationInput {
 }
 impl CreateConfigurationInput {
     /// <p>The description of the configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn kafka_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn kafka_versions(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.kafka_versions.as_deref()
     }
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Contents of the <filename>
@@ -38,23 +38,20 @@ impl CreateConfigurationInput {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn server_properties(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn server_properties(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.server_properties.as_ref()
     }
 }
 impl CreateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationInput`](crate::operation::create_configuration::CreateConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::create_configuration::builders::CreateConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::create_configuration::builders::CreateConfigurationInputBuilder {
         crate::operation::create_configuration::builders::CreateConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfigurationInput`](crate::operation::create_configuration::CreateConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigurationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kafka_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -69,30 +66,30 @@ impl CreateConfigurationInputBuilder {
     }
     /// <p>The description of the configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `kafka_versions`.
     ///
     /// To override the contents of this collection use [`set_kafka_versions`](Self::set_kafka_versions).
     ///
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn kafka_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kafka_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.kafka_versions.unwrap_or_default();
-        v.push(input.into());
-        self.kafka_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.kafka_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn set_kafka_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.kafka_versions = input;
-        self
+    pub fn set_kafka_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.kafka_versions = input; self
+    }
+    /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    pub fn get_kafka_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.kafka_versions
     }
     /// <p>The name of the configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,8 +98,11 @@ impl CreateConfigurationInputBuilder {
     }
     /// <p>The name of the configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Contents of the <filename>
     /// server.properties
@@ -118,27 +118,31 @@ impl CreateConfigurationInputBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn set_server_properties(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
-        self.server_properties = input;
-        self
+    pub fn set_server_properties(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.server_properties = input; self
+    }
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
+    pub fn get_server_properties(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.server_properties
     }
     /// Consumes the builder and constructs a [`CreateConfigurationInput`](crate::operation::create_configuration::CreateConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration::CreateConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_configuration::CreateConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_configuration::CreateConfigurationInput {
-                description: self.description,
-                kafka_versions: self.kafka_versions,
-                name: self.name,
-                server_properties: self.server_properties,
-            },
+                description: self.description
+                ,
+                kafka_versions: self.kafka_versions
+                ,
+                name: self.name
+                ,
+                server_properties: self.server_properties
+                ,
+            }
         )
     }
 }
+

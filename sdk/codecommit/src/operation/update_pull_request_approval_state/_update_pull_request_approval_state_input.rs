@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePullRequestApprovalStateInput {
+pub struct UpdatePullRequestApprovalStateInput  {
     /// <p>The system-generated ID of the pull request.</p>
     #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct UpdatePullRequestApprovalStateInput {
 }
 impl UpdatePullRequestApprovalStateInput {
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The system-generated ID of the revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The approval state to associate with the user on the pull request.</p>
-    pub fn approval_state(&self) -> ::std::option::Option<&crate::types::ApprovalState> {
+    pub fn approval_state(&self) -> ::std::option::Option<& crate::types::ApprovalState> {
         self.approval_state.as_ref()
     }
 }
 impl UpdatePullRequestApprovalStateInput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalStateInput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput).
-    pub fn builder() -> crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder{
+    pub fn builder() -> crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder {
         crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePullRequestApprovalStateInput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalStateInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct UpdatePullRequestApprovalStateInputBuilder {
 }
 impl UpdatePullRequestApprovalStateInputBuilder {
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.pull_request_id = input;
-        self
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pull_request_id = input; self
+    }
+    /// <p>The system-generated ID of the pull request.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
     }
     /// <p>The system-generated ID of the revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl UpdatePullRequestApprovalStateInputBuilder {
     }
     /// <p>The system-generated ID of the revision.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
+    }
+    /// <p>The system-generated ID of the revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// <p>The approval state to associate with the user on the pull request.</p>
     pub fn approval_state(mut self, input: crate::types::ApprovalState) -> Self {
@@ -77,20 +75,15 @@ impl UpdatePullRequestApprovalStateInputBuilder {
         self
     }
     /// <p>The approval state to associate with the user on the pull request.</p>
-    pub fn set_approval_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalState>,
-    ) -> Self {
-        self.approval_state = input;
-        self
+    pub fn set_approval_state(mut self, input: ::std::option::Option<crate::types::ApprovalState>) -> Self {
+        self.approval_state = input; self
+    }
+    /// <p>The approval state to associate with the user on the pull request.</p>
+    pub fn get_approval_state(&self) -> &::std::option::Option<crate::types::ApprovalState> {
+        &self.approval_state
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestApprovalStateInput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput {
                 pull_request_id: self.pull_request_id
@@ -103,3 +96,4 @@ impl UpdatePullRequestApprovalStateInputBuilder {
         )
     }
 }
+

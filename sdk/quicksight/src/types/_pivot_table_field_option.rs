@@ -3,7 +3,7 @@
 /// <p>The selected field options for the pivot table field options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableFieldOption {
+pub struct PivotTableFieldOption  {
     /// <p>The field ID of the pivot table field.</p>
     #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct PivotTableFieldOption {
 }
 impl PivotTableFieldOption {
     /// <p>The field ID of the pivot table field.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The custom label of the pivot table field.</p>
-    pub fn custom_label(&self) -> ::std::option::Option<&str> {
+    pub fn custom_label(&self) -> ::std::option::Option<& str> {
         self.custom_label.as_deref()
     }
     /// <p>The visibility of the pivot table field.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl PivotTableFieldOption {
 
 /// A builder for [`PivotTableFieldOption`](crate::types::PivotTableFieldOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableFieldOptionBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) custom_label: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl PivotTableFieldOptionBuilder {
     }
     /// <p>The field ID of the pivot table field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
+    }
+    /// <p>The field ID of the pivot table field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
     }
     /// <p>The custom label of the pivot table field.</p>
     pub fn custom_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl PivotTableFieldOptionBuilder {
     }
     /// <p>The custom label of the pivot table field.</p>
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_label = input;
-        self
+        self.custom_label = input; self
+    }
+    /// <p>The custom label of the pivot table field.</p>
+    pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_label
     }
     /// <p>The visibility of the pivot table field.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -72,19 +76,23 @@ impl PivotTableFieldOptionBuilder {
         self
     }
     /// <p>The visibility of the pivot table field.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.visibility = input;
-        self
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.visibility = input; self
+    }
+    /// <p>The visibility of the pivot table field.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`PivotTableFieldOption`](crate::types::PivotTableFieldOption).
     pub fn build(self) -> crate::types::PivotTableFieldOption {
         crate::types::PivotTableFieldOption {
-            field_id: self.field_id,
-            custom_label: self.custom_label,
-            visibility: self.visibility,
+            field_id: self.field_id
+            ,
+            custom_label: self.custom_label
+            ,
+            visibility: self.visibility
+            ,
         }
     }
 }
+

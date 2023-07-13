@@ -3,15 +3,15 @@
 /// <p>The result of the <code>CreateSnapshotCopyGrant</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotCopyGrantInput {
-    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+pub struct CreateSnapshotCopyGrantInput  {
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
@@ -23,78 +23,79 @@ pub struct CreateSnapshotCopyGrantInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSnapshotCopyGrantInput {
-    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> 
     /// </ul>
-    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_copy_grant_name.as_deref()
     }
     /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateSnapshotCopyGrantInput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotCopyGrantInput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput).
-    pub fn builder(
-    ) -> crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder {
         crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSnapshotCopyGrantInput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotCopyGrantInputBuilder {
     pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSnapshotCopyGrantInputBuilder {
-    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> 
     /// </ul>
-    pub fn snapshot_copy_grant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Alphabetic characters must be lowercase.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> 
     /// </ul>
-    pub fn set_snapshot_copy_grant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.snapshot_copy_grant_name = input;
-        self
+    pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_copy_grant_name = input; self
+    }
+    /// <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>Alphabetic characters must be lowercase.</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li> 
+    /// </ul>
+    pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_copy_grant_name
     }
     /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +104,11 @@ impl CreateSnapshotCopyGrantInputBuilder {
     }
     /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
+    }
+    /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Appends an item to `tags`.
     ///
@@ -113,31 +117,30 @@ impl CreateSnapshotCopyGrantInputBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSnapshotCopyGrantInput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput {
-                snapshot_copy_grant_name: self.snapshot_copy_grant_name,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-            },
+                snapshot_copy_grant_name: self.snapshot_copy_grant_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

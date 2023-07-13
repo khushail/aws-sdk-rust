@@ -3,9 +3,9 @@
 /// <p>Describes the configuration of the HTTP endpoint to which Kinesis Firehose delivers data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct HttpEndpointConfiguration {
-    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
-    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+pub struct HttpEndpointConfiguration  {
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important> 
+    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p> 
     /// </important>
     #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
@@ -17,22 +17,22 @@ pub struct HttpEndpointConfiguration {
     pub access_key: ::std::option::Option<::std::string::String>,
 }
 impl HttpEndpointConfiguration {
-    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
-    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important> 
+    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p> 
     /// </important>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination.</p>
-    pub fn access_key(&self) -> ::std::option::Option<&str> {
+    pub fn access_key(&self) -> ::std::option::Option<& str> {
         self.access_key.as_deref()
     }
 }
-impl ::std::fmt::Debug for HttpEndpointConfiguration {
+impl  ::std::fmt::Debug for HttpEndpointConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HttpEndpointConfiguration");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
@@ -57,19 +57,24 @@ pub struct HttpEndpointConfigurationBuilder {
     pub(crate) access_key: ::std::option::Option<::std::string::String>,
 }
 impl HttpEndpointConfigurationBuilder {
-    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
-    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important> 
+    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p> 
     /// </important>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
-    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important> 
+    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p> 
     /// </important>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important> 
+    /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p> 
+    /// </important>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,8 +83,11 @@ impl HttpEndpointConfigurationBuilder {
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the HTTP endpoint selected as the destination.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination.</p>
     pub fn access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,15 +96,21 @@ impl HttpEndpointConfigurationBuilder {
     }
     /// <p>The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination.</p>
     pub fn set_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key = input;
-        self
+        self.access_key = input; self
+    }
+    /// <p>The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination.</p>
+    pub fn get_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key
     }
     /// Consumes the builder and constructs a [`HttpEndpointConfiguration`](crate::types::HttpEndpointConfiguration).
     pub fn build(self) -> crate::types::HttpEndpointConfiguration {
         crate::types::HttpEndpointConfiguration {
-            url: self.url,
-            name: self.name,
-            access_key: self.access_key,
+            url: self.url
+            ,
+            name: self.name
+            ,
+            access_key: self.access_key
+            ,
         }
     }
 }
@@ -109,3 +123,4 @@ impl ::std::fmt::Debug for HttpEndpointConfigurationBuilder {
         formatter.finish()
     }
 }
+

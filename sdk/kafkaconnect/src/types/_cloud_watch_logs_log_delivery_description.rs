@@ -3,7 +3,7 @@
 /// <p>A description of the log delivery settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLogsLogDeliveryDescription {
+pub struct CloudWatchLogsLogDeliveryDescription  {
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -17,7 +17,7 @@ impl CloudWatchLogsLogDeliveryDescription {
         self.enabled
     }
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
-    pub fn log_group(&self) -> ::std::option::Option<&str> {
+    pub fn log_group(&self) -> ::std::option::Option<& str> {
         self.log_group.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl CloudWatchLogsLogDeliveryDescription {
 
 /// A builder for [`CloudWatchLogsLogDeliveryDescription`](crate::types::CloudWatchLogsLogDeliveryDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogsLogDeliveryDescriptionBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_group: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl CloudWatchLogsLogDeliveryDescriptionBuilder {
     }
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
     pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,21 @@ impl CloudWatchLogsLogDeliveryDescriptionBuilder {
     }
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
     pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group = input;
-        self
+        self.log_group = input; self
+    }
+    /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsLogDeliveryDescription`](crate::types::CloudWatchLogsLogDeliveryDescription).
     pub fn build(self) -> crate::types::CloudWatchLogsLogDeliveryDescription {
         crate::types::CloudWatchLogsLogDeliveryDescription {
-            enabled: self.enabled.unwrap_or_default(),
-            log_group: self.log_group,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            log_group: self.log_group
+            ,
         }
     }
 }
+

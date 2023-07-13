@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkforceInput {
+pub struct UpdateWorkforceInput  {
     /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
     #[doc(hidden)]
     pub workforce_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
+    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p> 
     /// <p>Maximum: Ten CIDR values</p>
     #[doc(hidden)]
     pub source_ip_config: ::std::option::Option<crate::types::SourceIpConfig>,
@@ -19,22 +19,20 @@ pub struct UpdateWorkforceInput {
 }
 impl UpdateWorkforceInput {
     /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
-    pub fn workforce_name(&self) -> ::std::option::Option<&str> {
+    pub fn workforce_name(&self) -> ::std::option::Option<& str> {
         self.workforce_name.as_deref()
     }
-    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
+    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p> 
     /// <p>Maximum: Ten CIDR values</p>
-    pub fn source_ip_config(&self) -> ::std::option::Option<&crate::types::SourceIpConfig> {
+    pub fn source_ip_config(&self) -> ::std::option::Option<& crate::types::SourceIpConfig> {
         self.source_ip_config.as_ref()
     }
     /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
-    pub fn oidc_config(&self) -> ::std::option::Option<&crate::types::OidcConfig> {
+    pub fn oidc_config(&self) -> ::std::option::Option<& crate::types::OidcConfig> {
         self.oidc_config.as_ref()
     }
     /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
-    pub fn workforce_vpc_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkforceVpcConfigRequest> {
+    pub fn workforce_vpc_config(&self) -> ::std::option::Option<& crate::types::WorkforceVpcConfigRequest> {
         self.workforce_vpc_config.as_ref()
     }
 }
@@ -47,9 +45,7 @@ impl UpdateWorkforceInput {
 
 /// A builder for [`UpdateWorkforceInput`](crate::operation::update_workforce::UpdateWorkforceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkforceInputBuilder {
     pub(crate) workforce_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_ip_config: ::std::option::Option<crate::types::SourceIpConfig>,
@@ -58,35 +54,33 @@ pub struct UpdateWorkforceInputBuilder {
 }
 impl UpdateWorkforceInputBuilder {
     /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
-    pub fn workforce_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
-    pub fn set_workforce_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.workforce_name = input;
-        self
+    pub fn set_workforce_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workforce_name = input; self
     }
-    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
+    /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
+    pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workforce_name
+    }
+    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p> 
     /// <p>Maximum: Ten CIDR values</p>
     pub fn source_ip_config(mut self, input: crate::types::SourceIpConfig) -> Self {
         self.source_ip_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
+    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p> 
     /// <p>Maximum: Ten CIDR values</p>
-    pub fn set_source_ip_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceIpConfig>,
-    ) -> Self {
-        self.source_ip_config = input;
-        self
+    pub fn set_source_ip_config(mut self, input: ::std::option::Option<crate::types::SourceIpConfig>) -> Self {
+        self.source_ip_config = input; self
+    }
+    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p> 
+    /// <p>Maximum: Ten CIDR values</p>
+    pub fn get_source_ip_config(&self) -> &::std::option::Option<crate::types::SourceIpConfig> {
+        &self.source_ip_config
     }
     /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
     pub fn oidc_config(mut self, input: crate::types::OidcConfig) -> Self {
@@ -94,12 +88,12 @@ impl UpdateWorkforceInputBuilder {
         self
     }
     /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
-    pub fn set_oidc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OidcConfig>,
-    ) -> Self {
-        self.oidc_config = input;
-        self
+    pub fn set_oidc_config(mut self, input: ::std::option::Option<crate::types::OidcConfig>) -> Self {
+        self.oidc_config = input; self
+    }
+    /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
+    pub fn get_oidc_config(&self) -> &::std::option::Option<crate::types::OidcConfig> {
+        &self.oidc_config
     }
     /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
     pub fn workforce_vpc_config(mut self, input: crate::types::WorkforceVpcConfigRequest) -> Self {
@@ -107,25 +101,27 @@ impl UpdateWorkforceInputBuilder {
         self
     }
     /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
-    pub fn set_workforce_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>,
-    ) -> Self {
-        self.workforce_vpc_config = input;
-        self
+    pub fn set_workforce_vpc_config(mut self, input: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>) -> Self {
+        self.workforce_vpc_config = input; self
+    }
+    /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+    pub fn get_workforce_vpc_config(&self) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
+        &self.workforce_vpc_config
     }
     /// Consumes the builder and constructs a [`UpdateWorkforceInput`](crate::operation::update_workforce::UpdateWorkforceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workforce::UpdateWorkforceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_workforce::UpdateWorkforceInput {
-            workforce_name: self.workforce_name,
-            source_ip_config: self.source_ip_config,
-            oidc_config: self.oidc_config,
-            workforce_vpc_config: self.workforce_vpc_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workforce::UpdateWorkforceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workforce::UpdateWorkforceInput {
+                workforce_name: self.workforce_name
+                ,
+                source_ip_config: self.source_ip_config
+                ,
+                oidc_config: self.oidc_config
+                ,
+                workforce_vpc_config: self.workforce_vpc_config
+                ,
+            }
+        )
     }
 }
+

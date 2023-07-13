@@ -2,41 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceProfileOutput {
+pub struct DeleteInstanceProfileOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteInstanceProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceProfileOutput`](crate::operation::delete_instance_profile::DeleteInstanceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_instance_profile::builders::DeleteInstanceProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_instance_profile::builders::DeleteInstanceProfileOutputBuilder {
         crate::operation::delete_instance_profile::builders::DeleteInstanceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInstanceProfileOutput`](crate::operation::delete_instance_profile::DeleteInstanceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInstanceProfileOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteInstanceProfileOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteInstanceProfileOutput`](crate::operation::delete_instance_profile::DeleteInstanceProfileOutput).
     pub fn build(self) -> crate::operation::delete_instance_profile::DeleteInstanceProfileOutput {
         crate::operation::delete_instance_profile::DeleteInstanceProfileOutput {
@@ -44,3 +40,4 @@ impl DeleteInstanceProfileOutputBuilder {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentTargetInput {
+pub struct GetDeploymentTargetInput  {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct GetDeploymentTargetInput {
 }
 impl GetDeploymentTargetInput {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p> The unique ID of a deployment target. </p>
-    pub fn target_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_id(&self) -> ::std::option::Option<& str> {
         self.target_id.as_deref()
     }
 }
 impl GetDeploymentTargetInput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentTargetInput`](crate::operation::get_deployment_target::GetDeploymentTargetInput).
-    pub fn builder(
-    ) -> crate::operation::get_deployment_target::builders::GetDeploymentTargetInputBuilder {
-        crate::operation::get_deployment_target::builders::GetDeploymentTargetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_deployment_target::builders::GetDeploymentTargetInputBuilder {
+        crate::operation::get_deployment_target::builders::GetDeploymentTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeploymentTargetInput`](crate::operation::get_deployment_target::GetDeploymentTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentTargetInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentTargetInputBuilder {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.deployment_id = input;
-        self
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_id = input; self
+    }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// <p> The unique ID of a deployment target. </p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,21 +55,22 @@ impl GetDeploymentTargetInputBuilder {
     }
     /// <p> The unique ID of a deployment target. </p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
+    }
+    /// <p> The unique ID of a deployment target. </p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// Consumes the builder and constructs a [`GetDeploymentTargetInput`](crate::operation::get_deployment_target::GetDeploymentTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_deployment_target::GetDeploymentTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_deployment_target::GetDeploymentTargetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_deployment_target::GetDeploymentTargetInput {
-                deployment_id: self.deployment_id,
-                target_id: self.target_id,
-            },
+                deployment_id: self.deployment_id
+                ,
+                target_id: self.target_id
+                ,
+            }
         )
     }
 }
+

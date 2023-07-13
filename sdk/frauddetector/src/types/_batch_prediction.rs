@@ -3,7 +3,7 @@
 /// <p>The batch prediction details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPrediction {
+pub struct BatchPrediction  {
     /// <p>The job ID for the batch prediction.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -52,55 +52,55 @@ pub struct BatchPrediction {
 }
 impl BatchPrediction {
     /// <p>The job ID for the batch prediction.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The batch prediction status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AsyncJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AsyncJobStatus> {
         self.status.as_ref()
     }
     /// <p>The reason a batch prediction job failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>Timestamp of when the batch prediction job started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>Timestamp of when the batch prediction job completed.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&str> {
+    pub fn completion_time(&self) -> ::std::option::Option<& str> {
         self.completion_time.as_deref()
     }
     /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
-    pub fn last_heartbeat_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_heartbeat_time(&self) -> ::std::option::Option<& str> {
         self.last_heartbeat_time.as_deref()
     }
     /// <p>The Amazon S3 location of your training file.</p>
-    pub fn input_path(&self) -> ::std::option::Option<&str> {
+    pub fn input_path(&self) -> ::std::option::Option<& str> {
         self.input_path.as_deref()
     }
     /// <p>The Amazon S3 location of your output file.</p>
-    pub fn output_path(&self) -> ::std::option::Option<&str> {
+    pub fn output_path(&self) -> ::std::option::Option<& str> {
         self.output_path.as_deref()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>The name of the detector.</p>
-    pub fn detector_name(&self) -> ::std::option::Option<&str> {
+    pub fn detector_name(&self) -> ::std::option::Option<& str> {
         self.detector_name.as_deref()
     }
     /// <p>The detector version. </p>
-    pub fn detector_version(&self) -> ::std::option::Option<&str> {
+    pub fn detector_version(&self) -> ::std::option::Option<& str> {
         self.detector_version.as_deref()
     }
     /// <p>The ARN of the IAM role to use for this job request.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The ARN of batch prediction job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The number of records processed by the batch prediction job.</p>
@@ -121,9 +121,7 @@ impl BatchPrediction {
 
 /// A builder for [`BatchPrediction`](crate::types::BatchPrediction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPredictionBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AsyncJobStatus>,
@@ -149,8 +147,11 @@ impl BatchPredictionBuilder {
     }
     /// <p>The job ID for the batch prediction.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The job ID for the batch prediction.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The batch prediction status.</p>
     pub fn status(mut self, input: crate::types::AsyncJobStatus) -> Self {
@@ -158,28 +159,25 @@ impl BatchPredictionBuilder {
         self
     }
     /// <p>The batch prediction status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AsyncJobStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The batch prediction status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AsyncJobStatus> {
+        &self.status
     }
     /// <p>The reason a batch prediction job failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason a batch prediction job failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input; self
+    }
+    /// <p>The reason a batch prediction job failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>Timestamp of when the batch prediction job started.</p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,40 +186,37 @@ impl BatchPredictionBuilder {
     }
     /// <p>Timestamp of when the batch prediction job started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
+    }
+    /// <p>Timestamp of when the batch prediction job started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
     }
     /// <p>Timestamp of when the batch prediction job completed.</p>
-    pub fn completion_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn completion_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completion_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when the batch prediction job completed.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.completion_time = input;
-        self
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.completion_time = input; self
+    }
+    /// <p>Timestamp of when the batch prediction job completed.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completion_time
     }
     /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
-    pub fn last_heartbeat_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_heartbeat_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_heartbeat_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
-    pub fn set_last_heartbeat_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_heartbeat_time = input;
-        self
+    pub fn set_last_heartbeat_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_heartbeat_time = input; self
+    }
+    /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
+    pub fn get_last_heartbeat_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_heartbeat_time
     }
     /// <p>The Amazon S3 location of your training file.</p>
     pub fn input_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -230,8 +225,11 @@ impl BatchPredictionBuilder {
     }
     /// <p>The Amazon S3 location of your training file.</p>
     pub fn set_input_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_path = input;
-        self
+        self.input_path = input; self
+    }
+    /// <p>The Amazon S3 location of your training file.</p>
+    pub fn get_input_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_path
     }
     /// <p>The Amazon S3 location of your output file.</p>
     pub fn output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -240,56 +238,50 @@ impl BatchPredictionBuilder {
     }
     /// <p>The Amazon S3 location of your output file.</p>
     pub fn set_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_path = input;
-        self
+        self.output_path = input; self
+    }
+    /// <p>The Amazon S3 location of your output file.</p>
+    pub fn get_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_path
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_type_name = input;
-        self
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_type_name = input; self
+    }
+    /// <p>The name of the event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
     }
     /// <p>The name of the detector.</p>
-    pub fn detector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector.</p>
-    pub fn set_detector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.detector_name = input;
-        self
+    pub fn set_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.detector_name = input; self
+    }
+    /// <p>The name of the detector.</p>
+    pub fn get_detector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_name
     }
     /// <p>The detector version. </p>
-    pub fn detector_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector version. </p>
-    pub fn set_detector_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.detector_version = input;
-        self
+    pub fn set_detector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.detector_version = input; self
+    }
+    /// <p>The detector version. </p>
+    pub fn get_detector_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version
     }
     /// <p>The ARN of the IAM role to use for this job request.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -298,8 +290,11 @@ impl BatchPredictionBuilder {
     }
     /// <p>The ARN of the IAM role to use for this job request.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
+    }
+    /// <p>The ARN of the IAM role to use for this job request.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// <p>The ARN of batch prediction job.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -308,8 +303,11 @@ impl BatchPredictionBuilder {
     }
     /// <p>The ARN of batch prediction job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of batch prediction job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The number of records processed by the batch prediction job.</p>
     pub fn processed_records_count(mut self, input: i32) -> Self {
@@ -318,8 +316,11 @@ impl BatchPredictionBuilder {
     }
     /// <p>The number of records processed by the batch prediction job.</p>
     pub fn set_processed_records_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.processed_records_count = input;
-        self
+        self.processed_records_count = input; self
+    }
+    /// <p>The number of records processed by the batch prediction job.</p>
+    pub fn get_processed_records_count(&self) -> &::std::option::Option<i32> {
+        &self.processed_records_count
     }
     /// <p>The total number of records in the batch prediction job.</p>
     pub fn total_records_count(mut self, input: i32) -> Self {
@@ -328,27 +329,46 @@ impl BatchPredictionBuilder {
     }
     /// <p>The total number of records in the batch prediction job.</p>
     pub fn set_total_records_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_records_count = input;
-        self
+        self.total_records_count = input; self
+    }
+    /// <p>The total number of records in the batch prediction job.</p>
+    pub fn get_total_records_count(&self) -> &::std::option::Option<i32> {
+        &self.total_records_count
     }
     /// Consumes the builder and constructs a [`BatchPrediction`](crate::types::BatchPrediction).
     pub fn build(self) -> crate::types::BatchPrediction {
         crate::types::BatchPrediction {
-            job_id: self.job_id,
-            status: self.status,
-            failure_reason: self.failure_reason,
-            start_time: self.start_time,
-            completion_time: self.completion_time,
-            last_heartbeat_time: self.last_heartbeat_time,
-            input_path: self.input_path,
-            output_path: self.output_path,
-            event_type_name: self.event_type_name,
-            detector_name: self.detector_name,
-            detector_version: self.detector_version,
-            iam_role_arn: self.iam_role_arn,
-            arn: self.arn,
-            processed_records_count: self.processed_records_count,
-            total_records_count: self.total_records_count,
+            job_id: self.job_id
+            ,
+            status: self.status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            start_time: self.start_time
+            ,
+            completion_time: self.completion_time
+            ,
+            last_heartbeat_time: self.last_heartbeat_time
+            ,
+            input_path: self.input_path
+            ,
+            output_path: self.output_path
+            ,
+            event_type_name: self.event_type_name
+            ,
+            detector_name: self.detector_name
+            ,
+            detector_version: self.detector_version
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
+            arn: self.arn
+            ,
+            processed_records_count: self.processed_records_count
+            ,
+            total_records_count: self.total_records_count
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Metrics for a specified crawler.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrawlerMetrics {
+pub struct CrawlerMetrics  {
     /// <p>The name of the crawler.</p>
     #[doc(hidden)]
     pub crawler_name: ::std::option::Option<::std::string::String>,
@@ -31,7 +31,7 @@ pub struct CrawlerMetrics {
 }
 impl CrawlerMetrics {
     /// <p>The name of the crawler.</p>
-    pub fn crawler_name(&self) -> ::std::option::Option<&str> {
+    pub fn crawler_name(&self) -> ::std::option::Option<& str> {
         self.crawler_name.as_deref()
     }
     /// <p>The estimated time left to complete a running crawl.</p>
@@ -72,9 +72,7 @@ impl CrawlerMetrics {
 
 /// A builder for [`CrawlerMetrics`](crate::types::CrawlerMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrawlerMetricsBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
     pub(crate) time_left_seconds: ::std::option::Option<f64>,
@@ -93,8 +91,11 @@ impl CrawlerMetricsBuilder {
     }
     /// <p>The name of the crawler.</p>
     pub fn set_crawler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crawler_name = input;
-        self
+        self.crawler_name = input; self
+    }
+    /// <p>The name of the crawler.</p>
+    pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.crawler_name
     }
     /// <p>The estimated time left to complete a running crawl.</p>
     pub fn time_left_seconds(mut self, input: f64) -> Self {
@@ -103,8 +104,11 @@ impl CrawlerMetricsBuilder {
     }
     /// <p>The estimated time left to complete a running crawl.</p>
     pub fn set_time_left_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.time_left_seconds = input;
-        self
+        self.time_left_seconds = input; self
+    }
+    /// <p>The estimated time left to complete a running crawl.</p>
+    pub fn get_time_left_seconds(&self) -> &::std::option::Option<f64> {
+        &self.time_left_seconds
     }
     /// <p>True if the crawler is still estimating how long it will take to complete this run.</p>
     pub fn still_estimating(mut self, input: bool) -> Self {
@@ -113,8 +117,11 @@ impl CrawlerMetricsBuilder {
     }
     /// <p>True if the crawler is still estimating how long it will take to complete this run.</p>
     pub fn set_still_estimating(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.still_estimating = input;
-        self
+        self.still_estimating = input; self
+    }
+    /// <p>True if the crawler is still estimating how long it will take to complete this run.</p>
+    pub fn get_still_estimating(&self) -> &::std::option::Option<bool> {
+        &self.still_estimating
     }
     /// <p>The duration of the crawler's most recent run, in seconds.</p>
     pub fn last_runtime_seconds(mut self, input: f64) -> Self {
@@ -123,8 +130,11 @@ impl CrawlerMetricsBuilder {
     }
     /// <p>The duration of the crawler's most recent run, in seconds.</p>
     pub fn set_last_runtime_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.last_runtime_seconds = input;
-        self
+        self.last_runtime_seconds = input; self
+    }
+    /// <p>The duration of the crawler's most recent run, in seconds.</p>
+    pub fn get_last_runtime_seconds(&self) -> &::std::option::Option<f64> {
+        &self.last_runtime_seconds
     }
     /// <p>The median duration of this crawler's runs, in seconds.</p>
     pub fn median_runtime_seconds(mut self, input: f64) -> Self {
@@ -133,8 +143,11 @@ impl CrawlerMetricsBuilder {
     }
     /// <p>The median duration of this crawler's runs, in seconds.</p>
     pub fn set_median_runtime_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.median_runtime_seconds = input;
-        self
+        self.median_runtime_seconds = input; self
+    }
+    /// <p>The median duration of this crawler's runs, in seconds.</p>
+    pub fn get_median_runtime_seconds(&self) -> &::std::option::Option<f64> {
+        &self.median_runtime_seconds
     }
     /// <p>The number of tables created by this crawler.</p>
     pub fn tables_created(mut self, input: i32) -> Self {
@@ -143,8 +156,11 @@ impl CrawlerMetricsBuilder {
     }
     /// <p>The number of tables created by this crawler.</p>
     pub fn set_tables_created(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.tables_created = input;
-        self
+        self.tables_created = input; self
+    }
+    /// <p>The number of tables created by this crawler.</p>
+    pub fn get_tables_created(&self) -> &::std::option::Option<i32> {
+        &self.tables_created
     }
     /// <p>The number of tables updated by this crawler.</p>
     pub fn tables_updated(mut self, input: i32) -> Self {
@@ -153,8 +169,11 @@ impl CrawlerMetricsBuilder {
     }
     /// <p>The number of tables updated by this crawler.</p>
     pub fn set_tables_updated(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.tables_updated = input;
-        self
+        self.tables_updated = input; self
+    }
+    /// <p>The number of tables updated by this crawler.</p>
+    pub fn get_tables_updated(&self) -> &::std::option::Option<i32> {
+        &self.tables_updated
     }
     /// <p>The number of tables deleted by this crawler.</p>
     pub fn tables_deleted(mut self, input: i32) -> Self {
@@ -163,20 +182,39 @@ impl CrawlerMetricsBuilder {
     }
     /// <p>The number of tables deleted by this crawler.</p>
     pub fn set_tables_deleted(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.tables_deleted = input;
-        self
+        self.tables_deleted = input; self
+    }
+    /// <p>The number of tables deleted by this crawler.</p>
+    pub fn get_tables_deleted(&self) -> &::std::option::Option<i32> {
+        &self.tables_deleted
     }
     /// Consumes the builder and constructs a [`CrawlerMetrics`](crate::types::CrawlerMetrics).
     pub fn build(self) -> crate::types::CrawlerMetrics {
         crate::types::CrawlerMetrics {
-            crawler_name: self.crawler_name,
-            time_left_seconds: self.time_left_seconds.unwrap_or_default(),
-            still_estimating: self.still_estimating.unwrap_or_default(),
-            last_runtime_seconds: self.last_runtime_seconds.unwrap_or_default(),
-            median_runtime_seconds: self.median_runtime_seconds.unwrap_or_default(),
-            tables_created: self.tables_created.unwrap_or_default(),
-            tables_updated: self.tables_updated.unwrap_or_default(),
-            tables_deleted: self.tables_deleted.unwrap_or_default(),
+            crawler_name: self.crawler_name
+            ,
+            time_left_seconds: self.time_left_seconds
+                .unwrap_or_default()
+            ,
+            still_estimating: self.still_estimating
+                .unwrap_or_default()
+            ,
+            last_runtime_seconds: self.last_runtime_seconds
+                .unwrap_or_default()
+            ,
+            median_runtime_seconds: self.median_runtime_seconds
+                .unwrap_or_default()
+            ,
+            tables_created: self.tables_created
+                .unwrap_or_default()
+            ,
+            tables_updated: self.tables_updated
+                .unwrap_or_default()
+            ,
+            tables_deleted: self.tables_deleted
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

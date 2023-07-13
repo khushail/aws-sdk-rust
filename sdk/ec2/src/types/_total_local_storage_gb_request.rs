@@ -3,7 +3,7 @@
 /// <p>The minimum and maximum amount of total local storage, in GB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TotalLocalStorageGbRequest {
+pub struct TotalLocalStorageGbRequest  {
     /// <p>The minimum amount of total local storage, in GB. To specify no minimum limit, omit this parameter.</p>
     #[doc(hidden)]
     pub min: ::std::option::Option<f64>,
@@ -30,9 +30,7 @@ impl TotalLocalStorageGbRequest {
 
 /// A builder for [`TotalLocalStorageGbRequest`](crate::types::TotalLocalStorageGbRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TotalLocalStorageGbRequestBuilder {
     pub(crate) min: ::std::option::Option<f64>,
     pub(crate) max: ::std::option::Option<f64>,
@@ -45,8 +43,11 @@ impl TotalLocalStorageGbRequestBuilder {
     }
     /// <p>The minimum amount of total local storage, in GB. To specify no minimum limit, omit this parameter.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
+    }
+    /// <p>The minimum amount of total local storage, in GB. To specify no minimum limit, omit this parameter.</p>
+    pub fn get_min(&self) -> &::std::option::Option<f64> {
+        &self.min
     }
     /// <p>The maximum amount of total local storage, in GB. To specify no maximum limit, omit this parameter.</p>
     pub fn max(mut self, input: f64) -> Self {
@@ -55,14 +56,20 @@ impl TotalLocalStorageGbRequestBuilder {
     }
     /// <p>The maximum amount of total local storage, in GB. To specify no maximum limit, omit this parameter.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
+    }
+    /// <p>The maximum amount of total local storage, in GB. To specify no maximum limit, omit this parameter.</p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`TotalLocalStorageGbRequest`](crate::types::TotalLocalStorageGbRequest).
     pub fn build(self) -> crate::types::TotalLocalStorageGbRequest {
         crate::types::TotalLocalStorageGbRequest {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

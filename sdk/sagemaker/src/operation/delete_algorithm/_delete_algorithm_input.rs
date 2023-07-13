@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAlgorithmInput {
+pub struct DeleteAlgorithmInput  {
     /// <p>The name of the algorithm to delete.</p>
     #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAlgorithmInput {
     /// <p>The name of the algorithm to delete.</p>
-    pub fn algorithm_name(&self) -> ::std::option::Option<&str> {
+    pub fn algorithm_name(&self) -> ::std::option::Option<& str> {
         self.algorithm_name.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl DeleteAlgorithmInput {
 
 /// A builder for [`DeleteAlgorithmInput`](crate::operation::delete_algorithm::DeleteAlgorithmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlgorithmInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAlgorithmInputBuilder {
     /// <p>The name of the algorithm to delete.</p>
-    pub fn algorithm_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the algorithm to delete.</p>
-    pub fn set_algorithm_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.algorithm_name = input;
-        self
+    pub fn set_algorithm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.algorithm_name = input; self
+    }
+    /// <p>The name of the algorithm to delete.</p>
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.algorithm_name
     }
     /// Consumes the builder and constructs a [`DeleteAlgorithmInput`](crate::operation::delete_algorithm::DeleteAlgorithmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_algorithm::DeleteAlgorithmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_algorithm::DeleteAlgorithmInput {
-            algorithm_name: self.algorithm_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_algorithm::DeleteAlgorithmInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_algorithm::DeleteAlgorithmInput {
+                algorithm_name: self.algorithm_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrackingConfig {
+pub struct TrackingConfig  {
     /// <p>Current setting for autotrack.</p>
     #[doc(hidden)]
     pub autotrack: ::std::option::Option<crate::types::Criticality>,
 }
 impl TrackingConfig {
     /// <p>Current setting for autotrack.</p>
-    pub fn autotrack(&self) -> ::std::option::Option<&crate::types::Criticality> {
+    pub fn autotrack(&self) -> ::std::option::Option<& crate::types::Criticality> {
         self.autotrack.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl TrackingConfig {
 
 /// A builder for [`TrackingConfig`](crate::types::TrackingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrackingConfigBuilder {
     pub(crate) autotrack: ::std::option::Option<crate::types::Criticality>,
 }
@@ -36,17 +34,19 @@ impl TrackingConfigBuilder {
         self
     }
     /// <p>Current setting for autotrack.</p>
-    pub fn set_autotrack(
-        mut self,
-        input: ::std::option::Option<crate::types::Criticality>,
-    ) -> Self {
-        self.autotrack = input;
-        self
+    pub fn set_autotrack(mut self, input: ::std::option::Option<crate::types::Criticality>) -> Self {
+        self.autotrack = input; self
+    }
+    /// <p>Current setting for autotrack.</p>
+    pub fn get_autotrack(&self) -> &::std::option::Option<crate::types::Criticality> {
+        &self.autotrack
     }
     /// Consumes the builder and constructs a [`TrackingConfig`](crate::types::TrackingConfig).
     pub fn build(self) -> crate::types::TrackingConfig {
         crate::types::TrackingConfig {
-            autotrack: self.autotrack,
+            autotrack: self.autotrack
+            ,
         }
     }
 }
+

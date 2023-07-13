@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAddressInput {
+pub struct DescribeAddressInput  {
     /// <p>The automatically generated ID for a specific address.</p>
     #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAddressInput {
     /// <p>The automatically generated ID for a specific address.</p>
-    pub fn address_id(&self) -> ::std::option::Option<&str> {
+    pub fn address_id(&self) -> ::std::option::Option<& str> {
         self.address_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeAddressInput {
 
 /// A builder for [`DescribeAddressInput`](crate::operation::describe_address::DescribeAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressInputBuilder {
     pub(crate) address_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeAddressInputBuilder {
     }
     /// <p>The automatically generated ID for a specific address.</p>
     pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_id = input;
-        self
+        self.address_id = input; self
+    }
+    /// <p>The automatically generated ID for a specific address.</p>
+    pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_id
     }
     /// Consumes the builder and constructs a [`DescribeAddressInput`](crate::operation::describe_address::DescribeAddressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_address::DescribeAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_address::DescribeAddressInput {
-            address_id: self.address_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_address::DescribeAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_address::DescribeAddressInput {
+                address_id: self.address_id
+                ,
+            }
+        )
     }
 }
+

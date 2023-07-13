@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateQueueInput {
+pub struct CreateQueueInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -26,31 +26,27 @@ pub struct CreateQueueInput {
     pub quick_connect_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The name of the queue.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the queue.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-    pub fn outbound_caller_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutboundCallerConfig> {
+    pub fn outbound_caller_config(&self) -> ::std::option::Option<& crate::types::OutboundCallerConfig> {
         self.outbound_caller_config.as_ref()
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn hours_of_operation_id(&self) -> ::std::option::Option<& str> {
         self.hours_of_operation_id.as_deref()
     }
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
@@ -58,15 +54,11 @@ impl CreateQueueInput {
         self.max_contacts
     }
     /// <p>The quick connects available to agents who are working the queue.</p>
-    pub fn quick_connect_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn quick_connect_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.quick_connect_ids.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -79,9 +71,7 @@ impl CreateQueueInput {
 
 /// A builder for [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQueueInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -90,9 +80,7 @@ pub struct CreateQueueInputBuilder {
     pub(crate) hours_of_operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_contacts: ::std::option::Option<i32>,
     pub(crate) quick_connect_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -102,8 +90,11 @@ impl CreateQueueInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The name of the queue.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,8 +103,11 @@ impl CreateQueueInputBuilder {
     }
     /// <p>The name of the queue.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the queue.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the queue.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,8 +116,11 @@ impl CreateQueueInputBuilder {
     }
     /// <p>The description of the queue.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the queue.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub fn outbound_caller_config(mut self, input: crate::types::OutboundCallerConfig) -> Self {
@@ -131,28 +128,25 @@ impl CreateQueueInputBuilder {
         self
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-    pub fn set_outbound_caller_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutboundCallerConfig>,
-    ) -> Self {
-        self.outbound_caller_config = input;
-        self
+    pub fn set_outbound_caller_config(mut self, input: ::std::option::Option<crate::types::OutboundCallerConfig>) -> Self {
+        self.outbound_caller_config = input; self
+    }
+    /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    pub fn get_outbound_caller_config(&self) -> &::std::option::Option<crate::types::OutboundCallerConfig> {
+        &self.outbound_caller_config
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hours_of_operation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hours_of_operation_id = input;
-        self
+    pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hours_of_operation_id = input; self
+    }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hours_of_operation_id
     }
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     pub fn max_contacts(mut self, input: i32) -> Self {
@@ -161,72 +155,72 @@ impl CreateQueueInputBuilder {
     }
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     pub fn set_max_contacts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_contacts = input;
-        self
+        self.max_contacts = input; self
+    }
+    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    pub fn get_max_contacts(&self) -> &::std::option::Option<i32> {
+        &self.max_contacts
     }
     /// Appends an item to `quick_connect_ids`.
     ///
     /// To override the contents of this collection use [`set_quick_connect_ids`](Self::set_quick_connect_ids).
     ///
     /// <p>The quick connects available to agents who are working the queue.</p>
-    pub fn quick_connect_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.quick_connect_ids.unwrap_or_default();
-        v.push(input.into());
-        self.quick_connect_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.quick_connect_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The quick connects available to agents who are working the queue.</p>
-    pub fn set_quick_connect_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.quick_connect_ids = input;
-        self
+    pub fn set_quick_connect_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.quick_connect_ids = input; self
+    }
+    /// <p>The quick connects available to agents who are working the queue.</p>
+    pub fn get_quick_connect_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.quick_connect_ids
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_queue::CreateQueueInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_queue::CreateQueueInput {
-            instance_id: self.instance_id,
-            name: self.name,
-            description: self.description,
-            outbound_caller_config: self.outbound_caller_config,
-            hours_of_operation_id: self.hours_of_operation_id,
-            max_contacts: self.max_contacts,
-            quick_connect_ids: self.quick_connect_ids,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_queue::CreateQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_queue::CreateQueueInput {
+                instance_id: self.instance_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                outbound_caller_config: self.outbound_caller_config
+                ,
+                hours_of_operation_id: self.hours_of_operation_id
+                ,
+                max_contacts: self.max_contacts
+                ,
+                quick_connect_ids: self.quick_connect_ids
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

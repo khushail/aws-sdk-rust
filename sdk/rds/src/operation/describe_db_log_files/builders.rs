@@ -3,153 +3,133 @@ pub use crate::operation::describe_db_log_files::_describe_db_log_files_output::
 
 pub use crate::operation::describe_db_log_files::_describe_db_log_files_input::DescribeDbLogFilesInputBuilder;
 
+impl DescribeDbLogFilesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_db_log_files::DescribeDbLogFilesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_db_log_files();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeDBLogFiles`.
-///
-/// <p>Returns a list of DB log files for the DB instance.</p>
+/// 
+/// <p>Returns a list of DB log files for the DB instance.</p> 
 /// <p>This command doesn't apply to RDS Custom.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBLogFilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder,
+                    inner: crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder,
 }
-impl DescribeDBLogFilesFluentBuilder {
+impl DescribeDBLogFilesFluentBuilder  {
     /// Creates a new `DescribeDBLogFiles`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_db_log_files::DescribeDBLogFiles,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeDBLogFiles as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_log_files::DescribeDbLogFilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_db_log_files::DescribeDBLogFiles, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_db_log_files::DescribeDBLogFilesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_db_log_files::DescribeDbLogFilesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_log_files::DescribeDBLogFilesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_log_files::DescribeDbLogFilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_db_log_files::DescribeDBLogFiles,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_db_log_files::DescribeDbLogFilesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_log_files::DescribeDBLogFilesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_db_log_files::DescribeDBLogFiles, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_db_log_files::DescribeDBLogFilesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator {
-        crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator {
+                                crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::new(self.handle, self.inner)
+                            }
+    /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li> 
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
-    /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
+    /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li> 
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
+    /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li> 
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_identifier()
+    }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    pub fn filename_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filename_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filename_contains(input.into());
         self
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    pub fn set_filename_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filename_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filename_contains(input);
         self
+    }
+    /// <p>Filters the available log files for log file names that contain the specified string.</p>
+    pub fn get_filename_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filename_contains()
     }
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
     pub fn file_last_written(mut self, input: i64) -> Self {
@@ -161,6 +141,10 @@ impl DescribeDBLogFilesFluentBuilder {
         self.inner = self.inner.set_file_last_written(input);
         self
     }
+    /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
+    pub fn get_file_last_written(&self) -> &::std::option::Option<i64> {
+        self.inner.get_file_last_written()
+    }
     /// <p>Filters the available log files for files larger than the specified size.</p>
     pub fn file_size(mut self, input: i64) -> Self {
         self.inner = self.inner.file_size(input);
@@ -170,6 +154,10 @@ impl DescribeDBLogFilesFluentBuilder {
     pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_file_size(input);
         self
+    }
+    /// <p>Filters the available log files for files larger than the specified size.</p>
+    pub fn get_file_size(&self) -> &::std::option::Option<i64> {
+        self.inner.get_file_size()
     }
     /// Appends an item to `Filters`.
     ///
@@ -181,12 +169,13 @@ impl DescribeDBLogFilesFluentBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>This parameter isn't currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -198,6 +187,10 @@ impl DescribeDBLogFilesFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -208,4 +201,9 @@ impl DescribeDBLogFilesFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
 }
+

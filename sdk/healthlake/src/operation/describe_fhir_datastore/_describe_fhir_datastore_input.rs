@@ -2,56 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFhirDatastoreInput {
-    /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+pub struct DescribeFhirDatastoreInput  {
+    /// <p>The AWS-generated Data Store ID.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirDatastoreInput {
-    /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    /// <p>The AWS-generated Data Store ID.</p>
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
 }
 impl DescribeFhirDatastoreInput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreInput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreInputBuilder {
         crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFhirDatastoreInput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFhirDatastoreInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirDatastoreInputBuilder {
-    /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+    /// <p>The AWS-generated Data Store ID.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+    /// <p>The AWS-generated Data Store ID.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
+    }
+    /// <p>The AWS-generated Data Store ID.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
     }
     /// Consumes the builder and constructs a [`DescribeFhirDatastoreInput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput {
-                datastore_id: self.datastore_id,
-            },
+                datastore_id: self.datastore_id
+                ,
+            }
         )
     }
 }
+

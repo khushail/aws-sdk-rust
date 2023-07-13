@@ -3,7 +3,7 @@
 /// <p>The SQL statement encountered an environmental error while running.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteStatementException {
+pub struct ExecuteStatementException  {
     /// <p>The exception message.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -14,21 +14,19 @@ pub struct ExecuteStatementException {
 }
 impl ExecuteStatementException {
     /// <p>Statement identifier of the exception.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<& str> {
         self.statement_id.as_deref()
     }
 }
 impl ExecuteStatementException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ExecuteStatementException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ExecuteStatementException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +41,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::ExecuteStatement
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ExecuteStatementException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ExecuteStatementException {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementException`](crate::types::error::ExecuteStatementException).
@@ -56,9 +52,7 @@ impl ExecuteStatementException {
 
 /// A builder for [`ExecuteStatementException`](crate::types::error::ExecuteStatementException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteStatementExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) statement_id: ::std::option::Option<::std::string::String>,
@@ -72,8 +66,11 @@ impl ExecuteStatementExceptionBuilder {
     }
     /// <p>The exception message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The exception message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>Statement identifier of the exception.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,29 +79,32 @@ impl ExecuteStatementExceptionBuilder {
     }
     /// <p>Statement identifier of the exception.</p>
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_id = input;
-        self
+        self.statement_id = input; self
+    }
+    /// <p>Statement identifier of the exception.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ExecuteStatementException`](crate::types::error::ExecuteStatementException).
     pub fn build(self) -> crate::types::error::ExecuteStatementException {
         crate::types::error::ExecuteStatementException {
-            message: self.message,
-            statement_id: self.statement_id,
+            message: self.message
+            ,
+            statement_id: self.statement_id
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

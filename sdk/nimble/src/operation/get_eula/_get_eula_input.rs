@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEulaInput {
+pub struct GetEulaInput  {
     /// <p>The EULA ID.</p>
     #[doc(hidden)]
     pub eula_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEulaInput {
     /// <p>The EULA ID.</p>
-    pub fn eula_id(&self) -> ::std::option::Option<&str> {
+    pub fn eula_id(&self) -> ::std::option::Option<& str> {
         self.eula_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetEulaInput {
 
 /// A builder for [`GetEulaInput`](crate::operation::get_eula::GetEulaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEulaInputBuilder {
     pub(crate) eula_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetEulaInputBuilder {
     }
     /// <p>The EULA ID.</p>
     pub fn set_eula_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eula_id = input;
-        self
+        self.eula_id = input; self
+    }
+    /// <p>The EULA ID.</p>
+    pub fn get_eula_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eula_id
     }
     /// Consumes the builder and constructs a [`GetEulaInput`](crate::operation::get_eula::GetEulaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_eula::GetEulaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_eula::GetEulaInput {
-            eula_id: self.eula_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_eula::GetEulaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_eula::GetEulaInput {
+                eula_id: self.eula_id
+                ,
+            }
+        )
     }
 }
+

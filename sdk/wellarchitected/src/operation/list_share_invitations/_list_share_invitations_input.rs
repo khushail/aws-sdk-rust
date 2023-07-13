@@ -3,7 +3,7 @@
 /// <p>Input for List Share Invitations</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListShareInvitationsInput {
+pub struct ListShareInvitationsInput  {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     #[doc(hidden)]
     pub workload_name_prefix: ::std::option::Option<::std::string::String>,
@@ -19,81 +19,80 @@ pub struct ListShareInvitationsInput {
     /// <p>The maximum number of results to return for this request.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Profile name prefix.</p>
+    #[doc(hidden)]
+    pub profile_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListShareInvitationsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn workload_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name_prefix(&self) -> ::std::option::Option<& str> {
         self.workload_name_prefix.as_deref()
     }
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
-    pub fn lens_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn lens_name_prefix(&self) -> ::std::option::Option<& str> {
         self.lens_name_prefix.as_deref()
     }
     /// <p>The type of share invitations to be returned.</p>
-    pub fn share_resource_type(&self) -> ::std::option::Option<&crate::types::ShareResourceType> {
+    pub fn share_resource_type(&self) -> ::std::option::Option<& crate::types::ShareResourceType> {
         self.share_resource_type.as_ref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Profile name prefix.</p>
+    pub fn profile_name_prefix(&self) -> ::std::option::Option<& str> {
+        self.profile_name_prefix.as_deref()
+    }
 }
 impl ListShareInvitationsInput {
     /// Creates a new builder-style object to manufacture [`ListShareInvitationsInput`](crate::operation::list_share_invitations::ListShareInvitationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_share_invitations::builders::ListShareInvitationsInputBuilder {
+    pub fn builder() -> crate::operation::list_share_invitations::builders::ListShareInvitationsInputBuilder {
         crate::operation::list_share_invitations::builders::ListShareInvitationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListShareInvitationsInput`](crate::operation::list_share_invitations::ListShareInvitationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListShareInvitationsInputBuilder {
     pub(crate) workload_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) lens_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) share_resource_type: ::std::option::Option<crate::types::ShareResourceType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) profile_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListShareInvitationsInputBuilder {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn workload_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn set_workload_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.workload_name_prefix = input;
-        self
+    pub fn set_workload_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workload_name_prefix = input; self
+    }
+    /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
+    pub fn get_workload_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_name_prefix
     }
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
-    pub fn lens_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lens_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
-    pub fn set_lens_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.lens_name_prefix = input;
-        self
+    pub fn set_lens_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lens_name_prefix = input; self
+    }
+    /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
+    pub fn get_lens_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_name_prefix
     }
     /// <p>The type of share invitations to be returned.</p>
     pub fn share_resource_type(mut self, input: crate::types::ShareResourceType) -> Self {
@@ -101,12 +100,12 @@ impl ListShareInvitationsInputBuilder {
         self
     }
     /// <p>The type of share invitations to be returned.</p>
-    pub fn set_share_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareResourceType>,
-    ) -> Self {
-        self.share_resource_type = input;
-        self
+    pub fn set_share_resource_type(mut self, input: ::std::option::Option<crate::types::ShareResourceType>) -> Self {
+        self.share_resource_type = input; self
+    }
+    /// <p>The type of share invitations to be returned.</p>
+    pub fn get_share_resource_type(&self) -> &::std::option::Option<crate::types::ShareResourceType> {
+        &self.share_resource_type
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,8 +114,11 @@ impl ListShareInvitationsInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -125,24 +127,43 @@ impl ListShareInvitationsInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
+    /// <p>Profile name prefix.</p>
+    pub fn profile_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
+    /// <p>Profile name prefix.</p>
+    pub fn set_profile_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_name_prefix = input; self
+    }
+    /// <p>Profile name prefix.</p>
+    pub fn get_profile_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name_prefix
+    }
     /// Consumes the builder and constructs a [`ListShareInvitationsInput`](crate::operation::list_share_invitations::ListShareInvitationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_share_invitations::ListShareInvitationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_share_invitations::ListShareInvitationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_share_invitations::ListShareInvitationsInput {
-                workload_name_prefix: self.workload_name_prefix,
-                lens_name_prefix: self.lens_name_prefix,
-                share_resource_type: self.share_resource_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                workload_name_prefix: self.workload_name_prefix
+                ,
+                lens_name_prefix: self.lens_name_prefix
+                ,
+                share_resource_type: self.share_resource_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                profile_name_prefix: self.profile_name_prefix
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Specifies the integrity algorithm for the VPN tunnel for phase 1 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Phase1IntegrityAlgorithmsRequestListValue {
+pub struct Phase1IntegrityAlgorithmsRequestListValue  {
     /// <p>The value for the integrity algorithm.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Phase1IntegrityAlgorithmsRequestListValue {
     /// <p>The value for the integrity algorithm.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Phase1IntegrityAlgorithmsRequestListValue {
 
 /// A builder for [`Phase1IntegrityAlgorithmsRequestListValue`](crate::types::Phase1IntegrityAlgorithmsRequestListValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Phase1IntegrityAlgorithmsRequestListValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl Phase1IntegrityAlgorithmsRequestListValueBuilder {
     }
     /// <p>The value for the integrity algorithm.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value for the integrity algorithm.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Phase1IntegrityAlgorithmsRequestListValue`](crate::types::Phase1IntegrityAlgorithmsRequestListValue).
     pub fn build(self) -> crate::types::Phase1IntegrityAlgorithmsRequestListValue {
-        crate::types::Phase1IntegrityAlgorithmsRequestListValue { value: self.value }
+        crate::types::Phase1IntegrityAlgorithmsRequestListValue {
+            value: self.value
+            ,
+        }
     }
 }
+

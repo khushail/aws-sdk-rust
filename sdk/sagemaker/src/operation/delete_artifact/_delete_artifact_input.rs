@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteArtifactInput {
+pub struct DeleteArtifactInput  {
     /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
     #[doc(hidden)]
     pub artifact_arn: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteArtifactInput {
 }
 impl DeleteArtifactInput {
     /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
-    pub fn artifact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_arn(&self) -> ::std::option::Option<& str> {
         self.artifact_arn.as_deref()
     }
     /// <p>The URI of the source.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::ArtifactSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::ArtifactSource> {
         self.source.as_ref()
     }
 }
@@ -29,9 +29,7 @@ impl DeleteArtifactInput {
 
 /// A builder for [`DeleteArtifactInput`](crate::operation::delete_artifact::DeleteArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteArtifactInputBuilder {
     pub(crate) artifact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::ArtifactSource>,
@@ -44,8 +42,11 @@ impl DeleteArtifactInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
     pub fn set_artifact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_arn = input;
-        self
+        self.artifact_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
+    pub fn get_artifact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_arn
     }
     /// <p>The URI of the source.</p>
     pub fn source(mut self, input: crate::types::ArtifactSource) -> Self {
@@ -53,23 +54,23 @@ impl DeleteArtifactInputBuilder {
         self
     }
     /// <p>The URI of the source.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactSource>,
-    ) -> Self {
-        self.source = input;
-        self
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ArtifactSource>) -> Self {
+        self.source = input; self
+    }
+    /// <p>The URI of the source.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ArtifactSource> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`DeleteArtifactInput`](crate::operation::delete_artifact::DeleteArtifactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_artifact::DeleteArtifactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_artifact::DeleteArtifactInput {
-            artifact_arn: self.artifact_arn,
-            source: self.source,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_artifact::DeleteArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_artifact::DeleteArtifactInput {
+                artifact_arn: self.artifact_arn
+                ,
+                source: self.source
+                ,
+            }
+        )
     }
 }
+

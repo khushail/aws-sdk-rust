@@ -3,14 +3,14 @@
 /// <p>The options that determine the presentation of a waterfall visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WaterfallChartOptions {
+pub struct WaterfallChartOptions  {
     /// <p>This option determines the total bar label of a waterfall visual.</p>
     #[doc(hidden)]
     pub total_bar_label: ::std::option::Option<::std::string::String>,
 }
 impl WaterfallChartOptions {
     /// <p>This option determines the total bar label of a waterfall visual.</p>
-    pub fn total_bar_label(&self) -> ::std::option::Option<&str> {
+    pub fn total_bar_label(&self) -> ::std::option::Option<& str> {
         self.total_bar_label.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl WaterfallChartOptions {
 
 /// A builder for [`WaterfallChartOptions`](crate::types::WaterfallChartOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WaterfallChartOptionsBuilder {
     pub(crate) total_bar_label: ::std::option::Option<::std::string::String>,
 }
 impl WaterfallChartOptionsBuilder {
     /// <p>This option determines the total bar label of a waterfall visual.</p>
-    pub fn total_bar_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn total_bar_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_bar_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This option determines the total bar label of a waterfall visual.</p>
-    pub fn set_total_bar_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.total_bar_label = input;
-        self
+    pub fn set_total_bar_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.total_bar_label = input; self
+    }
+    /// <p>This option determines the total bar label of a waterfall visual.</p>
+    pub fn get_total_bar_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_bar_label
     }
     /// Consumes the builder and constructs a [`WaterfallChartOptions`](crate::types::WaterfallChartOptions).
     pub fn build(self) -> crate::types::WaterfallChartOptions {
         crate::types::WaterfallChartOptions {
-            total_bar_label: self.total_bar_label,
+            total_bar_label: self.total_bar_label
+            ,
         }
     }
 }
+

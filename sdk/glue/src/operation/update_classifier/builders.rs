@@ -3,114 +3,100 @@ pub use crate::operation::update_classifier::_update_classifier_output::UpdateCl
 
 pub use crate::operation::update_classifier::_update_classifier_input::UpdateClassifierInputBuilder;
 
+impl UpdateClassifierInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_classifier::UpdateClassifierOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_classifier::UpdateClassifierError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_classifier();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateClassifier`.
-///
+/// 
 /// <p>Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field is present).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateClassifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_classifier::builders::UpdateClassifierInputBuilder,
+                    inner: crate::operation::update_classifier::builders::UpdateClassifierInputBuilder,
 }
-impl UpdateClassifierFluentBuilder {
+impl UpdateClassifierFluentBuilder  {
     /// Creates a new `UpdateClassifier`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_classifier::UpdateClassifier,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classifier::UpdateClassifierError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateClassifier as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_classifier::builders::UpdateClassifierInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_classifier::UpdateClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classifier::UpdateClassifierError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_classifier::UpdateClassifier, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_classifier::UpdateClassifierError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_classifier::UpdateClassifierOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_classifier::UpdateClassifierError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_classifier::UpdateClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classifier::UpdateClassifierError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_classifier::UpdateClassifier,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classifier::UpdateClassifierError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_classifier::UpdateClassifierOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_classifier::UpdateClassifierError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_classifier::UpdateClassifier, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_classifier::UpdateClassifierError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
     pub fn grok_classifier(mut self, input: crate::types::UpdateGrokClassifierRequest) -> Self {
         self.inner = self.inner.grok_classifier(input);
         self
     }
     /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
-    pub fn set_grok_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateGrokClassifierRequest>,
-    ) -> Self {
+    pub fn set_grok_classifier(mut self, input: ::std::option::Option<crate::types::UpdateGrokClassifierRequest>) -> Self {
         self.inner = self.inner.set_grok_classifier(input);
         self
+    }
+    /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
+    pub fn get_grok_classifier(&self) -> &::std::option::Option<crate::types::UpdateGrokClassifierRequest> {
+        self.inner.get_grok_classifier()
     }
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
     pub fn xml_classifier(mut self, input: crate::types::UpdateXmlClassifierRequest) -> Self {
@@ -118,12 +104,13 @@ impl UpdateClassifierFluentBuilder {
         self
     }
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
-    pub fn set_xml_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateXmlClassifierRequest>,
-    ) -> Self {
+    pub fn set_xml_classifier(mut self, input: ::std::option::Option<crate::types::UpdateXmlClassifierRequest>) -> Self {
         self.inner = self.inner.set_xml_classifier(input);
         self
+    }
+    /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
+    pub fn get_xml_classifier(&self) -> &::std::option::Option<crate::types::UpdateXmlClassifierRequest> {
+        self.inner.get_xml_classifier()
     }
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
     pub fn json_classifier(mut self, input: crate::types::UpdateJsonClassifierRequest) -> Self {
@@ -131,12 +118,13 @@ impl UpdateClassifierFluentBuilder {
         self
     }
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
-    pub fn set_json_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateJsonClassifierRequest>,
-    ) -> Self {
+    pub fn set_json_classifier(mut self, input: ::std::option::Option<crate::types::UpdateJsonClassifierRequest>) -> Self {
         self.inner = self.inner.set_json_classifier(input);
         self
+    }
+    /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
+    pub fn get_json_classifier(&self) -> &::std::option::Option<crate::types::UpdateJsonClassifierRequest> {
+        self.inner.get_json_classifier()
     }
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
     pub fn csv_classifier(mut self, input: crate::types::UpdateCsvClassifierRequest) -> Self {
@@ -144,11 +132,13 @@ impl UpdateClassifierFluentBuilder {
         self
     }
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
-    pub fn set_csv_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateCsvClassifierRequest>,
-    ) -> Self {
+    pub fn set_csv_classifier(mut self, input: ::std::option::Option<crate::types::UpdateCsvClassifierRequest>) -> Self {
         self.inner = self.inner.set_csv_classifier(input);
         self
     }
+    /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
+    pub fn get_csv_classifier(&self) -> &::std::option::Option<crate::types::UpdateCsvClassifierRequest> {
+        self.inner.get_csv_classifier()
+    }
 }
+

@@ -3,7 +3,7 @@
 /// <p> Provides details in the event of a failed flow, including the failure count and the related error messages. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorInfo {
+pub struct ErrorInfo  {
     /// <p> Specifies the failure count for the attempted flow. </p>
     #[doc(hidden)]
     pub put_failures_count: ::std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl ErrorInfo {
         self.put_failures_count
     }
     /// <p> Specifies the error message that appears if a flow fails. </p>
-    pub fn execution_message(&self) -> ::std::option::Option<&str> {
+    pub fn execution_message(&self) -> ::std::option::Option<& str> {
         self.execution_message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl ErrorInfo {
 
 /// A builder for [`ErrorInfo`](crate::types::ErrorInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorInfoBuilder {
     pub(crate) put_failures_count: ::std::option::Option<i64>,
     pub(crate) execution_message: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl ErrorInfoBuilder {
     }
     /// <p> Specifies the failure count for the attempted flow. </p>
     pub fn set_put_failures_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.put_failures_count = input;
-        self
+        self.put_failures_count = input; self
+    }
+    /// <p> Specifies the failure count for the attempted flow. </p>
+    pub fn get_put_failures_count(&self) -> &::std::option::Option<i64> {
+        &self.put_failures_count
     }
     /// <p> Specifies the error message that appears if a flow fails. </p>
-    pub fn execution_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the error message that appears if a flow fails. </p>
-    pub fn set_execution_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.execution_message = input;
-        self
+    pub fn set_execution_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_message = input; self
+    }
+    /// <p> Specifies the error message that appears if a flow fails. </p>
+    pub fn get_execution_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_message
     }
     /// Consumes the builder and constructs a [`ErrorInfo`](crate::types::ErrorInfo).
     pub fn build(self) -> crate::types::ErrorInfo {
         crate::types::ErrorInfo {
-            put_failures_count: self.put_failures_count,
-            execution_message: self.execution_message,
+            put_failures_count: self.put_failures_count
+            ,
+            execution_message: self.execution_message
+            ,
         }
     }
 }
+

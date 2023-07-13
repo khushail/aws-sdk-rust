@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataSetImportHistoryInput {
+pub struct ListDataSetImportHistoryInput  {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListDataSetImportHistoryInput {
 }
 impl ListDataSetImportHistoryInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects to return.</p>
@@ -23,22 +23,20 @@ impl ListDataSetImportHistoryInput {
         self.max_results
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
 impl ListDataSetImportHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListDataSetImportHistoryInput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput).
-    pub fn builder() -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder{
+    pub fn builder() -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder {
         crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataSetImportHistoryInput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSetImportHistoryInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,8 +50,11 @@ impl ListDataSetImportHistoryInputBuilder {
     }
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of objects to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,38 +63,37 @@ impl ListDataSetImportHistoryInputBuilder {
     }
     /// <p>The maximum number of objects to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// Consumes the builder and constructs a [`ListDataSetImportHistoryInput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                application_id: self.application_id,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                application_id: self.application_id
+                ,
+            }
         )
     }
 }
+

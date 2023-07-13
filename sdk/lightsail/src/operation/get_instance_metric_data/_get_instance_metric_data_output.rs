@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceMetricDataOutput {
+pub struct GetInstanceMetricDataOutput  {
     /// <p>The name of the metric returned.</p>
     #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::InstanceMetricName>,
@@ -13,33 +13,29 @@ pub struct GetInstanceMetricDataOutput {
 }
 impl GetInstanceMetricDataOutput {
     /// <p>The name of the metric returned.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::InstanceMetricName> {
+    pub fn metric_name(&self) -> ::std::option::Option<& crate::types::InstanceMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> ::std::option::Option<&[crate::types::MetricDatapoint]> {
+    pub fn metric_data(&self) -> ::std::option::Option<& [crate::types::MetricDatapoint]> {
         self.metric_data.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetInstanceMetricDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetInstanceMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceMetricDataOutput`](crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataOutputBuilder {
         crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceMetricDataOutput`](crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceMetricDataOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::InstanceMetricName>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
@@ -52,12 +48,12 @@ impl GetInstanceMetricDataOutputBuilder {
         self
     }
     /// <p>The name of the metric returned.</p>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetricName>,
-    ) -> Self {
-        self.metric_name = input;
-        self
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::InstanceMetricName>) -> Self {
+        self.metric_name = input; self
+    }
+    /// <p>The name of the metric returned.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::InstanceMetricName> {
+        &self.metric_name
     }
     /// Appends an item to `metric_data`.
     ///
@@ -66,33 +62,36 @@ impl GetInstanceMetricDataOutputBuilder {
     /// <p>An array of objects that describe the metric data returned.</p>
     pub fn metric_data(mut self, input: crate::types::MetricDatapoint) -> Self {
         let mut v = self.metric_data.unwrap_or_default();
-        v.push(input);
-        self.metric_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn set_metric_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
-    ) -> Self {
-        self.metric_data = input;
-        self
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>) -> Self {
+        self.metric_data = input; self
+    }
+    /// <p>An array of objects that describe the metric data returned.</p>
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>> {
+        &self.metric_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetInstanceMetricDataOutput`](crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput).
     pub fn build(self) -> crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput {
         crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput {
-            metric_name: self.metric_name,
-            metric_data: self.metric_data,
+            metric_name: self.metric_name
+            ,
+            metric_data: self.metric_data
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

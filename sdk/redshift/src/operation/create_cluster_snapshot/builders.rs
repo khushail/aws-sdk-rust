@@ -3,167 +3,159 @@ pub use crate::operation::create_cluster_snapshot::_create_cluster_snapshot_outp
 
 pub use crate::operation::create_cluster_snapshot::_create_cluster_snapshot_input::CreateClusterSnapshotInputBuilder;
 
+impl CreateClusterSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_cluster_snapshot();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateClusterSnapshot`.
-///
-/// <p>Creates a manual snapshot of the specified cluster. The cluster must be in the <code>available</code> state. </p>
+/// 
+/// <p>Creates a manual snapshot of the specified cluster. The cluster must be in the <code>available</code> state. </p> 
 /// <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder,
+                    inner: crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder,
 }
-impl CreateClusterSnapshotFluentBuilder {
+impl CreateClusterSnapshotFluentBuilder  {
     /// Creates a new `CreateClusterSnapshot`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateClusterSnapshot as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_cluster_snapshot::CreateClusterSnapshot, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_snapshot::CreateClusterSnapshotError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_snapshot::CreateClusterSnapshotError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Cannot be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_snapshot::CreateClusterSnapshotError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_cluster_snapshot::CreateClusterSnapshot, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_snapshot::CreateClusterSnapshotError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Cannot be null, empty, or blank</p> </li> 
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
-    /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Cannot be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Cannot be null, empty, or blank</p> </li> 
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
+    /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Cannot be null, empty, or blank</p> </li> 
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
+    /// <p>Example: <code>my-snapshot-id</code> </p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_identifier()
+    }
     /// <p>The cluster identifier for which you want a snapshot.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
-    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>The cluster identifier for which you want a snapshot.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p> 
     /// <p>The default value is -1.</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.manual_snapshot_retention_period(input);
         self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
-    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p> 
     /// <p>The default value is -1.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
+    }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p> 
+    /// <p>The default value is -1.</p>
+    pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_manual_snapshot_retention_period()
     }
     /// Appends an item to `Tags`.
     ///
@@ -175,11 +167,13 @@ impl CreateClusterSnapshotFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

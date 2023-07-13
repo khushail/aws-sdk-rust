@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQueuedMessagesInput {
+pub struct DeleteQueuedMessagesInput  {
     /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -15,31 +15,28 @@ pub struct DeleteQueuedMessagesInput {
 }
 impl DeleteQueuedMessagesInput {
     /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
-    pub fn wireless_device_type(&self) -> ::std::option::Option<&crate::types::WirelessDeviceType> {
+    pub fn wireless_device_type(&self) -> ::std::option::Option<& crate::types::WirelessDeviceType> {
         self.wireless_device_type.as_ref()
     }
 }
 impl DeleteQueuedMessagesInput {
     /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesInput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesInput).
-    pub fn builder(
-    ) -> crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder {
+    pub fn builder() -> crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder {
         crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQueuedMessagesInput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueuedMessagesInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +50,11 @@ impl DeleteQueuedMessagesInputBuilder {
     }
     /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +63,11 @@ impl DeleteQueuedMessagesInputBuilder {
     }
     /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
+    }
+    /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
     pub fn wireless_device_type(mut self, input: crate::types::WirelessDeviceType) -> Self {
@@ -72,26 +75,25 @@ impl DeleteQueuedMessagesInputBuilder {
         self
     }
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
-    pub fn set_wireless_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
-        self.wireless_device_type = input;
-        self
+    pub fn set_wireless_device_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
+        self.wireless_device_type = input; self
+    }
+    /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
+    pub fn get_wireless_device_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        &self.wireless_device_type
     }
     /// Consumes the builder and constructs a [`DeleteQueuedMessagesInput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_queued_messages::DeleteQueuedMessagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_queued_messages::DeleteQueuedMessagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_queued_messages::DeleteQueuedMessagesInput {
-                id: self.id,
-                message_id: self.message_id,
-                wireless_device_type: self.wireless_device_type,
-            },
+                id: self.id
+                ,
+                message_id: self.message_id
+                ,
+                wireless_device_type: self.wireless_device_type
+                ,
+            }
         )
     }
 }
+

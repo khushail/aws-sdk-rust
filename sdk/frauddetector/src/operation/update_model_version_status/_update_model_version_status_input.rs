@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateModelVersionStatusInput {
+pub struct UpdateModelVersionStatusInput  {
     /// <p>The model ID of the model version to update.</p>
     #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct UpdateModelVersionStatusInput {
 }
 impl UpdateModelVersionStatusInput {
     /// <p>The model ID of the model version to update.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(&self) -> ::std::option::Option<&str> {
+    pub fn model_version_number(&self) -> ::std::option::Option<& str> {
         self.model_version_number.as_deref()
     }
     /// <p>The model version status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ModelVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ModelVersionStatus> {
         self.status.as_ref()
     }
 }
 impl UpdateModelVersionStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateModelVersionStatusInput`](crate::operation::update_model_version_status::UpdateModelVersionStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_model_version_status::builders::UpdateModelVersionStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_model_version_status::builders::UpdateModelVersionStatusInputBuilder {
         crate::operation::update_model_version_status::builders::UpdateModelVersionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateModelVersionStatusInput`](crate::operation::update_model_version_status::UpdateModelVersionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateModelVersionStatusInputBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
@@ -62,8 +58,11 @@ impl UpdateModelVersionStatusInputBuilder {
     }
     /// <p>The model ID of the model version to update.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
+    }
+    /// <p>The model ID of the model version to update.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
     }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
@@ -71,28 +70,25 @@ impl UpdateModelVersionStatusInputBuilder {
         self
     }
     /// <p>The model type.</p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
-        self.model_type = input;
-        self
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
+        self.model_type = input; self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        &self.model_type
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model version number.</p>
-    pub fn set_model_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.model_version_number = input;
-        self
+    pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_version_number = input; self
+    }
+    /// <p>The model version number.</p>
+    pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version_number
     }
     /// <p>The model version status.</p>
     pub fn status(mut self, input: crate::types::ModelVersionStatus) -> Self {
@@ -100,27 +96,27 @@ impl UpdateModelVersionStatusInputBuilder {
         self
     }
     /// <p>The model version status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelVersionStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The model version status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelVersionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateModelVersionStatusInput`](crate::operation::update_model_version_status::UpdateModelVersionStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_model_version_status::UpdateModelVersionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_model_version_status::UpdateModelVersionStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_model_version_status::UpdateModelVersionStatusInput {
-                model_id: self.model_id,
-                model_type: self.model_type,
-                model_version_number: self.model_version_number,
-                status: self.status,
-            },
+                model_id: self.model_id
+                ,
+                model_type: self.model_type
+                ,
+                model_version_number: self.model_version_number
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

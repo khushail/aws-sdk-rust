@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRegistryInput {
+pub struct GetRegistryInput  {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub registry_id: ::std::option::Option<crate::types::RegistryId>,
 }
 impl GetRegistryInput {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&crate::types::RegistryId> {
+    pub fn registry_id(&self) -> ::std::option::Option<& crate::types::RegistryId> {
         self.registry_id.as_ref()
     }
 }
@@ -22,9 +22,7 @@ impl GetRegistryInput {
 
 /// A builder for [`GetRegistryInput`](crate::operation::get_registry::GetRegistryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegistryInputBuilder {
     pub(crate) registry_id: ::std::option::Option<crate::types::RegistryId>,
 }
@@ -35,22 +33,21 @@ impl GetRegistryInputBuilder {
         self
     }
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    pub fn set_registry_id(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryId>,
-    ) -> Self {
-        self.registry_id = input;
-        self
+    pub fn set_registry_id(mut self, input: ::std::option::Option<crate::types::RegistryId>) -> Self {
+        self.registry_id = input; self
+    }
+    /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<crate::types::RegistryId> {
+        &self.registry_id
     }
     /// Consumes the builder and constructs a [`GetRegistryInput`](crate::operation::get_registry::GetRegistryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_registry::GetRegistryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_registry::GetRegistryInput {
-            registry_id: self.registry_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_registry::GetRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_registry::GetRegistryInput {
+                registry_id: self.registry_id
+                ,
+            }
+        )
     }
 }
+

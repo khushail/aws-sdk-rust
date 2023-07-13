@@ -3,14 +3,14 @@
 /// <p>Describes the information used to rebuild a WorkSpace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebuildRequest {
+pub struct RebuildRequest  {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl RebuildRequest {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl RebuildRequest {
 
 /// A builder for [`RebuildRequest`](crate::types::RebuildRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebuildRequestBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl RebuildRequestBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
+    }
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Consumes the builder and constructs a [`RebuildRequest`](crate::types::RebuildRequest).
     pub fn build(self) -> crate::types::RebuildRequest {
         crate::types::RebuildRequest {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id
+            ,
         }
     }
 }
+

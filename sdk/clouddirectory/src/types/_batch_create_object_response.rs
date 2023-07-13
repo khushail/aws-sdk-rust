@@ -3,14 +3,14 @@
 /// <p>Represents the output of a <code>CreateObject</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateObjectResponse {
+pub struct BatchCreateObjectResponse  {
     /// <p>The ID that is associated with the object.</p>
     #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateObjectResponse {
     /// <p>The ID that is associated with the object.</p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn object_identifier(&self) -> ::std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl BatchCreateObjectResponse {
 
 /// A builder for [`BatchCreateObjectResponse`](crate::types::BatchCreateObjectResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateObjectResponseBuilder {
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateObjectResponseBuilder {
     /// <p>The ID that is associated with the object.</p>
-    pub fn object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID that is associated with the object.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.object_identifier = input;
-        self
+    pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.object_identifier = input; self
+    }
+    /// <p>The ID that is associated with the object.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
     }
     /// Consumes the builder and constructs a [`BatchCreateObjectResponse`](crate::types::BatchCreateObjectResponse).
     pub fn build(self) -> crate::types::BatchCreateObjectResponse {
         crate::types::BatchCreateObjectResponse {
-            object_identifier: self.object_identifier,
+            object_identifier: self.object_identifier
+            ,
         }
     }
 }
+

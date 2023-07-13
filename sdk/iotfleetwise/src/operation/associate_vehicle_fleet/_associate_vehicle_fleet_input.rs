@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateVehicleFleetInput {
+pub struct AssociateVehicleFleetInput  {
     /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct AssociateVehicleFleetInput {
 }
 impl AssociateVehicleFleetInput {
     /// <p> The unique ID of the vehicle to associate with the fleet. </p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p> The ID of a fleet. </p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
 }
 impl AssociateVehicleFleetInput {
     /// Creates a new builder-style object to manufacture [`AssociateVehicleFleetInput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput).
-    pub fn builder(
-    ) -> crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder {
         crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateVehicleFleetInput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateVehicleFleetInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl AssociateVehicleFleetInputBuilder {
     }
     /// <p> The unique ID of the vehicle to associate with the fleet. </p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
+    }
+    /// <p> The unique ID of the vehicle to associate with the fleet. </p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
     }
     /// <p> The ID of a fleet. </p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl AssociateVehicleFleetInputBuilder {
     }
     /// <p> The ID of a fleet. </p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
+    }
+    /// <p> The ID of a fleet. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// Consumes the builder and constructs a [`AssociateVehicleFleetInput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput {
-                vehicle_name: self.vehicle_name,
-                fleet_id: self.fleet_id,
-            },
+                vehicle_name: self.vehicle_name
+                ,
+                fleet_id: self.fleet_id
+                ,
+            }
         )
     }
 }
+

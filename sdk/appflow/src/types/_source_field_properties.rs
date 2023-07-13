@@ -3,7 +3,7 @@
 /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceFieldProperties {
+pub struct SourceFieldProperties  {
     /// <p> Indicates whether the field can be returned in a search result. </p>
     #[doc(hidden)]
     pub is_retrievable: bool,
@@ -37,9 +37,7 @@ impl SourceFieldProperties {
 
 /// A builder for [`SourceFieldProperties`](crate::types::SourceFieldProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceFieldPropertiesBuilder {
     pub(crate) is_retrievable: ::std::option::Option<bool>,
     pub(crate) is_queryable: ::std::option::Option<bool>,
@@ -53,8 +51,11 @@ impl SourceFieldPropertiesBuilder {
     }
     /// <p> Indicates whether the field can be returned in a search result. </p>
     pub fn set_is_retrievable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_retrievable = input;
-        self
+        self.is_retrievable = input; self
+    }
+    /// <p> Indicates whether the field can be returned in a search result. </p>
+    pub fn get_is_retrievable(&self) -> &::std::option::Option<bool> {
+        &self.is_retrievable
     }
     /// <p> Indicates if the field can be queried. </p>
     pub fn is_queryable(mut self, input: bool) -> Self {
@@ -63,8 +64,11 @@ impl SourceFieldPropertiesBuilder {
     }
     /// <p> Indicates if the field can be queried. </p>
     pub fn set_is_queryable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_queryable = input;
-        self
+        self.is_queryable = input; self
+    }
+    /// <p> Indicates if the field can be queried. </p>
+    pub fn get_is_queryable(&self) -> &::std::option::Option<bool> {
+        &self.is_queryable
     }
     /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
     pub fn is_timestamp_field_for_incremental_queries(mut self, input: bool) -> Self {
@@ -72,21 +76,26 @@ impl SourceFieldPropertiesBuilder {
         self
     }
     /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
-    pub fn set_is_timestamp_field_for_incremental_queries(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.is_timestamp_field_for_incremental_queries = input;
-        self
+    pub fn set_is_timestamp_field_for_incremental_queries(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_timestamp_field_for_incremental_queries = input; self
+    }
+    /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
+    pub fn get_is_timestamp_field_for_incremental_queries(&self) -> &::std::option::Option<bool> {
+        &self.is_timestamp_field_for_incremental_queries
     }
     /// Consumes the builder and constructs a [`SourceFieldProperties`](crate::types::SourceFieldProperties).
     pub fn build(self) -> crate::types::SourceFieldProperties {
         crate::types::SourceFieldProperties {
-            is_retrievable: self.is_retrievable.unwrap_or_default(),
-            is_queryable: self.is_queryable.unwrap_or_default(),
-            is_timestamp_field_for_incremental_queries: self
-                .is_timestamp_field_for_incremental_queries
-                .unwrap_or_default(),
+            is_retrievable: self.is_retrievable
+                .unwrap_or_default()
+            ,
+            is_queryable: self.is_queryable
+                .unwrap_or_default()
+            ,
+            is_timestamp_field_for_incremental_queries: self.is_timestamp_field_for_incremental_queries
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

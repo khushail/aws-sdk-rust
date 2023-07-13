@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportImageInput {
+pub struct ExportImageInput  {
     /// <p>Token to enable idempotency for export image requests.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -30,15 +30,15 @@ pub struct ExportImageInput {
 }
 impl ExportImageInput {
     /// <p>Token to enable idempotency for export image requests.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A description of the image being exported. The maximum length is 255 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The disk image format.</p>
-    pub fn disk_image_format(&self) -> ::std::option::Option<&crate::types::DiskImageFormat> {
+    pub fn disk_image_format(&self) -> ::std::option::Option<& crate::types::DiskImageFormat> {
         self.disk_image_format.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -46,21 +46,19 @@ impl ExportImageInput {
         self.dry_run
     }
     /// <p>The ID of the image.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
-    pub fn s3_export_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExportTaskS3LocationRequest> {
+    pub fn s3_export_location(&self) -> ::std::option::Option<& crate::types::ExportTaskS3LocationRequest> {
         self.s3_export_location.as_ref()
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The tags to apply to the export image task during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> ::std::option::Option<& [crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
 }
@@ -73,9 +71,7 @@ impl ExportImageInput {
 
 /// A builder for [`ExportImageInput`](crate::operation::export_image::ExportImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportImageInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -84,8 +80,7 @@ pub struct ExportImageInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_export_location: ::std::option::Option<crate::types::ExportTaskS3LocationRequest>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl ExportImageInputBuilder {
     /// <p>Token to enable idempotency for export image requests.</p>
@@ -95,8 +90,11 @@ impl ExportImageInputBuilder {
     }
     /// <p>Token to enable idempotency for export image requests.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Token to enable idempotency for export image requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>A description of the image being exported. The maximum length is 255 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,8 +103,11 @@ impl ExportImageInputBuilder {
     }
     /// <p>A description of the image being exported. The maximum length is 255 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the image being exported. The maximum length is 255 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The disk image format.</p>
     pub fn disk_image_format(mut self, input: crate::types::DiskImageFormat) -> Self {
@@ -114,12 +115,12 @@ impl ExportImageInputBuilder {
         self
     }
     /// <p>The disk image format.</p>
-    pub fn set_disk_image_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageFormat>,
-    ) -> Self {
-        self.disk_image_format = input;
-        self
+    pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
+        self.disk_image_format = input; self
+    }
+    /// <p>The disk image format.</p>
+    pub fn get_disk_image_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
+        &self.disk_image_format
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -128,8 +129,11 @@ impl ExportImageInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The ID of the image.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,8 +142,11 @@ impl ExportImageInputBuilder {
     }
     /// <p>The ID of the image.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
+    }
+    /// <p>The ID of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
     pub fn s3_export_location(mut self, input: crate::types::ExportTaskS3LocationRequest) -> Self {
@@ -147,12 +154,12 @@ impl ExportImageInputBuilder {
         self
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
-    pub fn set_s3_export_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTaskS3LocationRequest>,
-    ) -> Self {
-        self.s3_export_location = input;
-        self
+    pub fn set_s3_export_location(mut self, input: ::std::option::Option<crate::types::ExportTaskS3LocationRequest>) -> Self {
+        self.s3_export_location = input; self
+    }
+    /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
+    pub fn get_s3_export_location(&self) -> &::std::option::Option<crate::types::ExportTaskS3LocationRequest> {
+        &self.s3_export_location
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,8 +168,11 @@ impl ExportImageInputBuilder {
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
+    }
+    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -171,34 +181,40 @@ impl ExportImageInputBuilder {
     /// <p>The tags to apply to the export image task during creation.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the export image task during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
+    }
+    /// <p>The tags to apply to the export image task during creation.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`ExportImageInput`](crate::operation::export_image::ExportImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_image::ExportImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::export_image::ExportImageInput {
-            client_token: self.client_token,
-            description: self.description,
-            disk_image_format: self.disk_image_format,
-            dry_run: self.dry_run,
-            image_id: self.image_id,
-            s3_export_location: self.s3_export_location,
-            role_name: self.role_name,
-            tag_specifications: self.tag_specifications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_image::ExportImageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_image::ExportImageInput {
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                disk_image_format: self.disk_image_format
+                ,
+                dry_run: self.dry_run
+                ,
+                image_id: self.image_id
+                ,
+                s3_export_location: self.s3_export_location
+                ,
+                role_name: self.role_name
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+            }
+        )
     }
 }
+

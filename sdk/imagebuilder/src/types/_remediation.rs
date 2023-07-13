@@ -3,16 +3,14 @@
 /// <p>Information about how to remediate a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Remediation {
+pub struct Remediation  {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
     #[doc(hidden)]
     pub recommendation: ::std::option::Option<crate::types::RemediationRecommendation>,
 }
 impl Remediation {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
-    pub fn recommendation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RemediationRecommendation> {
+    pub fn recommendation(&self) -> ::std::option::Option<& crate::types::RemediationRecommendation> {
         self.recommendation.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl Remediation {
 
 /// A builder for [`Remediation`](crate::types::Remediation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemediationBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::RemediationRecommendation>,
 }
@@ -38,17 +34,19 @@ impl RemediationBuilder {
         self
     }
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
-    pub fn set_recommendation(
-        mut self,
-        input: ::std::option::Option<crate::types::RemediationRecommendation>,
-    ) -> Self {
-        self.recommendation = input;
-        self
+    pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::RemediationRecommendation>) -> Self {
+        self.recommendation = input; self
+    }
+    /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
+    pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::RemediationRecommendation> {
+        &self.recommendation
     }
     /// Consumes the builder and constructs a [`Remediation`](crate::types::Remediation).
     pub fn build(self) -> crate::types::Remediation {
         crate::types::Remediation {
-            recommendation: self.recommendation,
+            recommendation: self.recommendation
+            ,
         }
     }
 }
+

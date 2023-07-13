@@ -41,8 +41,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-codestarconnections = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-codestarconnections = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -53,8 +53,8 @@ use aws_sdk_codestarconnections as codestarconnections;
 
 #[::tokio::main]
 async fn main() -> Result<(), codestarconnections::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = codestarconnections::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_codestarconnections::Client::new(&config);
 
     // ... make some calls with the client
 

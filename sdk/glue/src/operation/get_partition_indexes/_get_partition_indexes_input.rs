@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPartitionIndexesInput {
+pub struct GetPartitionIndexesInput  {
     /// <p>The catalog ID where the table resides.</p>
     #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct GetPartitionIndexesInput {
 }
 impl GetPartitionIndexesInput {
     /// <p>The catalog ID where the table resides.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetPartitionIndexesInput {
     /// Creates a new builder-style object to manufacture [`GetPartitionIndexesInput`](crate::operation::get_partition_indexes::GetPartitionIndexesInput).
-    pub fn builder(
-    ) -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder {
-        crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder {
+        crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPartitionIndexesInput`](crate::operation::get_partition_indexes::GetPartitionIndexesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPartitionIndexesInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -62,24 +58,24 @@ impl GetPartitionIndexesInputBuilder {
     }
     /// <p>The catalog ID where the table resides.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
+    }
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.database_name = input;
-        self
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_name = input; self
+    }
+    /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,8 +84,11 @@ impl GetPartitionIndexesInputBuilder {
     }
     /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
+    }
+    /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,23 +97,26 @@ impl GetPartitionIndexesInputBuilder {
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A continuation token, included if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetPartitionIndexesInput`](crate::operation::get_partition_indexes::GetPartitionIndexesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_partition_indexes::GetPartitionIndexesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_partition_indexes::GetPartitionIndexesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_partition_indexes::GetPartitionIndexesInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                next_token: self.next_token,
-            },
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

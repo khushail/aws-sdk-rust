@@ -2,61 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationPolicyInput {
+pub struct GetApplicationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
 impl GetApplicationPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetApplicationPolicyInput`](crate::operation::get_application_policy::GetApplicationPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_application_policy::builders::GetApplicationPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_application_policy::builders::GetApplicationPolicyInputBuilder {
         crate::operation::get_application_policy::builders::GetApplicationPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetApplicationPolicyInput`](crate::operation::get_application_policy::GetApplicationPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationPolicyInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// Consumes the builder and constructs a [`GetApplicationPolicyInput`](crate::operation::get_application_policy::GetApplicationPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_application_policy::GetApplicationPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_application_policy::GetApplicationPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_application_policy::GetApplicationPolicyInput {
-                application_id: self.application_id,
-            },
+                application_id: self.application_id
+                ,
+            }
         )
     }
 }
+

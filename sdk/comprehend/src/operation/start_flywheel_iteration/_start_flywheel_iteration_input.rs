@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFlywheelIterationInput {
+pub struct StartFlywheelIterationInput  {
     /// <p>The ARN of the flywheel.</p>
     #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct StartFlywheelIterationInput {
 }
 impl StartFlywheelIterationInput {
     /// <p>The ARN of the flywheel.</p>
-    pub fn flywheel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> ::std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
 impl StartFlywheelIterationInput {
     /// Creates a new builder-style object to manufacture [`StartFlywheelIterationInput`](crate::operation::start_flywheel_iteration::StartFlywheelIterationInput).
-    pub fn builder(
-    ) -> crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationInputBuilder {
         crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartFlywheelIterationInput`](crate::operation::start_flywheel_iteration::StartFlywheelIterationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFlywheelIterationInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -46,37 +42,35 @@ impl StartFlywheelIterationInputBuilder {
     }
     /// <p>The ARN of the flywheel.</p>
     pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
+    }
+    /// <p>The ARN of the flywheel.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_request_token = input; self
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartFlywheelIterationInput`](crate::operation::start_flywheel_iteration::StartFlywheelIterationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_flywheel_iteration::StartFlywheelIterationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_flywheel_iteration::StartFlywheelIterationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_flywheel_iteration::StartFlywheelIterationInput {
-                flywheel_arn: self.flywheel_arn,
-                client_request_token: self.client_request_token,
-            },
+                flywheel_arn: self.flywheel_arn
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

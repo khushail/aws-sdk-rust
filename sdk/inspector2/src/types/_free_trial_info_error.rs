@@ -3,7 +3,7 @@
 /// <p>Information about an error received while accessing free trail data for an account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FreeTrialInfoError {
+pub struct FreeTrialInfoError  {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct FreeTrialInfoError {
 }
 impl FreeTrialInfoError {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::FreeTrialInfoErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::FreeTrialInfoErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message returned.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl FreeTrialInfoError {
 
 /// A builder for [`FreeTrialInfoError`](crate::types::FreeTrialInfoError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FreeTrialInfoErrorBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>,
@@ -53,8 +51,11 @@ impl FreeTrialInfoErrorBuilder {
     }
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The account associated with the Amazon Inspector free trial information.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The error code.</p>
     pub fn code(mut self, input: crate::types::FreeTrialInfoErrorCode) -> Self {
@@ -62,12 +63,12 @@ impl FreeTrialInfoErrorBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>) -> Self {
+        self.code = input; self
+    }
+    /// <p>The error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::FreeTrialInfoErrorCode> {
+        &self.code
     }
     /// <p>The error message returned.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,15 +77,22 @@ impl FreeTrialInfoErrorBuilder {
     }
     /// <p>The error message returned.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The error message returned.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`FreeTrialInfoError`](crate::types::FreeTrialInfoError).
     pub fn build(self) -> crate::types::FreeTrialInfoError {
         crate::types::FreeTrialInfoError {
-            account_id: self.account_id,
-            code: self.code,
-            message: self.message,
+            account_id: self.account_id
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

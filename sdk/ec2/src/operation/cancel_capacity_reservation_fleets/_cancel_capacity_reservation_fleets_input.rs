@@ -2,14 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelCapacityReservationFleetsInput {
+pub struct CancelCapacityReservationFleetsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
     #[doc(hidden)]
-    pub capacity_reservation_fleet_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub capacity_reservation_fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CancelCapacityReservationFleetsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -17,28 +16,23 @@ impl CancelCapacityReservationFleetsInput {
         self.dry_run
     }
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub fn capacity_reservation_fleet_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn capacity_reservation_fleet_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.capacity_reservation_fleet_ids.as_deref()
     }
 }
 impl CancelCapacityReservationFleetsInput {
     /// Creates a new builder-style object to manufacture [`CancelCapacityReservationFleetsInput`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput).
-    pub fn builder() -> crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsInputBuilder{
+    pub fn builder() -> crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsInputBuilder {
         crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelCapacityReservationFleetsInput`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelCapacityReservationFleetsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) capacity_reservation_fleet_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capacity_reservation_fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CancelCapacityReservationFleetsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,38 +42,33 @@ impl CancelCapacityReservationFleetsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `capacity_reservation_fleet_ids`.
     ///
     /// To override the contents of this collection use [`set_capacity_reservation_fleet_ids`](Self::set_capacity_reservation_fleet_ids).
     ///
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub fn capacity_reservation_fleet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capacity_reservation_fleet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.capacity_reservation_fleet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.capacity_reservation_fleet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub fn set_capacity_reservation_fleet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.capacity_reservation_fleet_ids = input;
-        self
+    pub fn set_capacity_reservation_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.capacity_reservation_fleet_ids = input; self
+    }
+    /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
+    pub fn get_capacity_reservation_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.capacity_reservation_fleet_ids
     }
     /// Consumes the builder and constructs a [`CancelCapacityReservationFleetsInput`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput {
                 dry_run: self.dry_run
@@ -90,3 +79,4 @@ impl CancelCapacityReservationFleetsInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a code diff between a source and destination branch in an associated repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BranchDiffSourceCodeType {
+pub struct BranchDiffSourceCodeType  {
     /// <p>The source branch for a diff in an associated repository.</p>
     #[doc(hidden)]
     pub source_branch_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct BranchDiffSourceCodeType {
 }
 impl BranchDiffSourceCodeType {
     /// <p>The source branch for a diff in an associated repository.</p>
-    pub fn source_branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_branch_name(&self) -> ::std::option::Option<& str> {
         self.source_branch_name.as_deref()
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
-    pub fn destination_branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_branch_name(&self) -> ::std::option::Option<& str> {
         self.destination_branch_name.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl BranchDiffSourceCodeType {
 
 /// A builder for [`BranchDiffSourceCodeType`](crate::types::BranchDiffSourceCodeType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BranchDiffSourceCodeTypeBuilder {
     pub(crate) source_branch_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_branch_name: ::std::option::Option<::std::string::String>,
 }
 impl BranchDiffSourceCodeTypeBuilder {
     /// <p>The source branch for a diff in an associated repository.</p>
-    pub fn source_branch_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source branch for a diff in an associated repository.</p>
-    pub fn set_source_branch_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_branch_name = input;
-        self
+    pub fn set_source_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_branch_name = input; self
+    }
+    /// <p>The source branch for a diff in an associated repository.</p>
+    pub fn get_source_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_branch_name
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
-    pub fn destination_branch_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
-    pub fn set_destination_branch_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_branch_name = input;
-        self
+    pub fn set_destination_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_branch_name = input; self
+    }
+    /// <p>The destination branch for a diff in an associated repository.</p>
+    pub fn get_destination_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_branch_name
     }
     /// Consumes the builder and constructs a [`BranchDiffSourceCodeType`](crate::types::BranchDiffSourceCodeType).
     pub fn build(self) -> crate::types::BranchDiffSourceCodeType {
         crate::types::BranchDiffSourceCodeType {
-            source_branch_name: self.source_branch_name,
-            destination_branch_name: self.destination_branch_name,
+            source_branch_name: self.source_branch_name
+            ,
+            destination_branch_name: self.destination_branch_name
+            ,
         }
     }
 }
+

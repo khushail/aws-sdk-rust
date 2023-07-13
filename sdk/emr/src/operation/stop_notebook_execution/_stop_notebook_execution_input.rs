@@ -2,62 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopNotebookExecutionInput {
+pub struct StopNotebookExecutionInput  {
     /// <p>The unique identifier of the notebook execution.</p>
     #[doc(hidden)]
     pub notebook_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl StopNotebookExecutionInput {
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn notebook_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_execution_id(&self) -> ::std::option::Option<& str> {
         self.notebook_execution_id.as_deref()
     }
 }
 impl StopNotebookExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopNotebookExecutionInput`](crate::operation::stop_notebook_execution::StopNotebookExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionInputBuilder {
         crate::operation::stop_notebook_execution::builders::StopNotebookExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopNotebookExecutionInput`](crate::operation::stop_notebook_execution::StopNotebookExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopNotebookExecutionInputBuilder {
     pub(crate) notebook_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl StopNotebookExecutionInputBuilder {
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn notebook_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn set_notebook_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.notebook_execution_id = input;
-        self
+    pub fn set_notebook_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.notebook_execution_id = input; self
+    }
+    /// <p>The unique identifier of the notebook execution.</p>
+    pub fn get_notebook_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_execution_id
     }
     /// Consumes the builder and constructs a [`StopNotebookExecutionInput`](crate::operation::stop_notebook_execution::StopNotebookExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_notebook_execution::StopNotebookExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_notebook_execution::StopNotebookExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::stop_notebook_execution::StopNotebookExecutionInput {
-                notebook_execution_id: self.notebook_execution_id,
-            },
+                notebook_execution_id: self.notebook_execution_id
+                ,
+            }
         )
     }
 }
+

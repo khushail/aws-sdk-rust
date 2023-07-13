@@ -45,6 +45,10 @@ pub use crate::types::_decoder_manifest_summary::DecoderManifestSummaryBuilder;
 
 pub use crate::types::_campaign_summary::CampaignSummaryBuilder;
 
+pub use crate::types::_timestream_config::TimestreamConfigBuilder;
+
+pub use crate::types::_s3_config::S3ConfigBuilder;
+
 pub use crate::types::_condition_based_collection_scheme::ConditionBasedCollectionSchemeBuilder;
 
 pub use crate::types::_time_based_collection_scheme::TimeBasedCollectionSchemeBuilder;
@@ -74,3 +78,4 @@ pub use crate::types::_create_vehicle_error::CreateVehicleErrorBuilder;
 pub use crate::types::_create_vehicle_response_item::CreateVehicleResponseItemBuilder;
 
 pub use crate::types::_create_vehicle_request_item::CreateVehicleRequestItemBuilder;
+

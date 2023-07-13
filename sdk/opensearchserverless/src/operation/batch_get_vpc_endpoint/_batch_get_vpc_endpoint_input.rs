@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetVpcEndpointInput {
+pub struct BatchGetVpcEndpointInput  {
     /// <p>A list of VPC endpoint identifiers.</p>
     #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetVpcEndpointInput {
     /// <p>A list of VPC endpoint identifiers.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.ids.as_deref()
     }
 }
 impl BatchGetVpcEndpointInput {
     /// Creates a new builder-style object to manufacture [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder {
-        crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder {
+        crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetVpcEndpointInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -38,27 +34,26 @@ impl BatchGetVpcEndpointInputBuilder {
     /// <p>A list of VPC endpoint identifiers.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of VPC endpoint identifiers.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ids = input; self
+    }
+    /// <p>A list of VPC endpoint identifiers.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
     }
     /// Consumes the builder and constructs a [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput { ids: self.ids },
+            crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput {
+                ids: self.ids
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a principal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllowedPrincipal {
+pub struct AllowedPrincipal  {
     /// <p>The type of principal.</p>
     #[doc(hidden)]
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
@@ -22,23 +22,23 @@ pub struct AllowedPrincipal {
 }
 impl AllowedPrincipal {
     /// <p>The type of principal.</p>
-    pub fn principal_type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> ::std::option::Option<& crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>The ID of the service permission.</p>
-    pub fn service_permission_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_permission_id(&self) -> ::std::option::Option<& str> {
         self.service_permission_id.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the service.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl AllowedPrincipal {
 
 /// A builder for [`AllowedPrincipal`](crate::types::AllowedPrincipal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedPrincipalBuilder {
     pub(crate) principal_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
@@ -68,12 +66,12 @@ impl AllowedPrincipalBuilder {
         self
     }
     /// <p>The type of principal.</p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
-        self.principal_type = input;
-        self
+    pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
+        self.principal_type = input; self
+    }
+    /// <p>The type of principal.</p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.principal_type
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,24 +80,24 @@ impl AllowedPrincipalBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the principal.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
     }
     /// <p>The ID of the service permission.</p>
-    pub fn service_permission_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_permission_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_permission_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service permission.</p>
-    pub fn set_service_permission_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.service_permission_id = input;
-        self
+    pub fn set_service_permission_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_permission_id = input; self
+    }
+    /// <p>The ID of the service permission.</p>
+    pub fn get_service_permission_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_permission_id
     }
     /// Appends an item to `tags`.
     ///
@@ -108,17 +106,17 @@ impl AllowedPrincipalBuilder {
     /// <p>The tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,17 +125,26 @@ impl AllowedPrincipalBuilder {
     }
     /// <p>The ID of the service.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// Consumes the builder and constructs a [`AllowedPrincipal`](crate::types::AllowedPrincipal).
     pub fn build(self) -> crate::types::AllowedPrincipal {
         crate::types::AllowedPrincipal {
-            principal_type: self.principal_type,
-            principal: self.principal,
-            service_permission_id: self.service_permission_id,
-            tags: self.tags,
-            service_id: self.service_id,
+            principal_type: self.principal_type
+            ,
+            principal: self.principal
+            ,
+            service_permission_id: self.service_permission_id
+            ,
+            tags: self.tags
+            ,
+            service_id: self.service_id
+            ,
         }
     }
 }
+

@@ -26,8 +26,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-arczonalshift = "0.6.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-arczonalshift = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -38,8 +38,8 @@ use aws_sdk_arczonalshift as arczonalshift;
 
 #[::tokio::main]
 async fn main() -> Result<(), arczonalshift::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = arczonalshift::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_arczonalshift::Client::new(&config);
 
     // ... make some calls with the client
 

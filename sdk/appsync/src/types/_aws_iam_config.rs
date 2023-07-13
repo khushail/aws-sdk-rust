@@ -3,7 +3,7 @@
 /// <p>The Identity and Access Management (IAM) configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsIamConfig {
+pub struct AwsIamConfig  {
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
     #[doc(hidden)]
     pub signing_region: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsIamConfig {
 }
 impl AwsIamConfig {
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
-    pub fn signing_region(&self) -> ::std::option::Option<&str> {
+    pub fn signing_region(&self) -> ::std::option::Option<& str> {
         self.signing_region.as_deref()
     }
     /// <p>The signing service name for IAM authorization.</p>
-    pub fn signing_service_name(&self) -> ::std::option::Option<&str> {
+    pub fn signing_service_name(&self) -> ::std::option::Option<& str> {
         self.signing_service_name.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl AwsIamConfig {
 
 /// A builder for [`AwsIamConfig`](crate::types::AwsIamConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamConfigBuilder {
     pub(crate) signing_region: ::std::option::Option<::std::string::String>,
     pub(crate) signing_service_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamConfigBuilder {
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
-    pub fn signing_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
-    pub fn set_signing_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.signing_region = input;
-        self
+    pub fn set_signing_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.signing_region = input; self
+    }
+    /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
+    pub fn get_signing_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_region
     }
     /// <p>The signing service name for IAM authorization.</p>
-    pub fn signing_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing service name for IAM authorization.</p>
-    pub fn set_signing_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.signing_service_name = input;
-        self
+    pub fn set_signing_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.signing_service_name = input; self
+    }
+    /// <p>The signing service name for IAM authorization.</p>
+    pub fn get_signing_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_service_name
     }
     /// Consumes the builder and constructs a [`AwsIamConfig`](crate::types::AwsIamConfig).
     pub fn build(self) -> crate::types::AwsIamConfig {
         crate::types::AwsIamConfig {
-            signing_region: self.signing_region,
-            signing_service_name: self.signing_service_name,
+            signing_region: self.signing_region
+            ,
+            signing_service_name: self.signing_service_name
+            ,
         }
     }
 }
+

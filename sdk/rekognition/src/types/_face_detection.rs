@@ -3,7 +3,7 @@
 /// <p>Information about a face detected in a video analysis request and the time the face was detected in the video. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FaceDetection {
+pub struct FaceDetection  {
     /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -17,7 +17,7 @@ impl FaceDetection {
         self.timestamp
     }
     /// <p>The face properties for the detected face.</p>
-    pub fn face(&self) -> ::std::option::Option<&crate::types::FaceDetail> {
+    pub fn face(&self) -> ::std::option::Option<& crate::types::FaceDetail> {
         self.face.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl FaceDetection {
 
 /// A builder for [`FaceDetection`](crate::types::FaceDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FaceDetectionBuilder {
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) face: ::std::option::Option<crate::types::FaceDetail>,
@@ -45,8 +43,11 @@ impl FaceDetectionBuilder {
     }
     /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
+    }
+    /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
     }
     /// <p>The face properties for the detected face.</p>
     pub fn face(mut self, input: crate::types::FaceDetail) -> Self {
@@ -55,14 +56,21 @@ impl FaceDetectionBuilder {
     }
     /// <p>The face properties for the detected face.</p>
     pub fn set_face(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
-        self.face = input;
-        self
+        self.face = input; self
+    }
+    /// <p>The face properties for the detected face.</p>
+    pub fn get_face(&self) -> &::std::option::Option<crate::types::FaceDetail> {
+        &self.face
     }
     /// Consumes the builder and constructs a [`FaceDetection`](crate::types::FaceDetection).
     pub fn build(self) -> crate::types::FaceDetection {
         crate::types::FaceDetection {
-            timestamp: self.timestamp.unwrap_or_default(),
-            face: self.face,
+            timestamp: self.timestamp
+                .unwrap_or_default()
+            ,
+            face: self.face
+            ,
         }
     }
 }
+

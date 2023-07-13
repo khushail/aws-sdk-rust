@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutConfigRuleInput {
+pub struct PutConfigRuleInput  {
     /// <p>The rule that you want to add to your account.</p>
     #[doc(hidden)]
     pub config_rule: ::std::option::Option<crate::types::ConfigRule>,
@@ -12,11 +12,11 @@ pub struct PutConfigRuleInput {
 }
 impl PutConfigRuleInput {
     /// <p>The rule that you want to add to your account.</p>
-    pub fn config_rule(&self) -> ::std::option::Option<&crate::types::ConfigRule> {
+    pub fn config_rule(&self) -> ::std::option::Option<& crate::types::ConfigRule> {
         self.config_rule.as_ref()
     }
     /// <p>An array of tag object.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl PutConfigRuleInput {
 
 /// A builder for [`PutConfigRuleInput`](crate::operation::put_config_rule::PutConfigRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigRuleInputBuilder {
     pub(crate) config_rule: ::std::option::Option<crate::types::ConfigRule>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -43,12 +41,12 @@ impl PutConfigRuleInputBuilder {
         self
     }
     /// <p>The rule that you want to add to your account.</p>
-    pub fn set_config_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigRule>,
-    ) -> Self {
-        self.config_rule = input;
-        self
+    pub fn set_config_rule(mut self, input: ::std::option::Option<crate::types::ConfigRule>) -> Self {
+        self.config_rule = input; self
+    }
+    /// <p>The rule that you want to add to your account.</p>
+    pub fn get_config_rule(&self) -> &::std::option::Option<crate::types::ConfigRule> {
+        &self.config_rule
     }
     /// Appends an item to `tags`.
     ///
@@ -57,28 +55,28 @@ impl PutConfigRuleInputBuilder {
     /// <p>An array of tag object.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of tag object.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>An array of tag object.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutConfigRuleInput`](crate::operation::put_config_rule::PutConfigRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_config_rule::PutConfigRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_config_rule::PutConfigRuleInput {
-            config_rule: self.config_rule,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_config_rule::PutConfigRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_config_rule::PutConfigRuleInput {
+                config_rule: self.config_rule
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

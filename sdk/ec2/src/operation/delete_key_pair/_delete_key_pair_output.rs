@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKeyPairOutput {
+pub struct DeleteKeyPairOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteKeyPairOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKeyPairOutput`](crate::operation::delete_key_pair::DeleteKeyPairOutput).
     pub fn builder() -> crate::operation::delete_key_pair::builders::DeleteKeyPairOutputBuilder {
@@ -19,22 +19,20 @@ impl DeleteKeyPairOutput {
 
 /// A builder for [`DeleteKeyPairOutput`](crate::operation::delete_key_pair::DeleteKeyPairOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKeyPairOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteKeyPairOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteKeyPairOutput`](crate::operation::delete_key_pair::DeleteKeyPairOutput).
     pub fn build(self) -> crate::operation::delete_key_pair::DeleteKeyPairOutput {
         crate::operation::delete_key_pair::DeleteKeyPairOutput {
@@ -42,3 +40,4 @@ impl DeleteKeyPairOutputBuilder {
         }
     }
 }
+

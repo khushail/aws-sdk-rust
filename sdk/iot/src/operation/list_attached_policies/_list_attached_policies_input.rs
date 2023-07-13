@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAttachedPoliciesInput {
+pub struct ListAttachedPoliciesInput  {
     /// <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListAttachedPoliciesInput {
 }
 impl ListAttachedPoliciesInput {
     /// <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>When true, recursively list attached policies.</p>
@@ -26,7 +26,7 @@ impl ListAttachedPoliciesInput {
         self.recursive
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -36,17 +36,14 @@ impl ListAttachedPoliciesInput {
 }
 impl ListAttachedPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesInputBuilder {
         crate::operation::list_attached_policies::builders::ListAttachedPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttachedPoliciesInputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) recursive: ::std::option::Option<bool>,
@@ -61,8 +58,11 @@ impl ListAttachedPoliciesInputBuilder {
     }
     /// <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
+    }
+    /// <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// <p>When true, recursively list attached policies.</p>
     pub fn recursive(mut self, input: bool) -> Self {
@@ -71,8 +71,11 @@ impl ListAttachedPoliciesInputBuilder {
     }
     /// <p>When true, recursively list attached policies.</p>
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.recursive = input;
-        self
+        self.recursive = input; self
+    }
+    /// <p>When true, recursively list attached policies.</p>
+    pub fn get_recursive(&self) -> &::std::option::Option<bool> {
+        &self.recursive
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +84,11 @@ impl ListAttachedPoliciesInputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -91,23 +97,26 @@ impl ListAttachedPoliciesInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_attached_policies::ListAttachedPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_attached_policies::ListAttachedPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_attached_policies::ListAttachedPoliciesInput {
-                target: self.target,
-                recursive: self.recursive,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
+                target: self.target
+                ,
+                recursive: self.recursive
+                ,
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+            }
         )
     }
 }
+

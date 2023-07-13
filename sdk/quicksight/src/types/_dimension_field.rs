@@ -3,7 +3,7 @@
 /// <p>The dimension type field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionField {
+pub struct DimensionField  {
     /// <p>The dimension type field with numerical type columns.</p>
     #[doc(hidden)]
     pub numerical_dimension_field: ::std::option::Option<crate::types::NumericalDimensionField>,
@@ -16,19 +16,15 @@ pub struct DimensionField {
 }
 impl DimensionField {
     /// <p>The dimension type field with numerical type columns.</p>
-    pub fn numerical_dimension_field(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumericalDimensionField> {
+    pub fn numerical_dimension_field(&self) -> ::std::option::Option<& crate::types::NumericalDimensionField> {
         self.numerical_dimension_field.as_ref()
     }
     /// <p>The dimension type field with categorical type columns.</p>
-    pub fn categorical_dimension_field(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CategoricalDimensionField> {
+    pub fn categorical_dimension_field(&self) -> ::std::option::Option<& crate::types::CategoricalDimensionField> {
         self.categorical_dimension_field.as_ref()
     }
     /// <p>The dimension type field with date type columns.</p>
-    pub fn date_dimension_field(&self) -> ::std::option::Option<&crate::types::DateDimensionField> {
+    pub fn date_dimension_field(&self) -> ::std::option::Option<& crate::types::DateDimensionField> {
         self.date_dimension_field.as_ref()
     }
 }
@@ -41,48 +37,38 @@ impl DimensionField {
 
 /// A builder for [`DimensionField`](crate::types::DimensionField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionFieldBuilder {
-    pub(crate) numerical_dimension_field:
-        ::std::option::Option<crate::types::NumericalDimensionField>,
-    pub(crate) categorical_dimension_field:
-        ::std::option::Option<crate::types::CategoricalDimensionField>,
+    pub(crate) numerical_dimension_field: ::std::option::Option<crate::types::NumericalDimensionField>,
+    pub(crate) categorical_dimension_field: ::std::option::Option<crate::types::CategoricalDimensionField>,
     pub(crate) date_dimension_field: ::std::option::Option<crate::types::DateDimensionField>,
 }
 impl DimensionFieldBuilder {
     /// <p>The dimension type field with numerical type columns.</p>
-    pub fn numerical_dimension_field(
-        mut self,
-        input: crate::types::NumericalDimensionField,
-    ) -> Self {
+    pub fn numerical_dimension_field(mut self, input: crate::types::NumericalDimensionField) -> Self {
         self.numerical_dimension_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dimension type field with numerical type columns.</p>
-    pub fn set_numerical_dimension_field(
-        mut self,
-        input: ::std::option::Option<crate::types::NumericalDimensionField>,
-    ) -> Self {
-        self.numerical_dimension_field = input;
-        self
+    pub fn set_numerical_dimension_field(mut self, input: ::std::option::Option<crate::types::NumericalDimensionField>) -> Self {
+        self.numerical_dimension_field = input; self
+    }
+    /// <p>The dimension type field with numerical type columns.</p>
+    pub fn get_numerical_dimension_field(&self) -> &::std::option::Option<crate::types::NumericalDimensionField> {
+        &self.numerical_dimension_field
     }
     /// <p>The dimension type field with categorical type columns.</p>
-    pub fn categorical_dimension_field(
-        mut self,
-        input: crate::types::CategoricalDimensionField,
-    ) -> Self {
+    pub fn categorical_dimension_field(mut self, input: crate::types::CategoricalDimensionField) -> Self {
         self.categorical_dimension_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dimension type field with categorical type columns.</p>
-    pub fn set_categorical_dimension_field(
-        mut self,
-        input: ::std::option::Option<crate::types::CategoricalDimensionField>,
-    ) -> Self {
-        self.categorical_dimension_field = input;
-        self
+    pub fn set_categorical_dimension_field(mut self, input: ::std::option::Option<crate::types::CategoricalDimensionField>) -> Self {
+        self.categorical_dimension_field = input; self
+    }
+    /// <p>The dimension type field with categorical type columns.</p>
+    pub fn get_categorical_dimension_field(&self) -> &::std::option::Option<crate::types::CategoricalDimensionField> {
+        &self.categorical_dimension_field
     }
     /// <p>The dimension type field with date type columns.</p>
     pub fn date_dimension_field(mut self, input: crate::types::DateDimensionField) -> Self {
@@ -90,19 +76,23 @@ impl DimensionFieldBuilder {
         self
     }
     /// <p>The dimension type field with date type columns.</p>
-    pub fn set_date_dimension_field(
-        mut self,
-        input: ::std::option::Option<crate::types::DateDimensionField>,
-    ) -> Self {
-        self.date_dimension_field = input;
-        self
+    pub fn set_date_dimension_field(mut self, input: ::std::option::Option<crate::types::DateDimensionField>) -> Self {
+        self.date_dimension_field = input; self
+    }
+    /// <p>The dimension type field with date type columns.</p>
+    pub fn get_date_dimension_field(&self) -> &::std::option::Option<crate::types::DateDimensionField> {
+        &self.date_dimension_field
     }
     /// Consumes the builder and constructs a [`DimensionField`](crate::types::DimensionField).
     pub fn build(self) -> crate::types::DimensionField {
         crate::types::DimensionField {
-            numerical_dimension_field: self.numerical_dimension_field,
-            categorical_dimension_field: self.categorical_dimension_field,
-            date_dimension_field: self.date_dimension_field,
+            numerical_dimension_field: self.numerical_dimension_field
+            ,
+            categorical_dimension_field: self.categorical_dimension_field
+            ,
+            date_dimension_field: self.date_dimension_field
+            ,
         }
     }
 }
+

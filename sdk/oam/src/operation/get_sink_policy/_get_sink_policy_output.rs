@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSinkPolicyOutput {
+pub struct GetSinkPolicyOutput  {
     /// <p>The ARN of the sink.</p>
     #[doc(hidden)]
     pub sink_arn: ::std::option::Option<::std::string::String>,
@@ -16,23 +16,23 @@ pub struct GetSinkPolicyOutput {
 }
 impl GetSinkPolicyOutput {
     /// <p>The ARN of the sink.</p>
-    pub fn sink_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sink_arn(&self) -> ::std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    pub fn sink_id(&self) -> ::std::option::Option<&str> {
+    pub fn sink_id(&self) -> ::std::option::Option<& str> {
         self.sink_id.as_deref()
     }
     /// <p>The policy that you specified, in JSON format.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSinkPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSinkPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetSinkPolicyOutput`](crate::operation::get_sink_policy::GetSinkPolicyOutput).
     pub fn builder() -> crate::operation::get_sink_policy::builders::GetSinkPolicyOutputBuilder {
@@ -42,9 +42,7 @@ impl GetSinkPolicyOutput {
 
 /// A builder for [`GetSinkPolicyOutput`](crate::operation::get_sink_policy::GetSinkPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSinkPolicyOutputBuilder {
     pub(crate) sink_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sink_id: ::std::option::Option<::std::string::String>,
@@ -59,8 +57,11 @@ impl GetSinkPolicyOutputBuilder {
     }
     /// <p>The ARN of the sink.</p>
     pub fn set_sink_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sink_arn = input;
-        self
+        self.sink_arn = input; self
+    }
+    /// <p>The ARN of the sink.</p>
+    pub fn get_sink_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_arn
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     pub fn sink_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +70,11 @@ impl GetSinkPolicyOutputBuilder {
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     pub fn set_sink_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sink_id = input;
-        self
+        self.sink_id = input; self
+    }
+    /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
+    pub fn get_sink_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sink_id
     }
     /// <p>The policy that you specified, in JSON format.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,25 +83,32 @@ impl GetSinkPolicyOutputBuilder {
     }
     /// <p>The policy that you specified, in JSON format.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
+    }
+    /// <p>The policy that you specified, in JSON format.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSinkPolicyOutput`](crate::operation::get_sink_policy::GetSinkPolicyOutput).
     pub fn build(self) -> crate::operation::get_sink_policy::GetSinkPolicyOutput {
         crate::operation::get_sink_policy::GetSinkPolicyOutput {
-            sink_arn: self.sink_arn,
-            sink_id: self.sink_id,
-            policy: self.policy,
+            sink_arn: self.sink_arn
+            ,
+            sink_id: self.sink_id
+            ,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

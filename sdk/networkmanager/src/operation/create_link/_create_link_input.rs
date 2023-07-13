@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLinkInput {
+pub struct CreateLinkInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the link.</p>
+    /// <p>A description of the link.</p> 
     /// <p>Constraints: Maximum length of 256 characters.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the link.</p>
+    /// <p>The type of the link.</p> 
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p> The upload speed and download speed in Mbps. </p>
     #[doc(hidden)]
     pub bandwidth: ::std::option::Option<crate::types::Bandwidth>,
-    /// <p>The provider of the link.</p>
+    /// <p>The provider of the link.</p> 
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     #[doc(hidden)]
     pub provider: ::std::option::Option<::std::string::String>,
@@ -30,34 +30,34 @@ pub struct CreateLinkInput {
 }
 impl CreateLinkInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
-    /// <p>A description of the link.</p>
+    /// <p>A description of the link.</p> 
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The type of the link.</p>
+    /// <p>The type of the link.</p> 
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p> The upload speed and download speed in Mbps. </p>
-    pub fn bandwidth(&self) -> ::std::option::Option<&crate::types::Bandwidth> {
+    pub fn bandwidth(&self) -> ::std::option::Option<& crate::types::Bandwidth> {
         self.bandwidth.as_ref()
     }
-    /// <p>The provider of the link.</p>
+    /// <p>The provider of the link.</p> 
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
+    pub fn provider(&self) -> ::std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>The ID of the site.</p>
-    pub fn site_id(&self) -> ::std::option::Option<&str> {
+    pub fn site_id(&self) -> ::std::option::Option<& str> {
         self.site_id.as_deref()
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -70,9 +70,7 @@ impl CreateLinkInput {
 
 /// A builder for [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLinkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -84,44 +82,49 @@ pub struct CreateLinkInputBuilder {
 }
 impl CreateLinkInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_network_id = input; self
     }
-    /// <p>A description of the link.</p>
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
+    /// <p>A description of the link.</p> 
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the link.</p>
+    /// <p>A description of the link.</p> 
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// <p>The type of the link.</p>
+    /// <p>A description of the link.</p> 
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>The type of the link.</p> 
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the link.</p>
+    /// <p>The type of the link.</p> 
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the link.</p> 
+    /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p> The upload speed and download speed in Mbps. </p>
     pub fn bandwidth(mut self, input: crate::types::Bandwidth) -> Self {
@@ -130,20 +133,27 @@ impl CreateLinkInputBuilder {
     }
     /// <p> The upload speed and download speed in Mbps. </p>
     pub fn set_bandwidth(mut self, input: ::std::option::Option<crate::types::Bandwidth>) -> Self {
-        self.bandwidth = input;
-        self
+        self.bandwidth = input; self
     }
-    /// <p>The provider of the link.</p>
+    /// <p> The upload speed and download speed in Mbps. </p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<crate::types::Bandwidth> {
+        &self.bandwidth
+    }
+    /// <p>The provider of the link.</p> 
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The provider of the link.</p>
+    /// <p>The provider of the link.</p> 
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
+    }
+    /// <p>The provider of the link.</p> 
+    /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider
     }
     /// <p>The ID of the site.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,8 +162,11 @@ impl CreateLinkInputBuilder {
     }
     /// <p>The ID of the site.</p>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.site_id = input;
-        self
+        self.site_id = input; self
+    }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
     }
     /// Appends an item to `tags`.
     ///
@@ -162,33 +175,38 @@ impl CreateLinkInputBuilder {
     /// <p>The tags to apply to the resource during creation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_link::CreateLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_link::CreateLinkInput {
-            global_network_id: self.global_network_id,
-            description: self.description,
-            r#type: self.r#type,
-            bandwidth: self.bandwidth,
-            provider: self.provider,
-            site_id: self.site_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_link::CreateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_link::CreateLinkInput {
+                global_network_id: self.global_network_id
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                bandwidth: self.bandwidth
+                ,
+                provider: self.provider
+                ,
+                site_id: self.site_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

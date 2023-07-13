@@ -3,86 +3,86 @@
 /// <p> The connector-specific profile properties required when using Salesforce. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SalesforceConnectorProfileProperties {
+pub struct SalesforceConnectorProfileProperties  {
     /// <p> The location of the Salesforce resource. </p>
     #[doc(hidden)]
     pub instance_url: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     #[doc(hidden)]
     pub is_sandbox_environment: bool,
-    /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p>
-    /// <p>Set either of the following values:</p>
-    /// <dl>
+    /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p> 
+    /// <p>Set either of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// true
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p>
-    /// <p>These private calls are:</p>
-    /// <ul>
-    /// <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li>
-    /// <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li>
-    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p> 
+    /// <p>These private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// false
-    /// </dt>
-    /// <dd>
-    /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p>
-    /// <p>The public calls are: </p>
-    /// <ul>
-    /// <li> <p>Calls to get metadata about your Salesforce records.</p> </li>
-    /// <li> <p>Calls to get or refresh access tokens.</p> </li>
-    /// </ul>
-    /// <p>The private calls are:</p>
-    /// <ul>
-    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p> 
+    /// <p>The public calls are: </p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens.</p> </li> 
+    /// </ul> 
+    /// <p>The private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub use_private_link_for_metadata_and_authorization: bool,
 }
 impl SalesforceConnectorProfileProperties {
     /// <p> The location of the Salesforce resource. </p>
-    pub fn instance_url(&self) -> ::std::option::Option<&str> {
+    pub fn instance_url(&self) -> ::std::option::Option<& str> {
         self.instance_url.as_deref()
     }
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     pub fn is_sandbox_environment(&self) -> bool {
         self.is_sandbox_environment
     }
-    /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p>
-    /// <p>Set either of the following values:</p>
-    /// <dl>
+    /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p> 
+    /// <p>Set either of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// true
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p>
-    /// <p>These private calls are:</p>
-    /// <ul>
-    /// <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li>
-    /// <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li>
-    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p> 
+    /// <p>These private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// false
-    /// </dt>
-    /// <dd>
-    /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p>
-    /// <p>The public calls are: </p>
-    /// <ul>
-    /// <li> <p>Calls to get metadata about your Salesforce records.</p> </li>
-    /// <li> <p>Calls to get or refresh access tokens.</p> </li>
-    /// </ul>
-    /// <p>The private calls are:</p>
-    /// <ul>
-    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p> 
+    /// <p>The public calls are: </p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens.</p> </li> 
+    /// </ul> 
+    /// <p>The private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// </dl>
     pub fn use_private_link_for_metadata_and_authorization(&self) -> bool {
         self.use_private_link_for_metadata_and_authorization
@@ -97,9 +97,7 @@ impl SalesforceConnectorProfileProperties {
 
 /// A builder for [`SalesforceConnectorProfileProperties`](crate::types::SalesforceConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SalesforceConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
     pub(crate) is_sandbox_environment: ::std::option::Option<bool>,
@@ -113,8 +111,11 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     }
     /// <p> The location of the Salesforce resource. </p>
     pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_url = input;
-        self
+        self.instance_url = input; self
+    }
+    /// <p> The location of the Salesforce resource. </p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
     }
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     pub fn is_sandbox_environment(mut self, input: bool) -> Self {
@@ -123,90 +124,127 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     }
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     pub fn set_is_sandbox_environment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_sandbox_environment = input;
-        self
+        self.is_sandbox_environment = input; self
     }
-    /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p>
-    /// <p>Set either of the following values:</p>
-    /// <dl>
+    /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
+    pub fn get_is_sandbox_environment(&self) -> &::std::option::Option<bool> {
+        &self.is_sandbox_environment
+    }
+    /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p> 
+    /// <p>Set either of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// true
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p>
-    /// <p>These private calls are:</p>
-    /// <ul>
-    /// <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li>
-    /// <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li>
-    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p> 
+    /// <p>These private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// false
-    /// </dt>
-    /// <dd>
-    /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p>
-    /// <p>The public calls are: </p>
-    /// <ul>
-    /// <li> <p>Calls to get metadata about your Salesforce records.</p> </li>
-    /// <li> <p>Calls to get or refresh access tokens.</p> </li>
-    /// </ul>
-    /// <p>The private calls are:</p>
-    /// <ul>
-    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p> 
+    /// <p>The public calls are: </p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens.</p> </li> 
+    /// </ul> 
+    /// <p>The private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// </dl>
     pub fn use_private_link_for_metadata_and_authorization(mut self, input: bool) -> Self {
         self.use_private_link_for_metadata_and_authorization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p>
-    /// <p>Set either of the following values:</p>
-    /// <dl>
+    /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p> 
+    /// <p>Set either of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// true
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p>
-    /// <p>These private calls are:</p>
-    /// <ul>
-    /// <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li>
-    /// <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li>
-    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p> 
+    /// <p>These private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// false
-    /// </dt>
-    /// <dd>
-    /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p>
-    /// <p>The public calls are: </p>
-    /// <ul>
-    /// <li> <p>Calls to get metadata about your Salesforce records.</p> </li>
-    /// <li> <p>Calls to get or refresh access tokens.</p> </li>
-    /// </ul>
-    /// <p>The private calls are:</p>
-    /// <ul>
-    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p> 
+    /// <p>The public calls are: </p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens.</p> </li> 
+    /// </ul> 
+    /// <p>The private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// </dl>
-    pub fn set_use_private_link_for_metadata_and_authorization(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.use_private_link_for_metadata_and_authorization = input;
-        self
+    pub fn set_use_private_link_for_metadata_and_authorization(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_private_link_for_metadata_and_authorization = input; self
+    }
+    /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p> 
+    /// <p>Set either of the following values:</p> 
+    /// <dl> 
+    /// <dt>
+    /// true
+    /// </dt> 
+    /// <dd> 
+    /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p> 
+    /// <p>These private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
+    /// <dt>
+    /// false
+    /// </dt> 
+    /// <dd> 
+    /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p> 
+    /// <p>The public calls are: </p> 
+    /// <ul> 
+    /// <li> <p>Calls to get metadata about your Salesforce records.</p> </li> 
+    /// <li> <p>Calls to get or refresh access tokens.</p> </li> 
+    /// </ul> 
+    /// <p>The private calls are:</p> 
+    /// <ul> 
+    /// <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> 
+    /// </ul> 
+    /// </dd> 
+    /// </dl>
+    pub fn get_use_private_link_for_metadata_and_authorization(&self) -> &::std::option::Option<bool> {
+        &self.use_private_link_for_metadata_and_authorization
     }
     /// Consumes the builder and constructs a [`SalesforceConnectorProfileProperties`](crate::types::SalesforceConnectorProfileProperties).
     pub fn build(self) -> crate::types::SalesforceConnectorProfileProperties {
         crate::types::SalesforceConnectorProfileProperties {
-            instance_url: self.instance_url,
-            is_sandbox_environment: self.is_sandbox_environment.unwrap_or_default(),
-            use_private_link_for_metadata_and_authorization: self
-                .use_private_link_for_metadata_and_authorization
-                .unwrap_or_default(),
+            instance_url: self.instance_url
+            ,
+            is_sandbox_environment: self.is_sandbox_environment
+                .unwrap_or_default()
+            ,
+            use_private_link_for_metadata_and_authorization: self.use_private_link_for_metadata_and_authorization
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

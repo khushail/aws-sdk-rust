@@ -3,7 +3,7 @@
 /// <p>A collection of voice profiles.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct VoiceProfileDomain {
+pub struct VoiceProfileDomain  {
     /// <p>The ID of the voice profile domain.</p>
     #[doc(hidden)]
     pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
@@ -18,8 +18,7 @@ pub struct VoiceProfileDomain {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the configuration settings for server-side encryption.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The time at which the voice profile domain was created.</p>
     #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -29,50 +28,42 @@ pub struct VoiceProfileDomain {
 }
 impl VoiceProfileDomain {
     /// <p>The ID of the voice profile domain.</p>
-    pub fn voice_profile_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_profile_domain_id(&self) -> ::std::option::Option<& str> {
         self.voice_profile_domain_id.as_deref()
     }
     /// <p>The voice profile domain's Amazon Resource Number (ARN).</p>
-    pub fn voice_profile_domain_arn(&self) -> ::std::option::Option<&str> {
+    pub fn voice_profile_domain_arn(&self) -> ::std::option::Option<& str> {
         self.voice_profile_domain_arn.as_deref()
     }
     /// <p>The name of the voice profile domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the voice profile domain.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A structure that contains the configuration settings for server-side encryption.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The time at which the voice profile domain was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the voice profile was last updated.</p>
-    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
-impl ::std::fmt::Debug for VoiceProfileDomain {
+impl  ::std::fmt::Debug for VoiceProfileDomain  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceProfileDomain");
         formatter.field("voice_profile_domain_id", &self.voice_profile_domain_id);
-        formatter.field(
-            "voice_profile_domain_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("voice_profile_domain_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
+        formatter.field("server_side_encryption_configuration", &self.server_side_encryption_configuration);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("updated_timestamp", &self.updated_timestamp);
         formatter.finish()
@@ -93,43 +84,36 @@ pub struct VoiceProfileDomainBuilder {
     pub(crate) voice_profile_domain_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VoiceProfileDomainBuilder {
     /// <p>The ID of the voice profile domain.</p>
-    pub fn voice_profile_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice profile domain.</p>
-    pub fn set_voice_profile_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voice_profile_domain_id = input;
-        self
+    pub fn set_voice_profile_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voice_profile_domain_id = input; self
+    }
+    /// <p>The ID of the voice profile domain.</p>
+    pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_id
     }
     /// <p>The voice profile domain's Amazon Resource Number (ARN).</p>
-    pub fn voice_profile_domain_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The voice profile domain's Amazon Resource Number (ARN).</p>
-    pub fn set_voice_profile_domain_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.voice_profile_domain_arn = input;
-        self
+    pub fn set_voice_profile_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.voice_profile_domain_arn = input; self
+    }
+    /// <p>The voice profile domain's Amazon Resource Number (ARN).</p>
+    pub fn get_voice_profile_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_arn
     }
     /// <p>The name of the voice profile domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,8 +122,11 @@ impl VoiceProfileDomainBuilder {
     }
     /// <p>The name of the voice profile domain.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the voice profile domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the voice profile domain.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,24 +135,24 @@ impl VoiceProfileDomainBuilder {
     }
     /// <p>The description of the voice profile domain.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the voice profile domain.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A structure that contains the configuration settings for server-side encryption.</p>
-    pub fn server_side_encryption_configuration(
-        mut self,
-        input: crate::types::ServerSideEncryptionConfiguration,
-    ) -> Self {
+    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that contains the configuration settings for server-side encryption.</p>
-    pub fn set_server_side_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    ) -> Self {
-        self.server_side_encryption_configuration = input;
-        self
+    pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
+        self.server_side_encryption_configuration = input; self
+    }
+    /// <p>A structure that contains the configuration settings for server-side encryption.</p>
+    pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        &self.server_side_encryption_configuration
     }
     /// <p>The time at which the voice profile domain was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,12 +160,12 @@ impl VoiceProfileDomainBuilder {
         self
     }
     /// <p>The time at which the voice profile domain was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
+    }
+    /// <p>The time at which the voice profile domain was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The time at which the voice profile was last updated.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -186,23 +173,30 @@ impl VoiceProfileDomainBuilder {
         self
     }
     /// <p>The time at which the voice profile was last updated.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_timestamp = input;
-        self
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_timestamp = input; self
+    }
+    /// <p>The time at which the voice profile was last updated.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`VoiceProfileDomain`](crate::types::VoiceProfileDomain).
     pub fn build(self) -> crate::types::VoiceProfileDomain {
         crate::types::VoiceProfileDomain {
-            voice_profile_domain_id: self.voice_profile_domain_id,
-            voice_profile_domain_arn: self.voice_profile_domain_arn,
-            name: self.name,
-            description: self.description,
-            server_side_encryption_configuration: self.server_side_encryption_configuration,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
+            voice_profile_domain_id: self.voice_profile_domain_id
+            ,
+            voice_profile_domain_arn: self.voice_profile_domain_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            server_side_encryption_configuration: self.server_side_encryption_configuration
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
         }
     }
 }
@@ -210,18 +204,13 @@ impl ::std::fmt::Debug for VoiceProfileDomainBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceProfileDomainBuilder");
         formatter.field("voice_profile_domain_id", &self.voice_profile_domain_id);
-        formatter.field(
-            "voice_profile_domain_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("voice_profile_domain_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
+        formatter.field("server_side_encryption_configuration", &self.server_side_encryption_configuration);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("updated_timestamp", &self.updated_timestamp);
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A container for what Amazon S3 Storage Lens will exclude.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Exclude {
+pub struct Exclude  {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
     #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,11 +13,11 @@ pub struct Exclude {
 }
 impl Exclude {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
-    pub fn buckets(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn buckets(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.buckets.as_deref()
     }
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn regions(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.regions.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Exclude {
 
 /// A builder for [`Exclude`](crate::types::Exclude).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExcludeBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,17 +43,17 @@ impl ExcludeBuilder {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
     pub fn buckets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.buckets.unwrap_or_default();
-        v.push(input.into());
-        self.buckets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.buckets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
-    pub fn set_buckets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.buckets = input;
-        self
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.buckets = input; self
+    }
+    /// <p>A container for the S3 Storage Lens bucket excludes.</p>
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.buckets
     }
     /// Appends an item to `regions`.
     ///
@@ -64,23 +62,26 @@ impl ExcludeBuilder {
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regions = input; self
+    }
+    /// <p>A container for the S3 Storage Lens Region excludes.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Consumes the builder and constructs a [`Exclude`](crate::types::Exclude).
     pub fn build(self) -> crate::types::Exclude {
         crate::types::Exclude {
-            buckets: self.buckets,
-            regions: self.regions,
+            buckets: self.buckets
+            ,
+            regions: self.regions
+            ,
         }
     }
 }
+

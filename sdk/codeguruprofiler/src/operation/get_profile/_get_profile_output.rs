@@ -3,7 +3,7 @@
 /// <p>The structure representing the getProfileResponse.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProfileOutput {
+pub struct GetProfileOutput  {
     /// <p>Information about the profile.</p>
     #[doc(hidden)]
     pub profile: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -17,23 +17,23 @@ pub struct GetProfileOutput {
 }
 impl GetProfileOutput {
     /// <p>Information about the profile.</p>
-    pub fn profile(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn profile(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.profile.as_ref()
     }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The content encoding of the profile.</p>
-    pub fn content_encoding(&self) -> ::std::option::Option<&str> {
+    pub fn content_encoding(&self) -> ::std::option::Option<& str> {
         self.content_encoding.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput).
     pub fn builder() -> crate::operation::get_profile::builders::GetProfileOutputBuilder {
@@ -43,9 +43,7 @@ impl GetProfileOutput {
 
 /// A builder for [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProfileOutputBuilder {
     pub(crate) profile: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
@@ -60,8 +58,11 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Information about the profile.</p>
     pub fn set_profile(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.profile = input;
-        self
+        self.profile = input; self
+    }
+    /// <p>Information about the profile.</p>
+    pub fn get_profile(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.profile
     }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,41 +71,45 @@ impl GetProfileOutputBuilder {
     }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
+    }
+    /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The content encoding of the profile.</p>
-    pub fn content_encoding(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_encoding = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content encoding of the profile.</p>
-    pub fn set_content_encoding(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.content_encoding = input;
-        self
+    pub fn set_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.content_encoding = input; self
+    }
+    /// <p>The content encoding of the profile.</p>
+    pub fn get_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_encoding
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput).
     pub fn build(self) -> crate::operation::get_profile::GetProfileOutput {
         crate::operation::get_profile::GetProfileOutput {
-            profile: self.profile,
-            content_type: self.content_type,
-            content_encoding: self.content_encoding,
+            profile: self.profile
+            ,
+            content_type: self.content_type
+            ,
+            content_encoding: self.content_encoding
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

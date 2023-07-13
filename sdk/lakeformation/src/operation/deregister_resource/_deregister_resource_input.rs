@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterResourceInput {
+pub struct DeregisterResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl DeregisterResourceInput {
     /// Creates a new builder-style object to manufacture [`DeregisterResourceInput`](crate::operation::deregister_resource::DeregisterResourceInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder {
+    pub fn builder() -> crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder {
         crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterResourceInput`](crate::operation::deregister_resource::DeregisterResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl DeregisterResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DeregisterResourceInput`](crate::operation::deregister_resource::DeregisterResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_resource::DeregisterResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_resource::DeregisterResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_resource::DeregisterResourceInput {
-                resource_arn: self.resource_arn,
-            },
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

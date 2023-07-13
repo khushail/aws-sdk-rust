@@ -3,14 +3,14 @@
 /// <p>The structure containing the asset properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetValue {
+pub struct AssetValue  {
     /// <p>Link to the asset object.</p>
     #[doc(hidden)]
     pub href: ::std::option::Option<::std::string::String>,
 }
 impl AssetValue {
     /// <p>Link to the asset object.</p>
-    pub fn href(&self) -> ::std::option::Option<&str> {
+    pub fn href(&self) -> ::std::option::Option<& str> {
         self.href.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl AssetValue {
 
 /// A builder for [`AssetValue`](crate::types::AssetValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetValueBuilder {
     pub(crate) href: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl AssetValueBuilder {
     }
     /// <p>Link to the asset object.</p>
     pub fn set_href(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.href = input;
-        self
+        self.href = input; self
+    }
+    /// <p>Link to the asset object.</p>
+    pub fn get_href(&self) -> &::std::option::Option<::std::string::String> {
+        &self.href
     }
     /// Consumes the builder and constructs a [`AssetValue`](crate::types::AssetValue).
     pub fn build(self) -> crate::types::AssetValue {
-        crate::types::AssetValue { href: self.href }
+        crate::types::AssetValue {
+            href: self.href
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about the connection between a Lambda function and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileSystemConfig {
+pub struct FileSystemConfig  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct FileSystemConfig {
 }
 impl FileSystemConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    pub fn local_mount_path(&self) -> ::std::option::Option<&str> {
+    pub fn local_mount_path(&self) -> ::std::option::Option<& str> {
         self.local_mount_path.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl FileSystemConfig {
 
 /// A builder for [`FileSystemConfig`](crate::types::FileSystemConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSystemConfigBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) local_mount_path: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl FileSystemConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    pub fn local_mount_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_mount_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_mount_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    pub fn set_local_mount_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.local_mount_path = input;
-        self
+    pub fn set_local_mount_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.local_mount_path = input; self
+    }
+    /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
+    pub fn get_local_mount_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_mount_path
     }
     /// Consumes the builder and constructs a [`FileSystemConfig`](crate::types::FileSystemConfig).
     pub fn build(self) -> crate::types::FileSystemConfig {
         crate::types::FileSystemConfig {
-            arn: self.arn,
-            local_mount_path: self.local_mount_path,
+            arn: self.arn
+            ,
+            local_mount_path: self.local_mount_path
+            ,
         }
     }
 }
+

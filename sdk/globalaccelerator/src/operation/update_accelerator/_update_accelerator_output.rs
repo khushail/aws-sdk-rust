@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAcceleratorOutput {
+pub struct UpdateAcceleratorOutput  {
     /// <p>Information about the updated accelerator.</p>
     #[doc(hidden)]
     pub accelerator: ::std::option::Option<crate::types::Accelerator>,
@@ -10,28 +10,25 @@ pub struct UpdateAcceleratorOutput {
 }
 impl UpdateAcceleratorOutput {
     /// <p>Information about the updated accelerator.</p>
-    pub fn accelerator(&self) -> ::std::option::Option<&crate::types::Accelerator> {
+    pub fn accelerator(&self) -> ::std::option::Option<& crate::types::Accelerator> {
         self.accelerator.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateAcceleratorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAcceleratorOutput`](crate::operation::update_accelerator::UpdateAcceleratorOutput).
-    pub fn builder(
-    ) -> crate::operation::update_accelerator::builders::UpdateAcceleratorOutputBuilder {
+    pub fn builder() -> crate::operation::update_accelerator::builders::UpdateAcceleratorOutputBuilder {
         crate::operation::update_accelerator::builders::UpdateAcceleratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAcceleratorOutput`](crate::operation::update_accelerator::UpdateAcceleratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAcceleratorOutputBuilder {
     pub(crate) accelerator: ::std::option::Option<crate::types::Accelerator>,
     _request_id: Option<String>,
@@ -43,27 +40,29 @@ impl UpdateAcceleratorOutputBuilder {
         self
     }
     /// <p>Information about the updated accelerator.</p>
-    pub fn set_accelerator(
-        mut self,
-        input: ::std::option::Option<crate::types::Accelerator>,
-    ) -> Self {
-        self.accelerator = input;
-        self
+    pub fn set_accelerator(mut self, input: ::std::option::Option<crate::types::Accelerator>) -> Self {
+        self.accelerator = input; self
+    }
+    /// <p>Information about the updated accelerator.</p>
+    pub fn get_accelerator(&self) -> &::std::option::Option<crate::types::Accelerator> {
+        &self.accelerator
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateAcceleratorOutput`](crate::operation::update_accelerator::UpdateAcceleratorOutput).
     pub fn build(self) -> crate::operation::update_accelerator::UpdateAcceleratorOutput {
         crate::operation::update_accelerator::UpdateAcceleratorOutput {
-            accelerator: self.accelerator,
+            accelerator: self.accelerator
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

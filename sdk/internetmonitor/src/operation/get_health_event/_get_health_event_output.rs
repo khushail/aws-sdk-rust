@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHealthEventOutput {
+pub struct GetHealthEventOutput  {
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
     #[doc(hidden)]
     pub event_arn: ::std::option::Option<::std::string::String>,
@@ -37,35 +37,35 @@ pub struct GetHealthEventOutput {
 }
 impl GetHealthEventOutput {
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
-    pub fn event_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_arn(&self) -> ::std::option::Option<& str> {
         self.event_arn.as_deref()
     }
     /// <p>The internally generated identifier of a health event.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The time when a health event started.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time when a health event was resolved. If the health event is still active, the end time is not set.</p>
-    pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>The time when a health event was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a health event was last updated or recalculated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The locations affected by a health event.</p>
-    pub fn impacted_locations(&self) -> ::std::option::Option<&[crate::types::ImpactedLocation]> {
+    pub fn impacted_locations(&self) -> ::std::option::Option<& [crate::types::ImpactedLocation]> {
         self.impacted_locations.as_deref()
     }
     /// <p>The status of a health event.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::HealthEventStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::HealthEventStatus> {
         self.status.as_ref()
     }
     /// <p>The impact on total traffic that a health event has.</p>
@@ -73,15 +73,15 @@ impl GetHealthEventOutput {
         self.percent_of_total_traffic_impacted
     }
     /// <p>The type of impairment of a specific health event.</p>
-    pub fn impact_type(&self) -> ::std::option::Option<&crate::types::HealthEventImpactType> {
+    pub fn impact_type(&self) -> ::std::option::Option<& crate::types::HealthEventImpactType> {
         self.impact_type.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetHealthEventOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetHealthEventOutput {
     /// Creates a new builder-style object to manufacture [`GetHealthEventOutput`](crate::operation::get_health_event::GetHealthEventOutput).
     pub fn builder() -> crate::operation::get_health_event::builders::GetHealthEventOutputBuilder {
@@ -91,9 +91,7 @@ impl GetHealthEventOutput {
 
 /// A builder for [`GetHealthEventOutput`](crate::operation::get_health_event::GetHealthEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHealthEventOutputBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
@@ -101,8 +99,7 @@ pub struct GetHealthEventOutputBuilder {
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) impacted_locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>,
+    pub(crate) impacted_locations: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>,
     pub(crate) status: ::std::option::Option<crate::types::HealthEventStatus>,
     pub(crate) percent_of_total_traffic_impacted: ::std::option::Option<f64>,
     pub(crate) impact_type: ::std::option::Option<crate::types::HealthEventImpactType>,
@@ -116,8 +113,11 @@ impl GetHealthEventOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
     pub fn set_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_arn = input;
-        self
+        self.event_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event.</p>
+    pub fn get_event_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_arn
     }
     /// <p>The internally generated identifier of a health event.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,8 +126,11 @@ impl GetHealthEventOutputBuilder {
     }
     /// <p>The internally generated identifier of a health event.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
+    }
+    /// <p>The internally generated identifier of a health event.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// <p>The time when a health event started.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,12 +138,12 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The time when a health event started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_at = input;
-        self
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.started_at = input; self
+    }
+    /// <p>The time when a health event started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
     }
     /// <p>The time when a health event was resolved. If the health event is still active, the end time is not set.</p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -148,12 +151,12 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The time when a health event was resolved. If the health event is still active, the end time is not set.</p>
-    pub fn set_ended_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.ended_at = input;
-        self
+    pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.ended_at = input; self
+    }
+    /// <p>The time when a health event was resolved. If the health event is still active, the end time is not set.</p>
+    pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_at
     }
     /// <p>The time when a health event was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -161,12 +164,12 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The time when a health event was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The time when a health event was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time when a health event was last updated or recalculated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -174,12 +177,12 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The time when a health event was last updated or recalculated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
+    }
+    /// <p>The time when a health event was last updated or recalculated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Appends an item to `impacted_locations`.
     ///
@@ -188,17 +191,17 @@ impl GetHealthEventOutputBuilder {
     /// <p>The locations affected by a health event.</p>
     pub fn impacted_locations(mut self, input: crate::types::ImpactedLocation) -> Self {
         let mut v = self.impacted_locations.unwrap_or_default();
-        v.push(input);
-        self.impacted_locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.impacted_locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The locations affected by a health event.</p>
-    pub fn set_impacted_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>,
-    ) -> Self {
-        self.impacted_locations = input;
-        self
+    pub fn set_impacted_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>) -> Self {
+        self.impacted_locations = input; self
+    }
+    /// <p>The locations affected by a health event.</p>
+    pub fn get_impacted_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>> {
+        &self.impacted_locations
     }
     /// <p>The status of a health event.</p>
     pub fn status(mut self, input: crate::types::HealthEventStatus) -> Self {
@@ -206,12 +209,12 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The status of a health event.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::HealthEventStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of a health event.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::HealthEventStatus> {
+        &self.status
     }
     /// <p>The impact on total traffic that a health event has.</p>
     pub fn percent_of_total_traffic_impacted(mut self, input: f64) -> Self {
@@ -219,12 +222,12 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The impact on total traffic that a health event has.</p>
-    pub fn set_percent_of_total_traffic_impacted(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
-        self.percent_of_total_traffic_impacted = input;
-        self
+    pub fn set_percent_of_total_traffic_impacted(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.percent_of_total_traffic_impacted = input; self
+    }
+    /// <p>The impact on total traffic that a health event has.</p>
+    pub fn get_percent_of_total_traffic_impacted(&self) -> &::std::option::Option<f64> {
+        &self.percent_of_total_traffic_impacted
     }
     /// <p>The type of impairment of a specific health event.</p>
     pub fn impact_type(mut self, input: crate::types::HealthEventImpactType) -> Self {
@@ -232,36 +235,47 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The type of impairment of a specific health event.</p>
-    pub fn set_impact_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventImpactType>,
-    ) -> Self {
-        self.impact_type = input;
-        self
+    pub fn set_impact_type(mut self, input: ::std::option::Option<crate::types::HealthEventImpactType>) -> Self {
+        self.impact_type = input; self
+    }
+    /// <p>The type of impairment of a specific health event.</p>
+    pub fn get_impact_type(&self) -> &::std::option::Option<crate::types::HealthEventImpactType> {
+        &self.impact_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetHealthEventOutput`](crate::operation::get_health_event::GetHealthEventOutput).
     pub fn build(self) -> crate::operation::get_health_event::GetHealthEventOutput {
         crate::operation::get_health_event::GetHealthEventOutput {
-            event_arn: self.event_arn,
-            event_id: self.event_id,
-            started_at: self.started_at,
-            ended_at: self.ended_at,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            impacted_locations: self.impacted_locations,
-            status: self.status,
-            percent_of_total_traffic_impacted: self.percent_of_total_traffic_impacted,
-            impact_type: self.impact_type,
+            event_arn: self.event_arn
+            ,
+            event_id: self.event_id
+            ,
+            started_at: self.started_at
+            ,
+            ended_at: self.ended_at
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            impacted_locations: self.impacted_locations
+            ,
+            status: self.status
+            ,
+            percent_of_total_traffic_impacted: self.percent_of_total_traffic_impacted
+            ,
+            impact_type: self.impact_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

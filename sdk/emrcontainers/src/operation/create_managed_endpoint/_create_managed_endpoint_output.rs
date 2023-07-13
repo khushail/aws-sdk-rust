@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateManagedEndpointOutput {
+pub struct CreateManagedEndpointOutput  {
     /// <p>The output contains the ID of the managed endpoint.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -19,41 +19,37 @@ pub struct CreateManagedEndpointOutput {
 }
 impl CreateManagedEndpointOutput {
     /// <p>The output contains the ID of the managed endpoint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The output contains the name of the managed endpoint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The output contains the ARN of the managed endpoint.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The output contains the ID of the virtual cluster.</p>
-    pub fn virtual_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> ::std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateManagedEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateManagedEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateManagedEndpointOutput`](crate::operation::create_managed_endpoint::CreateManagedEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_managed_endpoint::builders::CreateManagedEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_managed_endpoint::builders::CreateManagedEndpointOutputBuilder {
         crate::operation::create_managed_endpoint::builders::CreateManagedEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateManagedEndpointOutput`](crate::operation::create_managed_endpoint::CreateManagedEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateManagedEndpointOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -69,8 +65,11 @@ impl CreateManagedEndpointOutputBuilder {
     }
     /// <p>The output contains the ID of the managed endpoint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The output contains the ID of the managed endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The output contains the name of the managed endpoint.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +78,11 @@ impl CreateManagedEndpointOutputBuilder {
     }
     /// <p>The output contains the name of the managed endpoint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The output contains the name of the managed endpoint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The output contains the ARN of the managed endpoint.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,42 +91,47 @@ impl CreateManagedEndpointOutputBuilder {
     }
     /// <p>The output contains the ARN of the managed endpoint.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The output contains the ARN of the managed endpoint.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The output contains the ID of the virtual cluster.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The output contains the ID of the virtual cluster.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_cluster_id = input;
-        self
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_cluster_id = input; self
+    }
+    /// <p>The output contains the ID of the virtual cluster.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateManagedEndpointOutput`](crate::operation::create_managed_endpoint::CreateManagedEndpointOutput).
     pub fn build(self) -> crate::operation::create_managed_endpoint::CreateManagedEndpointOutput {
         crate::operation::create_managed_endpoint::CreateManagedEndpointOutput {
-            id: self.id,
-            name: self.name,
-            arn: self.arn,
-            virtual_cluster_id: self.virtual_cluster_id,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            virtual_cluster_id: self.virtual_cluster_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

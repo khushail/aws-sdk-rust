@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDataCollectionByAgentIdsInput {
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+pub struct StopDataCollectionByAgentIdsInput  {
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
     #[doc(hidden)]
     pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StopDataCollectionByAgentIdsInput {
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
-    pub fn agent_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
+    pub fn agent_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.agent_ids.as_deref()
     }
 }
 impl StopDataCollectionByAgentIdsInput {
     /// Creates a new builder-style object to manufacture [`StopDataCollectionByAgentIdsInput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput).
-    pub fn builder() -> crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder{
+    pub fn builder() -> crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder {
         crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDataCollectionByAgentIdsInput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsInputBuilder {
     pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -33,28 +31,23 @@ impl StopDataCollectionByAgentIdsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
     ///
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
     pub fn agent_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_ids.unwrap_or_default();
-        v.push(input.into());
-        self.agent_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_ids = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
-    pub fn set_agent_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.agent_ids = input;
-        self
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.agent_ids = input; self
+    }
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_ids
     }
     /// Consumes the builder and constructs a [`StopDataCollectionByAgentIdsInput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput {
                 agent_ids: self.agent_ids
@@ -63,3 +56,4 @@ impl StopDataCollectionByAgentIdsInputBuilder {
         )
     }
 }
+

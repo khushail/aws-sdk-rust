@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEventInput {
+pub struct GetEventInput  {
     /// <p>The ID of the event to retrieve.</p>
     #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetEventInput {
 }
 impl GetEventInput {
     /// <p>The ID of the event to retrieve.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The event type of the event to retrieve.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl GetEventInput {
 
 /// A builder for [`GetEventInput`](crate::operation::get_event::GetEventInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventInputBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
@@ -44,35 +42,35 @@ impl GetEventInputBuilder {
     }
     /// <p>The ID of the event to retrieve.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
+    }
+    /// <p>The ID of the event to retrieve.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// <p>The event type of the event to retrieve.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event type of the event to retrieve.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_type_name = input;
-        self
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_type_name = input; self
+    }
+    /// <p>The event type of the event to retrieve.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
     }
     /// Consumes the builder and constructs a [`GetEventInput`](crate::operation::get_event::GetEventInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_event::GetEventInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_event::GetEventInput {
-            event_id: self.event_id,
-            event_type_name: self.event_type_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_event::GetEventInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_event::GetEventInput {
+                event_id: self.event_id
+                ,
+                event_type_name: self.event_type_name
+                ,
+            }
+        )
     }
 }
+

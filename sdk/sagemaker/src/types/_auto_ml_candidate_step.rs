@@ -3,7 +3,7 @@
 /// <p>Information about the steps for a candidate and what step it is working on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoMlCandidateStep {
+pub struct AutoMlCandidateStep  {
     /// <p>Whether the candidate is at the transform, training, or processing step.</p>
     #[doc(hidden)]
     pub candidate_step_type: ::std::option::Option<crate::types::CandidateStepType>,
@@ -16,15 +16,15 @@ pub struct AutoMlCandidateStep {
 }
 impl AutoMlCandidateStep {
     /// <p>Whether the candidate is at the transform, training, or processing step.</p>
-    pub fn candidate_step_type(&self) -> ::std::option::Option<&crate::types::CandidateStepType> {
+    pub fn candidate_step_type(&self) -> ::std::option::Option<& crate::types::CandidateStepType> {
         self.candidate_step_type.as_ref()
     }
     /// <p>The ARN for the candidate's step.</p>
-    pub fn candidate_step_arn(&self) -> ::std::option::Option<&str> {
+    pub fn candidate_step_arn(&self) -> ::std::option::Option<& str> {
         self.candidate_step_arn.as_deref()
     }
     /// <p>The name for the candidate's step.</p>
-    pub fn candidate_step_name(&self) -> ::std::option::Option<&str> {
+    pub fn candidate_step_name(&self) -> ::std::option::Option<& str> {
         self.candidate_step_name.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl AutoMlCandidateStep {
 
 /// A builder for [`AutoMlCandidateStep`](crate::types::AutoMlCandidateStep).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlCandidateStepBuilder {
     pub(crate) candidate_step_type: ::std::option::Option<crate::types::CandidateStepType>,
     pub(crate) candidate_step_arn: ::std::option::Option<::std::string::String>,
@@ -52,51 +50,49 @@ impl AutoMlCandidateStepBuilder {
         self
     }
     /// <p>Whether the candidate is at the transform, training, or processing step.</p>
-    pub fn set_candidate_step_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CandidateStepType>,
-    ) -> Self {
-        self.candidate_step_type = input;
-        self
+    pub fn set_candidate_step_type(mut self, input: ::std::option::Option<crate::types::CandidateStepType>) -> Self {
+        self.candidate_step_type = input; self
+    }
+    /// <p>Whether the candidate is at the transform, training, or processing step.</p>
+    pub fn get_candidate_step_type(&self) -> &::std::option::Option<crate::types::CandidateStepType> {
+        &self.candidate_step_type
     }
     /// <p>The ARN for the candidate's step.</p>
-    pub fn candidate_step_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn candidate_step_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.candidate_step_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the candidate's step.</p>
-    pub fn set_candidate_step_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.candidate_step_arn = input;
-        self
+    pub fn set_candidate_step_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.candidate_step_arn = input; self
+    }
+    /// <p>The ARN for the candidate's step.</p>
+    pub fn get_candidate_step_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.candidate_step_arn
     }
     /// <p>The name for the candidate's step.</p>
-    pub fn candidate_step_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn candidate_step_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.candidate_step_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the candidate's step.</p>
-    pub fn set_candidate_step_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.candidate_step_name = input;
-        self
+    pub fn set_candidate_step_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.candidate_step_name = input; self
+    }
+    /// <p>The name for the candidate's step.</p>
+    pub fn get_candidate_step_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.candidate_step_name
     }
     /// Consumes the builder and constructs a [`AutoMlCandidateStep`](crate::types::AutoMlCandidateStep).
     pub fn build(self) -> crate::types::AutoMlCandidateStep {
         crate::types::AutoMlCandidateStep {
-            candidate_step_type: self.candidate_step_type,
-            candidate_step_arn: self.candidate_step_arn,
-            candidate_step_name: self.candidate_step_name,
+            candidate_step_type: self.candidate_step_type
+            ,
+            candidate_step_arn: self.candidate_step_arn
+            ,
+            candidate_step_name: self.candidate_step_name
+            ,
         }
     }
 }
+

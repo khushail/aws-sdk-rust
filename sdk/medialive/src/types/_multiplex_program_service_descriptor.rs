@@ -3,7 +3,7 @@
 /// Transport stream service descriptor configuration for the Multiplex program.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiplexProgramServiceDescriptor {
+pub struct MultiplexProgramServiceDescriptor  {
     /// Name of the provider.
     #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct MultiplexProgramServiceDescriptor {
 }
 impl MultiplexProgramServiceDescriptor {
     /// Name of the provider.
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// Name of the service.
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl MultiplexProgramServiceDescriptor {
 
 /// A builder for [`MultiplexProgramServiceDescriptor`](crate::types::MultiplexProgramServiceDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiplexProgramServiceDescriptorBuilder {
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgramServiceDescriptorBuilder {
     /// Name of the provider.
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Name of the provider.
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.provider_name = input;
-        self
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_name = input; self
+    }
+    /// Name of the provider.
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
     }
     /// Name of the service.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl MultiplexProgramServiceDescriptorBuilder {
     }
     /// Name of the service.
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
+    }
+    /// Name of the service.
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`MultiplexProgramServiceDescriptor`](crate::types::MultiplexProgramServiceDescriptor).
     pub fn build(self) -> crate::types::MultiplexProgramServiceDescriptor {
         crate::types::MultiplexProgramServiceDescriptor {
-            provider_name: self.provider_name,
-            service_name: self.service_name,
+            provider_name: self.provider_name
+            ,
+            service_name: self.service_name
+            ,
         }
     }
 }
+

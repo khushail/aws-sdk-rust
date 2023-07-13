@@ -3,14 +3,14 @@
 /// <p>A target to which an alert is sent when a security profile behavior is violated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityProfileTarget {
+pub struct SecurityProfileTarget  {
     /// <p>The ARN of the security profile.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl SecurityProfileTarget {
     /// <p>The ARN of the security profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl SecurityProfileTarget {
 
 /// A builder for [`SecurityProfileTarget`](crate::types::SecurityProfileTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityProfileTargetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl SecurityProfileTargetBuilder {
     }
     /// <p>The ARN of the security profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN of the security profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`SecurityProfileTarget`](crate::types::SecurityProfileTarget).
     pub fn build(self) -> crate::types::SecurityProfileTarget {
-        crate::types::SecurityProfileTarget { arn: self.arn }
+        crate::types::SecurityProfileTarget {
+            arn: self.arn
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAssociateProjectAssetsInput {
+pub struct BatchAssociateProjectAssetsInput  {
     /// <p>The ID of the project to which to associate the assets.</p>
     #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct BatchAssociateProjectAssetsInput {
 }
 impl BatchAssociateProjectAssetsInput {
     /// <p>The ID of the project to which to associate the assets.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>The IDs of the assets to be associated to the project.</p>
-    pub fn asset_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn asset_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.asset_ids.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl BatchAssociateProjectAssetsInput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateProjectAssetsInput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput).
-    pub fn builder() -> crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder{
+    pub fn builder() -> crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder {
         crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchAssociateProjectAssetsInput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateProjectAssetsInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,8 +50,11 @@ impl BatchAssociateProjectAssetsInputBuilder {
     }
     /// <p>The ID of the project to which to associate the assets.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
+    }
+    /// <p>The ID of the project to which to associate the assets.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
     }
     /// Appends an item to `asset_ids`.
     ///
@@ -62,17 +63,17 @@ impl BatchAssociateProjectAssetsInputBuilder {
     /// <p>The IDs of the assets to be associated to the project.</p>
     pub fn asset_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.asset_ids.unwrap_or_default();
-        v.push(input.into());
-        self.asset_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.asset_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the assets to be associated to the project.</p>
-    pub fn set_asset_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.asset_ids = input;
-        self
+    pub fn set_asset_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.asset_ids = input; self
+    }
+    /// <p>The IDs of the assets to be associated to the project.</p>
+    pub fn get_asset_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.asset_ids
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,22 +82,24 @@ impl BatchAssociateProjectAssetsInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`BatchAssociateProjectAssetsInput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput {
-                project_id: self.project_id,
-                asset_ids: self.asset_ids,
-                client_token: self.client_token,
-            },
+                project_id: self.project_id
+                ,
+                asset_ids: self.asset_ids
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

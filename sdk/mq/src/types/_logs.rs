@@ -3,7 +3,7 @@
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Logs {
+pub struct Logs  {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
     pub audit: ::std::option::Option<bool>,
@@ -30,9 +30,7 @@ impl Logs {
 
 /// A builder for [`Logs`](crate::types::Logs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogsBuilder {
     pub(crate) audit: ::std::option::Option<bool>,
     pub(crate) general: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl LogsBuilder {
     }
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     pub fn set_audit(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.audit = input;
-        self
+        self.audit = input; self
+    }
+    /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
+    pub fn get_audit(&self) -> &::std::option::Option<bool> {
+        &self.audit
     }
     /// <p>Enables general logging.</p>
     pub fn general(mut self, input: bool) -> Self {
@@ -55,14 +56,20 @@ impl LogsBuilder {
     }
     /// <p>Enables general logging.</p>
     pub fn set_general(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.general = input;
-        self
+        self.general = input; self
+    }
+    /// <p>Enables general logging.</p>
+    pub fn get_general(&self) -> &::std::option::Option<bool> {
+        &self.general
     }
     /// Consumes the builder and constructs a [`Logs`](crate::types::Logs).
     pub fn build(self) -> crate::types::Logs {
         crate::types::Logs {
-            audit: self.audit,
-            general: self.general,
+            audit: self.audit
+            ,
+            general: self.general
+            ,
         }
     }
 }
+

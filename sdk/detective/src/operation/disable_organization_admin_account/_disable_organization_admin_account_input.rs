@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableOrganizationAdminAccountInput {}
+pub struct DisableOrganizationAdminAccountInput  {
+}
 impl DisableOrganizationAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
-    pub fn builder() -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder{
+    pub fn builder() -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder {
         crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct DisableOrganizationAdminAccountInputBuilder {}
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct DisableOrganizationAdminAccountInputBuilder {
+}
 impl DisableOrganizationAdminAccountInputBuilder {
     /// Consumes the builder and constructs a [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput {
             }
         )
     }
 }
+

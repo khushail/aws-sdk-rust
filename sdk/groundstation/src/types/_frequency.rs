@@ -3,7 +3,7 @@
 /// <p>Object that describes the frequency.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Frequency {
+pub struct Frequency  {
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
@@ -17,7 +17,7 @@ impl Frequency {
         self.value
     }
     /// <p>Frequency units.</p>
-    pub fn units(&self) -> ::std::option::Option<&crate::types::FrequencyUnits> {
+    pub fn units(&self) -> ::std::option::Option<& crate::types::FrequencyUnits> {
         self.units.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Frequency {
 
 /// A builder for [`Frequency`](crate::types::Frequency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrequencyBuilder {
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) units: ::std::option::Option<crate::types::FrequencyUnits>,
@@ -45,8 +43,11 @@ impl FrequencyBuilder {
     }
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// <p>Frequency units.</p>
     pub fn units(mut self, input: crate::types::FrequencyUnits) -> Self {
@@ -55,14 +56,20 @@ impl FrequencyBuilder {
     }
     /// <p>Frequency units.</p>
     pub fn set_units(mut self, input: ::std::option::Option<crate::types::FrequencyUnits>) -> Self {
-        self.units = input;
-        self
+        self.units = input; self
+    }
+    /// <p>Frequency units.</p>
+    pub fn get_units(&self) -> &::std::option::Option<crate::types::FrequencyUnits> {
+        &self.units
     }
     /// Consumes the builder and constructs a [`Frequency`](crate::types::Frequency).
     pub fn build(self) -> crate::types::Frequency {
         crate::types::Frequency {
-            value: self.value,
-            units: self.units,
+            value: self.value
+            ,
+            units: self.units
+            ,
         }
     }
 }
+

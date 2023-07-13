@@ -3,7 +3,7 @@
 /// <p>The details about a specific DataSync discovery job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscoveryJobListEntry {
+pub struct DiscoveryJobListEntry  {
     /// <p>The Amazon Resource Name (ARN) of a discovery job.</p>
     #[doc(hidden)]
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DiscoveryJobListEntry {
 }
 impl DiscoveryJobListEntry {
     /// <p>The Amazon Resource Name (ARN) of a discovery job.</p>
-    pub fn discovery_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn discovery_job_arn(&self) -> ::std::option::Option<& str> {
         self.discovery_job_arn.as_deref()
     }
     /// <p>The status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DiscoveryJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DiscoveryJobStatus> {
         self.status.as_ref()
     }
 }
@@ -30,29 +30,24 @@ impl DiscoveryJobListEntry {
 
 /// A builder for [`DiscoveryJobListEntry`](crate::types::DiscoveryJobListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiscoveryJobListEntryBuilder {
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DiscoveryJobStatus>,
 }
 impl DiscoveryJobListEntryBuilder {
     /// <p>The Amazon Resource Name (ARN) of a discovery job.</p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a discovery job.</p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.discovery_job_arn = input;
-        self
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.discovery_job_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a discovery job.</p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_job_arn
     }
     /// <p>The status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
     pub fn status(mut self, input: crate::types::DiscoveryJobStatus) -> Self {
@@ -60,18 +55,21 @@ impl DiscoveryJobListEntryBuilder {
         self
     }
     /// <p>The status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DiscoveryJobStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DiscoveryJobStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DiscoveryJobListEntry`](crate::types::DiscoveryJobListEntry).
     pub fn build(self) -> crate::types::DiscoveryJobListEntry {
         crate::types::DiscoveryJobListEntry {
-            discovery_job_arn: self.discovery_job_arn,
-            status: self.status,
+            discovery_job_arn: self.discovery_job_arn
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

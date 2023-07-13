@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagDeliveryStreamInput {
+pub struct TagDeliveryStreamInput  {
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
     #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct TagDeliveryStreamInput {
 }
 impl TagDeliveryStreamInput {
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
-    pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> ::std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>A set of key-value pairs to use to create the tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl TagDeliveryStreamInput {
     /// Creates a new builder-style object to manufacture [`TagDeliveryStreamInput`](crate::operation::tag_delivery_stream::TagDeliveryStreamInput).
-    pub fn builder(
-    ) -> crate::operation::tag_delivery_stream::builders::TagDeliveryStreamInputBuilder {
+    pub fn builder() -> crate::operation::tag_delivery_stream::builders::TagDeliveryStreamInputBuilder {
         crate::operation::tag_delivery_stream::builders::TagDeliveryStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`TagDeliveryStreamInput`](crate::operation::tag_delivery_stream::TagDeliveryStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagDeliveryStreamInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.delivery_stream_name = input;
-        self
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.delivery_stream_name = input; self
+    }
+    /// <p>The name of the delivery stream to which you want to add the tags.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
     }
     /// Appends an item to `tags`.
     ///
@@ -61,30 +55,28 @@ impl TagDeliveryStreamInputBuilder {
     /// <p>A set of key-value pairs to use to create the tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of key-value pairs to use to create the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A set of key-value pairs to use to create the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagDeliveryStreamInput`](crate::operation::tag_delivery_stream::TagDeliveryStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::tag_delivery_stream::TagDeliveryStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_delivery_stream::TagDeliveryStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::tag_delivery_stream::TagDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                tags: self.tags,
-            },
+                delivery_stream_name: self.delivery_stream_name
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceControlDetails {
+pub struct SourceControlDetails  {
     /// <p>The provider for the remote repository.</p>
     #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::SourceControlProvider>,
@@ -31,35 +31,35 @@ pub struct SourceControlDetails {
 }
 impl SourceControlDetails {
     /// <p>The provider for the remote repository.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::SourceControlProvider> {
+    pub fn provider(&self) -> ::std::option::Option<& crate::types::SourceControlProvider> {
         self.provider.as_ref()
     }
     /// <p>The name of the remote repository that contains the job artifacts.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The owner of the remote repository that contains the job artifacts.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>An optional branch in the remote repository.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>An optional folder in the remote repository.</p>
-    pub fn folder(&self) -> ::std::option::Option<&str> {
+    pub fn folder(&self) -> ::std::option::Option<& str> {
         self.folder.as_deref()
     }
     /// <p>The last commit ID for a commit in the remote repository.</p>
-    pub fn last_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_commit_id(&self) -> ::std::option::Option<& str> {
         self.last_commit_id.as_deref()
     }
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
-    pub fn auth_strategy(&self) -> ::std::option::Option<&crate::types::SourceControlAuthStrategy> {
+    pub fn auth_strategy(&self) -> ::std::option::Option<& crate::types::SourceControlAuthStrategy> {
         self.auth_strategy.as_ref()
     }
     /// <p>The value of an authorization token.</p>
-    pub fn auth_token(&self) -> ::std::option::Option<&str> {
+    pub fn auth_token(&self) -> ::std::option::Option<& str> {
         self.auth_token.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl SourceControlDetails {
 
 /// A builder for [`SourceControlDetails`](crate::types::SourceControlDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceControlDetailsBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::SourceControlProvider>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,
@@ -92,12 +90,12 @@ impl SourceControlDetailsBuilder {
         self
     }
     /// <p>The provider for the remote repository.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceControlProvider>,
-    ) -> Self {
-        self.provider = input;
-        self
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::SourceControlProvider>) -> Self {
+        self.provider = input; self
+    }
+    /// <p>The provider for the remote repository.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::SourceControlProvider> {
+        &self.provider
     }
     /// <p>The name of the remote repository that contains the job artifacts.</p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +104,11 @@ impl SourceControlDetailsBuilder {
     }
     /// <p>The name of the remote repository that contains the job artifacts.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
+    }
+    /// <p>The name of the remote repository that contains the job artifacts.</p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
     }
     /// <p>The owner of the remote repository that contains the job artifacts.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,8 +117,11 @@ impl SourceControlDetailsBuilder {
     }
     /// <p>The owner of the remote repository that contains the job artifacts.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
+    }
+    /// <p>The owner of the remote repository that contains the job artifacts.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>An optional branch in the remote repository.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,8 +130,11 @@ impl SourceControlDetailsBuilder {
     }
     /// <p>An optional branch in the remote repository.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
+    }
+    /// <p>An optional branch in the remote repository.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// <p>An optional folder in the remote repository.</p>
     pub fn folder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,24 +143,24 @@ impl SourceControlDetailsBuilder {
     }
     /// <p>An optional folder in the remote repository.</p>
     pub fn set_folder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder = input;
-        self
+        self.folder = input; self
+    }
+    /// <p>An optional folder in the remote repository.</p>
+    pub fn get_folder(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder
     }
     /// <p>The last commit ID for a commit in the remote repository.</p>
-    pub fn last_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last commit ID for a commit in the remote repository.</p>
-    pub fn set_last_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_commit_id = input;
-        self
+    pub fn set_last_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_commit_id = input; self
+    }
+    /// <p>The last commit ID for a commit in the remote repository.</p>
+    pub fn get_last_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_commit_id
     }
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
     pub fn auth_strategy(mut self, input: crate::types::SourceControlAuthStrategy) -> Self {
@@ -161,12 +168,12 @@ impl SourceControlDetailsBuilder {
         self
     }
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
-    pub fn set_auth_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceControlAuthStrategy>,
-    ) -> Self {
-        self.auth_strategy = input;
-        self
+    pub fn set_auth_strategy(mut self, input: ::std::option::Option<crate::types::SourceControlAuthStrategy>) -> Self {
+        self.auth_strategy = input; self
+    }
+    /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    pub fn get_auth_strategy(&self) -> &::std::option::Option<crate::types::SourceControlAuthStrategy> {
+        &self.auth_strategy
     }
     /// <p>The value of an authorization token.</p>
     pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,20 +182,32 @@ impl SourceControlDetailsBuilder {
     }
     /// <p>The value of an authorization token.</p>
     pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_token = input;
-        self
+        self.auth_token = input; self
+    }
+    /// <p>The value of an authorization token.</p>
+    pub fn get_auth_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_token
     }
     /// Consumes the builder and constructs a [`SourceControlDetails`](crate::types::SourceControlDetails).
     pub fn build(self) -> crate::types::SourceControlDetails {
         crate::types::SourceControlDetails {
-            provider: self.provider,
-            repository: self.repository,
-            owner: self.owner,
-            branch: self.branch,
-            folder: self.folder,
-            last_commit_id: self.last_commit_id,
-            auth_strategy: self.auth_strategy,
-            auth_token: self.auth_token,
+            provider: self.provider
+            ,
+            repository: self.repository
+            ,
+            owner: self.owner
+            ,
+            branch: self.branch
+            ,
+            folder: self.folder
+            ,
+            last_commit_id: self.last_commit_id
+            ,
+            auth_strategy: self.auth_strategy
+            ,
+            auth_token: self.auth_token
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about what is excluded from an assessment run given the current state of the assessment template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExclusionPreview {
+pub struct ExclusionPreview  {
     /// <p>The name of the exclusion preview.</p>
     #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct ExclusionPreview {
 }
 impl ExclusionPreview {
     /// <p>The name of the exclusion preview.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The description of the exclusion preview.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The recommendation for the exclusion preview.</p>
-    pub fn recommendation(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation(&self) -> ::std::option::Option<& str> {
         self.recommendation.as_deref()
     }
     /// <p>The AWS resources for which the exclusion preview pertains.</p>
-    pub fn scopes(&self) -> ::std::option::Option<&[crate::types::Scope]> {
+    pub fn scopes(&self) -> ::std::option::Option<& [crate::types::Scope]> {
         self.scopes.as_deref()
     }
     /// <p>The system-defined attributes for the exclusion preview.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<& [crate::types::Attribute]> {
         self.attributes.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl ExclusionPreview {
 
 /// A builder for [`ExclusionPreview`](crate::types::ExclusionPreview).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExclusionPreviewBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -69,8 +67,11 @@ impl ExclusionPreviewBuilder {
     }
     /// <p>The name of the exclusion preview.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
+    }
+    /// <p>The name of the exclusion preview.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The description of the exclusion preview.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,24 +80,24 @@ impl ExclusionPreviewBuilder {
     }
     /// <p>The description of the exclusion preview.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the exclusion preview.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The recommendation for the exclusion preview.</p>
-    pub fn recommendation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation for the exclusion preview.</p>
-    pub fn set_recommendation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.recommendation = input;
-        self
+    pub fn set_recommendation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommendation = input; self
+    }
+    /// <p>The recommendation for the exclusion preview.</p>
+    pub fn get_recommendation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation
     }
     /// Appends an item to `scopes`.
     ///
@@ -105,17 +106,17 @@ impl ExclusionPreviewBuilder {
     /// <p>The AWS resources for which the exclusion preview pertains.</p>
     pub fn scopes(mut self, input: crate::types::Scope) -> Self {
         let mut v = self.scopes.unwrap_or_default();
-        v.push(input);
-        self.scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The AWS resources for which the exclusion preview pertains.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Scope>>,
-    ) -> Self {
-        self.scopes = input;
-        self
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Scope>>) -> Self {
+        self.scopes = input; self
+    }
+    /// <p>The AWS resources for which the exclusion preview pertains.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Scope>> {
+        &self.scopes
     }
     /// Appends an item to `attributes`.
     ///
@@ -124,26 +125,32 @@ impl ExclusionPreviewBuilder {
     /// <p>The system-defined attributes for the exclusion preview.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The system-defined attributes for the exclusion preview.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>The system-defined attributes for the exclusion preview.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`ExclusionPreview`](crate::types::ExclusionPreview).
     pub fn build(self) -> crate::types::ExclusionPreview {
         crate::types::ExclusionPreview {
-            title: self.title,
-            description: self.description,
-            recommendation: self.recommendation,
-            scopes: self.scopes,
-            attributes: self.attributes,
+            title: self.title
+            ,
+            description: self.description
+            ,
+            recommendation: self.recommendation
+            ,
+            scopes: self.scopes
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

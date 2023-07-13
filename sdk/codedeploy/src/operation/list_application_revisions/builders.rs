@@ -3,224 +3,230 @@ pub use crate::operation::list_application_revisions::_list_application_revision
 
 pub use crate::operation::list_application_revisions::_list_application_revisions_input::ListApplicationRevisionsInputBuilder;
 
+impl ListApplicationRevisionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_application_revisions::ListApplicationRevisionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_application_revisions::ListApplicationRevisionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_application_revisions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListApplicationRevisions`.
-///
+/// 
 /// <p>Lists information about revisions for an application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationRevisionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder,
 }
-impl ListApplicationRevisionsFluentBuilder {
+impl ListApplicationRevisionsFluentBuilder  {
     /// Creates a new `ListApplicationRevisions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_application_revisions::ListApplicationRevisions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_revisions::ListApplicationRevisionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListApplicationRevisions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_application_revisions::ListApplicationRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_revisions::ListApplicationRevisionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_application_revisions::ListApplicationRevisions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_application_revisions::ListApplicationRevisionsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_application_revisions::ListApplicationRevisionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_application_revisions::ListApplicationRevisionsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_application_revisions::ListApplicationRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_revisions::ListApplicationRevisionsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_application_revisions::ListApplicationRevisions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_revisions::ListApplicationRevisionsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_application_revisions::ListApplicationRevisionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_application_revisions::ListApplicationRevisionsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_application_revisions::ListApplicationRevisions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_application_revisions::ListApplicationRevisionsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator
-    {
-        crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator {
+                                crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// <p>The column name to use to sort the list results:</p>
-    /// <ul>
-    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>
-    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
-    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
-    /// </ul>
+    /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
+    /// <p>The column name to use to sort the list results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li> 
+    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li> 
+    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li> 
+    /// </ul> 
     /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
     pub fn sort_by(mut self, input: crate::types::ApplicationRevisionSortBy) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p>The column name to use to sort the list results:</p>
-    /// <ul>
-    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>
-    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
-    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
-    /// </ul>
+    /// <p>The column name to use to sort the list results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li> 
+    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li> 
+    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li> 
+    /// </ul> 
     /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationRevisionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ApplicationRevisionSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
-    /// <p> The order in which to sort the list results: </p>
-    /// <ul>
-    /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
-    /// <li> <p> <code>descending</code>: descending order.</p> </li>
-    /// </ul>
-    /// <p>If not specified, the results are sorted in ascending order.</p>
+    /// <p>The column name to use to sort the list results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li> 
+    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li> 
+    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li> 
+    /// </ul> 
+    /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ApplicationRevisionSortBy> {
+        self.inner.get_sort_by()
+    }
+    /// <p> The order in which to sort the list results: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ascending</code>: ascending order.</p> </li> 
+    /// <li> <p> <code>descending</code>: descending order.</p> </li> 
+    /// </ul> 
+    /// <p>If not specified, the results are sorted in ascending order.</p> 
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p> The order in which to sort the list results: </p>
-    /// <ul>
-    /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
-    /// <li> <p> <code>descending</code>: descending order.</p> </li>
-    /// </ul>
-    /// <p>If not specified, the results are sorted in ascending order.</p>
+    /// <p> The order in which to sort the list results: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ascending</code>: ascending order.</p> </li> 
+    /// <li> <p> <code>descending</code>: descending order.</p> </li> 
+    /// </ul> 
+    /// <p>If not specified, the results are sorted in ascending order.</p> 
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
-    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
+    /// <p> The order in which to sort the list results: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ascending</code>: ascending order.</p> </li> 
+    /// <li> <p> <code>descending</code>: descending order.</p> </li> 
+    /// </ul> 
+    /// <p>If not specified, the results are sorted in ascending order.</p> 
+    /// <p>If set to null, the results are sorted in an arbitrary order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
+    }
+    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p> 
     /// <p> If set to null, all of the user's buckets are searched. </p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket(input.into());
         self
     }
-    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
+    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p> 
     /// <p> If set to null, all of the user's buckets are searched. </p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket(input);
         self
     }
+    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p> 
+    /// <p> If set to null, all of the user's buckets are searched. </p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket()
+    }
     /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
     /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
-    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
-    /// <ul>
-    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
-    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
-    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
+    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_key_prefix()
+    }
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p> 
+    /// <ul> 
+    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li> 
+    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li> 
+    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li> 
     /// </ul>
     pub fn deployed(mut self, input: crate::types::ListStateFilterAction) -> Self {
         self.inner = self.inner.deployed(input);
         self
     }
-    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
-    /// <ul>
-    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
-    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
-    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p> 
+    /// <ul> 
+    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li> 
+    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li> 
+    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li> 
     /// </ul>
-    pub fn set_deployed(
-        mut self,
-        input: ::std::option::Option<crate::types::ListStateFilterAction>,
-    ) -> Self {
+    pub fn set_deployed(mut self, input: ::std::option::Option<crate::types::ListStateFilterAction>) -> Self {
         self.inner = self.inner.set_deployed(input);
         self
+    }
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p> 
+    /// <ul> 
+    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li> 
+    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li> 
+    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li> 
+    /// </ul>
+    pub fn get_deployed(&self) -> &::std::option::Option<crate::types::ListStateFilterAction> {
+        self.inner.get_deployed()
     }
     /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -232,4 +238,9 @@ impl ListApplicationRevisionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

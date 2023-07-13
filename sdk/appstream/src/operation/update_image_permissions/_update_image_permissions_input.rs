@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateImagePermissionsInput {
+pub struct UpdateImagePermissionsInput  {
     /// <p>The name of the private image.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct UpdateImagePermissionsInput {
 }
 impl UpdateImagePermissionsInput {
     /// <p>The name of the private image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
-    pub fn shared_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn shared_account_id(&self) -> ::std::option::Option<& str> {
         self.shared_account_id.as_deref()
     }
     /// <p>The permissions for the image.</p>
-    pub fn image_permissions(&self) -> ::std::option::Option<&crate::types::ImagePermissions> {
+    pub fn image_permissions(&self) -> ::std::option::Option<& crate::types::ImagePermissions> {
         self.image_permissions.as_ref()
     }
 }
 impl UpdateImagePermissionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateImagePermissionsInput`](crate::operation::update_image_permissions::UpdateImagePermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::update_image_permissions::builders::UpdateImagePermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_image_permissions::builders::UpdateImagePermissionsInputBuilder {
         crate::operation::update_image_permissions::builders::UpdateImagePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateImagePermissionsInput`](crate::operation::update_image_permissions::UpdateImagePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateImagePermissionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) shared_account_id: ::std::option::Option<::std::string::String>,
@@ -54,24 +50,24 @@ impl UpdateImagePermissionsInputBuilder {
     }
     /// <p>The name of the private image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the private image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
-    pub fn shared_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
-    pub fn set_shared_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.shared_account_id = input;
-        self
+    pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.shared_account_id = input; self
+    }
+    /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_account_id
     }
     /// <p>The permissions for the image.</p>
     pub fn image_permissions(mut self, input: crate::types::ImagePermissions) -> Self {
@@ -79,26 +75,25 @@ impl UpdateImagePermissionsInputBuilder {
         self
     }
     /// <p>The permissions for the image.</p>
-    pub fn set_image_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::ImagePermissions>,
-    ) -> Self {
-        self.image_permissions = input;
-        self
+    pub fn set_image_permissions(mut self, input: ::std::option::Option<crate::types::ImagePermissions>) -> Self {
+        self.image_permissions = input; self
+    }
+    /// <p>The permissions for the image.</p>
+    pub fn get_image_permissions(&self) -> &::std::option::Option<crate::types::ImagePermissions> {
+        &self.image_permissions
     }
     /// Consumes the builder and constructs a [`UpdateImagePermissionsInput`](crate::operation::update_image_permissions::UpdateImagePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_image_permissions::UpdateImagePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_image_permissions::UpdateImagePermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_image_permissions::UpdateImagePermissionsInput {
-                name: self.name,
-                shared_account_id: self.shared_account_id,
-                image_permissions: self.image_permissions,
-            },
+                name: self.name
+                ,
+                shared_account_id: self.shared_account_id
+                ,
+                image_permissions: self.image_permissions
+                ,
+            }
         )
     }
 }
+

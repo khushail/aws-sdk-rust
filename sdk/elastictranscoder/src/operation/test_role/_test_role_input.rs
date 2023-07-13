@@ -4,7 +4,7 @@
 #[deprecated]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestRoleInput {
+pub struct TestRoleInput  {
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
     #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
@@ -20,19 +20,19 @@ pub struct TestRoleInput {
 }
 impl TestRoleInput {
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
-    pub fn input_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn input_bucket(&self) -> ::std::option::Option<& str> {
         self.input_bucket.as_deref()
     }
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
-    pub fn output_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn output_bucket(&self) -> ::std::option::Option<& str> {
         self.output_bucket.as_deref()
     }
     /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
-    pub fn topics(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn topics(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.topics.as_deref()
     }
 }
@@ -45,9 +45,7 @@ impl TestRoleInput {
 
 /// A builder for [`TestRoleInput`](crate::operation::test_role::TestRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestRoleInputBuilder {
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) input_bucket: ::std::option::Option<::std::string::String>,
@@ -62,8 +60,11 @@ impl TestRoleInputBuilder {
     }
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
+    }
+    /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
     }
     /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
     pub fn input_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,24 +73,24 @@ impl TestRoleInputBuilder {
     }
     /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
     pub fn set_input_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_bucket = input;
-        self
+        self.input_bucket = input; self
+    }
+    /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
+    pub fn get_input_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_bucket
     }
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
-    pub fn output_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
-    pub fn set_output_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.output_bucket = input;
-        self
+    pub fn set_output_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output_bucket = input; self
+    }
+    /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
+    pub fn get_output_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_bucket
     }
     /// Appends an item to `topics`.
     ///
@@ -98,30 +99,32 @@ impl TestRoleInputBuilder {
     /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
     pub fn topics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.topics.unwrap_or_default();
-        v.push(input.into());
-        self.topics = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.topics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
-    pub fn set_topics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.topics = input;
-        self
+    pub fn set_topics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.topics = input; self
+    }
+    /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
+    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.topics
     }
     /// Consumes the builder and constructs a [`TestRoleInput`](crate::operation::test_role::TestRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_role::TestRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::test_role::TestRoleInput {
-            role: self.role,
-            input_bucket: self.input_bucket,
-            output_bucket: self.output_bucket,
-            topics: self.topics,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_role::TestRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_role::TestRoleInput {
+                role: self.role
+                ,
+                input_bucket: self.input_bucket
+                ,
+                output_bucket: self.output_bucket
+                ,
+                topics: self.topics
+                ,
+            }
+        )
     }
 }
+

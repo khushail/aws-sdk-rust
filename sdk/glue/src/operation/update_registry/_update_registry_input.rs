@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRegistryInput {
+pub struct UpdateRegistryInput  {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub registry_id: ::std::option::Option<crate::types::RegistryId>,
@@ -12,11 +12,11 @@ pub struct UpdateRegistryInput {
 }
 impl UpdateRegistryInput {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&crate::types::RegistryId> {
+    pub fn registry_id(&self) -> ::std::option::Option<& crate::types::RegistryId> {
         self.registry_id.as_ref()
     }
     /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl UpdateRegistryInput {
 
 /// A builder for [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRegistryInputBuilder {
     pub(crate) registry_id: ::std::option::Option<crate::types::RegistryId>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -43,12 +41,12 @@ impl UpdateRegistryInputBuilder {
         self
     }
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    pub fn set_registry_id(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryId>,
-    ) -> Self {
-        self.registry_id = input;
-        self
+    pub fn set_registry_id(mut self, input: ::std::option::Option<crate::types::RegistryId>) -> Self {
+        self.registry_id = input; self
+    }
+    /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<crate::types::RegistryId> {
+        &self.registry_id
     }
     /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -57,19 +55,22 @@ impl UpdateRegistryInputBuilder {
     }
     /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_registry::UpdateRegistryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_registry::UpdateRegistryInput {
-            registry_id: self.registry_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_registry::UpdateRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_registry::UpdateRegistryInput {
+                registry_id: self.registry_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

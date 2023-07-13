@@ -3,7 +3,7 @@
 /// Cartesian coordinates in 3D space relative to the RoboRunner origin.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CartesianCoordinates {
+pub struct CartesianCoordinates  {
     /// X coordinate.
     #[doc(hidden)]
     pub x: ::std::option::Option<f64>,
@@ -37,9 +37,7 @@ impl CartesianCoordinates {
 
 /// A builder for [`CartesianCoordinates`](crate::types::CartesianCoordinates).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CartesianCoordinatesBuilder {
     pub(crate) x: ::std::option::Option<f64>,
     pub(crate) y: ::std::option::Option<f64>,
@@ -53,8 +51,11 @@ impl CartesianCoordinatesBuilder {
     }
     /// X coordinate.
     pub fn set_x(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.x = input;
-        self
+        self.x = input; self
+    }
+    /// X coordinate.
+    pub fn get_x(&self) -> &::std::option::Option<f64> {
+        &self.x
     }
     /// Y coordinate.
     pub fn y(mut self, input: f64) -> Self {
@@ -63,8 +64,11 @@ impl CartesianCoordinatesBuilder {
     }
     /// Y coordinate.
     pub fn set_y(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.y = input;
-        self
+        self.y = input; self
+    }
+    /// Y coordinate.
+    pub fn get_y(&self) -> &::std::option::Option<f64> {
+        &self.y
     }
     /// Z coordinate.
     pub fn z(mut self, input: f64) -> Self {
@@ -73,15 +77,22 @@ impl CartesianCoordinatesBuilder {
     }
     /// Z coordinate.
     pub fn set_z(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.z = input;
-        self
+        self.z = input; self
+    }
+    /// Z coordinate.
+    pub fn get_z(&self) -> &::std::option::Option<f64> {
+        &self.z
     }
     /// Consumes the builder and constructs a [`CartesianCoordinates`](crate::types::CartesianCoordinates).
     pub fn build(self) -> crate::types::CartesianCoordinates {
         crate::types::CartesianCoordinates {
-            x: self.x,
-            y: self.y,
-            z: self.z,
+            x: self.x
+            ,
+            y: self.y
+            ,
+            z: self.z
+            ,
         }
     }
 }
+

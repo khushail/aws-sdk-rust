@@ -3,7 +3,7 @@
 /// <p>The configuration that overrides the existing default values for a dataset parameter that is inherited from another dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NewDefaultValues {
+pub struct NewDefaultValues  {
     /// <p>A list of static default values for a given string parameter.</p>
     #[doc(hidden)]
     pub string_static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,29 +12,26 @@ pub struct NewDefaultValues {
     pub decimal_static_values: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>A list of static default values for a given date time parameter.</p>
     #[doc(hidden)]
-    pub date_time_static_values:
-        ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub date_time_static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>A list of static default values for a given integer parameter.</p>
     #[doc(hidden)]
     pub integer_static_values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl NewDefaultValues {
     /// <p>A list of static default values for a given string parameter.</p>
-    pub fn string_static_values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn string_static_values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.string_static_values.as_deref()
     }
     /// <p>A list of static default values for a given decimal parameter.</p>
-    pub fn decimal_static_values(&self) -> ::std::option::Option<&[f64]> {
+    pub fn decimal_static_values(&self) -> ::std::option::Option<& [f64]> {
         self.decimal_static_values.as_deref()
     }
     /// <p>A list of static default values for a given date time parameter.</p>
-    pub fn date_time_static_values(
-        &self,
-    ) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
+    pub fn date_time_static_values(&self) -> ::std::option::Option<& [::aws_smithy_types::DateTime]> {
         self.date_time_static_values.as_deref()
     }
     /// <p>A list of static default values for a given integer parameter.</p>
-    pub fn integer_static_values(&self) -> ::std::option::Option<&[i64]> {
+    pub fn integer_static_values(&self) -> ::std::option::Option<& [i64]> {
         self.integer_static_values.as_deref()
     }
 }
@@ -47,14 +44,11 @@ impl NewDefaultValues {
 
 /// A builder for [`NewDefaultValues`](crate::types::NewDefaultValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NewDefaultValuesBuilder {
     pub(crate) string_static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) decimal_static_values: ::std::option::Option<::std::vec::Vec<f64>>,
-    pub(crate) date_time_static_values:
-        ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) date_time_static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     pub(crate) integer_static_values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl NewDefaultValuesBuilder {
@@ -63,22 +57,19 @@ impl NewDefaultValuesBuilder {
     /// To override the contents of this collection use [`set_string_static_values`](Self::set_string_static_values).
     ///
     /// <p>A list of static default values for a given string parameter.</p>
-    pub fn string_static_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn string_static_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.string_static_values.unwrap_or_default();
-        v.push(input.into());
-        self.string_static_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.string_static_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of static default values for a given string parameter.</p>
-    pub fn set_string_static_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.string_static_values = input;
-        self
+    pub fn set_string_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.string_static_values = input; self
+    }
+    /// <p>A list of static default values for a given string parameter.</p>
+    pub fn get_string_static_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_static_values
     }
     /// Appends an item to `decimal_static_values`.
     ///
@@ -87,17 +78,17 @@ impl NewDefaultValuesBuilder {
     /// <p>A list of static default values for a given decimal parameter.</p>
     pub fn decimal_static_values(mut self, input: f64) -> Self {
         let mut v = self.decimal_static_values.unwrap_or_default();
-        v.push(input);
-        self.decimal_static_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.decimal_static_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of static default values for a given decimal parameter.</p>
-    pub fn set_decimal_static_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<f64>>,
-    ) -> Self {
-        self.decimal_static_values = input;
-        self
+    pub fn set_decimal_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
+        self.decimal_static_values = input; self
+    }
+    /// <p>A list of static default values for a given decimal parameter.</p>
+    pub fn get_decimal_static_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.decimal_static_values
     }
     /// Appends an item to `date_time_static_values`.
     ///
@@ -106,17 +97,17 @@ impl NewDefaultValuesBuilder {
     /// <p>A list of static default values for a given date time parameter.</p>
     pub fn date_time_static_values(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.date_time_static_values.unwrap_or_default();
-        v.push(input);
-        self.date_time_static_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.date_time_static_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of static default values for a given date time parameter.</p>
-    pub fn set_date_time_static_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
-        self.date_time_static_values = input;
-        self
+    pub fn set_date_time_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
+        self.date_time_static_values = input; self
+    }
+    /// <p>A list of static default values for a given date time parameter.</p>
+    pub fn get_date_time_static_values(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.date_time_static_values
     }
     /// Appends an item to `integer_static_values`.
     ///
@@ -125,25 +116,30 @@ impl NewDefaultValuesBuilder {
     /// <p>A list of static default values for a given integer parameter.</p>
     pub fn integer_static_values(mut self, input: i64) -> Self {
         let mut v = self.integer_static_values.unwrap_or_default();
-        v.push(input);
-        self.integer_static_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.integer_static_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of static default values for a given integer parameter.</p>
-    pub fn set_integer_static_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i64>>,
-    ) -> Self {
-        self.integer_static_values = input;
-        self
+    pub fn set_integer_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
+        self.integer_static_values = input; self
+    }
+    /// <p>A list of static default values for a given integer parameter.</p>
+    pub fn get_integer_static_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+        &self.integer_static_values
     }
     /// Consumes the builder and constructs a [`NewDefaultValues`](crate::types::NewDefaultValues).
     pub fn build(self) -> crate::types::NewDefaultValues {
         crate::types::NewDefaultValues {
-            string_static_values: self.string_static_values,
-            decimal_static_values: self.decimal_static_values,
-            date_time_static_values: self.date_time_static_values,
-            integer_static_values: self.integer_static_values,
+            string_static_values: self.string_static_values
+            ,
+            decimal_static_values: self.decimal_static_values
+            ,
+            date_time_static_values: self.date_time_static_values
+            ,
+            integer_static_values: self.integer_static_values
+            ,
         }
     }
 }
+

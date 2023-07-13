@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribeEcsClusters</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEcsClustersOutput {
+pub struct DescribeEcsClustersOutput  {
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     #[doc(hidden)]
     pub ecs_clusters: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>,
@@ -14,33 +14,29 @@ pub struct DescribeEcsClustersOutput {
 }
 impl DescribeEcsClustersOutput {
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
-    pub fn ecs_clusters(&self) -> ::std::option::Option<&[crate::types::EcsCluster]> {
+    pub fn ecs_clusters(&self) -> ::std::option::Option<& [crate::types::EcsCluster]> {
         self.ecs_clusters.as_deref()
     }
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEcsClustersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEcsClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEcsClustersOutput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersOutputBuilder {
-        crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersOutputBuilder {
+        crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEcsClustersOutput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEcsClustersOutputBuilder {
     pub(crate) ecs_clusters: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -54,17 +50,17 @@ impl DescribeEcsClustersOutputBuilder {
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     pub fn ecs_clusters(mut self, input: crate::types::EcsCluster) -> Self {
         let mut v = self.ecs_clusters.unwrap_or_default();
-        v.push(input);
-        self.ecs_clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ecs_clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
-    pub fn set_ecs_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>,
-    ) -> Self {
-        self.ecs_clusters = input;
-        self
+    pub fn set_ecs_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>) -> Self {
+        self.ecs_clusters = input; self
+    }
+    /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
+    pub fn get_ecs_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>> {
+        &self.ecs_clusters
     }
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,24 +69,30 @@ impl DescribeEcsClustersOutputBuilder {
     }
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEcsClustersOutput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput).
     pub fn build(self) -> crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput {
         crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput {
-            ecs_clusters: self.ecs_clusters,
-            next_token: self.next_token,
+            ecs_clusters: self.ecs_clusters
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

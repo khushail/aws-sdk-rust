@@ -3,7 +3,7 @@
 /// <p>Specifies the allowed input types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllowedInputTypes {
+pub struct AllowedInputTypes  {
     /// <p>Indicates whether audio input is allowed.</p>
     #[doc(hidden)]
     pub allow_audio_input: ::std::option::Option<bool>,
@@ -30,9 +30,7 @@ impl AllowedInputTypes {
 
 /// A builder for [`AllowedInputTypes`](crate::types::AllowedInputTypes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedInputTypesBuilder {
     pub(crate) allow_audio_input: ::std::option::Option<bool>,
     pub(crate) allow_dtmf_input: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl AllowedInputTypesBuilder {
     }
     /// <p>Indicates whether audio input is allowed.</p>
     pub fn set_allow_audio_input(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_audio_input = input;
-        self
+        self.allow_audio_input = input; self
+    }
+    /// <p>Indicates whether audio input is allowed.</p>
+    pub fn get_allow_audio_input(&self) -> &::std::option::Option<bool> {
+        &self.allow_audio_input
     }
     /// <p>Indicates whether DTMF input is allowed.</p>
     pub fn allow_dtmf_input(mut self, input: bool) -> Self {
@@ -55,14 +56,20 @@ impl AllowedInputTypesBuilder {
     }
     /// <p>Indicates whether DTMF input is allowed.</p>
     pub fn set_allow_dtmf_input(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_dtmf_input = input;
-        self
+        self.allow_dtmf_input = input; self
+    }
+    /// <p>Indicates whether DTMF input is allowed.</p>
+    pub fn get_allow_dtmf_input(&self) -> &::std::option::Option<bool> {
+        &self.allow_dtmf_input
     }
     /// Consumes the builder and constructs a [`AllowedInputTypes`](crate::types::AllowedInputTypes).
     pub fn build(self) -> crate::types::AllowedInputTypes {
         crate::types::AllowedInputTypes {
-            allow_audio_input: self.allow_audio_input,
-            allow_dtmf_input: self.allow_dtmf_input,
+            allow_audio_input: self.allow_audio_input
+            ,
+            allow_dtmf_input: self.allow_dtmf_input
+            ,
         }
     }
 }
+

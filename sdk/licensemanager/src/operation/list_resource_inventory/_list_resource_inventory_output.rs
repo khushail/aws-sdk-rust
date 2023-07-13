@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceInventoryOutput {
+pub struct ListResourceInventoryOutput  {
     /// <p>Information about the resources.</p>
     #[doc(hidden)]
-    pub resource_inventory_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
+    pub resource_inventory_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,38 +13,31 @@ pub struct ListResourceInventoryOutput {
 }
 impl ListResourceInventoryOutput {
     /// <p>Information about the resources.</p>
-    pub fn resource_inventory_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceInventory]> {
+    pub fn resource_inventory_list(&self) -> ::std::option::Option<& [crate::types::ResourceInventory]> {
         self.resource_inventory_list.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListResourceInventoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListResourceInventoryOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceInventoryOutput`](crate::operation::list_resource_inventory::ListResourceInventoryOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_inventory::builders::ListResourceInventoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_inventory::builders::ListResourceInventoryOutputBuilder {
         crate::operation::list_resource_inventory::builders::ListResourceInventoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceInventoryOutput`](crate::operation::list_resource_inventory::ListResourceInventoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceInventoryOutputBuilder {
-    pub(crate) resource_inventory_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
+    pub(crate) resource_inventory_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +49,17 @@ impl ListResourceInventoryOutputBuilder {
     /// <p>Information about the resources.</p>
     pub fn resource_inventory_list(mut self, input: crate::types::ResourceInventory) -> Self {
         let mut v = self.resource_inventory_list.unwrap_or_default();
-        v.push(input);
-        self.resource_inventory_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_inventory_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the resources.</p>
-    pub fn set_resource_inventory_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
-    ) -> Self {
-        self.resource_inventory_list = input;
-        self
+    pub fn set_resource_inventory_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>) -> Self {
+        self.resource_inventory_list = input; self
+    }
+    /// <p>Information about the resources.</p>
+    pub fn get_resource_inventory_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>> {
+        &self.resource_inventory_list
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,24 +68,30 @@ impl ListResourceInventoryOutputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListResourceInventoryOutput`](crate::operation::list_resource_inventory::ListResourceInventoryOutput).
     pub fn build(self) -> crate::operation::list_resource_inventory::ListResourceInventoryOutput {
         crate::operation::list_resource_inventory::ListResourceInventoryOutput {
-            resource_inventory_list: self.resource_inventory_list,
-            next_token: self.next_token,
+            resource_inventory_list: self.resource_inventory_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

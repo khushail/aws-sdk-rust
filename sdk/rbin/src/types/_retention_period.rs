@@ -3,7 +3,7 @@
 /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetentionPeriod {
+pub struct RetentionPeriod  {
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     #[doc(hidden)]
     pub retention_period_value: ::std::option::Option<i32>,
@@ -17,9 +17,7 @@ impl RetentionPeriod {
         self.retention_period_value
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
-    pub fn retention_period_unit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionPeriodUnit> {
+    pub fn retention_period_unit(&self) -> ::std::option::Option<& crate::types::RetentionPeriodUnit> {
         self.retention_period_unit.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl RetentionPeriod {
 
 /// A builder for [`RetentionPeriod`](crate::types::RetentionPeriod).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetentionPeriodBuilder {
     pub(crate) retention_period_value: ::std::option::Option<i32>,
     pub(crate) retention_period_unit: ::std::option::Option<crate::types::RetentionPeriodUnit>,
@@ -47,8 +43,11 @@ impl RetentionPeriodBuilder {
     }
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     pub fn set_retention_period_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period_value = input;
-        self
+        self.retention_period_value = input; self
+    }
+    /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    pub fn get_retention_period_value(&self) -> &::std::option::Option<i32> {
+        &self.retention_period_value
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
     pub fn retention_period_unit(mut self, input: crate::types::RetentionPeriodUnit) -> Self {
@@ -56,18 +55,21 @@ impl RetentionPeriodBuilder {
         self
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
-    pub fn set_retention_period_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriodUnit>,
-    ) -> Self {
-        self.retention_period_unit = input;
-        self
+    pub fn set_retention_period_unit(mut self, input: ::std::option::Option<crate::types::RetentionPeriodUnit>) -> Self {
+        self.retention_period_unit = input; self
+    }
+    /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
+    pub fn get_retention_period_unit(&self) -> &::std::option::Option<crate::types::RetentionPeriodUnit> {
+        &self.retention_period_unit
     }
     /// Consumes the builder and constructs a [`RetentionPeriod`](crate::types::RetentionPeriod).
     pub fn build(self) -> crate::types::RetentionPeriod {
         crate::types::RetentionPeriod {
-            retention_period_value: self.retention_period_value,
-            retention_period_unit: self.retention_period_unit,
+            retention_period_value: self.retention_period_value
+            ,
+            retention_period_unit: self.retention_period_unit
+            ,
         }
     }
 }
+

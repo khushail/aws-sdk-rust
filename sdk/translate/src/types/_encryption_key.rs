@@ -3,7 +3,7 @@
 /// <p>The encryption key used to encrypt this object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionKey {
+pub struct EncryptionKey  {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EncryptionKeyType>,
@@ -13,11 +13,11 @@ pub struct EncryptionKey {
 }
 impl EncryptionKey {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionKeyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::EncryptionKeyType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl EncryptionKey {
 
 /// A builder for [`EncryptionKey`](crate::types::EncryptionKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionKeyBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EncryptionKeyType>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl EncryptionKeyBuilder {
         self
     }
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKeyType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionKeyType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionKeyType> {
+        &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl EncryptionKeyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`EncryptionKey`](crate::types::EncryptionKey).
     pub fn build(self) -> crate::types::EncryptionKey {
         crate::types::EncryptionKey {
-            r#type: self.r#type,
-            id: self.id,
+            r#type: self.r#type
+            ,
+            id: self.id
+            ,
         }
     }
 }
+

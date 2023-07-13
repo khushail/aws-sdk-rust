@@ -3,14 +3,14 @@
 /// <p>The container for the metadata for Fail step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailStepMetadata {
+pub struct FailStepMetadata  {
     /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
     #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailStepMetadata {
     /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl FailStepMetadata {
 
 /// A builder for [`FailStepMetadata`](crate::types::FailStepMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailStepMetadataBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailStepMetadataBuilder {
     /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailStepMetadata`](crate::types::FailStepMetadata).
     pub fn build(self) -> crate::types::FailStepMetadata {
         crate::types::FailStepMetadata {
-            error_message: self.error_message,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

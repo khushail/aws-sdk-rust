@@ -3,7 +3,7 @@
 /// <p>The method that Incident Manager uses to engage a contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactChannel {
+pub struct ContactChannel  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
     pub contact_channel_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ContactChannel {
     /// <p>The name of the contact channel.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
-    /// <ul>
-    /// <li> <p>SMS</p> </li>
-    /// <li> <p>VOICE</p> </li>
-    /// <li> <p>EMAIL</p> </li>
+    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p> 
+    /// <ul> 
+    /// <li> <p>SMS</p> </li> 
+    /// <li> <p>VOICE</p> </li> 
+    /// <li> <p>EMAIL</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
@@ -30,32 +30,32 @@ pub struct ContactChannel {
 }
 impl ContactChannel {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_channel_arn(&self) -> ::std::option::Option<& str> {
         self.contact_channel_arn.as_deref()
     }
     /// <p>The ARN of the contact that contains the contact channel.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The name of the contact channel.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
-    /// <ul>
-    /// <li> <p>SMS</p> </li>
-    /// <li> <p>VOICE</p> </li>
-    /// <li> <p>EMAIL</p> </li>
+    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p> 
+    /// <ul> 
+    /// <li> <p>SMS</p> </li> 
+    /// <li> <p>VOICE</p> </li> 
+    /// <li> <p>EMAIL</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn delivery_address(&self) -> ::std::option::Option<&crate::types::ContactChannelAddress> {
+    pub fn delivery_address(&self) -> ::std::option::Option<& crate::types::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
-    pub fn activation_status(&self) -> ::std::option::Option<&crate::types::ActivationStatus> {
+    pub fn activation_status(&self) -> ::std::option::Option<& crate::types::ActivationStatus> {
         self.activation_status.as_ref()
     }
 }
@@ -68,9 +68,7 @@ impl ContactChannel {
 
 /// A builder for [`ContactChannel`](crate::types::ContactChannel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactChannelBuilder {
     pub(crate) contact_channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
@@ -81,20 +79,17 @@ pub struct ContactChannelBuilder {
 }
 impl ContactChannelBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn set_contact_channel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.contact_channel_arn = input;
-        self
+    pub fn set_contact_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.contact_channel_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn get_contact_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_channel_arn
     }
     /// <p>The ARN of the contact that contains the contact channel.</p>
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,8 +98,11 @@ impl ContactChannelBuilder {
     }
     /// <p>The ARN of the contact that contains the contact channel.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
+    }
+    /// <p>The ARN of the contact that contains the contact channel.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
     }
     /// <p>The name of the contact channel.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,28 +111,39 @@ impl ContactChannelBuilder {
     }
     /// <p>The name of the contact channel.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
-    /// <ul>
-    /// <li> <p>SMS</p> </li>
-    /// <li> <p>VOICE</p> </li>
-    /// <li> <p>EMAIL</p> </li>
+    /// <p>The name of the contact channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
+    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p> 
+    /// <ul> 
+    /// <li> <p>SMS</p> </li> 
+    /// <li> <p>VOICE</p> </li> 
+    /// <li> <p>EMAIL</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ChannelType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
-    /// <ul>
-    /// <li> <p>SMS</p> </li>
-    /// <li> <p>VOICE</p> </li>
-    /// <li> <p>EMAIL</p> </li>
+    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p> 
+    /// <ul> 
+    /// <li> <p>SMS</p> </li> 
+    /// <li> <p>VOICE</p> </li> 
+    /// <li> <p>EMAIL</p> </li> 
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p> 
+    /// <ul> 
+    /// <li> <p>SMS</p> </li> 
+    /// <li> <p>VOICE</p> </li> 
+    /// <li> <p>EMAIL</p> </li> 
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
+        &self.r#type
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn delivery_address(mut self, input: crate::types::ContactChannelAddress) -> Self {
@@ -142,12 +151,12 @@ impl ContactChannelBuilder {
         self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn set_delivery_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactChannelAddress>,
-    ) -> Self {
-        self.delivery_address = input;
-        self
+    pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
+        self.delivery_address = input; self
+    }
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
+    pub fn get_delivery_address(&self) -> &::std::option::Option<crate::types::ContactChannelAddress> {
+        &self.delivery_address
     }
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
     pub fn activation_status(mut self, input: crate::types::ActivationStatus) -> Self {
@@ -155,22 +164,29 @@ impl ContactChannelBuilder {
         self
     }
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
-    pub fn set_activation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivationStatus>,
-    ) -> Self {
-        self.activation_status = input;
-        self
+    pub fn set_activation_status(mut self, input: ::std::option::Option<crate::types::ActivationStatus>) -> Self {
+        self.activation_status = input; self
+    }
+    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
+    pub fn get_activation_status(&self) -> &::std::option::Option<crate::types::ActivationStatus> {
+        &self.activation_status
     }
     /// Consumes the builder and constructs a [`ContactChannel`](crate::types::ContactChannel).
     pub fn build(self) -> crate::types::ContactChannel {
         crate::types::ContactChannel {
-            contact_channel_arn: self.contact_channel_arn,
-            contact_arn: self.contact_arn,
-            name: self.name,
-            r#type: self.r#type,
-            delivery_address: self.delivery_address,
-            activation_status: self.activation_status,
+            contact_channel_arn: self.contact_channel_arn
+            ,
+            contact_arn: self.contact_arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            delivery_address: self.delivery_address
+            ,
+            activation_status: self.activation_status
+            ,
         }
     }
 }
+

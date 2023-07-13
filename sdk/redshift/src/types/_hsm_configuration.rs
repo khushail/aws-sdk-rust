@@ -3,7 +3,7 @@
 /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HsmConfiguration {
+pub struct HsmConfiguration  {
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
     #[doc(hidden)]
     pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct HsmConfiguration {
 }
 impl HsmConfiguration {
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
-    pub fn hsm_configuration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_configuration_identifier(&self) -> ::std::option::Option<& str> {
         self.hsm_configuration_identifier.as_deref()
     }
     /// <p>A text description of the HSM configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    pub fn hsm_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_ip_address(&self) -> ::std::option::Option<& str> {
         self.hsm_ip_address.as_deref()
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    pub fn hsm_partition_name(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_partition_name(&self) -> ::std::option::Option<& str> {
         self.hsm_partition_name.as_deref()
     }
     /// <p>The list of tags for the HSM configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl HsmConfiguration {
 
 /// A builder for [`HsmConfiguration`](crate::types::HsmConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HsmConfigurationBuilder {
     pub(crate) hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -63,20 +61,17 @@ pub struct HsmConfigurationBuilder {
 }
 impl HsmConfigurationBuilder {
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
-    pub fn hsm_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
-    pub fn set_hsm_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hsm_configuration_identifier = input;
-        self
+    pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hsm_configuration_identifier = input; self
+    }
+    /// <p>The name of the Amazon Redshift HSM configuration.</p>
+    pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_configuration_identifier
     }
     /// <p>A text description of the HSM configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,40 +80,37 @@ impl HsmConfigurationBuilder {
     }
     /// <p>A text description of the HSM configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A text description of the HSM configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    pub fn hsm_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    pub fn set_hsm_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hsm_ip_address = input;
-        self
+    pub fn set_hsm_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hsm_ip_address = input; self
+    }
+    /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    pub fn get_hsm_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_ip_address
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    pub fn hsm_partition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_partition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_partition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    pub fn set_hsm_partition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hsm_partition_name = input;
-        self
+    pub fn set_hsm_partition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hsm_partition_name = input; self
+    }
+    /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
+    pub fn get_hsm_partition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_partition_name
     }
     /// Appends an item to `tags`.
     ///
@@ -127,26 +119,32 @@ impl HsmConfigurationBuilder {
     /// <p>The list of tags for the HSM configuration.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags for the HSM configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The list of tags for the HSM configuration.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`HsmConfiguration`](crate::types::HsmConfiguration).
     pub fn build(self) -> crate::types::HsmConfiguration {
         crate::types::HsmConfiguration {
-            hsm_configuration_identifier: self.hsm_configuration_identifier,
-            description: self.description,
-            hsm_ip_address: self.hsm_ip_address,
-            hsm_partition_name: self.hsm_partition_name,
-            tags: self.tags,
+            hsm_configuration_identifier: self.hsm_configuration_identifier
+            ,
+            description: self.description
+            ,
+            hsm_ip_address: self.hsm_ip_address
+            ,
+            hsm_partition_name: self.hsm_partition_name
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

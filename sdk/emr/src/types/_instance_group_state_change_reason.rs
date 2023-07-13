@@ -3,7 +3,7 @@
 /// <p>The status change reason details for the instance group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceGroupStateChangeReason {
+pub struct InstanceGroupStateChangeReason  {
     /// <p>The programmable code for the state change reason.</p>
     #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::InstanceGroupStateChangeReasonCode>,
@@ -13,11 +13,11 @@ pub struct InstanceGroupStateChangeReason {
 }
 impl InstanceGroupStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::InstanceGroupStateChangeReasonCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::InstanceGroupStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The status change reason description.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl InstanceGroupStateChangeReason {
 
 /// A builder for [`InstanceGroupStateChangeReason`](crate::types::InstanceGroupStateChangeReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceGroupStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::InstanceGroupStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl InstanceGroupStateChangeReasonBuilder {
         self
     }
     /// <p>The programmable code for the state change reason.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceGroupStateChangeReasonCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::InstanceGroupStateChangeReasonCode>) -> Self {
+        self.code = input; self
+    }
+    /// <p>The programmable code for the state change reason.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::InstanceGroupStateChangeReasonCode> {
+        &self.code
     }
     /// <p>The status change reason description.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl InstanceGroupStateChangeReasonBuilder {
     }
     /// <p>The status change reason description.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The status change reason description.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`InstanceGroupStateChangeReason`](crate::types::InstanceGroupStateChangeReason).
     pub fn build(self) -> crate::types::InstanceGroupStateChangeReason {
         crate::types::InstanceGroupStateChangeReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

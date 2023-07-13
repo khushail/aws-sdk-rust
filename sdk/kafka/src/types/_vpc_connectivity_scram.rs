@@ -3,7 +3,7 @@
 /// <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConnectivityScram {
+pub struct VpcConnectivityScram  {
     /// <p>SASL/SCRAM authentication is on or off for VPC connectivity.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
@@ -23,9 +23,7 @@ impl VpcConnectivityScram {
 
 /// A builder for [`VpcConnectivityScram`](crate::types::VpcConnectivityScram).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConnectivityScramBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -37,13 +35,18 @@ impl VpcConnectivityScramBuilder {
     }
     /// <p>SASL/SCRAM authentication is on or off for VPC connectivity.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>SASL/SCRAM authentication is on or off for VPC connectivity.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`VpcConnectivityScram`](crate::types::VpcConnectivityScram).
     pub fn build(self) -> crate::types::VpcConnectivityScram {
         crate::types::VpcConnectivityScram {
-            enabled: self.enabled,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

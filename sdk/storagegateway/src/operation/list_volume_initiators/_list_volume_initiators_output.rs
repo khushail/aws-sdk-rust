@@ -3,7 +3,7 @@
 /// <p>ListVolumeInitiatorsOutput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVolumeInitiatorsOutput {
+pub struct ListVolumeInitiatorsOutput  {
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
     #[doc(hidden)]
     pub initiators: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -11,28 +11,25 @@ pub struct ListVolumeInitiatorsOutput {
 }
 impl ListVolumeInitiatorsOutput {
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
-    pub fn initiators(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn initiators(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.initiators.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVolumeInitiatorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListVolumeInitiatorsOutput {
     /// Creates a new builder-style object to manufacture [`ListVolumeInitiatorsOutput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsOutputBuilder {
+    pub fn builder() -> crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsOutputBuilder {
         crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVolumeInitiatorsOutput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVolumeInitiatorsOutputBuilder {
     pub(crate) initiators: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -45,32 +42,34 @@ impl ListVolumeInitiatorsOutputBuilder {
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
     pub fn initiators(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.initiators.unwrap_or_default();
-        v.push(input.into());
-        self.initiators = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.initiators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
-    pub fn set_initiators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.initiators = input;
-        self
+    pub fn set_initiators(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.initiators = input; self
+    }
+    /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
+    pub fn get_initiators(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.initiators
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListVolumeInitiatorsOutput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput).
     pub fn build(self) -> crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput {
         crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput {
-            initiators: self.initiators,
+            initiators: self.initiators
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the type of a segment requested in a call to <code>StartSegmentDetection</code>. An array of <code>SegmentTypeInfo</code> objects is returned by the response from <code>GetSegmentDetection</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentTypeInfo {
+pub struct SegmentTypeInfo  {
     /// <p>The type of a segment (technical cue or shot detection).</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SegmentType>,
@@ -13,11 +13,11 @@ pub struct SegmentTypeInfo {
 }
 impl SegmentTypeInfo {
     /// <p>The type of a segment (technical cue or shot detection).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SegmentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SegmentType> {
         self.r#type.as_ref()
     }
     /// <p>The version of the model used to detect segments.</p>
-    pub fn model_version(&self) -> ::std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl SegmentTypeInfo {
 
 /// A builder for [`SegmentTypeInfo`](crate::types::SegmentTypeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentTypeInfoBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SegmentType>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
@@ -45,30 +43,33 @@ impl SegmentTypeInfoBuilder {
     }
     /// <p>The type of a segment (technical cue or shot detection).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SegmentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of a segment (technical cue or shot detection).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SegmentType> {
+        &self.r#type
     }
     /// <p>The version of the model used to detect segments.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model used to detect segments.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.model_version = input;
-        self
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_version = input; self
+    }
+    /// <p>The version of the model used to detect segments.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
     }
     /// Consumes the builder and constructs a [`SegmentTypeInfo`](crate::types::SegmentTypeInfo).
     pub fn build(self) -> crate::types::SegmentTypeInfo {
         crate::types::SegmentTypeInfo {
-            r#type: self.r#type,
-            model_version: self.model_version,
+            r#type: self.r#type
+            ,
+            model_version: self.model_version
+            ,
         }
     }
 }
+

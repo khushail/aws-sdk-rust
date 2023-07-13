@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FinalizeCutoverInput {
+pub struct FinalizeCutoverInput  {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl FinalizeCutoverInput {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
 }
@@ -22,38 +22,32 @@ impl FinalizeCutoverInput {
 
 /// A builder for [`FinalizeCutoverInput`](crate::operation::finalize_cutover::FinalizeCutoverInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FinalizeCutoverInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl FinalizeCutoverInputBuilder {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Request to finalize Cutover by Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.source_server_id = input;
-        self
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_server_id = input; self
+    }
+    /// <p>Request to finalize Cutover by Source Server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
     }
     /// Consumes the builder and constructs a [`FinalizeCutoverInput`](crate::operation::finalize_cutover::FinalizeCutoverInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::finalize_cutover::FinalizeCutoverInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::finalize_cutover::FinalizeCutoverInput {
-            source_server_id: self.source_server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::finalize_cutover::FinalizeCutoverInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::finalize_cutover::FinalizeCutoverInput {
+                source_server_id: self.source_server_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>DeleteReplicationGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReplicationGroupInput {
+pub struct DeleteReplicationGroupInput  {
     /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct DeleteReplicationGroupInput {
 }
 impl DeleteReplicationGroupInput {
     /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>If set to <code>true</code>, all of the read replicas are deleted, but the primary node is retained.</p>
@@ -24,24 +24,20 @@ impl DeleteReplicationGroupInput {
         self.retain_primary_cluster
     }
     /// <p>The name of a final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is immediately deleted.</p>
-    pub fn final_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn final_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.final_snapshot_identifier.as_deref()
     }
 }
 impl DeleteReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationGroupInput`](crate::operation::delete_replication_group::DeleteReplicationGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_replication_group::builders::DeleteReplicationGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_replication_group::builders::DeleteReplicationGroupInputBuilder {
         crate::operation::delete_replication_group::builders::DeleteReplicationGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReplicationGroupInput`](crate::operation::delete_replication_group::DeleteReplicationGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReplicationGroupInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) retain_primary_cluster: ::std::option::Option<bool>,
@@ -49,20 +45,17 @@ pub struct DeleteReplicationGroupInputBuilder {
 }
 impl DeleteReplicationGroupInputBuilder {
     /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.replication_group_id = input;
-        self
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.replication_group_id = input; self
+    }
+    /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
     }
     /// <p>If set to <code>true</code>, all of the read replicas are deleted, but the primary node is retained.</p>
     pub fn retain_primary_cluster(mut self, input: bool) -> Self {
@@ -71,38 +64,37 @@ impl DeleteReplicationGroupInputBuilder {
     }
     /// <p>If set to <code>true</code>, all of the read replicas are deleted, but the primary node is retained.</p>
     pub fn set_retain_primary_cluster(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.retain_primary_cluster = input;
-        self
+        self.retain_primary_cluster = input; self
+    }
+    /// <p>If set to <code>true</code>, all of the read replicas are deleted, but the primary node is retained.</p>
+    pub fn get_retain_primary_cluster(&self) -> &::std::option::Option<bool> {
+        &self.retain_primary_cluster
     }
     /// <p>The name of a final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is immediately deleted.</p>
-    pub fn final_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is immediately deleted.</p>
-    pub fn set_final_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.final_snapshot_identifier = input;
-        self
+    pub fn set_final_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.final_snapshot_identifier = input; self
+    }
+    /// <p>The name of a final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is immediately deleted.</p>
+    pub fn get_final_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.final_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteReplicationGroupInput`](crate::operation::delete_replication_group::DeleteReplicationGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_replication_group::DeleteReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_group::DeleteReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_replication_group::DeleteReplicationGroupInput {
-                replication_group_id: self.replication_group_id,
-                retain_primary_cluster: self.retain_primary_cluster,
-                final_snapshot_identifier: self.final_snapshot_identifier,
-            },
+                replication_group_id: self.replication_group_id
+                ,
+                retain_primary_cluster: self.retain_primary_cluster
+                ,
+                final_snapshot_identifier: self.final_snapshot_identifier
+                ,
+            }
         )
     }
 }
+

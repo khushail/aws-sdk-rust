@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCostEstimationInput {
+pub struct GetCostEstimationInput  {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCostEstimationInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetCostEstimationInput {
     /// Creates a new builder-style object to manufacture [`GetCostEstimationInput`](crate::operation::get_cost_estimation::GetCostEstimationInput).
-    pub fn builder(
-    ) -> crate::operation::get_cost_estimation::builders::GetCostEstimationInputBuilder {
+    pub fn builder() -> crate::operation::get_cost_estimation::builders::GetCostEstimationInputBuilder {
         crate::operation::get_cost_estimation::builders::GetCostEstimationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCostEstimationInput`](crate::operation::get_cost_estimation::GetCostEstimationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostEstimationInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl GetCostEstimationInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetCostEstimationInput`](crate::operation::get_cost_estimation::GetCostEstimationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cost_estimation::GetCostEstimationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cost_estimation::GetCostEstimationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_cost_estimation::GetCostEstimationInput {
-                next_token: self.next_token,
-            },
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

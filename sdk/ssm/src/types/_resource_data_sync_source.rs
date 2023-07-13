@@ -3,14 +3,13 @@
 /// <p>Information about the source of the data included in the resource data sync.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceDataSyncSource {
+pub struct ResourceDataSyncSource  {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>SingleAccountMultiRegions</code>.</p>
     #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
     #[doc(hidden)]
-    pub aws_organizations_source:
-        ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
+    pub aws_organizations_source: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
     #[doc(hidden)]
     pub source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -23,17 +22,15 @@ pub struct ResourceDataSyncSource {
 }
 impl ResourceDataSyncSource {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>SingleAccountMultiRegions</code>.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
-    pub fn aws_organizations_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceDataSyncAwsOrganizationsSource> {
+    pub fn aws_organizations_source(&self) -> ::std::option::Option<& crate::types::ResourceDataSyncAwsOrganizationsSource> {
         self.aws_organizations_source.as_ref()
     }
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
-    pub fn source_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn source_regions(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.source_regions.as_deref()
     }
     /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>
@@ -54,13 +51,10 @@ impl ResourceDataSyncSource {
 
 /// A builder for [`ResourceDataSyncSource`](crate::types::ResourceDataSyncSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDataSyncSourceBuilder {
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
-    pub(crate) aws_organizations_source:
-        ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
+    pub(crate) aws_organizations_source: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
     pub(crate) source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include_future_regions: ::std::option::Option<bool>,
     pub(crate) enable_all_ops_data_sources: ::std::option::Option<bool>,
@@ -73,46 +67,43 @@ impl ResourceDataSyncSourceBuilder {
     }
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>SingleAccountMultiRegions</code>.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
+    }
+    /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>SingleAccountMultiRegions</code>.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
     }
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
-    pub fn aws_organizations_source(
-        mut self,
-        input: crate::types::ResourceDataSyncAwsOrganizationsSource,
-    ) -> Self {
+    pub fn aws_organizations_source(mut self, input: crate::types::ResourceDataSyncAwsOrganizationsSource) -> Self {
         self.aws_organizations_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
-    pub fn set_aws_organizations_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
-    ) -> Self {
-        self.aws_organizations_source = input;
-        self
+    pub fn set_aws_organizations_source(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>) -> Self {
+        self.aws_organizations_source = input; self
+    }
+    /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
+    pub fn get_aws_organizations_source(&self) -> &::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource> {
+        &self.aws_organizations_source
     }
     /// Appends an item to `source_regions`.
     ///
     /// To override the contents of this collection use [`set_source_regions`](Self::set_source_regions).
     ///
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
-    pub fn source_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_regions.unwrap_or_default();
-        v.push(input.into());
-        self.source_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
-    pub fn set_source_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.source_regions = input;
-        self
+    pub fn set_source_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.source_regions = input; self
+    }
+    /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
+    pub fn get_source_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_regions
     }
     /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>
     pub fn include_future_regions(mut self, input: bool) -> Self {
@@ -121,8 +112,11 @@ impl ResourceDataSyncSourceBuilder {
     }
     /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>
     pub fn set_include_future_regions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_future_regions = input;
-        self
+        self.include_future_regions = input; self
+    }
+    /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>
+    pub fn get_include_future_regions(&self) -> &::std::option::Option<bool> {
+        &self.include_future_regions
     }
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn enable_all_ops_data_sources(mut self, input: bool) -> Self {
@@ -131,17 +125,28 @@ impl ResourceDataSyncSourceBuilder {
     }
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_enable_all_ops_data_sources(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_all_ops_data_sources = input;
-        self
+        self.enable_all_ops_data_sources = input; self
+    }
+    /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_enable_all_ops_data_sources(&self) -> &::std::option::Option<bool> {
+        &self.enable_all_ops_data_sources
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncSource`](crate::types::ResourceDataSyncSource).
     pub fn build(self) -> crate::types::ResourceDataSyncSource {
         crate::types::ResourceDataSyncSource {
-            source_type: self.source_type,
-            aws_organizations_source: self.aws_organizations_source,
-            source_regions: self.source_regions,
-            include_future_regions: self.include_future_regions.unwrap_or_default(),
-            enable_all_ops_data_sources: self.enable_all_ops_data_sources.unwrap_or_default(),
+            source_type: self.source_type
+            ,
+            aws_organizations_source: self.aws_organizations_source
+            ,
+            source_regions: self.source_regions
+            ,
+            include_future_regions: self.include_future_regions
+                .unwrap_or_default()
+            ,
+            enable_all_ops_data_sources: self.enable_all_ops_data_sources
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPermissionAssociationsOutput {
+pub struct ListPermissionAssociationsOutput  {
     /// <p>A structure with information about this customer managed permission.</p>
     #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>>,
@@ -13,34 +13,31 @@ pub struct ListPermissionAssociationsOutput {
 }
 impl ListPermissionAssociationsOutput {
     /// <p>A structure with information about this customer managed permission.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::AssociatedPermission]> {
+    pub fn permissions(&self) -> ::std::option::Option<& [crate::types::AssociatedPermission]> {
         self.permissions.as_deref()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPermissionAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPermissionAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionAssociationsOutput`](crate::operation::list_permission_associations::ListPermissionAssociationsOutput).
-    pub fn builder() -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsOutputBuilder {
         crate::operation::list_permission_associations::builders::ListPermissionAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionAssociationsOutput`](crate::operation::list_permission_associations::ListPermissionAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionAssociationsOutputBuilder {
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,17 @@ impl ListPermissionAssociationsOutputBuilder {
     /// <p>A structure with information about this customer managed permission.</p>
     pub fn permissions(mut self, input: crate::types::AssociatedPermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure with information about this customer managed permission.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>>) -> Self {
+        self.permissions = input; self
+    }
+    /// <p>A structure with information about this customer managed permission.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>> {
+        &self.permissions
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,26 +68,30 @@ impl ListPermissionAssociationsOutputBuilder {
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPermissionAssociationsOutput`](crate::operation::list_permission_associations::ListPermissionAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_permission_associations::ListPermissionAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_permission_associations::ListPermissionAssociationsOutput {
         crate::operation::list_permission_associations::ListPermissionAssociationsOutput {
-            permissions: self.permissions,
-            next_token: self.next_token,
+            permissions: self.permissions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlarmConfiguration {
+pub struct AlarmConfiguration  {
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     #[doc(hidden)]
     pub ignore_poll_alarm_failure: bool,
@@ -17,7 +17,7 @@ impl AlarmConfiguration {
         self.ignore_poll_alarm_failure
     }
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
+    pub fn alarms(&self) -> ::std::option::Option<& [crate::types::Alarm]> {
         self.alarms.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AlarmConfiguration {
 
 /// A builder for [`AlarmConfiguration`](crate::types::AlarmConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmConfigurationBuilder {
     pub(crate) ignore_poll_alarm_failure: ::std::option::Option<bool>,
     pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
@@ -45,8 +43,11 @@ impl AlarmConfigurationBuilder {
     }
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     pub fn set_ignore_poll_alarm_failure(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_poll_alarm_failure = input;
-        self
+        self.ignore_poll_alarm_failure = input; self
+    }
+    /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
+    pub fn get_ignore_poll_alarm_failure(&self) -> &::std::option::Option<bool> {
+        &self.ignore_poll_alarm_failure
     }
     /// Appends an item to `alarms`.
     ///
@@ -55,23 +56,27 @@ impl AlarmConfigurationBuilder {
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-        v.push(input);
-        self.alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub fn set_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
-    ) -> Self {
-        self.alarms = input;
-        self
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>) -> Self {
+        self.alarms = input; self
+    }
+    /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
+    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alarm>> {
+        &self.alarms
     }
     /// Consumes the builder and constructs a [`AlarmConfiguration`](crate::types::AlarmConfiguration).
     pub fn build(self) -> crate::types::AlarmConfiguration {
         crate::types::AlarmConfiguration {
-            ignore_poll_alarm_failure: self.ignore_poll_alarm_failure.unwrap_or_default(),
-            alarms: self.alarms,
+            ignore_poll_alarm_failure: self.ignore_poll_alarm_failure
+                .unwrap_or_default()
+            ,
+            alarms: self.alarms
+            ,
         }
     }
 }
+

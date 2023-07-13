@@ -2,51 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterOrganizationAdminAccountInput {
+pub struct DeregisterOrganizationAdminAccountInput  {
     /// <p> The identifier for the administrator account. </p>
     #[doc(hidden)]
     pub admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterOrganizationAdminAccountInput {
     /// <p> The identifier for the administrator account. </p>
-    pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn admin_account_id(&self) -> ::std::option::Option<& str> {
         self.admin_account_id.as_deref()
     }
 }
 impl DeregisterOrganizationAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`DeregisterOrganizationAdminAccountInput`](crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput).
-    pub fn builder() -> crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountInputBuilder{
+    pub fn builder() -> crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountInputBuilder {
         crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterOrganizationAdminAccountInput`](crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterOrganizationAdminAccountInputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterOrganizationAdminAccountInputBuilder {
     /// <p> The identifier for the administrator account. </p>
-    pub fn admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the administrator account. </p>
-    pub fn set_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.admin_account_id = input;
-        self
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_account_id = input; self
+    }
+    /// <p> The identifier for the administrator account. </p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account_id
     }
     /// Consumes the builder and constructs a [`DeregisterOrganizationAdminAccountInput`](crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput {
                 admin_account_id: self.admin_account_id
@@ -55,3 +50,4 @@ impl DeregisterOrganizationAdminAccountInputBuilder {
         )
     }
 }
+

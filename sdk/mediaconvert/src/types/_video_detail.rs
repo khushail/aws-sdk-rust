@@ -3,7 +3,7 @@
 /// Contains details about the output's video stream
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoDetail {
+pub struct VideoDetail  {
     /// Height in pixels for the output
     #[doc(hidden)]
     pub height_in_px: ::std::option::Option<i32>,
@@ -30,9 +30,7 @@ impl VideoDetail {
 
 /// A builder for [`VideoDetail`](crate::types::VideoDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoDetailBuilder {
     pub(crate) height_in_px: ::std::option::Option<i32>,
     pub(crate) width_in_px: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl VideoDetailBuilder {
     }
     /// Height in pixels for the output
     pub fn set_height_in_px(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height_in_px = input;
-        self
+        self.height_in_px = input; self
+    }
+    /// Height in pixels for the output
+    pub fn get_height_in_px(&self) -> &::std::option::Option<i32> {
+        &self.height_in_px
     }
     /// Width in pixels for the output
     pub fn width_in_px(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl VideoDetailBuilder {
     }
     /// Width in pixels for the output
     pub fn set_width_in_px(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width_in_px = input;
-        self
+        self.width_in_px = input; self
+    }
+    /// Width in pixels for the output
+    pub fn get_width_in_px(&self) -> &::std::option::Option<i32> {
+        &self.width_in_px
     }
     /// Consumes the builder and constructs a [`VideoDetail`](crate::types::VideoDetail).
     pub fn build(self) -> crate::types::VideoDetail {
         crate::types::VideoDetail {
-            height_in_px: self.height_in_px,
-            width_in_px: self.width_in_px,
+            height_in_px: self.height_in_px
+            ,
+            width_in_px: self.width_in_px
+            ,
         }
     }
 }
+

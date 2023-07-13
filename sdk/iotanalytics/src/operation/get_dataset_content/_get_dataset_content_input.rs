@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDatasetContentInput {
+pub struct GetDatasetContentInput  {
     /// <p>The name of the dataset whose contents are retrieved.</p>
     #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct GetDatasetContentInput {
 }
 impl GetDatasetContentInput {
     /// <p>The name of the dataset whose contents are retrieved.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
 impl GetDatasetContentInput {
     /// Creates a new builder-style object to manufacture [`GetDatasetContentInput`](crate::operation::get_dataset_content::GetDatasetContentInput).
-    pub fn builder(
-    ) -> crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder {
+    pub fn builder() -> crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder {
         crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDatasetContentInput`](crate::operation::get_dataset_content::GetDatasetContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDatasetContentInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl GetDatasetContentInputBuilder {
     }
     /// <p>The name of the dataset whose contents are retrieved.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
+    }
+    /// <p>The name of the dataset whose contents are retrieved.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl GetDatasetContentInputBuilder {
     }
     /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
+    }
+    /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`GetDatasetContentInput`](crate::operation::get_dataset_content::GetDatasetContentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dataset_content::GetDatasetContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dataset_content::GetDatasetContentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_dataset_content::GetDatasetContentInput {
-                dataset_name: self.dataset_name,
-                version_id: self.version_id,
-            },
+                dataset_name: self.dataset_name
+                ,
+                version_id: self.version_id
+                ,
+            }
         )
     }
 }
+

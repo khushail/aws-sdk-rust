@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSecurityConfigurationsInput {
+pub struct GetSecurityConfigurationsInput  {
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -16,22 +16,20 @@ impl GetSecurityConfigurationsInput {
         self.max_results
     }
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetSecurityConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`GetSecurityConfigurationsInput`](crate::operation::get_security_configurations::GetSecurityConfigurationsInput).
-    pub fn builder() -> crate::operation::get_security_configurations::builders::GetSecurityConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::get_security_configurations::builders::GetSecurityConfigurationsInputBuilder {
         crate::operation::get_security_configurations::builders::GetSecurityConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSecurityConfigurationsInput`](crate::operation::get_security_configurations::GetSecurityConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSecurityConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetSecurityConfigurationsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,21 +55,22 @@ impl GetSecurityConfigurationsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetSecurityConfigurationsInput`](crate::operation::get_security_configurations::GetSecurityConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_security_configurations::GetSecurityConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_security_configurations::GetSecurityConfigurationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_security_configurations::GetSecurityConfigurationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

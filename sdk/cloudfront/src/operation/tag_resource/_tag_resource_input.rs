@@ -3,7 +3,7 @@
 /// <p>The request to add tags to a CloudFront resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>An ARN of a CloudFront resource.</p>
     #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct TagResourceInput {
 }
 impl TagResourceInput {
     /// <p>An ARN of a CloudFront resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
+    pub fn tags(&self) -> ::std::option::Option<& crate::types::Tags> {
         self.tags.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl TagResourceInput {
 
 /// A builder for [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagResourceInputBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<crate::types::Tags>,
@@ -45,8 +43,11 @@ impl TagResourceInputBuilder {
     }
     /// <p>An ARN of a CloudFront resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
+    }
+    /// <p>An ARN of a CloudFront resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
@@ -55,19 +56,22 @@ impl TagResourceInputBuilder {
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
-        self.tags = input;
-        self
+        self.tags = input; self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::tag_resource::TagResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::tag_resource::TagResourceInput {
-            resource: self.resource,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::tag_resource::TagResourceInput {
+                resource: self.resource
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

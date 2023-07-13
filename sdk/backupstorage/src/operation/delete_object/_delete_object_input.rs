@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteObjectInput {
+pub struct DeleteObjectInput  {
     /// Backup job Id for the in-progress backup.
     #[doc(hidden)]
     pub backup_job_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteObjectInput {
 }
 impl DeleteObjectInput {
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_job_id(&self) -> ::std::option::Option<& str> {
         self.backup_job_id.as_deref()
     }
     /// The name of the Object.
-    pub fn object_name(&self) -> ::std::option::Option<&str> {
+    pub fn object_name(&self) -> ::std::option::Option<& str> {
         self.object_name.as_deref()
     }
 }
@@ -29,29 +29,24 @@ impl DeleteObjectInput {
 
 /// A builder for [`DeleteObjectInput`](crate::operation::delete_object::DeleteObjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteObjectInputBuilder {
     pub(crate) backup_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteObjectInputBuilder {
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Backup job Id for the in-progress backup.
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.backup_job_id = input;
-        self
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_job_id = input; self
+    }
+    /// Backup job Id for the in-progress backup.
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_job_id
     }
     /// The name of the Object.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,19 +55,22 @@ impl DeleteObjectInputBuilder {
     }
     /// The name of the Object.
     pub fn set_object_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_name = input;
-        self
+        self.object_name = input; self
+    }
+    /// The name of the Object.
+    pub fn get_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_name
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::operation::delete_object::DeleteObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_object::DeleteObjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_object::DeleteObjectInput {
-            backup_job_id: self.backup_job_id,
-            object_name: self.object_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_object::DeleteObjectInput {
+                backup_job_id: self.backup_job_id
+                ,
+                object_name: self.object_name
+                ,
+            }
+        )
     }
 }
+

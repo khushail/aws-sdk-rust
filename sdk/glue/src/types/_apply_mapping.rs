@@ -3,7 +3,7 @@
 /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplyMapping {
+pub struct ApplyMapping  {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ApplyMapping {
 }
 impl ApplyMapping {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
-    pub fn mapping(&self) -> ::std::option::Option<&[crate::types::Mapping]> {
+    pub fn mapping(&self) -> ::std::option::Option<& [crate::types::Mapping]> {
         self.mapping.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ApplyMapping {
 
 /// A builder for [`ApplyMapping`](crate::types::ApplyMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplyMappingBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,8 +51,11 @@ impl ApplyMappingBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `inputs`.
     ///
@@ -63,17 +64,17 @@ impl ApplyMappingBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inputs = input; self
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// Appends an item to `mapping`.
     ///
@@ -82,24 +83,28 @@ impl ApplyMappingBuilder {
     /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
     pub fn mapping(mut self, input: crate::types::Mapping) -> Self {
         let mut v = self.mapping.unwrap_or_default();
-        v.push(input);
-        self.mapping = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mapping = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
-    pub fn set_mapping(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>,
-    ) -> Self {
-        self.mapping = input;
-        self
+    pub fn set_mapping(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>) -> Self {
+        self.mapping = input; self
+    }
+    /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
+    pub fn get_mapping(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Mapping>> {
+        &self.mapping
     }
     /// Consumes the builder and constructs a [`ApplyMapping`](crate::types::ApplyMapping).
     pub fn build(self) -> crate::types::ApplyMapping {
         crate::types::ApplyMapping {
-            name: self.name,
-            inputs: self.inputs,
-            mapping: self.mapping,
+            name: self.name
+            ,
+            inputs: self.inputs
+            ,
+            mapping: self.mapping
+            ,
         }
     }
 }
+

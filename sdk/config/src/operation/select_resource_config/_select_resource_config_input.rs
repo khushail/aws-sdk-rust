@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectResourceConfigInput {
+pub struct SelectResourceConfigInput  {
     /// <p>The SQL query <code>SELECT</code> command.</p>
     #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct SelectResourceConfigInput {
 }
 impl SelectResourceConfigInput {
     /// <p>The SQL query <code>SELECT</code> command.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The maximum number of query results returned on each page. </p>
@@ -23,23 +23,20 @@ impl SelectResourceConfigInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl SelectResourceConfigInput {
     /// Creates a new builder-style object to manufacture [`SelectResourceConfigInput`](crate::operation::select_resource_config::SelectResourceConfigInput).
-    pub fn builder(
-    ) -> crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder {
+    pub fn builder() -> crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder {
         crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`SelectResourceConfigInput`](crate::operation::select_resource_config::SelectResourceConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectResourceConfigInputBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -53,8 +50,11 @@ impl SelectResourceConfigInputBuilder {
     }
     /// <p>The SQL query <code>SELECT</code> command.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
+    }
+    /// <p>The SQL query <code>SELECT</code> command.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// <p>The maximum number of query results returned on each page. </p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -63,8 +63,11 @@ impl SelectResourceConfigInputBuilder {
     }
     /// <p>The maximum number of query results returned on each page. </p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of query results returned on each page. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,22 +76,24 @@ impl SelectResourceConfigInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`SelectResourceConfigInput`](crate::operation::select_resource_config::SelectResourceConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::select_resource_config::SelectResourceConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::select_resource_config::SelectResourceConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::select_resource_config::SelectResourceConfigInput {
-                expression: self.expression,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                expression: self.expression
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

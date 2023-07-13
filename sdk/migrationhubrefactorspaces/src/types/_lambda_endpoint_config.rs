@@ -3,14 +3,14 @@
 /// <p>The configuration for the Lambda endpoint type. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaEndpointConfig {
+pub struct LambdaEndpointConfig  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaEndpointConfig {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl LambdaEndpointConfig {
 
 /// A builder for [`LambdaEndpointConfig`](crate::types::LambdaEndpointConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaEndpointConfigBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl LambdaEndpointConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`LambdaEndpointConfig`](crate::types::LambdaEndpointConfig).
     pub fn build(self) -> crate::types::LambdaEndpointConfig {
-        crate::types::LambdaEndpointConfig { arn: self.arn }
+        crate::types::LambdaEndpointConfig {
+            arn: self.arn
+            ,
+        }
     }
 }
+

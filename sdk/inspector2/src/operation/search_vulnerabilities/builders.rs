@@ -3,128 +3,106 @@ pub use crate::operation::search_vulnerabilities::_search_vulnerabilities_output
 
 pub use crate::operation::search_vulnerabilities::_search_vulnerabilities_input::SearchVulnerabilitiesInputBuilder;
 
+impl SearchVulnerabilitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.search_vulnerabilities();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SearchVulnerabilities`.
-///
+/// 
 /// <p>Lists Amazon Inspector coverage details for a specific vulnerability.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesInputBuilder,
+                    inner: crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesInputBuilder,
 }
-impl SearchVulnerabilitiesFluentBuilder {
+impl SearchVulnerabilitiesFluentBuilder  {
     /// Creates a new `SearchVulnerabilities`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_vulnerabilities::SearchVulnerabilities,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SearchVulnerabilities as a reference.
+    pub fn as_input(&self) -> &crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::search_vulnerabilities::SearchVulnerabilities, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_vulnerabilities::SearchVulnerabilities,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::search_vulnerabilities::SearchVulnerabilities, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator {
-        crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator {
+                                crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    pub fn filter_criteria(
-        mut self,
-        input: crate::types::SearchVulnerabilitiesFilterCriteria,
-    ) -> Self {
+    pub fn filter_criteria(mut self, input: crate::types::SearchVulnerabilitiesFilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);
         self
     }
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
+    }
+    /// <p>The criteria used to filter the results of a vulnerability search.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria> {
+        self.inner.get_filter_criteria()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,4 +114,9 @@ impl SearchVulnerabilitiesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains directory limit information for a Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectoryLimits {
+pub struct DirectoryLimits  {
     /// <p>The maximum number of cloud directories allowed in the Region.</p>
     #[doc(hidden)]
     pub cloud_only_directories_limit: ::std::option::Option<i32>,
@@ -79,9 +79,7 @@ impl DirectoryLimits {
 
 /// A builder for [`DirectoryLimits`](crate::types::DirectoryLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectoryLimitsBuilder {
     pub(crate) cloud_only_directories_limit: ::std::option::Option<i32>,
     pub(crate) cloud_only_directories_current_count: ::std::option::Option<i32>,
@@ -101,8 +99,11 @@ impl DirectoryLimitsBuilder {
     }
     /// <p>The maximum number of cloud directories allowed in the Region.</p>
     pub fn set_cloud_only_directories_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cloud_only_directories_limit = input;
-        self
+        self.cloud_only_directories_limit = input; self
+    }
+    /// <p>The maximum number of cloud directories allowed in the Region.</p>
+    pub fn get_cloud_only_directories_limit(&self) -> &::std::option::Option<i32> {
+        &self.cloud_only_directories_limit
     }
     /// <p>The current number of cloud directories in the Region.</p>
     pub fn cloud_only_directories_current_count(mut self, input: i32) -> Self {
@@ -110,12 +111,12 @@ impl DirectoryLimitsBuilder {
         self
     }
     /// <p>The current number of cloud directories in the Region.</p>
-    pub fn set_cloud_only_directories_current_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.cloud_only_directories_current_count = input;
-        self
+    pub fn set_cloud_only_directories_current_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.cloud_only_directories_current_count = input; self
+    }
+    /// <p>The current number of cloud directories in the Region.</p>
+    pub fn get_cloud_only_directories_current_count(&self) -> &::std::option::Option<i32> {
+        &self.cloud_only_directories_current_count
     }
     /// <p>Indicates if the cloud directory limit has been reached.</p>
     pub fn cloud_only_directories_limit_reached(mut self, input: bool) -> Self {
@@ -123,12 +124,12 @@ impl DirectoryLimitsBuilder {
         self
     }
     /// <p>Indicates if the cloud directory limit has been reached.</p>
-    pub fn set_cloud_only_directories_limit_reached(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.cloud_only_directories_limit_reached = input;
-        self
+    pub fn set_cloud_only_directories_limit_reached(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.cloud_only_directories_limit_reached = input; self
+    }
+    /// <p>Indicates if the cloud directory limit has been reached.</p>
+    pub fn get_cloud_only_directories_limit_reached(&self) -> &::std::option::Option<bool> {
+        &self.cloud_only_directories_limit_reached
     }
     /// <p>The maximum number of Managed Microsoft AD directories allowed in the region.</p>
     pub fn cloud_only_microsoft_ad_limit(mut self, input: i32) -> Self {
@@ -137,8 +138,11 @@ impl DirectoryLimitsBuilder {
     }
     /// <p>The maximum number of Managed Microsoft AD directories allowed in the region.</p>
     pub fn set_cloud_only_microsoft_ad_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cloud_only_microsoft_ad_limit = input;
-        self
+        self.cloud_only_microsoft_ad_limit = input; self
+    }
+    /// <p>The maximum number of Managed Microsoft AD directories allowed in the region.</p>
+    pub fn get_cloud_only_microsoft_ad_limit(&self) -> &::std::option::Option<i32> {
+        &self.cloud_only_microsoft_ad_limit
     }
     /// <p>The current number of Managed Microsoft AD directories in the region.</p>
     pub fn cloud_only_microsoft_ad_current_count(mut self, input: i32) -> Self {
@@ -146,12 +150,12 @@ impl DirectoryLimitsBuilder {
         self
     }
     /// <p>The current number of Managed Microsoft AD directories in the region.</p>
-    pub fn set_cloud_only_microsoft_ad_current_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.cloud_only_microsoft_ad_current_count = input;
-        self
+    pub fn set_cloud_only_microsoft_ad_current_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.cloud_only_microsoft_ad_current_count = input; self
+    }
+    /// <p>The current number of Managed Microsoft AD directories in the region.</p>
+    pub fn get_cloud_only_microsoft_ad_current_count(&self) -> &::std::option::Option<i32> {
+        &self.cloud_only_microsoft_ad_current_count
     }
     /// <p>Indicates if the Managed Microsoft AD directory limit has been reached.</p>
     pub fn cloud_only_microsoft_ad_limit_reached(mut self, input: bool) -> Self {
@@ -159,12 +163,12 @@ impl DirectoryLimitsBuilder {
         self
     }
     /// <p>Indicates if the Managed Microsoft AD directory limit has been reached.</p>
-    pub fn set_cloud_only_microsoft_ad_limit_reached(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.cloud_only_microsoft_ad_limit_reached = input;
-        self
+    pub fn set_cloud_only_microsoft_ad_limit_reached(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.cloud_only_microsoft_ad_limit_reached = input; self
+    }
+    /// <p>Indicates if the Managed Microsoft AD directory limit has been reached.</p>
+    pub fn get_cloud_only_microsoft_ad_limit_reached(&self) -> &::std::option::Option<bool> {
+        &self.cloud_only_microsoft_ad_limit_reached
     }
     /// <p>The maximum number of connected directories allowed in the Region.</p>
     pub fn connected_directories_limit(mut self, input: i32) -> Self {
@@ -173,8 +177,11 @@ impl DirectoryLimitsBuilder {
     }
     /// <p>The maximum number of connected directories allowed in the Region.</p>
     pub fn set_connected_directories_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.connected_directories_limit = input;
-        self
+        self.connected_directories_limit = input; self
+    }
+    /// <p>The maximum number of connected directories allowed in the Region.</p>
+    pub fn get_connected_directories_limit(&self) -> &::std::option::Option<i32> {
+        &self.connected_directories_limit
     }
     /// <p>The current number of connected directories in the Region.</p>
     pub fn connected_directories_current_count(mut self, input: i32) -> Self {
@@ -182,12 +189,12 @@ impl DirectoryLimitsBuilder {
         self
     }
     /// <p>The current number of connected directories in the Region.</p>
-    pub fn set_connected_directories_current_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.connected_directories_current_count = input;
-        self
+    pub fn set_connected_directories_current_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.connected_directories_current_count = input; self
+    }
+    /// <p>The current number of connected directories in the Region.</p>
+    pub fn get_connected_directories_current_count(&self) -> &::std::option::Option<i32> {
+        &self.connected_directories_current_count
     }
     /// <p>Indicates if the connected directory limit has been reached.</p>
     pub fn connected_directories_limit_reached(mut self, input: bool) -> Self {
@@ -195,31 +202,38 @@ impl DirectoryLimitsBuilder {
         self
     }
     /// <p>Indicates if the connected directory limit has been reached.</p>
-    pub fn set_connected_directories_limit_reached(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.connected_directories_limit_reached = input;
-        self
+    pub fn set_connected_directories_limit_reached(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.connected_directories_limit_reached = input; self
+    }
+    /// <p>Indicates if the connected directory limit has been reached.</p>
+    pub fn get_connected_directories_limit_reached(&self) -> &::std::option::Option<bool> {
+        &self.connected_directories_limit_reached
     }
     /// Consumes the builder and constructs a [`DirectoryLimits`](crate::types::DirectoryLimits).
     pub fn build(self) -> crate::types::DirectoryLimits {
         crate::types::DirectoryLimits {
-            cloud_only_directories_limit: self.cloud_only_directories_limit,
-            cloud_only_directories_current_count: self.cloud_only_directories_current_count,
-            cloud_only_directories_limit_reached: self
-                .cloud_only_directories_limit_reached
-                .unwrap_or_default(),
-            cloud_only_microsoft_ad_limit: self.cloud_only_microsoft_ad_limit,
-            cloud_only_microsoft_ad_current_count: self.cloud_only_microsoft_ad_current_count,
-            cloud_only_microsoft_ad_limit_reached: self
-                .cloud_only_microsoft_ad_limit_reached
-                .unwrap_or_default(),
-            connected_directories_limit: self.connected_directories_limit,
-            connected_directories_current_count: self.connected_directories_current_count,
-            connected_directories_limit_reached: self
-                .connected_directories_limit_reached
-                .unwrap_or_default(),
+            cloud_only_directories_limit: self.cloud_only_directories_limit
+            ,
+            cloud_only_directories_current_count: self.cloud_only_directories_current_count
+            ,
+            cloud_only_directories_limit_reached: self.cloud_only_directories_limit_reached
+                .unwrap_or_default()
+            ,
+            cloud_only_microsoft_ad_limit: self.cloud_only_microsoft_ad_limit
+            ,
+            cloud_only_microsoft_ad_current_count: self.cloud_only_microsoft_ad_current_count
+            ,
+            cloud_only_microsoft_ad_limit_reached: self.cloud_only_microsoft_ad_limit_reached
+                .unwrap_or_default()
+            ,
+            connected_directories_limit: self.connected_directories_limit
+            ,
+            connected_directories_current_count: self.connected_directories_current_count
+            ,
+            connected_directories_limit_reached: self.connected_directories_limit_reached
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

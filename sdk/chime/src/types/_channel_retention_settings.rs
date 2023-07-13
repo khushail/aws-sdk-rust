@@ -3,7 +3,7 @@
 /// <p>The details of the retention settings for a channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelRetentionSettings {
+pub struct ChannelRetentionSettings  {
     /// <p>The time in days to retain the messages in a channel.</p>
     #[doc(hidden)]
     pub retention_days: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl ChannelRetentionSettings {
 
 /// A builder for [`ChannelRetentionSettings`](crate::types::ChannelRetentionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelRetentionSettingsBuilder {
     pub(crate) retention_days: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl ChannelRetentionSettingsBuilder {
     }
     /// <p>The time in days to retain the messages in a channel.</p>
     pub fn set_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_days = input;
-        self
+        self.retention_days = input; self
+    }
+    /// <p>The time in days to retain the messages in a channel.</p>
+    pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
+        &self.retention_days
     }
     /// Consumes the builder and constructs a [`ChannelRetentionSettings`](crate::types::ChannelRetentionSettings).
     pub fn build(self) -> crate::types::ChannelRetentionSettings {
         crate::types::ChannelRetentionSettings {
-            retention_days: self.retention_days,
+            retention_days: self.retention_days
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPeeringsInput {
+pub struct ListPeeringsInput  {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
@@ -24,19 +24,19 @@ pub struct ListPeeringsInput {
 }
 impl ListPeeringsInput {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>Returns a list of a peering requests.</p>
-    pub fn peering_type(&self) -> ::std::option::Option<&crate::types::PeeringType> {
+    pub fn peering_type(&self) -> ::std::option::Option<& crate::types::PeeringType> {
         self.peering_type.as_ref()
     }
     /// <p>Returns a list edge locations for the </p>
-    pub fn edge_location(&self) -> ::std::option::Option<&str> {
+    pub fn edge_location(&self) -> ::std::option::Option<& str> {
         self.edge_location.as_deref()
     }
     /// <p>Returns a list of the peering request states.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::PeeringState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::PeeringState> {
         self.state.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -44,7 +44,7 @@ impl ListPeeringsInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -57,9 +57,7 @@ impl ListPeeringsInput {
 
 /// A builder for [`ListPeeringsInput`](crate::operation::list_peerings::ListPeeringsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPeeringsInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) peering_type: ::std::option::Option<crate::types::PeeringType>,
@@ -70,20 +68,17 @@ pub struct ListPeeringsInputBuilder {
 }
 impl ListPeeringsInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.core_network_id = input;
-        self
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.core_network_id = input; self
+    }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
     }
     /// <p>Returns a list of a peering requests.</p>
     pub fn peering_type(mut self, input: crate::types::PeeringType) -> Self {
@@ -91,28 +86,25 @@ impl ListPeeringsInputBuilder {
         self
     }
     /// <p>Returns a list of a peering requests.</p>
-    pub fn set_peering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PeeringType>,
-    ) -> Self {
-        self.peering_type = input;
-        self
+    pub fn set_peering_type(mut self, input: ::std::option::Option<crate::types::PeeringType>) -> Self {
+        self.peering_type = input; self
+    }
+    /// <p>Returns a list of a peering requests.</p>
+    pub fn get_peering_type(&self) -> &::std::option::Option<crate::types::PeeringType> {
+        &self.peering_type
     }
     /// <p>Returns a list edge locations for the </p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns a list edge locations for the </p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.edge_location = input;
-        self
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.edge_location = input; self
+    }
+    /// <p>Returns a list edge locations for the </p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
     }
     /// <p>Returns a list of the peering request states.</p>
     pub fn state(mut self, input: crate::types::PeeringState) -> Self {
@@ -121,8 +113,11 @@ impl ListPeeringsInputBuilder {
     }
     /// <p>Returns a list of the peering request states.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PeeringState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>Returns a list of the peering request states.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::PeeringState> {
+        &self.state
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -131,8 +126,11 @@ impl ListPeeringsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,23 +139,30 @@ impl ListPeeringsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPeeringsInput`](crate::operation::list_peerings::ListPeeringsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_peerings::ListPeeringsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_peerings::ListPeeringsInput {
-            core_network_id: self.core_network_id,
-            peering_type: self.peering_type,
-            edge_location: self.edge_location,
-            state: self.state,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_peerings::ListPeeringsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_peerings::ListPeeringsInput {
+                core_network_id: self.core_network_id
+                ,
+                peering_type: self.peering_type
+                ,
+                edge_location: self.edge_location
+                ,
+                state: self.state
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

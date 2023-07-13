@@ -3,12 +3,10 @@
 /// <p>The amount of Savings Plans eligible usage that's covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SavingsPlansCoverage {
+pub struct SavingsPlansCoverage  {
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
     #[doc(hidden)]
     pub coverage: ::std::option::Option<crate::types::SavingsPlansCoverageData>,
@@ -18,19 +16,15 @@ pub struct SavingsPlansCoverage {
 }
 impl SavingsPlansCoverage {
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
-    pub fn coverage(&self) -> ::std::option::Option<&crate::types::SavingsPlansCoverageData> {
+    pub fn coverage(&self) -> ::std::option::Option<& crate::types::SavingsPlansCoverageData> {
         self.coverage.as_ref()
     }
     /// <p>The time period of the request. </p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
 }
@@ -43,13 +37,9 @@ impl SavingsPlansCoverage {
 
 /// A builder for [`SavingsPlansCoverage`](crate::types::SavingsPlansCoverage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlansCoverageBuilder {
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) coverage: ::std::option::Option<crate::types::SavingsPlansCoverageData>,
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
 }
@@ -59,25 +49,19 @@ impl SavingsPlansCoverageBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
+    }
+    /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.attributes
     }
     /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
     pub fn coverage(mut self, input: crate::types::SavingsPlansCoverageData) -> Self {
@@ -85,12 +69,12 @@ impl SavingsPlansCoverageBuilder {
         self
     }
     /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
-    pub fn set_coverage(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlansCoverageData>,
-    ) -> Self {
-        self.coverage = input;
-        self
+    pub fn set_coverage(mut self, input: ::std::option::Option<crate::types::SavingsPlansCoverageData>) -> Self {
+        self.coverage = input; self
+    }
+    /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
+    pub fn get_coverage(&self) -> &::std::option::Option<crate::types::SavingsPlansCoverageData> {
+        &self.coverage
     }
     /// <p>The time period of the request. </p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
@@ -98,19 +82,23 @@ impl SavingsPlansCoverageBuilder {
         self
     }
     /// <p>The time period of the request. </p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
-        self.time_period = input;
-        self
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
+        self.time_period = input; self
+    }
+    /// <p>The time period of the request. </p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        &self.time_period
     }
     /// Consumes the builder and constructs a [`SavingsPlansCoverage`](crate::types::SavingsPlansCoverage).
     pub fn build(self) -> crate::types::SavingsPlansCoverage {
         crate::types::SavingsPlansCoverage {
-            attributes: self.attributes,
-            coverage: self.coverage,
-            time_period: self.time_period,
+            attributes: self.attributes
+            ,
+            coverage: self.coverage
+            ,
+            time_period: self.time_period
+            ,
         }
     }
 }
+

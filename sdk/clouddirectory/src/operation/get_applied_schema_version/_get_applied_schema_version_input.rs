@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAppliedSchemaVersionInput {
+pub struct GetAppliedSchemaVersionInput  {
     /// <p>The ARN of the applied schema.</p>
     #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAppliedSchemaVersionInput {
     /// <p>The ARN of the applied schema.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
 impl GetAppliedSchemaVersionInput {
     /// Creates a new builder-style object to manufacture [`GetAppliedSchemaVersionInput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder {
         crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppliedSchemaVersionInput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppliedSchemaVersionInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetAppliedSchemaVersionInputBuilder {
     }
     /// <p>The ARN of the applied schema.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
+    }
+    /// <p>The ARN of the applied schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// Consumes the builder and constructs a [`GetAppliedSchemaVersionInput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput {
-                schema_arn: self.schema_arn,
-            },
+                schema_arn: self.schema_arn
+                ,
+            }
         )
     }
 }
+

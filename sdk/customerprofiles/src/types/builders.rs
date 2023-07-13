@@ -17,6 +17,16 @@ pub use crate::types::_job_schedule::JobScheduleBuilder;
 
 pub use crate::types::_matching_request::MatchingRequestBuilder;
 
+pub use crate::types::_attribute_details::AttributeDetailsBuilder;
+
+pub use crate::types::_attribute_item::AttributeItemBuilder;
+
+pub use crate::types::_conditions::ConditionsBuilder;
+
+pub use crate::types::_threshold::ThresholdBuilder;
+
+pub use crate::types::_range::RangeBuilder;
+
 pub use crate::types::_profile::ProfileBuilder;
 
 pub use crate::types::_found_by_key_value::FoundByKeyValueBuilder;
@@ -79,7 +89,15 @@ pub use crate::types::_s3_exporting_location::S3ExportingLocationBuilder;
 
 pub use crate::types::_job_stats::JobStatsBuilder;
 
+pub use crate::types::_event_stream_summary::EventStreamSummaryBuilder;
+
+pub use crate::types::_destination_summary::DestinationSummaryBuilder;
+
 pub use crate::types::_list_domain_item::ListDomainItemBuilder;
+
+pub use crate::types::_list_calculated_attribute_for_profile_item::ListCalculatedAttributeForProfileItemBuilder;
+
+pub use crate::types::_list_calculated_attribute_definition_item::ListCalculatedAttributeDefinitionItemBuilder;
 
 pub use crate::types::_workflow_step_item::WorkflowStepItemBuilder;
 
@@ -95,6 +113,8 @@ pub use crate::types::_appflow_integration_workflow_attributes::AppflowIntegrati
 
 pub use crate::types::_match_item::MatchItemBuilder;
 
+pub use crate::types::_event_stream_destination_details::EventStreamDestinationDetailsBuilder;
+
 pub use crate::types::_domain_stats::DomainStatsBuilder;
 
 pub use crate::types::_integration_config::IntegrationConfigBuilder;
@@ -102,3 +122,4 @@ pub use crate::types::_integration_config::IntegrationConfigBuilder;
 pub use crate::types::_appflow_integration::AppflowIntegrationBuilder;
 
 pub use crate::types::_batch::BatchBuilder;
+

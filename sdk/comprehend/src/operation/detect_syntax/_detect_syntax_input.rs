@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DetectSyntaxInput {
+pub struct DetectSyntaxInput  {
     /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
     #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
@@ -12,15 +12,15 @@ pub struct DetectSyntaxInput {
 }
 impl DetectSyntaxInput {
     /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::SyntaxLanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::SyntaxLanguageCode> {
         self.language_code.as_ref()
     }
 }
-impl ::std::fmt::Debug for DetectSyntaxInput {
+impl  ::std::fmt::Debug for DetectSyntaxInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DetectSyntaxInput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -50,8 +50,11 @@ impl DetectSyntaxInputBuilder {
     }
     /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
     pub fn language_code(mut self, input: crate::types::SyntaxLanguageCode) -> Self {
@@ -59,24 +62,23 @@ impl DetectSyntaxInputBuilder {
         self
     }
     /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::SyntaxLanguageCode>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::SyntaxLanguageCode>) -> Self {
+        self.language_code = input; self
+    }
+    /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::SyntaxLanguageCode> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`DetectSyntaxInput`](crate::operation::detect_syntax::DetectSyntaxInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_syntax::DetectSyntaxInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detect_syntax::DetectSyntaxInput {
-            text: self.text,
-            language_code: self.language_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_syntax::DetectSyntaxInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_syntax::DetectSyntaxInput {
+                text: self.text
+                ,
+                language_code: self.language_code
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DetectSyntaxInputBuilder {
@@ -87,3 +89,4 @@ impl ::std::fmt::Debug for DetectSyntaxInputBuilder {
         formatter.finish()
     }
 }
+

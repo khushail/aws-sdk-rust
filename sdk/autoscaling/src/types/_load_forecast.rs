@@ -3,7 +3,7 @@
 /// <p>A <code>GetPredictiveScalingForecast</code> call returns the load forecast for a predictive scaling policy. This structure includes the data points for that load forecast, along with the timestamps of those data points and the metric specification. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadForecast {
+pub struct LoadForecast  {
     /// <p>The timestamps for the data points, in UTC format.</p>
     #[doc(hidden)]
     pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
@@ -12,22 +12,19 @@ pub struct LoadForecast {
     pub values: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The metric specification for the load forecast.</p>
     #[doc(hidden)]
-    pub metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
+    pub metric_specification: ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
 }
 impl LoadForecast {
     /// <p>The timestamps for the data points, in UTC format.</p>
-    pub fn timestamps(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
+    pub fn timestamps(&self) -> ::std::option::Option<& [::aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
     /// <p>The values of the data points.</p>
-    pub fn values(&self) -> ::std::option::Option<&[f64]> {
+    pub fn values(&self) -> ::std::option::Option<& [f64]> {
         self.values.as_deref()
     }
     /// <p>The metric specification for the load forecast.</p>
-    pub fn metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingMetricSpecification> {
+    pub fn metric_specification(&self) -> ::std::option::Option<& crate::types::PredictiveScalingMetricSpecification> {
         self.metric_specification.as_ref()
     }
 }
@@ -40,14 +37,11 @@ impl LoadForecast {
 
 /// A builder for [`LoadForecast`](crate::types::LoadForecast).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadForecastBuilder {
     pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<f64>>,
-    pub(crate) metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
+    pub(crate) metric_specification: ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
 }
 impl LoadForecastBuilder {
     /// Appends an item to `timestamps`.
@@ -57,17 +51,17 @@ impl LoadForecastBuilder {
     /// <p>The timestamps for the data points, in UTC format.</p>
     pub fn timestamps(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
-        v.push(input);
-        self.timestamps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timestamps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The timestamps for the data points, in UTC format.</p>
-    pub fn set_timestamps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
-        self.timestamps = input;
-        self
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
+        self.timestamps = input; self
+    }
+    /// <p>The timestamps for the data points, in UTC format.</p>
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.timestamps
     }
     /// Appends an item to `values`.
     ///
@@ -76,37 +70,41 @@ impl LoadForecastBuilder {
     /// <p>The values of the data points.</p>
     pub fn values(mut self, input: f64) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the data points.</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.values = input;
-        self
+        self.values = input; self
+    }
+    /// <p>The values of the data points.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.values
     }
     /// <p>The metric specification for the load forecast.</p>
-    pub fn metric_specification(
-        mut self,
-        input: crate::types::PredictiveScalingMetricSpecification,
-    ) -> Self {
+    pub fn metric_specification(mut self, input: crate::types::PredictiveScalingMetricSpecification) -> Self {
         self.metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metric specification for the load forecast.</p>
-    pub fn set_metric_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
-    ) -> Self {
-        self.metric_specification = input;
-        self
+    pub fn set_metric_specification(mut self, input: ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>) -> Self {
+        self.metric_specification = input; self
+    }
+    /// <p>The metric specification for the load forecast.</p>
+    pub fn get_metric_specification(&self) -> &::std::option::Option<crate::types::PredictiveScalingMetricSpecification> {
+        &self.metric_specification
     }
     /// Consumes the builder and constructs a [`LoadForecast`](crate::types::LoadForecast).
     pub fn build(self) -> crate::types::LoadForecast {
         crate::types::LoadForecast {
-            timestamps: self.timestamps,
-            values: self.values,
-            metric_specification: self.metric_specification,
+            timestamps: self.timestamps
+            ,
+            values: self.values
+            ,
+            metric_specification: self.metric_specification
+            ,
         }
     }
 }
+

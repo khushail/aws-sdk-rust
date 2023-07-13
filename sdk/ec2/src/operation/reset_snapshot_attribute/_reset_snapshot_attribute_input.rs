@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetSnapshotAttributeInput {
+pub struct ResetSnapshotAttributeInput  {
     /// <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
     #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::SnapshotAttributeName>,
@@ -15,11 +15,11 @@ pub struct ResetSnapshotAttributeInput {
 }
 impl ResetSnapshotAttributeInput {
     /// <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::SnapshotAttributeName> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::SnapshotAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,18 +29,14 @@ impl ResetSnapshotAttributeInput {
 }
 impl ResetSnapshotAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetSnapshotAttributeInput`](crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeInputBuilder {
         crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetSnapshotAttributeInput`](crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetSnapshotAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SnapshotAttributeName>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -53,12 +49,12 @@ impl ResetSnapshotAttributeInputBuilder {
         self
     }
     /// <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotAttributeName>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SnapshotAttributeName>) -> Self {
+        self.attribute = input; self
+    }
+    /// <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::SnapshotAttributeName> {
+        &self.attribute
     }
     /// <p>The ID of the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,8 +63,11 @@ impl ResetSnapshotAttributeInputBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
+    }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -77,22 +76,24 @@ impl ResetSnapshotAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ResetSnapshotAttributeInput`](crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput {
-                attribute: self.attribute,
-                snapshot_id: self.snapshot_id,
-                dry_run: self.dry_run,
-            },
+                attribute: self.attribute
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

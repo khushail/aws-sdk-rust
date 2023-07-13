@@ -3,7 +3,7 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputParallelism {
+pub struct InputParallelism  {
     /// <p>The number of in-application streams to create.</p>
     #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl InputParallelism {
 
 /// A builder for [`InputParallelism`](crate::types::InputParallelism).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputParallelismBuilder {
     pub(crate) count: ::std::option::Option<i32>,
 }
@@ -37,11 +35,18 @@ impl InputParallelismBuilder {
     }
     /// <p>The number of in-application streams to create.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
+    }
+    /// <p>The number of in-application streams to create.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`InputParallelism`](crate::types::InputParallelism).
     pub fn build(self) -> crate::types::InputParallelism {
-        crate::types::InputParallelism { count: self.count }
+        crate::types::InputParallelism {
+            count: self.count
+            ,
+        }
     }
 }
+

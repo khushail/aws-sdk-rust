@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -29,62 +29,56 @@ pub struct UpdateApplicationInput {
     pub app_block_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes to delete for an application.</p>
     #[doc(hidden)]
-    pub attributes_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>>,
+    pub attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>>,
 }
 impl UpdateApplicationInput {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The icon S3 location of the application.</p>
-    pub fn icon_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn icon_s3_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.icon_s3_location.as_ref()
     }
     /// <p>The launch path of the application.</p>
-    pub fn launch_path(&self) -> ::std::option::Option<&str> {
+    pub fn launch_path(&self) -> ::std::option::Option<& str> {
         self.launch_path.as_deref()
     }
     /// <p>The working directory of the application.</p>
-    pub fn working_directory(&self) -> ::std::option::Option<&str> {
+    pub fn working_directory(&self) -> ::std::option::Option<& str> {
         self.working_directory.as_deref()
     }
     /// <p>The launch parameters of the application.</p>
-    pub fn launch_parameters(&self) -> ::std::option::Option<&str> {
+    pub fn launch_parameters(&self) -> ::std::option::Option<& str> {
         self.launch_parameters.as_deref()
     }
     /// <p>The ARN of the app block.</p>
-    pub fn app_block_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_block_arn(&self) -> ::std::option::Option<& str> {
         self.app_block_arn.as_deref()
     }
     /// <p>The attributes to delete for an application.</p>
-    pub fn attributes_to_delete(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationAttribute]> {
+    pub fn attributes_to_delete(&self) -> ::std::option::Option<& [crate::types::ApplicationAttribute]> {
         self.attributes_to_delete.as_deref()
     }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         crate::operation::update_application::builders::UpdateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -94,8 +88,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
     pub(crate) launch_parameters: ::std::option::Option<::std::string::String>,
     pub(crate) app_block_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>>,
+    pub(crate) attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
@@ -105,8 +98,11 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,8 +111,11 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
+    }
+    /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,8 +124,11 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The description of the application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The icon S3 location of the application.</p>
     pub fn icon_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -134,12 +136,12 @@ impl UpdateApplicationInputBuilder {
         self
     }
     /// <p>The icon S3 location of the application.</p>
-    pub fn set_icon_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
-        self.icon_s3_location = input;
-        self
+    pub fn set_icon_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
+        self.icon_s3_location = input; self
+    }
+    /// <p>The icon S3 location of the application.</p>
+    pub fn get_icon_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.icon_s3_location
     }
     /// <p>The launch path of the application.</p>
     pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,56 +150,50 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The launch path of the application.</p>
     pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_path = input;
-        self
+        self.launch_path = input; self
+    }
+    /// <p>The launch path of the application.</p>
+    pub fn get_launch_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_path
     }
     /// <p>The working directory of the application.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The working directory of the application.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.working_directory = input;
-        self
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.working_directory = input; self
+    }
+    /// <p>The working directory of the application.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.working_directory
     }
     /// <p>The launch parameters of the application.</p>
-    pub fn launch_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The launch parameters of the application.</p>
-    pub fn set_launch_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.launch_parameters = input;
-        self
+    pub fn set_launch_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.launch_parameters = input; self
+    }
+    /// <p>The launch parameters of the application.</p>
+    pub fn get_launch_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_parameters
     }
     /// <p>The ARN of the app block.</p>
-    pub fn app_block_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the app block.</p>
-    pub fn set_app_block_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.app_block_arn = input;
-        self
+    pub fn set_app_block_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_block_arn = input; self
+    }
+    /// <p>The ARN of the app block.</p>
+    pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_block_arn
     }
     /// Appends an item to `attributes_to_delete`.
     ///
@@ -206,37 +202,42 @@ impl UpdateApplicationInputBuilder {
     /// <p>The attributes to delete for an application.</p>
     pub fn attributes_to_delete(mut self, input: crate::types::ApplicationAttribute) -> Self {
         let mut v = self.attributes_to_delete.unwrap_or_default();
-        v.push(input);
-        self.attributes_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes to delete for an application.</p>
-    pub fn set_attributes_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>>,
-    ) -> Self {
-        self.attributes_to_delete = input;
-        self
+    pub fn set_attributes_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>>) -> Self {
+        self.attributes_to_delete = input; self
+    }
+    /// <p>The attributes to delete for an application.</p>
+    pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>> {
+        &self.attributes_to_delete
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application::UpdateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_application::UpdateApplicationInput {
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
-                icon_s3_location: self.icon_s3_location,
-                launch_path: self.launch_path,
-                working_directory: self.working_directory,
-                launch_parameters: self.launch_parameters,
-                app_block_arn: self.app_block_arn,
-                attributes_to_delete: self.attributes_to_delete,
-            },
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                icon_s3_location: self.icon_s3_location
+                ,
+                launch_path: self.launch_path
+                ,
+                working_directory: self.working_directory
+                ,
+                launch_parameters: self.launch_parameters
+                ,
+                app_block_arn: self.app_block_arn
+                ,
+                attributes_to_delete: self.attributes_to_delete
+                ,
+            }
         )
     }
 }
+

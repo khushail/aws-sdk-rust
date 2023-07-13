@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceInstanceInput {
+pub struct GetServiceInstanceInput  {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct GetServiceInstanceInput {
 }
 impl GetServiceInstanceInput {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the service that you want the service instance input for.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
 impl GetServiceInstanceInput {
     /// Creates a new builder-style object to manufacture [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder {
+    pub fn builder() -> crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder {
         crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl GetServiceInstanceInputBuilder {
     }
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of a service instance that you want to get the detailed data for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the service that you want the service instance input for.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl GetServiceInstanceInputBuilder {
     }
     /// <p>The name of the service that you want the service instance input for.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
+    }
+    /// <p>The name of the service that you want the service instance input for.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_instance::GetServiceInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_instance::GetServiceInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_service_instance::GetServiceInstanceInput {
-                name: self.name,
-                service_name: self.service_name,
-            },
+                name: self.name
+                ,
+                service_name: self.service_name
+                ,
+            }
         )
     }
 }
+

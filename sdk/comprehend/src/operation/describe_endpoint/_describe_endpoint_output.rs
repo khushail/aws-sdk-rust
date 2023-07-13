@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointOutput {
+pub struct DescribeEndpointOutput  {
     /// <p>Describes information associated with the specific endpoint.</p>
     #[doc(hidden)]
     pub endpoint_properties: ::std::option::Option<crate::types::EndpointProperties>,
@@ -10,28 +10,25 @@ pub struct DescribeEndpointOutput {
 }
 impl DescribeEndpointOutput {
     /// <p>Describes information associated with the specific endpoint.</p>
-    pub fn endpoint_properties(&self) -> ::std::option::Option<&crate::types::EndpointProperties> {
+    pub fn endpoint_properties(&self) -> ::std::option::Option<& crate::types::EndpointProperties> {
         self.endpoint_properties.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
-    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder {
         crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointOutputBuilder {
     pub(crate) endpoint_properties: ::std::option::Option<crate::types::EndpointProperties>,
     _request_id: Option<String>,
@@ -43,27 +40,29 @@ impl DescribeEndpointOutputBuilder {
         self
     }
     /// <p>Describes information associated with the specific endpoint.</p>
-    pub fn set_endpoint_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointProperties>,
-    ) -> Self {
-        self.endpoint_properties = input;
-        self
+    pub fn set_endpoint_properties(mut self, input: ::std::option::Option<crate::types::EndpointProperties>) -> Self {
+        self.endpoint_properties = input; self
+    }
+    /// <p>Describes information associated with the specific endpoint.</p>
+    pub fn get_endpoint_properties(&self) -> &::std::option::Option<crate::types::EndpointProperties> {
+        &self.endpoint_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
     pub fn build(self) -> crate::operation::describe_endpoint::DescribeEndpointOutput {
         crate::operation::describe_endpoint::DescribeEndpointOutput {
-            endpoint_properties: self.endpoint_properties,
+            endpoint_properties: self.endpoint_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

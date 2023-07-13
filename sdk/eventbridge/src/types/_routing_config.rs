@@ -3,14 +3,14 @@
 /// <p>The routing configuration of the endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoutingConfig {
+pub struct RoutingConfig  {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
     #[doc(hidden)]
     pub failover_config: ::std::option::Option<crate::types::FailoverConfig>,
 }
 impl RoutingConfig {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
-    pub fn failover_config(&self) -> ::std::option::Option<&crate::types::FailoverConfig> {
+    pub fn failover_config(&self) -> ::std::option::Option<& crate::types::FailoverConfig> {
         self.failover_config.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl RoutingConfig {
 
 /// A builder for [`RoutingConfig`](crate::types::RoutingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoutingConfigBuilder {
     pub(crate) failover_config: ::std::option::Option<crate::types::FailoverConfig>,
 }
@@ -36,17 +34,19 @@ impl RoutingConfigBuilder {
         self
     }
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
-    pub fn set_failover_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FailoverConfig>,
-    ) -> Self {
-        self.failover_config = input;
-        self
+    pub fn set_failover_config(mut self, input: ::std::option::Option<crate::types::FailoverConfig>) -> Self {
+        self.failover_config = input; self
+    }
+    /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
+    pub fn get_failover_config(&self) -> &::std::option::Option<crate::types::FailoverConfig> {
+        &self.failover_config
     }
     /// Consumes the builder and constructs a [`RoutingConfig`](crate::types::RoutingConfig).
     pub fn build(self) -> crate::types::RoutingConfig {
         crate::types::RoutingConfig {
-            failover_config: self.failover_config,
+            failover_config: self.failover_config
+            ,
         }
     }
 }
+

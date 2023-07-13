@@ -3,7 +3,7 @@
 /// <p>The market (purchasing) option for the instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateInstanceMarketOptions {
+pub struct LaunchTemplateInstanceMarketOptions  {
     /// <p>The market type.</p>
     #[doc(hidden)]
     pub market_type: ::std::option::Option<crate::types::MarketType>,
@@ -13,13 +13,11 @@ pub struct LaunchTemplateInstanceMarketOptions {
 }
 impl LaunchTemplateInstanceMarketOptions {
     /// <p>The market type.</p>
-    pub fn market_type(&self) -> ::std::option::Option<&crate::types::MarketType> {
+    pub fn market_type(&self) -> ::std::option::Option<& crate::types::MarketType> {
         self.market_type.as_ref()
     }
     /// <p>The options for Spot Instances.</p>
-    pub fn spot_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateSpotMarketOptions> {
+    pub fn spot_options(&self) -> ::std::option::Option<& crate::types::LaunchTemplateSpotMarketOptions> {
         self.spot_options.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl LaunchTemplateInstanceMarketOptions {
 
 /// A builder for [`LaunchTemplateInstanceMarketOptions`](crate::types::LaunchTemplateInstanceMarketOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateInstanceMarketOptionsBuilder {
     pub(crate) market_type: ::std::option::Option<crate::types::MarketType>,
     pub(crate) spot_options: ::std::option::Option<crate::types::LaunchTemplateSpotMarketOptions>,
@@ -46,12 +42,12 @@ impl LaunchTemplateInstanceMarketOptionsBuilder {
         self
     }
     /// <p>The market type.</p>
-    pub fn set_market_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MarketType>,
-    ) -> Self {
-        self.market_type = input;
-        self
+    pub fn set_market_type(mut self, input: ::std::option::Option<crate::types::MarketType>) -> Self {
+        self.market_type = input; self
+    }
+    /// <p>The market type.</p>
+    pub fn get_market_type(&self) -> &::std::option::Option<crate::types::MarketType> {
+        &self.market_type
     }
     /// <p>The options for Spot Instances.</p>
     pub fn spot_options(mut self, input: crate::types::LaunchTemplateSpotMarketOptions) -> Self {
@@ -59,18 +55,21 @@ impl LaunchTemplateInstanceMarketOptionsBuilder {
         self
     }
     /// <p>The options for Spot Instances.</p>
-    pub fn set_spot_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateSpotMarketOptions>,
-    ) -> Self {
-        self.spot_options = input;
-        self
+    pub fn set_spot_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpotMarketOptions>) -> Self {
+        self.spot_options = input; self
+    }
+    /// <p>The options for Spot Instances.</p>
+    pub fn get_spot_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpotMarketOptions> {
+        &self.spot_options
     }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceMarketOptions`](crate::types::LaunchTemplateInstanceMarketOptions).
     pub fn build(self) -> crate::types::LaunchTemplateInstanceMarketOptions {
         crate::types::LaunchTemplateInstanceMarketOptions {
-            market_type: self.market_type,
-            spot_options: self.spot_options,
+            market_type: self.market_type
+            ,
+            spot_options: self.spot_options
+            ,
         }
     }
 }
+

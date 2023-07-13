@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEntityOutput {
+pub struct DescribeEntityOutput  {
     /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
     #[doc(hidden)]
     pub entity_type: ::std::option::Option<::std::string::String>,
@@ -22,31 +22,31 @@ pub struct DescribeEntityOutput {
 }
 impl DescribeEntityOutput {
     /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn entity_type(&self) -> ::std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    pub fn entity_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn entity_identifier(&self) -> ::std::option::Option<& str> {
         self.entity_identifier.as_deref()
     }
     /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
-    pub fn entity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn entity_arn(&self) -> ::std::option::Option<& str> {
         self.entity_arn.as_deref()
     }
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>This stringified JSON object includes the details of the entity.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEntityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEntityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityOutput`](crate::operation::describe_entity::DescribeEntityOutput).
     pub fn builder() -> crate::operation::describe_entity::builders::DescribeEntityOutputBuilder {
@@ -56,9 +56,7 @@ impl DescribeEntityOutput {
 
 /// A builder for [`DescribeEntityOutput`](crate::operation::describe_entity::DescribeEntityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntityOutputBuilder {
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,
     pub(crate) entity_identifier: ::std::option::Option<::std::string::String>,
@@ -75,24 +73,24 @@ impl DescribeEntityOutputBuilder {
     }
     /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
+    }
+    /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_type
     }
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    pub fn entity_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    pub fn set_entity_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.entity_identifier = input;
-        self
+    pub fn set_entity_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.entity_identifier = input; self
+    }
+    /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
+    pub fn get_entity_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_identifier
     }
     /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
     pub fn entity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,24 +99,24 @@ impl DescribeEntityOutputBuilder {
     }
     /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
     pub fn set_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_arn = input;
-        self
+        self.entity_arn = input; self
+    }
+    /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
+    pub fn get_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_arn
     }
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_date = input; self
+    }
+    /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
     }
     /// <p>This stringified JSON object includes the details of the entity.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,27 +125,36 @@ impl DescribeEntityOutputBuilder {
     }
     /// <p>This stringified JSON object includes the details of the entity.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
+    }
+    /// <p>This stringified JSON object includes the details of the entity.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEntityOutput`](crate::operation::describe_entity::DescribeEntityOutput).
     pub fn build(self) -> crate::operation::describe_entity::DescribeEntityOutput {
         crate::operation::describe_entity::DescribeEntityOutput {
-            entity_type: self.entity_type,
-            entity_identifier: self.entity_identifier,
-            entity_arn: self.entity_arn,
-            last_modified_date: self.last_modified_date,
-            details: self.details,
+            entity_type: self.entity_type
+            ,
+            entity_identifier: self.entity_identifier
+            ,
+            entity_arn: self.entity_arn
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            details: self.details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

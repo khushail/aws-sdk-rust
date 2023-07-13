@@ -3,7 +3,7 @@
 /// <p>The specified account has reached its limit of configuration templates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TooManyConfigurationTemplatesException {
+pub struct TooManyConfigurationTemplatesException  {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,13 @@ pub struct TooManyConfigurationTemplatesException {
 }
 impl TooManyConfigurationTemplatesException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for TooManyConfigurationTemplatesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "TooManyConfigurationTemplatesException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,34 +25,25 @@ impl ::std::fmt::Display for TooManyConfigurationTemplatesException {
     }
 }
 impl ::std::error::Error for TooManyConfigurationTemplatesException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyConfigurationTemplatesException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyConfigurationTemplatesException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyConfigurationTemplatesException
-{
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyConfigurationTemplatesException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl TooManyConfigurationTemplatesException {
     /// Creates a new builder-style object to manufacture [`TooManyConfigurationTemplatesException`](crate::types::error::TooManyConfigurationTemplatesException).
-    pub fn builder() -> crate::types::error::builders::TooManyConfigurationTemplatesExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::TooManyConfigurationTemplatesExceptionBuilder {
         crate::types::error::builders::TooManyConfigurationTemplatesExceptionBuilder::default()
     }
 }
 
 /// A builder for [`TooManyConfigurationTemplatesException`](crate::types::error::TooManyConfigurationTemplatesException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyConfigurationTemplatesExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -67,28 +56,30 @@ impl TooManyConfigurationTemplatesExceptionBuilder {
     }
     /// <p>The exception error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The exception error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`TooManyConfigurationTemplatesException`](crate::types::error::TooManyConfigurationTemplatesException).
     pub fn build(self) -> crate::types::error::TooManyConfigurationTemplatesException {
         crate::types::error::TooManyConfigurationTemplatesException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

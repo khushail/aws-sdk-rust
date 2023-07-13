@@ -3,7 +3,7 @@
 /// <p>Information about a pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineMetadata {
+pub struct PipelineMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,26 @@ pub struct PipelineMetadata {
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     #[doc(hidden)]
     pub updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.</p>
+    #[doc(hidden)]
+    pub polling_disabled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineMetadata {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_arn.as_deref()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated.as_ref()
+    }
+    /// <p>The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.</p>
+    pub fn polling_disabled_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
+        self.polling_disabled_at.as_ref()
     }
 }
 impl PipelineMetadata {
@@ -37,13 +44,12 @@ impl PipelineMetadata {
 
 /// A builder for [`PipelineMetadata`](crate::types::PipelineMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineMetadataBuilder {
     pub(crate) pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) polling_disabled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
@@ -53,8 +59,11 @@ impl PipelineMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_arn = input;
-        self
+        self.pipeline_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_arn
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -62,12 +71,12 @@ impl PipelineMetadataBuilder {
         self
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created = input;
-        self
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created = input; self
+    }
+    /// <p>The date and time the pipeline was created, in timestamp format.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     pub fn updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -75,19 +84,38 @@ impl PipelineMetadataBuilder {
         self
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn set_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated = input;
+    pub fn set_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated = input; self
+    }
+    /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
+    pub fn get_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated
+    }
+    /// <p>The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.</p>
+    pub fn polling_disabled_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.polling_disabled_at = ::std::option::Option::Some(input);
         self
+    }
+    /// <p>The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.</p>
+    pub fn set_polling_disabled_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.polling_disabled_at = input; self
+    }
+    /// <p>The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.</p>
+    pub fn get_polling_disabled_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.polling_disabled_at
     }
     /// Consumes the builder and constructs a [`PipelineMetadata`](crate::types::PipelineMetadata).
     pub fn build(self) -> crate::types::PipelineMetadata {
         crate::types::PipelineMetadata {
-            pipeline_arn: self.pipeline_arn,
-            created: self.created,
-            updated: self.updated,
+            pipeline_arn: self.pipeline_arn
+            ,
+            created: self.created
+            ,
+            updated: self.updated
+            ,
+            polling_disabled_at: self.polling_disabled_at
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Description of the VPC connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConnectionInfo {
+pub struct VpcConnectionInfo  {
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     #[doc(hidden)]
     pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct VpcConnectionInfo {
 }
 impl VpcConnectionInfo {
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    pub fn vpc_connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connection_arn(&self) -> ::std::option::Option<& str> {
         self.vpc_connection_arn.as_deref()
     }
     /// <p>The owner of the VPC Connection.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>Description of the requester that calls the API operation.</p>
-    pub fn user_identity(&self) -> ::std::option::Option<&crate::types::UserIdentity> {
+    pub fn user_identity(&self) -> ::std::option::Option<& crate::types::UserIdentity> {
         self.user_identity.as_ref()
     }
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl VpcConnectionInfo {
 
 /// A builder for [`VpcConnectionInfo`](crate::types::VpcConnectionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConnectionInfoBuilder {
     pub(crate) vpc_connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
@@ -55,20 +53,17 @@ pub struct VpcConnectionInfoBuilder {
 }
 impl VpcConnectionInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    pub fn vpc_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    pub fn set_vpc_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_connection_arn = input;
-        self
+    pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_connection_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
     }
     /// <p>The owner of the VPC Connection.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,8 +72,11 @@ impl VpcConnectionInfoBuilder {
     }
     /// <p>The owner of the VPC Connection.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
+    }
+    /// <p>The owner of the VPC Connection.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>Description of the requester that calls the API operation.</p>
     pub fn user_identity(mut self, input: crate::types::UserIdentity) -> Self {
@@ -86,12 +84,12 @@ impl VpcConnectionInfoBuilder {
         self
     }
     /// <p>Description of the requester that calls the API operation.</p>
-    pub fn set_user_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::UserIdentity>,
-    ) -> Self {
-        self.user_identity = input;
-        self
+    pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::UserIdentity>) -> Self {
+        self.user_identity = input; self
+    }
+    /// <p>Description of the requester that calls the API operation.</p>
+    pub fn get_user_identity(&self) -> &::std::option::Option<crate::types::UserIdentity> {
+        &self.user_identity
     }
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,20 +97,25 @@ impl VpcConnectionInfoBuilder {
         self
     }
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`VpcConnectionInfo`](crate::types::VpcConnectionInfo).
     pub fn build(self) -> crate::types::VpcConnectionInfo {
         crate::types::VpcConnectionInfo {
-            vpc_connection_arn: self.vpc_connection_arn,
-            owner: self.owner,
-            user_identity: self.user_identity,
-            creation_time: self.creation_time,
+            vpc_connection_arn: self.vpc_connection_arn
+            ,
+            owner: self.owner
+            ,
+            user_identity: self.user_identity
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

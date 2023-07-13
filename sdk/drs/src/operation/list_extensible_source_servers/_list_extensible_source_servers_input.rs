@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListExtensibleSourceServersInput {
+pub struct ListExtensibleSourceServersInput  {
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
     #[doc(hidden)]
     pub staging_account_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListExtensibleSourceServersInput {
 }
 impl ListExtensibleSourceServersInput {
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-    pub fn staging_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn staging_account_id(&self) -> ::std::option::Option<& str> {
         self.staging_account_id.as_deref()
     }
     /// <p>The maximum number of extensible source servers to retrieve.</p>
@@ -23,22 +23,20 @@ impl ListExtensibleSourceServersInput {
         self.max_results
     }
     /// <p>The token of the next extensible source server to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListExtensibleSourceServersInput {
     /// Creates a new builder-style object to manufacture [`ListExtensibleSourceServersInput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput).
-    pub fn builder() -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder{
+    pub fn builder() -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder {
         crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListExtensibleSourceServersInput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExtensibleSourceServersInputBuilder {
     pub(crate) staging_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,20 +44,17 @@ pub struct ListExtensibleSourceServersInputBuilder {
 }
 impl ListExtensibleSourceServersInputBuilder {
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-    pub fn staging_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn staging_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.staging_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-    pub fn set_staging_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.staging_account_id = input;
-        self
+    pub fn set_staging_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.staging_account_id = input; self
+    }
+    /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
+    pub fn get_staging_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.staging_account_id
     }
     /// <p>The maximum number of extensible source servers to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,8 +63,11 @@ impl ListExtensibleSourceServersInputBuilder {
     }
     /// <p>The maximum number of extensible source servers to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of extensible source servers to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token of the next extensible source server to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,22 +76,25 @@ impl ListExtensibleSourceServersInputBuilder {
     }
     /// <p>The token of the next extensible source server to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token of the next extensible source server to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListExtensibleSourceServersInput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput {
-                staging_account_id: self.staging_account_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
+                staging_account_id: self.staging_account_id
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

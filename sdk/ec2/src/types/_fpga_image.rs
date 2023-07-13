@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon FPGA image (AFI).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FpgaImage {
+pub struct FpgaImage  {
     /// <p>The FPGA image identifier (AFI ID).</p>
     #[doc(hidden)]
     pub fpga_image_id: ::std::option::Option<::std::string::String>,
@@ -55,55 +55,55 @@ pub struct FpgaImage {
 }
 impl FpgaImage {
     /// <p>The FPGA image identifier (AFI ID).</p>
-    pub fn fpga_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn fpga_image_id(&self) -> ::std::option::Option<& str> {
         self.fpga_image_id.as_deref()
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    pub fn fpga_image_global_id(&self) -> ::std::option::Option<&str> {
+    pub fn fpga_image_global_id(&self) -> ::std::option::Option<& str> {
         self.fpga_image_global_id.as_deref()
     }
     /// <p>The name of the AFI.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the AFI.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
-    pub fn shell_version(&self) -> ::std::option::Option<&str> {
+    pub fn shell_version(&self) -> ::std::option::Option<& str> {
         self.shell_version.as_deref()
     }
     /// <p>Information about the PCI bus.</p>
-    pub fn pci_id(&self) -> ::std::option::Option<&crate::types::PciId> {
+    pub fn pci_id(&self) -> ::std::option::Option<& crate::types::PciId> {
         self.pci_id.as_ref()
     }
     /// <p>Information about the state of the AFI.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::FpgaImageState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::FpgaImageState> {
         self.state.as_ref()
     }
     /// <p>The date and time the AFI was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time of the most recent update to the AFI.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the AFI.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The alias of the AFI owner. Possible values include <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>.</p>
-    pub fn owner_alias(&self) -> ::std::option::Option<&str> {
+    pub fn owner_alias(&self) -> ::std::option::Option<& str> {
         self.owner_alias.as_deref()
     }
     /// <p>The product codes for the AFI.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
+    pub fn product_codes(&self) -> ::std::option::Option<& [crate::types::ProductCode]> {
         self.product_codes.as_deref()
     }
     /// <p>Any tags assigned to the AFI.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether the AFI is public.</p>
@@ -115,7 +115,7 @@ impl FpgaImage {
         self.data_retention_support
     }
     /// <p>The instance types supported by the AFI.</p>
-    pub fn instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn instance_types(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.instance_types.as_deref()
     }
 }
@@ -128,9 +128,7 @@ impl FpgaImage {
 
 /// A builder for [`FpgaImage`](crate::types::FpgaImage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FpgaImageBuilder {
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) fpga_image_global_id: ::std::option::Option<::std::string::String>,
@@ -151,36 +149,30 @@ pub struct FpgaImageBuilder {
 }
 impl FpgaImageBuilder {
     /// <p>The FPGA image identifier (AFI ID).</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The FPGA image identifier (AFI ID).</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.fpga_image_id = input;
-        self
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.fpga_image_id = input; self
+    }
+    /// <p>The FPGA image identifier (AFI ID).</p>
+    pub fn get_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fpga_image_id
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    pub fn fpga_image_global_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_global_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_global_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    pub fn set_fpga_image_global_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.fpga_image_global_id = input;
-        self
+    pub fn set_fpga_image_global_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.fpga_image_global_id = input; self
+    }
+    /// <p>The global FPGA image identifier (AGFI ID).</p>
+    pub fn get_fpga_image_global_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fpga_image_global_id
     }
     /// <p>The name of the AFI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -189,8 +181,11 @@ impl FpgaImageBuilder {
     }
     /// <p>The name of the AFI.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the AFI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the AFI.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -199,24 +194,24 @@ impl FpgaImageBuilder {
     }
     /// <p>The description of the AFI.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the AFI.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
-    pub fn shell_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shell_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shell_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
-    pub fn set_shell_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.shell_version = input;
-        self
+    pub fn set_shell_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.shell_version = input; self
+    }
+    /// <p>The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
+    pub fn get_shell_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shell_version
     }
     /// <p>Information about the PCI bus.</p>
     pub fn pci_id(mut self, input: crate::types::PciId) -> Self {
@@ -225,8 +220,11 @@ impl FpgaImageBuilder {
     }
     /// <p>Information about the PCI bus.</p>
     pub fn set_pci_id(mut self, input: ::std::option::Option<crate::types::PciId>) -> Self {
-        self.pci_id = input;
-        self
+        self.pci_id = input; self
+    }
+    /// <p>Information about the PCI bus.</p>
+    pub fn get_pci_id(&self) -> &::std::option::Option<crate::types::PciId> {
+        &self.pci_id
     }
     /// <p>Information about the state of the AFI.</p>
     pub fn state(mut self, input: crate::types::FpgaImageState) -> Self {
@@ -235,8 +233,11 @@ impl FpgaImageBuilder {
     }
     /// <p>Information about the state of the AFI.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::FpgaImageState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>Information about the state of the AFI.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::FpgaImageState> {
+        &self.state
     }
     /// <p>The date and time the AFI was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -244,12 +245,12 @@ impl FpgaImageBuilder {
         self
     }
     /// <p>The date and time the AFI was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
+    }
+    /// <p>The date and time the AFI was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The time of the most recent update to the AFI.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -257,12 +258,12 @@ impl FpgaImageBuilder {
         self
     }
     /// <p>The time of the most recent update to the AFI.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_time = input;
-        self
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input; self
+    }
+    /// <p>The time of the most recent update to the AFI.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// <p>The ID of the Amazon Web Services account that owns the AFI.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -271,8 +272,11 @@ impl FpgaImageBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the AFI.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the AFI.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>The alias of the AFI owner. Possible values include <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>.</p>
     pub fn owner_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -281,8 +285,11 @@ impl FpgaImageBuilder {
     }
     /// <p>The alias of the AFI owner. Possible values include <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>.</p>
     pub fn set_owner_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_alias = input;
-        self
+        self.owner_alias = input; self
+    }
+    /// <p>The alias of the AFI owner. Possible values include <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>.</p>
+    pub fn get_owner_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_alias
     }
     /// Appends an item to `product_codes`.
     ///
@@ -291,17 +298,17 @@ impl FpgaImageBuilder {
     /// <p>The product codes for the AFI.</p>
     pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
         let mut v = self.product_codes.unwrap_or_default();
-        v.push(input);
-        self.product_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.product_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The product codes for the AFI.</p>
-    pub fn set_product_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
-    ) -> Self {
-        self.product_codes = input;
-        self
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
+        self.product_codes = input; self
+    }
+    /// <p>The product codes for the AFI.</p>
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+        &self.product_codes
     }
     /// Appends an item to `tags`.
     ///
@@ -310,17 +317,17 @@ impl FpgaImageBuilder {
     /// <p>Any tags assigned to the AFI.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the AFI.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Any tags assigned to the AFI.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>Indicates whether the AFI is public.</p>
     pub fn public(mut self, input: bool) -> Self {
@@ -329,8 +336,11 @@ impl FpgaImageBuilder {
     }
     /// <p>Indicates whether the AFI is public.</p>
     pub fn set_public(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.public = input;
-        self
+        self.public = input; self
+    }
+    /// <p>Indicates whether the AFI is public.</p>
+    pub fn get_public(&self) -> &::std::option::Option<bool> {
+        &self.public
     }
     /// <p>Indicates whether data retention support is enabled for the AFI.</p>
     pub fn data_retention_support(mut self, input: bool) -> Self {
@@ -339,50 +349,67 @@ impl FpgaImageBuilder {
     }
     /// <p>Indicates whether data retention support is enabled for the AFI.</p>
     pub fn set_data_retention_support(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.data_retention_support = input;
-        self
+        self.data_retention_support = input; self
+    }
+    /// <p>Indicates whether data retention support is enabled for the AFI.</p>
+    pub fn get_data_retention_support(&self) -> &::std::option::Option<bool> {
+        &self.data_retention_support
     }
     /// Appends an item to `instance_types`.
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
     /// <p>The instance types supported by the AFI.</p>
-    pub fn instance_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
-        v.push(input.into());
-        self.instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instance types supported by the AFI.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.instance_types = input;
-        self
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.instance_types = input; self
+    }
+    /// <p>The instance types supported by the AFI.</p>
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_types
     }
     /// Consumes the builder and constructs a [`FpgaImage`](crate::types::FpgaImage).
     pub fn build(self) -> crate::types::FpgaImage {
         crate::types::FpgaImage {
-            fpga_image_id: self.fpga_image_id,
-            fpga_image_global_id: self.fpga_image_global_id,
-            name: self.name,
-            description: self.description,
-            shell_version: self.shell_version,
-            pci_id: self.pci_id,
-            state: self.state,
-            create_time: self.create_time,
-            update_time: self.update_time,
-            owner_id: self.owner_id,
-            owner_alias: self.owner_alias,
-            product_codes: self.product_codes,
-            tags: self.tags,
-            public: self.public,
-            data_retention_support: self.data_retention_support,
-            instance_types: self.instance_types,
+            fpga_image_id: self.fpga_image_id
+            ,
+            fpga_image_global_id: self.fpga_image_global_id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            shell_version: self.shell_version
+            ,
+            pci_id: self.pci_id
+            ,
+            state: self.state
+            ,
+            create_time: self.create_time
+            ,
+            update_time: self.update_time
+            ,
+            owner_id: self.owner_id
+            ,
+            owner_alias: self.owner_alias
+            ,
+            product_codes: self.product_codes
+            ,
+            tags: self.tags
+            ,
+            public: self.public
+            ,
+            data_retention_support: self.data_retention_support
+            ,
+            instance_types: self.instance_types
+            ,
         }
     }
 }
+

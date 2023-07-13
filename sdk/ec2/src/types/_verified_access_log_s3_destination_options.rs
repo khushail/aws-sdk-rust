@@ -3,7 +3,7 @@
 /// <p>Options for Amazon S3 as a logging destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifiedAccessLogS3DestinationOptions {
+pub struct VerifiedAccessLogS3DestinationOptions  {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
@@ -23,15 +23,15 @@ impl VerifiedAccessLogS3DestinationOptions {
         self.enabled
     }
     /// <p>The bucket name.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The bucket prefix.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
-    pub fn bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_owner(&self) -> ::std::option::Option<& str> {
         self.bucket_owner.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl VerifiedAccessLogS3DestinationOptions {
 
 /// A builder for [`VerifiedAccessLogS3DestinationOptions`](crate::types::VerifiedAccessLogS3DestinationOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogS3DestinationOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl VerifiedAccessLogS3DestinationOptionsBuilder {
     }
     /// <p>Indicates whether logging is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Indicates whether logging is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The bucket name.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl VerifiedAccessLogS3DestinationOptionsBuilder {
     }
     /// <p>The bucket name.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
+    }
+    /// <p>The bucket name.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// <p>The bucket prefix.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl VerifiedAccessLogS3DestinationOptionsBuilder {
     }
     /// <p>The bucket prefix.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
+    }
+    /// <p>The bucket prefix.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
     pub fn bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl VerifiedAccessLogS3DestinationOptionsBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
     pub fn set_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_owner = input;
-        self
+        self.bucket_owner = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
+    pub fn get_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_owner
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogS3DestinationOptions`](crate::types::VerifiedAccessLogS3DestinationOptions).
     pub fn build(self) -> crate::types::VerifiedAccessLogS3DestinationOptions {
         crate::types::VerifiedAccessLogS3DestinationOptions {
-            enabled: self.enabled,
-            bucket_name: self.bucket_name,
-            prefix: self.prefix,
-            bucket_owner: self.bucket_owner,
+            enabled: self.enabled
+            ,
+            bucket_name: self.bucket_name
+            ,
+            prefix: self.prefix
+            ,
+            bucket_owner: self.bucket_owner
+            ,
         }
     }
 }
+

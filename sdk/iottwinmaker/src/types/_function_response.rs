@@ -3,7 +3,7 @@
 /// <p>The function response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionResponse {
+pub struct FunctionResponse  {
     /// <p>The required properties of the function.</p>
     #[doc(hidden)]
     pub required_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,15 +19,15 @@ pub struct FunctionResponse {
 }
 impl FunctionResponse {
     /// <p>The required properties of the function.</p>
-    pub fn required_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn required_properties(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.required_properties.as_deref()
     }
     /// <p>The scope of the function.</p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>The data connector.</p>
-    pub fn implemented_by(&self) -> ::std::option::Option<&crate::types::DataConnector> {
+    pub fn implemented_by(&self) -> ::std::option::Option<& crate::types::DataConnector> {
         self.implemented_by.as_ref()
     }
     /// <p>Indicates whether this function is inherited.</p>
@@ -44,9 +44,7 @@ impl FunctionResponse {
 
 /// A builder for [`FunctionResponse`](crate::types::FunctionResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionResponseBuilder {
     pub(crate) required_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -59,22 +57,19 @@ impl FunctionResponseBuilder {
     /// To override the contents of this collection use [`set_required_properties`](Self::set_required_properties).
     ///
     /// <p>The required properties of the function.</p>
-    pub fn required_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn required_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.required_properties.unwrap_or_default();
-        v.push(input.into());
-        self.required_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.required_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The required properties of the function.</p>
-    pub fn set_required_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.required_properties = input;
-        self
+    pub fn set_required_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.required_properties = input; self
+    }
+    /// <p>The required properties of the function.</p>
+    pub fn get_required_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.required_properties
     }
     /// <p>The scope of the function.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
@@ -83,8 +78,11 @@ impl FunctionResponseBuilder {
     }
     /// <p>The scope of the function.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
+    }
+    /// <p>The scope of the function.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
     }
     /// <p>The data connector.</p>
     pub fn implemented_by(mut self, input: crate::types::DataConnector) -> Self {
@@ -92,12 +90,12 @@ impl FunctionResponseBuilder {
         self
     }
     /// <p>The data connector.</p>
-    pub fn set_implemented_by(
-        mut self,
-        input: ::std::option::Option<crate::types::DataConnector>,
-    ) -> Self {
-        self.implemented_by = input;
-        self
+    pub fn set_implemented_by(mut self, input: ::std::option::Option<crate::types::DataConnector>) -> Self {
+        self.implemented_by = input; self
+    }
+    /// <p>The data connector.</p>
+    pub fn get_implemented_by(&self) -> &::std::option::Option<crate::types::DataConnector> {
+        &self.implemented_by
     }
     /// <p>Indicates whether this function is inherited.</p>
     pub fn is_inherited(mut self, input: bool) -> Self {
@@ -106,16 +104,24 @@ impl FunctionResponseBuilder {
     }
     /// <p>Indicates whether this function is inherited.</p>
     pub fn set_is_inherited(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_inherited = input;
-        self
+        self.is_inherited = input; self
+    }
+    /// <p>Indicates whether this function is inherited.</p>
+    pub fn get_is_inherited(&self) -> &::std::option::Option<bool> {
+        &self.is_inherited
     }
     /// Consumes the builder and constructs a [`FunctionResponse`](crate::types::FunctionResponse).
     pub fn build(self) -> crate::types::FunctionResponse {
         crate::types::FunctionResponse {
-            required_properties: self.required_properties,
-            scope: self.scope,
-            implemented_by: self.implemented_by,
-            is_inherited: self.is_inherited,
+            required_properties: self.required_properties
+            ,
+            scope: self.scope
+            ,
+            implemented_by: self.implemented_by
+            ,
+            is_inherited: self.is_inherited
+            ,
         }
     }
 }
+

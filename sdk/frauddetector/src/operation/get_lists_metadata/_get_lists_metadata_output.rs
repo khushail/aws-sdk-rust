@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetListsMetadataOutput {
+pub struct GetListsMetadataOutput  {
     /// <p> The metadata of the specified list or all lists under the account. </p>
     #[doc(hidden)]
     pub lists: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>,
@@ -13,32 +13,29 @@ pub struct GetListsMetadataOutput {
 }
 impl GetListsMetadataOutput {
     /// <p> The metadata of the specified list or all lists under the account. </p>
-    pub fn lists(&self) -> ::std::option::Option<&[crate::types::AllowDenyList]> {
+    pub fn lists(&self) -> ::std::option::Option<& [crate::types::AllowDenyList]> {
         self.lists.as_deref()
     }
     /// <p> The next page token. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetListsMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetListsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetListsMetadataOutput`](crate::operation::get_lists_metadata::GetListsMetadataOutput).
-    pub fn builder() -> crate::operation::get_lists_metadata::builders::GetListsMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_lists_metadata::builders::GetListsMetadataOutputBuilder {
         crate::operation::get_lists_metadata::builders::GetListsMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetListsMetadataOutput`](crate::operation::get_lists_metadata::GetListsMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetListsMetadataOutputBuilder {
     pub(crate) lists: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,17 @@ impl GetListsMetadataOutputBuilder {
     /// <p> The metadata of the specified list or all lists under the account. </p>
     pub fn lists(mut self, input: crate::types::AllowDenyList) -> Self {
         let mut v = self.lists.unwrap_or_default();
-        v.push(input);
-        self.lists = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lists = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The metadata of the specified list or all lists under the account. </p>
-    pub fn set_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>,
-    ) -> Self {
-        self.lists = input;
-        self
+    pub fn set_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>>) -> Self {
+        self.lists = input; self
+    }
+    /// <p> The metadata of the specified list or all lists under the account. </p>
+    pub fn get_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowDenyList>> {
+        &self.lists
     }
     /// <p> The next page token. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +68,30 @@ impl GetListsMetadataOutputBuilder {
     }
     /// <p> The next page token. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> The next page token. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetListsMetadataOutput`](crate::operation::get_lists_metadata::GetListsMetadataOutput).
     pub fn build(self) -> crate::operation::get_lists_metadata::GetListsMetadataOutput {
         crate::operation::get_lists_metadata::GetListsMetadataOutput {
-            lists: self.lists,
-            next_token: self.next_token,
+            lists: self.lists
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

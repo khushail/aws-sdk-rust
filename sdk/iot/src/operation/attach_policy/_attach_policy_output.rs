@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachPolicyOutput {
+pub struct AttachPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for AttachPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AttachPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachPolicyOutput`](crate::operation::attach_policy::AttachPolicyOutput).
     pub fn builder() -> crate::operation::attach_policy::builders::AttachPolicyOutputBuilder {
@@ -19,22 +19,20 @@ impl AttachPolicyOutput {
 
 /// A builder for [`AttachPolicyOutput`](crate::operation::attach_policy::AttachPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl AttachPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AttachPolicyOutput`](crate::operation::attach_policy::AttachPolicyOutput).
     pub fn build(self) -> crate::operation::attach_policy::AttachPolicyOutput {
         crate::operation::attach_policy::AttachPolicyOutput {
@@ -42,3 +40,4 @@ impl AttachPolicyOutputBuilder {
         }
     }
 }
+

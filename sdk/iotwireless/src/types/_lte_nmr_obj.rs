@@ -3,7 +3,7 @@
 /// <p>LTE object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LteNmrObj {
+pub struct LteNmrObj  {
     /// <p>Physical cell ID.</p>
     #[doc(hidden)]
     pub pci: ::std::option::Option<i32>,
@@ -51,9 +51,7 @@ impl LteNmrObj {
 
 /// A builder for [`LteNmrObj`](crate::types::LteNmrObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LteNmrObjBuilder {
     pub(crate) pci: ::std::option::Option<i32>,
     pub(crate) earfcn: ::std::option::Option<i32>,
@@ -69,8 +67,11 @@ impl LteNmrObjBuilder {
     }
     /// <p>Physical cell ID.</p>
     pub fn set_pci(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pci = input;
-        self
+        self.pci = input; self
+    }
+    /// <p>Physical cell ID.</p>
+    pub fn get_pci(&self) -> &::std::option::Option<i32> {
+        &self.pci
     }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
     pub fn earfcn(mut self, input: i32) -> Self {
@@ -79,8 +80,11 @@ impl LteNmrObjBuilder {
     }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
     pub fn set_earfcn(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.earfcn = input;
-        self
+        self.earfcn = input; self
+    }
+    /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
+    pub fn get_earfcn(&self) -> &::std::option::Option<i32> {
+        &self.earfcn
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
     pub fn eutran_cid(mut self, input: i32) -> Self {
@@ -89,8 +93,11 @@ impl LteNmrObjBuilder {
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
     pub fn set_eutran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.eutran_cid = input;
-        self
+        self.eutran_cid = input; self
+    }
+    /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
+    pub fn get_eutran_cid(&self) -> &::std::option::Option<i32> {
+        &self.eutran_cid
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub fn rsrp(mut self, input: i32) -> Self {
@@ -99,8 +106,11 @@ impl LteNmrObjBuilder {
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub fn set_rsrp(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rsrp = input;
-        self
+        self.rsrp = input; self
+    }
+    /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
+    pub fn get_rsrp(&self) -> &::std::option::Option<i32> {
+        &self.rsrp
     }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub fn rsrq(mut self, input: f32) -> Self {
@@ -109,17 +119,26 @@ impl LteNmrObjBuilder {
     }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub fn set_rsrq(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.rsrq = input;
-        self
+        self.rsrq = input; self
+    }
+    /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
+    pub fn get_rsrq(&self) -> &::std::option::Option<f32> {
+        &self.rsrq
     }
     /// Consumes the builder and constructs a [`LteNmrObj`](crate::types::LteNmrObj).
     pub fn build(self) -> crate::types::LteNmrObj {
         crate::types::LteNmrObj {
-            pci: self.pci,
-            earfcn: self.earfcn,
-            eutran_cid: self.eutran_cid,
-            rsrp: self.rsrp,
-            rsrq: self.rsrq,
+            pci: self.pci
+            ,
+            earfcn: self.earfcn
+            ,
+            eutran_cid: self.eutran_cid
+            ,
+            rsrp: self.rsrp
+            ,
+            rsrq: self.rsrq
+            ,
         }
     }
 }
+

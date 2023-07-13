@@ -3,7 +3,7 @@
 /// <p> A PartiQL batch statement request. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchStatementRequest {
+pub struct BatchStatementRequest  {
     /// <p> A valid PartiQL statement. </p>
     #[doc(hidden)]
     pub statement: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct BatchStatementRequest {
 }
 impl BatchStatementRequest {
     /// <p> A valid PartiQL statement. </p>
-    pub fn statement(&self) -> ::std::option::Option<&str> {
+    pub fn statement(&self) -> ::std::option::Option<& str> {
         self.statement.as_deref()
     }
     /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::AttributeValue]> {
+    pub fn parameters(&self) -> ::std::option::Option<& [crate::types::AttributeValue]> {
         self.parameters.as_deref()
     }
     /// <p> The read consistency of the PartiQL batch request. </p>
@@ -37,9 +37,7 @@ impl BatchStatementRequest {
 
 /// A builder for [`BatchStatementRequest`](crate::types::BatchStatementRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStatementRequestBuilder {
     pub(crate) statement: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
@@ -53,8 +51,11 @@ impl BatchStatementRequestBuilder {
     }
     /// <p> A valid PartiQL statement. </p>
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
+    }
+    /// <p> A valid PartiQL statement. </p>
+    pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement
     }
     /// Appends an item to `parameters`.
     ///
@@ -63,17 +64,17 @@ impl BatchStatementRequestBuilder {
     /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
     pub fn parameters(mut self, input: crate::types::AttributeValue) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>) -> Self {
+        self.parameters = input; self
+    }
+    /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>> {
+        &self.parameters
     }
     /// <p> The read consistency of the PartiQL batch request. </p>
     pub fn consistent_read(mut self, input: bool) -> Self {
@@ -82,15 +83,22 @@ impl BatchStatementRequestBuilder {
     }
     /// <p> The read consistency of the PartiQL batch request. </p>
     pub fn set_consistent_read(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.consistent_read = input;
-        self
+        self.consistent_read = input; self
+    }
+    /// <p> The read consistency of the PartiQL batch request. </p>
+    pub fn get_consistent_read(&self) -> &::std::option::Option<bool> {
+        &self.consistent_read
     }
     /// Consumes the builder and constructs a [`BatchStatementRequest`](crate::types::BatchStatementRequest).
     pub fn build(self) -> crate::types::BatchStatementRequest {
         crate::types::BatchStatementRequest {
-            statement: self.statement,
-            parameters: self.parameters,
-            consistent_read: self.consistent_read,
+            statement: self.statement
+            ,
+            parameters: self.parameters
+            ,
+            consistent_read: self.consistent_read
+            ,
         }
     }
 }
+

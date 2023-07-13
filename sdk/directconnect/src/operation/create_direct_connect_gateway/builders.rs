@@ -3,117 +3,100 @@ pub use crate::operation::create_direct_connect_gateway::_create_direct_connect_
 
 pub use crate::operation::create_direct_connect_gateway::_create_direct_connect_gateway_input::CreateDirectConnectGatewayInputBuilder;
 
+impl CreateDirectConnectGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_direct_connect_gateway();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateDirectConnectGateway`.
-///
+/// 
 /// <p>Creates a Direct Connect gateway, which is an intermediate object that enables you to connect a set of virtual interfaces and virtual private gateways. A Direct Connect gateway is global and visible in any Amazon Web Services Region after it is created. The virtual interfaces and virtual private gateways that are connected through a Direct Connect gateway can be in different Amazon Web Services Regions. This enables you to connect to a VPC in any Region, regardless of the Region in which the virtual interfaces are located, and pass traffic between them.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder,
 }
-impl CreateDirectConnectGatewayFluentBuilder {
+impl CreateDirectConnectGatewayFluentBuilder  {
     /// Creates a new `CreateDirectConnectGateway`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_direct_connect_gateway::CreateDirectConnectGateway,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateDirectConnectGateway as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_direct_connect_gateway::CreateDirectConnectGateway, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_direct_connect_gateway::CreateDirectConnectGateway,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_direct_connect_gateway::CreateDirectConnectGateway, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The name of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.direct_connect_gateway_name(input.into());
         self
     }
     /// <p>The name of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_direct_connect_gateway_name(input);
         self
+    }
+    /// <p>The name of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_name()
     }
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -125,4 +108,9 @@ impl CreateDirectConnectGatewayFluentBuilder {
         self.inner = self.inner.set_amazon_side_asn(input);
         self
     }
+    /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
+    pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
+        self.inner.get_amazon_side_asn()
+    }
 }
+

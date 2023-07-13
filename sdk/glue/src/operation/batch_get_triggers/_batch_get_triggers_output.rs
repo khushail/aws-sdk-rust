@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetTriggersOutput {
+pub struct BatchGetTriggersOutput  {
     /// <p>A list of trigger definitions.</p>
     #[doc(hidden)]
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
@@ -13,32 +13,29 @@ pub struct BatchGetTriggersOutput {
 }
 impl BatchGetTriggersOutput {
     /// <p>A list of trigger definitions.</p>
-    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::Trigger]> {
+    pub fn triggers(&self) -> ::std::option::Option<& [crate::types::Trigger]> {
         self.triggers.as_deref()
     }
     /// <p>A list of names of triggers not found.</p>
-    pub fn triggers_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn triggers_not_found(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.triggers_not_found.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetTriggersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetTriggersOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetTriggersOutput`](crate::operation::batch_get_triggers::BatchGetTriggersOutput).
-    pub fn builder() -> crate::operation::batch_get_triggers::builders::BatchGetTriggersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_triggers::builders::BatchGetTriggersOutputBuilder {
         crate::operation::batch_get_triggers::builders::BatchGetTriggersOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetTriggersOutput`](crate::operation::batch_get_triggers::BatchGetTriggersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTriggersOutputBuilder {
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     pub(crate) triggers_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,55 +49,55 @@ impl BatchGetTriggersOutputBuilder {
     /// <p>A list of trigger definitions.</p>
     pub fn triggers(mut self, input: crate::types::Trigger) -> Self {
         let mut v = self.triggers.unwrap_or_default();
-        v.push(input);
-        self.triggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.triggers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of trigger definitions.</p>
-    pub fn set_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
-    ) -> Self {
-        self.triggers = input;
-        self
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>) -> Self {
+        self.triggers = input; self
+    }
+    /// <p>A list of trigger definitions.</p>
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
+        &self.triggers
     }
     /// Appends an item to `triggers_not_found`.
     ///
     /// To override the contents of this collection use [`set_triggers_not_found`](Self::set_triggers_not_found).
     ///
     /// <p>A list of names of triggers not found.</p>
-    pub fn triggers_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn triggers_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.triggers_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.triggers_not_found = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.triggers_not_found = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of names of triggers not found.</p>
-    pub fn set_triggers_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.triggers_not_found = input;
-        self
+    pub fn set_triggers_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.triggers_not_found = input; self
+    }
+    /// <p>A list of names of triggers not found.</p>
+    pub fn get_triggers_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.triggers_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetTriggersOutput`](crate::operation::batch_get_triggers::BatchGetTriggersOutput).
     pub fn build(self) -> crate::operation::batch_get_triggers::BatchGetTriggersOutput {
         crate::operation::batch_get_triggers::BatchGetTriggersOutput {
-            triggers: self.triggers,
-            triggers_not_found: self.triggers_not_found,
+            triggers: self.triggers
+            ,
+            triggers_not_found: self.triggers_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

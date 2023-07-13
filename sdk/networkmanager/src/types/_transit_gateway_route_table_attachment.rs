@@ -3,7 +3,7 @@
 /// <p>Describes a transit gateway route table attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayRouteTableAttachment {
+pub struct TransitGatewayRouteTableAttachment  {
     /// <p>Describes a core network attachment.</p>
     #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::Attachment>,
@@ -16,15 +16,15 @@ pub struct TransitGatewayRouteTableAttachment {
 }
 impl TransitGatewayRouteTableAttachment {
     /// <p>Describes a core network attachment.</p>
-    pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
+    pub fn attachment(&self) -> ::std::option::Option<& crate::types::Attachment> {
         self.attachment.as_ref()
     }
     /// <p>The ID of the peering attachment.</p>
-    pub fn peering_id(&self) -> ::std::option::Option<&str> {
+    pub fn peering_id(&self) -> ::std::option::Option<& str> {
         self.peering_id.as_deref()
     }
     /// <p>The ARN of the transit gateway attachment route table. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-    pub fn transit_gateway_route_table_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_route_table_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_route_table_arn.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl TransitGatewayRouteTableAttachment {
 
 /// A builder for [`TransitGatewayRouteTableAttachment`](crate::types::TransitGatewayRouteTableAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayRouteTableAttachmentBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     pub(crate) peering_id: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl TransitGatewayRouteTableAttachmentBuilder {
         self
     }
     /// <p>Describes a core network attachment.</p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::Attachment>,
-    ) -> Self {
-        self.attachment = input;
-        self
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
+        self.attachment = input; self
+    }
+    /// <p>Describes a core network attachment.</p>
+    pub fn get_attachment(&self) -> &::std::option::Option<crate::types::Attachment> {
+        &self.attachment
     }
     /// <p>The ID of the peering attachment.</p>
     pub fn peering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,31 +64,35 @@ impl TransitGatewayRouteTableAttachmentBuilder {
     }
     /// <p>The ID of the peering attachment.</p>
     pub fn set_peering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.peering_id = input;
-        self
+        self.peering_id = input; self
+    }
+    /// <p>The ID of the peering attachment.</p>
+    pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peering_id
     }
     /// <p>The ARN of the transit gateway attachment route table. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-    pub fn transit_gateway_route_table_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the transit gateway attachment route table. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-    pub fn set_transit_gateway_route_table_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.transit_gateway_route_table_arn = input;
-        self
+    pub fn set_transit_gateway_route_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_route_table_arn = input; self
+    }
+    /// <p>The ARN of the transit gateway attachment route table. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
+    pub fn get_transit_gateway_route_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_arn
     }
     /// Consumes the builder and constructs a [`TransitGatewayRouteTableAttachment`](crate::types::TransitGatewayRouteTableAttachment).
     pub fn build(self) -> crate::types::TransitGatewayRouteTableAttachment {
         crate::types::TransitGatewayRouteTableAttachment {
-            attachment: self.attachment,
-            peering_id: self.peering_id,
-            transit_gateway_route_table_arn: self.transit_gateway_route_table_arn,
+            attachment: self.attachment
+            ,
+            peering_id: self.peering_id
+            ,
+            transit_gateway_route_table_arn: self.transit_gateway_route_table_arn
+            ,
         }
     }
 }
+

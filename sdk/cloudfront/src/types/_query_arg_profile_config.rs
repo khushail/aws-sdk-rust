@@ -3,7 +3,7 @@
 /// <p>Configuration for query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryArgProfileConfig {
+pub struct QueryArgProfileConfig  {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
     #[doc(hidden)]
     pub forward_when_query_arg_profile_is_unknown: ::std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl QueryArgProfileConfig {
         self.forward_when_query_arg_profile_is_unknown
     }
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
-    pub fn query_arg_profiles(&self) -> ::std::option::Option<&crate::types::QueryArgProfiles> {
+    pub fn query_arg_profiles(&self) -> ::std::option::Option<& crate::types::QueryArgProfiles> {
         self.query_arg_profiles.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl QueryArgProfileConfig {
 
 /// A builder for [`QueryArgProfileConfig`](crate::types::QueryArgProfileConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryArgProfileConfigBuilder {
     pub(crate) forward_when_query_arg_profile_is_unknown: ::std::option::Option<bool>,
     pub(crate) query_arg_profiles: ::std::option::Option<crate::types::QueryArgProfiles>,
@@ -44,12 +42,12 @@ impl QueryArgProfileConfigBuilder {
         self
     }
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
-    pub fn set_forward_when_query_arg_profile_is_unknown(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.forward_when_query_arg_profile_is_unknown = input;
-        self
+    pub fn set_forward_when_query_arg_profile_is_unknown(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.forward_when_query_arg_profile_is_unknown = input; self
+    }
+    /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
+    pub fn get_forward_when_query_arg_profile_is_unknown(&self) -> &::std::option::Option<bool> {
+        &self.forward_when_query_arg_profile_is_unknown
     }
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
     pub fn query_arg_profiles(mut self, input: crate::types::QueryArgProfiles) -> Self {
@@ -57,19 +55,21 @@ impl QueryArgProfileConfigBuilder {
         self
     }
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
-    pub fn set_query_arg_profiles(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryArgProfiles>,
-    ) -> Self {
-        self.query_arg_profiles = input;
-        self
+    pub fn set_query_arg_profiles(mut self, input: ::std::option::Option<crate::types::QueryArgProfiles>) -> Self {
+        self.query_arg_profiles = input; self
+    }
+    /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
+    pub fn get_query_arg_profiles(&self) -> &::std::option::Option<crate::types::QueryArgProfiles> {
+        &self.query_arg_profiles
     }
     /// Consumes the builder and constructs a [`QueryArgProfileConfig`](crate::types::QueryArgProfileConfig).
     pub fn build(self) -> crate::types::QueryArgProfileConfig {
         crate::types::QueryArgProfileConfig {
-            forward_when_query_arg_profile_is_unknown: self
-                .forward_when_query_arg_profile_is_unknown,
-            query_arg_profiles: self.query_arg_profiles,
+            forward_when_query_arg_profile_is_unknown: self.forward_when_query_arg_profile_is_unknown
+            ,
+            query_arg_profiles: self.query_arg_profiles
+            ,
         }
     }
 }
+

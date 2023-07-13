@@ -3,7 +3,7 @@
 /// <p>A summary of a finding reason code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReasonCodeSummary {
+pub struct ReasonCodeSummary  {
     /// <p>The name of the finding reason code.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::FindingReasonCode>,
@@ -13,7 +13,7 @@ pub struct ReasonCodeSummary {
 }
 impl ReasonCodeSummary {
     /// <p>The name of the finding reason code.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::FindingReasonCode> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::FindingReasonCode> {
         self.name.as_ref()
     }
     /// <p>The value of the finding reason code summary.</p>
@@ -30,9 +30,7 @@ impl ReasonCodeSummary {
 
 /// A builder for [`ReasonCodeSummary`](crate::types::ReasonCodeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReasonCodeSummaryBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FindingReasonCode>,
     pub(crate) value: ::std::option::Option<f64>,
@@ -44,12 +42,12 @@ impl ReasonCodeSummaryBuilder {
         self
     }
     /// <p>The name of the finding reason code.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingReasonCode>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::FindingReasonCode>) -> Self {
+        self.name = input; self
+    }
+    /// <p>The name of the finding reason code.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::FindingReasonCode> {
+        &self.name
     }
     /// <p>The value of the finding reason code summary.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -58,14 +56,21 @@ impl ReasonCodeSummaryBuilder {
     }
     /// <p>The value of the finding reason code summary.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the finding reason code summary.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ReasonCodeSummary`](crate::types::ReasonCodeSummary).
     pub fn build(self) -> crate::types::ReasonCodeSummary {
         crate::types::ReasonCodeSummary {
-            name: self.name,
-            value: self.value.unwrap_or_default(),
+            name: self.name
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

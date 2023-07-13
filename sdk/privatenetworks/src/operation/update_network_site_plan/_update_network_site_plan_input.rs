@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNetworkSitePlanInput {
+pub struct UpdateNetworkSitePlanInput  {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     #[doc(hidden)]
     pub network_site_arn: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct UpdateNetworkSitePlanInput {
 }
 impl UpdateNetworkSitePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_site_arn(&self) -> ::std::option::Option<& str> {
         self.network_site_arn.as_deref()
     }
     /// <p>The pending plan.</p>
-    pub fn pending_plan(&self) -> ::std::option::Option<&crate::types::SitePlan> {
+    pub fn pending_plan(&self) -> ::std::option::Option<& crate::types::SitePlan> {
         self.pending_plan.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl UpdateNetworkSitePlanInput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
-    pub fn builder(
-    ) -> crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanInputBuilder {
         crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNetworkSitePlanInputBuilder {
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pending_plan: ::std::option::Option<crate::types::SitePlan>,
@@ -48,20 +44,17 @@ pub struct UpdateNetworkSitePlanInputBuilder {
 }
 impl UpdateNetworkSitePlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.network_site_arn = input;
-        self
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_site_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_site_arn
     }
     /// <p>The pending plan.</p>
     pub fn pending_plan(mut self, input: crate::types::SitePlan) -> Self {
@@ -69,12 +62,12 @@ impl UpdateNetworkSitePlanInputBuilder {
         self
     }
     /// <p>The pending plan.</p>
-    pub fn set_pending_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::SitePlan>,
-    ) -> Self {
-        self.pending_plan = input;
-        self
+    pub fn set_pending_plan(mut self, input: ::std::option::Option<crate::types::SitePlan>) -> Self {
+        self.pending_plan = input; self
+    }
+    /// <p>The pending plan.</p>
+    pub fn get_pending_plan(&self) -> &::std::option::Option<crate::types::SitePlan> {
+        &self.pending_plan
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,22 +76,24 @@ impl UpdateNetworkSitePlanInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput {
-                network_site_arn: self.network_site_arn,
-                pending_plan: self.pending_plan,
-                client_token: self.client_token,
-            },
+                network_site_arn: self.network_site_arn
+                ,
+                pending_plan: self.pending_plan
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

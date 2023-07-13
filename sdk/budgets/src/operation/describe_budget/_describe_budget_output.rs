@@ -3,7 +3,7 @@
 /// <p> Response of DescribeBudget </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBudgetOutput {
+pub struct DescribeBudgetOutput  {
     /// <p>The description of the budget.</p>
     #[doc(hidden)]
     pub budget: ::std::option::Option<crate::types::Budget>,
@@ -11,15 +11,15 @@ pub struct DescribeBudgetOutput {
 }
 impl DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
-    pub fn budget(&self) -> ::std::option::Option<&crate::types::Budget> {
+    pub fn budget(&self) -> ::std::option::Option<& crate::types::Budget> {
         self.budget.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeBudgetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeBudgetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetOutput`](crate::operation::describe_budget::DescribeBudgetOutput).
     pub fn builder() -> crate::operation::describe_budget::builders::DescribeBudgetOutputBuilder {
@@ -29,9 +29,7 @@ impl DescribeBudgetOutput {
 
 /// A builder for [`DescribeBudgetOutput`](crate::operation::describe_budget::DescribeBudgetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetOutputBuilder {
     pub(crate) budget: ::std::option::Option<crate::types::Budget>,
     _request_id: Option<String>,
@@ -44,23 +42,28 @@ impl DescribeBudgetOutputBuilder {
     }
     /// <p>The description of the budget.</p>
     pub fn set_budget(mut self, input: ::std::option::Option<crate::types::Budget>) -> Self {
-        self.budget = input;
-        self
+        self.budget = input; self
+    }
+    /// <p>The description of the budget.</p>
+    pub fn get_budget(&self) -> &::std::option::Option<crate::types::Budget> {
+        &self.budget
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeBudgetOutput`](crate::operation::describe_budget::DescribeBudgetOutput).
     pub fn build(self) -> crate::operation::describe_budget::DescribeBudgetOutput {
         crate::operation::describe_budget::DescribeBudgetOutput {
-            budget: self.budget,
+            budget: self.budget
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

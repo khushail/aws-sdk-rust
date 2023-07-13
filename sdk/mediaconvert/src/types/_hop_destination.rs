@@ -3,7 +3,7 @@
 /// Optional. Configuration for a destination queue to which the job can hop once a customer-defined minimum wait time has passed.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HopDestination {
+pub struct HopDestination  {
     /// Optional. When you set up a job to use queue hopping, you can specify a different relative priority for the job in the destination queue. If you don't specify, the relative priority will remain the same as in the previous queue.
     #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
@@ -20,7 +20,7 @@ impl HopDestination {
         self.priority
     }
     /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
-    pub fn queue(&self) -> ::std::option::Option<&str> {
+    pub fn queue(&self) -> ::std::option::Option<& str> {
         self.queue.as_deref()
     }
     /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
@@ -37,9 +37,7 @@ impl HopDestination {
 
 /// A builder for [`HopDestination`](crate::types::HopDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HopDestinationBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) queue: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl HopDestinationBuilder {
     }
     /// Optional. When you set up a job to use queue hopping, you can specify a different relative priority for the job in the destination queue. If you don't specify, the relative priority will remain the same as in the previous queue.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
+    }
+    /// Optional. When you set up a job to use queue hopping, you can specify a different relative priority for the job in the destination queue. If you don't specify, the relative priority will remain the same as in the previous queue.
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
     pub fn queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl HopDestinationBuilder {
     }
     /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
     pub fn set_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue = input;
-        self
+        self.queue = input; self
+    }
+    /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
+    pub fn get_queue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue
     }
     /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
     pub fn wait_minutes(mut self, input: i32) -> Self {
@@ -73,15 +77,22 @@ impl HopDestinationBuilder {
     }
     /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
     pub fn set_wait_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.wait_minutes = input;
-        self
+        self.wait_minutes = input; self
+    }
+    /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
+    pub fn get_wait_minutes(&self) -> &::std::option::Option<i32> {
+        &self.wait_minutes
     }
     /// Consumes the builder and constructs a [`HopDestination`](crate::types::HopDestination).
     pub fn build(self) -> crate::types::HopDestination {
         crate::types::HopDestination {
-            priority: self.priority,
-            queue: self.queue,
-            wait_minutes: self.wait_minutes,
+            priority: self.priority
+            ,
+            queue: self.queue
+            ,
+            wait_minutes: self.wait_minutes
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAssociationStatusInput {
+pub struct UpdateAssociationStatusInput  {
     /// <p>The name of the SSM document.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct UpdateAssociationStatusInput {
 }
 impl UpdateAssociationStatusInput {
     /// <p>The name of the SSM document.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The managed node ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The association status.</p>
-    pub fn association_status(&self) -> ::std::option::Option<&crate::types::AssociationStatus> {
+    pub fn association_status(&self) -> ::std::option::Option<& crate::types::AssociationStatus> {
         self.association_status.as_ref()
     }
 }
 impl UpdateAssociationStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateAssociationStatusInput`](crate::operation::update_association_status::UpdateAssociationStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder {
         crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssociationStatusInput`](crate::operation::update_association_status::UpdateAssociationStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssociationStatusInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -54,8 +50,11 @@ impl UpdateAssociationStatusInputBuilder {
     }
     /// <p>The name of the SSM document.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the SSM document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The managed node ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,8 +63,11 @@ impl UpdateAssociationStatusInputBuilder {
     }
     /// <p>The managed node ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
+    }
+    /// <p>The managed node ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The association status.</p>
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
@@ -73,26 +75,25 @@ impl UpdateAssociationStatusInputBuilder {
         self
     }
     /// <p>The association status.</p>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationStatus>,
-    ) -> Self {
-        self.association_status = input;
-        self
+    pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
+        self.association_status = input; self
+    }
+    /// <p>The association status.</p>
+    pub fn get_association_status(&self) -> &::std::option::Option<crate::types::AssociationStatus> {
+        &self.association_status
     }
     /// Consumes the builder and constructs a [`UpdateAssociationStatusInput`](crate::operation::update_association_status::UpdateAssociationStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_association_status::UpdateAssociationStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_association_status::UpdateAssociationStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_association_status::UpdateAssociationStatusInput {
-                name: self.name,
-                instance_id: self.instance_id,
-                association_status: self.association_status,
-            },
+                name: self.name
+                ,
+                instance_id: self.instance_id
+                ,
+                association_status: self.association_status
+                ,
+            }
         )
     }
 }
+

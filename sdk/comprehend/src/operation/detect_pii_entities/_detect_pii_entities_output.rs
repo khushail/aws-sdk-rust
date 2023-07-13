@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectPiiEntitiesOutput {
+pub struct DetectPiiEntitiesOutput  {
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
     #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntity>>,
@@ -10,28 +10,25 @@ pub struct DetectPiiEntitiesOutput {
 }
 impl DetectPiiEntitiesOutput {
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::PiiEntity]> {
+    pub fn entities(&self) -> ::std::option::Option<& [crate::types::PiiEntity]> {
         self.entities.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DetectPiiEntitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetectPiiEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`DetectPiiEntitiesOutput`](crate::operation::detect_pii_entities::DetectPiiEntitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::detect_pii_entities::builders::DetectPiiEntitiesOutputBuilder {
+    pub fn builder() -> crate::operation::detect_pii_entities::builders::DetectPiiEntitiesOutputBuilder {
         crate::operation::detect_pii_entities::builders::DetectPiiEntitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetectPiiEntitiesOutput`](crate::operation::detect_pii_entities::DetectPiiEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectPiiEntitiesOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntity>>,
     _request_id: Option<String>,
@@ -44,32 +41,34 @@ impl DetectPiiEntitiesOutputBuilder {
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
     pub fn entities(mut self, input: crate::types::PiiEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntity>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntity>>) -> Self {
+        self.entities = input; self
+    }
+    /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PiiEntity>> {
+        &self.entities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetectPiiEntitiesOutput`](crate::operation::detect_pii_entities::DetectPiiEntitiesOutput).
     pub fn build(self) -> crate::operation::detect_pii_entities::DetectPiiEntitiesOutput {
         crate::operation::detect_pii_entities::DetectPiiEntitiesOutput {
-            entities: self.entities,
+            entities: self.entities
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

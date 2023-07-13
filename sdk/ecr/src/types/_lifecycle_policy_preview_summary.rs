@@ -3,7 +3,7 @@
 /// <p>The summary of the lifecycle policy preview request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyPreviewSummary {
+pub struct LifecyclePolicyPreviewSummary  {
     /// <p>The number of expiring images.</p>
     #[doc(hidden)]
     pub expiring_image_total_count: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl LifecyclePolicyPreviewSummary {
 
 /// A builder for [`LifecyclePolicyPreviewSummary`](crate::types::LifecyclePolicyPreviewSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecyclePolicyPreviewSummaryBuilder {
     pub(crate) expiring_image_total_count: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl LifecyclePolicyPreviewSummaryBuilder {
     }
     /// <p>The number of expiring images.</p>
     pub fn set_expiring_image_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expiring_image_total_count = input;
-        self
+        self.expiring_image_total_count = input; self
+    }
+    /// <p>The number of expiring images.</p>
+    pub fn get_expiring_image_total_count(&self) -> &::std::option::Option<i32> {
+        &self.expiring_image_total_count
     }
     /// Consumes the builder and constructs a [`LifecyclePolicyPreviewSummary`](crate::types::LifecyclePolicyPreviewSummary).
     pub fn build(self) -> crate::types::LifecyclePolicyPreviewSummary {
         crate::types::LifecyclePolicyPreviewSummary {
-            expiring_image_total_count: self.expiring_image_total_count,
+            expiring_image_total_count: self.expiring_image_total_count
+            ,
         }
     }
 }
+

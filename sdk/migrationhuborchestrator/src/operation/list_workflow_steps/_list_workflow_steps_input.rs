@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkflowStepsInput {
+pub struct ListWorkflowStepsInput  {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListWorkflowStepsInput {
 }
 impl ListWorkflowStepsInput {
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that can be returned.</p>
@@ -26,27 +26,24 @@ impl ListWorkflowStepsInput {
         self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_group_id(&self) -> ::std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
 }
 impl ListWorkflowStepsInput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowStepsInput`](crate::operation::list_workflow_steps::ListWorkflowStepsInput).
-    pub fn builder(
-    ) -> crate::operation::list_workflow_steps::builders::ListWorkflowStepsInputBuilder {
+    pub fn builder() -> crate::operation::list_workflow_steps::builders::ListWorkflowStepsInputBuilder {
         crate::operation::list_workflow_steps::builders::ListWorkflowStepsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkflowStepsInput`](crate::operation::list_workflow_steps::ListWorkflowStepsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowStepsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -61,8 +58,11 @@ impl ListWorkflowStepsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results that can be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -71,8 +71,11 @@ impl ListWorkflowStepsInputBuilder {
     }
     /// <p>The maximum number of results that can be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results that can be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,39 +84,40 @@ impl ListWorkflowStepsInputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
+    }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.step_group_id = input;
-        self
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.step_group_id = input; self
+    }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_group_id
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepsInput`](crate::operation::list_workflow_steps::ListWorkflowStepsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workflow_steps::ListWorkflowStepsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workflow_steps::ListWorkflowStepsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_workflow_steps::ListWorkflowStepsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-                workflow_id: self.workflow_id,
-                step_group_id: self.step_group_id,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                workflow_id: self.workflow_id
+                ,
+                step_group_id: self.step_group_id
+                ,
+            }
         )
     }
 }
+

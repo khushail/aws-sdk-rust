@@ -3,7 +3,7 @@
 /// Attributes that define a local volume resource.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LocalVolumeResourceData {
+pub struct LocalVolumeResourceData  {
     /// The absolute local path of the resource inside the Lambda environment.
     #[doc(hidden)]
     pub destination_path: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct LocalVolumeResourceData {
 }
 impl LocalVolumeResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn destination_path(&self) -> ::std::option::Option<&str> {
+    pub fn destination_path(&self) -> ::std::option::Option<& str> {
         self.destination_path.as_deref()
     }
     /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
-    pub fn group_owner_setting(&self) -> ::std::option::Option<&crate::types::GroupOwnerSetting> {
+    pub fn group_owner_setting(&self) -> ::std::option::Option<& crate::types::GroupOwnerSetting> {
         self.group_owner_setting.as_ref()
     }
     /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
-    pub fn source_path(&self) -> ::std::option::Option<&str> {
+    pub fn source_path(&self) -> ::std::option::Option<& str> {
         self.source_path.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl LocalVolumeResourceData {
 
 /// A builder for [`LocalVolumeResourceData`](crate::types::LocalVolumeResourceData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocalVolumeResourceDataBuilder {
     pub(crate) destination_path: ::std::option::Option<::std::string::String>,
     pub(crate) group_owner_setting: ::std::option::Option<crate::types::GroupOwnerSetting>,
@@ -47,20 +45,17 @@ pub struct LocalVolumeResourceDataBuilder {
 }
 impl LocalVolumeResourceDataBuilder {
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn destination_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_path = ::std::option::Option::Some(input.into());
         self
     }
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn set_destination_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_path = input;
-        self
+    pub fn set_destination_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_path = input; self
+    }
+    /// The absolute local path of the resource inside the Lambda environment.
+    pub fn get_destination_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_path
     }
     /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
     pub fn group_owner_setting(mut self, input: crate::types::GroupOwnerSetting) -> Self {
@@ -68,12 +63,12 @@ impl LocalVolumeResourceDataBuilder {
         self
     }
     /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
-    pub fn set_group_owner_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupOwnerSetting>,
-    ) -> Self {
-        self.group_owner_setting = input;
-        self
+    pub fn set_group_owner_setting(mut self, input: ::std::option::Option<crate::types::GroupOwnerSetting>) -> Self {
+        self.group_owner_setting = input; self
+    }
+    /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
+    pub fn get_group_owner_setting(&self) -> &::std::option::Option<crate::types::GroupOwnerSetting> {
+        &self.group_owner_setting
     }
     /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
     pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,15 +77,22 @@ impl LocalVolumeResourceDataBuilder {
     }
     /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_path = input;
-        self
+        self.source_path = input; self
+    }
+    /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_path
     }
     /// Consumes the builder and constructs a [`LocalVolumeResourceData`](crate::types::LocalVolumeResourceData).
     pub fn build(self) -> crate::types::LocalVolumeResourceData {
         crate::types::LocalVolumeResourceData {
-            destination_path: self.destination_path,
-            group_owner_setting: self.group_owner_setting,
-            source_path: self.source_path,
+            destination_path: self.destination_path
+            ,
+            group_owner_setting: self.group_owner_setting
+            ,
+            source_path: self.source_path
+            ,
         }
     }
 }
+

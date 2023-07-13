@@ -3,7 +3,7 @@
 /// <p>The progress details of a specific domain configuration change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangeProgressStatusDetails {
+pub struct ChangeProgressStatusDetails  {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
     #[doc(hidden)]
     pub change_id: ::std::option::Option<::std::string::String>,
@@ -24,28 +24,27 @@ pub struct ChangeProgressStatusDetails {
     pub total_number_of_stages: i32,
     /// <p>The specific stages that the domain is going through to perform the configuration change.</p>
     #[doc(hidden)]
-    pub change_progress_stages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
+    pub change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
 }
 impl ChangeProgressStatusDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
-    pub fn change_id(&self) -> ::std::option::Option<&str> {
+    pub fn change_id(&self) -> ::std::option::Option<& str> {
         self.change_id.as_deref()
     }
     /// <p>The time at which the configuration change is made on the domain.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The overall status of the domain configuration change.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OverallChangeStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OverallChangeStatus> {
         self.status.as_ref()
     }
     /// <p>The list of properties in the domain configuration change that are still pending.</p>
-    pub fn pending_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn pending_properties(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.pending_properties.as_deref()
     }
     /// <p>The list of properties in the domain configuration change that have completed.</p>
-    pub fn completed_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn completed_properties(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.completed_properties.as_deref()
     }
     /// <p>The total number of stages required for the configuration change.</p>
@@ -53,9 +52,7 @@ impl ChangeProgressStatusDetails {
         self.total_number_of_stages
     }
     /// <p>The specific stages that the domain is going through to perform the configuration change.</p>
-    pub fn change_progress_stages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChangeProgressStage]> {
+    pub fn change_progress_stages(&self) -> ::std::option::Option<& [crate::types::ChangeProgressStage]> {
         self.change_progress_stages.as_deref()
     }
 }
@@ -68,9 +65,7 @@ impl ChangeProgressStatusDetails {
 
 /// A builder for [`ChangeProgressStatusDetails`](crate::types::ChangeProgressStatusDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeProgressStatusDetailsBuilder {
     pub(crate) change_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -78,8 +73,7 @@ pub struct ChangeProgressStatusDetailsBuilder {
     pub(crate) pending_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) completed_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) total_number_of_stages: ::std::option::Option<i32>,
-    pub(crate) change_progress_stages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
+    pub(crate) change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
 }
 impl ChangeProgressStatusDetailsBuilder {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
@@ -89,8 +83,11 @@ impl ChangeProgressStatusDetailsBuilder {
     }
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
     pub fn set_change_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_id = input;
-        self
+        self.change_id = input; self
+    }
+    /// <p>The unique change identifier associated with a specific domain configuration change.</p>
+    pub fn get_change_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_id
     }
     /// <p>The time at which the configuration change is made on the domain.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -98,12 +95,12 @@ impl ChangeProgressStatusDetailsBuilder {
         self
     }
     /// <p>The time at which the configuration change is made on the domain.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>The time at which the configuration change is made on the domain.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The overall status of the domain configuration change.</p>
     pub fn status(mut self, input: crate::types::OverallChangeStatus) -> Self {
@@ -111,56 +108,50 @@ impl ChangeProgressStatusDetailsBuilder {
         self
     }
     /// <p>The overall status of the domain configuration change.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OverallChangeStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OverallChangeStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The overall status of the domain configuration change.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OverallChangeStatus> {
+        &self.status
     }
     /// Appends an item to `pending_properties`.
     ///
     /// To override the contents of this collection use [`set_pending_properties`](Self::set_pending_properties).
     ///
     /// <p>The list of properties in the domain configuration change that are still pending.</p>
-    pub fn pending_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pending_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pending_properties.unwrap_or_default();
-        v.push(input.into());
-        self.pending_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.pending_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of properties in the domain configuration change that are still pending.</p>
-    pub fn set_pending_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.pending_properties = input;
-        self
+    pub fn set_pending_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.pending_properties = input; self
+    }
+    /// <p>The list of properties in the domain configuration change that are still pending.</p>
+    pub fn get_pending_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pending_properties
     }
     /// Appends an item to `completed_properties`.
     ///
     /// To override the contents of this collection use [`set_completed_properties`](Self::set_completed_properties).
     ///
     /// <p>The list of properties in the domain configuration change that have completed.</p>
-    pub fn completed_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn completed_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.completed_properties.unwrap_or_default();
-        v.push(input.into());
-        self.completed_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.completed_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of properties in the domain configuration change that have completed.</p>
-    pub fn set_completed_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.completed_properties = input;
-        self
+    pub fn set_completed_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.completed_properties = input; self
+    }
+    /// <p>The list of properties in the domain configuration change that have completed.</p>
+    pub fn get_completed_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.completed_properties
     }
     /// <p>The total number of stages required for the configuration change.</p>
     pub fn total_number_of_stages(mut self, input: i32) -> Self {
@@ -169,8 +160,11 @@ impl ChangeProgressStatusDetailsBuilder {
     }
     /// <p>The total number of stages required for the configuration change.</p>
     pub fn set_total_number_of_stages(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_number_of_stages = input;
-        self
+        self.total_number_of_stages = input; self
+    }
+    /// <p>The total number of stages required for the configuration change.</p>
+    pub fn get_total_number_of_stages(&self) -> &::std::option::Option<i32> {
+        &self.total_number_of_stages
     }
     /// Appends an item to `change_progress_stages`.
     ///
@@ -179,28 +173,37 @@ impl ChangeProgressStatusDetailsBuilder {
     /// <p>The specific stages that the domain is going through to perform the configuration change.</p>
     pub fn change_progress_stages(mut self, input: crate::types::ChangeProgressStage) -> Self {
         let mut v = self.change_progress_stages.unwrap_or_default();
-        v.push(input);
-        self.change_progress_stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.change_progress_stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The specific stages that the domain is going through to perform the configuration change.</p>
-    pub fn set_change_progress_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
-    ) -> Self {
-        self.change_progress_stages = input;
-        self
+    pub fn set_change_progress_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>) -> Self {
+        self.change_progress_stages = input; self
+    }
+    /// <p>The specific stages that the domain is going through to perform the configuration change.</p>
+    pub fn get_change_progress_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>> {
+        &self.change_progress_stages
     }
     /// Consumes the builder and constructs a [`ChangeProgressStatusDetails`](crate::types::ChangeProgressStatusDetails).
     pub fn build(self) -> crate::types::ChangeProgressStatusDetails {
         crate::types::ChangeProgressStatusDetails {
-            change_id: self.change_id,
-            start_time: self.start_time,
-            status: self.status,
-            pending_properties: self.pending_properties,
-            completed_properties: self.completed_properties,
-            total_number_of_stages: self.total_number_of_stages.unwrap_or_default(),
-            change_progress_stages: self.change_progress_stages,
+            change_id: self.change_id
+            ,
+            start_time: self.start_time
+            ,
+            status: self.status
+            ,
+            pending_properties: self.pending_properties
+            ,
+            completed_properties: self.completed_properties
+            ,
+            total_number_of_stages: self.total_number_of_stages
+                .unwrap_or_default()
+            ,
+            change_progress_stages: self.change_progress_stages
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateThesaurusInput {
+pub struct UpdateThesaurusInput  {
     /// <p>The identifier of the thesaurus you want to update.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -24,27 +24,27 @@ pub struct UpdateThesaurusInput {
 }
 impl UpdateThesaurusInput {
     /// <p>The identifier of the thesaurus you want to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A new name for the thesaurus.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the index for the thesaurus.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>A new description for the thesaurus.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    pub fn source_s3_path(&self) -> ::std::option::Option<&crate::types::S3Path> {
+    pub fn source_s3_path(&self) -> ::std::option::Option<& crate::types::S3Path> {
         self.source_s3_path.as_ref()
     }
 }
@@ -57,9 +57,7 @@ impl UpdateThesaurusInput {
 
 /// A builder for [`UpdateThesaurusInput`](crate::operation::update_thesaurus::UpdateThesaurusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThesaurusInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -76,8 +74,11 @@ impl UpdateThesaurusInputBuilder {
     }
     /// <p>The identifier of the thesaurus you want to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the thesaurus you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A new name for the thesaurus.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +87,11 @@ impl UpdateThesaurusInputBuilder {
     }
     /// <p>A new name for the thesaurus.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A new name for the thesaurus.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The identifier of the index for the thesaurus.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,8 +100,11 @@ impl UpdateThesaurusInputBuilder {
     }
     /// <p>The identifier of the index for the thesaurus.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
+    }
+    /// <p>The identifier of the index for the thesaurus.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// <p>A new description for the thesaurus.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,8 +113,11 @@ impl UpdateThesaurusInputBuilder {
     }
     /// <p>A new description for the thesaurus.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A new description for the thesaurus.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,8 +126,11 @@ impl UpdateThesaurusInputBuilder {
     }
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn source_s3_path(mut self, input: crate::types::S3Path) -> Self {
@@ -125,27 +138,31 @@ impl UpdateThesaurusInputBuilder {
         self
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
-        self.source_s3_path = input;
-        self
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
+        self.source_s3_path = input; self
+    }
+    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    pub fn get_source_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
+        &self.source_s3_path
     }
     /// Consumes the builder and constructs a [`UpdateThesaurusInput`](crate::operation::update_thesaurus::UpdateThesaurusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_thesaurus::UpdateThesaurusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_thesaurus::UpdateThesaurusInput {
-            id: self.id,
-            name: self.name,
-            index_id: self.index_id,
-            description: self.description,
-            role_arn: self.role_arn,
-            source_s3_path: self.source_s3_path,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_thesaurus::UpdateThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_thesaurus::UpdateThesaurusInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                index_id: self.index_id
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                source_s3_path: self.source_s3_path
+                ,
+            }
+        )
     }
 }
+

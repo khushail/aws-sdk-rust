@@ -3,14 +3,14 @@
 /// <p>The EventBridge action definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventBridgeActionDefinition {
+pub struct EventBridgeActionDefinition  {
     /// <p>The name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl EventBridgeActionDefinition {
     /// <p>The name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl EventBridgeActionDefinition {
 
 /// A builder for [`EventBridgeActionDefinition`](crate::types::EventBridgeActionDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBridgeActionDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl EventBridgeActionDefinitionBuilder {
     }
     /// <p>The name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`EventBridgeActionDefinition`](crate::types::EventBridgeActionDefinition).
     pub fn build(self) -> crate::types::EventBridgeActionDefinition {
-        crate::types::EventBridgeActionDefinition { name: self.name }
+        crate::types::EventBridgeActionDefinition {
+            name: self.name
+            ,
+        }
     }
 }
+

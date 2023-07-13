@@ -3,7 +3,7 @@
 /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Template {
+pub struct Template  {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
     #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct Template {
 }
 impl Template {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The subject line of the email.</p>
-    pub fn subject_part(&self) -> ::std::option::Option<&str> {
+    pub fn subject_part(&self) -> ::std::option::Option<& str> {
         self.subject_part.as_deref()
     }
     /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
-    pub fn text_part(&self) -> ::std::option::Option<&str> {
+    pub fn text_part(&self) -> ::std::option::Option<& str> {
         self.text_part.as_deref()
     }
     /// <p>The HTML body of the email.</p>
-    pub fn html_part(&self) -> ::std::option::Option<&str> {
+    pub fn html_part(&self) -> ::std::option::Option<& str> {
         self.html_part.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl Template {
 
 /// A builder for [`Template`](crate::types::Template).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) subject_part: ::std::option::Option<::std::string::String>,
@@ -55,20 +53,17 @@ pub struct TemplateBuilder {
 }
 impl TemplateBuilder {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.template_name = input;
-        self
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_name = input; self
+    }
+    /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>The subject line of the email.</p>
     pub fn subject_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,8 +72,11 @@ impl TemplateBuilder {
     }
     /// <p>The subject line of the email.</p>
     pub fn set_subject_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_part = input;
-        self
+        self.subject_part = input; self
+    }
+    /// <p>The subject line of the email.</p>
+    pub fn get_subject_part(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_part
     }
     /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
     pub fn text_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +85,11 @@ impl TemplateBuilder {
     }
     /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
     pub fn set_text_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_part = input;
-        self
+        self.text_part = input; self
+    }
+    /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
+    pub fn get_text_part(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_part
     }
     /// <p>The HTML body of the email.</p>
     pub fn html_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,16 +98,24 @@ impl TemplateBuilder {
     }
     /// <p>The HTML body of the email.</p>
     pub fn set_html_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.html_part = input;
-        self
+        self.html_part = input; self
+    }
+    /// <p>The HTML body of the email.</p>
+    pub fn get_html_part(&self) -> &::std::option::Option<::std::string::String> {
+        &self.html_part
     }
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {
         crate::types::Template {
-            template_name: self.template_name,
-            subject_part: self.subject_part,
-            text_part: self.text_part,
-            html_part: self.html_part,
+            template_name: self.template_name
+            ,
+            subject_part: self.subject_part
+            ,
+            text_part: self.text_part
+            ,
+            html_part: self.html_part
+            ,
         }
     }
 }
+

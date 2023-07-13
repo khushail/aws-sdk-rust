@@ -3,7 +3,7 @@
 /// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchGroupConfig {
+pub struct LaunchGroupConfig  {
     /// <p>A name for this launch group.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct LaunchGroupConfig {
 }
 impl LaunchGroupConfig {
     /// <p>A name for this launch group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the launch group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The feature that this launch is using.</p>
-    pub fn feature(&self) -> ::std::option::Option<&str> {
+    pub fn feature(&self) -> ::std::option::Option<& str> {
         self.feature.as_deref()
     }
     /// <p>The feature variation to use for this launch group.</p>
-    pub fn variation(&self) -> ::std::option::Option<&str> {
+    pub fn variation(&self) -> ::std::option::Option<& str> {
         self.variation.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl LaunchGroupConfig {
 
 /// A builder for [`LaunchGroupConfig`](crate::types::LaunchGroupConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchGroupConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl LaunchGroupConfigBuilder {
     }
     /// <p>A name for this launch group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A name for this launch group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A description of the launch group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl LaunchGroupConfigBuilder {
     }
     /// <p>A description of the launch group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the launch group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The feature that this launch is using.</p>
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl LaunchGroupConfigBuilder {
     }
     /// <p>The feature that this launch is using.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
+    }
+    /// <p>The feature that this launch is using.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature
     }
     /// <p>The feature variation to use for this launch group.</p>
     pub fn variation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl LaunchGroupConfigBuilder {
     }
     /// <p>The feature variation to use for this launch group.</p>
     pub fn set_variation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variation = input;
-        self
+        self.variation = input; self
+    }
+    /// <p>The feature variation to use for this launch group.</p>
+    pub fn get_variation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variation
     }
     /// Consumes the builder and constructs a [`LaunchGroupConfig`](crate::types::LaunchGroupConfig).
     pub fn build(self) -> crate::types::LaunchGroupConfig {
         crate::types::LaunchGroupConfig {
-            name: self.name,
-            description: self.description,
-            feature: self.feature,
-            variation: self.variation,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            feature: self.feature
+            ,
+            variation: self.variation
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommenderConfigurationsInput {
+pub struct GetRecommenderConfigurationsInput  {
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     #[doc(hidden)]
     pub page_size: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct GetRecommenderConfigurationsInput {
 }
 impl GetRecommenderConfigurationsInput {
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    pub fn page_size(&self) -> ::std::option::Option<&str> {
+    pub fn page_size(&self) -> ::std::option::Option<& str> {
         self.page_size.as_deref()
     }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<& str> {
         self.token.as_deref()
     }
 }
 impl GetRecommenderConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`GetRecommenderConfigurationsInput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput).
-    pub fn builder() -> crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder {
         crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommenderConfigurationsInput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommenderConfigurationsInputBuilder {
     pub(crate) page_size: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetRecommenderConfigurationsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
+    }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_size
     }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,21 +55,22 @@ impl GetRecommenderConfigurationsInputBuilder {
     }
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
+    }
+    /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// Consumes the builder and constructs a [`GetRecommenderConfigurationsInput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput {
-                page_size: self.page_size,
-                token: self.token,
-            },
+                page_size: self.page_size
+                ,
+                token: self.token
+                ,
+            }
         )
     }
 }
+

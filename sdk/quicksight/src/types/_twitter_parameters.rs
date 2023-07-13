@@ -3,7 +3,7 @@
 /// <p>The parameters for Twitter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TwitterParameters {
+pub struct TwitterParameters  {
     /// <p>Twitter query string.</p>
     #[doc(hidden)]
     pub query: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct TwitterParameters {
 }
 impl TwitterParameters {
     /// <p>Twitter query string.</p>
-    pub fn query(&self) -> ::std::option::Option<&str> {
+    pub fn query(&self) -> ::std::option::Option<& str> {
         self.query.as_deref()
     }
     /// <p>Maximum number of rows to query Twitter.</p>
@@ -30,9 +30,7 @@ impl TwitterParameters {
 
 /// A builder for [`TwitterParameters`](crate::types::TwitterParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TwitterParametersBuilder {
     pub(crate) query: ::std::option::Option<::std::string::String>,
     pub(crate) max_rows: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl TwitterParametersBuilder {
     }
     /// <p>Twitter query string.</p>
     pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query = input;
-        self
+        self.query = input; self
+    }
+    /// <p>Twitter query string.</p>
+    pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query
     }
     /// <p>Maximum number of rows to query Twitter.</p>
     pub fn max_rows(mut self, input: i32) -> Self {
@@ -55,14 +56,21 @@ impl TwitterParametersBuilder {
     }
     /// <p>Maximum number of rows to query Twitter.</p>
     pub fn set_max_rows(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_rows = input;
-        self
+        self.max_rows = input; self
+    }
+    /// <p>Maximum number of rows to query Twitter.</p>
+    pub fn get_max_rows(&self) -> &::std::option::Option<i32> {
+        &self.max_rows
     }
     /// Consumes the builder and constructs a [`TwitterParameters`](crate::types::TwitterParameters).
     pub fn build(self) -> crate::types::TwitterParameters {
         crate::types::TwitterParameters {
-            query: self.query,
-            max_rows: self.max_rows.unwrap_or_default(),
+            query: self.query
+            ,
+            max_rows: self.max_rows
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

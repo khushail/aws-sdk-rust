@@ -3,7 +3,7 @@
 /// <p>Specifies the settings for a wait activity in a journey. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WaitActivity {
+pub struct WaitActivity  {
     /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
     #[doc(hidden)]
     pub next_activity: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct WaitActivity {
 }
 impl WaitActivity {
     /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
-    pub fn next_activity(&self) -> ::std::option::Option<&str> {
+    pub fn next_activity(&self) -> ::std::option::Option<& str> {
         self.next_activity.as_deref()
     }
     /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
-    pub fn wait_time(&self) -> ::std::option::Option<&crate::types::WaitTime> {
+    pub fn wait_time(&self) -> ::std::option::Option<& crate::types::WaitTime> {
         self.wait_time.as_ref()
     }
 }
@@ -30,29 +30,24 @@ impl WaitActivity {
 
 /// A builder for [`WaitActivity`](crate::types::WaitActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WaitActivityBuilder {
     pub(crate) next_activity: ::std::option::Option<::std::string::String>,
     pub(crate) wait_time: ::std::option::Option<crate::types::WaitTime>,
 }
 impl WaitActivityBuilder {
     /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
-    pub fn next_activity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_activity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
-    pub fn set_next_activity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_activity = input;
-        self
+    pub fn set_next_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_activity = input; self
+    }
+    /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
+    pub fn get_next_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_activity
     }
     /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
     pub fn wait_time(mut self, input: crate::types::WaitTime) -> Self {
@@ -61,14 +56,20 @@ impl WaitActivityBuilder {
     }
     /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
     pub fn set_wait_time(mut self, input: ::std::option::Option<crate::types::WaitTime>) -> Self {
-        self.wait_time = input;
-        self
+        self.wait_time = input; self
+    }
+    /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
+    pub fn get_wait_time(&self) -> &::std::option::Option<crate::types::WaitTime> {
+        &self.wait_time
     }
     /// Consumes the builder and constructs a [`WaitActivity`](crate::types::WaitActivity).
     pub fn build(self) -> crate::types::WaitActivity {
         crate::types::WaitActivity {
-            next_activity: self.next_activity,
-            wait_time: self.wait_time,
+            next_activity: self.next_activity
+            ,
+            wait_time: self.wait_time
+            ,
         }
     }
 }
+

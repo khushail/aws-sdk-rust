@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCasesForContactOutput {
+pub struct ListCasesForContactOutput  {
     /// <p>A list of Case summary information.</p>
     #[doc(hidden)]
     pub cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseSummary>>,
@@ -13,32 +13,29 @@ pub struct ListCasesForContactOutput {
 }
 impl ListCasesForContactOutput {
     /// <p>A list of Case summary information.</p>
-    pub fn cases(&self) -> ::std::option::Option<&[crate::types::CaseSummary]> {
+    pub fn cases(&self) -> ::std::option::Option<& [crate::types::CaseSummary]> {
         self.cases.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCasesForContactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCasesForContactOutput {
     /// Creates a new builder-style object to manufacture [`ListCasesForContactOutput`](crate::operation::list_cases_for_contact::ListCasesForContactOutput).
-    pub fn builder(
-    ) -> crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder {
+    pub fn builder() -> crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder {
         crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCasesForContactOutput`](crate::operation::list_cases_for_contact::ListCasesForContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCasesForContactOutputBuilder {
     pub(crate) cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,17 @@ impl ListCasesForContactOutputBuilder {
     /// <p>A list of Case summary information.</p>
     pub fn cases(mut self, input: crate::types::CaseSummary) -> Self {
         let mut v = self.cases.unwrap_or_default();
-        v.push(input);
-        self.cases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Case summary information.</p>
-    pub fn set_cases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaseSummary>>,
-    ) -> Self {
-        self.cases = input;
-        self
+    pub fn set_cases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseSummary>>) -> Self {
+        self.cases = input; self
+    }
+    /// <p>A list of Case summary information.</p>
+    pub fn get_cases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaseSummary>> {
+        &self.cases
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +68,30 @@ impl ListCasesForContactOutputBuilder {
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCasesForContactOutput`](crate::operation::list_cases_for_contact::ListCasesForContactOutput).
     pub fn build(self) -> crate::operation::list_cases_for_contact::ListCasesForContactOutput {
         crate::operation::list_cases_for_contact::ListCasesForContactOutput {
-            cases: self.cases,
-            next_token: self.next_token,
+            cases: self.cases
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectEntitiesInput {
+pub struct DetectEntitiesInput  {
     /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl DetectEntitiesInput {
     /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DetectEntitiesInput {
 
 /// A builder for [`DetectEntitiesInput`](crate::operation::detect_entities::DetectEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectEntitiesInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DetectEntitiesInputBuilder {
     }
     /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// Consumes the builder and constructs a [`DetectEntitiesInput`](crate::operation::detect_entities::DetectEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_entities::DetectEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detect_entities::DetectEntitiesInput {
-            text: self.text,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_entities::DetectEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_entities::DetectEntitiesInput {
+                text: self.text
+                ,
+            }
+        )
     }
 }
+

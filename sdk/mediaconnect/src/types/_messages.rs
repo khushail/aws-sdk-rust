@@ -3,14 +3,14 @@
 /// Messages that provide the state of the flow.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Messages {
+pub struct Messages  {
     /// A list of errors that might have been generated from processes on this flow.
     #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Messages {
     /// A list of errors that might have been generated from processes on this flow.
-    pub fn errors(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn errors(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.errors.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Messages {
 
 /// A builder for [`Messages`](crate::types::Messages).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessagesBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -37,22 +35,24 @@ impl MessagesBuilder {
     /// A list of errors that might have been generated from processes on this flow.
     pub fn errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input.into());
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of errors that might have been generated from processes on this flow.
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.errors = input; self
+    }
+    /// A list of errors that might have been generated from processes on this flow.
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.errors
     }
     /// Consumes the builder and constructs a [`Messages`](crate::types::Messages).
     pub fn build(self) -> crate::types::Messages {
         crate::types::Messages {
-            errors: self.errors,
+            errors: self.errors
+            ,
         }
     }
 }
+

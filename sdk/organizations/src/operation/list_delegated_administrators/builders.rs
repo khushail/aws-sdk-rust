@@ -3,126 +3,110 @@ pub use crate::operation::list_delegated_administrators::_list_delegated_adminis
 
 pub use crate::operation::list_delegated_administrators::_list_delegated_administrators_input::ListDelegatedAdministratorsInputBuilder;
 
+impl ListDelegatedAdministratorsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_delegated_administrators();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListDelegatedAdministrators`.
-///
-/// <p>Lists the Amazon Web Services accounts that are designated as delegated administrators in this organization.</p>
+/// 
+/// <p>Lists the Amazon Web Services accounts that are designated as delegated administrators in this organization.</p> 
 /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDelegatedAdministratorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder,
 }
-impl ListDelegatedAdministratorsFluentBuilder {
+impl ListDelegatedAdministratorsFluentBuilder  {
     /// Creates a new `ListDelegatedAdministrators`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministrators,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ListDelegatedAdministrators as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_delegated_administrators::ListDelegatedAdministrators, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministrators,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_delegated_administrators::ListDelegatedAdministrators, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator{
-        crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::new(self.handle, self.inner)
-    }
-    /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator {
+                                crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::new(self.handle, self.inner)
+                            }
+    /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p> 
     /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_principal(input.into());
         self
     }
-    /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
+    /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p> 
     /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
+    }
+    /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p> 
+    /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_principal()
     }
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,6 +118,10 @@ impl ListDelegatedAdministratorsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -144,4 +132,9 @@ impl ListDelegatedAdministratorsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
 }
+

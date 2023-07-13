@@ -3,7 +3,7 @@
 /// <p>A reference value to compare Performance Insights metrics against to determine if the metrics demonstrate anomalous behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PerformanceInsightsReferenceScalar {
+pub struct PerformanceInsightsReferenceScalar  {
     /// <p>The reference value.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
@@ -23,9 +23,7 @@ impl PerformanceInsightsReferenceScalar {
 
 /// A builder for [`PerformanceInsightsReferenceScalar`](crate::types::PerformanceInsightsReferenceScalar).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceScalarBuilder {
     pub(crate) value: ::std::option::Option<f64>,
 }
@@ -37,11 +35,18 @@ impl PerformanceInsightsReferenceScalarBuilder {
     }
     /// <p>The reference value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The reference value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`PerformanceInsightsReferenceScalar`](crate::types::PerformanceInsightsReferenceScalar).
     pub fn build(self) -> crate::types::PerformanceInsightsReferenceScalar {
-        crate::types::PerformanceInsightsReferenceScalar { value: self.value }
+        crate::types::PerformanceInsightsReferenceScalar {
+            value: self.value
+            ,
+        }
     }
 }
+

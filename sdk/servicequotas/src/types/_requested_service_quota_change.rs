@@ -3,7 +3,7 @@
 /// <p>Information about a quota increase request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestedServiceQuotaChange {
+pub struct RequestedServiceQuotaChange  {
     /// <p>The unique identifier.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -49,27 +49,27 @@ pub struct RequestedServiceQuotaChange {
 }
 impl RequestedServiceQuotaChange {
     /// <p>The unique identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The case ID.</p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The service name.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The quota identifier.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<& str> {
         self.quota_code.as_deref()
     }
     /// <p>The quota name.</p>
-    pub fn quota_name(&self) -> ::std::option::Option<&str> {
+    pub fn quota_name(&self) -> ::std::option::Option<& str> {
         self.quota_name.as_deref()
     }
     /// <p>The new, increased value for the quota.</p>
@@ -77,23 +77,23 @@ impl RequestedServiceQuotaChange {
         self.desired_value
     }
     /// <p>The state of the quota increase request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RequestStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RequestStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time of the most recent change.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The IAM identity of the requester.</p>
-    pub fn requester(&self) -> ::std::option::Option<&str> {
+    pub fn requester(&self) -> ::std::option::Option<& str> {
         self.requester.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
-    pub fn quota_arn(&self) -> ::std::option::Option<&str> {
+    pub fn quota_arn(&self) -> ::std::option::Option<& str> {
         self.quota_arn.as_deref()
     }
     /// <p>Indicates whether the quota is global.</p>
@@ -101,7 +101,7 @@ impl RequestedServiceQuotaChange {
         self.global_quota
     }
     /// <p>The unit of measurement.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
@@ -114,9 +114,7 @@ impl RequestedServiceQuotaChange {
 
 /// A builder for [`RequestedServiceQuotaChange`](crate::types::RequestedServiceQuotaChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestedServiceQuotaChangeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
@@ -141,8 +139,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The unique identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The case ID.</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,8 +152,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The case ID.</p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
+    }
+    /// <p>The case ID.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
     }
     /// <p>The service identifier.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,8 +165,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The service identifier.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
+    }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>The service name.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,8 +178,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The service name.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
+    }
+    /// <p>The service name.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,8 +191,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The quota identifier.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_code = input;
-        self
+        self.quota_code = input; self
+    }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
     }
     /// <p>The quota name.</p>
     pub fn quota_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -191,8 +204,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The quota name.</p>
     pub fn set_quota_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_name = input;
-        self
+        self.quota_name = input; self
+    }
+    /// <p>The quota name.</p>
+    pub fn get_quota_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_name
     }
     /// <p>The new, increased value for the quota.</p>
     pub fn desired_value(mut self, input: f64) -> Self {
@@ -201,8 +217,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The new, increased value for the quota.</p>
     pub fn set_desired_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.desired_value = input;
-        self
+        self.desired_value = input; self
+    }
+    /// <p>The new, increased value for the quota.</p>
+    pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
+        &self.desired_value
     }
     /// <p>The state of the quota increase request.</p>
     pub fn status(mut self, input: crate::types::RequestStatus) -> Self {
@@ -211,8 +230,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The state of the quota increase request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RequestStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The state of the quota increase request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RequestStatus> {
+        &self.status
     }
     /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -220,12 +242,12 @@ impl RequestedServiceQuotaChangeBuilder {
         self
     }
     /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created = input;
-        self
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created = input; self
+    }
+    /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The date and time of the most recent change.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -233,12 +255,12 @@ impl RequestedServiceQuotaChangeBuilder {
         self
     }
     /// <p>The date and time of the most recent change.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
+    }
+    /// <p>The date and time of the most recent change.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// <p>The IAM identity of the requester.</p>
     pub fn requester(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -247,8 +269,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The IAM identity of the requester.</p>
     pub fn set_requester(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.requester = input;
-        self
+        self.requester = input; self
+    }
+    /// <p>The IAM identity of the requester.</p>
+    pub fn get_requester(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requester
     }
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
     pub fn quota_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -257,8 +282,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
     pub fn set_quota_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_arn = input;
-        self
+        self.quota_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the quota.</p>
+    pub fn get_quota_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_arn
     }
     /// <p>Indicates whether the quota is global.</p>
     pub fn global_quota(mut self, input: bool) -> Self {
@@ -267,8 +295,11 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>Indicates whether the quota is global.</p>
     pub fn set_global_quota(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.global_quota = input;
-        self
+        self.global_quota = input; self
+    }
+    /// <p>Indicates whether the quota is global.</p>
+    pub fn get_global_quota(&self) -> &::std::option::Option<bool> {
+        &self.global_quota
     }
     /// <p>The unit of measurement.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -277,26 +308,45 @@ impl RequestedServiceQuotaChangeBuilder {
     }
     /// <p>The unit of measurement.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
+    }
+    /// <p>The unit of measurement.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`RequestedServiceQuotaChange`](crate::types::RequestedServiceQuotaChange).
     pub fn build(self) -> crate::types::RequestedServiceQuotaChange {
         crate::types::RequestedServiceQuotaChange {
-            id: self.id,
-            case_id: self.case_id,
-            service_code: self.service_code,
-            service_name: self.service_name,
-            quota_code: self.quota_code,
-            quota_name: self.quota_name,
-            desired_value: self.desired_value,
-            status: self.status,
-            created: self.created,
-            last_updated: self.last_updated,
-            requester: self.requester,
-            quota_arn: self.quota_arn,
-            global_quota: self.global_quota.unwrap_or_default(),
-            unit: self.unit,
+            id: self.id
+            ,
+            case_id: self.case_id
+            ,
+            service_code: self.service_code
+            ,
+            service_name: self.service_name
+            ,
+            quota_code: self.quota_code
+            ,
+            quota_name: self.quota_name
+            ,
+            desired_value: self.desired_value
+            ,
+            status: self.status
+            ,
+            created: self.created
+            ,
+            last_updated: self.last_updated
+            ,
+            requester: self.requester
+            ,
+            quota_arn: self.quota_arn
+            ,
+            global_quota: self.global_quota
+                .unwrap_or_default()
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

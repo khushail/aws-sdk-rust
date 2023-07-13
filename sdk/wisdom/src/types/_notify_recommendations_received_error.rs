@@ -3,7 +3,7 @@
 /// <p>An error occurred when creating a recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyRecommendationsReceivedError {
+pub struct NotifyRecommendationsReceivedError  {
     /// <p>The identifier of the recommendation that is in error.</p>
     #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct NotifyRecommendationsReceivedError {
 }
 impl NotifyRecommendationsReceivedError {
     /// <p>The identifier of the recommendation that is in error.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>A recommendation is causing an error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl NotifyRecommendationsReceivedError {
 
 /// A builder for [`NotifyRecommendationsReceivedError`](crate::types::NotifyRecommendationsReceivedError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyRecommendationsReceivedErrorBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl NotifyRecommendationsReceivedErrorBuilder {
     /// <p>The identifier of the recommendation that is in error.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the recommendation that is in error.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.recommendation_id = input;
-        self
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommendation_id = input; self
+    }
+    /// <p>The identifier of the recommendation that is in error.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
     }
     /// <p>A recommendation is causing an error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl NotifyRecommendationsReceivedErrorBuilder {
     }
     /// <p>A recommendation is causing an error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A recommendation is causing an error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`NotifyRecommendationsReceivedError`](crate::types::NotifyRecommendationsReceivedError).
     pub fn build(self) -> crate::types::NotifyRecommendationsReceivedError {
         crate::types::NotifyRecommendationsReceivedError {
-            recommendation_id: self.recommendation_id,
-            message: self.message,
+            recommendation_id: self.recommendation_id
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

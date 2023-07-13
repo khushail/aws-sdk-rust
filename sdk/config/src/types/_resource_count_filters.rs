@@ -3,7 +3,7 @@
 /// <p>Filters the resource count based on account ID, region, and resource type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceCountFilters {
+pub struct ResourceCountFilters  {
     /// <p>The type of the Amazon Web Services resource.</p>
     #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -16,15 +16,15 @@ pub struct ResourceCountFilters {
 }
 impl ResourceCountFilters {
     /// <p>The type of the Amazon Web Services resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The 12-digit ID of the account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The region where the account is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ResourceCountFilters {
 
 /// A builder for [`ResourceCountFilters`](crate::types::ResourceCountFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceCountFiltersBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl ResourceCountFiltersBuilder {
         self
     }
     /// <p>The type of the Amazon Web Services resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
+    }
+    /// <p>The type of the Amazon Web Services resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// <p>The 12-digit ID of the account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +64,11 @@ impl ResourceCountFiltersBuilder {
     }
     /// <p>The 12-digit ID of the account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The 12-digit ID of the account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The region where the account is located.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,15 +77,22 @@ impl ResourceCountFiltersBuilder {
     }
     /// <p>The region where the account is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
+    }
+    /// <p>The region where the account is located.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`ResourceCountFilters`](crate::types::ResourceCountFilters).
     pub fn build(self) -> crate::types::ResourceCountFilters {
         crate::types::ResourceCountFilters {
-            resource_type: self.resource_type,
-            account_id: self.account_id,
-            region: self.region,
+            resource_type: self.resource_type
+            ,
+            account_id: self.account_id
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

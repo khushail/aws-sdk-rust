@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListThingRegistrationTaskReportsOutput {
+pub struct ListThingRegistrationTaskReportsOutput  {
     /// <p>Links to the task resources.</p>
     #[doc(hidden)]
     pub resource_links: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,35 +16,33 @@ pub struct ListThingRegistrationTaskReportsOutput {
 }
 impl ListThingRegistrationTaskReportsOutput {
     /// <p>Links to the task resources.</p>
-    pub fn resource_links(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn resource_links(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.resource_links.as_deref()
     }
     /// <p>The type of task report.</p>
-    pub fn report_type(&self) -> ::std::option::Option<&crate::types::ReportType> {
+    pub fn report_type(&self) -> ::std::option::Option<& crate::types::ReportType> {
         self.report_type.as_ref()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListThingRegistrationTaskReportsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListThingRegistrationTaskReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListThingRegistrationTaskReportsOutput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput).
-    pub fn builder() -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsOutputBuilder{
+    pub fn builder() -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsOutputBuilder {
         crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingRegistrationTaskReportsOutput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingRegistrationTaskReportsOutputBuilder {
     pub(crate) resource_links: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) report_type: ::std::option::Option<crate::types::ReportType>,
@@ -57,22 +55,19 @@ impl ListThingRegistrationTaskReportsOutputBuilder {
     /// To override the contents of this collection use [`set_resource_links`](Self::set_resource_links).
     ///
     /// <p>Links to the task resources.</p>
-    pub fn resource_links(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_links(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_links.unwrap_or_default();
-        v.push(input.into());
-        self.resource_links = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_links = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Links to the task resources.</p>
-    pub fn set_resource_links(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.resource_links = input;
-        self
+    pub fn set_resource_links(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.resource_links = input; self
+    }
+    /// <p>Links to the task resources.</p>
+    pub fn get_resource_links(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_links
     }
     /// <p>The type of task report.</p>
     pub fn report_type(mut self, input: crate::types::ReportType) -> Self {
@@ -80,12 +75,12 @@ impl ListThingRegistrationTaskReportsOutputBuilder {
         self
     }
     /// <p>The type of task report.</p>
-    pub fn set_report_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportType>,
-    ) -> Self {
-        self.report_type = input;
-        self
+    pub fn set_report_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
+        self.report_type = input; self
+    }
+    /// <p>The type of task report.</p>
+    pub fn get_report_type(&self) -> &::std::option::Option<crate::types::ReportType> {
+        &self.report_type
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,20 +89,23 @@ impl ListThingRegistrationTaskReportsOutputBuilder {
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListThingRegistrationTaskReportsOutput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput).
-    pub fn build(self) -> crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput{
+    pub fn build(self) -> crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput {
         crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput {
             resource_links: self.resource_links
             ,
@@ -119,3 +117,4 @@ impl ListThingRegistrationTaskReportsOutputBuilder {
         }
     }
 }
+

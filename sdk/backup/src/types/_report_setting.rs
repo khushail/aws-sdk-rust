@@ -3,8 +3,8 @@
 /// <p>Contains detailed information about a report setting.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportSetting {
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+pub struct ReportSetting  {
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     #[doc(hidden)]
     pub report_template: ::std::option::Option<::std::string::String>,
@@ -25,13 +25,13 @@ pub struct ReportSetting {
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportSetting {
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-    pub fn report_template(&self) -> ::std::option::Option<&str> {
+    pub fn report_template(&self) -> ::std::option::Option<& str> {
         self.report_template.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-    pub fn framework_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn framework_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.framework_arns.as_deref()
     }
     /// <p>The number of frameworks a report covers.</p>
@@ -39,15 +39,15 @@ impl ReportSetting {
         self.number_of_frameworks
     }
     /// <p>These are the accounts to be included in the report.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn accounts(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.accounts.as_deref()
     }
     /// <p>These are the Organizational Units to be included in the report.</p>
-    pub fn organization_units(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn organization_units(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.organization_units.as_deref()
     }
     /// <p>These are the Regions to be included in the report.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn regions(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.regions.as_deref()
     }
 }
@@ -60,9 +60,7 @@ impl ReportSetting {
 
 /// A builder for [`ReportSetting`](crate::types::ReportSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportSettingBuilder {
     pub(crate) report_template: ::std::option::Option<::std::string::String>,
     pub(crate) framework_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,45 +70,40 @@ pub struct ReportSettingBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportSettingBuilder {
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-    pub fn report_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-    pub fn set_report_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.report_template = input;
-        self
+    pub fn set_report_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.report_template = input; self
+    }
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    pub fn get_report_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_template
     }
     /// Appends an item to `framework_arns`.
     ///
     /// To override the contents of this collection use [`set_framework_arns`](Self::set_framework_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-    pub fn framework_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.framework_arns.unwrap_or_default();
-        v.push(input.into());
-        self.framework_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.framework_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-    pub fn set_framework_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.framework_arns = input;
-        self
+    pub fn set_framework_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.framework_arns = input; self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
+    pub fn get_framework_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.framework_arns
     }
     /// <p>The number of frameworks a report covers.</p>
     pub fn number_of_frameworks(mut self, input: i32) -> Self {
@@ -119,8 +112,11 @@ impl ReportSettingBuilder {
     }
     /// <p>The number of frameworks a report covers.</p>
     pub fn set_number_of_frameworks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_frameworks = input;
-        self
+        self.number_of_frameworks = input; self
+    }
+    /// <p>The number of frameworks a report covers.</p>
+    pub fn get_number_of_frameworks(&self) -> &::std::option::Option<i32> {
+        &self.number_of_frameworks
     }
     /// Appends an item to `accounts`.
     ///
@@ -129,39 +125,36 @@ impl ReportSettingBuilder {
     /// <p>These are the accounts to be included in the report.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input.into());
-        self.accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>These are the accounts to be included in the report.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.accounts = input; self
+    }
+    /// <p>These are the accounts to be included in the report.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accounts
     }
     /// Appends an item to `organization_units`.
     ///
     /// To override the contents of this collection use [`set_organization_units`](Self::set_organization_units).
     ///
     /// <p>These are the Organizational Units to be included in the report.</p>
-    pub fn organization_units(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_units(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organization_units.unwrap_or_default();
-        v.push(input.into());
-        self.organization_units = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.organization_units = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>These are the Organizational Units to be included in the report.</p>
-    pub fn set_organization_units(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.organization_units = input;
-        self
+    pub fn set_organization_units(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.organization_units = input; self
+    }
+    /// <p>These are the Organizational Units to be included in the report.</p>
+    pub fn get_organization_units(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organization_units
     }
     /// Appends an item to `regions`.
     ///
@@ -170,27 +163,35 @@ impl ReportSettingBuilder {
     /// <p>These are the Regions to be included in the report.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>These are the Regions to be included in the report.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regions = input; self
+    }
+    /// <p>These are the Regions to be included in the report.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Consumes the builder and constructs a [`ReportSetting`](crate::types::ReportSetting).
     pub fn build(self) -> crate::types::ReportSetting {
         crate::types::ReportSetting {
-            report_template: self.report_template,
-            framework_arns: self.framework_arns,
-            number_of_frameworks: self.number_of_frameworks.unwrap_or_default(),
-            accounts: self.accounts,
-            organization_units: self.organization_units,
-            regions: self.regions,
+            report_template: self.report_template
+            ,
+            framework_arns: self.framework_arns
+            ,
+            number_of_frameworks: self.number_of_frameworks
+                .unwrap_or_default()
+            ,
+            accounts: self.accounts
+            ,
+            organization_units: self.organization_units
+            ,
+            regions: self.regions
+            ,
         }
     }
 }
+

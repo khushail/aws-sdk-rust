@@ -3,91 +3,100 @@ pub use crate::operation::delete_core_network_policy_version::_delete_core_netwo
 
 pub use crate::operation::delete_core_network_policy_version::_delete_core_network_policy_version_input::DeleteCoreNetworkPolicyVersionInputBuilder;
 
+impl DeleteCoreNetworkPolicyVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.delete_core_network_policy_version();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DeleteCoreNetworkPolicyVersion`.
-///
+/// 
 /// <p>Deletes a policy version from a core network. You can't delete the current LIVE policy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCoreNetworkPolicyVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionInputBuilder,
 }
-impl DeleteCoreNetworkPolicyVersionFluentBuilder {
+impl DeleteCoreNetworkPolicyVersionFluentBuilder  {
     /// Creates a new `DeleteCoreNetworkPolicyVersion`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCoreNetworkPolicyVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of a core network for the deleted policy.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network for the deleted policy.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
+    }
+    /// <p>The ID of a core network for the deleted policy.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_core_network_id()
     }
     /// <p>The version ID of the deleted policy.</p>
     pub fn policy_version_id(mut self, input: i32) -> Self {
@@ -99,4 +108,9 @@ impl DeleteCoreNetworkPolicyVersionFluentBuilder {
         self.inner = self.inner.set_policy_version_id(input);
         self
     }
+    /// <p>The version ID of the deleted policy.</p>
+    pub fn get_policy_version_id(&self) -> &::std::option::Option<i32> {
+        self.inner.get_policy_version_id()
+    }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The filter that specifies the billing groups and pricing plans to retrieve billing group information. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBillingGroupsFilter {
+pub struct ListBillingGroupsFilter  {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
     #[doc(hidden)]
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,15 +16,15 @@ pub struct ListBillingGroupsFilter {
 }
 impl ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.arns.as_deref()
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn pricing_plan(&self) -> ::std::option::Option<&str> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& str> {
         self.pricing_plan.as_deref()
     }
     /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
-    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::BillingGroupStatus]> {
+    pub fn statuses(&self) -> ::std::option::Option<& [crate::types::BillingGroupStatus]> {
         self.statuses.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ListBillingGroupsFilter {
 
 /// A builder for [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupsFilterBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) pricing_plan: ::std::option::Option<::std::string::String>,
@@ -53,17 +51,17 @@ impl ListBillingGroupsFilterBuilder {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.arns = input; self
+    }
+    /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn pricing_plan(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +70,11 @@ impl ListBillingGroupsFilterBuilder {
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
+    }
+    /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_plan
     }
     /// Appends an item to `statuses`.
     ///
@@ -82,24 +83,28 @@ impl ListBillingGroupsFilterBuilder {
     /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
     pub fn statuses(mut self, input: crate::types::BillingGroupStatus) -> Self {
         let mut v = self.statuses.unwrap_or_default();
-        v.push(input);
-        self.statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
-    pub fn set_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>,
-    ) -> Self {
-        self.statuses = input;
-        self
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>) -> Self {
+        self.statuses = input; self
+    }
+    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>> {
+        &self.statuses
     }
     /// Consumes the builder and constructs a [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
     pub fn build(self) -> crate::types::ListBillingGroupsFilter {
         crate::types::ListBillingGroupsFilter {
-            arns: self.arns,
-            pricing_plan: self.pricing_plan,
-            statuses: self.statuses,
+            arns: self.arns
+            ,
+            pricing_plan: self.pricing_plan
+            ,
+            statuses: self.statuses
+            ,
         }
     }
 }
+

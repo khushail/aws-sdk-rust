@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReportDefinitionOutput {
+pub struct UpdateReportDefinitionOutput  {
     /// <p>ID of the report.</p>
     #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
@@ -10,29 +10,25 @@ pub struct UpdateReportDefinitionOutput {
 }
 impl UpdateReportDefinitionOutput {
     /// <p>ID of the report.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateReportDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateReportDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReportDefinitionOutput`](crate::operation::update_report_definition::UpdateReportDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_report_definition::builders::UpdateReportDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_report_definition::builders::UpdateReportDefinitionOutputBuilder {
         crate::operation::update_report_definition::builders::UpdateReportDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReportDefinitionOutput`](crate::operation::update_report_definition::UpdateReportDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReportDefinitionOutputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -45,23 +41,28 @@ impl UpdateReportDefinitionOutputBuilder {
     }
     /// <p>ID of the report.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
+    }
+    /// <p>ID of the report.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateReportDefinitionOutput`](crate::operation::update_report_definition::UpdateReportDefinitionOutput).
     pub fn build(self) -> crate::operation::update_report_definition::UpdateReportDefinitionOutput {
         crate::operation::update_report_definition::UpdateReportDefinitionOutput {
-            report_id: self.report_id,
+            report_id: self.report_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

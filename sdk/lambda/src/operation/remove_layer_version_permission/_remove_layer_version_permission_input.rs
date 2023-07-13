@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveLayerVersionPermissionInput {
+pub struct RemoveLayerVersionPermissionInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
     pub layer_name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct RemoveLayerVersionPermissionInput {
 }
 impl RemoveLayerVersionPermissionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub fn layer_name(&self) -> ::std::option::Option<&str> {
+    pub fn layer_name(&self) -> ::std::option::Option<& str> {
         self.layer_name.as_deref()
     }
     /// <p>The version number.</p>
@@ -26,26 +26,24 @@ impl RemoveLayerVersionPermissionInput {
         self.version_number
     }
     /// <p>The identifier that was specified when the statement was added.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<& str> {
         self.statement_id.as_deref()
     }
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 impl RemoveLayerVersionPermissionInput {
     /// Creates a new builder-style object to manufacture [`RemoveLayerVersionPermissionInput`](crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionInput).
-    pub fn builder() -> crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder{
+    pub fn builder() -> crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder {
         crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveLayerVersionPermissionInput`](crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveLayerVersionPermissionInputBuilder {
     pub(crate) layer_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i64>,
@@ -60,8 +58,11 @@ impl RemoveLayerVersionPermissionInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn set_layer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_name = input;
-        self
+        self.layer_name = input; self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_name
     }
     /// <p>The version number.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -70,8 +71,11 @@ impl RemoveLayerVersionPermissionInputBuilder {
     }
     /// <p>The version number.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
+    }
+    /// <p>The version number.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>The identifier that was specified when the statement was added.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,8 +84,11 @@ impl RemoveLayerVersionPermissionInputBuilder {
     }
     /// <p>The identifier that was specified when the statement was added.</p>
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_id = input;
-        self
+        self.statement_id = input; self
+    }
+    /// <p>The identifier that was specified when the statement was added.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
     }
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,23 +97,26 @@ impl RemoveLayerVersionPermissionInputBuilder {
     }
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
+    }
+    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`RemoveLayerVersionPermissionInput`](crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionInput {
-                layer_name: self.layer_name,
-                version_number: self.version_number,
-                statement_id: self.statement_id,
-                revision_id: self.revision_id,
-            },
+                layer_name: self.layer_name
+                ,
+                version_number: self.version_number
+                ,
+                statement_id: self.statement_id
+                ,
+                revision_id: self.revision_id
+                ,
+            }
         )
     }
 }
+

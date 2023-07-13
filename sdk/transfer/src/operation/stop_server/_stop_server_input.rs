@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopServerInput {
+pub struct StopServerInput  {
     /// <p>A system-assigned unique identifier for a server that you stopped.</p>
     #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
 }
 impl StopServerInput {
     /// <p>A system-assigned unique identifier for a server that you stopped.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl StopServerInput {
 
 /// A builder for [`StopServerInput`](crate::operation::stop_server::StopServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopServerInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl StopServerInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server that you stopped.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
+    }
+    /// <p>A system-assigned unique identifier for a server that you stopped.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
     }
     /// Consumes the builder and constructs a [`StopServerInput`](crate::operation::stop_server::StopServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_server::StopServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_server::StopServerInput {
-            server_id: self.server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_server::StopServerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_server::StopServerInput {
+                server_id: self.server_id
+                ,
+            }
+        )
     }
 }
+

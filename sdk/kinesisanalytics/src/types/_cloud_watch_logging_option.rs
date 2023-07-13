@@ -3,7 +3,7 @@
 /// <p>Provides a description of CloudWatch logging options, including the log stream Amazon Resource Name (ARN) and the role ARN.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLoggingOption {
+pub struct CloudWatchLoggingOption  {
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
     #[doc(hidden)]
     pub log_stream_arn: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct CloudWatchLoggingOption {
 }
 impl CloudWatchLoggingOption {
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_arn(&self) -> ::std::option::Option<& str> {
         self.log_stream_arn.as_deref()
     }
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl CloudWatchLoggingOption {
 
 /// A builder for [`CloudWatchLoggingOption`](crate::types::CloudWatchLoggingOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionBuilder {
     pub(crate) log_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOptionBuilder {
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
-    pub fn set_log_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.log_stream_arn = input;
-        self
+    pub fn set_log_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.log_stream_arn = input; self
+    }
+    /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    pub fn get_log_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_arn
     }
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl CloudWatchLoggingOptionBuilder {
     }
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOption`](crate::types::CloudWatchLoggingOption).
     pub fn build(self) -> crate::types::CloudWatchLoggingOption {
         crate::types::CloudWatchLoggingOption {
-            log_stream_arn: self.log_stream_arn,
-            role_arn: self.role_arn,
+            log_stream_arn: self.log_stream_arn
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

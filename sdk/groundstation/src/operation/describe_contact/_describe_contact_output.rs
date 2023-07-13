@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeContactOutput {
+pub struct DescribeContactOutput  {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
@@ -39,9 +39,7 @@ pub struct DescribeContactOutput {
     pub maximum_elevation: ::std::option::Option<crate::types::Elevation>,
     /// <p>Tags assigned to a contact.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Region of a contact.</p>
     #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
@@ -52,71 +50,67 @@ pub struct DescribeContactOutput {
 }
 impl DescribeContactOutput {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn mission_profile_arn(&self) -> ::std::option::Option<& str> {
         self.mission_profile_arn.as_deref()
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(&self) -> ::std::option::Option<&str> {
+    pub fn satellite_arn(&self) -> ::std::option::Option<& str> {
         self.satellite_arn.as_deref()
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub fn pre_pass_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn pre_pass_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.pre_pass_start_time.as_ref()
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn post_pass_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn post_pass_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.post_pass_end_time.as_ref()
     }
     /// <p>Ground station for a contact.</p>
-    pub fn ground_station(&self) -> ::std::option::Option<&str> {
+    pub fn ground_station(&self) -> ::std::option::Option<& str> {
         self.ground_station.as_deref()
     }
     /// <p>Status of a contact.</p>
-    pub fn contact_status(&self) -> ::std::option::Option<&crate::types::ContactStatus> {
+    pub fn contact_status(&self) -> ::std::option::Option<& crate::types::ContactStatus> {
         self.contact_status.as_ref()
     }
     /// <p>Error message for a contact.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>Maximum elevation angle of a contact.</p>
-    pub fn maximum_elevation(&self) -> ::std::option::Option<&crate::types::Elevation> {
+    pub fn maximum_elevation(&self) -> ::std::option::Option<& crate::types::Elevation> {
         self.maximum_elevation.as_ref()
     }
     /// <p>Tags assigned to a contact.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Region of a contact.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>List describing source and destination details for each dataflow edge.</p>
-    pub fn dataflow_list(&self) -> ::std::option::Option<&[crate::types::DataflowDetail]> {
+    pub fn dataflow_list(&self) -> ::std::option::Option<& [crate::types::DataflowDetail]> {
         self.dataflow_list.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeContactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeContactOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContactOutput`](crate::operation::describe_contact::DescribeContactOutput).
     pub fn builder() -> crate::operation::describe_contact::builders::DescribeContactOutputBuilder {
@@ -126,9 +120,7 @@ impl DescribeContactOutput {
 
 /// A builder for [`DescribeContactOutput`](crate::operation::describe_contact::DescribeContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContactOutputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) mission_profile_arn: ::std::option::Option<::std::string::String>,
@@ -141,9 +133,7 @@ pub struct DescribeContactOutputBuilder {
     pub(crate) contact_status: ::std::option::Option<crate::types::ContactStatus>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_elevation: ::std::option::Option<crate::types::Elevation>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) dataflow_list: ::std::option::Option<::std::vec::Vec<crate::types::DataflowDetail>>,
     _request_id: Option<String>,
@@ -156,40 +146,37 @@ impl DescribeContactOutputBuilder {
     }
     /// <p>UUID of a contact.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
+    }
+    /// <p>UUID of a contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn set_mission_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.mission_profile_arn = input;
-        self
+    pub fn set_mission_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mission_profile_arn = input; self
+    }
+    /// <p>ARN of a mission profile.</p>
+    pub fn get_mission_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mission_profile_arn
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn satellite_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a satellite.</p>
-    pub fn set_satellite_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.satellite_arn = input;
-        self
+    pub fn set_satellite_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.satellite_arn = input; self
+    }
+    /// <p>ARN of a satellite.</p>
+    pub fn get_satellite_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_arn
     }
     /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -197,12 +184,12 @@ impl DescribeContactOutputBuilder {
         self
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p>Start time of a contact in UTC.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>End time of a contact in UTC.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -210,12 +197,12 @@ impl DescribeContactOutputBuilder {
         self
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p>End time of a contact in UTC.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
     pub fn pre_pass_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -223,12 +210,12 @@ impl DescribeContactOutputBuilder {
         self
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub fn set_pre_pass_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.pre_pass_start_time = input;
-        self
+    pub fn set_pre_pass_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.pre_pass_start_time = input; self
+    }
+    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    pub fn get_pre_pass_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.pre_pass_start_time
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     pub fn post_pass_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -236,28 +223,25 @@ impl DescribeContactOutputBuilder {
         self
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn set_post_pass_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.post_pass_end_time = input;
-        self
+    pub fn set_post_pass_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.post_pass_end_time = input; self
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn get_post_pass_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.post_pass_end_time
     }
     /// <p>Ground station for a contact.</p>
-    pub fn ground_station(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ground_station(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ground_station = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Ground station for a contact.</p>
-    pub fn set_ground_station(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ground_station = input;
-        self
+    pub fn set_ground_station(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ground_station = input; self
+    }
+    /// <p>Ground station for a contact.</p>
+    pub fn get_ground_station(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ground_station
     }
     /// <p>Status of a contact.</p>
     pub fn contact_status(mut self, input: crate::types::ContactStatus) -> Self {
@@ -265,28 +249,25 @@ impl DescribeContactOutputBuilder {
         self
     }
     /// <p>Status of a contact.</p>
-    pub fn set_contact_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactStatus>,
-    ) -> Self {
-        self.contact_status = input;
-        self
+    pub fn set_contact_status(mut self, input: ::std::option::Option<crate::types::ContactStatus>) -> Self {
+        self.contact_status = input; self
+    }
+    /// <p>Status of a contact.</p>
+    pub fn get_contact_status(&self) -> &::std::option::Option<crate::types::ContactStatus> {
+        &self.contact_status
     }
     /// <p>Error message for a contact.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error message for a contact.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.error_message = input;
-        self
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input; self
+    }
+    /// <p>Error message for a contact.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// <p>Maximum elevation angle of a contact.</p>
     pub fn maximum_elevation(mut self, input: crate::types::Elevation) -> Self {
@@ -294,37 +275,31 @@ impl DescribeContactOutputBuilder {
         self
     }
     /// <p>Maximum elevation angle of a contact.</p>
-    pub fn set_maximum_elevation(
-        mut self,
-        input: ::std::option::Option<crate::types::Elevation>,
-    ) -> Self {
-        self.maximum_elevation = input;
-        self
+    pub fn set_maximum_elevation(mut self, input: ::std::option::Option<crate::types::Elevation>) -> Self {
+        self.maximum_elevation = input; self
+    }
+    /// <p>Maximum elevation angle of a contact.</p>
+    pub fn get_maximum_elevation(&self) -> &::std::option::Option<crate::types::Elevation> {
+        &self.maximum_elevation
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to a contact.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags assigned to a contact.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Tags assigned to a contact.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// <p>Region of a contact.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -333,8 +308,11 @@ impl DescribeContactOutputBuilder {
     }
     /// <p>Region of a contact.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
+    }
+    /// <p>Region of a contact.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Appends an item to `dataflow_list`.
     ///
@@ -343,45 +321,60 @@ impl DescribeContactOutputBuilder {
     /// <p>List describing source and destination details for each dataflow edge.</p>
     pub fn dataflow_list(mut self, input: crate::types::DataflowDetail) -> Self {
         let mut v = self.dataflow_list.unwrap_or_default();
-        v.push(input);
-        self.dataflow_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dataflow_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List describing source and destination details for each dataflow edge.</p>
-    pub fn set_dataflow_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataflowDetail>>,
-    ) -> Self {
-        self.dataflow_list = input;
-        self
+    pub fn set_dataflow_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataflowDetail>>) -> Self {
+        self.dataflow_list = input; self
+    }
+    /// <p>List describing source and destination details for each dataflow edge.</p>
+    pub fn get_dataflow_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataflowDetail>> {
+        &self.dataflow_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeContactOutput`](crate::operation::describe_contact::DescribeContactOutput).
     pub fn build(self) -> crate::operation::describe_contact::DescribeContactOutput {
         crate::operation::describe_contact::DescribeContactOutput {
-            contact_id: self.contact_id,
-            mission_profile_arn: self.mission_profile_arn,
-            satellite_arn: self.satellite_arn,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            pre_pass_start_time: self.pre_pass_start_time,
-            post_pass_end_time: self.post_pass_end_time,
-            ground_station: self.ground_station,
-            contact_status: self.contact_status,
-            error_message: self.error_message,
-            maximum_elevation: self.maximum_elevation,
-            tags: self.tags,
-            region: self.region,
-            dataflow_list: self.dataflow_list,
+            contact_id: self.contact_id
+            ,
+            mission_profile_arn: self.mission_profile_arn
+            ,
+            satellite_arn: self.satellite_arn
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            pre_pass_start_time: self.pre_pass_start_time
+            ,
+            post_pass_end_time: self.post_pass_end_time
+            ,
+            ground_station: self.ground_station
+            ,
+            contact_status: self.contact_status
+            ,
+            error_message: self.error_message
+            ,
+            maximum_elevation: self.maximum_elevation
+            ,
+            tags: self.tags
+            ,
+            region: self.region
+            ,
+            dataflow_list: self.dataflow_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

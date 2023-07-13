@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateImpersonationRoleInput {
+pub struct CreateImpersonationRoleInput  {
     /// <p>The idempotency token for the client request.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -24,44 +24,40 @@ pub struct CreateImpersonationRoleInput {
 }
 impl CreateImpersonationRoleInput {
     /// <p>The idempotency token for the client request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The WorkMail organization to create the new impersonation role within.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The name of the new impersonation role.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImpersonationRoleType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ImpersonationRoleType> {
         self.r#type.as_ref()
     }
     /// <p>The description of the new impersonation role.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The list of rules for the impersonation role.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ImpersonationRule]> {
+    pub fn rules(&self) -> ::std::option::Option<& [crate::types::ImpersonationRule]> {
         self.rules.as_deref()
     }
 }
 impl CreateImpersonationRoleInput {
     /// Creates a new builder-style object to manufacture [`CreateImpersonationRoleInput`](crate::operation::create_impersonation_role::CreateImpersonationRoleInput).
-    pub fn builder(
-    ) -> crate::operation::create_impersonation_role::builders::CreateImpersonationRoleInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_impersonation_role::builders::CreateImpersonationRoleInputBuilder {
         crate::operation::create_impersonation_role::builders::CreateImpersonationRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImpersonationRoleInput`](crate::operation::create_impersonation_role::CreateImpersonationRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImpersonationRoleInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
@@ -78,24 +74,24 @@ impl CreateImpersonationRoleInputBuilder {
     }
     /// <p>The idempotency token for the client request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The idempotency token for the client request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The WorkMail organization to create the new impersonation role within.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization to create the new impersonation role within.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.organization_id = input;
-        self
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input; self
+    }
+    /// <p>The WorkMail organization to create the new impersonation role within.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// <p>The name of the new impersonation role.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,8 +100,11 @@ impl CreateImpersonationRoleInputBuilder {
     }
     /// <p>The name of the new impersonation role.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the new impersonation role.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
     pub fn r#type(mut self, input: crate::types::ImpersonationRoleType) -> Self {
@@ -113,12 +112,12 @@ impl CreateImpersonationRoleInputBuilder {
         self
     }
     /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ImpersonationRoleType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImpersonationRoleType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ImpersonationRoleType> {
+        &self.r#type
     }
     /// <p>The description of the new impersonation role.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,8 +126,11 @@ impl CreateImpersonationRoleInputBuilder {
     }
     /// <p>The description of the new impersonation role.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>The description of the new impersonation role.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `rules`.
     ///
@@ -137,34 +139,36 @@ impl CreateImpersonationRoleInputBuilder {
     /// <p>The list of rules for the impersonation role.</p>
     pub fn rules(mut self, input: crate::types::ImpersonationRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of rules for the impersonation role.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>>) -> Self {
+        self.rules = input; self
+    }
+    /// <p>The list of rules for the impersonation role.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`CreateImpersonationRoleInput`](crate::operation::create_impersonation_role::CreateImpersonationRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_impersonation_role::CreateImpersonationRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_impersonation_role::CreateImpersonationRoleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_impersonation_role::CreateImpersonationRoleInput {
-                client_token: self.client_token,
-                organization_id: self.organization_id,
-                name: self.name,
-                r#type: self.r#type,
-                description: self.description,
-                rules: self.rules,
-            },
+                client_token: self.client_token
+                ,
+                organization_id: self.organization_id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                rules: self.rules
+                ,
+            }
         )
     }
 }
+

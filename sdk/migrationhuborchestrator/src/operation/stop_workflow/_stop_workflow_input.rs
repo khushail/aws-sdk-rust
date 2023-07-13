@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopWorkflowInput {
+pub struct StopWorkflowInput  {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl StopWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl StopWorkflowInput {
 
 /// A builder for [`StopWorkflowInput`](crate::operation::stop_workflow::StopWorkflowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl StopWorkflowInputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`StopWorkflowInput`](crate::operation::stop_workflow::StopWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_workflow::StopWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_workflow::StopWorkflowInput {
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_workflow::StopWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_workflow::StopWorkflowInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

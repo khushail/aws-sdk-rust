@@ -3,7 +3,7 @@
 /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotTopicPublishAction {
+pub struct IotTopicPublishAction  {
     /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
     /// <variable-name></variable-name></code>) and input values (<code>$input.
     /// <input-name>
@@ -23,11 +23,11 @@ impl IotTopicPublishAction {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
-    pub fn mqtt_topic(&self) -> ::std::option::Option<&str> {
+    pub fn mqtt_topic(&self) -> ::std::option::Option<& str> {
         self.mqtt_topic.as_deref()
     }
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -40,9 +40,7 @@ impl IotTopicPublishAction {
 
 /// A builder for [`IotTopicPublishAction`](crate::types::IotTopicPublishAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IotTopicPublishActionBuilder {
     pub(crate) mqtt_topic: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::Payload>,
@@ -65,8 +63,16 @@ impl IotTopicPublishActionBuilder {
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
     pub fn set_mqtt_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mqtt_topic = input;
-        self
+        self.mqtt_topic = input; self
+    }
+    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
+    /// <variable-name></variable-name></code>) and input values (<code>$input.
+    /// <input-name>
+    /// .
+    /// <path-to-datum></path-to-datum>
+    /// </input-name></code>) as the topic string.</p>
+    pub fn get_mqtt_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mqtt_topic
     }
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
@@ -75,14 +81,20 @@ impl IotTopicPublishActionBuilder {
     }
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
+    }
+    /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`IotTopicPublishAction`](crate::types::IotTopicPublishAction).
     pub fn build(self) -> crate::types::IotTopicPublishAction {
         crate::types::IotTopicPublishAction {
-            mqtt_topic: self.mqtt_topic,
-            payload: self.payload,
+            mqtt_topic: self.mqtt_topic
+            ,
+            payload: self.payload
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDomainConfigurationInput {
+pub struct UpdateDomainConfigurationInput  {
     /// <p>The name of the domain configuration to be updated.</p>
     #[doc(hidden)]
     pub domain_configuration_name: ::std::option::Option<::std::string::String>,
@@ -21,17 +21,15 @@ pub struct UpdateDomainConfigurationInput {
 }
 impl UpdateDomainConfigurationInput {
     /// <p>The name of the domain configuration to be updated.</p>
-    pub fn domain_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_configuration_name(&self) -> ::std::option::Option<& str> {
         self.domain_configuration_name.as_deref()
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
-    pub fn authorizer_config(&self) -> ::std::option::Option<&crate::types::AuthorizerConfig> {
+    pub fn authorizer_config(&self) -> ::std::option::Option<& crate::types::AuthorizerConfig> {
         self.authorizer_config.as_ref()
     }
     /// <p>The status to which the domain configuration should be updated.</p>
-    pub fn domain_configuration_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DomainConfigurationStatus> {
+    pub fn domain_configuration_status(&self) -> ::std::option::Option<& crate::types::DomainConfigurationStatus> {
         self.domain_configuration_status.as_ref()
     }
     /// <p>Removes the authorization configuration from a domain.</p>
@@ -39,46 +37,40 @@ impl UpdateDomainConfigurationInput {
         self.remove_authorizer_config
     }
     /// <p>An object that specifies the TLS configuration for a domain.</p>
-    pub fn tls_config(&self) -> ::std::option::Option<&crate::types::TlsConfig> {
+    pub fn tls_config(&self) -> ::std::option::Option<& crate::types::TlsConfig> {
         self.tls_config.as_ref()
     }
 }
 impl UpdateDomainConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigurationInput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationInput).
-    pub fn builder() -> crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationInputBuilder {
         crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainConfigurationInput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigurationInputBuilder {
     pub(crate) domain_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_config: ::std::option::Option<crate::types::AuthorizerConfig>,
-    pub(crate) domain_configuration_status:
-        ::std::option::Option<crate::types::DomainConfigurationStatus>,
+    pub(crate) domain_configuration_status: ::std::option::Option<crate::types::DomainConfigurationStatus>,
     pub(crate) remove_authorizer_config: ::std::option::Option<bool>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
 }
 impl UpdateDomainConfigurationInputBuilder {
     /// <p>The name of the domain configuration to be updated.</p>
-    pub fn domain_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain configuration to be updated.</p>
-    pub fn set_domain_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.domain_configuration_name = input;
-        self
+    pub fn set_domain_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_configuration_name = input; self
+    }
+    /// <p>The name of the domain configuration to be updated.</p>
+    pub fn get_domain_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_configuration_name
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub fn authorizer_config(mut self, input: crate::types::AuthorizerConfig) -> Self {
@@ -86,28 +78,25 @@ impl UpdateDomainConfigurationInputBuilder {
         self
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
-    pub fn set_authorizer_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerConfig>,
-    ) -> Self {
-        self.authorizer_config = input;
-        self
+    pub fn set_authorizer_config(mut self, input: ::std::option::Option<crate::types::AuthorizerConfig>) -> Self {
+        self.authorizer_config = input; self
+    }
+    /// <p>An object that specifies the authorization service for a domain.</p>
+    pub fn get_authorizer_config(&self) -> &::std::option::Option<crate::types::AuthorizerConfig> {
+        &self.authorizer_config
     }
     /// <p>The status to which the domain configuration should be updated.</p>
-    pub fn domain_configuration_status(
-        mut self,
-        input: crate::types::DomainConfigurationStatus,
-    ) -> Self {
+    pub fn domain_configuration_status(mut self, input: crate::types::DomainConfigurationStatus) -> Self {
         self.domain_configuration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status to which the domain configuration should be updated.</p>
-    pub fn set_domain_configuration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainConfigurationStatus>,
-    ) -> Self {
-        self.domain_configuration_status = input;
-        self
+    pub fn set_domain_configuration_status(mut self, input: ::std::option::Option<crate::types::DomainConfigurationStatus>) -> Self {
+        self.domain_configuration_status = input; self
+    }
+    /// <p>The status to which the domain configuration should be updated.</p>
+    pub fn get_domain_configuration_status(&self) -> &::std::option::Option<crate::types::DomainConfigurationStatus> {
+        &self.domain_configuration_status
     }
     /// <p>Removes the authorization configuration from a domain.</p>
     pub fn remove_authorizer_config(mut self, input: bool) -> Self {
@@ -116,8 +105,11 @@ impl UpdateDomainConfigurationInputBuilder {
     }
     /// <p>Removes the authorization configuration from a domain.</p>
     pub fn set_remove_authorizer_config(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_authorizer_config = input;
-        self
+        self.remove_authorizer_config = input; self
+    }
+    /// <p>Removes the authorization configuration from a domain.</p>
+    pub fn get_remove_authorizer_config(&self) -> &::std::option::Option<bool> {
+        &self.remove_authorizer_config
     }
     /// <p>An object that specifies the TLS configuration for a domain.</p>
     pub fn tls_config(mut self, input: crate::types::TlsConfig) -> Self {
@@ -126,24 +118,28 @@ impl UpdateDomainConfigurationInputBuilder {
     }
     /// <p>An object that specifies the TLS configuration for a domain.</p>
     pub fn set_tls_config(mut self, input: ::std::option::Option<crate::types::TlsConfig>) -> Self {
-        self.tls_config = input;
-        self
+        self.tls_config = input; self
+    }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
+        &self.tls_config
     }
     /// Consumes the builder and constructs a [`UpdateDomainConfigurationInput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_domain_configuration::UpdateDomainConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain_configuration::UpdateDomainConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_domain_configuration::UpdateDomainConfigurationInput {
-                domain_configuration_name: self.domain_configuration_name,
-                authorizer_config: self.authorizer_config,
-                domain_configuration_status: self.domain_configuration_status,
-                remove_authorizer_config: self.remove_authorizer_config,
-                tls_config: self.tls_config,
-            },
+                domain_configuration_name: self.domain_configuration_name
+                ,
+                authorizer_config: self.authorizer_config
+                ,
+                domain_configuration_status: self.domain_configuration_status
+                ,
+                remove_authorizer_config: self.remove_authorizer_config
+                ,
+                tls_config: self.tls_config
+                ,
+            }
         )
     }
 }
+

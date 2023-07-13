@@ -3,7 +3,7 @@
 /// <p>Contains information about the location of the remote IP address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeoLocation {
+pub struct GeoLocation  {
     /// <p>The latitude information of the remote IP address.</p>
     #[doc(hidden)]
     pub lat: f64,
@@ -30,9 +30,7 @@ impl GeoLocation {
 
 /// A builder for [`GeoLocation`](crate::types::GeoLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoLocationBuilder {
     pub(crate) lat: ::std::option::Option<f64>,
     pub(crate) lon: ::std::option::Option<f64>,
@@ -45,8 +43,11 @@ impl GeoLocationBuilder {
     }
     /// <p>The latitude information of the remote IP address.</p>
     pub fn set_lat(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lat = input;
-        self
+        self.lat = input; self
+    }
+    /// <p>The latitude information of the remote IP address.</p>
+    pub fn get_lat(&self) -> &::std::option::Option<f64> {
+        &self.lat
     }
     /// <p>The longitude information of the remote IP address.</p>
     pub fn lon(mut self, input: f64) -> Self {
@@ -55,14 +56,22 @@ impl GeoLocationBuilder {
     }
     /// <p>The longitude information of the remote IP address.</p>
     pub fn set_lon(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lon = input;
-        self
+        self.lon = input; self
+    }
+    /// <p>The longitude information of the remote IP address.</p>
+    pub fn get_lon(&self) -> &::std::option::Option<f64> {
+        &self.lon
     }
     /// Consumes the builder and constructs a [`GeoLocation`](crate::types::GeoLocation).
     pub fn build(self) -> crate::types::GeoLocation {
         crate::types::GeoLocation {
-            lat: self.lat.unwrap_or_default(),
-            lon: self.lon.unwrap_or_default(),
+            lat: self.lat
+                .unwrap_or_default()
+            ,
+            lon: self.lon
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

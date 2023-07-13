@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAnomalyOutput {
+pub struct DescribeAnomalyOutput  {
     /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     #[doc(hidden)]
     pub proactive_anomaly: ::std::option::Option<crate::types::ProactiveAnomaly>,
@@ -13,19 +13,19 @@ pub struct DescribeAnomalyOutput {
 }
 impl DescribeAnomalyOutput {
     /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
-    pub fn proactive_anomaly(&self) -> ::std::option::Option<&crate::types::ProactiveAnomaly> {
+    pub fn proactive_anomaly(&self) -> ::std::option::Option<& crate::types::ProactiveAnomaly> {
         self.proactive_anomaly.as_ref()
     }
     /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
-    pub fn reactive_anomaly(&self) -> ::std::option::Option<&crate::types::ReactiveAnomaly> {
+    pub fn reactive_anomaly(&self) -> ::std::option::Option<& crate::types::ReactiveAnomaly> {
         self.reactive_anomaly.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAnomalyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAnomalyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnomalyOutput`](crate::operation::describe_anomaly::DescribeAnomalyOutput).
     pub fn builder() -> crate::operation::describe_anomaly::builders::DescribeAnomalyOutputBuilder {
@@ -35,9 +35,7 @@ impl DescribeAnomalyOutput {
 
 /// A builder for [`DescribeAnomalyOutput`](crate::operation::describe_anomaly::DescribeAnomalyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnomalyOutputBuilder {
     pub(crate) proactive_anomaly: ::std::option::Option<crate::types::ProactiveAnomaly>,
     pub(crate) reactive_anomaly: ::std::option::Option<crate::types::ReactiveAnomaly>,
@@ -50,12 +48,12 @@ impl DescribeAnomalyOutputBuilder {
         self
     }
     /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
-    pub fn set_proactive_anomaly(
-        mut self,
-        input: ::std::option::Option<crate::types::ProactiveAnomaly>,
-    ) -> Self {
-        self.proactive_anomaly = input;
-        self
+    pub fn set_proactive_anomaly(mut self, input: ::std::option::Option<crate::types::ProactiveAnomaly>) -> Self {
+        self.proactive_anomaly = input; self
+    }
+    /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
+    pub fn get_proactive_anomaly(&self) -> &::std::option::Option<crate::types::ProactiveAnomaly> {
+        &self.proactive_anomaly
     }
     /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     pub fn reactive_anomaly(mut self, input: crate::types::ReactiveAnomaly) -> Self {
@@ -63,28 +61,31 @@ impl DescribeAnomalyOutputBuilder {
         self
     }
     /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
-    pub fn set_reactive_anomaly(
-        mut self,
-        input: ::std::option::Option<crate::types::ReactiveAnomaly>,
-    ) -> Self {
-        self.reactive_anomaly = input;
-        self
+    pub fn set_reactive_anomaly(mut self, input: ::std::option::Option<crate::types::ReactiveAnomaly>) -> Self {
+        self.reactive_anomaly = input; self
+    }
+    /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
+    pub fn get_reactive_anomaly(&self) -> &::std::option::Option<crate::types::ReactiveAnomaly> {
+        &self.reactive_anomaly
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAnomalyOutput`](crate::operation::describe_anomaly::DescribeAnomalyOutput).
     pub fn build(self) -> crate::operation::describe_anomaly::DescribeAnomalyOutput {
         crate::operation::describe_anomaly::DescribeAnomalyOutput {
-            proactive_anomaly: self.proactive_anomaly,
-            reactive_anomaly: self.reactive_anomaly,
+            proactive_anomaly: self.proactive_anomaly
+            ,
+            reactive_anomaly: self.reactive_anomaly
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

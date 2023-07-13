@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyReportDefinitionInput {
+pub struct ModifyReportDefinitionInput  {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
     #[doc(hidden)]
     pub report_name: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct ModifyReportDefinitionInput {
 }
 impl ModifyReportDefinitionInput {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
-    pub fn report_name(&self) -> ::std::option::Option<&str> {
+    pub fn report_name(&self) -> ::std::option::Option<& str> {
         self.report_name.as_deref()
     }
     /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
-    pub fn report_definition(&self) -> ::std::option::Option<&crate::types::ReportDefinition> {
+    pub fn report_definition(&self) -> ::std::option::Option<& crate::types::ReportDefinition> {
         self.report_definition.as_ref()
     }
 }
 impl ModifyReportDefinitionInput {
     /// Creates a new builder-style object to manufacture [`ModifyReportDefinitionInput`](crate::operation::modify_report_definition::ModifyReportDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::modify_report_definition::builders::ModifyReportDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_report_definition::builders::ModifyReportDefinitionInputBuilder {
         crate::operation::modify_report_definition::builders::ModifyReportDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyReportDefinitionInput`](crate::operation::modify_report_definition::ModifyReportDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyReportDefinitionInputBuilder {
     pub(crate) report_name: ::std::option::Option<::std::string::String>,
     pub(crate) report_definition: ::std::option::Option<crate::types::ReportDefinition>,
@@ -46,8 +42,11 @@ impl ModifyReportDefinitionInputBuilder {
     }
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
     pub fn set_report_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_name = input;
-        self
+        self.report_name = input; self
+    }
+    /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_name
     }
     /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
     pub fn report_definition(mut self, input: crate::types::ReportDefinition) -> Self {
@@ -55,25 +54,23 @@ impl ModifyReportDefinitionInputBuilder {
         self
     }
     /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
-    pub fn set_report_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportDefinition>,
-    ) -> Self {
-        self.report_definition = input;
-        self
+    pub fn set_report_definition(mut self, input: ::std::option::Option<crate::types::ReportDefinition>) -> Self {
+        self.report_definition = input; self
+    }
+    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+    pub fn get_report_definition(&self) -> &::std::option::Option<crate::types::ReportDefinition> {
+        &self.report_definition
     }
     /// Consumes the builder and constructs a [`ModifyReportDefinitionInput`](crate::operation::modify_report_definition::ModifyReportDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_report_definition::ModifyReportDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_report_definition::ModifyReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_report_definition::ModifyReportDefinitionInput {
-                report_name: self.report_name,
-                report_definition: self.report_definition,
-            },
+                report_name: self.report_name
+                ,
+                report_definition: self.report_definition
+                ,
+            }
         )
     }
 }
+

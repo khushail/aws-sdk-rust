@@ -3,7 +3,7 @@
 /// <p>A repository sync definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositorySyncDefinition {
+pub struct RepositorySyncDefinition  {
     /// <p>The resource that is synced to.</p>
     #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct RepositorySyncDefinition {
 }
 impl RepositorySyncDefinition {
     /// <p>The resource that is synced to.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The resource that is synced from.</p>
-    pub fn parent(&self) -> ::std::option::Option<&str> {
+    pub fn parent(&self) -> ::std::option::Option<& str> {
         self.parent.as_deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>The directory in the repository.</p>
-    pub fn directory(&self) -> ::std::option::Option<&str> {
+    pub fn directory(&self) -> ::std::option::Option<& str> {
         self.directory.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl RepositorySyncDefinition {
 
 /// A builder for [`RepositorySyncDefinition`](crate::types::RepositorySyncDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositorySyncDefinitionBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) parent: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The resource that is synced to.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
+    }
+    /// <p>The resource that is synced to.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// <p>The resource that is synced from.</p>
     pub fn parent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The resource that is synced from.</p>
     pub fn set_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent = input;
-        self
+        self.parent = input; self
+    }
+    /// <p>The resource that is synced from.</p>
+    pub fn get_parent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent
     }
     /// <p>The repository branch.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The repository branch.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
+    }
+    /// <p>The repository branch.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// <p>The directory in the repository.</p>
     pub fn directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The directory in the repository.</p>
     pub fn set_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory = input;
-        self
+        self.directory = input; self
+    }
+    /// <p>The directory in the repository.</p>
+    pub fn get_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory
     }
     /// Consumes the builder and constructs a [`RepositorySyncDefinition`](crate::types::RepositorySyncDefinition).
     pub fn build(self) -> crate::types::RepositorySyncDefinition {
         crate::types::RepositorySyncDefinition {
-            target: self.target,
-            parent: self.parent,
-            branch: self.branch,
-            directory: self.directory,
+            target: self.target
+            ,
+            parent: self.parent
+            ,
+            branch: self.branch
+            ,
+            directory: self.directory
+            ,
         }
     }
 }
+

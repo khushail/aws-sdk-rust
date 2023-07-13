@@ -3,7 +3,7 @@
 /// <p>Contains the output of RegisterInstancesWithLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterInstancesWithLoadBalancerOutput {
+pub struct RegisterInstancesWithLoadBalancerOutput  {
     /// <p>The updated list of instances for the load balancer.</p>
     #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
@@ -11,27 +11,25 @@ pub struct RegisterInstancesWithLoadBalancerOutput {
 }
 impl RegisterInstancesWithLoadBalancerOutput {
     /// <p>The updated list of instances for the load balancer.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> ::std::option::Option<& [crate::types::Instance]> {
         self.instances.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RegisterInstancesWithLoadBalancerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterInstancesWithLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`RegisterInstancesWithLoadBalancerOutput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput).
-    pub fn builder() -> crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerOutputBuilder{
+    pub fn builder() -> crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerOutputBuilder {
         crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterInstancesWithLoadBalancerOutput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterInstancesWithLoadBalancerOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     _request_id: Option<String>,
@@ -44,29 +42,29 @@ impl RegisterInstancesWithLoadBalancerOutputBuilder {
     /// <p>The updated list of instances for the load balancer.</p>
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The updated list of instances for the load balancer.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
+        self.instances = input; self
+    }
+    /// <p>The updated list of instances for the load balancer.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        &self.instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterInstancesWithLoadBalancerOutput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput).
-    pub fn build(self) -> crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput{
+    pub fn build(self) -> crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput {
         crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput {
             instances: self.instances
             ,
@@ -74,3 +72,4 @@ impl RegisterInstancesWithLoadBalancerOutputBuilder {
         }
     }
 }
+

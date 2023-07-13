@@ -3,14 +3,14 @@
 /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsSsoAuthentication {
+pub struct AwsSsoAuthentication  {
     /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
     #[doc(hidden)]
     pub sso_client_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsSsoAuthentication {
     /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
-    pub fn sso_client_id(&self) -> ::std::option::Option<&str> {
+    pub fn sso_client_id(&self) -> ::std::option::Option<& str> {
         self.sso_client_id.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl AwsSsoAuthentication {
 
 /// A builder for [`AwsSsoAuthentication`](crate::types::AwsSsoAuthentication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsSsoAuthenticationBuilder {
     pub(crate) sso_client_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsSsoAuthenticationBuilder {
     /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
-    pub fn sso_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sso_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sso_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
-    pub fn set_sso_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.sso_client_id = input;
-        self
+    pub fn set_sso_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sso_client_id = input; self
+    }
+    /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
+    pub fn get_sso_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sso_client_id
     }
     /// Consumes the builder and constructs a [`AwsSsoAuthentication`](crate::types::AwsSsoAuthentication).
     pub fn build(self) -> crate::types::AwsSsoAuthentication {
         crate::types::AwsSsoAuthentication {
-            sso_client_id: self.sso_client_id,
+            sso_client_id: self.sso_client_id
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnomalyMonitorInput {
+pub struct UpdateAnomalyMonitorInput  {
     /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
     #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct UpdateAnomalyMonitorInput {
 }
 impl UpdateAnomalyMonitorInput {
     /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> ::std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The new name for the cost anomaly monitor. </p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
 }
 impl UpdateAnomalyMonitorInput {
     /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorInput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput).
-    pub fn builder(
-    ) -> crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorInputBuilder {
+    pub fn builder() -> crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorInputBuilder {
         crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAnomalyMonitorInput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnomalyMonitorInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl UpdateAnomalyMonitorInputBuilder {
     }
     /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
+    }
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
     }
     /// <p>The new name for the cost anomaly monitor. </p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl UpdateAnomalyMonitorInputBuilder {
     }
     /// <p>The new name for the cost anomaly monitor. </p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
+    }
+    /// <p>The new name for the cost anomaly monitor. </p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
     }
     /// Consumes the builder and constructs a [`UpdateAnomalyMonitorInput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput {
-                monitor_arn: self.monitor_arn,
-                monitor_name: self.monitor_name,
-            },
+                monitor_arn: self.monitor_arn
+                ,
+                monitor_name: self.monitor_name
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The distribution of traffic between the instance and its replicas.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TelephonyConfig {
+pub struct TelephonyConfig  {
     /// <p>Information about traffic distributions.</p>
     #[doc(hidden)]
     pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
 }
 impl TelephonyConfig {
     /// <p>Information about traffic distributions.</p>
-    pub fn distributions(&self) -> ::std::option::Option<&[crate::types::Distribution]> {
+    pub fn distributions(&self) -> ::std::option::Option<& [crate::types::Distribution]> {
         self.distributions.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl TelephonyConfig {
 
 /// A builder for [`TelephonyConfig`](crate::types::TelephonyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TelephonyConfigBuilder {
     pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
 }
@@ -37,22 +35,24 @@ impl TelephonyConfigBuilder {
     /// <p>Information about traffic distributions.</p>
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
-        v.push(input);
-        self.distributions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.distributions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about traffic distributions.</p>
-    pub fn set_distributions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
-    ) -> Self {
-        self.distributions = input;
-        self
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
+        self.distributions = input; self
+    }
+    /// <p>Information about traffic distributions.</p>
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+        &self.distributions
     }
     /// Consumes the builder and constructs a [`TelephonyConfig`](crate::types::TelephonyConfig).
     pub fn build(self) -> crate::types::TelephonyConfig {
         crate::types::TelephonyConfig {
-            distributions: self.distributions,
+            distributions: self.distributions
+            ,
         }
     }
 }
+

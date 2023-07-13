@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePoolOutput {
+pub struct CreatePoolOutput  {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
     #[doc(hidden)]
     pub pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the pool.</p>
     #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the pool.</p>
-    /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <p>The current status of the pool.</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PoolStatus>,
@@ -48,24 +48,24 @@ pub struct CreatePoolOutput {
 }
 impl CreatePoolOutput {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    pub fn pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pool_arn(&self) -> ::std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The unique identifier for the pool.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
-    /// <p>The current status of the pool.</p>
-    /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <p>The current status of the pool.</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PoolStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PoolStatus> {
         self.status.as_ref()
     }
     /// <p>The type of message for the pool to use.</p>
-    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+    pub fn message_type(&self) -> ::std::option::Option<& crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -73,7 +73,7 @@ impl CreatePoolOutput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> ::std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -81,7 +81,7 @@ impl CreatePoolOutput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
-    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
@@ -93,19 +93,19 @@ impl CreatePoolOutput {
         self.deletion_protection_enabled
     }
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreatePoolOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreatePoolOutput {
     /// Creates a new builder-style object to manufacture [`CreatePoolOutput`](crate::operation::create_pool::CreatePoolOutput).
     pub fn builder() -> crate::operation::create_pool::builders::CreatePoolOutputBuilder {
@@ -115,9 +115,7 @@ impl CreatePoolOutput {
 
 /// A builder for [`CreatePoolOutput`](crate::operation::create_pool::CreatePoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePoolOutputBuilder {
     pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
@@ -141,8 +139,11 @@ impl CreatePoolOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
     pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_arn = input;
-        self
+        self.pool_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the pool.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
     }
     /// <p>The unique identifier for the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,28 +152,39 @@ impl CreatePoolOutputBuilder {
     }
     /// <p>The unique identifier for the pool.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
-    /// <p>The current status of the pool.</p>
-    /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <p>The unique identifier for the pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
+    /// <p>The current status of the pool.</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::PoolStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the pool.</p>
-    /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <p>The current status of the pool.</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PoolStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The current status of the pool.</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PoolStatus> {
+        &self.status
     }
     /// <p>The type of message for the pool to use.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
@@ -180,12 +192,12 @@ impl CreatePoolOutputBuilder {
         self
     }
     /// <p>The type of message for the pool to use.</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
-        self.message_type = input;
-        self
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
+        self.message_type = input; self
+    }
+    /// <p>The type of message for the pool to use.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.message_type
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -194,24 +206,24 @@ impl CreatePoolOutputBuilder {
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.two_way_enabled = input;
-        self
+        self.two_way_enabled = input; self
+    }
+    /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
+        &self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn two_way_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.two_way_channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn set_two_way_channel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.two_way_channel_arn = input;
-        self
+    pub fn set_two_way_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.two_way_channel_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
+    pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_channel_arn
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -220,24 +232,24 @@ impl CreatePoolOutputBuilder {
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.self_managed_opt_outs_enabled = input;
-        self
+        self.self_managed_opt_outs_enabled = input; self
+    }
+    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
+        &self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.opt_out_list_name = input;
-        self
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.opt_out_list_name = input; self
+    }
+    /// <p>The name of the OptOutList associated with the pool.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub fn shared_routes_enabled(mut self, input: bool) -> Self {
@@ -246,8 +258,11 @@ impl CreatePoolOutputBuilder {
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub fn set_shared_routes_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.shared_routes_enabled = input;
-        self
+        self.shared_routes_enabled = input; self
+    }
+    /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    pub fn get_shared_routes_enabled(&self) -> &::std::option::Option<bool> {
+        &self.shared_routes_enabled
     }
     /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -256,8 +271,11 @@ impl CreatePoolOutputBuilder {
     }
     /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input;
-        self
+        self.deletion_protection_enabled = input; self
+    }
+    /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection_enabled
     }
     /// Appends an item to `tags`.
     ///
@@ -266,17 +284,17 @@ impl CreatePoolOutputBuilder {
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>An array of tags (key and value pairs) associated with the pool.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -284,38 +302,55 @@ impl CreatePoolOutputBuilder {
         self
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
+    }
+    /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreatePoolOutput`](crate::operation::create_pool::CreatePoolOutput).
     pub fn build(self) -> crate::operation::create_pool::CreatePoolOutput {
         crate::operation::create_pool::CreatePoolOutput {
-            pool_arn: self.pool_arn,
-            pool_id: self.pool_id,
-            status: self.status,
-            message_type: self.message_type,
-            two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-            two_way_channel_arn: self.two_way_channel_arn,
-            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled.unwrap_or_default(),
-            opt_out_list_name: self.opt_out_list_name,
-            shared_routes_enabled: self.shared_routes_enabled.unwrap_or_default(),
-            deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
-            tags: self.tags,
-            created_timestamp: self.created_timestamp,
+            pool_arn: self.pool_arn
+            ,
+            pool_id: self.pool_id
+            ,
+            status: self.status
+            ,
+            message_type: self.message_type
+            ,
+            two_way_enabled: self.two_way_enabled
+                .unwrap_or_default()
+            ,
+            two_way_channel_arn: self.two_way_channel_arn
+            ,
+            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                .unwrap_or_default()
+            ,
+            opt_out_list_name: self.opt_out_list_name
+            ,
+            shared_routes_enabled: self.shared_routes_enabled
+                .unwrap_or_default()
+            ,
+            deletion_protection_enabled: self.deletion_protection_enabled
+                .unwrap_or_default()
+            ,
+            tags: self.tags
+            ,
+            created_timestamp: self.created_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

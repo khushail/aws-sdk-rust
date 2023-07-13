@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateClientVpnConnectionsOutput {
+pub struct TerminateClientVpnConnectionsOutput  {
     /// <p>The ID of the Client VPN endpoint.</p>
     #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
@@ -11,66 +11,57 @@ pub struct TerminateClientVpnConnectionsOutput {
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the client connections.</p>
     #[doc(hidden)]
-    pub connection_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::TerminateConnectionStatus>>,
+    pub connection_statuses: ::std::option::Option<::std::vec::Vec<crate::types::TerminateConnectionStatus>>,
     _request_id: Option<String>,
 }
 impl TerminateClientVpnConnectionsOutput {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The user who established the terminated client connections.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The current state of the client connections.</p>
-    pub fn connection_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TerminateConnectionStatus]> {
+    pub fn connection_statuses(&self) -> ::std::option::Option<& [crate::types::TerminateConnectionStatus]> {
         self.connection_statuses.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for TerminateClientVpnConnectionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl TerminateClientVpnConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`TerminateClientVpnConnectionsOutput`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput).
-    pub fn builder() -> crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsOutputBuilder {
         crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateClientVpnConnectionsOutput`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateClientVpnConnectionsOutputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
-    pub(crate) connection_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::TerminateConnectionStatus>>,
+    pub(crate) connection_statuses: ::std::option::Option<::std::vec::Vec<crate::types::TerminateConnectionStatus>>,
     _request_id: Option<String>,
 }
 impl TerminateClientVpnConnectionsOutputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_vpn_endpoint_id = input; self
+    }
+    /// <p>The ID of the Client VPN endpoint.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
     }
     /// <p>The user who established the terminated client connections.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,8 +70,11 @@ impl TerminateClientVpnConnectionsOutputBuilder {
     }
     /// <p>The user who established the terminated client connections.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// <p>The user who established the terminated client connections.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Appends an item to `connection_statuses`.
     ///
@@ -89,37 +83,38 @@ impl TerminateClientVpnConnectionsOutputBuilder {
     /// <p>The current state of the client connections.</p>
     pub fn connection_statuses(mut self, input: crate::types::TerminateConnectionStatus) -> Self {
         let mut v = self.connection_statuses.unwrap_or_default();
-        v.push(input);
-        self.connection_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connection_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current state of the client connections.</p>
-    pub fn set_connection_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TerminateConnectionStatus>>,
-    ) -> Self {
-        self.connection_statuses = input;
-        self
+    pub fn set_connection_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerminateConnectionStatus>>) -> Self {
+        self.connection_statuses = input; self
+    }
+    /// <p>The current state of the client connections.</p>
+    pub fn get_connection_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminateConnectionStatus>> {
+        &self.connection_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`TerminateClientVpnConnectionsOutput`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput
-    {
+    pub fn build(self) -> crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput {
         crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-            username: self.username,
-            connection_statuses: self.connection_statuses,
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id
+            ,
+            username: self.username
+            ,
+            connection_statuses: self.connection_statuses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

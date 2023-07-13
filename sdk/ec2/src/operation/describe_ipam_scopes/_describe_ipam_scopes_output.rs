@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIpamScopesOutput {
+pub struct DescribeIpamScopesOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,32 +13,29 @@ pub struct DescribeIpamScopesOutput {
 }
 impl DescribeIpamScopesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The scopes you want information on.</p>
-    pub fn ipam_scopes(&self) -> ::std::option::Option<&[crate::types::IpamScope]> {
+    pub fn ipam_scopes(&self) -> ::std::option::Option<& [crate::types::IpamScope]> {
         self.ipam_scopes.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeIpamScopesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeIpamScopesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamScopesOutput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder {
         crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpamScopesOutput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamScopesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_scopes: ::std::option::Option<::std::vec::Vec<crate::types::IpamScope>>,
@@ -52,8 +49,11 @@ impl DescribeIpamScopesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `ipam_scopes`.
     ///
@@ -62,33 +62,36 @@ impl DescribeIpamScopesOutputBuilder {
     /// <p>The scopes you want information on.</p>
     pub fn ipam_scopes(mut self, input: crate::types::IpamScope) -> Self {
         let mut v = self.ipam_scopes.unwrap_or_default();
-        v.push(input);
-        self.ipam_scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipam_scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The scopes you want information on.</p>
-    pub fn set_ipam_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamScope>>,
-    ) -> Self {
-        self.ipam_scopes = input;
-        self
+    pub fn set_ipam_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamScope>>) -> Self {
+        self.ipam_scopes = input; self
+    }
+    /// <p>The scopes you want information on.</p>
+    pub fn get_ipam_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamScope>> {
+        &self.ipam_scopes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeIpamScopesOutput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput).
     pub fn build(self) -> crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput {
         crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput {
-            next_token: self.next_token,
-            ipam_scopes: self.ipam_scopes,
+            next_token: self.next_token
+            ,
+            ipam_scopes: self.ipam_scopes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

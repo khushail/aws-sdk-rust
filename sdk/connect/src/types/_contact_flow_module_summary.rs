@@ -3,7 +3,7 @@
 /// <p>Contains summary information about a flow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactFlowModuleSummary {
+pub struct ContactFlowModuleSummary  {
     /// <p>The identifier of the flow module.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct ContactFlowModuleSummary {
 }
 impl ContactFlowModuleSummary {
     /// <p>The identifier of the flow module.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the flow module.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of flow module.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ContactFlowModuleState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ContactFlowModuleState> {
         self.state.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl ContactFlowModuleSummary {
 
 /// A builder for [`ContactFlowModuleSummary`](crate::types::ContactFlowModuleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactFlowModuleSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl ContactFlowModuleSummaryBuilder {
     }
     /// <p>The identifier of the flow module.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the flow module.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl ContactFlowModuleSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the flow module.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl ContactFlowModuleSummaryBuilder {
     }
     /// <p>The name of the flow module.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the flow module.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of flow module.</p>
     pub fn state(mut self, input: crate::types::ContactFlowModuleState) -> Self {
@@ -90,20 +97,25 @@ impl ContactFlowModuleSummaryBuilder {
         self
     }
     /// <p>The type of flow module.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactFlowModuleState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ContactFlowModuleState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The type of flow module.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ContactFlowModuleSummary`](crate::types::ContactFlowModuleSummary).
     pub fn build(self) -> crate::types::ContactFlowModuleSummary {
         crate::types::ContactFlowModuleSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            state: self.state,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

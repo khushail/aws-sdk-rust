@@ -3,7 +3,7 @@
 /// <p>The full description of your connected cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectorConfigResponse {
+pub struct ConnectorConfigResponse  {
     /// <p>A unique ID associated with the cluster for registration purposes.</p>
     #[doc(hidden)]
     pub activation_id: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct ConnectorConfigResponse {
 }
 impl ConnectorConfigResponse {
     /// <p>A unique ID associated with the cluster for registration purposes.</p>
-    pub fn activation_id(&self) -> ::std::option::Option<&str> {
+    pub fn activation_id(&self) -> ::std::option::Option<& str> {
         self.activation_id.as_deref()
     }
     /// <p>A unique code associated with the cluster for registration purposes.</p>
-    pub fn activation_code(&self) -> ::std::option::Option<&str> {
+    pub fn activation_code(&self) -> ::std::option::Option<& str> {
         self.activation_code.as_deref()
     }
     /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native provider.</p>
-    pub fn activation_expiry(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn activation_expiry(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.activation_expiry.as_ref()
     }
     /// <p>The cluster's cloud service provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
+    pub fn provider(&self) -> ::std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -51,9 +51,7 @@ impl ConnectorConfigResponse {
 
 /// A builder for [`ConnectorConfigResponse`](crate::types::ConnectorConfigResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorConfigResponseBuilder {
     pub(crate) activation_id: ::std::option::Option<::std::string::String>,
     pub(crate) activation_code: ::std::option::Option<::std::string::String>,
@@ -63,36 +61,30 @@ pub struct ConnectorConfigResponseBuilder {
 }
 impl ConnectorConfigResponseBuilder {
     /// <p>A unique ID associated with the cluster for registration purposes.</p>
-    pub fn activation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn activation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique ID associated with the cluster for registration purposes.</p>
-    pub fn set_activation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.activation_id = input;
-        self
+    pub fn set_activation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.activation_id = input; self
+    }
+    /// <p>A unique ID associated with the cluster for registration purposes.</p>
+    pub fn get_activation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activation_id
     }
     /// <p>A unique code associated with the cluster for registration purposes.</p>
-    pub fn activation_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn activation_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique code associated with the cluster for registration purposes.</p>
-    pub fn set_activation_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.activation_code = input;
-        self
+    pub fn set_activation_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.activation_code = input; self
+    }
+    /// <p>A unique code associated with the cluster for registration purposes.</p>
+    pub fn get_activation_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activation_code
     }
     /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native provider.</p>
     pub fn activation_expiry(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -100,12 +92,12 @@ impl ConnectorConfigResponseBuilder {
         self
     }
     /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native provider.</p>
-    pub fn set_activation_expiry(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.activation_expiry = input;
-        self
+    pub fn set_activation_expiry(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.activation_expiry = input; self
+    }
+    /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native provider.</p>
+    pub fn get_activation_expiry(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.activation_expiry
     }
     /// <p>The cluster's cloud service provider.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,8 +106,11 @@ impl ConnectorConfigResponseBuilder {
     }
     /// <p>The cluster's cloud service provider.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
+    }
+    /// <p>The cluster's cloud service provider.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider
     }
     /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,17 +119,26 @@ impl ConnectorConfigResponseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`ConnectorConfigResponse`](crate::types::ConnectorConfigResponse).
     pub fn build(self) -> crate::types::ConnectorConfigResponse {
         crate::types::ConnectorConfigResponse {
-            activation_id: self.activation_id,
-            activation_code: self.activation_code,
-            activation_expiry: self.activation_expiry,
-            provider: self.provider,
-            role_arn: self.role_arn,
+            activation_id: self.activation_id
+            ,
+            activation_code: self.activation_code
+            ,
+            activation_expiry: self.activation_expiry
+            ,
+            provider: self.provider
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

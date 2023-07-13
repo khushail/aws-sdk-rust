@@ -21,8 +21,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-emrserverless = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-emrserverless = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -33,8 +33,8 @@ use aws_sdk_emrserverless as emrserverless;
 
 #[::tokio::main]
 async fn main() -> Result<(), emrserverless::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = emrserverless::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_emrserverless::Client::new(&config);
 
     // ... make some calls with the client
 

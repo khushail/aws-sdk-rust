@@ -3,7 +3,7 @@
 /// <p>Describes the validation configuration for a field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldValidationConfiguration {
+pub struct FieldValidationConfiguration  {
     /// <p>The validation to perform on an object type.<code></code> </p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct FieldValidationConfiguration {
 }
 impl FieldValidationConfiguration {
     /// <p>The validation to perform on an object type.<code></code> </p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The validation to perform on a string value.</p>
-    pub fn str_values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn str_values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.str_values.as_deref()
     }
     /// <p>The validation to perform on a number value.</p>
-    pub fn num_values(&self) -> ::std::option::Option<&[i32]> {
+    pub fn num_values(&self) -> ::std::option::Option<& [i32]> {
         self.num_values.as_deref()
     }
     /// <p>The validation message to display.</p>
-    pub fn validation_message(&self) -> ::std::option::Option<&str> {
+    pub fn validation_message(&self) -> ::std::option::Option<& str> {
         self.validation_message.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl FieldValidationConfiguration {
 
 /// A builder for [`FieldValidationConfiguration`](crate::types::FieldValidationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldValidationConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) str_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -61,8 +59,11 @@ impl FieldValidationConfigurationBuilder {
     }
     /// <p>The validation to perform on an object type.<code></code> </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The validation to perform on an object type.<code></code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Appends an item to `str_values`.
     ///
@@ -71,17 +72,17 @@ impl FieldValidationConfigurationBuilder {
     /// <p>The validation to perform on a string value.</p>
     pub fn str_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.str_values.unwrap_or_default();
-        v.push(input.into());
-        self.str_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.str_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The validation to perform on a string value.</p>
-    pub fn set_str_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.str_values = input;
-        self
+    pub fn set_str_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.str_values = input; self
+    }
+    /// <p>The validation to perform on a string value.</p>
+    pub fn get_str_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.str_values
     }
     /// Appends an item to `num_values`.
     ///
@@ -90,38 +91,43 @@ impl FieldValidationConfigurationBuilder {
     /// <p>The validation to perform on a number value.</p>
     pub fn num_values(mut self, input: i32) -> Self {
         let mut v = self.num_values.unwrap_or_default();
-        v.push(input);
-        self.num_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.num_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The validation to perform on a number value.</p>
     pub fn set_num_values(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.num_values = input;
-        self
+        self.num_values = input; self
+    }
+    /// <p>The validation to perform on a number value.</p>
+    pub fn get_num_values(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.num_values
     }
     /// <p>The validation message to display.</p>
-    pub fn validation_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The validation message to display.</p>
-    pub fn set_validation_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.validation_message = input;
-        self
+    pub fn set_validation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.validation_message = input; self
+    }
+    /// <p>The validation message to display.</p>
+    pub fn get_validation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_message
     }
     /// Consumes the builder and constructs a [`FieldValidationConfiguration`](crate::types::FieldValidationConfiguration).
     pub fn build(self) -> crate::types::FieldValidationConfiguration {
         crate::types::FieldValidationConfiguration {
-            r#type: self.r#type,
-            str_values: self.str_values,
-            num_values: self.num_values,
-            validation_message: self.validation_message,
+            r#type: self.r#type
+            ,
+            str_values: self.str_values
+            ,
+            num_values: self.num_values
+            ,
+            validation_message: self.validation_message
+            ,
         }
     }
 }
+

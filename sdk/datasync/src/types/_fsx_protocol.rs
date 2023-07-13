@@ -3,7 +3,7 @@
 /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FsxProtocol {
+pub struct FsxProtocol  {
     /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
     #[doc(hidden)]
     pub nfs: ::std::option::Option<crate::types::FsxProtocolNfs>,
@@ -13,11 +13,11 @@ pub struct FsxProtocol {
 }
 impl FsxProtocol {
     /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
-    pub fn nfs(&self) -> ::std::option::Option<&crate::types::FsxProtocolNfs> {
+    pub fn nfs(&self) -> ::std::option::Option<& crate::types::FsxProtocolNfs> {
         self.nfs.as_ref()
     }
     /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
-    pub fn smb(&self) -> ::std::option::Option<&crate::types::FsxProtocolSmb> {
+    pub fn smb(&self) -> ::std::option::Option<& crate::types::FsxProtocolSmb> {
         self.smb.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl FsxProtocol {
 
 /// A builder for [`FsxProtocol`](crate::types::FsxProtocol).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FsxProtocolBuilder {
     pub(crate) nfs: ::std::option::Option<crate::types::FsxProtocolNfs>,
     pub(crate) smb: ::std::option::Option<crate::types::FsxProtocolSmb>,
@@ -45,8 +43,11 @@ impl FsxProtocolBuilder {
     }
     /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
     pub fn set_nfs(mut self, input: ::std::option::Option<crate::types::FsxProtocolNfs>) -> Self {
-        self.nfs = input;
-        self
+        self.nfs = input; self
+    }
+    /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
+    pub fn get_nfs(&self) -> &::std::option::Option<crate::types::FsxProtocolNfs> {
+        &self.nfs
     }
     /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
     pub fn smb(mut self, input: crate::types::FsxProtocolSmb) -> Self {
@@ -55,14 +56,20 @@ impl FsxProtocolBuilder {
     }
     /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
     pub fn set_smb(mut self, input: ::std::option::Option<crate::types::FsxProtocolSmb>) -> Self {
-        self.smb = input;
-        self
+        self.smb = input; self
+    }
+    /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
+    pub fn get_smb(&self) -> &::std::option::Option<crate::types::FsxProtocolSmb> {
+        &self.smb
     }
     /// Consumes the builder and constructs a [`FsxProtocol`](crate::types::FsxProtocol).
     pub fn build(self) -> crate::types::FsxProtocol {
         crate::types::FsxProtocol {
-            nfs: self.nfs,
-            smb: self.smb,
+            nfs: self.nfs
+            ,
+            smb: self.smb
+            ,
         }
     }
 }
+

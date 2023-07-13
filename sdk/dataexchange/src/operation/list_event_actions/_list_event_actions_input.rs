@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEventActionsInput {
+pub struct ListEventActionsInput  {
     /// <p>The unique identifier for the event source.</p>
     #[doc(hidden)]
     pub event_source_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListEventActionsInput {
 }
 impl ListEventActionsInput {
     /// <p>The unique identifier for the event source.</p>
-    pub fn event_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_source_id(&self) -> ::std::option::Option<& str> {
         self.event_source_id.as_deref()
     }
     /// <p>The maximum number of results returned by a single call.</p>
@@ -23,23 +23,20 @@ impl ListEventActionsInput {
         self.max_results
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListEventActionsInput {
     /// Creates a new builder-style object to manufacture [`ListEventActionsInput`](crate::operation::list_event_actions::ListEventActionsInput).
-    pub fn builder() -> crate::operation::list_event_actions::builders::ListEventActionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_actions::builders::ListEventActionsInputBuilder {
         crate::operation::list_event_actions::builders::ListEventActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventActionsInput`](crate::operation::list_event_actions::ListEventActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventActionsInputBuilder {
     pub(crate) event_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -47,20 +44,17 @@ pub struct ListEventActionsInputBuilder {
 }
 impl ListEventActionsInputBuilder {
     /// <p>The unique identifier for the event source.</p>
-    pub fn event_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the event source.</p>
-    pub fn set_event_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_source_id = input;
-        self
+    pub fn set_event_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_source_id = input; self
+    }
+    /// <p>The unique identifier for the event source.</p>
+    pub fn get_event_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_id
     }
     /// <p>The maximum number of results returned by a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -69,8 +63,11 @@ impl ListEventActionsInputBuilder {
     }
     /// <p>The maximum number of results returned by a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results returned by a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,22 +76,25 @@ impl ListEventActionsInputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEventActionsInput`](crate::operation::list_event_actions::ListEventActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_event_actions::ListEventActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_event_actions::ListEventActionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_event_actions::ListEventActionsInput {
-                event_source_id: self.event_source_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
+                event_source_id: self.event_source_id
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

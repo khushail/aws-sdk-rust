@@ -3,97 +3,106 @@ pub use crate::operation::describe_storage_system_resources::_describe_storage_s
 
 pub use crate::operation::describe_storage_system_resources::_describe_storage_system_resources_input::DescribeStorageSystemResourcesInputBuilder;
 
+impl DescribeStorageSystemResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_storage_system_resources();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeStorageSystemResources`.
-///
+/// 
 /// <p>Returns information that DataSync Discovery collects about resources in your on-premises storage system.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesInputBuilder,
 }
-impl DescribeStorageSystemResourcesFluentBuilder {
+impl DescribeStorageSystemResourcesFluentBuilder  {
     /// Creates a new `DescribeStorageSystemResources`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStorageSystemResources as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_storage_system_resources::DescribeStorageSystemResources, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::describe_storage_system_resources::DescribeStorageSystemResources, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_storage_system_resources::DescribeStorageSystemResources, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_storage_system_resources::paginator::DescribeStorageSystemResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_storage_system_resources::paginator::DescribeStorageSystemResourcesPaginator{
-        crate::operation::describe_storage_system_resources::paginator::DescribeStorageSystemResourcesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_storage_system_resources::paginator::DescribeStorageSystemResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_storage_system_resources::paginator::DescribeStorageSystemResourcesPaginator {
+                                crate::operation::describe_storage_system_resources::paginator::DescribeStorageSystemResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discovery_job_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_discovery_job_arn()
     }
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
     pub fn resource_type(mut self, input: crate::types::DiscoveryResourceType) -> Self {
@@ -101,12 +110,13 @@ impl DescribeStorageSystemResourcesFluentBuilder {
         self
     }
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::DiscoveryResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>Specifies what kind of storage system resources that you want information about.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::DiscoveryResourceType> {
+        self.inner.get_resource_type()
     }
     /// Appends an item to `ResourceIds`.
     ///
@@ -118,38 +128,31 @@ impl DescribeStorageSystemResourcesFluentBuilder {
         self
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
+    }
+    /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_ids()
     }
     /// Adds a key-value pair to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
-    pub fn filter(
-        mut self,
-        k: crate::types::DiscoveryResourceFilter,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filter(mut self, k: crate::types::DiscoveryResourceFilter, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k, v);
         self
     }
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::DiscoveryResourceFilter,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::DiscoveryResourceFilter, ::std::vec::Vec<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DiscoveryResourceFilter, ::std::vec::Vec<::std::string::String>>> {
+        self.inner.get_filter()
     }
     /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -161,6 +164,10 @@ impl DescribeStorageSystemResourcesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -171,4 +178,9 @@ impl DescribeStorageSystemResourcesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateContactInput {
+pub struct CreateContactInput  {
     /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
     #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
@@ -24,27 +24,27 @@ pub struct CreateContactInput {
 }
 impl CreateContactInput {
     /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContactType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ContactType> {
         self.r#type.as_ref()
     }
     /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
-    pub fn plan(&self) -> ::std::option::Option<&crate::types::Plan> {
+    pub fn plan(&self) -> ::std::option::Option<& crate::types::Plan> {
         self.plan.as_ref()
     }
     /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -57,9 +57,7 @@ impl CreateContactInput {
 
 /// A builder for [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContactInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -76,8 +74,11 @@ impl CreateContactInputBuilder {
     }
     /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
+    }
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +87,11 @@ impl CreateContactInputBuilder {
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
+    }
+    /// <p>The full name of the contact or escalation plan.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
@@ -96,8 +100,11 @@ impl CreateContactInputBuilder {
     }
     /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
+        &self.r#type
     }
     /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
@@ -106,8 +113,11 @@ impl CreateContactInputBuilder {
     }
     /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
     pub fn set_plan(mut self, input: ::std::option::Option<crate::types::Plan>) -> Self {
-        self.plan = input;
-        self
+        self.plan = input; self
+    }
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
+    pub fn get_plan(&self) -> &::std::option::Option<crate::types::Plan> {
+        &self.plan
     }
     /// Appends an item to `tags`.
     ///
@@ -116,48 +126,49 @@ impl CreateContactInputBuilder {
     /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.idempotency_token = input;
-        self
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.idempotency_token = input; self
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_contact::CreateContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_contact::CreateContactInput {
-            alias: self.alias,
-            display_name: self.display_name,
-            r#type: self.r#type,
-            plan: self.plan,
-            tags: self.tags,
-            idempotency_token: self.idempotency_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_contact::CreateContactInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_contact::CreateContactInput {
+                alias: self.alias
+                ,
+                display_name: self.display_name
+                ,
+                r#type: self.r#type
+                ,
+                plan: self.plan
+                ,
+                tags: self.tags
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
+        )
     }
 }
+

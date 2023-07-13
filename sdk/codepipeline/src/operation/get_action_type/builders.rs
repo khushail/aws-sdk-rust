@@ -3,122 +3,124 @@ pub use crate::operation::get_action_type::_get_action_type_output::GetActionTyp
 
 pub use crate::operation::get_action_type::_get_action_type_input::GetActionTypeInputBuilder;
 
+impl GetActionTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_action_type::GetActionTypeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_action_type::GetActionTypeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_action_type();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetActionType`.
-///
+/// 
 /// <p>Returns information about an action type created for an external provider, where the action is to be used by customers of the external provider. The action can be created with any supported integration model.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetActionTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_action_type::builders::GetActionTypeInputBuilder,
+                    inner: crate::operation::get_action_type::builders::GetActionTypeInputBuilder,
 }
-impl GetActionTypeFluentBuilder {
+impl GetActionTypeFluentBuilder  {
     /// Creates a new `GetActionType`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_action_type::GetActionType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetActionType as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_action_type::builders::GetActionTypeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_action_type::GetActionTypeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_action_type::GetActionType, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_action_type::GetActionTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_action_type::GetActionTypeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_action_type::GetActionType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_action_type::GetActionTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_action_type::GetActionType, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.inner = self.inner.category(input);
         self
     }
-    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.inner = self.inner.set_category(input);
         self
+    }
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
+    /// </ul>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        self.inner.get_category()
     }
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +132,10 @@ impl GetActionTypeFluentBuilder {
         self.inner = self.inner.set_owner(input);
         self
     }
+    /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner()
+    }
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider(input.into());
@@ -139,6 +145,10 @@ impl GetActionTypeFluentBuilder {
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
+    }
+    /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider()
     }
     /// <p>A string that describes the action type version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,4 +160,9 @@ impl GetActionTypeFluentBuilder {
         self.inner = self.inner.set_version(input);
         self
     }
+    /// <p>A string that describes the action type version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
+    }
 }
+

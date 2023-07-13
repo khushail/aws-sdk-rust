@@ -3,7 +3,7 @@
 /// <p>The extracted attributes that relate to this entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RxNormAttribute {
+pub struct RxNormAttribute  {
     /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RxNormAttributeType>,
@@ -31,7 +31,7 @@ pub struct RxNormAttribute {
 }
 impl RxNormAttribute {
     /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RxNormAttributeType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RxNormAttributeType> {
         self.r#type.as_ref()
     }
     /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
@@ -55,11 +55,11 @@ impl RxNormAttribute {
         self.end_offset
     }
     /// <p>The segment of input text which corresponds to the detected attribute.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::RxNormTrait]> {
+    pub fn traits(&self) -> ::std::option::Option<& [crate::types::RxNormTrait]> {
         self.traits.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl RxNormAttribute {
 
 /// A builder for [`RxNormAttribute`](crate::types::RxNormAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RxNormAttributeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RxNormAttributeType>,
     pub(crate) score: ::std::option::Option<f32>,
@@ -92,12 +90,12 @@ impl RxNormAttributeBuilder {
         self
     }
     /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RxNormAttributeType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RxNormAttributeType>) -> Self {
+        self.r#type = input; self
+    }
+    /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RxNormAttributeType> {
+        &self.r#type
     }
     /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn score(mut self, input: f32) -> Self {
@@ -106,8 +104,11 @@ impl RxNormAttributeBuilder {
     }
     /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
+    }
+    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
     pub fn relationship_score(mut self, input: f32) -> Self {
@@ -116,8 +117,11 @@ impl RxNormAttributeBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
     pub fn set_relationship_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.relationship_score = input;
-        self
+        self.relationship_score = input; self
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
+    pub fn get_relationship_score(&self) -> &::std::option::Option<f32> {
+        &self.relationship_score
     }
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn id(mut self, input: i32) -> Self {
@@ -126,8 +130,11 @@ impl RxNormAttributeBuilder {
     }
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -136,8 +143,11 @@ impl RxNormAttributeBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
+    }
+    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
@@ -146,8 +156,11 @@ impl RxNormAttributeBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
+    }
+    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// <p>The segment of input text which corresponds to the detected attribute.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,8 +169,11 @@ impl RxNormAttributeBuilder {
     }
     /// <p>The segment of input text which corresponds to the detected attribute.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p>The segment of input text which corresponds to the detected attribute.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// Appends an item to `traits`.
     ///
@@ -166,29 +182,38 @@ impl RxNormAttributeBuilder {
     /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
     pub fn traits(mut self, input: crate::types::RxNormTrait) -> Self {
         let mut v = self.traits.unwrap_or_default();
-        v.push(input);
-        self.traits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.traits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
-    pub fn set_traits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>,
-    ) -> Self {
-        self.traits = input;
-        self
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>) -> Self {
+        self.traits = input; self
+    }
+    /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>> {
+        &self.traits
     }
     /// Consumes the builder and constructs a [`RxNormAttribute`](crate::types::RxNormAttribute).
     pub fn build(self) -> crate::types::RxNormAttribute {
         crate::types::RxNormAttribute {
-            r#type: self.r#type,
-            score: self.score,
-            relationship_score: self.relationship_score,
-            id: self.id,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
-            text: self.text,
-            traits: self.traits,
+            r#type: self.r#type
+            ,
+            score: self.score
+            ,
+            relationship_score: self.relationship_score
+            ,
+            id: self.id
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
+            text: self.text
+            ,
+            traits: self.traits
+            ,
         }
     }
 }
+

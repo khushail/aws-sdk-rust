@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEvidenceFoldersByAssessmentControlInput {
+pub struct GetEvidenceFoldersByAssessmentControlInput  {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
@@ -21,19 +21,19 @@ pub struct GetEvidenceFoldersByAssessmentControlInput {
 }
 impl GetEvidenceFoldersByAssessmentControlInput {
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p> The identifier for the control set. </p>
-    pub fn control_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_set_id(&self) -> ::std::option::Option<& str> {
         self.control_set_id.as_deref()
     }
     /// <p> The identifier for the control. </p>
-    pub fn control_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_id(&self) -> ::std::option::Option<& str> {
         self.control_id.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -43,16 +43,14 @@ impl GetEvidenceFoldersByAssessmentControlInput {
 }
 impl GetEvidenceFoldersByAssessmentControlInput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFoldersByAssessmentControlInput`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput).
-    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder{
+    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder {
         crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEvidenceFoldersByAssessmentControlInput`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceFoldersByAssessmentControlInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,
@@ -62,36 +60,30 @@ pub struct GetEvidenceFoldersByAssessmentControlInputBuilder {
 }
 impl GetEvidenceFoldersByAssessmentControlInputBuilder {
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.assessment_id = input;
-        self
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.assessment_id = input; self
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
     }
     /// <p> The identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.control_set_id = input;
-        self
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.control_set_id = input; self
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_id
     }
     /// <p> The identifier for the control. </p>
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,8 +92,11 @@ impl GetEvidenceFoldersByAssessmentControlInputBuilder {
     }
     /// <p> The identifier for the control. </p>
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_id = input;
-        self
+        self.control_id = input; self
+    }
+    /// <p> The identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_id
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,8 +105,11 @@ impl GetEvidenceFoldersByAssessmentControlInputBuilder {
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -120,11 +118,14 @@ impl GetEvidenceFoldersByAssessmentControlInputBuilder {
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetEvidenceFoldersByAssessmentControlInput`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput {
                 assessment_id: self.assessment_id
@@ -141,3 +142,4 @@ impl GetEvidenceFoldersByAssessmentControlInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Volume used by the Kubernetes workload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Volume {
+pub struct Volume  {
     /// <p>Volume name.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct Volume {
 }
 impl Volume {
     /// <p>Volume name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-    pub fn host_path(&self) -> ::std::option::Option<&crate::types::HostPath> {
+    pub fn host_path(&self) -> ::std::option::Option<& crate::types::HostPath> {
         self.host_path.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Volume {
 
 /// A builder for [`Volume`](crate::types::Volume).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) host_path: ::std::option::Option<crate::types::HostPath>,
@@ -45,8 +43,11 @@ impl VolumeBuilder {
     }
     /// <p>Volume name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Volume name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
     pub fn host_path(mut self, input: crate::types::HostPath) -> Self {
@@ -55,14 +56,20 @@ impl VolumeBuilder {
     }
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
     pub fn set_host_path(mut self, input: ::std::option::Option<crate::types::HostPath>) -> Self {
-        self.host_path = input;
-        self
+        self.host_path = input; self
+    }
+    /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
+    pub fn get_host_path(&self) -> &::std::option::Option<crate::types::HostPath> {
+        &self.host_path
     }
     /// Consumes the builder and constructs a [`Volume`](crate::types::Volume).
     pub fn build(self) -> crate::types::Volume {
         crate::types::Volume {
-            name: self.name,
-            host_path: self.host_path,
+            name: self.name
+            ,
+            host_path: self.host_path
+            ,
         }
     }
 }
+

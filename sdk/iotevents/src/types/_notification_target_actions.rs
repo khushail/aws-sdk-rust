@@ -3,14 +3,14 @@
 /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationTargetActions {
+pub struct NotificationTargetActions  {
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     #[doc(hidden)]
     pub lambda_action: ::std::option::Option<crate::types::LambdaAction>,
 }
 impl NotificationTargetActions {
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    pub fn lambda_action(&self) -> ::std::option::Option<&crate::types::LambdaAction> {
+    pub fn lambda_action(&self) -> ::std::option::Option<& crate::types::LambdaAction> {
         self.lambda_action.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl NotificationTargetActions {
 
 /// A builder for [`NotificationTargetActions`](crate::types::NotificationTargetActions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationTargetActionsBuilder {
     pub(crate) lambda_action: ::std::option::Option<crate::types::LambdaAction>,
 }
@@ -36,17 +34,19 @@ impl NotificationTargetActionsBuilder {
         self
     }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    pub fn set_lambda_action(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaAction>,
-    ) -> Self {
-        self.lambda_action = input;
-        self
+    pub fn set_lambda_action(mut self, input: ::std::option::Option<crate::types::LambdaAction>) -> Self {
+        self.lambda_action = input; self
+    }
+    /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
+    pub fn get_lambda_action(&self) -> &::std::option::Option<crate::types::LambdaAction> {
+        &self.lambda_action
     }
     /// Consumes the builder and constructs a [`NotificationTargetActions`](crate::types::NotificationTargetActions).
     pub fn build(self) -> crate::types::NotificationTargetActions {
         crate::types::NotificationTargetActions {
-            lambda_action: self.lambda_action,
+            lambda_action: self.lambda_action
+            ,
         }
     }
 }
+

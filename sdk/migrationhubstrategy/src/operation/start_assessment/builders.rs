@@ -3,133 +3,114 @@ pub use crate::operation::start_assessment::_start_assessment_output::StartAsses
 
 pub use crate::operation::start_assessment::_start_assessment_input::StartAssessmentInputBuilder;
 
+impl StartAssessmentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::start_assessment::StartAssessmentOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::start_assessment::StartAssessmentError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.start_assessment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `StartAssessment`.
-///
+/// 
 /// <p> Starts the assessment of an on-premises environment. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_assessment::builders::StartAssessmentInputBuilder,
+                    inner: crate::operation::start_assessment::builders::StartAssessmentInputBuilder,
 }
-impl StartAssessmentFluentBuilder {
+impl StartAssessmentFluentBuilder  {
     /// Creates a new `StartAssessment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_assessment::StartAssessment,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment::StartAssessmentError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the StartAssessment as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_assessment::builders::StartAssessmentInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_assessment::StartAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment::StartAssessmentError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::start_assessment::StartAssessment, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::start_assessment::StartAssessmentError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_assessment::StartAssessmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_assessment::StartAssessmentError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_assessment::StartAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment::StartAssessmentError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_assessment::StartAssessment,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment::StartAssessmentError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_assessment::StartAssessmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_assessment::StartAssessmentError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::start_assessment::StartAssessment, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::start_assessment::StartAssessmentError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-    pub fn s3bucket_for_analysis_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3bucket_for_analysis_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3bucket_for_analysis_data(input.into());
         self
     }
     /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-    pub fn set_s3bucket_for_analysis_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3bucket_for_analysis_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3bucket_for_analysis_data(input);
         self
     }
+    /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
+    pub fn get_s3bucket_for_analysis_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3bucket_for_analysis_data()
+    }
     /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-    pub fn s3bucket_for_report_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3bucket_for_report_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3bucket_for_report_data(input.into());
         self
     }
     /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-    pub fn set_s3bucket_for_report_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3bucket_for_report_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3bucket_for_report_data(input);
         self
+    }
+    /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
+    pub fn get_s3bucket_for_report_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3bucket_for_report_data()
     }
     /// Appends an item to `assessmentTargets`.
     ///
@@ -141,11 +122,13 @@ impl StartAssessmentFluentBuilder {
         self
     }
     /// <p>List of criteria for assessment.</p>
-    pub fn set_assessment_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
-    ) -> Self {
+    pub fn set_assessment_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>) -> Self {
         self.inner = self.inner.set_assessment_targets(input);
         self
     }
+    /// <p>List of criteria for assessment.</p>
+    pub fn get_assessment_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>> {
+        self.inner.get_assessment_targets()
+    }
 }
+

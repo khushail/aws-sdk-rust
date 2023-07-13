@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportApiInput {
+pub struct ImportApiInput  {
     /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
     pub basepath: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct ImportApiInput {
 }
 impl ImportApiInput {
     /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
-    pub fn basepath(&self) -> ::std::option::Option<&str> {
+    pub fn basepath(&self) -> ::std::option::Option<& str> {
         self.basepath.as_deref()
     }
     /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
@@ -37,9 +37,7 @@ impl ImportApiInput {
 
 /// A builder for [`ImportApiInput`](crate::operation::import_api::ImportApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportApiInputBuilder {
     pub(crate) basepath: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl ImportApiInputBuilder {
     }
     /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
     pub fn set_basepath(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.basepath = input;
-        self
+        self.basepath = input; self
+    }
+    /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
+    pub fn get_basepath(&self) -> &::std::option::Option<::std::string::String> {
+        &self.basepath
     }
     /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl ImportApiInputBuilder {
     }
     /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
+    }
+    /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
     pub fn fail_on_warnings(mut self, input: bool) -> Self {
@@ -73,20 +77,24 @@ impl ImportApiInputBuilder {
     }
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
     pub fn set_fail_on_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fail_on_warnings = input;
-        self
+        self.fail_on_warnings = input; self
+    }
+    /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
+    pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
+        &self.fail_on_warnings
     }
     /// Consumes the builder and constructs a [`ImportApiInput`](crate::operation::import_api::ImportApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_api::ImportApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::import_api::ImportApiInput {
-            basepath: self.basepath,
-            body: self.body,
-            fail_on_warnings: self.fail_on_warnings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_api::ImportApiInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_api::ImportApiInput {
+                basepath: self.basepath
+                ,
+                body: self.body
+                ,
+                fail_on_warnings: self.fail_on_warnings
+                ,
+            }
+        )
     }
 }
+

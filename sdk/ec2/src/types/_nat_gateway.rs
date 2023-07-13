@@ -3,7 +3,7 @@
 /// <p>Describes a NAT gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NatGateway {
+pub struct NatGateway  {
     /// <p>The date and time the NAT gateway was created.</p>
     #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -13,34 +13,33 @@ pub struct NatGateway {
     /// <p>If the NAT gateway could not be created, specifies the error code for the failure. (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)</p>
     #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
-    /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p>
-    /// <ul>
-    /// <li> <p>For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"</p> </li>
-    /// <li> <p>For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"</p> </li>
-    /// <li> <p>For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"</p> </li>
-    /// <li> <p>For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"</p> </li>
-    /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li>
-    /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li>
+    /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p> 
+    /// <ul> 
+    /// <li> <p>For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"</p> </li> 
+    /// <li> <p>For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"</p> </li> 
+    /// <li> <p>For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"</p> </li> 
+    /// <li> <p>For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"</p> </li> 
+    /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li> 
+    /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
     #[doc(hidden)]
-    pub nat_gateway_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     /// <p>The ID of the NAT gateway.</p>
     #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
     #[doc(hidden)]
     pub provisioned_bandwidth: ::std::option::Option<crate::types::ProvisionedBandwidth>,
-    /// <p>The state of the NAT gateway.</p>
-    /// <ul>
-    /// <li> <p> <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.</p> </li>
-    /// <li> <p> <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and <code>failureMessage</code> fields for the reason.</p> </li>
-    /// <li> <p> <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT gateway, and does not indicate the health of the NAT gateway.</p> </li>
-    /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li>
+    /// <p>The state of the NAT gateway.</p> 
+    /// <ul> 
+    /// <li> <p> <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.</p> </li> 
+    /// <li> <p> <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and <code>failureMessage</code> fields for the reason.</p> </li> 
+    /// <li> <p> <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT gateway, and does not indicate the health of the NAT gateway.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::NatGatewayState>,
@@ -59,70 +58,66 @@ pub struct NatGateway {
 }
 impl NatGateway {
     /// <p>The date and time the NAT gateway was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The date and time the NAT gateway was deleted, if applicable.</p>
-    pub fn delete_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delete_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delete_time.as_ref()
     }
     /// <p>If the NAT gateway could not be created, specifies the error code for the failure. (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
-    /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p>
-    /// <ul>
-    /// <li> <p>For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"</p> </li>
-    /// <li> <p>For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"</p> </li>
-    /// <li> <p>For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"</p> </li>
-    /// <li> <p>For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"</p> </li>
-    /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li>
-    /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li>
+    /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p> 
+    /// <ul> 
+    /// <li> <p>For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"</p> </li> 
+    /// <li> <p>For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"</p> </li> 
+    /// <li> <p>For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"</p> </li> 
+    /// <li> <p>For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"</p> </li> 
+    /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li> 
+    /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li> 
     /// </ul>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    pub fn nat_gateway_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NatGatewayAddress]> {
+    pub fn nat_gateway_addresses(&self) -> ::std::option::Option<& [crate::types::NatGatewayAddress]> {
         self.nat_gateway_addresses.as_deref()
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn nat_gateway_id(&self) -> ::std::option::Option<& str> {
         self.nat_gateway_id.as_deref()
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-    pub fn provisioned_bandwidth(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisionedBandwidth> {
+    pub fn provisioned_bandwidth(&self) -> ::std::option::Option<& crate::types::ProvisionedBandwidth> {
         self.provisioned_bandwidth.as_ref()
     }
-    /// <p>The state of the NAT gateway.</p>
-    /// <ul>
-    /// <li> <p> <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.</p> </li>
-    /// <li> <p> <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and <code>failureMessage</code> fields for the reason.</p> </li>
-    /// <li> <p> <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT gateway, and does not indicate the health of the NAT gateway.</p> </li>
-    /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li>
+    /// <p>The state of the NAT gateway.</p> 
+    /// <ul> 
+    /// <li> <p> <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.</p> </li> 
+    /// <li> <p> <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and <code>failureMessage</code> fields for the reason.</p> </li> 
+    /// <li> <p> <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT gateway, and does not indicate the health of the NAT gateway.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li> 
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::NatGatewayState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::NatGatewayState> {
         self.state.as_ref()
     }
     /// <p>The ID of the subnet in which the NAT gateway is located.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the VPC in which the NAT gateway is located.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The tags for the NAT gateway.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
-    pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
+    pub fn connectivity_type(&self) -> ::std::option::Option<& crate::types::ConnectivityType> {
         self.connectivity_type.as_ref()
     }
 }
@@ -135,16 +130,13 @@ impl NatGateway {
 
 /// A builder for [`NatGateway`](crate::types::NatGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NatGatewayBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
-    pub(crate) nat_gateway_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub(crate) nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_bandwidth: ::std::option::Option<crate::types::ProvisionedBandwidth>,
     pub(crate) state: ::std::option::Option<crate::types::NatGatewayState>,
@@ -160,12 +152,12 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>The date and time the NAT gateway was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
+    }
+    /// <p>The date and time the NAT gateway was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The date and time the NAT gateway was deleted, if applicable.</p>
     pub fn delete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,12 +165,12 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>The date and time the NAT gateway was deleted, if applicable.</p>
-    pub fn set_delete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.delete_time = input;
-        self
+    pub fn set_delete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.delete_time = input; self
+    }
+    /// <p>The date and time the NAT gateway was deleted, if applicable.</p>
+    pub fn get_delete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delete_time
     }
     /// <p>If the NAT gateway could not be created, specifies the error code for the failure. (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)</p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,40 +179,48 @@ impl NatGatewayBuilder {
     }
     /// <p>If the NAT gateway could not be created, specifies the error code for the failure. (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
-    /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p>
-    /// <ul>
-    /// <li> <p>For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"</p> </li>
-    /// <li> <p>For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"</p> </li>
-    /// <li> <p>For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"</p> </li>
-    /// <li> <p>For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"</p> </li>
-    /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li>
-    /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li>
+    /// <p>If the NAT gateway could not be created, specifies the error code for the failure. (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
+    }
+    /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p> 
+    /// <ul> 
+    /// <li> <p>For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"</p> </li> 
+    /// <li> <p>For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"</p> </li> 
+    /// <li> <p>For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"</p> </li> 
+    /// <li> <p>For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"</p> </li> 
+    /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li> 
+    /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li> 
     /// </ul>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p>
-    /// <ul>
-    /// <li> <p>For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"</p> </li>
-    /// <li> <p>For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"</p> </li>
-    /// <li> <p>For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"</p> </li>
-    /// <li> <p>For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"</p> </li>
-    /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li>
-    /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li>
+    /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p> 
+    /// <ul> 
+    /// <li> <p>For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"</p> </li> 
+    /// <li> <p>For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"</p> </li> 
+    /// <li> <p>For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"</p> </li> 
+    /// <li> <p>For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"</p> </li> 
+    /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li> 
+    /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li> 
     /// </ul>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.failure_message = input;
-        self
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_message = input; self
+    }
+    /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p> 
+    /// <ul> 
+    /// <li> <p>For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"</p> </li> 
+    /// <li> <p>For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"</p> </li> 
+    /// <li> <p>For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"</p> </li> 
+    /// <li> <p>For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"</p> </li> 
+    /// <li> <p>For InternalError: "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."</p> </li> 
+    /// <li> <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p> </li> 
+    /// </ul>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
     }
     /// Appends an item to `nat_gateway_addresses`.
     ///
@@ -229,33 +229,30 @@ impl NatGatewayBuilder {
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
     pub fn nat_gateway_addresses(mut self, input: crate::types::NatGatewayAddress) -> Self {
         let mut v = self.nat_gateway_addresses.unwrap_or_default();
-        v.push(input);
-        self.nat_gateway_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.nat_gateway_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    pub fn set_nat_gateway_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
-    ) -> Self {
-        self.nat_gateway_addresses = input;
-        self
+    pub fn set_nat_gateway_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>) -> Self {
+        self.nat_gateway_addresses = input; self
+    }
+    /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
+    pub fn get_nat_gateway_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>> {
+        &self.nat_gateway_addresses
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.nat_gateway_id = input;
-        self
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.nat_gateway_id = input; self
+    }
+    /// <p>The ID of the NAT gateway.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nat_gateway_id
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
     pub fn provisioned_bandwidth(mut self, input: crate::types::ProvisionedBandwidth) -> Self {
@@ -263,39 +260,46 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-    pub fn set_provisioned_bandwidth(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedBandwidth>,
-    ) -> Self {
-        self.provisioned_bandwidth = input;
-        self
+    pub fn set_provisioned_bandwidth(mut self, input: ::std::option::Option<crate::types::ProvisionedBandwidth>) -> Self {
+        self.provisioned_bandwidth = input; self
     }
-    /// <p>The state of the NAT gateway.</p>
-    /// <ul>
-    /// <li> <p> <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.</p> </li>
-    /// <li> <p> <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and <code>failureMessage</code> fields for the reason.</p> </li>
-    /// <li> <p> <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT gateway, and does not indicate the health of the NAT gateway.</p> </li>
-    /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li>
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    pub fn get_provisioned_bandwidth(&self) -> &::std::option::Option<crate::types::ProvisionedBandwidth> {
+        &self.provisioned_bandwidth
+    }
+    /// <p>The state of the NAT gateway.</p> 
+    /// <ul> 
+    /// <li> <p> <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.</p> </li> 
+    /// <li> <p> <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and <code>failureMessage</code> fields for the reason.</p> </li> 
+    /// <li> <p> <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT gateway, and does not indicate the health of the NAT gateway.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li> 
     /// </ul>
     pub fn state(mut self, input: crate::types::NatGatewayState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the NAT gateway.</p>
-    /// <ul>
-    /// <li> <p> <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.</p> </li>
-    /// <li> <p> <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and <code>failureMessage</code> fields for the reason.</p> </li>
-    /// <li> <p> <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT gateway, and does not indicate the health of the NAT gateway.</p> </li>
-    /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li>
+    /// <p>The state of the NAT gateway.</p> 
+    /// <ul> 
+    /// <li> <p> <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.</p> </li> 
+    /// <li> <p> <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and <code>failureMessage</code> fields for the reason.</p> </li> 
+    /// <li> <p> <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT gateway, and does not indicate the health of the NAT gateway.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li> 
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NatGatewayState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::NatGatewayState>) -> Self {
+        self.state = input; self
+    }
+    /// <p>The state of the NAT gateway.</p> 
+    /// <ul> 
+    /// <li> <p> <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.</p> </li> 
+    /// <li> <p> <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and <code>failureMessage</code> fields for the reason.</p> </li> 
+    /// <li> <p> <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT gateway, and does not indicate the health of the NAT gateway.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p> </li> 
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::NatGatewayState> {
+        &self.state
     }
     /// <p>The ID of the subnet in which the NAT gateway is located.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -304,8 +308,11 @@ impl NatGatewayBuilder {
     }
     /// <p>The ID of the subnet in which the NAT gateway is located.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
+    }
+    /// <p>The ID of the subnet in which the NAT gateway is located.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The ID of the VPC in which the NAT gateway is located.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -314,8 +321,11 @@ impl NatGatewayBuilder {
     }
     /// <p>The ID of the VPC in which the NAT gateway is located.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The ID of the VPC in which the NAT gateway is located.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `tags`.
     ///
@@ -324,17 +334,17 @@ impl NatGatewayBuilder {
     /// <p>The tags for the NAT gateway.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the NAT gateway.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags for the NAT gateway.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
     pub fn connectivity_type(mut self, input: crate::types::ConnectivityType) -> Self {
@@ -342,28 +352,41 @@ impl NatGatewayBuilder {
         self
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
-    pub fn set_connectivity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectivityType>,
-    ) -> Self {
-        self.connectivity_type = input;
-        self
+    pub fn set_connectivity_type(mut self, input: ::std::option::Option<crate::types::ConnectivityType>) -> Self {
+        self.connectivity_type = input; self
+    }
+    /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
+    pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
+        &self.connectivity_type
     }
     /// Consumes the builder and constructs a [`NatGateway`](crate::types::NatGateway).
     pub fn build(self) -> crate::types::NatGateway {
         crate::types::NatGateway {
-            create_time: self.create_time,
-            delete_time: self.delete_time,
-            failure_code: self.failure_code,
-            failure_message: self.failure_message,
-            nat_gateway_addresses: self.nat_gateway_addresses,
-            nat_gateway_id: self.nat_gateway_id,
-            provisioned_bandwidth: self.provisioned_bandwidth,
-            state: self.state,
-            subnet_id: self.subnet_id,
-            vpc_id: self.vpc_id,
-            tags: self.tags,
-            connectivity_type: self.connectivity_type,
+            create_time: self.create_time
+            ,
+            delete_time: self.delete_time
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_message: self.failure_message
+            ,
+            nat_gateway_addresses: self.nat_gateway_addresses
+            ,
+            nat_gateway_id: self.nat_gateway_id
+            ,
+            provisioned_bandwidth: self.provisioned_bandwidth
+            ,
+            state: self.state
+            ,
+            subnet_id: self.subnet_id
+            ,
+            vpc_id: self.vpc_id
+            ,
+            tags: self.tags
+            ,
+            connectivity_type: self.connectivity_type
+            ,
         }
     }
 }
+

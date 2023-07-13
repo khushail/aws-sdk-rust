@@ -2,60 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelSolNetworkOperationInput {
+pub struct CancelSolNetworkOperationInput  {
     /// <p>The identifier of the network operation.</p>
     #[doc(hidden)]
     pub ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelSolNetworkOperationInput {
     /// <p>The identifier of the network operation.</p>
-    pub fn ns_lcm_op_occ_id(&self) -> ::std::option::Option<&str> {
+    pub fn ns_lcm_op_occ_id(&self) -> ::std::option::Option<& str> {
         self.ns_lcm_op_occ_id.as_deref()
     }
 }
 impl CancelSolNetworkOperationInput {
     /// Creates a new builder-style object to manufacture [`CancelSolNetworkOperationInput`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationInput).
-    pub fn builder() -> crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationInputBuilder{
+    pub fn builder() -> crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationInputBuilder {
         crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSolNetworkOperationInput`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSolNetworkOperationInputBuilder {
     pub(crate) ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelSolNetworkOperationInputBuilder {
     /// <p>The identifier of the network operation.</p>
-    pub fn ns_lcm_op_occ_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_lcm_op_occ_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_lcm_op_occ_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the network operation.</p>
-    pub fn set_ns_lcm_op_occ_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ns_lcm_op_occ_id = input;
-        self
+    pub fn set_ns_lcm_op_occ_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ns_lcm_op_occ_id = input; self
+    }
+    /// <p>The identifier of the network operation.</p>
+    pub fn get_ns_lcm_op_occ_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_lcm_op_occ_id
     }
     /// Consumes the builder and constructs a [`CancelSolNetworkOperationInput`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationInput {
-                ns_lcm_op_occ_id: self.ns_lcm_op_occ_id,
-            },
+                ns_lcm_op_occ_id: self.ns_lcm_op_occ_id
+                ,
+            }
         )
     }
 }
+

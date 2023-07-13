@@ -3,7 +3,7 @@
 /// <p>Contains IoT SiteWise Monitor error details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitorErrorDetails {
+pub struct MonitorErrorDetails  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::MonitorErrorCode>,
@@ -13,11 +13,11 @@ pub struct MonitorErrorDetails {
 }
 impl MonitorErrorDetails {
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::MonitorErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::MonitorErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl MonitorErrorDetails {
 
 /// A builder for [`MonitorErrorDetails`](crate::types::MonitorErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitorErrorDetailsBuilder {
     pub(crate) code: ::std::option::Option<crate::types::MonitorErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl MonitorErrorDetailsBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorErrorCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::MonitorErrorCode>) -> Self {
+        self.code = input; self
+    }
+    /// <p>The error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::MonitorErrorCode> {
+        &self.code
     }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl MonitorErrorDetailsBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>The error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`MonitorErrorDetails`](crate::types::MonitorErrorDetails).
     pub fn build(self) -> crate::types::MonitorErrorDetails {
         crate::types::MonitorErrorDetails {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

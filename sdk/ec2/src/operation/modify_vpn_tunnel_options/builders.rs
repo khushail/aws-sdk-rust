@@ -3,150 +3,128 @@ pub use crate::operation::modify_vpn_tunnel_options::_modify_vpn_tunnel_options_
 
 pub use crate::operation::modify_vpn_tunnel_options::_modify_vpn_tunnel_options_input::ModifyVpnTunnelOptionsInputBuilder;
 
+impl ModifyVpnTunnelOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.modify_vpn_tunnel_options();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ModifyVpnTunnelOptions`.
-///
+/// 
 /// <p>Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site VPN connection. You can modify multiple options for a tunnel in a single request, but you can only modify one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site VPN tunnel options for your Site-to-Site VPN connection</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyVpnTunnelOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsInputBuilder,
+                    inner: crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsInputBuilder,
 }
-impl ModifyVpnTunnelOptionsFluentBuilder {
+impl ModifyVpnTunnelOptionsFluentBuilder  {
     /// Creates a new `ModifyVpnTunnelOptions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ModifyVpnTunnelOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_connection_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpn_connection_id()
+    }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_tunnel_outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_tunnel_outside_ip_address(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_vpn_tunnel_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_tunnel_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_tunnel_outside_ip_address(input);
         self
     }
+    /// <p>The external IP address of the VPN tunnel.</p>
+    pub fn get_vpn_tunnel_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpn_tunnel_outside_ip_address()
+    }
     /// <p>The tunnel options to modify.</p>
-    pub fn tunnel_options(
-        mut self,
-        input: crate::types::ModifyVpnTunnelOptionsSpecification,
-    ) -> Self {
+    pub fn tunnel_options(mut self, input: crate::types::ModifyVpnTunnelOptionsSpecification) -> Self {
         self.inner = self.inner.tunnel_options(input);
         self
     }
     /// <p>The tunnel options to modify.</p>
-    pub fn set_tunnel_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification>,
-    ) -> Self {
+    pub fn set_tunnel_options(mut self, input: ::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification>) -> Self {
         self.inner = self.inner.set_tunnel_options(input);
         self
+    }
+    /// <p>The tunnel options to modify.</p>
+    pub fn get_tunnel_options(&self) -> &::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification> {
+        self.inner.get_tunnel_options()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -158,16 +136,26 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p> 
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub fn skip_tunnel_replacement(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_tunnel_replacement(input);
         self
     }
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p> 
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub fn set_skip_tunnel_replacement(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_tunnel_replacement(input);
         self
     }
+    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p> 
+    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    pub fn get_skip_tunnel_replacement(&self) -> &::std::option::Option<bool> {
+        self.inner.get_skip_tunnel_replacement()
+    }
 }
+

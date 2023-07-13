@@ -3,7 +3,7 @@
 /// <p>An object representing the metadata of the gateway route.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrpcGatewayRouteMetadata {
+pub struct GrpcGatewayRouteMetadata  {
     /// <p>A name for the gateway route metadata.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct GrpcGatewayRouteMetadata {
 }
 impl GrpcGatewayRouteMetadata {
     /// <p>A name for the gateway route metadata.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
@@ -24,7 +24,7 @@ impl GrpcGatewayRouteMetadata {
         self.invert
     }
     /// <p>The criteria for determining a metadata match.</p>
-    pub fn r#match(&self) -> ::std::option::Option<&crate::types::GrpcMetadataMatchMethod> {
+    pub fn r#match(&self) -> ::std::option::Option<& crate::types::GrpcMetadataMatchMethod> {
         self.r#match.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl GrpcGatewayRouteMetadata {
 
 /// A builder for [`GrpcGatewayRouteMetadata`](crate::types::GrpcGatewayRouteMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) invert: ::std::option::Option<bool>,
@@ -53,8 +51,11 @@ impl GrpcGatewayRouteMetadataBuilder {
     }
     /// <p>A name for the gateway route metadata.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>A name for the gateway route metadata.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub fn invert(mut self, input: bool) -> Self {
@@ -63,8 +64,11 @@ impl GrpcGatewayRouteMetadataBuilder {
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub fn set_invert(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.invert = input;
-        self
+        self.invert = input; self
+    }
+    /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    pub fn get_invert(&self) -> &::std::option::Option<bool> {
+        &self.invert
     }
     /// <p>The criteria for determining a metadata match.</p>
     pub fn r#match(mut self, input: crate::types::GrpcMetadataMatchMethod) -> Self {
@@ -72,19 +76,23 @@ impl GrpcGatewayRouteMetadataBuilder {
         self
     }
     /// <p>The criteria for determining a metadata match.</p>
-    pub fn set_match(
-        mut self,
-        input: ::std::option::Option<crate::types::GrpcMetadataMatchMethod>,
-    ) -> Self {
-        self.r#match = input;
-        self
+    pub fn set_match(mut self, input: ::std::option::Option<crate::types::GrpcMetadataMatchMethod>) -> Self {
+        self.r#match = input; self
+    }
+    /// <p>The criteria for determining a metadata match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::GrpcMetadataMatchMethod> {
+        &self.r#match
     }
     /// Consumes the builder and constructs a [`GrpcGatewayRouteMetadata`](crate::types::GrpcGatewayRouteMetadata).
     pub fn build(self) -> crate::types::GrpcGatewayRouteMetadata {
         crate::types::GrpcGatewayRouteMetadata {
-            name: self.name,
-            invert: self.invert,
-            r#match: self.r#match,
+            name: self.name
+            ,
+            invert: self.invert
+            ,
+            r#match: self.r#match
+            ,
         }
     }
 }
+

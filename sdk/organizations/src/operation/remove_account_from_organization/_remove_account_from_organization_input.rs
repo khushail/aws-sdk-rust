@@ -2,54 +2,51 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveAccountFromOrganizationInput {
-    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+pub struct RemoveAccountFromOrganizationInput  {
+    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAccountFromOrganizationInput {
-    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 impl RemoveAccountFromOrganizationInput {
     /// Creates a new builder-style object to manufacture [`RemoveAccountFromOrganizationInput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput).
-    pub fn builder() -> crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder {
         crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAccountFromOrganizationInput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAccountFromOrganizationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAccountFromOrganizationInputBuilder {
-    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p> 
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`RemoveAccountFromOrganizationInput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput {
                 account_id: self.account_id
@@ -58,3 +55,4 @@ impl RemoveAccountFromOrganizationInputBuilder {
         )
     }
 }
+

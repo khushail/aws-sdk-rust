@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBackupPlanFromJsonOutput {
+pub struct GetBackupPlanFromJsonOutput  {
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     #[doc(hidden)]
     pub backup_plan: ::std::option::Option<crate::types::BackupPlan>,
@@ -10,29 +10,25 @@ pub struct GetBackupPlanFromJsonOutput {
 }
 impl GetBackupPlanFromJsonOutput {
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
-    pub fn backup_plan(&self) -> ::std::option::Option<&crate::types::BackupPlan> {
+    pub fn backup_plan(&self) -> ::std::option::Option<& crate::types::BackupPlan> {
         self.backup_plan.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBackupPlanFromJsonOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBackupPlanFromJsonOutput {
     /// Creates a new builder-style object to manufacture [`GetBackupPlanFromJsonOutput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput).
-    pub fn builder(
-    ) -> crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonOutputBuilder {
         crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackupPlanFromJsonOutput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackupPlanFromJsonOutputBuilder {
     pub(crate) backup_plan: ::std::option::Option<crate::types::BackupPlan>,
     _request_id: Option<String>,
@@ -44,27 +40,29 @@ impl GetBackupPlanFromJsonOutputBuilder {
         self
     }
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
-    pub fn set_backup_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupPlan>,
-    ) -> Self {
-        self.backup_plan = input;
-        self
+    pub fn set_backup_plan(mut self, input: ::std::option::Option<crate::types::BackupPlan>) -> Self {
+        self.backup_plan = input; self
+    }
+    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    pub fn get_backup_plan(&self) -> &::std::option::Option<crate::types::BackupPlan> {
+        &self.backup_plan
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBackupPlanFromJsonOutput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput).
     pub fn build(self) -> crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput {
         crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput {
-            backup_plan: self.backup_plan,
+            backup_plan: self.backup_plan
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

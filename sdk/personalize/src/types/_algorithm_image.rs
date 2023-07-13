@@ -3,7 +3,7 @@
 /// <p>Describes an algorithm image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlgorithmImage {
+pub struct AlgorithmImage  {
     /// <p>The name of the algorithm image.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct AlgorithmImage {
 }
 impl AlgorithmImage {
     /// <p>The name of the algorithm image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    pub fn docker_uri(&self) -> ::std::option::Option<&str> {
+    pub fn docker_uri(&self) -> ::std::option::Option<& str> {
         self.docker_uri.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AlgorithmImage {
 
 /// A builder for [`AlgorithmImage`](crate::types::AlgorithmImage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlgorithmImageBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) docker_uri: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AlgorithmImageBuilder {
     }
     /// <p>The name of the algorithm image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the algorithm image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub fn docker_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl AlgorithmImageBuilder {
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub fn set_docker_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.docker_uri = input;
-        self
+        self.docker_uri = input; self
+    }
+    /// <p>The URI of the Docker container for the algorithm image.</p>
+    pub fn get_docker_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.docker_uri
     }
     /// Consumes the builder and constructs a [`AlgorithmImage`](crate::types::AlgorithmImage).
     pub fn build(self) -> crate::types::AlgorithmImage {
         crate::types::AlgorithmImage {
-            name: self.name,
-            docker_uri: self.docker_uri,
+            name: self.name
+            ,
+            docker_uri: self.docker_uri
+            ,
         }
     }
 }
+

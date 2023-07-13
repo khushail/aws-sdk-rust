@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectTextInput {
-    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+pub struct DetectTextInput  {
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p> 
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::Image>,
@@ -12,13 +12,13 @@ pub struct DetectTextInput {
     pub filters: ::std::option::Option<crate::types::DetectTextFilters>,
 }
 impl DetectTextInput {
-    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p> 
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
+    pub fn image(&self) -> ::std::option::Option<& crate::types::Image> {
         self.image.as_ref()
     }
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::DetectTextFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::DetectTextFilters> {
         self.filters.as_ref()
     }
 }
@@ -31,25 +31,27 @@ impl DetectTextInput {
 
 /// A builder for [`DetectTextInput`](crate::operation::detect_text::DetectTextInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectTextInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) filters: ::std::option::Option<crate::types::DetectTextFilters>,
 }
 impl DetectTextInputBuilder {
-    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p> 
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.image = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p> 
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
+    }
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p> 
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        &self.image
     }
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
     pub fn filters(mut self, input: crate::types::DetectTextFilters) -> Self {
@@ -57,23 +59,23 @@ impl DetectTextInputBuilder {
         self
     }
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectTextFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DetectTextFilters>) -> Self {
+        self.filters = input; self
+    }
+    /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DetectTextFilters> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DetectTextInput`](crate::operation::detect_text::DetectTextInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_text::DetectTextInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detect_text::DetectTextInput {
-            image: self.image,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_text::DetectTextInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_text::DetectTextInput {
+                image: self.image
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

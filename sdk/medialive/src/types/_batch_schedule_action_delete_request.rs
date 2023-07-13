@@ -3,14 +3,14 @@
 /// A list of schedule actions to delete.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchScheduleActionDeleteRequest {
+pub struct BatchScheduleActionDeleteRequest  {
     /// A list of schedule actions to delete.
     #[doc(hidden)]
     pub action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchScheduleActionDeleteRequest {
     /// A list of schedule actions to delete.
-    pub fn action_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn action_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.action_names.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl BatchScheduleActionDeleteRequest {
 
 /// A builder for [`BatchScheduleActionDeleteRequest`](crate::types::BatchScheduleActionDeleteRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchScheduleActionDeleteRequestBuilder {
     pub(crate) action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -37,22 +35,24 @@ impl BatchScheduleActionDeleteRequestBuilder {
     /// A list of schedule actions to delete.
     pub fn action_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.action_names.unwrap_or_default();
-        v.push(input.into());
-        self.action_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.action_names = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of schedule actions to delete.
-    pub fn set_action_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.action_names = input;
-        self
+    pub fn set_action_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.action_names = input; self
+    }
+    /// A list of schedule actions to delete.
+    pub fn get_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.action_names
     }
     /// Consumes the builder and constructs a [`BatchScheduleActionDeleteRequest`](crate::types::BatchScheduleActionDeleteRequest).
     pub fn build(self) -> crate::types::BatchScheduleActionDeleteRequest {
         crate::types::BatchScheduleActionDeleteRequest {
-            action_names: self.action_names,
+            action_names: self.action_names
+            ,
         }
     }
 }
+

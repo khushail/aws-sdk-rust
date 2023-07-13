@@ -3,7 +3,7 @@
 /// <p>A set of filters by which to return Jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobsRequestFilters {
+pub struct DescribeJobsRequestFilters  {
     /// <p>An array of Job IDs that should be returned. An empty array means all jobs.</p>
     #[doc(hidden)]
     pub job_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,15 +16,15 @@ pub struct DescribeJobsRequestFilters {
 }
 impl DescribeJobsRequestFilters {
     /// <p>An array of Job IDs that should be returned. An empty array means all jobs.</p>
-    pub fn job_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn job_i_ds(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.job_i_ds.as_deref()
     }
     /// <p>The start date in a date range query.</p>
-    pub fn from_date(&self) -> ::std::option::Option<&str> {
+    pub fn from_date(&self) -> ::std::option::Option<& str> {
         self.from_date.as_deref()
     }
     /// <p>The end date in a date range query.</p>
-    pub fn to_date(&self) -> ::std::option::Option<&str> {
+    pub fn to_date(&self) -> ::std::option::Option<& str> {
         self.to_date.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl DescribeJobsRequestFilters {
 
 /// A builder for [`DescribeJobsRequestFilters`](crate::types::DescribeJobsRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobsRequestFiltersBuilder {
     pub(crate) job_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) from_date: ::std::option::Option<::std::string::String>,
@@ -53,17 +51,17 @@ impl DescribeJobsRequestFiltersBuilder {
     /// <p>An array of Job IDs that should be returned. An empty array means all jobs.</p>
     pub fn job_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_i_ds.unwrap_or_default();
-        v.push(input.into());
-        self.job_i_ds = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.job_i_ds = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Job IDs that should be returned. An empty array means all jobs.</p>
-    pub fn set_job_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.job_i_ds = input;
-        self
+    pub fn set_job_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.job_i_ds = input; self
+    }
+    /// <p>An array of Job IDs that should be returned. An empty array means all jobs.</p>
+    pub fn get_job_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_i_ds
     }
     /// <p>The start date in a date range query.</p>
     pub fn from_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +70,11 @@ impl DescribeJobsRequestFiltersBuilder {
     }
     /// <p>The start date in a date range query.</p>
     pub fn set_from_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_date = input;
-        self
+        self.from_date = input; self
+    }
+    /// <p>The start date in a date range query.</p>
+    pub fn get_from_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_date
     }
     /// <p>The end date in a date range query.</p>
     pub fn to_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,15 +83,22 @@ impl DescribeJobsRequestFiltersBuilder {
     }
     /// <p>The end date in a date range query.</p>
     pub fn set_to_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.to_date = input;
-        self
+        self.to_date = input; self
+    }
+    /// <p>The end date in a date range query.</p>
+    pub fn get_to_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to_date
     }
     /// Consumes the builder and constructs a [`DescribeJobsRequestFilters`](crate::types::DescribeJobsRequestFilters).
     pub fn build(self) -> crate::types::DescribeJobsRequestFilters {
         crate::types::DescribeJobsRequestFilters {
-            job_i_ds: self.job_i_ds,
-            from_date: self.from_date,
-            to_date: self.to_date,
+            job_i_ds: self.job_i_ds
+            ,
+            from_date: self.from_date
+            ,
+            to_date: self.to_date
+            ,
         }
     }
 }
+

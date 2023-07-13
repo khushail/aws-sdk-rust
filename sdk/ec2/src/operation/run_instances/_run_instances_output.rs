@@ -3,7 +3,7 @@
 /// <p>Describes a launch request for one or more instances, and includes owner, requester, and security group information that applies to all instances in the launch request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunInstancesOutput {
+pub struct RunInstancesOutput  {
     /// <p>Not supported.</p>
     #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
@@ -23,31 +23,31 @@ pub struct RunInstancesOutput {
 }
 impl RunInstancesOutput {
     /// <p>Not supported.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
+    pub fn groups(&self) -> ::std::option::Option<& [crate::types::GroupIdentifier]> {
         self.groups.as_deref()
     }
     /// <p>The instances.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> ::std::option::Option<& [crate::types::Instance]> {
         self.instances.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
-    pub fn requester_id(&self) -> ::std::option::Option<&str> {
+    pub fn requester_id(&self) -> ::std::option::Option<& str> {
         self.requester_id.as_deref()
     }
     /// <p>The ID of the reservation.</p>
-    pub fn reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_id(&self) -> ::std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RunInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RunInstancesOutput {
     /// Creates a new builder-style object to manufacture [`RunInstancesOutput`](crate::operation::run_instances::RunInstancesOutput).
     pub fn builder() -> crate::operation::run_instances::builders::RunInstancesOutputBuilder {
@@ -57,9 +57,7 @@ impl RunInstancesOutput {
 
 /// A builder for [`RunInstancesOutput`](crate::operation::run_instances::RunInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunInstancesOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
@@ -76,17 +74,17 @@ impl RunInstancesOutputBuilder {
     /// <p>Not supported.</p>
     pub fn groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Not supported.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
-    ) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
+        self.groups = input; self
+    }
+    /// <p>Not supported.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+        &self.groups
     }
     /// Appends an item to `instances`.
     ///
@@ -95,17 +93,17 @@ impl RunInstancesOutputBuilder {
     /// <p>The instances.</p>
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
+        self.instances = input; self
+    }
+    /// <p>The instances.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        &self.instances
     }
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,8 +112,11 @@ impl RunInstancesOutputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     pub fn requester_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,43 +125,49 @@ impl RunInstancesOutputBuilder {
     }
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     pub fn set_requester_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.requester_id = input;
-        self
+        self.requester_id = input; self
+    }
+    /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
+    pub fn get_requester_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requester_id
     }
     /// <p>The ID of the reservation.</p>
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the reservation.</p>
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.reservation_id = input;
-        self
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reservation_id = input; self
+    }
+    /// <p>The ID of the reservation.</p>
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RunInstancesOutput`](crate::operation::run_instances::RunInstancesOutput).
     pub fn build(self) -> crate::operation::run_instances::RunInstancesOutput {
         crate::operation::run_instances::RunInstancesOutput {
-            groups: self.groups,
-            instances: self.instances,
-            owner_id: self.owner_id,
-            requester_id: self.requester_id,
-            reservation_id: self.reservation_id,
+            groups: self.groups
+            ,
+            instances: self.instances
+            ,
+            owner_id: self.owner_id
+            ,
+            requester_id: self.requester_id
+            ,
+            reservation_id: self.reservation_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

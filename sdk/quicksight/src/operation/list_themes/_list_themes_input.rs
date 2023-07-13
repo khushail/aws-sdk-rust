@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListThemesInput {
+pub struct ListThemesInput  {
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -12,35 +12,35 @@ pub struct ListThemesInput {
     /// <p>The maximum number of results to be returned per request.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The type of themes that you want to list. Valid options include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
-    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
-    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
+    /// <p>The type of themes that you want to list. Valid options include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li> 
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li> 
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ThemeType>,
 }
 impl ListThemesInput {
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The type of themes that you want to list. Valid options include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
-    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
-    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
+    /// <p>The type of themes that you want to list. Valid options include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li> 
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li> 
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThemeType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ThemeType> {
         self.r#type.as_ref()
     }
 }
@@ -53,9 +53,7 @@ impl ListThemesInput {
 
 /// A builder for [`ListThemesInput`](crate::operation::list_themes::ListThemesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThemesInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,20 +62,17 @@ pub struct ListThemesInputBuilder {
 }
 impl ListThemesInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,8 +81,11 @@ impl ListThemesInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -96,41 +94,54 @@ impl ListThemesInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
-    /// <p>The type of themes that you want to list. Valid options include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
-    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
-    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
+    /// <p>The type of themes that you want to list. Valid options include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li> 
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li> 
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ThemeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of themes that you want to list. Valid options include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
-    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
-    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
+    /// <p>The type of themes that you want to list. Valid options include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li> 
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li> 
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li> 
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThemeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of themes that you want to list. Valid options include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li> 
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li> 
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li> 
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ThemeType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ListThemesInput`](crate::operation::list_themes::ListThemesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_themes::ListThemesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_themes::ListThemesInput {
-            aws_account_id: self.aws_account_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_themes::ListThemesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_themes::ListThemesInput {
+                aws_account_id: self.aws_account_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccessPointConfigurationForObjectLambdaInput {
+pub struct PutAccessPointConfigurationForObjectLambdaInput  {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct PutAccessPointConfigurationForObjectLambdaInput {
 }
 impl PutAccessPointConfigurationForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the Object Lambda Access Point.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ObjectLambdaConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ObjectLambdaConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl PutAccessPointConfigurationForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaInput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput).
-    pub fn builder() -> crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder{
+    pub fn builder() -> crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder {
         crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccessPointConfigurationForObjectLambdaInput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccessPointConfigurationForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -52,8 +50,11 @@ impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
     }
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The name of the Object Lambda Access Point.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,8 +63,11 @@ impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
     }
     /// <p>The name of the Object Lambda Access Point.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Object Lambda Access Point configuration document.</p>
     pub fn configuration(mut self, input: crate::types::ObjectLambdaConfiguration) -> Self {
@@ -71,15 +75,15 @@ impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
         self
     }
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>) -> Self {
+        self.configuration = input; self
+    }
+    /// <p>Object Lambda Access Point configuration document.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`PutAccessPointConfigurationForObjectLambdaInput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput {
                 account_id: self.account_id
@@ -92,3 +96,4 @@ impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
         )
     }
 }
+

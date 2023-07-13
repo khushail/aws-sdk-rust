@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProfileKeyInput {
+pub struct DeleteProfileKeyInput  {
     /// <p>The unique identifier of a customer profile.</p>
     #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
@@ -18,35 +18,32 @@ pub struct DeleteProfileKeyInput {
 }
 impl DeleteProfileKeyInput {
     /// <p>The unique identifier of a customer profile.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>A searchable identifier of a customer profile.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>A list of key values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
 impl DeleteProfileKeyInput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileKeyInput`](crate::operation::delete_profile_key::DeleteProfileKeyInput).
-    pub fn builder() -> crate::operation::delete_profile_key::builders::DeleteProfileKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_profile_key::builders::DeleteProfileKeyInputBuilder {
         crate::operation::delete_profile_key::builders::DeleteProfileKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProfileKeyInput`](crate::operation::delete_profile_key::DeleteProfileKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProfileKeyInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
@@ -61,8 +58,11 @@ impl DeleteProfileKeyInputBuilder {
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
+    }
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
     }
     /// <p>A searchable identifier of a customer profile.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +71,11 @@ impl DeleteProfileKeyInputBuilder {
     }
     /// <p>A searchable identifier of a customer profile.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
+    }
+    /// <p>A searchable identifier of a customer profile.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// Appends an item to `values`.
     ///
@@ -81,17 +84,17 @@ impl DeleteProfileKeyInputBuilder {
     /// <p>A list of key values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.values = input; self
+    }
+    /// <p>A list of key values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,23 +103,26 @@ impl DeleteProfileKeyInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`DeleteProfileKeyInput`](crate::operation::delete_profile_key::DeleteProfileKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_profile_key::DeleteProfileKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_profile_key::DeleteProfileKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_profile_key::DeleteProfileKeyInput {
-                profile_id: self.profile_id,
-                key_name: self.key_name,
-                values: self.values,
-                domain_name: self.domain_name,
-            },
+                profile_id: self.profile_id
+                ,
+                key_name: self.key_name
+                ,
+                values: self.values
+                ,
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

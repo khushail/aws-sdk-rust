@@ -3,102 +3,87 @@ pub use crate::operation::update_api_cache::_update_api_cache_output::UpdateApiC
 
 pub use crate::operation::update_api_cache::_update_api_cache_input::UpdateApiCacheInputBuilder;
 
+impl UpdateApiCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_api_cache::UpdateApiCacheOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_api_cache::UpdateApiCacheError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_api_cache();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateApiCache`.
-///
+/// 
 /// <p>Updates the cache for the GraphQL API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApiCacheFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_api_cache::builders::UpdateApiCacheInputBuilder,
+                    inner: crate::operation::update_api_cache::builders::UpdateApiCacheInputBuilder,
 }
-impl UpdateApiCacheFluentBuilder {
+impl UpdateApiCacheFluentBuilder  {
     /// Creates a new `UpdateApiCache`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_api_cache::UpdateApiCache,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_cache::UpdateApiCacheError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateApiCache as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_api_cache::builders::UpdateApiCacheInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_api_cache::UpdateApiCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_cache::UpdateApiCacheError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_api_cache::UpdateApiCache, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_api_cache::UpdateApiCacheOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_api_cache::UpdateApiCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_cache::UpdateApiCacheError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_api_cache::UpdateApiCache,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_cache::UpdateApiCacheError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_api_cache::UpdateApiCacheOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_api_cache::UpdateApiCache, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The GraphQL API ID.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
@@ -109,89 +94,129 @@ impl UpdateApiCacheFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
-    /// <p>TTL in seconds for cache entries.</p>
+    /// <p>The GraphQL API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
+    /// <p>TTL in seconds for cache entries.</p> 
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub fn ttl(mut self, input: i64) -> Self {
         self.inner = self.inner.ttl(input);
         self
     }
-    /// <p>TTL in seconds for cache entries.</p>
+    /// <p>TTL in seconds for cache entries.</p> 
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_ttl(input);
         self
     }
-    /// <p>Caching behavior.</p>
-    /// <ul>
-    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
-    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+    /// <p>TTL in seconds for cache entries.</p> 
+    /// <p>Valid values are 1–3,600 seconds.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<i64> {
+        self.inner.get_ttl()
+    }
+    /// <p>Caching behavior.</p> 
+    /// <ul> 
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> 
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> 
     /// </ul>
     pub fn api_caching_behavior(mut self, input: crate::types::ApiCachingBehavior) -> Self {
         self.inner = self.inner.api_caching_behavior(input);
         self
     }
-    /// <p>Caching behavior.</p>
-    /// <ul>
-    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
-    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+    /// <p>Caching behavior.</p> 
+    /// <ul> 
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> 
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> 
     /// </ul>
-    pub fn set_api_caching_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiCachingBehavior>,
-    ) -> Self {
+    pub fn set_api_caching_behavior(mut self, input: ::std::option::Option<crate::types::ApiCachingBehavior>) -> Self {
         self.inner = self.inner.set_api_caching_behavior(input);
         self
     }
-    /// <p>The cache instance type. Valid values are </p>
-    /// <ul>
-    /// <li> <p> <code>SMALL</code> </p> </li>
-    /// <li> <p> <code>MEDIUM</code> </p> </li>
-    /// <li> <p> <code>LARGE</code> </p> </li>
-    /// <li> <p> <code>XLARGE</code> </p> </li>
-    /// <li> <p> <code>LARGE_2X</code> </p> </li>
-    /// <li> <p> <code>LARGE_4X</code> </p> </li>
-    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
-    /// <li> <p> <code>LARGE_12X</code> </p> </li>
+    /// <p>Caching behavior.</p> 
+    /// <ul> 
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> 
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> 
     /// </ul>
-    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
-    /// <p>The following legacy instance types are available, but their use is discouraged:</p>
-    /// <ul>
-    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
-    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
-    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
-    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
+    pub fn get_api_caching_behavior(&self) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
+        self.inner.get_api_caching_behavior()
+    }
+    /// <p>The cache instance type. Valid values are </p> 
+    /// <ul> 
+    /// <li> <p> <code>SMALL</code> </p> </li> 
+    /// <li> <p> <code>MEDIUM</code> </p> </li> 
+    /// <li> <p> <code>LARGE</code> </p> </li> 
+    /// <li> <p> <code>XLARGE</code> </p> </li> 
+    /// <li> <p> <code>LARGE_2X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_4X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> 
+    /// <li> <p> <code>LARGE_12X</code> </p> </li> 
+    /// </ul> 
+    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> 
+    /// <p>The following legacy instance types are available, but their use is discouraged:</p> 
+    /// <ul> 
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> 
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> 
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> 
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ApiCacheType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The cache instance type. Valid values are </p>
-    /// <ul>
-    /// <li> <p> <code>SMALL</code> </p> </li>
-    /// <li> <p> <code>MEDIUM</code> </p> </li>
-    /// <li> <p> <code>LARGE</code> </p> </li>
-    /// <li> <p> <code>XLARGE</code> </p> </li>
-    /// <li> <p> <code>LARGE_2X</code> </p> </li>
-    /// <li> <p> <code>LARGE_4X</code> </p> </li>
-    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
-    /// <li> <p> <code>LARGE_12X</code> </p> </li>
-    /// </ul>
-    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
-    /// <p>The following legacy instance types are available, but their use is discouraged:</p>
-    /// <ul>
-    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
-    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
-    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
-    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
+    /// <p>The cache instance type. Valid values are </p> 
+    /// <ul> 
+    /// <li> <p> <code>SMALL</code> </p> </li> 
+    /// <li> <p> <code>MEDIUM</code> </p> </li> 
+    /// <li> <p> <code>LARGE</code> </p> </li> 
+    /// <li> <p> <code>XLARGE</code> </p> </li> 
+    /// <li> <p> <code>LARGE_2X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_4X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> 
+    /// <li> <p> <code>LARGE_12X</code> </p> </li> 
+    /// </ul> 
+    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> 
+    /// <p>The following legacy instance types are available, but their use is discouraged:</p> 
+    /// <ul> 
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> 
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> 
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> 
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> 
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApiCacheType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The cache instance type. Valid values are </p> 
+    /// <ul> 
+    /// <li> <p> <code>SMALL</code> </p> </li> 
+    /// <li> <p> <code>MEDIUM</code> </p> </li> 
+    /// <li> <p> <code>LARGE</code> </p> </li> 
+    /// <li> <p> <code>XLARGE</code> </p> </li> 
+    /// <li> <p> <code>LARGE_2X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_4X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> 
+    /// <li> <p> <code>LARGE_12X</code> </p> </li> 
+    /// </ul> 
+    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> 
+    /// <p>The following legacy instance types are available, but their use is discouraged:</p> 
+    /// <ul> 
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> 
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> 
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> 
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> 
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ApiCacheType> {
+        self.inner.get_type()
+    }
 }
+

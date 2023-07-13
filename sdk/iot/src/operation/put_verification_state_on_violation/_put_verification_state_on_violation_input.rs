@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutVerificationStateOnViolationInput {
+pub struct PutVerificationStateOnViolationInput  {
     /// <p>The violation ID.</p>
     #[doc(hidden)]
     pub violation_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct PutVerificationStateOnViolationInput {
 }
 impl PutVerificationStateOnViolationInput {
     /// <p>The violation ID.</p>
-    pub fn violation_id(&self) -> ::std::option::Option<&str> {
+    pub fn violation_id(&self) -> ::std::option::Option<& str> {
         self.violation_id.as_deref()
     }
     /// <p>The verification state of the violation.</p>
-    pub fn verification_state(&self) -> ::std::option::Option<&crate::types::VerificationState> {
+    pub fn verification_state(&self) -> ::std::option::Option<& crate::types::VerificationState> {
         self.verification_state.as_ref()
     }
     /// <p>The description of the verification state of the violation (detect alarm).</p>
-    pub fn verification_state_description(&self) -> ::std::option::Option<&str> {
+    pub fn verification_state_description(&self) -> ::std::option::Option<& str> {
         self.verification_state_description.as_deref()
     }
 }
 impl PutVerificationStateOnViolationInput {
     /// Creates a new builder-style object to manufacture [`PutVerificationStateOnViolationInput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput).
-    pub fn builder() -> crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder{
+    pub fn builder() -> crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder {
         crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutVerificationStateOnViolationInput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVerificationStateOnViolationInputBuilder {
     pub(crate) violation_id: ::std::option::Option<::std::string::String>,
     pub(crate) verification_state: ::std::option::Option<crate::types::VerificationState>,
@@ -52,8 +50,11 @@ impl PutVerificationStateOnViolationInputBuilder {
     }
     /// <p>The violation ID.</p>
     pub fn set_violation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.violation_id = input;
-        self
+        self.violation_id = input; self
+    }
+    /// <p>The violation ID.</p>
+    pub fn get_violation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_id
     }
     /// <p>The verification state of the violation.</p>
     pub fn verification_state(mut self, input: crate::types::VerificationState) -> Self {
@@ -61,36 +62,28 @@ impl PutVerificationStateOnViolationInputBuilder {
         self
     }
     /// <p>The verification state of the violation.</p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
-        self.verification_state = input;
-        self
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
+        self.verification_state = input; self
+    }
+    /// <p>The verification state of the violation.</p>
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
+        &self.verification_state
     }
     /// <p>The description of the verification state of the violation (detect alarm).</p>
-    pub fn verification_state_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_state_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_state_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the verification state of the violation (detect alarm).</p>
-    pub fn set_verification_state_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.verification_state_description = input;
-        self
+    pub fn set_verification_state_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.verification_state_description = input; self
+    }
+    /// <p>The description of the verification state of the violation (detect alarm).</p>
+    pub fn get_verification_state_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verification_state_description
     }
     /// Consumes the builder and constructs a [`PutVerificationStateOnViolationInput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput {
                 violation_id: self.violation_id
@@ -103,3 +96,4 @@ impl PutVerificationStateOnViolationInputBuilder {
         )
     }
 }
+

@@ -2,32 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateRecoveryInstancesInput {
+pub struct TerminateRecoveryInstancesInput  {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
     #[doc(hidden)]
     pub recovery_instance_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn recovery_instance_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn recovery_instance_i_ds(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.recovery_instance_i_ds.as_deref()
     }
 }
 impl TerminateRecoveryInstancesInput {
     /// Creates a new builder-style object to manufacture [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
-    pub fn builder() -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder{
+    pub fn builder() -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder {
         crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesInputBuilder {
-    pub(crate) recovery_instance_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recovery_instance_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TerminateRecoveryInstancesInputBuilder {
     /// Appends an item to `recovery_instance_i_ds`.
@@ -35,34 +32,28 @@ impl TerminateRecoveryInstancesInputBuilder {
     /// To override the contents of this collection use [`set_recovery_instance_i_ds`](Self::set_recovery_instance_i_ds).
     ///
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn recovery_instance_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recovery_instance_i_ds.unwrap_or_default();
-        v.push(input.into());
-        self.recovery_instance_i_ds = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recovery_instance_i_ds = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn set_recovery_instance_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.recovery_instance_i_ds = input;
-        self
+    pub fn set_recovery_instance_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.recovery_instance_i_ds = input; self
+    }
+    /// <p>The IDs of the Recovery Instances that should be terminated.</p>
+    pub fn get_recovery_instance_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recovery_instance_i_ds
     }
     /// Consumes the builder and constructs a [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput {
-                recovery_instance_i_ds: self.recovery_instance_i_ds,
-            },
+                recovery_instance_i_ds: self.recovery_instance_i_ds
+                ,
+            }
         )
     }
 }
+

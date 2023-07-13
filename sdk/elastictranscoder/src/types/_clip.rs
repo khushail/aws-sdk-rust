@@ -4,14 +4,14 @@
 #[deprecated]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Clip {
+pub struct Clip  {
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
     #[doc(hidden)]
     pub time_span: ::std::option::Option<crate::types::TimeSpan>,
 }
 impl Clip {
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
-    pub fn time_span(&self) -> ::std::option::Option<&crate::types::TimeSpan> {
+    pub fn time_span(&self) -> ::std::option::Option<& crate::types::TimeSpan> {
         self.time_span.as_ref()
     }
 }
@@ -24,9 +24,7 @@ impl Clip {
 
 /// A builder for [`Clip`](crate::types::Clip).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClipBuilder {
     pub(crate) time_span: ::std::option::Option<crate::types::TimeSpan>,
 }
@@ -38,13 +36,18 @@ impl ClipBuilder {
     }
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
     pub fn set_time_span(mut self, input: ::std::option::Option<crate::types::TimeSpan>) -> Self {
-        self.time_span = input;
-        self
+        self.time_span = input; self
+    }
+    /// <p>Settings that determine when a clip begins and how long it lasts.</p>
+    pub fn get_time_span(&self) -> &::std::option::Option<crate::types::TimeSpan> {
+        &self.time_span
     }
     /// Consumes the builder and constructs a [`Clip`](crate::types::Clip).
     pub fn build(self) -> crate::types::Clip {
         crate::types::Clip {
-            time_span: self.time_span,
+            time_span: self.time_span
+            ,
         }
     }
 }
+

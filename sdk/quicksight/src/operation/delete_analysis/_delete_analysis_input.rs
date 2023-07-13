@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAnalysisInput {
+pub struct DeleteAnalysisInput  {
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct DeleteAnalysisInput {
 }
 impl DeleteAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the analysis that you're deleting.</p>
-    pub fn analysis_id(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_id(&self) -> ::std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
@@ -43,9 +43,7 @@ impl DeleteAnalysisInput {
 
 /// A builder for [`DeleteAnalysisInput`](crate::operation::delete_analysis::DeleteAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnalysisInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
@@ -54,20 +52,17 @@ pub struct DeleteAnalysisInputBuilder {
 }
 impl DeleteAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The ID of the analysis that you're deleting.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,8 +71,11 @@ impl DeleteAnalysisInputBuilder {
     }
     /// <p>The ID of the analysis that you're deleting.</p>
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_id = input;
-        self
+        self.analysis_id = input; self
+    }
+    /// <p>The ID of the analysis that you're deleting.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_id
     }
     /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn recovery_window_in_days(mut self, input: i64) -> Self {
@@ -86,8 +84,11 @@ impl DeleteAnalysisInputBuilder {
     }
     /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn set_recovery_window_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.recovery_window_in_days = input;
-        self
+        self.recovery_window_in_days = input; self
+    }
+    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    pub fn get_recovery_window_in_days(&self) -> &::std::option::Option<i64> {
+        &self.recovery_window_in_days
     }
     /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
@@ -96,21 +97,26 @@ impl DeleteAnalysisInputBuilder {
     }
     /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn set_force_delete_without_recovery(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete_without_recovery = input;
-        self
+        self.force_delete_without_recovery = input; self
+    }
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
+    pub fn get_force_delete_without_recovery(&self) -> &::std::option::Option<bool> {
+        &self.force_delete_without_recovery
     }
     /// Consumes the builder and constructs a [`DeleteAnalysisInput`](crate::operation::delete_analysis::DeleteAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_analysis::DeleteAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_analysis::DeleteAnalysisInput {
-            aws_account_id: self.aws_account_id,
-            analysis_id: self.analysis_id,
-            recovery_window_in_days: self.recovery_window_in_days,
-            force_delete_without_recovery: self.force_delete_without_recovery,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_analysis::DeleteAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_analysis::DeleteAnalysisInput {
+                aws_account_id: self.aws_account_id
+                ,
+                analysis_id: self.analysis_id
+                ,
+                recovery_window_in_days: self.recovery_window_in_days
+                ,
+                force_delete_without_recovery: self.force_delete_without_recovery
+                ,
+            }
+        )
     }
 }
+

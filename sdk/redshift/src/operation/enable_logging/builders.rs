@@ -3,171 +3,182 @@ pub use crate::operation::enable_logging::_enable_logging_output::EnableLoggingO
 
 pub use crate::operation::enable_logging::_enable_logging_input::EnableLoggingInputBuilder;
 
+impl EnableLoggingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::enable_logging::EnableLoggingOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::enable_logging::EnableLoggingError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.enable_logging();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `EnableLogging`.
-///
+/// 
 /// <p>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableLoggingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::enable_logging::builders::EnableLoggingInputBuilder,
+                    inner: crate::operation::enable_logging::builders::EnableLoggingInputBuilder,
 }
-impl EnableLoggingFluentBuilder {
+impl EnableLoggingFluentBuilder  {
     /// Creates a new `EnableLogging`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::enable_logging::EnableLogging,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the EnableLogging as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_logging::builders::EnableLoggingInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_logging::EnableLoggingOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::enable_logging::EnableLogging, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::enable_logging::EnableLoggingOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_logging::EnableLoggingOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::enable_logging::EnableLogging,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>The identifier of the cluster on which logging is to be started.</p>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::enable_logging::EnableLoggingOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::enable_logging::EnableLogging, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>The identifier of the cluster on which logging is to be started.</p> 
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
-    /// <p>The identifier of the cluster on which logging is to be started.</p>
+    /// <p>The identifier of the cluster on which logging is to be started.</p> 
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
-    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be in the same region as the cluster</p> </li>
-    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
+    /// <p>The identifier of the cluster on which logging is to be started.</p> 
+    /// <p>Example: <code>examplecluster</code> </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be in the same region as the cluster</p> </li> 
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li> 
     /// </ul>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
         self
     }
-    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be in the same region as the cluster</p> </li>
-    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be in the same region as the cluster</p> </li> 
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li> 
     /// </ul>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
         self
     }
-    /// <p>The prefix applied to the log file names.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Cannot exceed 512 characters</p> </li>
-    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
-    /// <ul>
-    /// <li> <p>x00 to x20</p> </li>
-    /// <li> <p>x22</p> </li>
-    /// <li> <p>x27</p> </li>
-    /// <li> <p>x5c</p> </li>
-    /// <li> <p>x7f or larger</p> </li>
-    /// </ul> </li>
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be in the same region as the cluster</p> </li> 
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li> 
     /// </ul>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket_name()
+    }
+    /// <p>The prefix applied to the log file names.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Cannot exceed 512 characters</p> </li> 
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> 
+    /// <ul> 
+    /// <li> <p>x00 to x20</p> </li> 
+    /// <li> <p>x22</p> </li> 
+    /// <li> <p>x27</p> </li> 
+    /// <li> <p>x5c</p> </li> 
+    /// <li> <p>x7f or larger</p> </li> 
+    /// </ul> </li> 
+    /// </ul>
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
-    /// <p>The prefix applied to the log file names.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Cannot exceed 512 characters</p> </li>
-    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
-    /// <ul>
-    /// <li> <p>x00 to x20</p> </li>
-    /// <li> <p>x22</p> </li>
-    /// <li> <p>x27</p> </li>
-    /// <li> <p>x5c</p> </li>
-    /// <li> <p>x7f or larger</p> </li>
-    /// </ul> </li>
+    /// <p>The prefix applied to the log file names.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Cannot exceed 512 characters</p> </li> 
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> 
+    /// <ul> 
+    /// <li> <p>x00 to x20</p> </li> 
+    /// <li> <p>x22</p> </li> 
+    /// <li> <p>x27</p> </li> 
+    /// <li> <p>x5c</p> </li> 
+    /// <li> <p>x7f or larger</p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
+    }
+    /// <p>The prefix applied to the log file names.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Cannot exceed 512 characters</p> </li> 
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> 
+    /// <ul> 
+    /// <li> <p>x00 to x20</p> </li> 
+    /// <li> <p>x22</p> </li> 
+    /// <li> <p>x27</p> </li> 
+    /// <li> <p>x5c</p> </li> 
+    /// <li> <p>x7f or larger</p> </li> 
+    /// </ul> </li> 
+    /// </ul>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_key_prefix()
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
@@ -175,12 +186,13 @@ impl EnableLoggingFluentBuilder {
         self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn set_log_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogDestinationType>,
-    ) -> Self {
+    pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
         self.inner = self.inner.set_log_destination_type(input);
         self
+    }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
+        self.inner.get_log_destination_type()
     }
     /// Appends an item to `LogExports`.
     ///
@@ -192,11 +204,13 @@ impl EnableLoggingFluentBuilder {
         self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn set_log_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_log_exports(input);
         self
     }
+    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_log_exports()
+    }
 }
+

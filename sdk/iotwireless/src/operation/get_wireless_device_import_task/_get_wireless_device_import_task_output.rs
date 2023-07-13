@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessDeviceImportTaskOutput {
+pub struct GetWirelessDeviceImportTaskOutput  {
     /// <p>The identifier of the import task for which information is retrieved.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -40,31 +40,31 @@ pub struct GetWirelessDeviceImportTaskOutput {
 }
 impl GetWirelessDeviceImportTaskOutput {
     /// <p>The identifier of the import task for which information is retrieved.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the destination that's assigned to the wireless devices in the import task.</p>
-    pub fn destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_name(&self) -> ::std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>The Sidewalk-related information about an import task.</p>
-    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkGetStartImportInfo> {
+    pub fn sidewalk(&self) -> ::std::option::Option<& crate::types::SidewalkGetStartImportInfo> {
         self.sidewalk.as_ref()
     }
     /// <p>The time at which the import task was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The import task status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ImportTaskStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ImportTaskStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the provided status information, such as a validation error that causes the import task to fail.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The number of devices in the import task that are waiting for the control log to start processing.</p>
@@ -85,22 +85,20 @@ impl GetWirelessDeviceImportTaskOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for GetWirelessDeviceImportTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetWirelessDeviceImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessDeviceImportTaskOutput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput).
-    pub fn builder() -> crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskOutputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskOutputBuilder {
         crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessDeviceImportTaskOutput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessDeviceImportTaskOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -123,8 +121,11 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
     }
     /// <p>The identifier of the import task for which information is retrieved.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The identifier of the import task for which information is retrieved.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,24 +134,24 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the import task.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the destination that's assigned to the wireless devices in the import task.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination that's assigned to the wireless devices in the import task.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_name = input;
-        self
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_name = input; self
+    }
+    /// <p>The name of the destination that's assigned to the wireless devices in the import task.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
     }
     /// <p>The Sidewalk-related information about an import task.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkGetStartImportInfo) -> Self {
@@ -158,12 +159,12 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The Sidewalk-related information about an import task.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>,
-    ) -> Self {
-        self.sidewalk = input;
-        self
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>) -> Self {
+        self.sidewalk = input; self
+    }
+    /// <p>The Sidewalk-related information about an import task.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkGetStartImportInfo> {
+        &self.sidewalk
     }
     /// <p>The time at which the import task was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -171,12 +172,12 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The time at which the import task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time at which the import task was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The import task status.</p>
     pub fn status(mut self, input: crate::types::ImportTaskStatus) -> Self {
@@ -184,28 +185,25 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The import task status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportTaskStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportTaskStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The import task status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportTaskStatus> {
+        &self.status
     }
     /// <p>The reason for the provided status information, such as a validation error that causes the import task to fail.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the provided status information, such as a validation error that causes the import task to fail.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_reason = input;
-        self
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input; self
+    }
+    /// <p>The reason for the provided status information, such as a validation error that causes the import task to fail.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// <p>The number of devices in the import task that are waiting for the control log to start processing.</p>
     pub fn initialized_imported_device_count(mut self, input: i64) -> Self {
@@ -213,12 +211,12 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The number of devices in the import task that are waiting for the control log to start processing.</p>
-    pub fn set_initialized_imported_device_count(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
-        self.initialized_imported_device_count = input;
-        self
+    pub fn set_initialized_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.initialized_imported_device_count = input; self
+    }
+    /// <p>The number of devices in the import task that are waiting for the control log to start processing.</p>
+    pub fn get_initialized_imported_device_count(&self) -> &::std::option::Option<i64> {
+        &self.initialized_imported_device_count
     }
     /// <p>The number of devices in the import task that are waiting in the import task queue to be onboarded.</p>
     pub fn pending_imported_device_count(mut self, input: i64) -> Self {
@@ -227,8 +225,11 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
     }
     /// <p>The number of devices in the import task that are waiting in the import task queue to be onboarded.</p>
     pub fn set_pending_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.pending_imported_device_count = input;
-        self
+        self.pending_imported_device_count = input; self
+    }
+    /// <p>The number of devices in the import task that are waiting in the import task queue to be onboarded.</p>
+    pub fn get_pending_imported_device_count(&self) -> &::std::option::Option<i64> {
+        &self.pending_imported_device_count
     }
     /// <p>The number of devices in the import task that have been onboarded to the import task.</p>
     pub fn onboarded_imported_device_count(mut self, input: i64) -> Self {
@@ -236,12 +237,12 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The number of devices in the import task that have been onboarded to the import task.</p>
-    pub fn set_onboarded_imported_device_count(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
-        self.onboarded_imported_device_count = input;
-        self
+    pub fn set_onboarded_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.onboarded_imported_device_count = input; self
+    }
+    /// <p>The number of devices in the import task that have been onboarded to the import task.</p>
+    pub fn get_onboarded_imported_device_count(&self) -> &::std::option::Option<i64> {
+        &self.onboarded_imported_device_count
     }
     /// <p>The number of devices in the import task that failed to onboard to the import task.</p>
     pub fn failed_imported_device_count(mut self, input: i64) -> Self {
@@ -250,35 +251,48 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
     }
     /// <p>The number of devices in the import task that failed to onboard to the import task.</p>
     pub fn set_failed_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.failed_imported_device_count = input;
-        self
+        self.failed_imported_device_count = input; self
+    }
+    /// <p>The number of devices in the import task that failed to onboard to the import task.</p>
+    pub fn get_failed_imported_device_count(&self) -> &::std::option::Option<i64> {
+        &self.failed_imported_device_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetWirelessDeviceImportTaskOutput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput {
+    pub fn build(self) -> crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput {
         crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput {
-            id: self.id,
-            arn: self.arn,
-            destination_name: self.destination_name,
-            sidewalk: self.sidewalk,
-            creation_time: self.creation_time,
-            status: self.status,
-            status_reason: self.status_reason,
-            initialized_imported_device_count: self.initialized_imported_device_count,
-            pending_imported_device_count: self.pending_imported_device_count,
-            onboarded_imported_device_count: self.onboarded_imported_device_count,
-            failed_imported_device_count: self.failed_imported_device_count,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            destination_name: self.destination_name
+            ,
+            sidewalk: self.sidewalk
+            ,
+            creation_time: self.creation_time
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            initialized_imported_device_count: self.initialized_imported_device_count
+            ,
+            pending_imported_device_count: self.pending_imported_device_count
+            ,
+            onboarded_imported_device_count: self.onboarded_imported_device_count
+            ,
+            failed_imported_device_count: self.failed_imported_device_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

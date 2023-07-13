@@ -3,26 +3,21 @@
 /// <p>The SageMaker Canvas application settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CanvasAppSettings {
+pub struct CanvasAppSettings  {
     /// <p>Time series forecast settings for the Canvas application.</p>
     #[doc(hidden)]
-    pub time_series_forecasting_settings:
-        ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
+    pub time_series_forecasting_settings: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
     #[doc(hidden)]
     pub model_register_settings: ::std::option::Option<crate::types::ModelRegisterSettings>,
 }
 impl CanvasAppSettings {
     /// <p>Time series forecast settings for the Canvas application.</p>
-    pub fn time_series_forecasting_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimeSeriesForecastingSettings> {
+    pub fn time_series_forecasting_settings(&self) -> ::std::option::Option<& crate::types::TimeSeriesForecastingSettings> {
         self.time_series_forecasting_settings.as_ref()
     }
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
-    pub fn model_register_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelRegisterSettings> {
+    pub fn model_register_settings(&self) -> ::std::option::Option<& crate::types::ModelRegisterSettings> {
         self.model_register_settings.as_ref()
     }
 }
@@ -35,30 +30,24 @@ impl CanvasAppSettings {
 
 /// A builder for [`CanvasAppSettings`](crate::types::CanvasAppSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanvasAppSettingsBuilder {
-    pub(crate) time_series_forecasting_settings:
-        ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
+    pub(crate) time_series_forecasting_settings: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
     pub(crate) model_register_settings: ::std::option::Option<crate::types::ModelRegisterSettings>,
 }
 impl CanvasAppSettingsBuilder {
     /// <p>Time series forecast settings for the Canvas application.</p>
-    pub fn time_series_forecasting_settings(
-        mut self,
-        input: crate::types::TimeSeriesForecastingSettings,
-    ) -> Self {
+    pub fn time_series_forecasting_settings(mut self, input: crate::types::TimeSeriesForecastingSettings) -> Self {
         self.time_series_forecasting_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time series forecast settings for the Canvas application.</p>
-    pub fn set_time_series_forecasting_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
-    ) -> Self {
-        self.time_series_forecasting_settings = input;
-        self
+    pub fn set_time_series_forecasting_settings(mut self, input: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>) -> Self {
+        self.time_series_forecasting_settings = input; self
+    }
+    /// <p>Time series forecast settings for the Canvas application.</p>
+    pub fn get_time_series_forecasting_settings(&self) -> &::std::option::Option<crate::types::TimeSeriesForecastingSettings> {
+        &self.time_series_forecasting_settings
     }
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
     pub fn model_register_settings(mut self, input: crate::types::ModelRegisterSettings) -> Self {
@@ -66,18 +55,21 @@ impl CanvasAppSettingsBuilder {
         self
     }
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
-    pub fn set_model_register_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelRegisterSettings>,
-    ) -> Self {
-        self.model_register_settings = input;
-        self
+    pub fn set_model_register_settings(mut self, input: ::std::option::Option<crate::types::ModelRegisterSettings>) -> Self {
+        self.model_register_settings = input; self
+    }
+    /// <p>The model registry settings for the SageMaker Canvas application.</p>
+    pub fn get_model_register_settings(&self) -> &::std::option::Option<crate::types::ModelRegisterSettings> {
+        &self.model_register_settings
     }
     /// Consumes the builder and constructs a [`CanvasAppSettings`](crate::types::CanvasAppSettings).
     pub fn build(self) -> crate::types::CanvasAppSettings {
         crate::types::CanvasAppSettings {
-            time_series_forecasting_settings: self.time_series_forecasting_settings,
-            model_register_settings: self.model_register_settings,
+            time_series_forecasting_settings: self.time_series_forecasting_settings
+            ,
+            model_register_settings: self.model_register_settings
+            ,
         }
     }
 }
+

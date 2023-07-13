@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEventTrackersInput {
+pub struct ListEventTrackersInput  {
     /// <p>The ARN of a dataset group used to filter the response.</p>
     #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListEventTrackersInput {
 }
 impl ListEventTrackersInput {
     /// <p>The ARN of a dataset group used to filter the response.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of event trackers to return.</p>
@@ -29,17 +29,14 @@ impl ListEventTrackersInput {
 }
 impl ListEventTrackersInput {
     /// Creates a new builder-style object to manufacture [`ListEventTrackersInput`](crate::operation::list_event_trackers::ListEventTrackersInput).
-    pub fn builder(
-    ) -> crate::operation::list_event_trackers::builders::ListEventTrackersInputBuilder {
+    pub fn builder() -> crate::operation::list_event_trackers::builders::ListEventTrackersInputBuilder {
         crate::operation::list_event_trackers::builders::ListEventTrackersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventTrackersInput`](crate::operation::list_event_trackers::ListEventTrackersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventTrackersInputBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,20 +44,17 @@ pub struct ListEventTrackersInputBuilder {
 }
 impl ListEventTrackersInputBuilder {
     /// <p>The ARN of a dataset group used to filter the response.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a dataset group used to filter the response.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dataset_group_arn = input;
-        self
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataset_group_arn = input; self
+    }
+    /// <p>The ARN of a dataset group used to filter the response.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +63,11 @@ impl ListEventTrackersInputBuilder {
     }
     /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of event trackers to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -79,22 +76,24 @@ impl ListEventTrackersInputBuilder {
     }
     /// <p>The maximum number of event trackers to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of event trackers to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEventTrackersInput`](crate::operation::list_event_trackers::ListEventTrackersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_event_trackers::ListEventTrackersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_event_trackers::ListEventTrackersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_event_trackers::ListEventTrackersInput {
-                dataset_group_arn: self.dataset_group_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectionInput {
+pub struct CreateConnectionInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct CreateConnectionInput {
     /// <p>The ID of the link for the second device.</p>
     #[doc(hidden)]
     pub connected_link_id: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the connection.</p>
+    /// <p>A description of the connection.</p> 
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -28,48 +28,45 @@ pub struct CreateConnectionInput {
 }
 impl CreateConnectionInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the first device in the connection.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the second device in the connection.</p>
-    pub fn connected_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn connected_device_id(&self) -> ::std::option::Option<& str> {
         self.connected_device_id.as_deref()
     }
     /// <p>The ID of the link for the first device.</p>
-    pub fn link_id(&self) -> ::std::option::Option<&str> {
+    pub fn link_id(&self) -> ::std::option::Option<& str> {
         self.link_id.as_deref()
     }
     /// <p>The ID of the link for the second device.</p>
-    pub fn connected_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn connected_link_id(&self) -> ::std::option::Option<& str> {
         self.connected_link_id.as_deref()
     }
-    /// <p>A description of the connection.</p>
+    /// <p>A description of the connection.</p> 
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder {
         crate::operation::create_connection::builders::CreateConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectionInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -81,20 +78,17 @@ pub struct CreateConnectionInputBuilder {
 }
 impl CreateConnectionInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_network_id = input; self
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
     }
     /// <p>The ID of the first device in the connection.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,24 +97,24 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The ID of the first device in the connection.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
+    }
+    /// <p>The ID of the first device in the connection.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>The ID of the second device in the connection.</p>
-    pub fn connected_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connected_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the second device in the connection.</p>
-    pub fn set_connected_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connected_device_id = input;
-        self
+    pub fn set_connected_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connected_device_id = input; self
+    }
+    /// <p>The ID of the second device in the connection.</p>
+    pub fn get_connected_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connected_device_id
     }
     /// <p>The ID of the link for the first device.</p>
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,36 +123,40 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The ID of the link for the first device.</p>
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link_id = input;
-        self
+        self.link_id = input; self
+    }
+    /// <p>The ID of the link for the first device.</p>
+    pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_id
     }
     /// <p>The ID of the link for the second device.</p>
-    pub fn connected_link_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connected_link_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the link for the second device.</p>
-    pub fn set_connected_link_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.connected_link_id = input;
-        self
+    pub fn set_connected_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connected_link_id = input; self
     }
-    /// <p>A description of the connection.</p>
+    /// <p>The ID of the link for the second device.</p>
+    pub fn get_connected_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connected_link_id
+    }
+    /// <p>A description of the connection.</p> 
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the connection.</p>
+    /// <p>A description of the connection.</p> 
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the connection.</p> 
+    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -167,33 +165,38 @@ impl CreateConnectionInputBuilder {
     /// <p>The tags to apply to the resource during creation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connection::CreateConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
-            global_network_id: self.global_network_id,
-            device_id: self.device_id,
-            connected_device_id: self.connected_device_id,
-            link_id: self.link_id,
-            connected_link_id: self.connected_link_id,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connection::CreateConnectionInput {
+                global_network_id: self.global_network_id
+                ,
+                device_id: self.device_id
+                ,
+                connected_device_id: self.connected_device_id
+                ,
+                link_id: self.link_id
+                ,
+                connected_link_id: self.connected_link_id
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

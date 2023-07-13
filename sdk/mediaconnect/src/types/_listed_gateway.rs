@@ -3,7 +3,7 @@
 /// Provides a summary of a gateway, including its name, ARN, and status.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListedGateway {
+pub struct ListedGateway  {
     /// The Amazon Resource Name (ARN) of the gateway.
     #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ListedGateway {
 }
 impl ListedGateway {
     /// The Amazon Resource Name (ARN) of the gateway.
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn gateway_state(&self) -> ::std::option::Option<&crate::types::GatewayState> {
+    pub fn gateway_state(&self) -> ::std::option::Option<& crate::types::GatewayState> {
         self.gateway_state.as_ref()
     }
     /// The name of the gateway.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ListedGateway {
 
 /// A builder for [`ListedGateway`](crate::types::ListedGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListedGatewayBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_state: ::std::option::Option<crate::types::GatewayState>,
@@ -53,8 +51,11 @@ impl ListedGatewayBuilder {
     }
     /// The Amazon Resource Name (ARN) of the gateway.
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
+    }
+    /// The Amazon Resource Name (ARN) of the gateway.
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn gateway_state(mut self, input: crate::types::GatewayState) -> Self {
@@ -62,12 +63,12 @@ impl ListedGatewayBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_gateway_state(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayState>,
-    ) -> Self {
-        self.gateway_state = input;
-        self
+    pub fn set_gateway_state(mut self, input: ::std::option::Option<crate::types::GatewayState>) -> Self {
+        self.gateway_state = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_gateway_state(&self) -> &::std::option::Option<crate::types::GatewayState> {
+        &self.gateway_state
     }
     /// The name of the gateway.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,15 +77,22 @@ impl ListedGatewayBuilder {
     }
     /// The name of the gateway.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// The name of the gateway.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`ListedGateway`](crate::types::ListedGateway).
     pub fn build(self) -> crate::types::ListedGateway {
         crate::types::ListedGateway {
-            gateway_arn: self.gateway_arn,
-            gateway_state: self.gateway_state,
-            name: self.name,
+            gateway_arn: self.gateway_arn
+            ,
+            gateway_state: self.gateway_state
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

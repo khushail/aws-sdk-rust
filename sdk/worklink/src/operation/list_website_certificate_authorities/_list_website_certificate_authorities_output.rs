@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWebsiteCertificateAuthoritiesOutput {
+pub struct ListWebsiteCertificateAuthoritiesOutput  {
     /// <p>Information about the certificates.</p>
     #[doc(hidden)]
-    pub website_certificate_authorities:
-        ::std::option::Option<::std::vec::Vec<crate::types::WebsiteCaSummary>>,
+    pub website_certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteCaSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,36 +13,31 @@ pub struct ListWebsiteCertificateAuthoritiesOutput {
 }
 impl ListWebsiteCertificateAuthoritiesOutput {
     /// <p>Information about the certificates.</p>
-    pub fn website_certificate_authorities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WebsiteCaSummary]> {
+    pub fn website_certificate_authorities(&self) -> ::std::option::Option<& [crate::types::WebsiteCaSummary]> {
         self.website_certificate_authorities.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWebsiteCertificateAuthoritiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListWebsiteCertificateAuthoritiesOutput {
     /// Creates a new builder-style object to manufacture [`ListWebsiteCertificateAuthoritiesOutput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput).
-    pub fn builder() -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesOutputBuilder{
+    pub fn builder() -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesOutputBuilder {
         crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWebsiteCertificateAuthoritiesOutput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebsiteCertificateAuthoritiesOutputBuilder {
-    pub(crate) website_certificate_authorities:
-        ::std::option::Option<::std::vec::Vec<crate::types::WebsiteCaSummary>>,
+    pub(crate) website_certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteCaSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,22 +47,19 @@ impl ListWebsiteCertificateAuthoritiesOutputBuilder {
     /// To override the contents of this collection use [`set_website_certificate_authorities`](Self::set_website_certificate_authorities).
     ///
     /// <p>Information about the certificates.</p>
-    pub fn website_certificate_authorities(
-        mut self,
-        input: crate::types::WebsiteCaSummary,
-    ) -> Self {
+    pub fn website_certificate_authorities(mut self, input: crate::types::WebsiteCaSummary) -> Self {
         let mut v = self.website_certificate_authorities.unwrap_or_default();
-        v.push(input);
-        self.website_certificate_authorities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.website_certificate_authorities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the certificates.</p>
-    pub fn set_website_certificate_authorities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteCaSummary>>,
-    ) -> Self {
-        self.website_certificate_authorities = input;
-        self
+    pub fn set_website_certificate_authorities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteCaSummary>>) -> Self {
+        self.website_certificate_authorities = input; self
+    }
+    /// <p>Information about the certificates.</p>
+    pub fn get_website_certificate_authorities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebsiteCaSummary>> {
+        &self.website_certificate_authorities
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,20 +68,23 @@ impl ListWebsiteCertificateAuthoritiesOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListWebsiteCertificateAuthoritiesOutput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput).
-    pub fn build(self) -> crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput{
+    pub fn build(self) -> crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput {
         crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput {
             website_certificate_authorities: self.website_certificate_authorities
             ,
@@ -100,3 +94,4 @@ impl ListWebsiteCertificateAuthoritiesOutputBuilder {
         }
     }
 }
+

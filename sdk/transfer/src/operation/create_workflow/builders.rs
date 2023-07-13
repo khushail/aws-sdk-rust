@@ -3,94 +3,87 @@ pub use crate::operation::create_workflow::_create_workflow_output::CreateWorkfl
 
 pub use crate::operation::create_workflow::_create_workflow_input::CreateWorkflowInputBuilder;
 
+impl CreateWorkflowInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_workflow::CreateWorkflowOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_workflow::CreateWorkflowError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_workflow();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateWorkflow`.
-///
+/// 
 /// <p> Allows you to create a workflow with specified steps and step details the workflow invokes after file transfer completes. After creating a workflow, you can associate the workflow created with any transfer servers by specifying the <code>workflow-details</code> field in <code>CreateServer</code> and <code>UpdateServer</code> operations. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_workflow::builders::CreateWorkflowInputBuilder,
+                    inner: crate::operation::create_workflow::builders::CreateWorkflowInputBuilder,
 }
-impl CreateWorkflowFluentBuilder {
+impl CreateWorkflowFluentBuilder  {
     /// Creates a new `CreateWorkflow`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_workflow::CreateWorkflow,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateWorkflow as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_workflow::builders::CreateWorkflowInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workflow::CreateWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_workflow::CreateWorkflow, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workflow::CreateWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_workflow::CreateWorkflow,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_workflow::CreateWorkflow, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>A textual description for the workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -101,65 +94,84 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A textual description for the workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `Steps`.
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
     ///
-    /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
-    /// <ul>
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
-    /// </ul> <note>
-    /// <p> Currently, copying and tagging are supported only on S3. </p>
-    /// </note>
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p> 
+    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+    /// </ul> <note> 
+    /// <p> Currently, copying and tagging are supported only on S3. </p> 
+    /// </note> 
     /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
     pub fn steps(mut self, input: crate::types::WorkflowStep) -> Self {
         self.inner = self.inner.steps(input);
         self
     }
-    /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
-    /// <ul>
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
-    /// </ul> <note>
-    /// <p> Currently, copying and tagging are supported only on S3. </p>
-    /// </note>
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p> 
+    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+    /// </ul> <note> 
+    /// <p> Currently, copying and tagging are supported only on S3. </p> 
+    /// </note> 
     /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
         self.inner = self.inner.set_steps(input);
         self
+    }
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p> 
+    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+    /// </ul> <note> 
+    /// <p> Currently, copying and tagging are supported only on S3. </p> 
+    /// </note> 
+    /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+        self.inner.get_steps()
     }
     /// Appends an item to `OnExceptionSteps`.
     ///
     /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
     ///
-    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
-    /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note> 
+    /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p> 
     /// </note>
     pub fn on_exception_steps(mut self, input: crate::types::WorkflowStep) -> Self {
         self.inner = self.inner.on_exception_steps(input);
         self
     }
-    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
-    /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note> 
+    /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p> 
     /// </note>
-    pub fn set_on_exception_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    ) -> Self {
+    pub fn set_on_exception_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
         self.inner = self.inner.set_on_exception_steps(input);
         self
+    }
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note> 
+    /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p> 
+    /// </note>
+    pub fn get_on_exception_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+        self.inner.get_on_exception_steps()
     }
     /// Appends an item to `Tags`.
     ///
@@ -171,11 +183,13 @@ impl CreateWorkflowFluentBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

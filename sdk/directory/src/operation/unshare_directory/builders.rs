@@ -3,102 +3,87 @@ pub use crate::operation::unshare_directory::_unshare_directory_output::UnshareD
 
 pub use crate::operation::unshare_directory::_unshare_directory_input::UnshareDirectoryInputBuilder;
 
+impl UnshareDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::unshare_directory::UnshareDirectoryOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::unshare_directory::UnshareDirectoryError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.unshare_directory();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UnshareDirectory`.
-///
+/// 
 /// <p>Stops the directory sharing between the directory owner and consumer accounts. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnshareDirectoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder,
+                    inner: crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder,
 }
-impl UnshareDirectoryFluentBuilder {
+impl UnshareDirectoryFluentBuilder  {
     /// Creates a new `UnshareDirectory`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::unshare_directory::UnshareDirectory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_directory::UnshareDirectoryError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UnshareDirectory as a reference.
+    pub fn as_input(&self) -> &crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unshare_directory::UnshareDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_directory::UnshareDirectoryError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::unshare_directory::UnshareDirectory, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::unshare_directory::UnshareDirectoryError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::unshare_directory::UnshareDirectoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::unshare_directory::UnshareDirectoryError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unshare_directory::UnshareDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_directory::UnshareDirectoryError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::unshare_directory::UnshareDirectory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_directory::UnshareDirectoryError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::unshare_directory::UnshareDirectoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::unshare_directory::UnshareDirectoryError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::unshare_directory::UnshareDirectory, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::unshare_directory::UnshareDirectoryError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
@@ -109,17 +94,23 @@ impl UnshareDirectoryFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
     pub fn unshare_target(mut self, input: crate::types::UnshareTarget) -> Self {
         self.inner = self.inner.unshare_target(input);
         self
     }
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
-    pub fn set_unshare_target(
-        mut self,
-        input: ::std::option::Option<crate::types::UnshareTarget>,
-    ) -> Self {
+    pub fn set_unshare_target(mut self, input: ::std::option::Option<crate::types::UnshareTarget>) -> Self {
         self.inner = self.inner.set_unshare_target(input);
         self
     }
+    /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
+    pub fn get_unshare_target(&self) -> &::std::option::Option<crate::types::UnshareTarget> {
+        self.inner.get_unshare_target()
+    }
 }
+

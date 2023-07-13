@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceLinkedRoleInput {
+pub struct DeleteServiceLinkedRoleInput  {
     /// <p>The name of the service-linked role to be deleted.</p>
     #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceLinkedRoleInput {
     /// <p>The name of the service-linked role to be deleted.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
 }
 impl DeleteServiceLinkedRoleInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceLinkedRoleInput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleInputBuilder {
         crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceLinkedRoleInput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceLinkedRoleInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl DeleteServiceLinkedRoleInputBuilder {
     }
     /// <p>The name of the service-linked role to be deleted.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
+    }
+    /// <p>The name of the service-linked role to be deleted.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// Consumes the builder and constructs a [`DeleteServiceLinkedRoleInput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput {
-                role_name: self.role_name,
-            },
+                role_name: self.role_name
+                ,
+            }
         )
     }
 }
+

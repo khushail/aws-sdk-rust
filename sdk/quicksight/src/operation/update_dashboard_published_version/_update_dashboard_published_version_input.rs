@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDashboardPublishedVersionInput {
+pub struct UpdateDashboardPublishedVersionInput  {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
     #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpdateDashboardPublishedVersionInput {
 }
 impl UpdateDashboardPublishedVersionInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The version number of the dashboard.</p>
@@ -29,16 +29,14 @@ impl UpdateDashboardPublishedVersionInput {
 }
 impl UpdateDashboardPublishedVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateDashboardPublishedVersionInput`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput).
-    pub fn builder() -> crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder{
+    pub fn builder() -> crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder {
         crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDashboardPublishedVersionInput`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDashboardPublishedVersionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct UpdateDashboardPublishedVersionInputBuilder {
 }
 impl UpdateDashboardPublishedVersionInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl UpdateDashboardPublishedVersionInputBuilder {
     }
     /// <p>The ID for the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
     }
     /// <p>The version number of the dashboard.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -78,16 +76,14 @@ impl UpdateDashboardPublishedVersionInputBuilder {
     }
     /// <p>The version number of the dashboard.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
+    }
+    /// <p>The version number of the dashboard.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// Consumes the builder and constructs a [`UpdateDashboardPublishedVersionInput`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput {
                 aws_account_id: self.aws_account_id
@@ -100,3 +96,4 @@ impl UpdateDashboardPublishedVersionInputBuilder {
         )
     }
 }
+

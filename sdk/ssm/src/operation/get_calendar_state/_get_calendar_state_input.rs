@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCalendarStateInput {
+pub struct GetCalendarStateInput  {
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
     #[doc(hidden)]
     pub calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,27 +12,24 @@ pub struct GetCalendarStateInput {
 }
 impl GetCalendarStateInput {
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
-    pub fn calendar_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn calendar_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.calendar_names.as_deref()
     }
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
-    pub fn at_time(&self) -> ::std::option::Option<&str> {
+    pub fn at_time(&self) -> ::std::option::Option<& str> {
         self.at_time.as_deref()
     }
 }
 impl GetCalendarStateInput {
     /// Creates a new builder-style object to manufacture [`GetCalendarStateInput`](crate::operation::get_calendar_state::GetCalendarStateInput).
-    pub fn builder() -> crate::operation::get_calendar_state::builders::GetCalendarStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_calendar_state::builders::GetCalendarStateInputBuilder {
         crate::operation::get_calendar_state::builders::GetCalendarStateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCalendarStateInput`](crate::operation::get_calendar_state::GetCalendarStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCalendarStateInputBuilder {
     pub(crate) calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) at_time: ::std::option::Option<::std::string::String>,
@@ -43,22 +40,19 @@ impl GetCalendarStateInputBuilder {
     /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
     ///
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
-    pub fn calendar_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calendar_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.calendar_names.unwrap_or_default();
-        v.push(input.into());
-        self.calendar_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.calendar_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
-    pub fn set_calendar_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.calendar_names = input;
-        self
+    pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.calendar_names = input; self
+    }
+    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.calendar_names
     }
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
     pub fn at_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,21 +61,22 @@ impl GetCalendarStateInputBuilder {
     }
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
     pub fn set_at_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.at_time = input;
-        self
+        self.at_time = input; self
+    }
+    /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
+    pub fn get_at_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.at_time
     }
     /// Consumes the builder and constructs a [`GetCalendarStateInput`](crate::operation::get_calendar_state::GetCalendarStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_calendar_state::GetCalendarStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_calendar_state::GetCalendarStateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_calendar_state::GetCalendarStateInput {
-                calendar_names: self.calendar_names,
-                at_time: self.at_time,
-            },
+                calendar_names: self.calendar_names
+                ,
+                at_time: self.at_time
+                ,
+            }
         )
     }
 }
+

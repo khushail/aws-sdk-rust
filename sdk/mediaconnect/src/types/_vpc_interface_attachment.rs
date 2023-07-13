@@ -3,14 +3,14 @@
 /// The settings for attaching a VPC interface to an resource.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcInterfaceAttachment {
+pub struct VpcInterfaceAttachment  {
     /// The name of the VPC interface to use for this resource.
     #[doc(hidden)]
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
 }
 impl VpcInterfaceAttachment {
     /// The name of the VPC interface to use for this resource.
-    pub fn vpc_interface_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_interface_name(&self) -> ::std::option::Option<& str> {
         self.vpc_interface_name.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl VpcInterfaceAttachment {
 
 /// A builder for [`VpcInterfaceAttachment`](crate::types::VpcInterfaceAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcInterfaceAttachmentBuilder {
     pub(crate) vpc_interface_name: ::std::option::Option<::std::string::String>,
 }
 impl VpcInterfaceAttachmentBuilder {
     /// The name of the VPC interface to use for this resource.
-    pub fn vpc_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_interface_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the VPC interface to use for this resource.
-    pub fn set_vpc_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpc_interface_name = input;
-        self
+    pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_interface_name = input; self
+    }
+    /// The name of the VPC interface to use for this resource.
+    pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_interface_name
     }
     /// Consumes the builder and constructs a [`VpcInterfaceAttachment`](crate::types::VpcInterfaceAttachment).
     pub fn build(self) -> crate::types::VpcInterfaceAttachment {
         crate::types::VpcInterfaceAttachment {
-            vpc_interface_name: self.vpc_interface_name,
+            vpc_interface_name: self.vpc_interface_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGlobalTableInput {
+pub struct CreateGlobalTableInput  {
     /// <p>The global table name.</p>
     #[doc(hidden)]
     pub global_table_name: ::std::option::Option<::std::string::String>,
@@ -12,47 +12,41 @@ pub struct CreateGlobalTableInput {
 }
 impl CreateGlobalTableInput {
     /// <p>The global table name.</p>
-    pub fn global_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn global_table_name(&self) -> ::std::option::Option<& str> {
         self.global_table_name.as_deref()
     }
     /// <p>The Regions where the global table needs to be created.</p>
-    pub fn replication_group(&self) -> ::std::option::Option<&[crate::types::Replica]> {
+    pub fn replication_group(&self) -> ::std::option::Option<& [crate::types::Replica]> {
         self.replication_group.as_deref()
     }
 }
 impl CreateGlobalTableInput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalTableInput`](crate::operation::create_global_table::CreateGlobalTableInput).
-    pub fn builder(
-    ) -> crate::operation::create_global_table::builders::CreateGlobalTableInputBuilder {
+    pub fn builder() -> crate::operation::create_global_table::builders::CreateGlobalTableInputBuilder {
         crate::operation::create_global_table::builders::CreateGlobalTableInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGlobalTableInput`](crate::operation::create_global_table::CreateGlobalTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGlobalTableInputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>,
 }
 impl CreateGlobalTableInputBuilder {
     /// <p>The global table name.</p>
-    pub fn global_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The global table name.</p>
-    pub fn set_global_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.global_table_name = input;
-        self
+    pub fn set_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_table_name = input; self
+    }
+    /// <p>The global table name.</p>
+    pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_table_name
     }
     /// Appends an item to `replication_group`.
     ///
@@ -61,30 +55,28 @@ impl CreateGlobalTableInputBuilder {
     /// <p>The Regions where the global table needs to be created.</p>
     pub fn replication_group(mut self, input: crate::types::Replica) -> Self {
         let mut v = self.replication_group.unwrap_or_default();
-        v.push(input);
-        self.replication_group = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_group = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Regions where the global table needs to be created.</p>
-    pub fn set_replication_group(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>,
-    ) -> Self {
-        self.replication_group = input;
-        self
+    pub fn set_replication_group(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>) -> Self {
+        self.replication_group = input; self
+    }
+    /// <p>The Regions where the global table needs to be created.</p>
+    pub fn get_replication_group(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Replica>> {
+        &self.replication_group
     }
     /// Consumes the builder and constructs a [`CreateGlobalTableInput`](crate::operation::create_global_table::CreateGlobalTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_global_table::CreateGlobalTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_global_table::CreateGlobalTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_global_table::CreateGlobalTableInput {
-                global_table_name: self.global_table_name,
-                replication_group: self.replication_group,
-            },
+                global_table_name: self.global_table_name
+                ,
+                replication_group: self.replication_group
+                ,
+            }
         )
     }
 }
+

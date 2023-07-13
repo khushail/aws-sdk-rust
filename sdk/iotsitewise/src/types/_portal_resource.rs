@@ -3,14 +3,14 @@
 /// <p>Identifies an IoT SiteWise Monitor portal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortalResource {
+pub struct PortalResource  {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl PortalResource {
     /// <p>The ID of the portal.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl PortalResource {
 
 /// A builder for [`PortalResource`](crate::types::PortalResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortalResourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl PortalResourceBuilder {
     }
     /// <p>The ID of the portal.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the portal.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`PortalResource`](crate::types::PortalResource).
     pub fn build(self) -> crate::types::PortalResource {
-        crate::types::PortalResource { id: self.id }
+        crate::types::PortalResource {
+            id: self.id
+            ,
+        }
     }
 }
+

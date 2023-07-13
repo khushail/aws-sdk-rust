@@ -3,15 +3,13 @@
 /// <p>Contains information about a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingSummary {
+pub struct FindingSummary  {
     /// <p>The ID of the finding.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
     #[doc(hidden)]
-    pub principal: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub principal: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     #[doc(hidden)]
     pub action: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -26,9 +24,7 @@ pub struct FindingSummary {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
     #[doc(hidden)]
-    pub condition: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub condition: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The time at which the finding was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -53,23 +49,19 @@ pub struct FindingSummary {
 }
 impl FindingSummary {
     /// <p>The ID of the finding.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    pub fn principal(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn principal(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.principal.as_ref()
     }
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    pub fn action(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn action(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.action.as_deref()
     }
     /// <p>The resource that the external principal has access to.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
@@ -77,43 +69,39 @@ impl FindingSummary {
         self.is_public
     }
     /// <p>The type of the resource that the external principal has access to.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    pub fn condition(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn condition(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.condition.as_ref()
     }
     /// <p>The time at which the finding was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
-    pub fn analyzed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn analyzed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.analyzed_at.as_ref()
     }
     /// <p>The time at which the finding was most recently updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The status of the finding.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FindingStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FindingStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn resource_owner_account(&self) -> ::std::option::Option<& str> {
         self.resource_owner_account.as_deref()
     }
     /// <p>The error that resulted in an Error finding.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::FindingSource]> {
+    pub fn sources(&self) -> ::std::option::Option<& [crate::types::FindingSource]> {
         self.sources.as_deref()
     }
 }
@@ -126,21 +114,15 @@ impl FindingSummary {
 
 /// A builder for [`FindingSummary`](crate::types::FindingSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) principal: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) principal: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) action: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) is_public: ::std::option::Option<bool>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) condition: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) condition: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) analyzed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -157,33 +139,30 @@ impl FindingSummaryBuilder {
     }
     /// <p>The ID of the finding.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the finding.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Adds a key-value pair to `principal`.
     ///
     /// To override the contents of this collection use [`set_principal`](Self::set_principal).
     ///
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    pub fn principal(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.principal.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.principal = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.principal = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.principal = input;
-        self
+    pub fn set_principal(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.principal = input; self
+    }
+    /// <p>The external principal that has access to a resource within the zone of trust.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.principal
     }
     /// Appends an item to `action`.
     ///
@@ -192,17 +171,17 @@ impl FindingSummaryBuilder {
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.action.unwrap_or_default();
-        v.push(input.into());
-        self.action = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.action = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.action = input;
-        self
+    pub fn set_action(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.action = input; self
+    }
+    /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.action
     }
     /// <p>The resource that the external principal has access to.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -211,8 +190,11 @@ impl FindingSummaryBuilder {
     }
     /// <p>The resource that the external principal has access to.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
+    }
+    /// <p>The resource that the external principal has access to.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
     pub fn is_public(mut self, input: bool) -> Self {
@@ -221,8 +203,11 @@ impl FindingSummaryBuilder {
     }
     /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
     pub fn set_is_public(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_public = input;
-        self
+        self.is_public = input; self
+    }
+    /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
+    pub fn get_is_public(&self) -> &::std::option::Option<bool> {
+        &self.is_public
     }
     /// <p>The type of the resource that the external principal has access to.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -230,37 +215,31 @@ impl FindingSummaryBuilder {
         self
     }
     /// <p>The type of the resource that the external principal has access to.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
+    }
+    /// <p>The type of the resource that the external principal has access to.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Adds a key-value pair to `condition`.
     ///
     /// To override the contents of this collection use [`set_condition`](Self::set_condition).
     ///
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    pub fn condition(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn condition(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.condition.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.condition = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.condition = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.condition = input;
-        self
+    pub fn set_condition(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.condition = input; self
+    }
+    /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.condition
     }
     /// <p>The time at which the finding was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -268,12 +247,12 @@ impl FindingSummaryBuilder {
         self
     }
     /// <p>The time at which the finding was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p>The time at which the finding was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
     pub fn analyzed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -281,12 +260,12 @@ impl FindingSummaryBuilder {
         self
     }
     /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
-    pub fn set_analyzed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.analyzed_at = input;
-        self
+    pub fn set_analyzed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.analyzed_at = input; self
+    }
+    /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
+    pub fn get_analyzed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.analyzed_at
     }
     /// <p>The time at which the finding was most recently updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -294,12 +273,12 @@ impl FindingSummaryBuilder {
         self
     }
     /// <p>The time at which the finding was most recently updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
+    }
+    /// <p>The time at which the finding was most recently updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// <p>The status of the finding.</p>
     pub fn status(mut self, input: crate::types::FindingStatus) -> Self {
@@ -308,24 +287,24 @@ impl FindingSummaryBuilder {
     }
     /// <p>The status of the finding.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the finding.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FindingStatus> {
+        &self.status
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn set_resource_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.resource_owner_account = input;
-        self
+    pub fn set_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_owner_account = input; self
+    }
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    pub fn get_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_account
     }
     /// <p>The error that resulted in an Error finding.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -334,8 +313,11 @@ impl FindingSummaryBuilder {
     }
     /// <p>The error that resulted in an Error finding.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
+    }
+    /// <p>The error that resulted in an Error finding.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// Appends an item to `sources`.
     ///
@@ -344,35 +326,50 @@ impl FindingSummaryBuilder {
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub fn sources(mut self, input: crate::types::FindingSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>,
-    ) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>) -> Self {
+        self.sources = input; self
+    }
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingSource>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`FindingSummary`](crate::types::FindingSummary).
     pub fn build(self) -> crate::types::FindingSummary {
         crate::types::FindingSummary {
-            id: self.id,
-            principal: self.principal,
-            action: self.action,
-            resource: self.resource,
-            is_public: self.is_public,
-            resource_type: self.resource_type,
-            condition: self.condition,
-            created_at: self.created_at,
-            analyzed_at: self.analyzed_at,
-            updated_at: self.updated_at,
-            status: self.status,
-            resource_owner_account: self.resource_owner_account,
-            error: self.error,
-            sources: self.sources,
+            id: self.id
+            ,
+            principal: self.principal
+            ,
+            action: self.action
+            ,
+            resource: self.resource
+            ,
+            is_public: self.is_public
+            ,
+            resource_type: self.resource_type
+            ,
+            condition: self.condition
+            ,
+            created_at: self.created_at
+            ,
+            analyzed_at: self.analyzed_at
+            ,
+            updated_at: self.updated_at
+            ,
+            status: self.status
+            ,
+            resource_owner_account: self.resource_owner_account
+            ,
+            error: self.error
+            ,
+            sources: self.sources
+            ,
         }
     }
 }
+

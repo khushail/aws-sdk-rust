@@ -3,14 +3,14 @@
 /// <p>Describes the operations that are allowed on a maintenance track.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SupportedOperation {
+pub struct SupportedOperation  {
     /// <p>A list of the supported operations.</p>
     #[doc(hidden)]
     pub operation_name: ::std::option::Option<::std::string::String>,
 }
 impl SupportedOperation {
     /// <p>A list of the supported operations.</p>
-    pub fn operation_name(&self) -> ::std::option::Option<&str> {
+    pub fn operation_name(&self) -> ::std::option::Option<& str> {
         self.operation_name.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl SupportedOperation {
 
 /// A builder for [`SupportedOperation`](crate::types::SupportedOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SupportedOperationBuilder {
     pub(crate) operation_name: ::std::option::Option<::std::string::String>,
 }
 impl SupportedOperationBuilder {
     /// <p>A list of the supported operations.</p>
-    pub fn operation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of the supported operations.</p>
-    pub fn set_operation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.operation_name = input;
-        self
+    pub fn set_operation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_name = input; self
+    }
+    /// <p>A list of the supported operations.</p>
+    pub fn get_operation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_name
     }
     /// Consumes the builder and constructs a [`SupportedOperation`](crate::types::SupportedOperation).
     pub fn build(self) -> crate::types::SupportedOperation {
         crate::types::SupportedOperation {
-            operation_name: self.operation_name,
+            operation_name: self.operation_name
+            ,
         }
     }
 }
+

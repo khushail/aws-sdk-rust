@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagSamlProviderOutput {
+pub struct UntagSamlProviderOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for UntagSamlProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UntagSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`UntagSamlProviderOutput`](crate::operation::untag_saml_provider::UntagSamlProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::untag_saml_provider::builders::UntagSamlProviderOutputBuilder {
+    pub fn builder() -> crate::operation::untag_saml_provider::builders::UntagSamlProviderOutputBuilder {
         crate::operation::untag_saml_provider::builders::UntagSamlProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`UntagSamlProviderOutput`](crate::operation::untag_saml_provider::UntagSamlProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagSamlProviderOutputBuilder {
     _request_id: Option<String>,
 }
 impl UntagSamlProviderOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UntagSamlProviderOutput`](crate::operation::untag_saml_provider::UntagSamlProviderOutput).
     pub fn build(self) -> crate::operation::untag_saml_provider::UntagSamlProviderOutput {
         crate::operation::untag_saml_provider::UntagSamlProviderOutput {
@@ -43,3 +40,4 @@ impl UntagSamlProviderOutputBuilder {
         }
     }
 }
+

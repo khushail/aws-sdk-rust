@@ -3,22 +3,22 @@
 /// <p>This section describes operations that you can perform on an AWS Elemental MediaStore container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Container {
+pub struct Container  {
     /// <p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>
     #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Unix timestamp.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p>
+    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> 
     /// <p>arn:aws:<region>
     /// :
     /// <account that owns this container>
     /// :container/
-    /// <name of container>
+    /// <name of container> 
     /// </name>
     /// </account>
-    /// </region></p>
+    /// </region></p> 
     /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -34,32 +34,32 @@ pub struct Container {
 }
 impl Container {
     /// <p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>Unix timestamp.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p>
+    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> 
     /// <p>arn:aws:<region>
     /// :
     /// <account that owns this container>
     /// :container/
-    /// <name of container>
+    /// <name of container> 
     /// </name>
     /// </account>
-    /// </region></p>
+    /// </region></p> 
     /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the container.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ContainerStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ContainerStatus> {
         self.status.as_ref()
     }
     /// <p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>
@@ -76,9 +76,7 @@ impl Container {
 
 /// A builder for [`Container`](crate::types::Container).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -95,8 +93,11 @@ impl ContainerBuilder {
     }
     /// <p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
+    }
+    /// <p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// <p>Unix timestamp.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -104,40 +105,52 @@ impl ContainerBuilder {
         self
     }
     /// <p>Unix timestamp.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p>
+    /// <p>Unix timestamp.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> 
     /// <p>arn:aws:<region>
     /// :
     /// <account that owns this container>
     /// :container/
-    /// <name of container>
+    /// <name of container> 
     /// </name>
     /// </account>
-    /// </region></p>
+    /// </region></p> 
     /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p>
+    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> 
     /// <p>arn:aws:<region>
     /// :
     /// <account that owns this container>
     /// :container/
-    /// <name of container>
+    /// <name of container> 
     /// </name>
     /// </account>
-    /// </region></p>
+    /// </region></p> 
     /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> 
+    /// <p>arn:aws:<region>
+    /// :
+    /// <account that owns this container>
+    /// :container/
+    /// <name of container> 
+    /// </name>
+    /// </account>
+    /// </region></p> 
+    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the container.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,8 +159,11 @@ impl ContainerBuilder {
     }
     /// <p>The name of the container.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the container.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::ContainerStatus) -> Self {
@@ -155,12 +171,12 @@ impl ContainerBuilder {
         self
     }
     /// <p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContainerStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContainerStatus> {
+        &self.status
     }
     /// <p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>
     pub fn access_logging_enabled(mut self, input: bool) -> Self {
@@ -169,18 +185,28 @@ impl ContainerBuilder {
     }
     /// <p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>
     pub fn set_access_logging_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.access_logging_enabled = input;
-        self
+        self.access_logging_enabled = input; self
+    }
+    /// <p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>
+    pub fn get_access_logging_enabled(&self) -> &::std::option::Option<bool> {
+        &self.access_logging_enabled
     }
     /// Consumes the builder and constructs a [`Container`](crate::types::Container).
     pub fn build(self) -> crate::types::Container {
         crate::types::Container {
-            endpoint: self.endpoint,
-            creation_time: self.creation_time,
-            arn: self.arn,
-            name: self.name,
-            status: self.status,
-            access_logging_enabled: self.access_logging_enabled,
+            endpoint: self.endpoint
+            ,
+            creation_time: self.creation_time
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            access_logging_enabled: self.access_logging_enabled
+            ,
         }
     }
 }
+

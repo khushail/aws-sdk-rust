@@ -3,14 +3,14 @@
 /// <p>The source entity of an analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisSourceEntity {
+pub struct AnalysisSourceEntity  {
     /// <p>The source template for the source entity of the analysis.</p>
     #[doc(hidden)]
     pub source_template: ::std::option::Option<crate::types::AnalysisSourceTemplate>,
 }
 impl AnalysisSourceEntity {
     /// <p>The source template for the source entity of the analysis.</p>
-    pub fn source_template(&self) -> ::std::option::Option<&crate::types::AnalysisSourceTemplate> {
+    pub fn source_template(&self) -> ::std::option::Option<& crate::types::AnalysisSourceTemplate> {
         self.source_template.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl AnalysisSourceEntity {
 
 /// A builder for [`AnalysisSourceEntity`](crate::types::AnalysisSourceEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisSourceEntityBuilder {
     pub(crate) source_template: ::std::option::Option<crate::types::AnalysisSourceTemplate>,
 }
@@ -36,17 +34,19 @@ impl AnalysisSourceEntityBuilder {
         self
     }
     /// <p>The source template for the source entity of the analysis.</p>
-    pub fn set_source_template(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisSourceTemplate>,
-    ) -> Self {
-        self.source_template = input;
-        self
+    pub fn set_source_template(mut self, input: ::std::option::Option<crate::types::AnalysisSourceTemplate>) -> Self {
+        self.source_template = input; self
+    }
+    /// <p>The source template for the source entity of the analysis.</p>
+    pub fn get_source_template(&self) -> &::std::option::Option<crate::types::AnalysisSourceTemplate> {
+        &self.source_template
     }
     /// Consumes the builder and constructs a [`AnalysisSourceEntity`](crate::types::AnalysisSourceEntity).
     pub fn build(self) -> crate::types::AnalysisSourceEntity {
         crate::types::AnalysisSourceEntity {
-            source_template: self.source_template,
+            source_template: self.source_template
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Data replication initiation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataReplicationInitiation {
+pub struct DataReplicationInitiation  {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
     #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct DataReplicationInitiation {
 }
 impl DataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
-    pub fn start_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_date_time(&self) -> ::std::option::Option<& str> {
         self.start_date_time.as_deref()
     }
     /// <p>The date and time of the next attempt to initiate data replication.</p>
-    pub fn next_attempt_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn next_attempt_date_time(&self) -> ::std::option::Option<& str> {
         self.next_attempt_date_time.as_deref()
     }
     /// <p>The steps of the current attempt to initiate data replication.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::DataReplicationInitiationStep]> {
+    pub fn steps(&self) -> ::std::option::Option<& [crate::types::DataReplicationInitiationStep]> {
         self.steps.as_deref()
     }
 }
@@ -37,47 +37,38 @@ impl DataReplicationInitiation {
 
 /// A builder for [`DataReplicationInitiation`](crate::types::DataReplicationInitiation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataReplicationInitiationBuilder {
     pub(crate) start_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) next_attempt_date_time: ::std::option::Option<::std::string::String>,
-    pub(crate) steps:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
 }
 impl DataReplicationInitiationBuilder {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
-    pub fn start_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of the current attempt to initiate data replication.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.start_date_time = input;
-        self
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.start_date_time = input; self
+    }
+    /// <p>The date and time of the current attempt to initiate data replication.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date_time
     }
     /// <p>The date and time of the next attempt to initiate data replication.</p>
-    pub fn next_attempt_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_attempt_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_attempt_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of the next attempt to initiate data replication.</p>
-    pub fn set_next_attempt_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_attempt_date_time = input;
-        self
+    pub fn set_next_attempt_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_attempt_date_time = input; self
+    }
+    /// <p>The date and time of the next attempt to initiate data replication.</p>
+    pub fn get_next_attempt_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_attempt_date_time
     }
     /// Appends an item to `steps`.
     ///
@@ -86,24 +77,28 @@ impl DataReplicationInitiationBuilder {
     /// <p>The steps of the current attempt to initiate data replication.</p>
     pub fn steps(mut self, input: crate::types::DataReplicationInitiationStep) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The steps of the current attempt to initiate data replication.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
-    ) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>>) -> Self {
+        self.steps = input; self
+    }
+    /// <p>The steps of the current attempt to initiate data replication.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>> {
+        &self.steps
     }
     /// Consumes the builder and constructs a [`DataReplicationInitiation`](crate::types::DataReplicationInitiation).
     pub fn build(self) -> crate::types::DataReplicationInitiation {
         crate::types::DataReplicationInitiation {
-            start_date_time: self.start_date_time,
-            next_attempt_date_time: self.next_attempt_date_time,
-            steps: self.steps,
+            start_date_time: self.start_date_time
+            ,
+            next_attempt_date_time: self.next_attempt_date_time
+            ,
+            steps: self.steps
+            ,
         }
     }
 }
+

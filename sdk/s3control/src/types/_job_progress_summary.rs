@@ -3,7 +3,7 @@
 /// <p>Describes the total number of tasks that the specified job has started, the number of tasks that succeeded, and the number of tasks that failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobProgressSummary {
+pub struct JobProgressSummary  {
     /// <p></p>
     #[doc(hidden)]
     pub total_number_of_tasks: ::std::option::Option<i64>,
@@ -31,7 +31,7 @@ impl JobProgressSummary {
         self.number_of_tasks_failed
     }
     /// <p>The JobTimers attribute of a job's progress summary.</p>
-    pub fn timers(&self) -> ::std::option::Option<&crate::types::JobTimers> {
+    pub fn timers(&self) -> ::std::option::Option<& crate::types::JobTimers> {
         self.timers.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl JobProgressSummary {
 
 /// A builder for [`JobProgressSummary`](crate::types::JobProgressSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobProgressSummaryBuilder {
     pub(crate) total_number_of_tasks: ::std::option::Option<i64>,
     pub(crate) number_of_tasks_succeeded: ::std::option::Option<i64>,
@@ -61,8 +59,11 @@ impl JobProgressSummaryBuilder {
     }
     /// <p></p>
     pub fn set_total_number_of_tasks(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_number_of_tasks = input;
-        self
+        self.total_number_of_tasks = input; self
+    }
+    /// <p></p>
+    pub fn get_total_number_of_tasks(&self) -> &::std::option::Option<i64> {
+        &self.total_number_of_tasks
     }
     /// <p></p>
     pub fn number_of_tasks_succeeded(mut self, input: i64) -> Self {
@@ -71,8 +72,11 @@ impl JobProgressSummaryBuilder {
     }
     /// <p></p>
     pub fn set_number_of_tasks_succeeded(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_tasks_succeeded = input;
-        self
+        self.number_of_tasks_succeeded = input; self
+    }
+    /// <p></p>
+    pub fn get_number_of_tasks_succeeded(&self) -> &::std::option::Option<i64> {
+        &self.number_of_tasks_succeeded
     }
     /// <p></p>
     pub fn number_of_tasks_failed(mut self, input: i64) -> Self {
@@ -81,8 +85,11 @@ impl JobProgressSummaryBuilder {
     }
     /// <p></p>
     pub fn set_number_of_tasks_failed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_tasks_failed = input;
-        self
+        self.number_of_tasks_failed = input; self
+    }
+    /// <p></p>
+    pub fn get_number_of_tasks_failed(&self) -> &::std::option::Option<i64> {
+        &self.number_of_tasks_failed
     }
     /// <p>The JobTimers attribute of a job's progress summary.</p>
     pub fn timers(mut self, input: crate::types::JobTimers) -> Self {
@@ -91,16 +98,24 @@ impl JobProgressSummaryBuilder {
     }
     /// <p>The JobTimers attribute of a job's progress summary.</p>
     pub fn set_timers(mut self, input: ::std::option::Option<crate::types::JobTimers>) -> Self {
-        self.timers = input;
-        self
+        self.timers = input; self
+    }
+    /// <p>The JobTimers attribute of a job's progress summary.</p>
+    pub fn get_timers(&self) -> &::std::option::Option<crate::types::JobTimers> {
+        &self.timers
     }
     /// Consumes the builder and constructs a [`JobProgressSummary`](crate::types::JobProgressSummary).
     pub fn build(self) -> crate::types::JobProgressSummary {
         crate::types::JobProgressSummary {
-            total_number_of_tasks: self.total_number_of_tasks,
-            number_of_tasks_succeeded: self.number_of_tasks_succeeded,
-            number_of_tasks_failed: self.number_of_tasks_failed,
-            timers: self.timers,
+            total_number_of_tasks: self.total_number_of_tasks
+            ,
+            number_of_tasks_succeeded: self.number_of_tasks_succeeded
+            ,
+            number_of_tasks_failed: self.number_of_tasks_failed
+            ,
+            timers: self.timers
+            ,
         }
     }
 }
+

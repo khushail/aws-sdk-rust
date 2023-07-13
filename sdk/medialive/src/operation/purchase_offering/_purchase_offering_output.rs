@@ -3,7 +3,7 @@
 /// Placeholder documentation for PurchaseOfferingResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PurchaseOfferingOutput {
+pub struct PurchaseOfferingOutput  {
     /// Reserved resources available to use
     #[doc(hidden)]
     pub reservation: ::std::option::Option<crate::types::Reservation>,
@@ -11,28 +11,25 @@ pub struct PurchaseOfferingOutput {
 }
 impl PurchaseOfferingOutput {
     /// Reserved resources available to use
-    pub fn reservation(&self) -> ::std::option::Option<&crate::types::Reservation> {
+    pub fn reservation(&self) -> ::std::option::Option<& crate::types::Reservation> {
         self.reservation.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for PurchaseOfferingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PurchaseOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder {
         crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseOfferingOutputBuilder {
     pub(crate) reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,
@@ -44,27 +41,29 @@ impl PurchaseOfferingOutputBuilder {
         self
     }
     /// Reserved resources available to use
-    pub fn set_reservation(
-        mut self,
-        input: ::std::option::Option<crate::types::Reservation>,
-    ) -> Self {
-        self.reservation = input;
-        self
+    pub fn set_reservation(mut self, input: ::std::option::Option<crate::types::Reservation>) -> Self {
+        self.reservation = input; self
+    }
+    /// Reserved resources available to use
+    pub fn get_reservation(&self) -> &::std::option::Option<crate::types::Reservation> {
+        &self.reservation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
     pub fn build(self) -> crate::operation::purchase_offering::PurchaseOfferingOutput {
         crate::operation::purchase_offering::PurchaseOfferingOutput {
-            reservation: self.reservation,
+            reservation: self.reservation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSetIdentifierDeclaration {
+pub struct DataSetIdentifierDeclaration  {
     /// <p>The identifier of the data set, typically the data set's name.</p>
     #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct DataSetIdentifierDeclaration {
 }
 impl DataSetIdentifierDeclaration {
     /// <p>The identifier of the data set, typically the data set's name.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
-    pub fn data_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_arn(&self) -> ::std::option::Option<& str> {
         self.data_set_arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DataSetIdentifierDeclaration {
 
 /// A builder for [`DataSetIdentifierDeclaration`](crate::types::DataSetIdentifierDeclaration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetIdentifierDeclarationBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DataSetIdentifierDeclarationBuilder {
     }
     /// <p>The identifier of the data set, typically the data set's name.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
+    }
+    /// <p>The identifier of the data set, typically the data set's name.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
     pub fn data_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl DataSetIdentifierDeclarationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
     pub fn set_data_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_arn = input;
-        self
+        self.data_set_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the data set.</p>
+    pub fn get_data_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_arn
     }
     /// Consumes the builder and constructs a [`DataSetIdentifierDeclaration`](crate::types::DataSetIdentifierDeclaration).
     pub fn build(self) -> crate::types::DataSetIdentifierDeclaration {
         crate::types::DataSetIdentifierDeclaration {
-            identifier: self.identifier,
-            data_set_arn: self.data_set_arn,
+            identifier: self.identifier
+            ,
+            data_set_arn: self.data_set_arn
+            ,
         }
     }
 }
+

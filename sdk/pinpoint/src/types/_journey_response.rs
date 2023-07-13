@@ -3,12 +3,10 @@
 /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JourneyResponse {
+pub struct JourneyResponse  {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
     #[doc(hidden)]
-    pub activities: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Activity>,
-    >,
+    pub activities: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Activity>>,
     /// <p>The unique identifier for the application that the journey applies to.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -30,12 +28,12 @@ pub struct JourneyResponse {
     /// <p>The name of the journey.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
+    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p> 
     /// <ul>
-    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li> 
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li> 
     /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     #[doc(hidden)]
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
@@ -51,21 +49,19 @@ pub struct JourneyResponse {
     /// <p>The segment that defines which users are participants in the journey.</p>
     #[doc(hidden)]
     pub start_condition: ::std::option::Option<crate::types::StartCondition>,
-    /// <p>The current status of the journey. Possible values are:</p>
+    /// <p>The current status of the journey. Possible values are:</p> 
     /// <ul>
-    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
-    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
-    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
-    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li> 
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li> 
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li> 
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li> 
     /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
     /// </ul>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>This object is not used or supported.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
     #[doc(hidden)]
     pub wait_for_quiet_time: ::std::option::Option<bool>,
@@ -87,31 +83,27 @@ pub struct JourneyResponse {
 }
 impl JourneyResponse {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
-    pub fn activities(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Activity>,
-    > {
+    pub fn activities(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, crate::types::Activity>> {
         self.activities.as_ref()
     }
     /// <p>The unique identifier for the application that the journey applies to.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date, in ISO 8601 format, when the journey was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The unique identifier for the journey.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The messaging and entry limits for the journey.</p>
-    pub fn limits(&self) -> ::std::option::Option<&crate::types::JourneyLimits> {
+    pub fn limits(&self) -> ::std::option::Option<& crate::types::JourneyLimits> {
         self.limits.as_ref()
     }
     /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. If this value is true, the schedule uses each participant's local time.</p>
@@ -119,52 +111,48 @@ impl JourneyResponse {
         self.local_time
     }
     /// <p>The name of the journey.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
+    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p> 
     /// <ul>
-    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li> 
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li> 
     /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
-    pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
+    pub fn quiet_time(&self) -> ::std::option::Option<& crate::types::QuietTime> {
         self.quiet_time.as_ref()
     }
     /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
-    pub fn refresh_frequency(&self) -> ::std::option::Option<&str> {
+    pub fn refresh_frequency(&self) -> ::std::option::Option<& str> {
         self.refresh_frequency.as_deref()
     }
     /// <p>The schedule settings for the journey.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::JourneySchedule> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::JourneySchedule> {
         self.schedule.as_ref()
     }
     /// <p>The unique identifier for the first activity in the journey.</p>
-    pub fn start_activity(&self) -> ::std::option::Option<&str> {
+    pub fn start_activity(&self) -> ::std::option::Option<& str> {
         self.start_activity.as_deref()
     }
     /// <p>The segment that defines which users are participants in the journey.</p>
-    pub fn start_condition(&self) -> ::std::option::Option<&crate::types::StartCondition> {
+    pub fn start_condition(&self) -> ::std::option::Option<& crate::types::StartCondition> {
         self.start_condition.as_ref()
     }
-    /// <p>The current status of the journey. Possible values are:</p>
+    /// <p>The current status of the journey. Possible values are:</p> 
     /// <ul>
-    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
-    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
-    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
-    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li> 
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li> 
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li> 
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li> 
     /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
     /// <p>This object is not used or supported.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
@@ -176,9 +164,7 @@ impl JourneyResponse {
         self.refresh_on_segment_update
     }
     /// <p>The channel-specific configurations for the journey.</p>
-    pub fn journey_channel_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JourneyChannelSettings> {
+    pub fn journey_channel_settings(&self) -> ::std::option::Option<& crate::types::JourneyChannelSettings> {
         self.journey_channel_settings.as_ref()
     }
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
@@ -186,11 +172,11 @@ impl JourneyResponse {
         self.sending_schedule
     }
     /// <p>The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
-    pub fn open_hours(&self) -> ::std::option::Option<&crate::types::OpenHours> {
+    pub fn open_hours(&self) -> ::std::option::Option<& crate::types::OpenHours> {
         self.open_hours.as_ref()
     }
     /// <p>The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
-    pub fn closed_days(&self) -> ::std::option::Option<&crate::types::ClosedDays> {
+    pub fn closed_days(&self) -> ::std::option::Option<& crate::types::ClosedDays> {
         self.closed_days.as_ref()
     }
 }
@@ -203,13 +189,9 @@ impl JourneyResponse {
 
 /// A builder for [`JourneyResponse`](crate::types::JourneyResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JourneyResponseBuilder {
-    pub(crate) activities: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Activity>,
-    >,
+    pub(crate) activities: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Activity>>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -223,13 +205,10 @@ pub struct JourneyResponseBuilder {
     pub(crate) start_activity: ::std::option::Option<::std::string::String>,
     pub(crate) start_condition: ::std::option::Option<crate::types::StartCondition>,
     pub(crate) state: ::std::option::Option<crate::types::State>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) wait_for_quiet_time: ::std::option::Option<bool>,
     pub(crate) refresh_on_segment_update: ::std::option::Option<bool>,
-    pub(crate) journey_channel_settings:
-        ::std::option::Option<crate::types::JourneyChannelSettings>,
+    pub(crate) journey_channel_settings: ::std::option::Option<crate::types::JourneyChannelSettings>,
     pub(crate) sending_schedule: ::std::option::Option<bool>,
     pub(crate) open_hours: ::std::option::Option<crate::types::OpenHours>,
     pub(crate) closed_days: ::std::option::Option<crate::types::ClosedDays>,
@@ -240,57 +219,45 @@ impl JourneyResponseBuilder {
     /// To override the contents of this collection use [`set_activities`](Self::set_activities).
     ///
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
-    pub fn activities(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Activity,
-    ) -> Self {
+    pub fn activities(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Activity) -> Self {
         let mut hash_map = self.activities.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.activities = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.activities = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
-    pub fn set_activities(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Activity>,
-        >,
-    ) -> Self {
-        self.activities = input;
-        self
+    pub fn set_activities(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Activity>>) -> Self {
+        self.activities = input; self
+    }
+    /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
+    pub fn get_activities(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Activity>> {
+        &self.activities
     }
     /// <p>The unique identifier for the application that the journey applies to.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that the journey applies to.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier for the application that the journey applies to.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The date, in ISO 8601 format, when the journey was created.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the journey was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>The date, in ISO 8601 format, when the journey was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// <p>The unique identifier for the journey.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -299,24 +266,24 @@ impl JourneyResponseBuilder {
     }
     /// <p>The unique identifier for the journey.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_date = input; self
+    }
+    /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
     }
     /// <p>The messaging and entry limits for the journey.</p>
     pub fn limits(mut self, input: crate::types::JourneyLimits) -> Self {
@@ -325,8 +292,11 @@ impl JourneyResponseBuilder {
     }
     /// <p>The messaging and entry limits for the journey.</p>
     pub fn set_limits(mut self, input: ::std::option::Option<crate::types::JourneyLimits>) -> Self {
-        self.limits = input;
-        self
+        self.limits = input; self
+    }
+    /// <p>The messaging and entry limits for the journey.</p>
+    pub fn get_limits(&self) -> &::std::option::Option<crate::types::JourneyLimits> {
+        &self.limits
     }
     /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. If this value is true, the schedule uses each participant's local time.</p>
     pub fn local_time(mut self, input: bool) -> Self {
@@ -335,8 +305,11 @@ impl JourneyResponseBuilder {
     }
     /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. If this value is true, the schedule uses each participant's local time.</p>
     pub fn set_local_time(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.local_time = input;
-        self
+        self.local_time = input; self
+    }
+    /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. If this value is true, the schedule uses each participant's local time.</p>
+    pub fn get_local_time(&self) -> &::std::option::Option<bool> {
+        &self.local_time
     }
     /// <p>The name of the journey.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -345,46 +318,55 @@ impl JourneyResponseBuilder {
     }
     /// <p>The name of the journey.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
+    /// <p>The name of the journey.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
+    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p> 
     /// <ul>
-    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li> 
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li> 
     /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn quiet_time(mut self, input: crate::types::QuietTime) -> Self {
         self.quiet_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
+    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p> 
     /// <ul>
-    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li> 
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li> 
     /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
-        self.quiet_time = input;
-        self
+        self.quiet_time = input; self
+    }
+    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p> 
+    /// <ul>
+    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li> 
+    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li> 
+    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// </ul> 
+    /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
+    pub fn get_quiet_time(&self) -> &::std::option::Option<crate::types::QuietTime> {
+        &self.quiet_time
     }
     /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
-    pub fn refresh_frequency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn refresh_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_frequency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
-    pub fn set_refresh_frequency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.refresh_frequency = input;
-        self
+    pub fn set_refresh_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.refresh_frequency = input; self
+    }
+    /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
+    pub fn get_refresh_frequency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_frequency
     }
     /// <p>The schedule settings for the journey.</p>
     pub fn schedule(mut self, input: crate::types::JourneySchedule) -> Self {
@@ -392,28 +374,25 @@ impl JourneyResponseBuilder {
         self
     }
     /// <p>The schedule settings for the journey.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneySchedule>,
-    ) -> Self {
-        self.schedule = input;
-        self
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::JourneySchedule>) -> Self {
+        self.schedule = input; self
+    }
+    /// <p>The schedule settings for the journey.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::JourneySchedule> {
+        &self.schedule
     }
     /// <p>The unique identifier for the first activity in the journey.</p>
-    pub fn start_activity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_activity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the first activity in the journey.</p>
-    pub fn set_start_activity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.start_activity = input;
-        self
+    pub fn set_start_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.start_activity = input; self
+    }
+    /// <p>The unique identifier for the first activity in the journey.</p>
+    pub fn get_start_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_activity
     }
     /// <p>The segment that defines which users are participants in the journey.</p>
     pub fn start_condition(mut self, input: crate::types::StartCondition) -> Self {
@@ -421,61 +400,65 @@ impl JourneyResponseBuilder {
         self
     }
     /// <p>The segment that defines which users are participants in the journey.</p>
-    pub fn set_start_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::StartCondition>,
-    ) -> Self {
-        self.start_condition = input;
-        self
+    pub fn set_start_condition(mut self, input: ::std::option::Option<crate::types::StartCondition>) -> Self {
+        self.start_condition = input; self
     }
-    /// <p>The current status of the journey. Possible values are:</p>
+    /// <p>The segment that defines which users are participants in the journey.</p>
+    pub fn get_start_condition(&self) -> &::std::option::Option<crate::types::StartCondition> {
+        &self.start_condition
+    }
+    /// <p>The current status of the journey. Possible values are:</p> 
     /// <ul>
-    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
-    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
-    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
-    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li> 
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li> 
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li> 
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li> 
     /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the journey. Possible values are:</p>
+    /// <p>The current status of the journey. Possible values are:</p> 
     /// <ul>
-    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li>
-    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
-    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li>
-    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li> 
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li> 
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li> 
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li> 
     /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The current status of the journey. Possible values are:</p> 
+    /// <ul>
+    /// <li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li> 
+    /// <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li> 
+    /// <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li> 
+    /// <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li> 
+    /// <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>This object is not used or supported.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This object is not used or supported.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>This object is not used or supported.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
     pub fn wait_for_quiet_time(mut self, input: bool) -> Self {
@@ -484,8 +467,11 @@ impl JourneyResponseBuilder {
     }
     /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
     pub fn set_wait_for_quiet_time(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.wait_for_quiet_time = input;
-        self
+        self.wait_for_quiet_time = input; self
+    }
+    /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
+    pub fn get_wait_for_quiet_time(&self) -> &::std::option::Option<bool> {
+        &self.wait_for_quiet_time
     }
     /// <p>Indicates whether the journey participants should be refreshed when a segment is updated.</p>
     pub fn refresh_on_segment_update(mut self, input: bool) -> Self {
@@ -494,8 +480,11 @@ impl JourneyResponseBuilder {
     }
     /// <p>Indicates whether the journey participants should be refreshed when a segment is updated.</p>
     pub fn set_refresh_on_segment_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.refresh_on_segment_update = input;
-        self
+        self.refresh_on_segment_update = input; self
+    }
+    /// <p>Indicates whether the journey participants should be refreshed when a segment is updated.</p>
+    pub fn get_refresh_on_segment_update(&self) -> &::std::option::Option<bool> {
+        &self.refresh_on_segment_update
     }
     /// <p>The channel-specific configurations for the journey.</p>
     pub fn journey_channel_settings(mut self, input: crate::types::JourneyChannelSettings) -> Self {
@@ -503,12 +492,12 @@ impl JourneyResponseBuilder {
         self
     }
     /// <p>The channel-specific configurations for the journey.</p>
-    pub fn set_journey_channel_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyChannelSettings>,
-    ) -> Self {
-        self.journey_channel_settings = input;
-        self
+    pub fn set_journey_channel_settings(mut self, input: ::std::option::Option<crate::types::JourneyChannelSettings>) -> Self {
+        self.journey_channel_settings = input; self
+    }
+    /// <p>The channel-specific configurations for the journey.</p>
+    pub fn get_journey_channel_settings(&self) -> &::std::option::Option<crate::types::JourneyChannelSettings> {
+        &self.journey_channel_settings
     }
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
     pub fn sending_schedule(mut self, input: bool) -> Self {
@@ -517,8 +506,11 @@ impl JourneyResponseBuilder {
     }
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
     pub fn set_sending_schedule(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sending_schedule = input;
-        self
+        self.sending_schedule = input; self
+    }
+    /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
+    pub fn get_sending_schedule(&self) -> &::std::option::Option<bool> {
+        &self.sending_schedule
     }
     /// <p>The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
     pub fn open_hours(mut self, input: crate::types::OpenHours) -> Self {
@@ -527,8 +519,11 @@ impl JourneyResponseBuilder {
     }
     /// <p>The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
     pub fn set_open_hours(mut self, input: ::std::option::Option<crate::types::OpenHours>) -> Self {
-        self.open_hours = input;
-        self
+        self.open_hours = input; self
+    }
+    /// <p>The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub fn get_open_hours(&self) -> &::std::option::Option<crate::types::OpenHours> {
+        &self.open_hours
     }
     /// <p>The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
     pub fn closed_days(mut self, input: crate::types::ClosedDays) -> Self {
@@ -536,37 +531,59 @@ impl JourneyResponseBuilder {
         self
     }
     /// <p>The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
-    pub fn set_closed_days(
-        mut self,
-        input: ::std::option::Option<crate::types::ClosedDays>,
-    ) -> Self {
-        self.closed_days = input;
-        self
+    pub fn set_closed_days(mut self, input: ::std::option::Option<crate::types::ClosedDays>) -> Self {
+        self.closed_days = input; self
+    }
+    /// <p>The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub fn get_closed_days(&self) -> &::std::option::Option<crate::types::ClosedDays> {
+        &self.closed_days
     }
     /// Consumes the builder and constructs a [`JourneyResponse`](crate::types::JourneyResponse).
     pub fn build(self) -> crate::types::JourneyResponse {
         crate::types::JourneyResponse {
-            activities: self.activities,
-            application_id: self.application_id,
-            creation_date: self.creation_date,
-            id: self.id,
-            last_modified_date: self.last_modified_date,
-            limits: self.limits,
-            local_time: self.local_time,
-            name: self.name,
-            quiet_time: self.quiet_time,
-            refresh_frequency: self.refresh_frequency,
-            schedule: self.schedule,
-            start_activity: self.start_activity,
-            start_condition: self.start_condition,
-            state: self.state,
-            tags: self.tags,
-            wait_for_quiet_time: self.wait_for_quiet_time,
-            refresh_on_segment_update: self.refresh_on_segment_update,
-            journey_channel_settings: self.journey_channel_settings,
-            sending_schedule: self.sending_schedule,
-            open_hours: self.open_hours,
-            closed_days: self.closed_days,
+            activities: self.activities
+            ,
+            application_id: self.application_id
+            ,
+            creation_date: self.creation_date
+            ,
+            id: self.id
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            limits: self.limits
+            ,
+            local_time: self.local_time
+            ,
+            name: self.name
+            ,
+            quiet_time: self.quiet_time
+            ,
+            refresh_frequency: self.refresh_frequency
+            ,
+            schedule: self.schedule
+            ,
+            start_activity: self.start_activity
+            ,
+            start_condition: self.start_condition
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
+            wait_for_quiet_time: self.wait_for_quiet_time
+            ,
+            refresh_on_segment_update: self.refresh_on_segment_update
+            ,
+            journey_channel_settings: self.journey_channel_settings
+            ,
+            sending_schedule: self.sending_schedule
+            ,
+            open_hours: self.open_hours
+            ,
+            closed_days: self.closed_days
+            ,
         }
     }
 }
+

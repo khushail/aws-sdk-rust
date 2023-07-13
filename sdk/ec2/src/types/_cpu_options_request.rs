@@ -3,7 +3,7 @@
 /// <p>The CPU options for the instance. Both the core count and threads per core must be specified in the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CpuOptionsRequest {
+pub struct CpuOptionsRequest  {
     /// <p>The number of CPU cores for the instance.</p>
     #[doc(hidden)]
     pub core_count: ::std::option::Option<i32>,
@@ -24,7 +24,7 @@ impl CpuOptionsRequest {
         self.threads_per_core
     }
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
-    pub fn amd_sev_snp(&self) -> ::std::option::Option<&crate::types::AmdSevSnpSpecification> {
+    pub fn amd_sev_snp(&self) -> ::std::option::Option<& crate::types::AmdSevSnpSpecification> {
         self.amd_sev_snp.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl CpuOptionsRequest {
 
 /// A builder for [`CpuOptionsRequest`](crate::types::CpuOptionsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CpuOptionsRequestBuilder {
     pub(crate) core_count: ::std::option::Option<i32>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl CpuOptionsRequestBuilder {
     }
     /// <p>The number of CPU cores for the instance.</p>
     pub fn set_core_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.core_count = input;
-        self
+        self.core_count = input; self
+    }
+    /// <p>The number of CPU cores for the instance.</p>
+    pub fn get_core_count(&self) -> &::std::option::Option<i32> {
+        &self.core_count
     }
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     pub fn threads_per_core(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl CpuOptionsRequestBuilder {
     }
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     pub fn set_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.threads_per_core = input;
-        self
+        self.threads_per_core = input; self
+    }
+    /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
+    pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
+        &self.threads_per_core
     }
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
     pub fn amd_sev_snp(mut self, input: crate::types::AmdSevSnpSpecification) -> Self {
@@ -72,19 +76,23 @@ impl CpuOptionsRequestBuilder {
         self
     }
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
-    pub fn set_amd_sev_snp(
-        mut self,
-        input: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
-    ) -> Self {
-        self.amd_sev_snp = input;
-        self
+    pub fn set_amd_sev_snp(mut self, input: ::std::option::Option<crate::types::AmdSevSnpSpecification>) -> Self {
+        self.amd_sev_snp = input; self
+    }
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
+    pub fn get_amd_sev_snp(&self) -> &::std::option::Option<crate::types::AmdSevSnpSpecification> {
+        &self.amd_sev_snp
     }
     /// Consumes the builder and constructs a [`CpuOptionsRequest`](crate::types::CpuOptionsRequest).
     pub fn build(self) -> crate::types::CpuOptionsRequest {
         crate::types::CpuOptionsRequest {
-            core_count: self.core_count,
-            threads_per_core: self.threads_per_core,
-            amd_sev_snp: self.amd_sev_snp,
+            core_count: self.core_count
+            ,
+            threads_per_core: self.threads_per_core
+            ,
+            amd_sev_snp: self.amd_sev_snp
+            ,
         }
     }
 }
+

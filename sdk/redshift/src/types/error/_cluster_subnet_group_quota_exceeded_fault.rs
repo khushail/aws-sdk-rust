@@ -3,7 +3,7 @@
 /// <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterSubnetGroupQuotaExceededFault {
+pub struct ClusterSubnetGroupQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,13 @@ pub struct ClusterSubnetGroupQuotaExceededFault {
 }
 impl ClusterSubnetGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ClusterSubnetGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ClusterSubnetGroupQuotaExceededFault")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,20 +25,14 @@ impl ::std::fmt::Display for ClusterSubnetGroupQuotaExceededFault {
     }
 }
 impl ::std::error::Error for ClusterSubnetGroupQuotaExceededFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ClusterSubnetGroupQuotaExceededFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ClusterSubnetGroupQuotaExceededFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ClusterSubnetGroupQuotaExceededFault
-{
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSubnetGroupQuotaExceededFault {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ClusterSubnetGroupQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`ClusterSubnetGroupQuotaExceededFault`](crate::types::error::ClusterSubnetGroupQuotaExceededFault).
@@ -51,9 +43,7 @@ impl ClusterSubnetGroupQuotaExceededFault {
 
 /// A builder for [`ClusterSubnetGroupQuotaExceededFault`](crate::types::error::ClusterSubnetGroupQuotaExceededFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterSubnetGroupQuotaExceededFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -66,28 +56,30 @@ impl ClusterSubnetGroupQuotaExceededFaultBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ClusterSubnetGroupQuotaExceededFault`](crate::types::error::ClusterSubnetGroupQuotaExceededFault).
     pub fn build(self) -> crate::types::error::ClusterSubnetGroupQuotaExceededFault {
         crate::types::error::ClusterSubnetGroupQuotaExceededFault {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

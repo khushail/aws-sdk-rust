@@ -3,7 +3,7 @@
 /// A definition of what is being billed for, including the type and amount.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceSpecification {
+pub struct ResourceSpecification  {
     /// The amount of outbound bandwidth that is discounted in the offering.
     #[doc(hidden)]
     pub reserved_bitrate: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ResourceSpecification {
         self.reserved_bitrate
     }
     /// The type of resource and the unit that is being billed for.
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl ResourceSpecification {
 
 /// A builder for [`ResourceSpecification`](crate::types::ResourceSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceSpecificationBuilder {
     pub(crate) reserved_bitrate: ::std::option::Option<i32>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -45,8 +43,11 @@ impl ResourceSpecificationBuilder {
     }
     /// The amount of outbound bandwidth that is discounted in the offering.
     pub fn set_reserved_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reserved_bitrate = input;
-        self
+        self.reserved_bitrate = input; self
+    }
+    /// The amount of outbound bandwidth that is discounted in the offering.
+    pub fn get_reserved_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.reserved_bitrate
     }
     /// The type of resource and the unit that is being billed for.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -54,18 +55,21 @@ impl ResourceSpecificationBuilder {
         self
     }
     /// The type of resource and the unit that is being billed for.
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
+    }
+    /// The type of resource and the unit that is being billed for.
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResourceSpecification`](crate::types::ResourceSpecification).
     pub fn build(self) -> crate::types::ResourceSpecification {
         crate::types::ResourceSpecification {
-            reserved_bitrate: self.reserved_bitrate,
-            resource_type: self.resource_type,
+            reserved_bitrate: self.reserved_bitrate
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

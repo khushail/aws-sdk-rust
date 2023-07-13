@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMonitoringMembersInput {
+pub struct StartMonitoringMembersInput  {
     /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
     #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct StartMonitoringMembersInput {
 }
 impl StartMonitoringMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn account_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.account_ids.as_deref()
     }
 }
 impl StartMonitoringMembersInput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringMembersInput`](crate::operation::start_monitoring_members::StartMonitoringMembersInput).
-    pub fn builder(
-    ) -> crate::operation::start_monitoring_members::builders::StartMonitoringMembersInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_monitoring_members::builders::StartMonitoringMembersInputBuilder {
         crate::operation::start_monitoring_members::builders::StartMonitoringMembersInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMonitoringMembersInput`](crate::operation::start_monitoring_members::StartMonitoringMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMonitoringMembersInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,8 +42,11 @@ impl StartMonitoringMembersInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
+    }
+    /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// Appends an item to `account_ids`.
     ///
@@ -56,30 +55,28 @@ impl StartMonitoringMembersInputBuilder {
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_ids = input; self
+    }
+    /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`StartMonitoringMembersInput`](crate::operation::start_monitoring_members::StartMonitoringMembersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_monitoring_members::StartMonitoringMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_monitoring_members::StartMonitoringMembersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_monitoring_members::StartMonitoringMembersInput {
-                detector_id: self.detector_id,
-                account_ids: self.account_ids,
-            },
+                detector_id: self.detector_id
+                ,
+                account_ids: self.account_ids
+                ,
+            }
         )
     }
 }
+

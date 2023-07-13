@@ -3,7 +3,7 @@
 /// <p>Contains information about the configurations of selected devices.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceSelectionConfig {
+pub struct DeviceSelectionConfig  {
     /// <p>Type of device subsets to deploy to the current stage.</p>
     #[doc(hidden)]
     pub device_subset_type: ::std::option::Option<crate::types::DeviceSubsetType>,
@@ -19,7 +19,7 @@ pub struct DeviceSelectionConfig {
 }
 impl DeviceSelectionConfig {
     /// <p>Type of device subsets to deploy to the current stage.</p>
-    pub fn device_subset_type(&self) -> ::std::option::Option<&crate::types::DeviceSubsetType> {
+    pub fn device_subset_type(&self) -> ::std::option::Option<& crate::types::DeviceSubsetType> {
         self.device_subset_type.as_ref()
     }
     /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
@@ -27,11 +27,11 @@ impl DeviceSelectionConfig {
         self.percentage
     }
     /// <p>List of devices chosen to deploy.</p>
-    pub fn device_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn device_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.device_names.as_deref()
     }
     /// <p>A filter to select devices with names containing this name.</p>
-    pub fn device_name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn device_name_contains(&self) -> ::std::option::Option<& str> {
         self.device_name_contains.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl DeviceSelectionConfig {
 
 /// A builder for [`DeviceSelectionConfig`](crate::types::DeviceSelectionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceSelectionConfigBuilder {
     pub(crate) device_subset_type: ::std::option::Option<crate::types::DeviceSubsetType>,
     pub(crate) percentage: ::std::option::Option<i32>,
@@ -60,12 +58,12 @@ impl DeviceSelectionConfigBuilder {
         self
     }
     /// <p>Type of device subsets to deploy to the current stage.</p>
-    pub fn set_device_subset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceSubsetType>,
-    ) -> Self {
-        self.device_subset_type = input;
-        self
+    pub fn set_device_subset_type(mut self, input: ::std::option::Option<crate::types::DeviceSubsetType>) -> Self {
+        self.device_subset_type = input; self
+    }
+    /// <p>Type of device subsets to deploy to the current stage.</p>
+    pub fn get_device_subset_type(&self) -> &::std::option::Option<crate::types::DeviceSubsetType> {
+        &self.device_subset_type
     }
     /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
     pub fn percentage(mut self, input: i32) -> Self {
@@ -74,8 +72,11 @@ impl DeviceSelectionConfigBuilder {
     }
     /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
     pub fn set_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percentage = input;
-        self
+        self.percentage = input; self
+    }
+    /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
+    pub fn get_percentage(&self) -> &::std::option::Option<i32> {
+        &self.percentage
     }
     /// Appends an item to `device_names`.
     ///
@@ -84,41 +85,44 @@ impl DeviceSelectionConfigBuilder {
     /// <p>List of devices chosen to deploy.</p>
     pub fn device_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.device_names.unwrap_or_default();
-        v.push(input.into());
-        self.device_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.device_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of devices chosen to deploy.</p>
-    pub fn set_device_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.device_names = input;
-        self
+    pub fn set_device_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.device_names = input; self
+    }
+    /// <p>List of devices chosen to deploy.</p>
+    pub fn get_device_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_names
     }
     /// <p>A filter to select devices with names containing this name.</p>
-    pub fn device_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter to select devices with names containing this name.</p>
-    pub fn set_device_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.device_name_contains = input;
-        self
+    pub fn set_device_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.device_name_contains = input; self
+    }
+    /// <p>A filter to select devices with names containing this name.</p>
+    pub fn get_device_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name_contains
     }
     /// Consumes the builder and constructs a [`DeviceSelectionConfig`](crate::types::DeviceSelectionConfig).
     pub fn build(self) -> crate::types::DeviceSelectionConfig {
         crate::types::DeviceSelectionConfig {
-            device_subset_type: self.device_subset_type,
-            percentage: self.percentage.unwrap_or_default(),
-            device_names: self.device_names,
-            device_name_contains: self.device_name_contains,
+            device_subset_type: self.device_subset_type
+            ,
+            percentage: self.percentage
+                .unwrap_or_default()
+            ,
+            device_names: self.device_names
+            ,
+            device_name_contains: self.device_name_contains
+            ,
         }
     }
 }
+

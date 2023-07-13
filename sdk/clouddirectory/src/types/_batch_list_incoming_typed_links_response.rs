@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>ListIncomingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchListIncomingTypedLinksResponse {
+pub struct BatchListIncomingTypedLinksResponse  {
     /// <p>Returns one or more typed link specifiers as output.</p>
     #[doc(hidden)]
     pub link_specifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
@@ -13,11 +13,11 @@ pub struct BatchListIncomingTypedLinksResponse {
 }
 impl BatchListIncomingTypedLinksResponse {
     /// <p>Returns one or more typed link specifiers as output.</p>
-    pub fn link_specifiers(&self) -> ::std::option::Option<&[crate::types::TypedLinkSpecifier]> {
+    pub fn link_specifiers(&self) -> ::std::option::Option<& [crate::types::TypedLinkSpecifier]> {
         self.link_specifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -30,12 +30,9 @@ impl BatchListIncomingTypedLinksResponse {
 
 /// A builder for [`BatchListIncomingTypedLinksResponse`](crate::types::BatchListIncomingTypedLinksResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListIncomingTypedLinksResponseBuilder {
-    pub(crate) link_specifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
+    pub(crate) link_specifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListIncomingTypedLinksResponseBuilder {
@@ -46,17 +43,17 @@ impl BatchListIncomingTypedLinksResponseBuilder {
     /// <p>Returns one or more typed link specifiers as output.</p>
     pub fn link_specifiers(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         let mut v = self.link_specifiers.unwrap_or_default();
-        v.push(input);
-        self.link_specifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.link_specifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns one or more typed link specifiers as output.</p>
-    pub fn set_link_specifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
-    ) -> Self {
-        self.link_specifiers = input;
-        self
+    pub fn set_link_specifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>) -> Self {
+        self.link_specifiers = input; self
+    }
+    /// <p>Returns one or more typed link specifiers as output.</p>
+    pub fn get_link_specifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>> {
+        &self.link_specifiers
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,14 +62,20 @@ impl BatchListIncomingTypedLinksResponseBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchListIncomingTypedLinksResponse`](crate::types::BatchListIncomingTypedLinksResponse).
     pub fn build(self) -> crate::types::BatchListIncomingTypedLinksResponse {
         crate::types::BatchListIncomingTypedLinksResponse {
-            link_specifiers: self.link_specifiers,
-            next_token: self.next_token,
+            link_specifiers: self.link_specifiers
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

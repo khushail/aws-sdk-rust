@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNodeInput {
+pub struct DescribeNodeInput  {
     /// <p>The node's ID.</p>
     #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeNodeInput {
 }
 impl DescribeNodeInput {
     /// <p>The node's ID.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl DescribeNodeInput {
 
 /// A builder for [`DescribeNodeInput`](crate::operation::describe_node::DescribeNodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNodeInputBuilder {
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
@@ -44,35 +42,35 @@ impl DescribeNodeInputBuilder {
     }
     /// <p>The node's ID.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
+    }
+    /// <p>The node's ID.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.owner_account = input;
-        self
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account = input; self
+    }
+    /// <p>The account ID of the node's owner.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
     }
     /// Consumes the builder and constructs a [`DescribeNodeInput`](crate::operation::describe_node::DescribeNodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_node::DescribeNodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_node::DescribeNodeInput {
-            node_id: self.node_id,
-            owner_account: self.owner_account,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_node::DescribeNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_node::DescribeNodeInput {
+                node_id: self.node_id
+                ,
+                owner_account: self.owner_account
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompleteLayerUploadInput {
+pub struct CompleteLayerUploadInput  {
     /// <p>The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
@@ -18,36 +18,32 @@ pub struct CompleteLayerUploadInput {
 }
 impl CompleteLayerUploadInput {
     /// <p>The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If you do not specify a registry, the default public registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository in a public registry to associate with the image layer.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn layer_digests(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn layer_digests(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.layer_digests.as_deref()
     }
 }
 impl CompleteLayerUploadInput {
     /// Creates a new builder-style object to manufacture [`CompleteLayerUploadInput`](crate::operation::complete_layer_upload::CompleteLayerUploadInput).
-    pub fn builder(
-    ) -> crate::operation::complete_layer_upload::builders::CompleteLayerUploadInputBuilder {
-        crate::operation::complete_layer_upload::builders::CompleteLayerUploadInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::complete_layer_upload::builders::CompleteLayerUploadInputBuilder {
+        crate::operation::complete_layer_upload::builders::CompleteLayerUploadInputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteLayerUploadInput`](crate::operation::complete_layer_upload::CompleteLayerUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteLayerUploadInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -62,24 +58,24 @@ impl CompleteLayerUploadInputBuilder {
     }
     /// <p>The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// <p>The name of the repository in a public registry to associate with the image layer.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository in a public registry to associate with the image layer.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.repository_name = input;
-        self
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.repository_name = input; self
+    }
+    /// <p>The name of the repository in a public registry to associate with the image layer.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,45 +84,45 @@ impl CompleteLayerUploadInputBuilder {
     }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
+    }
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// Appends an item to `layer_digests`.
     ///
     /// To override the contents of this collection use [`set_layer_digests`](Self::set_layer_digests).
     ///
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn layer_digests(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn layer_digests(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.layer_digests.unwrap_or_default();
-        v.push(input.into());
-        self.layer_digests = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.layer_digests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn set_layer_digests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.layer_digests = input;
-        self
+    pub fn set_layer_digests(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.layer_digests = input; self
+    }
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn get_layer_digests(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_digests
     }
     /// Consumes the builder and constructs a [`CompleteLayerUploadInput`](crate::operation::complete_layer_upload::CompleteLayerUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::complete_layer_upload::CompleteLayerUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::complete_layer_upload::CompleteLayerUploadInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::complete_layer_upload::CompleteLayerUploadInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                upload_id: self.upload_id,
-                layer_digests: self.layer_digests,
-            },
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                upload_id: self.upload_id
+                ,
+                layer_digests: self.layer_digests
+                ,
+            }
         )
     }
 }
+

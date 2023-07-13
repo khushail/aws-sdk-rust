@@ -3,24 +3,24 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrderableDbInstanceOptionsInput {
-    /// <p>The name of the engine to retrieve DB instance options for.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> </p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+pub struct DescribeOrderableDbInstanceOptionsInput  {
+    /// <p>The name of the engine to retrieve DB instance options for.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aurora-mysql</code> </p> </li> 
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li> 
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
@@ -30,24 +30,24 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
     #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
-    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p> 
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
     #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
-    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p> 
+    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p> 
     /// <p>This setting doesn't apply to RDS Custom.</p>
     #[doc(hidden)]
     pub availability_zone_group: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p> 
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     #[doc(hidden)]
     pub vpc: ::std::option::Option<bool>,
     /// <p>This parameter isn't currently supported.</p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 10000.</p>
     #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
@@ -56,78 +56,76 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsInput {
-    /// <p>The name of the engine to retrieve DB instance options for.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> </p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <p>The name of the engine to retrieve DB instance options for.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aurora-mysql</code> </p> </li> 
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li> 
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
-    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p> 
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&str> {
+    pub fn license_model(&self) -> ::std::option::Option<& str> {
         self.license_model.as_deref()
     }
-    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p> 
+    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p> 
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn availability_zone_group(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_group(&self) -> ::std::option::Option<& str> {
         self.availability_zone_group.as_deref()
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p> 
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn vpc(&self) -> ::std::option::Option<bool> {
         self.vpc
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 10000.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeOrderableDbInstanceOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsInput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput).
-    pub fn builder() -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder {
         crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrderableDbInstanceOptionsInput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrderableDbInstanceOptionsInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -140,131 +138,146 @@ pub struct DescribeOrderableDbInstanceOptionsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsInputBuilder {
-    /// <p>The name of the engine to retrieve DB instance options for.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> </p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <p>The name of the engine to retrieve DB instance options for.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aurora-mysql</code> </p> </li> 
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li> 
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the engine to retrieve DB instance options for.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> </p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <p>The name of the engine to retrieve DB instance options for.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aurora-mysql</code> </p> </li> 
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li> 
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
+    }
+    /// <p>The name of the engine to retrieve DB instance options for.</p> 
+    /// <p>Valid Values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aurora-mysql</code> </p> </li> 
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li> 
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>mariadb</code> </p> </li> 
+    /// <li> <p> <code>mysql</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee</code> </p> </li> 
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2</code> </p> </li> 
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li> 
+    /// <li> <p> <code>postgres</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-se</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li> 
+    /// <li> <p> <code>sqlserver-web</code> </p> </li> 
+    /// </ul>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.engine_version = input;
-        self
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_version = input; self
+    }
+    /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.db_instance_class = input;
-        self
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_instance_class = input; self
     }
-    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
+    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p> 
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
-    pub fn license_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p> 
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
-    pub fn set_license_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.license_model = input;
-        self
+    pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.license_model = input; self
     }
-    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
+    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p> 
+    /// <p>RDS Custom supports only the BYOL licensing model.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
+    }
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p> 
+    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p> 
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn availability_zone_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p> 
+    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p> 
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn set_availability_zone_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.availability_zone_group = input;
-        self
+    pub fn set_availability_zone_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_group = input; self
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p> 
+    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p> 
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_availability_zone_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_group
+    }
+    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p> 
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn vpc(mut self, input: bool) -> Self {
         self.vpc = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p> 
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn set_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
+    }
+    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p> 
+    /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<bool> {
+        &self.vpc
     }
     /// Appends an item to `filters`.
     ///
@@ -273,31 +286,36 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p>This parameter isn't currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>This parameter isn't currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 10000.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 10000.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
+    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -306,11 +324,14 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeOrderableDbInstanceOptionsInput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput {
                 engine: self.engine
@@ -335,3 +356,4 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         )
     }
 }
+

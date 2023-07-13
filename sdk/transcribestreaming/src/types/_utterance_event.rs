@@ -3,7 +3,7 @@
 /// <p>Contains set of transcription results from one or more audio segments, along with additional information about the parameters included in your request. For example, channel definitions, partial result stabilization, sentiment, and issue detection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UtteranceEvent {
+pub struct UtteranceEvent  {
     /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
     #[doc(hidden)]
     pub utterance_id: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ pub struct UtteranceEvent {
 }
 impl UtteranceEvent {
     /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
-    pub fn utterance_id(&self) -> ::std::option::Option<&str> {
+    pub fn utterance_id(&self) -> ::std::option::Option<& str> {
         self.utterance_id.as_deref()
     }
     /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
@@ -45,7 +45,7 @@ impl UtteranceEvent {
         self.is_partial
     }
     /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
-    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
+    pub fn participant_role(&self) -> ::std::option::Option<& crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
@@ -57,23 +57,23 @@ impl UtteranceEvent {
         self.end_offset_millis
     }
     /// <p>Contains transcribed text.</p>
-    pub fn transcript(&self) -> ::std::option::Option<&str> {
+    pub fn transcript(&self) -> ::std::option::Option<& str> {
         self.transcript.as_deref()
     }
     /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::CallAnalyticsItem]> {
+    pub fn items(&self) -> ::std::option::Option<& [crate::types::CallAnalyticsItem]> {
         self.items.as_deref()
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::CallAnalyticsEntity]> {
+    pub fn entities(&self) -> ::std::option::Option<& [crate::types::CallAnalyticsEntity]> {
         self.entities.as_deref()
     }
     /// <p>Provides the sentiment that was detected in the specified segment.</p>
-    pub fn sentiment(&self) -> ::std::option::Option<&crate::types::Sentiment> {
+    pub fn sentiment(&self) -> ::std::option::Option<& crate::types::Sentiment> {
         self.sentiment.as_ref()
     }
     /// <p>Provides the issue that was detected in the specified segment.</p>
-    pub fn issues_detected(&self) -> ::std::option::Option<&[crate::types::IssueDetected]> {
+    pub fn issues_detected(&self) -> ::std::option::Option<& [crate::types::IssueDetected]> {
         self.issues_detected.as_deref()
     }
 }
@@ -86,9 +86,7 @@ impl UtteranceEvent {
 
 /// A builder for [`UtteranceEvent`](crate::types::UtteranceEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceEventBuilder {
     pub(crate) utterance_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_partial: ::std::option::Option<bool>,
@@ -109,8 +107,11 @@ impl UtteranceEventBuilder {
     }
     /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
     pub fn set_utterance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.utterance_id = input;
-        self
+        self.utterance_id = input; self
+    }
+    /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
+    pub fn get_utterance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utterance_id
     }
     /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
     pub fn is_partial(mut self, input: bool) -> Self {
@@ -119,8 +120,11 @@ impl UtteranceEventBuilder {
     }
     /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
     pub fn set_is_partial(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_partial = input;
-        self
+        self.is_partial = input; self
+    }
+    /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
+    pub fn get_is_partial(&self) -> &::std::option::Option<bool> {
+        &self.is_partial
     }
     /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
@@ -128,12 +132,12 @@ impl UtteranceEventBuilder {
         self
     }
     /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
-    pub fn set_participant_role(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantRole>,
-    ) -> Self {
-        self.participant_role = input;
-        self
+    pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
+        self.participant_role = input; self
+    }
+    /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
+    pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
+        &self.participant_role
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
     pub fn begin_offset_millis(mut self, input: i64) -> Self {
@@ -142,8 +146,11 @@ impl UtteranceEventBuilder {
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
     pub fn set_begin_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.begin_offset_millis = input;
-        self
+        self.begin_offset_millis = input; self
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+    pub fn get_begin_offset_millis(&self) -> &::std::option::Option<i64> {
+        &self.begin_offset_millis
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
     pub fn end_offset_millis(mut self, input: i64) -> Self {
@@ -152,8 +159,11 @@ impl UtteranceEventBuilder {
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
     pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end_offset_millis = input;
-        self
+        self.end_offset_millis = input; self
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+    pub fn get_end_offset_millis(&self) -> &::std::option::Option<i64> {
+        &self.end_offset_millis
     }
     /// <p>Contains transcribed text.</p>
     pub fn transcript(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,8 +172,11 @@ impl UtteranceEventBuilder {
     }
     /// <p>Contains transcribed text.</p>
     pub fn set_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
+    }
+    /// <p>Contains transcribed text.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcript
     }
     /// Appends an item to `items`.
     ///
@@ -172,17 +185,17 @@ impl UtteranceEventBuilder {
     /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
     pub fn items(mut self, input: crate::types::CallAnalyticsItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsItem>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsItem>>) -> Self {
+        self.items = input; self
+    }
+    /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsItem>> {
+        &self.items
     }
     /// Appends an item to `entities`.
     ///
@@ -191,17 +204,17 @@ impl UtteranceEventBuilder {
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
     pub fn entities(mut self, input: crate::types::CallAnalyticsEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>>) -> Self {
+        self.entities = input; self
+    }
+    /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>> {
+        &self.entities
     }
     /// <p>Provides the sentiment that was detected in the specified segment.</p>
     pub fn sentiment(mut self, input: crate::types::Sentiment) -> Self {
@@ -210,8 +223,11 @@ impl UtteranceEventBuilder {
     }
     /// <p>Provides the sentiment that was detected in the specified segment.</p>
     pub fn set_sentiment(mut self, input: ::std::option::Option<crate::types::Sentiment>) -> Self {
-        self.sentiment = input;
-        self
+        self.sentiment = input; self
+    }
+    /// <p>Provides the sentiment that was detected in the specified segment.</p>
+    pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::Sentiment> {
+        &self.sentiment
     }
     /// Appends an item to `issues_detected`.
     ///
@@ -220,31 +236,43 @@ impl UtteranceEventBuilder {
     /// <p>Provides the issue that was detected in the specified segment.</p>
     pub fn issues_detected(mut self, input: crate::types::IssueDetected) -> Self {
         let mut v = self.issues_detected.unwrap_or_default();
-        v.push(input);
-        self.issues_detected = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.issues_detected = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides the issue that was detected in the specified segment.</p>
-    pub fn set_issues_detected(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
-    ) -> Self {
-        self.issues_detected = input;
-        self
+    pub fn set_issues_detected(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>) -> Self {
+        self.issues_detected = input; self
+    }
+    /// <p>Provides the issue that was detected in the specified segment.</p>
+    pub fn get_issues_detected(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>> {
+        &self.issues_detected
     }
     /// Consumes the builder and constructs a [`UtteranceEvent`](crate::types::UtteranceEvent).
     pub fn build(self) -> crate::types::UtteranceEvent {
         crate::types::UtteranceEvent {
-            utterance_id: self.utterance_id,
-            is_partial: self.is_partial.unwrap_or_default(),
-            participant_role: self.participant_role,
-            begin_offset_millis: self.begin_offset_millis,
-            end_offset_millis: self.end_offset_millis,
-            transcript: self.transcript,
-            items: self.items,
-            entities: self.entities,
-            sentiment: self.sentiment,
-            issues_detected: self.issues_detected,
+            utterance_id: self.utterance_id
+            ,
+            is_partial: self.is_partial
+                .unwrap_or_default()
+            ,
+            participant_role: self.participant_role
+            ,
+            begin_offset_millis: self.begin_offset_millis
+            ,
+            end_offset_millis: self.end_offset_millis
+            ,
+            transcript: self.transcript
+            ,
+            items: self.items
+            ,
+            entities: self.entities
+            ,
+            sentiment: self.sentiment
+            ,
+            issues_detected: self.issues_detected
+            ,
         }
     }
 }
+

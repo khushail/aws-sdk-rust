@@ -3,7 +3,7 @@
 /// <p>The media pipeline's configuration object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ChimeSdkMeetingLiveConnectorConfiguration {
+pub struct ChimeSdkMeetingLiveConnectorConfiguration  {
     /// <p>The configuration object's Chime SDK meeting ARN.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -12,35 +12,30 @@ pub struct ChimeSdkMeetingLiveConnectorConfiguration {
     pub mux_type: ::std::option::Option<crate::types::LiveConnectorMuxType>,
     /// <p>The media pipeline's composited video.</p>
     #[doc(hidden)]
-    pub composited_video:
-        ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
+    pub composited_video: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
     /// <p>The source configuration settings of the media pipeline's configuration object.</p>
     #[doc(hidden)]
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
 }
 impl ChimeSdkMeetingLiveConnectorConfiguration {
     /// <p>The configuration object's Chime SDK meeting ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The configuration object's multiplex type.</p>
-    pub fn mux_type(&self) -> ::std::option::Option<&crate::types::LiveConnectorMuxType> {
+    pub fn mux_type(&self) -> ::std::option::Option<& crate::types::LiveConnectorMuxType> {
         self.mux_type.as_ref()
     }
     /// <p>The media pipeline's composited video.</p>
-    pub fn composited_video(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CompositedVideoArtifactsConfiguration> {
+    pub fn composited_video(&self) -> ::std::option::Option<& crate::types::CompositedVideoArtifactsConfiguration> {
         self.composited_video.as_ref()
     }
     /// <p>The source configuration settings of the media pipeline's configuration object.</p>
-    pub fn source_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceConfiguration> {
+    pub fn source_configuration(&self) -> ::std::option::Option<& crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for ChimeSdkMeetingLiveConnectorConfiguration {
+impl  ::std::fmt::Debug for ChimeSdkMeetingLiveConnectorConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChimeSdkMeetingLiveConnectorConfiguration");
         formatter.field("arn", &"*** Sensitive Data Redacted ***");
@@ -63,8 +58,7 @@ impl ChimeSdkMeetingLiveConnectorConfiguration {
 pub struct ChimeSdkMeetingLiveConnectorConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) mux_type: ::std::option::Option<crate::types::LiveConnectorMuxType>,
-    pub(crate) composited_video:
-        ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
+    pub(crate) composited_video: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
 }
 impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
@@ -75,8 +69,11 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
     }
     /// <p>The configuration object's Chime SDK meeting ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The configuration object's Chime SDK meeting ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The configuration object's multiplex type.</p>
     pub fn mux_type(mut self, input: crate::types::LiveConnectorMuxType) -> Self {
@@ -84,28 +81,25 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
         self
     }
     /// <p>The configuration object's multiplex type.</p>
-    pub fn set_mux_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LiveConnectorMuxType>,
-    ) -> Self {
-        self.mux_type = input;
-        self
+    pub fn set_mux_type(mut self, input: ::std::option::Option<crate::types::LiveConnectorMuxType>) -> Self {
+        self.mux_type = input; self
+    }
+    /// <p>The configuration object's multiplex type.</p>
+    pub fn get_mux_type(&self) -> &::std::option::Option<crate::types::LiveConnectorMuxType> {
+        &self.mux_type
     }
     /// <p>The media pipeline's composited video.</p>
-    pub fn composited_video(
-        mut self,
-        input: crate::types::CompositedVideoArtifactsConfiguration,
-    ) -> Self {
+    pub fn composited_video(mut self, input: crate::types::CompositedVideoArtifactsConfiguration) -> Self {
         self.composited_video = ::std::option::Option::Some(input);
         self
     }
     /// <p>The media pipeline's composited video.</p>
-    pub fn set_composited_video(
-        mut self,
-        input: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
-    ) -> Self {
-        self.composited_video = input;
-        self
+    pub fn set_composited_video(mut self, input: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>) -> Self {
+        self.composited_video = input; self
+    }
+    /// <p>The media pipeline's composited video.</p>
+    pub fn get_composited_video(&self) -> &::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration> {
+        &self.composited_video
     }
     /// <p>The source configuration settings of the media pipeline's configuration object.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
@@ -113,20 +107,24 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
         self
     }
     /// <p>The source configuration settings of the media pipeline's configuration object.</p>
-    pub fn set_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConfiguration>,
-    ) -> Self {
-        self.source_configuration = input;
-        self
+    pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
+        self.source_configuration = input; self
+    }
+    /// <p>The source configuration settings of the media pipeline's configuration object.</p>
+    pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
+        &self.source_configuration
     }
     /// Consumes the builder and constructs a [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::types::ChimeSdkMeetingLiveConnectorConfiguration).
     pub fn build(self) -> crate::types::ChimeSdkMeetingLiveConnectorConfiguration {
         crate::types::ChimeSdkMeetingLiveConnectorConfiguration {
-            arn: self.arn,
-            mux_type: self.mux_type,
-            composited_video: self.composited_video,
-            source_configuration: self.source_configuration,
+            arn: self.arn
+            ,
+            mux_type: self.mux_type
+            ,
+            composited_video: self.composited_video
+            ,
+            source_configuration: self.source_configuration
+            ,
         }
     }
 }
@@ -140,3 +138,4 @@ impl ::std::fmt::Debug for ChimeSdkMeetingLiveConnectorConfigurationBuilder {
         formatter.finish()
     }
 }
+

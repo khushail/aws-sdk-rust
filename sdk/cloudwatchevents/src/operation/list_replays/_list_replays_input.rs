@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReplaysInput {
+pub struct ListReplaysInput  {
     /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
     #[doc(hidden)]
     pub name_prefix: ::std::option::Option<::std::string::String>,
@@ -21,19 +21,19 @@ pub struct ListReplaysInput {
 }
 impl ListReplaysInput {
     /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
-    pub fn name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn name_prefix(&self) -> ::std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
     /// <p>The state of the replay.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ReplayState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ReplayState> {
         self.state.as_ref()
     }
     /// <p>The ARN of the archive from which the events are replayed.</p>
-    pub fn event_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> ::std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of replays to retrieve.</p>
@@ -50,9 +50,7 @@ impl ListReplaysInput {
 
 /// A builder for [`ListReplaysInput`](crate::operation::list_replays::ListReplaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReplaysInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ReplayState>,
@@ -68,8 +66,11 @@ impl ListReplaysInputBuilder {
     }
     /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
+    }
+    /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_prefix
     }
     /// <p>The state of the replay.</p>
     pub fn state(mut self, input: crate::types::ReplayState) -> Self {
@@ -78,24 +79,24 @@ impl ListReplaysInputBuilder {
     }
     /// <p>The state of the replay.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReplayState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The state of the replay.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplayState> {
+        &self.state
     }
     /// <p>The ARN of the archive from which the events are replayed.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the archive from which the events are replayed.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_source_arn = input;
-        self
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_source_arn = input; self
+    }
+    /// <p>The ARN of the archive from which the events are replayed.</p>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_arn
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,8 +105,11 @@ impl ListReplaysInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of replays to retrieve.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -114,22 +118,28 @@ impl ListReplaysInputBuilder {
     }
     /// <p>The maximum number of replays to retrieve.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    /// <p>The maximum number of replays to retrieve.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListReplaysInput`](crate::operation::list_replays::ListReplaysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_replays::ListReplaysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_replays::ListReplaysInput {
-            name_prefix: self.name_prefix,
-            state: self.state,
-            event_source_arn: self.event_source_arn,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_replays::ListReplaysInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_replays::ListReplaysInput {
+                name_prefix: self.name_prefix
+                ,
+                state: self.state
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

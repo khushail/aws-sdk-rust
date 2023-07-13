@@ -2,94 +2,83 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachInstancesToLoadBalancerInput {
+pub struct AttachInstancesToLoadBalancerInput  {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
-    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
-    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>
+    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p> 
+    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p> 
     /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
     #[doc(hidden)]
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttachInstancesToLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
-    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
-    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>
+    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p> 
+    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p> 
     /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
-    pub fn instance_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn instance_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.instance_names.as_deref()
     }
 }
 impl AttachInstancesToLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`AttachInstancesToLoadBalancerInput`](crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput).
-    pub fn builder() -> crate::operation::attach_instances_to_load_balancer::builders::AttachInstancesToLoadBalancerInputBuilder{
+    pub fn builder() -> crate::operation::attach_instances_to_load_balancer::builders::AttachInstancesToLoadBalancerInputBuilder {
         crate::operation::attach_instances_to_load_balancer::builders::AttachInstancesToLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachInstancesToLoadBalancerInput`](crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachInstancesToLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttachInstancesToLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.load_balancer_name = input; self
+    }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
     }
     /// Appends an item to `instance_names`.
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
-    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
-    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>
+    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p> 
+    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p> 
     /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
-    pub fn instance_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
-        v.push(input.into());
-        self.instance_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_names = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
-    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>
+    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p> 
+    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p> 
     /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
-    pub fn set_instance_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.instance_names = input;
-        self
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.instance_names = input; self
+    }
+    /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p> 
+    /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p> 
+    /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_names
     }
     /// Consumes the builder and constructs a [`AttachInstancesToLoadBalancerInput`](crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name
@@ -100,3 +89,4 @@ impl AttachInstancesToLoadBalancerInputBuilder {
         )
     }
 }
+

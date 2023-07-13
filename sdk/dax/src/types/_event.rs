@@ -3,7 +3,7 @@
 /// <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Event {
+pub struct Event  {
     /// <p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>
     #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct Event {
 }
 impl Event {
     /// <p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
     /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>A user-defined message associated with the event.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The date and time when the event occurred.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBuilder {
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
@@ -61,8 +59,11 @@ impl EventBuilder {
     }
     /// <p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
+    }
+    /// <p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
     }
     /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
@@ -70,12 +71,12 @@ impl EventBuilder {
         self
     }
     /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
-        self.source_type = input;
-        self
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
+        self.source_type = input; self
+    }
+    /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
     }
     /// <p>A user-defined message associated with the event.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,8 +85,11 @@ impl EventBuilder {
     }
     /// <p>A user-defined message associated with the event.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A user-defined message associated with the event.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The date and time when the event occurred.</p>
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -94,16 +98,24 @@ impl EventBuilder {
     }
     /// <p>The date and time when the event occurred.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
+    }
+    /// <p>The date and time when the event occurred.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            source_name: self.source_name,
-            source_type: self.source_type,
-            message: self.message,
-            date: self.date,
+            source_name: self.source_name
+            ,
+            source_type: self.source_type
+            ,
+            message: self.message
+            ,
+            date: self.date
+            ,
         }
     }
 }
+

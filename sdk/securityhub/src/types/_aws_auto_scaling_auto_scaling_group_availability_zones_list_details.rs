@@ -3,31 +3,27 @@
 /// <p>An Availability Zone for the automatic scaling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
+pub struct AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails  {
     /// <p>The name of the Availability Zone.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
     /// <p>The name of the Availability Zone.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder {
         crate::types::builders::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
@@ -39,13 +35,18 @@ impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder {
     }
     /// <p>The name of the Availability Zone.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The name of the Availability Zone.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
         crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
-            value: self.value,
+            value: self.value
+            ,
         }
     }
 }
+

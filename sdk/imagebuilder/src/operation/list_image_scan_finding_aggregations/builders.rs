@@ -3,89 +3,100 @@ pub use crate::operation::list_image_scan_finding_aggregations::_list_image_scan
 
 pub use crate::operation::list_image_scan_finding_aggregations::_list_image_scan_finding_aggregations_input::ListImageScanFindingAggregationsInputBuilder;
 
+impl ListImageScanFindingAggregationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.list_image_scan_finding_aggregations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ListImageScanFindingAggregations`.
-///
-/// <p>Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder uses to group results. For example, if you want to get a list of findings by severity level for one of your pipelines, you might specify your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify a filter, Image Builder returns an aggregation for your account.</p>
-/// <p>To streamline results, you can use the following filters in your request:</p>
-/// <ul>
-/// <li> <p> <code>accountId</code> </p> </li>
-/// <li> <p> <code>imageBuildVersionArn</code> </p> </li>
-/// <li> <p> <code>imagePipelineArn</code> </p> </li>
-/// <li> <p> <code>vulnerabilityId</code> </p> </li>
+/// 
+/// <p>Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder uses to group results. For example, if you want to get a list of findings by severity level for one of your pipelines, you might specify your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify a filter, Image Builder returns an aggregation for your account.</p> 
+/// <p>To streamline results, you can use the following filters in your request:</p> 
+/// <ul> 
+/// <li> <p> <code>accountId</code> </p> </li> 
+/// <li> <p> <code>imageBuildVersionArn</code> </p> </li> 
+/// <li> <p> <code>imagePipelineArn</code> </p> </li> 
+/// <li> <p> <code>vulnerabilityId</code> </p> </li> 
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImageScanFindingAggregationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsInputBuilder,
 }
-impl ListImageScanFindingAggregationsFluentBuilder {
+impl ListImageScanFindingAggregationsFluentBuilder  {
     /// Creates a new `ListImageScanFindingAggregations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListImageScanFindingAggregations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregations, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator{
-        crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator {
+                                crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filter(input);
@@ -95,6 +106,10 @@ impl ListImageScanFindingAggregationsFluentBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
+        self.inner.get_filter()
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,4 +121,9 @@ impl ListImageScanFindingAggregationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

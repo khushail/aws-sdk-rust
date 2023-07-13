@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIngressGatewayBridgeRequest {
+pub struct UpdateIngressGatewayBridgeRequest  {
     /// The maximum expected bitrate (in bps).
     #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
@@ -29,9 +29,7 @@ impl UpdateIngressGatewayBridgeRequest {
 
 /// A builder for [`UpdateIngressGatewayBridgeRequest`](crate::types::UpdateIngressGatewayBridgeRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIngressGatewayBridgeRequestBuilder {
     pub(crate) max_bitrate: ::std::option::Option<i32>,
     pub(crate) max_outputs: ::std::option::Option<i32>,
@@ -44,8 +42,11 @@ impl UpdateIngressGatewayBridgeRequestBuilder {
     }
     /// The maximum expected bitrate (in bps).
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_bitrate = input;
-        self
+        self.max_bitrate = input; self
+    }
+    /// The maximum expected bitrate (in bps).
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
     }
     /// The maximum number of expected outputs.
     pub fn max_outputs(mut self, input: i32) -> Self {
@@ -54,14 +55,20 @@ impl UpdateIngressGatewayBridgeRequestBuilder {
     }
     /// The maximum number of expected outputs.
     pub fn set_max_outputs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_outputs = input;
-        self
+        self.max_outputs = input; self
+    }
+    /// The maximum number of expected outputs.
+    pub fn get_max_outputs(&self) -> &::std::option::Option<i32> {
+        &self.max_outputs
     }
     /// Consumes the builder and constructs a [`UpdateIngressGatewayBridgeRequest`](crate::types::UpdateIngressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::UpdateIngressGatewayBridgeRequest {
         crate::types::UpdateIngressGatewayBridgeRequest {
-            max_bitrate: self.max_bitrate,
-            max_outputs: self.max_outputs,
+            max_bitrate: self.max_bitrate
+            ,
+            max_outputs: self.max_outputs
+            ,
         }
     }
 }
+

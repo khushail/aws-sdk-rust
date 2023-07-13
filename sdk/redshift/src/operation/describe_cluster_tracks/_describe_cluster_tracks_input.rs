@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClusterTracksInput {
+pub struct DescribeClusterTracksInput  {
     /// <p>The name of the maintenance track. </p>
     #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeClusterTracksInput {
 }
 impl DescribeClusterTracksInput {
     /// <p>The name of the maintenance track. </p>
-    pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> ::std::option::Option<& str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>An integer value for the maximum number of maintenance tracks to return.</p>
@@ -23,24 +23,20 @@ impl DescribeClusterTracksInput {
         self.max_records
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeClusterTracksInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterTracksInput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksInputBuilder {
         crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterTracksInput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterTracksInputBuilder {
     pub(crate) maintenance_track_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -48,20 +44,17 @@ pub struct DescribeClusterTracksInputBuilder {
 }
 impl DescribeClusterTracksInputBuilder {
     /// <p>The name of the maintenance track. </p>
-    pub fn maintenance_track_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance track. </p>
-    pub fn set_maintenance_track_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.maintenance_track_name = input;
-        self
+    pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.maintenance_track_name = input; self
+    }
+    /// <p>The name of the maintenance track. </p>
+    pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_track_name
     }
     /// <p>An integer value for the maximum number of maintenance tracks to return.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -70,8 +63,11 @@ impl DescribeClusterTracksInputBuilder {
     }
     /// <p>An integer value for the maximum number of maintenance tracks to return.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
+    }
+    /// <p>An integer value for the maximum number of maintenance tracks to return.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,22 +76,24 @@ impl DescribeClusterTracksInputBuilder {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeClusterTracksInput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cluster_tracks::DescribeClusterTracksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_cluster_tracks::DescribeClusterTracksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_cluster_tracks::DescribeClusterTracksInput {
-                maintenance_track_name: self.maintenance_track_name,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
+                maintenance_track_name: self.maintenance_track_name
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
         )
     }
 }
+

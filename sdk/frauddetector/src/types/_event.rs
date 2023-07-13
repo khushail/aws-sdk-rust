@@ -3,7 +3,7 @@
 /// <p>The event details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Event {
+pub struct Event  {
     /// <p>The event ID.</p>
     #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
@@ -15,9 +15,7 @@ pub struct Event {
     pub event_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
     #[doc(hidden)]
-    pub event_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub event_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The label associated with the event.</p>
     #[doc(hidden)]
     pub current_label: ::std::option::Option<::std::string::String>,
@@ -30,35 +28,31 @@ pub struct Event {
 }
 impl Event {
     /// <p>The event ID.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The event type.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn event_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn event_timestamp(&self) -> ::std::option::Option<& str> {
         self.event_timestamp.as_deref()
     }
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
-    pub fn event_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn event_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.event_variables.as_ref()
     }
     /// <p>The label associated with the event.</p>
-    pub fn current_label(&self) -> ::std::option::Option<&str> {
+    pub fn current_label(&self) -> ::std::option::Option<& str> {
         self.current_label.as_deref()
     }
     /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn label_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn label_timestamp(&self) -> ::std::option::Option<& str> {
         self.label_timestamp.as_deref()
     }
     /// <p>The event entities.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
+    pub fn entities(&self) -> ::std::option::Option<& [crate::types::Entity]> {
         self.entities.as_deref()
     }
 }
@@ -71,16 +65,12 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_timestamp: ::std::option::Option<::std::string::String>,
-    pub(crate) event_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) event_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) current_label: ::std::option::Option<::std::string::String>,
     pub(crate) label_timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
@@ -93,97 +83,82 @@ impl EventBuilder {
     }
     /// <p>The event ID.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
+    }
+    /// <p>The event ID.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// <p>The event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_type_name = input;
-        self
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_type_name = input; self
+    }
+    /// <p>The event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
     }
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn event_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn set_event_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_timestamp = input;
-        self
+    pub fn set_event_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_timestamp = input; self
+    }
+    /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub fn get_event_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_timestamp
     }
     /// Adds a key-value pair to `event_variables`.
     ///
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
     ///
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
-    pub fn event_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.event_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.event_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.event_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
-    pub fn set_event_variables(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.event_variables = input;
-        self
+    pub fn set_event_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.event_variables = input; self
+    }
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    pub fn get_event_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.event_variables
     }
     /// <p>The label associated with the event.</p>
-    pub fn current_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label associated with the event.</p>
-    pub fn set_current_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.current_label = input;
-        self
+    pub fn set_current_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.current_label = input; self
+    }
+    /// <p>The label associated with the event.</p>
+    pub fn get_current_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_label
     }
     /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn label_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn set_label_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.label_timestamp = input;
-        self
+    pub fn set_label_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.label_timestamp = input; self
+    }
+    /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub fn get_label_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_timestamp
     }
     /// Appends an item to `entities`.
     ///
@@ -192,28 +167,36 @@ impl EventBuilder {
     /// <p>The event entities.</p>
     pub fn entities(mut self, input: crate::types::Entity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The event entities.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
+        self.entities = input; self
+    }
+    /// <p>The event entities.</p>
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        &self.entities
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            event_id: self.event_id,
-            event_type_name: self.event_type_name,
-            event_timestamp: self.event_timestamp,
-            event_variables: self.event_variables,
-            current_label: self.current_label,
-            label_timestamp: self.label_timestamp,
-            entities: self.entities,
+            event_id: self.event_id
+            ,
+            event_type_name: self.event_type_name
+            ,
+            event_timestamp: self.event_timestamp
+            ,
+            event_variables: self.event_variables
+            ,
+            current_label: self.current_label
+            ,
+            label_timestamp: self.label_timestamp
+            ,
+            entities: self.entities
+            ,
         }
     }
 }
+

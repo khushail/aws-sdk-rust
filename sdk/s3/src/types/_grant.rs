@@ -3,7 +3,7 @@
 /// <p>Container for grant information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Grant {
+pub struct Grant  {
     /// <p>The person being granted permissions.</p>
     #[doc(hidden)]
     pub grantee: ::std::option::Option<crate::types::Grantee>,
@@ -13,11 +13,11 @@ pub struct Grant {
 }
 impl Grant {
     /// <p>The person being granted permissions.</p>
-    pub fn grantee(&self) -> ::std::option::Option<&crate::types::Grantee> {
+    pub fn grantee(&self) -> ::std::option::Option<& crate::types::Grantee> {
         self.grantee.as_ref()
     }
     /// <p>Specifies the permission given to the grantee.</p>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::Permission> {
         self.permission.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl Grant {
 
 /// A builder for [`Grant`](crate::types::Grant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantBuilder {
     pub(crate) grantee: ::std::option::Option<crate::types::Grantee>,
     pub(crate) permission: ::std::option::Option<crate::types::Permission>,
@@ -45,8 +43,11 @@ impl GrantBuilder {
     }
     /// <p>The person being granted permissions.</p>
     pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::Grantee>) -> Self {
-        self.grantee = input;
-        self
+        self.grantee = input; self
+    }
+    /// <p>The person being granted permissions.</p>
+    pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
+        &self.grantee
     }
     /// <p>Specifies the permission given to the grantee.</p>
     pub fn permission(mut self, input: crate::types::Permission) -> Self {
@@ -54,18 +55,21 @@ impl GrantBuilder {
         self
     }
     /// <p>Specifies the permission given to the grantee.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::Permission>,
-    ) -> Self {
-        self.permission = input;
-        self
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
+        self.permission = input; self
+    }
+    /// <p>Specifies the permission given to the grantee.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
+        &self.permission
     }
     /// Consumes the builder and constructs a [`Grant`](crate::types::Grant).
     pub fn build(self) -> crate::types::Grant {
         crate::types::Grant {
-            grantee: self.grantee,
-            permission: self.permission,
+            grantee: self.grantee
+            ,
+            permission: self.permission
+            ,
         }
     }
 }
+

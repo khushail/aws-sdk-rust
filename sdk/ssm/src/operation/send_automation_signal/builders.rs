@@ -3,117 +3,100 @@ pub use crate::operation::send_automation_signal::_send_automation_signal_output
 
 pub use crate::operation::send_automation_signal::_send_automation_signal_input::SendAutomationSignalInputBuilder;
 
+impl SendAutomationSignalInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::send_automation_signal::SendAutomationSignalOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::send_automation_signal::SendAutomationSignalError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.send_automation_signal();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SendAutomationSignal`.
-///
+/// 
 /// <p>Sends a signal to an Automation execution to change the current behavior or status of the execution. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendAutomationSignalFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder,
+                    inner: crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder,
 }
-impl SendAutomationSignalFluentBuilder {
+impl SendAutomationSignalFluentBuilder  {
     /// Creates a new `SendAutomationSignal`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_automation_signal::SendAutomationSignal,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_automation_signal::SendAutomationSignalError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SendAutomationSignal as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_automation_signal::SendAutomationSignalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_automation_signal::SendAutomationSignalError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::send_automation_signal::SendAutomationSignal, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::send_automation_signal::SendAutomationSignalError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::send_automation_signal::SendAutomationSignalOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_automation_signal::SendAutomationSignalError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_automation_signal::SendAutomationSignalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_automation_signal::SendAutomationSignalError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_automation_signal::SendAutomationSignal,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_automation_signal::SendAutomationSignalError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::send_automation_signal::SendAutomationSignalOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_automation_signal::SendAutomationSignalError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::send_automation_signal::SendAutomationSignal, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::send_automation_signal::SendAutomationSignalError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.automation_execution_id(input.into());
         self
     }
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_automation_execution_id(input);
         self
+    }
+    /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
+    pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_automation_execution_id()
     }
     /// <p>The type of signal to send to an Automation execution. </p>
     pub fn signal_type(mut self, input: crate::types::SignalType) -> Self {
@@ -121,49 +104,49 @@ impl SendAutomationSignalFluentBuilder {
         self
     }
     /// <p>The type of signal to send to an Automation execution. </p>
-    pub fn set_signal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SignalType>,
-    ) -> Self {
+    pub fn set_signal_type(mut self, input: ::std::option::Option<crate::types::SignalType>) -> Self {
         self.inner = self.inner.set_signal_type(input);
         self
+    }
+    /// <p>The type of signal to send to an Automation execution. </p>
+    pub fn get_signal_type(&self) -> &::std::option::Option<crate::types::SignalType> {
+        self.inner.get_signal_type()
     }
     /// Adds a key-value pair to `Payload`.
     ///
     /// To override the contents of this collection use [`set_payload`](Self::set_payload).
     ///
-    /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
-    /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
-    /// <p> <code>Comment="Looks good"</code> </p>
-    /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>
-    /// <p> <code>StepName="step1"</code> </p>
-    /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
+    /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p> 
+    /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p> 
+    /// <p> <code>Comment="Looks good"</code> </p> 
+    /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p> 
+    /// <p> <code>StepName="step1"</code> </p> 
+    /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p> 
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
-    pub fn payload(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn payload(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.payload(k.into(), v);
         self
     }
-    /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
-    /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
-    /// <p> <code>Comment="Looks good"</code> </p>
-    /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>
-    /// <p> <code>StepName="step1"</code> </p>
-    /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
+    /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p> 
+    /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p> 
+    /// <p> <code>Comment="Looks good"</code> </p> 
+    /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p> 
+    /// <p> <code>StepName="step1"</code> </p> 
+    /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p> 
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
-    pub fn set_payload(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    ) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
+    /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p> 
+    /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p> 
+    /// <p> <code>Comment="Looks good"</code> </p> 
+    /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p> 
+    /// <p> <code>StepName="step1"</code> </p> 
+    /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p> 
+    /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
+    pub fn get_payload(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.inner.get_payload()
+    }
 }
+

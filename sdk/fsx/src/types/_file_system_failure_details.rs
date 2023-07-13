@@ -3,14 +3,14 @@
 /// <p>A structure providing details of any failures that occurred.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileSystemFailureDetails {
+pub struct FileSystemFailureDetails  {
     /// <p>A message describing any failures that occurred.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl FileSystemFailureDetails {
     /// <p>A message describing any failures that occurred.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl FileSystemFailureDetails {
 
 /// A builder for [`FileSystemFailureDetails`](crate::types::FileSystemFailureDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSystemFailureDetailsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl FileSystemFailureDetailsBuilder {
     }
     /// <p>A message describing any failures that occurred.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A message describing any failures that occurred.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`FileSystemFailureDetails`](crate::types::FileSystemFailureDetails).
     pub fn build(self) -> crate::types::FileSystemFailureDetails {
         crate::types::FileSystemFailureDetails {
-            message: self.message,
+            message: self.message
+            ,
         }
     }
 }
+

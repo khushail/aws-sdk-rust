@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMediaStorageConfigurationInput {
+pub struct DescribeMediaStorageConfigurationInput  {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct DescribeMediaStorageConfigurationInput {
 }
 impl DescribeMediaStorageConfigurationInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
 }
 impl DescribeMediaStorageConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeMediaStorageConfigurationInput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput).
-    pub fn builder() -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationInputBuilder {
         crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMediaStorageConfigurationInput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMediaStorageConfigurationInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl DescribeMediaStorageConfigurationInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
+    }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,11 +55,14 @@ impl DescribeMediaStorageConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// Consumes the builder and constructs a [`DescribeMediaStorageConfigurationInput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput {
                 channel_name: self.channel_name
@@ -69,3 +73,4 @@ impl DescribeMediaStorageConfigurationInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The name and ARN of a group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupNameAndArn {
+pub struct GroupNameAndArn  {
     /// <p>The group name.</p>
     #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct GroupNameAndArn {
 }
 impl GroupNameAndArn {
     /// <p>The group name.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The group ARN.</p>
-    pub fn group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn group_arn(&self) -> ::std::option::Option<& str> {
         self.group_arn.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl GroupNameAndArn {
 
 /// A builder for [`GroupNameAndArn`](crate::types::GroupNameAndArn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupNameAndArnBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl GroupNameAndArnBuilder {
     }
     /// <p>The group name.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
+    }
+    /// <p>The group name.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// <p>The group ARN.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl GroupNameAndArnBuilder {
     }
     /// <p>The group ARN.</p>
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_arn = input;
-        self
+        self.group_arn = input; self
+    }
+    /// <p>The group ARN.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
     }
     /// Consumes the builder and constructs a [`GroupNameAndArn`](crate::types::GroupNameAndArn).
     pub fn build(self) -> crate::types::GroupNameAndArn {
         crate::types::GroupNameAndArn {
-            group_name: self.group_name,
-            group_arn: self.group_arn,
+            group_name: self.group_name
+            ,
+            group_arn: self.group_arn
+            ,
         }
     }
 }
+

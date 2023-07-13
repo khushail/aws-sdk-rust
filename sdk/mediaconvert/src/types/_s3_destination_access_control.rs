@@ -3,14 +3,14 @@
 /// Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DestinationAccessControl {
+pub struct S3DestinationAccessControl  {
     /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
     #[doc(hidden)]
     pub canned_acl: ::std::option::Option<crate::types::S3ObjectCannedAcl>,
 }
 impl S3DestinationAccessControl {
     /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-    pub fn canned_acl(&self) -> ::std::option::Option<&crate::types::S3ObjectCannedAcl> {
+    pub fn canned_acl(&self) -> ::std::option::Option<& crate::types::S3ObjectCannedAcl> {
         self.canned_acl.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl S3DestinationAccessControl {
 
 /// A builder for [`S3DestinationAccessControl`](crate::types::S3DestinationAccessControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DestinationAccessControlBuilder {
     pub(crate) canned_acl: ::std::option::Option<crate::types::S3ObjectCannedAcl>,
 }
@@ -36,17 +34,19 @@ impl S3DestinationAccessControlBuilder {
         self
     }
     /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-    pub fn set_canned_acl(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ObjectCannedAcl>,
-    ) -> Self {
-        self.canned_acl = input;
-        self
+    pub fn set_canned_acl(mut self, input: ::std::option::Option<crate::types::S3ObjectCannedAcl>) -> Self {
+        self.canned_acl = input; self
+    }
+    /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
+    pub fn get_canned_acl(&self) -> &::std::option::Option<crate::types::S3ObjectCannedAcl> {
+        &self.canned_acl
     }
     /// Consumes the builder and constructs a [`S3DestinationAccessControl`](crate::types::S3DestinationAccessControl).
     pub fn build(self) -> crate::types::S3DestinationAccessControl {
         crate::types::S3DestinationAccessControl {
-            canned_acl: self.canned_acl,
+            canned_acl: self.canned_acl
+            ,
         }
     }
 }
+

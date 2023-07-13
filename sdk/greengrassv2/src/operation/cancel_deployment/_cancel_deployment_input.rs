@@ -2,59 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelDeploymentInput {
+pub struct CancelDeploymentInput  {
     /// <p>The ID of the deployment.</p>
     #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelDeploymentInput {
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
 impl CancelDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CancelDeploymentInput`](crate::operation::cancel_deployment::CancelDeploymentInput).
-    pub fn builder() -> crate::operation::cancel_deployment::builders::CancelDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_deployment::builders::CancelDeploymentInputBuilder {
         crate::operation::cancel_deployment::builders::CancelDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDeploymentInput`](crate::operation::cancel_deployment::CancelDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDeploymentInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelDeploymentInputBuilder {
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.deployment_id = input;
-        self
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_id = input; self
+    }
+    /// <p>The ID of the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Consumes the builder and constructs a [`CancelDeploymentInput`](crate::operation::cancel_deployment::CancelDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_deployment::CancelDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_deployment::CancelDeploymentInput {
-            deployment_id: self.deployment_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_deployment::CancelDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_deployment::CancelDeploymentInput {
+                deployment_id: self.deployment_id
+                ,
+            }
+        )
     }
 }
+

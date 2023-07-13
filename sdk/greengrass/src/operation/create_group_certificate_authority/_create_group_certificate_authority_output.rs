@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGroupCertificateAuthorityOutput {
+pub struct CreateGroupCertificateAuthorityOutput  {
     /// The ARN of the group certificate authority.
     #[doc(hidden)]
     pub group_certificate_authority_arn: ::std::option::Option<::std::string::String>,
@@ -10,62 +10,54 @@ pub struct CreateGroupCertificateAuthorityOutput {
 }
 impl CreateGroupCertificateAuthorityOutput {
     /// The ARN of the group certificate authority.
-    pub fn group_certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn group_certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.group_certificate_authority_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateGroupCertificateAuthorityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateGroupCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupCertificateAuthorityOutput`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityOutputBuilder {
         crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGroupCertificateAuthorityOutput`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGroupCertificateAuthorityOutputBuilder {
     pub(crate) group_certificate_authority_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateGroupCertificateAuthorityOutputBuilder {
     /// The ARN of the group certificate authority.
-    pub fn group_certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the group certificate authority.
-    pub fn set_group_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.group_certificate_authority_arn = input;
-        self
+    pub fn set_group_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_certificate_authority_arn = input; self
+    }
+    /// The ARN of the group certificate authority.
+    pub fn get_group_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_certificate_authority_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateGroupCertificateAuthorityOutput`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput
-    {
+    pub fn build(self) -> crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput {
         crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput {
             group_certificate_authority_arn: self.group_certificate_authority_arn
             ,
@@ -73,3 +65,4 @@ impl CreateGroupCertificateAuthorityOutputBuilder {
         }
     }
 }
+

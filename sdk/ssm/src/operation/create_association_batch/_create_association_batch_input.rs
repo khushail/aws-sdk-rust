@@ -2,37 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssociationBatchInput {
+pub struct CreateAssociationBatchInput  {
     /// <p>One or more associations.</p>
     #[doc(hidden)]
-    pub entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>,
 }
 impl CreateAssociationBatchInput {
     /// <p>One or more associations.</p>
-    pub fn entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CreateAssociationBatchRequestEntry]> {
+    pub fn entries(&self) -> ::std::option::Option<& [crate::types::CreateAssociationBatchRequestEntry]> {
         self.entries.as_deref()
     }
 }
 impl CreateAssociationBatchInput {
     /// Creates a new builder-style object to manufacture [`CreateAssociationBatchInput`](crate::operation::create_association_batch::CreateAssociationBatchInput).
-    pub fn builder(
-    ) -> crate::operation::create_association_batch::builders::CreateAssociationBatchInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_association_batch::builders::CreateAssociationBatchInputBuilder {
         crate::operation::create_association_batch::builders::CreateAssociationBatchInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAssociationBatchInput`](crate::operation::create_association_batch::CreateAssociationBatchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssociationBatchInputBuilder {
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>,
 }
 impl CreateAssociationBatchInputBuilder {
     /// Appends an item to `entries`.
@@ -42,31 +34,26 @@ impl CreateAssociationBatchInputBuilder {
     /// <p>One or more associations.</p>
     pub fn entries(mut self, input: crate::types::CreateAssociationBatchRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more associations.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>,
-        >,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>) -> Self {
+        self.entries = input; self
+    }
+    /// <p>One or more associations.</p>
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>> {
+        &self.entries
     }
     /// Consumes the builder and constructs a [`CreateAssociationBatchInput`](crate::operation::create_association_batch::CreateAssociationBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_association_batch::CreateAssociationBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_association_batch::CreateAssociationBatchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_association_batch::CreateAssociationBatchInput {
-                entries: self.entries,
-            },
+                entries: self.entries
+                ,
+            }
         )
     }
 }
+

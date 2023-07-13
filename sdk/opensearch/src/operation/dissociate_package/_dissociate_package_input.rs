@@ -3,7 +3,7 @@
 /// <p>Container for the request parameters to the <code>DissociatePackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DissociatePackageInput {
+pub struct DissociatePackageInput  {
     /// <p>Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</p>
     #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
@@ -13,27 +13,24 @@ pub struct DissociatePackageInput {
 }
 impl DissociatePackageInput {
     /// <p>Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>Name of the domain to dissociate the package from.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
 impl DissociatePackageInput {
     /// Creates a new builder-style object to manufacture [`DissociatePackageInput`](crate::operation::dissociate_package::DissociatePackageInput).
-    pub fn builder() -> crate::operation::dissociate_package::builders::DissociatePackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::dissociate_package::builders::DissociatePackageInputBuilder {
         crate::operation::dissociate_package::builders::DissociatePackageInputBuilder::default()
     }
 }
 
 /// A builder for [`DissociatePackageInput`](crate::operation::dissociate_package::DissociatePackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DissociatePackageInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -46,8 +43,11 @@ impl DissociatePackageInputBuilder {
     }
     /// <p>Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
+    }
+    /// <p>Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
     }
     /// <p>Name of the domain to dissociate the package from.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +56,22 @@ impl DissociatePackageInputBuilder {
     }
     /// <p>Name of the domain to dissociate the package from.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>Name of the domain to dissociate the package from.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`DissociatePackageInput`](crate::operation::dissociate_package::DissociatePackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::dissociate_package::DissociatePackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::dissociate_package::DissociatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::dissociate_package::DissociatePackageInput {
-                package_id: self.package_id,
-                domain_name: self.domain_name,
-            },
+                package_id: self.package_id
+                ,
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

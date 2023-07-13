@@ -3,7 +3,7 @@
 /// <p>The notify configuration type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyConfigurationType {
+pub struct NotifyConfigurationType  {
     /// <p>The email address that is sending the email. The address must be either individually verified with Amazon Simple Email Service, or from a domain that has been verified with Amazon SES.</p>
     #[doc(hidden)]
     pub from: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct NotifyConfigurationType {
 }
 impl NotifyConfigurationType {
     /// <p>The email address that is sending the email. The address must be either individually verified with Amazon Simple Email Service, or from a domain that has been verified with Amazon SES.</p>
-    pub fn from(&self) -> ::std::option::Option<&str> {
+    pub fn from(&self) -> ::std::option::Option<& str> {
         self.from.as_deref()
     }
     /// <p>The destination to which the receiver of an email should reply to.</p>
-    pub fn reply_to(&self) -> ::std::option::Option<&str> {
+    pub fn reply_to(&self) -> ::std::option::Option<& str> {
         self.reply_to.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending authorization policy. This identity permits Amazon Cognito to send for the email address specified in the <code>From</code> parameter.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>Email template used when a detected risk event is blocked.</p>
-    pub fn block_email(&self) -> ::std::option::Option<&crate::types::NotifyEmailType> {
+    pub fn block_email(&self) -> ::std::option::Option<& crate::types::NotifyEmailType> {
         self.block_email.as_ref()
     }
     /// <p>The email template used when a detected risk event is allowed.</p>
-    pub fn no_action_email(&self) -> ::std::option::Option<&crate::types::NotifyEmailType> {
+    pub fn no_action_email(&self) -> ::std::option::Option<& crate::types::NotifyEmailType> {
         self.no_action_email.as_ref()
     }
     /// <p>The multi-factor authentication (MFA) email template used when MFA is challenged as part of a detected risk.</p>
-    pub fn mfa_email(&self) -> ::std::option::Option<&crate::types::NotifyEmailType> {
+    pub fn mfa_email(&self) -> ::std::option::Option<& crate::types::NotifyEmailType> {
         self.mfa_email.as_ref()
     }
 }
@@ -58,9 +58,7 @@ impl NotifyConfigurationType {
 
 /// A builder for [`NotifyConfigurationType`](crate::types::NotifyConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyConfigurationTypeBuilder {
     pub(crate) from: ::std::option::Option<::std::string::String>,
     pub(crate) reply_to: ::std::option::Option<::std::string::String>,
@@ -77,8 +75,11 @@ impl NotifyConfigurationTypeBuilder {
     }
     /// <p>The email address that is sending the email. The address must be either individually verified with Amazon Simple Email Service, or from a domain that has been verified with Amazon SES.</p>
     pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
+    }
+    /// <p>The email address that is sending the email. The address must be either individually verified with Amazon Simple Email Service, or from a domain that has been verified with Amazon SES.</p>
+    pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from
     }
     /// <p>The destination to which the receiver of an email should reply to.</p>
     pub fn reply_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +88,11 @@ impl NotifyConfigurationTypeBuilder {
     }
     /// <p>The destination to which the receiver of an email should reply to.</p>
     pub fn set_reply_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reply_to = input;
-        self
+        self.reply_to = input; self
+    }
+    /// <p>The destination to which the receiver of an email should reply to.</p>
+    pub fn get_reply_to(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reply_to
     }
     /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending authorization policy. This identity permits Amazon Cognito to send for the email address specified in the <code>From</code> parameter.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,8 +101,11 @@ impl NotifyConfigurationTypeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending authorization policy. This identity permits Amazon Cognito to send for the email address specified in the <code>From</code> parameter.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending authorization policy. This identity permits Amazon Cognito to send for the email address specified in the <code>From</code> parameter.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// <p>Email template used when a detected risk event is blocked.</p>
     pub fn block_email(mut self, input: crate::types::NotifyEmailType) -> Self {
@@ -106,12 +113,12 @@ impl NotifyConfigurationTypeBuilder {
         self
     }
     /// <p>Email template used when a detected risk event is blocked.</p>
-    pub fn set_block_email(
-        mut self,
-        input: ::std::option::Option<crate::types::NotifyEmailType>,
-    ) -> Self {
-        self.block_email = input;
-        self
+    pub fn set_block_email(mut self, input: ::std::option::Option<crate::types::NotifyEmailType>) -> Self {
+        self.block_email = input; self
+    }
+    /// <p>Email template used when a detected risk event is blocked.</p>
+    pub fn get_block_email(&self) -> &::std::option::Option<crate::types::NotifyEmailType> {
+        &self.block_email
     }
     /// <p>The email template used when a detected risk event is allowed.</p>
     pub fn no_action_email(mut self, input: crate::types::NotifyEmailType) -> Self {
@@ -119,12 +126,12 @@ impl NotifyConfigurationTypeBuilder {
         self
     }
     /// <p>The email template used when a detected risk event is allowed.</p>
-    pub fn set_no_action_email(
-        mut self,
-        input: ::std::option::Option<crate::types::NotifyEmailType>,
-    ) -> Self {
-        self.no_action_email = input;
-        self
+    pub fn set_no_action_email(mut self, input: ::std::option::Option<crate::types::NotifyEmailType>) -> Self {
+        self.no_action_email = input; self
+    }
+    /// <p>The email template used when a detected risk event is allowed.</p>
+    pub fn get_no_action_email(&self) -> &::std::option::Option<crate::types::NotifyEmailType> {
+        &self.no_action_email
     }
     /// <p>The multi-factor authentication (MFA) email template used when MFA is challenged as part of a detected risk.</p>
     pub fn mfa_email(mut self, input: crate::types::NotifyEmailType) -> Self {
@@ -132,22 +139,29 @@ impl NotifyConfigurationTypeBuilder {
         self
     }
     /// <p>The multi-factor authentication (MFA) email template used when MFA is challenged as part of a detected risk.</p>
-    pub fn set_mfa_email(
-        mut self,
-        input: ::std::option::Option<crate::types::NotifyEmailType>,
-    ) -> Self {
-        self.mfa_email = input;
-        self
+    pub fn set_mfa_email(mut self, input: ::std::option::Option<crate::types::NotifyEmailType>) -> Self {
+        self.mfa_email = input; self
+    }
+    /// <p>The multi-factor authentication (MFA) email template used when MFA is challenged as part of a detected risk.</p>
+    pub fn get_mfa_email(&self) -> &::std::option::Option<crate::types::NotifyEmailType> {
+        &self.mfa_email
     }
     /// Consumes the builder and constructs a [`NotifyConfigurationType`](crate::types::NotifyConfigurationType).
     pub fn build(self) -> crate::types::NotifyConfigurationType {
         crate::types::NotifyConfigurationType {
-            from: self.from,
-            reply_to: self.reply_to,
-            source_arn: self.source_arn,
-            block_email: self.block_email,
-            no_action_email: self.no_action_email,
-            mfa_email: self.mfa_email,
+            from: self.from
+            ,
+            reply_to: self.reply_to
+            ,
+            source_arn: self.source_arn
+            ,
+            block_email: self.block_email
+            ,
+            no_action_email: self.no_action_email
+            ,
+            mfa_email: self.mfa_email
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure containing other metadata for a schema version belonging to the same metadata key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OtherMetadataValueListItem {
+pub struct OtherMetadataValueListItem  {
     /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
     #[doc(hidden)]
     pub metadata_value: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct OtherMetadataValueListItem {
 }
 impl OtherMetadataValueListItem {
     /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
-    pub fn metadata_value(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_value(&self) -> ::std::option::Option<& str> {
         self.metadata_value.as_deref()
     }
     /// <p>The time at which the entry was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl OtherMetadataValueListItem {
 
 /// A builder for [`OtherMetadataValueListItem`](crate::types::OtherMetadataValueListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OtherMetadataValueListItemBuilder {
     pub(crate) metadata_value: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,
 }
 impl OtherMetadataValueListItemBuilder {
     /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
-    pub fn metadata_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
-    pub fn set_metadata_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metadata_value = input;
-        self
+    pub fn set_metadata_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metadata_value = input; self
+    }
+    /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
+    pub fn get_metadata_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_value
     }
     /// <p>The time at which the entry was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl OtherMetadataValueListItemBuilder {
     }
     /// <p>The time at which the entry was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
+    }
+    /// <p>The time at which the entry was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`OtherMetadataValueListItem`](crate::types::OtherMetadataValueListItem).
     pub fn build(self) -> crate::types::OtherMetadataValueListItem {
         crate::types::OtherMetadataValueListItem {
-            metadata_value: self.metadata_value,
-            created_time: self.created_time,
+            metadata_value: self.metadata_value
+            ,
+            created_time: self.created_time
+            ,
         }
     }
 }
+

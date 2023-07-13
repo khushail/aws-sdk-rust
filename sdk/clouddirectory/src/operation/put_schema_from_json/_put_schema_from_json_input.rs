@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSchemaFromJsonInput {
+pub struct PutSchemaFromJsonInput  {
     /// <p>The ARN of the schema to update.</p>
     #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct PutSchemaFromJsonInput {
 }
 impl PutSchemaFromJsonInput {
     /// <p>The ARN of the schema to update.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The replacement JSON schema.</p>
-    pub fn document(&self) -> ::std::option::Option<&str> {
+    pub fn document(&self) -> ::std::option::Option<& str> {
         self.document.as_deref()
     }
 }
 impl PutSchemaFromJsonInput {
     /// Creates a new builder-style object to manufacture [`PutSchemaFromJsonInput`](crate::operation::put_schema_from_json::PutSchemaFromJsonInput).
-    pub fn builder(
-    ) -> crate::operation::put_schema_from_json::builders::PutSchemaFromJsonInputBuilder {
+    pub fn builder() -> crate::operation::put_schema_from_json::builders::PutSchemaFromJsonInputBuilder {
         crate::operation::put_schema_from_json::builders::PutSchemaFromJsonInputBuilder::default()
     }
 }
 
 /// A builder for [`PutSchemaFromJsonInput`](crate::operation::put_schema_from_json::PutSchemaFromJsonInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSchemaFromJsonInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) document: ::std::option::Option<::std::string::String>,
@@ -45,8 +42,11 @@ impl PutSchemaFromJsonInputBuilder {
     }
     /// <p>The ARN of the schema to update.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
+    }
+    /// <p>The ARN of the schema to update.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// <p>The replacement JSON schema.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +55,22 @@ impl PutSchemaFromJsonInputBuilder {
     }
     /// <p>The replacement JSON schema.</p>
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
+    }
+    /// <p>The replacement JSON schema.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
     }
     /// Consumes the builder and constructs a [`PutSchemaFromJsonInput`](crate::operation::put_schema_from_json::PutSchemaFromJsonInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_schema_from_json::PutSchemaFromJsonInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_schema_from_json::PutSchemaFromJsonInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_schema_from_json::PutSchemaFromJsonInput {
-                schema_arn: self.schema_arn,
-                document: self.document,
-            },
+                schema_arn: self.schema_arn
+                ,
+                document: self.document
+                ,
+            }
         )
     }
 }
+

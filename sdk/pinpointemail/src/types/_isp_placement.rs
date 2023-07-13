@@ -3,7 +3,7 @@
 /// <p>An object that describes how email sent during the predictive inbox placement test was handled by a certain email provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IspPlacement {
+pub struct IspPlacement  {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
     #[doc(hidden)]
     pub isp_name: ::std::option::Option<::std::string::String>,
@@ -13,13 +13,11 @@ pub struct IspPlacement {
 }
 impl IspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
-    pub fn isp_name(&self) -> ::std::option::Option<&str> {
+    pub fn isp_name(&self) -> ::std::option::Option<& str> {
         self.isp_name.as_deref()
     }
     /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
-    pub fn placement_statistics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PlacementStatistics> {
+    pub fn placement_statistics(&self) -> ::std::option::Option<& crate::types::PlacementStatistics> {
         self.placement_statistics.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl IspPlacement {
 
 /// A builder for [`IspPlacement`](crate::types::IspPlacement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IspPlacementBuilder {
     pub(crate) isp_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_statistics: ::std::option::Option<crate::types::PlacementStatistics>,
@@ -47,8 +43,11 @@ impl IspPlacementBuilder {
     }
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
     pub fn set_isp_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.isp_name = input;
-        self
+        self.isp_name = input; self
+    }
+    /// <p>The name of the email provider that the inbox placement data applies to.</p>
+    pub fn get_isp_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.isp_name
     }
     /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
     pub fn placement_statistics(mut self, input: crate::types::PlacementStatistics) -> Self {
@@ -56,18 +55,21 @@ impl IspPlacementBuilder {
         self
     }
     /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
-    pub fn set_placement_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementStatistics>,
-    ) -> Self {
-        self.placement_statistics = input;
-        self
+    pub fn set_placement_statistics(mut self, input: ::std::option::Option<crate::types::PlacementStatistics>) -> Self {
+        self.placement_statistics = input; self
+    }
+    /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
+    pub fn get_placement_statistics(&self) -> &::std::option::Option<crate::types::PlacementStatistics> {
+        &self.placement_statistics
     }
     /// Consumes the builder and constructs a [`IspPlacement`](crate::types::IspPlacement).
     pub fn build(self) -> crate::types::IspPlacement {
         crate::types::IspPlacement {
-            isp_name: self.isp_name,
-            placement_statistics: self.placement_statistics,
+            isp_name: self.isp_name
+            ,
+            placement_statistics: self.placement_statistics
+            ,
         }
     }
 }
+

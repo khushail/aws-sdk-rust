@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendedIntentsOutput {
+pub struct ListRecommendedIntentsOutput  {
     /// <p>The unique identifier of the bot associated with the recommended intent.</p>
     #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
@@ -17,8 +17,7 @@ pub struct ListRecommendedIntentsOutput {
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
+    pub summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -26,56 +25,51 @@ pub struct ListRecommendedIntentsOutput {
 }
 impl ListRecommendedIntentsOutput {
     /// <p>The unique identifier of the bot associated with the recommended intent.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the intent.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intent.</p>
-    pub fn bot_recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> ::std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn summary_list(&self) -> ::std::option::Option<&[crate::types::RecommendedIntentSummary]> {
+    pub fn summary_list(&self) -> ::std::option::Option<& [crate::types::RecommendedIntentSummary]> {
         self.summary_list.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRecommendedIntentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListRecommendedIntentsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendedIntentsOutput`](crate::operation::list_recommended_intents::ListRecommendedIntentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_recommended_intents::builders::ListRecommendedIntentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_recommended_intents::builders::ListRecommendedIntentsOutputBuilder {
         crate::operation::list_recommended_intents::builders::ListRecommendedIntentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendedIntentsOutput`](crate::operation::list_recommended_intents::ListRecommendedIntentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendedIntentsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_recommendation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
+    pub(crate) summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -87,8 +81,11 @@ impl ListRecommendedIntentsOutputBuilder {
     }
     /// <p>The unique identifier of the bot associated with the recommended intent.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
+    }
+    /// <p>The unique identifier of the bot associated with the recommended intent.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The version of the bot that contains the intent.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,8 +94,11 @@ impl ListRecommendedIntentsOutputBuilder {
     }
     /// <p>The version of the bot that contains the intent.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
+    }
+    /// <p>The version of the bot that contains the intent.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,24 +107,24 @@ impl ListRecommendedIntentsOutputBuilder {
     }
     /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
+    }
+    /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intent.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intent.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.bot_recommendation_id = input;
-        self
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bot_recommendation_id = input; self
+    }
+    /// <p>The identifier of the bot recommendation that contains the recommended intent.</p>
+    pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_recommendation_id
     }
     /// Appends an item to `summary_list`.
     ///
@@ -133,17 +133,17 @@ impl ListRecommendedIntentsOutputBuilder {
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
     pub fn summary_list(mut self, input: crate::types::RecommendedIntentSummary) -> Self {
         let mut v = self.summary_list.unwrap_or_default();
-        v.push(input);
-        self.summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn set_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>,
-    ) -> Self {
-        self.summary_list = input;
-        self
+    pub fn set_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>>) -> Self {
+        self.summary_list = input; self
+    }
+    /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
+    pub fn get_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedIntentSummary>> {
+        &self.summary_list
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,28 +152,38 @@ impl ListRecommendedIntentsOutputBuilder {
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListRecommendedIntentsOutput`](crate::operation::list_recommended_intents::ListRecommendedIntentsOutput).
     pub fn build(self) -> crate::operation::list_recommended_intents::ListRecommendedIntentsOutput {
         crate::operation::list_recommended_intents::ListRecommendedIntentsOutput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            bot_recommendation_id: self.bot_recommendation_id,
-            summary_list: self.summary_list,
-            next_token: self.next_token,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            bot_recommendation_id: self.bot_recommendation_id
+            ,
+            summary_list: self.summary_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

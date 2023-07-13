@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFilterInput {
+pub struct DescribeFilterInput  {
     /// <p>The ARN of the filter to describe.</p>
     #[doc(hidden)]
     pub filter_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFilterInput {
     /// <p>The ARN of the filter to describe.</p>
-    pub fn filter_arn(&self) -> ::std::option::Option<&str> {
+    pub fn filter_arn(&self) -> ::std::option::Option<& str> {
         self.filter_arn.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DescribeFilterInput {
 
 /// A builder for [`DescribeFilterInput`](crate::operation::describe_filter::DescribeFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFilterInputBuilder {
     pub(crate) filter_arn: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DescribeFilterInputBuilder {
     }
     /// <p>The ARN of the filter to describe.</p>
     pub fn set_filter_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_arn = input;
-        self
+        self.filter_arn = input; self
+    }
+    /// <p>The ARN of the filter to describe.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_arn
     }
     /// Consumes the builder and constructs a [`DescribeFilterInput`](crate::operation::describe_filter::DescribeFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_filter::DescribeFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_filter::DescribeFilterInput {
-            filter_arn: self.filter_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_filter::DescribeFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_filter::DescribeFilterInput {
+                filter_arn: self.filter_arn
+                ,
+            }
+        )
     }
 }
+

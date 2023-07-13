@@ -3,111 +3,96 @@ pub use crate::operation::describe_time_series::_describe_time_series_output::De
 
 pub use crate::operation::describe_time_series::_describe_time_series_input::DescribeTimeSeriesInputBuilder;
 
+impl DescribeTimeSeriesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_time_series::DescribeTimeSeriesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_time_series::DescribeTimeSeriesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_time_series();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeTimeSeries`.
-///
-/// <p>Retrieves information about a time series (data stream).</p>
-/// <p>To identify a time series, do one of the following:</p>
-/// <ul>
-/// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li>
-/// <li> <p>If the time series is associated with an asset property, specify one of the following: </p>
-/// <ul>
-/// <li> <p>The <code>alias</code> of the time series.</p> </li>
-/// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li>
-/// </ul> </li>
+/// 
+/// <p>Retrieves information about a time series (data stream).</p> 
+/// <p>To identify a time series, do one of the following:</p> 
+/// <ul> 
+/// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li> 
+/// <li> <p>If the time series is associated with an asset property, specify one of the following: </p> 
+/// <ul> 
+/// <li> <p>The <code>alias</code> of the time series.</p> </li> 
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li> 
+/// </ul> </li> 
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTimeSeriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder,
+                    inner: crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder,
 }
-impl DescribeTimeSeriesFluentBuilder {
+impl DescribeTimeSeriesFluentBuilder  {
     /// Creates a new `DescribeTimeSeries`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_time_series::DescribeTimeSeries,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_time_series::DescribeTimeSeriesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeTimeSeries as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_time_series::DescribeTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_time_series::DescribeTimeSeriesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_time_series::DescribeTimeSeries, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_time_series::DescribeTimeSeriesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_time_series::DescribeTimeSeriesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_time_series::DescribeTimeSeriesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_time_series::DescribeTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_time_series::DescribeTimeSeriesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_time_series::DescribeTimeSeries,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_time_series::DescribeTimeSeriesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_time_series::DescribeTimeSeriesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_time_series::DescribeTimeSeriesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_time_series::DescribeTimeSeries, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_time_series::DescribeTimeSeriesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The alias that identifies the time series.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -117,6 +102,10 @@ impl DescribeTimeSeriesFluentBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
+    }
+    /// <p>The alias that identifies the time series.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,6 +117,10 @@ impl DescribeTimeSeriesFluentBuilder {
         self.inner = self.inner.set_asset_id(input);
         self
     }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_id(input.into());
@@ -138,4 +131,9 @@ impl DescribeTimeSeriesFluentBuilder {
         self.inner = self.inner.set_property_id(input);
         self
     }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_property_id()
+    }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferIcd10CmInput {
+pub struct InferIcd10CmInput  {
     /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl InferIcd10CmInput {
     /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl InferIcd10CmInput {
 
 /// A builder for [`InferIcd10CmInput`](crate::operation::infer_icd10_cm::InferIcd10CmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferIcd10CmInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl InferIcd10CmInputBuilder {
     }
     /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
+    }
+    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// Consumes the builder and constructs a [`InferIcd10CmInput`](crate::operation::infer_icd10_cm::InferIcd10CmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::infer_icd10_cm::InferIcd10CmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::infer_icd10_cm::InferIcd10CmInput {
-            text: self.text,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::infer_icd10_cm::InferIcd10CmInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::infer_icd10_cm::InferIcd10CmInput {
+                text: self.text
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateFromAdministratorAccountInput {
+pub struct DisassociateFromAdministratorAccountInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateFromAdministratorAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
 }
 impl DisassociateFromAdministratorAccountInput {
     /// Creates a new builder-style object to manufacture [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).
-    pub fn builder() -> crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountInputBuilder {
         crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateFromAdministratorAccountInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,11 +34,14 @@ impl DisassociateFromAdministratorAccountInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
+    }
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// Consumes the builder and constructs a [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput {
                 detector_id: self.detector_id
@@ -49,3 +50,4 @@ impl DisassociateFromAdministratorAccountInputBuilder {
         )
     }
 }
+

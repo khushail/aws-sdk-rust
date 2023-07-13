@@ -3,14 +3,14 @@
 /// <p>When you configure a SQL-based Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination. You provide the stream Amazon Resource Name (ARN). </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisStreamsOutput {
+pub struct KinesisStreamsOutput  {
     /// <p>The ARN of the destination Kinesis data stream to write to.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamsOutput {
     /// <p>The ARN of the destination Kinesis data stream to write to.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl KinesisStreamsOutput {
 
 /// A builder for [`KinesisStreamsOutput`](crate::types::KinesisStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisStreamsOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl KinesisStreamsOutputBuilder {
     }
     /// <p>The ARN of the destination Kinesis data stream to write to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The ARN of the destination Kinesis data stream to write to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`KinesisStreamsOutput`](crate::types::KinesisStreamsOutput).
     pub fn build(self) -> crate::types::KinesisStreamsOutput {
         crate::types::KinesisStreamsOutput {
-            resource_arn: self.resource_arn,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

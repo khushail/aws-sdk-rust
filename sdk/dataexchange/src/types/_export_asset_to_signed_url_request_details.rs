@@ -3,7 +3,7 @@
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportAssetToSignedUrlRequestDetails {
+pub struct ExportAssetToSignedUrlRequestDetails  {
     /// <p>The unique identifier for the asset that is exported to a signed URL.</p>
     #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ExportAssetToSignedUrlRequestDetails {
 }
 impl ExportAssetToSignedUrlRequestDetails {
     /// <p>The unique identifier for the asset that is exported to a signed URL.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for the revision associated with this export request.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ExportAssetToSignedUrlRequestDetails {
 
 /// A builder for [`ExportAssetToSignedUrlRequestDetails`](crate::types::ExportAssetToSignedUrlRequestDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportAssetToSignedUrlRequestDetailsBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl ExportAssetToSignedUrlRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the asset that is exported to a signed URL.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
+    }
+    /// <p>The unique identifier for the asset that is exported to a signed URL.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl ExportAssetToSignedUrlRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
+    }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl ExportAssetToSignedUrlRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
+    }
+    /// <p>The unique identifier for the revision associated with this export request.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`ExportAssetToSignedUrlRequestDetails`](crate::types::ExportAssetToSignedUrlRequestDetails).
     pub fn build(self) -> crate::types::ExportAssetToSignedUrlRequestDetails {
         crate::types::ExportAssetToSignedUrlRequestDetails {
-            asset_id: self.asset_id,
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
+            asset_id: self.asset_id
+            ,
+            data_set_id: self.data_set_id
+            ,
+            revision_id: self.revision_id
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Contains information for a group identity in an access policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupIdentity {
+pub struct GroupIdentity  {
     /// <p>The IAM Identity Center ID of the group.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GroupIdentity {
     /// <p>The IAM Identity Center ID of the group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl GroupIdentity {
 
 /// A builder for [`GroupIdentity`](crate::types::GroupIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupIdentityBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl GroupIdentityBuilder {
     }
     /// <p>The IAM Identity Center ID of the group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The IAM Identity Center ID of the group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GroupIdentity`](crate::types::GroupIdentity).
     pub fn build(self) -> crate::types::GroupIdentity {
-        crate::types::GroupIdentity { id: self.id }
+        crate::types::GroupIdentity {
+            id: self.id
+            ,
+        }
     }
 }
+

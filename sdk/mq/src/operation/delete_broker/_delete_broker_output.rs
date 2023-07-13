@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBrokerOutput {
+pub struct DeleteBrokerOutput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
     pub broker_id: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct DeleteBrokerOutput {
 }
 impl DeleteBrokerOutput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> ::std::option::Option<&str> {
+    pub fn broker_id(&self) -> ::std::option::Option<& str> {
         self.broker_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteBrokerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteBrokerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBrokerOutput`](crate::operation::delete_broker::DeleteBrokerOutput).
     pub fn builder() -> crate::operation::delete_broker::builders::DeleteBrokerOutputBuilder {
@@ -28,9 +28,7 @@ impl DeleteBrokerOutput {
 
 /// A builder for [`DeleteBrokerOutput`](crate::operation::delete_broker::DeleteBrokerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBrokerOutputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -43,23 +41,28 @@ impl DeleteBrokerOutputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
+    }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteBrokerOutput`](crate::operation::delete_broker::DeleteBrokerOutput).
     pub fn build(self) -> crate::operation::delete_broker::DeleteBrokerOutput {
         crate::operation::delete_broker::DeleteBrokerOutput {
-            broker_id: self.broker_id,
+            broker_id: self.broker_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

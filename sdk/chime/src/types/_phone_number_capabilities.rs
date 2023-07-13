@@ -3,7 +3,7 @@
 /// <p>The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PhoneNumberCapabilities {
+pub struct PhoneNumberCapabilities  {
     /// <p>Allows or denies inbound calling for the specified phone number.</p>
     #[doc(hidden)]
     pub inbound_call: ::std::option::Option<bool>,
@@ -58,9 +58,7 @@ impl PhoneNumberCapabilities {
 
 /// A builder for [`PhoneNumberCapabilities`](crate::types::PhoneNumberCapabilities).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhoneNumberCapabilitiesBuilder {
     pub(crate) inbound_call: ::std::option::Option<bool>,
     pub(crate) outbound_call: ::std::option::Option<bool>,
@@ -77,8 +75,11 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     /// <p>Allows or denies inbound calling for the specified phone number.</p>
     pub fn set_inbound_call(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inbound_call = input;
-        self
+        self.inbound_call = input; self
+    }
+    /// <p>Allows or denies inbound calling for the specified phone number.</p>
+    pub fn get_inbound_call(&self) -> &::std::option::Option<bool> {
+        &self.inbound_call
     }
     /// <p>Allows or denies outbound calling for the specified phone number.</p>
     pub fn outbound_call(mut self, input: bool) -> Self {
@@ -87,8 +88,11 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     /// <p>Allows or denies outbound calling for the specified phone number.</p>
     pub fn set_outbound_call(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.outbound_call = input;
-        self
+        self.outbound_call = input; self
+    }
+    /// <p>Allows or denies outbound calling for the specified phone number.</p>
+    pub fn get_outbound_call(&self) -> &::std::option::Option<bool> {
+        &self.outbound_call
     }
     /// <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
     pub fn inbound_sms(mut self, input: bool) -> Self {
@@ -97,8 +101,11 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     /// <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
     pub fn set_inbound_sms(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inbound_sms = input;
-        self
+        self.inbound_sms = input; self
+    }
+    /// <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
+    pub fn get_inbound_sms(&self) -> &::std::option::Option<bool> {
+        &self.inbound_sms
     }
     /// <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
     pub fn outbound_sms(mut self, input: bool) -> Self {
@@ -107,8 +114,11 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     /// <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
     pub fn set_outbound_sms(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.outbound_sms = input;
-        self
+        self.outbound_sms = input; self
+    }
+    /// <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
+    pub fn get_outbound_sms(&self) -> &::std::option::Option<bool> {
+        &self.outbound_sms
     }
     /// <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
     pub fn inbound_mms(mut self, input: bool) -> Self {
@@ -117,8 +127,11 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     /// <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
     pub fn set_inbound_mms(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inbound_mms = input;
-        self
+        self.inbound_mms = input; self
+    }
+    /// <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
+    pub fn get_inbound_mms(&self) -> &::std::option::Option<bool> {
+        &self.inbound_mms
     }
     /// <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
     pub fn outbound_mms(mut self, input: bool) -> Self {
@@ -127,18 +140,28 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     /// <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
     pub fn set_outbound_mms(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.outbound_mms = input;
-        self
+        self.outbound_mms = input; self
+    }
+    /// <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
+    pub fn get_outbound_mms(&self) -> &::std::option::Option<bool> {
+        &self.outbound_mms
     }
     /// Consumes the builder and constructs a [`PhoneNumberCapabilities`](crate::types::PhoneNumberCapabilities).
     pub fn build(self) -> crate::types::PhoneNumberCapabilities {
         crate::types::PhoneNumberCapabilities {
-            inbound_call: self.inbound_call,
-            outbound_call: self.outbound_call,
-            inbound_sms: self.inbound_sms,
-            outbound_sms: self.outbound_sms,
-            inbound_mms: self.inbound_mms,
-            outbound_mms: self.outbound_mms,
+            inbound_call: self.inbound_call
+            ,
+            outbound_call: self.outbound_call
+            ,
+            inbound_sms: self.inbound_sms
+            ,
+            outbound_sms: self.outbound_sms
+            ,
+            inbound_mms: self.inbound_mms
+            ,
+            outbound_mms: self.outbound_mms
+            ,
         }
     }
 }
+

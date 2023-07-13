@@ -3,29 +3,27 @@
 /// <p>Represents a request to return the Amazon SES custom MAIL FROM attributes for a list of identities. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdentityMailFromDomainAttributesInput {
+pub struct GetIdentityMailFromDomainAttributesInput  {
     /// <p>A list of one or more identities.</p>
     #[doc(hidden)]
     pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetIdentityMailFromDomainAttributesInput {
     /// <p>A list of one or more identities.</p>
-    pub fn identities(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn identities(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.identities.as_deref()
     }
 }
 impl GetIdentityMailFromDomainAttributesInput {
     /// Creates a new builder-style object to manufacture [`GetIdentityMailFromDomainAttributesInput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput).
-    pub fn builder() -> crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesInputBuilder{
+    pub fn builder() -> crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesInputBuilder {
         crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityMailFromDomainAttributesInput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityMailFromDomainAttributesInputBuilder {
     pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -37,20 +35,20 @@ impl GetIdentityMailFromDomainAttributesInputBuilder {
     /// <p>A list of one or more identities.</p>
     pub fn identities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identities.unwrap_or_default();
-        v.push(input.into());
-        self.identities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.identities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more identities.</p>
-    pub fn set_identities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.identities = input;
-        self
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.identities = input; self
+    }
+    /// <p>A list of one or more identities.</p>
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.identities
     }
     /// Consumes the builder and constructs a [`GetIdentityMailFromDomainAttributesInput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput {
                 identities: self.identities
@@ -59,3 +57,4 @@ impl GetIdentityMailFromDomainAttributesInputBuilder {
         )
     }
 }
+

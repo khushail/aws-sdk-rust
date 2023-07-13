@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessLogSubscriptionOutput {
+pub struct CreateAccessLogSubscriptionOutput  {
     /// <p>The ID of the access log subscription.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -22,43 +22,41 @@ pub struct CreateAccessLogSubscriptionOutput {
 }
 impl CreateAccessLogSubscriptionOutput {
     /// <p>The ID of the access log subscription.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the service network or service.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the log destination.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAccessLogSubscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateAccessLogSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessLogSubscriptionOutput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput).
-    pub fn builder() -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionOutputBuilder {
         crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessLogSubscriptionOutput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessLogSubscriptionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -75,8 +73,11 @@ impl CreateAccessLogSubscriptionOutputBuilder {
     }
     /// <p>The ID of the access log subscription.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the access log subscription.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,8 +86,11 @@ impl CreateAccessLogSubscriptionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ID of the service network or service.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,8 +99,11 @@ impl CreateAccessLogSubscriptionOutputBuilder {
     }
     /// <p>The ID of the service network or service.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The ID of the service network or service.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,45 +112,49 @@ impl CreateAccessLogSubscriptionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the log destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the log destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.destination_arn = input;
-        self
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the log destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateAccessLogSubscriptionOutput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput {
+    pub fn build(self) -> crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput {
         crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput {
-            id: self.id,
-            arn: self.arn,
-            resource_id: self.resource_id,
-            resource_arn: self.resource_arn,
-            destination_arn: self.destination_arn,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_arn: self.resource_arn
+            ,
+            destination_arn: self.destination_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

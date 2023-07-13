@@ -6,13 +6,15 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keywordinputtype = unimplemented!();
 /// match keywordinputtype {
+///     KeywordInputType::InputText => { /* ... */ },
 ///     KeywordInputType::SelectFromList => { /* ... */ },
+///     KeywordInputType::UploadFile => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -29,60 +31,59 @@
 /// Specifically, when `keywordinputtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeywordInputType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum KeywordInputType {
     #[allow(missing_docs)] // documentation missing in model
+    InputText,
+    #[allow(missing_docs)] // documentation missing in model
     SelectFromList,
+    #[allow(missing_docs)] // documentation missing in model
+    UploadFile,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for KeywordInputType {
-    fn from(s: &str) -> Self {
-        match s {
-            "SELECT_FROM_LIST" => KeywordInputType::SelectFromList,
-            other => {
-                KeywordInputType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "INPUT_TEXT" => KeywordInputType::InputText,
+"SELECT_FROM_LIST" => KeywordInputType::SelectFromList,
+"UPLOAD_FILE" => KeywordInputType::UploadFile,
+other => KeywordInputType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl ::std::str::FromStr for KeywordInputType {
-    type Err = ::std::convert::Infallible;
+                type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(KeywordInputType::from(s))
-    }
-}
+                fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                    ::std::result::Result::Ok(KeywordInputType::from(s))
+                }
+            }
 impl KeywordInputType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeywordInputType::SelectFromList => "SELECT_FROM_LIST",
-            KeywordInputType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["SELECT_FROM_LIST"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeywordInputType::InputText => "INPUT_TEXT",
+    KeywordInputType::SelectFromList => "SELECT_FROM_LIST",
+    KeywordInputType::UploadFile => "UPLOAD_FILE",
+    KeywordInputType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INPUT_TEXT", "SELECT_FROM_LIST", "UPLOAD_FILE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for KeywordInputType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

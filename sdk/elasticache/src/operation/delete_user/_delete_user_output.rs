@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserOutput {
+pub struct DeleteUserOutput  {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -34,47 +34,47 @@ pub struct DeleteUserOutput {
 }
 impl DeleteUserOutput {
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The username of the user.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The current supported value is Redis.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> ::std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(&self) -> ::std::option::Option<&str> {
+    pub fn access_string(&self) -> ::std::option::Option<& str> {
         self.access_string.as_deref()
     }
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn user_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn user_group_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.user_group_ids.as_deref()
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
-    pub fn authentication(&self) -> ::std::option::Option<&crate::types::Authentication> {
+    pub fn authentication(&self) -> ::std::option::Option<& crate::types::Authentication> {
         self.authentication.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteUserOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput).
     pub fn builder() -> crate::operation::delete_user::builders::DeleteUserOutputBuilder {
@@ -84,9 +84,7 @@ impl DeleteUserOutput {
 
 /// A builder for [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserOutputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -107,8 +105,11 @@ impl DeleteUserOutputBuilder {
     }
     /// <p>The ID of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
+    }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The username of the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,8 +118,11 @@ impl DeleteUserOutputBuilder {
     }
     /// <p>The username of the user.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
+    }
+    /// <p>The username of the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,8 +131,11 @@ impl DeleteUserOutputBuilder {
     }
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The current supported value is Redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,62 +144,56 @@ impl DeleteUserOutputBuilder {
     }
     /// <p>The current supported value is Redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
+    }
+    /// <p>The current supported value is Redis.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.minimum_engine_version = input;
-        self
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.minimum_engine_version = input; self
+    }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_engine_version
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.access_string = input;
-        self
+    pub fn set_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_string = input; self
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_string
     }
     /// Appends an item to `user_group_ids`.
     ///
     /// To override the contents of this collection use [`set_user_group_ids`](Self::set_user_group_ids).
     ///
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn user_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.user_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn set_user_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.user_group_ids = input;
-        self
+    pub fn set_user_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.user_group_ids = input; self
+    }
+    /// <p>Returns a list of the user group IDs the user belongs to.</p>
+    pub fn get_user_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_group_ids
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
     pub fn authentication(mut self, input: crate::types::Authentication) -> Self {
@@ -200,12 +201,12 @@ impl DeleteUserOutputBuilder {
         self
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::Authentication>,
-    ) -> Self {
-        self.authentication = input;
-        self
+    pub fn set_authentication(mut self, input: ::std::option::Option<crate::types::Authentication>) -> Self {
+        self.authentication = input; self
+    }
+    /// <p>Denotes whether the user requires a password to authenticate.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<crate::types::Authentication> {
+        &self.authentication
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -214,31 +215,44 @@ impl DeleteUserOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput).
     pub fn build(self) -> crate::operation::delete_user::DeleteUserOutput {
         crate::operation::delete_user::DeleteUserOutput {
-            user_id: self.user_id,
-            user_name: self.user_name,
-            status: self.status,
-            engine: self.engine,
-            minimum_engine_version: self.minimum_engine_version,
-            access_string: self.access_string,
-            user_group_ids: self.user_group_ids,
-            authentication: self.authentication,
-            arn: self.arn,
+            user_id: self.user_id
+            ,
+            user_name: self.user_name
+            ,
+            status: self.status
+            ,
+            engine: self.engine
+            ,
+            minimum_engine_version: self.minimum_engine_version
+            ,
+            access_string: self.access_string
+            ,
+            user_group_ids: self.user_group_ids
+            ,
+            authentication: self.authentication
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

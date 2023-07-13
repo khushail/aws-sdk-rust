@@ -2,51 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSolNetworkInstancesOutput {
+pub struct ListSolNetworkInstancesOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists network instances.</p>
     #[doc(hidden)]
-    pub network_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>>,
+    pub network_instances: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolNetworkInstancesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Lists network instances.</p>
-    pub fn network_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListSolNetworkInstanceInfo]> {
+    pub fn network_instances(&self) -> ::std::option::Option<& [crate::types::ListSolNetworkInstanceInfo]> {
         self.network_instances.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSolNetworkInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSolNetworkInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListSolNetworkInstancesOutput`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesOutputBuilder {
         crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSolNetworkInstancesOutput`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolNetworkInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) network_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>>,
+    pub(crate) network_instances: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolNetworkInstancesOutputBuilder {
@@ -57,8 +49,11 @@ impl ListSolNetworkInstancesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `network_instances`.
     ///
@@ -67,35 +62,36 @@ impl ListSolNetworkInstancesOutputBuilder {
     /// <p>Lists network instances.</p>
     pub fn network_instances(mut self, input: crate::types::ListSolNetworkInstanceInfo) -> Self {
         let mut v = self.network_instances.unwrap_or_default();
-        v.push(input);
-        self.network_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists network instances.</p>
-    pub fn set_network_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>>,
-    ) -> Self {
-        self.network_instances = input;
-        self
+    pub fn set_network_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>>) -> Self {
+        self.network_instances = input; self
+    }
+    /// <p>Lists network instances.</p>
+    pub fn get_network_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>> {
+        &self.network_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSolNetworkInstancesOutput`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput {
+    pub fn build(self) -> crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput {
         crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput {
-            next_token: self.next_token,
-            network_instances: self.network_instances,
+            next_token: self.next_token
+            ,
+            network_instances: self.network_instances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

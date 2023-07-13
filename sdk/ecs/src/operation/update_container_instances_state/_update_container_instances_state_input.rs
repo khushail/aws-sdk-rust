@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContainerInstancesStateInput {
+pub struct UpdateContainerInstancesStateInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct UpdateContainerInstancesStateInput {
 }
 impl UpdateContainerInstancesStateInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-    pub fn container_instances(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn container_instances(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.container_instances.as_deref()
     }
     /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ContainerInstanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ContainerInstanceStatus> {
         self.status.as_ref()
     }
 }
 impl UpdateContainerInstancesStateInput {
     /// Creates a new builder-style object to manufacture [`UpdateContainerInstancesStateInput`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateInput).
-    pub fn builder() -> crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateInputBuilder{
+    pub fn builder() -> crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateInputBuilder {
         crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContainerInstancesStateInput`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContainerInstancesStateInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container_instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,30 +50,30 @@ impl UpdateContainerInstancesStateInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
     }
     /// Appends an item to `container_instances`.
     ///
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
     ///
     /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-    pub fn container_instances(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.container_instances.unwrap_or_default();
-        v.push(input.into());
-        self.container_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.container_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-    pub fn set_container_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.container_instances = input;
-        self
+    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.container_instances = input; self
+    }
+    /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
+    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_instances
     }
     /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
     pub fn status(mut self, input: crate::types::ContainerInstanceStatus) -> Self {
@@ -83,20 +81,15 @@ impl UpdateContainerInstancesStateInputBuilder {
         self
     }
     /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerInstanceStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContainerInstanceStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContainerInstanceStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateContainerInstancesStateInput`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_container_instances_state::UpdateContainerInstancesStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_container_instances_state::UpdateContainerInstancesStateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_container_instances_state::UpdateContainerInstancesStateInput {
                 cluster: self.cluster
@@ -109,3 +102,4 @@ impl UpdateContainerInstancesStateInputBuilder {
         )
     }
 }
+

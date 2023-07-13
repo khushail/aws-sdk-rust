@@ -3,7 +3,7 @@
 /// <p>The ListOperations response includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOperationsOutput {
+pub struct ListOperationsOutput  {
     /// <p>Lists summaries of the operations.</p>
     #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
@@ -14,19 +14,19 @@ pub struct ListOperationsOutput {
 }
 impl ListOperationsOutput {
     /// <p>Lists summaries of the operations.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::OperationSummary]> {
+    pub fn operations(&self) -> ::std::option::Option<& [crate::types::OperationSummary]> {
         self.operations.as_deref()
     }
     /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn next_page_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_marker(&self) -> ::std::option::Option<& str> {
         self.next_page_marker.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListOperationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::operation::list_operations::ListOperationsOutput).
     pub fn builder() -> crate::operation::list_operations::builders::ListOperationsOutputBuilder {
@@ -36,9 +36,7 @@ impl ListOperationsOutput {
 
 /// A builder for [`ListOperationsOutput`](crate::operation::list_operations::ListOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOperationsOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
     pub(crate) next_page_marker: ::std::option::Option<::std::string::String>,
@@ -52,49 +50,49 @@ impl ListOperationsOutputBuilder {
     /// <p>Lists summaries of the operations.</p>
     pub fn operations(mut self, input: crate::types::OperationSummary) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists summaries of the operations.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
-    ) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>) -> Self {
+        self.operations = input; self
+    }
+    /// <p>Lists summaries of the operations.</p>
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>> {
+        &self.operations
     }
     /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn next_page_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn set_next_page_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.next_page_marker = input;
-        self
+    pub fn set_next_page_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_page_marker = input; self
+    }
+    /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
+    pub fn get_next_page_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::operation::list_operations::ListOperationsOutput).
     pub fn build(self) -> crate::operation::list_operations::ListOperationsOutput {
         crate::operation::list_operations::ListOperationsOutput {
-            operations: self.operations,
-            next_page_marker: self.next_page_marker,
+            operations: self.operations
+            ,
+            next_page_marker: self.next_page_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

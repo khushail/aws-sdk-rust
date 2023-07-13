@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDefaultVocabulariesOutput {
+pub struct ListDefaultVocabulariesOutput  {
     /// <p>A list of default vocabularies.</p>
     #[doc(hidden)]
-    pub default_vocabulary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>>,
+    pub default_vocabulary_list: ::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,38 +13,31 @@ pub struct ListDefaultVocabulariesOutput {
 }
 impl ListDefaultVocabulariesOutput {
     /// <p>A list of default vocabularies.</p>
-    pub fn default_vocabulary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DefaultVocabulary]> {
+    pub fn default_vocabulary_list(&self) -> ::std::option::Option<& [crate::types::DefaultVocabulary]> {
         self.default_vocabulary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDefaultVocabulariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDefaultVocabulariesOutput {
     /// Creates a new builder-style object to manufacture [`ListDefaultVocabulariesOutput`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesOutputBuilder {
         crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDefaultVocabulariesOutput`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDefaultVocabulariesOutputBuilder {
-    pub(crate) default_vocabulary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>>,
+    pub(crate) default_vocabulary_list: ::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +49,17 @@ impl ListDefaultVocabulariesOutputBuilder {
     /// <p>A list of default vocabularies.</p>
     pub fn default_vocabulary_list(mut self, input: crate::types::DefaultVocabulary) -> Self {
         let mut v = self.default_vocabulary_list.unwrap_or_default();
-        v.push(input);
-        self.default_vocabulary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.default_vocabulary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of default vocabularies.</p>
-    pub fn set_default_vocabulary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>>,
-    ) -> Self {
-        self.default_vocabulary_list = input;
-        self
+    pub fn set_default_vocabulary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>>) -> Self {
+        self.default_vocabulary_list = input; self
+    }
+    /// <p>A list of default vocabularies.</p>
+    pub fn get_default_vocabulary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>> {
+        &self.default_vocabulary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,26 +68,30 @@ impl ListDefaultVocabulariesOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDefaultVocabulariesOutput`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput {
+    pub fn build(self) -> crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput {
         crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput {
-            default_vocabulary_list: self.default_vocabulary_list,
-            next_token: self.next_token,
+            default_vocabulary_list: self.default_vocabulary_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

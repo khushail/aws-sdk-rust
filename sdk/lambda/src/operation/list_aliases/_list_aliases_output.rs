@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAliasesOutput {
+pub struct ListAliasesOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListAliasesOutput {
 }
 impl ListAliasesOutput {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>A list of aliases.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::AliasConfiguration]> {
+    pub fn aliases(&self) -> ::std::option::Option<& [crate::types::AliasConfiguration]> {
         self.aliases.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAliasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput).
     pub fn builder() -> crate::operation::list_aliases::builders::ListAliasesOutputBuilder {
@@ -35,9 +35,7 @@ impl ListAliasesOutput {
 
 /// A builder for [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAliasesOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>>,
@@ -51,8 +49,11 @@ impl ListAliasesOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     /// Appends an item to `aliases`.
     ///
@@ -61,33 +62,36 @@ impl ListAliasesOutputBuilder {
     /// <p>A list of aliases.</p>
     pub fn aliases(mut self, input: crate::types::AliasConfiguration) -> Self {
         let mut v = self.aliases.unwrap_or_default();
-        v.push(input);
-        self.aliases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aliases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of aliases.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>>,
-    ) -> Self {
-        self.aliases = input;
-        self
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>>) -> Self {
+        self.aliases = input; self
+    }
+    /// <p>A list of aliases.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>> {
+        &self.aliases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput).
     pub fn build(self) -> crate::operation::list_aliases::ListAliasesOutput {
         crate::operation::list_aliases::ListAliasesOutput {
-            next_marker: self.next_marker,
-            aliases: self.aliases,
+            next_marker: self.next_marker
+            ,
+            aliases: self.aliases
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRoomMembershipInput {
+pub struct CreateRoomMembershipInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -18,35 +18,32 @@ pub struct CreateRoomMembershipInput {
 }
 impl CreateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The room ID.</p>
-    pub fn room_id(&self) -> ::std::option::Option<&str> {
+    pub fn room_id(&self) -> ::std::option::Option<& str> {
         self.room_id.as_deref()
     }
     /// <p>The Amazon Chime member ID (user ID or bot ID).</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>The role of the member.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::RoomMembershipRole> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::RoomMembershipRole> {
         self.role.as_ref()
     }
 }
 impl CreateRoomMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateRoomMembershipInput`](crate::operation::create_room_membership::CreateRoomMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::create_room_membership::builders::CreateRoomMembershipInputBuilder {
+    pub fn builder() -> crate::operation::create_room_membership::builders::CreateRoomMembershipInputBuilder {
         crate::operation::create_room_membership::builders::CreateRoomMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRoomMembershipInput`](crate::operation::create_room_membership::CreateRoomMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoomMembershipInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,
@@ -61,8 +58,11 @@ impl CreateRoomMembershipInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +71,11 @@ impl CreateRoomMembershipInputBuilder {
     }
     /// <p>The room ID.</p>
     pub fn set_room_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_id = input;
-        self
+        self.room_id = input; self
+    }
+    /// <p>The room ID.</p>
+    pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_id
     }
     /// <p>The Amazon Chime member ID (user ID or bot ID).</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +84,11 @@ impl CreateRoomMembershipInputBuilder {
     }
     /// <p>The Amazon Chime member ID (user ID or bot ID).</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
+    }
+    /// <p>The Amazon Chime member ID (user ID or bot ID).</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// <p>The role of the member.</p>
     pub fn role(mut self, input: crate::types::RoomMembershipRole) -> Self {
@@ -90,27 +96,27 @@ impl CreateRoomMembershipInputBuilder {
         self
     }
     /// <p>The role of the member.</p>
-    pub fn set_role(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomMembershipRole>,
-    ) -> Self {
-        self.role = input;
-        self
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoomMembershipRole>) -> Self {
+        self.role = input; self
+    }
+    /// <p>The role of the member.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::RoomMembershipRole> {
+        &self.role
     }
     /// Consumes the builder and constructs a [`CreateRoomMembershipInput`](crate::operation::create_room_membership::CreateRoomMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_room_membership::CreateRoomMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_room_membership::CreateRoomMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_room_membership::CreateRoomMembershipInput {
-                account_id: self.account_id,
-                room_id: self.room_id,
-                member_id: self.member_id,
-                role: self.role,
-            },
+                account_id: self.account_id
+                ,
+                room_id: self.room_id
+                ,
+                member_id: self.member_id
+                ,
+                role: self.role
+                ,
+            }
         )
     }
 }
+

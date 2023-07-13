@@ -3,14 +3,14 @@
 /// <p>The configured style settings of a radar chart.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RadarChartAreaStyleSettings {
+pub struct RadarChartAreaStyleSettings  {
     /// <p>The visibility settings of a radar chart.</p>
     #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl RadarChartAreaStyleSettings {
     /// <p>The visibility settings of a radar chart.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl RadarChartAreaStyleSettings {
 
 /// A builder for [`RadarChartAreaStyleSettings`](crate::types::RadarChartAreaStyleSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RadarChartAreaStyleSettingsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
@@ -36,17 +34,19 @@ impl RadarChartAreaStyleSettingsBuilder {
         self
     }
     /// <p>The visibility settings of a radar chart.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.visibility = input;
-        self
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.visibility = input; self
+    }
+    /// <p>The visibility settings of a radar chart.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`RadarChartAreaStyleSettings`](crate::types::RadarChartAreaStyleSettings).
     pub fn build(self) -> crate::types::RadarChartAreaStyleSettings {
         crate::types::RadarChartAreaStyleSettings {
-            visibility: self.visibility,
+            visibility: self.visibility
+            ,
         }
     }
 }
+

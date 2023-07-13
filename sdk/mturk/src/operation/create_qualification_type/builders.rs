@@ -3,103 +3,87 @@ pub use crate::operation::create_qualification_type::_create_qualification_type_
 
 pub use crate::operation::create_qualification_type::_create_qualification_type_input::CreateQualificationTypeInputBuilder;
 
+impl CreateQualificationTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_qualification_type::CreateQualificationTypeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_qualification_type::CreateQualificationTypeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_qualification_type();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateQualificationType`.
-///
+/// 
 /// <p> The <code>CreateQualificationType</code> operation creates a new Qualification type, which is represented by a <code>QualificationType</code> data structure. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateQualificationTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_qualification_type::builders::CreateQualificationTypeInputBuilder,
+                    inner: crate::operation::create_qualification_type::builders::CreateQualificationTypeInputBuilder,
 }
-impl CreateQualificationTypeFluentBuilder {
+impl CreateQualificationTypeFluentBuilder  {
     /// Creates a new `CreateQualificationType`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_qualification_type::CreateQualificationType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_qualification_type::CreateQualificationTypeError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateQualificationType as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_qualification_type::builders::CreateQualificationTypeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_qualification_type::CreateQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_qualification_type::CreateQualificationTypeError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_qualification_type::CreateQualificationType, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_qualification_type::CreateQualificationTypeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_qualification_type::CreateQualificationTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_qualification_type::CreateQualificationTypeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_qualification_type::CreateQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_qualification_type::CreateQualificationTypeError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_qualification_type::CreateQualificationType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_qualification_type::CreateQualificationTypeError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_qualification_type::CreateQualificationTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_qualification_type::CreateQualificationTypeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_qualification_type::CreateQualificationType, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_qualification_type::CreateQualificationTypeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -109,6 +93,10 @@ impl CreateQualificationTypeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
     pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +108,10 @@ impl CreateQualificationTypeFluentBuilder {
         self.inner = self.inner.set_keywords(input);
         self
     }
+    /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keywords()
+    }
     /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -130,63 +122,83 @@ impl CreateQualificationTypeFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The initial status of the Qualification type.</p>
+    /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
+    /// <p>The initial status of the Qualification type.</p> 
     /// <p>Constraints: Valid values are: Active | Inactive</p>
-    pub fn qualification_type_status(
-        mut self,
-        input: crate::types::QualificationTypeStatus,
-    ) -> Self {
+    pub fn qualification_type_status(mut self, input: crate::types::QualificationTypeStatus) -> Self {
         self.inner = self.inner.qualification_type_status(input);
         self
     }
-    /// <p>The initial status of the Qualification type.</p>
+    /// <p>The initial status of the Qualification type.</p> 
     /// <p>Constraints: Valid values are: Active | Inactive</p>
-    pub fn set_qualification_type_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QualificationTypeStatus>,
-    ) -> Self {
+    pub fn set_qualification_type_status(mut self, input: ::std::option::Option<crate::types::QualificationTypeStatus>) -> Self {
         self.inner = self.inner.set_qualification_type_status(input);
         self
     }
-    /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
+    /// <p>The initial status of the Qualification type.</p> 
+    /// <p>Constraints: Valid values are: Active | Inactive</p>
+    pub fn get_qualification_type_status(&self) -> &::std::option::Option<crate::types::QualificationTypeStatus> {
+        self.inner.get_qualification_type_status()
+    }
+    /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p> 
     /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
     pub fn retry_delay_in_seconds(mut self, input: i64) -> Self {
         self.inner = self.inner.retry_delay_in_seconds(input);
         self
     }
-    /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
+    /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p> 
     /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
     pub fn set_retry_delay_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_retry_delay_in_seconds(input);
         self
     }
-    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
-    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
+    /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p> 
+    /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
+    pub fn get_retry_delay_in_seconds(&self) -> &::std::option::Option<i64> {
+        self.inner.get_retry_delay_in_seconds()
+    }
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p> 
+    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p> 
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub fn test(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.test(input.into());
         self
     }
-    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
-    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p> 
+    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p> 
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub fn set_test(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_test(input);
         self
     }
-    /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
-    /// <p>Constraints: Must not be longer than 65535 bytes.</p>
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p> 
+    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p> 
+    /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
+    pub fn get_test(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_test()
+    }
+    /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p> 
+    /// <p>Constraints: Must not be longer than 65535 bytes.</p> 
     /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
     pub fn answer_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.answer_key(input.into());
         self
     }
-    /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
-    /// <p>Constraints: Must not be longer than 65535 bytes.</p>
+    /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p> 
+    /// <p>Constraints: Must not be longer than 65535 bytes.</p> 
     /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
     pub fn set_answer_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_answer_key(input);
         self
+    }
+    /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p> 
+    /// <p>Constraints: Must not be longer than 65535 bytes.</p> 
+    /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
+    pub fn get_answer_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_answer_key()
     }
     /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
     pub fn test_duration_in_seconds(mut self, input: i64) -> Self {
@@ -198,17 +210,26 @@ impl CreateQualificationTypeFluentBuilder {
         self.inner = self.inner.set_test_duration_in_seconds(input);
         self
     }
-    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
+    /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
+    pub fn get_test_duration_in_seconds(&self) -> &::std::option::Option<i64> {
+        self.inner.get_test_duration_in_seconds()
+    }
+    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p> 
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
     pub fn auto_granted(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_granted(input);
         self
     }
-    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
+    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p> 
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
     pub fn set_auto_granted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_granted(input);
         self
+    }
+    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p> 
+    /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
+    pub fn get_auto_granted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_granted()
     }
     /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
     pub fn auto_granted_value(mut self, input: i32) -> Self {
@@ -220,4 +241,9 @@ impl CreateQualificationTypeFluentBuilder {
         self.inner = self.inner.set_auto_granted_value(input);
         self
     }
+    /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
+    pub fn get_auto_granted_value(&self) -> &::std::option::Option<i32> {
+        self.inner.get_auto_granted_value()
+    }
 }
+

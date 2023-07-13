@@ -3,7 +3,7 @@
 /// <p>Compatible environment template data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompatibleEnvironmentTemplate {
+pub struct CompatibleEnvironmentTemplate  {
     /// <p>The compatible environment template name.</p>
     #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct CompatibleEnvironmentTemplate {
 }
 impl CompatibleEnvironmentTemplate {
     /// <p>The compatible environment template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the compatible environment template.</p>
-    pub fn major_version(&self) -> ::std::option::Option<&str> {
+    pub fn major_version(&self) -> ::std::option::Option<& str> {
         self.major_version.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl CompatibleEnvironmentTemplate {
 
 /// A builder for [`CompatibleEnvironmentTemplate`](crate::types::CompatibleEnvironmentTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompatibleEnvironmentTemplateBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) major_version: ::std::option::Option<::std::string::String>,
 }
 impl CompatibleEnvironmentTemplateBuilder {
     /// <p>The compatible environment template name.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compatible environment template name.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.template_name = input;
-        self
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_name = input; self
+    }
+    /// <p>The compatible environment template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>The major version of the compatible environment template.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The major version of the compatible environment template.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.major_version = input;
-        self
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.major_version = input; self
+    }
+    /// <p>The major version of the compatible environment template.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_version
     }
     /// Consumes the builder and constructs a [`CompatibleEnvironmentTemplate`](crate::types::CompatibleEnvironmentTemplate).
     pub fn build(self) -> crate::types::CompatibleEnvironmentTemplate {
         crate::types::CompatibleEnvironmentTemplate {
-            template_name: self.template_name,
-            major_version: self.major_version,
+            template_name: self.template_name
+            ,
+            major_version: self.major_version
+            ,
         }
     }
 }
+

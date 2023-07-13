@@ -47,11 +47,21 @@ pub use crate::types::_describe_recovery_snapshots_request_filters::DescribeReco
 
 pub use crate::types::_job::JobBuilder;
 
+pub use crate::types::_participating_resource::ParticipatingResourceBuilder;
+
 pub use crate::types::_participating_server::ParticipatingServerBuilder;
 
 pub use crate::types::_start_recovery_request_source_server::StartRecoveryRequestSourceServerBuilder;
 
 pub use crate::types::_describe_source_servers_request_filters::DescribeSourceServersRequestFiltersBuilder;
+
+pub use crate::types::_source_network::SourceNetworkBuilder;
+
+pub use crate::types::_recovery_life_cycle::RecoveryLifeCycleBuilder;
+
+pub use crate::types::_start_source_network_recovery_request_network_entry::StartSourceNetworkRecoveryRequestNetworkEntryBuilder;
+
+pub use crate::types::_describe_source_networks_request_filters::DescribeSourceNetworksRequestFiltersBuilder;
 
 pub use crate::types::_replication_configuration_template::ReplicationConfigurationTemplateBuilder;
 
@@ -81,6 +91,8 @@ pub use crate::types::_job_log::JobLogBuilder;
 
 pub use crate::types::_job_log_event_data::JobLogEventDataBuilder;
 
+pub use crate::types::_source_network_data::SourceNetworkDataBuilder;
+
 pub use crate::types::_conversion_properties::ConversionPropertiesBuilder;
 
 pub use crate::types::_describe_jobs_request_filters::DescribeJobsRequestFiltersBuilder;
@@ -88,3 +100,4 @@ pub use crate::types::_describe_jobs_request_filters::DescribeJobsRequestFilters
 pub use crate::types::_account::AccountBuilder;
 
 pub use crate::types::_staging_source_server::StagingSourceServerBuilder;
+

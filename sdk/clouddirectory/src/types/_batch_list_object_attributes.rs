@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>ListObjectAttributes</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchListObjectAttributes {
+pub struct BatchListObjectAttributes  {
     /// <p>Reference of the object whose attributes need to be listed.</p>
     #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -19,11 +19,11 @@ pub struct BatchListObjectAttributes {
 }
 impl BatchListObjectAttributes {
     /// <p>Reference of the object whose attributes need to be listed.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
@@ -31,7 +31,7 @@ impl BatchListObjectAttributes {
         self.max_results
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
-    pub fn facet_filter(&self) -> ::std::option::Option<&crate::types::SchemaFacet> {
+    pub fn facet_filter(&self) -> ::std::option::Option<& crate::types::SchemaFacet> {
         self.facet_filter.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl BatchListObjectAttributes {
 
 /// A builder for [`BatchListObjectAttributes`](crate::types::BatchListObjectAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListObjectAttributesBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,12 +58,12 @@ impl BatchListObjectAttributesBuilder {
         self
     }
     /// <p>Reference of the object whose attributes need to be listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
+    }
+    /// <p>Reference of the object whose attributes need to be listed.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,8 +72,11 @@ impl BatchListObjectAttributesBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,8 +85,11 @@ impl BatchListObjectAttributesBuilder {
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
     pub fn facet_filter(mut self, input: crate::types::SchemaFacet) -> Self {
@@ -93,20 +97,25 @@ impl BatchListObjectAttributesBuilder {
         self
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
-    pub fn set_facet_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
-        self.facet_filter = input;
-        self
+    pub fn set_facet_filter(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
+        self.facet_filter = input; self
+    }
+    /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
+    pub fn get_facet_filter(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
+        &self.facet_filter
     }
     /// Consumes the builder and constructs a [`BatchListObjectAttributes`](crate::types::BatchListObjectAttributes).
     pub fn build(self) -> crate::types::BatchListObjectAttributes {
         crate::types::BatchListObjectAttributes {
-            object_reference: self.object_reference,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            facet_filter: self.facet_filter,
+            object_reference: self.object_reference
+            ,
+            next_token: self.next_token
+            ,
+            max_results: self.max_results
+            ,
+            facet_filter: self.facet_filter
+            ,
         }
     }
 }
+

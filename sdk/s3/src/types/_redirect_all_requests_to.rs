@@ -3,7 +3,7 @@
 /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedirectAllRequestsTo {
+pub struct RedirectAllRequestsTo  {
     /// <p>Name of the host where requests are redirected.</p>
     #[doc(hidden)]
     pub host_name: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct RedirectAllRequestsTo {
 }
 impl RedirectAllRequestsTo {
     /// <p>Name of the host where requests are redirected.</p>
-    pub fn host_name(&self) -> ::std::option::Option<&str> {
+    pub fn host_name(&self) -> ::std::option::Option<& str> {
         self.host_name.as_deref()
     }
     /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl RedirectAllRequestsTo {
 
 /// A builder for [`RedirectAllRequestsTo`](crate::types::RedirectAllRequestsTo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedirectAllRequestsToBuilder {
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
@@ -45,8 +43,11 @@ impl RedirectAllRequestsToBuilder {
     }
     /// <p>Name of the host where requests are redirected.</p>
     pub fn set_host_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_name = input;
-        self
+        self.host_name = input; self
+    }
+    /// <p>Name of the host where requests are redirected.</p>
+    pub fn get_host_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_name
     }
     /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
@@ -55,14 +56,20 @@ impl RedirectAllRequestsToBuilder {
     }
     /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
+    }
+    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        &self.protocol
     }
     /// Consumes the builder and constructs a [`RedirectAllRequestsTo`](crate::types::RedirectAllRequestsTo).
     pub fn build(self) -> crate::types::RedirectAllRequestsTo {
         crate::types::RedirectAllRequestsTo {
-            host_name: self.host_name,
-            protocol: self.protocol,
+            host_name: self.host_name
+            ,
+            protocol: self.protocol
+            ,
         }
     }
 }
+

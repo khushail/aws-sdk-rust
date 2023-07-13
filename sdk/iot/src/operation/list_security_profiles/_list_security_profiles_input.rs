@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSecurityProfilesInput {
+pub struct ListSecurityProfilesInput  {
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListSecurityProfilesInput {
 }
 impl ListSecurityProfilesInput {
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -26,27 +26,24 @@ impl ListSecurityProfilesInput {
         self.max_results
     }
     /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
-    pub fn dimension_name(&self) -> ::std::option::Option<&str> {
+    pub fn dimension_name(&self) -> ::std::option::Option<& str> {
         self.dimension_name.as_deref()
     }
     /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
 }
 impl ListSecurityProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilesInput`](crate::operation::list_security_profiles::ListSecurityProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder {
+    pub fn builder() -> crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder {
         crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityProfilesInput`](crate::operation::list_security_profiles::ListSecurityProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -61,8 +58,11 @@ impl ListSecurityProfilesInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -71,24 +71,24 @@ impl ListSecurityProfilesInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
-    pub fn dimension_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
-    pub fn set_dimension_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.dimension_name = input;
-        self
+    pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dimension_name = input; self
+    }
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
+    pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_name
     }
     /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,23 +97,26 @@ impl ListSecurityProfilesInputBuilder {
     }
     /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
+    }
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// Consumes the builder and constructs a [`ListSecurityProfilesInput`](crate::operation::list_security_profiles::ListSecurityProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_security_profiles::ListSecurityProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_security_profiles::ListSecurityProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_security_profiles::ListSecurityProfilesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                dimension_name: self.dimension_name,
-                metric_name: self.metric_name,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                dimension_name: self.dimension_name
+                ,
+                metric_name: self.metric_name
+                ,
+            }
         )
     }
 }
+

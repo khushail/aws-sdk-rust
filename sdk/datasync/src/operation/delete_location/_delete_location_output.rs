@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLocationOutput {
+pub struct DeleteLocationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteLocationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteLocationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLocationOutput`](crate::operation::delete_location::DeleteLocationOutput).
     pub fn builder() -> crate::operation::delete_location::builders::DeleteLocationOutputBuilder {
@@ -19,22 +19,20 @@ impl DeleteLocationOutput {
 
 /// A builder for [`DeleteLocationOutput`](crate::operation::delete_location::DeleteLocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLocationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteLocationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteLocationOutput`](crate::operation::delete_location::DeleteLocationOutput).
     pub fn build(self) -> crate::operation::delete_location::DeleteLocationOutput {
         crate::operation::delete_location::DeleteLocationOutput {
@@ -42,3 +40,4 @@ impl DeleteLocationOutputBuilder {
         }
     }
 }
+

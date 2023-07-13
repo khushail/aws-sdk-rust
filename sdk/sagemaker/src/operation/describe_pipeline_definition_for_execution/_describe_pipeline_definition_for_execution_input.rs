@@ -2,51 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePipelineDefinitionForExecutionInput {
+pub struct DescribePipelineDefinitionForExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     #[doc(hidden)]
     pub pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribePipelineDefinitionForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_arn.as_deref()
     }
 }
 impl DescribePipelineDefinitionForExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribePipelineDefinitionForExecutionInput`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionInput).
-    pub fn builder() -> crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionInputBuilder{
+    pub fn builder() -> crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionInputBuilder {
         crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePipelineDefinitionForExecutionInput`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePipelineDefinitionForExecutionInputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribePipelineDefinitionForExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.pipeline_execution_arn = input;
-        self
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_execution_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_arn
     }
     /// Consumes the builder and constructs a [`DescribePipelineDefinitionForExecutionInput`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionInput {
                 pipeline_execution_arn: self.pipeline_execution_arn
@@ -55,3 +50,4 @@ impl DescribePipelineDefinitionForExecutionInputBuilder {
         )
     }
 }
+

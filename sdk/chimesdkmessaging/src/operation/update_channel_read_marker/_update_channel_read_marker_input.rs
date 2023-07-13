@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateChannelReadMarkerInput {
+pub struct UpdateChannelReadMarkerInput  {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct UpdateChannelReadMarkerInput {
 }
 impl UpdateChannelReadMarkerInput {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
 impl UpdateChannelReadMarkerInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelReadMarkerInput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerInput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerInputBuilder {
         crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateChannelReadMarkerInput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelReadMarkerInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) chime_bearer: ::std::option::Option<::std::string::String>,
@@ -46,8 +42,11 @@ impl UpdateChannelReadMarkerInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -56,21 +55,22 @@ impl UpdateChannelReadMarkerInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`UpdateChannelReadMarkerInput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel_read_marker::UpdateChannelReadMarkerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_channel_read_marker::UpdateChannelReadMarkerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_channel_read_marker::UpdateChannelReadMarkerInput {
-                channel_arn: self.channel_arn,
-                chime_bearer: self.chime_bearer,
-            },
+                channel_arn: self.channel_arn
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
         )
     }
 }
+

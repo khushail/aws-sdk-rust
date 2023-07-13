@@ -3,7 +3,7 @@
 /// <p> Contextual information for an entity. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnomedctTrait {
+pub struct SnomedctTrait  {
     /// <p> The name or contextual description of a detected trait. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SnomedctTraitName>,
@@ -13,7 +13,7 @@ pub struct SnomedctTrait {
 }
 impl SnomedctTrait {
     /// <p> The name or contextual description of a detected trait. </p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SnomedctTraitName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::SnomedctTraitName> {
         self.name.as_ref()
     }
     /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
@@ -30,9 +30,7 @@ impl SnomedctTrait {
 
 /// A builder for [`SnomedctTrait`](crate::types::SnomedctTrait).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnomedctTraitBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SnomedctTraitName>,
     pub(crate) score: ::std::option::Option<f32>,
@@ -44,12 +42,12 @@ impl SnomedctTraitBuilder {
         self
     }
     /// <p> The name or contextual description of a detected trait. </p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SnomedctTraitName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SnomedctTraitName>) -> Self {
+        self.name = input; self
+    }
+    /// <p> The name or contextual description of a detected trait. </p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SnomedctTraitName> {
+        &self.name
     }
     /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
     pub fn score(mut self, input: f32) -> Self {
@@ -58,14 +56,20 @@ impl SnomedctTraitBuilder {
     }
     /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
+    }
+    /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`SnomedctTrait`](crate::types::SnomedctTrait).
     pub fn build(self) -> crate::types::SnomedctTrait {
         crate::types::SnomedctTrait {
-            name: self.name,
-            score: self.score,
+            name: self.name
+            ,
+            score: self.score
+            ,
         }
     }
 }
+

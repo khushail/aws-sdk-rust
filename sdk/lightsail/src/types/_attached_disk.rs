@@ -3,7 +3,7 @@
 /// <p>Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachedDisk {
+pub struct AttachedDisk  {
     /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
     #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct AttachedDisk {
 }
 impl AttachedDisk {
     /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The size of the disk in GB.</p>
@@ -30,9 +30,7 @@ impl AttachedDisk {
 
 /// A builder for [`AttachedDisk`](crate::types::AttachedDisk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachedDiskBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) size_in_gb: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl AttachedDiskBuilder {
     }
     /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
+    }
+    /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The size of the disk in GB.</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
@@ -55,14 +56,20 @@ impl AttachedDiskBuilder {
     }
     /// <p>The size of the disk in GB.</p>
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_gb = input;
-        self
+        self.size_in_gb = input; self
+    }
+    /// <p>The size of the disk in GB.</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gb
     }
     /// Consumes the builder and constructs a [`AttachedDisk`](crate::types::AttachedDisk).
     pub fn build(self) -> crate::types::AttachedDisk {
         crate::types::AttachedDisk {
-            path: self.path,
-            size_in_gb: self.size_in_gb,
+            path: self.path
+            ,
+            size_in_gb: self.size_in_gb
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The proposed access control configuration for an Amazon SQS queue. You can propose a configuration for a new Amazon SQS queue or an existing Amazon SQS queue that you own by specifying the Amazon SQS policy. If the configuration is for an existing Amazon SQS queue and you do not specify the Amazon SQS policy, the access preview uses the existing Amazon SQS policy for the queue. If the access preview is for a new resource and you do not specify the policy, the access preview assumes an Amazon SQS queue without a policy. To propose deletion of an existing Amazon SQS queue policy, you can specify an empty string for the Amazon SQS policy. For more information about Amazon SQS policy limits, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html">Quotas related to policies</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqsQueueConfiguration {
+pub struct SqsQueueConfiguration  {
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
     #[doc(hidden)]
     pub queue_policy: ::std::option::Option<::std::string::String>,
 }
 impl SqsQueueConfiguration {
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
-    pub fn queue_policy(&self) -> ::std::option::Option<&str> {
+    pub fn queue_policy(&self) -> ::std::option::Option<& str> {
         self.queue_policy.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl SqsQueueConfiguration {
 
 /// A builder for [`SqsQueueConfiguration`](crate::types::SqsQueueConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqsQueueConfigurationBuilder {
     pub(crate) queue_policy: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl SqsQueueConfigurationBuilder {
     }
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
     pub fn set_queue_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_policy = input;
-        self
+        self.queue_policy = input; self
+    }
+    /// <p> The proposed resource policy for the Amazon SQS queue. </p>
+    pub fn get_queue_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_policy
     }
     /// Consumes the builder and constructs a [`SqsQueueConfiguration`](crate::types::SqsQueueConfiguration).
     pub fn build(self) -> crate::types::SqsQueueConfiguration {
         crate::types::SqsQueueConfiguration {
-            queue_policy: self.queue_policy,
+            queue_policy: self.queue_policy
+            ,
         }
     }
 }
+

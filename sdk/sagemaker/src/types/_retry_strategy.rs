@@ -3,7 +3,7 @@
 /// <p>The retry strategy to use when a training job fails due to an <code>InternalServerError</code>. <code>RetryStrategy</code> is specified as part of the <code>CreateTrainingJob</code> and <code>CreateHyperParameterTuningJob</code> requests. You can add the <code>StoppingCondition</code> parameter to the request to limit the training time for the complete job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetryStrategy {
+pub struct RetryStrategy  {
     /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
     #[doc(hidden)]
     pub maximum_retry_attempts: i32,
@@ -23,9 +23,7 @@ impl RetryStrategy {
 
 /// A builder for [`RetryStrategy`](crate::types::RetryStrategy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetryStrategyBuilder {
     pub(crate) maximum_retry_attempts: ::std::option::Option<i32>,
 }
@@ -37,13 +35,19 @@ impl RetryStrategyBuilder {
     }
     /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
     pub fn set_maximum_retry_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_retry_attempts = input;
-        self
+        self.maximum_retry_attempts = input; self
+    }
+    /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
+    pub fn get_maximum_retry_attempts(&self) -> &::std::option::Option<i32> {
+        &self.maximum_retry_attempts
     }
     /// Consumes the builder and constructs a [`RetryStrategy`](crate::types::RetryStrategy).
     pub fn build(self) -> crate::types::RetryStrategy {
         crate::types::RetryStrategy {
-            maximum_retry_attempts: self.maximum_retry_attempts.unwrap_or_default(),
+            maximum_retry_attempts: self.maximum_retry_attempts
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

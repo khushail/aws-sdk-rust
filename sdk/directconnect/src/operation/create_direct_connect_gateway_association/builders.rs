@@ -3,91 +3,100 @@ pub use crate::operation::create_direct_connect_gateway_association::_create_dir
 
 pub use crate::operation::create_direct_connect_gateway_association::_create_direct_connect_gateway_association_input::CreateDirectConnectGatewayAssociationInputBuilder;
 
+impl CreateDirectConnectGatewayAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_direct_connect_gateway_association();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateDirectConnectGatewayAssociation`.
-///
+/// 
 /// <p>Creates an association between a Direct Connect gateway and a virtual private gateway. The virtual private gateway must be attached to a VPC and must not be associated with another Direct Connect gateway.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_direct_connect_gateway_association::builders::CreateDirectConnectGatewayAssociationInputBuilder,
 }
-impl CreateDirectConnectGatewayAssociationFluentBuilder {
+impl CreateDirectConnectGatewayAssociationFluentBuilder  {
     /// Creates a new `CreateDirectConnectGatewayAssociation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDirectConnectGatewayAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_direct_connect_gateway_association::builders::CreateDirectConnectGatewayAssociationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.direct_connect_gateway_id(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_id()
     }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,48 +108,47 @@ impl CreateDirectConnectGatewayAssociationFluentBuilder {
         self.inner = self.inner.set_gateway_id(input);
         self
     }
+    /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_id()
+    }
     /// Appends an item to `addAllowedPrefixesToDirectConnectGateway`.
     ///
     /// To override the contents of this collection use [`set_add_allowed_prefixes_to_direct_connect_gateway`](Self::set_add_allowed_prefixes_to_direct_connect_gateway).
     ///
-    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
-    /// <p>This parameter is required when you create an association to a transit gateway.</p>
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> 
+    /// <p>This parameter is required when you create an association to a transit gateway.</p> 
     /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
-    pub fn add_allowed_prefixes_to_direct_connect_gateway(
-        mut self,
-        input: crate::types::RouteFilterPrefix,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .add_allowed_prefixes_to_direct_connect_gateway(input);
+    pub fn add_allowed_prefixes_to_direct_connect_gateway(mut self, input: crate::types::RouteFilterPrefix) -> Self {
+        self.inner = self.inner.add_allowed_prefixes_to_direct_connect_gateway(input);
         self
     }
-    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
-    /// <p>This parameter is required when you create an association to a transit gateway.</p>
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> 
+    /// <p>This parameter is required when you create an association to a transit gateway.</p> 
     /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
-    pub fn set_add_allowed_prefixes_to_direct_connect_gateway(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_add_allowed_prefixes_to_direct_connect_gateway(input);
+    pub fn set_add_allowed_prefixes_to_direct_connect_gateway(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>) -> Self {
+        self.inner = self.inner.set_add_allowed_prefixes_to_direct_connect_gateway(input);
         self
+    }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> 
+    /// <p>This parameter is required when you create an association to a transit gateway.</p> 
+    /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
+    pub fn get_add_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        self.inner.get_add_allowed_prefixes_to_direct_connect_gateway()
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn virtual_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_gateway_id(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn set_virtual_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_gateway_id(input);
         self
     }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_gateway_id()
+    }
 }
+

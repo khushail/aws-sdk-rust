@@ -3,14 +3,14 @@
 /// <p>The structure representing a single PropertyFilter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertyFilter {
+pub struct PropertyFilter  {
     /// <p>Represents a single property to match with when searching a raster data collection.</p>
     #[doc(hidden)]
     pub property: ::std::option::Option<crate::types::Property>,
 }
 impl PropertyFilter {
     /// <p>Represents a single property to match with when searching a raster data collection.</p>
-    pub fn property(&self) -> ::std::option::Option<&crate::types::Property> {
+    pub fn property(&self) -> ::std::option::Option<& crate::types::Property> {
         self.property.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl PropertyFilter {
 
 /// A builder for [`PropertyFilter`](crate::types::PropertyFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyFilterBuilder {
     pub(crate) property: ::std::option::Option<crate::types::Property>,
 }
@@ -37,13 +35,18 @@ impl PropertyFilterBuilder {
     }
     /// <p>Represents a single property to match with when searching a raster data collection.</p>
     pub fn set_property(mut self, input: ::std::option::Option<crate::types::Property>) -> Self {
-        self.property = input;
-        self
+        self.property = input; self
+    }
+    /// <p>Represents a single property to match with when searching a raster data collection.</p>
+    pub fn get_property(&self) -> &::std::option::Option<crate::types::Property> {
+        &self.property
     }
     /// Consumes the builder and constructs a [`PropertyFilter`](crate::types::PropertyFilter).
     pub fn build(self) -> crate::types::PropertyFilter {
         crate::types::PropertyFilter {
-            property: self.property,
+            property: self.property
+            ,
         }
     }
 }
+

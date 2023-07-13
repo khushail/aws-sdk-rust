@@ -3,7 +3,7 @@
 /// <p>A set of TCP flags and masks to inspect for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
+pub struct RuleGroupSourceStatelessRuleMatchAttributesTcpFlags  {
     /// <p>Defines the flags from the <code>Masks</code> setting that must be set in order for the packet to match. Flags that are listed must be set. Flags that are not listed must not be set.</p>
     #[doc(hidden)]
     pub flags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,28 +13,24 @@ pub struct RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
     /// <p>Defines the flags from the <code>Masks</code> setting that must be set in order for the packet to match. Flags that are listed must be set. Flags that are not listed must not be set.</p>
-    pub fn flags(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn flags(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.flags.as_deref()
     }
     /// <p>The set of flags to consider in the inspection. If not specified, then all flags are inspected.</p>
-    pub fn masks(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn masks(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.masks.as_deref()
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
     /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
-    pub fn builder(
-    ) -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
-        crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
+        crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder::default()
     }
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
     pub(crate) flags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) masks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -47,17 +43,17 @@ impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
     /// <p>Defines the flags from the <code>Masks</code> setting that must be set in order for the packet to match. Flags that are listed must be set. Flags that are not listed must not be set.</p>
     pub fn flags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.flags.unwrap_or_default();
-        v.push(input.into());
-        self.flags = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.flags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the flags from the <code>Masks</code> setting that must be set in order for the packet to match. Flags that are listed must be set. Flags that are not listed must not be set.</p>
-    pub fn set_flags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.flags = input;
-        self
+    pub fn set_flags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.flags = input; self
+    }
+    /// <p>Defines the flags from the <code>Masks</code> setting that must be set in order for the packet to match. Flags that are listed must be set. Flags that are not listed must not be set.</p>
+    pub fn get_flags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.flags
     }
     /// Appends an item to `masks`.
     ///
@@ -66,23 +62,26 @@ impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsBuilder {
     /// <p>The set of flags to consider in the inspection. If not specified, then all flags are inspected.</p>
     pub fn masks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.masks.unwrap_or_default();
-        v.push(input.into());
-        self.masks = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.masks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of flags to consider in the inspection. If not specified, then all flags are inspected.</p>
-    pub fn set_masks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.masks = input;
-        self
+    pub fn set_masks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.masks = input; self
+    }
+    /// <p>The set of flags to consider in the inspection. If not specified, then all flags are inspected.</p>
+    pub fn get_masks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.masks
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
         crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
-            flags: self.flags,
-            masks: self.masks,
+            flags: self.flags
+            ,
+            masks: self.masks
+            ,
         }
     }
 }
+

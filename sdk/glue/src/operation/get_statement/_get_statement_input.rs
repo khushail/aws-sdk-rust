@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStatementInput {
+pub struct GetStatementInput  {
     /// <p>The Session ID of the statement.</p>
     #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct GetStatementInput {
 }
 impl GetStatementInput {
     /// <p>The Session ID of the statement.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The Id of the statement.</p>
@@ -23,7 +23,7 @@ impl GetStatementInput {
         self.id
     }
     /// <p>The origin of the request.</p>
-    pub fn request_origin(&self) -> ::std::option::Option<&str> {
+    pub fn request_origin(&self) -> ::std::option::Option<& str> {
         self.request_origin.as_deref()
     }
 }
@@ -36,9 +36,7 @@ impl GetStatementInput {
 
 /// A builder for [`GetStatementInput`](crate::operation::get_statement::GetStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStatementInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<i32>,
@@ -52,8 +50,11 @@ impl GetStatementInputBuilder {
     }
     /// <p>The Session ID of the statement.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
+    }
+    /// <p>The Session ID of the statement.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The Id of the statement.</p>
     pub fn id(mut self, input: i32) -> Self {
@@ -62,36 +63,37 @@ impl GetStatementInputBuilder {
     }
     /// <p>The Id of the statement.</p>
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The Id of the statement.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
     }
     /// <p>The origin of the request.</p>
-    pub fn request_origin(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origin of the request.</p>
-    pub fn set_request_origin(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.request_origin = input;
-        self
+    pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_origin = input; self
+    }
+    /// <p>The origin of the request.</p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_origin
     }
     /// Consumes the builder and constructs a [`GetStatementInput`](crate::operation::get_statement::GetStatementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_statement::GetStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_statement::GetStatementInput {
-            session_id: self.session_id,
-            id: self.id,
-            request_origin: self.request_origin,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_statement::GetStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_statement::GetStatementInput {
+                session_id: self.session_id
+                ,
+                id: self.id
+                ,
+                request_origin: self.request_origin
+                ,
+            }
+        )
     }
 }
+

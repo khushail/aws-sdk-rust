@@ -3,142 +3,137 @@ pub use crate::operation::describe_fleet_advisor_databases::_describe_fleet_advi
 
 pub use crate::operation::describe_fleet_advisor_databases::_describe_fleet_advisor_databases_input::DescribeFleetAdvisorDatabasesInputBuilder;
 
+impl DescribeFleetAdvisorDatabasesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_fleet_advisor_databases();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeFleetAdvisorDatabases`.
-///
+/// 
 /// <p>Returns a list of Fleet Advisor databases in your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorDatabasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder,
 }
-impl DescribeFleetAdvisorDatabasesFluentBuilder {
+impl DescribeFleetAdvisorDatabasesFluentBuilder  {
     /// Creates a new `DescribeFleetAdvisorDatabases`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeFleetAdvisorDatabases as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabases, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabases, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator{
-        crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator {
+                                crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
-    /// <ul>
-    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li>
-    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
-    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
-    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
-    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
-    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
-    /// </ul>
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p> 
+    /// <ul> 
+    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li> 
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li> 
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li> 
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li> 
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li> 
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li> 
+    /// </ul> 
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
-    /// <ul>
-    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li>
-    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
-    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
-    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
-    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
-    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
-    /// </ul>
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p> 
+    /// <ul> 
+    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li> 
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li> 
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li> 
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li> 
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li> 
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li> 
+    /// </ul> 
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p> 
+    /// <ul> 
+    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li> 
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li> 
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li> 
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li> 
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li> 
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li> 
+    /// </ul> 
+    /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -150,6 +145,10 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -160,4 +159,9 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
 }
+

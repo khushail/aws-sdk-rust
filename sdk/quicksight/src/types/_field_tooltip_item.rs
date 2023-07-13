@@ -3,7 +3,7 @@
 /// <p>The tooltip item for the fields.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldTooltipItem {
+pub struct FieldTooltipItem  {
     /// <p>The unique ID of the field that is targeted by the tooltip.</p>
     #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct FieldTooltipItem {
 }
 impl FieldTooltipItem {
     /// <p>The unique ID of the field that is targeted by the tooltip.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The label of the tooltip item.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The visibility of the tooltip item.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl FieldTooltipItem {
 
 /// A builder for [`FieldTooltipItem`](crate::types::FieldTooltipItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldTooltipItemBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl FieldTooltipItemBuilder {
     }
     /// <p>The unique ID of the field that is targeted by the tooltip.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
+    }
+    /// <p>The unique ID of the field that is targeted by the tooltip.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
     }
     /// <p>The label of the tooltip item.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl FieldTooltipItemBuilder {
     }
     /// <p>The label of the tooltip item.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
+    }
+    /// <p>The label of the tooltip item.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>The visibility of the tooltip item.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -72,19 +76,23 @@ impl FieldTooltipItemBuilder {
         self
     }
     /// <p>The visibility of the tooltip item.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.visibility = input;
-        self
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.visibility = input; self
+    }
+    /// <p>The visibility of the tooltip item.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`FieldTooltipItem`](crate::types::FieldTooltipItem).
     pub fn build(self) -> crate::types::FieldTooltipItem {
         crate::types::FieldTooltipItem {
-            field_id: self.field_id,
-            label: self.label,
-            visibility: self.visibility,
+            field_id: self.field_id
+            ,
+            label: self.label
+            ,
+            visibility: self.visibility
+            ,
         }
     }
 }
+

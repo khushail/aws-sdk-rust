@@ -3,7 +3,7 @@
 /// <p>A response that contains the results of a finding aggregation by image layer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageAggregationResponse {
+pub struct PackageAggregationResponse  {
     /// <p>The name of the operating system package.</p>
     #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct PackageAggregationResponse {
 }
 impl PackageAggregationResponse {
     /// <p>The name of the operating system package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -37,9 +37,7 @@ impl PackageAggregationResponse {
 
 /// A builder for [`PackageAggregationResponse`](crate::types::PackageAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageAggregationResponseBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl PackageAggregationResponseBuilder {
     }
     /// <p>The name of the operating system package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
+    }
+    /// <p>The name of the operating system package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl PackageAggregationResponseBuilder {
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -72,19 +76,23 @@ impl PackageAggregationResponseBuilder {
         self
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
-        self.severity_counts = input;
-        self
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
+        self.severity_counts = input; self
+    }
+    /// <p>An object that contains the count of matched findings per severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
     }
     /// Consumes the builder and constructs a [`PackageAggregationResponse`](crate::types::PackageAggregationResponse).
     pub fn build(self) -> crate::types::PackageAggregationResponse {
         crate::types::PackageAggregationResponse {
-            package_name: self.package_name,
-            account_id: self.account_id,
-            severity_counts: self.severity_counts,
+            package_name: self.package_name
+            ,
+            account_id: self.account_id
+            ,
+            severity_counts: self.severity_counts
+            ,
         }
     }
 }
+

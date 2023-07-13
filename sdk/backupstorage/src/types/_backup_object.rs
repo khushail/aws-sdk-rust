@@ -3,7 +3,7 @@
 /// Object
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackupObject {
+pub struct BackupObject  {
     /// Object name
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ pub struct BackupObject {
 }
 impl BackupObject {
     /// Object name
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Number of chunks in object
@@ -33,21 +33,19 @@ impl BackupObject {
         self.chunks_count
     }
     /// Metadata string associated with the Object
-    pub fn metadata_string(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_string(&self) -> ::std::option::Option<& str> {
         self.metadata_string.as_deref()
     }
     /// Object checksum
-    pub fn object_checksum(&self) -> ::std::option::Option<&str> {
+    pub fn object_checksum(&self) -> ::std::option::Option<& str> {
         self.object_checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
+    pub fn object_checksum_algorithm(&self) -> ::std::option::Option<& crate::types::SummaryChecksumAlgorithm> {
         self.object_checksum_algorithm.as_ref()
     }
     /// Object token
-    pub fn object_token(&self) -> ::std::option::Option<&str> {
+    pub fn object_token(&self) -> ::std::option::Option<& str> {
         self.object_token.as_deref()
     }
 }
@@ -60,16 +58,13 @@ impl BackupObject {
 
 /// A builder for [`BackupObject`](crate::types::BackupObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupObjectBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) chunks_count: ::std::option::Option<i64>,
     pub(crate) metadata_string: ::std::option::Option<::std::string::String>,
     pub(crate) object_checksum: ::std::option::Option<::std::string::String>,
-    pub(crate) object_checksum_algorithm:
-        ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
+    pub(crate) object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     pub(crate) object_token: ::std::option::Option<::std::string::String>,
 }
 impl BackupObjectBuilder {
@@ -80,8 +75,11 @@ impl BackupObjectBuilder {
     }
     /// Object name
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// Object name
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Number of chunks in object
     pub fn chunks_count(mut self, input: i64) -> Self {
@@ -90,56 +88,50 @@ impl BackupObjectBuilder {
     }
     /// Number of chunks in object
     pub fn set_chunks_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.chunks_count = input;
-        self
+        self.chunks_count = input; self
+    }
+    /// Number of chunks in object
+    pub fn get_chunks_count(&self) -> &::std::option::Option<i64> {
+        &self.chunks_count
     }
     /// Metadata string associated with the Object
-    pub fn metadata_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_string = ::std::option::Option::Some(input.into());
         self
     }
     /// Metadata string associated with the Object
-    pub fn set_metadata_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.metadata_string = input;
-        self
+    pub fn set_metadata_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metadata_string = input; self
+    }
+    /// Metadata string associated with the Object
+    pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_string
     }
     /// Object checksum
-    pub fn object_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// Object checksum
-    pub fn set_object_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.object_checksum = input;
-        self
+    pub fn set_object_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.object_checksum = input; self
+    }
+    /// Object checksum
+    pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_checksum
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(
-        mut self,
-        input: crate::types::SummaryChecksumAlgorithm,
-    ) -> Self {
+    pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
         self.object_checksum_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Checksum algorithm
-    pub fn set_object_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
-    ) -> Self {
-        self.object_checksum_algorithm = input;
-        self
+    pub fn set_object_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>) -> Self {
+        self.object_checksum_algorithm = input; self
+    }
+    /// Checksum algorithm
+    pub fn get_object_checksum_algorithm(&self) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+        &self.object_checksum_algorithm
     }
     /// Object token
     pub fn object_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +140,28 @@ impl BackupObjectBuilder {
     }
     /// Object token
     pub fn set_object_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_token = input;
-        self
+        self.object_token = input; self
+    }
+    /// Object token
+    pub fn get_object_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_token
     }
     /// Consumes the builder and constructs a [`BackupObject`](crate::types::BackupObject).
     pub fn build(self) -> crate::types::BackupObject {
         crate::types::BackupObject {
-            name: self.name,
-            chunks_count: self.chunks_count,
-            metadata_string: self.metadata_string,
-            object_checksum: self.object_checksum,
-            object_checksum_algorithm: self.object_checksum_algorithm,
-            object_token: self.object_token,
+            name: self.name
+            ,
+            chunks_count: self.chunks_count
+            ,
+            metadata_string: self.metadata_string
+            ,
+            object_checksum: self.object_checksum
+            ,
+            object_checksum_algorithm: self.object_checksum_algorithm
+            ,
+            object_token: self.object_token
+            ,
         }
     }
 }
+

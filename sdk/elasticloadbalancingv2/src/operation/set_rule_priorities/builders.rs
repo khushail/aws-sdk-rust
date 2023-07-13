@@ -3,103 +3,88 @@ pub use crate::operation::set_rule_priorities::_set_rule_priorities_output::SetR
 
 pub use crate::operation::set_rule_priorities::_set_rule_priorities_input::SetRulePrioritiesInputBuilder;
 
+impl SetRulePrioritiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::set_rule_priorities::SetRulePrioritiesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::set_rule_priorities::SetRulePrioritiesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.set_rule_priorities();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SetRulePriorities`.
-///
-/// <p>Sets the priorities of the specified rules.</p>
+/// 
+/// <p>Sets the priorities of the specified rules.</p> 
 /// <p>You can reorder the rules as long as there are no priority conflicts in the new order. Any existing rules that you do not specify retain their current priority.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetRulePrioritiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder,
+                    inner: crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder,
 }
-impl SetRulePrioritiesFluentBuilder {
+impl SetRulePrioritiesFluentBuilder  {
     /// Creates a new `SetRulePriorities`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_rule_priorities::SetRulePriorities,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_rule_priorities::SetRulePrioritiesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SetRulePriorities as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_rule_priorities::SetRulePrioritiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_rule_priorities::SetRulePrioritiesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::set_rule_priorities::SetRulePriorities, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::set_rule_priorities::SetRulePrioritiesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_rule_priorities::SetRulePrioritiesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_rule_priorities::SetRulePrioritiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_rule_priorities::SetRulePrioritiesError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_rule_priorities::SetRulePriorities,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_rule_priorities::SetRulePrioritiesError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_rule_priorities::SetRulePrioritiesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::set_rule_priorities::SetRulePriorities, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::set_rule_priorities::SetRulePrioritiesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Appends an item to `RulePriorities`.
     ///
     /// To override the contents of this collection use [`set_rule_priorities`](Self::set_rule_priorities).
@@ -110,11 +95,13 @@ impl SetRulePrioritiesFluentBuilder {
         self
     }
     /// <p>The rule priorities.</p>
-    pub fn set_rule_priorities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
-    ) -> Self {
+    pub fn set_rule_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>) -> Self {
         self.inner = self.inner.set_rule_priorities(input);
         self
     }
+    /// <p>The rule priorities.</p>
+    pub fn get_rule_priorities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>> {
+        self.inner.get_rule_priorities()
+    }
 }
+

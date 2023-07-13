@@ -3,7 +3,7 @@
 /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExplicitHierarchy {
+pub struct ExplicitHierarchy  {
     /// <p>The hierarchy ID of the explicit hierarchy.</p>
     #[doc(hidden)]
     pub hierarchy_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ExplicitHierarchy {
 }
 impl ExplicitHierarchy {
     /// <p>The hierarchy ID of the explicit hierarchy.</p>
-    pub fn hierarchy_id(&self) -> ::std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> ::std::option::Option<& str> {
         self.hierarchy_id.as_deref()
     }
     /// <p>The list of columns that define the explicit hierarchy.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::ColumnIdentifier]> {
+    pub fn columns(&self) -> ::std::option::Option<& [crate::types::ColumnIdentifier]> {
         self.columns.as_deref()
     }
     /// <p>The option that determines the drill down filters for the explicit hierarchy.</p>
-    pub fn drill_down_filters(&self) -> ::std::option::Option<&[crate::types::DrillDownFilter]> {
+    pub fn drill_down_filters(&self) -> ::std::option::Option<& [crate::types::DrillDownFilter]> {
         self.drill_down_filters.as_deref()
     }
 }
@@ -37,14 +37,11 @@ impl ExplicitHierarchy {
 
 /// A builder for [`ExplicitHierarchy`](crate::types::ExplicitHierarchy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExplicitHierarchyBuilder {
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
-    pub(crate) drill_down_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
+    pub(crate) drill_down_filters: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
 }
 impl ExplicitHierarchyBuilder {
     /// <p>The hierarchy ID of the explicit hierarchy.</p>
@@ -54,8 +51,11 @@ impl ExplicitHierarchyBuilder {
     }
     /// <p>The hierarchy ID of the explicit hierarchy.</p>
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hierarchy_id = input;
-        self
+        self.hierarchy_id = input; self
+    }
+    /// <p>The hierarchy ID of the explicit hierarchy.</p>
+    pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_id
     }
     /// Appends an item to `columns`.
     ///
@@ -64,17 +64,17 @@ impl ExplicitHierarchyBuilder {
     /// <p>The list of columns that define the explicit hierarchy.</p>
     pub fn columns(mut self, input: crate::types::ColumnIdentifier) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input);
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of columns that define the explicit hierarchy.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
-    ) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>) -> Self {
+        self.columns = input; self
+    }
+    /// <p>The list of columns that define the explicit hierarchy.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>> {
+        &self.columns
     }
     /// Appends an item to `drill_down_filters`.
     ///
@@ -83,24 +83,28 @@ impl ExplicitHierarchyBuilder {
     /// <p>The option that determines the drill down filters for the explicit hierarchy.</p>
     pub fn drill_down_filters(mut self, input: crate::types::DrillDownFilter) -> Self {
         let mut v = self.drill_down_filters.unwrap_or_default();
-        v.push(input);
-        self.drill_down_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.drill_down_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The option that determines the drill down filters for the explicit hierarchy.</p>
-    pub fn set_drill_down_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
-    ) -> Self {
-        self.drill_down_filters = input;
-        self
+    pub fn set_drill_down_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>) -> Self {
+        self.drill_down_filters = input; self
+    }
+    /// <p>The option that determines the drill down filters for the explicit hierarchy.</p>
+    pub fn get_drill_down_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>> {
+        &self.drill_down_filters
     }
     /// Consumes the builder and constructs a [`ExplicitHierarchy`](crate::types::ExplicitHierarchy).
     pub fn build(self) -> crate::types::ExplicitHierarchy {
         crate::types::ExplicitHierarchy {
-            hierarchy_id: self.hierarchy_id,
-            columns: self.columns,
-            drill_down_filters: self.drill_down_filters,
+            hierarchy_id: self.hierarchy_id
+            ,
+            columns: self.columns
+            ,
+            drill_down_filters: self.drill_down_filters
+            ,
         }
     }
 }
+

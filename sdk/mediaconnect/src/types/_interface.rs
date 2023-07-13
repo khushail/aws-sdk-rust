@@ -3,14 +3,14 @@
 /// The VPC interface that is used for the media stream associated with the source or output.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Interface {
+pub struct Interface  {
     /// The name of the VPC interface.
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl Interface {
     /// The name of the VPC interface.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl Interface {
 
 /// A builder for [`Interface`](crate::types::Interface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InterfaceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl InterfaceBuilder {
     }
     /// The name of the VPC interface.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// The name of the VPC interface.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`Interface`](crate::types::Interface).
     pub fn build(self) -> crate::types::Interface {
-        crate::types::Interface { name: self.name }
+        crate::types::Interface {
+            name: self.name
+            ,
+        }
     }
 }
+

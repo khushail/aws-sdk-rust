@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUsersByPermissionGroupInput {
+pub struct ListUsersByPermissionGroupInput  {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
     pub permission_group_id: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListUsersByPermissionGroupInput {
 }
 impl ListUsersByPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> ::std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results per page.</p>
@@ -29,16 +29,14 @@ impl ListUsersByPermissionGroupInput {
 }
 impl ListUsersByPermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`ListUsersByPermissionGroupInput`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput).
-    pub fn builder() -> crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder{
+    pub fn builder() -> crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder {
         crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUsersByPermissionGroupInput`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsersByPermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,20 +44,17 @@ pub struct ListUsersByPermissionGroupInputBuilder {
 }
 impl ListUsersByPermissionGroupInputBuilder {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.permission_group_id = input;
-        self
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.permission_group_id = input; self
+    }
+    /// <p>The unique identifier for the permission group.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_group_id
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,8 +63,11 @@ impl ListUsersByPermissionGroupInputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,22 +76,25 @@ impl ListUsersByPermissionGroupInputBuilder {
     }
     /// <p>The maximum number of results per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListUsersByPermissionGroupInput`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput {
-                permission_group_id: self.permission_group_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
+                permission_group_id: self.permission_group_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

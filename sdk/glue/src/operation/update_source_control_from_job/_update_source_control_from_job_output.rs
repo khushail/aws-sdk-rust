@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSourceControlFromJobOutput {
+pub struct UpdateSourceControlFromJobOutput  {
     /// <p>The name of the Glue job.</p>
     #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
@@ -10,27 +10,25 @@ pub struct UpdateSourceControlFromJobOutput {
 }
 impl UpdateSourceControlFromJobOutput {
     /// <p>The name of the Glue job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateSourceControlFromJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateSourceControlFromJobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSourceControlFromJobOutput`](crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput).
-    pub fn builder() -> crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobOutputBuilder{
+    pub fn builder() -> crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobOutputBuilder {
         crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSourceControlFromJobOutput`](crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSourceControlFromJobOutputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -43,25 +41,28 @@ impl UpdateSourceControlFromJobOutputBuilder {
     }
     /// <p>The name of the Glue job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The name of the Glue job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateSourceControlFromJobOutput`](crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput {
+    pub fn build(self) -> crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput {
         crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput {
-            job_name: self.job_name,
+            job_name: self.job_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

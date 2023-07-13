@@ -3,7 +3,7 @@
 /// Caption Selector
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CaptionSelector {
+pub struct CaptionSelector  {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
     #[doc(hidden)]
     pub language_code: ::std::option::Option<::std::string::String>,
@@ -16,17 +16,15 @@ pub struct CaptionSelector {
 }
 impl CaptionSelector {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
-    pub fn language_code(&self) -> ::std::option::Option<&str> {
+    pub fn language_code(&self) -> ::std::option::Option<& str> {
         self.language_code.as_deref()
     }
     /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Caption selector settings.
-    pub fn selector_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CaptionSelectorSettings> {
+    pub fn selector_settings(&self) -> ::std::option::Option<& crate::types::CaptionSelectorSettings> {
         self.selector_settings.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl CaptionSelector {
 
 /// A builder for [`CaptionSelector`](crate::types::CaptionSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptionSelectorBuilder {
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -49,20 +45,17 @@ pub struct CaptionSelectorBuilder {
 }
 impl CaptionSelectorBuilder {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.language_code = input; self
+    }
+    /// When specified this field indicates the three letter language code of the caption track to extract from the source.
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
     }
     /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +64,11 @@ impl CaptionSelectorBuilder {
     }
     /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Caption selector settings.
     pub fn selector_settings(mut self, input: crate::types::CaptionSelectorSettings) -> Self {
@@ -80,19 +76,23 @@ impl CaptionSelectorBuilder {
         self
     }
     /// Caption selector settings.
-    pub fn set_selector_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptionSelectorSettings>,
-    ) -> Self {
-        self.selector_settings = input;
-        self
+    pub fn set_selector_settings(mut self, input: ::std::option::Option<crate::types::CaptionSelectorSettings>) -> Self {
+        self.selector_settings = input; self
+    }
+    /// Caption selector settings.
+    pub fn get_selector_settings(&self) -> &::std::option::Option<crate::types::CaptionSelectorSettings> {
+        &self.selector_settings
     }
     /// Consumes the builder and constructs a [`CaptionSelector`](crate::types::CaptionSelector).
     pub fn build(self) -> crate::types::CaptionSelector {
         crate::types::CaptionSelector {
-            language_code: self.language_code,
-            name: self.name,
-            selector_settings: self.selector_settings,
+            language_code: self.language_code
+            ,
+            name: self.name
+            ,
+            selector_settings: self.selector_settings
+            ,
         }
     }
 }
+

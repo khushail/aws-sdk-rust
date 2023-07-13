@@ -79,6 +79,16 @@ pub use crate::types::_execution_class::ExecutionClass;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNode;
 
+pub use crate::types::_evaluate_data_quality_multi_frame::EvaluateDataQualityMultiFrame;
+
+pub use crate::types::_dq_stop_job_on_failure_options::DqStopJobOnFailureOptions;
+
+pub use crate::types::_dq_stop_job_on_failure_timing::DqStopJobOnFailureTiming;
+
+pub use crate::types::_additional_option_keys::AdditionalOptionKeys;
+
+pub use crate::types::_dq_results_publishing_options::DqResultsPublishingOptions;
+
 pub use crate::types::_amazon_redshift_target::AmazonRedshiftTarget;
 
 pub use crate::types::_amazon_redshift_node_data::AmazonRedshiftNodeData;
@@ -132,12 +142,6 @@ pub use crate::types::_catalog_hudi_source::CatalogHudiSource;
 pub use crate::types::_s3_catalog_hudi_source::S3CatalogHudiSource;
 
 pub use crate::types::_evaluate_data_quality::EvaluateDataQuality;
-
-pub use crate::types::_dq_stop_job_on_failure_options::DqStopJobOnFailureOptions;
-
-pub use crate::types::_dq_stop_job_on_failure_timing::DqStopJobOnFailureTiming;
-
-pub use crate::types::_dq_results_publishing_options::DqResultsPublishingOptions;
 
 pub use crate::types::_dq_transform_output::DqTransformOutput;
 
@@ -401,11 +405,11 @@ pub use crate::types::_update_xml_classifier_request::UpdateXmlClassifierRequest
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequest;
 
-pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptions;
-
 pub use crate::types::_data_source::DataSource;
 
 pub use crate::types::_glue_table::GlueTable;
+
+pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptions;
 
 pub use crate::types::_table::Table;
 
@@ -729,6 +733,8 @@ pub use crate::types::_partition_error::PartitionError;
 
 mod _action;
 
+mod _additional_option_keys;
+
 mod _agg_function;
 
 mod _aggregate;
@@ -988,6 +994,8 @@ mod _error_detail;
 mod _error_details;
 
 mod _evaluate_data_quality;
+
+mod _evaluate_data_quality_multi_frame;
 
 mod _evaluation_metrics;
 
@@ -1460,3 +1468,4 @@ pub mod builders;
 
 /// Error types that AWS Glue can respond with.
 pub mod error;
+

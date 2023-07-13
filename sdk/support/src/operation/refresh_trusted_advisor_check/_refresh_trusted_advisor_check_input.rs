@@ -3,62 +3,62 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RefreshTrustedAdvisorCheckInput {
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
-    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
+pub struct RefreshTrustedAdvisorCheckInput  {
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note> 
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p> 
     /// </note>
     #[doc(hidden)]
     pub check_id: ::std::option::Option<::std::string::String>,
 }
 impl RefreshTrustedAdvisorCheckInput {
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
-    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note> 
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p> 
     /// </note>
-    pub fn check_id(&self) -> ::std::option::Option<&str> {
+    pub fn check_id(&self) -> ::std::option::Option<& str> {
         self.check_id.as_deref()
     }
 }
 impl RefreshTrustedAdvisorCheckInput {
     /// Creates a new builder-style object to manufacture [`RefreshTrustedAdvisorCheckInput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput).
-    pub fn builder() -> crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder{
+    pub fn builder() -> crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder {
         crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder::default()
     }
 }
 
 /// A builder for [`RefreshTrustedAdvisorCheckInput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RefreshTrustedAdvisorCheckInputBuilder {
     pub(crate) check_id: ::std::option::Option<::std::string::String>,
 }
 impl RefreshTrustedAdvisorCheckInputBuilder {
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
-    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note> 
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p> 
     /// </note>
     pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
-    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note> 
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p> 
     /// </note>
     pub fn set_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_id = input;
-        self
+        self.check_id = input; self
+    }
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note> 
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p> 
+    /// </note>
+    pub fn get_check_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_id
     }
     /// Consumes the builder and constructs a [`RefreshTrustedAdvisorCheckInput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput {
-                check_id: self.check_id,
-            },
+                check_id: self.check_id
+                ,
+            }
         )
     }
 }
+

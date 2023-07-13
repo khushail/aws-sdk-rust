@@ -3,7 +3,7 @@
 /// <p>The input for the DeprecateThingType operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeprecateThingTypeInput {
+pub struct DeprecateThingTypeInput  {
     /// <p>The name of the thing type to deprecate.</p>
     #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct DeprecateThingTypeInput {
 }
 impl DeprecateThingTypeInput {
     /// <p>The name of the thing type to deprecate.</p>
-    pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> ::std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
@@ -23,37 +23,31 @@ impl DeprecateThingTypeInput {
 }
 impl DeprecateThingTypeInput {
     /// Creates a new builder-style object to manufacture [`DeprecateThingTypeInput`](crate::operation::deprecate_thing_type::DeprecateThingTypeInput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_thing_type::builders::DeprecateThingTypeInputBuilder {
+    pub fn builder() -> crate::operation::deprecate_thing_type::builders::DeprecateThingTypeInputBuilder {
         crate::operation::deprecate_thing_type::builders::DeprecateThingTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateThingTypeInput`](crate::operation::deprecate_thing_type::DeprecateThingTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateThingTypeInputBuilder {
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) undo_deprecate: ::std::option::Option<bool>,
 }
 impl DeprecateThingTypeInputBuilder {
     /// <p>The name of the thing type to deprecate.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing type to deprecate.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.thing_type_name = input;
-        self
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.thing_type_name = input; self
+    }
+    /// <p>The name of the thing type to deprecate.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
     }
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub fn undo_deprecate(mut self, input: bool) -> Self {
@@ -62,21 +56,22 @@ impl DeprecateThingTypeInputBuilder {
     }
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub fn set_undo_deprecate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.undo_deprecate = input;
-        self
+        self.undo_deprecate = input; self
+    }
+    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
+    pub fn get_undo_deprecate(&self) -> &::std::option::Option<bool> {
+        &self.undo_deprecate
     }
     /// Consumes the builder and constructs a [`DeprecateThingTypeInput`](crate::operation::deprecate_thing_type::DeprecateThingTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deprecate_thing_type::DeprecateThingTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deprecate_thing_type::DeprecateThingTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deprecate_thing_type::DeprecateThingTypeInput {
-                thing_type_name: self.thing_type_name,
-                undo_deprecate: self.undo_deprecate,
-            },
+                thing_type_name: self.thing_type_name
+                ,
+                undo_deprecate: self.undo_deprecate
+                ,
+            }
         )
     }
 }
+

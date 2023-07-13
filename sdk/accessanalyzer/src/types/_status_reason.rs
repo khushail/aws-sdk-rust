@@ -3,14 +3,14 @@
 /// <p>Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatusReason {
+pub struct StatusReason  {
     /// <p>The reason code for the current status of the analyzer.</p>
     #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ReasonCode>,
 }
 impl StatusReason {
     /// <p>The reason code for the current status of the analyzer.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ReasonCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::ReasonCode> {
         self.code.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl StatusReason {
 
 /// A builder for [`StatusReason`](crate::types::StatusReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatusReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ReasonCode>,
 }
@@ -37,11 +35,18 @@ impl StatusReasonBuilder {
     }
     /// <p>The reason code for the current status of the analyzer.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ReasonCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
+    }
+    /// <p>The reason code for the current status of the analyzer.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ReasonCode> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`StatusReason`](crate::types::StatusReason).
     pub fn build(self) -> crate::types::StatusReason {
-        crate::types::StatusReason { code: self.code }
+        crate::types::StatusReason {
+            code: self.code
+            ,
+        }
     }
 }
+

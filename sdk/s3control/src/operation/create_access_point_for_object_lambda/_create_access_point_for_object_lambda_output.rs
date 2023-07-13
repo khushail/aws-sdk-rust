@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPointForObjectLambdaOutput {
+pub struct CreateAccessPointForObjectLambdaOutput  {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub object_lambda_access_point_arn: ::std::option::Option<::std::string::String>,
@@ -13,31 +13,29 @@ pub struct CreateAccessPointForObjectLambdaOutput {
 }
 impl CreateAccessPointForObjectLambdaOutput {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn object_lambda_access_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn object_lambda_access_point_arn(&self) -> ::std::option::Option<& str> {
         self.object_lambda_access_point_arn.as_deref()
     }
     /// <p>The alias of the Object Lambda Access Point.</p>
-    pub fn alias(&self) -> ::std::option::Option<&crate::types::ObjectLambdaAccessPointAlias> {
+    pub fn alias(&self) -> ::std::option::Option<& crate::types::ObjectLambdaAccessPointAlias> {
         self.alias.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAccessPointForObjectLambdaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateAccessPointForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaOutput`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaOutputBuilder{
+    pub fn builder() -> crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaOutputBuilder {
         crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPointForObjectLambdaOutput`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPointForObjectLambdaOutputBuilder {
     pub(crate) object_lambda_access_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
@@ -45,20 +43,17 @@ pub struct CreateAccessPointForObjectLambdaOutputBuilder {
 }
 impl CreateAccessPointForObjectLambdaOutputBuilder {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn object_lambda_access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_lambda_access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_lambda_access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn set_object_lambda_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.object_lambda_access_point_arn = input;
-        self
+    pub fn set_object_lambda_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.object_lambda_access_point_arn = input; self
+    }
+    /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
+    pub fn get_object_lambda_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_lambda_access_point_arn
     }
     /// <p>The alias of the Object Lambda Access Point.</p>
     pub fn alias(mut self, input: crate::types::ObjectLambdaAccessPointAlias) -> Self {
@@ -66,24 +61,24 @@ impl CreateAccessPointForObjectLambdaOutputBuilder {
         self
     }
     /// <p>The alias of the Object Lambda Access Point.</p>
-    pub fn set_alias(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
-    ) -> Self {
-        self.alias = input;
-        self
+    pub fn set_alias(mut self, input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>) -> Self {
+        self.alias = input; self
+    }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<crate::types::ObjectLambdaAccessPointAlias> {
+        &self.alias
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateAccessPointForObjectLambdaOutput`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput).
-    pub fn build(self) -> crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput{
+    pub fn build(self) -> crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput {
         crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput {
             object_lambda_access_point_arn: self.object_lambda_access_point_arn
             ,
@@ -93,3 +88,4 @@ impl CreateAccessPointForObjectLambdaOutputBuilder {
         }
     }
 }
+

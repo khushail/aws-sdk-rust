@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBotsOutput {
+pub struct ListBotsOutput  {
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
     #[doc(hidden)]
     pub bot_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotSummary>>,
@@ -13,19 +13,19 @@ pub struct ListBotsOutput {
 }
 impl ListBotsOutput {
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
-    pub fn bot_summaries(&self) -> ::std::option::Option<&[crate::types::BotSummary]> {
+    pub fn bot_summaries(&self) -> ::std::option::Option<& [crate::types::BotSummary]> {
         self.bot_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListBotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListBotsOutput {
     /// Creates a new builder-style object to manufacture [`ListBotsOutput`](crate::operation::list_bots::ListBotsOutput).
     pub fn builder() -> crate::operation::list_bots::builders::ListBotsOutputBuilder {
@@ -35,9 +35,7 @@ impl ListBotsOutput {
 
 /// A builder for [`ListBotsOutput`](crate::operation::list_bots::ListBotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotsOutputBuilder {
     pub(crate) bot_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,17 @@ impl ListBotsOutputBuilder {
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
     pub fn bot_summaries(mut self, input: crate::types::BotSummary) -> Self {
         let mut v = self.bot_summaries.unwrap_or_default();
-        v.push(input);
-        self.bot_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bot_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
-    pub fn set_bot_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotSummary>>,
-    ) -> Self {
-        self.bot_summaries = input;
-        self
+    pub fn set_bot_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotSummary>>) -> Self {
+        self.bot_summaries = input; self
+    }
+    /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
+    pub fn get_bot_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotSummary>> {
+        &self.bot_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,24 +68,30 @@ impl ListBotsOutputBuilder {
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListBotsOutput`](crate::operation::list_bots::ListBotsOutput).
     pub fn build(self) -> crate::operation::list_bots::ListBotsOutput {
         crate::operation::list_bots::ListBotsOutput {
-            bot_summaries: self.bot_summaries,
-            next_token: self.next_token,
+            bot_summaries: self.bot_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

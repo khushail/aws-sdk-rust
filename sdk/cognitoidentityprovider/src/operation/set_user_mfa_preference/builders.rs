@@ -3,130 +3,114 @@ pub use crate::operation::set_user_mfa_preference::_set_user_mfa_preference_outp
 
 pub use crate::operation::set_user_mfa_preference::_set_user_mfa_preference_input::SetUserMfaPreferenceInputBuilder;
 
+impl SetUserMfaPreferenceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.set_user_mfa_preference();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `SetUserMFAPreference`.
-///
+/// 
 /// <p>Set the user's multi-factor authentication (MFA) method preference, including which MFA factors are activated and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts unless device tracking is turned on and the device has been trusted. If you want MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetUserMFAPreferenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceInputBuilder,
+                    inner: crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceInputBuilder,
 }
-impl SetUserMFAPreferenceFluentBuilder {
+impl SetUserMFAPreferenceFluentBuilder  {
     /// Creates a new `SetUserMFAPreference`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreference,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the SetUserMFAPreference as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::set_user_mfa_preference::SetUserMFAPreference, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreference,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::set_user_mfa_preference::SetUserMFAPreference, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
     pub fn sms_mfa_settings(mut self, input: crate::types::SmsMfaSettingsType) -> Self {
         self.inner = self.inner.sms_mfa_settings(input);
         self
     }
     /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
-    pub fn set_sms_mfa_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsMfaSettingsType>,
-    ) -> Self {
+    pub fn set_sms_mfa_settings(mut self, input: ::std::option::Option<crate::types::SmsMfaSettingsType>) -> Self {
         self.inner = self.inner.set_sms_mfa_settings(input);
         self
     }
+    /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    pub fn get_sms_mfa_settings(&self) -> &::std::option::Option<crate::types::SmsMfaSettingsType> {
+        self.inner.get_sms_mfa_settings()
+    }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
-    pub fn software_token_mfa_settings(
-        mut self,
-        input: crate::types::SoftwareTokenMfaSettingsType,
-    ) -> Self {
+    pub fn software_token_mfa_settings(mut self, input: crate::types::SoftwareTokenMfaSettingsType) -> Self {
         self.inner = self.inner.software_token_mfa_settings(input);
         self
     }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
-    pub fn set_software_token_mfa_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
-    ) -> Self {
+    pub fn set_software_token_mfa_settings(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>) -> Self {
         self.inner = self.inner.set_software_token_mfa_settings(input);
         self
+    }
+    /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
+    pub fn get_software_token_mfa_settings(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
+        self.inner.get_software_token_mfa_settings()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,4 +122,9 @@ impl SetUserMFAPreferenceFluentBuilder {
         self.inner = self.inner.set_access_token(input);
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
+    }
 }
+

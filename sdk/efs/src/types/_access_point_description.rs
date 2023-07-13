@@ -3,7 +3,7 @@
 /// <p>Provides a description of an EFS file system access point.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessPointDescription {
+pub struct AccessPointDescription  {
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -37,43 +37,43 @@ pub struct AccessPointDescription {
 }
 impl AccessPointDescription {
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-    pub fn access_point_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_point_id(&self) -> ::std::option::Option<& str> {
         self.access_point_id.as_deref()
     }
     /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-    pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> ::std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The ID of the EFS file system that the access point applies to.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
-    pub fn posix_user(&self) -> ::std::option::Option<&crate::types::PosixUser> {
+    pub fn posix_user(&self) -> ::std::option::Option<& crate::types::PosixUser> {
         self.posix_user.as_ref()
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
-    pub fn root_directory(&self) -> ::std::option::Option<&crate::types::RootDirectory> {
+    pub fn root_directory(&self) -> ::std::option::Option<& crate::types::RootDirectory> {
         self.root_directory.as_ref()
     }
     /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>Identifies the lifecycle phase of the access point.</p>
-    pub fn life_cycle_state(&self) -> ::std::option::Option<&crate::types::LifeCycleState> {
+    pub fn life_cycle_state(&self) -> ::std::option::Option<& crate::types::LifeCycleState> {
         self.life_cycle_state.as_ref()
     }
 }
@@ -86,9 +86,7 @@ impl AccessPointDescription {
 
 /// A builder for [`AccessPointDescription`](crate::types::AccessPointDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessPointDescriptionBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -109,8 +107,11 @@ impl AccessPointDescriptionBuilder {
     }
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,8 +120,11 @@ impl AccessPointDescriptionBuilder {
     }
     /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `tags`.
     ///
@@ -129,65 +133,56 @@ impl AccessPointDescriptionBuilder {
     /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-    pub fn access_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-    pub fn set_access_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.access_point_id = input;
-        self
+    pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_point_id = input; self
+    }
+    /// <p>The ID of the access point, assigned by Amazon EFS.</p>
+    pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_id
     }
     /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-    pub fn access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-    pub fn set_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.access_point_arn = input;
-        self
+    pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_point_arn = input; self
+    }
+    /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
+    pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_arn
     }
     /// <p>The ID of the EFS file system that the access point applies to.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EFS file system that the access point applies to.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.file_system_id = input;
-        self
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.file_system_id = input; self
+    }
+    /// <p>The ID of the EFS file system that the access point applies to.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
     }
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
     pub fn posix_user(mut self, input: crate::types::PosixUser) -> Self {
@@ -196,8 +191,11 @@ impl AccessPointDescriptionBuilder {
     }
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
     pub fn set_posix_user(mut self, input: ::std::option::Option<crate::types::PosixUser>) -> Self {
-        self.posix_user = input;
-        self
+        self.posix_user = input; self
+    }
+    /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
+    pub fn get_posix_user(&self) -> &::std::option::Option<crate::types::PosixUser> {
+        &self.posix_user
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
     pub fn root_directory(mut self, input: crate::types::RootDirectory) -> Self {
@@ -205,12 +203,12 @@ impl AccessPointDescriptionBuilder {
         self
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
-    pub fn set_root_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::RootDirectory>,
-    ) -> Self {
-        self.root_directory = input;
-        self
+    pub fn set_root_directory(mut self, input: ::std::option::Option<crate::types::RootDirectory>) -> Self {
+        self.root_directory = input; self
+    }
+    /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
+    pub fn get_root_directory(&self) -> &::std::option::Option<crate::types::RootDirectory> {
+        &self.root_directory
     }
     /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -219,8 +217,11 @@ impl AccessPointDescriptionBuilder {
     }
     /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
+    }
+    /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>Identifies the lifecycle phase of the access point.</p>
     pub fn life_cycle_state(mut self, input: crate::types::LifeCycleState) -> Self {
@@ -228,26 +229,37 @@ impl AccessPointDescriptionBuilder {
         self
     }
     /// <p>Identifies the lifecycle phase of the access point.</p>
-    pub fn set_life_cycle_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleState>,
-    ) -> Self {
-        self.life_cycle_state = input;
-        self
+    pub fn set_life_cycle_state(mut self, input: ::std::option::Option<crate::types::LifeCycleState>) -> Self {
+        self.life_cycle_state = input; self
+    }
+    /// <p>Identifies the lifecycle phase of the access point.</p>
+    pub fn get_life_cycle_state(&self) -> &::std::option::Option<crate::types::LifeCycleState> {
+        &self.life_cycle_state
     }
     /// Consumes the builder and constructs a [`AccessPointDescription`](crate::types::AccessPointDescription).
     pub fn build(self) -> crate::types::AccessPointDescription {
         crate::types::AccessPointDescription {
-            client_token: self.client_token,
-            name: self.name,
-            tags: self.tags,
-            access_point_id: self.access_point_id,
-            access_point_arn: self.access_point_arn,
-            file_system_id: self.file_system_id,
-            posix_user: self.posix_user,
-            root_directory: self.root_directory,
-            owner_id: self.owner_id,
-            life_cycle_state: self.life_cycle_state,
+            client_token: self.client_token
+            ,
+            name: self.name
+            ,
+            tags: self.tags
+            ,
+            access_point_id: self.access_point_id
+            ,
+            access_point_arn: self.access_point_arn
+            ,
+            file_system_id: self.file_system_id
+            ,
+            posix_user: self.posix_user
+            ,
+            root_directory: self.root_directory
+            ,
+            owner_id: self.owner_id
+            ,
+            life_cycle_state: self.life_cycle_state
+            ,
         }
     }
 }
+

@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExperimentTemplateInput {
+pub struct GetExperimentTemplateInput  {
     /// <p>The ID of the experiment template.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetExperimentTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetExperimentTemplateInput`](crate::operation::get_experiment_template::GetExperimentTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::get_experiment_template::builders::GetExperimentTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_experiment_template::builders::GetExperimentTemplateInputBuilder {
         crate::operation::get_experiment_template::builders::GetExperimentTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetExperimentTemplateInput`](crate::operation::get_experiment_template::GetExperimentTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExperimentTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -38,18 +34,20 @@ impl GetExperimentTemplateInputBuilder {
     }
     /// <p>The ID of the experiment template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetExperimentTemplateInput`](crate::operation::get_experiment_template::GetExperimentTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_experiment_template::GetExperimentTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_experiment_template::GetExperimentTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_experiment_template::GetExperimentTemplateInput { id: self.id },
+            crate::operation::get_experiment_template::GetExperimentTemplateInput {
+                id: self.id
+                ,
+            }
         )
     }
 }
+

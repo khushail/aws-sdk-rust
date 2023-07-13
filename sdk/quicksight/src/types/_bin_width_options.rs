@@ -3,7 +3,7 @@
 /// <p>The options that determine the bin width of a histogram.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BinWidthOptions {
+pub struct BinWidthOptions  {
     /// <p>The options that determine the bin width value.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
@@ -30,9 +30,7 @@ impl BinWidthOptions {
 
 /// A builder for [`BinWidthOptions`](crate::types::BinWidthOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BinWidthOptionsBuilder {
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) bin_count_limit: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl BinWidthOptionsBuilder {
     }
     /// <p>The options that determine the bin width value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The options that determine the bin width value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// <p>The options that determine the bin count limit.</p>
     pub fn bin_count_limit(mut self, input: i64) -> Self {
@@ -55,14 +56,20 @@ impl BinWidthOptionsBuilder {
     }
     /// <p>The options that determine the bin count limit.</p>
     pub fn set_bin_count_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bin_count_limit = input;
-        self
+        self.bin_count_limit = input; self
+    }
+    /// <p>The options that determine the bin count limit.</p>
+    pub fn get_bin_count_limit(&self) -> &::std::option::Option<i64> {
+        &self.bin_count_limit
     }
     /// Consumes the builder and constructs a [`BinWidthOptions`](crate::types::BinWidthOptions).
     pub fn build(self) -> crate::types::BinWidthOptions {
         crate::types::BinWidthOptions {
-            value: self.value,
-            bin_count_limit: self.bin_count_limit,
+            value: self.value
+            ,
+            bin_count_limit: self.bin_count_limit
+            ,
         }
     }
 }
+

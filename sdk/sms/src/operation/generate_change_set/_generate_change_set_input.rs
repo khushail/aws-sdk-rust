@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateChangeSetInput {
+pub struct GenerateChangeSetInput  {
     /// <p>The ID of the application associated with the change set.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct GenerateChangeSetInput {
 }
 impl GenerateChangeSetInput {
     /// <p>The ID of the application associated with the change set.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The format for the change set.</p>
-    pub fn changeset_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
+    pub fn changeset_format(&self) -> ::std::option::Option<& crate::types::OutputFormat> {
         self.changeset_format.as_ref()
     }
 }
 impl GenerateChangeSetInput {
     /// Creates a new builder-style object to manufacture [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
-    pub fn builder(
-    ) -> crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder {
+    pub fn builder() -> crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder {
         crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateChangeSetInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_format: ::std::option::Option<crate::types::OutputFormat>,
@@ -45,8 +42,11 @@ impl GenerateChangeSetInputBuilder {
     }
     /// <p>The ID of the application associated with the change set.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The ID of the application associated with the change set.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>The format for the change set.</p>
     pub fn changeset_format(mut self, input: crate::types::OutputFormat) -> Self {
@@ -54,25 +54,23 @@ impl GenerateChangeSetInputBuilder {
         self
     }
     /// <p>The format for the change set.</p>
-    pub fn set_changeset_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
-        self.changeset_format = input;
-        self
+    pub fn set_changeset_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
+        self.changeset_format = input; self
+    }
+    /// <p>The format for the change set.</p>
+    pub fn get_changeset_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
+        &self.changeset_format
     }
     /// Consumes the builder and constructs a [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_change_set::GenerateChangeSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_change_set::GenerateChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::generate_change_set::GenerateChangeSetInput {
-                app_id: self.app_id,
-                changeset_format: self.changeset_format,
-            },
+                app_id: self.app_id
+                ,
+                changeset_format: self.changeset_format
+                ,
+            }
         )
     }
 }
+

@@ -3,8 +3,8 @@
 /// <p>The current state of the conversation with the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DialogState {
-    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+pub struct DialogState  {
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
     #[doc(hidden)]
     pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>Override settings to configure the intent state.</p>
@@ -12,25 +12,19 @@ pub struct DialogState {
     pub intent: ::std::option::Option<crate::types::IntentOverride>,
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
     #[doc(hidden)]
-    pub session_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DialogState {
-    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
-    pub fn dialog_action(&self) -> ::std::option::Option<&crate::types::DialogAction> {
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    pub fn dialog_action(&self) -> ::std::option::Option<& crate::types::DialogAction> {
         self.dialog_action.as_ref()
     }
     /// <p>Override settings to configure the intent state.</p>
-    pub fn intent(&self) -> ::std::option::Option<&crate::types::IntentOverride> {
+    pub fn intent(&self) -> ::std::option::Option<& crate::types::IntentOverride> {
         self.intent.as_ref()
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn session_attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn session_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.session_attributes.as_ref()
     }
 }
@@ -43,29 +37,25 @@ impl DialogState {
 
 /// A builder for [`DialogState`](crate::types::DialogState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DialogStateBuilder {
     pub(crate) dialog_action: ::std::option::Option<crate::types::DialogAction>,
     pub(crate) intent: ::std::option::Option<crate::types::IntentOverride>,
-    pub(crate) session_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DialogStateBuilder {
-    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
     pub fn dialog_action(mut self, input: crate::types::DialogAction) -> Self {
         self.dialog_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
-    pub fn set_dialog_action(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogAction>,
-    ) -> Self {
-        self.dialog_action = input;
-        self
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    pub fn set_dialog_action(mut self, input: ::std::option::Option<crate::types::DialogAction>) -> Self {
+        self.dialog_action = input; self
+    }
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    pub fn get_dialog_action(&self) -> &::std::option::Option<crate::types::DialogAction> {
+        &self.dialog_action
     }
     /// <p>Override settings to configure the intent state.</p>
     pub fn intent(mut self, input: crate::types::IntentOverride) -> Self {
@@ -73,44 +63,42 @@ impl DialogStateBuilder {
         self
     }
     /// <p>Override settings to configure the intent state.</p>
-    pub fn set_intent(
-        mut self,
-        input: ::std::option::Option<crate::types::IntentOverride>,
-    ) -> Self {
-        self.intent = input;
-        self
+    pub fn set_intent(mut self, input: ::std::option::Option<crate::types::IntentOverride>) -> Self {
+        self.intent = input; self
+    }
+    /// <p>Override settings to configure the intent state.</p>
+    pub fn get_intent(&self) -> &::std::option::Option<crate::types::IntentOverride> {
+        &self.intent
     }
     /// Adds a key-value pair to `session_attributes`.
     ///
     /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
     ///
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn session_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.session_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.session_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.session_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn set_session_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.session_attributes = input;
-        self
+    pub fn set_session_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.session_attributes = input; self
+    }
+    /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.session_attributes
     }
     /// Consumes the builder and constructs a [`DialogState`](crate::types::DialogState).
     pub fn build(self) -> crate::types::DialogState {
         crate::types::DialogState {
-            dialog_action: self.dialog_action,
-            intent: self.intent,
-            session_attributes: self.session_attributes,
+            dialog_action: self.dialog_action
+            ,
+            intent: self.intent
+            ,
+            session_attributes: self.session_attributes
+            ,
         }
     }
 }
+

@@ -3,125 +3,112 @@ pub use crate::operation::reset_db_parameter_group::_reset_db_parameter_group_ou
 
 pub use crate::operation::reset_db_parameter_group::_reset_db_parameter_group_input::ResetDbParameterGroupInputBuilder;
 
+impl ResetDbParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.reset_db_parameter_group();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `ResetDBParameterGroup`.
-///
+/// 
 /// <p>Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code> request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetDBParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder,
+                    inner: crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder,
 }
-impl ResetDBParameterGroupFluentBuilder {
+impl ResetDBParameterGroupFluentBuilder  {
     /// Creates a new `ResetDBParameterGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the ResetDBParameterGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::reset_db_parameter_group::ResetDBParameterGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::reset_db_parameter_group::ResetDBParameterGroupError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::reset_db_parameter_group::ResetDBParameterGroupError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>The name of the DB parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::reset_db_parameter_group::ResetDBParameterGroupError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::reset_db_parameter_group::ResetDBParameterGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::reset_db_parameter_group::ResetDBParameterGroupError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>The name of the DB parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li> 
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
         self
     }
-    /// <p>The name of the DB parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
+    /// <p>The name of the DB parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li> 
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
+    }
+    /// <p>The name of the DB parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li> 
+    /// </ul>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_parameter_group_name()
     }
     /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
@@ -133,37 +120,51 @@ impl ResetDBParameterGroupFluentBuilder {
         self.inner = self.inner.set_reset_all_parameters(input);
         self
     }
+    /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
+    pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reset_all_parameters()
+    }
     /// Appends an item to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p> <b>MySQL</b> </p>
-    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p>
-    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
-    /// <p> <b>MariaDB</b> </p>
-    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p>
-    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
-    /// <p> <b>Oracle</b> </p>
+    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p> 
+    /// <p> <b>MySQL</b> </p> 
+    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p> 
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p> 
+    /// <p> <b>MariaDB</b> </p> 
+    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p> 
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p> 
+    /// <p> <b>Oracle</b> </p> 
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         self.inner = self.inner.parameters(input);
         self
     }
-    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p> <b>MySQL</b> </p>
-    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p>
-    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
-    /// <p> <b>MariaDB</b> </p>
-    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p>
-    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
-    /// <p> <b>Oracle</b> </p>
+    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p> 
+    /// <p> <b>MySQL</b> </p> 
+    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p> 
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p> 
+    /// <p> <b>MariaDB</b> </p> 
+    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p> 
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p> 
+    /// <p> <b>Oracle</b> </p> 
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p> 
+    /// <p> <b>MySQL</b> </p> 
+    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p> 
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p> 
+    /// <p> <b>MariaDB</b> </p> 
+    /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p> 
+    /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p> 
+    /// <p> <b>Oracle</b> </p> 
+    /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        self.inner.get_parameters()
+    }
 }
+

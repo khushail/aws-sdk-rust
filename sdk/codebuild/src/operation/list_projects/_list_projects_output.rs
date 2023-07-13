@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProjectsOutput {
+pub struct ListProjectsOutput  {
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListProjectsOutput {
 }
 impl ListProjectsOutput {
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of build project names, with each build project name representing a single build project.</p>
-    pub fn projects(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn projects(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.projects.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListProjectsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListProjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
     pub fn builder() -> crate::operation::list_projects::builders::ListProjectsOutputBuilder {
@@ -35,9 +35,7 @@ impl ListProjectsOutput {
 
 /// A builder for [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) projects: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -51,8 +49,11 @@ impl ListProjectsOutputBuilder {
     }
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `projects`.
     ///
@@ -61,33 +62,36 @@ impl ListProjectsOutputBuilder {
     /// <p>The list of build project names, with each build project name representing a single build project.</p>
     pub fn projects(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.projects.unwrap_or_default();
-        v.push(input.into());
-        self.projects = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.projects = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of build project names, with each build project name representing a single build project.</p>
-    pub fn set_projects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.projects = input;
-        self
+    pub fn set_projects(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.projects = input; self
+    }
+    /// <p>The list of build project names, with each build project name representing a single build project.</p>
+    pub fn get_projects(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.projects
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
     pub fn build(self) -> crate::operation::list_projects::ListProjectsOutput {
         crate::operation::list_projects::ListProjectsOutput {
-            next_token: self.next_token,
-            projects: self.projects,
+            next_token: self.next_token
+            ,
+            projects: self.projects
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

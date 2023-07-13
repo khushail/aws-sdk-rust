@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartProtectedQueryOutput {
+pub struct StartProtectedQueryOutput  {
     /// <p>The protected query.</p>
     #[doc(hidden)]
     pub protected_query: ::std::option::Option<crate::types::ProtectedQuery>,
@@ -10,29 +10,25 @@ pub struct StartProtectedQueryOutput {
 }
 impl StartProtectedQueryOutput {
     /// <p>The protected query.</p>
-    pub fn protected_query(&self) -> ::std::option::Option<&crate::types::ProtectedQuery> {
+    pub fn protected_query(&self) -> ::std::option::Option<& crate::types::ProtectedQuery> {
         self.protected_query.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartProtectedQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartProtectedQueryOutput {
     /// Creates a new builder-style object to manufacture [`StartProtectedQueryOutput`](crate::operation::start_protected_query::StartProtectedQueryOutput).
-    pub fn builder(
-    ) -> crate::operation::start_protected_query::builders::StartProtectedQueryOutputBuilder {
-        crate::operation::start_protected_query::builders::StartProtectedQueryOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_protected_query::builders::StartProtectedQueryOutputBuilder {
+        crate::operation::start_protected_query::builders::StartProtectedQueryOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartProtectedQueryOutput`](crate::operation::start_protected_query::StartProtectedQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartProtectedQueryOutputBuilder {
     pub(crate) protected_query: ::std::option::Option<crate::types::ProtectedQuery>,
     _request_id: Option<String>,
@@ -44,27 +40,29 @@ impl StartProtectedQueryOutputBuilder {
         self
     }
     /// <p>The protected query.</p>
-    pub fn set_protected_query(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQuery>,
-    ) -> Self {
-        self.protected_query = input;
-        self
+    pub fn set_protected_query(mut self, input: ::std::option::Option<crate::types::ProtectedQuery>) -> Self {
+        self.protected_query = input; self
+    }
+    /// <p>The protected query.</p>
+    pub fn get_protected_query(&self) -> &::std::option::Option<crate::types::ProtectedQuery> {
+        &self.protected_query
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartProtectedQueryOutput`](crate::operation::start_protected_query::StartProtectedQueryOutput).
     pub fn build(self) -> crate::operation::start_protected_query::StartProtectedQueryOutput {
         crate::operation::start_protected_query::StartProtectedQueryOutput {
-            protected_query: self.protected_query,
+            protected_query: self.protected_query
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

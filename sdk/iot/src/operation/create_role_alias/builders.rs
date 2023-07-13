@@ -3,103 +3,88 @@ pub use crate::operation::create_role_alias::_create_role_alias_output::CreateRo
 
 pub use crate::operation::create_role_alias::_create_role_alias_input::CreateRoleAliasInputBuilder;
 
+impl CreateRoleAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_role_alias::CreateRoleAliasOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_role_alias::CreateRoleAliasError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_role_alias();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateRoleAlias`.
-///
-/// <p>Creates a role alias.</p>
+/// 
+/// <p>Creates a role alias.</p> 
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRoleAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_role_alias::builders::CreateRoleAliasInputBuilder,
+                    inner: crate::operation::create_role_alias::builders::CreateRoleAliasInputBuilder,
 }
-impl CreateRoleAliasFluentBuilder {
+impl CreateRoleAliasFluentBuilder  {
     /// Creates a new `CreateRoleAlias`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_role_alias::CreateRoleAlias,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_role_alias::CreateRoleAliasError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateRoleAlias as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_role_alias::builders::CreateRoleAliasInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_role_alias::CreateRoleAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_role_alias::CreateRoleAliasError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_role_alias::CreateRoleAlias, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_role_alias::CreateRoleAliasError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_role_alias::CreateRoleAliasOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_role_alias::CreateRoleAliasError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_role_alias::CreateRoleAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_role_alias::CreateRoleAliasError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_role_alias::CreateRoleAlias,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_role_alias::CreateRoleAliasError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_role_alias::CreateRoleAliasOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_role_alias::CreateRoleAliasError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_role_alias::CreateRoleAlias, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_role_alias::CreateRoleAliasError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
     pub fn role_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_alias(input.into());
@@ -109,6 +94,10 @@ impl CreateRoleAliasFluentBuilder {
     pub fn set_role_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_alias(input);
         self
+    }
+    /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
+    pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_alias()
     }
     /// <p>The role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,41 +109,56 @@ impl CreateRoleAliasFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
+    /// <p>The role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
+    /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p> 
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
     pub fn credential_duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.credential_duration_seconds(input);
         self
     }
-    /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
+    /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p> 
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
     pub fn set_credential_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_credential_duration_seconds(input);
         self
     }
+    /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p> 
+    /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
+    pub fn get_credential_duration_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_credential_duration_seconds()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the role alias.</p> <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note> 
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Metadata which can be used to manage the role alias.</p> <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note> 
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata which can be used to manage the role alias.</p> <note> 
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

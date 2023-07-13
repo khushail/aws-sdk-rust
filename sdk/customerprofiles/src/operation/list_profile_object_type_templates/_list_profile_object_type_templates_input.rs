@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProfileObjectTypeTemplatesInput {
+pub struct ListProfileObjectTypeTemplatesInput  {
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListProfileObjectTypeTemplatesInput {
 }
 impl ListProfileObjectTypeTemplatesInput {
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects returned per page.</p>
@@ -22,16 +22,14 @@ impl ListProfileObjectTypeTemplatesInput {
 }
 impl ListProfileObjectTypeTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectTypeTemplatesInput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesInput).
-    pub fn builder() -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesInputBuilder {
         crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileObjectTypeTemplatesInput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileObjectTypeTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -44,8 +42,11 @@ impl ListProfileObjectTypeTemplatesInputBuilder {
     }
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -54,16 +55,14 @@ impl ListProfileObjectTypeTemplatesInputBuilder {
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProfileObjectTypeTemplatesInput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesInput {
                 next_token: self.next_token
@@ -74,3 +73,4 @@ impl ListProfileObjectTypeTemplatesInputBuilder {
         )
     }
 }
+

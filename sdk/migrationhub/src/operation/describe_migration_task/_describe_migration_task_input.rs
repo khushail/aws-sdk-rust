@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMigrationTaskInput {
+pub struct DescribeMigrationTaskInput  {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
@@ -12,77 +12,65 @@ pub struct DescribeMigrationTaskInput {
 }
 impl DescribeMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(&self) -> ::std::option::Option<&str> {
+    pub fn progress_update_stream(&self) -> ::std::option::Option<& str> {
         self.progress_update_stream.as_deref()
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(&self) -> ::std::option::Option<&str> {
+    pub fn migration_task_name(&self) -> ::std::option::Option<& str> {
         self.migration_task_name.as_deref()
     }
 }
 impl DescribeMigrationTaskInput {
     /// Creates a new builder-style object to manufacture [`DescribeMigrationTaskInput`](crate::operation::describe_migration_task::DescribeMigrationTaskInput).
-    pub fn builder(
-    ) -> crate::operation::describe_migration_task::builders::DescribeMigrationTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_migration_task::builders::DescribeMigrationTaskInputBuilder {
         crate::operation::describe_migration_task::builders::DescribeMigrationTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMigrationTaskInput`](crate::operation::describe_migration_task::DescribeMigrationTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMigrationTaskInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMigrationTaskInputBuilder {
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.progress_update_stream = input;
-        self
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.progress_update_stream = input; self
+    }
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.migration_task_name = input;
-        self
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.migration_task_name = input; self
+    }
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_task_name
     }
     /// Consumes the builder and constructs a [`DescribeMigrationTaskInput`](crate::operation::describe_migration_task::DescribeMigrationTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_migration_task::DescribeMigrationTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_migration_task::DescribeMigrationTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_migration_task::DescribeMigrationTaskInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-            },
+                progress_update_stream: self.progress_update_stream
+                ,
+                migration_task_name: self.migration_task_name
+                ,
+            }
         )
     }
 }
+

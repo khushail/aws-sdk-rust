@@ -3,14 +3,14 @@
 /// <p>Details about a rule to exclude from a rule group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WafExcludedRule {
+pub struct WafExcludedRule  {
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
     #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl WafExcludedRule {
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl WafExcludedRule {
 
 /// A builder for [`WafExcludedRule`](crate::types::WafExcludedRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WafExcludedRuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl WafExcludedRuleBuilder {
     }
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
+    }
+    /// <p>The unique identifier for the rule to exclude from the rule group.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// Consumes the builder and constructs a [`WafExcludedRule`](crate::types::WafExcludedRule).
     pub fn build(self) -> crate::types::WafExcludedRule {
         crate::types::WafExcludedRule {
-            rule_id: self.rule_id,
+            rule_id: self.rule_id
+            ,
         }
     }
 }
+

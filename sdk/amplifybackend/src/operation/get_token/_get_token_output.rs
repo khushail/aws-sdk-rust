@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTokenOutput {
+pub struct GetTokenOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -19,27 +19,27 @@ pub struct GetTokenOutput {
 }
 impl GetTokenOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
-    pub fn challenge_code(&self) -> ::std::option::Option<&str> {
+    pub fn challenge_code(&self) -> ::std::option::Option<& str> {
         self.challenge_code.as_deref()
     }
     /// <p>A unique ID provided when creating a new challenge token.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The expiry time for the one-time generated token code.</p>
-    pub fn ttl(&self) -> ::std::option::Option<&str> {
+    pub fn ttl(&self) -> ::std::option::Option<& str> {
         self.ttl.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetTokenOutput`](crate::operation::get_token::GetTokenOutput).
     pub fn builder() -> crate::operation::get_token::builders::GetTokenOutputBuilder {
@@ -49,9 +49,7 @@ impl GetTokenOutput {
 
 /// A builder for [`GetTokenOutput`](crate::operation::get_token::GetTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTokenOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) challenge_code: ::std::option::Option<::std::string::String>,
@@ -67,24 +65,24 @@ impl GetTokenOutputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
-    pub fn challenge_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn challenge_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.challenge_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
-    pub fn set_challenge_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.challenge_code = input;
-        self
+    pub fn set_challenge_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.challenge_code = input; self
+    }
+    /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
+    pub fn get_challenge_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.challenge_code
     }
     /// <p>A unique ID provided when creating a new challenge token.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +91,11 @@ impl GetTokenOutputBuilder {
     }
     /// <p>A unique ID provided when creating a new challenge token.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
+    }
+    /// <p>A unique ID provided when creating a new challenge token.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The expiry time for the one-time generated token code.</p>
     pub fn ttl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,26 +104,34 @@ impl GetTokenOutputBuilder {
     }
     /// <p>The expiry time for the one-time generated token code.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
+    }
+    /// <p>The expiry time for the one-time generated token code.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ttl
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetTokenOutput`](crate::operation::get_token::GetTokenOutput).
     pub fn build(self) -> crate::operation::get_token::GetTokenOutput {
         crate::operation::get_token::GetTokenOutput {
-            app_id: self.app_id,
-            challenge_code: self.challenge_code,
-            session_id: self.session_id,
-            ttl: self.ttl,
+            app_id: self.app_id
+            ,
+            challenge_code: self.challenge_code
+            ,
+            session_id: self.session_id
+            ,
+            ttl: self.ttl
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

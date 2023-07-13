@@ -2,26 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopInstancesOutput {
+pub struct StopInstancesOutput  {
     /// <p>Information about the stopped instances.</p>
     #[doc(hidden)]
-    pub stopping_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub stopping_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl StopInstancesOutput {
     /// <p>Information about the stopped instances.</p>
-    pub fn stopping_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
+    pub fn stopping_instances(&self) -> ::std::option::Option<& [crate::types::InstanceStateChange]> {
         self.stopping_instances.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StopInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopInstancesOutput {
     /// Creates a new builder-style object to manufacture [`StopInstancesOutput`](crate::operation::stop_instances::StopInstancesOutput).
     pub fn builder() -> crate::operation::stop_instances::builders::StopInstancesOutputBuilder {
@@ -31,12 +28,9 @@ impl StopInstancesOutput {
 
 /// A builder for [`StopInstancesOutput`](crate::operation::stop_instances::StopInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopInstancesOutputBuilder {
-    pub(crate) stopping_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub(crate) stopping_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl StopInstancesOutputBuilder {
@@ -47,32 +41,34 @@ impl StopInstancesOutputBuilder {
     /// <p>Information about the stopped instances.</p>
     pub fn stopping_instances(mut self, input: crate::types::InstanceStateChange) -> Self {
         let mut v = self.stopping_instances.unwrap_or_default();
-        v.push(input);
-        self.stopping_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stopping_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the stopped instances.</p>
-    pub fn set_stopping_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
-    ) -> Self {
-        self.stopping_instances = input;
-        self
+    pub fn set_stopping_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>) -> Self {
+        self.stopping_instances = input; self
+    }
+    /// <p>Information about the stopped instances.</p>
+    pub fn get_stopping_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>> {
+        &self.stopping_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopInstancesOutput`](crate::operation::stop_instances::StopInstancesOutput).
     pub fn build(self) -> crate::operation::stop_instances::StopInstancesOutput {
         crate::operation::stop_instances::StopInstancesOutput {
-            stopping_instances: self.stopping_instances,
+            stopping_instances: self.stopping_instances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

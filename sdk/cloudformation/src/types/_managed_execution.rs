@@ -3,20 +3,20 @@
 /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedExecution {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
-    /// </note>
+pub struct ManagedExecution  {
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note> 
+    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p> 
+    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p> 
+    /// </note> 
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
 }
 impl ManagedExecution {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
-    /// </note>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note> 
+    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p> 
+    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p> 
+    /// </note> 
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub fn active(&self) -> ::std::option::Option<bool> {
         self.active
@@ -31,35 +31,42 @@ impl ManagedExecution {
 
 /// A builder for [`ManagedExecution`](crate::types::ManagedExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedExecutionBuilder {
     pub(crate) active: ::std::option::Option<bool>,
 }
 impl ManagedExecutionBuilder {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
-    /// </note>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note> 
+    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p> 
+    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p> 
+    /// </note> 
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
-    /// </note>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note> 
+    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p> 
+    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p> 
+    /// </note> 
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
+    }
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note> 
+    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p> 
+    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p> 
+    /// </note> 
+    /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// Consumes the builder and constructs a [`ManagedExecution`](crate::types::ManagedExecution).
     pub fn build(self) -> crate::types::ManagedExecution {
         crate::types::ManagedExecution {
-            active: self.active,
+            active: self.active
+            ,
         }
     }
 }
+

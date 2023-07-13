@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSegmentInput {
+pub struct DeleteSegmentInput  {
     /// <p>Specifies the segment to delete.</p>
     #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSegmentInput {
     /// <p>Specifies the segment to delete.</p>
-    pub fn segment(&self) -> ::std::option::Option<&str> {
+    pub fn segment(&self) -> ::std::option::Option<& str> {
         self.segment.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteSegmentInput {
 
 /// A builder for [`DeleteSegmentInput`](crate::operation::delete_segment::DeleteSegmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSegmentInputBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteSegmentInputBuilder {
     }
     /// <p>Specifies the segment to delete.</p>
     pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment = input;
-        self
+        self.segment = input; self
+    }
+    /// <p>Specifies the segment to delete.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
     }
     /// Consumes the builder and constructs a [`DeleteSegmentInput`](crate::operation::delete_segment::DeleteSegmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_segment::DeleteSegmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_segment::DeleteSegmentInput {
-            segment: self.segment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_segment::DeleteSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_segment::DeleteSegmentInput {
+                segment: self.segment
+                ,
+            }
+        )
     }
 }
+

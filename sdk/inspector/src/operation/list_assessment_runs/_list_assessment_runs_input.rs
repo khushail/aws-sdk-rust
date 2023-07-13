@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssessmentRunsInput {
+pub struct ListAssessmentRunsInput  {
     /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
     #[doc(hidden)]
     pub assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::AssessmentRunFilter>,
@@ -19,16 +19,16 @@ pub struct ListAssessmentRunsInput {
 }
 impl ListAssessmentRunsInput {
     /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
-    pub fn assessment_template_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn assessment_template_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.assessment_template_arns.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::AssessmentRunFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::AssessmentRunFilter> {
         self.filter.as_ref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -38,20 +38,16 @@ impl ListAssessmentRunsInput {
 }
 impl ListAssessmentRunsInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentRunsInput`](crate::operation::list_assessment_runs::ListAssessmentRunsInput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_runs::builders::ListAssessmentRunsInputBuilder {
+    pub fn builder() -> crate::operation::list_assessment_runs::builders::ListAssessmentRunsInputBuilder {
         crate::operation::list_assessment_runs::builders::ListAssessmentRunsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentRunsInput`](crate::operation::list_assessment_runs::ListAssessmentRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentRunsInputBuilder {
-    pub(crate) assessment_template_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter: ::std::option::Option<crate::types::AssessmentRunFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -62,37 +58,35 @@ impl ListAssessmentRunsInputBuilder {
     /// To override the contents of this collection use [`set_assessment_template_arns`](Self::set_assessment_template_arns).
     ///
     /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
-    pub fn assessment_template_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_template_arns.unwrap_or_default();
-        v.push(input.into());
-        self.assessment_template_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.assessment_template_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
-    pub fn set_assessment_template_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.assessment_template_arns = input;
-        self
+    pub fn set_assessment_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.assessment_template_arns = input; self
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
+    pub fn get_assessment_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.assessment_template_arns
+    }
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(mut self, input: crate::types::AssessmentRunFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentRunFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AssessmentRunFilter>) -> Self {
+        self.filter = input; self
+    }
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::AssessmentRunFilter> {
+        &self.filter
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,8 +95,11 @@ impl ListAssessmentRunsInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -111,23 +108,26 @@ impl ListAssessmentRunsInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentRunsInput`](crate::operation::list_assessment_runs::ListAssessmentRunsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_assessment_runs::ListAssessmentRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_runs::ListAssessmentRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_assessment_runs::ListAssessmentRunsInput {
-                assessment_template_arns: self.assessment_template_arns,
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                assessment_template_arns: self.assessment_template_arns
+                ,
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

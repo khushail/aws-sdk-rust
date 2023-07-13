@@ -3,14 +3,14 @@
 /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotStatement {
+pub struct NotStatement  {
     /// <p>The statement to negate. You can use any statement that can be nested.</p>
     #[doc(hidden)]
     pub statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
 }
 impl NotStatement {
     /// <p>The statement to negate. You can use any statement that can be nested.</p>
-    pub fn statement(&self) -> ::std::option::Option<&crate::types::Statement> {
+    pub fn statement(&self) -> ::std::option::Option<& crate::types::Statement> {
         self.statement.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl NotStatement {
 
 /// A builder for [`NotStatement`](crate::types::NotStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotStatementBuilder {
     pub(crate) statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
 }
 impl NotStatementBuilder {
     /// <p>The statement to negate. You can use any statement that can be nested.</p>
-    pub fn statement(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Statement>>,
-    ) -> Self {
+    pub fn statement(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Statement>>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The statement to negate. You can use any statement that can be nested.</p>
-    pub fn set_statement(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
-    ) -> Self {
-        self.statement = input;
-        self
+    pub fn set_statement(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>) -> Self {
+        self.statement = input; self
+    }
+    /// <p>The statement to negate. You can use any statement that can be nested.</p>
+    pub fn get_statement(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::Statement>> {
+        &self.statement
     }
     /// Consumes the builder and constructs a [`NotStatement`](crate::types::NotStatement).
     pub fn build(self) -> crate::types::NotStatement {
         crate::types::NotStatement {
-            statement: self.statement,
+            statement: self.statement
+            ,
         }
     }
 }
+

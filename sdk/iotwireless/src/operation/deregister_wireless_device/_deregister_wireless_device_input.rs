@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterWirelessDeviceInput {
+pub struct DeregisterWirelessDeviceInput  {
     /// <p>The identifier of the wireless device to deregister from AWS IoT Wireless.</p>
     #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
@@ -12,28 +12,24 @@ pub struct DeregisterWirelessDeviceInput {
 }
 impl DeregisterWirelessDeviceInput {
     /// <p>The identifier of the wireless device to deregister from AWS IoT Wireless.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
-    pub fn wireless_device_type(&self) -> ::std::option::Option<&crate::types::WirelessDeviceType> {
+    pub fn wireless_device_type(&self) -> ::std::option::Option<& crate::types::WirelessDeviceType> {
         self.wireless_device_type.as_ref()
     }
 }
 impl DeregisterWirelessDeviceInput {
     /// Creates a new builder-style object to manufacture [`DeregisterWirelessDeviceInput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder {
         crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterWirelessDeviceInput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterWirelessDeviceInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) wireless_device_type: ::std::option::Option<crate::types::WirelessDeviceType>,
@@ -46,8 +42,11 @@ impl DeregisterWirelessDeviceInputBuilder {
     }
     /// <p>The identifier of the wireless device to deregister from AWS IoT Wireless.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
+    }
+    /// <p>The identifier of the wireless device to deregister from AWS IoT Wireless.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
     pub fn wireless_device_type(mut self, input: crate::types::WirelessDeviceType) -> Self {
@@ -55,25 +54,23 @@ impl DeregisterWirelessDeviceInputBuilder {
         self
     }
     /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
-    pub fn set_wireless_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
-        self.wireless_device_type = input;
-        self
+    pub fn set_wireless_device_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
+        self.wireless_device_type = input; self
+    }
+    /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+    pub fn get_wireless_device_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        &self.wireless_device_type
     }
     /// Consumes the builder and constructs a [`DeregisterWirelessDeviceInput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput {
-                identifier: self.identifier,
-                wireless_device_type: self.wireless_device_type,
-            },
+                identifier: self.identifier
+                ,
+                wireless_device_type: self.wireless_device_type
+                ,
+            }
         )
     }
 }
+

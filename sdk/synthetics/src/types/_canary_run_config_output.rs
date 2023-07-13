@@ -3,7 +3,7 @@
 /// <p>A structure that contains information about a canary run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CanaryRunConfigOutput {
+pub struct CanaryRunConfigOutput  {
     /// <p>How long the canary is allowed to run before it must stop.</p>
     #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
@@ -37,9 +37,7 @@ impl CanaryRunConfigOutput {
 
 /// A builder for [`CanaryRunConfigOutput`](crate::types::CanaryRunConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanaryRunConfigOutputBuilder {
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) memory_in_mb: ::std::option::Option<i32>,
@@ -53,8 +51,11 @@ impl CanaryRunConfigOutputBuilder {
     }
     /// <p>How long the canary is allowed to run before it must stop.</p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_seconds = input;
-        self
+        self.timeout_in_seconds = input; self
+    }
+    /// <p>How long the canary is allowed to run before it must stop.</p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_seconds
     }
     /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
     pub fn memory_in_mb(mut self, input: i32) -> Self {
@@ -63,8 +64,11 @@ impl CanaryRunConfigOutputBuilder {
     }
     /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
     pub fn set_memory_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_in_mb = input;
-        self
+        self.memory_in_mb = input; self
+    }
+    /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
+    pub fn get_memory_in_mb(&self) -> &::std::option::Option<i32> {
+        &self.memory_in_mb
     }
     /// <p>Displays whether this canary run used active X-Ray tracing. </p>
     pub fn active_tracing(mut self, input: bool) -> Self {
@@ -73,15 +77,22 @@ impl CanaryRunConfigOutputBuilder {
     }
     /// <p>Displays whether this canary run used active X-Ray tracing. </p>
     pub fn set_active_tracing(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active_tracing = input;
-        self
+        self.active_tracing = input; self
+    }
+    /// <p>Displays whether this canary run used active X-Ray tracing. </p>
+    pub fn get_active_tracing(&self) -> &::std::option::Option<bool> {
+        &self.active_tracing
     }
     /// Consumes the builder and constructs a [`CanaryRunConfigOutput`](crate::types::CanaryRunConfigOutput).
     pub fn build(self) -> crate::types::CanaryRunConfigOutput {
         crate::types::CanaryRunConfigOutput {
-            timeout_in_seconds: self.timeout_in_seconds,
-            memory_in_mb: self.memory_in_mb,
-            active_tracing: self.active_tracing,
+            timeout_in_seconds: self.timeout_in_seconds
+            ,
+            memory_in_mb: self.memory_in_mb
+            ,
+            active_tracing: self.active_tracing
+            ,
         }
     }
 }
+

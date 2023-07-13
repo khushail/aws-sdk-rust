@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDeviceAuthorizationInput {
+pub struct StartDeviceAuthorizationInput  {
     /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,28 @@ pub struct StartDeviceAuthorizationInput {
 }
 impl StartDeviceAuthorizationInput {
     /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
+    pub fn client_secret(&self) -> ::std::option::Option<& str> {
         self.client_secret.as_deref()
     }
     /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
-    pub fn start_url(&self) -> ::std::option::Option<&str> {
+    pub fn start_url(&self) -> ::std::option::Option<& str> {
         self.start_url.as_deref()
     }
 }
 impl StartDeviceAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`StartDeviceAuthorizationInput`](crate::operation::start_device_authorization::StartDeviceAuthorizationInput).
-    pub fn builder(
-    ) -> crate::operation::start_device_authorization::builders::StartDeviceAuthorizationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_device_authorization::builders::StartDeviceAuthorizationInputBuilder {
         crate::operation::start_device_authorization::builders::StartDeviceAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDeviceAuthorizationInput`](crate::operation::start_device_authorization::StartDeviceAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDeviceAuthorizationInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
@@ -54,24 +50,24 @@ impl StartDeviceAuthorizationInputBuilder {
     }
     /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
+    }
+    /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.client_secret = input;
-        self
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_secret = input; self
+    }
+    /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
     }
     /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
     pub fn start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,22 +76,24 @@ impl StartDeviceAuthorizationInputBuilder {
     }
     /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
     pub fn set_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_url = input;
-        self
+        self.start_url = input; self
+    }
+    /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+    pub fn get_start_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_url
     }
     /// Consumes the builder and constructs a [`StartDeviceAuthorizationInput`](crate::operation::start_device_authorization::StartDeviceAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_device_authorization::StartDeviceAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_device_authorization::StartDeviceAuthorizationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_device_authorization::StartDeviceAuthorizationInput {
-                client_id: self.client_id,
-                client_secret: self.client_secret,
-                start_url: self.start_url,
-            },
+                client_id: self.client_id
+                ,
+                client_secret: self.client_secret
+                ,
+                start_url: self.start_url
+                ,
+            }
         )
     }
 }
+

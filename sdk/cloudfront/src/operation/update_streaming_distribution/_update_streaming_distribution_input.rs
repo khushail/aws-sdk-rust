@@ -3,11 +3,10 @@
 /// <p>The request to update a streaming distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStreamingDistributionInput {
+pub struct UpdateStreamingDistributionInput  {
     /// <p>The streaming distribution's configuration information.</p>
     #[doc(hidden)]
-    pub streaming_distribution_config:
-        ::std::option::Option<crate::types::StreamingDistributionConfig>,
+    pub streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     /// <p>The streaming distribution's id.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -17,54 +16,46 @@ pub struct UpdateStreamingDistributionInput {
 }
 impl UpdateStreamingDistributionInput {
     /// <p>The streaming distribution's configuration information.</p>
-    pub fn streaming_distribution_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingDistributionConfig> {
+    pub fn streaming_distribution_config(&self) -> ::std::option::Option<& crate::types::StreamingDistributionConfig> {
         self.streaming_distribution_config.as_ref()
     }
     /// <p>The streaming distribution's id.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
 impl UpdateStreamingDistributionInput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamingDistributionInput`](crate::operation::update_streaming_distribution::UpdateStreamingDistributionInput).
-    pub fn builder() -> crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionInputBuilder{
+    pub fn builder() -> crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionInputBuilder {
         crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStreamingDistributionInput`](crate::operation::update_streaming_distribution::UpdateStreamingDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStreamingDistributionInputBuilder {
-    pub(crate) streaming_distribution_config:
-        ::std::option::Option<crate::types::StreamingDistributionConfig>,
+    pub(crate) streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStreamingDistributionInputBuilder {
     /// <p>The streaming distribution's configuration information.</p>
-    pub fn streaming_distribution_config(
-        mut self,
-        input: crate::types::StreamingDistributionConfig,
-    ) -> Self {
+    pub fn streaming_distribution_config(mut self, input: crate::types::StreamingDistributionConfig) -> Self {
         self.streaming_distribution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The streaming distribution's configuration information.</p>
-    pub fn set_streaming_distribution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDistributionConfig>,
-    ) -> Self {
-        self.streaming_distribution_config = input;
-        self
+    pub fn set_streaming_distribution_config(mut self, input: ::std::option::Option<crate::types::StreamingDistributionConfig>) -> Self {
+        self.streaming_distribution_config = input; self
+    }
+    /// <p>The streaming distribution's configuration information.</p>
+    pub fn get_streaming_distribution_config(&self) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
+        &self.streaming_distribution_config
     }
     /// <p>The streaming distribution's id.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,8 +64,11 @@ impl UpdateStreamingDistributionInputBuilder {
     }
     /// <p>The streaming distribution's id.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The streaming distribution's id.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,22 +77,24 @@ impl UpdateStreamingDistributionInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateStreamingDistributionInput`](crate::operation::update_streaming_distribution::UpdateStreamingDistributionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_streaming_distribution::UpdateStreamingDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_streaming_distribution::UpdateStreamingDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_streaming_distribution::UpdateStreamingDistributionInput {
-                streaming_distribution_config: self.streaming_distribution_config,
-                id: self.id,
-                if_match: self.if_match,
-            },
+                streaming_distribution_config: self.streaming_distribution_config
+                ,
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> Information about the operating system. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OsInfo {
+pub struct OsInfo  {
     /// <p> Information about the type of operating system. </p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OsType>,
@@ -13,11 +13,11 @@ pub struct OsInfo {
 }
 impl OsInfo {
     /// <p> Information about the type of operating system. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OsType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::OsType> {
         self.r#type.as_ref()
     }
     /// <p> Information about the version of operating system. </p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl OsInfo {
 
 /// A builder for [`OsInfo`](crate::types::OsInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OsInfoBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OsType>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl OsInfoBuilder {
     }
     /// <p> Information about the type of operating system. </p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OsType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p> Information about the type of operating system. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OsType> {
+        &self.r#type
     }
     /// <p> Information about the version of operating system. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,20 @@ impl OsInfoBuilder {
     }
     /// <p> Information about the version of operating system. </p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
+    }
+    /// <p> Information about the version of operating system. </p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`OsInfo`](crate::types::OsInfo).
     pub fn build(self) -> crate::types::OsInfo {
         crate::types::OsInfo {
-            r#type: self.r#type,
-            version: self.version,
+            r#type: self.r#type
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

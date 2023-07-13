@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNetworkAclOutput {
+pub struct DeleteNetworkAclOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteNetworkAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteNetworkAclOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkAclOutput`](crate::operation::delete_network_acl::DeleteNetworkAclOutput).
-    pub fn builder() -> crate::operation::delete_network_acl::builders::DeleteNetworkAclOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_network_acl::builders::DeleteNetworkAclOutputBuilder {
         crate::operation::delete_network_acl::builders::DeleteNetworkAclOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkAclOutput`](crate::operation::delete_network_acl::DeleteNetworkAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkAclOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteNetworkAclOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteNetworkAclOutput`](crate::operation::delete_network_acl::DeleteNetworkAclOutput).
     pub fn build(self) -> crate::operation::delete_network_acl::DeleteNetworkAclOutput {
         crate::operation::delete_network_acl::DeleteNetworkAclOutput {
@@ -43,3 +40,4 @@ impl DeleteNetworkAclOutputBuilder {
         }
     }
 }
+

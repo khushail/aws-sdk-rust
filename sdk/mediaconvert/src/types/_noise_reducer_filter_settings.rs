@@ -3,7 +3,7 @@
 /// Settings for a noise reducer filter
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoiseReducerFilterSettings {
+pub struct NoiseReducerFilterSettings  {
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
     #[doc(hidden)]
     pub strength: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl NoiseReducerFilterSettings {
 
 /// A builder for [`NoiseReducerFilterSettings`](crate::types::NoiseReducerFilterSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoiseReducerFilterSettingsBuilder {
     pub(crate) strength: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl NoiseReducerFilterSettingsBuilder {
     }
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
     pub fn set_strength(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.strength = input;
-        self
+        self.strength = input; self
+    }
+    /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
+    pub fn get_strength(&self) -> &::std::option::Option<i32> {
+        &self.strength
     }
     /// Consumes the builder and constructs a [`NoiseReducerFilterSettings`](crate::types::NoiseReducerFilterSettings).
     pub fn build(self) -> crate::types::NoiseReducerFilterSettings {
         crate::types::NoiseReducerFilterSettings {
-            strength: self.strength,
+            strength: self.strength
+            ,
         }
     }
 }
+

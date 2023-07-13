@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelFlowCallbackInput {
+pub struct ChannelFlowCallbackInput  {
     /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
     #[doc(hidden)]
     pub callback_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct ChannelFlowCallbackInput {
 }
 impl ChannelFlowCallbackInput {
     /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
-    pub fn callback_id(&self) -> ::std::option::Option<&str> {
+    pub fn callback_id(&self) -> ::std::option::Option<& str> {
         self.callback_id.as_deref()
     }
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
@@ -30,24 +30,20 @@ impl ChannelFlowCallbackInput {
         self.delete_resource
     }
     /// <p>Stores information about the processed message.</p>
-    pub fn channel_message(&self) -> ::std::option::Option<&crate::types::ChannelMessageCallback> {
+    pub fn channel_message(&self) -> ::std::option::Option<& crate::types::ChannelMessageCallback> {
         self.channel_message.as_ref()
     }
 }
 impl ChannelFlowCallbackInput {
     /// Creates a new builder-style object to manufacture [`ChannelFlowCallbackInput`](crate::operation::channel_flow_callback::ChannelFlowCallbackInput).
-    pub fn builder(
-    ) -> crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder {
-        crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder {
+        crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder::default()
     }
 }
 
 /// A builder for [`ChannelFlowCallbackInput`](crate::operation::channel_flow_callback::ChannelFlowCallbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelFlowCallbackInputBuilder {
     pub(crate) callback_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
@@ -62,8 +58,11 @@ impl ChannelFlowCallbackInputBuilder {
     }
     /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
     pub fn set_callback_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.callback_id = input;
-        self
+        self.callback_id = input; self
+    }
+    /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
+    pub fn get_callback_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_id
     }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +71,11 @@ impl ChannelFlowCallbackInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
     pub fn delete_resource(mut self, input: bool) -> Self {
@@ -82,8 +84,11 @@ impl ChannelFlowCallbackInputBuilder {
     }
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
     pub fn set_delete_resource(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_resource = input;
-        self
+        self.delete_resource = input; self
+    }
+    /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
+    pub fn get_delete_resource(&self) -> &::std::option::Option<bool> {
+        &self.delete_resource
     }
     /// <p>Stores information about the processed message.</p>
     pub fn channel_message(mut self, input: crate::types::ChannelMessageCallback) -> Self {
@@ -91,27 +96,27 @@ impl ChannelFlowCallbackInputBuilder {
         self
     }
     /// <p>Stores information about the processed message.</p>
-    pub fn set_channel_message(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageCallback>,
-    ) -> Self {
-        self.channel_message = input;
-        self
+    pub fn set_channel_message(mut self, input: ::std::option::Option<crate::types::ChannelMessageCallback>) -> Self {
+        self.channel_message = input; self
+    }
+    /// <p>Stores information about the processed message.</p>
+    pub fn get_channel_message(&self) -> &::std::option::Option<crate::types::ChannelMessageCallback> {
+        &self.channel_message
     }
     /// Consumes the builder and constructs a [`ChannelFlowCallbackInput`](crate::operation::channel_flow_callback::ChannelFlowCallbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::channel_flow_callback::ChannelFlowCallbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::channel_flow_callback::ChannelFlowCallbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::channel_flow_callback::ChannelFlowCallbackInput {
-                callback_id: self.callback_id,
-                channel_arn: self.channel_arn,
-                delete_resource: self.delete_resource,
-                channel_message: self.channel_message,
-            },
+                callback_id: self.callback_id
+                ,
+                channel_arn: self.channel_arn
+                ,
+                delete_resource: self.delete_resource
+                ,
+                channel_message: self.channel_message
+                ,
+            }
         )
     }
 }
+

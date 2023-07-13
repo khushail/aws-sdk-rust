@@ -3,14 +3,14 @@
 /// <p>State information about the operation step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterOperationStepInfo {
+pub struct ClusterOperationStepInfo  {
     /// <p>The steps current status.</p>
     #[doc(hidden)]
     pub step_status: ::std::option::Option<::std::string::String>,
 }
 impl ClusterOperationStepInfo {
     /// <p>The steps current status.</p>
-    pub fn step_status(&self) -> ::std::option::Option<&str> {
+    pub fn step_status(&self) -> ::std::option::Option<& str> {
         self.step_status.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ClusterOperationStepInfo {
 
 /// A builder for [`ClusterOperationStepInfo`](crate::types::ClusterOperationStepInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterOperationStepInfoBuilder {
     pub(crate) step_status: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ClusterOperationStepInfoBuilder {
     }
     /// <p>The steps current status.</p>
     pub fn set_step_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_status = input;
-        self
+        self.step_status = input; self
+    }
+    /// <p>The steps current status.</p>
+    pub fn get_step_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_status
     }
     /// Consumes the builder and constructs a [`ClusterOperationStepInfo`](crate::types::ClusterOperationStepInfo).
     pub fn build(self) -> crate::types::ClusterOperationStepInfo {
         crate::types::ClusterOperationStepInfo {
-            step_status: self.step_status,
+            step_status: self.step_status
+            ,
         }
     }
 }
+

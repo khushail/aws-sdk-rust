@@ -2,33 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateVehicleInput {
+pub struct BatchCreateVehicleInput  {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
     #[doc(hidden)]
     pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>,
 }
 impl BatchCreateVehicleInput {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
-    pub fn vehicles(&self) -> ::std::option::Option<&[crate::types::CreateVehicleRequestItem]> {
+    pub fn vehicles(&self) -> ::std::option::Option<& [crate::types::CreateVehicleRequestItem]> {
         self.vehicles.as_deref()
     }
 }
 impl BatchCreateVehicleInput {
     /// Creates a new builder-style object to manufacture [`BatchCreateVehicleInput`](crate::operation::batch_create_vehicle::BatchCreateVehicleInput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_vehicle::builders::BatchCreateVehicleInputBuilder {
+    pub fn builder() -> crate::operation::batch_create_vehicle::builders::BatchCreateVehicleInputBuilder {
         crate::operation::batch_create_vehicle::builders::BatchCreateVehicleInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateVehicleInput`](crate::operation::batch_create_vehicle::BatchCreateVehicleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateVehicleInputBuilder {
-    pub(crate) vehicles:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>,
+    pub(crate) vehicles: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>,
 }
 impl BatchCreateVehicleInputBuilder {
     /// Appends an item to `vehicles`.
@@ -38,29 +34,26 @@ impl BatchCreateVehicleInputBuilder {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
     pub fn vehicles(mut self, input: crate::types::CreateVehicleRequestItem) -> Self {
         let mut v = self.vehicles.unwrap_or_default();
-        v.push(input);
-        self.vehicles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vehicles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
-    pub fn set_vehicles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>,
-    ) -> Self {
-        self.vehicles = input;
-        self
+    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>) -> Self {
+        self.vehicles = input; self
+    }
+    /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
+    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>> {
+        &self.vehicles
     }
     /// Consumes the builder and constructs a [`BatchCreateVehicleInput`](crate::operation::batch_create_vehicle::BatchCreateVehicleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_create_vehicle::BatchCreateVehicleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_create_vehicle::BatchCreateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_create_vehicle::BatchCreateVehicleInput {
-                vehicles: self.vehicles,
-            },
+                vehicles: self.vehicles
+                ,
+            }
         )
     }
 }
+

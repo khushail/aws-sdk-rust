@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSigningProfileInput {
+pub struct GetSigningProfileInput  {
     /// <p>The name of the target signing profile.</p>
     #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct GetSigningProfileInput {
 }
 impl GetSigningProfileInput {
     /// <p>The name of the target signing profile.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn profile_owner(&self) -> ::std::option::Option<&str> {
+    pub fn profile_owner(&self) -> ::std::option::Option<& str> {
         self.profile_owner.as_deref()
     }
 }
 impl GetSigningProfileInput {
     /// Creates a new builder-style object to manufacture [`GetSigningProfileInput`](crate::operation::get_signing_profile::GetSigningProfileInput).
-    pub fn builder(
-    ) -> crate::operation::get_signing_profile::builders::GetSigningProfileInputBuilder {
+    pub fn builder() -> crate::operation::get_signing_profile::builders::GetSigningProfileInputBuilder {
         crate::operation::get_signing_profile::builders::GetSigningProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSigningProfileInput`](crate::operation::get_signing_profile::GetSigningProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSigningProfileInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_owner: ::std::option::Option<::std::string::String>,
@@ -45,37 +42,35 @@ impl GetSigningProfileInputBuilder {
     }
     /// <p>The name of the target signing profile.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
+    }
+    /// <p>The name of the target signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn profile_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn set_profile_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.profile_owner = input;
-        self
+    pub fn set_profile_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_owner = input; self
+    }
+    /// <p>The AWS account ID of the profile owner.</p>
+    pub fn get_profile_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_owner
     }
     /// Consumes the builder and constructs a [`GetSigningProfileInput`](crate::operation::get_signing_profile::GetSigningProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signing_profile::GetSigningProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_signing_profile::GetSigningProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_signing_profile::GetSigningProfileInput {
-                profile_name: self.profile_name,
-                profile_owner: self.profile_owner,
-            },
+                profile_name: self.profile_name
+                ,
+                profile_owner: self.profile_owner
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the verification attributes of a single identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityVerificationAttributes {
+pub struct IdentityVerificationAttributes  {
     /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
     #[doc(hidden)]
     pub verification_status: ::std::option::Option<crate::types::VerificationStatus>,
@@ -13,11 +13,11 @@ pub struct IdentityVerificationAttributes {
 }
 impl IdentityVerificationAttributes {
     /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    pub fn verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
+    pub fn verification_status(&self) -> ::std::option::Option<& crate::types::VerificationStatus> {
         self.verification_status.as_ref()
     }
     /// <p>The verification token for a domain identity. Null for email address identities.</p>
-    pub fn verification_token(&self) -> ::std::option::Option<&str> {
+    pub fn verification_token(&self) -> ::std::option::Option<& str> {
         self.verification_token.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl IdentityVerificationAttributes {
 
 /// A builder for [`IdentityVerificationAttributes`](crate::types::IdentityVerificationAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityVerificationAttributesBuilder {
     pub(crate) verification_status: ::std::option::Option<crate::types::VerificationStatus>,
     pub(crate) verification_token: ::std::option::Option<::std::string::String>,
@@ -44,34 +42,34 @@ impl IdentityVerificationAttributesBuilder {
         self
     }
     /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    pub fn set_verification_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationStatus>,
-    ) -> Self {
-        self.verification_status = input;
-        self
+    pub fn set_verification_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
+        self.verification_status = input; self
+    }
+    /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
+    pub fn get_verification_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
+        &self.verification_status
     }
     /// <p>The verification token for a domain identity. Null for email address identities.</p>
-    pub fn verification_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The verification token for a domain identity. Null for email address identities.</p>
-    pub fn set_verification_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.verification_token = input;
-        self
+    pub fn set_verification_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.verification_token = input; self
+    }
+    /// <p>The verification token for a domain identity. Null for email address identities.</p>
+    pub fn get_verification_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verification_token
     }
     /// Consumes the builder and constructs a [`IdentityVerificationAttributes`](crate::types::IdentityVerificationAttributes).
     pub fn build(self) -> crate::types::IdentityVerificationAttributes {
         crate::types::IdentityVerificationAttributes {
-            verification_status: self.verification_status,
-            verification_token: self.verification_token,
+            verification_status: self.verification_status
+            ,
+            verification_token: self.verification_token
+            ,
         }
     }
 }
+

@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCelebrityInfoInput {
+pub struct GetCelebrityInfoInput  {
     /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetCelebrityInfoInput {
     /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetCelebrityInfoInput {
     /// Creates a new builder-style object to manufacture [`GetCelebrityInfoInput`](crate::operation::get_celebrity_info::GetCelebrityInfoInput).
-    pub fn builder() -> crate::operation::get_celebrity_info::builders::GetCelebrityInfoInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_celebrity_info::builders::GetCelebrityInfoInputBuilder {
         crate::operation::get_celebrity_info::builders::GetCelebrityInfoInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCelebrityInfoInput`](crate::operation::get_celebrity_info::GetCelebrityInfoInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCelebrityInfoInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +34,20 @@ impl GetCelebrityInfoInputBuilder {
     }
     /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetCelebrityInfoInput`](crate::operation::get_celebrity_info::GetCelebrityInfoInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_celebrity_info::GetCelebrityInfoInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_celebrity_info::GetCelebrityInfoInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_celebrity_info::GetCelebrityInfoInput { id: self.id },
+            crate::operation::get_celebrity_info::GetCelebrityInfoInput {
+                id: self.id
+                ,
+            }
         )
     }
 }
+

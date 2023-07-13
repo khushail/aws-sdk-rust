@@ -3,7 +3,7 @@
 /// <p>Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGrokClassifierRequest {
+pub struct CreateGrokClassifierRequest  {
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     #[doc(hidden)]
     pub classification: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct CreateGrokClassifierRequest {
 }
 impl CreateGrokClassifierRequest {
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
-    pub fn classification(&self) -> ::std::option::Option<&str> {
+    pub fn classification(&self) -> ::std::option::Option<& str> {
         self.classification.as_deref()
     }
     /// <p>The name of the new classifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The grok pattern used by this classifier.</p>
-    pub fn grok_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn grok_pattern(&self) -> ::std::option::Option<& str> {
         self.grok_pattern.as_deref()
     }
     /// <p>Optional custom grok patterns used by this classifier.</p>
-    pub fn custom_patterns(&self) -> ::std::option::Option<&str> {
+    pub fn custom_patterns(&self) -> ::std::option::Option<& str> {
         self.custom_patterns.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl CreateGrokClassifierRequest {
 
 /// A builder for [`CreateGrokClassifierRequest`](crate::types::CreateGrokClassifierRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGrokClassifierRequestBuilder {
     pub(crate) classification: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -55,20 +53,17 @@ pub struct CreateGrokClassifierRequestBuilder {
 }
 impl CreateGrokClassifierRequestBuilder {
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
-    pub fn classification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
-    pub fn set_classification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.classification = input;
-        self
+    pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.classification = input; self
+    }
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+    pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
+        &self.classification
     }
     /// <p>The name of the new classifier.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,8 +72,11 @@ impl CreateGrokClassifierRequestBuilder {
     }
     /// <p>The name of the new classifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the new classifier.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The grok pattern used by this classifier.</p>
     pub fn grok_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,32 +85,37 @@ impl CreateGrokClassifierRequestBuilder {
     }
     /// <p>The grok pattern used by this classifier.</p>
     pub fn set_grok_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grok_pattern = input;
-        self
+        self.grok_pattern = input; self
+    }
+    /// <p>The grok pattern used by this classifier.</p>
+    pub fn get_grok_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grok_pattern
     }
     /// <p>Optional custom grok patterns used by this classifier.</p>
-    pub fn custom_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_patterns = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional custom grok patterns used by this classifier.</p>
-    pub fn set_custom_patterns(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.custom_patterns = input;
-        self
+    pub fn set_custom_patterns(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_patterns = input; self
+    }
+    /// <p>Optional custom grok patterns used by this classifier.</p>
+    pub fn get_custom_patterns(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_patterns
     }
     /// Consumes the builder and constructs a [`CreateGrokClassifierRequest`](crate::types::CreateGrokClassifierRequest).
     pub fn build(self) -> crate::types::CreateGrokClassifierRequest {
         crate::types::CreateGrokClassifierRequest {
-            classification: self.classification,
-            name: self.name,
-            grok_pattern: self.grok_pattern,
-            custom_patterns: self.custom_patterns,
+            classification: self.classification
+            ,
+            name: self.name
+            ,
+            grok_pattern: self.grok_pattern
+            ,
+            custom_patterns: self.custom_patterns
+            ,
         }
     }
 }
+

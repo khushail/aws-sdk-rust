@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFunctionInput {
+pub struct DescribeFunctionInput  {
     /// <p>The name of the function that you are getting information about.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct DescribeFunctionInput {
 }
 impl DescribeFunctionInput {
     /// <p>The name of the function that you are getting information about.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    pub fn stage(&self) -> ::std::option::Option<&crate::types::FunctionStage> {
+    pub fn stage(&self) -> ::std::option::Option<& crate::types::FunctionStage> {
         self.stage.as_ref()
     }
 }
 impl DescribeFunctionInput {
     /// Creates a new builder-style object to manufacture [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
-    pub fn builder() -> crate::operation::describe_function::builders::DescribeFunctionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_function::builders::DescribeFunctionInputBuilder {
         crate::operation::describe_function::builders::DescribeFunctionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFunctionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stage: ::std::option::Option<crate::types::FunctionStage>,
@@ -45,8 +42,11 @@ impl DescribeFunctionInputBuilder {
     }
     /// <p>The name of the function that you are getting information about.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the function that you are getting information about.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(mut self, input: crate::types::FunctionStage) -> Self {
@@ -55,19 +55,22 @@ impl DescribeFunctionInputBuilder {
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
+    }
+    /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
+        &self.stage
     }
     /// Consumes the builder and constructs a [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_function::DescribeFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_function::DescribeFunctionInput {
-            name: self.name,
-            stage: self.stage,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_function::DescribeFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_function::DescribeFunctionInput {
+                name: self.name
+                ,
+                stage: self.stage
+                ,
+            }
+        )
     }
 }
+

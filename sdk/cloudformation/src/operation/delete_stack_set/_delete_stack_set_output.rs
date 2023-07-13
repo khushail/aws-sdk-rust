@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStackSetOutput {
+pub struct DeleteStackSetOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteStackSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteStackSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStackSetOutput`](crate::operation::delete_stack_set::DeleteStackSetOutput).
     pub fn builder() -> crate::operation::delete_stack_set::builders::DeleteStackSetOutputBuilder {
@@ -19,22 +19,20 @@ impl DeleteStackSetOutput {
 
 /// A builder for [`DeleteStackSetOutput`](crate::operation::delete_stack_set::DeleteStackSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStackSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteStackSetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteStackSetOutput`](crate::operation::delete_stack_set::DeleteStackSetOutput).
     pub fn build(self) -> crate::operation::delete_stack_set::DeleteStackSetOutput {
         crate::operation::delete_stack_set::DeleteStackSetOutput {
@@ -42,3 +40,4 @@ impl DeleteStackSetOutputBuilder {
         }
     }
 }
+

@@ -3,102 +3,87 @@ pub use crate::operation::notify_app_validation_output::_notify_app_validation_o
 
 pub use crate::operation::notify_app_validation_output::_notify_app_validation_output_input::NotifyAppValidationOutputInputBuilder;
 
+impl NotifyAppValidationOutputInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.notify_app_validation_output();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `NotifyAppValidationOutput`.
-///
+/// 
 /// <p>Provides information to Server Migration Service about whether application validation is successful.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyAppValidationOutputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder,
 }
-impl NotifyAppValidationOutputFluentBuilder {
+impl NotifyAppValidationOutputFluentBuilder  {
     /// Creates a new `NotifyAppValidationOutput`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutput,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the NotifyAppValidationOutput as a reference.
+    pub fn as_input(&self) -> &crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::notify_app_validation_output::NotifyAppValidationOutput, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::notify_app_validation_output::NotifyAppValidationOutputError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_app_validation_output::NotifyAppValidationOutputError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutput,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_app_validation_output::NotifyAppValidationOutputError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::notify_app_validation_output::NotifyAppValidationOutput, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::notify_app_validation_output::NotifyAppValidationOutputError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the application.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
@@ -109,17 +94,23 @@ impl NotifyAppValidationOutputFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The notification information.</p>
     pub fn notification_context(mut self, input: crate::types::NotificationContext) -> Self {
         self.inner = self.inner.notification_context(input);
         self
     }
     /// <p>The notification information.</p>
-    pub fn set_notification_context(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationContext>,
-    ) -> Self {
+    pub fn set_notification_context(mut self, input: ::std::option::Option<crate::types::NotificationContext>) -> Self {
         self.inner = self.inner.set_notification_context(input);
         self
     }
+    /// <p>The notification information.</p>
+    pub fn get_notification_context(&self) -> &::std::option::Option<crate::types::NotificationContext> {
+        self.inner.get_notification_context()
+    }
 }
+

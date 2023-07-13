@@ -3,7 +3,7 @@
 /// <p>Provides summary information for the <code>EnvironmentVpc</code> resource as a response to <code>ListEnvironmentVpc</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentVpc {
+pub struct EnvironmentVpc  {
     /// <p>The unique identifier of the environment. </p>
     #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
@@ -28,31 +28,31 @@ pub struct EnvironmentVpc {
 }
 impl EnvironmentVpc {
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the VPC. </p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the virtual private cloud (VPC) owner. </p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
-    pub fn cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn cidr_blocks(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.cidr_blocks.as_deref()
     }
     /// <p>The name of the VPC at the time it is added to the environment. </p>
-    pub fn vpc_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_name(&self) -> ::std::option::Option<& str> {
         self.vpc_name.as_deref()
     }
     /// <p>A timestamp that indicates when the VPC was last updated by the environment. </p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -65,9 +65,7 @@ impl EnvironmentVpc {
 
 /// A builder for [`EnvironmentVpc`](crate::types::EnvironmentVpc).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentVpcBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -79,20 +77,17 @@ pub struct EnvironmentVpcBuilder {
 }
 impl EnvironmentVpcBuilder {
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.environment_id = input;
-        self
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_id = input; self
+    }
+    /// <p>The unique identifier of the environment. </p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>The ID of the VPC. </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,8 +96,11 @@ impl EnvironmentVpcBuilder {
     }
     /// <p>The ID of the VPC. </p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
+    }
+    /// <p>The ID of the VPC. </p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The Amazon Web Services account ID of the virtual private cloud (VPC) owner. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,8 +109,11 @@ impl EnvironmentVpcBuilder {
     }
     /// <p>The Amazon Web Services account ID of the virtual private cloud (VPC) owner. </p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The Amazon Web Services account ID of the virtual private cloud (VPC) owner. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Appends an item to `cidr_blocks`.
     ///
@@ -121,17 +122,17 @@ impl EnvironmentVpcBuilder {
     /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
     pub fn cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidr_blocks.unwrap_or_default();
-        v.push(input.into());
-        self.cidr_blocks = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cidr_blocks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
-    pub fn set_cidr_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.cidr_blocks = input;
-        self
+    pub fn set_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.cidr_blocks = input; self
+    }
+    /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
+    pub fn get_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidr_blocks
     }
     /// <p>The name of the VPC at the time it is added to the environment. </p>
     pub fn vpc_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,8 +141,11 @@ impl EnvironmentVpcBuilder {
     }
     /// <p>The name of the VPC at the time it is added to the environment. </p>
     pub fn set_vpc_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_name = input;
-        self
+        self.vpc_name = input; self
+    }
+    /// <p>The name of the VPC at the time it is added to the environment. </p>
+    pub fn get_vpc_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_name
     }
     /// <p>A timestamp that indicates when the VPC was last updated by the environment. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -149,12 +153,12 @@ impl EnvironmentVpcBuilder {
         self
     }
     /// <p>A timestamp that indicates when the VPC was last updated by the environment. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
+    }
+    /// <p>A timestamp that indicates when the VPC was last updated by the environment. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -162,23 +166,31 @@ impl EnvironmentVpcBuilder {
         self
     }
     /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
+    }
+    /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`EnvironmentVpc`](crate::types::EnvironmentVpc).
     pub fn build(self) -> crate::types::EnvironmentVpc {
         crate::types::EnvironmentVpc {
-            environment_id: self.environment_id,
-            vpc_id: self.vpc_id,
-            account_id: self.account_id,
-            cidr_blocks: self.cidr_blocks,
-            vpc_name: self.vpc_name,
-            last_updated_time: self.last_updated_time,
-            created_time: self.created_time,
+            environment_id: self.environment_id
+            ,
+            vpc_id: self.vpc_id
+            ,
+            account_id: self.account_id
+            ,
+            cidr_blocks: self.cidr_blocks
+            ,
+            vpc_name: self.vpc_name
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            created_time: self.created_time
+            ,
         }
     }
 }
+

@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVpcConnectionInput {
+pub struct DeleteVpcConnectionInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpcConnectionInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeleteVpcConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcConnectionInput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionInputBuilder {
-        crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionInputBuilder {
+        crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcConnectionInput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcConnectionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -38,18 +34,20 @@ impl DeleteVpcConnectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteVpcConnectionInput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpc_connection::DeleteVpcConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc_connection::DeleteVpcConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_vpc_connection::DeleteVpcConnectionInput { arn: self.arn },
+            crate::operation::delete_vpc_connection::DeleteVpcConnectionInput {
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

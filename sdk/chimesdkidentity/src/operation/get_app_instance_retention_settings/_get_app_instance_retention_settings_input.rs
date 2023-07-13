@@ -2,56 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAppInstanceRetentionSettingsInput {
+pub struct GetAppInstanceRetentionSettingsInput  {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
 }
 impl GetAppInstanceRetentionSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetAppInstanceRetentionSettingsInput`](crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput).
-    pub fn builder() -> crate::operation::get_app_instance_retention_settings::builders::GetAppInstanceRetentionSettingsInputBuilder{
+    pub fn builder() -> crate::operation::get_app_instance_retention_settings::builders::GetAppInstanceRetentionSettingsInputBuilder {
         crate::operation::get_app_instance_retention_settings::builders::GetAppInstanceRetentionSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppInstanceRetentionSettingsInput`](crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppInstanceRetentionSettingsInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAppInstanceRetentionSettingsInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.app_instance_arn = input;
-        self
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_instance_arn = input; self
+    }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
     }
     /// Consumes the builder and constructs a [`GetAppInstanceRetentionSettingsInput`](crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput {
                 app_instance_arn: self.app_instance_arn
@@ -60,3 +50,4 @@ impl GetAppInstanceRetentionSettingsInputBuilder {
         )
     }
 }
+

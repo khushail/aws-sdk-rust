@@ -3,7 +3,7 @@
 /// <p>The specified node type doesn't match the expected node type for a node. You can specify the node type as branch, sensor, actuator, or attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidNodeException {
+pub struct InvalidNodeException  {
     /// <p>The specified node type isn't valid.</p>
     #[doc(hidden)]
     pub invalid_nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
@@ -17,25 +17,23 @@ pub struct InvalidNodeException {
 }
 impl InvalidNodeException {
     /// <p>The specified node type isn't valid.</p>
-    pub fn invalid_nodes(&self) -> ::std::option::Option<&[crate::types::Node]> {
+    pub fn invalid_nodes(&self) -> ::std::option::Option<& [crate::types::Node]> {
         self.invalid_nodes.as_deref()
     }
     /// <p>The reason the node validation failed.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 impl InvalidNodeException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidNodeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidNodeException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -50,9 +48,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::InvalidNodeExcep
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidNodeException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidNodeException {
     /// Creates a new builder-style object to manufacture [`InvalidNodeException`](crate::types::error::InvalidNodeException).
@@ -63,9 +59,7 @@ impl InvalidNodeException {
 
 /// A builder for [`InvalidNodeException`](crate::types::error::InvalidNodeException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidNodeExceptionBuilder {
     pub(crate) invalid_nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -80,17 +74,17 @@ impl InvalidNodeExceptionBuilder {
     /// <p>The specified node type isn't valid.</p>
     pub fn invalid_nodes(mut self, input: crate::types::Node) -> Self {
         let mut v = self.invalid_nodes.unwrap_or_default();
-        v.push(input);
-        self.invalid_nodes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.invalid_nodes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The specified node type isn't valid.</p>
-    pub fn set_invalid_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
-        self.invalid_nodes = input;
-        self
+    pub fn set_invalid_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
+        self.invalid_nodes = input; self
+    }
+    /// <p>The specified node type isn't valid.</p>
+    pub fn get_invalid_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+        &self.invalid_nodes
     }
     /// <p>The reason the node validation failed.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,8 +93,11 @@ impl InvalidNodeExceptionBuilder {
     }
     /// <p>The reason the node validation failed.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
+    }
+    /// <p>The reason the node validation failed.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,30 +106,34 @@ impl InvalidNodeExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidNodeException`](crate::types::error::InvalidNodeException).
     pub fn build(self) -> crate::types::error::InvalidNodeException {
         crate::types::error::InvalidNodeException {
-            invalid_nodes: self.invalid_nodes,
-            reason: self.reason,
-            message: self.message,
+            invalid_nodes: self.invalid_nodes
+            ,
+            reason: self.reason
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

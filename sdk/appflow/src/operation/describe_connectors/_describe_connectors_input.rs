@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConnectorsInput {
+pub struct DescribeConnectorsInput  {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     #[doc(hidden)]
     pub connector_types: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
@@ -15,7 +15,7 @@ pub struct DescribeConnectorsInput {
 }
 impl DescribeConnectorsInput {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_types(&self) -> ::std::option::Option<&[crate::types::ConnectorType]> {
+    pub fn connector_types(&self) -> ::std::option::Option<& [crate::types::ConnectorType]> {
         self.connector_types.as_deref()
     }
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
@@ -23,23 +23,20 @@ impl DescribeConnectorsInput {
         self.max_results
     }
     /// <p> The pagination token for the next page of data. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeConnectorsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorsInput`](crate::operation::describe_connectors::DescribeConnectorsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder {
+    pub fn builder() -> crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder {
         crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectorsInput`](crate::operation::describe_connectors::DescribeConnectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectorsInputBuilder {
     pub(crate) connector_types: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -53,17 +50,17 @@ impl DescribeConnectorsInputBuilder {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_types(mut self, input: crate::types::ConnectorType) -> Self {
         let mut v = self.connector_types.unwrap_or_default();
-        v.push(input);
-        self.connector_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connector_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
-    ) -> Self {
-        self.connector_types = input;
-        self
+    pub fn set_connector_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>) -> Self {
+        self.connector_types = input; self
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn get_connector_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>> {
+        &self.connector_types
     }
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,8 +69,11 @@ impl DescribeConnectorsInputBuilder {
     }
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,22 +82,24 @@ impl DescribeConnectorsInputBuilder {
     }
     /// <p> The pagination token for the next page of data. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> The pagination token for the next page of data. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeConnectorsInput`](crate::operation::describe_connectors::DescribeConnectorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_connectors::DescribeConnectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_connectors::DescribeConnectorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_connectors::DescribeConnectorsInput {
-                connector_types: self.connector_types,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                connector_types: self.connector_types
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

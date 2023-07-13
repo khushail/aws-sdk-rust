@@ -3,103 +3,88 @@ pub use crate::operation::get_player_connection_status::_get_player_connection_s
 
 pub use crate::operation::get_player_connection_status::_get_player_connection_status_input::GetPlayerConnectionStatusInputBuilder;
 
+impl GetPlayerConnectionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.get_player_connection_status();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `GetPlayerConnectionStatus`.
-///
-/// <p>Gets the status of a player's connection to the game runtime.</p>
+/// 
+/// <p>Gets the status of a player's connection to the game runtime.</p> 
 /// <p> It's possible for a single player to have multiple connections to the game runtime. If a player is not connected, this operation returns an empty list. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPlayerConnectionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder,
 }
-impl GetPlayerConnectionStatusFluentBuilder {
+impl GetPlayerConnectionStatusFluentBuilder  {
     /// Creates a new `GetPlayerConnectionStatus`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatus,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the GetPlayerConnectionStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_player_connection_status::GetPlayerConnectionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_player_connection_status::GetPlayerConnectionStatusError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_player_connection_status::GetPlayerConnectionStatusError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatus,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_player_connection_status::GetPlayerConnectionStatusError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_player_connection_status::GetPlayerConnectionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_player_connection_status::GetPlayerConnectionStatusError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The unique identifier representing a player.</p>
     pub fn player_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.player_id(input.into());
@@ -109,6 +94,10 @@ impl GetPlayerConnectionStatusFluentBuilder {
     pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_player_id(input);
         self
+    }
+    /// <p>The unique identifier representing a player.</p>
+    pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_player_id()
     }
     /// <p>The name of the game.</p>
     pub fn game_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +109,10 @@ impl GetPlayerConnectionStatusFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -130,4 +123,9 @@ impl GetPlayerConnectionStatusFluentBuilder {
         self.inner = self.inner.set_stage_name(input);
         self
     }
+    /// <p>The name of the stage.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
+    }
 }
+

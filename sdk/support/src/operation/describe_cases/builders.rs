@@ -3,116 +3,104 @@ pub use crate::operation::describe_cases::_describe_cases_output::DescribeCasesO
 
 pub use crate::operation::describe_cases::_describe_cases_input::DescribeCasesInputBuilder;
 
+impl DescribeCasesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_cases::DescribeCasesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_cases::DescribeCasesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.describe_cases();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DescribeCases`.
-///
-/// <p>Returns a list of cases that you specify by passing one or more case IDs. You can use the <code>afterTime</code> and <code>beforeTime</code> parameters to filter the cases by date. You can set values for the <code>includeResolvedCases</code> and <code>includeCommunications</code> parameters to specify how much information to return.</p>
-/// <p>The response returns the following in JSON format:</p>
-/// <ul>
-/// <li> <p>One or more <a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> data types.</p> </li>
-/// <li> <p>One or more <code>nextToken</code> values, which specify where to paginate the returned records represented by the <code>CaseDetails</code> objects.</p> </li>
-/// </ul>
-/// <p>Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request might return an error.</p> <note>
-/// <ul>
-/// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
-/// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li>
-/// </ul>
+/// 
+/// <p>Returns a list of cases that you specify by passing one or more case IDs. You can use the <code>afterTime</code> and <code>beforeTime</code> parameters to filter the cases by date. You can set values for the <code>includeResolvedCases</code> and <code>includeCommunications</code> parameters to specify how much information to return.</p> 
+/// <p>The response returns the following in JSON format:</p> 
+/// <ul> 
+/// <li> <p>One or more <a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> data types.</p> </li> 
+/// <li> <p>One or more <code>nextToken</code> values, which specify where to paginate the returned records represented by the <code>CaseDetails</code> objects.</p> </li> 
+/// </ul> 
+/// <p>Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request might return an error.</p> <note> 
+/// <ul> 
+/// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API. </p> </li> 
+/// <li> <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p> </li> 
+/// </ul> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_cases::builders::DescribeCasesInputBuilder,
+                    inner: crate::operation::describe_cases::builders::DescribeCasesInputBuilder,
 }
-impl DescribeCasesFluentBuilder {
+impl DescribeCasesFluentBuilder  {
     /// Creates a new `DescribeCases`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_cases::DescribeCases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_cases::DescribeCasesError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DescribeCases as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_cases::builders::DescribeCasesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cases::DescribeCasesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_cases::DescribeCasesError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_cases::DescribeCases, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_cases::DescribeCasesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_cases::DescribeCasesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_cases::DescribeCasesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cases::DescribeCasesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_cases::DescribeCasesError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_cases::DescribeCases,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_cases::DescribeCasesError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_cases::DescribeCasesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_cases::DescribeCasesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_cases::DescribeCases, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_cases::DescribeCasesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_cases::paginator::DescribeCasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_cases::paginator::DescribeCasesPaginator {
-        crate::operation::describe_cases::paginator::DescribeCasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cases::paginator::DescribeCasesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cases::paginator::DescribeCasesPaginator {
+                                crate::operation::describe_cases::paginator::DescribeCasesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `caseIdList`.
     ///
     /// To override the contents of this collection use [`set_case_id_list`](Self::set_case_id_list).
@@ -123,12 +111,13 @@ impl DescribeCasesFluentBuilder {
         self
     }
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub fn set_case_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_case_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_case_id_list(input);
         self
+    }
+    /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
+    pub fn get_case_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_case_id_list()
     }
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
     pub fn display_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +129,10 @@ impl DescribeCasesFluentBuilder {
         self.inner = self.inner.set_display_id(input);
         self
     }
+    /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
+    pub fn get_display_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_id()
+    }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn after_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after_time(input.into());
@@ -149,6 +142,10 @@ impl DescribeCasesFluentBuilder {
     pub fn set_after_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after_time(input);
         self
+    }
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    pub fn get_after_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_after_time()
     }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn before_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +157,10 @@ impl DescribeCasesFluentBuilder {
         self.inner = self.inner.set_before_time(input);
         self
     }
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    pub fn get_before_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_before_time()
+    }
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
     pub fn include_resolved_cases(mut self, input: bool) -> Self {
         self.inner = self.inner.include_resolved_cases(input);
@@ -169,6 +170,10 @@ impl DescribeCasesFluentBuilder {
     pub fn set_include_resolved_cases(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_resolved_cases(input);
         self
+    }
+    /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
+    pub fn get_include_resolved_cases(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_resolved_cases()
     }
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,6 +185,10 @@ impl DescribeCasesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A resumption point for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return before paginating.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -189,6 +198,10 @@ impl DescribeCasesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return before paginating.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -200,6 +213,10 @@ impl DescribeCasesFluentBuilder {
         self.inner = self.inner.set_language(input);
         self
     }
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_language()
+    }
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
     pub fn include_communications(mut self, input: bool) -> Self {
         self.inner = self.inner.include_communications(input);
@@ -210,4 +227,9 @@ impl DescribeCasesFluentBuilder {
         self.inner = self.inner.set_include_communications(input);
         self
     }
+    /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
+    pub fn get_include_communications(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_communications()
+    }
 }
+

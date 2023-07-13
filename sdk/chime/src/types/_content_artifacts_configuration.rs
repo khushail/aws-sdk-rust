@@ -3,7 +3,7 @@
 /// <p>The content artifact object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentArtifactsConfiguration {
+pub struct ContentArtifactsConfiguration  {
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ArtifactsState>,
@@ -13,11 +13,11 @@ pub struct ContentArtifactsConfiguration {
 }
 impl ContentArtifactsConfiguration {
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ArtifactsState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ArtifactsState> {
         self.state.as_ref()
     }
     /// <p>The MUX type of the artifact configuration.</p>
-    pub fn mux_type(&self) -> ::std::option::Option<&crate::types::ContentMuxType> {
+    pub fn mux_type(&self) -> ::std::option::Option<& crate::types::ContentMuxType> {
         self.mux_type.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl ContentArtifactsConfiguration {
 
 /// A builder for [`ContentArtifactsConfiguration`](crate::types::ContentArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContentArtifactsConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsState>,
     pub(crate) mux_type: ::std::option::Option<crate::types::ContentMuxType>,
@@ -45,8 +43,11 @@ impl ContentArtifactsConfigurationBuilder {
     }
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>Indicates whether the content artifact is enabled or disabled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsState> {
+        &self.state
     }
     /// <p>The MUX type of the artifact configuration.</p>
     pub fn mux_type(mut self, input: crate::types::ContentMuxType) -> Self {
@@ -54,18 +55,21 @@ impl ContentArtifactsConfigurationBuilder {
         self
     }
     /// <p>The MUX type of the artifact configuration.</p>
-    pub fn set_mux_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentMuxType>,
-    ) -> Self {
-        self.mux_type = input;
-        self
+    pub fn set_mux_type(mut self, input: ::std::option::Option<crate::types::ContentMuxType>) -> Self {
+        self.mux_type = input; self
+    }
+    /// <p>The MUX type of the artifact configuration.</p>
+    pub fn get_mux_type(&self) -> &::std::option::Option<crate::types::ContentMuxType> {
+        &self.mux_type
     }
     /// Consumes the builder and constructs a [`ContentArtifactsConfiguration`](crate::types::ContentArtifactsConfiguration).
     pub fn build(self) -> crate::types::ContentArtifactsConfiguration {
         crate::types::ContentArtifactsConfiguration {
-            state: self.state,
-            mux_type: self.mux_type,
+            state: self.state
+            ,
+            mux_type: self.mux_type
+            ,
         }
     }
 }
+

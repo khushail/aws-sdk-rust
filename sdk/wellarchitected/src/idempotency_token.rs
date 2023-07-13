@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::sync::Mutex;
 
 pub(crate) fn uuid_v4(input: u128) -> String {
@@ -59,6 +60,10 @@ impl From<&'static str> for IdempotencyTokenProvider {
     }
 }
 
+impl Storable for IdempotencyTokenProvider {
+    type Storer = StoreReplace<IdempotencyTokenProvider>;
+}
+
 impl IdempotencyTokenProvider {
     pub fn make_idempotency_token(&self) -> String {
         match &self.inner {
@@ -97,3 +102,4 @@ impl Clone for IdempotencyTokenProvider {
         }
     }
 }
+

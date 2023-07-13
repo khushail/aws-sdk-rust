@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBudgetActionsForAccountInput {
+pub struct DescribeBudgetActionsForAccountInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeBudgetActionsForAccountInput {
 }
 impl DescribeBudgetActionsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -23,22 +23,20 @@ impl DescribeBudgetActionsForAccountInput {
         self.max_results
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeBudgetActionsForAccountInput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountInput`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput).
-    pub fn builder() -> crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountInputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountInputBuilder {
         crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetActionsForAccountInput`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionsForAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,8 +50,11 @@ impl DescribeBudgetActionsForAccountInputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,8 +63,11 @@ impl DescribeBudgetActionsForAccountInputBuilder {
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,16 +76,14 @@ impl DescribeBudgetActionsForAccountInputBuilder {
     }
     /// <p> A generic string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p> A generic string.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeBudgetActionsForAccountInput`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput {
                 account_id: self.account_id
@@ -94,3 +96,4 @@ impl DescribeBudgetActionsForAccountInputBuilder {
         )
     }
 }
+

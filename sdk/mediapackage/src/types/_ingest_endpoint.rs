@@ -3,7 +3,7 @@
 /// An endpoint for ingesting source content for a Channel.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestEndpoint {
+pub struct IngestEndpoint  {
     /// The system generated unique identifier for the IngestEndpoint
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct IngestEndpoint {
 }
 impl IngestEndpoint {
     /// The system generated unique identifier for the IngestEndpoint
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The system generated password for ingest authentication.
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// The ingest URL to which the source stream should be sent.
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// The system generated username for ingest authentication.
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl IngestEndpoint {
 
 /// A builder for [`IngestEndpoint`](crate::types::IngestEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestEndpointBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl IngestEndpointBuilder {
     }
     /// The system generated unique identifier for the IngestEndpoint
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// The system generated unique identifier for the IngestEndpoint
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The system generated password for ingest authentication.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl IngestEndpointBuilder {
     }
     /// The system generated password for ingest authentication.
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
+    }
+    /// The system generated password for ingest authentication.
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// The ingest URL to which the source stream should be sent.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl IngestEndpointBuilder {
     }
     /// The ingest URL to which the source stream should be sent.
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
+    }
+    /// The ingest URL to which the source stream should be sent.
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// The system generated username for ingest authentication.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl IngestEndpointBuilder {
     }
     /// The system generated username for ingest authentication.
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
+    }
+    /// The system generated username for ingest authentication.
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`IngestEndpoint`](crate::types::IngestEndpoint).
     pub fn build(self) -> crate::types::IngestEndpoint {
         crate::types::IngestEndpoint {
-            id: self.id,
-            password: self.password,
-            url: self.url,
-            username: self.username,
+            id: self.id
+            ,
+            password: self.password
+            ,
+            url: self.url
+            ,
+            username: self.username
+            ,
         }
     }
 }
+

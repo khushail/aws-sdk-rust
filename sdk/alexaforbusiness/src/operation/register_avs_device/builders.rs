@@ -3,102 +3,88 @@ pub use crate::operation::register_avs_device::_register_avs_device_output::Regi
 
 pub use crate::operation::register_avs_device::_register_avs_device_input::RegisterAvsDeviceInputBuilder;
 
+impl RegisterAvsDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::register_avs_device::RegisterAvsDeviceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::register_avs_device::RegisterAVSDeviceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.register_avs_device();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `RegisterAVSDevice`.
-///
+/// 
 /// <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterAVSDeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::register_avs_device::builders::RegisterAvsDeviceInputBuilder,
+                    inner: crate::operation::register_avs_device::builders::RegisterAvsDeviceInputBuilder,
 }
-impl RegisterAVSDeviceFluentBuilder {
+impl RegisterAVSDeviceFluentBuilder  {
     /// Creates a new `RegisterAVSDevice`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::register_avs_device::RegisterAVSDevice,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_avs_device::RegisterAVSDeviceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the RegisterAVSDevice as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_avs_device::builders::RegisterAvsDeviceInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_avs_device::RegisterAvsDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_avs_device::RegisterAVSDeviceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::register_avs_device::RegisterAVSDevice, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::register_avs_device::RegisterAVSDeviceError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_avs_device::RegisterAvsDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_avs_device::RegisterAVSDeviceError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_avs_device::RegisterAvsDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_avs_device::RegisterAVSDeviceError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::register_avs_device::RegisterAVSDevice,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_avs_device::RegisterAVSDeviceError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_avs_device::RegisterAvsDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_avs_device::RegisterAVSDeviceError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::register_avs_device::RegisterAVSDevice, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::register_avs_device::RegisterAVSDeviceError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
@@ -108,6 +94,10 @@ impl RegisterAVSDeviceFluentBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
+    }
+    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
     }
     /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
     pub fn user_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +109,10 @@ impl RegisterAVSDeviceFluentBuilder {
         self.inner = self.inner.set_user_code(input);
         self
     }
+    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
+    pub fn get_user_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_code()
+    }
     /// <p>The product ID used to identify your AVS device during authorization.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_id(input.into());
@@ -129,21 +123,23 @@ impl RegisterAVSDeviceFluentBuilder {
         self.inner = self.inner.set_product_id(input);
         self
     }
+    /// <p>The product ID used to identify your AVS device during authorization.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_id()
+    }
     /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
-    pub fn device_serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_serial_number(input.into());
         self
     }
     /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
-    pub fn set_device_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_serial_number(input);
         self
+    }
+    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
+    pub fn get_device_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_serial_number()
     }
     /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
     pub fn amazon_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +151,10 @@ impl RegisterAVSDeviceFluentBuilder {
         self.inner = self.inner.set_amazon_id(input);
         self
     }
+    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
+    pub fn get_amazon_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amazon_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
@@ -164,6 +164,10 @@ impl RegisterAVSDeviceFluentBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -175,11 +179,13 @@ impl RegisterAVSDeviceFluentBuilder {
         self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

@@ -249,6 +249,10 @@ pub use crate::types::_inference_experiment_stop_desired_state::InferenceExperim
 
 pub use crate::types::_model_variant_action::ModelVariantAction;
 
+pub use crate::types::_selective_execution_config::SelectiveExecutionConfig;
+
+pub use crate::types::_selected_step::SelectedStep;
+
 pub use crate::types::_parameter::Parameter;
 
 pub use crate::types::_output_parameter::OutputParameter;
@@ -320,6 +324,12 @@ pub use crate::types::_model_dashboard_endpoint::ModelDashboardEndpoint;
 pub use crate::types::_endpoint_status::EndpointStatus;
 
 pub use crate::types::_model::Model;
+
+pub use crate::types::_deployment_recommendation::DeploymentRecommendation;
+
+pub use crate::types::_real_time_inference_recommendation::RealTimeInferenceRecommendation;
+
+pub use crate::types::_recommendation_status::RecommendationStatus;
 
 pub use crate::types::_inference_execution_config::InferenceExecutionConfig;
 
@@ -414,6 +424,8 @@ pub use crate::types::_hyper_parameter_algorithm_specification::HyperParameterAl
 pub use crate::types::_metric_definition::MetricDefinition;
 
 pub use crate::types::_parameter_ranges::ParameterRanges;
+
+pub use crate::types::_auto_parameter::AutoParameter;
 
 pub use crate::types::_categorical_parameter_range::CategoricalParameterRange;
 
@@ -750,6 +762,8 @@ pub use crate::types::_pipeline_summary::PipelineSummary;
 pub use crate::types::_sort_pipelines_by::SortPipelinesBy;
 
 pub use crate::types::_pipeline_execution_step::PipelineExecutionStep;
+
+pub use crate::types::_selective_execution_result::SelectiveExecutionResult;
 
 pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMetadata;
 
@@ -1221,6 +1235,10 @@ pub use crate::types::_model_variant_status::ModelVariantStatus;
 
 pub use crate::types::_endpoint_metadata::EndpointMetadata;
 
+pub use crate::types::_autotune::Autotune;
+
+pub use crate::types::_autotune_mode::AutotuneMode;
+
 pub use crate::types::_ui_template_info::UiTemplateInfo;
 
 pub use crate::types::_human_task_ui_status::HumanTaskUiStatus;
@@ -1569,7 +1587,13 @@ mod _auto_mls3_data_source;
 
 mod _auto_mls3_data_type;
 
+mod _auto_parameter;
+
 mod _auto_rollback_config;
+
+mod _autotune;
+
+mod _autotune_mode;
 
 mod _aws_managed_human_loop_request_source;
 
@@ -1724,6 +1748,8 @@ mod _default_space_settings;
 mod _deployed_image;
 
 mod _deployment_config;
+
+mod _deployment_recommendation;
 
 mod _deployment_stage;
 
@@ -2531,6 +2557,8 @@ mod _r_studio_server_pro_user_group;
 
 mod _real_time_inference_config;
 
+mod _real_time_inference_recommendation;
+
 mod _recommendation_job_compiled_output_config;
 
 mod _recommendation_job_container_config;
@@ -2554,6 +2582,8 @@ mod _recommendation_job_type;
 mod _recommendation_job_vpc_config;
 
 mod _recommendation_metrics;
+
+mod _recommendation_status;
 
 mod _recommendation_step_type;
 
@@ -2620,6 +2650,12 @@ mod _search_sort_order;
 mod _secondary_status;
 
 mod _secondary_status_transition;
+
+mod _selected_step;
+
+mod _selective_execution_config;
+
+mod _selective_execution_result;
 
 mod _service_catalog_provisioned_product_details;
 
@@ -2852,3 +2888,4 @@ pub mod builders;
 
 /// Error types that Amazon SageMaker Service can respond with.
 pub mod error;
+

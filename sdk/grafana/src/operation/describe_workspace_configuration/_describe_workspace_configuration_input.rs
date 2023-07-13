@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkspaceConfigurationInput {
+pub struct DescribeWorkspaceConfigurationInput  {
     /// <p>The ID of the workspace to get configuration information for.</p>
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspaceConfigurationInput {
     /// <p>The ID of the workspace to get configuration information for.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
 impl DescribeWorkspaceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceConfigurationInput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput).
-    pub fn builder() -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder {
         crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceConfigurationInput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceConfigurationInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,14 @@ impl DescribeWorkspaceConfigurationInputBuilder {
     }
     /// <p>The ID of the workspace to get configuration information for.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
+    }
+    /// <p>The ID of the workspace to get configuration information for.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceConfigurationInput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput {
                 workspace_id: self.workspace_id
@@ -54,3 +50,4 @@ impl DescribeWorkspaceConfigurationInputBuilder {
         )
     }
 }
+

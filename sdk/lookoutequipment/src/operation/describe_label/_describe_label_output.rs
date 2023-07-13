@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLabelOutput {
+pub struct DescribeLabelOutput  {
     /// <p> The name of the requested label group. </p>
     #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
@@ -21,11 +21,11 @@ pub struct DescribeLabelOutput {
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
     #[doc(hidden)]
     pub rating: ::std::option::Option<crate::types::LabelRating>,
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     #[doc(hidden)]
     pub fault_code: ::std::option::Option<::std::string::String>,
-    /// <p>Metadata providing additional information about the label.</p>
+    /// <p>Metadata providing additional information about the label.</p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
@@ -39,53 +39,53 @@ pub struct DescribeLabelOutput {
 }
 impl DescribeLabelOutput {
     /// <p> The name of the requested label group. </p>
-    pub fn label_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn label_group_name(&self) -> ::std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ARN of the requested label group. </p>
-    pub fn label_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> ::std::option::Option<& str> {
         self.label_group_arn.as_deref()
     }
     /// <p> The ID of the requested label. </p>
-    pub fn label_id(&self) -> ::std::option::Option<&str> {
+    pub fn label_id(&self) -> ::std::option::Option<& str> {
         self.label_id.as_deref()
     }
     /// <p> The start time of the requested label. </p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end time of the requested label. </p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
-    pub fn rating(&self) -> ::std::option::Option<&crate::types::LabelRating> {
+    pub fn rating(&self) -> ::std::option::Option<& crate::types::LabelRating> {
         self.rating.as_ref()
     }
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn fault_code(&self) -> ::std::option::Option<&str> {
+    pub fn fault_code(&self) -> ::std::option::Option<& str> {
         self.fault_code.as_deref()
     }
-    /// <p>Metadata providing additional information about the label.</p>
+    /// <p>Metadata providing additional information about the label.</p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn notes(&self) -> ::std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<& str> {
         self.notes.as_deref()
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
-    pub fn equipment(&self) -> ::std::option::Option<&str> {
+    pub fn equipment(&self) -> ::std::option::Option<& str> {
         self.equipment.as_deref()
     }
     /// <p> The time at which the label was created. </p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeLabelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeLabelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelOutput`](crate::operation::describe_label::DescribeLabelOutput).
     pub fn builder() -> crate::operation::describe_label::builders::DescribeLabelOutputBuilder {
@@ -95,9 +95,7 @@ impl DescribeLabelOutput {
 
 /// A builder for [`DescribeLabelOutput`](crate::operation::describe_label::DescribeLabelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLabelOutputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_group_arn: ::std::option::Option<::std::string::String>,
@@ -113,36 +111,30 @@ pub struct DescribeLabelOutputBuilder {
 }
 impl DescribeLabelOutputBuilder {
     /// <p> The name of the requested label group. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the requested label group. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.label_group_name = input;
-        self
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.label_group_name = input; self
+    }
+    /// <p> The name of the requested label group. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_name
     }
     /// <p> The ARN of the requested label group. </p>
-    pub fn label_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the requested label group. </p>
-    pub fn set_label_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.label_group_arn = input;
-        self
+    pub fn set_label_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.label_group_arn = input; self
+    }
+    /// <p> The ARN of the requested label group. </p>
+    pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_arn
     }
     /// <p> The ID of the requested label. </p>
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,8 +143,11 @@ impl DescribeLabelOutputBuilder {
     }
     /// <p> The ID of the requested label. </p>
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_id = input;
-        self
+        self.label_id = input; self
+    }
+    /// <p> The ID of the requested label. </p>
+    pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_id
     }
     /// <p> The start time of the requested label. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -160,12 +155,12 @@ impl DescribeLabelOutputBuilder {
         self
     }
     /// <p> The start time of the requested label. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
+    }
+    /// <p> The start time of the requested label. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p> The end time of the requested label. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,12 +168,12 @@ impl DescribeLabelOutputBuilder {
         self
     }
     /// <p> The end time of the requested label. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_time = input;
-        self
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input; self
+    }
+    /// <p> The end time of the requested label. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub fn rating(mut self, input: crate::types::LabelRating) -> Self {
@@ -187,32 +182,43 @@ impl DescribeLabelOutputBuilder {
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub fn set_rating(mut self, input: ::std::option::Option<crate::types::LabelRating>) -> Self {
-        self.rating = input;
-        self
+        self.rating = input; self
     }
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    pub fn get_rating(&self) -> &::std::option::Option<crate::types::LabelRating> {
+        &self.rating
+    }
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn fault_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fault_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn set_fault_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fault_code = input;
-        self
+        self.fault_code = input; self
     }
-    /// <p>Metadata providing additional information about the label.</p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn get_fault_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fault_code
+    }
+    /// <p>Metadata providing additional information about the label.</p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Metadata providing additional information about the label.</p>
+    /// <p>Metadata providing additional information about the label.</p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notes = input;
-        self
+        self.notes = input; self
+    }
+    /// <p>Metadata providing additional information about the label.</p> 
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     pub fn equipment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -221,8 +227,11 @@ impl DescribeLabelOutputBuilder {
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     pub fn set_equipment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.equipment = input;
-        self
+        self.equipment = input; self
+    }
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    pub fn get_equipment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.equipment
     }
     /// <p> The time at which the label was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -230,36 +239,47 @@ impl DescribeLabelOutputBuilder {
         self
     }
     /// <p> The time at which the label was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
+    }
+    /// <p> The time at which the label was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeLabelOutput`](crate::operation::describe_label::DescribeLabelOutput).
     pub fn build(self) -> crate::operation::describe_label::DescribeLabelOutput {
         crate::operation::describe_label::DescribeLabelOutput {
-            label_group_name: self.label_group_name,
-            label_group_arn: self.label_group_arn,
-            label_id: self.label_id,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            rating: self.rating,
-            fault_code: self.fault_code,
-            notes: self.notes,
-            equipment: self.equipment,
-            created_at: self.created_at,
+            label_group_name: self.label_group_name
+            ,
+            label_group_arn: self.label_group_arn
+            ,
+            label_id: self.label_id
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            rating: self.rating
+            ,
+            fault_code: self.fault_code
+            ,
+            notes: self.notes
+            ,
+            equipment: self.equipment
+            ,
+            created_at: self.created_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

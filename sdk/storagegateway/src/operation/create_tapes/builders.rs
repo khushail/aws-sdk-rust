@@ -3,96 +3,89 @@ pub use crate::operation::create_tapes::_create_tapes_output::CreateTapesOutputB
 
 pub use crate::operation::create_tapes::_create_tapes_input::CreateTapesInputBuilder;
 
+impl CreateTapesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_tapes::CreateTapesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_tapes::CreateTapesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_tapes();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateTapes`.
-///
-/// <p>Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes. This operation is only supported in the tape gateway type.</p> <note>
-/// <p>Cache storage must be allocated to the gateway before you can create virtual tapes. Use the <code>AddCache</code> operation to add cache storage to a gateway.</p>
+/// 
+/// <p>Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes. This operation is only supported in the tape gateway type.</p> <note> 
+/// <p>Cache storage must be allocated to the gateway before you can create virtual tapes. Use the <code>AddCache</code> operation to add cache storage to a gateway.</p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTapesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_tapes::builders::CreateTapesInputBuilder,
+                    inner: crate::operation::create_tapes::builders::CreateTapesInputBuilder,
 }
-impl CreateTapesFluentBuilder {
+impl CreateTapesFluentBuilder  {
     /// Creates a new `CreateTapes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_tapes::CreateTapes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_tapes::CreateTapesError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateTapes as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_tapes::builders::CreateTapesInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_tapes::CreateTapesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_tapes::CreateTapesError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_tapes::CreateTapes, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_tapes::CreateTapesError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_tapes::CreateTapesOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_tapes::CreateTapesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_tapes::CreateTapesOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_tapes::CreateTapesError>,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_tapes::CreateTapes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_tapes::CreateTapesError>,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_tapes::CreateTapesOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_tapes::CreateTapesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_tapes::CreateTapes, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_tapes::CreateTapesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -103,33 +96,49 @@ impl CreateTapesFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
-    /// <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-    /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>
+    /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
+    /// <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note> 
+    /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
     /// </note>
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
         self.inner = self.inner.tape_size_in_bytes(input);
         self
     }
-    /// <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-    /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>
+    /// <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note> 
+    /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
     /// </note>
     pub fn set_tape_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_tape_size_in_bytes(input);
         self
     }
-    /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note>
-    /// <p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p>
+    /// <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note> 
+    /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
+    /// </note>
+    pub fn get_tape_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_tape_size_in_bytes()
+    }
+    /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note> 
+    /// <p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p> 
     /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note>
-    /// <p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p>
+    /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note> 
+    /// <p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p> 
     /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note> 
+    /// <p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p> 
+    /// </note>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The number of virtual tapes that you want to create.</p>
     pub fn num_tapes_to_create(mut self, input: i32) -> Self {
@@ -141,37 +150,46 @@ impl CreateTapesFluentBuilder {
         self.inner = self.inner.set_num_tapes_to_create(input);
         self
     }
-    /// <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note>
-    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
+    /// <p>The number of virtual tapes that you want to create.</p>
+    pub fn get_num_tapes_to_create(&self) -> &::std::option::Option<i32> {
+        self.inner.get_num_tapes_to_create()
+    }
+    /// <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note> 
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
     /// </note>
-    pub fn tape_barcode_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tape_barcode_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tape_barcode_prefix(input.into());
         self
     }
-    /// <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note>
-    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
+    /// <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note> 
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
     /// </note>
-    pub fn set_tape_barcode_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tape_barcode_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tape_barcode_prefix(input);
         self
     }
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+    /// <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note> 
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
+    /// </note>
+    pub fn get_tape_barcode_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tape_barcode_prefix()
+    }
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn kms_encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.kms_encrypted(input);
         self
     }
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_kms_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_kms_encrypted(input);
         self
+    }
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_kms_encrypted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_kms_encrypted()
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,6 +201,10 @@ impl CreateTapesFluentBuilder {
         self.inner = self.inner.set_kms_key(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key()
+    }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
@@ -192,6 +214,10 @@ impl CreateTapesFluentBuilder {
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
+    }
+    /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pool_id()
     }
     /// <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
     pub fn worm(mut self, input: bool) -> Self {
@@ -203,25 +229,33 @@ impl CreateTapesFluentBuilder {
         self.inner = self.inner.set_worm(input);
         self
     }
+    /// <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
+    pub fn get_worm(&self) -> &::std::option::Option<bool> {
+        self.inner.get_worm()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.</p> <note>
-    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
+    /// <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.</p> <note> 
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p> 
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.</p> <note>
-    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
+    /// <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.</p> <note> 
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p> 
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.</p> <note> 
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p> 
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }
+

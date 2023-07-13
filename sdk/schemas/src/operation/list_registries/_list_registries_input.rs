@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRegistriesInput {
+pub struct ListRegistriesInput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
@@ -22,15 +22,15 @@ impl ListRegistriesInput {
         self.limit
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
-    pub fn registry_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name_prefix(&self) -> ::std::option::Option<& str> {
         self.registry_name_prefix.as_deref()
     }
     /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
-    pub fn scope(&self) -> ::std::option::Option<&str> {
+    pub fn scope(&self) -> ::std::option::Option<& str> {
         self.scope.as_deref()
     }
 }
@@ -43,9 +43,7 @@ impl ListRegistriesInput {
 
 /// A builder for [`ListRegistriesInput`](crate::operation::list_registries::ListRegistriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegistriesInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,8 +58,11 @@ impl ListRegistriesInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,24 +71,24 @@ impl ListRegistriesInputBuilder {
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
-    pub fn registry_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
-    pub fn set_registry_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.registry_name_prefix = input;
-        self
+    pub fn set_registry_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.registry_name_prefix = input; self
+    }
+    /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
+    pub fn get_registry_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name_prefix
     }
     /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,21 +97,26 @@ impl ListRegistriesInputBuilder {
     }
     /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
+    }
+    /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope
     }
     /// Consumes the builder and constructs a [`ListRegistriesInput`](crate::operation::list_registries::ListRegistriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_registries::ListRegistriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_registries::ListRegistriesInput {
-            limit: self.limit,
-            next_token: self.next_token,
-            registry_name_prefix: self.registry_name_prefix,
-            scope: self.scope,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_registries::ListRegistriesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_registries::ListRegistriesInput {
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+                registry_name_prefix: self.registry_name_prefix
+                ,
+                scope: self.scope
+                ,
+            }
+        )
     }
 }
+

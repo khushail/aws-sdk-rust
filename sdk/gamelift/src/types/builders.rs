@@ -116,3 +116,6 @@ pub use crate::types::_target_tracking_configuration::TargetTrackingConfiguratio
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecificationBuilder;
 
 pub use crate::types::_location_configuration::LocationConfigurationBuilder;
+
+pub use crate::types::_claim_filter_option::ClaimFilterOptionBuilder;
+

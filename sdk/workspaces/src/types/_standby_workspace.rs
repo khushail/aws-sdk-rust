@@ -3,7 +3,7 @@
 /// <p>Describes a standby WorkSpace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StandbyWorkspace {
+pub struct StandbyWorkspace  {
     /// <p>The identifier of the standby WorkSpace.</p>
     #[doc(hidden)]
     pub primary_workspace_id: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct StandbyWorkspace {
 }
 impl StandbyWorkspace {
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn primary_workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn primary_workspace_id(&self) -> ::std::option::Option<& str> {
         self.primary_workspace_id.as_deref()
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
-    pub fn volume_encryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn volume_encryption_key(&self) -> ::std::option::Option<& str> {
         self.volume_encryption_key.as_deref()
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The tags associated with the standby WorkSpace.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl StandbyWorkspace {
 
 /// A builder for [`StandbyWorkspace`](crate::types::StandbyWorkspace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StandbyWorkspaceBuilder {
     pub(crate) primary_workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_encryption_key: ::std::option::Option<::std::string::String>,
@@ -55,36 +53,30 @@ pub struct StandbyWorkspaceBuilder {
 }
 impl StandbyWorkspaceBuilder {
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn primary_workspace_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_workspace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn set_primary_workspace_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.primary_workspace_id = input;
-        self
+    pub fn set_primary_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.primary_workspace_id = input; self
+    }
+    /// <p>The identifier of the standby WorkSpace.</p>
+    pub fn get_primary_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_workspace_id
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
-    pub fn volume_encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
-    pub fn set_volume_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.volume_encryption_key = input;
-        self
+    pub fn set_volume_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.volume_encryption_key = input; self
+    }
+    /// <p>The volume encryption key of the standby WorkSpace.</p>
+    pub fn get_volume_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_encryption_key
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +85,11 @@ impl StandbyWorkspaceBuilder {
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
+    }
+    /// <p>The identifier of the directory for the standby WorkSpace.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// Appends an item to `tags`.
     ///
@@ -103,25 +98,30 @@ impl StandbyWorkspaceBuilder {
     /// <p>The tags associated with the standby WorkSpace.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the standby WorkSpace.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The tags associated with the standby WorkSpace.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StandbyWorkspace`](crate::types::StandbyWorkspace).
     pub fn build(self) -> crate::types::StandbyWorkspace {
         crate::types::StandbyWorkspace {
-            primary_workspace_id: self.primary_workspace_id,
-            volume_encryption_key: self.volume_encryption_key,
-            directory_id: self.directory_id,
-            tags: self.tags,
+            primary_workspace_id: self.primary_workspace_id
+            ,
+            volume_encryption_key: self.volume_encryption_key
+            ,
+            directory_id: self.directory_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

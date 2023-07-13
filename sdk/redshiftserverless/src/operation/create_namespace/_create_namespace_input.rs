@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateNamespaceInput {
+pub struct CreateNamespaceInput  {
     /// <p>The name of the namespace.</p>
     #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
@@ -33,43 +33,43 @@ pub struct CreateNamespaceInput {
 }
 impl CreateNamespaceInput {
     /// <p>The name of the namespace.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn admin_username(&self) -> ::std::option::Option<&str> {
+    pub fn admin_username(&self) -> ::std::option::Option<& str> {
         self.admin_username.as_deref()
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
-    pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn admin_user_password(&self) -> ::std::option::Option<& str> {
         self.admin_user_password.as_deref()
     }
     /// <p>The name of the first database created in the namespace.</p>
-    pub fn db_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn default_iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn default_iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.default_iam_role_arn.as_deref()
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn iam_roles(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn iam_roles(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.iam_roles.as_deref()
     }
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn log_exports(&self) -> ::std::option::Option<&[crate::types::LogExport]> {
+    pub fn log_exports(&self) -> ::std::option::Option<& [crate::types::LogExport]> {
         self.log_exports.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateNamespaceInput {
+impl  ::std::fmt::Debug for CreateNamespaceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNamespaceInput");
         formatter.field("namespace_name", &self.namespace_name);
@@ -107,52 +107,43 @@ pub struct CreateNamespaceInputBuilder {
 }
 impl CreateNamespaceInputBuilder {
     /// <p>The name of the namespace.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.namespace_name = input;
-        self
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_name = input; self
+    }
+    /// <p>The name of the namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn admin_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn set_admin_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.admin_username = input;
-        self
+    pub fn set_admin_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_username = input; self
+    }
+    /// <p>The username of the administrator for the first database created in the namespace.</p>
+    pub fn get_admin_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_username
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
-    pub fn admin_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
-    pub fn set_admin_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.admin_user_password = input;
-        self
+    pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_user_password = input; self
+    }
+    /// <p>The password of the administrator for the first database created in the namespace.</p>
+    pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_user_password
     }
     /// <p>The name of the first database created in the namespace.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,8 +152,11 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The name of the first database created in the namespace.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_name = input;
-        self
+        self.db_name = input; self
+    }
+    /// <p>The name of the first database created in the namespace.</p>
+    pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_name
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,24 +165,24 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
+    }
+    /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn default_iam_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn set_default_iam_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.default_iam_role_arn = input;
-        self
+    pub fn set_default_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_iam_role_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    pub fn get_default_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_iam_role_arn
     }
     /// Appends an item to `iam_roles`.
     ///
@@ -197,17 +191,17 @@ impl CreateNamespaceInputBuilder {
     /// <p>A list of IAM roles to associate with the namespace.</p>
     pub fn iam_roles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.iam_roles.unwrap_or_default();
-        v.push(input.into());
-        self.iam_roles = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.iam_roles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn set_iam_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.iam_roles = input;
-        self
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.iam_roles = input; self
+    }
+    /// <p>A list of IAM roles to associate with the namespace.</p>
+    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.iam_roles
     }
     /// Appends an item to `log_exports`.
     ///
@@ -216,17 +210,17 @@ impl CreateNamespaceInputBuilder {
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
     pub fn log_exports(mut self, input: crate::types::LogExport) -> Self {
         let mut v = self.log_exports.unwrap_or_default();
-        v.push(input);
-        self.log_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn set_log_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
-    ) -> Self {
-        self.log_exports = input;
-        self
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>) -> Self {
+        self.log_exports = input; self
+    }
+    /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
+        &self.log_exports
     }
     /// Appends an item to `tags`.
     ///
@@ -235,36 +229,42 @@ impl CreateNamespaceInputBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_namespace::CreateNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_namespace::CreateNamespaceInput {
-            namespace_name: self.namespace_name,
-            admin_username: self.admin_username,
-            admin_user_password: self.admin_user_password,
-            db_name: self.db_name,
-            kms_key_id: self.kms_key_id,
-            default_iam_role_arn: self.default_iam_role_arn,
-            iam_roles: self.iam_roles,
-            log_exports: self.log_exports,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_namespace::CreateNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_namespace::CreateNamespaceInput {
+                namespace_name: self.namespace_name
+                ,
+                admin_username: self.admin_username
+                ,
+                admin_user_password: self.admin_user_password
+                ,
+                db_name: self.db_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                default_iam_role_arn: self.default_iam_role_arn
+                ,
+                iam_roles: self.iam_roles
+                ,
+                log_exports: self.log_exports
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateNamespaceInputBuilder {
@@ -282,3 +282,4 @@ impl ::std::fmt::Debug for CreateNamespaceInputBuilder {
         formatter.finish()
     }
 }
+

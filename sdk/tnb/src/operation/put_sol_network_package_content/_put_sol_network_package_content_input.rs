@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSolNetworkPackageContentInput {
+pub struct PutSolNetworkPackageContentInput  {
     /// <p>Network service descriptor info ID.</p>
     #[doc(hidden)]
     pub nsd_info_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct PutSolNetworkPackageContentInput {
 }
 impl PutSolNetworkPackageContentInput {
     /// <p>Network service descriptor info ID.</p>
-    pub fn nsd_info_id(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_info_id(&self) -> ::std::option::Option<& str> {
         self.nsd_info_id.as_deref()
     }
     /// <p>Network package content type.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::PackageContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<& crate::types::PackageContentType> {
         self.content_type.as_ref()
     }
     /// <p>Network package file.</p>
-    pub fn file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn file(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.file.as_ref()
     }
 }
 impl PutSolNetworkPackageContentInput {
     /// Creates a new builder-style object to manufacture [`PutSolNetworkPackageContentInput`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput).
-    pub fn builder() -> crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentInputBuilder{
+    pub fn builder() -> crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentInputBuilder {
         crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`PutSolNetworkPackageContentInput`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSolNetworkPackageContentInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,
@@ -52,8 +50,11 @@ impl PutSolNetworkPackageContentInputBuilder {
     }
     /// <p>Network service descriptor info ID.</p>
     pub fn set_nsd_info_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_info_id = input;
-        self
+        self.nsd_info_id = input; self
+    }
+    /// <p>Network service descriptor info ID.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
     }
     /// <p>Network package content type.</p>
     pub fn content_type(mut self, input: crate::types::PackageContentType) -> Self {
@@ -61,12 +62,12 @@ impl PutSolNetworkPackageContentInputBuilder {
         self
     }
     /// <p>Network package content type.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
-        self.content_type = input;
-        self
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
+        self.content_type = input; self
+    }
+    /// <p>Network package content type.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        &self.content_type
     }
     /// <p>Network package file.</p>
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -75,22 +76,24 @@ impl PutSolNetworkPackageContentInputBuilder {
     }
     /// <p>Network package file.</p>
     pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.file = input;
-        self
+        self.file = input; self
+    }
+    /// <p>Network package file.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.file
     }
     /// Consumes the builder and constructs a [`PutSolNetworkPackageContentInput`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput {
-                nsd_info_id: self.nsd_info_id,
-                content_type: self.content_type,
-                file: self.file,
-            },
+                nsd_info_id: self.nsd_info_id
+                ,
+                content_type: self.content_type
+                ,
+                file: self.file
+                ,
+            }
         )
     }
 }
+

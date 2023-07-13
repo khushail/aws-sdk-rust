@@ -3,7 +3,7 @@
 /// <p>An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MatchRange {
+pub struct MatchRange  {
     /// <p>The start of the range.</p>
     #[doc(hidden)]
     pub start: ::std::option::Option<i64>,
@@ -30,9 +30,7 @@ impl MatchRange {
 
 /// A builder for [`MatchRange`](crate::types::MatchRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchRangeBuilder {
     pub(crate) start: ::std::option::Option<i64>,
     pub(crate) end: ::std::option::Option<i64>,
@@ -45,8 +43,11 @@ impl MatchRangeBuilder {
     }
     /// <p>The start of the range.</p>
     pub fn set_start(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
+    }
+    /// <p>The start of the range.</p>
+    pub fn get_start(&self) -> &::std::option::Option<i64> {
+        &self.start
     }
     /// <p>The end of the range.</p>
     pub fn end(mut self, input: i64) -> Self {
@@ -55,14 +56,20 @@ impl MatchRangeBuilder {
     }
     /// <p>The end of the range.</p>
     pub fn set_end(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
+    }
+    /// <p>The end of the range.</p>
+    pub fn get_end(&self) -> &::std::option::Option<i64> {
+        &self.end
     }
     /// Consumes the builder and constructs a [`MatchRange`](crate::types::MatchRange).
     pub fn build(self) -> crate::types::MatchRange {
         crate::types::MatchRange {
-            start: self.start,
-            end: self.end,
+            start: self.start
+            ,
+            end: self.end
+            ,
         }
     }
 }
+

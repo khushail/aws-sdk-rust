@@ -3,14 +3,14 @@
 /// <p>The container for the <code>EventTriggerDefinition$EventResourceARN</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventTriggerDefinition {
+pub struct EventTriggerDefinition  {
     /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
     #[doc(hidden)]
     pub event_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl EventTriggerDefinition {
     /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
-    pub fn event_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_resource_arn(&self) -> ::std::option::Option<& str> {
         self.event_resource_arn.as_deref()
     }
 }
@@ -23,33 +23,30 @@ impl EventTriggerDefinition {
 
 /// A builder for [`EventTriggerDefinition`](crate::types::EventTriggerDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventTriggerDefinitionBuilder {
     pub(crate) event_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl EventTriggerDefinitionBuilder {
     /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
-    pub fn event_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
-    pub fn set_event_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.event_resource_arn = input;
-        self
+    pub fn set_event_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_resource_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
+    pub fn get_event_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_resource_arn
     }
     /// Consumes the builder and constructs a [`EventTriggerDefinition`](crate::types::EventTriggerDefinition).
     pub fn build(self) -> crate::types::EventTriggerDefinition {
         crate::types::EventTriggerDefinition {
-            event_resource_arn: self.event_resource_arn,
+            event_resource_arn: self.event_resource_arn
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelBatchJobExecutionInput {
+pub struct CancelBatchJobExecutionInput  {
     /// <p>The unique identifier of the application.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -12,48 +12,41 @@ pub struct CancelBatchJobExecutionInput {
 }
 impl CancelBatchJobExecutionInput {
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of the batch job execution.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
 }
 impl CancelBatchJobExecutionInput {
     /// Creates a new builder-style object to manufacture [`CancelBatchJobExecutionInput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionInputBuilder {
         crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelBatchJobExecutionInput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelBatchJobExecutionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelBatchJobExecutionInputBuilder {
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.application_id = input;
-        self
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input; self
+    }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>The unique identifier of the batch job execution.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,21 +55,22 @@ impl CancelBatchJobExecutionInputBuilder {
     }
     /// <p>The unique identifier of the batch job execution.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
+    }
+    /// <p>The unique identifier of the batch job execution.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// Consumes the builder and constructs a [`CancelBatchJobExecutionInput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput {
-                application_id: self.application_id,
-                execution_id: self.execution_id,
-            },
+                application_id: self.application_id
+                ,
+                execution_id: self.execution_id
+                ,
+            }
         )
     }
 }
+

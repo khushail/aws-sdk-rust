@@ -3,7 +3,7 @@
 /// <p> Request of CreateSubscriber </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSubscriberInput {
+pub struct CreateSubscriberInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -19,35 +19,32 @@ pub struct CreateSubscriberInput {
 }
 impl CreateSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification that you want to create a subscriber for.</p>
-    pub fn notification(&self) -> ::std::option::Option<&crate::types::Notification> {
+    pub fn notification(&self) -> ::std::option::Option<& crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>The subscriber that you want to associate with a budget notification.</p>
-    pub fn subscriber(&self) -> ::std::option::Option<&crate::types::Subscriber> {
+    pub fn subscriber(&self) -> ::std::option::Option<& crate::types::Subscriber> {
         self.subscriber.as_ref()
     }
 }
 impl CreateSubscriberInput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
-    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder {
         crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriberInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -62,8 +59,11 @@ impl CreateSubscriberInputBuilder {
     }
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
+    }
+    /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +72,11 @@ impl CreateSubscriberInputBuilder {
     }
     /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
+    }
+    /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// <p>The notification that you want to create a subscriber for.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -81,12 +84,12 @@ impl CreateSubscriberInputBuilder {
         self
     }
     /// <p>The notification that you want to create a subscriber for.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
-        self.notification = input;
-        self
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
+        self.notification = input; self
+    }
+    /// <p>The notification that you want to create a subscriber for.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        &self.notification
     }
     /// <p>The subscriber that you want to associate with a budget notification.</p>
     pub fn subscriber(mut self, input: crate::types::Subscriber) -> Self {
@@ -94,25 +97,27 @@ impl CreateSubscriberInputBuilder {
         self
     }
     /// <p>The subscriber that you want to associate with a budget notification.</p>
-    pub fn set_subscriber(
-        mut self,
-        input: ::std::option::Option<crate::types::Subscriber>,
-    ) -> Self {
-        self.subscriber = input;
-        self
+    pub fn set_subscriber(mut self, input: ::std::option::Option<crate::types::Subscriber>) -> Self {
+        self.subscriber = input; self
+    }
+    /// <p>The subscriber that you want to associate with a budget notification.</p>
+    pub fn get_subscriber(&self) -> &::std::option::Option<crate::types::Subscriber> {
+        &self.subscriber
     }
     /// Consumes the builder and constructs a [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subscriber::CreateSubscriberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_subscriber::CreateSubscriberInput {
-            account_id: self.account_id,
-            budget_name: self.budget_name,
-            notification: self.notification,
-            subscriber: self.subscriber,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_subscriber::CreateSubscriberInput {
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                notification: self.notification
+                ,
+                subscriber: self.subscriber
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplaceVpnTunnelInput {
+pub struct ReplaceVpnTunnelInput  {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
     #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct ReplaceVpnTunnelInput {
 }
 impl ReplaceVpnTunnelInput {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpn_connection_id.as_deref()
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_tunnel_outside_ip_address(&self) -> ::std::option::Option<& str> {
         self.vpn_tunnel_outside_ip_address.as_deref()
     }
     /// <p>Trigger pending tunnel endpoint maintenance.</p>
@@ -36,17 +36,14 @@ impl ReplaceVpnTunnelInput {
 }
 impl ReplaceVpnTunnelInput {
     /// Creates a new builder-style object to manufacture [`ReplaceVpnTunnelInput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput).
-    pub fn builder() -> crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder
-    {
+    pub fn builder() -> crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder {
         crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder::default()
     }
 }
 
 /// A builder for [`ReplaceVpnTunnelInput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceVpnTunnelInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_tunnel_outside_ip_address: ::std::option::Option<::std::string::String>,
@@ -55,36 +52,30 @@ pub struct ReplaceVpnTunnelInputBuilder {
 }
 impl ReplaceVpnTunnelInputBuilder {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpn_connection_id = input;
-        self
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpn_connection_id = input; self
+    }
+    /// <p>The ID of the Site-to-Site VPN connection. </p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_id
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_tunnel_outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_tunnel_outside_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_vpn_tunnel_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.vpn_tunnel_outside_ip_address = input;
-        self
+    pub fn set_vpn_tunnel_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpn_tunnel_outside_ip_address = input; self
+    }
+    /// <p>The external IP address of the VPN tunnel.</p>
+    pub fn get_vpn_tunnel_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_tunnel_outside_ip_address
     }
     /// <p>Trigger pending tunnel endpoint maintenance.</p>
     pub fn apply_pending_maintenance(mut self, input: bool) -> Self {
@@ -93,8 +84,11 @@ impl ReplaceVpnTunnelInputBuilder {
     }
     /// <p>Trigger pending tunnel endpoint maintenance.</p>
     pub fn set_apply_pending_maintenance(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_pending_maintenance = input;
-        self
+        self.apply_pending_maintenance = input; self
+    }
+    /// <p>Trigger pending tunnel endpoint maintenance.</p>
+    pub fn get_apply_pending_maintenance(&self) -> &::std::option::Option<bool> {
+        &self.apply_pending_maintenance
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -103,23 +97,26 @@ impl ReplaceVpnTunnelInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ReplaceVpnTunnelInput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput {
-                vpn_connection_id: self.vpn_connection_id,
-                vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,
-                apply_pending_maintenance: self.apply_pending_maintenance,
-                dry_run: self.dry_run,
-            },
+                vpn_connection_id: self.vpn_connection_id
+                ,
+                vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address
+                ,
+                apply_pending_maintenance: self.apply_pending_maintenance
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

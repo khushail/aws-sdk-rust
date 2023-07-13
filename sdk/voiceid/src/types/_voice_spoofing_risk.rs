@@ -3,7 +3,7 @@
 /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoiceSpoofingRisk {
+pub struct VoiceSpoofingRisk  {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
     #[doc(hidden)]
     pub risk_score: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl VoiceSpoofingRisk {
 
 /// A builder for [`VoiceSpoofingRisk`](crate::types::VoiceSpoofingRisk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceSpoofingRiskBuilder {
     pub(crate) risk_score: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl VoiceSpoofingRiskBuilder {
     }
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
     pub fn set_risk_score(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.risk_score = input;
-        self
+        self.risk_score = input; self
+    }
+    /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
+    pub fn get_risk_score(&self) -> &::std::option::Option<i32> {
+        &self.risk_score
     }
     /// Consumes the builder and constructs a [`VoiceSpoofingRisk`](crate::types::VoiceSpoofingRisk).
     pub fn build(self) -> crate::types::VoiceSpoofingRisk {
         crate::types::VoiceSpoofingRisk {
-            risk_score: self.risk_score,
+            risk_score: self.risk_score
+            ,
         }
     }
 }
+

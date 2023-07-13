@@ -3,7 +3,7 @@
 /// <p> Provides statistics about a dataset. For more information, see <code>DescribeDataset</code>. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetStats {
+pub struct DatasetStats  {
     /// <p> The total number of images in the dataset that have labels. </p>
     #[doc(hidden)]
     pub labeled_entries: ::std::option::Option<i32>,
@@ -44,9 +44,7 @@ impl DatasetStats {
 
 /// A builder for [`DatasetStats`](crate::types::DatasetStats).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetStatsBuilder {
     pub(crate) labeled_entries: ::std::option::Option<i32>,
     pub(crate) total_entries: ::std::option::Option<i32>,
@@ -61,8 +59,11 @@ impl DatasetStatsBuilder {
     }
     /// <p> The total number of images in the dataset that have labels. </p>
     pub fn set_labeled_entries(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.labeled_entries = input;
-        self
+        self.labeled_entries = input; self
+    }
+    /// <p> The total number of images in the dataset that have labels. </p>
+    pub fn get_labeled_entries(&self) -> &::std::option::Option<i32> {
+        &self.labeled_entries
     }
     /// <p> The total number of images in the dataset. </p>
     pub fn total_entries(mut self, input: i32) -> Self {
@@ -71,8 +72,11 @@ impl DatasetStatsBuilder {
     }
     /// <p> The total number of images in the dataset. </p>
     pub fn set_total_entries(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_entries = input;
-        self
+        self.total_entries = input; self
+    }
+    /// <p> The total number of images in the dataset. </p>
+    pub fn get_total_entries(&self) -> &::std::option::Option<i32> {
+        &self.total_entries
     }
     /// <p> The total number of labels declared in the dataset. </p>
     pub fn total_labels(mut self, input: i32) -> Self {
@@ -81,8 +85,11 @@ impl DatasetStatsBuilder {
     }
     /// <p> The total number of labels declared in the dataset. </p>
     pub fn set_total_labels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_labels = input;
-        self
+        self.total_labels = input; self
+    }
+    /// <p> The total number of labels declared in the dataset. </p>
+    pub fn get_total_labels(&self) -> &::std::option::Option<i32> {
+        &self.total_labels
     }
     /// <p> The total number of entries that contain at least one error. </p>
     pub fn error_entries(mut self, input: i32) -> Self {
@@ -91,16 +98,24 @@ impl DatasetStatsBuilder {
     }
     /// <p> The total number of entries that contain at least one error. </p>
     pub fn set_error_entries(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.error_entries = input;
-        self
+        self.error_entries = input; self
+    }
+    /// <p> The total number of entries that contain at least one error. </p>
+    pub fn get_error_entries(&self) -> &::std::option::Option<i32> {
+        &self.error_entries
     }
     /// Consumes the builder and constructs a [`DatasetStats`](crate::types::DatasetStats).
     pub fn build(self) -> crate::types::DatasetStats {
         crate::types::DatasetStats {
-            labeled_entries: self.labeled_entries,
-            total_entries: self.total_entries,
-            total_labels: self.total_labels,
-            error_entries: self.error_entries,
+            labeled_entries: self.labeled_entries
+            ,
+            total_entries: self.total_entries
+            ,
+            total_labels: self.total_labels
+            ,
+            error_entries: self.error_entries
+            ,
         }
     }
 }
+

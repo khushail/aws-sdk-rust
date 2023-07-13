@@ -3,7 +3,7 @@
 /// <p>The directory service doesn't recognize the credentials supplied by WorkMail.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectoryServiceAuthenticationFailedException {
+pub struct DirectoryServiceAuthenticationFailedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,13 @@ pub struct DirectoryServiceAuthenticationFailedException {
 }
 impl DirectoryServiceAuthenticationFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for DirectoryServiceAuthenticationFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "DirectoryServiceAuthenticationFailedException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,35 +25,25 @@ impl ::std::fmt::Display for DirectoryServiceAuthenticationFailedException {
     }
 }
 impl ::std::error::Error for DirectoryServiceAuthenticationFailedException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::DirectoryServiceAuthenticationFailedException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::DirectoryServiceAuthenticationFailedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DirectoryServiceAuthenticationFailedException
-{
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DirectoryServiceAuthenticationFailedException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl DirectoryServiceAuthenticationFailedException {
     /// Creates a new builder-style object to manufacture [`DirectoryServiceAuthenticationFailedException`](crate::types::error::DirectoryServiceAuthenticationFailedException).
-    pub fn builder(
-    ) -> crate::types::error::builders::DirectoryServiceAuthenticationFailedExceptionBuilder {
-        crate::types::error::builders::DirectoryServiceAuthenticationFailedExceptionBuilder::default(
-        )
+    pub fn builder() -> crate::types::error::builders::DirectoryServiceAuthenticationFailedExceptionBuilder {
+        crate::types::error::builders::DirectoryServiceAuthenticationFailedExceptionBuilder::default()
     }
 }
 
 /// A builder for [`DirectoryServiceAuthenticationFailedException`](crate::types::error::DirectoryServiceAuthenticationFailedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectoryServiceAuthenticationFailedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -68,28 +56,30 @@ impl DirectoryServiceAuthenticationFailedExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`DirectoryServiceAuthenticationFailedException`](crate::types::error::DirectoryServiceAuthenticationFailedException).
     pub fn build(self) -> crate::types::error::DirectoryServiceAuthenticationFailedException {
         crate::types::error::DirectoryServiceAuthenticationFailedException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

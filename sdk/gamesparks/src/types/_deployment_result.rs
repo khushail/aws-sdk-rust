@@ -3,7 +3,7 @@
 /// <p>The result of the deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentResult {
+pub struct DeploymentResult  {
     /// <p>The type of deployment result.</p>
     #[doc(hidden)]
     pub result_code: ::std::option::Option<crate::types::ResultCode>,
@@ -13,11 +13,11 @@ pub struct DeploymentResult {
 }
 impl DeploymentResult {
     /// <p>The type of deployment result.</p>
-    pub fn result_code(&self) -> ::std::option::Option<&crate::types::ResultCode> {
+    pub fn result_code(&self) -> ::std::option::Option<& crate::types::ResultCode> {
         self.result_code.as_ref()
     }
     /// <p>Details about the deployment result.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl DeploymentResult {
 
 /// A builder for [`DeploymentResult`](crate::types::DeploymentResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentResultBuilder {
     pub(crate) result_code: ::std::option::Option<crate::types::ResultCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,12 +42,12 @@ impl DeploymentResultBuilder {
         self
     }
     /// <p>The type of deployment result.</p>
-    pub fn set_result_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultCode>,
-    ) -> Self {
-        self.result_code = input;
-        self
+    pub fn set_result_code(mut self, input: ::std::option::Option<crate::types::ResultCode>) -> Self {
+        self.result_code = input; self
+    }
+    /// <p>The type of deployment result.</p>
+    pub fn get_result_code(&self) -> &::std::option::Option<crate::types::ResultCode> {
+        &self.result_code
     }
     /// <p>Details about the deployment result.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -58,14 +56,20 @@ impl DeploymentResultBuilder {
     }
     /// <p>Details about the deployment result.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>Details about the deployment result.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`DeploymentResult`](crate::types::DeploymentResult).
     pub fn build(self) -> crate::types::DeploymentResult {
         crate::types::DeploymentResult {
-            result_code: self.result_code,
-            message: self.message,
+            result_code: self.result_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -3,69 +3,62 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOptionGroupInput {
-    /// <p>The name of the option group to be deleted.</p> <note>
-    /// <p>You can't delete default option groups.</p>
+pub struct DeleteOptionGroupInput  {
+    /// <p>The name of the option group to be deleted.</p> <note> 
+    /// <p>You can't delete default option groups.</p> 
     /// </note>
     #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptionGroupInput {
-    /// <p>The name of the option group to be deleted.</p> <note>
-    /// <p>You can't delete default option groups.</p>
+    /// <p>The name of the option group to be deleted.</p> <note> 
+    /// <p>You can't delete default option groups.</p> 
     /// </note>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
 }
 impl DeleteOptionGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_option_group::builders::DeleteOptionGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_option_group::builders::DeleteOptionGroupInputBuilder {
         crate::operation::delete_option_group::builders::DeleteOptionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOptionGroupInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptionGroupInputBuilder {
-    /// <p>The name of the option group to be deleted.</p> <note>
-    /// <p>You can't delete default option groups.</p>
+    /// <p>The name of the option group to be deleted.</p> <note> 
+    /// <p>You can't delete default option groups.</p> 
     /// </note>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the option group to be deleted.</p> <note>
-    /// <p>You can't delete default option groups.</p>
+    /// <p>The name of the option group to be deleted.</p> <note> 
+    /// <p>You can't delete default option groups.</p> 
     /// </note>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.option_group_name = input;
-        self
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.option_group_name = input; self
+    }
+    /// <p>The name of the option group to be deleted.</p> <note> 
+    /// <p>You can't delete default option groups.</p> 
+    /// </note>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
     }
     /// Consumes the builder and constructs a [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_option_group::DeleteOptionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_option_group::DeleteOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_option_group::DeleteOptionGroupInput {
-                option_group_name: self.option_group_name,
-            },
+                option_group_name: self.option_group_name
+                ,
+            }
         )
     }
 }
+

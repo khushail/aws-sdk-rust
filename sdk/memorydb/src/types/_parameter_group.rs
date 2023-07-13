@@ -3,7 +3,7 @@
 /// <p>Represents the output of a CreateParameterGroup operation. A parameter group represents a combination of specific values for the parameters that are passed to the engine software during startup.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterGroup {
+pub struct ParameterGroup  {
     /// <p>The name of the parameter group</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct ParameterGroup {
 }
 impl ParameterGroup {
     /// <p>The name of the parameter group</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
-    pub fn family(&self) -> ::std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>A description of the parameter group</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl ParameterGroup {
 
 /// A builder for [`ParameterGroup`](crate::types::ParameterGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) family: ::std::option::Option<::std::string::String>,
@@ -61,8 +59,11 @@ impl ParameterGroupBuilder {
     }
     /// <p>The name of the parameter group</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the parameter group</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
     pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,8 +72,11 @@ impl ParameterGroupBuilder {
     }
     /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
     pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.family = input;
-        self
+        self.family = input; self
+    }
+    /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
+    pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.family
     }
     /// <p>A description of the parameter group</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,8 +85,11 @@ impl ParameterGroupBuilder {
     }
     /// <p>A description of the parameter group</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
+    }
+    /// <p>A description of the parameter group</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl ParameterGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`ParameterGroup`](crate::types::ParameterGroup).
     pub fn build(self) -> crate::types::ParameterGroup {
         crate::types::ParameterGroup {
-            name: self.name,
-            family: self.family,
-            description: self.description,
-            arn: self.arn,
+            name: self.name
+            ,
+            family: self.family
+            ,
+            description: self.description
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQuickConnectOutput {
+pub struct DeleteQuickConnectOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteQuickConnectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteQuickConnectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQuickConnectOutput`](crate::operation::delete_quick_connect::DeleteQuickConnectOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_quick_connect::builders::DeleteQuickConnectOutputBuilder {
+    pub fn builder() -> crate::operation::delete_quick_connect::builders::DeleteQuickConnectOutputBuilder {
         crate::operation::delete_quick_connect::builders::DeleteQuickConnectOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQuickConnectOutput`](crate::operation::delete_quick_connect::DeleteQuickConnectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQuickConnectOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteQuickConnectOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteQuickConnectOutput`](crate::operation::delete_quick_connect::DeleteQuickConnectOutput).
     pub fn build(self) -> crate::operation::delete_quick_connect::DeleteQuickConnectOutput {
         crate::operation::delete_quick_connect::DeleteQuickConnectOutput {
@@ -43,3 +40,4 @@ impl DeleteQuickConnectOutputBuilder {
         }
     }
 }
+

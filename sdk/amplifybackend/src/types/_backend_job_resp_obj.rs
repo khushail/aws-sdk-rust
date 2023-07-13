@@ -3,7 +3,7 @@
 /// <p>The response object for this operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackendJobRespObj {
+pub struct BackendJobRespObj  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -31,35 +31,35 @@ pub struct BackendJobRespObj {
 }
 impl BackendJobRespObj {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> ::std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The time when the job was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&str> {
+    pub fn create_time(&self) -> ::std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time when the job was last updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&str> {
+    pub fn update_time(&self) -> ::std::option::Option<& str> {
         self.update_time.as_deref()
     }
 }
@@ -72,9 +72,7 @@ impl BackendJobRespObj {
 
 /// A builder for [`BackendJobRespObj`](crate::types::BackendJobRespObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendJobRespObjBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -93,24 +91,24 @@ impl BackendJobRespObjBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
+    }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.backend_environment_name = input;
-        self
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backend_environment_name = input; self
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
     }
     /// <p>The time when the job was created.</p>
     pub fn create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,8 +117,11 @@ impl BackendJobRespObjBuilder {
     }
     /// <p>The time when the job was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
+    }
+    /// <p>The time when the job was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_time
     }
     /// <p>If the request fails, this error is returned.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,8 +130,11 @@ impl BackendJobRespObjBuilder {
     }
     /// <p>If the request fails, this error is returned.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// <p>The ID for the job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,8 +143,11 @@ impl BackendJobRespObjBuilder {
     }
     /// <p>The ID for the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The ID for the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The name of the operation.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,8 +156,11 @@ impl BackendJobRespObjBuilder {
     }
     /// <p>The name of the operation.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
+    }
+    /// <p>The name of the operation.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
     }
     /// <p>The current status of the request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,8 +169,11 @@ impl BackendJobRespObjBuilder {
     }
     /// <p>The current status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The current status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The time when the job was last updated.</p>
     pub fn update_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,20 +182,32 @@ impl BackendJobRespObjBuilder {
     }
     /// <p>The time when the job was last updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
+    }
+    /// <p>The time when the job was last updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_time
     }
     /// Consumes the builder and constructs a [`BackendJobRespObj`](crate::types::BackendJobRespObj).
     pub fn build(self) -> crate::types::BackendJobRespObj {
         crate::types::BackendJobRespObj {
-            app_id: self.app_id,
-            backend_environment_name: self.backend_environment_name,
-            create_time: self.create_time,
-            error: self.error,
-            job_id: self.job_id,
-            operation: self.operation,
-            status: self.status,
-            update_time: self.update_time,
+            app_id: self.app_id
+            ,
+            backend_environment_name: self.backend_environment_name
+            ,
+            create_time: self.create_time
+            ,
+            error: self.error
+            ,
+            job_id: self.job_id
+            ,
+            operation: self.operation
+            ,
+            status: self.status
+            ,
+            update_time: self.update_time
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The data point tooltip options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataPointTooltipOption {
+pub struct DataPointTooltipOption  {
     /// <p>The status of the data point tool tip options.</p>
     #[doc(hidden)]
     pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl DataPointTooltipOption {
     /// <p>The status of the data point tool tip options.</p>
-    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::DashboardBehavior> {
+    pub fn availability_status(&self) -> ::std::option::Option<& crate::types::DashboardBehavior> {
         self.availability_status.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl DataPointTooltipOption {
 
 /// A builder for [`DataPointTooltipOption`](crate::types::DataPointTooltipOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataPointTooltipOptionBuilder {
     pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
@@ -36,17 +34,19 @@ impl DataPointTooltipOptionBuilder {
         self
     }
     /// <p>The status of the data point tool tip options.</p>
-    pub fn set_availability_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DashboardBehavior>,
-    ) -> Self {
-        self.availability_status = input;
-        self
+    pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::DashboardBehavior>) -> Self {
+        self.availability_status = input; self
+    }
+    /// <p>The status of the data point tool tip options.</p>
+    pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::DashboardBehavior> {
+        &self.availability_status
     }
     /// Consumes the builder and constructs a [`DataPointTooltipOption`](crate::types::DataPointTooltipOption).
     pub fn build(self) -> crate::types::DataPointTooltipOption {
         crate::types::DataPointTooltipOption {
-            availability_status: self.availability_status,
+            availability_status: self.availability_status
+            ,
         }
     }
 }
+

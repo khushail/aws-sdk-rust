@@ -3,14 +3,14 @@
 /// Settings for pausing a pipeline.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelinePauseStateSettings {
+pub struct PipelinePauseStateSettings  {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
     #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<crate::types::PipelineId>,
 }
 impl PipelinePauseStateSettings {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-    pub fn pipeline_id(&self) -> ::std::option::Option<&crate::types::PipelineId> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& crate::types::PipelineId> {
         self.pipeline_id.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl PipelinePauseStateSettings {
 
 /// A builder for [`PipelinePauseStateSettings`](crate::types::PipelinePauseStateSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelinePauseStateSettingsBuilder {
     pub(crate) pipeline_id: ::std::option::Option<crate::types::PipelineId>,
 }
@@ -36,17 +34,19 @@ impl PipelinePauseStateSettingsBuilder {
         self
     }
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-    pub fn set_pipeline_id(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineId>,
-    ) -> Self {
-        self.pipeline_id = input;
-        self
+    pub fn set_pipeline_id(mut self, input: ::std::option::Option<crate::types::PipelineId>) -> Self {
+        self.pipeline_id = input; self
+    }
+    /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<crate::types::PipelineId> {
+        &self.pipeline_id
     }
     /// Consumes the builder and constructs a [`PipelinePauseStateSettings`](crate::types::PipelinePauseStateSettings).
     pub fn build(self) -> crate::types::PipelinePauseStateSettings {
         crate::types::PipelinePauseStateSettings {
-            pipeline_id: self.pipeline_id,
+            pipeline_id: self.pipeline_id
+            ,
         }
     }
 }
+

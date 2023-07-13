@@ -3,7 +3,7 @@
 /// <p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HistogramEntry {
+pub struct HistogramEntry  {
     /// <p>The value of the entry.</p>
     #[doc(hidden)]
     pub value: f64,
@@ -30,9 +30,7 @@ impl HistogramEntry {
 
 /// A builder for [`HistogramEntry`](crate::types::HistogramEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HistogramEntryBuilder {
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) count: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl HistogramEntryBuilder {
     }
     /// <p>The value of the entry.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The value of the entry.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// <p>The prevalence of the entry.</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -55,14 +56,22 @@ impl HistogramEntryBuilder {
     }
     /// <p>The prevalence of the entry.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
+    }
+    /// <p>The prevalence of the entry.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`HistogramEntry`](crate::types::HistogramEntry).
     pub fn build(self) -> crate::types::HistogramEntry {
         crate::types::HistogramEntry {
-            value: self.value.unwrap_or_default(),
-            count: self.count.unwrap_or_default(),
+            value: self.value
+                .unwrap_or_default()
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

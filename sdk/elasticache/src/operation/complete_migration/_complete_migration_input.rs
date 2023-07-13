@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompleteMigrationInput {
+pub struct CompleteMigrationInput  {
     /// <p>The ID of the replication group to which data is being migrated.</p>
     #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct CompleteMigrationInput {
 }
 impl CompleteMigrationInput {
     /// <p>The ID of the replication group to which data is being migrated.</p>
-    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
@@ -22,37 +22,31 @@ impl CompleteMigrationInput {
 }
 impl CompleteMigrationInput {
     /// Creates a new builder-style object to manufacture [`CompleteMigrationInput`](crate::operation::complete_migration::CompleteMigrationInput).
-    pub fn builder() -> crate::operation::complete_migration::builders::CompleteMigrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_migration::builders::CompleteMigrationInputBuilder {
         crate::operation::complete_migration::builders::CompleteMigrationInputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteMigrationInput`](crate::operation::complete_migration::CompleteMigrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteMigrationInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
 }
 impl CompleteMigrationInputBuilder {
     /// <p>The ID of the replication group to which data is being migrated.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the replication group to which data is being migrated.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.replication_group_id = input;
-        self
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.replication_group_id = input; self
+    }
+    /// <p>The ID of the replication group to which data is being migrated.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
     }
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -61,21 +55,23 @@ impl CompleteMigrationInputBuilder {
     }
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
+    }
+    /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`CompleteMigrationInput`](crate::operation::complete_migration::CompleteMigrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::complete_migration::CompleteMigrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::complete_migration::CompleteMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::complete_migration::CompleteMigrationInput {
-                replication_group_id: self.replication_group_id,
-                force: self.force.unwrap_or_default(),
-            },
+                replication_group_id: self.replication_group_id
+                ,
+                force: self.force
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

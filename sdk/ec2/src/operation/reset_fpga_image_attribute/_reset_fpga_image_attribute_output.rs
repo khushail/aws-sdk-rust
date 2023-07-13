@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetFpgaImageAttributeOutput {
+pub struct ResetFpgaImageAttributeOutput  {
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     #[doc(hidden)]
     pub r#return: ::std::option::Option<bool>,
@@ -15,24 +15,20 @@ impl ResetFpgaImageAttributeOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for ResetFpgaImageAttributeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ResetFpgaImageAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ResetFpgaImageAttributeOutput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder {
         crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetFpgaImageAttributeOutput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetFpgaImageAttributeOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -45,25 +41,28 @@ impl ResetFpgaImageAttributeOutputBuilder {
     }
     /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#return = input;
-        self
+        self.r#return = input; self
+    }
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ResetFpgaImageAttributeOutput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput {
+    pub fn build(self) -> crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput {
         crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput {
-            r#return: self.r#return,
+            r#return: self.r#return
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

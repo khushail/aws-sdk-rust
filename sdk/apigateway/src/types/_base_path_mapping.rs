@@ -3,7 +3,7 @@
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BasePathMapping {
+pub struct BasePathMapping  {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[doc(hidden)]
     pub base_path: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct BasePathMapping {
 }
 impl BasePathMapping {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
-    pub fn base_path(&self) -> ::std::option::Option<&str> {
+    pub fn base_path(&self) -> ::std::option::Option<& str> {
         self.base_path.as_deref()
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the associated stage.</p>
-    pub fn stage(&self) -> ::std::option::Option<&str> {
+    pub fn stage(&self) -> ::std::option::Option<& str> {
         self.stage.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl BasePathMapping {
 
 /// A builder for [`BasePathMapping`](crate::types::BasePathMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BasePathMappingBuilder {
     pub(crate) base_path: ::std::option::Option<::std::string::String>,
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl BasePathMappingBuilder {
     }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_path = input;
-        self
+        self.base_path = input; self
+    }
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
+    pub fn get_base_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_path
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl BasePathMappingBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
     }
     /// <p>The name of the associated stage.</p>
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl BasePathMappingBuilder {
     }
     /// <p>The name of the associated stage.</p>
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
+    }
+    /// <p>The name of the associated stage.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage
     }
     /// Consumes the builder and constructs a [`BasePathMapping`](crate::types::BasePathMapping).
     pub fn build(self) -> crate::types::BasePathMapping {
         crate::types::BasePathMapping {
-            base_path: self.base_path,
-            rest_api_id: self.rest_api_id,
-            stage: self.stage,
+            base_path: self.base_path
+            ,
+            rest_api_id: self.rest_api_id
+            ,
+            stage: self.stage
+            ,
         }
     }
 }
+

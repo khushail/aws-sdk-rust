@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePermissionOutput {
+pub struct CreatePermissionOutput  {
     /// <p>A structure with information about this customer managed permission.</p>
     #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
@@ -13,34 +13,29 @@ pub struct CreatePermissionOutput {
 }
 impl CreatePermissionOutput {
     /// <p>A structure with information about this customer managed permission.</p>
-    pub fn permission(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceSharePermissionSummary> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::ResourceSharePermissionSummary> {
         self.permission.as_ref()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreatePermissionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreatePermissionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionOutput`](crate::operation::create_permission::CreatePermissionOutput).
-    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionOutputBuilder {
         crate::operation::create_permission::builders::CreatePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePermissionOutput`](crate::operation::create_permission::CreatePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePermissionOutputBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -53,12 +48,12 @@ impl CreatePermissionOutputBuilder {
         self
     }
     /// <p>A structure with information about this customer managed permission.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
-    ) -> Self {
-        self.permission = input;
-        self
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::ResourceSharePermissionSummary>) -> Self {
+        self.permission = input; self
+    }
+    /// <p>A structure with information about this customer managed permission.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::ResourceSharePermissionSummary> {
+        &self.permission
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,24 +62,30 @@ impl CreatePermissionOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
+    }
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreatePermissionOutput`](crate::operation::create_permission::CreatePermissionOutput).
     pub fn build(self) -> crate::operation::create_permission::CreatePermissionOutput {
         crate::operation::create_permission::CreatePermissionOutput {
-            permission: self.permission,
-            client_token: self.client_token,
+            permission: self.permission
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

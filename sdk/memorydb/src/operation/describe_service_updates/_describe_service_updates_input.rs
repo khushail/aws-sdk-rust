@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServiceUpdatesInput {
+pub struct DescribeServiceUpdatesInput  {
     /// <p>The unique ID of the service update to describe.</p>
     #[doc(hidden)]
     pub service_update_name: ::std::option::Option<::std::string::String>,
@@ -21,15 +21,15 @@ pub struct DescribeServiceUpdatesInput {
 }
 impl DescribeServiceUpdatesInput {
     /// <p>The unique ID of the service update to describe.</p>
-    pub fn service_update_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_update_name(&self) -> ::std::option::Option<& str> {
         self.service_update_name.as_deref()
     }
     /// <p>The list of cluster names to identify service updates to apply</p>
-    pub fn cluster_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn cluster_names(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.cluster_names.as_deref()
     }
     /// <p>The status(es) of the service updates to filter on</p>
-    pub fn status(&self) -> ::std::option::Option<&[crate::types::ServiceUpdateStatus]> {
+    pub fn status(&self) -> ::std::option::Option<& [crate::types::ServiceUpdateStatus]> {
         self.status.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -37,24 +37,20 @@ impl DescribeServiceUpdatesInput {
         self.max_results
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeServiceUpdatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesInput`](crate::operation::describe_service_updates::DescribeServiceUpdatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder {
         crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceUpdatesInput`](crate::operation::describe_service_updates::DescribeServiceUpdatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceUpdatesInputBuilder {
     pub(crate) service_update_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,42 +60,36 @@ pub struct DescribeServiceUpdatesInputBuilder {
 }
 impl DescribeServiceUpdatesInputBuilder {
     /// <p>The unique ID of the service update to describe.</p>
-    pub fn service_update_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_update_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_update_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the service update to describe.</p>
-    pub fn set_service_update_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.service_update_name = input;
-        self
+    pub fn set_service_update_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_update_name = input; self
+    }
+    /// <p>The unique ID of the service update to describe.</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_update_name
     }
     /// Appends an item to `cluster_names`.
     ///
     /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
     ///
     /// <p>The list of cluster names to identify service updates to apply</p>
-    pub fn cluster_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cluster_names.unwrap_or_default();
-        v.push(input.into());
-        self.cluster_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cluster_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of cluster names to identify service updates to apply</p>
-    pub fn set_cluster_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.cluster_names = input;
-        self
+    pub fn set_cluster_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.cluster_names = input; self
+    }
+    /// <p>The list of cluster names to identify service updates to apply</p>
+    pub fn get_cluster_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cluster_names
     }
     /// Appends an item to `status`.
     ///
@@ -108,17 +98,17 @@ impl DescribeServiceUpdatesInputBuilder {
     /// <p>The status(es) of the service updates to filter on</p>
     pub fn status(mut self, input: crate::types::ServiceUpdateStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
-        v.push(input);
-        self.status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status(es) of the service updates to filter on</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The status(es) of the service updates to filter on</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
+        &self.status
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -127,8 +117,11 @@ impl DescribeServiceUpdatesInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,24 +130,28 @@ impl DescribeServiceUpdatesInputBuilder {
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeServiceUpdatesInput`](crate::operation::describe_service_updates::DescribeServiceUpdatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_service_updates::DescribeServiceUpdatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_service_updates::DescribeServiceUpdatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_service_updates::DescribeServiceUpdatesInput {
-                service_update_name: self.service_update_name,
-                cluster_names: self.cluster_names,
-                status: self.status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                service_update_name: self.service_update_name
+                ,
+                cluster_names: self.cluster_names
+                ,
+                status: self.status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

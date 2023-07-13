@@ -3,7 +3,7 @@
 /// <p>The detailed status of the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterStatus {
+pub struct ClusterStatus  {
     /// <p>The current state of the cluster.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ClusterState>,
@@ -19,21 +19,19 @@ pub struct ClusterStatus {
 }
 impl ClusterStatus {
     /// <p>The current state of the cluster.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ClusterState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ClusterState> {
         self.state.as_ref()
     }
     /// <p>The reason for the cluster status change.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClusterStateChangeReason> {
+    pub fn state_change_reason(&self) -> ::std::option::Option<& crate::types::ClusterStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-    pub fn timeline(&self) -> ::std::option::Option<&crate::types::ClusterTimeline> {
+    pub fn timeline(&self) -> ::std::option::Option<& crate::types::ClusterTimeline> {
         self.timeline.as_ref()
     }
     /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&[crate::types::ErrorDetail]> {
+    pub fn error_details(&self) -> ::std::option::Option<& [crate::types::ErrorDetail]> {
         self.error_details.as_deref()
     }
 }
@@ -46,9 +44,7 @@ impl ClusterStatus {
 
 /// A builder for [`ClusterStatus`](crate::types::ClusterStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ClusterState>,
     pub(crate) state_change_reason: ::std::option::Option<crate::types::ClusterStateChangeReason>,
@@ -63,8 +59,11 @@ impl ClusterStatusBuilder {
     }
     /// <p>The current state of the cluster.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ClusterState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
+    }
+    /// <p>The current state of the cluster.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
+        &self.state
     }
     /// <p>The reason for the cluster status change.</p>
     pub fn state_change_reason(mut self, input: crate::types::ClusterStateChangeReason) -> Self {
@@ -72,12 +71,12 @@ impl ClusterStatusBuilder {
         self
     }
     /// <p>The reason for the cluster status change.</p>
-    pub fn set_state_change_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterStateChangeReason>,
-    ) -> Self {
-        self.state_change_reason = input;
-        self
+    pub fn set_state_change_reason(mut self, input: ::std::option::Option<crate::types::ClusterStateChangeReason>) -> Self {
+        self.state_change_reason = input; self
+    }
+    /// <p>The reason for the cluster status change.</p>
+    pub fn get_state_change_reason(&self) -> &::std::option::Option<crate::types::ClusterStateChangeReason> {
+        &self.state_change_reason
     }
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
     pub fn timeline(mut self, input: crate::types::ClusterTimeline) -> Self {
@@ -85,12 +84,12 @@ impl ClusterStatusBuilder {
         self
     }
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-    pub fn set_timeline(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterTimeline>,
-    ) -> Self {
-        self.timeline = input;
-        self
+    pub fn set_timeline(mut self, input: ::std::option::Option<crate::types::ClusterTimeline>) -> Self {
+        self.timeline = input; self
+    }
+    /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
+    pub fn get_timeline(&self) -> &::std::option::Option<crate::types::ClusterTimeline> {
+        &self.timeline
     }
     /// Appends an item to `error_details`.
     ///
@@ -99,25 +98,30 @@ impl ClusterStatusBuilder {
     /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
         let mut v = self.error_details.unwrap_or_default();
-        v.push(input);
-        self.error_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.error_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
-    ) -> Self {
-        self.error_details = input;
-        self
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
+        self.error_details = input; self
+    }
+    /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
     }
     /// Consumes the builder and constructs a [`ClusterStatus`](crate::types::ClusterStatus).
     pub fn build(self) -> crate::types::ClusterStatus {
         crate::types::ClusterStatus {
-            state: self.state,
-            state_change_reason: self.state_change_reason,
-            timeline: self.timeline,
-            error_details: self.error_details,
+            state: self.state
+            ,
+            state_change_reason: self.state_change_reason
+            ,
+            timeline: self.timeline
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

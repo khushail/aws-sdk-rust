@@ -3,14 +3,14 @@
 /// <p>Information about the user or resource that created an OpsItem event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpsItemIdentity {
+pub struct OpsItemIdentity  {
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl OpsItemIdentity {
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl OpsItemIdentity {
 
 /// A builder for [`OpsItemIdentity`](crate::types::OpsItemIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemIdentityBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl OpsItemIdentityBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`OpsItemIdentity`](crate::types::OpsItemIdentity).
     pub fn build(self) -> crate::types::OpsItemIdentity {
-        crate::types::OpsItemIdentity { arn: self.arn }
+        crate::types::OpsItemIdentity {
+            arn: self.arn
+            ,
+        }
     }
 }
+

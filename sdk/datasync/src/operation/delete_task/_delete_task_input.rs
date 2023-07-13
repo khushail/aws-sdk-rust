@@ -3,14 +3,14 @@
 /// <p>DeleteTask</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTaskInput {
+pub struct DeleteTaskInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
     #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTaskInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
-    pub fn task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_arn(&self) -> ::std::option::Option<& str> {
         self.task_arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl DeleteTaskInput {
 
 /// A builder for [`DeleteTaskInput`](crate::operation::delete_task::DeleteTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTaskInputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,18 +35,20 @@ impl DeleteTaskInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_arn = input;
-        self
+        self.task_arn = input; self
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
     }
     /// Consumes the builder and constructs a [`DeleteTaskInput`](crate::operation::delete_task::DeleteTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_task::DeleteTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_task::DeleteTaskInput {
-            task_arn: self.task_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_task::DeleteTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_task::DeleteTaskInput {
+                task_arn: self.task_arn
+                ,
+            }
+        )
     }
 }
+

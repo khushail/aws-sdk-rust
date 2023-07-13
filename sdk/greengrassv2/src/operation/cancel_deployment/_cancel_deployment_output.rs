@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelDeploymentOutput {
+pub struct CancelDeploymentOutput  {
     /// <p>A message that communicates if the cancel was successful.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -10,28 +10,25 @@ pub struct CancelDeploymentOutput {
 }
 impl CancelDeploymentOutput {
     /// <p>A message that communicates if the cancel was successful.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CancelDeploymentOutput`](crate::operation::cancel_deployment::CancelDeploymentOutput).
-    pub fn builder() -> crate::operation::cancel_deployment::builders::CancelDeploymentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_deployment::builders::CancelDeploymentOutputBuilder {
         crate::operation::cancel_deployment::builders::CancelDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDeploymentOutput`](crate::operation::cancel_deployment::CancelDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDeploymentOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -44,23 +41,28 @@ impl CancelDeploymentOutputBuilder {
     }
     /// <p>A message that communicates if the cancel was successful.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
+    }
+    /// <p>A message that communicates if the cancel was successful.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelDeploymentOutput`](crate::operation::cancel_deployment::CancelDeploymentOutput).
     pub fn build(self) -> crate::operation::cancel_deployment::CancelDeploymentOutput {
         crate::operation::cancel_deployment::CancelDeploymentOutput {
-            message: self.message,
+            message: self.message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

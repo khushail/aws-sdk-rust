@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkflowTypeInput {
+pub struct DescribeWorkflowTypeInput  {
     /// <p>The name of the domain in which this workflow type is registered.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
@@ -12,27 +12,24 @@ pub struct DescribeWorkflowTypeInput {
 }
 impl DescribeWorkflowTypeInput {
     /// <p>The name of the domain in which this workflow type is registered.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflow type to describe.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
 }
 impl DescribeWorkflowTypeInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeInput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeInput).
-    pub fn builder(
-    ) -> crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeInputBuilder {
+    pub fn builder() -> crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeInputBuilder {
         crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkflowTypeInput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkflowTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -45,8 +42,11 @@ impl DescribeWorkflowTypeInputBuilder {
     }
     /// <p>The name of the domain in which this workflow type is registered.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p>The name of the domain in which this workflow type is registered.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The workflow type to describe.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -54,25 +54,23 @@ impl DescribeWorkflowTypeInputBuilder {
         self
     }
     /// <p>The workflow type to describe.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
-        self.workflow_type = input;
-        self
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
+        self.workflow_type = input; self
+    }
+    /// <p>The workflow type to describe.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
     }
     /// Consumes the builder and constructs a [`DescribeWorkflowTypeInput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workflow_type::DescribeWorkflowTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workflow_type::DescribeWorkflowTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_workflow_type::DescribeWorkflowTypeInput {
-                domain: self.domain,
-                workflow_type: self.workflow_type,
-            },
+                domain: self.domain
+                ,
+                workflow_type: self.workflow_type
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A number filter for querying findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NumberFilter {
+pub struct NumberFilter  {
     /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
     #[doc(hidden)]
     pub gte: f64,
@@ -37,9 +37,7 @@ impl NumberFilter {
 
 /// A builder for [`NumberFilter`](crate::types::NumberFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumberFilterBuilder {
     pub(crate) gte: ::std::option::Option<f64>,
     pub(crate) lte: ::std::option::Option<f64>,
@@ -53,8 +51,11 @@ impl NumberFilterBuilder {
     }
     /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
     pub fn set_gte(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.gte = input;
-        self
+        self.gte = input; self
+    }
+    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
+    pub fn get_gte(&self) -> &::std::option::Option<f64> {
+        &self.gte
     }
     /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
     pub fn lte(mut self, input: f64) -> Self {
@@ -63,8 +64,11 @@ impl NumberFilterBuilder {
     }
     /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
     pub fn set_lte(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lte = input;
-        self
+        self.lte = input; self
+    }
+    /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
+    pub fn get_lte(&self) -> &::std::option::Option<f64> {
+        &self.lte
     }
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
     pub fn eq(mut self, input: f64) -> Self {
@@ -73,15 +77,25 @@ impl NumberFilterBuilder {
     }
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
     pub fn set_eq(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.eq = input;
-        self
+        self.eq = input; self
+    }
+    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
+    pub fn get_eq(&self) -> &::std::option::Option<f64> {
+        &self.eq
     }
     /// Consumes the builder and constructs a [`NumberFilter`](crate::types::NumberFilter).
     pub fn build(self) -> crate::types::NumberFilter {
         crate::types::NumberFilter {
-            gte: self.gte.unwrap_or_default(),
-            lte: self.lte.unwrap_or_default(),
-            eq: self.eq.unwrap_or_default(),
+            gte: self.gte
+                .unwrap_or_default()
+            ,
+            lte: self.lte
+                .unwrap_or_default()
+            ,
+            eq: self.eq
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

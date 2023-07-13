@@ -3,7 +3,7 @@
 /// A MediaPackage VOD PackagingGroup resource configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePackagingGroupInput {
+pub struct UpdatePackagingGroupInput  {
     /// CDN Authorization credentials
     #[doc(hidden)]
     pub authorization: ::std::option::Option<crate::types::Authorization>,
@@ -13,27 +13,24 @@ pub struct UpdatePackagingGroupInput {
 }
 impl UpdatePackagingGroupInput {
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> ::std::option::Option<&crate::types::Authorization> {
+    pub fn authorization(&self) -> ::std::option::Option<& crate::types::Authorization> {
         self.authorization.as_ref()
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl UpdatePackagingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_packaging_group::builders::UpdatePackagingGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_packaging_group::builders::UpdatePackagingGroupInputBuilder {
         crate::operation::update_packaging_group::builders::UpdatePackagingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePackagingGroupInputBuilder {
     pub(crate) authorization: ::std::option::Option<crate::types::Authorization>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -45,12 +42,12 @@ impl UpdatePackagingGroupInputBuilder {
         self
     }
     /// CDN Authorization credentials
-    pub fn set_authorization(
-        mut self,
-        input: ::std::option::Option<crate::types::Authorization>,
-    ) -> Self {
-        self.authorization = input;
-        self
+    pub fn set_authorization(mut self, input: ::std::option::Option<crate::types::Authorization>) -> Self {
+        self.authorization = input; self
+    }
+    /// CDN Authorization credentials
+    pub fn get_authorization(&self) -> &::std::option::Option<crate::types::Authorization> {
+        &self.authorization
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -59,21 +56,22 @@ impl UpdatePackagingGroupInputBuilder {
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// The ID of a MediaPackage VOD PackagingGroup resource.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_packaging_group::UpdatePackagingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_packaging_group::UpdatePackagingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_packaging_group::UpdatePackagingGroupInput {
-                authorization: self.authorization,
-                id: self.id,
-            },
+                authorization: self.authorization
+                ,
+                id: self.id
+                ,
+            }
         )
     }
 }
+

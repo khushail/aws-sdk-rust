@@ -3,7 +3,7 @@
 /// <p>Details about a provisional configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionalConfiguration {
+pub struct ProvisionalConfiguration  {
     /// <p>Maximum time for the provisional configuration, in minutes.</p>
     #[doc(hidden)]
     pub max_time_to_live_in_minutes: ::std::option::Option<i32>,
@@ -23,9 +23,7 @@ impl ProvisionalConfiguration {
 
 /// A builder for [`ProvisionalConfiguration`](crate::types::ProvisionalConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionalConfigurationBuilder {
     pub(crate) max_time_to_live_in_minutes: ::std::option::Option<i32>,
 }
@@ -37,13 +35,18 @@ impl ProvisionalConfigurationBuilder {
     }
     /// <p>Maximum time for the provisional configuration, in minutes.</p>
     pub fn set_max_time_to_live_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_time_to_live_in_minutes = input;
-        self
+        self.max_time_to_live_in_minutes = input; self
+    }
+    /// <p>Maximum time for the provisional configuration, in minutes.</p>
+    pub fn get_max_time_to_live_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.max_time_to_live_in_minutes
     }
     /// Consumes the builder and constructs a [`ProvisionalConfiguration`](crate::types::ProvisionalConfiguration).
     pub fn build(self) -> crate::types::ProvisionalConfiguration {
         crate::types::ProvisionalConfiguration {
-            max_time_to_live_in_minutes: self.max_time_to_live_in_minutes,
+            max_time_to_live_in_minutes: self.max_time_to_live_in_minutes
+            ,
         }
     }
 }
+

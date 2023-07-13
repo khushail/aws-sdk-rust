@@ -3,7 +3,7 @@
 /// <p>A request to get information about the current ApiKey resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApiKeyInput {
+pub struct GetApiKeyInput  {
     /// <p>The identifier of the ApiKey resource.</p>
     #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct GetApiKeyInput {
 }
 impl GetApiKeyInput {
     /// <p>The identifier of the ApiKey resource.</p>
-    pub fn api_key(&self) -> ::std::option::Option<&str> {
+    pub fn api_key(&self) -> ::std::option::Option<& str> {
         self.api_key.as_deref()
     }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
@@ -30,9 +30,7 @@ impl GetApiKeyInput {
 
 /// A builder for [`GetApiKeyInput`](crate::operation::get_api_key::GetApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiKeyInputBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
     pub(crate) include_value: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl GetApiKeyInputBuilder {
     }
     /// <p>The identifier of the ApiKey resource.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
+    }
+    /// <p>The identifier of the ApiKey resource.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
     }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
     pub fn include_value(mut self, input: bool) -> Self {
@@ -55,19 +56,22 @@ impl GetApiKeyInputBuilder {
     }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
     pub fn set_include_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_value = input;
-        self
+        self.include_value = input; self
+    }
+    /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
+    pub fn get_include_value(&self) -> &::std::option::Option<bool> {
+        &self.include_value
     }
     /// Consumes the builder and constructs a [`GetApiKeyInput`](crate::operation::get_api_key::GetApiKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_api_key::GetApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_api_key::GetApiKeyInput {
-            api_key: self.api_key,
-            include_value: self.include_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_api_key::GetApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_api_key::GetApiKeyInput {
+                api_key: self.api_key
+                ,
+                include_value: self.include_value
+                ,
+            }
+        )
     }
 }
+

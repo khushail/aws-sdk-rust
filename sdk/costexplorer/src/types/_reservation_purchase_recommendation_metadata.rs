@@ -3,7 +3,7 @@
 /// <p>Information about this specific recommendation, such as the timestamp for when Amazon Web Services made a specific recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservationPurchaseRecommendationMetadata {
+pub struct ReservationPurchaseRecommendationMetadata  {
     /// <p>The ID for this specific recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReservationPurchaseRecommendationMetadata {
 }
 impl ReservationPurchaseRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn generation_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn generation_timestamp(&self) -> ::std::option::Option<& str> {
         self.generation_timestamp.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl ReservationPurchaseRecommendationMetadata {
 
 /// A builder for [`ReservationPurchaseRecommendationMetadata`](crate::types::ReservationPurchaseRecommendationMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationMetadataBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl ReservationPurchaseRecommendationMetadataBuilder {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for this specific recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.recommendation_id = input;
-        self
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommendation_id = input; self
+    }
+    /// <p>The ID for this specific recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn generation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn set_generation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.generation_timestamp = input;
-        self
+    pub fn set_generation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.generation_timestamp = input; self
+    }
+    /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
+    pub fn get_generation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_timestamp
     }
     /// Consumes the builder and constructs a [`ReservationPurchaseRecommendationMetadata`](crate::types::ReservationPurchaseRecommendationMetadata).
     pub fn build(self) -> crate::types::ReservationPurchaseRecommendationMetadata {
         crate::types::ReservationPurchaseRecommendationMetadata {
-            recommendation_id: self.recommendation_id,
-            generation_timestamp: self.generation_timestamp,
+            recommendation_id: self.recommendation_id
+            ,
+            generation_timestamp: self.generation_timestamp
+            ,
         }
     }
 }
+

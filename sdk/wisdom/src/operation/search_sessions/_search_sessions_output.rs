@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchSessionsOutput {
+pub struct SearchSessionsOutput  {
     /// <p>Summary information about the sessions.</p>
     #[doc(hidden)]
     pub session_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
@@ -13,19 +13,19 @@ pub struct SearchSessionsOutput {
 }
 impl SearchSessionsOutput {
     /// <p>Summary information about the sessions.</p>
-    pub fn session_summaries(&self) -> ::std::option::Option<&[crate::types::SessionSummary]> {
+    pub fn session_summaries(&self) -> ::std::option::Option<& [crate::types::SessionSummary]> {
         self.session_summaries.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchSessionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchSessionsOutput {
     /// Creates a new builder-style object to manufacture [`SearchSessionsOutput`](crate::operation::search_sessions::SearchSessionsOutput).
     pub fn builder() -> crate::operation::search_sessions::builders::SearchSessionsOutputBuilder {
@@ -35,12 +35,9 @@ impl SearchSessionsOutput {
 
 /// A builder for [`SearchSessionsOutput`](crate::operation::search_sessions::SearchSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSessionsOutputBuilder {
-    pub(crate) session_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
+    pub(crate) session_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,17 @@ impl SearchSessionsOutputBuilder {
     /// <p>Summary information about the sessions.</p>
     pub fn session_summaries(mut self, input: crate::types::SessionSummary) -> Self {
         let mut v = self.session_summaries.unwrap_or_default();
-        v.push(input);
-        self.session_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.session_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information about the sessions.</p>
-    pub fn set_session_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
-    ) -> Self {
-        self.session_summaries = input;
-        self
+    pub fn set_session_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>) -> Self {
+        self.session_summaries = input; self
+    }
+    /// <p>Summary information about the sessions.</p>
+    pub fn get_session_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>> {
+        &self.session_summaries
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +68,30 @@ impl SearchSessionsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchSessionsOutput`](crate::operation::search_sessions::SearchSessionsOutput).
     pub fn build(self) -> crate::operation::search_sessions::SearchSessionsOutput {
         crate::operation::search_sessions::SearchSessionsOutput {
-            session_summaries: self.session_summaries,
-            next_token: self.next_token,
+            session_summaries: self.session_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetRecordInput {
+pub struct BatchGetRecordInput  {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
     #[doc(hidden)]
     pub identifiers: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
 }
 impl BatchGetRecordInput {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
-    pub fn identifiers(&self) -> ::std::option::Option<&[crate::types::BatchGetRecordIdentifier]> {
+    pub fn identifiers(&self) -> ::std::option::Option<& [crate::types::BatchGetRecordIdentifier]> {
         self.identifiers.as_deref()
     }
 }
@@ -22,12 +22,9 @@ impl BatchGetRecordInput {
 
 /// A builder for [`BatchGetRecordInput`](crate::operation::batch_get_record::BatchGetRecordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetRecordInputBuilder {
-    pub(crate) identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
+    pub(crate) identifiers: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
 }
 impl BatchGetRecordInputBuilder {
     /// Appends an item to `identifiers`.
@@ -37,27 +34,26 @@ impl BatchGetRecordInputBuilder {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
     pub fn identifiers(mut self, input: crate::types::BatchGetRecordIdentifier) -> Self {
         let mut v = self.identifiers.unwrap_or_default();
-        v.push(input);
-        self.identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
-    pub fn set_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
-    ) -> Self {
-        self.identifiers = input;
-        self
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>) -> Self {
+        self.identifiers = input; self
+    }
+    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>> {
+        &self.identifiers
     }
     /// Consumes the builder and constructs a [`BatchGetRecordInput`](crate::operation::batch_get_record::BatchGetRecordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_record::BatchGetRecordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_record::BatchGetRecordInput {
-            identifiers: self.identifiers,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_record::BatchGetRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_record::BatchGetRecordInput {
+                identifiers: self.identifiers
+                ,
+            }
+        )
     }
 }
+

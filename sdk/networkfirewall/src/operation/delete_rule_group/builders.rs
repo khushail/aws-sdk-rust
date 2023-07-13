@@ -3,150 +3,140 @@ pub use crate::operation::delete_rule_group::_delete_rule_group_output::DeleteRu
 
 pub use crate::operation::delete_rule_group::_delete_rule_group_input::DeleteRuleGroupInputBuilder;
 
+impl DeleteRuleGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_rule_group::DeleteRuleGroupOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_rule_group::DeleteRuleGroupError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.delete_rule_group();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `DeleteRuleGroup`.
-///
+/// 
 /// <p>Deletes the specified <code>RuleGroup</code>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRuleGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_rule_group::builders::DeleteRuleGroupInputBuilder,
+                    inner: crate::operation::delete_rule_group::builders::DeleteRuleGroupInputBuilder,
 }
-impl DeleteRuleGroupFluentBuilder {
+impl DeleteRuleGroupFluentBuilder  {
     /// Creates a new `DeleteRuleGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_rule_group::DeleteRuleGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rule_group::DeleteRuleGroupError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the DeleteRuleGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_rule_group::builders::DeleteRuleGroupInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_rule_group::DeleteRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rule_group::DeleteRuleGroupError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::delete_rule_group::DeleteRuleGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_rule_group::DeleteRuleGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_rule_group::DeleteRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rule_group::DeleteRuleGroupError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_rule_group::DeleteRuleGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rule_group::DeleteRuleGroupError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_rule_group::DeleteRuleGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::delete_rule_group::DeleteRuleGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError>
+                            >  {
+                                self.customize_middleware().await
+                            }
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_name(input.into());
         self
     }
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_name(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_group_name()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_arn(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_group_arn()
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
     /// </note>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    /// </note>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
+        self.inner.get_type()
+    }
 }
+

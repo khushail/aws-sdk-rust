@@ -3,7 +3,7 @@
 /// <p>Schedule configuration parameters. A channel must be stopped before changes can be made to the schedule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleConfiguration {
+pub struct ScheduleConfiguration  {
     /// <p>Program transition configurations.</p>
     #[doc(hidden)]
     pub transition: ::std::option::Option<crate::types::Transition>,
@@ -13,11 +13,11 @@ pub struct ScheduleConfiguration {
 }
 impl ScheduleConfiguration {
     /// <p>Program transition configurations.</p>
-    pub fn transition(&self) -> ::std::option::Option<&crate::types::Transition> {
+    pub fn transition(&self) -> ::std::option::Option<& crate::types::Transition> {
         self.transition.as_ref()
     }
     /// <p>Program clip range configuration.</p>
-    pub fn clip_range(&self) -> ::std::option::Option<&crate::types::ClipRange> {
+    pub fn clip_range(&self) -> ::std::option::Option<& crate::types::ClipRange> {
         self.clip_range.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl ScheduleConfiguration {
 
 /// A builder for [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleConfigurationBuilder {
     pub(crate) transition: ::std::option::Option<crate::types::Transition>,
     pub(crate) clip_range: ::std::option::Option<crate::types::ClipRange>,
@@ -44,12 +42,12 @@ impl ScheduleConfigurationBuilder {
         self
     }
     /// <p>Program transition configurations.</p>
-    pub fn set_transition(
-        mut self,
-        input: ::std::option::Option<crate::types::Transition>,
-    ) -> Self {
-        self.transition = input;
-        self
+    pub fn set_transition(mut self, input: ::std::option::Option<crate::types::Transition>) -> Self {
+        self.transition = input; self
+    }
+    /// <p>Program transition configurations.</p>
+    pub fn get_transition(&self) -> &::std::option::Option<crate::types::Transition> {
+        &self.transition
     }
     /// <p>Program clip range configuration.</p>
     pub fn clip_range(mut self, input: crate::types::ClipRange) -> Self {
@@ -58,14 +56,20 @@ impl ScheduleConfigurationBuilder {
     }
     /// <p>Program clip range configuration.</p>
     pub fn set_clip_range(mut self, input: ::std::option::Option<crate::types::ClipRange>) -> Self {
-        self.clip_range = input;
-        self
+        self.clip_range = input; self
+    }
+    /// <p>Program clip range configuration.</p>
+    pub fn get_clip_range(&self) -> &::std::option::Option<crate::types::ClipRange> {
+        &self.clip_range
     }
     /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
     pub fn build(self) -> crate::types::ScheduleConfiguration {
         crate::types::ScheduleConfiguration {
-            transition: self.transition,
-            clip_range: self.clip_range,
+            transition: self.transition
+            ,
+            clip_range: self.clip_range
+            ,
         }
     }
 }
+

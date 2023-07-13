@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationOutput {
+pub struct DescribeOrganizationConfigurationOutput  {
     /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
     #[doc(hidden)]
     pub auto_enable: ::std::option::Option<bool>,
@@ -22,22 +22,20 @@ impl DescribeOrganizationConfigurationOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeOrganizationConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationOutputBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
     pub(crate) max_account_limit_reached: ::std::option::Option<bool>,
@@ -51,8 +49,11 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     }
     /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
+    }
+    /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable
     }
     /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
     pub fn max_account_limit_reached(mut self, input: bool) -> Self {
@@ -61,20 +62,23 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     }
     /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
     pub fn set_max_account_limit_reached(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.max_account_limit_reached = input;
-        self
+        self.max_account_limit_reached = input; self
+    }
+    /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
+    pub fn get_max_account_limit_reached(&self) -> &::std::option::Option<bool> {
+        &self.max_account_limit_reached
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
             auto_enable: self.auto_enable
             ,
@@ -84,3 +88,4 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         }
     }
 }
+

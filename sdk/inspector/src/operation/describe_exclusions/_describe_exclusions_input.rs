@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExclusionsInput {
+pub struct DescribeExclusionsInput  {
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
     #[doc(hidden)]
     pub exclusion_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,27 +12,24 @@ pub struct DescribeExclusionsInput {
 }
 impl DescribeExclusionsInput {
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    pub fn exclusion_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn exclusion_arns(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.exclusion_arns.as_deref()
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> ::std::option::Option<& crate::types::Locale> {
         self.locale.as_ref()
     }
 }
 impl DescribeExclusionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeExclusionsInput`](crate::operation::describe_exclusions::DescribeExclusionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_exclusions::builders::DescribeExclusionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_exclusions::builders::DescribeExclusionsInputBuilder {
         crate::operation::describe_exclusions::builders::DescribeExclusionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExclusionsInput`](crate::operation::describe_exclusions::DescribeExclusionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExclusionsInputBuilder {
     pub(crate) exclusion_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
@@ -43,22 +40,19 @@ impl DescribeExclusionsInputBuilder {
     /// To override the contents of this collection use [`set_exclusion_arns`](Self::set_exclusion_arns).
     ///
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    pub fn exclusion_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusion_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusion_arns.unwrap_or_default();
-        v.push(input.into());
-        self.exclusion_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclusion_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    pub fn set_exclusion_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.exclusion_arns = input;
-        self
+    pub fn set_exclusion_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.exclusion_arns = input; self
+    }
+    /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
+    pub fn get_exclusion_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_arns
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
@@ -67,21 +61,22 @@ impl DescribeExclusionsInputBuilder {
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
+    }
+    /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.locale
     }
     /// Consumes the builder and constructs a [`DescribeExclusionsInput`](crate::operation::describe_exclusions::DescribeExclusionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_exclusions::DescribeExclusionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_exclusions::DescribeExclusionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_exclusions::DescribeExclusionsInput {
-                exclusion_arns: self.exclusion_arns,
-                locale: self.locale,
-            },
+                exclusion_arns: self.exclusion_arns
+                ,
+                locale: self.locale
+                ,
+            }
         )
     }
 }
+

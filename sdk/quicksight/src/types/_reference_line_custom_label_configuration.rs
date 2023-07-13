@@ -3,14 +3,14 @@
 /// <p>The configuration for a custom label on a <code>ReferenceLine</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferenceLineCustomLabelConfiguration {
+pub struct ReferenceLineCustomLabelConfiguration  {
     /// <p>The string text of the custom label.</p>
     #[doc(hidden)]
     pub custom_label: ::std::option::Option<::std::string::String>,
 }
 impl ReferenceLineCustomLabelConfiguration {
     /// <p>The string text of the custom label.</p>
-    pub fn custom_label(&self) -> ::std::option::Option<&str> {
+    pub fn custom_label(&self) -> ::std::option::Option<& str> {
         self.custom_label.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ReferenceLineCustomLabelConfiguration {
 
 /// A builder for [`ReferenceLineCustomLabelConfiguration`](crate::types::ReferenceLineCustomLabelConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferenceLineCustomLabelConfigurationBuilder {
     pub(crate) custom_label: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl ReferenceLineCustomLabelConfigurationBuilder {
     }
     /// <p>The string text of the custom label.</p>
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_label = input;
-        self
+        self.custom_label = input; self
+    }
+    /// <p>The string text of the custom label.</p>
+    pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_label
     }
     /// Consumes the builder and constructs a [`ReferenceLineCustomLabelConfiguration`](crate::types::ReferenceLineCustomLabelConfiguration).
     pub fn build(self) -> crate::types::ReferenceLineCustomLabelConfiguration {
         crate::types::ReferenceLineCustomLabelConfiguration {
-            custom_label: self.custom_label,
+            custom_label: self.custom_label
+            ,
         }
     }
 }
+

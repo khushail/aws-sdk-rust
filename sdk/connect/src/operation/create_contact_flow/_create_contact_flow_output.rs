@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateContactFlowOutput {
+pub struct CreateContactFlowOutput  {
     /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
@@ -13,32 +13,29 @@ pub struct CreateContactFlowOutput {
 }
 impl CreateContactFlowOutput {
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_flow_id(&self) -> ::std::option::Option<& str> {
         self.contact_flow_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
-    pub fn contact_flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_flow_arn(&self) -> ::std::option::Option<& str> {
         self.contact_flow_arn.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateContactFlowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateContactFlowOutput {
     /// Creates a new builder-style object to manufacture [`CreateContactFlowOutput`](crate::operation::create_contact_flow::CreateContactFlowOutput).
-    pub fn builder(
-    ) -> crate::operation::create_contact_flow::builders::CreateContactFlowOutputBuilder {
+    pub fn builder() -> crate::operation::create_contact_flow::builders::CreateContactFlowOutputBuilder {
         crate::operation::create_contact_flow::builders::CreateContactFlowOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContactFlowOutput`](crate::operation::create_contact_flow::CreateContactFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContactFlowOutputBuilder {
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_arn: ::std::option::Option<::std::string::String>,
@@ -46,52 +43,49 @@ pub struct CreateContactFlowOutputBuilder {
 }
 impl CreateContactFlowOutputBuilder {
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the flow.</p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.contact_flow_id = input;
-        self
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.contact_flow_id = input; self
+    }
+    /// <p>The identifier of the flow.</p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
-    pub fn contact_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
-    pub fn set_contact_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.contact_flow_arn = input;
-        self
+    pub fn set_contact_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.contact_flow_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
+    pub fn get_contact_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateContactFlowOutput`](crate::operation::create_contact_flow::CreateContactFlowOutput).
     pub fn build(self) -> crate::operation::create_contact_flow::CreateContactFlowOutput {
         crate::operation::create_contact_flow::CreateContactFlowOutput {
-            contact_flow_id: self.contact_flow_id,
-            contact_flow_arn: self.contact_flow_arn,
+            contact_flow_id: self.contact_flow_id
+            ,
+            contact_flow_arn: self.contact_flow_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

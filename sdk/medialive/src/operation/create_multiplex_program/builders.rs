@@ -3,102 +3,87 @@ pub use crate::operation::create_multiplex_program::_create_multiplex_program_ou
 
 pub use crate::operation::create_multiplex_program::_create_multiplex_program_input::CreateMultiplexProgramInputBuilder;
 
+impl CreateMultiplexProgramInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_multiplex_program::CreateMultiplexProgramOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_multiplex_program();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateMultiplexProgram`.
-///
+/// 
 /// Create a new program in the multiplex.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMultiplexProgramFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_multiplex_program::builders::CreateMultiplexProgramInputBuilder,
+                    inner: crate::operation::create_multiplex_program::builders::CreateMultiplexProgramInputBuilder,
 }
-impl CreateMultiplexProgramFluentBuilder {
+impl CreateMultiplexProgramFluentBuilder  {
     /// Creates a new `CreateMultiplexProgram`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_multiplex_program::CreateMultiplexProgram,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateMultiplexProgram as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_multiplex_program::builders::CreateMultiplexProgramInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_multiplex_program::CreateMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_multiplex_program::CreateMultiplexProgram, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex_program::CreateMultiplexProgramError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_multiplex_program::CreateMultiplexProgramOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex_program::CreateMultiplexProgramError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_multiplex_program::CreateMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_multiplex_program::CreateMultiplexProgram,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_multiplex_program::CreateMultiplexProgramOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex_program::CreateMultiplexProgramError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_multiplex_program::CreateMultiplexProgram, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex_program::CreateMultiplexProgramError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// ID of the multiplex where the program is to be created.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multiplex_id(input.into());
@@ -109,21 +94,23 @@ impl CreateMultiplexProgramFluentBuilder {
         self.inner = self.inner.set_multiplex_id(input);
         self
     }
+    /// ID of the multiplex where the program is to be created.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_multiplex_id()
+    }
     /// The settings for this multiplex program.
-    pub fn multiplex_program_settings(
-        mut self,
-        input: crate::types::MultiplexProgramSettings,
-    ) -> Self {
+    pub fn multiplex_program_settings(mut self, input: crate::types::MultiplexProgramSettings) -> Self {
         self.inner = self.inner.multiplex_program_settings(input);
         self
     }
     /// The settings for this multiplex program.
-    pub fn set_multiplex_program_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexProgramSettings>,
-    ) -> Self {
+    pub fn set_multiplex_program_settings(mut self, input: ::std::option::Option<crate::types::MultiplexProgramSettings>) -> Self {
         self.inner = self.inner.set_multiplex_program_settings(input);
         self
+    }
+    /// The settings for this multiplex program.
+    pub fn get_multiplex_program_settings(&self) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
+        self.inner.get_multiplex_program_settings()
     }
     /// Name of multiplex program.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,6 +122,10 @@ impl CreateMultiplexProgramFluentBuilder {
         self.inner = self.inner.set_program_name(input);
         self
     }
+    /// Name of multiplex program.
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_program_name()
+    }
     /// Unique request ID. This prevents retries from creating multiple resources.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
@@ -145,4 +136,9 @@ impl CreateMultiplexProgramFluentBuilder {
         self.inner = self.inner.set_request_id(input);
         self
     }
+    /// Unique request ID. This prevents retries from creating multiple resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
+    }
 }
+

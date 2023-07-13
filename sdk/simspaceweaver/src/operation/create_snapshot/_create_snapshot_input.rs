@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotInput {
+pub struct CreateSnapshotInput  {
     /// <p>The name of the simulation.</p>
     #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
+    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p> 
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl CreateSnapshotInput {
     /// <p>The name of the simulation.</p>
-    pub fn simulation(&self) -> ::std::option::Option<&str> {
+    pub fn simulation(&self) -> ::std::option::Option<& str> {
         self.simulation.as_deref()
     }
-    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
+    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p> 
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::S3Destination> {
         self.destination.as_ref()
     }
 }
@@ -29,9 +31,7 @@ impl CreateSnapshotInput {
 
 /// A builder for [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::S3Destination>,
@@ -44,32 +44,38 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The name of the simulation.</p>
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.simulation = input;
-        self
+        self.simulation = input; self
     }
-    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
+    /// <p>The name of the simulation.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
+    }
+    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p> 
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     pub fn destination(mut self, input: crate::types::S3Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p> 
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
+        self.destination = input; self
+    }
+    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p> 
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_snapshot::CreateSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_snapshot::CreateSnapshotInput {
-            simulation: self.simulation,
-            destination: self.destination,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_snapshot::CreateSnapshotInput {
+                simulation: self.simulation
+                ,
+                destination: self.destination
+                ,
+            }
+        )
     }
 }
+

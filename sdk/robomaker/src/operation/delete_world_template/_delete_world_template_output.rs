@@ -2,41 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorldTemplateOutput {
+pub struct DeleteWorldTemplateOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for DeleteWorldTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteWorldTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorldTemplateOutput`](crate::operation::delete_world_template::DeleteWorldTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_world_template::builders::DeleteWorldTemplateOutputBuilder {
-        crate::operation::delete_world_template::builders::DeleteWorldTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_world_template::builders::DeleteWorldTemplateOutputBuilder {
+        crate::operation::delete_world_template::builders::DeleteWorldTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorldTemplateOutput`](crate::operation::delete_world_template::DeleteWorldTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorldTemplateOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteWorldTemplateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteWorldTemplateOutput`](crate::operation::delete_world_template::DeleteWorldTemplateOutput).
     pub fn build(self) -> crate::operation::delete_world_template::DeleteWorldTemplateOutput {
         crate::operation::delete_world_template::DeleteWorldTemplateOutput {
@@ -44,3 +40,4 @@ impl DeleteWorldTemplateOutputBuilder {
         }
     }
 }
+

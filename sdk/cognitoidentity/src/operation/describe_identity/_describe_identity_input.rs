@@ -3,30 +3,27 @@
 /// <p>Input to the <code>DescribeIdentity</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIdentityInput {
+pub struct DescribeIdentityInput  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
 }
 impl DescribeIdentityInput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityInput`](crate::operation::describe_identity::DescribeIdentityInput).
-    pub fn builder() -> crate::operation::describe_identity::builders::DescribeIdentityInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_identity::builders::DescribeIdentityInputBuilder {
         crate::operation::describe_identity::builders::DescribeIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdentityInput`](crate::operation::describe_identity::DescribeIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdentityInputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,18 +35,20 @@ impl DescribeIdentityInputBuilder {
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
+    }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
     }
     /// Consumes the builder and constructs a [`DescribeIdentityInput`](crate::operation::describe_identity::DescribeIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_identity::DescribeIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_identity::DescribeIdentityInput {
-            identity_id: self.identity_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_identity::DescribeIdentityInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_identity::DescribeIdentityInput {
+                identity_id: self.identity_id
+                ,
+            }
+        )
     }
 }
+

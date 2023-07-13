@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopGameSessionPlacementInput {
+pub struct StopGameSessionPlacementInput  {
     /// <p>A unique identifier for a game session placement to stop.</p>
     #[doc(hidden)]
     pub placement_id: ::std::option::Option<::std::string::String>,
 }
 impl StopGameSessionPlacementInput {
     /// <p>A unique identifier for a game session placement to stop.</p>
-    pub fn placement_id(&self) -> ::std::option::Option<&str> {
+    pub fn placement_id(&self) -> ::std::option::Option<& str> {
         self.placement_id.as_deref()
     }
 }
 impl StopGameSessionPlacementInput {
     /// Creates a new builder-style object to manufacture [`StopGameSessionPlacementInput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementInput).
-    pub fn builder(
-    ) -> crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder {
         crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder::default()
     }
 }
 
 /// A builder for [`StopGameSessionPlacementInput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopGameSessionPlacementInputBuilder {
     pub(crate) placement_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl StopGameSessionPlacementInputBuilder {
     }
     /// <p>A unique identifier for a game session placement to stop.</p>
     pub fn set_placement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.placement_id = input;
-        self
+        self.placement_id = input; self
+    }
+    /// <p>A unique identifier for a game session placement to stop.</p>
+    pub fn get_placement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_id
     }
     /// Consumes the builder and constructs a [`StopGameSessionPlacementInput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_game_session_placement::StopGameSessionPlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_game_session_placement::StopGameSessionPlacementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::stop_game_session_placement::StopGameSessionPlacementInput {
-                placement_id: self.placement_id,
-            },
+                placement_id: self.placement_id
+                ,
+            }
         )
     }
 }
+

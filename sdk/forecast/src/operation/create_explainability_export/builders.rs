@@ -3,136 +3,117 @@ pub use crate::operation::create_explainability_export::_create_explainability_e
 
 pub use crate::operation::create_explainability_export::_create_explainability_export_input::CreateExplainabilityExportInputBuilder;
 
+impl CreateExplainabilityExportInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_explainability_export::CreateExplainabilityExportOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_explainability_export::CreateExplainabilityExportError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.create_explainability_export();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `CreateExplainabilityExport`.
-///
-/// <p>Exports an Explainability resource created by the <code>CreateExplainability</code> operation. Exported files are exported to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-/// <p>You must specify a <code>DataDestination</code> object that includes an Amazon S3 bucket and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p> <note>
-/// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can access the export in your Amazon S3 bucket. To get the status, use the <code>DescribeExplainabilityExport</code> operation.</p>
+/// 
+/// <p>Exports an Explainability resource created by the <code>CreateExplainability</code> operation. Exported files are exported to an Amazon Simple Storage Service (Amazon S3) bucket.</p> 
+/// <p>You must specify a <code>DataDestination</code> object that includes an Amazon S3 bucket and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p> <note> 
+/// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can access the export in your Amazon S3 bucket. To get the status, use the <code>DescribeExplainabilityExport</code> operation.</p> 
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExplainabilityExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_explainability_export::builders::CreateExplainabilityExportInputBuilder,
 }
-impl CreateExplainabilityExportFluentBuilder {
+impl CreateExplainabilityExportFluentBuilder  {
     /// Creates a new `CreateExplainabilityExport`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_explainability_export::CreateExplainabilityExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_explainability_export::CreateExplainabilityExportError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the CreateExplainabilityExport as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_explainability_export::builders::CreateExplainabilityExportInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_explainability_export::CreateExplainabilityExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_explainability_export::CreateExplainabilityExportError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_explainability_export::CreateExplainabilityExport, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_explainability_export::CreateExplainabilityExportError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_explainability_export::CreateExplainabilityExportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_explainability_export::CreateExplainabilityExportError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_explainability_export::CreateExplainabilityExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_explainability_export::CreateExplainabilityExportError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_explainability_export::CreateExplainabilityExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_explainability_export::CreateExplainabilityExportError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_explainability_export::CreateExplainabilityExportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_explainability_export::CreateExplainabilityExportError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_explainability_export::CreateExplainabilityExport, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_explainability_export::CreateExplainabilityExportError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>A unique name for the Explainability export.</p>
-    pub fn explainability_export_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_export_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explainability_export_name(input.into());
         self
     }
     /// <p>A unique name for the Explainability export.</p>
-    pub fn set_explainability_export_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explainability_export_name(input);
         self
     }
+    /// <p>A unique name for the Explainability export.</p>
+    pub fn get_explainability_export_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_explainability_export_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
-    pub fn explainability_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explainability_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
-    pub fn set_explainability_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explainability_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
+    pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_explainability_arn()
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
@@ -140,47 +121,58 @@ impl CreateExplainabilityExportFluentBuilder {
         self
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
+        self.inner.get_destination()
     }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
-    /// <p>The following restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
-    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
-    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p> 
+    /// <p>The following restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li> 
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li> 
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li> 
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li> 
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
-    /// <p>The following restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
-    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
-    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p> 
+    /// <p>The following restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li> 
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li> 
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li> 
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li> 
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p> 
+    /// <p>The following restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li> 
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li> 
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li> 
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li> 
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,4 +184,9 @@ impl CreateExplainabilityExportFluentBuilder {
         self.inner = self.inner.set_format(input);
         self
     }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_format()
+    }
 }
+

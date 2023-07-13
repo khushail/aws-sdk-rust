@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopFleetInput {
+pub struct StopFleetInput  {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl StopFleetInput {
     /// <p>The name of the fleet.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl StopFleetInput {
 
 /// A builder for [`StopFleetInput`](crate::operation::stop_fleet::StopFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopFleetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,20 @@ impl StopFleetInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`StopFleetInput`](crate::operation::stop_fleet::StopFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_fleet::StopFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_fleet::StopFleetInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_fleet::StopFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_fleet::StopFleetInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

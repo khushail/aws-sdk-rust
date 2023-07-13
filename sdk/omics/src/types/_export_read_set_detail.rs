@@ -3,7 +3,7 @@
 /// <p>Details about a read set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportReadSetDetail {
+pub struct ExportReadSetDetail  {
     /// <p>The set's ID.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct ExportReadSetDetail {
 }
 impl ExportReadSetDetail {
     /// <p>The set's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The set's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetExportJobItemStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReadSetExportJobItemStatus> {
         self.status.as_ref()
     }
     /// <p>The set's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl ExportReadSetDetail {
 
 /// A builder for [`ExportReadSetDetail`](crate::types::ExportReadSetDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportReadSetDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ReadSetExportJobItemStatus>,
@@ -53,8 +51,11 @@ impl ExportReadSetDetailBuilder {
     }
     /// <p>The set's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The set's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The set's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetExportJobItemStatus) -> Self {
@@ -62,35 +63,36 @@ impl ExportReadSetDetailBuilder {
         self
     }
     /// <p>The set's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetExportJobItemStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetExportJobItemStatus>) -> Self {
+        self.status = input; self
+    }
+    /// <p>The set's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetExportJobItemStatus> {
+        &self.status
     }
     /// <p>The set's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The set's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.status_message = input;
-        self
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input; self
+    }
+    /// <p>The set's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`ExportReadSetDetail`](crate::types::ExportReadSetDetail).
     pub fn build(self) -> crate::types::ExportReadSetDetail {
         crate::types::ExportReadSetDetail {
-            id: self.id,
-            status: self.status,
-            status_message: self.status_message,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

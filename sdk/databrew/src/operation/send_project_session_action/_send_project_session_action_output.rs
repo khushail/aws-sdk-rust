@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendProjectSessionActionOutput {
+pub struct SendProjectSessionActionOutput  {
     /// <p>A message indicating the result of performing the action.</p>
     #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct SendProjectSessionActionOutput {
 }
 impl SendProjectSessionActionOutput {
     /// <p>A message indicating the result of performing the action.</p>
-    pub fn result(&self) -> ::std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<& str> {
         self.result.as_deref()
     }
     /// <p>The name of the project that was affected by the action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the action that was performed.</p>
@@ -29,22 +29,20 @@ impl SendProjectSessionActionOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for SendProjectSessionActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SendProjectSessionActionOutput {
     /// Creates a new builder-style object to manufacture [`SendProjectSessionActionOutput`](crate::operation::send_project_session_action::SendProjectSessionActionOutput).
-    pub fn builder() -> crate::operation::send_project_session_action::builders::SendProjectSessionActionOutputBuilder{
+    pub fn builder() -> crate::operation::send_project_session_action::builders::SendProjectSessionActionOutputBuilder {
         crate::operation::send_project_session_action::builders::SendProjectSessionActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendProjectSessionActionOutput`](crate::operation::send_project_session_action::SendProjectSessionActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendProjectSessionActionOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -59,8 +57,11 @@ impl SendProjectSessionActionOutputBuilder {
     }
     /// <p>A message indicating the result of performing the action.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
+    }
+    /// <p>A message indicating the result of performing the action.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
     }
     /// <p>The name of the project that was affected by the action.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +70,11 @@ impl SendProjectSessionActionOutputBuilder {
     }
     /// <p>The name of the project that was affected by the action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the project that was affected by the action.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A unique identifier for the action that was performed.</p>
     pub fn action_id(mut self, input: i32) -> Self {
@@ -79,27 +83,32 @@ impl SendProjectSessionActionOutputBuilder {
     }
     /// <p>A unique identifier for the action that was performed.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
+    }
+    /// <p>A unique identifier for the action that was performed.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<i32> {
+        &self.action_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SendProjectSessionActionOutput`](crate::operation::send_project_session_action::SendProjectSessionActionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_project_session_action::SendProjectSessionActionOutput {
+    pub fn build(self) -> crate::operation::send_project_session_action::SendProjectSessionActionOutput {
         crate::operation::send_project_session_action::SendProjectSessionActionOutput {
-            result: self.result,
-            name: self.name,
-            action_id: self.action_id,
+            result: self.result
+            ,
+            name: self.name
+            ,
+            action_id: self.action_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

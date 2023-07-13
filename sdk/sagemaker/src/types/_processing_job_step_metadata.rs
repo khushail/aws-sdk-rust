@@ -3,14 +3,14 @@
 /// <p>Metadata for a processing job step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProcessingJobStepMetadata {
+pub struct ProcessingJobStepMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ProcessingJobStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ProcessingJobStepMetadata {
 
 /// A builder for [`ProcessingJobStepMetadata`](crate::types::ProcessingJobStepMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingJobStepMetadataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl ProcessingJobStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`ProcessingJobStepMetadata`](crate::types::ProcessingJobStepMetadata).
     pub fn build(self) -> crate::types::ProcessingJobStepMetadata {
-        crate::types::ProcessingJobStepMetadata { arn: self.arn }
+        crate::types::ProcessingJobStepMetadata {
+            arn: self.arn
+            ,
+        }
     }
 }
+

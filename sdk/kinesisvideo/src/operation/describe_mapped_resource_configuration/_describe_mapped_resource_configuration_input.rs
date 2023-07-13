@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMappedResourceConfigurationInput {
+pub struct DescribeMappedResourceConfigurationInput  {
     /// <p>The name of the stream.</p>
     #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeMappedResourceConfigurationInput {
 }
 impl DescribeMappedResourceConfigurationInput {
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -30,22 +30,20 @@ impl DescribeMappedResourceConfigurationInput {
         self.max_results
     }
     /// <p>The token to provide in your next request, to get another batch of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeMappedResourceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeMappedResourceConfigurationInput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput).
-    pub fn builder() -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationInputBuilder {
         crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMappedResourceConfigurationInput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMappedResourceConfigurationInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -60,8 +58,11 @@ impl DescribeMappedResourceConfigurationInputBuilder {
     }
     /// <p>The name of the stream.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
+    }
+    /// <p>The name of the stream.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,8 +71,11 @@ impl DescribeMappedResourceConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -80,8 +84,11 @@ impl DescribeMappedResourceConfigurationInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token to provide in your next request, to get another batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,11 +97,14 @@ impl DescribeMappedResourceConfigurationInputBuilder {
     }
     /// <p>The token to provide in your next request, to get another batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The token to provide in your next request, to get another batch of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMappedResourceConfigurationInput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput {
                 stream_name: self.stream_name
@@ -109,3 +119,4 @@ impl DescribeMappedResourceConfigurationInputBuilder {
         )
     }
 }
+

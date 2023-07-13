@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code><code>UpdateAvailabilityOptions</code></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAvailabilityOptionsInput {
+pub struct UpdateAvailabilityOptionsInput  {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct UpdateAvailabilityOptionsInput {
 }
 impl UpdateAvailabilityOptionsInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
@@ -23,16 +23,14 @@ impl UpdateAvailabilityOptionsInput {
 }
 impl UpdateAvailabilityOptionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsInput`](crate::operation::update_availability_options::UpdateAvailabilityOptionsInput).
-    pub fn builder() -> crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsInputBuilder{
+    pub fn builder() -> crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsInputBuilder {
         crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAvailabilityOptionsInput`](crate::operation::update_availability_options::UpdateAvailabilityOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAvailabilityOptionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
@@ -45,8 +43,11 @@ impl UpdateAvailabilityOptionsInputBuilder {
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
+    }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
     pub fn multi_az(mut self, input: bool) -> Self {
@@ -55,21 +56,22 @@ impl UpdateAvailabilityOptionsInputBuilder {
     }
     /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
+    }
+    /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
     }
     /// Consumes the builder and constructs a [`UpdateAvailabilityOptionsInput`](crate::operation::update_availability_options::UpdateAvailabilityOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_availability_options::UpdateAvailabilityOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_availability_options::UpdateAvailabilityOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_availability_options::UpdateAvailabilityOptionsInput {
-                domain_name: self.domain_name,
-                multi_az: self.multi_az,
-            },
+                domain_name: self.domain_name
+                ,
+                multi_az: self.multi_az
+                ,
+            }
         )
     }
 }
+

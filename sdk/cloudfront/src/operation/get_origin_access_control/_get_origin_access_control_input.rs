@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOriginAccessControlInput {
+pub struct GetOriginAccessControlInput  {
     /// <p>The unique identifier of the origin access control.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetOriginAccessControlInput {
     /// <p>The unique identifier of the origin access control.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetOriginAccessControlInput {
     /// Creates a new builder-style object to manufacture [`GetOriginAccessControlInput`](crate::operation::get_origin_access_control::GetOriginAccessControlInput).
-    pub fn builder(
-    ) -> crate::operation::get_origin_access_control::builders::GetOriginAccessControlInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_origin_access_control::builders::GetOriginAccessControlInputBuilder {
         crate::operation::get_origin_access_control::builders::GetOriginAccessControlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetOriginAccessControlInput`](crate::operation::get_origin_access_control::GetOriginAccessControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOriginAccessControlInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetOriginAccessControlInputBuilder {
     }
     /// <p>The unique identifier of the origin access control.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The unique identifier of the origin access control.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`GetOriginAccessControlInput`](crate::operation::get_origin_access_control::GetOriginAccessControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_origin_access_control::GetOriginAccessControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_origin_access_control::GetOriginAccessControlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_origin_access_control::GetOriginAccessControlInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

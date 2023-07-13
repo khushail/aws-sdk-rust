@@ -3,117 +3,100 @@ pub use crate::operation::update_deployment_strategy::_update_deployment_strateg
 
 pub use crate::operation::update_deployment_strategy::_update_deployment_strategy_input::UpdateDeploymentStrategyInputBuilder;
 
+impl UpdateDeploymentStrategyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_deployment_strategy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateDeploymentStrategy`.
-///
+/// 
 /// <p>Updates a deployment strategy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDeploymentStrategyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyInputBuilder,
 }
-impl UpdateDeploymentStrategyFluentBuilder {
+impl UpdateDeploymentStrategyFluentBuilder  {
     /// Creates a new `UpdateDeploymentStrategy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the UpdateDeploymentStrategy as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_deployment_strategy::UpdateDeploymentStrategy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_deployment_strategy::UpdateDeploymentStrategy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The deployment strategy ID.</p>
-    pub fn deployment_strategy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_strategy_id(input.into());
         self
     }
     /// <p>The deployment strategy ID.</p>
-    pub fn set_deployment_strategy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_strategy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_strategy_id(input);
         self
+    }
+    /// <p>The deployment strategy ID.</p>
+    pub fn get_deployment_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_strategy_id()
     }
     /// <p>A description of the deployment strategy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,6 +108,10 @@ impl UpdateDeploymentStrategyFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the deployment strategy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Total amount of time for a deployment to last.</p>
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.deployment_duration_in_minutes(input);
@@ -134,6 +121,10 @@ impl UpdateDeploymentStrategyFluentBuilder {
     pub fn set_deployment_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_deployment_duration_in_minutes(input);
         self
+    }
+    /// <p>Total amount of time for a deployment to last.</p>
+    pub fn get_deployment_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_deployment_duration_in_minutes()
     }
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
@@ -145,6 +136,10 @@ impl UpdateDeploymentStrategyFluentBuilder {
         self.inner = self.inner.set_final_bake_time_in_minutes(input);
         self
     }
+    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
+    pub fn get_final_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_final_bake_time_in_minutes()
+    }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(mut self, input: f32) -> Self {
         self.inner = self.inner.growth_factor(input);
@@ -155,29 +150,41 @@ impl UpdateDeploymentStrategyFluentBuilder {
         self.inner = self.inner.set_growth_factor(input);
         self
     }
-    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
-    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
-    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
-    /// <p> <code>2*(2^0)</code> </p>
-    /// <p> <code>2*(2^1)</code> </p>
-    /// <p> <code>2*(2^2)</code> </p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    pub fn get_growth_factor(&self) -> &::std::option::Option<f32> {
+        self.inner.get_growth_factor()
+    }
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p> 
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p> 
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p> 
+    /// <p> <code>2*(2^0)</code> </p> 
+    /// <p> <code>2*(2^1)</code> </p> 
+    /// <p> <code>2*(2^2)</code> </p> 
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub fn growth_type(mut self, input: crate::types::GrowthType) -> Self {
         self.inner = self.inner.growth_type(input);
         self
     }
-    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
-    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
-    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
-    /// <p> <code>2*(2^0)</code> </p>
-    /// <p> <code>2*(2^1)</code> </p>
-    /// <p> <code>2*(2^2)</code> </p>
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p> 
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p> 
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p> 
+    /// <p> <code>2*(2^0)</code> </p> 
+    /// <p> <code>2*(2^1)</code> </p> 
+    /// <p> <code>2*(2^2)</code> </p> 
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
-    pub fn set_growth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GrowthType>,
-    ) -> Self {
+    pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.inner = self.inner.set_growth_type(input);
         self
     }
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p> 
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p> 
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p> 
+    /// <p> <code>2*(2^0)</code> </p> 
+    /// <p> <code>2*(2^1)</code> </p> 
+    /// <p> <code>2*(2^2)</code> </p> 
+    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
+    pub fn get_growth_type(&self) -> &::std::option::Option<crate::types::GrowthType> {
+        self.inner.get_growth_type()
+    }
 }
+

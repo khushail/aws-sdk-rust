@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDimensionOutput {
+pub struct DescribeDimensionOutput  {
     /// <p>The unique identifier for the dimension.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -25,48 +25,45 @@ pub struct DescribeDimensionOutput {
 }
 impl DescribeDimensionOutput {
     /// <p>The unique identifier for the dimension.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of the dimension.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DimensionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DimensionType> {
         self.r#type.as_ref()
     }
     /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
-    pub fn string_values(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn string_values(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.string_values.as_deref()
     }
     /// <p>The date the dimension was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the dimension was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDimensionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDimensionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDimensionOutput`](crate::operation::describe_dimension::DescribeDimensionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_dimension::builders::DescribeDimensionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_dimension::builders::DescribeDimensionOutputBuilder {
         crate::operation::describe_dimension::builders::DescribeDimensionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDimensionOutput`](crate::operation::describe_dimension::DescribeDimensionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDimensionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -84,8 +81,11 @@ impl DescribeDimensionOutputBuilder {
     }
     /// <p>The unique identifier for the dimension.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The unique identifier for the dimension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,8 +94,11 @@ impl DescribeDimensionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The type of the dimension.</p>
     pub fn r#type(mut self, input: crate::types::DimensionType) -> Self {
@@ -104,30 +107,30 @@ impl DescribeDimensionOutputBuilder {
     }
     /// <p>The type of the dimension.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DimensionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>The type of the dimension.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DimensionType> {
+        &self.r#type
     }
     /// Appends an item to `string_values`.
     ///
     /// To override the contents of this collection use [`set_string_values`](Self::set_string_values).
     ///
     /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
-    pub fn string_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn string_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.string_values.unwrap_or_default();
-        v.push(input.into());
-        self.string_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.string_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
-    pub fn set_string_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.string_values = input;
-        self
+    pub fn set_string_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.string_values = input; self
+    }
+    /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
+    pub fn get_string_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_values
     }
     /// <p>The date the dimension was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,12 +138,12 @@ impl DescribeDimensionOutputBuilder {
         self
     }
     /// <p>The date the dimension was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
+    }
+    /// <p>The date the dimension was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The date the dimension was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -148,32 +151,39 @@ impl DescribeDimensionOutputBuilder {
         self
     }
     /// <p>The date the dimension was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_date = input; self
+    }
+    /// <p>The date the dimension was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDimensionOutput`](crate::operation::describe_dimension::DescribeDimensionOutput).
     pub fn build(self) -> crate::operation::describe_dimension::DescribeDimensionOutput {
         crate::operation::describe_dimension::DescribeDimensionOutput {
-            name: self.name,
-            arn: self.arn,
-            r#type: self.r#type,
-            string_values: self.string_values,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            string_values: self.string_values
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

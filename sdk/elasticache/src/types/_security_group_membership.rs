@@ -3,7 +3,7 @@
 /// <p>Represents a single cache security group and its status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityGroupMembership {
+pub struct SecurityGroupMembership  {
     /// <p>The identifier of the cache security group.</p>
     #[doc(hidden)]
     pub security_group_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct SecurityGroupMembership {
 }
 impl SecurityGroupMembership {
     /// <p>The identifier of the cache security group.</p>
-    pub fn security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_group_id(&self) -> ::std::option::Option<& str> {
         self.security_group_id.as_deref()
     }
     /// <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -30,29 +30,24 @@ impl SecurityGroupMembership {
 
 /// A builder for [`SecurityGroupMembership`](crate::types::SecurityGroupMembership).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityGroupMembershipBuilder {
     pub(crate) security_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupMembershipBuilder {
     /// <p>The identifier of the cache security group.</p>
-    pub fn security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cache security group.</p>
-    pub fn set_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.security_group_id = input;
-        self
+    pub fn set_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_group_id = input; self
+    }
+    /// <p>The identifier of the cache security group.</p>
+    pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_id
     }
     /// <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,14 +56,20 @@ impl SecurityGroupMembershipBuilder {
     }
     /// <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
+    }
+    /// <p>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SecurityGroupMembership`](crate::types::SecurityGroupMembership).
     pub fn build(self) -> crate::types::SecurityGroupMembership {
         crate::types::SecurityGroupMembership {
-            security_group_id: self.security_group_id,
-            status: self.status,
+            security_group_id: self.security_group_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

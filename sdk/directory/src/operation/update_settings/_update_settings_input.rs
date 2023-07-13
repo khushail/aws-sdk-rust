@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSettingsInput {
+pub struct UpdateSettingsInput  {
     /// <p>The identifier of the directory for which to update settings.</p>
     #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateSettingsInput {
 }
 impl UpdateSettingsInput {
     /// <p>The identifier of the directory for which to update settings.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The list of <code>Setting</code> objects.</p>
-    pub fn settings(&self) -> ::std::option::Option<&[crate::types::Setting]> {
+    pub fn settings(&self) -> ::std::option::Option<& [crate::types::Setting]> {
         self.settings.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl UpdateSettingsInput {
 
 /// A builder for [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSettingsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>,
@@ -44,8 +42,11 @@ impl UpdateSettingsInputBuilder {
     }
     /// <p>The identifier of the directory for which to update settings.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
+    }
+    /// <p>The identifier of the directory for which to update settings.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// Appends an item to `settings`.
     ///
@@ -54,28 +55,28 @@ impl UpdateSettingsInputBuilder {
     /// <p>The list of <code>Setting</code> objects.</p>
     pub fn settings(mut self, input: crate::types::Setting) -> Self {
         let mut v = self.settings.unwrap_or_default();
-        v.push(input);
-        self.settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of <code>Setting</code> objects.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>,
-    ) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>) -> Self {
+        self.settings = input; self
+    }
+    /// <p>The list of <code>Setting</code> objects.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Setting>> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_settings::UpdateSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_settings::UpdateSettingsInput {
-            directory_id: self.directory_id,
-            settings: self.settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_settings::UpdateSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_settings::UpdateSettingsInput {
+                directory_id: self.directory_id
+                ,
+                settings: self.settings
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetV2LoggingOptionsOutput {
+pub struct GetV2LoggingOptionsOutput  {
     /// <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct GetV2LoggingOptionsOutput {
 }
 impl GetV2LoggingOptionsOutput {
     /// <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The default log level.</p>
-    pub fn default_log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn default_log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.default_log_level.as_ref()
     }
     /// <p>Disables all logs.</p>
@@ -29,23 +29,20 @@ impl GetV2LoggingOptionsOutput {
     }
 }
 impl ::aws_http::request_id::RequestId for GetV2LoggingOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetV2LoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetV2LoggingOptionsOutput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsOutputBuilder {
         crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetV2LoggingOptionsOutput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetV2LoggingOptionsOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_log_level: ::std::option::Option<crate::types::LogLevel>,
@@ -60,8 +57,11 @@ impl GetV2LoggingOptionsOutputBuilder {
     }
     /// <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The default log level.</p>
     pub fn default_log_level(mut self, input: crate::types::LogLevel) -> Self {
@@ -69,12 +69,12 @@ impl GetV2LoggingOptionsOutputBuilder {
         self
     }
     /// <p>The default log level.</p>
-    pub fn set_default_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LogLevel>,
-    ) -> Self {
-        self.default_log_level = input;
-        self
+    pub fn set_default_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
+        self.default_log_level = input; self
+    }
+    /// <p>The default log level.</p>
+    pub fn get_default_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.default_log_level
     }
     /// <p>Disables all logs.</p>
     pub fn disable_all_logs(mut self, input: bool) -> Self {
@@ -83,25 +83,33 @@ impl GetV2LoggingOptionsOutputBuilder {
     }
     /// <p>Disables all logs.</p>
     pub fn set_disable_all_logs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_all_logs = input;
-        self
+        self.disable_all_logs = input; self
+    }
+    /// <p>Disables all logs.</p>
+    pub fn get_disable_all_logs(&self) -> &::std::option::Option<bool> {
+        &self.disable_all_logs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetV2LoggingOptionsOutput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput).
     pub fn build(self) -> crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput {
         crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput {
-            role_arn: self.role_arn,
-            default_log_level: self.default_log_level,
-            disable_all_logs: self.disable_all_logs.unwrap_or_default(),
+            role_arn: self.role_arn
+            ,
+            default_log_level: self.default_log_level
+            ,
+            disable_all_logs: self.disable_all_logs
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

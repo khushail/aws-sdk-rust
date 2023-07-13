@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTelemetryMetadataOutput {
+pub struct GetTelemetryMetadataOutput  {
     /// <p>Telemetry details.</p>
     #[doc(hidden)]
     pub telemetry_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
@@ -10,31 +10,27 @@ pub struct GetTelemetryMetadataOutput {
 }
 impl GetTelemetryMetadataOutput {
     /// <p>Telemetry details.</p>
-    pub fn telemetry_metadata(&self) -> ::std::option::Option<&[crate::types::TelemetryMetadata]> {
+    pub fn telemetry_metadata(&self) -> ::std::option::Option<& [crate::types::TelemetryMetadata]> {
         self.telemetry_metadata.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTelemetryMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetTelemetryMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetTelemetryMetadataOutput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataOutputBuilder {
         crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTelemetryMetadataOutput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTelemetryMetadataOutputBuilder {
-    pub(crate) telemetry_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
+    pub(crate) telemetry_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
     _request_id: Option<String>,
 }
 impl GetTelemetryMetadataOutputBuilder {
@@ -45,32 +41,34 @@ impl GetTelemetryMetadataOutputBuilder {
     /// <p>Telemetry details.</p>
     pub fn telemetry_metadata(mut self, input: crate::types::TelemetryMetadata) -> Self {
         let mut v = self.telemetry_metadata.unwrap_or_default();
-        v.push(input);
-        self.telemetry_metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.telemetry_metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Telemetry details.</p>
-    pub fn set_telemetry_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
-    ) -> Self {
-        self.telemetry_metadata = input;
-        self
+    pub fn set_telemetry_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>) -> Self {
+        self.telemetry_metadata = input; self
+    }
+    /// <p>Telemetry details.</p>
+    pub fn get_telemetry_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>> {
+        &self.telemetry_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetTelemetryMetadataOutput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput).
     pub fn build(self) -> crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput {
         crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput {
-            telemetry_metadata: self.telemetry_metadata,
+            telemetry_metadata: self.telemetry_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

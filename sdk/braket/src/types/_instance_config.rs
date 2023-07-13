@@ -3,7 +3,7 @@
 /// <p>Configures the resource instances to use while running the Amazon Braket hybrid job on Amazon Braket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceConfig {
+pub struct InstanceConfig  {
     /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
     #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -16,7 +16,7 @@ pub struct InstanceConfig {
 }
 impl InstanceConfig {
     /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
@@ -37,9 +37,7 @@ impl InstanceConfig {
 
 /// A builder for [`InstanceConfig`](crate::types::InstanceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
@@ -52,12 +50,12 @@ impl InstanceConfigBuilder {
         self
     }
     /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
-        self.instance_type = input;
-        self
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
+        self.instance_type = input; self
+    }
+    /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
     }
     /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
@@ -66,8 +64,11 @@ impl InstanceConfigBuilder {
     }
     /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size_in_gb = input;
-        self
+        self.volume_size_in_gb = input; self
+    }
+    /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
+    pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.volume_size_in_gb
     }
     /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
@@ -76,15 +77,22 @@ impl InstanceConfigBuilder {
     }
     /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
+    }
+    /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// Consumes the builder and constructs a [`InstanceConfig`](crate::types::InstanceConfig).
     pub fn build(self) -> crate::types::InstanceConfig {
         crate::types::InstanceConfig {
-            instance_type: self.instance_type,
-            volume_size_in_gb: self.volume_size_in_gb,
-            instance_count: self.instance_count,
+            instance_type: self.instance_type
+            ,
+            volume_size_in_gb: self.volume_size_in_gb
+            ,
+            instance_count: self.instance_count
+            ,
         }
     }
 }
+

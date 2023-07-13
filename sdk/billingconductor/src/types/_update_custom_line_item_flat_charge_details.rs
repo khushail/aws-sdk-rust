@@ -3,7 +3,7 @@
 /// <p> A representation of the new charge details that are associated with a flat custom line item. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCustomLineItemFlatChargeDetails {
+pub struct UpdateCustomLineItemFlatChargeDetails  {
     /// <p> The custom line item's new fixed charge value in USD. </p>
     #[doc(hidden)]
     pub charge_value: ::std::option::Option<f64>,
@@ -23,9 +23,7 @@ impl UpdateCustomLineItemFlatChargeDetails {
 
 /// A builder for [`UpdateCustomLineItemFlatChargeDetails`](crate::types::UpdateCustomLineItemFlatChargeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemFlatChargeDetailsBuilder {
     pub(crate) charge_value: ::std::option::Option<f64>,
 }
@@ -37,13 +35,18 @@ impl UpdateCustomLineItemFlatChargeDetailsBuilder {
     }
     /// <p> The custom line item's new fixed charge value in USD. </p>
     pub fn set_charge_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.charge_value = input;
-        self
+        self.charge_value = input; self
+    }
+    /// <p> The custom line item's new fixed charge value in USD. </p>
+    pub fn get_charge_value(&self) -> &::std::option::Option<f64> {
+        &self.charge_value
     }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemFlatChargeDetails`](crate::types::UpdateCustomLineItemFlatChargeDetails).
     pub fn build(self) -> crate::types::UpdateCustomLineItemFlatChargeDetails {
         crate::types::UpdateCustomLineItemFlatChargeDetails {
-            charge_value: self.charge_value,
+            charge_value: self.charge_value
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about the threshold for service level metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Threshold {
+pub struct Threshold  {
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
     #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::Comparison>,
@@ -13,7 +13,7 @@ pub struct Threshold {
 }
 impl Threshold {
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::Comparison> {
+    pub fn comparison(&self) -> ::std::option::Option<& crate::types::Comparison> {
         self.comparison.as_ref()
     }
     /// <p>The threshold value to compare.</p>
@@ -30,9 +30,7 @@ impl Threshold {
 
 /// A builder for [`Threshold`](crate::types::Threshold).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThresholdBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::Comparison>,
     pub(crate) threshold_value: ::std::option::Option<f64>,
@@ -44,12 +42,12 @@ impl ThresholdBuilder {
         self
     }
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-    pub fn set_comparison(
-        mut self,
-        input: ::std::option::Option<crate::types::Comparison>,
-    ) -> Self {
-        self.comparison = input;
-        self
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::Comparison>) -> Self {
+        self.comparison = input; self
+    }
+    /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+    pub fn get_comparison(&self) -> &::std::option::Option<crate::types::Comparison> {
+        &self.comparison
     }
     /// <p>The threshold value to compare.</p>
     pub fn threshold_value(mut self, input: f64) -> Self {
@@ -58,14 +56,20 @@ impl ThresholdBuilder {
     }
     /// <p>The threshold value to compare.</p>
     pub fn set_threshold_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.threshold_value = input;
-        self
+        self.threshold_value = input; self
+    }
+    /// <p>The threshold value to compare.</p>
+    pub fn get_threshold_value(&self) -> &::std::option::Option<f64> {
+        &self.threshold_value
     }
     /// Consumes the builder and constructs a [`Threshold`](crate::types::Threshold).
     pub fn build(self) -> crate::types::Threshold {
         crate::types::Threshold {
-            comparison: self.comparison,
-            threshold_value: self.threshold_value,
+            comparison: self.comparison
+            ,
+            threshold_value: self.threshold_value
+            ,
         }
     }
 }
+

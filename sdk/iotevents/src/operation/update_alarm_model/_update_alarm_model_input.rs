@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAlarmModelInput {
+pub struct UpdateAlarmModelInput  {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
@@ -30,15 +30,15 @@ pub struct UpdateAlarmModelInput {
 }
 impl UpdateAlarmModelInput {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> ::std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The description of the alarm model.</p>
-    pub fn alarm_model_description(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_description(&self) -> ::std::option::Option<& str> {
         self.alarm_model_description.as_deref()
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
@@ -46,35 +46,32 @@ impl UpdateAlarmModelInput {
         self.severity
     }
     /// <p>Defines when your alarm is invoked.</p>
-    pub fn alarm_rule(&self) -> ::std::option::Option<&crate::types::AlarmRule> {
+    pub fn alarm_rule(&self) -> ::std::option::Option<& crate::types::AlarmRule> {
         self.alarm_rule.as_ref()
     }
     /// <p>Contains information about one or more notification actions.</p>
-    pub fn alarm_notification(&self) -> ::std::option::Option<&crate::types::AlarmNotification> {
+    pub fn alarm_notification(&self) -> ::std::option::Option<& crate::types::AlarmNotification> {
         self.alarm_notification.as_ref()
     }
     /// <p>Contains information about one or more alarm actions.</p>
-    pub fn alarm_event_actions(&self) -> ::std::option::Option<&crate::types::AlarmEventActions> {
+    pub fn alarm_event_actions(&self) -> ::std::option::Option<& crate::types::AlarmEventActions> {
         self.alarm_event_actions.as_ref()
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn alarm_capabilities(&self) -> ::std::option::Option<&crate::types::AlarmCapabilities> {
+    pub fn alarm_capabilities(&self) -> ::std::option::Option<& crate::types::AlarmCapabilities> {
         self.alarm_capabilities.as_ref()
     }
 }
 impl UpdateAlarmModelInput {
     /// Creates a new builder-style object to manufacture [`UpdateAlarmModelInput`](crate::operation::update_alarm_model::UpdateAlarmModelInput).
-    pub fn builder() -> crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder {
         crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAlarmModelInput`](crate::operation::update_alarm_model::UpdateAlarmModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAlarmModelInputBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_model_description: ::std::option::Option<::std::string::String>,
@@ -87,36 +84,30 @@ pub struct UpdateAlarmModelInputBuilder {
 }
 impl UpdateAlarmModelInputBuilder {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.alarm_model_name = input;
-        self
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alarm_model_name = input; self
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
     }
     /// <p>The description of the alarm model.</p>
-    pub fn alarm_model_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the alarm model.</p>
-    pub fn set_alarm_model_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.alarm_model_description = input;
-        self
+    pub fn set_alarm_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alarm_model_description = input; self
+    }
+    /// <p>The description of the alarm model.</p>
+    pub fn get_alarm_model_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_description
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,8 +116,11 @@ impl UpdateAlarmModelInputBuilder {
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
+    }
+    /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
     pub fn severity(mut self, input: i32) -> Self {
@@ -135,8 +129,11 @@ impl UpdateAlarmModelInputBuilder {
     }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
+    }
+    /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<i32> {
+        &self.severity
     }
     /// <p>Defines when your alarm is invoked.</p>
     pub fn alarm_rule(mut self, input: crate::types::AlarmRule) -> Self {
@@ -145,8 +142,11 @@ impl UpdateAlarmModelInputBuilder {
     }
     /// <p>Defines when your alarm is invoked.</p>
     pub fn set_alarm_rule(mut self, input: ::std::option::Option<crate::types::AlarmRule>) -> Self {
-        self.alarm_rule = input;
-        self
+        self.alarm_rule = input; self
+    }
+    /// <p>Defines when your alarm is invoked.</p>
+    pub fn get_alarm_rule(&self) -> &::std::option::Option<crate::types::AlarmRule> {
+        &self.alarm_rule
     }
     /// <p>Contains information about one or more notification actions.</p>
     pub fn alarm_notification(mut self, input: crate::types::AlarmNotification) -> Self {
@@ -154,12 +154,12 @@ impl UpdateAlarmModelInputBuilder {
         self
     }
     /// <p>Contains information about one or more notification actions.</p>
-    pub fn set_alarm_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmNotification>,
-    ) -> Self {
-        self.alarm_notification = input;
-        self
+    pub fn set_alarm_notification(mut self, input: ::std::option::Option<crate::types::AlarmNotification>) -> Self {
+        self.alarm_notification = input; self
+    }
+    /// <p>Contains information about one or more notification actions.</p>
+    pub fn get_alarm_notification(&self) -> &::std::option::Option<crate::types::AlarmNotification> {
+        &self.alarm_notification
     }
     /// <p>Contains information about one or more alarm actions.</p>
     pub fn alarm_event_actions(mut self, input: crate::types::AlarmEventActions) -> Self {
@@ -167,12 +167,12 @@ impl UpdateAlarmModelInputBuilder {
         self
     }
     /// <p>Contains information about one or more alarm actions.</p>
-    pub fn set_alarm_event_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmEventActions>,
-    ) -> Self {
-        self.alarm_event_actions = input;
-        self
+    pub fn set_alarm_event_actions(mut self, input: ::std::option::Option<crate::types::AlarmEventActions>) -> Self {
+        self.alarm_event_actions = input; self
+    }
+    /// <p>Contains information about one or more alarm actions.</p>
+    pub fn get_alarm_event_actions(&self) -> &::std::option::Option<crate::types::AlarmEventActions> {
+        &self.alarm_event_actions
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub fn alarm_capabilities(mut self, input: crate::types::AlarmCapabilities) -> Self {
@@ -180,31 +180,35 @@ impl UpdateAlarmModelInputBuilder {
         self
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn set_alarm_capabilities(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmCapabilities>,
-    ) -> Self {
-        self.alarm_capabilities = input;
-        self
+    pub fn set_alarm_capabilities(mut self, input: ::std::option::Option<crate::types::AlarmCapabilities>) -> Self {
+        self.alarm_capabilities = input; self
+    }
+    /// <p>Contains the configuration information of alarm state changes.</p>
+    pub fn get_alarm_capabilities(&self) -> &::std::option::Option<crate::types::AlarmCapabilities> {
+        &self.alarm_capabilities
     }
     /// Consumes the builder and constructs a [`UpdateAlarmModelInput`](crate::operation::update_alarm_model::UpdateAlarmModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_alarm_model::UpdateAlarmModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_alarm_model::UpdateAlarmModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_alarm_model::UpdateAlarmModelInput {
-                alarm_model_name: self.alarm_model_name,
-                alarm_model_description: self.alarm_model_description,
-                role_arn: self.role_arn,
-                severity: self.severity,
-                alarm_rule: self.alarm_rule,
-                alarm_notification: self.alarm_notification,
-                alarm_event_actions: self.alarm_event_actions,
-                alarm_capabilities: self.alarm_capabilities,
-            },
+                alarm_model_name: self.alarm_model_name
+                ,
+                alarm_model_description: self.alarm_model_description
+                ,
+                role_arn: self.role_arn
+                ,
+                severity: self.severity
+                ,
+                alarm_rule: self.alarm_rule
+                ,
+                alarm_notification: self.alarm_notification
+                ,
+                alarm_event_actions: self.alarm_event_actions
+                ,
+                alarm_capabilities: self.alarm_capabilities
+                ,
+            }
         )
     }
 }
+

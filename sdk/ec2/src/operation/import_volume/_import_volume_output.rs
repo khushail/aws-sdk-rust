@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportVolumeOutput {
+pub struct ImportVolumeOutput  {
     /// <p>Information about the conversion task.</p>
     #[doc(hidden)]
     pub conversion_task: ::std::option::Option<crate::types::ConversionTask>,
@@ -10,15 +10,15 @@ pub struct ImportVolumeOutput {
 }
 impl ImportVolumeOutput {
     /// <p>Information about the conversion task.</p>
-    pub fn conversion_task(&self) -> ::std::option::Option<&crate::types::ConversionTask> {
+    pub fn conversion_task(&self) -> ::std::option::Option<& crate::types::ConversionTask> {
         self.conversion_task.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for ImportVolumeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportVolumeOutput {
     /// Creates a new builder-style object to manufacture [`ImportVolumeOutput`](crate::operation::import_volume::ImportVolumeOutput).
     pub fn builder() -> crate::operation::import_volume::builders::ImportVolumeOutputBuilder {
@@ -28,9 +28,7 @@ impl ImportVolumeOutput {
 
 /// A builder for [`ImportVolumeOutput`](crate::operation::import_volume::ImportVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportVolumeOutputBuilder {
     pub(crate) conversion_task: ::std::option::Option<crate::types::ConversionTask>,
     _request_id: Option<String>,
@@ -42,27 +40,29 @@ impl ImportVolumeOutputBuilder {
         self
     }
     /// <p>Information about the conversion task.</p>
-    pub fn set_conversion_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversionTask>,
-    ) -> Self {
-        self.conversion_task = input;
-        self
+    pub fn set_conversion_task(mut self, input: ::std::option::Option<crate::types::ConversionTask>) -> Self {
+        self.conversion_task = input; self
+    }
+    /// <p>Information about the conversion task.</p>
+    pub fn get_conversion_task(&self) -> &::std::option::Option<crate::types::ConversionTask> {
+        &self.conversion_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportVolumeOutput`](crate::operation::import_volume::ImportVolumeOutput).
     pub fn build(self) -> crate::operation::import_volume::ImportVolumeOutput {
         crate::operation::import_volume::ImportVolumeOutput {
-            conversion_task: self.conversion_task,
+            conversion_task: self.conversion_task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

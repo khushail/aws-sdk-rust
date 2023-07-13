@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVpcLinkInput {
+pub struct GetVpcLinkInput  {
     /// <p>The ID of the VPC link.</p>
     #[doc(hidden)]
     pub vpc_link_id: ::std::option::Option<::std::string::String>,
 }
 impl GetVpcLinkInput {
     /// <p>The ID of the VPC link.</p>
-    pub fn vpc_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> ::std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl GetVpcLinkInput {
 
 /// A builder for [`GetVpcLinkInput`](crate::operation::get_vpc_link::GetVpcLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVpcLinkInputBuilder {
     pub(crate) vpc_link_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl GetVpcLinkInputBuilder {
     }
     /// <p>The ID of the VPC link.</p>
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_link_id = input;
-        self
+        self.vpc_link_id = input; self
+    }
+    /// <p>The ID of the VPC link.</p>
+    pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_link_id
     }
     /// Consumes the builder and constructs a [`GetVpcLinkInput`](crate::operation::get_vpc_link::GetVpcLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_vpc_link::GetVpcLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_vpc_link::GetVpcLinkInput {
-            vpc_link_id: self.vpc_link_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_vpc_link::GetVpcLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_vpc_link::GetVpcLinkInput {
+                vpc_link_id: self.vpc_link_id
+                ,
+            }
+        )
     }
 }
+

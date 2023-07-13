@@ -3,7 +3,7 @@
 /// <p>Contains the notebook session ID and notebook session creation time.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotebookSessionSummary {
+pub struct NotebookSessionSummary  {
     /// <p>The notebook session ID.</p>
     #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct NotebookSessionSummary {
 }
 impl NotebookSessionSummary {
     /// <p>The notebook session ID.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The time when the notebook session was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl NotebookSessionSummary {
 
 /// A builder for [`NotebookSessionSummary`](crate::types::NotebookSessionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotebookSessionSummaryBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,8 +43,11 @@ impl NotebookSessionSummaryBuilder {
     }
     /// <p>The notebook session ID.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
+    }
+    /// <p>The notebook session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The time when the notebook session was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -54,18 +55,21 @@ impl NotebookSessionSummaryBuilder {
         self
     }
     /// <p>The time when the notebook session was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
+    }
+    /// <p>The time when the notebook session was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`NotebookSessionSummary`](crate::types::NotebookSessionSummary).
     pub fn build(self) -> crate::types::NotebookSessionSummary {
         crate::types::NotebookSessionSummary {
-            session_id: self.session_id,
-            creation_time: self.creation_time,
+            session_id: self.session_id
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

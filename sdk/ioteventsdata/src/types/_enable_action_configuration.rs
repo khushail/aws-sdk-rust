@@ -3,14 +3,14 @@
 /// <p>Contains the configuration information of an enable action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableActionConfiguration {
+pub struct EnableActionConfiguration  {
     /// <p>The note that you can leave when you enable the alarm.</p>
     #[doc(hidden)]
     pub note: ::std::option::Option<::std::string::String>,
 }
 impl EnableActionConfiguration {
     /// <p>The note that you can leave when you enable the alarm.</p>
-    pub fn note(&self) -> ::std::option::Option<&str> {
+    pub fn note(&self) -> ::std::option::Option<& str> {
         self.note.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl EnableActionConfiguration {
 
 /// A builder for [`EnableActionConfiguration`](crate::types::EnableActionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableActionConfigurationBuilder {
     pub(crate) note: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl EnableActionConfigurationBuilder {
     }
     /// <p>The note that you can leave when you enable the alarm.</p>
     pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.note = input;
-        self
+        self.note = input; self
+    }
+    /// <p>The note that you can leave when you enable the alarm.</p>
+    pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
+        &self.note
     }
     /// Consumes the builder and constructs a [`EnableActionConfiguration`](crate::types::EnableActionConfiguration).
     pub fn build(self) -> crate::types::EnableActionConfiguration {
-        crate::types::EnableActionConfiguration { note: self.note }
+        crate::types::EnableActionConfiguration {
+            note: self.note
+            ,
+        }
     }
 }
+

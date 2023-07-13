@@ -3,7 +3,7 @@
 /// <p>Describes the resource configuration for hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HpoResourceConfig {
+pub struct HpoResourceConfig  {
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
     #[doc(hidden)]
     pub max_number_of_training_jobs: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct HpoResourceConfig {
 }
 impl HpoResourceConfig {
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
-    pub fn max_number_of_training_jobs(&self) -> ::std::option::Option<&str> {
+    pub fn max_number_of_training_jobs(&self) -> ::std::option::Option<& str> {
         self.max_number_of_training_jobs.as_deref()
     }
     /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
-    pub fn max_parallel_training_jobs(&self) -> ::std::option::Option<&str> {
+    pub fn max_parallel_training_jobs(&self) -> ::std::option::Option<& str> {
         self.max_parallel_training_jobs.as_deref()
     }
 }
@@ -30,51 +30,46 @@ impl HpoResourceConfig {
 
 /// A builder for [`HpoResourceConfig`](crate::types::HpoResourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HpoResourceConfigBuilder {
     pub(crate) max_number_of_training_jobs: ::std::option::Option<::std::string::String>,
     pub(crate) max_parallel_training_jobs: ::std::option::Option<::std::string::String>,
 }
 impl HpoResourceConfigBuilder {
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
-    pub fn max_number_of_training_jobs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_number_of_training_jobs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_number_of_training_jobs = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
-    pub fn set_max_number_of_training_jobs(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.max_number_of_training_jobs = input;
-        self
+    pub fn set_max_number_of_training_jobs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.max_number_of_training_jobs = input; self
+    }
+    /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
+    pub fn get_max_number_of_training_jobs(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_number_of_training_jobs
     }
     /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
-    pub fn max_parallel_training_jobs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_parallel_training_jobs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_parallel_training_jobs = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
-    pub fn set_max_parallel_training_jobs(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.max_parallel_training_jobs = input;
-        self
+    pub fn set_max_parallel_training_jobs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.max_parallel_training_jobs = input; self
+    }
+    /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
+    pub fn get_max_parallel_training_jobs(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_parallel_training_jobs
     }
     /// Consumes the builder and constructs a [`HpoResourceConfig`](crate::types::HpoResourceConfig).
     pub fn build(self) -> crate::types::HpoResourceConfig {
         crate::types::HpoResourceConfig {
-            max_number_of_training_jobs: self.max_number_of_training_jobs,
-            max_parallel_training_jobs: self.max_parallel_training_jobs,
+            max_number_of_training_jobs: self.max_number_of_training_jobs
+            ,
+            max_parallel_training_jobs: self.max_parallel_training_jobs
+            ,
         }
     }
 }
+

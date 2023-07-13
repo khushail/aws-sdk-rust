@@ -3,7 +3,7 @@
 /// <p>Contains information about a stickiness policy that was created using <code>CreateLBCookieStickinessPolicy</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElbLbCookieStickinessPolicy {
+pub struct AwsElbLbCookieStickinessPolicy  {
     /// <p>The amount of time, in seconds, after which the cookie is considered stale. If an expiration period is not specified, the stickiness session lasts for the duration of the browser session.</p>
     #[doc(hidden)]
     pub cookie_expiration_period: i64,
@@ -17,7 +17,7 @@ impl AwsElbLbCookieStickinessPolicy {
         self.cookie_expiration_period
     }
     /// <p>The name of the policy. The name must be unique within the set of policies for the load balancer.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl AwsElbLbCookieStickinessPolicy {
 
 /// A builder for [`AwsElbLbCookieStickinessPolicy`](crate::types::AwsElbLbCookieStickinessPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLbCookieStickinessPolicyBuilder {
     pub(crate) cookie_expiration_period: ::std::option::Option<i64>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl AwsElbLbCookieStickinessPolicyBuilder {
     }
     /// <p>The amount of time, in seconds, after which the cookie is considered stale. If an expiration period is not specified, the stickiness session lasts for the duration of the browser session.</p>
     pub fn set_cookie_expiration_period(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.cookie_expiration_period = input;
-        self
+        self.cookie_expiration_period = input; self
+    }
+    /// <p>The amount of time, in seconds, after which the cookie is considered stale. If an expiration period is not specified, the stickiness session lasts for the duration of the browser session.</p>
+    pub fn get_cookie_expiration_period(&self) -> &::std::option::Option<i64> {
+        &self.cookie_expiration_period
     }
     /// <p>The name of the policy. The name must be unique within the set of policies for the load balancer.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,14 +56,21 @@ impl AwsElbLbCookieStickinessPolicyBuilder {
     }
     /// <p>The name of the policy. The name must be unique within the set of policies for the load balancer.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
+    }
+    /// <p>The name of the policy. The name must be unique within the set of policies for the load balancer.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// Consumes the builder and constructs a [`AwsElbLbCookieStickinessPolicy`](crate::types::AwsElbLbCookieStickinessPolicy).
     pub fn build(self) -> crate::types::AwsElbLbCookieStickinessPolicy {
         crate::types::AwsElbLbCookieStickinessPolicy {
-            cookie_expiration_period: self.cookie_expiration_period.unwrap_or_default(),
-            policy_name: self.policy_name,
+            cookie_expiration_period: self.cookie_expiration_period
+                .unwrap_or_default()
+            ,
+            policy_name: self.policy_name
+            ,
         }
     }
 }
+

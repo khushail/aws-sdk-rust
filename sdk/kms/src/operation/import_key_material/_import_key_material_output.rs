@@ -2,40 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportKeyMaterialOutput {
+pub struct ImportKeyMaterialOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for ImportKeyMaterialOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportKeyMaterialOutput {
     /// Creates a new builder-style object to manufacture [`ImportKeyMaterialOutput`](crate::operation::import_key_material::ImportKeyMaterialOutput).
-    pub fn builder(
-    ) -> crate::operation::import_key_material::builders::ImportKeyMaterialOutputBuilder {
+    pub fn builder() -> crate::operation::import_key_material::builders::ImportKeyMaterialOutputBuilder {
         crate::operation::import_key_material::builders::ImportKeyMaterialOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportKeyMaterialOutput`](crate::operation::import_key_material::ImportKeyMaterialOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportKeyMaterialOutputBuilder {
     _request_id: Option<String>,
 }
 impl ImportKeyMaterialOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportKeyMaterialOutput`](crate::operation::import_key_material::ImportKeyMaterialOutput).
     pub fn build(self) -> crate::operation::import_key_material::ImportKeyMaterialOutput {
         crate::operation::import_key_material::ImportKeyMaterialOutput {
@@ -43,3 +40,4 @@ impl ImportKeyMaterialOutputBuilder {
         }
     }
 }
+

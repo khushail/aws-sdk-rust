@@ -3,103 +3,87 @@ pub use crate::operation::put_maintenance_start_time::_put_maintenance_start_tim
 
 pub use crate::operation::put_maintenance_start_time::_put_maintenance_start_time_input::PutMaintenanceStartTimeInputBuilder;
 
+impl PutMaintenanceStartTimeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.put_maintenance_start_time();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `PutMaintenanceStartTime`.
-///
+/// 
 /// <p>Set the maintenance start time for a gateway.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutMaintenanceStartTimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder,
+                    inner: crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder,
 }
-impl PutMaintenanceStartTimeFluentBuilder {
+impl PutMaintenanceStartTimeFluentBuilder  {
     /// Creates a new `PutMaintenanceStartTime`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn customize_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_maintenance_start_time::PutMaintenanceStartTime,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+    /// Access the PutMaintenanceStartTime as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder {
+        &self.inner
     }
-
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-    pub async fn send_middleware(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_maintenance_start_time::PutMaintenanceStartTime, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError>
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError,
-        >,
-    > {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_maintenance_start_time::PutMaintenanceStartTime,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError,
-        >,
-    > {
-        self.customize_middleware().await
-    }
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::put_maintenance_start_time::PutMaintenanceStartTime, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -109,6 +93,10 @@ impl PutMaintenanceStartTimeFluentBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
     }
     /// <p>The hour of the day to start maintenance on a gateway.</p>
     pub fn hour_of_day(mut self, input: i32) -> Self {
@@ -120,6 +108,10 @@ impl PutMaintenanceStartTimeFluentBuilder {
         self.inner = self.inner.set_hour_of_day(input);
         self
     }
+    /// <p>The hour of the day to start maintenance on a gateway.</p>
+    pub fn get_hour_of_day(&self) -> &::std::option::Option<i32> {
+        self.inner.get_hour_of_day()
+    }
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
     pub fn minute_of_hour(mut self, input: i32) -> Self {
         self.inner = self.inner.minute_of_hour(input);
@@ -129,6 +121,10 @@ impl PutMaintenanceStartTimeFluentBuilder {
     pub fn set_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_minute_of_hour(input);
         self
+    }
+    /// <p>The minute of the hour to start maintenance on a gateway.</p>
+    pub fn get_minute_of_hour(&self) -> &::std::option::Option<i32> {
+        self.inner.get_minute_of_hour()
     }
     /// <p>The day of the week to start maintenance on a gateway.</p>
     pub fn day_of_week(mut self, input: i32) -> Self {
@@ -140,16 +136,26 @@ impl PutMaintenanceStartTimeFluentBuilder {
         self.inner = self.inner.set_day_of_week(input);
         self
     }
-    /// <p>The day of the month start maintenance on a gateway.</p>
+    /// <p>The day of the week to start maintenance on a gateway.</p>
+    pub fn get_day_of_week(&self) -> &::std::option::Option<i32> {
+        self.inner.get_day_of_week()
+    }
+    /// <p>The day of the month start maintenance on a gateway.</p> 
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
         self.inner = self.inner.day_of_month(input);
         self
     }
-    /// <p>The day of the month start maintenance on a gateway.</p>
+    /// <p>The day of the month start maintenance on a gateway.</p> 
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_day_of_month(input);
         self
     }
+    /// <p>The day of the month start maintenance on a gateway.</p> 
+    /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
+    pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
+        self.inner.get_day_of_month()
+    }
 }
+

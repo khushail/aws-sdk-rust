@@ -3,7 +3,7 @@
 /// <p>An object representing an Amazon ECR image layer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Layer {
+pub struct Layer  {
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     #[doc(hidden)]
     pub layer_digest: ::std::option::Option<::std::string::String>,
@@ -19,11 +19,11 @@ pub struct Layer {
 }
 impl Layer {
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn layer_digest(&self) -> ::std::option::Option<&str> {
+    pub fn layer_digest(&self) -> ::std::option::Option<& str> {
         self.layer_digest.as_deref()
     }
     /// <p>The availability status of the image layer.</p>
-    pub fn layer_availability(&self) -> ::std::option::Option<&crate::types::LayerAvailability> {
+    pub fn layer_availability(&self) -> ::std::option::Option<& crate::types::LayerAvailability> {
         self.layer_availability.as_ref()
     }
     /// <p>The size, in bytes, of the image layer.</p>
@@ -31,7 +31,7 @@ impl Layer {
         self.layer_size
     }
     /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
-    pub fn media_type(&self) -> ::std::option::Option<&str> {
+    pub fn media_type(&self) -> ::std::option::Option<& str> {
         self.media_type.as_deref()
     }
 }
@@ -44,9 +44,7 @@ impl Layer {
 
 /// A builder for [`Layer`](crate::types::Layer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LayerBuilder {
     pub(crate) layer_digest: ::std::option::Option<::std::string::String>,
     pub(crate) layer_availability: ::std::option::Option<crate::types::LayerAvailability>,
@@ -61,8 +59,11 @@ impl LayerBuilder {
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     pub fn set_layer_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_digest = input;
-        self
+        self.layer_digest = input; self
+    }
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn get_layer_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_digest
     }
     /// <p>The availability status of the image layer.</p>
     pub fn layer_availability(mut self, input: crate::types::LayerAvailability) -> Self {
@@ -70,12 +71,12 @@ impl LayerBuilder {
         self
     }
     /// <p>The availability status of the image layer.</p>
-    pub fn set_layer_availability(
-        mut self,
-        input: ::std::option::Option<crate::types::LayerAvailability>,
-    ) -> Self {
-        self.layer_availability = input;
-        self
+    pub fn set_layer_availability(mut self, input: ::std::option::Option<crate::types::LayerAvailability>) -> Self {
+        self.layer_availability = input; self
+    }
+    /// <p>The availability status of the image layer.</p>
+    pub fn get_layer_availability(&self) -> &::std::option::Option<crate::types::LayerAvailability> {
+        &self.layer_availability
     }
     /// <p>The size, in bytes, of the image layer.</p>
     pub fn layer_size(mut self, input: i64) -> Self {
@@ -84,8 +85,11 @@ impl LayerBuilder {
     }
     /// <p>The size, in bytes, of the image layer.</p>
     pub fn set_layer_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.layer_size = input;
-        self
+        self.layer_size = input; self
+    }
+    /// <p>The size, in bytes, of the image layer.</p>
+    pub fn get_layer_size(&self) -> &::std::option::Option<i64> {
+        &self.layer_size
     }
     /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
     pub fn media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,16 +98,24 @@ impl LayerBuilder {
     }
     /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
     pub fn set_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_type = input;
-        self
+        self.media_type = input; self
+    }
+    /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+    pub fn get_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_type
     }
     /// Consumes the builder and constructs a [`Layer`](crate::types::Layer).
     pub fn build(self) -> crate::types::Layer {
         crate::types::Layer {
-            layer_digest: self.layer_digest,
-            layer_availability: self.layer_availability,
-            layer_size: self.layer_size,
-            media_type: self.media_type,
+            layer_digest: self.layer_digest
+            ,
+            layer_availability: self.layer_availability
+            ,
+            layer_size: self.layer_size
+            ,
+            media_type: self.media_type
+            ,
         }
     }
 }
+

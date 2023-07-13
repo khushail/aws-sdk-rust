@@ -3,51 +3,51 @@
 /// <p>Information about an email identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityInfo {
+pub struct IdentityInfo  {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
     #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The address or domain of the identity.</p>
     #[doc(hidden)]
     pub identity_name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>An <i>identity</i> is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon SES to send email from that identity.</p>
     #[doc(hidden)]
     pub sending_enabled: bool,
-    /// <p>The verification status of the identity. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <p>The verification status of the identity. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub verification_status: ::std::option::Option<crate::types::VerificationStatus>,
 }
 impl IdentityInfo {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
-    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<& crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The address or domain of the identity.</p>
-    pub fn identity_name(&self) -> ::std::option::Option<&str> {
+    pub fn identity_name(&self) -> ::std::option::Option<& str> {
         self.identity_name.as_deref()
     }
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>An <i>identity</i> is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon SES to send email from that identity.</p>
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
     }
-    /// <p>The verification status of the identity. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <p>The verification status of the identity. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li> 
     /// </ul>
-    pub fn verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
+    pub fn verification_status(&self) -> ::std::option::Option<& crate::types::VerificationStatus> {
         self.verification_status.as_ref()
     }
 }
@@ -60,9 +60,7 @@ impl IdentityInfo {
 
 /// A builder for [`IdentityInfo`](crate::types::IdentityInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityInfoBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) identity_name: ::std::option::Option<::std::string::String>,
@@ -76,75 +74,89 @@ impl IdentityInfoBuilder {
         self
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
-        self.identity_type = input;
-        self
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
+        self.identity_type = input; self
+    }
+    /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
     }
     /// <p>The address or domain of the identity.</p>
-    pub fn identity_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address or domain of the identity.</p>
-    pub fn set_identity_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.identity_name = input;
-        self
+    pub fn set_identity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_name = input; self
     }
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>The address or domain of the identity.</p>
+    pub fn get_identity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_name
+    }
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>An <i>identity</i> is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon SES to send email from that identity.</p>
     pub fn sending_enabled(mut self, input: bool) -> Self {
         self.sending_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>An <i>identity</i> is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon SES to send email from that identity.</p>
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sending_enabled = input;
-        self
+        self.sending_enabled = input; self
     }
-    /// <p>The verification status of the identity. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
+    /// <p>An <i>identity</i> is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon SES to send email from that identity.</p>
+    pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sending_enabled
+    }
+    /// <p>The verification status of the identity. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li> 
     /// </ul>
     pub fn verification_status(mut self, input: crate::types::VerificationStatus) -> Self {
         self.verification_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The verification status of the identity. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// <p>The verification status of the identity. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li> 
     /// </ul>
-    pub fn set_verification_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationStatus>,
-    ) -> Self {
-        self.verification_status = input;
-        self
+    pub fn set_verification_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
+        self.verification_status = input; self
+    }
+    /// <p>The verification status of the identity. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li> 
+    /// </ul>
+    pub fn get_verification_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
+        &self.verification_status
     }
     /// Consumes the builder and constructs a [`IdentityInfo`](crate::types::IdentityInfo).
     pub fn build(self) -> crate::types::IdentityInfo {
         crate::types::IdentityInfo {
-            identity_type: self.identity_type,
-            identity_name: self.identity_name,
-            sending_enabled: self.sending_enabled.unwrap_or_default(),
-            verification_status: self.verification_status,
+            identity_type: self.identity_type
+            ,
+            identity_name: self.identity_name
+            ,
+            sending_enabled: self.sending_enabled
+                .unwrap_or_default()
+            ,
+            verification_status: self.verification_status
+            ,
         }
     }
 }
+

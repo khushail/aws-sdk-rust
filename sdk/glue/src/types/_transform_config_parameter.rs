@@ -3,7 +3,7 @@
 /// <p>Specifies the parameters in the config file of the dynamic transform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransformConfigParameter {
+pub struct TransformConfigParameter  {
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -28,27 +28,27 @@ pub struct TransformConfigParameter {
 }
 impl TransformConfigParameter {
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ParamType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ParamType> {
         self.r#type.as_ref()
     }
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
-    pub fn validation_rule(&self) -> ::std::option::Option<&str> {
+    pub fn validation_rule(&self) -> ::std::option::Option<& str> {
         self.validation_rule.as_deref()
     }
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
-    pub fn validation_message(&self) -> ::std::option::Option<&str> {
+    pub fn validation_message(&self) -> ::std::option::Option<& str> {
         self.validation_message.as_deref()
     }
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn value(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.value.as_deref()
     }
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
-    pub fn list_type(&self) -> ::std::option::Option<&crate::types::ParamType> {
+    pub fn list_type(&self) -> ::std::option::Option<& crate::types::ParamType> {
         self.list_type.as_ref()
     }
     /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
@@ -65,9 +65,7 @@ impl TransformConfigParameter {
 
 /// A builder for [`TransformConfigParameter`](crate::types::TransformConfigParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformConfigParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ParamType>,
@@ -85,8 +83,11 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
     pub fn r#type(mut self, input: crate::types::ParamType) -> Self {
@@ -95,40 +96,37 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ParamType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
+    }
+    /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ParamType> {
+        &self.r#type
     }
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
-    pub fn validation_rule(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_rule = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
-    pub fn set_validation_rule(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.validation_rule = input;
-        self
+    pub fn set_validation_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.validation_rule = input; self
+    }
+    /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
+    pub fn get_validation_rule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_rule
     }
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
-    pub fn validation_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
-    pub fn set_validation_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.validation_message = input;
-        self
+    pub fn set_validation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.validation_message = input; self
+    }
+    /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
+    pub fn get_validation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_message
     }
     /// Appends an item to `value`.
     ///
@@ -137,17 +135,17 @@ impl TransformConfigParameterBuilder {
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
-        v.push(input.into());
-        self.value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.value = input; self
+    }
+    /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value
     }
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
     pub fn list_type(mut self, input: crate::types::ParamType) -> Self {
@@ -156,8 +154,11 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
     pub fn set_list_type(mut self, input: ::std::option::Option<crate::types::ParamType>) -> Self {
-        self.list_type = input;
-        self
+        self.list_type = input; self
+    }
+    /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
+    pub fn get_list_type(&self) -> &::std::option::Option<crate::types::ParamType> {
+        &self.list_type
     }
     /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
     pub fn is_optional(mut self, input: bool) -> Self {
@@ -166,19 +167,30 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
     pub fn set_is_optional(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_optional = input;
-        self
+        self.is_optional = input; self
+    }
+    /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
+    pub fn get_is_optional(&self) -> &::std::option::Option<bool> {
+        &self.is_optional
     }
     /// Consumes the builder and constructs a [`TransformConfigParameter`](crate::types::TransformConfigParameter).
     pub fn build(self) -> crate::types::TransformConfigParameter {
         crate::types::TransformConfigParameter {
-            name: self.name,
-            r#type: self.r#type,
-            validation_rule: self.validation_rule,
-            validation_message: self.validation_message,
-            value: self.value,
-            list_type: self.list_type,
-            is_optional: self.is_optional,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            validation_rule: self.validation_rule
+            ,
+            validation_message: self.validation_message
+            ,
+            value: self.value
+            ,
+            list_type: self.list_type
+            ,
+            is_optional: self.is_optional
+            ,
         }
     }
 }
+

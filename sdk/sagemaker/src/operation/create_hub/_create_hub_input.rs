@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHubInput {
+pub struct CreateHubInput  {
     /// <p>The name of the hub to create.</p>
     #[doc(hidden)]
     pub hub_name: ::std::option::Option<::std::string::String>,
@@ -24,27 +24,27 @@ pub struct CreateHubInput {
 }
 impl CreateHubInput {
     /// <p>The name of the hub to create.</p>
-    pub fn hub_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_name(&self) -> ::std::option::Option<& str> {
         self.hub_name.as_deref()
     }
     /// <p>A description of the hub.</p>
-    pub fn hub_description(&self) -> ::std::option::Option<&str> {
+    pub fn hub_description(&self) -> ::std::option::Option<& str> {
         self.hub_description.as_deref()
     }
     /// <p>The display name of the hub.</p>
-    pub fn hub_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_display_name(&self) -> ::std::option::Option<& str> {
         self.hub_display_name.as_deref()
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn hub_search_keywords(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.hub_search_keywords.as_deref()
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
-    pub fn s3_storage_config(&self) -> ::std::option::Option<&crate::types::HubS3StorageConfig> {
+    pub fn s3_storage_config(&self) -> ::std::option::Option<& crate::types::HubS3StorageConfig> {
         self.s3_storage_config.as_ref()
     }
     /// <p>Any tags to associate with the hub.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -57,9 +57,7 @@ impl CreateHubInput {
 
 /// A builder for [`CreateHubInput`](crate::operation::create_hub::CreateHubInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHubInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_description: ::std::option::Option<::std::string::String>,
@@ -76,62 +74,56 @@ impl CreateHubInputBuilder {
     }
     /// <p>The name of the hub to create.</p>
     pub fn set_hub_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_name = input;
-        self
+        self.hub_name = input; self
+    }
+    /// <p>The name of the hub to create.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_name
     }
     /// <p>A description of the hub.</p>
-    pub fn hub_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the hub.</p>
-    pub fn set_hub_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hub_description = input;
-        self
+    pub fn set_hub_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hub_description = input; self
+    }
+    /// <p>A description of the hub.</p>
+    pub fn get_hub_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_description
     }
     /// <p>The display name of the hub.</p>
-    pub fn hub_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the hub.</p>
-    pub fn set_hub_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.hub_display_name = input;
-        self
+    pub fn set_hub_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hub_display_name = input; self
+    }
+    /// <p>The display name of the hub.</p>
+    pub fn get_hub_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_display_name
     }
     /// Appends an item to `hub_search_keywords`.
     ///
     /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
     ///
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hub_search_keywords.unwrap_or_default();
-        v.push(input.into());
-        self.hub_search_keywords = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hub_search_keywords = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn set_hub_search_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.hub_search_keywords = input;
-        self
+    pub fn set_hub_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.hub_search_keywords = input; self
+    }
+    /// <p>The searchable keywords for the hub.</p>
+    pub fn get_hub_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hub_search_keywords
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
     pub fn s3_storage_config(mut self, input: crate::types::HubS3StorageConfig) -> Self {
@@ -139,12 +131,12 @@ impl CreateHubInputBuilder {
         self
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
-    pub fn set_s3_storage_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HubS3StorageConfig>,
-    ) -> Self {
-        self.s3_storage_config = input;
-        self
+    pub fn set_s3_storage_config(mut self, input: ::std::option::Option<crate::types::HubS3StorageConfig>) -> Self {
+        self.s3_storage_config = input; self
+    }
+    /// <p>The Amazon S3 storage configuration for the hub.</p>
+    pub fn get_s3_storage_config(&self) -> &::std::option::Option<crate::types::HubS3StorageConfig> {
+        &self.s3_storage_config
     }
     /// Appends an item to `tags`.
     ///
@@ -153,32 +145,36 @@ impl CreateHubInputBuilder {
     /// <p>Any tags to associate with the hub.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags to associate with the hub.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>Any tags to associate with the hub.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHubInput`](crate::operation::create_hub::CreateHubInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hub::CreateHubInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_hub::CreateHubInput {
-            hub_name: self.hub_name,
-            hub_description: self.hub_description,
-            hub_display_name: self.hub_display_name,
-            hub_search_keywords: self.hub_search_keywords,
-            s3_storage_config: self.s3_storage_config,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_hub::CreateHubInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_hub::CreateHubInput {
+                hub_name: self.hub_name
+                ,
+                hub_description: self.hub_description
+                ,
+                hub_display_name: self.hub_display_name
+                ,
+                hub_search_keywords: self.hub_search_keywords
+                ,
+                s3_storage_config: self.s3_storage_config
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

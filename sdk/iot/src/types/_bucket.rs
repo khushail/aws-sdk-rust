@@ -3,7 +3,7 @@
 /// <p>A count of documents that meets a specific aggregation criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Bucket {
+pub struct Bucket  {
     /// <p>The value counted for the particular bucket.</p>
     #[doc(hidden)]
     pub key_value: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct Bucket {
 }
 impl Bucket {
     /// <p>The value counted for the particular bucket.</p>
-    pub fn key_value(&self) -> ::std::option::Option<&str> {
+    pub fn key_value(&self) -> ::std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The number of documents that have the value counted for the particular bucket.</p>
@@ -30,9 +30,7 @@ impl Bucket {
 
 /// A builder for [`Bucket`](crate::types::Bucket).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketBuilder {
     pub(crate) key_value: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl BucketBuilder {
     }
     /// <p>The value counted for the particular bucket.</p>
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_value = input;
-        self
+        self.key_value = input; self
+    }
+    /// <p>The value counted for the particular bucket.</p>
+    pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_value
     }
     /// <p>The number of documents that have the value counted for the particular bucket.</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -55,14 +56,21 @@ impl BucketBuilder {
     }
     /// <p>The number of documents that have the value counted for the particular bucket.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
+    }
+    /// <p>The number of documents that have the value counted for the particular bucket.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`Bucket`](crate::types::Bucket).
     pub fn build(self) -> crate::types::Bucket {
         crate::types::Bucket {
-            key_value: self.key_value,
-            count: self.count.unwrap_or_default(),
+            key_value: self.key_value
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

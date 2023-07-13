@@ -3,7 +3,7 @@
 /// <p>Contains information regarding predicted values returned by Amazon Textract operations, including the predicted value and the confidence in the predicted value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Prediction {
+pub struct Prediction  {
     /// <p>The predicted value of a detected object.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct Prediction {
 }
 impl Prediction {
     /// <p>The predicted value of a detected object.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Amazon Textract's confidence in its predicted value.</p>
@@ -30,9 +30,7 @@ impl Prediction {
 
 /// A builder for [`Prediction`](crate::types::Prediction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictionBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) confidence: ::std::option::Option<f32>,
@@ -45,8 +43,11 @@ impl PredictionBuilder {
     }
     /// <p>The predicted value of a detected object.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
+    }
+    /// <p>The predicted value of a detected object.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>Amazon Textract's confidence in its predicted value.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -55,14 +56,20 @@ impl PredictionBuilder {
     }
     /// <p>Amazon Textract's confidence in its predicted value.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
+    }
+    /// <p>Amazon Textract's confidence in its predicted value.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`Prediction`](crate::types::Prediction).
     pub fn build(self) -> crate::types::Prediction {
         crate::types::Prediction {
-            value: self.value,
-            confidence: self.confidence,
+            value: self.value
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

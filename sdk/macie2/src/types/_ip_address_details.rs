@@ -3,7 +3,7 @@
 /// <p>Provides information about the IP address of the device that an entity used to perform an action on an affected resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpAddressDetails {
+pub struct IpAddressDetails  {
     /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
     #[doc(hidden)]
     pub ip_address_v4: ::std::option::Option<::std::string::String>,
@@ -22,23 +22,23 @@ pub struct IpAddressDetails {
 }
 impl IpAddressDetails {
     /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
-    pub fn ip_address_v4(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address_v4(&self) -> ::std::option::Option<& str> {
         self.ip_address_v4.as_deref()
     }
     /// <p>The city that the IP address originated from.</p>
-    pub fn ip_city(&self) -> ::std::option::Option<&crate::types::IpCity> {
+    pub fn ip_city(&self) -> ::std::option::Option<& crate::types::IpCity> {
         self.ip_city.as_ref()
     }
     /// <p>The country that the IP address originated from.</p>
-    pub fn ip_country(&self) -> ::std::option::Option<&crate::types::IpCountry> {
+    pub fn ip_country(&self) -> ::std::option::Option<& crate::types::IpCountry> {
         self.ip_country.as_ref()
     }
     /// <p>The geographic coordinates of the location that the IP address originated from.</p>
-    pub fn ip_geo_location(&self) -> ::std::option::Option<&crate::types::IpGeoLocation> {
+    pub fn ip_geo_location(&self) -> ::std::option::Option<& crate::types::IpGeoLocation> {
         self.ip_geo_location.as_ref()
     }
     /// <p>The registered owner of the IP address.</p>
-    pub fn ip_owner(&self) -> ::std::option::Option<&crate::types::IpOwner> {
+    pub fn ip_owner(&self) -> ::std::option::Option<& crate::types::IpOwner> {
         self.ip_owner.as_ref()
     }
 }
@@ -51,9 +51,7 @@ impl IpAddressDetails {
 
 /// A builder for [`IpAddressDetails`](crate::types::IpAddressDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpAddressDetailsBuilder {
     pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
     pub(crate) ip_city: ::std::option::Option<crate::types::IpCity>,
@@ -63,20 +61,17 @@ pub struct IpAddressDetailsBuilder {
 }
 impl IpAddressDetailsBuilder {
     /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
-    pub fn ip_address_v4(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_address_v4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address_v4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
-    pub fn set_ip_address_v4(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.ip_address_v4 = input;
-        self
+    pub fn set_ip_address_v4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address_v4 = input; self
+    }
+    /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
+    pub fn get_ip_address_v4(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_v4
     }
     /// <p>The city that the IP address originated from.</p>
     pub fn ip_city(mut self, input: crate::types::IpCity) -> Self {
@@ -85,8 +80,11 @@ impl IpAddressDetailsBuilder {
     }
     /// <p>The city that the IP address originated from.</p>
     pub fn set_ip_city(mut self, input: ::std::option::Option<crate::types::IpCity>) -> Self {
-        self.ip_city = input;
-        self
+        self.ip_city = input; self
+    }
+    /// <p>The city that the IP address originated from.</p>
+    pub fn get_ip_city(&self) -> &::std::option::Option<crate::types::IpCity> {
+        &self.ip_city
     }
     /// <p>The country that the IP address originated from.</p>
     pub fn ip_country(mut self, input: crate::types::IpCountry) -> Self {
@@ -95,8 +93,11 @@ impl IpAddressDetailsBuilder {
     }
     /// <p>The country that the IP address originated from.</p>
     pub fn set_ip_country(mut self, input: ::std::option::Option<crate::types::IpCountry>) -> Self {
-        self.ip_country = input;
-        self
+        self.ip_country = input; self
+    }
+    /// <p>The country that the IP address originated from.</p>
+    pub fn get_ip_country(&self) -> &::std::option::Option<crate::types::IpCountry> {
+        &self.ip_country
     }
     /// <p>The geographic coordinates of the location that the IP address originated from.</p>
     pub fn ip_geo_location(mut self, input: crate::types::IpGeoLocation) -> Self {
@@ -104,12 +105,12 @@ impl IpAddressDetailsBuilder {
         self
     }
     /// <p>The geographic coordinates of the location that the IP address originated from.</p>
-    pub fn set_ip_geo_location(
-        mut self,
-        input: ::std::option::Option<crate::types::IpGeoLocation>,
-    ) -> Self {
-        self.ip_geo_location = input;
-        self
+    pub fn set_ip_geo_location(mut self, input: ::std::option::Option<crate::types::IpGeoLocation>) -> Self {
+        self.ip_geo_location = input; self
+    }
+    /// <p>The geographic coordinates of the location that the IP address originated from.</p>
+    pub fn get_ip_geo_location(&self) -> &::std::option::Option<crate::types::IpGeoLocation> {
+        &self.ip_geo_location
     }
     /// <p>The registered owner of the IP address.</p>
     pub fn ip_owner(mut self, input: crate::types::IpOwner) -> Self {
@@ -118,17 +119,26 @@ impl IpAddressDetailsBuilder {
     }
     /// <p>The registered owner of the IP address.</p>
     pub fn set_ip_owner(mut self, input: ::std::option::Option<crate::types::IpOwner>) -> Self {
-        self.ip_owner = input;
-        self
+        self.ip_owner = input; self
+    }
+    /// <p>The registered owner of the IP address.</p>
+    pub fn get_ip_owner(&self) -> &::std::option::Option<crate::types::IpOwner> {
+        &self.ip_owner
     }
     /// Consumes the builder and constructs a [`IpAddressDetails`](crate::types::IpAddressDetails).
     pub fn build(self) -> crate::types::IpAddressDetails {
         crate::types::IpAddressDetails {
-            ip_address_v4: self.ip_address_v4,
-            ip_city: self.ip_city,
-            ip_country: self.ip_country,
-            ip_geo_location: self.ip_geo_location,
-            ip_owner: self.ip_owner,
+            ip_address_v4: self.ip_address_v4
+            ,
+            ip_city: self.ip_city
+            ,
+            ip_country: self.ip_country
+            ,
+            ip_geo_location: self.ip_geo_location
+            ,
+            ip_owner: self.ip_owner
+            ,
         }
     }
 }
+

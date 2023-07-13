@@ -3,7 +3,7 @@
 /// <p>Describes the code-signing profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SigningProfileParameter {
+pub struct SigningProfileParameter  {
     /// <p>Certificate ARN.</p>
     #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct SigningProfileParameter {
 }
 impl SigningProfileParameter {
     /// <p>Certificate ARN.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The hardware platform of your device.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The location of the code-signing certificate on your device.</p>
-    pub fn certificate_path_on_device(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_path_on_device(&self) -> ::std::option::Option<& str> {
         self.certificate_path_on_device.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl SigningProfileParameter {
 
 /// A builder for [`SigningProfileParameter`](crate::types::SigningProfileParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigningProfileParameterBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
@@ -47,20 +45,17 @@ pub struct SigningProfileParameterBuilder {
 }
 impl SigningProfileParameterBuilder {
     /// <p>Certificate ARN.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Certificate ARN.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.certificate_arn = input;
-        self
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_arn = input; self
+    }
+    /// <p>Certificate ARN.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
     }
     /// <p>The hardware platform of your device.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,31 +64,35 @@ impl SigningProfileParameterBuilder {
     }
     /// <p>The hardware platform of your device.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
+    }
+    /// <p>The hardware platform of your device.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>The location of the code-signing certificate on your device.</p>
-    pub fn certificate_path_on_device(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_path_on_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_path_on_device = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the code-signing certificate on your device.</p>
-    pub fn set_certificate_path_on_device(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.certificate_path_on_device = input;
-        self
+    pub fn set_certificate_path_on_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_path_on_device = input; self
+    }
+    /// <p>The location of the code-signing certificate on your device.</p>
+    pub fn get_certificate_path_on_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_path_on_device
     }
     /// Consumes the builder and constructs a [`SigningProfileParameter`](crate::types::SigningProfileParameter).
     pub fn build(self) -> crate::types::SigningProfileParameter {
         crate::types::SigningProfileParameter {
-            certificate_arn: self.certificate_arn,
-            platform: self.platform,
-            certificate_path_on_device: self.certificate_path_on_device,
+            certificate_arn: self.certificate_arn
+            ,
+            platform: self.platform
+            ,
+            certificate_path_on_device: self.certificate_path_on_device
+            ,
         }
     }
 }
+

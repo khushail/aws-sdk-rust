@@ -3,7 +3,7 @@
 /// <p>Specifies configuration properties for a Find Matches task run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindMatchesTaskRunProperties {
+pub struct FindMatchesTaskRunProperties  {
     /// <p>The job ID for the Find Matches task run.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -16,15 +16,15 @@ pub struct FindMatchesTaskRunProperties {
 }
 impl FindMatchesTaskRunProperties {
     /// <p>The job ID for the Find Matches task run.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name assigned to the job for the Find Matches task run.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The job run ID for the Find Matches task run.</p>
-    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_run_id(&self) -> ::std::option::Option<& str> {
         self.job_run_id.as_deref()
     }
 }
@@ -37,9 +37,7 @@ impl FindMatchesTaskRunProperties {
 
 /// A builder for [`FindMatchesTaskRunProperties`](crate::types::FindMatchesTaskRunProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindMatchesTaskRunPropertiesBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -53,8 +51,11 @@ impl FindMatchesTaskRunPropertiesBuilder {
     }
     /// <p>The job ID for the Find Matches task run.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
+    }
+    /// <p>The job ID for the Find Matches task run.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The name assigned to the job for the Find Matches task run.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,8 +64,11 @@ impl FindMatchesTaskRunPropertiesBuilder {
     }
     /// <p>The name assigned to the job for the Find Matches task run.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
+    }
+    /// <p>The name assigned to the job for the Find Matches task run.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The job run ID for the Find Matches task run.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,15 +77,22 @@ impl FindMatchesTaskRunPropertiesBuilder {
     }
     /// <p>The job run ID for the Find Matches task run.</p>
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_run_id = input;
-        self
+        self.job_run_id = input; self
+    }
+    /// <p>The job run ID for the Find Matches task run.</p>
+    pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_run_id
     }
     /// Consumes the builder and constructs a [`FindMatchesTaskRunProperties`](crate::types::FindMatchesTaskRunProperties).
     pub fn build(self) -> crate::types::FindMatchesTaskRunProperties {
         crate::types::FindMatchesTaskRunProperties {
-            job_id: self.job_id,
-            job_name: self.job_name,
-            job_run_id: self.job_run_id,
+            job_id: self.job_id
+            ,
+            job_name: self.job_name
+            ,
+            job_run_id: self.job_run_id
+            ,
         }
     }
 }
+

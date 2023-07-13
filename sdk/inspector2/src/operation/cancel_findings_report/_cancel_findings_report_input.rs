@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelFindingsReportInput {
+pub struct CancelFindingsReportInput  {
     /// <p>The ID of the report to be canceled.</p>
     #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelFindingsReportInput {
     /// <p>The ID of the report to be canceled.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
 impl CancelFindingsReportInput {
     /// Creates a new builder-style object to manufacture [`CancelFindingsReportInput`](crate::operation::cancel_findings_report::CancelFindingsReportInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_findings_report::builders::CancelFindingsReportInputBuilder {
+    pub fn builder() -> crate::operation::cancel_findings_report::builders::CancelFindingsReportInputBuilder {
         crate::operation::cancel_findings_report::builders::CancelFindingsReportInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelFindingsReportInput`](crate::operation::cancel_findings_report::CancelFindingsReportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelFindingsReportInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,20 @@ impl CancelFindingsReportInputBuilder {
     }
     /// <p>The ID of the report to be canceled.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
+    }
+    /// <p>The ID of the report to be canceled.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
     }
     /// Consumes the builder and constructs a [`CancelFindingsReportInput`](crate::operation::cancel_findings_report::CancelFindingsReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_findings_report::CancelFindingsReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_findings_report::CancelFindingsReportInput {
-                report_id: self.report_id,
-            },
+                report_id: self.report_id
+                ,
+            }
         )
     }
 }
+

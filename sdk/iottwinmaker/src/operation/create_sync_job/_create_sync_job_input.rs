@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSyncJobInput {
+pub struct CreateSyncJobInput  {
     /// <p>The workspace ID.</p>
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub sync_source: ::std::option::Option<::std::string::String>,
@@ -16,31 +16,25 @@ pub struct CreateSyncJobInput {
     pub sync_role: ::std::option::Option<::std::string::String>,
     /// <p>The SyncJob tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSyncJobInput {
     /// <p>The workspace ID.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p> 
     /// </note>
-    pub fn sync_source(&self) -> ::std::option::Option<&str> {
+    pub fn sync_source(&self) -> ::std::option::Option<& str> {
         self.sync_source.as_deref()
     }
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
-    pub fn sync_role(&self) -> ::std::option::Option<&str> {
+    pub fn sync_role(&self) -> ::std::option::Option<& str> {
         self.sync_role.as_deref()
     }
     /// <p>The SyncJob tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -53,16 +47,12 @@ impl CreateSyncJobInput {
 
 /// A builder for [`CreateSyncJobInput`](crate::operation::create_sync_job::CreateSyncJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSyncJobInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
     pub(crate) sync_role: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSyncJobInputBuilder {
     /// <p>The workspace ID.</p>
@@ -72,22 +62,30 @@ impl CreateSyncJobInputBuilder {
     }
     /// <p>The workspace ID.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
+    /// <p>The workspace ID.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p> 
     /// </note>
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p> 
     /// </note>
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_source = input;
-        self
+        self.sync_source = input; self
+    }
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p> 
+    /// </note>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_source
     }
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
     pub fn sync_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,46 +94,45 @@ impl CreateSyncJobInputBuilder {
     }
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
     pub fn set_sync_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_role = input;
-        self
+        self.sync_role = input; self
+    }
+    /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
+    pub fn get_sync_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_role
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The SyncJob tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The SyncJob tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>The SyncJob tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSyncJobInput`](crate::operation::create_sync_job::CreateSyncJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sync_job::CreateSyncJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_sync_job::CreateSyncJobInput {
-            workspace_id: self.workspace_id,
-            sync_source: self.sync_source,
-            sync_role: self.sync_role,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_sync_job::CreateSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_sync_job::CreateSyncJobInput {
+                workspace_id: self.workspace_id
+                ,
+                sync_source: self.sync_source
+                ,
+                sync_role: self.sync_role
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

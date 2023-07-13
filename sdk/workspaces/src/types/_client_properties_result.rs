@@ -3,7 +3,7 @@
 /// <p>Information about the Amazon WorkSpaces client.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClientPropertiesResult {
+pub struct ClientPropertiesResult  {
     /// <p>The resource identifier, in the form of a directory ID.</p>
     #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ClientPropertiesResult {
 }
 impl ClientPropertiesResult {
     /// <p>The resource identifier, in the form of a directory ID.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
-    pub fn client_properties(&self) -> ::std::option::Option<&crate::types::ClientProperties> {
+    pub fn client_properties(&self) -> ::std::option::Option<& crate::types::ClientProperties> {
         self.client_properties.as_ref()
     }
 }
@@ -30,9 +30,7 @@ impl ClientPropertiesResult {
 
 /// A builder for [`ClientPropertiesResult`](crate::types::ClientPropertiesResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientPropertiesResultBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_properties: ::std::option::Option<crate::types::ClientProperties>,
@@ -45,8 +43,11 @@ impl ClientPropertiesResultBuilder {
     }
     /// <p>The resource identifier, in the form of a directory ID.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
+    }
+    /// <p>The resource identifier, in the form of a directory ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub fn client_properties(mut self, input: crate::types::ClientProperties) -> Self {
@@ -54,18 +55,21 @@ impl ClientPropertiesResultBuilder {
         self
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
-    pub fn set_client_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientProperties>,
-    ) -> Self {
-        self.client_properties = input;
-        self
+    pub fn set_client_properties(mut self, input: ::std::option::Option<crate::types::ClientProperties>) -> Self {
+        self.client_properties = input; self
+    }
+    /// <p>Information about the Amazon WorkSpaces client.</p>
+    pub fn get_client_properties(&self) -> &::std::option::Option<crate::types::ClientProperties> {
+        &self.client_properties
     }
     /// Consumes the builder and constructs a [`ClientPropertiesResult`](crate::types::ClientPropertiesResult).
     pub fn build(self) -> crate::types::ClientPropertiesResult {
         crate::types::ClientPropertiesResult {
-            resource_id: self.resource_id,
-            client_properties: self.client_properties,
+            resource_id: self.resource_id
+            ,
+            client_properties: self.client_properties
+            ,
         }
     }
 }
+

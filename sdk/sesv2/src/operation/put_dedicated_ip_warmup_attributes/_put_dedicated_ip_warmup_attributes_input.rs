@@ -3,7 +3,7 @@
 /// <p>A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDedicatedIpWarmupAttributesInput {
+pub struct PutDedicatedIpWarmupAttributesInput  {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
     #[doc(hidden)]
     pub ip: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct PutDedicatedIpWarmupAttributesInput {
 }
 impl PutDedicatedIpWarmupAttributesInput {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-    pub fn ip(&self) -> ::std::option::Option<&str> {
+    pub fn ip(&self) -> ::std::option::Option<& str> {
         self.ip.as_deref()
     }
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
@@ -23,16 +23,14 @@ impl PutDedicatedIpWarmupAttributesInput {
 }
 impl PutDedicatedIpWarmupAttributesInput {
     /// Creates a new builder-style object to manufacture [`PutDedicatedIpWarmupAttributesInput`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput).
-    pub fn builder() -> crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesInputBuilder{
+    pub fn builder() -> crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesInputBuilder {
         crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutDedicatedIpWarmupAttributesInput`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDedicatedIpWarmupAttributesInputBuilder {
     pub(crate) ip: ::std::option::Option<::std::string::String>,
     pub(crate) warmup_percentage: ::std::option::Option<i32>,
@@ -45,8 +43,11 @@ impl PutDedicatedIpWarmupAttributesInputBuilder {
     }
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
     pub fn set_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip = input;
-        self
+        self.ip = input; self
+    }
+    /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
     }
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
     pub fn warmup_percentage(mut self, input: i32) -> Self {
@@ -55,16 +56,14 @@ impl PutDedicatedIpWarmupAttributesInputBuilder {
     }
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
     pub fn set_warmup_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.warmup_percentage = input;
-        self
+        self.warmup_percentage = input; self
+    }
+    /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
+    pub fn get_warmup_percentage(&self) -> &::std::option::Option<i32> {
+        &self.warmup_percentage
     }
     /// Consumes the builder and constructs a [`PutDedicatedIpWarmupAttributesInput`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput {
                 ip: self.ip
@@ -75,3 +74,4 @@ impl PutDedicatedIpWarmupAttributesInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Records events during an engagement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Receipt {
+pub struct Receipt  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
     #[doc(hidden)]
     pub contact_channel_arn: ::std::option::Option<::std::string::String>,
@@ -19,19 +19,19 @@ pub struct Receipt {
 }
 impl Receipt {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
-    pub fn contact_channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_channel_arn(&self) -> ::std::option::Option<& str> {
         self.contact_channel_arn.as_deref()
     }
     /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
-    pub fn receipt_type(&self) -> ::std::option::Option<&crate::types::ReceiptType> {
+    pub fn receipt_type(&self) -> ::std::option::Option<& crate::types::ReceiptType> {
         self.receipt_type.as_ref()
     }
     /// <p>Information provided during the page acknowledgement.</p>
-    pub fn receipt_info(&self) -> ::std::option::Option<&str> {
+    pub fn receipt_info(&self) -> ::std::option::Option<& str> {
         self.receipt_info.as_deref()
     }
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
-    pub fn receipt_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn receipt_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.receipt_time.as_ref()
     }
 }
@@ -44,9 +44,7 @@ impl Receipt {
 
 /// A builder for [`Receipt`](crate::types::Receipt).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReceiptBuilder {
     pub(crate) contact_channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) receipt_type: ::std::option::Option<crate::types::ReceiptType>,
@@ -55,20 +53,17 @@ pub struct ReceiptBuilder {
 }
 impl ReceiptBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
-    pub fn contact_channel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
-    pub fn set_contact_channel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.contact_channel_arn = input;
-        self
+    pub fn set_contact_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.contact_channel_arn = input; self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
+    pub fn get_contact_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_channel_arn
     }
     /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
     pub fn receipt_type(mut self, input: crate::types::ReceiptType) -> Self {
@@ -76,12 +71,12 @@ impl ReceiptBuilder {
         self
     }
     /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
-    pub fn set_receipt_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReceiptType>,
-    ) -> Self {
-        self.receipt_type = input;
-        self
+    pub fn set_receipt_type(mut self, input: ::std::option::Option<crate::types::ReceiptType>) -> Self {
+        self.receipt_type = input; self
+    }
+    /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
+    pub fn get_receipt_type(&self) -> &::std::option::Option<crate::types::ReceiptType> {
+        &self.receipt_type
     }
     /// <p>Information provided during the page acknowledgement.</p>
     pub fn receipt_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,8 +85,11 @@ impl ReceiptBuilder {
     }
     /// <p>Information provided during the page acknowledgement.</p>
     pub fn set_receipt_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.receipt_info = input;
-        self
+        self.receipt_info = input; self
+    }
+    /// <p>Information provided during the page acknowledgement.</p>
+    pub fn get_receipt_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.receipt_info
     }
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
     pub fn receipt_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,20 +97,25 @@ impl ReceiptBuilder {
         self
     }
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
-    pub fn set_receipt_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.receipt_time = input;
-        self
+    pub fn set_receipt_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.receipt_time = input; self
+    }
+    /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
+    pub fn get_receipt_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.receipt_time
     }
     /// Consumes the builder and constructs a [`Receipt`](crate::types::Receipt).
     pub fn build(self) -> crate::types::Receipt {
         crate::types::Receipt {
-            contact_channel_arn: self.contact_channel_arn,
-            receipt_type: self.receipt_type,
-            receipt_info: self.receipt_info,
-            receipt_time: self.receipt_time,
+            contact_channel_arn: self.contact_channel_arn
+            ,
+            receipt_type: self.receipt_type
+            ,
+            receipt_info: self.receipt_info
+            ,
+            receipt_time: self.receipt_time
+            ,
         }
     }
 }
+

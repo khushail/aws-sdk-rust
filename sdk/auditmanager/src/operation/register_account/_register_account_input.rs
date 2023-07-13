@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterAccountInput {
+pub struct RegisterAccountInput  {
     /// <p> The KMS key details. </p>
     #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
@@ -12,11 +12,11 @@ pub struct RegisterAccountInput {
 }
 impl RegisterAccountInput {
     /// <p> The KMS key details. </p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p> The delegated administrator account for Audit Manager. </p>
-    pub fn delegated_admin_account(&self) -> ::std::option::Option<&str> {
+    pub fn delegated_admin_account(&self) -> ::std::option::Option<& str> {
         self.delegated_admin_account.as_deref()
     }
 }
@@ -29,9 +29,7 @@ impl RegisterAccountInput {
 
 /// A builder for [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterAccountInputBuilder {
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) delegated_admin_account: ::std::option::Option<::std::string::String>,
@@ -44,35 +42,35 @@ impl RegisterAccountInputBuilder {
     }
     /// <p> The KMS key details. </p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
+    }
+    /// <p> The KMS key details. </p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
     }
     /// <p> The delegated administrator account for Audit Manager. </p>
-    pub fn delegated_admin_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegated_admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The delegated administrator account for Audit Manager. </p>
-    pub fn set_delegated_admin_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.delegated_admin_account = input;
-        self
+    pub fn set_delegated_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.delegated_admin_account = input; self
+    }
+    /// <p> The delegated administrator account for Audit Manager. </p>
+    pub fn get_delegated_admin_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegated_admin_account
     }
     /// Consumes the builder and constructs a [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_account::RegisterAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::register_account::RegisterAccountInput {
-            kms_key: self.kms_key,
-            delegated_admin_account: self.delegated_admin_account,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_account::RegisterAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_account::RegisterAccountInput {
+                kms_key: self.kms_key
+                ,
+                delegated_admin_account: self.delegated_admin_account
+                ,
+            }
+        )
     }
 }
+

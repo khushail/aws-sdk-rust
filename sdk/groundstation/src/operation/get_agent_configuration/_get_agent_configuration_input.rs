@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgentConfigurationInput {
+pub struct GetAgentConfigurationInput  {
     /// <p>UUID of agent to get configuration information for.</p>
     #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAgentConfigurationInput {
     /// <p>UUID of agent to get configuration information for.</p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
 }
 impl GetAgentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetAgentConfigurationInput`](crate::operation::get_agent_configuration::GetAgentConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_agent_configuration::builders::GetAgentConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_agent_configuration::builders::GetAgentConfigurationInputBuilder {
         crate::operation::get_agent_configuration::builders::GetAgentConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAgentConfigurationInput`](crate::operation::get_agent_configuration::GetAgentConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAgentConfigurationInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +34,20 @@ impl GetAgentConfigurationInputBuilder {
     }
     /// <p>UUID of agent to get configuration information for.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
+    }
+    /// <p>UUID of agent to get configuration information for.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
     }
     /// Consumes the builder and constructs a [`GetAgentConfigurationInput`](crate::operation::get_agent_configuration::GetAgentConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_agent_configuration::GetAgentConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_agent_configuration::GetAgentConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_agent_configuration::GetAgentConfigurationInput {
-                agent_id: self.agent_id,
-            },
+                agent_id: self.agent_id
+                ,
+            }
         )
     }
 }
+

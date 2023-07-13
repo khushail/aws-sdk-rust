@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePackagingConfigurationInput {
+pub struct DescribePackagingConfigurationInput  {
     /// The ID of a MediaPackage VOD PackagingConfiguration resource.
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePackagingConfigurationInput {
     /// The ID of a MediaPackage VOD PackagingConfiguration resource.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DescribePackagingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribePackagingConfigurationInput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput).
-    pub fn builder() -> crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder {
         crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePackagingConfigurationInput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePackagingConfigurationInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -36,16 +34,14 @@ impl DescribePackagingConfigurationInputBuilder {
     }
     /// The ID of a MediaPackage VOD PackagingConfiguration resource.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// The ID of a MediaPackage VOD PackagingConfiguration resource.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DescribePackagingConfigurationInput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput {
                 id: self.id
@@ -54,3 +50,4 @@ impl DescribePackagingConfigurationInputBuilder {
         )
     }
 }
+

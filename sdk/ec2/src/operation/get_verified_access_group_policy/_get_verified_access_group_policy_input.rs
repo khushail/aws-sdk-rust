@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVerifiedAccessGroupPolicyInput {
+pub struct GetVerifiedAccessGroupPolicyInput  {
     /// <p>The ID of the Verified Access group.</p>
     #[doc(hidden)]
     pub verified_access_group_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct GetVerifiedAccessGroupPolicyInput {
 }
 impl GetVerifiedAccessGroupPolicyInput {
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_access_group_id(&self) -> ::std::option::Option<& str> {
         self.verified_access_group_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,36 +22,31 @@ impl GetVerifiedAccessGroupPolicyInput {
 }
 impl GetVerifiedAccessGroupPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetVerifiedAccessGroupPolicyInput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyInput).
-    pub fn builder() -> crate::operation::get_verified_access_group_policy::builders::GetVerifiedAccessGroupPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_verified_access_group_policy::builders::GetVerifiedAccessGroupPolicyInputBuilder {
         crate::operation::get_verified_access_group_policy::builders::GetVerifiedAccessGroupPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVerifiedAccessGroupPolicyInput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVerifiedAccessGroupPolicyInputBuilder {
     pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl GetVerifiedAccessGroupPolicyInputBuilder {
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn set_verified_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.verified_access_group_id = input;
-        self
+    pub fn set_verified_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.verified_access_group_id = input; self
+    }
+    /// <p>The ID of the Verified Access group.</p>
+    pub fn get_verified_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_group_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -60,21 +55,22 @@ impl GetVerifiedAccessGroupPolicyInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetVerifiedAccessGroupPolicyInput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyInput {
-                verified_access_group_id: self.verified_access_group_id,
-                dry_run: self.dry_run,
-            },
+                verified_access_group_id: self.verified_access_group_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDirectConnectGatewayAssociationInput {
+pub struct DeleteDirectConnectGatewayAssociationInput  {
     /// <p>The ID of the Direct Connect gateway association.</p>
     #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
@@ -15,30 +15,28 @@ pub struct DeleteDirectConnectGatewayAssociationInput {
 }
 impl DeleteDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn virtual_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> ::std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
 }
 impl DeleteDirectConnectGatewayAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationInput`](crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput).
-    pub fn builder() -> crate::operation::delete_direct_connect_gateway_association::builders::DeleteDirectConnectGatewayAssociationInputBuilder{
+    pub fn builder() -> crate::operation::delete_direct_connect_gateway_association::builders::DeleteDirectConnectGatewayAssociationInputBuilder {
         crate::operation::delete_direct_connect_gateway_association::builders::DeleteDirectConnectGatewayAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDirectConnectGatewayAssociationInput`](crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
@@ -46,55 +44,46 @@ pub struct DeleteDirectConnectGatewayAssociationInputBuilder {
 }
 impl DeleteDirectConnectGatewayAssociationInputBuilder {
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.association_id = input;
-        self
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.association_id = input; self
+    }
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.direct_connect_gateway_id = input; self
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn virtual_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn set_virtual_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.virtual_gateway_id = input;
-        self
+    pub fn set_virtual_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_gateway_id = input; self
+    }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_id
     }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationInput`](crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput {
                 association_id: self.association_id
@@ -107,3 +96,4 @@ impl DeleteDirectConnectGatewayAssociationInputBuilder {
         )
     }
 }
+

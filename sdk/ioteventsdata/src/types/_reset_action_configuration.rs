@@ -3,14 +3,14 @@
 /// <p>Contains the configuration information of a reset action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetActionConfiguration {
+pub struct ResetActionConfiguration  {
     /// <p>The note that you can leave when you reset the alarm.</p>
     #[doc(hidden)]
     pub note: ::std::option::Option<::std::string::String>,
 }
 impl ResetActionConfiguration {
     /// <p>The note that you can leave when you reset the alarm.</p>
-    pub fn note(&self) -> ::std::option::Option<&str> {
+    pub fn note(&self) -> ::std::option::Option<& str> {
         self.note.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl ResetActionConfiguration {
 
 /// A builder for [`ResetActionConfiguration`](crate::types::ResetActionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetActionConfigurationBuilder {
     pub(crate) note: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +35,18 @@ impl ResetActionConfigurationBuilder {
     }
     /// <p>The note that you can leave when you reset the alarm.</p>
     pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.note = input;
-        self
+        self.note = input; self
+    }
+    /// <p>The note that you can leave when you reset the alarm.</p>
+    pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
+        &self.note
     }
     /// Consumes the builder and constructs a [`ResetActionConfiguration`](crate::types::ResetActionConfiguration).
     pub fn build(self) -> crate::types::ResetActionConfiguration {
-        crate::types::ResetActionConfiguration { note: self.note }
+        crate::types::ResetActionConfiguration {
+            note: self.note
+            ,
+        }
     }
 }
+

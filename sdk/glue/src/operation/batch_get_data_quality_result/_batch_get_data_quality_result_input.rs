@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDataQualityResultInput {
+pub struct BatchGetDataQualityResultInput  {
     /// <p>A list of unique result IDs for the data quality results.</p>
     #[doc(hidden)]
     pub result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDataQualityResultInput {
     /// <p>A list of unique result IDs for the data quality results.</p>
-    pub fn result_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn result_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.result_ids.as_deref()
     }
 }
 impl BatchGetDataQualityResultInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDataQualityResultInput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput).
-    pub fn builder() -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder {
         crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDataQualityResultInput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDataQualityResultInputBuilder {
     pub(crate) result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,29 +34,26 @@ impl BatchGetDataQualityResultInputBuilder {
     /// <p>A list of unique result IDs for the data quality results.</p>
     pub fn result_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.result_ids.unwrap_or_default();
-        v.push(input.into());
-        self.result_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.result_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unique result IDs for the data quality results.</p>
-    pub fn set_result_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.result_ids = input;
-        self
+    pub fn set_result_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.result_ids = input; self
+    }
+    /// <p>A list of unique result IDs for the data quality results.</p>
+    pub fn get_result_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.result_ids
     }
     /// Consumes the builder and constructs a [`BatchGetDataQualityResultInput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput {
-                result_ids: self.result_ids,
-            },
+                result_ids: self.result_ids
+                ,
+            }
         )
     }
 }
+

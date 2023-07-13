@@ -9,6 +9,10 @@ pub use crate::types::_portal::PortalBuilder;
 
 pub use crate::types::_network_settings::NetworkSettingsBuilder;
 
+pub use crate::types::_ip_access_settings::IpAccessSettingsBuilder;
+
+pub use crate::types::_ip_rule::IpRuleBuilder;
+
 pub use crate::types::_identity_provider::IdentityProviderBuilder;
 
 pub use crate::types::_browser_settings::BrowserSettingsBuilder;
@@ -27,6 +31,8 @@ pub use crate::types::_portal_summary::PortalSummaryBuilder;
 
 pub use crate::types::_network_settings_summary::NetworkSettingsSummaryBuilder;
 
+pub use crate::types::_ip_access_settings_summary::IpAccessSettingsSummaryBuilder;
+
 pub use crate::types::_identity_provider_summary::IdentityProviderSummaryBuilder;
 
 pub use crate::types::_browser_settings_summary::BrowserSettingsSummaryBuilder;
@@ -34,3 +40,4 @@ pub use crate::types::_browser_settings_summary::BrowserSettingsSummaryBuilder;
 pub use crate::types::_certificate::CertificateBuilder;
 
 pub use crate::types::_trust_store::TrustStoreBuilder;
+

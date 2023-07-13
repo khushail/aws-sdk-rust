@@ -3,92 +3,101 @@ pub use crate::operation::update_virtual_interface_attributes::_update_virtual_i
 
 pub use crate::operation::update_virtual_interface_attributes::_update_virtual_interface_attributes_input::UpdateVirtualInterfaceAttributesInputBuilder;
 
+impl UpdateVirtualInterfaceAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+                    >   {
+                        let mut fluent_builder = client.update_virtual_interface_attributes();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+}
 /// Fluent builder constructing a request to `UpdateVirtualInterfaceAttributes`.
-///
-/// <p>Updates the specified attributes of the specified virtual private interface.</p>
-/// <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <code>DescribeConnections</code>. To check whether your virtual q interface supports jumbo frames, call <code>DescribeVirtualInterfaces</code>.</p>
+/// 
+/// <p>Updates the specified attributes of the specified virtual private interface.</p> 
+/// <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <code>DescribeConnections</code>. To check whether your virtual interface supports jumbo frames, call <code>DescribeVirtualInterfaces</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVirtualInterfaceAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder,
 }
-impl UpdateVirtualInterfaceAttributesFluentBuilder {
+impl UpdateVirtualInterfaceAttributesFluentBuilder  {
     /// Creates a new `UpdateVirtualInterfaceAttributes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVirtualInterfaceAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
-    }
-
-    // This function will go away in the near future. Do not rely on it.
-    #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>>
-                     {
-        let op = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>>
-                         {
-        self.send_middleware().await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
+                        #[doc(hidden)]
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
                             crate::client::customize::CustomizableOperation<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
                             ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>
-    >{
-        self.customize_middleware().await
-    }
+                        >  {
+                            let handle = self.handle.clone();
+                            let operation = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                        }
+    
+                        // This function will go away in the near future. Do not rely on it.
+                        #[doc(hidden)]
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>>
+                         {
+                            let op = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?
+                                .make_operation(&self.handle.conf)
+                                .await
+                                .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+                            self.handle.client.call(op).await
+                        }
+    /// Sends the request and returns the response.
+                            ///
+                            /// If an error occurs, an `SdkError` will be returned with additional details that
+                            /// can be matched against.
+                            ///
+                            /// By default, any retryable failures will be retried twice. Retry behavior
+                            /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                            /// set when configuring the client.
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>>
+                             {
+                                self.send_middleware().await
+                            }
+    
+                            /// Consumes this builder, creating a customizable operation that can be modified before being
+                            /// sent. The operation's inner [http::Request] can be modified as well.
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError>
+                            >  {
+                                self.customize_middleware().await
+                            }
     /// <p>The ID of the virtual private interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual private interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
+    }
+    /// <p>The ID of the virtual private interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_id()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
     pub fn mtu(mut self, input: i32) -> Self {
@@ -100,6 +109,10 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
         self.inner = self.inner.set_mtu(input);
         self
     }
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    pub fn get_mtu(&self) -> &::std::option::Option<i32> {
+        self.inner.get_mtu()
+    }
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub fn enable_site_link(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_site_link(input);
@@ -110,20 +123,23 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
         self.inner = self.inner.set_enable_site_link(input);
         self
     }
+    /// <p>Indicates whether to enable or disable SiteLink.</p>
+    pub fn get_enable_site_link(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_site_link()
+    }
     /// <p>The name of the virtual private interface.</p>
-    pub fn virtual_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_name(input.into());
         self
     }
     /// <p>The name of the virtual private interface.</p>
-    pub fn set_virtual_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_name(input);
         self
     }
+    /// <p>The name of the virtual private interface.</p>
+    pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_name()
+    }
 }
+

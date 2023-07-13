@@ -3,14 +3,14 @@
 /// <p>A processor's metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProcessorConfiguration {
+pub struct ProcessorConfiguration  {
     /// <p>Indicates that the processor is of type Lambda.</p>
     #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
 impl ProcessorConfiguration {
     /// <p>Indicates that the processor is of type Lambda.</p>
-    pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaConfiguration> {
+    pub fn lambda(&self) -> ::std::option::Option<& crate::types::LambdaConfiguration> {
         self.lambda.as_ref()
     }
 }
@@ -23,9 +23,7 @@ impl ProcessorConfiguration {
 
 /// A builder for [`ProcessorConfiguration`](crate::types::ProcessorConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessorConfigurationBuilder {
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
@@ -36,17 +34,19 @@ impl ProcessorConfigurationBuilder {
         self
     }
     /// <p>Indicates that the processor is of type Lambda.</p>
-    pub fn set_lambda(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaConfiguration>,
-    ) -> Self {
-        self.lambda = input;
-        self
+    pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaConfiguration>) -> Self {
+        self.lambda = input; self
+    }
+    /// <p>Indicates that the processor is of type Lambda.</p>
+    pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaConfiguration> {
+        &self.lambda
     }
     /// Consumes the builder and constructs a [`ProcessorConfiguration`](crate::types::ProcessorConfiguration).
     pub fn build(self) -> crate::types::ProcessorConfiguration {
         crate::types::ProcessorConfiguration {
-            lambda: self.lambda,
+            lambda: self.lambda
+            ,
         }
     }
 }
+

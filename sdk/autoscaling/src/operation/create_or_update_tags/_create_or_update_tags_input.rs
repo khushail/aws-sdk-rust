@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOrUpdateTagsInput {
+pub struct CreateOrUpdateTagsInput  {
     /// <p>One or more tags.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOrUpdateTagsInput {
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateOrUpdateTagsInput {
     /// Creates a new builder-style object to manufacture [`CreateOrUpdateTagsInput`](crate::operation::create_or_update_tags::CreateOrUpdateTagsInput).
-    pub fn builder(
-    ) -> crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsInputBuilder {
+    pub fn builder() -> crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsInputBuilder {
         crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOrUpdateTagsInput`](crate::operation::create_or_update_tags::CreateOrUpdateTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOrUpdateTagsInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -37,27 +34,26 @@ impl CreateOrUpdateTagsInputBuilder {
     /// <p>One or more tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
+    }
+    /// <p>One or more tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateOrUpdateTagsInput`](crate::operation::create_or_update_tags::CreateOrUpdateTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_or_update_tags::CreateOrUpdateTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_or_update_tags::CreateOrUpdateTagsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::create_or_update_tags::CreateOrUpdateTagsInput { tags: self.tags },
+            crate::operation::create_or_update_tags::CreateOrUpdateTagsInput {
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

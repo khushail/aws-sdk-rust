@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>ListObjectChildren</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchListObjectChildren {
+pub struct BatchListObjectChildren  {
     /// <p>Reference of the object for which child objects are being listed.</p>
     #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -16,11 +16,11 @@ pub struct BatchListObjectChildren {
 }
 impl BatchListObjectChildren {
     /// <p>Reference of the object for which child objects are being listed.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>
@@ -37,9 +37,7 @@ impl BatchListObjectChildren {
 
 /// A builder for [`BatchListObjectChildren`](crate::types::BatchListObjectChildren).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListObjectChildrenBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,12 +50,12 @@ impl BatchListObjectChildrenBuilder {
         self
     }
     /// <p>Reference of the object for which child objects are being listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
+    }
+    /// <p>Reference of the object for which child objects are being listed.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,8 +64,11 @@ impl BatchListObjectChildrenBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,15 +77,22 @@ impl BatchListObjectChildrenBuilder {
     }
     /// <p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
+    }
+    /// <p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`BatchListObjectChildren`](crate::types::BatchListObjectChildren).
     pub fn build(self) -> crate::types::BatchListObjectChildren {
         crate::types::BatchListObjectChildren {
-            object_reference: self.object_reference,
-            next_token: self.next_token,
-            max_results: self.max_results,
+            object_reference: self.object_reference
+            ,
+            next_token: self.next_token
+            ,
+            max_results: self.max_results
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendTestEventNotificationInput {
+pub struct SendTestEventNotificationInput  {
     /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
     #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::NotificationSpecification>,
@@ -12,26 +12,24 @@ pub struct SendTestEventNotificationInput {
 }
 impl SendTestEventNotificationInput {
     /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
-    pub fn notification(&self) -> ::std::option::Option<&crate::types::NotificationSpecification> {
+    pub fn notification(&self) -> ::std::option::Option<& crate::types::NotificationSpecification> {
         self.notification.as_ref()
     }
     /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
-    pub fn test_event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
+    pub fn test_event_type(&self) -> ::std::option::Option<& crate::types::EventType> {
         self.test_event_type.as_ref()
     }
 }
 impl SendTestEventNotificationInput {
     /// Creates a new builder-style object to manufacture [`SendTestEventNotificationInput`](crate::operation::send_test_event_notification::SendTestEventNotificationInput).
-    pub fn builder() -> crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder{
+    pub fn builder() -> crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder {
         crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder::default()
     }
 }
 
 /// A builder for [`SendTestEventNotificationInput`](crate::operation::send_test_event_notification::SendTestEventNotificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendTestEventNotificationInputBuilder {
     pub(crate) notification: ::std::option::Option<crate::types::NotificationSpecification>,
     pub(crate) test_event_type: ::std::option::Option<crate::types::EventType>,
@@ -43,12 +41,12 @@ impl SendTestEventNotificationInputBuilder {
         self
     }
     /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationSpecification>,
-    ) -> Self {
-        self.notification = input;
-        self
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::NotificationSpecification>) -> Self {
+        self.notification = input; self
+    }
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::NotificationSpecification> {
+        &self.notification
     }
     /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     pub fn test_event_type(mut self, input: crate::types::EventType) -> Self {
@@ -56,25 +54,23 @@ impl SendTestEventNotificationInputBuilder {
         self
     }
     /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
-    pub fn set_test_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventType>,
-    ) -> Self {
-        self.test_event_type = input;
-        self
+    pub fn set_test_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
+        self.test_event_type = input; self
+    }
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
+    pub fn get_test_event_type(&self) -> &::std::option::Option<crate::types::EventType> {
+        &self.test_event_type
     }
     /// Consumes the builder and constructs a [`SendTestEventNotificationInput`](crate::operation::send_test_event_notification::SendTestEventNotificationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_test_event_notification::SendTestEventNotificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_test_event_notification::SendTestEventNotificationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::send_test_event_notification::SendTestEventNotificationInput {
-                notification: self.notification,
-                test_event_type: self.test_event_type,
-            },
+                notification: self.notification
+                ,
+                test_event_type: self.test_event_type
+                ,
+            }
         )
     }
 }
+

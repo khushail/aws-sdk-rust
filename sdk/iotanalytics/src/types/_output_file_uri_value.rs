@@ -3,14 +3,14 @@
 /// <p>The value of the variable as a structure that specifies an output file URI.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputFileUriValue {
+pub struct OutputFileUriValue  {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
     #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<& str> {
         self.file_name.as_deref()
     }
 }
@@ -23,9 +23,7 @@ impl OutputFileUriValue {
 
 /// A builder for [`OutputFileUriValue`](crate::types::OutputFileUriValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputFileUriValueBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,13 +35,18 @@ impl OutputFileUriValueBuilder {
     }
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
+    }
+    /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
     }
     /// Consumes the builder and constructs a [`OutputFileUriValue`](crate::types::OutputFileUriValue).
     pub fn build(self) -> crate::types::OutputFileUriValue {
         crate::types::OutputFileUriValue {
-            file_name: self.file_name,
+            file_name: self.file_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainPermissionsPolicyInput {
+pub struct GetDomainPermissionsPolicyInput  {
     /// <p> The name of the domain to which the resource policy is attached. </p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,24 @@ pub struct GetDomainPermissionsPolicyInput {
 }
 impl GetDomainPermissionsPolicyInput {
     /// <p> The name of the domain to which the resource policy is attached. </p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
 }
 impl GetDomainPermissionsPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetDomainPermissionsPolicyInput`](crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyInput).
-    pub fn builder() -> crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyInputBuilder {
         crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDomainPermissionsPolicyInput`](crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainPermissionsPolicyInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -44,8 +42,11 @@ impl GetDomainPermissionsPolicyInputBuilder {
     }
     /// <p> The name of the domain to which the resource policy is attached. </p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
+    }
+    /// <p> The name of the domain to which the resource policy is attached. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -54,21 +55,22 @@ impl GetDomainPermissionsPolicyInputBuilder {
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
     }
     /// Consumes the builder and constructs a [`GetDomainPermissionsPolicyInput`](crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyInput {
-                domain: self.domain,
-                domain_owner: self.domain_owner,
-            },
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+            }
         )
     }
 }
+

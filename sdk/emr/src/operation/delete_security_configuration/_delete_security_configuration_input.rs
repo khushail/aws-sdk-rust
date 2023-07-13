@@ -2,29 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSecurityConfigurationInput {
+pub struct DeleteSecurityConfigurationInput  {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteSecurityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityConfigurationInput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput).
-    pub fn builder() -> crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationInputBuilder {
         crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSecurityConfigurationInput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSecurityConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,20 @@ impl DeleteSecurityConfigurationInputBuilder {
     }
     /// <p>The name of the security configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
+    }
+    /// <p>The name of the security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DeleteSecurityConfigurationInput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

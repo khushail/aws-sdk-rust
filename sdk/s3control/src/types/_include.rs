@@ -3,7 +3,7 @@
 /// <p>A container for what Amazon S3 Storage Lens configuration includes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Include {
+pub struct Include  {
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
     #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -13,11 +13,11 @@ pub struct Include {
 }
 impl Include {
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
-    pub fn buckets(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn buckets(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.buckets.as_deref()
     }
     /// <p>A container for the S3 Storage Lens Region includes.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn regions(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.regions.as_deref()
     }
 }
@@ -30,9 +30,7 @@ impl Include {
 
 /// A builder for [`Include`](crate::types::Include).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncludeBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,17 +43,17 @@ impl IncludeBuilder {
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
     pub fn buckets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.buckets.unwrap_or_default();
-        v.push(input.into());
-        self.buckets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.buckets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
-    pub fn set_buckets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.buckets = input;
-        self
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.buckets = input; self
+    }
+    /// <p>A container for the S3 Storage Lens bucket includes.</p>
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.buckets
     }
     /// Appends an item to `regions`.
     ///
@@ -64,23 +62,26 @@ impl IncludeBuilder {
     /// <p>A container for the S3 Storage Lens Region includes.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A container for the S3 Storage Lens Region includes.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regions = input; self
+    }
+    /// <p>A container for the S3 Storage Lens Region includes.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Consumes the builder and constructs a [`Include`](crate::types::Include).
     pub fn build(self) -> crate::types::Include {
         crate::types::Include {
-            buckets: self.buckets,
-            regions: self.regions,
+            buckets: self.buckets
+            ,
+            regions: self.regions
+            ,
         }
     }
 }
+

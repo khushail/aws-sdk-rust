@@ -3,7 +3,7 @@
 /// <p>The request to delete a streaming distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStreamingDistributionInput {
+pub struct DeleteStreamingDistributionInput  {
     /// <p>The distribution ID.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -13,26 +13,24 @@ pub struct DeleteStreamingDistributionInput {
 }
 impl DeleteStreamingDistributionInput {
     /// <p>The distribution ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
 impl DeleteStreamingDistributionInput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamingDistributionInput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput).
-    pub fn builder() -> crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder{
+    pub fn builder() -> crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder {
         crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStreamingDistributionInput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStreamingDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -45,8 +43,11 @@ impl DeleteStreamingDistributionInputBuilder {
     }
     /// <p>The distribution ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>The distribution ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -55,21 +56,22 @@ impl DeleteStreamingDistributionInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteStreamingDistributionInput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput {
-                id: self.id,
-                if_match: self.if_match,
-            },
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
         )
     }
 }
+

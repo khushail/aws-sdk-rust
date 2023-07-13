@@ -3,7 +3,7 @@
 /// <p>Information about the virtual router.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouterType {
+pub struct RouterType  {
     /// <p>The vendor for the virtual interface's router.</p>
     #[doc(hidden)]
     pub vendor: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct RouterType {
 }
 impl RouterType {
     /// <p>The vendor for the virtual interface's router.</p>
-    pub fn vendor(&self) -> ::std::option::Option<&str> {
+    pub fn vendor(&self) -> ::std::option::Option<& str> {
         self.vendor.as_deref()
     }
     /// <p>The virtual interface router platform.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The router software. </p>
-    pub fn software(&self) -> ::std::option::Option<&str> {
+    pub fn software(&self) -> ::std::option::Option<& str> {
         self.software.as_deref()
     }
     /// <p>The template for the virtual interface's router.</p>
-    pub fn xslt_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn xslt_template_name(&self) -> ::std::option::Option<& str> {
         self.xslt_template_name.as_deref()
     }
     /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
-    pub fn xslt_template_name_for_mac_sec(&self) -> ::std::option::Option<&str> {
+    pub fn xslt_template_name_for_mac_sec(&self) -> ::std::option::Option<& str> {
         self.xslt_template_name_for_mac_sec.as_deref()
     }
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
-    pub fn router_type_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn router_type_identifier(&self) -> ::std::option::Option<& str> {
         self.router_type_identifier.as_deref()
     }
 }
@@ -58,9 +58,7 @@ impl RouterType {
 
 /// A builder for [`RouterType`](crate::types::RouterType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouterTypeBuilder {
     pub(crate) vendor: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
@@ -77,8 +75,11 @@ impl RouterTypeBuilder {
     }
     /// <p>The vendor for the virtual interface's router.</p>
     pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vendor = input;
-        self
+        self.vendor = input; self
+    }
+    /// <p>The vendor for the virtual interface's router.</p>
+    pub fn get_vendor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor
     }
     /// <p>The virtual interface router platform.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +88,11 @@ impl RouterTypeBuilder {
     }
     /// <p>The virtual interface router platform.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
+    }
+    /// <p>The virtual interface router platform.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// <p>The router software. </p>
     pub fn software(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,66 +101,67 @@ impl RouterTypeBuilder {
     }
     /// <p>The router software. </p>
     pub fn set_software(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.software = input;
-        self
+        self.software = input; self
+    }
+    /// <p>The router software. </p>
+    pub fn get_software(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software
     }
     /// <p>The template for the virtual interface's router.</p>
-    pub fn xslt_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn xslt_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.xslt_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The template for the virtual interface's router.</p>
-    pub fn set_xslt_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.xslt_template_name = input;
-        self
+    pub fn set_xslt_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.xslt_template_name = input; self
+    }
+    /// <p>The template for the virtual interface's router.</p>
+    pub fn get_xslt_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.xslt_template_name
     }
     /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
-    pub fn xslt_template_name_for_mac_sec(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn xslt_template_name_for_mac_sec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.xslt_template_name_for_mac_sec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
-    pub fn set_xslt_template_name_for_mac_sec(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.xslt_template_name_for_mac_sec = input;
-        self
+    pub fn set_xslt_template_name_for_mac_sec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.xslt_template_name_for_mac_sec = input; self
+    }
+    /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
+    pub fn get_xslt_template_name_for_mac_sec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.xslt_template_name_for_mac_sec
     }
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
-    pub fn router_type_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn router_type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.router_type_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
-    pub fn set_router_type_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.router_type_identifier = input;
-        self
+    pub fn set_router_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.router_type_identifier = input; self
+    }
+    /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+    pub fn get_router_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.router_type_identifier
     }
     /// Consumes the builder and constructs a [`RouterType`](crate::types::RouterType).
     pub fn build(self) -> crate::types::RouterType {
         crate::types::RouterType {
-            vendor: self.vendor,
-            platform: self.platform,
-            software: self.software,
-            xslt_template_name: self.xslt_template_name,
-            xslt_template_name_for_mac_sec: self.xslt_template_name_for_mac_sec,
-            router_type_identifier: self.router_type_identifier,
+            vendor: self.vendor
+            ,
+            platform: self.platform
+            ,
+            software: self.software
+            ,
+            xslt_template_name: self.xslt_template_name
+            ,
+            xslt_template_name_for_mac_sec: self.xslt_template_name_for_mac_sec
+            ,
+            router_type_identifier: self.router_type_identifier
+            ,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDetectorOutput {
+pub struct PutDetectorOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_http::request_id::RequestId for PutDetectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutDetectorOutput {
     /// Creates a new builder-style object to manufacture [`PutDetectorOutput`](crate::operation::put_detector::PutDetectorOutput).
     pub fn builder() -> crate::operation::put_detector::builders::PutDetectorOutputBuilder {
@@ -19,22 +19,20 @@ impl PutDetectorOutput {
 
 /// A builder for [`PutDetectorOutput`](crate::operation::put_detector::PutDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDetectorOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutDetectorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutDetectorOutput`](crate::operation::put_detector::PutDetectorOutput).
     pub fn build(self) -> crate::operation::put_detector::PutDetectorOutput {
         crate::operation::put_detector::PutDetectorOutput {
@@ -42,3 +40,4 @@ impl PutDetectorOutputBuilder {
         }
     }
 }
+

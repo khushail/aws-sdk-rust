@@ -3,7 +3,7 @@
 /// <p>A query used for retrieving network health data. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQuery {
+pub struct DataQuery  {
     /// <p>A user-defined ID associated with a data query that's returned in the <code>dataResponse</code> identifying the query. For example, if you set the Id to <code>MyQuery01</code>in the query, the <code>dataResponse</code> identifies the query as <code>MyQuery01</code>.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -25,27 +25,27 @@ pub struct DataQuery {
 }
 impl DataQuery {
     /// <p>A user-defined ID associated with a data query that's returned in the <code>dataResponse</code> identifying the query. For example, if you set the Id to <code>MyQuery01</code>in the query, the <code>dataResponse</code> identifies the query as <code>MyQuery01</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Region or Availability Zone that's the target for the data query. For example, <code>eu-north-1</code>.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::MetricType> {
+    pub fn metric(&self) -> ::std::option::Option<& crate::types::MetricType> {
         self.metric.as_ref()
     }
     /// <p>The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code> and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the median of all the data points gathered within those five minutes. <code>p50</code> is the only supported metric.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::StatisticType> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::StatisticType> {
         self.statistic.as_ref()
     }
     /// <p>The aggregation period used for the data query.</p>
-    pub fn period(&self) -> ::std::option::Option<&crate::types::PeriodType> {
+    pub fn period(&self) -> ::std::option::Option<& crate::types::PeriodType> {
         self.period.as_ref()
     }
 }
@@ -58,9 +58,7 @@ impl DataQuery {
 
 /// A builder for [`DataQuery`](crate::types::DataQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQueryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -77,8 +75,11 @@ impl DataQueryBuilder {
     }
     /// <p>A user-defined ID associated with a data query that's returned in the <code>dataResponse</code> identifying the query. For example, if you set the Id to <code>MyQuery01</code>in the query, the <code>dataResponse</code> identifies the query as <code>MyQuery01</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
+    }
+    /// <p>A user-defined ID associated with a data query that's returned in the <code>dataResponse</code> identifying the query. For example, if you set the Id to <code>MyQuery01</code>in the query, the <code>dataResponse</code> identifies the query as <code>MyQuery01</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,8 +88,11 @@ impl DataQueryBuilder {
     }
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
+    }
+    /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The Region or Availability Zone that's the target for the data query. For example, <code>eu-north-1</code>.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,8 +101,11 @@ impl DataQueryBuilder {
     }
     /// <p>The Region or Availability Zone that's the target for the data query. For example, <code>eu-north-1</code>.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
+    }
+    /// <p>The Region or Availability Zone that's the target for the data query. For example, <code>eu-north-1</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
@@ -107,8 +114,11 @@ impl DataQueryBuilder {
     }
     /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
+    }
+    /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
+        &self.metric
     }
     /// <p>The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code> and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the median of all the data points gathered within those five minutes. <code>p50</code> is the only supported metric.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
@@ -116,12 +126,12 @@ impl DataQueryBuilder {
         self
     }
     /// <p>The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code> and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the median of all the data points gathered within those five minutes. <code>p50</code> is the only supported metric.</p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticType>,
-    ) -> Self {
-        self.statistic = input;
-        self
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
+        self.statistic = input; self
+    }
+    /// <p>The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code> and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the median of all the data points gathered within those five minutes. <code>p50</code> is the only supported metric.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::StatisticType> {
+        &self.statistic
     }
     /// <p>The aggregation period used for the data query.</p>
     pub fn period(mut self, input: crate::types::PeriodType) -> Self {
@@ -130,18 +140,28 @@ impl DataQueryBuilder {
     }
     /// <p>The aggregation period used for the data query.</p>
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::PeriodType>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
+    }
+    /// <p>The aggregation period used for the data query.</p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::PeriodType> {
+        &self.period
     }
     /// Consumes the builder and constructs a [`DataQuery`](crate::types::DataQuery).
     pub fn build(self) -> crate::types::DataQuery {
         crate::types::DataQuery {
-            id: self.id,
-            source: self.source,
-            destination: self.destination,
-            metric: self.metric,
-            statistic: self.statistic,
-            period: self.period,
+            id: self.id
+            ,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            metric: self.metric
+            ,
+            statistic: self.statistic
+            ,
+            period: self.period
+            ,
         }
     }
 }
+

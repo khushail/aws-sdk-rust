@@ -3,7 +3,7 @@
 /// <p>Details about the configuration for node-to-node encryption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElasticsearchDomainNodeToNodeEncryptionOptions {
+pub struct AwsElasticsearchDomainNodeToNodeEncryptionOptions  {
     /// <p>Whether node-to-node encryption is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -16,17 +16,14 @@ impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
 }
 impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
     /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
-    pub fn builder(
-    ) -> crate::types::builders::AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
+    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
         crate::types::builders::AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder::default()
     }
 }
 
 /// A builder for [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -38,13 +35,19 @@ impl AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
     }
     /// <p>Whether node-to-node encryption is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
+    }
+    /// <p>Whether node-to-node encryption is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions {
         crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

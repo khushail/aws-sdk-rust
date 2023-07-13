@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReleaseHostsInput {
+pub struct ReleaseHostsInput  {
     /// <p>The IDs of the Dedicated Hosts to release.</p>
     #[doc(hidden)]
     pub host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReleaseHostsInput {
     /// <p>The IDs of the Dedicated Hosts to release.</p>
-    pub fn host_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn host_ids(&self) -> ::std::option::Option<& [::std::string::String]> {
         self.host_ids.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl ReleaseHostsInput {
 
 /// A builder for [`ReleaseHostsInput`](crate::operation::release_hosts::ReleaseHostsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleaseHostsInputBuilder {
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,27 +34,26 @@ impl ReleaseHostsInputBuilder {
     /// <p>The IDs of the Dedicated Hosts to release.</p>
     pub fn host_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.host_ids.unwrap_or_default();
-        v.push(input.into());
-        self.host_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.host_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Dedicated Hosts to release.</p>
-    pub fn set_host_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.host_ids = input;
-        self
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.host_ids = input; self
+    }
+    /// <p>The IDs of the Dedicated Hosts to release.</p>
+    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.host_ids
     }
     /// Consumes the builder and constructs a [`ReleaseHostsInput`](crate::operation::release_hosts::ReleaseHostsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::release_hosts::ReleaseHostsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::release_hosts::ReleaseHostsInput {
-            host_ids: self.host_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::release_hosts::ReleaseHostsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::release_hosts::ReleaseHostsInput {
+                host_ids: self.host_ids
+                ,
+            }
+        )
     }
 }
+

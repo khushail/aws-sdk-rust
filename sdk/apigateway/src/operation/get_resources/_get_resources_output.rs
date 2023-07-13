@@ -3,7 +3,7 @@
 /// <p>Represents a collection of Resource resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourcesOutput {
+pub struct GetResourcesOutput  {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
@@ -14,19 +14,19 @@ pub struct GetResourcesOutput {
 }
 impl GetResourcesOutput {
     /// <p>The current page of elements from this collection.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Resource]> {
+    pub fn items(&self) -> ::std::option::Option<& [crate::types::Resource]> {
         self.items.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetResourcesOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput).
     pub fn builder() -> crate::operation::get_resources::builders::GetResourcesOutputBuilder {
@@ -36,9 +36,7 @@ impl GetResourcesOutput {
 
 /// A builder for [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -52,17 +50,17 @@ impl GetResourcesOutputBuilder {
     /// <p>The current page of elements from this collection.</p>
     pub fn items(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
+        self.items = input; self
+    }
+    /// <p>The current page of elements from this collection.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.items
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,24 +69,30 @@ impl GetResourcesOutputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput).
     pub fn build(self) -> crate::operation::get_resources::GetResourcesOutput {
         crate::operation::get_resources::GetResourcesOutput {
-            items: self.items,
-            position: self.position,
+            items: self.items
+            ,
+            position: self.position
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

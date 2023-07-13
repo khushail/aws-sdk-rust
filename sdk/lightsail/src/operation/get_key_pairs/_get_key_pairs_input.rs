@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyPairsInput {
-    /// <p>The token to advance to the next page of results from your request.</p>
+pub struct GetKeyPairsInput  {
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
@@ -12,9 +12,9 @@ pub struct GetKeyPairsInput {
     pub include_default_key_pair: ::std::option::Option<bool>,
 }
 impl GetKeyPairsInput {
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
     /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
@@ -31,25 +31,27 @@ impl GetKeyPairsInput {
 
 /// A builder for [`GetKeyPairsInput`](crate::operation::get_key_pairs::GetKeyPairsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyPairsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
     pub(crate) include_default_key_pair: ::std::option::Option<bool>,
 }
 impl GetKeyPairsInputBuilder {
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
     /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
     pub fn include_default_key_pair(mut self, input: bool) -> Self {
@@ -58,19 +60,22 @@ impl GetKeyPairsInputBuilder {
     }
     /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
     pub fn set_include_default_key_pair(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_default_key_pair = input;
-        self
+        self.include_default_key_pair = input; self
+    }
+    /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
+    pub fn get_include_default_key_pair(&self) -> &::std::option::Option<bool> {
+        &self.include_default_key_pair
     }
     /// Consumes the builder and constructs a [`GetKeyPairsInput`](crate::operation::get_key_pairs::GetKeyPairsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_key_pairs::GetKeyPairsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_key_pairs::GetKeyPairsInput {
-            page_token: self.page_token,
-            include_default_key_pair: self.include_default_key_pair,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_pairs::GetKeyPairsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_key_pairs::GetKeyPairsInput {
+                page_token: self.page_token
+                ,
+                include_default_key_pair: self.include_default_key_pair
+                ,
+            }
+        )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAppsListInput {
+pub struct DeleteAppsListInput  {
     /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
     #[doc(hidden)]
     pub list_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppsListInput {
     /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
-    pub fn list_id(&self) -> ::std::option::Option<&str> {
+    pub fn list_id(&self) -> ::std::option::Option<& str> {
         self.list_id.as_deref()
     }
 }
@@ -22,9 +22,7 @@ impl DeleteAppsListInput {
 
 /// A builder for [`DeleteAppsListInput`](crate::operation::delete_apps_list::DeleteAppsListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppsListInputBuilder {
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,18 +34,20 @@ impl DeleteAppsListInputBuilder {
     }
     /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
     pub fn set_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_id = input;
-        self
+        self.list_id = input; self
+    }
+    /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_id
     }
     /// Consumes the builder and constructs a [`DeleteAppsListInput`](crate::operation::delete_apps_list::DeleteAppsListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_apps_list::DeleteAppsListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_apps_list::DeleteAppsListInput {
-            list_id: self.list_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_apps_list::DeleteAppsListInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_apps_list::DeleteAppsListInput {
+                list_id: self.list_id
+                ,
+            }
+        )
     }
 }
+
